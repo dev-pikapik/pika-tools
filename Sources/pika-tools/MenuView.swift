@@ -10,7 +10,10 @@ struct MenuView: View {
             header
 
             VStack(spacing: 0) {
-                ForEach(registry.tools, id: \.id) { tool in
+                ForEach(Array(registry.tools.enumerated()), id: \.element.id) { index, tool in
+                    if index > 0 {
+                        Divider().padding(.horizontal, 10)
+                    }
                     tool.settingsView
                 }
             }
@@ -40,17 +43,21 @@ struct MenuView: View {
                     PermissionsWindow.show()
                 } label: {
                     Label("Проверить доступы", systemImage: "lock.shield")
+                        .lineLimit(1)
                 }
-                Spacer()
+                Spacer(minLength: 8)
                 Button("Выйти") { NSApp.terminate(nil) }
                     .keyboardShortcut("q")
+                    .fixedSize(horizontal: true, vertical: false)
             }
             .glassButtons()
 
             updateFooter
         }
-        .padding(14)
-        .frame(width: 310)
+        .padding(.top, 16)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 12)
+        .frame(width: 330)
         .onAppear {
             permissions.refresh()
             loginItem.refresh()
@@ -73,22 +80,27 @@ struct MenuView: View {
         HStack(spacing: 6) {
             Text("Версия \(updater.current)")
             Text("·")
-            switch updater.state {
-            case .checking: Text("проверяю…")
-            case .installing: Text("ставлю обновление…")
-            case .upToDate: Text("свежая")
-            case .available: Text("есть новая")
-            case .failed(let message): Text(message).lineLimit(1).help(message)
-            case .idle: EmptyView()
+            Group {
+                switch updater.state {
+                case .checking: Text("проверяю…")
+                case .installing: Text("ставлю обновление…")
+                case .upToDate: Text("свежая")
+                case .available: Text("есть новая")
+                case .failed(let message): Text(message).help(message)
+                case .idle: EmptyView()
+                }
             }
-            Spacer()
+            .lineLimit(1)
+            Spacer(minLength: 8)
             Button("Проверить") { Task { await updater.check() } }
                 .buttonStyle(.link)
+                .fixedSize(horizontal: true, vertical: false)
                 .disabled(updater.state == .checking || updater.state == .installing)
         }
         .font(.caption)
         .foregroundStyle(.secondary)
         .padding(.horizontal, 4)
+        .padding(.top, 2)
     }
 
     private var header: some View {

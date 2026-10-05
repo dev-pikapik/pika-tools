@@ -147,7 +147,7 @@ private struct DoubleSpaceSettings: View {
             ToggleRow(
                 icon: tool.icon,
                 title: "Фильтр двойного пробела",
-                subtitle: "Прыжок проходит, а повторный пробел быстрее паузы не дойдёт ни до игры, ни до системы",
+                subtitle: "Первый пробел — прыжок, повтор быстрее задержки глотается",
                 isOn: $tool.isEnabled
             )
             Divider()
@@ -159,15 +159,21 @@ private struct DoubleSpaceSettings: View {
                     .background(Color.secondary.opacity(0.15), in: Circle())
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text("Пауза")
+                        Text("Задержка повтора")
                             .font(.body.weight(.medium))
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 8)
                         Text("\(Int(tool.interval * 1000)) мс")
                             .font(.callout.monospacedDigit())
                             .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: true, vertical: false)
                     }
                     Slider(value: $tool.interval, in: 0.05...0.3, step: 0.025)
                         .controlSize(.small)
+                    Text("Пробел, нажатый быстрее задержки, игнорируется везде")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .padding(10)

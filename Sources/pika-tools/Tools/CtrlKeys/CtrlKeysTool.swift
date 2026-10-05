@@ -115,8 +115,8 @@ private struct CtrlKeysSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: "Блокировать Ctrl-сочетания",
-            subtitle: "Ctrl остаётся зажатым для игры, а Ctrl+Space, Ctrl+стрелки и другие сочетания системы не срабатывают",
+            title: "Блокировать сочетания Ctrl",
+            subtitle: "Ctrl зажат для игры, а Ctrl+Space, Ctrl+стрелки и другие сочетания выключены",
             isOn: $tool.isEnabled
         )
     }

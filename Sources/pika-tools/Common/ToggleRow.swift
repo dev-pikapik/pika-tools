@@ -14,8 +14,10 @@ struct ToggleRow: View {
                 .frame(width: 28, height: 28)
                 .background(isOn ? Color.accentColor : Color.secondary.opacity(0.15), in: Circle())
 
-            VStack(alignment: .leading, spacing: 1) {
-                Text(title).font(.body.weight(.medium))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.body.weight(.medium))
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(subtitle)
                     .font(.caption)
                     .foregroundStyle(.secondary)
