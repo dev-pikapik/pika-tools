@@ -73,7 +73,7 @@ struct PermissionsView: View {
                 .font(.title3.weight(.semibold))
 
             Text(permissions.allGranted
-                 ? "Доступы есть. Ctrl+клик работает как обычный клик, а Ctrl-сочетания не уходят в систему."
+                 ? "Доступы есть. Перехваты работают: клики, Ctrl-сочетания и двойной пробел."
                  : "Без них macOS не пустит приложение к кликам и клавишам. Открой System Settings › Privacy & Security и включи pika-tools в двух списках:")
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

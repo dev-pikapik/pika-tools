@@ -4,7 +4,7 @@ cask "pika-tools" do
 
   url "https://github.com/dev-pikapik/pika-tools/releases/download/v#{version}/pika-tools.zip"
   name "pika-tools"
-  desc "Menu bar tools: plain clicks and blocked Ctrl shortcuts for games"
+  desc "Menu bar gaming tools: plain clicks, blocked Ctrl shortcuts and double-space"
   homepage "https://github.com/dev-pikapik/pika-tools"
 
   auto_updates true
