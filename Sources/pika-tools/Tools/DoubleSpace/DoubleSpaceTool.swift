@@ -122,15 +122,38 @@ private func doubleSpaceCallback(
 
 private struct DoubleSpaceSettings: View {
     @Bindable var tool: DoubleSpaceTool
+    @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings {
+            toggle
+            LabeledContent {
+                Slider(value: $tool.interval, in: 0.05...0.3, step: 0.025)
+                    .frame(width: 180)
+                    .accessibilityLabel("Repeat delay")
+                    .accessibilityValue("\(Int(tool.interval * 1000)) ms")
+            } label: {
+                Text("Repeat delay")
+                Text("\(Int(tool.interval * 1000)) ms").monospacedDigit()
+            }
+            .disabled(!tool.isEnabled)
+        } else {
+            menuRows
+        }
+    }
+
+    private var toggle: some View {
+        ToggleRow(
+            icon: tool.icon,
+            title: String(localized: "Double-space guard"),
+            subtitle: String(localized: "A second space within the delay is ignored"),
+            isOn: $tool.isEnabled
+        )
+    }
+
+    private var menuRows: some View {
         VStack(spacing: 0) {
-            ToggleRow(
-                icon: tool.icon,
-                title: String(localized: "Double-space guard"),
-                subtitle: String(localized: "A second space within the delay is ignored"),
-                isOn: $tool.isEnabled
-            )
+            toggle
             Divider()
             HStack(spacing: 10) {
                 Image(systemName: "timer")

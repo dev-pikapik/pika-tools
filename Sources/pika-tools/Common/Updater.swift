@@ -14,6 +14,9 @@ final class Updater {
 
     let current = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0"
     private(set) var state = State.idle
+    var checksAutomatically = UserDefaults.standard.object(forKey: "check-updates") as? Bool ?? true {
+        didSet { UserDefaults.standard.set(checksAutomatically, forKey: "check-updates") }
+    }
 
     @ObservationIgnored private var assetURL: URL?
     @ObservationIgnored private var timer: Timer?
@@ -21,9 +24,11 @@ final class Updater {
     private init() {}
 
     func start() {
-        Task { await check() }
+        if checksAutomatically { Task { await check() } }
         timer = Timer.scheduledTimer(withTimeInterval: 6 * 3600, repeats: true) { _ in
-            Task { @MainActor in await Updater.shared.check() }
+            Task { @MainActor in
+                if Updater.shared.checksAutomatically { await Updater.shared.check() }
+            }
         }
     }
 
@@ -102,5 +107,18 @@ final class Updater {
         }
         let tag_name: String
         let assets: [Asset]
+    }
+}
+
+extension Updater.State {
+    var title: String? {
+        switch self {
+        case .checking: String(localized: "checking…")
+        case .installing: String(localized: "installing update…")
+        case .upToDate: String(localized: "up to date")
+        case .available: String(localized: "update available")
+        case .failed(let message): message
+        case .idle: nil
+        }
     }
 }

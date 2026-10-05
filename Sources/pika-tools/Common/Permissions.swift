@@ -16,8 +16,10 @@ final class Permissions {
     private init() {}
 
     func request() {
-        if !accessibility { resetStale("Accessibility") }
-        if !inputMonitoring { resetStale("ListenEvent") }
+        if !CommandLine.arguments.contains("--no-reset") {
+            if !accessibility { resetStale("Accessibility") }
+            if !inputMonitoring { resetStale("ListenEvent") }
+        }
         if !accessibility {
             let key = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String
             AXIsProcessTrustedWithOptions([key: true] as CFDictionary)
@@ -68,38 +70,36 @@ struct PermissionsView: View {
     private let permissions = Permissions.shared
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(permissions.allGranted ? String(localized: "All set") : String(localized: "pika-tools needs two permissions"))
-                .font(.title3.weight(.semibold))
-
-            Text(permissions.allGranted
-                 ? String(localized: "Both permissions are on and every tool is working.")
-                 : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pika-tools in these two lists:"))
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
-
-            VStack(spacing: 0) {
+        Form {
+            SettingsHeader(
+                tab: .permissions,
+                title: permissions.allGranted ? String(localized: "All set") : String(localized: "pika-tools needs two permissions"),
+                text: permissions.allGranted
+                    ? String(localized: "Both permissions are on and every tool is working.")
+                    : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pika-tools in these two lists:")
+            )
+            Section {
                 PermissionRow(
                     title: String(localized: "Accessibility"),
                     subtitle: String(localized: "Lets the app change clicks and keys"),
                     granted: permissions.accessibility
                 ) { permissions.openSettings("Privacy_Accessibility") }
-                Divider().padding(.leading, 46)
                 PermissionRow(
                     title: String(localized: "Input Monitoring"),
                     subtitle: String(localized: "Lets the app see clicks and keys"),
                     granted: permissions.inputMonitoring
                 ) { permissions.openSettings("Privacy_ListenEvent") }
-            }
-            .glassCard()
-
-            if !permissions.allGranted {
-                Text("pika-tools checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
+            } footer: {
+                if !permissions.allGranted {
+                    Text("pika-tools checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
         }
+        .formStyle(.grouped)
         .animation(.snappy, value: permissions.allGranted)
         .onAppear {
             permissions.refresh()
@@ -115,44 +115,20 @@ private struct PermissionRow: View {
     let open: () -> Void
 
     var body: some View {
-        HStack(spacing: 10) {
-            Image(systemName: granted ? "checkmark.circle.fill" : "xmark.circle.fill")
-                .font(.system(size: 22))
-                .foregroundStyle(granted ? .green : .orange)
-                .frame(width: 28)
-                .contentTransition(.symbolEffect(.replace))
-                .accessibilityLabel(granted ? String(localized: "Allowed") : String(localized: "Not allowed"))
-
-            VStack(alignment: .leading, spacing: 1) {
-                Text(title).font(.body.weight(.medium))
-                Text(subtitle).font(.caption).foregroundStyle(.secondary)
+        LabeledContent {
+            HStack(spacing: 8) {
+                if !granted {
+                    Button("Open", action: open)
+                }
+                Image(systemName: granted ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(granted ? .green : .orange)
+                    .contentTransition(.symbolEffect(.replace))
+                    .accessibilityLabel(granted ? String(localized: "Allowed") : String(localized: "Not allowed"))
             }
-            .accessibilityElement(children: .combine)
-
-            Spacer()
-
-            if !granted {
-                Button("Open", action: open).glassButtons()
-            }
+        } label: {
+            Text(title)
+            Text(subtitle)
         }
-        .padding(10)
-    }
-}
-
-enum PermissionsWindow {
-    private static var window: NSWindow?
-
-    static func show() {
-        if window == nil {
-            let root = PermissionsView().padding(20).frame(width: 420)
-            let window = NSWindow(contentViewController: NSHostingController(rootView: root))
-            window.title = "pika-tools"
-            window.styleMask = [.titled, .closable]
-            window.isReleasedWhenClosed = false
-            self.window = window
-        }
-        window?.center()
-        window?.makeKeyAndOrderFront(nil)
-        NSApp.activate()
     }
 }

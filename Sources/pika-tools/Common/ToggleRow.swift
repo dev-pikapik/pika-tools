@@ -5,8 +5,20 @@ struct ToggleRow: View {
     let title: String
     let subtitle: String
     @Binding var isOn: Bool
+    @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings {
+            Toggle(isOn: $isOn) {
+                Text(title)
+                Text(subtitle)
+            }
+        } else {
+            row
+        }
+    }
+
+    private var row: some View {
         HStack(spacing: 10) {
             Image(systemName: icon)
                 .font(.system(size: 13, weight: .semibold))
@@ -39,5 +51,16 @@ struct ToggleRow: View {
             Toggle(title, isOn: $isOn).accessibilityHint(subtitle)
         }
         .animation(.snappy, value: isOn)
+    }
+}
+
+private struct InSettingsKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+extension EnvironmentValues {
+    var inSettings: Bool {
+        get { self[InSettingsKey.self] }
+        set { self[InSettingsKey.self] = newValue }
     }
 }

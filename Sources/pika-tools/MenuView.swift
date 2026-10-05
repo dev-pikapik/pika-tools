@@ -3,7 +3,7 @@ import SwiftUI
 struct MenuView: View {
     let registry: ToolRegistry
     private let permissions = Permissions.shared
-    @Bindable private var loginItem = LoginItem.shared
+    @Bindable private var keepAwake = KeepAwake.shared
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -20,36 +20,35 @@ struct MenuView: View {
             .glassCard()
 
             ToggleRow(
-                icon: "power",
-                title: String(localized: "Open at Login"),
-                subtitle: loginItem.needsApproval
-                    ? String(localized: "Allow it in System Settings › General › Login Items")
-                    : String(localized: "Starts on its own when you log in"),
-                isOn: $loginItem.isOn
+                icon: "cup.and.saucer",
+                title: String(localized: "Keep Awake"),
+                subtitle: keepAwake.status,
+                isOn: $keepAwake.isOn
             )
             .glassCard()
 
-            if !permissions.accessibility {
-                Label("No access yet, so the tools can’t work", systemImage: "exclamationmark.triangle.fill")
-                    .font(.callout)
-                    .foregroundStyle(.orange)
-                    .padding(.horizontal, 4)
+            if !permissions.allGranted {
+                Button {
+                    SettingsWindow.show(.permissions)
+                } label: {
+                    Label("Permissions needed", systemImage: "exclamationmark.triangle.fill")
+                        .font(.callout)
+                        .foregroundStyle(.orange)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 4)
             }
 
             HStack {
-                Button {
-                    permissions.refresh()
-                    registry.refresh()
-                    PermissionsWindow.show()
-                } label: {
-                    Label("Check Permissions", systemImage: "lock.shield")
-                        .lineLimit(1)
-                }
+                Button("Settings…") { SettingsWindow.show() }
+                    .keyboardShortcut(",")
                 Spacer(minLength: 8)
                 Button("Quit") { NSApp.terminate(nil) }
                     .keyboardShortcut("q")
-                    .fixedSize(horizontal: true, vertical: false)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .glassButtons()
 
             updateFooter
@@ -57,11 +56,8 @@ struct MenuView: View {
         .padding(.top, 16)
         .padding(.horizontal, 16)
         .padding(.bottom, 12)
-        .frame(width: 330)
-        .onAppear {
-            permissions.refresh()
-            loginItem.refresh()
-        }
+        .frame(width: 310)
+        .onAppear { permissions.refresh() }
     }
 
     @ViewBuilder
@@ -79,18 +75,12 @@ struct MenuView: View {
 
         HStack(spacing: 6) {
             Text("Version \(updater.current)")
-            Text("·")
-            Group {
-                switch updater.state {
-                case .checking: Text("checking…")
-                case .installing: Text("installing update…")
-                case .upToDate: Text("up to date")
-                case .available: Text("update available")
-                case .failed(let message): Text(message).help(message)
-                case .idle: EmptyView()
-                }
+            if let status = updater.state.title {
+                Text("·")
+                Text(status)
+                    .lineLimit(1)
+                    .help(status)
             }
-            .lineLimit(1)
             Spacer(minLength: 8)
             Button("Check") { Task { await updater.check() } }
                 .buttonStyle(.link)

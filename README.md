@@ -29,7 +29,7 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 
 ## First launch
 
-pika-tools needs two permissions. On first launch it opens a window that walks you through them, and macOS shows its own prompts. Go to **System Settings › Privacy & Security** and turn on pika-tools in:
+pika-tools needs two permissions. On first launch it opens Settings on the Permissions page, which walks you through them, and macOS shows its own prompts. Go to **System Settings › Privacy & Security** and turn on pika-tools in:
 
 - **Accessibility**, so the app can change a key press or click before it reaches other apps.
 - **Input Monitoring**, so the app can see key presses and clicks in the first place.
@@ -46,15 +46,31 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Switch language with Option+Shift.** Hold Option, press Shift and let go of both: macOS moves to the next input source. Shift first, then Option, goes back to the previous one. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
 
-Each tool has its own switch in the menu. Need a normal Ctrl+C or the double-space period back? Turn that tool off.
+Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C or the double-space period back? Turn that tool off.
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
-The app follows your system language: English, Russian, Ukrainian, German, French, Spanish, Italian, Portuguese (Brazil), Japanese, Chinese (Simplified) and Korean.
+The app follows your system language or the one you pick in Settings: English, Russian, Ukrainian, German, French, Spanish, Italian, Portuguese (Brazil), Japanese, Chinese (Simplified) and Korean.
+
+## Keep Awake
+
+Stops your Mac from falling asleep while you're away from the keyboard: for 15 minutes up to 8 hours, or until you turn it off. Flip it on from the menu, pick the duration in Settings. The menu shows when it ends. **Keep the display on** stops the screen from dimming too. Quitting pika-tools ends Keep Awake.
+
+On a MacBook you can also turn on **Work with the lid closed**. macOS has no switch for that, so pika-tools runs `pmset -a disablesleep 1` and asks for an administrator password: only an administrator can change how the Mac sleeps. The setting goes back to normal on its own when Keep Awake ends, when you quit the app, or if it crashes. If you don't enter the password, nothing changes. Keep the Mac ventilated with the lid closed. **Stop when battery is below 20%** ends the session before the battery runs out.
+
+## Settings
+
+Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
+
+- **General**: open at login, appearance (System, Light or Dark), language and updates.
+- **Keyboard & Mouse**: every tool and the double-space delay.
+- **Keep Awake**: duration, display and lid options.
+- **Permissions**: the status of both permissions with buttons that open the right place in System Settings.
+- **About**: version, links to the changelog and to report a problem.
 
 ## Updates
 
-pika-tools checks for new versions at launch and every 6 hours. When one is out, an **Update to …** button appears in the menu: one click and the app downloads the update, installs it and restarts. You can also check by hand with **Check** at the bottom of the menu.
+pika-tools checks for new versions at launch and every 6 hours. You can turn that off in Settings › General. When one is out, an **Update to …** button appears in the menu: one click and the app downloads the update, installs it and restarts. You can also check by hand with **Check** at the bottom of the menu.
 
 With Homebrew you can also run `brew upgrade --cask pika-tools`.
 
