@@ -16,6 +16,8 @@ final class Permissions {
     private init() {}
 
     func request() {
+        if !accessibility { resetStale("Accessibility") }
+        if !inputMonitoring { resetStale("ListenEvent") }
         if !accessibility {
             let key = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String
             AXIsProcessTrustedWithOptions([key: true] as CFDictionary)
@@ -24,6 +26,15 @@ final class Permissions {
             CGRequestListenEventAccess()
         }
         startPolling()
+    }
+
+    private func resetStale(_ service: String) {
+        guard let id = Bundle.main.bundleIdentifier else { return }
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/tccutil")
+        process.arguments = ["reset", service, id]
+        try? process.run()
+        process.waitUntilExit()
     }
 
     func refresh() {

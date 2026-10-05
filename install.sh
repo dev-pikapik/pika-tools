@@ -65,9 +65,6 @@ $SUDO rm -rf "$DEST"
 $SUDO ditto "$NEW_APP" "$DEST"
 $SUDO xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
 
-tccutil reset Accessibility "$BUNDLE_ID" >/dev/null 2>&1 || true
-tccutil reset ListenEvent "$BUNDLE_ID" >/dev/null 2>&1 || true
-
 say "Запускаю"
 open "$DEST"
 

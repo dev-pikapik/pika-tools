@@ -71,8 +71,6 @@ final class Updater {
             while kill -0 "$1" 2>/dev/null; do sleep 0.2; done
             rm -rf "$3" && ditto "$2" "$3"
             xattr -dr com.apple.quarantine "$3"
-            tccutil reset Accessibility "$4"
-            tccutil reset ListenEvent "$4"
             rm -rf "$(dirname "$2")"
             open "$3"
             """

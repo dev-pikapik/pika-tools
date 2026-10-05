@@ -8,19 +8,16 @@ cask "pika-tools" do
   homepage "https://github.com/dev-pikapik/pika-tools"
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "pika-tools.app"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/pika-tools.app"]
-    system_command "/usr/bin/tccutil", args: ["reset", "Accessibility", "com.pesotchi.pika-tools"], must_succeed: false
-    system_command "/usr/bin/tccutil", args: ["reset", "ListenEvent", "com.pesotchi.pika-tools"], must_succeed: false
-    system_command "/usr/bin/open", args: ["#{appdir}/pika-tools.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/pika-tools.app"], must_succeed: false
   end
 
-  uninstall_preflight do
-    system_command "#{appdir}/pika-tools.app/Contents/MacOS/pika-tools", args: ["--uninstall"], must_succeed: false
+  uninstall_preflight_steps do
+    run "{{appdir}}/pika-tools.app/Contents/MacOS/pika-tools", args: ["--uninstall"], must_succeed: false
   end
 
   uninstall quit: "com.pesotchi.pika-tools"

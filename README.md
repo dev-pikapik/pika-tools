@@ -15,7 +15,7 @@
 Через Homebrew:
 
 ```bash
-brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew install --cask pika-tools
+brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew trust dev-pikapik/pika-tools && brew install --cask pika-tools && open -a pika-tools
 ```
 
 Или без Homebrew, одной командой в Терминале:
