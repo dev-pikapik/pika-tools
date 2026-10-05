@@ -1,152 +1,97 @@
 # pika-tools
 
-Маленькие полезные штуки для macOS в строке меню.
+[Русский](README.ru.md)
 
-Сейчас внутри три инструмента для игр, где Ctrl — кнопка действия, а прыжок на пробеле жмут часто:
+[![Latest release](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
+[![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-1. **Ctrl+клик работает как обычный клик**. Контекстное меню больше не выскакивает: зажал Ctrl, кликнул — получил выстрел или выбор, а не меню.
-2. **Блокировка Ctrl-сочетаний**. Сам Ctrl остаётся зажатым и виден игре (бег на Ctrl работает), а все сочетания вида Ctrl+<клавиша> до системы не долетают: Ctrl+Space больше не меняет язык, Ctrl+стрелки не дёргают Mission Control и Spaces, параллельно нажатые клавиши не делают ничего лишнего.
-3. **Фильтр двойного пробела**. Первый пробел всегда проходит (прыжок работает), а повторный быстрее паузы глотается и не доходит ни до игры, ни до системы: подстановка «двойной пробел → точка» и прочие реакции не срабатывают, игра не пролагивает. Пауза настраивается ползунком (по умолчанию 120 мс). Удержание пробела (автоповтор) и пробел с модификаторами — например, бег+прыжок на Ctrl+пробел — проходят всегда.
+A small menu bar app for macOS with a few keyboard fixes: it blocks Ctrl shortcuts, ignores accidental double spaces and switches languages with Option+Shift, the way Alt+Shift works on Windows.
 
-- Правый клик мышью и тап двумя пальцами работают как раньше.
-- Ctrl на клавиатуре остаётся нажатым — игра его видит.
-- Каждый инструмент включается и выключается своим переключателем. Не играешь — выключи блокировки, чтобы Ctrl+C, двойной пробел и другие обычные шорткаты снова работали везде.
-- macOS 14 Sonoma и новее, Apple Silicon и Intel. На macOS 26 Tahoe — Liquid Glass.
-- Иконка — белая стрелка с искрой клика на тёплом янтарном фоне. На macOS 26 сама подстраивается под светлую, тёмную и тонированную тему.
+## Install
 
-## Установка
-
-Через Homebrew:
+With Homebrew:
 
 ```bash
 brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew trust dev-pikapik/pika-tools && brew install --cask pika-tools && open -a pika-tools
 ```
 
-Или без Homebrew, одной командой в Терминале:
+Or with a single command in Terminal:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-Оба способа ставят готовую сборку в `/Applications`, снимают карантин, запускают приложение, просят доступы и включают автозапуск.
-Хочешь собрать сам из исходников — добавь `--source` в конце (нужны Xcode Command Line Tools):
+Or download `pika-tools.dmg` from [Releases](https://github.com/dev-pikapik/pika-tools/releases/latest) and drag the app to Applications.
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)" -- --source
-```
+Homebrew and the script both put the app in `/Applications`, launch it, ask for permissions and turn on Open at Login.
 
-Или скачай `pika-tools.dmg` из [Releases](https://github.com/dev-pikapik/pika-tools/releases) и перетащи в «Программы». Если macOS не даёт открыть:
+## First launch
 
-```bash
-xattr -dr com.apple.quarantine /Applications/pika-tools.app
-```
+pika-tools needs two permissions. On first launch it opens a window that walks you through them, and macOS shows its own prompts. Go to **System Settings › Privacy & Security** and turn on pika-tools in:
 
-## Обновления
+- **Accessibility**, so the app can change a key press or click before it reaches other apps.
+- **Input Monitoring**, so the app can see key presses and clicks in the first place.
 
-Приложение само проверяет новые версии — при запуске и раз в 6 часов. Когда выходит новая, в меню появляется кнопка **Обновить до …**: один клик, и pika-tools скачает, поставит и перезапустит себя.
-Внизу меню видно текущую версию, там же кнопка **Проверить**.
+The app picks up the change within a couple of seconds, no restart needed.
 
-Через Homebrew тоже можно: `brew upgrade --cask pika-tools`.
+pika-tools doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. The only network request is the update check, which asks GitHub for the latest release.
 
-После обновления macOS считает приложение новым, поэтому доступы надо включить ещё раз — окно с подсказкой откроется само.
+## Features
 
-## Доступы
+**Block Ctrl shortcuts.** Ctrl becomes a plain key. Apps still see it held down, but macOS no longer turns it into shortcuts: Ctrl+Space won't switch input sources, Ctrl+arrows won't switch desktops, and Ctrl-click is a regular click instead of a context menu. Right-click and two-finger tap work as usual. Handy in games and remote desktop sessions, where Ctrl has a job of its own.
 
-Без них macOS не пустит приложение к кликам и клавишам. При первом запуске откроется окно с подсказкой, а macOS покажет свои запросы.
+**Double-space guard.** The first space always goes through. A second one pressed faster than the delay is ignored, so you don't get a period from double space or stray repeats. The delay is adjustable from 50 to 300 ms (120 ms by default). Holding space and space with modifiers always work.
 
-Открой **System Settings › Privacy & Security** и включи pika-tools в двух списках:
+**Switch language with Option+Shift.** Hold Option, press Shift and let go of both: macOS moves to the next input source. Shift first, then Option, goes back to the previous one. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
 
-| Раздел | Зачем |
-|---|---|
-| **Accessibility** (Универсальный доступ) | чтобы менять клики и клавиши |
-| **Input Monitoring** (Мониторинг ввода) | чтобы видеть клики и клавиши |
+Each tool has its own switch in the menu. Need a normal Ctrl+C or the double-space period back? Turn that tool off.
 
-Приложение само проверяет доступы каждые 1,5 секунды — ничего перезапускать не нужно. Иконка в меню станет обычной стрелкой с кликом.
+The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
-Не работает, хотя галочка стоит? Так бывает после пересборки. Удали pika-tools из обоих списков кнопкой «−», затем нажми в меню **Проверить доступы** и включи заново.
+The app follows your system language: English, Russian, Ukrainian, German, French, Spanish, Italian, Portuguese (Brazil), Japanese, Chinese (Simplified) and Korean.
 
-## Иконка в строке меню
+## Updates
 
-| Иконка | Что значит |
-|---|---|
-| стрелка с кликом | Активно — перехваты работают |
-| перечёркнутая стрелка | Выключено |
-| треугольник | Включено, но нет доступа |
+pika-tools checks for new versions at launch and every 6 hours. When one is out, an **Update to …** button appears in the menu: one click and the app downloads the update, installs it and restarts. You can also check by hand with **Check** at the bottom of the menu.
 
-## Автозапуск
+With Homebrew you can also run `brew upgrade --cask pika-tools`.
 
-Включается сам при первом запуске. Выключить или включить обратно — переключатель **Открывать при входе** в меню.
-Если macOS попросит подтверждение: **System Settings › General › Login Items** → разреши pika-tools.
+Starting with 1.3, permissions stay in place after updates.
 
-## Удаление
+## Uninstall
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
 ```
 
-Ставил через Homebrew — тогда `brew uninstall --cask --zap pika-tools`.
-Оба способа закроют приложение, уберут его из автозапуска и удалят. Скрипт ещё и сбросит доступы.
+If you installed with Homebrew: `brew uninstall --cask --zap pika-tools`.
 
-## Сборка из исходников
+Both quit the app, remove it from login items and delete it. The script also resets its permissions.
 
-Нужны только Xcode Command Line Tools.
+## FAQ
 
-```bash
-git clone https://github.com/dev-pikapik/pika-tools.git
-cd pika-tools
-./scripts/build.sh      # build/pika-tools.app
-./scripts/package.sh    # build/pika-tools.dmg и build/pika-tools.zip
-```
+**Why does it need two permissions?**
+macOS splits keyboard and mouse access in two. Input Monitoring lets the app see events, Accessibility lets it change them. Blocking a shortcut needs both.
 
-### Подпись
-
-По умолчанию сборка подписывается ad-hoc — этого хватает для своего Mac.
-Есть Developer ID? Тогда можно подписать и нотаризовать:
+**macOS says the app is from an unidentified developer.**
+pika-tools is signed, but not notarized by Apple. Homebrew and the install script take care of this for you. If you used the dmg, open **System Settings › Privacy & Security** and click **Open Anyway**, or run:
 
 ```bash
-xcrun notarytool store-credentials pika-notary --apple-id you@example.com --team-id TEAMID
-SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" NOTARY_PROFILE=pika-notary ./scripts/package.sh
+xattr -dr com.apple.quarantine /Applications/pika-tools.app
 ```
 
-## Как устроено
+**Does it work on Intel Macs?**
+Yes. It's a universal app for Apple Silicon and Intel, macOS 14 Sonoma or later.
 
-```
-Sources/pika-tools/
-  main.swift, App.swift, MenuView.swift
-  Tools/Tool.swift                   протокол Tool и ToolRegistry
-  Tools/CtrlClick/CtrlClickTool.swift
-  Tools/CtrlKeys/CtrlKeysTool.swift
-  Tools/DoubleSpace/DoubleSpaceTool.swift + SpaceDebouncer.swift
-  Common/                            общие куски интерфейса, доступы, автозапуск, обновления
-Casks/pika-tools.rb                  Homebrew cask
-Resources/AppIcon.icon               иконка приложения, AppIcon.icns — запасная
-scripts/                             сборка, упаковка, релиз, иконка
-```
+**The permission is on, but nothing works.**
+Remove pika-tools from both lists with the − button, then choose **Check Permissions** in the menu and turn them on again.
 
-Ctrl+клик ловится через `CGEventTap` до того, как событие попадёт в приложения. У левого клика снимается флаг Ctrl — и всё.
-Правый клик не трогается.
+## Contributing
 
-Ctrl-сочетания ловятся вторым `CGEventTap`, только для `keyDown`/`keyUp`. У нажатия, пришедшего с зажатым Ctrl, снимается флаг Ctrl (а если зажат ещё и Cmd — то и Cmd, чтобы событие не деградировало до Cmd+Space со Spotlight). Событие `flagsChanged` самого Ctrl не трогается, поэтому игра продолжает видеть зажатый Ctrl, а система сочетания уже не видит.
+Building from source and releasing are covered in [CONTRIBUTING.md](CONTRIBUTING.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
-Двойной пробел ловится третьим `CGEventTap`, только для `keyDown` пробела (keycode 49). Первое нажатие проходит всегда, повторное быстрее паузы глотается (`return nil`). Отпускание пробела, автоповтор удерживаемого пробела и пробел с модификаторами пропускаются всегда — залипших прыжков и сломанного бега+прыжка нет. Сама пауза — чистая структура `SpaceDebouncer` без зависимостей.
+## License
 
-Новый инструмент = новый файл в `Tools/` с классом под протокол `Tool` и одна строка в `ToolRegistry.tools`.
-
-## Выпустить новую версию
-
-```bash
-./scripts/release.sh 1.0.2
-```
-
-Скрипт поднимет версию, закоммитит, поставит тег и запушит. Остальное делает GitHub Actions: собирает `.zip` и `.dmg` с иконкой под macOS 26, проверяет подпись, публикует релиз и обновляет cask в `main`.
-Установленные приложения увидят новую версию сами.
-
-Иконка лежит в `Resources/AppIcon.icon` (формат Icon Composer). Поменял её — пересобери запасную `Resources/AppIcon.icns` для macOS 14–15:
-
-```bash
-swift scripts/make-icns.swift
-```
-
-## Лицензия
-
-MIT, © 2026 pikapik. См. [LICENSE-MIT](LICENSE-MIT).
+MIT, © 2026 pikapik. See [LICENSE](LICENSE).

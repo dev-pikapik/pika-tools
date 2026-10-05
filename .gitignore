@@ -1,14 +1,8 @@
 .DS_Store
 build/
 DerivedData/
-*.xcuserdata
 xcuserdata/
 .swiftpm/
-.vscode/
-.opencode/
-.claude/
-memory/
-chats/
 *.log
 *.dmg
 *.zip

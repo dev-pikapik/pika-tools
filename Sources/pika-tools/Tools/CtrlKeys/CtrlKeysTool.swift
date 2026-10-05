@@ -1,26 +1,10 @@
 import CoreGraphics
 import SwiftUI
 
-/// Игровой режим для Ctrl: сам Ctrl остаётся зажатым и виден игре,
-/// а все сочетания вида Ctrl+<клавиша> перестают долетать до системы.
-///
-/// Как это работает:
-/// - зажатие Ctrl — это отдельное событие `flagsChanged`, его не трогаем,
-///   поэтому игра продолжает видеть «Ctrl держится»;
-/// - нажатие/отпускание любой другой клавиши, пока держится Ctrl, —
-///   это `keyDown`/`keyUp` с флагом `.maskControl`. У таких событий флаг
-///   Ctrl снимается, и macOS больше не воспринимает их как системное
-///   сочетание (смена языка по Ctrl+Space, Mission Control по Ctrl+стрелкам
-///   и т.д.). Игра при этом всё равно знает, что Ctrl зажат, — по состоянию
-///   модификатора, — и получает саму клавишу (бег + прыжок работают).
-/// - если вместе с Ctrl зажат ещё и Cmd (Ctrl+Cmd+Space и т.п.), следом
-///   снимается и Cmd: иначе после снятия Ctrl событие деградировало бы
-///   до Cmd+Space и открыло бы Spotlight прямо посреди игры.
 @Observable
 final class CtrlKeysTool: Tool {
     let id = "ctrl-keys"
-    let name = "Ctrl+Keys"
-    let icon = "keyboard"
+    let icon = "control"
 
     private(set) var isActive = false
 
@@ -48,7 +32,7 @@ final class CtrlKeysTool: Tool {
     }
 
     private func start() {
-        let types: [CGEventType] = [.keyDown, .keyUp]
+        let types: [CGEventType] = [.keyDown, .keyUp, .leftMouseDown, .leftMouseUp, .leftMouseDragged]
         let mask = types.reduce(CGEventMask(0)) { $0 | (1 << $1.rawValue) }
 
         guard let tap = CGEvent.tapCreate(
@@ -94,11 +78,9 @@ private func ctrlKeysCallback(
             let tool = Unmanaged<CtrlKeysTool>.fromOpaque(refcon).takeUnretainedValue()
             DispatchQueue.main.async { tool.refresh() }
         }
-    case .keyDown, .keyUp:
+    case .keyDown, .keyUp, .leftMouseDown, .leftMouseUp, .leftMouseDragged:
         if event.flags.contains(.maskControl) {
             event.flags.remove(.maskControl)
-            // Ctrl+Cmd+<клавиша> без этого стал бы Cmd+<клавиша>
-            // (например, Spotlight по Cmd+Space) — режем и Cmd тоже.
             if event.flags.contains(.maskCommand) {
                 event.flags.remove(.maskCommand)
             }
@@ -115,8 +97,8 @@ private struct CtrlKeysSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: "Блокировать сочетания Ctrl",
-            subtitle: "Ctrl зажат для игры, а Ctrl+Space, Ctrl+стрелки и другие сочетания выключены",
+            title: String(localized: "Block Ctrl shortcuts"),
+            subtitle: String(localized: "Ctrl works as a plain key: no shortcuts, no Ctrl-click menu"),
             isOn: $tool.isEnabled
         )
     }

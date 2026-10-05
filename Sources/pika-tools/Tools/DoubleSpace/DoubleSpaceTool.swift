@@ -1,23 +1,10 @@
 import CoreGraphics
 import SwiftUI
 
-/// Фильтр двойного пробела для игр, где прыжок на пробеле жмут часто.
-///
-/// Пропускает первое нажатие пробела, а повторное быстрее паузы глотает —
-/// оно не доходит ни до игры, ни до системы (подстановка «двойной
-/// пробел → точка», подсказки ввода и прочие реакции не срабатывают,
-/// игра не пролагивает).
-///
-/// Что сознательно НЕ трогается, чтобы не сломать управление:
-/// - отпускание пробела (`keyUp`) — всегда проходит, залипших прыжков нет;
-/// - автоповтор удерживаемого пробела — проходит, держать прыжок можно;
-/// - пробел с модификаторами (Ctrl+пробел для бега+прыжка, Shift+пробел
-///   и т.п.) — всегда проходит, отвечает за них свой инструмент.
 @Observable
 final class DoubleSpaceTool: Tool {
     let id = "double-space"
-    let name = "DoubleSpace"
-    let icon = "timer"
+    let icon = "space"
 
     private(set) var isActive = false
 
@@ -27,8 +14,6 @@ final class DoubleSpaceTool: Tool {
             refresh()
         }
     }
-
-    /// Пауза в секундах: повторный пробел быстрее неё глотается.
     var interval: Double {
         didSet {
             UserDefaults.standard.set(interval, forKey: Self.intervalKey)
@@ -59,7 +44,6 @@ final class DoubleSpaceTool: Tool {
     }
 
     private func start() {
-        // Нужен только keyDown: keyUp и flagsChanged пропускаем всегда.
         let mask = CGEventMask(1 << CGEventType.keyDown.rawValue)
 
         guard let tap = CGEvent.tapCreate(
@@ -117,22 +101,19 @@ private func doubleSpaceCallback(
         return Unmanaged.passUnretained(event)
     case .keyDown:
         guard let refcon else { return Unmanaged.passUnretained(event) }
-        // Только пробел (keycode 49), всё остальное не наше.
         guard event.getIntegerValueField(.keyboardEventKeycode) == 49 else {
             return Unmanaged.passUnretained(event)
         }
-        // Автоповтор удерживаемого пробела — не двойное нажатие, пропускаем.
         guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else {
             return Unmanaged.passUnretained(event)
         }
-        // Пробел с модификаторами (бег+прыжок на Ctrl и т.п.) — пропускаем.
         let combo: CGEventFlags = [.maskControl, .maskCommand, .maskAlternate, .maskShift]
         guard event.flags.intersection(combo).isEmpty else {
             return Unmanaged.passUnretained(event)
         }
         let tool = Unmanaged<DoubleSpaceTool>.fromOpaque(refcon).takeUnretainedValue()
         let now = DispatchTime.now().uptimeNanoseconds
-        guard tool.shouldPassSpace(nowNs: now) else { return nil } // глотаем повтор
+        guard tool.shouldPassSpace(nowNs: now) else { return nil }
         return Unmanaged.passUnretained(event)
     default:
         return Unmanaged.passUnretained(event)
@@ -146,8 +127,8 @@ private struct DoubleSpaceSettings: View {
         VStack(spacing: 0) {
             ToggleRow(
                 icon: tool.icon,
-                title: "Фильтр двойного пробела",
-                subtitle: "Первый пробел — прыжок, повтор быстрее задержки глотается",
+                title: String(localized: "Double-space guard"),
+                subtitle: String(localized: "A second space within the delay is ignored"),
                 isOn: $tool.isEnabled
             )
             Divider()
@@ -157,23 +138,22 @@ private struct DoubleSpaceSettings: View {
                     .foregroundStyle(Color.secondary)
                     .frame(width: 28, height: 28)
                     .background(Color.secondary.opacity(0.15), in: Circle())
+                    .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text("Задержка повтора")
+                        Text("Repeat delay")
                             .font(.body.weight(.medium))
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 8)
-                        Text("\(Int(tool.interval * 1000)) мс")
+                        Text("\(Int(tool.interval * 1000)) ms")
                             .font(.callout.monospacedDigit())
                             .foregroundStyle(.secondary)
                             .fixedSize(horizontal: true, vertical: false)
                     }
                     Slider(value: $tool.interval, in: 0.05...0.3, step: 0.025)
                         .controlSize(.small)
-                    Text("Пробел, нажатый быстрее задержки, игнорируется везде")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel("Repeat delay")
+                        .accessibilityValue("\(Int(tool.interval * 1000)) ms")
                 }
             }
             .padding(10)

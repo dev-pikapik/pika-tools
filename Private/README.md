@@ -1,29 +1,27 @@
 # Private
 
-Сюда подключается отдельный приватный репозиторий — черновики, задумки и инструменты, которые пока не для всех.
-Публичная сборка от этой папки не зависит: нет её содержимого — всё собирается как обычно.
+This folder is where a separate private repository is mounted: drafts, experiments and tools that aren't public yet. The public build doesn't depend on it. If the folder is empty, everything builds as usual.
 
-## Подключить
+## Setup
 
 ```bash
 git rm -r --cached Private
 rm -rf Private
 git submodule add git@github.com:dev-pikapik/pika-tools-private.git Private
-git commit -m "Подключить приватный репозиторий"
+git commit -m "Add private submodule"
 ```
 
-Склонировать всё вместе:
+To clone everything at once:
 
 ```bash
 git clone --recurse-submodules git@github.com:dev-pikapik/pika-tools.git
 ```
 
-Без доступа к приватному репозиторию обычный `git clone` просто оставит папку пустой.
+Without access to the private repository, a regular `git clone` leaves this folder empty.
 
-## Приватные инструменты
+## Private tools
 
-Если в `Private/Sources/` есть `.swift`-файлы, `scripts/build.sh` сам добавит их в сборку и включит флаг `PIKA_PRIVATE`.
-Тогда в одном из файлов нужно объявить список:
+If `Private/Sources/` contains `.swift` files, `scripts/build.sh` adds them to the build and sets the `PIKA_PRIVATE` flag. One of those files then has to declare the list:
 
 ```swift
 let privateTools: [any Tool] = [
@@ -31,4 +29,4 @@ let privateTools: [any Tool] = [
 ]
 ```
 
-Секреты, ключи и токены не храни ни здесь, ни в публичном коде.
+Don't keep secrets, keys or tokens here or anywhere in the public code.

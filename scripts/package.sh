@@ -17,7 +17,7 @@ hdiutil create -volname pika-tools -srcfolder "$STAGE" -ov -format UDZO "$DMG" >
 rm -rf "$STAGE"
 
 if [ -n "${NOTARY_PROFILE:-}" ]; then
-    echo "Отправляю на нотаризацию"
+    echo "Submitting for notarization"
     xcrun notarytool submit "$DMG" --keychain-profile "$NOTARY_PROFILE" --wait
     xcrun stapler staple "$DMG"
     xcrun stapler staple "$APP"
@@ -26,4 +26,4 @@ fi
 ditto -c -k --keepParent "$APP" "$ZIP"
 
 shasum -a 256 "$DMG" "$ZIP"
-echo "Готово: $DMG и $ZIP"
+echo "Done: $DMG and $ZIP"

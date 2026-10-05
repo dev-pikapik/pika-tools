@@ -21,16 +21,16 @@ struct MenuView: View {
 
             ToggleRow(
                 icon: "power",
-                title: "Открывать при входе",
+                title: String(localized: "Open at Login"),
                 subtitle: loginItem.needsApproval
-                    ? "Разреши в Настройках › Основные › Объекты входа"
-                    : "Запустится сам, когда включишь Mac",
+                    ? String(localized: "Allow it in System Settings › General › Login Items")
+                    : String(localized: "Starts on its own when you log in"),
                 isOn: $loginItem.isOn
             )
             .glassCard()
 
             if !permissions.accessibility {
-                Label("Нет доступа — перехваты пока не работают", systemImage: "exclamationmark.triangle.fill")
+                Label("No access yet, so the tools can’t work", systemImage: "exclamationmark.triangle.fill")
                     .font(.callout)
                     .foregroundStyle(.orange)
                     .padding(.horizontal, 4)
@@ -42,11 +42,11 @@ struct MenuView: View {
                     registry.refresh()
                     PermissionsWindow.show()
                 } label: {
-                    Label("Проверить доступы", systemImage: "lock.shield")
+                    Label("Check Permissions", systemImage: "lock.shield")
                         .lineLimit(1)
                 }
                 Spacer(minLength: 8)
-                Button("Выйти") { NSApp.terminate(nil) }
+                Button("Quit") { NSApp.terminate(nil) }
                     .keyboardShortcut("q")
                     .fixedSize(horizontal: true, vertical: false)
             }
@@ -71,28 +71,28 @@ struct MenuView: View {
             Button {
                 Task { await updater.install() }
             } label: {
-                Label("Обновить до \(version)", systemImage: "arrow.down.circle.fill")
+                Label("Update to \(version)", systemImage: "arrow.down.circle.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
         }
 
         HStack(spacing: 6) {
-            Text("Версия \(updater.current)")
+            Text("Version \(updater.current)")
             Text("·")
             Group {
                 switch updater.state {
-                case .checking: Text("проверяю…")
-                case .installing: Text("ставлю обновление…")
-                case .upToDate: Text("свежая")
-                case .available: Text("есть новая")
+                case .checking: Text("checking…")
+                case .installing: Text("installing update…")
+                case .upToDate: Text("up to date")
+                case .available: Text("update available")
                 case .failed(let message): Text(message).help(message)
                 case .idle: EmptyView()
                 }
             }
             .lineLimit(1)
             Spacer(minLength: 8)
-            Button("Проверить") { Task { await updater.check() } }
+            Button("Check") { Task { await updater.check() } }
                 .buttonStyle(.link)
                 .fixedSize(horizontal: true, vertical: false)
                 .disabled(updater.state == .checking || updater.state == .installing)
@@ -111,6 +111,7 @@ struct MenuView: View {
                 .frame(width: 34, height: 34)
                 .background(registry.status == .active ? Color.accentColor : Color.secondary.opacity(0.15), in: Circle())
                 .contentTransition(.symbolEffect(.replace))
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 1) {
                 Text("pika-tools").font(.headline)
@@ -122,6 +123,7 @@ struct MenuView: View {
             Spacer()
         }
         .padding(.horizontal, 4)
+        .accessibilityElement(children: .combine)
         .animation(.snappy, value: registry.status)
     }
 }

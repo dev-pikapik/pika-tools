@@ -44,7 +44,7 @@ final class Updater {
                 state = .upToDate
             }
         } catch {
-            state = .failed("Не получилось проверить обновления")
+            state = .failed(String(localized: "Couldn’t check for updates"))
         }
     }
 
@@ -52,7 +52,7 @@ final class Updater {
         guard let assetURL else { return }
         let appURL = Bundle.main.bundleURL
         guard FileManager.default.isWritableFile(atPath: appURL.deletingLastPathComponent().path) else {
-            state = .failed("Нет прав на папку с приложением — обнови через brew или install.sh")
+            state = .failed(String(localized: "Can’t write to the app’s folder. Update with brew or install.sh"))
             return
         }
         state = .installing
@@ -82,7 +82,7 @@ final class Updater {
             try helper.run()
             NSApp.terminate(nil)
         } catch {
-            state = .failed("Обновление не скачалось, попробуй позже")
+            state = .failed(String(localized: "Download failed. Try again later"))
         }
     }
 

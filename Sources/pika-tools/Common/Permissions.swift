@@ -69,32 +69,32 @@ struct PermissionsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(permissions.allGranted ? "Всё готово" : "Дай pika-tools два разрешения")
+            Text(permissions.allGranted ? String(localized: "All set") : String(localized: "pika-tools needs two permissions"))
                 .font(.title3.weight(.semibold))
 
             Text(permissions.allGranted
-                 ? "Доступы есть. Перехваты работают: клики, Ctrl-сочетания и двойной пробел."
-                 : "Без них macOS не пустит приложение к кликам и клавишам. Открой System Settings › Privacy & Security и включи pika-tools в двух списках:")
+                 ? String(localized: "Both permissions are on and every tool is working.")
+                 : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pika-tools in these two lists:"))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
 
             VStack(spacing: 0) {
                 PermissionRow(
-                    title: "Accessibility",
-                    subtitle: "Универсальный доступ — чтобы менять клики и клавиши",
+                    title: String(localized: "Accessibility"),
+                    subtitle: String(localized: "Lets the app change clicks and keys"),
                     granted: permissions.accessibility
                 ) { permissions.openSettings("Privacy_Accessibility") }
                 Divider().padding(.leading, 46)
                 PermissionRow(
-                    title: "Input Monitoring",
-                    subtitle: "Мониторинг ввода — чтобы видеть клики и клавиши",
+                    title: String(localized: "Input Monitoring"),
+                    subtitle: String(localized: "Lets the app see clicks and keys"),
                     granted: permissions.inputMonitoring
                 ) { permissions.openSettings("Privacy_ListenEvent") }
             }
             .glassCard()
 
             if !permissions.allGranted {
-                Text("Проверяю сам каждые 1,5 секунды — перезапускать ничего не нужно. Если pika-tools уже стоит в списке, но не работает, удали его кнопкой «−» и добавь заново.")
+                Text("pika-tools checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -121,16 +121,18 @@ private struct PermissionRow: View {
                 .foregroundStyle(granted ? .green : .orange)
                 .frame(width: 28)
                 .contentTransition(.symbolEffect(.replace))
+                .accessibilityLabel(granted ? String(localized: "Allowed") : String(localized: "Not allowed"))
 
             VStack(alignment: .leading, spacing: 1) {
                 Text(title).font(.body.weight(.medium))
                 Text(subtitle).font(.caption).foregroundStyle(.secondary)
             }
+            .accessibilityElement(children: .combine)
 
             Spacer()
 
             if !granted {
-                Button("Открыть", action: open).glassButtons()
+                Button("Open", action: open).glassButtons()
             }
         }
         .padding(10)

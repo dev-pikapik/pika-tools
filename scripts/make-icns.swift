@@ -13,8 +13,12 @@ func color(_ spec: String) -> NSColor {
 }
 
 let json = try JSONSerialization.jsonObject(with: Data(contentsOf: source.appendingPathComponent("icon.json"))) as! [String: Any]
-let fill = (json["fill"] as! [String: Any])["linear-gradient"] as! [String]
-let background = NSGradient(colors: fill.map(color))!
+let args = CommandLine.arguments
+let preview = args.count == 4 && args[1] == "--preview" ? (dark: args[2] == "dark", path: args[3]) : nil
+let dark = preview?.dark ?? false
+let fills = json["fill-specializations"] as! [[String: Any]]
+let fill = fills.first { ($0["appearance"] as? String) == (dark ? "dark" : nil) }!["value"] as! [String: Any]
+let background = NSGradient(colors: (fill["linear-gradient"] as! [String]).map(color))!
 let layers = (json["groups"] as! [[String: Any]])
     .flatMap { $0["layers"] as! [[String: Any]] }
     .reversed()
@@ -46,11 +50,11 @@ func render(_ px: Int) -> Data {
     cg.addPath(shape)
     cg.clip()
     background.draw(in: tile, angle: -90)
-    NSGradient(colors: [NSColor(white: 1, alpha: 0.28), NSColor(white: 1, alpha: 0)])!
+    NSGradient(colors: [NSColor(white: 1, alpha: 0.12), NSColor(white: 1, alpha: 0)])!
         .draw(in: CGRect(x: 100, y: 512, width: 824, height: 412), angle: -90)
 
     cg.setShadow(offset: CGSize(width: 0, height: -14 * k), blur: 28 * k,
-                 color: NSColor(red: 0.55, green: 0.22, blue: 0, alpha: 0.45).cgColor)
+                 color: NSColor(white: 0, alpha: dark ? 0.5 : 0.22).cgColor)
     cg.beginTransparencyLayer(auxiliaryInfo: nil)
     if px <= 32 {
         cg.translateBy(x: 512, y: 512)
@@ -64,12 +68,17 @@ func render(_ px: Int) -> Data {
     cg.restoreGState()
 
     cg.addPath(shape)
-    cg.setStrokeColor(NSColor(white: 1, alpha: 0.35).cgColor)
+    cg.setStrokeColor(dark ? NSColor(white: 1, alpha: 0.18).cgColor : NSColor(white: 0, alpha: 0.12).cgColor)
     cg.setLineWidth(max(2, 1 / k))
     cg.strokePath()
 
     NSGraphicsContext.restoreGraphicsState()
     return rep.representation(using: .png, properties: [:])!
+}
+
+if let preview {
+    try render(1024).write(to: URL(fileURLWithPath: preview.path))
+    exit(0)
 }
 
 let iconset = FileManager.default.temporaryDirectory.appendingPathComponent("AppIcon.iconset")
@@ -86,5 +95,5 @@ iconutil.arguments = ["-c", "icns", iconset.path, "-o", output.path]
 try iconutil.run()
 iconutil.waitUntilExit()
 guard iconutil.terminationStatus == 0 else { exit(1) }
-print("Готово: \(output.path)")
-print("Картинки: \(iconset.path)")
+print("Done: \(output.path)")
+print("Iconset: \(iconset.path)")

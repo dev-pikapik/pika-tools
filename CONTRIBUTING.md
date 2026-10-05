@@ -1,0 +1,95 @@
+# Contributing
+
+Bug reports and ideas are welcome in [Issues](https://github.com/dev-pikapik/pika-tools/issues). This page covers building, the code layout and how releases are made.
+
+## Building from source
+
+All you need is the Xcode Command Line Tools. Xcode itself isn't required: the app is built with plain `swiftc`.
+
+```bash
+git clone https://github.com/dev-pikapik/pika-tools.git
+cd pika-tools
+./scripts/build.sh      # build/pika-tools.app
+./scripts/package.sh    # build/pika-tools.dmg and build/pika-tools.zip
+```
+
+`install.sh` can also build from source: add `-- --source` after the install command from the README.
+
+Local builds are signed ad-hoc, which is fine for your own Mac. macOS treats every ad-hoc build as a new app, so after a rebuild you may need to remove pika-tools from Accessibility and Input Monitoring with the − button and add it again.
+
+To sign with a Developer ID and notarize:
+
+```bash
+xcrun notarytool store-credentials pika-notary --apple-id you@example.com --team-id TEAMID
+SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" NOTARY_PROFILE=pika-notary ./scripts/package.sh
+```
+
+## Layout
+
+```
+Sources/pika-tools/
+  main.swift, App.swift, MenuView.swift
+  Tools/Tool.swift                   Tool protocol and ToolRegistry
+  Tools/CtrlKeys/CtrlKeysTool.swift
+  Tools/DoubleSpace/DoubleSpaceTool.swift, SpaceDebouncer.swift
+  Tools/InputSwitch/InputSwitchTool.swift, InputSwitchGesture.swift
+  Common/                            shared UI, permissions, login item, updater
+Resources/<lang>.lproj/              Localizable.strings
+Resources/AppIcon.icon               app icon, AppIcon.icns is the fallback
+Casks/pika-tools.rb                  Homebrew cask
+scripts/                             build, package, release, icon, tests
+```
+
+Ctrl shortcuts are caught with a `CGEventTap` before events reach other apps, for `keyDown`/`keyUp` and the left mouse button (`leftMouseDown`/`leftMouseUp`/`leftMouseDragged`). Events that arrive with Ctrl held lose the Ctrl flag, and the Cmd flag too if Cmd is also held, so Ctrl+Cmd+Space doesn't turn into Cmd+Space (Spotlight) and Ctrl+Cmd-click doesn't become Cmd-click. The `flagsChanged` event for Ctrl itself is left alone, so apps still see Ctrl held while macOS sees no shortcut. Right-click is never touched.
+
+The double-space guard is a second `CGEventTap` that only looks at `keyDown` for space (keycode 49). The first press always passes, a repeat faster than the delay is dropped. Key up, auto-repeat while holding space and space with modifiers always pass. The timing logic lives in `SpaceDebouncer`, a plain struct with no dependencies.
+
+The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/InputSwitch/InputSwitchGesture.swift scripts/test-input-switch.swift -o build/test-input-switch && build/test-input-switch
+```
+
+### Adding a tool
+
+1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
+2. Add one line to `ToolRegistry.tools` in `Tools/Tool.swift`.
+
+### Strings
+
+English is the development language and the keys are the English text. Use `String(localized: "…")` when you need a `String`, and plain literals in SwiftUI (`Text("…")`, `Button("…")`). Every new key goes into all `Resources/*.lproj/Localizable.strings` files, and they all must have the same set of keys. Check with:
+
+```bash
+for f in Resources/*.lproj/Localizable.strings; do plutil -lint "$f"; done
+```
+
+## Private tools
+
+`Private/` is reserved for a private submodule with drafts and tools that aren't public yet. The public build doesn't depend on it. See [Private/README.md](Private/README.md).
+
+## Releasing
+
+```bash
+./scripts/release.sh 1.3.0
+```
+
+The script bumps the version in `Info.plist`, commits, tags `v1.3.0` and pushes. GitHub Actions does the rest on a `macos-26` runner: builds the universal app, signs it, checks the signature, publishes the `.zip` and `.dmg` to Releases and updates `Casks/pika-tools.rb` on `main`. Installed copies pick up the new version on their own.
+
+Update `CHANGELOG.md` before running the script.
+
+### Signing
+
+Releases are signed with a permanent self-issued certificate, so macOS keeps the Accessibility and Input Monitoring permissions across updates. The certificate lives in two repository secrets:
+
+- `SIGN_P12`: the certificate and private key exported as `.p12`, base64-encoded.
+- `SIGN_P12_PASSWORD`: the password for that `.p12`.
+
+The certificate's common name must be `pikapik`. Without these secrets the release job fails on purpose: an ad-hoc signed release would reset everyone's permissions.
+
+## Icon
+
+The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dark variants. CI compiles it with `actool` on macOS 26. macOS 14 and 15 use the fallback `Resources/AppIcon.icns`, which `build.sh` also uses when `actool` isn't available. After changing the icon, regenerate the fallback:
+
+```bash
+swift scripts/make-icns.swift
+```

@@ -13,6 +13,7 @@ struct ToggleRow: View {
                 .foregroundStyle(isOn ? Color.white : Color.secondary)
                 .frame(width: 28, height: 28)
                 .background(isOn ? Color.accentColor : Color.secondary.opacity(0.15), in: Circle())
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -34,6 +35,9 @@ struct ToggleRow: View {
         .padding(10)
         .contentShape(Rectangle())
         .onTapGesture { isOn.toggle() }
+        .accessibilityRepresentation {
+            Toggle(title, isOn: $isOn).accessibilityHint(subtitle)
+        }
         .animation(.snappy, value: isOn)
     }
 }

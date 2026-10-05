@@ -3,7 +3,6 @@ import SwiftUI
 
 protocol Tool: AnyObject {
     var id: String { get }
-    var name: String { get }
     var icon: String { get }
     var isEnabled: Bool { get set }
     var isActive: Bool { get }
@@ -16,9 +15,9 @@ enum ToolStatus {
 
     var title: String {
         switch self {
-        case .active: "Активно"
-        case .off: "Выключено"
-        case .needsAccess: "Нужен доступ"
+        case .active: String(localized: "Active")
+        case .off: String(localized: "Off")
+        case .needsAccess: String(localized: "Needs Access")
         }
     }
 
@@ -48,9 +47,9 @@ final class ToolRegistry {
     static let shared = ToolRegistry()
 
     let tools: [any Tool] = [
-        CtrlClickTool(),
         CtrlKeysTool(),
         DoubleSpaceTool(),
+        InputSwitchTool(),
     ] + privateTools
 
     var status: ToolStatus {

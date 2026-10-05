@@ -16,11 +16,11 @@ FLAGS=()
 if [ -d Private/Sources ] && [ -n "$(find Private/Sources -name '*.swift' -print -quit)" ]; then
     while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Private/Sources -name '*.swift' -print0)
     FLAGS+=(-D PIKA_PRIVATE)
-    echo "Подключаю Private/Sources"
+    echo "Including Private/Sources"
 fi
 
 for ARCH in arm64 x86_64; do
-    echo "Собираю $ARCH"
+    echo "Building $ARCH"
     swiftc -O -whole-module-optimization \
         -module-name PikaTools \
         -target "$ARCH-apple-macos$MIN_OS" \
@@ -35,6 +35,7 @@ cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 
 RES="$APP/Contents/Resources"
 mkdir -p "$RES"
+cp -R Resources/*.lproj "$RES/"
 if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
         --compile "$RES" \
         --app-icon AppIcon \
@@ -45,19 +46,21 @@ if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
         && [ -f "$RES/Assets.car" ]; then
     [ -f "$RES/AppIcon.icns" ] || cp Resources/AppIcon.icns "$RES/AppIcon.icns"
     /usr/libexec/PlistBuddy -c "Add :CFBundleIconName string AppIcon" "$APP/Contents/Info.plist"
-    echo "Иконка: Assets.car из AppIcon.icon"
+    echo "Icon: Assets.car from AppIcon.icon"
 else
     [ -s build/actool.log ] && tail -5 build/actool.log
     rm -f "$RES/Assets.car"
     cp Resources/AppIcon.icns "$RES/AppIcon.icns"
-    echo "Иконка: готовый AppIcon.icns"
+    echo "Icon: prebuilt AppIcon.icns"
 fi
 rm -f build/icon-info.plist build/actool.log
 
 if [ "$SIGN_IDENTITY" = "-" ]; then
     codesign --force --sign - "$APP"
-else
+elif [[ "$SIGN_IDENTITY" == "Developer ID"* ]]; then
     codesign --force --options runtime --timestamp --sign "$SIGN_IDENTITY" "$APP"
+else
+    codesign --force --options runtime --sign "$SIGN_IDENTITY" "$APP"
 fi
 
-echo "Готово: $APP ($(lipo -archs "$APP/Contents/MacOS/pika-tools"))"
+echo "Done: $APP ($(lipo -archs "$APP/Contents/MacOS/pika-tools"))"
