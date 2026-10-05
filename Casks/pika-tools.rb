@@ -1,6 +1,6 @@
 cask "pika-tools" do
-  version "1.0.0"
-  sha256 "c71f8c060d9309343e6dc149649f046e5b20dc3104e9e1804f6feaf42d45e1e7"
+  version "1.0.1"
+  sha256 "396d235bc369a8b686d128bd7dc1873ed0b256d9b8ff2160aa9d441cb5b0377e"
 
   url "https://github.com/dev-pikapik/pika-tools/releases/download/v#{version}/pika-tools.zip"
   name "pika-tools"
