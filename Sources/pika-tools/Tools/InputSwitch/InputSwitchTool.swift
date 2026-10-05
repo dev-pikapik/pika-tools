@@ -125,8 +125,8 @@ private struct InputSwitchSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Switch language with Option+Shift"),
-            subtitle: String(localized: "Option then Shift: next language. Shift then Option: previous"),
+            title: String(localized: "Switch language with ⌥⇧"),
+            subtitle: Text("⌥ then ⇧: next language. ⇧ then ⌥: previous"),
             isOn: $tool.isEnabled
         )
     }

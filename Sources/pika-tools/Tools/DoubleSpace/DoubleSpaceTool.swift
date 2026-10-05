@@ -137,6 +137,7 @@ private struct DoubleSpaceSettings: View {
                 Text("\(Int(tool.interval * 1000)) ms").monospacedDigit()
             }
             .disabled(!tool.isEnabled)
+            .settingAnchor(String(localized: "Repeat delay"))
         } else {
             menuRows
         }
@@ -146,7 +147,7 @@ private struct DoubleSpaceSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: String(localized: "Double-space guard"),
-            subtitle: String(localized: "A second space within the delay is ignored"),
+            subtitle: Text("A second space within the delay is ignored"),
             isOn: $tool.isEnabled
         )
     }

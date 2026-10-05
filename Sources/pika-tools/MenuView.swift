@@ -7,8 +7,6 @@ struct MenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            header
-
             VStack(spacing: 0) {
                 ForEach(Array(registry.tools.enumerated()), id: \.element.id) { index, tool in
                     if index > 0 {
@@ -22,7 +20,7 @@ struct MenuView: View {
             ToggleRow(
                 icon: "cup.and.saucer",
                 title: String(localized: "Keep Awake"),
-                subtitle: keepAwake.status,
+                subtitle: keepAwake.statusText,
                 isOn: $keepAwake.isOn
             )
             .glassCard()
@@ -72,48 +70,5 @@ struct MenuView: View {
             }
             .buttonStyle(.borderedProminent)
         }
-
-        HStack(spacing: 6) {
-            Text("Version \(updater.current)")
-            if let status = updater.state.title {
-                Text("·")
-                Text(status)
-                    .lineLimit(1)
-                    .help(status)
-            }
-            Spacer(minLength: 8)
-            Button("Check") { Task { await updater.check() } }
-                .buttonStyle(.link)
-                .fixedSize(horizontal: true, vertical: false)
-                .disabled(updater.state == .checking || updater.state == .installing)
-        }
-        .font(.caption)
-        .foregroundStyle(.secondary)
-        .padding(.horizontal, 4)
-        .padding(.top, 2)
-    }
-
-    private var header: some View {
-        HStack(spacing: 10) {
-            Image(systemName: registry.status.icon)
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundStyle(registry.status == .active ? Color.white : registry.status.color)
-                .frame(width: 34, height: 34)
-                .background(registry.status == .active ? Color.accentColor : Color.secondary.opacity(0.15), in: Circle())
-                .contentTransition(.symbolEffect(.replace))
-                .accessibilityHidden(true)
-
-            VStack(alignment: .leading, spacing: 1) {
-                Text("pika-tools").font(.headline)
-                Text(registry.status.title)
-                    .font(.subheadline)
-                    .foregroundStyle(registry.status.color)
-            }
-
-            Spacer()
-        }
-        .padding(.horizontal, 4)
-        .accessibilityElement(children: .combine)
-        .animation(.snappy, value: registry.status)
     }
 }

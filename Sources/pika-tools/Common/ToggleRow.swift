@@ -3,7 +3,7 @@ import SwiftUI
 struct ToggleRow: View {
     let icon: String
     let title: String
-    let subtitle: String
+    let subtitle: Text
     @Binding var isOn: Bool
     @Environment(\.inSettings) private var inSettings
 
@@ -11,8 +11,9 @@ struct ToggleRow: View {
         if inSettings {
             Toggle(isOn: $isOn) {
                 Text(title)
-                Text(subtitle)
+                subtitle
             }
+            .settingAnchor(title)
         } else {
             row
         }
@@ -31,7 +32,7 @@ struct ToggleRow: View {
                 Text(title)
                     .font(.body.weight(.medium))
                     .fixedSize(horizontal: false, vertical: true)
-                Text(subtitle)
+                subtitle
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

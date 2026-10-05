@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] - Unreleased
+
+### Added
+- Back and Forward buttons in the Settings toolbar, with ⌘[ and ⌘].
+- Search finds settings, not just pages: matches show under their page, and clicking one opens it and highlights the setting. Synonyms work too, like "sleep" or "autostart".
+- Keep Awake shows a live countdown and the end time, in Settings and in the menu.
+
+### Changed
+- The Settings window has the size and layout of System Settings: the sidebar sits at the left edge, the window only grows in height.
+- Sidebar icons follow the Icon & widget style on macOS 26: Default, Dark, Clear and Tinted.
+- The app icon is amber again, with a white arrow.
+- Name, version and updates live only in About. The menu shows just an Update button when a new version is out.
+- Modifier keys use their symbols: ⌃ Control, ⌥ Option, ⇧ Shift.
+- Work with the lid closed is shown on desktop Macs too, but turned off with a note that it works only on Mac laptops.
+
+### Fixed
+- An empty area next to the Settings content when the window got wider.
+- Work with the lid closed stayed on after a canceled password prompt.
+
 ## [1.4.0] - Unreleased
 
 ### Added

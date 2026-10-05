@@ -34,47 +34,102 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         }
     }
 
-    private var keywords: [String] {
-        switch self {
-        case .general:
-            [String(localized: "Open at Login"), String(localized: "Appearance"), String(localized: "Language"),
-             String(localized: "Updates"), String(localized: "Check for updates automatically")]
-        case .keyboard:
-            [String(localized: "Block Ctrl shortcuts"), String(localized: "Double-space guard"),
-             String(localized: "Repeat delay"), String(localized: "Switch language with Option+Shift")]
-        case .keepAwake:
-            [String(localized: "Keep your Mac awake"), String(localized: "Keep the display on"),
-             String(localized: "Work with the lid closed")]
-        case .permissions:
-            [String(localized: "Accessibility"), String(localized: "Input Monitoring")]
-        case .about:
-            ["GitHub", String(localized: "What’s New"), String(localized: "Report a Problem"), String(localized: "License (MIT)")]
+    static var iconSize: CGFloat {
+        switch UserDefaults.standard.integer(forKey: "NSTableViewDefaultSizeMode") {
+        case 1: 18
+        case 3: 24
+        default: 20
         }
     }
 
-    func matches(_ query: String) -> Bool {
-        query.isEmpty || ([title] + keywords).contains { $0.localizedStandardContains(query) }
+    func icon(size: CGFloat = iconSize) -> some View {
+        SectionIcon(symbol: symbol, color: color, size: size)
+    }
+}
+
+struct SettingsItem: Identifiable {
+    let tab: SettingsTab
+    let title: String
+    var synonyms = ""
+
+    var id: String { title }
+
+    static var all: [SettingsItem] {
+        [
+            SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
+            SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
+            SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Double-space guard"), synonyms: "space bar, typing, period"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Repeat delay"), synonyms: "space bar, interval, milliseconds"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, hours, minutes"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
+            SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .about, title: String(localized: "Check for updates automatically"), synonyms: "update, new version, software update"),
+            SettingsItem(tab: .about, title: String(localized: "What’s New"), synonyms: "changelog, release notes, version"),
+            SettingsItem(tab: .about, title: String(localized: "Report a Problem"), synonyms: "bug, issue, feedback, support"),
+            SettingsItem(tab: .about, title: String(localized: "License (MIT)"), synonyms: "open source, legal"),
+            SettingsItem(tab: .about, title: "GitHub", synonyms: "open source, legal"),
+        ]
     }
 
-    func icon(size: CGFloat) -> some View {
-        Image(systemName: symbol)
-            .font(.system(size: size * 0.55, weight: .medium))
-            .foregroundStyle(.white)
-            .frame(width: size, height: size)
-            .background(color.gradient, in: RoundedRectangle(cornerRadius: size * 0.25, style: .continuous))
-            .accessibilityHidden(true)
+    func matches(_ query: String) -> Bool {
+        let words = synonyms + ", " + Bundle.main.localizedString(forKey: synonyms, value: nil, table: nil)
+        return [title, words].contains { $0.localizedStandardContains(query) }
     }
 }
 
 enum SettingsWindow {
     @Observable
     final class Model {
-        var selection: SettingsTab? = .general
+        var selection: SettingsTab? = .general {
+            didSet {
+                guard !navigating, let oldValue, oldValue != selection else { return }
+                back.append(oldValue)
+                forward = []
+            }
+        }
         var search = ""
+        var highlight: String?
+        private(set) var back: [SettingsTab] = []
+        private(set) var forward: [SettingsTab] = []
+        @ObservationIgnored private var navigating = false
+
+        func goBack() {
+            guard let tab = back.popLast() else { return }
+            selection.map { forward.append($0) }
+            move(to: tab)
+        }
+
+        func goForward() {
+            guard let tab = forward.popLast() else { return }
+            selection.map { back.append($0) }
+            move(to: tab)
+        }
+
+        private func move(to tab: SettingsTab) {
+            navigating = true
+            selection = tab
+            navigating = false
+        }
+
+        func open(_ item: SettingsItem) {
+            selection = item.tab
+            highlight = nil
+            highlight = item.id
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                if self.highlight == item.id { self.highlight = nil }
+            }
+        }
     }
 
     static let model = Model()
-    private static var window: NSWindow?
+    private(set) static var window: NSWindow?
 
     static func show(_ tab: SettingsTab? = nil) {
         if let tab {
@@ -88,19 +143,26 @@ enum SettingsWindow {
     }
 
     private static func create() {
+        let width: CGFloat = 902
+        let height = min(1074, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
         let host = NSHostingController(rootView: SettingsView())
         host.sizingOptions = []
         host.sceneBridgingOptions = [.toolbars, .title]
-        host.view.frame.size = NSSize(width: 715, height: 560)
         let window = NSWindow(contentViewController: host)
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
         window.titlebarAppearsTransparent = true
         window.toolbarStyle = .unified
+        window.collectionBehavior.insert(.fullScreenNone)
         window.isReleasedWhenClosed = false
-        window.setContentSize(NSSize(width: 715, height: 560))
-        window.contentMinSize = NSSize(width: 715, height: 400)
-        window.contentMaxSize = NSSize(width: 715, height: 2000)
+        window.title = (model.selection ?? .general).title
+        window.contentMinSize = NSSize(width: width, height: 480)
+        window.contentMaxSize = NSSize(width: width, height: 4000)
+        window.setContentSize(NSSize(width: width, height: height))
         window.center()
+        window.setFrameAutosaveName("Settings")
+        if window.frame.width != width {
+            window.setContentSize(NSSize(width: width, height: window.contentLayoutRect.height))
+        }
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
             NSApp.setActivationPolicy(.accessory)
         }
@@ -121,60 +183,131 @@ private struct SettingsView: View {
     @Bindable private var model = SettingsWindow.model
 
     var body: some View {
-        NavigationSplitView(columnVisibility: .constant(.all)) {
+        let tab = model.selection ?? .general
+        NavigationSplitView {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Button { model.selection = .about } label: { appCard }
-                        .buttonStyle(.plain)
+                    Section { rows([.general, .keyboard, .keepAwake]) }
+                    Section { rows([.permissions, .about]) }
+                } else {
+                    results
                 }
-                Section { rows([.general, .keyboard, .keepAwake]) }
-                Section { rows([.permissions, .about]) }
             }
             .listStyle(.sidebar)
             .toolbar(removing: .sidebarToggle)
-            .navigationSplitViewColumnWidth(min: 215, ideal: 215, max: 215)
+            .navigationSplitViewColumnWidth(305)
         } detail: {
-            detail
-                .navigationSplitViewColumnWidth(min: 450, ideal: 500)
-                .navigationTitle((model.selection ?? .general).title)
+            detail(tab)
+                .navigationTitle(tab.title)
+                .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        ControlGroup {
+                            Button { model.goBack() } label: { Label("Back", systemImage: "chevron.backward") }
+                                .keyboardShortcut("[")
+                                .disabled(model.back.isEmpty)
+                            Button { model.goForward() } label: { Label("Forward", systemImage: "chevron.forward") }
+                                .keyboardShortcut("]")
+                                .disabled(model.forward.isEmpty)
+                        }
+                        .controlGroupStyle(.navigation)
+                    }
+                }
         }
         .searchable(text: $model.search, placement: .sidebar)
-        .frame(width: 715)
-        .frame(minHeight: 400)
+        .onChange(of: tab, initial: true) { SettingsWindow.window?.title = tab.title }
     }
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
-        ForEach(tabs.filter { $0.matches(model.search) }) { tab in
-            Label { Text(tab.title) } icon: { tab.icon(size: 20) }
+        ForEach(tabs) { tab in
+            Label { Text(tab.title) } icon: { tab.icon() }
                 .tag(tab)
         }
     }
 
-    private var appCard: some View {
-        HStack(spacing: 10) {
-            Image(nsImage: NSApp.applicationIconImage)
-                .resizable()
-                .frame(width: 36, height: 36)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 1) {
-                Text(verbatim: "pika-tools").font(.headline)
-                Text("Version \(Updater.shared.current)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+    @ViewBuilder
+    private var results: some View {
+        let query = model.search.trimmingCharacters(in: .whitespaces)
+        let items = SettingsItem.all.filter { $0.matches(query) }
+        let tabs = SettingsTab.allCases.filter { tab in
+            tab.title.localizedStandardContains(query) || items.contains { $0.tab == tab }
+        }
+        if tabs.isEmpty {
+            Text("No Results")
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+        }
+        ForEach(tabs) { tab in
+            Label { Text(tab.title) } icon: { tab.icon() }
+                .tag(tab)
+            ForEach(items.filter { $0.tab == tab }) { item in
+                Button { model.open(item) } label: {
+                    Text(item.title)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .padding(.leading, SettingsTab.iconSize + 6)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
             }
         }
-        .padding(.vertical, 6)
-        .contentShape(Rectangle())
     }
 
     @ViewBuilder
-    private var detail: some View {
-        switch model.selection ?? .general {
+    private func detail(_ tab: SettingsTab) -> some View {
+        switch tab {
         case .general: GeneralSettings()
         case .keyboard: KeyboardSettings()
         case .keepAwake: KeepAwakeSettings()
         case .permissions: PermissionsView()
         case .about: AboutView()
+        }
+    }
+}
+
+extension View {
+    func settingAnchor(_ id: String) -> some View {
+        modifier(SettingAnchor(id: id))
+    }
+
+    func settingsPage() -> some View {
+        modifier(SettingsPage())
+    }
+}
+
+private struct SettingAnchor: ViewModifier {
+    let id: String
+    private let model = SettingsWindow.model
+
+    func body(content: Content) -> some View {
+        content
+            .id(id)
+            .background {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .fill(Color.accentColor.opacity(model.highlight == id ? 0.25 : 0))
+                    .padding(.horizontal, -8)
+                    .padding(.vertical, -6)
+                    .animation(.easeInOut(duration: 0.4), value: model.highlight)
+            }
+    }
+}
+
+private struct SettingsPage: ViewModifier {
+    private let model = SettingsWindow.model
+
+    func body(content: Content) -> some View {
+        ScrollViewReader { proxy in
+            content
+                .onAppear { scroll(proxy) }
+                .onChange(of: model.highlight) { scroll(proxy) }
+        }
+    }
+
+    private func scroll(_ proxy: ScrollViewProxy) {
+        guard let id = model.highlight else { return }
+        DispatchQueue.main.async {
+            withAnimation { proxy.scrollTo(id, anchor: .center) }
         }
     }
 }
@@ -186,19 +319,22 @@ struct SettingsHeader: View {
 
     var body: some View {
         Section {
-            VStack(spacing: 6) {
-                tab.icon(size: 44)
-                    .padding(.bottom, 4)
+            VStack(spacing: 0) {
+                tab.icon(size: 48)
+                    .padding(.bottom, 12)
                 Text(title ?? tab.title)
-                    .font(.title3.weight(.semibold))
+                    .font(.title.bold())
+                    .padding(.bottom, 4)
                 Text(text)
-                    .font(.callout)
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
+            .padding(.top, 14)
+            .padding(.bottom, 10)
+            .padding(.horizontal, 24)
         }
     }
 }
@@ -257,13 +393,12 @@ final class Language {
 
 private struct GeneralSettings: View {
     @Bindable private var loginItem = LoginItem.shared
-    @Bindable private var updater = Updater.shared
     @AppStorage("appearance") private var appearance = Appearance.system
     @Bindable private var language = Language.shared
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .general, text: String(localized: "How pika-tools starts, looks and updates."))
+            SettingsHeader(tab: .general, text: String(localized: "How pika-tools starts and looks."))
             Section {
                 Toggle(isOn: $loginItem.isOn) {
                     Text("Open at Login")
@@ -271,14 +406,17 @@ private struct GeneralSettings: View {
                          ? String(localized: "Allow it in System Settings › General › Login Items")
                          : String(localized: "Starts on its own when you log in"))
                 }
+                .settingAnchor(String(localized: "Open at Login"))
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
                 }
+                .settingAnchor(String(localized: "Appearance"))
                 Picker("Language", selection: $language.selected) {
                     Text("System").tag("")
                     Divider()
                     ForEach(Language.codes, id: \.self) { Text(verbatim: Language.name($0)).tag($0) }
                 }
+                .settingAnchor(String(localized: "Language"))
                 if language.selected != language.atLaunch {
                     LabeledContent("Restart pika-tools to apply") {
                         Button("Restart") { SettingsWindow.restart() }
@@ -287,23 +425,9 @@ private struct GeneralSettings: View {
                 }
             }
 
-            Section("Updates") {
-                Toggle("Check for updates automatically", isOn: $updater.checksAutomatically)
-                LabeledContent {
-                    if case .available(let version) = updater.state {
-                        Button("Update to \(version)") { Task { await updater.install() } }
-                            .buttonStyle(.borderedProminent)
-                    } else {
-                        Button("Check Now") { Task { await updater.check() } }
-                            .disabled(updater.state == .checking || updater.state == .installing)
-                    }
-                } label: {
-                    Text("Version \(updater.current)")
-                    if let status = updater.state.title { Text(status) }
-                }
-            }
         }
         .formStyle(.grouped)
+        .settingsPage()
         .onAppear { loginItem.refresh() }
     }
 }
@@ -417,35 +541,56 @@ private struct KeyboardSettings: View {
             }
         }
         .formStyle(.grouped)
+        .settingsPage()
         .environment(\.inSettings, true)
     }
 }
 
 private struct AboutView: View {
+    @Bindable private var updater = Updater.shared
     private let info = Bundle.main.infoDictionary ?? [:]
     private var version: String {
         "\(info["CFBundleShortVersionString"] ?? "") (\(info["CFBundleVersion"] ?? ""))"
+    }
+    private var icon: NSImage {
+        _ = IconStyle.shared.theme
+        return NSWorkspace.shared.icon(forFile: Bundle.main.bundlePath)
     }
 
     var body: some View {
         Form {
             Section {
                 VStack(spacing: 4) {
-                    Image(nsImage: NSApp.applicationIconImage)
+                    Image(nsImage: icon)
                         .resizable()
                         .frame(width: 96, height: 96)
                         .accessibilityHidden(true)
                     Text(verbatim: "pika-tools")
-                        .font(.title2.weight(.semibold))
-                    Text("Version \(version)")
-                        .foregroundStyle(.secondary)
-                        .textSelection(.enabled)
+                        .font(.title.bold())
                     Text("Small fixes for the keyboard, mouse and sleep")
-                        .padding(.top, 6)
+                        .foregroundStyle(.secondary)
                 }
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
+                .padding(.vertical, 10)
+            }
+
+            Section("Updates") {
+                Toggle("Check for updates automatically", isOn: $updater.checksAutomatically)
+                    .settingAnchor(String(localized: "Check for updates automatically"))
+                LabeledContent {
+                    if case .available(let version) = updater.state {
+                        Button("Update to \(version)") { Task { await updater.install() } }
+                            .buttonStyle(.borderedProminent)
+                    } else {
+                        Button("Check Now") { Task { await updater.check() } }
+                            .disabled(updater.state == .checking || updater.state == .installing)
+                    }
+                } label: {
+                    Text("Version \(version)")
+                        .textSelection(.enabled)
+                    if let status = updater.state.title { Text(status) }
+                }
             }
 
             Section {
@@ -461,6 +606,7 @@ private struct AboutView: View {
             }
         }
         .formStyle(.grouped)
+        .settingsPage()
     }
 
     private func link(_ title: String, _ url: String) -> some View {
@@ -475,5 +621,6 @@ private struct AboutView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .settingAnchor(title)
     }
 }

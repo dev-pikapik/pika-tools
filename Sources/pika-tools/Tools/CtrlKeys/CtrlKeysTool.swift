@@ -97,8 +97,8 @@ private struct CtrlKeysSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Block Ctrl shortcuts"),
-            subtitle: String(localized: "Ctrl works as a plain key: no shortcuts, no Ctrl-click menu"),
+            title: String(localized: "Block ⌃ Control shortcuts"),
+            subtitle: Text("⌃ works as a plain key: no shortcuts, no ⌃-click menu"),
             isOn: $tool.isEnabled
         )
     }

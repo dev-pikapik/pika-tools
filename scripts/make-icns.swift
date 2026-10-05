@@ -16,8 +16,7 @@ let json = try JSONSerialization.jsonObject(with: Data(contentsOf: source.append
 let args = CommandLine.arguments
 let preview = args.count == 4 && args[1] == "--preview" ? (dark: args[2] == "dark", path: args[3]) : nil
 let dark = preview?.dark ?? false
-let fills = json["fill-specializations"] as! [[String: Any]]
-let fill = fills.first { ($0["appearance"] as? String) == (dark ? "dark" : nil) }!["value"] as! [String: Any]
+let fill = json["fill"] as! [String: Any]
 let background = NSGradient(colors: (fill["linear-gradient"] as! [String]).map(color))!
 let layers = (json["groups"] as! [[String: Any]])
     .flatMap { $0["layers"] as! [[String: Any]] }

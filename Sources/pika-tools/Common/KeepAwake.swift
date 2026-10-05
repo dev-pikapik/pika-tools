@@ -14,9 +14,24 @@ final class KeepAwake {
     private static let lidFlagKey = "keep-awake-lid-sleep-disabled"
 
     let hasLid: Bool = {
+        if let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
+           let sources = IOPSCopyPowerSourcesList(info)?.takeRetainedValue() as? [CFTypeRef],
+           sources.contains(where: {
+               (IOPSGetPowerSourceDescription(info, $0)?.takeUnretainedValue() as? [String: Any])?[kIOPSTypeKey] as? String == kIOPSInternalBatteryType
+           }) {
+            return true
+        }
         let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("IOPMrootDomain"))
         defer { IOObjectRelease(service) }
-        return IORegistryEntryCreateCFProperty(service, "AppleClamshellState" as CFString, kCFAllocatorDefault, 0) != nil
+        if ["AppleClamshellState", "AppleClamshellCausesSleep"].contains(where: {
+            IORegistryEntryCreateCFProperty(service, $0 as CFString, kCFAllocatorDefault, 0) != nil
+        }) {
+            return true
+        }
+        var displays = [CGDirectDisplayID](repeating: 0, count: 16)
+        var count: UInt32 = 0
+        CGGetOnlineDisplayList(16, &displays, &count)
+        return displays.prefix(Int(count)).contains { CGDisplayIsBuiltin($0) != 0 }
     }()
 
     private(set) var mode = Mode.off
@@ -76,11 +91,13 @@ final class KeepAwake {
         set { set(newValue ? lastMode : .off) }
     }
 
-    var status: String {
+    var statusText: Text {
         switch mode {
-        case .off: String(localized: "Your Mac sleeps as usual")
-        case .indefinitely: String(localized: "Until you turn it off")
-        case .timed: String(localized: "Until \((endDate ?? .now).formatted(date: .omitted, time: .shortened))")
+        case .off: return Text("Your Mac sleeps as usual")
+        case .indefinitely: return Text("Until you turn it off")
+        case .timed:
+            let end = max(endDate ?? .now, .now)
+            return Text("\(Text(timerInterval: Date.now...end, countsDown: true).monospacedDigit()) left, until \(end.formatted(date: .omitted, time: .shortened))")
         }
     }
 
@@ -105,7 +122,7 @@ final class KeepAwake {
         hold(kIOPMAssertionTypePreventUserIdleSystemSleep)
         if keepsDisplayOn { hold(kIOPMAssertionTypePreventUserIdleDisplaySleep) }
         setLid(hasLid && lidOption)
-        timer = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             KeepAwake.shared.tick()
         }
     }
@@ -142,6 +159,7 @@ final class KeepAwake {
         } else {
             try? FileManager.default.removeItem(at: lidFlag)
             lidOption = false
+            UserDefaults.standard.set(false, forKey: "keep-awake-lid")
             lidError = String(localized: "Not turned on: no administrator password")
         }
     }
@@ -210,34 +228,42 @@ struct KeepAwakeSettings: View {
                     Text("Indefinitely").tag(KeepAwake.Mode.indefinitely)
                 } label: {
                     Text("Keep your Mac awake")
-                    Text(keepAwake.status)
+                    keepAwake.statusText
                 }
+                .settingAnchor(String(localized: "Keep your Mac awake"))
                 Picker("Duration", selection: $keepAwake.duration) {
                     ForEach(KeepAwake.durations, id: \.self) { Text(KeepAwake.format($0)).tag($0) }
                 }
                 .disabled(keepAwake.mode == .indefinitely)
+                .settingAnchor(String(localized: "Duration"))
                 Toggle(isOn: $keepAwake.keepsDisplayOn) {
                     Text("Keep the display on")
                     Text("Otherwise the screen dims and turns off as usual")
                 }
+                .settingAnchor(String(localized: "Keep the display on"))
             }
 
-            if keepAwake.hasLid {
-                Section {
-                    Toggle(isOn: $keepAwake.worksWithLidClosed) {
-                        Text("Work with the lid closed")
-                        Text("Mac won’t sleep when you close the lid. Keep it ventilated.")
-                    }
+            Section {
+                Toggle(isOn: $keepAwake.worksWithLidClosed) {
+                    Text("Work with the lid closed")
+                    keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops")
+                }
+                .disabled(!keepAwake.hasLid)
+                .settingAnchor(String(localized: "Work with the lid closed"))
+                if keepAwake.hasLid {
                     Toggle(isOn: $keepAwake.stopsOnLowBattery) {
                         Text("Stop when battery is below \(0.2.formatted(.percent))")
                         Text("Lets the Mac sleep again before the battery runs out")
                     }
                     .disabled(!keepAwake.worksWithLidClosed)
-                    if let error = keepAwake.lidError {
-                        Label(error, systemImage: "exclamationmark.triangle.fill")
-                            .foregroundStyle(.orange)
-                    }
-                } footer: {
+                    .settingAnchor(String(localized: "Stop when battery is below \(0.2.formatted(.percent))"))
+                }
+                if let error = keepAwake.lidError {
+                    Label(error, systemImage: "exclamationmark.triangle.fill")
+                        .foregroundStyle(.orange)
+                }
+            } footer: {
+                if keepAwake.hasLid {
                     Text("macOS asks for an administrator password, because only an administrator can change this.")
                         .font(.callout)
                         .foregroundStyle(.secondary)
@@ -246,5 +272,6 @@ struct KeepAwakeSettings: View {
             }
         }
         .formStyle(.grouped)
+        .settingsPage()
     }
 }

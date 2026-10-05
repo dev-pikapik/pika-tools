@@ -100,6 +100,7 @@ struct PermissionsView: View {
             }
         }
         .formStyle(.grouped)
+        .settingsPage()
         .animation(.snappy, value: permissions.allGranted)
         .onAppear {
             permissions.refresh()
@@ -130,5 +131,6 @@ private struct PermissionRow: View {
             Text(title)
             Text(subtitle)
         }
+        .settingAnchor(title)
     }
 }
