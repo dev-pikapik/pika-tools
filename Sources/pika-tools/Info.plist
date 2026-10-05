@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ru</string>
+	<key>CFBundleDisplayName</key>
+	<string>pika-tools</string>
 	<key>CFBundleExecutable</key>
 	<string>pika-tools</string>
 	<key>CFBundleIdentifier</key>
@@ -12,20 +14,18 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>pika-tools</string>
-	<key>CFBundleDisplayName</key>
-	<string>pika-tools</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
 	<key>LSUIElement</key>
 	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.utilities</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2026 pikapik</string>
 	<key>NSPrincipalClass</key>
