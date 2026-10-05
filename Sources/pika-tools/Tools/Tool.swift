@@ -49,6 +49,7 @@ final class ToolRegistry {
 
     let tools: [any Tool] = [
         CtrlClickTool(),
+        CtrlKeysTool(),
     ] + privateTools
 
     var status: ToolStatus {

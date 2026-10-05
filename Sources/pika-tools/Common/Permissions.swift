@@ -73,21 +73,21 @@ struct PermissionsView: View {
                 .font(.title3.weight(.semibold))
 
             Text(permissions.allGranted
-                 ? "Доступы есть. Ctrl+клик теперь работает как обычный клик."
-                 : "Без них macOS не пустит приложение к кликам. Открой System Settings › Privacy & Security и включи pika-tools в двух списках:")
+                 ? "Доступы есть. Ctrl+клик работает как обычный клик, а Ctrl-сочетания не уходят в систему."
+                 : "Без них macOS не пустит приложение к кликам и клавишам. Открой System Settings › Privacy & Security и включи pika-tools в двух списках:")
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
 
             VStack(spacing: 0) {
                 PermissionRow(
                     title: "Accessibility",
-                    subtitle: "Универсальный доступ — чтобы менять клики",
+                    subtitle: "Универсальный доступ — чтобы менять клики и клавиши",
                     granted: permissions.accessibility
                 ) { permissions.openSettings("Privacy_Accessibility") }
                 Divider().padding(.leading, 46)
                 PermissionRow(
                     title: "Input Monitoring",
-                    subtitle: "Мониторинг ввода — чтобы видеть клики",
+                    subtitle: "Мониторинг ввода — чтобы видеть клики и клавиши",
                     granted: permissions.inputMonitoring
                 ) { permissions.openSettings("Privacy_ListenEvent") }
             }

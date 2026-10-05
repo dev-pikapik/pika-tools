@@ -27,7 +27,7 @@ struct MenuView: View {
             .glassCard()
 
             if !permissions.accessibility {
-                Label("Нет доступа — Ctrl+клик пока не перехватывается", systemImage: "exclamationmark.triangle.fill")
+                Label("Нет доступа — перехваты пока не работают", systemImage: "exclamationmark.triangle.fill")
                     .font(.callout)
                     .foregroundStyle(.orange)
                     .padding(.horizontal, 4)
