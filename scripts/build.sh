@@ -33,6 +33,27 @@ lipo -create build/pika-tools-arm64 build/pika-tools-x86_64 -output "$APP/Conten
 rm build/pika-tools-arm64 build/pika-tools-x86_64
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 
+RES="$APP/Contents/Resources"
+mkdir -p "$RES"
+if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
+        --compile "$RES" \
+        --app-icon AppIcon \
+        --platform macosx \
+        --target-device mac \
+        --minimum-deployment-target "$MIN_OS" \
+        --output-partial-info-plist build/icon-info.plist >build/actool.log 2>&1 \
+        && [ -f "$RES/Assets.car" ]; then
+    [ -f "$RES/AppIcon.icns" ] || cp Resources/AppIcon.icns "$RES/AppIcon.icns"
+    /usr/libexec/PlistBuddy -c "Add :CFBundleIconName string AppIcon" "$APP/Contents/Info.plist"
+    echo "Иконка: Assets.car из AppIcon.icon"
+else
+    [ -s build/actool.log ] && tail -5 build/actool.log
+    rm -f "$RES/Assets.car"
+    cp Resources/AppIcon.icns "$RES/AppIcon.icns"
+    echo "Иконка: готовый AppIcon.icns"
+fi
+rm -f build/icon-info.plist build/actool.log
+
 if [ "$SIGN_IDENTITY" = "-" ]; then
     codesign --force --sign - "$APP"
 else

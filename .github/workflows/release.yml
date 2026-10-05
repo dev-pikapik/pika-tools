@@ -1,0 +1,70 @@
+name: Релиз
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-26
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Версия из тега
+        if: github.ref_type == 'tag'
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          PLIST_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" Sources/pika-tools/Info.plist)
+          [ "$VERSION" = "$PLIST_VERSION" ] || { echo "Тег $GITHUB_REF_NAME, а в Info.plist $PLIST_VERSION" >&2; exit 1; }
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Сборка
+        run: |
+          xcodebuild -version
+          ./scripts/package.sh
+
+      - name: Проверка
+        run: |
+          APP=build/pika-tools.app
+          test -f "$APP/Contents/Resources/Assets.car"
+          test -f "$APP/Contents/Resources/AppIcon.icns"
+          /usr/libexec/PlistBuddy -c "Print :CFBundleIconName" "$APP/Contents/Info.plist"
+          rm -rf build/check && mkdir build/check
+          ditto -x -k build/pika-tools.zip build/check
+          codesign --verify --deep --strict build/check/pika-tools.app
+
+      - name: Сборка для проверки
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pika-tools
+          path: build/pika-tools.zip
+
+      - name: Релиз
+        if: github.ref_type == 'tag'
+        run: |
+          gh release create "$GITHUB_REF_NAME" build/pika-tools.zip build/pika-tools.dmg \
+            --title "pika-tools $VERSION" \
+            --generate-notes
+
+      - name: Cask
+        if: github.ref_type == 'tag'
+        run: |
+          SHA=$(shasum -a 256 build/pika-tools.zip | cut -d' ' -f1)
+          git fetch -q origin main
+          git checkout -q -B main origin/main
+          sed -i '' \
+            -e "s/^  version \".*\"/  version \"$VERSION\"/" \
+            -e "s/^  sha256 \".*\"/  sha256 \"$SHA\"/" \
+            Casks/pika-tools.rb
+          git config user.name pikapik
+          git config user.email 241494448+dev-pikapik@users.noreply.github.com
+          git add Casks/pika-tools.rb
+          git diff --cached --quiet || git commit -q -m "Cask $VERSION"
+          git push -q origin main
