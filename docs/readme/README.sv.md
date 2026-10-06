@@ -72,6 +72,8 @@ Hindrar din Mac från att gå i vila medan du är borta från tangentbordet: und
 
 På en MacBook kan du också slå på **Arbeta med locket stängt**. macOS har inget reglage för det, så pika-tools kör `pmset -a disablesleep 1` och ber om ett administratörslösenord: bara en administratör kan ändra hur datorn går i vila. Inställningen återställs automatiskt när Håll vaken tar slut, när du avslutar appen eller om den kraschar. Om du inte anger lösenordet ändras ingenting. Se till att datorn har god ventilation med locket stängt. **Stoppa när batteriet är under 20 %** avslutar sessionen innan batteriet tar slut.
 
+Keep Awake, skärmläget och läget med stängt lock kan läggas på en knapp i Kontrollcenter, menyraden eller en widget på skrivbordet via appen Genvägar, med länkar du kopierar från Inställningar › Håll vaken.
+
 ## Inställningar
 
 Öppna inställningarna från menyn med **Inställningar…** eller ⌘, eller starta pika-tools igen från Finder, Launchpad eller Spotlight. Medan fönstret är öppet syns appen i Dock och i ⌘Tab.

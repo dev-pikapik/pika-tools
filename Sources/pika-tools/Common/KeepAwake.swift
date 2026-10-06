@@ -381,6 +381,26 @@ struct KeepAwakeSettings: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
+            Section {
+                ShortcutLink(title: String(localized: "Keep Awake"), path: "keep-awake")
+                ShortcutLink(title: String(localized: "Keep the display on"), path: "display")
+                if keepAwake.hasLid {
+                    ShortcutLink(title: String(localized: "Work with the lid closed"), path: "lid-closed")
+                }
+                LabeledContent(String(localized: "Shortcuts")) {
+                    Button(String(localized: "Open Shortcuts")) {
+                        NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Applications/Shortcuts.app"))
+                    }
+                }
+            } header: {
+                Text("Buttons in Control Center and widgets")
+            } footer: {
+                Text("In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .settingAnchor(String(localized: "Buttons in Control Center and widgets"))
             RestoreDefaultsSection(
                 message: String(localized: "Keep Awake will turn off, and the duration and options will go back to how they were."),
                 isDefault: keepAwake.isDefault
@@ -390,5 +410,50 @@ struct KeepAwakeSettings: View {
         }
         .formStyle(.grouped)
         .settingsPage()
+    }
+}
+
+extension KeepAwake {
+    func handle(_ url: URL) {
+        let value = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first?.name
+        func flag(_ current: Bool) -> Bool { value == "on" ? true : value == "off" ? false : !current }
+        switch url.host {
+        case "keep-awake":
+            isOn = flag(isOn)
+        case "lid-closed":
+            let on = flag(isOn && worksWithLidClosed)
+            worksWithLidClosed = on
+            if on { isOn = true }
+        case "display":
+            let on = flag(isOn && keepsDisplayOn)
+            keepsDisplayOn = on
+            if on { isOn = true }
+        default:
+            break
+        }
+    }
+}
+
+private struct ShortcutLink: View {
+    let title: String
+    let path: String
+
+    private var link: String {
+        let types = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLTypes") as? [[String: Any]]
+        let scheme = (types?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "pika-tools"
+        return "\(scheme)://\(path)"
+    }
+
+    var body: some View {
+        LabeledContent {
+            Button(String(localized: "Copy Link")) {
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(link, forType: .string)
+            }
+        } label: {
+            Text(title)
+            Text(verbatim: link)
+                .textSelection(.enabled)
+        }
     }
 }

@@ -72,6 +72,8 @@ Stops your Mac from falling asleep while you're away from the keyboard: for any 
 
 On a MacBook you can also turn on **Work with the lid closed**. macOS has no switch for that, so pika-tools runs `pmset -a disablesleep 1` and asks for an administrator password: only an administrator can change how the Mac sleeps. The setting goes back to normal on its own when Keep Awake ends, when you quit the app, or if it crashes. If you don't enter the password, nothing changes. Keep the Mac ventilated with the lid closed. **Stop when battery is below 20%** ends the session before the battery runs out.
 
+Keep Awake, the display and lid-closed modes can be put on a button in Control Center, the menu bar or a desktop widget through the Shortcuts app, with links you copy from Settings › Keep Awake.
+
 ## Settings
 
 Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.

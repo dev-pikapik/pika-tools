@@ -84,6 +84,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, hours, minutes"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),

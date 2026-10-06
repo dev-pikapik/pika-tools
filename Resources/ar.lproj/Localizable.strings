@@ -184,3 +184,9 @@
 "Turn it on in System Settings" = "شغّله من إعدادات النظام";
 "Open Finder Extensions…" = "فتح ملحقات Finder…";
 "Check for Updates" = "التحقق من وجود تحديثات";
+"Shortcuts" = "الاختصارات";
+"Open Shortcuts" = "فتح الاختصارات";
+"Copy Link" = "نسخ الرابط";
+"Buttons in Control Center and widgets" = "أزرار في مركز التحكم والودجات";
+"widget, Control Center, Shortcuts, menu bar, button" = "ودجت, مركز التحكم, الاختصارات, شريط القوائم, زر";
+"In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "في الاختصارات، أنشئ اختصارًا بإجراء «فتح عناوين URL» والصق رابطًا. ثم أضفه إلى مركز التحكم أو شريط القوائم أو ودجت الاختصارات على سطح المكتب. كل نقرة تشغّله أو توقفه.";
