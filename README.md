@@ -7,20 +7,22 @@
 [![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-A small menu bar app for macOS with a few keyboard fixes: it blocks Ctrl shortcuts, ignores accidental double spaces and switches languages with Option+Shift, the way Alt+Shift works on Windows.
+A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
 
 ## Install
 
-With Homebrew:
-
-```bash
-brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew trust dev-pikapik/pika-tools && brew install --cask pika-tools && open -a pika-tools
-```
-
-Or with a single command in Terminal:
+Open Terminal, paste this line and press Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
+```
+
+Nothing else is needed, Homebrew included.
+
+Or with Homebrew:
+
+```bash
+brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
 
 Or download `pika-tools.dmg` from [Releases](https://github.com/dev-pikapik/pika-tools/releases/latest) and drag the app to Applications.
@@ -42,11 +44,15 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Block Ctrl shortcuts.** Ctrl becomes a plain key. Apps still see it held down, but macOS no longer turns it into shortcuts: Ctrl+Space won't switch input sources, Ctrl+arrows won't switch desktops, and Ctrl-click is a regular click instead of a context menu. Right-click and two-finger tap work as usual. Handy in games and remote desktop sessions, where Ctrl has a job of its own.
 
-**Double-space guard.** The first space always goes through. A second one pressed faster than the delay is ignored, so you don't get a period from double space or stray repeats. The delay is adjustable from 50 to 300 ms (120 ms by default). Holding space and space with modifiers always work.
+**Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
 **Switch language with Option+Shift.** Hold Option, press Shift and let go of both: macOS moves to the next input source. Shift first, then Option, goes back to the previous one. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
 
-Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C or the double-space period back? Turn that tool off.
+**Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
+
+**Hide with a click in the Dock.** Click the Dock icon of the app you're in, and it hides. Click again to bring it back. Off by default.
+
+Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
@@ -54,7 +60,7 @@ The app follows your system language or the one you pick in Settings: English, R
 
 ## Keep Awake
 
-Stops your Mac from falling asleep while you're away from the keyboard: for 15 minutes up to 8 hours, or until you turn it off. Flip it on from the menu, pick the duration in Settings. The menu shows when it ends. **Keep the display on** stops the screen from dimming too. Quitting pika-tools ends Keep Awake.
+Stops your Mac from falling asleep while you're away from the keyboard: for any time from 1 minute to 12 months, or until you turn it off. Flip it on from the menu, set the duration in Settings in minutes, hours, days, weeks or months. The menu shows how much time is left and when it ends. **Keep the display on** stops the screen from dimming too. Quitting pika-tools ends Keep Awake.
 
 On a MacBook you can also turn on **Work with the lid closed**. macOS has no switch for that, so pika-tools runs `pmset -a disablesleep 1` and asks for an administrator password: only an administrator can change how the Mac sleeps. The setting goes back to normal on its own when Keep Awake ends, when you quit the app, or if it crashes. If you don't enter the password, nothing changes. Keep the Mac ventilated with the lid closed. **Stop when battery is below 20%** ends the session before the battery runs out.
 
@@ -63,7 +69,8 @@ On a MacBook you can also turn on **Work with the lid closed**. macOS has no swi
 Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
 
 - **General**: open at login, appearance (System, Light or Dark), language and updates.
-- **Keyboard & Mouse**: every tool and the double-space delay.
+- **Keyboard & Mouse**: Ctrl shortcuts, ⌘Q and ⌘W, language switch.
+- **Windows & Apps**: quit on last window, with a list of exceptions, and hide with a Dock click.
 - **Keep Awake**: duration, display and lid options.
 - **Permissions**: the status of both permissions with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.

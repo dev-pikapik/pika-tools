@@ -9,8 +9,46 @@ final class KeepAwake {
         case off, timed, indefinitely
     }
 
+    enum Unit: String, CaseIterable {
+        case minutes, hours, days, weeks, months
+
+        var component: Calendar.Component {
+            switch self {
+            case .minutes: .minute
+            case .hours: .hour
+            case .days: .day
+            case .weeks: .weekOfMonth
+            case .months: .month
+            }
+        }
+
+        var limit: Int {
+            switch self {
+            case .minutes, .hours: 999
+            case .days: 365
+            case .weeks: 52
+            case .months: 12
+            }
+        }
+
+        func name(for value: Int) -> String {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .full
+            formatter.allowedUnits = switch self {
+            case .minutes: .minute
+            case .hours: .hour
+            case .days: .day
+            case .weeks: .weekOfMonth
+            case .months: .month
+            }
+            var components = DateComponents()
+            components.setValue(value, for: component)
+            let text = formatter.string(from: components) ?? rawValue
+            return text.replacingOccurrences(of: value.formatted(), with: "").trimmingCharacters(in: .whitespaces)
+        }
+    }
+
     static let shared = KeepAwake()
-    static let durations: [TimeInterval] = [900, 1800, 3600, 7200, 18000, 28800]
     private static let lidFlagKey = "keep-awake-lid-sleep-disabled"
 
     let hasLid: Bool = {
@@ -36,6 +74,7 @@ final class KeepAwake {
 
     private(set) var mode = Mode.off
     private(set) var endDate: Date?
+    private(set) var now = Date.now
     private(set) var lidActive = false
     private(set) var lidError: String?
 
@@ -43,10 +82,21 @@ final class KeepAwake {
         didSet { UserDefaults.standard.set(lastMode.rawValue, forKey: "keep-awake-mode") }
     }
 
-    var duration: TimeInterval {
+    var durationValue: Int {
         didSet {
-            UserDefaults.standard.set(duration, forKey: "keep-awake-duration")
+            UserDefaults.standard.set(durationValue, forKey: "keep-awake-duration-value")
             if mode == .timed { set(.timed) }
+        }
+    }
+
+    var durationUnit: Unit {
+        didSet {
+            UserDefaults.standard.set(durationUnit.rawValue, forKey: "keep-awake-duration-unit")
+            if durationValue > durationUnit.limit {
+                durationValue = durationUnit.limit
+            } else if mode == .timed {
+                set(.timed)
+            }
         }
     }
 
@@ -80,7 +130,14 @@ final class KeepAwake {
     private init() {
         let defaults = UserDefaults.standard
         lastMode = Mode(rawValue: defaults.string(forKey: "keep-awake-mode") ?? "") ?? .timed
-        duration = defaults.object(forKey: "keep-awake-duration") as? TimeInterval ?? 3600
+        if let unit = Unit(rawValue: defaults.string(forKey: "keep-awake-duration-unit") ?? "") {
+            durationUnit = unit
+            durationValue = min(max(defaults.integer(forKey: "keep-awake-duration-value"), 1), unit.limit)
+        } else {
+            let seconds = Int(defaults.object(forKey: "keep-awake-duration") as? TimeInterval ?? 3600)
+            durationUnit = seconds % 3600 == 0 ? .hours : .minutes
+            durationValue = min(max(seconds / (seconds % 3600 == 0 ? 3600 : 60), 1), 999)
+        }
         keepsDisplayOn = defaults.bool(forKey: "keep-awake-display")
         lidOption = defaults.bool(forKey: "keep-awake-lid")
         stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
@@ -96,19 +153,25 @@ final class KeepAwake {
         case .off: return Text("Your Mac sleeps as usual")
         case .indefinitely: return Text("Until you turn it off")
         case .timed:
-            let end = max(endDate ?? .now, .now)
-            return Text("\(Text(timerInterval: Date.now...end, countsDown: true).monospacedDigit()) left, until \(end.formatted(date: .omitted, time: .shortened))")
+            let end = max(endDate ?? now, now)
+            let left = Int(end.timeIntervalSince(now).rounded(.up))
+            let days = left / 86400
+            let clock = String(format: "%02d:%02d:%02d", left % 86400 / 3600, left % 3600 / 60, left % 60)
+            let remaining = days > 0
+                ? Duration.seconds(days * 86400).formatted(.units(allowed: [.days], width: .narrow)) + " " + clock
+                : clock
+            let until = Calendar.current.isDateInToday(end)
+                ? end.formatted(date: .omitted, time: .shortened)
+                : end.formatted(.dateTime.month(.abbreviated).day().hour().minute())
+            return Text("\(Text(verbatim: remaining).monospacedDigit()) left, until \(until)")
         }
-    }
-
-    static func format(_ duration: TimeInterval) -> String {
-        Duration.seconds(duration).formatted(.units(allowed: [.hours, .minutes], width: .abbreviated))
     }
 
     func set(_ newMode: Mode) {
         mode = newMode
         if newMode != .off { lastMode = newMode }
-        endDate = newMode == .timed ? Date().addingTimeInterval(duration) : nil
+        now = .now
+        endDate = newMode == .timed ? Calendar.current.date(byAdding: durationUnit.component, value: durationValue, to: now) : nil
         update()
     }
 
@@ -128,6 +191,7 @@ final class KeepAwake {
     }
 
     private func tick() {
+        now = .now
         if let endDate, endDate <= .now {
             set(.off)
         } else if lidActive, stopsOnLowBattery, let level = batteryLevel, level < 20 {
@@ -218,6 +282,13 @@ final class KeepAwake {
 struct KeepAwakeSettings: View {
     @Bindable private var keepAwake = KeepAwake.shared
 
+    private var value: Binding<Int> {
+        Binding(
+            get: { keepAwake.durationValue },
+            set: { keepAwake.durationValue = min(max($0, 1), keepAwake.durationUnit.limit) }
+        )
+    }
+
     var body: some View {
         Form {
             SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools."))
@@ -231,8 +302,23 @@ struct KeepAwakeSettings: View {
                     keepAwake.statusText
                 }
                 .settingAnchor(String(localized: "Keep your Mac awake"))
-                Picker("Duration", selection: $keepAwake.duration) {
-                    ForEach(KeepAwake.durations, id: \.self) { Text(KeepAwake.format($0)).tag($0) }
+                LabeledContent {
+                    HStack(spacing: 8) {
+                        TextField("Duration", value: value, format: .number)
+                            .labelsHidden()
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 56)
+                        Stepper("Duration", value: value, in: 1...keepAwake.durationUnit.limit)
+                            .labelsHidden()
+                        Picker("Duration", selection: $keepAwake.durationUnit) {
+                            ForEach(KeepAwake.Unit.allCases, id: \.self) { Text(verbatim: $0.name(for: keepAwake.durationValue)).tag($0) }
+                        }
+                        .labelsHidden()
+                        .fixedSize()
+                    }
+                } label: {
+                    Text("Duration")
+                    Text("From 1 minute to 12 months")
                 }
                 .disabled(keepAwake.mode == .indefinitely)
                 .settingAnchor(String(localized: "Duration"))

@@ -7,7 +7,12 @@ protocol Tool: AnyObject {
     var isEnabled: Bool { get set }
     var isActive: Bool { get }
     var settingsView: AnyView { get }
+    var tab: SettingsTab { get }
     func refresh()
+}
+
+extension Tool {
+    var tab: SettingsTab { .keyboard }
 }
 
 enum ToolStatus {
@@ -48,8 +53,10 @@ final class ToolRegistry {
 
     let tools: [any Tool] = [
         CtrlKeysTool(),
-        DoubleSpaceTool(),
+        CommandKeysTool(),
         InputSwitchTool(),
+        QuitOnCloseTool(),
+        DockHideTool(),
     ] + privateTools
 
     var status: ToolStatus {

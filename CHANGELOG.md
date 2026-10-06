@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - Unreleased
+
+### Added
+- Protect ⌘Q and ⌘W: ⌘Q and ⌘W alone do nothing in every app, ⇧⌘Q quits and ⇧⌘W closes a window. Each key has its own switch.
+- A new Windows & Apps page with two tools, both off by default:
+  - Quit when the last window closes, with a list of apps that never quit this way. Finder always stays open.
+  - Hide with a click in the Dock: clicking the icon of the app you're in hides it.
+- Keep Awake duration can be any number of minutes, hours, days, weeks or months, up to 12 months. The countdown shows days and the end date when it isn't today.
+
+### Changed
+- Installing is one command in Terminal, no Homebrew needed. The Homebrew command no longer needs `brew trust`.
+
+### Removed
+- Double-space guard. Its settings are cleaned up on the next launch.
+
 ## [1.4.1] - Unreleased
 
 ### Added

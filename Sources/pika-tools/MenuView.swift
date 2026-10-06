@@ -7,15 +7,20 @@ struct MenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(spacing: 0) {
-                ForEach(Array(registry.tools.enumerated()), id: \.element.id) { index, tool in
-                    if index > 0 {
-                        Divider().padding(.horizontal, 10)
+            ForEach([SettingsTab.keyboard, .windows], id: \.self) { tab in
+                let tools = registry.tools.filter { $0.tab == tab }
+                if !tools.isEmpty {
+                    VStack(spacing: 0) {
+                        ForEach(Array(tools.enumerated()), id: \.element.id) { index, tool in
+                            if index > 0 {
+                                Divider().padding(.horizontal, 10)
+                            }
+                            tool.settingsView
+                        }
                     }
-                    tool.settingsView
+                    .glassCard()
                 }
             }
-            .glassCard()
 
             ToggleRow(
                 icon: "cup.and.saucer",

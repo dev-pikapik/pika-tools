@@ -28,6 +28,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             defaults.set(true, forKey: "launchedBefore")
             LoginItem.shared.set(true)
         }
+        ["double-space", "double-space-interval"].forEach(defaults.removeObject)
 
         Appearance.saved.apply()
         let permissions = Permissions.shared

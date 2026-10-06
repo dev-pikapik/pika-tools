@@ -81,7 +81,7 @@ struct PermissionsView: View {
             Section {
                 PermissionRow(
                     title: String(localized: "Accessibility"),
-                    subtitle: String(localized: "Lets the app change clicks and keys"),
+                    subtitle: String(localized: "Lets the app change clicks and keys and manage windows"),
                     granted: permissions.accessibility
                 ) { permissions.openSettings("Privacy_Accessibility") }
                 PermissionRow(

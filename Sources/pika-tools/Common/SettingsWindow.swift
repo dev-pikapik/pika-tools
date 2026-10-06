@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keyboard, keepAwake, permissions, about
+    case general, keyboard, windows, keepAwake, permissions, about
 
     var id: Self { self }
 
@@ -10,6 +10,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general: String(localized: "General")
         case .keyboard: String(localized: "Keyboard & Mouse")
+        case .windows: String(localized: "Windows & Apps")
         case .keepAwake: String(localized: "Keep Awake")
         case .permissions: String(localized: "Permissions")
         case .about: String(localized: "About")
@@ -20,6 +21,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general: "gearshape.fill"
         case .keyboard: "keyboard.fill"
+        case .windows: "macwindow.on.rectangle"
         case .keepAwake: "cup.and.saucer.fill"
         case .permissions: "hand.raised.fill"
         case .about: "info.circle.fill"
@@ -30,6 +32,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general, .about: .gray
         case .keyboard, .permissions: .blue
+        case .windows: .indigo
         case .keepAwake: .orange
         }
     }
@@ -60,9 +63,11 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
             SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Double-space guard"), synonyms: "space bar, typing, period"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Repeat delay"), synonyms: "space bar, interval, milliseconds"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
+            SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
+            SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
+            SettingsItem(tab: .windows, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, hours, minutes"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
@@ -187,7 +192,7 @@ private struct SettingsView: View {
         NavigationSplitView {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keyboard, .keepAwake]) }
+                    Section { rows([.general, .keyboard, .windows, .keepAwake]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -258,7 +263,8 @@ private struct SettingsView: View {
     private func detail(_ tab: SettingsTab) -> some View {
         switch tab {
         case .general: GeneralSettings()
-        case .keyboard: KeyboardSettings()
+        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for keys and clicks. Each one works on its own."))
+        case .windows: ToolsSettings(tab: .windows, text: String(localized: "Fixes for windows and the Dock. Each one works on its own."))
         case .keepAwake: KeepAwakeSettings()
         case .permissions: PermissionsView()
         case .about: AboutView()
@@ -532,11 +538,14 @@ private struct Diagonal: Shape {
     }
 }
 
-private struct KeyboardSettings: View {
+private struct ToolsSettings: View {
+    let tab: SettingsTab
+    let text: String
+
     var body: some View {
         Form {
-            SettingsHeader(tab: .keyboard, text: String(localized: "Fixes for keys and clicks. Each one works on its own."))
-            ForEach(ToolRegistry.shared.tools, id: \.id) { tool in
+            SettingsHeader(tab: tab, text: text)
+            ForEach(ToolRegistry.shared.tools.filter { $0.tab == tab }, id: \.id) { tool in
                 Section { tool.settingsView }
             }
         }

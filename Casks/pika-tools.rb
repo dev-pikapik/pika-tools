@@ -4,7 +4,7 @@ cask "pika-tools" do
 
   url "https://github.com/dev-pikapik/pika-tools/releases/download/v#{version}/pika-tools.zip"
   name "pika-tools"
-  desc "Menu bar keyboard tools: block Ctrl shortcuts, stop double spaces, Option+Shift language switch"
+  desc "Menu bar tools for keys, windows and the Dock, plus Keep Awake"
   homepage "https://github.com/dev-pikapik/pika-tools"
 
   auto_updates true

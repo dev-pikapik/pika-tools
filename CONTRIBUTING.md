@@ -31,8 +31,9 @@ Sources/pika-tools/
   main.swift, App.swift, MenuView.swift
   Tools/Tool.swift                   Tool protocol and ToolRegistry
   Tools/CtrlKeys/CtrlKeysTool.swift
-  Tools/DoubleSpace/DoubleSpaceTool.swift, SpaceDebouncer.swift
+  Tools/CommandKeys/CommandKeysTool.swift
   Tools/InputSwitch/InputSwitchTool.swift, InputSwitchGesture.swift
+  Tools/Windows/QuitOnCloseTool.swift, DockHideTool.swift
   Common/                            shared UI, permissions, login item, updater
 Resources/<lang>.lproj/              Localizable.strings
 Resources/AppIcon.icon               app icon, AppIcon.icns is the fallback
@@ -42,7 +43,11 @@ scripts/                             build, package, release, icon, tests
 
 Ctrl shortcuts are caught with a `CGEventTap` before events reach other apps, for `keyDown`/`keyUp` and the left mouse button (`leftMouseDown`/`leftMouseUp`/`leftMouseDragged`). Events that arrive with Ctrl held lose the Ctrl flag, and the Cmd flag too if Cmd is also held, so Ctrl+Cmd+Space doesn't turn into Cmd+Space (Spotlight) and Ctrl+Cmd-click doesn't become Cmd-click. The `flagsChanged` event for Ctrl itself is left alone, so apps still see Ctrl held while macOS sees no shortcut. Right-click is never touched.
 
-The double-space guard is a second `CGEventTap` that only looks at `keyDown` for space (keycode 49). The first press always passes, a repeat faster than the delay is dropped. Key up, auto-repeat while holding space and space with modifiers always pass. The timing logic lives in `SpaceDebouncer`, a plain struct with no dependencies.
+The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp` for Q and W. With Cmd and without Ctrl or Option, the event is dropped. With Shift added, Shift is removed from the event before any app sees it, so ⇧⌘Q reaches the app as ⌘Q. Ctrl+Cmd combinations are left to the Ctrl tool.
+
+Quit on last window uses an `AXObserver` per regular app: it tracks standard windows and, half a second after one is destroyed, quits the app if it has no windows left, including minimized ones and ones on other desktops (checked with `CGWindowListCopyWindowInfo`). Finder, pika-tools and the apps in the exceptions list are skipped.
+
+Hide with a Dock click is a `CGEventTap` on the left mouse button. On a plain click it asks the Dock for the element under the pointer with `AXUIElementCopyElementAtPosition`. If that is the icon of the frontmost app and the app has a visible window, the click is dropped and the app hides. Otherwise the click goes to the Dock as usual.
 
 The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
 
