@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Stahování se nezdařilo. Zkuste to později";
 "Block ⌃ Control shortcuts" = "Blokovat zkratky s ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funguje jako obyčejná klávesa: žádné zkratky, žádná nabídka po ⌃-kliknutí";
+"⌃ works as a plain key" = "⌃ funguje jako obyčejná klávesa";
 "Switch language with ⌥⇧" = "Přepínat jazyk pomocí ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Podržte ⌥ a stiskněte ⇧: další jazyk. Podržte ⇧ a stiskněte ⌥: předchozí";
+"Hold ⌥, tap ⇧: next language" = "Podržte ⌥, stiskněte ⇧: další jazyk";
 "All set" = "Vše připraveno";
 "pika-tools needs two permissions" = "pika-tools potřebuje dvě oprávnění";
 "Both permissions are on and every tool is working." = "Obě oprávnění jsou zapnutá a všechny nástroje fungují.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "ukončit, zavřít, command, cmd, omylem, nechtěně, zkratka";
 "Quit when the last window closes" = "Ukončit po zavření posledního okna";
 "Closing an app’s last window quits the app. Finder stays open." = "Zavřením posledního okna se aplikace ukončí. Finder zůstane otevřený.";
+"Finder always stays open" = "Finder zůstane vždy otevřený";
 "Add App…" = "Přidat aplikaci…";
 "Never quit these apps" = "Tyto aplikace nikdy neukončovat";
 "No apps yet" = "Zatím žádné aplikace";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "výjimky, vyloučit, seznam";
 "Hide with a click in the Dock" = "Skrýt kliknutím v Docku";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klikněte na ikonu aplikace, kterou právě používáte, a skryje se. Dalším kliknutím ji vrátíte.";
+"Click again to bring it back" = "Dalším kliknutím ji vrátíte";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalizovat, skrýt, Windows, hlavní panel";
 "From 1 minute to 12 months" = "Od 1 minuty do 12 měsíců";
 "Lets the app change clicks and keys and manage windows" = "Umožňuje aplikaci měnit kliknutí a stisky kláves a spravovat okna";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Opravy pro myš. Každá funguje samostatně.";
 "Turn off pointer acceleration" = "Vypnout zrychlení ukazatele";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Ukazatel urazí stejnou vzdálenost jako ruka, ať se hýbe jakkoli rychle. Jen pro myši.";
+"Moves as far as your hand" = "Urazí tolik, co ruka";
 "Tracking speed" = "Rychlost ukazatele";
 "Works while acceleration is off" = "Funguje, když je zrychlení vypnuté";
 "Slow" = "Pomalu";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools bude opět automaticky vyhledávat aktualizace.";
 "Scroll by lines" = "Posouvat po řádcích";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Každé cvaknutí kolečka posune o stejnou vzdálenost, ať točíte jakkoli rychle. Jen pro myši.";
+"Same distance at any speed" = "Stejně daleko při jakékoli rychlosti";
 "Lines per wheel click" = "Řádků na cvaknutí kolečka";
 "Works while scrolling by lines is on" = "Funguje, když je zapnuté posouvání po řádcích";
 "Scroll by" = "Posouvat po";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Není to soubor nastavení pika-tools, nebo je poškozený.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Umožňuje aplikaci ukládat nastavení na iCloud Drive kvůli synchronizaci";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Tlačítka myši 4 a 5 jdou zpět a vpřed, jako přejetí po trackpadu.";
+"Like a trackpad swipe" = "Jako přejetí po trackpadu";
 "Repeat a held key" = "Opakovat drženou klávesu";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Podržení klávesy ji opakuje místo nabídky akcentů. Otevřené aplikace restartujte, aby se změna projevila.";
+"Instead of the accent menu" = "Místo nabídky akcentů";
 "key repeat, hold, accent menu, games, typing" = "opakování kláves, podržení, nabídka akcentů, hry, psaní";
 "New File in Finder" = "Nový soubor ve Finderu";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klikněte pravým ve Finderu nebo na ploše › Nový soubor a napište název. Standardně .txt.";
+"Right-click in any folder" = "Pravý klik v libovolné složce";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "vytvořit, textový soubor, txt, pravé tlačítko, kontextová nabídka, plocha, Windows";
 "New File" = "Nový soubor";
 "Untitled" = "Bez názvu";

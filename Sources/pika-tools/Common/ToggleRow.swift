@@ -4,7 +4,7 @@ struct ToggleRow: View {
     let icon: String
     let title: String
     let subtitle: Text
-    var showsSubtitle = false
+    var hint: Text?
     @Binding var isOn: Bool
     @Environment(\.inSettings) private var inSettings
     @State private var hovering = false
@@ -35,8 +35,8 @@ struct ToggleRow: View {
                     Text(title)
                         .font(.body)
                         .lineLimit(2)
-                    if showsSubtitle {
-                        subtitle
+                    if let hint {
+                        hint
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)

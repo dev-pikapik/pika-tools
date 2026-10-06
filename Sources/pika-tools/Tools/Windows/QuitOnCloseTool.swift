@@ -288,6 +288,7 @@ private struct QuitOnCloseSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Closing an app’s last window quits the app. Finder stays open."),
+            hint: Text("Finder always stays open"),
             isOn: $tool.isEnabled
         )
         if inSettings {

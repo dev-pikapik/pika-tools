@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "下載失敗，請稍後再試";
 "Block ⌃ Control shortcuts" = "阻擋 ⌃ Control 快速鍵";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 當作一般按鍵：沒有快速鍵，也沒有 ⌃ 點按選單";
+"⌃ works as a plain key" = "⌃ 當作一般按鍵";
 "Switch language with ⌥⇧" = "使用 ⌥⇧ 切換語言";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "按住 ⌥ 再按 ⇧：下一個語言。按住 ⇧ 再按 ⌥：上一個語言";
+"Hold ⌥, tap ⇧: next language" = "按住 ⌥ 再按 ⇧：下一個語言";
 "All set" = "一切就緒";
 "pika-tools needs two permissions" = "pika-tools 需要兩項權限";
 "Both permissions are on and every tool is working." = "兩項權限皆已開啟，所有工具都正常運作。";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "結束, 關閉, command, 誤按, 快速鍵";
 "Quit when the last window closes" = "關閉最後一個視窗時結束";
 "Closing an app’s last window quits the app. Finder stays open." = "關閉 App 的最後一個視窗時會結束該 App。Finder 會保持打開。";
+"Finder always stays open" = "Finder 會一直保持打開";
 "Add App…" = "加入 App…";
 "Never quit these apps" = "永不結束這些 App";
 "No apps yet" = "尚無 App";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "例外, 排除, 列表";
 "Hide with a click in the Dock" = "在 Dock 中點按以隱藏";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "點按目前使用中 App 的圖像即可隱藏，再點按一次即可顯示。";
+"Click again to bring it back" = "再點按一次即可顯示";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, 最小化, 縮到最小, 隱藏, Windows, 工作列";
 "From 1 minute to 12 months" = "1 分鐘至 12 個月";
 "Lets the app change clicks and keys and manage windows" = "讓 App 更改點按和按鍵並管理視窗";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "滑鼠的修正。每一項都可單獨使用。";
 "Turn off pointer acceleration" = "關閉指標加速";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "無論移動多快，指標移動的距離都和手一樣。僅適用於滑鼠。";
+"Moves as far as your hand" = "移動距離和手一樣";
 "Tracking speed" = "軌跡速度";
 "Works while acceleration is off" = "關閉加速時有效";
 "Slow" = "慢";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools 將再次自動檢查更新。";
 "Scroll by lines" = "按行捲動";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "無論轉得多快，滾輪每轉一格都捲動相同的距離。僅適用於滑鼠。";
+"Same distance at any speed" = "無論多快，距離都相同";
 "Lines per wheel click" = "滾輪每格行數";
 "Works while scrolling by lines is on" = "開啟按行捲動時有效";
 "Scroll by" = "捲動單位";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "這不是 pika-tools 設定檔，或檔案已損毀。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "允許 App 將設定保留在 iCloud 雲碟中以便同步";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "滑鼠按鈕 4 和 5 用於上一頁和下一頁，就像在觸控式軌跡板上滑動。";
+"Like a trackpad swipe" = "就像在觸控式軌跡板上滑動";
 "Repeat a held key" = "按住按鍵連續輸入";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "按住按鍵會重複輸入，而不是彈出重音選單。已打開的 App 需重新啟動後生效。";
+"Instead of the accent menu" = "取代重音選單";
 "key repeat, hold, accent menu, games, typing" = "按鍵重複, 按住, 重音選單, 遊戲, 打字";
 "New File in Finder" = "在 Finder 中新增檔案";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "在 Finder 或桌面上按右鍵 › 新增檔案，然後輸入名稱。預設為 .txt。";
+"Right-click in any folder" = "在任何檔案夾中點按右鍵";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "建立, 文字檔, txt, 右鍵, 快速選單, 桌面, Windows";
 "New File" = "新增檔案";
 "Untitled" = "未命名";

@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Tải về không thành công. Hãy thử lại sau";
 "Block ⌃ Control shortcuts" = "Chặn phím tắt ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ hoạt động như phím thường: không có phím tắt, không có menu ⌃-bấm";
+"⌃ works as a plain key" = "⌃ hoạt động như phím thường";
 "Switch language with ⌥⇧" = "Chuyển ngôn ngữ bằng ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Giữ ⌥ và nhấn ⇧: ngôn ngữ tiếp theo. Giữ ⇧ và nhấn ⌥: ngôn ngữ trước";
+"Hold ⌥, tap ⇧: next language" = "Giữ ⌥, nhấn ⇧: ngôn ngữ tiếp theo";
 "All set" = "Đã sẵn sàng";
 "pika-tools needs two permissions" = "pika-tools cần hai quyền";
 "Both permissions are on and every tool is working." = "Cả hai quyền đã được bật và mọi công cụ đều hoạt động.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "thoát, đóng, command, vô tình, bấm nhầm, phím tắt";
 "Quit when the last window closes" = "Thoát khi đóng cửa sổ cuối cùng";
 "Closing an app’s last window quits the app. Finder stays open." = "Đóng cửa sổ cuối cùng của ứng dụng sẽ thoát ứng dụng đó. Finder vẫn mở.";
+"Finder always stays open" = "Finder luôn mở";
 "Add App…" = "Thêm ứng dụng…";
 "Never quit these apps" = "Không bao giờ thoát các ứng dụng này";
 "No apps yet" = "Chưa có ứng dụng nào";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "ngoại lệ, loại trừ, danh sách";
 "Hide with a click in the Dock" = "Ẩn bằng một lần bấm trong Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Bấm vào biểu tượng của ứng dụng đang dùng để ẩn ứng dụng. Bấm lần nữa để hiện lại.";
+"Click again to bring it back" = "Bấm lần nữa để hiện lại";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, thu nhỏ, ẩn, Windows, thanh tác vụ, taskbar";
 "From 1 minute to 12 months" = "Từ 1 phút đến 12 tháng";
 "Lets the app change clicks and keys and manage windows" = "Cho phép ứng dụng thay đổi thao tác bấm, phím và quản lý cửa sổ";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Các cải tiến cho chuột. Mỗi mục hoạt động riêng.";
 "Turn off pointer acceleration" = "Tắt tăng tốc con trỏ";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Con trỏ di chuyển đúng bằng tay bạn, dù nhanh hay chậm. Chỉ dành cho chuột.";
+"Moves as far as your hand" = "Di chuyển đúng bằng tay bạn";
 "Tracking speed" = "Tốc độ di chuyển";
 "Works while acceleration is off" = "Có tác dụng khi tắt tăng tốc";
 "Slow" = "Chậm";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools sẽ lại tự động kiểm tra bản cập nhật.";
 "Scroll by lines" = "Cuộn theo dòng";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Mỗi lần lăn con lăn cuộn cùng một quãng, dù nhanh hay chậm. Chỉ dành cho chuột.";
+"Same distance at any speed" = "Cùng một quãng ở mọi tốc độ";
 "Lines per wheel click" = "Số dòng mỗi lần bấm bánh xe";
 "Works while scrolling by lines is on" = "Hoạt động khi bật cuộn theo dòng";
 "Scroll by" = "Cuộn theo";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Đây không phải tệp cài đặt của pika-tools hoặc tệp đã bị hỏng.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Cho phép ứng dụng giữ cài đặt của bạn trong iCloud Drive để đồng bộ hóa";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Nút chuột 4 và 5 để quay lại và đi tiếp, giống như vuốt trên bàn di chuột.";
+"Like a trackpad swipe" = "Giống như vuốt trên bàn di chuột";
 "Repeat a held key" = "Lặp lại phím khi giữ";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Giữ một phím sẽ lặp lại phím đó thay vì mở menu dấu. Khởi động lại các app đang mở để áp dụng.";
+"Instead of the accent menu" = "Thay vì mở menu dấu";
 "key repeat, hold, accent menu, games, typing" = "lặp phím, giữ phím, menu dấu, trò chơi, gõ phím";
 "New File in Finder" = "Tệp mới trong Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Bấm chuột phải trong Finder hoặc trên màn hình nền › Tệp mới, rồi nhập tên. Mặc định là .txt.";
+"Right-click in any folder" = "Bấm chuột phải trong thư mục bất kỳ";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "tạo, tệp văn bản, txt, chuột phải, menu ngữ cảnh, màn hình nền, Windows";
 "New File" = "Tệp mới";
 "Untitled" = "Không có tiêu đề";

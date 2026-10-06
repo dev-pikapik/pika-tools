@@ -161,6 +161,7 @@ private struct WheelSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Each wheel click scrolls the same distance, at any speed. Mouse only."),
+            hint: Text("Same distance at any speed"),
             isOn: $tool.isEnabled
         )
         if inSettings {

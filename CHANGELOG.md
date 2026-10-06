@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.1] - Unreleased
+
+### Changed
+- The menu bar panel shows a short hint under each row again. The full description is still in the tooltip. Keep Awake always shows its status.
+- “New File” in the Finder right-click menu no longer has an icon, like the system items.
+
+### Fixed
+- The menu bar panel sometimes opened with grey colors instead of your accent color.
+
 ## [1.15.0] - Unreleased
 
 ### Changed

@@ -8,10 +8,14 @@ import AppKit
     func start() {
         monitor = NSEvent.addLocalMonitorForEvents(matching: [.rightMouseDown, .leftMouseDown]) { [weak self] event in
             guard let self, let window = event.window,
-                  NSStringFromClass(type(of: window)).contains("StatusBarWindow"),
-                  event.type == .rightMouseDown || event.modifierFlags.contains(.control),
-                  let button = window.contentView?.hitTest(event.locationInWindow) ?? window.contentView
+                  NSStringFromClass(type(of: window)).contains("StatusBarWindow")
             else { return event }
+            guard event.type == .rightMouseDown || event.modifierFlags.contains(.control),
+                  let button = window.contentView?.hitTest(event.locationInWindow) ?? window.contentView
+            else {
+                NSApp.activate()
+                return event
+            }
             menu().popUp(positioning: nil, at: NSPoint(x: 0, y: button.bounds.height + 4), in: button)
             return nil
         }

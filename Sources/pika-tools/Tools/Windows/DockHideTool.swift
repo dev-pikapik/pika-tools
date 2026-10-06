@@ -137,6 +137,7 @@ private struct DockHideSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Click the icon of the app you’re in to hide it. Click again to bring it back."),
+            hint: Text("Click again to bring it back"),
             isOn: $tool.isEnabled
         )
     }

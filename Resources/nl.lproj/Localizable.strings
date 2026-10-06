@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Downloaden mislukt. Probeer het later opnieuw";
 "Block ⌃ Control shortcuts" = "Blokkeer ⌃ Control-toetscombinaties";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ werkt als gewone toets: geen toetscombinaties, geen ⌃-klikmenu";
+"⌃ works as a plain key" = "⌃ werkt als gewone toets";
 "Switch language with ⌥⇧" = "Wissel van taal met ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Houd ⌥ ingedrukt en tik op ⇧: volgende taal. Houd ⇧ ingedrukt en tik op ⌥: vorige";
+"Hold ⌥, tap ⇧: next language" = "Houd ⌥ ingedrukt, tik op ⇧: volgende taal";
 "All set" = "Alles klaar";
 "pika-tools needs two permissions" = "pika-tools heeft twee toestemmingen nodig";
 "Both permissions are on and every tool is working." = "Beide toestemmingen staan aan en alle functies werken.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "stoppen, sluiten, command, per ongeluk, toetscombinatie";
 "Quit when the last window closes" = "Stop als het laatste venster sluit";
 "Closing an app’s last window quits the app. Finder stays open." = "Als je het laatste venster van een app sluit, stopt de app. Finder blijft open.";
+"Finder always stays open" = "Finder blijft altijd open";
 "Add App…" = "Voeg app toe…";
 "Never quit these apps" = "Stop deze apps nooit";
 "No apps yet" = "Nog geen apps";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "uitzonderingen, uitsluiten, lijst";
 "Hide with a click in the Dock" = "Verberg met een klik in het Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik op het symbool van de app waarin je werkt om deze te verbergen. Klik nogmaals om hem terug te halen.";
+"Click again to bring it back" = "Nog een klik haalt hem terug";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimaliseren, verbergen, Windows, taakbalk, taskbar";
 "From 1 minute to 12 months" = "Van 1 minuut tot 12 maanden";
 "Lets the app change clicks and keys and manage windows" = "Laat de app klikken en toetsen wijzigen en vensters beheren";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Verbeteringen voor de muis. Elk werkt op zichzelf.";
 "Turn off pointer acceleration" = "Aanwijzerversnelling uitschakelen";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "De aanwijzer gaat net zo ver als je hand, hoe snel je ook beweegt. Alleen voor muizen.";
+"Moves as far as your hand" = "Gaat net zo ver als je hand";
 "Tracking speed" = "Snelheid aanwijzer";
 "Works while acceleration is off" = "Werkt als versnelling uit staat";
 "Slow" = "Traag";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools controleert weer automatisch op updates.";
 "Scroll by lines" = "Per regel scrollen";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Elke klik van het wiel scrolt even ver, hoe snel je ook draait. Alleen voor muizen.";
+"Same distance at any speed" = "Even ver, hoe snel je ook draait";
 "Lines per wheel click" = "Regels per klik van het wieltje";
 "Works while scrolling by lines is on" = "Werkt als scrollen per regel aan staat";
 "Scroll by" = "Scrollen per";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Het is geen instellingenbestand van pika-tools, of het is beschadigd.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Hiermee kan de app je instellingen in iCloud Drive bewaren om ze te synchroniseren";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Muisknoppen 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.";
+"Like a trackpad swipe" = "Net als vegen op het trackpad";
 "Repeat a held key" = "Ingedrukte toets herhalen";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Een ingedrukte toets herhaalt zich in plaats van het accentmenu te openen. Start open apps opnieuw op om het toe te passen.";
+"Instead of the accent menu" = "In plaats van het accentmenu";
 "key repeat, hold, accent menu, games, typing" = "toetsherhaling, ingedrukt houden, accentmenu, games, typen";
 "New File in Finder" = "Nieuw bestand in de Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klik met rechts in de Finder of op het bureaublad › Nieuw bestand en typ een naam. Standaard .txt.";
+"Right-click in any folder" = "Rechtsklik in elke map";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "aanmaken, tekstbestand, txt, rechtsklik, contextmenu, bureaublad, Windows";
 "New File" = "Nieuw bestand";
 "Untitled" = "Naamloos";

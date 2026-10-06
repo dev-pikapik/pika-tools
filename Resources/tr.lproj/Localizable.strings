@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "İndirme başarısız oldu. Daha sonra yeniden deneyin";
 "Block ⌃ Control shortcuts" = "⌃ Control kestirmelerini engelle";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ sıradan bir tuş gibi çalışır: kestirme yok, ⌃-tıklama menüsü yok";
+"⌃ works as a plain key" = "⌃ sıradan bir tuş gibi çalışır";
 "Switch language with ⌥⇧" = "Dili ⌥⇧ ile değiştir";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ basılıyken ⇧ tuşuna basın: sonraki dil. ⇧ basılıyken ⌥ tuşuna basın: önceki dil";
+"Hold ⌥, tap ⇧: next language" = "⌥ basılıyken ⇧ tuşuna basın: sonraki dil";
 "All set" = "Her şey hazır";
 "pika-tools needs two permissions" = "pika-tools’un iki izne ihtiyacı var";
 "Both permissions are on and every tool is working." = "İki izin de açık ve tüm araçlar çalışıyor.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "çık, kapat, command, yanlışlıkla, kestirme, kısayol";
 "Quit when the last window closes" = "Son pencere kapanınca çık";
 "Closing an app’s last window quits the app. Finder stays open." = "Bir uygulamanın son penceresini kapatınca uygulamadan çıkılır. Finder açık kalır.";
+"Finder always stays open" = "Finder her zaman açık kalır";
 "Add App…" = "Uygulama Ekle…";
 "Never quit these apps" = "Bu uygulamalardan asla çıkma";
 "No apps yet" = "Henüz uygulama yok";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "istisnalar, hariç tut, liste";
 "Hide with a click in the Dock" = "Dock’ta tıklayarak gizle";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Kullandığınız uygulamanın simgesini tıklayarak onu gizleyin. Geri getirmek için yeniden tıklayın.";
+"Click again to bring it back" = "Geri getirmek için yeniden tıklayın";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, simge durumuna küçült, gizle, Windows, görev çubuğu, taskbar";
 "From 1 minute to 12 months" = "1 dakikadan 12 aya kadar";
 "Lets the app change clicks and keys and manage windows" = "Uygulamanın tıklamaları ve tuşları değiştirmesini ve pencereleri yönetmesini sağlar";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Fare için düzeltmeler. Her biri ayrı çalışır.";
 "Turn off pointer acceleration" = "İmleç hızlandırmayı kapat";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Ne kadar hızlı hareket ettirirseniz ettirin, imleç eliniz kadar ilerler. Yalnızca fareler için.";
+"Moves as far as your hand" = "Eliniz kadar ilerler";
 "Tracking speed" = "İzleme hızı";
 "Works while acceleration is off" = "Hızlandırma kapalıyken çalışır";
 "Slow" = "Yavaş";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools güncellemeleri yeniden otomatik olarak denetleyecek.";
 "Scroll by lines" = "Satır satır kaydır";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Tekerleğin her tıklaması, hızı ne olursa olsun aynı mesafe kaydırır. Yalnızca fareler için.";
+"Same distance at any speed" = "Hız ne olursa olsun aynı mesafe";
 "Lines per wheel click" = "Teker tıkı başına satır";
 "Works while scrolling by lines is on" = "Satır satır kaydırma açıkken çalışır";
 "Scroll by" = "Kaydırma birimi";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Bu bir pika-tools ayarlar dosyası değil ya da dosya bozuk.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Uygulamanın, eşzamanlamak için ayarlarınızı iCloud Drive’da tutmasını sağlar";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Fare düğmeleri 4 ve 5 geri ve ileri gider; izleme dörtgeninde kaydırma gibi.";
+"Like a trackpad swipe" = "İzleme dörtgeninde kaydırma gibi";
 "Repeat a held key" = "Basılı tutulan tuşu tekrarla";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Bir tuşu basılı tutmak, aksan menüsünü açmak yerine onu tekrarlar. Uygulamak için açık uygulamaları yeniden başlatın.";
+"Instead of the accent menu" = "Aksan menüsü yerine";
 "key repeat, hold, accent menu, games, typing" = "tuş tekrarı, basılı tutma, aksan menüsü, oyunlar, yazma";
 "New File in Finder" = "Finder’da Yeni Dosya";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder’da veya masaüstünde sağ tıklayın › Yeni Dosya, sonra bir ad yazın. Varsayılan .txt.";
+"Right-click in any folder" = "Herhangi bir klasörde sağ tıklayın";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "oluştur, metin dosyası, txt, sağ tık, bağlam menüsü, masaüstü, Windows";
 "New File" = "Yeni Dosya";
 "Untitled" = "Adsız";
