@@ -16,6 +16,9 @@ All notable changes to this project are documented here. The format is based on 
 - Settings show pictures: Keep Awake, Appearance, Key Repeat, Scroll by lines or pixels, Pointer acceleration, Quit after the last window closes and Hide on Dock click. A picture changes as you flip its switch. With Reduce Motion on in System Settings, the pictures stand still.
 - Settings › Keep Awake no longer shows “Until …” twice while the timer is running.
 
+### Fixed
+- Some texts showed in English instead of your language.
+
 ## [1.16.0] - Unreleased
 
 ### Added

@@ -8,7 +8,6 @@
 "installing update…" = "đang cài đặt bản cập nhật…";
 "up to date" = "đã cập nhật";
 "update available" = "có bản cập nhật";
-"Check" = "Kiểm tra";
 "Active" = "Đang bật";
 "Off" = "Tắt";
 "Needs Access" = "Cần quyền truy cập";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Số pixel mỗi lần bấm bánh xe";
 "wheel, Windows, scrolling speed, acceleration" = "bánh xe, Windows, tốc độ cuộn, gia tốc";
 "scrolling speed, wheel, notch" = "tốc độ cuộn, bánh xe, nấc";
+"pixels, lines, wheel, games, scrolling mode, notch" = "điểm ảnh, dòng, bánh xe, trò chơi, chế độ cuộn, nấc";
 "Settings file" = "Tệp cài đặt";
 "backup, export, import, restore, JSON" = "bản sao lưu, xuất, nhập, khôi phục, JSON";
 "Sync settings with iCloud" = "Đồng bộ hóa cài đặt với iCloud";

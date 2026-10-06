@@ -8,7 +8,6 @@
 "installing update…" = "güncelleme yükleniyor…";
 "up to date" = "güncel";
 "update available" = "güncelleme var";
-"Check" = "Denetle";
 "Active" = "Etkin";
 "Off" = "Kapalı";
 "Needs Access" = "Erişim gerekiyor";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Teker tıkı başına piksel";
 "wheel, Windows, scrolling speed, acceleration" = "teker, Windows, sarma hızı, hızlanma";
 "scrolling speed, wheel, notch" = "sarma hızı, teker, tık";
+"pixels, lines, wheel, games, scrolling mode, notch" = "piksel, satır, teker, oyunlar, sarma modu, tık";
 "Settings file" = "Ayarlar dosyası";
 "backup, export, import, restore, JSON" = "yedek, dışa aktar, içe aktar, geri yükle, JSON";
 "Sync settings with iCloud" = "Ayarları iCloud ile eşzamanla";

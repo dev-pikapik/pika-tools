@@ -8,7 +8,6 @@
 "installing update…" = "ставлю обновление…";
 "up to date" = "свежая";
 "update available" = "есть новая";
-"Check" = "Проверить";
 "Active" = "Активно";
 "Off" = "Выключено";
 "Needs Access" = "Нужен доступ";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Пикселей за щелчок колесика";
 "wheel, Windows, scrolling speed, acceleration" = "колесико, Windows, скорость прокрутки, ускорение";
 "scrolling speed, wheel, notch" = "скорость прокрутки, колесико, щелчок";
+"pixels, lines, wheel, games, scrolling mode, notch" = "пиксели, строки, колесико, игры, режим прокрутки, щелчок";
 "Settings file" = "Файл настроек";
 "backup, export, import, restore, JSON" = "резервная копия, экспорт, импорт, восстановление, JSON";
 "Sync settings with iCloud" = "Синхронизировать настройки через iCloud";

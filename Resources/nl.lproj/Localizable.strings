@@ -8,7 +8,6 @@
 "installing update…" = "update installeren…";
 "up to date" = "up-to-date";
 "update available" = "update beschikbaar";
-"Check" = "Controleer";
 "Active" = "Actief";
 "Off" = "Uit";
 "Needs Access" = "Toegang nodig";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixels per klik van het wieltje";
 "wheel, Windows, scrolling speed, acceleration" = "wieltje, Windows, scrolsnelheid, versnelling";
 "scrolling speed, wheel, notch" = "scrolsnelheid, wieltje, klik";
+"pixels, lines, wheel, games, scrolling mode, notch" = "pixels, regels, wieltje, games, scrolmodus, klik";
 "Settings file" = "Instellingenbestand";
 "backup, export, import, restore, JSON" = "reservekopie, exporteren, importeren, herstellen, JSON";
 "Sync settings with iCloud" = "Instellingen synchroniseren met iCloud";

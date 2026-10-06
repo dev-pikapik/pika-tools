@@ -8,7 +8,6 @@
 "installing update…" = "正在安裝更新…";
 "up to date" = "已是最新版本";
 "update available" = "有可用的更新";
-"Check" = "檢查";
 "Active" = "已啟用";
 "Off" = "已關閉";
 "Needs Access" = "需要權限";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "滾輪每格像素數";
 "wheel, Windows, scrolling speed, acceleration" = "滾輪, Windows, 捲動速度, 加速";
 "scrolling speed, wheel, notch" = "捲動速度, 滾輪, 格";
+"pixels, lines, wheel, games, scrolling mode, notch" = "像素, 行, 滾輪, 遊戲, 捲動方式, 格";
 "Settings file" = "設定檔";
 "backup, export, import, restore, JSON" = "備份, 輸出, 輸入, 回復, JSON";
 "Sync settings with iCloud" = "透過 iCloud 同步設定";

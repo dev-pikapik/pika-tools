@@ -8,7 +8,6 @@
 "installing update…" = "กำลังติดตั้งอัปเดต…";
 "up to date" = "เป็นเวอร์ชันล่าสุด";
 "update available" = "มีอัปเดต";
-"Check" = "ตรวจสอบ";
 "Active" = "เปิดอยู่";
 "Off" = "ปิด";
 "Needs Access" = "ต้องการการเข้าถึง";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "จำนวนพิกเซลต่อการคลิกล้อ";
 "wheel, Windows, scrolling speed, acceleration" = "ล้อ, Windows, ความเร็วการเลื่อน, การเร่ง";
 "scrolling speed, wheel, notch" = "ความเร็วการเลื่อน, ล้อ, คลิก";
+"pixels, lines, wheel, games, scrolling mode, notch" = "พิกเซล, บรรทัด, ล้อ, เกม, โหมดการเลื่อน, คลิก";
 "Settings file" = "ไฟล์การตั้งค่า";
 "backup, export, import, restore, JSON" = "ข้อมูลสำรอง, ส่งออก, นำเข้า, กู้คืน, JSON";
 "Sync settings with iCloud" = "ซิงค์การตั้งค่ากับ iCloud";

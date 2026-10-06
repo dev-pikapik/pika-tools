@@ -8,7 +8,6 @@
 "installing update…" = "업데이트 설치 중…";
 "up to date" = "최신 버전";
 "update available" = "새 버전 있음";
-"Check" = "확인";
 "Active" = "활성";
 "Off" = "끔";
 "Needs Access" = "권한 필요";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "휠 한 칸당 픽셀 수";
 "wheel, Windows, scrolling speed, acceleration" = "휠, Windows, 스크롤 속도, 가속";
 "scrolling speed, wheel, notch" = "스크롤 속도, 휠, 칸";
+"pixels, lines, wheel, games, scrolling mode, notch" = "픽셀, 줄, 휠, 게임, 스크롤 방식, 칸";
 "Settings file" = "설정 파일";
 "backup, export, import, restore, JSON" = "백업, 내보내기, 가져오기, 복원, JSON";
 "Sync settings with iCloud" = "iCloud로 설정 동기화";

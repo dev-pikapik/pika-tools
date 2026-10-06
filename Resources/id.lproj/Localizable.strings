@@ -8,7 +8,6 @@
 "installing update…" = "memasang pembaruan…";
 "up to date" = "sudah terbaru";
 "update available" = "pembaruan tersedia";
-"Check" = "Periksa";
 "Active" = "Aktif";
 "Off" = "Mati";
 "Needs Access" = "Perlu Akses";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Piksel per klik roda";
 "wheel, Windows, scrolling speed, acceleration" = "roda, Windows, kecepatan menggulir, akselerasi";
 "scrolling speed, wheel, notch" = "kecepatan menggulir, roda, klik";
+"pixels, lines, wheel, games, scrolling mode, notch" = "piksel, baris, roda, gim, mode menggulir, klik";
 "Settings file" = "File pengaturan";
 "backup, export, import, restore, JSON" = "cadangan, ekspor, impor, pulihkan, JSON";
 "Sync settings with iCloud" = "Selaraskan pengaturan dengan iCloud";

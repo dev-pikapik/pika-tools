@@ -8,7 +8,6 @@
 "installing update…" = "se instalează actualizarea…";
 "up to date" = "la zi";
 "update available" = "actualizare disponibilă";
-"Check" = "Verifică";
 "Active" = "Activ";
 "Off" = "Dezactivat";
 "Needs Access" = "Necesită acces";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixeli per clic al rotiței";
 "wheel, Windows, scrolling speed, acceleration" = "rotiță, Windows, viteză derulare, accelerare";
 "scrolling speed, wheel, notch" = "viteză derulare, rotiță, clic";
+"pixels, lines, wheel, games, scrolling mode, notch" = "pixeli, rânduri, rotiță, jocuri, mod de derulare, clic";
 "Settings file" = "Fișier de configurări";
 "backup, export, import, restore, JSON" = "copie de rezervă, exportare, importare, restaurare, JSON";
 "Sync settings with iCloud" = "Sincronizează configurările cu iCloud";

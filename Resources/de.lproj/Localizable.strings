@@ -8,7 +8,6 @@
 "installing update…" = "Update wird installiert …";
 "up to date" = "aktuell";
 "update available" = "Update verfügbar";
-"Check" = "Prüfen";
 "Active" = "Aktiv";
 "Off" = "Aus";
 "Needs Access" = "Zugriff nötig";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixel pro Mausrad-Klick";
 "wheel, Windows, scrolling speed, acceleration" = "Mausrad, Windows, Scrolltempo, Beschleunigung";
 "scrolling speed, wheel, notch" = "Scrolltempo, Mausrad, Raste";
+"pixels, lines, wheel, games, scrolling mode, notch" = "Pixel, Zeilen, Mausrad, Spiele, Scrollmodus, Raste";
 "Settings file" = "Einstellungsdatei";
 "backup, export, import, restore, JSON" = "Backup, Exportieren, Importieren, Wiederherstellen, JSON";
 "Sync settings with iCloud" = "Einstellungen mit iCloud synchronisieren";

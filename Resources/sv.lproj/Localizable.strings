@@ -8,7 +8,6 @@
 "installing update…" = "installerar uppdatering…";
 "up to date" = "aktuell";
 "update available" = "uppdatering tillgänglig";
-"Check" = "Kontrollera";
 "Active" = "Aktiv";
 "Off" = "Av";
 "Needs Access" = "Behöver åtkomst";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixlar per klick med hjulet";
 "wheel, Windows, scrolling speed, acceleration" = "hjul, Windows, rullningshastighet, acceleration";
 "scrolling speed, wheel, notch" = "rullningshastighet, hjul, klick";
+"pixels, lines, wheel, games, scrolling mode, notch" = "pixlar, rader, hjul, spel, rullningsläge, klick";
 "Settings file" = "Inställningsfil";
 "backup, export, import, restore, JSON" = "säkerhetskopia, exportera, importera, återställ, JSON";
 "Sync settings with iCloud" = "Synkronisera inställningar med iCloud";
