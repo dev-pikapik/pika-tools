@@ -8,7 +8,6 @@
 "installing update…" = "अपडेट इंस्टॉल हो रहा है…";
 "up to date" = "अप टू डेट";
 "update available" = "अपडेट उपलब्ध है";
-"Check" = "जाँचें";
 "Active" = "सक्रिय";
 "Off" = "बंद";
 "Needs Access" = "ऐक्सेस चाहिए";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "हर व्हील क्लिक पर पिक्सेल";
 "wheel, Windows, scrolling speed, acceleration" = "व्हील, Windows, स्क्रोल करने की गति, त्वरण";
 "scrolling speed, wheel, notch" = "स्क्रोल करने की गति, व्हील, क्लिक";
+"pixels, lines, wheel, games, scrolling mode, notch" = "पिक्सल, पंक्तियाँ, व्हील, गेम, स्क्रोल मोड, क्लिक";
 "Settings file" = "सेटिंग्ज़ फ़ाइल";
 "backup, export, import, restore, JSON" = "बैकअप, एक्सपोर्ट, इंपोर्ट, रीस्टोर, JSON";
 "Sync settings with iCloud" = "iCloud के साथ सेटिंग्ज़ सिंक करें";

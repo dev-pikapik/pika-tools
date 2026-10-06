@@ -8,7 +8,6 @@
 "installing update…" = "installing update…";
 "up to date" = "up to date";
 "update available" = "update available";
-"Check" = "Check";
 "Active" = "Active";
 "Off" = "Off";
 "Needs Access" = "Needs Access";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixels per wheel click";
 "wheel, Windows, scrolling speed, acceleration" = "wheel, Windows, scrolling speed, acceleration";
 "scrolling speed, wheel, notch" = "scrolling speed, wheel, notch";
+"pixels, lines, wheel, games, scrolling mode, notch" = "pixels, lines, wheel, games, scrolling mode, notch";
 "Settings file" = "Settings file";
 "backup, export, import, restore, JSON" = "backup, export, import, restore, JSON";
 "Sync settings with iCloud" = "Sync settings with iCloud";

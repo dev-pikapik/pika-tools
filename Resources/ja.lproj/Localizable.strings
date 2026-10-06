@@ -8,7 +8,6 @@
 "installing update…" = "アップデート中…";
 "up to date" = "最新です";
 "update available" = "新しいバージョンがあります";
-"Check" = "確認";
 "Active" = "有効";
 "Off" = "オフ";
 "Needs Access" = "アクセス権が必要";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "ホイール1クリックあたりのピクセル数";
 "wheel, Windows, scrolling speed, acceleration" = "ホイール, Windows, スクロールの速さ, 加速";
 "scrolling speed, wheel, notch" = "スクロールの速さ, ホイール, クリック";
+"pixels, lines, wheel, games, scrolling mode, notch" = "ピクセル, 行, ホイール, ゲーム, スクロール方式, クリック";
 "Settings file" = "設定ファイル";
 "backup, export, import, restore, JSON" = "バックアップ, 書き出す, 読み込む, 復元, JSON";
 "Sync settings with iCloud" = "iCloudで設定を同期";

@@ -17,6 +17,7 @@ struct PikaToolsApp: App {
                 Button("Settings…") { SettingsWindow.show() }
                     .keyboardShortcut(",")
             }
+            CommandGroup(replacing: .help) {}
         }
     }
 }

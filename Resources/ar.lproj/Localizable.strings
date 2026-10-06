@@ -8,7 +8,6 @@
 "installing update…" = "جارٍ تثبيت التحديث…";
 "up to date" = "محدّث";
 "update available" = "يتوفر تحديث";
-"Check" = "تحقق";
 "Active" = "نشط";
 "Off" = "إيقاف";
 "Needs Access" = "يحتاج إلى إذن";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "عدد البكسلات لكل نقرة عجلة";
 "wheel, Windows, scrolling speed, acceleration" = "عجلة، Windows، سرعة التمرير، التسارع";
 "scrolling speed, wheel, notch" = "سرعة التمرير، عجلة، نقرة";
+"pixels, lines, wheel, games, scrolling mode, notch" = "بكسل، أسطر، عجلة، ألعاب، وضع التمرير، نقرة";
 "Settings file" = "ملف الإعدادات";
 "backup, export, import, restore, JSON" = "نسخة احتياطية، تصدير، استيراد، استعادة، JSON";
 "Sync settings with iCloud" = "مزامنة الإعدادات مع iCloud";

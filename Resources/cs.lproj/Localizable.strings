@@ -8,7 +8,6 @@
 "installing update…" = "instaluje se aktualizace…";
 "up to date" = "aktuální";
 "update available" = "je dostupná aktualizace";
-"Check" = "Zkontrolovat";
 "Active" = "Aktivní";
 "Off" = "Vypnuto";
 "Needs Access" = "Vyžaduje přístup";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Pixelů na cvaknutí kolečka";
 "wheel, Windows, scrolling speed, acceleration" = "kolečko, Windows, rychlost posouvání, zrychlení";
 "scrolling speed, wheel, notch" = "rychlost posouvání, kolečko, cvaknutí";
+"pixels, lines, wheel, games, scrolling mode, notch" = "pixely, řádky, kolečko, hry, režim posouvání, cvaknutí";
 "Settings file" = "Soubor nastavení";
 "backup, export, import, restore, JSON" = "záloha, export, import, obnovení, JSON";
 "Sync settings with iCloud" = "Synchronizovat nastavení přes iCloud";

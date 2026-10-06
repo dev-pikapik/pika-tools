@@ -8,7 +8,6 @@
 "installing update…" = "встановлюю оновлення…";
 "up to date" = "актуальна";
 "update available" = "є нова";
-"Check" = "Перевірити";
 "Active" = "Активно";
 "Off" = "Вимкнено";
 "Needs Access" = "Потрібен доступ";
@@ -164,6 +163,7 @@
 "Pixels per wheel click" = "Пікселів за клацання коліщатка";
 "wheel, Windows, scrolling speed, acceleration" = "коліщатко, Windows, швидкість прокручування, прискорення";
 "scrolling speed, wheel, notch" = "швидкість прокручування, коліщатко, клацання";
+"pixels, lines, wheel, games, scrolling mode, notch" = "пікселі, рядки, коліщатко, ігри, режим прокручування, клацання";
 "Settings file" = "Файл параметрів";
 "backup, export, import, restore, JSON" = "резервна копія, експорт, імпорт, відновлення, JSON";
 "Sync settings with iCloud" = "Синхронізувати параметри через iCloud";
