@@ -218,6 +218,7 @@
 "Shortcuts" = "Kurzbefehle";
 "Open Shortcuts" = "Kurzbefehle öffnen";
 "Copy Link" = "Link kopieren";
+"Copied" = "Kopiert";
 "Buttons in Control Center and widgets" = "Tasten im Kontrollzentrum und in Widgets";
 "widget, Control Center, Shortcuts, menu bar, button" = "Widget, Kontrollzentrum, Kurzbefehle, Menüleiste, Taste";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Erstelle in Kurzbefehle einen Kurzbefehl mit der Aktion „URLs öffnen“ und füge einen Link ein. Lege ihn dann im Kontrollzentrum, in der Menüleiste oder als Kurzbefehle-Widget auf dem Schreibtisch ab. Jedes Tippen schaltet ihn ein oder aus.";

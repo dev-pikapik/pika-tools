@@ -126,19 +126,24 @@ final class KeepAwake {
         set { set(newValue ? lastMode : .off) }
     }
 
+    var remaining: String? {
+        guard mode == .timed else { return nil }
+        let end = max(endDate ?? now, now)
+        let left = Int(end.timeIntervalSince(now).rounded(.up))
+        let days = left / 86400
+        let clock = String(format: "%02d:%02d:%02d", left % 86400 / 3600, left % 3600 / 60, left % 60)
+        return days > 0
+            ? Duration.seconds(days * 86400).formatted(.units(allowed: [.days], width: .narrow)) + " " + clock
+            : clock
+    }
+
     var statusText: Text {
         switch mode {
         case .off: return Text("Your Mac sleeps as usual")
         case .indefinitely: return Text("Until you turn it off")
         case .timed:
             let end = max(endDate ?? now, now)
-            let left = Int(end.timeIntervalSince(now).rounded(.up))
-            let days = left / 86400
-            let clock = String(format: "%02d:%02d:%02d", left % 86400 / 3600, left % 3600 / 60, left % 60)
-            let remaining = days > 0
-                ? Duration.seconds(days * 86400).formatted(.units(allowed: [.days], width: .narrow)) + " " + clock
-                : clock
-            return Text("\(Text(verbatim: remaining).monospacedDigit()) left, until \(Self.until(end))")
+            return Text("\(Text(verbatim: remaining ?? "").monospacedDigit()) left, until \(Self.until(end))")
         }
     }
 
@@ -272,32 +277,41 @@ final class KeepAwake {
 struct KeepAwakeSettings: View {
     @Bindable private var keepAwake = KeepAwake.shared
 
+    private static var shortcutsIcon: NSImage {
+        NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.shortcuts")
+            .map { NSWorkspace.shared.icon(forFile: $0.path) } ?? NSImage()
+    }
+
     private func until(_ now: Date) -> Text {
-        if keepAwake.mode == .indefinitely { return Text("Until you turn it off") }
-        let end = keepAwake.endDate ?? now.addingTimeInterval(TimeInterval(keepAwake.duration))
-        return Text("Until \(KeepAwake.until(end))")
+        Text("Until \(KeepAwake.until(now.addingTimeInterval(TimeInterval(keepAwake.duration))))")
     }
 
     var body: some View {
         Form {
             SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools."))
             Section {
-                Picker(selection: Binding(get: { keepAwake.mode }, set: { keepAwake.set($0) })) {
-                    Text("Off").tag(KeepAwake.Mode.off)
-                    Text("For a while").tag(KeepAwake.Mode.timed)
-                    Text("Indefinitely").tag(KeepAwake.Mode.indefinitely)
+                KeepAwakeArt()
+                LabeledContent {
+                    Picker("Keep your Mac awake", selection: Binding(get: { keepAwake.mode }, set: { keepAwake.set($0) })) {
+                        Text("Off").tag(KeepAwake.Mode.off)
+                        Text("For a while").tag(KeepAwake.Mode.timed)
+                        Text("Indefinitely").tag(KeepAwake.Mode.indefinitely)
+                    }
+                    .labelsHidden()
+                    .fixedSize()
                 } label: {
-                    Text("Keep your Mac awake")
-                    keepAwake.statusText
+                    RowLabel(Text("Keep your Mac awake"), keepAwake.statusText)
                 }
                 .settingAnchor(String(localized: "Keep your Mac awake"))
                 VStack(alignment: .leading, spacing: 14) {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Duration")
-                        TimelineView(.everyMinute) { context in
-                            until(context.date)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                        if keepAwake.mode == .off {
+                            TimelineView(.everyMinute) { context in
+                                until(context.date)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
                     DurationPicker(seconds: $keepAwake.duration)
@@ -307,23 +321,20 @@ struct KeepAwakeSettings: View {
                 .disabled(keepAwake.mode == .indefinitely)
                 .settingAnchor(String(localized: "Duration"))
                 Toggle(isOn: $keepAwake.keepsDisplayOn) {
-                    Text("Keep the display on")
-                    Text("Otherwise the screen dims and turns off as usual")
+                    RowLabel(Text("Keep the display on"), Text("Otherwise the screen dims and turns off as usual"))
                 }
                 .settingAnchor(String(localized: "Keep the display on"))
             }
 
             Section {
                 Toggle(isOn: $keepAwake.worksWithLidClosed) {
-                    Text("Work with the lid closed")
-                    keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops")
+                    RowLabel(Text("Work with the lid closed"), keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops"))
                 }
                 .disabled(!keepAwake.hasLid)
                 .settingAnchor(String(localized: "Work with the lid closed"))
                 if keepAwake.hasLid {
                     Toggle(isOn: $keepAwake.stopsOnLowBattery) {
-                        Text("Stop when battery is below \(0.2.formatted(.percent))")
-                        Text("Lets the Mac sleep again before the battery runs out")
+                        RowLabel(Text("Stop when battery is below \(0.2.formatted(.percent))"), Text("Lets the Mac sleep again before the battery runs out"))
                     }
                     .disabled(!keepAwake.worksWithLidClosed)
                     .settingAnchor(String(localized: "Stop when battery is below \(0.2.formatted(.percent))"))
@@ -346,9 +357,17 @@ struct KeepAwakeSettings: View {
                 if keepAwake.hasLid {
                     ShortcutLink(title: String(localized: "Work with the lid closed"), path: "lid-closed")
                 }
-                LabeledContent(String(localized: "Shortcuts")) {
-                    Button(String(localized: "Open Shortcuts")) {
+                LabeledContent {
+                    Button("Open Shortcuts", systemImage: "arrow.up.forward.app") {
                         NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Applications/Shortcuts.app"))
+                    }
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(nsImage: Self.shortcutsIcon)
+                            .resizable()
+                            .frame(width: SettingsTab.iconSize + 4, height: SettingsTab.iconSize + 4)
+                            .accessibilityHidden(true)
+                        Text("Shortcuts")
                     }
                 }
             } header: {
@@ -393,9 +412,81 @@ extension KeepAwake {
     }
 }
 
+private struct KeepAwakeArt: View {
+    private let keepAwake = KeepAwake.shared
+
+    var body: some View {
+        KeepAwakeScene(
+            on: keepAwake.mode != .off,
+            bright: keepAwake.keepsDisplayOn,
+            closed: keepAwake.hasLid && keepAwake.worksWithLidClosed,
+            hasLid: keepAwake.hasLid,
+            remaining: keepAwake.remaining
+        )
+    }
+}
+
+struct KeepAwakeScene: View {
+    let on: Bool
+    let bright: Bool
+    let closed: Bool
+    let hasLid: Bool
+    let remaining: String?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private struct Look: Equatable {
+        let on: Bool
+        let bright: Bool
+        let closed: Bool
+    }
+
+    var body: some View {
+        let glow = on ? (bright ? 1.0 : 0.6) : 0
+        let monitor = closed || !hasLid
+        IllustrationRow {
+            ZStack(alignment: .bottom) {
+                if hasLid {
+                    ArtLaptop(lid: closed ? 1 : 0, glow: closed ? 0 : glow) { face }
+                        .offset(x: closed ? -80 : 0)
+                }
+                ArtMonitor(glow: glow) { face }
+                    .offset(x: hasLid ? 76 : 0)
+                    .scaleEffect(monitor ? 1 : 0.85, anchor: .bottom)
+                    .opacity(monitor ? 1 : 0)
+            }
+            .padding(.bottom, 22)
+            .spring(Look(on: on, bright: bright, closed: closed), reduceMotion: reduceMotion)
+        }
+    }
+
+    private var face: some View {
+        ZStack {
+            Image(systemName: "moon.zzz.fill")
+                .font(.system(size: 15))
+                .foregroundStyle(.white.opacity(0.4))
+                .opacity(on ? 0 : 1)
+            Group {
+                if let remaining {
+                    Text(verbatim: remaining)
+                } else {
+                    Image(systemName: "infinity")
+                }
+            }
+            .font(.system(size: 10, weight: .semibold, design: .rounded))
+            .monospacedDigit()
+            .foregroundStyle(.white)
+            .padding(.horizontal, 7)
+            .padding(.vertical, 2.5)
+            .background(.black.opacity(0.35), in: Capsule())
+            .opacity(on ? 1 : 0)
+        }
+    }
+}
+
 private struct ShortcutLink: View {
     let title: String
     let path: String
+    @State private var copied = false
 
     private var link: String {
         let types = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLTypes") as? [[String: Any]]
@@ -405,13 +496,19 @@ private struct ShortcutLink: View {
 
     var body: some View {
         LabeledContent {
-            Button(String(localized: "Copy Link")) {
+            Button(copied ? LocalizedStringKey("Copied") : "Copy Link", systemImage: copied ? "checkmark" : "link") {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(link, forType: .string)
+                copied = true
+                Task {
+                    try? await Task.sleep(for: .seconds(1))
+                    copied = false
+                }
             }
+            .contentTransition(.symbolEffect(.replace))
+            .animation(.snappy, value: copied)
         } label: {
-            Text(title)
-            Text(verbatim: link)
+            RowLabel(Text(title), Text(verbatim: link))
                 .textSelection(.enabled)
         }
     }

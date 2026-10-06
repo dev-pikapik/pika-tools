@@ -96,6 +96,8 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Autorisations** : l’état des deux autorisations, et d’iCloud Drive quand la synchronisation est activée, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 
+De nombreux réglages s’accompagnent d’une petite image qui montre ce qu’ils font, par exemple un Mac qui reste éveillé ou une fenêtre qui se cache derrière le Dock. L’image change avec l’interrupteur et reste fixe quand « Réduire les animations » est activé dans Réglages Système.
+
 Chaque page comporte en bas un bouton **Rétablir les réglages par défaut…**. Il demande d’abord confirmation, puis désactive les outils de la page et rétablit leurs options, comme si pika-tools n’y avait jamais touché.
 
 **Synchroniser les réglages avec iCloud** garde pika-tools identique sur tous vos Mac. Les réglages se trouvent dans le dossier pika-tools d’iCloud Drive, et la modification la plus récente l’emporte. Désactivé par défaut, et iCloud Drive doit être activé. Les autorisations ne sont pas synchronisées : chaque Mac les demande lui-même.

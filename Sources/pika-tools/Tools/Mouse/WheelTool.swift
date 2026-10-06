@@ -152,6 +152,48 @@ private func wheelCallback(
     return Unmanaged.passUnretained(event)
 }
 
+struct ScrollArt: View {
+    let smooth: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let pitch: CGFloat = 14
+    private static let widths: [CGFloat] = [52, 38, 46]
+
+    private struct Wrapped: ViewModifier, Animatable {
+        var offset: CGFloat
+        var animatableData: CGFloat {
+            get { offset }
+            set { offset = newValue }
+        }
+
+        func body(content: Content) -> some View {
+            content.offset(y: -offset.truncatingRemainder(dividingBy: ScrollArt.pitch * 3))
+        }
+    }
+
+    var body: some View {
+        let offset = reduceMotion ? (smooth ? Self.pitch / 2 : 0) : CGFloat(tick) * Self.pitch
+        VStack(spacing: 0) {
+            ForEach(0..<10, id: \.self) { index in
+                HStack(spacing: 6) {
+                    Circle().fill(Color.accentColor.opacity(0.8)).frame(width: 7, height: 7)
+                    Capsule().fill(Color.primary.opacity(0.16)).frame(width: Self.widths[index % 3], height: 5)
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 9)
+                .frame(height: Self.pitch)
+            }
+        }
+        .modifier(Wrapped(offset: offset))
+        .frame(maxHeight: .infinity, alignment: .top)
+        .background(Color(nsColor: .windowBackgroundColor))
+        .clipped()
+        .animation(reduceMotion ? nil : smooth ? .linear(duration: 0.7) : .snappy(duration: 0.18), value: tick)
+        .loop($tick, [0.7])
+    }
+}
+
 private struct WheelSettings: View {
     @Bindable var tool: WheelTool
     @Environment(\.inSettings) private var inSettings
@@ -166,12 +208,23 @@ private struct WheelSettings: View {
         )
         if inSettings {
             Group {
-                Picker(selection: $tool.mode) {
-                    Text("Lines").tag(WheelStep.Mode.lines)
-                    Text("Pixels").tag(WheelStep.Mode.pixels)
+                LabeledContent {
+                    HStack(alignment: .top, spacing: 16) {
+                        ForEach([WheelStep.Mode.lines, .pixels], id: \.self) { mode in
+                            ChoiceTile(
+                                title: mode == .lines ? String(localized: "Lines") : String(localized: "Pixels"),
+                                selected: tool.mode == mode,
+                                size: CGSize(width: 96, height: 60),
+                                action: { tool.mode = mode }
+                            ) {
+                                ScrollArt(smooth: mode == .pixels)
+                            }
+                        }
+                    }
+                    .padding(.vertical, 6)
+                    .accessibilityElement(children: .contain)
                 } label: {
-                    Text("Scroll by")
-                    Text("Lines suit most apps. Pixels suit games.")
+                    RowLabel(Text("Scroll by"), Text("Lines suit most apps. Pixels suit games."))
                 }
                 .settingAnchor(String(localized: "Scroll by"))
                 switch tool.mode {
@@ -185,8 +238,7 @@ private struct WheelSettings: View {
                             ticks: WheelStep.range.count
                         )
                     } label: {
-                        Text("Lines per wheel click")
-                        Text("Works while scrolling by lines is on")
+                        RowLabel(Text("Lines per wheel click"), Text("Works while scrolling by lines is on"))
                     }
                     .settingAnchor(String(localized: "Lines per wheel click"))
                 case .pixels:
@@ -199,8 +251,7 @@ private struct WheelSettings: View {
                             ticks: 11
                         )
                     } label: {
-                        Text("Pixels per wheel click")
-                        Text("Works while scrolling by lines is on")
+                        RowLabel(Text("Pixels per wheel click"), Text("Works while scrolling by lines is on"))
                     }
                     .settingAnchor(String(localized: "Pixels per wheel click"))
                 }

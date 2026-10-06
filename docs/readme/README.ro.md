@@ -96,6 +96,8 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 
+Multe setări au o imagine mică ce arată ce fac, de exemplu un Mac care rămâne treaz sau o fereastră care se ascunde în spatele Dock-ului. Imaginea se schimbă odată cu comutatorul și stă pe loc când „Reducere mișcare” este activată în Configurări sistem.
+
 Fiecare pagină are jos un buton **Restaurează valorile implicite…**. Întreabă mai întâi, apoi dezactivează instrumentele de pe pagina respectivă și le readuce opțiunile, ca și cum pika-tools nu le-ar fi atins niciodată.
 
 **Sincronizează configurările cu iCloud** ține pika-tools la fel pe toate Mac-urile tale. Configurările stau în folderul pika-tools din iCloud Drive, iar cea mai recentă modificare câștigă. Este dezactivat implicit și are nevoie de iCloud Drive pornit. Permisiunile nu se sincronizează: fiecare Mac le cere separat.

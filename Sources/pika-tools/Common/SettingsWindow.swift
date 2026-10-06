@@ -325,6 +325,9 @@ private struct SettingsPage: ViewModifier {
     func body(content: Content) -> some View {
         ScrollViewReader { proxy in
             content
+                .labeledContentStyle(CenteredLabeledContentStyle())
+                .toggleStyle(CenteredSwitchStyle())
+                .labelStyle(.titleAndIcon)
                 .onAppear { scroll(proxy) }
                 .onChange(of: model.highlight) { scroll(proxy) }
         }
@@ -349,7 +352,7 @@ struct RestoreDefaultsSection: View {
         } footer: {
             HStack {
                 Spacer()
-                Button("Restore Defaults…") { model.confirmingReset = true }
+                Button("Restore Defaults…", systemImage: "arrow.counterclockwise") { model.confirmingReset = true }
                     .disabled(isDefault)
             }
         }
@@ -366,12 +369,23 @@ struct SettingsHeader: View {
     let tab: SettingsTab
     var title: String?
     let text: String
+    var appIcon: NSImage?
 
     var body: some View {
         Section {
             VStack(spacing: 0) {
-                tab.icon(size: 48)
-                    .padding(.bottom, 12)
+                Group {
+                    if let appIcon {
+                        Image(nsImage: appIcon)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .padding(-6)
+                            .accessibilityHidden(true)
+                    } else {
+                        tab.icon(size: 48)
+                    }
+                }
+                .padding(.bottom, 12)
                 Text(title ?? tab.title)
                     .font(.title.bold())
                     .padding(.bottom, 4)
@@ -460,10 +474,9 @@ private struct GeneralSettings: View {
             SettingsHeader(tab: .general, text: String(localized: "How pika-tools starts and looks."))
             Section {
                 Toggle(isOn: $loginItem.isOn) {
-                    Text("Open at Login")
-                    Text(loginItem.needsApproval
+                    RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
                          ? String(localized: "Allow it in System Settings › General › Login Items")
-                         : String(localized: "Starts on its own when you log in"))
+                         : String(localized: "Starts on its own when you log in")))
                 }
                 .settingAnchor(String(localized: "Open at Login"))
                 LabeledContent("Appearance") {
@@ -478,32 +491,30 @@ private struct GeneralSettings: View {
                 .settingAnchor(String(localized: "Language"))
                 if language.selected != language.atLaunch {
                     LabeledContent("Restart pika-tools to apply") {
-                        Button("Restart") { SettingsWindow.restart() }
+                        Button("Restart", systemImage: "arrow.clockwise") { SettingsWindow.restart() }
                     }
                     .foregroundStyle(.secondary)
                 }
             }
             Section("Backup") {
-                LabeledContent {
+                VStack(alignment: .leading, spacing: 10) {
+                    RowLabel(Text("Settings file"), Text("Save all settings to a file, or load them from one"))
                     HStack {
-                        Button("Import Settings…") { SettingsBackup.chooseImport() }
-                        Button("Export Settings…") { SettingsBackup.export() }
+                        Button("Import Settings…", systemImage: "square.and.arrow.down") { SettingsBackup.chooseImport() }
+                        Button("Export Settings…", systemImage: "square.and.arrow.up") { SettingsBackup.export() }
                     }
-                } label: {
-                    Text("Settings file")
-                    Text("Save all settings to a file, or load them from one")
                 }
+                .padding(.vertical, 2)
                 .settingAnchor(String(localized: "Settings file"))
                 Toggle(isOn: $sync.isEnabled) {
-                    Text("Sync settings with iCloud")
-                    Text(syncStatus)
+                    RowLabel(Text("Sync settings with iCloud"), Text(syncStatus))
                 }
                 .settingAnchor(String(localized: "Sync settings with iCloud"))
                 if sync.state == .noDrive || sync.state == .noAccess {
                     LabeledContent(sync.state == .noDrive
                                    ? String(localized: "Turn on iCloud Drive in System Settings")
                                    : String(localized: "Allow pika-tools to use iCloud Drive in System Settings")) {
-                        Button("Open") { sync.openSettings() }
+                        Button("Open", systemImage: "arrow.up.forward.app") { sync.openSettings() }
                     }
                     .foregroundStyle(.secondary)
                 }
@@ -551,32 +562,9 @@ private struct AppearancePicker: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             ForEach(Appearance.allCases, id: \.self) { item in
-                let selected = item == selection
-                Button { selection = item } label: {
-                    VStack(spacing: 6) {
-                        preview(item)
-                            .frame(width: 67, height: 44)
-                            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                    .strokeBorder(.separator, lineWidth: 0.5)
-                            }
-                            .overlay {
-                                if selected {
-                                    RoundedRectangle(cornerRadius: 9, style: .continuous)
-                                        .strokeBorder(Color.accentColor, lineWidth: 3)
-                                        .padding(-4)
-                                }
-                            }
-                        Text(item.title)
-                            .font(.caption)
-                            .foregroundStyle(selected ? Color.accentColor : Color.primary)
-                    }
-                    .contentShape(Rectangle())
+                ChoiceTile(title: item.title, selected: item == selection, action: { selection = item }) {
+                    preview(item)
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(item.title)
-                .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
         .padding(.vertical, 6)
@@ -684,37 +672,22 @@ private struct AboutView: View {
 
     var body: some View {
         Form {
-            Section {
-                VStack(spacing: 4) {
-                    Image(nsImage: icon)
-                        .resizable()
-                        .frame(width: 96, height: 96)
-                        .accessibilityHidden(true)
-                    Text(verbatim: "pika-tools")
-                        .font(.title.bold())
-                    Text("Small fixes for the keyboard, mouse and sleep")
-                        .foregroundStyle(.secondary)
-                }
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-            }
+            SettingsHeader(tab: .about, title: "pika-tools", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
 
             Section("Updates") {
                 Toggle("Check for updates automatically", isOn: $updater.checksAutomatically)
                     .settingAnchor(String(localized: "Check for updates automatically"))
                 LabeledContent {
                     if case .available(let version) = updater.state {
-                        Button("Update to \(version)") { Task { await updater.install() } }
+                        Button("Update to \(version)", systemImage: "arrow.down.circle") { Task { await updater.install() } }
                             .buttonStyle(.borderedProminent)
                     } else {
-                        Button("Check Now") { Task { await updater.check() } }
+                        Button("Check Now", systemImage: "arrow.triangle.2.circlepath") { Task { await updater.check() } }
                             .disabled(updater.state == .checking || updater.state == .installing)
                     }
                 } label: {
-                    Text("Version \(version)")
+                    RowLabel(Text("Version \(version)"), updater.state.title.map { Text($0) })
                         .textSelection(.enabled)
-                    if let status = updater.state.title { Text(status) }
                 }
             }
 

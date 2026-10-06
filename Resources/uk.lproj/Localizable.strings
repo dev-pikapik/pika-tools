@@ -218,6 +218,7 @@
 "Shortcuts" = "Команди";
 "Open Shortcuts" = "Відкрити «Команди»";
 "Copy Link" = "Скопіювати посилання";
+"Copied" = "Скопійовано";
 "Buttons in Control Center and widgets" = "Кнопки в Центрі керування та віджетах";
 "widget, Control Center, Shortcuts, menu bar, button" = "віджет, Центр керування, Команди, рядок меню, кнопка";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "У «Командах» створи команду з дією «Відкрити URL-адреси» та встав посилання. Потім додай її до Центру керування, рядка меню або віджета «Команд» на робочому столі. Кожне натискання вмикає або вимикає.";

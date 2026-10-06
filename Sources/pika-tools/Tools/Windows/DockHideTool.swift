@@ -129,10 +129,52 @@ private func dockHideCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private struct DockHideSettings: View {
-    @Bindable var tool: DockHideTool
+struct DockHideArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.8, 0.8, 1.1, 1.5]
 
     var body: some View {
+        let step = reduceMotion ? 2 : tick % Self.durations.count
+        let hidden = on && step == 2
+        let aimed = step != 0
+        IllustrationRow {
+            Stage {
+                ArtWindow {
+                    VStack(alignment: .leading, spacing: 5) {
+                        ForEach([54, 38, 46], id: \.self) { Capsule().fill(Color.primary.opacity(0.12)).frame(width: CGFloat($0), height: 4) }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(10)
+                }
+                .scaleEffect(hidden ? 0.12 : 1, anchor: .bottom)
+                .offset(y: hidden ? 38 : 0)
+                .opacity(hidden ? 0 : 1)
+                .position(x: 150, y: 44)
+                ArtDock()
+                    .position(x: 150, y: 102)
+                if step >= 2 {
+                    ArtRipple()
+                        .id(step)
+                        .position(x: 150, y: 100)
+                }
+                ArtCursor()
+                    .cursor(at: aimed ? CGPoint(x: 152, y: 98) : CGPoint(x: 216, y: 70))
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.55), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
+private struct DockHideSettings: View {
+    @Bindable var tool: DockHideTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { DockHideArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,

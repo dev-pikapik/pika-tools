@@ -218,6 +218,7 @@
 "Shortcuts" = "Skróty";
 "Open Shortcuts" = "Otwórz Skróty";
 "Copy Link" = "Kopiuj link";
+"Copied" = "Skopiowano";
 "Buttons in Control Center and widgets" = "Przyciski w Centrum sterowania i widżetach";
 "widget, Control Center, Shortcuts, menu bar, button" = "widżet, Centrum sterowania, Skróty, pasek menu, przycisk";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "W aplikacji Skróty utwórz skrót z akcją Otwórz adresy URL i wklej link. Potem dodaj go do Centrum sterowania, paska menu albo widżetu Skrótów na pulpicie. Każde dotknięcie włącza lub wyłącza.";

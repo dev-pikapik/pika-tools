@@ -96,6 +96,8 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Toestemmingen**: de status van beide toestemmingen, en van iCloud Drive als synchronisatie aanstaat, met knoppen die de juiste plek in Systeeminstellingen openen.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 
+Veel instellingen hebben een klein plaatje dat laat zien wat ze doen, zoals een Mac die wakker blijft of een venster dat zich achter het Dock verbergt. Het plaatje verandert mee met de schakelaar en staat stil als ‘Verminder beweging’ aan staat in Systeeminstellingen.
+
 Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vraagt eerst om bevestiging, zet daarna de tools op die pagina uit en zet hun opties terug, alsof pika-tools er nooit aan heeft gezeten.
 
 **Instellingen synchroniseren met iCloud** houdt pika-tools op al je Macs hetzelfde. De instellingen staan in de map pika-tools in iCloud Drive, en de meest recente wijziging wint. Standaard uit, en iCloud Drive moet aanstaan. Toestemmingen worden niet gesynchroniseerd: elke Mac vraagt er zelf om.

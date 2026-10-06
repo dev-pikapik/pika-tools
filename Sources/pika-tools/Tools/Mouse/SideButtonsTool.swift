@@ -147,8 +147,7 @@ private struct SideButtonsSettings: View {
         )
         if inSettings {
             Toggle(isOn: $tool.swapsButtons) {
-                Text("Swap the side buttons")
-                Text(tool.swapsButtons ? "Button 4 goes forward, button 5 goes back" : "Button 4 goes back, button 5 goes forward")
+                RowLabel(Text("Swap the side buttons"), Text(tool.swapsButtons ? "Button 4 goes forward, button 5 goes back" : "Button 4 goes back, button 5 goes forward"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Swap the side buttons"))

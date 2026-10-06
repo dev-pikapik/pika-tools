@@ -96,6 +96,8 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools ag
 - **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.
 
+Many settings come with a small picture of what they do, such as a Mac staying awake or a window hiding behind the Dock. The picture changes together with the switch and stands still when Reduce Motion is on in System Settings.
+
 Every page has a **Restore Defaults…** button at the bottom. It asks first, then turns off the tools on that page and puts their options back, as if pika-tools never touched them.
 
 **Sync settings with iCloud** keeps pika-tools the same on all your Macs. The settings live in the pika-tools folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.

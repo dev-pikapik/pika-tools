@@ -96,6 +96,8 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de nov
 - **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 
+Muitos ajustes vêm com uma imagem pequena que mostra o que eles fazem, como um Mac que continua ativo ou uma janela que se esconde atrás do Dock. A imagem muda junto com o interruptor e fica parada quando “Reduzir movimento” está ativado em Ajustes do Sistema.
+
 Cada página tem um botão **Restaurar Padrões…** na parte de baixo. Ele pergunta antes, depois desativa as ferramentas da página e devolve as opções ao que eram, como se o pika-tools nunca tivesse mexido nelas.
 
 **Sincronizar ajustes com o iCloud** mantém o pika-tools igual em todos os seus Macs. Os ajustes ficam na pasta pika-tools do iCloud Drive, e vale a alteração mais recente. Vem desativado por padrão e precisa do iCloud Drive ligado. As permissões não são sincronizadas: cada Mac pede as suas.
