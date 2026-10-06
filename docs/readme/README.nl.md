@@ -7,7 +7,7 @@
 [![Licentie: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij blokkeert Control-toetscombinaties, beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift zoals Alt+Shift op Windows, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
+Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij blokkeert Control-toetscombinaties, beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift zoals Alt+Shift op Windows, zet muisversnelling uit, laat de zijknoppen van de muis terug en vooruit gaan, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
 
 ## Installeren
 
@@ -46,6 +46,10 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 **Van taal wisselen met Option+Shift.** Houd Option ingedrukt en tik op Shift: macOS gaat naar de volgende invoerbron. Houd Option ingedrukt en tik nog eens op Shift om verder te gaan. Houd Shift ingedrukt en tik op Option om terug te gaan. Druk je tussendoor op een andere toets, klik je of voeg je Command, Control of Fn toe, dan wordt er niet gewisseld, zodat combinaties zoals Option+Shift+pijltoets blijven werken zoals voorheen. Standaard uit.
 
+**Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt, net als LinearMouse. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pika-tools, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
+
+**Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 werken als ⌘[ en ⌘] in elke app: terug en vooruit in Safari, de Finder, Xcode en overal waar deze toetscombinaties bestaan. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
+
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt, zoals op Windows. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
 
 **Verbergen met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en de app wordt verborgen. Klik nog eens om hem terug te halen. Standaard uit.
@@ -67,11 +71,14 @@ Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft da
 Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pika-tools gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
 
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal en updates.
-- **Toetsenbord en muis**: Control-toetscombinaties, ⌘Q en ⌘W, van taal wisselen.
+- **Toetsenbord**: Control-toetscombinaties, ⌘Q en ⌘W, van taal wisselen.
+- **Muis**: aanwijzerversnelling en snelheid aanwijzer, zijknoppen.
 - **Vensters en apps**: stoppen bij het laatste venster, met een lijst met uitzonderingen, en verbergen met een klik in het Dock.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
 - **Toestemmingen**: de status van beide toestemmingen, met knoppen die de juiste plek in Systeeminstellingen openen.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
+
+Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vraagt eerst om bevestiging, zet daarna de tools op die pagina uit en zet hun opties terug, alsof pika-tools er nooit aan heeft gezeten.
 
 ## Updates
 

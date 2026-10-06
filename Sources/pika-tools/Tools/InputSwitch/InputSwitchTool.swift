@@ -5,6 +5,7 @@ import SwiftUI
 final class InputSwitchTool: Tool {
     let id = "input-switch"
     let icon = "globe"
+    var title: String { String(localized: "Switch language with ⌥⇧") }
 
     private(set) var isActive = false
 
@@ -125,7 +126,7 @@ private struct InputSwitchSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Switch language with ⌥⇧"),
+            title: tool.title,
             subtitle: Text("Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous"),
             isOn: $tool.isEnabled
         )

@@ -1,5 +1,6 @@
 import ApplicationServices
 import SwiftUI
+import UniformTypeIdentifiers
 
 @Observable
 final class Permissions {
@@ -78,11 +79,15 @@ struct PermissionsView: View {
             )
             Section {
                 PermissionRow(
+                    icon: "com.apple.graphic-icon.accessibility",
+                    symbol: "accessibility",
                     title: String(localized: "Accessibility"),
                     subtitle: String(localized: "Lets the app change clicks and keys and manage windows"),
                     granted: permissions.accessibility
                 ) { permissions.openSettings("Privacy_Accessibility") }
                 PermissionRow(
+                    icon: "com.apple.graphic-icon.input-monitoring",
+                    symbol: "keyboard.badge.eye",
                     title: String(localized: "Input Monitoring"),
                     subtitle: String(localized: "Lets the app see clicks and keys"),
                     granted: permissions.inputMonitoring
@@ -108,6 +113,8 @@ struct PermissionsView: View {
 }
 
 private struct PermissionRow: View {
+    let icon: String
+    let symbol: String
     let title: String
     let subtitle: String
     let granted: Bool
@@ -126,9 +133,35 @@ private struct PermissionRow: View {
                     .accessibilityLabel(granted ? String(localized: "Allowed") : String(localized: "Not allowed"))
             }
         } label: {
-            Text(title)
-            Text(subtitle)
+            HStack(spacing: 10) {
+                PermissionIcon(type: icon, symbol: symbol)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
         .settingAnchor(title)
+    }
+}
+
+private struct PermissionIcon: View {
+    let type: String
+    let symbol: String
+
+    var body: some View {
+        let size = SettingsTab.iconSize + 4
+        if let type = UTType(type) {
+            let _ = IconStyle.shared.theme
+            Image(nsImage: NSWorkspace.shared.icon(for: type))
+                .resizable()
+                .frame(width: size, height: size)
+                .padding(-2)
+                .accessibilityHidden(true)
+        } else {
+            SectionIcon(symbol: symbol, color: .blue, size: SettingsTab.iconSize)
+        }
     }
 }

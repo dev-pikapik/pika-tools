@@ -2,14 +2,15 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keyboard, windows, keepAwake, permissions, about
+    case general, keyboard, mouse, windows, keepAwake, permissions, about
 
     var id: Self { self }
 
     var title: String {
         switch self {
         case .general: String(localized: "General")
-        case .keyboard: String(localized: "Keyboard & Mouse")
+        case .keyboard: String(localized: "Keyboard")
+        case .mouse: String(localized: "Mouse")
         case .windows: String(localized: "Windows & Apps")
         case .keepAwake: String(localized: "Keep Awake")
         case .permissions: String(localized: "Permissions")
@@ -21,6 +22,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general: "gearshape.fill"
         case .keyboard: "keyboard.fill"
+        case .mouse: "computermouse.fill"
         case .windows: "macwindow.on.rectangle"
         case .keepAwake: "cup.and.saucer.fill"
         case .permissions: "hand.raised.fill"
@@ -31,7 +33,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
     private var color: Color {
         switch self {
         case .general, .about: .gray
-        case .keyboard, .permissions: .blue
+        case .keyboard, .mouse, .permissions: .blue
         case .windows: .indigo
         case .keepAwake: .orange
         }
@@ -65,6 +67,10 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .keyboard, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
+            SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
+            SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
+            SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
+            SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
             SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
@@ -101,6 +107,7 @@ enum SettingsWindow {
         }
         var search = ""
         var highlight: String?
+        var confirmingReset = false
         private(set) var back: [SettingsTab] = []
         private(set) var forward: [SettingsTab] = []
         @ObservationIgnored private var navigating = false
@@ -188,7 +195,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: .constant(.all)) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keyboard, .windows, .keepAwake]) }
+                    Section { rows([.general, .keyboard, .mouse, .windows, .keepAwake]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -260,6 +267,7 @@ private struct SettingsView: View {
         switch tab {
         case .general: GeneralSettings()
         case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for keys and clicks. Each one works on its own."))
+        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse. Each one works on its own."))
         case .windows: ToolsSettings(tab: .windows, text: String(localized: "Fixes for windows and the Dock. Each one works on its own."))
         case .keepAwake: KeepAwakeSettings()
         case .permissions: PermissionsView()
@@ -310,6 +318,30 @@ private struct SettingsPage: ViewModifier {
         guard let id = model.highlight else { return }
         DispatchQueue.main.async {
             withAnimation { proxy.scrollTo(id, anchor: .center) }
+        }
+    }
+}
+
+struct RestoreDefaultsSection: View {
+    let message: String
+    let isDefault: Bool
+    let reset: () -> Void
+    @Bindable private var model = SettingsWindow.model
+
+    var body: some View {
+        Section {
+        } footer: {
+            HStack {
+                Spacer()
+                Button("Restore Defaults…") { model.confirmingReset = true }
+                    .disabled(isDefault)
+            }
+        }
+        .alert("Restore default settings?", isPresented: $model.confirmingReset) {
+            Button("Restore Defaults", action: reset)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text(message)
         }
     }
 }
@@ -426,7 +458,14 @@ private struct GeneralSettings: View {
                     .foregroundStyle(.secondary)
                 }
             }
-
+            RestoreDefaultsSection(
+                message: String(localized: "Appearance and Language will follow the system again. Open at Login stays as it is."),
+                isDefault: appearance == .system && language.selected.isEmpty
+            ) {
+                appearance = .system
+                Appearance.system.apply()
+                language.selected = ""
+            }
         }
         .formStyle(.grouped)
         .settingsPage()
@@ -541,8 +580,15 @@ private struct ToolsSettings: View {
     var body: some View {
         Form {
             SettingsHeader(tab: tab, text: text)
-            ForEach(ToolRegistry.shared.tools.filter { $0.tab == tab }, id: \.id) { tool in
+            let tools = ToolRegistry.shared.tools.filter { $0.tab == tab }
+            ForEach(tools, id: \.id) { tool in
                 Section { tool.settingsView }
+            }
+            RestoreDefaultsSection(
+                message: String(localized: "These will turn off and go back to their default options: \(tools.map(\.title).formatted(.list(type: .and)))"),
+                isDefault: tools.allSatisfy(\.isDefault)
+            ) {
+                tools.forEach { $0.reset() }
             }
         }
         .formStyle(.grouped)
@@ -608,6 +654,12 @@ private struct AboutView: View {
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
+            }
+            RestoreDefaultsSection(
+                message: String(localized: "pika-tools will check for updates automatically again."),
+                isDefault: updater.checksAutomatically
+            ) {
+                updater.checksAutomatically = true
             }
         }
         .formStyle(.grouped)

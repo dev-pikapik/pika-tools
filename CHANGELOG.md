@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - Unreleased
+
+### Added
+- Mouse page in Settings. **Turn off pointer acceleration** makes the pointer move exactly as far as the mouse, with its own tracking speed slider. Mice only, the trackpad stays as it is, and macOS gets its own settings back when you turn it off or quit.
+- **Side buttons go back and forward**: mouse buttons 4 and 5 work like ⌘[ and ⌘] in every app, with an option to swap them.
+- **Restore Defaults…** at the bottom of every Settings page. It asks first, then turns off the tools on that page and puts their options back.
+
+### Changed
+- Keyboard and Mouse are now separate pages in Settings, like in System Settings.
+- The Permissions page shows the same Accessibility and Input Monitoring icons as System Settings.
+
 ## [1.7.0] - Unreleased
 
 ### Added

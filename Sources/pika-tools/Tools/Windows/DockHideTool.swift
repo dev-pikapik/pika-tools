@@ -6,6 +6,7 @@ import SwiftUI
 final class DockHideTool: Tool {
     let id = "dock-hide"
     let icon = "dock.rectangle"
+    var title: String { String(localized: "Hide with a click in the Dock") }
     let tab = SettingsTab.windows
 
     private(set) var isActive = false
@@ -134,7 +135,7 @@ private struct DockHideSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Hide with a click in the Dock"),
+            title: tool.title,
             subtitle: Text("Click the icon of the app you’re in to hide it. Click again to bring it back."),
             isOn: $tool.isEnabled
         )

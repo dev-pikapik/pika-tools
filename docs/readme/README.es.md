@@ -7,7 +7,7 @@
 [![Licencia: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descargas](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas como Alt+Mayús en Windows, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
+Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas como Alt+Mayús en Windows, desactiva la aceleración del ratón, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
 
 ## Instalación
 
@@ -46,6 +46,10 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 **Cambiar de idioma con Opción+Mayúsculas.** Mantén pulsada Opción y toca Mayúsculas: macOS pasa a la siguiente fuente de entrada. Sigue manteniendo Opción y vuelve a tocar Mayúsculas para avanzar más. Mantén pulsada Mayúsculas y toca Opción para retroceder. Si entre medias pulsas otra tecla, haces clic o añades Comando, Control o Fn, no cambia nada, así que atajos como Opción+Mayúsculas+flecha siguen funcionando como antes. Desactivado por omisión.
 
+**Desactivar la aceleración del puntero.** El puntero se mueve exactamente lo mismo que el ratón, por rápido que lo muevas, como con LinearMouse. Un regulador **Velocidad del cursor** ajusta lo rápido que va. Solo funciona con ratones; el trackpad se queda como está. Desactívalo o sal de pika-tools y macOS recupera sus propios ajustes. Desactivado por omisión.
+
+**Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón funcionan como ⌘[ y ⌘] en cualquier app: atrás y adelante en Safari, el Finder, Xcode y en cualquier otro sitio que tenga estos atajos. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
+
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra, como en Windows. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
 **Ocultar con un clic en el Dock.** Haz clic en el icono del Dock de la app que estás usando y se ocultará. Vuelve a hacer clic para que reaparezca. Desactivado por omisión.
@@ -67,11 +71,14 @@ En un MacBook también puedes activar **Funcionar con la tapa cerrada**. macOS n
 Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-tools desde el Finder, Launchpad o Spotlight. Mientras la ventana está abierta, la app aparece en el Dock y en ⌘Tab.
 
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma y actualizaciones.
-- **Teclado y ratón**: atajos con Control, ⌘Q y ⌘W, cambio de idioma.
+- **Teclado**: atajos con Control, ⌘Q y ⌘W, cambio de idioma.
+- **Ratón**: aceleración del puntero y velocidad del cursor, botones laterales.
 - **Ventanas y apps**: salir al cerrar la última ventana, con una lista de excepciones, y ocultar con un clic en el Dock.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
 - **Permisos**: el estado de ambos permisos, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
+
+Cada página tiene abajo un botón **Restaurar valores por omisión…**. Primero pregunta y luego desactiva las herramientas de esa página y devuelve sus opciones a como estaban, como si pika-tools nunca las hubiera tocado.
 
 ## Actualizaciones
 

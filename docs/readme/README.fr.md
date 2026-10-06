@@ -7,7 +7,7 @@
 [![Licence : MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Téléchargements](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle bloque les raccourcis Contrôle, protège ⌘Q et ⌘W, change de langue avec Option+Maj comme Alt+Maj sous Windows, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
+Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle bloque les raccourcis Contrôle, protège ⌘Q et ⌘W, change de langue avec Option+Maj comme Alt+Maj sous Windows, désactive l’accélération de la souris, fait des boutons latéraux de la souris des boutons Précédent et Suivant, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
 
 ## Installation
 
@@ -46,6 +46,10 @@ pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez o
 
 **Changer de langue avec Option+Maj.** Maintenez Option et touchez Maj : macOS passe à la source de saisie suivante. Gardez Option enfoncée et touchez de nouveau Maj pour continuer. Maintenez Maj et touchez Option pour revenir en arrière. Si vous appuyez entre-temps sur une autre touche, cliquez ou ajoutez Commande, Contrôle ou Fn, rien ne change, donc les raccourcis comme Option+Maj+flèche fonctionnent comme avant. Désactivé par défaut.
 
+**Désactiver l’accélération du pointeur.** Le pointeur se déplace exactement autant que la souris, quelle que soit la vitesse de votre geste, comme avec LinearMouse. Un curseur **Vitesse de déplacement** règle sa rapidité. Fonctionne uniquement avec les souris, le trackpad reste tel quel. Désactivez l’option ou quittez pika-tools, et macOS retrouve ses propres réglages. Désactivé par défaut.
+
+**Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris agissent comme ⌘[ et ⌘] dans toutes les apps : précédent et suivant dans Safari, le Finder, Xcode et partout où ces raccourcis existent. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
+
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme, comme sous Windows. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
 
 **Masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et elle se masque. Cliquez de nouveau pour la faire revenir. Désactivé par défaut.
@@ -67,11 +71,14 @@ Sur un MacBook, vous pouvez aussi activer **Fonctionner écran rabattu**. macOS 
 Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez simplement pika-tools depuis le Finder, Launchpad ou Spotlight. Tant que la fenêtre est ouverte, l’app apparaît dans le Dock et dans ⌘Tab.
 
 - **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue et mises à jour.
-- **Clavier et souris** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
+- **Clavier** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
+- **Souris ** : accélération du pointeur et vitesse de déplacement, boutons latéraux.
 - **Fenêtres et apps** : quitter à la dernière fenêtre, avec une liste d’exceptions, et masquer d’un clic dans le Dock.
 - **Rester éveillé** : durée, options d’écran et de capot.
 - **Autorisations** : l’état des deux autorisations, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
+
+Chaque page comporte en bas un bouton **Rétablir les réglages par défaut…**. Il demande d’abord confirmation, puis désactive les outils de la page et rétablit leurs options, comme si pika-tools n’y avait jamais touché.
 
 ## Mises à jour
 

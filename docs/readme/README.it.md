@@ -7,7 +7,7 @@
 [![Licenza: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Download](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una piccola app per la barra dei menu di macOS che migliora tasti, finestre e Dock: blocca le abbreviazioni con Control, protegge ⌘Q e ⌘W, cambia lingua con Opzione+Maiuscole come Alt+Maiusc su Windows, chiude le app quando ne chiudi l’ultima finestra, nasconde un’app con un clic nel Dock e tiene sveglio il Mac.
+Una piccola app per la barra dei menu di macOS che migliora tasti, finestre e Dock: blocca le abbreviazioni con Control, protegge ⌘Q e ⌘W, cambia lingua con Opzione+Maiuscole come Alt+Maiusc su Windows, disattiva l’accelerazione del mouse, fa andare indietro e avanti con i tasti laterali del mouse, chiude le app quando ne chiudi l’ultima finestra, nasconde un’app con un clic nel Dock e tiene sveglio il Mac.
 
 ## Installazione
 
@@ -46,6 +46,10 @@ pika-tools non registra, non conserva e non invia nulla di ciò che digiti o cli
 
 **Cambia lingua con Opzione+Maiuscole.** Tieni premuto Opzione e tocca Maiuscole: macOS passa alla sorgente di input successiva. Continua a tenere premuto Opzione e tocca di nuovo Maiuscole per andare avanti. Tieni premuto Maiuscole e tocca Opzione per tornare indietro. Se nel frattempo premi un altro tasto, fai clic o aggiungi Comando, Control o Fn, non cambia nulla, quindi abbreviazioni come Opzione+Maiuscole+freccia funzionano come prima. Disattivato di default.
 
+**Disattiva l’accelerazione del puntatore.** Il puntatore si sposta esattamente quanto il mouse, a qualsiasi velocità lo muovi, come con LinearMouse. Un cursore **Velocità puntatore** ne regola la velocità. Funziona solo con i mouse, il trackpad resta com’è. Disattivala o esci da pika-tools e macOS riprende le sue impostazioni. Disattivato di default.
+
+**Tasti laterali per indietro e avanti.** I tasti 4 e 5 del mouse funzionano come ⌘[ e ⌘] in ogni app: indietro e avanti in Safari, nel Finder, in Xcode e ovunque ci siano queste abbreviazioni. Se il tuo mouse li ha invertiti, attiva **Inverti i tasti laterali**. Disattivato di default.
+
 **Esci quando si chiude l’ultima finestra.** Chiudi l’ultima finestra di un’app e l’app si chiude, come su Windows. Il Finder resta aperto, così come le app con finestre su altre scrivanie o nel Dock. Puoi indicare le app che non devono mai chiudersi in questo modo. Disattivato di default.
 
 **Nascondi con un clic nel Dock.** Fai clic sull’icona nel Dock dell’app che stai usando e si nasconde. Fai di nuovo clic per riaverla. Disattivato di default.
@@ -67,11 +71,14 @@ Su un MacBook puoi anche attivare **Funziona con il coperchio chiuso**. macOS no
 Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuovo pika-tools dal Finder, da Launchpad o da Spotlight. Finché la finestra è aperta, l’app compare nel Dock e in ⌘Tab.
 
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua e aggiornamenti.
-- **Tastiera e mouse**: abbreviazioni con Control, ⌘Q e ⌘W, cambio lingua.
+- **Tastiera**: abbreviazioni con Control, ⌘Q e ⌘W, cambio lingua.
+- **Mouse**: accelerazione del puntatore e velocità puntatore, tasti laterali.
 - **Finestre e app**: uscita con l’ultima finestra, con un elenco di eccezioni, e nascondi con un clic nel Dock.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
 - **Permessi**: lo stato di entrambi i permessi, con pulsanti che aprono il punto giusto in Impostazioni di Sistema.
 - **Info**: versione, link alle novità e per segnalare un problema.
+
+Ogni pagina ha in basso un pulsante **Ripristina default…**. Prima chiede conferma, poi disattiva gli strumenti di quella pagina e ne ripristina le opzioni, come se pika-tools non le avesse mai toccate.
 
 ## Aggiornamenti
 

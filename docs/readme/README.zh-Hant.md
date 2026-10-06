@@ -7,7 +7,7 @@
 [![授權：MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![下載次數](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-一款小巧的 macOS 選單列 App，讓按鍵、視窗和 Dock 更好用：阻擋 Control 快速鍵，防止誤按 ⌘Q 和 ⌘W，像 Windows 的 Alt+Shift 一樣用 Option+Shift 切換語言，關閉最後一個視窗時結束 App，在 Dock 中按一下即可隱藏 App，還能讓你的 Mac 保持喚醒。
+一款小巧的 macOS 選單列 App，讓按鍵、視窗和 Dock 更好用：阻擋 Control 快速鍵，防止誤按 ⌘Q 和 ⌘W，像 Windows 的 Alt+Shift 一樣用 Option+Shift 切換語言，關閉滑鼠加速，讓滑鼠側邊按鈕可以返回和前進，關閉最後一個視窗時結束 App，在 Dock 中按一下即可隱藏 App，還能讓你的 Mac 保持喚醒。
 
 ## 安裝
 
@@ -46,6 +46,10 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 **用 Option+Shift 切換語言。** 按住 Option 再按一下 Shift：macOS 會切換到下一個輸入方式。繼續按住 Option 再按一下 Shift，就會繼續往下切換。按住 Shift 再按一下 Option，則切回上一個。如果中途按了其他鍵、按了一下滑鼠，或加按 Command、Control 或 Fn，就不會切換，所以像 Option+Shift+方向鍵這類快速鍵照常可用。預設為關閉。
 
+**關閉指標加速。** 無論滑鼠移動得多快，指標都只移動與滑鼠完全相同的距離，就像 LinearMouse 一樣。**軌跡速度** 滑桿用來設定指標移動的快慢。只對滑鼠有效，觸控式軌跡板保持不變。關閉此功能或結束 pika-tools 後，macOS 會恢復它自己的設定。預設為關閉。
+
+**側邊按鈕用於返回和前進。** 滑鼠按鈕 4 和 5 在所有 App 中的作用等同於 ⌘[ 和 ⌘]：在 Safari、Finder、Xcode 以及任何有這些快速鍵的地方返回和前進。如果你的滑鼠側邊按鈕方向相反，請開啟 **交換側邊按鈕**。預設為關閉。
+
 **關閉最後一個視窗時結束。** 關閉 App 的最後一個視窗後，App 就會結束，就像在 Windows 上一樣。Finder 會保持開啟，在其他桌面上有視窗或有視窗縮到 Dock 的 App 也不會結束。你可以列出永遠不要以這種方式結束的 App。預設為關閉。
 
 **在 Dock 中按一下以隱藏。** 在 Dock 中按一下目前正在使用的 App 圖像，它就會隱藏。再按一下即可恢復。預設為關閉。
@@ -67,11 +71,14 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 從選單中選擇 **設定⋯** 或按 ⌘, 打開設定，也可以從 Finder、Launchpad 或 Spotlight 再次啟動 pika-tools。視窗打開期間，App 會顯示在 Dock 和 ⌘Tab 中。
 
 - **一般**：登入時打開、外觀（跟隨系統、淺色或深色）、語言和更新。
-- **鍵盤與滑鼠**：Control 快速鍵、⌘Q 和 ⌘W、語言切換。
+- **鍵盤**：Control 快速鍵、⌘Q 和 ⌘W、語言切換。
+- **滑鼠**：指標加速和軌跡速度、側邊按鈕。
 - **視窗與 App**：關閉最後一個視窗時結束（附例外列表），以及在 Dock 中按一下以隱藏。
 - **保持喚醒**：時間長度、顯示器和螢幕闔上選項。
 - **權限**：兩項權限的狀態，以及打開「系統設定」中對應位置的按鈕。
 - **關於**：版本、更新記錄連結和問題回報連結。
+
+每個頁面底部都有一個 **回復預設值…** 按鈕。它會先詢問你，然後關閉該頁面上的工具並還原它們的選項，就像 pika-tools 從未動過一樣。
 
 ## 更新
 

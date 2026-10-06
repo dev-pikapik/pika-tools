@@ -143,6 +143,21 @@ final class KeepAwake {
         stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
     }
 
+    var isDefault: Bool {
+        mode == .off && lastMode == .timed && durationUnit == .hours && durationValue == 1
+            && !keepsDisplayOn && !lidOption && stopsOnLowBattery
+    }
+
+    func reset() {
+        set(.off)
+        lastMode = .timed
+        durationUnit = .hours
+        durationValue = 1
+        keepsDisplayOn = false
+        worksWithLidClosed = false
+        stopsOnLowBattery = true
+    }
+
     var isOn: Bool {
         get { mode != .off }
         set { set(newValue ? lastMode : .off) }
@@ -355,6 +370,12 @@ struct KeepAwakeSettings: View {
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
+            }
+            RestoreDefaultsSection(
+                message: String(localized: "Keep Awake will turn off, and the duration and options will go back to how they were."),
+                isDefault: keepAwake.isDefault
+            ) {
+                keepAwake.reset()
             }
         }
         .formStyle(.grouped)

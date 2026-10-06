@@ -7,7 +7,7 @@
 [![Licence: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Stažení](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: blokuje zkratky s Controlem, chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift stejně jako Alt+Shift ve Windows, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
+Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: blokuje zkratky s Controlem, chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift stejně jako Alt+Shift ve Windows, vypne zrychlení myši, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
 
 ## Instalace
 
@@ -46,6 +46,10 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 **Přepínání jazyka pomocí Option+Shift.** Podržte Option a ťukněte na Shift: macOS přepne na další zdroj vstupu. Držte dál Option a znovu ťukněte na Shift, chcete-li pokračovat. Podržte Shift a ťukněte na Option, chcete-li se vrátit. Když mezitím stisknete jinou klávesu, kliknete nebo přidáte Command, Control či Fn, nic se nepřepne, takže zkratky jako Option+Shift+šipka fungují jako dřív. Ve výchozím stavu vypnuto.
 
+**Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle, stejně jako v LinearMouse. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
+
+**Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako ⌘[ a ⌘] v každé aplikaci: zpět a vpřed v Safari, ve Finderu, v Xcode a všude jinde, kde tyto zkratky existují. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
+
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí, stejně jako ve Windows. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
 **Skrytí kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a skryje se. Dalším kliknutím ji vrátíte. Ve výchozím stavu vypnuto.
@@ -67,11 +71,14 @@ Na MacBooku můžete zapnout také **Pracovat se zavřeným víkem**. macOS na t
 Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pika-tools znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk a aktualizace.
-- **Klávesnice a myš**: zkratky s Controlem, ⌘Q a ⌘W, přepínání jazyka.
+- **Klávesnice**: zkratky s Controlem, ⌘Q a ⌘W, přepínání jazyka.
+- **Myš**: zrychlení ukazatele a rychlost ukazatele, boční tlačítka.
 - **Okna a aplikace**: ukončení po posledním okně se seznamem výjimek a skrytí kliknutím v Docku.
 - **Nespat**: délka, volby pro displej a víko.
 - **Oprávnění**: stav obou oprávnění s tlačítky, která otevřou správné místo v Nastavení systému.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
+
+Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se zeptá, pak vypne nástroje na dané stránce a vrátí jejich volby, jako by se jich pika-tools nikdy nedotkl.
 
 ## Aktualizace
 

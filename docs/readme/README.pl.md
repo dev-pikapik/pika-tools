@@ -7,7 +7,7 @@
 [![Licencja: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Pobrania](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift tak jak Alt+Shift w Windows, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
+Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift tak jak Alt+Shift w Windows, wyłącza przyspieszenie myszy, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
 
 ## Instalacja
 
@@ -46,6 +46,10 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 **Zmiana języka skrótem Option+Shift.** Przytrzymaj Option i stuknij Shift: macOS przełączy na następne źródło wprowadzania. Trzymaj dalej Option i stuknij Shift ponownie, aby przejść dalej. Przytrzymaj Shift i stuknij Option, aby wrócić. Jeśli w międzyczasie naciśniesz inny klawisz, klikniesz lub dodasz Command, Control albo Fn, nic się nie przełączy, więc skróty takie jak Option+Shift+strzałka działają jak wcześniej. Domyślnie wyłączone.
 
+**Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz, jak w LinearMouse. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pika-tools, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
+
+**Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 działają jak ⌘[ i ⌘] w każdej aplikacji: wstecz i dalej w Safari, Finderze, Xcode i wszędzie tam, gdzie są te skróty. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
+
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy, tak jak w Windows. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
 **Ukrywanie kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a zostanie ukryta. Kliknij ponownie, aby ją przywrócić. Domyślnie wyłączone.
@@ -67,11 +71,14 @@ Na MacBooku możesz też włączyć **Pracuj z zamkniętą pokrywą**. macOS nie
 Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po prostu uruchom pika-tools ponownie z Findera, Launchpada lub Spotlight. Gdy okno jest otwarte, aplikacja pojawia się w Docku i w ⌘Tab.
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język i uaktualnienia.
-- **Klawiatura i mysz**: skróty z Control, ⌘Q i ⌘W, zmiana języka.
+- **Klawiatura**: skróty z Control, ⌘Q i ⌘W, zmiana języka.
+- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, boczne przyciski.
 - **Okna i aplikacje**: zakończenie po ostatnim oknie z listą wyjątków oraz ukrywanie kliknięciem w Docku.
 - **Nie usypiaj**: czas trwania, opcje ekranu i pokrywy.
 - **Uprawnienia**: stan obu uprawnień z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
+
+Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta o potwierdzenie, potem wyłącza narzędzia z tej strony i przywraca ich opcje, jakby pika-tools nigdy ich nie dotykał.
 
 ## Uaktualnienia
 

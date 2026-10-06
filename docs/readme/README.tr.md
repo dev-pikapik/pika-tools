@@ -7,7 +7,7 @@
 [![Lisans: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![İndirmeler](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Windows’taki Alt+Shift gibi Option+Shift ile dili değiştirir, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
+Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Windows’taki Alt+Shift gibi Option+Shift ile dili değiştirir, fare ivmesini kapatır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
 
 ## Kurulum
 
@@ -46,6 +46,10 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 **Option+Shift ile dil değiştirme.** Option’ı basılı tutun ve Shift’e dokunun: macOS bir sonraki girdi kaynağına geçer. Option’ı bırakmadan Shift’e yeniden dokunarak ilerlemeye devam edin. Geri gitmek için Shift’i basılı tutup Option’a dokunun. Arada başka bir tuşa basarsanız, tıklarsanız ya da Command, Control veya Fn eklerseniz dil değişmez, böylece Option+Shift+ok gibi kestirmeler eskisi gibi çalışır. Varsayılan olarak kapalıdır.
 
+**İmleç hızlandırmayı kapat.** Fareyi ne kadar hızlı hareket ettirirseniz ettirin, imleç tam olarak fare kadar hareket eder, LinearMouse’taki gibi. **İzleme hızı** sürgüsü imlecin ne kadar hızlı gideceğini ayarlar. Yalnızca farelerle çalışır, İzleme Dörtgeni olduğu gibi kalır. Özelliği kapatın ya da pika-tools’tan çıkın, macOS kendi ayarlarına geri döner. Varsayılan olarak kapalıdır.
+
+**Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri her uygulamada ⌘[ ve ⌘] gibi çalışır: Safari’de, Finder’da, Xcode’da ve bu kestirmelerin olduğu her yerde geri ve ileri gider. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
+
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama Windows’taki gibi kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
 **Dock’ta tıklayarak gizleme.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulama gizlenir. Geri getirmek için yeniden tıklayın. Varsayılan olarak kapalıdır.
@@ -67,11 +71,14 @@ MacBook’ta **Kapak kapalıyken çalış** seçeneğini de açabilirsiniz. macO
 Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u Finder, Launchpad ya da Spotlight’tan yeniden başlatın. Pencere açıkken uygulama Dock’ta ve ⌘Tab’de görünür.
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil ve güncellemeler.
-- **Klavye ve Fare**: Control kestirmeleri, ⌘Q ve ⌘W, dil değiştirme.
+- **Klavye**: Control kestirmeleri, ⌘Q ve ⌘W, dil değiştirme.
+- **Fare**: imleç ivmesi ve izleme hızı, yan düğmeler.
 - **Pencereler ve Uygulamalar**: istisna listesiyle birlikte son pencerede çıkma ve Dock’ta tıklayarak gizleme.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
 - **İzinler**: iki iznin durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
+
+Her sayfanın altında bir **Saptanmışlara Dön…** düğmesi vardır. Önce onay ister, ardından o sayfadaki araçları kapatır ve seçeneklerini geri alır; sanki pika-tools onlara hiç dokunmamış gibi.
 
 ## Güncellemeler
 

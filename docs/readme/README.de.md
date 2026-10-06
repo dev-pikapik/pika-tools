@@ -7,7 +7,7 @@
 [![Lizenz: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Eine kleine App für die Menüleiste von macOS, die Tasten, Fenster und das Dock verbessert: Sie blockiert Ctrl-Kurzbefehle, schützt vor ⌘Q und ⌘W, wechselt die Sprache mit Option+Shift so wie Alt+Shift unter Windows, beendet Apps, wenn du ihr letztes Fenster schließt, blendet eine App mit einem Klick im Dock aus und hält deinen Mac wach.
+Eine kleine App für die Menüleiste von macOS, die Tasten, Fenster und das Dock verbessert: Sie blockiert Ctrl-Kurzbefehle, schützt vor ⌘Q und ⌘W, wechselt die Sprache mit Option+Shift so wie Alt+Shift unter Windows, schaltet die Mausbeschleunigung aus, macht die Seitentasten der Maus zu Zurück und Vorwärts, beendet Apps, wenn du ihr letztes Fenster schließt, blendet eine App mit einem Klick im Dock aus und hält deinen Mac wach.
 
 ## Installation
 
@@ -46,6 +46,10 @@ pika-tools zeichnet nichts auf, speichert nichts und sendet nichts von dem, was 
 
 **Sprache mit Option+Shift wechseln.** Halte Option gedrückt und tippe auf Shift: macOS wechselt zur nächsten Eingabequelle. Halte Option weiter gedrückt und tippe erneut auf Shift, um weiterzugehen. Halte Shift gedrückt und tippe auf Option, um zurückzugehen. Drückst du zwischendurch eine andere Taste, klickst oder nimmst Cmd, Ctrl oder Fn dazu, wird nicht gewechselt, sodass Kurzbefehle wie Option+Shift+Pfeiltaste wie bisher funktionieren. Standardmäßig aus.
 
+**Zeigerbeschleunigung ausschalten.** Der Zeiger bewegt sich genau so weit wie die Maus, egal wie schnell du sie bewegst, wie bei LinearMouse. Ein Regler **Zeigerbewegung** legt fest, wie schnell er sich bewegt. Funktioniert nur mit Mäusen, das Trackpad bleibt, wie es ist. Schalte es aus oder beende pika-tools, und macOS bekommt seine eigenen Einstellungen zurück. Standardmäßig aus.
+
+**Seitentasten für Zurück und Vorwärts.** Die Maustasten 4 und 5 wirken in jeder App wie ⌘[ und ⌘]: zurück und vorwärts in Safari, im Finder, in Xcode und überall sonst, wo es diese Kurzbefehle gibt. Sind sie bei deiner Maus vertauscht, schalte **Seitentasten tauschen** ein. Standardmäßig aus.
+
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet, wie unter Windows. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
 
 **Mit einem Klick im Dock ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und sie wird ausgeblendet. Ein weiterer Klick holt sie zurück. Standardmäßig aus.
@@ -67,11 +71,14 @@ Auf einem MacBook kannst du außerdem **Mit geschlossenem Deckel arbeiten** eins
 Öffne die Einstellungen im Menü mit **Einstellungen …** oder ⌘, – oder starte pika-tools einfach erneut über den Finder, das Launchpad oder Spotlight. Solange das Fenster offen ist, erscheint die App im Dock und bei ⌘Tab.
 
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache und Updates.
-- **Tastatur & Maus**: Ctrl-Kurzbefehle, ⌘Q und ⌘W, Sprachwechsel.
+- **Tastatur**: Ctrl-Kurzbefehle, ⌘Q und ⌘W, Sprachwechsel.
+- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, Seitentasten.
 - **Fenster & Apps**: Beenden nach dem letzten Fenster mit einer Liste von Ausnahmen und Ausblenden per Klick im Dock.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
 - **Berechtigungen**: der Status beider Berechtigungen mit Tasten, die die richtige Stelle in den Systemeinstellungen öffnen.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.
+
+Jede Seite hat unten eine Taste **Standard wiederherstellen…**. Sie fragt zuerst nach, schaltet dann die Werkzeuge auf dieser Seite aus und setzt ihre Optionen zurück, als hätte pika-tools sie nie angefasst.
 
 ## Updates
 

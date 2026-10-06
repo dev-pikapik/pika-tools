@@ -7,6 +7,7 @@ import UniformTypeIdentifiers
 final class QuitOnCloseTool: Tool {
     let id = "quit-on-close"
     let icon = "xmark.app"
+    var title: String { String(localized: "Quit when the last window closes") }
     let tab = SettingsTab.windows
 
     private static let excludedKey = "quit-on-close-excluded"
@@ -35,6 +36,13 @@ final class QuitOnCloseTool: Tool {
 
     var settingsView: AnyView {
         AnyView(QuitOnCloseSettings(tool: self))
+    }
+
+    var isDefault: Bool { !isEnabled && excluded.isEmpty }
+
+    func reset() {
+        isEnabled = false
+        excluded = []
     }
 
     func refresh() {
@@ -155,7 +163,7 @@ private struct QuitOnCloseSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Quit when the last window closes"),
+            title: tool.title,
             subtitle: Text("Closing an app’s last window quits the app. Finder stays open."),
             isOn: $tool.isEnabled
         )

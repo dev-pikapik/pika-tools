@@ -7,7 +7,7 @@ struct MenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach([SettingsTab.keyboard, .windows], id: \.self) { tab in
+            ForEach([SettingsTab.keyboard, .mouse, .windows], id: \.self) { tab in
                 let tools = registry.tools.filter { $0.tab == tab }
                 if !tools.isEmpty {
                     VStack(spacing: 0) {

@@ -5,6 +5,7 @@ import SwiftUI
 final class CommandKeysTool: Tool {
     let id = "command-keys"
     let icon = "command"
+    var title: String { String(localized: "Protect ⌘Q and ⌘W") }
 
     private(set) var isActive = false
 
@@ -133,7 +134,7 @@ private struct CommandKeysSettings: View {
         } else {
             ToggleRow(
                 icon: tool.icon,
-                title: String(localized: "Protect ⌘Q and ⌘W"),
+                title: tool.title,
                 subtitle: Text("Add ⇧ to quit or close"),
                 isOn: $tool.isEnabled
             )

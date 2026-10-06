@@ -7,7 +7,7 @@
 [![Licens: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Hämtningar](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den blockerar kortkommandon med kontroll, skyddar ⌘Q och ⌘W, byter språk med alternativ+skift på samma sätt som Alt+Skift i Windows, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
+En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den blockerar kortkommandon med kontroll, skyddar ⌘Q och ⌘W, byter språk med alternativ+skift på samma sätt som Alt+Skift i Windows, stänger av musacceleration, låter musens sidoknappar gå bakåt och framåt, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
 
 ## Installera
 
@@ -46,6 +46,10 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 **Byt språk med alternativ+skift.** Håll ned alternativ och tryck på skift: macOS går till nästa inmatningskälla. Fortsätt hålla ned alternativ och tryck på skift igen för att gå vidare. Håll ned skift och tryck på alternativ för att gå tillbaka. Om du under tiden trycker på en annan tangent, klickar eller lägger till kommando, kontroll eller Fn byts inget språk, så kortkommandon som alternativ+skift+pil fungerar som förut. Av som standard.
 
+**Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den, precis som LinearMouse. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pika-tools så får macOS tillbaka sina egna inställningar. Av som standard.
+
+**Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 fungerar som ⌘[ och ⌘] i alla appar: bakåt och framåt i Safari, Finder, Xcode och överallt där de här kortkommandona finns. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
+
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen, precis som i Windows. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 
 **Göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så göms den. Klicka igen för att ta fram den. Av som standard.
@@ -67,11 +71,14 @@ På en MacBook kan du också slå på **Arbeta med locket stängt**. macOS har i
 Öppna inställningarna från menyn med **Inställningar…** eller ⌘, eller starta pika-tools igen från Finder, Launchpad eller Spotlight. Medan fönstret är öppet syns appen i Dock och i ⌘Tab.
 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk och uppdateringar.
-- **Tangentbord och mus**: kortkommandon med kontroll, ⌘Q och ⌘W, byte av språk.
+- **Tangentbord**: kortkommandon med kontroll, ⌘Q och ⌘W, byte av språk.
+- **Mus**: pekaracceleration och hastighet, sidoknappar.
 - **Fönster och appar**: avsluta vid sista fönstret, med en lista över undantag, och göm med ett klick i Dock.
 - **Håll vaken**: tid, alternativ för skärm och lock.
 - **Behörigheter**: status för båda behörigheterna, med knappar som öppnar rätt ställe i Systeminställningar.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
+
+Varje sida har knappen **Återställ förval…** längst ned. Den frågar först, stänger sedan av verktygen på sidan och återställer deras alternativ, som om pika-tools aldrig hade rört dem.
 
 ## Uppdateringar
 

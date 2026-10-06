@@ -50,5 +50,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.set(.off)
+        ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
     }
 }

@@ -7,7 +7,7 @@
 [![Giấy phép: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Lượt tải](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: chặn các phím tắt Control, bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift giống như Alt+Shift trên Windows, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
+Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: chặn các phím tắt Control, bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift giống như Alt+Shift trên Windows, tắt gia tốc chuột, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
 
 ## Cài đặt
 
@@ -46,6 +46,10 @@ pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì b
 
 **Chuyển ngôn ngữ bằng Option+Shift.** Giữ Option và nhấn Shift: macOS chuyển sang nguồn đầu vào tiếp theo. Vẫn giữ Option và nhấn Shift lần nữa để đi tiếp. Giữ Shift và nhấn Option để quay lại. Nếu ở giữa chừng bạn nhấn phím khác, bấm chuột, hoặc thêm Command, Control hay Fn, ngôn ngữ sẽ không đổi, nên các phím tắt như Option+Shift+mũi tên vẫn hoạt động như trước. Tắt theo mặc định.
 
+**Tắt tăng tốc con trỏ.** Con trỏ di chuyển đúng bằng quãng đường của chuột, dù bạn di chuyển nhanh đến đâu, giống như LinearMouse. Thanh trượt **Tốc độ di chuyển** đặt tốc độ của con trỏ. Chỉ hoạt động với chuột, bàn di chuột vẫn giữ nguyên. Tắt tính năng hoặc thoát pika-tools, macOS sẽ lấy lại cài đặt của chính nó. Tắt theo mặc định.
+
+**Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 hoạt động như ⌘[ và ⌘] trong mọi ứng dụng: lùi và tiến trong Safari, Finder, Xcode và bất cứ nơi nào có các phím tắt này. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
+
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát, giống như trên Windows. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
 
 **Ẩn bằng một lần bấm trong Dock.** Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, ứng dụng sẽ ẩn đi. Bấm lần nữa để hiện lại. Tắt theo mặc định.
@@ -67,11 +71,14 @@ Trên MacBook, bạn cũng có thể bật **Hoạt động khi gập nắp**. m
 Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở lại pika-tools từ Finder, Launchpad hay Spotlight. Khi cửa sổ đang mở, ứng dụng hiện trong Dock và trong ⌘Tab.
 
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ và cập nhật.
-- **Bàn phím & Chuột**: phím tắt Control, ⌘Q và ⌘W, chuyển ngôn ngữ.
+- **Bàn phím**: phím tắt Control, ⌘Q và ⌘W, chuyển ngôn ngữ.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, các nút bên.
 - **Cửa sổ & Ứng dụng**: thoát khi đóng cửa sổ cuối cùng, kèm danh sách ngoại lệ, và ẩn bằng một lần bấm trong Dock.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
 - **Quyền**: trạng thái của cả hai quyền, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
+
+Mỗi trang đều có nút **Khôi phục mặc định…** ở cuối. Nút này hỏi trước, sau đó tắt các công cụ trên trang đó và đưa tùy chọn của chúng về như cũ, như thể pika-tools chưa từng chạm vào.
 
 ## Cập nhật
 

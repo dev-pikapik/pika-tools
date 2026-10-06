@@ -4,15 +4,20 @@ import SwiftUI
 protocol Tool: AnyObject {
     var id: String { get }
     var icon: String { get }
+    var title: String { get }
     var isEnabled: Bool { get set }
     var isActive: Bool { get }
     var settingsView: AnyView { get }
     var tab: SettingsTab { get }
+    var isDefault: Bool { get }
     func refresh()
+    func reset()
 }
 
 extension Tool {
     var tab: SettingsTab { .keyboard }
+    var isDefault: Bool { !isEnabled }
+    func reset() { isEnabled = false }
 }
 
 enum ToolStatus {
@@ -57,6 +62,8 @@ final class ToolRegistry {
         InputSwitchTool(),
         QuitOnCloseTool(),
         DockHideTool(),
+        PointerTool(),
+        SideButtonsTool(),
     ] + privateTools
 
     var status: ToolStatus {

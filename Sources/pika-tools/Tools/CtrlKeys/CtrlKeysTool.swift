@@ -5,6 +5,7 @@ import SwiftUI
 final class CtrlKeysTool: Tool {
     let id = "ctrl-keys"
     let icon = "control"
+    var title: String { String(localized: "Block ⌃ Control shortcuts") }
 
     private(set) var isActive = false
 
@@ -97,7 +98,7 @@ private struct CtrlKeysSettings: View {
     var body: some View {
         ToggleRow(
             icon: tool.icon,
-            title: String(localized: "Block ⌃ Control shortcuts"),
+            title: tool.title,
             subtitle: Text("⌃ works as a plain key: no shortcuts, no ⌃-click menu"),
             isOn: $tool.isEnabled
         )
