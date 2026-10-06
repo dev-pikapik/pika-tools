@@ -56,6 +56,7 @@ fi
 rm -f build/icon-info.plist build/actool.log
 
 if [ "$SIGN_IDENTITY" = "-" ]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     codesign --force --sign - "$APP"
 elif [[ "$SIGN_IDENTITY" == "Developer ID"* ]]; then
     codesign --force --options runtime --timestamp --sign "$SIGN_IDENTITY" "$APP"

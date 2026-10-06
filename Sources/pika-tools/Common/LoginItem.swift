@@ -3,6 +3,7 @@ import ServiceManagement
 @Observable
 final class LoginItem {
     static let shared = LoginItem()
+    private static let key = "open-at-login"
 
     private(set) var status = SMAppService.mainApp.status
 
@@ -16,6 +17,18 @@ final class LoginItem {
     private init() {}
 
     func set(_ on: Bool) {
+        UserDefaults.standard.set(on, forKey: Self.key)
+        apply(on)
+    }
+
+    func restore() {
+        let defaults = UserDefaults.standard
+        let wanted = defaults.object(forKey: Self.key) as? Bool ?? (!defaults.bool(forKey: "launchedBefore") || status == .enabled)
+        defaults.set(wanted, forKey: Self.key)
+        apply(wanted)
+    }
+
+    func apply(_ on: Bool) {
         if on {
             try? SMAppService.mainApp.register()
         } else {

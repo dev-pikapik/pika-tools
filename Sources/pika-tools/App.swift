@@ -24,10 +24,8 @@ struct PikaToolsApp: App {
 final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
-        if !defaults.bool(forKey: "launchedBefore") {
-            defaults.set(true, forKey: "launchedBefore")
-            LoginItem.shared.set(true)
-        }
+        LoginItem.shared.restore()
+        defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
 
         Appearance.saved.apply()

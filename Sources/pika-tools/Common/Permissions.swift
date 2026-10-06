@@ -16,10 +16,8 @@ final class Permissions {
     private init() {}
 
     func request() {
-        if !CommandLine.arguments.contains("--no-reset") {
-            if !accessibility { resetStale("Accessibility") }
-            if !inputMonitoring { resetStale("ListenEvent") }
-        }
+        if !accessibility { resetStale("Accessibility") }
+        if !inputMonitoring { resetStale("ListenEvent") }
         if !accessibility {
             let key = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String
             AXIsProcessTrustedWithOptions([key: true] as CFDictionary)

@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.2] - Unreleased
+
+### Fixed
+- Accessibility and Input Monitoring stay allowed after updates. Test builds now use their own bundle ID, so they can no longer take over the permissions or the login item of the installed app.
+- "Open at login" survives updates through Homebrew and always points to the installed app.
+
 ## [1.5.1] - Unreleased
 
 ### Changed

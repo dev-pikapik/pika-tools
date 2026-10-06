@@ -1,7 +1,7 @@
 import Foundation
 
 if CommandLine.arguments.contains("--uninstall") {
-    LoginItem.shared.set(false)
+    LoginItem.shared.apply(false)
     exit(0)
 }
 
