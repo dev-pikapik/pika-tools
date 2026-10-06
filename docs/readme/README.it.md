@@ -60,6 +60,8 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Nascondi con un clic nel Dock.** Fai clic sull’icona nel Dock dell’app che stai usando e si nasconde. Fai di nuovo clic per riaverla. Disattivato di default.
 
+**Il pulsante verde ingrandisce la finestra.** Fai clic sul pulsante verde di una finestra e questa si allarga fino a riempire lo schermo, senza passare a schermo intero. Un altro clic riporta la misura precedente. Tieni premuto ⌥ e il pulsante funziona come sempre. Lo schermo intero resta nel menu del pulsante e con ⌃⌘F. Puoi elencare le app in cui il pulsante verde deve funzionare come sempre. Disattivato di default.
+
 **Nuovo file nel Finder.** Clic destro in una finestra del Finder o sulla scrivania, scegli **Nuovo file**, scrivi un nome e compare un file vuoto, come Nuovo › Documento di testo su Windows. .txt di default. Disattivato di default.
 
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di nuovo il normale Control+C? Disattiva quello strumento.
@@ -85,7 +87,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua, aggiornamenti e backup: esporta e importa le impostazioni come file, oppure sincronizzale con iCloud Drive.
 - **Tastiera**: abbreviazioni con Control, ⌘Q e ⌘W, cambio lingua.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, tasti laterali.
-- **Finestre e app**: uscita con l’ultima finestra, con un elenco di eccezioni, e nascondi con un clic nel Dock.
+- **Finestre e app**: uscita con l’ultima finestra e ingrandimento con il pulsante verde (entrambi con un elenco di eccezioni), e nascondi con un clic nel Dock.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
 - **Permessi**: lo stato di entrambi i permessi, e di iCloud Drive quando la sincronizzazione è attiva, con pulsanti che aprono il punto giusto in Impostazioni di Sistema.
 - **Info**: versione, link alle novità e per segnalare un problema.

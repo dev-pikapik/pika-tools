@@ -44,6 +44,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         LoginItem.shared.restore()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
+        if let hidden = defaults.string(forKey: "quick-hidden"), !defaults.bool(forKey: "quick-hidden-window-zoom") {
+            defaults.set(hidden + ",window-zoom", forKey: "quick-hidden")
+        }
+        defaults.set(true, forKey: "quick-hidden-window-zoom")
 
         Appearance.saved.apply()
         let permissions = Permissions.shared

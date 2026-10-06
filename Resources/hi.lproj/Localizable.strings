@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "जिस ऐप में आप हैं, उसे छिपाने के लिए उसके आइकॉन पर क्लिक करें। वापस लाने के लिए फिर से क्लिक करें।";
 "Click again to bring it back" = "वापस लाने के लिए फिर क्लिक करें";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, छोटा करें, मिनिमाइज़, छिपाएँ, Windows, टास्कबार";
+"Green button enlarges the window" = "हरा बटन विंडो को बड़ा करता है";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "हरे बटन पर क्लिक करें, तो विंडो पूरी स्क्रीन भर देगी। पहले का आकार लौटाने के लिए फिर से क्लिक करें। फ़ुल स्क्रीन बटन के मेनू में और ⌃⌘F से मिलता रहेगा।";
+"Full screen: ⌃⌘F or the button’s menu" = "फ़ुल स्क्रीन: ⌃⌘F या बटन का मेनू";
+"Green button works as usual in these apps" = "इन ऐप्स में हरा बटन पहले की तरह काम करता है";
+"zoom, maximize, full screen, green button, Windows, option click" = "ज़ूम, बड़ा करें, मैक्सिमाइज़, फ़ुल स्क्रीन, हरा बटन, Windows, Option के साथ क्लिक";
 "Lets the app change clicks and keys and manage windows" = "ऐप को क्लिक और कुंजियाँ बदलने और विंडो प्रबंधित करने देता है";
 "Keyboard" = "कीबोर्ड";
 "Mouse" = "माउस";

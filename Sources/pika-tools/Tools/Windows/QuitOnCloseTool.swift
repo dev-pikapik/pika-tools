@@ -2,7 +2,6 @@ import AppKit
 import ApplicationServices
 import Carbon.HIToolbox
 import SwiftUI
-import UniformTypeIdentifiers
 
 @Observable
 final class QuitOnCloseTool: Tool {
@@ -12,7 +11,7 @@ final class QuitOnCloseTool: Tool {
     let tab = SettingsTab.windows
 
     private static let excludedKey = "quit-on-close-excluded"
-    private static let alwaysExcluded: Set<String> = ["com.apple.finder", Bundle.main.bundleIdentifier ?? ""]
+    fileprivate static let alwaysExcluded: Set<String> = ["com.apple.finder", Bundle.main.bundleIdentifier ?? ""]
 
     private(set) var isActive = false
 
@@ -225,18 +224,6 @@ final class QuitOnCloseTool: Tool {
             return (current?["ManagedSpaceID"] as? Int) ?? (current?["id64"] as? Int)
         })
     }
-
-    func exclude() {
-        let panel = NSOpenPanel()
-        panel.directoryURL = URL(fileURLWithPath: "/Applications")
-        panel.allowedContentTypes = [.applicationBundle]
-        panel.allowsMultipleSelection = true
-        panel.prompt = String(localized: "Add")
-        NSApp.activate()
-        guard panel.runModal() == .OK else { return }
-        let ids = panel.urls.compactMap { Bundle(url: $0)?.bundleIdentifier }
-        excluded += ids.filter { !excluded.contains($0) && !Self.alwaysExcluded.contains($0) }
-    }
 }
 
 @_silgen_name("CGSMainConnectionID") private func CGSMainConnectionID() -> Int32
@@ -281,7 +268,6 @@ private func quitOnCloseTapCallback(
 
 private struct QuitOnCloseSettings: View {
     @Bindable var tool: QuitOnCloseTool
-    @Environment(\.inSettings) private var inSettings
 
     var body: some View {
         ToggleRow(
@@ -291,45 +277,11 @@ private struct QuitOnCloseSettings: View {
             hint: Text("Finder always stays open"),
             isOn: $tool.isEnabled
         )
-        if inSettings {
-            LabeledContent {
-                Button("Add App…") { tool.exclude() }
-            } label: {
-                Text("Never quit these apps")
-                if tool.excluded.isEmpty {
-                    Text("No apps yet")
-                }
-            }
-            .disabled(!tool.isEnabled)
-            .settingAnchor(String(localized: "Never quit these apps"))
-            ForEach(tool.excluded, id: \.self) { id in
-                AppRow(bundleID: id) { tool.excluded.removeAll { $0 == id } }
-            }
-        }
-    }
-}
-
-private struct AppRow: View {
-    let bundleID: String
-    let remove: () -> Void
-
-    var body: some View {
-        let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleID)
-        LabeledContent {
-            Button(role: .destructive, action: remove) {
-                Image(systemName: "minus.circle.fill")
-                    .foregroundStyle(.red)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Remove")
-        } label: {
-            HStack(spacing: 8) {
-                Image(nsImage: url.map { NSWorkspace.shared.icon(forFile: $0.path) } ?? NSImage())
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .accessibilityHidden(true)
-                Text(verbatim: url.map { FileManager.default.displayName(atPath: $0.path) } ?? bundleID)
-            }
-        }
+        AppExclusions(
+            title: String(localized: "Never quit these apps"),
+            apps: $tool.excluded,
+            isEnabled: tool.isEnabled,
+            skipped: QuitOnCloseTool.alwaysExcluded
+        )
     }
 }

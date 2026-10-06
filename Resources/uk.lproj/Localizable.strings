@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Клацніть значок програми, у якій працюєте, — вона сховається. Ще клацання — повернеться.";
 "Click again to bring it back" = "Ще клацання — програма повернеться";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, згорнути, сховати, Windows, панель завдань";
+"Green button enlarges the window" = "Зелена кнопка збільшує вікно";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Клацніть зелену кнопку — вікно заповнить екран. Ще клацання — повернеться попередній розмір. Повноекранний режим залишається в меню кнопки та на ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Повноекранний режим: ⌃⌘F або меню кнопки";
+"Green button works as usual in these apps" = "Зелена кнопка працює як зазвичай у цих програмах";
+"zoom, maximize, full screen, green button, Windows, option click" = "збільшити, розгорнути, масштаб, повний екран, зелена кнопка, Windows, клацання з Option";
 "Lets the app change clicks and keys and manage windows" = "Щоб змінювати кліки й клавіші та керувати вікнами";
 "Keyboard" = "Клавіатура";
 "Mouse" = "Миша";

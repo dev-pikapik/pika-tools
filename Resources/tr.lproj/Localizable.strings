@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Kullandığınız uygulamanın simgesini tıklayarak onu gizleyin. Geri getirmek için yeniden tıklayın.";
 "Click again to bring it back" = "Geri getirmek için yeniden tıklayın";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, simge durumuna küçült, gizle, Windows, görev çubuğu, taskbar";
+"Green button enlarges the window" = "Yeşil düğme pencereyi büyütür";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Pencerenin ekranı doldurması için yeşil düğmeyi tıklayın, eski boyuta dönmek için yeniden tıklayın. Tam ekran, düğmenin menüsünde ve ⌃⌘F ile kullanılabilir kalır.";
+"Full screen: ⌃⌘F or the button’s menu" = "Tam ekran: ⌃⌘F veya düğmenin menüsü";
+"Green button works as usual in these apps" = "Bu uygulamalarda yeşil düğme her zamanki gibi çalışır";
+"zoom, maximize, full screen, green button, Windows, option click" = "yakınlaştır, büyüt, ekranı kapla, tam ekran, yeşil düğme, Windows, Option ile tıklama";
 "Lets the app change clicks and keys and manage windows" = "Uygulamanın tıklamaları ve tuşları değiştirmesini ve pencereleri yönetmesini sağlar";
 "Keyboard" = "Klavye";
 "Mouse" = "Fare";

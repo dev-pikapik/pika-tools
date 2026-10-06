@@ -60,6 +60,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Skrytí kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a skryje se. Dalším kliknutím ji vrátíte. Ve výchozím stavu vypnuto.
 
+**Zelené tlačítko zvětší okno.** Klikněte na zelené tlačítko okna a okno se zvětší tak, aby vyplnilo obrazovku, aniž by přešlo do režimu celé obrazovky. Dalším kliknutím se vrátí původní velikost. S podrženým ⌥ tlačítko funguje jako vždy. Celá obrazovka zůstává v nabídce tlačítka a na ⌃⌘F. Můžete sestavit seznam aplikací, ve kterých má zelené tlačítko fungovat jako obvykle. Ve výchozím stavu vypnuto.
+
 **Nový soubor ve Finderu.** Klikněte pravým v okně Finderu nebo na ploše, vyberte **Nový soubor**, napište název a objeví se prázdný soubor, jako Nový › Textový dokument ve Windows. Standardně .txt. Ve výchozím stavu vypnuto.
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
@@ -85,7 +87,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Klávesnice**: zkratky s Controlem, ⌘Q a ⌘W, přepínání jazyka.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, boční tlačítka.
-- **Okna a aplikace**: ukončení po posledním okně se seznamem výjimek a skrytí kliknutím v Docku.
+- **Okna a aplikace**: ukončení po posledním okně a zvětšení okna zeleným tlačítkem (obojí se seznamem výjimek) a skrytí kliknutím v Docku.
 - **Nespat**: délka, volby pro displej a víko.
 - **Oprávnění**: stav obou oprávnění a iCloud Drive, když je zapnutá synchronizace, s tlačítky, která otevřou správné místo v Nastavení systému.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.

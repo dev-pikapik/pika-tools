@@ -60,6 +60,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Mit einem Klick im Dock ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und sie wird ausgeblendet. Ein weiterer Klick holt sie zurück. Standardmäßig aus.
 
+**Grüner Knopf vergrößert das Fenster.** Klicke auf den grünen Knopf eines Fensters, und es füllt den Bildschirm, ohne in den Vollbildmodus zu wechseln. Noch ein Klick bringt die vorherige Größe zurück. Halte ⌥ gedrückt, dann funktioniert der Knopf wie immer. Vollbild bleibt im Menü des Knopfs und auf ⌃⌘F. Du kannst Apps auflisten, in denen der grüne Knopf wie gewohnt funktionieren soll. Standardmäßig aus.
+
 **Neue Datei im Finder.** Rechtsklick in ein Finder-Fenster oder auf den Schreibtisch, **Neue Datei** wählen, Namen eingeben – schon ist eine leere Datei da, wie Neu › Textdokument unter Windows. Standardmäßig .txt. Standardmäßig aus.
 
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen. Du brauchst das normale Ctrl+C zurück? Schalte das Werkzeug aus.
@@ -85,7 +87,7 @@ Wach bleiben, der Display-Modus und der Modus bei geschlossenem Deckel lassen si
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
 - **Tastatur**: Ctrl-Kurzbefehle, ⌘Q und ⌘W, Sprachwechsel.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Seitentasten.
-- **Fenster & Apps**: Beenden nach dem letzten Fenster mit einer Liste von Ausnahmen und Ausblenden per Klick im Dock.
+- **Fenster & Apps**: Beenden nach dem letzten Fenster und Vergrößern mit dem grünen Knopf (beides mit einer Liste von Ausnahmen) sowie Ausblenden per Klick im Dock.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
 - **Berechtigungen**: der Status beider Berechtigungen und von iCloud Drive, wenn die Synchronisierung läuft, mit Tasten, die die richtige Stelle in den Systemeinstellungen öffnen.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.

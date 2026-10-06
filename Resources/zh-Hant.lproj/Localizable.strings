@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "點按目前使用中 App 的圖像即可隱藏，再點按一次即可顯示。";
 "Click again to bring it back" = "再點按一次即可顯示";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, 最小化, 縮到最小, 隱藏, Windows, 工作列";
+"Green button enlarges the window" = "綠色按鈕放大視窗";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "點按綠色按鈕，視窗會填滿螢幕；再點按一次，恢復原本大小。全螢幕仍可在按鈕的選單中或按 ⌃⌘F 使用。";
+"Full screen: ⌃⌘F or the button’s menu" = "全螢幕：⌃⌘F 或按鈕的選單";
+"Green button works as usual in these apps" = "在這些 App 中，綠色按鈕照常運作";
+"zoom, maximize, full screen, green button, Windows, option click" = "縮放, 放大, 最大化, 全螢幕, 綠色按鈕, Windows, Option 點按";
 "Lets the app change clicks and keys and manage windows" = "讓 App 更改點按和按鍵並管理視窗";
 "Keyboard" = "鍵盤";
 "Mouse" = "滑鼠";

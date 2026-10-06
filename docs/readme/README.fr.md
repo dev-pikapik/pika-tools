@@ -60,6 +60,8 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et elle se masque. Cliquez de nouveau pour la faire revenir. Désactivé par défaut.
 
+**Le bouton vert agrandit la fenêtre.** Cliquez sur le bouton vert d’une fenêtre : elle remplit l’écran sans passer en plein écran. Un autre clic rétablit la taille précédente. Si vous maintenez ⌥, le bouton fonctionne comme d’habitude. Le plein écran reste dans le menu du bouton et sur ⌃⌘F. Vous pouvez lister les apps où le bouton vert doit fonctionner comme d’habitude. Désactivé par défaut.
+
 **Nouveau fichier dans le Finder.** Clic droit dans une fenêtre du Finder ou sur le bureau, choisissez **Nouveau fichier**, tapez un nom, et un fichier vide apparaît, comme Nouveau › Document texte sous Windows. En .txt par défaut. Désactivé par défaut.
 
 Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoin de retrouver un Contrôle+C normal ? Désactivez cet outil.
@@ -85,7 +87,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue, mises à jour et sauvegarde : exporter et importer les réglages sous forme de fichier, ou les synchroniser avec iCloud Drive.
 - **Clavier** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, boutons latéraux.
-- **Fenêtres et apps** : quitter à la dernière fenêtre, avec une liste d’exceptions, et masquer d’un clic dans le Dock.
+- **Fenêtres et apps** : quitter à la dernière fenêtre et agrandir avec le bouton vert (les deux avec une liste d’exceptions), et masquer d’un clic dans le Dock.
 - **Rester éveillé** : durée, options d’écran et de capot.
 - **Autorisations** : l’état des deux autorisations, et d’iCloud Drive quand la synchronisation est activée, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.

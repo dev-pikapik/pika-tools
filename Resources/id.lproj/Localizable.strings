@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik ikon app yang sedang digunakan untuk menyembunyikannya. Klik lagi untuk menampilkannya kembali.";
 "Click again to bring it back" = "Klik lagi untuk menampilkan kembali";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalkan, sembunyikan, Windows, taskbar";
+"Green button enlarges the window" = "Tombol hijau memperbesar jendela";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Klik tombol hijau agar jendela memenuhi layar, klik lagi untuk kembali ke ukuran semula. Layar penuh tetap ada di menu tombol dan di ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Layar penuh: ⌃⌘F atau menu tombol";
+"Green button works as usual in these apps" = "Tombol hijau berfungsi seperti biasa di app ini";
+"zoom, maximize, full screen, green button, Windows, option click" = "zoom, perbesar, maksimalkan, layar penuh, tombol hijau, Windows, klik dengan Option";
 "Lets the app change clicks and keys and manage windows" = "Memungkinkan app mengubah klik dan tombol serta mengelola jendela";
 "Keyboard" = "Papan Ketik";
 "Mouse" = "Tetikus";

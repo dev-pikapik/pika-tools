@@ -60,6 +60,8 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Sembunyikan dengan klik di Dock.** Klik ikon Dock dari app yang sedang Anda gunakan, dan app itu tersembunyi. Klik lagi untuk memunculkannya kembali. Mati secara default.
 
+**Tombol hijau memperbesar jendela.** Klik tombol hijau pada jendela, dan jendela akan memenuhi layar tanpa masuk ke layar penuh. Klik lagi untuk mengembalikan ukuran sebelumnya. Tahan ⌥, dan tombol bekerja seperti biasa. Layar penuh tetap ada di menu tombol dan di ⌃⌘F. Anda bisa membuat daftar app yang tombol hijaunya harus bekerja seperti biasa. Mati secara default.
+
 **File Baru di Finder.** Klik kanan di jendela Finder atau di desktop, pilih **File Baru**, ketik nama, dan file kosong langsung muncul, seperti New › Text Document di Windows. Bawaannya .txt. Mati secara bawaan.
 
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
@@ -85,7 +87,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Papan Ketik**: pintasan Control, ⌘Q dan ⌘W, penggantian bahasa.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, tombol samping.
-- **Jendela & App**: keluar saat jendela terakhir ditutup, dengan daftar pengecualian, dan sembunyikan dengan klik di Dock.
+- **Jendela & App**: keluar saat jendela terakhir ditutup dan memperbesar jendela dengan tombol hijau (keduanya dengan daftar pengecualian), serta sembunyikan dengan klik di Dock.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
 - **Izin**: status kedua izin, dan status iCloud Drive saat sinkronisasi menyala, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
 - **Tentang**: versi, tautan ke catatan perubahan dan untuk melaporkan masalah.

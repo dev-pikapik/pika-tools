@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicke auf das Symbol der App, die du gerade nutzt, um sie auszublenden. Noch ein Klick holt sie zurück.";
 "Click again to bring it back" = "Noch ein Klick holt sie zurück";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimieren, ausblenden, Windows, Taskleiste";
+"Green button enlarges the window" = "Grüner Knopf vergrößert das Fenster";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Klicke auf den grünen Knopf, und das Fenster füllt den Bildschirm. Noch ein Klick bringt die alte Größe zurück. Vollbild gibt es weiterhin im Menü des Knopfs und mit ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Vollbild: ⌃⌘F oder Menü des Knopfs";
+"Green button works as usual in these apps" = "Grüner Knopf funktioniert in diesen Apps wie gewohnt";
+"zoom, maximize, full screen, green button, Windows, option click" = "vergrößern, zoomen, maximieren, Vollbild, grüner Knopf, Windows, Wahltaste-Klick";
 "Lets the app change clicks and keys and manage windows" = "Damit die App Klicks und Tasten ändern und Fenster verwalten kann";
 "Keyboard" = "Tastatur";
 "Mouse" = "Maus";

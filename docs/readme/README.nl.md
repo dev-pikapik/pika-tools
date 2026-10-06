@@ -60,6 +60,8 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Verbergen met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en de app wordt verborgen. Klik nog eens om hem terug te halen. Standaard uit.
 
+**Groene knop vergroot het venster.** Klik op de groene knop van een venster en het vult het scherm, zonder naar volledig scherm te gaan. Klik nogmaals om de vorige grootte terug te krijgen. Houd ⌥ ingedrukt en de knop werkt zoals altijd. Volledig scherm blijft beschikbaar in het menu van de knop en met ⌃⌘F. Je kunt apps opgeven waarin de groene knop gewoon moet blijven werken. Standaard uit.
+
 **Nieuw bestand in de Finder.** Klik met rechts in een Finder-venster of op het bureaublad, kies **Nieuw bestand**, typ een naam en er verschijnt een leeg bestand, zoals Nieuw › Tekstdocument in Windows. Standaard .txt. Standaard uit.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je de gewone Control+C terug? Zet die tool uit.
@@ -85,7 +87,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Toetsenbord**: Control-toetscombinaties, ⌘Q en ⌘W, van taal wisselen.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, zijknoppen.
-- **Vensters en apps**: stoppen bij het laatste venster, met een lijst met uitzonderingen, en verbergen met een klik in het Dock.
+- **Vensters en apps**: stoppen bij het laatste venster en vergroten met de groene knop (allebei met een lijst met uitzonderingen), en verbergen met een klik in het Dock.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
 - **Toestemmingen**: de status van beide toestemmingen, en van iCloud Drive als synchronisatie aanstaat, met knoppen die de juiste plek in Systeeminstellingen openen.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.

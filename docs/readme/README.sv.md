@@ -60,6 +60,8 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så göms den. Klicka igen för att ta fram den. Av som standard.
 
+**Gröna knappen förstorar fönstret.** Klicka på fönstrets gröna knapp så fyller det skärmen, utan att gå till helskärm. Klicka igen för att få tillbaka den förra storleken. Håll ned ⌥ så fungerar knappen som vanligt. Helskärm finns kvar i knappens meny och på ⌃⌘F. Du kan göra en lista över appar där gröna knappen ska fungera som vanligt. Av som standard.
+
 **Ny fil i Finder.** Högerklicka i ett Finder-fönster eller på skrivbordet, välj **Ny fil**, skriv ett namn och en tom fil dyker upp, som Nytt › Textdokument i Windows. .txt som standard. Av som standard.
 
 Varje verktyg har ett eget reglage i menyn och i inställningarna. Behöver du ett vanligt kontroll+C igen? Stäng av det verktyget.
@@ -85,7 +87,7 @@ Keep Awake, skärmläget och läget med stängt lock kan läggas på en knapp i 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Tangentbord**: kortkommandon med kontroll, ⌘Q och ⌘W, byte av språk.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, sidoknappar.
-- **Fönster och appar**: avsluta vid sista fönstret, med en lista över undantag, och göm med ett klick i Dock.
+- **Fönster och appar**: avsluta vid sista fönstret och förstora med gröna knappen (båda med en lista över undantag), och göm med ett klick i Dock.
 - **Håll vaken**: tid, alternativ för skärm och lock.
 - **Behörigheter**: status för båda behörigheterna, och för iCloud Drive när synkronisering är på, med knappar som öppnar rätt ställe i Systeminställningar.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.

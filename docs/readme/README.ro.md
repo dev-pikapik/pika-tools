@@ -60,6 +60,8 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Ascundere cu un clic în Dock.** Dă clic pe pictograma din Dock a aplicației în care lucrezi și aceasta se ascunde. Dă clic din nou ca s-o readuci. Dezactivat implicit.
 
+**Butonul verde mărește fereastra.** Dă clic pe butonul verde al unei ferestre, iar ea se mărește până umple ecranul, fără să treacă în ecran complet. Dă clic din nou ca să revii la mărimea de dinainte. Ține apăsat ⌥, iar butonul funcționează ca de obicei. Ecranul complet rămâne în meniul butonului și pe ⌃⌘F. Poți face o listă cu aplicațiile în care butonul verde să funcționeze ca de obicei. Dezactivat implicit.
+
 **Fișier nou în Finder.** Clic dreapta într-o fereastră Finder sau pe birou, alege **Fișier nou**, scrie un nume și apare un fișier gol, ca Nou › Document text în Windows. Implicit .txt. Implicit dezactivat.
 
 Fiecare instrument are propriul comutator în meniu și în configurări. Ai nevoie din nou de Control+C obișnuit? Dezactivează instrumentul respectiv.
@@ -85,7 +87,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Tastatură**: scurtături cu Control, ⌘Q și ⌘W, schimbarea limbii.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, butoanele laterale.
-- **Ferestre și aplicații**: ieșire la ultima fereastră, cu o listă de excepții, și ascundere cu un clic în Dock.
+- **Ferestre și aplicații**: ieșire la ultima fereastră și mărire cu butonul verde (ambele cu o listă de excepții), și ascundere cu un clic în Dock.
 - **Rămâi treaz**: durată, opțiuni pentru ecran și capac.
 - **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
