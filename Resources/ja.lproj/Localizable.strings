@@ -59,6 +59,11 @@
 "Indefinitely" = "無期限";
 "Keep your Mac awake" = "Mac をスリープさせない";
 "Duration" = "時間";
+"Until %@" = "%@ まで";
+"Days" = "日";
+"Hours" = "時間";
+"Minutes" = "分";
+"Seconds" = "秒";
 "Keep the display on" = "ディスプレイをオンのままにする";
 "Otherwise the screen dims and turns off as usual" = "オフのときは通常どおり暗くなって消えます";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac が自動でスリープしなくなります。pika-tools を終了すると解除されます。";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, コントロールキー, ショートカット, 右クリック, コンテキストメニュー";
 "keyboard layout, input source, option, shift, alt" = "キーボードレイアウト, 入力ソース, option, shift, alt";
 "sleep, caffeine, insomnia" = "スリープ, カフェイン, 不眠";
-"time, timer, hours, minutes" = "時間, タイマー, 時, 分";
+"time, timer, days, hours, minutes, seconds" = "時間, タイマー, 日, 時, 分, 秒";
 "screen, monitor, dim, screen saver" = "画面, モニタ, 暗くする, スクリーンセーバ";
 "clamshell, laptop, MacBook, external display" = "クラムシェル, ふた, ノートブック, MacBook, 外部ディスプレイ";
 "battery, power, charge" = "バッテリー, 電源, 充電";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "使用中のアプリのアイコンをクリックすると隠れます。もう一度クリックすると戻ります。";
 "Click again to bring it back" = "もう一度クリックすると戻ります";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, しまう, 隠す, Windows, タスクバー";
-"From 1 minute to 12 months" = "1分から12か月まで";
 "Lets the app change clicks and keys and manage windows" = "クリックやキー入力を変更し、ウインドウを管理するため";
 "Keyboard" = "キーボード";
 "Mouse" = "マウス";

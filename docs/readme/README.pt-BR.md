@@ -72,7 +72,7 @@ O app segue o idioma do sistema ou o que você escolher nos ajustes. Estão disp
 
 ## Manter Ativo
 
-Impede que o Mac entre em repouso enquanto você está longe do teclado: por qualquer tempo de 1 minuto a 12 meses, ou até você desativar. Ative no menu e defina a duração nos ajustes em minutos, horas, dias, semanas ou meses. O menu mostra quanto tempo falta e quando termina. **Manter a tela ligada** também impede que a tela escureça. Ao encerrar o pika-tools, o Manter Ativo termina.
+Impede que o Mac entre em repouso enquanto você está longe do teclado: por qualquer tempo de 1 segundo a 365 dias, ou até você desativar. Ative no menu e defina a duração nos ajustes: digite dias, horas, minutos e segundos, use ↑ e ↓ ou clique em uma opção pronta de 15 minutos a 8 horas. O menu mostra quanto tempo falta e quando termina. **Manter a tela ligada** também impede que a tela escureça. Ao encerrar o pika-tools, o Manter Ativo termina.
 
 Em um MacBook você também pode ativar **Funcionar com a tampa fechada**. O macOS não tem um ajuste para isso, então o pika-tools executa `pmset -a disablesleep 1` e pede uma senha de administrador: só um administrador pode mudar como o Mac entra em repouso. O ajuste volta ao normal sozinho quando o Manter Ativo termina, quando você encerra o app ou se ele travar. Se você não digitar a senha, nada muda. Mantenha o Mac bem ventilado com a tampa fechada. **Parar com bateria abaixo de 20%** termina a sessão antes que a bateria acabe.
 

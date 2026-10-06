@@ -72,7 +72,7 @@ Bảng điều khiển trên thanh menu ban đầu chỉ có vài hàng. Bạn t
 
 ## Giữ máy thức
 
-Ngăn máy Mac chuyển sang chế độ ngủ khi bạn rời bàn phím: trong khoảng thời gian bất kỳ từ 1 phút đến 12 tháng, hoặc cho đến khi bạn tắt. Bật từ menu và đặt thời lượng trong cài đặt theo phút, giờ, ngày, tuần hoặc tháng. Menu hiển thị thời gian còn lại và khi nào kết thúc. **Giữ màn hình luôn bật** còn ngăn màn hình bị tối đi. Thoát pika-tools sẽ kết thúc Giữ máy thức.
+Ngăn máy Mac chuyển sang chế độ ngủ khi bạn rời bàn phím: trong khoảng thời gian bất kỳ từ 1 giây đến 365 ngày, hoặc cho đến khi bạn tắt. Bật từ menu và đặt thời lượng trong cài đặt: nhập ngày, giờ, phút và giây, dùng ↑ và ↓, hoặc bấm một lựa chọn có sẵn từ 15 phút đến 8 giờ. Menu hiển thị thời gian còn lại và khi nào kết thúc. **Giữ màn hình luôn bật** còn ngăn màn hình bị tối đi. Thoát pika-tools sẽ kết thúc Giữ máy thức.
 
 Trên MacBook, bạn cũng có thể bật **Hoạt động khi gập nắp**. macOS không có công tắc cho việc này, nên pika-tools chạy `pmset -a disablesleep 1` và yêu cầu mật khẩu quản trị viên: chỉ quản trị viên mới có thể thay đổi cách máy Mac ngủ. Cài đặt tự trở lại bình thường khi Giữ máy thức kết thúc, khi bạn thoát ứng dụng hoặc nếu ứng dụng bị treo. Nếu bạn không nhập mật khẩu, không có gì thay đổi. Hãy để máy Mac được thông thoáng khi gập nắp. **Dừng khi pin dưới 20%** kết thúc phiên trước khi pin cạn.
 

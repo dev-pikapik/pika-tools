@@ -72,7 +72,7 @@ L’app usa la lingua del sistema o quella che scegli nelle impostazioni. Sono d
 
 ## Resta sveglio
 
-Impedisce al Mac di andare in stop mentre sei lontano dalla tastiera: per qualsiasi durata da 1 minuto a 12 mesi, o finché non lo disattivi. Attivalo dal menu e imposta la durata nelle impostazioni in minuti, ore, giorni, settimane o mesi. Il menu mostra quanto tempo resta e quando finisce. **Tieni acceso lo schermo** impedisce anche che lo schermo si oscuri. Uscendo da pika-tools, Resta sveglio termina.
+Impedisce al Mac di andare in stop mentre sei lontano dalla tastiera: per qualsiasi durata da 1 secondo a 365 giorni, o finché non lo disattivi. Attivalo dal menu e imposta la durata nelle impostazioni: digita giorni, ore, minuti e secondi, usa ↑ e ↓ oppure fai clic su una durata predefinita da 15 minuti a 8 ore. Il menu mostra quanto tempo resta e quando finisce. **Tieni acceso lo schermo** impedisce anche che lo schermo si oscuri. Uscendo da pika-tools, Resta sveglio termina.
 
 Su un MacBook puoi anche attivare **Funziona con il coperchio chiuso**. macOS non ha un’opzione per farlo, quindi pika-tools esegue `pmset -a disablesleep 1` e chiede una password da amministratore: solo un amministratore può cambiare il modo in cui il Mac va in stop. L’impostazione torna normale da sola quando Resta sveglio finisce, quando esci dall’app o se l’app si chiude in modo imprevisto. Se non inserisci la password, non cambia nulla. Tieni il Mac ben ventilato con il coperchio chiuso. **Interrompi con batteria sotto il 20%** termina la sessione prima che la batteria si esaurisca.
 

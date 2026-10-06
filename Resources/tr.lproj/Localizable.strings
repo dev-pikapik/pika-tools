@@ -59,6 +59,11 @@
 "Indefinitely" = "Süresiz";
 "Keep your Mac awake" = "Mac’i uyanık tut";
 "Duration" = "Süre";
+"Until %@" = "Bitiş: %@";
+"Days" = "Gün";
+"Hours" = "Saat";
+"Minutes" = "Dakika";
+"Seconds" = "Saniye";
 "Keep the display on" = "Ekranı açık tut";
 "Otherwise the screen dims and turns off as usual" = "Aksi takdirde ekran her zamanki gibi kararır ve kapanır";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac’iniz kendiliğinden uyku moduna geçmez. pika-tools’tan çıktığınızda kapanır.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, Control tuşu, kestirmeler, kısayollar, sağ tık, içerik menüsü";
 "keyboard layout, input source, option, shift, alt" = "klavye düzeni, girdi kaynağı, option, shift, alt";
 "sleep, caffeine, insomnia" = "uyku, kafein, uykusuzluk, sleep";
-"time, timer, hours, minutes" = "zaman, zamanlayıcı, saat, dakika";
+"time, timer, days, hours, minutes, seconds" = "zaman, zamanlayıcı, gün, saat, dakika, saniye";
 "screen, monitor, dim, screen saver" = "ekran, monitör, karartma, ekran koruyucu";
 "clamshell, laptop, MacBook, external display" = "clamshell, dizüstü, laptop, MacBook, harici ekran, kapak";
 "battery, power, charge" = "pil, güç, şarj";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Kullandığınız uygulamanın simgesini tıklayarak onu gizleyin. Geri getirmek için yeniden tıklayın.";
 "Click again to bring it back" = "Geri getirmek için yeniden tıklayın";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, simge durumuna küçült, gizle, Windows, görev çubuğu, taskbar";
-"From 1 minute to 12 months" = "1 dakikadan 12 aya kadar";
 "Lets the app change clicks and keys and manage windows" = "Uygulamanın tıklamaları ve tuşları değiştirmesini ve pencereleri yönetmesini sağlar";
 "Keyboard" = "Klavye";
 "Mouse" = "Fare";

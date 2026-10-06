@@ -59,6 +59,11 @@
 "Indefinitely" = "Bez ograniczeń";
 "Keep your Mac awake" = "Nie pozwól Macowi usnąć";
 "Duration" = "Czas trwania";
+"Until %@" = "Do %@";
+"Days" = "Dni";
+"Hours" = "Godziny";
+"Minutes" = "Minuty";
+"Seconds" = "Sekundy";
 "Keep the display on" = "Nie wyłączaj ekranu";
 "Otherwise the screen dims and turns off as usual" = "W przeciwnym razie ekran przygasa i wyłącza się jak zwykle";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac nie uśpi się sam. Wyłącza się, gdy zakończysz pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, klawisz Control, skróty, prawy przycisk, menu kontekstowe";
 "keyboard layout, input source, option, shift, alt" = "układ klawiatury, źródło wprowadzania, option, shift, alt";
 "sleep, caffeine, insomnia" = "uśpienie, usypianie, kofeina, bezsenność, sleep";
-"time, timer, hours, minutes" = "czas, minutnik, timer, godziny, minuty";
+"time, timer, days, hours, minutes, seconds" = "czas, minutnik, timer, dni, godziny, minuty, sekundy";
 "screen, monitor, dim, screen saver" = "ekran, monitor, przygaszanie, wygaszacz ekranu";
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, zewnętrzny monitor, pokrywa";
 "battery, power, charge" = "bateria, zasilanie, ładowanie";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Kliknij ikonę aplikacji, w której jesteś, aby ją ukryć. Kliknij ponownie, aby ją przywrócić.";
 "Click again to bring it back" = "Kliknij ponownie, aby ją przywrócić";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalizuj, ukryj, Windows, pasek zadań, taskbar";
-"From 1 minute to 12 months" = "Od 1 minuty do 12 miesięcy";
 "Lets the app change clicks and keys and manage windows" = "Pozwala aplikacji zmieniać kliknięcia i klawisze oraz zarządzać oknami";
 "Keyboard" = "Klawiatura";
 "Mouse" = "Mysz";

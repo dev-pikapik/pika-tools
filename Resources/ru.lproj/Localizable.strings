@@ -59,6 +59,11 @@
 "Indefinitely" = "Без ограничения";
 "Keep your Mac awake" = "Не давать Mac засыпать";
 "Duration" = "Длительность";
+"Until %@" = "До %@";
+"Days" = "Дни";
+"Hours" = "Часы";
+"Minutes" = "Минуты";
+"Seconds" = "Секунды";
 "Keep the display on" = "Не гасить экран";
 "Otherwise the screen dims and turns off as usual" = "Иначе экран тускнеет и гаснет как обычно";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac не уснёт сам по себе. Выключается, когда закрываете pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, контрол, клавиша control, сочетания клавиш, правый клик, контекстное меню";
 "keyboard layout, input source, option, shift, alt" = "раскладка, источник ввода, option, shift, alt, переключение языка";
 "sleep, caffeine, insomnia" = "сон, спящий режим, кофеин, бессонница";
-"time, timer, hours, minutes" = "время, таймер, часы, минуты";
+"time, timer, days, hours, minutes, seconds" = "время, таймер, дни, часы, минуты, секунды";
 "screen, monitor, dim, screen saver" = "экран, монитор, затемнение, заставка";
 "clamshell, laptop, MacBook, external display" = "крышка, ноутбук, MacBook, внешний монитор, закрытый режим";
 "battery, power, charge" = "батарея, аккумулятор, питание, заряд";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Кликните по значку приложения, в котором работаете, — оно скроется. Ещё клик — вернётся.";
 "Click again to bring it back" = "Ещё клик — приложение вернётся";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, Док, свернуть, скрыть, Windows, панель задач";
-"From 1 minute to 12 months" = "От 1 минуты до 12 месяцев";
 "Lets the app change clicks and keys and manage windows" = "Чтобы менять клики и клавиши и управлять окнами";
 "Keyboard" = "Клавиатура";
 "Mouse" = "Мышь";

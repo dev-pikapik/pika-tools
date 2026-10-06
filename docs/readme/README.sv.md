@@ -72,7 +72,7 @@ Appen följer systemets språk eller det språk du väljer i inställningarna. A
 
 ## Håll vaken
 
-Hindrar din Mac från att gå i vila medan du är borta från tangentbordet: under valfri tid från 1 minut till 12 månader, eller tills du stänger av det. Slå på det i menyn och ställ in tiden i inställningarna i minuter, timmar, dagar, veckor eller månader. Menyn visar hur lång tid som är kvar och när det tar slut. **Håll skärmen på** hindrar också skärmen från att dämpas. När du avslutar pika-tools avslutas även Håll vaken.
+Hindrar din Mac från att gå i vila medan du är borta från tangentbordet: under valfri tid från 1 sekund till 365 dagar, eller tills du stänger av det. Slå på det i menyn och ställ in tiden i inställningarna: skriv dagar, timmar, minuter och sekunder, använd ↑ och ↓ eller klicka på ett färdigt val från 15 minuter till 8 timmar. Menyn visar hur lång tid som är kvar och när det tar slut. **Håll skärmen på** hindrar också skärmen från att dämpas. När du avslutar pika-tools avslutas även Håll vaken.
 
 På en MacBook kan du också slå på **Arbeta med locket stängt**. macOS har inget reglage för det, så pika-tools kör `pmset -a disablesleep 1` och ber om ett administratörslösenord: bara en administratör kan ändra hur datorn går i vila. Inställningen återställs automatiskt när Håll vaken tar slut, när du avslutar appen eller om den kraschar. Om du inte anger lösenordet ändras ingenting. Se till att datorn har god ventilation med locket stängt. **Stoppa när batteriet är under 20 %** avslutar sessionen innan batteriet tar slut.
 

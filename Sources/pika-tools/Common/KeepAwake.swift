@@ -9,47 +9,10 @@ final class KeepAwake {
         case off, timed, indefinitely
     }
 
-    enum Unit: String, CaseIterable {
-        case minutes, hours, days, weeks, months
-
-        var component: Calendar.Component {
-            switch self {
-            case .minutes: .minute
-            case .hours: .hour
-            case .days: .day
-            case .weeks: .weekOfMonth
-            case .months: .month
-            }
-        }
-
-        var limit: Int {
-            switch self {
-            case .minutes, .hours: 999
-            case .days: 365
-            case .weeks: 52
-            case .months: 12
-            }
-        }
-
-        func name(for value: Int) -> String {
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .full
-            formatter.allowedUnits = switch self {
-            case .minutes: .minute
-            case .hours: .hour
-            case .days: .day
-            case .weeks: .weekOfMonth
-            case .months: .month
-            }
-            var components = DateComponents()
-            components.setValue(value, for: component)
-            let text = formatter.string(from: components) ?? rawValue
-            return text.replacingOccurrences(of: value.formatted(), with: "").trimmingCharacters(in: .whitespaces)
-        }
-    }
-
     static let shared = KeepAwake()
+    static let maxDuration = 365 * 86400
     private static let lidFlagKey = "keep-awake-lid-sleep-disabled"
+    private static let legacyUnits = ["minutes": 60, "hours": 3600, "days": 86400, "weeks": 7 * 86400, "months": 30 * 86400]
 
     let hasLid: Bool = {
         if let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
@@ -82,21 +45,10 @@ final class KeepAwake {
         didSet { UserDefaults.standard.set(lastMode.rawValue, forKey: "keep-awake-mode") }
     }
 
-    var durationValue: Int {
+    var duration: Int {
         didSet {
-            UserDefaults.standard.set(durationValue, forKey: "keep-awake-duration-value")
+            UserDefaults.standard.set(duration, forKey: "keep-awake-duration")
             if mode == .timed { set(.timed) }
-        }
-    }
-
-    var durationUnit: Unit {
-        didSet {
-            UserDefaults.standard.set(durationUnit.rawValue, forKey: "keep-awake-duration-unit")
-            if durationValue > durationUnit.limit {
-                durationValue = durationUnit.limit
-            } else if mode == .timed {
-                set(.timed)
-            }
         }
     }
 
@@ -130,14 +82,7 @@ final class KeepAwake {
     private init() {
         let defaults = UserDefaults.standard
         lastMode = Mode(rawValue: defaults.string(forKey: "keep-awake-mode") ?? "") ?? .timed
-        if let unit = Unit(rawValue: defaults.string(forKey: "keep-awake-duration-unit") ?? "") {
-            durationUnit = unit
-            durationValue = min(max(defaults.integer(forKey: "keep-awake-duration-value"), 1), unit.limit)
-        } else {
-            let seconds = Int(defaults.object(forKey: "keep-awake-duration") as? TimeInterval ?? 3600)
-            durationUnit = seconds % 3600 == 0 ? .hours : .minutes
-            durationValue = min(max(seconds / (seconds % 3600 == 0 ? 3600 : 60), 1), 999)
-        }
+        duration = Self.storedDuration()
         keepsDisplayOn = defaults.bool(forKey: "keep-awake-display")
         lidOption = defaults.bool(forKey: "keep-awake-lid")
         stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
@@ -146,23 +91,31 @@ final class KeepAwake {
     func load() {
         let defaults = UserDefaults.standard
         lastMode = Mode(rawValue: defaults.string(forKey: "keep-awake-mode") ?? "") ?? .timed
-        durationUnit = Unit(rawValue: defaults.string(forKey: "keep-awake-duration-unit") ?? "") ?? .hours
-        durationValue = min(max(defaults.object(forKey: "keep-awake-duration-value") as? Int ?? 1, 1), durationUnit.limit)
+        duration = Self.storedDuration()
         lidOption = defaults.bool(forKey: "keep-awake-lid")
         keepsDisplayOn = defaults.bool(forKey: "keep-awake-display")
         stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
     }
 
+    private static func storedDuration() -> Int {
+        let defaults = UserDefaults.standard
+        if let unit = defaults.string(forKey: "keep-awake-duration-unit").flatMap({ legacyUnits[$0] }) {
+            defaults.set(max(defaults.integer(forKey: "keep-awake-duration-value"), 1) * unit, forKey: "keep-awake-duration")
+        }
+        ["keep-awake-duration-unit", "keep-awake-duration-value"].forEach(defaults.removeObject)
+        let seconds = (defaults.object(forKey: "keep-awake-duration") as? NSNumber)?.intValue ?? 3600
+        return min(max(seconds, 1), maxDuration)
+    }
+
     var isDefault: Bool {
-        mode == .off && lastMode == .timed && durationUnit == .hours && durationValue == 1
+        mode == .off && lastMode == .timed && duration == 3600
             && !keepsDisplayOn && !lidOption && stopsOnLowBattery
     }
 
     func reset() {
         set(.off)
         lastMode = .timed
-        durationUnit = .hours
-        durationValue = 1
+        duration = 3600
         keepsDisplayOn = false
         worksWithLidClosed = false
         stopsOnLowBattery = true
@@ -185,18 +138,30 @@ final class KeepAwake {
             let remaining = days > 0
                 ? Duration.seconds(days * 86400).formatted(.units(allowed: [.days], width: .narrow)) + " " + clock
                 : clock
-            let until = Calendar.current.isDateInToday(end)
-                ? end.formatted(date: .omitted, time: .shortened)
-                : end.formatted(.dateTime.month(.abbreviated).day().hour().minute())
-            return Text("\(Text(verbatim: remaining).monospacedDigit()) left, until \(until)")
+            return Text("\(Text(verbatim: remaining).monospacedDigit()) left, until \(Self.until(end))")
         }
+    }
+
+    static func until(_ end: Date) -> String {
+        let calendar = Calendar.current
+        if calendar.isDateInTomorrow(end) {
+            let formatter = DateFormatter()
+            formatter.doesRelativeDateFormatting = true
+            formatter.formattingContext = .middleOfSentence
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            return formatter.string(from: end)
+        }
+        return calendar.isDateInToday(end)
+            ? end.formatted(date: .omitted, time: .shortened)
+            : end.formatted(.dateTime.month(.abbreviated).day().hour().minute())
     }
 
     func set(_ newMode: Mode) {
         mode = newMode
         if newMode != .off { lastMode = newMode }
         now = .now
-        endDate = newMode == .timed ? Calendar.current.date(byAdding: durationUnit.component, value: durationValue, to: now) : nil
+        endDate = newMode == .timed ? now.addingTimeInterval(TimeInterval(duration)) : nil
         update()
     }
 
@@ -307,11 +272,10 @@ final class KeepAwake {
 struct KeepAwakeSettings: View {
     @Bindable private var keepAwake = KeepAwake.shared
 
-    private var value: Binding<Int> {
-        Binding(
-            get: { keepAwake.durationValue },
-            set: { keepAwake.durationValue = min(max($0, 1), keepAwake.durationUnit.limit) }
-        )
+    private func until(_ now: Date) -> Text {
+        if keepAwake.mode == .indefinitely { return Text("Until you turn it off") }
+        let end = keepAwake.endDate ?? now.addingTimeInterval(TimeInterval(keepAwake.duration))
+        return Text("Until \(KeepAwake.until(end))")
     }
 
     var body: some View {
@@ -327,24 +291,19 @@ struct KeepAwakeSettings: View {
                     keepAwake.statusText
                 }
                 .settingAnchor(String(localized: "Keep your Mac awake"))
-                LabeledContent {
-                    HStack(spacing: 8) {
-                        TextField("Duration", value: value, format: .number)
-                            .labelsHidden()
-                            .multilineTextAlignment(.trailing)
-                            .frame(width: 56)
-                        Stepper("Duration", value: value, in: 1...keepAwake.durationUnit.limit)
-                            .labelsHidden()
-                        Picker("Duration", selection: $keepAwake.durationUnit) {
-                            ForEach(KeepAwake.Unit.allCases, id: \.self) { Text(verbatim: $0.name(for: keepAwake.durationValue)).tag($0) }
+                VStack(alignment: .leading, spacing: 14) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Duration")
+                        TimelineView(.everyMinute) { context in
+                            until(context.date)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
                         }
-                        .labelsHidden()
-                        .fixedSize()
                     }
-                } label: {
-                    Text("Duration")
-                    Text("From 1 minute to 12 months")
+                    DurationPicker(seconds: $keepAwake.duration)
+                        .frame(maxWidth: .infinity)
                 }
+                .padding(.vertical, 4)
                 .disabled(keepAwake.mode == .indefinitely)
                 .settingAnchor(String(localized: "Duration"))
                 Toggle(isOn: $keepAwake.keepsDisplayOn) {

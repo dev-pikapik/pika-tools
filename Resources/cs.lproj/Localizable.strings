@@ -59,6 +59,11 @@
 "Indefinitely" = "Neomezeně";
 "Keep your Mac awake" = "Nenechat Mac usnout";
 "Duration" = "Doba trvání";
+"Until %@" = "Do %@";
+"Days" = "Dny";
+"Hours" = "Hodiny";
+"Minutes" = "Minuty";
+"Seconds" = "Sekundy";
 "Keep the display on" = "Nechat displej zapnutý";
 "Otherwise the screen dims and turns off as usual" = "Jinak se obrazovka jako obvykle ztlumí a vypne";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac sám nepřejde do režimu spánku. Vypne se, když ukončíte pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, control, klávesa Control, zkratky, klávesové zkratky, pravé kliknutí, kontextová nabídka";
 "keyboard layout, input source, option, shift, alt" = "rozložení klávesnice, vstupní zdroj, option, shift, alt";
 "sleep, caffeine, insomnia" = "spánek, režim spánku, kofein, nespavost";
-"time, timer, hours, minutes" = "čas, časovač, hodiny, minuty";
+"time, timer, days, hours, minutes, seconds" = "čas, časovač, dny, hodiny, minuty, sekundy";
 "screen, monitor, dim, screen saver" = "obrazovka, displej, monitor, ztlumení, spořič obrazovky";
 "clamshell, laptop, MacBook, external display" = "zavřené víko, notebook, laptop, MacBook, externí displej";
 "battery, power, charge" = "baterie, napájení, nabíjení";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klikněte na ikonu aplikace, kterou právě používáte, a skryje se. Dalším kliknutím ji vrátíte.";
 "Click again to bring it back" = "Dalším kliknutím ji vrátíte";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalizovat, skrýt, Windows, hlavní panel";
-"From 1 minute to 12 months" = "Od 1 minuty do 12 měsíců";
 "Lets the app change clicks and keys and manage windows" = "Umožňuje aplikaci měnit kliknutí a stisky kláves a spravovat okna";
 "Keyboard" = "Klávesnice";
 "Mouse" = "Myš";

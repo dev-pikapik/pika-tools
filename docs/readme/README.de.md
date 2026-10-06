@@ -72,7 +72,7 @@ Die App folgt deiner Systemsprache oder der Sprache, die du in den Einstellungen
 
 ## Wach bleiben
 
-Verhindert, dass dein Mac einschläft, während du nicht an der Tastatur bist: für eine beliebige Zeit von 1 Minute bis 12 Monaten oder bis du es ausschaltest. Schalte es im Menü ein und lege die Dauer in den Einstellungen in Minuten, Stunden, Tagen, Wochen oder Monaten fest. Das Menü zeigt, wie viel Zeit noch bleibt und wann es endet. **Display eingeschaltet lassen** verhindert zusätzlich, dass der Bildschirm abgedunkelt wird. Wenn du pika-tools beendest, endet auch „Wach bleiben“.
+Verhindert, dass dein Mac einschläft, während du nicht an der Tastatur bist: für eine beliebige Zeit von 1 Sekunde bis 365 Tagen oder bis du es ausschaltest. Schalte es im Menü ein und lege die Dauer in den Einstellungen fest: Gib Tage, Stunden, Minuten und Sekunden ein, nutze ↑ und ↓ oder klicke auf eine Vorgabe von 15 Minuten bis 8 Stunden. Das Menü zeigt, wie viel Zeit noch bleibt und wann es endet. **Display eingeschaltet lassen** verhindert zusätzlich, dass der Bildschirm abgedunkelt wird. Wenn du pika-tools beendest, endet auch „Wach bleiben“.
 
 Auf einem MacBook kannst du außerdem **Mit geschlossenem Deckel arbeiten** einschalten. macOS hat dafür keinen Schalter, deshalb führt pika-tools `pmset -a disablesleep 1` aus und fragt nach einem Administratorpasswort: Nur ein Administrator darf ändern, wie der Mac in den Ruhezustand geht. Die Einstellung wird automatisch zurückgesetzt, wenn „Wach bleiben“ endet, wenn du die App beendest oder wenn sie abstürzt. Gibst du kein Passwort ein, ändert sich nichts. Achte bei geschlossenem Deckel auf ausreichende Belüftung. **Bei Akku unter 20 % beenden** beendet die Sitzung, bevor der Akku leer ist.
 

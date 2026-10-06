@@ -82,7 +82,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
             SettingsItem(tab: .windows, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, hours, minutes"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, days, hours, minutes, seconds"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
@@ -666,6 +666,8 @@ private struct ToolsSettings: View {
 }
 
 private struct AboutView: View {
+    private static let github = Bundle.main.url(forResource: "github", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
+
     @Bindable private var updater = Updater.shared
     private let info = Bundle.main.infoDictionary ?? [:]
     private var version: String {
@@ -713,10 +715,10 @@ private struct AboutView: View {
             }
 
             Section {
-                link("GitHub", "https://github.com/dev-pikapik/pika-tools")
-                link(String(localized: "What’s New"), "https://github.com/dev-pikapik/pika-tools/blob/main/CHANGELOG.md")
-                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose")
-                link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE")
+                link("GitHub", "https://github.com/dev-pikapik/pika-tools", symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
+                link(String(localized: "What’s New"), "https://github.com/dev-pikapik/pika-tools/blob/main/CHANGELOG.md", symbol: "newspaper.fill", color: .blue)
+                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
+                link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)
             } footer: {
                 Text(verbatim: info["NSHumanReadableCopyright"] as? String ?? "")
                     .font(.callout)
@@ -734,14 +736,17 @@ private struct AboutView: View {
         .settingsPage()
     }
 
-    private func link(_ title: String, _ url: String) -> some View {
+    private func link(_ title: String, _ url: String, symbol: String, color: Color, template: NSImage? = nil) -> some View {
         Link(destination: URL(string: url)!) {
             LabeledContent {
                 Image(systemName: "arrow.up.right")
                     .foregroundStyle(.secondary)
             } label: {
-                Text(verbatim: title)
-                    .foregroundStyle(.primary)
+                HStack(spacing: 10) {
+                    SectionIcon(symbol: symbol, color: color, size: SettingsTab.iconSize, template: template)
+                    Text(verbatim: title)
+                        .foregroundStyle(.primary)
+                }
             }
             .contentShape(Rectangle())
         }
