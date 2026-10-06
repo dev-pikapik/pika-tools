@@ -66,6 +66,8 @@ Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoi
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : une flèche avec un clic quand les outils fonctionnent, une flèche barrée quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
 
+Vous choisissez les lignes qu’affiche le panneau de la barre des menus : cliquez sur **Personnaliser…**, décochez ce dont vous n’avez pas besoin, puis cliquez sur **Terminé**. Les lignes masquées continuent de fonctionner et restent dans les Réglages. Si le panneau ne tient pas à l’écran, il défile.
+
 L’app suit la langue du système ou celle que vous choisissez dans les réglages. Les 23 langues de la liste en haut de cette page sont toutes disponibles.
 
 ## Rester éveillé

@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.0] - Unreleased
+
+### Added
+- Choose which rows the menu bar panel shows: click Customize…, untick what you don't need, click Done. Hidden rows keep working and stay in Settings.
+
+### Fixed
+- The menu bar panel no longer runs off the bottom of the screen. When it doesn't fit, it scrolls.
+
 ## [1.13.0] - Unreleased
 
 ### Added

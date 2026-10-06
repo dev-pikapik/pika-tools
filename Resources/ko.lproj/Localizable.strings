@@ -194,3 +194,5 @@
 "Buttons in Control Center and widgets" = "제어 센터와 위젯의 버튼";
 "widget, Control Center, Shortcuts, menu bar, button" = "위젯, 제어 센터, 단축어, 메뉴 막대, 버튼";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "단축어 앱에서 ‘URL 열기’ 동작으로 단축어를 만들고 링크를 붙여넣으세요. 그다음 제어 센터, 메뉴 막대 또는 데스크탑의 단축어 위젯에 추가하면 됩니다. 탭할 때마다 켜지고 꺼져요.";
+"Customize…" = "사용자화…";
+"Done" = "완료";
