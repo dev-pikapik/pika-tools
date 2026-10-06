@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "无法检查更新";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "没有应用文件夹的写入权限，请通过 brew 或 install.sh 更新";
 "Download failed. Try again later" = "下载失败，请稍后再试";
-"Block ⌃ Control shortcuts" = "阻止 ⌃ Control 快捷键";
+"Block ⌃ Control shortcuts" = "阻止 ⌃ Control 快捷键";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 作为普通按键：没有快捷键，也没有 ⌃-点按菜单";
 "Switch language with ⌥⇧" = "用 ⌥⇧ 切换输入法";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "按住 ⌥ 再按 ⇧：下一种语言。按住 ⇧ 再按 ⌥：上一种语言";
@@ -118,7 +118,7 @@
 "Mouse" = "鼠标";
 "Fixes for the mouse. Each one works on its own." = "针对鼠标的改进，每项都可单独开启。";
 "Turn off pointer acceleration" = "关闭指针加速";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "无论移动多快，指针移动的距离都与手相同。仅限鼠标，不适用于触控板。";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "无论移动多快，指针移动的距离都与手相同。仅限鼠标。";
 "Tracking speed" = "追踪速度";
 "Works while acceleration is off" = "关闭加速时生效";
 "Slow" = "慢";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“保持唤醒”将关闭，时长和选项也会恢复原样。";
 "pika-tools will check for updates automatically again." = "pika-tools 将重新自动检查更新。";
 "Scroll by lines" = "按行滚动";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "无论滚轮转得多快，每转一格都滚动相同的距离。大多数 App 适合按行。按像素适用于以精确像素计算滚动的 App 和游戏。仅适用于鼠标，不影响触控板。";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "无论转得多快，滚轮每转一格都滚动相同的距离。仅限鼠标。";
 "Lines per wheel click" = "滚轮每格行数";
 "Works while scrolling by lines is on" = "开启按行滚动时有效";
 "Scroll by" = "滚动单位";
+"Lines suit most apps. Pixels suit games." = "按行适合大多数 App，按像素适合游戏。";
 "Lines" = "行";
 "Pixels" = "像素";
 "Pixels per wheel click" = "滚轮每格像素数";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "无法导入此文件";
 "It isn’t a pika-tools settings file, or it’s damaged." = "这不是 pika-tools 设置文件，或者文件已损坏。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "允许 App 将设置保存在 iCloud 云盘中以便同步";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "按钮 4 和 5 可在 Safari、访达和其他 App 中后退和前进，就像在触控板上轻扫";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "鼠标按钮 4 和 5 用于后退和前进，就像在触控板上轻扫。";
 "Repeat a held key" = "按住按键连续输入";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "按住按键即可像在 Windows 上一样重复输入，而不是弹出重音菜单。已打开的 App 需重新启动后生效。";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "按住按键会重复输入，而不是弹出重音菜单。已打开的 App 需重新启动后生效。";
 "key repeat, hold, accent menu, games, typing" = "按键重复, 按住, 重音菜单, 游戏, 打字";
 "New File in Finder" = "在访达中新建文件";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "在访达或桌面上右键点按 › 新建文件，然后输入名称。默认为 .txt。";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "在“快捷指令”中创建一个使用“打开URL”操作的快捷指令，并粘贴链接。然后把它添加到控制中心、菜单栏，或桌面上的“快捷指令”小组件。每点一下就开启或关闭。";
 "Customize…" = "自定义…";
 "Done" = "完成";
+"Choose what this menu shows" = "选择此菜单显示的内容";

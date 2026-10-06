@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct MenuView: View {
+    static let defaultHidden = "command-keys,dock-hide,key-repeat,new-file,quit-on-close,side-buttons,wheel-lines"
+
     let registry: ToolRegistry
     private let permissions = Permissions.shared
     @Bindable private var keepAwake = KeepAwake.shared
-    @AppStorage("quick-hidden") private var hiddenList = ""
+    @AppStorage("quick-hidden") private var hiddenList = MenuView.defaultHidden
     @State private var customizing = false
     @State private var contentHeight: CGFloat = 0
 
@@ -16,6 +18,10 @@ struct MenuView: View {
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
     private func isShown(_ id: String) -> Bool { customizing || !hidden.contains(id) }
+
+    private var visibleTabs: [SettingsTab] {
+        [.keyboard, .mouse, .windows].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
+    }
 
     private func binding(_ id: String) -> Binding<Bool> {
         Binding(
@@ -31,25 +37,34 @@ struct MenuView: View {
     @ViewBuilder
     private func customizeRow(icon: String, title: String, id: String) -> some View {
         Toggle(isOn: binding(id)) {
-            Label(title, systemImage: icon)
+            Label {
+                Text(title)
+            } icon: {
+                Image(systemName: icon).frame(width: 20)
+            }
         }
         .toggleStyle(.checkbox)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(10)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 9)
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            if customizing {
+                Text("Choose what this menu shows")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 4)
+            }
+
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach([SettingsTab.keyboard, .mouse, .windows], id: \.self) { tab in
-                        let tools = registry.tools.filter { $0.tab == tab && isShown($0.id) }
-                        if !tools.isEmpty {
-                            VStack(spacing: 0) {
-                                ForEach(Array(tools.enumerated()), id: \.element.id) { index, tool in
-                                    if index > 0 {
-                                        Divider().padding(.horizontal, 10)
-                                    }
+                    if !visibleTabs.isEmpty || isShown("keep-awake") {
+                        VStack(spacing: 0) {
+                            ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
+                                if index > 0 { groupDivider }
+                                ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
                                     if customizing {
                                         customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
                                     } else {
@@ -57,23 +72,24 @@ struct MenuView: View {
                                     }
                                 }
                             }
-                            .glassCard()
-                        }
-                    }
 
-                    if isShown("keep-awake") {
-                        if customizing {
-                            customizeRow(icon: "cup.and.saucer", title: String(localized: "Keep Awake"), id: "keep-awake")
-                                .glassCard()
-                        } else {
-                            ToggleRow(
-                                icon: "cup.and.saucer",
-                                title: String(localized: "Keep Awake"),
-                                subtitle: keepAwake.statusText,
-                                isOn: $keepAwake.isOn
-                            )
-                            .glassCard()
+                            if isShown("keep-awake") {
+                                if !visibleTabs.isEmpty { groupDivider }
+                                if customizing {
+                                    customizeRow(icon: "cup.and.saucer", title: String(localized: "Keep Awake"), id: "keep-awake")
+                                } else {
+                                    ToggleRow(
+                                        icon: "cup.and.saucer",
+                                        title: String(localized: "Keep Awake"),
+                                        subtitle: keepAwake.statusText,
+                                        showsSubtitle: keepAwake.isOn,
+                                        isOn: $keepAwake.isOn
+                                    )
+                                }
+                            }
                         }
+                        .padding(6)
+                        .glassCard()
                     }
 
                     if !permissions.allGranted {
@@ -97,14 +113,25 @@ struct MenuView: View {
             // A ScrollView has no natural height in an auto-sized window, so give it the measured one.
             .frame(height: min(contentHeight, maxRowsHeight))
 
-            HStack {
-                Button("Settings…") { SettingsWindow.show() }
-                    .keyboardShortcut(",")
-                Button(customizing ? "Done" : "Customize…") { customizing.toggle() }
-                Spacer(minLength: 8)
-                Button("Quit") { NSApp.terminate(nil) }
-                    .keyboardShortcut("q")
+            HStack(spacing: 8) {
+                if customizing {
+                    Spacer(minLength: 8)
+                    Button("Done") { customizing = false }
+                        .buttonStyle(.borderedProminent)
+                } else {
+                    Button { SettingsWindow.show() } label: { Label("Settings…", systemImage: "gearshape") }
+                        .keyboardShortcut(",")
+                        .help("Settings…")
+                    Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
+                        .help("Customize…")
+                    Spacer(minLength: 8)
+                    Button { NSApp.terminate(nil) } label: { Label("Quit", systemImage: "power") }
+                        .keyboardShortcut("q")
+                        .help("Quit")
+                }
             }
+            .labelStyle(.iconOnly)
+            .buttonBorderShape(customizing ? .automatic : .circle)
             .fixedSize(horizontal: false, vertical: true)
             .glassButtons()
 
@@ -113,8 +140,12 @@ struct MenuView: View {
         .padding(.top, 16)
         .padding(.horizontal, 16)
         .padding(.bottom, 12)
-        .frame(width: 310)
+        .frame(width: 330)
         .onAppear { permissions.refresh() }
+    }
+
+    private var groupDivider: some View {
+        Divider().padding(.horizontal, 8).padding(.vertical, 4)
     }
 
     @ViewBuilder

@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "ไม่สามารถตรวจสอบอัปเดตได้";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "ไม่สามารถเขียนลงในโฟลเดอร์ของแอปได้ อัปเดตด้วย brew หรือ install.sh";
 "Download failed. Try again later" = "ดาวน์โหลดไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง";
-"Block ⌃ Control shortcuts" = "บล็อกคำสั่งลัด ⌃ Control";
+"Block ⌃ Control shortcuts" = "บล็อกคำสั่งลัด ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ ทำงานเป็นปุ่มธรรมดา: ไม่มีคำสั่งลัด ไม่มีเมนู ⌃-คลิก";
 "Switch language with ⌥⇧" = "สลับภาษาด้วย ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "กด ⌥ ค้างไว้แล้วแตะ ⇧: ภาษาถัดไป กด ⇧ ค้างไว้แล้วแตะ ⌥: ภาษาก่อนหน้า";
@@ -118,7 +118,7 @@
 "Mouse" = "เมาส์";
 "Fixes for the mouse. Each one works on its own." = "การแก้ไขสำหรับเมาส์ แต่ละรายการทำงานแยกกัน";
 "Turn off pointer acceleration" = "ปิดความเร่งตัวชี้";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "ตัวชี้จะเลื่อนไปเท่ากับที่มือคุณเลื่อน ไม่ว่าจะเร็วแค่ไหน เฉพาะเมาส์เท่านั้น ไม่รวมแทร็คแพด";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "ตัวชี้เลื่อนไปเท่ากับที่มือคุณเลื่อน ไม่ว่าจะเร็วแค่ไหน เฉพาะเมาส์เท่านั้น";
 "Tracking speed" = "ความเร็วการเลื่อนตัวชี้";
 "Works while acceleration is off" = "ใช้ได้เมื่อปิดความเร่งอยู่";
 "Slow" = "ช้า";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“ไม่ให้หลับ” จะปิด และระยะเวลากับตัวเลือกจะกลับเป็นเหมือนเดิม";
 "pika-tools will check for updates automatically again." = "pika-tools จะกลับมาตรวจสอบอัปเดตโดยอัตโนมัติ";
 "Scroll by lines" = "เลื่อนทีละบรรทัด";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "ทุกการคลิกล้อจะเลื่อนในระยะเท่าเดิม ไม่ว่าจะหมุนเร็วแค่ไหน บรรทัดเหมาะกับแอปส่วนใหญ่ พิกเซลเหมาะกับแอปและเกมที่นับการเลื่อนเป็นพิกเซลที่แน่นอน ใช้กับเมาส์เท่านั้น ไม่ใช่แทร็คแพด";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "การหมุนล้อทุกครั้งเลื่อนหน้าจอเท่ากัน ไม่ว่าจะหมุนเร็วแค่ไหน เฉพาะเมาส์เท่านั้น";
 "Lines per wheel click" = "จำนวนบรรทัดต่อการคลิกล้อ";
 "Works while scrolling by lines is on" = "ใช้งานได้เมื่อเปิดการเลื่อนทีละบรรทัด";
 "Scroll by" = "เลื่อนทีละ";
+"Lines suit most apps. Pixels suit games." = "บรรทัดเหมาะกับแอปส่วนใหญ่ พิกเซลเหมาะกับเกม";
 "Lines" = "บรรทัด";
 "Pixels" = "พิกเซล";
 "Pixels per wheel click" = "จำนวนพิกเซลต่อการคลิกล้อ";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "ไม่สามารถนำเข้าไฟล์นี้ได้";
 "It isn’t a pika-tools settings file, or it’s damaged." = "ไฟล์นี้ไม่ใช่ไฟล์การตั้งค่าของ pika-tools หรือไฟล์เสียหาย";
 "Lets the app keep your settings in iCloud Drive to sync them" = "ให้แอปเก็บการตั้งค่าของคุณไว้ใน iCloud Drive เพื่อซิงค์";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "ปุ่ม 4 และ 5 ใช้ย้อนกลับและไปข้างหน้าใน Safari, Finder และแอปอื่นๆ เหมือนการปัดบนแทร็คแพด";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "ปุ่ม 4 และ 5 ของเมาส์ใช้ย้อนกลับและไปข้างหน้า เหมือนการปัดบนแทร็คแพด";
 "Repeat a held key" = "พิมพ์ซ้ำเมื่อกดแป้นค้างไว้";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "กดแป้นค้างไว้เพื่อพิมพ์ซ้ำไปเรื่อย ๆ เหมือนใน Windows แทนเมนูเครื่องหมาย แอปที่เปิดอยู่จะใช้หลังจากเปิดใหม่";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "กดแป้นค้างไว้จะพิมพ์ซ้ำ แทนการเปิดเมนูเครื่องหมาย รีสตาร์ตแอปที่เปิดอยู่เพื่อให้มีผล";
 "key repeat, hold, accent menu, games, typing" = "การพิมพ์ซ้ำ, กดค้าง, เมนูเครื่องหมาย, เกม, การพิมพ์";
 "New File in Finder" = "ไฟล์ใหม่ใน Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "คลิกขวาใน Finder หรือบนเดสก์ท็อป › ไฟล์ใหม่ แล้วพิมพ์ชื่อ ค่าเริ่มต้นเป็น .txt";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "ในคำสั่งลัด ให้สร้างคำสั่งลัดด้วยการทำงาน “เปิด URL” แล้ววางลิงก์ จากนั้นเพิ่มลงในศูนย์ควบคุม แถบเมนู หรือวิดเจ็ตคำสั่งลัดบนเดสก์ท็อป แตะครั้งหนึ่งเพื่อเปิดหรือปิด";
 "Customize…" = "ปรับแต่ง…";
 "Done" = "เสร็จสิ้น";
+"Choose what this menu shows" = "เลือกสิ่งที่เมนูนี้แสดง";

@@ -160,7 +160,7 @@ private struct WheelSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad."),
+            subtitle: Text("Each wheel click scrolls the same distance, at any speed. Mouse only."),
             isOn: $tool.isEnabled
         )
         if inSettings {
@@ -170,6 +170,7 @@ private struct WheelSettings: View {
                     Text("Pixels").tag(WheelStep.Mode.pixels)
                 } label: {
                     Text("Scroll by")
+                    Text("Lines suit most apps. Pixels suit games.")
                 }
                 .settingAnchor(String(localized: "Scroll by"))
                 switch tool.mode {

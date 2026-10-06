@@ -42,7 +42,7 @@ private struct KeyRepeatSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart."),
+            subtitle: Text("Holding a key repeats it instead of opening the accent menu. Restart open apps to apply."),
             isOn: $tool.isEnabled
         )
     }

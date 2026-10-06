@@ -66,7 +66,7 @@ Fiecare instrument are propriul comutator în meniu și în configurări. Ai nev
 
 Pictograma din bara de meniu arată starea dintr-o privire: o săgeată cu un clic când instrumentele funcționează, o săgeată tăiată când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
 
-Poți alege ce rânduri arată panoul din bara de meniu: apasă **Personalizează…**, debifează ce nu îți trebuie și apasă **Gata**. Rândurile ascunse continuă să funcționeze și rămân în Configurări. Dacă panoul nu încape pe ecran, poate fi derulat.
+Panoul din bara de meniu începe cu doar câteva rânduri. Poți alege ce rânduri arată: apasă butonul cu creion din partea de jos, bifează ce vrei să vezi și apasă **Gata**. Rândurile ascunse continuă să funcționeze și rămân în Configurări. Dacă panoul nu încape pe ecran, poate fi derulat.
 
 Aplicația folosește limba sistemului sau pe cea aleasă în configurări. Sunt disponibile toate cele 23 de limbi din lista de la începutul acestei pagini.
 

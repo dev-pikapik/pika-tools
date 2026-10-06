@@ -118,7 +118,7 @@
 "Mouse" = "Mus";
 "Fixes for the mouse. Each one works on its own." = "Fixar för musen. Var och en fungerar för sig.";
 "Turn off pointer acceleration" = "Stäng av pekaracceleration";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Pekaren rör sig lika långt som handen, hur snabbt du än rör den. Bara för möss, inte för styrplattan.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Pekaren rör sig lika långt som handen, hur snabbt du än rör den. Bara för möss.";
 "Tracking speed" = "Pekarhastighet";
 "Works while acceleration is off" = "Fungerar när accelerationen är av";
 "Slow" = "Långsam";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "”Håll vaken” stängs av, och tid och alternativ blir som de var.";
 "pika-tools will check for updates automatically again." = "pika-tools söker efter uppdateringar automatiskt igen.";
 "Scroll by lines" = "Rulla per rad";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Varje klick med hjulet rullar lika långt, hur snabbt du än snurrar. Rader passar de flesta appar. Pixlar är för appar och spel som räknar rullning i exakta pixlar. Bara för möss, inte för styrplattan.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar. Bara för möss.";
 "Lines per wheel click" = "Rader per klick med hjulet";
 "Works while scrolling by lines is on" = "Fungerar när rullning per rad är på";
 "Scroll by" = "Rulla med";
+"Lines suit most apps. Pixels suit games." = "Rader passar de flesta appar. Pixlar passar spel.";
 "Lines" = "Rader";
 "Pixels" = "Pixlar";
 "Pixels per wheel click" = "Pixlar per klick med hjulet";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Den här filen kan inte importeras";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Det är inte en inställningsfil för pika-tools, eller så är den skadad.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Låter appen spara dina inställningar i iCloud Drive för att synkronisera dem";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Knapp 4 och 5 går bakåt och framåt i Safari, Finder och andra appar, som ett svep på styrplattan";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Musknapp 4 och 5 går bakåt och framåt, som ett svep på styrplattan.";
 "Repeat a held key" = "Upprepa en nedhållen tangent";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Håll ned en tangent för att skriva den om och om igen, som i Windows, i stället för accentmenyn. Öppna appar använder det efter en omstart.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "En nedhållen tangent upprepas i stället för att öppna accentmenyn. Starta om öppna appar för att det ska gälla.";
 "key repeat, hold, accent menu, games, typing" = "tangentupprepning, hålla ned, accentmeny, spel, skriva";
 "New File in Finder" = "Ny fil i Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Högerklicka i Finder eller på skrivbordet › Ny fil och skriv ett namn. .txt som standard.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Skapa en genväg i Genvägar med åtgärden Öppna webbadresser och klistra in en länk. Lägg sedan till den i Kontrollcenter, menyraden eller en Genvägar-widget på skrivbordet. Varje tryck slår på eller stänger av.";
 "Customize…" = "Anpassa…";
 "Done" = "Klar";
+"Choose what this menu shows" = "Välj vad den här menyn visar";

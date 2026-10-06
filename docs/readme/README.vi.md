@@ -66,7 +66,7 @@ Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần 
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: mũi tên có dấu bấm khi các công cụ đang chạy, mũi tên bị gạch khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
 
-Bạn tự chọn những hàng nào hiện trong bảng điều khiển trên thanh menu: nhấp **Tùy chỉnh…**, bỏ chọn những gì bạn không cần rồi nhấp **Xong**. Các hàng bị ẩn vẫn hoạt động và vẫn nằm trong Cài đặt. Nếu bảng không vừa màn hình, bạn có thể cuộn nó.
+Bảng điều khiển trên thanh menu ban đầu chỉ có vài hàng. Bạn tự chọn hàng nào được hiện: nhấp nút hình bút chì ở phía dưới, chọn những gì bạn muốn thấy rồi nhấp **Xong**. Các hàng bị ẩn vẫn hoạt động và vẫn nằm trong Cài đặt. Nếu bảng không vừa màn hình, bạn có thể cuộn nó.
 
 Ứng dụng dùng ngôn ngữ của hệ thống hoặc ngôn ngữ bạn chọn trong cài đặt. Có sẵn cả 23 ngôn ngữ trong danh sách ở đầu trang này.
 

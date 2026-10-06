@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "업데이트를 확인할 수 없습니다";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "앱 폴더에 쓸 권한이 없습니다. brew 또는 install.sh로 업데이트하세요";
 "Download failed. Try again later" = "다운로드하지 못했습니다. 나중에 다시 시도하세요";
-"Block ⌃ Control shortcuts" = "⌃ Control 단축키 차단";
+"Block ⌃ Control shortcuts" = "⌃ Control 단축키 차단";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 키가 일반 키처럼 동작합니다. 단축키와 ⌃-클릭 메뉴가 꺼집니다";
 "Switch language with ⌥⇧" = "⌥⇧로 입력 소스 전환";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어";
@@ -118,7 +118,7 @@
 "Mouse" = "마우스";
 "Fixes for the mouse. Each one works on its own." = "마우스를 위한 개선. 각각 따로 켤 수 있습니다.";
 "Turn off pointer acceleration" = "포인터 가속 끄기";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "아무리 빠르게 움직여도 포인터가 손을 움직인 만큼만 이동합니다. 마우스 전용이며 트랙패드에는 적용되지 않습니다.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "얼마나 빠르게 움직여도 포인터는 손이 움직인 만큼만 이동합니다. 마우스 전용입니다.";
 "Tracking speed" = "이동 속도";
 "Works while acceleration is off" = "가속이 꺼져 있을 때 작동합니다";
 "Slow" = "느리게";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "'잠자기 방지'가 꺼지고, 지속 시간과 옵션이 원래대로 돌아갑니다.";
 "pika-tools will check for updates automatically again." = "pika-tools가 다시 자동으로 업데이트를 확인합니다.";
 "Scroll by lines" = "줄 단위로 스크롤";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "휠을 한 칸 돌릴 때마다 얼마나 빨리 돌리든 같은 거리만큼 스크롤됩니다. 대부분의 앱에는 줄 단위가 맞습니다. 픽셀은 스크롤을 정확한 픽셀로 세는 앱과 게임용입니다. 마우스 전용이며 트랙패드에는 적용되지 않습니다.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "휠을 한 칸 돌릴 때마다 속도와 관계없이 같은 거리만큼 스크롤됩니다. 마우스 전용입니다.";
 "Lines per wheel click" = "휠 한 칸당 줄 수";
 "Works while scrolling by lines is on" = "줄 단위 스크롤이 켜져 있을 때 작동합니다";
 "Scroll by" = "스크롤 단위";
+"Lines suit most apps. Pixels suit games." = "줄은 대부분의 앱에 알맞습니다. 픽셀은 게임에 알맞습니다.";
 "Lines" = "줄";
 "Pixels" = "픽셀";
 "Pixels per wheel click" = "휠 한 칸당 픽셀 수";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "이 파일을 가져올 수 없습니다";
 "It isn’t a pika-tools settings file, or it’s damaged." = "pika-tools 설정 파일이 아니거나 손상되었습니다.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "동기화를 위해 앱이 iCloud Drive에 설정을 보관할 수 있도록 합니다";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "버튼 4와 5로 Safari, Finder 및 다른 앱에서 뒤로 및 앞으로 이동합니다. 트랙패드에서 쓸어넘기는 것과 같습니다";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "마우스 버튼 4와 5로 뒤로, 앞으로 이동합니다. 트랙패드에서 쓸어넘기는 것과 같습니다.";
 "Repeat a held key" = "키를 누르고 있으면 반복 입력";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "키를 누르고 있으면 악센트 메뉴 대신 Windows처럼 글자가 계속 입력됩니다. 열려 있는 앱은 다시 시작한 후에 적용됩니다.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "키를 누르고 있으면 악센트 메뉴 대신 글자가 반복 입력됩니다. 열려 있는 앱은 다시 시작해야 적용됩니다.";
 "key repeat, hold, accent menu, games, typing" = "키 반복, 길게 누르기, 악센트 메뉴, 게임, 타이핑";
 "New File in Finder" = "Finder에서 새 파일";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder나 데스크탑에서 오른쪽 클릭 › 새 파일, 이름만 입력하세요. 기본은 .txt입니다.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "단축어 앱에서 ‘URL 열기’ 동작으로 단축어를 만들고 링크를 붙여넣으세요. 그다음 제어 센터, 메뉴 막대 또는 데스크탑의 단축어 위젯에 추가하면 됩니다. 탭할 때마다 켜지고 꺼져요.";
 "Customize…" = "사용자화…";
 "Done" = "완료";
+"Choose what this menu shows" = "이 메뉴에 표시할 항목을 선택하세요";

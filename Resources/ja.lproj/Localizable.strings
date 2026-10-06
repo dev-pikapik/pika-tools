@@ -118,7 +118,7 @@
 "Mouse" = "マウス";
 "Fixes for the mouse. Each one works on its own." = "マウスのための改善。それぞれ個別にオンにできます。";
 "Turn off pointer acceleration" = "ポインタの加速をオフにする";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "どれだけ速く動かしても、ポインタは手を動かした分だけ進みます。マウスのみで、トラックパッドには適用されません。";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "どれだけ速く動かしても、ポインタは手を動かした分だけ進みます。マウス専用です。";
 "Tracking speed" = "軌跡の速さ";
 "Works while acceleration is off" = "加速がオフのときに有効です";
 "Slow" = "遅い";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "「スリープさせない」がオフになり、時間とオプションも元に戻ります。";
 "pika-tools will check for updates automatically again." = "pika-tools が再びアップデートを自動的に確認します。";
 "Scroll by lines" = "行単位でスクロール";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "ホイールを1クリック回すたびに、回す速さに関係なく同じ距離だけスクロールします。ほとんどのアプリには「行」が合います。「ピクセル」はスクロール量を正確なピクセル数で数えるアプリやゲーム向けです。マウス専用で、トラックパッドには効きません。";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "ホイールを1クリックするたびに、速さに関係なく同じ距離をスクロールします。マウス専用です。";
 "Lines per wheel click" = "ホイール1クリックあたりの行数";
 "Works while scrolling by lines is on" = "行単位スクロールがオンのときに有効です";
 "Scroll by" = "スクロール単位";
+"Lines suit most apps. Pixels suit games." = "行は多くのアプリに向いています。ピクセルはゲーム向けです。";
 "Lines" = "行";
 "Pixels" = "ピクセル";
 "Pixels per wheel click" = "ホイール1クリックあたりのピクセル数";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "このファイルは読み込めません";
 "It isn’t a pika-tools settings file, or it’s damaged." = "pika-toolsの設定ファイルではないか、ファイルが壊れています。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "同期のために設定をiCloud Driveに保存できるようにします";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "ボタン4と5で、Safari、Finderなどのアプリで戻る/進むができます。トラックパッドのスワイプと同じです";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "マウスのボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。";
 "Repeat a held key" = "キーを押し続けて連続入力";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "キーを押し続けると、アクセントメニューの代わりに Windows のように文字が繰り返し入力されます。開いているアプリには再起動後に反映されます。";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "キーを押し続けると、アクセントメニューを開かずに文字が繰り返されます。開いているアプリは再起動すると反映されます。";
 "key repeat, hold, accent menu, games, typing" = "キーリピート, 長押し, アクセントメニュー, ゲーム, 入力";
 "New File in Finder" = "Finderで新規ファイル";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finderまたはデスクトップで右クリック › 新規ファイル、名前を入力するだけ。標準は.txtです。";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "ショートカットで「URLを開く」アクションのショートカットを作り、リンクをペーストします。それをコントロールセンター、メニューバー、またはデスクトップのショートカットウィジェットに追加しましょう。タップするたびにオン/オフが切り替わります。";
 "Customize…" = "カスタマイズ…";
 "Done" = "完了";
+"Choose what this menu shows" = "このメニューに表示する項目を選びます";

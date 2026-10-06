@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Nie udało się sprawdzić uaktualnień";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Nie można zapisać w folderze aplikacji. Uaktualnij przez brew lub install.sh";
 "Download failed. Try again later" = "Pobieranie nie powiodło się. Spróbuj później";
-"Block ⌃ Control shortcuts" = "Blokuj skróty z ⌃ Control";
+"Block ⌃ Control shortcuts" = "Blokuj skróty z ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ działa jak zwykły klawisz: bez skrótów i bez menu ⌃-kliknięcia";
 "Switch language with ⌥⇧" = "Zmiana języka przez ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Przytrzymaj ⌥ i naciśnij ⇧: następny język. Przytrzymaj ⇧ i naciśnij ⌥: poprzedni";
@@ -118,7 +118,7 @@
 "Mouse" = "Mysz";
 "Fixes for the mouse. Each one works on its own." = "Poprawki myszy. Każda działa niezależnie.";
 "Turn off pointer acceleration" = "Wyłącz przyspieszenie wskaźnika";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Wskaźnik przesuwa się tyle, co ręka, bez względu na szybkość ruchu. Tylko dla myszy, nie dla gładzika.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Wskaźnik przesuwa się tyle, co ręka, bez względu na szybkość. Tylko dla myszy.";
 "Tracking speed" = "Szybkość ruchu";
 "Works while acceleration is off" = "Działa, gdy przyspieszenie jest wyłączone";
 "Slow" = "Wolno";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "„Bez usypiania” wyłączy się, a czas i opcje wrócą do poprzednich.";
 "pika-tools will check for updates automatically again." = "pika-tools znów będzie automatycznie sprawdzać uaktualnienia.";
 "Scroll by lines" = "Przewijaj o wiersze";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Każde kliknięcie kółka przewija o tę samą odległość, niezależnie od tego, jak szybko je kręcisz. Wiersze pasują do większości aplikacji. Piksele są dla aplikacji i gier, które liczą przewijanie w dokładnych pikselach. Tylko dla myszy, nie dla gładzika.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Każde kliknięcie kółka przewija o tę samą odległość, bez względu na szybkość. Tylko dla myszy.";
 "Lines per wheel click" = "Wiersze na kliknięcie kółka";
 "Works while scrolling by lines is on" = "Działa, gdy przewijanie o wiersze jest włączone";
 "Scroll by" = "Przewijaj o";
+"Lines suit most apps. Pixels suit games." = "Wiersze pasują do większości aplikacji. Piksele pasują do gier.";
 "Lines" = "Wiersze";
 "Pixels" = "Piksele";
 "Pixels per wheel click" = "Piksele na kliknięcie kółka";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Tego pliku nie można zaimportować";
 "It isn’t a pika-tools settings file, or it’s damaged." = "To nie jest plik ustawień pika-tools albo jest uszkodzony.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Pozwala aplikacji przechowywać ustawienia w iCloud Drive, aby je synchronizować";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Przyciski 4 i 5 cofają i przechodzą dalej w Safari, Finderze i innych aplikacjach, jak przesunięcie na gładziku";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Przyciski myszy 4 i 5 cofają i przechodzą dalej, jak przesunięcie na gładziku.";
 "Repeat a held key" = "Powtarzaj przytrzymany klawisz";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Przytrzymaj klawisz, żeby pisać go raz za razem, jak w Windows, zamiast menu akcentów. Otwarte aplikacje przejmą to po ponownym uruchomieniu.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Przytrzymany klawisz powtarza się zamiast otwierać menu akcentów. Uruchom ponownie otwarte aplikacje, aby zastosować zmianę.";
 "key repeat, hold, accent menu, games, typing" = "powtarzanie klawiszy, przytrzymanie, menu akcentów, gry, pisanie";
 "New File in Finder" = "Nowy plik w Finderze";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Kliknij prawym w Finderze lub na biurku › Nowy plik i wpisz nazwę. Domyślnie .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "W aplikacji Skróty utwórz skrót z akcją Otwórz adresy URL i wklej link. Potem dodaj go do Centrum sterowania, paska menu albo widżetu Skrótów na pulpicie. Każde dotknięcie włącza lub wyłącza.";
 "Customize…" = "Dostosuj…";
 "Done" = "Gotowe";
+"Choose what this menu shows" = "Wybierz, co pokazuje to menu";

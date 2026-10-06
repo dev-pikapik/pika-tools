@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Impossibile controllare gli aggiornamenti";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Nessun permesso di scrittura sulla cartella dell’app. Aggiorna con brew o install.sh";
 "Download failed. Try again later" = "Download non riuscito. Riprova più tardi";
-"Block ⌃ Control shortcuts" = "Blocca le abbreviazioni con ⌃ Control";
+"Block ⌃ Control shortcuts" = "Blocca le abbreviazioni con ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funziona come un tasto normale: niente abbreviazioni né menu con ⌃-clic";
 "Switch language with ⌥⇧" = "Cambia lingua con ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Tieni premuto ⌥ e premi ⇧: lingua successiva. Tieni premuto ⇧ e premi ⌥: precedente";
@@ -118,7 +118,7 @@
 "Mouse" = "Mouse";
 "Fixes for the mouse. Each one works on its own." = "Ritocchi per il mouse. Ognuno si attiva da solo.";
 "Turn off pointer acceleration" = "Disattiva l’accelerazione del puntatore";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Il puntatore si sposta quanto la tua mano, a qualsiasi velocità. Solo per i mouse, non per il trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Il puntatore si sposta quanto la tua mano, a qualsiasi velocità. Solo per mouse.";
 "Tracking speed" = "Velocità puntatore";
 "Works while acceleration is off" = "Funziona con l’accelerazione disattivata";
 "Slow" = "Lenta";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "«Resta sveglio» si disattiverà, e durata e opzioni torneranno come prima.";
 "pika-tools will check for updates automatically again." = "pika-tools tornerà a cercare aggiornamenti automaticamente.";
 "Scroll by lines" = "Scorri per righe";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Ogni scatto della rotella scorre della stessa distanza, a qualunque velocità la giri. Le righe vanno bene per la maggior parte delle app. I pixel servono ad app e giochi che contano lo scorrimento in pixel esatti. Solo per i mouse, non per il trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Ogni scatto della rotellina scorre della stessa distanza, a qualsiasi velocità. Solo per mouse.";
 "Lines per wheel click" = "Righe per scatto della rotella";
 "Works while scrolling by lines is on" = "Funziona quando lo scorrimento per righe è attivo";
 "Scroll by" = "Scorri per";
+"Lines suit most apps. Pixels suit games." = "Le righe vanno bene per la maggior parte delle app. I pixel per i giochi.";
 "Lines" = "Righe";
 "Pixels" = "Pixel";
 "Pixels per wheel click" = "Pixel per scatto della rotella";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Impossibile importare questo file";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Non è un file di impostazioni di pika-tools oppure è danneggiato.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Consente all’app di tenere le impostazioni su iCloud Drive per sincronizzarle";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "I tasti 4 e 5 vanno indietro e avanti in Safari, nel Finder e in altre app, come uno scorrimento sul trackpad";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "I tasti 4 e 5 del mouse vanno indietro e avanti, come uno scorrimento sul trackpad.";
 "Repeat a held key" = "Ripeti un tasto tenuto premuto";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Tieni premuto un tasto per scriverlo più volte, come su Windows, invece del menu degli accenti. Le app aperte lo applicano dopo il riavvio.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Tenere premuto un tasto lo ripete invece di aprire il menu degli accenti. Riavvia le app aperte per applicarlo.";
 "key repeat, hold, accent menu, games, typing" = "ripetizione tasti, tenere premuto, menu accenti, giochi, scrittura";
 "New File in Finder" = "Nuovo file nel Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic destro nel Finder o sulla scrivania › Nuovo file, poi scrivi un nome. .txt di default.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "In Comandi rapidi crea un comando con l’azione Apri URL e incolla un link. Poi aggiungilo al Centro di Controllo, alla barra dei menu o a un widget di Comandi rapidi sulla scrivania. Ogni tocco lo attiva o lo disattiva.";
 "Customize…" = "Personalizza…";
 "Done" = "Fine";
+"Choose what this menu shows" = "Scegli cosa mostra questo menu";

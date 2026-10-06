@@ -66,7 +66,7 @@ Her aracın menüde ve ayarlarda kendi anahtarı vardır. Normal Control+C’ye 
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken tıklama işaretli bir ok, her şey kapalıyken üstü çizili bir ok, bir araç açık ama izinler eksikken bir uyarı üçgeni.
 
-Menü çubuğu panelinde hangi satırların görüneceğini sen seçersin: **Özelleştir…** düğmesine tıkla, gerek duymadığın satırların işaretini kaldır ve **Bitti**'ye tıkla. Gizlenen satırlar çalışmaya devam eder ve Ayarlar'da kalır. Panel ekrana sığmazsa kaydırılır.
+Menü çubuğu paneli başta yalnızca birkaç satırla açılır. Hangi satırların görüneceğini sen seçersin: alttaki kalem düğmesine tıkla, görmek istediğin satırları işaretle ve **Bitti**'ye tıkla. Gizlenen satırlar çalışmaya devam eder ve Ayarlar'da kalır. Panel ekrana sığmazsa kaydırılır.
 
 Uygulama sistem dilini ya da ayarlarda seçtiğiniz dili kullanır. Bu sayfanın başındaki listede yer alan 23 dilin tümü desteklenir.
 

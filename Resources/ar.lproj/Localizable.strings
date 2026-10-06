@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "تعذّر التحقق من وجود تحديثات";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "تتعذّر الكتابة في مجلد التطبيق. حدّثه باستخدام brew أو install.sh";
 "Download failed. Try again later" = "فشل التنزيل. حاول مرة أخرى لاحقًا";
-"Block ⌃ Control shortcuts" = "حظر اختصارات ⌃ Control";
+"Block ⌃ Control shortcuts" = "حظر اختصارات ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "يعمل ⌃ كمفتاح عادي: بلا اختصارات وبلا قائمة ⌃-نقر";
 "Switch language with ⌥⇧" = "تبديل اللغة باستخدام ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "اضغط مع الاستمرار على ⌥ واضغط ⇧: اللغة التالية. اضغط مع الاستمرار على ⇧ واضغط ⌥: السابقة";
@@ -118,7 +118,7 @@
 "Mouse" = "الماوس";
 "Fixes for the mouse. Each one works on its own." = "إصلاحات للماوس. يعمل كل منها بمفرده.";
 "Turn off pointer acceleration" = "إيقاف تسارع المؤشر";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "يتحرك المؤشر بقدر حركة يدك مهما كانت سرعتها. للماوس فقط، وليس للوحة التعقب.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "يتحرك المؤشر بقدر حركة يدك مهما كانت السرعة. للماوس فقط.";
 "Tracking speed" = "سرعة التعقب";
 "Works while acceleration is off" = "يعمل عند إيقاف التسارع";
 "Slow" = "بطيء";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "سيتوقف «منع السكون»، وستعود المدة والخيارات إلى ما كانت عليه.";
 "pika-tools will check for updates automatically again." = "سيتحقق pika-tools من وجود تحديثات تلقائيًا مرة أخرى.";
 "Scroll by lines" = "التمرير بالأسطر";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "كل نقرة على العجلة تمرّر المسافة نفسها مهما كانت سرعة تدويرها. الأسطر تناسب معظم التطبيقات. البكسلات للتطبيقات والألعاب التي تحسب التمرير بالبكسل بدقة. للفأرة فقط، لا لوحة التتبع.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "كل نقرة على العجلة تمرّر المسافة نفسها مهما كانت السرعة. للماوس فقط.";
 "Lines per wheel click" = "عدد الأسطر لكل نقرة عجلة";
 "Works while scrolling by lines is on" = "يعمل عند تشغيل التمرير بالأسطر";
 "Scroll by" = "التمرير حسب";
+"Lines suit most apps. Pixels suit games." = "الأسطر تناسب معظم التطبيقات. البكسلات تناسب الألعاب.";
 "Lines" = "الأسطر";
 "Pixels" = "البكسلات";
 "Pixels per wheel click" = "عدد البكسلات لكل نقرة عجلة";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "لا يمكن استيراد هذا الملف";
 "It isn’t a pika-tools settings file, or it’s damaged." = "إنه ليس ملف إعدادات pika-tools أو أنه تالف.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "يتيح للتطبيق الاحتفاظ بإعداداتك في iCloud Drive لمزامنتها";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "الزران 4 و5 ينتقلان للخلف وللأمام في Safari وFinder والتطبيقات الأخرى، مثل التحريك على لوحة التعقب";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "زرا الماوس 4 و5 للرجوع والتقدّم، مثل التحريك على لوحة التعقب.";
 "Repeat a held key" = "تكرار المفتاح عند الضغط المستمر";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "اضغط على المفتاح باستمرار لكتابته مرارًا كما في Windows بدلًا من قائمة التشكيل. تطبّق التطبيقات المفتوحة ذلك بعد إعادة تشغيلها.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "الضغط المطوّل على مفتاح يكرّره بدل فتح قائمة التشكيل. أعد تشغيل التطبيقات المفتوحة ليسري ذلك.";
 "key repeat, hold, accent menu, games, typing" = "تكرار المفاتيح, ضغط مستمر, قائمة التشكيل, ألعاب, كتابة";
 "New File in Finder" = "ملف جديد في Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "انقر بزر الماوس الأيمن في Finder أو على سطح المكتب › ملف جديد، ثم اكتب اسمًا. الامتداد ‎.txt افتراضيًا.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "في الاختصارات، أنشئ اختصارًا بإجراء «فتح عناوين URL» والصق رابطًا. ثم أضفه إلى مركز التحكم أو شريط القوائم أو ودجت الاختصارات على سطح المكتب. كل نقرة تشغّله أو توقفه.";
 "Customize…" = "تخصيص…";
 "Done" = "تم";
+"Choose what this menu shows" = "اختر ما تعرضه هذه القائمة";
