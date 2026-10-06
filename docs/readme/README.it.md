@@ -66,6 +66,8 @@ Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: una freccia con un clic quando gli strumenti funzionano, una freccia barrata quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
 
+Puoi scegliere quali righe mostra il pannello della barra dei menu: fai clic su **Personalizza…**, deseleziona ciò che non ti serve e fai clic su **Fine**. Le righe nascoste continuano a funzionare e restano nelle Impostazioni. Se il pannello non sta nello schermo, scorre.
+
 L’app usa la lingua del sistema o quella che scegli nelle impostazioni. Sono disponibili tutte le 23 lingue elencate in cima a questa pagina.
 
 ## Resta sveglio

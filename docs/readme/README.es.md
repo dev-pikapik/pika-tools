@@ -66,6 +66,8 @@ Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Nec
 
 El icono de la barra de menús muestra el estado de un vistazo: una flecha con un clic cuando las herramientas funcionan, una flecha tachada cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
 
+Puedes elegir qué filas muestra el panel de la barra de menús: haz clic en **Personalizar…**, desmarca lo que no necesites y haz clic en **Hecho**. Las filas ocultas siguen funcionando y se quedan en Ajustes. Si el panel no cabe en la pantalla, se desplaza.
+
 La app usa el idioma del sistema o el que elijas en los ajustes. Están disponibles los 23 idiomas de la lista al principio de esta página.
 
 ## Mantener activo

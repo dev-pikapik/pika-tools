@@ -194,3 +194,5 @@
 "Buttons in Control Center and widgets" = "Knappar i Kontrollcenter och widgetar";
 "widget, Control Center, Shortcuts, menu bar, button" = "widget, Kontrollcenter, Genvägar, menyraden, knapp";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Skapa en genväg i Genvägar med åtgärden Öppna webbadresser och klistra in en länk. Lägg sedan till den i Kontrollcenter, menyraden eller en Genvägar-widget på skrivbordet. Varje tryck slår på eller stänger av.";
+"Customize…" = "Anpassa…";
+"Done" = "Klar";

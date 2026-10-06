@@ -66,6 +66,8 @@ Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C
 
 O ícone na barra de menus mostra o estado num relance: uma seta com um clique quando as ferramentas estão funcionando, uma seta riscada quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
 
+Você escolhe quais linhas o painel da barra de menus mostra: clique em **Personalizar…**, desmarque o que não precisa e clique em **Concluir**. As linhas ocultas continuam funcionando e ficam nos Ajustes. Se o painel não couber na tela, ele rola.
+
 O app segue o idioma do sistema ou o que você escolher nos ajustes. Estão disponíveis os 23 idiomas da lista no topo desta página.
 
 ## Manter Ativo

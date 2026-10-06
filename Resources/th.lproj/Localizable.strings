@@ -194,3 +194,5 @@
 "Buttons in Control Center and widgets" = "ปุ่มในศูนย์ควบคุมและวิดเจ็ต";
 "widget, Control Center, Shortcuts, menu bar, button" = "วิดเจ็ต, ศูนย์ควบคุม, คำสั่งลัด, แถบเมนู, ปุ่ม";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "ในคำสั่งลัด ให้สร้างคำสั่งลัดด้วยการทำงาน “เปิด URL” แล้ววางลิงก์ จากนั้นเพิ่มลงในศูนย์ควบคุม แถบเมนู หรือวิดเจ็ตคำสั่งลัดบนเดสก์ท็อป แตะครั้งหนึ่งเพื่อเปิดหรือปิด";
+"Customize…" = "ปรับแต่ง…";
+"Done" = "เสร็จสิ้น";
