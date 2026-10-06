@@ -64,6 +64,10 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Fișier nou în Finder.** Clic dreapta într-o fereastră Finder sau pe birou, alege **Fișier nou**, scrie un nume și apare un fișier gol, ca Nou › Document text în Windows. Implicit .txt. Implicit dezactivat.
 
+**Enter deschide fișierele în Finder.** Selectează fișiere într-o fereastră Finder sau pe birou și apasă Return sau Enter: se deschid, ca în Windows. F2 sau fn F2 redenumește fișierul selectat. În câmpurile de text, de exemplu când scrii un nume, tastele funcționează ca de obicei. Implicit dezactivat.
+
+**⌘X decupează fișierele în Finder.** Selectează fișiere și apasă ⌘X, deschide folderul dorit și apasă ⌘V: fișierele sunt mutate acolo în loc să fie copiate, ca Decupare și Lipire în Windows. ⌘C anulează decuparea. Implicit dezactivat.
+
 Fiecare instrument are propriul comutator în meniu și în configurări. Ai nevoie din nou de Control+C obișnuit? Dezactivează instrumentul respectiv.
 
 Pictograma din bara de meniu arată starea dintr-o privire: o săgeată cu un clic când instrumentele funcționează, o săgeată tăiată când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.

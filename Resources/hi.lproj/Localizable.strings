@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "“/” या “:” के बिना नाम लिखें।";
 "Turn it on in System Settings" = "सिस्टम सेटिंग्ज़ में चालू करें";
 "Open Finder Extensions…" = "Finder एक्सटेंशन खोलें…";
+"Enter opens files in Finder" = "Enter से Finder में फ़ाइलें खुलती हैं";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "Finder में Return और Enter चुनी हुई फ़ाइलें खोलते हैं, और F2 या fn F2 उनका नाम बदलता है, जैसे Windows में।";
+"Return opens, F2 or fn F2 renames" = "Return खोलता है, F2 या fn F2 नाम बदलता है";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, खोलना, नाम बदलना, F2, Windows, कीबोर्ड";
+"⌘X cuts files in Finder" = "⌘X से Finder में फ़ाइलें कट होती हैं";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "Finder में ⌘X चुनी हुई फ़ाइलें कट करता है, और ⌘V उन्हें उस फ़ोल्डर में ले जाता है जिसमें आप पेस्ट करते हैं, जैसे Windows में। ⌘C कट को रद्द कर देता है।";
+"⌘X cuts, ⌘V moves" = "⌘X कट करता है, ⌘V ले जाता है";
+"cut, paste, move, files, folders, command X, Windows" = "कट, पेस्ट, ले जाना, मूव, फ़ाइलें, फ़ोल्डर, command X, Windows";
 "Check for Updates" = "अपडेट जाँचें";
 "Shortcuts" = "शॉर्टकट";
 "Open Shortcuts" = "शॉर्टकट खोलें";

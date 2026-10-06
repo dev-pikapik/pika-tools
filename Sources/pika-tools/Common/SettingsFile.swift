@@ -13,6 +13,7 @@ struct SettingsFile {
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file",
+        "finder-open", "finder-cut",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
     ]

@@ -64,6 +64,10 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Novo arquivo no Finder.** Clique com o botão direito numa janela do Finder ou na mesa, escolha **Novo arquivo**, digite um nome e aparece um arquivo vazio, como Novo › Documento de Texto no Windows. .txt por padrão. Desativado por padrão.
 
+**Enter abre arquivos no Finder.** Selecione arquivos numa janela do Finder ou na mesa e pressione Return ou Enter: eles abrem, como no Windows. F2 ou fn F2 renomeia o arquivo selecionado. Em campos de texto, por exemplo enquanto você digita um nome, as teclas funcionam como sempre. Desativado por padrão.
+
+**⌘X corta arquivos no Finder.** Selecione arquivos e pressione ⌘X, abra a pasta de destino e pressione ⌘V: os arquivos são movidos para lá em vez de copiados, como Recortar e Colar no Windows. ⌘C cancela o corte. Desativado por padrão.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C normal de volta? Desative essa ferramenta.
 
 O ícone na barra de menus mostra o estado num relance: uma seta com um clique quando as ferramentas estão funcionando, uma seta riscada quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.

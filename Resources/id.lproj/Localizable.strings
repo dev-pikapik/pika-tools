@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "Ketik nama tanpa “/” atau “:”.";
 "Turn it on in System Settings" = "Nyalakan di Pengaturan Sistem";
 "Open Finder Extensions…" = "Buka Ekstensi Finder…";
+"Enter opens files in Finder" = "Enter membuka file di Finder";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "Di Finder, Return dan Enter membuka file yang dipilih, dan F2 atau fn F2 mengganti namanya, seperti di Windows.";
+"Return opens, F2 or fn F2 renames" = "Return membuka, F2 atau fn F2 mengganti nama";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, buka, ganti nama, F2, Windows, keyboard";
+"⌘X cuts files in Finder" = "⌘X memotong file di Finder";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "Di Finder, ⌘X memotong file yang dipilih, lalu ⌘V memindahkannya ke folder tempat file ditempel, seperti di Windows. ⌘C membatalkan pemotongan.";
+"⌘X cuts, ⌘V moves" = "⌘X memotong, ⌘V memindahkan";
+"cut, paste, move, files, folders, command X, Windows" = "potong, tempel, pindah, file, folder, command X, Windows";
 "Check for Updates" = "Periksa Pembaruan";
 "Shortcuts" = "Pintasan";
 "Open Shortcuts" = "Buka Pintasan";

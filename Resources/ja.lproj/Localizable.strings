@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "「/」や「:」を含まない名前を入力してください。";
 "Turn it on in System Settings" = "システム設定でオンにしてください";
 "Open Finder Extensions…" = "Finder機能拡張を開く…";
+"Enter opens files in Finder" = "FinderでEnterキーを押して開く";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "Finderで、ReturnキーまたはEnterキーを押すと選択中のファイルを開き、F2またはfn F2で名前を変更します。Windowsと同じ使い方です。";
+"Return opens, F2 or fn F2 renames" = "Returnで開く、F2またはfn F2で名前変更";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, 開く, 名前変更, F2, Windows, キーボード";
+"⌘X cuts files in Finder" = "Finderで⌘Xを押して切り取る";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "Finderで⌘Xを押すと選択中のファイルを切り取り、⌘Vで貼り付け先のフォルダへ移動します。Windowsと同じ使い方です。⌘Cで切り取りを取り消せます。";
+"⌘X cuts, ⌘V moves" = "⌘Xで切り取り、⌘Vで移動";
+"cut, paste, move, files, folders, command X, Windows" = "切り取り, 貼り付け, 移動, ファイル, フォルダ, command X, Windows";
 "Check for Updates" = "アップデートを確認";
 "Shortcuts" = "ショートカット";
 "Open Shortcuts" = "ショートカットを開く";

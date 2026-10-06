@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "Napište název bez „/“ a „:“.";
 "Turn it on in System Settings" = "Zapněte v Nastavení systému";
 "Open Finder Extensions…" = "Otevřít rozšíření Finderu…";
+"Enter opens files in Finder" = "Enter otevírá soubory ve Finderu";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "Ve Finderu klávesy Return a Enter otevřou vybrané soubory a F2 nebo fn F2 je přejmenuje, stejně jako ve Windows.";
+"Return opens, F2 or fn F2 renames" = "Return otevře, F2 nebo fn F2 přejmenuje";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, otevřít, přejmenovat, F2, Windows, klávesnice";
+"⌘X cuts files in Finder" = "⌘X vyjímá soubory ve Finderu";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "Ve Finderu ⌘X vyjme vybrané soubory a ⌘V je přesune do složky, do které vkládáte, stejně jako ve Windows. ⌘C vyjmutí zruší.";
+"⌘X cuts, ⌘V moves" = "⌘X vyjme, ⌘V přesune";
+"cut, paste, move, files, folders, command X, Windows" = "vyjmout, vložit, přesunout, soubory, složky, command X, Windows";
 "Check for Updates" = "Vyhledat aktualizace";
 "Shortcuts" = "Zkratky";
 "Open Shortcuts" = "Otevřít Zkratky";

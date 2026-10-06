@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "Scrie un nume fără „/” sau „:”.";
 "Turn it on in System Settings" = "Activează în Configurări sistem";
 "Open Finder Extensions…" = "Deschide extensiile Finder…";
+"Enter opens files in Finder" = "Enter deschide fișierele în Finder";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "În Finder, Return și Enter deschid fișierele selectate, iar F2 sau fn F2 le redenumește, ca în Windows.";
+"Return opens, F2 or fn F2 renames" = "Return deschide, F2 sau fn F2 redenumește";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, deschide, redenumește, F2, Windows, tastatură";
+"⌘X cuts files in Finder" = "⌘X decupează fișierele în Finder";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "În Finder, ⌘X decupează fișierele selectate, iar ⌘V le mută în folderul în care lipești, ca în Windows. ⌘C anulează decuparea.";
+"⌘X cuts, ⌘V moves" = "⌘X decupează, ⌘V mută";
+"cut, paste, move, files, folders, command X, Windows" = "decupare, lipire, mutare, fișiere, foldere, command X, Windows";
 "Check for Updates" = "Caută actualizări";
 "Shortcuts" = "Comenzi rapide";
 "Open Shortcuts" = "Deschide Comenzi rapide";

@@ -64,6 +64,10 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Tệp mới trong Finder.** Bấm chuột phải trong cửa sổ Finder hoặc trên màn hình nền, chọn **Tệp mới**, nhập tên là có ngay một tệp trống, giống New › Text Document trên Windows. Mặc định là .txt. Mặc định tắt.
 
+**Enter mở tệp trong Finder.** Chọn tệp trong cửa sổ Finder hoặc trên màn hình nền rồi nhấn Return hoặc Enter, tệp sẽ mở ra, giống như trên Windows. F2 hoặc fn F2 đổi tên tệp đã chọn. Trong ô nhập văn bản, chẳng hạn khi gõ tên, các phím vẫn hoạt động như bình thường. Mặc định tắt.
+
+**⌘X cắt tệp trong Finder.** Chọn tệp rồi nhấn ⌘X, mở thư mục muốn đến rồi nhấn ⌘V, tệp sẽ được chuyển đến đó thay vì sao chép, giống như Cut và Paste trên Windows. ⌘C hủy thao tác cắt. Mặc định tắt.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần dùng lại Control+C bình thường? Tắt công cụ đó.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: mũi tên có dấu bấm khi các công cụ đang chạy, mũi tên bị gạch khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.

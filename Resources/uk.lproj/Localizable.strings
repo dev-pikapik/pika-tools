@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "Введіть назву без «/» і «:».";
 "Turn it on in System Settings" = "Увімкніть у Системних параметрах";
 "Open Finder Extensions…" = "Відкрити розширення Finder…";
+"Enter opens files in Finder" = "Enter відкриває файли у Finder";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "У Finder клавіші Return і Enter відкривають виділені файли, а F2 або fn F2 перейменовує їх — як у Windows.";
+"Return opens, F2 or fn F2 renames" = "Return відкриває, F2 або fn F2 перейменовує";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, відкрити, перейменувати, F2, Windows, клавіатура";
+"⌘X cuts files in Finder" = "⌘X вирізає файли у Finder";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "У Finder ⌘X вирізає виділені файли, а ⌘V переносить їх до папки, куди ви вставляєте, — як у Windows. ⌘C скасовує вирізання.";
+"⌘X cuts, ⌘V moves" = "⌘X вирізає, ⌘V переносить";
+"cut, paste, move, files, folders, command X, Windows" = "вирізати, вставити, перемістити, перенести, файли, папки, command X, Windows";
 "Check for Updates" = "Перевірити оновлення";
 "Shortcuts" = "Команди";
 "Open Shortcuts" = "Відкрити «Команди»";

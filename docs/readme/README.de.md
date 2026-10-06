@@ -64,6 +64,10 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Neue Datei im Finder.** Rechtsklick in ein Finder-Fenster oder auf den Schreibtisch, **Neue Datei** wählen, Namen eingeben – schon ist eine leere Datei da, wie Neu › Textdokument unter Windows. Standardmäßig .txt. Standardmäßig aus.
 
+**Eingabetaste öffnet Dateien im Finder.** Wähle Dateien in einem Finder-Fenster oder auf dem Schreibtisch aus und drücke Return oder Enter, dann öffnen sie sich – wie unter Windows. F2 oder fn F2 benennt die ausgewählte Datei um. In Textfeldern, zum Beispiel beim Eingeben eines Namens, funktionieren die Tasten wie gewohnt. Standardmäßig aus.
+
+**⌘X schneidet Dateien im Finder aus.** Wähle Dateien aus und drücke ⌘X, öffne den gewünschten Ordner und drücke ⌘V: Die Dateien werden dorthin verschoben statt kopiert – wie Ausschneiden und Einfügen unter Windows. ⌘C bricht das Ausschneiden ab. Standardmäßig aus.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen. Du brauchst das normale Ctrl+C zurück? Schalte das Werkzeug aus.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: ein Pfeil mit Klick, wenn die Werkzeuge arbeiten, ein durchgestrichener Pfeil, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.

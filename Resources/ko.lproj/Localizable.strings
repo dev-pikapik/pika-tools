@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "‘/’나 ‘:’가 없는 이름을 입력하세요.";
 "Turn it on in System Settings" = "시스템 설정에서 켜 주세요";
 "Open Finder Extensions…" = "Finder 확장 프로그램 열기…";
+"Enter opens files in Finder" = "Finder에서 Enter로 파일 열기";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "Finder에서 Return과 Enter는 선택한 파일을 열고, F2 또는 fn F2는 이름을 바꿉니다. Windows와 같은 방식입니다.";
+"Return opens, F2 or fn F2 renames" = "Return은 열기, F2 또는 fn F2는 이름 변경";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, 열기, 이름 변경, F2, Windows, 키보드";
+"⌘X cuts files in Finder" = "Finder에서 ⌘X로 파일 잘라내기";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "Finder에서 ⌘X는 선택한 파일을 잘라내고, ⌘V는 붙여넣는 폴더로 옮깁니다. Windows와 같은 방식입니다. ⌘C를 누르면 잘라내기가 취소됩니다.";
+"⌘X cuts, ⌘V moves" = "⌘X는 잘라내기, ⌘V는 이동";
+"cut, paste, move, files, folders, command X, Windows" = "잘라내기, 붙여넣기, 이동, 파일, 폴더, command X, Windows";
 "Check for Updates" = "업데이트 확인";
 "Shortcuts" = "단축어";
 "Open Shortcuts" = "단축어 열기";

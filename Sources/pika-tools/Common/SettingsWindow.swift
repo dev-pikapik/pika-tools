@@ -83,6 +83,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, Windows, option click"),
             SettingsItem(tab: .windows, title: String(localized: "Green button works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
+            SettingsItem(tab: .windows, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, Windows, keyboard"),
+            SettingsItem(tab: .windows, title: String(localized: "⌘X cuts files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, days, hours, minutes, seconds"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),

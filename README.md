@@ -64,6 +64,10 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **New File in Finder.** Right-click in a Finder window or on the Desktop, choose **New File**, type a name, and an empty file appears, like New › Text Document on Windows. It’s a .txt by default. Off by default.
 
+**Enter opens files in Finder.** Select files in a Finder window or on the Desktop and press Return or Enter, and they open, like on Windows. F2 or fn F2 renames the selected file. In text fields, for example while you type a name, the keys work as usual. Off by default.
+
+**⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
+
 Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.

@@ -67,6 +67,8 @@ final class ToolRegistry {
         DockHideTool(),
         WindowZoomTool(),
         NewFileTool(),
+        FinderOpenTool(),
+        FinderCutTool(),
         PointerTool(),
         WheelTool(),
         SideButtonsTool(),

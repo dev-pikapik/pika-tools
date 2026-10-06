@@ -64,6 +64,10 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **File Baru di Finder.** Klik kanan di jendela Finder atau di desktop, pilih **File Baru**, ketik nama, dan file kosong langsung muncul, seperti New › Text Document di Windows. Bawaannya .txt. Mati secara bawaan.
 
+**Enter Membuka File di Finder.** Pilih file di jendela Finder atau di desktop, lalu tekan Return atau Enter, dan file langsung terbuka, seperti di Windows. F2 atau fn F2 mengganti nama file yang dipilih. Di kolom teks, misalnya saat mengetik nama, tombol-tombol ini bekerja seperti biasa. Mati secara bawaan.
+
+**⌘X Memotong File di Finder.** Pilih file lalu tekan ⌘X, buka folder tujuan dan tekan ⌘V, dan file dipindahkan ke sana, bukan disalin, seperti Potong dan Tempel di Windows. ⌘C membatalkan pemotongan. Mati secara bawaan.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
 
 Ikon di bar menu menunjukkan status sekilas: panah dengan klik saat alat bekerja, panah dicoret saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
