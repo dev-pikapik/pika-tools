@@ -148,8 +148,8 @@ enum SettingsWindow {
     }
 
     private static func create() {
-        let width: CGFloat = 902
-        let height = min(1074, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
+        let width: CGFloat = 860
+        let height = min(720, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
         let host = NSHostingController(rootView: SettingsView())
         host.sizingOptions = []
         host.sceneBridgingOptions = [.toolbars, .title]
@@ -160,14 +160,10 @@ enum SettingsWindow {
         window.collectionBehavior.insert(.fullScreenNone)
         window.isReleasedWhenClosed = false
         window.title = (model.selection ?? .general).title
-        window.contentMinSize = NSSize(width: width, height: 480)
-        window.contentMaxSize = NSSize(width: width, height: 4000)
+        window.contentMinSize = NSSize(width: 700, height: 500)
         window.setContentSize(NSSize(width: width, height: height))
         window.center()
         window.setFrameAutosaveName("Settings")
-        if window.frame.width != width {
-            window.setContentSize(NSSize(width: width, height: window.contentLayoutRect.height))
-        }
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
             NSApp.setActivationPolicy(.accessory)
         }
@@ -189,7 +185,7 @@ private struct SettingsView: View {
 
     var body: some View {
         let tab = model.selection ?? .general
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: .constant(.all)) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
                     Section { rows([.general, .keyboard, .windows, .keepAwake]) }
@@ -200,7 +196,7 @@ private struct SettingsView: View {
             }
             .listStyle(.sidebar)
             .toolbar(removing: .sidebarToggle)
-            .navigationSplitViewColumnWidth(305)
+            .navigationSplitViewColumnWidth(min: 200, ideal: 240, max: 320)
         } detail: {
             detail(tab)
                 .navigationTitle(tab.title)

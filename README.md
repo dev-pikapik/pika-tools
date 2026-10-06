@@ -11,23 +11,21 @@ A small menu bar app for macOS with fixes for keys, windows and the Dock: it blo
 
 ## Install
 
-Open Terminal, paste this line and press Return:
+With [Homebrew](https://brew.sh):
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+```
+
+Without Homebrew, open Terminal, paste this line and press Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-Nothing else is needed, Homebrew included.
+Or download [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), open it and drag the app to Applications.
 
-Or with Homebrew:
-
-```bash
-brew tap dev-pikapik/pika-tools https://github.com/dev-pikapik/pika-tools && brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
-```
-
-Or download `pika-tools.dmg` from [Releases](https://github.com/dev-pikapik/pika-tools/releases/latest) and drag the app to Applications.
-
-Homebrew and the script both put the app in `/Applications`, launch it, ask for permissions and turn on Open at Login.
+Homebrew and the script both put the app in `/Applications`, launch it, ask for permissions and turn on Open at Login. After that the app updates itself, see [Updates](#updates). To remove it, see [Uninstall](#uninstall).
 
 ## First launch
 

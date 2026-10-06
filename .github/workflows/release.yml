@@ -88,3 +88,28 @@ jobs:
           git add Casks/pika-tools.rb
           git diff --cached --quiet || git commit -q -m "Cask $VERSION"
           git push -q origin main
+
+      - name: Update Homebrew tap
+        if: github.ref_type == 'tag'
+        env:
+          TAP_DEPLOY_KEY: ${{ secrets.TAP_DEPLOY_KEY }}
+        run: |
+          SHA=$(shasum -a 256 build/pika-tools.zip | cut -d' ' -f1)
+          KEY="$RUNNER_TEMP/tap_key"
+          HOSTS="$RUNNER_TEMP/known_hosts"
+          printf '%s\n' "$TAP_DEPLOY_KEY" > "$KEY"
+          chmod 600 "$KEY"
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$HOSTS"
+          export GIT_SSH_COMMAND="ssh -i $KEY -o IdentitiesOnly=yes -o UserKnownHostsFile=$HOSTS"
+          git clone -q git@github.com:dev-pikapik/homebrew-pika-tools.git "$RUNNER_TEMP/tap"
+          cd "$RUNNER_TEMP/tap"
+          sed -i '' \
+            -e "s/^  version \".*\"/  version \"$VERSION\"/" \
+            -e "s/^  sha256 \".*\"/  sha256 \"$SHA\"/" \
+            Casks/pika-tools.rb
+          git config user.name pikapik
+          git config user.email 241494448+dev-pikapik@users.noreply.github.com
+          git add Casks/pika-tools.rb
+          git diff --cached --quiet || git commit -q -m "pika-tools $VERSION"
+          git push -q origin main
+          rm "$KEY"
