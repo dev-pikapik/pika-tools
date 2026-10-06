@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Bu bir pika-tools ayarlar dosyası değil ya da dosya bozuk.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Uygulamanın, eşzamanlamak için ayarlarınızı iCloud Drive’da tutmasını sağlar";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "4. ve 5. düğmeler Safari’de, Finder’da ve diğer uygulamalarda geri ve ileri gider; izleme dörtgeninde kaydırma gibi";
+"Repeat a held key" = "Basılı tutulan tuşu tekrarla";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Bir tuşu basılı tutunca aksan menüsü yerine Windows'taki gibi tekrar tekrar yazılır. Açık uygulamalar bunu yeniden başlatıldıktan sonra kullanır.";
+"key repeat, hold, accent menu, games, typing" = "tuş tekrarı, basılı tutma, aksan menüsü, oyunlar, yazma";

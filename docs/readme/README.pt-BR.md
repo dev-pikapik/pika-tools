@@ -7,7 +7,7 @@
 [![Licença: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: bloqueia os atalhos com Control, protege ⌘Q e ⌘W, troca o idioma com Option+Shift do jeito que o Alt+Shift funciona no Windows, desativa a aceleração do mouse, rola a roda do mouse por linhas como no Windows, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
+Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: bloqueia os atalhos com Control, protege ⌘Q e ⌘W, troca o idioma com Option+Shift do jeito que o Alt+Shift funciona no Windows, repete a tecla segurada como no Windows, desativa a aceleração do mouse, rola a roda do mouse por linhas como no Windows, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
 
 ## Instalação
 
@@ -45,6 +45,8 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 **Proteger ⌘Q e ⌘W.** ⌘Q e ⌘W sozinhos não fazem nada, então você não encerra um app nem fecha uma janela sem querer. Adicione Shift para fazer isso de propósito: ⇧⌘Q encerra, ⇧⌘W fecha. Funciona em todos os apps. Cada tecla tem a própria chave. Desativado por padrão.
 
 **Trocar de idioma com Option+Shift.** Mantenha Option pressionada e toque em Shift: o macOS passa para a próxima fonte de entrada. Continue segurando Option e toque em Shift de novo para avançar. Mantenha Shift pressionada e toque em Option para voltar. Se nesse meio-tempo você pressionar outra tecla, clicar ou adicionar Command, Control ou Fn, nada muda, então atalhos como Option+Shift+seta funcionam como antes. Desativado por padrão.
+
+**Repetir tecla segurada.** Segure uma tecla e a letra é digitada várias e várias vezes, como no Windows, em vez de aparecer o menu de acentos. Ótimo em jogos e na hora de digitar. Os apps que já estão abertos aplicam isso depois de reiniciados. Desative e o macOS volta ao comportamento de sempre. Desativado por padrão.
 
 **Desativar a aceleração do cursor.** O ponteiro se move exatamente o quanto o mouse se move, não importa a velocidade, como no LinearMouse. Um controle **Velocidade do rastreamento** define a rapidez dele. Funciona só com mouses; o trackpad fica como está. Desative a opção ou encerre o pika-tools e o macOS volta aos próprios ajustes. Desativado por padrão.
 

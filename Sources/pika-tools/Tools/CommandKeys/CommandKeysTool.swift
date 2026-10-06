@@ -107,13 +107,17 @@ private func commandKeysCallback(
               flags.contains(.maskCommand),
               flags.isDisjoint(with: [.maskControl, .maskAlternate])
         else { break }
-        guard flags.contains(.maskShift) else { return nil }
-        event.flags.remove(.maskShift)
-        var length = 0
-        var chars = [UniChar](repeating: 0, count: 4)
-        event.keyboardGetUnicodeString(maxStringLength: chars.count, actualStringLength: &length, unicodeString: &chars)
-        let lower = Array(String(utf16CodeUnits: chars, count: length).lowercased().utf16)
-        event.keyboardSetUnicodeString(stringLength: lower.count, unicodeString: lower)
+        guard flags.contains(.maskShift),
+              event.getIntegerValueField(.keyboardEventAutorepeat) == 0,
+              let key = CGEvent(
+                  keyboardEventSource: CGEventSource(stateID: .privateState),
+                  virtualKey: CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)),
+                  keyDown: type == .keyDown
+              )
+        else { return nil }
+        key.flags = .maskCommand
+        key.tapPostEvent(proxy)
+        return nil
     default:
         break
     }

@@ -7,7 +7,7 @@
 [![授權：MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![下載次數](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-一款小巧的 macOS 選單列 App，讓按鍵、視窗和 Dock 更好用：阻擋 Control 快速鍵，防止誤按 ⌘Q 和 ⌘W，像 Windows 的 Alt+Shift 一樣用 Option+Shift 切換語言，關閉滑鼠加速，讓滑鼠滾輪像 Windows 一樣按行捲動，讓滑鼠側邊按鈕可以返回和前進，關閉最後一個視窗時結束 App，在 Dock 中按一下即可隱藏 App，還能讓你的 Mac 保持喚醒。
+一款小巧的 macOS 選單列 App，讓按鍵、視窗和 Dock 更好用：阻擋 Control 快速鍵，防止誤按 ⌘Q 和 ⌘W，像 Windows 的 Alt+Shift 一樣用 Option+Shift 切換語言，像 Windows 一樣按住按鍵連續輸入，關閉滑鼠加速，讓滑鼠滾輪像 Windows 一樣按行捲動，讓滑鼠側邊按鈕可以返回和前進，關閉最後一個視窗時結束 App，在 Dock 中按一下即可隱藏 App，還能讓你的 Mac 保持喚醒。
 
 ## 安裝
 
@@ -45,6 +45,8 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 **保護 ⌘Q 和 ⌘W。** 單獨按 ⌘Q 和 ⌘W 不會有任何作用，因此不會誤結束 App 或誤關視窗。想要結束或關閉時，加按 Shift：⇧⌘Q 結束，⇧⌘W 關閉。適用於所有 App。每個按鍵都有各自的開關。預設為關閉。
 
 **用 Option+Shift 切換語言。** 按住 Option 再按一下 Shift：macOS 會切換到下一個輸入方式。繼續按住 Option 再按一下 Shift，就會繼續往下切換。按住 Shift 再按一下 Option，則切回上一個。如果中途按了其他鍵、按了一下滑鼠，或加按 Command、Control 或 Fn，就不會切換，所以像 Option+Shift+方向鍵這類快速鍵照常可用。預設為關閉。
+
+**按住按鍵連續輸入。** 按住一個鍵，就會像在 Windows 上一樣不停地重複輸入這個字母，而不是彈出重音選單。玩遊戲和打字時都很方便。已經打開的 App 需重新啟動後生效。關閉後，macOS 恢復原來的行為。預設為關閉。
 
 **關閉指標加速。** 無論滑鼠移動得多快，指標都只移動與滑鼠完全相同的距離，就像 LinearMouse 一樣。**軌跡速度** 滑桿用來設定指標移動的快慢。只對滑鼠有效，觸控式軌跡板保持不變。關閉此功能或結束 pika-tools 後，macOS 會恢復它自己的設定。預設為關閉。
 

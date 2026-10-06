@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "這不是 pika-tools 設定檔，或檔案已損毀。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "允許 App 將設定保留在 iCloud 雲碟中以便同步";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "按鈕 4 和 5 可在 Safari、Finder 和其他 App 中上一頁和下一頁，就像在觸控式軌跡板上滑動";
+"Repeat a held key" = "按住按鍵連續輸入";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "按住按鍵即可像在 Windows 上一樣重複輸入，而不是彈出重音選單。已打開的 App 需重新啟動後生效。";
+"key repeat, hold, accent menu, games, typing" = "按鍵重複, 按住, 重音選單, 遊戲, 打字";

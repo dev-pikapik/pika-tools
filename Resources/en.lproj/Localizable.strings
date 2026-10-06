@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "It isn’t a pika-tools settings file, or it’s damaged.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Lets the app keep your settings in iCloud Drive to sync them";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad";
+"Repeat a held key" = "Repeat a held key";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart.";
+"key repeat, hold, accent menu, games, typing" = "key repeat, hold, accent menu, games, typing";

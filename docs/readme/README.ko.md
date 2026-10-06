@@ -7,7 +7,7 @@
 [![라이선스: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![다운로드](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-키, 윈도우, Dock을 더 편하게 만들어 주는 작은 macOS 메뉴 막대 앱입니다. Control 단축키를 막고, ⌘Q와 ⌘W 실수를 방지하고, Windows의 Alt+Shift처럼 Option+Shift로 언어를 전환하고, 마우스 가속을 끄고, 마우스 휠을 Windows처럼 줄 단위로 스크롤하고, 마우스 측면 버튼으로 뒤로 가기와 앞으로 가기를 할 수 있게 하고, 마지막 윈도우를 닫으면 앱을 종료하고, Dock을 클릭하면 앱을 가리고, Mac이 잠자기에 들어가지 않게 해 줍니다.
+키, 윈도우, Dock을 더 편하게 만들어 주는 작은 macOS 메뉴 막대 앱입니다. Control 단축키를 막고, ⌘Q와 ⌘W 실수를 방지하고, Windows의 Alt+Shift처럼 Option+Shift로 언어를 전환하고, Windows처럼 키를 누르고 있으면 반복 입력하고, 마우스 가속을 끄고, 마우스 휠을 Windows처럼 줄 단위로 스크롤하고, 마우스 측면 버튼으로 뒤로 가기와 앞으로 가기를 할 수 있게 하고, 마지막 윈도우를 닫으면 앱을 종료하고, Dock을 클릭하면 앱을 가리고, Mac이 잠자기에 들어가지 않게 해 줍니다.
 
 ## 설치
 
@@ -45,6 +45,8 @@ pika-tools는 입력하거나 클릭한 내용을 기록하거나 저장하거�
 **⌘Q와 ⌘W 보호.** ⌘Q와 ⌘W만 눌러서는 아무 일도 일어나지 않으므로 실수로 앱을 종료하거나 윈도우를 닫지 않습니다. 의도적으로 하려면 Shift를 함께 누르십시오. ⇧⌘Q는 종료, ⇧⌘W는 닫기입니다. 모든 앱에서 작동합니다. 키마다 별도의 스위치가 있습니다. 기본값은 꺼짐입니다.
 
 **Option+Shift로 언어 전환.** Option을 누른 채 Shift를 누르면 macOS가 다음 입력 소스로 전환합니다. Option을 계속 누른 채 Shift를 다시 누르면 그다음으로 넘어갑니다. Shift를 누른 채 Option을 누르면 이전으로 돌아갑니다. 중간에 다른 키를 누르거나, 클릭하거나, Command, Control, Fn을 함께 누르면 전환되지 않으므로 Option+Shift+화살표 같은 단축키는 이전처럼 작동합니다. 기본값은 꺼짐입니다.
+
+**키를 누르고 있으면 반복 입력.** 키를 누르고 있으면 악센트 메뉴 대신 Windows처럼 같은 글자가 계속 입력됩니다. 게임을 하거나 글을 쓸 때 편리합니다. 이미 열려 있는 앱은 다시 시작한 후에 적용됩니다. 끄면 macOS가 원래대로 작동합니다. 기본값은 꺼짐입니다.
 
 **포인터 가속 끄기.** 마우스를 얼마나 빠르게 움직이든 포인터는 마우스가 움직인 만큼 정확히 움직입니다. LinearMouse와 같은 방식입니다. **이동 속도** 슬라이더로 포인터의 빠르기를 설정합니다. 마우스에서만 작동하며, 트랙패드는 그대로입니다. 기능을 끄거나 pika-tools를 종료하면 macOS가 원래 설정을 되찾습니다. 기본값은 꺼짐입니다.
 

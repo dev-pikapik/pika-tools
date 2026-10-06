@@ -69,6 +69,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .keyboard, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, Windows, scrolling speed, acceleration"),
@@ -148,6 +149,8 @@ enum SettingsWindow {
     static let model = Model()
     private(set) static var window: NSWindow?
 
+    static let minSize = NSSize(width: 640, height: 460)
+
     static func show(_ tab: SettingsTab? = nil) {
         if let tab {
             model.search = ""
@@ -163,19 +166,19 @@ enum SettingsWindow {
         let width: CGFloat = 860
         let height = min(720, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
         let host = NSHostingController(rootView: SettingsView())
-        host.sizingOptions = []
+        host.sizingOptions = [.minSize]
         host.sceneBridgingOptions = [.toolbars, .title]
         let window = NSWindow(contentViewController: host)
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
-        window.titlebarAppearsTransparent = true
         window.toolbarStyle = .unified
         window.collectionBehavior.insert(.fullScreenNone)
         window.isReleasedWhenClosed = false
         window.title = (model.selection ?? .general).title
-        window.contentMinSize = NSSize(width: 700, height: 500)
         window.setContentSize(NSSize(width: width, height: height))
         window.center()
         window.setFrameAutosaveName("Settings")
+        let saved = window.contentRect(forFrameRect: window.frame).size
+        window.setContentSize(NSSize(width: max(saved.width, minSize.width), height: max(saved.height, minSize.height)))
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
             NSApp.setActivationPolicy(.accessory)
         }
@@ -227,6 +230,7 @@ private struct SettingsView: View {
                 }
         }
         .searchable(text: $model.search, placement: .sidebar)
+        .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
         .onChange(of: tab, initial: true) { SettingsWindow.window?.title = tab.title }
     }
 

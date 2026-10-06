@@ -62,6 +62,7 @@ final class ToolRegistry {
         CtrlKeysTool(),
         CommandKeysTool(),
         InputSwitchTool(),
+        KeyRepeatTool(),
         QuitOnCloseTool(),
         DockHideTool(),
         PointerTool(),

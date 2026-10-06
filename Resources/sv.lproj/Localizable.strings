@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Det är inte en inställningsfil för pika-tools, eller så är den skadad.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Låter appen spara dina inställningar i iCloud Drive för att synkronisera dem";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Knapp 4 och 5 går bakåt och framåt i Safari, Finder och andra appar, som ett svep på styrplattan";
+"Repeat a held key" = "Upprepa en nedhållen tangent";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Håll ned en tangent för att skriva den om och om igen, som i Windows, i stället för accentmenyn. Öppna appar använder det efter en omstart.";
+"key repeat, hold, accent menu, games, typing" = "tangentupprepning, hålla ned, accentmeny, spel, skriva";

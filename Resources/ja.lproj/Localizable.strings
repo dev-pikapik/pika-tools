@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "pika-toolsの設定ファイルではないか、ファイルが壊れています。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "同期のために設定をiCloud Driveに保存できるようにします";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "ボタン4と5で、Safari、Finderなどのアプリで戻る/進むができます。トラックパッドのスワイプと同じです";
+"Repeat a held key" = "キーを押し続けて連続入力";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "キーを押し続けると、アクセントメニューの代わりに Windows のように文字が繰り返し入力されます。開いているアプリには再起動後に反映されます。";
+"key repeat, hold, accent menu, games, typing" = "キーリピート, 長押し, アクセントメニュー, ゲーム, 入力";

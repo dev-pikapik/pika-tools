@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - Unreleased
+
+### Added
+- **Repeat a held key** on the Keyboard page: hold a key and the letter types again and again, like on Windows, instead of the accent menu. Handy in games. Open apps pick it up after a restart.
+
+### Changed
+- The Settings window has a minimum size, and every page fits down to it without overlapping.
+- The Settings toolbar is translucent like in System Settings, content scrolls under it.
+
+### Fixed
+- ⇧⌘Q and ⇧⌘W quit and close again when ⌘Q and ⌘W are protected.
+
 ## [1.9.0] - Unreleased
 
 ### Added

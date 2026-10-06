@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, turns off mouse acceleration, scrolls the mouse wheel by lines like Windows, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
+A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, repeats a held key like Windows, turns off mouse acceleration, scrolls the mouse wheel by lines like Windows, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
 
 ## Install
 
@@ -45,6 +45,8 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
 **Switch language with Option+Shift.** Hold Option and tap Shift: macOS moves to the next input source. Keep holding Option and tap Shift again to go further. Hold Shift and tap Option to go back. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. Off by default.
+
+**Repeat a held key.** Hold a key and it types the letter again and again, like on Windows, instead of showing the accent menu. Handy in games and when you type fast. Apps that are already open pick it up after a restart. Turn it off and macOS works as usual again. Off by default.
 
 **Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it, like LinearMouse. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
 

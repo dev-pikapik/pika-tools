@@ -170,3 +170,6 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Đây không phải tệp cài đặt của pika-tools hoặc tệp đã bị hỏng.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Cho phép ứng dụng giữ cài đặt của bạn trong iCloud Drive để đồng bộ hóa";
 "Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Nút 4 và 5 quay lại và đi tiếp trong Safari, Finder và các ứng dụng khác, giống như vuốt trên bàn di chuột";
+"Repeat a held key" = "Lặp lại phím khi giữ";
+"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Giữ phím để gõ lặp lại liên tục như trên Windows, thay vì hiện menu dấu. Các app đang mở sẽ áp dụng sau khi khởi động lại.";
+"key repeat, hold, accent menu, games, typing" = "lặp phím, giữ phím, menu dấu, trò chơi, gõ phím";
