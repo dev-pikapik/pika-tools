@@ -72,7 +72,7 @@ The app follows your system language or the one you pick in Settings. It is avai
 
 ## Keep Awake
 
-Stops your Mac from falling asleep while you're away from the keyboard: for any time from 1 minute to 12 months, or until you turn it off. Flip it on from the menu, set the duration in Settings in minutes, hours, days, weeks or months. The menu shows how much time is left and when it ends. **Keep the display on** stops the screen from dimming too. Quitting pika-tools ends Keep Awake.
+Stops your Mac from falling asleep while you're away from the keyboard: for any time from 1 second to 365 days, or until you turn it off. Flip it on from the menu, set the duration in Settings: type days, hours, minutes and seconds, use ↑ and ↓, or click a preset from 15 minutes to 8 hours. The menu shows how much time is left and when it ends. **Keep the display on** stops the screen from dimming too. Quitting pika-tools ends Keep Awake.
 
 On a MacBook you can also turn on **Work with the lid closed**. macOS has no switch for that, so pika-tools runs `pmset -a disablesleep 1` and asks for an administrator password: only an administrator can change how the Mac sleeps. The setting goes back to normal on its own when Keep Awake ends, when you quit the app, or if it crashes. If you don't enter the password, nothing changes. Keep the Mac ventilated with the lid closed. **Stop when battery is below 20%** ends the session before the battery runs out.
 

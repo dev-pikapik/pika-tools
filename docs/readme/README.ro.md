@@ -72,7 +72,7 @@ Aplicația folosește limba sistemului sau pe cea aleasă în configurări. Sunt
 
 ## Rămâi treaz
 
-Împiedică Mac-ul să intre în repaus cât timp nu ești la tastatură: pentru orice durată între 1 minut și 12 luni sau până când îl dezactivezi. Activează-l din meniu și setează durata în configurări în minute, ore, zile, săptămâni sau luni. Meniul arată cât timp a mai rămas și când se termină. **Păstrează ecranul aprins** împiedică și întunecarea ecranului. Dacă închizi pika-tools, se oprește și Rămâi treaz.
+Împiedică Mac-ul să intre în repaus cât timp nu ești la tastatură: pentru orice durată între 1 secundă și 365 de zile sau până când îl dezactivezi. Activează-l din meniu și setează durata în configurări: scrie zilele, orele, minutele și secundele, folosește ↑ și ↓ sau apasă pe o variantă gata făcută, de la 15 minute la 8 ore. Meniul arată cât timp a mai rămas și când se termină. **Păstrează ecranul aprins** împiedică și întunecarea ecranului. Dacă închizi pika-tools, se oprește și Rămâi treaz.
 
 Pe un MacBook poți activa și **Funcționează cu capacul închis**. macOS nu are o opțiune pentru asta, așa că pika-tools rulează `pmset -a disablesleep 1` și cere o parolă de administrator: doar un administrator poate schimba modul în care Mac-ul intră în repaus. Configurarea revine singură la normal când se termină Rămâi treaz, când închizi aplicația sau dacă aceasta se blochează. Dacă nu introduci parola, nu se schimbă nimic. Asigură-te că Mac-ul are o ventilație bună cu capacul închis. **Oprește când bateria scade sub 20%** încheie sesiunea înainte să se descarce bateria.
 

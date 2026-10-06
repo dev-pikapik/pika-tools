@@ -59,6 +59,11 @@
 "Indefinitely" = "무기한";
 "Keep your Mac awake" = "Mac 잠자기 방지";
 "Duration" = "지속 시간";
+"Until %@" = "%@까지";
+"Days" = "일";
+"Hours" = "시간";
+"Minutes" = "분";
+"Seconds" = "초";
 "Keep the display on" = "디스플레이 켜두기";
 "Otherwise the screen dims and turns off as usual" = "끄면 화면이 평소처럼 어두워지고 꺼집니다";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac이 저절로 잠자기에 들어가지 않습니다. pika-tools를 종료하면 해제됩니다.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, 컨트롤 키, 단축키, 오른쪽 클릭, 컨텍스트 메뉴";
 "keyboard layout, input source, option, shift, alt" = "키보드 레이아웃, 입력 소스, option, shift, alt";
 "sleep, caffeine, insomnia" = "잠자기, 수면, 카페인, 불면";
-"time, timer, hours, minutes" = "시간, 타이머, 시, 분";
+"time, timer, days, hours, minutes, seconds" = "시간, 타이머, 일, 시, 분, 초";
 "screen, monitor, dim, screen saver" = "화면, 모니터, 어둡게, 화면 보호기";
 "clamshell, laptop, MacBook, external display" = "덮개, 노트북, MacBook, 외장 디스플레이, 클램쉘";
 "battery, power, charge" = "배터리, 전원, 충전";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "사용 중인 앱의 아이콘을 클릭하면 가려집니다. 다시 클릭하면 돌아옵니다.";
 "Click again to bring it back" = "다시 클릭하면 돌아옵니다";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, 최소화, 가리기, Windows, 작업 표시줄";
-"From 1 minute to 12 months" = "1분에서 12개월까지";
 "Lets the app change clicks and keys and manage windows" = "클릭과 키 입력을 변경하고 윈도우를 관리하는 데 필요";
 "Keyboard" = "키보드";
 "Mouse" = "마우스";

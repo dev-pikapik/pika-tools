@@ -59,6 +59,11 @@
 "Indefinitely" = "Indefinitely";
 "Keep your Mac awake" = "Keep your Mac awake";
 "Duration" = "Duration";
+"Until %@" = "Until %@";
+"Days" = "Days";
+"Hours" = "Hours";
+"Minutes" = "Minutes";
+"Seconds" = "Seconds";
 "Keep the display on" = "Keep the display on";
 "Otherwise the screen dims and turns off as usual" = "Otherwise the screen dims and turns off as usual";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, control key, shortcuts, right-click, context menu";
 "keyboard layout, input source, option, shift, alt" = "keyboard layout, input source, option, shift, alt";
 "sleep, caffeine, insomnia" = "sleep, caffeine, insomnia";
-"time, timer, hours, minutes" = "time, timer, hours, minutes";
+"time, timer, days, hours, minutes, seconds" = "time, timer, days, hours, minutes, seconds";
 "screen, monitor, dim, screen saver" = "screen, monitor, dim, screen saver";
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, external display";
 "battery, power, charge" = "battery, power, charge";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Click the icon of the app you’re in to hide it. Click again to bring it back.";
 "Click again to bring it back" = "Click again to bring it back";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimize, hide, Windows, taskbar";
-"From 1 minute to 12 months" = "From 1 minute to 12 months";
 "Lets the app change clicks and keys and manage windows" = "Lets the app change clicks and keys and manage windows";
 "Keyboard" = "Keyboard";
 "Mouse" = "Mouse";

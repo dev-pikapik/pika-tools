@@ -72,7 +72,7 @@ De app volgt de taal van je systeem of de taal die je in de instellingen kiest. 
 
 ## Wakker houden
 
-Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 minuut tot 12 maanden, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in op minuten, uren, dagen, weken of maanden. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. **Houd het scherm aan** voorkomt ook dat het scherm donkerder wordt. Als je pika-tools stopt, stopt Wakker houden ook.
+Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 seconde tot 365 dagen, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in: typ dagen, uren, minuten en seconden, gebruik ↑ en ↓ of klik op een voorinstelling van 15 minuten tot 8 uur. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. **Houd het scherm aan** voorkomt ook dat het scherm donkerder wordt. Als je pika-tools stopt, stopt Wakker houden ook.
 
 Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft daar geen schakelaar voor, dus pika-tools voert `pmset -a disablesleep 1` uit en vraagt om een beheerderswachtwoord: alleen een beheerder mag wijzigen hoe de Mac sluimert. De instelling gaat vanzelf terug naar normaal als Wakker houden eindigt, als je de app stopt of als hij vastloopt. Voer je het wachtwoord niet in, dan verandert er niets. Zorg voor goede ventilatie als de klep dicht is. **Stoppen als de batterij onder 20% komt** beëindigt de sessie voordat de batterij leeg is.
 

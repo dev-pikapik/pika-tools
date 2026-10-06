@@ -59,6 +59,11 @@
 "Indefinitely" = "Nelimitat";
 "Keep your Mac awake" = "Menține Mac-ul activ";
 "Duration" = "Durată";
+"Until %@" = "Până la %@";
+"Days" = "Zile";
+"Hours" = "Ore";
+"Minutes" = "Minute";
+"Seconds" = "Secunde";
 "Keep the display on" = "Menține ecranul aprins";
 "Otherwise the screen dims and turns off as usual" = "Altfel ecranul se estompează și se stinge ca de obicei";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac-ul nu va intra singur în repaus. Se dezactivează când ieși din pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, tasta Control, scurtături, clic dreapta, meniu contextual";
 "keyboard layout, input source, option, shift, alt" = "aranjament tastatură, sursă de introducere, option, shift, alt";
 "sleep, caffeine, insomnia" = "repaus, somn, cafeină, insomnie, sleep";
-"time, timer, hours, minutes" = "timp, temporizator, timer, ore, minute";
+"time, timer, days, hours, minutes, seconds" = "timp, temporizator, timer, zile, ore, minute, secunde";
 "screen, monitor, dim, screen saver" = "ecran, monitor, estompare, protecție ecran";
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, monitor extern, capac";
 "battery, power, charge" = "baterie, alimentare, încărcare";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Fă clic pe pictograma aplicației în care ești ca s-o ascunzi. Fă clic din nou ca s-o readuci.";
 "Click again to bring it back" = "Fă clic din nou ca s-o readuci";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimizare, ascundere, Windows, bara de activități, taskbar";
-"From 1 minute to 12 months" = "De la 1 minut la 12 luni";
 "Lets the app change clicks and keys and manage windows" = "Permite aplicației să modifice clicurile și tastele și să gestioneze ferestrele";
 "Keyboard" = "Tastatură";
 "Mouse" = "Maus";

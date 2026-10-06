@@ -59,6 +59,11 @@
 "Indefinitely" = "Vô thời hạn";
 "Keep your Mac awake" = "Giữ máy Mac luôn thức";
 "Duration" = "Thời lượng";
+"Until %@" = "Đến %@";
+"Days" = "Ngày";
+"Hours" = "Giờ";
+"Minutes" = "Phút";
+"Seconds" = "Giây";
 "Keep the display on" = "Giữ màn hình luôn bật";
 "Otherwise the screen dims and turns off as usual" = "Nếu không, màn hình sẽ tối dần và tắt như bình thường";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Máy Mac sẽ không tự chuyển sang chế độ ngủ. Tự tắt khi bạn thoát pika-tools.";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, phím control, phím tắt, bấm chuột phải, menu ngữ cảnh";
 "keyboard layout, input source, option, shift, alt" = "bố cục bàn phím, nguồn đầu vào, bộ gõ, option, shift, alt";
 "sleep, caffeine, insomnia" = "ngủ, sleep, caffeine, cà phê, mất ngủ";
-"time, timer, hours, minutes" = "thời gian, hẹn giờ, timer, giờ, phút";
+"time, timer, days, hours, minutes, seconds" = "thời gian, hẹn giờ, timer, ngày, giờ, phút, giây";
 "screen, monitor, dim, screen saver" = "màn hình, monitor, tối dần, trình bảo vệ màn hình";
 "clamshell, laptop, MacBook, external display" = "gập nắp, clamshell, laptop, MacBook, màn hình ngoài";
 "battery, power, charge" = "pin, nguồn điện, sạc";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Bấm vào biểu tượng của ứng dụng đang dùng để ẩn ứng dụng. Bấm lần nữa để hiện lại.";
 "Click again to bring it back" = "Bấm lần nữa để hiện lại";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, thu nhỏ, ẩn, Windows, thanh tác vụ, taskbar";
-"From 1 minute to 12 months" = "Từ 1 phút đến 12 tháng";
 "Lets the app change clicks and keys and manage windows" = "Cho phép ứng dụng thay đổi thao tác bấm, phím và quản lý cửa sổ";
 "Keyboard" = "Bàn phím";
 "Mouse" = "Chuột";

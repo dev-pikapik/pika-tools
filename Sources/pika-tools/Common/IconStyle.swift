@@ -53,6 +53,7 @@ struct SectionIcon: View {
     let symbol: String
     let color: Color
     var size: CGFloat = 24
+    var template: NSImage?
     @Environment(\.colorScheme) private var scheme
     private let style = IconStyle.shared
 
@@ -60,10 +61,7 @@ struct SectionIcon: View {
         let shape = RoundedRectangle(cornerRadius: size * 0.235, style: .continuous)
         let dark = style.isDark(scheme)
         let tint = style.tint ?? .accentColor
-        Image(systemName: symbol)
-            .font(.system(size: size * 0.56, weight: .medium))
-            .symbolRenderingMode(.monochrome)
-            .imageScale(.medium)
+        mark
             .foregroundStyle(glyph(dark: dark, tint: tint))
             .frame(width: size, height: size)
             .background {
@@ -76,6 +74,22 @@ struct SectionIcon: View {
             .environment(\.colorScheme, dark ? .dark : .light)
             .drawingGroup()
             .accessibilityHidden(true)
+    }
+
+    @ViewBuilder
+    private var mark: some View {
+        if let template {
+            Image(nsImage: template)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .frame(width: size * 0.54, height: size * 0.54)
+        } else {
+            Image(systemName: symbol)
+                .font(.system(size: size * 0.56, weight: .medium))
+                .symbolRenderingMode(.monochrome)
+                .imageScale(.medium)
+        }
     }
 
     private func base(dark: Bool) -> Color {

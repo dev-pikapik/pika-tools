@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.0] - Unreleased
+
+### Added
+- Keep Awake: set the timer in days, hours, minutes and seconds. Click a number and type it, press ↑ and ↓ to change it by one, or move between numbers with ← and → or Tab. Ready-made buttons set 15 minutes, 30 minutes, 1 hour, 2 hours or 8 hours in one click.
+- Settings › Keep Awake shows when the timer would end, for example “Until tomorrow, 14:07”.
+- The links in Settings › About now have icons, like the sections in Settings. GitHub uses the GitHub logo.
+
+### Changed
+- The Keep Awake timer can be anything from 1 second to 365 days instead of a number with a unit. A timer you had already set is converted automatically.
+
 ## [1.15.2] - Unreleased
 
 ### Fixed

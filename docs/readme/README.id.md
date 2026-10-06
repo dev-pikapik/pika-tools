@@ -72,7 +72,7 @@ App mengikuti bahasa sistem atau bahasa yang Anda pilih di pengaturan. Semua 23 
 
 ## Tetap Terjaga
 
-Mencegah Mac masuk mode tidur saat Anda jauh dari papan ketik: untuk waktu berapa pun dari 1 menit hingga 12 bulan, atau sampai Anda mematikannya. Nyalakan dari menu, lalu atur durasinya di pengaturan dalam menit, jam, hari, minggu, atau bulan. Menu menampilkan sisa waktu dan kapan berakhir. **Biarkan layar menyala** juga mencegah layar meredup. Keluar dari pika-tools akan mengakhiri Tetap Terjaga.
+Mencegah Mac masuk mode tidur saat Anda jauh dari papan ketik: untuk waktu berapa pun dari 1 detik hingga 365 hari, atau sampai Anda mematikannya. Nyalakan dari menu, lalu atur durasinya di pengaturan: ketik hari, jam, menit, dan detik, gunakan ↑ dan ↓, atau klik pilihan siap pakai dari 15 menit hingga 8 jam. Menu menampilkan sisa waktu dan kapan berakhir. **Biarkan layar menyala** juga mencegah layar meredup. Keluar dari pika-tools akan mengakhiri Tetap Terjaga.
 
 Di MacBook, Anda juga bisa menyalakan **Bekerja dengan penutup tertutup**. macOS tidak punya saklar untuk ini, jadi pika-tools menjalankan `pmset -a disablesleep 1` dan meminta kata sandi administrator: hanya administrator yang bisa mengubah cara Mac tidur. Pengaturan ini kembali normal dengan sendirinya saat Tetap Terjaga berakhir, saat Anda keluar dari app, atau jika app mogok. Jika Anda tidak memasukkan kata sandi, tidak ada yang berubah. Pastikan Mac mendapat sirkulasi udara yang baik saat penutupnya tertutup. **Berhenti saat baterai di bawah 20%** mengakhiri sesi sebelum baterai habis.
 

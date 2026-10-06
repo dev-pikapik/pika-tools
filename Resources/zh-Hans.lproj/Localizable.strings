@@ -59,6 +59,11 @@
 "Indefinitely" = "无限期";
 "Keep your Mac awake" = "让 Mac 保持唤醒";
 "Duration" = "时长";
+"Until %@" = "直到 %@";
+"Days" = "天";
+"Hours" = "小时";
+"Minutes" = "分钟";
+"Seconds" = "秒";
 "Keep the display on" = "保持显示器开启";
 "Otherwise the screen dims and turns off as usual" = "否则屏幕照常变暗并关闭";
 "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools." = "Mac 不会自动进入睡眠。退出 pika-tools 后即恢复。";
@@ -83,7 +88,7 @@
 "ctrl, control key, shortcuts, right-click, context menu" = "ctrl, 控制键, 快捷键, 右键, 上下文菜单";
 "keyboard layout, input source, option, shift, alt" = "键盘布局, 输入法, 输入源, option, shift, alt";
 "sleep, caffeine, insomnia" = "睡眠, 休眠, 咖啡因, 失眠";
-"time, timer, hours, minutes" = "时间, 定时器, 小时, 分钟";
+"time, timer, days, hours, minutes, seconds" = "时间, 定时器, 天, 小时, 分钟, 秒";
 "screen, monitor, dim, screen saver" = "屏幕, 显示器, 变暗, 屏幕保护程序";
 "clamshell, laptop, MacBook, external display" = "合盖, 笔记本, MacBook, 外接显示器";
 "battery, power, charge" = "电池, 电源, 电量";
@@ -116,7 +121,6 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "点按当前应用的图标即可隐藏，再点按一次即可恢复。";
 "Click again to bring it back" = "再点按一次即可恢复";
 "Dock, minimize, hide, Windows, taskbar" = "程序坞, 最小化, 隐藏, Windows, 任务栏";
-"From 1 minute to 12 months" = "1 分钟到 12 个月";
 "Lets the app change clicks and keys and manage windows" = "用于更改点按和按键以及管理窗口";
 "Keyboard" = "键盘";
 "Mouse" = "鼠标";

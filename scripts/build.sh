@@ -53,6 +53,7 @@ done
 RES="$APP/Contents/Resources"
 mkdir -p "$RES"
 cp -R Resources/*.lproj "$RES/"
+cp Resources/github.svg "$RES/"
 if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
         --compile "$RES" \
         --app-icon AppIcon \
