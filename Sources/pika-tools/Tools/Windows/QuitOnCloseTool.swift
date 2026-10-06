@@ -84,6 +84,8 @@ final class QuitOnCloseTool: Tool {
         let element = AXUIElementCreateApplication(pid)
         let refcon = Unmanaged.passUnretained(self).toOpaque()
         AXObserverAddNotification(observer, element, kAXWindowCreatedNotification as CFString, refcon)
+        AXObserverAddNotification(observer, element, kAXFocusedWindowChangedNotification as CFString, refcon)
+        AXObserverAddNotification(observer, element, kAXMainWindowChangedNotification as CFString, refcon)
         CFRunLoopAddSource(CFRunLoopGetMain(), AXObserverGetRunLoopSource(observer), .defaultMode)
         observers[pid] = observer
         Self.windows(of: element).forEach { track($0, observer: observer) }
@@ -109,8 +111,7 @@ final class QuitOnCloseTool: Tool {
     private func quitIfNoWindows(_ pid: pid_t) {
         guard isEnabled, let app = NSRunningApplication(processIdentifier: pid), !app.isTerminated,
               !excluded.contains(app.bundleIdentifier ?? ""),
-              Self.windows(of: AXUIElementCreateApplication(pid)).isEmpty,
-              !Self.hasWindowsElsewhere(pid)
+              !Self.hasWindows(pid)
         else { return }
         app.terminate()
     }
@@ -127,14 +128,20 @@ final class QuitOnCloseTool: Tool {
         return value as? String
     }
 
-    private static func hasWindowsElsewhere(_ pid: pid_t) -> Bool {
+    private static func hasWindows(_ pid: pid_t) -> Bool {
         let list = CGWindowListCopyWindowInfo([.optionAll, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-        return list.contains { info in
+        let ids = list.compactMap { info -> Int? in
             guard info[kCGWindowOwnerPID as String] as? pid_t == pid,
                   info[kCGWindowLayer as String] as? Int == 0,
-                  let bounds = info[kCGWindowBounds as String] as? [String: CGFloat]
-            else { return false }
-            return (bounds["Width"] ?? 0) >= 100 && (bounds["Height"] ?? 0) >= 100
+                  (info[kCGWindowAlpha as String] as? Double ?? 1) > 0,
+                  let bounds = info[kCGWindowBounds as String] as? [String: CGFloat],
+                  (bounds["Width"] ?? 0) >= 100, (bounds["Height"] ?? 0) >= 100
+            else { return nil }
+            return info[kCGWindowNumber as String] as? Int
+        }
+        return ids.contains { id in
+            let spaces = CGSCopySpacesForWindows(CGSMainConnectionID(), 7, [id] as CFArray)?.takeRetainedValue() as? [Any]
+            return !(spaces ?? []).isEmpty
         }
     }
 
@@ -150,6 +157,9 @@ final class QuitOnCloseTool: Tool {
         excluded += ids.filter { !excluded.contains($0) && !Self.alwaysExcluded.contains($0) }
     }
 }
+
+@_silgen_name("CGSMainConnectionID") private func CGSMainConnectionID() -> Int32
+@_silgen_name("CGSCopySpacesForWindows") private func CGSCopySpacesForWindows(_ cid: Int32, _ mask: Int32, _ windows: CFArray) -> Unmanaged<CFArray>?
 
 private func quitOnCloseCallback(observer: AXObserver, element: AXUIElement, notification: CFString, refcon: UnsafeMutableRawPointer?) {
     guard let refcon else { return }
