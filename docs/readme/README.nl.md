@@ -66,6 +66,8 @@ Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je d
 
 Het symbool in de menubalk laat in één oogopslag de status zien: een pijl met een klik als de tools werken, een doorgestreepte pijl als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
 
+Je kiest zelf welke rijen het paneel in de menubalk toont: klik op **Aanpassen…**, haal het vinkje weg bij wat je niet nodig hebt en klik op **Gereed**. Verborgen rijen blijven werken en blijven staan in Instellingen. Past het paneel niet op het scherm, dan kun je scrollen.
+
 De app volgt de taal van je systeem of de taal die je in de instellingen kiest. Alle 23 talen uit de lijst bovenaan deze pagina zijn beschikbaar.
 
 ## Wakker houden

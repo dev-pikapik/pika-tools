@@ -4,49 +4,93 @@ struct MenuView: View {
     let registry: ToolRegistry
     private let permissions = Permissions.shared
     @Bindable private var keepAwake = KeepAwake.shared
+    @AppStorage("quick-hidden") private var hiddenList = ""
+    @State private var customizing = false
+
+    private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
+
+    private func isShown(_ id: String) -> Bool { customizing || !hidden.contains(id) }
+
+    private func binding(_ id: String) -> Binding<Bool> {
+        Binding(
+            get: { !hidden.contains(id) },
+            set: { shown in
+                var ids = hidden
+                if shown { ids.remove(id) } else { ids.insert(id) }
+                hiddenList = ids.sorted().joined(separator: ",")
+            }
+        )
+    }
+
+    @ViewBuilder
+    private func customizeRow(icon: String, title: String, id: String) -> some View {
+        Toggle(isOn: binding(id)) {
+            Label(title, systemImage: icon)
+        }
+        .toggleStyle(.checkbox)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(10)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach([SettingsTab.keyboard, .mouse, .windows], id: \.self) { tab in
-                let tools = registry.tools.filter { $0.tab == tab }
-                if !tools.isEmpty {
-                    VStack(spacing: 0) {
-                        ForEach(Array(tools.enumerated()), id: \.element.id) { index, tool in
-                            if index > 0 {
-                                Divider().padding(.horizontal, 10)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach([SettingsTab.keyboard, .mouse, .windows], id: \.self) { tab in
+                        let tools = registry.tools.filter { $0.tab == tab && isShown($0.id) }
+                        if !tools.isEmpty {
+                            VStack(spacing: 0) {
+                                ForEach(Array(tools.enumerated()), id: \.element.id) { index, tool in
+                                    if index > 0 {
+                                        Divider().padding(.horizontal, 10)
+                                    }
+                                    if customizing {
+                                        customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
+                                    } else {
+                                        tool.settingsView
+                                    }
+                                }
                             }
-                            tool.settingsView
+                            .glassCard()
                         }
                     }
-                    .glassCard()
-                }
-            }
 
-            ToggleRow(
-                icon: "cup.and.saucer",
-                title: String(localized: "Keep Awake"),
-                subtitle: keepAwake.statusText,
-                isOn: $keepAwake.isOn
-            )
-            .glassCard()
+                    if isShown("keep-awake") {
+                        if customizing {
+                            customizeRow(icon: "cup.and.saucer", title: String(localized: "Keep Awake"), id: "keep-awake")
+                                .glassCard()
+                        } else {
+                            ToggleRow(
+                                icon: "cup.and.saucer",
+                                title: String(localized: "Keep Awake"),
+                                subtitle: keepAwake.statusText,
+                                isOn: $keepAwake.isOn
+                            )
+                            .glassCard()
+                        }
+                    }
 
-            if !permissions.allGranted {
-                Button {
-                    SettingsWindow.show(.permissions)
-                } label: {
-                    Label("Permissions needed", systemImage: "exclamationmark.triangle.fill")
-                        .font(.callout)
-                        .foregroundStyle(.orange)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .contentShape(Rectangle())
+                    if !permissions.allGranted {
+                        Button {
+                            SettingsWindow.show(.permissions)
+                        } label: {
+                            Label("Permissions needed", systemImage: "exclamationmark.triangle.fill")
+                                .font(.callout)
+                                .foregroundStyle(.orange)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.horizontal, 4)
+                    }
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 4)
+                .frame(maxHeight: (NSScreen.main?.visibleFrame.height ?? 700) - 140)
             }
 
             HStack {
                 Button("Settings…") { SettingsWindow.show() }
                     .keyboardShortcut(",")
+                Button(customizing ? "Done" : "Customize…") { customizing.toggle() }
                 Spacer(minLength: 8)
                 Button("Quit") { NSApp.terminate(nil) }
                     .keyboardShortcut("q")

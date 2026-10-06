@@ -194,3 +194,5 @@
 "Buttons in Control Center and widgets" = "コントロールセンターとウィジェットのボタン";
 "widget, Control Center, Shortcuts, menu bar, button" = "ウィジェット, コントロールセンター, ショートカット, メニューバー, ボタン";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "ショートカットで「URLを開く」アクションのショートカットを作り、リンクをペーストします。それをコントロールセンター、メニューバー、またはデスクトップのショートカットウィジェットに追加しましょう。タップするたびにオン/オフが切り替わります。";
+"Customize…" = "カスタマイズ…";
+"Done" = "完了";

@@ -66,6 +66,8 @@ Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujet
 
 Ikona v řádku nabídek ukazuje stav na první pohled: šipka s kliknutím, když nástroje fungují, přeškrtnutá šipka, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
 
+Můžete si vybrat, které řádky panel v řádku nabídek ukazuje: klikněte na **Upravit…**, odškrtněte, co nepotřebujete, a klikněte na **Hotovo**. Skryté řádky dál fungují a zůstávají v Nastavení. Když se panel na obrazovku nevejde, dá se posouvat.
+
 Aplikace používá jazyk systému nebo ten, který vyberete v nastavení. K dispozici je všech 23 jazyků ze seznamu na začátku této stránky.
 
 ## Nespat
