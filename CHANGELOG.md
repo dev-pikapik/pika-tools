@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - Unreleased
+
+### Added
+- The app is now available in Romanian, Polish, Turkish, Dutch, Swedish, Czech, Traditional Chinese, Arabic, Hindi, Indonesian, Vietnamese and Thai.
+- README in 23 languages.
+
 ## [1.6.0] - Unreleased
 
 ### Changed

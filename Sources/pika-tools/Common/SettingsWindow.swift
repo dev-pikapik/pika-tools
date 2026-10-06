@@ -368,7 +368,7 @@ enum Appearance: String, CaseIterable {
 @Observable
 final class Language {
     static let shared = Language()
-    static let codes = ["en", "ru", "uk", "de", "fr", "es", "it", "pt-BR", "ja", "zh-Hans", "ko"]
+    static let codes = ["en", "ru", "uk", "de", "fr", "es", "it", "pt-BR", "nl", "sv", "pl", "cs", "ro", "tr", "ja", "zh-Hans", "zh-Hant", "ko", "ar", "hi", "th", "vi", "id"]
 
     let atLaunch: String
     var selected: String {

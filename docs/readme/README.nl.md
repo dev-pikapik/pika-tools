@@ -1,0 +1,118 @@
+# pika-tools
+
+[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · **Nederlands** · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
+
+[![Nieuwste versie](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
+[![Licentie: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
+
+Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij blokkeert Control-toetscombinaties, beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift zoals Alt+Shift op Windows, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
+
+## Installeren
+
+Met [Homebrew](https://brew.sh):
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+```
+
+Zonder Homebrew: open Terminal, plak deze regel en druk op Return:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
+```
+
+Of download [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), open het bestand en sleep de app naar de map Apps.
+
+Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vragen om de toestemmingen en zetten ‘Open bij inloggen’ aan. Daarna werkt de app zichzelf bij, zie [Updates](#updates). Verwijderen staat bij [Verwijderen](#verwijderen).
+
+## Eerste keer openen
+
+pika-tools heeft twee toestemmingen nodig. De eerste keer opent de app de instellingen op de pagina Toestemmingen, die je stap voor stap helpt, en macOS toont zijn eigen meldingen. Ga naar **Systeeminstellingen › Privacy en beveiliging** en zet pika-tools aan bij:
+
+- **Toegankelijkheid**, zodat de app een toetsaanslag of klik kan aanpassen voordat die bij andere apps aankomt.
+- **Invoerbewaking**, zodat de app toetsaanslagen en klikken überhaupt kan zien.
+
+De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet nodig.
+
+pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
+
+## Functies
+
+**Control-toetscombinaties blokkeren.** Control wordt een gewone toets. Apps zien nog steeds dat hij is ingedrukt, maar macOS maakt er geen toetscombinaties meer van: Control+spatiebalk wisselt niet van invoerbron, Control+pijltoetsen wisselen niet van bureaublad en Control-klik is een gewone klik in plaats van een contextueel menu. Secundair klikken en tikken met twee vingers werken zoals altijd. Handig in games en bij externe bureaubladsessies, waar Control een eigen taak heeft.
+
+**⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
+
+**Van taal wisselen met Option+Shift.** Houd Option ingedrukt en tik op Shift: macOS gaat naar de volgende invoerbron. Houd Option ingedrukt en tik nog eens op Shift om verder te gaan. Houd Shift ingedrukt en tik op Option om terug te gaan. Druk je tussendoor op een andere toets, klik je of voeg je Command, Control of Fn toe, dan wordt er niet gewisseld, zodat combinaties zoals Option+Shift+pijltoets blijven werken zoals voorheen. Standaard uit.
+
+**Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt, zoals op Windows. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
+
+**Verbergen met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en de app wordt verborgen. Klik nog eens om hem terug te halen. Standaard uit.
+
+Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je de gewone Control+C terug? Zet die tool uit.
+
+Het symbool in de menubalk laat in één oogopslag de status zien: een pijl met een klik als de tools werken, een doorgestreepte pijl als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
+
+De app volgt de taal van je systeem of de taal die je in de instellingen kiest. Alle 23 talen uit de lijst bovenaan deze pagina zijn beschikbaar.
+
+## Wakker houden
+
+Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 minuut tot 12 maanden, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in op minuten, uren, dagen, weken of maanden. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. **Houd het scherm aan** voorkomt ook dat het scherm donkerder wordt. Als je pika-tools stopt, stopt Wakker houden ook.
+
+Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft daar geen schakelaar voor, dus pika-tools voert `pmset -a disablesleep 1` uit en vraagt om een beheerderswachtwoord: alleen een beheerder mag wijzigen hoe de Mac sluimert. De instelling gaat vanzelf terug naar normaal als Wakker houden eindigt, als je de app stopt of als hij vastloopt. Voer je het wachtwoord niet in, dan verandert er niets. Zorg voor goede ventilatie als de klep dicht is. **Stoppen als de batterij onder 20% komt** beëindigt de sessie voordat de batterij leeg is.
+
+## Instellingen
+
+Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pika-tools gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
+
+- **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal en updates.
+- **Toetsenbord en muis**: Control-toetscombinaties, ⌘Q en ⌘W, van taal wisselen.
+- **Vensters en apps**: stoppen bij het laatste venster, met een lijst met uitzonderingen, en verbergen met een klik in het Dock.
+- **Wakker houden**: duur, opties voor het scherm en de klep.
+- **Toestemmingen**: de status van beide toestemmingen, met knoppen die de juiste plek in Systeeminstellingen openen.
+- **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
+
+## Updates
+
+pika-tools zoekt bij het openen en elke 6 uur naar nieuwe versies. Je kunt dat uitzetten bij Instellingen › Algemeen. Is er een nieuwe versie, dan verschijnt in het menu de knop **Werk bij naar …**: één klik en de app downloadt de update, installeert hem en start opnieuw op. Je kunt ook zelf controleren met **Controleer nu** bij Instellingen › Algemeen.
+
+Met Homebrew kun je ook `brew upgrade --cask pika-tools` uitvoeren.
+
+Sinds versie 1.3 blijven de toestemmingen na updates behouden.
+
+## Verwijderen
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
+```
+
+Als je met Homebrew hebt geïnstalleerd: `brew uninstall --cask --zap pika-tools`.
+
+Beide stoppen de app, halen hem uit de inlogonderdelen en verwijderen hem. Het script zet ook de toestemmingen van de app terug.
+
+## Veelgestelde vragen
+
+**Waarom zijn er twee toestemmingen nodig?**
+macOS splitst de toegang tot toetsenbord en muis in tweeën. Met Invoerbewaking kan de app gebeurtenissen zien, met Toegankelijkheid kan hij ze aanpassen. Om een toetscombinatie te blokkeren zijn ze allebei nodig.
+
+**macOS zegt dat de app van een onbekende ontwikkelaar komt.**
+pika-tools is ondertekend, maar niet door Apple notarieel bekrachtigd. Homebrew en het installatiescript regelen dit voor je. Heb je de dmg gebruikt, open dan **Systeeminstellingen › Privacy en beveiliging** en klik op **Toch openen**, of voer uit:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/pika-tools.app
+```
+
+**Werkt het op Macs met Intel?**
+Ja. Het is een universele app voor Apple Silicon en Intel, voor macOS 14 Sonoma of nieuwer.
+
+**De toestemming staat aan, maar niets werkt.**
+Verwijder pika-tools in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Op de pagina Toestemmingen in de instellingen van pika-tools staan knoppen die de juiste plek openen.
+
+## Bijdragen
+
+Hoe je de app vanuit de broncode bouwt en uitbrengt, staat in [CONTRIBUTING.md](../../CONTRIBUTING.md). Wijzigingen staan in [CHANGELOG.md](../../CHANGELOG.md).
+
+## Licentie
+
+MIT, © 2026 pikapik. Zie [LICENSE](../../LICENSE).

@@ -1,6 +1,6 @@
 # pika-tools
 
-[Русский](README.ru.md)
+**English** · [Русский](docs/readme/README.ru.md) · [Українська](docs/readme/README.uk.md) · [Deutsch](docs/readme/README.de.md) · [Français](docs/readme/README.fr.md) · [Español](docs/readme/README.es.md) · [Italiano](docs/readme/README.it.md) · [Português (Brasil)](docs/readme/README.pt-BR.md) · [日本語](docs/readme/README.ja.md) · [简体中文](docs/readme/README.zh-Hans.md) · [한국어](docs/readme/README.ko.md) · [Română](docs/readme/README.ro.md) · [Polski](docs/readme/README.pl.md) · [Türkçe](docs/readme/README.tr.md) · [Nederlands](docs/readme/README.nl.md) · [Svenska](docs/readme/README.sv.md) · [Čeština](docs/readme/README.cs.md) · [繁體中文](docs/readme/README.zh-Hant.md) · [العربية](docs/readme/README.ar.md) · [हिन्दी](docs/readme/README.hi.md) · [Bahasa Indonesia](docs/readme/README.id.md) · [Tiếng Việt](docs/readme/README.vi.md) · [ไทย](docs/readme/README.th.md)
 
 [![Latest release](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
 ![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
@@ -44,7 +44,7 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
-**Switch language with Option+Shift.** Hold Option and tap Shift: macOS moves to the next input source. Keep holding Option and tap Shift again to go further. Hold Shift and tap Option to go back. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
+**Switch language with Option+Shift.** Hold Option and tap Shift: macOS moves to the next input source. Keep holding Option and tap Shift again to go further. Hold Shift and tap Option to go back. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. Off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
@@ -54,7 +54,7 @@ Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C b
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
-The app follows your system language or the one you pick in Settings: English, Russian, Ukrainian, German, French, Spanish, Italian, Portuguese (Brazil), Japanese, Chinese (Simplified) and Korean.
+The app follows your system language or the one you pick in Settings. It is available in all 23 languages listed at the top of this page.
 
 ## Keep Awake
 
@@ -75,7 +75,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools ag
 
 ## Updates
 
-pika-tools checks for new versions at launch and every 6 hours. You can turn that off in Settings › General. When one is out, an **Update to …** button appears in the menu: one click and the app downloads the update, installs it and restarts. You can also check by hand with **Check** at the bottom of the menu.
+pika-tools checks for new versions at launch and every 6 hours. You can turn that off in Settings › General. When one is out, an **Update to …** button appears in the menu: one click and the app downloads the update, installs it and restarts. You can also check by hand with **Check Now** in Settings › General.
 
 With Homebrew you can also run `brew upgrade --cask pika-tools`.
 
@@ -107,7 +107,7 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 Yes. It's a universal app for Apple Silicon and Intel, macOS 14 Sonoma or later.
 
 **The permission is on, but nothing works.**
-Remove pika-tools from both lists with the − button, then choose **Check Permissions** in the menu and turn them on again.
+In **System Settings › Privacy & Security**, remove pika-tools from both lists with the − button, then add it again. The Permissions page in pika-tools Settings has buttons that open the right place.
 
 ## Contributing
 

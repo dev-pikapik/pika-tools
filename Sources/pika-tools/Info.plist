@@ -24,9 +24,21 @@
 		<string>es</string>
 		<string>it</string>
 		<string>pt-BR</string>
+		<string>nl</string>
+		<string>sv</string>
+		<string>pl</string>
+		<string>cs</string>
+		<string>ro</string>
+		<string>tr</string>
 		<string>ja</string>
 		<string>zh-Hans</string>
+		<string>zh-Hant</string>
 		<string>ko</string>
+		<string>ar</string>
+		<string>hi</string>
+		<string>th</string>
+		<string>vi</string>
+		<string>id</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>pika-tools</string>

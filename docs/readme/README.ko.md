@@ -1,0 +1,118 @@
+# pika-tools
+
+[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · **한국어** · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
+
+[![최신 릴리스](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
+[![라이선스: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
+[![다운로드](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
+
+키, 윈도우, Dock을 더 편하게 만들어 주는 작은 macOS 메뉴 막대 앱입니다. Control 단축키를 막고, ⌘Q와 ⌘W 실수를 방지하고, Windows의 Alt+Shift처럼 Option+Shift로 언어를 전환하고, 마지막 윈도우를 닫으면 앱을 종료하고, Dock을 클릭하면 앱을 가리고, Mac이 잠자기에 들어가지 않게 해 줍니다.
+
+## 설치
+
+[Homebrew](https://brew.sh)를 사용하는 경우:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+```
+
+Homebrew 없이 설치하려면 터미널을 열고 다음 줄을 붙여 넣은 후 Return 키를 누르십시오:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
+```
+
+또는 [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg)를 다운로드하여 열고 앱을 응용 프로그램 폴더로 드래그하십시오.
+
+Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 권한을 요청하고, ‘로그인 시 열기’를 켭니다. 그 후에는 앱이 스스로 업데이트됩니다. [업데이트](#업데이트)를 참고하십시오. 제거하려면 [제거](#제거)를 참고하십시오.
+
+## 처음 실행할 때
+
+pika-tools에는 두 가지 권한이 필요합니다. 처음 실행하면 설정의 ‘권한’ 페이지가 열려 단계별로 안내하고, macOS도 자체 요청을 표시합니다. **시스템 설정 › 개인정보 보호 및 보안**으로 이동하여 다음 항목에서 pika-tools를 켜십시오:
+
+- **손쉬운 사용**: 키 입력이나 클릭이 다른 앱에 전달되기 전에 앱이 이를 바꿀 수 있도록 합니다.
+- **입력 모니터링**: 앱이 키 입력과 클릭을 볼 수 있도록 합니다.
+
+변경 사항은 몇 초 안에 반영되며, 다시 시작할 필요가 없습니다.
+
+pika-tools는 입력하거나 클릭한 내용을 기록하거나 저장하거나 전송하지 않습니다. 이벤트는 메모리에서만 처리되어 바로 전달됩니다. 유일한 네트워크 요청은 GitHub에 최신 릴리스를 묻는 업데이트 확인입니다.
+
+## 기능
+
+**Control 단축키 차단.** Control이 일반 키가 됩니다. 앱은 여전히 Control이 눌린 것을 알 수 있지만, macOS가 더 이상 이를 단축키로 처리하지 않습니다. Control+스페이스 바로 입력 소스가 바뀌지 않고, Control+화살표로 데스크탑이 전환되지 않으며, Control-클릭은 콘텍스트 메뉴 대신 일반 클릭이 됩니다. 오른쪽 클릭과 두 손가락 탭은 평소처럼 작동합니다. Control에 따로 역할이 있는 게임이나 원격 데스크탑에서 유용합니다.
+
+**⌘Q와 ⌘W 보호.** ⌘Q와 ⌘W만 눌러서는 아무 일도 일어나지 않으므로 실수로 앱을 종료하거나 윈도우를 닫지 않습니다. 의도적으로 하려면 Shift를 함께 누르십시오. ⇧⌘Q는 종료, ⇧⌘W는 닫기입니다. 모든 앱에서 작동합니다. 키마다 별도의 스위치가 있습니다. 기본값은 꺼짐입니다.
+
+**Option+Shift로 언어 전환.** Option을 누른 채 Shift를 누르면 macOS가 다음 입력 소스로 전환합니다. Option을 계속 누른 채 Shift를 다시 누르면 그다음으로 넘어갑니다. Shift를 누른 채 Option을 누르면 이전으로 돌아갑니다. 중간에 다른 키를 누르거나, 클릭하거나, Command, Control, Fn을 함께 누르면 전환되지 않으므로 Option+Shift+화살표 같은 단축키는 이전처럼 작동합니다. 기본값은 꺼짐입니다.
+
+**마지막 윈도우를 닫으면 종료.** 앱의 마지막 윈도우를 닫으면 Windows에서처럼 앱이 종료됩니다. Finder는 계속 열려 있고, 다른 데스크탑이나 Dock에 윈도우가 있는 앱도 종료되지 않습니다. 이 방식으로 절대 종료되지 않아야 할 앱 목록을 만들 수 있습니다. 기본값은 꺼짐입니다.
+
+**Dock 클릭으로 가리기.** 사용 중인 앱의 Dock 아이콘을 클릭하면 앱이 가려집니다. 다시 클릭하면 돌아옵니다. 기본값은 꺼짐입니다.
+
+각 도구에는 메뉴와 설정에 별도의 스위치가 있습니다. 일반 Control+C가 다시 필요하다면 해당 도구를 끄십시오.
+
+메뉴 막대 아이콘으로 상태를 한눈에 알 수 있습니다. 도구가 작동 중이면 클릭 표시가 있는 화살표, 모두 꺼져 있으면 사선이 그어진 화살표, 도구는 켜져 있지만 권한이 없으면 경고 삼각형이 표시됩니다.
+
+앱은 시스템 언어 또는 설정에서 선택한 언어로 표시됩니다. 이 페이지 맨 위에 있는 23개 언어를 모두 지원합니다.
+
+## 잠자기 방지
+
+키보드를 떠나 있는 동안 Mac이 잠자기에 들어가지 않게 합니다. 1분부터 12개월까지 원하는 시간 동안, 또는 직접 끌 때까지 유지됩니다. 메뉴에서 켜고, 설정에서 분, 시간, 일, 주, 월 단위로 기간을 지정하십시오. 메뉴에 남은 시간과 종료 시각이 표시됩니다. **디스플레이 켜두기**를 사용하면 화면도 어두워지지 않습니다. pika-tools를 종료하면 잠자기 방지도 끝납니다.
+
+MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macOS에는 이런 설정이 없기 때문에 pika-tools가 `pmset -a disablesleep 1`을 실행하고 관리자 암호를 요청합니다. Mac의 잠자기 방식은 관리자만 바꿀 수 있기 때문입니다. 이 설정은 잠자기 방지가 끝날 때, 앱을 종료할 때, 앱이 비정상적으로 종료될 때 자동으로 원래대로 돌아갑니다. 암호를 입력하지 않으면 아무것도 바뀌지 않습니다. 덮개를 닫은 상태에서는 Mac의 통풍에 신경 써 주십시오. **배터리가 20% 미만이면 중지**를 사용하면 배터리가 다 닳기 전에 세션이 끝납니다.
+
+## 설정
+
+메뉴에서 **설정…** 항목을 선택하거나 ⌘,를 눌러 설정을 여십시오. Finder, Launchpad, Spotlight에서 pika-tools를 다시 실행해도 열립니다. 윈도우가 열려 있는 동안에는 앱이 Dock과 ⌘Tab에 나타납니다.
+
+- **일반**: 로그인 시 열기, 모양(시스템, 라이트, 다크), 언어, 업데이트.
+- **키보드 및 마우스**: Control 단축키, ⌘Q와 ⌘W, 언어 전환.
+- **윈도우 및 앱**: 마지막 윈도우를 닫으면 종료(예외 목록 포함), Dock 클릭으로 가리기.
+- **잠자기 방지**: 기간, 디스플레이 및 덮개 옵션.
+- **권한**: 두 권한의 상태와 시스템 설정의 해당 위치를 여는 버튼.
+- **정보**: 버전, 변경 기록 링크, 문제 신고 링크.
+
+## 업데이트
+
+pika-tools는 실행할 때와 6시간마다 새 버전을 확인합니다. 설정 › 일반에서 이 기능을 끌 수 있습니다. 새 버전이 나오면 메뉴에 **… (으)로 업데이트** 버튼이 나타납니다. 한 번 클릭하면 앱이 업데이트를 다운로드하고 설치한 후 다시 시작합니다. 설정 › 일반의 **지금 확인**으로 직접 확인할 수도 있습니다.
+
+Homebrew를 사용한다면 `brew upgrade --cask pika-tools`를 실행해도 됩니다.
+
+1.3 버전부터는 업데이트 후에도 권한이 그대로 유지됩니다.
+
+## 제거
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
+```
+
+Homebrew로 설치했다면: `brew uninstall --cask --zap pika-tools`.
+
+두 방법 모두 앱을 종료하고 로그인 항목에서 제거한 후 삭제합니다. 스크립트는 권한도 재설정합니다.
+
+## 자주 묻는 질문
+
+**왜 권한이 두 개나 필요한가요?**
+macOS는 키보드와 마우스에 대한 접근을 둘로 나눕니다. 입력 모니터링은 앱이 이벤트를 볼 수 있게 하고, 손쉬운 사용은 이벤트를 바꿀 수 있게 합니다. 단축키를 차단하려면 둘 다 필요합니다.
+
+**macOS에서 확인되지 않은 개발자의 앱이라고 표시됩니다.**
+pika-tools는 서명되어 있지만 Apple의 공증은 받지 않았습니다. Homebrew와 설치 스크립트가 이 문제를 알아서 처리합니다. dmg를 사용했다면 **시스템 설정 › 개인정보 보호 및 보안**을 열고 **그래도 열기**를 클릭하거나, 다음을 실행하십시오:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/pika-tools.app
+```
+
+**Intel 기반 Mac에서도 작동하나요?**
+네. Apple 실리콘과 Intel을 모두 지원하는 유니버설 앱이며, macOS 14 Sonoma 이상에서 작동합니다.
+
+**권한을 켰는데 아무것도 작동하지 않습니다.**
+**시스템 설정 › 개인정보 보호 및 보안**에서 − 버튼으로 두 목록 모두에서 pika-tools를 제거한 다음 다시 추가하십시오. pika-tools 설정의 ‘권한’ 페이지에 해당 위치를 바로 여는 버튼이 있습니다.
+
+## 기여하기
+
+소스에서 빌드하고 릴리스하는 방법은 [CONTRIBUTING.md](../../CONTRIBUTING.md)에 있습니다. 변경 사항은 [CHANGELOG.md](../../CHANGELOG.md)에 정리되어 있습니다.
+
+## 라이선스
+
+MIT, © 2026 pikapik. [LICENSE](../../LICENSE)를 참고하십시오.

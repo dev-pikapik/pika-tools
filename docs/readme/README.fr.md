@@ -1,0 +1,118 @@
+# pika-tools
+
+[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · **Français** · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
+
+[![Dernière version](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
+[![Licence : MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
+[![Téléchargements](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
+
+Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle bloque les raccourcis Contrôle, protège ⌘Q et ⌘W, change de langue avec Option+Maj comme Alt+Maj sous Windows, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
+
+## Installation
+
+Avec [Homebrew](https://brew.sh) :
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+```
+
+Sans Homebrew, ouvrez Terminal, collez cette ligne et appuyez sur Retour :
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
+```
+
+Ou téléchargez [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), ouvrez-le et faites glisser l’app dans le dossier Applications.
+
+Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent, demandent les autorisations et activent l’ouverture à la connexion. Ensuite, l’app se met à jour toute seule, voir [Mises à jour](#mises-à-jour). Pour la supprimer, voir [Désinstallation](#désinstallation).
+
+## Premier lancement
+
+pika-tools a besoin de deux autorisations. Au premier lancement, elle ouvre les réglages sur la page Autorisations, qui vous guide pas à pas, et macOS affiche ses propres demandes. Allez dans **Réglages Système › Confidentialité et sécurité** et activez pika-tools dans :
+
+- **Accessibilité**, pour que l’app puisse modifier une frappe ou un clic avant qu’il n’atteigne les autres apps.
+- **Surveillance de l’entrée**, pour que l’app puisse tout simplement voir les frappes et les clics.
+
+L’app détecte le changement en une ou deux secondes, sans redémarrage.
+
+pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. La seule requête réseau est la recherche de mises à jour, qui demande à GitHub la dernière version.
+
+## Fonctionnalités
+
+**Bloquer les raccourcis Contrôle.** Contrôle devient une touche ordinaire. Les apps voient toujours qu’elle est enfoncée, mais macOS ne la transforme plus en raccourcis : Contrôle+Espace ne change plus de source de saisie, Contrôle+flèches ne change plus de bureau, et Contrôle-clic devient un clic normal au lieu d’ouvrir un menu contextuel. Le clic droit et le toucher à deux doigts fonctionnent comme d’habitude. Pratique dans les jeux et les sessions de bureau à distance, où Contrôle a son propre rôle.
+
+**Protéger ⌘Q et ⌘W.** ⌘Q et ⌘W seuls ne font rien, vous ne quittez donc pas une app ni ne fermez une fenêtre par accident. Ajoutez Maj pour le faire exprès : ⇧⌘Q quitte, ⇧⌘W ferme. Fonctionne dans toutes les apps. Chaque touche a son propre interrupteur. Désactivé par défaut.
+
+**Changer de langue avec Option+Maj.** Maintenez Option et touchez Maj : macOS passe à la source de saisie suivante. Gardez Option enfoncée et touchez de nouveau Maj pour continuer. Maintenez Maj et touchez Option pour revenir en arrière. Si vous appuyez entre-temps sur une autre touche, cliquez ou ajoutez Commande, Contrôle ou Fn, rien ne change, donc les raccourcis comme Option+Maj+flèche fonctionnent comme avant. Désactivé par défaut.
+
+**Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme, comme sous Windows. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
+
+**Masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et elle se masque. Cliquez de nouveau pour la faire revenir. Désactivé par défaut.
+
+Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoin de retrouver un Contrôle+C normal ? Désactivez cet outil.
+
+L’icône dans la barre des menus montre l’état d’un coup d’œil : une flèche avec un clic quand les outils fonctionnent, une flèche barrée quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
+
+L’app suit la langue du système ou celle que vous choisissez dans les réglages. Les 23 langues de la liste en haut de cette page sont toutes disponibles.
+
+## Rester éveillé
+
+Empêche votre Mac de se mettre en veille pendant que vous n’êtes pas devant le clavier : pour n’importe quelle durée de 1 minute à 12 mois, ou jusqu’à ce que vous le désactiviez. Activez-le depuis le menu et réglez la durée dans les réglages en minutes, heures, jours, semaines ou mois. Le menu indique le temps restant et l’heure de fin. **Garder l’écran allumé** empêche aussi l’écran de s’assombrir. Quitter pika-tools met fin à Rester éveillé.
+
+Sur un MacBook, vous pouvez aussi activer **Fonctionner écran rabattu**. macOS n’a pas de réglage pour cela, donc pika-tools exécute `pmset -a disablesleep 1` et demande un mot de passe administrateur : seul un administrateur peut modifier la mise en veille du Mac. Le réglage revient à la normale tout seul quand Rester éveillé se termine, quand vous quittez l’app ou si elle plante. Si vous ne saisissez pas le mot de passe, rien ne change. Veillez à ce que le Mac reste bien ventilé écran rabattu. **Arrêter sous 20 % de batterie** met fin à la session avant que la batterie ne soit vide.
+
+## Réglages
+
+Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez simplement pika-tools depuis le Finder, Launchpad ou Spotlight. Tant que la fenêtre est ouverte, l’app apparaît dans le Dock et dans ⌘Tab.
+
+- **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue et mises à jour.
+- **Clavier et souris** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
+- **Fenêtres et apps** : quitter à la dernière fenêtre, avec une liste d’exceptions, et masquer d’un clic dans le Dock.
+- **Rester éveillé** : durée, options d’écran et de capot.
+- **Autorisations** : l’état des deux autorisations, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
+- **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
+
+## Mises à jour
+
+pika-tools recherche les nouvelles versions au lancement et toutes les 6 heures. Vous pouvez désactiver cela dans Réglages › Général. Quand une nouvelle version sort, un bouton **Mettre à jour vers …** apparaît dans le menu : un clic, et l’app télécharge la mise à jour, l’installe et redémarre. Vous pouvez aussi vérifier vous-même avec **Rechercher** dans Réglages › Général.
+
+Avec Homebrew, vous pouvez aussi lancer `brew upgrade --cask pika-tools`.
+
+Depuis la version 1.3, les autorisations sont conservées après les mises à jour.
+
+## Désinstallation
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
+```
+
+Si vous avez installé avec Homebrew : `brew uninstall --cask --zap pika-tools`.
+
+Les deux quittent l’app, la retirent des éléments d’ouverture et la suppriment. Le script réinitialise aussi ses autorisations.
+
+## Questions fréquentes
+
+**Pourquoi faut-il deux autorisations ?**
+macOS sépare l’accès au clavier et à la souris en deux. La surveillance de l’entrée permet à l’app de voir les évènements, l’accessibilité lui permet de les modifier. Pour bloquer un raccourci, il faut les deux.
+
+**macOS indique que l’app provient d’un développeur non identifié.**
+pika-tools est signée, mais pas notarisée par Apple. Homebrew et le script d’installation s’en chargent pour vous. Si vous avez utilisé le dmg, ouvrez **Réglages Système › Confidentialité et sécurité** et cliquez sur **Ouvrir quand même**, ou exécutez :
+
+```bash
+xattr -dr com.apple.quarantine /Applications/pika-tools.app
+```
+
+**Fonctionne-t-elle sur les Mac Intel ?**
+Oui. C’est une app universelle pour Apple Silicon et Intel, à partir de macOS 14 Sonoma.
+
+**L’autorisation est activée, mais rien ne fonctionne.**
+Dans **Réglages Système › Confidentialité et sécurité**, retirez pika-tools des deux listes avec le bouton −, puis ajoutez-la de nouveau. La page Autorisations des réglages de pika-tools a des boutons qui ouvrent le bon endroit.
+
+## Contribuer
+
+La compilation depuis les sources et la publication sont décrites dans [CONTRIBUTING.md](../../CONTRIBUTING.md). Les changements sont listés dans [CHANGELOG.md](../../CHANGELOG.md).
+
+## Licence
+
+MIT, © 2026 pikapik. Voir [LICENSE](../../LICENSE).
