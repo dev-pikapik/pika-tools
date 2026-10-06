@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Kan niet controleren op updates";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Kan niet schrijven naar de map van de app. Werk bij met brew of install.sh";
 "Download failed. Try again later" = "Downloaden mislukt. Probeer het later opnieuw";
-"Block ⌃ Control shortcuts" = "Blokkeer ⌃ Control-toetscombinaties";
+"Block ⌃ Control shortcuts" = "Blokkeer ⌃ Control-toetscombinaties";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ werkt als gewone toets: geen toetscombinaties, geen ⌃-klikmenu";
 "Switch language with ⌥⇧" = "Wissel van taal met ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Houd ⌥ ingedrukt en tik op ⇧: volgende taal. Houd ⇧ ingedrukt en tik op ⌥: vorige";
@@ -118,7 +118,7 @@
 "Mouse" = "Muis";
 "Fixes for the mouse. Each one works on its own." = "Verbeteringen voor de muis. Elk werkt op zichzelf.";
 "Turn off pointer acceleration" = "Aanwijzerversnelling uitschakelen";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "De aanwijzer gaat net zo ver als je hand, hoe snel je ook beweegt. Alleen voor muizen, niet voor het trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "De aanwijzer gaat net zo ver als je hand, hoe snel je ook beweegt. Alleen voor muizen.";
 "Tracking speed" = "Snelheid aanwijzer";
 "Works while acceleration is off" = "Werkt als versnelling uit staat";
 "Slow" = "Traag";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "‘Wakker houden’ wordt uitgeschakeld en de duur en opties worden weer zoals ze waren.";
 "pika-tools will check for updates automatically again." = "pika-tools controleert weer automatisch op updates.";
 "Scroll by lines" = "Per regel scrollen";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Elke klik van het wieltje scrolt even ver, hoe snel je ook draait. Regels passen bij de meeste apps. Pixels zijn voor apps en games die scrollen in exacte pixels tellen. Alleen voor muizen, niet voor het trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Elke klik van het wiel scrolt even ver, hoe snel je ook draait. Alleen voor muizen.";
 "Lines per wheel click" = "Regels per klik van het wieltje";
 "Works while scrolling by lines is on" = "Werkt als scrollen per regel aan staat";
 "Scroll by" = "Scrollen per";
+"Lines suit most apps. Pixels suit games." = "Regels passen bij de meeste apps. Pixels passen bij games.";
 "Lines" = "Regels";
 "Pixels" = "Pixels";
 "Pixels per wheel click" = "Pixels per klik van het wieltje";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Dit bestand kan niet worden geïmporteerd";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Het is geen instellingenbestand van pika-tools, of het is beschadigd.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Hiermee kan de app je instellingen in iCloud Drive bewaren om ze te synchroniseren";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Knoppen 4 en 5 gaan terug en vooruit in Safari, de Finder en andere apps, net als vegen op het trackpad";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Muisknoppen 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.";
 "Repeat a held key" = "Ingedrukte toets herhalen";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Houd een toets ingedrukt om hem steeds opnieuw te typen, zoals in Windows, in plaats van het accentmenu. Open apps nemen dit over na een herstart.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Een ingedrukte toets herhaalt zich in plaats van het accentmenu te openen. Start open apps opnieuw op om het toe te passen.";
 "key repeat, hold, accent menu, games, typing" = "toetsherhaling, ingedrukt houden, accentmenu, games, typen";
 "New File in Finder" = "Nieuw bestand in de Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klik met rechts in de Finder of op het bureaublad › Nieuw bestand en typ een naam. Standaard .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Maak in Opdrachten een opdracht met de actie ‘Open URL’s’ en plak een link. Voeg die daarna toe aan het Bedieningscentrum, de menubalk of een Opdrachten-widget op het bureaublad. Elke tik zet het aan of uit.";
 "Customize…" = "Aanpassen…";
 "Done" = "Gereed";
+"Choose what this menu shows" = "Kies wat dit menu toont";

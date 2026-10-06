@@ -66,7 +66,7 @@ Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C b
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
-You can choose which rows the menu bar panel shows: click **Customize…**, untick what you don't need and click **Done**. Hidden rows keep working and stay in Settings. If the panel doesn't fit the screen, it scrolls.
+The menu bar panel starts with just a few rows. You choose which ones it shows: click the pencil button at the bottom, tick what you want to see and click **Done**. Hidden rows keep working and stay in Settings. If the panel doesn't fit the screen, it scrolls.
 
 The app follows your system language or the one you pick in Settings. It is available in all 23 languages listed at the top of this page.
 

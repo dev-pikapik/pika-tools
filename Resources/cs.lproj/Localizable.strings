@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Aktualizace se nepodařilo zkontrolovat";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Do složky aplikace nelze zapisovat. Aktualizujte přes brew nebo install.sh";
 "Download failed. Try again later" = "Stahování se nezdařilo. Zkuste to později";
-"Block ⌃ Control shortcuts" = "Blokovat zkratky s ⌃ Control";
+"Block ⌃ Control shortcuts" = "Blokovat zkratky s ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funguje jako obyčejná klávesa: žádné zkratky, žádná nabídka po ⌃-kliknutí";
 "Switch language with ⌥⇧" = "Přepínat jazyk pomocí ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Podržte ⌥ a stiskněte ⇧: další jazyk. Podržte ⇧ a stiskněte ⌥: předchozí";
@@ -118,7 +118,7 @@
 "Mouse" = "Myš";
 "Fixes for the mouse. Each one works on its own." = "Opravy pro myš. Každá funguje samostatně.";
 "Turn off pointer acceleration" = "Vypnout zrychlení ukazatele";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Ukazatel urazí stejnou vzdálenost jako vaše ruka, ať pohybujete jakkoli rychle. Jen pro myši, ne pro trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Ukazatel urazí stejnou vzdálenost jako ruka, ať se hýbe jakkoli rychle. Jen pro myši.";
 "Tracking speed" = "Rychlost ukazatele";
 "Works while acceleration is off" = "Funguje, když je zrychlení vypnuté";
 "Slow" = "Pomalu";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "„Bez spánku“ se vypne a doba trvání i volby se vrátí do původního stavu.";
 "pika-tools will check for updates automatically again." = "pika-tools bude opět automaticky vyhledávat aktualizace.";
 "Scroll by lines" = "Posouvat po řádcích";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Každé cvaknutí kolečka posune o stejnou vzdálenost, ať točíte jakkoli rychle. Řádky se hodí pro většinu aplikací. Pixely jsou pro aplikace a hry, které počítají posouvání v přesných pixelech. Jen pro myši, ne pro trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Každé cvaknutí kolečka posune o stejnou vzdálenost, ať točíte jakkoli rychle. Jen pro myši.";
 "Lines per wheel click" = "Řádků na cvaknutí kolečka";
 "Works while scrolling by lines is on" = "Funguje, když je zapnuté posouvání po řádcích";
 "Scroll by" = "Posouvat po";
+"Lines suit most apps. Pixels suit games." = "Řádky se hodí pro většinu aplikací, pixely pro hry.";
 "Lines" = "Řádcích";
 "Pixels" = "Pixelech";
 "Pixels per wheel click" = "Pixelů na cvaknutí kolečka";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Tento soubor nelze importovat";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Není to soubor nastavení pika-tools, nebo je poškozený.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Umožňuje aplikaci ukládat nastavení na iCloud Drive kvůli synchronizaci";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Tlačítka 4 a 5 jdou zpět a vpřed v Safari, Finderu a dalších aplikacích, jako přejetí po trackpadu";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Tlačítka myši 4 a 5 jdou zpět a vpřed, jako přejetí po trackpadu.";
 "Repeat a held key" = "Opakovat drženou klávesu";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Podrž klávesu a píše se znovu a znovu, jako ve Windows, místo nabídky akcentů. Otevřené aplikace to převezmou po restartu.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Podržení klávesy ji opakuje místo nabídky akcentů. Otevřené aplikace restartujte, aby se změna projevila.";
 "key repeat, hold, accent menu, games, typing" = "opakování kláves, podržení, nabídka akcentů, hry, psaní";
 "New File in Finder" = "Nový soubor ve Finderu";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klikněte pravým ve Finderu nebo na ploše › Nový soubor a napište název. Standardně .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "V aplikaci Zkratky vytvoř zkratku s akcí Otevřít adresy URL a vlož odkaz. Pak ji přidej do Ovládacího centra, do panelu nabídek nebo jako widget Zkratek na plochu. Každé klepnutí ji zapne nebo vypne.";
 "Customize…" = "Upravit…";
 "Done" = "Hotovo";
+"Choose what this menu shows" = "Vyberte, co tato nabídka zobrazuje";

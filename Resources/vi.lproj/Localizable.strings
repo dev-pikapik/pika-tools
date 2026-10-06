@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Không thể kiểm tra bản cập nhật";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Không thể ghi vào thư mục của ứng dụng. Hãy cập nhật bằng brew hoặc install.sh";
 "Download failed. Try again later" = "Tải về không thành công. Hãy thử lại sau";
-"Block ⌃ Control shortcuts" = "Chặn phím tắt ⌃ Control";
+"Block ⌃ Control shortcuts" = "Chặn phím tắt ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ hoạt động như phím thường: không có phím tắt, không có menu ⌃-bấm";
 "Switch language with ⌥⇧" = "Chuyển ngôn ngữ bằng ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Giữ ⌥ và nhấn ⇧: ngôn ngữ tiếp theo. Giữ ⇧ và nhấn ⌥: ngôn ngữ trước";
@@ -118,7 +118,7 @@
 "Mouse" = "Chuột";
 "Fixes for the mouse. Each one works on its own." = "Các cải tiến cho chuột. Mỗi mục hoạt động riêng.";
 "Turn off pointer acceleration" = "Tắt tăng tốc con trỏ";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Con trỏ di chuyển đúng bằng tay bạn, dù bạn di chuyển nhanh đến đâu. Chỉ dành cho chuột, không áp dụng cho bàn di chuột.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Con trỏ di chuyển đúng bằng tay bạn, dù nhanh hay chậm. Chỉ dành cho chuột.";
 "Tracking speed" = "Tốc độ di chuyển";
 "Works while acceleration is off" = "Có tác dụng khi tắt tăng tốc";
 "Slow" = "Chậm";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Giữ máy thức” sẽ tắt, thời lượng và tùy chọn sẽ trở lại như cũ.";
 "pika-tools will check for updates automatically again." = "pika-tools sẽ lại tự động kiểm tra bản cập nhật.";
 "Scroll by lines" = "Cuộn theo dòng";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Mỗi lần bấm bánh xe cuộn cùng một khoảng, dù bạn xoay nhanh đến đâu. Dòng hợp với hầu hết ứng dụng. Pixel dành cho ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chính xác. Chỉ dành cho chuột, không cho bàn di chuột.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Mỗi lần lăn con lăn cuộn cùng một quãng, dù nhanh hay chậm. Chỉ dành cho chuột.";
 "Lines per wheel click" = "Số dòng mỗi lần bấm bánh xe";
 "Works while scrolling by lines is on" = "Hoạt động khi bật cuộn theo dòng";
 "Scroll by" = "Cuộn theo";
+"Lines suit most apps. Pixels suit games." = "Dòng phù hợp với hầu hết app. Pixel phù hợp với game.";
 "Lines" = "Dòng";
 "Pixels" = "Pixel";
 "Pixels per wheel click" = "Số pixel mỗi lần bấm bánh xe";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Không thể nhập tệp này";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Đây không phải tệp cài đặt của pika-tools hoặc tệp đã bị hỏng.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Cho phép ứng dụng giữ cài đặt của bạn trong iCloud Drive để đồng bộ hóa";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Nút 4 và 5 quay lại và đi tiếp trong Safari, Finder và các ứng dụng khác, giống như vuốt trên bàn di chuột";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Nút chuột 4 và 5 để quay lại và đi tiếp, giống như vuốt trên bàn di chuột.";
 "Repeat a held key" = "Lặp lại phím khi giữ";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Giữ phím để gõ lặp lại liên tục như trên Windows, thay vì hiện menu dấu. Các app đang mở sẽ áp dụng sau khi khởi động lại.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Giữ một phím sẽ lặp lại phím đó thay vì mở menu dấu. Khởi động lại các app đang mở để áp dụng.";
 "key repeat, hold, accent menu, games, typing" = "lặp phím, giữ phím, menu dấu, trò chơi, gõ phím";
 "New File in Finder" = "Tệp mới trong Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Bấm chuột phải trong Finder hoặc trên màn hình nền › Tệp mới, rồi nhập tên. Mặc định là .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Trong Phím tắt, hãy tạo một phím tắt với tác vụ Mở URL rồi dán liên kết vào. Sau đó thêm nó vào Trung tâm điều khiển, thanh menu hoặc widget Phím tắt trên màn hình nền. Mỗi lần chạm sẽ bật hoặc tắt.";
 "Customize…" = "Tùy chỉnh…";
 "Done" = "Xong";
+"Choose what this menu shows" = "Chọn nội dung menu này hiển thị";

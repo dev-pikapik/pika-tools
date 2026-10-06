@@ -118,7 +118,7 @@
 "Mouse" = "माउस";
 "Fixes for the mouse. Each one works on its own." = "माउस के लिए सुधार। हर एक अलग से काम करता है।";
 "Turn off pointer acceleration" = "पॉइंटर ऐक्सलरेशन बंद करें";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "माउस कितनी भी तेज़ी से चलाएँ, पॉइंटर उतना ही चलता है जितना आपका हाथ। सिर्फ़ माउस के लिए, ट्रैकपैड के लिए नहीं।";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "पॉइंटर उतना ही चलता है जितना आपका हाथ, चाहे जिस गति से चलाएँ। सिर्फ़ माउस के लिए।";
 "Tracking speed" = "ट्रैकिंग गति";
 "Works while acceleration is off" = "ऐक्सलरेशन बंद होने पर काम करता है";
 "Slow" = "धीमा";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“जगाए रखें” बंद हो जाएगा, और अवधि व विकल्प पहले जैसे हो जाएँगे।";
 "pika-tools will check for updates automatically again." = "pika-tools फिर से अपने आप अपडेट की जाँच करेगा।";
 "Scroll by lines" = "पंक्तियों के हिसाब से स्क्रोल करें";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "व्हील का हर क्लिक उतनी ही दूरी स्क्रॉल करता है, चाहे आप उसे कितनी भी तेज़ी से घुमाएँ। पंक्तियाँ ज़्यादातर ऐप्स के लिए ठीक हैं। पिक्सेल उन ऐप्स और गेम्स के लिए हैं जो स्क्रॉल को सटीक पिक्सेल में गिनते हैं। सिर्फ़ माउस के लिए, ट्रैकपैड के लिए नहीं।";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "व्हील का हर क्लिक उतनी ही दूरी तक स्क्रॉल करता है, चाहे किसी भी गति से घुमाएँ। सिर्फ़ माउस के लिए।";
 "Lines per wheel click" = "हर व्हील क्लिक पर पंक्तियाँ";
 "Works while scrolling by lines is on" = "पंक्तियों के हिसाब से स्क्रोलिंग चालू होने पर काम करता है";
 "Scroll by" = "स्क्रॉल की इकाई";
+"Lines suit most apps. Pixels suit games." = "ज़्यादातर ऐप्स के लिए पंक्तियाँ सही हैं। गेम के लिए पिक्सेल सही हैं।";
 "Lines" = "पंक्तियाँ";
 "Pixels" = "पिक्सेल";
 "Pixels per wheel click" = "हर व्हील क्लिक पर पिक्सेल";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "यह फ़ाइल इंपोर्ट नहीं की जा सकती";
 "It isn’t a pika-tools settings file, or it’s damaged." = "यह pika-tools सेटिंग्ज़ फ़ाइल नहीं है, या ख़राब है।";
 "Lets the app keep your settings in iCloud Drive to sync them" = "ऐप को सिंक करने के लिए आपकी सेटिंग्ज़ iCloud Drive में रखने देता है";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "बटन 4 और 5 Safari, Finder और दूसरी ऐप्स में पीछे और आगे जाते हैं, ट्रैकपैड पर स्वाइप की तरह";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "माउस के बटन 4 और 5 पीछे और आगे जाते हैं, ट्रैकपैड पर स्वाइप की तरह।";
 "Repeat a held key" = "दबाए रखने पर कुंजी दोहराएं";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "कुंजी दबाए रखें तो वह Windows की तरह बार-बार टाइप होगी, एक्सेंट मेनू की जगह। खुले ऐप्स इसे रीस्टार्ट के बाद अपनाएंगे।";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "कुंजी दबाए रखने पर वह एक्सेंट मेनू खोलने की जगह बार-बार टाइप होती है। लागू करने के लिए खुले ऐप्स को रीस्टार्ट करें।";
 "key repeat, hold, accent menu, games, typing" = "की रिपीट, दबाए रखना, एक्सेंट मेनू, गेम, टाइपिंग";
 "New File in Finder" = "Finder में नई फ़ाइल";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder या डेस्कटॉप पर राइट-क्लिक करें › नई फ़ाइल, फिर नाम लिखें। डिफ़ॉल्ट रूप से .txt।";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "शॉर्टकट में “URL खोलें” ऐक्शन वाला एक शॉर्टकट बनाएँ और उसमें लिंक पेस्ट करें। फिर उसे कंट्रोल सेंटर, मेन्यू बार या डेस्कटॉप पर शॉर्टकट विजेट में जोड़ें। हर टैप इसे चालू या बंद कर देता है।";
 "Customize…" = "अनुकूलित करें…";
 "Done" = "पूर्ण";
+"Choose what this menu shows" = "चुनें कि यह मेनू क्या दिखाए";

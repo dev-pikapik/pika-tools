@@ -118,7 +118,7 @@
 "Mouse" = "Souris";
 "Fixes for the mouse. Each one works on its own." = "Correctifs pour la souris. Chacun s’active séparément.";
 "Turn off pointer acceleration" = "Désactiver l’accélération du pointeur";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Le pointeur se déplace autant que votre main, quelle que soit la vitesse. Uniquement pour les souris, pas le trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Le pointeur va aussi loin que ta main, quelle que soit la vitesse. Souris uniquement.";
 "Tracking speed" = "Vitesse de déplacement";
 "Works while acceleration is off" = "Fonctionne quand l’accélération est désactivée";
 "Slow" = "Lente";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "« Rester éveillé » sera désactivé, et la durée et les options reviendront à leur état initial.";
 "pika-tools will check for updates automatically again." = "pika-tools recherchera à nouveau automatiquement les mises à jour.";
 "Scroll by lines" = "Défiler par lignes";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Chaque cran de la molette fait défiler la même distance, quelle que soit la vitesse. Les lignes conviennent à la plupart des apps. Les pixels servent aux apps et aux jeux qui comptent le défilement en pixels exacts. Uniquement pour les souris, pas pour le trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Chaque cran de la molette fait défiler la même distance, quelle que soit la vitesse. Souris uniquement.";
 "Lines per wheel click" = "Lignes par cran de molette";
 "Works while scrolling by lines is on" = "Fonctionne lorsque le défilement par lignes est activé";
 "Scroll by" = "Défiler par";
+"Lines suit most apps. Pixels suit games." = "Les lignes conviennent à la plupart des apps. Les pixels, aux jeux.";
 "Lines" = "Lignes";
 "Pixels" = "Pixels";
 "Pixels per wheel click" = "Pixels par cran de molette";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Ce fichier ne peut pas être importé";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Ce n’est pas un fichier de réglages pika-tools, ou il est endommagé.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Permet à l’app de garder vos réglages dans iCloud Drive pour les synchroniser";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Les boutons 4 et 5 reviennent en arrière et avancent dans Safari, le Finder et d’autres apps, comme un balayage sur le trackpad";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Les boutons 4 et 5 de la souris font reculer et avancer, comme un balayage sur le trackpad.";
 "Repeat a held key" = "Répéter une touche maintenue";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Maintiens une touche pour la taper encore et encore, comme sous Windows, au lieu du menu des accents. Les apps ouvertes en tiennent compte après un redémarrage.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Maintenir une touche la répète au lieu d’ouvrir le menu des accents. Redémarre les apps ouvertes pour l’appliquer.";
 "key repeat, hold, accent menu, games, typing" = "répétition des touches, maintenir, menu des accents, jeux, saisie";
 "New File in Finder" = "Nouveau fichier dans le Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic droit dans le Finder ou sur le bureau › Nouveau fichier, puis tapez un nom. En .txt par défaut.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Dans Raccourcis, crée un raccourci avec l’action « Ouvrir les URL » et colle un lien. Ajoute-le ensuite au Centre de contrôle, à la barre des menus ou à un widget Raccourcis sur le bureau. Chaque appui l’active ou le désactive.";
 "Customize…" = "Personnaliser…";
 "Done" = "Terminé";
+"Choose what this menu shows" = "Choisis ce que ce menu affiche";

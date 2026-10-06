@@ -141,7 +141,7 @@ private struct SideButtonsSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad"),
+            subtitle: Text("Mouse buttons 4 and 5 go back and forward, like a trackpad swipe."),
             isOn: $tool.isEnabled
         )
         if inSettings {

@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Tidak dapat memeriksa pembaruan";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Tidak dapat menulis ke folder app. Perbarui dengan brew atau install.sh";
 "Download failed. Try again later" = "Unduhan gagal. Coba lagi nanti";
-"Block ⌃ Control shortcuts" = "Blokir pintasan ⌃ Control";
+"Block ⌃ Control shortcuts" = "Blokir pintasan ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ berfungsi sebagai tombol biasa: tanpa pintasan, tanpa menu ⌃-klik";
 "Switch language with ⌥⇧" = "Ganti bahasa dengan ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Tahan ⌥ dan ketuk ⇧: bahasa berikutnya. Tahan ⇧ dan ketuk ⌥: sebelumnya";
@@ -118,7 +118,7 @@
 "Mouse" = "Tetikus";
 "Fixes for the mouse. Each one works on its own." = "Perbaikan untuk tetikus. Masing-masing berfungsi sendiri.";
 "Turn off pointer acceleration" = "Matikan akselerasi penunjuk";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Penunjuk bergerak sejauh tangan Anda, secepat apa pun Anda bergerak. Hanya untuk tetikus, bukan trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Penunjuk bergerak sejauh tangan Anda, secepat apa pun. Hanya untuk tetikus.";
 "Tracking speed" = "Kecepatan melacak";
 "Works while acceleration is off" = "Berfungsi saat akselerasi mati";
 "Slow" = "Lambat";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Tetap Terjaga” akan mati, serta durasi dan pilihannya kembali seperti semula.";
 "pika-tools will check for updates automatically again." = "pika-tools akan kembali memeriksa pembaruan secara otomatis.";
 "Scroll by lines" = "Gulir per baris";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Setiap klik roda menggulir dengan jarak yang sama, secepat apa pun Anda memutarnya. Baris cocok untuk sebagian besar app. Piksel untuk app dan game yang menghitung guliran dalam piksel yang tepat. Hanya untuk mouse, bukan trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Setiap klik roda menggulir sejauh yang sama, secepat apa pun. Hanya untuk tetikus.";
 "Lines per wheel click" = "Baris per klik roda";
 "Works while scrolling by lines is on" = "Berfungsi saat pengguliran per baris aktif";
 "Scroll by" = "Gulir per";
+"Lines suit most apps. Pixels suit games." = "Baris cocok untuk sebagian besar app. Piksel cocok untuk game.";
 "Lines" = "Baris";
 "Pixels" = "Piksel";
 "Pixels per wheel click" = "Piksel per klik roda";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "File ini tidak dapat diimpor";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Ini bukan file pengaturan pika-tools, atau file rusak.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Memungkinkan app menyimpan pengaturan Anda di iCloud Drive untuk diselaraskan";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Tombol 4 dan 5 kembali dan maju di Safari, Finder, dan app lainnya, seperti gesek di trackpad";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Tombol tetikus 4 dan 5 untuk kembali dan maju, seperti gesek di trackpad.";
 "Repeat a held key" = "Ulangi tombol yang ditahan";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Tahan tombol untuk mengetiknya berulang kali, seperti di Windows, bukan menu aksen. App yang terbuka menerapkannya setelah dimulai ulang.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Menahan tombol akan mengulangnya, bukan membuka menu aksen. Mulai ulang app yang terbuka agar berlaku.";
 "key repeat, hold, accent menu, games, typing" = "pengulangan tombol, tahan, menu aksen, game, mengetik";
 "New File in Finder" = "File Baru di Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klik kanan di Finder atau di desktop › File Baru, lalu ketik nama. Bawaannya .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Di Pintasan, buat pintasan dengan tindakan Buka URL lalu tempel tautan. Setelah itu tambahkan ke Pusat Kontrol, bilah menu, atau widget Pintasan di desktop. Setiap ketukan menyalakan atau mematikannya.";
 "Customize…" = "Sesuaikan…";
 "Done" = "Selesai";
+"Choose what this menu shows" = "Pilih yang ditampilkan menu ini";

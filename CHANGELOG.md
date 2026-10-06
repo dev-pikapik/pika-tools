@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.0] - Unreleased
+
+### Changed
+- The menu bar panel is shorter and simpler. All rows sit in one card, each row is a single button without a switch, and descriptions show as a tooltip. Settings, Customize and Quit are now icon buttons.
+- The panel now starts with four rows: Block ⌃ Control shortcuts, Switch language with ⌥⇧, Turn off pointer acceleration and Keep Awake. Click the pencil button to show the others. If you had already customized the panel, nothing changes.
+- Keep Awake shows its timer in the panel only while it is on.
+- Shorter descriptions for Repeat a held key, pointer acceleration, Scroll by lines and Side buttons. Settings › Mouse now says when to use Lines and when Pixels.
+- Russian texts now address you politely and consistently.
+
 ## [1.14.1] - Unreleased
 
 ### Fixed

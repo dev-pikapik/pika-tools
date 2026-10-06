@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Не вдалося перевірити оновлення";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Немає прав на папку з програмою — онови через brew або install.sh";
 "Download failed. Try again later" = "Оновлення не завантажилося, спробуй пізніше";
-"Block ⌃ Control shortcuts" = "Блокувати комбінації з ⌃ Control";
+"Block ⌃ Control shortcuts" = "Блокувати комбінації з ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ працює як звичайна клавіша: без комбінацій і меню за ⌃-кліком";
 "Switch language with ⌥⇧" = "Зміна мови за ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Тримайте ⌥ і натискайте ⇧ — наступна мова. Тримайте ⇧ і натискайте ⌥ — попередня";
@@ -118,7 +118,7 @@
 "Mouse" = "Миша";
 "Fixes for the mouse. Each one works on its own." = "Покращення для миші. Кожне вмикається окремо.";
 "Turn off pointer acceleration" = "Вимкнути прискорення вказівника";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Вказівник проходить стільки ж, скільки рука, хоч як швидко рухай. Лише для миші, не для трекпеда.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Вказівник проходить стільки ж, скільки рука, з будь-якою швидкістю. Лише для миші.";
 "Tracking speed" = "Швидкість пересування";
 "Works while acceleration is off" = "Працює, коли прискорення вимкнено";
 "Slow" = "Повільно";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "«Не засинати» вимкнеться, а тривалість і параметри повернуться до початкових.";
 "pika-tools will check for updates automatically again." = "pika-tools знову сам перевірятиме оновлення.";
 "Scroll by lines" = "Прокручування рядками";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Кожне клацання коліщатка прокручує ту саму відстань, хоч як швидко ви його крутите. Рядки підходять більшості програм. Пікселі — для програм та ігор, які рахують прокручування в точних пікселях. Лише для мишей, не для трекпада.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Кожен клік колеса прокручує на ту саму відстань, з будь-якою швидкістю. Лише для миші.";
 "Lines per wheel click" = "Рядків за клацання коліщатка";
 "Works while scrolling by lines is on" = "Працює, коли ввімкнено прокручування рядками";
 "Scroll by" = "Прокручувати по";
+"Lines suit most apps. Pixels suit games." = "Рядки підходять більшості програм, пікселі — іграм.";
 "Lines" = "Рядках";
 "Pixels" = "Пікселях";
 "Pixels per wheel click" = "Пікселів за клацання коліщатка";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Цей файл не можна імпортувати";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Це не файл параметрів pika-tools, або його пошкоджено.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Дає змогу зберігати параметри в iCloud Drive для синхронізації";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Кнопки 4 і 5 переходять назад і вперед у Safari, Finder та інших програмах — як посування на трекпеді";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Кнопки миші 4 і 5 — назад і вперед, як посування на трекпеді.";
 "Repeat a held key" = "Повтор під час утримання клавіші";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Тримаєш клавішу — літера друкується знову і знову, як у Windows, замість меню з акцентами. Відкриті програми підхоплять це після перезапуску.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Утримувана клавіша повторюється замість меню з акцентами. Перезапустіть відкриті програми, щоб зміна подіяла.";
 "key repeat, hold, accent menu, games, typing" = "повтор клавіш, утримання, меню акцентів, ігри, набір тексту";
 "New File in Finder" = "Новий файл у Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Правий клік у Finder або на робочому столі › Новий файл — і введіть назву. Типово .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "У «Командах» створи команду з дією «Відкрити URL-адреси» та встав посилання. Потім додай її до Центру керування, рядка меню або віджета «Команд» на робочому столі. Кожне натискання вмикає або вимикає.";
 "Customize…" = "Налаштувати…";
 "Done" = "Готово";
+"Choose what this menu shows" = "Виберіть, що показує це меню";

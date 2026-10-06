@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Nu s-au putut căuta actualizări";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Nu se poate scrie în dosarul aplicației. Actualizează cu brew sau install.sh";
 "Download failed. Try again later" = "Descărcarea a eșuat. Încearcă mai târziu";
-"Block ⌃ Control shortcuts" = "Blochează scurtăturile cu ⌃ Control";
+"Block ⌃ Control shortcuts" = "Blochează scurtăturile cu ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funcționează ca tastă simplă: fără scurtături, fără meniul de ⌃-clic";
 "Switch language with ⌥⇧" = "Schimbă limba cu ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Ține ⌥ și apasă ⇧: limba următoare. Ține ⇧ și apasă ⌥: cea anterioară";
@@ -118,7 +118,7 @@
 "Mouse" = "Maus";
 "Fixes for the mouse. Each one works on its own." = "Remedieri pentru maus. Fiecare funcționează separat.";
 "Turn off pointer acceleration" = "Dezactivează accelerarea cursorului";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Cursorul se mișcă atât cât mâna ta, oricât de repede o miști. Doar pentru mausuri, nu pentru trackpad.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Cursorul se mișcă atât cât mâna ta, oricât de repede o miști. Doar pentru mausuri.";
 "Tracking speed" = "Viteză urmărire";
 "Works while acceleration is off" = "Funcționează cât accelerarea e dezactivată";
 "Slow" = "Lentă";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "„Menține activ” se va dezactiva, iar durata și opțiunile vor reveni cum erau.";
 "pika-tools will check for updates automatically again." = "pika-tools va căuta din nou automat actualizări.";
 "Scroll by lines" = "Derulare pe rânduri";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Fiecare clic al rotiței derulează aceeași distanță, oricât de repede o învârți. Rândurile se potrivesc pentru majoritatea aplicațiilor. Pixelii sunt pentru aplicații și jocuri care măsoară derularea în pixeli exacți. Doar pentru mouse, nu pentru trackpad.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Fiecare clic al rotiței derulează aceeași distanță, oricât de repede o învârți. Doar pentru mausuri.";
 "Lines per wheel click" = "Rânduri per clic al rotiței";
 "Works while scrolling by lines is on" = "Funcționează când derularea pe rânduri este activată";
 "Scroll by" = "Derulează după";
+"Lines suit most apps. Pixels suit games." = "Rândurile se potrivesc majorității aplicațiilor. Pixelii se potrivesc jocurilor.";
 "Lines" = "Rânduri";
 "Pixels" = "Pixeli";
 "Pixels per wheel click" = "Pixeli per clic al rotiței";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Acest fișier nu poate fi importat";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Nu este un fișier de configurări pika-tools sau este deteriorat.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Permite aplicației să păstreze configurările în iCloud Drive pentru a le sincroniza";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "Butoanele 4 și 5 merg înapoi și înainte în Safari, Finder și alte aplicații, ca o glisare pe trackpad";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Butoanele 4 și 5 ale mausului merg înapoi și înainte, ca o glisare pe trackpad.";
 "Repeat a held key" = "Repetă tasta ținută apăsată";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Ține apăsată o tastă ca să o scrii din nou și din nou, ca pe Windows, în loc de meniul cu accente. Aplicațiile deschise preiau asta după repornire.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Ținând apăsată o tastă, aceasta se repetă în loc să deschidă meniul cu accente. Repornește aplicațiile deschise ca să se aplice.";
 "key repeat, hold, accent menu, games, typing" = "repetare taste, ținere apăsată, meniu accente, jocuri, tastare";
 "New File in Finder" = "Fișier nou în Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic dreapta în Finder sau pe birou › Fișier nou, apoi scrie un nume. Implicit .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "În Comenzi rapide, creează o comandă cu acțiunea Deschide URL-uri și lipește un link. Apoi adaug-o în Centrul de control, în bara de meniu sau ca widget Comenzi rapide pe desktop. Fiecare atingere o pornește sau o oprește.";
 "Customize…" = "Personalizează…";
 "Done" = "Gata";
+"Choose what this menu shows" = "Alege ce arată acest meniu";

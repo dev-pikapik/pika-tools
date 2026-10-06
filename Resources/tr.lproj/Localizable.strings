@@ -15,7 +15,7 @@
 "Couldn’t check for updates" = "Güncellemeler denetlenemedi";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Uygulamanın klasörüne yazılamıyor. brew veya install.sh ile güncelleyin";
 "Download failed. Try again later" = "İndirme başarısız oldu. Daha sonra yeniden deneyin";
-"Block ⌃ Control shortcuts" = "⌃ Control kestirmelerini engelle";
+"Block ⌃ Control shortcuts" = "⌃ Control kestirmelerini engelle";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ sıradan bir tuş gibi çalışır: kestirme yok, ⌃-tıklama menüsü yok";
 "Switch language with ⌥⇧" = "Dili ⌥⇧ ile değiştir";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ basılıyken ⇧ tuşuna basın: sonraki dil. ⇧ basılıyken ⌥ tuşuna basın: önceki dil";
@@ -118,7 +118,7 @@
 "Mouse" = "Fare";
 "Fixes for the mouse. Each one works on its own." = "Fare için düzeltmeler. Her biri ayrı çalışır.";
 "Turn off pointer acceleration" = "İmleç hızlandırmayı kapat";
-"The pointer goes as far as your hand, however fast you move. Only for mice, not the trackpad." = "Ne kadar hızlı hareket ettirirseniz ettirin, imleç eliniz kadar ilerler. Yalnızca fareler için, izleme dörtgeni için değil.";
+"The pointer moves as far as your hand, at any speed. Mouse only." = "Ne kadar hızlı hareket ettirirseniz ettirin, imleç eliniz kadar ilerler. Yalnızca fareler için.";
 "Tracking speed" = "İzleme hızı";
 "Works while acceleration is off" = "Hızlandırma kapalıyken çalışır";
 "Slow" = "Yavaş";
@@ -139,10 +139,11 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Uyanık Tut” kapanacak; süre ve seçenekler eski hâline dönecek.";
 "pika-tools will check for updates automatically again." = "pika-tools güncellemeleri yeniden otomatik olarak denetleyecek.";
 "Scroll by lines" = "Satır satır kaydır";
-"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Tekerin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı mesafeyi kaydırır. Satırlar çoğu uygulamaya uyar. Pikseller, kaydırmayı tam piksel olarak sayan uygulama ve oyunlar içindir. Yalnızca fareler için, izleme dörtgeni için değil.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Tekerleğin her tıklaması, hızı ne olursa olsun aynı mesafe kaydırır. Yalnızca fareler için.";
 "Lines per wheel click" = "Teker tıkı başına satır";
 "Works while scrolling by lines is on" = "Satır satır kaydırma açıkken çalışır";
 "Scroll by" = "Kaydırma birimi";
+"Lines suit most apps. Pixels suit games." = "Satırlar çoğu uygulamaya uygundur. Pikseller oyunlara uygundur.";
 "Lines" = "Satır";
 "Pixels" = "Piksel";
 "Pixels per wheel click" = "Teker tıkı başına piksel";
@@ -173,9 +174,9 @@
 "This file can’t be imported" = "Bu dosya içe aktarılamaz";
 "It isn’t a pika-tools settings file, or it’s damaged." = "Bu bir pika-tools ayarlar dosyası değil ya da dosya bozuk.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Uygulamanın, eşzamanlamak için ayarlarınızı iCloud Drive’da tutmasını sağlar";
-"Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad" = "4. ve 5. düğmeler Safari’de, Finder’da ve diğer uygulamalarda geri ve ileri gider; izleme dörtgeninde kaydırma gibi";
+"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Fare düğmeleri 4 ve 5 geri ve ileri gider; izleme dörtgeninde kaydırma gibi.";
 "Repeat a held key" = "Basılı tutulan tuşu tekrarla";
-"Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Bir tuşu basılı tutunca aksan menüsü yerine Windows'taki gibi tekrar tekrar yazılır. Açık uygulamalar bunu yeniden başlatıldıktan sonra kullanır.";
+"Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Bir tuşu basılı tutmak, aksan menüsünü açmak yerine onu tekrarlar. Uygulamak için açık uygulamaları yeniden başlatın.";
 "key repeat, hold, accent menu, games, typing" = "tuş tekrarı, basılı tutma, aksan menüsü, oyunlar, yazma";
 "New File in Finder" = "Finder’da Yeni Dosya";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder’da veya masaüstünde sağ tıklayın › Yeni Dosya, sonra bir ad yazın. Varsayılan .txt.";
@@ -196,3 +197,4 @@
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Kestirmeler’de “URL’leri Aç” eylemiyle bir kestirme oluştur ve bir bağlantı yapıştır. Sonra onu Denetim Merkezi’ne, menü çubuğuna ya da masaüstündeki bir Kestirmeler widget’ına ekle. Her dokunuş açar veya kapatır.";
 "Customize…" = "Özelleştir…";
 "Done" = "Bitti";
+"Choose what this menu shows" = "Bu menünün neyi göstereceğini seçin";
