@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "ダウンロードできませんでした。あとでもう一度お試しください";
 "Block ⌃ Control shortcuts" = "⌃ control のショートカットをブロック";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ を普通のキーとして扱います。ショートカットも ⌃-クリックのメニューも無効になります";
+"⌃ works as a plain key" = "⌃ を普通のキーとして扱います";
 "Switch language with ⌥⇧" = "⌥⇧ で入力ソースを切り替え";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ を押したまま ⇧ を押すと次の言語、⇧ を押したまま ⌥ を押すと前の言語";
+"Hold ⌥, tap ⇧: next language" = "⌥ を押したまま ⇧ で次の言語";
 "All set" = "準備完了";
 "pika-tools needs two permissions" = "pika-tools には 2 つのアクセス権が必要です";
 "Both permissions are on and every tool is working." = "両方のアクセス権があり、すべてのツールが動作しています。";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "終了, 閉じる, コマンド, 誤操作, ショートカット";
 "Quit when the last window closes" = "最後のウインドウを閉じたら終了";
 "Closing an app’s last window quits the app. Finder stays open." = "アプリの最後のウインドウを閉じるとアプリも終了します。Finderは終了しません。";
+"Finder always stays open" = "Finderは常に開いたままです";
 "Add App…" = "アプリを追加…";
 "Never quit these apps" = "これらのアプリは終了しない";
 "No apps yet" = "まだアプリはありません";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "例外, 除外, リスト";
 "Hide with a click in the Dock" = "Dockのクリックで隠す";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "使用中のアプリのアイコンをクリックすると隠れます。もう一度クリックすると戻ります。";
+"Click again to bring it back" = "もう一度クリックすると戻ります";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, しまう, 隠す, Windows, タスクバー";
 "From 1 minute to 12 months" = "1分から12か月まで";
 "Lets the app change clicks and keys and manage windows" = "クリックやキー入力を変更し、ウインドウを管理するため";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "マウスのための改善。それぞれ個別にオンにできます。";
 "Turn off pointer acceleration" = "ポインタの加速をオフにする";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "どれだけ速く動かしても、ポインタは手を動かした分だけ進みます。マウス専用です。";
+"Moves as far as your hand" = "手を動かした分だけ進みます";
 "Tracking speed" = "軌跡の速さ";
 "Works while acceleration is off" = "加速がオフのときに有効です";
 "Slow" = "遅い";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools が再びアップデートを自動的に確認します。";
 "Scroll by lines" = "行単位でスクロール";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "ホイールを1クリックするたびに、速さに関係なく同じ距離をスクロールします。マウス専用です。";
+"Same distance at any speed" = "どんな速さでも同じ距離";
 "Lines per wheel click" = "ホイール1クリックあたりの行数";
 "Works while scrolling by lines is on" = "行単位スクロールがオンのときに有効です";
 "Scroll by" = "スクロール単位";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "pika-toolsの設定ファイルではないか、ファイルが壊れています。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "同期のために設定をiCloud Driveに保存できるようにします";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "マウスのボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。";
+"Like a trackpad swipe" = "トラックパッドのスワイプと同じ";
 "Repeat a held key" = "キーを押し続けて連続入力";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "キーを押し続けると、アクセントメニューを開かずに文字が繰り返されます。開いているアプリは再起動すると反映されます。";
+"Instead of the accent menu" = "アクセントメニューの代わりに";
 "key repeat, hold, accent menu, games, typing" = "キーリピート, 長押し, アクセントメニュー, ゲーム, 入力";
 "New File in Finder" = "Finderで新規ファイル";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finderまたはデスクトップで右クリック › 新規ファイル、名前を入力するだけ。標準は.txtです。";
+"Right-click in any folder" = "どのフォルダでも右クリック";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "作成, テキストファイル, txt, 右クリック, コンテキストメニュー, デスクトップ, Windows";
 "New File" = "新規ファイル";
 "Untitled" = "名称未設定";

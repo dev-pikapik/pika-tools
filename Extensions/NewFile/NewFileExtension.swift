@@ -12,7 +12,6 @@ final class NewFileExtension: FIFinderSync {
         let menu = NSMenu()
         let item = menu.addItem(withTitle: NSLocalizedString("New File", comment: ""), action: #selector(newFile(_:)), keyEquivalent: "")
         item.tag = menuKind == .contextualMenuForItems ? 1 : 0
-        item.image = NSImage(systemSymbolName: "doc.badge.plus", accessibilityDescription: nil)
         return menu
     }
 

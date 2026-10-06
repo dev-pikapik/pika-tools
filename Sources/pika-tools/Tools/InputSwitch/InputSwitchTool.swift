@@ -128,6 +128,7 @@ private struct InputSwitchSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous"),
+            hint: Text("Hold ⌥, tap ⇧: next language"),
             isOn: $tool.isEnabled
         )
     }

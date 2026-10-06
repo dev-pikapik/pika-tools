@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Descărcarea a eșuat. Încearcă mai târziu";
 "Block ⌃ Control shortcuts" = "Blochează scurtăturile cu ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funcționează ca tastă simplă: fără scurtături, fără meniul de ⌃-clic";
+"⌃ works as a plain key" = "⌃ funcționează ca tastă simplă";
 "Switch language with ⌥⇧" = "Schimbă limba cu ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Ține ⌥ și apasă ⇧: limba următoare. Ține ⇧ și apasă ⌥: cea anterioară";
+"Hold ⌥, tap ⇧: next language" = "Ține ⌥, apasă ⇧: limba următoare";
 "All set" = "Totul e gata";
 "pika-tools needs two permissions" = "pika-tools are nevoie de două permisiuni";
 "Both permissions are on and every tool is working." = "Ambele permisiuni sunt activate și toate instrumentele funcționează.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "ieșire, închidere, command, accidental, scurtătură";
 "Quit when the last window closes" = "Ieși când se închide ultima fereastră";
 "Closing an app’s last window quits the app. Finder stays open." = "Când închizi ultima fereastră a unei aplicații, ieși din aplicație. Finder rămâne deschis.";
+"Finder always stays open" = "Finder rămâne mereu deschis";
 "Add App…" = "Adaugă aplicație…";
 "Never quit these apps" = "Nu ieși niciodată din aceste aplicații";
 "No apps yet" = "Nicio aplicație încă";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "excepții, excludere, listă";
 "Hide with a click in the Dock" = "Ascunde cu un clic în Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Fă clic pe pictograma aplicației în care ești ca s-o ascunzi. Fă clic din nou ca s-o readuci.";
+"Click again to bring it back" = "Fă clic din nou ca s-o readuci";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimizare, ascundere, Windows, bara de activități, taskbar";
 "From 1 minute to 12 months" = "De la 1 minut la 12 luni";
 "Lets the app change clicks and keys and manage windows" = "Permite aplicației să modifice clicurile și tastele și să gestioneze ferestrele";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Remedieri pentru maus. Fiecare funcționează separat.";
 "Turn off pointer acceleration" = "Dezactivează accelerarea cursorului";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Cursorul se mișcă atât cât mâna ta, oricât de repede o miști. Doar pentru mausuri.";
+"Moves as far as your hand" = "Se mișcă atât cât mâna ta";
 "Tracking speed" = "Viteză urmărire";
 "Works while acceleration is off" = "Funcționează cât accelerarea e dezactivată";
 "Slow" = "Lentă";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools va căuta din nou automat actualizări.";
 "Scroll by lines" = "Derulare pe rânduri";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Fiecare clic al rotiței derulează aceeași distanță, oricât de repede o învârți. Doar pentru mausuri.";
+"Same distance at any speed" = "Aceeași distanță, oricât de repede";
 "Lines per wheel click" = "Rânduri per clic al rotiței";
 "Works while scrolling by lines is on" = "Funcționează când derularea pe rânduri este activată";
 "Scroll by" = "Derulează după";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Nu este un fișier de configurări pika-tools sau este deteriorat.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Permite aplicației să păstreze configurările în iCloud Drive pentru a le sincroniza";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Butoanele 4 și 5 ale mausului merg înapoi și înainte, ca o glisare pe trackpad.";
+"Like a trackpad swipe" = "Ca o glisare pe trackpad";
 "Repeat a held key" = "Repetă tasta ținută apăsată";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Ținând apăsată o tastă, aceasta se repetă în loc să deschidă meniul cu accente. Repornește aplicațiile deschise ca să se aplice.";
+"Instead of the accent menu" = "În locul meniului cu accente";
 "key repeat, hold, accent menu, games, typing" = "repetare taste, ținere apăsată, meniu accente, jocuri, tastare";
 "New File in Finder" = "Fișier nou în Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic dreapta în Finder sau pe birou › Fișier nou, apoi scrie un nume. Implicit .txt.";
+"Right-click in any folder" = "Clic dreapta în orice folder";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "creează, fișier text, txt, clic dreapta, meniu contextual, birou, Windows";
 "New File" = "Fișier nou";
 "Untitled" = "Fără titlu";

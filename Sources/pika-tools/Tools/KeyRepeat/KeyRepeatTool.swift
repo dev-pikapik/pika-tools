@@ -43,6 +43,7 @@ private struct KeyRepeatSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Holding a key repeats it instead of opening the accent menu. Restart open apps to apply."),
+            hint: Text("Instead of the accent menu"),
             isOn: $tool.isEnabled
         )
     }

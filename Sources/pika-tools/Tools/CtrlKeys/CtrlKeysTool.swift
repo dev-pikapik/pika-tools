@@ -104,6 +104,7 @@ private struct CtrlKeysSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("⌃ works as a plain key: no shortcuts, no ⌃-click menu"),
+            hint: Text("⌃ works as a plain key"),
             isOn: $tool.isEnabled
         )
     }

@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "O download falhou. Tente novamente mais tarde";
 "Block ⌃ Control shortcuts" = "Bloquear atalhos com ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funciona como uma tecla comum: sem atalhos e sem menu de ⌃-clique";
+"⌃ works as a plain key" = "⌃ funciona como uma tecla comum";
 "Switch language with ⌥⇧" = "Trocar idioma com ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Segure ⌥ e toque em ⇧: próximo idioma. Segure ⇧ e toque em ⌥: anterior";
+"Hold ⌥, tap ⇧: next language" = "Segure ⌥, toque em ⇧: próximo idioma";
 "All set" = "Tudo pronto";
 "pika-tools needs two permissions" = "O pika-tools precisa de duas permissões";
 "Both permissions are on and every tool is working." = "As duas permissões estão ativas e todas as ferramentas funcionam.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "encerrar, fechar, comando, acidental, atalho";
 "Quit when the last window closes" = "Encerrar ao fechar a última janela";
 "Closing an app’s last window quits the app. Finder stays open." = "Ao fechar a última janela, o app é encerrado. O Finder continua aberto.";
+"Finder always stays open" = "O Finder sempre continua aberto";
 "Add App…" = "Adicionar app…";
 "Never quit these apps" = "Nunca encerrar estes apps";
 "No apps yet" = "Nenhum app ainda";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "exceções, excluir, lista";
 "Hide with a click in the Dock" = "Ocultar com um clique no Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Clique no ícone do app em uso para ocultá-lo. Outro clique o traz de volta.";
+"Click again to bring it back" = "Outro clique o traz de volta";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimizar, ocultar, Windows, barra de tarefas";
 "From 1 minute to 12 months" = "De 1 minuto a 12 meses";
 "Lets the app change clicks and keys and manage windows" = "Para alterar cliques e teclas e gerenciar janelas";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Ajustes para o mouse. Cada um é ativado separadamente.";
 "Turn off pointer acceleration" = "Desativar a aceleração do cursor";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "O cursor percorre a mesma distância que sua mão, não importa a velocidade. Só para mouse.";
+"Moves as far as your hand" = "Percorre o mesmo que sua mão";
 "Tracking speed" = "Velocidade do rastreamento";
 "Works while acceleration is off" = "Funciona com a aceleração desativada";
 "Slow" = "Lenta";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "O pika-tools voltará a verificar atualizações automaticamente.";
 "Scroll by lines" = "Rolar por linhas";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Cada clique da roda rola a mesma distância, não importa a velocidade. Só para mouse.";
+"Same distance at any speed" = "Mesma distância em qualquer velocidade";
 "Lines per wheel click" = "Linhas por clique da roda";
 "Works while scrolling by lines is on" = "Funciona quando a rolagem por linhas está ativada";
 "Scroll by" = "Rolar por";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Não é um arquivo de ajustes do pika-tools, ou está danificado.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Permite que o app guarde seus ajustes no iCloud Drive para sincronizá-los";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Os botões 4 e 5 do mouse voltam e avançam, como deslizar o dedo no trackpad.";
+"Like a trackpad swipe" = "Como deslizar o dedo no trackpad";
 "Repeat a held key" = "Repetir tecla segurada";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Segurar uma tecla a repete em vez de abrir o menu de acentos. Reinicie os apps abertos para aplicar.";
+"Instead of the accent menu" = "Em vez do menu de acentos";
 "key repeat, hold, accent menu, games, typing" = "repetição de teclas, segurar, menu de acentos, jogos, digitação";
 "New File in Finder" = "Novo arquivo no Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clique com o botão direito no Finder ou na mesa › Novo arquivo e digite um nome. .txt por padrão.";
+"Right-click in any folder" = "Clique direito em qualquer pasta";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "criar, arquivo de texto, txt, botão direito, menu de contexto, mesa, Windows";
 "New File" = "Novo arquivo";
 "Untitled" = "Sem Título";

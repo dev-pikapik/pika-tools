@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Hämtningen misslyckades. Försök igen senare";
 "Block ⌃ Control shortcuts" = "Blockera kortkommandon med ⌃ Kontroll";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ fungerar som en vanlig tangent: inga kortkommandon, ingen ⌃-klicksmeny";
+"⌃ works as a plain key" = "⌃ fungerar som en vanlig tangent";
 "Switch language with ⌥⇧" = "Byt språk med ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Håll ned ⌥ och tryck på ⇧: nästa språk. Håll ned ⇧ och tryck på ⌥: föregående";
+"Hold ⌥, tap ⇧: next language" = "Håll ned ⌥, tryck på ⇧: nästa språk";
 "All set" = "Allt klart";
 "pika-tools needs two permissions" = "pika-tools behöver två behörigheter";
 "Both permissions are on and every tool is working." = "Båda behörigheterna är på och alla verktyg fungerar.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "avsluta, stänga, kommando, command, av misstag, kortkommando";
 "Quit when the last window closes" = "Avsluta när sista fönstret stängs";
 "Closing an app’s last window quits the app. Finder stays open." = "Om du stänger en apps sista fönster avslutas appen. Finder förblir öppen.";
+"Finder always stays open" = "Finder förblir alltid öppen";
 "Add App…" = "Lägg till app…";
 "Never quit these apps" = "Avsluta aldrig de här apparna";
 "No apps yet" = "Inga appar än";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "undantag, exkludera, lista";
 "Hide with a click in the Dock" = "Göm med ett klick i Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicka på symbolen för appen du använder för att gömma den. Klicka igen för att ta tillbaka den.";
+"Click again to bring it back" = "Klicka igen för att ta tillbaka den";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimera, göm, dölj, Windows, aktivitetsfält";
 "From 1 minute to 12 months" = "Från 1 minut till 12 månader";
 "Lets the app change clicks and keys and manage windows" = "Låter appen ändra klick och tangenttryckningar och hantera fönster";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Fixar för musen. Var och en fungerar för sig.";
 "Turn off pointer acceleration" = "Stäng av pekaracceleration";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Pekaren rör sig lika långt som handen, hur snabbt du än rör den. Bara för möss.";
+"Moves as far as your hand" = "Rör sig lika långt som handen";
 "Tracking speed" = "Pekarhastighet";
 "Works while acceleration is off" = "Fungerar när accelerationen är av";
 "Slow" = "Långsam";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools söker efter uppdateringar automatiskt igen.";
 "Scroll by lines" = "Rulla per rad";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar. Bara för möss.";
+"Same distance at any speed" = "Lika långt oavsett hastighet";
 "Lines per wheel click" = "Rader per klick med hjulet";
 "Works while scrolling by lines is on" = "Fungerar när rullning per rad är på";
 "Scroll by" = "Rulla med";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Det är inte en inställningsfil för pika-tools, eller så är den skadad.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Låter appen spara dina inställningar i iCloud Drive för att synkronisera dem";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Musknapp 4 och 5 går bakåt och framåt, som ett svep på styrplattan.";
+"Like a trackpad swipe" = "Som ett svep på styrplattan";
 "Repeat a held key" = "Upprepa en nedhållen tangent";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "En nedhållen tangent upprepas i stället för att öppna accentmenyn. Starta om öppna appar för att det ska gälla.";
+"Instead of the accent menu" = "I stället för accentmenyn";
 "key repeat, hold, accent menu, games, typing" = "tangentupprepning, hålla ned, accentmeny, spel, skriva";
 "New File in Finder" = "Ny fil i Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Högerklicka i Finder eller på skrivbordet › Ny fil och skriv ett namn. .txt som standard.";
+"Right-click in any folder" = "Högerklicka i valfri mapp";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "skapa, textfil, txt, högerklick, snabbmeny, skrivbord, Windows";
 "New File" = "Ny fil";
 "Untitled" = "Namnlös";

@@ -145,6 +145,7 @@ private struct CommandKeysSettings: View {
                 icon: tool.icon,
                 title: tool.title,
                 subtitle: Text("Add ⇧ to quit or close"),
+                hint: Text("Add ⇧ to quit or close"),
                 isOn: $tool.isEnabled
             )
         }

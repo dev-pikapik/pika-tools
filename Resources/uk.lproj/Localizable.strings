@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Оновлення не завантажилося, спробуй пізніше";
 "Block ⌃ Control shortcuts" = "Блокувати комбінації з ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ працює як звичайна клавіша: без комбінацій і меню за ⌃-кліком";
+"⌃ works as a plain key" = "⌃ працює як звичайна клавіша";
 "Switch language with ⌥⇧" = "Зміна мови за ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Тримайте ⌥ і натискайте ⇧ — наступна мова. Тримайте ⇧ і натискайте ⌥ — попередня";
+"Hold ⌥, tap ⇧: next language" = "Тримайте ⌥, натисніть ⇧ — наступна мова";
 "All set" = "Усе готово";
 "pika-tools needs two permissions" = "Дай pika-tools два дозволи";
 "Both permissions are on and every tool is working." = "Доступи є, усі інструменти працюють.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "вихід, закрити, command, випадково, сполучення";
 "Quit when the last window closes" = "Вихід після закриття останнього вікна";
 "Closing an app’s last window quits the app. Finder stays open." = "Закрили останнє вікно — програма завершується. Finder лишається відкритим.";
+"Finder always stays open" = "Finder завжди лишається відкритим";
 "Add App…" = "Додати…";
 "Never quit these apps" = "Не завершувати ці програми";
 "No apps yet" = "Поки немає програм";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "винятки, виключити, список";
 "Hide with a click in the Dock" = "Приховування клацанням у Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Клацніть значок програми, у якій працюєте, — вона сховається. Ще клацання — повернеться.";
+"Click again to bring it back" = "Ще клацання — програма повернеться";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, згорнути, сховати, Windows, панель завдань";
 "From 1 minute to 12 months" = "Від 1 хвилини до 12 місяців";
 "Lets the app change clicks and keys and manage windows" = "Щоб змінювати кліки й клавіші та керувати вікнами";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Покращення для миші. Кожне вмикається окремо.";
 "Turn off pointer acceleration" = "Вимкнути прискорення вказівника";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Вказівник проходить стільки ж, скільки рука, з будь-якою швидкістю. Лише для миші.";
+"Moves as far as your hand" = "Рухається стільки ж, скільки рука";
 "Tracking speed" = "Швидкість пересування";
 "Works while acceleration is off" = "Працює, коли прискорення вимкнено";
 "Slow" = "Повільно";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools знову сам перевірятиме оновлення.";
 "Scroll by lines" = "Прокручування рядками";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Кожен клік колеса прокручує на ту саму відстань, з будь-якою швидкістю. Лише для миші.";
+"Same distance at any speed" = "Та сама відстань за будь-якої швидкості";
 "Lines per wheel click" = "Рядків за клацання коліщатка";
 "Works while scrolling by lines is on" = "Працює, коли ввімкнено прокручування рядками";
 "Scroll by" = "Прокручувати по";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Це не файл параметрів pika-tools, або його пошкоджено.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Дає змогу зберігати параметри в iCloud Drive для синхронізації";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Кнопки миші 4 і 5 — назад і вперед, як посування на трекпеді.";
+"Like a trackpad swipe" = "Як посування на трекпеді";
 "Repeat a held key" = "Повтор під час утримання клавіші";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Утримувана клавіша повторюється замість меню з акцентами. Перезапустіть відкриті програми, щоб зміна подіяла.";
+"Instead of the accent menu" = "Замість меню з акцентами";
 "key repeat, hold, accent menu, games, typing" = "повтор клавіш, утримання, меню акцентів, ігри, набір тексту";
 "New File in Finder" = "Новий файл у Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Правий клік у Finder або на робочому столі › Новий файл — і введіть назву. Типово .txt.";
+"Right-click in any folder" = "Правий клік у будь-якій папці";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "створити, текстовий файл, txt, правий клік, контекстне меню, робочий стіл, Windows";
 "New File" = "Новий файл";
 "Untitled" = "Без назви";

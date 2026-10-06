@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "다운로드하지 못했습니다. 나중에 다시 시도하세요";
 "Block ⌃ Control shortcuts" = "⌃ Control 단축키 차단";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 키가 일반 키처럼 동작합니다. 단축키와 ⌃-클릭 메뉴가 꺼집니다";
+"⌃ works as a plain key" = "⌃ 키가 일반 키처럼 동작합니다";
 "Switch language with ⌥⇧" = "⌥⇧로 입력 소스 전환";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어";
+"Hold ⌥, tap ⇧: next language" = "⌥를 누른 채 ⇧를 누르면 다음 언어";
 "All set" = "모두 준비됨";
 "pika-tools needs two permissions" = "pika-tools에 두 가지 권한이 필요합니다";
 "Both permissions are on and every tool is working." = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "종료, 닫기, 커맨드, 실수, 단축키";
 "Quit when the last window closes" = "마지막 윈도우를 닫으면 종료";
 "Closing an app’s last window quits the app. Finder stays open." = "앱의 마지막 윈도우를 닫으면 앱이 종료됩니다. Finder는 계속 열려 있습니다.";
+"Finder always stays open" = "Finder는 항상 열려 있습니다";
 "Add App…" = "앱 추가…";
 "Never quit these apps" = "다음 앱은 종료하지 않음";
 "No apps yet" = "아직 앱이 없음";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "예외, 제외, 목록";
 "Hide with a click in the Dock" = "Dock 클릭으로 가리기";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "사용 중인 앱의 아이콘을 클릭하면 가려집니다. 다시 클릭하면 돌아옵니다.";
+"Click again to bring it back" = "다시 클릭하면 돌아옵니다";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, 최소화, 가리기, Windows, 작업 표시줄";
 "From 1 minute to 12 months" = "1분에서 12개월까지";
 "Lets the app change clicks and keys and manage windows" = "클릭과 키 입력을 변경하고 윈도우를 관리하는 데 필요";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "마우스를 위한 개선. 각각 따로 켤 수 있습니다.";
 "Turn off pointer acceleration" = "포인터 가속 끄기";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "얼마나 빠르게 움직여도 포인터는 손이 움직인 만큼만 이동합니다. 마우스 전용입니다.";
+"Moves as far as your hand" = "손이 움직인 만큼만 이동합니다";
 "Tracking speed" = "이동 속도";
 "Works while acceleration is off" = "가속이 꺼져 있을 때 작동합니다";
 "Slow" = "느리게";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools가 다시 자동으로 업데이트를 확인합니다.";
 "Scroll by lines" = "줄 단위로 스크롤";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "휠을 한 칸 돌릴 때마다 속도와 관계없이 같은 거리만큼 스크롤됩니다. 마우스 전용입니다.";
+"Same distance at any speed" = "속도와 관계없이 같은 거리";
 "Lines per wheel click" = "휠 한 칸당 줄 수";
 "Works while scrolling by lines is on" = "줄 단위 스크롤이 켜져 있을 때 작동합니다";
 "Scroll by" = "스크롤 단위";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "pika-tools 설정 파일이 아니거나 손상되었습니다.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "동기화를 위해 앱이 iCloud Drive에 설정을 보관할 수 있도록 합니다";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "마우스 버튼 4와 5로 뒤로, 앞으로 이동합니다. 트랙패드에서 쓸어넘기는 것과 같습니다.";
+"Like a trackpad swipe" = "트랙패드에서 쓸어넘기는 것처럼";
 "Repeat a held key" = "키를 누르고 있으면 반복 입력";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "키를 누르고 있으면 악센트 메뉴 대신 글자가 반복 입력됩니다. 열려 있는 앱은 다시 시작해야 적용됩니다.";
+"Instead of the accent menu" = "악센트 메뉴 대신";
 "key repeat, hold, accent menu, games, typing" = "키 반복, 길게 누르기, 악센트 메뉴, 게임, 타이핑";
 "New File in Finder" = "Finder에서 새 파일";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder나 데스크탑에서 오른쪽 클릭 › 새 파일, 이름만 입력하세요. 기본은 .txt입니다.";
+"Right-click in any folder" = "아무 폴더에서나 우클릭";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "만들기, 텍스트 파일, txt, 오른쪽 클릭, 컨텍스트 메뉴, 데스크탑, Windows";
 "New File" = "새 파일";
 "Untitled" = "제목 없음";

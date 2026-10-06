@@ -142,6 +142,7 @@ private struct SideButtonsSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Mouse buttons 4 and 5 go back and forward, like a trackpad swipe."),
+            hint: Text("Like a trackpad swipe"),
             isOn: $tool.isEnabled
         )
         if inSettings {

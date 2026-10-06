@@ -82,7 +82,7 @@ struct MenuView: View {
                                         icon: "cup.and.saucer",
                                         title: String(localized: "Keep Awake"),
                                         subtitle: keepAwake.statusText,
-                                        showsSubtitle: keepAwake.isOn,
+                                        hint: keepAwake.statusText,
                                         isOn: $keepAwake.isOn
                                     )
                                 }

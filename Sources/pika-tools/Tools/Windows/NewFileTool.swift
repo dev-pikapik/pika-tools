@@ -152,6 +152,7 @@ private struct NewFileSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Right-click in Finder or on the Desktop › New File, then type a name. .txt by default."),
+            hint: Text("Right-click in any folder"),
             isOn: $tool.isEnabled
         )
         if tool.needsSettings {

@@ -170,6 +170,7 @@ private struct PointerSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("The pointer moves as far as your hand, at any speed. Mouse only."),
+            hint: Text("Moves as far as your hand"),
             isOn: $tool.isEnabled
         )
         if inSettings {

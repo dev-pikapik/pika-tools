@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Download failed. Try again later";
 "Block ⌃ Control shortcuts" = "Block ⌃ Control shortcuts";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ works as a plain key: no shortcuts, no ⌃-click menu";
+"⌃ works as a plain key" = "⌃ works as a plain key";
 "Switch language with ⌥⇧" = "Switch language with ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous";
+"Hold ⌥, tap ⇧: next language" = "Hold ⌥, tap ⇧: next language";
 "All set" = "All set";
 "pika-tools needs two permissions" = "pika-tools needs two permissions";
 "Both permissions are on and every tool is working." = "Both permissions are on and every tool is working.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "quit, close, command, accidental, shortcut";
 "Quit when the last window closes" = "Quit when the last window closes";
 "Closing an app’s last window quits the app. Finder stays open." = "Closing an app’s last window quits the app. Finder stays open.";
+"Finder always stays open" = "Finder always stays open";
 "Add App…" = "Add App…";
 "Never quit these apps" = "Never quit these apps";
 "No apps yet" = "No apps yet";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "exceptions, exclude, list";
 "Hide with a click in the Dock" = "Hide with a click in the Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Click the icon of the app you’re in to hide it. Click again to bring it back.";
+"Click again to bring it back" = "Click again to bring it back";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimize, hide, Windows, taskbar";
 "From 1 minute to 12 months" = "From 1 minute to 12 months";
 "Lets the app change clicks and keys and manage windows" = "Lets the app change clicks and keys and manage windows";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Fixes for the mouse. Each one works on its own.";
 "Turn off pointer acceleration" = "Turn off pointer acceleration";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "The pointer moves as far as your hand, at any speed. Mouse only.";
+"Moves as far as your hand" = "Moves as far as your hand";
 "Tracking speed" = "Tracking speed";
 "Works while acceleration is off" = "Works while acceleration is off";
 "Slow" = "Slow";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools will check for updates automatically again.";
 "Scroll by lines" = "Scroll by lines";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Each wheel click scrolls the same distance, at any speed. Mouse only.";
+"Same distance at any speed" = "Same distance at any speed";
 "Lines per wheel click" = "Lines per wheel click";
 "Works while scrolling by lines is on" = "Works while scrolling by lines is on";
 "Scroll by" = "Scroll by";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "It isn’t a pika-tools settings file, or it’s damaged.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Lets the app keep your settings in iCloud Drive to sync them";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe.";
+"Like a trackpad swipe" = "Like a trackpad swipe";
 "Repeat a held key" = "Repeat a held key";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply.";
+"Instead of the accent menu" = "Instead of the accent menu";
 "key repeat, hold, accent menu, games, typing" = "key repeat, hold, accent menu, games, typing";
 "New File in Finder" = "New File in Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default.";
+"Right-click in any folder" = "Right-click in any folder";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "create, text file, txt, right-click, context menu, Desktop, Windows";
 "New File" = "New File";
 "Untitled" = "Untitled";

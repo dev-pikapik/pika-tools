@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "فشل التنزيل. حاول مرة أخرى لاحقًا";
 "Block ⌃ Control shortcuts" = "حظر اختصارات ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "يعمل ⌃ كمفتاح عادي: بلا اختصارات وبلا قائمة ⌃-نقر";
+"⌃ works as a plain key" = "يعمل ⌃ كمفتاح عادي";
 "Switch language with ⌥⇧" = "تبديل اللغة باستخدام ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "اضغط مع الاستمرار على ⌥ واضغط ⇧: اللغة التالية. اضغط مع الاستمرار على ⇧ واضغط ⌥: السابقة";
+"Hold ⌥, tap ⇧: next language" = "اضغط ⌥ مطوّلًا واضغط ⇧: اللغة التالية";
 "All set" = "كل شيء جاهز";
 "pika-tools needs two permissions" = "يحتاج pika-tools إلى إذنين";
 "Both permissions are on and every tool is working." = "الإذنان مفعّلان وكل الأدوات تعمل.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "إنهاء، إغلاق، command، عن طريق الخطأ، اختصار";
 "Quit when the last window closes" = "الإنهاء عند إغلاق آخر نافذة";
 "Closing an app’s last window quits the app. Finder stays open." = "إغلاق آخر نافذة لتطبيق يؤدي إلى إنهائه. يبقى Finder مفتوحًا.";
+"Finder always stays open" = "يبقى Finder مفتوحًا دائمًا";
 "Add App…" = "إضافة تطبيق…";
 "Never quit these apps" = "عدم إنهاء هذه التطبيقات أبدًا";
 "No apps yet" = "لا توجد تطبيقات بعد";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "استثناءات، استبعاد، قائمة";
 "Hide with a click in the Dock" = "الإخفاء بنقرة في Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "انقر على أيقونة التطبيق الذي تستخدمه لإخفائه. انقر مرة أخرى لإعادته.";
+"Click again to bring it back" = "انقر مرة أخرى لإعادته";
 "Dock, minimize, hide, Windows, taskbar" = "Dock، تصغير، إخفاء، Windows، شريط المهام";
 "From 1 minute to 12 months" = "من دقيقة واحدة إلى 12 شهرًا";
 "Lets the app change clicks and keys and manage windows" = "يسمح للتطبيق بتغيير النقرات والمفاتيح وإدارة النوافذ";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "إصلاحات للماوس. يعمل كل منها بمفرده.";
 "Turn off pointer acceleration" = "إيقاف تسارع المؤشر";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "يتحرك المؤشر بقدر حركة يدك مهما كانت السرعة. للماوس فقط.";
+"Moves as far as your hand" = "يتحرك بقدر حركة يدك";
 "Tracking speed" = "سرعة التعقب";
 "Works while acceleration is off" = "يعمل عند إيقاف التسارع";
 "Slow" = "بطيء";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "سيتحقق pika-tools من وجود تحديثات تلقائيًا مرة أخرى.";
 "Scroll by lines" = "التمرير بالأسطر";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "كل نقرة على العجلة تمرّر المسافة نفسها مهما كانت السرعة. للماوس فقط.";
+"Same distance at any speed" = "المسافة نفسها مهما كانت السرعة";
 "Lines per wheel click" = "عدد الأسطر لكل نقرة عجلة";
 "Works while scrolling by lines is on" = "يعمل عند تشغيل التمرير بالأسطر";
 "Scroll by" = "التمرير حسب";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "إنه ليس ملف إعدادات pika-tools أو أنه تالف.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "يتيح للتطبيق الاحتفاظ بإعداداتك في iCloud Drive لمزامنتها";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "زرا الماوس 4 و5 للرجوع والتقدّم، مثل التحريك على لوحة التعقب.";
+"Like a trackpad swipe" = "مثل التحريك على لوحة التعقب";
 "Repeat a held key" = "تكرار المفتاح عند الضغط المستمر";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "الضغط المطوّل على مفتاح يكرّره بدل فتح قائمة التشكيل. أعد تشغيل التطبيقات المفتوحة ليسري ذلك.";
+"Instead of the accent menu" = "بدل قائمة التشكيل";
 "key repeat, hold, accent menu, games, typing" = "تكرار المفاتيح, ضغط مستمر, قائمة التشكيل, ألعاب, كتابة";
 "New File in Finder" = "ملف جديد في Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "انقر بزر الماوس الأيمن في Finder أو على سطح المكتب › ملف جديد، ثم اكتب اسمًا. الامتداد ‎.txt افتراضيًا.";
+"Right-click in any folder" = "انقر بزر الماوس الأيمن في أي مجلد";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "إنشاء, ملف نصي, txt, زر أيمن, قائمة السياق, سطح المكتب, Windows";
 "New File" = "ملف جديد";
 "Untitled" = "بلا عنوان";

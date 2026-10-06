@@ -17,8 +17,10 @@
 "Download failed. Try again later" = "Unduhan gagal. Coba lagi nanti";
 "Block ⌃ Control shortcuts" = "Blokir pintasan ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ berfungsi sebagai tombol biasa: tanpa pintasan, tanpa menu ⌃-klik";
+"⌃ works as a plain key" = "⌃ berfungsi sebagai tombol biasa";
 "Switch language with ⌥⇧" = "Ganti bahasa dengan ⌥⇧";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Tahan ⌥ dan ketuk ⇧: bahasa berikutnya. Tahan ⇧ dan ketuk ⌥: sebelumnya";
+"Hold ⌥, tap ⇧: next language" = "Tahan ⌥, ketuk ⇧: bahasa berikutnya";
 "All set" = "Semua siap";
 "pika-tools needs two permissions" = "pika-tools memerlukan dua izin";
 "Both permissions are on and every tool is working." = "Kedua izin sudah aktif dan semua alat berfungsi.";
@@ -102,6 +104,7 @@
 "quit, close, command, accidental, shortcut" = "keluar, tutup, command, tidak sengaja, pintasan";
 "Quit when the last window closes" = "Keluar saat jendela terakhir ditutup";
 "Closing an app’s last window quits the app. Finder stays open." = "Menutup jendela terakhir app akan mengakhiri app tersebut. Finder tetap terbuka.";
+"Finder always stays open" = "Finder selalu tetap terbuka";
 "Add App…" = "Tambah App…";
 "Never quit these apps" = "Jangan pernah keluar dari app ini";
 "No apps yet" = "Belum ada app";
@@ -111,6 +114,7 @@
 "exceptions, exclude, list" = "pengecualian, kecualikan, daftar";
 "Hide with a click in the Dock" = "Sembunyikan dengan klik di Dock";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik ikon app yang sedang digunakan untuk menyembunyikannya. Klik lagi untuk menampilkannya kembali.";
+"Click again to bring it back" = "Klik lagi untuk menampilkan kembali";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalkan, sembunyikan, Windows, taskbar";
 "From 1 minute to 12 months" = "Dari 1 menit hingga 12 bulan";
 "Lets the app change clicks and keys and manage windows" = "Memungkinkan app mengubah klik dan tombol serta mengelola jendela";
@@ -119,6 +123,7 @@
 "Fixes for the mouse. Each one works on its own." = "Perbaikan untuk tetikus. Masing-masing berfungsi sendiri.";
 "Turn off pointer acceleration" = "Matikan akselerasi penunjuk";
 "The pointer moves as far as your hand, at any speed. Mouse only." = "Penunjuk bergerak sejauh tangan Anda, secepat apa pun. Hanya untuk tetikus.";
+"Moves as far as your hand" = "Bergerak sejauh tangan Anda";
 "Tracking speed" = "Kecepatan melacak";
 "Works while acceleration is off" = "Berfungsi saat akselerasi mati";
 "Slow" = "Lambat";
@@ -140,6 +145,7 @@
 "pika-tools will check for updates automatically again." = "pika-tools akan kembali memeriksa pembaruan secara otomatis.";
 "Scroll by lines" = "Gulir per baris";
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Setiap klik roda menggulir sejauh yang sama, secepat apa pun. Hanya untuk tetikus.";
+"Same distance at any speed" = "Jarak sama di kecepatan apa pun";
 "Lines per wheel click" = "Baris per klik roda";
 "Works while scrolling by lines is on" = "Berfungsi saat pengguliran per baris aktif";
 "Scroll by" = "Gulir per";
@@ -175,11 +181,14 @@
 "It isn’t a pika-tools settings file, or it’s damaged." = "Ini bukan file pengaturan pika-tools, atau file rusak.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Memungkinkan app menyimpan pengaturan Anda di iCloud Drive untuk diselaraskan";
 "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Tombol tetikus 4 dan 5 untuk kembali dan maju, seperti gesek di trackpad.";
+"Like a trackpad swipe" = "Seperti gesek di trackpad";
 "Repeat a held key" = "Ulangi tombol yang ditahan";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Menahan tombol akan mengulangnya, bukan membuka menu aksen. Mulai ulang app yang terbuka agar berlaku.";
+"Instead of the accent menu" = "Sebagai ganti menu aksen";
 "key repeat, hold, accent menu, games, typing" = "pengulangan tombol, tahan, menu aksen, game, mengetik";
 "New File in Finder" = "File Baru di Finder";
 "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klik kanan di Finder atau di desktop › File Baru, lalu ketik nama. Bawaannya .txt.";
+"Right-click in any folder" = "Klik kanan di folder mana pun";
 "create, text file, txt, right-click, context menu, Desktop, Windows" = "buat, file teks, txt, klik kanan, menu konteks, desktop, Windows";
 "New File" = "File Baru";
 "Untitled" = "Tanpa Judul";
