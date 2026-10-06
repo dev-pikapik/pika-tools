@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "Block ⌃ Control shortcuts";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ works as a plain key: no shortcuts, no ⌃-click menu";
 "Switch language with ⌥⇧" = "Switch language with ⌥⇧";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "⌥ then ⇧: next language. ⇧ then ⌥: previous";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous";
 "All set" = "All set";
 "pika-tools needs two permissions" = "pika-tools needs two permissions";
 "Both permissions are on and every tool is working." = "Both permissions are on and every tool is working.";

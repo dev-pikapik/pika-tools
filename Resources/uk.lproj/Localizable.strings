@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "Блокувати комбінації з ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ працює як звичайна клавіша: без комбінацій і меню за ⌃-кліком";
 "Switch language with ⌥⇧" = "Зміна мови за ⌥⇧";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "⌥, потім ⇧ — наступна мова. ⇧, потім ⌥ — попередня";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Тримайте ⌥ і натискайте ⇧ — наступна мова. Тримайте ⇧ і натискайте ⌥ — попередня";
 "All set" = "Усе готово";
 "pika-tools needs two permissions" = "Дай pika-tools два дозволи";
 "Both permissions are on and every tool is working." = "Доступи є, усі інструменти працюють.";

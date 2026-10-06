@@ -29,8 +29,13 @@ struct InputSwitchGesture {
         }
         if option && shift {
             bothHeld = true
+            return nil
         }
-        return nil
+        guard bothHeld else { return nil }
+        bothHeld = false
+        let result = cancelled ? nil : direction
+        direction = option ? .next : .previous
+        return result
     }
 
     mutating func interrupt() {

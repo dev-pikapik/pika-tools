@@ -44,7 +44,7 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
-**Switch language with Option+Shift.** Hold Option, press Shift and let go of both: macOS moves to the next input source. Shift first, then Option, goes back to the previous one. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
+**Switch language with Option+Shift.** Hold Option and tap Shift: macOS moves to the next input source. Keep holding Option and tap Shift again to go further. Hold Shift and tap Option to go back. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. This tool is off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 

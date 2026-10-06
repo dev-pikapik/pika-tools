@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "⌃ control のショートカットをブロック";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ を普通のキーとして扱います。ショートカットも ⌃-クリックのメニューも無効になります";
 "Switch language with ⌥⇧" = "⌥⇧ で入力ソースを切り替え";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "⌥ → ⇧ で次の入力ソース、⇧ → ⌥ で前の入力ソース";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ を押したまま ⇧ を押すと次の言語、⇧ を押したまま ⌥ を押すと前の言語";
 "All set" = "準備完了";
 "pika-tools needs two permissions" = "pika-tools には 2 つのアクセス権が必要です";
 "Both permissions are on and every tool is working." = "両方のアクセス権があり、すべてのツールが動作しています。";

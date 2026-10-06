@@ -126,7 +126,7 @@ private struct InputSwitchSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: String(localized: "Switch language with ⌥⇧"),
-            subtitle: Text("⌥ then ⇧: next language. ⇧ then ⌥: previous"),
+            subtitle: Text("Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous"),
             isOn: $tool.isEnabled
         )
     }

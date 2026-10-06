@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "⌃ Control 단축키 차단";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 키가 일반 키처럼 동작합니다. 단축키와 ⌃-클릭 메뉴가 꺼집니다";
 "Switch language with ⌥⇧" = "⌥⇧로 입력 소스 전환";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "⌥ 다음 ⇧는 다음 입력 소스, ⇧ 다음 ⌥는 이전 입력 소스";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어";
 "All set" = "모두 준비됨";
 "pika-tools needs two permissions" = "pika-tools에 두 가지 권한이 필요합니다";
 "Both permissions are on and every tool is working." = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다.";

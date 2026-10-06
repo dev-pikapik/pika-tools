@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "阻止 ⌃ Control 快捷键";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 作为普通按键：没有快捷键，也没有 ⌃-点按菜单";
 "Switch language with ⌥⇧" = "用 ⌥⇧ 切换输入法";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "先按 ⌥ 再按 ⇧ 切换到下一个输入法，先按 ⇧ 再按 ⌥ 切换到上一个";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "按住 ⌥ 再按 ⇧：下一种语言。按住 ⇧ 再按 ⌥：上一种语言";
 "All set" = "一切就绪";
 "pika-tools needs two permissions" = "pika-tools 需要两项权限";
 "Both permissions are on and every tool is working." = "两项权限均已开启，所有工具正常工作。";

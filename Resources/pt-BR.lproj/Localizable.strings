@@ -18,7 +18,7 @@
 "Block ⌃ Control shortcuts" = "Bloquear atalhos com ⌃ Control";
 "⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funciona como uma tecla comum: sem atalhos e sem menu de ⌃-clique";
 "Switch language with ⌥⇧" = "Trocar idioma com ⌥⇧";
-"⌥ then ⇧: next language. ⇧ then ⌥: previous" = "⌥ e depois ⇧: próximo idioma. ⇧ e depois ⌥: o anterior";
+"Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Segure ⌥ e toque em ⇧: próximo idioma. Segure ⇧ e toque em ⌥: anterior";
 "All set" = "Tudo pronto";
 "pika-tools needs two permissions" = "O pika-tools precisa de duas permissões";
 "Both permissions are on and every tool is working." = "As duas permissões estão ativas e todas as ferramentas funcionam.";
