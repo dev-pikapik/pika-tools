@@ -173,3 +173,14 @@
 "Repeat a held key" = "Repeat a held key";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart.";
 "key repeat, hold, accent menu, games, typing" = "key repeat, hold, accent menu, games, typing";
+"New File in Finder" = "New File in Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Right-click in Finder or on the Desktop › New File, then type a name. .txt by default.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "create, text file, txt, right-click, context menu, Desktop, Windows";
+"New File" = "New File";
+"Untitled" = "Untitled";
+"It will appear in “%@”." = "It will appear in “%@”.";
+"Create" = "Create";
+"Type a name without “/” or “:”." = "Type a name without “/” or “:”.";
+"Turn it on in System Settings" = "Turn it on in System Settings";
+"Open Finder Extensions…" = "Open Finder Extensions…";
+"Check for Updates" = "Check for Updates";

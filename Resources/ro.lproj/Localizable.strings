@@ -173,3 +173,14 @@
 "Repeat a held key" = "Repetă tasta ținută apăsată";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Ține apăsată o tastă ca să o scrii din nou și din nou, ca pe Windows, în loc de meniul cu accente. Aplicațiile deschise preiau asta după repornire.";
 "key repeat, hold, accent menu, games, typing" = "repetare taste, ținere apăsată, meniu accente, jocuri, tastare";
+"New File in Finder" = "Fișier nou în Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic dreapta în Finder sau pe birou › Fișier nou, apoi scrie un nume. Implicit .txt.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "creează, fișier text, txt, clic dreapta, meniu contextual, birou, Windows";
+"New File" = "Fișier nou";
+"Untitled" = "Fără titlu";
+"It will appear in “%@”." = "Va apărea în „%@”.";
+"Create" = "Creează";
+"Type a name without “/” or “:”." = "Scrie un nume fără „/” sau „:”.";
+"Turn it on in System Settings" = "Activează în Configurări sistem";
+"Open Finder Extensions…" = "Deschide extensiile Finder…";
+"Check for Updates" = "Caută actualizări";

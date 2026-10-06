@@ -173,3 +173,14 @@
 "Repeat a held key" = "Upprepa en nedhållen tangent";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Håll ned en tangent för att skriva den om och om igen, som i Windows, i stället för accentmenyn. Öppna appar använder det efter en omstart.";
 "key repeat, hold, accent menu, games, typing" = "tangentupprepning, hålla ned, accentmeny, spel, skriva";
+"New File in Finder" = "Ny fil i Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Högerklicka i Finder eller på skrivbordet › Ny fil och skriv ett namn. .txt som standard.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "skapa, textfil, txt, högerklick, snabbmeny, skrivbord, Windows";
+"New File" = "Ny fil";
+"Untitled" = "Namnlös";
+"It will appear in “%@”." = "Den hamnar i ”%@”.";
+"Create" = "Skapa";
+"Type a name without “/” or “:”." = "Skriv ett namn utan ”/” eller ”:”.";
+"Turn it on in System Settings" = "Slå på i Systeminställningar";
+"Open Finder Extensions…" = "Öppna Finder-tillägg…";
+"Check for Updates" = "Sök efter uppdateringar";

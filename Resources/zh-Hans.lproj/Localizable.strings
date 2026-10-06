@@ -173,3 +173,14 @@
 "Repeat a held key" = "按住按键连续输入";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "按住按键即可像在 Windows 上一样重复输入，而不是弹出重音菜单。已打开的 App 需重新启动后生效。";
 "key repeat, hold, accent menu, games, typing" = "按键重复, 按住, 重音菜单, 游戏, 打字";
+"New File in Finder" = "在访达中新建文件";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "在访达或桌面上右键点按 › 新建文件，然后输入名称。默认为 .txt。";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "创建, 文本文件, txt, 右键, 快捷菜单, 桌面, Windows";
+"New File" = "新建文件";
+"Untitled" = "未命名";
+"It will appear in “%@”." = "它将出现在“%@”中。";
+"Create" = "创建";
+"Type a name without “/” or “:”." = "请输入不含“/”或“:”的名称。";
+"Turn it on in System Settings" = "请在系统设置中打开";
+"Open Finder Extensions…" = "打开访达扩展…";
+"Check for Updates" = "检查更新";

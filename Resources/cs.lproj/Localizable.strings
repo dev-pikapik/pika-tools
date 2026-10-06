@@ -173,3 +173,14 @@
 "Repeat a held key" = "Opakovat drženou klávesu";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Podrž klávesu a píše se znovu a znovu, jako ve Windows, místo nabídky akcentů. Otevřené aplikace to převezmou po restartu.";
 "key repeat, hold, accent menu, games, typing" = "opakování kláves, podržení, nabídka akcentů, hry, psaní";
+"New File in Finder" = "Nový soubor ve Finderu";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klikněte pravým ve Finderu nebo na ploše › Nový soubor a napište název. Standardně .txt.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "vytvořit, textový soubor, txt, pravé tlačítko, kontextová nabídka, plocha, Windows";
+"New File" = "Nový soubor";
+"Untitled" = "Bez názvu";
+"It will appear in “%@”." = "Objeví se ve složce „%@“.";
+"Create" = "Vytvořit";
+"Type a name without “/” or “:”." = "Napište název bez „/“ a „:“.";
+"Turn it on in System Settings" = "Zapněte v Nastavení systému";
+"Open Finder Extensions…" = "Otevřít rozšíření Finderu…";
+"Check for Updates" = "Vyhledat aktualizace";

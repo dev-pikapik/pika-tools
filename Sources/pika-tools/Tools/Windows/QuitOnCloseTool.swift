@@ -1,5 +1,6 @@
 import AppKit
 import ApplicationServices
+import Carbon.HIToolbox
 import SwiftUI
 import UniformTypeIdentifiers
 
@@ -28,6 +29,8 @@ final class QuitOnCloseTool: Tool {
 
     @ObservationIgnored fileprivate var observers: [pid_t: AXObserver] = [:]
     @ObservationIgnored private var tokens: [NSObjectProtocol] = []
+    @ObservationIgnored private var tap: CFMachPort?
+    @ObservationIgnored private var tapSource: CFRunLoopSource?
 
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
@@ -65,6 +68,7 @@ final class QuitOnCloseTool: Tool {
             },
         ]
         NSWorkspace.shared.runningApplications.forEach(watch)
+        startTap()
         isActive = true
     }
 
@@ -72,7 +76,53 @@ final class QuitOnCloseTool: Tool {
         tokens.forEach(NSWorkspace.shared.notificationCenter.removeObserver)
         tokens = []
         observers.keys.forEach(unwatch)
+        if let tap {
+            CGEvent.tapEnable(tap: tap, enable: false)
+            CFMachPortInvalidate(tap)
+        }
+        if let tapSource {
+            CFRunLoopRemoveSource(CFRunLoopGetMain(), tapSource, .commonModes)
+        }
+        tap = nil
+        tapSource = nil
         isActive = false
+    }
+
+    private func startTap() {
+        let types: [CGEventType] = [.leftMouseDown, .keyDown]
+        let mask = types.reduce(CGEventMask(0)) { $0 | (1 << $1.rawValue) }
+        guard let tap = CGEvent.tapCreate(
+            tap: .cgSessionEventTap,
+            place: .headInsertEventTap,
+            options: .listenOnly,
+            eventsOfInterest: mask,
+            callback: quitOnCloseTapCallback,
+            userInfo: Unmanaged.passUnretained(self).toOpaque()
+        ) else { return }
+        let source = CFMachPortCreateRunLoopSource(nil, tap, 0)
+        CFRunLoopAddSource(CFRunLoopGetMain(), source, .commonModes)
+        CGEvent.tapEnable(tap: tap, enable: true)
+        self.tap = tap
+        tapSource = source
+    }
+
+    fileprivate func reenableTap() {
+        if let tap { CGEvent.tapEnable(tap: tap, enable: true) }
+    }
+
+    fileprivate func clicked(at point: CGPoint) {
+        var element: AXUIElement?
+        guard AXUIElementCopyElementAtPosition(AXUIElementCreateSystemWide(), Float(point.x), Float(point.y), &element) == .success,
+              let element, Self.string(element, kAXSubroleAttribute) == kAXCloseButtonSubrole as String
+        else { return }
+        var pid: pid_t = 0
+        guard AXUIElementGetPid(element, &pid) == .success else { return }
+        scheduleChecks(pid)
+    }
+
+    fileprivate func closeShortcutPressed() {
+        guard let pid = NSWorkspace.shared.frontmostApplication?.processIdentifier else { return }
+        scheduleChecks(pid)
     }
 
     private func watch(_ app: NSRunningApplication) {
@@ -86,14 +136,14 @@ final class QuitOnCloseTool: Tool {
         AXObserverAddNotification(observer, element, kAXWindowCreatedNotification as CFString, refcon)
         AXObserverAddNotification(observer, element, kAXFocusedWindowChangedNotification as CFString, refcon)
         AXObserverAddNotification(observer, element, kAXMainWindowChangedNotification as CFString, refcon)
-        CFRunLoopAddSource(CFRunLoopGetMain(), AXObserverGetRunLoopSource(observer), .defaultMode)
+        CFRunLoopAddSource(CFRunLoopGetMain(), AXObserverGetRunLoopSource(observer), .commonModes)
         observers[pid] = observer
         Self.windows(of: element).forEach { track($0, observer: observer) }
     }
 
     private func unwatch(_ pid: pid_t) {
         guard let observer = observers.removeValue(forKey: pid) else { return }
-        CFRunLoopRemoveSource(CFRunLoopGetMain(), AXObserverGetRunLoopSource(observer), .defaultMode)
+        CFRunLoopRemoveSource(CFRunLoopGetMain(), AXObserverGetRunLoopSource(observer), .commonModes)
     }
 
     fileprivate func track(_ window: AXUIElement, observer: AXObserver) {
@@ -103,17 +153,28 @@ final class QuitOnCloseTool: Tool {
 
     fileprivate func windowClosed(observer: AXObserver) {
         guard let pid = observers.first(where: { $0.value === observer })?.key else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.quitIfNoWindows(pid)
+        scheduleChecks(pid)
+    }
+
+    private func scheduleChecks(_ pid: pid_t) {
+        for delay in [0.35, 1.0, 2.2] {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+                guard let self, shouldQuit(pid) != nil else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [weak self] in
+                    self?.shouldQuit(pid)?.terminate()
+                }
+            }
         }
     }
 
-    private func quitIfNoWindows(_ pid: pid_t) {
-        guard isEnabled, let app = NSRunningApplication(processIdentifier: pid), !app.isTerminated,
+    private func shouldQuit(_ pid: pid_t) -> NSRunningApplication? {
+        guard isEnabled, let app = NSRunningApplication(processIdentifier: pid), !app.isTerminated, !app.isHidden,
+              app.activationPolicy == .regular,
+              !Self.alwaysExcluded.contains(app.bundleIdentifier ?? ""),
               !excluded.contains(app.bundleIdentifier ?? ""),
               !Self.hasWindows(pid)
-        else { return }
-        app.terminate()
+        else { return nil }
+        return app
     }
 
     private static func windows(of app: AXUIElement) -> [AXUIElement] {
@@ -129,20 +190,40 @@ final class QuitOnCloseTool: Tool {
     }
 
     private static func hasWindows(_ pid: pid_t) -> Bool {
+        hasLiveCGWindow(pid) || windows(of: AXUIElementCreateApplication(pid)).contains { window in
+            var value: CFTypeRef?
+            return AXUIElementCopyAttributeValue(window, kAXMinimizedAttribute as CFString, &value) == .success
+                && value as? Bool == true
+        }
+    }
+
+    private static func hasLiveCGWindow(_ pid: pid_t) -> Bool {
         let list = CGWindowListCopyWindowInfo([.optionAll, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-        let ids = list.compactMap { info -> Int? in
+        let candidates = list.filter { info in
             guard info[kCGWindowOwnerPID as String] as? pid_t == pid,
                   info[kCGWindowLayer as String] as? Int == 0,
                   (info[kCGWindowAlpha as String] as? Double ?? 1) > 0,
                   let bounds = info[kCGWindowBounds as String] as? [String: CGFloat],
-                  (bounds["Width"] ?? 0) >= 100, (bounds["Height"] ?? 0) >= 100
-            else { return nil }
-            return info[kCGWindowNumber as String] as? Int
+                  (bounds["Width"] ?? 0) >= 80, (bounds["Height"] ?? 0) >= 80
+            else { return false }
+            return true
         }
-        return ids.contains { id in
-            let spaces = CGSCopySpacesForWindows(CGSMainConnectionID(), 7, [id] as CFArray)?.takeRetainedValue() as? [Any]
-            return !(spaces ?? []).isEmpty
+        if candidates.contains(where: { $0[kCGWindowIsOnscreen as String] as? Bool == true }) { return true }
+        let visible = visibleSpaces()
+        return candidates.contains { info in
+            guard let id = info[kCGWindowNumber as String] as? Int,
+                  let spaces = CGSCopySpacesForWindows(CGSMainConnectionID(), 7, [id] as CFArray)?.takeRetainedValue() as? [NSNumber]
+            else { return false }
+            return !spaces.isEmpty && spaces.allSatisfy { !visible.contains($0.intValue) }
         }
+    }
+
+    private static func visibleSpaces() -> Set<Int> {
+        let displays = CGSCopyManagedDisplaySpaces(CGSMainConnectionID())?.takeRetainedValue() as? [[String: Any]] ?? []
+        return Set(displays.compactMap { display in
+            let current = display["Current Space"] as? [String: Any]
+            return (current?["ManagedSpaceID"] as? Int) ?? (current?["id64"] as? Int)
+        })
     }
 
     func exclude() {
@@ -160,6 +241,7 @@ final class QuitOnCloseTool: Tool {
 
 @_silgen_name("CGSMainConnectionID") private func CGSMainConnectionID() -> Int32
 @_silgen_name("CGSCopySpacesForWindows") private func CGSCopySpacesForWindows(_ cid: Int32, _ mask: Int32, _ windows: CFArray) -> Unmanaged<CFArray>?
+@_silgen_name("CGSCopyManagedDisplaySpaces") private func CGSCopyManagedDisplaySpaces(_ cid: Int32) -> Unmanaged<CFArray>?
 
 private func quitOnCloseCallback(observer: AXObserver, element: AXUIElement, notification: CFString, refcon: UnsafeMutableRawPointer?) {
     guard let refcon else { return }
@@ -169,6 +251,32 @@ private func quitOnCloseCallback(observer: AXObserver, element: AXUIElement, not
     } else {
         tool.windowClosed(observer: observer)
     }
+}
+
+private func quitOnCloseTapCallback(
+    proxy: CGEventTapProxy,
+    type: CGEventType,
+    event: CGEvent,
+    refcon: UnsafeMutableRawPointer?
+) -> Unmanaged<CGEvent>? {
+    guard let refcon else { return Unmanaged.passUnretained(event) }
+    let tool = Unmanaged<QuitOnCloseTool>.fromOpaque(refcon).takeUnretainedValue()
+    switch type {
+    case .tapDisabledByTimeout, .tapDisabledByUserInput:
+        tool.reenableTap()
+    case .leftMouseDown:
+        let point = event.location
+        DispatchQueue.main.async { tool.clicked(at: point) }
+    case .keyDown:
+        let flags = event.flags
+        if flags.contains(.maskCommand), flags.isDisjoint(with: [.maskControl, .maskAlternate]),
+           event.getIntegerValueField(.keyboardEventKeycode) == kVK_ANSI_W {
+            DispatchQueue.main.async { tool.closeShortcutPressed() }
+        }
+    default:
+        break
+    }
+    return Unmanaged.passUnretained(event)
 }
 
 private struct QuitOnCloseSettings: View {

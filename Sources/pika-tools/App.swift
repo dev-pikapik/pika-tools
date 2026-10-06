@@ -22,6 +22,22 @@ struct PikaToolsApp: App {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        NSAppleEventManager.shared().setEventHandler(
+            self,
+            andSelector: #selector(handleURL(_:reply:)),
+            forEventClass: AEEventClass(kInternetEventClass),
+            andEventID: AEEventID(kAEGetURL)
+        )
+    }
+
+    @objc private func handleURL(_ event: NSAppleEventDescriptor, reply: NSAppleEventDescriptor) {
+        guard let string = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue,
+              let url = URL(string: string)
+        else { return }
+        NewFile.handle(url)
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
         LoginItem.shared.restore()
@@ -34,6 +50,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ToolRegistry.shared.refresh()
         SettingsSync.shared.refresh()
         Updater.shared.start()
+        StatusMenu.shared.start()
         KeepAwake.shared.restoreLidSleepIfNeeded()
 
         if !permissions.allGranted {

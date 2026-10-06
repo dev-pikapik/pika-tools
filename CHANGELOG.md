@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] - Unreleased
+
+### Added
+- **New File** in the Finder right-click menu, on the Desktop too: pick it, type a name and get an empty file. Plain text by default. Turn it on in Windows & Apps.
+- Right-click the pika-tools icon in the menu bar for a quick menu: Keep Awake, Settings, updates, About, Open at Login and Quit.
+
+### Fixed
+- Quit when the last window closes now also reacts to the close button and ⌘W, and checks twice before quitting.
+
 ## [1.10.1] - Unreleased
 
 ### Fixed

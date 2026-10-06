@@ -173,3 +173,14 @@
 "Repeat a held key" = "Basılı tutulan tuşu tekrarla";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Bir tuşu basılı tutunca aksan menüsü yerine Windows'taki gibi tekrar tekrar yazılır. Açık uygulamalar bunu yeniden başlatıldıktan sonra kullanır.";
 "key repeat, hold, accent menu, games, typing" = "tuş tekrarı, basılı tutma, aksan menüsü, oyunlar, yazma";
+"New File in Finder" = "Finder’da Yeni Dosya";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder’da veya masaüstünde sağ tıklayın › Yeni Dosya, sonra bir ad yazın. Varsayılan .txt.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "oluştur, metin dosyası, txt, sağ tık, bağlam menüsü, masaüstü, Windows";
+"New File" = "Yeni Dosya";
+"Untitled" = "Adsız";
+"It will appear in “%@”." = "“%@” klasöründe görünecek.";
+"Create" = "Oluştur";
+"Type a name without “/” or “:”." = "“/” veya “:” içermeyen bir ad yazın.";
+"Turn it on in System Settings" = "Sistem Ayarları’nda açın";
+"Open Finder Extensions…" = "Finder Uzantılarını Aç…";
+"Check for Updates" = "Güncellemeleri denetle";

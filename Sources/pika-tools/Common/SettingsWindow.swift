@@ -79,6 +79,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
             SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
+            SettingsItem(tab: .windows, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, hours, minutes"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),

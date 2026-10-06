@@ -173,3 +173,14 @@
 "Repeat a held key" = "Повтор під час утримання клавіші";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Тримаєш клавішу — літера друкується знову і знову, як у Windows, замість меню з акцентами. Відкриті програми підхоплять це після перезапуску.";
 "key repeat, hold, accent menu, games, typing" = "повтор клавіш, утримання, меню акцентів, ігри, набір тексту";
+"New File in Finder" = "Новий файл у Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Правий клік у Finder або на робочому столі › Новий файл — і введіть назву. Типово .txt.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "створити, текстовий файл, txt, правий клік, контекстне меню, робочий стіл, Windows";
+"New File" = "Новий файл";
+"Untitled" = "Без назви";
+"It will appear in “%@”." = "Він з’явиться в папці «%@».";
+"Create" = "Створити";
+"Type a name without “/” or “:”." = "Введіть назву без «/» і «:».";
+"Turn it on in System Settings" = "Увімкніть у Системних параметрах";
+"Open Finder Extensions…" = "Відкрити розширення Finder…";
+"Check for Updates" = "Перевірити оновлення";
