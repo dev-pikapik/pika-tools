@@ -184,3 +184,9 @@
 "Turn it on in System Settings" = "請在系統設定中開啟";
 "Open Finder Extensions…" = "打開 Finder 延伸功能⋯";
 "Check for Updates" = "檢查更新";
+"Shortcuts" = "捷徑";
+"Open Shortcuts" = "打開捷徑";
+"Copy Link" = "拷貝連結";
+"Buttons in Control Center and widgets" = "控制中心和小工具裡的按鈕";
+"widget, Control Center, Shortcuts, menu bar, button" = "小工具, 控制中心, 捷徑, 選單列, 按鈕";
+"In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "在「捷徑」中建立一個使用「打開 URL」動作的捷徑，並貼上連結。然後把它加到控制中心、選單列，或桌面上的「捷徑」小工具。每點一下就開啟或關閉。";

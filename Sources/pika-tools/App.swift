@@ -36,6 +36,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
               let url = URL(string: string)
         else { return }
         NewFile.handle(url)
+        KeepAwake.shared.handle(url)
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {

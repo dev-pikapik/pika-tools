@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] - Unreleased
+
+### Added
+- Buttons for Keep Awake, the display and the lid-closed mode in Control Center, the menu bar or a desktop widget, through the Shortcuts app. Copy a link in Settings › Keep Awake and paste it into a shortcut with Open URLs.
+
 ## [1.11.0] - Unreleased
 
 ### Added

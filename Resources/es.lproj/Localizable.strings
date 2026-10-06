@@ -184,3 +184,9 @@
 "Turn it on in System Settings" = "Actívala en Ajustes del Sistema";
 "Open Finder Extensions…" = "Abrir extensiones del Finder…";
 "Check for Updates" = "Buscar actualizaciones";
+"Shortcuts" = "Atajos";
+"Open Shortcuts" = "Abrir Atajos";
+"Copy Link" = "Copiar enlace";
+"Buttons in Control Center and widgets" = "Botones en el Centro de control y en widgets";
+"widget, Control Center, Shortcuts, menu bar, button" = "widget, Centro de control, Atajos, barra de menús, botón";
+"In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "En Atajos, crea un atajo con la acción Abrir URLs y pega un enlace. Luego añádelo al Centro de control, a la barra de menús o a un widget de Atajos en el escritorio. Cada toque lo activa o lo desactiva.";

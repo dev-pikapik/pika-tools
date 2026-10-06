@@ -184,3 +184,9 @@
 "Turn it on in System Settings" = "Sistem Ayarları’nda açın";
 "Open Finder Extensions…" = "Finder Uzantılarını Aç…";
 "Check for Updates" = "Güncellemeleri denetle";
+"Shortcuts" = "Kestirmeler";
+"Open Shortcuts" = "Kestirmeler’i Aç";
+"Copy Link" = "Bağlantıyı Kopyala";
+"Buttons in Control Center and widgets" = "Denetim Merkezi’nde ve widget’larda düğmeler";
+"widget, Control Center, Shortcuts, menu bar, button" = "widget, Denetim Merkezi, Kestirmeler, menü çubuğu, düğme";
+"In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Kestirmeler’de “URL’leri Aç” eylemiyle bir kestirme oluştur ve bir bağlantı yapıştır. Sonra onu Denetim Merkezi’ne, menü çubuğuna ya da masaüstündeki bir Kestirmeler widget’ına ekle. Her dokunuş açar veya kapatır.";
