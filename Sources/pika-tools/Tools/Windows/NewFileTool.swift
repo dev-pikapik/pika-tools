@@ -36,7 +36,10 @@ final class NewFileTool: Tool {
 
     func refresh() {
         isActive = Self.pluginkit("-m", "-i", Self.extensionID).hasPrefix("+")
-        if isActive { needsSettings = false }
+        if isActive {
+            needsSettings = false
+            Self.ignoreOtherCopies()
+        }
         if UserDefaults.standard.object(forKey: id) as? Bool != isActive {
             UserDefaults.standard.set(isActive, forKey: id)
         }
@@ -49,6 +52,16 @@ final class NewFileTool: Tool {
 
     func openExtensionSettings() {
         FIFinderSyncController.showExtensionManagementInterface()
+    }
+
+    private static func ignoreOtherCopies() {
+        guard !extensionID.contains(".dev.") else { return }
+        for line in pluginkit("-m", "-p", "com.apple.FinderSync").split(separator: "\n") where line.hasPrefix("+") {
+            let id = line.split(whereSeparator: \.isWhitespace).last?.prefix { $0 != "(" } ?? ""
+            if id.hasPrefix("com.pesotchi.pika-tools"), id.hasSuffix(".new-file"), id != extensionID {
+                pluginkit("-e", "ignore", "-i", String(id))
+            }
+        }
     }
 
     @discardableResult

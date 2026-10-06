@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.2] - Unreleased
+
+### Fixed
+- The menu bar panel no longer turns grey when pika-tools was already the active app as you opened it.
+- Finder no longer shows “New File” twice when a test build of pika-tools was also installed.
+
 ## [1.15.1] - Unreleased
 
 ### Changed
