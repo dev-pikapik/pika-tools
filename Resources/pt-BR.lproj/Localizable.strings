@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Manter Ativo” será desativado, e a duração e as opções voltarão a ser como eram.";
 "pika-tools will check for updates automatically again." = "O pika-tools voltará a verificar atualizações automaticamente.";
 "Scroll by lines" = "Rolar por linhas";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Cada clique da roda rola o mesmo número de linhas, não importa a velocidade. Só para mouses, não para o trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Cada clique da roda rola a mesma distância, não importa a velocidade com que você gira. Linhas servem para a maioria dos apps. Pixels são para apps e jogos que contam a rolagem em pixels exatos. Só para mouses, não para o trackpad.";
 "Lines per wheel click" = "Linhas por clique da roda";
 "Works while scrolling by lines is on" = "Funciona quando a rolagem por linhas está ativada";
+"Scroll by" = "Rolar por";
+"Lines" = "Linhas";
+"Pixels" = "Pixels";
+"Pixels per wheel click" = "Pixels por clique da roda";
 "wheel, Windows, scrolling speed, acceleration" = "roda, Windows, velocidade da rolagem, aceleração";
 "scrolling speed, wheel, notch" = "velocidade da rolagem, roda, clique";
 "Settings file" = "Arquivo de ajustes";

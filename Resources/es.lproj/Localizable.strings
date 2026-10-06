@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "«Mantener activo» se desactivará, y la duración y las opciones volverán a como estaban.";
 "pika-tools will check for updates automatically again." = "pika-tools volverá a buscar actualizaciones automáticamente.";
 "Scroll by lines" = "Desplazarse por líneas";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Cada clic de la rueda desplaza el mismo número de líneas, por rápido que la gires. Solo para ratones, no para el trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Cada clic de la rueda desplaza la misma distancia, sin importar lo rápido que la gires. Las líneas sirven para la mayoría de las apps. Los píxeles son para apps y juegos que cuentan el desplazamiento en píxeles exactos. Solo para ratones, no para el trackpad.";
 "Lines per wheel click" = "Líneas por clic de la rueda";
 "Works while scrolling by lines is on" = "Funciona mientras el desplazamiento por líneas está activado";
+"Scroll by" = "Desplazar por";
+"Lines" = "Líneas";
+"Pixels" = "Píxeles";
+"Pixels per wheel click" = "Píxeles por clic de la rueda";
 "wheel, Windows, scrolling speed, acceleration" = "rueda, Windows, velocidad de desplazamiento, aceleración";
 "scrolling speed, wheel, notch" = "velocidad de desplazamiento, rueda, clic";
 "Settings file" = "Archivo de ajustes";

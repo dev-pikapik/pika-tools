@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "‘Wakker houden’ wordt uitgeschakeld en de duur en opties worden weer zoals ze waren.";
 "pika-tools will check for updates automatically again." = "pika-tools controleert weer automatisch op updates.";
 "Scroll by lines" = "Per regel scrollen";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Elke klik van het wieltje scrolt hetzelfde aantal regels, hoe snel je ook draait. Alleen voor muizen, niet voor het trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Elke klik van het wieltje scrolt even ver, hoe snel je ook draait. Regels passen bij de meeste apps. Pixels zijn voor apps en games die scrollen in exacte pixels tellen. Alleen voor muizen, niet voor het trackpad.";
 "Lines per wheel click" = "Regels per klik van het wieltje";
 "Works while scrolling by lines is on" = "Werkt als scrollen per regel aan staat";
+"Scroll by" = "Scrollen per";
+"Lines" = "Regels";
+"Pixels" = "Pixels";
+"Pixels per wheel click" = "Pixels per klik van het wieltje";
 "wheel, Windows, scrolling speed, acceleration" = "wieltje, Windows, scrolsnelheid, versnelling";
 "scrolling speed, wheel, notch" = "scrolsnelheid, wieltje, klik";
 "Settings file" = "Instellingenbestand";

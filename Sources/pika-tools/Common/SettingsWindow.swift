@@ -74,6 +74,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, Windows, scrolling speed, acceleration"),
             SettingsItem(tab: .mouse, title: String(localized: "Lines per wheel click"), synonyms: "scrolling speed, wheel, notch"),
+            SettingsItem(tab: .mouse, title: String(localized: "Scroll by"), synonyms: "pixels, lines, wheel, games, scrolling mode, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),

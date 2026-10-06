@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Uyanık Tut” kapanacak; süre ve seçenekler eski hâline dönecek.";
 "pika-tools will check for updates automatically again." = "pika-tools güncellemeleri yeniden otomatik olarak denetleyecek.";
 "Scroll by lines" = "Satır satır kaydır";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Tekerin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır. Yalnızca fareler için, izleme dörtgeni için değil.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Tekerin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı mesafeyi kaydırır. Satırlar çoğu uygulamaya uyar. Pikseller, kaydırmayı tam piksel olarak sayan uygulama ve oyunlar içindir. Yalnızca fareler için, izleme dörtgeni için değil.";
 "Lines per wheel click" = "Teker tıkı başına satır";
 "Works while scrolling by lines is on" = "Satır satır kaydırma açıkken çalışır";
+"Scroll by" = "Kaydırma birimi";
+"Lines" = "Satır";
+"Pixels" = "Piksel";
+"Pixels per wheel click" = "Teker tıkı başına piksel";
 "wheel, Windows, scrolling speed, acceleration" = "teker, Windows, sarma hızı, hızlanma";
 "scrolling speed, wheel, notch" = "sarma hızı, teker, tık";
 "Settings file" = "Ayarlar dosyası";

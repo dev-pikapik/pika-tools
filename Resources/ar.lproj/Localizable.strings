@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "سيتوقف «منع السكون»، وستعود المدة والخيارات إلى ما كانت عليه.";
 "pika-tools will check for updates automatically again." = "سيتحقق pika-tools من وجود تحديثات تلقائيًا مرة أخرى.";
 "Scroll by lines" = "التمرير بالأسطر";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "كل نقرة من العجلة تمرر العدد نفسه من الأسطر مهما كانت سرعة تدويرها. للماوس فقط، وليس للوحة التعقب.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "كل نقرة على العجلة تمرّر المسافة نفسها مهما كانت سرعة تدويرها. الأسطر تناسب معظم التطبيقات. البكسلات للتطبيقات والألعاب التي تحسب التمرير بالبكسل بدقة. للفأرة فقط، لا لوحة التتبع.";
 "Lines per wheel click" = "عدد الأسطر لكل نقرة عجلة";
 "Works while scrolling by lines is on" = "يعمل عند تشغيل التمرير بالأسطر";
+"Scroll by" = "التمرير حسب";
+"Lines" = "الأسطر";
+"Pixels" = "البكسلات";
+"Pixels per wheel click" = "عدد البكسلات لكل نقرة عجلة";
 "wheel, Windows, scrolling speed, acceleration" = "عجلة، Windows، سرعة التمرير، التسارع";
 "scrolling speed, wheel, notch" = "سرعة التمرير، عجلة، نقرة";
 "Settings file" = "ملف الإعدادات";

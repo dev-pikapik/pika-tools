@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "”Håll vaken” stängs av, och tid och alternativ blir som de var.";
 "pika-tools will check for updates automatically again." = "pika-tools söker efter uppdateringar automatiskt igen.";
 "Scroll by lines" = "Rulla per rad";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Varje klick med hjulet rullar lika många rader, hur snabbt du än snurrar. Bara för möss, inte för styrplattan.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Varje klick med hjulet rullar lika långt, hur snabbt du än snurrar. Rader passar de flesta appar. Pixlar är för appar och spel som räknar rullning i exakta pixlar. Bara för möss, inte för styrplattan.";
 "Lines per wheel click" = "Rader per klick med hjulet";
 "Works while scrolling by lines is on" = "Fungerar när rullning per rad är på";
+"Scroll by" = "Rulla med";
+"Lines" = "Rader";
+"Pixels" = "Pixlar";
+"Pixels per wheel click" = "Pixlar per klick med hjulet";
 "wheel, Windows, scrolling speed, acceleration" = "hjul, Windows, rullningshastighet, acceleration";
 "scrolling speed, wheel, notch" = "rullningshastighet, hjul, klick";
 "Settings file" = "Inställningsfil";

@@ -8,6 +8,8 @@ final class WheelTool: Tool {
     let tab = SettingsTab.mouse
 
     private static let linesKey = "wheel-lines-count"
+    private static let modeKey = "wheel-lines-mode"
+    private static let pixelsKey = "wheel-lines-pixels"
 
     private(set) var isActive = false
 
@@ -21,7 +23,21 @@ final class WheelTool: Tool {
     var lines: Int {
         didSet {
             UserDefaults.standard.set(lines, forKey: Self.linesKey)
-            step = WheelStep(lines: lines)
+            updateStep()
+        }
+    }
+
+    var mode: WheelStep.Mode {
+        didSet {
+            UserDefaults.standard.set(mode.rawValue, forKey: Self.modeKey)
+            updateStep()
+        }
+    }
+
+    var pixels: Int {
+        didSet {
+            UserDefaults.standard.set(pixels, forKey: Self.pixelsKey)
+            updateStep()
         }
     }
 
@@ -32,7 +48,13 @@ final class WheelTool: Tool {
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
         lines = Self.savedLines
-        step = WheelStep(lines: lines)
+        mode = Self.savedMode
+        pixels = Self.savedPixels
+        updateStep()
+    }
+
+    private func updateStep() {
+        step = WheelStep(mode: mode, lines: lines, pixels: pixels)
     }
 
     private static var savedLines: Int {
@@ -40,20 +62,37 @@ final class WheelTool: Tool {
         return min(max(value, WheelStep.range.lowerBound), WheelStep.range.upperBound)
     }
 
+    private static var savedMode: WheelStep.Mode {
+        UserDefaults.standard.string(forKey: modeKey).flatMap(WheelStep.Mode.init) ?? .lines
+    }
+
+    private static var savedPixels: Int {
+        let value = UserDefaults.standard.object(forKey: pixelsKey) as? Int ?? WheelStep.defaultPixels
+        return min(max(value, WheelStep.pixelRange.lowerBound), WheelStep.pixelRange.upperBound)
+    }
+
     var settingsView: AnyView {
         AnyView(WheelSettings(tool: self))
     }
 
-    var isDefault: Bool { !isEnabled && lines == WheelStep.defaultLines }
+    var isDefault: Bool {
+        !isEnabled && lines == WheelStep.defaultLines && mode == .lines && pixels == WheelStep.defaultPixels
+    }
 
     func reset() {
         isEnabled = false
         lines = WheelStep.defaultLines
-        UserDefaults.standard.removeObject(forKey: Self.linesKey)
+        mode = .lines
+        pixels = WheelStep.defaultPixels
+        for key in [Self.linesKey, Self.modeKey, Self.pixelsKey] {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
     }
 
     func load() {
         lines = Self.savedLines
+        mode = Self.savedMode
+        pixels = Self.savedPixels
         isEnabled = UserDefaults.standard.bool(forKey: id)
     }
 
@@ -121,24 +160,50 @@ private struct WheelSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad."),
+            subtitle: Text("Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad."),
             isOn: $tool.isEnabled
         )
         if inSettings {
-            LabeledContent {
-                ValueSlider(
-                    title: String(localized: "Lines per wheel click"),
-                    value: Binding(get: { Double(tool.lines) }, set: { tool.lines = Int($0) }),
-                    range: Double(WheelStep.range.lowerBound)...Double(WheelStep.range.upperBound),
-                    step: 1,
-                    ticks: WheelStep.range.count
-                )
-            } label: {
-                Text("Lines per wheel click")
-                Text("Works while scrolling by lines is on")
+            Group {
+                Picker(selection: $tool.mode) {
+                    Text("Lines").tag(WheelStep.Mode.lines)
+                    Text("Pixels").tag(WheelStep.Mode.pixels)
+                } label: {
+                    Text("Scroll by")
+                }
+                .settingAnchor(String(localized: "Scroll by"))
+                switch tool.mode {
+                case .lines:
+                    LabeledContent {
+                        ValueSlider(
+                            title: String(localized: "Lines per wheel click"),
+                            value: Binding(get: { Double(tool.lines) }, set: { tool.lines = Int($0) }),
+                            range: Double(WheelStep.range.lowerBound)...Double(WheelStep.range.upperBound),
+                            step: 1,
+                            ticks: WheelStep.range.count
+                        )
+                    } label: {
+                        Text("Lines per wheel click")
+                        Text("Works while scrolling by lines is on")
+                    }
+                    .settingAnchor(String(localized: "Lines per wheel click"))
+                case .pixels:
+                    LabeledContent {
+                        ValueSlider(
+                            title: String(localized: "Pixels per wheel click"),
+                            value: Binding(get: { Double(tool.pixels) }, set: { tool.pixels = Int($0) }),
+                            range: Double(WheelStep.pixelRange.lowerBound)...Double(WheelStep.pixelRange.upperBound),
+                            step: 1,
+                            ticks: 11
+                        )
+                    } label: {
+                        Text("Pixels per wheel click")
+                        Text("Works while scrolling by lines is on")
+                    }
+                    .settingAnchor(String(localized: "Pixels per wheel click"))
+                }
             }
             .disabled(!tool.isEnabled)
-            .settingAnchor(String(localized: "Lines per wheel click"))
         }
     }
 }
