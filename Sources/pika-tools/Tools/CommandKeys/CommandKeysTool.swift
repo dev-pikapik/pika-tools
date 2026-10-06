@@ -40,6 +40,11 @@ final class CommandKeysTool: Tool {
         protectsClose = UserDefaults.standard.bool(forKey: "command-keys-close")
     }
 
+    func load() {
+        protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
+        protectsClose = UserDefaults.standard.bool(forKey: "command-keys-close")
+    }
+
     var settingsView: AnyView {
         AnyView(CommandKeysSettings(tool: self))
     }

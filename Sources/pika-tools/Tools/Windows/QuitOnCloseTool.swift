@@ -34,6 +34,11 @@ final class QuitOnCloseTool: Tool {
         excluded = UserDefaults.standard.stringArray(forKey: Self.excludedKey) ?? []
     }
 
+    func load() {
+        excluded = UserDefaults.standard.stringArray(forKey: Self.excludedKey) ?? []
+        isEnabled = UserDefaults.standard.bool(forKey: id)
+    }
+
     var settingsView: AnyView {
         AnyView(QuitOnCloseSettings(tool: self))
     }

@@ -143,6 +143,16 @@ final class KeepAwake {
         stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
     }
 
+    func load() {
+        let defaults = UserDefaults.standard
+        lastMode = Mode(rawValue: defaults.string(forKey: "keep-awake-mode") ?? "") ?? .timed
+        durationUnit = Unit(rawValue: defaults.string(forKey: "keep-awake-duration-unit") ?? "") ?? .hours
+        durationValue = min(max(defaults.object(forKey: "keep-awake-duration-value") as? Int ?? 1, 1), durationUnit.limit)
+        lidOption = defaults.bool(forKey: "keep-awake-lid")
+        keepsDisplayOn = defaults.bool(forKey: "keep-awake-display")
+        stopsOnLowBattery = defaults.object(forKey: "keep-awake-battery") as? Bool ?? true
+    }
+
     var isDefault: Bool {
         mode == .off && lastMode == .timed && durationUnit == .hours && durationValue == 1
             && !keepsDisplayOn && !lidOption && stopsOnLowBattery

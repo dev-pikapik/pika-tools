@@ -1,4 +1,4 @@
-import Carbon
+import AppKit
 import SwiftUI
 
 @Observable
@@ -27,6 +27,11 @@ final class SideButtonsTool: Tool {
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
         swapsButtons = UserDefaults.standard.bool(forKey: "side-buttons-swap")
+    }
+
+    func load() {
+        swapsButtons = UserDefaults.standard.bool(forKey: "side-buttons-swap")
+        isEnabled = UserDefaults.standard.bool(forKey: id)
     }
 
     var settingsView: AnyView {
@@ -79,12 +84,30 @@ final class SideButtonsTool: Tool {
         isActive = false
     }
 
-    fileprivate func press(forward: Bool) {
-        let key = CGKeyCode((forward != swapsButtons) ? kVK_ANSI_RightBracket : kVK_ANSI_LeftBracket)
-        for down in [true, false] {
-            let event = CGEvent(keyboardEventSource: nil, virtualKey: key, keyDown: down)
-            event?.flags = .maskCommand
-            event?.post(tap: .cghidEventTap)
+    private static let swipeApps = ["com.apple.", "com.binarynights.ForkLift", "org.mozilla.firefox", "com.operasoftware.Opera"]
+
+    fileprivate func handle(_ event: CGEvent, down: Bool) -> Bool {
+        let button = event.getIntegerValueField(.mouseEventButtonNumber)
+        let pid = pid_t(event.getIntegerValueField(.eventTargetUnixProcessID))
+        let app = pid > 0 ? NSRunningApplication(processIdentifier: pid) : NSWorkspace.shared.frontmostApplication
+        let id = app?.bundleIdentifier ?? ""
+        let swaps = swapsButtons
+        guard Self.swipeApps.contains(where: id.hasPrefix) else {
+            if swaps { event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3) }
+            return false
+        }
+        if down { Self.swipe(forward: (button == 4) != swaps) }
+        return true
+    }
+
+    private static func swipe(forward: Bool) {
+        for phase: Int64 in [1, 4] {
+            guard let event = CGEvent(source: nil), let type = CGEventType(rawValue: UInt32(NSEvent.EventType.gesture.rawValue)) else { return }
+            event.type = type
+            event.setIntegerValueField(CGEventField(rawValue: 110)!, value: 16)
+            event.setIntegerValueField(CGEventField(rawValue: 132)!, value: phase)
+            event.setIntegerValueField(CGEventField(rawValue: 115)!, value: forward ? 8 : 4)
+            event.post(tap: .cgSessionEventTap)
         }
     }
 }
@@ -103,8 +126,7 @@ private func sideButtonsCallback(
     case .otherMouseDown, .otherMouseUp:
         let button = event.getIntegerValueField(.mouseEventButtonNumber)
         guard button == 3 || button == 4 else { break }
-        if type == .otherMouseDown { tool.press(forward: button == 4) }
-        return nil
+        if tool.handle(event, down: type == .otherMouseDown) { return nil }
     default:
         break
     }
@@ -119,7 +141,7 @@ private struct SideButtonsSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Buttons 4 and 5 work like ⌘[ and ⌘] in every app"),
+            subtitle: Text("Buttons 4 and 5 go back and forward in Safari, Finder and other apps, like a swipe on the trackpad"),
             isOn: $tool.isEnabled
         )
         if inSettings {

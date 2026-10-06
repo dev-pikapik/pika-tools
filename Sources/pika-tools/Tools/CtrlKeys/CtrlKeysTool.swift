@@ -23,6 +23,10 @@ final class CtrlKeysTool: Tool {
         isEnabled = UserDefaults.standard.object(forKey: id) as? Bool ?? true
     }
 
+    func load() {
+        isEnabled = UserDefaults.standard.object(forKey: id) as? Bool ?? true
+    }
+
     var settingsView: AnyView {
         AnyView(CtrlKeysSettings(tool: self))
     }

@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, turns off mouse acceleration, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
+A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, turns off mouse acceleration, scrolls the mouse wheel by lines like Windows, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
 
 ## Install
 
@@ -48,7 +48,9 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it, like LinearMouse. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
 
-**Side buttons go back and forward.** Mouse buttons 4 and 5 work like ⌘[ and ⌘] in every app: back and forward in Safari, Finder, Xcode and anywhere else that has these shortcuts. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
+**Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it, like on Windows. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default.
+
+**Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Safari, Finder and other Apple apps, Firefox, Opera and ForkLift, just like a swipe on the trackpad. Other apps, such as JetBrains IDEs, get the buttons as they are and handle them their own way. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
@@ -70,15 +72,17 @@ On a MacBook you can also turn on **Work with the lid closed**. macOS has no swi
 
 Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
 
-- **General**: open at login, appearance (System, Light or Dark), language and updates.
+- **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keyboard**: Ctrl shortcuts, ⌘Q and ⌘W, language switch.
-- **Mouse**: pointer acceleration and tracking speed, side buttons.
+- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, side buttons.
 - **Windows & Apps**: quit on last window, with a list of exceptions, and hide with a Dock click.
 - **Keep Awake**: duration, display and lid options.
-- **Permissions**: the status of both permissions with buttons that open the right place in System Settings.
+- **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.
 
 Every page has a **Restore Defaults…** button at the bottom. It asks first, then turns off the tools on that page and puts their options back, as if pika-tools never touched them.
+
+**Sync settings with iCloud** keeps pika-tools the same on all your Macs. The settings live in the pika-tools folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.
 
 ## Updates
 

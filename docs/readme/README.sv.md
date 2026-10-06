@@ -7,7 +7,7 @@
 [![Licens: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Hämtningar](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den blockerar kortkommandon med kontroll, skyddar ⌘Q och ⌘W, byter språk med alternativ+skift på samma sätt som Alt+Skift i Windows, stänger av musacceleration, låter musens sidoknappar gå bakåt och framåt, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
+En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den blockerar kortkommandon med kontroll, skyddar ⌘Q och ⌘W, byter språk med alternativ+skift på samma sätt som Alt+Skift i Windows, stänger av musacceleration, rullar mushjulet per rad som i Windows, låter musens sidoknappar gå bakåt och framåt, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
 
 ## Installera
 
@@ -48,7 +48,9 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 **Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den, precis som LinearMouse. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pika-tools så får macOS tillbaka sina egna inställningar. Av som standard.
 
-**Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 fungerar som ⌘[ och ⌘] i alla appar: bakåt och framåt i Safari, Finder, Xcode och överallt där de här kortkommandona finns. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
+**Rulla per rad.** Varje klick med mushjulet rullar lika många rader, hur snabbt du än snurrar på det, som i Windows. Välj från 1 till 10 rader per klick, 3 som standard. Naturlig rullning är kvar som du ställt in den i Systeminställningar. Fungerar bara för möss, styrplattan förblir som den är. Av som standard.
+
+**Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Safari, Finder och andra Apple-appar, i Firefox, Opera och ForkLift, som en svepning på styrplattan. Andra appar, till exempel JetBrains IDE:er, får knapparna som de är och hanterar dem på sitt eget sätt. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen, precis som i Windows. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 
@@ -70,15 +72,17 @@ På en MacBook kan du också slå på **Arbeta med locket stängt**. macOS har i
 
 Öppna inställningarna från menyn med **Inställningar…** eller ⌘, eller starta pika-tools igen från Finder, Launchpad eller Spotlight. Medan fönstret är öppet syns appen i Dock och i ⌘Tab.
 
-- **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk och uppdateringar.
+- **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Tangentbord**: kortkommandon med kontroll, ⌘Q och ⌘W, byte av språk.
-- **Mus**: pekaracceleration och hastighet, sidoknappar.
+- **Mus**: pekaracceleration och hastighet, rullning per rad, sidoknappar.
 - **Fönster och appar**: avsluta vid sista fönstret, med en lista över undantag, och göm med ett klick i Dock.
 - **Håll vaken**: tid, alternativ för skärm och lock.
-- **Behörigheter**: status för båda behörigheterna, med knappar som öppnar rätt ställe i Systeminställningar.
+- **Behörigheter**: status för båda behörigheterna, och för iCloud Drive när synkronisering är på, med knappar som öppnar rätt ställe i Systeminställningar.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 
 Varje sida har knappen **Återställ förval…** längst ned. Den frågar först, stänger sedan av verktygen på sidan och återställer deras alternativ, som om pika-tools aldrig hade rört dem.
+
+**Synkronisera inställningar med iCloud** håller pika-tools likadant på alla dina Mac-datorer. Inställningarna ligger i mappen pika-tools i iCloud Drive, och den senaste ändringen gäller. Av som standard, och iCloud Drive måste vara på. Behörigheter synkroniseras inte: varje Mac frågar efter dem själv.
 
 ## Uppdateringar
 

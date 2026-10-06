@@ -7,7 +7,7 @@
 [![Licență: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descărcări](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-O aplicație mică pentru bara de meniu din macOS, care îmbunătățește tastele, ferestrele și Dock-ul: blochează scurtăturile cu Control, protejează ⌘Q și ⌘W, schimbă limba cu Opțiune+Shift, așa cum funcționează Alt+Shift pe Windows, dezactivează accelerarea mausului, face ca butoanele laterale ale mausului să meargă înapoi și înainte, închide aplicațiile când le închizi ultima fereastră, ascunde o aplicație cu un clic în Dock și ține Mac-ul treaz.
+O aplicație mică pentru bara de meniu din macOS, care îmbunătățește tastele, ferestrele și Dock-ul: blochează scurtăturile cu Control, protejează ⌘Q și ⌘W, schimbă limba cu Opțiune+Shift, așa cum funcționează Alt+Shift pe Windows, dezactivează accelerarea mausului, derulează rotița mausului pe rânduri ca pe Windows, face ca butoanele laterale ale mausului să meargă înapoi și înainte, închide aplicațiile când le închizi ultima fereastră, ascunde o aplicație cu un clic în Dock și ține Mac-ul treaz.
 
 ## Instalare
 
@@ -48,7 +48,9 @@ pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastez
 
 **Dezactivează accelerarea cursorului.** Cursorul se mișcă exact cât mausul, oricât de repede l-ai mișca, ca în LinearMouse. Un glisor **Viteză urmărire** stabilește cât de repede merge. Funcționează doar cu mausuri, trackpadul rămâne cum este. Dezactiveaz-o sau închide pika-tools, iar macOS își recapătă propriile setări. Dezactivat implicit.
 
-**Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului funcționează ca ⌘[ și ⌘] în orice aplicație: înapoi și înainte în Safari, Finder, Xcode și oriunde există aceste scurtături. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
+**Derulare pe rânduri.** Fiecare clic al rotiței mausului derulează același număr de rânduri, oricât de repede o rotești, ca pe Windows. Alege de la 1 la 10 rânduri per clic, implicit 3. Derularea naturală rămâne așa cum ai setat-o în Configurări sistem. Funcționează doar pentru mausuri, trackpadul rămâne cum este. Dezactivat implicit.
+
+**Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului merg înapoi și înainte în Safari, Finder și alte aplicații Apple, în Firefox, Opera și ForkLift, la fel ca o glisare pe trackpad. Alte aplicații, precum mediile JetBrains, primesc butoanele așa cum sunt și le tratează în felul lor. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
 
 **Ieșire la închiderea ultimei ferestre.** Închide ultima fereastră a unei aplicații, iar aplicația se închide, ca pe Windows. Finder rămâne deschis, la fel ca aplicațiile cu ferestre pe alte spații de lucru sau în Dock. Poți face o listă de aplicații care nu trebuie să se închidă niciodată așa. Dezactivat implicit.
 
@@ -70,15 +72,17 @@ Pe un MacBook poți activa și **Funcționează cu capacul închis**. macOS nu a
 
 Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește din nou pika-tools din Finder, Launchpad sau Spotlight. Cât timp fereastra este deschisă, aplicația apare în Dock și în ⌘Tab.
 
-- **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă și actualizări.
+- **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Tastatură**: scurtături cu Control, ⌘Q și ⌘W, schimbarea limbii.
-- **Maus**: accelerarea cursorului și viteza de urmărire, butoanele laterale.
+- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, butoanele laterale.
 - **Ferestre și aplicații**: ieșire la ultima fereastră, cu o listă de excepții, și ascundere cu un clic în Dock.
 - **Rămâi treaz**: durată, opțiuni pentru ecran și capac.
-- **Permisiuni**: starea ambelor permisiuni, cu butoane care deschid locul potrivit din Configurări sistem.
+- **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 
 Fiecare pagină are jos un buton **Restaurează valorile implicite…**. Întreabă mai întâi, apoi dezactivează instrumentele de pe pagina respectivă și le readuce opțiunile, ca și cum pika-tools nu le-ar fi atins niciodată.
+
+**Sincronizează configurările cu iCloud** ține pika-tools la fel pe toate Mac-urile tale. Configurările stau în folderul pika-tools din iCloud Drive, iar cea mai recentă modificare câștigă. Este dezactivat implicit și are nevoie de iCloud Drive pornit. Permisiunile nu se sincronizează: fiecare Mac le cere separat.
 
 ## Actualizări
 

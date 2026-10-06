@@ -32,6 +32,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let permissions = Permissions.shared
         permissions.onChange = { ToolRegistry.shared.refresh() }
         ToolRegistry.shared.refresh()
+        SettingsSync.shared.refresh()
         Updater.shared.start()
         KeepAwake.shared.restoreLidSleepIfNeeded()
 

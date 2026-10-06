@@ -67,6 +67,7 @@ final class Permissions {
 
 struct PermissionsView: View {
     private let permissions = Permissions.shared
+    private let sync = SettingsSync.shared
 
     var body: some View {
         Form {
@@ -101,6 +102,17 @@ struct PermissionsView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
+            if sync.isEnabled {
+                Section {
+                    PermissionRow(
+                        icon: "",
+                        symbol: "icloud.fill",
+                        title: String(localized: "iCloud Drive"),
+                        subtitle: String(localized: "Lets the app keep your settings in iCloud Drive to sync them"),
+                        granted: sync.state != .noAccess
+                    ) { sync.openSettings() }
+                }
+            }
         }
         .formStyle(.grouped)
         .settingsPage()
@@ -108,6 +120,7 @@ struct PermissionsView: View {
         .onAppear {
             permissions.refresh()
             if !permissions.allGranted { permissions.startPolling() }
+            if sync.state == .noAccess { sync.refresh() }
         }
     }
 }

@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] - Unreleased
+
+### Added
+- **Scroll by lines** on the Mouse page: every click of the wheel scrolls the same number of lines, 1 to 10, however fast you spin it, like on Windows. Mice only, natural scrolling is kept.
+- Sliders show their value as a number you can type or change with arrows, with Slow and Fast at the ends.
+- **Export Settings…** and **Import Settings…** on the General page save all settings to a file and load them back. Import asks first.
+- **Sync settings with iCloud** keeps settings the same on all your Macs through iCloud Drive. Off by default.
+
+### Fixed
+- Side buttons no longer press ⌘[ and ⌘]. In Apple apps, Firefox, Opera and ForkLift they go back and forward like a swipe on the trackpad; every other app, such as JetBrains Rider, gets buttons 4 and 5 unchanged.
+
 ## [1.8.0] - Unreleased
 
 ### Added

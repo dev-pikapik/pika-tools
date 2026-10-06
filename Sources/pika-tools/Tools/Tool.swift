@@ -12,12 +12,14 @@ protocol Tool: AnyObject {
     var isDefault: Bool { get }
     func refresh()
     func reset()
+    func load()
 }
 
 extension Tool {
     var tab: SettingsTab { .keyboard }
     var isDefault: Bool { !isEnabled }
     func reset() { isEnabled = false }
+    func load() { isEnabled = UserDefaults.standard.bool(forKey: id) }
 }
 
 enum ToolStatus {
@@ -63,6 +65,7 @@ final class ToolRegistry {
         QuitOnCloseTool(),
         DockHideTool(),
         PointerTool(),
+        WheelTool(),
         SideButtonsTool(),
     ] + privateTools
 

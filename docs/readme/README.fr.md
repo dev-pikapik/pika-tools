@@ -7,7 +7,7 @@
 [![Licence : MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Téléchargements](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle bloque les raccourcis Contrôle, protège ⌘Q et ⌘W, change de langue avec Option+Maj comme Alt+Maj sous Windows, désactive l’accélération de la souris, fait des boutons latéraux de la souris des boutons Précédent et Suivant, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
+Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle bloque les raccourcis Contrôle, protège ⌘Q et ⌘W, change de langue avec Option+Maj comme Alt+Maj sous Windows, désactive l’accélération de la souris, fait défiler la molette de la souris ligne par ligne comme sous Windows, fait des boutons latéraux de la souris des boutons Précédent et Suivant, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
 
 ## Installation
 
@@ -48,7 +48,9 @@ pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez o
 
 **Désactiver l’accélération du pointeur.** Le pointeur se déplace exactement autant que la souris, quelle que soit la vitesse de votre geste, comme avec LinearMouse. Un curseur **Vitesse de déplacement** règle sa rapidité. Fonctionne uniquement avec les souris, le trackpad reste tel quel. Désactivez l’option ou quittez pika-tools, et macOS retrouve ses propres réglages. Désactivé par défaut.
 
-**Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris agissent comme ⌘[ et ⌘] dans toutes les apps : précédent et suivant dans Safari, le Finder, Xcode et partout où ces raccourcis existent. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
+**Défiler par lignes.** Chaque cran de la molette de la souris fait défiler le même nombre de lignes, quelle que soit la vitesse à laquelle vous la tournez, comme sous Windows. Choisissez de 1 à 10 lignes par cran, 3 par défaut. Le défilement naturel reste tel que vous l’avez réglé dans Réglages Système. Ne concerne que les souris, le trackpad reste comme il est. Désactivé par défaut.
+
+**Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris font précédent et suivant dans Safari, le Finder et les autres apps Apple, dans Firefox, Opera et ForkLift, comme un balayage sur le trackpad. Les autres apps, comme les IDE JetBrains, reçoivent les boutons tels quels et les gèrent à leur façon. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
 
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme, comme sous Windows. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
 
@@ -70,15 +72,17 @@ Sur un MacBook, vous pouvez aussi activer **Fonctionner écran rabattu**. macOS 
 
 Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez simplement pika-tools depuis le Finder, Launchpad ou Spotlight. Tant que la fenêtre est ouverte, l’app apparaît dans le Dock et dans ⌘Tab.
 
-- **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue et mises à jour.
+- **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue, mises à jour et sauvegarde : exporter et importer les réglages sous forme de fichier, ou les synchroniser avec iCloud Drive.
 - **Clavier** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
-- **Souris ** : accélération du pointeur et vitesse de déplacement, boutons latéraux.
+- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, boutons latéraux.
 - **Fenêtres et apps** : quitter à la dernière fenêtre, avec une liste d’exceptions, et masquer d’un clic dans le Dock.
 - **Rester éveillé** : durée, options d’écran et de capot.
-- **Autorisations** : l’état des deux autorisations, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
+- **Autorisations** : l’état des deux autorisations, et d’iCloud Drive quand la synchronisation est activée, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 
 Chaque page comporte en bas un bouton **Rétablir les réglages par défaut…**. Il demande d’abord confirmation, puis désactive les outils de la page et rétablit leurs options, comme si pika-tools n’y avait jamais touché.
+
+**Synchroniser les réglages avec iCloud** garde pika-tools identique sur tous vos Mac. Les réglages se trouvent dans le dossier pika-tools d’iCloud Drive, et la modification la plus récente l’emporte. Désactivé par défaut, et iCloud Drive doit être activé. Les autorisations ne sont pas synchronisées : chaque Mac les demande lui-même.
 
 ## Mises à jour
 

@@ -43,8 +43,13 @@ final class PointerTool: Tool {
     init() {
         let defaults = UserDefaults.standard
         isEnabled = defaults.bool(forKey: id)
-        speed = defaults.object(forKey: Self.speedKey) as? Double ?? Self.systemSpeed
+        speed = Self.savedSpeed
         saved = defaults.dictionary(forKey: Self.savedKey) as? [String: [String: Int]] ?? [:]
+    }
+
+    private static var savedSpeed: Double {
+        let value = UserDefaults.standard.object(forKey: speedKey) as? Double ?? systemSpeed
+        return min(max(value, speedRange.lowerBound), speedRange.upperBound)
     }
 
     var settingsView: AnyView {
@@ -57,6 +62,11 @@ final class PointerTool: Tool {
         isEnabled = false
         speed = Self.systemSpeed
         UserDefaults.standard.removeObject(forKey: Self.speedKey)
+    }
+
+    func load() {
+        speed = Self.savedSpeed
+        isEnabled = UserDefaults.standard.bool(forKey: id)
     }
 
     func refresh() {
@@ -164,15 +174,14 @@ private struct PointerSettings: View {
         )
         if inSettings {
             LabeledContent {
-                Slider(value: $tool.speed, in: PointerTool.speedRange) {
-                    Text("Tracking speed")
-                } minimumValueLabel: {
-                    Text("Slow")
-                } maximumValueLabel: {
-                    Text("Fast")
-                }
-                .labelsHidden()
-                .frame(maxWidth: 260)
+                ValueSlider(
+                    title: String(localized: "Tracking speed"),
+                    value: $tool.speed,
+                    range: PointerTool.speedRange,
+                    step: 0.1,
+                    ticks: 15,
+                    digits: 1
+                )
             } label: {
                 Text("Tracking speed")
                 Text("Works while acceleration is off")

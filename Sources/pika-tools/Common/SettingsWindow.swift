@@ -64,11 +64,15 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
             SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
+            SettingsItem(tab: .general, title: String(localized: "Settings file"), synonyms: "backup, export, import, restore, JSON"),
+            SettingsItem(tab: .general, title: String(localized: "Sync settings with iCloud"), synonyms: "iCloud Drive, another Mac, backup"),
             SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .keyboard, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
+            SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, Windows, scrolling speed, acceleration"),
+            SettingsItem(tab: .mouse, title: String(localized: "Lines per wheel click"), synonyms: "scrolling speed, wheel, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
@@ -81,6 +85,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .about, title: String(localized: "Check for updates automatically"), synonyms: "update, new version, software update"),
             SettingsItem(tab: .about, title: String(localized: "What’s New"), synonyms: "changelog, release notes, version"),
             SettingsItem(tab: .about, title: String(localized: "Report a Problem"), synonyms: "bug, issue, feedback, support"),
@@ -414,9 +419,17 @@ final class Language {
     }
 
     private init() {
-        let domain = UserDefaults.standard.persistentDomain(forName: Bundle.main.bundleIdentifier ?? "")
-        atLaunch = (domain?["AppleLanguages"] as? [String])?.first ?? ""
+        atLaunch = Self.saved
         selected = atLaunch
+    }
+
+    private static var saved: String {
+        let domain = UserDefaults.standard.persistentDomain(forName: Bundle.main.bundleIdentifier ?? "")
+        return (domain?["AppleLanguages"] as? [String])?.first ?? ""
+    }
+
+    func load() {
+        selected = Self.saved
     }
 
     static func name(_ code: String) -> String {
@@ -429,6 +442,7 @@ private struct GeneralSettings: View {
     @Bindable private var loginItem = LoginItem.shared
     @AppStorage("appearance") private var appearance = Appearance.system
     @Bindable private var language = Language.shared
+    @Bindable private var sync = SettingsSync.shared
 
     var body: some View {
         Form {
@@ -458,10 +472,36 @@ private struct GeneralSettings: View {
                     .foregroundStyle(.secondary)
                 }
             }
+            Section("Backup") {
+                LabeledContent {
+                    HStack {
+                        Button("Import Settings…") { SettingsBackup.chooseImport() }
+                        Button("Export Settings…") { SettingsBackup.export() }
+                    }
+                } label: {
+                    Text("Settings file")
+                    Text("Save all settings to a file, or load them from one")
+                }
+                .settingAnchor(String(localized: "Settings file"))
+                Toggle(isOn: $sync.isEnabled) {
+                    Text("Sync settings with iCloud")
+                    Text(syncStatus)
+                }
+                .settingAnchor(String(localized: "Sync settings with iCloud"))
+                if sync.state == .noDrive || sync.state == .noAccess {
+                    LabeledContent(sync.state == .noDrive
+                                   ? String(localized: "Turn on iCloud Drive in System Settings")
+                                   : String(localized: "Allow pika-tools to use iCloud Drive in System Settings")) {
+                        Button("Open") { sync.openSettings() }
+                    }
+                    .foregroundStyle(.secondary)
+                }
+            }
             RestoreDefaultsSection(
-                message: String(localized: "Appearance and Language will follow the system again. Open at Login stays as it is."),
-                isDefault: appearance == .system && language.selected.isEmpty
+                message: String(localized: "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are."),
+                isDefault: appearance == .system && language.selected.isEmpty && !sync.isEnabled
             ) {
+                sync.isEnabled = false
                 appearance = .system
                 Appearance.system.apply()
                 language.selected = ""
@@ -470,6 +510,27 @@ private struct GeneralSettings: View {
         .formStyle(.grouped)
         .settingsPage()
         .onAppear { loginItem.refresh() }
+        .alert(Text(verbatim: sync.alert?.title ?? ""), isPresented: Binding(get: { sync.alert != nil }, set: { if !$0 { sync.alert = nil } })) {
+            Button("OK") {}
+        } message: {
+            Text(verbatim: sync.alert?.message ?? "")
+        }
+        .alert("Replace your settings?", isPresented: Binding(get: { sync.pendingImport != nil }, set: { if !$0 { sync.pendingImport = nil } }), presenting: sync.pendingImport) { item in
+            Button("Replace") { sync.confirmImport(item) }
+            Button("Cancel", role: .cancel) {}
+        } message: { item in
+            Text("All pika-tools settings will be replaced with the ones from “\(item.name)”.")
+        }
+    }
+
+    private var syncStatus: String {
+        switch sync.state {
+        case .off: String(localized: "Keeps settings the same on all your Macs through iCloud Drive")
+        case .synced(let date): String(localized: "Last synced at \(date.formatted(date: .omitted, time: .shortened))")
+        case .noDrive: String(localized: "iCloud Drive is turned off on this Mac")
+        case .noAccess: String(localized: "pika-tools isn’t allowed to open iCloud Drive")
+        case .failed(let message): String(localized: "Can’t sync: \(message)")
+        }
     }
 }
 

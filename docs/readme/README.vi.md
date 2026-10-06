@@ -7,7 +7,7 @@
 [![Giấy phép: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Lượt tải](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: chặn các phím tắt Control, bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift giống như Alt+Shift trên Windows, tắt gia tốc chuột, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
+Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: chặn các phím tắt Control, bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift giống như Alt+Shift trên Windows, tắt gia tốc chuột, cuộn bánh xe chuột theo dòng như Windows, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
 
 ## Cài đặt
 
@@ -48,7 +48,9 @@ pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì b
 
 **Tắt tăng tốc con trỏ.** Con trỏ di chuyển đúng bằng quãng đường của chuột, dù bạn di chuyển nhanh đến đâu, giống như LinearMouse. Thanh trượt **Tốc độ di chuyển** đặt tốc độ của con trỏ. Chỉ hoạt động với chuột, bàn di chuột vẫn giữ nguyên. Tắt tính năng hoặc thoát pika-tools, macOS sẽ lấy lại cài đặt của chính nó. Tắt theo mặc định.
 
-**Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 hoạt động như ⌘[ và ⌘] trong mọi ứng dụng: lùi và tiến trong Safari, Finder, Xcode và bất cứ nơi nào có các phím tắt này. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
+**Cuộn theo dòng.** Mỗi lần bấm bánh xe chuột sẽ cuộn cùng một số dòng, dù bạn xoay nhanh đến đâu, giống như trên Windows. Chọn từ 1 đến 10 dòng mỗi lần bấm, mặc định là 3. Cuộn tự nhiên vẫn giữ như bạn đã đặt trong Cài đặt hệ thống. Chỉ áp dụng cho chuột, bàn di chuột giữ nguyên. Tắt theo mặc định.
+
+**Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 giúp lùi và tiến trong Safari, Finder và các ứng dụng khác của Apple, trong Firefox, Opera và ForkLift, giống như vuốt trên bàn di chuột. Các ứng dụng khác, như IDE của JetBrains, nhận các nút nguyên trạng và tự xử lý theo cách riêng. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
 
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát, giống như trên Windows. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
 
@@ -70,15 +72,17 @@ Trên MacBook, bạn cũng có thể bật **Hoạt động khi gập nắp**. m
 
 Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở lại pika-tools từ Finder, Launchpad hay Spotlight. Khi cửa sổ đang mở, ứng dụng hiện trong Dock và trong ⌘Tab.
 
-- **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ và cập nhật.
+- **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Bàn phím**: phím tắt Control, ⌘Q và ⌘W, chuyển ngôn ngữ.
-- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, các nút bên.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, các nút bên.
 - **Cửa sổ & Ứng dụng**: thoát khi đóng cửa sổ cuối cùng, kèm danh sách ngoại lệ, và ẩn bằng một lần bấm trong Dock.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
-- **Quyền**: trạng thái của cả hai quyền, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
+- **Quyền**: trạng thái của cả hai quyền, và của iCloud Drive khi bật đồng bộ, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
 
 Mỗi trang đều có nút **Khôi phục mặc định…** ở cuối. Nút này hỏi trước, sau đó tắt các công cụ trên trang đó và đưa tùy chọn của chúng về như cũ, như thể pika-tools chưa từng chạm vào.
+
+**Đồng bộ hóa cài đặt với iCloud** giữ pika-tools giống nhau trên mọi máy Mac của bạn. Cài đặt nằm trong thư mục pika-tools ở iCloud Drive, và thay đổi mới nhất sẽ được áp dụng. Tính năng này tắt theo mặc định và cần bật iCloud Drive. Quyền không được đồng bộ: mỗi máy Mac tự hỏi quyền của mình.
 
 ## Cập nhật
 

@@ -7,7 +7,7 @@
 [![Lisensi: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Unduhan](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Aplikasi kecil untuk bar menu macOS yang membuat tombol, jendela, dan Dock lebih nyaman: memblokir pintasan Control, melindungi ⌘Q dan ⌘W, mengganti bahasa dengan Option+Shift seperti Alt+Shift di Windows, mematikan akselerasi tetikus, membuat tombol samping tetikus berfungsi untuk mundur dan maju, keluar dari app saat jendela terakhirnya ditutup, menyembunyikan app dengan satu klik di Dock, dan menjaga Mac Anda tetap terjaga.
+Aplikasi kecil untuk bar menu macOS yang membuat tombol, jendela, dan Dock lebih nyaman: memblokir pintasan Control, melindungi ⌘Q dan ⌘W, mengganti bahasa dengan Option+Shift seperti Alt+Shift di Windows, mematikan akselerasi tetikus, menggulir roda tetikus per baris seperti di Windows, membuat tombol samping tetikus berfungsi untuk mundur dan maju, keluar dari app saat jendela terakhirnya ditutup, menyembunyikan app dengan satu klik di Dock, dan menjaga Mac Anda tetap terjaga.
 
 ## Instalasi
 
@@ -48,7 +48,9 @@ pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau 
 
 **Matikan akselerasi penunjuk.** Penunjuk bergerak persis sejauh gerakan tetikus, secepat apa pun Anda menggerakkannya, seperti LinearMouse. Penggeser **Kecepatan melacak** mengatur seberapa cepat penunjuk bergerak. Hanya berlaku untuk tetikus, trackpad tetap seperti semula. Matikan fitur ini atau keluar dari pika-tools, dan macOS mendapatkan kembali pengaturannya sendiri. Mati secara default.
 
-**Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 bekerja seperti ⌘[ dan ⌘] di semua app: mundur dan maju di Safari, Finder, Xcode, dan di mana pun yang memiliki pintasan ini. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
+**Gulir per baris.** Setiap klik roda tetikus menggulir jumlah baris yang sama, secepat apa pun Anda memutarnya, seperti di Windows. Pilih 1 sampai 10 baris per klik, default-nya 3. Pengguliran alami tetap seperti yang Anda atur di Pengaturan Sistem. Hanya berlaku untuk tetikus, trackpad tidak berubah. Mati secara default.
+
+**Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 berfungsi untuk mundur dan maju di Safari, Finder, dan app Apple lainnya, juga di Firefox, Opera, dan ForkLift, sama seperti usapan di trackpad. App lain, seperti IDE JetBrains, menerima tombolnya apa adanya dan menanganinya dengan cara sendiri. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
 
 **Keluar saat jendela terakhir ditutup.** Tutup jendela terakhir sebuah app, dan app akan keluar, seperti di Windows. Finder tetap terbuka, begitu juga app yang punya jendela di desktop lain atau di Dock. Anda bisa membuat daftar app yang tidak boleh keluar dengan cara ini. Mati secara default.
 
@@ -70,15 +72,17 @@ Di MacBook, Anda juga bisa menyalakan **Bekerja dengan penutup tertutup**. macOS
 
 Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika-tools dari Finder, Launchpad, atau Spotlight. Selama jendelanya terbuka, app muncul di Dock dan di ⌘Tab.
 
-- **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, dan pembaruan.
+- **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Papan Ketik**: pintasan Control, ⌘Q dan ⌘W, penggantian bahasa.
-- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, tombol samping.
+- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, tombol samping.
 - **Jendela & App**: keluar saat jendela terakhir ditutup, dengan daftar pengecualian, dan sembunyikan dengan klik di Dock.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
-- **Izin**: status kedua izin, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
+- **Izin**: status kedua izin, dan status iCloud Drive saat sinkronisasi menyala, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
 - **Tentang**: versi, tautan ke catatan perubahan dan untuk melaporkan masalah.
 
 Setiap halaman memiliki tombol **Pulihkan Default…** di bagian bawah. Tombol ini bertanya terlebih dahulu, lalu mematikan alat di halaman tersebut dan mengembalikan pilihannya, seolah pika-tools tidak pernah menyentuhnya.
+
+**Selaraskan pengaturan dengan iCloud** menjaga pika-tools tetap sama di semua Mac Anda. Pengaturan disimpan di folder pika-tools di iCloud Drive, dan perubahan terbaru yang berlaku. Mati secara default dan memerlukan iCloud Drive yang menyala. Izin tidak ikut disinkronkan: setiap Mac memintanya sendiri.
 
 ## Pembaruan
 

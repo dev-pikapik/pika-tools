@@ -7,7 +7,7 @@
 [![Licencja: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Pobrania](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift tak jak Alt+Shift w Windows, wyłącza przyspieszenie myszy, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
+Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift tak jak Alt+Shift w Windows, wyłącza przyspieszenie myszy, przewija kółko myszy wierszami jak w Windows, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
 
 ## Instalacja
 
@@ -48,7 +48,9 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 **Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz, jak w LinearMouse. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pika-tools, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
 
-**Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 działają jak ⌘[ i ⌘] w każdej aplikacji: wstecz i dalej w Safari, Finderze, Xcode i wszędzie tam, gdzie są te skróty. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
+**Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz, tak jak w Windows. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone.
+
+**Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Safari, Finderze i innych aplikacjach Apple oraz w Firefoksie, Operze i ForkLifcie, tak jak machnięcie na gładziku. Inne aplikacje, na przykład środowiska JetBrains, dostają przyciski bez zmian i obsługują je po swojemu. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy, tak jak w Windows. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
@@ -70,15 +72,17 @@ Na MacBooku możesz też włączyć **Pracuj z zamkniętą pokrywą**. macOS nie
 
 Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po prostu uruchom pika-tools ponownie z Findera, Launchpada lub Spotlight. Gdy okno jest otwarte, aplikacja pojawia się w Docku i w ⌘Tab.
 
-- **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język i uaktualnienia.
+- **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Klawiatura**: skróty z Control, ⌘Q i ⌘W, zmiana języka.
-- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, boczne przyciski.
+- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, boczne przyciski.
 - **Okna i aplikacje**: zakończenie po ostatnim oknie z listą wyjątków oraz ukrywanie kliknięciem w Docku.
 - **Nie usypiaj**: czas trwania, opcje ekranu i pokrywy.
-- **Uprawnienia**: stan obu uprawnień z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
+- **Uprawnienia**: stan obu uprawnień, a przy włączonej synchronizacji także iCloud Drive, z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 
 Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta o potwierdzenie, potem wyłącza narzędzia z tej strony i przywraca ich opcje, jakby pika-tools nigdy ich nie dotykał.
+
+**Synchronizuj ustawienia przez iCloud** sprawia, że pika-tools jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pika-tools w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
 
 ## Uaktualnienia
 

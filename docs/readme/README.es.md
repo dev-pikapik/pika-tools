@@ -7,7 +7,7 @@
 [![Licencia: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descargas](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas como Alt+Mayús en Windows, desactiva la aceleración del ratón, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
+Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas como Alt+Mayús en Windows, desactiva la aceleración del ratón, desplaza la rueda del ratón por líneas como en Windows, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
 
 ## Instalación
 
@@ -48,7 +48,9 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 **Desactivar la aceleración del puntero.** El puntero se mueve exactamente lo mismo que el ratón, por rápido que lo muevas, como con LinearMouse. Un regulador **Velocidad del cursor** ajusta lo rápido que va. Solo funciona con ratones; el trackpad se queda como está. Desactívalo o sal de pika-tools y macOS recupera sus propios ajustes. Desactivado por omisión.
 
-**Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón funcionan como ⌘[ y ⌘] en cualquier app: atrás y adelante en Safari, el Finder, Xcode y en cualquier otro sitio que tenga estos atajos. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
+**Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires, como en Windows. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión.
+
+**Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en Safari, el Finder y otras apps de Apple, en Firefox, Opera y ForkLift, igual que deslizar el dedo en el trackpad. Otras apps, como los IDE de JetBrains, reciben los botones tal cual y los gestionan a su manera. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra, como en Windows. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
@@ -70,15 +72,17 @@ En un MacBook también puedes activar **Funcionar con la tapa cerrada**. macOS n
 
 Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-tools desde el Finder, Launchpad o Spotlight. Mientras la ventana está abierta, la app aparece en el Dock y en ⌘Tab.
 
-- **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma y actualizaciones.
+- **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Teclado**: atajos con Control, ⌘Q y ⌘W, cambio de idioma.
-- **Ratón**: aceleración del puntero y velocidad del cursor, botones laterales.
+- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, botones laterales.
 - **Ventanas y apps**: salir al cerrar la última ventana, con una lista de excepciones, y ocultar con un clic en el Dock.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
-- **Permisos**: el estado de ambos permisos, con botones que abren el lugar adecuado en Ajustes del Sistema.
+- **Permisos**: el estado de ambos permisos, y de iCloud Drive cuando la sincronización está activada, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 
 Cada página tiene abajo un botón **Restaurar valores por omisión…**. Primero pregunta y luego desactiva las herramientas de esa página y devuelve sus opciones a como estaban, como si pika-tools nunca las hubiera tocado.
+
+**Sincronizar ajustes con iCloud** mantiene pika-tools igual en todos tus Mac. Los ajustes viven en la carpeta pika-tools de iCloud Drive y gana el cambio más reciente. Está desactivado por omisión y necesita iCloud Drive activado. Los permisos no se sincronizan: cada Mac los pide por su cuenta.
 
 ## Actualizaciones
 

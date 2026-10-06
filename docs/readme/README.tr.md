@@ -7,7 +7,7 @@
 [![Lisans: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![İndirmeler](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Windows’taki Alt+Shift gibi Option+Shift ile dili değiştirir, fare ivmesini kapatır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
+Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Windows’taki Alt+Shift gibi Option+Shift ile dili değiştirir, fare ivmesini kapatır, fare tekerini Windows’taki gibi satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
 
 ## Kurulum
 
@@ -48,7 +48,9 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 **İmleç hızlandırmayı kapat.** Fareyi ne kadar hızlı hareket ettirirseniz ettirin, imleç tam olarak fare kadar hareket eder, LinearMouse’taki gibi. **İzleme hızı** sürgüsü imlecin ne kadar hızlı gideceğini ayarlar. Yalnızca farelerle çalışır, İzleme Dörtgeni olduğu gibi kalır. Özelliği kapatın ya da pika-tools’tan çıkın, macOS kendi ayarlarına geri döner. Varsayılan olarak kapalıdır.
 
-**Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri her uygulamada ⌘[ ve ⌘] gibi çalışır: Safari’de, Finder’da, Xcode’da ve bu kestirmelerin olduğu her yerde geri ve ileri gider. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
+**Satır satır kaydır.** Fare tekerinin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır, tıpkı Windows’ta olduğu gibi. Tık başına 1 ile 10 arasında satır seçebilirsiniz, varsayılan 3’tür. Doğal Kaydırma, Sistem Ayarları’nda nasıl ayarladıysanız öyle kalır. Yalnızca fareler için çalışır, izleme dörtgeni olduğu gibi kalır. Varsayılan olarak kapalıdır.
+
+**Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Safari’de, Finder’da ve diğer Apple uygulamalarında, Firefox’ta, Opera’da ve ForkLift’te geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. JetBrains IDE’leri gibi diğer uygulamalar düğmeleri olduğu gibi alır ve kendi yöntemleriyle ele alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama Windows’taki gibi kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
@@ -70,15 +72,17 @@ MacBook’ta **Kapak kapalıyken çalış** seçeneğini de açabilirsiniz. macO
 
 Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u Finder, Launchpad ya da Spotlight’tan yeniden başlatın. Pencere açıkken uygulama Dock’ta ve ⌘Tab’de görünür.
 
-- **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil ve güncellemeler.
+- **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Klavye**: Control kestirmeleri, ⌘Q ve ⌘W, dil değiştirme.
-- **Fare**: imleç ivmesi ve izleme hızı, yan düğmeler.
+- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, yan düğmeler.
 - **Pencereler ve Uygulamalar**: istisna listesiyle birlikte son pencerede çıkma ve Dock’ta tıklayarak gizleme.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
-- **İzinler**: iki iznin durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
+- **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 
 Her sayfanın altında bir **Saptanmışlara Dön…** düğmesi vardır. Önce onay ister, ardından o sayfadaki araçları kapatır ve seçeneklerini geri alır; sanki pika-tools onlara hiç dokunmamış gibi.
+
+**Ayarları iCloud ile eşzamanla** pika-tools’u tüm Mac’lerinizde aynı tutar. Ayarlar iCloud Drive’daki pika-tools klasöründe durur ve en son değişiklik geçerli olur. Varsayılan olarak kapalıdır ve iCloud Drive’ın açık olması gerekir. İzinler eşzamanlanmaz: her Mac kendi izinlerini kendisi ister.
 
 ## Güncellemeler
 

@@ -7,7 +7,7 @@
 [![Licence: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Stažení](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: blokuje zkratky s Controlem, chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift stejně jako Alt+Shift ve Windows, vypne zrychlení myši, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
+Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: blokuje zkratky s Controlem, chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift stejně jako Alt+Shift ve Windows, vypne zrychlení myši, posouvá kolečko myši po řádcích jako Windows, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
 
 ## Instalace
 
@@ -48,7 +48,9 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 **Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle, stejně jako v LinearMouse. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
 
-**Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako ⌘[ a ⌘] v každé aplikaci: zpět a vpřed v Safari, ve Finderu, v Xcode a všude jinde, kde tyto zkratky existují. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
+**Posouvat po řádcích.** Každé cvaknutí kolečka myši posune stejný počet řádků, ať kolečkem točíte jakkoli rychle, jako ve Windows. Vyberte 1 až 10 řádků na cvaknutí, ve výchozím stavu 3. Přirozené posouvání zůstane tak, jak jste ho nastavili v Nastavení systému. Funguje jen pro myš, trackpad zůstává beze změny. Ve výchozím stavu vypnuto.
+
+**Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed v Safari, ve Finderu a dalších aplikacích Apple, ve Firefoxu, Opeře a ForkLiftu, stejně jako přejetí po trackpadu. Ostatní aplikace, například vývojová prostředí JetBrains, dostanou tlačítka beze změny a zpracují je po svém. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí, stejně jako ve Windows. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
@@ -70,15 +72,17 @@ Na MacBooku můžete zapnout také **Pracovat se zavřeným víkem**. macOS na t
 
 Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pika-tools znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
-- **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk a aktualizace.
+- **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Klávesnice**: zkratky s Controlem, ⌘Q a ⌘W, přepínání jazyka.
-- **Myš**: zrychlení ukazatele a rychlost ukazatele, boční tlačítka.
+- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, boční tlačítka.
 - **Okna a aplikace**: ukončení po posledním okně se seznamem výjimek a skrytí kliknutím v Docku.
 - **Nespat**: délka, volby pro displej a víko.
-- **Oprávnění**: stav obou oprávnění s tlačítky, která otevřou správné místo v Nastavení systému.
+- **Oprávnění**: stav obou oprávnění a iCloud Drive, když je zapnutá synchronizace, s tlačítky, která otevřou správné místo v Nastavení systému.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 
 Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se zeptá, pak vypne nástroje na dané stránce a vrátí jejich volby, jako by se jich pika-tools nikdy nedotkl.
+
+**Synchronizovat nastavení přes iCloud** udrží pika-tools stejné na všech vašich Macích. Nastavení jsou ve složce pika-tools na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
 
 ## Aktualizace
 

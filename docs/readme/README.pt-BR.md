@@ -7,7 +7,7 @@
 [![Licença: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: bloqueia os atalhos com Control, protege ⌘Q e ⌘W, troca o idioma com Option+Shift do jeito que o Alt+Shift funciona no Windows, desativa a aceleração do mouse, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
+Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: bloqueia os atalhos com Control, protege ⌘Q e ⌘W, troca o idioma com Option+Shift do jeito que o Alt+Shift funciona no Windows, desativa a aceleração do mouse, rola a roda do mouse por linhas como no Windows, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
 
 ## Instalação
 
@@ -48,7 +48,9 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 
 **Desativar a aceleração do cursor.** O ponteiro se move exatamente o quanto o mouse se move, não importa a velocidade, como no LinearMouse. Um controle **Velocidade do rastreamento** define a rapidez dele. Funciona só com mouses; o trackpad fica como está. Desative a opção ou encerre o pika-tools e o macOS volta aos próprios ajustes. Desativado por padrão.
 
-**Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse funcionam como ⌘[ e ⌘] em qualquer app: voltar e avançar no Safari, no Finder, no Xcode e em qualquer lugar que tenha esses atalhos. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
+**Rolar por linhas.** Cada clique da roda do mouse rola o mesmo número de linhas, por mais rápido que você a gire, como no Windows. Escolha de 1 a 10 linhas por clique, 3 por padrão. A rolagem natural continua como você definiu nos Ajustes do Sistema. Funciona só para mouses, o trackpad continua como está. Desativado por padrão.
+
+**Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse voltam e avançam no Safari, no Finder e em outros apps da Apple, no Firefox, no Opera e no ForkLift, como um gesto de deslizar no trackpad. Outros apps, como os IDEs da JetBrains, recebem os botões do jeito que são e os tratam à própria maneira. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
 
 **Encerrar ao fechar a última janela.** Feche a última janela de um app e o app é encerrado, como no Windows. O Finder continua aberto, assim como os apps com janelas em outras mesas ou no Dock. Você pode listar os apps que nunca devem ser encerrados assim. Desativado por padrão.
 
@@ -70,15 +72,17 @@ Em um MacBook você também pode ativar **Funcionar com a tampa fechada**. O mac
 
 Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de novo pelo Finder, Launchpad ou Spotlight. Enquanto a janela estiver aberta, o app aparece no Dock e no ⌘Tab.
 
-- **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma e atualizações.
+- **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
 - **Teclado**: atalhos com Control, ⌘Q e ⌘W, troca de idioma.
-- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, botões laterais.
+- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, botões laterais.
 - **Janelas e apps**: encerrar ao fechar a última janela, com uma lista de exceções, e ocultar com um clique no Dock.
 - **Manter Ativo**: duração e opções de tela e de tampa.
-- **Permissões**: o estado das duas permissões, com botões que abrem o lugar certo nos Ajustes do Sistema.
+- **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 
 Cada página tem um botão **Restaurar Padrões…** na parte de baixo. Ele pergunta antes, depois desativa as ferramentas da página e devolve as opções ao que eram, como se o pika-tools nunca tivesse mexido nelas.
+
+**Sincronizar ajustes com o iCloud** mantém o pika-tools igual em todos os seus Macs. Os ajustes ficam na pasta pika-tools do iCloud Drive, e vale a alteração mais recente. Vem desativado por padrão e precisa do iCloud Drive ligado. As permissões não são sincronizadas: cada Mac pede as suas.
 
 ## Atualizações
 
