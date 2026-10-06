@@ -70,7 +70,7 @@ for f in Resources/*.lproj/Localizable.strings; do plutil -lint "$f"; done
 
 ## Private tools
 
-`Private/` is reserved for a private submodule with drafts and tools that aren't public yet. The public build doesn't depend on it. See [Private/README.md](Private/README.md).
+`Private/` is a private submodule with drafts and tools that aren’t public yet. The public build doesn’t depend on it: a regular clone leaves the folder empty, and everything builds as usual.
 
 ## Releasing
 
