@@ -6,6 +6,12 @@ struct MenuView: View {
     @Bindable private var keepAwake = KeepAwake.shared
     @AppStorage("quick-hidden") private var hiddenList = ""
     @State private var customizing = false
+    @State private var contentHeight: CGFloat = 0
+
+    // Room left for the rows: the screen the panel is on, minus footer, padding and menu bar gap.
+    private var maxRowsHeight: CGFloat {
+        ((NSApp.keyWindow?.screen ?? NSScreen.main)?.visibleFrame.height ?? 700) - 140
+    }
 
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
@@ -84,8 +90,12 @@ struct MenuView: View {
                         .padding(.horizontal, 4)
                     }
                 }
-                .frame(maxHeight: (NSScreen.main?.visibleFrame.height ?? 700) - 140)
+                .background(GeometryReader { geo in
+                    Color.clear.onChange(of: geo.size.height, initial: true) { contentHeight = geo.size.height }
+                })
             }
+            // A ScrollView has no natural height in an auto-sized window, so give it the measured one.
+            .frame(height: min(contentHeight, maxRowsHeight))
 
             HStack {
                 Button("Settings…") { SettingsWindow.show() }
