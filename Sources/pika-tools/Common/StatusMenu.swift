@@ -12,13 +12,24 @@ import AppKit
             else { return event }
             guard event.type == .rightMouseDown || event.modifierFlags.contains(.control),
                   let button = window.contentView?.hitTest(event.locationInWindow) ?? window.contentView
-            else {
-                NSApp.activate()
-                return event
-            }
+            else { return event }
             menu().popUp(positioning: nil, at: NSPoint(x: 0, y: button.bounds.height + 4), in: button)
             return nil
         }
+
+        var keyedAt = Date.distantPast
+        let center = NotificationCenter.default
+        center.addObserver(forName: NSWindow.didBecomeKeyNotification, object: nil, queue: .main) { note in
+            if Self.isPanel(note.object as? NSWindow) { keyedAt = Date() }
+        }
+        center.addObserver(forName: NSWindow.didResignKeyNotification, object: nil, queue: .main) { note in
+            guard let panel = note.object as? NSWindow, Self.isPanel(panel), Date().timeIntervalSince(keyedAt) < 0.5 else { return }
+            DispatchQueue.main.async { if panel.isVisible { panel.makeKey() } }
+        }
+    }
+
+    private nonisolated static func isPanel(_ window: NSWindow?) -> Bool {
+        window.map { NSStringFromClass(type(of: $0)).contains("MenuBarExtraWindow") } ?? false
     }
 
     private func menu() -> NSMenu {
