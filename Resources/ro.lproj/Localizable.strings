@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools vrea să mențină Mac-ul activ cu capacul închis.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools vrea să permită din nou Mac-ului să intre în repaus cu capacul închis.";
 "How pika-tools starts and looks." = "Cum pornește și cum arată pika-tools.";
-"Fixes for keys and clicks. Each one works on its own." = "Remedieri pentru taste și clicuri. Fiecare funcționează separat.";
+"Fixes for the keyboard. Each one works on its own." = "Remedieri pentru tastatură. Fiecare funcționează separat.";
 "Only on Mac laptops" = "Doar pe laptopurile Mac";
 "Back" = "Înapoi";
 "Forward" = "Înainte";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "jurnal de modificări, note de lansare, versiune";
 "bug, issue, feedback, support" = "eroare, problemă, feedback, asistență, bug";
 "open source, legal" = "open source, juridic, licență";
-"Windows & Apps" = "Ferestre și aplicații";
-"Fixes for windows and the Dock. Each one works on its own." = "Remedieri pentru ferestre și Dock. Fiecare funcționează separat.";
+"Windows" = "Ferestre";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Dimensiune";
+"Closing and Quitting" = "Închidere și ieșire";
+"Fixes for windows and quitting apps. Each one works on its own." = "Remedieri pentru ferestre și închiderea aplicațiilor. Fiecare funcționează separat.";
+"A fix for the Dock." = "O remediere pentru Dock.";
+"Fixes for Finder. Each one works on its own." = "Remedieri pentru Finder. Fiecare funcționează separat.";
 "Protect ⌘Q and ⌘W" = "Protejează ⌘Q și ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Adaugă ⇧ ca să ieși sau să închizi. Doar ⌘Q și ⌘W nu fac nimic, în nicio aplicație.";
 "Add ⇧ to quit or close" = "Adaugă ⇧ ca să ieși sau să închizi";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Fiecare clic al rotiței derulează aceeași distanță, oricât de repede o învârți. Doar pentru mausuri.";
 "Same distance at any speed" = "Aceeași distanță, oricât de repede";
 "Lines per wheel click" = "Rânduri per clic al rotiței";
-"Works while scrolling by lines is on" = "Funcționează când derularea pe rânduri este activată";
+"Works while the switch above is on" = "Funcționează când comutatorul de mai sus este activat";
 "Scroll by" = "Derulează după";
 "Lines suit most apps. Pixels suit games." = "Rândurile se potrivesc majorității aplicațiilor. Pixelii se potrivesc jocurilor.";
 "Lines" = "Rânduri";

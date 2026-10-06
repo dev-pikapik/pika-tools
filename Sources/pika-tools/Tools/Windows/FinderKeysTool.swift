@@ -162,7 +162,7 @@ final class FinderOpenTool: Tool {
     let id = "finder-open"
     let icon = "return"
     var title: String { String(localized: "Enter opens files in Finder") }
-    let tab = SettingsTab.windows
+    let tab = SettingsTab.finder
 
     var isActive: Bool { isEnabled && FinderKeys.shared.isActive }
 
@@ -192,7 +192,7 @@ final class FinderCutTool: Tool {
     let id = "finder-cut"
     let icon = "scissors"
     var title: String { String(localized: "⌘X cuts files in Finder") }
-    let tab = SettingsTab.windows
+    let tab = SettingsTab.finder
 
     var isActive: Bool { isEnabled && FinderKeys.shared.isActive }
 
@@ -217,10 +217,96 @@ final class FinderCutTool: Tool {
     }
 }
 
-private struct FinderOpenSettings: View {
-    @Bindable var tool: FinderOpenTool
+private struct ArtFinder<Content: View>: View {
+    var size = CGSize(width: 112, height: 70)
+    @ViewBuilder var content: Content
 
     var body: some View {
+        ArtWindow(size: size) {
+            HStack(spacing: 4) { content }
+        }
+    }
+}
+
+struct FinderOpenArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.4, 1.5, 0.4, 1.5]
+
+    var body: some View {
+        let step = reduceMotion ? 2 : tick % Self.durations.count
+        let opened = on && step == 2
+        let renaming = on ? step == 4 : step >= 2
+        IllustrationRow {
+            Stage {
+                ArtFinder(size: CGSize(width: 150, height: 86)) {
+                    ArtFile()
+                    ArtFile(selected: true, renaming: renaming)
+                    ArtFile()
+                }
+                .position(x: 88, y: 62)
+                ArtWindow(size: CGSize(width: 96, height: 62)) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        ForEach([54, 38, 46], id: \.self) { Capsule().fill(Color.primary.opacity(0.12)).frame(width: CGFloat($0), height: 4) }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(10)
+                }
+                .scaleEffect(opened ? 1 : 0.5, anchor: .leading)
+                .opacity(opened ? 1 : 0)
+                .position(x: 186, y: 52)
+                ArtKey(down: step == 1, width: 38) { Image(systemName: "return") }
+                    .position(x: 268, y: 40)
+                ArtKey(down: step == 3, width: 38) { Text(verbatim: "F2") }
+                    .position(x: 268, y: 82)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
+struct FinderCutArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.6, 0.6, 1.6]
+
+    var body: some View {
+        let step = reduceMotion ? 1 : tick % Self.durations.count
+        let moved = on && step >= 2
+        IllustrationRow {
+            Stage {
+                ArtFinder {
+                    if !moved { ArtFile(selected: true).opacity(on && step == 1 ? 0.4 : 1) }
+                    ArtFile()
+                }
+                .position(x: 70, y: 48)
+                ArtFinder {
+                    ArtFile()
+                    if moved { ArtFile(selected: true).transition(.scale(scale: 0.6).combined(with: .opacity)) }
+                }
+                .position(x: 230, y: 48)
+                ArtKey(down: step == 1) { Text(verbatim: "⌘X") }
+                    .position(x: 120, y: 106)
+                ArtKey(down: step == 2) { Text(verbatim: "⌘V") }
+                    .position(x: 180, y: 106)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.4), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
+private struct FinderOpenSettings: View {
+    @Bindable var tool: FinderOpenTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { FinderOpenArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
@@ -233,8 +319,10 @@ private struct FinderOpenSettings: View {
 
 private struct FinderCutSettings: View {
     @Bindable var tool: FinderCutTool
+    @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings { FinderCutArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,

@@ -89,10 +89,12 @@ Keep Awake, de beeldschermmodus en de modus met gesloten deksel kun je via de ap
 Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pika-tools gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
 
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
-- **Toetsenbord**: Control-toetscombinaties, ⌘Q en ⌘W, van taal wisselen.
-- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, zijknoppen.
-- **Vensters en apps**: stoppen bij het laatste venster en vergroten met de groene knop (allebei met een lijst met uitzonderingen), en verbergen met een klik in het Dock.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
+- **Toetsenbord**: Control-toetscombinaties, van taal wisselen, toetsherhaling.
+- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, zijknoppen.
+- **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
+- **Dock**: verbergen met een klik in het Dock.
+- **Finder**: nieuw bestand, openen met Return en knippen met ⌘X.
 - **Toestemmingen**: de status van beide toestemmingen, en van iCloud Drive als synchronisatie aanstaat, met knoppen die de juiste plek in Systeeminstellingen openen.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 

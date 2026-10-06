@@ -60,18 +60,18 @@ final class ToolRegistry {
 
     let tools: [any Tool] = [
         CtrlKeysTool(),
-        CommandKeysTool(),
         InputSwitchTool(),
         KeyRepeatTool(),
-        QuitOnCloseTool(),
-        DockHideTool(),
-        WindowZoomTool(),
-        NewFileTool(),
-        FinderOpenTool(),
-        FinderCutTool(),
         PointerTool(),
         WheelTool(),
         SideButtonsTool(),
+        WindowZoomTool(),
+        CommandKeysTool(),
+        QuitOnCloseTool(),
+        DockHideTool(),
+        NewFileTool(),
+        FinderOpenTool(),
+        FinderCutTool(),
     ] + privateTools
 
     var status: ToolStatus {

@@ -89,10 +89,12 @@ Mantener activo, el modo de pantalla y el de tapa cerrada se pueden poner en un 
 Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-tools desde el Finder, Launchpad o Spotlight. Mientras la ventana está abierta, la app aparece en el Dock y en ⌘Tab.
 
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
-- **Teclado**: atajos con Control, ⌘Q y ⌘W, cambio de idioma.
-- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, botones laterales.
-- **Ventanas y apps**: salir al cerrar la última ventana y ampliar con el botón verde (ambas con una lista de excepciones), y ocultar con un clic en el Dock.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
+- **Teclado**: atajos con Control, cambio de idioma, repetición de teclas.
+- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, botones laterales.
+- **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
+- **Dock**: ocultar con un clic en el Dock.
+- **Finder**: archivo nuevo, abrir con Intro y cortar con ⌘X.
 - **Permisos**: el estado de ambos permisos, y de iCloud Drive cuando la sincronización está activada, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 

@@ -6,6 +6,7 @@ final class CommandKeysTool: Tool {
     let id = "command-keys"
     let icon = "command"
     var title: String { String(localized: "Protect ⌘Q and ⌘W") }
+    let tab = SettingsTab.windows
 
     private(set) var isActive = false
 

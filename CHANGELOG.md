@@ -5,15 +5,17 @@ All notable changes to this project are documented here. The format is based on 
 ## [1.17.0] - Unreleased
 
 ### Added
-- Settings › Windows & Apps: “Green button enlarges the window”. Click the green button of a window, and it fills the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as usual. Full screen stays in the button’s menu and on ⌃⌘F. A list of apps keeps the green button working as before. Off by default.
-- Settings › Windows & Apps: “Enter opens files in Finder”. In a Finder window or on the Desktop, Return and Enter open the selected files, and F2 or fn F2 renames the selected file. In text fields, such as a name you are typing or the search field, the keys work as usual. Off by default.
-- Settings › Windows & Apps: “⌘X cuts files in Finder”. ⌘X cuts the selected files, and ⌘V in the folder you choose moves them there instead of copying, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
+- Settings › Windows: “Green button enlarges the window”. Click the green button of a window, and it fills the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as usual. Full screen stays in the button’s menu and on ⌃⌘F. A list of apps keeps the green button working as before. Off by default.
+- Settings › Finder: “Enter opens files in Finder”. In a Finder window or on the Desktop, Return and Enter open the selected files, and F2 or fn F2 renames the selected file. In text fields, such as a name you are typing or the search field, the keys work as usual. Off by default.
+- Settings › Finder: “⌘X cuts files in Finder”. ⌘X cuts the selected files, and ⌘V in the folder you choose moves them there instead of copying, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
 
 ### Changed
+- Settings pages follow System Settings: General, Keep Awake, Keyboard, Mouse, Windows, Dock and Finder, then Permissions and About set apart. Windows & Apps is split up. Windows has two sections, Size (green button) and Closing and Quitting (⌘Q and ⌘W, quit after the last window closes). Hide on Dock click moved to Dock, and New File, Enter opens files and ⌘X cuts files moved to Finder. Keyboard has the key repeat next to the Ctrl shortcuts and the language switch. The most used settings come first on each page, and the menu follows the same order. Dock and Finder have their own icons and colors, like in System Settings.
 - About shows just the version number, without the build number in brackets.
 - Settings: in rows with a title and a description, the switch, button or slider now sits in the middle of the row, like in System Settings, instead of next to the first line. The icon on the About page is the same size and in the same place as the icons at the top of the other pages.
 - Settings: buttons have icons. Copy Link has a link, and for a second after you click it says “Copied” with a check mark. Open Shortcuts, Open Finder Extensions…, Import and Export, Restore Defaults…, Restart, Add App… and the buttons that open System Settings or check for updates have their own icons too. Shortcuts shows the icon of the Shortcuts app.
-- Settings show pictures: Keep Awake, Appearance, Key Repeat, Scroll by lines or pixels, Pointer acceleration, Quit after the last window closes and Hide on Dock click. A picture changes as you flip its switch. With Reduce Motion on in System Settings, the pictures stand still.
+- Settings show pictures: Keep Awake, Appearance, Key Repeat, Scroll by lines or pixels, Pointer acceleration, Quit after the last window closes, Hide on Dock click, Green button enlarges the window, Enter opens files and ⌘X cuts files. A picture changes as you flip its switch. With Reduce Motion on in System Settings, the pictures stand still.
+- Settings › Mouse: the description of “Lines per wheel click” said it works while scrolling by lines is on, which was wrong in Pixels mode. Both sliders now say they work while the switch above is on.
 - Settings › Keep Awake no longer shows “Until …” twice while the timer is running.
 
 ### Fixed

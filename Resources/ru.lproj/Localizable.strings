@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools хочет, чтобы Mac не засыпал с закрытой крышкой.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools хочет вернуть сон Mac при закрытой крышке.";
 "How pika-tools starts and looks." = "Как pika-tools запускается и выглядит.";
-"Fixes for keys and clicks. Each one works on its own." = "Улучшения для клавиш и кликов. Каждое включается отдельно.";
+"Fixes for the keyboard. Each one works on its own." = "Улучшения для клавиатуры. Каждое включается отдельно.";
 "Only on Mac laptops" = "Только на ноутбуках Mac";
 "Back" = "Назад";
 "Forward" = "Вперед";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "список изменений, что нового, версия";
 "bug, issue, feedback, support" = "ошибка, баг, проблема, отзыв, поддержка";
 "open source, legal" = "открытый код, лицензия, исходный код";
-"Windows & Apps" = "Окна и приложения";
-"Fixes for windows and the Dock. Each one works on its own." = "Улучшения для окон и Dock. Каждое включается отдельно.";
+"Windows" = "Окна";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Размер";
+"Closing and Quitting" = "Закрытие и выход";
+"Fixes for windows and quitting apps. Each one works on its own." = "Улучшения для окон и выхода из приложений. Каждое включается отдельно.";
+"A fix for the Dock." = "Улучшение для Dock.";
+"Fixes for Finder. Each one works on its own." = "Улучшения для Finder. Каждое включается отдельно.";
 "Protect ⌘Q and ⌘W" = "Защита ⌘Q и ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Чтобы выйти или закрыть, добавьте ⇧. Просто ⌘Q и ⌘W ничего не делают — во всех приложениях.";
 "Add ⇧ to quit or close" = "Выйти или закрыть — с ⇧";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Каждый щелчок колесика прокручивает на одно и то же расстояние, с любой скоростью. Только для мыши.";
 "Same distance at any speed" = "Одно расстояние при любой скорости";
 "Lines per wheel click" = "Строк за щелчок колесика";
-"Works while scrolling by lines is on" = "Работает, когда включена прокрутка по строкам";
+"Works while the switch above is on" = "Работает, когда переключатель выше включён";
 "Scroll by" = "Прокручивать по";
 "Lines suit most apps. Pixels suit games." = "Строки подходят большинству программ, пиксели — играм.";
 "Lines" = "Строкам";

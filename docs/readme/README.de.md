@@ -89,10 +89,12 @@ Wach bleiben, der Display-Modus und der Modus bei geschlossenem Deckel lassen si
 Öffne die Einstellungen im Menü mit **Einstellungen …** oder ⌘, – oder starte pika-tools einfach erneut über den Finder, das Launchpad oder Spotlight. Solange das Fenster offen ist, erscheint die App im Dock und bei ⌘Tab.
 
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
-- **Tastatur**: Ctrl-Kurzbefehle, ⌘Q und ⌘W, Sprachwechsel.
-- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Seitentasten.
-- **Fenster & Apps**: Beenden nach dem letzten Fenster und Vergrößern mit dem grünen Knopf (beides mit einer Liste von Ausnahmen) sowie Ausblenden per Klick im Dock.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
+- **Tastatur**: Ctrl-Kurzbefehle, Sprachwechsel, Tastenwiederholung.
+- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Seitentasten.
+- **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
+- **Dock**: Ausblenden per Klick im Dock.
+- **Finder**: neue Datei, Öffnen mit der Eingabetaste und Ausschneiden mit ⌘X.
 - **Berechtigungen**: der Status beider Berechtigungen und von iCloud Drive, wenn die Synchronisierung läuft, mit Tasten, die die richtige Stelle in den Systemeinstellungen öffnen.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.
 

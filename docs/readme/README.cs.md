@@ -89,10 +89,12 @@ Keep Awake, režimy displeje a zavřeného víka lze dát na tlačítko v Ovlád
 Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pika-tools znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
-- **Klávesnice**: zkratky s Controlem, ⌘Q a ⌘W, přepínání jazyka.
+- **Bez spánku**: délka, volby pro displej a víko.
+- **Klávesnice**: zkratky s Controlem, přepínání jazyka, opakování kláves.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, boční tlačítka.
-- **Okna a aplikace**: ukončení po posledním okně a zvětšení okna zeleným tlačítkem (obojí se seznamem výjimek) a skrytí kliknutím v Docku.
-- **Nespat**: délka, volby pro displej a víko.
+- **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
+- **Dock**: skrytí kliknutím v Docku.
+- **Finder**: nový soubor, otevírání klávesou Enter a vyjmutí pomocí ⌘X.
 - **Oprávnění**: stav obou oprávnění a iCloud Drive, když je zapnutá synchronizace, s tlačítky, která otevřou správné místo v Nastavení systému.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 

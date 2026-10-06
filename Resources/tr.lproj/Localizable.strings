@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools, kapak kapalıyken Mac’inizi uyanık tutmak istiyor.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools, kapak kapalıyken Mac’inizin yeniden uyumasına izin vermek istiyor.";
 "How pika-tools starts and looks." = "pika-tools’un nasıl başlayacağı ve nasıl görüneceği.";
-"Fixes for keys and clicks. Each one works on its own." = "Tuşlar ve tıklamalar için düzeltmeler. Her biri ayrı çalışır.";
+"Fixes for the keyboard. Each one works on its own." = "Klavye için düzeltmeler. Her biri ayrı çalışır.";
 "Only on Mac laptops" = "Yalnızca Mac dizüstü bilgisayarlarda";
 "Back" = "Geri";
 "Forward" = "İleri";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "değişiklik günlüğü, sürüm notları, sürüm";
 "bug, issue, feedback, support" = "hata, sorun, geri bildirim, destek, bug";
 "open source, legal" = "açık kaynak, open source, yasal, lisans";
-"Windows & Apps" = "Pencereler ve Uygulamalar";
-"Fixes for windows and the Dock. Each one works on its own." = "Pencereler ve Dock için düzeltmeler. Her biri ayrı çalışır.";
+"Windows" = "Pencereler";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Boyut";
+"Closing and Quitting" = "Kapatma ve Çıkış";
+"Fixes for windows and quitting apps. Each one works on its own." = "Pencereler ve uygulamalardan çıkış için düzeltmeler. Her biri ayrı çalışır.";
+"A fix for the Dock." = "Dock için bir düzeltme.";
+"Fixes for Finder. Each one works on its own." = "Finder için düzeltmeler. Her biri ayrı çalışır.";
 "Protect ⌘Q and ⌘W" = "⌘Q ve ⌘W’yi koru";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Çıkmak veya kapatmak için ⇧ ekleyin. Tek başına ⌘Q ve ⌘W hiçbir uygulamada bir şey yapmaz.";
 "Add ⇧ to quit or close" = "Çıkmak veya kapatmak için ⇧ ekleyin";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Tekerleğin her tıklaması, hızı ne olursa olsun aynı mesafe kaydırır. Yalnızca fareler için.";
 "Same distance at any speed" = "Hız ne olursa olsun aynı mesafe";
 "Lines per wheel click" = "Teker tıkı başına satır";
-"Works while scrolling by lines is on" = "Satır satır kaydırma açıkken çalışır";
+"Works while the switch above is on" = "Yukarıdaki anahtar açıkken çalışır";
 "Scroll by" = "Kaydırma birimi";
 "Lines suit most apps. Pixels suit games." = "Satırlar çoğu uygulamaya uygundur. Pikseller oyunlara uygundur.";
 "Lines" = "Satır";

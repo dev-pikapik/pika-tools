@@ -238,7 +238,7 @@ private struct WheelSettings: View {
                             ticks: WheelStep.range.count
                         )
                     } label: {
-                        RowLabel(Text("Lines per wheel click"), Text("Works while scrolling by lines is on"))
+                        RowLabel(Text("Lines per wheel click"), Text("Works while the switch above is on"))
                     }
                     .settingAnchor(String(localized: "Lines per wheel click"))
                 case .pixels:
@@ -251,7 +251,7 @@ private struct WheelSettings: View {
                             ticks: 11
                         )
                     } label: {
-                        RowLabel(Text("Pixels per wheel click"), Text("Works while scrolling by lines is on"))
+                        RowLabel(Text("Pixels per wheel click"), Text("Works while the switch above is on"))
                     }
                     .settingAnchor(String(localized: "Pixels per wheel click"))
                 }

@@ -213,10 +213,71 @@ private func windowZoomCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private struct WindowZoomSettings: View {
-    @Bindable var tool: WindowZoomTool
+struct WindowZoomArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.7, 1.6, 0.9]
+    private static let screen = CGRect(x: 24, y: 8, width: 252, height: 112)
+    private static let zoomed = CGRect(x: 28, y: 18, width: 244, height: 98)
+    private static let fullScreen = CGRect(x: 24, y: -6, width: 252, height: 126)
+    private static let small = CGRect(x: 96, y: 36, width: 108, height: 64)
+
+    private func green(_ frame: CGRect) -> CGPoint {
+        CGPoint(x: frame.minX + 30, y: frame.minY + 7)
+    }
 
     var body: some View {
+        let step = reduceMotion ? 2 : tick % Self.durations.count
+        let frame = step >= 2 ? (on ? Self.zoomed : Self.fullScreen) : Self.small
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        IllustrationRow {
+            Stage {
+                ZStack {
+                    LinearGradient(colors: [Color.accentColor.opacity(0.4), Color.accentColor.opacity(0.18)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    HStack(spacing: 5) {
+                        Circle().fill(Color.primary.opacity(0.35)).frame(width: 4, height: 4)
+                        ForEach([14, 18], id: \.self) { Capsule().fill(Color.primary.opacity(0.25)).frame(width: CGFloat($0), height: 2.5) }
+                        Spacer(minLength: 0)
+                        Capsule().fill(Color.primary.opacity(0.25)).frame(width: 12, height: 2.5)
+                    }
+                    .padding(.horizontal, 8)
+                    .frame(height: 8)
+                    .background(Color(nsColor: .windowBackgroundColor).opacity(0.7))
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    ArtWindow(size: frame.size) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            ForEach([54, 38, 46], id: \.self) { Capsule().fill(Color.primary.opacity(0.12)).frame(width: CGFloat($0), height: 4) }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .padding(10)
+                    }
+                    .position(x: frame.midX - Self.screen.minX, y: frame.midY - Self.screen.minY)
+                }
+                .frame(width: Self.screen.width, height: Self.screen.height)
+                .clipShape(shape)
+                .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                .position(x: Self.screen.midX, y: Self.screen.midY)
+                if step == 2 {
+                    ArtRipple()
+                        .position(green(Self.small))
+                }
+                ArtCursor()
+                    .cursor(at: step == 0 ? CGPoint(x: 206, y: 100) : green(step == 3 ? frame : Self.small))
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
+private struct WindowZoomSettings: View {
+    @Bindable var tool: WindowZoomTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { WindowZoomArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,

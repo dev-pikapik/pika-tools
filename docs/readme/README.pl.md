@@ -89,10 +89,12 @@ Keep Awake oraz tryby wyświetlacza i zamkniętej klapy można umieścić na prz
 Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po prostu uruchom pika-tools ponownie z Findera, Launchpada lub Spotlight. Gdy okno jest otwarte, aplikacja pojawia się w Docku i w ⌘Tab.
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
-- **Klawiatura**: skróty z Control, ⌘Q i ⌘W, zmiana języka.
+- **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
+- **Klawiatura**: skróty z Control, zmiana języka, powtarzanie klawisza.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, boczne przyciski.
-- **Okna i aplikacje**: zakończenie po ostatnim oknie i powiększanie zielonym przyciskiem (oba z listą wyjątków) oraz ukrywanie kliknięciem w Docku.
-- **Nie usypiaj**: czas trwania, opcje ekranu i pokrywy.
+- **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
+- **Dock**: ukrywanie kliknięciem w Docku.
+- **Finder**: nowy plik, otwieranie klawiszem Return i wycinanie przez ⌘X.
 - **Uprawnienia**: stan obu uprawnień, a przy włączonej synchronizacji także iCloud Drive, z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 

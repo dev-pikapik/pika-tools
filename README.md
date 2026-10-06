@@ -89,10 +89,12 @@ Keep Awake, the display and lid-closed modes can be put on a button in Control C
 Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
-- **Keyboard**: Ctrl shortcuts, ⌘Q and ⌘W, language switch.
-- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, side buttons.
-- **Windows & Apps**: quit on last window and enlarge with the green button, both with a list of exceptions, and hide with a Dock click.
 - **Keep Awake**: duration, display and lid options.
+- **Keyboard**: Ctrl shortcuts, language switch, key repeat.
+- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, side buttons.
+- **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
+- **Dock**: hide with a click in the Dock.
+- **Finder**: new file, Enter to open, ⌘X to cut.
 - **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.
 

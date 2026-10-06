@@ -89,10 +89,12 @@ Keep Awake, ekran ve kapak kapalı modları, Kestirmeler uygulamasıyla Denetim 
 Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u Finder, Launchpad ya da Spotlight’tan yeniden başlatın. Pencere açıkken uygulama Dock’ta ve ⌘Tab’de görünür.
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
-- **Klavye**: Control kestirmeleri, ⌘Q ve ⌘W, dil değiştirme.
-- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, yan düğmeler.
-- **Pencereler ve Uygulamalar**: son pencerede çıkma ve yeşil düğmeyle pencereyi büyütme (ikisi de istisna listesiyle) ve Dock’ta tıklayarak gizleme.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
+- **Klavye**: Control kestirmeleri, dil değiştirme, tuş tekrarı.
+- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, yan düğmeler.
+- **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
+- **Dock**: Dock’ta tıklayarak gizleme.
+- **Finder**: yeni dosya, Return ile açma ve ⌘X ile kesme.
 - **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 

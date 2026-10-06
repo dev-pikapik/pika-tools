@@ -89,10 +89,12 @@ Keep Awake, skärmläget och läget med stängt lock kan läggas på en knapp i 
 Öppna inställningarna från menyn med **Inställningar…** eller ⌘, eller starta pika-tools igen från Finder, Launchpad eller Spotlight. Medan fönstret är öppet syns appen i Dock och i ⌘Tab.
 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
-- **Tangentbord**: kortkommandon med kontroll, ⌘Q och ⌘W, byte av språk.
-- **Mus**: pekaracceleration och hastighet, rullning per rad, sidoknappar.
-- **Fönster och appar**: avsluta vid sista fönstret och förstora med gröna knappen (båda med en lista över undantag), och göm med ett klick i Dock.
 - **Håll vaken**: tid, alternativ för skärm och lock.
+- **Tangentbord**: kortkommandon med kontroll, byte av språk, tangentupprepning.
+- **Mus**: pekaracceleration och hastighet, rullning per rad, sidoknappar.
+- **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
+- **Dock**: göm med ett klick i Dock.
+- **Finder**: ny fil, öppna med Retur och klipp ut med ⌘X.
 - **Behörigheter**: status för båda behörigheterna, och för iCloud Drive när synkronisering är på, med knappar som öppnar rätt ställe i Systeminställningar.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 
