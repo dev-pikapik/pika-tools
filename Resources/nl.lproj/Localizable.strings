@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik op het symbool van de app waarin je werkt om deze te verbergen. Klik nogmaals om hem terug te halen.";
 "Click again to bring it back" = "Nog een klik haalt hem terug";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimaliseren, verbergen, Windows, taakbalk, taskbar";
+"Green button enlarges the window" = "Groene knop vergroot het venster";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Klik op de groene knop om het venster het scherm te laten vullen, klik nogmaals om terug te gaan. Volledig scherm blijft beschikbaar in het menu van de knop en met ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Volledig scherm: ⌃⌘F of het menu van de knop";
+"Green button works as usual in these apps" = "Groene knop werkt zoals altijd in deze apps";
+"zoom, maximize, full screen, green button, Windows, option click" = "zoom, vergroten, maximaliseren, volledig scherm, groene knop, Windows, Option-klik";
 "Lets the app change clicks and keys and manage windows" = "Laat de app klikken en toetsen wijzigen en vensters beheren";
 "Keyboard" = "Toetsenbord";
 "Mouse" = "Muis";

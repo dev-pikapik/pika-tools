@@ -60,6 +60,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Ocultar con un clic en el Dock.** Haz clic en el icono del Dock de la app que estás usando y se ocultará. Vuelve a hacer clic para que reaparezca. Desactivado por omisión.
 
+**El botón verde amplía la ventana.** Haz clic en el botón verde de una ventana y esta crece hasta llenar la pantalla, sin pasar a pantalla completa. Otro clic devuelve el tamaño anterior. Si mantienes pulsado ⌥, el botón funciona como siempre. La pantalla completa sigue en el menú del botón y con ⌃⌘F. Puedes indicar las apps en las que el botón verde debe funcionar como siempre. Desactivado por omisión.
+
 **Archivo nuevo en el Finder.** Haz clic derecho en una ventana del Finder o en el escritorio, elige **Archivo nuevo**, escribe un nombre y aparece un archivo vacío, como Nuevo › Documento de texto en Windows. .txt por omisión. Desactivado por omisión.
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
@@ -85,7 +87,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Teclado**: atajos con Control, ⌘Q y ⌘W, cambio de idioma.
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, botones laterales.
-- **Ventanas y apps**: salir al cerrar la última ventana, con una lista de excepciones, y ocultar con un clic en el Dock.
+- **Ventanas y apps**: salir al cerrar la última ventana y ampliar con el botón verde (ambas con una lista de excepciones), y ocultar con un clic en el Dock.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
 - **Permisos**: el estado de ambos permisos, y de iCloud Drive cuando la sincronización está activada, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.

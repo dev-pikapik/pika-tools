@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Click the icon of the app you’re in to hide it. Click again to bring it back.";
 "Click again to bring it back" = "Click again to bring it back";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimize, hide, Windows, taskbar";
+"Green button enlarges the window" = "Green button enlarges the window";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Full screen: ⌃⌘F or the button’s menu";
+"Green button works as usual in these apps" = "Green button works as usual in these apps";
+"zoom, maximize, full screen, green button, Windows, option click" = "zoom, maximize, full screen, green button, Windows, option click";
 "Lets the app change clicks and keys and manage windows" = "Lets the app change clicks and keys and manage windows";
 "Keyboard" = "Keyboard";
 "Mouse" = "Mouse";

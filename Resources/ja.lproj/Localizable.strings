@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "使用中のアプリのアイコンをクリックすると隠れます。もう一度クリックすると戻ります。";
 "Click again to bring it back" = "もう一度クリックすると戻ります";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, しまう, 隠す, Windows, タスクバー";
+"Green button enlarges the window" = "緑のボタンでウインドウを拡大";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "緑のボタンをクリックすると、ウインドウが画面いっぱいに広がります。もう一度クリックすると元の大きさに戻ります。フルスクリーンは、ボタンのメニューと⌃⌘Fで引き続き使えます。";
+"Full screen: ⌃⌘F or the button’s menu" = "フルスクリーン: ⌃⌘Fまたはボタンのメニュー";
+"Green button works as usual in these apps" = "これらのアプリでは緑のボタンを通常どおり使う";
+"zoom, maximize, full screen, green button, Windows, option click" = "ズーム, 拡大, 最大化, フルスクリーン, 緑のボタン, Windows, optionクリック";
 "Lets the app change clicks and keys and manage windows" = "クリックやキー入力を変更し、ウインドウを管理するため";
 "Keyboard" = "キーボード";
 "Mouse" = "マウス";

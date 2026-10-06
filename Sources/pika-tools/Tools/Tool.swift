@@ -65,6 +65,7 @@ final class ToolRegistry {
         KeyRepeatTool(),
         QuitOnCloseTool(),
         DockHideTool(),
+        WindowZoomTool(),
         NewFileTool(),
         PointerTool(),
         WheelTool(),

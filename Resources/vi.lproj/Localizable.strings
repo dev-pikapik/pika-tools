@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Bấm vào biểu tượng của ứng dụng đang dùng để ẩn ứng dụng. Bấm lần nữa để hiện lại.";
 "Click again to bring it back" = "Bấm lần nữa để hiện lại";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, thu nhỏ, ẩn, Windows, thanh tác vụ, taskbar";
+"Green button enlarges the window" = "Nút xanh lá phóng to cửa sổ";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Bấm vào nút xanh lá để cửa sổ lấp đầy màn hình. Bấm lần nữa để trở lại kích thước cũ. Chế độ toàn màn hình vẫn có trong menu của nút và ở ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Toàn màn hình: ⌃⌘F hoặc menu của nút";
+"Green button works as usual in these apps" = "Nút xanh lá hoạt động như bình thường trong các ứng dụng này";
+"zoom, maximize, full screen, green button, Windows, option click" = "thu phóng, phóng to, tối đa hóa, toàn màn hình, nút xanh lá, Windows, bấm kèm Option";
 "Lets the app change clicks and keys and manage windows" = "Cho phép ứng dụng thay đổi thao tác bấm, phím và quản lý cửa sổ";
 "Keyboard" = "Bàn phím";
 "Mouse" = "Chuột";

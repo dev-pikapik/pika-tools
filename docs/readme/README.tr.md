@@ -60,6 +60,8 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Dock’ta tıklayarak gizleme.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulama gizlenir. Geri getirmek için yeniden tıklayın. Varsayılan olarak kapalıdır.
 
+**Yeşil düğme pencereyi büyütür.** Bir pencerenin yeşil düğmesine tıklayın; pencere tam ekrana geçmeden ekranı doldurur. Önceki boyuta dönmek için yeniden tıklayın. ⌥ tuşunu basılı tutarsanız düğme her zamanki gibi çalışır. Tam ekran, düğmenin menüsünde ve ⌃⌘F ile kullanılabilir kalır. Yeşil düğmenin her zamanki gibi çalışacağı uygulamaları listeleyebilirsiniz. Varsayılan olarak kapalıdır.
+
 **Finder’da Yeni Dosya.** Bir Finder penceresinde ya da masaüstünde sağ tıklayın, **Yeni Dosya**’yı seçin, bir ad yazın; Windows’taki Yeni › Metin Belgesi gibi boş bir dosya oluşur. Varsayılan .txt. Varsayılan olarak kapalı.
 
 Her aracın menüde ve ayarlarda kendi anahtarı vardır. Normal Control+C’ye mi ihtiyacınız var? O aracı kapatın.
@@ -85,7 +87,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Klavye**: Control kestirmeleri, ⌘Q ve ⌘W, dil değiştirme.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, yan düğmeler.
-- **Pencereler ve Uygulamalar**: istisna listesiyle birlikte son pencerede çıkma ve Dock’ta tıklayarak gizleme.
+- **Pencereler ve Uygulamalar**: son pencerede çıkma ve yeşil düğmeyle pencereyi büyütme (ikisi de istisna listesiyle) ve Dock’ta tıklayarak gizleme.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
 - **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.

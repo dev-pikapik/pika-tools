@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "คลิกไอคอนของแอปที่ใช้อยู่เพื่อซ่อน คลิกอีกครั้งเพื่อแสดงกลับมา";
 "Click again to bring it back" = "คลิกอีกครั้งเพื่อแสดงกลับมา";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, ย่อ, ซ่อน, Windows, แถบงาน, taskbar";
+"Green button enlarges the window" = "ปุ่มสีเขียวขยายหน้าต่าง";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "คลิกปุ่มสีเขียวเพื่อให้หน้าต่างเต็มหน้าจอ คลิกอีกครั้งเพื่อกลับเป็นขนาดเดิม โหมดเต็มหน้าจอยังอยู่ในเมนูของปุ่มและที่ ⌃⌘F";
+"Full screen: ⌃⌘F or the button’s menu" = "เต็มหน้าจอ: ⌃⌘F หรือเมนูของปุ่ม";
+"Green button works as usual in these apps" = "ปุ่มสีเขียวทำงานตามปกติในแอปเหล่านี้";
+"zoom, maximize, full screen, green button, Windows, option click" = "ซูม, ขยาย, ขยายสูงสุด, เต็มหน้าจอ, ปุ่มสีเขียว, Windows, คลิกพร้อม Option";
 "Lets the app change clicks and keys and manage windows" = "ให้แอปเปลี่ยนการคลิกและการกดปุ่ม และจัดการหน้าต่าง";
 "Keyboard" = "แป้นพิมพ์";
 "Mouse" = "เมาส์";

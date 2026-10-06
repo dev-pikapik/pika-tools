@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "انقر على أيقونة التطبيق الذي تستخدمه لإخفائه. انقر مرة أخرى لإعادته.";
 "Click again to bring it back" = "انقر مرة أخرى لإعادته";
 "Dock, minimize, hide, Windows, taskbar" = "Dock، تصغير، إخفاء، Windows، شريط المهام";
+"Green button enlarges the window" = "الزر الأخضر يكبّر النافذة";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "انقر على الزر الأخضر لتملأ النافذة الشاشة، وانقر مرة أخرى للعودة. يبقى ملء الشاشة متاحًا من قائمة الزر وعلى ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "ملء الشاشة: ⌃⌘F أو قائمة الزر";
+"Green button works as usual in these apps" = "الزر الأخضر يعمل كالمعتاد في هذه التطبيقات";
+"zoom, maximize, full screen, green button, Windows, option click" = "تكبير، تحجيم، ملء الشاشة، الزر الأخضر، Windows، النقر مع Option";
 "Lets the app change clicks and keys and manage windows" = "يسمح للتطبيق بتغيير النقرات والمفاتيح وإدارة النوافذ";
 "Keyboard" = "لوحة المفاتيح";
 "Mouse" = "الماوس";

@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klikněte na ikonu aplikace, kterou právě používáte, a skryje se. Dalším kliknutím ji vrátíte.";
 "Click again to bring it back" = "Dalším kliknutím ji vrátíte";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimalizovat, skrýt, Windows, hlavní panel";
+"Green button enlarges the window" = "Zelené tlačítko zvětší okno";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Kliknutím na zelené tlačítko okno vyplní obrazovku, dalším kliknutím se vrátí zpět. Celá obrazovka zůstává v nabídce tlačítka a na ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Celá obrazovka: ⌃⌘F nebo nabídka tlačítka";
+"Green button works as usual in these apps" = "Zelené tlačítko funguje jako obvykle v těchto aplikacích";
+"zoom, maximize, full screen, green button, Windows, option click" = "zvětšit, maximalizovat, celá obrazovka, zelené tlačítko, Windows, klik s Option";
 "Lets the app change clicks and keys and manage windows" = "Umožňuje aplikaci měnit kliknutí a stisky kláves a spravovat okna";
 "Keyboard" = "Klávesnice";
 "Mouse" = "Myš";

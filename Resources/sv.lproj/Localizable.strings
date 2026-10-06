@@ -121,6 +121,11 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicka på symbolen för appen du använder för att gömma den. Klicka igen för att ta tillbaka den.";
 "Click again to bring it back" = "Klicka igen för att ta tillbaka den";
 "Dock, minimize, hide, Windows, taskbar" = "Dock, minimera, göm, dölj, Windows, aktivitetsfält";
+"Green button enlarges the window" = "Gröna knappen förstorar fönstret";
+"Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Klicka på den gröna knappen så fyller fönstret skärmen. Klicka igen för att gå tillbaka. Helskärm finns kvar i knappens meny och på ⌃⌘F.";
+"Full screen: ⌃⌘F or the button’s menu" = "Helskärm: ⌃⌘F eller knappens meny";
+"Green button works as usual in these apps" = "Gröna knappen fungerar som vanligt i de här apparna";
+"zoom, maximize, full screen, green button, Windows, option click" = "zoom, förstora, maximera, helskärm, grön knapp, Windows, Option-klick";
 "Lets the app change clicks and keys and manage windows" = "Låter appen ändra klick och tangenttryckningar och hantera fönster";
 "Keyboard" = "Tangentbord";
 "Mouse" = "Mus";

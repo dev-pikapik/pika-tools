@@ -60,6 +60,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Ẩn bằng một lần bấm trong Dock.** Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, ứng dụng sẽ ẩn đi. Bấm lần nữa để hiện lại. Tắt theo mặc định.
 
+**Nút xanh lá phóng to cửa sổ.** Bấm vào nút xanh lá của cửa sổ, cửa sổ sẽ lấp đầy màn hình mà không vào chế độ toàn màn hình. Bấm lần nữa để trở lại kích thước cũ. Giữ ⌥ thì nút hoạt động như bình thường. Chế độ toàn màn hình vẫn có trong menu của nút và ở ⌃⌘F. Bạn có thể lập danh sách các ứng dụng mà nút xanh lá cần hoạt động như bình thường. Tắt theo mặc định.
+
 **Tệp mới trong Finder.** Bấm chuột phải trong cửa sổ Finder hoặc trên màn hình nền, chọn **Tệp mới**, nhập tên là có ngay một tệp trống, giống New › Text Document trên Windows. Mặc định là .txt. Mặc định tắt.
 
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần dùng lại Control+C bình thường? Tắt công cụ đó.
@@ -85,7 +87,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Bàn phím**: phím tắt Control, ⌘Q và ⌘W, chuyển ngôn ngữ.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, các nút bên.
-- **Cửa sổ & Ứng dụng**: thoát khi đóng cửa sổ cuối cùng, kèm danh sách ngoại lệ, và ẩn bằng một lần bấm trong Dock.
+- **Cửa sổ & Ứng dụng**: thoát khi đóng cửa sổ cuối cùng và phóng to cửa sổ bằng nút xanh lá (cả hai đều có danh sách ngoại lệ), và ẩn bằng một lần bấm trong Dock.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
 - **Quyền**: trạng thái của cả hai quyền, và của iCloud Drive khi bật đồng bộ, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.

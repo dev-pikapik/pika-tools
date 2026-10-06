@@ -60,6 +60,8 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e ele é ocultado. Clique de novo para trazê-lo de volta. Desativado por padrão.
 
+**O botão verde amplia a janela.** Clique no botão verde de uma janela e ela cresce até ocupar a tela, sem entrar em tela inteira. Clique de novo para voltar ao tamanho anterior. Segure ⌥ e o botão funciona como sempre. A tela inteira continua no menu do botão e em ⌃⌘F. Você pode listar os apps em que o botão verde deve funcionar como sempre. Desativado por padrão.
+
 **Novo arquivo no Finder.** Clique com o botão direito numa janela do Finder ou na mesa, escolha **Novo arquivo**, digite um nome e aparece um arquivo vazio, como Novo › Documento de Texto no Windows. .txt por padrão. Desativado por padrão.
 
 Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C normal de volta? Desative essa ferramenta.
@@ -85,7 +87,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de nov
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
 - **Teclado**: atalhos com Control, ⌘Q e ⌘W, troca de idioma.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, botões laterais.
-- **Janelas e apps**: encerrar ao fechar a última janela, com uma lista de exceções, e ocultar com um clique no Dock.
+- **Janelas e apps**: encerrar ao fechar a última janela e ampliar com o botão verde (ambos com uma lista de exceções), e ocultar com um clique no Dock.
 - **Manter Ativo**: duração e opções de tela e de tampa.
 - **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
