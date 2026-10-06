@@ -58,6 +58,8 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 **Dock’ta tıklayarak gizleme.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulama gizlenir. Geri getirmek için yeniden tıklayın. Varsayılan olarak kapalıdır.
 
+**Finder’da Yeni Dosya.** Bir Finder penceresinde ya da masaüstünde sağ tıklayın, **Yeni Dosya**’yı seçin, bir ad yazın; Windows’taki Yeni › Metin Belgesi gibi boş bir dosya oluşur. Varsayılan .txt. Varsayılan olarak kapalı.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır. Normal Control+C’ye mi ihtiyacınız var? O aracı kapatın.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken tıklama işaretli bir ok, her şey kapalıyken üstü çizili bir ok, bir araç açık ama izinler eksikken bir uyarı üçgeni.

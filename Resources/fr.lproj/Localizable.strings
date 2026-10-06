@@ -173,3 +173,14 @@
 "Repeat a held key" = "Répéter une touche maintenue";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Maintiens une touche pour la taper encore et encore, comme sous Windows, au lieu du menu des accents. Les apps ouvertes en tiennent compte après un redémarrage.";
 "key repeat, hold, accent menu, games, typing" = "répétition des touches, maintenir, menu des accents, jeux, saisie";
+"New File in Finder" = "Nouveau fichier dans le Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Clic droit dans le Finder ou sur le bureau › Nouveau fichier, puis tapez un nom. En .txt par défaut.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "créer, fichier texte, txt, clic droit, menu contextuel, bureau, Windows";
+"New File" = "Nouveau fichier";
+"Untitled" = "Sans titre";
+"It will appear in “%@”." = "Il apparaîtra dans « %@ ».";
+"Create" = "Créer";
+"Type a name without “/” or “:”." = "Tapez un nom sans « / » ni « : ».";
+"Turn it on in System Settings" = "Activez-la dans Réglages Système";
+"Open Finder Extensions…" = "Ouvrir les extensions du Finder…";
+"Check for Updates" = "Rechercher des mises à jour";

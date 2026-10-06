@@ -173,3 +173,14 @@
 "Repeat a held key" = "تكرار المفتاح عند الضغط المستمر";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "اضغط على المفتاح باستمرار لكتابته مرارًا كما في Windows بدلًا من قائمة التشكيل. تطبّق التطبيقات المفتوحة ذلك بعد إعادة تشغيلها.";
 "key repeat, hold, accent menu, games, typing" = "تكرار المفاتيح, ضغط مستمر, قائمة التشكيل, ألعاب, كتابة";
+"New File in Finder" = "ملف جديد في Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "انقر بزر الماوس الأيمن في Finder أو على سطح المكتب › ملف جديد، ثم اكتب اسمًا. الامتداد ‎.txt افتراضيًا.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "إنشاء, ملف نصي, txt, زر أيمن, قائمة السياق, سطح المكتب, Windows";
+"New File" = "ملف جديد";
+"Untitled" = "بلا عنوان";
+"It will appear in “%@”." = "سيظهر في ”%@“.";
+"Create" = "إنشاء";
+"Type a name without “/” or “:”." = "اكتب اسمًا بدون ”/“ أو ”:“.";
+"Turn it on in System Settings" = "شغّله من إعدادات النظام";
+"Open Finder Extensions…" = "فتح ملحقات Finder…";
+"Check for Updates" = "التحقق من وجود تحديثات";

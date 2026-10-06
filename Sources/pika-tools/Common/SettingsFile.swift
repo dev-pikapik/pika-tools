@@ -12,7 +12,7 @@ struct SettingsFile {
         "ctrl-keys", "command-keys-quit", "command-keys-close", "input-switch", "key-repeat",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count",
         "side-buttons", "side-buttons-swap",
-        "quit-on-close", "quit-on-close-excluded", "dock-hide",
+        "quit-on-close", "quit-on-close-excluded", "dock-hide", "new-file",
         "keep-awake-mode", "keep-awake-duration-value", "keep-awake-duration-unit",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
     ]

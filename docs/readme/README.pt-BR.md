@@ -58,6 +58,8 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 
 **Ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e ele é ocultado. Clique de novo para trazê-lo de volta. Desativado por padrão.
 
+**Novo arquivo no Finder.** Clique com o botão direito numa janela do Finder ou na mesa, escolha **Novo arquivo**, digite um nome e aparece um arquivo vazio, como Novo › Documento de Texto no Windows. .txt por padrão. Desativado por padrão.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C normal de volta? Desative essa ferramenta.
 
 O ícone na barra de menus mostra o estado num relance: uma seta com um clique quando as ferramentas estão funcionando, uma seta riscada quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.

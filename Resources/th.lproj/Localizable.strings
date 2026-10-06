@@ -173,3 +173,14 @@
 "Repeat a held key" = "พิมพ์ซ้ำเมื่อกดแป้นค้างไว้";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "กดแป้นค้างไว้เพื่อพิมพ์ซ้ำไปเรื่อย ๆ เหมือนใน Windows แทนเมนูเครื่องหมาย แอปที่เปิดอยู่จะใช้หลังจากเปิดใหม่";
 "key repeat, hold, accent menu, games, typing" = "การพิมพ์ซ้ำ, กดค้าง, เมนูเครื่องหมาย, เกม, การพิมพ์";
+"New File in Finder" = "ไฟล์ใหม่ใน Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "คลิกขวาใน Finder หรือบนเดสก์ท็อป › ไฟล์ใหม่ แล้วพิมพ์ชื่อ ค่าเริ่มต้นเป็น .txt";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "สร้าง, ไฟล์ข้อความ, txt, คลิกขวา, เมนูบริบท, เดสก์ท็อป, Windows";
+"New File" = "ไฟล์ใหม่";
+"Untitled" = "ไม่มีชื่อ";
+"It will appear in “%@”." = "ไฟล์จะอยู่ใน “%@”";
+"Create" = "สร้าง";
+"Type a name without “/” or “:”." = "พิมพ์ชื่อที่ไม่มี “/” หรือ “:”";
+"Turn it on in System Settings" = "เปิดใช้ในการตั้งค่าระบบ";
+"Open Finder Extensions…" = "เปิดส่วนขยาย Finder…";
+"Check for Updates" = "ตรวจหาอัปเดต";

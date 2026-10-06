@@ -173,3 +173,14 @@
 "Repeat a held key" = "Ulangi tombol yang ditahan";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "Tahan tombol untuk mengetiknya berulang kali, seperti di Windows, bukan menu aksen. App yang terbuka menerapkannya setelah dimulai ulang.";
 "key repeat, hold, accent menu, games, typing" = "pengulangan tombol, tahan, menu aksen, game, mengetik";
+"New File in Finder" = "File Baru di Finder";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Klik kanan di Finder atau di desktop › File Baru, lalu ketik nama. Bawaannya .txt.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "buat, file teks, txt, klik kanan, menu konteks, desktop, Windows";
+"New File" = "File Baru";
+"Untitled" = "Tanpa Judul";
+"It will appear in “%@”." = "File akan muncul di “%@”.";
+"Create" = "Buat";
+"Type a name without “/” or “:”." = "Ketik nama tanpa “/” atau “:”.";
+"Turn it on in System Settings" = "Nyalakan di Pengaturan Sistem";
+"Open Finder Extensions…" = "Buka Ekstensi Finder…";
+"Check for Updates" = "Periksa Pembaruan";

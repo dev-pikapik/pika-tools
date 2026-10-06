@@ -58,6 +58,8 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Hide with a click in the Dock.** Click the Dock icon of the app you're in, and it hides. Click again to bring it back. Off by default.
 
+**New File in Finder.** Right-click in a Finder window or on the Desktop, choose **New File**, type a name, and an empty file appears, like New › Text Document on Windows. It’s a .txt by default. Off by default.
+
 Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.

@@ -173,3 +173,14 @@
 "Repeat a held key" = "キーを押し続けて連続入力";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "キーを押し続けると、アクセントメニューの代わりに Windows のように文字が繰り返し入力されます。開いているアプリには再起動後に反映されます。";
 "key repeat, hold, accent menu, games, typing" = "キーリピート, 長押し, アクセントメニュー, ゲーム, 入力";
+"New File in Finder" = "Finderで新規ファイル";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finderまたはデスクトップで右クリック › 新規ファイル、名前を入力するだけ。標準は.txtです。";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "作成, テキストファイル, txt, 右クリック, コンテキストメニュー, デスクトップ, Windows";
+"New File" = "新規ファイル";
+"Untitled" = "名称未設定";
+"It will appear in “%@”." = "「%@」に作成されます。";
+"Create" = "作成";
+"Type a name without “/” or “:”." = "「/」や「:」を含まない名前を入力してください。";
+"Turn it on in System Settings" = "システム設定でオンにしてください";
+"Open Finder Extensions…" = "Finder機能拡張を開く…";
+"Check for Updates" = "アップデートを確認";

@@ -173,3 +173,14 @@
 "Repeat a held key" = "키를 누르고 있으면 반복 입력";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "키를 누르고 있으면 악센트 메뉴 대신 Windows처럼 글자가 계속 입력됩니다. 열려 있는 앱은 다시 시작한 후에 적용됩니다.";
 "key repeat, hold, accent menu, games, typing" = "키 반복, 길게 누르기, 악센트 메뉴, 게임, 타이핑";
+"New File in Finder" = "Finder에서 새 파일";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder나 데스크탑에서 오른쪽 클릭 › 새 파일, 이름만 입력하세요. 기본은 .txt입니다.";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "만들기, 텍스트 파일, txt, 오른쪽 클릭, 컨텍스트 메뉴, 데스크탑, Windows";
+"New File" = "새 파일";
+"Untitled" = "제목 없음";
+"It will appear in “%@”." = "‘%@’에 만들어집니다.";
+"Create" = "생성";
+"Type a name without “/” or “:”." = "‘/’나 ‘:’가 없는 이름을 입력하세요.";
+"Turn it on in System Settings" = "시스템 설정에서 켜 주세요";
+"Open Finder Extensions…" = "Finder 확장 프로그램 열기…";
+"Check for Updates" = "업데이트 확인";

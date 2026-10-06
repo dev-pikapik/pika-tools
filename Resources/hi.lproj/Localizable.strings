@@ -173,3 +173,14 @@
 "Repeat a held key" = "दबाए रखने पर कुंजी दोहराएं";
 "Hold a key to type it again and again, like on Windows, instead of the accent menu. Open apps pick this up after a restart." = "कुंजी दबाए रखें तो वह Windows की तरह बार-बार टाइप होगी, एक्सेंट मेनू की जगह। खुले ऐप्स इसे रीस्टार्ट के बाद अपनाएंगे।";
 "key repeat, hold, accent menu, games, typing" = "की रिपीट, दबाए रखना, एक्सेंट मेनू, गेम, टाइपिंग";
+"New File in Finder" = "Finder में नई फ़ाइल";
+"Right-click in Finder or on the Desktop › New File, then type a name. .txt by default." = "Finder या डेस्कटॉप पर राइट-क्लिक करें › नई फ़ाइल, फिर नाम लिखें। डिफ़ॉल्ट रूप से .txt।";
+"create, text file, txt, right-click, context menu, Desktop, Windows" = "बनाएँ, टेक्स्ट फ़ाइल, txt, राइट-क्लिक, संदर्भ मेनू, डेस्कटॉप, Windows";
+"New File" = "नई फ़ाइल";
+"Untitled" = "शीर्षकहीन";
+"It will appear in “%@”." = "यह “%@” में दिखेगी।";
+"Create" = "बनाएँ";
+"Type a name without “/” or “:”." = "“/” या “:” के बिना नाम लिखें।";
+"Turn it on in System Settings" = "सिस्टम सेटिंग्ज़ में चालू करें";
+"Open Finder Extensions…" = "Finder एक्सटेंशन खोलें…";
+"Check for Updates" = "अपडेट जाँचें";
