@@ -7,7 +7,7 @@ final class DockHideTool: Tool {
     let id = "dock-hide"
     let icon = "dock.rectangle"
     var title: String { String(localized: "Hide with a click in the Dock") }
-    let tab = SettingsTab.windows
+    let tab = SettingsTab.dock
 
     private(set) var isActive = false
 

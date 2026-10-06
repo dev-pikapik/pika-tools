@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools wants to keep your Mac awake with the lid closed.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools wants to let your Mac sleep with the lid closed again.";
 "How pika-tools starts and looks." = "How pika-tools starts and looks.";
-"Fixes for keys and clicks. Each one works on its own." = "Fixes for keys and clicks. Each one works on its own.";
+"Fixes for the keyboard. Each one works on its own." = "Fixes for the keyboard. Each one works on its own.";
 "Only on Mac laptops" = "Only on Mac laptops";
 "Back" = "Back";
 "Forward" = "Forward";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "changelog, release notes, version";
 "bug, issue, feedback, support" = "bug, issue, feedback, support";
 "open source, legal" = "open source, legal";
-"Windows & Apps" = "Windows & Apps";
-"Fixes for windows and the Dock. Each one works on its own." = "Fixes for windows and the Dock. Each one works on its own.";
+"Windows" = "Windows";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Size";
+"Closing and Quitting" = "Closing and Quitting";
+"Fixes for windows and quitting apps. Each one works on its own." = "Fixes for windows and quitting apps. Each one works on its own.";
+"A fix for the Dock." = "A fix for the Dock.";
+"Fixes for Finder. Each one works on its own." = "Fixes for Finder. Each one works on its own.";
 "Protect ⌘Q and ⌘W" = "Protect ⌘Q and ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app.";
 "Add ⇧ to quit or close" = "Add ⇧ to quit or close";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Each wheel click scrolls the same distance, at any speed. Mouse only.";
 "Same distance at any speed" = "Same distance at any speed";
 "Lines per wheel click" = "Lines per wheel click";
-"Works while scrolling by lines is on" = "Works while scrolling by lines is on";
+"Works while the switch above is on" = "Works while the switch above is on";
 "Scroll by" = "Scroll by";
 "Lines suit most apps. Pixels suit games." = "Lines suit most apps. Pixels suit games.";
 "Lines" = "Lines";

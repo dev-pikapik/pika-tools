@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools ingin menjaga Mac Anda tetap terjaga saat penutup ditutup.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools ingin membiarkan Mac Anda tidur lagi saat penutup ditutup.";
 "How pika-tools starts and looks." = "Cara pika-tools dimulai dan tampilannya.";
-"Fixes for keys and clicks. Each one works on its own." = "Perbaikan untuk tombol dan klik. Masing-masing berfungsi sendiri.";
+"Fixes for the keyboard. Each one works on its own." = "Perbaikan untuk papan ketik. Masing-masing berfungsi sendiri.";
 "Only on Mac laptops" = "Hanya di laptop Mac";
 "Back" = "Kembali";
 "Forward" = "Maju";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "log perubahan, catatan rilis, changelog, versi";
 "bug, issue, feedback, support" = "bug, masalah, umpan balik, dukungan";
 "open source, legal" = "sumber terbuka, open source, lisensi, hukum";
-"Windows & Apps" = "Jendela & App";
-"Fixes for windows and the Dock. Each one works on its own." = "Perbaikan untuk jendela dan Dock. Masing-masing berfungsi sendiri.";
+"Windows" = "Jendela";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Ukuran";
+"Closing and Quitting" = "Menutup dan Keluar";
+"Fixes for windows and quitting apps. Each one works on its own." = "Perbaikan untuk jendela dan keluar dari app. Masing-masing berfungsi sendiri.";
+"A fix for the Dock." = "Perbaikan untuk Dock.";
+"Fixes for Finder. Each one works on its own." = "Perbaikan untuk Finder. Masing-masing berfungsi sendiri.";
 "Protect ⌘Q and ⌘W" = "Lindungi ⌘Q dan ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Tambahkan ⇧ untuk keluar atau menutup. ⌘Q dan ⌘W saja tidak melakukan apa pun, di semua app.";
 "Add ⇧ to quit or close" = "Tambahkan ⇧ untuk keluar atau menutup";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Setiap klik roda menggulir sejauh yang sama, secepat apa pun. Hanya untuk tetikus.";
 "Same distance at any speed" = "Jarak sama di kecepatan apa pun";
 "Lines per wheel click" = "Baris per klik roda";
-"Works while scrolling by lines is on" = "Berfungsi saat pengguliran per baris aktif";
+"Works while the switch above is on" = "Berfungsi saat sakelar di atas aktif";
 "Scroll by" = "Gulir per";
 "Lines suit most apps. Pixels suit games." = "Baris cocok untuk sebagian besar app. Piksel cocok untuk game.";
 "Lines" = "Baris";

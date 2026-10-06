@@ -89,10 +89,12 @@ Keep Awake, chế độ màn hình và chế độ đóng nắp có thể đặt
 Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở lại pika-tools từ Finder, Launchpad hay Spotlight. Khi cửa sổ đang mở, ứng dụng hiện trong Dock và trong ⌘Tab.
 
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
-- **Bàn phím**: phím tắt Control, ⌘Q và ⌘W, chuyển ngôn ngữ.
-- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, các nút bên.
-- **Cửa sổ & Ứng dụng**: thoát khi đóng cửa sổ cuối cùng và phóng to cửa sổ bằng nút xanh lá (cả hai đều có danh sách ngoại lệ), và ẩn bằng một lần bấm trong Dock.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
+- **Bàn phím**: phím tắt Control, chuyển ngôn ngữ, lặp phím.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, các nút bên.
+- **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
+- **Dock**: ẩn bằng một lần bấm trong Dock.
+- **Finder**: tạo tệp mới, mở bằng Return và cắt bằng ⌘X.
 - **Quyền**: trạng thái của cả hai quyền, và của iCloud Drive khi bật đồng bộ, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
 

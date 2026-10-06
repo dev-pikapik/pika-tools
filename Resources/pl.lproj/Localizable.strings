@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools chce, aby Mac nie usypiał się przy zamkniętej pokrywie.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools chce znów pozwolić Macowi usypiać się przy zamkniętej pokrywie.";
 "How pika-tools starts and looks." = "Jak pika-tools się uruchamia i wygląda.";
-"Fixes for keys and clicks. Each one works on its own." = "Poprawki klawiszy i kliknięć. Każda działa niezależnie.";
+"Fixes for the keyboard. Each one works on its own." = "Poprawki klawiatury. Każda działa niezależnie.";
 "Only on Mac laptops" = "Tylko w laptopach Mac";
 "Back" = "Wstecz";
 "Forward" = "Dalej";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "lista zmian, informacje o wersji, wersja";
 "bug, issue, feedback, support" = "błąd, problem, opinia, wsparcie, pomoc, bug";
 "open source, legal" = "open source, informacje prawne, licencja";
-"Windows & Apps" = "Okna i aplikacje";
-"Fixes for windows and the Dock. Each one works on its own." = "Poprawki okien i Docka. Każda działa niezależnie.";
+"Windows" = "Okna";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Rozmiar";
+"Closing and Quitting" = "Zamykanie i kończenie";
+"Fixes for windows and quitting apps. Each one works on its own." = "Poprawki okien i zamykania aplikacji. Każda działa niezależnie.";
+"A fix for the Dock." = "Poprawka Docka.";
+"Fixes for Finder. Each one works on its own." = "Poprawki Findera. Każda działa niezależnie.";
 "Protect ⌘Q and ⌘W" = "Chroń ⌘Q i ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Dodaj ⇧, aby zakończyć lub zamknąć. Same ⌘Q i ⌘W nic nie robią w żadnej aplikacji.";
 "Add ⇧ to quit or close" = "Dodaj ⇧, aby zakończyć lub zamknąć";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Każde kliknięcie kółka przewija o tę samą odległość, bez względu na szybkość. Tylko dla myszy.";
 "Same distance at any speed" = "Ta sama odległość przy każdej szybkości";
 "Lines per wheel click" = "Wiersze na kliknięcie kółka";
-"Works while scrolling by lines is on" = "Działa, gdy przewijanie o wiersze jest włączone";
+"Works while the switch above is on" = "Działa, gdy powyższy przełącznik jest włączony";
 "Scroll by" = "Przewijaj o";
 "Lines suit most apps. Pixels suit games." = "Wiersze pasują do większości aplikacji. Piksele pasują do gier.";
 "Lines" = "Wiersze";

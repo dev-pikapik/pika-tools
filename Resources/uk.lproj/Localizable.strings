@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools хоче, щоб Mac не засинав із закритою кришкою.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools хоче повернути сон Mac при закритій кришці.";
 "How pika-tools starts and looks." = "Як pika-tools запускається й виглядає.";
-"Fixes for keys and clicks. Each one works on its own." = "Покращення для клавіш і кліків. Кожне вмикається окремо.";
+"Fixes for the keyboard. Each one works on its own." = "Покращення для клавіатури. Кожне вмикається окремо.";
 "Only on Mac laptops" = "Лише на ноутбуках Mac";
 "Back" = "Назад";
 "Forward" = "Вперед";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "список змін, що нового, версія";
 "bug, issue, feedback, support" = "помилка, баг, проблема, відгук, підтримка";
 "open source, legal" = "відкритий код, ліцензія, вихідний код";
-"Windows & Apps" = "Вікна та програми";
-"Fixes for windows and the Dock. Each one works on its own." = "Покращення для вікон і Dock. Кожне вмикається окремо.";
+"Windows" = "Вікна";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Розмір";
+"Closing and Quitting" = "Закриття та вихід";
+"Fixes for windows and quitting apps. Each one works on its own." = "Покращення для вікон і виходу з програм. Кожне вмикається окремо.";
+"A fix for the Dock." = "Покращення для Dock.";
+"Fixes for Finder. Each one works on its own." = "Покращення для Finder. Кожне вмикається окремо.";
 "Protect ⌘Q and ⌘W" = "Захист ⌘Q і ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Щоб вийти чи закрити, додайте ⇧. Просто ⌘Q і ⌘W нічого не роблять — у всіх програмах.";
 "Add ⇧ to quit or close" = "Вийти чи закрити — з ⇧";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Кожен клік колеса прокручує на ту саму відстань, з будь-якою швидкістю. Лише для миші.";
 "Same distance at any speed" = "Та сама відстань за будь-якої швидкості";
 "Lines per wheel click" = "Рядків за клацання коліщатка";
-"Works while scrolling by lines is on" = "Працює, коли ввімкнено прокручування рядками";
+"Works while the switch above is on" = "Працює, коли перемикач вище ввімкнено";
 "Scroll by" = "Прокручувати по";
 "Lines suit most apps. Pixels suit games." = "Рядки підходять більшості програм, пікселі — іграм.";
 "Lines" = "Рядках";

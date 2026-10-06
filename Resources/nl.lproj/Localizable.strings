@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools wil je Mac wakker houden met het deksel dicht.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools wil je Mac weer laten sluimeren met het deksel dicht.";
 "How pika-tools starts and looks." = "Hoe pika-tools start en eruitziet.";
-"Fixes for keys and clicks. Each one works on its own." = "Verbeteringen voor toetsen en klikken. Elk werkt op zichzelf.";
+"Fixes for the keyboard. Each one works on its own." = "Verbeteringen voor het toetsenbord. Elk werkt op zichzelf.";
 "Only on Mac laptops" = "Alleen op Mac-laptops";
 "Back" = "Terug";
 "Forward" = "Vooruit";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "wijzigingslog, releasenotes, versie";
 "bug, issue, feedback, support" = "bug, probleem, feedback, ondersteuning";
 "open source, legal" = "open source, juridisch, licentie";
-"Windows & Apps" = "Vensters en apps";
-"Fixes for windows and the Dock. Each one works on its own." = "Verbeteringen voor vensters en het Dock. Elk werkt op zichzelf.";
+"Windows" = "Vensters";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Grootte";
+"Closing and Quitting" = "Sluiten en stoppen";
+"Fixes for windows and quitting apps. Each one works on its own." = "Verbeteringen voor vensters en het afsluiten van apps. Elk werkt op zichzelf.";
+"A fix for the Dock." = "Een verbetering voor het Dock.";
+"Fixes for Finder. Each one works on its own." = "Verbeteringen voor de Finder. Elk werkt op zichzelf.";
 "Protect ⌘Q and ⌘W" = "Bescherm ⌘Q en ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Voeg ⇧ toe om te stoppen of te sluiten. Alleen ⌘Q of ⌘W doet niets, in geen enkele app.";
 "Add ⇧ to quit or close" = "Voeg ⇧ toe om te stoppen of te sluiten";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Elke klik van het wiel scrolt even ver, hoe snel je ook draait. Alleen voor muizen.";
 "Same distance at any speed" = "Even ver, hoe snel je ook draait";
 "Lines per wheel click" = "Regels per klik van het wieltje";
-"Works while scrolling by lines is on" = "Werkt als scrollen per regel aan staat";
+"Works while the switch above is on" = "Werkt als de schakelaar hierboven aan staat";
 "Scroll by" = "Scrollen per";
 "Lines suit most apps. Pixels suit games." = "Regels passen bij de meeste apps. Pixels passen bij games.";
 "Lines" = "Regels";

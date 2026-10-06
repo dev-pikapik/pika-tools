@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools 想在合盖时让 Mac 保持唤醒。";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools 想恢复合盖时的睡眠。";
 "How pika-tools starts and looks." = "pika-tools 的启动和外观。";
-"Fixes for keys and clicks. Each one works on its own." = "针对按键和点击的改进，每项都可单独开启。";
+"Fixes for the keyboard. Each one works on its own." = "针对键盘的改进，每项都可单独开启。";
 "Only on Mac laptops" = "仅限 Mac 笔记本电脑";
 "Back" = "返回";
 "Forward" = "前进";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "更新日志, 发行说明, 版本";
 "bug, issue, feedback, support" = "错误, 问题, 反馈, 支持";
 "open source, legal" = "开源, 许可证, 源代码, 法律";
-"Windows & Apps" = "窗口与应用";
-"Fixes for windows and the Dock. Each one works on its own." = "针对窗口和程序坞的改进，每项都可单独开启。";
+"Windows" = "窗口";
+"Dock" = "程序坞";
+"Finder" = "访达";
+"Size" = "大小";
+"Closing and Quitting" = "关闭与退出";
+"Fixes for windows and quitting apps. Each one works on its own." = "针对窗口和退出应用的改进，每项都可单独开启。";
+"A fix for the Dock." = "针对程序坞的改进。";
+"Fixes for Finder. Each one works on its own." = "针对访达的改进，每项都可单独开启。";
 "Protect ⌘Q and ⌘W" = "保护 ⌘Q 和 ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "退出或关闭时需同时按 ⇧。单独按 ⌘Q 和 ⌘W 在所有应用中都不起作用。";
 "Add ⇧ to quit or close" = "退出或关闭需加 ⇧";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "无论转得多快，滚轮每转一格都滚动相同的距离。仅限鼠标。";
 "Same distance at any speed" = "无论多快，距离都相同";
 "Lines per wheel click" = "滚轮每格行数";
-"Works while scrolling by lines is on" = "开启按行滚动时有效";
+"Works while the switch above is on" = "上方的开关打开时有效";
 "Scroll by" = "滚动单位";
 "Lines suit most apps. Pixels suit games." = "按行适合大多数 App，按像素适合游戏。";
 "Lines" = "行";

@@ -20,7 +20,7 @@ struct MenuView: View {
     private func isShown(_ id: String) -> Bool { customizing || !hidden.contains(id) }
 
     private var visibleTabs: [SettingsTab] {
-        [.keyboard, .mouse, .windows].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
+        [.keyboard, .mouse, .windows, .dock, .finder].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
 
     private func binding(_ id: String) -> Binding<Bool> {
@@ -62,19 +62,7 @@ struct MenuView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     if !visibleTabs.isEmpty || isShown("keep-awake") {
                         VStack(spacing: 0) {
-                            ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
-                                if index > 0 { groupDivider }
-                                ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
-                                    if customizing {
-                                        customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
-                                    } else {
-                                        tool.settingsView
-                                    }
-                                }
-                            }
-
                             if isShown("keep-awake") {
-                                if !visibleTabs.isEmpty { groupDivider }
                                 if customizing {
                                     customizeRow(icon: "cup.and.saucer", title: String(localized: "Keep Awake"), id: "keep-awake")
                                 } else {
@@ -85,6 +73,17 @@ struct MenuView: View {
                                         hint: keepAwake.statusText,
                                         isOn: $keepAwake.isOn
                                     )
+                                }
+                            }
+
+                            ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
+                                if index > 0 || isShown("keep-awake") { groupDivider }
+                                ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
+                                    if customizing {
+                                        customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
+                                    } else {
+                                        tool.settingsView
+                                    }
                                 }
                             }
                         }

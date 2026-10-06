@@ -7,7 +7,7 @@ final class NewFileTool: Tool {
     let id = "new-file"
     let icon = "doc.badge.plus"
     var title: String { String(localized: "New File in Finder") }
-    let tab = SettingsTab.windows
+    let tab = SettingsTab.finder
 
     private(set) var isActive = false
     private(set) var needsSettings = false

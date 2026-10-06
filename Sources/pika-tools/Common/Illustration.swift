@@ -317,3 +317,60 @@ struct ArtRipple: View {
             .onAppear { withAnimation(.easeOut(duration: 0.55)) { spread = true } }
     }
 }
+
+struct ArtKey<Label: View>: View {
+    let down: Bool
+    var width: CGFloat = 34
+    @ViewBuilder var label: Label
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        shape
+            .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay {
+                label
+                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .foregroundStyle(down ? Color.white : Color.primary)
+            }
+            .frame(width: width, height: 26)
+            .shadow(color: .black.opacity(down ? 0.05 : 0.2), radius: down ? 0.5 : 2, y: down ? 0.5 : 2)
+            .scaleEffect(down ? 0.93 : 1)
+    }
+}
+
+struct ArtFile: View {
+    var selected = false
+    var renaming = false
+
+    var body: some View {
+        let page = RoundedRectangle(cornerRadius: 3, style: .continuous)
+        VStack(spacing: 4) {
+            page
+                .fill(Color(nsColor: .textBackgroundColor))
+                .overlay(page.strokeBorder(Color.primary.opacity(0.25), lineWidth: 0.5))
+                .overlay {
+                    VStack(spacing: 2.5) {
+                        ForEach(0..<3, id: \.self) { _ in Capsule().fill(Color.primary.opacity(0.2)).frame(width: 10, height: 1.5) }
+                    }
+                }
+                .frame(width: 18, height: 23)
+            ZStack {
+                if renaming {
+                    RoundedRectangle(cornerRadius: 2, style: .continuous)
+                        .fill(Color(nsColor: .textBackgroundColor))
+                        .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous).strokeBorder(Color.accentColor, lineWidth: 1.2))
+                        .overlay(alignment: .leading) {
+                            Rectangle().fill(Color.accentColor).frame(width: 1, height: 5).padding(.leading, 4)
+                        }
+                        .frame(width: 30, height: 9)
+                } else {
+                    Capsule().fill(selected ? Color.accentColor : Color.primary.opacity(0.2)).frame(width: 22, height: 4)
+                }
+            }
+            .frame(width: 30, height: 9)
+        }
+        .padding(4)
+        .background(Color.accentColor.opacity(selected ? 0.2 : 0), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+    }
+}

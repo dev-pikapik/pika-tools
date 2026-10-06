@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools ढक्कन बंद होने पर भी आपके Mac को जगाए रखना चाहता है।";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools ढक्कन बंद होने पर आपके Mac को फिर से स्लीप में जाने देना चाहता है।";
 "How pika-tools starts and looks." = "pika-tools कैसे शुरू होता है और कैसा दिखता है।";
-"Fixes for keys and clicks. Each one works on its own." = "कुंजियों और क्लिक के लिए सुधार। हर एक अलग से काम करता है।";
+"Fixes for the keyboard. Each one works on its own." = "कीबोर्ड के लिए सुधार। हर एक अलग से काम करता है।";
 "Only on Mac laptops" = "सिर्फ़ Mac लैपटॉप पर";
 "Back" = "पीछे";
 "Forward" = "आगे";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "बदलाव, रिलीज़ नोट्स, संस्करण, changelog";
 "bug, issue, feedback, support" = "बग, समस्या, फ़ीडबैक, सहायता";
 "open source, legal" = "ओपन सोर्स, कानूनी, लाइसेंस";
-"Windows & Apps" = "विंडो और ऐप्स";
-"Fixes for windows and the Dock. Each one works on its own." = "विंडो और Dock के लिए सुधार। हर एक अलग से काम करता है।";
+"Windows" = "विंडो";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "आकार";
+"Closing and Quitting" = "बंद करना और बाहर निकलना";
+"Fixes for windows and quitting apps. Each one works on its own." = "विंडो और ऐप बंद करने के लिए सुधार। हर एक अलग से काम करता है।";
+"A fix for the Dock." = "Dock के लिए एक सुधार।";
+"Fixes for Finder. Each one works on its own." = "Finder के लिए सुधार। हर एक अलग से काम करता है।";
 "Protect ⌘Q and ⌘W" = "⌘Q और ⌘W को सुरक्षित रखें";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "बंद करने के लिए ⇧ जोड़ें। सिर्फ़ ⌘Q और ⌘W से किसी भी ऐप में कुछ नहीं होता।";
 "Add ⇧ to quit or close" = "बंद करने के लिए ⇧ जोड़ें";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "व्हील का हर क्लिक उतनी ही दूरी तक स्क्रॉल करता है, चाहे किसी भी गति से घुमाएँ। सिर्फ़ माउस के लिए।";
 "Same distance at any speed" = "हर गति पर उतनी ही दूरी";
 "Lines per wheel click" = "हर व्हील क्लिक पर पंक्तियाँ";
-"Works while scrolling by lines is on" = "पंक्तियों के हिसाब से स्क्रोलिंग चालू होने पर काम करता है";
+"Works while the switch above is on" = "ऊपर का स्विच चालू होने पर काम करता है";
 "Scroll by" = "स्क्रॉल की इकाई";
 "Lines suit most apps. Pixels suit games." = "ज़्यादातर ऐप्स के लिए पंक्तियाँ सही हैं। गेम के लिए पिक्सेल सही हैं।";
 "Lines" = "पंक्तियाँ";

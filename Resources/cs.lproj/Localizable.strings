@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools chce nenechat Mac usnout se zavřeným víkem.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools chce Macu znovu povolit spánek se zavřeným víkem.";
 "How pika-tools starts and looks." = "Jak se pika-tools spouští a jak vypadá.";
-"Fixes for keys and clicks. Each one works on its own." = "Opravy pro klávesy a kliknutí. Každá funguje samostatně.";
+"Fixes for the keyboard. Each one works on its own." = "Opravy pro klávesnici. Každá funguje samostatně.";
 "Only on Mac laptops" = "Jen na noteboocích Mac";
 "Back" = "Zpět";
 "Forward" = "Vpřed";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "seznam změn, poznámky k vydání, verze";
 "bug, issue, feedback, support" = "chyba, problém, zpětná vazba, podpora";
 "open source, legal" = "open source, otevřený zdrojový kód, právní informace, licence";
-"Windows & Apps" = "Okna a aplikace";
-"Fixes for windows and the Dock. Each one works on its own." = "Opravy pro okna a Dock. Každá funguje samostatně.";
+"Windows" = "Okna";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Velikost";
+"Closing and Quitting" = "Zavírání a ukončení";
+"Fixes for windows and quitting apps. Each one works on its own." = "Opravy pro okna a ukončování aplikací. Každá funguje samostatně.";
+"A fix for the Dock." = "Oprava pro Dock.";
+"Fixes for Finder. Each one works on its own." = "Opravy pro Finder. Každá funguje samostatně.";
 "Protect ⌘Q and ⌘W" = "Chránit ⌘Q a ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Pro ukončení nebo zavření přidejte ⇧. Samotné ⌘Q a ⌘W nedělají nic, v žádné aplikaci.";
 "Add ⇧ to quit or close" = "Pro ukončení nebo zavření přidejte ⇧";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Každé cvaknutí kolečka posune o stejnou vzdálenost, ať točíte jakkoli rychle. Jen pro myši.";
 "Same distance at any speed" = "Stejně daleko při jakékoli rychlosti";
 "Lines per wheel click" = "Řádků na cvaknutí kolečka";
-"Works while scrolling by lines is on" = "Funguje, když je zapnuté posouvání po řádcích";
+"Works while the switch above is on" = "Funguje, když je zapnutý přepínač výše";
 "Scroll by" = "Posouvat po";
 "Lines suit most apps. Pixels suit games." = "Řádky se hodí pro většinu aplikací, pixely pro hry.";
 "Lines" = "Řádcích";

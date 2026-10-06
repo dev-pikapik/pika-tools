@@ -2,17 +2,19 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keyboard, mouse, windows, keepAwake, permissions, about
+    case general, keepAwake, keyboard, mouse, windows, dock, finder, permissions, about
 
     var id: Self { self }
 
     var title: String {
         switch self {
         case .general: String(localized: "General")
+        case .keepAwake: String(localized: "Keep Awake")
         case .keyboard: String(localized: "Keyboard")
         case .mouse: String(localized: "Mouse")
-        case .windows: String(localized: "Windows & Apps")
-        case .keepAwake: String(localized: "Keep Awake")
+        case .windows: String(localized: "Windows")
+        case .dock: String(localized: "Dock")
+        case .finder: String(localized: "Finder")
         case .permissions: String(localized: "Permissions")
         case .about: String(localized: "About")
         }
@@ -21,10 +23,12 @@ enum SettingsTab: String, CaseIterable, Identifiable {
     private var symbol: String {
         switch self {
         case .general: "gearshape.fill"
+        case .keepAwake: "cup.and.saucer.fill"
         case .keyboard: "keyboard.fill"
         case .mouse: "computermouse.fill"
         case .windows: "macwindow.on.rectangle"
-        case .keepAwake: "cup.and.saucer.fill"
+        case .dock: "dock.rectangle"
+        case .finder: "folder.fill"
         case .permissions: "hand.raised.fill"
         case .about: "info.circle.fill"
         }
@@ -32,9 +36,10 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 
     private var color: Color {
         switch self {
-        case .general, .about: .gray
+        case .general, .dock, .about: .gray
         case .keyboard, .mouse, .permissions: .blue
         case .windows: .indigo
+        case .finder: .cyan
         case .keepAwake: .orange
         }
     }
@@ -66,8 +71,13 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
             SettingsItem(tab: .general, title: String(localized: "Settings file"), synonyms: "backup, export, import, restore, JSON"),
             SettingsItem(tab: .general, title: String(localized: "Sync settings with iCloud"), synonyms: "iCloud Drive, another Mac, backup"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, days, hours, minutes, seconds"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
             SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
@@ -77,20 +87,15 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by"), synonyms: "pixels, lines, wheel, games, scrolling mode, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
-            SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
-            SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
-            SettingsItem(tab: .windows, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, Windows, option click"),
             SettingsItem(tab: .windows, title: String(localized: "Green button works as usual in these apps"), synonyms: "exceptions, exclude, list"),
-            SettingsItem(tab: .windows, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
-            SettingsItem(tab: .windows, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, Windows, keyboard"),
-            SettingsItem(tab: .windows, title: String(localized: "⌘X cuts files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, days, hours, minutes, seconds"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
+            SettingsItem(tab: .windows, title: String(localized: "Protect ⌘Q and ⌘W"), synonyms: "quit, close, command, accidental, shortcut"),
+            SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
+            SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
+            SettingsItem(tab: .dock, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
+            SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
+            SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, Windows, keyboard"),
+            SettingsItem(tab: .finder, title: String(localized: "⌘X cuts files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -210,7 +215,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: .constant(.all)) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keyboard, .mouse, .windows, .keepAwake]) }
+                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -282,10 +287,17 @@ private struct SettingsView: View {
     private func detail(_ tab: SettingsTab) -> some View {
         switch tab {
         case .general: GeneralSettings()
-        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for keys and clicks. Each one works on its own."))
-        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse. Each one works on its own."))
-        case .windows: ToolsSettings(tab: .windows, text: String(localized: "Fixes for windows and the Dock. Each one works on its own."))
         case .keepAwake: KeepAwakeSettings()
+        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard. Each one works on its own."))
+        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse. Each one works on its own."))
+        case .windows:
+            ToolsSettings(
+                tab: .windows,
+                text: String(localized: "Fixes for windows and quitting apps. Each one works on its own."),
+                headings: ["window-zoom": "Size", "command-keys": "Closing and Quitting"]
+            )
+        case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
+        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder. Each one works on its own."))
         case .permissions: PermissionsView()
         case .about: AboutView()
         }
@@ -636,13 +648,18 @@ private struct Diagonal: Shape {
 private struct ToolsSettings: View {
     let tab: SettingsTab
     let text: String
+    var headings: [String: LocalizedStringKey] = [:]
 
     var body: some View {
         Form {
             SettingsHeader(tab: tab, text: text)
             let tools = ToolRegistry.shared.tools.filter { $0.tab == tab }
             ForEach(tools, id: \.id) { tool in
-                Section { tool.settingsView }
+                if let heading = headings[tool.id] {
+                    Section(heading) { tool.settingsView }
+                } else {
+                    Section { tool.settingsView }
+                }
             }
             RestoreDefaultsSection(
                 message: String(localized: "These will turn off and go back to their default options: \(tools.map(\.title).formatted(.list(type: .and)))"),

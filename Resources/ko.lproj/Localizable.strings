@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools가 덮개를 닫아도 Mac이 잠자기에 들어가지 않도록 하려고 합니다.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools가 덮개를 닫을 때 다시 잠자기에 들어가도록 되돌리려고 합니다.";
 "How pika-tools starts and looks." = "pika-tools의 시작과 모양.";
-"Fixes for keys and clicks. Each one works on its own." = "키와 클릭을 위한 개선. 각각 따로 켤 수 있습니다.";
+"Fixes for the keyboard. Each one works on its own." = "키보드를 위한 개선. 각각 따로 켤 수 있습니다.";
 "Only on Mac laptops" = "Mac 노트북에서만";
 "Back" = "뒤로";
 "Forward" = "앞으로";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "변경 사항, 릴리스 노트, 버전";
 "bug, issue, feedback, support" = "버그, 문제, 피드백, 지원";
 "open source, legal" = "오픈 소스, 라이선스, 소스 코드, 법률";
-"Windows & Apps" = "윈도우 및 앱";
-"Fixes for windows and the Dock. Each one works on its own." = "윈도우와 Dock을 위한 개선. 각각 따로 켤 수 있습니다.";
+"Windows" = "윈도우";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "크기";
+"Closing and Quitting" = "닫기 및 종료";
+"Fixes for windows and quitting apps. Each one works on its own." = "윈도우와 앱 종료를 위한 개선. 각각 따로 켤 수 있습니다.";
+"A fix for the Dock." = "Dock을 위한 개선.";
+"Fixes for Finder. Each one works on its own." = "Finder를 위한 개선. 각각 따로 켤 수 있습니다.";
 "Protect ⌘Q and ⌘W" = "⌘Q 및 ⌘W 보호";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "종료하거나 닫으려면 ⇧도 누르십시오. ⌘Q와 ⌘W만 누르면 어떤 앱에서도 아무 일도 일어나지 않습니다.";
 "Add ⇧ to quit or close" = "종료 또는 닫기는 ⇧와 함께";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "휠을 한 칸 돌릴 때마다 속도와 관계없이 같은 거리만큼 스크롤됩니다. 마우스 전용입니다.";
 "Same distance at any speed" = "속도와 관계없이 같은 거리";
 "Lines per wheel click" = "휠 한 칸당 줄 수";
-"Works while scrolling by lines is on" = "줄 단위 스크롤이 켜져 있을 때 작동합니다";
+"Works while the switch above is on" = "위의 스위치가 켜져 있을 때 작동합니다";
 "Scroll by" = "스크롤 단위";
 "Lines suit most apps. Pixels suit games." = "줄은 대부분의 앱에 알맞습니다. 픽셀은 게임에 알맞습니다.";
 "Lines" = "줄";

@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "يريد pika-tools إبقاء جهاز Mac مستيقظًا والغطاء مغلق.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "يريد pika-tools السماح لجهاز Mac بالسكون مجددًا عند إغلاق الغطاء.";
 "How pika-tools starts and looks." = "كيف يبدأ pika-tools وكيف يبدو.";
-"Fixes for keys and clicks. Each one works on its own." = "إصلاحات للمفاتيح والنقرات. يعمل كل منها بمفرده.";
+"Fixes for the keyboard. Each one works on its own." = "إصلاحات للوحة المفاتيح. يعمل كل منها بمفرده.";
 "Only on Mac laptops" = "على أجهزة Mac المحمولة فقط";
 "Back" = "رجوع";
 "Forward" = "تقدم";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "سجل التغييرات، ملاحظات الإصدار، إصدار";
 "bug, issue, feedback, support" = "خطأ، مشكلة، ملاحظات، دعم";
 "open source, legal" = "مفتوح المصدر، قانوني، ترخيص";
-"Windows & Apps" = "النوافذ والتطبيقات";
-"Fixes for windows and the Dock. Each one works on its own." = "إصلاحات للنوافذ وDock. يعمل كل منها بمفرده.";
+"Windows" = "النوافذ";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "الحجم";
+"Closing and Quitting" = "الإغلاق والإنهاء";
+"Fixes for windows and quitting apps. Each one works on its own." = "إصلاحات للنوافذ وإنهاء التطبيقات. يعمل كل منها بمفرده.";
+"A fix for the Dock." = "إصلاح لـ Dock.";
+"Fixes for Finder. Each one works on its own." = "إصلاحات لـ Finder. يعمل كل منها بمفرده.";
 "Protect ⌘Q and ⌘W" = "حماية ⌘Q و⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "أضف ⇧ للإنهاء أو الإغلاق. لا يفعل ⌘Q و⌘W وحدهما شيئًا، في أي تطبيق.";
 "Add ⇧ to quit or close" = "أضف ⇧ للإنهاء أو الإغلاق";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "كل نقرة على العجلة تمرّر المسافة نفسها مهما كانت السرعة. للماوس فقط.";
 "Same distance at any speed" = "المسافة نفسها مهما كانت السرعة";
 "Lines per wheel click" = "عدد الأسطر لكل نقرة عجلة";
-"Works while scrolling by lines is on" = "يعمل عند تشغيل التمرير بالأسطر";
+"Works while the switch above is on" = "يعمل عند تشغيل المفتاح أعلاه";
 "Scroll by" = "التمرير حسب";
 "Lines suit most apps. Pixels suit games." = "الأسطر تناسب معظم التطبيقات. البكسلات تناسب الألعاب.";
 "Lines" = "الأسطر";

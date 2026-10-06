@@ -89,10 +89,12 @@ Manter ativo, os modos de tela e de tampa fechada podem virar um botão na Centr
 Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de novo pelo Finder, Launchpad ou Spotlight. Enquanto a janela estiver aberta, o app aparece no Dock e no ⌘Tab.
 
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
-- **Teclado**: atalhos com Control, ⌘Q e ⌘W, troca de idioma.
-- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, botões laterais.
-- **Janelas e apps**: encerrar ao fechar a última janela e ampliar com o botão verde (ambos com uma lista de exceções), e ocultar com um clique no Dock.
 - **Manter Ativo**: duração e opções de tela e de tampa.
+- **Teclado**: atalhos com Control, troca de idioma, repetição de teclas.
+- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, botões laterais.
+- **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
+- **Dock**: ocultar com um clique no Dock.
+- **Finder**: novo arquivo, abrir com Return e recortar com ⌘X.
 - **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 

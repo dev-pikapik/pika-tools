@@ -89,10 +89,12 @@ Rester éveillé, les modes écran et capot fermé peuvent devenir un bouton du 
 Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez simplement pika-tools depuis le Finder, Launchpad ou Spotlight. Tant que la fenêtre est ouverte, l’app apparaît dans le Dock et dans ⌘Tab.
 
 - **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue, mises à jour et sauvegarde : exporter et importer les réglages sous forme de fichier, ou les synchroniser avec iCloud Drive.
-- **Clavier** : raccourcis Contrôle, ⌘Q et ⌘W, changement de langue.
-- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, boutons latéraux.
-- **Fenêtres et apps** : quitter à la dernière fenêtre et agrandir avec le bouton vert (les deux avec une liste d’exceptions), et masquer d’un clic dans le Dock.
 - **Rester éveillé** : durée, options d’écran et de capot.
+- **Clavier** : raccourcis Contrôle, changement de langue, répétition des touches.
+- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, boutons latéraux.
+- **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
+- **Dock** : masquer d’un clic dans le Dock.
+- **Finder** : nouveau fichier, ouvrir avec Entrée et couper avec ⌘X.
 - **Autorisations** : l’état des deux autorisations, et d’iCloud Drive quand la synchronisation est activée, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 

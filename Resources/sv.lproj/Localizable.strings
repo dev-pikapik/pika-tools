@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools vill hålla din Mac vaken med locket stängt.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools vill låta din Mac gå i vila med locket stängt igen.";
 "How pika-tools starts and looks." = "Hur pika-tools startar och ser ut.";
-"Fixes for keys and clicks. Each one works on its own." = "Fixar för tangenter och klick. Var och en fungerar för sig.";
+"Fixes for the keyboard. Each one works on its own." = "Fixar för tangentbordet. Var och en fungerar för sig.";
 "Only on Mac laptops" = "Endast på bärbara Mac-datorer";
 "Back" = "Bakåt";
 "Forward" = "Framåt";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "ändringslogg, versionsinformation, version";
 "bug, issue, feedback, support" = "bugg, fel, problem, feedback, support";
 "open source, legal" = "öppen källkod, juridik, licens";
-"Windows & Apps" = "Fönster och appar";
-"Fixes for windows and the Dock. Each one works on its own." = "Fixar för fönster och Dock. Var och en fungerar för sig.";
+"Windows" = "Fönster";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Storlek";
+"Closing and Quitting" = "Stänga och avsluta";
+"Fixes for windows and quitting apps. Each one works on its own." = "Fixar för fönster och för att avsluta appar. Var och en fungerar för sig.";
+"A fix for the Dock." = "En fix för Dock.";
+"Fixes for Finder. Each one works on its own." = "Fixar för Finder. Var och en fungerar för sig.";
 "Protect ⌘Q and ⌘W" = "Skydda ⌘Q och ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Lägg till ⇧ för att avsluta eller stänga. Bara ⌘Q och ⌘W gör ingenting, i alla appar.";
 "Add ⇧ to quit or close" = "Lägg till ⇧ för att avsluta eller stänga";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar. Bara för möss.";
 "Same distance at any speed" = "Lika långt oavsett hastighet";
 "Lines per wheel click" = "Rader per klick med hjulet";
-"Works while scrolling by lines is on" = "Fungerar när rullning per rad är på";
+"Works while the switch above is on" = "Fungerar när reglaget ovan är på";
 "Scroll by" = "Rulla med";
 "Lines suit most apps. Pixels suit games." = "Rader passar de flesta appar. Pixlar passar spel.";
 "Lines" = "Rader";

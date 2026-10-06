@@ -89,10 +89,12 @@ Keep Awake, mode layar, dan mode layar tertutup bisa dipasang ke tombol di Pusat
 Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika-tools dari Finder, Launchpad, atau Spotlight. Selama jendelanya terbuka, app muncul di Dock dan di ⌘Tab.
 
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
-- **Papan Ketik**: pintasan Control, ⌘Q dan ⌘W, penggantian bahasa.
-- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, tombol samping.
-- **Jendela & App**: keluar saat jendela terakhir ditutup dan memperbesar jendela dengan tombol hijau (keduanya dengan daftar pengecualian), serta sembunyikan dengan klik di Dock.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
+- **Papan Ketik**: pintasan Control, penggantian bahasa, pengulangan tombol.
+- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, tombol samping.
+- **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
+- **Dock**: menyembunyikan dengan klik di Dock.
+- **Finder**: file baru, buka dengan Return, dan potong dengan ⌘X.
 - **Izin**: status kedua izin, dan status iCloud Drive saat sinkronisasi menyala, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
 - **Tentang**: versi, tautan ke catatan perubahan dan untuk melaporkan masalah.
 

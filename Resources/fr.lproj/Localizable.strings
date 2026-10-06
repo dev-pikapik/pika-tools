@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools souhaite garder votre Mac éveillé écran rabattu.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools souhaite rétablir la veille de votre Mac écran rabattu.";
 "How pika-tools starts and looks." = "Démarrage et apparence de pika-tools.";
-"Fixes for keys and clicks. Each one works on its own." = "Correctifs pour les touches et les clics. Chacun s’active séparément.";
+"Fixes for the keyboard. Each one works on its own." = "Correctifs pour le clavier. Chacun s’active séparément.";
 "Only on Mac laptops" = "Uniquement sur les Mac portables";
 "Back" = "Précédent";
 "Forward" = "Suivant";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "nouveautés, notes de version, version";
 "bug, issue, feedback, support" = "bug, problème, avis, assistance";
 "open source, legal" = "open source, licence, code source, mentions légales";
-"Windows & Apps" = "Fenêtres et apps";
-"Fixes for windows and the Dock. Each one works on its own." = "Correctifs pour les fenêtres et le Dock. Chacun s’active séparément.";
+"Windows" = "Fenêtres";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Taille";
+"Closing and Quitting" = "Fermer et quitter";
+"Fixes for windows and quitting apps. Each one works on its own." = "Correctifs pour les fenêtres et pour quitter les apps. Chacun s’active séparément.";
+"A fix for the Dock." = "Un correctif pour le Dock.";
+"Fixes for Finder. Each one works on its own." = "Correctifs pour le Finder. Chacun s’active séparément.";
 "Protect ⌘Q and ⌘W" = "Protéger ⌘Q et ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Ajoutez ⇧ pour quitter ou fermer. ⌘Q et ⌘W seuls ne font rien, dans toutes les apps.";
 "Add ⇧ to quit or close" = "Quitter ou fermer avec ⇧";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Chaque cran de la molette fait défiler la même distance, quelle que soit la vitesse. Souris uniquement.";
 "Same distance at any speed" = "Même distance, quelle que soit la vitesse";
 "Lines per wheel click" = "Lignes par cran de molette";
-"Works while scrolling by lines is on" = "Fonctionne lorsque le défilement par lignes est activé";
+"Works while the switch above is on" = "Fonctionne lorsque l’interrupteur ci-dessus est activé";
 "Scroll by" = "Défiler par";
 "Lines suit most apps. Pixels suit games." = "Les lignes conviennent à la plupart des apps. Les pixels, aux jeux.";
 "Lines" = "Lignes";

@@ -89,10 +89,12 @@ Keep Awake, modurile ecran și capac închis pot fi puse pe un buton în Centrul
 Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește din nou pika-tools din Finder, Launchpad sau Spotlight. Cât timp fereastra este deschisă, aplicația apare în Dock și în ⌘Tab.
 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
-- **Tastatură**: scurtături cu Control, ⌘Q și ⌘W, schimbarea limbii.
+- **Menține activ**: durată, opțiuni pentru ecran și capac.
+- **Tastatură**: scurtături cu Control, schimbarea limbii, repetarea tastelor.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, butoanele laterale.
-- **Ferestre și aplicații**: ieșire la ultima fereastră și mărire cu butonul verde (ambele cu o listă de excepții), și ascundere cu un clic în Dock.
-- **Rămâi treaz**: durată, opțiuni pentru ecran și capac.
+- **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
+- **Dock**: ascundere cu un clic în Dock.
+- **Finder**: fișier nou, deschidere cu Return și decupare cu ⌘X.
 - **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 

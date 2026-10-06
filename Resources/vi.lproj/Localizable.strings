@@ -75,7 +75,7 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools muốn giữ máy Mac thức khi gập nắp.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools muốn cho máy Mac ngủ lại khi gập nắp.";
 "How pika-tools starts and looks." = "Cách pika-tools khởi động và hiển thị.";
-"Fixes for keys and clicks. Each one works on its own." = "Các cải tiến cho phím và thao tác bấm. Mỗi mục hoạt động riêng.";
+"Fixes for the keyboard. Each one works on its own." = "Các cải tiến cho bàn phím. Mỗi mục hoạt động riêng.";
 "Only on Mac laptops" = "Chỉ trên máy Mac xách tay";
 "Back" = "Quay lại";
 "Forward" = "Tiếp";
@@ -96,8 +96,14 @@
 "changelog, release notes, version" = "nhật ký thay đổi, ghi chú phát hành, changelog, phiên bản";
 "bug, issue, feedback, support" = "lỗi, bug, sự cố, phản hồi, hỗ trợ";
 "open source, legal" = "mã nguồn mở, open source, giấy phép, pháp lý";
-"Windows & Apps" = "Cửa sổ & ứng dụng";
-"Fixes for windows and the Dock. Each one works on its own." = "Các cải tiến cho cửa sổ và Dock. Mỗi mục hoạt động riêng.";
+"Windows" = "Cửa sổ";
+"Dock" = "Dock";
+"Finder" = "Finder";
+"Size" = "Kích thước";
+"Closing and Quitting" = "Đóng và thoát";
+"Fixes for windows and quitting apps. Each one works on its own." = "Các cải tiến cho cửa sổ và việc thoát ứng dụng. Mỗi mục hoạt động riêng.";
+"A fix for the Dock." = "Một cải tiến cho Dock.";
+"Fixes for Finder. Each one works on its own." = "Các cải tiến cho Finder. Mỗi mục hoạt động riêng.";
 "Protect ⌘Q and ⌘W" = "Bảo vệ ⌘Q và ⌘W";
 "Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app." = "Thêm ⇧ để thoát hoặc đóng. Chỉ nhấn ⌘Q và ⌘W sẽ không có tác dụng trong mọi ứng dụng.";
 "Add ⇧ to quit or close" = "Thêm ⇧ để thoát hoặc đóng";
@@ -155,7 +161,7 @@
 "Each wheel click scrolls the same distance, at any speed. Mouse only." = "Mỗi lần lăn con lăn cuộn cùng một quãng, dù nhanh hay chậm. Chỉ dành cho chuột.";
 "Same distance at any speed" = "Cùng một quãng ở mọi tốc độ";
 "Lines per wheel click" = "Số dòng mỗi lần bấm bánh xe";
-"Works while scrolling by lines is on" = "Hoạt động khi bật cuộn theo dòng";
+"Works while the switch above is on" = "Hoạt động khi công tắc ở trên đang bật";
 "Scroll by" = "Cuộn theo";
 "Lines suit most apps. Pixels suit games." = "Dòng phù hợp với hầu hết app. Pixel phù hợp với game.";
 "Lines" = "Dòng";
