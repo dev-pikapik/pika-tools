@@ -64,6 +64,10 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Nowy plik w Finderze.** Kliknij prawym w oknie Findera lub na biurku, wybierz **Nowy plik**, wpisz nazwę i gotowe – pojawi się pusty plik, jak Nowy › Dokument tekstowy w Windows. Domyślnie .txt. Domyślnie wyłączone.
 
+**Enter otwiera pliki w Finderze.** Zaznacz pliki w oknie Findera lub na biurku i naciśnij Return albo Enter – pliki się otworzą, tak jak w Windows. F2 lub fn F2 zmienia nazwę zaznaczonego pliku. W polach tekstowych, na przykład podczas wpisywania nazwy, klawisze działają jak zwykle. Domyślnie wyłączone.
+
+**⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane, tak jak Wytnij i Wklej w Windows. ⌘C anuluje wycinanie. Domyślnie wyłączone.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach. Potrzebujesz z powrotem zwykłego Control+C? Wyłącz to narzędzie.
 
 Ikona na pasku menu od razu pokazuje stan: strzałka z kliknięciem, gdy narzędzia działają, przekreślona strzałka, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.

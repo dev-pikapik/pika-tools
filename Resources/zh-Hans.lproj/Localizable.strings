@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "请输入不含“/”或“:”的名称。";
 "Turn it on in System Settings" = "请在系统设置中打开";
 "Open Finder Extensions…" = "打开访达扩展…";
+"Enter opens files in Finder" = "在访达中用 Enter 打开文件";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "在访达中，按 Return 或 Enter 可打开所选文件，按 F2 或 fn F2 可重命名，和 Windows 一样。";
+"Return opens, F2 or fn F2 renames" = "Return 打开，F2 或 fn F2 重命名";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, 回车, 打开, 重命名, F2, Windows, 键盘";
+"⌘X cuts files in Finder" = "在访达中用 ⌘X 剪切文件";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "在访达中，⌘X 剪切所选文件，⌘V 把它们移动到粘贴所在的文件夹，和 Windows 一样。⌘C 可取消剪切。";
+"⌘X cuts, ⌘V moves" = "⌘X 剪切，⌘V 移动";
+"cut, paste, move, files, folders, command X, Windows" = "剪切, 粘贴, 移动, 文件, 文件夹, command X, Windows";
 "Check for Updates" = "检查更新";
 "Shortcuts" = "快捷指令";
 "Open Shortcuts" = "打开快捷指令";

@@ -64,6 +64,10 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Nuovo file nel Finder.** Clic destro in una finestra del Finder o sulla scrivania, scegli **Nuovo file**, scrivi un nome e compare un file vuoto, come Nuovo › Documento di testo su Windows. .txt di default. Disattivato di default.
 
+**Invio apre i file nel Finder.** Seleziona dei file in una finestra del Finder o sulla scrivania e premi Invio o Enter: si aprono, come in Windows. F2 o fn F2 rinomina il file selezionato. Nei campi di testo, per esempio mentre scrivi un nome, i tasti funzionano come sempre. Disattivato di default.
+
+**⌘X taglia i file nel Finder.** Seleziona dei file e premi ⌘X, apri la cartella di destinazione e premi ⌘V: i file vengono spostati lì invece di essere copiati, come Taglia e Incolla in Windows. ⌘C annulla il taglio. Disattivato di default.
+
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di nuovo il normale Control+C? Disattiva quello strumento.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: una freccia con un clic quando gli strumenti funzionano, una freccia barrata quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.

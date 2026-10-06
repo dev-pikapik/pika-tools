@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "พิมพ์ชื่อที่ไม่มี “/” หรือ “:”";
 "Turn it on in System Settings" = "เปิดใช้ในการตั้งค่าระบบ";
 "Open Finder Extensions…" = "เปิดส่วนขยาย Finder…";
+"Enter opens files in Finder" = "Enter เปิดไฟล์ใน Finder";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "ใน Finder ปุ่ม Return และ Enter จะเปิดไฟล์ที่เลือก ส่วน F2 หรือ fn F2 จะเปลี่ยนชื่อไฟล์ เหมือนใน Windows";
+"Return opens, F2 or fn F2 renames" = "Return เปิดไฟล์, F2 หรือ fn F2 เปลี่ยนชื่อ";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, เปิด, เปลี่ยนชื่อ, F2, Windows, แป้นพิมพ์";
+"⌘X cuts files in Finder" = "⌘X ตัดไฟล์ใน Finder";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "ใน Finder ⌘X จะตัดไฟล์ที่เลือก และ ⌘V จะย้ายไฟล์ไปยังโฟลเดอร์ที่วาง เหมือนใน Windows ส่วน ⌘C จะยกเลิกการตัด";
+"⌘X cuts, ⌘V moves" = "⌘X ตัด, ⌘V ย้าย";
+"cut, paste, move, files, folders, command X, Windows" = "ตัด, วาง, ย้าย, ไฟล์, โฟลเดอร์, command X, Windows";
 "Check for Updates" = "ตรวจหาอัปเดต";
 "Shortcuts" = "คำสั่งลัด";
 "Open Shortcuts" = "เปิดคำสั่งลัด";

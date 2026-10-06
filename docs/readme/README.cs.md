@@ -64,6 +64,10 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Nový soubor ve Finderu.** Klikněte pravým v okně Finderu nebo na ploše, vyberte **Nový soubor**, napište název a objeví se prázdný soubor, jako Nový › Textový dokument ve Windows. Standardně .txt. Ve výchozím stavu vypnuto.
 
+**Enter otevírá soubory ve Finderu.** Vyberte soubory v okně Finderu nebo na ploše a stiskněte Return nebo Enter, soubory se otevřou, stejně jako ve Windows. F2 nebo fn F2 přejmenuje vybraný soubor. V textových polích, například když píšete název, klávesy fungují jako obvykle. Ve výchozím stavu vypnuto.
+
+**⌘X vyjímá soubory ve Finderu.** Vyberte soubory a stiskněte ⌘X, otevřete cílovou složku a stiskněte ⌘V: soubory se tam přesunou místo zkopírování, jako Vyjmout a Vložit ve Windows. ⌘C vyjmutí zruší. Ve výchozím stavu vypnuto.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: šipka s kliknutím, když nástroje fungují, přeškrtnutá šipka, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.

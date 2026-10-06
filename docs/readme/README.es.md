@@ -64,6 +64,10 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Archivo nuevo en el Finder.** Haz clic derecho en una ventana del Finder o en el escritorio, elige **Archivo nuevo**, escribe un nombre y aparece un archivo vacío, como Nuevo › Documento de texto en Windows. .txt por omisión. Desactivado por omisión.
 
+**Intro abre los archivos en el Finder.** Selecciona archivos en una ventana del Finder o en el escritorio y pulsa Retorno o Intro: se abren, como en Windows. F2 o fn F2 renombra el archivo seleccionado. En los campos de texto, por ejemplo mientras escribes un nombre, las teclas funcionan como siempre. Desactivado por omisión.
+
+**⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse, como Cortar y Pegar en Windows. ⌘C cancela el corte. Desactivado por omisión.
+
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
 
 El icono de la barra de menús muestra el estado de un vistazo: una flecha con un clic cuando las herramientas funcionan, una flecha tachada cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.

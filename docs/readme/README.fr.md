@@ -64,6 +64,10 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Nouveau fichier dans le Finder.** Clic droit dans une fenêtre du Finder ou sur le bureau, choisissez **Nouveau fichier**, tapez un nom, et un fichier vide apparaît, comme Nouveau › Document texte sous Windows. En .txt par défaut. Désactivé par défaut.
 
+**Entrée ouvre les fichiers dans le Finder.** Sélectionnez des fichiers dans une fenêtre du Finder ou sur le bureau et appuyez sur Retour ou Entrée : ils s’ouvrent, comme sous Windows. F2 ou fn F2 renomme le fichier sélectionné. Dans les champs de texte, par exemple quand vous saisissez un nom, les touches fonctionnent comme d’habitude. Désactivé par défaut.
+
+**⌘X coupe les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌘X, ouvrez le dossier voulu et appuyez sur ⌘V : les fichiers y sont déplacés au lieu d’être copiés, comme Couper et Coller sous Windows. ⌘C annule la coupe. Désactivé par défaut.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoin de retrouver un Contrôle+C normal ? Désactivez cet outil.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : une flèche avec un clic quand les outils fonctionnent, une flèche barrée quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.

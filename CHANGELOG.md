@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format is based on 
 
 ### Added
 - Settings › Windows & Apps: “Green button enlarges the window”. Click the green button of a window, and it fills the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as usual. Full screen stays in the button’s menu and on ⌃⌘F. A list of apps keeps the green button working as before. Off by default.
+- Settings › Windows & Apps: “Enter opens files in Finder”. In a Finder window or on the Desktop, Return and Enter open the selected files, and F2 or fn F2 renames the selected file. In text fields, such as a name you are typing or the search field, the keys work as usual. Off by default.
+- Settings › Windows & Apps: “⌘X cuts files in Finder”. ⌘X cuts the selected files, and ⌘V in the folder you choose moves them there instead of copying, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
 
 ### Changed
 - About shows just the version number, without the build number in brackets.

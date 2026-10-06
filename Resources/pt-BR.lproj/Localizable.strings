@@ -206,6 +206,14 @@
 "Type a name without “/” or “:”." = "Digite um nome sem “/” ou “:”.";
 "Turn it on in System Settings" = "Ative nos Ajustes do Sistema";
 "Open Finder Extensions…" = "Abrir extensões do Finder…";
+"Enter opens files in Finder" = "Enter abre arquivos no Finder";
+"In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows." = "No Finder, Return e Enter abrem os arquivos selecionados, e F2 ou fn F2 renomeia, como no Windows.";
+"Return opens, F2 or fn F2 renames" = "Return abre, F2 ou fn F2 renomeia";
+"return, enter, open, rename, F2, Windows, keyboard" = "return, enter, abrir, renomear, F2, Windows, teclado";
+"⌘X cuts files in Finder" = "⌘X corta arquivos no Finder";
+"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut." = "No Finder, ⌘X corta os arquivos selecionados e ⌘V os move para a pasta em que você cola, como no Windows. ⌘C cancela o corte.";
+"⌘X cuts, ⌘V moves" = "⌘X corta, ⌘V move";
+"cut, paste, move, files, folders, command X, Windows" = "cortar, colar, mover, arquivos, pastas, command X, Windows";
 "Check for Updates" = "Buscar atualizações";
 "Shortcuts" = "Atalhos";
 "Open Shortcuts" = "Abrir Atalhos";
