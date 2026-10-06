@@ -12,8 +12,7 @@ struct ToggleRow: View {
     var body: some View {
         if inSettings {
             Toggle(isOn: $isOn) {
-                Text(title)
-                subtitle
+                RowLabel(Text(title), subtitle)
             }
             .settingAnchor(title)
         } else {

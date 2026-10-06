@@ -137,7 +137,7 @@ private struct PermissionRow: View {
         LabeledContent {
             HStack(spacing: 8) {
                 if !granted {
-                    Button("Open", action: open)
+                    Button("Open", systemImage: "arrow.up.forward.app", action: open)
                 }
                 Image(systemName: granted ? "checkmark.circle.fill" : "xmark.circle.fill")
                     .font(.title3)
@@ -148,12 +148,7 @@ private struct PermissionRow: View {
         } label: {
             HStack(spacing: 10) {
                 PermissionIcon(type: icon, symbol: symbol)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
+                RowLabel(Text(title), Text(subtitle))
             }
         }
         .settingAnchor(title)

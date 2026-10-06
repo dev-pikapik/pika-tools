@@ -161,11 +161,76 @@ final class PointerTool: Tool {
     }
 }
 
+struct PointerArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorScheme) private var scheme
+
+    private static let durations = [0.7, 1.4, 1.9]
+
+    var body: some View {
+        let step = reduceMotion ? 2 : tick % Self.durations.count
+        let hand = CGFloat([0, 16, 32][step])
+        let pointer = CGFloat([0, 24, on ? 48 : 96][step])
+        let animation: Animation = [Animation.smooth(duration: 0.5), .linear(duration: 1), .easeOut(duration: 0.22)][step]
+        IllustrationRow {
+            Stage {
+                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .fill(Color.primary.opacity(0.07))
+                    .frame(width: 112, height: 76)
+                    .position(x: 78, y: 64)
+                trail(from: 64, length: hand, y: 94, color: Color.accentColor)
+                mouse
+                    .offset(x: hand)
+                    .position(x: 64, y: 64)
+                ArtScreen(glow: 0.9, radius: 6) {}
+                    .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous).strokeBorder(Art.metal(scheme), lineWidth: 1.5))
+                    .frame(width: 130, height: 82)
+                    .position(x: 222, y: 64)
+                trail(from: 168, length: pointer, y: 57, color: .white)
+                Circle().fill(.white).frame(width: 5, height: 5)
+                    .opacity(step == 2 ? 1 : 0)
+                    .position(x: 192, y: 57)
+                ArtCursor()
+                    .cursor(at: CGPoint(x: 168 + pointer, y: 56))
+            }
+            .animation(reduceMotion ? nil : animation, value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+
+    private func trail(from x: CGFloat, length: CGFloat, y: CGFloat, color: Color) -> some View {
+        Capsule()
+            .fill(color.opacity(0.7))
+            .frame(width: max(length, 0.1), height: 2)
+            .position(x: x + length / 2, y: y)
+    }
+
+    private var mouse: some View {
+        UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12)
+            .fill(Art.metal(scheme))
+            .overlay(UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay(alignment: .top) {
+                VStack(spacing: 0) {
+                    Rectangle().fill(Color.primary.opacity(0.2)).frame(width: 0.5, height: 15)
+                    Spacer(minLength: 0)
+                }
+            }
+            .overlay(alignment: .top) {
+                Capsule().fill(Color.primary.opacity(0.35)).frame(width: 3, height: 8).padding(.top, 4)
+            }
+            .frame(width: 24, height: 38)
+            .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)
+    }
+}
+
 private struct PointerSettings: View {
     @Bindable var tool: PointerTool
     @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings { PointerArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
@@ -184,8 +249,7 @@ private struct PointerSettings: View {
                     digits: 1
                 )
             } label: {
-                Text("Tracking speed")
-                Text("Works while acceleration is off")
+                RowLabel(Text("Tracking speed"), Text("Works while acceleration is off"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Tracking speed"))

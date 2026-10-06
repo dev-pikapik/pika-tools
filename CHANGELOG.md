@@ -11,6 +11,10 @@ All notable changes to this project are documented here. The format is based on 
 
 ### Changed
 - About shows just the version number, without the build number in brackets.
+- Settings: in rows with a title and a description, the switch, button or slider now sits in the middle of the row, like in System Settings, instead of next to the first line. The icon on the About page is the same size and in the same place as the icons at the top of the other pages.
+- Settings: buttons have icons. Copy Link has a link, and for a second after you click it says “Copied” with a check mark. Open Shortcuts, Open Finder Extensions…, Import and Export, Restore Defaults…, Restart, Add App… and the buttons that open System Settings or check for updates have their own icons too. Shortcuts shows the icon of the Shortcuts app.
+- Settings show pictures: Keep Awake, Appearance, Key Repeat, Scroll by lines or pixels, Pointer acceleration, Quit after the last window closes and Hide on Dock click. A picture changes as you flip its switch. With Reduce Motion on in System Settings, the pictures stand still.
+- Settings › Keep Awake no longer shows “Until …” twice while the timer is running.
 
 ## [1.16.0] - Unreleased
 

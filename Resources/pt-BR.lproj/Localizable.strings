@@ -218,6 +218,7 @@
 "Shortcuts" = "Atalhos";
 "Open Shortcuts" = "Abrir Atalhos";
 "Copy Link" = "Copiar link";
+"Copied" = "Copiado";
 "Buttons in Control Center and widgets" = "Botões na Central de Controle e em widgets";
 "widget, Control Center, Shortcuts, menu bar, button" = "widget, Central de Controle, Atalhos, barra de menus, botão";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "No app Atalhos, crie um atalho com a ação Abrir URLs e cole um link. Depois adicione-o à Central de Controle, à barra de menus ou a um widget de Atalhos na mesa. Cada toque liga ou desliga.";

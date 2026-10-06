@@ -218,6 +218,7 @@
 "Shortcuts" = "Быстрые команды";
 "Open Shortcuts" = "Открыть «Быстрые команды»";
 "Copy Link" = "Скопировать ссылку";
+"Copied" = "Скопировано";
 "Buttons in Control Center and widgets" = "Кнопки в Пункте управления и виджетах";
 "widget, Control Center, Shortcuts, menu bar, button" = "виджет, Пункт управления, Быстрые команды, строка меню, кнопка";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "В «Быстрых командах» создайте команду с действием «Открыть URL-адреса» и вставьте ссылку. Потом добавьте её в Пункт управления, строку меню или виджет «Быстрых команд» на рабочем столе. Каждое нажатие включает или выключает.";

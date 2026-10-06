@@ -130,14 +130,9 @@ private struct CommandKeysSettings: View {
 
     var body: some View {
         if inSettings {
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Protect ⌘Q and ⌘W")
-                Text("Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .settingAnchor(String(localized: "Protect ⌘Q and ⌘W"))
+            RowLabel(Text("Protect ⌘Q and ⌘W"), Text("Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app."))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .settingAnchor(String(localized: "Protect ⌘Q and ⌘W"))
             row(key: "Q", title: String(localized: "Quit app"), isOn: $tool.protectsQuit)
             row(key: "W", title: String(localized: "Close window"), isOn: $tool.protectsClose)
         } else {
@@ -159,12 +154,7 @@ private struct CommandKeysSettings: View {
                     KeyCap(symbol: key)
                 }
                 .accessibilityHidden(true)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
-                    Text(isOn.wrappedValue ? "Only with ⇧⌘\(key)" : "With ⌘\(key), as usual")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
+                RowLabel(Text(title), Text(isOn.wrappedValue ? "Only with ⇧⌘\(key)" : "With ⌘\(key), as usual"))
             }
         }
     }

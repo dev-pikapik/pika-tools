@@ -171,10 +171,10 @@ private struct NewFileSettings: View {
         if tool.needsSettings {
             if inSettings {
                 LabeledContent("Turn it on in System Settings") {
-                    Button("Open Finder Extensions…") { tool.openExtensionSettings() }
+                    Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { tool.openExtensionSettings() }
                 }
             } else {
-                Button("Open Finder Extensions…") { tool.openExtensionSettings() }
+                Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { tool.openExtensionSettings() }
                     .padding([.horizontal, .bottom], 10)
             }
         }

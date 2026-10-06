@@ -218,6 +218,7 @@
 "Shortcuts" = "快捷指令";
 "Open Shortcuts" = "打开快捷指令";
 "Copy Link" = "拷贝链接";
+"Copied" = "已拷贝";
 "Buttons in Control Center and widgets" = "控制中心和小组件里的按钮";
 "widget, Control Center, Shortcuts, menu bar, button" = "小组件, 控制中心, 快捷指令, 菜单栏, 按钮";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "在“快捷指令”中创建一个使用“打开URL”操作的快捷指令，并粘贴链接。然后把它添加到控制中心、菜单栏，或桌面上的“快捷指令”小组件。每点一下就开启或关闭。";

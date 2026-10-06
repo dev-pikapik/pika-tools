@@ -266,10 +266,49 @@ private func quitOnCloseTapCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private struct QuitOnCloseSettings: View {
-    @Bindable var tool: QuitOnCloseTool
+struct QuitOnCloseArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.8, 0.3, 1.9]
 
     var body: some View {
+        let step = reduceMotion ? 3 : tick % Self.durations.count
+        let closed = step == 3
+        IllustrationRow {
+            Stage {
+                ArtWindow {
+                    VStack(alignment: .leading, spacing: 5) {
+                        ForEach([54, 38, 46], id: \.self) { Capsule().fill(Color.primary.opacity(0.12)).frame(width: CGFloat($0), height: 4) }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(10)
+                }
+                .scaleEffect(closed ? 0.9 : 1)
+                .opacity(closed ? (reduceMotion ? 0.4 : 0) : 1)
+                .position(x: 150, y: 44)
+                ArtDock(appDot: !(on && closed))
+                    .position(x: 150, y: 102)
+                if step == 2 {
+                    ArtRipple()
+                        .position(x: 106, y: 19)
+                }
+                ArtCursor()
+                    .cursor(at: step == 0 ? CGPoint(x: 196, y: 56) : CGPoint(x: 104, y: 17))
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
+private struct QuitOnCloseSettings: View {
+    @Bindable var tool: QuitOnCloseTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { QuitOnCloseArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,

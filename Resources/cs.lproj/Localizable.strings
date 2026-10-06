@@ -218,6 +218,7 @@
 "Shortcuts" = "Zkratky";
 "Open Shortcuts" = "Otevřít Zkratky";
 "Copy Link" = "Kopírovat odkaz";
+"Copied" = "Zkopírováno";
 "Buttons in Control Center and widgets" = "Tlačítka v Ovládacím centru a widgetech";
 "widget, Control Center, Shortcuts, menu bar, button" = "widget, Ovládací centrum, Zkratky, panel nabídek, tlačítko";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "V aplikaci Zkratky vytvoř zkratku s akcí Otevřít adresy URL a vlož odkaz. Pak ji přidej do Ovládacího centra, do panelu nabídek nebo jako widget Zkratek na plochu. Každé klepnutí ji zapne nebo vypne.";

@@ -218,6 +218,7 @@
 "Shortcuts" = "Shortcuts";
 "Open Shortcuts" = "Open Shortcuts";
 "Copy Link" = "Copy Link";
+"Copied" = "Copied";
 "Buttons in Control Center and widgets" = "Buttons in Control Center and widgets";
 "widget, Control Center, Shortcuts, menu bar, button" = "widget, Control Center, Shortcuts, menu bar, button";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off.";

@@ -218,6 +218,7 @@
 "Shortcuts" = "शॉर्टकट";
 "Open Shortcuts" = "शॉर्टकट खोलें";
 "Copy Link" = "लिंक कॉपी करें";
+"Copied" = "कॉपी हो गया";
 "Buttons in Control Center and widgets" = "कंट्रोल सेंटर और विजेट में बटन";
 "widget, Control Center, Shortcuts, menu bar, button" = "विजेट, कंट्रोल सेंटर, शॉर्टकट, मेन्यू बार, बटन";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "शॉर्टकट में “URL खोलें” ऐक्शन वाला एक शॉर्टकट बनाएँ और उसमें लिंक पेस्ट करें। फिर उसे कंट्रोल सेंटर, मेन्यू बार या डेस्कटॉप पर शॉर्टकट विजेट में जोड़ें। हर टैप इसे चालू या बंद कर देता है।";

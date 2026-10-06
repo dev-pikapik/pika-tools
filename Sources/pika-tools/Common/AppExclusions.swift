@@ -12,12 +12,9 @@ struct AppExclusions: View {
     var body: some View {
         if inSettings {
             LabeledContent {
-                Button("Add App…", action: add)
+                Button("Add App…", systemImage: "plus", action: add)
             } label: {
-                Text(title)
-                if apps.isEmpty {
-                    Text("No apps yet")
-                }
+                RowLabel(Text(title), apps.isEmpty ? Text("No apps yet") : nil)
             }
             .disabled(!isEnabled)
             .settingAnchor(title)

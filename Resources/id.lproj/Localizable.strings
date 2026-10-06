@@ -218,6 +218,7 @@
 "Shortcuts" = "Pintasan";
 "Open Shortcuts" = "Buka Pintasan";
 "Copy Link" = "Salin Tautan";
+"Copied" = "Tersalin";
 "Buttons in Control Center and widgets" = "Tombol di Pusat Kontrol dan widget";
 "widget, Control Center, Shortcuts, menu bar, button" = "widget, Pusat Kontrol, Pintasan, bilah menu, tombol";
 "In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off." = "Di Pintasan, buat pintasan dengan tindakan Buka URL lalu tempel tautan. Setelah itu tambahkan ke Pusat Kontrol, bilah menu, atau widget Pintasan di desktop. Setiap ketukan menyalakan atau mematikannya.";
