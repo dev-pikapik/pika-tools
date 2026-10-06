@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "「保持喚醒」將關閉，時間長度和選項也會回復原狀。";
 "pika-tools will check for updates automatically again." = "pika-tools 將再次自動檢查更新。";
 "Scroll by lines" = "按行捲動";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "不論滾輪轉得多快，每一格都捲動相同的行數。僅適用於滑鼠，不影響觸控式軌跡板。";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "無論滾輪轉得多快，每轉一格都捲動相同的距離。大多數 App 適合按行。按像素適用於以精確像素計算捲動的 App 和遊戲。僅適用於滑鼠，不影響觸控式軌跡板。";
 "Lines per wheel click" = "滾輪每格行數";
 "Works while scrolling by lines is on" = "開啟按行捲動時有效";
+"Scroll by" = "捲動單位";
+"Lines" = "行";
+"Pixels" = "像素";
+"Pixels per wheel click" = "滾輪每格像素數";
 "wheel, Windows, scrolling speed, acceleration" = "滾輪, Windows, 捲動速度, 加速";
 "scrolling speed, wheel, notch" = "捲動速度, 滾輪, 格";
 "Settings file" = "設定檔";

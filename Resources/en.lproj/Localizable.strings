@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "Keep Awake will turn off, and the duration and options will go back to how they were.";
 "pika-tools will check for updates automatically again." = "pika-tools will check for updates automatically again.";
 "Scroll by lines" = "Scroll by lines";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad.";
 "Lines per wheel click" = "Lines per wheel click";
 "Works while scrolling by lines is on" = "Works while scrolling by lines is on";
+"Scroll by" = "Scroll by";
+"Lines" = "Lines";
+"Pixels" = "Pixels";
+"Pixels per wheel click" = "Pixels per wheel click";
 "wheel, Windows, scrolling speed, acceleration" = "wheel, Windows, scrolling speed, acceleration";
 "scrolling speed, wheel, notch" = "scrolling speed, wheel, notch";
 "Settings file" = "Settings file";

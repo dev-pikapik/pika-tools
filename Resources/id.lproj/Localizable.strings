@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Tetap Terjaga” akan mati, serta durasi dan pilihannya kembali seperti semula.";
 "pika-tools will check for updates automatically again." = "pika-tools akan kembali memeriksa pembaruan secara otomatis.";
 "Scroll by lines" = "Gulir per baris";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Setiap klik roda menggulir jumlah baris yang sama, secepat apa pun Anda memutarnya. Hanya untuk mouse, bukan trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Setiap klik roda menggulir dengan jarak yang sama, secepat apa pun Anda memutarnya. Baris cocok untuk sebagian besar app. Piksel untuk app dan game yang menghitung guliran dalam piksel yang tepat. Hanya untuk mouse, bukan trackpad.";
 "Lines per wheel click" = "Baris per klik roda";
 "Works while scrolling by lines is on" = "Berfungsi saat pengguliran per baris aktif";
+"Scroll by" = "Gulir per";
+"Lines" = "Baris";
+"Pixels" = "Piksel";
+"Pixels per wheel click" = "Piksel per klik roda";
 "wheel, Windows, scrolling speed, acceleration" = "roda, Windows, kecepatan menggulir, akselerasi";
 "scrolling speed, wheel, notch" = "kecepatan menggulir, roda, klik";
 "Settings file" = "File pengaturan";

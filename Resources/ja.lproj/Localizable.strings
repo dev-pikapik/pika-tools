@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "「スリープさせない」がオフになり、時間とオプションも元に戻ります。";
 "pika-tools will check for updates automatically again." = "pika-tools が再びアップデートを自動的に確認します。";
 "Scroll by lines" = "行単位でスクロール";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "どれだけ速くホイールを回しても、1クリックごとに同じ行数だけスクロールします。マウスのみ。トラックパッドには影響しません。";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "ホイールを1クリック回すたびに、回す速さに関係なく同じ距離だけスクロールします。ほとんどのアプリには「行」が合います。「ピクセル」はスクロール量を正確なピクセル数で数えるアプリやゲーム向けです。マウス専用で、トラックパッドには効きません。";
 "Lines per wheel click" = "ホイール1クリックあたりの行数";
 "Works while scrolling by lines is on" = "行単位スクロールがオンのときに有効です";
+"Scroll by" = "スクロール単位";
+"Lines" = "行";
+"Pixels" = "ピクセル";
+"Pixels per wheel click" = "ホイール1クリックあたりのピクセル数";
 "wheel, Windows, scrolling speed, acceleration" = "ホイール, Windows, スクロールの速さ, 加速";
 "scrolling speed, wheel, notch" = "スクロールの速さ, ホイール, クリック";
 "Settings file" = "設定ファイル";

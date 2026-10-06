@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "„Bez usypiania” wyłączy się, a czas i opcje wrócą do poprzednich.";
 "pika-tools will check for updates automatically again." = "pika-tools znów będzie automatycznie sprawdzać uaktualnienia.";
 "Scroll by lines" = "Przewijaj o wiersze";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Każde kliknięcie kółka przewija tę samą liczbę wierszy, niezależnie od tego, jak szybko kręcisz. Tylko dla myszy, nie dla gładzika.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Każde kliknięcie kółka przewija o tę samą odległość, niezależnie od tego, jak szybko je kręcisz. Wiersze pasują do większości aplikacji. Piksele są dla aplikacji i gier, które liczą przewijanie w dokładnych pikselach. Tylko dla myszy, nie dla gładzika.";
 "Lines per wheel click" = "Wiersze na kliknięcie kółka";
 "Works while scrolling by lines is on" = "Działa, gdy przewijanie o wiersze jest włączone";
+"Scroll by" = "Przewijaj o";
+"Lines" = "Wiersze";
+"Pixels" = "Piksele";
+"Pixels per wheel click" = "Piksele na kliknięcie kółka";
 "wheel, Windows, scrolling speed, acceleration" = "kółko, Windows, szybkość przewijania, przyspieszenie";
 "scrolling speed, wheel, notch" = "szybkość przewijania, kółko, kliknięcie";
 "Settings file" = "Plik ustawień";

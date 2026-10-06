@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "„Bez spánku“ se vypne a doba trvání i volby se vrátí do původního stavu.";
 "pika-tools will check for updates automatically again." = "pika-tools bude opět automaticky vyhledávat aktualizace.";
 "Scroll by lines" = "Posouvat po řádcích";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Každé cvaknutí kolečka posune stejný počet řádků, ať točíte jakkoli rychle. Jen pro myši, ne pro trackpad.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Každé cvaknutí kolečka posune o stejnou vzdálenost, ať točíte jakkoli rychle. Řádky se hodí pro většinu aplikací. Pixely jsou pro aplikace a hry, které počítají posouvání v přesných pixelech. Jen pro myši, ne pro trackpad.";
 "Lines per wheel click" = "Řádků na cvaknutí kolečka";
 "Works while scrolling by lines is on" = "Funguje, když je zapnuté posouvání po řádcích";
+"Scroll by" = "Posouvat po";
+"Lines" = "Řádcích";
+"Pixels" = "Pixelech";
+"Pixels per wheel click" = "Pixelů na cvaknutí kolečka";
 "wheel, Windows, scrolling speed, acceleration" = "kolečko, Windows, rychlost posouvání, zrychlení";
 "scrolling speed, wheel, notch" = "rychlost posouvání, kolečko, cvaknutí";
 "Settings file" = "Soubor nastavení";

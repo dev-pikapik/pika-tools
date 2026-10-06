@@ -52,6 +52,8 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 **Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires, como en Windows. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión.
 
+Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos, cambia este mismo ajuste a píxeles y elige de 1 a 200 píxeles por clic, 40 por omisión.
+
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en Safari, el Finder y otras apps de Apple, en Firefox, Opera y ForkLift, igual que deslizar el dedo en el trackpad. Otras apps, como los IDE de JetBrains, reciben los botones tal cual y los gestionan a su manera. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra, como en Windows. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.

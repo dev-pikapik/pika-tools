@@ -10,7 +10,7 @@ struct SettingsFile {
     static let keys: Set<String> = [
         "appearance", "AppleLanguages", "open-at-login", "check-updates",
         "ctrl-keys", "command-keys-quit", "command-keys-close", "input-switch", "key-repeat",
-        "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count",
+        "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "new-file",
         "keep-awake-mode", "keep-awake-duration-value", "keep-awake-duration-unit",

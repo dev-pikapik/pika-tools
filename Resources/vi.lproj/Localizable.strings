@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“Giữ máy thức” sẽ tắt, thời lượng và tùy chọn sẽ trở lại như cũ.";
 "pika-tools will check for updates automatically again." = "pika-tools sẽ lại tự động kiểm tra bản cập nhật.";
 "Scroll by lines" = "Cuộn theo dòng";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Mỗi lần bấm bánh xe đều cuộn cùng một số dòng, dù bạn quay nhanh đến đâu. Chỉ cho chuột, không cho bàn di chuột.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Mỗi lần bấm bánh xe cuộn cùng một khoảng, dù bạn xoay nhanh đến đâu. Dòng hợp với hầu hết ứng dụng. Pixel dành cho ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chính xác. Chỉ dành cho chuột, không cho bàn di chuột.";
 "Lines per wheel click" = "Số dòng mỗi lần bấm bánh xe";
 "Works while scrolling by lines is on" = "Hoạt động khi bật cuộn theo dòng";
+"Scroll by" = "Cuộn theo";
+"Lines" = "Dòng";
+"Pixels" = "Pixel";
+"Pixels per wheel click" = "Số pixel mỗi lần bấm bánh xe";
 "wheel, Windows, scrolling speed, acceleration" = "bánh xe, Windows, tốc độ cuộn, gia tốc";
 "scrolling speed, wheel, notch" = "tốc độ cuộn, bánh xe, nấc";
 "Settings file" = "Tệp cài đặt";

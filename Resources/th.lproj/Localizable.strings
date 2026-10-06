@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“ไม่ให้หลับ” จะปิด และระยะเวลากับตัวเลือกจะกลับเป็นเหมือนเดิม";
 "pika-tools will check for updates automatically again." = "pika-tools จะกลับมาตรวจสอบอัปเดตโดยอัตโนมัติ";
 "Scroll by lines" = "เลื่อนทีละบรรทัด";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "การคลิกล้อแต่ละครั้งจะเลื่อนเท่ากันทุกครั้ง ไม่ว่าจะหมุนเร็วแค่ไหน ใช้กับเมาส์เท่านั้น ไม่ใช่แทร็คแพด";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "ทุกการคลิกล้อจะเลื่อนในระยะเท่าเดิม ไม่ว่าจะหมุนเร็วแค่ไหน บรรทัดเหมาะกับแอปส่วนใหญ่ พิกเซลเหมาะกับแอปและเกมที่นับการเลื่อนเป็นพิกเซลที่แน่นอน ใช้กับเมาส์เท่านั้น ไม่ใช่แทร็คแพด";
 "Lines per wheel click" = "จำนวนบรรทัดต่อการคลิกล้อ";
 "Works while scrolling by lines is on" = "ใช้งานได้เมื่อเปิดการเลื่อนทีละบรรทัด";
+"Scroll by" = "เลื่อนทีละ";
+"Lines" = "บรรทัด";
+"Pixels" = "พิกเซล";
+"Pixels per wheel click" = "จำนวนพิกเซลต่อการคลิกล้อ";
 "wheel, Windows, scrolling speed, acceleration" = "ล้อ, Windows, ความเร็วการเลื่อน, การเร่ง";
 "scrolling speed, wheel, notch" = "ความเร็วการเลื่อน, ล้อ, คลิก";
 "Settings file" = "ไฟล์การตั้งค่า";

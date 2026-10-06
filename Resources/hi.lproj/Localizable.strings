@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "“जगाए रखें” बंद हो जाएगा, और अवधि व विकल्प पहले जैसे हो जाएँगे।";
 "pika-tools will check for updates automatically again." = "pika-tools फिर से अपने आप अपडेट की जाँच करेगा।";
 "Scroll by lines" = "पंक्तियों के हिसाब से स्क्रोल करें";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "व्हील कितना भी तेज़ घुमाएँ, हर क्लिक पर उतनी ही पंक्तियाँ स्क्रोल होती हैं। सिर्फ़ माउस के लिए, ट्रैकपैड के लिए नहीं।";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "व्हील का हर क्लिक उतनी ही दूरी स्क्रॉल करता है, चाहे आप उसे कितनी भी तेज़ी से घुमाएँ। पंक्तियाँ ज़्यादातर ऐप्स के लिए ठीक हैं। पिक्सेल उन ऐप्स और गेम्स के लिए हैं जो स्क्रॉल को सटीक पिक्सेल में गिनते हैं। सिर्फ़ माउस के लिए, ट्रैकपैड के लिए नहीं।";
 "Lines per wheel click" = "हर व्हील क्लिक पर पंक्तियाँ";
 "Works while scrolling by lines is on" = "पंक्तियों के हिसाब से स्क्रोलिंग चालू होने पर काम करता है";
+"Scroll by" = "स्क्रॉल की इकाई";
+"Lines" = "पंक्तियाँ";
+"Pixels" = "पिक्सेल";
+"Pixels per wheel click" = "हर व्हील क्लिक पर पिक्सेल";
 "wheel, Windows, scrolling speed, acceleration" = "व्हील, Windows, स्क्रोल करने की गति, त्वरण";
 "scrolling speed, wheel, notch" = "स्क्रोल करने की गति, व्हील, क्लिक";
 "Settings file" = "सेटिंग्ज़ फ़ाइल";

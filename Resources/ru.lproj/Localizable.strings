@@ -139,9 +139,13 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "«Не засыпать» выключится, а длительность и параметры вернутся к исходным.";
 "pika-tools will check for updates automatically again." = "pika-tools снова будет сам проверять обновления.";
 "Scroll by lines" = "Прокрутка по строкам";
-"Every click of the wheel scrolls the same number of lines, however fast you spin it. Only for mice, not the trackpad." = "Каждый щелчок колесика прокручивает одно и то же число строк, как бы быстро вы его ни крутили. Только для мышей, не для трекпада.";
+"Every click of the wheel scrolls the same distance, however fast you spin it. Lines suit most apps. Pixels are for apps and games that count scrolling in exact pixels. Only for mice, not the trackpad." = "Каждый щелчок колесика прокручивает одно и то же расстояние, как бы быстро вы его ни крутили. Строки подходят большинству приложений. Пиксели — для приложений и игр, которые считают прокрутку в точных пикселях. Только для мышей, не для трекпада.";
 "Lines per wheel click" = "Строк за щелчок колесика";
 "Works while scrolling by lines is on" = "Работает, когда включена прокрутка по строкам";
+"Scroll by" = "Прокручивать по";
+"Lines" = "Строкам";
+"Pixels" = "Пикселям";
+"Pixels per wheel click" = "Пикселей за щелчок колесика";
 "wheel, Windows, scrolling speed, acceleration" = "колесико, Windows, скорость прокрутки, ускорение";
 "scrolling speed, wheel, notch" = "скорость прокрутки, колесико, щелчок";
 "Settings file" = "Файл настроек";
