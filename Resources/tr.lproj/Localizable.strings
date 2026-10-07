@@ -60,7 +60,14 @@
 "Minutes" = "Dakika";
 "Seconds" = "Saniye";
 "Keep the display on" = "Ekranı açık tut";
-"Otherwise the screen dims and turns off as usual" = "Aksi takdirde ekran her zamanki gibi kararır ve kapanır";
+"Display" = "Ekran";
+"Always on" = "Her zaman açık";
+"Turns off as usual" = "Her zamanki gibi kapanır";
+"No dimming, screen saver or lock screen" = "Kararma, ekran koruyucu ya da kilit ekranı yok";
+"Turns off on its own timer, your Mac keeps working" = "Kendi zamanlayıcısıyla kapanır, Mac’iniz çalışmaya devam eder";
+"Turn off the display now" = "Ekranı şimdi kapat";
+"Turn Off" = "Kapat";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac’iniz çalışmaya devam eder. Ekranı geri getirmek için fareyi oynatın ya da bir tuşa basın.";
 "Work with the lid closed" = "Kapak kapalıyken çalış";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Kapağı kapattığınızda Mac uyku moduna geçmez. Hava alabildiğinden emin olun.";
 "Stop when battery is below %@" = "Pil %@ değerinin altına düşünce durdur";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools, kapak kapalıyken Mac’inizi uyanık tutmak istiyor.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools, kapak kapalıyken Mac’inizin yeniden uyumasına izin vermek istiyor.";
 "How pika-tools starts and looks." = "pika-tools’un nasıl başlayacağı ve nasıl görüneceği.";
-"Only on Mac laptops" = "Yalnızca Mac dizüstü bilgisayarlarda";
 "Back" = "Geri";
 "Forward" = "İleri";
 "No Results" = "Sonuç Yok";

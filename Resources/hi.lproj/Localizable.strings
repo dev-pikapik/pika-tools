@@ -60,7 +60,14 @@
 "Minutes" = "मिनट";
 "Seconds" = "सेकंड";
 "Keep the display on" = "डिस्प्ले चालू रखें";
-"Otherwise the screen dims and turns off as usual" = "वरना स्क्रीन हमेशा की तरह धुंधली होकर बंद हो जाती है";
+"Display" = "डिस्प्ले";
+"Always on" = "हमेशा चालू";
+"Turns off as usual" = "हमेशा की तरह बंद होता है";
+"No dimming, screen saver or lock screen" = "न धुंधलापन, न स्क्रीन सेवर, न लॉक स्क्रीन";
+"Turns off on its own timer, your Mac keeps working" = "अपने टाइमर से बंद होता है, आपका Mac काम करता रहता है";
+"Turn off the display now" = "अभी डिस्प्ले बंद करें";
+"Turn Off" = "बंद करें";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "आपका Mac काम करता रहेगा। डिस्प्ले वापस लाने के लिए माउस हिलाएँ या कोई कुंजी दबाएँ।";
 "Work with the lid closed" = "ढक्कन बंद करके काम करें";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "ढक्कन बंद करने पर Mac स्लीप में नहीं जाएगा। हवा आने-जाने की जगह रखें।";
 "Stop when battery is below %@" = "बैटरी %@ से कम होने पर रोकें";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools ढक्कन बंद होने पर भी आपके Mac को जगाए रखना चाहता है।";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools ढक्कन बंद होने पर आपके Mac को फिर से स्लीप में जाने देना चाहता है।";
 "How pika-tools starts and looks." = "pika-tools कैसे शुरू होता है और कैसा दिखता है।";
-"Only on Mac laptops" = "सिर्फ़ Mac लैपटॉप पर";
 "Back" = "पीछे";
 "Forward" = "आगे";
 "No Results" = "कोई परिणाम नहीं";

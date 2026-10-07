@@ -60,7 +60,14 @@
 "Minutes" = "Minuty";
 "Seconds" = "Sekundy";
 "Keep the display on" = "Nechat displej zapnutý";
-"Otherwise the screen dims and turns off as usual" = "Jinak se obrazovka jako obvykle ztlumí a vypne";
+"Display" = "Displej";
+"Always on" = "Stále zapnutý";
+"Turns off as usual" = "Vypne se jako obvykle";
+"No dimming, screen saver or lock screen" = "Bez ztlumení, spořiče obrazovky a zamčené obrazovky";
+"Turns off on its own timer, your Mac keeps working" = "Vypne se podle svého časovače, Mac dál pracuje";
+"Turn off the display now" = "Vypnout displej hned";
+"Turn Off" = "Vypnout";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac dál pracuje. Displej vrátíte pohybem myši nebo stiskem klávesy.";
 "Work with the lid closed" = "Pracovat se zavřeným víkem";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Mac po zavření víka nepřejde do režimu spánku. Zajistěte mu dostatečné větrání.";
 "Stop when battery is below %@" = "Zastavit, když baterie klesne pod %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools chce nenechat Mac usnout se zavřeným víkem.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools chce Macu znovu povolit spánek se zavřeným víkem.";
 "How pika-tools starts and looks." = "Jak se pika-tools spouští a jak vypadá.";
-"Only on Mac laptops" = "Jen na noteboocích Mac";
 "Back" = "Zpět";
 "Forward" = "Vpřed";
 "No Results" = "Žádné výsledky";

@@ -60,7 +60,14 @@
 "Minutes" = "Minuten";
 "Seconds" = "Sekunden";
 "Keep the display on" = "Display eingeschaltet lassen";
-"Otherwise the screen dims and turns off as usual" = "Sonst wird der Bildschirm wie gewohnt dunkler und schaltet sich aus";
+"Display" = "Display";
+"Always on" = "Immer an";
+"Turns off as usual" = "Geht wie gewohnt aus";
+"No dimming, screen saver or lock screen" = "Kein Abdunkeln, kein Bildschirmschoner, kein Sperrbildschirm";
+"Turns off on its own timer, your Mac keeps working" = "Geht nach eigenem Timer aus, dein Mac arbeitet weiter";
+"Turn off the display now" = "Display jetzt ausschalten";
+"Turn Off" = "Ausschalten";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Dein Mac arbeitet weiter. Bewege die Maus oder drücke eine Taste, um das Display zurückzuholen.";
 "Work with the lid closed" = "Mit geschlossenem Deckel arbeiten";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Der Mac schläft auch zugeklappt nicht. Sorge für Belüftung.";
 "Stop when battery is below %@" = "Bei Akku unter %@ beenden";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools möchte deinen Mac bei geschlossenem Deckel wach halten.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools möchte, dass dein Mac zugeklappt wieder schläft.";
 "How pika-tools starts and looks." = "Wie pika-tools startet und aussieht.";
-"Only on Mac laptops" = "Nur auf Mac-Notebooks";
 "Back" = "Zurück";
 "Forward" = "Vorwärts";
 "No Results" = "Keine Ergebnisse";

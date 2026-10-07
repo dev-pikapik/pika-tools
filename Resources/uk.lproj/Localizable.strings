@@ -60,7 +60,14 @@
 "Minutes" = "Хвилини";
 "Seconds" = "Секунди";
 "Keep the display on" = "Не вимикати екран";
-"Otherwise the screen dims and turns off as usual" = "Інакше екран тьмяніє і гасне як зазвичай";
+"Display" = "Екран";
+"Always on" = "Завжди ввімкнений";
+"Turns off as usual" = "Гасне як зазвичай";
+"No dimming, screen saver or lock screen" = "Без затемнення, заставки та екрана блокування";
+"Turns off on its own timer, your Mac keeps working" = "Гасне за своїм таймером, а Mac працює";
+"Turn off the display now" = "Вимкнути екран зараз";
+"Turn Off" = "Вимкнути";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac працюватиме далі. Щоб повернути екран, поворушіть мишею або натисніть будь-яку клавішу.";
 "Work with the lid closed" = "Працювати із закритою кришкою";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Mac не засне, навіть якщо закрити кришку. Не накривай його.";
 "Stop when battery is below %@" = "Зупинити, коли заряд нижче %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools хоче, щоб Mac не засинав із закритою кришкою.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools хоче повернути сон Mac при закритій кришці.";
 "How pika-tools starts and looks." = "Як pika-tools запускається й виглядає.";
-"Only on Mac laptops" = "Лише на ноутбуках Mac";
 "Back" = "Назад";
 "Forward" = "Вперед";
 "No Results" = "Немає результатів";

@@ -60,7 +60,14 @@
 "Minutes" = "Minutes";
 "Seconds" = "Secondes";
 "Keep the display on" = "Garder l’écran allumé";
-"Otherwise the screen dims and turns off as usual" = "Sinon, l’écran s’assombrit et s’éteint comme d’habitude";
+"Display" = "Écran";
+"Always on" = "Toujours allumé";
+"Turns off as usual" = "S’éteint comme d’habitude";
+"No dimming, screen saver or lock screen" = "Ni assombrissement, ni économiseur d’écran, ni écran verrouillé";
+"Turns off on its own timer, your Mac keeps working" = "S’éteint selon son propre délai, votre Mac continue de fonctionner";
+"Turn off the display now" = "Éteindre l’écran maintenant";
+"Turn Off" = "Éteindre";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Votre Mac continue de fonctionner. Pour rallumer l’écran, bougez la souris ou appuyez sur une touche.";
 "Work with the lid closed" = "Fonctionner écran rabattu";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Le Mac ne se met pas en veille écran rabattu. Laissez-le respirer.";
 "Stop when battery is below %@" = "Arrêter sous %@ de batterie";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools souhaite garder votre Mac éveillé écran rabattu.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools souhaite rétablir la veille de votre Mac écran rabattu.";
 "How pika-tools starts and looks." = "Démarrage et apparence de pika-tools.";
-"Only on Mac laptops" = "Uniquement sur les Mac portables";
 "Back" = "Précédent";
 "Forward" = "Suivant";
 "No Results" = "Aucun résultat";

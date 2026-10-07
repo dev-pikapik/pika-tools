@@ -60,7 +60,14 @@
 "Minutes" = "Phút";
 "Seconds" = "Giây";
 "Keep the display on" = "Giữ màn hình luôn bật";
-"Otherwise the screen dims and turns off as usual" = "Nếu không, màn hình sẽ tối dần và tắt như bình thường";
+"Display" = "Màn hình";
+"Always on" = "Luôn bật";
+"Turns off as usual" = "Tắt như bình thường";
+"No dimming, screen saver or lock screen" = "Không tối dần, không trình bảo vệ màn hình, không màn hình khóa";
+"Turns off on its own timer, your Mac keeps working" = "Tắt theo hẹn giờ riêng, máy Mac vẫn làm việc";
+"Turn off the display now" = "Tắt màn hình ngay";
+"Turn Off" = "Tắt";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Máy Mac vẫn làm việc. Để màn hình sáng lại, hãy di chuột hoặc nhấn một phím.";
 "Work with the lid closed" = "Hoạt động khi gập nắp";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Máy Mac không ngủ khi bạn gập nắp. Hãy giữ máy thông thoáng.";
 "Stop when battery is below %@" = "Dừng khi pin dưới %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools muốn giữ máy Mac thức khi gập nắp.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools muốn cho máy Mac ngủ lại khi gập nắp.";
 "How pika-tools starts and looks." = "Cách pika-tools khởi động và hiển thị.";
-"Only on Mac laptops" = "Chỉ trên máy Mac xách tay";
 "Back" = "Quay lại";
 "Forward" = "Tiếp";
 "No Results" = "Không có kết quả";

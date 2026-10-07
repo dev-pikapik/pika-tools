@@ -8,6 +8,7 @@ struct MenuView: View {
     @Bindable private var keepAwake = KeepAwake.shared
     @AppStorage("quick-hidden") private var hiddenList = MenuView.defaultHidden
     @State private var customizing = false
+    @State private var keepAwakeOpen = false
     @State private var contentHeight: CGFloat = 0
 
     // Room left for the rows: the screen the panel is on, minus footer, padding and menu bar gap.
@@ -68,13 +69,27 @@ struct MenuView: View {
                                 if customizing {
                                     customizeRow(icon: "cup.and.saucer", title: String(localized: "Keep Awake"), id: "keep-awake")
                                 } else {
-                                    ToggleRow(
-                                        icon: "cup.and.saucer",
-                                        title: String(localized: "Keep Awake"),
-                                        subtitle: keepAwake.statusText,
-                                        hint: keepAwake.statusText,
-                                        isOn: $keepAwake.isOn
-                                    )
+                                    HStack(spacing: 0) {
+                                        ToggleRow(
+                                            icon: "cup.and.saucer",
+                                            title: String(localized: "Keep Awake"),
+                                            subtitle: keepAwake.statusText,
+                                            hint: keepAwake.statusText,
+                                            isOn: $keepAwake.isOn
+                                        )
+                                        Button { withAnimation(.snappy) { keepAwakeOpen.toggle() } } label: {
+                                            Image(systemName: "chevron.right")
+                                                .font(.system(size: 11, weight: .semibold))
+                                                .rotationEffect(.degrees(keepAwakeOpen ? 90 : 0))
+                                                .frame(width: 28, height: 38)
+                                                .contentShape(Rectangle())
+                                        }
+                                        .buttonStyle(.plain)
+                                        .foregroundStyle(.secondary)
+                                        .help(Text("Display"))
+                                        .accessibilityLabel(Text("Display"))
+                                    }
+                                    if keepAwakeOpen { keepAwakeOptions }
                                 }
                             }
 
@@ -145,6 +160,33 @@ struct MenuView: View {
         .padding(.bottom, 12)
         .frame(width: 330)
         .onAppear { permissions.refresh() }
+    }
+
+    private var keepAwakeOptions: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Picker("Display", selection: $keepAwake.keepsDisplayOn) {
+                Text("Always on").tag(true)
+                Text("Turns off as usual").tag(false)
+            }
+            .pickerStyle(.radioGroup)
+            .labelsHidden()
+            Button {
+                NSApp.keyWindow?.close()
+                KeepAwake.turnOffDisplay()
+            } label: {
+                Label("Turn off the display now", systemImage: "display")
+                    .frame(maxWidth: .infinity)
+            }
+            .glassButtons()
+            Text("Your Mac keeps working. To bring the display back, move the mouse or press a key.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.leading, 46)
+        .padding(.trailing, 8)
+        .padding(.top, 2)
+        .padding(.bottom, 8)
     }
 
     private var groupDivider: some View {
