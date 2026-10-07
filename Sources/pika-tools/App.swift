@@ -47,7 +47,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
         for id in ["convert", "finder-cut", "finder-open", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
-            if let hidden = defaults.string(forKey: "quick-hidden") {
+            if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
             defaults.set(true, forKey: "quick-hidden-\(id)")
