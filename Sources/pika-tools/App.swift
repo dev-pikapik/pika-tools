@@ -41,6 +41,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NewFile.handle(url)
         Compress.handle(url)
         KeepAwake.shared.handle(url)
+        SpeedTest.shared.handle(url)
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -48,7 +49,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         LoginItem.shared.restore()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -87,6 +88,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
+        SpeedTest.shared.cancel()
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
         GameModeTool.shared.leave()
     }

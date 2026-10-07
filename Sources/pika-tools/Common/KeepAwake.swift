@@ -536,7 +536,7 @@ struct KeepAwakeScene: View {
     }
 }
 
-private struct ShortcutLink: View {
+struct ShortcutLink: View {
     let title: String
     let path: String
     @State private var copied = false

@@ -94,12 +94,17 @@ On a MacBook you can also turn on **Work with the lid closed**. macOS has no swi
 
 Keep Awake, the display and lid-closed modes can be put on a button in Control Center, the menu bar or a desktop widget through the Shortcuts app, with links you copy from Settings › Keep Awake.
 
+## Speed Test
+
+Shows how fast your internet is right now. Click **Check Speed** in Settings › Speed Test, or **Check** in the menu once you add the row with the pencil button. In about half a minute you see download and upload speed, ping and responsiveness: how quickly things react while the connection is busy. Below, in plain words, is what it's good for: 4K movies, video calls, online games and big downloads. The check uses networkQuality, which comes with macOS, and Apple's servers. The last result stays until the next check, and a link for Shortcuts starts it from Control Center.
+
 ## Settings
 
 Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keep Awake**: duration, display and lid options.
+- **Speed Test**: check the internet speed and see what it's good for.
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
