@@ -3,26 +3,6 @@ import ImageIO
 import UniformTypeIdentifiers
 
 enum Converter {
-    private static let images: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "bmp", "webp"]
-    private static let videos: Set<String> = ["mov", "mp4", "m4v"]
-    private static let sounds: Set<String> = ["wav", "aiff", "aif", "mp3", "m4a", "caf"]
-    private static let formats = [
-        "jpg": "jpeg", "jpeg": "jpeg", "png": "png", "heic": "heic", "heif": "heic", "tif": "tiff", "tiff": "tiff",
-        "mp4": "mp4", "mov": "mov", "m4a": "m4a", "wav": "wav", "aiff": "aiff", "aif": "aiff",
-    ]
-
-    static func targets(for url: URL) -> [String] {
-        let ext = url.pathExtension.lowercased()
-        if images.contains(ext) { return ["jpeg", "png", "heic", "tiff", "pdf"] }
-        if videos.contains(ext) { return ["mp4", "mov", "m4a"] }
-        if sounds.contains(ext) { return ["m4a", "wav", "aiff"] }
-        return []
-    }
-
-    static func format(of url: URL) -> String? {
-        formats[url.pathExtension.lowercased()]
-    }
-
     static func fileExtension(for target: String) -> String {
         target == "jpeg" ? "jpg" : target
     }
@@ -32,6 +12,7 @@ enum Converter {
         case "jpeg": try Compressor.reencode(source, to: output, as: .jpeg, quality: 0.9)
         case "heic": try Compressor.reencode(source, to: output, as: .heic, quality: 0.8)
         case "png": try Compressor.reencode(source, to: output, as: .png, quality: nil)
+        case "gif": try gif(source, to: output)
         case "tiff": try Compressor.reencode(source, to: output, as: .tiff, quality: nil)
         case "pdf": try pdf(source, to: output)
         case "mp4": try await movie(source, to: output, type: .mp4, progress: progress)
@@ -57,6 +38,14 @@ enum Converter {
         context.draw(image, in: page)
         context.endPDFPage()
         context.closePDF()
+    }
+
+    private static func gif(_ source: URL, to output: URL) throws {
+        guard let file = CGImageSourceCreateWithURL(source as CFURL, nil), let image = Compressor.upright(file),
+              let destination = CGImageDestinationCreateWithURL(output as CFURL, UTType.gif.identifier as CFString, 1, nil)
+        else { throw CompressorError() }
+        CGImageDestinationAddImage(destination, image, nil)
+        guard CGImageDestinationFinalize(destination) else { throw CompressorError() }
     }
 
     private static func movie(_ source: URL, to output: URL, type: AVFileType, progress: @escaping @Sendable (Double) -> Void) async throws {

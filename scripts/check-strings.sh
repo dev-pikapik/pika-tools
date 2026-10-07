@@ -10,6 +10,7 @@ if [ -z "$DIR" ]; then
     trap 'rm -rf "$DIR"' EXIT
     SOURCES=()
     while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' -print0)
+    SOURCES+=(Extensions/Convert/ConvertFormats.swift)
     FLAGS=()
     if [ -d Private/Sources ] && [ -n "$(find Private/Sources -name '*.swift' -print -quit)" ]; then
         while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Private/Sources -name '*.swift' -print0)

@@ -2,11 +2,16 @@ import AppKit
 import FinderSync
 
 final class CompressExtension: FIFinderSync {
-    private static let smaller: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "pdf", "mov", "mp4", "m4v", "wav", "aiff", "aif", "caf"]
+    private static let smaller: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "bmp", "pdf", "mov", "mp4", "m4v", "wav", "aiff", "aif", "aifc", "caf", "flac"]
 
     override init() {
         super.init()
-        FIFinderSyncController.default().directoryURLs = [URL(fileURLWithPath: "/")]
+        let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .skipHiddenVolumes) ?? []
+        FIFinderSyncController.default().directoryURLs = Set(volumes + [URL(fileURLWithPath: "/")])
+        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { note in
+            guard let volume = note.userInfo?[NSWorkspace.volumeURLUserInfoKey] as? URL else { return }
+            FIFinderSyncController.default().directoryURLs.insert(volume)
+        }
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
