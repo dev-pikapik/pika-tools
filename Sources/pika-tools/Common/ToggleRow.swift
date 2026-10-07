@@ -50,6 +50,7 @@ struct ToggleRow: View {
                 }
 
                 Spacer(minLength: 0)
+                if !keys.isEmpty { KeyCaps(keys: keys) }
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 5)

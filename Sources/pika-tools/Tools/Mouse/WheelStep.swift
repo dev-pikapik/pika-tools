@@ -9,6 +9,7 @@ struct WheelStep {
     static let defaultLines = 3
     static let pointsPerLine: Int64 = 10
     static let pixelRange = 1...200
+    static let pixelStep = 20
     static let defaultPixels = 40
 
     var mode = Mode.lines

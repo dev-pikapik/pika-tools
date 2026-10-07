@@ -5,7 +5,7 @@ import SwiftUI
 final class CommandKeysTool: Tool {
     let id = "command-keys"
     let icon = "command"
-    var title: String { String(localized: "Protect ⌘Q and ⌘W") }
+    var title: String { String(localized: "Protect quitting and closing") }
     let tab = SettingsTab.windows
 
     private(set) var isActive = false
@@ -132,14 +132,15 @@ private struct CommandKeysSettings: View {
     var body: some View {
         if inSettings {
             row(key: "Q", title: String(localized: "Quit app"), isOn: $tool.protectsQuit)
-                .settingAnchor(String(localized: "Protect ⌘Q and ⌘W"))
+                .settingAnchor(String(localized: "Protect quitting and closing"))
             row(key: "W", title: String(localized: "Close window"), isOn: $tool.protectsClose)
         } else {
             ToggleRow(
                 icon: tool.icon,
                 title: tool.title,
-                subtitle: Text("Add ⇧ to quit or close"),
-                hint: Text("Add ⇧ to quit or close"),
+                subtitle: Text("Quit and close need one more key"),
+                hint: Text("Quit and close need one more key"),
+                keys: ["⇧"],
                 isOn: $tool.isEnabled
             )
         }
@@ -147,7 +148,11 @@ private struct CommandKeysSettings: View {
 
     private func row(key: String, title: String, isOn: Binding<Bool>) -> some View {
         Toggle(isOn: isOn) {
-            KeyLabel(keys: ["⌘", key], title: Text(title), subtitle: isOn.wrappedValue ? Text("Only with ⇧⌘\(key)") : Text("With ⌘\(key), as usual"))
+            KeyLabel(
+                keys: isOn.wrappedValue ? ["⇧", "⌘", key] : ["⌘", key],
+                title: Text(title),
+                subtitle: isOn.wrappedValue ? Text("Only with all three keys") : Text("Works as usual")
+            )
         }
     }
 }
