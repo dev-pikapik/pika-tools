@@ -7,6 +7,14 @@ enum TestScroll {
         CGEvent(scrollWheelEvent2Source: nil, units: units, wheelCount: 2, wheel1: lines, wheel2: horizontal, wheel3: 0)!
     }
 
+    static func step(_ wheelStep: WheelStep, _ delta: Int64, _ fixed: Double) -> Int64 {
+        let event = wheel(0)
+        event.setIntegerValueField(.scrollWheelEventDeltaAxis1, value: delta)
+        event.setDoubleValueField(.scrollWheelEventFixedPtDeltaAxis1, value: fixed)
+        _ = wheelStep.rewrite(event)
+        return event.getIntegerValueField(.scrollWheelEventDeltaAxis1)
+    }
+
     static func fields(_ event: CGEvent) -> [Int64] {
         [
             event.getIntegerValueField(.scrollWheelEventDeltaAxis1),
@@ -20,14 +28,14 @@ enum TestScroll {
 
     static func main() {
         let three = WheelStep(lines: 3)
-        precondition(three.step(1, 1) == 3)
-        precondition(three.step(7, 7.4) == 3)
-        precondition(three.step(-12, -12) == -3)
-        precondition(three.step(0, 0.2) == 3)
-        precondition(three.step(0, -0.2) == -3)
-        precondition(three.step(0, 0) == 0)
-        precondition(WheelStep(lines: 0).step(1, 1) == 1)
-        precondition(WheelStep(lines: 50).step(-1, -1) == -10)
+        precondition(step(three, 1, 1) == 3)
+        precondition(step(three, 7, 7.4) == 3)
+        precondition(step(three, -12, -12) == -3)
+        precondition(step(three, 0, 0.2) == 3)
+        precondition(step(three, 0, -0.2) == -3)
+        precondition(step(three, 0, 0) == 0)
+        precondition(step(WheelStep(lines: 0), 1, 1) == 1)
+        precondition(step(WheelStep(lines: 50), -1, -1) == -10)
 
         let slow = wheel(1)
         precondition(three.rewrite(slow))
@@ -45,6 +53,11 @@ enum TestScroll {
         let before = fields(trackpad)
         precondition(!three.rewrite(trackpad))
         precondition(fields(trackpad) == before)
+
+        let pixels = wheel(-1)
+        precondition(WheelStep(mode: .pixels, lines: 3, pixels: 60).rewrite(pixels))
+        precondition(fields(pixels) == [-1, -60, -60, 0, 0, 0])
+        precondition(pixels.getIntegerValueField(.scrollWheelEventIsContinuous) == 1)
 
         let device = "mac-a"
         let older = Date(timeIntervalSince1970: 1_000)
