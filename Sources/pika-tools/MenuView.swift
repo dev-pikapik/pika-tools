@@ -111,6 +111,8 @@ struct MenuView: View {
             }
             // A ScrollView has no natural height in an auto-sized window, so give it the measured one.
             .frame(height: min(contentHeight, maxRowsHeight))
+            .scrollClipDisabled(contentHeight <= maxRowsHeight)
+            .scrollBounceBehavior(.basedOnSize)
 
             HStack(spacing: 8) {
                 if customizing {
