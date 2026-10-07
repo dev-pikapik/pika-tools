@@ -230,8 +230,12 @@ private final class CompressQueue {
             if !compact.isEmpty { lines += ["", String(localized: "Already compact, no copy needed:")] + compact }
             alert.informativeText = lines.joined(separator: "\n")
         }
-        NSApp.activate()
-        alert.runModal()
+        RunLoop.main.perform {
+            MainActor.assumeIsolated {
+                NSApp.activate()
+                alert.runModal()
+            }
+        }
     }
 
     private func showPanel() {
