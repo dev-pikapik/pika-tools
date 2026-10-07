@@ -7,7 +7,7 @@
 [![Lisans: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![İndirmeler](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Windows’taki Alt+Shift gibi Option+Shift ile dili değiştirir, Windows’taki gibi basılı tutulan tuşu tekrarlar, fare ivmesini kapatır, fare tekerini Windows’taki gibi satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
+Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Option+Shift ile dili değiştirir, basılı tutulan tuşu tekrarlar, fare ivmesini kapatır, fare tekerini satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
 
 ## Kurulum
 
@@ -46,29 +46,33 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 **Option+Shift ile dil değiştirme.** Option’ı basılı tutun ve Shift’e dokunun: macOS bir sonraki girdi kaynağına geçer. Option’ı bırakmadan Shift’e yeniden dokunarak ilerlemeye devam edin. Geri gitmek için Shift’i basılı tutup Option’a dokunun. Arada başka bir tuşa basarsanız, tıklarsanız ya da Command, Control veya Fn eklerseniz dil değişmez, böylece Option+Shift+ok gibi kestirmeler eskisi gibi çalışır. Varsayılan olarak kapalıdır.
 
-**Basılı tutulan tuşu tekrarla.** Bir tuşu basılı tuttuğunuzda aksan menüsü yerine Windows’taki gibi harf tekrar tekrar yazılır. Oyunlarda ve yazarken işe yarar. Zaten açık olan uygulamalar bunu yeniden başlatıldıktan sonra kullanır. Kapattığınızda macOS her zamanki gibi çalışır. Varsayılan olarak kapalıdır.
+**Basılı tutulan tuşu tekrarla.** Bir tuşu basılı tuttuğunuzda aksan menüsü yerine harf tekrar tekrar yazılır. Oyunlarda ve yazarken işe yarar. Zaten açık olan uygulamalar bunu yeniden başlatıldıktan sonra kullanır. Kapattığınızda macOS her zamanki gibi çalışır. Varsayılan olarak kapalıdır.
+
+**Home ve End satır başına ve sonuna gider.** Yazarken Home imleci satırın başına, End ise sonuna taşır; sayfa kaymaz. ⇧ ile oraya kadar seçer, ⌘ ile tüm metnin başına veya sonuna gider. Metin alanlarının dışında ve terminallerde, sanal makinelerde ve uzak masaüstü uygulamalarında tuşlar eskisi gibi çalışır. Her zamanki gibi çalışmaları gereken başka uygulamalar da ekleyebilirsiniz. Varsayılan olarak kapalı.
 
 **İmleç hızlandırmayı kapat.** Fareyi ne kadar hızlı hareket ettirirseniz ettirin, imleç tam olarak fare kadar hareket eder, LinearMouse’taki gibi. **İzleme hızı** sürgüsü imlecin ne kadar hızlı gideceğini ayarlar. Yalnızca farelerle çalışır, İzleme Dörtgeni olduğu gibi kalır. Özelliği kapatın ya da pika-tools’tan çıkın, macOS kendi ayarlarına geri döner. Varsayılan olarak kapalıdır.
 
-**Satır satır kaydır.** Fare tekerinin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır, tıpkı Windows’ta olduğu gibi. Tık başına 1 ile 10 arasında satır seçebilirsiniz, varsayılan 3’tür. Doğal Kaydırma, Sistem Ayarları’nda nasıl ayarladıysanız öyle kalır. Yalnızca fareler için çalışır, izleme dörtgeni olduğu gibi kalır. Varsayılan olarak kapalıdır. **Tık başına mesafe** kaydırıcısının yanında küçük bir sayfa seçtiğiniz mesafe kadar kayar, bir nokta da varsayılan değeri gösterir.
+**Satır satır kaydır.** Fare tekerinin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır. Tık başına 1 ile 10 arasında satır seçebilirsiniz, varsayılan 3’tür. Doğal Kaydırma, Sistem Ayarları’nda nasıl ayarladıysanız öyle kalır. Yalnızca fareler için çalışır, izleme dörtgeni olduğu gibi kalır. Varsayılan olarak kapalıdır. **Tık başına mesafe** kaydırıcısının yanında küçük bir sayfa seçtiğiniz mesafe kadar kayar, bir nokta da varsayılan değeri gösterir.
 
 Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için aynı ayarı piksele çevirin ve tık başına 1 ile 200 piksel arasında seçin, varsayılan 40. Kaydırıcı bunun ekran yüksekliğinin ne kadarı olduğunu da söyler.
 
-**İzleme dörtgeni ve fare için kaydırma yönü.** macOS’te izleme dörtgeni ve fare için ortak tek bir doğal kaydırma anahtarı vardır. Bunu açın ve her biri için bir yön seçin: sayfanın iPhone’daki gibi parmaklarınızı izlediği **Doğal** ya da Windows’taki gibi **Klasik**. İzleme dörtgeni seçimi yana kaydırmayı ve parmaklarınızı kaldırdıktan sonraki kaymayı da kapsar. Magic Mouse dokunarak kaydırır, bu yüzden izleme dörtgeni seçimini izler. Tüm Mac’lerinizde aynısını seçin, fareyi Evrensel Denetim ile başka bir Mac’e taşısanız bile kaydırma her yerde aynı olur. Varsayılan olarak kapalı. Açtığınızda ikisi de Sistem Ayarları’ndaki gibi başlar, yani siz başka bir şey seçene kadar hiçbir şey değişmez.
+**İzleme dörtgeni ve fare için kaydırma yönü.** macOS’te izleme dörtgeni ve fare için ortak tek bir doğal kaydırma anahtarı vardır. Bunu açın ve her biri için bir yön seçin: sayfanın iPhone’daki gibi parmaklarınızı izlediği **Doğal** ya da sayfanın ters yöne gittiği **Klasik**. İzleme dörtgeni seçimi yana kaydırmayı ve parmaklarınızı kaldırdıktan sonraki kaymayı da kapsar. Magic Mouse dokunarak kaydırır, bu yüzden izleme dörtgeni seçimini izler. Tüm Mac’lerinizde aynısını seçin, fareyi Evrensel Denetim ile başka bir Mac’e taşısanız bile kaydırma her yerde aynı olur. Varsayılan olarak kapalı. Açtığınızda ikisi de Sistem Ayarları’ndaki gibi başlar, yani siz başka bir şey seçene kadar hiçbir şey değişmez.
 
 **Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Safari’de, Finder’da ve diğer Apple uygulamalarında, Firefox’ta, Opera’da ve ForkLift’te geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. JetBrains IDE’leri gibi diğer uygulamalar düğmeleri olduğu gibi alır ve kendi yöntemleriyle ele alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 
-**Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama Windows’taki gibi kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
+**Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
 **Dock’ta tıklayarak gizleme.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulama gizlenir. Geri getirmek için yeniden tıklayın. Varsayılan olarak kapalıdır.
 
 **Yeşil düğme pencereyi büyütür.** Bir pencerenin yeşil düğmesine tıklayın; pencere tam ekrana geçmeden ekranı doldurur. Önceki boyuta dönmek için yeniden tıklayın. ⌥ tuşunu basılı tutarsanız düğme her zamanki gibi çalışır. Tam ekran, düğmenin menüsünde ve ⌃⌘F ile kullanılabilir kalır. Yeşil düğmenin her zamanki gibi çalışacağı uygulamaları listeleyebilirsiniz. Varsayılan olarak kapalıdır.
 
-**Finder’da Yeni Dosya.** Bir Finder penceresinde ya da masaüstünde sağ tıklayın, **Yeni Dosya**’yı seçin, bir ad yazın; Windows’taki Yeni › Metin Belgesi gibi boş bir dosya oluşur. Varsayılan .txt. Varsayılan olarak kapalı.
+**Finder’da Yeni Dosya.** Bir Finder penceresinde ya da masaüstünde sağ tıklayın, **Yeni Dosya**’yı seçin, bir ad yazın; boş bir dosya oluşur. Varsayılan .txt. Varsayılan olarak kapalı.
 
-**Enter, Finder’da dosyaları açar.** Bir Finder penceresinde ya da masaüstünde dosyaları seçip Return veya Enter’a basın; dosyalar açılır, tıpkı Windows’taki gibi. F2 veya fn F2 seçili dosyanın adını değiştirir. Metin alanlarında, örneğin bir ad yazarken, tuşlar her zamanki gibi çalışır. Varsayılan olarak kapalı.
+**Enter, Finder’da dosyaları açar.** Bir Finder penceresinde ya da masaüstünde dosyaları seçip Return veya Enter’a basın; dosyalar açılır. F2 veya fn F2 seçili dosyanın adını değiştirir. Metin alanlarında, örneğin bir ad yazarken, tuşlar her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
-**⌘X, Finder’da dosyaları keser.** Dosyaları seçip ⌘X’e basın, hedef klasörü açıp ⌘V’ye basın; dosyalar kopyalanmak yerine oraya taşınır, tıpkı Windows’taki Kes ve Yapıştır gibi. ⌘C kesmeyi iptal eder. Varsayılan olarak kapalı.
+**⌘X, Finder’da dosyaları keser.** Dosyaları seçip ⌘X’e basın, hedef klasörü açıp ⌘V’ye basın; dosyalar kopyalanmak yerine oraya taşınır. ⌘C kesmeyi iptal eder. Varsayılan olarak kapalı.
+
+**Delete, Finder’da dosyaları siler.** Dosyaları seçip ⌫ veya ⌦ tuşuna (dizüstünde fn ⌫) basın; dosyalar ⌘⌫’taki gibi Çöp Sepeti’ne gider. Bir dosyayı yeniden adlandırırken, arama yaparken veya başka bir alana yazarken tuşlar her zamanki gibi harf siler. Varsayılan olarak kapalı.
 
 **Finder’da Küçük Kopya.** Finder’da bir dosyaya sağ tıklayıp **Küçük Kopya Oluştur**’u seçin. Bir fotoğrafın, GIF’in, PDF’in veya videonun genellikle birkaç kat daha küçük bir sürümü hemen yanına kaydedilir. WAV veya AIFF gibi sıkıştırılmamış ses, kompakt bir M4A olur. Dosya daha fazla küçülemiyorsa kopya oluşturulmaz ve pika-tools bunu size söyler. Orijinal olduğu gibi kalır ve hiçbir şey Mac’inizden çıkmaz. Varsayılan olarak kapalı.
 
@@ -96,11 +100,11 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u 
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
-- **Klavye**: Control kestirmeleri, dil değiştirme, tuş tekrarı.
+- **Klavye**: Control kestirmeleri, dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
-- **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma ve ⌘X ile kesme.
+- **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
 - **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 
