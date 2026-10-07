@@ -40,7 +40,7 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 ## Features
 
-**Block Ctrl shortcuts.** Ctrl becomes a plain key. Apps still see it held down, but macOS no longer turns it into shortcuts: Ctrl+Space won't switch input sources, Ctrl+arrows won't switch desktops, and Ctrl-click is a regular click instead of a context menu. Right-click and two-finger tap work as usual. Handy in games and remote desktop sessions, where Ctrl has a job of its own.
+**Block Ctrl shortcuts.** Ctrl becomes a plain key. Apps still see it held down, but macOS no longer turns it into shortcuts: Ctrl+Space won't switch input sources, Ctrl+arrows won't switch desktops, and Ctrl-click is a regular click instead of a context menu. Right-click and two-finger tap work as usual. Handy in games and remote desktop sessions, where Ctrl has a job of its own. List apps where Ctrl should work as usual, such as a remote desktop app, and the block skips them.
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
@@ -50,9 +50,9 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it, like LinearMouse. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
 
-**Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it, like on Windows. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default.
+**Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it, like on Windows. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default. Beside the **Distance per click** slider, a small page scrolls by the distance you pick, and a dot marks the default.
 
-Some apps and games count scrolling in exact pixels: for them, switch the same setting to pixels and pick from 1 to 200 pixels per click, 40 by default.
+Some apps and games count scrolling in exact pixels: for them, switch the same setting to pixels and pick from 1 to 200 pixels per click, 40 by default. The slider also says how much of the screen height that is.
 
 **Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Safari, Finder and other Apple apps, Firefox, Opera and ForkLift, just like a swipe on the trackpad. Other apps, such as JetBrains IDEs, get the buttons as they are and handle them their own way. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 

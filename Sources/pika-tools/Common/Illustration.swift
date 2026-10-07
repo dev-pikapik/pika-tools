@@ -374,3 +374,81 @@ struct ArtFile: View {
         .background(Color.accentColor.opacity(selected ? 0.2 : 0), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
     }
 }
+
+struct ArtMouse: View {
+    var wheel = false
+    var sideButtons = false
+    var back = false
+    var forward = false
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        let shape = UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12)
+        shape
+            .fill(Art.metal(scheme))
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay(alignment: .top) {
+                Rectangle().fill(Color.primary.opacity(0.2)).frame(width: 0.5, height: 15)
+            }
+            .overlay(alignment: .top) {
+                Capsule()
+                    .fill(wheel ? Color.accentColor : Color.primary.opacity(0.35))
+                    .frame(width: 3, height: 8)
+                    .padding(.top, 4)
+            }
+            .overlay(alignment: .topLeading) {
+                if sideButtons {
+                    VStack(spacing: 2.5) {
+                        side(forward)
+                        side(back)
+                    }
+                    .offset(x: -1.5, y: 13)
+                }
+            }
+            .frame(width: 24, height: 38)
+            .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)
+    }
+
+    private func side(_ pressed: Bool) -> some View {
+        Capsule()
+            .fill(pressed ? Color.accentColor : Color.primary.opacity(0.35))
+            .frame(width: 3.5, height: 7)
+    }
+}
+
+struct ArtMenu<Content: View>: View {
+    @ViewBuilder var content: Content
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
+        VStack(alignment: .leading, spacing: 1) { content }
+            .padding(3)
+            .frame(width: 100)
+            .background(Color(nsColor: .windowBackgroundColor), in: shape)
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+            .shadow(color: .black.opacity(0.2), radius: 6, y: 3)
+    }
+}
+
+struct ArtMenuRow: View {
+    var width: CGFloat = 40
+    var title: Text?
+    var active = false
+
+    var body: some View {
+        HStack(spacing: 0) {
+            if let title {
+                title
+                    .font(.system(size: 9, weight: .medium))
+                    .foregroundStyle(active ? Color.white : Color.primary)
+                    .lineLimit(1)
+            } else {
+                Capsule().fill(Color.primary.opacity(0.18)).frame(width: width, height: 4)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 6)
+        .frame(height: 14)
+        .background(active ? Color.accentColor : .clear, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+    }
+}

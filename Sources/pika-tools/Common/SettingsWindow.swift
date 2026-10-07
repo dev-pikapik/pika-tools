@@ -77,13 +77,14 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Block ⌃ Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Switch language with ⌥⇧"), synonyms: "keyboard layout, input source, option, shift, alt"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Block Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
+            SettingsItem(tab: .keyboard, title: String(localized: "⌃ works as usual in these apps"), synonyms: "exceptions, exclude, list"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, Windows, scrolling speed, acceleration"),
-            SettingsItem(tab: .mouse, title: String(localized: "Lines per wheel click"), synonyms: "scrolling speed, wheel, notch"),
+            SettingsItem(tab: .mouse, title: String(localized: "Distance per click"), synonyms: "scrolling speed, wheel, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by"), synonyms: "pixels, lines, wheel, games, scrolling mode, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
@@ -95,7 +96,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .dock, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
             SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, Windows, keyboard"),
-            SettingsItem(tab: .finder, title: String(localized: "⌘X cuts files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
+            SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -288,16 +289,16 @@ private struct SettingsView: View {
         switch tab {
         case .general: GeneralSettings()
         case .keepAwake: KeepAwakeSettings()
-        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard. Each one works on its own."))
-        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse. Each one works on its own."))
+        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
+        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
         case .windows:
             ToolsSettings(
                 tab: .windows,
-                text: String(localized: "Fixes for windows and quitting apps. Each one works on its own."),
-                headings: ["window-zoom": "Size", "command-keys": "Closing and Quitting"]
+                text: String(localized: "Fixes for windows and quitting apps"),
+                headings: ["window-zoom": "Size", "quit-on-close": "Closing and Quitting"]
             )
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
-        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder. Each one works on its own."))
+        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
         case .permissions: PermissionsView()
         case .about: AboutView()
         }
@@ -559,7 +560,7 @@ private struct GeneralSettings: View {
 
     private var syncStatus: String {
         switch sync.state {
-        case .off: String(localized: "Keeps settings the same on all your Macs through iCloud Drive")
+        case .off: String(localized: "Same settings on all your Macs")
         case .synced(let date): String(localized: "Last synced at \(date.formatted(date: .omitted, time: .shortened))")
         case .noDrive: String(localized: "iCloud Drive is turned off on this Mac")
         case .noAccess: String(localized: "pika-tools isn’t allowed to open iCloud Drive")

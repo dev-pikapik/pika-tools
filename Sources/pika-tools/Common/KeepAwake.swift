@@ -288,7 +288,7 @@ struct KeepAwakeSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac won’t go to sleep on its own. Turns off when you quit pika-tools."))
+            SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac stays awake until you quit pika-tools"))
             Section {
                 KeepAwakeArt()
                 LabeledContent {
@@ -328,13 +328,14 @@ struct KeepAwakeSettings: View {
 
             Section {
                 Toggle(isOn: $keepAwake.worksWithLidClosed) {
-                    RowLabel(Text("Work with the lid closed"), keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops"))
+                    RowLabel(Text("Work with the lid closed"), keepAwake.hasLid ? Text("Mac stays awake with the lid closed") : Text("Only on Mac laptops"))
                 }
                 .disabled(!keepAwake.hasLid)
+                .help(keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops"))
                 .settingAnchor(String(localized: "Work with the lid closed"))
                 if keepAwake.hasLid {
                     Toggle(isOn: $keepAwake.stopsOnLowBattery) {
-                        RowLabel(Text("Stop when battery is below \(0.2.formatted(.percent))"), Text("Lets the Mac sleep again before the battery runs out"))
+                        RowLabel(Text("Stop when battery is below \(0.2.formatted(.percent))"), Text("Lets the Mac sleep before the battery runs out"))
                     }
                     .disabled(!keepAwake.worksWithLidClosed)
                     .settingAnchor(String(localized: "Stop when battery is below \(0.2.formatted(.percent))"))
@@ -345,7 +346,7 @@ struct KeepAwakeSettings: View {
                 }
             } footer: {
                 if keepAwake.hasLid {
-                    Text("macOS asks for an administrator password, because only an administrator can change this.")
+                    Text("macOS will ask for your administrator password.")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -373,7 +374,7 @@ struct KeepAwakeSettings: View {
             } header: {
                 Text("Buttons in Control Center and widgets")
             } footer: {
-                Text("In Shortcuts, make a shortcut with the Open URLs action and paste a link. Then add it to Control Center, the menu bar or a Shortcuts widget on the desktop. Each tap turns it on or off.")
+                Text("Add the Open URLs action in Shortcuts, with a link.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)

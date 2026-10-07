@@ -40,7 +40,7 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 ## Özellikler
 
-**Control kestirmelerini engelleme.** Control sıradan bir tuşa dönüşür. Uygulamalar basılı tutulduğunu görmeye devam eder, ancak macOS onu artık kestirmelere çevirmez: Control+Boşluk girdi kaynağını değiştirmez, Control+oklar masaüstünü değiştirmez ve Control-tıklama, içerik menüsü yerine normal bir tıklama olur. Sağ tıklama ve iki parmakla dokunma her zamanki gibi çalışır. Control’ün kendine ait bir görevi olduğu oyunlarda ve uzak masaüstü oturumlarında işe yarar.
+**Control kestirmelerini engelleme.** Control sıradan bir tuşa dönüşür. Uygulamalar basılı tutulduğunu görmeye devam eder, ancak macOS onu artık kestirmelere çevirmez: Control+Boşluk girdi kaynağını değiştirmez, Control+oklar masaüstünü değiştirmez ve Control-tıklama, içerik menüsü yerine normal bir tıklama olur. Sağ tıklama ve iki parmakla dokunma her zamanki gibi çalışır. Control’ün kendine ait bir görevi olduğu oyunlarda ve uzak masaüstü oturumlarında işe yarar. Control’ün her zamanki gibi çalışacağı uygulamaları listeleyebilirsiniz, örneğin bir uzak masaüstü uygulaması: engelleme onlara uygulanmaz.
 
 **⌘Q ve ⌘W’yi koruma.** ⌘Q ve ⌘W tek başına hiçbir şey yapmaz, böylece bir uygulamadan yanlışlıkla çıkmaz ya da bir pencereyi yanlışlıkla kapatmazsınız. Bilerek yapmak için Shift ekleyin: ⇧⌘Q çıkar, ⇧⌘W kapatır. Tüm uygulamalarda çalışır. Her tuşun kendi anahtarı vardır. Varsayılan olarak kapalıdır.
 
@@ -50,9 +50,9 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 **İmleç hızlandırmayı kapat.** Fareyi ne kadar hızlı hareket ettirirseniz ettirin, imleç tam olarak fare kadar hareket eder, LinearMouse’taki gibi. **İzleme hızı** sürgüsü imlecin ne kadar hızlı gideceğini ayarlar. Yalnızca farelerle çalışır, İzleme Dörtgeni olduğu gibi kalır. Özelliği kapatın ya da pika-tools’tan çıkın, macOS kendi ayarlarına geri döner. Varsayılan olarak kapalıdır.
 
-**Satır satır kaydır.** Fare tekerinin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır, tıpkı Windows’ta olduğu gibi. Tık başına 1 ile 10 arasında satır seçebilirsiniz, varsayılan 3’tür. Doğal Kaydırma, Sistem Ayarları’nda nasıl ayarladıysanız öyle kalır. Yalnızca fareler için çalışır, izleme dörtgeni olduğu gibi kalır. Varsayılan olarak kapalıdır.
+**Satır satır kaydır.** Fare tekerinin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı sayıda satır kaydırır, tıpkı Windows’ta olduğu gibi. Tık başına 1 ile 10 arasında satır seçebilirsiniz, varsayılan 3’tür. Doğal Kaydırma, Sistem Ayarları’nda nasıl ayarladıysanız öyle kalır. Yalnızca fareler için çalışır, izleme dörtgeni olduğu gibi kalır. Varsayılan olarak kapalıdır. **Tık başına mesafe** kaydırıcısının yanında küçük bir sayfa seçtiğiniz mesafe kadar kayar, bir nokta da varsayılan değeri gösterir.
 
-Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için aynı ayarı piksele çevirin ve tık başına 1 ile 200 piksel arasında seçin, varsayılan 40.
+Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için aynı ayarı piksele çevirin ve tık başına 1 ile 200 piksel arasında seçin, varsayılan 40. Kaydırıcı bunun ekran yüksekliğinin ne kadarı olduğunu da söyler.
 
 **Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Safari’de, Finder’da ve diğer Apple uygulamalarında, Firefox’ta, Opera’da ve ForkLift’te geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. JetBrains IDE’leri gibi diğer uygulamalar düğmeleri olduğu gibi alır ve kendi yöntemleriyle ele alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 

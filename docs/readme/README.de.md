@@ -40,7 +40,7 @@ pika-tools zeichnet nichts auf, speichert nichts und sendet nichts von dem, was 
 
 ## Funktionen
 
-**Ctrl-Kurzbefehle blockieren.** Ctrl wird zu einer normalen Taste. Apps sehen weiterhin, dass sie gedrückt ist, aber macOS macht daraus keine Kurzbefehle mehr: Ctrl+Leertaste wechselt nicht die Eingabequelle, Ctrl+Pfeiltasten wechseln nicht den Schreibtisch und Ctrl-Klick ist ein normaler Klick statt eines Kontextmenüs. Rechtsklick und Tippen mit zwei Fingern funktionieren wie gewohnt. Praktisch in Spielen und bei Remotedesktop-Sitzungen, wo Ctrl eine eigene Aufgabe hat.
+**Ctrl-Kurzbefehle blockieren.** Ctrl wird zu einer normalen Taste. Apps sehen weiterhin, dass sie gedrückt ist, aber macOS macht daraus keine Kurzbefehle mehr: Ctrl+Leertaste wechselt nicht die Eingabequelle, Ctrl+Pfeiltasten wechseln nicht den Schreibtisch und Ctrl-Klick ist ein normaler Klick statt eines Kontextmenüs. Rechtsklick und Tippen mit zwei Fingern funktionieren wie gewohnt. Praktisch in Spielen und bei Remotedesktop-Sitzungen, wo Ctrl eine eigene Aufgabe hat. Du kannst Apps auflisten, in denen Ctrl wie gewohnt funktioniert, zum Beispiel ein Remotedesktop-Programm: Die Sperre gilt dort nicht.
 
 **⌘Q und ⌘W schützen.** ⌘Q und ⌘W allein bewirken nichts, damit du nicht aus Versehen eine App beendest oder ein Fenster schließt. Nimm Shift dazu, um es bewusst zu tun: ⇧⌘Q beendet, ⇧⌘W schließt. Funktioniert in jeder App. Jede Taste hat einen eigenen Schalter. Standardmäßig aus.
 
@@ -50,9 +50,9 @@ pika-tools zeichnet nichts auf, speichert nichts und sendet nichts von dem, was 
 
 **Zeigerbeschleunigung ausschalten.** Der Zeiger bewegt sich genau so weit wie die Maus, egal wie schnell du sie bewegst, wie bei LinearMouse. Ein Regler **Zeigerbewegung** legt fest, wie schnell er sich bewegt. Funktioniert nur mit Mäusen, das Trackpad bleibt, wie es ist. Schalte es aus oder beende pika-tools, und macOS bekommt seine eigenen Einstellungen zurück. Standardmäßig aus.
 
-**Zeilenweise scrollen.** Jeder Klick des Mausrads scrollt gleich viele Zeilen, egal wie schnell du es drehst, wie unter Windows. Wähle 1 bis 10 Zeilen pro Klick, standardmäßig 3. Natürliches Scrollen bleibt so, wie du es in den Systemeinstellungen eingestellt hast. Funktioniert nur für Mäuse, das Trackpad bleibt, wie es ist. Standardmäßig aus.
+**Zeilenweise scrollen.** Jeder Klick des Mausrads scrollt gleich viele Zeilen, egal wie schnell du es drehst, wie unter Windows. Wähle 1 bis 10 Zeilen pro Klick, standardmäßig 3. Natürliches Scrollen bleibt so, wie du es in den Systemeinstellungen eingestellt hast. Funktioniert nur für Mäuse, das Trackpad bleibt, wie es ist. Standardmäßig aus. Neben dem Regler **Distanz pro Klick** scrollt eine kleine Seite um die gewählte Distanz, und ein Punkt markiert den Standardwert.
 
-Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dieselbe Einstellung auf Pixel um und wähle 1 bis 200 Pixel pro Klick, standardmäßig 40.
+Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dieselbe Einstellung auf Pixel um und wähle 1 bis 200 Pixel pro Klick, standardmäßig 40. Der Regler zeigt auch, wie viel der Bildschirmhöhe das ist.
 
 **Seitentasten für Zurück und Vorwärts.** Die Maustasten 4 und 5 gehen in Safari, im Finder und in anderen Apple-Apps, in Firefox, Opera und ForkLift zurück und vorwärts, genau wie eine Wischgeste auf dem Trackpad. Andere Apps, zum Beispiel die JetBrains-IDEs, bekommen die Tasten unverändert und gehen damit auf ihre eigene Weise um. Sind sie bei deiner Maus vertauscht, schalte **Seitentasten tauschen** ein. Standardmäßig aus.
 

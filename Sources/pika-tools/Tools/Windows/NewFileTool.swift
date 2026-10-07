@@ -156,16 +156,65 @@ private final class NameField: NSTextField {
     }
 }
 
+struct NewFileArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.6, 1, 0.7, 1.8]
+    private static let click = CGPoint(x: 128, y: 46)
+
+    var body: some View {
+        let step = reduceMotion ? 4 : tick % Self.durations.count
+        let menu = (1...3).contains(step)
+        let created = on && step >= 3
+        IllustrationRow {
+            Stage {
+                ArtWindow(size: CGSize(width: 168, height: 100)) {
+                    ArtFile(selected: on && step == 4, renaming: on && step == 3)
+                        .opacity(created ? 1 : 0)
+                        .scaleEffect(created ? 1 : 0.6)
+                        .position(x: 38, y: 40)
+                }
+                .position(x: 150, y: 64)
+                if menu {
+                    ArtMenu {
+                        ArtMenuRow(width: 30)
+                        if on {
+                            ArtMenuRow(title: Text("New File"), active: step >= 2)
+                        } else {
+                            ArtMenuRow(width: 44)
+                        }
+                        ArtMenuRow(width: 38)
+                    }
+                    .position(x: Self.click.x + 50, y: Self.click.y + 26)
+                    .transition(.scale(scale: 0.85, anchor: .topLeading).combined(with: .opacity))
+                }
+                if step == 1 {
+                    ArtRipple().position(x: Self.click.x, y: Self.click.y)
+                }
+                ArtCursor()
+                    .cursor(at: step == 0 ? CGPoint(x: 220, y: 100) : step == 1 ? Self.click : CGPoint(x: Self.click.x + 18, y: Self.click.y + 26))
+                    .opacity(step == 4 ? 0 : 1)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
 private struct NewFileSettings: View {
     @Bindable var tool: NewFileTool
     @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings { NewFileArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Right-click in Finder or on the Desktop › New File, then type a name. .txt by default."),
+            subtitle: Text("Right-click in a folder › New File"),
             hint: Text("Right-click in any folder"),
+            help: Text("Right-click in Finder or on the Desktop › New File, then type a name. .txt by default."),
             isOn: $tool.isEnabled
         )
         if tool.needsSettings {

@@ -133,16 +133,86 @@ private func sideButtonsCallback(
     return Unmanaged.passUnretained(event)
 }
 
+struct SideButtonsArt: View {
+    let on: Bool
+    let swapped: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.45, 0.8, 0.45, 0.45, 0.8, 0.45, 0.8]
+    private static let actions = [0, 2, 0, 1, 1, 0, 2, 0]
+    private static let pages = [1, 2, 2, 1, 0, 0, 1, 1]
+    private static let colors: [Color] = [.teal, .accentColor, .pink]
+    private static let pageWidth: CGFloat = 156
+
+    var body: some View {
+        let step = reduceMotion ? 1 : tick % Self.durations.count
+        let action = Self.actions[step]
+        let page = on ? Self.pages[step] : 1
+        let forwardPressed = action == 2 && !swapped || action == 1 && swapped
+        let backPressed = action == 1 && !swapped || action == 2 && swapped
+        IllustrationRow {
+            Stage {
+                ArtMouse(sideButtons: true, back: backPressed, forward: forwardPressed)
+                    .scaleEffect(2.1)
+                    .position(x: 62, y: 66)
+                number("5", pressed: forwardPressed).position(x: 22, y: 61)
+                number("4", pressed: backPressed).position(x: 22, y: 81)
+                ArtWindow(size: CGSize(width: Self.pageWidth, height: 98)) {
+                    VStack(spacing: 0) {
+                        HStack(spacing: 10) {
+                            Image(systemName: "chevron.left").foregroundStyle(on && action == 1 ? Color.accentColor : Color.secondary)
+                            Image(systemName: "chevron.right").foregroundStyle(on && action == 2 ? Color.accentColor : Color.secondary)
+                            Spacer(minLength: 0)
+                        }
+                        .font(.system(size: 9, weight: .bold))
+                        .padding(.horizontal, 9)
+                        .frame(height: 18)
+                        HStack(spacing: 0) {
+                            ForEach(0..<3, id: \.self) { self.pageView($0) }
+                        }
+                        .offset(x: CGFloat(1 - page) * Self.pageWidth)
+                        .frame(width: Self.pageWidth, height: 64)
+                        .clipped()
+                    }
+                }
+                .position(x: 212, y: 64)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+
+    private func number(_ text: String, pressed: Bool) -> some View {
+        Text(verbatim: text)
+            .font(.system(size: 11, weight: .bold, design: .rounded))
+            .foregroundStyle(pressed ? Color.accentColor : Color.secondary)
+    }
+
+    private func pageView(_ index: Int) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                .fill(Self.colors[index].opacity(0.4))
+                .frame(height: 22)
+            ForEach([84, 62, 74], id: \.self) { Capsule().fill(Color.primary.opacity(0.14)).frame(width: CGFloat($0), height: 4) }
+        }
+        .padding(10)
+        .frame(width: Self.pageWidth, height: 64, alignment: .topLeading)
+    }
+}
+
 private struct SideButtonsSettings: View {
     @Bindable var tool: SideButtonsTool
     @Environment(\.inSettings) private var inSettings
 
     var body: some View {
+        if inSettings { SideButtonsArt(on: tool.isEnabled, swapped: tool.swapsButtons) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Mouse buttons 4 and 5 go back and forward, like a trackpad swipe."),
+            subtitle: Text("Like a trackpad swipe"),
             hint: Text("Like a trackpad swipe"),
+            help: Text("Mouse buttons 4 and 5 go back and forward, like a trackpad swipe."),
             isOn: $tool.isEnabled
         )
         if inSettings {

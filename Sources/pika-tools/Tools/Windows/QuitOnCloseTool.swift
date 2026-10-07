@@ -312,8 +312,9 @@ private struct QuitOnCloseSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Closing an app’s last window quits the app. Finder stays open."),
+            subtitle: Text("Closing the last window quits the app"),
             hint: Text("Finder always stays open"),
+            help: Text("Closing an app’s last window quits the app. Finder stays open."),
             isOn: $tool.isEnabled
         )
         AppExclusions(

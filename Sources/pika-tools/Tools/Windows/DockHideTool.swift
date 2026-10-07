@@ -178,8 +178,9 @@ private struct DockHideSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Click the icon of the app you’re in to hide it. Click again to bring it back."),
+            subtitle: Text("Click the icon of the open app to hide it"),
             hint: Text("Click again to bring it back"),
+            help: Text("Click the icon of the app you’re in to hide it. Click again to bring it back."),
             isOn: $tool.isEnabled
         )
     }

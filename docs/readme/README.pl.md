@@ -40,7 +40,7 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 ## Funkcje
 
-**Blokowanie skrótów z Control.** Control staje się zwykłym klawiszem. Aplikacje nadal widzą, że jest wciśnięty, ale macOS nie zamienia go już w skróty: Control+Spacja nie zmienia źródła wprowadzania, Control+strzałki nie przełączają biurek, a Control-kliknięcie to zwykłe kliknięcie zamiast menu podręcznego. Kliknięcie prawym przyciskiem i stuknięcie dwoma palcami działają jak zwykle. Przydaje się w grach i podczas sesji zdalnego pulpitu, gdzie Control ma własne zadanie.
+**Blokowanie skrótów z Control.** Control staje się zwykłym klawiszem. Aplikacje nadal widzą, że jest wciśnięty, ale macOS nie zamienia go już w skróty: Control+Spacja nie zmienia źródła wprowadzania, Control+strzałki nie przełączają biurek, a Control-kliknięcie to zwykłe kliknięcie zamiast menu podręcznego. Kliknięcie prawym przyciskiem i stuknięcie dwoma palcami działają jak zwykle. Przydaje się w grach i podczas sesji zdalnego pulpitu, gdzie Control ma własne zadanie. Możesz wypisać aplikacje, w których Control działa jak zwykle, na przykład klienta pulpitu zdalnego: blokada ich nie dotyczy.
 
 **Ochrona ⌘Q i ⌘W.** Same ⌘Q i ⌘W nic nie robią, więc nie zamkniesz przypadkiem aplikacji ani okna. Dodaj Shift, aby zrobić to celowo: ⇧⌘Q kończy aplikację, ⇧⌘W zamyka okno. Działa we wszystkich aplikacjach. Każdy klawisz ma własny przełącznik. Domyślnie wyłączone.
 
@@ -50,9 +50,9 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 **Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz, jak w LinearMouse. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pika-tools, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
 
-**Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz, tak jak w Windows. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone.
+**Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz, tak jak w Windows. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone. Obok suwaka **Odległość na kliknięcie** mała strona przewija się o wybraną odległość, a kropka oznacza wartość domyślną.
 
-Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich przełącz to samo ustawienie na piksele i wybierz od 1 do 200 pikseli na kliknięcie, domyślnie 40.
+Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich przełącz to samo ustawienie na piksele i wybierz od 1 do 200 pikseli na kliknięcie, domyślnie 40. Suwak pokazuje też, jaką część wysokości ekranu to stanowi.
 
 **Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Safari, Finderze i innych aplikacjach Apple oraz w Firefoksie, Operze i ForkLifcie, tak jak machnięcie na gładziku. Inne aplikacje, na przykład środowiska JetBrains, dostają przyciski bez zmian i obsługują je po swojemu. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 

@@ -202,7 +202,7 @@ final class FinderOpenTool: Tool {
 final class FinderCutTool: Tool {
     let id = "finder-cut"
     let icon = "scissors"
-    var title: String { String(localized: "⌘X cuts files in Finder") }
+    var title: String { String(localized: "Cut files in Finder") }
     let tab = SettingsTab.finder
 
     var isActive: Bool { isEnabled && FinderKeys.shared.isActive }
@@ -321,8 +321,10 @@ private struct FinderOpenSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows."),
-            hint: Text("Return opens, F2 or fn F2 renames"),
+            subtitle: Text("Open and rename, like on Windows"),
+            hint: Text("↩ opens, F2 renames"),
+            help: Text("In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows."),
+            keys: ["↩", "F2"],
             isOn: $tool.isEnabled
         )
     }
@@ -337,8 +339,10 @@ private struct FinderCutSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut."),
+            subtitle: Text("Then ⌘V moves them, like on Windows"),
             hint: Text("⌘X cuts, ⌘V moves"),
+            help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut."),
+            keys: ["⌘", "X"],
             isOn: $tool.isEnabled
         )
     }

@@ -40,7 +40,7 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 ## Funktioner
 
-**Blockera kortkommandon med kontroll.** Kontroll blir en vanlig tangent. Appar ser fortfarande att den hålls ned, men macOS gör inte längre om den till kortkommandon: kontroll+mellanslag byter inte inmatningskälla, kontroll+piltangenter byter inte skrivbord och kontroll-klick är ett vanligt klick i stället för en kontextmeny. Högerklick och tvåfingerstryck fungerar som vanligt. Praktiskt i spel och vid fjärrskrivbordssessioner, där kontroll har en egen uppgift.
+**Blockera kortkommandon med kontroll.** Kontroll blir en vanlig tangent. Appar ser fortfarande att den hålls ned, men macOS gör inte längre om den till kortkommandon: kontroll+mellanslag byter inte inmatningskälla, kontroll+piltangenter byter inte skrivbord och kontroll-klick är ett vanligt klick i stället för en kontextmeny. Högerklick och tvåfingerstryck fungerar som vanligt. Praktiskt i spel och vid fjärrskrivbordssessioner, där kontroll har en egen uppgift. Du kan lista appar där Kontroll fungerar som vanligt, till exempel en app för fjärrskrivbord: blockeringen gäller inte där.
 
 **Skydda ⌘Q och ⌘W.** ⌘Q och ⌘W ensamma gör ingenting, så du avslutar inte en app eller stänger ett fönster av misstag. Lägg till skift för att göra det med flit: ⇧⌘Q avslutar, ⇧⌘W stänger. Fungerar i alla appar. Varje tangent har en egen reglage. Av som standard.
 
@@ -50,9 +50,9 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 **Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den, precis som LinearMouse. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pika-tools så får macOS tillbaka sina egna inställningar. Av som standard.
 
-**Rulla per rad.** Varje klick med mushjulet rullar lika många rader, hur snabbt du än snurrar på det, som i Windows. Välj från 1 till 10 rader per klick, 3 som standard. Naturlig rullning är kvar som du ställt in den i Systeminställningar. Fungerar bara för möss, styrplattan förblir som den är. Av som standard.
+**Rulla per rad.** Varje klick med mushjulet rullar lika många rader, hur snabbt du än snurrar på det, som i Windows. Välj från 1 till 10 rader per klick, 3 som standard. Naturlig rullning är kvar som du ställt in den i Systeminställningar. Fungerar bara för möss, styrplattan förblir som den är. Av som standard. Bredvid skjutreglaget **Avstånd per klick** rullar en liten sida det avstånd du väljer, och en prick markerar standardvärdet.
 
-Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma inställning till pixlar och väljer 1 till 200 pixlar per klick, 40 som standard.
+Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma inställning till pixlar och väljer 1 till 200 pixlar per klick, 40 som standard. Reglaget visar också hur stor del av skärmhöjden det motsvarar.
 
 **Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Safari, Finder och andra Apple-appar, i Firefox, Opera och ForkLift, som en svepning på styrplattan. Andra appar, till exempel JetBrains IDE:er, får knapparna som de är och hanterar dem på sitt eget sätt. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 

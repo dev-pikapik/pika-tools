@@ -49,3 +49,43 @@ struct CenteredSwitchStyle: ToggleStyle {
         }
     }
 }
+
+struct KeyCap: View {
+    let symbol: String
+
+    var body: some View {
+        Text(verbatim: symbol)
+            .font(.system(size: 13, weight: .medium, design: .rounded))
+            .frame(minWidth: 24, minHeight: 24)
+            .background(.quaternary, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .strokeBorder(.separator, lineWidth: 0.5)
+            }
+    }
+}
+
+struct KeyCaps: View {
+    let keys: [String]
+
+    var body: some View {
+        HStack(spacing: 3) {
+            ForEach(Array(keys.enumerated()), id: \.offset) { KeyCap(symbol: $0.element) }
+        }
+        .frame(minWidth: 51, alignment: .leading)
+        .accessibilityHidden(true)
+    }
+}
+
+struct KeyLabel: View {
+    var keys: [String] = []
+    let title: Text
+    var subtitle: Text?
+
+    var body: some View {
+        HStack(spacing: 12) {
+            if !keys.isEmpty { KeyCaps(keys: keys) }
+            RowLabel(title, subtitle)
+        }
+    }
+}

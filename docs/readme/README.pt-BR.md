@@ -40,7 +40,7 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 
 ## Recursos
 
-**Bloquear atalhos com Control.** Control vira uma tecla comum. Os apps ainda veem que ela está pressionada, mas o macOS não a transforma mais em atalhos: Control+Espaço não troca a fonte de entrada, Control+setas não trocam de mesa e Control+clique é um clique normal em vez de abrir um menu de contexto. O clique secundário e o toque com dois dedos funcionam como sempre. Útil em jogos e em sessões de área de trabalho remota, onde o Control tem uma função própria.
+**Bloquear atalhos com Control.** Control vira uma tecla comum. Os apps ainda veem que ela está pressionada, mas o macOS não a transforma mais em atalhos: Control+Espaço não troca a fonte de entrada, Control+setas não trocam de mesa e Control+clique é um clique normal em vez de abrir um menu de contexto. O clique secundário e o toque com dois dedos funcionam como sempre. Útil em jogos e em sessões de área de trabalho remota, onde o Control tem uma função própria. Você pode listar apps em que o Control deve funcionar como de costume, por exemplo um cliente de área de trabalho remota: o bloqueio não vale para eles.
 
 **Proteger ⌘Q e ⌘W.** ⌘Q e ⌘W sozinhos não fazem nada, então você não encerra um app nem fecha uma janela sem querer. Adicione Shift para fazer isso de propósito: ⇧⌘Q encerra, ⇧⌘W fecha. Funciona em todos os apps. Cada tecla tem a própria chave. Desativado por padrão.
 
@@ -50,9 +50,9 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 
 **Desativar a aceleração do cursor.** O ponteiro se move exatamente o quanto o mouse se move, não importa a velocidade, como no LinearMouse. Um controle **Velocidade do rastreamento** define a rapidez dele. Funciona só com mouses; o trackpad fica como está. Desative a opção ou encerre o pika-tools e o macOS volta aos próprios ajustes. Desativado por padrão.
 
-**Rolar por linhas.** Cada clique da roda do mouse rola o mesmo número de linhas, por mais rápido que você a gire, como no Windows. Escolha de 1 a 10 linhas por clique, 3 por padrão. A rolagem natural continua como você definiu nos Ajustes do Sistema. Funciona só para mouses, o trackpad continua como está. Desativado por padrão.
+**Rolar por linhas.** Cada clique da roda do mouse rola o mesmo número de linhas, por mais rápido que você a gire, como no Windows. Escolha de 1 a 10 linhas por clique, 3 por padrão. A rolagem natural continua como você definiu nos Ajustes do Sistema. Funciona só para mouses, o trackpad continua como está. Desativado por padrão. Ao lado do controle deslizante **Distância por clique**, uma página pequena rola a distância escolhida, e um ponto marca o valor padrão.
 
-Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma opção para pixels e escolha de 1 a 200 pixels por clique, 40 por padrão.
+Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma opção para pixels e escolha de 1 a 200 pixels por clique, 40 por padrão. O controle também mostra que parte da altura da tela isso representa.
 
 **Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse voltam e avançam no Safari, no Finder e em outros apps da Apple, no Firefox, no Opera e no ForkLift, como um gesto de deslizar no trackpad. Outros apps, como os IDEs da JetBrains, recebem os botões do jeito que são e os tratam à própria maneira. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
 

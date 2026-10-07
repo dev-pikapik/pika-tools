@@ -55,7 +55,7 @@ struct KeyRepeatArt: View {
                     .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
                     .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
                     .overlay {
-                        Text(verbatim: "a")
+                        Text(verbatim: "A")
                             .font(.system(size: 17, weight: .medium, design: .rounded))
                             .foregroundStyle(down ? Color.white : Color.primary)
                     }
@@ -117,8 +117,10 @@ private struct KeyRepeatSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Holding a key repeats it instead of opening the accent menu. Restart open apps to apply."),
+            subtitle: Text("Repeats instead of the accent menu"),
             hint: Text("Instead of the accent menu"),
+            help: Text("Holding a key repeats it instead of opening the accent menu. Restart open apps to apply."),
+            keys: ["A"],
             isOn: $tool.isEnabled
         )
     }

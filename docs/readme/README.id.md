@@ -40,7 +40,7 @@ pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau 
 
 ## Fitur
 
-**Blokir pintasan Control.** Control menjadi tombol biasa. App tetap tahu tombol itu ditekan, tetapi macOS tidak lagi mengubahnya menjadi pintasan: Control+Spasi tidak mengganti sumber input, Control+panah tidak berpindah desktop, dan Control-klik menjadi klik biasa, bukan menu pintasan. Klik kanan dan ketuk dua jari tetap bekerja seperti biasa. Berguna di game dan sesi desktop jarak jauh, tempat Control punya tugasnya sendiri.
+**Blokir pintasan Control.** Control menjadi tombol biasa. App tetap tahu tombol itu ditekan, tetapi macOS tidak lagi mengubahnya menjadi pintasan: Control+Spasi tidak mengganti sumber input, Control+panah tidak berpindah desktop, dan Control-klik menjadi klik biasa, bukan menu pintasan. Klik kanan dan ketuk dua jari tetap bekerja seperti biasa. Berguna di game dan sesi desktop jarak jauh, tempat Control punya tugasnya sendiri. Anda bisa menambahkan app yang membuat Control tetap berfungsi seperti biasa, misalnya app desktop jarak jauh: pemblokiran tidak berlaku di sana.
 
 **Lindungi ⌘Q dan ⌘W.** ⌘Q dan ⌘W saja tidak melakukan apa pun, jadi Anda tidak akan keluar dari app atau menutup jendela secara tidak sengaja. Tambahkan Shift untuk melakukannya dengan sengaja: ⇧⌘Q keluar, ⇧⌘W menutup. Berfungsi di semua app. Setiap tombol punya saklarnya sendiri. Mati secara default.
 
@@ -50,9 +50,9 @@ pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau 
 
 **Matikan akselerasi penunjuk.** Penunjuk bergerak persis sejauh gerakan tetikus, secepat apa pun Anda menggerakkannya, seperti LinearMouse. Penggeser **Kecepatan melacak** mengatur seberapa cepat penunjuk bergerak. Hanya berlaku untuk tetikus, trackpad tetap seperti semula. Matikan fitur ini atau keluar dari pika-tools, dan macOS mendapatkan kembali pengaturannya sendiri. Mati secara default.
 
-**Gulir per baris.** Setiap klik roda tetikus menggulir jumlah baris yang sama, secepat apa pun Anda memutarnya, seperti di Windows. Pilih 1 sampai 10 baris per klik, default-nya 3. Pengguliran alami tetap seperti yang Anda atur di Pengaturan Sistem. Hanya berlaku untuk tetikus, trackpad tidak berubah. Mati secara default.
+**Gulir per baris.** Setiap klik roda tetikus menggulir jumlah baris yang sama, secepat apa pun Anda memutarnya, seperti di Windows. Pilih 1 sampai 10 baris per klik, default-nya 3. Pengguliran alami tetap seperti yang Anda atur di Pengaturan Sistem. Hanya berlaku untuk tetikus, trackpad tidak berubah. Mati secara default. Di samping penggeser **Jarak per klik**, halaman kecil bergulir sejauh yang Anda pilih, dan titik menandai nilai bawaan.
 
-Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, ubah pengaturan yang sama ke piksel dan pilih 1 sampai 200 piksel per klik, bawaannya 40.
+Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, ubah pengaturan yang sama ke piksel dan pilih 1 sampai 200 piksel per klik, bawaannya 40. Penggeser juga menunjukkan berapa bagian tinggi layar itu.
 
 **Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 berfungsi untuk mundur dan maju di Safari, Finder, dan app Apple lainnya, juga di Firefox, Opera, dan ForkLift, sama seperti usapan di trackpad. App lain, seperti IDE JetBrains, menerima tombolnya apa adanya dan menanganinya dengan cara sendiri. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
 
