@@ -78,6 +78,8 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Conversie în Finder.** Clic dreapta pe un fișier în Finder și alege **Convertește în** ca să-l salvezi în alt format: o imagine ca JPEG, PNG, HEIC, GIF, TIFF sau PDF, un video ca MP4, MOV sau doar sunetul, muzica ca M4A, WAV sau AIFF. Originalul rămâne neschimbat și nimic nu pleacă de pe Mac. Se activează separat de copia mai mică. Implicit dezactivat.
 
+**Modul Joc.** Adaugă-ți jocurile și, cât timp joci, Mac-ul nu te scoate din joc. Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc, ⌘Q și ⌘W nu îl închid din greșeală, cursorul nu alunecă spre Dock, bara de meniu sau alt ecran, limba tastaturii nu se schimbă, iar ecranul rămâne aprins. Fiecare dintre acestea are propriul comutator pe pagina Jocuri, iar pika-tools îți sugerează jocurile pe care le găsește pe Mac. Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. Imediat ce ieși din joc, totul merge ca de obicei. Implicit dezactivat.
+
 Fiecare instrument are propriul comutator în meniu și în configurări. Ai nevoie din nou de Control+C obișnuit? Dezactivează instrumentul respectiv.
 
 Pictograma din bara de meniu arată starea dintr-o privire: o săgeată cu un clic când instrumentele funcționează, o săgeată tăiată când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.

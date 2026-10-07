@@ -78,6 +78,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Conversión en el Finder.** Haz clic derecho en un archivo en el Finder y elige **Convertir a** para guardarlo en otro formato: una imagen como JPEG, PNG, HEIC, GIF, TIFF o PDF, un vídeo como MP4, MOV o solo su sonido, la música como M4A, WAV o AIFF. El original se queda tal cual y nada sale de tu Mac. Se activa por separado de la copia más ligera. Desactivado por omisión.
 
+**Modo de juego.** Añade tus juegos y, mientras juegas, tu Mac no te saca del juego. Spotlight, Siri, ⌘Tab, Mission Control y los deslizamientos entre escritorios no se abren encima del juego, ⌘Q y ⌘W no lo cierran por accidente, el puntero no se escapa al Dock, a la barra de menús ni a otra pantalla, el idioma del teclado no cambia y la pantalla se mantiene encendida. Cada una de estas opciones tiene su propio interruptor en la página Juegos, y pika-tools te sugiere los juegos que encuentra en tu Mac. Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc siempre funciona. En cuanto sales del juego, todo funciona como siempre. Desactivado por omisión.
+
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
 
 El icono de la barra de menús muestra el estado de un vistazo: una flecha con un clic cuando las herramientas funcionan, una flecha tachada cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.

@@ -78,6 +78,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Převod ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Převést na** a soubor se uloží v jiném formátu: obrázek jako JPEG, PNG, HEIC, GIF, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudba jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Zapíná se zvlášť od menší kopie. Ve výchozím stavu vypnuto.
 
+**Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej, jazyk klávesnice se nezmění a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pika-tools vám nabídne hry, které na vašem Macu najde. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: šipka s kliknutím, když nástroje fungují, přeškrtnutá šipka, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.

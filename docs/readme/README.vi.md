@@ -78,6 +78,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Chuyển đổi trong Finder.** Bấm chuột phải vào tệp trong Finder và chọn **Chuyển sang** để lưu tệp ở định dạng khác: ảnh thành JPEG, PNG, HEIC, GIF, TIFF hoặc PDF, video thành MP4, MOV hoặc chỉ lấy âm thanh, nhạc thành M4A, WAV hoặc AIFF. Tệp gốc vẫn giữ nguyên và không có gì rời khỏi máy Mac của bạn. Bật riêng với bản sao nhỏ hơn. Mặc định tắt.
 
+**Chế độ trò chơi.** Thêm trò chơi của bạn, và trong lúc bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi. Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi, ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ không trượt sang Dock, thanh menu hay màn hình khác, ngôn ngữ bàn phím không đổi và màn hình luôn sáng. Mỗi mục có công tắc riêng trên trang Trò chơi, và pika-tools gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. Ngay khi bạn rời trò chơi, mọi thứ hoạt động như bình thường. Mặc định tắt.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần dùng lại Control+C bình thường? Tắt công cụ đó.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: mũi tên có dấu bấm khi các công cụ đang chạy, mũi tên bị gạch khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.

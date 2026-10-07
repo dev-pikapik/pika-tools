@@ -78,6 +78,8 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Konversi di Finder.** Klik kanan file di Finder dan pilih **Konversi ke** untuk menyimpannya dalam format lain: gambar sebagai JPEG, PNG, HEIC, GIF, TIFF, atau PDF, video sebagai MP4, MOV, atau suaranya saja, musik sebagai M4A, WAV, atau AIFF. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Dinyalakan terpisah dari Salinan Lebih Kecil. Mati secara bawaan.
 
+**Mode Game.** Tambahkan game Anda, dan selama Anda bermain, Mac tidak menarik Anda keluar dari game. Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game, ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tidak meluncur ke Dock, bar menu, atau layar lain, bahasa keyboard tidak berganti, dan layar tetap menyala. Masing-masing punya saklarnya sendiri di halaman Game, dan pika-tools menyarankan game yang ditemukannya di Mac Anda. Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, ⇧⌘W. ⌥⌘Esc selalu berfungsi. Begitu Anda keluar dari game, semuanya berfungsi seperti biasa. Mati secara bawaan.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
 
 Ikon di bar menu menunjukkan status sekilas: panah dengan klik saat alat bekerja, panah dicoret saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.

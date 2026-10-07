@@ -78,6 +78,8 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Konwersja w Finderze.** Kliknij prawym plik w Finderze i wybierz **Konwertuj na**, aby zapisać go w innym formacie: obraz jako JPEG, PNG, HEIC, GIF, TIFF lub PDF, wideo jako MP4, MOV albo sam dźwięk, muzykę jako M4A, WAV lub AIFF. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Włącza się osobno od mniejszej kopii. Domyślnie wyłączone.
 
+**Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, język klawiatury się nie zmienia, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pika-tools podpowiada gry, które znajdzie na Twoim Macu. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach. Potrzebujesz z powrotem zwykłego Control+C? Wyłącz to narzędzie.
 
 Ikona na pasku menu od razu pokazuje stan: strzałka z kliknięciem, gdy narzędzia działają, przekreślona strzałka, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
