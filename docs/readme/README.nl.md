@@ -40,7 +40,7 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 ## Functies
 
-**Control-toetscombinaties blokkeren.** Control wordt een gewone toets. Apps zien nog steeds dat hij is ingedrukt, maar macOS maakt er geen toetscombinaties meer van: Control+spatiebalk wisselt niet van invoerbron, Control+pijltoetsen wisselen niet van bureaublad en Control-klik is een gewone klik in plaats van een contextueel menu. Secundair klikken en tikken met twee vingers werken zoals altijd. Handig in games en bij externe bureaubladsessies, waar Control een eigen taak heeft.
+**Control-toetscombinaties blokkeren.** Control wordt een gewone toets. Apps zien nog steeds dat hij is ingedrukt, maar macOS maakt er geen toetscombinaties meer van: Control+spatiebalk wisselt niet van invoerbron, Control+pijltoetsen wisselen niet van bureaublad en Control-klik is een gewone klik in plaats van een contextueel menu. Secundair klikken en tikken met twee vingers werken zoals altijd. Handig in games en bij externe bureaubladsessies, waar Control een eigen taak heeft. Je kunt apps opgeven waarin Control gewoon blijft werken, bijvoorbeeld een app voor bureaublad op afstand: de blokkade geldt daar niet.
 
 **⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
 
@@ -50,9 +50,9 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 **Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt, net als LinearMouse. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pika-tools, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
 
-**Per regel scrollen.** Elke klik van het muiswieltje scrolt evenveel regels, hoe snel je het ook draait, zoals op Windows. Kies van 1 tot 10 regels per klik, standaard 3. Natuurlijk scrollen blijft zoals je het in Systeeminstellingen hebt ingesteld. Werkt alleen voor muizen, het trackpad blijft zoals het is. Standaard uit.
+**Per regel scrollen.** Elke klik van het muiswieltje scrolt evenveel regels, hoe snel je het ook draait, zoals op Windows. Kies van 1 tot 10 regels per klik, standaard 3. Natuurlijk scrollen blijft zoals je het in Systeeminstellingen hebt ingesteld. Werkt alleen voor muizen, het trackpad blijft zoals het is. Standaard uit. Naast de schuifregelaar **Afstand per klik** scrolt een kleine pagina de gekozen afstand, en een stip markeert de standaardwaarde.
 
-Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde instelling op pixels en kies 1 tot 200 pixels per klik, standaard 40.
+Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde instelling op pixels en kies 1 tot 200 pixels per klik, standaard 40. De regelaar laat ook zien welk deel van de schermhoogte dat is.
 
 **Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in Safari, de Finder en andere Apple-apps, Firefox, Opera en ForkLift, net als een veeg op het trackpad. Andere apps, zoals de JetBrains-IDE’s, krijgen de knoppen ongewijzigd en gaan er op hun eigen manier mee om. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
 

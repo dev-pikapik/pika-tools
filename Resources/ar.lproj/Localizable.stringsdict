@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld lines per click</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lines@</string>
+		<key>lines</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>zero</key>
+			<string>%lld سطر لكل نقرة</string>
+			<key>one</key>
+			<string>سطر واحد لكل نقرة</string>
+			<key>two</key>
+			<string>سطران لكل نقرة</string>
+			<key>few</key>
+			<string>%lld أسطر لكل نقرة</string>
+			<key>many</key>
+			<string>%lld سطرًا لكل نقرة</string>
+			<key>other</key>
+			<string>%lld سطر لكل نقرة</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

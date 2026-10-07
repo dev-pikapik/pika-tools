@@ -40,7 +40,7 @@ pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez o
 
 ## Fonctionnalités
 
-**Bloquer les raccourcis Contrôle.** Contrôle devient une touche ordinaire. Les apps voient toujours qu’elle est enfoncée, mais macOS ne la transforme plus en raccourcis : Contrôle+Espace ne change plus de source de saisie, Contrôle+flèches ne change plus de bureau, et Contrôle-clic devient un clic normal au lieu d’ouvrir un menu contextuel. Le clic droit et le toucher à deux doigts fonctionnent comme d’habitude. Pratique dans les jeux et les sessions de bureau à distance, où Contrôle a son propre rôle.
+**Bloquer les raccourcis Contrôle.** Contrôle devient une touche ordinaire. Les apps voient toujours qu’elle est enfoncée, mais macOS ne la transforme plus en raccourcis : Contrôle+Espace ne change plus de source de saisie, Contrôle+flèches ne change plus de bureau, et Contrôle-clic devient un clic normal au lieu d’ouvrir un menu contextuel. Le clic droit et le toucher à deux doigts fonctionnent comme d’habitude. Pratique dans les jeux et les sessions de bureau à distance, où Contrôle a son propre rôle. Vous pouvez lister les apps où Contrôle fonctionne comme d’habitude, par exemple un client de bureau à distance : le blocage ne s’y applique pas.
 
 **Protéger ⌘Q et ⌘W.** ⌘Q et ⌘W seuls ne font rien, vous ne quittez donc pas une app ni ne fermez une fenêtre par accident. Ajoutez Maj pour le faire exprès : ⇧⌘Q quitte, ⇧⌘W ferme. Fonctionne dans toutes les apps. Chaque touche a son propre interrupteur. Désactivé par défaut.
 
@@ -50,9 +50,9 @@ pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez o
 
 **Désactiver l’accélération du pointeur.** Le pointeur se déplace exactement autant que la souris, quelle que soit la vitesse de votre geste, comme avec LinearMouse. Un curseur **Vitesse de déplacement** règle sa rapidité. Fonctionne uniquement avec les souris, le trackpad reste tel quel. Désactivez l’option ou quittez pika-tools, et macOS retrouve ses propres réglages. Désactivé par défaut.
 
-**Défiler par lignes.** Chaque cran de la molette de la souris fait défiler le même nombre de lignes, quelle que soit la vitesse à laquelle vous la tournez, comme sous Windows. Choisissez de 1 à 10 lignes par cran, 3 par défaut. Le défilement naturel reste tel que vous l’avez réglé dans Réglages Système. Ne concerne que les souris, le trackpad reste comme il est. Désactivé par défaut.
+**Défiler par lignes.** Chaque cran de la molette de la souris fait défiler le même nombre de lignes, quelle que soit la vitesse à laquelle vous la tournez, comme sous Windows. Choisissez de 1 à 10 lignes par cran, 3 par défaut. Le défilement naturel reste tel que vous l’avez réglé dans Réglages Système. Ne concerne que les souris, le trackpad reste comme il est. Désactivé par défaut. À côté du curseur **Distance par cran**, une petite page défile de la distance choisie, et un point marque la valeur par défaut.
 
-Certaines apps et certains jeux comptent le défilement en pixels exacts : pour eux, passez ce même réglage en pixels et choisissez de 1 à 200 pixels par cran, 40 par défaut.
+Certaines apps et certains jeux comptent le défilement en pixels exacts : pour eux, passez ce même réglage en pixels et choisissez de 1 à 200 pixels par cran, 40 par défaut. Le curseur indique aussi quelle part de la hauteur de l’écran cela représente.
 
 **Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris font précédent et suivant dans Safari, le Finder et les autres apps Apple, dans Firefox, Opera et ForkLift, comme un balayage sur le trackpad. Les autres apps, comme les IDE JetBrains, reçoivent les boutons tels quels et les gèrent à leur façon. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
 

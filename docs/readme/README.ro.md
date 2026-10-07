@@ -40,7 +40,7 @@ pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastez
 
 ## Funcționalități
 
-**Blocarea scurtăturilor cu Control.** Control devine o tastă obișnuită. Aplicațiile văd în continuare că este apăsată, dar macOS nu o mai transformă în scurtături: Control+Spațiu nu schimbă sursa de introducere, Control+săgeți nu schimbă spațiul de lucru, iar Control-clic este un clic normal în loc de un meniu contextual. Clicul secundar și atingerea cu două degete funcționează ca de obicei. Util în jocuri și în sesiunile de desktop la distanță, unde Control are propriul rol.
+**Blocarea scurtăturilor cu Control.** Control devine o tastă obișnuită. Aplicațiile văd în continuare că este apăsată, dar macOS nu o mai transformă în scurtături: Control+Spațiu nu schimbă sursa de introducere, Control+săgeți nu schimbă spațiul de lucru, iar Control-clic este un clic normal în loc de un meniu contextual. Clicul secundar și atingerea cu două degete funcționează ca de obicei. Util în jocuri și în sesiunile de desktop la distanță, unde Control are propriul rol. Poți adăuga aplicațiile în care Control funcționează ca de obicei, de exemplu un client de desktop la distanță: blocarea nu li se aplică.
 
 **Protejarea ⌘Q și ⌘W.** ⌘Q și ⌘W singure nu fac nimic, așa că nu închizi din greșeală o aplicație sau o fereastră. Adaugă Shift ca să o faci intenționat: ⇧⌘Q închide aplicația, ⇧⌘W închide fereastra. Funcționează în toate aplicațiile. Fiecare tastă are propriul comutator. Dezactivat implicit.
 
@@ -50,9 +50,9 @@ pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastez
 
 **Dezactivează accelerarea cursorului.** Cursorul se mișcă exact cât mausul, oricât de repede l-ai mișca, ca în LinearMouse. Un glisor **Viteză urmărire** stabilește cât de repede merge. Funcționează doar cu mausuri, trackpadul rămâne cum este. Dezactiveaz-o sau închide pika-tools, iar macOS își recapătă propriile setări. Dezactivat implicit.
 
-**Derulare pe rânduri.** Fiecare clic al rotiței mausului derulează același număr de rânduri, oricât de repede o rotești, ca pe Windows. Alege de la 1 la 10 rânduri per clic, implicit 3. Derularea naturală rămâne așa cum ai setat-o în Configurări sistem. Funcționează doar pentru mausuri, trackpadul rămâne cum este. Dezactivat implicit.
+**Derulare pe rânduri.** Fiecare clic al rotiței mausului derulează același număr de rânduri, oricât de repede o rotești, ca pe Windows. Alege de la 1 la 10 rânduri per clic, implicit 3. Derularea naturală rămâne așa cum ai setat-o în Configurări sistem. Funcționează doar pentru mausuri, trackpadul rămâne cum este. Dezactivat implicit. Lângă cursorul **Distanța per clic**, o pagină mică se derulează pe distanța aleasă, iar un punct marchează valoarea implicită.
 
-Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, comută aceeași setare pe pixeli și alege între 1 și 200 de pixeli per clic, implicit 40.
+Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, comută aceeași setare pe pixeli și alege între 1 și 200 de pixeli per clic, implicit 40. Cursorul arată și ce parte din înălțimea ecranului reprezintă.
 
 **Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului merg înapoi și înainte în Safari, Finder și alte aplicații Apple, în Firefox, Opera și ForkLift, la fel ca o glisare pe trackpad. Alte aplicații, precum mediile JetBrains, primesc butoanele așa cum sunt și le tratează în felul lor. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
 

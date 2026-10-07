@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.0] - Unreleased
+
+### Added
+- Settings › Keyboard: “Block Control shortcuts” has a list of apps where Ctrl keeps working as usual, for example a remote desktop app. The list is saved, synced through iCloud Drive and cleared by Restore Defaults.
+- New pictures that move with the switch: Switch language, Block Control shortcuts, Side buttons and New File in Finder.
+- Settings › Mouse: “Distance per click” shows a small page that scrolls by the distance you pick, with a dot at the default. In pixel mode it also says how much of the screen height that is.
+
+### Changed
+- Shortcuts are shown as keys everywhere: ⌃, ⌥ ⇧, ⌘ Q, ⌘ W, ↩ F2, ⌘ X and the key repeat key.
+- Every description in Settings is one short line, and the full sentence moved to the tooltip. The menu bar hints are shorter too.
+- One “Distance per click” slider replaces the two wheel sliders, with Slower and Faster at the ends. The tracking speed slider marks the speed the Mac uses by itself.
+- Clearer names: “Block Control shortcuts”, “Switch language”, “Cut files in Finder”. The ⌘Q and ⌘W group lost its heading and paragraph.
+
 ## [1.17.1] - Unreleased
 
 ### Fixed

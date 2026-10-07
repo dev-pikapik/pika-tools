@@ -40,7 +40,7 @@ pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì b
 
 ## Tính năng
 
-**Chặn phím tắt Control.** Control trở thành một phím bình thường. Các ứng dụng vẫn biết phím đang được giữ, nhưng macOS không còn biến nó thành phím tắt: Control+Phím cách không đổi nguồn đầu vào, Control+phím mũi tên không chuyển màn hình nền, và Control-bấm là một lần bấm bình thường thay vì mở menu ngữ cảnh. Bấm chuột phải và chạm bằng hai ngón vẫn hoạt động như thường. Hữu ích khi chơi game và dùng máy tính từ xa, nơi Control có việc riêng của nó.
+**Chặn phím tắt Control.** Control trở thành một phím bình thường. Các ứng dụng vẫn biết phím đang được giữ, nhưng macOS không còn biến nó thành phím tắt: Control+Phím cách không đổi nguồn đầu vào, Control+phím mũi tên không chuyển màn hình nền, và Control-bấm là một lần bấm bình thường thay vì mở menu ngữ cảnh. Bấm chuột phải và chạm bằng hai ngón vẫn hoạt động như thường. Hữu ích khi chơi game và dùng máy tính từ xa, nơi Control có việc riêng của nó. Bạn có thể liệt kê các ứng dụng mà Control vẫn hoạt động bình thường, ví dụ ứng dụng máy tính từ xa: việc chặn không áp dụng cho chúng.
 
 **Bảo vệ ⌘Q và ⌘W.** Chỉ nhấn ⌘Q hoặc ⌘W thì không có gì xảy ra, nên bạn sẽ không vô tình thoát ứng dụng hay đóng cửa sổ. Thêm Shift khi bạn thật sự muốn: ⇧⌘Q để thoát, ⇧⌘W để đóng. Hoạt động trong mọi ứng dụng. Mỗi phím có công tắc riêng. Tắt theo mặc định.
 
@@ -50,9 +50,9 @@ pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì b
 
 **Tắt tăng tốc con trỏ.** Con trỏ di chuyển đúng bằng quãng đường của chuột, dù bạn di chuyển nhanh đến đâu, giống như LinearMouse. Thanh trượt **Tốc độ di chuyển** đặt tốc độ của con trỏ. Chỉ hoạt động với chuột, bàn di chuột vẫn giữ nguyên. Tắt tính năng hoặc thoát pika-tools, macOS sẽ lấy lại cài đặt của chính nó. Tắt theo mặc định.
 
-**Cuộn theo dòng.** Mỗi lần bấm bánh xe chuột sẽ cuộn cùng một số dòng, dù bạn xoay nhanh đến đâu, giống như trên Windows. Chọn từ 1 đến 10 dòng mỗi lần bấm, mặc định là 3. Cuộn tự nhiên vẫn giữ như bạn đã đặt trong Cài đặt hệ thống. Chỉ áp dụng cho chuột, bàn di chuột giữ nguyên. Tắt theo mặc định.
+**Cuộn theo dòng.** Mỗi lần bấm bánh xe chuột sẽ cuộn cùng một số dòng, dù bạn xoay nhanh đến đâu, giống như trên Windows. Chọn từ 1 đến 10 dòng mỗi lần bấm, mặc định là 3. Cuộn tự nhiên vẫn giữ như bạn đã đặt trong Cài đặt hệ thống. Chỉ áp dụng cho chuột, bàn di chuột giữ nguyên. Tắt theo mặc định. Bên cạnh thanh trượt **Quãng mỗi lần bấm**, một trang nhỏ cuộn đúng quãng bạn chọn, và một chấm đánh dấu giá trị mặc định.
 
-Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chính xác: với chúng, hãy chuyển chính cài đặt này sang pixel và chọn từ 1 đến 200 pixel mỗi lần bấm, mặc định là 40.
+Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chính xác: với chúng, hãy chuyển chính cài đặt này sang pixel và chọn từ 1 đến 200 pixel mỗi lần bấm, mặc định là 40. Thanh trượt cũng cho biết quãng đó bằng bao nhiêu phần chiều cao màn hình.
 
 **Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 giúp lùi và tiến trong Safari, Finder và các ứng dụng khác của Apple, trong Firefox, Opera và ForkLift, giống như vuốt trên bàn di chuột. Các ứng dụng khác, như IDE của JetBrains, nhận các nút nguyên trạng và tự xử lý theo cách riêng. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
 

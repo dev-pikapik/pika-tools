@@ -40,7 +40,7 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 ## Funkce
 
-**Blokování zkratek s Controlem.** Control se stane obyčejnou klávesou. Aplikace stále vidí, že je stisknutý, ale macOS z něj už nedělá zkratky: Control+mezerník nepřepíná zdroj vstupu, Control+šipky nepřepínají plochy a kliknutí s Controlem je obyčejné kliknutí místo kontextové nabídky. Kliknutí pravým tlačítkem a klepnutí dvěma prsty fungují jako obvykle. Hodí se ve hrách a při práci se vzdálenou plochou, kde má Control vlastní úlohu.
+**Blokování zkratek s Controlem.** Control se stane obyčejnou klávesou. Aplikace stále vidí, že je stisknutý, ale macOS z něj už nedělá zkratky: Control+mezerník nepřepíná zdroj vstupu, Control+šipky nepřepínají plochy a kliknutí s Controlem je obyčejné kliknutí místo kontextové nabídky. Kliknutí pravým tlačítkem a klepnutí dvěma prsty fungují jako obvykle. Hodí se ve hrách a při práci se vzdálenou plochou, kde má Control vlastní úlohu. Lze sestavit seznam aplikací, ve kterých Control funguje jako obvykle, například klienta vzdálené plochy: blokování se jich netýká.
 
 **Ochrana ⌘Q a ⌘W.** Samotné ⌘Q a ⌘W nic nedělají, takže omylem neukončíte aplikaci ani nezavřete okno. Přidejte Shift, když to chcete udělat záměrně: ⇧⌘Q ukončí, ⇧⌘W zavře. Funguje ve všech aplikacích. Každá klávesa má vlastní přepínač. Ve výchozím stavu vypnuto.
 
@@ -50,9 +50,9 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 **Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle, stejně jako v LinearMouse. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
 
-**Posouvat po řádcích.** Každé cvaknutí kolečka myši posune stejný počet řádků, ať kolečkem točíte jakkoli rychle, jako ve Windows. Vyberte 1 až 10 řádků na cvaknutí, ve výchozím stavu 3. Přirozené posouvání zůstane tak, jak jste ho nastavili v Nastavení systému. Funguje jen pro myš, trackpad zůstává beze změny. Ve výchozím stavu vypnuto.
+**Posouvat po řádcích.** Každé cvaknutí kolečka myši posune stejný počet řádků, ať kolečkem točíte jakkoli rychle, jako ve Windows. Vyberte 1 až 10 řádků na cvaknutí, ve výchozím stavu 3. Přirozené posouvání zůstane tak, jak jste ho nastavili v Nastavení systému. Funguje jen pro myš, trackpad zůstává beze změny. Ve výchozím stavu vypnuto. Vedle posuvníku **Vzdálenost na cvaknutí** se malá stránka posune o zvolenou vzdálenost a tečka označuje výchozí hodnotu.
 
-Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně přepněte stejné nastavení na pixely a vyberte 1 až 200 pixelů na cvaknutí, výchozí je 40.
+Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně přepněte stejné nastavení na pixely a vyberte 1 až 200 pixelů na cvaknutí, výchozí je 40. Posuvník také ukazuje, jak velkou část výšky obrazovky to tvoří.
 
 **Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed v Safari, ve Finderu a dalších aplikacích Apple, ve Firefoxu, Opeře a ForkLiftu, stejně jako přejetí po trackpadu. Ostatní aplikace, například vývojová prostředí JetBrains, dostanou tlačítka beze změny a zpracují je po svém. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 

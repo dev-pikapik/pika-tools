@@ -40,7 +40,7 @@ pika-tools non registra, non conserva e non invia nulla di ciò che digiti o cli
 
 ## Funzioni
 
-**Blocca le abbreviazioni con Control.** Control diventa un tasto normale. Le app continuano a vederlo premuto, ma macOS non lo trasforma più in abbreviazioni: Control+Spazio non cambia la sorgente di input, Control+frecce non cambiano scrivania e Control-clic è un clic normale invece di aprire un menu contestuale. Il clic secondario e il tocco con due dita funzionano come sempre. Comodo nei giochi e nelle sessioni di desktop remoto, dove Control ha un compito tutto suo.
+**Blocca le abbreviazioni con Control.** Control diventa un tasto normale. Le app continuano a vederlo premuto, ma macOS non lo trasforma più in abbreviazioni: Control+Spazio non cambia la sorgente di input, Control+frecce non cambiano scrivania e Control-clic è un clic normale invece di aprire un menu contestuale. Il clic secondario e il tocco con due dita funzionano come sempre. Comodo nei giochi e nelle sessioni di desktop remoto, dove Control ha un compito tutto suo. Puoi elencare le app in cui Control deve funzionare come al solito, per esempio un client per desktop remoto: il blocco non vale per loro.
 
 **Proteggi ⌘Q e ⌘W.** ⌘Q e ⌘W da soli non fanno nulla, così non chiudi un’app o una finestra per sbaglio. Aggiungi Maiuscole per farlo apposta: ⇧⌘Q esce, ⇧⌘W chiude. Funziona in tutte le app. Ogni tasto ha il suo interruttore. Disattivato di default.
 
@@ -50,9 +50,9 @@ pika-tools non registra, non conserva e non invia nulla di ciò che digiti o cli
 
 **Disattiva l’accelerazione del puntatore.** Il puntatore si sposta esattamente quanto il mouse, a qualsiasi velocità lo muovi, come con LinearMouse. Un cursore **Velocità puntatore** ne regola la velocità. Funziona solo con i mouse, il trackpad resta com’è. Disattivala o esci da pika-tools e macOS riprende le sue impostazioni. Disattivato di default.
 
-**Scorri per righe.** Ogni scatto della rotella del mouse scorre lo stesso numero di righe, per quanto veloce la giri, come su Windows. Scegli da 1 a 10 righe per scatto, 3 di default. Lo scorrimento naturale resta come l’hai impostato in Impostazioni di Sistema. Funziona solo con i mouse, il trackpad resta com’è. Disattivato di default.
+**Scorri per righe.** Ogni scatto della rotella del mouse scorre lo stesso numero di righe, per quanto veloce la giri, come su Windows. Scegli da 1 a 10 righe per scatto, 3 di default. Lo scorrimento naturale resta come l’hai impostato in Impostazioni di Sistema. Funziona solo con i mouse, il trackpad resta com’è. Disattivato di default. Accanto al cursore **Distanza per scatto**, una piccola pagina scorre della distanza scelta, e un punto indica il valore predefinito.
 
-Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, passa la stessa impostazione ai pixel e scegli da 1 a 200 pixel per scatto, 40 di base.
+Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, passa la stessa impostazione ai pixel e scegli da 1 a 200 pixel per scatto, 40 di base. Il cursore mostra anche quanta parte dell’altezza dello schermo corrisponde.
 
 **Tasti laterali per indietro e avanti.** I tasti 4 e 5 del mouse vanno indietro e avanti in Safari, nel Finder e in altre app Apple, in Firefox, Opera e ForkLift, proprio come uno swipe sul trackpad. Le altre app, come gli IDE JetBrains, ricevono i tasti così come sono e li gestiscono a modo loro. Se il tuo mouse li ha invertiti, attiva **Inverti i tasti laterali**. Disattivato di default.
 

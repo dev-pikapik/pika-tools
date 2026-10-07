@@ -131,10 +131,8 @@ private struct CommandKeysSettings: View {
 
     var body: some View {
         if inSettings {
-            RowLabel(Text("Protect ⌘Q and ⌘W"), Text("Add ⇧ to quit or close. ⌘Q and ⌘W alone do nothing, in every app."))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .settingAnchor(String(localized: "Protect ⌘Q and ⌘W"))
             row(key: "Q", title: String(localized: "Quit app"), isOn: $tool.protectsQuit)
+                .settingAnchor(String(localized: "Protect ⌘Q and ⌘W"))
             row(key: "W", title: String(localized: "Close window"), isOn: $tool.protectsClose)
         } else {
             ToggleRow(
@@ -149,29 +147,7 @@ private struct CommandKeysSettings: View {
 
     private func row(key: String, title: String, isOn: Binding<Bool>) -> some View {
         Toggle(isOn: isOn) {
-            HStack(spacing: 12) {
-                HStack(spacing: 3) {
-                    KeyCap(symbol: "⌘")
-                    KeyCap(symbol: key)
-                }
-                .accessibilityHidden(true)
-                RowLabel(Text(title), Text(isOn.wrappedValue ? "Only with ⇧⌘\(key)" : "With ⌘\(key), as usual"))
-            }
+            KeyLabel(keys: ["⌘", key], title: Text(title), subtitle: isOn.wrappedValue ? Text("Only with ⇧⌘\(key)") : Text("With ⌘\(key), as usual"))
         }
-    }
-}
-
-private struct KeyCap: View {
-    let symbol: String
-
-    var body: some View {
-        Text(verbatim: symbol)
-            .font(.system(size: 13, weight: .medium, design: .rounded))
-            .frame(minWidth: 24, minHeight: 24)
-            .background(.quaternary, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .strokeBorder(.separator, lineWidth: 0.5)
-            }
     }
 }

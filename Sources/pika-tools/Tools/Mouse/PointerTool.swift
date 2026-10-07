@@ -15,7 +15,7 @@ final class PointerTool: Tool {
     private static let linearKey = "HIDUseLinearScalingMouseAcceleration"
     private static let resolutionKey = "HIDPointerResolution"
 
-    private static var systemSpeed: Double {
+    fileprivate static var systemSpeed: Double {
         let value = UserDefaults.standard.object(forKey: "com.apple.mouse.scaling") as? Double ?? 0.875
         return min(max(value, speedRange.lowerBound), speedRange.upperBound)
     }
@@ -181,7 +181,7 @@ struct PointerArt: View {
                     .frame(width: 112, height: 76)
                     .position(x: 78, y: 64)
                 trail(from: 64, length: hand, y: 94, color: Color.accentColor)
-                mouse
+                ArtMouse()
                     .offset(x: hand)
                     .position(x: 64, y: 64)
                 ArtScreen(glow: 0.9, radius: 6) {}
@@ -206,23 +206,6 @@ struct PointerArt: View {
             .frame(width: max(length, 0.1), height: 2)
             .position(x: x + length / 2, y: y)
     }
-
-    private var mouse: some View {
-        UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12)
-            .fill(Art.metal(scheme))
-            .overlay(UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
-            .overlay(alignment: .top) {
-                VStack(spacing: 0) {
-                    Rectangle().fill(Color.primary.opacity(0.2)).frame(width: 0.5, height: 15)
-                    Spacer(minLength: 0)
-                }
-            }
-            .overlay(alignment: .top) {
-                Capsule().fill(Color.primary.opacity(0.35)).frame(width: 3, height: 8).padding(.top, 4)
-            }
-            .frame(width: 24, height: 38)
-            .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)
-    }
 }
 
 private struct PointerSettings: View {
@@ -234,8 +217,9 @@ private struct PointerSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("The pointer moves as far as your hand, at any speed. Mouse only."),
+            subtitle: Text("Same distance as your hand, at any speed"),
             hint: Text("Moves as far as your hand"),
+            help: Text("The pointer moves as far as your hand, at any speed. Mouse only."),
             isOn: $tool.isEnabled
         )
         if inSettings {
@@ -246,10 +230,11 @@ private struct PointerSettings: View {
                     range: PointerTool.speedRange,
                     step: 0.1,
                     ticks: 15,
-                    digits: 1
+                    digits: 1,
+                    mark: PointerTool.systemSpeed
                 )
             } label: {
-                RowLabel(Text("Tracking speed"), Text("Works while acceleration is off"))
+                RowLabel(Text("Tracking speed"), Text("The dot is your Mac’s own speed"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Tracking speed"))

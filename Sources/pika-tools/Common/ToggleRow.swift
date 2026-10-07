@@ -5,16 +5,23 @@ struct ToggleRow: View {
     let title: String
     let subtitle: Text
     var hint: Text?
+    var help: Text?
+    var keys: [String] = []
     @Binding var isOn: Bool
     @Environment(\.inSettings) private var inSettings
     @State private var hovering = false
 
     var body: some View {
         if inSettings {
-            Toggle(isOn: $isOn) {
-                RowLabel(Text(title), subtitle)
+            let toggle = Toggle(isOn: $isOn) {
+                KeyLabel(keys: keys, title: Text(title), subtitle: subtitle)
             }
             .settingAnchor(title)
+            if let help {
+                toggle.help(help)
+            } else {
+                toggle
+            }
         } else {
             row
         }
@@ -56,9 +63,9 @@ struct ToggleRow: View {
         }
         .buttonStyle(.plain)
         .onHover { hovering = $0 }
-        .help(subtitle)
+        .help(help ?? subtitle)
         .accessibilityRepresentation {
-            Toggle(title, isOn: $isOn).accessibilityHint(subtitle)
+            Toggle(title, isOn: $isOn).accessibilityHint(help ?? subtitle)
         }
         .animation(.snappy, value: isOn)
     }

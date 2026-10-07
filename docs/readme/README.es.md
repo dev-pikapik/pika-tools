@@ -40,7 +40,7 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 ## Funciones
 
-**Bloquear atajos con Control.** Control se convierte en una tecla normal. Las apps siguen viendo que está pulsada, pero macOS ya no la convierte en atajos: Control+Espacio no cambia la fuente de entrada, Control+flechas no cambian de escritorio y Control+clic es un clic normal en vez de abrir un menú contextual. El clic secundario y el toque con dos dedos funcionan como siempre. Útil en juegos y en sesiones de escritorio remoto, donde Control tiene su propia función.
+**Bloquear atajos con Control.** Control se convierte en una tecla normal. Las apps siguen viendo que está pulsada, pero macOS ya no la convierte en atajos: Control+Espacio no cambia la fuente de entrada, Control+flechas no cambian de escritorio y Control+clic es un clic normal en vez de abrir un menú contextual. El clic secundario y el toque con dos dedos funcionan como siempre. Útil en juegos y en sesiones de escritorio remoto, donde Control tiene su propia función. Puedes añadir las apps en las que Control debe funcionar como siempre, por ejemplo un cliente de escritorio remoto: el bloqueo no les afecta.
 
 **Proteger ⌘Q y ⌘W.** ⌘Q y ⌘W por sí solos no hacen nada, así que no cerrarás una app ni una ventana por accidente. Añade Mayúsculas para hacerlo a propósito: ⇧⌘Q sale de la app y ⇧⌘W cierra la ventana. Funciona en todas las apps. Cada tecla tiene su propio interruptor. Desactivado por omisión.
 
@@ -50,9 +50,9 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 **Desactivar la aceleración del puntero.** El puntero se mueve exactamente lo mismo que el ratón, por rápido que lo muevas, como con LinearMouse. Un regulador **Velocidad del cursor** ajusta lo rápido que va. Solo funciona con ratones; el trackpad se queda como está. Desactívalo o sal de pika-tools y macOS recupera sus propios ajustes. Desactivado por omisión.
 
-**Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires, como en Windows. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión.
+**Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires, como en Windows. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión. Junto al control deslizante **Distancia por clic**, una página pequeña se desplaza la distancia que elijas, y un punto marca el valor predeterminado.
 
-Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos, cambia este mismo ajuste a píxeles y elige de 1 a 200 píxeles por clic, 40 por omisión.
+Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos, cambia este mismo ajuste a píxeles y elige de 1 a 200 píxeles por clic, 40 por omisión. El control también indica qué parte de la altura de la pantalla supone.
 
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en Safari, el Finder y otras apps de Apple, en Firefox, Opera y ForkLift, igual que deslizar el dedo en el trackpad. Otras apps, como los IDE de JetBrains, reciben los botones tal cual y los gestionan a su manera. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 

@@ -281,8 +281,9 @@ private struct WindowZoomSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F."),
+            subtitle: Text("Click again to go back. Full screen: ⌃⌘F"),
             hint: Text("Full screen: ⌃⌘F or the button’s menu"),
+            help: Text("Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F."),
             isOn: $tool.isEnabled
         )
         AppExclusions(
