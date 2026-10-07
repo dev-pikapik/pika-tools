@@ -156,6 +156,14 @@ Homebrew і скрипт самі кладуть програму в `/Applicati
 <br>Перехід на початок чи кінець рядка, поки ви друкуєте.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Анімації</b>
+<br>Dock, вікна і Швидкий перегляд стануть швидшими — аж до миттєвих.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Докладніше

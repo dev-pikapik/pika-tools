@@ -156,6 +156,14 @@ Homebrew 和脚本都会把 App 放到 `/Applications`，启动它，请求权�
 <br>输入时跳到行首或行尾。
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>动画</b>
+<br>让程序坞、窗口和快速查看更快，甚至瞬间完成。
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## 详细信息

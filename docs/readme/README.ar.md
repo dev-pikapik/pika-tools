@@ -186,6 +186,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 <br>انتقل إلى بداية السطر أو نهايته أثناء الكتابة.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>الرسوم المتحركة</b>
+<br>سرّع Dock والنوافذ والنظرة السريعة، حتى تصبح فورية.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 </div>

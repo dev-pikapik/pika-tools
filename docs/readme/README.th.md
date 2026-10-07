@@ -156,6 +156,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 <br>กระโดดไปต้นหรือท้ายบรรทัดขณะพิมพ์
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>ภาพเคลื่อนไหว</b>
+<br>เร่ง Dock หน้าต่าง และดูด่วนให้เร็วขึ้น จนถึงทันที
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## รายละเอียดเพิ่มเติม

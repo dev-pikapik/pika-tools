@@ -156,6 +156,14 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br>Yazarken satırın başına ya da sonuna atlayın.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animasyonlar</b>
+<br>Dock’u, pencereleri ve Hızlı Bakış’ı hızlandırın, anında olacak kadar.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar

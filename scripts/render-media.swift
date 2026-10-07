@@ -29,6 +29,7 @@ enum RenderMedia {
         ("linear-pointer", 4.0, AnyView(PointerArt(on: true))),
         ("key-repeat", 4.55, AnyView(KeyRepeatArt(on: true))),
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
+        ("animations", 4.95, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
     ]
 
     static func main() {

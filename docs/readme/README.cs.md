@@ -156,6 +156,14 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br>Při psaní skok na začátek nebo konec řádku.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animace</b>
+<br>Zrychlete Dock, okna a Rychlý náhled, klidně až na okamžité.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti

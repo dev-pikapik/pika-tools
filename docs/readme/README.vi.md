@@ -156,6 +156,14 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br>Nhảy về đầu hoặc cuối dòng khi đang gõ.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Hoạt ảnh</b>
+<br>Tăng tốc Dock, cửa sổ và Xem nhanh, cho đến tức thì.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Chi tiết

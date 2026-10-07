@@ -156,6 +156,14 @@ Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, memi
 <br>Lompat ke awal atau akhir baris saat mengetik.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animasi</b>
+<br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya

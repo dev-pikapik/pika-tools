@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, speedTest, keyboard, mouse, windows, dock, finder, games, permissions, about
+    case general, keepAwake, speedTest, keyboard, mouse, windows, dock, finder, animations, games, permissions, about
 
     var id: Self { self }
 
@@ -16,6 +16,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: String(localized: "Windows")
         case .dock: String(localized: "Dock")
         case .finder: String(localized: "Finder")
+        case .animations: String(localized: "Animations")
         case .games: String(localized: "Games")
         case .permissions: String(localized: "Permissions")
         case .about: String(localized: "About")
@@ -32,6 +33,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: "macwindow.on.rectangle"
         case .dock: "dock.rectangle"
         case .finder: "folder.fill"
+        case .animations: "hare.fill"
         case .games: "gamecontroller.fill"
         case .permissions: "hand.raised.fill"
         case .about: "info.circle.fill"
@@ -45,6 +47,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: .indigo
         case .finder: .cyan
         case .games: .purple
+        case .animations: .pink
         case .keepAwake: .orange
         case .speedTest: .green
         }
@@ -114,6 +117,17 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X"),
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
+            SettingsItem(tab: .animations, title: String(localized: "Animation speed"), synonyms: "animations, motion, fast, faster, instant, speed up"),
+            SettingsItem(tab: .animations, title: String(localized: "Delay before the Dock appears"), synonyms: "autohide, hide Dock, delay, wait"),
+            SettingsItem(tab: .animations, title: String(localized: "How fast the Dock slides out"), synonyms: "autohide, hide Dock, speed"),
+            SettingsItem(tab: .animations, title: String(localized: "Minimize effect"), synonyms: "genie, scale, suck, minimize"),
+            SettingsItem(tab: .animations, title: String(localized: "Bouncing icons"), synonyms: "bounce, jump, attention, Dock"),
+            SettingsItem(tab: .animations, title: String(localized: "Opening windows"), synonyms: "window animation, new window, zoom"),
+            SettingsItem(tab: .animations, title: String(localized: "Save dialogs and resizing"), synonyms: "sheet, save, print, resize, panel"),
+            SettingsItem(tab: .animations, title: String(localized: "Quick Look"), synonyms: "preview, Space bar"),
+            SettingsItem(tab: .animations, title: String(localized: "Columns in Finder"), synonyms: "column view, scroll"),
+            SettingsItem(tab: .animations, title: String(localized: "Finder animations"), synonyms: "folder, Get Info, info window"),
+            SettingsItem(tab: .animations, title: String(localized: "Even calmer: Reduce Motion in Accessibility"), synonyms: "reduce motion, accessibility, motion sickness"),
             SettingsItem(tab: .games, title: String(localized: "Game Mode"), synonyms: "game, games, gaming, play, Steam, full screen"),
             SettingsItem(tab: .games, title: String(localized: "⌘Q doesn’t close the game"), synonyms: "quit, close, exit"),
             SettingsItem(tab: .games, title: String(localized: "⌘W doesn’t close the window")),
@@ -256,7 +270,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games]) }
+                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -346,6 +360,7 @@ private struct SettingsView: View {
             )
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
+        case .animations: AnimationsPage()
         case .games: GameModePage()
         case .permissions: PermissionsView()
         case .about: AboutView()

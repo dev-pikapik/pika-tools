@@ -156,6 +156,14 @@ Homebrew और स्क्रिप्ट दोनों ऐप को `/Appl
 <br>टाइप करते हुए लाइन की शुरुआत या अंत पर जाएँ।
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>एनिमेशन</b>
+<br>Dock, विंडो और क्विक लुक को तेज़ करें, चाहें तो तुरंत।
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## और जानकारी

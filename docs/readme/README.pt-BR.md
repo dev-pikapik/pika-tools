@@ -156,6 +156,14 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br>Vá ao início ou ao fim da linha enquanto digita.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animações</b>
+<br>Acelere o Dock, as janelas e a Visualização Rápida, até ficarem instantâneos.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes

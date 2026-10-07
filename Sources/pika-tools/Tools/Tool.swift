@@ -79,6 +79,7 @@ final class ToolRegistry {
         FinderOpenTool(),
         FinderCutTool(),
         FinderDeleteTool(),
+        AnimationsTool.shared,
         GameModeTool.shared,
     ] + privateTools
 
