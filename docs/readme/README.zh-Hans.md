@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">键盘、鼠标、窗口和访达的小改进，就在 Mac 的菜单栏里。</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <b>简体中文</b> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · **简体中文** · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![最新版本](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![许可证：MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![下载量](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-一款小巧的 macOS 菜单栏 App，改善按键、窗口和程序坞的使用体验：防止误按 ⌘Q 和 ⌘W，用 Option+Shift 切换语言，按住按键连续输入，关闭鼠标加速，让鼠标滚轮按行滚动，让鼠标侧键可以后退和前进，关闭最后一个窗口时退出 App，在程序坞中点按即可隐藏 App，还能让你的 Mac 保持唤醒。
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-tools 设置">
+</picture>
+</p>
 
 ## 安装
-
-使用 [Homebrew](https://brew.sh)：
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+安装后，pika-tools 会出现在屏幕顶部的菜单栏中。在你打开之前，所有功能都保持关闭。
+
+<details>
+<summary>没有 Homebrew？还有两种方法</summary>
 
 不使用 Homebrew 时，打开“终端”，粘贴下面这行，然后按下 Return 键：
 
@@ -25,9 +29,139 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 或者下载 [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg)，打开后将 App 拖到“应用程序”文件夹。
 
-Homebrew 和脚本都会把 App 放到 `/Applications`，启动它，请求权限，并打开“登录时打开”。之后 App 会自动更新，详见[更新](#更新)。如需移除，请参阅[卸载](#卸载)。
+Homebrew 和脚本都会把 App 放到 `/Applications`，启动它，请求权限，并打开“登录时打开”。之后 App 会自动更新，详见**更新**。如需移除，请参阅**卸载**。
 
-## 首次启动
+</details>
+
+## 功能
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>保持唤醒</b>
+<br>Mac 想醒多久就醒多久，合上盖子也行。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>保护 ⌘Q 和 ⌘W</b>
+<br>不会误退出或误关闭。真想这么做时，加上 ⇧。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>较小副本</b>
+<br>右键点按照片、PDF 或视频，旁边就会出现一个更小的副本。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>转换</b>
+<br>通过右键菜单把图片、视频或歌曲存成其他格式。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>切换语言</b>
+<br>按住 ⌥ 再轻点 ⇧，就能切换键盘语言。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>关闭最后一个窗口时退出</b>
+<br>关闭 App 的最后一个窗口，App 也随之退出。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>绿色按钮放大窗口</b>
+<br>窗口铺满屏幕，但不进入全屏模式。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>在程序坞中点按以隐藏</b>
+<br>点按正在使用的 App，它就会让开。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>新建文件</b>
+<br>在访达中右键点按，输入名称，空文件就建好了。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X 移动文件</b>
+<br>在访达中剪切文件，再粘贴到想要的位置。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter 打开文件</b>
+<br>在访达中选中文件，按 Enter 即可打开。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete 移到废纸篓</b>
+<br>在访达中按 ⌫，选中的文件就会移到废纸篓。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>游戏模式</b>
+<br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>网速测试</b>
+<br>网速有多快、够做什么，一看便知。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>鼠标侧键</b>
+<br>按键 4 和 5 用于返回和前进，就像在触控板上轻扫。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>按行滚动</b>
+<br>无论滚轮转得多快，每一格都滚动相同的距离。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>滚动方向</b>
+<br>触控板一个方向，鼠标另一个方向。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>关闭指针加速</b>
+<br>手移动多少，指针就移动多少。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>按住按键连续输入</b>
+<br>按住按键会重复输入字母，而不是弹出重音符号菜单。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home 和 End</b>
+<br>输入时跳到行首或行尾。
+</td>
+</tr></tbody>
+</table>
+
+## 详细信息
+
+<details>
+<summary>首次启动</summary>
 
 pika-tools 需要两项权限。首次启动时，它会打开设置中的“权限”页面，一步步引导你完成，macOS 也会显示自己的提示。前往 **系统设置 › 隐私与安全性**，在以下两项中打开 pika-tools：
 
@@ -38,7 +172,10 @@ App 会在一两秒内识别到更改，无需重新启动。
 
 pika-tools 不会记录、存储或发送你输入或点按的任何内容。事件只在内存中处理并立即传递出去。唯一的网络请求是检查更新，即向 GitHub 查询最新版本。
 
-## 功能
+</details>
+
+<details>
+<summary>每项功能的详细说明</summary>
 
 **保护 ⌘Q 和 ⌘W。** 单独按 ⌘Q 和 ⌘W 不会有任何反应，因此不会误退出 App 或误关窗口。想要退出或关闭时，加按 Shift：⇧⌘Q 退出，⇧⌘W 关闭。适用于所有 App。每个按键都有单独的开关。默认关闭。
 
@@ -86,7 +223,10 @@ pika-tools 不会记录、存储或发送你输入或点按的任何内容。事
 
 App 跟随系统语言，或使用你在设置中选择的语言。支持本页顶部列出的全部 23 种语言。
 
-## 保持唤醒
+</details>
+
+<details>
+<summary>保持唤醒</summary>
 
 在你离开键盘时防止 Mac 进入睡眠：时长可以是 1 秒到 365 天之间的任意时间，或者一直持续到你手动关闭。在菜单中打开它，在设置中设定时长：输入天、小时、分钟和秒，按 ↑ 和 ↓，或点按 15 分钟到 8 小时的预设。菜单会显示剩余时间和结束时间。**显示器** 有两种选择。**始终开启**：不会熄灭，也不会出现屏幕保护程序和锁定屏幕。**照常关闭**：按自己的计时关闭，Mac 继续工作。**立即关闭显示器**（菜单中也有）会马上关闭显示器，Mac 继续工作：移动鼠标或按任意键即可唤醒。退出 pika-tools 会结束“保持唤醒”。
 
@@ -94,11 +234,17 @@ App 跟随系统语言，或使用你在设置中选择的语言。支持本页�
 
 通过“快捷指令”App，可以把“保持唤醒”、屏幕常亮和合盖模式放到控制中心、菜单栏或桌面小组件的按钮上，链接在“设置 › 保持唤醒”里拷贝。
 
-## 网速测试
+</details>
+
+<details>
+<summary>网速测试</summary>
 
 显示你的网络现在有多快。在“设置 › 网速测试”里点按**测速**，或者用铅笔按钮把这一行加到菜单后，点按菜单里的**测速**。大约半分钟后，就能看到下载和上传速度、延迟和响应能力，也就是网络繁忙时一切反应有多快。下面会用简单的话告诉你，这个网速够不够看 4K 电影、视频通话、玩在线游戏和下载大文件。测速使用 macOS 自带的 networkQuality 和 Apple 的服务器。上次的结果会一直保留到下次测速；用“快捷指令”里的链接，还能从控制中心开始测速。
 
-## 设置
+</details>
+
+<details>
+<summary>设置</summary>
 
 从菜单中选择 **设置…** 或按 ⌘, 打开设置，也可以从访达、启动台或聚焦搜索再次启动 pika-tools。窗口打开期间，App 会显示在程序坞和 ⌘Tab 中。
 
@@ -119,7 +265,10 @@ App 跟随系统语言，或使用你在设置中选择的语言。支持本页�
 
 **通过 iCloud 同步设置** 能让 pika-tools 在你所有的 Mac 上保持一致。设置保存在 iCloud 云盘的 pika-tools 文件夹里，以最近一次的更改为准。默认关闭，并且需要先打开 iCloud 云盘。权限不会同步：每台 Mac 都会各自请求。
 
-## 更新
+</details>
+
+<details>
+<summary>更新</summary>
 
 pika-tools 会在启动时以及每隔 6 小时检查新版本。你可以在“设置 › 通用”中关闭此功能。有新版本时，菜单中会出现 **更新到 …** 按钮：点按一下，App 就会下载更新、安装并重新启动。你也可以在“设置 › 通用”中点按 **立即检查** 手动检查。
 
@@ -127,7 +276,10 @@ pika-tools 会在启动时以及每隔 6 小时检查新版本。你可以在“
 
 从 1.3 版开始，更新后权限会保留。
 
-## 卸载
+</details>
+
+<details>
+<summary>卸载</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ pika-tools 会在启动时以及每隔 6 小时检查新版本。你可以在“
 
 两种方式都会退出 App、将其从登录项中移除并删除。脚本还会重置它的权限。
 
-## 常见问题
+</details>
+
+<details>
+<summary>常见问题</summary>
 
 **为什么需要两项权限？**
 macOS 把对键盘和鼠标的访问分成两部分。“输入监控”让 App 能看到事件，“辅助功能”让 App 能修改事件。屏蔽快捷键两者都需要。
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **权限已打开，但什么都不起作用。**
 在 **系统设置 › 隐私与安全性** 中，用 − 按钮从两个列表中移除 pika-tools，然后重新添加。pika-tools 设置的“权限”页面中有按钮可以直接打开对应位置。
 
-## 参与贡献
+</details>
 
-从源代码构建和发布版本的方法见 [CONTRIBUTING.md](../../CONTRIBUTING.md)。更改记录见 [CHANGELOG.md](../../CHANGELOG.md)。
-
-## 许可证
-
-MIT，© 2026 pikapik。详见 [LICENSE](../../LICENSE)。
+<p align="center"><sub><a href="../../CHANGELOG.md">更新内容</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">自行构建</a> · <a href="../../LICENSE">MIT 许可证</a> · © 2026 pikapik</sub></p>

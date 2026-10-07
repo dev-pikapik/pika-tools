@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">कीबोर्ड, माउस, विंडो और Finder के लिए छोटे-छोटे सुधार, सीधे आपके Mac के मेन्यू बार में।</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <b>हिन्दी</b> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · **हिन्दी** · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![नवीनतम रिलीज़](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![लाइसेंस: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![डाउनलोड](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-macOS के मेनू बार के लिए एक छोटी-सी ऐप, जो कीज़, विंडो और Dock को बेहतर बनाती है: यह ⌘Q और ⌘W से बचाती है, Option+Shift से भाषा बदलती है, दबाए रखी कुंजी को दोहराती है, माउस का एक्सेलरेशन बंद करती है, माउस व्हील को पंक्तियों के हिसाब से स्क्रोल करती है, माउस के साइड बटन से पीछे और आगे जाने देती है, आख़िरी विंडो बंद करने पर ऐप से बाहर निकल जाती है, Dock में एक क्लिक से ऐप छिपा देती है और आपके Mac को जगाए रखती है।
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-tools की सेटिंग्स">
+</picture>
+</p>
 
 ## इंस्टॉल करें
-
-[Homebrew](https://brew.sh) से:
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+इंस्टॉल होने के बाद pika-tools स्क्रीन के ऊपर मेन्यू बार में दिखेगा। जब तक आप ख़ुद चालू न करें, सब कुछ बंद रहता है।
+
+<details>
+<summary>Homebrew नहीं है? दो और तरीके</summary>
 
 Homebrew के बिना, टर्मिनल खोलें, यह लाइन पेस्ट करें और Return दबाएँ:
 
@@ -25,9 +29,139 @@ Homebrew के बिना, टर्मिनल खोलें, यह ल�
 
 या [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg) डाउनलोड करें, उसे खोलें और ऐप को ऐप्लिकेशन फ़ोल्डर में ड्रैग करें।
 
-Homebrew और स्क्रिप्ट दोनों ऐप को `/Applications` में रखते हैं, उसे खोलते हैं, अनुमतियाँ माँगते हैं और “लॉगिन पर खोलें” चालू कर देते हैं। इसके बाद ऐप ख़ुद को अपडेट करती रहती है, देखें [अपडेट](#अपडेट)। हटाने के लिए देखें [अनइंस्टॉल करें](#अनइंस्टॉल-करें)।
+Homebrew और स्क्रिप्ट दोनों ऐप को `/Applications` में रखते हैं, उसे खोलते हैं, अनुमतियाँ माँगते हैं और “लॉगिन पर खोलें” चालू कर देते हैं। इसके बाद ऐप ख़ुद को अपडेट करती रहती है, देखें **अपडेट**। हटाने के लिए देखें **अनइंस्टॉल करें**।
 
-## पहली बार खोलना
+</details>
+
+## यह क्या करता है
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>जगाए रखें</b>
+<br>जितनी देर चाहिए, Mac जागा रहता है, ढक्कन बंद होने पर भी।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q और ⌘W सुरक्षित</b>
+<br>गलती से कुछ बंद नहीं होगा। जानबूझकर करना हो तो ⇧ जोड़ें।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>छोटी कॉपी</b>
+<br>फ़ोटो, PDF या वीडियो पर राइट-क्लिक करें, और बगल में हल्की कॉपी बन जाएगी।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>कन्वर्ट</b>
+<br>राइट-क्लिक से तस्वीर, वीडियो या गाना दूसरे फ़ॉर्मैट में सेव करें।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>भाषा बदलें</b>
+<br>⌥ दबाए रखें और ⇧ टैप करें, कीबोर्ड की भाषा बदल जाएगी।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>आख़िरी विंडो के साथ बंद</b>
+<br>ऐप की आख़िरी विंडो बंद करें, और ऐप भी बंद हो जाएगा।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>हरा बटन बड़ा करता है</b>
+<br>विंडो फ़ुल स्क्रीन मोड में गए बिना पूरी स्क्रीन भर देती है।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Dock में क्लिक से छिपाएँ</b>
+<br>जिस ऐप में आप हैं, उस पर क्लिक करें, वह रास्ते से हट जाएगा।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>नई फ़ाइल</b>
+<br>Finder में राइट-क्लिक करें, नाम लिखें, और ख़ाली फ़ाइल तैयार।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X से फ़ाइलें ले जाएँ</b>
+<br>Finder में फ़ाइलें काटें और जहाँ चाहें पेस्ट करें।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter से फ़ाइलें खोलें</b>
+<br>Finder में फ़ाइलें चुनें और खोलने के लिए Enter दबाएँ।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete से ट्रैश में</b>
+<br>Finder में ⌫ दबाएँ, और चुनी गई फ़ाइलें ट्रैश में चली जाएँगी।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>गेम मोड</b>
+<br>खेलते समय गेम के ऊपर कुछ नहीं खुलता और गेम बंद नहीं होता।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>स्पीड टेस्ट</b>
+<br>इंटरनेट कितना तेज़ है और किन कामों के लिए काफ़ी है।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>माउस के साइड बटन</b>
+<br>बटन 4 और 5 पीछे और आगे ले जाते हैं, ट्रैकपैड पर स्वाइप की तरह।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>पंक्तियों के हिसाब से स्क्रोल</b>
+<br>व्हील कितनी भी तेज़ घुमाएँ, हर क्लिक बराबर स्क्रोल करता है।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>स्क्रॉल दिशा</b>
+<br>ट्रैकपैड के लिए एक दिशा, माउस के लिए दूसरी।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>पॉइंटर ऐक्सलरेशन बंद</b>
+<br>पॉइंटर ठीक उतना ही चलता है जितना आपका हाथ।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>दबाए रखने पर कुंजी दोहराएं</b>
+<br>कुंजी दबाए रखें, वह बार-बार टाइप होगी, ऐक्सेंट मेन्यू के बिना।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home और End</b>
+<br>टाइप करते हुए लाइन की शुरुआत या अंत पर जाएँ।
+</td>
+</tr></tbody>
+</table>
+
+## और जानकारी
+
+<details>
+<summary>पहली बार खोलना</summary>
 
 pika-tools को दो अनुमतियों की ज़रूरत है। पहली बार खोलने पर यह सेटिंग्ज़ में अनुमतियाँ पेज खोलती है, जो आपको हर क़दम बताता है, और macOS अपने संकेत दिखाता है। **सिस्टम सेटिंग्ज़ › गोपनीयता और सुरक्षा** में जाएँ और pika-tools को इनमें चालू करें:
 
@@ -38,7 +172,10 @@ pika-tools को दो अनुमतियों की ज़रूरत �
 
 pika-tools आपकी टाइप की गई या क्लिक की गई किसी भी चीज़ को रिकॉर्ड, स्टोर या कहीं नहीं भेजती। इवेंट मेमोरी में संभाले जाते हैं और तुरंत आगे भेज दिए जाते हैं। नेटवर्क पर एकमात्र अनुरोध अपडेट की जाँच है, जिसमें GitHub से नवीनतम रिलीज़ पूछी जाती है।
 
-## सुविधाएँ
+</details>
+
+<details>
+<summary>हर टूल विस्तार से</summary>
 
 **⌘Q और ⌘W को सुरक्षित रखें।** अकेले ⌘Q और ⌘W कुछ नहीं करते, इसलिए आप ग़लती से कोई ऐप बंद या विंडो बंद नहीं करते। जान-बूझकर करने के लिए Shift जोड़ें: ⇧⌘Q ऐप से बाहर निकलता है, ⇧⌘W विंडो बंद करता है। हर ऐप में काम करता है। हर की का अपना स्विच है। डिफ़ॉल्ट रूप से बंद।
 
@@ -86,7 +223,10 @@ pika-tools आपकी टाइप की गई या क्लिक की
 
 ऐप सिस्टम की भाषा या सेटिंग्ज़ में चुनी गई भाषा में चलती है। इस पेज के ऊपर दी गई सभी 23 भाषाएँ उपलब्ध हैं।
 
-## जगाए रखें
+</details>
+
+<details>
+<summary>जगाए रखें</summary>
 
 जब आप कीबोर्ड से दूर हों, तब आपके Mac को स्लीप में जाने से रोकता है: 1 सेकंड से 365 दिन तक किसी भी समय के लिए, या जब तक आप इसे बंद न करें। इसे मेनू से चालू करें और सेटिंग्ज़ में अवधि सेट करें: दिन, घंटे, मिनट और सेकंड टाइप करें, ↑ और ↓ दबाएँ, या 15 मिनट से 8 घंटे तक का कोई तैयार विकल्प क्लिक करें। मेनू दिखाता है कि कितना समय बचा है और यह कब ख़त्म होगा। **डिस्प्ले** के लिए दो विकल्प हैं। **हमेशा चालू**: स्क्रीन बंद नहीं होती, न स्क्रीन सेवर आता है, न लॉक स्क्रीन। **हमेशा की तरह बंद होता है**: स्क्रीन अपने टाइमर से बंद होती है और Mac काम करता रहता है। **अभी डिस्प्ले बंद करें** (यह मेनू में भी है) स्क्रीन को तुरंत बंद कर देता है और Mac काम करता रहता है: वापस लाने के लिए माउस हिलाएँ या कोई कुंजी दबाएँ। pika-tools से बाहर निकलने पर जगाए रखें भी बंद हो जाता है।
 
@@ -94,11 +234,17 @@ MacBook पर आप **ढक्कन बंद होने पर भी क
 
 Keep Awake, डिस्प्ले मोड और ढक्कन बंद मोड को शॉर्टकट ऐप के ज़रिए कंट्रोल सेंटर, मेन्यू बार या डेस्कटॉप विजेट के बटन पर रखा जा सकता है, इसके लिए लिंक सेटिंग › जगाए रखें से कॉपी करें।
 
-## स्पीड टेस्ट
+</details>
+
+<details>
+<summary>स्पीड टेस्ट</summary>
 
 दिखाता है कि अभी आपका इंटरनेट कितना तेज़ है। सेटिंग › स्पीड टेस्ट में **स्पीड जाँचें** दबाएँ, या पेंसिल बटन से पंक्ति जोड़ने के बाद मेन्यू में **जाँचें** दबाएँ। लगभग आधे मिनट में डाउनलोड और अपलोड की स्पीड, पिंग और प्रतिक्रिया दिखती है: कनेक्शन व्यस्त होने पर चीज़ें कितनी जल्दी प्रतिक्रिया देती हैं। नीचे आसान शब्दों में लिखा होता है कि यह किसके लिए ठीक है: 4K फ़िल्में, वीडियो कॉल, ऑनलाइन गेम और बड़े डाउनलोड। जाँच macOS में मौजूद networkQuality और Apple के सर्वर से होती है। आखिरी नतीजा अगली जाँच तक रहता है, और शॉर्टकट्स के लिए लिंक से इसे कंट्रोल सेंटर से शुरू किया जा सकता है।
 
-## सेटिंग्ज़
+</details>
+
+<details>
+<summary>सेटिंग्ज़</summary>
 
 मेनू में **सेटिंग्ज़…** से या ⌘, दबाकर सेटिंग्ज़ खोलें, या Finder, Launchpad या Spotlight से pika-tools को फिर से खोलें। जब तक विंडो खुली है, ऐप Dock और ⌘Tab में दिखती है।
 
@@ -119,7 +265,10 @@ Keep Awake, डिस्प्ले मोड और ढक्कन बंद 
 
 **iCloud के साथ सेटिंग्ज़ सिंक करें** आपके सभी Mac पर pika-tools को एक जैसा रखता है। सेटिंग्ज़ iCloud Drive के pika-tools फ़ोल्डर में रहती हैं, और सबसे ताज़ा बदलाव लागू होता है। यह डिफ़ॉल्ट रूप से बंद है और इसके लिए iCloud Drive चालू होना ज़रूरी है। अनुमतियाँ सिंक नहीं होतीं: हर Mac उन्हें अलग से माँगता है।
 
-## अपडेट
+</details>
+
+<details>
+<summary>अपडेट</summary>
 
 pika-tools खुलते समय और हर 6 घंटे में नए वर्ज़न की जाँच करती है। आप इसे सेटिंग्ज़ › सामान्य में बंद कर सकते हैं। नया वर्ज़न आने पर मेनू में **… पर अपडेट करें** बटन दिखता है: एक क्लिक, और ऐप अपडेट डाउनलोड करती है, इंस्टॉल करती है और रीस्टार्ट हो जाती है। आप सेटिंग्ज़ › सामान्य में **अभी जाँचें** से ख़ुद भी जाँच सकते हैं।
 
@@ -127,7 +276,10 @@ Homebrew के साथ आप `brew upgrade --cask pika-tools` भी चल�
 
 1.3 से, अपडेट के बाद भी अनुमतियाँ बनी रहती हैं।
 
-## अनइंस्टॉल करें
+</details>
+
+<details>
+<summary>अनइंस्टॉल करें</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Homebrew के साथ आप `brew upgrade --cask pika-tools` भी चल�
 
 दोनों ऐप से बाहर निकलते हैं, उसे लॉगिन आइटम से हटाते हैं और डिलीट कर देते हैं। स्क्रिप्ट उसकी अनुमतियाँ भी रीसेट कर देती है।
 
-## अक्सर पूछे जाने वाले सवाल
+</details>
+
+<details>
+<summary>अक्सर पूछे जाने वाले सवाल</summary>
 
 **इसे दो अनुमतियों की ज़रूरत क्यों है?**
 macOS कीबोर्ड और माउस की पहुँच को दो हिस्सों में बाँटता है। इनपुट मॉनिटरिंग से ऐप इवेंट देख पाती है, और ऐक्सेसिबिलिटी से उन्हें बदल पाती है। किसी शॉर्टकट को रोकने के लिए दोनों चाहिए।
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **अनुमति चालू है, फिर भी कुछ काम नहीं कर रहा।**
 **सिस्टम सेटिंग्ज़ › गोपनीयता और सुरक्षा** में दोनों सूचियों से − बटन से pika-tools हटाएँ, फिर उसे दोबारा जोड़ें। pika-tools की सेटिंग्ज़ के अनुमतियाँ पेज पर सही जगह खोलने वाले बटन हैं।
 
-## योगदान दें
+</details>
 
-सोर्स से बिल्ड करना और रिलीज़ करना [CONTRIBUTING.md](../../CONTRIBUTING.md) में बताया गया है। बदलाव [CHANGELOG.md](../../CHANGELOG.md) में दर्ज हैं।
-
-## लाइसेंस
-
-MIT, © 2026 pikapik. देखें [LICENSE](../../LICENSE)।
+<p align="center"><sub><a href="../../CHANGELOG.md">नया क्या है</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ख़ुद बिल्ड करें</a> · <a href="../../LICENSE">MIT लाइसेंस</a> · © 2026 pikapik</sub></p>

@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">De petites améliorations pour le clavier, la souris, les fenêtres et le Finder, directement dans la barre des menus de votre Mac.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <b>Français</b> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · **Français** · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Dernière version](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Licence : MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Téléchargements](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Une petite app pour la barre des menus de macOS qui corrige le comportement des touches, des fenêtres et du Dock : elle protège ⌘Q et ⌘W, change de langue avec Option+Maj, répète une touche maintenue, désactive l’accélération de la souris, fait défiler la molette de la souris ligne par ligne, fait des boutons latéraux de la souris des boutons Précédent et Suivant, quitte les apps quand vous fermez leur dernière fenêtre, masque une app d’un clic dans le Dock et garde votre Mac éveillé.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Réglages de pika-tools">
+</picture>
+</p>
 
 ## Installation
-
-Avec [Homebrew](https://brew.sh) :
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools apparaît dans la barre des menus, en haut de l’écran. Tout reste éteint tant que vous ne l’activez pas.
+
+<details>
+<summary>Pas de Homebrew ? Deux autres façons</summary>
 
 Sans Homebrew, ouvrez Terminal, collez cette ligne et appuyez sur Retour :
 
@@ -25,9 +29,139 @@ Sans Homebrew, ouvrez Terminal, collez cette ligne et appuyez sur Retour :
 
 Ou téléchargez [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), ouvrez-le et faites glisser l’app dans le dossier Applications.
 
-Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent, demandent les autorisations et activent l’ouverture à la connexion. Ensuite, l’app se met à jour toute seule, voir [Mises à jour](#mises-à-jour). Pour la supprimer, voir [Désinstallation](#désinstallation).
+Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent, demandent les autorisations et activent l’ouverture à la connexion. Ensuite, l’app se met à jour toute seule, voir **Mises à jour**. Pour la supprimer, voir **Désinstallation**.
 
-## Premier lancement
+</details>
+
+## Ce qu’il fait
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Rester éveillé</b>
+<br>Votre Mac reste éveillé aussi longtemps qu’il le faut, même écran rabattu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protéger ⌘Q et ⌘W</b>
+<br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Copie allégée</b>
+<br>Clic droit sur une photo, un PDF ou une vidéo, et une copie plus légère apparaît.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Conversion</b>
+<br>Enregistrez une image, une vidéo ou un morceau dans un autre format d’un clic droit.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Changer de langue</b>
+<br>Maintenez ⌥ et touchez ⇧ pour changer la langue du clavier.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Quitter avec la dernière fenêtre</b>
+<br>Fermez la dernière fenêtre d’une app, et l’app se ferme aussi.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Le bouton vert agrandit</b>
+<br>La fenêtre remplit l’écran sans passer en plein écran.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Masquer d’un clic dans le Dock</b>
+<br>Cliquez sur l’app que vous utilisez, et elle s’efface.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Nouveau fichier</b>
+<br>Clic droit dans le Finder, un nom, et le fichier vide est prêt.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X déplace les fichiers</b>
+<br>Coupez des fichiers dans le Finder et collez-les où vous voulez.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Entrée ouvre les fichiers</b>
+<br>Sélectionnez des fichiers dans le Finder et appuyez sur Entrée pour les ouvrir.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Supprimer vers la Corbeille</b>
+<br>Appuyez sur ⌫ dans le Finder, et les fichiers sélectionnés vont à la Corbeille.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Jeu</b>
+<br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Test de débit</b>
+<br>La vitesse de votre connexion, et ce qu’elle permet.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Boutons latéraux</b>
+<br>Les boutons 4 et 5 reculent et avancent, comme un balayage.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Défiler par lignes</b>
+<br>Chaque cran de la molette fait défiler d’autant, quelle que soit la vitesse.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Sens de défilement</b>
+<br>Un sens pour le trackpad, un autre pour la souris.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Sans accélération du pointeur</b>
+<br>Le pointeur parcourt exactement la distance de votre main.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Répéter une touche maintenue</b>
+<br>Maintenez une touche pour la répéter, sans menu des accents.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home et End</b>
+<br>Allez au début ou à la fin de la ligne pendant la saisie.
+</td>
+</tr></tbody>
+</table>
+
+## En savoir plus
+
+<details>
+<summary>Premier lancement</summary>
 
 pika-tools a besoin de deux autorisations. Au premier lancement, elle ouvre les réglages sur la page Autorisations, qui vous guide pas à pas, et macOS affiche ses propres demandes. Allez dans **Réglages Système › Confidentialité et sécurité** et activez pika-tools dans :
 
@@ -38,7 +172,10 @@ L’app détecte le changement en une ou deux secondes, sans redémarrage.
 
 pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. La seule requête réseau est la recherche de mises à jour, qui demande à GitHub la dernière version.
 
-## Fonctionnalités
+</details>
+
+<details>
+<summary>Chaque outil en détail</summary>
 
 **Protéger ⌘Q et ⌘W.** ⌘Q et ⌘W seuls ne font rien, vous ne quittez donc pas une app ni ne fermez une fenêtre par accident. Ajoutez Maj pour le faire exprès : ⇧⌘Q quitte, ⇧⌘W ferme. Fonctionne dans toutes les apps. Chaque touche a son propre interrupteur. Désactivé par défaut.
 
@@ -86,7 +223,10 @@ Le panneau de la barre des menus démarre avec seulement quelques lignes. Vous c
 
 L’app suit la langue du système ou celle que vous choisissez dans les réglages. Les 23 langues de la liste en haut de cette page sont toutes disponibles.
 
-## Rester éveillé
+</details>
+
+<details>
+<summary>Rester éveillé</summary>
 
 Empêche votre Mac de se mettre en veille pendant que vous n’êtes pas devant le clavier : pour n’importe quelle durée de 1 seconde à 365 jours, ou jusqu’à ce que vous le désactiviez. Activez-le depuis le menu et réglez la durée dans les réglages : saisissez les jours, heures, minutes et secondes, utilisez ↑ et ↓, ou cliquez sur une durée prédéfinie de 15 minutes à 8 heures. Le menu indique le temps restant et l’heure de fin. Pour l’**Écran**, deux choix. **Toujours allumé** : il ne s’éteint pas, sans économiseur d’écran ni écran verrouillé. **S’éteint comme d’habitude** : il s’éteint selon son propre délai pendant que votre Mac continue de fonctionner. **Éteindre l’écran maintenant** (aussi dans le menu) l’éteint tout de suite et le Mac continue de fonctionner : bougez la souris ou appuyez sur une touche pour le rallumer. Quitter pika-tools met fin à Rester éveillé.
 
@@ -94,11 +234,17 @@ Sur un MacBook, vous pouvez aussi activer **Fonctionner écran rabattu**. macOS 
 
 Rester éveillé, les modes écran et capot fermé peuvent devenir un bouton du Centre de contrôle, de la barre des menus ou un widget du bureau grâce à l’app Raccourcis, avec des liens que tu copies dans Réglages › Rester éveillé.
 
-## Test de débit
+</details>
+
+<details>
+<summary>Test de débit</summary>
 
 Montre la vitesse de ta connexion en ce moment. Clique sur **Tester le débit** dans Réglages › Test de débit, ou sur **Tester** dans le menu une fois la ligne ajoutée avec le bouton crayon. En une demi-minute environ, tu vois le débit en téléchargement et en envoi, le ping et la réactivité : la rapidité de réaction quand la connexion est chargée. En dessous, en mots simples, ce qu’elle permet : films en 4K, appels vidéo, jeux en ligne et gros téléchargements. Le test utilise networkQuality, intégré à macOS, et les serveurs d’Apple. Le dernier résultat reste jusqu’au test suivant, et un lien pour Raccourcis le lance depuis le Centre de contrôle.
 
-## Réglages
+</details>
+
+<details>
+<summary>Réglages</summary>
 
 Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez simplement pika-tools depuis le Finder, Launchpad ou Spotlight. Tant que la fenêtre est ouverte, l’app apparaît dans le Dock et dans ⌘Tab.
 
@@ -119,7 +265,10 @@ Chaque page comporte en bas un bouton **Rétablir les réglages par défaut…**
 
 **Synchroniser les réglages avec iCloud** garde pika-tools identique sur tous vos Mac. Les réglages se trouvent dans le dossier pika-tools d’iCloud Drive, et la modification la plus récente l’emporte. Désactivé par défaut, et iCloud Drive doit être activé. Les autorisations ne sont pas synchronisées : chaque Mac les demande lui-même.
 
-## Mises à jour
+</details>
+
+<details>
+<summary>Mises à jour</summary>
 
 pika-tools recherche les nouvelles versions au lancement et toutes les 6 heures. Vous pouvez désactiver cela dans Réglages › Général. Quand une nouvelle version sort, un bouton **Mettre à jour vers …** apparaît dans le menu : un clic, et l’app télécharge la mise à jour, l’installe et redémarre. Vous pouvez aussi vérifier vous-même avec **Rechercher** dans Réglages › Général.
 
@@ -127,7 +276,10 @@ Avec Homebrew, vous pouvez aussi lancer `brew upgrade --cask pika-tools`.
 
 Depuis la version 1.3, les autorisations sont conservées après les mises à jour.
 
-## Désinstallation
+</details>
+
+<details>
+<summary>Désinstallation</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Si vous avez installé avec Homebrew : `brew uninstall --cask --zap pika-tools`.
 
 Les deux quittent l’app, la retirent des éléments d’ouverture et la suppriment. Le script réinitialise aussi ses autorisations.
 
-## Questions fréquentes
+</details>
+
+<details>
+<summary>Questions fréquentes</summary>
 
 **Pourquoi faut-il deux autorisations ?**
 macOS sépare l’accès au clavier et à la souris en deux. La surveillance de l’entrée permet à l’app de voir les évènements, l’accessibilité lui permet de les modifier. Pour bloquer un raccourci, il faut les deux.
@@ -155,10 +310,6 @@ Oui. C’est une app universelle pour Apple Silicon et Intel, à partir de macOS
 **L’autorisation est activée, mais rien ne fonctionne.**
 Dans **Réglages Système › Confidentialité et sécurité**, retirez pika-tools des deux listes avec le bouton −, puis ajoutez-la de nouveau. La page Autorisations des réglages de pika-tools a des boutons qui ouvrent le bon endroit.
 
-## Contribuer
+</details>
 
-La compilation depuis les sources et la publication sont décrites dans [CONTRIBUTING.md](../../CONTRIBUTING.md). Les changements sont listés dans [CHANGELOG.md](../../CHANGELOG.md).
-
-## Licence
-
-MIT, © 2026 pikapik. Voir [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Nouveautés</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Compiler soi-même</a> · <a href="../../LICENSE">Licence MIT</a> · © 2026 pikapik</sub></p>

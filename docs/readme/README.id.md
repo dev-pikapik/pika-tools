@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Perbaikan kecil untuk keyboard, tetikus, jendela, dan Finder, langsung dari bar menu Mac Anda.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <b>Bahasa Indonesia</b> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · **Bahasa Indonesia** · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Rilis terbaru](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Lisensi: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Unduhan](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Aplikasi kecil untuk bar menu macOS yang membuat tombol, jendela, dan Dock lebih nyaman: melindungi ⌘Q dan ⌘W, mengganti bahasa dengan Option+Shift, mengulang tombol yang ditahan, mematikan akselerasi tetikus, menggulir roda tetikus per baris, membuat tombol samping tetikus berfungsi untuk mundur dan maju, keluar dari app saat jendela terakhirnya ditutup, menyembunyikan app dengan satu klik di Dock, dan menjaga Mac Anda tetap terjaga.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Pengaturan pika-tools">
+</picture>
+</p>
 
 ## Instalasi
-
-Dengan [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools muncul di bar menu di bagian atas layar. Semuanya tetap mati sampai Anda menyalakannya.
+
+<details>
+<summary>Tidak punya Homebrew? Ada dua cara lain</summary>
 
 Tanpa Homebrew, buka Terminal, tempel baris ini, lalu tekan Return:
 
@@ -25,9 +29,139 @@ Tanpa Homebrew, buka Terminal, tempel baris ini, lalu tekan Return:
 
 Atau unduh [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), buka, lalu seret app ke folder Aplikasi.
 
-Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, meminta izin, dan menyalakan “Buka saat Masuk”. Setelah itu, app memperbarui dirinya sendiri, lihat [Pembaruan](#pembaruan). Untuk menghapusnya, lihat [Hapus instalasi](#hapus-instalasi).
+Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, meminta izin, dan menyalakan “Buka saat Masuk”. Setelah itu, app memperbarui dirinya sendiri, lihat **Pembaruan**. Untuk menghapusnya, lihat **Hapus instalasi**.
 
-## Pembukaan pertama
+</details>
+
+## Apa saja yang bisa dilakukan
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Tetap Terjaga</b>
+<br>Mac tetap terjaga selama yang Anda perlukan, bahkan saat penutupnya ditutup.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Lindungi ⌘Q dan ⌘W</b>
+<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Salinan Lebih Kecil</b>
+<br>Klik kanan foto, PDF, atau video, dan salinan yang lebih ringan muncul di sebelahnya.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Konversi</b>
+<br>Simpan gambar, video, atau lagu dalam format lain lewat klik kanan.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Ganti bahasa</b>
+<br>Tahan ⌥ lalu ketuk ⇧ untuk mengganti bahasa keyboard.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Keluar bersama jendela terakhir</b>
+<br>Tutup jendela terakhir sebuah app, dan app itu ikut keluar.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Tombol hijau memperbesar</b>
+<br>Jendela memenuhi layar tanpa masuk mode layar penuh.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Sembunyikan dengan klik di Dock</b>
+<br>Klik app yang sedang Anda pakai, dan app itu menyingkir.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>File Baru</b>
+<br>Klik kanan di Finder, ketik nama, dan file kosong pun siap.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X memindahkan file</b>
+<br>Potong file di Finder lalu tempel di mana saja.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter membuka file</b>
+<br>Pilih file di Finder lalu tekan Enter untuk membukanya.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete ke Tempat Sampah</b>
+<br>Tekan ⌫ di Finder, dan file yang dipilih masuk ke Tempat Sampah.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Game</b>
+<br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Tes Kecepatan</b>
+<br>Seberapa cepat internet Anda dan cukup untuk apa saja.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Tombol samping</b>
+<br>Tombol 4 dan 5 untuk kembali dan maju, seperti usapan di trackpad.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Gulir per baris</b>
+<br>Setiap klik roda menggulir sama jauh, secepat apa pun diputar.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Arah gulir</b>
+<br>Satu arah untuk trackpad, arah lain untuk tetikus.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Tanpa akselerasi penunjuk</b>
+<br>Penunjuk bergerak persis sejauh tangan Anda.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Ulangi tombol yang ditahan</b>
+<br>Tahan tombol untuk mengetiknya berulang kali, tanpa menu aksen.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home dan End</b>
+<br>Lompat ke awal atau akhir baris saat mengetik.
+</td>
+</tr></tbody>
+</table>
+
+## Detail lainnya
+
+<details>
+<summary>Pembukaan pertama</summary>
 
 pika-tools memerlukan dua izin. Saat pertama kali dibuka, app menampilkan pengaturan di halaman Izin yang memandu Anda langkah demi langkah, dan macOS menampilkan permintaannya sendiri. Buka **Pengaturan Sistem › Privasi & Keamanan** dan nyalakan pika-tools di:
 
@@ -38,7 +172,10 @@ App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 
 pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. Satu-satunya permintaan jaringan adalah pemeriksaan pembaruan, yang menanyakan rilis terbaru ke GitHub.
 
-## Fitur
+</details>
+
+<details>
+<summary>Setiap alat secara detail</summary>
 
 **Lindungi ⌘Q dan ⌘W.** ⌘Q dan ⌘W saja tidak melakukan apa pun, jadi Anda tidak akan keluar dari app atau menutup jendela secara tidak sengaja. Tambahkan Shift untuk melakukannya dengan sengaja: ⇧⌘Q keluar, ⇧⌘W menutup. Berfungsi di semua app. Setiap tombol punya saklarnya sendiri. Mati secara default.
 
@@ -86,7 +223,10 @@ Panel bar menu awalnya hanya menampilkan beberapa baris. Anda bisa memilih baris
 
 App mengikuti bahasa sistem atau bahasa yang Anda pilih di pengaturan. Semua 23 bahasa dalam daftar di bagian atas halaman ini tersedia.
 
-## Tetap Terjaga
+</details>
+
+<details>
+<summary>Tetap Terjaga</summary>
 
 Mencegah Mac masuk mode tidur saat Anda jauh dari papan ketik: untuk waktu berapa pun dari 1 detik hingga 365 hari, atau sampai Anda mematikannya. Nyalakan dari menu, lalu atur durasinya di pengaturan: ketik hari, jam, menit, dan detik, gunakan ↑ dan ↓, atau klik pilihan siap pakai dari 15 menit hingga 8 jam. Menu menampilkan sisa waktu dan kapan berakhir. Untuk **Layar** ada dua pilihan. **Selalu menyala**: layar tidak mati, tanpa penghemat layar atau layar kunci. **Mati seperti biasa**: layar mati sesuai pewaktunya, sementara Mac tetap bekerja. **Matikan layar sekarang** (ada juga di menu) langsung mematikan layar dan Mac tetap bekerja: gerakkan mouse atau tekan tombol apa saja untuk menyalakannya lagi. Keluar dari pika-tools akan mengakhiri Tetap Terjaga.
 
@@ -94,11 +234,17 @@ Di MacBook, Anda juga bisa menyalakan **Bekerja dengan penutup tertutup**. macOS
 
 Keep Awake, mode layar, dan mode layar tertutup bisa dipasang ke tombol di Pusat Kontrol, bilah menu, atau widget desktop lewat app Pintasan, dengan tautan yang kamu salin dari Pengaturan › Tetap Terjaga.
 
-## Tes Kecepatan
+</details>
+
+<details>
+<summary>Tes Kecepatan</summary>
 
 Menunjukkan seberapa cepat internetmu saat ini. Klik **Cek Kecepatan** di Pengaturan › Tes Kecepatan, atau **Cek** di menu setelah kamu menambahkan barisnya dengan tombol pensil. Dalam sekitar setengah menit kamu melihat kecepatan unduh dan unggah, ping, serta responsivitas: seberapa cepat semuanya merespons saat koneksi sedang sibuk. Di bawahnya tertulis dengan kata sederhana koneksi ini cocok untuk apa: film 4K, panggilan video, game online, dan unduhan besar. Pengecekan memakai networkQuality bawaan macOS dan server Apple. Hasil terakhir tetap tersimpan sampai pengecekan berikutnya, dan tautan untuk Pintasan menjalankannya dari Pusat Kontrol.
 
-## Pengaturan
+</details>
+
+<details>
+<summary>Pengaturan</summary>
 
 Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika-tools dari Finder, Launchpad, atau Spotlight. Selama jendelanya terbuka, app muncul di Dock dan di ⌘Tab.
 
@@ -119,7 +265,10 @@ Setiap halaman memiliki tombol **Pulihkan Default…** di bagian bawah. Tombol i
 
 **Selaraskan pengaturan dengan iCloud** menjaga pika-tools tetap sama di semua Mac Anda. Pengaturan disimpan di folder pika-tools di iCloud Drive, dan perubahan terbaru yang berlaku. Mati secara default dan memerlukan iCloud Drive yang menyala. Izin tidak ikut disinkronkan: setiap Mac memintanya sendiri.
 
-## Pembaruan
+</details>
+
+<details>
+<summary>Pembaruan</summary>
 
 pika-tools memeriksa versi baru saat dibuka dan setiap 6 jam. Anda bisa mematikannya di Pengaturan › Umum. Saat versi baru tersedia, tombol **Perbarui ke …** muncul di menu: satu klik, dan app mengunduh pembaruan, memasangnya, lalu memulai ulang. Anda juga bisa memeriksa sendiri dengan **Periksa Sekarang** di Pengaturan › Umum.
 
@@ -127,7 +276,10 @@ Dengan Homebrew, Anda juga bisa menjalankan `brew upgrade --cask pika-tools`.
 
 Mulai versi 1.3, izin tetap ada setelah pembaruan.
 
-## Hapus instalasi
+</details>
+
+<details>
+<summary>Hapus instalasi</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Jika Anda memasang dengan Homebrew: `brew uninstall --cask --zap pika-tools`.
 
 Keduanya keluar dari app, menghapusnya dari item masuk, dan menghapus app. Skrip juga mengatur ulang izinnya.
 
-## Pertanyaan umum
+</details>
+
+<details>
+<summary>Pertanyaan umum</summary>
 
 **Mengapa perlu dua izin?**
 macOS membagi akses ke papan ketik dan mouse menjadi dua. Pemantauan Input membuat app bisa melihat peristiwa, sedangkan Aksesibilitas membuatnya bisa mengubah peristiwa itu. Untuk memblokir pintasan, keduanya diperlukan.
@@ -155,10 +310,6 @@ Ya. Ini adalah app universal untuk Apple silicon dan Intel, dengan macOS 14 Sono
 **Izin sudah menyala, tetapi tidak ada yang bekerja.**
 Di **Pengaturan Sistem › Privasi & Keamanan**, hapus pika-tools dari kedua daftar dengan tombol −, lalu tambahkan lagi. Halaman Izin di pengaturan pika-tools punya tombol yang membuka tempat yang tepat.
 
-## Berkontribusi
+</details>
 
-Cara membangun dari kode sumber dan merilis dijelaskan di [CONTRIBUTING.md](../../CONTRIBUTING.md). Perubahan dicatat di [CHANGELOG.md](../../CHANGELOG.md).
-
-## Lisensi
-
-MIT, © 2026 pikapik. Lihat [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Yang baru</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Bangun sendiri</a> · <a href="../../LICENSE">Lisensi MIT</a> · © 2026 pikapik</sub></p>

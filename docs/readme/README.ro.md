@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Mici îmbunătățiri pentru tastatură, maus, ferestre și Finder, direct în bara de meniu a Mac-ului tău.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <b>Română</b> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · **Română** · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Ultima versiune](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Licență: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Descărcări](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-O aplicație mică pentru bara de meniu din macOS, care îmbunătățește tastele, ferestrele și Dock-ul: protejează ⌘Q și ⌘W, schimbă limba cu Opțiune+Shift, repetă tasta ținută apăsată, dezactivează accelerarea mausului, derulează rotița mausului pe rânduri, face ca butoanele laterale ale mausului să meargă înapoi și înainte, închide aplicațiile când le închizi ultima fereastră, ascunde o aplicație cu un clic în Dock și ține Mac-ul treaz.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Configurările pika-tools">
+</picture>
+</p>
 
 ## Instalare
-
-Cu [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools apare în bara de meniu, sus pe ecran. Totul rămâne oprit până îl pornești tu.
+
+<details>
+<summary>Nu ai Homebrew? Încă două variante</summary>
 
 Fără Homebrew, deschide Terminal, lipește această linie și apasă Retur:
 
@@ -25,9 +29,139 @@ Fără Homebrew, deschide Terminal, lipește această linie și apasă Retur:
 
 Sau descarcă [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), deschide-l și trage aplicația în dosarul Aplicații.
 
-Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc, cer permisiunile și activează deschiderea la autentificare. După aceea, aplicația se actualizează singură, vezi [Actualizări](#actualizări). Pentru a o elimina, vezi [Dezinstalare](#dezinstalare).
+Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc, cer permisiunile și activează deschiderea la autentificare. După aceea, aplicația se actualizează singură, vezi **Actualizări**. Pentru a o elimina, vezi **Dezinstalare**.
 
-## Prima pornire
+</details>
+
+## Ce face
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Rămâi treaz</b>
+<br>Mac-ul rămâne treaz cât ai nevoie, chiar și cu capacul închis.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protejarea ⌘Q și ⌘W</b>
+<br>Nimic nu se închide din greșeală. Adaugă ⇧ când chiar vrei.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Copie mai mică</b>
+<br>Clic dreapta pe o poză, un PDF sau un video, și alături apare o copie mai ușoară.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Conversie</b>
+<br>Salvează o imagine, un video sau o melodie în alt format din meniul de clic dreapta.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Schimbă limba</b>
+<br>Ține apăsat ⌥ și apasă ⇧ ca să schimbi limba tastaturii.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Ieșire cu ultima fereastră</b>
+<br>Închide ultima fereastră a unei aplicații, și se închide și aplicația.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Butonul verde mărește</b>
+<br>Fereastra umple ecranul fără să treacă pe ecran complet.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Ascundere cu un clic în Dock</b>
+<br>Dă clic pe aplicația în care ești, și se dă la o parte.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Fișier nou</b>
+<br>Clic dreapta în Finder, un nume, și fișierul gol e gata.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X mută fișiere</b>
+<br>Decupează fișiere în Finder și lipește-le unde vrei.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter deschide fișiere</b>
+<br>Selectează fișiere în Finder și apasă Enter ca să le deschizi.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete în Coș</b>
+<br>Apasă ⌫ în Finder, și fișierele selectate ajung în Coș.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Modul Joc</b>
+<br>Cât timp te joci, nimic nu apare peste joc și nimic nu-l închide.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Viteza internetului</b>
+<br>Cât de rapid e internetul tău și la ce îți ajunge.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Butoanele laterale</b>
+<br>Butoanele 4 și 5 merg înapoi și înainte, ca un gest pe trackpad.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Derulare pe rânduri</b>
+<br>Fiecare clic al rotiței derulează la fel, oricât de repede o învârți.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Direcția de derulare</b>
+<br>O direcție pentru trackpad, alta pentru maus.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Fără accelerarea cursorului</b>
+<br>Cursorul merge exact cât mâna ta.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Repetă tasta ținută apăsată</b>
+<br>Ține o tastă apăsată ca s-o repeți, fără meniul de accente.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home și End</b>
+<br>Sari la începutul sau la sfârșitul rândului în timp ce scrii.
+</td>
+</tr></tbody>
+</table>
+
+## Mai multe detalii
+
+<details>
+<summary>Prima pornire</summary>
 
 pika-tools are nevoie de două permisiuni. La prima pornire, deschide configurările pe pagina Permisiuni, care te ghidează pas cu pas, iar macOS afișează propriile solicitări. Mergi la **Configurări sistem › Confidențialitate și securitate** și activează pika-tools în:
 
@@ -38,7 +172,10 @@ Aplicația observă schimbarea în câteva secunde, fără repornire.
 
 pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Singura cerere în rețea este verificarea actualizărilor, care întreabă GitHub care este cea mai nouă versiune.
 
-## Funcționalități
+</details>
+
+<details>
+<summary>Fiecare unealtă în detaliu</summary>
 
 **Protejarea ⌘Q și ⌘W.** ⌘Q și ⌘W singure nu fac nimic, așa că nu închizi din greșeală o aplicație sau o fereastră. Adaugă Shift ca să o faci intenționat: ⇧⌘Q închide aplicația, ⇧⌘W închide fereastra. Funcționează în toate aplicațiile. Fiecare tastă are propriul comutator. Dezactivat implicit.
 
@@ -86,7 +223,10 @@ Panoul din bara de meniu începe cu doar câteva rânduri. Poți alege ce rându
 
 Aplicația folosește limba sistemului sau pe cea aleasă în configurări. Sunt disponibile toate cele 23 de limbi din lista de la începutul acestei pagini.
 
-## Rămâi treaz
+</details>
+
+<details>
+<summary>Rămâi treaz</summary>
 
 Împiedică Mac-ul să intre în repaus cât timp nu ești la tastatură: pentru orice durată între 1 secundă și 365 de zile sau până când îl dezactivezi. Activează-l din meniu și setează durata în configurări: scrie zilele, orele, minutele și secundele, folosește ↑ și ↓ sau apasă pe o variantă gata făcută, de la 15 minute la 8 ore. Meniul arată cât timp a mai rămas și când se termină. Pentru **Ecran** sunt două variante. **Mereu aprins**: nu se stinge, fără protector de ecran sau ecran de blocare. **Se stinge ca de obicei**: se stinge după propriul cronometru, iar Mac-ul continuă să lucreze. **Stinge ecranul acum** (și din meniu) stinge ecranul imediat, iar Mac-ul continuă să lucreze: mișcă mouse-ul sau apasă o tastă ca să-l aprinzi la loc. Dacă închizi pika-tools, se oprește și Rămâi treaz.
 
@@ -94,11 +234,17 @@ Pe un MacBook poți activa și **Funcționează cu capacul închis**. macOS nu a
 
 Keep Awake, modurile ecran și capac închis pot fi puse pe un buton în Centrul de control, în bara de meniu sau într-un widget pe desktop prin aplicația Comenzi rapide, cu linkuri copiate din Setări › Menține activ.
 
-## Viteza internetului
+</details>
+
+<details>
+<summary>Viteza internetului</summary>
 
 Arată cât de rapid e internetul tău acum. Apasă **Verifică viteza** în Setări › Viteza internetului sau **Verifică** în meniu, după ce adaugi rândul cu butonul creion. În circa jumătate de minut vezi descărcarea, încărcarea, ping-ul și reactivitatea: cât de repede răspunde totul când conexiunea e ocupată. Dedesubt scrie simplu la ce e bună: filme în 4K, apeluri video, jocuri online și descărcări mari. Testul folosește networkQuality, inclus în macOS, și serverele Apple. Ultimul rezultat rămâne până la testul următor, iar un link pentru Comenzi rapide îl pornește din Centrul de control.
 
-## Configurări
+</details>
+
+<details>
+<summary>Configurări</summary>
 
 Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește din nou pika-tools din Finder, Launchpad sau Spotlight. Cât timp fereastra este deschisă, aplicația apare în Dock și în ⌘Tab.
 
@@ -119,7 +265,10 @@ Fiecare pagină are jos un buton **Restaurează valorile implicite…**. Întrea
 
 **Sincronizează configurările cu iCloud** ține pika-tools la fel pe toate Mac-urile tale. Configurările stau în folderul pika-tools din iCloud Drive, iar cea mai recentă modificare câștigă. Este dezactivat implicit și are nevoie de iCloud Drive pornit. Permisiunile nu se sincronizează: fiecare Mac le cere separat.
 
-## Actualizări
+</details>
+
+<details>
+<summary>Actualizări</summary>
 
 pika-tools caută versiuni noi la pornire și la fiecare 6 ore. Poți dezactiva asta în Configurări › General. Când apare o versiune nouă, în meniu apare butonul **Actualizează la …**: un clic, iar aplicația descarcă actualizarea, o instalează și repornește. Poți verifica și manual cu **Verifică acum** în Configurări › General.
 
@@ -127,7 +276,10 @@ Cu Homebrew poți rula și `brew upgrade --cask pika-tools`.
 
 Începând cu versiunea 1.3, permisiunile rămân valabile după actualizări.
 
-## Dezinstalare
+</details>
+
+<details>
+<summary>Dezinstalare</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Dacă ai instalat cu Homebrew: `brew uninstall --cask --zap pika-tools`.
 
 Ambele închid aplicația, o scot din articolele de autentificare și o șterg. Scriptul îi resetează și permisiunile.
 
-## Întrebări frecvente
+</details>
+
+<details>
+<summary>Întrebări frecvente</summary>
 
 **De ce are nevoie de două permisiuni?**
 macOS împarte accesul la tastatură și mouse în două. Monitorizarea intrării îi permite aplicației să vadă evenimentele, iar Accesibilitatea îi permite să le modifice. Pentru a bloca o scurtătură e nevoie de amândouă.
@@ -155,10 +310,6 @@ Da. Este o aplicație universală pentru Apple Silicon și Intel, cu macOS 14 So
 **Permisiunea este activată, dar nu funcționează nimic.**
 În **Configurări sistem › Confidențialitate și securitate**, elimină pika-tools din ambele liste cu butonul −, apoi adaug-o din nou. Pagina Permisiuni din configurările pika-tools are butoane care deschid locul potrivit.
 
-## Contribuții
+</details>
 
-Compilarea din codul sursă și publicarea versiunilor sunt descrise în [CONTRIBUTING.md](../../CONTRIBUTING.md). Modificările sunt listate în [CHANGELOG.md](../../CHANGELOG.md).
-
-## Licență
-
-MIT, © 2026 pikapik. Vezi [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Noutăți</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilează singur</a> · <a href="../../LICENSE">Licență MIT</a> · © 2026 pikapik</sub></p>

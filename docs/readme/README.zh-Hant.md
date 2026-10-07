@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">鍵盤、滑鼠、視窗和 Finder 的小改進，就在 Mac 的選單列裡。</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <b>繁體中文</b> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · **繁體中文** · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![最新版本](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![授權：MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![下載次數](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-一款小巧的 macOS 選單列 App，讓按鍵、視窗和 Dock 更好用：防止誤按 ⌘Q 和 ⌘W，用 Option+Shift 切換語言，按住按鍵連續輸入，關閉滑鼠加速，讓滑鼠滾輪按行捲動，讓滑鼠側邊按鈕可以返回和前進，關閉最後一個視窗時結束 App，在 Dock 中按一下即可隱藏 App，還能讓你的 Mac 保持喚醒。
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-tools 設定">
+</picture>
+</p>
 
 ## 安裝
-
-使用 [Homebrew](https://brew.sh)：
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+安裝後，pika-tools 會出現在螢幕頂端的選單列。在你開啟之前，所有功能都保持關閉。
+
+<details>
+<summary>沒有 Homebrew？還有兩種方式</summary>
 
 不使用 Homebrew 時，打開「終端機」，貼上下面這一行，然後按下 Return 鍵：
 
@@ -25,9 +29,139 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 或下載 [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg)，打開後將 App 拖到「應用程式」檔案夾。
 
-Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求權限，並開啟「登入時打開」。之後 App 會自動更新，請參閱[更新](#更新)。若要移除，請參閱[解除安裝](#解除安裝)。
+Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求權限，並開啟「登入時打開」。之後 App 會自動更新，請參閱**更新**。若要移除，請參閱**解除安裝**。
 
-## 第一次啟動
+</details>
+
+## 功能
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>保持喚醒</b>
+<br>Mac 想醒多久就醒多久，闔上螢幕也可以。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>保護 ⌘Q 和 ⌘W</b>
+<br>不會誤結束或誤關閉。真的要這麼做時，加上 ⇧。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>較小拷貝</b>
+<br>在照片、PDF 或影片上按右鍵，旁邊就會出現較小的拷貝。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>轉換</b>
+<br>從右鍵選單把圖片、影片或歌曲存成其他格式。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>切換語言</b>
+<br>按住 ⌥ 再點一下 ⇧，就能切換鍵盤語言。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>關閉最後一個視窗時結束</b>
+<br>關閉 App 的最後一個視窗，App 也會跟著結束。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>綠色按鈕放大視窗</b>
+<br>視窗填滿螢幕，但不進入全螢幕模式。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>在 Dock 中按一下以隱藏</b>
+<br>按一下正在使用的 App，它就會讓開。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>新增檔案</b>
+<br>在 Finder 中按右鍵、輸入名稱，空白檔案就完成了。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X 搬移檔案</b>
+<br>在 Finder 中剪下檔案，再貼到想要的位置。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter 打開檔案</b>
+<br>在 Finder 中選取檔案，按 Enter 就能打開。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete 丟到垃圾桶</b>
+<br>在 Finder 中按 ⌫，選取的檔案就會丟到垃圾桶。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>遊戲模式</b>
+<br>玩遊戲時，不會有東西跳到遊戲上面，也不會把遊戲關掉。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>網速測試</b>
+<br>網路有多快、夠做什麼，一看就知道。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>滑鼠側邊按鈕</b>
+<br>按鈕 4 和 5 用於返回和前進，就像在觸控式軌跡板上滑動。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>按行捲動</b>
+<br>無論滾輪轉多快，每一格都捲動相同的距離。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>捲動方向</b>
+<br>觸控式軌跡板一個方向，滑鼠另一個方向。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>關閉指標加速</b>
+<br>手移動多少，指標就移動多少。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>按住按鍵連續輸入</b>
+<br>按住按鍵會重複輸入字母，而不是跳出重音符號選單。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home 和 End</b>
+<br>輸入時跳到行首或行尾。
+</td>
+</tr></tbody>
+</table>
+
+## 詳細資訊
+
+<details>
+<summary>第一次啟動</summary>
 
 pika-tools 需要兩項權限。第一次啟動時，它會打開設定中的「權限」頁面，一步步引導你完成，macOS 也會顯示自己的提示。前往 **系統設定 › 隱私權與安全性**，在以下兩項中開啟 pika-tools：
 
@@ -38,7 +172,10 @@ App 會在一兩秒內偵測到變更，不需要重新啟動。
 
 pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事件只在記憶體中處理並立即傳遞出去。唯一的網路請求是檢查更新，也就是向 GitHub 詢問最新版本。
 
-## 功能
+</details>
+
+<details>
+<summary>每項功能的詳細說明</summary>
 
 **保護 ⌘Q 和 ⌘W。** 單獨按 ⌘Q 和 ⌘W 不會有任何作用，因此不會誤結束 App 或誤關視窗。想要結束或關閉時，加按 Shift：⇧⌘Q 結束，⇧⌘W 關閉。適用於所有 App。每個按鍵都有各自的開關。預設為關閉。
 
@@ -86,7 +223,10 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本頁頂端列出的全部 23 種語言。
 
-## 保持喚醒
+</details>
+
+<details>
+<summary>保持喚醒</summary>
 
 在你離開鍵盤時防止 Mac 進入睡眠：時間可以是 1 秒到 365 天之間的任意長度，或一直持續到你手動關閉。在選單中開啟它，並在設定中設定時間長度：輸入天、小時、分鐘和秒，按 ↑ 和 ↓，或按一下 15 分鐘到 8 小時的預設值。選單會顯示剩餘時間和結束時間。**顯示器** 有兩種選擇。**永遠開啟**：不會熄滅，也不會出現螢幕保護程式和鎖定畫面。**照常關閉**：依自己的計時關閉，Mac 繼續運作。**立即關閉顯示器**（選單中也有）會馬上關閉顯示器，Mac 繼續運作：移動滑鼠或按任意鍵即可喚醒。結束 pika-tools 也會結束「保持喚醒」。
 
@@ -94,11 +234,17 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 
 透過「捷徑」App，可以把「保持喚醒」、螢幕常亮和闔蓋模式放到控制中心、選單列或桌面小工具的按鈕上，連結在「設定 › 保持喚醒」裡拷貝。
 
-## 網速測試
+</details>
+
+<details>
+<summary>網速測試</summary>
 
 顯示你的網路現在有多快。在「設定 › 網速測試」裡點按**測速**，或者用鉛筆按鈕把這一列加到選單後，點按選單裡的**測速**。大約半分鐘後，就能看到下載和上傳速度、延遲和回應能力，也就是網路忙碌時一切反應有多快。下面會用簡單的話告訴你，這個網速夠不夠看 4K 電影、視訊通話、玩線上遊戲和下載大型檔案。測速使用 macOS 內建的 networkQuality 和 Apple 的伺服器。上次的結果會一直保留到下次測速；用「捷徑」裡的連結，還能從控制中心開始測速。
 
-## 設定
+</details>
+
+<details>
+<summary>設定</summary>
 
 從選單中選擇 **設定⋯** 或按 ⌘, 打開設定，也可以從 Finder、Launchpad 或 Spotlight 再次啟動 pika-tools。視窗打開期間，App 會顯示在 Dock 和 ⌘Tab 中。
 
@@ -119,7 +265,10 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 
 **透過 iCloud 同步設定** 能讓 pika-tools 在你所有的 Mac 上保持一致。設定存放在 iCloud 雲碟的 pika-tools 檔夾裡，以最近一次的更改為準。預設為關閉，而且需要先開啟 iCloud 雲碟。權限不會同步：每台 Mac 都會各自請求。
 
-## 更新
+</details>
+
+<details>
+<summary>更新</summary>
 
 pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「設定 › 一般」中關閉此功能。有新版本時，選單中會出現 **更新到 ⋯** 按鈕：按一下，App 就會下載更新、安裝並重新啟動。你也可以在「設定 › 一般」中按一下 **立即檢查** 手動檢查。
 
@@ -127,7 +276,10 @@ pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「
 
 從 1.3 版開始，更新後權限會保留。
 
-## 解除安裝
+</details>
+
+<details>
+<summary>解除安裝</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「
 
 兩種方式都會結束 App、將其從登入項目中移除並刪除。指令碼還會重置它的權限。
 
-## 常見問題
+</details>
+
+<details>
+<summary>常見問題</summary>
 
 **為什麼需要兩項權限？**
 macOS 把對鍵盤和滑鼠的存取分成兩部分。「輸入監控」讓 App 能看到事件，「輔助使用」讓 App 能修改事件。阻擋快速鍵兩者都需要。
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **權限已開啟，但什麼都沒有作用。**
 在 **系統設定 › 隱私權與安全性** 中，用 − 按鈕從兩個列表中移除 pika-tools，然後重新加入。pika-tools 設定的「權限」頁面中有按鈕可以直接打開對應位置。
 
-## 參與貢獻
+</details>
 
-從原始碼建置和發布版本的方法請見 [CONTRIBUTING.md](../../CONTRIBUTING.md)。變更記錄請見 [CHANGELOG.md](../../CHANGELOG.md)。
-
-## 授權
-
-MIT，© 2026 pikapik。詳見 [LICENSE](../../LICENSE)。
+<p align="center"><sub><a href="../../CHANGELOG.md">更新內容</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">自行建置</a> · <a href="../../LICENSE">MIT 授權</a> · © 2026 pikapik</sub></p>

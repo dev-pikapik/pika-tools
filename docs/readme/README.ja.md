@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">キーボード、マウス、ウインドウ、Finderをちょっと便利に。Macのメニューバーからすぐ使えます。</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <b>日本語</b> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · **日本語** · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![最新リリース](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![ライセンス: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![ダウンロード数](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-キー、ウインドウ、Dock の使い勝手を整える macOS 用の小さなメニューバーアプリです。⌘Q と ⌘W の押し間違いを防ぎ、Option+Shift で言語を切り替え、キーを押し続けて連続入力し、マウスの加速をオフにし、マウスホイールを行単位でスクロールし、マウスのサイドボタンで戻る/進むができるようにし、最後のウインドウを閉じたらアプリを終了し、Dock のクリックでアプリを隠し、Mac をスリープさせないようにします。
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-toolsの設定">
+</picture>
+</p>
 
 ## インストール
-
-[Homebrew](https://brew.sh) を使う場合:
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+インストールすると、画面上部のメニューバーにpika-toolsが表示されます。オンにするまで、どの機能もオフのままです。
+
+<details>
+<summary>Homebrewがない場合は、ほかに2つの方法があります</summary>
 
 Homebrew を使わない場合は、ターミナルを開いて次の行をペーストし、return キーを押します:
 
@@ -25,9 +29,139 @@ Homebrew を使わない場合は、ターミナルを開いて次の行をペ�
 
 または [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg) をダウンロードして開き、アプリを「アプリケーション」フォルダにドラッグします。
 
-Homebrew でもスクリプトでも、アプリは `/Applications` に入り、起動して、許可を求め、「ログイン時に開く」をオンにします。その後はアプリが自動でアップデートされます。[アップデート](#アップデート)を参照してください。削除するときは[アンインストール](#アンインストール)を参照してください。
+Homebrew でもスクリプトでも、アプリは `/Applications` に入り、起動して、許可を求め、「ログイン時に開く」をオンにします。その後はアプリが自動でアップデートされます。**アップデート**を参照してください。削除するときは**アンインストール**を参照してください。
 
-## 初回起動
+</details>
+
+## できること
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>スリープさせない</b>
+<br>必要なあいだMacを起こしたまま。蓋を閉じていても大丈夫です。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Qと⌘Wを保護</b>
+<br>うっかり終了したり閉じたりしません。意図して使うときは⇧を足します。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>小さいコピー</b>
+<br>写真やPDF、ビデオを右クリックすると、隣に軽いコピーができます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>変換</b>
+<br>画像やビデオ、曲を右クリックから別の形式で保存できます。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>言語を切り替え</b>
+<br>⌥を押したまま⇧を押すと、キーボードの言語が切り替わります。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>最後のウインドウで終了</b>
+<br>アプリの最後のウインドウを閉じると、アプリも終了します。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>緑のボタンで拡大</b>
+<br>フルスクリーンにせず、ウインドウを画面いっぱいに広げます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Dockのクリックで隠す</b>
+<br>使っているアプリのアイコンをクリックすると、さっと隠れます。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>新規ファイル</b>
+<br>Finderで右クリックして名前を入れるだけで、空のファイルができます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘Xでファイルを移動</b>
+<br>Finderでファイルを切り取って、好きな場所にペーストできます。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enterでファイルを開く</b>
+<br>Finderでファイルを選んでEnterを押すと開きます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Deleteでゴミ箱へ</b>
+<br>Finderで⌫を押すと、選んだファイルがゴミ箱に入ります。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>ゲームモード</b>
+<br>プレイ中は、ゲームの上に何も開かず、うっかり閉じることもありません。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>速度テスト</b>
+<br>インターネットの速さと、それで何ができるかがわかります。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>サイドボタン</b>
+<br>ボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>行単位でスクロール</b>
+<br>ホイールをどれだけ速く回しても、1クリックで同じだけスクロールします。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>スクロール方向</b>
+<br>トラックパッドとマウスで、別々の方向を選べます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>ポインタの加速をオフ</b>
+<br>手を動かしたぶんだけ、ポインタが正確に動きます。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>キーを押し続けて連続入力</b>
+<br>キーを押し続けると、アクセントメニューの代わりに文字が繰り返されます。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>HomeとEnd</b>
+<br>入力中に行頭や行末へジャンプします。
+</td>
+</tr></tbody>
+</table>
+
+## 詳しく
+
+<details>
+<summary>初回起動</summary>
 
 pika-tools には 2 つの許可が必要です。初回起動時に設定の「許可」ページが開いて手順を案内し、macOS も独自の確認を表示します。**システム設定 › プライバシーとセキュリティ** を開き、次の項目で pika-tools をオンにします:
 
@@ -38,7 +172,10 @@ pika-tools には 2 つの許可が必要です。初回起動時に設定の「
 
 pika-tools は、入力やクリックの内容を記録、保存、送信しません。イベントはメモリ上で処理され、すぐにそのまま渡されます。ネットワークへのアクセスは、GitHub に最新リリースを問い合わせるアップデート確認だけです。
 
-## 機能
+</details>
+
+<details>
+<summary>すべての機能の詳細</summary>
 
 **⌘Q と ⌘W を保護。** ⌘Q や ⌘W だけを押しても何も起こらないので、うっかりアプリを終了したりウインドウを閉じたりしません。意図して操作するときは Shift を加えます。⇧⌘Q で終了、⇧⌘W で閉じます。すべてのアプリで使えます。キーごとにスイッチがあります。初期設定はオフです。
 
@@ -86,7 +223,10 @@ pika-tools は、入力やクリックの内容を記録、保存、送信しま
 
 アプリはシステムの言語、または設定で選んだ言語で表示されます。このページの先頭に並んでいる 23 言語すべてに対応しています。
 
-## スリープさせない
+</details>
+
+<details>
+<summary>スリープさせない</summary>
 
 キーボードから離れている間も Mac がスリープしないようにします。1 秒から 365 日までの好きな長さ、またはオフにするまで続けられます。メニューからオンにし、長さは設定で、日、時間、分、秒を入力するか、↑ と ↓ を押すか、15 分から 8 時間までの候補をクリックして指定します。メニューには残り時間と終了時刻が表示されます。**ディスプレイ** は 2 つから選べます。**常にオン** は画面が消えず、スクリーンセーバーもロック画面も出ません。**通常どおりオフ** はいつものタイマーで画面が消え、Mac は動き続けます。**今すぐディスプレイをオフ**（メニューにもあります）を使うとすぐに画面が消え、Mac は動き続けます。戻すにはマウスを動かすかキーを押してください。pika-tools を終了すると「スリープさせない」も終わります。
 
@@ -94,11 +234,17 @@ MacBook では **蓋を閉じても動作** をオンにすることもできま
 
 「スリープさせない」、画面オン、クラムシェルの各モードは、ショートカットアプリを使って、コントロールセンター、メニューバー、デスクトップのウィジェットのボタンに置けます。リンクは設定 › スリープさせないでコピーできます。
 
-## 速度テスト
+</details>
+
+<details>
+<summary>速度テスト</summary>
 
 いまのインターネットの速さを表示します。設定 › 速度テストの**速度を測定**か、鉛筆ボタンで行を追加したメニューの**測定**をクリックします。30秒ほどで、ダウンロードとアップロードの速さ、Ping、応答性（回線が混んでいるときの反応の速さ）がわかります。その下に、4Kの映画、ビデオ通話、オンラインゲーム、大きなダウンロードに足りるかどうかがわかりやすく表示されます。測定にはmacOSに入っているnetworkQualityとAppleのサーバを使います。最後の結果は次の測定まで残り、ショートカット用のリンクでコントロールセンターから測定を始められます。
 
-## 設定
+</details>
+
+<details>
+<summary>設定</summary>
 
 メニューの **設定…** または ⌘, で設定を開けます。Finder、Launchpad、Spotlight から pika-tools をもう一度起動しても開きます。ウインドウが開いている間は、アプリが Dock と ⌘Tab に表示されます。
 
@@ -119,7 +265,10 @@ MacBook では **蓋を閉じても動作** をオンにすることもできま
 
 **iCloudで設定を同期** をオンにすると、すべての Mac で pika-tools が同じ状態になります。設定は iCloud Drive の pika-tools フォルダに保存され、いちばん新しい変更が優先されます。初期設定はオフで、iCloud Drive がオンになっている必要があります。許可は同期されません。Mac ごとに、それぞれで許可を求めます。
 
-## アップデート
+</details>
+
+<details>
+<summary>アップデート</summary>
 
 pika-tools は起動時と 6 時間ごとに新しいバージョンを確認します。この確認は 設定 › 一般 でオフにできます。新しいバージョンが出ると、メニューに **… にアップデート** ボタンが表示されます。クリックするだけで、アプリがアップデートをダウンロードしてインストールし、再起動します。設定 › 一般 の **今すぐ確認** で手動で確認することもできます。
 
@@ -127,7 +276,10 @@ Homebrew を使っている場合は `brew upgrade --cask pika-tools` も使え�
 
 バージョン 1.3 以降、アップデート後も許可はそのまま残ります。
 
-## アンインストール
+</details>
+
+<details>
+<summary>アンインストール</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Homebrew でインストールした場合: `brew uninstall --cask --zap pika-to
 
 どちらもアプリを終了し、ログイン項目から外して削除します。スクリプトは許可のリセットも行います。
 
-## よくある質問
+</details>
+
+<details>
+<summary>よくある質問</summary>
 
 **なぜ 2 つの許可が必要なのですか?**
 macOS はキーボードとマウスへのアクセスを 2 つに分けています。入力監視ではイベントを読み取ることができ、アクセシビリティではそれを変更できます。ショートカットをブロックするには両方が必要です。
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **許可はオンなのに何も動きません。**
 **システム設定 › プライバシーとセキュリティ** で、両方のリストから − ボタンで pika-tools を削除し、もう一度追加します。pika-tools の設定の「許可」ページに、該当箇所を開くボタンがあります。
 
-## 開発に参加する
+</details>
 
-ソースからのビルドとリリースの方法は [CONTRIBUTING.md](../../CONTRIBUTING.md) にあります。変更点は [CHANGELOG.md](../../CHANGELOG.md) にまとめています。
-
-## ライセンス
-
-MIT、© 2026 pikapik。[LICENSE](../../LICENSE) を参照してください。
+<p align="center"><sub><a href="../../CHANGELOG.md">新機能</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ソースからビルド</a> · <a href="../../LICENSE">MITライセンス</a> · © 2026 pikapik</sub></p>

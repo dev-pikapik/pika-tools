@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">키보드, 마우스, 윈도우, Finder를 위한 작은 개선. Mac 메뉴 막대에서 바로 쓸 수 있습니다.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <b>한국어</b> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · **한국어** · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![최신 릴리스](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![라이선스: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![다운로드](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-키, 윈도우, Dock을 더 편하게 만들어 주는 작은 macOS 메뉴 막대 앱입니다. ⌘Q와 ⌘W 실수를 방지하고, Option+Shift로 언어를 전환하고, 키를 누르고 있으면 반복 입력하고, 마우스 가속을 끄고, 마우스 휠을 줄 단위로 스크롤하고, 마우스 측면 버튼으로 뒤로 가기와 앞으로 가기를 할 수 있게 하고, 마지막 윈도우를 닫으면 앱을 종료하고, Dock을 클릭하면 앱을 가리고, Mac이 잠자기에 들어가지 않게 해 줍니다.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-tools 설정">
+</picture>
+</p>
 
 ## 설치
-
-[Homebrew](https://brew.sh)를 사용하는 경우:
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+설치하면 화면 위쪽 메뉴 막대에 pika-tools가 나타납니다. 직접 켜기 전까지 모든 기능은 꺼져 있습니다.
+
+<details>
+<summary>Homebrew가 없나요? 다른 방법 두 가지</summary>
 
 Homebrew 없이 설치하려면 터미널을 열고 다음 줄을 붙여 넣은 후 Return 키를 누르십시오:
 
@@ -25,9 +29,139 @@ Homebrew 없이 설치하려면 터미널을 열고 다음 줄을 붙여 넣은 
 
 또는 [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg)를 다운로드하여 열고 앱을 응용 프로그램 폴더로 드래그하십시오.
 
-Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 권한을 요청하고, ‘로그인 시 열기’를 켭니다. 그 후에는 앱이 스스로 업데이트됩니다. [업데이트](#업데이트)를 참고하십시오. 제거하려면 [제거](#제거)를 참고하십시오.
+Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 권한을 요청하고, ‘로그인 시 열기’를 켭니다. 그 후에는 앱이 스스로 업데이트됩니다. **업데이트**를 참고하십시오. 제거하려면 **제거**를 참고하십시오.
 
-## 처음 실행할 때
+</details>
+
+## 할 수 있는 일
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>잠자기 방지</b>
+<br>필요한 만큼 Mac이 깨어 있습니다. 덮개를 닫아도요.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q와 ⌘W 보호</b>
+<br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르세요.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>작은 사본</b>
+<br>사진, PDF, 비디오를 오른쪽 클릭하면 옆에 더 가벼운 사본이 생깁니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>변환</b>
+<br>이미지, 비디오, 노래를 오른쪽 클릭으로 다른 포맷으로 저장합니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>언어 전환</b>
+<br>⌥를 누른 채 ⇧를 탭하면 키보드 언어가 바뀝니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>마지막 윈도우와 함께 종료</b>
+<br>앱의 마지막 윈도우를 닫으면 앱도 종료됩니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>녹색 버튼으로 확대</b>
+<br>전체 화면으로 바꾸지 않고 윈도우가 화면을 채웁니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Dock 클릭으로 가리기</b>
+<br>사용 중인 앱을 클릭하면 살짝 비켜 줍니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>새 파일</b>
+<br>Finder에서 오른쪽 클릭하고 이름만 입력하면 빈 파일이 생깁니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X로 파일 이동</b>
+<br>Finder에서 파일을 잘라내고 원하는 곳에 붙여 넣으세요.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter로 파일 열기</b>
+<br>Finder에서 파일을 선택하고 Enter를 누르면 열립니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete로 휴지통에</b>
+<br>Finder에서 ⌫를 누르면 선택한 파일이 휴지통으로 갑니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>게임 모드</b>
+<br>게임하는 동안 그 위로 아무것도 뜨지 않고, 게임이 닫히지도 않습니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>속도 테스트</b>
+<br>인터넷이 얼마나 빠른지, 무엇을 하기에 충분한지 알려 줍니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>측면 버튼</b>
+<br>4번, 5번 버튼으로 뒤로, 앞으로. 트랙패드에서 쓸어넘기듯이요.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>줄 단위로 스크롤</b>
+<br>휠을 얼마나 빨리 돌려도 한 칸에 같은 만큼 스크롤됩니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>스크롤 방향</b>
+<br>트랙패드와 마우스에 각각 다른 방향을 고를 수 있습니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>포인터 가속 끄기</b>
+<br>손을 움직인 만큼 포인터가 정확히 움직입니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>키를 누르고 있으면 반복 입력</b>
+<br>키를 누르고 있으면 악센트 메뉴 대신 글자가 반복됩니다.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home과 End</b>
+<br>입력하는 중에 줄의 처음이나 끝으로 이동합니다.
+</td>
+</tr></tbody>
+</table>
+
+## 자세히
+
+<details>
+<summary>처음 실행할 때</summary>
 
 pika-tools에는 두 가지 권한이 필요합니다. 처음 실행하면 설정의 ‘권한’ 페이지가 열려 단계별로 안내하고, macOS도 자체 요청을 표시합니다. **시스템 설정 › 개인정보 보호 및 보안**으로 이동하여 다음 항목에서 pika-tools를 켜십시오:
 
@@ -38,7 +172,10 @@ pika-tools에는 두 가지 권한이 필요합니다. 처음 실행하면 설�
 
 pika-tools는 입력하거나 클릭한 내용을 기록하거나 저장하거나 전송하지 않습니다. 이벤트는 메모리에서만 처리되어 바로 전달됩니다. 유일한 네트워크 요청은 GitHub에 최신 릴리스를 묻는 업데이트 확인입니다.
 
-## 기능
+</details>
+
+<details>
+<summary>모든 기능 자세히 보기</summary>
 
 **⌘Q와 ⌘W 보호.** ⌘Q와 ⌘W만 눌러서는 아무 일도 일어나지 않으므로 실수로 앱을 종료하거나 윈도우를 닫지 않습니다. 의도적으로 하려면 Shift를 함께 누르십시오. ⇧⌘Q는 종료, ⇧⌘W는 닫기입니다. 모든 앱에서 작동합니다. 키마다 별도의 스위치가 있습니다. 기본값은 꺼짐입니다.
 
@@ -86,7 +223,10 @@ pika-tools는 입력하거나 클릭한 내용을 기록하거나 저장하거�
 
 앱은 시스템 언어 또는 설정에서 선택한 언어로 표시됩니다. 이 페이지 맨 위에 있는 23개 언어를 모두 지원합니다.
 
-## 잠자기 방지
+</details>
+
+<details>
+<summary>잠자기 방지</summary>
 
 키보드를 떠나 있는 동안 Mac이 잠자기에 들어가지 않게 합니다. 1초부터 365일까지 원하는 시간 동안, 또는 직접 끌 때까지 유지됩니다. 메뉴에서 켜고, 설정에서 일, 시간, 분, 초를 입력하거나 ↑와 ↓를 누르거나 15분부터 8시간까지의 기본 옵션을 클릭하여 기간을 지정하십시오. 메뉴에 남은 시간과 종료 시각이 표시됩니다. **디스플레이**는 두 가지 중에서 고를 수 있습니다. **항상 켜짐**은 화면이 꺼지지 않고 화면 보호기나 잠금 화면도 나오지 않습니다. **평소처럼 꺼짐**은 자체 타이머에 따라 화면이 꺼지고 Mac은 계속 작동합니다. **지금 디스플레이 끄기**(메뉴에도 있음)를 누르면 화면이 바로 꺼지고 Mac은 계속 작동합니다. 다시 켜려면 마우스를 움직이거나 아무 키나 누르세요. pika-tools를 종료하면 잠자기 방지도 끝납니다.
 
@@ -94,11 +234,17 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 
 잠자기 방지, 화면 켜짐 모드, 덮개 닫음 모드는 단축어 앱을 통해 제어 센터, 메뉴 막대 또는 데스크탑 위젯의 버튼으로 둘 수 있으며, 링크는 설정 › 잠자기 방지에서 복사하세요.
 
-## 속도 테스트
+</details>
+
+<details>
+<summary>속도 테스트</summary>
 
 지금 인터넷 속도를 보여 줍니다. 설정 › 속도 테스트에서 **속도 측정**을 누르거나, 연필 버튼으로 메뉴에 행을 추가했다면 **측정**을 클릭하세요. 30초 정도 지나면 다운로드와 업로드 속도, 핑, 응답성(연결이 바쁠 때 반응하는 속도)이 표시됩니다. 그 아래에는 4K 영화, 영상 통화, 온라인 게임, 대용량 다운로드에 충분한지 쉬운 말로 알려 줍니다. 측정에는 macOS에 들어 있는 networkQuality와 Apple 서버를 사용합니다. 마지막 결과는 다음 측정까지 남아 있으며, 단축어용 링크로 제어 센터에서 측정을 시작할 수 있습니다.
 
-## 설정
+</details>
+
+<details>
+<summary>설정</summary>
 
 메뉴에서 **설정…** 항목을 선택하거나 ⌘,를 눌러 설정을 여십시오. Finder, Launchpad, Spotlight에서 pika-tools를 다시 실행해도 열립니다. 윈도우가 열려 있는 동안에는 앱이 Dock과 ⌘Tab에 나타납니다.
 
@@ -119,7 +265,10 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 
 **iCloud로 설정 동기화** 를 켜면 모든 Mac에서 pika-tools가 똑같이 유지됩니다. 설정은 iCloud Drive의 pika-tools 폴더에 저장되며, 가장 최근에 바꾼 내용이 적용됩니다. 기본값은 꺼짐이고, iCloud Drive가 켜져 있어야 합니다. 권한은 동기화되지 않으며, Mac마다 각자 요청합니다.
 
-## 업데이트
+</details>
+
+<details>
+<summary>업데이트</summary>
 
 pika-tools는 실행할 때와 6시간마다 새 버전을 확인합니다. 설정 › 일반에서 이 기능을 끌 수 있습니다. 새 버전이 나오면 메뉴에 **… (으)로 업데이트** 버튼이 나타납니다. 한 번 클릭하면 앱이 업데이트를 다운로드하고 설치한 후 다시 시작합니다. 설정 › 일반의 **지금 확인**으로 직접 확인할 수도 있습니다.
 
@@ -127,7 +276,10 @@ Homebrew를 사용한다면 `brew upgrade --cask pika-tools`를 실행해도 됩
 
 1.3 버전부터는 업데이트 후에도 권한이 그대로 유지됩니다.
 
-## 제거
+</details>
+
+<details>
+<summary>제거</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Homebrew로 설치했다면: `brew uninstall --cask --zap pika-tools`.
 
 두 방법 모두 앱을 종료하고 로그인 항목에서 제거한 후 삭제합니다. 스크립트는 권한도 재설정합니다.
 
-## 자주 묻는 질문
+</details>
+
+<details>
+<summary>자주 묻는 질문</summary>
 
 **왜 권한이 두 개나 필요한가요?**
 macOS는 키보드와 마우스에 대한 접근을 둘로 나눕니다. 입력 모니터링은 앱이 이벤트를 볼 수 있게 하고, 손쉬운 사용은 이벤트를 바꿀 수 있게 합니다. 단축키를 차단하려면 둘 다 필요합니다.
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **권한을 켰는데 아무것도 작동하지 않습니다.**
 **시스템 설정 › 개인정보 보호 및 보안**에서 − 버튼으로 두 목록 모두에서 pika-tools를 제거한 다음 다시 추가하십시오. pika-tools 설정의 ‘권한’ 페이지에 해당 위치를 바로 여는 버튼이 있습니다.
 
-## 기여하기
+</details>
 
-소스에서 빌드하고 릴리스하는 방법은 [CONTRIBUTING.md](../../CONTRIBUTING.md)에 있습니다. 변경 사항은 [CHANGELOG.md](../../CHANGELOG.md)에 정리되어 있습니다.
-
-## 라이선스
-
-MIT, © 2026 pikapik. [LICENSE](../../LICENSE)를 참고하십시오.
+<p align="center"><sub><a href="../../CHANGELOG.md">새로운 기능</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">소스에서 빌드</a> · <a href="../../LICENSE">MIT 라이선스</a> · © 2026 pikapik</sub></p>
