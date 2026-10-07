@@ -156,7 +156,7 @@ private struct CommandKeysSettings: View {
     private func row(key: String, title: String, isOn: Binding<Bool>) -> some View {
         Toggle(isOn: isOn) {
             KeyLabel(
-                keys: isOn.wrappedValue ? ["⇧", "⌘", key] : ["⌘", key],
+                keys: [isOn.wrappedValue ? "⇧⌘" + key : "⌘" + key],
                 title: Text(title),
                 subtitle: isOn.wrappedValue ? Text("Only with all three keys") : Text("Works as usual")
             )

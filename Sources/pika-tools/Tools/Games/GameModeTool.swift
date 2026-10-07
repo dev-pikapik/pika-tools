@@ -297,10 +297,9 @@ final class GameModeTool: Tool {
         isActive = false
     }
 
-    func keys(_ ids: Int32...) -> String? {
+    func keys(_ ids: Int32...) -> [String] {
         let off = HotKeyTrace.ids(trace.defaults) ?? []
-        let keys = ids.filter { off.contains($0) || SymbolicHotKeys.isEnabled($0) }.compactMap(SymbolicHotKeys.shortcut)
-        return keys.isEmpty ? nil : keys.joined(separator: "\u{00A0}")
+        return ids.filter { off.contains($0) || SymbolicHotKeys.isEnabled($0) }.compactMap(SymbolicHotKeys.shortcut)
     }
 
     static func key(_ app: NSRunningApplication) -> String {
@@ -521,41 +520,36 @@ struct GameModePage: View {
                     ToggleRow(
                         icon: "magnifyingglass",
                         title: String(localized: "Search and Siri"),
-                        subtitle: caption(named("Spotlight", tool.keys(64, 65)), named(String(localized: "Emoji"), tool.keys(50)), "Siri", "🌐"),
+                        subtitle: caption("Spotlight", named(String(localized: "Emoji"), tool.keys(50)), "Siri", "🌐"),
+                        keys: [tool.keys(64).first ?? "⌘" + String(localized: "Space")],
+                        column: Self.column,
                         isOn: $tool.blocksSearch
                     )
                     ToggleRow(
                         icon: "rectangle.on.rectangle",
                         title: String(localized: "Other apps and desktops"),
                         subtitle: caption(
-                            "⌘Tab", "⌘H", "⌘M", named(String(localized: "Mission Control"), tool.keys(32)),
+                            "⌘H", "⌘M", named(String(localized: "Mission Control"), tool.keys(32)),
                             named(String(localized: "Desktops"), tool.keys(79, 81)), String(localized: "Swipes")
                         ),
+                        keys: ["⌘Tab"],
+                        column: Self.column,
                         isOn: $tool.blocksSwitching
                     )
                     ToggleRow(
                         icon: "xmark.app",
                         title: String(localized: "The game doesn’t close by accident"),
                         subtitle: Text("⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q"),
+                        keys: Self.column,
                         isOn: $tool.blocksQuit
-                    )
-                    ToggleRow(
-                        icon: "cursorarrow.rays",
-                        title: String(localized: "The pointer stays in the game"),
-                        subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen"),
-                        isOn: $tool.fencesCursor
                     )
                     ToggleRow(
                         icon: "globe",
                         title: String(localized: "The keyboard language doesn’t change"),
-                        subtitle: tool.keys(60, 61, 156).map { Text(verbatim: $0) } ?? Text("If it switches by accident, it comes back right away"),
+                        subtitle: Text("If it switches by accident, it comes back right away"),
+                        keys: [tool.keys(60).first ?? "⌃" + String(localized: "Space")],
+                        column: Self.column,
                         isOn: $tool.keepsLayout
-                    )
-                    ToggleRow(
-                        icon: "sun.max",
-                        title: String(localized: "The screen stays on"),
-                        subtitle: Text("The display doesn’t dim or sleep while you play"),
-                        isOn: $tool.keepsDisplayOn
                     )
                 }
                 .disabled(!tool.isEnabled)
@@ -566,6 +560,23 @@ struct GameModePage: View {
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+            }
+            Section {
+                Group {
+                    ToggleRow(
+                        icon: "cursorarrow.rays",
+                        title: String(localized: "The pointer stays in the game"),
+                        subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen"),
+                        isOn: $tool.fencesCursor
+                    )
+                    ToggleRow(
+                        icon: "sun.max",
+                        title: String(localized: "The screen stays on"),
+                        subtitle: Text("The display doesn’t dim or sleep while you play"),
+                        isOn: $tool.keepsDisplayOn
+                    )
+                }
+                .disabled(!tool.isEnabled)
             }
             RestoreDefaultsSection(
                 message: String(localized: "These will turn off and go back to their default options: \(tool.title)"),
@@ -578,12 +589,14 @@ struct GameModePage: View {
         .environment(\.inSettings, true)
     }
 
+    private static let column = ["⌘Q", "⌘W"]
+
     private func caption(_ parts: String?...) -> Text {
         Text(verbatim: parts.compactMap { $0 }.joined(separator: " · "))
     }
 
-    private func named(_ name: String, _ keys: String?) -> String? {
-        keys.map { name + "\u{00A0}" + $0 }
+    private func named(_ name: String, _ keys: [String]) -> String? {
+        keys.isEmpty ? nil : ([name] + keys).joined(separator: "\u{00A0}")
     }
 }
 

@@ -69,21 +69,38 @@ struct KeyCaps: View {
     let keys: [String]
 
     var body: some View {
-        HStack(spacing: 3) {
-            ForEach(Array(keys.enumerated()), id: \.offset) { KeyCap(symbol: $0.element) }
+        HStack(spacing: 7) {
+            ForEach(Array(keys.enumerated()), id: \.offset) { _, shortcut in
+                HStack(spacing: 3) {
+                    ForEach(Array(Self.caps(shortcut).enumerated()), id: \.offset) { KeyCap(symbol: $0.element) }
+                }
+            }
         }
+        .fixedSize()
         .accessibilityHidden(true)
+    }
+
+    static func caps(_ shortcut: String) -> [String] {
+        let modifiers = shortcut.prefix { "⌃⌥⇧⌘🌐".contains($0) }
+        let key = shortcut.dropFirst(modifiers.count)
+        return modifiers.map(String.init) + (key.isEmpty ? [] : [String(key)])
     }
 }
 
 struct KeyLabel: View {
     var keys: [String] = []
+    var column: [String] = []
     let title: Text
     var subtitle: Text?
 
     var body: some View {
         HStack(spacing: 12) {
-            if !keys.isEmpty { KeyCaps(keys: keys) }
+            if !keys.isEmpty {
+                ZStack(alignment: .leading) {
+                    KeyCaps(keys: column).hidden()
+                    KeyCaps(keys: keys)
+                }
+            }
             RowLabel(title, subtitle)
         }
     }
