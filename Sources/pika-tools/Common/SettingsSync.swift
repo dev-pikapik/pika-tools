@@ -89,7 +89,7 @@ final class SettingsSync {
 
     static let shared = SettingsSync()
     static let drive = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Mobile Documents/com~apple~CloudDocs")
-    static let folder = drive.appendingPathComponent("pika-tools")
+    static let folder = drive.appendingPathComponent(Bundle.main.bundleIdentifier?.hasSuffix(".dev") == true ? "pika-tools-dev" : "pika-tools")
     static let file = folder.appendingPathComponent("settings.json")
 
     private static let enabledKey = "settings-sync"
