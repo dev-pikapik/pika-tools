@@ -417,13 +417,14 @@ struct ArtMouse: View {
 }
 
 struct ArtMenu<Content: View>: View {
+    var width: CGFloat = 100
     @ViewBuilder var content: Content
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
         VStack(alignment: .leading, spacing: 1) { content }
             .padding(3)
-            .frame(width: 100)
+            .frame(width: width)
             .background(Color(nsColor: .windowBackgroundColor), in: shape)
             .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
             .shadow(color: .black.opacity(0.2), radius: 6, y: 3)
