@@ -123,7 +123,7 @@ private struct ScrollDirectionSettings: View {
                     Text("Mouse wheel direction"),
                     String(localized: "Mouse wheel direction"),
                     $tool.mouseNatural,
-                    tool.mouseNatural ? Text("Roll the wheel toward you to go up the page") : Text("Roll the wheel toward you to go down the page, like on Windows")
+                    tool.mouseNatural ? Text("Roll the wheel toward you to go up the page") : Text("Roll the wheel toward you to go down the page")
                 )
             }
             .disabled(!tool.isEnabled)

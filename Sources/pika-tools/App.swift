@@ -46,7 +46,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         LoginItem.shared.restore()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["convert", "finder-cut", "finder-open", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "home-end", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }

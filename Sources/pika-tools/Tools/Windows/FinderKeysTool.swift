@@ -11,6 +11,7 @@ final class FinderKeys {
 
     @ObservationIgnored var opens = false
     @ObservationIgnored var cuts = false
+    @ObservationIgnored var deletes = false
     @ObservationIgnored private var cutCount: Int?
     @ObservationIgnored private var generation = 0
     @ObservationIgnored private var held: (key: Int, target: Int, flags: CGEventFlags)?
@@ -22,7 +23,7 @@ final class FinderKeys {
     func refresh() {
         stop()
         if !cuts { cancelCut() }
-        if opens || cuts, AXIsProcessTrusted() { start() }
+        if opens || cuts || deletes, AXIsProcessTrusted() { start() }
     }
 
     private func start() {
@@ -72,7 +73,8 @@ final class FinderKeys {
 
         let opening = opens && flags.isEmpty && [kVK_Return, kVK_ANSI_KeypadEnter, kVK_F2].contains(key)
         let cutting = cuts && flags == .maskCommand && (key == kVK_ANSI_X || (key == kVK_ANSI_V && cutCount != nil))
-        guard opening || cutting,
+        let deleting = deletes && flags.isEmpty && [kVK_Delete, kVK_ForwardDelete].contains(key)
+        guard opening || cutting || deleting,
               let finder = NSWorkspace.shared.frontmostApplication,
               finder.bundleIdentifier == "com.apple.finder",
               Self.isBrowsing(finder.processIdentifier)
@@ -84,6 +86,8 @@ final class FinderKeys {
             target = (kVK_Return, [])
         case kVK_Return, kVK_ANSI_KeypadEnter:
             target = (kVK_DownArrow, [.maskCommand, .maskSecondaryFn, .maskNumericPad])
+        case kVK_Delete, kVK_ForwardDelete:
+            target = (kVK_Delete, .maskCommand)
         case kVK_ANSI_X:
             let before = NSPasteboard.general.changeCount
             cancelCut()
@@ -125,27 +129,16 @@ final class FinderKeys {
     }
 
     private static func isBrowsing(_ pid: pid_t) -> Bool {
-        let (focused, error) = value(AXUIElementCreateApplication(pid), kAXFocusedUIElementAttribute)
-        if error == .noValue { return true }
-        guard error == .success, let focused, CFGetTypeID(focused) == AXUIElementGetTypeID() else { return false }
-        let element = focused as! AXUIElement
-
-        let (role, roleError) = value(element, kAXRoleAttribute)
-        guard roleError == .success, let role = role as? String else { return false }
-        let subrole = value(element, kAXSubroleAttribute).0 as? String
-        let typing = [kAXTextFieldRole, kAXTextAreaRole, kAXComboBoxRole].contains(role)
-        if typing || subrole == kAXSearchFieldSubrole { return false }
-
-        guard let window = value(element, kAXWindowAttribute).0, CFGetTypeID(window) == AXUIElementGetTypeID() else { return true }
-        let windowSubrole = value(window as! AXUIElement, kAXSubroleAttribute).0 as? String
-        return windowSubrole == kAXStandardWindowSubrole || windowSubrole == "AXDesktop"
-    }
-
-    private static func value(_ element: AXUIElement, _ attribute: String) -> (CFTypeRef?, AXError) {
-        AXUIElementSetMessagingTimeout(element, 0.15)
-        var value: CFTypeRef?
-        let error = AXUIElementCopyAttributeValue(element, attribute as CFString, &value)
-        return (value, error)
+        switch TextFocus(pid) {
+        case .none:
+            return true
+        case .unknown, .typing:
+            return false
+        case .other(let element):
+            guard let window = TextFocus.value(element, kAXWindowAttribute).0, CFGetTypeID(window) == AXUIElementGetTypeID() else { return true }
+            let windowSubrole = TextFocus.value(window as! AXUIElement, kAXSubroleAttribute).0 as? String
+            return windowSubrole == kAXStandardWindowSubrole || windowSubrole == "AXDesktop"
+        }
     }
 }
 
@@ -224,6 +217,36 @@ final class FinderCutTool: Tool {
 
     func refresh() {
         FinderKeys.shared.cuts = isEnabled
+        FinderKeys.shared.refresh()
+    }
+}
+
+@Observable
+final class FinderDeleteTool: Tool {
+    let id = "finder-delete"
+    let icon = "delete.left"
+    var title: String { String(localized: "Delete removes files in Finder") }
+    let tab = SettingsTab.finder
+
+    var isActive: Bool { isEnabled && FinderKeys.shared.isActive }
+
+    var isEnabled: Bool {
+        didSet {
+            UserDefaults.standard.set(isEnabled, forKey: id)
+            refresh()
+        }
+    }
+
+    init() {
+        isEnabled = UserDefaults.standard.bool(forKey: id)
+    }
+
+    var settingsView: AnyView {
+        AnyView(FinderDeleteSettings(tool: self))
+    }
+
+    func refresh() {
+        FinderKeys.shared.deletes = isEnabled
         FinderKeys.shared.refresh()
     }
 }
@@ -312,6 +335,47 @@ struct FinderCutArt: View {
     }
 }
 
+struct FinderDeleteArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.5, 1.8]
+
+    var body: some View {
+        let step = reduceMotion ? 1 : tick % Self.durations.count
+        let trashed = on && step >= 1
+        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
+        IllustrationRow {
+            Stage {
+                ArtFinder(size: CGSize(width: 150, height: 86)) {
+                    ArtFile()
+                    if !trashed { ArtFile(selected: true).transition(.scale(scale: 0.4).combined(with: .opacity)) }
+                    ArtFile()
+                }
+                .position(x: 104, y: 62)
+                shape
+                    .fill(Color(nsColor: .controlBackgroundColor))
+                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                    .overlay {
+                        Image(systemName: trashed ? "trash.fill" : "trash")
+                            .font(.system(size: 21, weight: .medium))
+                            .foregroundStyle(trashed ? Color.accentColor : Color.secondary)
+                            .contentTransition(.symbolEffect(.replace))
+                    }
+                    .frame(width: 46, height: 46)
+                    .shadow(color: .black.opacity(0.18), radius: 4, y: 2)
+                    .scaleEffect(on && step == 1 ? 1.1 : 1)
+                    .position(x: 234, y: 44)
+                ArtKey(down: step == 1, width: 46) { Image(systemName: "delete.left") }
+                    .position(x: 234, y: 98)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+}
+
 private struct FinderOpenSettings: View {
     @Bindable var tool: FinderOpenTool
     @Environment(\.inSettings) private var inSettings
@@ -321,9 +385,9 @@ private struct FinderOpenSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Open and rename, like on Windows"),
-            hint: Text("Open and rename, like on Windows"),
-            help: Text("In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows."),
+            subtitle: Text("Return opens, F2 renames"),
+            hint: Text("Return opens, F2 renames"),
+            help: Text("In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them."),
             keys: ["↩", "F2"],
             isOn: $tool.isEnabled
         )
@@ -339,10 +403,28 @@ private struct FinderCutSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Then paste to move them, like on Windows"),
-            hint: Text("Then paste to move them, like on Windows"),
-            help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut."),
+            subtitle: Text("Then paste to move them"),
+            hint: Text("Then paste to move them"),
+            help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut."),
             keys: ["⌘", "X"],
+            isOn: $tool.isEnabled
+        )
+    }
+}
+
+private struct FinderDeleteSettings: View {
+    @Bindable var tool: FinderDeleteTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { FinderDeleteArt(on: tool.isEnabled) }
+        ToggleRow(
+            icon: tool.icon,
+            title: tool.title,
+            subtitle: Text("The selected files go to the Trash, like with ⌘⌫"),
+            hint: Text("The selected files go to the Trash"),
+            help: Text("In Finder, ⌫ and ⌦ (fn ⌫ on a laptop) move the selected files to the Trash, like ⌘⌫. While you type a name or search, they erase letters as usual."),
+            keys: ["⌫", "⌦"],
             isOn: $tool.isEnabled
         )
     }
