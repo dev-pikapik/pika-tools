@@ -9,16 +9,37 @@ enum GameRules {
         "com.heroicgameslauncher.hgl", "org.prismlauncher.PrismLauncher", "com.mojang.minecraftlauncher", "io.itch.mac",
     ]
 
+    static let minecraftLaunchers: Set<String> = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
+
     static let searchKeys: [Int32] = [50, 64, 65, 70, 164, 186, 187, 190, 196, 197, 210, 211, 212, 213, 263, 264]
-    static let switchingKeys: [Int32] = [27, 52, 57, 99, 159, 163, 173, 174, 198, 199, 200, 214, 220, 222, 233, 234]
-        + Array(7...13) + Array(32...37) + Array(75...86) + Array(108...149) + Array(237...258)
+    static let switchingKeys: [Int32] = [27, 52, 99, 163, 173, 174, 214, 220, 222, 233, 234]
+        + Array(36...37) + Array(75...78) + Array(108...117) + Array(237...258)
     static let appSwitcherKeys: [Int32] = [1, 2]
-    static let layoutKeys: [Int32] = [60, 61, 156]
+    static let controlKeys: [Int32] = [57, 60, 61, 156, 159]
+        + Array(7...13) + Array(32...35) + Array(79...86) + Array(118...149) + Array(198...200)
     static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 73, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
         + Array(15...26) + Array(28...31) + Array(53...56) + Array(100...107) + Array(150...155) + Array(165...172) + Array(192...195))
 
-    static func hotKeys(search: Bool, switching: Bool, layout: Bool, appSwitcher: Bool) -> [Int32] {
-        (search ? searchKeys : []) + (switching ? switchingKeys + (appSwitcher ? appSwitcherKeys : []) : []) + (layout ? layoutKeys : [])
+    static func hotKeys(search: Bool, switching: Bool, control: Bool, appSwitcher: Bool) -> [Int32] {
+        (search ? searchKeys : []) + (switching ? switchingKeys + (appSwitcher ? appSwitcherKeys : []) : []) + (control ? controlKeys : [])
+    }
+
+    static func clickFlags(_ type: CGEventType, _ flags: CGEventFlags, playing: Bool, blocksControl: Bool) -> CGEventFlags {
+        guard playing, blocksControl, [.leftMouseDown, .leftMouseUp, .leftMouseDragged].contains(type) else { return flags }
+        return flags.subtracting(.maskControl)
+    }
+
+    static func isGame(id: String?, name: String?, path: String, in games: [String]) -> Bool {
+        if let id, minecraftLaunchers.contains(id) { return false }
+        if games.contains(id ?? name ?? "") { return true }
+        let path = path.lowercased()
+        return games.contains(where: minecraftLaunchers.contains)
+            && (path.contains("/minecraft/") && path.contains("/runtime/") || name?.hasPrefix("Minecraft") == true)
+    }
+
+    static func migrateControl(_ defaults: UserDefaults) {
+        if defaults.object(forKey: "ctrl-keys") as? Bool == true { defaults.set(true, forKey: "game-mode-control") }
+        ["ctrl-keys", "ctrl-keys-excluded"].forEach(defaults.removeObject)
     }
 
     static func looksLikeGame(id: String?, category: String?, supportsGameMode: Bool, path: String) -> Bool {

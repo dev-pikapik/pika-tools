@@ -7,7 +7,7 @@
 [![Licença: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: bloqueia os atalhos com Control, protege ⌘Q e ⌘W, troca o idioma com Option+Shift, repete a tecla segurada, desativa a aceleração do mouse, rola a roda do mouse por linhas, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
+Um pequeno app para a barra de menus do macOS que melhora teclas, janelas e o Dock: protege ⌘Q e ⌘W, troca o idioma com Option+Shift, repete a tecla segurada, desativa a aceleração do mouse, rola a roda do mouse por linhas, faz os botões laterais do mouse voltarem e avançarem, encerra os apps quando você fecha a última janela, oculta um app com um clique no Dock e mantém seu Mac acordado.
 
 ## Instalação
 
@@ -39,8 +39,6 @@ O app percebe a mudança em um ou dois segundos, sem precisar reiniciar.
 O pika-tools não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. A única conexão de rede é a busca por atualizações, que pergunta ao GitHub qual é a versão mais recente.
 
 ## Recursos
-
-**Bloquear atalhos com Control.** Control vira uma tecla comum. Os apps ainda veem que ela está pressionada, mas o macOS não a transforma mais em atalhos: Control+Espaço não troca a fonte de entrada, Control+setas não trocam de mesa e Control+clique é um clique normal em vez de abrir um menu de contexto. O clique secundário e o toque com dois dedos funcionam como sempre. Útil em jogos e em sessões de área de trabalho remota, onde o Control tem uma função própria. Você pode listar apps em que o Control deve funcionar como de costume, por exemplo um cliente de área de trabalho remota: o bloqueio não vale para eles.
 
 **Proteger ⌘Q e ⌘W.** ⌘Q e ⌘W sozinhos não fazem nada, então você não encerra um app nem fecha uma janela sem querer. Adicione Shift para fazer isso de propósito: ⇧⌘Q encerra, ⇧⌘W fecha. Funciona em todos os apps. Cada tecla tem a própria chave. Desativado por padrão.
 
@@ -78,9 +76,9 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Conversão no Finder.** Clique com o botão direito num arquivo no Finder e escolha **Converter para** para salvá-lo em outro formato: uma imagem como JPEG, PNG, HEIC, GIF, TIFF ou PDF, um vídeo como MP4, MOV ou só o som, música como M4A, WAV ou AIFF. O original continua igual e nada sai do seu Mac. Liga separadamente da cópia menor. Desativado por padrão.
 
-**Modo Jogo.** Adicione seus jogos e, enquanto você joga, o Mac não tira você do jogo. Spotlight, Siri, ⌘Tab, Mission Control e os gestos entre mesas não abrem por cima do jogo, ⌘Q e ⌘W não o fecham sem querer, o ponteiro não escapa para o Dock, a barra de menus ou outra tela, o idioma do teclado não muda e a tela continua ligada. Cada uma dessas opções tem a própria chave na página Jogos, e o pika-tools sugere os jogos que encontra no seu Mac. Para sair de um jogo, pressione ⇧⌘Q; para fechar a janela dele, ⇧⌘W. ⌥⌘Esc sempre funciona. Assim que você sai do jogo, tudo funciona como sempre. Desativado por padrão.
+**Modo Jogo.** Adicione seus jogos e, enquanto você joga, o Mac não tira você do jogo. Spotlight, Siri, ⌘Tab, Mission Control e os gestos entre mesas não abrem por cima do jogo, ⌘Q e ⌘W não o fecham sem querer, o ponteiro não escapa para o Dock, a barra de menus ou outra tela, o idioma do teclado não muda e a tela continua ligada. Cada uma dessas opções tem a própria chave na página Jogos, e o pika-tools sugere os jogos que encontra no seu Mac. No jogo, Control vira uma tecla comum: Control-clique continua sendo um clique, e Control+Espaço ou Control com as setas não trocam o idioma nem a mesa. O Minecraft também é reconhecido: adicione o Minecraft Launcher ou o CurseForge, e o modo liga dentro do próprio Minecraft. Para sair de um jogo, pressione ⇧⌘Q; para fechar a janela dele, ⇧⌘W. ⌥⌘Esc sempre funciona. Assim que você sai do jogo, tudo funciona como sempre. Desativado por padrão.
 
-Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C normal de volta? Desative essa ferramenta.
+Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: uma seta com um clique quando as ferramentas estão funcionando, uma seta riscada quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
 
@@ -102,7 +100,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de nov
 
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
 - **Manter Ativo**: duração e opções de tela e de tampa.
-- **Teclado**: atalhos com Control, troca de idioma, repetição de teclas, Home e End.
+- **Teclado**: troca de idioma, repetição de teclas, Home e End.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.

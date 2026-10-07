@@ -7,7 +7,7 @@
 [![Lisans: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![İndirmeler](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: Control kestirmelerini engeller, ⌘Q ve ⌘W’yi korur, Option+Shift ile dili değiştirir, basılı tutulan tuşu tekrarlar, fare ivmesini kapatır, fare tekerini satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
+Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: ⌘Q ve ⌘W’yi korur, Option+Shift ile dili değiştirir, basılı tutulan tuşu tekrarlar, fare ivmesini kapatır, fare tekerini satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
 
 ## Kurulum
 
@@ -39,8 +39,6 @@ Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya ge
 pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Tek ağ isteği güncelleme denetimidir: GitHub’a en son sürüm sorulur.
 
 ## Özellikler
-
-**Control kestirmelerini engelleme.** Control sıradan bir tuşa dönüşür. Uygulamalar basılı tutulduğunu görmeye devam eder, ancak macOS onu artık kestirmelere çevirmez: Control+Boşluk girdi kaynağını değiştirmez, Control+oklar masaüstünü değiştirmez ve Control-tıklama, içerik menüsü yerine normal bir tıklama olur. Sağ tıklama ve iki parmakla dokunma her zamanki gibi çalışır. Control’ün kendine ait bir görevi olduğu oyunlarda ve uzak masaüstü oturumlarında işe yarar. Control’ün her zamanki gibi çalışacağı uygulamaları listeleyebilirsiniz, örneğin bir uzak masaüstü uygulaması: engelleme onlara uygulanmaz.
 
 **⌘Q ve ⌘W’yi koruma.** ⌘Q ve ⌘W tek başına hiçbir şey yapmaz, böylece bir uygulamadan yanlışlıkla çıkmaz ya da bir pencereyi yanlışlıkla kapatmazsınız. Bilerek yapmak için Shift ekleyin: ⇧⌘Q çıkar, ⇧⌘W kapatır. Tüm uygulamalarda çalışır. Her tuşun kendi anahtarı vardır. Varsayılan olarak kapalıdır.
 
@@ -78,9 +76,9 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Finder’da Dönüştürme.** Finder’da bir dosyaya sağ tıklayıp **Dönüştür**’ü seçin; dosya başka bir biçimde kaydedilir: resim JPEG, PNG, HEIC, GIF, TIFF veya PDF, video MP4, MOV ya da yalnızca ses, müzik M4A, WAV veya AIFF olarak. Orijinal olduğu gibi kalır ve hiçbir şey Mac’inizden çıkmaz. Küçük Kopya’dan ayrı açılıp kapanır. Varsayılan olarak kapalı.
 
-**Oyun Modu.** Oyunlarınızı ekleyin; siz oynarken Mac sizi oyundan koparmaz. Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz, ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç Dock’a, menü çubuğuna ya da başka bir ekrana kaymaz, klavye dili değişmez ve ekran açık kalır. Bunların her birinin Oyunlar sayfasında kendi anahtarı vardır; pika-tools ayrıca Mac’inizde bulduğu oyunları önerir. Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. Oyundan çıktığınız anda her şey her zamanki gibi çalışır. Varsayılan olarak kapalı.
+**Oyun Modu.** Oyunlarınızı ekleyin; siz oynarken Mac sizi oyundan koparmaz. Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz, ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç Dock’a, menü çubuğuna ya da başka bir ekrana kaymaz, klavye dili değişmez ve ekran açık kalır. Bunların her birinin Oyunlar sayfasında kendi anahtarı vardır; pika-tools ayrıca Mac’inizde bulduğu oyunları önerir. Oyunda Control sıradan bir tuş olur: Control-tıklama normal bir tıklama olarak kalır, Control+Boşluk ya da Control ile ok tuşları dili veya masaüstünü değiştirmez. Minecraft da tanınır: Minecraft Launcher’ı ya da CurseForge’u ekleyin, mod Minecraft’ın içinde açılır. Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. Oyundan çıktığınız anda her şey her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
-Her aracın menüde ve ayarlarda kendi anahtarı vardır. Normal Control+C’ye mi ihtiyacınız var? O aracı kapatın.
+Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken tıklama işaretli bir ok, her şey kapalıyken üstü çizili bir ok, bir araç açık ama izinler eksikken bir uyarı üçgeni.
 
@@ -102,7 +100,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u 
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
-- **Klavye**: Control kestirmeleri, dil değiştirme, tuş tekrarı, Home ve End.
+- **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.

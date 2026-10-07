@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "無法檢查更新";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "無法寫入 App 所在的檔案夾。請使用 brew 或 install.sh 更新";
 "Download failed. Try again later" = "下載失敗，請稍後再試";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 當作一般按鍵：沒有快速鍵，也沒有 ⌃ 點按選單";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "按住 ⌥ 再按 ⇧：下一個語言。按住 ⇧ 再按 ⌥：上一個語言";
 "All set" = "一切就緒";
 "pika-tools needs two permissions" = "pika-tools 需要兩項權限";
@@ -259,7 +258,6 @@
 "Faster" = "更快";
 "Hold the first key, tap the second" = "按住第一個鍵，輕按第二個鍵";
 "Mac stays awake with the lid closed" = "闔上螢幕，Mac 也不會進入睡眠";
-"No shortcuts, no right-click menu" = "沒有快速鍵，沒有右鍵選單";
 "Return opens, F2 renames" = "Return 打開，F2 重新命名";
 "Repeats instead of the accent menu" = "重複輸入，不跳出重音選單";
 "Right-click in a folder › New File" = "在檔案夾中點按右鍵 › 新增檔案";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "再貼上即可移動";
 "Your Mac stays awake until you quit pika-tools" = "在你結束 pika-tools 之前，Mac 不會睡眠";
 "macOS will ask for your administrator password." = "macOS 會要求輸入管理者密碼。";
-"Works as usual in these apps" = "在這些 App 中照常運作";
 "Lines for apps, pixels for games" = "App 用行，遊戲用像素";
 "Add the Open URLs action in Shortcuts, with a link." = "在「捷徑」中加入附連結的「打開 URL」動作。";
-"Block Control shortcuts" = "阻擋 Control 快速鍵";
 "Fixes for Finder" = "Finder 的修正";
 "Fixes for the keyboard" = "鍵盤的修正";
 "Fixes for the mouse" = "滑鼠的修正";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "遊戲不會被誤關";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q 和 ⌘W 在遊戲中無效。要結束，請按 ⇧⌘Q";
 "The pointer stays in the game" = "指標留在遊戲裡";
+"⌃ stays in the game" = "⌃ 留在遊戲裡";
+"⌃-click menu" = "⌃ 點按選單";
+"Menu bar" = "選單列";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock、選單列和熱點不會跳出來，指標也不會跑到另一個螢幕";
 "The keyboard language doesn’t change" = "鍵盤語言不變";
 "If it switches by accident, it comes back right away" = "如果不小心切換了，會立刻切回來";

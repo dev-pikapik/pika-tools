@@ -7,7 +7,7 @@
 [![Licencja: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Pobrania](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift, powtarza przytrzymany klawisz, wyłącza przyspieszenie myszy, przewija kółko myszy wierszami, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
+Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift, powtarza przytrzymany klawisz, wyłącza przyspieszenie myszy, przewija kółko myszy wierszami, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
 
 ## Instalacja
 
@@ -39,8 +39,6 @@ Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Jedyne połączenie z siecią to sprawdzanie uaktualnień, które pyta GitHub o najnowsze wydanie.
 
 ## Funkcje
-
-**Blokowanie skrótów z Control.** Control staje się zwykłym klawiszem. Aplikacje nadal widzą, że jest wciśnięty, ale macOS nie zamienia go już w skróty: Control+Spacja nie zmienia źródła wprowadzania, Control+strzałki nie przełączają biurek, a Control-kliknięcie to zwykłe kliknięcie zamiast menu podręcznego. Kliknięcie prawym przyciskiem i stuknięcie dwoma palcami działają jak zwykle. Przydaje się w grach i podczas sesji zdalnego pulpitu, gdzie Control ma własne zadanie. Możesz wypisać aplikacje, w których Control działa jak zwykle, na przykład klienta pulpitu zdalnego: blokada ich nie dotyczy.
 
 **Ochrona ⌘Q i ⌘W.** Same ⌘Q i ⌘W nic nie robią, więc nie zamkniesz przypadkiem aplikacji ani okna. Dodaj Shift, aby zrobić to celowo: ⇧⌘Q kończy aplikację, ⇧⌘W zamyka okno. Działa we wszystkich aplikacjach. Każdy klawisz ma własny przełącznik. Domyślnie wyłączone.
 
@@ -78,9 +76,9 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Konwersja w Finderze.** Kliknij prawym plik w Finderze i wybierz **Konwertuj na**, aby zapisać go w innym formacie: obraz jako JPEG, PNG, HEIC, GIF, TIFF lub PDF, wideo jako MP4, MOV albo sam dźwięk, muzykę jako M4A, WAV lub AIFF. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Włącza się osobno od mniejszej kopii. Domyślnie wyłączone.
 
-**Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, język klawiatury się nie zmienia, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pika-tools podpowiada gry, które znajdzie na Twoim Macu. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
+**Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, język klawiatury się nie zmienia, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pika-tools podpowiada gry, które znajdzie na Twoim Macu. W grze Control staje się zwykłym klawiszem: Control-kliknięcie pozostaje zwykłym kliknięciem, a Control+spacja ani Control ze strzałkami nie zmieniają języka ani biurka. Rozpoznaje też Minecrafta: dodaj Minecraft Launcher lub CurseForge, a tryb włączy się w samym Minecrafcie. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
 
-Każde narzędzie ma własny przełącznik w menu i w ustawieniach. Potrzebujesz z powrotem zwykłego Control+C? Wyłącz to narzędzie.
+Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: strzałka z kliknięciem, gdy narzędzia działają, przekreślona strzałka, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
 
@@ -102,7 +100,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
-- **Klawiatura**: skróty z Control, zmiana języka, powtarzanie klawisza, Home i End.
+- **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.

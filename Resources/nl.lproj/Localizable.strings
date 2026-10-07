@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Kan niet controleren op updates";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Kan niet schrijven naar de map van de app. Werk bij met brew of install.sh";
 "Download failed. Try again later" = "Downloaden mislukt. Probeer het later opnieuw";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ werkt als gewone toets: geen toetscombinaties, geen ⌃-klikmenu";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Houd ⌥ ingedrukt en tik op ⇧: volgende taal. Houd ⇧ ingedrukt en tik op ⌥: vorige";
 "All set" = "Alles klaar";
 "pika-tools needs two permissions" = "pika-tools heeft twee toestemmingen nodig";
@@ -259,7 +258,6 @@
 "Faster" = "Sneller";
 "Hold the first key, tap the second" = "Houd de eerste toets ingedrukt, tik op de tweede";
 "Mac stays awake with the lid closed" = "De Mac blijft wakker met gesloten klep";
-"No shortcuts, no right-click menu" = "Geen sneltoetsen, geen rechtsklikmenu";
 "Return opens, F2 renames" = "Return opent, F2 wijzigt de naam";
 "Repeats instead of the accent menu" = "Herhaalt in plaats van het accentmenu";
 "Right-click in a folder › New File" = "Rechtsklik in een map › Nieuw bestand";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Daarna verplaatst plakken ze";
 "Your Mac stays awake until you quit pika-tools" = "Je Mac blijft wakker tot je pika-tools stopt";
 "macOS will ask for your administrator password." = "macOS vraagt om je beheerderswachtwoord.";
-"Works as usual in these apps" = "Werkt zoals gewoonlijk in deze apps";
 "Lines for apps, pixels for games" = "Regels voor apps, pixels voor games";
 "Add the Open URLs action in Shortcuts, with a link." = "Voeg in Opdrachten de actie ‘Open URL’s’ met een link toe.";
-"Block Control shortcuts" = "Blokkeer Control-toetscombinaties";
 "Fixes for Finder" = "Verbeteringen voor de Finder";
 "Fixes for the keyboard" = "Verbeteringen voor het toetsenbord";
 "Fixes for the mouse" = "Verbeteringen voor de muis";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "De game sluit niet per ongeluk";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q en ⌘W werken niet in de game. Druk op ⇧⌘Q om te stoppen";
 "The pointer stays in the game" = "De aanwijzer blijft in de game";
+"⌃ stays in the game" = "⌃ blijft in de game";
+"⌃-click menu" = "⌃-klikmenu";
+"Menu bar" = "Menubalk";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Het Dock, de menubalk en actieve hoeken springen niet tevoorschijn, en de aanwijzer glipt niet naar een ander scherm";
 "The keyboard language doesn’t change" = "De toetsenbordtaal verandert niet";
 "If it switches by accident, it comes back right away" = "Wisselt die per ongeluk, dan komt hij meteen terug";

@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Không thể kiểm tra bản cập nhật";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Không thể ghi vào thư mục của ứng dụng. Hãy cập nhật bằng brew hoặc install.sh";
 "Download failed. Try again later" = "Tải về không thành công. Hãy thử lại sau";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ hoạt động như phím thường: không có phím tắt, không có menu ⌃-bấm";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Giữ ⌥ và nhấn ⇧: ngôn ngữ tiếp theo. Giữ ⇧ và nhấn ⌥: ngôn ngữ trước";
 "All set" = "Đã sẵn sàng";
 "pika-tools needs two permissions" = "pika-tools cần hai quyền";
@@ -259,7 +258,6 @@
 "Faster" = "Nhanh hơn";
 "Hold the first key, tap the second" = "Giữ phím đầu, nhấn phím thứ hai";
 "Mac stays awake with the lid closed" = "Mac vẫn thức khi gập màn hình";
-"No shortcuts, no right-click menu" = "Không phím tắt, không menu nhấp chuột phải";
 "Return opens, F2 renames" = "Return mở, F2 đổi tên";
 "Repeats instead of the accent menu" = "Lặp phím thay vì mở menu dấu";
 "Right-click in a folder › New File" = "Bấm chuột phải trong thư mục › Tệp mới";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Sau đó dán để di chuyển";
 "Your Mac stays awake until you quit pika-tools" = "Mac không ngủ cho đến khi bạn thoát pika-tools";
 "macOS will ask for your administrator password." = "macOS sẽ hỏi mật khẩu quản trị viên.";
-"Works as usual in these apps" = "Hoạt động như bình thường trong các ứng dụng này";
 "Lines for apps, pixels for games" = "Dòng cho ứng dụng, điểm ảnh cho trò chơi";
 "Add the Open URLs action in Shortcuts, with a link." = "Trong Phím tắt, hãy thêm tác vụ Mở URL kèm liên kết.";
-"Block Control shortcuts" = "Chặn phím tắt Control";
 "Fixes for Finder" = "Các cải tiến cho Finder";
 "Fixes for the keyboard" = "Các cải tiến cho bàn phím";
 "Fixes for the mouse" = "Các cải tiến cho chuột";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Trò chơi không bị đóng nhầm";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q và ⌘W không hoạt động trong trò chơi. Để thoát, hãy nhấn ⇧⌘Q";
 "The pointer stays in the game" = "Con trỏ ở lại trong trò chơi";
+"⌃ stays in the game" = "⌃ ở lại trong trò chơi";
+"⌃-click menu" = "Menu ⌃-bấm";
+"Menu bar" = "Thanh menu";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, thanh menu và góc nóng không bật ra, và con trỏ không trượt sang màn hình khác";
 "The keyboard language doesn’t change" = "Ngôn ngữ bàn phím không đổi";
 "If it switches by accident, it comes back right away" = "Nếu lỡ bị đổi, nó sẽ quay lại ngay";

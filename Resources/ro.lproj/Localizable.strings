@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Nu s-au putut căuta actualizări";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Nu se poate scrie în dosarul aplicației. Actualizează cu brew sau install.sh";
 "Download failed. Try again later" = "Descărcarea a eșuat. Încearcă mai târziu";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funcționează ca tastă simplă: fără scurtături, fără meniul de ⌃-clic";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Ține ⌥ și apasă ⇧: limba următoare. Ține ⇧ și apasă ⌥: cea anterioară";
 "All set" = "Totul e gata";
 "pika-tools needs two permissions" = "pika-tools are nevoie de două permisiuni";
@@ -259,7 +258,6 @@
 "Faster" = "Mai rapid";
 "Hold the first key, tap the second" = "Ține apăsată prima tastă, apasă-o pe a doua";
 "Mac stays awake with the lid closed" = "Mac-ul rămâne activ cu capacul închis";
-"No shortcuts, no right-click menu" = "Fără scurtături, fără meniul clicului dreapta";
 "Return opens, F2 renames" = "Return deschide, F2 redenumește";
 "Repeats instead of the accent menu" = "Repetă în loc de meniul cu accente";
 "Right-click in a folder › New File" = "Clic dreapta într-un folder › Fișier nou";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Apoi lipirea le mută";
 "Your Mac stays awake until you quit pika-tools" = "Mac-ul rămâne activ până închizi pika-tools";
 "macOS will ask for your administrator password." = "macOS va cere parola de administrator.";
-"Works as usual in these apps" = "Funcționează ca de obicei în aceste aplicații";
 "Lines for apps, pixels for games" = "Rânduri pentru aplicații, pixeli pentru jocuri";
 "Add the Open URLs action in Shortcuts, with a link." = "În Comenzi rapide, adaugă acțiunea Deschide URL-uri cu un link.";
-"Block Control shortcuts" = "Blochează scurtăturile cu Control";
 "Fixes for Finder" = "Remedieri pentru Finder";
 "Fixes for the keyboard" = "Remedieri pentru tastatură";
 "Fixes for the mouse" = "Remedieri pentru maus";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Jocul nu se închide din greșeală";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q și ⌘W nu merg în joc. Ca să ieși, apasă ⇧⌘Q";
 "The pointer stays in the game" = "Cursorul rămâne în joc";
+"⌃ stays in the game" = "⌃ rămâne în joc";
+"⌃-click menu" = "Meniul de ⌃-clic";
+"Menu bar" = "Bara de meniu";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock-ul, bara de meniu și colțurile active nu apar, iar cursorul nu fuge pe alt ecran";
 "The keyboard language doesn’t change" = "Limba tastaturii nu se schimbă";
 "If it switches by accident, it comes back right away" = "Dacă se schimbă din greșeală, revine imediat";

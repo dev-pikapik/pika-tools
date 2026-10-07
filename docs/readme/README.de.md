@@ -7,7 +7,7 @@
 [![Lizenz: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Eine kleine App für die Menüleiste von macOS, die Tasten, Fenster und das Dock verbessert: Sie blockiert Ctrl-Kurzbefehle, schützt vor ⌘Q und ⌘W, wechselt die Sprache mit Option+Shift, wiederholt eine gehaltene Taste, schaltet die Mausbeschleunigung aus, scrollt das Mausrad zeilenweise, macht die Seitentasten der Maus zu Zurück und Vorwärts, beendet Apps, wenn du ihr letztes Fenster schließt, blendet eine App mit einem Klick im Dock aus und hält deinen Mac wach.
+Eine kleine App für die Menüleiste von macOS, die Tasten, Fenster und das Dock verbessert: Sie schützt vor ⌘Q und ⌘W, wechselt die Sprache mit Option+Shift, wiederholt eine gehaltene Taste, schaltet die Mausbeschleunigung aus, scrollt das Mausrad zeilenweise, macht die Seitentasten der Maus zu Zurück und Vorwärts, beendet Apps, wenn du ihr letztes Fenster schließt, blendet eine App mit einem Klick im Dock aus und hält deinen Mac wach.
 
 ## Installation
 
@@ -39,8 +39,6 @@ Die App erkennt die Änderung innerhalb von ein, zwei Sekunden, ein Neustart ist
 pika-tools zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. Die einzige Netzwerkanfrage ist die Suche nach Updates, bei der GitHub nach der neuesten Version gefragt wird.
 
 ## Funktionen
-
-**Ctrl-Kurzbefehle blockieren.** Ctrl wird zu einer normalen Taste. Apps sehen weiterhin, dass sie gedrückt ist, aber macOS macht daraus keine Kurzbefehle mehr: Ctrl+Leertaste wechselt nicht die Eingabequelle, Ctrl+Pfeiltasten wechseln nicht den Schreibtisch und Ctrl-Klick ist ein normaler Klick statt eines Kontextmenüs. Rechtsklick und Tippen mit zwei Fingern funktionieren wie gewohnt. Praktisch in Spielen und bei Remotedesktop-Sitzungen, wo Ctrl eine eigene Aufgabe hat. Du kannst Apps auflisten, in denen Ctrl wie gewohnt funktioniert, zum Beispiel ein Remotedesktop-Programm: Die Sperre gilt dort nicht.
 
 **⌘Q und ⌘W schützen.** ⌘Q und ⌘W allein bewirken nichts, damit du nicht aus Versehen eine App beendest oder ein Fenster schließt. Nimm Shift dazu, um es bewusst zu tun: ⇧⌘Q beendet, ⇧⌘W schließt. Funktioniert in jeder App. Jede Taste hat einen eigenen Schalter. Standardmäßig aus.
 
@@ -78,9 +76,9 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Umwandeln im Finder.** Rechtsklick auf eine Datei im Finder und **Umwandeln in** wählen, um sie in einem anderen Format zu speichern: Bilder als JPEG, PNG, HEIC, GIF, TIFF oder PDF, Videos als MP4, MOV oder nur den Ton, Musik als M4A, WAV oder AIFF. Das Original bleibt, wie es ist, und nichts verlässt deinen Mac. Lässt sich getrennt von der kleineren Kopie einschalten. Standardmäßig aus.
 
-**Spielmodus.** Füg deine Spiele hinzu, und solange du spielst, reißt dich dein Mac nicht aus dem Spiel. Spotlight, Siri, ⌘Tab, Mission Control und Wischen zwischen Schreibtischen öffnen sich nicht über dem Spiel, ⌘Q und ⌘W schließen es nicht aus Versehen, der Zeiger rutscht nicht ins Dock, in die Menüleiste oder auf einen anderen Bildschirm, die Tastatursprache wechselt nicht, und der Bildschirm bleibt an. Jeder dieser Punkte hat einen eigenen Schalter auf der Seite „Spiele“, und pika-tools schlägt Spiele vor, die es auf deinem Mac findet. Um ein Spiel zu beenden, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. Sobald du das Spiel verlässt, funktioniert alles wie gewohnt. Standardmäßig aus.
+**Spielmodus.** Füg deine Spiele hinzu, und solange du spielst, reißt dich dein Mac nicht aus dem Spiel. Spotlight, Siri, ⌘Tab, Mission Control und Wischen zwischen Schreibtischen öffnen sich nicht über dem Spiel, ⌘Q und ⌘W schließen es nicht aus Versehen, der Zeiger rutscht nicht ins Dock, in die Menüleiste oder auf einen anderen Bildschirm, die Tastatursprache wechselt nicht, und der Bildschirm bleibt an. Jeder dieser Punkte hat einen eigenen Schalter auf der Seite „Spiele“, und pika-tools schlägt Spiele vor, die es auf deinem Mac findet. Im Spiel ist Ctrl eine normale Taste: Ctrl-Klick bleibt ein Klick, und Ctrl+Leertaste oder Ctrl mit Pfeiltasten wechseln weder Sprache noch Schreibtisch. Auch Minecraft wird erkannt: Füge den Minecraft Launcher oder CurseForge hinzu, dann schaltet sich der Modus in Minecraft selbst ein. Um ein Spiel zu beenden, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. Sobald du das Spiel verlässt, funktioniert alles wie gewohnt. Standardmäßig aus.
 
-Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen. Du brauchst das normale Ctrl+C zurück? Schalte das Werkzeug aus.
+Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: ein Pfeil mit Klick, wenn die Werkzeuge arbeiten, ein durchgestrichener Pfeil, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
 
@@ -102,7 +100,7 @@ Wach bleiben, der Display-Modus und der Modus bei geschlossenem Deckel lassen si
 
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
-- **Tastatur**: Ctrl-Kurzbefehle, Sprachwechsel, Tastenwiederholung, Home und End.
+- **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Ausblenden per Klick im Dock.

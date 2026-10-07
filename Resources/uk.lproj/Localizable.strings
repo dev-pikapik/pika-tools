@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Не вдалося перевірити оновлення";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Немає прав на папку з програмою — онови через brew або install.sh";
 "Download failed. Try again later" = "Оновлення не завантажилося, спробуй пізніше";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ працює як звичайна клавіша: без комбінацій і меню за ⌃-кліком";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Тримайте ⌥ і натискайте ⇧ — наступна мова. Тримайте ⇧ і натискайте ⌥ — попередня";
 "All set" = "Усе готово";
 "pika-tools needs two permissions" = "Дай pika-tools два дозволи";
@@ -259,7 +258,6 @@
 "Faster" = "Швидше";
 "Hold the first key, tap the second" = "Утримуйте першу клавішу, натисніть другу";
 "Mac stays awake with the lid closed" = "Mac не засне із закритою кришкою";
-"No shortcuts, no right-click menu" = "Без скорочень і без меню правого кліку";
 "Return opens, F2 renames" = "Return відкриває, F2 перейменовує";
 "Repeats instead of the accent menu" = "Повтор замість меню з акцентами";
 "Right-click in a folder › New File" = "Правий клік у теці › Новий файл";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Потім вставлення переміщує їх";
 "Your Mac stays awake until you quit pika-tools" = "Mac не засне, доки ви не вийдете з pika-tools";
 "macOS will ask for your administrator password." = "macOS запитає пароль адміністратора.";
-"Works as usual in these apps" = "Працює як зазвичай у цих програмах";
 "Lines for apps, pixels for games" = "Рядки — для програм, пікселі — для ігор";
 "Add the Open URLs action in Shortcuts, with a link." = "Додайте в «Командах» дію «Відкрити URL-адреси» з посиланням.";
-"Block Control shortcuts" = "Блокувати комбінації з Control";
 "Fixes for Finder" = "Покращення для Finder";
 "Fixes for the keyboard" = "Покращення для клавіатури";
 "Fixes for the mouse" = "Покращення для миші";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Гра не закривається випадково";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q і ⌘W у грі не працюють. Щоб вийти, натисніть ⇧⌘Q";
 "The pointer stays in the game" = "Курсор залишається в грі";
+"⌃ stays in the game" = "⌃ залишається в грі";
+"⌃-click menu" = "Меню за ⌃-кліком";
+"Menu bar" = "Рядок меню";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, рядок меню й активні кути не вискакують, а курсор не переходить на інший екран";
 "The keyboard language doesn’t change" = "Розкладка не змінюється";
 "If it switches by accident, it comes back right away" = "Якщо вона перемкнеться випадково, то одразу повернеться";

@@ -7,7 +7,7 @@
 [![Giấy phép: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Lượt tải](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: chặn các phím tắt Control, bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift, lặp lại phím đang giữ, tắt gia tốc chuột, cuộn bánh xe chuột theo dòng, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
+Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift, lặp lại phím đang giữ, tắt gia tốc chuột, cuộn bánh xe chuột theo dòng, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
 
 ## Cài đặt
 
@@ -39,8 +39,6 @@ pika-tools cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài
 pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Yêu cầu mạng duy nhất là kiểm tra cập nhật, hỏi GitHub phiên bản mới nhất.
 
 ## Tính năng
-
-**Chặn phím tắt Control.** Control trở thành một phím bình thường. Các ứng dụng vẫn biết phím đang được giữ, nhưng macOS không còn biến nó thành phím tắt: Control+Phím cách không đổi nguồn đầu vào, Control+phím mũi tên không chuyển màn hình nền, và Control-bấm là một lần bấm bình thường thay vì mở menu ngữ cảnh. Bấm chuột phải và chạm bằng hai ngón vẫn hoạt động như thường. Hữu ích khi chơi game và dùng máy tính từ xa, nơi Control có việc riêng của nó. Bạn có thể liệt kê các ứng dụng mà Control vẫn hoạt động bình thường, ví dụ ứng dụng máy tính từ xa: việc chặn không áp dụng cho chúng.
 
 **Bảo vệ ⌘Q và ⌘W.** Chỉ nhấn ⌘Q hoặc ⌘W thì không có gì xảy ra, nên bạn sẽ không vô tình thoát ứng dụng hay đóng cửa sổ. Thêm Shift khi bạn thật sự muốn: ⇧⌘Q để thoát, ⇧⌘W để đóng. Hoạt động trong mọi ứng dụng. Mỗi phím có công tắc riêng. Tắt theo mặc định.
 
@@ -78,9 +76,9 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Chuyển đổi trong Finder.** Bấm chuột phải vào tệp trong Finder và chọn **Chuyển sang** để lưu tệp ở định dạng khác: ảnh thành JPEG, PNG, HEIC, GIF, TIFF hoặc PDF, video thành MP4, MOV hoặc chỉ lấy âm thanh, nhạc thành M4A, WAV hoặc AIFF. Tệp gốc vẫn giữ nguyên và không có gì rời khỏi máy Mac của bạn. Bật riêng với bản sao nhỏ hơn. Mặc định tắt.
 
-**Chế độ trò chơi.** Thêm trò chơi của bạn, và trong lúc bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi. Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi, ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ không trượt sang Dock, thanh menu hay màn hình khác, ngôn ngữ bàn phím không đổi và màn hình luôn sáng. Mỗi mục có công tắc riêng trên trang Trò chơi, và pika-tools gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. Ngay khi bạn rời trò chơi, mọi thứ hoạt động như bình thường. Mặc định tắt.
+**Chế độ trò chơi.** Thêm trò chơi của bạn, và trong lúc bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi. Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi, ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ không trượt sang Dock, thanh menu hay màn hình khác, ngôn ngữ bàn phím không đổi và màn hình luôn sáng. Mỗi mục có công tắc riêng trên trang Trò chơi, và pika-tools gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Trong trò chơi, Control trở thành phím thường: Control-bấm vẫn là một cú bấm bình thường, còn Control+Space hay Control với phím mũi tên không đổi ngôn ngữ hay màn hình nền. Minecraft cũng được nhận ra: thêm Minecraft Launcher hoặc CurseForge, và chế độ sẽ bật ngay trong Minecraft. Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. Ngay khi bạn rời trò chơi, mọi thứ hoạt động như bình thường. Mặc định tắt.
 
-Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần dùng lại Control+C bình thường? Tắt công cụ đó.
+Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: mũi tên có dấu bấm khi các công cụ đang chạy, mũi tên bị gạch khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
 
@@ -102,7 +100,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
-- **Bàn phím**: phím tắt Control, chuyển ngôn ngữ, lặp phím, Home và End.
+- **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.

@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "تعذّر التحقق من وجود تحديثات";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "تتعذّر الكتابة في مجلد التطبيق. حدّثه باستخدام brew أو install.sh";
 "Download failed. Try again later" = "فشل التنزيل. حاول مرة أخرى لاحقًا";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "يعمل ⌃ كمفتاح عادي: بلا اختصارات وبلا قائمة ⌃-نقر";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "اضغط مع الاستمرار على ⌥ واضغط ⇧: اللغة التالية. اضغط مع الاستمرار على ⇧ واضغط ⌥: السابقة";
 "All set" = "كل شيء جاهز";
 "pika-tools needs two permissions" = "يحتاج pika-tools إلى إذنين";
@@ -259,7 +258,6 @@
 "Faster" = "أسرع";
 "Hold the first key, tap the second" = "اضغط المفتاح الأول مطوّلًا واضغط الثاني";
 "Mac stays awake with the lid closed" = "يبقى Mac مستيقظًا والغطاء مغلق";
-"No shortcuts, no right-click menu" = "بلا اختصارات وبلا قائمة النقر بالزر الأيمن";
 "Return opens, F2 renames" = "Return يفتح، وF2 يعيد التسمية";
 "Repeats instead of the accent menu" = "يكرّر بدل قائمة التشكيل";
 "Right-click in a folder › New File" = "انقر بزر الماوس الأيمن في مجلد › ملف جديد";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "ثم يؤدي اللصق إلى نقلها";
 "Your Mac stays awake until you quit pika-tools" = "يبقى Mac مستيقظًا حتى تُنهي pika-tools";
 "macOS will ask for your administrator password." = "سيطلب macOS كلمة سر المسؤول.";
-"Works as usual in these apps" = "تعمل كالمعتاد في هذه التطبيقات";
 "Lines for apps, pixels for games" = "الأسطر للتطبيقات، والبكسلات للألعاب";
 "Add the Open URLs action in Shortcuts, with a link." = "في الاختصارات، أضف إجراء «فتح عناوين URL» مع رابط.";
-"Block Control shortcuts" = "حظر اختصارات Control";
 "Fixes for Finder" = "إصلاحات لـ Finder";
 "Fixes for the keyboard" = "إصلاحات للوحة المفاتيح";
 "Fixes for the mouse" = "إصلاحات للماوس";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "لا تُغلق اللعبة عن طريق الخطأ";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "لا يعمل ⌘Q و⌘W في اللعبة. للخروج، اضغط ⇧⌘Q";
 "The pointer stays in the game" = "يبقى المؤشر في اللعبة";
+"⌃ stays in the game" = "يبقى ⌃ في اللعبة";
+"⌃-click menu" = "قائمة ⌃-نقر";
+"Menu bar" = "شريط القائمة";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "لا يظهر Dock وشريط القائمة والزوايا النشطة فجأة، ولا ينتقل المؤشر إلى شاشة أخرى";
 "The keyboard language doesn’t change" = "لا تتغير لغة لوحة المفاتيح";
 "If it switches by accident, it comes back right away" = "إذا تبدلت عن طريق الخطأ، تعود فورًا";

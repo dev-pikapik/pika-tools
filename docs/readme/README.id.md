@@ -7,7 +7,7 @@
 [![Lisensi: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Unduhan](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Aplikasi kecil untuk bar menu macOS yang membuat tombol, jendela, dan Dock lebih nyaman: memblokir pintasan Control, melindungi ⌘Q dan ⌘W, mengganti bahasa dengan Option+Shift, mengulang tombol yang ditahan, mematikan akselerasi tetikus, menggulir roda tetikus per baris, membuat tombol samping tetikus berfungsi untuk mundur dan maju, keluar dari app saat jendela terakhirnya ditutup, menyembunyikan app dengan satu klik di Dock, dan menjaga Mac Anda tetap terjaga.
+Aplikasi kecil untuk bar menu macOS yang membuat tombol, jendela, dan Dock lebih nyaman: melindungi ⌘Q dan ⌘W, mengganti bahasa dengan Option+Shift, mengulang tombol yang ditahan, mematikan akselerasi tetikus, menggulir roda tetikus per baris, membuat tombol samping tetikus berfungsi untuk mundur dan maju, keluar dari app saat jendela terakhirnya ditutup, menyembunyikan app dengan satu klik di Dock, dan menjaga Mac Anda tetap terjaga.
 
 ## Instalasi
 
@@ -39,8 +39,6 @@ App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. Satu-satunya permintaan jaringan adalah pemeriksaan pembaruan, yang menanyakan rilis terbaru ke GitHub.
 
 ## Fitur
-
-**Blokir pintasan Control.** Control menjadi tombol biasa. App tetap tahu tombol itu ditekan, tetapi macOS tidak lagi mengubahnya menjadi pintasan: Control+Spasi tidak mengganti sumber input, Control+panah tidak berpindah desktop, dan Control-klik menjadi klik biasa, bukan menu pintasan. Klik kanan dan ketuk dua jari tetap bekerja seperti biasa. Berguna di game dan sesi desktop jarak jauh, tempat Control punya tugasnya sendiri. Anda bisa menambahkan app yang membuat Control tetap berfungsi seperti biasa, misalnya app desktop jarak jauh: pemblokiran tidak berlaku di sana.
 
 **Lindungi ⌘Q dan ⌘W.** ⌘Q dan ⌘W saja tidak melakukan apa pun, jadi Anda tidak akan keluar dari app atau menutup jendela secara tidak sengaja. Tambahkan Shift untuk melakukannya dengan sengaja: ⇧⌘Q keluar, ⇧⌘W menutup. Berfungsi di semua app. Setiap tombol punya saklarnya sendiri. Mati secara default.
 
@@ -78,9 +76,9 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Konversi di Finder.** Klik kanan file di Finder dan pilih **Konversi ke** untuk menyimpannya dalam format lain: gambar sebagai JPEG, PNG, HEIC, GIF, TIFF, atau PDF, video sebagai MP4, MOV, atau suaranya saja, musik sebagai M4A, WAV, atau AIFF. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Dinyalakan terpisah dari Salinan Lebih Kecil. Mati secara bawaan.
 
-**Mode Game.** Tambahkan game Anda, dan selama Anda bermain, Mac tidak menarik Anda keluar dari game. Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game, ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tidak meluncur ke Dock, bar menu, atau layar lain, bahasa keyboard tidak berganti, dan layar tetap menyala. Masing-masing punya saklarnya sendiri di halaman Game, dan pika-tools menyarankan game yang ditemukannya di Mac Anda. Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, ⇧⌘W. ⌥⌘Esc selalu berfungsi. Begitu Anda keluar dari game, semuanya berfungsi seperti biasa. Mati secara bawaan.
+**Mode Game.** Tambahkan game Anda, dan selama Anda bermain, Mac tidak menarik Anda keluar dari game. Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game, ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tidak meluncur ke Dock, bar menu, atau layar lain, bahasa keyboard tidak berganti, dan layar tetap menyala. Masing-masing punya saklarnya sendiri di halaman Game, dan pika-tools menyarankan game yang ditemukannya di Mac Anda. Di dalam game, Control menjadi tombol biasa: Control-klik tetap klik biasa, dan Control+Spasi atau Control dengan panah tidak mengganti bahasa atau desktop. Minecraft juga dikenali: tambahkan Minecraft Launcher atau CurseForge, dan mode ini menyala di dalam Minecraft itu sendiri. Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, ⇧⌘W. ⌥⌘Esc selalu berfungsi. Begitu Anda keluar dari game, semuanya berfungsi seperti biasa. Mati secara bawaan.
 
-Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
+Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
 Ikon di bar menu menunjukkan status sekilas: panah dengan klik saat alat bekerja, panah dicoret saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
 
@@ -102,7 +100,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
-- **Papan Ketik**: pintasan Control, penggantian bahasa, pengulangan tombol, Home dan End.
+- **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: menyembunyikan dengan klik di Dock.

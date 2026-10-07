@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "アップデートを確認できませんでした";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "アプリのフォルダに書き込めません。brew または install.sh でアップデートしてください";
 "Download failed. Try again later" = "ダウンロードできませんでした。あとでもう一度お試しください";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ を普通のキーとして扱います。ショートカットも ⌃-クリックのメニューも無効になります";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ を押したまま ⇧ を押すと次の言語、⇧ を押したまま ⌥ を押すと前の言語";
 "All set" = "準備完了";
 "pika-tools needs two permissions" = "pika-tools には 2 つのアクセス権が必要です";
@@ -259,7 +258,6 @@
 "Faster" = "速く";
 "Hold the first key, tap the second" = "1つ目のキーを押したまま、2つ目を押す";
 "Mac stays awake with the lid closed" = "蓋を閉じても Mac はスリープしません";
-"No shortcuts, no right-click menu" = "ショートカットも右クリックメニューも無効";
 "Return opens, F2 renames" = "Returnで開く、F2で名前を変更";
 "Repeats instead of the accent menu" = "アクセントメニューの代わりに繰り返し";
 "Right-click in a folder › New File" = "フォルダ内で右クリック › 新規ファイル";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "続けてペーストすると移動";
 "Your Mac stays awake until you quit pika-tools" = "pika-tools を終了するまで Mac はスリープしません";
 "macOS will ask for your administrator password." = "macOS が管理者パスワードを求めます。";
-"Works as usual in these apps" = "これらのアプリでは通常どおり動作";
 "Lines for apps, pixels for games" = "アプリは行、ゲームはピクセル";
 "Add the Open URLs action in Shortcuts, with a link." = "ショートカットで、リンク付きの「URLを開く」アクションを追加します。";
-"Block Control shortcuts" = "Control のショートカットをブロック";
 "Fixes for Finder" = "Finderのための改善";
 "Fixes for the keyboard" = "キーボードのための改善";
 "Fixes for the mouse" = "マウスのための改善";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "ゲームがうっかり閉じません";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "ゲーム中は⌘Qと⌘Wが効きません。終了するには⇧⌘Qを押します";
 "The pointer stays in the game" = "ポインタがゲームの中にとどまる";
+"⌃ stays in the game" = "⌃ がゲームの中にとどまる";
+"⌃-click menu" = "⌃-クリックのメニュー";
+"Menu bar" = "メニューバー";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock、メニューバー、ホットコーナーが出てこず、ポインタがほかの画面へ移りません";
 "The keyboard language doesn’t change" = "キーボードの言語が変わらない";
 "If it switches by accident, it comes back right away" = "うっかり切り替わっても、すぐに元に戻ります";

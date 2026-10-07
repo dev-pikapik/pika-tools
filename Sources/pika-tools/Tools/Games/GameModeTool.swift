@@ -39,6 +39,10 @@ final class GameModeTool: Tool {
         didSet { save(blocksQuit, "game-mode-quit") }
     }
 
+    var blocksControl: Bool {
+        didSet { save(blocksControl, "game-mode-control") }
+    }
+
     var fencesCursor: Bool {
         didSet { save(fencesCursor, "game-mode-cursor") }
     }
@@ -78,10 +82,12 @@ final class GameModeTool: Tool {
 
     private init() {
         let defaults = UserDefaults.standard
+        GameRules.migrateControl(defaults)
         isEnabled = defaults.bool(forKey: "game-mode")
         blocksSearch = defaults.object(forKey: "game-mode-search") as? Bool ?? true
         blocksSwitching = defaults.object(forKey: "game-mode-switching") as? Bool ?? true
         blocksQuit = defaults.object(forKey: "game-mode-quit") as? Bool ?? true
+        blocksControl = defaults.object(forKey: "game-mode-control") as? Bool ?? true
         fencesCursor = defaults.object(forKey: "game-mode-cursor") as? Bool ?? true
         keepsLayout = defaults.object(forKey: "game-mode-layout") as? Bool ?? true
         keepsDisplayOn = defaults.object(forKey: "game-mode-display") as? Bool ?? true
@@ -108,6 +114,7 @@ final class GameModeTool: Tool {
         blocksSearch = defaults.object(forKey: "game-mode-search") as? Bool ?? true
         blocksSwitching = defaults.object(forKey: "game-mode-switching") as? Bool ?? true
         blocksQuit = defaults.object(forKey: "game-mode-quit") as? Bool ?? true
+        blocksControl = defaults.object(forKey: "game-mode-control") as? Bool ?? true
         fencesCursor = defaults.object(forKey: "game-mode-cursor") as? Bool ?? true
         keepsLayout = defaults.object(forKey: "game-mode-layout") as? Bool ?? true
         keepsDisplayOn = defaults.object(forKey: "game-mode-display") as? Bool ?? true
@@ -117,7 +124,7 @@ final class GameModeTool: Tool {
     }
 
     var isDefault: Bool {
-        !isEnabled && blocksSearch && blocksSwitching && blocksQuit && fencesCursor && keepsLayout && keepsDisplayOn
+        !isEnabled && blocksSearch && blocksSwitching && blocksQuit && blocksControl && fencesCursor && keepsLayout && keepsDisplayOn
             && games.isEmpty && notGames.isEmpty
     }
 
@@ -126,6 +133,7 @@ final class GameModeTool: Tool {
         blocksSearch = true
         blocksSwitching = true
         blocksQuit = true
+        blocksControl = true
         fencesCursor = true
         keepsLayout = true
         keepsDisplayOn = true
@@ -153,7 +161,7 @@ final class GameModeTool: Tool {
     }
 
     func keepsOpen(_ app: NSRunningApplication) -> Bool {
-        games.contains(Self.key(app)) || GameRules.launchers.contains(app.bundleIdentifier ?? "")
+        games.contains(Self.key(app)) || isGame(app) || GameRules.launchers.contains(app.bundleIdentifier ?? "")
             || Self.looksLikeGame(app.bundleIdentifier, app.bundleURL ?? app.executableURL)
     }
 
@@ -169,7 +177,7 @@ final class GameModeTool: Tool {
         let bundles = folders.flatMap(contents).flatMap { $0.pathExtension == "app" ? [$0] : contents($0).filter { $0.pathExtension == "app" } }
         let installed = bundles.compactMap { url -> String? in
             let id = Bundle(url: url)?.bundleIdentifier
-            return Self.looksLikeGame(id, url) ? id : nil
+            return Self.looksLikeGame(id, url) || id == "com.mojang.minecraftlauncher" ? id : nil
         }
         let running = NSWorkspace.shared.runningApplications
             .filter { $0.activationPolicy == .regular && Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL) }
@@ -180,7 +188,7 @@ final class GameModeTool: Tool {
 
     fileprivate func update() {
         let app = NSWorkspace.shared.frontmostApplication
-        guard isEnabled, let app, games.contains(Self.key(app)), !Self.screenLocked else { return leave() }
+        guard isEnabled, let app, isGame(app), !Self.screenLocked else { return leave() }
         guard app.processIdentifier != game?.processIdentifier else { return }
         leave()
         enter(app)
@@ -188,9 +196,9 @@ final class GameModeTool: Tool {
 
     private func enter(_ app: NSRunningApplication) {
         game = app
-        trace.disable(GameRules.hotKeys(search: blocksSearch, switching: blocksSwitching, layout: keepsLayout, appSwitcher: tap != nil))
+        trace.disable(GameRules.hotKeys(search: blocksSearch, switching: blocksSwitching, control: blocksControl, appSwitcher: tap != nil))
         combos = Set(
-            (HotKeyTrace.ids(trace.defaults) ?? []).filter { !GameRules.layoutKeys.contains($0) }
+            (HotKeyTrace.ids(trace.defaults) ?? []).filter { !GameRules.controlKeys.contains($0) }
                 .compactMap(SymbolicHotKeys.value).map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
         )
         hinted = false
@@ -264,7 +272,7 @@ final class GameModeTool: Tool {
     }
 
     private func startTap() {
-        let types: [CGEventType] = [.keyDown, .keyUp]
+        let types: [CGEventType] = [.keyDown, .keyUp, .leftMouseDown, .leftMouseUp, .leftMouseDragged]
         let mask = types.reduce(CGEventMask(0)) { $0 | (1 << $1.rawValue) }
 
         guard let tap = CGEvent.tapCreate(
@@ -304,6 +312,14 @@ final class GameModeTool: Tool {
 
     static func key(_ app: NSRunningApplication) -> String {
         app.bundleIdentifier ?? app.localizedName ?? ""
+    }
+
+    func name(of app: NSRunningApplication) -> String {
+        games.contains(Self.key(app)) ? app.localizedName ?? "" : "Minecraft"
+    }
+
+    private func isGame(_ app: NSRunningApplication) -> Bool {
+        GameRules.isGame(id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "", in: games)
     }
 
     private static func looksLikeGame(_ id: String?, _ url: URL?) -> Bool {
@@ -449,6 +465,8 @@ private func gameModeCallback(
             && [kVK_Tab, kVK_ANSI_H, kVK_ANSI_M].contains(key)
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
+    case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
+        event.flags = GameRules.clickFlags(type, event.flags, playing: tool.isPlaying, blocksControl: tool.blocksControl)
     default:
         break
     }
@@ -488,7 +506,7 @@ struct GameModePage: View {
         Form {
             SettingsHeader(
                 tab: .games,
-                text: tool.game.map { String(localized: "Now playing: \($0.localizedName ?? "")") } ?? String(localized: "Play without interruptions")
+                text: tool.game.map { String(localized: "Now playing: \(tool.name(of: $0))") } ?? String(localized: "Play without interruptions")
             )
             Section {
                 GameModeArt(on: tool.isEnabled)
@@ -528,10 +546,7 @@ struct GameModePage: View {
                     ToggleRow(
                         icon: "rectangle.on.rectangle",
                         title: String(localized: "Other apps and desktops"),
-                        subtitle: caption(
-                            "⌘H", "⌘M", named(String(localized: "Mission Control"), tool.keys(32)),
-                            named(String(localized: "Desktops"), tool.keys(79, 81)), String(localized: "Swipes")
-                        ),
+                        subtitle: caption("⌘H", "⌘M", String(localized: "Swipes")),
                         keys: ["⌘Tab"],
                         column: Self.column,
                         isOn: $tool.blocksSwitching
@@ -544,12 +559,16 @@ struct GameModePage: View {
                         isOn: $tool.blocksQuit
                     )
                     ToggleRow(
-                        icon: "globe",
-                        title: String(localized: "The keyboard language doesn’t change"),
-                        subtitle: Text("If it switches by accident, it comes back right away"),
-                        keys: [tool.keys(60).first ?? "⌃" + String(localized: "Space")],
+                        icon: "control",
+                        title: String(localized: "⌃ stays in the game"),
+                        subtitle: caption(
+                            String(localized: "⌃-click menu"), named(String(localized: "Language"), tool.keys(60, 61)),
+                            named(String(localized: "Mission Control"), tool.keys(32)),
+                            named(String(localized: "Desktops"), tool.keys(79, 81, 118)), named(String(localized: "Menu bar"), tool.keys(7))
+                        ),
+                        keys: ["⌃"],
                         column: Self.column,
-                        isOn: $tool.keepsLayout
+                        isOn: $tool.blocksControl
                     )
                 }
                 .disabled(!tool.isEnabled)
@@ -563,6 +582,12 @@ struct GameModePage: View {
             }
             Section {
                 Group {
+                    ToggleRow(
+                        icon: "globe",
+                        title: String(localized: "The keyboard language doesn’t change"),
+                        subtitle: Text("If it switches by accident, it comes back right away"),
+                        isOn: $tool.keepsLayout
+                    )
                     ToggleRow(
                         icon: "cursorarrow.rays",
                         title: String(localized: "The pointer stays in the game"),
@@ -608,7 +633,7 @@ private struct GameModeSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("While you play, your Mac doesn’t pull you out of the game"),
-            hint: tool.game.map { Text("Now playing: \($0.localizedName ?? "")") } ?? Text("Your Mac doesn’t pull you out of a game"),
+            hint: tool.game.map { Text("Now playing: \(tool.name(of: $0))") } ?? Text("Your Mac doesn’t pull you out of a game"),
             help: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."),
             isOn: $tool.isEnabled
         )

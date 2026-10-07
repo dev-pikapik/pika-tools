@@ -7,7 +7,7 @@
 [![Licenza: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Download](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una piccola app per la barra dei menu di macOS che migliora tasti, finestre e Dock: blocca le abbreviazioni con Control, protegge ⌘Q e ⌘W, cambia lingua con Opzione+Maiuscole, ripete un tasto tenuto premuto, disattiva l’accelerazione del mouse, scorre la rotella del mouse per righe, fa andare indietro e avanti con i tasti laterali del mouse, chiude le app quando ne chiudi l’ultima finestra, nasconde un’app con un clic nel Dock e tiene sveglio il Mac.
+Una piccola app per la barra dei menu di macOS che migliora tasti, finestre e Dock: protegge ⌘Q e ⌘W, cambia lingua con Opzione+Maiuscole, ripete un tasto tenuto premuto, disattiva l’accelerazione del mouse, scorre la rotella del mouse per righe, fa andare indietro e avanti con i tasti laterali del mouse, chiude le app quando ne chiudi l’ultima finestra, nasconde un’app con un clic nel Dock e tiene sveglio il Mac.
 
 ## Installazione
 
@@ -39,8 +39,6 @@ L’app si accorge della modifica in un paio di secondi, senza bisogno di riavvi
 pika-tools non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. L’unica richiesta di rete è il controllo degli aggiornamenti, che chiede a GitHub qual è l’ultima versione.
 
 ## Funzioni
-
-**Blocca le abbreviazioni con Control.** Control diventa un tasto normale. Le app continuano a vederlo premuto, ma macOS non lo trasforma più in abbreviazioni: Control+Spazio non cambia la sorgente di input, Control+frecce non cambiano scrivania e Control-clic è un clic normale invece di aprire un menu contestuale. Il clic secondario e il tocco con due dita funzionano come sempre. Comodo nei giochi e nelle sessioni di desktop remoto, dove Control ha un compito tutto suo. Puoi elencare le app in cui Control deve funzionare come al solito, per esempio un client per desktop remoto: il blocco non vale per loro.
 
 **Proteggi ⌘Q e ⌘W.** ⌘Q e ⌘W da soli non fanno nulla, così non chiudi un’app o una finestra per sbaglio. Aggiungi Maiuscole per farlo apposta: ⇧⌘Q esce, ⇧⌘W chiude. Funziona in tutte le app. Ogni tasto ha il suo interruttore. Disattivato di default.
 
@@ -78,9 +76,9 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Conversione nel Finder.** Clic destro su un file nel Finder e scegli **Converti in** per salvarlo in un altro formato: un’immagine come JPEG, PNG, HEIC, GIF, TIFF o PDF, un video come MP4, MOV o solo l’audio, la musica come M4A, WAV o AIFF. L’originale resta com’è e niente lascia il tuo Mac. Si attiva separatamente dalla copia più leggera. Disattivato di default.
 
-**Modalità gioco.** Aggiungi i tuoi giochi e, mentre giochi, il Mac non ti tira fuori dal gioco. Spotlight, Siri, ⌘Tab, Mission Control e gli scorrimenti tra le scrivanie non si aprono sopra il gioco, ⌘Q e ⌘W non lo chiudono per sbaglio, il puntatore non scivola sul Dock, sulla barra dei menu o su un altro schermo, la lingua della tastiera non cambia e lo schermo resta acceso. Ognuna di queste opzioni ha il suo interruttore nella pagina Giochi, e pika-tools ti suggerisce i giochi che trova sul tuo Mac. Per uscire da un gioco, premi ⇧⌘Q; per chiuderne la finestra, ⇧⌘W. ⌥⌘Esc funziona sempre. Appena esci dal gioco, tutto funziona come al solito. Disattivato di default.
+**Modalità gioco.** Aggiungi i tuoi giochi e, mentre giochi, il Mac non ti tira fuori dal gioco. Spotlight, Siri, ⌘Tab, Mission Control e gli scorrimenti tra le scrivanie non si aprono sopra il gioco, ⌘Q e ⌘W non lo chiudono per sbaglio, il puntatore non scivola sul Dock, sulla barra dei menu o su un altro schermo, la lingua della tastiera non cambia e lo schermo resta acceso. Ognuna di queste opzioni ha il suo interruttore nella pagina Giochi, e pika-tools ti suggerisce i giochi che trova sul tuo Mac. Nel gioco, Control diventa un tasto normale: Control-clic resta un semplice clic, e Control+Spazio o Control con le frecce non cambiano lingua né scrivania. Riconosce anche Minecraft: aggiungi Minecraft Launcher o CurseForge, e la modalità si attiva dentro Minecraft stesso. Per uscire da un gioco, premi ⇧⌘Q; per chiuderne la finestra, ⇧⌘W. ⌥⌘Esc funziona sempre. Appena esci dal gioco, tutto funziona come al solito. Disattivato di default.
 
-Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di nuovo il normale Control+C? Disattiva quello strumento.
+Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: una freccia con un clic quando gli strumenti funzionano, una freccia barrata quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
 
@@ -102,7 +100,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua, aggiornamenti e backup: esporta e importa le impostazioni come file, oppure sincronizzale con iCloud Drive.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
-- **Tastiera**: abbreviazioni con Control, cambio lingua, ripetizione dei tasti, Home ed End.
+- **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: nascondere con un clic nel Dock.

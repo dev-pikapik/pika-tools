@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "अपडेट की जाँच नहीं हो सकी";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "ऐप के फ़ोल्डर में लिखा नहीं जा सकता। brew या install.sh से अपडेट करें";
 "Download failed. Try again later" = "डाउनलोड विफल रहा। बाद में फिर से कोशिश करें";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ एक सामान्य कुंजी की तरह काम करता है: कोई शॉर्टकट नहीं, कोई ⌃-क्लिक मेनू नहीं";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ दबाए रखें और ⇧ दबाएँ: अगली भाषा। ⇧ दबाए रखें और ⌥ दबाएँ: पिछली";
 "All set" = "सब तैयार है";
 "pika-tools needs two permissions" = "pika-tools को दो अनुमतियाँ चाहिए";
@@ -259,7 +258,6 @@
 "Faster" = "तेज़";
 "Hold the first key, tap the second" = "पहली कुंजी दबाए रखें, दूसरी दबाएँ";
 "Mac stays awake with the lid closed" = "ढक्कन बंद होने पर भी Mac जगा रहता है";
-"No shortcuts, no right-click menu" = "न शॉर्टकट, न राइट-क्लिक मेन्यू";
 "Return opens, F2 renames" = "Return से खोलें, F2 से नाम बदलें";
 "Repeats instead of the accent menu" = "एक्सेंट मेन्यू की जगह दोहराता है";
 "Right-click in a folder › New File" = "किसी फ़ोल्डर में राइट-क्लिक › नई फ़ाइल";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "फिर पेस्ट करने पर वे मूव हो जाती हैं";
 "Your Mac stays awake until you quit pika-tools" = "pika-tools बंद करने तक आपका Mac जगा रहेगा";
 "macOS will ask for your administrator password." = "macOS आपसे एडमिन पासवर्ड माँगेगा।";
-"Works as usual in these apps" = "इन ऐप्स में पहले की तरह काम करता है";
 "Lines for apps, pixels for games" = "ऐप्स के लिए पंक्तियाँ, गेम के लिए पिक्सेल";
 "Add the Open URLs action in Shortcuts, with a link." = "शॉर्टकट में लिंक के साथ “URL खोलें” ऐक्शन जोड़ें।";
-"Block Control shortcuts" = "कंट्रोल शॉर्टकट ब्लॉक करें";
 "Fixes for Finder" = "Finder के लिए सुधार";
 "Fixes for the keyboard" = "कीबोर्ड के लिए सुधार";
 "Fixes for the mouse" = "माउस के लिए सुधार";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "गेम गलती से बंद नहीं होता";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "गेम में ⌘Q और ⌘W काम नहीं करते। बाहर निकलने के लिए ⇧⌘Q दबाएँ";
 "The pointer stays in the game" = "पॉइंटर गेम में ही रहता है";
+"⌃ stays in the game" = "⌃ गेम में ही रहता है";
+"⌃-click menu" = "⌃-क्लिक मेनू";
+"Menu bar" = "मेनू बार";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, मेनू बार और हॉट कॉर्नर अचानक नहीं खुलते, और पॉइंटर दूसरी स्क्रीन पर नहीं जाता";
 "The keyboard language doesn’t change" = "कीबोर्ड की भाषा नहीं बदलती";
 "If it switches by accident, it comes back right away" = "अगर गलती से बदल जाए, तो तुरंत वापस आ जाती है";

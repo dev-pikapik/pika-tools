@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift, repeats a held key, turns off mouse acceleration, scrolls the mouse wheel by lines, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
+A small menu bar app for macOS with fixes for keys, windows and the Dock: it guards ⌘Q and ⌘W, switches languages with Option+Shift, repeats a held key, turns off mouse acceleration, scrolls the mouse wheel by lines, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
 
 ## Install
 
@@ -39,8 +39,6 @@ The app picks up the change within a couple of seconds, no restart needed.
 pika-tools doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. The only network request is the update check, which asks GitHub for the latest release.
 
 ## Features
-
-**Block Ctrl shortcuts.** Ctrl becomes a plain key. Apps still see it held down, but macOS no longer turns it into shortcuts: Ctrl+Space won't switch input sources, Ctrl+arrows won't switch desktops, and Ctrl-click is a regular click instead of a context menu. Right-click and two-finger tap work as usual. Handy in games and remote desktop sessions, where Ctrl has a job of its own. List apps where Ctrl should work as usual, such as a remote desktop app, and the block skips them.
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
@@ -78,9 +76,9 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Convert in Finder.** Right-click a file in Finder and choose **Convert To** to save it in another format: a picture as JPEG, PNG, HEIC, GIF, TIFF or PDF, a video as MP4, MOV or just its sound, music as M4A, WAV or AIFF. The original stays as it is, and nothing leaves your Mac. Turns on separately from Smaller Copy. Off by default.
 
-**Game Mode.** Add your games, and while you play one, your Mac doesn’t pull you out of it. Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over the game, ⌘Q and ⌘W don’t close it by accident, the pointer doesn’t slip onto the Dock, the menu bar or another screen, the keyboard language doesn’t change, and the screen stays on. Each of these has its own switch on the Games page, and pika-tools suggests games it finds on your Mac. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. As soon as you leave the game, everything works as usual. Off by default.
+**Game Mode.** Add your games, and while you play one, your Mac doesn’t pull you out of it. Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over the game, ⌘Q and ⌘W don’t close it by accident, the pointer doesn’t slip onto the Dock, the menu bar or another screen, the keyboard language doesn’t change, and the screen stays on. Each of these has its own switch on the Games page, and pika-tools suggests games it finds on your Mac. In a game, Ctrl is a plain key: Ctrl-click stays a click, and Ctrl+Space or Ctrl+arrows don’t switch the language or the desktop. Minecraft is recognized too: add the Minecraft Launcher or CurseForge, and Game Mode turns on inside Minecraft itself. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. As soon as you leave the game, everything works as usual. Off by default.
 
-Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
+Each tool has its own switch in the menu and in Settings.
 
 The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
@@ -102,7 +100,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools ag
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keep Awake**: duration, display and lid options.
-- **Keyboard**: Ctrl shortcuts, language switch, key repeat, Home and End.
+- **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.

@@ -62,7 +62,6 @@ final class ToolRegistry {
     static let shared = ToolRegistry()
 
     let tools: [any Tool] = [
-        CtrlKeysTool(),
         InputSwitchTool(),
         KeyRepeatTool(),
         HomeEndTool(),

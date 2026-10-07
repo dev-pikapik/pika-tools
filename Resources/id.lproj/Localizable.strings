@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Tidak dapat memeriksa pembaruan";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Tidak dapat menulis ke folder app. Perbarui dengan brew atau install.sh";
 "Download failed. Try again later" = "Unduhan gagal. Coba lagi nanti";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ berfungsi sebagai tombol biasa: tanpa pintasan, tanpa menu ⌃-klik";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Tahan ⌥ dan ketuk ⇧: bahasa berikutnya. Tahan ⇧ dan ketuk ⌥: sebelumnya";
 "All set" = "Semua siap";
 "pika-tools needs two permissions" = "pika-tools memerlukan dua izin";
@@ -259,7 +258,6 @@
 "Faster" = "Lebih cepat";
 "Hold the first key, tap the second" = "Tahan tombol pertama, ketuk tombol kedua";
 "Mac stays awake with the lid closed" = "Mac tetap menyala saat penutup ditutup";
-"No shortcuts, no right-click menu" = "Tanpa pintasan, tanpa menu klik kanan";
 "Return opens, F2 renames" = "Return membuka, F2 mengganti nama";
 "Repeats instead of the accent menu" = "Mengulang, bukan menu aksen";
 "Right-click in a folder › New File" = "Klik kanan di folder › File Baru";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Lalu tempel untuk memindahkannya";
 "Your Mac stays awake until you quit pika-tools" = "Mac tetap terjaga sampai Anda keluar dari pika-tools";
 "macOS will ask for your administrator password." = "macOS akan meminta kata sandi administrator.";
-"Works as usual in these apps" = "Berfungsi seperti biasa di app ini";
 "Lines for apps, pixels for games" = "Baris untuk app, piksel untuk game";
 "Add the Open URLs action in Shortcuts, with a link." = "Di Pintasan, tambahkan tindakan Buka URL dengan tautan.";
-"Block Control shortcuts" = "Blokir pintasan Control";
 "Fixes for Finder" = "Perbaikan untuk Finder";
 "Fixes for the keyboard" = "Perbaikan untuk papan ketik";
 "Fixes for the mouse" = "Perbaikan untuk tetikus";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Game tidak tertutup tanpa sengaja";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q dan ⌘W tidak berfungsi di game. Untuk keluar, tekan ⇧⌘Q";
 "The pointer stays in the game" = "Penunjuk tetap di dalam game";
+"⌃ stays in the game" = "⌃ tetap di dalam game";
+"⌃-click menu" = "Menu ⌃-klik";
+"Menu bar" = "Bar menu";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, bar menu, dan sudut aktif tidak muncul tiba-tiba, dan penunjuk tidak lari ke layar lain";
 "The keyboard language doesn’t change" = "Bahasa papan ketik tidak berubah";
 "If it switches by accident, it comes back right away" = "Jika berganti tanpa sengaja, langsung kembali";

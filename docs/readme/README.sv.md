@@ -7,7 +7,7 @@
 [![Licens: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Hämtningar](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den blockerar kortkommandon med kontroll, skyddar ⌘Q och ⌘W, byter språk med alternativ+skift, upprepar en nedhållen tangent, stänger av musacceleration, rullar mushjulet per rad, låter musens sidoknappar gå bakåt och framåt, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
+En liten app för menyraden i macOS som gör tangenter, fönster och Dock smidigare: den skyddar ⌘Q och ⌘W, byter språk med alternativ+skift, upprepar en nedhållen tangent, stänger av musacceleration, rullar mushjulet per rad, låter musens sidoknappar gå bakåt och framåt, avslutar appar när du stänger deras sista fönster, gömmer en app med ett klick i Dock och håller din Mac vaken.
 
 ## Installera
 
@@ -39,8 +39,6 @@ Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. Den enda nätverksförfrågan är sökningen efter uppdateringar, som frågar GitHub efter den senaste versionen.
 
 ## Funktioner
-
-**Blockera kortkommandon med kontroll.** Kontroll blir en vanlig tangent. Appar ser fortfarande att den hålls ned, men macOS gör inte längre om den till kortkommandon: kontroll+mellanslag byter inte inmatningskälla, kontroll+piltangenter byter inte skrivbord och kontroll-klick är ett vanligt klick i stället för en kontextmeny. Högerklick och tvåfingerstryck fungerar som vanligt. Praktiskt i spel och vid fjärrskrivbordssessioner, där kontroll har en egen uppgift. Du kan lista appar där Kontroll fungerar som vanligt, till exempel en app för fjärrskrivbord: blockeringen gäller inte där.
 
 **Skydda ⌘Q och ⌘W.** ⌘Q och ⌘W ensamma gör ingenting, så du avslutar inte en app eller stänger ett fönster av misstag. Lägg till skift för att göra det med flit: ⇧⌘Q avslutar, ⇧⌘W stänger. Fungerar i alla appar. Varje tangent har en egen reglage. Av som standard.
 
@@ -78,9 +76,9 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Konvertering i Finder.** Högerklicka på en fil i Finder och välj **Konvertera till** för att spara den i ett annat format: en bild som JPEG, PNG, HEIC, GIF, TIFF eller PDF, en video som MP4, MOV eller bara ljudet, musik som M4A, WAV eller AIFF. Originalet förblir som det är och inget lämnar din Mac. Slås på separat från mindre kopia. Av som standard.
 
-**Spelläge.** Lägg till dina spel, så drar din Mac inte ut dig ur spelet medan du spelar. Spotlight, Siri, ⌘Tab, Mission Control och svep mellan skrivbord öppnas inte ovanpå spelet, ⌘Q och ⌘W stänger det inte av misstag, pekaren glider inte till Dock, menyraden eller en annan skärm, tangentbordsspråket byts inte och skärmen förblir på. Var och en av dessa har ett eget reglage på sidan Spel, och pika-tools föreslår spel som det hittar på din Mac. Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. Så fort du lämnar spelet fungerar allt som vanligt. Av som standard.
+**Spelläge.** Lägg till dina spel, så drar din Mac inte ut dig ur spelet medan du spelar. Spotlight, Siri, ⌘Tab, Mission Control och svep mellan skrivbord öppnas inte ovanpå spelet, ⌘Q och ⌘W stänger det inte av misstag, pekaren glider inte till Dock, menyraden eller en annan skärm, tangentbordsspråket byts inte och skärmen förblir på. Var och en av dessa har ett eget reglage på sidan Spel, och pika-tools föreslår spel som det hittar på din Mac. I ett spel blir kontroll en vanlig tangent: kontroll-klick förblir ett vanligt klick, och kontroll+mellanslag eller kontroll med pilar byter varken språk eller skrivbord. Minecraft känns också igen: lägg till Minecraft Launcher eller CurseForge, så slås läget på i själva Minecraft. Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. Så fort du lämnar spelet fungerar allt som vanligt. Av som standard.
 
-Varje verktyg har ett eget reglage i menyn och i inställningarna. Behöver du ett vanligt kontroll+C igen? Stäng av det verktyget.
+Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: en pil med ett klick när verktygen arbetar, en överstruken pil när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
 
@@ -102,7 +100,7 @@ Keep Awake, skärmläget och läget med stängt lock kan läggas på en knapp i 
 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Håll vaken**: tid, alternativ för skärm och lock.
-- **Tangentbord**: kortkommandon med kontroll, byte av språk, tangentupprepning, Home och End.
+- **Tangentbord**: byte av språk, tangentupprepning, Home och End.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
