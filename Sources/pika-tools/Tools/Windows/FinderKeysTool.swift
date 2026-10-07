@@ -13,7 +13,7 @@ final class FinderKeys {
     @ObservationIgnored var cuts = false
     @ObservationIgnored private var cutCount: Int?
     @ObservationIgnored private var generation = 0
-    @ObservationIgnored private var held: Int?
+    @ObservationIgnored private var held: (key: Int, target: Int, flags: CGEventFlags)?
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
@@ -30,7 +30,7 @@ final class FinderKeys {
             tap: .cgSessionEventTap,
             place: .headInsertEventTap,
             options: .defaultTap,
-            eventsOfInterest: 1 << CGEventType.keyDown.rawValue,
+            eventsOfInterest: 1 << CGEventType.keyDown.rawValue | 1 << CGEventType.keyUp.rawValue,
             callback: finderKeysCallback,
             userInfo: Unmanaged.passUnretained(self).toOpaque()
         ) else { return }
@@ -56,9 +56,15 @@ final class FinderKeys {
         isActive = false
     }
 
-    fileprivate func handle(_ event: CGEvent) -> Bool {
+    fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
-        if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held }
+        if up {
+            guard let held, held.key == key else { return false }
+            self.held = nil
+            Self.send(held.target, held.flags, down: false, proxy)
+            return true
+        }
+        if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
         held = nil
 
         let flags = event.flags.intersection([.maskShift, .maskControl, .maskAlternate, .maskCommand])
@@ -72,28 +78,32 @@ final class FinderKeys {
               Self.isBrowsing(finder.processIdentifier)
         else { return false }
 
+        let target: (key: Int, flags: CGEventFlags)
         switch key {
         case kVK_F2:
-            Self.change(event, to: kVK_Return)
-            event.flags.subtract([.maskSecondaryFn, .maskNumericPad])
+            target = (kVK_Return, [])
         case kVK_Return, kVK_ANSI_KeypadEnter:
-            Self.change(event, to: kVK_DownArrow)
-            event.flags.formUnion([.maskCommand, .maskSecondaryFn, .maskNumericPad])
+            target = (kVK_DownArrow, [.maskCommand, .maskSecondaryFn, .maskNumericPad])
         case kVK_ANSI_X:
             let before = NSPasteboard.general.changeCount
-            Self.change(event, to: kVK_ANSI_C)
             cancelCut()
             watchCopy(since: before, attempts: 20)
+            target = (kVK_ANSI_C, .maskCommand)
         default:
-            if NSPasteboard.general.changeCount == cutCount { event.flags.insert(.maskAlternate) }
+            let moves = NSPasteboard.general.changeCount == cutCount
             cancelCut()
+            guard moves else { return false }
+            target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
         }
-        held = key
-        return false
+        held = (key, target.key, target.flags)
+        Self.send(target.key, target.flags, down: true, proxy)
+        return true
     }
 
-    private static func change(_ event: CGEvent, to key: Int) {
-        event.setIntegerValueField(.keyboardEventKeycode, value: Int64(key))
+    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy) {
+        guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
+        event.flags = flags
+        event.tapPostEvent(proxy)
     }
 
     private func cancelCut() {
@@ -127,7 +137,8 @@ final class FinderKeys {
         if typing || subrole == kAXSearchFieldSubrole { return false }
 
         guard let window = value(element, kAXWindowAttribute).0, CFGetTypeID(window) == AXUIElementGetTypeID() else { return true }
-        return value(window as! AXUIElement, kAXSubroleAttribute).0 as? String == kAXStandardWindowSubrole
+        let windowSubrole = value(window as! AXUIElement, kAXSubroleAttribute).0 as? String
+        return windowSubrole == kAXStandardWindowSubrole || windowSubrole == "AXDesktop"
     }
 
     private static func value(_ element: AXUIElement, _ attribute: String) -> (CFTypeRef?, AXError) {
@@ -149,8 +160,8 @@ private func finderKeysCallback(
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { keys.refresh() }
-    case .keyDown:
-        if keys.handle(event) { return nil }
+    case .keyDown, .keyUp:
+        if keys.handle(event, up: type == .keyUp, proxy: proxy) { return nil }
     default:
         break
     }

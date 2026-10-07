@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.17.1] - Unreleased
+
+### Fixed
+- Finder: ⌘X and ⌘V now move files every time. Before, Finder sometimes did not notice the changed key, and Return, Enter and F2 sometimes did nothing for the same reason.
+- Finder: ⌘X, ⌘V, Return, Enter and F2 now also work on the Desktop, not only in Finder windows.
+
 ## [1.17.0] - Unreleased
 
 ### Added
