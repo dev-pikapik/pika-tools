@@ -62,6 +62,7 @@ final class ToolRegistry {
         CtrlKeysTool(),
         InputSwitchTool(),
         KeyRepeatTool(),
+        HomeEndTool(),
         PointerTool(),
         WheelTool(),
         ScrollDirectionTool(),
@@ -75,6 +76,7 @@ final class ToolRegistry {
         ConvertTool(),
         FinderOpenTool(),
         FinderCutTool(),
+        FinderDeleteTool(),
     ] + privateTools
 
     var status: ToolStatus {
