@@ -4,6 +4,7 @@ import UniformTypeIdentifiers
 
 struct AppExclusions: View {
     let title: String
+    var keys: [String] = []
     @Binding var apps: [String]
     let isEnabled: Bool
     var skipped: Set<String> = []
@@ -14,7 +15,7 @@ struct AppExclusions: View {
             LabeledContent {
                 Button("Add App…", systemImage: "plus", action: add)
             } label: {
-                RowLabel(Text(title), apps.isEmpty ? Text("No apps yet") : nil)
+                KeyLabel(keys: keys, title: Text(title), subtitle: apps.isEmpty ? Text("No apps yet") : nil)
             }
             .disabled(!isEnabled)
             .settingAnchor(title)

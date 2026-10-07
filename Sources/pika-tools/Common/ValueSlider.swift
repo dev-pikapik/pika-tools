@@ -27,7 +27,7 @@ struct ValueSlider: View {
                 .foregroundStyle(.secondary)
                 .accessibilityHidden(true)
             }
-            .frame(maxWidth: 220)
+            .frame(width: 220)
             TextField(title, value: clamped, format: .number.precision(.fractionLength(digits)))
                 .labelsHidden()
                 .multilineTextAlignment(.trailing)
@@ -70,6 +70,7 @@ private struct TickSlider: NSViewRepresentable {
 
         @objc func changed(_ slider: NSSlider) {
             value?.wrappedValue = slider.doubleValue
+            slider.doubleValue = value?.wrappedValue ?? slider.doubleValue
         }
     }
 }

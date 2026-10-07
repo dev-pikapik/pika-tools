@@ -335,9 +335,9 @@ private struct WheelSettings: View {
                         ValueSlider(
                             title: String(localized: "Distance per click"),
                             value: Binding(get: { Double(tool.pixels) }, set: { tool.pixels = Int($0) }),
-                            range: Double(WheelStep.pixelRange.lowerBound)...Double(WheelStep.pixelRange.upperBound),
-                            step: 1,
-                            ticks: 11,
+                            range: Double(WheelStep.pixelStep)...Double(WheelStep.pixelRange.upperBound),
+                            step: Double(WheelStep.pixelStep),
+                            ticks: WheelStep.pixelRange.upperBound / WheelStep.pixelStep,
                             mark: Double(WheelStep.defaultPixels)
                         )
                     }

@@ -178,14 +178,15 @@ private struct CtrlKeysSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("No ⌃ shortcuts, no ⌃-click menu"),
-            hint: Text("⌃ works as a plain key"),
+            subtitle: Text("No shortcuts, no right-click menu"),
+            hint: Text("No shortcuts, no right-click menu"),
             help: Text("⌃ works as a plain key: no shortcuts, no ⌃-click menu"),
             keys: ["⌃"],
             isOn: $tool.isEnabled
         )
         AppExclusions(
-            title: String(localized: "⌃ works as usual in these apps"),
+            title: String(localized: "Works as usual in these apps"),
+            keys: ["⌃"],
             apps: $tool.excluded,
             isEnabled: tool.isEnabled
         )

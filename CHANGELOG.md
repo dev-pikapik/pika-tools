@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.2] - Unreleased
+
+### Fixed
+- Settings: keys in setting texts are now drawn as key pictures instead of symbols, and the texts are shorter.
+- Scroll by lines: the distance slider no longer jumps while dragging and moves in clear steps of 20 px in pixels mode.
+
 ## [1.18.1] - Unreleased
 
 ### Fixed

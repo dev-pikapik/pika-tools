@@ -184,8 +184,8 @@ private struct InputSwitchSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Hold ⌥, tap ⇧. Backwards: hold ⇧, tap ⌥"),
-            hint: Text("Hold ⌥, tap ⇧: next language"),
+            subtitle: Text("Hold the first key, tap the second"),
+            hint: Text("Hold the first key, tap the second"),
             help: Text("Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous"),
             keys: ["⌥", "⇧"],
             isOn: $tool.isEnabled

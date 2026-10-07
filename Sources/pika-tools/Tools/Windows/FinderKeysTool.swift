@@ -322,7 +322,7 @@ private struct FinderOpenSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("Open and rename, like on Windows"),
-            hint: Text("↩ opens, F2 renames"),
+            hint: Text("Open and rename, like on Windows"),
             help: Text("In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them, like on Windows."),
             keys: ["↩", "F2"],
             isOn: $tool.isEnabled
@@ -339,8 +339,8 @@ private struct FinderCutSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Then ⌘V moves them, like on Windows"),
-            hint: Text("⌘X cuts, ⌘V moves"),
+            subtitle: Text("Then paste to move them, like on Windows"),
+            hint: Text("Then paste to move them, like on Windows"),
             help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in, like on Windows. ⌘C cancels the cut."),
             keys: ["⌘", "X"],
             isOn: $tool.isEnabled
