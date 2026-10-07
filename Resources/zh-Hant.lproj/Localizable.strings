@@ -291,11 +291,10 @@
 "Game Mode" = "遊戲模式";
 "Games" = "遊戲";
 "Your Mac doesn’t pull you out of a game" = "Mac 不會把你拉出遊戲";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "要離開遊戲，請快速按兩次 ⌘Tab。⌥⌘Esc 永遠有效。";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。";
+"To leave the game, press ⇧⌘Q" = "要結束遊戲，請按 ⇧⌘Q";
 "Search and Siri" = "搜尋與 Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight、Siri 和 🌐 鍵不會在遊戲上方打開";
 "Other apps and desktops" = "其他 App 與桌面";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab、⌘H、⌘M、指揮中心、桌面和滑動都不會讓你離開遊戲";
 "The game doesn’t close by accident" = "遊戲不會被誤關";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q 和 ⌘W 在遊戲中無效。要結束，請按 ⇧⌘Q";
 "The pointer stays in the game" = "指標留在遊戲裡";
@@ -305,7 +304,6 @@
 "The screen stays on" = "螢幕保持開啟";
 "The display doesn’t dim or sleep while you play" = "玩遊戲時顯示器不會變暗或進入睡眠";
 "Your games" = "你的遊戲";
-"Add a Running App…" = "加入執行中的 App…";
 "Not a Game" = "不是遊戲";
 "Looks like a game" = "看起來像遊戲";
 "game, games, gaming, play, Steam, full screen" = "game, 遊戲, 玩, 電競, Steam, 全螢幕";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, 指揮中心, Mission Control, 桌面, Spaces, 滑動, 隱藏, 縮到最小";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "滑鼠, 指標, 游標, Dock, 選單列, 熱點, 邊緣, 第二個螢幕";
 "input source, keyboard layout, Caps Lock" = "輸入法, 輸入來源, 鍵盤佈局, Caps Lock, 大寫鎖定";
+"Play without interruptions" = "暢玩不被打斷";
+"Now playing: %@" = "正在玩：%@";
+"While you play, your Mac doesn’t pull you out of the game" = "你玩遊戲時，Mac 不會把你拉出遊戲";
+"While you play" = "玩遊戲時";
+"Add a Game…" = "加入遊戲…";
+"Other…" = "其他…";
+"Add a game, and Game Mode turns on by itself while you play it" = "加入一款遊戲，你玩它時遊戲模式會自動開啟";
+"Emoji" = "表情符號";
+"Mission Control" = "指揮中心";
+"Desktops" = "桌面";
+"Swipes" = "滑動手勢";
+"Space" = "空白鍵";

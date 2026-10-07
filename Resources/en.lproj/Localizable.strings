@@ -291,11 +291,10 @@
 "Game Mode" = "Game Mode";
 "Games" = "Games";
 "Your Mac doesn’t pull you out of a game" = "Your Mac doesn’t pull you out of a game";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works.";
+"To leave the game, press ⇧⌘Q" = "To leave the game, press ⇧⌘Q";
 "Search and Siri" = "Search and Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri and the 🌐 key don’t open on top of the game";
 "Other apps and desktops" = "Other apps and desktops";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game";
 "The game doesn’t close by accident" = "The game doesn’t close by accident";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q";
 "The pointer stays in the game" = "The pointer stays in the game";
@@ -305,7 +304,6 @@
 "The screen stays on" = "The screen stays on";
 "The display doesn’t dim or sleep while you play" = "The display doesn’t dim or sleep while you play";
 "Your games" = "Your games";
-"Add a Running App…" = "Add a Running App…";
 "Not a Game" = "Not a Game";
 "Looks like a game" = "Looks like a game";
 "game, games, gaming, play, Steam, full screen" = "game, games, gaming, play, Steam, full screen";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mouse, cursor, Dock, menu bar, hot corners, edges, second display";
 "input source, keyboard layout, Caps Lock" = "input source, keyboard layout, Caps Lock";
+"Play without interruptions" = "Play without interruptions";
+"Now playing: %@" = "Now playing: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "While you play, your Mac doesn’t pull you out of the game";
+"While you play" = "While you play";
+"Add a Game…" = "Add a Game…";
+"Other…" = "Other…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Add a game, and Game Mode turns on by itself while you play it";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Desktops";
+"Swipes" = "Swipes";
+"Space" = "Space";

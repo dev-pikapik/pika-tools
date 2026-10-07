@@ -291,11 +291,10 @@
 "Game Mode" = "Herní režim";
 "Games" = "Hry";
 "Your Mac doesn’t pull you out of a game" = "Mac vás nevytrhne ze hry";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Hru opustíte dvojím rychlým stiskem ⌘Tab. ⌥⌘Esc funguje vždy.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy.";
+"To leave the game, press ⇧⌘Q" = "Hru ukončíte stiskem ⇧⌘Q";
 "Search and Siri" = "Hledání a Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri a klávesa 🌐 se neotevírají přes hru";
 "Other apps and desktops" = "Jiné aplikace a plochy";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, plochy a přejetí prsty vás ze hry nevyhodí";
 "The game doesn’t close by accident" = "Hra se omylem nezavře";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q a ⌘W ve hře nefungují. Ukončíte ji pomocí ⇧⌘Q";
 "The pointer stays in the game" = "Ukazatel zůstává ve hře";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Obrazovka zůstává zapnutá";
 "The display doesn’t dim or sleep while you play" = "Displej neztmavne ani neusne, dokud hrajete";
 "Your games" = "Vaše hry";
-"Add a Running App…" = "Přidat spuštěnou aplikaci…";
 "Not a Game" = "Není hra";
 "Looks like a game" = "Vypadá jako hra";
 "game, games, gaming, play, Steam, full screen" = "hra, hry, hraní, hrát, gaming, Steam, celá obrazovka";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, plochy, Spaces, přejetí, skrýt, minimalizovat";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "myš, ukazatel, kurzor, Dock, řádek nabídek, aktivní rohy, okraje, druhý monitor";
 "input source, keyboard layout, Caps Lock" = "metoda zadávání, rozložení klávesnice, Caps Lock";
+"Play without interruptions" = "Hrajte bez vyrušování";
+"Now playing: %@" = "Právě hrajete: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Zatímco hrajete, Mac vás nevytrhne ze hry";
+"While you play" = "Zatímco hrajete";
+"Add a Game…" = "Přidat hru…";
+"Other…" = "Jiné…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Přidejte hru a herní režim se zapne sám, kdykoli ji hrajete";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Plochy";
+"Swipes" = "Přejetí prsty";
+"Space" = "Mezerník";

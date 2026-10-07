@@ -291,11 +291,10 @@
 "Game Mode" = "Tryb gry";
 "Games" = "Gry";
 "Your Mac doesn’t pull you out of a game" = "Mac nie wyrywa cię z gry";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Aby wyjść z gry, szybko naciśnij ⌘Tab dwa razy. ⌥⌘Esc działa zawsze.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze.";
+"To leave the game, press ⇧⌘Q" = "Aby wyjść z gry, naciśnij ⇧⌘Q";
 "Search and Siri" = "Wyszukiwanie i Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri i klawisz 🌐 nie otwierają się nad grą";
 "Other apps and desktops" = "Inne aplikacje i biurka";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, biurka i przesunięcia nie wyrzucają z gry";
 "The game doesn’t close by accident" = "Gra nie zamyka się przypadkiem";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q i ⌘W nie działają w grze. Aby wyjść, naciśnij ⇧⌘Q";
 "The pointer stays in the game" = "Wskaźnik zostaje w grze";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Ekran się nie wygasza";
 "The display doesn’t dim or sleep while you play" = "Ekran nie przyciemnia się i nie usypia podczas gry";
 "Your games" = "Twoje gry";
-"Add a Running App…" = "Dodaj uruchomioną aplikację…";
 "Not a Game" = "To nie gra";
 "Looks like a game" = "Wygląda na grę";
 "game, games, gaming, play, Steam, full screen" = "gra, gry, granie, grać, gaming, Steam, pełny ekran";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, biurka, Spaces, przesunięcie, ukryj, minimalizuj";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mysz, wskaźnik, kursor, Dock, pasek menu, aktywne narożniki, krawędzie, drugi monitor";
 "input source, keyboard layout, Caps Lock" = "źródło wprowadzania, układ klawiatury, Caps Lock";
+"Play without interruptions" = "Graj bez przeszkód";
+"Now playing: %@" = "Teraz: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Gdy grasz, Mac nie wyrywa cię z gry";
+"While you play" = "Gdy grasz";
+"Add a Game…" = "Dodaj grę…";
+"Other…" = "Inne…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Dodaj grę, a tryb gry włączy się sam, gdy w nią grasz";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Biurka";
+"Swipes" = "Przesunięcia palcami";
+"Space" = "Spacja";

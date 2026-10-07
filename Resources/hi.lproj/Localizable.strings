@@ -291,11 +291,10 @@
 "Game Mode" = "गेम मोड";
 "Games" = "गेम";
 "Your Mac doesn’t pull you out of a game" = "आपका Mac आपको गेम से बाहर नहीं खींचता";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "गेम से बाहर निकलने के लिए ⌘Tab दो बार जल्दी दबाएँ। ⌥⌘Esc हमेशा काम करता है।";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "गेम से बाहर निकलने के लिए ⇧⌘Q दबाएँ, और उसकी विंडो बंद करने के लिए ⇧⌘W। ⌥⌘Esc हमेशा काम करता है।";
+"To leave the game, press ⇧⌘Q" = "गेम से बाहर निकलने के लिए ⇧⌘Q दबाएँ";
 "Search and Siri" = "खोज और Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri और 🌐 कुंजी गेम के ऊपर नहीं खुलते";
 "Other apps and desktops" = "दूसरे ऐप और डेस्कटॉप";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, डेस्कटॉप और स्वाइप आपको गेम से बाहर नहीं निकालते";
 "The game doesn’t close by accident" = "गेम गलती से बंद नहीं होता";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "गेम में ⌘Q और ⌘W काम नहीं करते। बाहर निकलने के लिए ⇧⌘Q दबाएँ";
 "The pointer stays in the game" = "पॉइंटर गेम में ही रहता है";
@@ -305,7 +304,6 @@
 "The screen stays on" = "स्क्रीन चालू रहती है";
 "The display doesn’t dim or sleep while you play" = "खेलते समय डिस्प्ले धुंधला नहीं होता और स्लीप में नहीं जाता";
 "Your games" = "आपके गेम";
-"Add a Running App…" = "चल रहा ऐप जोड़ें…";
 "Not a Game" = "गेम नहीं";
 "Looks like a game" = "गेम जैसा लगता है";
 "game, games, gaming, play, Steam, full screen" = "game, गेम, गेमिंग, खेल, खेलना, Steam, फ़ुल स्क्रीन";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, डेस्कटॉप, Spaces, स्वाइप, छिपाएँ, छोटा करें";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "माउस, पॉइंटर, कर्सर, Dock, मेनू बार, हॉट कॉर्नर, किनारे, दूसरी स्क्रीन";
 "input source, keyboard layout, Caps Lock" = "इनपुट स्रोत, कीबोर्ड लेआउट, Caps Lock";
+"Play without interruptions" = "बिना रुकावट खेलें";
+"Now playing: %@" = "अभी खेल रहे हैं: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "जब आप खेलते हैं, तो आपका Mac आपको गेम से बाहर नहीं खींचता";
+"While you play" = "जब आप खेलते हैं";
+"Add a Game…" = "गेम जोड़ें…";
+"Other…" = "अन्य…";
+"Add a game, and Game Mode turns on by itself while you play it" = "कोई गेम जोड़ें, और जब तक आप उसे खेलेंगे, गेम मोड अपने-आप चालू रहेगा";
+"Emoji" = "इमोजी";
+"Mission Control" = "Mission Control";
+"Desktops" = "डेस्कटॉप";
+"Swipes" = "स्वाइप";
+"Space" = "स्पेस";

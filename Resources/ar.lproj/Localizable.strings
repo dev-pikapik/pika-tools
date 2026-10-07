@@ -291,11 +291,10 @@
 "Game Mode" = "وضع الألعاب";
 "Games" = "الألعاب";
 "Your Mac doesn’t pull you out of a game" = "لا يُخرجك Mac من اللعبة";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "للخروج من اللعبة، اضغط ⌘Tab مرتين بسرعة. يعمل ⌥⌘Esc دائمًا.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "للخروج من اللعبة، اضغط ⇧⌘Q، ولإغلاق نافذتها ⇧⌘W. يعمل ⌥⌘Esc دائمًا.";
+"To leave the game, press ⇧⌘Q" = "للخروج من اللعبة، اضغط ⇧⌘Q";
 "Search and Siri" = "البحث وSiri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "لا تُفتح Spotlight وSiri ومفتاح 🌐 فوق اللعبة";
 "Other apps and desktops" = "التطبيقات الأخرى وأسطح المكتب";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "لا يُخرجك ⌘Tab و⌘H و⌘M وMission Control وأسطح المكتب والتمرير من اللعبة";
 "The game doesn’t close by accident" = "لا تُغلق اللعبة عن طريق الخطأ";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "لا يعمل ⌘Q و⌘W في اللعبة. للخروج، اضغط ⇧⌘Q";
 "The pointer stays in the game" = "يبقى المؤشر في اللعبة";
@@ -305,7 +304,6 @@
 "The screen stays on" = "تبقى الشاشة قيد التشغيل";
 "The display doesn’t dim or sleep while you play" = "لا تخفت الشاشة ولا تنام أثناء اللعب";
 "Your games" = "ألعابك";
-"Add a Running App…" = "إضافة تطبيق مفتوح…";
 "Not a Game" = "ليست لعبة";
 "Looks like a game" = "يبدو كلعبة";
 "game, games, gaming, play, Steam, full screen" = "game, لعبة, ألعاب, لعب, Steam, ملء الشاشة";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, أسطح المكتب, Spaces, تمرير, إخفاء, تصغير";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "ماوس, مؤشر, Dock, شريط القائمة, الزوايا النشطة, الحواف, شاشة ثانية";
 "input source, keyboard layout, Caps Lock" = "مصدر الإدخال, تخطيط لوحة المفاتيح, Caps Lock";
+"Play without interruptions" = "العب دون مقاطعة";
+"Now playing: %@" = "تلعب الآن: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "أثناء اللعب، لا يُخرجك Mac من اللعبة";
+"While you play" = "أثناء اللعب";
+"Add a Game…" = "إضافة لعبة…";
+"Other…" = "أخرى…";
+"Add a game, and Game Mode turns on by itself while you play it" = "أضف لعبة، وسيعمل وضع الألعاب تلقائيًا أثناء لعبك بها";
+"Emoji" = "الإيموجي";
+"Mission Control" = "Mission Control";
+"Desktops" = "أسطح المكتب";
+"Swipes" = "التمرير بالأصابع";
+"Space" = "مسافة";

@@ -325,7 +325,7 @@ private struct SettingsView: View {
             )
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
-        case .games: ToolsSettings(tab: .games, text: String(localized: "Your Mac doesn’t pull you out of a game"))
+        case .games: GameModePage()
         case .permissions: PermissionsView()
         case .about: AboutView()
         }

@@ -291,11 +291,10 @@
 "Game Mode" = "Chế độ trò chơi";
 "Games" = "Trò chơi";
 "Your Mac doesn’t pull you out of a game" = "Máy Mac không kéo bạn ra khỏi trò chơi";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Để rời trò chơi, hãy nhấn ⌘Tab hai lần thật nhanh. ⌥⌘Esc luôn hoạt động.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động.";
+"To leave the game, press ⇧⌘Q" = "Để thoát trò chơi, hãy nhấn ⇧⌘Q";
 "Search and Siri" = "Tìm kiếm và Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri và phím 🌐 không mở đè lên trò chơi";
 "Other apps and desktops" = "Ứng dụng khác và màn hình nền";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, màn hình nền và thao tác vuốt không đưa bạn ra khỏi trò chơi";
 "The game doesn’t close by accident" = "Trò chơi không bị đóng nhầm";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q và ⌘W không hoạt động trong trò chơi. Để thoát, hãy nhấn ⇧⌘Q";
 "The pointer stays in the game" = "Con trỏ ở lại trong trò chơi";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Màn hình luôn bật";
 "The display doesn’t dim or sleep while you play" = "Màn hình không tối đi và không ngủ khi bạn đang chơi";
 "Your games" = "Trò chơi của bạn";
-"Add a Running App…" = "Thêm ứng dụng đang mở…";
 "Not a Game" = "Không phải trò chơi";
 "Looks like a game" = "Có vẻ là trò chơi";
 "game, games, gaming, play, Steam, full screen" = "game, trò chơi, chơi game, chơi, Steam, toàn màn hình";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, màn hình nền, Spaces, vuốt, ẩn, thu nhỏ";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "chuột, con trỏ, Dock, thanh menu, góc nóng, cạnh, màn hình thứ hai";
 "input source, keyboard layout, Caps Lock" = "nguồn nhập, bố cục bàn phím, Caps Lock";
+"Play without interruptions" = "Chơi không bị gián đoạn";
+"Now playing: %@" = "Đang chơi: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Khi bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi";
+"While you play" = "Khi bạn chơi";
+"Add a Game…" = "Thêm trò chơi…";
+"Other…" = "Khác…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Thêm một trò chơi, Chế độ trò chơi sẽ tự bật khi bạn chơi nó";
+"Emoji" = "Biểu tượng cảm xúc";
+"Mission Control" = "Mission Control";
+"Desktops" = "Màn hình nền";
+"Swipes" = "Thao tác vuốt";
+"Space" = "Dấu cách";

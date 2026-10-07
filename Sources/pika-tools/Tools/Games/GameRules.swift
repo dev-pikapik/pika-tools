@@ -1,3 +1,4 @@
+import Carbon
 import CoreGraphics
 import Foundation
 
@@ -38,20 +39,32 @@ enum GameRules {
         return fenced == point ? nil : fenced
     }
 
+    static func shortcut(character: UInt16, key: UInt16, modifiers: UInt64) -> String? {
+        let names: [UInt16: String] = [
+            49: String(localized: "Space"), 48: "Tab", 53: "Esc", 36: "↩", 51: "⌫", 117: "⌦", 123: "←", 124: "→", 125: "↓", 126: "↑",
+            122: "F1", 120: "F2", 99: "F3", 118: "F4", 96: "F5", 97: "F6", 98: "F7", 100: "F8", 101: "F9", 109: "F10", 103: "F11", 111: "F12",
+            160: "F3", 131: "F4", 176: "🎤", 177: "🔍",
+        ]
+        let printable = (33..<127).contains(character) ? Unicode.Scalar(character).map { String($0).uppercased() } : nil
+        guard let name = names[key] ?? printable else { return nil }
+        let flags: [(UInt64, String)] = [(0x40000, "⌃"), (0x80000, "⌥"), (0x20000, "⇧"), (0x100000, "⌘")]
+        let fn = names[key] == nil && modifiers & 0x800000 != 0 ? "🌐" : ""
+        return fn + flags.filter { modifiers & $0.0 != 0 }.map(\.1).joined() + name
+    }
+
+    static func commandKeys(quit: Bool, close: Bool, playing: Bool, blocksQuit: Bool) -> (keys: Set<Int64>, blocked: Set<Int64>) {
+        let game = playing && blocksQuit
+        let blocked = Set((quit || game ? [Int64(kVK_ANSI_Q)] : []) + (close || game ? [Int64(kVK_ANSI_W)] : []))
+        return (playing ? blocked.union([Int64(kVK_ANSI_Q), Int64(kVK_ANSI_W)]) : blocked, blocked)
+    }
+
+    static func combo(key: Int64, flags: UInt64) -> UInt64 {
+        UInt64(truncatingIfNeeded: key) << 32 | flags & 0x9E0000
+    }
+
     static func layoutToRestore(locked: String?, current: String?) -> String? {
         guard let locked, current != locked else { return nil }
         return locked
-    }
-}
-
-struct DoublePress {
-    static let interval: TimeInterval = 0.4
-    private var last = -TimeInterval.infinity
-
-    mutating func press(at time: TimeInterval) -> Bool {
-        let double = time - last <= Self.interval
-        last = double ? -.infinity : time
-        return double
     }
 }
 
@@ -70,23 +83,24 @@ struct HotKeyTrace {
     }
 
     func restore() {
-        guard let saved = Self.ids(defaults) else { return }
-        saved.filter { !isEnabled($0) }.forEach { setEnabled($0, true) }
+        Self.ids(defaults)?.filter { !isEnabled($0) }.forEach { setEnabled($0, true) }
         defaults.removeObject(forKey: Self.key)
     }
 
-    private static func ids(_ defaults: UserDefaults) -> [Int32]? {
-        (defaults.array(forKey: key) as? [Int])?.map(Int32.init)
+    static func ids(_ defaults: UserDefaults) -> [Int32]? {
+        (defaults.array(forKey: key) as? [Int])?.compactMap(Int32.init(exactly:))
     }
 }
 
 enum SymbolicHotKeys {
     private typealias SetEnabled = @convention(c) (Int32, Bool) -> Int32
     private typealias IsEnabled = @convention(c) (Int32) -> Bool
+    private typealias Value = @convention(c) (Int32, UnsafeMutablePointer<UInt16>, UnsafeMutablePointer<UInt16>, UnsafeMutablePointer<UInt64>) -> Int32
 
     private static let library = dlopen("/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight", RTLD_LAZY)
     private static let setter = dlsym(library, "CGSSetSymbolicHotKeyEnabled").map { unsafeBitCast($0, to: SetEnabled.self) }
     private static let getter = dlsym(library, "CGSIsSymbolicHotKeyEnabled").map { unsafeBitCast($0, to: IsEnabled.self) }
+    private static let reader = dlsym(library, "CGSGetSymbolicHotKeyValue").map { unsafeBitCast($0, to: Value.self) }
 
     static var available: Bool { setter != nil && getter != nil }
 
@@ -96,5 +110,17 @@ enum SymbolicHotKeys {
 
     static func set(_ id: Int32, _ on: Bool) {
         _ = setter?(id, on)
+    }
+
+    static func value(_ id: Int32) -> (character: UInt16, key: UInt16, modifiers: UInt64)? {
+        var character: UInt16 = 0
+        var key: UInt16 = 0
+        var modifiers: UInt64 = 0
+        guard reader?(id, &character, &key, &modifiers) == 0 else { return nil }
+        return (character, key, modifiers)
+    }
+
+    static func shortcut(_ id: Int32) -> String? {
+        value(id).flatMap { GameRules.shortcut(character: $0.character, key: $0.key, modifiers: $0.modifiers) }
     }
 }

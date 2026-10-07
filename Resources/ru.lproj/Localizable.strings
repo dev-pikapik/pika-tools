@@ -291,11 +291,10 @@
 "Game Mode" = "Игровой режим";
 "Games" = "Игры";
 "Your Mac doesn’t pull you out of a game" = "Mac не выдёргивает вас из игры";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Чтобы выйти из игры, быстро нажмите ⌘Tab дважды. ⌥⌘Esc работает всегда.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Чтобы выйти из игры, нажмите ⇧⌘Q, а чтобы закрыть её окно — ⇧⌘W. ⌥⌘Esc работает всегда.";
+"To leave the game, press ⇧⌘Q" = "Чтобы выйти из игры, нажмите ⇧⌘Q";
 "Search and Siri" = "Поиск и Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri и клавиша 🌐 не открываются поверх игры";
 "Other apps and desktops" = "Другие приложения и рабочие столы";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, рабочие столы и смахивания не выкидывают из игры";
 "The game doesn’t close by accident" = "Игра не закрывается случайно";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q и ⌘W в игре не работают. Чтобы выйти, нажмите ⇧⌘Q";
 "The pointer stays in the game" = "Курсор остаётся в игре";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Экран не гаснет";
 "The display doesn’t dim or sleep while you play" = "Экран не тускнеет и не засыпает, пока вы играете";
 "Your games" = "Ваши игры";
-"Add a Running App…" = "Добавить запущенное…";
 "Not a Game" = "Не игра";
 "Looks like a game" = "Похоже на игру";
 "game, games, gaming, play, Steam, full screen" = "игра, игры, игровой, играть, гейминг, Steam, полный экран";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, рабочие столы, Spaces, смахивание, скрыть, свернуть";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "мышь, курсор, Dock, строка меню, активные углы, края, второй монитор";
 "input source, keyboard layout, Caps Lock" = "раскладка, язык ввода, источник ввода, Caps Lock";
+"Play without interruptions" = "Играйте без помех";
+"Now playing: %@" = "Сейчас: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Пока вы играете, Mac не выдёргивает вас из игры";
+"While you play" = "Пока вы играете";
+"Add a Game…" = "Добавить игру…";
+"Other…" = "Другое…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Добавьте игру — и режим будет включаться сам, пока вы в неё играете";
+"Emoji" = "Эмодзи";
+"Mission Control" = "Mission Control";
+"Desktops" = "Рабочие столы";
+"Swipes" = "Смахивания";
+"Space" = "Пробел";

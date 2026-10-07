@@ -291,11 +291,10 @@
 "Game Mode" = "Oyun Modu";
 "Games" = "Oyunlar";
 "Your Mac doesn’t pull you out of a game" = "Mac’iniz sizi oyundan koparmaz";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Oyundan çıkmak için ⌘Tab’e hızlıca iki kez basın. ⌥⌘Esc her zaman çalışır.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır.";
+"To leave the game, press ⇧⌘Q" = "Oyundan çıkmak için ⇧⌘Q’ya basın";
 "Search and Siri" = "Arama ve Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri ve 🌐 tuşu oyunun üstünde açılmaz";
 "Other apps and desktops" = "Diğer uygulamalar ve masaüstleri";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, masaüstleri ve kaydırmalar sizi oyundan çıkarmaz";
 "The game doesn’t close by accident" = "Oyun yanlışlıkla kapanmaz";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q ve ⌘W oyunda çalışmaz. Çıkmak için ⇧⌘Q’ya basın";
 "The pointer stays in the game" = "İmleç oyunda kalır";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Ekran açık kalır";
 "The display doesn’t dim or sleep while you play" = "Siz oynarken ekran kararmaz ve uyumaz";
 "Your games" = "Oyunlarınız";
-"Add a Running App…" = "Açık Uygulama Ekle…";
 "Not a Game" = "Oyun Değil";
 "Looks like a game" = "Oyuna benziyor";
 "game, games, gaming, play, Steam, full screen" = "oyun, oyunlar, gaming, oynamak, Steam, tam ekran";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, masaüstleri, Spaces, kaydırma, gizle, küçült";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "fare, imleç, Dock, menü çubuğu, etkin köşeler, kenarlar, ikinci ekran";
 "input source, keyboard layout, Caps Lock" = "giriş kaynağı, klavye düzeni, Caps Lock";
+"Play without interruptions" = "Kesintisiz oynayın";
+"Now playing: %@" = "Şu an: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Siz oynarken Mac’iniz sizi oyundan koparmaz";
+"While you play" = "Siz oynarken";
+"Add a Game…" = "Oyun Ekle…";
+"Other…" = "Diğer…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Bir oyun ekleyin; siz onu oynarken Oyun Modu kendiliğinden açılır";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Masaüstleri";
+"Swipes" = "Kaydırma hareketleri";
+"Space" = "Boşluk";

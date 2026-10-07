@@ -291,11 +291,10 @@
 "Game Mode" = "Modo de juego";
 "Games" = "Juegos";
 "Your Mac doesn’t pull you out of a game" = "Tu Mac no te saca del juego";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Para salir del juego, pulsa ⌘Tab dos veces rápido. ⌥⌘Esc siempre funciona.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc siempre funciona.";
+"To leave the game, press ⇧⌘Q" = "Para salir del juego, pulsa ⇧⌘Q";
 "Search and Siri" = "Búsqueda y Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri y la tecla 🌐 no se abren encima del juego";
 "Other apps and desktops" = "Otras apps y escritorios";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, los escritorios y los deslizamientos no te sacan del juego";
 "The game doesn’t close by accident" = "El juego no se cierra por accidente";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q y ⌘W no funcionan en el juego. Para salir, pulsa ⇧⌘Q";
 "The pointer stays in the game" = "El puntero se queda en el juego";
@@ -305,7 +304,6 @@
 "The screen stays on" = "La pantalla sigue encendida";
 "The display doesn’t dim or sleep while you play" = "La pantalla no se atenúa ni se duerme mientras juegas";
 "Your games" = "Tus juegos";
-"Add a Running App…" = "Añadir app abierta…";
 "Not a Game" = "No es un juego";
 "Looks like a game" = "Parece un juego";
 "game, games, gaming, play, Steam, full screen" = "juego, juegos, gaming, jugar, Steam, pantalla completa";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Comando Tab, Mission Control, escritorios, Spaces, deslizar, ocultar, minimizar";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "ratón, puntero, cursor, Dock, barra de menús, esquinas activas, bordes, segunda pantalla";
 "input source, keyboard layout, Caps Lock" = "fuente de entrada, distribución del teclado, Bloq Mayús, Caps Lock";
+"Play without interruptions" = "Juega sin interrupciones";
+"Now playing: %@" = "Jugando ahora: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Mientras juegas, tu Mac no te saca del juego";
+"While you play" = "Mientras juegas";
+"Add a Game…" = "Añadir juego…";
+"Other…" = "Otro…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Añade un juego y el modo de juego se activará solo mientras juegas";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Escritorios";
+"Swipes" = "Deslizamientos";
+"Space" = "Espacio";

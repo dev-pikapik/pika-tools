@@ -8,25 +8,27 @@ struct AppExclusions: View {
     @Binding var apps: [String]
     let isEnabled: Bool
     var skipped: Set<String> = []
-    var addsRunning = false
+    var empty = Text("No apps yet")
+    var addMenu: LocalizedStringKey?
     @Environment(\.inSettings) private var inSettings
 
     var body: some View {
         if inSettings {
             LabeledContent {
-                HStack {
-                    if addsRunning {
-                        Menu("Add a Running App…") {
-                            ForEach(running, id: \.key) { app in
-                                Button { apps.append(app.key) } label: { Text(verbatim: app.name) }
-                            }
+                if let addMenu {
+                    Menu(addMenu) {
+                        ForEach(running, id: \.key) { app in
+                            Button { apps.append(app.key) } label: { Text(verbatim: app.name) }
                         }
-                        .fixedSize()
+                        Divider()
+                        Button("Other…", action: add)
                     }
+                    .fixedSize()
+                } else {
                     Button("Add App…", systemImage: "plus", action: add)
                 }
             } label: {
-                KeyLabel(keys: keys, title: Text(title), subtitle: apps.isEmpty ? Text("No apps yet") : nil)
+                KeyLabel(keys: keys, title: Text(title), subtitle: apps.isEmpty ? empty : nil)
             }
             .disabled(!isEnabled)
             .settingAnchor(title)
