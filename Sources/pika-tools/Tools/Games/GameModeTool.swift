@@ -27,32 +27,13 @@ final class GameModeTool: Tool {
         }
     }
 
-    var blocksSearch: Bool {
-        didSet { save(blocksSearch, "game-mode-search") }
-    }
-
-    var blocksSwitching: Bool {
-        didSet { save(blocksSwitching, "game-mode-switching") }
-    }
-
-    var blocksQuit: Bool {
-        didSet { save(blocksQuit, "game-mode-quit") }
-    }
-
-    var blocksControl: Bool {
-        didSet { save(blocksControl, "game-mode-control") }
-    }
-
-    var fencesCursor: Bool {
-        didSet { save(fencesCursor, "game-mode-cursor") }
-    }
-
-    var keepsLayout: Bool {
-        didSet { save(keepsLayout, "game-mode-layout") }
-    }
-
-    var keepsDisplayOn: Bool {
-        didSet { save(keepsDisplayOn, "game-mode-display") }
+    var rules: Set<GameRule> {
+        didSet {
+            GameRule.allCases.filter { rules.contains($0) != oldValue.contains($0) }
+                .forEach { UserDefaults.standard.set(rules.contains($0), forKey: $0.key) }
+            leave()
+            update()
+        }
     }
 
     var games: [String] {
@@ -76,21 +57,15 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var hinted = false
     @ObservationIgnored private var fence: CursorFence?
     @ObservationIgnored private var fenceTimer: Timer?
-    @ObservationIgnored private var lockedLayout: String?
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
 
     private init() {
         let defaults = UserDefaults.standard
         GameRules.migrateControl(defaults)
+        GameRules.migrateGroups(defaults)
         isEnabled = defaults.bool(forKey: "game-mode")
-        blocksSearch = defaults.object(forKey: "game-mode-search") as? Bool ?? true
-        blocksSwitching = defaults.object(forKey: "game-mode-switching") as? Bool ?? true
-        blocksQuit = defaults.object(forKey: "game-mode-quit") as? Bool ?? true
-        blocksControl = defaults.object(forKey: "game-mode-control") as? Bool ?? true
-        fencesCursor = defaults.object(forKey: "game-mode-cursor") as? Bool ?? true
-        keepsLayout = defaults.object(forKey: "game-mode-layout") as? Bool ?? true
-        keepsDisplayOn = defaults.object(forKey: "game-mode-display") as? Bool ?? true
+        rules = Self.savedRules
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
 
@@ -102,7 +77,7 @@ final class GameModeTool: Tool {
             center.addObserver(forName: name, object: nil, queue: .main) { _ in GameModeTool.shared.leave() }
         }
         let observer = Unmanaged.passUnretained(self).toOpaque()
-        for name in ["com.apple.screenIsLocked", "com.apple.screenIsUnlocked", kTISNotifySelectedKeyboardInputSourceChanged as String] {
+        for name in ["com.apple.screenIsLocked", "com.apple.screenIsUnlocked"] {
             CFNotificationCenterAddObserver(
                 CFNotificationCenterGetDistributedCenter(), observer, gameModeNotification, name as CFString, nil, .deliverImmediately
             )
@@ -111,32 +86,19 @@ final class GameModeTool: Tool {
 
     func load() {
         let defaults = UserDefaults.standard
-        blocksSearch = defaults.object(forKey: "game-mode-search") as? Bool ?? true
-        blocksSwitching = defaults.object(forKey: "game-mode-switching") as? Bool ?? true
-        blocksQuit = defaults.object(forKey: "game-mode-quit") as? Bool ?? true
-        blocksControl = defaults.object(forKey: "game-mode-control") as? Bool ?? true
-        fencesCursor = defaults.object(forKey: "game-mode-cursor") as? Bool ?? true
-        keepsLayout = defaults.object(forKey: "game-mode-layout") as? Bool ?? true
-        keepsDisplayOn = defaults.object(forKey: "game-mode-display") as? Bool ?? true
+        rules = Self.savedRules
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
         isEnabled = defaults.bool(forKey: id)
     }
 
     var isDefault: Bool {
-        !isEnabled && blocksSearch && blocksSwitching && blocksQuit && blocksControl && fencesCursor && keepsLayout && keepsDisplayOn
-            && games.isEmpty && notGames.isEmpty
+        !isEnabled && rules.count == GameRule.allCases.count && games.isEmpty && notGames.isEmpty
     }
 
     func reset() {
         isEnabled = false
-        blocksSearch = true
-        blocksSwitching = true
-        blocksQuit = true
-        blocksControl = true
-        fencesCursor = true
-        keepsLayout = true
-        keepsDisplayOn = true
+        rules = Set(GameRule.allCases)
         games = []
         notGames = []
     }
@@ -196,18 +158,17 @@ final class GameModeTool: Tool {
 
     private func enter(_ app: NSRunningApplication) {
         game = app
-        trace.disable(GameRules.hotKeys(search: blocksSearch, switching: blocksSwitching, control: blocksControl, appSwitcher: tap != nil))
+        trace.disable(GameRules.hotKeys(rules, appSwitcher: tap != nil))
         combos = Set(
-            (HotKeyTrace.ids(trace.defaults) ?? []).filter { !GameRules.controlKeys.contains($0) }
-                .compactMap(SymbolicHotKeys.value).map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
+            (HotKeyTrace.ids(trace.defaults) ?? []).compactMap(SymbolicHotKeys.value)
+                .filter { !GameRules.isGameInput($0.modifiers) }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
         )
         hinted = false
-        if fencesCursor || blocksSwitching { moveFence() }
-        if fencesCursor {
+        if rules.contains(.cursor) || rules.contains(.swipes) { moveFence() }
+        if rules.contains(.cursor) {
             fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
         }
-        if keepsLayout { lockedLayout = Self.currentLayout }
-        if keepsDisplayOn {
+        if rules.contains(.display) {
             var id = IOPMAssertionID(0)
             let result = IOPMAssertionCreateWithName(
                 kIOPMAssertionTypePreventUserIdleDisplaySleep as CFString, IOPMAssertionLevel(kIOPMAssertionLevelOn), "pika-tools Game Mode" as CFString, &id
@@ -222,7 +183,6 @@ final class GameModeTool: Tool {
         fenceTimer = nil
         fence?.stop()
         fence = nil
-        lockedLayout = nil
         combos = []
         if let assertion { IOPMAssertionRelease(assertion) }
         assertion = nil
@@ -239,32 +199,19 @@ final class GameModeTool: Tool {
     }
 
     fileprivate func received(_ name: String) {
-        switch name {
-        case "com.apple.screenIsLocked":
+        if name == "com.apple.screenIsLocked" {
             leave()
-        case "com.apple.screenIsUnlocked":
+        } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.update() }
-        default:
-            guard let id = GameRules.layoutToRestore(locked: lockedLayout, current: Self.currentLayout),
-                  let source = (TISCreateInputSourceList([kTISPropertyInputSourceID: id] as CFDictionary, false)?
-                      .takeRetainedValue() as? [TISInputSource])?.first
-            else { return }
-            TISSelectInputSource(source)
         }
     }
 
     private func moveFence() {
         guard let game else { return }
-        let frame = fencesCursor ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
+        let frame = rules.contains(.cursor) ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
         guard fence == nil || fence?.frame != frame else { return }
         fence?.stop()
-        fence = CursorFence(frame: frame, dropsSwipes: blocksSwitching)
-    }
-
-    private func save(_ value: Bool, _ key: String) {
-        UserDefaults.standard.set(value, forKey: key)
-        leave()
-        update()
+        fence = CursorFence(frame: frame, dropsSwipes: rules.contains(.swipes))
     }
 
     private func refreshCommandKeys() {
@@ -337,9 +284,8 @@ final class GameModeTool: Tool {
         return session?["CGSSessionScreenIsLocked"] as? Bool == true || session?[kCGSessionOnConsoleKey] as? Bool == false
     }
 
-    private static var currentLayout: String? {
-        guard let source = TISCopyCurrentKeyboardInputSource()?.takeRetainedValue() else { return nil }
-        return InputSwitchTool.string(source, kTISPropertyInputSourceID)
+    private static var savedRules: Set<GameRule> {
+        Set(GameRule.allCases.filter { UserDefaults.standard.object(forKey: $0.key) as? Bool ?? true })
     }
 
     private static func screen(of pid: pid_t) -> CGRect? {
@@ -461,12 +407,12 @@ private func gameModeCallback(
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags
         guard tool.isPlaying else { break }
-        let blocked = tool.blocksSwitching && flags.contains(.maskCommand) && !flags.contains(.maskControl)
-            && [kVK_Tab, kVK_ANSI_H, kVK_ANSI_M].contains(key)
+        let blocked = flags.contains(.maskCommand) && !flags.contains(.maskControl)
+            && (key == kVK_Tab && tool.rules.contains(.appSwitcher) || [kVK_ANSI_H, kVK_ANSI_M].contains(key) && tool.rules.contains(.hide))
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
     case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
-        event.flags = GameRules.clickFlags(type, event.flags, playing: tool.isPlaying, blocksControl: tool.blocksControl)
+        event.flags = GameRules.clickFlags(type, event.flags, playing: tool.isPlaying, blocksControl: tool.rules.contains(.controlClick))
     default:
         break
     }
@@ -533,76 +479,39 @@ struct GameModePage: View {
                     }
                 }
             }
-            Section {
-                Group {
-                    ToggleRow(
-                        icon: "magnifyingglass",
-                        title: String(localized: "Search and Siri"),
-                        subtitle: caption("Spotlight", named(String(localized: "Emoji"), tool.keys(50)), "Siri", "🌐"),
-                        keys: [tool.keys(64).first ?? "⌘" + String(localized: "Space")],
-                        column: Self.column,
-                        isOn: $tool.blocksSearch
-                    )
-                    ToggleRow(
-                        icon: "rectangle.on.rectangle",
-                        title: String(localized: "Other apps and desktops"),
-                        subtitle: caption("⌘H", "⌘M", String(localized: "Swipes")),
-                        keys: ["⌘Tab"],
-                        column: Self.column,
-                        isOn: $tool.blocksSwitching
-                    )
-                    ToggleRow(
-                        icon: "xmark.app",
-                        title: String(localized: "The game doesn’t close by accident"),
-                        subtitle: Text("⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q"),
-                        keys: Self.column,
-                        isOn: $tool.blocksQuit
-                    )
-                    ToggleRow(
-                        icon: "control",
-                        title: String(localized: "⌃ stays in the game"),
-                        subtitle: caption(
-                            String(localized: "⌃-click menu"), named(String(localized: "Language"), tool.keys(60, 61)),
-                            named(String(localized: "Mission Control"), tool.keys(32)),
-                            named(String(localized: "Desktops"), tool.keys(79, 81, 118)), named(String(localized: "Menu bar"), tool.keys(7))
-                        ),
-                        keys: ["⌃"],
-                        column: Self.column,
-                        isOn: $tool.blocksControl
-                    )
-                }
-                .disabled(!tool.isEnabled)
-            } header: {
-                Text("While you play")
-            } footer: {
-                Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            Section {
-                Group {
-                    ToggleRow(
-                        icon: "globe",
-                        title: String(localized: "The keyboard language doesn’t change"),
-                        subtitle: Text("If it switches by accident, it comes back right away"),
-                        isOn: $tool.keepsLayout
-                    )
-                    ToggleRow(
-                        icon: "cursorarrow.rays",
-                        title: String(localized: "The pointer stays in the game"),
-                        subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen"),
-                        isOn: $tool.fencesCursor
-                    )
-                    ToggleRow(
-                        icon: "sun.max",
-                        title: String(localized: "The screen stays on"),
-                        subtitle: Text("The display doesn’t dim or sleep while you play"),
-                        isOn: $tool.keepsDisplayOn
-                    )
-                }
-                .disabled(!tool.isEnabled)
-            }
+            rules(Text("Closing the game"), [
+                Rule(.commandQ, String(localized: "⌘Q doesn’t close the game"), ["⌘Q"]),
+                Rule(.commandW, String(localized: "⌘W doesn’t close the window"), ["⌘W"]),
+            ], footer: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."))
+            rules(Text("Apps"), [
+                Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
+                Rule(.hide, String(localized: "The game doesn’t hide or minimize"), ["⌘H", "⌘M"]),
+                Rule(.spotlight, String(localized: "Spotlight doesn’t open"), [key(64, "⌘" + String(localized: "Space"))]),
+                Rule(.siri, String(localized: "Siri and Dictation don’t start"), [key(186, "🎤")]),
+                Rule(.launchpad, String(localized: "Launchpad doesn’t open"), [key(173, "F4")]),
+            ])
+            rules(Text("Desktops"), [
+                Rule(.missionControl, String(localized: "Mission Control doesn’t open"), [key(32, "⌃↑")]),
+                Rule(.appWindows, String(localized: "App Exposé doesn’t open"), [key(33, "⌃↓")]),
+                Rule(.showDesktop, String(localized: "The desktop doesn’t show"), [key(36, "F11")]),
+                Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
+                Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
+                Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
+            ])
+            rules(Text("Keyboard"), [
+                Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
+                Rule(.lookUp, String(localized: "Look Up doesn’t open"), [key(70, "⌃⌘D")]),
+                Rule(.focusKeys, String(localized: "The menu bar and Dock don’t take the keyboard"), [key(12, "⌃F1"), "…", key(57, "⌃F8")]),
+                Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
+            ])
+            rules(Text("Mouse and screen"), [
+                Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
+                Rule(
+                    .cursor, String(localized: "The pointer stays in the game"),
+                    subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
+                ),
+                Rule(.display, String(localized: "The screen stays on"), subtitle: Text("The display doesn’t dim or sleep while you play")),
+            ])
             RestoreDefaultsSection(
                 message: String(localized: "These will turn off and go back to their default options: \(tool.title)"),
                 isDefault: tool.isDefault,
@@ -614,14 +523,47 @@ struct GameModePage: View {
         .environment(\.inSettings, true)
     }
 
-    private static let column = ["⌘Q", "⌘W"]
-
-    private func caption(_ parts: String?...) -> Text {
-        Text(verbatim: parts.compactMap { $0 }.joined(separator: " · "))
+    private func key(_ id: Int32, _ fallback: String) -> String {
+        tool.keys(id).first ?? fallback
     }
 
-    private func named(_ name: String, _ keys: [String]) -> String? {
-        keys.isEmpty ? nil : ([name] + keys).joined(separator: "\u{00A0}")
+    private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
+        Section {
+            ForEach(rows, id: \.rule) { row in
+                Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
+                    HStack(spacing: 12) {
+                        RowLabel(Text(row.title), row.subtitle)
+                        Spacer(minLength: 0)
+                        if !row.keys.isEmpty { KeyCaps(keys: row.keys) }
+                    }
+                }
+                .settingAnchor(row.title)
+            }
+            .disabled(!tool.isEnabled)
+        } header: {
+            header
+        } footer: {
+            if let footer {
+                footer
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+}
+
+private struct Rule {
+    let rule: GameRule
+    let title: String
+    let keys: [String]
+    let subtitle: Text?
+
+    init(_ rule: GameRule, _ title: String, _ keys: [String] = [], subtitle: Text? = nil) {
+        self.rule = rule
+        self.title = title
+        self.keys = keys
+        self.subtitle = subtitle
     }
 }
 

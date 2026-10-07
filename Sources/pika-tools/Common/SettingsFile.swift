@@ -7,7 +7,7 @@ struct SettingsFile {
 
     static let app = "pika-tools"
     static let maxSize = 2_000_000
-    static let keys: Set<String> = [
+    static let keys = Set([
         "appearance", "AppleLanguages", "open-at-login", "check-updates",
         "command-keys-quit", "command-keys-close", "input-switch", "key-repeat", "home-end", "home-end-excluded",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
@@ -15,11 +15,10 @@ struct SettingsFile {
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
         "finder-open", "finder-cut", "finder-delete",
-        "game-mode", "game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-control", "game-mode-cursor", "game-mode-layout", "game-mode-display",
-        "game-mode-games", "game-mode-not-games",
+        "game-mode", "game-mode-games", "game-mode-not-games",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
-    ]
+    ] + GameRule.allCases.map(\.key))
 
     var settings: [String: Any]
     var modified: Date
@@ -54,7 +53,7 @@ struct SettingsFile {
     }
 
     static func filter(_ values: [String: Any]) -> [String: Any] {
-        values.filter { keys.contains($0.key) && isValid($0.value) }
+        GameRules.migrated(values).filter { keys.contains($0.key) && isValid($0.value) }
     }
 
     static func isValid(_ value: Any) -> Bool {

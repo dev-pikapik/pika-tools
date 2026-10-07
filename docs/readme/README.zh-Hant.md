@@ -76,7 +76,7 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 **在 Finder 中轉換。** 在 Finder 中按右鍵點按檔案，然後選擇 **轉換為**，即可儲存為其他格式：圖片存為 JPEG、PNG、HEIC、GIF、TIFF 或 PDF，影片存為 MP4、MOV 或只保留聲音，音樂存為 M4A、WAV 或 AIFF。原始檔案維持不變，任何內容都不會離開你的 Mac。與較小拷貝分開開啟。預設關閉。
 
-**遊戲模式。** 加入你的遊戲後，玩遊戲時 Mac 不會把你拉出遊戲。Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開，⌘Q 和 ⌘W 不會意外關閉遊戲，指標不會滑到 Dock、選單列或另一個螢幕上，鍵盤語言不會切換，螢幕也保持開啟。每一項都可以在「遊戲」頁面單獨開關，pika-tools 也會推薦它在你的 Mac 上找到的遊戲。遊戲中 Control 會變成一般按鍵：Control 點按仍是一般點按，Control+空白鍵或 Control+方向鍵也不會切換語言或桌面。也能辨識 Minecraft：加入 Minecraft Launcher 或 CurseForge，在 Minecraft 裡就會開啟這個模式。要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。一離開遊戲，一切照常運作。預設關閉。
+**遊戲模式。** 加入你的遊戲後，玩遊戲時 Mac 不會把你拉出遊戲。Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開，⌘Q 和 ⌘W 不會意外關閉遊戲，指標不會滑到 Dock、選單列或另一個螢幕上，螢幕也保持開啟。每一項都可以在「遊戲」頁面單獨開關，pika-tools 也會推薦它在你的 Mac 上找到的遊戲。遊戲中 Control 點按仍是一般點按，Control+方向鍵也不會切換桌面。也能辨識 Minecraft：加入 Minecraft Launcher 或 CurseForge，在 Minecraft 裡就會開啟這個模式。要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。一離開遊戲，一切照常運作。預設關閉。
 
 每個工具在選單和設定中都有各自的開關。
 

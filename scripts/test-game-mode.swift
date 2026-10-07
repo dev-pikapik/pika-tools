@@ -16,18 +16,24 @@ enum TestGameMode {
         precondition(!GameRules.looksLikeGame(id: "com.apple.Safari", category: "public.app-category.productivity", supportsGameMode: false, path: "/Applications/Safari.app"))
         print("detection: ok")
 
-        let all = GameRules.searchKeys + GameRules.switchingKeys + GameRules.appSwitcherKeys + GameRules.controlKeys
-        precondition(Set(all).count == all.count)
-        precondition(GameRules.neverBlocked.isDisjoint(with: all))
-        precondition(GameRules.hotKeys(search: false, switching: false, control: false, appSwitcher: true).isEmpty)
-        precondition(GameRules.hotKeys(search: true, switching: false, control: false, appSwitcher: true) == GameRules.searchKeys)
-        precondition(GameRules.hotKeys(search: false, switching: true, control: false, appSwitcher: true).contains(1))
-        precondition(!GameRules.hotKeys(search: false, switching: true, control: false, appSwitcher: false).contains(1))
-        precondition(!GameRules.hotKeys(search: true, switching: true, control: true, appSwitcher: false).contains(2))
-        precondition(GameRules.hotKeys(search: false, switching: false, control: true, appSwitcher: true) == GameRules.controlKeys)
-        precondition(Set(GameRules.controlKeys).isSuperset(of: [7, 32, 33, 57, 60, 61, 79, 81, 118, 126, 159]))
-        precondition(GameRules.searchKeys.contains(64) && GameRules.switchingKeys.contains(37) && GameRules.switchingKeys.contains(233))
-        print("groups: ok")
+        let ids = GameRule.allCases.flatMap(\.hotKeys) + [1, 2]
+        let all = Set(GameRule.allCases)
+        precondition(Set(ids).count == ids.count)
+        precondition(GameRules.neverBlocked.isDisjoint(with: ids) && GameRules.neverBlocked.isSuperset(of: [60, 61, 156]))
+        precondition(Set(GameRule.allCases.map(\.key)).count == all.count)
+        precondition(GameRules.hotKeys([], appSwitcher: true).isEmpty)
+        precondition(GameRules.hotKeys([.commandQ, .commandW, .swipes, .controlClick, .cursor, .display], appSwitcher: true).isEmpty)
+        precondition(GameRules.hotKeys([.spotlight], appSwitcher: true) == GameRule.spotlight.hotKeys)
+        precondition(GameRules.hotKeys(all, appSwitcher: true).contains(1))
+        precondition(!GameRules.hotKeys(all, appSwitcher: false).contains(2))
+        precondition(!GameRules.hotKeys(all.subtracting([.appSwitcher]), appSwitcher: true).contains(1))
+        precondition(GameRule.spotlight.hotKeys.contains(64) && GameRule.siri.hotKeys == [186] && GameRule.hide.hotKeys.contains(233))
+        precondition(GameRule.missionControl.hotKeys.contains(32) && GameRule.appWindows.hotKeys.contains(33) && GameRule.showDesktop.hotKeys.contains(37))
+        precondition(Set(GameRule.desktops.hotKeys).isSuperset(of: [79, 81]) && Set(GameRule.desktopNumbers.hotKeys).isSuperset(of: [118, 126]))
+        precondition(Set(GameRule.focusKeys.hotKeys).isSuperset(of: [7, 12, 57, 159]) && GameRule.emoji.hotKeys == [50] && GameRule.lookUp.hotKeys == [70])
+        precondition(GameRules.isGameInput(0x40000) && GameRules.isGameInput(0x840000))
+        precondition(!GameRules.isGameInput(0x140000) && !GameRules.isGameInput(0x100000) && !GameRules.isGameInput(0x80000))
+        print("rules: ok")
 
         let control: CGEventFlags = [.maskControl, .maskCommand, .maskShift]
         for type in [CGEventType.leftMouseDown, .leftMouseUp, .leftMouseDragged] {
@@ -68,6 +74,35 @@ enum TestGameMode {
             precondition(defaults.object(forKey: "game-mode-control") as? Bool == migrated)
             defaults.removePersistentDomain(forName: suite)
         }
+        for value in [true, false] {
+            let suite = "test-game-mode-groups-\(UUID().uuidString)"
+            let defaults = UserDefaults(suiteName: suite)!
+            GameRules.retiredKeys.forEach { defaults.set(value, forKey: $0) }
+            GameRules.migrateGroups(defaults)
+            for rule in GameRule.allCases {
+                precondition(defaults.object(forKey: rule.key) as? Bool == (rule.group == nil ? nil : value))
+            }
+            precondition(GameRules.retiredKeys.allSatisfy { defaults.object(forKey: $0) == nil })
+            defaults.removePersistentDomain(forName: suite)
+        }
+        do {
+            let suite = "test-game-mode-groups-\(UUID().uuidString)"
+            let defaults = UserDefaults(suiteName: suite)!
+            defaults.set(false, forKey: "game-mode-quit")
+            defaults.set(true, forKey: GameRule.commandQ.key)
+            defaults.set(false, forKey: "game-mode-search")
+            GameRules.migrateGroups(defaults)
+            GameRules.migrateGroups(defaults)
+            precondition(defaults.object(forKey: GameRule.commandQ.key) as? Bool == true && defaults.object(forKey: GameRule.commandW.key) as? Bool == false)
+            precondition([GameRule.spotlight, .siri, .emoji, .lookUp, .globe].allSatisfy { defaults.object(forKey: $0.key) as? Bool == false })
+            precondition(defaults.object(forKey: GameRule.missionControl.key) == nil && defaults.object(forKey: GameRule.hide.key) == nil)
+            defaults.removePersistentDomain(forName: suite)
+        }
+        let file = GameRules.migrated(["game-mode-control": false, "game-mode-layout": true, "game-mode-switching": true, GameRule.hide.key: false, "x": 1])
+        precondition(GameRules.retiredKeys.allSatisfy { file[$0] == nil })
+        precondition(file[GameRule.desktops.key] as? Bool == false && file[GameRule.controlClick.key] as? Bool == false)
+        precondition(file[GameRule.swipes.key] as? Bool == true && file[GameRule.hide.key] as? Bool == false)
+        precondition(file[GameRule.spotlight.key] == nil && file["x"] as? Int == 1 && file.count == 12)
         print("migration: ok")
 
         let folder = FileManager.default.temporaryDirectory.appendingPathComponent("test-game-mode-\(UUID().uuidString)")
@@ -97,6 +132,11 @@ enum TestGameMode {
         UserDefaults(suiteName: suite)!.set("64", forKey: HotKeyTrace.key)
         trace().restore()
         precondition(UserDefaults(suiteName: suite)!.object(forKey: HotKeyTrace.key) == nil)
+        table[60] = false
+        table[61] = false
+        UserDefaults(suiteName: suite)!.set([60, 61], forKey: HotKeyTrace.key)
+        trace().restore()
+        precondition(table[60] == true && table[61] == true)
         UserDefaults(suiteName: suite)!.set([Int.max, 64], forKey: HotKeyTrace.key)
         table[64] = false
         trace().restore()
@@ -108,16 +148,19 @@ enum TestGameMode {
         let q = Int64(kVK_ANSI_Q), w = Int64(kVK_ANSI_W)
         for quit in [false, true] {
             for close in [false, true] {
-                for blocks in [false, true] {
-                    let game = GameRules.commandKeys(quit: quit, close: close, playing: true, blocksQuit: blocks)
-                    precondition(game.keys.isSuperset(of: [q, w]))
-                    precondition(game.blocked == Set((quit || blocks ? [q] : []) + (close || blocks ? [w] : [])))
-                    let idle = GameRules.commandKeys(quit: quit, close: close, playing: false, blocksQuit: blocks)
-                    precondition(idle.keys == idle.blocked && idle.blocked == Set((quit ? [q] : []) + (close ? [w] : [])))
+                for blocksQuit in [false, true] {
+                    for blocksClose in [false, true] {
+                        let game = GameRules.commandKeys(quit: quit, close: close, playing: true, blocksQuit: blocksQuit, blocksClose: blocksClose)
+                        precondition(game.keys.isSuperset(of: [q, w]))
+                        precondition(game.blocked == Set((quit || blocksQuit ? [q] : []) + (close || blocksClose ? [w] : [])))
+                        let idle = GameRules.commandKeys(quit: quit, close: close, playing: false, blocksQuit: blocksQuit, blocksClose: blocksClose)
+                        precondition(idle.keys == idle.blocked && idle.blocked == Set((quit ? [q] : []) + (close ? [w] : [])))
+                    }
                 }
             }
         }
-        precondition(GameRules.commandKeys(quit: false, close: false, playing: true, blocksQuit: false).blocked.isEmpty)
+        precondition(GameRules.commandKeys(quit: false, close: false, playing: true, blocksQuit: true, blocksClose: false).blocked == [q])
+        precondition(GameRules.commandKeys(quit: false, close: false, playing: true, blocksQuit: false, blocksClose: true).blocked == [w])
         print("quit keys: ok")
 
         precondition(GameRules.combo(key: 49, flags: 0x80000 | 0x10000 | 0x100) == GameRules.combo(key: 49, flags: 0x80000))
@@ -125,11 +168,6 @@ enum TestGameMode {
         precondition(GameRules.combo(key: 49, flags: 0x100000) != GameRules.combo(key: 49, flags: 0x80000))
         precondition(GameRules.combo(key: 49, flags: 0x100000) != GameRules.combo(key: 48, flags: 0x100000))
         print("hint keys: ok")
-
-        precondition(GameRules.layoutToRestore(locked: "com.apple.keylayout.Russian", current: "com.apple.keylayout.ABC") == "com.apple.keylayout.Russian")
-        precondition(GameRules.layoutToRestore(locked: "com.apple.keylayout.ABC", current: "com.apple.keylayout.ABC") == nil)
-        precondition(GameRules.layoutToRestore(locked: nil, current: "com.apple.keylayout.ABC") == nil)
-        print("layout: ok")
 
         precondition(GameRules.shortcut(character: 32, key: 49, modifiers: 0x80000) == "⌥Space")
         precondition(GameRules.shortcut(character: 32, key: 49, modifiers: 0x140000) == "⌃⌘Space")
