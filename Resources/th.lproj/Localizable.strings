@@ -291,11 +291,10 @@
 "Game Mode" = "โหมดเกม";
 "Games" = "เกม";
 "Your Mac doesn’t pull you out of a game" = "Mac ไม่ดึงคุณออกจากเกม";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "หากต้องการออกจากเกม ให้กด ⌘Tab สองครั้งเร็วๆ ⌥⌘Esc ใช้ได้เสมอ";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "หากต้องการออกจากเกม ให้กด ⇧⌘Q และหากต้องการปิดหน้าต่างเกม ให้กด ⇧⌘W ส่วน ⌥⌘Esc ใช้ได้เสมอ";
+"To leave the game, press ⇧⌘Q" = "หากต้องการออกจากเกม ให้กด ⇧⌘Q";
 "Search and Siri" = "การค้นหาและ Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri และปุ่ม 🌐 ไม่เปิดทับเกม";
 "Other apps and desktops" = "แอปอื่นและเดสก์ท็อป";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, เดสก์ท็อป และการปัดไม่พาคุณออกจากเกม";
 "The game doesn’t close by accident" = "เกมไม่ปิดโดยไม่ตั้งใจ";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q และ ⌘W ใช้ไม่ได้ในเกม หากต้องการออก ให้กด ⇧⌘Q";
 "The pointer stays in the game" = "ตัวชี้อยู่ในเกมเสมอ";
@@ -305,7 +304,6 @@
 "The screen stays on" = "หน้าจอยังเปิดอยู่";
 "The display doesn’t dim or sleep while you play" = "หน้าจอไม่หรี่และไม่พักเครื่องขณะที่คุณเล่น";
 "Your games" = "เกมของคุณ";
-"Add a Running App…" = "เพิ่มแอปที่เปิดอยู่…";
 "Not a Game" = "ไม่ใช่เกม";
 "Looks like a game" = "ดูเหมือนเกม";
 "game, games, gaming, play, Steam, full screen" = "game, เกม, เล่นเกม, เล่น, Steam, เต็มหน้าจอ";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, เดสก์ท็อป, Spaces, ปัด, ซ่อน, ย่อ";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "เมาส์, ตัวชี้, เคอร์เซอร์, Dock, แถบเมนู, มุมลัด, ขอบ, หน้าจอที่สอง";
 "input source, keyboard layout, Caps Lock" = "แหล่งป้อนข้อมูล, รูปแบบแป้นพิมพ์, Caps Lock";
+"Play without interruptions" = "เล่นได้ไม่สะดุด";
+"Now playing: %@" = "กำลังเล่น: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "ขณะที่คุณเล่น Mac จะไม่ดึงคุณออกจากเกม";
+"While you play" = "ขณะที่คุณเล่น";
+"Add a Game…" = "เพิ่มเกม…";
+"Other…" = "อื่นๆ…";
+"Add a game, and Game Mode turns on by itself while you play it" = "เพิ่มเกม แล้วโหมดเกมจะเปิดเองขณะที่คุณเล่นเกมนั้น";
+"Emoji" = "อีโมจิ";
+"Mission Control" = "Mission Control";
+"Desktops" = "เดสก์ท็อป";
+"Swipes" = "การปัด";
+"Space" = "เว้นวรรค";

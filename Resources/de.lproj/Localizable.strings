@@ -291,11 +291,10 @@
 "Game Mode" = "Spielmodus";
 "Games" = "Spiele";
 "Your Mac doesn’t pull you out of a game" = "Dein Mac holt dich nicht aus dem Spiel";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Um das Spiel zu verlassen, drück zweimal schnell ⌘Tab. ⌥⌘Esc funktioniert immer.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Um ein Spiel zu beenden, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer.";
+"To leave the game, press ⇧⌘Q" = "Um das Spiel zu beenden, drück ⇧⌘Q";
 "Search and Siri" = "Suche und Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri und die 🌐-Taste öffnen sich nicht über dem Spiel";
 "Other apps and desktops" = "Andere Apps und Schreibtische";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, Schreibtische und Wischgesten holen dich nicht aus dem Spiel";
 "The game doesn’t close by accident" = "Das Spiel schließt sich nicht aus Versehen";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q und ⌘W wirken im Spiel nicht. Zum Beenden drück ⇧⌘Q";
 "The pointer stays in the game" = "Der Zeiger bleibt im Spiel";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Der Bildschirm bleibt an";
 "The display doesn’t dim or sleep while you play" = "Das Display wird nicht dunkler und schläft nicht ein, solange du spielst";
 "Your games" = "Deine Spiele";
-"Add a Running App…" = "Laufende App hinzufügen …";
 "Not a Game" = "Kein Spiel";
 "Looks like a game" = "Sieht nach einem Spiel aus";
 "game, games, gaming, play, Steam, full screen" = "spiel, spiele, gaming, spielen, Steam, vollbild";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Befehlstaste Tab, Mission Control, Schreibtische, Spaces, wischen, ausblenden, minimieren";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "Maus, Zeiger, Cursor, Dock, Menüleiste, aktive Ecken, Ränder, zweiter Bildschirm";
 "input source, keyboard layout, Caps Lock" = "Eingabequelle, Tastaturbelegung, Caps Lock, Feststelltaste";
+"Play without interruptions" = "Spielen ohne Unterbrechungen";
+"Now playing: %@" = "Läuft gerade: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Während du spielst, holt dich dein Mac nicht aus dem Spiel";
+"While you play" = "Während du spielst";
+"Add a Game…" = "Spiel hinzufügen …";
+"Other…" = "Andere …";
+"Add a game, and Game Mode turns on by itself while you play it" = "Füg ein Spiel hinzu, dann schaltet sich der Spielmodus von selbst ein, während du es spielst";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Schreibtische";
+"Swipes" = "Wischgesten";
+"Space" = "Leertaste";

@@ -291,11 +291,10 @@
 "Game Mode" = "Gamemodus";
 "Games" = "Games";
 "Your Mac doesn’t pull you out of a game" = "Je Mac haalt je niet uit je game";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Druk twee keer snel op ⌘Tab om de game te verlaten. ⌥⌘Esc werkt altijd.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd.";
+"To leave the game, press ⇧⌘Q" = "Druk op ⇧⌘Q om de game te verlaten";
 "Search and Siri" = "Zoeken en Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri en de 🌐-toets openen niet over de game heen";
 "Other apps and desktops" = "Andere apps en bureaubladen";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, bureaubladen en veegbewegingen halen je niet uit de game";
 "The game doesn’t close by accident" = "De game sluit niet per ongeluk";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q en ⌘W werken niet in de game. Druk op ⇧⌘Q om te stoppen";
 "The pointer stays in the game" = "De aanwijzer blijft in de game";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Het scherm blijft aan";
 "The display doesn’t dim or sleep while you play" = "Het scherm dimt niet en gaat niet slapen terwijl je speelt";
 "Your games" = "Je games";
-"Add a Running App…" = "Voeg geopende app toe…";
 "Not a Game" = "Geen game";
 "Looks like a game" = "Lijkt op een game";
 "game, games, gaming, play, Steam, full screen" = "game, games, gaming, spelen, spel, Steam, schermvullend";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, bureaubladen, Spaces, vegen, verberg, minimaliseer";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "muis, aanwijzer, cursor, Dock, menubalk, actieve hoeken, randen, tweede scherm";
 "input source, keyboard layout, Caps Lock" = "invoerbron, toetsenbordindeling, Caps Lock";
+"Play without interruptions" = "Speel zonder onderbrekingen";
+"Now playing: %@" = "Nu bezig: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Terwijl je speelt, haalt je Mac je niet uit je game";
+"While you play" = "Terwijl je speelt";
+"Add a Game…" = "Voeg game toe…";
+"Other…" = "Andere…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Voeg een game toe, dan gaat de gamemodus vanzelf aan terwijl je hem speelt";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Bureaubladen";
+"Swipes" = "Veeggebaren";
+"Space" = "Spatie";

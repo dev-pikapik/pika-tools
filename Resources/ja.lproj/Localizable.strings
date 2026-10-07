@@ -291,11 +291,10 @@
 "Game Mode" = "ゲームモード";
 "Games" = "ゲーム";
 "Your Mac doesn’t pull you out of a game" = "ゲーム中にMacに邪魔されません";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "ゲームから抜けるには、⌘Tabを素早く2回押します。⌥⌘Escはいつでも使えます。";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "ゲームを終了するには⇧⌘Q、ウインドウを閉じるには⇧⌘Wを押します。⌥⌘Escは必ず使えます。";
+"To leave the game, press ⇧⌘Q" = "ゲームを終了するには⇧⌘Qを押します";
 "Search and Siri" = "検索とSiri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight、Siri、🌐キーがゲームの上に開きません";
 "Other apps and desktops" = "ほかのアプリとデスクトップ";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab、⌘H、⌘M、Mission Control、デスクトップ、スワイプでゲームから抜けません";
 "The game doesn’t close by accident" = "ゲームがうっかり閉じません";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "ゲーム中は⌘Qと⌘Wが効きません。終了するには⇧⌘Qを押します";
 "The pointer stays in the game" = "ポインタがゲームの中にとどまる";
@@ -305,7 +304,6 @@
 "The screen stays on" = "画面がオンのまま";
 "The display doesn’t dim or sleep while you play" = "プレイ中はディスプレイが暗くならず、スリープもしません";
 "Your games" = "あなたのゲーム";
-"Add a Running App…" = "起動中のアプリを追加…";
 "Not a Game" = "ゲームではない";
 "Looks like a game" = "ゲームのようです";
 "game, games, gaming, play, Steam, full screen" = "game, ゲーム, ゲーミング, プレイ, 遊ぶ, Steam, フルスクリーン";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, デスクトップ, Spaces, スワイプ, 隠す, しまう";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "マウス, ポインタ, カーソル, Dock, メニューバー, ホットコーナー, 端, 2台目のディスプレイ";
 "input source, keyboard layout, Caps Lock" = "入力ソース, キーボードレイアウト, Caps Lock";
+"Play without interruptions" = "中断されずにプレイ";
+"Now playing: %@" = "プレイ中: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "プレイ中は、Macがゲームの邪魔をしません";
+"While you play" = "プレイ中";
+"Add a Game…" = "ゲームを追加…";
+"Other…" = "その他…";
+"Add a game, and Game Mode turns on by itself while you play it" = "ゲームを追加すると、そのゲームをプレイしている間だけゲームモードが自動でオンになります";
+"Emoji" = "絵文字";
+"Mission Control" = "Mission Control";
+"Desktops" = "デスクトップ";
+"Swipes" = "スワイプ";
+"Space" = "スペース";

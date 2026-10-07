@@ -17,7 +17,9 @@ struct MenuView: View {
 
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
-    private func isShown(_ id: String) -> Bool { customizing || !hidden.contains(id) }
+    private func isShown(_ id: String) -> Bool {
+        customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
+    }
 
     private var visibleTabs: [SettingsTab] {
         [.keyboard, .mouse, .windows, .dock, .finder, .games].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }

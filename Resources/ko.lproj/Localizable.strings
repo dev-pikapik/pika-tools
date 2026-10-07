@@ -291,11 +291,10 @@
 "Game Mode" = "게임 모드";
 "Games" = "게임";
 "Your Mac doesn’t pull you out of a game" = "게임 중에 Mac이 방해하지 않습니다";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "게임에서 나가려면 ⌘Tab을 빠르게 두 번 누르세요. ⌥⌘Esc는 언제나 작동합니다.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "게임을 끝내려면 ⇧⌘Q를, 창을 닫으려면 ⇧⌘W를 누르세요. ⌥⌘Esc는 항상 작동합니다.";
+"To leave the game, press ⇧⌘Q" = "게임을 끝내려면 ⇧⌘Q를 누르세요";
 "Search and Siri" = "검색 및 Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri, 🌐 키가 게임 위로 열리지 않습니다";
 "Other apps and desktops" = "다른 앱과 데스크탑";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, 데스크탑, 쓸어넘기기로 게임에서 빠져나가지 않습니다";
 "The game doesn’t close by accident" = "게임이 실수로 닫히지 않음";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "게임에서는 ⌘Q와 ⌘W가 작동하지 않습니다. 종료하려면 ⇧⌘Q를 누르세요";
 "The pointer stays in the game" = "포인터가 게임 안에 머무름";
@@ -305,7 +304,6 @@
 "The screen stays on" = "화면이 켜진 상태로 유지";
 "The display doesn’t dim or sleep while you play" = "플레이하는 동안 디스플레이가 어두워지거나 잠자기에 들어가지 않습니다";
 "Your games" = "내 게임";
-"Add a Running App…" = "실행 중인 앱 추가…";
 "Not a Game" = "게임 아님";
 "Looks like a game" = "게임인 것 같습니다";
 "game, games, gaming, play, Steam, full screen" = "game, 게임, 게이밍, 플레이, Steam, 전체 화면";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Command Tab, Mission Control, 데스크탑, Spaces, 쓸어넘기기, 가리기, 최소화";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "마우스, 포인터, 커서, Dock, 메뉴 막대, 핫 코너, 가장자리, 두 번째 디스플레이";
 "input source, keyboard layout, Caps Lock" = "입력 소스, 키보드 레이아웃, Caps Lock";
+"Play without interruptions" = "방해 없이 플레이";
+"Now playing: %@" = "지금 플레이 중: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "플레이하는 동안 Mac이 게임에서 끌어내지 않습니다";
+"While you play" = "플레이하는 동안";
+"Add a Game…" = "게임 추가…";
+"Other…" = "기타…";
+"Add a game, and Game Mode turns on by itself while you play it" = "게임을 추가하면 그 게임을 하는 동안 게임 모드가 저절로 켜집니다";
+"Emoji" = "이모지";
+"Mission Control" = "Mission Control";
+"Desktops" = "데스크탑";
+"Swipes" = "쓸어넘기기";
+"Space" = "스페이스";

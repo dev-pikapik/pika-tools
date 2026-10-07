@@ -1,4 +1,3 @@
-import Carbon
 import SwiftUI
 
 @Observable
@@ -35,6 +34,7 @@ final class CommandKeysTool: Tool {
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var keys: Set<Int64> = []
+    @ObservationIgnored fileprivate var blocked: Set<Int64> = []
 
     init() {
         protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
@@ -52,8 +52,9 @@ final class CommandKeysTool: Tool {
 
     func refresh() {
         stop()
-        let game = GameModeTool.shared.isPlaying && GameModeTool.shared.blocksQuit
-        keys = Set((protectsQuit || game ? [Int64(kVK_ANSI_Q)] : []) + (protectsClose || game ? [Int64(kVK_ANSI_W)] : []))
+        (keys, blocked) = GameRules.commandKeys(
+            quit: protectsQuit, close: protectsClose, playing: GameModeTool.shared.isPlaying, blocksQuit: GameModeTool.shared.blocksQuit
+        )
         if !keys.isEmpty { start() }
     }
 
@@ -105,15 +106,20 @@ private func commandKeysCallback(
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp:
         let flags = event.flags
-        guard tool.keys.contains(event.getIntegerValueField(.keyboardEventKeycode)),
+        let code = event.getIntegerValueField(.keyboardEventKeycode)
+        guard tool.keys.contains(code),
               flags.contains(.maskCommand),
               flags.isDisjoint(with: [.maskControl, .maskAlternate])
         else { break }
-        guard flags.contains(.maskShift),
-              event.getIntegerValueField(.keyboardEventAutorepeat) == 0,
+        guard flags.contains(.maskShift) else {
+            guard tool.blocked.contains(code) else { break }
+            if type == .keyDown { GameModeTool.shared.hint() }
+            return nil
+        }
+        guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0,
               let key = CGEvent(
                   keyboardEventSource: CGEventSource(stateID: .privateState),
-                  virtualKey: CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)),
+                  virtualKey: CGKeyCode(code),
                   keyDown: type == .keyDown
               )
         else { return nil }

@@ -291,11 +291,10 @@
 "Game Mode" = "Spelläge";
 "Games" = "Spel";
 "Your Mac doesn’t pull you out of a game" = "Din Mac drar dig inte ur spelet";
-"To leave a game, press ⌘Tab twice quickly. ⌥⌘Esc always works." = "Tryck snabbt på ⌘Tab två gånger för att lämna spelet. ⌥⌘Esc fungerar alltid.";
+"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid.";
+"To leave the game, press ⇧⌘Q" = "Tryck på ⇧⌘Q för att lämna spelet";
 "Search and Siri" = "Sökning och Siri";
-"Spotlight, Siri and the 🌐 key don’t open on top of the game" = "Spotlight, Siri och 🌐-tangenten öppnas inte ovanpå spelet";
 "Other apps and desktops" = "Andra appar och skrivbord";
-"⌘Tab, ⌘H, ⌘M, Mission Control, desktops and swipes don’t take you out of the game" = "⌘Tab, ⌘H, ⌘M, Mission Control, skrivbord och svepningar tar dig inte ur spelet";
 "The game doesn’t close by accident" = "Spelet stängs inte av misstag";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q och ⌘W fungerar inte i spelet. Tryck på ⇧⌘Q för att avsluta";
 "The pointer stays in the game" = "Pekaren stannar i spelet";
@@ -305,7 +304,6 @@
 "The screen stays on" = "Skärmen förblir på";
 "The display doesn’t dim or sleep while you play" = "Skärmen dämpas inte och somnar inte medan du spelar";
 "Your games" = "Dina spel";
-"Add a Running App…" = "Lägg till öppen app…";
 "Not a Game" = "Inte ett spel";
 "Looks like a game" = "Ser ut som ett spel";
 "game, games, gaming, play, Steam, full screen" = "spel, gaming, spela, Steam, helskärm";
@@ -313,3 +311,15 @@
 "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize" = "Kommando Tab, Mission Control, skrivbord, Spaces, svep, göm, minimera";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mus, pekare, markör, Dock, menyrad, aktiva hörn, kanter, andra skärm";
 "input source, keyboard layout, Caps Lock" = "inmatningskälla, tangentbordslayout, Caps Lock";
+"Play without interruptions" = "Spela utan avbrott";
+"Now playing: %@" = "Spelar nu: %@";
+"While you play, your Mac doesn’t pull you out of the game" = "Medan du spelar drar din Mac dig inte ur spelet";
+"While you play" = "Medan du spelar";
+"Add a Game…" = "Lägg till spel…";
+"Other…" = "Annat…";
+"Add a game, and Game Mode turns on by itself while you play it" = "Lägg till ett spel så slås spelläget på av sig självt medan du spelar det";
+"Emoji" = "Emoji";
+"Mission Control" = "Mission Control";
+"Desktops" = "Skrivbord";
+"Swipes" = "Svepningar";
+"Space" = "Mellanslag";
