@@ -7,6 +7,7 @@ struct ToggleRow: View {
     var hint: Text?
     var help: Text?
     var keys: [String] = []
+    var column: [String] = []
     @Binding var isOn: Bool
     @Environment(\.inSettings) private var inSettings
     @State private var hovering = false
@@ -14,7 +15,7 @@ struct ToggleRow: View {
     var body: some View {
         if inSettings {
             let toggle = Toggle(isOn: $isOn) {
-                KeyLabel(keys: keys, title: Text(title), subtitle: subtitle)
+                KeyLabel(keys: keys, column: column, title: Text(title), subtitle: subtitle)
             }
             .settingAnchor(title)
             if let help {

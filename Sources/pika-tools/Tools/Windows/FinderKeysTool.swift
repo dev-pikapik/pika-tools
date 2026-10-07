@@ -406,7 +406,7 @@ private struct FinderCutSettings: View {
             subtitle: Text("Then paste to move them"),
             hint: Text("Then paste to move them"),
             help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut."),
-            keys: ["⌘", "X"],
+            keys: ["⌘X"],
             isOn: $tool.isEnabled
         )
     }

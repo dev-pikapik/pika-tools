@@ -187,7 +187,7 @@ private struct InputSwitchSettings: View {
             subtitle: Text("Hold the first key, tap the second"),
             hint: Text("Hold the first key, tap the second"),
             help: Text("Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous"),
-            keys: ["⌥", "⇧"],
+            keys: ["⌥⇧"],
             isOn: $tool.isEnabled
         )
     }
