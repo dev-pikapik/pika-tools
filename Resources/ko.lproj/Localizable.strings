@@ -60,7 +60,14 @@
 "Minutes" = "분";
 "Seconds" = "초";
 "Keep the display on" = "디스플레이 켜두기";
-"Otherwise the screen dims and turns off as usual" = "끄면 화면이 평소처럼 어두워지고 꺼집니다";
+"Display" = "디스플레이";
+"Always on" = "항상 켜짐";
+"Turns off as usual" = "평소처럼 꺼짐";
+"No dimming, screen saver or lock screen" = "어두워지지 않고 화면 보호기나 잠금 화면도 없음";
+"Turns off on its own timer, your Mac keeps working" = "자체 타이머에 따라 꺼지고 Mac은 계속 작동함";
+"Turn off the display now" = "지금 디스플레이 끄기";
+"Turn Off" = "끄기";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac은 계속 작동합니다. 디스플레이를 다시 켜려면 마우스를 움직이거나 아무 키나 누르세요.";
 "Work with the lid closed" = "덮개를 닫아도 작동";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "덮개를 닫아도 잠자기에 들어가지 않습니다. 통풍이 잘되게 두세요.";
 "Stop when battery is below %@" = "배터리가 %@ 미만이면 중지";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools가 덮개를 닫아도 Mac이 잠자기에 들어가지 않도록 하려고 합니다.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools가 덮개를 닫을 때 다시 잠자기에 들어가도록 되돌리려고 합니다.";
 "How pika-tools starts and looks." = "pika-tools의 시작과 모양.";
-"Only on Mac laptops" = "Mac 노트북에서만";
 "Back" = "뒤로";
 "Forward" = "앞으로";
 "No Results" = "결과 없음";

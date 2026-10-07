@@ -60,7 +60,14 @@
 "Minutes" = "Menit";
 "Seconds" = "Detik";
 "Keep the display on" = "Biarkan layar tetap menyala";
-"Otherwise the screen dims and turns off as usual" = "Jika tidak, layar meredup dan mati seperti biasa";
+"Display" = "Layar";
+"Always on" = "Selalu menyala";
+"Turns off as usual" = "Mati seperti biasa";
+"No dimming, screen saver or lock screen" = "Tanpa peredupan, penghemat layar, atau layar kunci";
+"Turns off on its own timer, your Mac keeps working" = "Mati sesuai pewaktunya, Mac Anda tetap bekerja";
+"Turn off the display now" = "Matikan layar sekarang";
+"Turn Off" = "Matikan";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac Anda tetap bekerja. Untuk menyalakan layar lagi, gerakkan mouse atau tekan tombol apa saja.";
 "Work with the lid closed" = "Bekerja dengan penutup tertutup";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Mac tidak tidur saat penutup ditutup. Jaga sirkulasi udaranya.";
 "Stop when battery is below %@" = "Berhenti saat baterai di bawah %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools ingin menjaga Mac Anda tetap terjaga saat penutup ditutup.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools ingin membiarkan Mac Anda tidur lagi saat penutup ditutup.";
 "How pika-tools starts and looks." = "Cara pika-tools dimulai dan tampilannya.";
-"Only on Mac laptops" = "Hanya di laptop Mac";
 "Back" = "Kembali";
 "Forward" = "Maju";
 "No Results" = "Tidak Ada Hasil";

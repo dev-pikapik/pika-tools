@@ -60,7 +60,14 @@
 "Minutes" = "Minute";
 "Seconds" = "Secunde";
 "Keep the display on" = "Menține ecranul aprins";
-"Otherwise the screen dims and turns off as usual" = "Altfel ecranul se estompează și se stinge ca de obicei";
+"Display" = "Ecran";
+"Always on" = "Mereu aprins";
+"Turns off as usual" = "Se stinge ca de obicei";
+"No dimming, screen saver or lock screen" = "Fără estompare, protector de ecran sau ecran de blocare";
+"Turns off on its own timer, your Mac keeps working" = "Se stinge după propriul cronometru, Mac-ul continuă să lucreze";
+"Turn off the display now" = "Stinge ecranul acum";
+"Turn Off" = "Stinge";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac-ul continuă să lucreze. Ca să aprinzi ecranul la loc, mișcă mouse-ul sau apasă o tastă.";
 "Work with the lid closed" = "Funcționează cu capacul închis";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Mac-ul nu intră în repaus când închizi capacul. Asigură-i ventilație.";
 "Stop when battery is below %@" = "Oprește când bateria scade sub %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools vrea să mențină Mac-ul activ cu capacul închis.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools vrea să permită din nou Mac-ului să intre în repaus cu capacul închis.";
 "How pika-tools starts and looks." = "Cum pornește și cum arată pika-tools.";
-"Only on Mac laptops" = "Doar pe laptopurile Mac";
 "Back" = "Înapoi";
 "Forward" = "Înainte";
 "No Results" = "Niciun rezultat";

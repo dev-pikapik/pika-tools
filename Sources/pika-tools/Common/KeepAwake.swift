@@ -27,15 +27,9 @@ final class KeepAwake {
         }
         let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("IOPMrootDomain"))
         defer { IOObjectRelease(service) }
-        if ["AppleClamshellState", "AppleClamshellCausesSleep"].contains(where: {
+        return ["AppleClamshellState", "AppleClamshellCausesSleep"].contains(where: {
             IORegistryEntryCreateCFProperty(service, $0 as CFString, kCFAllocatorDefault, 0) != nil
-        }) {
-            return true
-        }
-        var displays = [CGDirectDisplayID](repeating: 0, count: 16)
-        var count: UInt32 = 0
-        CGGetOnlineDisplayList(16, &displays, &count)
-        return displays.prefix(Int(count)).contains { CGDisplayIsBuiltin($0) != 0 }
+        })
     }()
 
     private(set) var mode = Mode.off
@@ -195,6 +189,12 @@ final class KeepAwake {
         bridge.arguments = [keepsDisplayOn ? "-di" : "-i", "-t", String(seconds)]
         guard (try? bridge.run()) != nil else { return }
         UserDefaults.standard.set(Int(bridge.processIdentifier), forKey: Self.bridgeKey)
+    }
+
+    static func turnOffDisplay() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/pmset"), arguments: ["displaysleepnow"])
+        }
     }
 
     private static func stopBridge() {
@@ -361,32 +361,43 @@ struct KeepAwakeSettings: View {
                 .padding(.vertical, 4)
                 .disabled(keepAwake.mode == .indefinitely)
                 .settingAnchor(String(localized: "Duration"))
-                Toggle(isOn: $keepAwake.keepsDisplayOn) {
-                    RowLabel(Text("Keep the display on"), Text("Otherwise the screen dims and turns off as usual"))
+                VStack(alignment: .leading, spacing: 10) {
+                    RowLabel(Text("Display"), keepAwake.keepsDisplayOn ? Text("No dimming, screen saver or lock screen") : Text("Turns off on its own timer, your Mac keeps working"))
+                    Picker("Display", selection: $keepAwake.keepsDisplayOn) {
+                        Text("Always on").tag(true)
+                        Text("Turns off as usual").tag(false)
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    .frame(maxWidth: .infinity)
                 }
-                .settingAnchor(String(localized: "Keep the display on"))
+                .padding(.vertical, 4)
+                .settingAnchor(String(localized: "Display"))
+                LabeledContent {
+                    Button("Turn Off") { KeepAwake.turnOffDisplay() }
+                } label: {
+                    RowLabel(Text("Turn off the display now"), Text("Your Mac keeps working. To bring the display back, move the mouse or press a key."))
+                }
+                .settingAnchor(String(localized: "Turn off the display now"))
             }
 
-            Section {
-                Toggle(isOn: $keepAwake.worksWithLidClosed) {
-                    RowLabel(Text("Work with the lid closed"), keepAwake.hasLid ? Text("Mac stays awake with the lid closed") : Text("Only on Mac laptops"))
-                }
-                .disabled(!keepAwake.hasLid)
-                .help(keepAwake.hasLid ? Text("Mac won’t sleep when you close the lid. Keep it ventilated.") : Text("Only on Mac laptops"))
-                .settingAnchor(String(localized: "Work with the lid closed"))
-                if keepAwake.hasLid {
+            if keepAwake.hasLid {
+                Section {
+                    Toggle(isOn: $keepAwake.worksWithLidClosed) {
+                        RowLabel(Text("Work with the lid closed"), Text("Mac stays awake with the lid closed"))
+                    }
+                    .help(Text("Mac won’t sleep when you close the lid. Keep it ventilated."))
+                    .settingAnchor(String(localized: "Work with the lid closed"))
                     Toggle(isOn: $keepAwake.stopsOnLowBattery) {
                         RowLabel(Text("Stop when battery is below \(0.2.formatted(.percent))"), Text("Lets the Mac sleep before the battery runs out"))
                     }
                     .disabled(!keepAwake.worksWithLidClosed)
                     .settingAnchor(String(localized: "Stop when battery is below \(0.2.formatted(.percent))"))
-                }
-                if let error = keepAwake.lidError {
-                    Label(error, systemImage: "exclamationmark.triangle.fill")
-                        .foregroundStyle(.orange)
-                }
-            } footer: {
-                if keepAwake.hasLid {
+                    if let error = keepAwake.lidError {
+                        Label(error, systemImage: "exclamationmark.triangle.fill")
+                            .foregroundStyle(.orange)
+                    }
+                } footer: {
                     Text("macOS will ask for your administrator password.")
                         .font(.callout)
                         .foregroundStyle(.secondary)

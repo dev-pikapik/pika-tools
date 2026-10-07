@@ -60,7 +60,14 @@
 "Minutes" = "分鐘";
 "Seconds" = "秒";
 "Keep the display on" = "讓顯示器保持開啟";
-"Otherwise the screen dims and turns off as usual" = "否則螢幕會照常變暗並關閉";
+"Display" = "顯示器";
+"Always on" = "永遠開啟";
+"Turns off as usual" = "照常關閉";
+"No dimming, screen saver or lock screen" = "不變暗，不出現螢幕保護程式和鎖定畫面";
+"Turns off on its own timer, your Mac keeps working" = "依自己的計時關閉，Mac 繼續運作";
+"Turn off the display now" = "立即關閉顯示器";
+"Turn Off" = "關閉";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac 會繼續運作。移動滑鼠或按任意鍵即可喚醒顯示器。";
 "Work with the lid closed" = "蓋上螢幕時繼續運作";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "蓋上螢幕時 Mac 不會進入睡眠。請保持通風。";
 "Stop when battery is below %@" = "電池低於 %@ 時停止";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools 想要在蓋上螢幕時讓 Mac 保持喚醒。";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools 想要恢復蓋上螢幕時讓 Mac 進入睡眠。";
 "How pika-tools starts and looks." = "pika-tools 的啟動方式和外觀。";
-"Only on Mac laptops" = "僅限 Mac 筆記型電腦";
 "Back" = "返回";
 "Forward" = "前進";
 "No Results" = "沒有結果";

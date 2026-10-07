@@ -60,7 +60,14 @@
 "Minutes" = "Minutes";
 "Seconds" = "Seconds";
 "Keep the display on" = "Keep the display on";
-"Otherwise the screen dims and turns off as usual" = "Otherwise the screen dims and turns off as usual";
+"Display" = "Display";
+"Always on" = "Always on";
+"Turns off as usual" = "Turns off as usual";
+"No dimming, screen saver or lock screen" = "No dimming, screen saver or lock screen";
+"Turns off on its own timer, your Mac keeps working" = "Turns off on its own timer, your Mac keeps working";
+"Turn off the display now" = "Turn off the display now";
+"Turn Off" = "Turn Off";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Your Mac keeps working. To bring the display back, move the mouse or press a key.";
 "Work with the lid closed" = "Work with the lid closed";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Mac won’t sleep when you close the lid. Keep it ventilated.";
 "Stop when battery is below %@" = "Stop when battery is below %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools wants to keep your Mac awake with the lid closed.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools wants to let your Mac sleep with the lid closed again.";
 "How pika-tools starts and looks." = "How pika-tools starts and looks.";
-"Only on Mac laptops" = "Only on Mac laptops";
 "Back" = "Back";
 "Forward" = "Forward";
 "No Results" = "No Results";

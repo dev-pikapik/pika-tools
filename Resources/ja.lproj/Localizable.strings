@@ -60,7 +60,14 @@
 "Minutes" = "分";
 "Seconds" = "秒";
 "Keep the display on" = "ディスプレイをオンのままにする";
-"Otherwise the screen dims and turns off as usual" = "オフのときは通常どおり暗くなって消えます";
+"Display" = "ディスプレイ";
+"Always on" = "常にオン";
+"Turns off as usual" = "通常どおりオフ";
+"No dimming, screen saver or lock screen" = "暗くならず、スクリーンセーバーもロック画面も出ません";
+"Turns off on its own timer, your Mac keeps working" = "いつものタイマーでオフになり、Mac は動き続けます";
+"Turn off the display now" = "今すぐディスプレイをオフ";
+"Turn Off" = "オフにする";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Mac は動き続けます。ディスプレイを戻すには、マウスを動かすかキーを押してください。";
 "Work with the lid closed" = "蓋を閉じても動作";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "蓋を閉じてもスリープしません。風通しのよい場所に置いてください。";
 "Stop when battery is below %@" = "バッテリーが %@ 未満で停止";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools が蓋を閉じても Mac をスリープさせないようにしようとしています。";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools が蓋を閉じたときのスリープを元に戻そうとしています。";
 "How pika-tools starts and looks." = "pika-tools の起動と外観。";
-"Only on Mac laptops" = "Mac ノートブックのみ";
 "Back" = "戻る";
 "Forward" = "進む";
 "No Results" = "結果なし";

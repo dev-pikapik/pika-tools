@@ -60,7 +60,14 @@
 "Minutes" = "Minuter";
 "Seconds" = "Sekunder";
 "Keep the display on" = "Håll skärmen på";
-"Otherwise the screen dims and turns off as usual" = "Annars dämpas skärmen och stängs av som vanligt";
+"Display" = "Skärm";
+"Always on" = "Alltid på";
+"Turns off as usual" = "Stängs av som vanligt";
+"No dimming, screen saver or lock screen" = "Ingen dämpning, skärmsläckare eller låsskärm";
+"Turns off on its own timer, your Mac keeps working" = "Stängs av enligt sin egen timer, din Mac fortsätter arbeta";
+"Turn off the display now" = "Stäng av skärmen nu";
+"Turn Off" = "Stäng av";
+"Your Mac keeps working. To bring the display back, move the mouse or press a key." = "Din Mac fortsätter arbeta. Flytta musen eller tryck på en tangent för att få tillbaka skärmen.";
 "Work with the lid closed" = "Arbeta med locket stängt";
 "Mac won’t sleep when you close the lid. Keep it ventilated." = "Macen går inte i vila när du stänger locket. Se till att den får luft.";
 "Stop when battery is below %@" = "Stoppa när batteriet är under %@";
@@ -68,7 +75,6 @@
 "pika-tools wants to keep your Mac awake with the lid closed." = "pika-tools vill hålla din Mac vaken med locket stängt.";
 "pika-tools wants to let your Mac sleep with the lid closed again." = "pika-tools vill låta din Mac gå i vila med locket stängt igen.";
 "How pika-tools starts and looks." = "Hur pika-tools startar och ser ut.";
-"Only on Mac laptops" = "Endast på bärbara Mac-datorer";
 "Back" = "Bakåt";
 "Forward" = "Framåt";
 "No Results" = "Inga resultat";

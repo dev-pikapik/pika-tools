@@ -76,10 +76,13 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .general, title: String(localized: "Sync settings with iCloud"), synonyms: "iCloud Drive, another Mac, backup"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Keep your Mac awake"), synonyms: "sleep, caffeine, insomnia"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Duration"), synonyms: "time, timer, days, hours, minutes, seconds"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Keep the display on"), synonyms: "screen, monitor, dim, screen saver"),
-            SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Display"), synonyms: "screen, monitor, dim, screen saver"),
+            SettingsItem(tab: .keepAwake, title: String(localized: "Turn off the display now"), synonyms: "screen, monitor, dim, screen saver"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Buttons in Control Center and widgets"), synonyms: "widget, Control Center, Shortcuts, menu bar, button"),
+        ] + (KeepAwake.shared.hasLid ? [
+            SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
+        ] : []) + [
             SettingsItem(tab: .keyboard, title: String(localized: "Block Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .keyboard, title: String(localized: "Works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
