@@ -94,12 +94,17 @@ Su un MacBook puoi anche attivare **Funziona con il coperchio chiuso**. macOS no
 
 Keep Awake, la modalità schermo e quella a schermo chiuso si possono mettere su un pulsante nel Centro di Controllo, nella barra dei menu o in un widget sulla scrivania tramite l’app Comandi rapidi, con i link che copi da Impostazioni › Resta sveglio.
 
+## Velocità internet
+
+Mostra quanto è veloce la tua connessione adesso. Fai clic su **Misura velocità** in Impostazioni › Velocità internet, oppure su **Misura** nel menu dopo aver aggiunto la riga con il pulsante a matita. In circa mezzo minuto vedi download, upload, ping e reattività: quanto velocemente reagisce tutto mentre la rete è occupata. Sotto, in parole semplici, a cosa basta: film in 4K, videochiamate, giochi online e download pesanti. La misura usa networkQuality, incluso in macOS, e i server di Apple. L’ultimo risultato resta fino alla misura successiva, e un link per Comandi Rapidi la avvia dal Centro di Controllo.
+
 ## Impostazioni
 
 Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuovo pika-tools dal Finder, da Launchpad o da Spotlight. Finché la finestra è aperta, l’app compare nel Dock e in ⌘Tab.
 
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua, aggiornamenti e backup: esporta e importa le impostazioni come file, oppure sincronizzale con iCloud Drive.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
+- **Velocità internet**: misura la connessione e mostra a cosa basta.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).

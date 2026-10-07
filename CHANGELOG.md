@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [1.23.1] - Unreleased
 
+### Added
+- Speed Test shows how fast your internet is right now: download, upload, ping and responsiveness, and in plain words whether it’s enough for 4K movies, video calls, online games and big downloads. It has its own page in Settings, a row for the menu bar panel and a link for Shortcuts. The check runs on Apple’s servers, and the last result stays until the next one.
+
 ### Changed
 - Block Control shortcuts is now part of Game Mode: ⌃ works as a plain key only while you play, and as usual everywhere else. In a game, ⌃-click stays a click, and ⌃Space, ⌃ with arrows and other Mac shortcuts with ⌃ don’t fire. It’s on by default; if you had Block Control shortcuts on, it stays on.
 - Game Mode recognizes Minecraft. Add the Minecraft Launcher or CurseForge to your games, and Game Mode turns on while Minecraft itself is in front, not while you’re in the launcher.

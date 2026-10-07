@@ -94,12 +94,17 @@ MacBook’ta **Kapak kapalıyken çalış** seçeneğini de açabilirsiniz. macO
 
 Keep Awake, ekran ve kapak kapalı modları, Kestirmeler uygulamasıyla Denetim Merkezi’nde, menü çubuğunda ya da masaüstü widget’ında bir düğmeye konabilir; bağlantıları Ayarlar › Uyanık Tut bölümünden kopyalarsın.
 
+## Hız Testi
+
+İnternetinin şu anda ne kadar hızlı olduğunu gösterir. Ayarlar › Hız Testi’nde **Hızı Ölç**’e ya da satırı kalem düğmesiyle menüye eklediysen oradaki **Ölç**’e tıkla. Yaklaşık yarım dakikada indirme ve yükleme hızını, ping’i ve tepki hızını görürsün: bağlantı meşgulken her şeyin ne kadar çabuk tepki verdiği. Altında sade bir dille neye yettiği yazar: 4K filmler, görüntülü aramalar, çevrim içi oyunlar ve büyük indirmeler. Ölçüm, macOS’taki networkQuality aracını ve Apple sunucularını kullanır. Son sonuç bir sonraki ölçüme kadar kalır; Kestirmeler için bir bağlantı ölçümü Denetim Merkezi’nden başlatır.
+
 ## Ayarlar
 
 Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u Finder, Launchpad ya da Spotlight’tan yeniden başlatın. Pencere açıkken uygulama Dock’ta ve ⌘Tab’de görünür.
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
+- **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).

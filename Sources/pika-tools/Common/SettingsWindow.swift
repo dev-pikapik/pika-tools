@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, keyboard, mouse, windows, dock, finder, games, permissions, about
+    case general, keepAwake, speedTest, keyboard, mouse, windows, dock, finder, games, permissions, about
 
     var id: Self { self }
 
@@ -10,6 +10,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general: String(localized: "General")
         case .keepAwake: String(localized: "Keep Awake")
+        case .speedTest: String(localized: "Speed Test")
         case .keyboard: String(localized: "Keyboard")
         case .mouse: String(localized: "Mouse")
         case .windows: String(localized: "Windows")
@@ -25,6 +26,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         switch self {
         case .general: "gearshape.fill"
         case .keepAwake: "cup.and.saucer.fill"
+        case .speedTest: "speedometer"
         case .keyboard: "keyboard.fill"
         case .mouse: "computermouse.fill"
         case .windows: "macwindow.on.rectangle"
@@ -44,6 +46,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: .cyan
         case .games: .purple
         case .keepAwake: .orange
+        case .speedTest: .green
         }
     }
 
@@ -83,6 +86,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
         ] : []) + [
+            SettingsItem(tab: .speedTest, title: String(localized: "Check Speed"), synonyms: "internet, Wi-Fi, network, bandwidth, ping, Mbps, speedtest"),
+            SettingsItem(tab: .speedTest, title: String(localized: "What it’s good for"), synonyms: "4K, video, calls, games, downloads"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
@@ -238,7 +243,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder, .games]) }
+                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -317,6 +322,7 @@ private struct SettingsView: View {
         switch tab {
         case .general: GeneralSettings()
         case .keepAwake: KeepAwakeSettings()
+        case .speedTest: SpeedTestSettings()
         case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
         case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
         case .windows:
