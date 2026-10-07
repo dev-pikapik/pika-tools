@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.22.0] - Unreleased
+
+### Added
+- Home and End go to the start and end of a line while you type. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. Terminals, virtual machines and remote desktop apps keep the keys as they are, and you can add your own exceptions. Off by default, on the Keyboard page.
+- Delete removes files in Finder: ⌫ and ⌦ (fn ⌫ on a laptop) move the selected files to the Trash, like ⌘⌫. While you rename a file or search, the keys erase letters as usual. Off by default, on the Finder page.
+
+### Changed
+- Descriptions in the app and in the README now say what each tool does on its own, without comparing it to another system.
+
 ## [1.21.0] - Unreleased
 
 ### Added
