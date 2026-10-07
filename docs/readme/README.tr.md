@@ -54,6 +54,8 @@ pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklam
 
 Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için aynı ayarı piksele çevirin ve tık başına 1 ile 200 piksel arasında seçin, varsayılan 40. Kaydırıcı bunun ekran yüksekliğinin ne kadarı olduğunu da söyler.
 
+**Fare için ayrı kaydırma yönü.** macOS’te fare ve izleme dörtgeni için tek bir doğal kaydırma ayarı vardır. Bunu açın ve fare tekerinin nasıl kaydıracağını seçin: Windows’taki gibi **Klasik** ya da izleme dörtgenindeki gibi **Doğal**. İzleme dörtgeni Sistem Ayarları’ndaki yönü korur. Her Mac’inizde aynısını seçin; fareyi Evrensel Denetim ile başka bir Mac’e geçirdiğinizde bile her yerde aynı şekilde kaydırır. Yalnızca fareler için. Varsayılan olarak kapalıdır, açıldığında Klasik seçilidir.
+
 **Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Safari’de, Finder’da ve diğer Apple uygulamalarında, Firefox’ta, Opera’da ve ForkLift’te geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. JetBrains IDE’leri gibi diğer uygulamalar düğmeleri olduğu gibi alır ve kendi yöntemleriyle ele alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama Windows’taki gibi kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
@@ -67,6 +69,8 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 **Enter, Finder’da dosyaları açar.** Bir Finder penceresinde ya da masaüstünde dosyaları seçip Return veya Enter’a basın; dosyalar açılır, tıpkı Windows’taki gibi. F2 veya fn F2 seçili dosyanın adını değiştirir. Metin alanlarında, örneğin bir ad yazarken, tuşlar her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
 **⌘X, Finder’da dosyaları keser.** Dosyaları seçip ⌘X’e basın, hedef klasörü açıp ⌘V’ye basın; dosyalar kopyalanmak yerine oraya taşınır, tıpkı Windows’taki Kes ve Yapıştır gibi. ⌘C kesmeyi iptal eder. Varsayılan olarak kapalı.
+
+**Finder’da Küçük Kopya ve Dönüştürme.** Finder’da bir dosyaya sağ tıklayın. **Küçük Kopya Oluştur**, bir fotoğrafın, PDF’in veya videonun genellikle birkaç kat daha küçük bir sürümünü hemen yanına kaydeder. **Dönüştür**, dosyayı başka bir biçimde kaydeder: resmi JPEG, PNG, HEIC, TIFF veya PDF, videoyu MP4, MOV ya da yalnızca sesi, müziği M4A, WAV veya AIFF olarak. Orijinal olduğu gibi kalır ve hiçbir şey Mac’inizden çıkmaz. Varsayılan olarak kapalı.
 
 Her aracın menüde ve ayarlarda kendi anahtarı vardır. Normal Control+C’ye mi ihtiyacınız var? O aracı kapatın.
 
@@ -91,10 +95,10 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
 - **Klavye**: Control kestirmeleri, dil değiştirme, tuş tekrarı.
-- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, yan düğmeler.
+- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
-- **Finder**: yeni dosya, Return ile açma ve ⌘X ile kesme.
+- **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma ve ⌘X ile kesme.
 - **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 

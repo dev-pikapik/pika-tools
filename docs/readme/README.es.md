@@ -54,6 +54,8 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos, cambia este mismo ajuste a píxeles y elige de 1 a 200 píxeles por clic, 40 por omisión. El control también indica qué parte de la altura de la pantalla supone.
 
+**Dirección de desplazamiento propia para el ratón.** macOS tiene un solo interruptor de desplazamiento natural para el ratón y el trackpad a la vez. Actívalo y elige cómo se desplaza la rueda del ratón: **Clásica**, como en Windows, o **Natural**, como en un trackpad. El trackpad mantiene la dirección de Ajustes del Sistema. Elige lo mismo en cada uno de tus Mac y el ratón se desplazará igual en todos, incluso cuando lo pases a otro Mac con Control universal. Solo para ratones. Desactivado por omisión; al activarlo, Clásica.
+
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en Safari, el Finder y otras apps de Apple, en Firefox, Opera y ForkLift, igual que deslizar el dedo en el trackpad. Otras apps, como los IDE de JetBrains, reciben los botones tal cual y los gestionan a su manera. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra, como en Windows. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
@@ -67,6 +69,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 **Intro abre los archivos en el Finder.** Selecciona archivos en una ventana del Finder o en el escritorio y pulsa Retorno o Intro: se abren, como en Windows. F2 o fn F2 renombra el archivo seleccionado. En los campos de texto, por ejemplo mientras escribes un nombre, las teclas funcionan como siempre. Desactivado por omisión.
 
 **⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse, como Cortar y Pegar en Windows. ⌘C cancela el corte. Desactivado por omisión.
+
+**Copia más ligera y conversión en el Finder.** Haz clic derecho en un archivo en el Finder. **Crear copia más ligera** guarda al lado una versión más ligera de una foto, un PDF o un vídeo, a menudo varias veces más pequeña. **Convertir a** guarda el archivo en otro formato: una imagen como JPEG, PNG, HEIC, TIFF o PDF, un vídeo como MP4, MOV o solo su sonido, la música como M4A, WAV o AIFF. El original se queda tal cual y nada sale de tu Mac. Desactivado por omisión.
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
 
@@ -91,10 +95,10 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
 - **Teclado**: atajos con Control, cambio de idioma, repetición de teclas.
-- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, botones laterales.
+- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: ocultar con un clic en el Dock.
-- **Finder**: archivo nuevo, abrir con Intro y cortar con ⌘X.
+- **Finder**: archivo nuevo, copia más ligera y conversión, abrir con Intro y cortar con ⌘X.
 - **Permisos**: el estado de ambos permisos, y de iCloud Drive cuando la sincronización está activada, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 

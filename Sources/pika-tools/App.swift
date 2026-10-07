@@ -37,6 +37,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
               let url = URL(string: string)
         else { return }
         NewFile.handle(url)
+        Compress.handle(url)
         KeepAwake.shared.handle(url)
     }
 
@@ -59,6 +60,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         SettingsSync.shared.refresh()
         Updater.shared.start()
         StatusMenu.shared.start()
+        KeepAwake.shared.resume()
         KeepAwake.shared.restoreLidSleepIfNeeded()
 
         if !permissions.allGranted {
@@ -75,7 +77,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        KeepAwake.shared.set(.off)
+        KeepAwake.shared.handOff()
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
     }
 }

@@ -54,6 +54,8 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 Some apps and games count scrolling in exact pixels: for them, switch the same setting to pixels and pick from 1 to 200 pixels per click, 40 by default. The slider also says how much of the screen height that is.
 
+**Separate scroll direction for the mouse.** macOS has one natural scrolling switch for both the mouse and the trackpad. Turn this on and pick how the mouse wheel scrolls: **Classic**, like on Windows, or **Natural**, like on a trackpad. The trackpad keeps the direction set in System Settings. Pick the same on each of your Macs, and the mouse scrolls the same way on all of them, even when you move it to another Mac with Universal Control. Works for mice only. Off by default, Classic when you turn it on.
+
 **Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Safari, Finder and other Apple apps, Firefox, Opera and ForkLift, just like a swipe on the trackpad. Other apps, such as JetBrains IDEs, get the buttons as they are and handle them their own way. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
@@ -67,6 +69,8 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 **Enter opens files in Finder.** Select files in a Finder window or on the Desktop and press Return or Enter, and they open, like on Windows. F2 or fn F2 renames the selected file. In text fields, for example while you type a name, the keys work as usual. Off by default.
 
 **⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
+
+**Smaller Copy and Convert in Finder.** Right-click a file in Finder. **Make a Smaller Copy** saves a lighter version of a photo, PDF or video right next to it, often several times smaller. **Convert To** saves the file in another format: a picture as JPEG, PNG, HEIC, TIFF or PDF, a video as MP4, MOV or just its sound, music as M4A, WAV or AIFF. The original stays as it is, and nothing leaves your Mac. Off by default.
 
 Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
 
@@ -91,10 +95,10 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools ag
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keep Awake**: duration, display and lid options.
 - **Keyboard**: Ctrl shortcuts, language switch, key repeat.
-- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, side buttons.
+- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.
-- **Finder**: new file, Enter to open, ⌘X to cut.
+- **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut.
 - **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.
 

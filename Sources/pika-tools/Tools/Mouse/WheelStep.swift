@@ -16,14 +16,15 @@ struct WheelStep {
     let lines: Int
     var pixels = defaultPixels
 
+    static let axes: [(CGEventField, CGEventField, CGEventField)] = [
+        (.scrollWheelEventDeltaAxis1, .scrollWheelEventFixedPtDeltaAxis1, .scrollWheelEventPointDeltaAxis1),
+        (.scrollWheelEventDeltaAxis2, .scrollWheelEventFixedPtDeltaAxis2, .scrollWheelEventPointDeltaAxis2),
+    ]
+
     func rewrite(_ event: CGEvent) -> Bool {
         guard event.getIntegerValueField(.scrollWheelEventIsContinuous) == 0 else { return false }
-        let axes: [(CGEventField, CGEventField, CGEventField)] = [
-            (.scrollWheelEventDeltaAxis1, .scrollWheelEventFixedPtDeltaAxis1, .scrollWheelEventPointDeltaAxis1),
-            (.scrollWheelEventDeltaAxis2, .scrollWheelEventFixedPtDeltaAxis2, .scrollWheelEventPointDeltaAxis2),
-        ]
         var changed = false
-        for (delta, fixed, point) in axes {
+        for (delta, fixed, point) in Self.axes {
             let sign = sign(event.getIntegerValueField(delta), event.getDoubleValueField(fixed))
             guard sign != 0 else { continue }
             switch mode {
@@ -47,5 +48,28 @@ struct WheelStep {
 
     private func sign(_ delta: Int64, _ fixed: Double) -> Int64 {
         delta != 0 ? delta.signum() : (fixed > 0 ? 1 : fixed < 0 ? -1 : 0)
+    }
+}
+
+struct ScrollDirection {
+    var natural = false
+    var systemNatural = true
+
+    func flips(continuous: Int64, phase: Int64, momentum: Int64) -> Bool {
+        natural != systemNatural && continuous == 0 && phase == 0 && momentum == 0
+    }
+
+    func rewrite(_ event: CGEvent) {
+        guard flips(
+            continuous: event.getIntegerValueField(.scrollWheelEventIsContinuous),
+            phase: event.getIntegerValueField(.scrollWheelEventScrollPhase),
+            momentum: event.getIntegerValueField(.scrollWheelEventMomentumPhase)
+        ) else { return }
+        for (delta, fixed, point) in WheelStep.axes {
+            let values = (event.getIntegerValueField(delta), event.getDoubleValueField(fixed), event.getIntegerValueField(point))
+            event.setIntegerValueField(delta, value: -values.0)
+            event.setDoubleValueField(fixed, value: -values.1)
+            event.setIntegerValueField(point, value: -values.2)
+        }
     }
 }

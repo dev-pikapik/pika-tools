@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "command-keys,dock-hide,finder-cut,finder-open,key-repeat,new-file,quit-on-close,side-buttons,wheel-lines,window-zoom"
+    static let defaultHidden = "command-keys,compress,dock-hide,finder-cut,finder-open,key-repeat,new-file,quit-on-close,side-buttons,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -124,7 +124,7 @@ struct MenuView: View {
                     Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
                         .help("Customize…")
                     Spacer(minLength: 8)
-                    Button { NSApp.terminate(nil) } label: { Label("Quit", systemImage: "power") }
+                    Button { KeepAwake.shared.set(.off); NSApp.terminate(nil) } label: { Label("Quit", systemImage: "power") }
                         .keyboardShortcut("q")
                         .help("Quit")
                 }

@@ -66,7 +66,10 @@ import AppKit
     @objc private func openPermissions() { SettingsWindow.show(.permissions) }
     @objc private func openAbout() { SettingsWindow.show(.about) }
     @objc private func toggleLogin() { LoginItem.shared.set(!LoginItem.shared.isOn) }
-    @objc private func quit() { NSApp.terminate(nil) }
+    @objc private func quit() {
+        KeepAwake.shared.set(.off)
+        NSApp.terminate(nil)
+    }
 
     @objc private func checkUpdates() {
         SettingsWindow.show(.about)

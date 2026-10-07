@@ -11,7 +11,7 @@ final class WheelTool: Tool {
     private static let modeKey = "wheel-lines-mode"
     private static let pixelsKey = "wheel-lines-pixels"
 
-    private(set) var isActive = false
+    var isActive: Bool { isEnabled && ScrollTap.shared.isActive }
 
     var isEnabled: Bool {
         didSet {
@@ -41,10 +41,6 @@ final class WheelTool: Tool {
         }
     }
 
-    @ObservationIgnored fileprivate var step = WheelStep(lines: WheelStep.defaultLines)
-    @ObservationIgnored private var tap: CFMachPort?
-    @ObservationIgnored private var source: CFRunLoopSource?
-
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
         lines = Self.savedLines
@@ -54,7 +50,7 @@ final class WheelTool: Tool {
     }
 
     private func updateStep() {
-        step = WheelStep(mode: mode, lines: lines, pixels: pixels)
+        ScrollTap.shared.step = isEnabled ? WheelStep(mode: mode, lines: lines, pixels: pixels) : nil
     }
 
     private static var savedLines: Int {
@@ -97,8 +93,24 @@ final class WheelTool: Tool {
     }
 
     func refresh() {
+        updateStep()
+        ScrollTap.shared.refresh()
+    }
+}
+
+@Observable
+final class ScrollTap {
+    static let shared = ScrollTap()
+
+    private(set) var isActive = false
+    @ObservationIgnored var step: WheelStep?
+    @ObservationIgnored var direction: ScrollDirection?
+    @ObservationIgnored private var tap: CFMachPort?
+    @ObservationIgnored private var source: CFRunLoopSource?
+
+    func refresh() {
         stop()
-        if isEnabled { start() }
+        if step != nil || direction != nil { start() }
     }
 
     private func start() {
@@ -140,12 +152,13 @@ private func wheelCallback(
     refcon: UnsafeMutableRawPointer?
 ) -> Unmanaged<CGEvent>? {
     guard let refcon else { return Unmanaged.passUnretained(event) }
-    let tool = Unmanaged<WheelTool>.fromOpaque(refcon).takeUnretainedValue()
+    let scroll = Unmanaged<ScrollTap>.fromOpaque(refcon).takeUnretainedValue()
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
-        DispatchQueue.main.async { tool.refresh() }
+        DispatchQueue.main.async { scroll.refresh() }
     case .scrollWheel:
-        _ = tool.step.rewrite(event)
+        scroll.direction?.rewrite(event)
+        _ = scroll.step?.rewrite(event)
     default:
         break
     }
