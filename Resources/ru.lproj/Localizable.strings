@@ -142,7 +142,7 @@
 "Keep Awake will turn off, and the duration and options will go back to how they were." = "«Не засыпать» выключится, а длительность и параметры вернутся к исходным.";
 "pika-tools will check for updates automatically again." = "pika-tools снова будет сам проверять обновления.";
 "Scroll by lines" = "Прокрутка по строкам";
-"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Каждый щелчок колесика прокручивает на одно и то же расстояние, с любой скоростью. Только для мыши.";
+"Each wheel click scrolls the same distance, at any speed. Mouse only." = "Каждый щелчок колёсика прокручивает на одно и то же расстояние, с любой скоростью. Только для мыши.";
 "Same distance at any speed" = "Одно расстояние при любой скорости";
 "Scroll by" = "Прокручивать по";
 "Lines" = "Строкам";
@@ -150,13 +150,13 @@
 "wheel, Windows, scrolling speed, acceleration" = "колесико, Windows, скорость прокрутки, ускорение";
 "scrolling speed, wheel, notch" = "скорость прокрутки, колесико, щелчок";
 "Separate scroll direction for the mouse" = "Своё направление прокрутки для мыши";
-"The mouse wheel scrolls the way you choose, and the trackpad keeps the direction set in System Settings. Handy with Universal Control." = "Колесико мыши прокручивает так, как вы выберете, а трекпад — как задано в Системных настройках. Удобно с Универсальным управлением.";
+"The mouse wheel scrolls the way you choose, and the trackpad keeps the direction set in System Settings. Handy with Universal Control." = "Колёсико мыши прокручивает так, как вы выберете, а трекпад — как задано в Системных настройках. Удобно с Универсальным управлением.";
 "Trackpad stays as it is" = "Трекпад остаётся как есть";
-"Mouse wheel direction" = "Направление колесика";
+"Mouse wheel direction" = "Направление колёсика";
 "Natural" = "Естественное";
 "Classic" = "Классическое";
-"Roll the wheel toward you to go up the page, like on a trackpad" = "Колесико на себя — прокрутка вверх, как на трекпаде";
-"Roll the wheel toward you to go down the page, like on Windows" = "Колесико на себя — прокрутка вниз, как в Windows";
+"Roll the wheel toward you to go up the page, like on a trackpad" = "Колёсико на себя — прокрутка вверх, как на трекпаде";
+"Roll the wheel toward you to go down the page, like on Windows" = "Колёсико на себя — прокрутка вниз, как в Windows";
 "natural scrolling, reverse, invert, Universal Control, wheel, direction, trackpad" = "естественная прокрутка, обратная, инвертировать, Универсальное управление, колесико, направление, трекпад";
 "natural, classic, reverse, invert, wheel, up, down" = "естественное, классическое, обратное, инвертировать, колесико, вверх, вниз";
 "pixels, lines, wheel, games, scrolling mode, notch" = "пиксели, строки, колесико, игры, режим прокрутки, щелчок";

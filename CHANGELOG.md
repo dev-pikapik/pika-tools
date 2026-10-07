@@ -16,6 +16,9 @@ All notable changes to this project are documented here. The format is based on 
 - Keep Awake stays on through updates and restarts of pika-tools. A timer keeps counting from where it was, and with the lid closed you are not asked for the password again. Quitting pika-tools from its menu still turns Keep Awake off.
 - The settings window has a sidebar button at the top again, so a sidebar you dragged shut can be opened back.
 - Settings no longer spill over the window edge when the window is narrow and the sidebar is wide.
+- The Appearance choice on the General page no longer breaks its labels into single letters in a narrow window.
+- The Scroll by lines picture no longer covers the top of its little window.
+- Keep Awake no longer starts its timer over when settings sync through iCloud or are imported with the same duration.
 
 ## [1.18.2] - Unreleased
 

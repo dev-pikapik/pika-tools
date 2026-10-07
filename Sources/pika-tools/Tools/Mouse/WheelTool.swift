@@ -252,7 +252,7 @@ struct ScrollStepArt: View {
                         }
                     }
                     .modifier(Wrapped(offset: position))
-                    .frame(maxHeight: .infinity, alignment: .top)
+                    .frame(height: 94, alignment: .top)
                     .clipped()
                 }
                 .position(x: 212, y: 64)

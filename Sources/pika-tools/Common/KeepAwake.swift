@@ -51,7 +51,7 @@ final class KeepAwake {
     var duration: Int {
         didSet {
             UserDefaults.standard.set(duration, forKey: "keep-awake-duration")
-            if mode == .timed { set(.timed) }
+            if mode == .timed, duration != oldValue { set(.timed) }
         }
     }
 

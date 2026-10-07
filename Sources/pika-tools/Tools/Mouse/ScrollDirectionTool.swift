@@ -83,12 +83,15 @@ private struct ScrollDirectionSettings: View {
             isOn: $tool.isEnabled
         )
         if inSettings {
-            Picker(selection: $tool.natural) {
-                Text("Natural").tag(true)
-                Text("Classic").tag(false)
+            LabeledContent {
+                Picker("Mouse wheel direction", selection: $tool.natural) {
+                    Text("Natural").tag(true)
+                    Text("Classic").tag(false)
+                }
+                .labelsHidden()
+                .fixedSize()
             } label: {
-                Text("Mouse wheel direction")
-                Text(tool.natural ? "Roll the wheel toward you to go up the page, like on a trackpad" : "Roll the wheel toward you to go down the page, like on Windows")
+                RowLabel(Text("Mouse wheel direction"), Text(tool.natural ? "Roll the wheel toward you to go up the page, like on a trackpad" : "Roll the wheel toward you to go down the page, like on Windows"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Mouse wheel direction"))

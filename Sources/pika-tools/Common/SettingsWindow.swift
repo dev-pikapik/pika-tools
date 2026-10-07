@@ -509,6 +509,7 @@ private struct GeneralSettings: View {
                 .settingAnchor(String(localized: "Open at Login"))
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
+                        .fixedSize()
                 }
                 .settingAnchor(String(localized: "Appearance"))
                 Picker("Language", selection: $language.selected) {
