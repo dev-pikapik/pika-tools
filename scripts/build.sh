@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 APP="build/pika-tools.app"
-EXTENSIONS="NewFile Compress"
+EXTENSIONS="NewFile Compress Convert"
 MIN_OS="14.0"
 SIGN_IDENTITY="${SIGN_IDENTITY:--}"
 
@@ -60,12 +60,13 @@ for EXT in $EXTENSIONS; do
     for LPROJ in Resources/*.lproj; do
         OUT="$APPEX/Contents/Resources/$(basename "$LPROJ")"
         mkdir -p "$OUT"
-        if [ "$EXT" = NewFile ]; then
-            grep '^"New File" = ' "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
-        else
-            grep -E '^"(Make a Smaller Copy|Convert To|M4A \(Audio Only\))" = ' "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
-            grep '^"Smaller Copy and Convert in Finder" = ' "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"CFBundleDisplayName"/' > "$OUT/InfoPlist.strings"
-        fi
+        case $EXT in
+            NewFile) TEXTS='New File' NAME='New File in Finder' ;;
+            Compress) TEXTS='Make a Smaller Copy' NAME='Smaller Copy in Finder' ;;
+            Convert) TEXTS='Convert To|M4A \(Audio Only\)' NAME='Convert in Finder' ;;
+        esac
+        grep -E "^\"($TEXTS)\" = " "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
+        grep "^\"$NAME\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"CFBundleDisplayName"/' > "$OUT/InfoPlist.strings"
     done
 done
 

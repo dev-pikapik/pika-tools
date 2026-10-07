@@ -11,11 +11,16 @@ struct CompressorError: LocalizedError {
 
 enum Compressor {
     private static let videoTypes: [String: AVFileType] = ["mov": .mov, "mp4": .mp4, "m4v": .m4v]
-    private static let imageTypes: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "pdf"]
+    private static let imageTypes: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "pdf"]
+    private static let soundTypes: Set<String> = ["wav", "aiff", "aif", "caf"]
 
     static func canCompress(_ url: URL) -> Bool {
         let ext = url.pathExtension.lowercased()
-        return imageTypes.contains(ext) || videoTypes[ext] != nil
+        return imageTypes.contains(ext) || soundTypes.contains(ext) || videoTypes[ext] != nil
+    }
+
+    static func fileExtension(for url: URL) -> String {
+        soundTypes.contains(url.pathExtension.lowercased()) ? "m4a" : url.pathExtension
     }
 
     static func compress(_ source: URL, to output: URL, progress: @escaping @Sendable (Double) -> Void) async throws {
@@ -24,8 +29,9 @@ enum Compressor {
         case "png": try png(source, to: output)
         case "jpg", "jpeg": try reencode(source, to: output, quality: 0.8)
         case "heic", "heif": try reencode(source, to: output, quality: 0.7)
-        case "tif", "tiff": try reencode(source, to: output, quality: nil)
+        case "tif", "tiff", "gif": try reencode(source, to: output, quality: nil)
         case "pdf": try pdf(source, to: output)
+        case "wav", "aiff", "aif", "caf": try await Converter.convert(source, to: "m4a", output: output, progress: progress)
         default:
             guard let type = videoTypes[ext] else { throw CompressorError() }
             try await export(source, to: output, type: type, preset: AVAssetExportPresetHEVCHighestQuality, progress: progress)
@@ -40,6 +46,9 @@ enum Compressor {
               case let count = type == sourceType || target == .tiff ? total : 1,
               let destination = CGImageDestinationCreateWithURL(output as CFURL, type, count, nil)
         else { throw CompressorError() }
+        if type == sourceType, let gif = (CGImageSourceCopyProperties(image, nil) as? [CFString: Any])?[kCGImagePropertyGIFDictionary] {
+            CGImageDestinationSetProperties(destination, [kCGImagePropertyGIFDictionary: gif] as CFDictionary)
+        }
         let options: [CFString: Any] = quality.map { [kCGImageDestinationLossyCompressionQuality: $0] } ?? [:]
         let tiff = type == UTType.tiff.identifier as CFString
         let jpeg = type == UTType.jpeg.identifier as CFString

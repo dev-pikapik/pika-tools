@@ -70,7 +70,9 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **⌘X knipt bestanden in de Finder.** Selecteer bestanden en druk op ⌘X, open de map waar je ze wilt hebben en druk op ⌘V: de bestanden worden daarheen verplaatst in plaats van gekopieerd, zoals Knippen en Plakken in Windows. ⌘C annuleert het knippen. Standaard uit.
 
-**Kleinere kopie en omzetten in de Finder.** Klik met rechts op een bestand in de Finder. **Maak kleinere kopie** zet er een lichtere versie van een foto, pdf of video naast, vaak vele malen kleiner. **Zet om naar** bewaart het bestand in een ander formaat: een afbeelding als JPEG, PNG, HEIC, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
+**Kleinere kopie in de Finder.** Klik met rechts op een bestand in de Finder en kies **Maak kleinere kopie**. Ernaast verschijnt een lichtere versie van een foto, GIF, pdf of video, vaak vele malen kleiner. Ongecomprimeerd geluid zoals WAV of AIFF wordt een compacte M4A. Kan een bestand niet kleiner, dan komt er geen kopie en laat pika-tools dat weten. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
+
+**Omzetten in de Finder.** Klik met rechts op een bestand in de Finder en kies **Zet om naar** om het in een ander formaat te bewaren: een afbeelding als JPEG, PNG, HEIC, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Los van de kleinere kopie aan te zetten. Standaard uit.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je de gewone Control+C terug? Zet die tool uit.
 

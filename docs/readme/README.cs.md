@@ -70,7 +70,9 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **⌘X vyjímá soubory ve Finderu.** Vyberte soubory a stiskněte ⌘X, otevřete cílovou složku a stiskněte ⌘V: soubory se tam přesunou místo zkopírování, jako Vyjmout a Vložit ve Windows. ⌘C vyjmutí zruší. Ve výchozím stavu vypnuto.
 
-**Menší kopie a převod ve Finderu.** Klikněte pravým na soubor ve Finderu. **Vytvořit menší kopii** uloží vedle lehčí verzi fotky, PDF nebo videa, často několikrát menší. **Převést na** uloží soubor v jiném formátu: obrázek jako JPEG, PNG, HEIC, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudbu jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
+**Menší kopie ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Vytvořit menší kopii**. Vedle se objeví lehčí verze fotky, GIFu, PDF nebo videa, často několikrát menší. Nekomprimovaný zvuk jako WAV nebo AIFF se změní na úsporné M4A. Pokud soubor už menší být nemůže, kopie se nevytvoří a pika-tools vám to řekne. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
+
+**Převod ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Převést na** a soubor se uloží v jiném formátu: obrázek jako JPEG, PNG, HEIC, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudba jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Zapíná se zvlášť od menší kopie. Ve výchozím stavu vypnuto.
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
 

@@ -72,6 +72,7 @@ final class ToolRegistry {
         DockHideTool(),
         NewFileTool(),
         CompressTool(),
+        ConvertTool(),
         FinderOpenTool(),
         FinderCutTool(),
     ] + privateTools

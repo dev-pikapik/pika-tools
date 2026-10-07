@@ -70,7 +70,9 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **⌘X taglia i file nel Finder.** Seleziona dei file e premi ⌘X, apri la cartella di destinazione e premi ⌘V: i file vengono spostati lì invece di essere copiati, come Taglia e Incolla in Windows. ⌘C annulla il taglio. Disattivato di default.
 
-**Copia più leggera e conversione nel Finder.** Clic destro su un file nel Finder. **Crea copia più leggera** salva accanto una versione più leggera di una foto, un PDF o un video, spesso molte volte più piccola. **Converti in** salva il file in un altro formato: un’immagine come JPEG, PNG, HEIC, TIFF o PDF, un video come MP4, MOV o solo l’audio, la musica come M4A, WAV o AIFF. L’originale resta com’è e niente lascia il tuo Mac. Disattivato di default.
+**Copia più leggera nel Finder.** Clic destro su un file nel Finder e scegli **Crea copia più leggera**. Accanto compare una versione più leggera di una foto, una GIF, un PDF o un video, spesso molte volte più piccola. L’audio non compresso, come WAV o AIFF, diventa un M4A compatto. Se il file non può diventare più leggero, la copia non viene creata e pika-tools te lo dice. L’originale resta com’è e niente lascia il tuo Mac. Disattivato di default.
+
+**Conversione nel Finder.** Clic destro su un file nel Finder e scegli **Converti in** per salvarlo in un altro formato: un’immagine come JPEG, PNG, HEIC, TIFF o PDF, un video come MP4, MOV o solo l’audio, la musica come M4A, WAV o AIFF. L’originale resta com’è e niente lascia il tuo Mac. Si attiva separatamente dalla copia più leggera. Disattivato di default.
 
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di nuovo il normale Control+C? Disattiva quello strumento.
 

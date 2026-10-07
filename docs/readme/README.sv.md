@@ -70,7 +70,9 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **⌘X klipper ut filer i Finder.** Markera filer och tryck på ⌘X, öppna mappen du vill ha dem i och tryck på ⌘V, så flyttas filerna dit i stället för att kopieras, som Klipp ut och Klistra in i Windows. ⌘C avbryter utklippningen. Av som standard.
 
-**Mindre kopia och konvertering i Finder.** Högerklicka på en fil i Finder. **Skapa mindre kopia** sparar en lättare version av ett foto, en PDF eller en video bredvid, ofta flera gånger mindre. **Konvertera till** sparar filen i ett annat format: en bild som JPEG, PNG, HEIC, TIFF eller PDF, en video som MP4, MOV eller bara ljudet, musik som M4A, WAV eller AIFF. Originalet förblir som det är och inget lämnar din Mac. Av som standard.
+**Mindre kopia i Finder.** Högerklicka på en fil i Finder och välj **Skapa mindre kopia**. Bredvid hamnar en lättare version av ett foto, en GIF, en PDF eller en video, ofta flera gånger mindre. Okomprimerat ljud som WAV eller AIFF blir en kompakt M4A. Om filen inte kan bli mindre skapas ingen kopia, och pika-tools säger till. Originalet förblir som det är och inget lämnar din Mac. Av som standard.
+
+**Konvertering i Finder.** Högerklicka på en fil i Finder och välj **Konvertera till** för att spara den i ett annat format: en bild som JPEG, PNG, HEIC, TIFF eller PDF, en video som MP4, MOV eller bara ljudet, musik som M4A, WAV eller AIFF. Originalet förblir som det är och inget lämnar din Mac. Slås på separat från mindre kopia. Av som standard.
 
 Varje verktyg har ett eget reglage i menyn och i inställningarna. Behöver du ett vanligt kontroll+C igen? Stäng av det verktyget.
 

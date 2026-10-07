@@ -70,7 +70,9 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse, como Cortar y Pegar en Windows. ⌘C cancela el corte. Desactivado por omisión.
 
-**Copia más ligera y conversión en el Finder.** Haz clic derecho en un archivo en el Finder. **Crear copia más ligera** guarda al lado una versión más ligera de una foto, un PDF o un vídeo, a menudo varias veces más pequeña. **Convertir a** guarda el archivo en otro formato: una imagen como JPEG, PNG, HEIC, TIFF o PDF, un vídeo como MP4, MOV o solo su sonido, la música como M4A, WAV o AIFF. El original se queda tal cual y nada sale de tu Mac. Desactivado por omisión.
+**Copia más ligera en el Finder.** Haz clic derecho en un archivo en el Finder y elige **Crear copia más ligera**. Al lado aparece una versión más ligera de una foto, un GIF, un PDF o un vídeo, a menudo varias veces más pequeña. El sonido sin comprimir, como WAV o AIFF, pasa a un M4A compacto. Si el archivo no puede ser más ligero, no se crea ninguna copia y pika-tools te lo dice. El original se queda tal cual y nada sale de tu Mac. Desactivado por omisión.
+
+**Conversión en el Finder.** Haz clic derecho en un archivo en el Finder y elige **Convertir a** para guardarlo en otro formato: una imagen como JPEG, PNG, HEIC, TIFF o PDF, un vídeo como MP4, MOV o solo su sonido, la música como M4A, WAV o AIFF. El original se queda tal cual y nada sale de tu Mac. Se activa por separado de la copia más ligera. Desactivado por omisión.
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
 

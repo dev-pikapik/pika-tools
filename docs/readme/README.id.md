@@ -70,7 +70,9 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **⌘X Memotong File di Finder.** Pilih file lalu tekan ⌘X, buka folder tujuan dan tekan ⌘V, dan file dipindahkan ke sana, bukan disalin, seperti Potong dan Tempel di Windows. ⌘C membatalkan pemotongan. Mati secara bawaan.
 
-**Salinan Lebih Kecil dan Konversi di Finder.** Klik kanan file di Finder. **Buat Salinan Lebih Kecil** menyimpan versi foto, PDF, atau video yang lebih ringan tepat di sebelahnya, sering kali beberapa kali lebih kecil. **Konversi ke** menyimpan file dalam format lain: gambar sebagai JPEG, PNG, HEIC, TIFF, atau PDF, video sebagai MP4, MOV, atau suaranya saja, musik sebagai M4A, WAV, atau AIFF. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Mati secara bawaan.
+**Salinan Lebih Kecil di Finder.** Klik kanan file di Finder dan pilih **Buat Salinan Lebih Kecil**. Versi foto, GIF, PDF, atau video yang lebih ringan disimpan tepat di sebelahnya, sering kali beberapa kali lebih kecil. Suara tanpa kompresi seperti WAV atau AIFF menjadi M4A yang ringkas. Jika file tidak bisa lebih kecil lagi, salinan tidak dibuat dan pika-tools memberi tahu Anda. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Mati secara bawaan.
+
+**Konversi di Finder.** Klik kanan file di Finder dan pilih **Konversi ke** untuk menyimpannya dalam format lain: gambar sebagai JPEG, PNG, HEIC, TIFF, atau PDF, video sebagai MP4, MOV, atau suaranya saja, musik sebagai M4A, WAV, atau AIFF. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Dinyalakan terpisah dari Salinan Lebih Kecil. Mati secara bawaan.
 
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
 

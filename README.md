@@ -70,7 +70,9 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
 
-**Smaller Copy and Convert in Finder.** Right-click a file in Finder. **Make a Smaller Copy** saves a lighter version of a photo, PDF or video right next to it, often several times smaller. **Convert To** saves the file in another format: a picture as JPEG, PNG, HEIC, TIFF or PDF, a video as MP4, MOV or just its sound, music as M4A, WAV or AIFF. The original stays as it is, and nothing leaves your Mac. Off by default.
+**Smaller Copy in Finder.** Right-click a file in Finder and choose **Make a Smaller Copy**. A lighter version of a photo, GIF, PDF or video appears right next to it, often several times smaller. Uncompressed sound like WAV or AIFF becomes a compact M4A. If a file can’t get any smaller, no copy is made and pika-tools tells you so. The original stays as it is, and nothing leaves your Mac. Off by default.
+
+**Convert in Finder.** Right-click a file in Finder and choose **Convert To** to save it in another format: a picture as JPEG, PNG, HEIC, TIFF or PDF, a video as MP4, MOV or just its sound, music as M4A, WAV or AIFF. The original stays as it is, and nothing leaves your Mac. Turns on separately from Smaller Copy. Off by default.
 
 Each tool has its own switch in the menu and in Settings. Need a normal Ctrl+C back? Turn that tool off.
 

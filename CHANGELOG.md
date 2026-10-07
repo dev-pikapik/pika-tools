@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format is based on 
 
 ### Added
 - Scroll direction for trackpad and mouse: pick Natural or Classic for the trackpad and for the mouse wheel separately. The trackpad choice also covers sideways scrolling, the glide after you lift your fingers and the Magic Mouse. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
+- Smaller Copy also shrinks GIFs and turns uncompressed sound (WAV, AIFF, CAF) into a much lighter M4A.
+
+### Changed
+- Convert To is now its own tool with its own switch, so you can keep only the menu item you need. If Smaller Copy was on, Convert To stays on too.
 
 ## [1.19.0] - Unreleased
 
