@@ -23,13 +23,14 @@ extension Tool {
 }
 
 enum ToolStatus {
-    case active, off, needsAccess
+    case active, off, needsAccess, playing
 
     var title: String {
         switch self {
         case .active: String(localized: "Active")
         case .off: String(localized: "Off")
         case .needsAccess: String(localized: "Needs Access")
+        case .playing: String(localized: "Game Mode")
         }
     }
 
@@ -38,6 +39,7 @@ enum ToolStatus {
         case .active: "cursorarrow.click.2"
         case .off: "cursorarrow.slash"
         case .needsAccess: "exclamationmark.triangle"
+        case .playing: "gamecontroller"
         }
     }
 
@@ -46,6 +48,7 @@ enum ToolStatus {
         case .active: .green
         case .off: .secondary
         case .needsAccess: .orange
+        case .playing: .green
         }
     }
 }
@@ -77,9 +80,11 @@ final class ToolRegistry {
         FinderOpenTool(),
         FinderCutTool(),
         FinderDeleteTool(),
+        GameModeTool.shared,
     ] + privateTools
 
     var status: ToolStatus {
+        if GameModeTool.shared.isPlaying { return .playing }
         guard tools.contains(where: \.isEnabled) else { return .off }
         return tools.contains(where: \.isActive) ? .active : .needsAccess
     }

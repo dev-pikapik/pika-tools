@@ -171,6 +171,7 @@ final class QuitOnCloseTool: Tool {
               app.activationPolicy == .regular,
               !Self.alwaysExcluded.contains(app.bundleIdentifier ?? ""),
               !excluded.contains(app.bundleIdentifier ?? ""),
+              !GameModeTool.shared.keepsOpen(app),
               !Self.hasWindows(pid)
         else { return nil }
         return app
