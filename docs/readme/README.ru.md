@@ -156,6 +156,14 @@ Homebrew и скрипт сами кладут приложение в `/Applica
 <br>Переход в начало или конец строки, пока вы печатаете.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Анимации</b>
+<br>Dock, окна и Быстрый просмотр станут быстрее — вплоть до мгновенных.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Подробности

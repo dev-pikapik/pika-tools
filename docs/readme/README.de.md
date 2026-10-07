@@ -156,6 +156,14 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <br>Beim Tippen an den Anfang oder das Ende der Zeile springen.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animationen</b>
+<br>Dock, Fenster und Übersicht werden schneller, auf Wunsch sofort.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren

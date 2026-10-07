@@ -19,15 +19,16 @@ enum Art {
 }
 
 struct IllustrationRow<Content: View>: View {
+    var size: CGSize?
     @ViewBuilder var content: Content
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: Art.radius, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: size == nil ? Art.radius : 8, style: .continuous)
         let dark = scheme == .dark
         content
-            .frame(maxWidth: .infinity)
-            .frame(height: Art.height)
+            .frame(maxWidth: size?.width ?? .infinity)
+            .frame(width: size?.width, height: size?.height ?? Art.height)
             .background(
                 LinearGradient(
                     colors: [Color.accentColor.opacity(dark ? 0.26 : 0.15), Color.accentColor.opacity(dark ? 0.09 : 0.05)],
@@ -54,8 +55,16 @@ struct Stage<Content: View>: View {
 private struct Loop: ViewModifier {
     @Binding var tick: Int
     let durations: [Double]
+    let replay: Int
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var visible = true
+    @State private var played = 0
+
+    private struct Run: Equatable {
+        let visible: Bool
+        let reduceMotion: Bool
+        let replay: Int
+    }
 
     func body(content: Content) -> some View {
         content
@@ -63,20 +72,25 @@ private struct Loop: ViewModifier {
                 guard let window = note.object as? NSWindow, window === SettingsWindow.window else { return }
                 visible = window.occlusionState.contains(.visible)
             }
-            .task(id: visible && !reduceMotion) {
-                guard visible, !reduceMotion else { return }
-                while !Task.isCancelled {
+            .task(id: Run(visible: visible, reduceMotion: reduceMotion, replay: replay)) {
+                let replaying = replay != played
+                played = replay
+                guard visible, !reduceMotion || replaying else { return }
+                if replaying { tick = 0 }
+                var steps = reduceMotion ? durations.count - 1 : Int.max
+                while steps > 0, !Task.isCancelled {
                     try? await Task.sleep(for: .seconds(durations[tick % durations.count]))
                     guard !Task.isCancelled else { return }
                     tick += 1
+                    steps -= 1
                 }
             }
     }
 }
 
 extension View {
-    func loop(_ tick: Binding<Int>, _ durations: [Double]) -> some View {
-        modifier(Loop(tick: tick, durations: durations))
+    func loop(_ tick: Binding<Int>, _ durations: [Double], replay: Int = 0) -> some View {
+        modifier(Loop(tick: tick, durations: durations, replay: replay))
     }
 
     func spring(_ value: some Equatable, reduceMotion: Bool) -> some View {
@@ -242,8 +256,72 @@ struct ArtWindow<Content: View>: View {
     }
 }
 
+struct ArtSheet: View {
+    var size = CGSize(width: 78, height: 40)
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
+        VStack(alignment: .leading, spacing: 4) {
+            Capsule().fill(Color.primary.opacity(0.14)).frame(width: size.width * 0.45, height: 3.5)
+            RoundedRectangle(cornerRadius: 2, style: .continuous)
+                .fill(Color(nsColor: .textBackgroundColor))
+                .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+                .frame(height: 7)
+            Spacer(minLength: 0)
+            HStack(spacing: 4) {
+                Spacer(minLength: 0)
+                Capsule().fill(Color.primary.opacity(0.12)).frame(width: 17, height: 7)
+                Capsule().fill(Color.accentColor).frame(width: 17, height: 7)
+            }
+        }
+        .padding(6)
+        .frame(width: size.width, height: size.height)
+        .background(Color(nsColor: .windowBackgroundColor))
+        .clipShape(shape)
+        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .shadow(color: .black.opacity(0.2), radius: 5, y: 3)
+    }
+}
+
+struct ArtQuickLook: View {
+    var size = CGSize(width: 96, height: 72)
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        VStack(spacing: 0) {
+            HStack(spacing: 4) {
+                Image(systemName: "xmark").font(.system(size: 5, weight: .bold)).foregroundStyle(.secondary)
+                Spacer(minLength: 0)
+                Capsule().fill(Color.primary.opacity(0.14)).frame(width: size.width * 0.3, height: 3)
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 7)
+            .frame(height: 12)
+            ZStack(alignment: .bottom) {
+                LinearGradient(colors: [.cyan.opacity(0.75), .blue.opacity(0.55)], startPoint: .top, endPoint: .bottom)
+                Circle().fill(.yellow.opacity(0.9)).frame(width: 9, height: 9)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding(6)
+                Image(systemName: "mountain.2.fill")
+                    .font(.system(size: size.height * 0.42))
+                    .foregroundStyle(.white.opacity(0.85))
+                    .offset(y: size.height * 0.06)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .padding([.horizontal, .bottom], 5)
+        }
+        .frame(width: size.width, height: size.height)
+        .background(Color(nsColor: .windowBackgroundColor))
+        .clipShape(shape)
+        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .shadow(color: .black.opacity(0.22), radius: 7, y: 4)
+    }
+}
+
 struct ArtDock: View {
     var appDot = true
+    var jump: CGFloat = 0
+    var badge = false
 
     private static let colors: [Color] = [.teal, .orange, .accentColor, .pink, .green]
 
@@ -259,6 +337,12 @@ struct ArtDock: View {
                                 Image(systemName: "macwindow").font(.system(size: 11, weight: .semibold)).foregroundStyle(.white)
                             }
                         }
+                        .overlay(alignment: .topTrailing) {
+                            if index == 2 && badge {
+                                Circle().fill(Art.red).frame(width: 8, height: 8).offset(x: 3, y: -3)
+                            }
+                        }
+                        .offset(y: index == 2 ? -jump : 0)
                     Circle()
                         .fill(Color.primary.opacity(0.55))
                         .frame(width: 3, height: 3)

@@ -156,6 +156,14 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br>Hoppa till början eller slutet av raden medan du skriver.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animationer</b>
+<br>Snabba upp Dock, fönster och Snabbtitt, ända till direkt.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mer information

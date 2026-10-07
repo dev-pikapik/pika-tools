@@ -156,6 +156,14 @@ Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 
 <br>입력하는 중에 줄의 처음이나 끝으로 이동합니다.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>애니메이션</b>
+<br>Dock, 윈도우, 훑어보기를 더 빠르게, 원하면 즉시 움직이게 합니다.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## 자세히

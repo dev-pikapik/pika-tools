@@ -156,6 +156,14 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <br>Jump to the start or end of a line while you type.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/animations-dark.png"><img src="docs/media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animations</b>
+<br>Speed up the Dock, windows and Quick Look, all the way to instant.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Details

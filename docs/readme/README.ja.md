@@ -156,6 +156,14 @@ Homebrew でもスクリプトでも、アプリは `/Applications` に入り、
 <br>入力中に行頭や行末へジャンプします。
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>アニメーション</b>
+<br>Dock、ウインドウ、クイックルックを速く。瞬時にもできます。
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## 詳しく

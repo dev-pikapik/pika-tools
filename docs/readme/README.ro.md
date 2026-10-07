@@ -156,6 +156,14 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br>Sari la începutul sau la sfârșitul rândului în timp ce scrii.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animații</b>
+<br>Grăbește Dock-ul, ferestrele și Privirea rapidă, până la instantaneu.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii

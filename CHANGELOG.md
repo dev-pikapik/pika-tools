@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.24.0] - Unreleased
+
+### Added
+- Animations: a new page in Settings for how fast things move on your Mac. One slider speeds up the hidden Dock, new windows, Save dialogs, Quick Look and columns in Finder at once, from as in macOS to instant. Each effect can also be tuned on its own, along with the minimize effect, bouncing icons in the Dock and Finder animations. Every setting has a small live picture that moves at exactly the chosen speed. Restore Defaults and uninstalling pika-tools remove only what pika-tools changed, and values you set yourself in Terminal are shown as they are.
+
 ## [1.23.2] - Unreleased
 
 ### Changed

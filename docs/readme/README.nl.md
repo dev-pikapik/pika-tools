@@ -156,6 +156,14 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br>Spring tijdens het typen naar het begin of einde van de regel.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+<br><b>Animaties</b>
+<br>Maak het Dock, vensters en Snel bekijken sneller, tot direct aan toe.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Meer weten

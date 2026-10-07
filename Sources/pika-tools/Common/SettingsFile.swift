@@ -18,6 +18,8 @@ struct SettingsFile {
         "game-mode", "game-mode-games", "game-mode-not-games",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
+        "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",
+        "animations-window-open", "animations-resize", "animations-quick-look", "animations-finder-columns", "animations-finder",
     ] + GameRule.allCases.map(\.key))
 
     var settings: [String: Any]
