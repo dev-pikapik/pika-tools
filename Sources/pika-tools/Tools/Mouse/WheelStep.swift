@@ -1,4 +1,4 @@
-import CoreGraphics
+import AppKit
 
 struct WheelStep {
     enum Mode: String {
@@ -52,24 +52,43 @@ struct WheelStep {
 }
 
 struct ScrollDirection {
-    var natural = false
+    static let invertedField: CGEventField? = {
+        guard let field = CGEventField(rawValue: 137),
+              let event = CGEvent(scrollWheelEvent2Source: nil, units: .pixel, wheelCount: 1, wheel1: 1, wheel2: 0, wheel3: 0)
+        else { return nil }
+        event.setIntegerValueField(field, value: 1)
+        guard NSEvent(cgEvent: event)?.isDirectionInvertedFromDevice == true else { return nil }
+        event.setIntegerValueField(field, value: 0)
+        return NSEvent(cgEvent: event)?.isDirectionInvertedFromDevice == false ? field : nil
+    }()
+
+    var trackpadNatural = true
+    var mouseNatural = true
     var systemNatural = true
 
-    func flips(continuous: Int64, phase: Int64, momentum: Int64) -> Bool {
-        natural != systemNatural && continuous == 0 && phase == 0 && momentum == 0
+    static func isTrackpad(continuous: Int64, phase: Int64, momentum: Int64) -> Bool {
+        continuous != 0 && (phase != 0 || momentum != 0)
+    }
+
+    func natural(continuous: Int64, phase: Int64, momentum: Int64) -> Bool {
+        Self.isTrackpad(continuous: continuous, phase: phase, momentum: momentum) ? trackpadNatural : mouseNatural
     }
 
     func rewrite(_ event: CGEvent) {
-        guard flips(
+        let natural = natural(
             continuous: event.getIntegerValueField(.scrollWheelEventIsContinuous),
             phase: event.getIntegerValueField(.scrollWheelEventScrollPhase),
             momentum: event.getIntegerValueField(.scrollWheelEventMomentumPhase)
-        ) else { return }
+        )
+        guard natural != systemNatural else { return }
         for (delta, fixed, point) in WheelStep.axes {
             let values = (event.getIntegerValueField(delta), event.getDoubleValueField(fixed), event.getIntegerValueField(point))
             event.setIntegerValueField(delta, value: -values.0)
             event.setDoubleValueField(fixed, value: -values.1)
             event.setIntegerValueField(point, value: -values.2)
+        }
+        if let field = Self.invertedField {
+            event.setIntegerValueField(field, value: natural ? 1 : 0)
         }
     }
 }

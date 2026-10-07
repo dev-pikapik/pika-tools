@@ -416,6 +416,30 @@ struct ArtMouse: View {
     }
 }
 
+struct ArtTrackpad: View {
+    var touch = false
+    var slide: CGFloat = 0
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
+        shape
+            .fill(Art.metal(scheme))
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay {
+                HStack(spacing: 8) {
+                    Circle().frame(width: 10, height: 10)
+                    Circle().frame(width: 10, height: 10)
+                }
+                .foregroundStyle(Color.accentColor)
+                .opacity(touch ? 0.9 : 0)
+                .offset(y: slide)
+            }
+            .frame(width: 60, height: 42)
+            .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)
+    }
+}
+
 struct ArtMenu<Content: View>: View {
     var width: CGFloat = 100
     @ViewBuilder var content: Content

@@ -11,7 +11,7 @@ struct SettingsFile {
         "appearance", "AppleLanguages", "open-at-login", "check-updates",
         "ctrl-keys", "ctrl-keys-excluded", "command-keys-quit", "command-keys-close", "input-switch", "key-repeat",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
-        "wheel-direction", "wheel-direction-natural",
+        "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress",
         "finder-open", "finder-cut",
