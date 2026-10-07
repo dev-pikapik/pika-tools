@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.21.0] - Unreleased
+
+### Added
+- Convert To works both ways between pictures: any picture your Mac can open, JPEG included, can become JPEG, PNG, HEIC, GIF, TIFF or PDF. The format the file already has is left out of the list.
+- Smaller Copy also shrinks BMP pictures and turns FLAC and AIFC sound into M4A.
+
+### Fixed
+- Smaller Copy, Convert To and New File now show up on external drives and memory cards too, including ones you plug in later.
+- Switching the keyboard language works while the New File name box or the Smaller Copy message is open.
+- No more square corners around the list in the menu bar panel in the light theme.
+
 ## [1.20.0] - Unreleased
 
 ### Added
