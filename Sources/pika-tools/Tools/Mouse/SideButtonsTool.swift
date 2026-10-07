@@ -92,7 +92,7 @@ final class SideButtonsTool: Tool {
         let app = pid > 0 ? NSRunningApplication(processIdentifier: pid) : NSWorkspace.shared.frontmostApplication
         let id = app?.bundleIdentifier ?? ""
         let swaps = swapsButtons
-        guard Self.swipeApps.contains(where: id.hasPrefix) else {
+        guard !GameModeTool.shared.isPlaying, Self.swipeApps.contains(where: id.hasPrefix) else {
             if swaps { event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3) }
             return false
         }

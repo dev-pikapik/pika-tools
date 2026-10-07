@@ -119,7 +119,7 @@ final class HomeEndTool: Tool {
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
 
-        guard let app = NSWorkspace.shared.frontmostApplication,
+        guard !GameModeTool.shared.isPlaying, let app = NSWorkspace.shared.frontmostApplication,
               let target = Self.target(key, event.flags, app: app.bundleIdentifier, excluded: excluded),
               case .typing = TextFocus(app.processIdentifier)
         else { return false }

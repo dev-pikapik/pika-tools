@@ -52,8 +52,9 @@ final class CommandKeysTool: Tool {
 
     func refresh() {
         stop()
-        keys = Set((protectsQuit ? [Int64(kVK_ANSI_Q)] : []) + (protectsClose ? [Int64(kVK_ANSI_W)] : []))
-        if isEnabled { start() }
+        let game = GameModeTool.shared.isPlaying && GameModeTool.shared.blocksQuit
+        keys = Set((protectsQuit || game ? [Int64(kVK_ANSI_Q)] : []) + (protectsClose || game ? [Int64(kVK_ANSI_W)] : []))
+        if !keys.isEmpty { start() }
     }
 
     private func start() {

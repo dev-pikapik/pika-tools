@@ -15,6 +15,8 @@ struct SettingsFile {
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
         "finder-open", "finder-cut", "finder-delete",
+        "game-mode", "game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-cursor", "game-mode-layout", "game-mode-display",
+        "game-mode-games", "game-mode-not-games",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
     ]

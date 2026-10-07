@@ -93,7 +93,7 @@ final class InputSwitchTool: Tool {
         TISSelectInputSource(sources[target])
     }
 
-    private static func string(_ source: TISInputSource, _ key: CFString) -> String? {
+    static func string(_ source: TISInputSource, _ key: CFString) -> String? {
         guard let value = TISGetInputSourceProperty(source, key) else { return nil }
         return Unmanaged<CFString>.fromOpaque(value).takeUnretainedValue() as String
     }
@@ -111,7 +111,7 @@ private func inputSwitchCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .flagsChanged:
-        if let direction = tool.gesture.flagsChanged(event.flags) {
+        if let direction = tool.gesture.flagsChanged(event.flags), !GameModeTool.shared.isPlaying {
             DispatchQueue.main.async { InputSwitchTool.select(direction) }
         }
     default:

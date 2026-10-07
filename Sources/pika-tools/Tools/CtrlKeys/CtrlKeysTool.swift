@@ -116,7 +116,7 @@ private func ctrlKeysCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp, .leftMouseDown, .leftMouseUp, .leftMouseDragged:
-        if !tool.frontmostIsExcluded, event.flags.contains(.maskControl) {
+        if !tool.frontmostIsExcluded, !GameModeTool.shared.isPlaying, event.flags.contains(.maskControl) {
             event.flags.remove(.maskControl)
             if event.flags.contains(.maskCommand) {
                 event.flags.remove(.maskCommand)

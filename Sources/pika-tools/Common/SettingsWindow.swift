@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, keyboard, mouse, windows, dock, finder, permissions, about
+    case general, keepAwake, keyboard, mouse, windows, dock, finder, games, permissions, about
 
     var id: Self { self }
 
@@ -15,6 +15,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: String(localized: "Windows")
         case .dock: String(localized: "Dock")
         case .finder: String(localized: "Finder")
+        case .games: String(localized: "Games")
         case .permissions: String(localized: "Permissions")
         case .about: String(localized: "About")
         }
@@ -29,6 +30,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: "macwindow.on.rectangle"
         case .dock: "dock.rectangle"
         case .finder: "folder.fill"
+        case .games: "gamecontroller.fill"
         case .permissions: "hand.raised.fill"
         case .about: "info.circle.fill"
         }
@@ -40,6 +42,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .keyboard, .mouse, .permissions: .blue
         case .windows: .indigo
         case .finder: .cyan
+        case .games: .purple
         case .keepAwake: .orange
         }
     }
@@ -105,6 +108,14 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X"),
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
+            SettingsItem(tab: .games, title: String(localized: "Game Mode"), synonyms: "game, games, gaming, play, Steam, full screen"),
+            SettingsItem(tab: .games, title: String(localized: "Search and Siri"), synonyms: "Spotlight, Siri, fn, globe key, emoji, dictation"),
+            SettingsItem(tab: .games, title: String(localized: "Other apps and desktops"), synonyms: "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize"),
+            SettingsItem(tab: .games, title: String(localized: "The game doesn’t close by accident")),
+            SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),
+            SettingsItem(tab: .games, title: String(localized: "The keyboard language doesn’t change"), synonyms: "input source, keyboard layout, Caps Lock"),
+            SettingsItem(tab: .games, title: String(localized: "The screen stays on")),
+            SettingsItem(tab: .games, title: String(localized: "Your games")),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -225,7 +236,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder]) }
+                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder, .games]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -314,6 +325,7 @@ private struct SettingsView: View {
             )
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
+        case .games: ToolsSettings(tab: .games, text: String(localized: "Your Mac doesn’t pull you out of a game"))
         case .permissions: PermissionsView()
         case .about: AboutView()
         }

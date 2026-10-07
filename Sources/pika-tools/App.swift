@@ -23,6 +23,8 @@ struct PikaToolsApp: App {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    private var signals: [DispatchSourceSignal] = []
+
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSAppleEventManager.shared().setEventHandler(
             self,
@@ -46,7 +48,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         LoginItem.shared.restore()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "home-end", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -62,6 +64,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         StatusMenu.shared.start()
         KeepAwake.shared.resume()
         KeepAwake.shared.restoreLidSleepIfNeeded()
+        signals = [SIGTERM, SIGINT, SIGHUP].map { number in
+            signal(number, SIG_IGN)
+            let source = DispatchSource.makeSignalSource(signal: number, queue: .main)
+            source.setEventHandler { NSApp.terminate(nil) }
+            source.resume()
+            return source
+        }
 
         if !permissions.allGranted {
             permissions.request()
@@ -79,5 +88,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
+        GameModeTool.shared.leave()
     }
 }
