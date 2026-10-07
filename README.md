@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift the way Alt+Shift works on Windows, repeats a held key like Windows, turns off mouse acceleration, scrolls the mouse wheel by lines like Windows, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
+A small menu bar app for macOS with fixes for keys, windows and the Dock: it blocks Ctrl shortcuts, guards ⌘Q and ⌘W, switches languages with Option+Shift, repeats a held key, turns off mouse acceleration, scrolls the mouse wheel by lines, makes the side mouse buttons go back and forward, quits apps when you close their last window, hides an app with a click in the Dock and keeps your Mac awake.
 
 ## Install
 
@@ -46,29 +46,33 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Switch language with Option+Shift.** Hold Option and tap Shift: macOS moves to the next input source. Keep holding Option and tap Shift again to go further. Hold Shift and tap Option to go back. If you press another key, click, or add Cmd, Ctrl or Fn in between, nothing switches, so shortcuts like Option+Shift+arrow work as before. Off by default.
 
-**Repeat a held key.** Hold a key and it types the letter again and again, like on Windows, instead of showing the accent menu. Handy in games and when you type fast. Apps that are already open pick it up after a restart. Turn it off and macOS works as usual again. Off by default.
+**Repeat a held key.** Hold a key and it types the letter again and again instead of showing the accent menu. Handy in games and when you type fast. Apps that are already open pick it up after a restart. Turn it off and macOS works as usual again. Off by default.
+
+**Home and End go to the start and end of a line.** While you type, Home moves the cursor to the start of the line and End to its end, instead of scrolling the page. Add ⇧ to select up to there, or ⌘ to jump to the start or end of the whole text. Outside text fields, and in terminals, virtual machines and remote desktop apps, the keys work as before. You can list other apps where they should work as usual. Off by default.
 
 **Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it, like LinearMouse. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
 
-**Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it, like on Windows. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default. Beside the **Distance per click** slider, a small page scrolls by the distance you pick, and a dot marks the default.
+**Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default. Beside the **Distance per click** slider, a small page scrolls by the distance you pick, and a dot marks the default.
 
 Some apps and games count scrolling in exact pixels: for them, switch the same setting to pixels and pick from 1 to 200 pixels per click, 40 by default. The slider also says how much of the screen height that is.
 
-**Scroll direction for trackpad and mouse.** macOS has one natural scrolling switch for both the trackpad and the mouse. Turn this on and pick a direction for each one: **Natural**, where the page follows your fingers like on iPhone, or **Classic**, like on Windows. The trackpad choice also covers sideways scrolling and the glide after you lift your fingers. The Magic Mouse scrolls by touch, so it follows the trackpad choice. Pick the same on each of your Macs, and scrolling feels the same on all of them, even when you move the mouse to another Mac with Universal Control. Off by default. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
+**Scroll direction for trackpad and mouse.** macOS has one natural scrolling switch for both the trackpad and the mouse. Turn this on and pick a direction for each one: **Natural**, where the page follows your fingers like on iPhone, or **Classic**, where the page moves the other way. The trackpad choice also covers sideways scrolling and the glide after you lift your fingers. The Magic Mouse scrolls by touch, so it follows the trackpad choice. Pick the same on each of your Macs, and scrolling feels the same on all of them, even when you move the mouse to another Mac with Universal Control. Off by default. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
 
 **Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Safari, Finder and other Apple apps, Firefox, Opera and ForkLift, just like a swipe on the trackpad. Other apps, such as JetBrains IDEs, get the buttons as they are and handle them their own way. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
-**Quit when the last window closes.** Close the last window of an app, and the app quits, like on Windows. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
+**Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
 **Hide with a click in the Dock.** Click the Dock icon of the app you're in, and it hides. Click again to bring it back. Off by default.
 
 **Green button enlarges the window.** Click the green button of a window, and it grows to fill the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as it always did. Full screen stays in the button's menu and on ⌃⌘F. You can list apps where the green button should work as usual. Off by default.
 
-**New File in Finder.** Right-click in a Finder window or on the Desktop, choose **New File**, type a name, and an empty file appears, like New › Text Document on Windows. It’s a .txt by default. Off by default.
+**New File in Finder.** Right-click in a Finder window or on the Desktop, choose **New File**, type a name, and an empty file appears. It’s a .txt by default. Off by default.
 
-**Enter opens files in Finder.** Select files in a Finder window or on the Desktop and press Return or Enter, and they open, like on Windows. F2 or fn F2 renames the selected file. In text fields, for example while you type a name, the keys work as usual. Off by default.
+**Enter opens files in Finder.** Select files in a Finder window or on the Desktop and press Return or Enter, and they open. F2 or fn F2 renames the selected file. In text fields, for example while you type a name, the keys work as usual. Off by default.
 
-**⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied, like Cut and Paste on Windows. ⌘C cancels the cut. Off by default.
+**⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied. ⌘C cancels the cut. Off by default.
+
+**Delete removes files in Finder.** Select files and press ⌫ or ⌦ (fn ⌫ on a laptop), and they go to the Trash, just like with ⌘⌫. While you rename a file, search or type in any other field, the keys erase letters as usual. Off by default.
 
 **Smaller Copy in Finder.** Right-click a file in Finder and choose **Make a Smaller Copy**. A lighter version of a photo, GIF, PDF or video appears right next to it, often several times smaller. Uncompressed sound like WAV or AIFF becomes a compact M4A. If a file can’t get any smaller, no copy is made and pika-tools tells you so. The original stays as it is, and nothing leaves your Mac. Off by default.
 
@@ -96,11 +100,11 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pika-tools ag
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keep Awake**: duration, display and lid options.
-- **Keyboard**: Ctrl shortcuts, language switch, key repeat.
+- **Keyboard**: Ctrl shortcuts, language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.
-- **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut.
+- **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
 - **About**: version, links to the changelog and to report a problem.
 

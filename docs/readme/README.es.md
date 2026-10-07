@@ -7,7 +7,7 @@
 [![Licencia: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descargas](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas como Alt+Mayús en Windows, repite una tecla mantenida como en Windows, desactiva la aceleración del ratón, desplaza la rueda del ratón por líneas como en Windows, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
+Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas, repite una tecla mantenida, desactiva la aceleración del ratón, desplaza la rueda del ratón por líneas, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
 
 ## Instalación
 
@@ -46,29 +46,33 @@ pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los e
 
 **Cambiar de idioma con Opción+Mayúsculas.** Mantén pulsada Opción y toca Mayúsculas: macOS pasa a la siguiente fuente de entrada. Sigue manteniendo Opción y vuelve a tocar Mayúsculas para avanzar más. Mantén pulsada Mayúsculas y toca Opción para retroceder. Si entre medias pulsas otra tecla, haces clic o añades Comando, Control o Fn, no cambia nada, así que atajos como Opción+Mayúsculas+flecha siguen funcionando como antes. Desactivado por omisión.
 
-**Repetir una tecla mantenida.** Mantén pulsada una tecla y la letra se escribe una y otra vez, como en Windows, en lugar de abrir el menú de acentos. Viene genial en juegos y al escribir. Las apps que ya están abiertas lo aplican tras reiniciarlas. Si lo desactivas, macOS vuelve a funcionar como siempre. Desactivado por omisión.
+**Repetir una tecla mantenida.** Mantén pulsada una tecla y la letra se escribe una y otra vez, en lugar de abrir el menú de acentos. Viene genial en juegos y al escribir. Las apps que ya están abiertas lo aplican tras reiniciarlas. Si lo desactivas, macOS vuelve a funcionar como siempre. Desactivado por omisión.
+
+**Home y End van al inicio y al final de la línea.** Mientras escribes, Home lleva el cursor al inicio de la línea y End a su final, en lugar de desplazar la página. Con ⇧ seleccionan hasta ahí, con ⌘ van al inicio o al final de todo el texto. Fuera de los campos de texto, y en terminales, máquinas virtuales y apps de escritorio remoto, las teclas funcionan como antes. Puedes añadir otras apps donde deban funcionar como siempre. Desactivado por omisión.
 
 **Desactivar la aceleración del puntero.** El puntero se mueve exactamente lo mismo que el ratón, por rápido que lo muevas, como con LinearMouse. Un regulador **Velocidad del cursor** ajusta lo rápido que va. Solo funciona con ratones; el trackpad se queda como está. Desactívalo o sal de pika-tools y macOS recupera sus propios ajustes. Desactivado por omisión.
 
-**Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires, como en Windows. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión. Junto al control deslizante **Distancia por clic**, una página pequeña se desplaza la distancia que elijas, y un punto marca el valor predeterminado.
+**Desplazarse por líneas.** Cada clic de la rueda del ratón desplaza el mismo número de líneas, por rápido que la gires. Elige de 1 a 10 líneas por clic, 3 por omisión. El desplazamiento natural se queda como lo hayas ajustado en Ajustes del Sistema. Solo funciona con ratones, el trackpad no cambia. Desactivado por omisión. Junto al control deslizante **Distancia por clic**, una página pequeña se desplaza la distancia que elijas, y un punto marca el valor predeterminado.
 
 Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos, cambia este mismo ajuste a píxeles y elige de 1 a 200 píxeles por clic, 40 por omisión. El control también indica qué parte de la altura de la pantalla supone.
 
-**Dirección de desplazamiento para el trackpad y el ratón.** macOS tiene un solo interruptor de desplazamiento natural para el trackpad y el ratón a la vez. Actívalo y elige una dirección para cada uno: **Natural**, donde la página sigue a tus dedos como en el iPhone, o **Clásica**, como en Windows. La opción del trackpad también vale para el desplazamiento lateral y para la inercia al levantar los dedos. El Magic Mouse se desplaza al tacto, así que sigue la opción del trackpad. Elige lo mismo en cada uno de tus Mac y el desplazamiento será igual en todos, incluso cuando pasas el ratón a otro Mac con Control universal. Desactivado por omisión. Al activarlo, los dos empiezan como en Ajustes del Sistema, así que nada cambia hasta que elijas otra cosa.
+**Dirección de desplazamiento para el trackpad y el ratón.** macOS tiene un solo interruptor de desplazamiento natural para el trackpad y el ratón a la vez. Actívalo y elige una dirección para cada uno: **Natural**, donde la página sigue a tus dedos como en el iPhone, o **Clásica**, donde la página va en sentido contrario. La opción del trackpad también vale para el desplazamiento lateral y para la inercia al levantar los dedos. El Magic Mouse se desplaza al tacto, así que sigue la opción del trackpad. Elige lo mismo en cada uno de tus Mac y el desplazamiento será igual en todos, incluso cuando pasas el ratón a otro Mac con Control universal. Desactivado por omisión. Al activarlo, los dos empiezan como en Ajustes del Sistema, así que nada cambia hasta que elijas otra cosa.
 
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en Safari, el Finder y otras apps de Apple, en Firefox, Opera y ForkLift, igual que deslizar el dedo en el trackpad. Otras apps, como los IDE de JetBrains, reciben los botones tal cual y los gestionan a su manera. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
-**Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra, como en Windows. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
+**Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
 **Ocultar con un clic en el Dock.** Haz clic en el icono del Dock de la app que estás usando y se ocultará. Vuelve a hacer clic para que reaparezca. Desactivado por omisión.
 
 **El botón verde amplía la ventana.** Haz clic en el botón verde de una ventana y esta crece hasta llenar la pantalla, sin pasar a pantalla completa. Otro clic devuelve el tamaño anterior. Si mantienes pulsado ⌥, el botón funciona como siempre. La pantalla completa sigue en el menú del botón y con ⌃⌘F. Puedes indicar las apps en las que el botón verde debe funcionar como siempre. Desactivado por omisión.
 
-**Archivo nuevo en el Finder.** Haz clic derecho en una ventana del Finder o en el escritorio, elige **Archivo nuevo**, escribe un nombre y aparece un archivo vacío, como Nuevo › Documento de texto en Windows. .txt por omisión. Desactivado por omisión.
+**Archivo nuevo en el Finder.** Haz clic derecho en una ventana del Finder o en el escritorio, elige **Archivo nuevo**, escribe un nombre y aparece un archivo vacío. .txt por omisión. Desactivado por omisión.
 
-**Intro abre los archivos en el Finder.** Selecciona archivos en una ventana del Finder o en el escritorio y pulsa Retorno o Intro: se abren, como en Windows. F2 o fn F2 renombra el archivo seleccionado. En los campos de texto, por ejemplo mientras escribes un nombre, las teclas funcionan como siempre. Desactivado por omisión.
+**Intro abre los archivos en el Finder.** Selecciona archivos en una ventana del Finder o en el escritorio y pulsa Retorno o Intro: se abren. F2 o fn F2 renombra el archivo seleccionado. En los campos de texto, por ejemplo mientras escribes un nombre, las teclas funcionan como siempre. Desactivado por omisión.
 
-**⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse, como Cortar y Pegar en Windows. ⌘C cancela el corte. Desactivado por omisión.
+**⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse. ⌘C cancela el corte. Desactivado por omisión.
+
+**Borrar elimina archivos en el Finder.** Selecciona archivos y pulsa ⌫ o ⌦ (fn ⌫ en un portátil): van a la Papelera, igual que con ⌘⌫. Mientras renombras un archivo, buscas o escribes en cualquier otro campo, las teclas borran letras como siempre. Desactivado por omisión.
 
 **Copia más ligera en el Finder.** Haz clic derecho en un archivo en el Finder y elige **Crear copia más ligera**. Al lado aparece una versión más ligera de una foto, un GIF, un PDF o un vídeo, a menudo varias veces más pequeña. El sonido sin comprimir, como WAV o AIFF, pasa a un M4A compacto. Si el archivo no puede ser más ligero, no se crea ninguna copia y pika-tools te lo dice. El original se queda tal cual y nada sale de tu Mac. Desactivado por omisión.
 
@@ -96,11 +100,11 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-
 
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
-- **Teclado**: atajos con Control, cambio de idioma, repetición de teclas.
+- **Teclado**: atajos con Control, cambio de idioma, repetición de teclas, Home y End.
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: ocultar con un clic en el Dock.
-- **Finder**: archivo nuevo, copia más ligera y conversión, abrir con Intro y cortar con ⌘X.
+- **Finder**: archivo nuevo, copia más ligera y conversión, abrir con Intro, cortar con ⌘X y borrar con ⌫.
 - **Permisos**: el estado de ambos permisos, y de iCloud Drive cuando la sincronización está activada, con botones que abren el lugar adecuado en Ajustes del Sistema.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 

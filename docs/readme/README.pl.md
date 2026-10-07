@@ -7,7 +7,7 @@
 [![Licencja: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Pobrania](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift tak jak Alt+Shift w Windows, powtarza przytrzymany klawisz jak w Windows, wyłącza przyspieszenie myszy, przewija kółko myszy wierszami jak w Windows, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
+Mała aplikacja na pasek menu w macOS, która poprawia działanie klawiszy, okien i Docka: blokuje skróty z Control, chroni przed ⌘Q i ⌘W, przełącza język skrótem Option+Shift, powtarza przytrzymany klawisz, wyłącza przyspieszenie myszy, przewija kółko myszy wierszami, sprawia, że boczne przyciski myszy cofają i przechodzą dalej, zamyka aplikacje po zamknięciu ich ostatniego okna, ukrywa aplikację kliknięciem w Docku i nie pozwala Macowi zasnąć.
 
 ## Instalacja
 
@@ -46,29 +46,33 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 **Zmiana języka skrótem Option+Shift.** Przytrzymaj Option i stuknij Shift: macOS przełączy na następne źródło wprowadzania. Trzymaj dalej Option i stuknij Shift ponownie, aby przejść dalej. Przytrzymaj Shift i stuknij Option, aby wrócić. Jeśli w międzyczasie naciśniesz inny klawisz, klikniesz lub dodasz Command, Control albo Fn, nic się nie przełączy, więc skróty takie jak Option+Shift+strzałka działają jak wcześniej. Domyślnie wyłączone.
 
-**Powtarzaj przytrzymany klawisz.** Przytrzymaj klawisz, a litera będzie się pisać raz za razem, jak w Windows, zamiast pokazywać menu akcentów. Przydaje się w grach i przy pisaniu. Już otwarte aplikacje przejmą to po ponownym uruchomieniu. Gdy to wyłączysz, macOS znowu działa po swojemu. Domyślnie wyłączone.
+**Powtarzaj przytrzymany klawisz.** Przytrzymaj klawisz, a litera będzie się pisać raz za razem, zamiast pokazywać menu akcentów. Przydaje się w grach i przy pisaniu. Już otwarte aplikacje przejmą to po ponownym uruchomieniu. Gdy to wyłączysz, macOS znowu działa po swojemu. Domyślnie wyłączone.
+
+**Home i End na początek i koniec wiersza.** Gdy piszesz, Home przenosi kursor na początek wiersza, a End na jego koniec, zamiast przewijać stronę. Z ⇧ zaznaczają tekst do tego miejsca, z ⌘ przechodzą na początek lub koniec całego tekstu. Poza polami tekstowymi oraz w terminalach, maszynach wirtualnych i aplikacjach pulpitu zdalnego klawisze działają jak dotąd. Możesz dodać inne aplikacje, w których mają działać jak zwykle. Domyślnie wyłączone.
 
 **Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz, jak w LinearMouse. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pika-tools, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
 
-**Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz, tak jak w Windows. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone. Obok suwaka **Odległość na kliknięcie** mała strona przewija się o wybraną odległość, a kropka oznacza wartość domyślną.
+**Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone. Obok suwaka **Odległość na kliknięcie** mała strona przewija się o wybraną odległość, a kropka oznacza wartość domyślną.
 
 Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich przełącz to samo ustawienie na piksele i wybierz od 1 do 200 pikseli na kliknięcie, domyślnie 40. Suwak pokazuje też, jaką część wysokości ekranu to stanowi.
 
-**Kierunek przewijania dla gładzika i myszy.** macOS ma jeden przełącznik przewijania naturalnego wspólny dla gładzika i myszy. Włącz tę funkcję i wybierz kierunek dla każdego: **Naturalny**, gdy strona podąża za palcami jak na iPhonie, albo **Klasyczny**, jak w Windows. Wybór dla gładzika działa też na przewijanie w bok i na rozpęd po podniesieniu palców. Magic Mouse przewija dotykiem, więc podąża za wyborem dla gładzika. Wybierz to samo na każdym swoim Macu, a przewijanie będzie wszędzie takie samo, nawet gdy przenosisz mysz na inny Mac przez Uniwersalne sterowanie. Domyślnie wyłączone. Po włączeniu oba wybory są takie jak w Ustawieniach systemowych, więc nic się nie zmienia, dopóki nie wybierzesz czegoś innego.
+**Kierunek przewijania dla gładzika i myszy.** macOS ma jeden przełącznik przewijania naturalnego wspólny dla gładzika i myszy. Włącz tę funkcję i wybierz kierunek dla każdego: **Naturalny**, gdy strona podąża za palcami jak na iPhonie, albo **Klasyczny**, w którym strona przesuwa się w przeciwną stronę. Wybór dla gładzika działa też na przewijanie w bok i na rozpęd po podniesieniu palców. Magic Mouse przewija dotykiem, więc podąża za wyborem dla gładzika. Wybierz to samo na każdym swoim Macu, a przewijanie będzie wszędzie takie samo, nawet gdy przenosisz mysz na inny Mac przez Uniwersalne sterowanie. Domyślnie wyłączone. Po włączeniu oba wybory są takie jak w Ustawieniach systemowych, więc nic się nie zmienia, dopóki nie wybierzesz czegoś innego.
 
 **Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Safari, Finderze i innych aplikacjach Apple oraz w Firefoksie, Operze i ForkLifcie, tak jak machnięcie na gładziku. Inne aplikacje, na przykład środowiska JetBrains, dostają przyciski bez zmian i obsługują je po swojemu. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 
-**Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy, tak jak w Windows. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
+**Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
 **Ukrywanie kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a zostanie ukryta. Kliknij ponownie, aby ją przywrócić. Domyślnie wyłączone.
 
 **Zielony przycisk powiększa okno.** Kliknij zielony przycisk okna, a okno wypełni ekran, nie przechodząc w pełny ekran. Kliknij ponownie, aby wrócić do poprzedniego rozmiaru. Przytrzymaj ⌥, a przycisk zadziała jak zawsze. Pełny ekran nadal jest w menu przycisku i pod ⌃⌘F. Możesz wypisać aplikacje, w których zielony przycisk ma działać jak zwykle. Domyślnie wyłączone.
 
-**Nowy plik w Finderze.** Kliknij prawym w oknie Findera lub na biurku, wybierz **Nowy plik**, wpisz nazwę i gotowe – pojawi się pusty plik, jak Nowy › Dokument tekstowy w Windows. Domyślnie .txt. Domyślnie wyłączone.
+**Nowy plik w Finderze.** Kliknij prawym w oknie Findera lub na biurku, wybierz **Nowy plik**, wpisz nazwę i gotowe – pojawi się pusty plik. Domyślnie .txt. Domyślnie wyłączone.
 
-**Enter otwiera pliki w Finderze.** Zaznacz pliki w oknie Findera lub na biurku i naciśnij Return albo Enter – pliki się otworzą, tak jak w Windows. F2 lub fn F2 zmienia nazwę zaznaczonego pliku. W polach tekstowych, na przykład podczas wpisywania nazwy, klawisze działają jak zwykle. Domyślnie wyłączone.
+**Enter otwiera pliki w Finderze.** Zaznacz pliki w oknie Findera lub na biurku i naciśnij Return albo Enter – pliki się otworzą. F2 lub fn F2 zmienia nazwę zaznaczonego pliku. W polach tekstowych, na przykład podczas wpisywania nazwy, klawisze działają jak zwykle. Domyślnie wyłączone.
 
-**⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane, tak jak Wytnij i Wklej w Windows. ⌘C anuluje wycinanie. Domyślnie wyłączone.
+**⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane. ⌘C anuluje wycinanie. Domyślnie wyłączone.
+
+**Delete usuwa pliki w Finderze.** Zaznacz pliki i naciśnij ⌫ lub ⌦ (fn ⌫ na laptopie) – trafią do Kosza, tak jak po ⌘⌫. Gdy zmieniasz nazwę pliku, szukasz lub piszesz w innym polu, klawisze kasują litery jak zwykle. Domyślnie wyłączone.
 
 **Mniejsza kopia w Finderze.** Kliknij prawym plik w Finderze i wybierz **Utwórz mniejszą kopię**. Obok pojawi się lżejsza wersja zdjęcia, GIF-a, PDF-a lub wideo, często kilka razy mniejsza. Nieskompresowany dźwięk, np. WAV lub AIFF, zmienia się w zgrabny M4A. Jeśli pliku nie da się już zmniejszyć, kopia nie powstaje, a pika-tools o tym mówi. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Domyślnie wyłączone.
 
@@ -96,11 +100,11 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
-- **Klawiatura**: skróty z Control, zmiana języka, powtarzanie klawisza.
+- **Klawiatura**: skróty z Control, zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
-- **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return i wycinanie przez ⌘X.
+- **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Uprawnienia**: stan obu uprawnień, a przy włączonej synchronizacji także iCloud Drive, z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 
