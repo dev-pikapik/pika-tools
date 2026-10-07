@@ -11,6 +11,9 @@ All notable changes to this project are documented here. The format is based on 
 ### Changed
 - Convert To is now its own tool with its own switch, so you can keep only the menu item you need. If Smaller Copy was on, Convert To stays on too.
 
+### Fixed
+- Slider labels on the Mouse page no longer break in the middle of a word when the window is narrow.
+
 ## [1.19.0] - Unreleased
 
 ### Added
