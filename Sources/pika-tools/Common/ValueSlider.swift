@@ -51,7 +51,7 @@ struct ValueSlider: View {
                 .foregroundStyle(.secondary)
                 .accessibilityHidden(true)
             }
-            .frame(width: 220)
+            .frame(minWidth: 140, idealWidth: 220, maxWidth: 220)
             TextField(title, value: clamped, format: .number.precision(.fractionLength(digits)))
                 .labelsHidden()
                 .multilineTextAlignment(.trailing)
