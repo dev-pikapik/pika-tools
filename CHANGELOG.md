@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format is based on 
 
 ### Added
 - Game Mode keeps your Mac from pulling you out of a game. Add your games, and while you play one, Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over it, ⌘Q and ⌘W don’t close it by accident, the pointer stays on the game’s screen, the keyboard language doesn’t change and the screen stays on. Each of these has its own switch, and pika-tools suggests games it finds on your Mac. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. Off by default, on the Games page.
+- Keep Awake has a "Turn off the screen now" button on its page and in the menu bar panel. The Mac keeps working, and the screen comes back when you move the mouse or press a key.
+
+### Changed
+- Keep Awake lets you choose what the screen does: stay on all the time, with no screen saver or lock screen, or turn off as usual while the Mac keeps working.
+- On Macs without a lid, Keep Awake no longer shows the closed-lid options.
 
 ## [1.22.0] - Unreleased
 
