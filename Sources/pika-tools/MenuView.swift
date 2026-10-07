@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "command-keys,compress,dock-hide,finder-cut,finder-open,key-repeat,new-file,quit-on-close,side-buttons,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "command-keys,compress,convert,dock-hide,finder-cut,finder-open,key-repeat,new-file,quit-on-close,side-buttons,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared

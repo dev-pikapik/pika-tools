@@ -4,7 +4,7 @@ import SwiftUI
 final class CompressTool: Tool {
     let id = "compress"
     let icon = "arrow.down.right.and.arrow.up.left"
-    var title: String { String(localized: "Smaller Copy and Convert in Finder") }
+    var title: String { String(localized: "Smaller Copy in Finder") }
     let tab = SettingsTab.finder
     private let finder = FinderExtension(bundle: "Compress", key: "compress")
 
@@ -19,9 +19,9 @@ final class CompressTool: Tool {
         AnyView(FinderExtensionSettings(
             tool: self,
             finder: finder,
-            subtitle: Text("Right-click a photo, video or song"),
+            subtitle: Text("Right-click a file › Make a Smaller Copy"),
             hint: Text("Right-click a photo, video or song"),
-            help: Text("Right-click a file in Finder. Make a Smaller Copy shrinks photos, PDFs and videos. Convert To saves pictures, videos and music in another format, like JPEG or MP4. The original stays as it is.")
+            help: Text("Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made.")
         ) { AnyView(CompressArt(on: $0)) })
     }
 
@@ -46,9 +46,9 @@ struct CompressArt: View {
             Stage {
                 ArtWindow(size: CGSize(width: 220, height: 100)) {
                     ZStack {
-                        file(photo: 40, size: Self.sizes[0], selected: menu, label: menu ? .primary : .secondary)
+                        ArtPhotoFile(width: 40, label: Self.sizes[0], selected: menu, color: menu ? .primary : .secondary)
                             .position(x: 72, y: 42)
-                        file(photo: 28, size: Self.sizes[1], selected: false, label: .accentColor)
+                        ArtPhotoFile(width: 28, label: Self.sizes[1], color: .accentColor)
                             .opacity(copied ? 1 : 0)
                             .scaleEffect(copied ? 1 : 0.6)
                             .position(x: 148, y: 42)
@@ -73,13 +73,20 @@ struct CompressArt: View {
         }
         .loop($tick, Self.durations)
     }
+}
 
-    private func file(photo width: CGFloat, size: String, selected: Bool, label: Color) -> some View {
+struct ArtPhotoFile: View {
+    let width: CGFloat
+    let label: String
+    var selected = false
+    var color: Color = .secondary
+
+    var body: some View {
         VStack(spacing: 3) {
             ArtPhoto(width: width)
-            Text(verbatim: size)
+            Text(verbatim: label)
                 .font(.system(size: 8, weight: .medium))
-                .foregroundStyle(label)
+                .foregroundStyle(color)
                 .lineLimit(1)
                 .fixedSize()
         }
@@ -111,7 +118,7 @@ private struct ArtPhoto: View {
 enum Compress {
     static func handle(_ url: URL) {
         guard url.host == "compress" || url.host == "convert",
-              ToolRegistry.shared.tools.contains(where: { $0 is CompressTool && $0.isActive })
+              ToolRegistry.shared.tools.contains(where: { $0.id == url.host && $0.isActive })
         else { return }
         let query = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
         let target = url.host == "convert" ? query.first(where: { $0.name == "to" })?.value : nil
@@ -254,8 +261,8 @@ private final class CompressQueue {
             try await Converter.convert(file, to: target, output: output, progress: progress)
             try Task.checkCancellation()
         } else {
-            name = String(localized: "\(base) (smaller)") + "." + file.pathExtension
-            output = temporary.appending(path: file.lastPathComponent)
+            name = String(localized: "\(base) (smaller)") + "." + Compressor.fileExtension(for: file)
+            output = temporary.appending(path: name)
             try await Compressor.compress(file, to: output, progress: progress)
             try Task.checkCancellation()
             let before = try file.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0

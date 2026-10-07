@@ -70,7 +70,9 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **⌘X coupe les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌘X, ouvrez le dossier voulu et appuyez sur ⌘V : les fichiers y sont déplacés au lieu d’être copiés, comme Couper et Coller sous Windows. ⌘C annule la coupe. Désactivé par défaut.
 
-**Copie allégée et conversion dans le Finder.** Clic droit sur un fichier dans le Finder. **Créer une copie allégée** enregistre juste à côté une version plus légère d’une photo, d’un PDF ou d’une vidéo, souvent plusieurs fois plus petite. **Convertir en** enregistre le fichier dans un autre format : une image en JPEG, PNG, HEIC, TIFF ou PDF, une vidéo en MP4, MOV ou seulement le son, de la musique en M4A, WAV ou AIFF. L’original reste intact, et rien ne quitte votre Mac. Désactivé par défaut.
+**Copie allégée dans le Finder.** Clic droit sur un fichier dans le Finder, puis **Créer une copie allégée**. Une version plus légère d’une photo, d’un GIF, d’un PDF ou d’une vidéo apparaît juste à côté, souvent plusieurs fois plus petite. Le son non compressé, comme WAV ou AIFF, devient un M4A compact. Si le fichier ne peut pas être plus léger, aucune copie n’est créée et pika-tools vous le dit. L’original reste intact, et rien ne quitte votre Mac. Désactivé par défaut.
+
+**Conversion dans le Finder.** Clic droit sur un fichier dans le Finder, puis **Convertir en** pour l’enregistrer dans un autre format : une image en JPEG, PNG, HEIC, TIFF ou PDF, une vidéo en MP4, MOV ou seulement le son, de la musique en M4A, WAV ou AIFF. L’original reste intact, et rien ne quitte votre Mac. S’active séparément de la copie allégée. Désactivé par défaut.
 
 Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoin de retrouver un Contrôle+C normal ? Désactivez cet outil.
 

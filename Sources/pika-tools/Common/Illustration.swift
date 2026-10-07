@@ -459,6 +459,7 @@ struct ArtMenuRow: View {
     var width: CGFloat = 40
     var title: Text?
     var active = false
+    var submenu = false
 
     var body: some View {
         HStack(spacing: 0) {
@@ -471,6 +472,11 @@ struct ArtMenuRow: View {
                 Capsule().fill(Color.primary.opacity(0.18)).frame(width: width, height: 4)
             }
             Spacer(minLength: 0)
+            if submenu {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 7, weight: .bold))
+                    .foregroundStyle(active ? Color.white : Color.secondary)
+            }
         }
         .padding(.horizontal, 6)
         .frame(height: 14)
