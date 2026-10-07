@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "업데이트를 확인할 수 없습니다";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "앱 폴더에 쓸 권한이 없습니다. brew 또는 install.sh로 업데이트하세요";
 "Download failed. Try again later" = "다운로드하지 못했습니다. 나중에 다시 시도하세요";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ 키가 일반 키처럼 동작합니다. 단축키와 ⌃-클릭 메뉴가 꺼집니다";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어";
 "All set" = "모두 준비됨";
 "pika-tools needs two permissions" = "pika-tools에 두 가지 권한이 필요합니다";
@@ -259,7 +258,6 @@
 "Faster" = "더 빠르게";
 "Hold the first key, tap the second" = "첫 번째 키를 누른 채 두 번째 키를 누르기";
 "Mac stays awake with the lid closed" = "덮개를 닫아도 Mac이 잠자지 않아요";
-"No shortcuts, no right-click menu" = "단축키도 우클릭 메뉴도 없음";
 "Return opens, F2 renames" = "Return으로 열기, F2로 이름 변경";
 "Repeats instead of the accent menu" = "악센트 메뉴 대신 반복 입력";
 "Right-click in a folder › New File" = "폴더에서 우클릭 › 새 파일";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "그다음 붙여넣기로 이동";
 "Your Mac stays awake until you quit pika-tools" = "pika-tools를 종료할 때까지 Mac이 잠자지 않아요";
 "macOS will ask for your administrator password." = "macOS가 관리자 암호를 요청합니다.";
-"Works as usual in these apps" = "이 앱에서는 평소대로 작동";
 "Lines for apps, pixels for games" = "앱에는 줄, 게임에는 픽셀";
 "Add the Open URLs action in Shortcuts, with a link." = "단축어 앱에서 링크가 있는 ‘URL 열기’ 동작을 추가하세요.";
-"Block Control shortcuts" = "Control 단축키 차단";
 "Fixes for Finder" = "Finder를 위한 개선";
 "Fixes for the keyboard" = "키보드를 위한 개선";
 "Fixes for the mouse" = "마우스를 위한 개선";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "게임이 실수로 닫히지 않음";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "게임에서는 ⌘Q와 ⌘W가 작동하지 않습니다. 종료하려면 ⇧⌘Q를 누르세요";
 "The pointer stays in the game" = "포인터가 게임 안에 머무름";
+"⌃ stays in the game" = "⌃ 키가 게임 안에 머무름";
+"⌃-click menu" = "⌃-클릭 메뉴";
+"Menu bar" = "메뉴 막대";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, 메뉴 막대, 핫 코너가 튀어나오지 않고, 포인터가 다른 화면으로 넘어가지 않습니다";
 "The keyboard language doesn’t change" = "키보드 언어가 바뀌지 않음";
 "If it switches by accident, it comes back right away" = "실수로 바뀌어도 바로 돌아옵니다";

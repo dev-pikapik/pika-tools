@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Aktualizace se nepodařilo zkontrolovat";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Do složky aplikace nelze zapisovat. Aktualizujte přes brew nebo install.sh";
 "Download failed. Try again later" = "Stahování se nezdařilo. Zkuste to později";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ funguje jako obyčejná klávesa: žádné zkratky, žádná nabídka po ⌃-kliknutí";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Podržte ⌥ a stiskněte ⇧: další jazyk. Podržte ⇧ a stiskněte ⌥: předchozí";
 "All set" = "Vše připraveno";
 "pika-tools needs two permissions" = "pika-tools potřebuje dvě oprávnění";
@@ -259,7 +258,6 @@
 "Faster" = "Rychleji";
 "Hold the first key, tap the second" = "Podržte první klávesu, stiskněte druhou";
 "Mac stays awake with the lid closed" = "Mac zůstane vzhůru se zavřeným víkem";
-"No shortcuts, no right-click menu" = "Bez zkratek, bez nabídky pravého kliknutí";
 "Return opens, F2 renames" = "Return otevírá, F2 přejmenovává";
 "Repeats instead of the accent menu" = "Opakuje místo nabídky akcentů";
 "Right-click in a folder › New File" = "Pravý klik ve složce › Nový soubor";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Pak je vložení přesune";
 "Your Mac stays awake until you quit pika-tools" = "Mac zůstane vzhůru, dokud pika-tools neukončíte";
 "macOS will ask for your administrator password." = "macOS vás požádá o heslo správce.";
-"Works as usual in these apps" = "V těchto aplikacích funguje jako obvykle";
 "Lines for apps, pixels for games" = "Řádky pro aplikace, pixely pro hry";
 "Add the Open URLs action in Shortcuts, with a link." = "V aplikaci Zkratky přidejte akci Otevřít adresy URL s odkazem.";
-"Block Control shortcuts" = "Blokovat zkratky s Control";
 "Fixes for Finder" = "Opravy pro Finder";
 "Fixes for the keyboard" = "Opravy pro klávesnici";
 "Fixes for the mouse" = "Opravy pro myš";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Hra se omylem nezavře";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q a ⌘W ve hře nefungují. Ukončíte ji pomocí ⇧⌘Q";
 "The pointer stays in the game" = "Ukazatel zůstává ve hře";
+"⌃ stays in the game" = "⌃ zůstává ve hře";
+"⌃-click menu" = "Nabídka po ⌃-kliknutí";
+"Menu bar" = "Řádek nabídek";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, řádek nabídek a aktivní rohy nevyskakují a ukazatel neuteče na jinou obrazovku";
 "The keyboard language doesn’t change" = "Jazyk klávesnice se nemění";
 "If it switches by accident, it comes back right away" = "Když se omylem přepne, hned se vrátí";

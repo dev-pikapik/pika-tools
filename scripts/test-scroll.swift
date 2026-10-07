@@ -86,7 +86,7 @@ enum TestScroll {
         precondition(SettingsFile(data: Data("{\"app\":\"other\",\"settings\":{}}".utf8)) == nil)
         precondition(SettingsFile(data: Data("not json".utf8)) == nil)
         precondition(SettingsFile(data: Data(count: SettingsFile.maxSize + 1)) == nil)
-        precondition(SettingsFile(data: Data("{\"app\":\"pika-tools\",\"settings\":{\"ctrl-keys\":false,\"evil\":1}}".utf8))?.settings.keys.sorted() == ["ctrl-keys"])
+        precondition(SettingsFile(data: Data("{\"app\":\"pika-tools\",\"settings\":{\"ctrl-keys\":false,\"key-repeat\":false,\"evil\":1}}".utf8))?.settings.keys.sorted() == ["key-repeat"])
 
         print("test-scroll: all passed")
     }

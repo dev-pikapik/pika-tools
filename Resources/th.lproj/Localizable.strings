@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "ไม่สามารถตรวจสอบอัปเดตได้";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "ไม่สามารถเขียนลงในโฟลเดอร์ของแอปได้ อัปเดตด้วย brew หรือ install.sh";
 "Download failed. Try again later" = "ดาวน์โหลดไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ ทำงานเป็นปุ่มธรรมดา: ไม่มีคำสั่งลัด ไม่มีเมนู ⌃-คลิก";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "กด ⌥ ค้างไว้แล้วแตะ ⇧: ภาษาถัดไป กด ⇧ ค้างไว้แล้วแตะ ⌥: ภาษาก่อนหน้า";
 "All set" = "พร้อมแล้ว";
 "pika-tools needs two permissions" = "pika-tools ต้องการการอนุญาตสองรายการ";
@@ -259,7 +258,6 @@
 "Faster" = "เร็วขึ้น";
 "Hold the first key, tap the second" = "กดปุ่มแรกค้างไว้ แล้วแตะปุ่มที่สอง";
 "Mac stays awake with the lid closed" = "Mac ไม่หลับแม้ปิดฝา";
-"No shortcuts, no right-click menu" = "ไม่มีคีย์ลัด ไม่มีเมนูคลิกขวา";
 "Return opens, F2 renames" = "Return เปิด F2 เปลี่ยนชื่อ";
 "Repeats instead of the accent menu" = "พิมพ์ซ้ำแทนการเปิดเมนูเครื่องหมาย";
 "Right-click in a folder › New File" = "คลิกขวาในโฟลเดอร์ › ไฟล์ใหม่";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "จากนั้นวางเพื่อย้าย";
 "Your Mac stays awake until you quit pika-tools" = "Mac จะไม่หลับจนกว่าคุณจะปิด pika-tools";
 "macOS will ask for your administrator password." = "macOS จะขอรหัสผ่านผู้ดูแลระบบ";
-"Works as usual in these apps" = "ทำงานตามปกติในแอปเหล่านี้";
 "Lines for apps, pixels for games" = "บรรทัดสำหรับแอป พิกเซลสำหรับเกม";
 "Add the Open URLs action in Shortcuts, with a link." = "ในคำสั่งลัด ให้เพิ่มการทำงาน “เปิด URL” พร้อมลิงก์";
-"Block Control shortcuts" = "บล็อกคำสั่งลัด Control";
 "Fixes for Finder" = "การแก้ไขสำหรับ Finder";
 "Fixes for the keyboard" = "การแก้ไขสำหรับแป้นพิมพ์";
 "Fixes for the mouse" = "การแก้ไขสำหรับเมาส์";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "เกมไม่ปิดโดยไม่ตั้งใจ";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q และ ⌘W ใช้ไม่ได้ในเกม หากต้องการออก ให้กด ⇧⌘Q";
 "The pointer stays in the game" = "ตัวชี้อยู่ในเกมเสมอ";
+"⌃ stays in the game" = "⌃ อยู่ในเกมเสมอ";
+"⌃-click menu" = "เมนู ⌃-คลิก";
+"Menu bar" = "แถบเมนู";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, แถบเมนู และมุมลัดไม่โผล่ขึ้นมา และตัวชี้ไม่หลุดไปยังหน้าจออื่น";
 "The keyboard language doesn’t change" = "ภาษาของแป้นพิมพ์ไม่เปลี่ยน";
 "If it switches by accident, it comes back right away" = "หากเปลี่ยนโดยไม่ตั้งใจ จะกลับมาทันที";

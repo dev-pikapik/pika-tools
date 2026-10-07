@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Güncellemeler denetlenemedi";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Uygulamanın klasörüne yazılamıyor. brew veya install.sh ile güncelleyin";
 "Download failed. Try again later" = "İndirme başarısız oldu. Daha sonra yeniden deneyin";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ sıradan bir tuş gibi çalışır: kestirme yok, ⌃-tıklama menüsü yok";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ basılıyken ⇧ tuşuna basın: sonraki dil. ⇧ basılıyken ⌥ tuşuna basın: önceki dil";
 "All set" = "Her şey hazır";
 "pika-tools needs two permissions" = "pika-tools’un iki izne ihtiyacı var";
@@ -259,7 +258,6 @@
 "Faster" = "Daha hızlı";
 "Hold the first key, tap the second" = "İlk tuşu basılı tutun, ikinciye dokunun";
 "Mac stays awake with the lid closed" = "Mac, kapak kapalıyken de uyanık kalır";
-"No shortcuts, no right-click menu" = "Kısayol yok, sağ tık menüsü yok";
 "Return opens, F2 renames" = "Return açar, F2 yeniden adlandırır";
 "Repeats instead of the accent menu" = "Aksan menüsü yerine tekrarlar";
 "Right-click in a folder › New File" = "Klasörde sağ tık › Yeni Dosya";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Sonra yapıştırmak onları taşır";
 "Your Mac stays awake until you quit pika-tools" = "pika-tools’tan çıkana kadar Mac’iniz uyanık kalır";
 "macOS will ask for your administrator password." = "macOS yönetici parolanızı isteyecek.";
-"Works as usual in these apps" = "Bu uygulamalarda her zamanki gibi çalışır";
 "Lines for apps, pixels for games" = "Uygulamalar için satır, oyunlar için piksel";
 "Add the Open URLs action in Shortcuts, with a link." = "Kestirmeler’de bir bağlantıyla “URL’leri Aç” eylemini ekleyin.";
-"Block Control shortcuts" = "Control kestirmelerini engelle";
 "Fixes for Finder" = "Finder için düzeltmeler";
 "Fixes for the keyboard" = "Klavye için düzeltmeler";
 "Fixes for the mouse" = "Fare için düzeltmeler";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Oyun yanlışlıkla kapanmaz";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q ve ⌘W oyunda çalışmaz. Çıkmak için ⇧⌘Q’ya basın";
 "The pointer stays in the game" = "İmleç oyunda kalır";
+"⌃ stays in the game" = "⌃ oyunda kalır";
+"⌃-click menu" = "⌃-tıklama menüsü";
+"Menu bar" = "Menü çubuğu";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, menü çubuğu ve etkin köşeler açılmaz, imleç başka bir ekrana kaymaz";
 "The keyboard language doesn’t change" = "Klavye dili değişmez";
 "If it switches by accident, it comes back right away" = "Yanlışlıkla değişirse hemen geri döner";

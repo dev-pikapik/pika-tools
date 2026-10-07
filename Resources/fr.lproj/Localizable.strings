@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Impossible de vérifier les mises à jour";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Pas d’accès en écriture au dossier de l’app. Mettez à jour avec brew ou install.sh";
 "Download failed. Try again later" = "Échec du téléchargement. Réessayez plus tard";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ devient une touche ordinaire : ni raccourcis, ni menu ⌃-clic";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Maintenez ⌥ et appuyez sur ⇧ : langue suivante. Maintenez ⇧ et appuyez sur ⌥ : précédente";
 "All set" = "Tout est prêt";
 "pika-tools needs two permissions" = "pika-tools a besoin de deux autorisations";
@@ -259,7 +258,6 @@
 "Faster" = "Plus rapide";
 "Hold the first key, tap the second" = "Maintenez la première touche, appuyez sur la seconde";
 "Mac stays awake with the lid closed" = "Le Mac reste éveillé capot fermé";
-"No shortcuts, no right-click menu" = "Pas de raccourcis, pas de menu du clic droit";
 "Return opens, F2 renames" = "Retour ouvre, F2 renomme";
 "Repeats instead of the accent menu" = "Répète au lieu d’ouvrir le menu des accents";
 "Right-click in a folder › New File" = "Clic droit dans un dossier › Nouveau fichier";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Puis le collage les déplace";
 "Your Mac stays awake until you quit pika-tools" = "Votre Mac reste éveillé tant que pika-tools est ouvert";
 "macOS will ask for your administrator password." = "macOS demandera le mot de passe administrateur.";
-"Works as usual in these apps" = "Fonctionne comme d’habitude dans ces apps";
 "Lines for apps, pixels for games" = "Lignes pour les apps, pixels pour les jeux";
 "Add the Open URLs action in Shortcuts, with a link." = "Dans Raccourcis, ajoutez l’action « Ouvrir les URL » avec un lien.";
-"Block Control shortcuts" = "Bloquer les raccourcis Contrôle";
 "Fixes for Finder" = "Correctifs pour le Finder";
 "Fixes for the keyboard" = "Correctifs pour le clavier";
 "Fixes for the mouse" = "Correctifs pour la souris";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Le jeu ne se ferme pas par accident";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q et ⌘W ne marchent pas dans le jeu. Pour quitter, appuyez sur ⇧⌘Q";
 "The pointer stays in the game" = "Le pointeur reste dans le jeu";
+"⌃ stays in the game" = "⌃ reste dans le jeu";
+"⌃-click menu" = "Menu ⌃-clic";
+"Menu bar" = "Barre des menus";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Le Dock, la barre des menus et les coins actifs ne surgissent pas, et le pointeur ne glisse pas vers un autre écran";
 "The keyboard language doesn’t change" = "La langue du clavier ne change pas";
 "If it switches by accident, it comes back right away" = "Si elle change par accident, elle revient aussitôt";

@@ -7,7 +7,7 @@
 [![Licentie: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij blokkeert Control-toetscombinaties, beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift, herhaalt een ingedrukte toets, zet muisversnelling uit, scrolt het muiswieltje per regel, laat de zijknoppen van de muis terug en vooruit gaan, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
+Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift, herhaalt een ingedrukte toets, zet muisversnelling uit, scrolt het muiswieltje per regel, laat de zijknoppen van de muis terug en vooruit gaan, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
 
 ## Installeren
 
@@ -39,8 +39,6 @@ De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet
 pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
 
 ## Functies
-
-**Control-toetscombinaties blokkeren.** Control wordt een gewone toets. Apps zien nog steeds dat hij is ingedrukt, maar macOS maakt er geen toetscombinaties meer van: Control+spatiebalk wisselt niet van invoerbron, Control+pijltoetsen wisselen niet van bureaublad en Control-klik is een gewone klik in plaats van een contextueel menu. Secundair klikken en tikken met twee vingers werken zoals altijd. Handig in games en bij externe bureaubladsessies, waar Control een eigen taak heeft. Je kunt apps opgeven waarin Control gewoon blijft werken, bijvoorbeeld een app voor bureaublad op afstand: de blokkade geldt daar niet.
 
 **⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
 
@@ -78,9 +76,9 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Omzetten in de Finder.** Klik met rechts op een bestand in de Finder en kies **Zet om naar** om het in een ander formaat te bewaren: een afbeelding als JPEG, PNG, HEIC, GIF, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Los van de kleinere kopie aan te zetten. Standaard uit.
 
-**Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, de toetsenbordtaal verandert niet en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pika-tools stelt games voor die het op je Mac vindt. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
+**Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, de toetsenbordtaal verandert niet en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pika-tools stelt games voor die het op je Mac vindt. In een game is Control een gewone toets: Control-klik blijft een klik, en Control+spatie of Control met pijltjes wisselt niet van taal of bureaublad. Ook Minecraft wordt herkend: voeg Minecraft Launcher of CurseForge toe, en de modus gaat aan in Minecraft zelf. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
 
-Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je de gewone Control+C terug? Zet die tool uit.
+Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
 Het symbool in de menubalk laat in één oogopslag de status zien: een pijl met een klik als de tools werken, een doorgestreepte pijl als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
 
@@ -102,7 +100,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
-- **Toetsenbord**: Control-toetscombinaties, van taal wisselen, toetsherhaling, Home en End.
+- **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.

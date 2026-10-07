@@ -7,7 +7,7 @@
 [![Licență: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descărcări](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-O aplicație mică pentru bara de meniu din macOS, care îmbunătățește tastele, ferestrele și Dock-ul: blochează scurtăturile cu Control, protejează ⌘Q și ⌘W, schimbă limba cu Opțiune+Shift, repetă tasta ținută apăsată, dezactivează accelerarea mausului, derulează rotița mausului pe rânduri, face ca butoanele laterale ale mausului să meargă înapoi și înainte, închide aplicațiile când le închizi ultima fereastră, ascunde o aplicație cu un clic în Dock și ține Mac-ul treaz.
+O aplicație mică pentru bara de meniu din macOS, care îmbunătățește tastele, ferestrele și Dock-ul: protejează ⌘Q și ⌘W, schimbă limba cu Opțiune+Shift, repetă tasta ținută apăsată, dezactivează accelerarea mausului, derulează rotița mausului pe rânduri, face ca butoanele laterale ale mausului să meargă înapoi și înainte, închide aplicațiile când le închizi ultima fereastră, ascunde o aplicație cu un clic în Dock și ține Mac-ul treaz.
 
 ## Instalare
 
@@ -39,8 +39,6 @@ Aplicația observă schimbarea în câteva secunde, fără repornire.
 pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Singura cerere în rețea este verificarea actualizărilor, care întreabă GitHub care este cea mai nouă versiune.
 
 ## Funcționalități
-
-**Blocarea scurtăturilor cu Control.** Control devine o tastă obișnuită. Aplicațiile văd în continuare că este apăsată, dar macOS nu o mai transformă în scurtături: Control+Spațiu nu schimbă sursa de introducere, Control+săgeți nu schimbă spațiul de lucru, iar Control-clic este un clic normal în loc de un meniu contextual. Clicul secundar și atingerea cu două degete funcționează ca de obicei. Util în jocuri și în sesiunile de desktop la distanță, unde Control are propriul rol. Poți adăuga aplicațiile în care Control funcționează ca de obicei, de exemplu un client de desktop la distanță: blocarea nu li se aplică.
 
 **Protejarea ⌘Q și ⌘W.** ⌘Q și ⌘W singure nu fac nimic, așa că nu închizi din greșeală o aplicație sau o fereastră. Adaugă Shift ca să o faci intenționat: ⇧⌘Q închide aplicația, ⇧⌘W închide fereastra. Funcționează în toate aplicațiile. Fiecare tastă are propriul comutator. Dezactivat implicit.
 
@@ -78,9 +76,9 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Conversie în Finder.** Clic dreapta pe un fișier în Finder și alege **Convertește în** ca să-l salvezi în alt format: o imagine ca JPEG, PNG, HEIC, GIF, TIFF sau PDF, un video ca MP4, MOV sau doar sunetul, muzica ca M4A, WAV sau AIFF. Originalul rămâne neschimbat și nimic nu pleacă de pe Mac. Se activează separat de copia mai mică. Implicit dezactivat.
 
-**Modul Joc.** Adaugă-ți jocurile și, cât timp joci, Mac-ul nu te scoate din joc. Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc, ⌘Q și ⌘W nu îl închid din greșeală, cursorul nu alunecă spre Dock, bara de meniu sau alt ecran, limba tastaturii nu se schimbă, iar ecranul rămâne aprins. Fiecare dintre acestea are propriul comutator pe pagina Jocuri, iar pika-tools îți sugerează jocurile pe care le găsește pe Mac. Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. Imediat ce ieși din joc, totul merge ca de obicei. Implicit dezactivat.
+**Modul Joc.** Adaugă-ți jocurile și, cât timp joci, Mac-ul nu te scoate din joc. Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc, ⌘Q și ⌘W nu îl închid din greșeală, cursorul nu alunecă spre Dock, bara de meniu sau alt ecran, limba tastaturii nu se schimbă, iar ecranul rămâne aprins. Fiecare dintre acestea are propriul comutator pe pagina Jocuri, iar pika-tools îți sugerează jocurile pe care le găsește pe Mac. În joc, Control devine o tastă simplă: Control-clic rămâne un clic obișnuit, iar Control+Spațiu sau Control cu săgețile nu schimbă limba sau desktopul. Recunoaște și Minecraft: adaugă Minecraft Launcher sau CurseForge, iar modul pornește chiar în Minecraft. Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. Imediat ce ieși din joc, totul merge ca de obicei. Implicit dezactivat.
 
-Fiecare instrument are propriul comutator în meniu și în configurări. Ai nevoie din nou de Control+C obișnuit? Dezactivează instrumentul respectiv.
+Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: o săgeată cu un clic când instrumentele funcționează, o săgeată tăiată când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
 
@@ -102,7 +100,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
-- **Tastatură**: scurtături cu Control, schimbarea limbii, repetarea tastelor, Home și End.
+- **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.

@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Det gick inte att söka efter uppdateringar";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Kan inte skriva till appens mapp. Uppdatera med brew eller install.sh";
 "Download failed. Try again later" = "Hämtningen misslyckades. Försök igen senare";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ fungerar som en vanlig tangent: inga kortkommandon, ingen ⌃-klicksmeny";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Håll ned ⌥ och tryck på ⇧: nästa språk. Håll ned ⇧ och tryck på ⌥: föregående";
 "All set" = "Allt klart";
 "pika-tools needs two permissions" = "pika-tools behöver två behörigheter";
@@ -259,7 +258,6 @@
 "Faster" = "Snabbare";
 "Hold the first key, tap the second" = "Håll första tangenten, tryck på den andra";
 "Mac stays awake with the lid closed" = "Datorn förblir vaken med stängt lock";
-"No shortcuts, no right-click menu" = "Inga kortkommandon, ingen högerklicksmeny";
 "Return opens, F2 renames" = "Return öppnar, F2 byter namn";
 "Repeats instead of the accent menu" = "Upprepar i stället för accentmenyn";
 "Right-click in a folder › New File" = "Högerklicka i en mapp › Ny fil";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Sedan flyttar Klistra in dem";
 "Your Mac stays awake until you quit pika-tools" = "Datorn förblir vaken tills du avslutar pika-tools";
 "macOS will ask for your administrator password." = "macOS frågar efter administratörslösenordet.";
-"Works as usual in these apps" = "Fungerar som vanligt i de här apparna";
 "Lines for apps, pixels for games" = "Rader för appar, pixlar för spel";
 "Add the Open URLs action in Shortcuts, with a link." = "Lägg till åtgärden Öppna webbadresser med en länk i Genvägar.";
-"Block Control shortcuts" = "Blockera kortkommandon med Kontroll";
 "Fixes for Finder" = "Fixar för Finder";
 "Fixes for the keyboard" = "Fixar för tangentbordet";
 "Fixes for the mouse" = "Fixar för musen";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "Spelet stängs inte av misstag";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q och ⌘W fungerar inte i spelet. Tryck på ⇧⌘Q för att avsluta";
 "The pointer stays in the game" = "Pekaren stannar i spelet";
+"⌃ stays in the game" = "⌃ stannar i spelet";
+"⌃-click menu" = "⌃-klicksmeny";
+"Menu bar" = "Menyraden";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, menyraden och aktiva hörn dyker inte upp, och pekaren glider inte över till en annan skärm";
 "The keyboard language doesn’t change" = "Tangentbordsspråket ändras inte";
 "If it switches by accident, it comes back right away" = "Byts det av misstag kommer det tillbaka direkt";

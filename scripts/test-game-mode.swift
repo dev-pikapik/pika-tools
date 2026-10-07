@@ -16,17 +16,59 @@ enum TestGameMode {
         precondition(!GameRules.looksLikeGame(id: "com.apple.Safari", category: "public.app-category.productivity", supportsGameMode: false, path: "/Applications/Safari.app"))
         print("detection: ok")
 
-        let all = GameRules.searchKeys + GameRules.switchingKeys + GameRules.appSwitcherKeys + GameRules.layoutKeys
+        let all = GameRules.searchKeys + GameRules.switchingKeys + GameRules.appSwitcherKeys + GameRules.controlKeys
         precondition(Set(all).count == all.count)
         precondition(GameRules.neverBlocked.isDisjoint(with: all))
-        precondition(GameRules.hotKeys(search: false, switching: false, layout: false, appSwitcher: true).isEmpty)
-        precondition(GameRules.hotKeys(search: true, switching: false, layout: false, appSwitcher: true) == GameRules.searchKeys)
-        precondition(GameRules.hotKeys(search: false, switching: true, layout: false, appSwitcher: true).contains(1))
-        precondition(!GameRules.hotKeys(search: false, switching: true, layout: false, appSwitcher: false).contains(1))
-        precondition(!GameRules.hotKeys(search: true, switching: true, layout: true, appSwitcher: false).contains(2))
-        precondition(GameRules.hotKeys(search: false, switching: false, layout: true, appSwitcher: true) == [60, 61, 156])
+        precondition(GameRules.hotKeys(search: false, switching: false, control: false, appSwitcher: true).isEmpty)
+        precondition(GameRules.hotKeys(search: true, switching: false, control: false, appSwitcher: true) == GameRules.searchKeys)
+        precondition(GameRules.hotKeys(search: false, switching: true, control: false, appSwitcher: true).contains(1))
+        precondition(!GameRules.hotKeys(search: false, switching: true, control: false, appSwitcher: false).contains(1))
+        precondition(!GameRules.hotKeys(search: true, switching: true, control: true, appSwitcher: false).contains(2))
+        precondition(GameRules.hotKeys(search: false, switching: false, control: true, appSwitcher: true) == GameRules.controlKeys)
+        precondition(Set(GameRules.controlKeys).isSuperset(of: [7, 32, 33, 57, 60, 61, 79, 81, 118, 126, 159]))
         precondition(GameRules.searchKeys.contains(64) && GameRules.switchingKeys.contains(37) && GameRules.switchingKeys.contains(233))
         print("groups: ok")
+
+        let control: CGEventFlags = [.maskControl, .maskCommand, .maskShift]
+        for type in [CGEventType.leftMouseDown, .leftMouseUp, .leftMouseDragged] {
+            precondition(GameRules.clickFlags(type, control, playing: true, blocksControl: true) == [.maskCommand, .maskShift])
+            precondition(GameRules.clickFlags(type, control, playing: false, blocksControl: true) == control)
+            precondition(GameRules.clickFlags(type, control, playing: true, blocksControl: false) == control)
+        }
+        for type in [CGEventType.keyDown, .keyUp, .flagsChanged, .rightMouseDown, .otherMouseDown, .scrollWheel, .mouseMoved] {
+            precondition(GameRules.clickFlags(type, control, playing: true, blocksControl: true) == control)
+        }
+        print("control: ok")
+
+        let java = "/Users/me/Library/Application Support/minecraft/runtime/java-runtime-delta/mac-os-arm64/java-runtime-delta/jre.bundle/Contents/Home/bin/java"
+        let curse = "/Users/me/Documents/curseforge/minecraft/Install/runtime/java-runtime-epsilon/mac-os-arm64/java-runtime-epsilon/jre.bundle/Contents/Home/bin/java"
+        let mojang = ["com.mojang.minecraftlauncher"], overwolf = ["com.overwolf.curseforge"]
+        precondition(GameRules.isGame(id: nil, name: "java", path: java, in: mojang))
+        precondition(GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: java, in: mojang))
+        precondition(GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: curse, in: overwolf))
+        precondition(GameRules.isGame(id: nil, name: "Minecraft 1.21", path: "/usr/bin/java", in: mojang))
+        precondition(!GameRules.isGame(id: nil, name: "java", path: java, in: []))
+        precondition(!GameRules.isGame(id: nil, name: "java", path: "/usr/bin/java", in: mojang))
+        precondition(!GameRules.isGame(id: "com.mojang.minecraftlauncher", name: "Minecraft Launcher", path: "/Applications/Minecraft.app/Contents/MacOS/launcher", in: mojang))
+        precondition(!GameRules.isGame(id: "com.overwolf.curseforge", name: "CurseForge", path: "/Applications/CurseForge.app/Contents/MacOS/CurseForge", in: overwolf))
+        precondition(GameRules.isGame(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game", in: ["com.a.game"]))
+        precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "/opt/wine", in: ["Wine Game"]))
+        precondition(!GameRules.isGame(id: "com.a.game", name: "Game", path: java, in: ["com.b.game"]))
+        print("minecraft: ok")
+
+        for (old, migrated) in [(true as Bool?, true as Bool?), (false, nil), (nil, nil)] {
+            let suite = "test-game-mode-migrate-\(UUID().uuidString)"
+            let defaults = UserDefaults(suiteName: suite)!
+            if let old { defaults.set(old, forKey: "ctrl-keys") }
+            defaults.set(["com.apple.Terminal"], forKey: "ctrl-keys-excluded")
+            GameRules.migrateControl(defaults)
+            precondition(defaults.object(forKey: "game-mode-control") as? Bool == migrated)
+            precondition(defaults.object(forKey: "ctrl-keys") == nil && defaults.object(forKey: "ctrl-keys-excluded") == nil)
+            GameRules.migrateControl(defaults)
+            precondition(defaults.object(forKey: "game-mode-control") as? Bool == migrated)
+            defaults.removePersistentDomain(forName: suite)
+        }
+        print("migration: ok")
 
         let folder = FileManager.default.temporaryDirectory.appendingPathComponent("test-game-mode-\(UUID().uuidString)")
         let suite = folder.path

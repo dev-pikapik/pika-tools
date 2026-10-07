@@ -7,7 +7,7 @@
 [![Licencia: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Descargas](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: bloquea los atajos con Control, protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas, repite una tecla mantenida, desactiva la aceleración del ratón, desplaza la rueda del ratón por líneas, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
+Una pequeña app para la barra de menús de macOS que mejora las teclas, las ventanas y el Dock: protege ⌘Q y ⌘W, cambia de idioma con Opción+Mayúsculas, repite una tecla mantenida, desactiva la aceleración del ratón, desplaza la rueda del ratón por líneas, hace que los botones laterales del ratón vayan atrás y adelante, cierra las apps cuando cierras su última ventana, oculta una app con un clic en el Dock y mantiene tu Mac despierto.
 
 ## Instalación
 
@@ -39,8 +39,6 @@ La app detecta el cambio en un par de segundos, sin necesidad de reiniciar.
 pika-tools no graba, no guarda ni envía nada de lo que escribes o pulsas. Los eventos se procesan en memoria y se transmiten al instante. La única conexión de red es la búsqueda de actualizaciones, que pregunta a GitHub cuál es la última versión.
 
 ## Funciones
-
-**Bloquear atajos con Control.** Control se convierte en una tecla normal. Las apps siguen viendo que está pulsada, pero macOS ya no la convierte en atajos: Control+Espacio no cambia la fuente de entrada, Control+flechas no cambian de escritorio y Control+clic es un clic normal en vez de abrir un menú contextual. El clic secundario y el toque con dos dedos funcionan como siempre. Útil en juegos y en sesiones de escritorio remoto, donde Control tiene su propia función. Puedes añadir las apps en las que Control debe funcionar como siempre, por ejemplo un cliente de escritorio remoto: el bloqueo no les afecta.
 
 **Proteger ⌘Q y ⌘W.** ⌘Q y ⌘W por sí solos no hacen nada, así que no cerrarás una app ni una ventana por accidente. Añade Mayúsculas para hacerlo a propósito: ⇧⌘Q sale de la app y ⇧⌘W cierra la ventana. Funciona en todas las apps. Cada tecla tiene su propio interruptor. Desactivado por omisión.
 
@@ -78,9 +76,9 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Conversión en el Finder.** Haz clic derecho en un archivo en el Finder y elige **Convertir a** para guardarlo en otro formato: una imagen como JPEG, PNG, HEIC, GIF, TIFF o PDF, un vídeo como MP4, MOV o solo su sonido, la música como M4A, WAV o AIFF. El original se queda tal cual y nada sale de tu Mac. Se activa por separado de la copia más ligera. Desactivado por omisión.
 
-**Modo de juego.** Añade tus juegos y, mientras juegas, tu Mac no te saca del juego. Spotlight, Siri, ⌘Tab, Mission Control y los deslizamientos entre escritorios no se abren encima del juego, ⌘Q y ⌘W no lo cierran por accidente, el puntero no se escapa al Dock, a la barra de menús ni a otra pantalla, el idioma del teclado no cambia y la pantalla se mantiene encendida. Cada una de estas opciones tiene su propio interruptor en la página Juegos, y pika-tools te sugiere los juegos que encuentra en tu Mac. Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc siempre funciona. En cuanto sales del juego, todo funciona como siempre. Desactivado por omisión.
+**Modo de juego.** Añade tus juegos y, mientras juegas, tu Mac no te saca del juego. Spotlight, Siri, ⌘Tab, Mission Control y los deslizamientos entre escritorios no se abren encima del juego, ⌘Q y ⌘W no lo cierran por accidente, el puntero no se escapa al Dock, a la barra de menús ni a otra pantalla, el idioma del teclado no cambia y la pantalla se mantiene encendida. Cada una de estas opciones tiene su propio interruptor en la página Juegos, y pika-tools te sugiere los juegos que encuentra en tu Mac. En el juego, Control es una tecla normal: Control-clic sigue siendo un clic, y Control+Espacio o Control con flechas no cambian el idioma ni el escritorio. También reconoce Minecraft: añade Minecraft Launcher o CurseForge, y el modo se activa dentro del propio Minecraft. Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc siempre funciona. En cuanto sales del juego, todo funciona como siempre. Desactivado por omisión.
 
-Cada herramienta tiene su propio interruptor en el menú y en los ajustes. ¿Necesitas recuperar el Control+C normal? Desactiva esa herramienta.
+Cada herramienta tiene su propio interruptor en el menú y en los ajustes.
 
 El icono de la barra de menús muestra el estado de un vistazo: una flecha con un clic cuando las herramientas funcionan, una flecha tachada cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
 
@@ -102,7 +100,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pika-
 
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
-- **Teclado**: atajos con Control, cambio de idioma, repetición de teclas, Home y End.
+- **Teclado**: cambio de idioma, repetición de teclas, Home y End.
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: ocultar con un clic en el Dock.

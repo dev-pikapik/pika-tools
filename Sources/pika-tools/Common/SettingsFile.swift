@@ -9,13 +9,13 @@ struct SettingsFile {
     static let maxSize = 2_000_000
     static let keys: Set<String> = [
         "appearance", "AppleLanguages", "open-at-login", "check-updates",
-        "ctrl-keys", "ctrl-keys-excluded", "command-keys-quit", "command-keys-close", "input-switch", "key-repeat", "home-end", "home-end-excluded",
+        "command-keys-quit", "command-keys-close", "input-switch", "key-repeat", "home-end", "home-end-excluded",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
         "finder-open", "finder-cut", "finder-delete",
-        "game-mode", "game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-cursor", "game-mode-layout", "game-mode-display",
+        "game-mode", "game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-control", "game-mode-cursor", "game-mode-layout", "game-mode-display",
         "game-mode-games", "game-mode-not-games",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",

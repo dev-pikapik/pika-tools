@@ -7,7 +7,7 @@
 [![Licence: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
 [![Stažení](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
 
-Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: blokuje zkratky s Controlem, chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift, opakuje drženou klávesu, vypne zrychlení myši, posouvá kolečko myši po řádcích, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
+Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift, opakuje drženou klávesu, vypne zrychlení myši, posouvá kolečko myši po řádcích, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
 
 ## Instalace
 
@@ -39,8 +39,6 @@ Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
 
 ## Funkce
-
-**Blokování zkratek s Controlem.** Control se stane obyčejnou klávesou. Aplikace stále vidí, že je stisknutý, ale macOS z něj už nedělá zkratky: Control+mezerník nepřepíná zdroj vstupu, Control+šipky nepřepínají plochy a kliknutí s Controlem je obyčejné kliknutí místo kontextové nabídky. Kliknutí pravým tlačítkem a klepnutí dvěma prsty fungují jako obvykle. Hodí se ve hrách a při práci se vzdálenou plochou, kde má Control vlastní úlohu. Lze sestavit seznam aplikací, ve kterých Control funguje jako obvykle, například klienta vzdálené plochy: blokování se jich netýká.
 
 **Ochrana ⌘Q a ⌘W.** Samotné ⌘Q a ⌘W nic nedělají, takže omylem neukončíte aplikaci ani nezavřete okno. Přidejte Shift, když to chcete udělat záměrně: ⇧⌘Q ukončí, ⇧⌘W zavře. Funguje ve všech aplikacích. Každá klávesa má vlastní přepínač. Ve výchozím stavu vypnuto.
 
@@ -78,9 +76,9 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Převod ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Převést na** a soubor se uloží v jiném formátu: obrázek jako JPEG, PNG, HEIC, GIF, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudba jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Zapíná se zvlášť od menší kopie. Ve výchozím stavu vypnuto.
 
-**Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej, jazyk klávesnice se nezmění a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pika-tools vám nabídne hry, které na vašem Macu najde. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
+**Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej, jazyk klávesnice se nezmění a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pika-tools vám nabídne hry, které na vašem Macu najde. Ve hře je Control obyčejná klávesa: Control-kliknutí zůstane obyčejným kliknutím a Control+mezerník ani Control se šipkami nepřepnou jazyk ani plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
 
-Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
+Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: šipka s kliknutím, když nástroje fungují, přeškrtnutá šipka, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
 
@@ -102,7 +100,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Bez spánku**: délka, volby pro displej a víko.
-- **Klávesnice**: zkratky s Controlem, přepínání jazyka, opakování kláves, Home a End.
+- **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.

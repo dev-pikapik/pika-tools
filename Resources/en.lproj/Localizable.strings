@@ -14,7 +14,6 @@
 "Couldn’t check for updates" = "Couldn’t check for updates";
 "Can’t write to the app’s folder. Update with brew or install.sh" = "Can’t write to the app’s folder. Update with brew or install.sh";
 "Download failed. Try again later" = "Download failed. Try again later";
-"⌃ works as a plain key: no shortcuts, no ⌃-click menu" = "⌃ works as a plain key: no shortcuts, no ⌃-click menu";
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous";
 "All set" = "All set";
 "pika-tools needs two permissions" = "pika-tools needs two permissions";
@@ -259,7 +258,6 @@
 "Faster" = "Faster";
 "Hold the first key, tap the second" = "Hold the first key, tap the second";
 "Mac stays awake with the lid closed" = "Mac stays awake with the lid closed";
-"No shortcuts, no right-click menu" = "No shortcuts, no right-click menu";
 "Return opens, F2 renames" = "Return opens, F2 renames";
 "Repeats instead of the accent menu" = "Repeats instead of the accent menu";
 "Right-click in a folder › New File" = "Right-click in a folder › New File";
@@ -273,10 +271,8 @@
 "Then paste to move them" = "Then paste to move them";
 "Your Mac stays awake until you quit pika-tools" = "Your Mac stays awake until you quit pika-tools";
 "macOS will ask for your administrator password." = "macOS will ask for your administrator password.";
-"Works as usual in these apps" = "Works as usual in these apps";
 "Lines for apps, pixels for games" = "Lines for apps, pixels for games";
 "Add the Open URLs action in Shortcuts, with a link." = "Add the Open URLs action in Shortcuts, with a link.";
-"Block Control shortcuts" = "Block Control shortcuts";
 "Fixes for Finder" = "Fixes for Finder";
 "Fixes for the keyboard" = "Fixes for the keyboard";
 "Fixes for the mouse" = "Fixes for the mouse";
@@ -304,6 +300,9 @@
 "The game doesn’t close by accident" = "The game doesn’t close by accident";
 "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q" = "⌘Q and ⌘W don’t work in the game. To quit, press ⇧⌘Q";
 "The pointer stays in the game" = "The pointer stays in the game";
+"⌃ stays in the game" = "⌃ stays in the game";
+"⌃-click menu" = "⌃-click menu";
+"Menu bar" = "Menu bar";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen";
 "The keyboard language doesn’t change" = "The keyboard language doesn’t change";
 "If it switches by accident, it comes back right away" = "If it switches by accident, it comes back right away";

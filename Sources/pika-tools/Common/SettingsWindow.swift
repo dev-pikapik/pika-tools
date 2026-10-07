@@ -83,8 +83,6 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
         ] : []) + [
-            SettingsItem(tab: .keyboard, title: String(localized: "Block Control shortcuts"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
@@ -115,6 +113,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "Search and Siri"), synonyms: "Spotlight, Siri, fn, globe key, emoji, dictation"),
             SettingsItem(tab: .games, title: String(localized: "Other apps and desktops"), synonyms: "Command Tab, Mission Control, desktops, Spaces, swipe, hide, minimize"),
             SettingsItem(tab: .games, title: String(localized: "The game doesn’t close by accident")),
+            SettingsItem(tab: .games, title: String(localized: "⌃ stays in the game"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),
             SettingsItem(tab: .games, title: String(localized: "The keyboard language doesn’t change"), synonyms: "input source, keyboard layout, Caps Lock"),
             SettingsItem(tab: .games, title: String(localized: "The screen stays on")),
