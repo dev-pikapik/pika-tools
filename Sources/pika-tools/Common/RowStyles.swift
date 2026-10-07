@@ -72,7 +72,6 @@ struct KeyCaps: View {
         HStack(spacing: 3) {
             ForEach(Array(keys.enumerated()), id: \.offset) { KeyCap(symbol: $0.element) }
         }
-        .frame(minWidth: 51, alignment: .leading)
         .accessibilityHidden(true)
     }
 }
