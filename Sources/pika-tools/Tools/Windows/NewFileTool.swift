@@ -39,7 +39,7 @@ enum NewFile {
         else { return }
         var isFolder: ObjCBool = false
         guard FileManager.default.fileExists(atPath: path, isDirectory: &isFolder), isFolder.boolValue else { return }
-        DispatchQueue.main.async { ask(in: URL(fileURLWithPath: path, isDirectory: true)) }
+        RunLoop.main.perform { ask(in: URL(fileURLWithPath: path, isDirectory: true)) }
     }
 
     private static func ask(in folder: URL) {
