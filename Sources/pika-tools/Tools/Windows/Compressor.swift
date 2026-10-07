@@ -11,8 +11,8 @@ struct CompressorError: LocalizedError {
 
 enum Compressor {
     private static let videoTypes: [String: AVFileType] = ["mov": .mov, "mp4": .mp4, "m4v": .m4v]
-    private static let imageTypes: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "pdf"]
-    private static let soundTypes: Set<String> = ["wav", "aiff", "aif", "caf"]
+    private static let imageTypes: Set<String> = ["png", "jpg", "jpeg", "heic", "heif", "tif", "tiff", "gif", "bmp", "pdf"]
+    private static let soundTypes: Set<String> = ["wav", "aiff", "aif", "aifc", "caf", "flac"]
 
     static func canCompress(_ url: URL) -> Bool {
         let ext = url.pathExtension.lowercased()
@@ -20,7 +20,8 @@ enum Compressor {
     }
 
     static func fileExtension(for url: URL) -> String {
-        soundTypes.contains(url.pathExtension.lowercased()) ? "m4a" : url.pathExtension
+        let ext = url.pathExtension.lowercased()
+        return soundTypes.contains(ext) ? "m4a" : ext == "bmp" ? "png" : url.pathExtension
     }
 
     static func compress(_ source: URL, to output: URL, progress: @escaping @Sendable (Double) -> Void) async throws {
@@ -30,8 +31,9 @@ enum Compressor {
         case "jpg", "jpeg": try reencode(source, to: output, quality: 0.8)
         case "heic", "heif": try reencode(source, to: output, quality: 0.7)
         case "tif", "tiff", "gif": try reencode(source, to: output, quality: nil)
+        case "bmp": try reencode(source, to: output, as: .png, quality: nil)
         case "pdf": try pdf(source, to: output)
-        case "wav", "aiff", "aif", "caf": try await Converter.convert(source, to: "m4a", output: output, progress: progress)
+        case "wav", "aiff", "aif", "aifc", "caf", "flac": try await Converter.convert(source, to: "m4a", output: output, progress: progress)
         default:
             guard let type = videoTypes[ext] else { throw CompressorError() }
             try await export(source, to: output, type: type, preset: AVAssetExportPresetHEVCHighestQuality, progress: progress)

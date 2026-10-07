@@ -130,7 +130,7 @@ enum Compress {
             .filter { (try? $0.resourceValues(forKeys: [.isRegularFileKey]).isRegularFile) == true }
             .filter { file in
                 guard let target else { return Compressor.canCompress(file) }
-                return Converter.targets(for: file).contains(target) && Converter.format(of: file) != target
+                return ConvertFormats.targets(for: file).contains(target) && ConvertFormats.format(of: file) != target
             }
             .map { CompressJob(file: $0, target: target) }
         guard !jobs.isEmpty else { return }
