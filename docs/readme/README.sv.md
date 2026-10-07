@@ -54,6 +54,8 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma inställning till pixlar och väljer 1 till 200 pixlar per klick, 40 som standard. Reglaget visar också hur stor del av skärmhöjden det motsvarar.
 
+**Egen rullningsriktning för musen.** macOS har en enda inställning för naturlig rullning, för både mus och styrplatta. Slå på det här och välj hur mushjulet rullar: **Klassisk**, som i Windows, eller **Naturlig**, som på en styrplatta. Styrplattan behåller riktningen från Systeminställningar. Välj samma sak på alla dina Mac-datorer så rullar musen likadant överallt, även när du flyttar den till en annan Mac med Universell kontroll. Bara för möss. Av som standard, Klassisk när du slår på det.
+
 **Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Safari, Finder och andra Apple-appar, i Firefox, Opera och ForkLift, som en svepning på styrplattan. Andra appar, till exempel JetBrains IDE:er, får knapparna som de är och hanterar dem på sitt eget sätt. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen, precis som i Windows. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
@@ -67,6 +69,8 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 **Enter öppnar filer i Finder.** Markera filer i ett Finder-fönster eller på skrivbordet och tryck på Return eller Enter, så öppnas de, som i Windows. F2 eller fn F2 byter namn på den markerade filen. I textfält, till exempel när du skriver ett namn, fungerar tangenterna som vanligt. Av som standard.
 
 **⌘X klipper ut filer i Finder.** Markera filer och tryck på ⌘X, öppna mappen du vill ha dem i och tryck på ⌘V, så flyttas filerna dit i stället för att kopieras, som Klipp ut och Klistra in i Windows. ⌘C avbryter utklippningen. Av som standard.
+
+**Mindre kopia och konvertering i Finder.** Högerklicka på en fil i Finder. **Skapa mindre kopia** sparar en lättare version av ett foto, en PDF eller en video bredvid, ofta flera gånger mindre. **Konvertera till** sparar filen i ett annat format: en bild som JPEG, PNG, HEIC, TIFF eller PDF, en video som MP4, MOV eller bara ljudet, musik som M4A, WAV eller AIFF. Originalet förblir som det är och inget lämnar din Mac. Av som standard.
 
 Varje verktyg har ett eget reglage i menyn och i inställningarna. Behöver du ett vanligt kontroll+C igen? Stäng av det verktyget.
 
@@ -91,10 +95,10 @@ Keep Awake, skärmläget och läget med stängt lock kan läggas på en knapp i 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Håll vaken**: tid, alternativ för skärm och lock.
 - **Tangentbord**: kortkommandon med kontroll, byte av språk, tangentupprepning.
-- **Mus**: pekaracceleration och hastighet, rullning per rad, sidoknappar.
+- **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
-- **Finder**: ny fil, öppna med Retur och klipp ut med ⌘X.
+- **Finder**: ny fil, mindre kopia och konvertering, öppna med Retur och klipp ut med ⌘X.
 - **Behörigheter**: status för båda behörigheterna, och för iCloud Drive när synkronisering är på, med knappar som öppnar rätt ställe i Systeminställningar.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 

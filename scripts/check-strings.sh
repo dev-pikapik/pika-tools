@@ -20,9 +20,11 @@ if [ -z "$DIR" ]; then
         ${FLAGS[@]+"${FLAGS[@]}"} \
         -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
         "${SOURCES[@]}" -o "$DIR/app.o"
-    swiftc -wmo -c -module-name NewFile -target arm64-apple-macos14.0 -application-extension \
-        -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
-        Extensions/NewFile/*.swift -o "$DIR/appex.o"
+    for EXT in NewFile Compress; do
+        swiftc -wmo -c -module-name "$EXT" -target arm64-apple-macos14.0 -application-extension \
+            -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
+            Extensions/"$EXT"/*.swift -o "$DIR/$EXT.o"
+    done
 fi
 
 python3 - "$DIR" <<'PY'
@@ -61,7 +63,7 @@ for path in sorted(glob.glob(sys.argv[1] + '/**/*.stringsdata', recursive=True))
     data = json.load(open(path))
     for table, items in data.get('tables', {}).items():
         for item in items:
-            where = f"{os.path.relpath(data['source'])}:{item['location']['startingLine']}"
+            where = f"{os.path.relpath(data['source'])}:{item.get('location', {}).get('startingLine', '?')}"
             if table != 'Localizable':
                 fail(f'{where}: table "{table}" is not Localizable')
             code.setdefault(item['key'], where)

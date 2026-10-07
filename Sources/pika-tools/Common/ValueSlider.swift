@@ -10,6 +10,17 @@ struct ValueSlider: View {
     var digits = 0
     var mark: Double?
 
+    private var tickValues: [Double] {
+        let gap = (range.upperBound - range.lowerBound) / Double(max(ticks - 1, 1))
+        let values = (0..<ticks).map { range.lowerBound + Double($0) * gap }
+        guard let mark, !values.contains(where: isMark) else { return values }
+        return (values + [mark]).sorted()
+    }
+
+    private func isMark(_ tick: Double) -> Bool {
+        mark.map { abs($0 - tick) < step / 100 } ?? false
+    }
+
     var body: some View {
         let clamped = Binding<Double>(
             get: { value },
@@ -17,7 +28,20 @@ struct ValueSlider: View {
         )
         HStack(alignment: .firstTextBaseline, spacing: 8) {
             VStack(spacing: 2) {
-                TickSlider(title: title, value: clamped, range: range, ticks: ticks, mark: mark)
+                if #available(macOS 26, *) {
+                    Slider(value: clamped, in: range, neutralValue: mark) {
+                        Text(title)
+                    } ticks: {
+                        SliderTickContentForEach(tickValues, id: \.self) { tick in
+                            SliderTick(tick) {
+                                if isMark(tick) { Circle().fill(Color.accentColor).frame(width: 4, height: 4) }
+                            }
+                        }
+                    }
+                    .labelsHidden()
+                } else {
+                    TickSlider(title: title, value: clamped, range: range, ticks: ticks, mark: mark)
+                }
                 HStack {
                     Text("Slower")
                     Spacer()

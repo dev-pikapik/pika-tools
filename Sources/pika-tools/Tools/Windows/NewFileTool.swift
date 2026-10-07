@@ -1,82 +1,32 @@
 import AppKit
-import FinderSync
 import SwiftUI
 
-@Observable
 final class NewFileTool: Tool {
     let id = "new-file"
     let icon = "doc.badge.plus"
     var title: String { String(localized: "New File in Finder") }
     let tab = SettingsTab.finder
+    private let finder = FinderExtension(bundle: "NewFile", key: "new-file")
 
-    private(set) var isActive = false
-    private(set) var needsSettings = false
+    var isActive: Bool { finder.isActive }
 
     var isEnabled: Bool {
-        get { isActive }
-        set {
-            if newValue, let plugIns = Bundle.main.builtInPlugInsURL {
-                Self.pluginkit("-a", plugIns.appending(path: "NewFile.appex").path)
-            }
-            Self.pluginkit("-e", newValue ? "use" : "ignore", "-i", Self.extensionID)
-            refresh()
-            needsSettings = newValue && !isActive
-        }
-    }
-
-    private static let extensionID = (Bundle.main.bundleIdentifier ?? "com.pesotchi.pika-tools") + ".new-file"
-
-    init() {
-        refresh()
+        get { finder.isEnabled }
+        set { finder.isEnabled = newValue }
     }
 
     var settingsView: AnyView {
-        AnyView(NewFileSettings(tool: self))
+        AnyView(FinderExtensionSettings(
+            tool: self,
+            finder: finder,
+            subtitle: Text("Right-click in a folder › New File"),
+            hint: Text("Right-click in any folder"),
+            help: Text("Right-click in Finder or on the Desktop › New File, then type a name. .txt by default.")
+        ) { AnyView(NewFileArt(on: $0)) })
     }
 
-    func refresh() {
-        isActive = Self.pluginkit("-m", "-i", Self.extensionID).hasPrefix("+")
-        if isActive {
-            needsSettings = false
-            Self.ignoreOtherCopies()
-        }
-        if UserDefaults.standard.object(forKey: id) as? Bool != isActive {
-            UserDefaults.standard.set(isActive, forKey: id)
-        }
-    }
-
-    func load() {
-        let saved = UserDefaults.standard.bool(forKey: id)
-        if saved != isActive { isEnabled = saved }
-    }
-
-    func openExtensionSettings() {
-        FIFinderSyncController.showExtensionManagementInterface()
-    }
-
-    private static func ignoreOtherCopies() {
-        guard !extensionID.contains(".dev.") else { return }
-        for line in pluginkit("-m", "-p", "com.apple.FinderSync").split(separator: "\n") where line.hasPrefix("+") {
-            let id = line.split(whereSeparator: \.isWhitespace).last?.prefix { $0 != "(" } ?? ""
-            if id.hasPrefix("com.pesotchi.pika-tools"), id.hasSuffix(".new-file"), id != extensionID {
-                pluginkit("-e", "ignore", "-i", String(id))
-            }
-        }
-    }
-
-    @discardableResult
-    private static func pluginkit(_ arguments: String...) -> String {
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/pluginkit")
-        process.arguments = arguments
-        let pipe = Pipe()
-        process.standardOutput = pipe
-        process.standardError = FileHandle.nullDevice
-        guard (try? process.run()) != nil else { return "" }
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        process.waitUntilExit()
-        return String(decoding: data, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
-    }
+    func refresh() { finder.refresh() }
+    func load() { finder.load() }
 }
 
 enum NewFile {
@@ -200,32 +150,5 @@ struct NewFileArt: View {
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
         .loop($tick, Self.durations)
-    }
-}
-
-private struct NewFileSettings: View {
-    @Bindable var tool: NewFileTool
-    @Environment(\.inSettings) private var inSettings
-
-    var body: some View {
-        if inSettings { NewFileArt(on: tool.isEnabled) }
-        ToggleRow(
-            icon: tool.icon,
-            title: tool.title,
-            subtitle: Text("Right-click in a folder › New File"),
-            hint: Text("Right-click in any folder"),
-            help: Text("Right-click in Finder or on the Desktop › New File, then type a name. .txt by default."),
-            isOn: $tool.isEnabled
-        )
-        if tool.needsSettings {
-            if inSettings {
-                LabeledContent("Turn it on in System Settings") {
-                    Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { tool.openExtensionSettings() }
-                }
-            } else {
-                Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { tool.openExtensionSettings() }
-                    .padding([.horizontal, .bottom], 10)
-            }
-        }
     }
 }

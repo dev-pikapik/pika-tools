@@ -54,6 +54,8 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně přepněte stejné nastavení na pixely a vyberte 1 až 200 pixelů na cvaknutí, výchozí je 40. Posuvník také ukazuje, jak velkou část výšky obrazovky to tvoří.
 
+**Vlastní směr posouvání pro myš.** macOS má jen jeden přepínač přirozeného posouvání, pro myš i trackpad zároveň. Zapněte tuto volbu a vyberte, jak má kolečko myši posouvat: **Klasický**, jako ve Windows, nebo **Přirozený**, jako na trackpadu. Trackpad si ponechá směr z Nastavení systému. Vyberte totéž na všech svých Macích a myš bude všude posouvat stejně, i když ji přes Společné ovládání přesunete na jiný Mac. Jen pro myši. Ve výchozím stavu vypnuto, po zapnutí Klasický.
+
 **Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed v Safari, ve Finderu a dalších aplikacích Apple, ve Firefoxu, Opeře a ForkLiftu, stejně jako přejetí po trackpadu. Ostatní aplikace, například vývojová prostředí JetBrains, dostanou tlačítka beze změny a zpracují je po svém. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí, stejně jako ve Windows. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
@@ -67,6 +69,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 **Enter otevírá soubory ve Finderu.** Vyberte soubory v okně Finderu nebo na ploše a stiskněte Return nebo Enter, soubory se otevřou, stejně jako ve Windows. F2 nebo fn F2 přejmenuje vybraný soubor. V textových polích, například když píšete název, klávesy fungují jako obvykle. Ve výchozím stavu vypnuto.
 
 **⌘X vyjímá soubory ve Finderu.** Vyberte soubory a stiskněte ⌘X, otevřete cílovou složku a stiskněte ⌘V: soubory se tam přesunou místo zkopírování, jako Vyjmout a Vložit ve Windows. ⌘C vyjmutí zruší. Ve výchozím stavu vypnuto.
+
+**Menší kopie a převod ve Finderu.** Klikněte pravým na soubor ve Finderu. **Vytvořit menší kopii** uloží vedle lehčí verzi fotky, PDF nebo videa, často několikrát menší. **Převést na** uloží soubor v jiném formátu: obrázek jako JPEG, PNG, HEIC, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudbu jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení. Potřebujete zpátky obyčejné Control+C? Vypněte ten nástroj.
 
@@ -91,10 +95,10 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Bez spánku**: délka, volby pro displej a víko.
 - **Klávesnice**: zkratky s Controlem, přepínání jazyka, opakování kláves.
-- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, boční tlačítka.
+- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.
-- **Finder**: nový soubor, otevírání klávesou Enter a vyjmutí pomocí ⌘X.
+- **Finder**: nový soubor, menší kopie a převod, otevírání klávesou Enter a vyjmutí pomocí ⌘X.
 - **Oprávnění**: stav obou oprávnění a iCloud Drive, když je zapnutá synchronizace, s tlačítky, která otevřou správné místo v Nastavení systému.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 

@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.0] - Unreleased
+
+### Added
+- “Smaller Copy” in the Finder right-click menu makes a lighter copy of PNG, JPEG, HEIC, TIFF, PDF and video files next to the original. The original stays as it was.
+- “Convert To” in the same menu turns pictures into JPEG, PNG, HEIC, TIFF or PDF, videos into MP4, MOV or M4A sound, and sound files into M4A, WAV or AIFF. The menu only lists formats that make sense for the files you picked.
+- The mouse wheel can scroll its own way, separate from the trackpad. Handy with Universal Control: pick the same direction on each Mac and the mouse feels the same everywhere.
+
+### Changed
+- On macOS 26 and later the speed and scroll sliders are the standard system ones, with the Liquid Glass knob. The fill starts at the usual value, so you can see how far you moved from it.
+
+### Fixed
+- Keep Awake stays on through updates and restarts of pika-tools. A timer keeps counting from where it was, and with the lid closed you are not asked for the password again. Quitting pika-tools from its menu still turns Keep Awake off.
+- The settings window has a sidebar button at the top again, so a sidebar you dragged shut can be opened back.
+- Settings no longer spill over the window edge when the window is narrow and the sidebar is wide.
+
 ## [1.18.2] - Unreleased
 
 ### Fixed

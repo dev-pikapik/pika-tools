@@ -13,6 +13,9 @@ final class KeepAwake {
     static let maxDuration = 365 * 86400
     private static let lidFlagKey = "keep-awake-lid-sleep-disabled"
     private static let legacyUnits = ["minutes": 60, "hours": 3600, "days": 86400, "weeks": 7 * 86400, "months": 30 * 86400]
+    private static let sessionKey = "keep-awake-session"
+    private static let sessionEndKey = "keep-awake-session-end"
+    private static let bridgeKey = "keep-awake-bridge"
 
     let hasLid: Bool = {
         if let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
@@ -167,7 +170,40 @@ final class KeepAwake {
         if newMode != .off { lastMode = newMode }
         now = .now
         endDate = newMode == .timed ? now.addingTimeInterval(TimeInterval(duration)) : nil
+        UserDefaults.standard.set(newMode == .off ? nil : newMode.rawValue, forKey: Self.sessionKey)
+        UserDefaults.standard.set(endDate, forKey: Self.sessionEndKey)
         update()
+    }
+
+    func resume() {
+        let defaults = UserDefaults.standard
+        Self.stopBridge()
+        guard let saved = Mode(rawValue: defaults.string(forKey: Self.sessionKey) ?? ""), saved != .off else { return }
+        let end = defaults.object(forKey: Self.sessionEndKey) as? Date
+        guard saved == .indefinitely || (end ?? .distantPast) > .now else { return set(.off) }
+        mode = saved
+        endDate = saved == .timed ? end : nil
+        now = .now
+        update()
+    }
+
+    func handOff() {
+        guard mode != .off else { return }
+        let bridge = Process()
+        bridge.executableURL = URL(fileURLWithPath: "/usr/bin/caffeinate")
+        let seconds = min(120, max(1, Int(endDate?.timeIntervalSinceNow ?? 120)))
+        bridge.arguments = [keepsDisplayOn ? "-di" : "-i", "-t", String(seconds)]
+        guard (try? bridge.run()) != nil else { return }
+        UserDefaults.standard.set(Int(bridge.processIdentifier), forKey: Self.bridgeKey)
+    }
+
+    private static func stopBridge() {
+        let pid = pid_t(UserDefaults.standard.integer(forKey: bridgeKey))
+        UserDefaults.standard.removeObject(forKey: bridgeKey)
+        guard pid > 0 else { return }
+        var name = [CChar](repeating: 0, count: 64)
+        proc_name(pid, &name, UInt32(name.count))
+        if String(cString: name) == "caffeinate" { kill(pid, SIGTERM) }
     }
 
     private func update() {
@@ -208,10 +244,15 @@ final class KeepAwake {
             UserDefaults.standard.set(false, forKey: Self.lidFlagKey)
             return
         }
-        FileManager.default.createFile(atPath: lidFlag.path, contents: nil)
+        let watched = FileManager.default.fileExists(atPath: lidFlag.path) && Self.sleepDisabled
+        FileManager.default.createFile(atPath: lidFlag.path, contents: Data(String(ProcessInfo.processInfo.processIdentifier).utf8))
+        if watched {
+            lidActive = true
+            UserDefaults.standard.set(true, forKey: Self.lidFlagKey)
+            return
+        }
         let flag = "'" + lidFlag.path.replacingOccurrences(of: "'", with: "'\\''") + "'"
-        let pid = ProcessInfo.processInfo.processIdentifier
-        let command = "/usr/bin/pmset -a disablesleep 1 || exit 1; (while /bin/kill -0 \(pid) && [ -e \(flag) ]; do /bin/sleep 2; done; /usr/bin/pmset -a disablesleep 0) >/dev/null 2>&1 &"
+        let command = "/usr/bin/pmset -a disablesleep 1 || exit 1; (g=0; while [ -e \(flag) ]; do if /bin/kill -0 \"$(/bin/cat \(flag))\"; then g=0; else g=$((g+2)); [ $g -ge 60 ] && break; fi; /bin/sleep 2; done; /usr/bin/pmset -a disablesleep 0; /bin/rm -f \(flag)) >/dev/null 2>&1 &"
         if Self.runAsAdmin(command, prompt: String(localized: "pika-tools wants to keep your Mac awake with the lid closed.")) {
             lidActive = true
             UserDefaults.standard.set(true, forKey: Self.lidFlagKey)

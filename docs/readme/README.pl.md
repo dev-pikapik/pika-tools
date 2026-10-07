@@ -54,6 +54,8 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich przełącz to samo ustawienie na piksele i wybierz od 1 do 200 pikseli na kliknięcie, domyślnie 40. Suwak pokazuje też, jaką część wysokości ekranu to stanowi.
 
+**Osobny kierunek przewijania dla myszy.** macOS ma jeden przełącznik przewijania naturalnego dla myszy i gładzika naraz. Włącz tę opcję i wybierz, jak przewija kółko myszy: **Klasyczny**, jak w Windows, albo **Naturalny**, jak na gładziku. Gładzik zachowuje kierunek z Ustawień systemowych. Wybierz to samo na każdym swoim Macu, a mysz będzie przewijać wszędzie tak samo, nawet gdy przeniesiesz ją na inny Mac przez Uniwersalne sterowanie. Tylko dla myszy. Domyślnie wyłączone, po włączeniu Klasyczny.
+
 **Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Safari, Finderze i innych aplikacjach Apple oraz w Firefoksie, Operze i ForkLifcie, tak jak machnięcie na gładziku. Inne aplikacje, na przykład środowiska JetBrains, dostają przyciski bez zmian i obsługują je po swojemu. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy, tak jak w Windows. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
@@ -67,6 +69,8 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 **Enter otwiera pliki w Finderze.** Zaznacz pliki w oknie Findera lub na biurku i naciśnij Return albo Enter – pliki się otworzą, tak jak w Windows. F2 lub fn F2 zmienia nazwę zaznaczonego pliku. W polach tekstowych, na przykład podczas wpisywania nazwy, klawisze działają jak zwykle. Domyślnie wyłączone.
 
 **⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane, tak jak Wytnij i Wklej w Windows. ⌘C anuluje wycinanie. Domyślnie wyłączone.
+
+**Mniejsza kopia i konwersja w Finderze.** Kliknij prawym plik w Finderze. **Utwórz mniejszą kopię** zapisuje obok lżejszą wersję zdjęcia, PDF-a lub wideo, często kilka razy mniejszą. **Konwertuj na** zapisuje plik w innym formacie: obraz jako JPEG, PNG, HEIC, TIFF lub PDF, wideo jako MP4, MOV albo sam dźwięk, muzykę jako M4A, WAV lub AIFF. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Domyślnie wyłączone.
 
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach. Potrzebujesz z powrotem zwykłego Control+C? Wyłącz to narzędzie.
 
@@ -91,10 +95,10 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
 - **Klawiatura**: skróty z Control, zmiana języka, powtarzanie klawisza.
-- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, boczne przyciski.
+- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
-- **Finder**: nowy plik, otwieranie klawiszem Return i wycinanie przez ⌘X.
+- **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return i wycinanie przez ⌘X.
 - **Uprawnienia**: stan obu uprawnień, a przy włączonej synchronizacji także iCloud Drive, z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 

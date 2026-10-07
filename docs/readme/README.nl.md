@@ -54,6 +54,8 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde instelling op pixels en kies 1 tot 200 pixels per klik, standaard 40. De regelaar laat ook zien welk deel van de schermhoogte dat is.
 
+**Eigen scrollrichting voor de muis.** macOS heeft één schakelaar voor natuurlijk scrollen, voor muis en trackpad samen. Zet dit aan en kies hoe het muiswieltje scrolt: **Klassiek**, zoals in Windows, of **Natuurlijk**, zoals op een trackpad. Het trackpad houdt de richting uit Systeeminstellingen. Kies op al je Macs hetzelfde en de muis scrolt overal op dezelfde manier, ook als je hem met Universele bediening naar een andere Mac verplaatst. Alleen voor muizen. Standaard uit, bij aanzetten Klassiek.
+
 **Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in Safari, de Finder en andere Apple-apps, Firefox, Opera en ForkLift, net als een veeg op het trackpad. Andere apps, zoals de JetBrains-IDE’s, krijgen de knoppen ongewijzigd en gaan er op hun eigen manier mee om. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
 
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt, zoals op Windows. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
@@ -67,6 +69,8 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 **Enter opent bestanden in de Finder.** Selecteer bestanden in een Finder-venster of op het bureaublad en druk op Return of Enter: ze worden geopend, zoals in Windows. F2 of fn F2 wijzigt de naam van het geselecteerde bestand. In tekstvelden, bijvoorbeeld terwijl je een naam typt, werken de toetsen zoals altijd. Standaard uit.
 
 **⌘X knipt bestanden in de Finder.** Selecteer bestanden en druk op ⌘X, open de map waar je ze wilt hebben en druk op ⌘V: de bestanden worden daarheen verplaatst in plaats van gekopieerd, zoals Knippen en Plakken in Windows. ⌘C annuleert het knippen. Standaard uit.
+
+**Kleinere kopie en omzetten in de Finder.** Klik met rechts op een bestand in de Finder. **Maak kleinere kopie** zet er een lichtere versie van een foto, pdf of video naast, vaak vele malen kleiner. **Zet om naar** bewaart het bestand in een ander formaat: een afbeelding als JPEG, PNG, HEIC, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen. Wil je de gewone Control+C terug? Zet die tool uit.
 
@@ -91,10 +95,10 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
 - **Toetsenbord**: Control-toetscombinaties, van taal wisselen, toetsherhaling.
-- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, zijknoppen.
+- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.
-- **Finder**: nieuw bestand, openen met Return en knippen met ⌘X.
+- **Finder**: nieuw bestand, kleinere kopie en omzetten, openen met Return en knippen met ⌘X.
 - **Toestemmingen**: de status van beide toestemmingen, en van iCloud Drive als synchronisatie aanstaat, met knoppen die de juiste plek in Systeeminstellingen openen.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 

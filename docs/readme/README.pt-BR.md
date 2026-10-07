@@ -54,6 +54,8 @@ O pika-tools não grava, não guarda e não envia nada do que você digita ou cl
 
 Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma opção para pixels e escolha de 1 a 200 pixels por clique, 40 por padrão. O controle também mostra que parte da altura da tela isso representa.
 
+**Direção de rolagem separada para o mouse.** O macOS tem uma só chave de rolagem natural para o mouse e o trackpad ao mesmo tempo. Ative esta opção e escolha como a roda do mouse rola: **Clássica**, como no Windows, ou **Natural**, como no trackpad. O trackpad mantém a direção definida nos Ajustes do Sistema. Escolha a mesma opção em cada um dos seus Macs e o mouse rola do mesmo jeito em todos, mesmo quando você o leva para outro Mac com o Universal Control. Só para mouse. Desativado por padrão; ao ativar, Clássica.
+
 **Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse voltam e avançam no Safari, no Finder e em outros apps da Apple, no Firefox, no Opera e no ForkLift, como um gesto de deslizar no trackpad. Outros apps, como os IDEs da JetBrains, recebem os botões do jeito que são e os tratam à própria maneira. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
 
 **Encerrar ao fechar a última janela.** Feche a última janela de um app e o app é encerrado, como no Windows. O Finder continua aberto, assim como os apps com janelas em outras mesas ou no Dock. Você pode listar os apps que nunca devem ser encerrados assim. Desativado por padrão.
@@ -67,6 +69,8 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 **Enter abre arquivos no Finder.** Selecione arquivos numa janela do Finder ou na mesa e pressione Return ou Enter: eles abrem, como no Windows. F2 ou fn F2 renomeia o arquivo selecionado. Em campos de texto, por exemplo enquanto você digita um nome, as teclas funcionam como sempre. Desativado por padrão.
 
 **⌘X corta arquivos no Finder.** Selecione arquivos e pressione ⌘X, abra a pasta de destino e pressione ⌘V: os arquivos são movidos para lá em vez de copiados, como Recortar e Colar no Windows. ⌘C cancela o corte. Desativado por padrão.
+
+**Cópia menor e conversão no Finder.** Clique com o botão direito num arquivo no Finder. **Criar cópia menor** salva ao lado uma versão mais leve de uma foto, PDF ou vídeo, muitas vezes várias vezes menor. **Converter para** salva o arquivo em outro formato: uma imagem como JPEG, PNG, HEIC, TIFF ou PDF, um vídeo como MP4, MOV ou só o som, música como M4A, WAV ou AIFF. O original continua igual e nada sai do seu Mac. Desativado por padrão.
 
 Cada ferramenta tem a própria chave no menu e nos ajustes. Precisa do Control+C normal de volta? Desative essa ferramenta.
 
@@ -91,10 +95,10 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pika-tools de nov
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
 - **Manter Ativo**: duração e opções de tela e de tampa.
 - **Teclado**: atalhos com Control, troca de idioma, repetição de teclas.
-- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, botões laterais.
+- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.
-- **Finder**: novo arquivo, abrir com Return e recortar com ⌘X.
+- **Finder**: novo arquivo, cópia menor e conversão, abrir com Return e recortar com ⌘X.
 - **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 

@@ -86,6 +86,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, Windows, scrolling speed, acceleration"),
             SettingsItem(tab: .mouse, title: String(localized: "Distance per click"), synonyms: "scrolling speed, wheel, notch"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by"), synonyms: "pixels, lines, wheel, games, scrolling mode, notch"),
+            SettingsItem(tab: .mouse, title: String(localized: "Separate scroll direction for the mouse"), synonyms: "natural scrolling, reverse, invert, Universal Control, wheel, direction, trackpad"),
+            SettingsItem(tab: .mouse, title: String(localized: "Mouse wheel direction"), synonyms: "natural, classic, reverse, invert, wheel, up, down"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, Windows, option click"),
@@ -95,6 +97,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .dock, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, Windows, taskbar"),
             SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop, Windows"),
+            SettingsItem(tab: .finder, title: String(localized: "Smaller Copy and Convert in Finder"), synonyms: "compress, shrink, smaller, reduce size, optimize, convert, format, export, save as, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, MP4, MOV, M4A, WAV, AIFF, TinyPNG"),
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, Windows, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X, Windows"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
@@ -162,7 +165,7 @@ enum SettingsWindow {
     static let model = Model()
     private(set) static var window: NSWindow?
 
-    static let minSize = NSSize(width: 640, height: 460)
+    static let minSize = NSSize(width: 660, height: 460)
 
     static func show(_ tab: SettingsTab? = nil) {
         if let tab {
@@ -210,10 +213,11 @@ enum SettingsWindow {
 
 private struct SettingsView: View {
     @Bindable private var model = SettingsWindow.model
+    @State private var columns = NavigationSplitViewVisibility.all
 
     var body: some View {
         let tab = model.selection ?? .general
-        NavigationSplitView(columnVisibility: .constant(.all)) {
+        NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
                     Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder]) }
@@ -223,12 +227,18 @@ private struct SettingsView: View {
                 }
             }
             .listStyle(.sidebar)
-            .toolbar(removing: .sidebarToggle)
-            .navigationSplitViewColumnWidth(min: 200, ideal: 240, max: 320)
+            .navigationSplitViewColumnWidth(min: 220, ideal: 240, max: 320)
         } detail: {
             detail(tab)
+                .navigationSplitViewColumnWidth(min: 440, ideal: 520)
                 .navigationTitle(tab.title)
                 .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        Button {
+                            withAnimation { columns = columns == .detailOnly ? .all : .detailOnly }
+                        } label: { Label("Sidebar", systemImage: "sidebar.left") }
+                        .help(Text("Sidebar"))
+                    }
                     ToolbarItem(placement: .navigation) {
                         ControlGroup {
                             Button { model.goBack() } label: { Label("Back", systemImage: "chevron.backward") }
@@ -482,6 +492,11 @@ private struct GeneralSettings: View {
     @Bindable private var language = Language.shared
     @Bindable private var sync = SettingsSync.shared
 
+    @ViewBuilder private var backupButtons: some View {
+        Button("Import Settings…", systemImage: "square.and.arrow.down") { SettingsBackup.chooseImport() }
+        Button("Export Settings…", systemImage: "square.and.arrow.up") { SettingsBackup.export() }
+    }
+
     var body: some View {
         Form {
             SettingsHeader(tab: .general, text: String(localized: "How pika-tools starts and looks."))
@@ -512,9 +527,9 @@ private struct GeneralSettings: View {
             Section("Backup") {
                 VStack(alignment: .leading, spacing: 10) {
                     RowLabel(Text("Settings file"), Text("Save all settings to a file, or load them from one"))
-                    HStack {
-                        Button("Import Settings…", systemImage: "square.and.arrow.down") { SettingsBackup.chooseImport() }
-                        Button("Export Settings…", systemImage: "square.and.arrow.up") { SettingsBackup.export() }
+                    ViewThatFits(in: .horizontal) {
+                        HStack { backupButtons }
+                        VStack(alignment: .leading) { backupButtons }
                     }
                 }
                 .padding(.vertical, 2)

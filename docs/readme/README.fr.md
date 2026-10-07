@@ -54,6 +54,8 @@ pika-tools n’enregistre, ne conserve et n’envoie rien de ce que vous tapez o
 
 Certaines apps et certains jeux comptent le défilement en pixels exacts : pour eux, passez ce même réglage en pixels et choisissez de 1 à 200 pixels par cran, 40 par défaut. Le curseur indique aussi quelle part de la hauteur de l’écran cela représente.
 
+**Sens de défilement à part pour la souris.** macOS n’a qu’un seul réglage de défilement naturel pour la souris et le trackpad à la fois. Activez cette option et choisissez comment défile la molette : **Classique**, comme sous Windows, ou **Naturel**, comme sur un trackpad. Le trackpad garde le sens défini dans Réglages Système. Choisissez la même chose sur chacun de vos Mac, et la souris défile de la même façon partout, même quand vous la passez sur un autre Mac avec Commande universelle. Souris uniquement. Désactivé par défaut, Classique une fois activé.
+
 **Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris font précédent et suivant dans Safari, le Finder et les autres apps Apple, dans Firefox, Opera et ForkLift, comme un balayage sur le trackpad. Les autres apps, comme les IDE JetBrains, reçoivent les boutons tels quels et les gèrent à leur façon. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
 
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme, comme sous Windows. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
@@ -67,6 +69,8 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 **Entrée ouvre les fichiers dans le Finder.** Sélectionnez des fichiers dans une fenêtre du Finder ou sur le bureau et appuyez sur Retour ou Entrée : ils s’ouvrent, comme sous Windows. F2 ou fn F2 renomme le fichier sélectionné. Dans les champs de texte, par exemple quand vous saisissez un nom, les touches fonctionnent comme d’habitude. Désactivé par défaut.
 
 **⌘X coupe les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌘X, ouvrez le dossier voulu et appuyez sur ⌘V : les fichiers y sont déplacés au lieu d’être copiés, comme Couper et Coller sous Windows. ⌘C annule la coupe. Désactivé par défaut.
+
+**Copie allégée et conversion dans le Finder.** Clic droit sur un fichier dans le Finder. **Créer une copie allégée** enregistre juste à côté une version plus légère d’une photo, d’un PDF ou d’une vidéo, souvent plusieurs fois plus petite. **Convertir en** enregistre le fichier dans un autre format : une image en JPEG, PNG, HEIC, TIFF ou PDF, une vidéo en MP4, MOV ou seulement le son, de la musique en M4A, WAV ou AIFF. L’original reste intact, et rien ne quitte votre Mac. Désactivé par défaut.
 
 Chaque outil a son propre interrupteur dans le menu et dans les réglages. Besoin de retrouver un Contrôle+C normal ? Désactivez cet outil.
 
@@ -91,10 +95,10 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue, mises à jour et sauvegarde : exporter et importer les réglages sous forme de fichier, ou les synchroniser avec iCloud Drive.
 - **Rester éveillé** : durée, options d’écran et de capot.
 - **Clavier** : raccourcis Contrôle, changement de langue, répétition des touches.
-- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, boutons latéraux.
+- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : masquer d’un clic dans le Dock.
-- **Finder** : nouveau fichier, ouvrir avec Entrée et couper avec ⌘X.
+- **Finder** : nouveau fichier, copie allégée et conversion, ouvrir avec Entrée et couper avec ⌘X.
 - **Autorisations** : l’état des deux autorisations, et d’iCloud Drive quand la synchronisation est activée, avec des boutons qui ouvrent le bon endroit dans Réglages Système.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 

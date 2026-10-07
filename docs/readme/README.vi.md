@@ -54,6 +54,8 @@ pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì b
 
 Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chính xác: với chúng, hãy chuyển chính cài đặt này sang pixel và chọn từ 1 đến 200 pixel mỗi lần bấm, mặc định là 40. Thanh trượt cũng cho biết quãng đó bằng bao nhiêu phần chiều cao màn hình.
 
+**Hướng cuộn riêng cho chuột.** macOS chỉ có một công tắc cuộn tự nhiên chung cho cả chuột và bàn di chuột. Hãy bật tính năng này và chọn cách bánh xe chuột cuộn: **Cổ điển**, giống trên Windows, hoặc **Tự nhiên**, giống trên bàn di chuột. Bàn di chuột vẫn giữ hướng đã đặt trong Cài đặt hệ thống. Chọn giống nhau trên mọi máy Mac của bạn, chuột sẽ cuộn như nhau ở mọi nơi, kể cả khi bạn chuyển nó sang máy Mac khác bằng Điều khiển chung. Chỉ dành cho chuột. Tắt theo mặc định, khi bật thì chọn sẵn Cổ điển.
+
 **Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 giúp lùi và tiến trong Safari, Finder và các ứng dụng khác của Apple, trong Firefox, Opera và ForkLift, giống như vuốt trên bàn di chuột. Các ứng dụng khác, như IDE của JetBrains, nhận các nút nguyên trạng và tự xử lý theo cách riêng. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
 
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát, giống như trên Windows. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
@@ -67,6 +69,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 **Enter mở tệp trong Finder.** Chọn tệp trong cửa sổ Finder hoặc trên màn hình nền rồi nhấn Return hoặc Enter, tệp sẽ mở ra, giống như trên Windows. F2 hoặc fn F2 đổi tên tệp đã chọn. Trong ô nhập văn bản, chẳng hạn khi gõ tên, các phím vẫn hoạt động như bình thường. Mặc định tắt.
 
 **⌘X cắt tệp trong Finder.** Chọn tệp rồi nhấn ⌘X, mở thư mục muốn đến rồi nhấn ⌘V, tệp sẽ được chuyển đến đó thay vì sao chép, giống như Cut và Paste trên Windows. ⌘C hủy thao tác cắt. Mặc định tắt.
+
+**Bản sao nhỏ hơn và chuyển đổi trong Finder.** Bấm chuột phải vào tệp trong Finder. **Tạo bản sao nhỏ hơn** lưu ngay bên cạnh một bản nhẹ hơn của ảnh, PDF hoặc video, thường nhỏ hơn nhiều lần. **Chuyển sang** lưu tệp ở định dạng khác: ảnh thành JPEG, PNG, HEIC, TIFF hoặc PDF, video thành MP4, MOV hoặc chỉ lấy âm thanh, nhạc thành M4A, WAV hoặc AIFF. Tệp gốc vẫn giữ nguyên và không có gì rời khỏi máy Mac của bạn. Mặc định tắt.
 
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt. Cần dùng lại Control+C bình thường? Tắt công cụ đó.
 
@@ -91,10 +95,10 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
 - **Bàn phím**: phím tắt Control, chuyển ngôn ngữ, lặp phím.
-- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, các nút bên.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.
-- **Finder**: tạo tệp mới, mở bằng Return và cắt bằng ⌘X.
+- **Finder**: tạo tệp mới, bản sao nhỏ hơn và chuyển định dạng, mở bằng Return và cắt bằng ⌘X.
 - **Quyền**: trạng thái của cả hai quyền, và của iCloud Drive khi bật đồng bộ, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
 

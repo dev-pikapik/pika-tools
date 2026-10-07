@@ -54,6 +54,8 @@ pika-tools tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau 
 
 Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, ubah pengaturan yang sama ke piksel dan pilih 1 sampai 200 piksel per klik, bawaannya 40. Penggeser juga menunjukkan berapa bagian tinggi layar itu.
 
+**Arah gulir tersendiri untuk tetikus.** macOS hanya punya satu sakelar pengguliran alami untuk tetikus dan trackpad sekaligus. Nyalakan fitur ini dan pilih cara roda tetikus menggulir: **Klasik**, seperti di Windows, atau **Alami**, seperti di trackpad. Trackpad tetap memakai arah dari Pengaturan Sistem. Pilih yang sama di setiap Mac Anda, dan tetikus akan menggulir dengan cara yang sama di mana saja, bahkan saat Anda memindahkannya ke Mac lain dengan Kontrol Universal. Hanya untuk tetikus. Mati secara default, Klasik saat dinyalakan.
+
 **Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 berfungsi untuk mundur dan maju di Safari, Finder, dan app Apple lainnya, juga di Firefox, Opera, dan ForkLift, sama seperti usapan di trackpad. App lain, seperti IDE JetBrains, menerima tombolnya apa adanya dan menanganinya dengan cara sendiri. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
 
 **Keluar saat jendela terakhir ditutup.** Tutup jendela terakhir sebuah app, dan app akan keluar, seperti di Windows. Finder tetap terbuka, begitu juga app yang punya jendela di desktop lain atau di Dock. Anda bisa membuat daftar app yang tidak boleh keluar dengan cara ini. Mati secara default.
@@ -67,6 +69,8 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 **Enter Membuka File di Finder.** Pilih file di jendela Finder atau di desktop, lalu tekan Return atau Enter, dan file langsung terbuka, seperti di Windows. F2 atau fn F2 mengganti nama file yang dipilih. Di kolom teks, misalnya saat mengetik nama, tombol-tombol ini bekerja seperti biasa. Mati secara bawaan.
 
 **⌘X Memotong File di Finder.** Pilih file lalu tekan ⌘X, buka folder tujuan dan tekan ⌘V, dan file dipindahkan ke sana, bukan disalin, seperti Potong dan Tempel di Windows. ⌘C membatalkan pemotongan. Mati secara bawaan.
+
+**Salinan Lebih Kecil dan Konversi di Finder.** Klik kanan file di Finder. **Buat Salinan Lebih Kecil** menyimpan versi foto, PDF, atau video yang lebih ringan tepat di sebelahnya, sering kali beberapa kali lebih kecil. **Konversi ke** menyimpan file dalam format lain: gambar sebagai JPEG, PNG, HEIC, TIFF, atau PDF, video sebagai MP4, MOV, atau suaranya saja, musik sebagai M4A, WAV, atau AIFF. File asli tetap seperti semula, dan tidak ada yang keluar dari Mac Anda. Mati secara bawaan.
 
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan. Perlu Control+C biasa lagi? Matikan alat itu.
 
@@ -91,10 +95,10 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
 - **Papan Ketik**: pintasan Control, penggantian bahasa, pengulangan tombol.
-- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, tombol samping.
+- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: menyembunyikan dengan klik di Dock.
-- **Finder**: file baru, buka dengan Return, dan potong dengan ⌘X.
+- **Finder**: file baru, salinan lebih kecil dan konversi, buka dengan Return, dan potong dengan ⌘X.
 - **Izin**: status kedua izin, dan status iCloud Drive saat sinkronisasi menyala, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
 - **Tentang**: versi, tautan ke catatan perubahan dan untuk melaporkan masalah.
 

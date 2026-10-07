@@ -54,6 +54,8 @@ pika-tools non registra, non conserva e non invia nulla di ciò che digiti o cli
 
 Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, passa la stessa impostazione ai pixel e scegli da 1 a 200 pixel per scatto, 40 di base. Il cursore mostra anche quanta parte dell’altezza dello schermo corrisponde.
 
+**Direzione di scorrimento separata per il mouse.** macOS ha un solo interruttore per lo scorrimento naturale, per mouse e trackpad insieme. Attiva questa opzione e scegli come scorre la rotella del mouse: **Classica**, come su Windows, o **Naturale**, come sul trackpad. Il trackpad mantiene la direzione impostata in Impostazioni di Sistema. Scegli la stessa opzione su ciascuno dei tuoi Mac e il mouse scorrerà allo stesso modo ovunque, anche quando lo sposti su un altro Mac con Controllo universale. Solo per mouse. Disattivato di default, Classica quando lo attivi.
+
 **Tasti laterali per indietro e avanti.** I tasti 4 e 5 del mouse vanno indietro e avanti in Safari, nel Finder e in altre app Apple, in Firefox, Opera e ForkLift, proprio come uno swipe sul trackpad. Le altre app, come gli IDE JetBrains, ricevono i tasti così come sono e li gestiscono a modo loro. Se il tuo mouse li ha invertiti, attiva **Inverti i tasti laterali**. Disattivato di default.
 
 **Esci quando si chiude l’ultima finestra.** Chiudi l’ultima finestra di un’app e l’app si chiude, come su Windows. Il Finder resta aperto, così come le app con finestre su altre scrivanie o nel Dock. Puoi indicare le app che non devono mai chiudersi in questo modo. Disattivato di default.
@@ -67,6 +69,8 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 **Invio apre i file nel Finder.** Seleziona dei file in una finestra del Finder o sulla scrivania e premi Invio o Enter: si aprono, come in Windows. F2 o fn F2 rinomina il file selezionato. Nei campi di testo, per esempio mentre scrivi un nome, i tasti funzionano come sempre. Disattivato di default.
 
 **⌘X taglia i file nel Finder.** Seleziona dei file e premi ⌘X, apri la cartella di destinazione e premi ⌘V: i file vengono spostati lì invece di essere copiati, come Taglia e Incolla in Windows. ⌘C annulla il taglio. Disattivato di default.
+
+**Copia più leggera e conversione nel Finder.** Clic destro su un file nel Finder. **Crea copia più leggera** salva accanto una versione più leggera di una foto, un PDF o un video, spesso molte volte più piccola. **Converti in** salva il file in un altro formato: un’immagine come JPEG, PNG, HEIC, TIFF o PDF, un video come MP4, MOV o solo l’audio, la musica come M4A, WAV o AIFF. L’originale resta com’è e niente lascia il tuo Mac. Disattivato di default.
 
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni. Ti serve di nuovo il normale Control+C? Disattiva quello strumento.
 
@@ -91,10 +95,10 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua, aggiornamenti e backup: esporta e importa le impostazioni come file, oppure sincronizzale con iCloud Drive.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
 - **Tastiera**: abbreviazioni con Control, cambio lingua, ripetizione dei tasti.
-- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, tasti laterali.
+- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: nascondere con un clic nel Dock.
-- **Finder**: nuovo file, apertura con Invio e taglio con ⌘X.
+- **Finder**: nuovo file, copia più leggera e conversione, apertura con Invio e taglio con ⌘X.
 - **Permessi**: lo stato di entrambi i permessi, e di iCloud Drive quando la sincronizzazione è attiva, con pulsanti che aprono il punto giusto in Impostazioni di Sistema.
 - **Info**: versione, link alle novità e per segnalare un problema.
 

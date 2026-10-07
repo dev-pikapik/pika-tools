@@ -54,6 +54,8 @@ pika-tools zeichnet nichts auf, speichert nichts und sendet nichts von dem, was 
 
 Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dieselbe Einstellung auf Pixel um und wähle 1 bis 200 Pixel pro Klick, standardmäßig 40. Der Regler zeigt auch, wie viel der Bildschirmhöhe das ist.
 
+**Eigene Scrollrichtung für die Maus.** macOS hat nur einen Schalter für natürliches Scrollen, für Maus und Trackpad zusammen. Schalte das hier ein und wähle, wie das Mausrad scrollt: **Klassisch** wie unter Windows oder **Natürlich** wie auf dem Trackpad. Das Trackpad behält die Richtung aus den Systemeinstellungen. Wählst du auf jedem deiner Macs dasselbe, scrollt die Maus überall gleich, auch wenn du sie mit „Universelle Steuerung“ auf einen anderen Mac bewegst. Nur für Mäuse. Standardmäßig aus, beim Einschalten Klassisch.
+
 **Seitentasten für Zurück und Vorwärts.** Die Maustasten 4 und 5 gehen in Safari, im Finder und in anderen Apple-Apps, in Firefox, Opera und ForkLift zurück und vorwärts, genau wie eine Wischgeste auf dem Trackpad. Andere Apps, zum Beispiel die JetBrains-IDEs, bekommen die Tasten unverändert und gehen damit auf ihre eigene Weise um. Sind sie bei deiner Maus vertauscht, schalte **Seitentasten tauschen** ein. Standardmäßig aus.
 
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet, wie unter Windows. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
@@ -67,6 +69,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 **Eingabetaste öffnet Dateien im Finder.** Wähle Dateien in einem Finder-Fenster oder auf dem Schreibtisch aus und drücke Return oder Enter, dann öffnen sie sich – wie unter Windows. F2 oder fn F2 benennt die ausgewählte Datei um. In Textfeldern, zum Beispiel beim Eingeben eines Namens, funktionieren die Tasten wie gewohnt. Standardmäßig aus.
 
 **⌘X schneidet Dateien im Finder aus.** Wähle Dateien aus und drücke ⌘X, öffne den gewünschten Ordner und drücke ⌘V: Die Dateien werden dorthin verschoben statt kopiert – wie Ausschneiden und Einfügen unter Windows. ⌘C bricht das Ausschneiden ab. Standardmäßig aus.
+
+**Kleinere Kopie und Umwandeln im Finder.** Rechtsklick auf eine Datei im Finder. **Kleinere Kopie erstellen** legt daneben eine leichtere Version eines Fotos, PDFs oder Videos ab, oft um ein Vielfaches kleiner. **Umwandeln in** speichert die Datei in einem anderen Format: Bilder als JPEG, PNG, HEIC, TIFF oder PDF, Videos als MP4, MOV oder nur den Ton, Musik als M4A, WAV oder AIFF. Das Original bleibt, wie es ist, und nichts verlässt deinen Mac. Standardmäßig aus.
 
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen. Du brauchst das normale Ctrl+C zurück? Schalte das Werkzeug aus.
 
@@ -91,10 +95,10 @@ Wach bleiben, der Display-Modus und der Modus bei geschlossenem Deckel lassen si
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
 - **Tastatur**: Ctrl-Kurzbefehle, Sprachwechsel, Tastenwiederholung.
-- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Seitentasten.
+- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Ausblenden per Klick im Dock.
-- **Finder**: neue Datei, Öffnen mit der Eingabetaste und Ausschneiden mit ⌘X.
+- **Finder**: neue Datei, kleinere Kopie und Umwandeln, Öffnen mit der Eingabetaste und Ausschneiden mit ⌘X.
 - **Berechtigungen**: der Status beider Berechtigungen und von iCloud Drive, wenn die Synchronisierung läuft, mit Tasten, die die richtige Stelle in den Systemeinstellungen öffnen.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.
 

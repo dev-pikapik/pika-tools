@@ -54,6 +54,8 @@ pika-tools nu înregistrează, nu păstrează și nu trimite nimic din ce tastez
 
 Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, comută aceeași setare pe pixeli și alege între 1 și 200 de pixeli per clic, implicit 40. Cursorul arată și ce parte din înălțimea ecranului reprezintă.
 
+**Direcție de derulare separată pentru maus.** macOS are un singur comutator de derulare naturală, pentru maus și trackpad deodată. Activează această opțiune și alege cum derulează rotița mausului: **Clasică**, ca în Windows, sau **Naturală**, ca pe trackpad. Trackpadul păstrează direcția din Configurări sistem. Alege același lucru pe fiecare Mac al tău, iar mausul va derula la fel peste tot, chiar și când îl muți pe alt Mac cu Control universal. Doar pentru mausuri. Dezactivat implicit, Clasică la activare.
+
 **Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului merg înapoi și înainte în Safari, Finder și alte aplicații Apple, în Firefox, Opera și ForkLift, la fel ca o glisare pe trackpad. Alte aplicații, precum mediile JetBrains, primesc butoanele așa cum sunt și le tratează în felul lor. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
 
 **Ieșire la închiderea ultimei ferestre.** Închide ultima fereastră a unei aplicații, iar aplicația se închide, ca pe Windows. Finder rămâne deschis, la fel ca aplicațiile cu ferestre pe alte spații de lucru sau în Dock. Poți face o listă de aplicații care nu trebuie să se închidă niciodată așa. Dezactivat implicit.
@@ -67,6 +69,8 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 **Enter deschide fișierele în Finder.** Selectează fișiere într-o fereastră Finder sau pe birou și apasă Return sau Enter: se deschid, ca în Windows. F2 sau fn F2 redenumește fișierul selectat. În câmpurile de text, de exemplu când scrii un nume, tastele funcționează ca de obicei. Implicit dezactivat.
 
 **⌘X decupează fișierele în Finder.** Selectează fișiere și apasă ⌘X, deschide folderul dorit și apasă ⌘V: fișierele sunt mutate acolo în loc să fie copiate, ca Decupare și Lipire în Windows. ⌘C anulează decuparea. Implicit dezactivat.
+
+**Copie mai mică și conversie în Finder.** Clic dreapta pe un fișier în Finder. **Creează o copie mai mică** salvează alături o versiune mai ușoară a unei fotografii, a unui PDF sau video, adesea de câteva ori mai mică. **Convertește în** salvează fișierul în alt format: o imagine ca JPEG, PNG, HEIC, TIFF sau PDF, un video ca MP4, MOV sau doar sunetul, muzica ca M4A, WAV sau AIFF. Originalul rămâne neschimbat și nimic nu pleacă de pe Mac. Implicit dezactivat.
 
 Fiecare instrument are propriul comutator în meniu și în configurări. Ai nevoie din nou de Control+C obișnuit? Dezactivează instrumentul respectiv.
 
@@ -91,10 +95,10 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
 - **Tastatură**: scurtături cu Control, schimbarea limbii, repetarea tastelor.
-- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, butoanele laterale.
+- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.
-- **Finder**: fișier nou, deschidere cu Return și decupare cu ⌘X.
+- **Finder**: fișier nou, copie mai mică și conversie, deschidere cu Return și decupare cu ⌘X.
 - **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 
