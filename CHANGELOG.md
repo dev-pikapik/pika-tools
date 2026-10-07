@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.20.0] - Unreleased
+
+### Added
+- Scroll direction for trackpad and mouse: pick Natural or Classic for the trackpad and for the mouse wheel separately. The trackpad choice also covers sideways scrolling, the glide after you lift your fingers and the Magic Mouse. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
+
 ## [1.19.0] - Unreleased
 
 ### Added
