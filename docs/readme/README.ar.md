@@ -1,25 +1,41 @@
-# pika-tools
+<div dir="rtl">
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · **العربية** · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">تحسينات صغيرة للوحة المفاتيح والماوس والنوافذ وFinder، من شريط القائمة في Mac مباشرة.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <b>العربية</b> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[![أحدث إصدار](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![الترخيص: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![التنزيلات](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
+</div>
 
 <div dir="rtl">
 
-تطبيق صغير لشريط القائمة في macOS يحسّن عمل المفاتيح والنوافذ وDock: يحمي من ⌘Q و⌘W، ويبدّل اللغة بـ Option+Shift، ويكرّر المفتاح عند الضغط المستمر، ويُوقف تسارع الماوس، ويمرّر عجلة الماوس بالأسطر، ويجعل الزرّين الجانبيين في الماوس للرجوع والتقدّم، ويُنهي التطبيق عندما تغلق آخر نافذة فيه، ويُخفي التطبيق بنقرة في Dock، ويُبقي جهاز Mac مستيقظًا.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="إعدادات pika-tools">
+</picture>
+</p>
+
+</div>
+
+<div dir="rtl">
 
 ## التثبيت
-
-باستخدام [Homebrew](https://brew.sh):
 
 </div>
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+<div dir="rtl">
+
+بعد التثبيت يظهر pika-tools في شريط القائمة أعلى الشاشة. يبقى كل شيء متوقفًا حتى تشغّله بنفسك.
+
+</div>
+
+<details>
+<summary dir="rtl">لا يوجد Homebrew؟ هناك طريقتان أخريان</summary>
 
 <div dir="rtl">
 
@@ -35,9 +51,155 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 أو نزّل [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg) وافتحه واسحب التطبيق إلى مجلد التطبيقات.
 
-يضع كل من Homebrew والسكربت التطبيق في `/Applications`، ثم يشغّله ويطلب الأذونات ويفعّل «الفتح عند تسجيل الدخول». بعد ذلك يحدّث التطبيق نفسه بنفسه، راجع [التحديثات](#التحديثات). لإزالته، راجع [إلغاء التثبيت](#إلغاء-التثبيت).
+يضع كل من Homebrew والسكربت التطبيق في `/Applications`، ثم يشغّله ويطلب الأذونات ويفعّل «الفتح عند تسجيل الدخول». بعد ذلك يحدّث التطبيق نفسه بنفسه، راجع **التحديثات**. لإزالته، راجع **إلغاء التثبيت**.
 
-## التشغيل الأول
+</div>
+
+</details>
+
+<div dir="rtl">
+
+## ماذا يفعل
+
+</div>
+
+<div dir="rtl">
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>إبقاء الجهاز مستيقظًا</b>
+<br>يبقى Mac مستيقظًا طوال ما تحتاج، حتى والغطاء مغلق.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>حماية ⌘Q و⌘W</b>
+<br>لا يُغلق شيء بالخطأ. أضف ⇧ عندما تقصد ذلك.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>نسخة أصغر</b>
+<br>انقر بزر الماوس الأيمن على صورة أو PDF أو فيديو لتظهر بجانبه نسخة أخف.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>التحويل</b>
+<br>احفظ صورة أو فيديو أو أغنية بتنسيق آخر من قائمة الزر الأيمن.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>تبديل اللغة</b>
+<br>اضغط مع الاستمرار على ⌥ ثم انقر ⇧ لتغيير لغة لوحة المفاتيح.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>الإنهاء مع آخر نافذة</b>
+<br>أغلق آخر نافذة لتطبيق، فيُنهى التطبيق أيضًا.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>الزر الأخضر يكبّر النافذة</b>
+<br>تملأ النافذة الشاشة دون الدخول في وضع ملء الشاشة.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>الإخفاء بنقرة في Dock</b>
+<br>انقر التطبيق الذي تستخدمه فيتنحّى جانبًا.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>ملف جديد</b>
+<br>انقر بالزر الأيمن في Finder واكتب اسمًا، فيظهر ملف فارغ.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X ينقل الملفات</b>
+<br>قصّ الملفات في Finder والصقها حيث تريد.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter يفتح الملفات</b>
+<br>حدّد الملفات في Finder واضغط Enter لفتحها.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete إلى المهملات</b>
+<br>اضغط ⌫ في Finder فتذهب الملفات المحددة إلى المهملات.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>وضع الألعاب</b>
+<br>أثناء اللعب لا يظهر شيء فوق اللعبة ولا يغلقها شيء.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>اختبار السرعة</b>
+<br>ما مدى سرعة الإنترنت لديك، وما الذي يكفي له.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>الأزرار الجانبية</b>
+<br>الزران 4 و5 للرجوع والتقدم، مثل السحب على لوحة التعقب.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>التمرير بالأسطر</b>
+<br>كل نقرة من العجلة تمرّر المسافة نفسها مهما كانت سرعة الدوران.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>اتجاه التمرير</b>
+<br>اتجاه للوحة التعقب وآخر للماوس.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>إيقاف تسارع المؤشر</b>
+<br>يتحرك المؤشر بقدر حركة يدك تمامًا.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>تكرار المفتاح عند الضغط المستمر</b>
+<br>اضغط مع الاستمرار على مفتاح ليتكرر، بدلًا من قائمة الحركات.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home وEnd</b>
+<br>انتقل إلى بداية السطر أو نهايته أثناء الكتابة.
+</td>
+</tr></tbody>
+</table>
+
+</div>
+
+<div dir="rtl">
+
+## تفاصيل أكثر
+
+</div>
+
+<details>
+<summary dir="rtl">التشغيل الأول</summary>
+
+<div dir="rtl">
 
 يحتاج pika-tools إلى إذنين. عند التشغيل الأول يفتح الإعدادات على صفحة «الأذونات» التي ترشدك خطوة بخطوة، ويعرض macOS طلباته الخاصة. انتقل إلى **إعدادات النظام › الخصوصية والأمن** وفعّل pika-tools في:
 
@@ -48,7 +210,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 لا يسجّل pika-tools ولا يحفظ ولا يرسل أي شيء تكتبه أو تنقر عليه. تُعالَج الأحداث في الذاكرة وتُمرَّر فورًا. الطلب الوحيد عبر الشبكة هو التحقق من التحديثات، إذ يسأل GitHub عن أحدث إصدار.
 
-## الميزات
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">كل أداة بالتفصيل</summary>
+
+<div dir="rtl">
 
 **حماية ⌘Q و⌘W.** لا يفعل ⌘Q ولا ⌘W وحدهما شيئًا، فلا تُنهي تطبيقًا أو تغلق نافذة عن طريق الخطأ. أضف Shift لتفعل ذلك عن قصد: ⇧⌘Q يُنهي، و⇧⌘W يغلق. يعمل في جميع التطبيقات. لكل مفتاح مفتاح تشغيل خاص به. متوقف افتراضيًا.
 
@@ -96,7 +265,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 يتبع التطبيق لغة النظام أو اللغة التي تختارها في الإعدادات. تتوفر جميع اللغات الـ 23 المدرجة أعلى هذه الصفحة.
 
-## إبقاء الجهاز مستيقظًا
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">إبقاء الجهاز مستيقظًا</summary>
+
+<div dir="rtl">
 
 يمنع جهاز Mac من الدخول في وضع الإسبات وأنت بعيد عن لوحة المفاتيح: لأي مدة من ثانية واحدة إلى 365 يومًا، أو حتى توقفه بنفسك. شغّله من القائمة، وحدّد المدة في الإعدادات: اكتب الأيام والساعات والدقائق والثواني، أو استخدم ↑ و↓، أو انقر على خيار جاهز من 15 دقيقة إلى 8 ساعات. تعرض القائمة الوقت المتبقي وموعد الانتهاء. في **الشاشة** خياران. **قيد التشغيل دائمًا**: لا تنطفئ، بلا شاشة توقف أو شاشة قفل. **تنطفئ كالمعتاد**: تنطفئ حسب مؤقتها بينما يواصل جهاز Mac العمل. **إطفاء الشاشة الآن** (موجود في القائمة أيضًا) يطفئ الشاشة فورًا ويواصل Mac العمل: حرّك الماوس أو اضغط على أي مفتاح لإعادتها. إنهاء pika-tools يُنهي إبقاء الجهاز مستيقظًا.
 
@@ -104,11 +280,25 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 يمكن وضع «منع السكون» ووضعَي الشاشة والغطاء المغلق على زر في مركز التحكم أو شريط القوائم أو ودجت على سطح المكتب عبر تطبيق الاختصارات، بروابط تنسخها من الإعدادات › منع السكون.
 
-## اختبار السرعة
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">اختبار السرعة</summary>
+
+<div dir="rtl">
 
 يعرض مدى سرعة الإنترنت لديك الآن. انقر على **فحص السرعة** في الإعدادات › اختبار السرعة، أو على **فحص** في القائمة بعد إضافة الصف بزر القلم. خلال نحو نصف دقيقة ترى سرعة التنزيل والرفع والبينغ والاستجابة: مدى سرعة استجابة كل شيء أثناء انشغال الاتصال. وتحتها كلمات بسيطة تقول ما الذي يناسبه: أفلام 4K ومكالمات الفيديو والألعاب عبر الإنترنت والتنزيلات الكبيرة. يستخدم الفحص أداة networkQuality المضمّنة في macOS وخوادم Apple. تبقى آخر نتيجة حتى الفحص التالي، ويبدأ رابط لتطبيق الاختصارات الفحص من مركز التحكم.
 
-## الإعدادات
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">الإعدادات</summary>
+
+<div dir="rtl">
 
 افتح الإعدادات من القائمة عبر **الإعدادات…** أو ⌘، أو شغّل pika-tools مرة أخرى من Finder أو Launchpad أو Spotlight. ما دامت النافذة مفتوحة، يظهر التطبيق في Dock وفي ⌘Tab.
 
@@ -129,7 +319,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 **مزامنة الإعدادات مع iCloud** تُبقي pika-tools متطابقًا على كل أجهزة Mac لديك. تُحفظ الإعدادات في مجلد pika-tools داخل iCloud Drive، ويُعتمد آخر تغيير. هذه الميزة متوقفة افتراضيًا وتحتاج إلى تشغيل iCloud Drive. الأذونات لا تُزامَن: كل جهاز Mac يطلبها بنفسه.
 
-## التحديثات
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">التحديثات</summary>
+
+<div dir="rtl">
 
 يتحقق pika-tools من وجود إصدارات جديدة عند التشغيل وكل 6 ساعات. يمكنك إيقاف ذلك من الإعدادات › عام. عند صدور إصدار جديد، يظهر في القائمة زر **التحديث إلى …**: نقرة واحدة فينزّل التطبيق التحديث ويثبّته ويعيد التشغيل. يمكنك أيضًا التحقق يدويًا عبر **تحقق الآن** في الإعدادات › عام.
 
@@ -137,9 +334,12 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 بدءًا من الإصدار 1.3، تبقى الأذونات كما هي بعد التحديثات.
 
-## إلغاء التثبيت
-
 </div>
+
+</details>
+
+<details>
+<summary dir="rtl">إلغاء التثبيت</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -151,7 +351,14 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 كلاهما يُنهي التطبيق ويزيله من عناصر تسجيل الدخول ويحذفه. ويعيد السكربت أيضًا تعيين أذوناته.
 
-## الأسئلة الشائعة
+</div>
+
+</details>
+
+<details>
+<summary dir="rtl">الأسئلة الشائعة</summary>
+
+<div dir="rtl">
 
 **لماذا يحتاج إلى إذنين؟**
 يقسم macOS الوصول إلى لوحة المفاتيح والماوس إلى قسمين. تتيح مراقبة الإدخال للتطبيق رؤية الأحداث، وتتيح له تسهيلات الاستخدام تغييرها. يتطلب حظر اختصار كليهما.
@@ -173,12 +380,12 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **الإذن مفعّل، لكن لا شيء يعمل.**
 في **إعدادات النظام › الخصوصية والأمن**، أزل pika-tools من القائمتين بزر −، ثم أضفه مرة أخرى. في صفحة «الأذونات» في إعدادات pika-tools أزرار تفتح المكان الصحيح.
 
-## المساهمة
+</div>
 
-البناء من المصدر وإصدار النسخ موضّحان في [CONTRIBUTING.md](../../CONTRIBUTING.md). التغييرات مدرجة في [CHANGELOG.md](../../CHANGELOG.md).
+</details>
 
-## الترخيص
+<div dir="rtl">
 
-MIT، © 2026 pikapik. راجع [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">ما الجديد</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">مستودع Homebrew</a> · <a href="../../CONTRIBUTING.md">البناء بنفسك</a> · <a href="../../LICENSE">ترخيص MIT</a> · © 2026 pikapik</sub></p>
 
 </div>

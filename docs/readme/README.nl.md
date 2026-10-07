@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Kleine verbeteringen voor toetsenbord, muis, vensters en Finder, gewoon in de menubalk van je Mac.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <b>Nederlands</b> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · **Nederlands** · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Nieuwste versie](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Licentie: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Een kleine app voor de menubalk van macOS die toetsen, vensters en het Dock prettiger maakt: hij beschermt ⌘Q en ⌘W, wisselt van taal met Option+Shift, herhaalt een ingedrukte toets, zet muisversnelling uit, scrolt het muiswieltje per regel, laat de zijknoppen van de muis terug en vooruit gaan, stopt apps als je hun laatste venster sluit, verbergt een app met een klik in het Dock en houdt je Mac wakker.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Instellingen van pika-tools">
+</picture>
+</p>
 
 ## Installeren
-
-Met [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools staat daarna in de menubalk bovenaan het scherm. Alles blijft uit tot je het zelf aanzet.
+
+<details>
+<summary>Geen Homebrew? Twee andere manieren</summary>
 
 Zonder Homebrew: open Terminal, plak deze regel en druk op Return:
 
@@ -25,9 +29,139 @@ Zonder Homebrew: open Terminal, plak deze regel en druk op Return:
 
 Of download [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), open het bestand en sleep de app naar de map Apps.
 
-Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vragen om de toestemmingen en zetten ‘Open bij inloggen’ aan. Daarna werkt de app zichzelf bij, zie [Updates](#updates). Verwijderen staat bij [Verwijderen](#verwijderen).
+Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vragen om de toestemmingen en zetten ‘Open bij inloggen’ aan. Daarna werkt de app zichzelf bij, zie **Updates**. Verwijderen staat bij **Verwijderen**.
 
-## Eerste keer openen
+</details>
+
+## Wat het doet
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Wakker houden</b>
+<br>Je Mac blijft wakker zolang je wilt, zelfs met de klep dicht.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q en ⌘W beschermen</b>
+<br>Niets stopt of sluit per ongeluk. Voeg ⇧ toe als je het echt wilt.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Kleinere kopie</b>
+<br>Klik met rechts op een foto, pdf of video, en je krijgt er een lichtere kopie naast.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Omzetten</b>
+<br>Bewaar een afbeelding, video of nummer in een ander formaat via de rechtermuisknop.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Van taal wisselen</b>
+<br>Houd ⌥ ingedrukt en tik op ⇧ om de toetsenbordtaal te wisselen.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Stoppen met het laatste venster</b>
+<br>Sluit het laatste venster van een app, en de app stopt ook.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Groene knop vergroot</b>
+<br>Het venster vult het scherm zonder schermvullende modus.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Verbergen met een klik in het Dock</b>
+<br>Klik op de app waarin je zit, en hij gaat opzij.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Nieuw bestand</b>
+<br>Klik met rechts in de Finder, typ een naam, en er staat een leeg bestand.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X verplaatst bestanden</b>
+<br>Knip bestanden in de Finder en plak ze waar je wilt.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter opent bestanden</b>
+<br>Selecteer bestanden in de Finder en druk op Enter om ze te openen.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete naar de prullenmand</b>
+<br>Druk op ⌫ in de Finder, en de geselecteerde bestanden gaan naar de prullenmand.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Gamemodus</b>
+<br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Snelheidstest</b>
+<br>Hoe snel je internet is, en waar het goed voor is.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Zijknoppen</b>
+<br>Knop 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Per regel scrollen</b>
+<br>Elke klik van het scrollwiel scrolt even ver, hoe snel je ook draait.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Scrollrichting</b>
+<br>Eén richting voor het trackpad, een andere voor de muis.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Zonder aanwijzerversnelling</b>
+<br>De aanwijzer gaat precies zo ver als je hand.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Ingedrukte toets herhalen</b>
+<br>Houd een toets ingedrukt om hem te herhalen, zonder accentmenu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home en End</b>
+<br>Spring tijdens het typen naar het begin of einde van de regel.
+</td>
+</tr></tbody>
+</table>
+
+## Meer weten
+
+<details>
+<summary>Eerste keer openen</summary>
 
 pika-tools heeft twee toestemmingen nodig. De eerste keer opent de app de instellingen op de pagina Toestemmingen, die je stap voor stap helpt, en macOS toont zijn eigen meldingen. Ga naar **Systeeminstellingen › Privacy en beveiliging** en zet pika-tools aan bij:
 
@@ -38,7 +172,10 @@ De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet
 
 pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
 
-## Functies
+</details>
+
+<details>
+<summary>Elk hulpmiddel in detail</summary>
 
 **⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
 
@@ -86,7 +223,10 @@ Het paneel in de menubalk begint met maar een paar rijen. Welke rijen het toont,
 
 De app volgt de taal van je systeem of de taal die je in de instellingen kiest. Alle 23 talen uit de lijst bovenaan deze pagina zijn beschikbaar.
 
-## Wakker houden
+</details>
+
+<details>
+<summary>Wakker houden</summary>
 
 Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 seconde tot 365 dagen, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in: typ dagen, uren, minuten en seconden, gebruik ↑ en ↓ of klik op een voorinstelling van 15 minuten tot 8 uur. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. Voor het **Scherm** zijn er twee keuzes. **Altijd aan**: het gaat niet uit, zonder schermbeveiliging of toegangsscherm. **Gaat uit zoals gewoonlijk**: het gaat uit volgens de eigen timer terwijl je Mac blijft werken. **Zet het scherm nu uit** (ook in het menu) zet het meteen uit en je Mac blijft werken: beweeg de muis of druk op een toets om het terug te krijgen. Als je pika-tools stopt, stopt Wakker houden ook.
 
@@ -94,11 +234,17 @@ Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft da
 
 Keep Awake, de beeldschermmodus en de modus met gesloten deksel kun je via de app Opdrachten op een knop zetten in het Bedieningscentrum, de menubalk of een widget op het bureaublad, met links die je kopieert in Instellingen › Wakker houden.
 
-## Snelheidstest
+</details>
+
+<details>
+<summary>Snelheidstest</summary>
 
 Laat zien hoe snel je internet nu is. Klik op **Test snelheid** in Instellingen › Snelheidstest, of op **Test** in het menu als je de rij met de potloodknop hebt toegevoegd. Na ongeveer een halve minuut zie je download, upload, ping en reactiesnelheid: hoe snel alles reageert terwijl de verbinding bezig is. Daaronder staat in gewone woorden waar het geschikt voor is: films in 4K, videogesprekken, onlinegames en grote downloads. De test gebruikt networkQuality uit macOS en servers van Apple. Het laatste resultaat blijft staan tot de volgende test, en een link voor Opdrachten start hem vanuit het bedieningspaneel.
 
-## Instellingen
+</details>
+
+<details>
+<summary>Instellingen</summary>
 
 Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pika-tools gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
 
@@ -119,7 +265,10 @@ Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vr
 
 **Instellingen synchroniseren met iCloud** houdt pika-tools op al je Macs hetzelfde. De instellingen staan in de map pika-tools in iCloud Drive, en de meest recente wijziging wint. Standaard uit, en iCloud Drive moet aanstaan. Toestemmingen worden niet gesynchroniseerd: elke Mac vraagt er zelf om.
 
-## Updates
+</details>
+
+<details>
+<summary>Updates</summary>
 
 pika-tools zoekt bij het openen en elke 6 uur naar nieuwe versies. Je kunt dat uitzetten bij Instellingen › Algemeen. Is er een nieuwe versie, dan verschijnt in het menu de knop **Werk bij naar …**: één klik en de app downloadt de update, installeert hem en start opnieuw op. Je kunt ook zelf controleren met **Controleer nu** bij Instellingen › Algemeen.
 
@@ -127,7 +276,10 @@ Met Homebrew kun je ook `brew upgrade --cask pika-tools` uitvoeren.
 
 Sinds versie 1.3 blijven de toestemmingen na updates behouden.
 
-## Verwijderen
+</details>
+
+<details>
+<summary>Verwijderen</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Als je met Homebrew hebt geïnstalleerd: `brew uninstall --cask --zap pika-tools
 
 Beide stoppen de app, halen hem uit de inlogonderdelen en verwijderen hem. Het script zet ook de toestemmingen van de app terug.
 
-## Veelgestelde vragen
+</details>
+
+<details>
+<summary>Veelgestelde vragen</summary>
 
 **Waarom zijn er twee toestemmingen nodig?**
 macOS splitst de toegang tot toetsenbord en muis in tweeën. Met Invoerbewaking kan de app gebeurtenissen zien, met Toegankelijkheid kan hij ze aanpassen. Om een toetscombinatie te blokkeren zijn ze allebei nodig.
@@ -155,10 +310,6 @@ Ja. Het is een universele app voor Apple Silicon en Intel, voor macOS 14 Sonoma 
 **De toestemming staat aan, maar niets werkt.**
 Verwijder pika-tools in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Op de pagina Toestemmingen in de instellingen van pika-tools staan knoppen die de juiste plek openen.
 
-## Bijdragen
+</details>
 
-Hoe je de app vanuit de broncode bouwt en uitbrengt, staat in [CONTRIBUTING.md](../../CONTRIBUTING.md). Wijzigingen staan in [CHANGELOG.md](../../CHANGELOG.md).
-
-## Licentie
-
-MIT, © 2026 pikapik. Zie [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Wat is er nieuw</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Zelf bouwen</a> · <a href="../../LICENSE">MIT-licentie</a> · © 2026 pikapik</sub></p>

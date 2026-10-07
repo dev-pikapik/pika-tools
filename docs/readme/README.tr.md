@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Klavye, fare, pencereler ve Finder için küçük iyileştirmeler, doğrudan Mac’inizin menü çubuğunda.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <b>Türkçe</b> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · **Türkçe** · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Son sürüm](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Lisans: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![İndirmeler](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Tuşları, pencereleri ve Dock’u daha kullanışlı hâle getiren küçük bir macOS menü çubuğu uygulaması: ⌘Q ve ⌘W’yi korur, Option+Shift ile dili değiştirir, basılı tutulan tuşu tekrarlar, fare ivmesini kapatır, fare tekerini satır satır kaydırır, farenin yan düğmeleriyle geri ve ileri gitmenizi sağlar, son penceresini kapattığınızda uygulamadan çıkar, Dock’ta bir tıklamayla uygulamayı gizler ve Mac’inizi uyanık tutar.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="pika-tools ayarları">
+</picture>
+</p>
 
 ## Kurulum
-
-[Homebrew](https://brew.sh) ile:
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools ekranın üstündeki menü çubuğunda görünür. Siz açana kadar her şey kapalı kalır.
+
+<details>
+<summary>Homebrew yok mu? İki yol daha</summary>
 
 Homebrew olmadan: Terminal’i açın, bu satırı yapıştırın ve Return tuşuna basın:
 
@@ -25,9 +29,139 @@ Homebrew olmadan: Terminal’i açın, bu satırı yapıştırın ve Return tuş
 
 Ya da [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg) dosyasını indirin, açın ve uygulamayı Uygulamalar klasörüne sürükleyin.
 
-Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinleri ister ve “Girişte Aç” seçeneğini açar. Bundan sonra uygulama kendini güncel tutar, bkz. [Güncellemeler](#güncellemeler). Kaldırmak için bkz. [Kaldırma](#kaldırma).
+Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinleri ister ve “Girişte Aç” seçeneğini açar. Bundan sonra uygulama kendini güncel tutar, bkz. **Güncellemeler**. Kaldırmak için bkz. **Kaldırma**.
 
-## İlk açılış
+</details>
+
+## Neler yapar
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Uyanık Tut</b>
+<br>Mac’iniz gerektiği kadar uyanık kalır, kapak kapalıyken bile.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q ve ⌘W’yi koruma</b>
+<br>Hiçbir şey yanlışlıkla kapanmaz. Gerçekten istediğinizde ⇧ ekleyin.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Küçük Kopya</b>
+<br>Bir fotoğrafa, PDF’e ya da videoya sağ tıklayın, yanında daha hafif bir kopya belirsin.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Dönüştürme</b>
+<br>Bir resmi, videoyu ya da şarkıyı sağ tıklayarak başka bir biçimde kaydedin.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Dili değiştir</b>
+<br>⌥ tuşunu basılı tutup ⇧ tuşuna dokunun, klavye dili değişsin.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Son pencereyle çıkış</b>
+<br>Bir uygulamanın son penceresini kapatın, uygulama da kapansın.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Yeşil düğme büyütür</b>
+<br>Pencere tam ekrana geçmeden ekranı doldurur.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Dock’ta tıklayarak gizleme</b>
+<br>Kullandığınız uygulamaya tıklayın, kenara çekilsin.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Yeni Dosya</b>
+<br>Finder’da sağ tıklayın, bir ad yazın, boş dosya hazır.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X dosyaları taşır</b>
+<br>Finder’da dosyaları kesin ve istediğiniz yere yapıştırın.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter dosyaları açar</b>
+<br>Finder’da dosyaları seçin ve açmak için Enter’a basın.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete ile Çöp Sepeti’ne</b>
+<br>Finder’da ⌫ tuşuna basın, seçili dosyalar Çöp Sepeti’ne gitsin.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Oyun Modu</b>
+<br>Siz oynarken oyunun üstünde hiçbir şey açılmaz, oyunu hiçbir şey kapatmaz.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Hız Testi</b>
+<br>İnternetiniz ne kadar hızlı ve neye yetiyor.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Yan tuşlar</b>
+<br>4 ve 5 numaralı tuşlar, kaydırma hareketi gibi geri ve ileri gider.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Satır satır kaydır</b>
+<br>Tekerleğin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı miktarda kaydırır.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Kaydırma yönü</b>
+<br>İzleme dörtgeni için bir yön, fare için başka bir yön.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>İmleç hızlandırma yok</b>
+<br>İmleç tam olarak elinizin gittiği kadar gider.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Basılı tutulan tuşu tekrarla</b>
+<br>Bir tuşu basılı tutun, aksan menüsü çıkmadan tekrar tekrar yazsın.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home ve End</b>
+<br>Yazarken satırın başına ya da sonuna atlayın.
+</td>
+</tr></tbody>
+</table>
+
+## Ayrıntılar
+
+<details>
+<summary>İlk açılış</summary>
 
 pika-tools’un iki izne ihtiyacı vardır. İlk açılışta ayarlar, sizi adım adım yönlendiren İzinler sayfasında açılır ve macOS kendi uyarılarını gösterir. **Sistem Ayarları › Gizlilik ve Güvenlik** bölümüne gidin ve şu listelerde pika-tools’u açın:
 
@@ -38,7 +172,10 @@ Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya ge
 
 pika-tools yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Tek ağ isteği güncelleme denetimidir: GitHub’a en son sürüm sorulur.
 
-## Özellikler
+</details>
+
+<details>
+<summary>Her araç ayrıntılı olarak</summary>
 
 **⌘Q ve ⌘W’yi koruma.** ⌘Q ve ⌘W tek başına hiçbir şey yapmaz, böylece bir uygulamadan yanlışlıkla çıkmaz ya da bir pencereyi yanlışlıkla kapatmazsınız. Bilerek yapmak için Shift ekleyin: ⇧⌘Q çıkar, ⇧⌘W kapatır. Tüm uygulamalarda çalışır. Her tuşun kendi anahtarı vardır. Varsayılan olarak kapalıdır.
 
@@ -86,7 +223,10 @@ Menü çubuğu paneli başta yalnızca birkaç satırla açılır. Hangi satırl
 
 Uygulama sistem dilini ya da ayarlarda seçtiğiniz dili kullanır. Bu sayfanın başındaki listede yer alan 23 dilin tümü desteklenir.
 
-## Uyanık Tut
+</details>
+
+<details>
+<summary>Uyanık Tut</summary>
 
 Siz klavyenin başında değilken Mac’inizin uyku moduna geçmesini engeller: 1 saniyeden 365 güne kadar istediğiniz süre boyunca ya da siz kapatana kadar. Menüden açın, süreyi ayarlarda belirleyin: gün, saat, dakika ve saniyeyi yazın, ↑ ve ↓ tuşlarını kullanın ya da 15 dakikadan 8 saate kadar hazır bir seçeneğe tıklayın. Menü ne kadar süre kaldığını ve ne zaman biteceğini gösterir. **Ekran** için iki seçenek var. **Her zaman açık**: kapanmaz, ekran koruyucu ya da kilit ekranı çıkmaz. **Her zamanki gibi kapanır**: kendi zamanlayıcısıyla kapanır, Mac’iniz çalışmaya devam eder. **Ekranı şimdi kapat** (menüde de var) ekranı hemen kapatır, Mac çalışmaya devam eder: geri getirmek için fareyi oynatın ya da bir tuşa basın. pika-tools’tan çıkınca Uyanık Tut da sona erer.
 
@@ -94,11 +234,17 @@ MacBook’ta **Kapak kapalıyken çalış** seçeneğini de açabilirsiniz. macO
 
 Keep Awake, ekran ve kapak kapalı modları, Kestirmeler uygulamasıyla Denetim Merkezi’nde, menü çubuğunda ya da masaüstü widget’ında bir düğmeye konabilir; bağlantıları Ayarlar › Uyanık Tut bölümünden kopyalarsın.
 
-## Hız Testi
+</details>
+
+<details>
+<summary>Hız Testi</summary>
 
 İnternetinin şu anda ne kadar hızlı olduğunu gösterir. Ayarlar › Hız Testi’nde **Hızı Ölç**’e ya da satırı kalem düğmesiyle menüye eklediysen oradaki **Ölç**’e tıkla. Yaklaşık yarım dakikada indirme ve yükleme hızını, ping’i ve tepki hızını görürsün: bağlantı meşgulken her şeyin ne kadar çabuk tepki verdiği. Altında sade bir dille neye yettiği yazar: 4K filmler, görüntülü aramalar, çevrim içi oyunlar ve büyük indirmeler. Ölçüm, macOS’taki networkQuality aracını ve Apple sunucularını kullanır. Son sonuç bir sonraki ölçüme kadar kalır; Kestirmeler için bir bağlantı ölçümü Denetim Merkezi’nden başlatır.
 
-## Ayarlar
+</details>
+
+<details>
+<summary>Ayarlar</summary>
 
 Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pika-tools’u Finder, Launchpad ya da Spotlight’tan yeniden başlatın. Pencere açıkken uygulama Dock’ta ve ⌘Tab’de görünür.
 
@@ -119,7 +265,10 @@ Her sayfanın altında bir **Saptanmışlara Dön…** düğmesi vardır. Önce 
 
 **Ayarları iCloud ile eşzamanla** pika-tools’u tüm Mac’lerinizde aynı tutar. Ayarlar iCloud Drive’daki pika-tools klasöründe durur ve en son değişiklik geçerli olur. Varsayılan olarak kapalıdır ve iCloud Drive’ın açık olması gerekir. İzinler eşzamanlanmaz: her Mac kendi izinlerini kendisi ister.
 
-## Güncellemeler
+</details>
+
+<details>
+<summary>Güncellemeler</summary>
 
 pika-tools açılışta ve her 6 saatte bir yeni sürüm olup olmadığını denetler. Bunu Ayarlar › Genel bölümünden kapatabilirsiniz. Yeni bir sürüm çıktığında menüde **… sürümüne güncelle** düğmesi görünür: tek tıklamayla uygulama güncellemeyi indirir, yükler ve yeniden başlar. Ayarlar › Genel bölümündeki **Şimdi Denetle** ile elle de denetleyebilirsiniz.
 
@@ -127,7 +276,10 @@ Homebrew kullanıyorsanız `brew upgrade --cask pika-tools` komutunu da çalış
 
 1.3 sürümünden itibaren izinler güncellemelerden sonra yerinde kalır.
 
-## Kaldırma
+</details>
+
+<details>
+<summary>Kaldırma</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Homebrew ile kurduysanız: `brew uninstall --cask --zap pika-tools`.
 
 İkisi de uygulamadan çıkar, onu giriş öğelerinden kaldırır ve siler. Betik ayrıca uygulamanın izinlerini sıfırlar.
 
-## Sık sorulan sorular
+</details>
+
+<details>
+<summary>Sık sorulan sorular</summary>
 
 **Neden iki izin gerekiyor?**
 macOS klavye ve fare erişimini ikiye ayırır. Girdi İzleme uygulamanın olayları görmesini, Erişilebilirlik ise onları değiştirmesini sağlar. Bir kestirmeyi engellemek için ikisi de gerekir.
@@ -155,10 +310,6 @@ Evet. Apple Silicon ve Intel için evrensel bir uygulamadır, macOS 14 Sonoma ve
 **İzin açık ama hiçbir şey çalışmıyor.**
 **Sistem Ayarları › Gizlilik ve Güvenlik** bölümünde pika-tools’u − düğmesiyle iki listeden de kaldırın, sonra yeniden ekleyin. pika-tools ayarlarındaki İzinler sayfasında doğru yeri açan düğmeler vardır.
 
-## Katkıda bulunma
+</details>
 
-Kaynaktan derleme ve sürüm yayımlama [CONTRIBUTING.md](../../CONTRIBUTING.md) dosyasında anlatılır. Değişiklikler [CHANGELOG.md](../../CHANGELOG.md) dosyasında listelenir.
-
-## Lisans
-
-MIT, © 2026 pikapik. Bkz. [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Yenilikler</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap’i</a> · <a href="../../CONTRIBUTING.md">Kendiniz derleyin</a> · <a href="../../LICENSE">MIT Lisansı</a> · © 2026 pikapik</sub></p>

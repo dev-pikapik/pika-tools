@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">ปรับแต่งเล็กๆ สำหรับแป้นพิมพ์ เมาส์ หน้าต่าง และ Finder ใช้ได้ทันทีจากแถบเมนูของ Mac</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <b>ไทย</b></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · **ไทย**
-
-[![รุ่นล่าสุด](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![สัญญาอนุญาต: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![ยอดดาวน์โหลด](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-แอปเล็กๆ บนแถบเมนูของ macOS ที่ช่วยให้ปุ่ม หน้าต่าง และ Dock ใช้งานได้สะดวกขึ้น: ป้องกัน ⌘Q และ ⌘W สลับภาษาด้วย Option+Shift พิมพ์ซ้ำเมื่อกดแป้นค้างไว้ ปิดความเร่งของเมาส์ เลื่อนล้อเมาส์ทีละบรรทัด ให้ปุ่มด้านข้างของเมาส์ย้อนกลับและไปข้างหน้าได้ ปิดแอปเมื่อคุณปิดหน้าต่างสุดท้าย ซ่อนแอปด้วยการคลิกใน Dock และทำให้ Mac ของคุณไม่เข้าสู่โหมดพัก
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="การตั้งค่า pika-tools">
+</picture>
+</p>
 
 ## การติดตั้ง
-
-ด้วย [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+หลังติดตั้ง pika-tools จะอยู่ในแถบเมนูด้านบนของหน้าจอ ทุกอย่างปิดอยู่จนกว่าคุณจะเปิดเอง
+
+<details>
+<summary>ไม่มี Homebrew? ยังมีอีกสองวิธี</summary>
 
 หากไม่ใช้ Homebrew ให้เปิดเทอร์มินัล วางบรรทัดนี้ แล้วกดปุ่ม Return:
 
@@ -25,9 +29,139 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 หรือดาวน์โหลด [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg) เปิดไฟล์ แล้วลากแอปไปไว้ในโฟลเดอร์แอปพลิเคชัน
 
-ทั้ง Homebrew และสคริปต์จะวางแอปไว้ใน `/Applications` เปิดแอป ขอสิทธิ์ และเปิด “เปิดเมื่อเข้าสู่ระบบ” ให้ หลังจากนั้นแอปจะอัปเดตตัวเอง ดู[การอัปเดต](#การอัปเดต) หากต้องการลบ ดู[การถอนการติดตั้ง](#การถอนการติดตั้ง)
+ทั้ง Homebrew และสคริปต์จะวางแอปไว้ใน `/Applications` เปิดแอป ขอสิทธิ์ และเปิด “เปิดเมื่อเข้าสู่ระบบ” ให้ หลังจากนั้นแอปจะอัปเดตตัวเอง ดู**การอัปเดต** หากต้องการลบ ดู**การถอนการติดตั้ง**
 
-## การเปิดครั้งแรก
+</details>
+
+## ทำอะไรได้บ้าง
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>ไม่ให้เข้าสู่โหมดพัก</b>
+<br>Mac ตื่นอยู่ได้นานเท่าที่ต้องการ แม้ปิดฝาไว้
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>ป้องกัน ⌘Q และ ⌘W</b>
+<br>ไม่มีอะไรปิดไปโดยไม่ตั้งใจ ถ้าตั้งใจจริงให้กด ⇧ เพิ่ม
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>สำเนาที่เล็กลง</b>
+<br>คลิกขวาที่รูป PDF หรือวิดีโอ แล้วจะได้สำเนาที่เบากว่าวางอยู่ข้างๆ
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>แปลงไฟล์</b>
+<br>บันทึกรูป วิดีโอ หรือเพลงเป็นรูปแบบอื่นได้จากเมนูคลิกขวา
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>สลับภาษา</b>
+<br>กด ⌥ ค้างไว้แล้วแตะ ⇧ เพื่อเปลี่ยนภาษาแป้นพิมพ์
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>ปิดแอปพร้อมหน้าต่างสุดท้าย</b>
+<br>ปิดหน้าต่างสุดท้ายของแอป แล้วแอปจะปิดตามไปด้วย
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>ปุ่มสีเขียวขยายหน้าต่าง</b>
+<br>หน้าต่างขยายเต็มจอโดยไม่เข้าโหมดเต็มหน้าจอ
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>ซ่อนด้วยการคลิกใน Dock</b>
+<br>คลิกแอปที่กำลังใช้อยู่ แล้วแอปจะหลบไป
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>ไฟล์ใหม่</b>
+<br>คลิกขวาใน Finder พิมพ์ชื่อ แล้วไฟล์เปล่าก็พร้อมใช้
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X ย้ายไฟล์</b>
+<br>ตัดไฟล์ใน Finder แล้ววางไว้ที่ไหนก็ได้
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter เปิดไฟล์</b>
+<br>เลือกไฟล์ใน Finder แล้วกด Enter เพื่อเปิด
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete ลงถังขยะ</b>
+<br>กด ⌫ ใน Finder แล้วไฟล์ที่เลือกจะไปอยู่ในถังขยะ
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>โหมดเกม</b>
+<br>ระหว่างเล่น จะไม่มีอะไรเด้งขึ้นมาทับเกมหรือปิดเกมไป
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>ทดสอบความเร็ว</b>
+<br>อินเทอร์เน็ตเร็วแค่ไหน และพอสำหรับอะไรบ้าง
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>ปุ่มด้านข้างเมาส์</b>
+<br>ปุ่ม 4 และ 5 ใช้ย้อนกลับและไปข้างหน้า เหมือนปัดบนแทร็คแพด
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>เลื่อนทีละบรรทัด</b>
+<br>หมุนล้อเร็วแค่ไหน แต่ละคลิกก็เลื่อนเท่ากัน
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>ทิศทางการเลื่อน</b>
+<br>ทิศหนึ่งสำหรับแทร็คแพด อีกทิศสำหรับเมาส์
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>ปิดความเร่งตัวชี้</b>
+<br>ตัวชี้เคลื่อนที่เท่ากับที่มือขยับพอดี
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>พิมพ์ซ้ำเมื่อกดแป้นค้างไว้</b>
+<br>กดแป้นค้างไว้เพื่อพิมพ์ซ้ำ โดยไม่มีเมนูอักษรพิเศษ
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home และ End</b>
+<br>กระโดดไปต้นหรือท้ายบรรทัดขณะพิมพ์
+</td>
+</tr></tbody>
+</table>
+
+## รายละเอียดเพิ่มเติม
+
+<details>
+<summary>การเปิดครั้งแรก</summary>
 
 pika-tools ต้องใช้สิทธิ์สองอย่าง เมื่อเปิดครั้งแรก แอปจะเปิดการตั้งค่าที่หน้าสิทธิ์ซึ่งจะแนะนำคุณทีละขั้นตอน และ macOS จะแสดงคำขอของตัวเอง ไปที่ **การตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย** แล้วเปิด pika-tools ใน:
 
@@ -38,7 +172,10 @@ pika-tools ต้องใช้สิทธิ์สองอย่าง เ�
 
 pika-tools ไม่บันทึก ไม่เก็บ และไม่ส่งสิ่งที่คุณพิมพ์หรือคลิกไปที่ใด เหตุการณ์ต่างๆ จะได้รับการจัดการในหน่วยความจำและส่งต่อทันที การเชื่อมต่อเครือข่ายเพียงอย่างเดียวคือการตรวจหาอัปเดต ซึ่งจะถาม GitHub ว่ารุ่นล่าสุดคือรุ่นใด
 
-## คุณสมบัติ
+</details>
+
+<details>
+<summary>รายละเอียดของทุกเครื่องมือ</summary>
 
 **ป้องกัน ⌘Q และ ⌘W** การกด ⌘Q หรือ ⌘W อย่างเดียวจะไม่เกิดอะไรขึ้น คุณจึงไม่เผลอปิดแอปหรือปิดหน้าต่าง หากตั้งใจจะทำ ให้เพิ่ม Shift: ⇧⌘Q เพื่อปิดแอป ⇧⌘W เพื่อปิดหน้าต่าง ใช้ได้กับทุกแอป แต่ละปุ่มมีสวิตช์ของตัวเอง ปิดอยู่ตามค่าเริ่มต้น
 
@@ -86,7 +223,10 @@ pika-tools ไม่บันทึก ไม่เก็บ และไม่�
 
 แอปจะใช้ภาษาของระบบ หรือภาษาที่คุณเลือกในการตั้งค่า รองรับทั้ง 23 ภาษาตามรายการที่ด้านบนของหน้านี้
 
-## ไม่ให้เข้าสู่โหมดพัก
+</details>
+
+<details>
+<summary>ไม่ให้เข้าสู่โหมดพัก</summary>
 
 ป้องกันไม่ให้ Mac เข้าสู่โหมดพักขณะที่คุณไม่ได้อยู่หน้าแป้นพิมพ์: นานเท่าใดก็ได้ตั้งแต่ 1 วินาทีถึง 365 วัน หรือจนกว่าคุณจะปิด เปิดได้จากเมนู และตั้งระยะเวลาในการตั้งค่า โดยพิมพ์วัน ชั่วโมง นาที และวินาที กด ↑ และ ↓ หรือคลิกตัวเลือกสำเร็จรูปตั้งแต่ 15 นาทีถึง 8 ชั่วโมง เมนูจะแสดงเวลาที่เหลือและเวลาที่จะสิ้นสุด **หน้าจอ** มีให้เลือกสองแบบ **เปิดตลอด**: หน้าจอไม่ดับ ไม่มีภาพพักหน้าจอและไม่ล็อกหน้าจอ **ปิดตามปกติ**: หน้าจอดับตามตัวจับเวลาของตัวเอง ส่วน Mac ยังทำงานต่อ **ปิดหน้าจอตอนนี้** (มีในเมนูด้วย) จะดับหน้าจอทันทีโดยที่ Mac ยังทำงานต่อ หากต้องการให้หน้าจอกลับมา ให้ขยับเมาส์หรือกดแป้นใดก็ได้ การออกจาก pika-tools จะสิ้นสุดโหมดนี้ไปด้วย
 
@@ -94,11 +234,17 @@ pika-tools ไม่บันทึก ไม่เก็บ และไม่�
 
 Keep Awake โหมดหน้าจอ และโหมดปิดฝา สามารถวางเป็นปุ่มในศูนย์ควบคุม แถบเมนู หรือวิดเจ็ตบนเดสก์ท็อปผ่านแอปคำสั่งลัด โดยคัดลอกลิงก์จากการตั้งค่า › ไม่ให้หลับ
 
-## ทดสอบความเร็ว
+</details>
+
+<details>
+<summary>ทดสอบความเร็ว</summary>
 
 แสดงว่าตอนนี้อินเทอร์เน็ตของคุณเร็วแค่ไหน คลิก **ตรวจความเร็ว** ในการตั้งค่า › ทดสอบความเร็ว หรือคลิก **ตรวจ** ในเมนูหลังจากเพิ่มแถวด้วยปุ่มดินสอ ราวครึ่งนาทีคุณจะเห็นความเร็วดาวน์โหลดและอัปโหลด Ping และการตอบสนอง คือทุกอย่างตอบสนองเร็วแค่ไหนขณะที่การเชื่อมต่อใช้งานหนัก ด้านล่างจะบอกด้วยคำง่ายๆ ว่าเหมาะกับอะไร ได้แก่ ภาพยนตร์ 4K วิดีโอคอล เกมออนไลน์ และดาวน์โหลดไฟล์ใหญ่ การตรวจใช้ networkQuality ที่มากับ macOS และเซิร์ฟเวอร์ของ Apple ผลล่าสุดจะอยู่จนถึงการตรวจครั้งถัดไป และลิงก์สำหรับคำสั่งลัดใช้เริ่มการตรวจจากศูนย์ควบคุมได้
 
-## การตั้งค่า
+</details>
+
+<details>
+<summary>การตั้งค่า</summary>
 
 เปิดการตั้งค่าจากเมนูด้วย **การตั้งค่า…** หรือ ⌘, หรือเปิด pika-tools อีกครั้งจาก Finder, Launchpad หรือ Spotlight ขณะที่หน้าต่างเปิดอยู่ แอปจะแสดงใน Dock และใน ⌘Tab
 
@@ -119,7 +265,10 @@ Keep Awake โหมดหน้าจอ และโหมดปิดฝา �
 
 **ซิงค์การตั้งค่ากับ iCloud** ช่วยให้ pika-tools เหมือนกันบน Mac ทุกเครื่องของคุณ การตั้งค่าจะอยู่ในโฟลเดอร์ pika-tools ใน iCloud Drive และใช้การเปลี่ยนแปลงล่าสุดเป็นหลัก ปิดอยู่ตามค่าเริ่มต้น และต้องเปิด iCloud Drive ไว้ สิทธิ์จะไม่ถูกซิงค์ Mac แต่ละเครื่องจะขอสิทธิ์เอง
 
-## การอัปเดต
+</details>
+
+<details>
+<summary>การอัปเดต</summary>
 
 pika-tools ตรวจหาเวอร์ชันใหม่เมื่อเปิดแอปและทุก 6 ชั่วโมง คุณปิดการตรวจนี้ได้ใน การตั้งค่า › ทั่วไป เมื่อมีเวอร์ชันใหม่ ปุ่ม **อัปเดตเป็น …** จะปรากฏในเมนู: คลิกครั้งเดียว แอปจะดาวน์โหลดอัปเดต ติดตั้ง และเริ่มการทำงานใหม่ คุณยังตรวจเองได้ด้วย **ตรวจสอบเดี๋ยวนี้** ใน การตั้งค่า › ทั่วไป
 
@@ -127,7 +276,10 @@ pika-tools ตรวจหาเวอร์ชันใหม่เมื่อ
 
 ตั้งแต่เวอร์ชัน 1.3 สิทธิ์จะยังคงอยู่หลังการอัปเดต
 
-## การถอนการติดตั้ง
+</details>
+
+<details>
+<summary>การถอนการติดตั้ง</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ pika-tools ตรวจหาเวอร์ชันใหม่เมื่อ
 
 ทั้งสองวิธีจะปิดแอป เอาแอปออกจากรายการเข้าสู่ระบบ และลบแอป สคริปต์จะรีเซ็ตสิทธิ์ของแอปด้วย
 
-## คำถามที่พบบ่อย
+</details>
+
+<details>
+<summary>คำถามที่พบบ่อย</summary>
 
 **ทำไมต้องใช้สิทธิ์สองอย่าง**
 macOS แบ่งการเข้าถึงแป้นพิมพ์และเมาส์ออกเป็นสองส่วน การตรวจติดตามอินพุตทำให้แอปมองเห็นเหตุการณ์ และการช่วยการเข้าถึงทำให้แอปเปลี่ยนเหตุการณ์ได้ การบล็อกปุ่มลัดต้องใช้ทั้งสองอย่าง
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **เปิดสิทธิ์แล้ว แต่ไม่มีอะไรทำงาน**
 ใน **การตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย** ให้เอา pika-tools ออกจากทั้งสองรายการด้วยปุ่ม − แล้วเพิ่มกลับเข้าไปใหม่ หน้าสิทธิ์ในการตั้งค่าของ pika-tools มีปุ่มที่เปิดตำแหน่งที่ถูกต้องให้
 
-## การมีส่วนร่วม
+</details>
 
-วิธีสร้างแอปจากซอร์สโค้ดและการออกรุ่นใหม่อธิบายไว้ใน [CONTRIBUTING.md](../../CONTRIBUTING.md) ส่วนการเปลี่ยนแปลงต่างๆ อยู่ใน [CHANGELOG.md](../../CHANGELOG.md)
-
-## สัญญาอนุญาต
-
-MIT, © 2026 pikapik ดู [LICENSE](../../LICENSE)
+<p align="center"><sub><a href="../../CHANGELOG.md">มีอะไรใหม่</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">สร้างเอง</a> · <a href="../../LICENSE">สัญญาอนุญาต MIT</a> · © 2026 pikapik</sub></p>

@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Небольшие улучшения для клавиатуры, мыши, окон и Finder — прямо в строке меню вашего Mac.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <b>Русский</b> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · **Русский** · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Последний релиз](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Лицензия MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Загрузки](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Небольшое приложение в строке меню macOS для клавиш, окон и Dock: защищает от случайных ⌘Q и ⌘W, переключает язык по Option+Shift, повторяет зажатую клавишу, отключает ускорение мыши, прокручивает колесо мыши по строкам, превращает боковые кнопки мыши в «Назад» и «Вперёд», закрывает приложение вместе с последним окном, скрывает приложение кликом в Dock и не даёт Mac уснуть.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-ru-dark.png">
+<img src="../media/settings-ru-light.png" alt="Настройки pika-tools">
+</picture>
+</p>
 
 ## Установка
-
-Через [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools появится в строке меню вверху экрана. Всё выключено, пока вы сами не включите.
+
+<details>
+<summary>Нет Homebrew? Ещё два способа</summary>
 
 Без Homebrew: откройте Терминал, вставьте эту строку и нажмите Return:
 
@@ -25,9 +29,139 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 
 Или скачайте [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), откройте его и перетащите приложение в папку «Программы».
 
-Homebrew и скрипт сами кладут приложение в `/Applications`, запускают его, запрашивают разрешения и включают открытие при входе. Дальше приложение обновляется само, см. [Обновления](#обновления). Как удалить — в разделе [Удаление](#удаление).
+Homebrew и скрипт сами кладут приложение в `/Applications`, запускают его, запрашивают разрешения и включают открытие при входе. Дальше приложение обновляется само, см. **Обновления**. Как удалить — в разделе **Удаление**.
 
-## Первый запуск
+</details>
+
+## Что умеет
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Не засыпать</b>
+<br>Mac не уснёт, сколько нужно, даже с закрытой крышкой.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Защита ⌘Q и ⌘W</b>
+<br>Ничего не закроется случайно. Когда нужно, добавьте ⇧.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Копия поменьше</b>
+<br>Правый клик по фото, PDF или видео — и рядом появится лёгкая копия.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Конвертация</b>
+<br>Сохраните картинку, видео или песню в другом формате прямо из меню правого клика.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Смена языка</b>
+<br>Держите ⌥ и нажмите ⇧ — язык клавиатуры сменится.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Выход с последним окном</b>
+<br>Закрыли последнее окно — приложение тоже закрылось.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Зелёная кнопка увеличивает</b>
+<br>Окно растягивается на весь экран без полноэкранного режима.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Скрыть кликом в Dock</b>
+<br>Кликните по значку приложения, в котором вы сейчас, и оно уйдёт с глаз.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Новый файл</b>
+<br>Правый клик в Finder, имя — и пустой файл готов.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X переносит файлы</b>
+<br>Вырежьте файлы в Finder и вставьте туда, куда нужно.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Return открывает файлы</b>
+<br>Выберите файлы в Finder и нажмите Return, чтобы открыть.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete — в Корзину</b>
+<br>Нажмите ⌫ в Finder, и выбранные файлы уйдут в Корзину.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Игровой режим</b>
+<br>Пока вы играете, ничто не всплывёт поверх игры и не закроет её.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Скорость интернета</b>
+<br>Насколько быстрый у вас интернет и на что его хватит.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Боковые кнопки мыши</b>
+<br>Кнопки 4 и 5 листают назад и вперёд, как свайп.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Прокрутка по строкам</b>
+<br>Каждый щелчок колёсика прокручивает одинаково, как быстро ни крутите.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Направление прокрутки</b>
+<br>Одно направление для трекпада, другое для мыши.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Без ускорения курсора</b>
+<br>Курсор проходит ровно столько, сколько ваша рука.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Повтор клавиши</b>
+<br>Удерживайте клавишу — буква повторяется, без меню с акцентами.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home и End</b>
+<br>Переход в начало или конец строки, пока вы печатаете.
+</td>
+</tr></tbody>
+</table>
+
+## Подробности
+
+<details>
+<summary>Первый запуск</summary>
 
 pika-tools нужны два разрешения. При первом запуске откроются настройки на странице «Разрешения», где всё объясняется по шагам, а macOS покажет свои запросы. Откройте **Системные настройки › Конфиденциальность и безопасность** и включите pika-tools в двух списках:
 
@@ -38,7 +172,10 @@ pika-tools нужны два разрешения. При первом запу�
 
 pika-tools не записывает, не хранит и никуда не отправляет то, что вы печатаете и нажимаете. События обрабатываются в памяти и сразу передаются дальше. Единственный запрос в сеть — проверка обновлений: приложение спрашивает у GitHub, какая версия последняя.
 
-## Что умеет
+</details>
+
+<details>
+<summary>Каждая функция подробно</summary>
 
 **Защита ⌘Q и ⌘W.** Сами по себе ⌘Q и ⌘W ничего не делают, так что вы не закроете приложение или окно случайно. Чтобы сделать это нарочно, добавьте Shift: ⇧⌘Q завершает приложение, ⇧⌘W закрывает окно. Работает во всех приложениях. У каждой клавиши свой переключатель. По умолчанию выключено.
 
@@ -86,7 +223,10 @@ pika-tools не записывает, не хранит и никуда не о�
 
 Приложение говорит на языке системы или на том, который вы выберете в настройках. Доступны все 23 языка из списка в начале этой страницы.
 
-## Не засыпать
+</details>
+
+<details>
+<summary>Не засыпать</summary>
 
 Не даёт Mac уснуть, пока вас нет за клавиатурой: на любое время от 1 секунды до 365 суток или пока вы не выключите. Включается в меню, а длительность задаётся в настройках: введите дни, часы, минуты и секунды, нажимайте ↑ и ↓ или выберите готовый вариант от 15 минут до 8 часов. В меню видно, сколько осталось и когда закончится. В строке **Экран** два варианта. **Всегда включён**: экран не гаснет, без заставки и экрана блокировки. **Гаснет как обычно**: экран гаснет по своему таймеру, а Mac работает. Кнопка **Выключить экран сейчас** (она есть и в меню) сразу гасит экран, а Mac продолжает работать: чтобы вернуть экран, подвигайте мышью или нажмите любую клавишу. Если завершить pika-tools, режим тоже выключится.
 
@@ -94,11 +234,17 @@ pika-tools не записывает, не хранит и никуда не о�
 
 «Не засыпать», режимы дисплея и закрытой крышки можно вынести на кнопку в Пункте управления, строке меню или виджет на рабочем столе через приложение «Быстрые команды»; ссылки можно скопировать в Настройках › Не засыпать.
 
-## Скорость интернета
+</details>
+
+<details>
+<summary>Скорость интернета</summary>
 
 Показывает, насколько быстрый интернет прямо сейчас. Нажмите **Проверить скорость** в Настройках › Скорость интернета или **Проверить** в меню, если добавили туда строку кнопкой с карандашом. Примерно через полминуты видно скорость загрузки и отдачи, пинг и отзывчивость: как быстро всё откликается, пока интернет занят. Ниже простыми словами сказано, для чего его хватит: фильмы в 4K, видеозвонки, онлайн-игры и большие файлы. Проверка идёт через встроенную в macOS программу networkQuality и серверы Apple. Последний результат сохраняется до следующей проверки, а ссылка для «Быстрых команд» запускает её из Пункта управления.
 
-## Настройки
+</details>
+
+<details>
+<summary>Настройки</summary>
 
 Откройте настройки из меню кнопкой **Настройки…** или сочетанием ⌘, — либо просто запустите pika-tools ещё раз из Finder, Launchpad или Spotlight. Пока окно открыто, приложение видно в Dock и в ⌘Tab.
 
@@ -119,7 +265,10 @@ pika-tools не записывает, не хранит и никуда не о�
 
 **Синхронизировать настройки через iCloud** делает pika-tools одинаковым на всех ваших Mac. Настройки лежат в папке pika-tools в iCloud Drive, и побеждает самое свежее изменение. По умолчанию выключено, нужен включённый iCloud Drive. Разрешения не синхронизируются: каждый Mac запрашивает их сам.
 
-## Обновления
+</details>
+
+<details>
+<summary>Обновления</summary>
 
 pika-tools проверяет новые версии при запуске и каждые 6 часов. Это можно выключить в «Настройки › Основные». Когда выходит новая версия, в меню появляется кнопка **Обновить до …**: один клик — и приложение скачает обновление, установит его и перезапустится. Проверить вручную можно кнопкой **Проверить** в «Настройки › Основные».
 
@@ -127,7 +276,10 @@ pika-tools проверяет новые версии при запуске и �
 
 Начиная с версии 1.3 разрешения сохраняются после обновлений.
 
-## Удаление
+</details>
+
+<details>
+<summary>Удаление</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ pika-tools проверяет новые версии при запуске и �
 
 Обе команды завершают приложение, убирают его из объектов входа и удаляют. Скрипт ещё и сбрасывает его разрешения.
 
-## Вопросы и ответы
+</details>
+
+<details>
+<summary>Вопросы и ответы</summary>
 
 **Зачем два разрешения?**
 macOS делит доступ к клавиатуре и мыши на две части. Мониторинг ввода позволяет видеть события, Универсальный доступ — менять их. Чтобы заблокировать сочетание, нужны оба.
@@ -155,10 +310,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 **Разрешение включено, но ничего не работает.**
 В **Системных настройках › Конфиденциальность и безопасность** удалите pika-tools из обоих списков кнопкой −, затем добавьте снова. На странице «Разрешения» в настройках pika-tools есть кнопки, которые открывают нужное место.
 
-## Участие в разработке
+</details>
 
-Как собрать из исходников и выпустить релиз, описано в [CONTRIBUTING.md](../../CONTRIBUTING.md). Изменения перечислены в [CHANGELOG.md](../../CHANGELOG.md).
-
-## Лицензия
-
-MIT, © 2026 pikapik. См. [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Что нового</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Тап Homebrew</a> · <a href="../../CONTRIBUTING.md">Сборка из исходников</a> · <a href="../../LICENSE">Лицензия MIT</a> · © 2026 pikapik</sub></p>

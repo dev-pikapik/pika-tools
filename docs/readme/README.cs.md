@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Drobná vylepšení klávesnice, myši, oken a Finderu přímo v řádku nabídek vašeho Macu.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <b>Čeština</b> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · **Čeština** · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md) · [ไทย](README.th.md)
-
-[![Nejnovější verze](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Licence: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Stažení](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Malá aplikace pro řádek nabídek v macOS, která vylepšuje klávesy, okna a Dock: chrání před ⌘Q a ⌘W, přepíná jazyk pomocí Option+Shift, opakuje drženou klávesu, vypne zrychlení myši, posouvá kolečko myši po řádcích, naučí boční tlačítka myši chodit zpět a vpřed, ukončí aplikaci po zavření jejího posledního okna, skryje aplikaci kliknutím v Docku a nedovolí Macu usnout.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Nastavení pika-tools">
+</picture>
+</p>
 
 ## Instalace
-
-Pomocí [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools najdete v řádku nabídek nahoře na obrazovce. Vše je vypnuté, dokud to sami nezapnete.
+
+<details>
+<summary>Nemáte Homebrew? Dva další způsoby</summary>
 
 Bez Homebrew: otevřete Terminál, vložte tento řádek a stiskněte Return:
 
@@ -25,9 +29,139 @@ Bez Homebrew: otevřete Terminál, vložte tento řádek a stiskněte Return:
 
 Nebo si stáhněte [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), otevřete ho a přetáhněte aplikaci do složky Aplikace.
 
-Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o oprávnění a zapnou otevírání po přihlášení. Potom se aplikace aktualizuje sama, viz [Aktualizace](#aktualizace). Jak ji odstranit, najdete v části [Odinstalace](#odinstalace).
+Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o oprávnění a zapnou otevírání po přihlášení. Potom se aplikace aktualizuje sama, viz **Aktualizace**. Jak ji odstranit, najdete v části **Odinstalace**.
 
-## První spuštění
+</details>
+
+## Co umí
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Nespat</b>
+<br>Mac zůstane vzhůru, jak dlouho potřebujete, i se zavřeným víkem.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Ochrana ⌘Q a ⌘W</b>
+<br>Nic se nezavře omylem. Když to myslíte vážně, přidejte ⇧.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Menší kopie</b>
+<br>Klikněte pravým tlačítkem na fotku, PDF nebo video a vedle se objeví lehčí kopie.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Převod</b>
+<br>Uložte obrázek, video nebo skladbu v jiném formátu z nabídky pravého tlačítka.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Přepnutí jazyka</b>
+<br>Podržte ⌥ a ťukněte na ⇧, jazyk klávesnice se přepne.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Ukončení s posledním oknem</b>
+<br>Zavřete poslední okno aplikace a ukončí se i aplikace.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Zelené tlačítko zvětšuje</b>
+<br>Okno vyplní obrazovku bez přechodu na celou obrazovku.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Skrytí kliknutím v Docku</b>
+<br>Klikněte na aplikaci, ve které právě jste, a uhne z cesty.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Nový soubor</b>
+<br>Pravé tlačítko ve Finderu, jméno a prázdný soubor je hotový.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X přesouvá soubory</b>
+<br>Vyjměte soubory ve Finderu a vložte je, kam potřebujete.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter otevírá soubory</b>
+<br>Vyberte soubory ve Finderu a stiskněte Enter, otevřou se.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete do koše</b>
+<br>Stiskněte ⌫ ve Finderu a vybrané soubory půjdou do koše.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Herní režim</b>
+<br>Zatímco hrajete, nic nevyskočí přes hru a nic ji nezavře.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Test rychlosti</b>
+<br>Jak rychlý je váš internet a na co stačí.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Boční tlačítka</b>
+<br>Tlačítka 4 a 5 jdou zpět a vpřed, jako přejetí prsty.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Posouvání po řádcích</b>
+<br>Každé cvaknutí kolečka posune stejně, ať točíte jakkoli rychle.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Směr posouvání</b>
+<br>Jeden směr pro trackpad, jiný pro myš.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Bez zrychlení ukazatele</b>
+<br>Ukazatel ujede přesně tolik co vaše ruka.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Opakovat drženou klávesu</b>
+<br>Podržte klávesu a píše se znovu a znovu, bez nabídky diakritiky.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home a End</b>
+<br>Při psaní skok na začátek nebo konec řádku.
+</td>
+</tr></tbody>
+</table>
+
+## Podrobnosti
+
+<details>
+<summary>První spuštění</summary>
 
 pika-tools potřebuje dvě oprávnění. Při prvním spuštění otevře nastavení na stránce Oprávnění, která vás provede krok za krokem, a macOS zobrazí vlastní dotazy. Přejděte do **Nastavení systému › Soukromí a zabezpečení** a zapněte pika-tools v seznamech:
 
@@ -38,7 +172,10 @@ Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
 pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
 
-## Funkce
+</details>
+
+<details>
+<summary>Každý nástroj podrobně</summary>
 
 **Ochrana ⌘Q a ⌘W.** Samotné ⌘Q a ⌘W nic nedělají, takže omylem neukončíte aplikaci ani nezavřete okno. Přidejte Shift, když to chcete udělat záměrně: ⇧⌘Q ukončí, ⇧⌘W zavře. Funguje ve všech aplikacích. Každá klávesa má vlastní přepínač. Ve výchozím stavu vypnuto.
 
@@ -86,7 +223,10 @@ Panel v řádku nabídek začíná jen s několika řádky. Které řádky ukazu
 
 Aplikace používá jazyk systému nebo ten, který vyberete v nastavení. K dispozici je všech 23 jazyků ze seznamu na začátku této stránky.
 
-## Nespat
+</details>
+
+<details>
+<summary>Nespat</summary>
 
 Nedovolí Macu přejít do režimu spánku, když nejste u klávesnice: na libovolnou dobu od 1 sekundy do 365 dnů, nebo dokud to nevypnete. Zapněte to v nabídce a délku nastavte v nastavení: zadejte dny, hodiny, minuty a sekundy, použijte ↑ a ↓ nebo klikněte na hotovou volbu od 15 minut do 8 hodin. Nabídka ukazuje, kolik času zbývá a kdy to skončí. Pro **Displej** jsou dvě volby. **Stále zapnutý**: nezhasne a neukáže spořič ani zamčenou obrazovku. **Vypne se jako obvykle**: zhasne podle svého časovače, zatímco Mac dál pracuje. **Vypnout displej hned** (je i v nabídce) displej rovnou zhasne a Mac pracuje dál: vrátíte ho pohybem myši nebo stiskem klávesy. Ukončením pika-tools skončí i Nespat.
 
@@ -94,11 +234,17 @@ Na MacBooku můžete zapnout také **Pracovat se zavřeným víkem**. macOS na t
 
 Keep Awake, režimy displeje a zavřeného víka lze dát na tlačítko v Ovládacím centru, v panelu nabídek nebo na widget na ploše přes aplikaci Zkratky, s odkazy zkopírovanými z Nastavení › Bez spánku.
 
-## Test rychlosti
+</details>
+
+<details>
+<summary>Test rychlosti</summary>
 
 Ukáže, jak rychlý je váš internet právě teď. Klikněte na **Změřit rychlost** v Nastavení › Test rychlosti, nebo na **Změřit** v nabídce, pokud tam řádek přidáte tlačítkem s tužkou. Asi za půl minuty uvidíte stahování, odesílání, ping a odezvu: jak rychle vše reaguje, když je připojení vytížené. Pod tím je jednoduše napsáno, na co stačí: filmy ve 4K, videohovory, online hry a velká stahování. Měření používá networkQuality, který je součástí macOS, a servery Apple. Poslední výsledek zůstane do dalšího měření a odkaz pro Zkratky ho spustí z Ovládacího centra.
 
-## Nastavení
+</details>
+
+<details>
+<summary>Nastavení</summary>
 
 Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pika-tools znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
@@ -119,7 +265,10 @@ Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se ze
 
 **Synchronizovat nastavení přes iCloud** udrží pika-tools stejné na všech vašich Macích. Nastavení jsou ve složce pika-tools na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
 
-## Aktualizace
+</details>
+
+<details>
+<summary>Aktualizace</summary>
 
 pika-tools hledá nové verze při spuštění a každých 6 hodin. Můžete to vypnout v Nastavení › Obecné. Když vyjde nová verze, v nabídce se objeví tlačítko **Aktualizovat na …**: jedno kliknutí a aplikace stáhne aktualizaci, nainstaluje ji a restartuje se. Ručně můžete zkontrolovat tlačítkem **Zkontrolovat** v Nastavení › Obecné.
 
@@ -127,7 +276,10 @@ S Homebrew můžete také spustit `brew upgrade --cask pika-tools`.
 
 Od verze 1.3 zůstávají oprávnění po aktualizacích zachována.
 
-## Odinstalace
+</details>
+
+<details>
+<summary>Odinstalace</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Pokud jste instalovali přes Homebrew: `brew uninstall --cask --zap pika-tools`.
 
 Oba způsoby aplikaci ukončí, odeberou ji z položek po přihlášení a smažou ji. Skript navíc obnoví její oprávnění.
 
-## Časté dotazy
+</details>
+
+<details>
+<summary>Časté dotazy</summary>
 
 **Proč potřebuje dvě oprávnění?**
 macOS dělí přístup ke klávesnici a myši na dvě části. Sledování vstupu aplikaci dovolí události vidět, Zpřístupnění jí dovolí je měnit. K zablokování zkratky jsou potřeba obě.
@@ -155,10 +310,6 @@ Ano. Je to univerzální aplikace pro Apple Silicon i Intel, pro macOS 14 Sonoma
 **Oprávnění je zapnuté, ale nic nefunguje.**
 V **Nastavení systému › Soukromí a zabezpečení** odeberte pika-tools z obou seznamů tlačítkem − a pak ji přidejte znovu. Na stránce Oprávnění v nastavení pika-tools jsou tlačítka, která otevřou správné místo.
 
-## Přispívání
+</details>
 
-Jak sestavit aplikaci ze zdrojového kódu a vydat novou verzi, popisuje [CONTRIBUTING.md](../../CONTRIBUTING.md). Změny jsou uvedené v [CHANGELOG.md](../../CHANGELOG.md).
-
-## Licence
-
-MIT, © 2026 pikapik. Viz [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Novinky</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Sestavení ze zdrojů</a> · <a href="../../LICENSE">Licence MIT</a> · © 2026 pikapik</sub></p>

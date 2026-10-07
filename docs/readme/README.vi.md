@@ -1,21 +1,25 @@
-# pika-tools
+<p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">pika-tools</h1>
+<p align="center">Những tinh chỉnh nhỏ cho bàn phím, chuột, cửa sổ và Finder, ngay trên thanh menu của máy Mac.</p>
+<p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <b>Tiếng Việt</b> · <a href="README.th.md">ไทย</a></sub></p>
 
-[English](../../README.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [한국어](README.ko.md) · [Română](README.ro.md) · [Polski](README.pl.md) · [Türkçe](README.tr.md) · [Nederlands](README.nl.md) · [Svenska](README.sv.md) · [Čeština](README.cs.md) · [繁體中文](README.zh-Hant.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · **Tiếng Việt** · [ไทย](README.th.md)
-
-[![Bản phát hành mới nhất](https://img.shields.io/github/v/release/dev-pikapik/pika-tools)](https://github.com/dev-pikapik/pika-tools/releases/latest)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
-[![Giấy phép: MIT](https://img.shields.io/github/license/dev-pikapik/pika-tools)](../../LICENSE)
-[![Lượt tải](https://img.shields.io/github/downloads/dev-pikapik/pika-tools/total)](https://github.com/dev-pikapik/pika-tools/releases)
-
-Một ứng dụng nhỏ trên thanh menu macOS giúp phím, cửa sổ và Dock dễ dùng hơn: bảo vệ ⌘Q và ⌘W, chuyển ngôn ngữ bằng Option+Shift, lặp lại phím đang giữ, tắt gia tốc chuột, cuộn bánh xe chuột theo dòng, cho các nút bên của chuột lùi và tiến, thoát ứng dụng khi bạn đóng cửa sổ cuối cùng, ẩn ứng dụng chỉ bằng một lần bấm trong Dock và giữ cho máy Mac luôn thức.
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
+<img src="../media/settings-en-light.png" alt="Cài đặt pika-tools">
+</picture>
+</p>
 
 ## Cài đặt
-
-Với [Homebrew](https://brew.sh):
 
 ```bash
 brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 ```
+
+pika-tools sẽ nằm trên thanh menu ở phía trên màn hình. Mọi thứ đều tắt cho đến khi bạn bật lên.
+
+<details>
+<summary>Không có Homebrew? Còn hai cách khác</summary>
 
 Không dùng Homebrew: mở Terminal, dán dòng này rồi nhấn Return:
 
@@ -25,9 +29,139 @@ Không dùng Homebrew: mở Terminal, dán dòng này rồi nhấn Return:
 
 Hoặc tải về [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), mở tệp và kéo ứng dụng vào thư mục Ứng dụng.
 
-Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, mở ứng dụng, xin quyền và bật “Mở khi đăng nhập”. Sau đó ứng dụng tự cập nhật, xem [Cập nhật](#cập-nhật). Để gỡ bỏ, xem [Gỡ cài đặt](#gỡ-cài-đặt).
+Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, mở ứng dụng, xin quyền và bật “Mở khi đăng nhập”. Sau đó ứng dụng tự cập nhật, xem **Cập nhật**. Để gỡ bỏ, xem **Gỡ cài đặt**.
 
-## Lần mở đầu tiên
+</details>
+
+## Ứng dụng làm được gì
+
+<table>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+<br><b>Giữ máy thức</b>
+<br>Máy Mac luôn thức bao lâu tùy bạn, kể cả khi gập nắp.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Bảo vệ ⌘Q và ⌘W</b>
+<br>Không gì bị đóng nhầm. Thêm ⇧ khi bạn thật sự muốn.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
+<br><b>Bản sao nhỏ hơn</b>
+<br>Bấm chuột phải vào ảnh, PDF hay video là có ngay bản sao nhẹ hơn bên cạnh.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
+<br><b>Chuyển đổi</b>
+<br>Lưu ảnh, video hay bài hát sang định dạng khác chỉ bằng chuột phải.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+<br><b>Chuyển ngôn ngữ</b>
+<br>Giữ ⌥ và chạm ⇧ để đổi ngôn ngữ bàn phím.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
+<br><b>Thoát cùng cửa sổ cuối</b>
+<br>Đóng cửa sổ cuối cùng của một ứng dụng là ứng dụng cũng thoát.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
+<br><b>Nút xanh lá phóng to</b>
+<br>Cửa sổ phủ kín màn hình mà không vào chế độ toàn màn hình.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+<br><b>Ẩn bằng một lần bấm trong Dock</b>
+<br>Bấm vào ứng dụng đang dùng, nó sẽ tạm lánh đi.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+<br><b>Tệp mới</b>
+<br>Bấm chuột phải trong Finder, đặt tên, thế là có tệp trống.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
+<br><b>⌘X di chuyển tệp</b>
+<br>Cắt tệp trong Finder rồi dán vào nơi bạn muốn.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
+<br><b>Enter mở tệp</b>
+<br>Chọn tệp trong Finder rồi nhấn Enter để mở.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
+<br><b>Delete vào Thùng rác</b>
+<br>Nhấn ⌫ trong Finder, các tệp đã chọn sẽ vào Thùng rác.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Chế độ trò chơi</b>
+<br>Khi bạn chơi, không gì bật lên che trò chơi hay đóng nó lại.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+<br><b>Kiểm tra tốc độ</b>
+<br>Internet của bạn nhanh cỡ nào và đủ dùng cho việc gì.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+<br><b>Nút bên của chuột</b>
+<br>Nút 4 và 5 để quay lại và tiếp, như vuốt trên bàn di chuột.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+<br><b>Cuộn theo dòng</b>
+<br>Mỗi nấc bánh xe cuộn như nhau, dù bạn xoay nhanh đến đâu.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
+<br><b>Hướng cuộn</b>
+<br>Một hướng cho bàn di chuột, hướng khác cho chuột.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+<br><b>Không tăng tốc con trỏ</b>
+<br>Con trỏ đi đúng bằng quãng tay bạn di.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
+<br><b>Lặp lại phím khi giữ</b>
+<br>Giữ một phím để gõ lặp lại, không hiện menu dấu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
+<br><b>Home và End</b>
+<br>Nhảy về đầu hoặc cuối dòng khi đang gõ.
+</td>
+</tr></tbody>
+</table>
+
+## Chi tiết
+
+<details>
+<summary>Lần mở đầu tiên</summary>
 
 pika-tools cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đặt ở trang Quyền để hướng dẫn bạn từng bước, và macOS hiện các yêu cầu của riêng nó. Vào **Cài đặt hệ thống › Quyền riêng tư & Bảo mật** và bật pika-tools trong:
 
@@ -38,7 +172,10 @@ pika-tools cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài
 
 pika-tools không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Yêu cầu mạng duy nhất là kiểm tra cập nhật, hỏi GitHub phiên bản mới nhất.
 
-## Tính năng
+</details>
+
+<details>
+<summary>Từng công cụ chi tiết</summary>
 
 **Bảo vệ ⌘Q và ⌘W.** Chỉ nhấn ⌘Q hoặc ⌘W thì không có gì xảy ra, nên bạn sẽ không vô tình thoát ứng dụng hay đóng cửa sổ. Thêm Shift khi bạn thật sự muốn: ⇧⌘Q để thoát, ⇧⌘W để đóng. Hoạt động trong mọi ứng dụng. Mỗi phím có công tắc riêng. Tắt theo mặc định.
 
@@ -86,7 +223,10 @@ Bảng điều khiển trên thanh menu ban đầu chỉ có vài hàng. Bạn t
 
 Ứng dụng dùng ngôn ngữ của hệ thống hoặc ngôn ngữ bạn chọn trong cài đặt. Có sẵn cả 23 ngôn ngữ trong danh sách ở đầu trang này.
 
-## Giữ máy thức
+</details>
+
+<details>
+<summary>Giữ máy thức</summary>
 
 Ngăn máy Mac chuyển sang chế độ ngủ khi bạn rời bàn phím: trong khoảng thời gian bất kỳ từ 1 giây đến 365 ngày, hoặc cho đến khi bạn tắt. Bật từ menu và đặt thời lượng trong cài đặt: nhập ngày, giờ, phút và giây, dùng ↑ và ↓, hoặc bấm một lựa chọn có sẵn từ 15 phút đến 8 giờ. Menu hiển thị thời gian còn lại và khi nào kết thúc. **Màn hình** có hai lựa chọn. **Luôn bật**: không tắt, không có trình bảo vệ màn hình hay màn hình khóa. **Tắt như bình thường**: tắt theo hẹn giờ riêng trong khi máy Mac vẫn làm việc. **Tắt màn hình ngay** (có cả trong menu) tắt màn hình tức thì, máy Mac vẫn làm việc: di chuột hoặc nhấn một phím để màn hình sáng lại. Thoát pika-tools sẽ kết thúc Giữ máy thức.
 
@@ -94,11 +234,17 @@ Trên MacBook, bạn cũng có thể bật **Hoạt động khi gập nắp**. m
 
 Keep Awake, chế độ màn hình và chế độ đóng nắp có thể đặt lên một nút trong Trung tâm điều khiển, thanh menu hoặc widget trên màn hình nền qua app Phím tắt, với liên kết bạn sao chép từ Cài đặt › Giữ máy thức.
 
-## Kiểm tra tốc độ
+</details>
+
+<details>
+<summary>Kiểm tra tốc độ</summary>
 
 Cho biết internet của bạn đang nhanh đến đâu. Bấm **Kiểm tra tốc độ** trong Cài đặt › Kiểm tra tốc độ, hoặc **Kiểm tra** trong menu sau khi thêm hàng bằng nút bút chì. Sau khoảng nửa phút, bạn thấy tốc độ tải xuống, tải lên, ping và độ phản hồi: mọi thứ phản hồi nhanh thế nào khi kết nối đang bận. Bên dưới là lời giải thích đơn giản về việc kết nối phù hợp cho gì: phim 4K, gọi video, trò chơi trực tuyến và tải tệp lớn. Việc đo dùng networkQuality có sẵn trong macOS và máy chủ của Apple. Kết quả gần nhất được giữ đến lần đo sau, và một liên kết cho Phím tắt bắt đầu đo từ Trung tâm điều khiển.
 
-## Cài đặt ứng dụng
+</details>
+
+<details>
+<summary>Cài đặt ứng dụng</summary>
 
 Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở lại pika-tools từ Finder, Launchpad hay Spotlight. Khi cửa sổ đang mở, ứng dụng hiện trong Dock và trong ⌘Tab.
 
@@ -119,7 +265,10 @@ Mỗi trang đều có nút **Khôi phục mặc định…** ở cuối. Nút n
 
 **Đồng bộ hóa cài đặt với iCloud** giữ pika-tools giống nhau trên mọi máy Mac của bạn. Cài đặt nằm trong thư mục pika-tools ở iCloud Drive, và thay đổi mới nhất sẽ được áp dụng. Tính năng này tắt theo mặc định và cần bật iCloud Drive. Quyền không được đồng bộ: mỗi máy Mac tự hỏi quyền của mình.
 
-## Cập nhật
+</details>
+
+<details>
+<summary>Cập nhật</summary>
 
 pika-tools kiểm tra phiên bản mới khi mở và cứ mỗi 6 giờ. Bạn có thể tắt việc này trong Cài đặt › Cài đặt chung. Khi có phiên bản mới, nút **Cập nhật lên …** xuất hiện trong menu: chỉ một lần bấm, ứng dụng sẽ tải bản cập nhật, cài đặt và khởi động lại. Bạn cũng có thể tự kiểm tra bằng **Kiểm tra ngay** trong Cài đặt › Cài đặt chung.
 
@@ -127,7 +276,10 @@ Với Homebrew, bạn cũng có thể chạy `brew upgrade --cask pika-tools`.
 
 Từ phiên bản 1.3, các quyền vẫn được giữ sau khi cập nhật.
 
-## Gỡ cài đặt
+</details>
+
+<details>
+<summary>Gỡ cài đặt</summary>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
@@ -137,7 +289,10 @@ Nếu bạn cài bằng Homebrew: `brew uninstall --cask --zap pika-tools`.
 
 Cả hai cách đều thoát ứng dụng, gỡ nó khỏi các mục đăng nhập và xóa nó. Tập lệnh còn đặt lại các quyền của ứng dụng.
 
-## Câu hỏi thường gặp
+</details>
+
+<details>
+<summary>Câu hỏi thường gặp</summary>
 
 **Vì sao cần hai quyền?**
 macOS chia quyền truy cập bàn phím và chuột làm hai. Theo dõi đầu vào cho phép ứng dụng thấy các sự kiện, còn Trợ năng cho phép thay đổi chúng. Muốn chặn một phím tắt thì cần cả hai.
@@ -155,10 +310,6 @@ Có. Đây là ứng dụng universal cho Apple silicon và Intel, chạy trên 
 **Đã bật quyền nhưng không có gì hoạt động.**
 Trong **Cài đặt hệ thống › Quyền riêng tư & Bảo mật**, xóa pika-tools khỏi cả hai danh sách bằng nút −, rồi thêm lại. Trang Quyền trong cài đặt của pika-tools có các nút mở đúng chỗ.
 
-## Đóng góp
+</details>
 
-Cách build từ mã nguồn và phát hành được mô tả trong [CONTRIBUTING.md](../../CONTRIBUTING.md). Các thay đổi được liệt kê trong [CHANGELOG.md](../../CHANGELOG.md).
-
-## Giấy phép
-
-MIT, © 2026 pikapik. Xem [LICENSE](../../LICENSE).
+<p align="center"><sub><a href="../../CHANGELOG.md">Có gì mới</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Tự biên dịch</a> · <a href="../../LICENSE">Giấy phép MIT</a> · © 2026 pikapik</sub></p>
