@@ -4,7 +4,12 @@ import FinderSync
 final class NewFileExtension: FIFinderSync {
     override init() {
         super.init()
-        FIFinderSyncController.default().directoryURLs = [URL(fileURLWithPath: "/")]
+        let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .skipHiddenVolumes) ?? []
+        FIFinderSyncController.default().directoryURLs = Set(volumes + [URL(fileURLWithPath: "/")])
+        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { note in
+            guard let volume = note.userInfo?[NSWorkspace.volumeURLUserInfoKey] as? URL else { return }
+            FIFinderSyncController.default().directoryURLs.insert(volume)
+        }
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
