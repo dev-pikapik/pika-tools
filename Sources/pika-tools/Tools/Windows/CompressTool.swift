@@ -22,11 +22,90 @@ final class CompressTool: Tool {
             subtitle: Text("Right-click a photo, video or song"),
             hint: Text("Right-click a photo, video or song"),
             help: Text("Right-click a file in Finder. Make a Smaller Copy shrinks photos, PDFs and videos. Convert To saves pictures, videos and music in another format, like JPEG or MP4. The original stays as it is.")
-        ))
+        ) { AnyView(CompressArt(on: $0)) })
     }
 
     func refresh() { finder.refresh() }
     func load() { finder.load() }
+}
+
+struct CompressArt: View {
+    let on: Bool
+    @State private var tick = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [0.9, 0.6, 1, 2.2]
+    private static let click = CGPoint(x: 112, y: 58)
+    private static let sizes = [4_800_000, 1_200_000].map { ByteCountFormatter.string(fromByteCount: Int64($0), countStyle: .file) }
+
+    var body: some View {
+        let step = reduceMotion ? 3 : tick % Self.durations.count
+        let menu = (1...2).contains(step)
+        let copied = on && step == 3
+        IllustrationRow {
+            Stage {
+                ArtWindow(size: CGSize(width: 220, height: 100)) {
+                    ZStack {
+                        file(photo: 40, size: Self.sizes[0], selected: menu, label: menu ? .primary : .secondary)
+                            .position(x: 72, y: 42)
+                        file(photo: 28, size: Self.sizes[1], selected: false, label: .accentColor)
+                            .opacity(copied ? 1 : 0)
+                            .scaleEffect(copied ? 1 : 0.6)
+                            .position(x: 148, y: 42)
+                    }
+                }
+                .position(x: 150, y: 64)
+                if menu {
+                    ArtMenu(width: 140) {
+                        ArtMenuRow(width: 34)
+                        if on { ArtMenuRow(title: Text("Make a Smaller Copy"), active: step == 2) } else { ArtMenuRow(width: 64) }
+                        ArtMenuRow(width: 48)
+                    }
+                    .position(x: Self.click.x + 70, y: Self.click.y + 26)
+                    .transition(.scale(scale: 0.85, anchor: .topLeading).combined(with: .opacity))
+                }
+                if step == 1 { ArtRipple().position(x: Self.click.x, y: Self.click.y) }
+                ArtCursor()
+                    .cursor(at: step == 0 ? CGPoint(x: 236, y: 98) : step == 1 ? Self.click : CGPoint(x: Self.click.x + 18, y: Self.click.y + 26))
+                    .opacity(step == 3 ? 0 : 1)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
+        }
+        .loop($tick, Self.durations)
+    }
+
+    private func file(photo width: CGFloat, size: String, selected: Bool, label: Color) -> some View {
+        VStack(spacing: 3) {
+            ArtPhoto(width: width)
+            Text(verbatim: size)
+                .font(.system(size: 8, weight: .medium))
+                .foregroundStyle(label)
+                .lineLimit(1)
+                .fixedSize()
+        }
+        .padding(4)
+        .background(Color.accentColor.opacity(selected ? 0.2 : 0), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+        .frame(height: 56, alignment: .bottom)
+    }
+}
+
+private struct ArtPhoto: View {
+    let width: CGFloat
+
+    var body: some View {
+        let height = width * 0.75
+        ZStack {
+            LinearGradient(colors: [Color(red: 0.38, green: 0.65, blue: 0.96), Color(red: 0.76, green: 0.88, blue: 1)], startPoint: .top, endPoint: .bottom)
+            Circle().fill(Art.yellow).frame(width: width * 0.18, height: width * 0.18).position(x: width * 0.74, y: height * 0.3)
+            Ellipse().fill(Color(red: 0.47, green: 0.79, blue: 0.43)).frame(width: width * 1.1, height: height * 0.7).position(x: width * 0.2, y: height * 1.02)
+            Ellipse().fill(Color(red: 0.24, green: 0.63, blue: 0.33)).frame(width: width * 1.2, height: height * 0.6).position(x: width * 0.86, y: height * 1.08)
+        }
+        .frame(width: width, height: height)
+        .clipShape(RoundedRectangle(cornerRadius: 1.5, style: .continuous))
+        .padding(width * 0.06)
+        .background(Color.white, in: RoundedRectangle(cornerRadius: 2.5, style: .continuous))
+        .shadow(color: .black.opacity(0.22), radius: 1.5, y: 0.5)
+    }
 }
 
 enum Compress {
