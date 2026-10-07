@@ -11,17 +11,16 @@ enum GameRules {
 
     static let minecraftLaunchers: Set<String> = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
 
-    static let searchKeys: [Int32] = [50, 64, 65, 70, 164, 186, 187, 190, 196, 197, 210, 211, 212, 213, 263, 264]
-    static let switchingKeys: [Int32] = [27, 52, 99, 163, 173, 174, 214, 220, 222, 233, 234]
-        + Array(36...37) + Array(75...78) + Array(108...117) + Array(237...258)
-    static let appSwitcherKeys: [Int32] = [1, 2]
-    static let controlKeys: [Int32] = [57, 60, 61, 156, 159]
-        + Array(7...13) + Array(32...35) + Array(79...86) + Array(118...149) + Array(198...200)
-    static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 73, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
+    static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 60, 61, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
         + Array(15...26) + Array(28...31) + Array(53...56) + Array(100...107) + Array(150...155) + Array(165...172) + Array(192...195))
+    static let retiredKeys = ["game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-control", "game-mode-layout"]
 
-    static func hotKeys(search: Bool, switching: Bool, control: Bool, appSwitcher: Bool) -> [Int32] {
-        (search ? searchKeys : []) + (switching ? switchingKeys + (appSwitcher ? appSwitcherKeys : []) : []) + (control ? controlKeys : [])
+    static func hotKeys(_ rules: Set<GameRule>, appSwitcher: Bool) -> [Int32] {
+        GameRule.allCases.filter(rules.contains).flatMap(\.hotKeys) + (appSwitcher && rules.contains(.appSwitcher) ? [1, 2] : [])
+    }
+
+    static func isGameInput(_ modifiers: UInt64) -> Bool {
+        modifiers & 0x140000 == 0x40000
     }
 
     static func clickFlags(_ type: CGEventType, _ flags: CGEventFlags, playing: Bool, blocksControl: Bool) -> CGEventFlags {
@@ -40,6 +39,22 @@ enum GameRules {
     static func migrateControl(_ defaults: UserDefaults) {
         if defaults.object(forKey: "ctrl-keys") as? Bool == true { defaults.set(true, forKey: "game-mode-control") }
         ["ctrl-keys", "ctrl-keys-excluded"].forEach(defaults.removeObject)
+    }
+
+    static func migrateGroups(_ defaults: UserDefaults) {
+        for rule in GameRule.allCases where defaults.object(forKey: rule.key) == nil {
+            if let value = rule.group.flatMap(defaults.object) { defaults.set(value, forKey: rule.key) }
+        }
+        retiredKeys.forEach(defaults.removeObject)
+    }
+
+    static func migrated(_ values: [String: Any]) -> [String: Any] {
+        var values = values
+        for rule in GameRule.allCases where values[rule.key] == nil {
+            values[rule.key] = rule.group.flatMap { values[$0] }
+        }
+        retiredKeys.forEach { values[$0] = nil }
+        return values
     }
 
     static func looksLikeGame(id: String?, category: String?, supportsGameMode: Bool, path: String) -> Bool {
@@ -73,19 +88,52 @@ enum GameRules {
         return fn + flags.filter { modifiers & $0.0 != 0 }.map(\.1).joined() + name
     }
 
-    static func commandKeys(quit: Bool, close: Bool, playing: Bool, blocksQuit: Bool) -> (keys: Set<Int64>, blocked: Set<Int64>) {
-        let game = playing && blocksQuit
-        let blocked = Set((quit || game ? [Int64(kVK_ANSI_Q)] : []) + (close || game ? [Int64(kVK_ANSI_W)] : []))
+    static func commandKeys(quit: Bool, close: Bool, playing: Bool, blocksQuit: Bool, blocksClose: Bool) -> (keys: Set<Int64>, blocked: Set<Int64>) {
+        let blocked = Set((quit || playing && blocksQuit ? [Int64(kVK_ANSI_Q)] : []) + (close || playing && blocksClose ? [Int64(kVK_ANSI_W)] : []))
         return (playing ? blocked.union([Int64(kVK_ANSI_Q), Int64(kVK_ANSI_W)]) : blocked, blocked)
     }
 
     static func combo(key: Int64, flags: UInt64) -> UInt64 {
         UInt64(truncatingIfNeeded: key) << 32 | flags & 0x9E0000
     }
+}
 
-    static func layoutToRestore(locked: String?, current: String?) -> String? {
-        guard let locked, current != locked else { return nil }
-        return locked
+enum GameRule: String, CaseIterable {
+    case commandQ = "command-q", commandW = "command-w", spotlight, siri, appSwitcher = "app-switcher", hide, launchpad
+    case missionControl = "mission-control", appWindows = "app-windows", showDesktop = "show-desktop", desktops
+    case desktopNumbers = "desktop-numbers", swipes, emoji, lookUp = "look-up", focusKeys = "focus-keys", globe, controlClick = "control-click"
+    case cursor, display
+
+    var key: String { "game-mode-\(rawValue)" }
+
+    var group: String? {
+        switch self {
+        case .commandQ, .commandW: "game-mode-quit"
+        case .spotlight, .siri, .emoji, .lookUp, .globe: "game-mode-search"
+        case .appSwitcher, .hide, .launchpad, .showDesktop, .swipes: "game-mode-switching"
+        case .missionControl, .appWindows, .desktops, .desktopNumbers, .focusKeys, .controlClick: "game-mode-control"
+        case .cursor, .display: nil
+        }
+    }
+
+    var hotKeys: [Int32] {
+        switch self {
+        case .spotlight: [64, 65, 187, 263, 264]
+        case .siri: [186]
+        case .appSwitcher: [27, 220]
+        case .hide: [233, 234]
+        case .launchpad: [173, 174]
+        case .missionControl: [32, 34, 52, 99, 163, 222] + Array(75...78) + Array(108...117)
+        case .appWindows: [33, 35, 198]
+        case .showDesktop: [36, 37]
+        case .desktops: Array(79...86) + [199, 200]
+        case .desktopNumbers: Array(118...149)
+        case .emoji: [50]
+            case .lookUp: [70]
+        case .focusKeys: Array(7...13) + [57, 159]
+        case .globe: [190, 196, 197] + Array(210...214) + Array(237...258)
+        case .commandQ, .commandW, .swipes, .controlClick, .cursor, .display: []
+        }
     }
 }
 

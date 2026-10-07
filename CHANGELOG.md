@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.2] - Unreleased
+
+### Changed
+- Game Mode has a switch for each shortcut now. ⌘Q and ⌘W are separate, and so are Spotlight, Siri, ⌘Tab, Mission Control, App Exposé, switching desktops, ⌃F1–⌃F8, emoji, ⌃-click, swipes, the pointer and the screen. Each row shows exactly the keys it stops, and your earlier choices carry over.
+- Key caps of one shortcut sit closer together, and different shortcuts have a little more room between them, so it’s easy to see where one ends and the next begins.
+
+### Removed
+- The keyboard language setting in Game Mode. ⌃Space and other ways to switch the language always work, even in a game.
+
 ## [1.23.1] - Unreleased
 
 ### Added

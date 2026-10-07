@@ -53,7 +53,8 @@ final class CommandKeysTool: Tool {
     func refresh() {
         stop()
         (keys, blocked) = GameRules.commandKeys(
-            quit: protectsQuit, close: protectsClose, playing: GameModeTool.shared.isPlaying, blocksQuit: GameModeTool.shared.blocksQuit
+            quit: protectsQuit, close: protectsClose, playing: GameModeTool.shared.isPlaying,
+            blocksQuit: GameModeTool.shared.rules.contains(.commandQ), blocksClose: GameModeTool.shared.rules.contains(.commandW)
         )
         if !keys.isEmpty { start() }
     }
