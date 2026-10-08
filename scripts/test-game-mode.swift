@@ -58,9 +58,43 @@ enum TestGameMode {
         precondition(!GameRules.isGame(id: "com.mojang.minecraftlauncher", name: "Minecraft Launcher", path: "/Applications/Minecraft.app/Contents/MacOS/launcher", in: mojang))
         precondition(!GameRules.isGame(id: "com.overwolf.curseforge", name: "CurseForge", path: "/Applications/CurseForge.app/Contents/MacOS/CurseForge", in: overwolf))
         precondition(GameRules.isGame(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game", in: ["com.a.game"]))
-        precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "/opt/wine", in: ["Wine Game"]))
+        precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "/opt/wine", in: ["/opt/wine"]))
+        precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "", in: ["Wine Game"]))
         precondition(!GameRules.isGame(id: "com.a.game", name: "Game", path: java, in: ["com.b.game"]))
         print("minecraft: ok")
+
+        let prism = "/Users/me/Library/Application Support/PrismLauncher/java/java-runtime-delta/bin/java"
+        let system = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin/java"
+        let vanilla = "/Users/me/Library/Application Support/minecraft/runtime/"
+        let gamma = "/Users/me/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java"
+        precondition(GameRules.isRuntime(nil) && GameRules.isRuntime("net.java.openjdk.java") && GameRules.isRuntime("org.python.python"))
+        precondition(!GameRules.isRuntime("com.apple.Safari") && !GameRules.isRuntime("com.mojang.minecraftlauncher"))
+        precondition(GameRules.rule(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game") == "com.a.game")
+        precondition(GameRules.rule(id: "net.java.openjdk.java", name: "java", path: java) == vanilla)
+        precondition(GameRules.rule(id: "net.java.openjdk.java", name: "java", path: curse) == "/Users/me/Documents/curseforge/minecraft/Install/runtime/")
+        precondition(GameRules.rule(id: "net.java.openjdk.java", name: "java", path: prism) == prism)
+        precondition(GameRules.rule(id: nil, name: "Wine Game", path: "/opt/wine") == "/opt/wine")
+        precondition(GameRules.rule(id: nil, name: "Wine Game", path: "") == "Wine Game")
+        precondition(GameRules.minecraft("/Users/me/Minecraft/Runtime/x/bin/java") == "/Users/me/Minecraft/Runtime/")
+        precondition(GameRules.minecraft(prism) == nil && GameRules.minecraft("/Users/me/runtime/minecraft/java") == nil)
+        precondition(GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: gamma, in: [vanilla]))
+        precondition(GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: java, in: [vanilla]))
+        precondition(!GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: curse, in: [vanilla]))
+        precondition(GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: prism, in: [prism]))
+        precondition(!GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: system, in: [prism]))
+        precondition(!GameRules.isGame(id: "net.java.openjdk.java", name: "java", path: system, in: ["net.java.openjdk.java"]))
+        precondition(!GameRules.isGame(id: "org.python.python", name: "Python", path: "/usr/bin/python3", in: ["org.python.python"]))
+        precondition(GameRules.isGame(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game", in: [prism, "com.a.game"]))
+        print("any app: ok")
+
+        let legacy = ["com.a.game", "net.java.openjdk.java", "Wine Game"]
+        precondition(GameRules.upgraded(legacy, id: "net.java.openjdk.java", name: "java", path: java) == ["com.a.game", vanilla, "Wine Game"])
+        precondition(GameRules.upgraded(legacy, id: nil, name: "Wine Game", path: "/opt/wine") == ["com.a.game", "net.java.openjdk.java", "/opt/wine"])
+        precondition(GameRules.upgraded(legacy, id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game") == legacy)
+        precondition(GameRules.upgraded(legacy, id: "net.java.openjdk.jre", name: "java", path: java) == legacy)
+        precondition(GameRules.upgraded([vanilla, "net.java.openjdk.java"], id: "net.java.openjdk.java", name: "java", path: gamma) == [vanilla])
+        precondition(GameRules.upgraded([], id: "net.java.openjdk.java", name: "java", path: java).isEmpty)
+        print("upgrade: ok")
 
         for (old, migrated) in [(true as Bool?, true as Bool?), (false, nil), (nil, nil)] {
             let suite = "test-game-mode-migrate-\(UUID().uuidString)"

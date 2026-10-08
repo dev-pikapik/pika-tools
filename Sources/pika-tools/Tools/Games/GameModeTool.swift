@@ -118,6 +118,14 @@ final class GameModeTool: Tool {
         if !games.contains(key) { games.append(key) }
     }
 
+    func add(_ url: URL) {
+        if let app = NSWorkspace.shared.runningApplications.first(where: { $0.bundleURL?.path == url.path || $0.executableURL?.path == url.path }) {
+            return confirm(Self.key(app))
+        }
+        guard url.pathExtension == "app", let bundle = Bundle(url: url) else { return }
+        confirm(GameRules.rule(id: bundle.bundleIdentifier, name: FileManager.default.displayName(atPath: url.path), path: bundle.executableURL?.path ?? ""))
+    }
+
     func dismiss(_ key: String) {
         if !notGames.contains(key) { notGames.append(key) }
     }
@@ -150,6 +158,10 @@ final class GameModeTool: Tool {
 
     fileprivate func update() {
         let app = NSWorkspace.shared.frontmostApplication
+        if let app {
+            let upgraded = GameRules.upgraded(games, id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "")
+            if upgraded != games { return games = upgraded }
+        }
         guard isEnabled, let app, isGame(app), !Self.screenLocked else { return leave() }
         guard app.processIdentifier != game?.processIdentifier else { return }
         leave()
@@ -258,11 +270,7 @@ final class GameModeTool: Tool {
     }
 
     static func key(_ app: NSRunningApplication) -> String {
-        app.bundleIdentifier ?? app.localizedName ?? ""
-    }
-
-    func name(of app: NSRunningApplication) -> String {
-        games.contains(Self.key(app)) ? app.localizedName ?? "" : "Minecraft"
+        GameRules.rule(id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "")
     }
 
     private func isGame(_ app: NSRunningApplication) -> Bool {
@@ -452,56 +460,57 @@ struct GameModePage: View {
         Form {
             SettingsHeader(
                 tab: .games,
-                text: tool.game.map { String(localized: "Now playing: \(tool.name(of: $0))") } ?? String(localized: "Play without interruptions")
+                text: tool.game.map { String(localized: "Now playing: \($0.title)") } ?? String(localized: "Play without interruptions")
             )
             Section {
                 GameModeArt(on: tool.isEnabled)
                 tool.settingsView
             }
             Section {
-                AppExclusions(
-                    title: String(localized: "Your games"),
-                    apps: $tool.games,
-                    isEnabled: true,
-                    empty: Text("Add a game, and Game Mode turns on by itself while you play it"),
-                    addMenu: "Add a Game…"
-                )
-                .onAppear { tool.refreshSuggestions() }
-                ForEach(tool.suggestions, id: \.self) { key in
-                    LabeledContent {
-                        HStack {
-                            Button("Not a Game") { tool.dismiss(key) }
-                            Button("Add") { tool.confirm(key) }
+                Group {
+                    GameList(tool: tool)
+                        .onAppear { tool.refreshSuggestions() }
+                    ForEach(tool.suggestions, id: \.self) { key in
+                        LabeledContent {
+                            HStack {
+                                Button("Not a Game") { tool.dismiss(key) }
+                                Button("Add") { tool.confirm(key) }
+                            }
+                            .fixedSize()
+                        } label: {
+                            AppLabel(id: key, subtitle: Text("Looks like a game"))
                         }
-                        .fixedSize()
-                    } label: {
-                        AppLabel(id: key, subtitle: Text("Looks like a game"))
                     }
                 }
+                .gameList()
+            } footer: {
+                Text("You can also drag a game here from Finder or the Dock")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
             }
             rules(Text("Closing the game"), [
-                Rule(.commandQ, String(localized: "⌘Q doesn’t close the game"), ["⌘Q"]),
-                Rule(.commandW, String(localized: "⌘W doesn’t close the window"), ["⌘W"]),
+                Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
+                Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
             ], footer: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."))
             rules(Text("Apps"), [
                 Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
-                Rule(.hide, String(localized: "The game doesn’t hide or minimize"), ["⌘H", "⌘M"]),
-                Rule(.spotlight, String(localized: "Spotlight doesn’t open"), [key(64, "⌘" + String(localized: "Space"))]),
-                Rule(.siri, String(localized: "Siri and Dictation don’t start"), [key(186, "🎤")]),
-                Rule(.launchpad, String(localized: "Launchpad doesn’t open"), [key(173, "F4")]),
+                Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", "⌘M"]),
+                Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], system: Text("Spotlight")),
+                Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
+                Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], system: Text("Launchpad")),
             ])
             rules(Text("Desktops"), [
-                Rule(.missionControl, String(localized: "Mission Control doesn’t open"), [key(32, "⌃↑")]),
-                Rule(.appWindows, String(localized: "App Exposé doesn’t open"), [key(33, "⌃↓")]),
-                Rule(.showDesktop, String(localized: "The desktop doesn’t show"), [key(36, "F11")]),
+                Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], system: Text("Mission Control")),
+                Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], system: Text("App Exposé")),
+                Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], system: Text("Show Desktop")),
                 Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
                 Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
                 Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
             ])
             rules(Text("Keyboard"), [
                 Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
-                Rule(.lookUp, String(localized: "Look Up doesn’t open"), [key(70, "⌃⌘D")]),
-                Rule(.focusKeys, String(localized: "The menu bar and Dock don’t take the keyboard"), [key(12, "⌃F1"), "…", key(57, "⌃F8")]),
+                Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], system: Text("Look Up")),
+                Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(12, "⌃F1"), "…", key(57, "⌃F8")]),
                 Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
             ])
             rules(Text("Mouse and screen"), [
@@ -519,6 +528,7 @@ struct GameModePage: View {
             )
         }
         .formStyle(.grouped)
+        .gameDrop()
         .settingsPage()
         .environment(\.inSettings, true)
     }
@@ -532,7 +542,11 @@ struct GameModePage: View {
             ForEach(rows, id: \.rule) { row in
                 Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
                     HStack(spacing: 12) {
-                        RowLabel(Text(row.title), row.subtitle)
+                        GameRuleArt(rule: row.rule)
+                        HStack(alignment: .firstTextBaseline, spacing: 6) {
+                            RowLabel(Text(row.title), row.subtitle)
+                            row.system?.foregroundStyle(.secondary)
+                        }
                         Spacer(minLength: 0)
                         if !row.keys.isEmpty { KeyCaps(keys: row.keys) }
                     }
@@ -558,12 +572,14 @@ private struct Rule {
     let title: String
     let keys: [String]
     let subtitle: Text?
+    let system: Text?
 
-    init(_ rule: GameRule, _ title: String, _ keys: [String] = [], subtitle: Text? = nil) {
+    init(_ rule: GameRule, _ title: String, _ keys: [String] = [], subtitle: Text? = nil, system: Text? = nil) {
         self.rule = rule
         self.title = title
         self.keys = keys
         self.subtitle = subtitle
+        self.system = system
     }
 }
 
@@ -575,7 +591,7 @@ private struct GameModeSettings: View {
             icon: tool.icon,
             title: tool.title,
             subtitle: Text("While you play, your Mac doesn’t pull you out of the game"),
-            hint: tool.game.map { Text("Now playing: \(tool.name(of: $0))") } ?? Text("Your Mac doesn’t pull you out of a game"),
+            hint: tool.game.map { Text("Now playing: \($0.title)") } ?? Text("Your Mac doesn’t pull you out of a game"),
             help: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."),
             isOn: $tool.isEnabled
         )
@@ -643,7 +659,7 @@ struct GameModeArt: View {
     }
 }
 
-private struct GameScene: View {
+struct GameScene: View {
     let hop: Bool
 
     private static let stars: [CGPoint] = [
