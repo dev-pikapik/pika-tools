@@ -8,6 +8,7 @@ The same updates, told simply with a picture each and in every language, are in 
 
 ### Added
 - A way to say thanks. At the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. It opens buymeacoffee.com/pikapik in your browser, and everything goes into developing and supporting the app. Nothing pops up or reminds you, ever. The README has the same link, and GitHub shows a Sponsor button.
+- Clean up permissions left by deleted apps. When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now Permissions has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. Remove clears one app, Remove All clears them all, and an app you install again will simply ask again. To see the list, give pika-tools Full Disk Access; it only looks until you press Remove.
 
 ### Changed
 - A new app icon: the pikapik mark in blue, violet and coral on a dark tile. The menu bar shows the same shape and follows a light or dark menu bar. When every tool is off, the shape turns pale.

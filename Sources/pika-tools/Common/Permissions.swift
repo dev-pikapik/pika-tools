@@ -113,6 +113,7 @@ struct PermissionsView: View {
                     ) { sync.openSettings() }
                 }
             }
+            LeftoverPermissionsSection()
         }
         .formStyle(.grouped)
         .settingsPage()
@@ -125,7 +126,7 @@ struct PermissionsView: View {
     }
 }
 
-private struct PermissionRow: View {
+struct PermissionRow: View {
     let icon: String
     let symbol: String
     let title: String

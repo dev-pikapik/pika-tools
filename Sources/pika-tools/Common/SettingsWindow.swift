@@ -155,6 +155,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: String(localized: "Left by deleted apps"), synonyms: "permissions, privacy, deleted apps, cleanup, tcc"),
             SettingsItem(tab: .about, title: String(localized: "Check for updates automatically"), synonyms: "update, new version, software update"),
             SettingsItem(tab: .about, title: String(localized: "What’s New"), synonyms: "changelog, release notes, version"),
             SettingsItem(tab: .about, title: String(localized: "Report a Problem"), synonyms: "bug, issue, feedback, support"),
