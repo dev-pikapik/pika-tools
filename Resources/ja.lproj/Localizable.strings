@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "FinderでEnterキーを押して開く";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Finderで、ReturnキーまたはEnterキーを押すと選択中のファイルを開き、F2またはfn F2で名前を変更します。";
 "return, enter, open, rename, F2, keyboard" = "return, enter, 開く, 名前変更, F2, キーボード";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finderで⌘Xを押すと選択中のファイルを切り取り、⌘Vで貼り付け先のフォルダへ移動します。⌘Cで切り取りを取り消せます。";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finderで%@を押すと選択中のファイルを切り取り、⌘Vで貼り付け先のフォルダへ移動します。⌘Cで切り取りを取り消せます。";
 "cut, paste, move, files, folders, command X" = "切り取り, 貼り付け, 移動, ファイル, フォルダ, command X";
 "Check for Updates" = "アップデートを確認";
 "Shortcuts" = "ショートカット";
@@ -293,8 +293,8 @@
 "Game Mode" = "ゲームモード";
 "Games" = "ゲーム";
 "Your Mac doesn’t pull you out of a game" = "ゲーム中にMacに邪魔されません";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "ゲームを終了するには⇧⌘Q、ウインドウを閉じるには⇧⌘Wを押します。⌥⌘Escは必ず使えます。";
-"To leave the game, press ⇧⌘Q" = "ゲームを終了するには⇧⌘Qを押します";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "ゲームを終了するには%1$@、ウインドウを閉じるには%2$@を押します。⌥⌘Escは必ず使えます。";
+"To leave the game, press %@" = "ゲームを終了するには%@を押します";
 "The pointer stays in the game" = "ポインタがゲームの中にとどまる";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock、メニューバー、ホットコーナーが出てこず、ポインタがほかの画面へ移りません";
 "The screen stays on" = "画面がオンのまま";
@@ -445,3 +445,13 @@
 "Genie" = "ジニー";
 "Scale" = "スケール";
 "Suck" = "吸い込み";
+"Change in System Settings" = "システム設定で変更";
+"Type shortcut" = "ショートカットを入力";
+"Already used for “%@”" = "すでに「%@」で使われています";
+"Your Mac already uses this shortcut" = "このショートカットはMacですでに使われています";
+"Apps already use this shortcut" = "このショートカットはアプリですでに使われています";
+"Use Anyway" = "このまま使用";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "クリックして新しいキーを押します。Escでキャンセル、⌫でいつものキーに戻ります。";
+"Only with these keys" = "これらのキーを押したときだけ";
+"change shortcut, record keys, Command Shift Q" = "ショートカット変更, キーを記録, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "ショートカット変更, キーを記録, Command Shift W";

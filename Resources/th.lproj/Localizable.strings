@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter เปิดไฟล์ใน Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "ใน Finder ปุ่ม Return และ Enter จะเปิดไฟล์ที่เลือก ส่วน F2 หรือ fn F2 จะเปลี่ยนชื่อไฟล์";
 "return, enter, open, rename, F2, keyboard" = "return, enter, เปิด, เปลี่ยนชื่อ, F2, แป้นพิมพ์";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "ใน Finder ⌘X จะตัดไฟล์ที่เลือก และ ⌘V จะย้ายไฟล์ไปยังโฟลเดอร์ที่วาง ส่วน ⌘C จะยกเลิกการตัด";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "ใน Finder %@ จะตัดไฟล์ที่เลือก และ ⌘V จะย้ายไฟล์ไปยังโฟลเดอร์ที่วาง ส่วน ⌘C จะยกเลิกการตัด";
 "cut, paste, move, files, folders, command X" = "ตัด, วาง, ย้าย, ไฟล์, โฟลเดอร์, command X";
 "Check for Updates" = "ตรวจหาอัปเดต";
 "Shortcuts" = "คำสั่งลัด";
@@ -293,8 +293,8 @@
 "Game Mode" = "โหมดเกม";
 "Games" = "เกม";
 "Your Mac doesn’t pull you out of a game" = "Mac ไม่ดึงคุณออกจากเกม";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "หากต้องการออกจากเกม ให้กด ⇧⌘Q และหากต้องการปิดหน้าต่างเกม ให้กด ⇧⌘W ส่วน ⌥⌘Esc ใช้ได้เสมอ";
-"To leave the game, press ⇧⌘Q" = "หากต้องการออกจากเกม ให้กด ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "หากต้องการออกจากเกม ให้กด %1$@ และหากต้องการปิดหน้าต่างเกม ให้กด %2$@ ส่วน ⌥⌘Esc ใช้ได้เสมอ";
+"To leave the game, press %@" = "หากต้องการออกจากเกม ให้กด %@";
 "The pointer stays in the game" = "ตัวชี้อยู่ในเกมเสมอ";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, แถบเมนู และมุมลัดไม่โผล่ขึ้นมา และตัวชี้ไม่หลุดไปยังหน้าจออื่น";
 "The screen stays on" = "หน้าจอยังเปิดอยู่";
@@ -445,3 +445,13 @@
 "Genie" = "จีนี่";
 "Scale" = "ปรับขนาด";
 "Suck" = "ดูด";
+"Change in System Settings" = "เปลี่ยนในการตั้งค่าระบบ";
+"Type shortcut" = "กดคีย์ลัด";
+"Already used for “%@”" = "ใช้กับ “%@” อยู่แล้ว";
+"Your Mac already uses this shortcut" = "Mac ของคุณใช้คีย์ลัดนี้อยู่แล้ว";
+"Apps already use this shortcut" = "แอปต่างๆ ใช้คีย์ลัดนี้อยู่แล้ว";
+"Use Anyway" = "ใช้ต่อไป";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "คลิกแล้วกดปุ่มใหม่ Esc ยกเลิก ⌫ กลับไปใช้ปุ่มเดิม";
+"Only with these keys" = "เฉพาะเมื่อกดปุ่มเหล่านี้";
+"change shortcut, record keys, Command Shift Q" = "เปลี่ยนคีย์ลัด, บันทึกปุ่ม, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "เปลี่ยนคีย์ลัด, บันทึกปุ่ม, Command Shift W";

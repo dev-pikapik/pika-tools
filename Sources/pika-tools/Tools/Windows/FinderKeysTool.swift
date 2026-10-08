@@ -72,32 +72,35 @@ final class FinderKeys {
         if cuts, flags == .maskCommand, key == kVK_ANSI_C { cancelCut() }
 
         let opening = opens && flags.isEmpty && [kVK_Return, kVK_ANSI_KeypadEnter, kVK_F2].contains(key)
-        let cutting = cuts && flags == .maskCommand && (key == kVK_ANSI_X || (key == kVK_ANSI_V && cutCount != nil))
+        let cutting = cuts && SystemShortcuts.shared.finderCut == Shortcut(key: UInt16(key), modifiers: event.flags.rawValue)
+        let moving = cuts && flags == .maskCommand && key == kVK_ANSI_V && cutCount != nil
         let deleting = deletes && flags.isEmpty && [kVK_Delete, kVK_ForwardDelete].contains(key)
-        guard opening || cutting || deleting,
+        guard opening || cutting || moving || deleting,
               let finder = NSWorkspace.shared.frontmostApplication,
               finder.bundleIdentifier == "com.apple.finder",
               Self.isBrowsing(finder.processIdentifier)
         else { return false }
 
         let target: (key: Int, flags: CGEventFlags)
-        switch key {
-        case kVK_F2:
-            target = (kVK_Return, [])
-        case kVK_Return, kVK_ANSI_KeypadEnter:
-            target = (kVK_DownArrow, [.maskCommand, .maskSecondaryFn, .maskNumericPad])
-        case kVK_Delete, kVK_ForwardDelete:
-            target = (kVK_Delete, .maskCommand)
-        case kVK_ANSI_X:
+        if cutting {
             let before = NSPasteboard.general.changeCount
             cancelCut()
             watchCopy(since: before, attempts: 20)
             target = (kVK_ANSI_C, .maskCommand)
-        default:
-            let moves = NSPasteboard.general.changeCount == cutCount
-            cancelCut()
-            guard moves else { return false }
-            target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
+        } else {
+            switch key {
+            case kVK_F2:
+                target = (kVK_Return, [])
+            case kVK_Return, kVK_ANSI_KeypadEnter:
+                target = (kVK_DownArrow, [.maskCommand, .maskSecondaryFn, .maskNumericPad])
+            case kVK_Delete, kVK_ForwardDelete:
+                target = (kVK_Delete, .maskCommand)
+            default:
+                let moves = NSPasteboard.general.changeCount == cutCount
+                cancelCut()
+                guard moves else { return false }
+                target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
+            }
         }
         held = (key, target.key, target.flags)
         Self.send(target.key, target.flags, down: true, proxy)
@@ -305,6 +308,7 @@ struct FinderOpenArt: View {
 struct FinderCutArt: View {
     let on: Bool
     @State private var tick = 0
+    private var cut: String { SystemShortcuts.shared.finderCutText }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.6, 0.6, 1.6]
@@ -324,7 +328,7 @@ struct FinderCutArt: View {
                     if moved { ArtFile(selected: true).transition(.scale(scale: 0.6).combined(with: .opacity)) }
                 }
                 .position(x: 230, y: 48)
-                ArtKey(down: step == 1) { Text(verbatim: "⌘X") }
+                ArtKey(down: step == 1) { cut.isEmpty ? Text("Off") : Text(verbatim: cut) }
                     .position(x: 120, y: 106)
                 ArtKey(down: step == 2) { Text(verbatim: "⌘V") }
                     .position(x: 180, y: 106)
@@ -405,8 +409,9 @@ private struct FinderCutSettings: View {
             title: tool.title,
             subtitle: Text("Then paste to move them"),
             hint: Text("Then paste to move them"),
-            help: Text("In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut."),
-            keys: ["⌘X"],
+            help: SystemShortcuts.shared.finderCut == nil ? nil : Text("In Finder, \(SystemShortcuts.shared.finderCutText) cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut."),
+            keys: [SystemShortcuts.shared.finderCutText],
+            systemKeys: true,
             isOn: $tool.isEnabled
         )
     }

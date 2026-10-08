@@ -8,10 +8,13 @@ All notable changes to this project are documented here. The format is based on 
 - Games: adding a game is easier. Press Add a Game… and pick it from the apps that are open right now, with big icons like in the Dock. One click adds it, or drag the icon into the list. You can also drop a game straight from Finder or the Dock, and the list lights up to show where it goes. Other… still lets you pick any app from a folder.
 - Any app can be a game now, including Minecraft that runs on Java. Game Mode remembers the game itself, so other Java apps don’t turn it on. Games you added before carry over.
 - Every Game Mode switch has a small picture of what it stops.
+- Your own keys for quitting and closing. In Settings → Windows, click the keys next to Quit app or Close window and press new ones. Esc cancels, and ⌫ brings back ⇧⌘Q and ⇧⌘W. If your Mac or the other row already uses those keys, pika-tools tells you and asks first. Game Mode uses your keys too.
 
 ### Changed
 - Game Mode switches are named in simple words, like “The game doesn’t close” or “Search doesn’t pop up”. The system name, such as Spotlight or Mission Control, sits next to them in gray.
 - App names in lists show without “.app”.
+- Every shortcut in Settings shows how it is really set up on your Mac. Shortcuts you changed in System Settings show your keys, and the ones you turned off say Off. Click one to open the keyboard shortcuts in System Settings.
+- Cut files in Finder follows the Cut shortcut you set for Finder in System Settings.
 
 ## [1.24.1] - Unreleased
 

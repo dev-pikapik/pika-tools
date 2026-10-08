@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter mở tệp trong Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Trong Finder, Return và Enter mở các tệp đã chọn, còn F2 hoặc fn F2 đổi tên chúng.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, mở, đổi tên, F2, bàn phím";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Trong Finder, ⌘X cắt các tệp đã chọn và ⌘V chuyển chúng vào thư mục bạn dán. ⌘C hủy thao tác cắt.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Trong Finder, %@ cắt các tệp đã chọn và ⌘V chuyển chúng vào thư mục bạn dán. ⌘C hủy thao tác cắt.";
 "cut, paste, move, files, folders, command X" = "cắt, dán, di chuyển, tệp, thư mục, command X";
 "Check for Updates" = "Kiểm tra cập nhật";
 "Shortcuts" = "Phím tắt";
@@ -293,8 +293,8 @@
 "Game Mode" = "Chế độ trò chơi";
 "Games" = "Trò chơi";
 "Your Mac doesn’t pull you out of a game" = "Máy Mac không kéo bạn ra khỏi trò chơi";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động.";
-"To leave the game, press ⇧⌘Q" = "Để thoát trò chơi, hãy nhấn ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Để thoát trò chơi, hãy nhấn %1$@; để đóng cửa sổ của nó, nhấn %2$@. ⌥⌘Esc luôn hoạt động.";
+"To leave the game, press %@" = "Để thoát trò chơi, hãy nhấn %@";
 "The pointer stays in the game" = "Con trỏ ở lại trong trò chơi";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, thanh menu và góc nóng không bật ra, và con trỏ không trượt sang màn hình khác";
 "The screen stays on" = "Màn hình luôn bật";
@@ -445,3 +445,13 @@
 "Genie" = "Thần đèn";
 "Scale" = "Thu nhỏ";
 "Suck" = "Hút vào";
+"Change in System Settings" = "Thay đổi trong Cài đặt hệ thống";
+"Type shortcut" = "Nhấn phím tắt";
+"Already used for “%@”" = "Đã dùng cho “%@”";
+"Your Mac already uses this shortcut" = "Máy Mac của bạn đã dùng phím tắt này";
+"Apps already use this shortcut" = "Các ứng dụng đã dùng phím tắt này";
+"Use Anyway" = "Vẫn dùng";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Bấm vào rồi nhấn phím mới. Esc để hủy, ⌫ để dùng lại phím quen thuộc.";
+"Only with these keys" = "Chỉ với các phím này";
+"change shortcut, record keys, Command Shift Q" = "đổi phím tắt, ghi phím, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "đổi phím tắt, ghi phím, Command Shift W";

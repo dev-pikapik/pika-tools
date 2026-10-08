@@ -99,19 +99,6 @@ enum GameRules {
         return fenced == point ? nil : fenced
     }
 
-    static func shortcut(character: UInt16, key: UInt16, modifiers: UInt64) -> String? {
-        let names: [UInt16: String] = [
-            49: String(localized: "Space"), 48: "Tab", 53: "Esc", 36: "↩", 51: "⌫", 117: "⌦", 123: "←", 124: "→", 125: "↓", 126: "↑",
-            122: "F1", 120: "F2", 99: "F3", 118: "F4", 96: "F5", 97: "F6", 98: "F7", 100: "F8", 101: "F9", 109: "F10", 103: "F11", 111: "F12",
-            160: "F3", 131: "F4", 176: "🎤", 177: "🔍",
-        ]
-        let printable = (33..<127).contains(character) ? Unicode.Scalar(character).map { String($0).uppercased() } : nil
-        guard let name = names[key] ?? printable else { return nil }
-        let flags: [(UInt64, String)] = [(0x40000, "⌃"), (0x80000, "⌥"), (0x20000, "⇧"), (0x100000, "⌘")]
-        let fn = names[key] == nil && modifiers & 0x800000 != 0 ? "🌐" : ""
-        return fn + flags.filter { modifiers & $0.0 != 0 }.map(\.1).joined() + name
-    }
-
     static func commandKeys(quit: Bool, close: Bool, playing: Bool, blocksQuit: Bool, blocksClose: Bool) -> (keys: Set<Int64>, blocked: Set<Int64>) {
         let blocked = Set((quit || playing && blocksQuit ? [Int64(kVK_ANSI_Q)] : []) + (close || playing && blocksClose ? [Int64(kVK_ANSI_W)] : []))
         return (playing ? blocked.union([Int64(kVK_ANSI_Q), Int64(kVK_ANSI_W)]) : blocked, blocked)
@@ -211,9 +198,5 @@ enum SymbolicHotKeys {
         var modifiers: UInt64 = 0
         guard reader?(id, &character, &key, &modifiers) == 0 else { return nil }
         return (character, key, modifiers)
-    }
-
-    static func shortcut(_ id: Int32) -> String? {
-        value(id).flatMap { GameRules.shortcut(character: $0.character, key: $0.key, modifiers: $0.modifiers) }
     }
 }

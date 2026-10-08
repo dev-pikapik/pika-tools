@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter otevírá soubory ve Finderu";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Ve Finderu klávesy Return a Enter otevřou vybrané soubory a F2 nebo fn F2 je přejmenuje.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, otevřít, přejmenovat, F2, klávesnice";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Ve Finderu ⌘X vyjme vybrané soubory a ⌘V je přesune do složky, do které vkládáte. ⌘C vyjmutí zruší.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Ve Finderu %@ vyjme vybrané soubory a ⌘V je přesune do složky, do které vkládáte. ⌘C vyjmutí zruší.";
 "cut, paste, move, files, folders, command X" = "vyjmout, vložit, přesunout, soubory, složky, command X";
 "Check for Updates" = "Vyhledat aktualizace";
 "Shortcuts" = "Zkratky";
@@ -293,8 +293,8 @@
 "Game Mode" = "Herní režim";
 "Games" = "Hry";
 "Your Mac doesn’t pull you out of a game" = "Mac vás nevytrhne ze hry";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy.";
-"To leave the game, press ⇧⌘Q" = "Hru ukončíte stiskem ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Hru ukončíte stiskem %1$@, její okno zavřete stiskem %2$@. ⌥⌘Esc funguje vždy.";
+"To leave the game, press %@" = "Hru ukončíte stiskem %@";
 "The pointer stays in the game" = "Ukazatel zůstává ve hře";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, řádek nabídek a aktivní rohy nevyskakují a ukazatel neuteče na jinou obrazovku";
 "The screen stays on" = "Obrazovka zůstává zapnutá";
@@ -445,3 +445,13 @@
 "Genie" = "Džin";
 "Scale" = "Měřítko";
 "Suck" = "Vtažení";
+"Change in System Settings" = "Změnit v Nastavení systému";
+"Type shortcut" = "Stiskněte zkratku";
+"Already used for “%@”" = "Už se používá pro „%@“";
+"Your Mac already uses this shortcut" = "Váš Mac už tuto zkratku používá";
+"Apps already use this shortcut" = "Aplikace už tuto zkratku používají";
+"Use Anyway" = "Přesto použít";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Klikněte a stiskněte nové klávesy. Esc zruší, ⌫ vrátí obvyklé klávesy.";
+"Only with these keys" = "Jen s těmito klávesami";
+"change shortcut, record keys, Command Shift Q" = "změnit zkratku, nahrát klávesy, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "změnit zkratku, nahrát klávesy, Command Shift W";

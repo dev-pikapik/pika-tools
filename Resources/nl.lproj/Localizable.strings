@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter opent bestanden in de Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "In de Finder openen Return en Enter de geselecteerde bestanden en wijzigt F2 of fn F2 de naam.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, openen, hernoemen, F2, toetsenbord";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "In de Finder knipt ⌘X de geselecteerde bestanden en verplaatst ⌘V ze naar de map waarin je plakt. ⌘C annuleert het knippen.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "In de Finder knipt %@ de geselecteerde bestanden en verplaatst ⌘V ze naar de map waarin je plakt. ⌘C annuleert het knippen.";
 "cut, paste, move, files, folders, command X" = "knippen, plakken, verplaatsen, bestanden, mappen, command X";
 "Check for Updates" = "Zoek naar updates";
 "Shortcuts" = "Opdrachten";
@@ -293,8 +293,8 @@
 "Game Mode" = "Gamemodus";
 "Games" = "Games";
 "Your Mac doesn’t pull you out of a game" = "Je Mac haalt je niet uit je game";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd.";
-"To leave the game, press ⇧⌘Q" = "Druk op ⇧⌘Q om de game te verlaten";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Druk op %1$@ om een game te verlaten en op %2$@ om het venster te sluiten. ⌥⌘Esc werkt altijd.";
+"To leave the game, press %@" = "Druk op %@ om de game te verlaten";
 "The pointer stays in the game" = "De aanwijzer blijft in de game";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Het Dock, de menubalk en actieve hoeken springen niet tevoorschijn, en de aanwijzer glipt niet naar een ander scherm";
 "The screen stays on" = "Het scherm blijft aan";
@@ -445,3 +445,13 @@
 "Genie" = "Geest";
 "Scale" = "Schaal";
 "Suck" = "Opzuigen";
+"Change in System Settings" = "Wijzig in Systeeminstellingen";
+"Type shortcut" = "Typ toetscombinatie";
+"Already used for “%@”" = "Al in gebruik voor ‘%@’";
+"Your Mac already uses this shortcut" = "Je Mac gebruikt deze toetscombinatie al";
+"Apps already use this shortcut" = "Apps gebruiken deze toetscombinatie al";
+"Use Anyway" = "Toch gebruiken";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Klik en druk op de nieuwe toetsen. Esc annuleert, ⌫ zet de gewone toetsen terug.";
+"Only with these keys" = "Alleen met deze toetsen";
+"change shortcut, record keys, Command Shift Q" = "toetscombinatie wijzigen, toetsen opnemen, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "toetscombinatie wijzigen, toetsen opnemen, Command Shift W";

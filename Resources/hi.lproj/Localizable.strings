@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter से Finder में फ़ाइलें खुलती हैं";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Finder में Return और Enter चुनी हुई फ़ाइलें खोलते हैं, और F2 या fn F2 उनका नाम बदलता है।";
 "return, enter, open, rename, F2, keyboard" = "return, enter, खोलना, नाम बदलना, F2, कीबोर्ड";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder में ⌘X चुनी हुई फ़ाइलें कट करता है, और ⌘V उन्हें उस फ़ोल्डर में ले जाता है जिसमें आप पेस्ट करते हैं। ⌘C कट को रद्द कर देता है।";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder में %@ चुनी हुई फ़ाइलें कट करता है, और ⌘V उन्हें उस फ़ोल्डर में ले जाता है जिसमें आप पेस्ट करते हैं। ⌘C कट को रद्द कर देता है।";
 "cut, paste, move, files, folders, command X" = "कट, पेस्ट, ले जाना, मूव, फ़ाइलें, फ़ोल्डर, command X";
 "Check for Updates" = "अपडेट जाँचें";
 "Shortcuts" = "शॉर्टकट";
@@ -293,8 +293,8 @@
 "Game Mode" = "गेम मोड";
 "Games" = "गेम";
 "Your Mac doesn’t pull you out of a game" = "आपका Mac आपको गेम से बाहर नहीं खींचता";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "गेम से बाहर निकलने के लिए ⇧⌘Q दबाएँ, और उसकी विंडो बंद करने के लिए ⇧⌘W। ⌥⌘Esc हमेशा काम करता है।";
-"To leave the game, press ⇧⌘Q" = "गेम से बाहर निकलने के लिए ⇧⌘Q दबाएँ";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "गेम से बाहर निकलने के लिए %1$@ दबाएँ, और उसकी विंडो बंद करने के लिए %2$@। ⌥⌘Esc हमेशा काम करता है।";
+"To leave the game, press %@" = "गेम से बाहर निकलने के लिए %@ दबाएँ";
 "The pointer stays in the game" = "पॉइंटर गेम में ही रहता है";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, मेनू बार और हॉट कॉर्नर अचानक नहीं खुलते, और पॉइंटर दूसरी स्क्रीन पर नहीं जाता";
 "The screen stays on" = "स्क्रीन चालू रहती है";
@@ -445,3 +445,13 @@
 "Genie" = "जिनी";
 "Scale" = "स्केल";
 "Suck" = "सोखना";
+"Change in System Settings" = "सिस्टम सेटिंग्ज़ में बदलें";
+"Type shortcut" = "शॉर्टकट दबाएँ";
+"Already used for “%@”" = "पहले से “%@” के लिए इस्तेमाल हो रहा है";
+"Your Mac already uses this shortcut" = "आपका Mac यह शॉर्टकट पहले से इस्तेमाल करता है";
+"Apps already use this shortcut" = "ऐप्स यह शॉर्टकट पहले से इस्तेमाल करते हैं";
+"Use Anyway" = "फिर भी इस्तेमाल करें";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "क्लिक करें और नई कुंजियाँ दबाएँ। Esc रद्द करता है, ⌫ सामान्य कुंजियाँ वापस लाता है।";
+"Only with these keys" = "केवल इन कुंजियों के साथ";
+"change shortcut, record keys, Command Shift Q" = "शॉर्टकट बदलें, कुंजियाँ रिकॉर्ड करें, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "शॉर्टकट बदलें, कुंजियाँ रिकॉर्ड करें, Command Shift W";

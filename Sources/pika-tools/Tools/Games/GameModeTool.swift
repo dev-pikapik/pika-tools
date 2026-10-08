@@ -264,11 +264,6 @@ final class GameModeTool: Tool {
         isActive = false
     }
 
-    func keys(_ ids: Int32...) -> [String] {
-        let off = HotKeyTrace.ids(trace.defaults) ?? []
-        return ids.filter { off.contains($0) || SymbolicHotKeys.isEnabled($0) }.compactMap(SymbolicHotKeys.shortcut)
-    }
-
     static func key(_ app: NSRunningApplication) -> String {
         GameRules.rule(id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "")
     }
@@ -361,7 +356,7 @@ private enum GameHint {
 
     static func show() {
         guard let screen = NSScreen.screens.first(where: { NSMouseInRect(NSEvent.mouseLocation, $0.frame, false) }) ?? NSScreen.main else { return }
-        let view = NSHostingView(rootView: Text("To leave the game, press ⇧⌘Q")
+        let view = NSHostingView(rootView: Text("To leave the game, press \(CommandKeysTool.quit.text)")
             .font(.title3.weight(.medium))
             .padding(.horizontal, 22)
             .padding(.vertical, 12)
@@ -491,10 +486,10 @@ struct GameModePage: View {
             rules(Text("Closing the game"), [
                 Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
                 Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
-            ], footer: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."))
+            ], footer: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."))
             rules(Text("Apps"), [
                 Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
-                Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", "⌘M"]),
+                Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
                 Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], system: Text("Spotlight")),
                 Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
                 Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], system: Text("Launchpad")),
@@ -534,7 +529,7 @@ struct GameModePage: View {
     }
 
     private func key(_ id: Int32, _ fallback: String) -> String {
-        tool.keys(id).first ?? fallback
+        SystemShortcuts.shared.text(id) ?? fallback
     }
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
@@ -548,7 +543,7 @@ struct GameModePage: View {
                             row.system?.foregroundStyle(.secondary)
                         }
                         Spacer(minLength: 0)
-                        if !row.keys.isEmpty { KeyCaps(keys: row.keys) }
+                        if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: !row.rule.hotKeys.isEmpty) }
                     }
                 }
                 .settingAnchor(row.title)
@@ -592,7 +587,7 @@ private struct GameModeSettings: View {
             title: tool.title,
             subtitle: Text("While you play, your Mac doesn’t pull you out of the game"),
             hint: tool.game.map { Text("Now playing: \($0.title)") } ?? Text("Your Mac doesn’t pull you out of a game"),
-            help: Text("To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works."),
+            help: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."),
             isOn: $tool.isEnabled
         )
     }

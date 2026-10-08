@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter відкриває файли у Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "У Finder клавіші Return і Enter відкривають виділені файли, а F2 або fn F2 перейменовує їх.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, відкрити, перейменувати, F2, клавіатура";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "У Finder ⌘X вирізає виділені файли, а ⌘V переносить їх до папки, куди ви вставляєте. ⌘C скасовує вирізання.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "У Finder %@ вирізає виділені файли, а ⌘V переносить їх до папки, куди ви вставляєте. ⌘C скасовує вирізання.";
 "cut, paste, move, files, folders, command X" = "вирізати, вставити, перемістити, перенести, файли, папки, command X";
 "Check for Updates" = "Перевірити оновлення";
 "Shortcuts" = "Команди";
@@ -293,8 +293,8 @@
 "Game Mode" = "Ігровий режим";
 "Games" = "Ігри";
 "Your Mac doesn’t pull you out of a game" = "Mac не висмикує вас із гри";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Щоб вийти з гри, натисніть ⇧⌘Q, а щоб закрити її вікно — ⇧⌘W. ⌥⌘Esc працює завжди.";
-"To leave the game, press ⇧⌘Q" = "Щоб вийти з гри, натисніть ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Щоб вийти з гри, натисніть %1$@, а щоб закрити її вікно — %2$@. ⌥⌘Esc працює завжди.";
+"To leave the game, press %@" = "Щоб вийти з гри, натисніть %@";
 "The pointer stays in the game" = "Курсор залишається в грі";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, рядок меню й активні кути не вискакують, а курсор не переходить на інший екран";
 "The screen stays on" = "Екран не гасне";
@@ -445,3 +445,13 @@
 "Genie" = "Джин";
 "Scale" = "Масштаб";
 "Suck" = "Втягування";
+"Change in System Settings" = "Змінити в Системних параметрах";
+"Type shortcut" = "Натисніть сполучення";
+"Already used for “%@”" = "Уже використовується для «%@»";
+"Your Mac already uses this shortcut" = "Ваш Mac уже використовує це сполучення";
+"Apps already use this shortcut" = "Це сполучення вже використовують програми";
+"Use Anyway" = "Усе одно використати";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Натисніть сюди, а потім нові клавіші. Esc — скасувати, ⌫ поверне звичайні клавіші.";
+"Only with these keys" = "Лише з цими клавішами";
+"change shortcut, record keys, Command Shift Q" = "змінити сполучення, записати клавіші, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "змінити сполучення, записати клавіші, Command Shift W";

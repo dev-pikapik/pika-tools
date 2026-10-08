@@ -9,7 +9,8 @@ struct SettingsFile {
     static let maxSize = 2_000_000
     static let keys = Set([
         "appearance", "AppleLanguages", "open-at-login", "check-updates",
-        "command-keys-quit", "command-keys-close", "input-switch", "key-repeat", "home-end", "home-end-excluded",
+        "command-keys-quit", "command-keys-close", "command-keys-quit-shortcut", "command-keys-close-shortcut",
+        "input-switch", "key-repeat", "home-end", "home-end-excluded",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
         "side-buttons", "side-buttons-swap",

@@ -1,3 +1,4 @@
+import Carbon
 import SwiftUI
 
 @Observable
@@ -23,6 +24,26 @@ final class CommandKeysTool: Tool {
         }
     }
 
+    var quitKeys: Shortcut {
+        didSet {
+            Self.save(quitKeys, .quit, "command-keys-quit-shortcut")
+            refresh()
+        }
+    }
+
+    var closeKeys: Shortcut {
+        didSet {
+            Self.save(closeKeys, .close, "command-keys-close-shortcut")
+            refresh()
+        }
+    }
+
+    static var quit: Shortcut { shared?.quitKeys ?? .quit }
+    static var close: Shortcut { shared?.closeKeys ?? .close }
+    private static var shared: CommandKeysTool? { ToolRegistry.shared.tools.lazy.compactMap { $0 as? CommandKeysTool }.first }
+
+    var isDefault: Bool { !isEnabled && quitKeys == .quit && closeKeys == .close }
+
     var isEnabled: Bool {
         get { protectsQuit || protectsClose }
         set {
@@ -35,15 +56,35 @@ final class CommandKeysTool: Tool {
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var keys: Set<Int64> = []
     @ObservationIgnored fileprivate var blocked: Set<Int64> = []
+    @ObservationIgnored fileprivate var triggers: [Shortcut: Int64] = [:]
+    @ObservationIgnored fileprivate var held: (key: Int64, target: Int64)?
 
     init() {
         protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
         protectsClose = UserDefaults.standard.bool(forKey: "command-keys-close")
+        quitKeys = Shortcut(stored: UserDefaults.standard.object(forKey: "command-keys-quit-shortcut")) ?? .quit
+        closeKeys = Shortcut(stored: UserDefaults.standard.object(forKey: "command-keys-close-shortcut")) ?? .close
     }
 
     func load() {
         protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
         protectsClose = UserDefaults.standard.bool(forKey: "command-keys-close")
+        quitKeys = Shortcut(stored: UserDefaults.standard.object(forKey: "command-keys-quit-shortcut")) ?? .quit
+        closeKeys = Shortcut(stored: UserDefaults.standard.object(forKey: "command-keys-close-shortcut")) ?? .close
+    }
+
+    func reset() {
+        isEnabled = false
+        quitKeys = .quit
+        closeKeys = .close
+    }
+
+    private static func save(_ shortcut: Shortcut, _ standard: Shortcut, _ key: String) {
+        if shortcut == standard {
+            UserDefaults.standard.removeObject(forKey: key)
+        } else {
+            UserDefaults.standard.set(shortcut.stored, forKey: key)
+        }
     }
 
     var settingsView: AnyView {
@@ -56,6 +97,9 @@ final class CommandKeysTool: Tool {
             quit: protectsQuit, close: protectsClose, playing: GameModeTool.shared.isPlaying,
             blocksQuit: GameModeTool.shared.rules.contains(.commandQ), blocksClose: GameModeTool.shared.rules.contains(.commandW)
         )
+        let targets = [(quitKeys, Int64(kVK_ANSI_Q)), (closeKeys, Int64(kVK_ANSI_W))].filter { keys.contains($0.1) }
+        triggers = Dictionary(targets) { first, _ in first }
+        held = nil
         if !keys.isEmpty { start() }
     }
 
@@ -108,29 +152,33 @@ private func commandKeysCallback(
     case .keyDown, .keyUp:
         let flags = event.flags
         let code = event.getIntegerValueField(.keyboardEventKeycode)
-        guard tool.keys.contains(code),
-              flags.contains(.maskCommand),
-              flags.isDisjoint(with: [.maskControl, .maskAlternate])
-        else { break }
-        guard flags.contains(.maskShift) else {
-            guard tool.blocked.contains(code) else { break }
-            if type == .keyDown { GameModeTool.shared.hint() }
+        if type == .keyUp, let held = tool.held, held.key == code {
+            tool.held = nil
+            post(held.target, down: false, proxy)
             return nil
         }
-        guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0,
-              let key = CGEvent(
-                  keyboardEventSource: CGEventSource(stateID: .privateState),
-                  virtualKey: CGKeyCode(code),
-                  keyDown: type == .keyDown
-              )
-        else { return nil }
-        key.flags = .maskCommand
-        key.tapPostEvent(proxy)
+        if type == .keyDown, let target = tool.triggers[Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: flags.rawValue)] {
+            guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else { return nil }
+            tool.held = (code, target)
+            post(target, down: true, proxy)
+            return nil
+        }
+        guard tool.blocked.contains(code),
+              flags.contains(.maskCommand),
+              flags.isDisjoint(with: [.maskControl, .maskAlternate, .maskShift])
+        else { break }
+        if type == .keyDown { GameModeTool.shared.hint() }
         return nil
     default:
         break
     }
     return Unmanaged.passUnretained(event)
+}
+
+private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy) {
+    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
+    key.flags = .maskCommand
+    key.tapPostEvent(proxy)
 }
 
 private struct CommandKeysSettings: View {
@@ -139,28 +187,39 @@ private struct CommandKeysSettings: View {
 
     var body: some View {
         if inSettings {
-            row(key: "Q", title: String(localized: "Quit app"), isOn: $tool.protectsQuit)
+            row("Q", String(localized: "Quit app"), isOn: $tool.protectsQuit, keys: $tool.quitKeys, standard: .quit, other: (String(localized: "Close window"), tool.closeKeys))
                 .settingAnchor(String(localized: "Protect quitting and closing"))
-            row(key: "W", title: String(localized: "Close window"), isOn: $tool.protectsClose)
+            row("W", String(localized: "Close window"), isOn: $tool.protectsClose, keys: $tool.closeKeys, standard: .close, other: (String(localized: "Quit app"), tool.quitKeys))
         } else {
             ToggleRow(
                 icon: tool.icon,
                 title: tool.title,
                 subtitle: Text("Quit and close need one more key"),
                 hint: Text("Quit and close need one more key"),
-                keys: ["⇧"],
+                keys: tool.quitKeys == .quit && tool.closeKeys == .close ? ["⇧"] : [tool.quitKeys.text, tool.closeKeys.text],
                 isOn: $tool.isEnabled
             )
         }
     }
 
-    private func row(key: String, title: String, isOn: Binding<Bool>) -> some View {
+    private func row(
+        _ letter: String, _ title: String, isOn: Binding<Bool>, keys: Binding<Shortcut>, standard: Shortcut, other: (title: String, keys: Shortcut)
+    ) -> some View {
         Toggle(isOn: isOn) {
-            KeyLabel(
-                keys: [isOn.wrappedValue ? "⇧⌘" + key : "⌘" + key],
-                title: Text(title),
-                subtitle: isOn.wrappedValue ? Text("Only with all three keys") : Text("Works as usual")
-            )
+            Group {
+                if isOn.wrappedValue {
+                    ShortcutLabel(
+                        shortcut: keys,
+                        standard: standard,
+                        title: Text(title),
+                        subtitle: keys.wrappedValue == standard ? Text("Only with all three keys") : Text("Only with these keys"),
+                        others: [(String(localized: "Already used for “\(other.title)”"), other.keys)]
+                    )
+                } else {
+                    KeyLabel(keys: ["⌘" + letter], title: Text(title), subtitle: Text("Works as usual"))
+                }
+            }
+            .settingAnchor(title)
         }
     }
 }

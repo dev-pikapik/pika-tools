@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter membuka file di Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Di Finder, Return dan Enter membuka file yang dipilih, dan F2 atau fn F2 mengganti namanya.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, buka, ganti nama, F2, keyboard";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Di Finder, ⌘X memotong file yang dipilih, lalu ⌘V memindahkannya ke folder tempat file ditempel. ⌘C membatalkan pemotongan.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Di Finder, %@ memotong file yang dipilih, lalu ⌘V memindahkannya ke folder tempat file ditempel. ⌘C membatalkan pemotongan.";
 "cut, paste, move, files, folders, command X" = "potong, tempel, pindah, file, folder, command X";
 "Check for Updates" = "Periksa Pembaruan";
 "Shortcuts" = "Pintasan";
@@ -293,8 +293,8 @@
 "Game Mode" = "Mode Game";
 "Games" = "Game";
 "Your Mac doesn’t pull you out of a game" = "Mac tidak menarik Anda keluar dari game";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, ⇧⌘W. ⌥⌘Esc selalu berfungsi.";
-"To leave the game, press ⇧⌘Q" = "Untuk keluar dari game, tekan ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Untuk keluar dari game, tekan %1$@; untuk menutup jendelanya, %2$@. ⌥⌘Esc selalu berfungsi.";
+"To leave the game, press %@" = "Untuk keluar dari game, tekan %@";
 "The pointer stays in the game" = "Penunjuk tetap di dalam game";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, bar menu, dan sudut aktif tidak muncul tiba-tiba, dan penunjuk tidak lari ke layar lain";
 "The screen stays on" = "Layar tetap menyala";
@@ -445,3 +445,13 @@
 "Genie" = "Jin";
 "Scale" = "Skala";
 "Suck" = "Isap";
+"Change in System Settings" = "Ubah di Pengaturan Sistem";
+"Type shortcut" = "Tekan pintasan";
+"Already used for “%@”" = "Sudah dipakai untuk “%@”";
+"Your Mac already uses this shortcut" = "Mac Anda sudah memakai pintasan ini";
+"Apps already use this shortcut" = "App sudah memakai pintasan ini";
+"Use Anyway" = "Tetap Gunakan";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Klik lalu tekan tombol baru. Esc membatalkan, ⌫ mengembalikan tombol biasa.";
+"Only with these keys" = "Hanya dengan tombol ini";
+"change shortcut, record keys, Command Shift Q" = "ubah pintasan, rekam tombol, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "ubah pintasan, rekam tombol, Command Shift W";
