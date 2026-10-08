@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Siz oynarken ekran kararmaz ve uyumaz";
 "Your games" = "Oyunlarınız";
 "Open your game, and it shows up here" = "Oyununuzu açın, burada görünecek";
-"Click your game to add it, or drag it to the list" = "Eklemek için oyununuza tıklayın ya da onu listeye sürükleyin";
-"You can also drag a game here from Finder or the Dock" = "Bir oyunu buraya Finder’dan veya Dock’tan da sürükleyebilirsiniz";
+"Here’s what’s in your Dock. Click your game to add it" = "Dock’unuzdaki her şey burada. Eklemek için oyununuza tıklayın";
+"You can also drag a game here from Finder" = "Bir oyunu buraya Finder’dan da sürükleyebilirsiniz";
 "Not a Game" = "Oyun Değil";
 "Looks like a game" = "Oyuna benziyor";
 "game, games, gaming, play, Steam, full screen" = "oyun, oyunlar, gaming, oynamak, Steam, tam ekran";

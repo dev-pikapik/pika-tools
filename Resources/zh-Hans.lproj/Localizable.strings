@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "玩游戏时显示器不会变暗或进入睡眠";
 "Your games" = "你的游戏";
 "Open your game, and it shows up here" = "打开你的游戏，它就会出现在这里";
-"Click your game to add it, or drag it to the list" = "点按你的游戏来添加，或把它拖到列表里";
-"You can also drag a game here from Finder or the Dock" = "也可以从访达或程序坞把游戏拖到这里";
+"Here’s what’s in your Dock. Click your game to add it" = "这里是程序坞里的所有 App。点按你的游戏来添加";
+"You can also drag a game here from Finder" = "也可以从访达把游戏拖到这里";
 "Not a Game" = "不是游戏";
 "Looks like a game" = "看起来像游戏";
 "game, games, gaming, play, Steam, full screen" = "game, 游戏, 玩, 电竞, Steam, 全屏";

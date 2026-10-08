@@ -19,16 +19,15 @@ enum Art {
 }
 
 struct IllustrationRow<Content: View>: View {
-    var size: CGSize?
     @ViewBuilder var content: Content
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: size == nil ? Art.radius : 8, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: Art.radius, style: .continuous)
         let dark = scheme == .dark
         content
-            .frame(maxWidth: size?.width ?? .infinity)
-            .frame(width: size?.width, height: size?.height ?? Art.height)
+            .frame(maxWidth: .infinity)
+            .frame(height: Art.height)
             .background(
                 LinearGradient(
                     colors: [Color.accentColor.opacity(dark ? 0.26 : 0.15), Color.accentColor.opacity(dark ? 0.09 : 0.05)],

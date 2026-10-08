@@ -60,6 +60,18 @@ enum GameRules {
         return games
     }
 
+    static func dockFiles(_ tiles: [Any]?) -> [URL] {
+        (tiles ?? [])
+            .compactMap { ((($0 as? [String: Any])?["tile-data"] as? [String: Any])?["file-data"] as? [String: Any])?["_CFURLString"] as? String }
+            .compactMap { $0.hasPrefix("/") ? URL(fileURLWithPath: $0) : URL(string: $0) }
+            .filter(\.isFileURL)
+    }
+
+    static func shelf(_ keys: [String]) -> [String] {
+        var seen = Set<String>()
+        return keys.filter { !$0.isEmpty && !$0.hasPrefix("com.pesotchi.pika-tools") && $0 != "com.apple.finder" && seen.insert($0).inserted }
+    }
+
     static func migrateControl(_ defaults: UserDefaults) {
         if defaults.object(forKey: "ctrl-keys") as? Bool == true { defaults.set(true, forKey: "game-mode-control") }
         ["ctrl-keys", "ctrl-keys-excluded"].forEach(defaults.removeObject)

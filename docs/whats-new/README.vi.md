@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Hình lớn, và chọn trò chơi ngay từ Dock
+
+<sub>1.25.1 · ngày 8 tháng 10, 2026</sub>
+
+Mỗi công tắc giờ có một hình lớn, và “Thêm trò chơi…” cho thấy những gì có trong Dock của bạn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Ở trang Hoạt ảnh và Trò chơi, mọi hình giờ đều lớn, giống hình ở đầu trang. Nhìn là biết ngay mỗi công tắc làm gì, và hình vẫn chuyển động theo tốc độ bạn chọn.
+
+Nhấn “Thêm trò chơi…” là bạn thấy Dock của mình: các ứng dụng bạn giữ ở đó và các ứng dụng đang mở, theo đúng thứ tự. Trò chơi trong Dock vẫn hiện ra dù đang đóng, cả Minecraft cũng vậy. Một cú bấm là thêm, và dấu kiểm cho biết nó đã có trong danh sách. Bấm thêm lần nữa để bỏ ra.
+
+Bạn vẫn có thể kéo trò chơi vào đây từ Finder. Không cần kéo nó ra khỏi Dock nữa, nên Dock sẽ không hỏi có xóa nó không.
+
+**Thử ngay:** Cài đặt › Trò chơi, rồi “Thêm trò chơi…”
+
+**Đã sửa**
+
+- Trò chơi nằm trong Dock nhưng đang đóng giờ đã hiện trong danh sách để thêm.
+
+---
+
 ## <a id="v1.25.0"></a>Thêm trò chơi chỉ với một cú bấm, và tự chọn phím
 
 <sub>1.25.0 · ngày 8 tháng 10, 2026</sub>

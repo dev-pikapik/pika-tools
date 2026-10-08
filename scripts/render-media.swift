@@ -31,7 +31,8 @@ enum RenderMedia {
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
         ("animations", 4.95, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
-        ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleArt(rule: .commandQ)), 64), (AnyView(GameRuleArt(rule: .spotlight)), 52), (AnyView(GameRuleArt(rule: .missionControl)), 72)], height: 36))),
+        ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleArt(rule: .commandQ, height: 32)), 64), (AnyView(GameRuleArt(rule: .spotlight, height: 32)), 52), (AnyView(GameRuleArt(rule: .missionControl, height: 32)), 72)], height: 36))),
+        ("whats-new/1.25.1/dock-games", 3.1, AnyView(DockShelfArt())),
     ]
 
     static func main() {
@@ -144,6 +145,51 @@ private struct CommandKeysArt: View {
             .animation(.smooth(duration: 0.3), value: step)
         }
         .loop($tick, [0.9, 0.9, 0.5, 1.0, 1.2])
+    }
+}
+
+private struct DockShelfArt: View {
+    @State private var tick = 0
+
+    private static let colors: [Color] = [.teal, .orange, .purple, .pink]
+
+    var body: some View {
+        let step = tick % 3
+        IllustrationRow {
+            Stage {
+                HStack(spacing: 14) {
+                    ForEach(Self.colors.indices, id: \.self) { index in
+                        VStack(spacing: 6) {
+                            RoundedRectangle(cornerRadius: 9, style: .continuous)
+                                .fill(LinearGradient(colors: [Self.colors[index], Self.colors[index].opacity(0.65)], startPoint: .top, endPoint: .bottom))
+                                .frame(width: 40, height: 40)
+                                .overlay {
+                                    if index == 2 { Image(systemName: "gamecontroller.fill").font(.system(size: 18)).foregroundStyle(.white) }
+                                }
+                                .overlay(alignment: .bottomTrailing) {
+                                    if index == 2 && step == 2 {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .font(.system(size: 17, weight: .semibold))
+                                            .symbolRenderingMode(.palette)
+                                            .foregroundStyle(.white, Color.accentColor)
+                                            .offset(x: 4, y: 4)
+                                            .transition(.scale.combined(with: .opacity))
+                                    }
+                                }
+                                .scaleEffect(index == 2 && step == 1 ? 0.9 : 1)
+                            Capsule().fill(Color.primary.opacity(0.18)).frame(width: 28, height: 4)
+                        }
+                    }
+                }
+                .padding(14)
+                .background(.fill.quaternary, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .position(x: 150, y: 64)
+                ArtCursor()
+                    .cursor(at: step == 0 ? CGPoint(x: 238, y: 108) : CGPoint(x: 168, y: 52))
+            }
+            .animation(.smooth(duration: 0.4), value: step)
+        }
+        .loop($tick, [1.0, 0.5, 1.6])
     }
 }
 

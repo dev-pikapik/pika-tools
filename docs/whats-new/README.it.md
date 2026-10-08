@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Immagini grandi e giochi direttamente dal Dock
+
+<sub>1.25.1 · 8 ottobre 2026</sub>
+
+Ogni interruttore ora ha un’immagine grande, e «Aggiungi gioco…» mostra cosa c’è nel tuo Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Nelle pagine Animazioni e Giochi tutte le immagini ora sono grandi, come quella in cima alla pagina. Si capisce subito cosa fa ogni interruttore, e le immagini si muovono ancora alla velocità che hai scelto.
+
+Fai clic su «Aggiungi gioco…» e vedi il tuo Dock: le app che tieni lì e quelle aperte adesso, nello stesso ordine. Un gioco del Dock compare anche quando è chiuso, anche Minecraft. Un clic lo aggiunge, e un segno di spunta mostra che è nell’elenco. Fai di nuovo clic per toglierlo.
+
+Puoi ancora trascinare qui un gioco dal Finder. Non serve più tirarlo fuori dal Dock, quindi il Dock non ti proporrà di rimuoverlo.
+
+**Provalo:** Impostazioni › Giochi, poi «Aggiungi gioco…»
+
+**Corretto**
+
+- Un gioco che sta nel Dock ma è chiuso ora compare nell’elenco da aggiungere.
+
+---
+
 ## <a id="v1.25.0"></a>Aggiungi un gioco con un clic e scegli i tuoi tasti
 
 <sub>1.25.0 · 8 ottobre 2026</sub>

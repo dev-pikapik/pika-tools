@@ -65,7 +65,7 @@ struct AppLabel: View {
     var subtitle: Text?
 
     var body: some View {
-        let (name, icon) = id.hasPrefix("/") ? Self.game(id) : Self.app(id)
+        let (name, icon) = Self.info(id)
         HStack(spacing: 8) {
             Image(nsImage: icon)
                 .resizable()
@@ -80,6 +80,10 @@ struct AppLabel: View {
                 }
             }
         }
+    }
+
+    static func info(_ id: String) -> (name: String, icon: NSImage) {
+        id.hasPrefix("/") ? game(id) : app(id)
     }
 
     private static func app(_ id: String) -> (String, NSImage) {

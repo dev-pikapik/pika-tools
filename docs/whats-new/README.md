@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Big pictures, and games right from your Dock
+
+<sub>1.25.1 · October 8, 2026</sub>
+
+Every switch now has a big picture, and Add a Game… shows what’s in your Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+On the Animations and Games pages, every picture is now big, just like the one at the top of the page. It’s easier to see what each switch does, and the pictures still move at the speed you pick.
+
+Press Add a Game… and you see your Dock: the apps you keep there and the ones open right now, in the same order. A game you keep in the Dock shows up even when it’s closed, Minecraft too. One click adds it, and a check mark shows it’s on the list. Click again to take it off.
+
+You can still drag a game here from Finder. There’s no need to pull it out of the Dock anymore, so the Dock won’t offer to remove it.
+
+**Try it:** Settings › Games, then Add a Game…
+
+**Fixed**
+
+- A game that sits in the Dock but is closed now shows up in the list for adding.
+
+---
+
 ## <a id="v1.25.0"></a>Add a game in one click, and choose your own keys
 
 <sub>1.25.0 · October 8, 2026</sub>

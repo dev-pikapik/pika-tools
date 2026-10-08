@@ -91,9 +91,11 @@ struct AnimationThumb<Content: View>: View {
     }
 
     var body: some View {
-        IllustrationRow(size: CGSize(width: 104, height: 64)) {
+        IllustrationRow {
             ZStack { content(tick % durations.count) }
                 .frame(width: 104, height: 64)
+                .scaleEffect(Art.height / 64)
+                .frame(width: 104 * Art.height / 64, height: Art.height)
         }
         .replays($taps, on: value)
         .loop($tick, durations, replay: taps)
@@ -289,33 +291,34 @@ struct MinimizeArt: View {
     let effect: Int
     @State private var tick = 1
     @State private var taps = 0
-    @Environment(\.colorScheme) private var scheme
 
     var body: some View {
         let step = tick % 2
-        let dark = scheme == .dark
-        ZStack {
-            MinimizeShape(progress: step == 1 ? 1 : 0, effect: effect)
-                .fill(Color(nsColor: .windowBackgroundColor))
-                .overlay(MinimizeShape(progress: step == 1 ? 1 : 0, effect: effect).stroke(Color.primary.opacity(0.2), lineWidth: 0.5))
-                .animation(.easeInOut(duration: 0.5), value: step)
-            HStack(spacing: 2.5) {
-                ForEach([Art.red, Art.yellow, Art.green], id: \.self) { Circle().fill($0).frame(width: 3.5, height: 3.5) }
-            }
-            .position(x: 19, y: 9)
-            .opacity(step == 1 ? 0 : 1)
-            .animation(.easeInOut(duration: step == 1 ? 0.1 : 0.3).delay(step == 1 ? 0 : 0.3), value: step)
-            HStack(spacing: 3) {
-                ForEach([Color.teal, .accentColor, .orange], id: \.self) {
-                    RoundedRectangle(cornerRadius: 2, style: .continuous).fill($0).frame(width: 7, height: 7)
+        IllustrationRow {
+            ZStack {
+                MinimizeShape(progress: step == 1 ? 1 : 0, effect: effect)
+                    .fill(Color(nsColor: .windowBackgroundColor))
+                    .overlay(MinimizeShape(progress: step == 1 ? 1 : 0, effect: effect).stroke(Color.primary.opacity(0.2), lineWidth: 0.5))
+                    .animation(.easeInOut(duration: 0.5), value: step)
+                HStack(spacing: 2.5) {
+                    ForEach([Art.red, Art.yellow, Art.green], id: \.self) { Circle().fill($0).frame(width: 3.5, height: 3.5) }
                 }
+                .position(x: 19, y: 9)
+                .opacity(step == 1 ? 0 : 1)
+                .animation(.easeInOut(duration: step == 1 ? 0.1 : 0.3).delay(step == 1 ? 0 : 0.3), value: step)
+                HStack(spacing: 3) {
+                    ForEach([Color.teal, .accentColor, .orange], id: \.self) {
+                        RoundedRectangle(cornerRadius: 2, style: .continuous).fill($0).frame(width: 7, height: 7)
+                    }
+                }
+                .padding(2)
+                .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: RoundedRectangle(cornerRadius: 3, style: .continuous))
+                .position(x: 33.5, y: 38.5)
             }
-            .padding(2)
-            .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: RoundedRectangle(cornerRadius: 3, style: .continuous))
-            .position(x: 33.5, y: 38.5)
+            .frame(width: 67, height: 44)
+            .scaleEffect(Art.height / 44)
+            .frame(width: 67 * Art.height / 44, height: Art.height)
         }
-        .frame(width: 67, height: 44)
-        .background(LinearGradient(colors: [Color.accentColor.opacity(dark ? 0.26 : 0.15), Color.accentColor.opacity(dark ? 0.09 : 0.05)], startPoint: .top, endPoint: .bottom))
         .replays($taps, on: effect)
         .loop($tick, [1.2, 1.2], replay: taps)
     }

@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Displej neztmavne ani neusne, dokud hrajete";
 "Your games" = "Vaše hry";
 "Open your game, and it shows up here" = "Otevřete hru a objeví se tady";
-"Click your game to add it, or drag it to the list" = "Klikněte na hru, abyste ji přidali, nebo ji přetáhněte do seznamu";
-"You can also drag a game here from Finder or the Dock" = "Hru sem můžete přetáhnout i z Finderu nebo z Docku";
+"Here’s what’s in your Dock. Click your game to add it" = "Tady je všechno, co máte v Docku. Klikněte na hru, abyste ji přidali";
+"You can also drag a game here from Finder" = "Hru sem můžete přetáhnout i z Finderu";
 "Not a Game" = "Není hra";
 "Looks like a game" = "Vypadá jako hra";
 "game, games, gaming, play, Steam, full screen" = "hra, hry, hraní, hrát, gaming, Steam, celá obrazovka";

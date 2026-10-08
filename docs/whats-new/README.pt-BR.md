@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Imagens grandes e jogos direto do Dock
+
+<sub>1.25.1 · 8 de outubro de 2026</sub>
+
+Cada chave agora tem uma imagem grande, e “Adicionar jogo…” mostra o que está no seu Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Nas páginas Animações e Jogos, todas as imagens agora são grandes, como a do topo da página. Dá para ver na hora o que cada chave faz, e as imagens continuam se movendo na velocidade que você escolheu.
+
+Clique em “Adicionar jogo…” e você vê o seu Dock: os apps que você mantém lá e os que estão abertos agora, na mesma ordem. Um jogo do Dock aparece mesmo fechado, o Minecraft também. Um clique adiciona, e uma marca mostra que ele já está na lista. Clique de novo para tirá-lo.
+
+Você ainda pode arrastar um jogo para cá a partir do Finder. Não é mais preciso puxá-lo para fora do Dock, então o Dock não oferece removê-lo.
+
+**Experimente:** Ajustes › Jogos, depois “Adicionar jogo…”
+
+**Corrigido**
+
+- Um jogo que está no Dock, mas fechado, agora aparece na lista para adicionar.
+
+---
+
 ## <a id="v1.25.0"></a>Adicione um jogo com um clique e escolha suas próprias teclas
 
 <sub>1.25.0 · 8 de outubro de 2026</sub>

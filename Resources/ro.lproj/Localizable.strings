@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Ecranul nu se estompează și nu adoarme cât timp joci";
 "Your games" = "Jocurile tale";
 "Open your game, and it shows up here" = "Deschide jocul și va apărea aici";
-"Click your game to add it, or drag it to the list" = "Fă clic pe joc ca să-l adaugi sau trage-l în listă";
-"You can also drag a game here from Finder or the Dock" = "Poți trage un joc aici și din Finder sau din Dock";
+"Here’s what’s in your Dock. Click your game to add it" = "Aici e tot ce ai în Dock. Fă clic pe joc ca să-l adaugi";
+"You can also drag a game here from Finder" = "Poți trage un joc aici și din Finder";
 "Not a Game" = "Nu e joc";
 "Looks like a game" = "Pare un joc";
 "game, games, gaming, play, Steam, full screen" = "joc, jocuri, gaming, a juca, Steam, ecran complet";

@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Екран не тьмяніє й не засинає, поки ви граєте";
 "Your games" = "Ваші ігри";
 "Open your game, and it shows up here" = "Відкрийте гру — і вона з’явиться тут";
-"Click your game to add it, or drag it to the list" = "Натисніть на гру, щоб додати її, або перетягніть її в список";
-"You can also drag a game here from Finder or the Dock" = "Гру можна перетягнути сюди й з Finder або Dock";
+"Here’s what’s in your Dock. Click your game to add it" = "Тут усе, що є в Dock. Натисніть на гру, щоб додати її";
+"You can also drag a game here from Finder" = "Гру можна перетягнути сюди й з Finder";
 "Not a Game" = "Не гра";
 "Looks like a game" = "Схоже на гру";
 "game, games, gaming, play, Steam, full screen" = "гра, ігри, ігровий, грати, геймінг, Steam, повний екран";

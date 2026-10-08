@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Skärmen dämpas inte och somnar inte medan du spelar";
 "Your games" = "Dina spel";
 "Open your game, and it shows up here" = "Öppna ditt spel så dyker det upp här";
-"Click your game to add it, or drag it to the list" = "Klicka på ditt spel för att lägga till det, eller dra det till listan";
-"You can also drag a game here from Finder or the Dock" = "Du kan också dra hit ett spel från Finder eller Dock";
+"Here’s what’s in your Dock. Click your game to add it" = "Här är allt som finns i ditt Dock. Klicka på ditt spel för att lägga till det";
+"You can also drag a game here from Finder" = "Du kan också dra hit ett spel från Finder";
 "Not a Game" = "Inte ett spel";
 "Looks like a game" = "Ser ut som ett spel";
 "game, games, gaming, play, Steam, full screen" = "spel, gaming, spela, Steam, helskärm";
