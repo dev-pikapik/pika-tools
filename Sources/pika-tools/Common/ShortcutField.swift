@@ -8,6 +8,7 @@ final class SystemShortcuts {
     struct Place {
         let url: URL
         let hint: String?
+        var title: String?
     }
 
     private(set) var hotKeys: NSDictionary = [:]
@@ -82,10 +83,78 @@ final class SystemShortcuts {
     }
 
     static func place(section: String?) -> Place {
-        if let url = Shortcut.settingsLink(section, anchors: table.anchors) { return Place(url: url, hint: nil) }
+        let title = section.flatMap { table.titles[$0] }
+        if let url = Shortcut.settingsLink(section, anchors: table.anchors) {
+            guard url.query == "Shortcuts" else { return Place(url: url, hint: nil) }
+            return Place(url: url, hint: title.map { String(localized: "In System Settings, click “\($0)”.") }, title: title)
+        }
         let button = table.button
-        let hint = section.flatMap { table.titles[$0] }.map { String(localized: "In System Settings, click “\(button)”, then “\($0)”.") }
+        let hint = title.map { String(localized: "In System Settings, click “\(button)”, then “\($0)”.") }
         return Place(url: Shortcut.keyboardSettings, hint: hint ?? String(localized: "In System Settings, click “\(button)”."))
+    }
+
+    static func open(_ place: Place, failed: @escaping () -> Void) {
+        NSWorkspace.shared.open(place.url)
+        guard place.hint != nil else { return }
+        if let title = place.title, AXIsProcessTrusted() {
+            let sections = Set(table.titles.values)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let done = select(title, sections: sections)
+                DispatchQueue.main.async { if !done { failed() } }
+            }
+        } else if NSApp.isActive {
+            var observer: Any?
+            observer = NotificationCenter.default.addObserver(forName: NSApplication.didResignActiveNotification, object: nil, queue: .main) { _ in
+                observer.map(NotificationCenter.default.removeObserver)
+                failed()
+            }
+        } else {
+            failed()
+        }
+    }
+
+    private static func select(_ title: String, sections: Set<String>) -> Bool {
+        func value<T>(_ element: AXUIElement, _ name: String) -> T? {
+            var value: CFTypeRef?
+            return AXUIElementCopyAttributeValue(element, name as CFString, &value) == .success ? value as? T : nil
+        }
+        func children(_ element: AXUIElement) -> [AXUIElement] { value(element, kAXChildrenAttribute) ?? [] }
+        func tables(_ element: AXUIElement, _ depth: Int) -> [AXUIElement] {
+            let role: String? = value(element, kAXRoleAttribute)
+            if role == kAXOutlineRole || role == kAXTableRole { return [element] }
+            return depth == 0 ? [] : children(element).flatMap { tables($0, depth - 1) }
+        }
+        func text(_ element: AXUIElement, _ depth: Int) -> String? {
+            if value(element, kAXRoleAttribute) == kAXStaticTextRole, let text: String = value(element, kAXValueAttribute), !text.isEmpty { return text }
+            return depth == 0 ? nil : children(element).lazy.compactMap { text($0, depth - 1) }.first
+        }
+        let deadline = Date() + 4
+        var stable = 0
+        while Date() < deadline {
+            Thread.sleep(forTimeInterval: 0.15)
+            guard let app = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.systempreferences").first else { continue }
+            let windows: [AXUIElement] = value(AXUIElementCreateApplication(app.processIdentifier), kAXWindowsAttribute) ?? []
+            let found = windows.flatMap(children).filter { value($0, kAXRoleAttribute) == kAXSheetRole }.flatMap { tables($0, 10) }
+            let rows = found.map { (value($0, kAXRowsAttribute) ?? []) as [AXUIElement] }
+            let titles = rows.map { $0.map { text($0, 4) ?? value($0, kAXDescriptionAttribute) ?? "" } }
+            guard let match = Shortcut.sheetRow(titles, title: title, sections: sections) else {
+                stable = 0
+                continue
+            }
+            let table = found[match.table], row = rows[match.table][match.row]
+            let selected: [AXUIElement] = value(table, kAXSelectedRowsAttribute) ?? []
+            if value(row, kAXSelectedAttribute) == true || selected.contains(row) {
+                stable += 1
+                if stable == 3 { return true }
+                continue
+            }
+            stable = 0
+            if AXUIElementSetAttributeValue(row, kAXSelectedAttribute as CFString, kCFBooleanTrue) != .success,
+               AXUIElementSetAttributeValue(table, kAXSelectedRowsAttribute as CFString, [row] as CFArray) != .success {
+                AXUIElementPerformAction(row, kAXPressAction as CFString)
+            }
+        }
+        return false
     }
 
     private static let table: (names: [Int: String], sections: [Int: String], titles: [String: String], button: String, anchors: Set<String>) = {
@@ -93,7 +162,7 @@ final class SystemShortcuts {
         guard let bundle = Bundle(path: "/System/Library/ExtensionKit/Extensions/KeyboardSettings.appex") else { return ([:], [:], [:], button, []) }
         func strings(_ name: String) -> [String: String] {
             let table = bundle.url(forResource: name, withExtension: "loctable").flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
-            let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: Bundle.main.preferredLocalizations).first ?? "en"
+            let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: CFPreferencesCopyAppValue("AppleLanguages" as CFString, "com.apple.systempreferences" as CFString) as? [String]).first ?? "en"
             return table[language] as? [String: String] ?? [:]
         }
         func list(_ name: String) -> [[String: Any]] {

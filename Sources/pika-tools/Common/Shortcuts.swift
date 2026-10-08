@@ -93,10 +93,18 @@ struct Shortcut: Hashable {
     static let keyboardSettings = URL(string: "x-apple.systempreferences:com.apple.Keyboard-Settings.extension")!
 
     static func settingsLink(_ section: String?, anchors: Set<String>) -> URL? {
-        guard let anchor = ["spotlight": "Spotlight", "services": "Services", "universalaccess": "Accessibility"][section ?? ""],
-              anchors.contains(anchor)
-        else { return nil }
+        guard let section else { return nil }
+        let anchor = ["spotlight": "Spotlight", "services": "Services", "universalaccess": "Accessibility"][section].flatMap { anchors.contains($0) ? $0 : nil } ?? "Shortcuts"
+        guard anchors.contains(anchor) else { return nil }
         return URL(string: keyboardSettings.absoluteString + "?" + anchor)
+    }
+
+    static func sheetRow(_ tables: [[String]], title: String, sections: Set<String>) -> (table: Int, row: Int)? {
+        let score = { (rows: [String]) in rows.filter(sections.contains).count }
+        guard let table = tables.indices.max(by: { score(tables[$0]) < score(tables[$1]) }) else { return nil }
+        let rows = tables[table]
+        guard let row = rows.firstIndex(of: title) ?? rows.firstIndex(where: { $0.localizedCaseInsensitiveContains(title) }) else { return nil }
+        return (table, row)
     }
 
     static func conflict(_ shortcut: Shortcut, in taken: [(message: String, shortcut: Shortcut)]) -> String? {

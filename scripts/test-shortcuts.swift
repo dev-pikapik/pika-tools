@@ -71,8 +71,20 @@ enum TestShortcuts {
         precondition(Shortcut.settingsLink("spotlight", anchors: anchors)?.absoluteString == base + "?Spotlight")
         precondition(Shortcut.settingsLink("services", anchors: anchors)?.absoluteString == base + "?Services")
         precondition(Shortcut.settingsLink("universalaccess", anchors: anchors)?.absoluteString == base + "?Accessibility")
-        precondition(["expose", "input_sources", "screenshots", "dock", "keyboardnavigation", "windows", "applications"].allSatisfy { Shortcut.settingsLink($0, anchors: anchors) == nil })
-        precondition(Shortcut.settingsLink(nil, anchors: anchors) == nil && Shortcut.settingsLink("spotlight", anchors: []) == nil)
+        precondition(["expose", "input_sources", "screenshots", "dock", "keyboardnavigation", "windows", "applications"].allSatisfy { Shortcut.settingsLink($0, anchors: anchors)?.absoluteString == base + "?Shortcuts" })
+        precondition(Shortcut.settingsLink("spotlight", anchors: ["Shortcuts"])?.absoluteString == base + "?Shortcuts")
+        precondition(Shortcut.settingsLink(nil, anchors: anchors) == nil && Shortcut.settingsLink("spotlight", anchors: []) == nil && Shortcut.settingsLink("expose", anchors: ["Spotlight"]) == nil)
         print("settings links: ok")
+
+        let sidebar = ["Панель Dock", "Дисплей", "Mission Control", "Окна", "Клавиатура", "Источники ввода", "Снимки экрана", "Spotlight", "Сочетания клавиш приложений", "Клавиши модификации"]
+        let sections: Set<String> = ["Панель Dock", "Дисплей", "Mission Control", "Окна", "Клавиатура", "Источники ввода", "Снимки экрана", "Spotlight", "Сочетания клавиш приложений"]
+        let content = ["Mission Control", "Показать Центр уведомлений", "Переход на один экран влево"]
+        precondition(Shortcut.sheetRow([content, sidebar], title: "Mission Control", sections: sections)! == (1, 2))
+        precondition(Shortcut.sheetRow([sidebar, content], title: "Снимки экрана", sections: sections)! == (0, 6))
+        precondition(Shortcut.sheetRow([["Launchpad & Dock", "Display", "Mission Control"]], title: "Dock", sections: ["Display", "Mission Control"])! == (0, 0))
+        precondition(Shortcut.sheetRow([["Screenshots", "Spotlight"]], title: "screenshots", sections: [])! == (0, 0))
+        precondition(Shortcut.sheetRow([sidebar], title: "Оверлей докладчика", sections: sections) == nil)
+        precondition(Shortcut.sheetRow([], title: "Spotlight", sections: sections) == nil)
+        print("sheet rows: ok")
     }
 }
