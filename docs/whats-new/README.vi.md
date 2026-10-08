@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Biểu tượng mới, và dọn sạch quyền cũ
+
+<sub>1.26.0 · ngày 8 tháng 10, 2026</sub>
+
+pika-tools có diện mạo mới, và giờ có thể xóa các quyền mà ứng dụng đã xóa để lại.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Biểu tượng mới là dấu pikapik màu xanh dương, tím và san hô trên một ô tối màu. Thanh menu hiển thị cùng hình đó, tự hợp với thanh menu sáng hoặc tối. Khi mọi công cụ đều tắt, hình sẽ nhạt đi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Khi bạn xóa một ứng dụng, macOS vẫn giữ các quyền bạn đã cấp cho nó, và Cài đặt hệ thống không có cách nào để gỡ chúng. Giờ trang “Quyền” có một danh sách tên là “Còn lại từ ứng dụng đã xóa”: mỗi ứng dụng kèm biểu tượng, những gì nó từng được phép làm và khi nào. “Xóa” dọn một ứng dụng, “Xóa tất cả” dọn hết, còn ứng dụng bạn cài lại sẽ chỉ hỏi lại từ đầu. Để xem danh sách, hãy cấp cho pika-tools quyền Truy cập toàn bộ ổ đĩa: nó chỉ xem và không thay đổi gì cho đến khi bạn bấm “Xóa”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Hình ảnh trên các trang “Hoạt ảnh” và “Trò chơi” được vẽ lại theo đúng kích thước thật, nên trông sắc nét. Cửa sổ thu nhỏ vào Dock với các góc bo tròn, và con trỏ bấm trước, rồi menu mới mở ra. Và ở cuối “Giới thiệu” giờ có một dòng nhẹ nhàng: “Làm bằng cả tấm lòng · Mời mình ly cà phê”. Không có gì bật lên hay nhắc nhở bạn cả.
+
+**Thử ngay:** Cài đặt › Quyền, rồi “Còn lại từ ứng dụng đã xóa”
+
+**Đã sửa**
+
+- Bấm vào một phím tắt hệ thống sẽ mở thẳng mục của nó trong Cài đặt hệ thống, như Mission Control, chứ không chỉ “Bàn phím”.
+- Gợi ý cạnh các phím không còn biến mất ngay khi Cài đặt hệ thống mở ra.
+
+---
+
 ## <a id="v1.25.2"></a>Phím tắt mở đúng nơi bạn thay đổi nó
 
 <sub>1.25.2 · ngày 8 tháng 10, 2026</sub>

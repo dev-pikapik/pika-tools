@@ -162,7 +162,11 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <br><b>Animations</b>
 <br>Speed up the Dock, windows and Quick Look, all the way to instant.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/leftover-permissions-dark.png"><img src="docs/media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Permissions of deleted apps</b>
+<br>Remove the permissions macOS still keeps for apps you deleted.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 Each tool has its own switch in the menu and in Settings.
 
-The menu bar icon shows the state at a glance: an arrow with a click when the tools are working, a crossed-out arrow when everything is off, and a warning triangle when a tool is on but permissions are missing.
+The menu bar icon shows the state at a glance: the pikapik mark when the tools are working, the same mark turned pale when everything is off, and a warning triangle when a tool is on but permissions are missing.
 
 The menu bar panel starts with just a few rows. You choose which ones it shows: click the pencil button at the bottom, tick what you want to see and click **Done**. Hidden rows keep working and stay in Settings. If the panel doesn't fit the screen, it scrolls.
 

@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Een nieuw symbool en schoon schip met oude toestemmingen
+
+<sub>1.26.0 · 8 oktober 2026</sub>
+
+pika-tools heeft een nieuw gezicht en ruimt nu de toestemmingen op die verwijderde apps achterlaten.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Het nieuwe symbool is het pikapik-teken in blauw, violet en koraal op een donkere tegel. De menubalk toont dezelfde vorm, die zich aanpast aan een lichte of donkere menubalk. Als alle tools uit staan, wordt de vorm bleek.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Als je een app verwijdert, bewaart macOS de toestemmingen die je hem gaf, en in Systeeminstellingen kun je ze niet weghalen. Nu heeft de pagina ‘Toestemmingen’ een lijst ‘Achtergelaten door verwijderde apps’: elke app met zijn symbool, wat hij mocht en wanneer. ‘Verwijder’ ruimt één app op, ‘Verwijder alles’ ze allemaal, en een app die je opnieuw installeert, vraagt het gewoon nog een keer. Om de lijst te zien, geef je pika-tools volledige schijftoegang: het kijkt alleen en verandert niets tot je op ‘Verwijder’ klikt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+De plaatjes op de pagina’s ‘Animaties’ en ‘Games’ zijn opnieuw getekend voor hun echte formaat, dus ze zijn scherp. Een venster krimpt met ronde hoeken het Dock in, en de aanwijzer klikt eerst, pas daarna gaat een menu open. En onderaan ‘Over’ staat nu een rustige regel: ‘Met zorg gemaakt · Trakteer me op koffie’. Er springt niets open en niets herinnert je eraan.
+
+**Probeer het:** Instellingen › Toestemmingen, dan ‘Achtergelaten door verwijderde apps’
+
+**Opgelost**
+
+- Klikken op een systeemtoetscombinatie opent meteen het eigen onderdeel in Systeeminstellingen, zoals Mission Control, en niet alleen ‘Toetsenbord’.
+- De tip naast de toetsen verdwijnt niet meer zodra Systeeminstellingen opengaat.
+
+---
+
 ## <a id="v1.25.2"></a>Toetscombinaties openen waar je ze wijzigt
 
 <sub>1.25.2 · 8 oktober 2026</sub>

@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Ein neues Symbol und reiner Tisch bei alten Berechtigungen
+
+<sub>1.26.0 · 8. Oktober 2026</sub>
+
+pika-tools hat ein neues Gesicht und räumt jetzt die Berechtigungen auf, die gelöschte Apps zurücklassen.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Das neue Symbol ist das pikapik-Zeichen in Blau, Violett und Koralle auf einer dunklen Kachel. Die Menüleiste zeigt dieselbe Form, und sie passt sich einer hellen oder dunklen Menüleiste an. Wenn alle Werkzeuge aus sind, wird die Form blass.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Wenn du eine App löschst, behält macOS die Berechtigungen, die du ihr gegeben hast, und in den Systemeinstellungen lassen sie sich nicht entfernen. Jetzt hat die Seite „Berechtigungen“ die Liste „Von gelöschten Apps übrig“: jede App mit ihrem Symbol, was sie durfte und wann. „Entfernen“ räumt eine App auf, „Alle entfernen“ alle auf einmal, und eine App, die du wieder installierst, fragt einfach neu. Damit du die Liste siehst, gib pika-tools den Festplattenvollzugriff: Es schaut nur und ändert nichts, bis du auf „Entfernen“ klickst.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Die Bilder auf den Seiten „Animationen“ und „Spiele“ sind für ihre echte Größe neu gezeichnet und deshalb scharf. Ein Fenster schrumpft mit runden Ecken ins Dock, und der Zeiger klickt zuerst, erst dann öffnet sich ein Menü. Und unten in „Über“ steht jetzt eine leise Zeile: „Mit Liebe gemacht · Spendier mir einen Kaffee“. Nichts springt auf, nichts erinnert dich.
+
+**Ausprobieren:** Einstellungen › Berechtigungen, dann „Von gelöschten Apps übrig“
+
+**Behoben**
+
+- Ein Klick auf einen Systemkurzbefehl öffnet genau seinen Bereich in den Systemeinstellungen, etwa Mission Control, und nicht nur „Tastatur“.
+- Der Hinweis neben den Tasten verschwindet nicht mehr, sobald sich die Systemeinstellungen öffnen.
+
+---
+
 ## <a id="v1.25.2"></a>Kurzbefehle öffnen sich dort, wo du sie änderst
 
 <sub>1.25.2 · 8. Oktober 2026</sub>

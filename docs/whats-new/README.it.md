@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Una nuova icona e tabula rasa per i vecchi permessi
+
+<sub>1.26.0 · 8 ottobre 2026</sub>
+
+pika-tools ha un volto nuovo e ora toglie i permessi che le app eliminate si lasciano dietro.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+La nuova icona è il simbolo pikapik in blu, viola e corallo su una piastrella scura. La barra dei menu mostra la stessa forma, che si adatta a una barra chiara o scura. Quando tutti gli strumenti sono spenti, la forma diventa più chiara.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Quando elimini un’app, macOS conserva i permessi che le avevi dato, e Impostazioni di Sistema non permette di toglierli. Ora la pagina «Permessi» ha un elenco «Lasciati dalle app eliminate»: ogni app con la sua icona, cosa poteva fare e quando. «Rimuovi» ripulisce un’app, «Rimuovi tutto» tutte insieme, e un’app che reinstalli chiederà semplicemente di nuovo. Per vedere l’elenco, dai a pika-tools l’accesso completo al disco: guarda soltanto e non cambia nulla finché non premi «Rimuovi».
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Le immagini delle pagine «Animazioni» e «Giochi» sono ridisegnate per la loro vera dimensione, quindi sono nitide. Una finestra si rimpicciolisce nel Dock con gli angoli arrotondati, e il puntatore fa clic prima, solo dopo si apre un menu. E in fondo a «Info» ora c’è una riga discreta: «Fatto con cura · Offrimi un caffè». Niente compare all’improvviso e niente te lo ricorda.
+
+**Provalo:** Impostazioni › Permessi, poi «Lasciati dalle app eliminate»
+
+**Corretto**
+
+- Un clic su una scorciatoia di sistema apre proprio la sua sezione in Impostazioni di Sistema, come Mission Control, e non solo «Tastiera».
+- Il suggerimento accanto ai tasti non sparisce più appena si apre Impostazioni di Sistema.
+
+---
+
 ## <a id="v1.25.2"></a>Le scorciatoie si aprono dove le cambi
 
 <sub>1.25.2 · 8 ottobre 2026</sub>

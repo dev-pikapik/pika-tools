@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>O pictogramă nouă și curățenie în permisiunile vechi
+
+<sub>1.26.0 · 8 octombrie 2026</sub>
+
+pika-tools are o față nouă și acum șterge permisiunile rămase după aplicațiile șterse.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Pictograma nouă este semnul pikapik în albastru, violet și coral pe o plăcuță întunecată. Bara de meniu arată aceeași formă, care se potrivește cu o bară deschisă sau închisă. Când toate instrumentele sunt dezactivate, forma devine palidă.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Când ștergi o aplicație, macOS păstrează permisiunile pe care i le-ai dat, iar din Configurări sistem nu le poți elimina. Acum pagina „Permisiuni” are o listă numită „Rămase de la aplicații șterse”: fiecare aplicație cu pictograma ei, ce avea voie să facă și când. „Elimină” curăță o aplicație, „Elimină tot” le curăță pe toate, iar o aplicație pe care o instalezi din nou doar va cere din nou. Ca să vezi lista, dă-i lui pika-tools acces complet la disc: doar se uită și nu schimbă nimic până nu apeși „Elimină”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Imaginile de pe paginile „Animații” și „Jocuri” sunt redesenate pentru mărimea lor reală, așa că arată clar. O fereastră se strânge în Dock cu colțurile rotunjite, iar cursorul face clic mai întâi și abia apoi se deschide un meniu. Iar jos, în „Despre”, există acum un rând discret: „Făcut cu grijă · Cumpără-mi o cafea”. Nimic nu apare brusc și nimic nu îți amintește.
+
+**Încearcă:** Configurări › Permisiuni, apoi „Rămase de la aplicații șterse”
+
+**Reparat**
+
+- Un clic pe o scurtătură de sistem deschide direct secțiunea ei din Configurări sistem, cum ar fi Mission Control, nu doar „Tastatură”.
+- Sfatul de lângă taste nu mai dispare imediat ce se deschide Configurări sistem.
+
+---
+
 ## <a id="v1.25.2"></a>Scurtăturile se deschid acolo unde le schimbi
 
 <sub>1.25.2 · 8 octombrie 2026</sub>

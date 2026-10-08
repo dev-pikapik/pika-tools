@@ -162,7 +162,11 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <br><b>Animationen</b>
 <br>Dock, Fenster und Übersicht werden schneller, auf Wunsch sofort.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Berechtigungen gelöschter Apps</b>
+<br>Entferne die Berechtigungen, die macOS für gelöschte Apps behält.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
-Das Symbol in der Menüleiste zeigt den Status auf einen Blick: ein Pfeil mit Klick, wenn die Werkzeuge arbeiten, ein durchgestrichener Pfeil, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
+Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
 
 Das Fenster der Menüleiste startet mit nur wenigen Zeilen. Welche es zeigt, bestimmst du selbst: Klicke unten auf den Stift, setze einen Haken bei allem, was du sehen willst, und klicke auf **Fertig**. Ausgeblendete Zeilen funktionieren weiter und bleiben in den Einstellungen. Passt das Fenster nicht auf den Bildschirm, lässt es sich scrollen.
 

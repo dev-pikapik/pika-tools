@@ -162,7 +162,11 @@ Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, memi
 <br><b>Animasi</b>
 <br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Izin app yang sudah dihapus</b>
+<br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
-Ikon di bar menu menunjukkan status sekilas: panah dengan klik saat alat bekerja, panah dicoret saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
+Ikon di bar menu menunjukkan status sekilas: tanda pikapik saat alat bekerja, tanda yang sama tetapi pucat saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
 
 Panel bar menu awalnya hanya menampilkan beberapa baris. Anda bisa memilih baris yang tampil: klik tombol pensil di bagian bawah, centang yang ingin Anda lihat, lalu klik **Selesai**. Baris yang disembunyikan tetap berfungsi dan tetap ada di Pengaturan. Jika panel tidak muat di layar, panel bisa digulir.
 

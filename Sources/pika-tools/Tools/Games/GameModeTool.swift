@@ -497,21 +497,21 @@ struct GameModePage: View {
             rules(Text("Apps"), [
                 Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
                 Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
-                Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], system: Text("Spotlight")),
+                Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], subtitle: Text("Spotlight")),
                 Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
-                Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], system: Text("Launchpad")),
+                Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], subtitle: Text("Launchpad")),
             ])
             rules(Text("Desktops"), [
-                Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], system: Text("Mission Control")),
-                Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], system: Text("App Exposé")),
-                Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], system: Text("Show Desktop")),
+                Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], subtitle: Text("Mission Control")),
+                Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], subtitle: Text("App Exposé")),
+                Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
                 Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
                 Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
                 Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
             ])
             rules(Text("Keyboard"), [
                 Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
-                Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], system: Text("Look Up")),
+                Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
                 Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(12, "⌃F1"), "…", key(57, "⌃F8")]),
                 Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
             ])
@@ -547,10 +547,7 @@ struct GameModePage: View {
                         .opacity(tool.isEnabled ? 1 : 0.5)
                     Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
                         HStack(spacing: 12) {
-                            HStack(alignment: .firstTextBaseline, spacing: 6) {
-                                RowLabel(Text(row.title), row.subtitle)
-                                row.system?.foregroundStyle(.secondary)
-                            }
+                            RowLabel(Text(row.title), row.subtitle)
                             Spacer(minLength: 0)
                             if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: row.rule.hotKeys.isEmpty ? nil : SystemShortcuts.place(row.rule.hotKeys)) }
                         }
@@ -577,14 +574,12 @@ private struct Rule {
     let title: String
     let keys: [String]
     let subtitle: Text?
-    let system: Text?
 
-    init(_ rule: GameRule, _ title: String, _ keys: [String] = [], subtitle: Text? = nil, system: Text? = nil) {
+    init(_ rule: GameRule, _ title: String, _ keys: [String] = [], subtitle: Text? = nil) {
         self.rule = rule
         self.title = title
         self.keys = keys
         self.subtitle = subtitle
-        self.system = system
     }
 }
 

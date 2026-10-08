@@ -162,7 +162,11 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br><b>Animații</b>
 <br>Grăbește Dock-ul, ferestrele și Privirea rapidă, până la instantaneu.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Permisiunile aplicațiilor șterse</b>
+<br>Elimină permisiunile pe care macOS le păstrează pentru aplicațiile deja șterse.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
-Pictograma din bara de meniu arată starea dintr-o privire: o săgeată cu un clic când instrumentele funcționează, o săgeată tăiată când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
+Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
 
 Panoul din bara de meniu începe cu doar câteva rânduri. Poți alege ce rânduri arată: apasă butonul cu creion din partea de jos, bifează ce vrei să vezi și apasă **Gata**. Rândurile ascunse continuă să funcționeze și rămân în Configurări. Dacă panoul nu încape pe ecran, poate fi derulat.
 

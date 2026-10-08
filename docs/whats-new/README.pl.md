@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Nowa ikona i porządek ze starymi uprawnieniami
+
+<sub>1.26.0 · 8 października 2026</sub>
+
+pika-tools ma nową twarz i teraz usuwa uprawnienia, które zostają po usuniętych aplikacjach.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Nowa ikona to znak pikapik w kolorach niebieskim, fioletowym i koralowym na ciemnym kafelku. Pasek menu pokazuje ten sam kształt, który dopasowuje się do jasnego lub ciemnego paska. Gdy wszystkie narzędzia są wyłączone, kształt blednie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Gdy usuwasz aplikację, macOS zachowuje nadane jej uprawnienia, a w Ustawieniach systemowych nie da się ich usunąć. Teraz na stronie „Uprawnienia” jest lista „Pozostałości po usuniętych aplikacjach”: każda aplikacja z ikoną, co mogła robić i kiedy. „Usuń” czyści jedną aplikację, „Usuń wszystkie” wszystkie naraz, a aplikacja zainstalowana ponownie po prostu zapyta jeszcze raz. Żeby zobaczyć listę, daj pika-tools pełny dostęp do dysku: tylko patrzy i niczego nie zmienia, dopóki nie klikniesz „Usuń”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Obrazki na stronach „Animacje” i „Gry” są narysowane od nowa w swoim prawdziwym rozmiarze, więc są ostre. Okno zmniejsza się do Docka z zaokrąglonymi rogami, a kursor najpierw klika i dopiero potem otwiera się menu. A na dole „Informacji” jest teraz cicha linijka: „Zrobione z sercem · Postaw mi kawę”. Nic nie wyskakuje i o niczym nie przypomina.
+
+**Wypróbuj:** Ustawienia › Uprawnienia, potem „Pozostałości po usuniętych aplikacjach”
+
+**Poprawki**
+
+- Kliknięcie skrótu systemowego otwiera od razu jego sekcję w Ustawieniach systemowych, na przykład Mission Control, a nie tylko „Klawiaturę”.
+- Wskazówka obok klawiszy nie znika już w chwili, gdy otwierają się Ustawienia systemowe.
+
+---
+
 ## <a id="v1.25.2"></a>Skróty otwierają się tam, gdzie je zmieniasz
 
 <sub>1.25.2 · 8 października 2026</sub>

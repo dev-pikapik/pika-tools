@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Un icono nuevo y borrón y cuenta nueva para los permisos viejos
+
+<sub>1.26.0 · 8 de octubre de 2026</sub>
+
+pika-tools estrena cara y ahora quita los permisos que dejan las apps eliminadas.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+El icono nuevo es la marca de pikapik en azul, violeta y coral sobre un mosaico oscuro. La barra de menús muestra la misma forma, que se adapta a una barra clara u oscura. Cuando todas las herramientas están desactivadas, la forma se vuelve pálida.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Cuando eliminas una app, macOS guarda los permisos que le diste, y Ajustes del Sistema no tiene forma de quitarlos. Ahora la página «Permisos» tiene una lista llamada «Restos de apps eliminadas»: cada app con su icono, qué podía hacer y cuándo. «Eliminar» limpia una app, «Eliminar todo» las limpia todas, y una app que vuelvas a instalar simplemente volverá a preguntar. Para ver la lista, dale a pika-tools acceso total al disco: solo mira y no cambia nada hasta que pulses «Eliminar».
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Las imágenes de las páginas «Animaciones» y «Juegos» están dibujadas de nuevo para su tamaño real, así que se ven nítidas. Una ventana se encoge hacia el Dock con las esquinas redondeadas, y el puntero hace clic primero y solo después se abre un menú. Y al final de «Acerca de» hay ahora una línea discreta: «Hecho con cariño · Invítame a un café». Nada aparece de golpe ni te lo recuerda nunca.
+
+**Pruébalo:** Ajustes › Permisos, y luego «Restos de apps eliminadas»
+
+**Corregido**
+
+- Al hacer clic en un atajo del sistema se abre justo su sección en Ajustes del Sistema, como Mission Control, y no solo «Teclado».
+- El consejo junto a las teclas ya no desaparece en cuanto se abre Ajustes del Sistema.
+
+---
+
 ## <a id="v1.25.2"></a>Los atajos se abren donde se cambian
 
 <sub>1.25.2 · 8 de octubre de 2026</sub>

@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>En ny symbol och rent bord för gamla behörigheter
+
+<sub>1.26.0 · 8 oktober 2026</sub>
+
+pika-tools har fått ett nytt ansikte och rensar nu behörigheterna som raderade appar lämnar kvar.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Den nya symbolen är pikapik-märket i blått, violett och korall på en mörk platta. Menyraden visar samma form, som följer en ljus eller mörk menyrad. När alla verktyg är avstängda bleknar formen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+När du raderar en app behåller macOS behörigheterna du gav den, och i Systeminställningar går de inte att ta bort. Nu har sidan ”Behörigheter” en lista som heter ”Kvar efter raderade appar”: varje app med sin symbol, vad den fick göra och när. ”Ta bort” rensar en app, ”Ta bort alla” rensar alla, och en app du installerar igen frågar helt enkelt på nytt. För att se listan ger du pika-tools full skivåtkomst: den tittar bara och ändrar ingenting förrän du trycker på ”Ta bort”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Bilderna på sidorna ”Animationer” och ”Spel” är ritade på nytt för sin riktiga storlek, så de är skarpa. Ett fönster krymper in i Dock med rundade hörn, och pekaren klickar först och sedan öppnas en meny. Och längst ned i ”Om” finns nu en stilla rad: ”Gjord med omsorg · Bjud mig på kaffe”. Inget dyker upp och inget påminner dig.
+
+**Prova:** Inställningar › Behörigheter, sedan ”Kvar efter raderade appar”
+
+**Åtgärdat**
+
+- Ett klick på ett systemkortkommando öppnar direkt dess avsnitt i Systeminställningar, som Mission Control, och inte bara ”Tangentbord”.
+- Tipset bredvid tangenterna försvinner inte längre så fort Systeminställningar öppnas.
+
+---
+
 ## <a id="v1.25.2"></a>Kortkommandon öppnas där du ändrar dem
 
 <sub>1.25.2 · 8 oktober 2026</sub>

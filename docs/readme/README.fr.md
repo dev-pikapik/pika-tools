@@ -162,7 +162,11 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br><b>Animations</b>
 <br>Accélérez le Dock, les fenêtres et Coup d’œil, jusqu’à l’instantané.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Autorisations des apps supprimées</b>
+<br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
-L’icône dans la barre des menus montre l’état d’un coup d’œil : une flèche avec un clic quand les outils fonctionnent, une flèche barrée quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
+L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
 
 Le panneau de la barre des menus démarre avec seulement quelques lignes. Vous choisissez celles qu’il affiche : cliquez sur le bouton en forme de crayon en bas, cochez ce que vous voulez voir, puis cliquez sur **Terminé**. Les lignes masquées continuent de fonctionner et restent dans les Réglages. Si le panneau ne tient pas à l’écran, il défile.
 

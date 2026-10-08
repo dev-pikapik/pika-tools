@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format is based on 
 
 The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
 
-## [1.25.3] - Unreleased
+## [1.26.0] - Unreleased
 
 ### Added
 - A way to say thanks. At the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. It opens buymeacoffee.com/pikapik in your browser, and everything goes into developing and supporting the app. Nothing pops up or reminds you, ever. The README has the same link, and GitHub shows a Sponsor button.

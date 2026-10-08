@@ -162,7 +162,11 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br><b>Animace</b>
 <br>Zrychlete Dock, okna a Rychlý náhled, klidně až na okamžité.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Oprávnění smazaných aplikací</b>
+<br>Odstraňte oprávnění, která si macOS nechává pro už smazané aplikace.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
-Ikona v řádku nabídek ukazuje stav na první pohled: šipka s kliknutím, když nástroje fungují, přeškrtnutá šipka, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
+Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
 
 Panel v řádku nabídek začíná jen s několika řádky. Které řádky ukazuje, si vyberete sami: klikněte na tlačítko s tužkou dole, zaškrtněte, co chcete vidět, a klikněte na **Hotovo**. Skryté řádky dál fungují a zůstávají v Nastavení. Když se panel na obrazovku nevejde, dá se posouvat.
 
