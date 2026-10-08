@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Masaüstündeki yeni dostunuzla tanışın
+
+<sub>1.27.0 · 8 Ekim 2026</sub>
+
+Ekranınızın altında artık küçük bir dost yaşıyor ve uygulamanın yeni bir adı var: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Ayarlar › Evcil Dost bölümünden açın. Pencerelerinizin ve Dock’un arkasında geziniyor, imleç yoluna çıkarsa üstünden atlıyor, Boşluk tuşuna basınca zıplıyor. Onu tutup taşıyabilir, fırlatabilir ve zıplarken havada yakalayabilirsiniz.
+
+Arada bir oturup kısa bir şey söylüyor. Gerçekten yeni bir sürüm çıktığında bunu bir kez söylüyor; üstüne tıklayınca güncellemenin beklediği Ayarlar açılıyor.
+
+pika-tools artık pikapik adını taşıyor. İzinleriniz, ayarlarınız ve Kestirmeler bağlantılarınız olduğu gibi kalıyor. Homebrew ile kurduysanız bir kez `brew update && brew upgrade --cask pikapik` komutunu çalıştırın.
+
+**Deneyin:** Ayarlar › Evcil Dost
+
+**Düzeltilenler**
+
+- Güncelleme denetimi, en yeni sürüm zaten yüklüyken bile yeni sürüm var diyordu.
+- İzinler sayfası açıkken Mac’i meşgul ediyordu.
+
+---
+
 ## <a id="v1.26.2"></a>Yenilikler artık sizin dilinizde
 
 <sub>1.26.2 · 8 Ekim 2026</sub>

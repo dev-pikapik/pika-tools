@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>來認識你的桌面寵物
+
+<sub>1.27.0 · 2026年10月8日</sub>
+
+螢幕底部住進了一個小夥伴，App 也有了新名字：pikapik。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+在設定 › 寵物中打開它。它會在視窗和 Dock 後面散步，指標擋路時跳過去，按空白鍵時跳一下。你可以把它拎起來、帶著走、丟出去，還能在它跳到半空時接住。
+
+它偶爾會坐下來說句話。新版本真的推出時，它會告訴你一次，點一下它就會打開設定，更新就在那裡等著。
+
+pika-tools 現在叫 pikapik。你的權限、設定和捷徑裡的連結都維持不變。如果你是用 Homebrew 安裝的，請執行一次 `brew update && brew upgrade --cask pikapik`。
+
+**試試看：** 設定 › 寵物
+
+**修正**
+
+- 檢查更新時，即使你已經是最新版，也會提示有新版本。
+- 打開權限頁面時會讓 Mac 一直忙碌。
+
+---
+
 ## <a id="v1.26.2"></a>用你的語言看「新功能」
 
 <sub>1.26.2 · 2026年10月8日</sub>

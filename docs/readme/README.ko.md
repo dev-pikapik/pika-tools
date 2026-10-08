@@ -168,6 +168,13 @@ Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 
 <br>삭제한 앱을 위해 macOS가 남겨 둔 권한을 지웁니다.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>데스크탑 펫</b>
+<br>작은 친구가 윈도우 뒤를 산책해요. 집어서 던지거나 스페이스를 눌러 점프시켜 보세요.
+</td>
+</tr></tbody>
 </table>
 
 ## 자세히

@@ -168,6 +168,13 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br>Gỡ các quyền mà macOS vẫn giữ cho những ứng dụng bạn đã xóa.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Thú cưng trên màn hình nền</b>
+<br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy.
+</td>
+</tr></tbody>
 </table>
 
 ## Chi tiết

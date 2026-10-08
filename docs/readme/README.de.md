@@ -168,6 +168,13 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <br>Entferne die Berechtigungen, die macOS für gelöschte Apps behält.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Haustier auf dem Schreibtisch</b>
+<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft.
+</td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren

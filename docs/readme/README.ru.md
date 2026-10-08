@@ -168,6 +168,13 @@ Homebrew и скрипт сами кладут приложение в `/Applica
 <br>Уберите разрешения, которые macOS хранит для уже удалённых приложений.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Питомец на рабочем столе</b>
+<br>Маленький друг гуляет за окнами внизу экрана. Возьмите его и подбросьте или нажмите пробел — он подпрыгнет.
+</td>
+</tr></tbody>
 </table>
 
 ## Подробности

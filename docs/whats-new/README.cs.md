@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Seznamte se s mazlíčkem na ploše
+
+<sub>1.27.0 · 8. října 2026</sub>
+
+Dole na obrazovce teď bydlí malý kamarád a aplikace má nové jméno: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Zapněte ho v Nastavení › Mazlíček. Prochází se za vašimi okny a Dockem, přeskočí ukazatel, když mu stojí v cestě, a vyskočí, když stisknete mezerník. Můžete ho zvednout, přenést, hodit a znovu chytit uprostřed skoku.
+
+Občas si sedne a řekne něco krátkého. Když opravdu vyjde nová verze, řekne vám to jednou a kliknutí na něj otevře Nastavení, kde na vás čeká aktualizace.
+
+pika-tools se teď jmenuje pikapik. Oprávnění, nastavení i odkazy ve Zkratkách zůstávají, jak byly. Pokud jste ji instalovali přes Homebrew, jednou spusťte `brew update && brew upgrade --cask pikapik`.
+
+**Vyzkoušejte:** Nastavení › Mazlíček
+
+**Opraveno**
+
+- Kontrola aktualizací hlásila novou verzi, i když jste už měli tu nejnovější.
+- Stránka Oprávnění zaměstnávala Mac, dokud byla otevřená.
+
+---
+
 ## <a id="v1.26.2"></a>Co je nového ve vašem jazyce
 
 <sub>1.26.2 · 8. října 2026</sub>

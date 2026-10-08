@@ -168,6 +168,13 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <br>Remove the permissions macOS still keeps for apps you deleted.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
+<br><b>Pet on the desktop</b>
+<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump.
+</td>
+</tr></tbody>
 </table>
 
 ## Details

@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Làm quen với thú cưng trên màn hình nền
+
+<sub>1.27.0 · ngày 8 tháng 10, 2026</sub>
+
+Giờ đây có một người bạn nhỏ sống ở cạnh dưới màn hình của bạn, và ứng dụng có tên mới: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Bật nó trong Cài đặt › Thú cưng. Nó dạo bước sau các cửa sổ và Dock, nhảy qua con trỏ khi bị chắn đường và bật lên khi bạn nhấn phím cách. Bạn có thể nhấc nó lên, mang đi, tung nó và bắt lại ngay giữa cú nhảy.
+
+Thỉnh thoảng nó ngồi xuống và nói một câu ngắn. Khi thật sự có phiên bản mới, nó báo cho bạn một lần, và bấm vào nó sẽ mở Cài đặt, nơi bản cập nhật đang chờ.
+
+pika-tools giờ có tên là pikapik. Quyền, cài đặt và các liên kết trong Phím tắt vẫn giữ nguyên. Nếu bạn cài bằng Homebrew, hãy chạy một lần `brew update && brew upgrade --cask pikapik`.
+
+**Thử ngay:** Cài đặt › Thú cưng
+
+**Đã sửa**
+
+- Việc kiểm tra cập nhật báo có phiên bản mới ngay cả khi bạn đã dùng bản mới nhất.
+- Trang Quyền làm máy Mac bận rộn suốt lúc mở.
+
+---
+
 ## <a id="v1.26.2"></a>Có gì mới, bằng ngôn ngữ của bạn
 
 <sub>1.26.2 · ngày 8 tháng 10, 2026</sub>

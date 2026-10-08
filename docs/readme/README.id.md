@@ -168,6 +168,13 @@ Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, memi
 <br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Peliharaan di desktop</b>
+<br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat.
+</td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya

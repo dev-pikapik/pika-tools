@@ -168,6 +168,13 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br>Remova as permissões que o macOS guarda para apps que você já apagou.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Bichinho na mesa</b>
+<br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular.
+</td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes

@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Ecco il tuo animaletto sulla scrivania
+
+<sub>1.27.0 · 8 ottobre 2026</sub>
+
+In fondo allo schermo ora vive un piccolo amico, e l’app ha un nome nuovo: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Attivalo in Impostazioni › Animaletto. Passeggia dietro le finestre e il Dock, salta il puntatore se gli sbarra la strada e fa un balzo quando premi Spazio. Puoi prenderlo, portarlo in giro, lanciarlo e riprenderlo a metà salto.
+
+Ogni tanto si siede e dice qualcosa di breve. Quando esce davvero una nuova versione, te lo dice una volta, e un clic su di lui apre le Impostazioni, dove ti aspetta l’aggiornamento.
+
+pika-tools ora si chiama pikapik. Permessi, impostazioni e link in Comandi Rapidi restano come prima. Se l’hai installata con Homebrew, esegui una volta `brew update && brew upgrade --cask pikapik`.
+
+**Provalo:** Impostazioni › Animaletto
+
+**Corretto**
+
+- Il controllo degli aggiornamenti segnalava una nuova versione anche quando avevi già l’ultima.
+- La pagina Permessi teneva occupato il Mac finché era aperta.
+
+---
+
 ## <a id="v1.26.2"></a>Novità nella tua lingua
 
 <sub>1.26.2 · 8 ottobre 2026</sub>

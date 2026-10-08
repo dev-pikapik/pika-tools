@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Möt ditt husdjur på skrivbordet
+
+<sub>1.27.0 · 8 oktober 2026</sub>
+
+Längst ner på skärmen bor nu en liten vän, och appen har ett nytt namn: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Slå på det i Inställningar › Husdjur. Det promenerar bakom dina fönster och Dock, hoppar över pekaren när den står i vägen och skuttar när du trycker på mellanslag. Du kan lyfta upp det, bära det, kasta det och fånga det mitt i ett hopp.
+
+Då och då sätter det sig och säger något kort. När en ny version verkligen kommer berättar det det en gång, och ett klick på det öppnar Inställningar, där uppdateringen väntar.
+
+pika-tools heter nu pikapik. Dina behörigheter, inställningar och länkar i Genvägar är kvar som förut. Om du installerade appen med Homebrew kör du `brew update && brew upgrade --cask pikapik` en gång.
+
+**Prova:** Inställningar › Husdjur
+
+**Åtgärdat**
+
+- Uppdateringskollen sa att en ny version fanns fast du redan hade den senaste.
+- Sidan Behörigheter höll din Mac sysselsatt så länge den var öppen.
+
+---
+
 ## <a id="v1.26.2"></a>Nyheter på ditt språk
 
 <sub>1.26.2 · 8 oktober 2026</sub>

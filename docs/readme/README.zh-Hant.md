@@ -168,6 +168,13 @@ Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求�
 <br>清除 macOS 為已刪除的 App 保留的權限。
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>桌面寵物</b>
+<br>一個小夥伴在視窗後面散步。把它拎起來丟出去，或按空白鍵讓它跳一下。
+</td>
+</tr></tbody>
 </table>
 
 ## 詳細資訊

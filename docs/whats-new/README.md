@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Meet your desktop pet
+
+<sub>1.27.0 · October 8, 2026</sub>
+
+A little friend now lives at the bottom of your screen, and the app has a new name: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Turn it on in Settings › Pet. It strolls behind your windows and the Dock, hops over the pointer when it’s in the way, and jumps when you press Space. Pick it up, carry it, toss it, and catch it again in the middle of a jump.
+
+Every now and then it sits down and says something short. When a new version really comes out, it tells you once, and a click on it opens Settings, where the update is waiting.
+
+pika-tools is now called pikapik. Your permissions, settings and Shortcuts links all stay as they were. If you installed it with Homebrew, run `brew update && brew upgrade --cask pikapik` once.
+
+**Try it:** Settings › Pet
+
+**Fixed**
+
+- The update check said a new version was out even when you already had the latest one.
+- The Permissions page kept your Mac busy while it was open.
+
+---
+
 ## <a id="v1.26.2"></a>What’s New, in your language
 
 <sub>1.26.2 · October 8, 2026</sub>

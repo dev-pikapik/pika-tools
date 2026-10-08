@@ -198,6 +198,13 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>أزل الأذونات التي يحتفظ بها macOS لتطبيقات حذفتها بالفعل.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>رفيق على سطح المكتب</b>
+<br>صديق صغير يتمشى خلف نوافذك. التقطه وارمه، أو اضغط مفتاح المسافة فيقفز.
+</td>
+</tr></tbody>
 </table>
 
 </div>

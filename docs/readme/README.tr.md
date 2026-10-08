@@ -168,6 +168,13 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br>macOS’in silinmiş uygulamalar için sakladığı izinleri kaldırın.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Masaüstünde evcil dost</b>
+<br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın.
+</td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar

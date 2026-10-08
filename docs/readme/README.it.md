@@ -168,6 +168,13 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <br>Togli i permessi che macOS conserva per le app già eliminate.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Animaletto sulla scrivania</b>
+<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare.
+</td>
+</tr></tbody>
 </table>
 
 ## Più dettagli

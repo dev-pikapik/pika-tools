@@ -168,6 +168,13 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br>Ta bort behörigheterna som macOS sparar för appar du redan har raderat.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Husdjur på skrivbordet</b>
+<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den.
+</td>
+</tr></tbody>
 </table>
 
 ## Mer information

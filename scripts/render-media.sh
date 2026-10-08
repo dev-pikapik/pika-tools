@@ -23,7 +23,7 @@ cp Sources/pika-tools/Info.plist "$PLIST"
 cp -R Resources/*.lproj Resources/github.svg Resources/AppIcon.icns "$APP/Contents/Resources/"
 codesign --force --sign - "$APP"
 
-"$APP/Contents/MacOS/render-media" "$OUT" cards "$@"
+"$APP/Contents/MacOS/render-media" "$OUT" cards "$@" -AppleLanguages "(en)"
 if [ $# -eq 0 ] || [[ " $* " == *" settings "* ]]; then
     defaults write "$DOMAIN" input-switch -bool true
     defaults write "$DOMAIN" key-repeat -bool true

@@ -168,6 +168,13 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br>Elimină permisiunile pe care macOS le păstrează pentru aplicațiile deja șterse.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Animăluț pe birou</b>
+<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară.
+</td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii

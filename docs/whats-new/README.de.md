@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Darf ich vorstellen: dein Haustier auf dem Schreibtisch
+
+<sub>1.27.0 · 8. Oktober 2026</sub>
+
+Unten auf deinem Bildschirm wohnt jetzt ein kleiner Freund, und die App hat einen neuen Namen: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Schalte es unter Einstellungen › Haustier ein. Es spaziert hinter deinen Fenstern und dem Dock, springt über den Zeiger, wenn er im Weg ist, und hüpft, wenn du die Leertaste drückst. Du kannst es hochheben, tragen, werfen und mitten im Sprung wieder auffangen.
+
+Ab und zu setzt es sich hin und sagt etwas Kurzes. Wenn wirklich eine neue Version erscheint, sagt es dir das einmal, und ein Klick darauf öffnet die Einstellungen, wo das Update wartet.
+
+pika-tools heißt jetzt pikapik. Deine Berechtigungen, Einstellungen und Links in Kurzbefehle bleiben, wie sie waren. Wenn du die App mit Homebrew installiert hast, führe einmal `brew update && brew upgrade --cask pikapik` aus.
+
+**Ausprobieren:** Einstellungen › Haustier
+
+**Behoben**
+
+- Die Update-Prüfung meldete eine neue Version, obwohl du schon die neueste hattest.
+- Die Seite Berechtigungen hat deinen Mac beschäftigt, solange sie offen war.
+
+---
+
 ## <a id="v1.26.2"></a>Neuerungen in deiner Sprache
 
 <sub>1.26.2 · 8. Oktober 2026</sub>

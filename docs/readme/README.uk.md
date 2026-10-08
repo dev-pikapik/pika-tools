@@ -168,6 +168,13 @@ Homebrew і скрипт самі кладуть програму в `/Applicati
 <br>Приберіть дозволи, які macOS зберігає для вже видалених програм.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Улюбленець на робочому столі</b>
+<br>Маленький друг гуляє за вікнами внизу екрана. Візьміть його й підкиньте або натисніть пробіл — він підстрибне.
+</td>
+</tr></tbody>
 </table>
 
 ## Докладніше

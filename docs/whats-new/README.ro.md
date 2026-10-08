@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Fă cunoștință cu animăluțul de pe birou
+
+<sub>1.27.0 · 8 octombrie 2026</sub>
+
+Jos pe ecran locuiește acum un mic prieten, iar aplicația are un nume nou: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Pornește-l din Configurări › Animăluț. Se plimbă în spatele ferestrelor și al Dock-ului, sare peste cursor când îi stă în cale și țopăie când apeși Spațiu. Îl poți lua, căra, arunca și prinde din nou în mijlocul săriturii.
+
+Din când în când se așază și spune ceva scurt. Când apare cu adevărat o versiune nouă, îți spune o dată, iar un clic pe el deschide Configurările, unde te așteaptă actualizarea.
+
+pika-tools se numește acum pikapik. Permisiunile, configurările și linkurile din Scurtături rămân cum erau. Dacă ai instalat-o cu Homebrew, rulează o dată `brew update && brew upgrade --cask pikapik`.
+
+**Încearcă:** Configurări › Animăluț
+
+**Reparat**
+
+- Verificarea actualizărilor anunța o versiune nouă chiar dacă aveai deja ultima.
+- Pagina Permisiuni ținea Mac-ul ocupat cât era deschisă.
+
+---
+
 ## <a id="v1.26.2"></a>Noutăți în limba ta
 
 <sub>1.26.2 · 8 octombrie 2026</sub>

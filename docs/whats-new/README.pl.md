@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Poznaj zwierzaka na biurku
+
+<sub>1.27.0 · 8 października 2026</sub>
+
+Na dole ekranu mieszka teraz mały przyjaciel, a aplikacja ma nową nazwę: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Włącz go w Ustawienia › Zwierzak. Spaceruje za oknami i Dockiem, przeskakuje wskaźnik, gdy ten stoi mu na drodze, i podskakuje, gdy naciśniesz spację. Możesz go podnieść, przenieść, rzucić i złapać w połowie skoku.
+
+Czasem siada i mówi coś krótkiego. Gdy naprawdę wyjdzie nowa wersja, powie ci o tym raz, a kliknięcie w niego otworzy Ustawienia, gdzie czeka uaktualnienie.
+
+pika-tools nazywa się teraz pikapik. Uprawnienia, ustawienia i linki w Skrótach zostają bez zmian. Jeśli instalujesz przez Homebrew, uruchom raz `brew update && brew upgrade --cask pikapik`.
+
+**Wypróbuj:** Ustawienia › Zwierzak
+
+**Poprawki**
+
+- Sprawdzanie uaktualnień zgłaszało nową wersję, nawet gdy miałeś już najnowszą.
+- Strona Uprawnienia obciążała Maca, dopóki była otwarta.
+
+---
+
 ## <a id="v1.26.2"></a>„Co nowego” w Twoim języku
 
 <sub>1.26.2 · 8 października 2026</sub>

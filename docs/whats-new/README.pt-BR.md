@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Conheça seu bichinho de mesa
+
+<sub>1.27.0 · 8 de outubro de 2026</sub>
+
+Agora um amiguinho mora na parte de baixo da sua tela, e o app tem um nome novo: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Ligue em Ajustes › Bichinho. Ele passeia atrás das suas janelas e do Dock, pula por cima do ponteiro quando ele está no caminho e dá um pulo quando você aperta Espaço. Dá para pegar, carregar, jogar para o alto e pegar de novo no meio do pulo.
+
+De vez em quando ele senta e fala alguma coisa curtinha. Quando sai mesmo uma versão nova, ele avisa uma vez, e um clique nele abre os Ajustes, onde a atualização está esperando.
+
+pika-tools agora se chama pikapik. Suas permissões, ajustes e links do Atalhos continuam como estavam. Se você instalou pelo Homebrew, rode uma vez `brew update && brew upgrade --cask pikapik`.
+
+**Experimente:** Ajustes › Bichinho
+
+**Corrigido**
+
+- A verificação de atualizações dizia que havia uma versão nova mesmo quando você já tinha a mais recente.
+- A página Permissões deixava o Mac ocupado enquanto estava aberta.
+
+---
+
 ## <a id="v1.26.2"></a>Novidades no seu idioma
 
 <sub>1.26.2 · 8 de outubro de 2026</sub>
