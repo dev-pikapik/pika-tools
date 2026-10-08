@@ -27,7 +27,7 @@ enum SettingsBackup {
     static func export() {
         let panel = NSSavePanel()
         panel.allowedContentTypes = [.json]
-        panel.nameFieldStringValue = "pika-tools settings.json"
+        panel.nameFieldStringValue = "pikapik settings.json"
         run(panel) { url in
             let file = SettingsFile(settings: snapshot, modified: .now, device: SettingsSync.shared.device)
             do {
@@ -49,7 +49,7 @@ enum SettingsBackup {
             guard let data, let file = SettingsFile(data: data) else {
                 SettingsSync.shared.alert = .init(
                     title: String(localized: "This file can’t be imported"),
-                    message: String(localized: "It isn’t a pika-tools settings file, or it’s damaged.")
+                    message: String(localized: "It isn’t a pikapik settings file, or it’s damaged.")
                 )
                 return
             }

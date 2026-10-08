@@ -27,7 +27,7 @@ struct PikaToolsApp: App {
                     Image(nsImage: registry.status == .off ? Self.logoOff : Self.logo)
                 }
             }
-            .accessibilityLabel("pika-tools: \(registry.status.title)")
+            .accessibilityLabel("pikapik: \(registry.status.title)")
         }
         .menuBarExtraStyle(.window)
         .commands {

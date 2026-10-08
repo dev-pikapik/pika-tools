@@ -6,4 +6,6 @@ if CommandLine.arguments.contains("--uninstall") {
     exit(0)
 }
 
+if Updater.moveToNewName() { exit(0) }
+
 PikaToolsApp.main()

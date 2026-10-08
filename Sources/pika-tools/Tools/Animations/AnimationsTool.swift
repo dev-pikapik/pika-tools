@@ -277,7 +277,7 @@ struct AnimationsPage: View {
             RestoreDefaultsSection(
                 message: tool.own.isEmpty
                     ? String(localized: "All animations will be as in macOS again.")
-                    : String(localized: "Animations will be as they were before pika-tools."),
+                    : String(localized: "Animations will be as they were before pikapik."),
                 isDefault: tool.isDefault
             ) {
                 tool.reset()

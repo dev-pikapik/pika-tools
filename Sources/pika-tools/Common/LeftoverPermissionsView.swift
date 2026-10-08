@@ -118,7 +118,7 @@ struct LeftoverPermissionsSection: View {
                     icon: "com.apple.graphic-icon.privacy",
                     symbol: "hand.raised.fill",
                     title: String(localized: "Full Disk Access"),
-                    subtitle: String(localized: "To find them, pika-tools needs to read the list of permissions. It only looks and changes nothing until you press Remove."),
+                    subtitle: String(localized: "To find them, pikapik needs to read the list of permissions. It only looks and changes nothing until you press Remove."),
                     granted: false
                 ) { Permissions.shared.openSettings("Privacy_AllFiles") }
             case .ready:
@@ -147,7 +147,7 @@ struct LeftoverPermissionsSection: View {
         } footer: {
             VStack(alignment: .leading, spacing: 8) {
                 Group {
-                    Text("When you delete an app, macOS keeps the permissions you gave it, and System Settings can’t remove them. pika-tools finds them and cleans them up.")
+                    Text("When you delete an app, macOS keeps the permissions you gave it, and System Settings can’t remove them. pikapik finds them and cleans them up.")
                     if model.state == .ready, model.userHidden, !model.removable.isEmpty {
                         Text("macOS keeps Camera, Microphone and a few other lists hidden, so they aren’t shown here. Remove clears them too.")
                     }
@@ -249,7 +249,7 @@ private struct StuckRow: View {
                     .accessibilityHidden(true)
                 RowLabel(
                     Text("Some permissions stayed"),
-                    Text("macOS didn’t let pika-tools remove the permissions of \(apps.map(\.name).formatted(.list(type: .and))). Try again, or remove them in System Settings.")
+                    Text("macOS didn’t let pikapik remove the permissions of \(apps.map(\.name).formatted(.list(type: .and))). Try again, or remove them in System Settings.")
                 )
             }
         }

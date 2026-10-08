@@ -179,7 +179,7 @@ final class GameModeTool: Tool {
         if rules.contains(.display) {
             var id = IOPMAssertionID(0)
             let result = IOPMAssertionCreateWithName(
-                kIOPMAssertionTypePreventUserIdleDisplaySleep as CFString, IOPMAssertionLevel(kIOPMAssertionLevelOn), "pika-tools Game Mode" as CFString, &id
+                kIOPMAssertionTypePreventUserIdleDisplaySleep as CFString, IOPMAssertionLevel(kIOPMAssertionLevelOn), "pikapik Game Mode" as CFString, &id
             )
             if result == kIOReturnSuccess { assertion = id }
         }

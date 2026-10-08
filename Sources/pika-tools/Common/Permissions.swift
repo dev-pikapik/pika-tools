@@ -73,10 +73,10 @@ struct PermissionsView: View {
         Form {
             SettingsHeader(
                 tab: .permissions,
-                title: permissions.allGranted ? String(localized: "All set") : String(localized: "pika-tools needs two permissions"),
+                title: permissions.allGranted ? String(localized: "All set") : String(localized: "pikapik needs two permissions"),
                 text: permissions.allGranted
                     ? String(localized: "Both permissions are on and every tool is working.")
-                    : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pika-tools in these two lists:")
+                    : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:")
             )
             Section {
                 PermissionRow(
@@ -95,7 +95,7 @@ struct PermissionsView: View {
                 ) { permissions.openSettings("Privacy_ListenEvent") }
             } footer: {
                 if !permissions.allGranted {
-                    Text("pika-tools checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.")
+                    Text("pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)

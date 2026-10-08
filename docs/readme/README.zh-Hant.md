@@ -1,22 +1,22 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
-<h1 align="center">pika-tools</h1>
+<h1 align="center">pikapik</h1>
 <p align="center">鍵盤、滑鼠、視窗和 Finder 的小改進，就在 Mac 的選單列裡。</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <b>繁體中文</b> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="../media/settings-zh-Hant-dark.png">
-<img src="../media/settings-zh-Hant-light.png" alt="pika-tools 設定">
+<img src="../media/settings-zh-Hant-light.png" alt="pikapik 設定">
 </picture>
 </p>
 
 ## 安裝
 
 ```bash
-brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 ```
 
-安裝後，pika-tools 會出現在螢幕頂端的選單列。在你開啟之前，所有功能都保持關閉。
+安裝後，pikapik 會出現在螢幕頂端的選單列。在你開啟之前，所有功能都保持關閉。
 
 <details>
 <summary>沒有 Homebrew？還有兩種方式</summary>
@@ -27,7 +27,7 @@ brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-或下載 [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg)，打開後將 App 拖到「應用程式」檔案夾。
+或下載 [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg)，打開後將 App 拖到「應用程式」檔案夾。
 
 Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求權限，並開啟「登入時打開」。之後 App 會自動更新，請參閱**更新**。若要移除，請參閱**解除安裝**。
 
@@ -175,14 +175,14 @@ Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求�
 <details>
 <summary>第一次啟動</summary>
 
-pika-tools 需要兩項權限。第一次啟動時，它會打開設定中的「權限」頁面，一步步引導你完成，macOS 也會顯示自己的提示。前往 **系統設定 › 隱私權與安全性**，在以下兩項中開啟 pika-tools：
+pikapik 需要兩項權限。第一次啟動時，它會打開設定中的「權限」頁面，一步步引導你完成，macOS 也會顯示自己的提示。前往 **系統設定 › 隱私權與安全性**，在以下兩項中開啟 pikapik：
 
 - **輔助使用**：讓 App 能在按鍵或按一下傳到其他 App 之前加以修改。
 - **輸入監控**：讓 App 能夠看到按鍵和按一下的動作。
 
 App 會在一兩秒內偵測到變更，不需要重新啟動。
 
-pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事件只在記憶體中處理並立即傳遞出去。唯一的網路請求是檢查更新，也就是向 GitHub 詢問最新版本。
+pikapik 不會記錄、儲存或傳送你輸入或點按的任何內容。事件只在記憶體中處理並立即傳遞出去。唯一的網路請求是檢查更新，也就是向 GitHub 詢問最新版本。
 
 </details>
 
@@ -197,7 +197,7 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 **Home 和 End 跳到行首和行尾。** 輸入時，Home 會把游標移到行首，End 移到行尾，不再捲動頁面。按住 ⇧ 會選取到那裡，按住 ⌘ 會跳到整段文字的開頭或結尾。在文字欄位以外，以及終端機、虛擬機器和遠端桌面 App 中，這兩個鍵照常運作。你也可以加入其他需要照常運作的 App。預設關閉。
 
-**關閉指標加速。** 無論滑鼠移動得多快，指標都只移動與滑鼠完全相同的距離。**軌跡速度** 滑桿用來設定指標移動的快慢。只對滑鼠有效，觸控式軌跡板保持不變。關閉此功能或結束 pika-tools 後，macOS 會恢復它自己的設定。預設為關閉。
+**關閉指標加速。** 無論滑鼠移動得多快，指標都只移動與滑鼠完全相同的距離。**軌跡速度** 滑桿用來設定指標移動的快慢。只對滑鼠有效，觸控式軌跡板保持不變。關閉此功能或結束 pikapik 後，macOS 會恢復它自己的設定。預設為關閉。
 
 **按行捲動。** 滑鼠滾輪每捲一格，捲動的行數都一樣，不管你轉得多快。每格可以選 1 到 10 行，預設 3 行。自然捲動維持你在「系統設定」中的設定。只對滑鼠有效，觸控式軌跡板維持不變。預設為關閉。在 **每格距離** 滑桿旁邊，一張小頁面會依所選距離捲動，圓點標示預設值。
 
@@ -221,11 +221,11 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 **在 Finder 中用 Delete 刪除檔案。** 選取檔案後按 ⌫ 或 ⌦（筆電上為 fn ⌫），檔案就會移到垃圾桶，和 ⌘⌫ 一樣。重新命名檔案、搜尋或在其他欄位中輸入時，這兩個鍵照常刪除文字。預設關閉。
 
-**在 Finder 中製作較小拷貝。** 在 Finder 中按右鍵點按檔案，然後選擇 **製作較小拷貝**。照片、GIF、PDF 或影片的輕量版本會儲存在旁邊，通常小好幾倍。WAV 或 AIFF 等未壓縮的聲音會變成小巧的 M4A。如果檔案無法再縮小，就不會製作拷貝，pika-tools 會告訴你。原始檔案維持不變，任何內容都不會離開你的 Mac。預設關閉。
+**在 Finder 中製作較小拷貝。** 在 Finder 中按右鍵點按檔案，然後選擇 **製作較小拷貝**。照片、GIF、PDF 或影片的輕量版本會儲存在旁邊，通常小好幾倍。WAV 或 AIFF 等未壓縮的聲音會變成小巧的 M4A。如果檔案無法再縮小，就不會製作拷貝，pikapik 會告訴你。原始檔案維持不變，任何內容都不會離開你的 Mac。預設關閉。
 
 **在 Finder 中轉換。** 在 Finder 中按右鍵點按檔案，然後選擇 **轉換為**，即可儲存為其他格式：圖片存為 JPEG、PNG、HEIC、GIF、TIFF 或 PDF，影片存為 MP4、MOV 或只保留聲音，音樂存為 M4A、WAV 或 AIFF。原始檔案維持不變，任何內容都不會離開你的 Mac。與較小拷貝分開開啟。預設關閉。
 
-**遊戲模式。** 加入你的遊戲後，玩遊戲時 Mac 不會把你拉出遊戲。Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開，⌘Q 和 ⌘W 不會意外關閉遊戲，指標不會滑到 Dock、選單列或另一個螢幕上，螢幕也保持開啟。每一項都可以在「遊戲」頁面單獨開關，pika-tools 也會推薦它在你的 Mac 上找到的遊戲。遊戲中 Control 點按仍是一般點按，Control+方向鍵也不會切換桌面。也能辨識 Minecraft：加入 Minecraft Launcher 或 CurseForge，在 Minecraft 裡就會開啟這個模式。要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。一離開遊戲，一切照常運作。預設關閉。
+**遊戲模式。** 加入你的遊戲後，玩遊戲時 Mac 不會把你拉出遊戲。Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開，⌘Q 和 ⌘W 不會意外關閉遊戲，指標不會滑到 Dock、選單列或另一個螢幕上，螢幕也保持開啟。每一項都可以在「遊戲」頁面單獨開關，pikapik 也會推薦它在你的 Mac 上找到的遊戲。遊戲中 Control 點按仍是一般點按，Control+方向鍵也不會切換桌面。也能辨識 Minecraft：加入 Minecraft Launcher 或 CurseForge，在 Minecraft 裡就會開啟這個模式。要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。一離開遊戲，一切照常運作。預設關閉。
 
 每個工具在選單和設定中都有各自的開關。
 
@@ -240,9 +240,9 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 <details>
 <summary>保持喚醒</summary>
 
-在你離開鍵盤時防止 Mac 進入睡眠：時間可以是 1 秒到 365 天之間的任意長度，或一直持續到你手動關閉。在選單中開啟它，並在設定中設定時間長度：輸入天、小時、分鐘和秒，按 ↑ 和 ↓，或按一下 15 分鐘到 8 小時的預設值。選單會顯示剩餘時間和結束時間。**顯示器** 有兩種選擇。**永遠開啟**：不會熄滅，也不會出現螢幕保護程式和鎖定畫面。**照常關閉**：依自己的計時關閉，Mac 繼續運作。**立即關閉顯示器**（選單中也有）會馬上關閉顯示器，Mac 繼續運作：移動滑鼠或按任意鍵即可喚醒。結束 pika-tools 也會結束「保持喚醒」。
+在你離開鍵盤時防止 Mac 進入睡眠：時間可以是 1 秒到 365 天之間的任意長度，或一直持續到你手動關閉。在選單中開啟它，並在設定中設定時間長度：輸入天、小時、分鐘和秒，按 ↑ 和 ↓，或按一下 15 分鐘到 8 小時的預設值。選單會顯示剩餘時間和結束時間。**顯示器** 有兩種選擇。**永遠開啟**：不會熄滅，也不會出現螢幕保護程式和鎖定畫面。**照常關閉**：依自己的計時關閉，Mac 繼續運作。**立即關閉顯示器**（選單中也有）會馬上關閉顯示器，Mac 繼續運作：移動滑鼠或按任意鍵即可喚醒。結束 pikapik 也會結束「保持喚醒」。
 
-在 MacBook 上，你也可以開啟 **闔上螢幕時繼續運作**。macOS 沒有這樣的開關，因此 pika-tools 會執行 `pmset -a disablesleep 1` 並要求輸入管理者密碼：只有管理者才能更改 Mac 的睡眠方式。當「保持喚醒」結束、你結束 App 或 App 當掉時，此設定都會自動恢復原狀。如果不輸入密碼，什麼都不會改變。闔上螢幕使用時，請保持 Mac 通風良好。**電池電量低於 20% 時停止** 會在電池耗盡前結束這次工作階段。
+在 MacBook 上，你也可以開啟 **闔上螢幕時繼續運作**。macOS 沒有這樣的開關，因此 pikapik 會執行 `pmset -a disablesleep 1` 並要求輸入管理者密碼：只有管理者才能更改 Mac 的睡眠方式。當「保持喚醒」結束、你結束 App 或 App 當掉時，此設定都會自動恢復原狀。如果不輸入密碼，什麼都不會改變。闔上螢幕使用時，請保持 Mac 通風良好。**電池電量低於 20% 時停止** 會在電池耗盡前結束這次工作階段。
 
 透過「捷徑」App，可以把「保持喚醒」、螢幕常亮和闔蓋模式放到控制中心、選單列或桌面小工具的按鈕上，連結在「設定 › 保持喚醒」裡拷貝。
 
@@ -258,7 +258,7 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 <details>
 <summary>設定</summary>
 
-從選單中選擇 **設定⋯** 或按 ⌘, 打開設定，也可以從 Finder、Launchpad 或 Spotlight 再次啟動 pika-tools。視窗打開期間，App 會顯示在 Dock 和 ⌘Tab 中。
+從選單中選擇 **設定⋯** 或按 ⌘, 打開設定，也可以從 Finder、Launchpad 或 Spotlight 再次啟動 pikapik。視窗打開期間，App 會顯示在 Dock 和 ⌘Tab 中。
 
 - **一般**：登入時打開、外觀（跟隨系統、淺色或深色）、語言、更新和備份：把設定輸出為檔案或從檔案輸入，也可以透過 iCloud 雲碟同步。
 - **保持喚醒**：時間長度、顯示器和螢幕闔上選項。
@@ -273,18 +273,18 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 
 許多設定附有一張小圖，展示它們的作用，例如保持喚醒的 Mac，或藏到 Dock 後面的視窗。圖會隨開關一起變化；如果在系統設定中開啟了「減少動態效果」，圖就保持靜止。
 
-每個頁面底部都有一個 **回復預設值…** 按鈕。它會先詢問你，然後關閉該頁面上的工具並還原它們的選項，就像 pika-tools 從未動過一樣。
+每個頁面底部都有一個 **回復預設值…** 按鈕。它會先詢問你，然後關閉該頁面上的工具並還原它們的選項，就像 pikapik 從未動過一樣。
 
-**透過 iCloud 同步設定** 能讓 pika-tools 在你所有的 Mac 上保持一致。設定存放在 iCloud 雲碟的 pika-tools 檔夾裡，以最近一次的更改為準。預設為關閉，而且需要先開啟 iCloud 雲碟。權限不會同步：每台 Mac 都會各自請求。
+**透過 iCloud 同步設定** 能讓 pikapik 在你所有的 Mac 上保持一致。設定存放在 iCloud 雲碟的 pika-tools 檔夾裡，以最近一次的更改為準。預設為關閉，而且需要先開啟 iCloud 雲碟。權限不會同步：每台 Mac 都會各自請求。
 
 </details>
 
 <details>
 <summary>更新</summary>
 
-pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「設定 › 一般」中關閉此功能。有新版本時，選單中會出現 **更新到 ⋯** 按鈕：按一下，App 就會下載更新、安裝並重新啟動。你也可以在「設定 › 一般」中按一下 **立即檢查** 手動檢查。
+pikapik 會在啟動時以及每隔 6 小時檢查新版本。你可以在「設定 › 一般」中關閉此功能。有新版本時，選單中會出現 **更新到 ⋯** 按鈕：按一下，App 就會下載更新、安裝並重新啟動。你也可以在「設定 › 一般」中按一下 **立即檢查** 手動檢查。
 
-使用 Homebrew 時，也可以執行 `brew upgrade --cask pika-tools`。
+使用 Homebrew 時，也可以執行 `brew upgrade --cask pikapik`。
 
 從 1.3 版開始，更新後權限會保留。
 
@@ -297,7 +297,7 @@ pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
 ```
 
-如果是用 Homebrew 安裝的：`brew uninstall --cask --zap pika-tools`。
+如果是用 Homebrew 安裝的：`brew uninstall --cask --zap pikapik`。
 
 兩種方式都會結束 App、將其從登入項目中移除並刪除。指令碼還會重置它的權限。
 
@@ -310,20 +310,20 @@ pika-tools 會在啟動時以及每隔 6 小時檢查新版本。你可以在「
 macOS 把對鍵盤和滑鼠的存取分成兩部分。「輸入監控」讓 App 能看到事件，「輔助使用」讓 App 能修改事件。阻擋快速鍵兩者都需要。
 
 **macOS 提示 App 來自未識別的開發者。**
-pika-tools 已簽署，但未經 Apple 公證。Homebrew 和安裝指令碼會幫你處理這一點。如果你用的是 dmg，請打開 **系統設定 › 隱私權與安全性** 並按一下 **強制打開**，或執行：
+pikapik 已簽署，但未經 Apple 公證。Homebrew 和安裝指令碼會幫你處理這一點。如果你用的是 dmg，請打開 **系統設定 › 隱私權與安全性** 並按一下 **強制打開**，或執行：
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/pika-tools.app
+xattr -dr com.apple.quarantine /Applications/pikapik.app
 ```
 
 **支援搭載 Intel 處理器的 Mac 嗎？**
 支援。這是適用於 Apple 晶片和 Intel 的通用 App，需要 macOS 14 Sonoma 或以上版本。
 
 **權限已開啟，但什麼都沒有作用。**
-在 **系統設定 › 隱私權與安全性** 中，用 − 按鈕從兩個列表中移除 pika-tools，然後重新加入。pika-tools 設定的「權限」頁面中有按鈕可以直接打開對應位置。
+在 **系統設定 › 隱私權與安全性** 中，用 − 按鈕從兩個列表中移除 pikapik，然後重新加入。pikapik 設定的「權限」頁面中有按鈕可以直接打開對應位置。
 
 </details>
 
-<p align="center">☕ 如果你喜歡 pika-tools，可以<a href="https://buymeacoffee.com/pikapik">請我喝杯咖啡</a>，每一份心意都會用於 App 的開發與維護。</p>
+<p align="center">☕ 如果你喜歡 pikapik，可以<a href="https://buymeacoffee.com/pikapik">請我喝杯咖啡</a>，每一份心意都會用於 App 的開發與維護。</p>
 
 <p align="center"><sub><a href="../whats-new/README.zh-Hant.md">更新內容</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">自行建置</a> · <a href="../../LICENSE">MIT 授權</a> · © 2026 pikapik</sub></p>

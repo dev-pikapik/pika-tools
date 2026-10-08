@@ -556,7 +556,7 @@ private struct GeneralSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .general, text: String(localized: "How pika-tools starts and looks."))
+            SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks."))
             Section {
                 Toggle(isOn: $loginItem.isOn) {
                     RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
@@ -576,7 +576,7 @@ private struct GeneralSettings: View {
                 }
                 .settingAnchor(String(localized: "Language"))
                 if language.selected != language.atLaunch {
-                    LabeledContent("Restart pika-tools to apply") {
+                    LabeledContent("Restart pikapik to apply") {
                         Button("Restart", systemImage: "arrow.clockwise") { SettingsWindow.restart() }
                     }
                     .foregroundStyle(.secondary)
@@ -599,7 +599,7 @@ private struct GeneralSettings: View {
                 if sync.state == .noDrive || sync.state == .noAccess {
                     LabeledContent(sync.state == .noDrive
                                    ? String(localized: "Turn on iCloud Drive in System Settings")
-                                   : String(localized: "Allow pika-tools to use iCloud Drive in System Settings")) {
+                                   : String(localized: "Allow pikapik to use iCloud Drive in System Settings")) {
                         Button("Open", systemImage: "arrow.up.forward.app") { sync.openSettings() }
                     }
                     .foregroundStyle(.secondary)
@@ -627,7 +627,7 @@ private struct GeneralSettings: View {
             Button("Replace") { sync.confirmImport(item) }
             Button("Cancel", role: .cancel) {}
         } message: { item in
-            Text("All pika-tools settings will be replaced with the ones from “\(item.name)”.")
+            Text("All pikapik settings will be replaced with the ones from “\(item.name)”.")
         }
     }
 
@@ -636,7 +636,7 @@ private struct GeneralSettings: View {
         case .off: String(localized: "Same settings on all your Macs")
         case .synced(let date): String(localized: "Last synced at \(date.formatted(date: .omitted, time: .shortened))")
         case .noDrive: String(localized: "iCloud Drive is turned off on this Mac")
-        case .noAccess: String(localized: "pika-tools isn’t allowed to open iCloud Drive")
+        case .noAccess: String(localized: "pikapik isn’t allowed to open iCloud Drive")
         case .failed(let message): String(localized: "Can’t sync: \(message)")
         }
     }
@@ -769,7 +769,7 @@ private struct AboutView: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .about, title: "pika-tools", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
+            SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
 
             Section("Updates") {
                 Toggle("Check for updates automatically", isOn: $updater.checksAutomatically)
@@ -803,7 +803,7 @@ private struct AboutView: View {
                 .frame(maxWidth: .infinity)
             }
             RestoreDefaultsSection(
-                message: String(localized: "pika-tools will check for updates automatically again."),
+                message: String(localized: "pikapik will check for updates automatically again."),
                 isDefault: updater.checksAutomatically
             ) {
                 updater.checksAutomatically = true

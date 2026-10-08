@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>pika-tools</string>
+	<string>pikapik</string>
 	<key>CFBundleExecutable</key>
 	<string>Convert</string>
 	<key>CFBundleIdentifier</key>

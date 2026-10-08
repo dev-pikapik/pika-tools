@@ -4,14 +4,15 @@ set -euo pipefail
 GITHUB_USER="dev-pikapik"
 
 REPO="https://github.com/$GITHUB_USER/pika-tools"
-APP_NAME="pika-tools.app"
+APP_NAME="pikapik.app"
 DEST="/Applications/$APP_NAME"
+OLD="/Applications/pika-tools.app"
 
 say() { printf '\033[1m→ %s\033[0m\n' "$1"; }
 fail() { printf '\033[31m✗ %s\033[0m\n' "$1" >&2; exit 1; }
 
-[ "$(uname)" = "Darwin" ] || fail "pika-tools runs only on macOS."
-[ "$(sw_vers -productVersion | cut -d. -f1)" -ge 14 ] || fail "pika-tools needs macOS 14 Sonoma or later."
+[ "$(uname)" = "Darwin" ] || fail "pikapik runs only on macOS."
+[ "$(sw_vers -productVersion | cut -d. -f1)" -ge 14 ] || fail "pikapik needs macOS 14 Sonoma or later."
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -41,8 +42,8 @@ if [ "${1:-}" = "--source" ]; then
     build_from_source
 else
     say "Downloading the latest version"
-    if curl -fsSL "$REPO/releases/latest/download/pika-tools.zip" -o "$WORK/pika-tools.zip" \
-        && ditto -x -k "$WORK/pika-tools.zip" "$WORK/app" \
+    if curl -fsSL "$REPO/releases/latest/download/pikapik.zip" -o "$WORK/pikapik.zip" \
+        && ditto -x -k "$WORK/pikapik.zip" "$WORK/app" \
         && [ -d "$WORK/app/$APP_NAME" ]; then
         NEW_APP="$WORK/app/$APP_NAME"
     else
@@ -60,7 +61,7 @@ fi
 say "Copying to /Applications"
 SUDO=""
 [ -w /Applications ] || SUDO="sudo"
-$SUDO rm -rf "$DEST"
+$SUDO rm -rf "$DEST" "$OLD"
 $SUDO ditto "$NEW_APP" "$DEST"
 $SUDO xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
 
@@ -69,9 +70,9 @@ open "$DEST"
 
 cat <<'EOF'
 
-Done. pika-tools is in the menu bar, next to the clock.
+Done. pikapik is in the menu bar, next to the clock.
 
-One last step: turn on pika-tools in these two lists (a window with help is already open):
+One last step: turn on pikapik in these two lists (a window with help is already open):
   System Settings › Privacy & Security › Accessibility
   System Settings › Privacy & Security › Input Monitoring
 
