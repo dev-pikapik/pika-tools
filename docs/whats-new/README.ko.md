@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>게임 그림이 살아 움직입니다
+
+<sub>1.26.1 · 2026년 10월 8일</sub>
+
+‘게임’ 페이지의 그림이 이제 움직여서, 각 스위치가 무엇을 막는지 바로 보입니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+‘게임’ 페이지의 스위치마다 작은 게임이 돌아갑니다. 키가 나타나 눌리면 Spotlight나 Mission Control처럼 게임 위로 튀어나올 것이 보이고, 게임은 멈춥니다. 스위치가 켜져 있으면 키가 부드럽게 빛날 뿐 게임은 계속됩니다. 스위치를 바꾸면 그림이 그 차이를 바로 보여 줍니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+작은 게임은 Mac의 화면 모드를 따릅니다. 라이트 모드에서는 맑은 낮, 다크 모드에서는 달과 별이 뜬 고요한 밤입니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+앱의 모든 그림에서 포인터가 이제 손처럼 움직입니다. 먼 곳은 조금 더 천천히 가고, 멈춘 다음에야 클릭합니다. 그림이 처음으로 돌아갈 때도 뛰지 않고 부드럽게 돌아갑니다. 윈도우가 가려져 있으면 그림은 쉬고, ‘동작 줄이기’를 켜면 멈춰 있습니다.
+
+**사용해 보기:** 설정 › 게임
+
+---
+
 ## <a id="v1.26.0"></a>새 아이콘, 그리고 오래된 권한 정리
 
 <sub>1.26.0 · 2026년 10월 8일</sub>

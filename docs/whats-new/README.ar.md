@@ -7,6 +7,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>صور الألعاب تنبض بالحياة
+
+<sub>1.26.1 · 8 أكتوبر 2026</sub>
+
+صارت الصور في صفحة «الألعاب» تتحرك، فترى ما الذي يوقفه كل مفتاح.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+خلف كل مفتاح في صفحة «الألعاب» تجري الآن لعبة صغيرة. تظهر مفاتيح لوحة المفاتيح وتُضغط، فترى ما الذي سيقفز فوق لعبتك، مثل Spotlight أو Mission Control، بينما تتوقف اللعبة. وعندما يكون المفتاح مشغّلًا، تتوهج المفاتيح بلطف فقط وتستمر اللعبة. بدّل أي مفتاح، وستُظهر الصورة الفرق فورًا.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+تتبع اللعبة الصغيرة مظهر جهاز Mac: نهار مشمس في الوضع الفاتح، وليل هادئ بقمر ونجوم في الوضع الداكن.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+في كل صور التطبيق، صار المؤشر يتحرك مثل يد حقيقية: يأخذ وقتًا أطول قليلًا في المسافات الطويلة، ويتوقف، ثم ينقر. وعندما تبدأ الصورة من جديد، تعود إلى البداية بنعومة بدل أن تقفز. ترتاح الصور ما دامت النافذة مخفية، ومع تشغيل «تقليل الحركة» تبقى ثابتة.
+
+**جرّبه:** الإعدادات › الألعاب
+
+---
+
 ## <a id="v1.26.0"></a>أيقونة جديدة وصفحة نظيفة للأذونات القديمة
 
 <sub>1.26.0 · 8 أكتوبر 2026</sub>

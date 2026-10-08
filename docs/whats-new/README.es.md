@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Las imágenes de juegos cobran vida
+
+<sub>1.26.1 · 8 de octubre de 2026</sub>
+
+Las imágenes de la página «Juegos» ahora se mueven, y ves qué detiene cada interruptor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Detrás de cada interruptor de la página «Juegos» ahora corre un pequeño juego. Aparecen unas teclas, se pulsan, y ves lo que saltaría encima de tu juego, como Spotlight o Mission Control, mientras el juego se detiene. Con el interruptor activado, las teclas solo brillan suavemente y el juego sigue. Cambia un interruptor y la imagen muestra la diferencia al instante.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+El pequeño juego sigue el aspecto de tu Mac: un día soleado en modo claro y una noche tranquila con luna y estrellas en modo oscuro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+En todas las imágenes de la app, el puntero ahora se mueve como una mano: tarda un poco más en los trayectos largos, se detiene y solo entonces hace clic. Cuando una imagen vuelve a empezar, regresa suavemente al inicio en vez de saltar. Las imágenes descansan mientras la ventana está oculta, y con «Reducir movimiento» se quedan quietas.
+
+**Pruébalo:** Ajustes › Juegos
+
+---
+
 ## <a id="v1.26.0"></a>Un icono nuevo y borrón y cuenta nueva para los permisos viejos
 
 <sub>1.26.0 · 8 de octubre de 2026</sub>

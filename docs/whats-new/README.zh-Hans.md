@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>游戏图片动起来了
+
+<sub>1.26.1 · 2026年10月8日</sub>
+
+“游戏”页面上的图片现在会动，一眼就能看出每个开关挡住了什么。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+“游戏”页面的每个开关旁边，现在都有一个小游戏在运行。按键出现并被按下，你会看到有什么会弹到游戏上面，比如聚焦搜索或调度中心，同时游戏停住。开关打开时，按键只会柔和地亮一下，游戏照常进行。拨动开关，图片会立刻显示其中的不同。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+小游戏会跟随 Mac 的外观：浅色模式下是晴朗的白天，深色模式下是有月亮和星星的宁静夜晚。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+在 App 的所有图片里，指针现在像手一样移动：远的地方多花一点时间，停稳后才点按。图片重新开始时，会平滑地回到开头，而不是跳回去。窗口被遮住时图片会休息，打开“减弱动态效果”后图片保持不动。
+
+**试试看：** 设置 › 游戏
+
+---
+
 ## <a id="v1.26.0"></a>新图标，以及旧权限的大扫除
 
 <sub>1.26.0 · 2026年10月8日</sub>

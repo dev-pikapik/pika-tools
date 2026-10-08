@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>ゲームの絵が動き出しました
+
+<sub>1.26.1 · 2026年10月8日</sub>
+
+「ゲーム」ページの絵が動くようになり、それぞれのスイッチが何を止めるのかがひと目でわかります。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+「ゲーム」ページのスイッチの横で、小さなゲームが動いています。キーが現れて押されると、Spotlight や Mission Control のように、ゲームの上に飛び出してくるものが見え、ゲームは止まります。スイッチがオンなら、キーがやさしく光るだけで、ゲームはそのまま続きます。スイッチを切り替えると、絵はすぐにその違いを見せます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+小さなゲームは Mac の外観に合わせて変わります。ライトモードでは晴れた昼、ダークモードでは月と星が出た静かな夜です。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+アプリのすべての絵で、ポインタが手のように動くようになりました。遠くへはすこし時間をかけて動き、止まってからクリックします。絵が最初に戻るときも、跳ばずになめらかに戻ります。ウインドウが隠れているあいだ絵は休み、「視差効果を減らす」をオンにすると止まったままになります。
+
+**試してみる：** 設定 › ゲーム
+
+---
+
 ## <a id="v1.26.0"></a>新しいアイコンと、古い許可のおそうじ
 
 <sub>1.26.0 · 2026年10月8日</sub>

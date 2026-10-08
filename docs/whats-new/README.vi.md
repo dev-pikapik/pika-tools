@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Hình trò chơi đã sống động
+
+<sub>1.26.1 · ngày 8 tháng 10, 2026</sub>
+
+Hình trên trang “Trò chơi” giờ đã chuyển động, nên bạn thấy rõ mỗi công tắc chặn điều gì.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Sau mỗi công tắc trên trang “Trò chơi”, giờ có một trò chơi nhỏ đang chạy. Vài phím hiện ra và được nhấn, và bạn thấy thứ gì sẽ bật lên trên trò chơi, như Spotlight hay Mission Control, trong khi trò chơi dừng lại. Khi công tắc bật, các phím chỉ sáng lên nhẹ nhàng và trò chơi vẫn tiếp tục. Gạt một công tắc, hình sẽ cho thấy sự khác biệt ngay.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Trò chơi nhỏ theo giao diện của máy Mac: một ngày nắng đẹp ở chế độ sáng và một đêm yên tĩnh có trăng sao ở chế độ tối.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Trong mọi hình của ứng dụng, con trỏ giờ di chuyển như một bàn tay: đi xa thì mất thêm chút thời gian, dừng lại rồi mới bấm. Khi hình bắt đầu lại, nó lướt nhẹ về đầu thay vì nhảy. Hình được nghỉ khi cửa sổ bị ẩn, và khi bật “Giảm chuyển động” thì hình đứng yên.
+
+**Thử ngay:** Cài đặt › Trò chơi
+
+---
+
 ## <a id="v1.26.0"></a>Biểu tượng mới, và dọn sạch quyền cũ
 
 <sub>1.26.0 · ngày 8 tháng 10, 2026</sub>

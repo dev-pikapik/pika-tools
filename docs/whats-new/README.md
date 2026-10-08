@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>The game pictures come to life
+
+<sub>1.26.1 · October 8, 2026</sub>
+
+The pictures on the Games page now play, so you see what each switch stops.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Behind every switch on the Games page, a little game is now running. Keys appear and get pressed, and you see what would pop up over your game, like Spotlight or Mission Control, while the game stops. When the switch is on, the keys only glow softly and the game keeps going. Flip a switch, and the picture shows the difference right away.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+The little game follows the look of your Mac: a sunny day in light mode and a calm night with the moon and stars in dark mode.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+In every picture in the app, the pointer now moves like a hand: it takes a bit longer over long distances, comes to rest, and only then clicks. When a picture starts over, it glides back to the beginning instead of jumping. The pictures rest while the window is hidden, and with Reduce motion turned on they stand still.
+
+**Try it:** Settings › Games
+
+---
+
 ## <a id="v1.26.0"></a>A new icon, and a clean slate for old permissions
 
 <sub>1.26.0 · October 8, 2026</sub>

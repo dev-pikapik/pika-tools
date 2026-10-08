@@ -11,17 +11,17 @@ enum RenderMedia {
     static let cards: [(name: String, seconds: Double, art: AnyView)] = [
         ("keep-awake", 4.0, AnyView(KeepAwakeCard())),
         ("command-keys", 4.5, AnyView(CommandKeysArt())),
-        ("compress", 5.0, AnyView(CompressArt(on: true))),
-        ("convert", 5.8, AnyView(ConvertArt(on: true))),
-        ("input-switch", 3.95, AnyView(InputSwitchArt(on: true))),
-        ("quit-on-close", 3.9, AnyView(QuitOnCloseArt(on: true))),
-        ("window-zoom", 4.1, AnyView(WindowZoomArt(on: true))),
-        ("dock-hide", 4.2, AnyView(DockHideArt(on: true))),
-        ("new-file", 5.4, AnyView(NewFileArt(on: true))),
+        ("compress", 6.6, AnyView(CompressArt(on: true))),
+        ("convert", 8.05, AnyView(ConvertArt(on: true))),
+        ("input-switch", 7.9, AnyView(InputSwitchArt(on: true))),
+        ("quit-on-close", 4.5, AnyView(QuitOnCloseArt(on: true))),
+        ("window-zoom", 5.95, AnyView(WindowZoomArt(on: true))),
+        ("dock-hide", 5.1, AnyView(DockHideArt(on: true))),
+        ("new-file", 7.1, AnyView(NewFileArt(on: true))),
         ("finder-cut", 3.7, AnyView(FinderCutArt(on: true))),
         ("finder-open", 4.7, AnyView(FinderOpenArt(on: true))),
         ("finder-delete", 3.2, AnyView(FinderDeleteArt(on: true))),
-        ("game-mode", 6.0, AnyView(GameModeArt(on: true))),
+        ("game-mode", 8.0, AnyView(GameModeArt(on: true))),
         ("speed-test", 5.4, AnyView(SpeedTestArt())),
         ("side-buttons", 5.1, AnyView(SideButtonsArt(on: true, swapped: false))),
         ("wheel-lines", 3.2, AnyView(ScrollStepArt(on: true, distance: 30))),
@@ -29,11 +29,12 @@ enum RenderMedia {
         ("linear-pointer", 4.0, AnyView(PointerArt(on: true))),
         ("key-repeat", 4.55, AnyView(KeyRepeatArt(on: true))),
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
-        ("animations", 4.9, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
+        ("animations", 6.2, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
         ("leftover-permissions", 3.8, AnyView(LeftoversArt())),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
-        ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleArt(rule: .commandQ, height: 32)), 64), (AnyView(GameRuleArt(rule: .spotlight, height: 32)), 52), (AnyView(GameRuleArt(rule: .missionControl, height: 32)), 72)], height: 36))),
-        ("whats-new/1.25.1/dock-games", 3.1, AnyView(DockShelfArt())),
+        ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleFrame(rule: .commandQ, story: .still(on: false), height: 32)), 64), (AnyView(GameRuleFrame(rule: .spotlight, story: .still(on: false), height: 32)), 52), (AnyView(GameRuleFrame(rule: .missionControl, story: .still(on: false), height: 32)), 72)], height: 36))),
+        ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),
+        ("whats-new/1.25.1/dock-games", 3.85, AnyView(DockShelfArt())),
     ]
 
     static func main() {
@@ -155,7 +156,7 @@ private struct DockShelfArt: View {
     private static let colors: [Color] = [.teal, .orange, .purple, .pink]
 
     var body: some View {
-        let step = tick % 3
+        let step = tick % 4
         IllustrationRow {
             Stage {
                 HStack(spacing: 14) {
@@ -168,7 +169,7 @@ private struct DockShelfArt: View {
                                     if index == 2 { Image(systemName: "gamecontroller.fill").font(.system(size: 18)).foregroundStyle(.white) }
                                 }
                                 .overlay(alignment: .bottomTrailing) {
-                                    if index == 2 && step == 2 {
+                                    if index == 2 && step == 3 {
                                         Image(systemName: "checkmark.circle.fill")
                                             .font(.system(size: 17, weight: .semibold))
                                             .symbolRenderingMode(.palette)
@@ -177,7 +178,7 @@ private struct DockShelfArt: View {
                                             .transition(.scale.combined(with: .opacity))
                                     }
                                 }
-                                .scaleEffect(index == 2 && step == 1 ? 0.9 : 1)
+                                .scaleEffect(index == 2 && step == 2 ? 0.9 : 1)
                             Capsule().fill(Color.primary.opacity(0.18)).frame(width: 28, height: 4)
                         }
                     }
@@ -185,12 +186,12 @@ private struct DockShelfArt: View {
                 .padding(14)
                 .background(.fill.quaternary, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .position(x: 150, y: 64)
-                ArtCursor()
+                ArtCursor(pressed: step == 2)
                     .cursor(at: step == 0 ? CGPoint(x: 238, y: 108) : CGPoint(x: 168, y: 52))
             }
             .animation(.smooth(duration: 0.4), value: step)
         }
-        .loop($tick, [1.0, 0.5, 1.6])
+        .loop($tick, [1.2, 1.1, 0.15, 1.4])
     }
 }
 

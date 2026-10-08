@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>De gameplaatjes komen tot leven
+
+<sub>1.26.1 · 8 oktober 2026</sub>
+
+De plaatjes op de pagina ‘Games’ bewegen nu, zodat je ziet wat elke schakelaar tegenhoudt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Achter elke schakelaar op de pagina ‘Games’ speelt nu een klein spelletje. Er verschijnen toetsen die worden ingedrukt, en je ziet wat er over je game zou springen, zoals Spotlight of Mission Control, terwijl de game stilstaat. Staat de schakelaar aan, dan lichten de toetsen alleen zacht op en speelt de game door. Zet een schakelaar om en het plaatje laat meteen het verschil zien.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Het spelletje volgt het uiterlijk van je Mac: een zonnige dag in de lichte modus en een rustige nacht met maan en sterren in de donkere modus.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+In alle plaatjes van de app beweegt de aanwijzer nu als een hand: voor lange afstanden neemt hij iets meer tijd, komt tot rust en klikt pas dan. Begint een plaatje opnieuw, dan glijdt het rustig terug naar het begin in plaats van te springen. Is het venster verborgen, dan rusten de plaatjes, en met ‘Verminder beweging’ aan staan ze stil.
+
+**Probeer het:** Instellingen › Games
+
+---
+
 ## <a id="v1.26.0"></a>Een nieuw symbool en schoon schip met oude toestemmingen
 
 <sub>1.26.0 · 8 oktober 2026</sub>

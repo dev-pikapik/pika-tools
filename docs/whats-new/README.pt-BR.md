@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>As imagens dos jogos ganham vida
+
+<sub>1.26.1 · 8 de outubro de 2026</sub>
+
+As imagens da página “Jogos” agora se mexem, e você vê o que cada chave impede.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Atrás de cada chave da página “Jogos” agora roda um joguinho. Aparecem teclas, elas são pressionadas, e você vê o que pularia por cima do seu jogo, como o Spotlight ou o Mission Control, enquanto o jogo para. Com a chave ligada, as teclas só brilham de leve e o jogo continua. Mude uma chave e a imagem mostra a diferença na hora.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+O joguinho acompanha a aparência do seu Mac: um dia de sol no modo claro e uma noite calma com lua e estrelas no modo escuro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Em todas as imagens do app, o ponteiro agora se move como uma mão: leva um pouco mais de tempo nos caminhos longos, para e só então clica. Quando uma imagem recomeça, ela volta suavemente ao início em vez de pular. As imagens descansam enquanto a janela está escondida, e com “Reduzir movimento” ficam paradas.
+
+**Experimente:** Ajustes › Jogos
+
+---
+
 ## <a id="v1.26.0"></a>Um ícone novo e uma faxina nas permissões antigas
 
 <sub>1.26.0 · 8 de outubro de 2026</sub>

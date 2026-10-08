@@ -50,7 +50,7 @@ struct AnimationsArt: View {
     var body: some View {
         let delay = value(.dockDelay), speed = value(.dockSpeed), sheet = value(.resize)
         let opens = value(.windowOpen) != 0
-        let durations = [max(speed, 0.35) + 0.4, 0.4, max(delay + speed, 0.7) + 0.35, 0.55, 0.15, 0.5, max(sheet, 0.2) + 1.3]
+        let durations = [max(speed + 0.4, 1.2), 0.95, max(delay + speed, 0.7) + 0.35, 0.85, 0.15, 0.5, max(sheet, 0.2) + 1.3]
         let step = tick % durations.count
         let docked = step >= 2
         let open = step >= 5
@@ -128,7 +128,7 @@ private struct DockRevealArt: View {
 
     var body: some View {
         let ghost = delay != paceDelay || speed != paceSpeed
-        AnimationThumb(durations: [max(speed, paceSpeed, 0.3) + 0.6, 0.3, max(delay, paceDelay) + max(speed, paceSpeed) + 1], value: value) { step in
+        AnimationThumb(durations: [max(speed, paceSpeed, 0.3) + 0.9, 0.9, max(delay, paceDelay) + max(speed, paceSpeed) + 1], value: value) { step in
             let shown = step == 2
             ArtDock()
                 .ghost(ghost)
@@ -179,7 +179,7 @@ struct WindowOpenArt: View {
     let on: Bool
 
     var body: some View {
-        AnimationThumb(durations: [0.8, 0.45, 0.15, 1.3, 0.45, 0.15], value: on ? 1 : 0, rest: 3) { step in
+        AnimationThumb(durations: [1.3, 1.15, 0.15, 1.3, 1.15, 0.15], value: on ? 1 : 0, rest: 3) { step in
             let open = (3...5).contains(step)
             let plus = CGPoint(x: 190, y: 21)
             let close = CGPoint(x: 89, y: 39)
@@ -212,7 +212,7 @@ struct ResizeArt: View {
     var body: some View {
         let macOS = AnimationSetting.resize.macOS
         let slide = max(seconds, macOS)
-        AnimationThumb(durations: [slide + 0.6, 0.45, 0.15, slide + 0.8, 0.45, 0.15], value: seconds, rest: 3) { step in
+        AnimationThumb(durations: [max(slide + 0.6, 1.2), 1.1, 0.15, slide + 0.8, 1.05, 0.15], value: seconds, rest: 3) { step in
             let shown = (3...5).contains(step)
             let save = CGPoint(x: 230, y: 19)
             let done = CGPoint(x: 196, y: 80)
@@ -297,8 +297,8 @@ struct FinderColumnsArt: View {
     var body: some View {
         let seconds = Self.base * multiplier
         let scroll = max(seconds, Self.base)
-        AnimationThumb(durations: [0.5, 0.45, scroll + 0.9, 0.45, scroll + 0.9], value: multiplier, rest: 2) { step in
-            let deep = step == 2 || step == 3
+        AnimationThumb(durations: [1.3, 1.1, 0.15, scroll + 0.75, 1.1, 0.15, scroll + 0.75], value: multiplier, rest: 3) { step in
+            let deep = (3...5).contains(step)
             let item = CGPoint(x: 51 + Self.column * 2 + 24, y: 56)
             let back = CGPoint(x: 51 + 24, y: 56)
             ArtWindow(size: CGSize(width: Self.column * 3, height: 96)) {
@@ -316,9 +316,9 @@ struct FinderColumnsArt: View {
                 .clipped()
             }
             .position(x: 150, y: 64)
-            Click(at: step < 3 ? item : back, visible: step == 2 || step == 4, id: step)
-            ArtCursor(pressed: step == 2 || step == 4)
-                .cursor(at: step == 0 ? CGPoint(x: 262, y: 104) : step < 3 ? CGPoint(x: item.x - 1, y: item.y - 2) : CGPoint(x: back.x - 1, y: back.y - 2))
+            Click(at: step < 4 ? item : back, visible: step == 2 || step == 3 || step == 5 || step == 6, id: step < 4 ? 0 : 1)
+            ArtCursor(pressed: step == 2 || step == 5)
+                .cursor(at: step == 0 ? CGPoint(x: 262, y: 104) : step < 4 ? CGPoint(x: item.x - 1, y: item.y - 2) : CGPoint(x: back.x - 1, y: back.y - 2))
                 .animation(.smooth(duration: 0.4), value: step)
         }
     }
@@ -365,8 +365,8 @@ struct FinderWindowArt: View {
     let on: Bool
 
     var body: some View {
-        AnimationThumb(durations: [0.6, 0.45, 0.14, 0.16, 1.2, 0.45, 0.15], value: on ? 1 : 0, rest: 4) { step in
-            let open = (4...6).contains(step)
+        AnimationThumb(durations: [1.2, 1.1, 0.1, 0.08, 0.1, 1.2, 1.1, 0.15], value: on ? 1 : 0, rest: 5) { step in
+            let open = (5...7).contains(step)
             let folder = CGPoint(x: 52, y: 60)
             let close = CGPoint(x: 111, y: 23)
             VStack(spacing: 4) {
@@ -400,10 +400,10 @@ struct FinderWindowArt: View {
             .opacity(open ? 1 : 0)
             .position(x: open ? 186 : folder.x, y: open ? 62 : folder.y)
             .animation(on ? (open ? .easeOut(duration: 0.3) : .easeIn(duration: 0.22)) : nil, value: open)
-            Click(at: folder, visible: (2...4).contains(step), id: step == 2 ? 0 : 1)
-            Click(at: close, visible: step == 6 || step == 0)
-            ArtCursor(pressed: step == 2 || step == 3 || step == 6)
-                .cursor(at: step == 0 ? CGPoint(x: 120, y: 104) : step < 5 ? CGPoint(x: folder.x + 2, y: folder.y) : CGPoint(x: close.x - 1, y: close.y - 2))
+            Click(at: folder, visible: (2...5).contains(step), id: step < 4 ? 0 : 1)
+            Click(at: close, visible: step == 7 || step == 0)
+            ArtCursor(pressed: step == 2 || step == 4 || step == 7)
+                .cursor(at: step == 0 ? CGPoint(x: 120, y: 104) : step < 6 ? CGPoint(x: folder.x + 2, y: folder.y) : CGPoint(x: close.x - 1, y: close.y - 2))
                 .animation(.smooth(duration: 0.4), value: step)
         }
     }
@@ -418,7 +418,7 @@ struct MinimizeArt: View {
     private static let thumb = CGPoint(x: 178, y: 109)
 
     var body: some View {
-        AnimationThumb(durations: [0.7, 0.15, 1.1, 0.5, 0.15, 0.95], value: Double(effect), rest: 0) { step in
+        AnimationThumb(durations: [1.2, 0.15, 1.1, 1.15, 0.15, 0.95], value: Double(effect), rest: 0) { step in
             let minimized = (2...4).contains(step)
             let room = (2...4).contains(step)
             dock(room: room)

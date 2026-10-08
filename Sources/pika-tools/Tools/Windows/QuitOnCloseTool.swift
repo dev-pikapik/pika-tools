@@ -272,7 +272,7 @@ struct QuitOnCloseArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.8, 0.3, 1.9]
+    private static let durations = [1.3, 1.15, 0.15, 1.9]
 
     var body: some View {
         let step = reduceMotion ? 3 : tick % Self.durations.count
@@ -291,11 +291,11 @@ struct QuitOnCloseArt: View {
                 .position(x: 150, y: 44)
                 ArtDock(appDot: !(on && closed))
                     .position(x: 150, y: 102)
-                if step == 2 {
+                if step >= 2 {
                     ArtRipple()
                         .position(x: 106, y: 19)
                 }
-                ArtCursor()
+                ArtCursor(pressed: step == 2)
                     .cursor(at: step == 0 ? CGPoint(x: 196, y: 56) : CGPoint(x: 104, y: 17))
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)

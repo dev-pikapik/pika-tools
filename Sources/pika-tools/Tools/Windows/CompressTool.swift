@@ -34,15 +34,15 @@ struct CompressArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.45, 0.15, 0.5, 0.4, 0.45, 0.15, 2.0]
+    private static let durations = [1.3, 1.15, 0.15, 0.5, 0.75, 0.25, 0.15, 0.35, 2.0]
     private static let click = CGPoint(x: 112, y: 58)
     private static let sizes = [4_800_000, 1_200_000].map { ByteCountFormatter.string(fromByteCount: Int64($0), countStyle: .file) }
 
     var body: some View {
-        let step = reduceMotion ? 7 : tick % Self.durations.count
+        let step = reduceMotion ? 8 : tick % Self.durations.count
         let menu = (3...6).contains(step)
-        let picked = (2...6).contains(step)
-        let copied = on && step == 7
+        let picked = (2...7).contains(step)
+        let copied = on && step == 8
         let row = CGPoint(x: Self.click.x + 18, y: Self.click.y + 26)
         IllustrationRow {
             Stage {
@@ -70,7 +70,7 @@ struct CompressArt: View {
                 if (6...7).contains(step) { ArtRipple().position(row) }
                 ArtCursor(pressed: step == 2 || step == 6)
                     .cursor(at: step == 0 ? CGPoint(x: 236, y: 98) : step < 4 ? Self.click : row)
-                    .opacity(step == 7 ? 0 : 1)
+                    .opacity(step == 8 ? 0 : 1)
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }

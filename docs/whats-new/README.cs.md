@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Obrázky her ožily
+
+<sub>1.26.1 · 8. října 2026</sub>
+
+Obrázky na stránce „Hry“ se teď hýbou, takže vidíte, co který přepínač zastaví.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Za každým přepínačem na stránce „Hry“ teď běží malá hra. Objeví se klávesy, stisknou se a vidíte, co by vyskočilo přes vaši hru, třeba Spotlight nebo Mission Control, a hra se zastaví. Když je přepínač zapnutý, klávesy jen jemně zazáří a hra běží dál. Přepněte přepínač a obrázek hned ukáže rozdíl.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Malá hra se řídí vzhledem vašeho Macu: ve světlém režimu je slunečný den, v tmavém klidná noc s měsícem a hvězdami.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Na všech obrázcích v aplikaci se ukazatel teď pohybuje jako ruka: na delší cestu si dá trochu víc času, zastaví se a teprve potom klikne. Když obrázek začíná znovu, plynule se vrátí na začátek, místo aby skočil. Když je okno skryté, obrázky odpočívají, a se zapnutým „Omezit pohyb“ stojí.
+
+**Vyzkoušejte:** Nastavení › Hry
+
+---
+
 ## <a id="v1.26.0"></a>Nová ikona a čistý stůl pro stará oprávnění
 
 <sub>1.26.0 · 8. října 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Imaginile jocurilor prind viață
+
+<sub>1.26.1 · 8 octombrie 2026</sub>
+
+Imaginile de pe pagina „Jocuri” se mișcă acum, așa că vezi ce oprește fiecare comutator.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+În spatele fiecărui comutator de pe pagina „Jocuri” rulează acum un joc mic. Apar niște taste, sunt apăsate, și vezi ce ar sări peste jocul tău, cum ar fi Spotlight sau Mission Control, în timp ce jocul se oprește. Când comutatorul e pornit, tastele doar strălucesc ușor și jocul merge mai departe. Schimbă un comutator și imaginea arată imediat diferența.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Jocul mic urmează aspectul Mac-ului tău: o zi însorită în modul luminos și o noapte liniștită, cu lună și stele, în modul întunecat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+În toate imaginile din aplicație, cursorul se mișcă acum ca o mână: pe drumuri lungi își ia puțin mai mult timp, se oprește și abia apoi dă clic. Când o imagine o ia de la capăt, revine lin la început în loc să sară. Imaginile se odihnesc cât fereastra e ascunsă, iar cu „Redu mișcarea” pornit stau pe loc.
+
+**Încearcă:** Configurări › Jocuri
+
+---
+
 ## <a id="v1.26.0"></a>O pictogramă nouă și curățenie în permisiunile vechi
 
 <sub>1.26.0 · 8 octombrie 2026</sub>

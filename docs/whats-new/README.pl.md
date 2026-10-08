@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Obrazki gier ożyły
+
+<sub>1.26.1 · 8 października 2026</sub>
+
+Obrazki na stronie „Gry” teraz się ruszają, więc widać, co zatrzymuje każdy przełącznik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Za każdym przełącznikiem na stronie „Gry” toczy się teraz mała gra. Pojawiają się klawisze, zostają naciśnięte i widać, co wyskoczyłoby nad grą, na przykład Spotlight albo Mission Control, a gra staje. Gdy przełącznik jest włączony, klawisze tylko łagodnie się rozświetlają, a gra toczy się dalej. Przestaw przełącznik, a obrazek od razu pokaże różnicę.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Mała gra dopasowuje się do wyglądu Maca: w trybie jasnym to słoneczny dzień, a w ciemnym spokojna noc z księżycem i gwiazdami.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Na wszystkich obrazkach w aplikacji wskaźnik porusza się teraz jak ręka: na dłuższą drogę daje sobie trochę więcej czasu, zatrzymuje się i dopiero wtedy klika. Gdy obrazek zaczyna się od nowa, płynnie wraca na początek zamiast skakać. Gdy okno jest zasłonięte, obrazki odpoczywają, a z włączonym „Ogranicz ruch” stoją w miejscu.
+
+**Wypróbuj:** Ustawienia › Gry
+
+---
+
 ## <a id="v1.26.0"></a>Nowa ikona i porządek ze starymi uprawnieniami
 
 <sub>1.26.0 · 8 października 2026</sub>

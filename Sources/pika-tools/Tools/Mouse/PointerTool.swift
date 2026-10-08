@@ -193,7 +193,7 @@ struct PointerArt: View {
                     .opacity(step == 2 ? 1 : 0)
                     .position(x: 192, y: 57)
                 ArtCursor()
-                    .cursor(at: CGPoint(x: 168 + pointer, y: 56))
+                    .position(x: 174 + pointer, y: 65)
             }
             .animation(reduceMotion ? nil : animation, value: step)
         }

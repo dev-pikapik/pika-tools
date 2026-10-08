@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>遊戲圖片動起來了
+
+<sub>1.26.1 · 2026年10月8日</sub>
+
+「遊戲」頁面上的圖片現在會動，一眼就能看出每個開關擋住了什麼。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+「遊戲」頁面的每個開關旁邊，現在都有一個小遊戲在進行。按鍵出現並被按下，你會看到有什麼會跳到遊戲上面，例如 Spotlight 或「指揮中心」，同時遊戲停住。開關打開時，按鍵只會柔和地亮一下，遊戲照常進行。切換開關，圖片會立刻顯示其中的差別。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+小遊戲會跟隨 Mac 的外觀：淺色模式是晴朗的白天，深色模式是有月亮和星星的寧靜夜晚。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+在 App 的所有圖片裡，指標現在像手一樣移動：遠的地方多花一點時間，停穩後才按下。圖片重新開始時，會平順地回到開頭，而不是跳回去。視窗被遮住時圖片會休息，打開「減少動態效果」後圖片保持不動。
+
+**試試看：** 設定 › 遊戲
+
+---
+
 ## <a id="v1.26.0"></a>新圖像，以及舊權限的大掃除
 
 <sub>1.26.0 · 2026年10月8日</sub>

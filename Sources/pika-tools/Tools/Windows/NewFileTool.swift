@@ -111,18 +111,18 @@ struct NewFileArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.45, 0.15, 0.5, 0.4, 0.45, 0.15, 0.8, 1.6]
+    private static let durations = [1.3, 1.15, 0.15, 0.5, 0.75, 0.25, 0.15, 0.35, 0.9, 1.6]
     private static let click = CGPoint(x: 128, y: 46)
 
     var body: some View {
-        let step = reduceMotion ? 8 : tick % Self.durations.count
+        let step = reduceMotion ? 9 : tick % Self.durations.count
         let menu = (3...6).contains(step)
-        let created = on && step >= 7
+        let created = on && step >= 8
         let row = CGPoint(x: Self.click.x + 18, y: Self.click.y + 26)
         IllustrationRow {
             Stage {
                 ArtWindow(size: CGSize(width: 168, height: 100)) {
-                    ArtFile(selected: on && step == 8, renaming: on && step == 7)
+                    ArtFile(selected: on && step == 9, renaming: on && step == 8)
                         .opacity(created ? 1 : 0)
                         .scaleEffect(created ? 1 : 0.6)
                         .position(x: 38, y: 40)
@@ -149,7 +149,7 @@ struct NewFileArt: View {
                 }
                 ArtCursor(pressed: step == 2 || step == 6)
                     .cursor(at: step == 0 ? CGPoint(x: 220, y: 100) : step < 4 ? Self.click : row)
-                    .opacity(step == 8 ? 0 : 1)
+                    .opacity(step == 9 ? 0 : 1)
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
