@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Mac에서 모든 움직임의 속도";
 "Fine-tuning" = "세부 조정";
 "Hide the Dock automatically" = "자동으로 Dock 가리기와 보기";
-"The two settings below need it" = "아래 두 설정에 필요합니다";
+"Dock speed only works when the Dock hides" = "Dock 속도는 Dock을 가릴 때만 적용됩니다";
 "Works in apps after you reopen them" = "앱을 다시 열면 적용됩니다";
 "Restart Finder" = "Finder 재시작";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder가 윈도우를 닫고 다시 열립니다. 파일 복사가 끝날 때까지 기다리세요.";
 "Finder picks up the changes after a restart" = "재시작하면 Finder에 변경 사항이 적용됩니다";
 "Even calmer: Reduce Motion in Accessibility" = "더 차분하게: 손쉬운 사용의 동작 줄이기";
 "All animations will be as in macOS again." = "모든 애니메이션이 다시 macOS와 동일해집니다.";
+"Animations will be as they were before pika-tools." = "애니메이션이 pika-tools 사용 전으로 돌아갑니다.";
 "Animation speed" = "애니메이션 속도";
 "Sets all the effects below at once." = "아래 모든 효과를 한 번에 설정합니다.";
 "Genie" = "지니";

@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Jak rychle se všechno na vašem Macu pohybuje";
 "Fine-tuning" = "Jemné doladění";
 "Hide the Dock automatically" = "Automaticky skrývat Dock";
-"The two settings below need it" = "Potřebují to dvě nastavení níže";
+"Dock speed only works when the Dock hides" = "Rychlost Docku funguje, jen když se Dock skrývá";
 "Works in apps after you reopen them" = "Projeví se v aplikacích, až je znovu otevřete";
 "Restart Finder" = "Restartovat Finder";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder zavře svá okna a znovu se otevře. Počkejte, až se dokončí kopírování souborů.";
 "Finder picks up the changes after a restart" = "Finder změny použije po restartu";
 "Even calmer: Reduce Motion in Accessibility" = "Ještě klidněji: Omezit pohyb ve Zpřístupnění";
 "All animations will be as in macOS again." = "Všechny animace budou znovu jako v macOS.";
+"Animations will be as they were before pika-tools." = "Animace budou jako před pika-tools.";
 "Animation speed" = "Rychlost animací";
 "Sets all the effects below at once." = "Nastaví všechny efekty níže najednou.";
 "Genie" = "Džin";

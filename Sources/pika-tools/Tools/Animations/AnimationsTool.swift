@@ -18,17 +18,21 @@ final class AnimationsTool: Tool {
     }
 
     private(set) var owned: [AnimationSetting: Double]
+    private(set) var own: [AnimationSetting: Double]
     private(set) var system: [AnimationSetting: Double] = [:]
     private(set) var storedSpeed: Double?
     private(set) var autohide = false
+    private(set) var appsPending = false
     private(set) var finderPending = false
     @ObservationIgnored private var dockRestart: DispatchWorkItem?
 
     private static let dock = "com.apple.dock" as CFString
     private static let speedKey = "animations-speed"
+    private static let ownKey = "animations-own"
 
     private init() {
         owned = Self.saved()
+        own = Self.originals()
         storedSpeed = UserDefaults.standard.object(forKey: Self.speedKey) as? Double
         reload()
     }
@@ -42,11 +46,19 @@ final class AnimationsTool: Tool {
     }
 
     var speed: Double? {
-        AnimationSpeed.speed(of: values, stored: storedSpeed)
+        AnimationSpeed.speed(of: values, stored: storedSpeed, baseline: baseline)
+    }
+
+    var baseline: [AnimationSetting: Double] {
+        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.map { ($0, baseline($0)) })
     }
 
     func value(_ setting: AnimationSetting) -> Double {
         owned[setting] ?? system[setting] ?? setting.macOS
+    }
+
+    func baseline(_ setting: AnimationSetting) -> Double {
+        (owned[setting] == nil ? system[setting] : own[setting]) ?? setting.macOS
     }
 
     func reload() {
@@ -56,23 +68,19 @@ final class AnimationsTool: Tool {
     }
 
     func set(_ setting: AnimationSetting, _ value: Double) {
-        var old = owned
-        old[setting] = old[setting] ?? system[setting]
         var new = owned
-        new[setting] = abs(value - setting.macOS) < 0.0005 ? nil : value
+        new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
         storedSpeed = nil
-        apply(new, from: old)
+        apply(new)
     }
 
     func setSpeed(_ speed: Double) {
-        var old = owned
         var new = owned
-        for (setting, value) in AnimationSpeed.preset(speed) {
-            old[setting] = old[setting] ?? system[setting]
-            new[setting] = abs(value - setting.macOS) < 0.0005 ? nil : value
+        for (setting, value) in AnimationSpeed.preset(speed, baseline: baseline) {
+            new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
         }
         storedSpeed = speed > 0 ? speed : nil
-        apply(new, from: old)
+        apply(new)
     }
 
     func setAutohide(_ on: Bool) {
@@ -89,30 +97,36 @@ final class AnimationsTool: Tool {
 
     func reset() {
         storedSpeed = nil
-        apply([:], from: owned)
+        apply([:])
     }
 
     func refresh() {
         reload()
-        apply(owned, from: owned)
+        apply(owned)
     }
 
     func load() {
         storedSpeed = UserDefaults.standard.object(forKey: Self.speedKey) as? Double
         reload()
-        apply(Self.saved(), from: owned)
+        apply(Self.saved())
     }
 
     static func uninstall() {
+        let own = originals()
         let settings = saved().keys
-        settings.forEach { $0.write(nil) }
+        settings.forEach { $0.write(own[$0]) }
         if settings.contains(where: { $0.apply == .dock }) { killall("Dock", wait: true) }
     }
 
-    private func apply(_ new: [AnimationSetting: Double], from old: [AnimationSetting: Double]) {
-        let changes = AnimationSetting.changes(from: old, to: new, system: system)
+    private func apply(_ new: [AnimationSetting: Double]) {
+        let changes = AnimationSetting.changes(from: owned, to: new, system: system, own: own)
+        own = AnimationSetting.originals(own, owned: owned, new: new, system: system)
         owned = new
         let defaults = UserDefaults.standard
+        let originals = own.isEmpty ? nil : Dictionary(uniqueKeysWithValues: own.map { ($0.key.rawValue, $0.value) })
+        if defaults.dictionary(forKey: Self.ownKey) as? [String: Double] != originals {
+            defaults.set(originals, forKey: Self.ownKey)
+        }
         for setting in AnimationSetting.allCases where defaults.object(forKey: Self.key(setting)) as? Double != new[setting] {
             defaults.set(new[setting], forKey: Self.key(setting))
         }
@@ -122,8 +136,9 @@ final class AnimationsTool: Tool {
         guard !changes.isEmpty else { return }
         changes.forEach { $0.0.write($0.1) }
         reload()
-        if changes.contains(where: { $0.0.apply == .dock }) { restartDock() }
-        if changes.contains(where: { $0.0.apply == .finder }) { finderPending = true }
+        if changes.contains(where: { $0.0.apply == .dock && (autohide || !$0.0.isSpeed) }) { restartDock() }
+        if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
+        if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
     }
 
     private func restartDock() {
@@ -141,6 +156,11 @@ final class AnimationsTool: Tool {
         Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in
             (UserDefaults.standard.object(forKey: key(setting)) as? Double).map { (setting, $0) }
         })
+    }
+
+    private static func originals() -> [AnimationSetting: Double] {
+        let saved = UserDefaults.standard.dictionary(forKey: ownKey) as? [String: Double] ?? [:]
+        return Dictionary(uniqueKeysWithValues: saved.compactMap { key, value in AnimationSetting(rawValue: key).map { ($0, value) } })
     }
 
     private static func killall(_ name: String, wait: Bool = false) {
@@ -225,13 +245,13 @@ struct AnimationsPage: View {
             Section {
                 AnimationsArt(values: tool.values)
                 SpeedRow(tool: tool)
-            }
-            Section("Fine-tuning") {
                 if offersAutohide {
                     Toggle(isOn: Binding(get: { tool.autohide }, set: { tool.setAutohide($0) })) {
-                        RowLabel(Text("Hide the Dock automatically"), Text("The two settings below need it"))
+                        RowLabel(Text("Hide the Dock automatically"), Text("Dock speed only works when the Dock hides"))
                     }
                 }
+            }
+            Section("Fine-tuning") {
                 Group {
                     SliderRow(tool: tool, setting: .dockDelay)
                     SliderRow(tool: tool, setting: .dockSpeed)
@@ -244,22 +264,10 @@ struct AnimationsPage: View {
                 FlagRow(tool: tool, setting: .windowOpen)
                 SliderRow(tool: tool, setting: .resize)
                 SliderRow(tool: tool, setting: .quickLook)
-            } footer: {
-                Label("Works in apps after you reopen them", systemImage: "arrow.clockwise")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
             }
             Section {
                 SliderRow(tool: tool, setting: .finderColumns)
                 FlagRow(tool: tool, setting: .finder)
-                if tool.finderPending {
-                    LabeledContent {
-                        Button("Restart Finder") { tool.restartFinder() }
-                            .help(Text("Finder closes its windows and opens again. Wait until files finish copying."))
-                    } label: {
-                        RowLabel(Text("Finder picks up the changes after a restart"))
-                    }
-                }
             }
             Section {
                 Button(String(localized: "Even calmer: Reduce Motion in Accessibility")) { NSWorkspace.shared.open(Self.motion) }
@@ -267,7 +275,9 @@ struct AnimationsPage: View {
                     .settingAnchor(String(localized: "Even calmer: Reduce Motion in Accessibility"))
             }
             RestoreDefaultsSection(
-                message: String(localized: "All animations will be as in macOS again."),
+                message: tool.own.isEmpty
+                    ? String(localized: "All animations will be as in macOS again.")
+                    : String(localized: "Animations will be as they were before pika-tools."),
                 isDefault: tool.isDefault
             ) {
                 tool.reset()
@@ -275,10 +285,40 @@ struct AnimationsPage: View {
         }
         .formStyle(.grouped)
         .settingsPage()
+        .safeAreaInset(edge: .bottom, spacing: 0) { ChangesBar(tool: tool) }
         .environment(\.inSettings, true)
         .onAppear {
             tool.reload()
             offersAutohide = offersAutohide || !tool.autohide
+        }
+    }
+}
+
+private struct ChangesBar: View {
+    let tool: AnimationsTool
+
+    var body: some View {
+        if tool.appsPending || tool.finderPending {
+            HStack(spacing: 12) {
+                Image(systemName: "arrow.clockwise")
+                    .accessibilityHidden(true)
+                if tool.appsPending {
+                    Text("Works in apps after you reopen them")
+                } else {
+                    Text("Finder picks up the changes after a restart")
+                }
+                Spacer(minLength: 0)
+                if tool.finderPending {
+                    Button("Restart Finder") { tool.restartFinder() }
+                        .help(Text("Finder closes its windows and opens again. Wait until files finish copying."))
+                }
+            }
+            .font(.callout)
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .background(.bar)
+            .overlay(alignment: .top) { Divider() }
         }
     }
 }

@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Seberapa cepat semuanya bergerak di Mac Anda";
 "Fine-tuning" = "Penyesuaian halus";
 "Hide the Dock automatically" = "Sembunyikan Dock secara otomatis";
-"The two settings below need it" = "Dibutuhkan oleh dua pengaturan di bawah";
+"Dock speed only works when the Dock hides" = "Kecepatan Dock hanya berlaku saat Dock disembunyikan";
 "Works in apps after you reopen them" = "Berlaku di app setelah Anda membukanya lagi";
 "Restart Finder" = "Mulai Ulang Finder";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder menutup jendelanya lalu terbuka lagi. Tunggu sampai penyalinan file selesai.";
 "Finder picks up the changes after a restart" = "Finder menerapkan perubahan setelah dimulai ulang";
 "Even calmer: Reduce Motion in Accessibility" = "Lebih tenang lagi: Kurangi gerakan di Aksesibilitas";
 "All animations will be as in macOS again." = "Semua animasi akan kembali seperti di macOS.";
+"Animations will be as they were before pika-tools." = "Animasi akan kembali seperti sebelum pika-tools.";
 "Animation speed" = "Kecepatan animasi";
 "Sets all the effects below at once." = "Mengatur semua efek di bawah sekaligus.";
 "Genie" = "Jin";

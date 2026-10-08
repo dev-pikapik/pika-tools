@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Mọi thứ trên máy Mac của bạn chuyển động nhanh đến đâu";
 "Fine-tuning" = "Tinh chỉnh";
 "Hide the Dock automatically" = "Tự động ẩn Dock";
-"The two settings below need it" = "Cần cho hai cài đặt bên dưới";
+"Dock speed only works when the Dock hides" = "Tốc độ Dock chỉ có tác dụng khi Dock tự ẩn";
 "Works in apps after you reopen them" = "Có tác dụng trong ứng dụng khi bạn mở lại";
 "Restart Finder" = "Khởi động lại Finder";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder sẽ đóng các cửa sổ rồi mở lại. Hãy đợi việc sao chép tệp xong.";
 "Finder picks up the changes after a restart" = "Finder áp dụng thay đổi sau khi khởi động lại";
 "Even calmer: Reduce Motion in Accessibility" = "Êm dịu hơn nữa: Giảm chuyển động trong Trợ năng";
 "All animations will be as in macOS again." = "Mọi hoạt ảnh sẽ lại như trong macOS.";
+"Animations will be as they were before pika-tools." = "Hoạt ảnh sẽ trở lại như trước khi dùng pika-tools.";
 "Animation speed" = "Tốc độ hoạt ảnh";
 "Sets all the effects below at once." = "Đặt mọi hiệu ứng bên dưới cùng lúc.";
 "Genie" = "Thần đèn";

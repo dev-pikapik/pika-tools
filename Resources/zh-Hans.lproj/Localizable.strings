@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Mac 上一切动作的速度";
 "Fine-tuning" = "精细调整";
 "Hide the Dock automatically" = "自动隐藏和显示程序坞";
-"The two settings below need it" = "下面两项设置需要它";
+"Dock speed only works when the Dock hides" = "程序坞速度仅在程序坞隐藏时生效";
 "Works in apps after you reopen them" = "重新打开 App 后生效";
 "Restart Finder" = "重新启动访达";
 "Finder closes its windows and opens again. Wait until files finish copying." = "访达会关闭其窗口并重新打开。请等待文件拷贝完成。";
 "Finder picks up the changes after a restart" = "重新启动后访达会应用更改";
 "Even calmer: Reduce Motion in Accessibility" = "更平静：辅助功能中的“减弱动态效果”";
 "All animations will be as in macOS again." = "所有动画将恢复为与 macOS 相同。";
+"Animations will be as they were before pika-tools." = "动画将恢复为使用 pika-tools 之前的样子。";
 "Animation speed" = "动画速度";
 "Sets all the effects below at once." = "一次设置下面所有效果。";
 "Genie" = "神奇";

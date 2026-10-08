@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "आपके Mac पर सब कुछ कितनी तेज़ी से चलता है";
 "Fine-tuning" = "बारीक सेटिंग";
 "Hide the Dock automatically" = "Dock अपने-आप छिपाएँ";
-"The two settings below need it" = "नीचे की दो सेटिंग के लिए ज़रूरी";
+"Dock speed only works when the Dock hides" = "Dock की रफ़्तार तभी काम करती है जब Dock छिपता है";
 "Works in apps after you reopen them" = "ऐप्स दोबारा खोलने पर असर दिखेगा";
 "Restart Finder" = "Finder रीस्टार्ट करें";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder अपनी विंडो बंद करके फिर से खुलेगा। फ़ाइलों की कॉपी पूरी होने तक रुकें।";
 "Finder picks up the changes after a restart" = "Finder रीस्टार्ट के बाद बदलाव लागू करेगा";
 "Even calmer: Reduce Motion in Accessibility" = "और भी शांत: ऐक्सेसिबिलिटी में मोशन कम करें";
 "All animations will be as in macOS again." = "सारे एनिमेशन फिर से macOS जैसे हो जाएँगे।";
+"Animations will be as they were before pika-tools." = "एनिमेशन वैसे ही हो जाएँगे जैसे pika-tools से पहले थे।";
 "Animation speed" = "एनिमेशन की स्पीड";
 "Sets all the effects below at once." = "नीचे के सारे इफ़ेक्ट एक साथ सेट करता है।";
 "Genie" = "जिनी";

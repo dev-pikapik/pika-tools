@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Mac’inizde her şeyin ne kadar hızlı hareket ettiği";
 "Fine-tuning" = "İnce ayar";
 "Hide the Dock automatically" = "Dock’u otomatik olarak gizle";
-"The two settings below need it" = "Aşağıdaki iki ayar için gerekli";
+"Dock speed only works when the Dock hides" = "Dock hızı yalnızca Dock gizlendiğinde işe yarar";
 "Works in apps after you reopen them" = "Uygulamaları yeniden açtığınızda geçerli olur";
 "Restart Finder" = "Finder’ı yeniden başlat";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder pencerelerini kapatıp yeniden açılır. Dosya kopyalama işlemlerinin bitmesini bekleyin.";
 "Finder picks up the changes after a restart" = "Finder değişiklikleri yeniden başlatıldıktan sonra uygular";
 "Even calmer: Reduce Motion in Accessibility" = "Daha da sakin: Erişilebilirlik’te Hareketi azalt";
 "All animations will be as in macOS again." = "Tüm animasyonlar yeniden macOS’teki gibi olacak.";
+"Animations will be as they were before pika-tools." = "Animasyonlar pika-tools’tan önceki hâline dönecek.";
 "Animation speed" = "Animasyon hızı";
 "Sets all the effects below at once." = "Aşağıdaki tüm efektleri tek seferde ayarlar.";
 "Genie" = "Cin";
