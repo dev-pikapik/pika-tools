@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>What’s New, in your language
+
+<sub>1.26.2 · October 8, 2026</sub>
+
+What’s New in Settings now opens the What’s new page, in the same language as the app.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Open Settings › About and click What’s New. You get the What’s new page, with a picture for every update, in the language pika-tools speaks.
+
+The full list of changes is tidier too. Every version shows the day it came out, and every version number opens its download page.
+
+Nothing changes in how pika-tools works. Updates arrive as before, on their own or through Homebrew.
+
+**Try it:** Settings › About › What’s New
+
+**Fixed**
+
+- What’s New opened a long technical list in English instead of the What’s new page.
+- Links in the list of changes that led nowhere now open the right page.
+
+---
+
 ## <a id="v1.26.1"></a>The game pictures come to life
 
 <sub>1.26.1 · October 8, 2026</sub>

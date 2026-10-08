@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>„Co nowego” w Twoim języku
+
+<sub>1.26.2 · 8 października 2026</sub>
+
+„Co nowego” w ustawieniach otwiera teraz tę stronę, w tym samym języku co aplikacja.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Otwórz Ustawienia › Informacje i kliknij „Co nowego”. Trafiasz prosto tutaj, na stronę z obrazkiem do każdej aktualizacji, w języku, którym mówi pika-tools.
+
+Pełna lista zmian też jest bardziej uporządkowana. Każda wersja pokazuje dzień wydania, a każdy numer wersji otwiera jej stronę pobierania.
+
+W działaniu pika-tools nic się nie zmienia. Aktualizacje przychodzą jak dotąd, same albo przez Homebrew.
+
+**Wypróbuj:** Ustawienia › Informacje › Co nowego
+
+**Poprawki**
+
+- „Co nowego” otwierało długą techniczną listę po angielsku zamiast tej strony.
+- Linki na liście zmian, które prowadziły donikąd, otwierają teraz właściwą stronę.
+
+---
+
 ## <a id="v1.26.1"></a>Obrazki gier ożyły
 
 <sub>1.26.1 · 8 października 2026</sub>

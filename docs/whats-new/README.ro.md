@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Noutăți în limba ta
+
+<sub>1.26.2 · 8 octombrie 2026</sub>
+
+„Noutăți” din configurări deschide acum această pagină, în aceeași limbă ca aplicația.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Deschide Configurări › Despre și dă clic pe „Noutăți”. Ajungi direct aici, pe pagina cu o imagine pentru fiecare actualizare, în limba în care vorbește pika-tools.
+
+Și lista completă a schimbărilor e mai ordonată. Fiecare versiune arată ziua în care a apărut, iar fiecare număr de versiune deschide pagina ei de descărcare.
+
+În felul în care funcționează pika-tools nu se schimbă nimic. Actualizările vin ca înainte, singure sau prin Homebrew.
+
+**Încearcă:** Configurări › Despre › Noutăți
+
+**Reparat**
+
+- „Noutăți” deschidea o listă tehnică lungă, în engleză, în loc de această pagină.
+- Linkurile din lista schimbărilor care nu duceau nicăieri deschid acum pagina potrivită.
+
+---
+
 ## <a id="v1.26.1"></a>Imaginile jocurilor prind viață
 
 <sub>1.26.1 · 8 octombrie 2026</sub>

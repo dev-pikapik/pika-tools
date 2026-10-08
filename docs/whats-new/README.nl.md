@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Wat is er nieuw, in jouw taal
+
+<sub>1.26.2 · 8 oktober 2026</sub>
+
+‘Wat is er nieuw’ in de instellingen opent nu deze pagina, in dezelfde taal als de app.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Open Instellingen › Over en klik op ‘Wat is er nieuw’. Je komt meteen hier, op de pagina met een plaatje bij elke update, in de taal die pika-tools spreekt.
+
+Ook de volledige lijst met wijzigingen is netter. Elke versie toont de dag waarop ze uitkwam, en elk versienummer opent de downloadpagina ervan.
+
+Aan hoe pika-tools werkt verandert niets. Updates komen zoals altijd, vanzelf of via Homebrew.
+
+**Probeer het:** Instellingen › Over › Wat is er nieuw
+
+**Opgelost**
+
+- ‘Wat is er nieuw’ opende een lange technische lijst in het Engels in plaats van deze pagina.
+- Links in de lijst met wijzigingen die nergens heen gingen, openen nu de juiste pagina.
+
+---
+
 ## <a id="v1.26.1"></a>De gameplaatjes komen tot leven
 
 <sub>1.26.1 · 8 oktober 2026</sub>

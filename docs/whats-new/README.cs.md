@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Co je nového ve vašem jazyce
+
+<sub>1.26.2 · 8. října 2026</sub>
+
+„Co je nového“ v nastavení teď otevírá tuto stránku, ve stejném jazyce jako aplikace.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Otevřete Nastavení › O aplikaci a klikněte na „Co je nového“. Dostanete se přímo sem, na stránku s obrázkem ke každé aktualizaci, v jazyce, kterým mluví pika-tools.
+
+Úplný seznam změn je také přehlednější. U každé verze je den, kdy vyšla, a každé číslo verze otevírá její stránku ke stažení.
+
+Na tom, jak pika-tools funguje, se nic nemění. Aktualizace přicházejí jako dřív, samy nebo přes Homebrew.
+
+**Vyzkoušejte:** Nastavení › O aplikaci › Co je nového
+
+**Opraveno**
+
+- „Co je nového“ otevíralo místo této stránky dlouhý technický seznam v angličtině.
+- Odkazy v seznamu změn, které nikam nevedly, teď otevírají správnou stránku.
+
+---
+
 ## <a id="v1.26.1"></a>Obrázky her ožily
 
 <sub>1.26.1 · 8. října 2026</sub>

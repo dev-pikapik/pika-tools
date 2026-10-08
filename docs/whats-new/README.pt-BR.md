@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Novidades no seu idioma
+
+<sub>1.26.2 · 8 de outubro de 2026</sub>
+
+“Novidades” nos ajustes agora abre esta página, no mesmo idioma do app.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Abra Ajustes › Sobre e clique em “Novidades”. Você chega direto aqui, na página com uma imagem para cada atualização, no idioma que o pika-tools fala.
+
+A lista completa de mudanças também ficou mais organizada. Cada versão mostra o dia em que saiu, e cada número de versão abre a página de download dela.
+
+Nada muda no funcionamento do pika-tools. As atualizações chegam como antes, sozinhas ou pelo Homebrew.
+
+**Experimente:** Ajustes › Sobre › Novidades
+
+**Corrigido**
+
+- “Novidades” abria uma longa lista técnica em inglês em vez desta página.
+- Os links da lista de mudanças que não levavam a lugar nenhum agora abrem a página certa.
+
+---
+
 ## <a id="v1.26.1"></a>As imagens dos jogos ganham vida
 
 <sub>1.26.1 · 8 de outubro de 2026</sub>

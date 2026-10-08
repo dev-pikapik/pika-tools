@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Có gì mới, bằng ngôn ngữ của bạn
+
+<sub>1.26.2 · ngày 8 tháng 10, 2026</sub>
+
+“Có gì mới” trong cài đặt giờ mở trang này, cùng ngôn ngữ với ứng dụng.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Mở Cài đặt › Giới thiệu và bấm “Có gì mới”. Bạn sẽ đến thẳng đây, trang có một hình cho mỗi bản cập nhật, bằng ngôn ngữ mà pika-tools đang dùng.
+
+Danh sách thay đổi đầy đủ cũng gọn gàng hơn. Mỗi phiên bản ghi rõ ngày ra mắt, và mỗi số phiên bản mở trang tải về của nó.
+
+Cách pika-tools hoạt động không có gì thay đổi. Bản cập nhật vẫn đến như trước, tự động hoặc qua Homebrew.
+
+**Thử ngay:** Cài đặt › Giới thiệu › Có gì mới
+
+**Đã sửa**
+
+- “Có gì mới” từng mở một danh sách kỹ thuật dài bằng tiếng Anh thay vì trang này.
+- Các liên kết trong danh sách thay đổi từng không dẫn đến đâu giờ mở đúng trang.
+
+---
+
 ## <a id="v1.26.1"></a>Hình trò chơi đã sống động
 
 <sub>1.26.1 · ngày 8 tháng 10, 2026</sub>
