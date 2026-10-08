@@ -168,6 +168,13 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br>Haal de toestemmingen weg die macOS bewaart voor apps die je al hebt verwijderd.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Huisdiertje op het bureaublad</b>
+<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt.
+</td>
+</tr></tbody>
 </table>
 
 ## Meer weten

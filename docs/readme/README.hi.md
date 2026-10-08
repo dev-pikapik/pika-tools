@@ -168,6 +168,13 @@ Homebrew और स्क्रिप्ट दोनों ऐप को `/Appl
 <br>जिन ऐप्स को आप डिलीट कर चुके हैं, उनके लिए macOS जो अनुमतियाँ रखे रहता है, उन्हें हटाएँ।
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>डेस्कटॉप पर नन्हा दोस्त</b>
+<br>एक नन्हा दोस्त आपकी विंडो के पीछे टहलता है। उसे उठाकर उछालें, या स्पेस दबाएँ और वह कूदेगा।
+</td>
+</tr></tbody>
 </table>
 
 ## और जानकारी

@@ -168,6 +168,13 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br>Odstraňte oprávnění, která si macOS nechává pro už smazané aplikace.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Mazlíček na ploše</b>
+<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí.
+</td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti

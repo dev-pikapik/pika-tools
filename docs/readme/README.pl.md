@@ -168,6 +168,13 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br>Usuń uprawnienia, które macOS zachowuje dla już usuniętych aplikacji.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Zwierzak na biurku</b>
+<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy.
+</td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów

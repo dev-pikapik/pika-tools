@@ -168,6 +168,13 @@ Homebrew でもスクリプトでも、アプリは `/Applications` に入り、
 <br>削除したアプリのために macOS が残している許可を取り除けます。
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>デスクトップのペット</b>
+<br>小さな友だちがウインドウの後ろをお散歩します。つかんで投げたり、スペースを押してジャンプさせたりできます。
+</td>
+</tr></tbody>
 </table>
 
 ## 詳しく

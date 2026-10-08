@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Te presentamos a tu mascota de escritorio
+
+<sub>1.27.0 · 8 de octubre de 2026</sub>
+
+Ahora vive un amiguito en la parte de abajo de tu pantalla, y la app tiene un nombre nuevo: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Actívala en Ajustes › Mascota. Pasea detrás de tus ventanas y del Dock, salta por encima del puntero si se le cruza y brinca cuando pulsas Espacio. Puedes agarrarla, llevarla, lanzarla y atraparla en pleno salto.
+
+De vez en cuando se sienta y dice algo cortito. Cuando de verdad sale una versión nueva, te lo cuenta una vez, y al hacer clic en ella se abren los Ajustes, donde te espera la actualización.
+
+pika-tools ahora se llama pikapik. Tus permisos, ajustes y enlaces de Atajos siguen igual. Si la instalaste con Homebrew, ejecuta una vez `brew update && brew upgrade --cask pikapik`.
+
+**Pruébalo:** Ajustes › Mascota
+
+**Corregido**
+
+- La búsqueda de actualizaciones avisaba de una versión nueva aunque ya tuvieras la última.
+- La página Permisos mantenía ocupado tu Mac mientras estaba abierta.
+
+---
+
 ## <a id="v1.26.2"></a>Novedades en tu idioma
 
 <sub>1.26.2 · 8 de octubre de 2026</sub>

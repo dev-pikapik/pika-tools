@@ -168,6 +168,13 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Compagnon sur le bureau</b>
+<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter.
+</td>
+</tr></tbody>
 </table>
 
 ## En savoir plus

@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Kenalan dengan peliharaan di desktop Anda
+
+<sub>1.27.0 · 8 Oktober 2026</sub>
+
+Kini ada teman kecil yang tinggal di bagian bawah layar Anda, dan app ini punya nama baru: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Nyalakan di Pengaturan › Peliharaan. Ia berjalan-jalan di belakang jendela dan Dock, melompati penunjuk kalau menghalangi jalannya, dan melompat saat Anda menekan Spasi. Anda bisa mengangkatnya, membawanya, melemparnya, dan menangkapnya lagi di tengah lompatan.
+
+Sesekali ia duduk dan mengucapkan sesuatu yang singkat. Kalau versi baru benar-benar keluar, ia memberi tahu sekali, dan mengekliknya membuka Pengaturan, tempat pembaruan menunggu.
+
+pika-tools sekarang bernama pikapik. Izin, pengaturan, dan tautan di Pintasan tetap seperti semula. Kalau Anda memasangnya lewat Homebrew, jalankan sekali `brew update && brew upgrade --cask pikapik`.
+
+**Coba:** Pengaturan › Peliharaan
+
+**Diperbaiki**
+
+- Pemeriksaan pembaruan mengatakan ada versi baru padahal Anda sudah memakai yang terbaru.
+- Halaman Izin membuat Mac sibuk selama terbuka.
+
+---
+
 ## <a id="v1.26.2"></a>Yang Baru, dalam bahasa Anda
 
 <sub>1.26.2 · 8 Oktober 2026</sub>

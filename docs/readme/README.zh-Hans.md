@@ -168,6 +168,13 @@ Homebrew 和脚本都会把 App 放到 `/Applications`，启动它，请求权�
 <br>清除 macOS 为已删除的 App 保留的权限。
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>桌面宠物</b>
+<br>一个小伙伴在窗口后面散步。把它拎起来扔出去，或者按空格键让它跳一下。
+</td>
+</tr></tbody>
 </table>
 
 ## 详细信息

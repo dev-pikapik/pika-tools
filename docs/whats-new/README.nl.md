@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Maak kennis met je huisdiertje op het bureaublad
+
+<sub>1.27.0 · 8 oktober 2026</sub>
+
+Onderaan je scherm woont nu een klein vriendje, en de app heeft een nieuwe naam: pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Zet het aan in Instellingen › Huisdiertje. Het wandelt achter je vensters en het Dock, springt over de aanwijzer als die in de weg staat en hupt omhoog als je op de spatiebalk drukt. Je kunt het oppakken, meenemen, gooien en midden in een sprong weer vangen.
+
+Af en toe gaat het zitten en zegt het iets korts. Als er echt een nieuwe versie uit is, vertelt het je dat één keer, en een klik erop opent Instellingen, waar de update klaarstaat.
+
+pika-tools heet nu pikapik. Je toestemmingen, instellingen en links in Opdrachten blijven zoals ze waren. Heb je de app met Homebrew geïnstalleerd, voer dan één keer `brew update && brew upgrade --cask pikapik` uit.
+
+**Probeer het:** Instellingen › Huisdiertje
+
+**Opgelost**
+
+- De updatecontrole meldde een nieuwe versie, ook als je de nieuwste al had.
+- De pagina Toestemmingen hield je Mac bezig zolang die openstond.
+
+---
+
 ## <a id="v1.26.2"></a>Wat is er nieuw, in jouw taal
 
 <sub>1.26.2 · 8 oktober 2026</sub>

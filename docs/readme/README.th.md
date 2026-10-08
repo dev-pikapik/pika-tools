@@ -168,6 +168,13 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>ล้างสิทธิ์ที่ macOS ยังเก็บไว้ให้แอปที่คุณลบไปแล้ว
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>เพื่อนตัวน้อยบนเดสก์ท็อป</b>
+<br>เพื่อนตัวน้อยเดินเล่นอยู่หลังหน้าต่างของคุณ จับขึ้นมาแล้วโยน หรือกดเว้นวรรคให้มันกระโดด
+</td>
+</tr></tbody>
 </table>
 
 ## รายละเอียดเพิ่มเติม

@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.27.0"></a>Voici votre compagnon de bureau
+
+<sub>1.27.0 · 8 octobre 2026</sub>
+
+Un petit ami vit désormais en bas de votre écran, et l’app porte un nouveau nom : pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Activez-le dans Réglages › Compagnon. Il se promène derrière vos fenêtres et le Dock, saute par-dessus le pointeur s’il lui barre la route et bondit quand vous appuyez sur Espace. Attrapez-le, promenez-le, lancez-le et rattrapez-le en plein saut.
+
+De temps en temps, il s’assoit et dit un petit mot. Quand une nouvelle version sort vraiment, il vous le dit une fois, et un clic sur lui ouvre les Réglages, où la mise à jour vous attend.
+
+pika-tools s’appelle maintenant pikapik. Vos autorisations, vos réglages et vos liens dans Raccourcis restent tels quels. Si vous l’avez installée avec Homebrew, lancez une fois `brew update && brew upgrade --cask pikapik`.
+
+**Pour essayer :** Réglages › Compagnon
+
+**Corrigé**
+
+- La vérification des mises à jour annonçait une nouvelle version alors que vous aviez déjà la dernière.
+- La page Autorisations occupait votre Mac tant qu’elle était ouverte.
+
+---
+
 ## <a id="v1.26.2"></a>Les nouveautés dans votre langue
 
 <sub>1.26.2 · 8 octobre 2026</sub>

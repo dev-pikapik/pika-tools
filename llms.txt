@@ -13,6 +13,7 @@ It is written in Swift and SwiftUI, has no dependencies, runs on Apple silicon a
 - Dock: click an app's icon in the Dock to hide the app.
 - Finder: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - Speed Test: check the internet speed and see what it is good for.
+- Pet: a little friend walks along the bottom of the screen behind the windows. It jumps on Space and over the pointer, and you can pick it up and throw it.
 - Permissions: shows the status of Accessibility and Input Monitoring, and cleans up permissions left by deleted apps.
 
 ## Install
