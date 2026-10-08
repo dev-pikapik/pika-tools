@@ -197,7 +197,7 @@ pika-tools doesn't record, store or send anything you type or click. Events are 
 
 **Home and End go to the start and end of a line.** While you type, Home moves the cursor to the start of the line and End to its end, instead of scrolling the page. Add ⇧ to select up to there, or ⌘ to jump to the start or end of the whole text. Outside text fields, and in terminals, virtual machines and remote desktop apps, the keys work as before. You can list other apps where they should work as usual. Off by default.
 
-**Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it, like LinearMouse. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
+**Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pika-tools, and macOS gets its own settings back. Off by default.
 
 **Scroll by lines.** Every click of the mouse wheel scrolls the same number of lines, however fast you spin it. Pick from 1 to 10 lines per click, 3 by default. Natural scrolling stays as you set it in System Settings. Works for mice only, the trackpad stays as it is. Off by default. Beside the **Distance per click** slider, a small page scrolls by the distance you pick, and a dot marks the default.
 
@@ -205,7 +205,7 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Scroll direction for trackpad and mouse.** macOS has one natural scrolling switch for both the trackpad and the mouse. Turn this on and pick a direction for each one: **Natural**, where the page follows your fingers like on iPhone, or **Classic**, where the page moves the other way. The trackpad choice also covers sideways scrolling and the glide after you lift your fingers. The Magic Mouse scrolls by touch, so it follows the trackpad choice. Pick the same on each of your Macs, and scrolling feels the same on all of them, even when you move the mouse to another Mac with Universal Control. Off by default. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
 
-**Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Safari, Finder and other Apple apps, Firefox, Opera and ForkLift, just like a swipe on the trackpad. Other apps, such as JetBrains IDEs, get the buttons as they are and handle them their own way. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
+**Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Finder, Safari and other Apple apps and in many other apps, just like a swipe on the trackpad. Apps that handle these buttons themselves get them as they are. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 

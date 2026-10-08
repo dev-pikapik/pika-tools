@@ -95,7 +95,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End work as usual in these apps"), synonyms: "exceptions, exclude, list, terminal, virtual machine, remote desktop"),
-            SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, LinearMouse, mouse acceleration, sensitivity"),
+            SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, mouse acceleration, sensitivity"),
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, scrolling speed, acceleration"),
             SettingsItem(tab: .mouse, title: String(localized: "Distance per click"), synonyms: "scrolling speed, wheel, notch"),

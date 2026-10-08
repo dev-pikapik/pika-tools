@@ -1,0 +1,26 @@
+# pikapik
+
+> pikapik (formerly pika-tools) is a free, open-source (MIT) menu bar app for macOS 14 and newer. It collects small conveniences for the keyboard, mouse, windows and Finder in one place. Everything is off until you turn it on.
+
+It is written in Swift and SwiftUI, has no dependencies, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
+
+## What it does
+- Game Mode: while you play, Spotlight, Siri, ⌘Tab and Mission Control don't pop up over the game, ⌘Q and ⌘W don't close it, and the display stays on.
+- Keep Awake: stop the Mac from sleeping for a chosen time, with display and lid options.
+- Keyboard: input language switch, key repeat, Home and End keys.
+- Mouse: turn off pointer acceleration, tracking speed, scrolling by lines, scroll direction, side buttons.
+- Windows: enlarge with the green button, ⌘Q and ⌘W protection, quit an app when its last window closes.
+- Dock: click an app's icon in the Dock to hide the app.
+- Finder: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
+- Speed Test: check the internet speed and see what it is good for.
+- Permissions: shows the status of Accessibility and Input Monitoring, and cleans up permissions left by deleted apps.
+
+## Install
+- Homebrew: `brew install --cask dev-pikapik/pika-tools/pika-tools`
+- Download: https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg
+
+## Links
+- [README](https://github.com/dev-pikapik/pika-tools/blob/main/README.md)
+- [Changelog](https://github.com/dev-pikapik/pika-tools/blob/main/CHANGELOG.md)
+- [What's new](https://github.com/dev-pikapik/pika-tools/blob/main/docs/whats-new/README.md)
+- [Source code and issues](https://github.com/dev-pikapik/pika-tools)

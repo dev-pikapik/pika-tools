@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Inverser les boutons latéraux";
 "Button 4 goes back, button 5 goes forward" = "Bouton 4 : précédent, bouton 5 : suivant";
 "Button 4 goes forward, button 5 goes back" = "Bouton 4 : suivant, bouton 5 : précédent";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "linéaire, LinearMouse, accélération de la souris, sensibilité";
+"linear, mouse acceleration, sensitivity" = "linéaire, accélération de la souris, sensibilité";
 "pointer speed, sensitivity, fast, slow" = "vitesse du pointeur, sensibilité, rapide, lent";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "boutons 4 et 5, navigateur, navigation, boutons du pouce";
 "reverse, back, forward" = "inverser, précédent, suivant";

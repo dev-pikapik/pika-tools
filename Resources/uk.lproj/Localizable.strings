@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Поміняти бічні кнопки місцями";
 "Button 4 goes back, button 5 goes forward" = "Кнопка 4 — назад, кнопка 5 — вперед";
 "Button 4 goes forward, button 5 goes back" = "Кнопка 4 — вперед, кнопка 5 — назад";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "лінійне, LinearMouse, прискорення миші, чутливість";
+"linear, mouse acceleration, sensitivity" = "лінійне, прискорення миші, чутливість";
 "pointer speed, sensitivity, fast, slow" = "швидкість вказівника, чутливість, швидко, повільно";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "кнопки 4 і 5, браузер, навігація, бічні кнопки миші";
 "reverse, back, forward" = "поміняти, назад, вперед";

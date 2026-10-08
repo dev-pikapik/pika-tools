@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Đổi chỗ nút bên";
 "Button 4 goes back, button 5 goes forward" = "Nút 4 quay lại, nút 5 tiếp";
 "Button 4 goes forward, button 5 goes back" = "Nút 4 tiếp, nút 5 quay lại";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "tuyến tính, LinearMouse, tăng tốc chuột, độ nhạy";
+"linear, mouse acceleration, sensitivity" = "tuyến tính, tăng tốc chuột, độ nhạy";
 "pointer speed, sensitivity, fast, slow" = "tốc độ con trỏ, độ nhạy, nhanh, chậm";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "nút 4 và 5, trình duyệt, điều hướng, nút bên";
 "reverse, back, forward" = "đảo ngược, quay lại, tiếp";

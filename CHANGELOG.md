@@ -293,7 +293,7 @@ Every update to pika-tools, version by version. The same news, told simply with 
 - **Sync settings with iCloud** keeps settings the same on all your Macs through iCloud Drive. Off by default.
 
 ### Fixed
-- Side buttons no longer press ⌘[ and ⌘]. In Apple apps, Firefox, Opera and ForkLift they go back and forward like a swipe on the trackpad; every other app, such as JetBrains Rider, gets buttons 4 and 5 unchanged.
+- Side buttons no longer press ⌘[ and ⌘]. In Apple apps and many other apps they go back and forward like a swipe on the trackpad; apps that handle these buttons themselves get buttons 4 and 5 unchanged.
 
 ## [1.8.0] - 2026-10-06
 

@@ -138,7 +138,7 @@
 "Swap the side buttons" = "สลับปุ่มด้านข้าง";
 "Button 4 goes back, button 5 goes forward" = "ปุ่ม 4 ย้อนกลับ ปุ่ม 5 ไปข้างหน้า";
 "Button 4 goes forward, button 5 goes back" = "ปุ่ม 4 ไปข้างหน้า ปุ่ม 5 ย้อนกลับ";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "เชิงเส้น, LinearMouse, ความเร่งเมาส์, ความไว";
+"linear, mouse acceleration, sensitivity" = "เชิงเส้น, ความเร่งเมาส์, ความไว";
 "pointer speed, sensitivity, fast, slow" = "ความเร็วตัวชี้, ความไว, เร็ว, ช้า";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "ปุ่ม 4 และ 5, เบราว์เซอร์, การนำทาง, ปุ่มนิ้วโป้ง";
 "reverse, back, forward" = "สลับ, ย้อนกลับ, ไปข้างหน้า";

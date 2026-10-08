@@ -197,7 +197,7 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 **Home en End naar begin en einde van de regel.** Terwijl je typt, zet Home de cursor aan het begin van de regel en End aan het einde, in plaats van de pagina te scrollen. Met ⇧ selecteren ze tot daar, met ⌘ gaan ze naar het begin of einde van de hele tekst. Buiten tekstvelden, en in terminals, virtuele machines en apps voor extern bureaublad, werken de toetsen zoals voorheen. Je kunt andere apps toevoegen waarin ze gewoon moeten werken. Standaard uit.
 
-**Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt, net als LinearMouse. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pika-tools, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
+**Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pika-tools, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
 
 **Per regel scrollen.** Elke klik van het muiswieltje scrolt evenveel regels, hoe snel je het ook draait. Kies van 1 tot 10 regels per klik, standaard 3. Natuurlijk scrollen blijft zoals je het in Systeeminstellingen hebt ingesteld. Werkt alleen voor muizen, het trackpad blijft zoals het is. Standaard uit. Naast de schuifregelaar **Afstand per klik** scrolt een kleine pagina de gekozen afstand, en een stip markeert de standaardwaarde.
 
@@ -205,7 +205,7 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Scrollrichting voor trackpad en muis.** macOS heeft één schakelaar voor natuurlijk scrollen, voor het trackpad en de muis tegelijk. Zet dit aan en kies voor elk een richting: **Natuurlijk**, waarbij de pagina je vingers volgt zoals op een iPhone, of **Klassiek**, waarbij de pagina de andere kant op gaat. De keuze voor het trackpad geldt ook voor zijwaarts scrollen en voor het uitglijden nadat je je vingers optilt. De Magic Mouse scrollt met aanraking en volgt daarom de keuze voor het trackpad. Kies op elke Mac hetzelfde en scrollen voelt overal gelijk, ook als je de muis met Universele bediening naar een andere Mac beweegt. Standaard uit. Als je het aanzet, staan beide zoals in Systeeminstellingen, dus er verandert niets tot je iets anders kiest.
 
-**Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in Safari, de Finder en andere Apple-apps, Firefox, Opera en ForkLift, net als een veeg op het trackpad. Andere apps, zoals de JetBrains-IDE’s, krijgen de knoppen ongewijzigd en gaan er op hun eigen manier mee om. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
+**Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in de Finder, Safari en andere Apple-apps en in veel andere apps, net als een veeg op het trackpad. Apps die deze knoppen zelf afhandelen, krijgen ze ongewijzigd. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
 
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
 

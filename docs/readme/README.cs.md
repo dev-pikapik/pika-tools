@@ -197,7 +197,7 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 **Home a End na začátek a konec řádku.** Když píšete, Home přesune kurzor na začátek řádku a End na jeho konec, místo aby posouvaly stránku. S ⇧ vyberou text až tam, s ⌘ skočí na začátek nebo konec celého textu. Mimo textová pole a v terminálech, virtuálních počítačích a aplikacích pro vzdálenou plochu fungují klávesy jako dřív. Můžete přidat další aplikace, kde mají fungovat jako obvykle. Ve výchozím stavu vypnuto.
 
-**Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle, stejně jako v LinearMouse. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
+**Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
 
 **Posouvat po řádcích.** Každé cvaknutí kolečka myši posune stejný počet řádků, ať kolečkem točíte jakkoli rychle. Vyberte 1 až 10 řádků na cvaknutí, ve výchozím stavu 3. Přirozené posouvání zůstane tak, jak jste ho nastavili v Nastavení systému. Funguje jen pro myš, trackpad zůstává beze změny. Ve výchozím stavu vypnuto. Vedle posuvníku **Vzdálenost na cvaknutí** se malá stránka posune o zvolenou vzdálenost a tečka označuje výchozí hodnotu.
 
@@ -205,7 +205,7 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Směr posouvání pro trackpad a myš.** macOS má jen jeden přepínač přirozeného posouvání pro trackpad i myš zároveň. Zapněte tuto funkci a vyberte směr pro každé zvlášť: **Přirozený**, kdy stránka jde za prsty jako na iPhonu, nebo **Klasický**, kdy se stránka posouvá opačným směrem. Volba pro trackpad platí i pro posouvání do stran a pro dojezd po zvednutí prstů. Magic Mouse posouvá dotykem, a proto se řídí volbou pro trackpad. Vyberte na každém svém Macu totéž a posouvání bude všude stejné, i když myš přesunete na jiný Mac přes Společné ovládání. Ve výchozím stavu vypnuto. Po zapnutí jsou obě volby stejné jako v Nastavení systému, takže se nic nezmění, dokud nevyberete něco jiného.
 
-**Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed v Safari, ve Finderu a dalších aplikacích Apple, ve Firefoxu, Opeře a ForkLiftu, stejně jako přejetí po trackpadu. Ostatní aplikace, například vývojová prostředí JetBrains, dostanou tlačítka beze změny a zpracují je po svém. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
+**Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed ve Finderu, v Safari a dalších aplikacích Apple i v mnoha dalších aplikacích, stejně jako přejetí po trackpadu. Aplikace, které tato tlačítka zpracovávají samy, je dostanou beze změny. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 

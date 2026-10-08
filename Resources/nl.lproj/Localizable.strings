@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Zijknoppen omwisselen";
 "Button 4 goes back, button 5 goes forward" = "Knop 4 gaat terug, knop 5 gaat vooruit";
 "Button 4 goes forward, button 5 goes back" = "Knop 4 gaat vooruit, knop 5 gaat terug";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "lineair, LinearMouse, muisversnelling, gevoeligheid";
+"linear, mouse acceleration, sensitivity" = "lineair, muisversnelling, gevoeligheid";
 "pointer speed, sensitivity, fast, slow" = "aanwijzersnelheid, gevoeligheid, snel, traag";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "knop 4 en 5, browser, navigatie, duimknoppen";
 "reverse, back, forward" = "omdraaien, terug, vooruit";

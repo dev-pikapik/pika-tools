@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Prohodit boční tlačítka";
 "Button 4 goes back, button 5 goes forward" = "Tlačítko 4 zpět, tlačítko 5 vpřed";
 "Button 4 goes forward, button 5 goes back" = "Tlačítko 4 vpřed, tlačítko 5 zpět";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "lineární, LinearMouse, zrychlení myši, citlivost";
+"linear, mouse acceleration, sensitivity" = "lineární, zrychlení myši, citlivost";
 "pointer speed, sensitivity, fast, slow" = "rychlost ukazatele, citlivost, rychle, pomalu";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "tlačítka 4 a 5, prohlížeč, navigace, boční tlačítka";
 "reverse, back, forward" = "prohodit, zpět, vpřed";

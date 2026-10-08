@@ -138,7 +138,7 @@
 "Swap the side buttons" = "تبديل الأزرار الجانبية";
 "Button 4 goes back, button 5 goes forward" = "الزر 4 للرجوع، والزر 5 للتقدم";
 "Button 4 goes forward, button 5 goes back" = "الزر 4 للتقدم، والزر 5 للرجوع";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "خطي، LinearMouse، تسارع الماوس، الحساسية";
+"linear, mouse acceleration, sensitivity" = "خطي، تسارع الماوس، الحساسية";
 "pointer speed, sensitivity, fast, slow" = "سرعة المؤشر، الحساسية، سريع، بطيء";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "الزران 4 و5، المتصفح، التنقل، أزرار الإبهام";
 "reverse, back, forward" = "عكس، رجوع، تقدم";
