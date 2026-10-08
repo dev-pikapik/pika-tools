@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Scurtăturile se deschid acolo unde le schimbi
+
+<sub>1.25.2 · 8 octombrie 2026</sub>
+
+Apasă pe o scurtătură în Configurări, iar Configurări sistem se deschide în locul potrivit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Înainte, un clic pe o scurtătură, cum ar fi cea pentru Spotlight, ducea mereu la „Taste modificator”. Acum tastele pentru Spotlight deschid direct Spotlight.
+
+Pentru celelalte scurtături, Configurări sistem se deschide la „Tastatură”, iar lângă taste apare un sfat scurt care îți spune unde să apeși: „Scurtături din tastatură…”, apoi „Mission Control” sau altă secțiune.
+
+La fel merge pe pagina Jocuri și pentru „Decupează fișiere în Finder”. Pentru decupare, sfatul te duce la „Scurtături aplicații”.
+
+**Încearcă:** Configurări › Jocuri, apoi apasă pe tastele de lângă „Căutarea nu apare”
+
+**Reparat**
+
+- Un clic pe o scurtătură nu mai deschide „Taste modificator”.
+
+---
+
 ## <a id="v1.25.1"></a>Imagini mari și jocuri direct din Dock
 
 <sub>1.25.1 · 8 octombrie 2026</sub>

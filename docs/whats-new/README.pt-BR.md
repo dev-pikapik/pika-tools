@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Os atalhos abrem onde você os muda
+
+<sub>1.25.2 · 8 de outubro de 2026</sub>
+
+Clique em um atalho nos Ajustes, e os Ajustes do Sistema abrem no lugar certo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Antes, clicar em um atalho, como o do Spotlight, sempre levava a “Teclas Modificadoras”. Agora as teclas do Spotlight abrem direto no Spotlight.
+
+Para os outros atalhos, os Ajustes do Sistema abrem em “Teclado”, e uma dica curta ao lado das teclas mostra onde clicar: “Atalhos de Teclado…”, depois “Mission Control” ou outra seção.
+
+Funciona igual na página Jogos e em “Recortar arquivos no Finder”. Para recortar arquivos, a dica leva a “Atalhos de Apps”.
+
+**Experimente:** Ajustes › Jogos, depois clique nas teclas ao lado de “A busca não aparece”
+
+**Corrigido**
+
+- Clicar em um atalho não abre mais “Teclas Modificadoras”.
+
+---
+
 ## <a id="v1.25.1"></a>Imagens grandes e jogos direto do Dock
 
 <sub>1.25.1 · 8 de outubro de 2026</sub>

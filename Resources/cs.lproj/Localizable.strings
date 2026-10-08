@@ -446,6 +446,8 @@
 "Scale" = "Měřítko";
 "Suck" = "Vtažení";
 "Change in System Settings" = "Změnit v Nastavení systému";
+"In System Settings, click “%@”, then “%@”." = "V Nastavení systému klikněte na „%@“ a pak na „%@“.";
+"In System Settings, click “%@”." = "V Nastavení systému klikněte na „%@“.";
 "Type shortcut" = "Stiskněte zkratku";
 "Already used for “%@”" = "Už se používá pro „%@“";
 "Your Mac already uses this shortcut" = "Váš Mac už tuto zkratku používá";

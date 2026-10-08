@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>按一下快速鍵，直接到能更改它的地方
+
+<sub>1.25.2 · 2026年10月8日</sub>
+
+在設定中按一下快速鍵，「系統設定」會在正確的位置打開。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+以前按一下快速鍵（例如 Spotlight 的快速鍵），總是會打開「變更鍵」。現在按一下 Spotlight 的按鍵，就會直接打開 Spotlight。
+
+其他快速鍵會打開「系統設定」的「鍵盤」，按鍵旁會出現一則簡短提示，告訴你要按哪裡：先按「鍵盤快速鍵⋯」，再按「指揮中心」或其他部分。
+
+「遊戲」頁面和「在 Finder 中剪下檔案」也一樣。剪下檔案時，提示會帶你到「App快速鍵」。
+
+**試試看：** 設定 › 遊戲，然後按一下「搜尋不會跳出來」旁的按鍵
+
+**修正**
+
+- 按一下快速鍵不會再打開「變更鍵」。
+
+---
+
 ## <a id="v1.25.1"></a>大圖片，遊戲直接從 Dock 選
 
 <sub>1.25.1 · 2026年10月8日</sub>

@@ -446,6 +446,8 @@
 "Scale" = "Thu nhỏ";
 "Suck" = "Hút vào";
 "Change in System Settings" = "Thay đổi trong Cài đặt hệ thống";
+"In System Settings, click “%@”, then “%@”." = "Trong Cài đặt hệ thống, bấm vào “%@”, rồi bấm “%@”.";
+"In System Settings, click “%@”." = "Trong Cài đặt hệ thống, bấm vào “%@”.";
 "Type shortcut" = "Nhấn phím tắt";
 "Already used for “%@”" = "Đã dùng cho “%@”";
 "Your Mac already uses this shortcut" = "Máy Mac của bạn đã dùng phím tắt này";

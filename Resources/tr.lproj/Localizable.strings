@@ -446,6 +446,8 @@
 "Scale" = "Ölçek";
 "Suck" = "Emme";
 "Change in System Settings" = "Sistem Ayarları’nda değiştir";
+"In System Settings, click “%@”, then “%@”." = "Sistem Ayarları’nda önce “%@”, sonra “%@” öğesini tıklayın.";
+"In System Settings, click “%@”." = "Sistem Ayarları’nda “%@” öğesini tıklayın.";
 "Type shortcut" = "Kestirmeye basın";
 "Already used for “%@”" = "Zaten “%@” için kullanılıyor";
 "Your Mac already uses this shortcut" = "Mac’iniz bu kestirmeyi zaten kullanıyor";

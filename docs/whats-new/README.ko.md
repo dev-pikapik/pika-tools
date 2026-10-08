@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>단축키를 바꾸는 곳이 바로 열립니다
+
+<sub>1.25.2 · 2026년 10월 8일</sub>
+
+설정에서 단축키를 클릭하면 시스템 설정의 올바른 위치가 열립니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+이전에는 Spotlight 같은 단축키를 클릭하면 항상 ‘보조 키’가 열렸습니다. 이제 Spotlight 키를 클릭하면 바로 Spotlight가 열립니다.
+
+다른 단축키는 시스템 설정의 ‘키보드’가 열리고, 키 옆에 어디를 클릭할지 알려 주는 짧은 도움말이 나타납니다. ‘키보드 단축키…’를 클릭한 다음 ‘Mission Control’ 같은 항목을 클릭하세요.
+
+‘게임’ 페이지와 ‘Finder에서 파일 잘라내기’도 똑같습니다. 파일을 잘라낼 때는 도움말이 ‘앱 단축키’로 안내합니다.
+
+**사용해 보기:** 설정 › 게임에서 ‘검색이 튀어나오지 않음’ 옆의 키를 클릭
+
+**수정 사항**
+
+- 단축키를 클릭해도 더 이상 ‘보조 키’가 열리지 않습니다.
+
+---
+
 ## <a id="v1.25.1"></a>큰 그림, 그리고 Dock에서 바로 고르는 게임
 
 <sub>1.25.1 · 2026년 10월 8일</sub>

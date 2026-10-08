@@ -446,6 +446,8 @@
 "Scale" = "ปรับขนาด";
 "Suck" = "ดูด";
 "Change in System Settings" = "เปลี่ยนในการตั้งค่าระบบ";
+"In System Settings, click “%@”, then “%@”." = "ในการตั้งค่าระบบ ให้คลิก “%@” แล้วคลิก “%@”";
+"In System Settings, click “%@”." = "ในการตั้งค่าระบบ ให้คลิก “%@”";
 "Type shortcut" = "กดคีย์ลัด";
 "Already used for “%@”" = "ใช้กับ “%@” อยู่แล้ว";
 "Your Mac already uses this shortcut" = "Mac ของคุณใช้คีย์ลัดนี้อยู่แล้ว";

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Shortcuts open where you change them
+
+<sub>1.25.2 · October 8, 2026</sub>
+
+Click a shortcut in Settings, and System Settings opens in the right place.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Before, clicking a shortcut, like the one for Spotlight, always took you to “Modifier Keys”. Now the Spotlight keys open right on Spotlight.
+
+For the other shortcuts, System Settings opens on “Keyboard”, and a short tip next to the keys tells you where to click: “Keyboard Shortcuts…”, then “Mission Control” or another section.
+
+It works the same on the Games page and for “Cut files in Finder”. For cutting files, the tip leads you to “App Shortcuts”.
+
+**Try it:** Settings › Games, then click the keys next to “Search doesn’t pop up”
+
+**Fixed**
+
+- Clicking a shortcut no longer opens “Modifier Keys”.
+
+---
+
 ## <a id="v1.25.1"></a>Big pictures, and games right from your Dock
 
 <sub>1.25.1 · October 8, 2026</sub>

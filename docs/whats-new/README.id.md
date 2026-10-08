@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Pintasan terbuka di tempat Anda mengubahnya
+
+<sub>1.25.2 · 8 Oktober 2026</sub>
+
+Klik pintasan di Pengaturan, dan Pengaturan Sistem terbuka di tempat yang tepat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Dulu, mengeklik pintasan, misalnya untuk Spotlight, selalu membawa Anda ke “Tombol Pengubah”. Sekarang tombol Spotlight langsung membuka Spotlight.
+
+Untuk pintasan lainnya, Pengaturan Sistem terbuka di “Papan Ketik”, dan tip singkat di samping tombol memberi tahu tempat yang perlu diklik: “Pintasan Papan Ketik…”, lalu “Mission Control” atau bagian lain.
+
+Begitu juga di halaman Game dan untuk “Potong file di Finder”. Untuk memotong file, tipnya membawa Anda ke “Pintasan App”.
+
+**Coba:** Pengaturan › Game, lalu klik tombol di samping “Pencarian tidak muncul”
+
+**Diperbaiki**
+
+- Mengeklik pintasan tidak lagi membuka “Tombol Pengubah”.
+
+---
+
 ## <a id="v1.25.1"></a>Gambar besar, dan game langsung dari Dock
 
 <sub>1.25.1 · 8 Oktober 2026</sub>

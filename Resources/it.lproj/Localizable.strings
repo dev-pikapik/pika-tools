@@ -446,6 +446,8 @@
 "Scale" = "Scala";
 "Suck" = "Risucchio";
 "Change in System Settings" = "Modifica in Impostazioni di Sistema";
+"In System Settings, click “%@”, then “%@”." = "In Impostazioni di Sistema, fai clic su «%@» e poi su «%@».";
+"In System Settings, click “%@”." = "In Impostazioni di Sistema, fai clic su «%@».";
 "Type shortcut" = "Premi la scorciatoia";
 "Already used for “%@”" = "Già usata per «%@»";
 "Your Mac already uses this shortcut" = "Il tuo Mac usa già questa scorciatoia";

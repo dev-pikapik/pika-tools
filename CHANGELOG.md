@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format is based on 
 
 The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
 
+## [1.25.2] - Unreleased
+
+### Fixed
+- Clicking a system shortcut in Settings opens the right place in System Settings. The Spotlight keys open right on Spotlight. For other shortcuts, System Settings opens on Keyboard, and a short tip next to the keys says where to click, like “Keyboard Shortcuts…”, then “Mission Control”. Cut files in Finder points to “App Shortcuts”. Before, every click ended up on Modifier Keys.
+
 ## [1.25.1] - Unreleased
 
 ### Changed

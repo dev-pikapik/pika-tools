@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Toetscombinaties openen waar je ze wijzigt
+
+<sub>1.25.2 · 8 oktober 2026</sub>
+
+Klik in Instellingen op een toetscombinatie, en Systeeminstellingen opent op de juiste plek.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Eerst kwam je bij een klik op een toetscombinatie, zoals die voor Spotlight, altijd bij ‘Speciale toetsen’ uit. Nu openen de toetsen voor Spotlight meteen Spotlight.
+
+Bij de andere toetscombinaties opent Systeeminstellingen bij ‘Toetsenbord’, en naast de toetsen zegt een korte tip waar je moet klikken: ‘Toetscombinaties…’, dan ‘Mission Control’ of een ander onderdeel.
+
+Het werkt ook zo op de pagina Games en bij ‘Knip bestanden in de Finder’. Bij knippen brengt de tip je naar ‘Apps’.
+
+**Probeer het:** Instellingen › Games, klik dan op de toetsen naast ‘Zoeken springt niet open’
+
+**Opgelost**
+
+- Een klik op een toetscombinatie opent niet meer ‘Speciale toetsen’.
+
+---
+
 ## <a id="v1.25.1"></a>Grote plaatjes, en games zo uit je Dock
 
 <sub>1.25.1 · 8 oktober 2026</sub>

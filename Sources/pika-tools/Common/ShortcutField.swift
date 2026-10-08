@@ -4,7 +4,11 @@ import SwiftUI
 @Observable
 final class SystemShortcuts {
     static let shared = SystemShortcuts()
-    static let settings = URL(string: "x-apple.systempreferences:com.apple.Keyboard-Settings.extension?Shortcuts")!
+
+    struct Place {
+        let url: URL
+        let hint: String?
+    }
 
     private(set) var hotKeys: NSDictionary = [:]
     private(set) var finderCut: Shortcut? = .cut
@@ -54,7 +58,7 @@ final class SystemShortcuts {
     func taken() -> [(message: String, shortcut: Shortcut)] {
         (0..<300).compactMap { id in
             guard case let .on(_, shortcut) = shortcut(Int32(id)) else { return nil }
-            let message = Self.names[id].map { String(localized: "Already used for “\($0)”") } ?? String(localized: "Your Mac already uses this shortcut")
+            let message = Self.table.names[id].map { String(localized: "Already used for “\($0)”") } ?? String(localized: "Your Mac already uses this shortcut")
             return (message, shortcut)
         }
     }
@@ -73,27 +77,56 @@ final class SystemShortcuts {
         return title
     }
 
-    private static let names: [Int: String] = {
-        guard let bundle = Bundle(path: "/System/Library/ExtensionKit/Extensions/KeyboardSettings.appex"),
-              let url = bundle.url(forResource: "DefaultShortcutsTable", withExtension: "xml"),
-              let groups = NSArray(contentsOf: url) as? [[String: Any]]
-        else { return [:] }
-        let table = bundle.url(forResource: "DefaultShortcutsTable", withExtension: "loctable").flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
-        let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: Bundle.main.preferredLocalizations).first ?? "en"
-        let strings = table[language] as? [String: String] ?? [:]
-        var names: [Int: String] = [:]
-        func walk(_ items: [[String: Any]]) {
+    static func place(_ ids: [Int32]) -> Place {
+        place(section: ids.lazy.compactMap { table.sections[Int($0)] }.first)
+    }
+
+    static func place(section: String?) -> Place {
+        if let url = Shortcut.settingsLink(section, anchors: table.anchors) { return Place(url: url, hint: nil) }
+        let button = table.button
+        let hint = section.flatMap { table.titles[$0] }.map { String(localized: "In System Settings, click “\(button)”, then “\($0)”.") }
+        return Place(url: Shortcut.keyboardSettings, hint: hint ?? String(localized: "In System Settings, click “\(button)”."))
+    }
+
+    private static let table: (names: [Int: String], sections: [Int: String], titles: [String: String], button: String, anchors: Set<String>) = {
+        let button = "Keyboard Shortcuts…"
+        guard let bundle = Bundle(path: "/System/Library/ExtensionKit/Extensions/KeyboardSettings.appex") else { return ([:], [:], [:], button, []) }
+        func strings(_ name: String) -> [String: String] {
+            let table = bundle.url(forResource: name, withExtension: "loctable").flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
+            let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: Bundle.main.preferredLocalizations).first ?? "en"
+            return table[language] as? [String: String] ?? [:]
+        }
+        func list(_ name: String) -> [[String: Any]] {
+            bundle.url(forResource: name, withExtension: "xml").flatMap { NSArray(contentsOf: $0) as? [[String: Any]] } ?? []
+        }
+        let localized = strings("DefaultShortcutsTable")
+        func title(_ item: [String: Any]) -> String? {
+            (item["name"] as? String).map { $0.replacingOccurrences(of: "DO_NOT_LOCALIZE: ", with: "") }.map { localized[$0] ?? $0 }
+        }
+        var names: [Int: String] = [:], sections: [Int: String] = [:], titles: [String: String] = [:]
+        func walk(_ items: [[String: Any]], _ section: String) {
             for item in items {
-                if let name = (item["name"] as? String)?.replacingOccurrences(of: "DO_NOT_LOCALIZE: ", with: "") {
+                if let name = title(item) {
                     for key in ["sybmolichotkey", "slow_sybmolichotkey", "prefs_sybmolichotkey"] {
-                        if let id = item[key] as? Int { names[id] = strings[name] ?? name }
+                        if let id = item[key] as? Int {
+                            names[id] = name
+                            sections[id] = section
+                        }
                     }
                 }
-                walk(item["elements"] as? [[String: Any]] ?? [])
+                walk(item["elements"] as? [[String: Any]] ?? [], section)
             }
         }
-        walk(groups)
-        return names
+        for group in list("DefaultShortcutsTable") {
+            let section = group["identifier"] as? String ?? ""
+            titles[section] = title(group)
+            walk([group], section)
+        }
+        for item in list("DefaultSpacesShortcuts") {
+            if let id = item["sybmolichotkey"] as? Int { sections[id] = "expose" }
+        }
+        let anchors = bundle.url(forResource: "Keyboard", withExtension: "searchTerms").flatMap { NSDictionary(contentsOf: $0)?.allKeys as? [String] } ?? []
+        return (names, sections, titles, strings("Localizable")[button] ?? button, Set(anchors))
     }()
 }
 

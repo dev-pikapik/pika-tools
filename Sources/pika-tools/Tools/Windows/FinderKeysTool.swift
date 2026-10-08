@@ -411,7 +411,7 @@ private struct FinderCutSettings: View {
             hint: Text("Then paste to move them"),
             help: SystemShortcuts.shared.finderCut == nil ? nil : Text("In Finder, \(SystemShortcuts.shared.finderCutText) cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut."),
             keys: [SystemShortcuts.shared.finderCutText],
-            systemKeys: true,
+            systemKeys: SystemShortcuts.place(section: "applications"),
             isOn: $tool.isEnabled
         )
     }

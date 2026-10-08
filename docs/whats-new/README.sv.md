@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Kortkommandon öppnas där du ändrar dem
+
+<sub>1.25.2 · 8 oktober 2026</sub>
+
+Klicka på ett kortkommando i Inställningar, så öppnas Systeminställningar på rätt ställe.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Förut ledde ett klick på ett kortkommando, till exempel det för Spotlight, alltid till ”Specialtangenter”. Nu tar tangenterna för Spotlight dig direkt till Spotlight.
+
+För andra kortkommandon öppnas Systeminställningar på ”Tangentbord”, och ett kort tips bredvid tangenterna säger var du ska klicka: ”Kortkommandon…”, sedan ”Mission Control” eller en annan del.
+
+Det fungerar likadant på sidan Spel och för ”Klipp ut filer i Finder”. När du klipper ut filer leder tipset till ”Appkortkommandon”.
+
+**Prova:** Inställningar › Spel, klicka sedan på tangenterna bredvid ”Sökningen dyker inte upp”
+
+**Åtgärdat**
+
+- Ett klick på ett kortkommando öppnar inte längre ”Specialtangenter”.
+
+---
+
 ## <a id="v1.25.1"></a>Stora bilder, och spel direkt från Dock
 
 <sub>1.25.1 · 8 oktober 2026</sub>

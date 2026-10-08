@@ -446,6 +446,8 @@
 "Scale" = "Scalare";
 "Suck" = "Absorbție";
 "Change in System Settings" = "Modifică în Configurări sistem";
+"In System Settings, click “%@”, then “%@”." = "În Configurări sistem, apasă pe „%@”, apoi pe „%@”.";
+"In System Settings, click “%@”." = "În Configurări sistem, apasă pe „%@”.";
 "Type shortcut" = "Apasă scurtătura";
 "Already used for “%@”" = "Deja folosită pentru „%@”";
 "Your Mac already uses this shortcut" = "Mac-ul tău folosește deja această scurtătură";

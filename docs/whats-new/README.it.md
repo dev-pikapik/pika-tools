@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Le scorciatoie si aprono dove le cambi
+
+<sub>1.25.2 · 8 ottobre 2026</sub>
+
+Fai clic su una scorciatoia in Impostazioni e Impostazioni di Sistema si apre nel punto giusto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Prima, un clic su una scorciatoia, come quella di Spotlight, portava sempre a «Tasti modificatori». Ora i tasti di Spotlight aprono direttamente Spotlight.
+
+Per le altre scorciatoie, Impostazioni di Sistema si apre su «Tastiera» e un breve suggerimento accanto ai tasti ti dice dove fare clic: «Scorciatoie da tastiera…», poi «Mission Control» o un’altra sezione.
+
+Funziona allo stesso modo nella pagina Giochi e per «Taglia i file nel Finder». Per tagliare i file, il suggerimento porta a «Scorciatoie app».
+
+**Provalo:** Impostazioni › Giochi, poi fai clic sui tasti accanto a «La ricerca non salta fuori»
+
+**Corretto**
+
+- Un clic su una scorciatoia non apre più «Tasti modificatori».
+
+---
+
 ## <a id="v1.25.1"></a>Immagini grandi e giochi direttamente dal Dock
 
 <sub>1.25.1 · 8 ottobre 2026</sub>
