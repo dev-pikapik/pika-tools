@@ -138,7 +138,7 @@
 "Swap the side buttons" = "サイドボタンを入れ替える";
 "Button 4 goes back, button 5 goes forward" = "ボタン4で戻る、ボタン5で進む";
 "Button 4 goes forward, button 5 goes back" = "ボタン4で進む、ボタン5で戻る";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "リニア, LinearMouse, マウスの加速, 感度";
+"linear, mouse acceleration, sensitivity" = "リニア, マウスの加速, 感度";
 "pointer speed, sensitivity, fast, slow" = "ポインタの速度, 感度, 速い, 遅い";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "ボタン4と5, ブラウザ, ナビゲーション, 親指ボタン";
 "reverse, back, forward" = "入れ替え, 戻る, 進む";

@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Inversează butoanele laterale";
 "Button 4 goes back, button 5 goes forward" = "Butonul 4 merge înapoi, butonul 5 înainte";
 "Button 4 goes forward, button 5 goes back" = "Butonul 4 merge înainte, butonul 5 înapoi";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "liniar, LinearMouse, accelerare maus, sensibilitate";
+"linear, mouse acceleration, sensitivity" = "liniar, accelerare maus, sensibilitate";
 "pointer speed, sensitivity, fast, slow" = "viteza cursorului, sensibilitate, rapid, lent";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "butoanele 4 și 5, browser, navigare, butoane laterale";
 "reverse, back, forward" = "inversare, înapoi, înainte";

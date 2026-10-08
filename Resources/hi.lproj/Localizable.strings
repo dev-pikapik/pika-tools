@@ -138,7 +138,7 @@
 "Swap the side buttons" = "साइड बटन आपस में बदलें";
 "Button 4 goes back, button 5 goes forward" = "बटन 4 पीछे, बटन 5 आगे";
 "Button 4 goes forward, button 5 goes back" = "बटन 4 आगे, बटन 5 पीछे";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "लीनियर, LinearMouse, माउस ऐक्सलरेशन, संवेदनशीलता, सेंसिटिविटी";
+"linear, mouse acceleration, sensitivity" = "लीनियर, माउस ऐक्सलरेशन, संवेदनशीलता, सेंसिटिविटी";
 "pointer speed, sensitivity, fast, slow" = "पॉइंटर स्पीड, संवेदनशीलता, तेज़, धीमा";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "बटन 4 और 5, ब्राउज़र, नेविगेशन, अंगूठे वाले बटन";
 "reverse, back, forward" = "उलटें, पीछे, आगे";

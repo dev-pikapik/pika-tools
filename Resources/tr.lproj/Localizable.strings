@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Yan tuşların yerini değiştir";
 "Button 4 goes back, button 5 goes forward" = "4. tuş geri, 5. tuş ileri";
 "Button 4 goes forward, button 5 goes back" = "4. tuş ileri, 5. tuş geri";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "doğrusal, LinearMouse, fare hızlandırma, hassasiyet";
+"linear, mouse acceleration, sensitivity" = "doğrusal, fare hızlandırma, hassasiyet";
 "pointer speed, sensitivity, fast, slow" = "imleç hızı, hassasiyet, hızlı, yavaş";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "4. ve 5. tuşlar, tarayıcı, gezinme, başparmak tuşları";
 "reverse, back, forward" = "ters çevir, geri, ileri";

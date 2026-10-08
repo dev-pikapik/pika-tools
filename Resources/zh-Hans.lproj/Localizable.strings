@@ -138,7 +138,7 @@
 "Swap the side buttons" = "交换侧键";
 "Button 4 goes back, button 5 goes forward" = "按键 4 返回，按键 5 前进";
 "Button 4 goes forward, button 5 goes back" = "按键 4 前进，按键 5 返回";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "线性, LinearMouse, 鼠标加速, 灵敏度";
+"linear, mouse acceleration, sensitivity" = "线性, 鼠标加速, 灵敏度";
 "pointer speed, sensitivity, fast, slow" = "指针速度, 灵敏度, 快, 慢";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "按键 4 和 5, 浏览器, 导航, 侧键";
 "reverse, back, forward" = "反转, 返回, 前进";

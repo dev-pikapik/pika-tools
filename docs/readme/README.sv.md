@@ -197,7 +197,7 @@ pika-tools spelar inte in, sparar inte och skickar inte något av det du skriver
 
 **Home och End till början och slutet av raden.** Medan du skriver flyttar Home markören till början av raden och End till slutet, i stället för att rulla sidan. Med ⇧ markerar de fram dit, med ⌘ går de till början eller slutet av hela texten. Utanför textfält, och i terminaler, virtuella maskiner och appar för fjärrskrivbord, fungerar tangenterna som förut. Du kan lägga till fler appar där de ska fungera som vanligt. Av som standard.
 
-**Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den, precis som LinearMouse. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pika-tools så får macOS tillbaka sina egna inställningar. Av som standard.
+**Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pika-tools så får macOS tillbaka sina egna inställningar. Av som standard.
 
 **Rulla per rad.** Varje klick med mushjulet rullar lika många rader, hur snabbt du än snurrar på det. Välj från 1 till 10 rader per klick, 3 som standard. Naturlig rullning är kvar som du ställt in den i Systeminställningar. Fungerar bara för möss, styrplattan förblir som den är. Av som standard. Bredvid skjutreglaget **Avstånd per klick** rullar en liten sida det avstånd du väljer, och en prick markerar standardvärdet.
 
@@ -205,7 +205,7 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Rullningsriktning för styrplatta och mus.** macOS har en enda inställning för naturlig rullning, både för styrplattan och musen. Slå på det här och välj en riktning för var och en: **Naturlig**, där sidan följer fingrarna som på iPhone, eller **Klassisk**, där sidan rör sig åt andra hållet. Valet för styrplattan gäller också rullning i sidled och glidet efter att du lyft fingrarna. Magic Mouse rullar med beröring och följer därför valet för styrplattan. Välj samma på alla dina Mac så känns rullningen likadan överallt, även när du flyttar musen till en annan Mac med Universell kontroll. Av som standard. När du slår på det börjar båda som i Systeminställningar, så inget ändras förrän du väljer något annat.
 
-**Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Safari, Finder och andra Apple-appar, i Firefox, Opera och ForkLift, som en svepning på styrplattan. Andra appar, till exempel JetBrains IDE:er, får knapparna som de är och hanterar dem på sitt eget sätt. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
+**Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Finder, Safari och andra Apple-appar och i många andra appar, som en svepning på styrplattan. Appar som själva hanterar de här knapparna får dem som de är. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 

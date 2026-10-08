@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Swap the side buttons";
 "Button 4 goes back, button 5 goes forward" = "Button 4 goes back, button 5 goes forward";
 "Button 4 goes forward, button 5 goes back" = "Button 4 goes forward, button 5 goes back";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "linear, LinearMouse, mouse acceleration, sensitivity";
+"linear, mouse acceleration, sensitivity" = "linear, mouse acceleration, sensitivity";
 "pointer speed, sensitivity, fast, slow" = "pointer speed, sensitivity, fast, slow";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "buttons 4 and 5, browser, navigation, thumb buttons";
 "reverse, back, forward" = "reverse, back, forward";

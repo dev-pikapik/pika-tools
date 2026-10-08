@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Byt plats på sidoknapparna";
 "Button 4 goes back, button 5 goes forward" = "Knapp 4 går bakåt, knapp 5 går framåt";
 "Button 4 goes forward, button 5 goes back" = "Knapp 4 går framåt, knapp 5 går bakåt";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "linjär, LinearMouse, musacceleration, känslighet";
+"linear, mouse acceleration, sensitivity" = "linjär, musacceleration, känslighet";
 "pointer speed, sensitivity, fast, slow" = "pekarhastighet, känslighet, snabb, långsam";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "knapp 4 och 5, webbläsare, navigering, tumknappar";
 "reverse, back, forward" = "byta, bakåt, framåt";

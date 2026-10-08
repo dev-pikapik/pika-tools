@@ -138,7 +138,7 @@
 "Swap the side buttons" = "Tukar tombol samping";
 "Button 4 goes back, button 5 goes forward" = "Tombol 4 kembali, tombol 5 maju";
 "Button 4 goes forward, button 5 goes back" = "Tombol 4 maju, tombol 5 kembali";
-"linear, LinearMouse, mouse acceleration, sensitivity" = "linear, LinearMouse, akselerasi tetikus, akselerasi mouse, sensitivitas";
+"linear, mouse acceleration, sensitivity" = "linear, akselerasi tetikus, akselerasi mouse, sensitivitas";
 "pointer speed, sensitivity, fast, slow" = "kecepatan penunjuk, sensitivitas, cepat, lambat";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "tombol 4 dan 5, browser, navigasi, tombol jempol";
 "reverse, back, forward" = "balik, kembali, maju";
