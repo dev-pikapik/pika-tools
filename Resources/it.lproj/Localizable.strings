@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Alcuni permessi sono rimasti";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS non ha permesso a pikapik di rimuovere i permessi di %@. Riprova o rimuovili in Impostazioni di Sistema.";
 "Try Again" = "Riprova";
+
+"Pet" = "Animaletto";
+"A little friend who lives at the bottom of your screen" = "Un piccolo amico che vive in fondo al tuo schermo";
+"Pet on the desktop" = "Animaletto sulla scrivania";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Passeggia lungo il bordo inferiore dello schermo, dietro le tue finestre e il Dock. Prova a prenderlo in braccio!";
+"Walks behind your windows" = "Passeggia dietro le tue finestre";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Premi Spazio e salta. Mettigli il puntatore davanti e ci salta sopra";
+"Put the pointer in its way and it jumps over it" = "Mettigli il puntatore davanti e ci salta sopra";
+"Talks sometimes" = "Ogni tanto parla";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Ogni tanto si siede a fare due chiacchiere e ti avvisa quando esce un aggiornamento";
+"To make it jump when you press Space, allow Input Monitoring" = "Per farlo saltare con Spazio, consenti il Monitoraggio input";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "animaletto, amico, compagno, personaggio, mascotte, scrivania, salto, Spazio";
+"phrases, speech bubble, talk, say, messages, updates" = "frasi, fumetto, parlare, dire, messaggi, aggiornamenti";
+"Just a quick patrol break." = "Piccola pausa dalla ronda.";
+"Water break? I’ll keep your seat warm." = "Pausa acqua? Ti tengo il posto caldo.";
+"Stretch time! I’d join you, but I have no arms." = "È ora di sgranchirsi! Lo farei con te, ma non ho le braccia.";
+"You’re doing great. I checked." = "Stai andando alla grande. Ho controllato.";
+"Is it snack time yet?" = "È già ora della merenda?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Guarda fuori dalla finestra per 20 secondi. Io sorveglio lo schermo.";
+"I’m not lazy. I’m in power-saving mode." = "Non sono pigro. Sono in modalità risparmio energetico.";
+"Psst… press Space." = "Psst… premi Spazio.";
+"Loading motivation… 99%" = "Caricamento motivazione… 99%";
+"This whole edge is my kingdom." = "Tutto questo bordo è il mio regno.";
+"Psst, version %@ is out! Click me." = "Psst, è uscita la versione %@! Cliccami.";

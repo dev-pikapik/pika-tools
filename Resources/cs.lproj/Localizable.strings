@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Některá oprávnění zůstala";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS nedovolil pikapik odstranit oprávnění těchto aplikací: %@. Zkuste to znovu, nebo je odstraňte v Nastavení systému.";
 "Try Again" = "Zkusit znovu";
+
+"Pet" = "Mazlíček";
+"A little friend who lives at the bottom of your screen" = "Malý kamarád, který bydlí dole na vaší obrazovce";
+"Pet on the desktop" = "Mazlíček na ploše";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Prochází se po spodním okraji obrazovky, za vašimi okny a Dockem. Zkuste ho zvednout!";
+"Walks behind your windows" = "Prochází se za vašimi okny";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Stiskněte mezerník a vyskočí. Postavte mu ukazatel do cesty a přeskočí ho";
+"Put the pointer in its way and it jumps over it" = "Postavte mu ukazatel do cesty a přeskočí ho";
+"Talks sometimes" = "Občas promluví";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Občas si sedne na kus řeči a dá vědět, když vyjde aktualizace";
+"To make it jump when you press Space, allow Input Monitoring" = "Aby skákal po stisknutí mezerníku, povolte Monitorování vstupu";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "mazlíček, kámoš, kamarád, postavička, maskot, plocha, skok, mezerník";
+"phrases, speech bubble, talk, say, messages, updates" = "hlášky, bublina, mluvit, říct, zprávy, aktualizace";
+"Just a quick patrol break." = "Krátká pauza od hlídkování.";
+"Water break? I’ll keep your seat warm." = "Pauza na vodu? Pohlídám vám místo.";
+"Stretch time! I’d join you, but I have no arms." = "Čas se protáhnout! Přidal bych se, ale nemám ruce.";
+"You’re doing great. I checked." = "Jde vám to skvěle. Kontroloval jsem to.";
+"Is it snack time yet?" = "Už je čas na svačinu?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Dívejte se 20 sekund z okna. Já pohlídám obrazovku.";
+"I’m not lazy. I’m in power-saving mode." = "Nejsem líný. Jsem v úsporném režimu.";
+"Psst… press Space." = "Pst… stiskněte mezerník.";
+"Loading motivation… 99%" = "Načítání motivace… 99%";
+"This whole edge is my kingdom." = "Celý tenhle okraj je moje království.";
+"Psst, version %@ is out! Click me." = "Pst, vyšla verze %@! Klikněte na mě.";

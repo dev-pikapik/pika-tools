@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, speedTest, keyboard, mouse, windows, dock, finder, animations, games, permissions, about
+    case general, keepAwake, speedTest, keyboard, mouse, windows, dock, finder, animations, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -18,6 +18,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: String(localized: "Finder")
         case .animations: String(localized: "Animations")
         case .games: String(localized: "Games")
+        case .pet: String(localized: "Pet")
         case .permissions: String(localized: "Permissions")
         case .about: String(localized: "About")
         }
@@ -35,6 +36,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: "folder.fill"
         case .animations: "hare.fill"
         case .games: "gamecontroller.fill"
+        case .pet: "pawprint.fill"
         case .permissions: "hand.raised.fill"
         case .about: "info.circle.fill"
         }
@@ -49,6 +51,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .games: .purple
         case .animations: .pink
         case .keepAwake: .orange
+        case .pet: .red
         case .speedTest: .green
         }
     }
@@ -152,6 +155,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),
             SettingsItem(tab: .games, title: String(localized: "The screen stays on")),
             SettingsItem(tab: .games, title: String(localized: "Your games")),
+            SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),
+            SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: "phrases, speech bubble, talk, say, messages, updates"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -274,7 +279,7 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.isEmpty {
-                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games]) }
+                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games, .pet]) }
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -366,6 +371,7 @@ private struct SettingsView: View {
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
         case .animations: AnimationsPage()
         case .games: GameModePage()
+        case .pet: PetPage()
         case .permissions: PermissionsView()
         case .about: AboutView()
         }

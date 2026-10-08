@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Vẫn còn một số quyền";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS không cho pikapik xóa quyền của %@. Hãy thử lại hoặc xóa chúng trong Cài đặt hệ thống.";
 "Try Again" = "Thử lại";
+
+"Pet" = "Thú cưng";
+"A little friend who lives at the bottom of your screen" = "Một người bạn nhỏ sống ở dưới cùng màn hình";
+"Pet on the desktop" = "Thú cưng trên màn hình nền";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Đi dạo dọc mép dưới màn hình, phía sau các cửa sổ và Dock. Thử nhấc nó lên xem!";
+"Walks behind your windows" = "Đi dạo phía sau các cửa sổ";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Nhấn phím cách là nó nhảy. Đặt con trỏ chắn đường là nó nhảy qua";
+"Put the pointer in its way and it jumps over it" = "Đặt con trỏ chắn đường là nó nhảy qua";
+"Talks sometimes" = "Thỉnh thoảng trò chuyện";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Thỉnh thoảng nó ngồi xuống tán gẫu và báo cho bạn khi có bản cập nhật";
+"To make it jump when you press Space, allow Input Monitoring" = "Để nó nhảy khi bạn nhấn phím cách, hãy cho phép Theo dõi đầu vào";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "thú cưng, bạn đồng hành, bạn, nhân vật, linh vật, màn hình nền, nhảy, phím cách";
+"phrases, speech bubble, talk, say, messages, updates" = "câu nói, bong bóng thoại, nói, trò chuyện, tin nhắn, cập nhật";
+"Just a quick patrol break." = "Nghỉ tuần tra một chút thôi.";
+"Water break? I’ll keep your seat warm." = "Nghỉ uống nước không? Mình giữ chỗ ấm cho bạn.";
+"Stretch time! I’d join you, but I have no arms." = "Đến giờ vươn vai rồi! Mình muốn tham gia lắm, mà mình không có tay.";
+"You’re doing great. I checked." = "Bạn đang làm rất tốt. Mình kiểm tra rồi.";
+"Is it snack time yet?" = "Đến giờ ăn vặt chưa nhỉ?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Nhìn ra cửa sổ 20 giây nhé. Mình canh màn hình cho.";
+"I’m not lazy. I’m in power-saving mode." = "Mình không lười đâu. Mình đang ở chế độ tiết kiệm năng lượng.";
+"Psst… press Space." = "Psst… nhấn phím cách đi.";
+"Loading motivation… 99%" = "Đang tải động lực… 99%";
+"This whole edge is my kingdom." = "Cả cái mép này là vương quốc của mình.";
+"Psst, version %@ is out! Click me." = "Psst, phiên bản %@ ra rồi! Bấm vào mình nhé.";

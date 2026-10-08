@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Bazı izinler kaldı";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS, pikapik’in şu uygulamaların izinlerini kaldırmasına izin vermedi: %@. Yeniden deneyin veya Sistem Ayarları’ndan kaldırın.";
 "Try Again" = "Yeniden Dene";
+
+"Pet" = "Evcil Dost";
+"A little friend who lives at the bottom of your screen" = "Ekranınızın altında yaşayan küçük bir dost";
+"Pet on the desktop" = "Masaüstünde evcil dost";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Ekranın alt kenarında, pencerelerinizin ve Dock’un arkasında dolaşır. Onu tutup kaldırmayı deneyin!";
+"Walks behind your windows" = "Pencerelerinizin arkasında dolaşır";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Boşluk tuşuna basın, zıplasın. İmleci yoluna koyun, üstünden atlasın";
+"Put the pointer in its way and it jumps over it" = "İmleci yoluna koyun, üstünden atlasın";
+"Talks sometimes" = "Arada bir konuşur";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Arada bir oturup sohbet eder ve bir güncelleme çıktığında haber verir";
+"To make it jump when you press Space, allow Input Monitoring" = "Boşluk tuşuyla zıplaması için Girdi İzleme’ye izin verin";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "evcil hayvan, dost, arkadaş, karakter, maskot, masaüstü, zıplamak, Boşluk";
+"phrases, speech bubble, talk, say, messages, updates" = "sözler, konuşma balonu, konuşmak, söylemek, mesajlar, güncellemeler";
+"Just a quick patrol break." = "Devriyeye kısa bir mola.";
+"Water break? I’ll keep your seat warm." = "Su molası mı? Yerinizi sıcak tutarım.";
+"Stretch time! I’d join you, but I have no arms." = "Esneme zamanı! Size katılırdım ama kollarım yok.";
+"You’re doing great. I checked." = "Harika gidiyorsunuz. Kontrol ettim.";
+"Is it snack time yet?" = "Atıştırma saati geldi mi?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "20 saniye pencereden dışarı bakın. Ekranı ben beklerim.";
+"I’m not lazy. I’m in power-saving mode." = "Tembel değilim. Güç tasarrufu modundayım.";
+"Psst… press Space." = "Pişt… Boşluk tuşuna basın.";
+"Loading motivation… 99%" = "Motivasyon yükleniyor… 99%";
+"This whole edge is my kingdom." = "Bu kenarın tamamı benim krallığım.";
+"Psst, version %@ is out! Click me." = "Pişt, %@ sürümü çıktı! Bana tıklayın.";

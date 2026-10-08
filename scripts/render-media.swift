@@ -22,6 +22,7 @@ enum RenderMedia {
         ("finder-open", 4.7, AnyView(FinderOpenArt(on: true))),
         ("finder-delete", 3.2, AnyView(FinderDeleteArt(on: true))),
         ("game-mode", 8.0, AnyView(GameModeArt(on: true))),
+        ("pet", 16.65, AnyView(PetArt(on: true))),
         ("speed-test", 5.4, AnyView(SpeedTestArt())),
         ("side-buttons", 5.1, AnyView(SideButtonsArt(on: true, swapped: false))),
         ("wheel-lines", 3.2, AnyView(ScrollStepArt(on: true, distance: 30))),

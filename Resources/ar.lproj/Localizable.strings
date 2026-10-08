@@ -489,3 +489,27 @@
 "Some permissions stayed" = "بقيت بعض الأذونات";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "لم يسمح macOS لـ pikapik بإزالة أذونات %@. حاول مرة أخرى أو أزلها من إعدادات النظام.";
 "Try Again" = "إعادة المحاولة";
+
+"Pet" = "الرفيق";
+"A little friend who lives at the bottom of your screen" = "صديق صغير يعيش في أسفل شاشتك";
+"Pet on the desktop" = "رفيق على سطح المكتب";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "يتمشّى على طول أسفل الشاشة، خلف نوافذك وخلف Dock. جرّب أن ترفعه!";
+"Walks behind your windows" = "يتمشّى خلف نوافذك";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "اضغط مفتاح المسافة فيقفز. ضع المؤشر في طريقه فيقفز فوقه";
+"Put the pointer in its way and it jumps over it" = "ضع المؤشر في طريقه فيقفز فوقه";
+"Talks sometimes" = "يتكلم أحيانًا";
+"Every now and then it sits down for a chat and tells you when an update is out" = "يجلس من حين لآخر ليدردش قليلًا ويخبرك عندما يصدر تحديث";
+"To make it jump when you press Space, allow Input Monitoring" = "ليقفز عند الضغط على مفتاح المسافة، اسمح بمراقبة الإدخال";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "رفيق، حيوان أليف، صديق، شخصية، تميمة، سطح المكتب، قفز، مسافة";
+"phrases, speech bubble, talk, say, messages, updates" = "عبارات، فقاعة كلام، تكلم، قول، رسائل، تحديثات";
+"Just a quick patrol break." = "استراحة قصيرة من الحراسة.";
+"Water break? I’ll keep your seat warm." = "استراحة لشرب الماء؟ سأحجز لك مكانك دافئًا.";
+"Stretch time! I’d join you, but I have no arms." = "حان وقت التمدد! كنت سأشاركك، لكن ليس لدي ذراعان.";
+"You’re doing great. I checked." = "أنت تبلي بلاءً رائعًا. لقد تحققت.";
+"Is it snack time yet?" = "هل حان وقت الوجبة الخفيفة؟";
+"Look out the window for 20 seconds. I’ll guard the screen." = "انظر من النافذة لمدة 20 ثانية. سأحرس الشاشة.";
+"I’m not lazy. I’m in power-saving mode." = "لست كسولًا. أنا في وضع توفير الطاقة.";
+"Psst… press Space." = "بسس… اضغط مفتاح المسافة.";
+"Loading motivation… 99%" = "جارٍ تحميل الحماس… 99%";
+"This whole edge is my kingdom." = "هذه الحافة كلها مملكتي.";
+"Psst, version %@ is out! Click me." = "بسس، صدر الإصدار %@! انقر عليّ.";

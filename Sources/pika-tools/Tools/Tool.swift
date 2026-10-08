@@ -80,6 +80,7 @@ final class ToolRegistry {
         FinderDeleteTool(),
         AnimationsTool.shared,
         GameModeTool.shared,
+        PetTool.shared,
     ] + privateTools
 
     var status: ToolStatus {

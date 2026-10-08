@@ -23,7 +23,7 @@ struct MenuView: View {
     }
 
     private var visibleTabs: [SettingsTab] {
-        [.keyboard, .mouse, .windows, .dock, .finder, .games].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
+        [.keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
 
     private func binding(_ id: String) -> Binding<Bool> {

@@ -34,6 +34,7 @@ Sources/pika-tools/
   Tools/CommandKeys/CommandKeysTool.swift
   Tools/InputSwitch/InputSwitchTool.swift, InputSwitchGesture.swift
   Tools/Windows/QuitOnCloseTool.swift, DockHideTool.swift
+  Tools/Pet/PetTool.swift, PetStage.swift, PetPhysics.swift, PetFigure.swift, PetPhrases.swift
   Common/                            shared UI, permissions, login item, updater
 Resources/<lang>.lproj/              Localizable.strings
 Resources/AppIcon.icon               app icon, AppIcon.icns is the fallback
@@ -75,7 +76,19 @@ swiftc -parse-as-library Sources/pika-tools/Common/LeftoverPermissions.swift scr
 The app used to be called pika-tools. A copy named `pika-tools.app` that wasn't installed with Homebrew renames itself to `pikapik.app` on launch and opens again; the updater does the same when it installs a new version. Homebrew copies stay where they are until `brew upgrade` moves them. Every release also carries `pika-tools.zip` with the app under its old name, because older versions download that file. The path logic lives in `Updater`:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Common/Updater.swift Sources/pika-tools/Common/LoginItem.swift scripts/test-rename.swift -o build/test-rename && build/test-rename
+swiftc -parse-as-library Sources/pika-tools/Common/Updater.swift Sources/pika-tools/Common/LoginItem.swift Sources/pika-tools/Common/Version.swift scripts/test-rename.swift -o build/test-rename && build/test-rename
+```
+
+The pet lives in a borderless window one level above the desktop icons, so every normal window and the Dock cover it. The window lets clicks through everywhere except the pet itself: on each frame it checks whether the pointer is over the pet’s hitbox, swept over the last frame so a fast pet can still be caught. While you hold or throw the pet, the window grows to the whole screen and rises above the Dock, and it drops back behind everything once the pet lands. It joins all Spaces, stays out of Mission Control and the app switcher, and hides during full-screen apps, Game Mode, screen sleep and the lock screen. It ticks at 30 frames per second only while it is on screen. Space comes from a listen-only `CGEventTap`, so the key is never changed or delayed. Walking, jumps, bumps, holding and throwing live in `PetPhysics`, which has no AppKit and steps in fixed slices of 1/120 s: the pet and the pointer are rectangles, their relative motion is swept every slice so nothing tunnels through, and the pet always stays inside the screen and on the ground. A throw takes the pointer speed over the last 80 ms, capped, bounces off the sides and never goes above the menu bar, and the pointer can’t knock the pet over for a second after it is let go. The phrases are one list in `PetPhrases`, each with an id, ready for partner lines. You can test the physics without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetPhysics.swift scripts/test-pet.swift -o build/test-pet && build/test-pet
+```
+
+The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
 ```
 
 ### Adding a tool

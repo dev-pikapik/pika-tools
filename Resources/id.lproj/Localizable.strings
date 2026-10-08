@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Beberapa izin masih tersisa";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS tidak mengizinkan pikapik menghapus izin %@. Coba lagi, atau hapus di Pengaturan Sistem.";
 "Try Again" = "Coba Lagi";
+
+"Pet" = "Peliharaan";
+"A little friend who lives at the bottom of your screen" = "Teman kecil yang tinggal di bagian bawah layarmu";
+"Pet on the desktop" = "Peliharaan di desktop";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Berjalan-jalan di tepi bawah layar, di belakang jendela dan Dock. Coba angkat dia!";
+"Walks behind your windows" = "Berjalan-jalan di belakang jendelamu";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Tekan Spasi dan ia melompat. Taruh penunjuk di jalannya dan ia melompatinya";
+"Put the pointer in its way and it jumps over it" = "Taruh penunjuk di jalannya dan ia melompatinya";
+"Talks sometimes" = "Kadang-kadang bicara";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Sesekali ia duduk untuk mengobrol dan memberi tahu saat ada pembaruan";
+"To make it jump when you press Space, allow Input Monitoring" = "Agar ia melompat saat kamu menekan Spasi, izinkan Pemantauan Input";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "peliharaan, kawan, teman, karakter, maskot, desktop, lompat, Spasi";
+"phrases, speech bubble, talk, say, messages, updates" = "kalimat, balon kata, bicara, bilang, pesan, pembaruan";
+"Just a quick patrol break." = "Istirahat sebentar dari patroli.";
+"Water break? I’ll keep your seat warm." = "Istirahat minum? Kursimu biar aku yang jaga tetap hangat.";
+"Stretch time! I’d join you, but I have no arms." = "Waktunya peregangan! Aku mau ikut, tapi aku nggak punya tangan.";
+"You’re doing great. I checked." = "Kamu hebat kok. Aku sudah cek.";
+"Is it snack time yet?" = "Sudah waktunya ngemil belum?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Lihat ke luar jendela selama 20 detik. Aku jaga layarnya.";
+"I’m not lazy. I’m in power-saving mode." = "Aku bukan malas. Aku lagi mode hemat daya.";
+"Psst… press Space." = "Psst… tekan Spasi.";
+"Loading motivation… 99%" = "Memuat motivasi… 99%";
+"This whole edge is my kingdom." = "Seluruh tepi ini kerajaanku.";
+"Psst, version %@ is out! Click me." = "Psst, versi %@ sudah keluar! Klik aku.";
