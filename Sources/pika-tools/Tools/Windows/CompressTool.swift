@@ -34,19 +34,21 @@ struct CompressArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.6, 1, 2.2]
+    private static let durations = [0.9, 0.45, 0.15, 0.5, 0.4, 0.45, 0.15, 2.0]
     private static let click = CGPoint(x: 112, y: 58)
     private static let sizes = [4_800_000, 1_200_000].map { ByteCountFormatter.string(fromByteCount: Int64($0), countStyle: .file) }
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let menu = (1...2).contains(step)
-        let copied = on && step == 3
+        let step = reduceMotion ? 7 : tick % Self.durations.count
+        let menu = (3...6).contains(step)
+        let picked = (2...6).contains(step)
+        let copied = on && step == 7
+        let row = CGPoint(x: Self.click.x + 18, y: Self.click.y + 26)
         IllustrationRow {
             Stage {
                 ArtWindow(size: CGSize(width: 220, height: 100)) {
                     ZStack {
-                        ArtPhotoFile(width: 40, label: Self.sizes[0], selected: menu, color: menu ? .primary : .secondary)
+                        ArtPhotoFile(width: 40, label: Self.sizes[0], selected: picked, color: picked ? .primary : .secondary)
                             .position(x: 72, y: 42)
                         ArtPhotoFile(width: 28, label: Self.sizes[1], color: .accentColor)
                             .opacity(copied ? 1 : 0)
@@ -58,16 +60,17 @@ struct CompressArt: View {
                 if menu {
                     ArtMenu(width: 140) {
                         ArtMenuRow(width: 34)
-                        if on { ArtMenuRow(title: Text("Make a Smaller Copy"), active: step == 2) } else { ArtMenuRow(width: 64) }
+                        if on { ArtMenuRow(title: Text("Make a Smaller Copy"), active: step >= 5) } else { ArtMenuRow(width: 64) }
                         ArtMenuRow(width: 48)
                     }
                     .position(x: Self.click.x + 70, y: Self.click.y + 26)
                     .transition(.scale(scale: 0.85, anchor: .topLeading).combined(with: .opacity))
                 }
-                if step == 1 { ArtRipple().position(x: Self.click.x, y: Self.click.y) }
-                ArtCursor()
-                    .cursor(at: step == 0 ? CGPoint(x: 236, y: 98) : step == 1 ? Self.click : CGPoint(x: Self.click.x + 18, y: Self.click.y + 26))
-                    .opacity(step == 3 ? 0 : 1)
+                if (2...3).contains(step) { ArtRipple().position(Self.click) }
+                if (6...7).contains(step) { ArtRipple().position(row) }
+                ArtCursor(pressed: step == 2 || step == 6)
+                    .cursor(at: step == 0 ? CGPoint(x: 236, y: 98) : step < 4 ? Self.click : row)
+                    .opacity(step == 7 ? 0 : 1)
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
@@ -96,22 +99,15 @@ struct ArtPhotoFile: View {
     }
 }
 
-private struct ArtPhoto: View {
+struct ArtPhoto: View {
     let width: CGFloat
 
     var body: some View {
-        let height = width * 0.75
-        ZStack {
-            LinearGradient(colors: [Color(red: 0.38, green: 0.65, blue: 0.96), Color(red: 0.76, green: 0.88, blue: 1)], startPoint: .top, endPoint: .bottom)
-            Circle().fill(Art.yellow).frame(width: width * 0.18, height: width * 0.18).position(x: width * 0.74, y: height * 0.3)
-            Ellipse().fill(Color(red: 0.47, green: 0.79, blue: 0.43)).frame(width: width * 1.1, height: height * 0.7).position(x: width * 0.2, y: height * 1.02)
-            Ellipse().fill(Color(red: 0.24, green: 0.63, blue: 0.33)).frame(width: width * 1.2, height: height * 0.6).position(x: width * 0.86, y: height * 1.08)
-        }
-        .frame(width: width, height: height)
-        .clipShape(RoundedRectangle(cornerRadius: 1.5, style: .continuous))
-        .padding(width * 0.06)
-        .background(Color.white, in: RoundedRectangle(cornerRadius: 2.5, style: .continuous))
-        .shadow(color: .black.opacity(0.22), radius: 1.5, y: 0.5)
+        ArtLandscape(size: CGSize(width: width, height: width * 0.75))
+            .clipShape(RoundedRectangle(cornerRadius: 1.5, style: .continuous))
+            .padding(width * 0.06)
+            .background(Color.white, in: RoundedRectangle(cornerRadius: 2.5, style: .continuous))
+            .shadow(color: .black.opacity(0.22), radius: 1.5, y: 0.5)
     }
 }
 

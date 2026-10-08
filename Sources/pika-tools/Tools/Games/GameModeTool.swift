@@ -610,6 +610,7 @@ struct GameModeArt: View {
 
     private static let durations = [1.6, 0.8, 1.1, 1.3, 1.2]
     private static let screen = CGSize(width: 196, height: 108)
+    private static let bar = CGRect(x: 39, y: 23, width: 118, height: 22)
 
     var body: some View {
         let step = reduceMotion ? 0 : tick % Self.durations.count
@@ -620,8 +621,7 @@ struct GameModeArt: View {
             Stage {
                 ZStack {
                     GameScene(hop: step % 2 == 1)
-                    ArtDock()
-                        .scaleEffect(0.62)
+                    ArtDock(icon: 14)
                         .offset(y: !on && edge ? 40 : 72)
                     Capsule()
                         .fill(.white.opacity(0.85))
@@ -629,11 +629,14 @@ struct GameModeArt: View {
                         .blur(radius: 1.5)
                         .offset(x: 30, y: Self.screen.height / 2 - 1)
                         .opacity(on && edge ? 1 : 0)
-                    spotlight
-                        .opacity(search ? (on ? 0.6 : 1) : 0)
-                        .scaleEffect(search ? 1 : 0.9)
-                        .blur(radius: on && !search ? 4 : 0)
-                        .offset(y: -20)
+                    ZStack {
+                        GameScene(hop: step % 2 == 1).glassBackdrop(Self.bar)
+                        ArtSpotlight(width: Self.bar.width, height: Self.bar.height)
+                            .position(x: Self.bar.midX, y: Self.bar.midY)
+                    }
+                    .opacity(search ? (on ? 0.6 : 1) : 0)
+                    .scaleEffect(search ? 1 : 0.9)
+                    .blur(radius: on && !search ? 4 : 0)
                 }
                 .frame(width: Self.screen.width, height: Self.screen.height)
                 .clipShape(shape)
@@ -646,21 +649,6 @@ struct GameModeArt: View {
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
         .loop($tick, Self.durations)
-    }
-
-    private var spotlight: some View {
-        HStack(spacing: 5) {
-            Image(systemName: "magnifyingglass")
-                .font(.system(size: 9, weight: .semibold))
-                .foregroundStyle(.secondary)
-            Capsule().fill(Color.primary.opacity(0.18)).frame(width: 46, height: 4)
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, 8)
-        .frame(width: 118, height: 22)
-        .background(Color(nsColor: .windowBackgroundColor).opacity(0.94), in: Capsule())
-        .overlay(Capsule().strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
-        .shadow(color: .black.opacity(0.25), radius: 6, y: 3)
     }
 }
 

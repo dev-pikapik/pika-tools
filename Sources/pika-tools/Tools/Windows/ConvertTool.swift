@@ -40,20 +40,21 @@ struct ConvertArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.6, 0.7, 0.8, 2.2]
+    private static let durations = [0.9, 0.45, 0.15, 0.5, 0.4, 0.5, 0.4, 0.35, 0.15, 2.0]
     private static let click = CGPoint(x: 112, y: 58)
 
     var body: some View {
-        let step = reduceMotion ? 4 : tick % Self.durations.count
-        let menu = (1...3).contains(step)
-        let converted = on && step == 4
+        let step = reduceMotion ? 9 : tick % Self.durations.count
+        let menu = (3...8).contains(step)
+        let picked = (2...8).contains(step)
+        let converted = on && step == 9
         let row = CGPoint(x: Self.click.x + 40, y: Self.click.y + 28)
         let jpeg = on ? CGPoint(x: Self.click.x + 128, y: Self.click.y + 28) : row
         IllustrationRow {
             Stage {
                 ArtWindow(size: CGSize(width: 220, height: 100)) {
                     ZStack {
-                        ArtPhotoFile(width: 40, label: "PNG", selected: menu, color: menu ? .primary : .secondary)
+                        ArtPhotoFile(width: 40, label: "PNG", selected: picked, color: picked ? .primary : .secondary)
                             .position(x: 72, y: 42)
                         ArtPhotoFile(width: 40, label: "JPEG", color: .accentColor)
                             .opacity(converted ? 1 : 0)
@@ -65,25 +66,26 @@ struct ConvertArt: View {
                 if menu {
                     ArtMenu(width: 110) {
                         ArtMenuRow(width: 34)
-                        if on { ArtMenuRow(title: Text("Convert To"), active: step >= 2, submenu: true) } else { ArtMenuRow(width: 64) }
+                        if on { ArtMenuRow(title: Text("Convert To"), active: step >= 5, submenu: true) } else { ArtMenuRow(width: 64) }
                         ArtMenuRow(width: 48)
                     }
                     .position(x: Self.click.x + 55, y: Self.click.y + 26)
                     .transition(.scale(scale: 0.85, anchor: .topLeading).combined(with: .opacity))
                 }
-                if on, (2...3).contains(step) {
+                if on, (5...8).contains(step) {
                     ArtMenu(width: 56) {
-                        ArtMenuRow(title: Text(verbatim: "JPEG"), active: step == 3)
+                        ArtMenuRow(title: Text(verbatim: "JPEG"), active: step >= 7)
                         ArtMenuRow(title: Text(verbatim: "HEIC"))
                         ArtMenuRow(title: Text(verbatim: "TIFF"))
                     }
                     .position(x: Self.click.x + 136, y: Self.click.y + 41)
                     .transition(.opacity)
                 }
-                if step == 1 { ArtRipple().position(x: Self.click.x, y: Self.click.y) }
-                ArtCursor()
-                    .cursor(at: [CGPoint(x: 236, y: 104), Self.click, row, jpeg, jpeg][step])
-                    .opacity(step == 4 ? 0 : 1)
+                if (2...3).contains(step) { ArtRipple().position(Self.click) }
+                if (8...9).contains(step) { ArtRipple().position(jpeg) }
+                ArtCursor(pressed: step == 2 || step == 8)
+                    .cursor(at: [CGPoint(x: 236, y: 104), Self.click, Self.click, Self.click, row, row, jpeg, jpeg, jpeg, jpeg][step])
+                    .opacity(step == 9 ? 0 : 1)
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
