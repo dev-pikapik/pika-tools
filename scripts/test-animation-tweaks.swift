@@ -56,6 +56,15 @@ enum TestAnimationTweaks {
         precondition(instant.values.allSatisfy { $0 == 0 })
         precondition(AnimationSpeed.preset(0).allSatisfy { $0.value == $0.key.macOS })
 
+        let mine: [AnimationSetting: Double] = [.dockDelay: 0, .dockSpeed: 0.1, .windowOpen: 0, .resize: 0.1, .quickLook: 0.2, .finderColumns: 1, .finder: 1]
+        let faster = AnimationSpeed.preset(0.5, baseline: mine)
+        precondition(faster.allSatisfy { $0.value <= mine[$0.key]! })
+        precondition(faster[.dockDelay] == 0 && faster[.dockSpeed] == 0.1 && faster[.windowOpen] == 0 && faster[.quickLook] == 0.1 && faster[.finder] == 1)
+        precondition(AnimationSpeed.preset(1, baseline: mine).values.allSatisfy { $0 == 0 })
+        precondition(AnimationSpeed.preset(0, baseline: mine) == AnimationSpeed.preset(0))
+        precondition(AnimationSpeed.speed(of: faster, stored: 0.5, baseline: mine) == 0.5)
+        precondition(AnimationSpeed.speed(of: faster, stored: 0.5) == nil)
+
         precondition(AnimationSpeed.speed(of: [:], stored: nil) == 0)
         precondition(AnimationSpeed.speed(of: [.minimize: 2, .bounce: 0], stored: nil) == 0)
         precondition(AnimationSpeed.speed(of: fast, stored: 0.5) == 0.5)
@@ -75,6 +84,17 @@ enum TestAnimationTweaks {
         precondition(gone.isEmpty)
         let untouched = AnimationSetting.changes(from: [:], to: [:], system: [.resize: 0.1])
         precondition(untouched.isEmpty)
+        let restore = AnimationSetting.changes(from: [.dockSpeed: 0], to: [:], system: [.dockSpeed: 0], own: [.dockSpeed: 0.1])
+        precondition(restore.count == 1 && restore[0].0 == .dockSpeed && restore[0].1 == 0.1)
+        let lost = AnimationSetting.changes(from: [.dockSpeed: 0], to: [:], system: [:], own: [.dockSpeed: 0.1])
+        precondition(lost.count == 1 && lost[0].1 == 0.1)
+        precondition(AnimationSetting.changes(from: [.dockSpeed: 0], to: [:], system: [.dockSpeed: 0.1], own: [.dockSpeed: 0.1]).isEmpty)
+
+        precondition(AnimationSetting.originals([:], owned: [:], new: [.dockSpeed: 0, .quickLook: 0], system: [.dockSpeed: 0.1]) == [.dockSpeed: 0.1])
+        precondition(AnimationSetting.originals([.dockSpeed: 0.1], owned: [.dockSpeed: 0], new: [.dockSpeed: 0.3], system: [.dockSpeed: 0]) == [.dockSpeed: 0.1])
+        precondition(AnimationSetting.originals([:], owned: [.resize: 0], new: [.resize: 0.05], system: [.resize: 0]).isEmpty)
+        precondition(AnimationSetting.originals([.dockSpeed: 0.1], owned: [.dockSpeed: 0], new: [:], system: [.dockSpeed: 0]).isEmpty)
+        precondition(AnimationSetting.quickLook.apply == .apps && AnimationSetting.finderColumns.apply == .apps && AnimationSetting.finder.apply == .finder)
 
         print("animation-tweaks: ok")
     }

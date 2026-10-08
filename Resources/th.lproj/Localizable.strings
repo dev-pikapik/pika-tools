@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "ทุกอย่างบน Mac ของคุณเคลื่อนไหวเร็วแค่ไหน";
 "Fine-tuning" = "ปรับละเอียด";
 "Hide the Dock automatically" = "ซ่อน Dock อัตโนมัติ";
-"The two settings below need it" = "จำเป็นสำหรับการตั้งค่าสองรายการด้านล่าง";
+"Dock speed only works when the Dock hides" = "ความเร็วของ Dock มีผลเฉพาะเมื่อซ่อน Dock";
 "Works in apps after you reopen them" = "มีผลในแอปเมื่อคุณเปิดแอปอีกครั้ง";
 "Restart Finder" = "เริ่ม Finder ใหม่";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder จะปิดหน้าต่างแล้วเปิดใหม่ รอให้การคัดลอกไฟล์เสร็จก่อน";
 "Finder picks up the changes after a restart" = "Finder จะใช้การเปลี่ยนแปลงหลังจากเริ่มใหม่";
 "Even calmer: Reduce Motion in Accessibility" = "สงบยิ่งขึ้น: ลดการเคลื่อนไหวในการช่วยการเข้าถึง";
 "All animations will be as in macOS again." = "ภาพเคลื่อนไหวทั้งหมดจะกลับไปเหมือนใน macOS";
+"Animations will be as they were before pika-tools." = "ภาพเคลื่อนไหวจะกลับไปเหมือนก่อนใช้ pika-tools";
 "Animation speed" = "ความเร็วภาพเคลื่อนไหว";
 "Sets all the effects below at once." = "ตั้งค่าเอฟเฟ็กต์ทั้งหมดด้านล่างพร้อมกัน";
 "Genie" = "จีนี่";

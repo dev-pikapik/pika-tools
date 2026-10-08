@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "How fast things move on your Mac";
 "Fine-tuning" = "Fine-tuning";
 "Hide the Dock automatically" = "Hide the Dock automatically";
-"The two settings below need it" = "The two settings below need it";
+"Dock speed only works when the Dock hides" = "Dock speed only works when the Dock hides";
 "Works in apps after you reopen them" = "Works in apps after you reopen them";
 "Restart Finder" = "Restart Finder";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder closes its windows and opens again. Wait until files finish copying.";
 "Finder picks up the changes after a restart" = "Finder picks up the changes after a restart";
 "Even calmer: Reduce Motion in Accessibility" = "Even calmer: Reduce Motion in Accessibility";
 "All animations will be as in macOS again." = "All animations will be as in macOS again.";
+"Animations will be as they were before pika-tools." = "Animations will be as they were before pika-tools.";
 "Animation speed" = "Animation speed";
 "Sets all the effects below at once." = "Sets all the effects below at once.";
 "Genie" = "Genie";

@@ -45,8 +45,8 @@ enum AnimationSetting: String, CaseIterable {
     var apply: Apply {
         switch self {
         case .dockDelay, .dockSpeed, .minimize, .bounce: .dock
-        case .windowOpen, .resize, .quickLook: .apps
-        case .finderColumns, .finder: .finder
+        case .windowOpen, .resize, .quickLook, .finderColumns: .apps
+        case .finder: .finder
         }
     }
 
@@ -129,13 +129,18 @@ enum AnimationSetting: String, CaseIterable {
         (value * 1000).rounded() / 1000
     }
 
-    static func changes(from old: [Self: Double], to new: [Self: Double], system: [Self: Double]) -> [(Self, Double?)] {
+    static func changes(from old: [Self: Double], to new: [Self: Double], system: [Self: Double], own: [Self: Double] = [:]) -> [(Self, Double?)] {
         allCases.compactMap { setting in
-            if let value = new[setting] {
-                if let current = system[setting], abs(current - value) < 0.0005 { return nil }
-                return (setting, value)
-            }
-            return old[setting] != nil && system[setting] != nil ? (setting, nil) : nil
+            guard new[setting] != nil || old[setting] != nil else { return nil }
+            let target = new[setting] ?? own[setting]
+            if let current = system[setting], let target { return abs(current - target) < 0.0005 ? nil : (setting, target) }
+            return target == nil && system[setting] == nil ? nil : (setting, target)
+        }
+    }
+
+    static func originals(_ own: [Self: Double], owned: [Self: Double], new: [Self: Double], system: [Self: Double]) -> [Self: Double] {
+        new.keys.reduce(into: [:]) { result, setting in
+            result[setting] = own[setting] ?? (owned[setting] == nil ? system[setting] : nil)
         }
     }
 }
@@ -154,22 +159,23 @@ enum AnimationSpeed {
         return AnimationSetting.round((position / 0.05).rounded() * 0.05)
     }
 
-    static func preset(_ speed: Double) -> [AnimationSetting: Double] {
+    static func preset(_ speed: Double, baseline: [AnimationSetting: Double] = [:]) -> [AnimationSetting: Double] {
         var values: [AnimationSetting: Double] = [:]
         for setting in AnimationSetting.allCases where setting.isSpeed {
-            values[setting] = setting.kind == .flag
+            let value = setting.kind == .flag
                 ? (speed >= 1 ? 0 : 1)
                 : AnimationSetting.round(setting.macOS * (1 - speed))
+            values[setting] = speed > 0 ? min(value, baseline[setting] ?? setting.macOS) : value
         }
         return values
     }
 
-    static func speed(of values: [AnimationSetting: Double], stored: Double?) -> Double? {
+    static func speed(of values: [AnimationSetting: Double], stored: Double?, baseline: [AnimationSetting: Double] = [:]) -> Double? {
         func matches(_ preset: [AnimationSetting: Double]) -> Bool {
             preset.allSatisfy { setting, value in abs((values[setting] ?? setting.macOS) - value) < 0.002 }
         }
         if matches(preset(0)) { return 0 }
-        if let stored, matches(preset(stored)) { return stored }
+        if let stored, matches(preset(stored, baseline: baseline)) { return stored }
         return nil
     }
 

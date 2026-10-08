@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.24.1] - Unreleased
+
+### Fixed
+- Animations: the Faster preset never makes anything slower than what you already had. If parts of your Mac were already faster, for example after commands in Terminal, they stay as they are.
+- Animations: Restore Defaults and uninstalling pika-tools bring back the values you had before, instead of erasing them.
+- Animations: when the Dock doesn’t hide, the switch to hide it automatically sits right under the speed slider, because the Dock speeds up only when it hides. The Dock no longer restarts for nothing while it stays in place.
+- Animations: after a change, a line at the bottom of the page says that apps show it once you open them again, with one Restart Finder button. Quick Look and columns now offer the button too, since Finder shows them only after a restart.
+
 ## [1.24.0] - Unreleased
 
 ### Added

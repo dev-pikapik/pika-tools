@@ -423,13 +423,14 @@
 "How fast things move on your Mac" = "Cât de repede se mișcă totul pe Mac-ul tău";
 "Fine-tuning" = "Reglaj fin";
 "Hide the Dock automatically" = "Ascunde automat Dock-ul";
-"The two settings below need it" = "Cele două opțiuni de mai jos au nevoie de asta";
+"Dock speed only works when the Dock hides" = "Viteza Dock-ului contează doar când Dock-ul se ascunde";
 "Works in apps after you reopen them" = "Funcționează în aplicații după ce le redeschizi";
 "Restart Finder" = "Repornește Finder";
 "Finder closes its windows and opens again. Wait until files finish copying." = "Finder își închide ferestrele și se deschide din nou. Așteaptă să se termine copierea fișierelor.";
 "Finder picks up the changes after a restart" = "Finder aplică modificările după repornire";
 "Even calmer: Reduce Motion in Accessibility" = "Și mai calm: Redu mișcarea în Accesibilitate";
 "All animations will be as in macOS again." = "Toate animațiile vor fi din nou ca în macOS.";
+"Animations will be as they were before pika-tools." = "Animațiile vor fi din nou ca înainte de pika-tools.";
 "Animation speed" = "Viteza animațiilor";
 "Sets all the effects below at once." = "Reglează deodată toate efectele de mai jos.";
 "Genie" = "Geniu";
