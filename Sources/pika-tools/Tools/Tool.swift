@@ -34,10 +34,9 @@ enum ToolStatus {
         }
     }
 
-    var icon: String {
+    var symbol: String? {
         switch self {
-        case .active: "cursorarrow.click.2"
-        case .off: "cursorarrow.slash"
+        case .active, .off: nil
         case .needsAccess: "exclamationmark.triangle"
         case .playing: "gamecontroller"
         }

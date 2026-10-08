@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="-97 -88 706 706" fill="none" role="img" aria-label="pikapik">
+  <title>pikapik</title>
+  <defs>
+    <linearGradient id="pkBase" gradientUnits="userSpaceOnUse" x1="94.24" y1="176.12" x2="457.19" y2="394.21">
+      <stop offset="0.000" stop-color="#56BBF4"/>
+      <stop offset="0.059" stop-color="#4FACF4"/>
+      <stop offset="0.118" stop-color="#4190F3"/>
+      <stop offset="0.176" stop-color="#3477F2"/>
+      <stop offset="0.235" stop-color="#2C63EF"/>
+      <stop offset="0.294" stop-color="#2A53E9"/>
+      <stop offset="0.353" stop-color="#3449E9"/>
+      <stop offset="0.412" stop-color="#4944EA"/>
+      <stop offset="0.471" stop-color="#6240E8"/>
+      <stop offset="0.529" stop-color="#6A35E2"/>
+      <stop offset="0.588" stop-color="#5D20CF"/>
+      <stop offset="0.647" stop-color="#7826C1"/>
+      <stop offset="0.706" stop-color="#9E32B5"/>
+      <stop offset="0.765" stop-color="#C341AA"/>
+      <stop offset="0.824" stop-color="#DE529D"/>
+      <stop offset="0.882" stop-color="#E8638E"/>
+      <stop offset="0.941" stop-color="#E97482"/>
+      <stop offset="1.000" stop-color="#E9817B"/>
+    </linearGradient>
+    <linearGradient id="pkShade0" gradientUnits="userSpaceOnUse" x1="256.01" y1="272.47" x2="337.33" y2="377.27">
+      <stop offset="0.000" stop-color="#2A5FE3" stop-opacity="0.000"/>
+      <stop offset="0.050" stop-color="#285BE3" stop-opacity="0.910"/>
+      <stop offset="0.100" stop-color="#2454E2" stop-opacity="0.818"/>
+      <stop offset="0.150" stop-color="#204DDF" stop-opacity="0.702"/>
+      <stop offset="0.200" stop-color="#1D46DC" stop-opacity="0.693"/>
+      <stop offset="0.250" stop-color="#1A3FDA" stop-opacity="0.756"/>
+      <stop offset="0.300" stop-color="#1738D6" stop-opacity="0.824"/>
+      <stop offset="0.350" stop-color="#1E2ED5" stop-opacity="0.770"/>
+      <stop offset="0.400" stop-color="#3825DF" stop-opacity="0.698"/>
+      <stop offset="0.450" stop-color="#5621E2" stop-opacity="0.801"/>
+      <stop offset="0.500" stop-color="#631FD8" stop-opacity="0.670"/>
+      <stop offset="0.550" stop-color="#6F22D2" stop-opacity="0.524"/>
+      <stop offset="0.600" stop-color="#7C25CE" stop-opacity="0.538"/>
+      <stop offset="0.650" stop-color="#8829CA" stop-opacity="0.559"/>
+      <stop offset="0.700" stop-color="#952DC5" stop-opacity="0.600"/>
+      <stop offset="0.750" stop-color="#A231BF" stop-opacity="0.628"/>
+      <stop offset="0.800" stop-color="#AF36B9" stop-opacity="0.656"/>
+      <stop offset="0.850" stop-color="#BC3AB4" stop-opacity="0.662"/>
+      <stop offset="0.900" stop-color="#CA3FAF" stop-opacity="0.684"/>
+      <stop offset="0.950" stop-color="#D543A8" stop-opacity="0.767"/>
+      <stop offset="1.000" stop-color="#DA45A4" stop-opacity="0.000"/>
+    </linearGradient>
+    <linearGradient id="pkShade1" gradientUnits="userSpaceOnUse" x1="373.72" y1="113.77" x2="142.15" y2="432.50">
+      <stop offset="0.000" stop-color="#816DF0" stop-opacity="0.788"/>
+      <stop offset="0.083" stop-color="#8060F1" stop-opacity="0.617"/>
+      <stop offset="0.167" stop-color="#8A46E9" stop-opacity="0.374"/>
+      <stop offset="0.250" stop-color="#843DDB" stop-opacity="0.246"/>
+      <stop offset="0.333" stop-color="#6B3DD5" stop-opacity="0.112"/>
+      <stop offset="0.417" stop-color="#5F42CA" stop-opacity="0.054"/>
+      <stop offset="0.500" stop-color="#754DB6" stop-opacity="0.036"/>
+      <stop offset="0.583" stop-color="#7C50AF" stop-opacity="0.022"/>
+      <stop offset="0.667" stop-color="#7752B3" stop-opacity="0.011"/>
+      <stop offset="0.750" stop-color="#4F5DD6" stop-opacity="0.013"/>
+      <stop offset="0.833" stop-color="#3577F2" stop-opacity="0.359"/>
+      <stop offset="0.917" stop-color="#4190F3" stop-opacity="0.571"/>
+      <stop offset="1.000" stop-color="#49A0F3" stop-opacity="0.803"/>
+    </linearGradient>
+    <linearGradient id="pkShade2" gradientUnits="userSpaceOnUse" x1="192.08" y1="104.30" x2="329.15" y2="461.38">
+      <stop offset="0.000" stop-color="#3B71F0" stop-opacity="0.849"/>
+      <stop offset="0.083" stop-color="#3E67F0" stop-opacity="0.537"/>
+      <stop offset="0.167" stop-color="#475CF1" stop-opacity="0.093"/>
+      <stop offset="0.250" stop-color="#5250EE" stop-opacity="0.015"/>
+      <stop offset="0.333" stop-color="#524EE8" stop-opacity="0.008"/>
+      <stop offset="0.417" stop-color="#3F64E4" stop-opacity="0.001"/>
+      <stop offset="0.500" stop-color="#3459E1" stop-opacity="0.042"/>
+      <stop offset="0.583" stop-color="#463FDA" stop-opacity="0.041"/>
+      <stop offset="0.667" stop-color="#7639CA" stop-opacity="0.035"/>
+      <stop offset="0.750" stop-color="#C843A4" stop-opacity="0.286"/>
+      <stop offset="0.833" stop-color="#E3578D" stop-opacity="0.658"/>
+      <stop offset="0.917" stop-color="#E9757B" stop-opacity="0.753"/>
+      <stop offset="1.000" stop-color="#EB8D75" stop-opacity="0.904"/>
+    </linearGradient>
+    <linearGradient id="pkShade3" gradientUnits="userSpaceOnUse" x1="37.95" y1="251.02" x2="482.15" y2="297.71">
+      <stop offset="0.000" stop-color="#58BCF3" stop-opacity="0.864"/>
+      <stop offset="0.062" stop-color="#52B0F4" stop-opacity="0.652"/>
+      <stop offset="0.125" stop-color="#479AF3" stop-opacity="0.461"/>
+      <stop offset="0.188" stop-color="#3B83F2" stop-opacity="0.383"/>
+      <stop offset="0.250" stop-color="#2D66EE" stop-opacity="0.462"/>
+      <stop offset="0.312" stop-color="#214FE3" stop-opacity="0.626"/>
+      <stop offset="0.375" stop-color="#1C42DF" stop-opacity="0.704"/>
+      <stop offset="0.438" stop-color="#1F3CE2" stop-opacity="0.698"/>
+      <stop offset="0.500" stop-color="#3235E4" stop-opacity="0.432"/>
+      <stop offset="0.562" stop-color="#5936E4" stop-opacity="0.214"/>
+      <stop offset="0.625" stop-color="#8941DF" stop-opacity="0.259"/>
+      <stop offset="0.688" stop-color="#A447D4" stop-opacity="0.220"/>
+      <stop offset="0.750" stop-color="#B248BA" stop-opacity="0.043"/>
+      <stop offset="0.812" stop-color="#C24EA6" stop-opacity="0.007"/>
+      <stop offset="0.875" stop-color="#D656A5" stop-opacity="0.139"/>
+      <stop offset="0.938" stop-color="#E25D9F" stop-opacity="0.292"/>
+      <stop offset="1.000" stop-color="#E66395" stop-opacity="0.294"/>
+    </linearGradient>
+    <linearGradient id="pkShade4" gradientUnits="userSpaceOnUse" x1="171.67" y1="125.85" x2="363.78" y2="458.60">
+      <stop offset="0.000" stop-color="#3874EF" stop-opacity="0.851"/>
+      <stop offset="0.062" stop-color="#3E77F0" stop-opacity="0.432"/>
+      <stop offset="0.125" stop-color="#4775F1" stop-opacity="0.125"/>
+      <stop offset="0.188" stop-color="#4A5FF1" stop-opacity="0.028"/>
+      <stop offset="0.250" stop-color="#4C4BEB" stop-opacity="0.015"/>
+      <stop offset="0.312" stop-color="#5E43E7" stop-opacity="0.006"/>
+      <stop offset="0.375" stop-color="#634AE7" stop-opacity="0.000"/>
+      <stop offset="0.438" stop-color="#295DE1" stop-opacity="0.004"/>
+      <stop offset="0.500" stop-color="#284BDC" stop-opacity="0.015"/>
+      <stop offset="0.562" stop-color="#3D31D9" stop-opacity="0.125"/>
+      <stop offset="0.625" stop-color="#6929CF" stop-opacity="0.345"/>
+      <stop offset="0.688" stop-color="#A433B8" stop-opacity="0.232"/>
+      <stop offset="0.750" stop-color="#D043A5" stop-opacity="0.482"/>
+      <stop offset="0.812" stop-color="#E35194" stop-opacity="0.664"/>
+      <stop offset="0.875" stop-color="#E86683" stop-opacity="0.605"/>
+      <stop offset="0.938" stop-color="#EA8277" stop-opacity="0.714"/>
+      <stop offset="1.000" stop-color="#EC9373" stop-opacity="0.869"/>
+    </linearGradient>
+    <clipPath id="pkClip"><path d="M391.53 443.52C382.63 444.52 373.61 444.28 364.77 442.81C355.87 441.33 347.07 438.69 339.00 434.61C330.89 430.50 323.88 424.78 318.08 417.78C312.29 410.79 307.73 402.89 301.99 395.86C296.25 388.84 289.29 383.09 281.20 378.98C273.10 374.88 264.22 372.27 255.24 371.08C237.20 368.68 219.30 372.85 202.48 379.21C185.58 385.60 169.61 394.42 152.14 399.25C134.82 404.04 116.17 405.00 98.57 401.20C80.88 397.37 64.55 388.13 51.85 375.27C45.50 368.85 40.18 361.48 36.14 353.40C32.10 345.33 29.29 336.65 27.57 327.79C25.86 318.98 25.27 309.95 25.93 300.99C26.60 291.99 28.50 283.09 31.32 274.52C34.14 265.96 37.87 257.70 42.54 250.00C47.24 242.24 52.93 235.11 59.32 228.67C65.69 222.24 72.74 216.47 80.26 211.44C87.77 206.42 95.77 202.23 103.95 198.43C112.18 194.60 120.54 191.06 128.53 186.74C136.46 182.44 143.92 177.37 150.92 171.68C157.95 165.96 164.59 159.73 170.62 152.97C176.65 146.23 181.88 138.89 186.81 131.32C191.77 123.72 196.59 116.02 202.38 109.01C208.12 102.06 214.74 95.91 222.01 90.59C229.33 85.23 237.25 80.64 245.60 77.08C253.90 73.54 262.63 71.12 271.55 69.72C289.28 66.94 308.08 67.38 325.17 73.22C342.24 79.05 357.80 90.26 367.36 105.71C372.12 113.40 375.32 122.06 376.44 131.04C377.54 139.92 376.53 148.92 373.94 157.47C368.67 174.85 357.67 190.29 343.12 201.11C328.67 211.85 311.26 219.11 293.23 220.42C284.15 221.08 275.06 220.36 265.97 220.41C256.94 220.46 247.89 221.46 239.45 224.82C231.01 228.18 223.44 233.70 217.82 240.85C212.25 247.94 208.71 256.65 208.54 265.73C208.37 274.79 211.62 283.57 217.03 290.77C222.50 298.06 230.02 303.73 238.37 307.34C255.11 314.56 274.52 312.95 290.81 305.30C299.02 301.44 306.34 296.04 313.03 289.97C319.73 283.89 325.90 277.26 332.54 271.12C345.82 258.85 361.24 248.80 378.66 243.57C395.86 238.40 414.84 238.07 431.95 243.80C449.14 249.56 463.89 261.77 473.44 277.10C483.06 292.52 486.40 310.78 486.32 328.74C486.24 346.83 482.31 364.67 474.50 381.00C466.70 397.30 455.31 412.11 441.07 423.30C426.80 434.50 409.55 441.48 391.53 443.52Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#pkClip)">
+    <path d="M391.53 443.52C382.63 444.52 373.61 444.28 364.77 442.81C355.87 441.33 347.07 438.69 339.00 434.61C330.89 430.50 323.88 424.78 318.08 417.78C312.29 410.79 307.73 402.89 301.99 395.86C296.25 388.84 289.29 383.09 281.20 378.98C273.10 374.88 264.22 372.27 255.24 371.08C237.20 368.68 219.30 372.85 202.48 379.21C185.58 385.60 169.61 394.42 152.14 399.25C134.82 404.04 116.17 405.00 98.57 401.20C80.88 397.37 64.55 388.13 51.85 375.27C45.50 368.85 40.18 361.48 36.14 353.40C32.10 345.33 29.29 336.65 27.57 327.79C25.86 318.98 25.27 309.95 25.93 300.99C26.60 291.99 28.50 283.09 31.32 274.52C34.14 265.96 37.87 257.70 42.54 250.00C47.24 242.24 52.93 235.11 59.32 228.67C65.69 222.24 72.74 216.47 80.26 211.44C87.77 206.42 95.77 202.23 103.95 198.43C112.18 194.60 120.54 191.06 128.53 186.74C136.46 182.44 143.92 177.37 150.92 171.68C157.95 165.96 164.59 159.73 170.62 152.97C176.65 146.23 181.88 138.89 186.81 131.32C191.77 123.72 196.59 116.02 202.38 109.01C208.12 102.06 214.74 95.91 222.01 90.59C229.33 85.23 237.25 80.64 245.60 77.08C253.90 73.54 262.63 71.12 271.55 69.72C289.28 66.94 308.08 67.38 325.17 73.22C342.24 79.05 357.80 90.26 367.36 105.71C372.12 113.40 375.32 122.06 376.44 131.04C377.54 139.92 376.53 148.92 373.94 157.47C368.67 174.85 357.67 190.29 343.12 201.11C328.67 211.85 311.26 219.11 293.23 220.42C284.15 221.08 275.06 220.36 265.97 220.41C256.94 220.46 247.89 221.46 239.45 224.82C231.01 228.18 223.44 233.70 217.82 240.85C212.25 247.94 208.71 256.65 208.54 265.73C208.37 274.79 211.62 283.57 217.03 290.77C222.50 298.06 230.02 303.73 238.37 307.34C255.11 314.56 274.52 312.95 290.81 305.30C299.02 301.44 306.34 296.04 313.03 289.97C319.73 283.89 325.90 277.26 332.54 271.12C345.82 258.85 361.24 248.80 378.66 243.57C395.86 238.40 414.84 238.07 431.95 243.80C449.14 249.56 463.89 261.77 473.44 277.10C483.06 292.52 486.40 310.78 486.32 328.74C486.24 346.83 482.31 364.67 474.50 381.00C466.70 397.30 455.31 412.11 441.07 423.30C426.80 434.50 409.55 441.48 391.53 443.52Z" fill="url(#pkBase)"/>
+    <rect x="5.6" y="47.9" width="500.8" height="416.1" fill="url(#pkShade0)"/>
+    <rect x="5.6" y="47.9" width="500.8" height="416.1" fill="url(#pkShade1)"/>
+    <rect x="5.6" y="47.9" width="500.8" height="416.1" fill="url(#pkShade2)"/>
+    <rect x="5.6" y="47.9" width="500.8" height="416.1" fill="url(#pkShade3)"/>
+    <rect x="5.6" y="47.9" width="500.8" height="416.1" fill="url(#pkShade4)"/>
+  </g>
+</svg>

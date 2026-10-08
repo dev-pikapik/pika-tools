@@ -105,7 +105,7 @@ The certificate's common name must be `pikapik`. Without these secrets the relea
 
 ## Icon
 
-The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dark variants. CI compiles it with `actool` on macOS 26. macOS 14 and 15 use the fallback `Resources/AppIcon.icns`, which `build.sh` also uses when `actool` isn't available. After changing the icon, regenerate the fallback:
+The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dark variants. CI compiles it with `actool` on macOS 26. macOS 14 and 15 use the fallback `Resources/AppIcon.icns`, which `build.sh` also uses when `actool` isn't available. The menu bar shows the same `pikapik.svg` as a template image. After changing the icon, regenerate the fallback and the README icon:
 
 ```bash
 swift scripts/make-icns.swift

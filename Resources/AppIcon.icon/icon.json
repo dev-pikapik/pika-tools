@@ -1,8 +1,8 @@
 {
   "fill" : {
     "linear-gradient" : [
-      "srgb:1.00000,0.80000,0.20000,1.00000",
-      "srgb:1.00000,0.49020,0.00000,1.00000"
+      "srgb:0.16471,0.16471,0.18039,1.00000",
+      "srgb:0.07059,0.07059,0.07843,1.00000"
     ],
     "orientation" : {
       "start" : {
@@ -19,12 +19,8 @@
     {
       "layers" : [
         {
-          "image-name" : "spark.svg",
-          "name" : "spark"
-        },
-        {
-          "image-name" : "arrow.svg",
-          "name" : "arrow"
+          "image-name" : "pikapik.svg",
+          "name" : "pikapik"
         }
       ],
       "shadow" : {
@@ -33,7 +29,7 @@
       },
       "specular" : true,
       "translucency" : {
-        "enabled" : true,
+        "enabled" : false,
         "value" : 0.3
       }
     }
