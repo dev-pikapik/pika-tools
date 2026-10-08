@@ -74,8 +74,7 @@ struct KeyCaps: View {
     var body: some View {
         if let system {
             Button {
-                NSWorkspace.shared.open(system.url)
-                showsHint = system.hint != nil
+                SystemShortcuts.open(system) { showsHint = true }
             } label: { caps }
                 .buttonStyle(CapsButtonStyle())
                 .help(Text("Change in System Settings"))

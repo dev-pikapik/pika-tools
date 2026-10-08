@@ -9,6 +9,9 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Changed
 - The pictures on the Animations and Games pages are drawn anew for their size, so they look sharp. A window shrinks into the Dock with round corners, like on a real Mac. The pointer clicks first, and only then a menu or a window opens. Spotlight, the app switcher and the emoji panel are see-through glass, as in macOS Tahoe.
 
+### Fixed
+- Clicking a system shortcut now takes you straight to its own list in System Settings, like Mission Control or Screenshots, not just to Keyboard. If pika-tools can’t pick the list for you, Keyboard Shortcuts still opens, and a short tip next to the keys says which list to click. The tip no longer disappears the moment System Settings opens.
+
 ## [1.25.2] - Unreleased
 
 ### Fixed
