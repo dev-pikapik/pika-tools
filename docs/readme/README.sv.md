@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Inställningar i pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-sv-dark.png">
+<img src="../media/settings-sv-light.png" alt="Inställningar i pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ Ta bort pika-tools från båda listorna i **Systeminställningar › Integritet 
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Nyheter</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Bygg själv</a> · <a href="../../LICENSE">MIT-licens</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.sv.md">Nyheter</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Bygg själv</a> · <a href="../../LICENSE">MIT-licens</a> · © 2026 pikapik</sub></p>

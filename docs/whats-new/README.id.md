@@ -1,0 +1,137 @@
+<p align="center"><a href="../readme/README.id.md"><img src="../media/icon.png" width="96" height="96" alt="pika-tools"></a></p>
+<h1 align="center">Yang baru di pika-tools</h1>
+<p align="center">Setiap pembaruan dalam beberapa kata dan satu gambar, yang terbaru di atas.</p>
+<p align="center"><sub><a href="README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <b>Bahasa Indonesia</b> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
+
+---
+
+## <a id="v1.25.0"></a>Tambah game dengan satu klik, dan pilih tombol sendiri
+
+<sub>1.25.0 · 8 Oktober 2026</sub>
+
+Kini Anda memilih game dari app yang sedang terbuka, dan menentukan sendiri tombol untuk keluar dan menutup.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.0/game-pictures-dark.png"><img src="../media/whats-new/1.25.0/game-pictures-light.png" width="340" alt=""></picture>
+
+Tekan “Tambah Game…”, dan app yang sedang terbuka muncul dengan ikon besar, seperti di Dock. Satu klik menambahkan game, atau seret ikonnya ke daftar. Anda juga bisa menjatuhkan game langsung dari Finder atau Dock. Kini app apa pun bisa menjadi game, bahkan Minecraft yang berjalan di Java, dan game yang Anda tambahkan sebelumnya tetap ada.
+
+Saklar Mode Game kini memakai kata-kata sederhana, seperti “Game tidak tertutup” atau “Pencarian tidak muncul”, dan masing-masing punya gambar kecil tentang apa yang dihentikannya. Nama di sistem, seperti Spotlight, ada di sampingnya dengan warna abu-abu.
+
+Di Pengaturan › Jendela, klik tombol di samping “Keluar dari app” atau “Tutup jendela” lalu tekan yang baru. ⌫ mengembalikan ⇧⌘Q dan ⇧⌘W, dan jika tombolnya sudah dipakai, pika-tools bertanya dulu. Mode Game juga memakai tombol Anda. Dan setiap pintasan di Pengaturan kini menunjukkan bagaimana pintasan itu benar-benar diatur di Mac Anda: tombol Anda, atau Mati.
+
+**Coba:** Pengaturan › Game, lalu “Tambah Game…”
+
+**Diperbaiki**
+
+- Memotong file di Finder mengikuti pintasan Potong yang Anda atur untuk Finder di Pengaturan Sistem.
+- Nama app di daftar tampil tanpa “.app”.
+
+---
+
+## <a id="v1.24.1"></a>Perubahan kecepatan yang langsung terlihat
+
+<sub>1.24.1 · 8 Oktober 2026</sub>
+
+Halaman Animasi kini memberi tahu di mana perubahan terlihat, dan menjaga nilai Anda sendiri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+
+Dock hanya bisa meluncur lebih cepat jika ia bersembunyi. Jika Dock Anda selalu tampil, saklar “Sembunyikan Dock secara otomatis” kini ada tepat di bawah penggeser kecepatan.
+
+Setelah ada perubahan, satu baris di bagian bawah halaman memberi tahu bahwa app menerapkannya setelah Anda membukanya lagi. Finder baru menampilkan kecepatan baru Lihat Cepat dan kolom setelah dimulai ulang, jadi baris itu punya tombol “Mulai Ulang Finder”.
+
+Penggeser tidak pernah memperlambat apa yang sudah Anda percepat, misalnya dengan perintah di Terminal. Dan “Pulihkan Default” atau menghapus pika-tools mengembalikan nilai yang Anda punya sebelumnya, bukan menghapusnya.
+
+**Coba:** Pengaturan › Animasi
+
+**Diperbaiki**
+
+- Dock tidak lagi dimulai ulang tanpa alasan saat tidak bersembunyi.
+
+---
+
+## <a id="v1.24.0"></a>Pilih seberapa cepat Mac Anda bergerak
+
+<sub>1.24.0 · 8 Oktober 2026</sub>
+
+Halaman Animasi yang baru mengatur seberapa cepat segala sesuatu terbuka, meluncur, dan muncul di Mac Anda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Satu penggeser sudah cukup. Geser, maka Dock yang tersembunyi, jendela baru, dialog simpan, Lihat Cepat, dan kolom di Finder menjadi lebih cepat bersama-sama, dari “Seperti di macOS” sampai “Instan”.
+
+Ingin menyetel satu hal saja? Setiap efek punya pengaturannya sendiri, begitu juga efek minimalkan, ikon memantul di Dock, dan animasi Finder. Di samping setiap pengaturan, gambar kecil bergerak tepat dengan kecepatan yang Anda pilih.
+
+“Pulihkan Default” hanya mengembalikan apa yang diubah pika-tools, dan menghapus app ini juga begitu. Jika Anda pernah mengatur salah satu nilai ini sendiri di Terminal, pika-tools menampilkannya apa adanya.
+
+**Coba:** Pengaturan › Animasi
+
+---
+
+## <a id="v1.23.2"></a>Saklar untuk setiap pintasan di Mode Game
+
+<sub>1.23.2 · 8 Oktober 2026</sub>
+
+Kini Anda yang menentukan, satu pintasan demi satu, apa yang dibungkam Mode Game saat Anda bermain.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+⌘Q dan ⌘W kini punya saklar terpisah, begitu juga Spotlight, Siri, ⌘Tab, Mission Control, gesekan, penunjuk, layar, dan sisanya. Pilihan Anda sebelumnya tetap terbawa.
+
+Setiap baris menunjukkan persis tombol mana yang dihentikannya, jadi Anda selalu tahu apa yang dilakukan sebuah saklar.
+
+Pengaturan bahasa papan ketik sudah keluar dari Mode Game. ⌃Spasi dan cara lain untuk mengganti bahasa selalu berfungsi, bahkan di dalam game.
+
+**Coba:** Pengaturan › Game
+
+**Diperbaiki**
+
+- Tombol dalam satu pintasan kini lebih rapat, dan ada sedikit lebih banyak ruang di antara pintasan yang berbeda, sehingga mudah melihat di mana satu berakhir dan berikutnya dimulai.
+
+---
+
+## <a id="v1.23.1"></a>Seberapa cepat internet Anda, dengan kata-kata sederhana
+
+<sub>1.23.1 · 8 Oktober 2026</sub>
+
+Tes Kecepatan memeriksa koneksi Anda dan memberi tahu dengan sederhana untuk apa koneksi itu cukup.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+
+Tekan “Cek Kecepatan”, dan dalam sekitar setengah menit Anda akan melihat unduh, unggah, ping, dan responsivitas. Di bawah angka-angka itu, kata-kata sederhana menjelaskan apakah cukup untuk film 4K, panggilan video, game online, dan unduhan besar.
+
+Pemeriksaan berjalan di server Apple, dan hasil terakhir tetap ada sampai pemeriksaan berikutnya. Tes Kecepatan punya halaman sendiri di Pengaturan, satu baris di panel bar menu, dan tautan untuk app Pintasan: `pika-tools://speed-test`.
+
+Mode Game belajar dua hal. Memblokir pintasan Control kini menjadi bagiannya: di dalam game, ⌃-klik tetap klik biasa dan pintasan dengan ⌃ tidak berjalan; di tempat lain, ⌃ berfungsi seperti biasa. Dan ia mengenali Minecraft: tambahkan Minecraft Launcher atau CurseForge ke game Anda, dan Mode Game menyala saat Minecraft sendiri ada di depan.
+
+**Coba:** Pengaturan › Tes Kecepatan, lalu “Cek Kecepatan”
+
+**Diperbaiki**
+
+- Versi uji pika-tools yang dibuat sendiri oleh orang-orang kini menyimpan pengaturannya terpisah di iCloud Drive dan tidak lagi menyentuh pengaturan Anda.
+
+---
+
+## <a id="v1.23.0"></a>Mode Game: bermain tanpa gangguan
+
+<sub>1.23.0 · 7 Oktober 2026</sub>
+
+Tambahkan game Anda, dan Mac berhenti menarik Anda keluar darinya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Selama Anda bermain, Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game. ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tetap di layar game, dan layar tetap menyala.
+
+Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, tekan ⇧⌘W. ⌥⌘Esc selalu berfungsi. pika-tools menyarankan game yang ditemukannya di Mac Anda. Mode Game mati sampai Anda menyalakannya.
+
+Tetap Terjaga kini membiarkan Anda memilih apa yang dilakukan layar: tetap menyala, tanpa penghemat layar atau layar kunci, atau mati seperti biasa sementara Mac tetap bekerja. Tombol baru “Matikan layar sekarang” langsung menggelapkannya; gerakkan mouse atau tekan tombol untuk menyalakannya lagi.
+
+**Coba:** Pengaturan › Game, lalu “Tambah Game…”
+
+**Diperbaiki**
+
+- Di Mac tanpa penutup, Tetap Terjaga tidak lagi menampilkan pilihan untuk penutup yang tertutup.
+
+---
+
+<p align="center"><sub>Versi sebelumnya ada di <a href="../../CHANGELOG.md">catatan perubahan</a> (dalam bahasa Inggris).</sub></p>

@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="การตั้งค่า pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-th-dark.png">
+<img src="../media/settings-th-light.png" alt="การตั้งค่า pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">มีอะไรใหม่</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">สร้างเอง</a> · <a href="../../LICENSE">สัญญาอนุญาต MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.th.md">มีอะไรใหม่</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">สร้างเอง</a> · <a href="../../LICENSE">สัญญาอนุญาต MIT</a> · © 2026 pikapik</sub></p>

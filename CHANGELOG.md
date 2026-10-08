@@ -2,6 +2,8 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
+
 ## [1.25.0] - Unreleased
 
 ### Added

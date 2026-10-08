@@ -1,0 +1,137 @@
+<p align="center"><a href="../readme/README.nl.md"><img src="../media/icon.png" width="96" height="96" alt="pika-tools"></a></p>
+<h1 align="center">Nieuw in pika-tools</h1>
+<p align="center">Elke update in een paar woorden en één plaatje, de nieuwste bovenaan.</p>
+<p align="center"><sub><a href="README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <b>Nederlands</b> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
+
+---
+
+## <a id="v1.25.0"></a>Een game toevoegen met één klik, en je eigen toetsen
+
+<sub>1.25.0 · 8 oktober 2026</sub>
+
+Kies een game uit wat er nu open is, en bepaal zelf de toetsen om te stoppen en te sluiten.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.0/game-pictures-dark.png"><img src="../media/whats-new/1.25.0/game-pictures-light.png" width="340" alt=""></picture>
+
+Klik op ‘Voeg game toe…’, en de apps die nu open zijn verschijnen met grote symbolen, net als in het Dock. Eén klik voegt een game toe, of sleep het symbool naar de lijst. Je kunt een game ook meteen vanuit de Finder of het Dock neerzetten. Elke app kan nu een game zijn, zelfs Minecraft dat op Java draait, en je eerdere games blijven staan.
+
+De schakelaars van Gamemodus spreken nu gewone taal, zoals ‘De game sluit niet’ of ‘Zoeken springt niet open’, en elk heeft een klein plaatje van wat hij tegenhoudt. De naam in het systeem, zoals Spotlight, staat er grijs naast.
+
+Klik in Instellingen › Vensters op de toetsen naast ‘Stop app’ of ‘Sluit venster’ en druk nieuwe in. Met ⌫ krijg je ⇧⌘Q en ⇧⌘W terug, en als de toetsen al in gebruik zijn, vraagt pika-tools het eerst. Gamemodus gebruikt ook jouw toetsen. En elke toetscombinatie in Instellingen laat nu zien hoe die echt op je Mac is ingesteld: jouw toetsen, of Uit.
+
+**Probeer het:** Instellingen › Games, dan ‘Voeg game toe…’
+
+**Opgelost**
+
+- Bestanden knippen in de Finder volgt de toetscombinatie voor Knip die je in Systeeminstellingen voor de Finder hebt ingesteld.
+- Appnamen in lijsten staan er zonder ‘.app’.
+
+---
+
+## <a id="v1.24.1"></a>Sneller, en je ziet het meteen
+
+<sub>1.24.1 · 8 oktober 2026</sub>
+
+De pagina Animaties vertelt nu waar je een wijziging terugziet, en houdt je eigen waarden veilig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+
+Het Dock kan alleen sneller in- en uitschuiven als het zich verbergt. Staat het jouwe altijd in beeld, dan zit de schakelaar ‘Dock automatisch verbergen’ nu direct onder de snelheidsschuif.
+
+Na een wijziging zegt een regel onderaan de pagina dat apps die overnemen zodra je ze opnieuw opent. De Finder toont nieuwe snelheden voor Snel bekijken en kolommen pas na een herstart, dus die regel heeft een knop ‘Herstart Finder’.
+
+De schuif maakt nooit iets trager dat je al sneller had gemaakt, bijvoorbeeld met opdrachten in Terminal. En ‘Herstel standaardinstellingen’ of pika-tools verwijderen zet de waarden terug die je eerst had, in plaats van ze te wissen.
+
+**Probeer het:** Instellingen › Animaties
+
+**Opgelost**
+
+- Het Dock herstart niet meer voor niets als het zich niet verbergt.
+
+---
+
+## <a id="v1.24.0"></a>Kies hoe snel je Mac beweegt
+
+<sub>1.24.0 · 8 oktober 2026</sub>
+
+Met de nieuwe pagina Animaties bepaal je hoe snel dingen op je Mac openen, schuiven en verschijnen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Eén schuif is genoeg. Verschuif hem, en het verborgen Dock, nieuwe vensters, bewaardialogen, Snel bekijken en kolommen in de Finder worden samen sneller, van ‘Zoals in macOS’ tot ‘Direct’.
+
+Wil je maar één ding aanpassen? Elk effect heeft zijn eigen instelling, net als het minimaliseereffect, stuiterende symbolen in het Dock en Finder-animaties. Naast elke instelling beweegt een klein plaatje precies op de snelheid die je kiest.
+
+‘Herstel standaardinstellingen’ zet alleen terug wat pika-tools heeft veranderd, en verwijderen doet hetzelfde. Heb je ooit zelf een van deze waarden in Terminal ingesteld, dan toont pika-tools die zoals hij is.
+
+**Probeer het:** Instellingen › Animaties
+
+---
+
+## <a id="v1.23.2"></a>Een schakelaar voor elke toetscombinatie in Gamemodus
+
+<sub>1.23.2 · 8 oktober 2026</sub>
+
+Nu bepaal je per toetscombinatie wat Gamemodus stil houdt terwijl je speelt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+⌘Q en ⌘W hebben nu elk een eigen schakelaar, net als Spotlight, Siri, ⌘Tab, Mission Control, vegen, de aanwijzer, het scherm en de rest. Je eerdere keuzes blijven staan.
+
+Elke rij laat precies zien welke toetsen hij tegenhoudt, dus je weet altijd wat een schakelaar doet.
+
+De instelling voor de toetsenbordtaal is uit Gamemodus verdwenen. ⌃Spatie en andere manieren om van taal te wisselen werken altijd, ook in een game.
+
+**Probeer het:** Instellingen › Games
+
+**Opgelost**
+
+- De toetsen van één combinatie staan dichter bij elkaar en tussen verschillende combinaties zit wat meer ruimte, zodat je makkelijk ziet waar de ene ophoudt en de volgende begint.
+
+---
+
+## <a id="v1.23.1"></a>Hoe snel je internet is, in gewone woorden
+
+<sub>1.23.1 · 8 oktober 2026</sub>
+
+Snelheidstest controleert je verbinding en vertelt simpel waar die goed voor is.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+
+Klik op ‘Test snelheid’ en na ongeveer een halve minuut zie je download, upload, ping en reactiesnelheid. Onder de cijfers staat in gewone woorden of het genoeg is voor 4K-films, videogesprekken, online games en grote downloads.
+
+De meting loopt via servers van Apple en het laatste resultaat blijft staan tot de volgende. Snelheidstest heeft een eigen pagina in Instellingen, een rij in het menubalkpaneel en een link voor de app Opdrachten: `pika-tools://speed-test`.
+
+Gamemodus heeft twee dingen geleerd. Het blokkeren van Control-combinaties hoort er nu bij: in een game blijft ⌃-klik een klik en doen combinaties met ⌃ niets; overal elders werkt ⌃ zoals altijd. En hij herkent Minecraft: voeg de Minecraft Launcher of CurseForge toe aan je games, en Gamemodus gaat aan zodra Minecraft zelf vooraan staat.
+
+**Probeer het:** Instellingen › Snelheidstest, dan ‘Test snelheid’
+
+**Opgelost**
+
+- Testversies van pika-tools die mensen zelf bouwen, houden hun instellingen apart in iCloud Drive en komen niet meer aan de jouwe.
+
+---
+
+## <a id="v1.23.0"></a>Gamemodus: spelen zonder onderbrekingen
+
+<sub>1.23.0 · 7 oktober 2026</sub>
+
+Voeg je games toe, en je Mac haalt je er niet meer uit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Terwijl je speelt, openen Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen niet boven de game. ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer blijft op het scherm van de game en het scherm blijft aan.
+
+Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. pika-tools stelt games voor die het op je Mac vindt. Gamemodus staat uit tot je hem aanzet.
+
+Bij Wakker houden kies je nu wat het scherm doet: aan blijven, zonder schermbeveiliging of vergrendelscherm, of zoals gewoonlijk uitgaan terwijl je Mac doorwerkt. Met de nieuwe knop ‘Zet het scherm nu uit’ wordt het meteen donker; beweeg de muis of druk op een toets om het terug te halen.
+
+**Probeer het:** Instellingen › Games, dan ‘Voeg game toe…’
+
+**Opgelost**
+
+- Op Macs zonder klep toont Wakker houden geen opties meer voor een dichte klep.
+
+---
+
+<p align="center"><sub>Oudere versies staan in het <a href="../../CHANGELOG.md">wijzigingslogboek</a> (in het Engels).</sub></p>

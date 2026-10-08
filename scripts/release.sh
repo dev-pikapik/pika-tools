@@ -5,6 +5,8 @@ cd "$(dirname "$0")/.."
 VERSION="${1:-}"
 [ -n "$VERSION" ] || { echo "Usage: ./scripts/release.sh 1.3.0" >&2; exit 1; }
 [ -z "$(git status --porcelain)" ] || { echo "Commit your changes first." >&2; exit 1; }
+MISSING=$(grep -LF "id=\"v$VERSION\"" docs/whats-new/README*.md || true)
+[ -z "$MISSING" ] || { echo "Write the What’s new post for $VERSION first. It’s missing in:" >&2; echo "$MISSING" >&2; exit 1; }
 
 PLIST="Sources/pika-tools/Info.plist"
 BUILD=$(( $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST") + 1 ))

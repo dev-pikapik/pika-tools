@@ -320,4 +320,4 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Что нового</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Тап Homebrew</a> · <a href="../../CONTRIBUTING.md">Сборка из исходников</a> · <a href="../../LICENSE">Лицензия MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.ru.md">Что нового</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Тап Homebrew</a> · <a href="../../CONTRIBUTING.md">Сборка из исходников</a> · <a href="../../LICENSE">Лицензия MIT</a> · © 2026 pikapik</sub></p>

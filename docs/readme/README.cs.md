@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Nastavení pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-cs-dark.png">
+<img src="../media/settings-cs-light.png" alt="Nastavení pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ V **Nastavení systému › Soukromí a zabezpečení** odeberte pika-tools z ob
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Novinky</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Sestavení ze zdrojů</a> · <a href="../../LICENSE">Licence MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.cs.md">Novinky</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Sestavení ze zdrojů</a> · <a href="../../LICENSE">Licence MIT</a> · © 2026 pikapik</sub></p>

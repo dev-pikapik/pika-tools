@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="pika-tools 設定">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-zh-Hant-dark.png">
+<img src="../media/settings-zh-Hant-light.png" alt="pika-tools 設定">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">更新內容</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">自行建置</a> · <a href="../../LICENSE">MIT 授權</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.zh-Hant.md">更新內容</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">自行建置</a> · <a href="../../LICENSE">MIT 授權</a> · © 2026 pikapik</sub></p>

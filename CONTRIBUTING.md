@@ -92,7 +92,7 @@ for f in Resources/*.lproj/Localizable.strings; do plutil -lint "$f"; done
 
 The script bumps the version in `Info.plist`, commits, tags `v1.3.0` and pushes. GitHub Actions does the rest on a `macos-26` runner: builds the universal app, signs it, checks the signature, publishes the `.zip` and `.dmg` to Releases and updates `Casks/pika-tools.rb` on `main`. Installed copies pick up the new version on their own.
 
-Update `CHANGELOG.md` before running the script.
+Before running the script, update `CHANGELOG.md` and add the version’s post to all 23 pages in `docs/whats-new/`: a short title, one sentence, a picture, a few short paragraphs and what to try. Pictures live in `docs/media/whats-new/<version>/`, and `scripts/render-media.sh <card>` draws them in light and dark. The script won’t start until every page has the post. The English post becomes the text of the GitHub release; `./scripts/release-notes.sh 1.3.0` shows it.
 
 ### Signing
 

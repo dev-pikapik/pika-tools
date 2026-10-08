@@ -1,0 +1,137 @@
+<p align="center"><a href="../readme/README.tr.md"><img src="../media/icon.png" width="96" height="96" alt="pika-tools"></a></p>
+<h1 align="center">pika-tools’taki yenilikler</h1>
+<p align="center">Her güncelleme birkaç kelime ve bir resimle, en yenisi en üstte.</p>
+<p align="center"><sub><a href="README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <b>Türkçe</b> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
+
+---
+
+## <a id="v1.25.0"></a>Tek tıkla oyun ekleyin, tuşları kendiniz seçin
+
+<sub>1.25.0 · 8 Ekim 2026</sub>
+
+Artık oyunu açık uygulamalar arasından seçebilir, çıkma ve kapatma tuşlarını kendiniz belirleyebilirsiniz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.0/game-pictures-dark.png"><img src="../media/whats-new/1.25.0/game-pictures-light.png" width="340" alt=""></picture>
+
+“Oyun Ekle…”ye basın; şu an açık olan uygulamalar Dock’taki gibi büyük simgelerle görünür. Tek tıklama bir oyunu ekler, ya da simgesini listeye sürükleyin. Bir oyunu doğrudan Finder’dan veya Dock’tan da bırakabilirsiniz. Artık her uygulama oyun olabilir, Java ile çalışan Minecraft bile; daha önce eklediğiniz oyunlar da yerinde kalır.
+
+Oyun Modu anahtarları artık sade bir dille konuşuyor, örneğin “Oyun kapanmaz” ya da “Arama ekrana gelmez”, ve her birinin neyi durdurduğunu gösteren küçük bir resmi var. Spotlight gibi sistemdeki adı da yanında gri olarak durur.
+
+Ayarlar › Pencereler’de “Uygulamadan çık” ya da “Pencereyi kapat”ın yanındaki tuşlara tıklayın ve yenilerine basın. ⌫ ⇧⌘Q ve ⇧⌘W’yi geri getirir; tuşlar zaten kullanılıyorsa pika-tools önce size sorar. Oyun Modu da sizin tuşlarınızı kullanır. Ayrıca Ayarlar’daki her kestirme artık Mac’inizde gerçekte nasıl ayarlandığını gösteriyor: sizin tuşlarınız ya da Kapalı.
+
+**Deneyin:** Ayarlar › Oyunlar, ardından “Oyun Ekle…”
+
+**Düzeltilenler**
+
+- Finder’da dosya kesme, Sistem Ayarları’nda Finder için ayarladığınız Kes kestirmesini izler.
+- Listelerdeki uygulama adları “.app” olmadan görünür.
+
+---
+
+## <a id="v1.24.1"></a>Hemen göreceğiniz hız değişiklikleri
+
+<sub>1.24.1 · 8 Ekim 2026</sub>
+
+Animasyonlar sayfası artık bir değişikliğin nerede görüneceğini söylüyor ve kendi değerlerinizi koruyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+
+Dock yalnızca gizlendiğinde daha hızlı kayabilir. Sizinki hep yerinde duruyorsa, “Dock’u otomatik olarak gizle” anahtarı artık hız sürgüsünün hemen altında.
+
+Bir değişiklikten sonra sayfanın altındaki bir satır, uygulamaları yeniden açtığınızda değişikliğin geçerli olacağını söyler. Finder, Hızlı Bakış ve sütunların yeni hızını ancak yeniden başlatıldıktan sonra gösterir; bu yüzden satırda bir “Finder’ı yeniden başlat” düğmesi var.
+
+Sürgü, örneğin Terminal komutlarıyla zaten hızlandırdığınız bir şeyi asla yavaşlatmaz. “Saptanmışlara Dön” ya da pika-tools’u kaldırmak da değerlerinizi silmek yerine önceki hâllerine geri getirir.
+
+**Deneyin:** Ayarlar › Animasyonlar
+
+**Düzeltilenler**
+
+- Dock gizlenmiyorken artık boş yere yeniden başlamıyor.
+
+---
+
+## <a id="v1.24.0"></a>Mac’inizin ne kadar hızlı hareket edeceğini seçin
+
+<sub>1.24.0 · 8 Ekim 2026</sub>
+
+Yeni Animasyonlar sayfası, Mac’inizde her şeyin ne kadar hızlı açılacağını, kayacağını ve belireceğini belirler.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Tek bir sürgü yeter. Onu kaydırdığınızda gizli Dock, yeni pencereler, Kaydet pencereleri, Hızlı Bakış ve Finder’daki sütunlar birlikte hızlanır; “macOS’teki gibi” ayarından “Anında” ayarına kadar.
+
+Yalnızca bir şeyi mi ayarlamak istiyorsunuz? Her efektin kendi ayarı var; küçültme efekti, Dock’ta zıplayan simgeler ve Finder animasyonları için de öyle. Her ayarın yanında küçük bir resim tam seçtiğiniz hızda hareket eder.
+
+“Saptanmışlara Dön” yalnızca pika-tools’un değiştirdiklerini geri alır; uygulamayı kaldırmak da aynısını yapar. Bu değerlerden birini bir zamanlar Terminal’de kendiniz ayarladıysanız, pika-tools onu olduğu gibi gösterir.
+
+**Deneyin:** Ayarlar › Animasyonlar
+
+---
+
+## <a id="v1.23.2"></a>Oyun Modu’nda her kestirme için ayrı anahtar
+
+<sub>1.23.2 · 8 Ekim 2026</sub>
+
+Artık oynarken Oyun Modu’nun neyi susturacağına kestirme kestirme siz karar veriyorsunuz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+⌘Q ve ⌘W’nin artık ayrı anahtarları var; Spotlight, Siri, ⌘Tab, Mission Control, kaydırmalar, imleç, ekran ve geri kalanı için de öyle. Önceki seçimleriniz korunur.
+
+Her satır, durdurduğu tuşları tam olarak gösterir; böylece bir anahtarın ne yaptığını her zaman bilirsiniz.
+
+Klavye dili ayarı Oyun Modu’ndan çıktı. ⌃Boşluk ve dili değiştirmenin diğer yolları her zaman, oyunda bile çalışır.
+
+**Deneyin:** Ayarlar › Oyunlar
+
+**Düzeltilenler**
+
+- Aynı kestirmenin tuşları birbirine daha yakın, farklı kestirmeler arasında ise biraz daha fazla boşluk var; birinin nerede bitip diğerinin nerede başladığı kolayca görülüyor.
+
+---
+
+## <a id="v1.23.1"></a>İnternetiniz ne kadar hızlı, basit kelimelerle
+
+<sub>1.23.1 · 8 Ekim 2026</sub>
+
+Hız Testi bağlantınızı kontrol eder ve neye yettiğini size basitçe söyler.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+
+“Hızı Ölç”e basın; yarım dakika kadar sonra indirme, yükleme, ping ve tepki hızını görürsünüz. Rakamların altında, 4K filmler, görüntülü aramalar, çevrimiçi oyunlar ve büyük indirmeler için yeterli olup olmadığı basit kelimelerle yazar.
+
+Ölçüm Apple’ın sunucularında yapılır ve son sonuç bir sonrakine kadar kalır. Hız Testi’nin Ayarlar’da kendi sayfası, menü çubuğu panelinde bir satırı ve Kestirmeler uygulaması için bir bağlantısı var: `pika-tools://speed-test`.
+
+Oyun Modu iki şey öğrendi. Control kestirmelerini engelleme artık onun bir parçası: oyunda ⌃-tıklama normal bir tıklama olarak kalır ve ⌃ kestirmeleri çalışmaz; başka her yerde ⌃ her zamanki gibi çalışır. Bir de Minecraft’ı tanıyor: Minecraft Launcher’ı ya da CurseForge’u oyunlarınıza ekleyin, Minecraft’ın kendisi öndeyken Oyun Modu açılır.
+
+**Deneyin:** Ayarlar › Hız Testi, ardından “Hızı Ölç”
+
+**Düzeltilenler**
+
+- İnsanların kendi derlediği pika-tools test sürümleri ayarlarını iCloud Drive’da ayrı tutar ve artık sizinkilere dokunmaz.
+
+---
+
+## <a id="v1.23.0"></a>Oyun Modu: kesintisiz oynayın
+
+<sub>1.23.0 · 7 Ekim 2026</sub>
+
+Oyunlarınızı ekleyin, Mac sizi onlardan koparmayı bıraksın.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Siz oynarken Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz. ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç oyunun ekranında kalır ve ekran açık kalır.
+
+Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. pika-tools Mac’inizde bulduğu oyunları önerir. Oyun Modu siz açana kadar kapalıdır.
+
+Uyanık Tut artık ekranın ne yapacağını seçmenize izin veriyor: ekran koruyucu ve kilit ekranı olmadan açık kalsın ya da Mac çalışmaya devam ederken her zamanki gibi kapansın. Yeni “Ekranı şimdi kapat” düğmesi ekranı hemen karartır; geri getirmek için fareyi oynatın ya da bir tuşa basın.
+
+**Deneyin:** Ayarlar › Oyunlar, ardından “Oyun Ekle…”
+
+**Düzeltilenler**
+
+- Kapağı olmayan Mac’lerde Uyanık Tut artık kapak kapalıyken seçeneklerini göstermiyor.
+
+---
+
+<p align="center"><sub>Daha eski sürümler <a href="../../CHANGELOG.md">değişiklik günlüğünde</a> (İngilizce).</sub></p>
