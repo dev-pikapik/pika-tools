@@ -1,22 +1,22 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
-<h1 align="center">pika-tools</h1>
+<h1 align="center">pikapik</h1>
 <p align="center">Drobne usprawnienia klawiatury, myszy, okien i Findera, prosto z paska menu Twojego Maca.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <b>Polski</b> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="../media/settings-pl-dark.png">
-<img src="../media/settings-pl-light.png" alt="Ustawienia pika-tools">
+<img src="../media/settings-pl-light.png" alt="Ustawienia pikapik">
 </picture>
 </p>
 
 ## Instalacja
 
 ```bash
-brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 ```
 
-pika-tools pojawi się na pasku menu u góry ekranu. Wszystko jest wyłączone, dopóki sam tego nie włączysz.
+pikapik pojawi się na pasku menu u góry ekranu. Wszystko jest wyłączone, dopóki sam tego nie włączysz.
 
 <details>
 <summary>Nie masz Homebrew? Dwa inne sposoby</summary>
@@ -27,7 +27,7 @@ Bez Homebrew: otwórz Terminal, wklej ten wiersz i naciśnij Return:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-Możesz też pobrać [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), otworzyć go i przeciągnąć aplikację do folderu Aplikacje.
+Możesz też pobrać [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), otworzyć go i przeciągnąć aplikację do folderu Aplikacje.
 
 Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruchamiają ją, proszą o uprawnienia i włączają otwieranie po zalogowaniu. Potem aplikacja uaktualnia się sama, zobacz **Uaktualnienia**. Jak ją usunąć, opisano w sekcji **Odinstalowanie**.
 
@@ -175,14 +175,14 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <details>
 <summary>Pierwsze uruchomienie</summary>
 
-pika-tools potrzebuje dwóch uprawnień. Przy pierwszym uruchomieniu otwiera ustawienia na stronie Uprawnienia, która prowadzi krok po kroku, a macOS pokazuje własne prośby. Przejdź do **Ustawienia systemowe › Prywatność i ochrona** i włącz pika-tools w sekcjach:
+pikapik potrzebuje dwóch uprawnień. Przy pierwszym uruchomieniu otwiera ustawienia na stronie Uprawnienia, która prowadzi krok po kroku, a macOS pokazuje własne prośby. Przejdź do **Ustawienia systemowe › Prywatność i ochrona** i włącz pikapik w sekcjach:
 
 - **Dostępność**, aby aplikacja mogła zmienić naciśnięcie klawisza lub kliknięcie, zanim dotrze ono do innych aplikacji.
 - **Monitorowanie wprowadzania**, aby aplikacja w ogóle widziała naciśnięcia klawiszy i kliknięcia.
 
 Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
-pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Jedyne połączenie z siecią to sprawdzanie uaktualnień, które pyta GitHub o najnowsze wydanie.
+pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Jedyne połączenie z siecią to sprawdzanie uaktualnień, które pyta GitHub o najnowsze wydanie.
 
 </details>
 
@@ -197,7 +197,7 @@ pika-tools nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub kl
 
 **Home i End na początek i koniec wiersza.** Gdy piszesz, Home przenosi kursor na początek wiersza, a End na jego koniec, zamiast przewijać stronę. Z ⇧ zaznaczają tekst do tego miejsca, z ⌘ przechodzą na początek lub koniec całego tekstu. Poza polami tekstowymi oraz w terminalach, maszynach wirtualnych i aplikacjach pulpitu zdalnego klawisze działają jak dotąd. Możesz dodać inne aplikacje, w których mają działać jak zwykle. Domyślnie wyłączone.
 
-**Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pika-tools, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
+**Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pikapik, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
 
 **Przewijaj o wiersze.** Każde kliknięcie kółka myszy przewija tyle samo wierszy, bez względu na to, jak szybko nim kręcisz. Wybierz od 1 do 10 wierszy na kliknięcie, domyślnie 3. Naturalne przewijanie zostaje takie, jakie ustawisz w Ustawieniach systemowych. Działa tylko dla myszy, gładzik zostaje bez zmian. Domyślnie wyłączone. Obok suwaka **Odległość na kliknięcie** mała strona przewija się o wybraną odległość, a kropka oznacza wartość domyślną.
 
@@ -221,11 +221,11 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Delete usuwa pliki w Finderze.** Zaznacz pliki i naciśnij ⌫ lub ⌦ (fn ⌫ na laptopie) – trafią do Kosza, tak jak po ⌘⌫. Gdy zmieniasz nazwę pliku, szukasz lub piszesz w innym polu, klawisze kasują litery jak zwykle. Domyślnie wyłączone.
 
-**Mniejsza kopia w Finderze.** Kliknij prawym plik w Finderze i wybierz **Utwórz mniejszą kopię**. Obok pojawi się lżejsza wersja zdjęcia, GIF-a, PDF-a lub wideo, często kilka razy mniejsza. Nieskompresowany dźwięk, np. WAV lub AIFF, zmienia się w zgrabny M4A. Jeśli pliku nie da się już zmniejszyć, kopia nie powstaje, a pika-tools o tym mówi. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Domyślnie wyłączone.
+**Mniejsza kopia w Finderze.** Kliknij prawym plik w Finderze i wybierz **Utwórz mniejszą kopię**. Obok pojawi się lżejsza wersja zdjęcia, GIF-a, PDF-a lub wideo, często kilka razy mniejsza. Nieskompresowany dźwięk, np. WAV lub AIFF, zmienia się w zgrabny M4A. Jeśli pliku nie da się już zmniejszyć, kopia nie powstaje, a pikapik o tym mówi. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Domyślnie wyłączone.
 
 **Konwersja w Finderze.** Kliknij prawym plik w Finderze i wybierz **Konwertuj na**, aby zapisać go w innym formacie: obraz jako JPEG, PNG, HEIC, GIF, TIFF lub PDF, wideo jako MP4, MOV albo sam dźwięk, muzykę jako M4A, WAV lub AIFF. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Włącza się osobno od mniejszej kopii. Domyślnie wyłączone.
 
-**Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pika-tools podpowiada gry, które znajdzie na Twoim Macu. W grze Control-kliknięcie pozostaje zwykłym kliknięciem, a Control ze strzałkami nie zmienia biurka. Rozpoznaje też Minecrafta: dodaj Minecraft Launcher lub CurseForge, a tryb włączy się w samym Minecrafcie. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
+**Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pikapik podpowiada gry, które znajdzie na Twoim Macu. W grze Control-kliknięcie pozostaje zwykłym kliknięciem, a Control ze strzałkami nie zmienia biurka. Rozpoznaje też Minecrafta: dodaj Minecraft Launcher lub CurseForge, a tryb włączy się w samym Minecrafcie. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
 
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
@@ -240,9 +240,9 @@ Aplikacja używa języka systemu lub tego, który wybierzesz w ustawieniach. Dos
 <details>
 <summary>Nie usypiaj</summary>
 
-Nie pozwala Macowi przejść w stan uśpienia, gdy nie ma Cię przy klawiaturze: na dowolny czas od 1 sekundy do 365 dni lub do momentu wyłączenia. Włącz to w menu, a czas trwania ustaw w ustawieniach: wpisz dni, godziny, minuty i sekundy, użyj ↑ i ↓ albo kliknij gotową opcję od 15 minut do 8 godzin. Menu pokazuje, ile czasu zostało i kiedy się skończy. Dla opcji **Ekran** są dwa warianty. **Zawsze włączony**: nie gaśnie, bez wygaszacza i ekranu blokady. **Gaśnie jak zwykle**: gaśnie według własnego licznika, a Mac dalej pracuje. **Wyłącz ekran teraz** (jest też w menu) od razu wygasza ekran, a Mac dalej pracuje: aby go przywrócić, rusz myszą lub naciśnij dowolny klawisz. Zakończenie pika-tools kończy także Nie usypiaj.
+Nie pozwala Macowi przejść w stan uśpienia, gdy nie ma Cię przy klawiaturze: na dowolny czas od 1 sekundy do 365 dni lub do momentu wyłączenia. Włącz to w menu, a czas trwania ustaw w ustawieniach: wpisz dni, godziny, minuty i sekundy, użyj ↑ i ↓ albo kliknij gotową opcję od 15 minut do 8 godzin. Menu pokazuje, ile czasu zostało i kiedy się skończy. Dla opcji **Ekran** są dwa warianty. **Zawsze włączony**: nie gaśnie, bez wygaszacza i ekranu blokady. **Gaśnie jak zwykle**: gaśnie według własnego licznika, a Mac dalej pracuje. **Wyłącz ekran teraz** (jest też w menu) od razu wygasza ekran, a Mac dalej pracuje: aby go przywrócić, rusz myszą lub naciśnij dowolny klawisz. Zakończenie pikapik kończy także Nie usypiaj.
 
-Na MacBooku możesz też włączyć **Pracuj z zamkniętą pokrywą**. macOS nie ma takiego przełącznika, więc pika-tools uruchamia `pmset -a disablesleep 1` i prosi o hasło administratora: tylko administrator może zmienić sposób usypiania Maca. Ustawienie samo wraca do normy, gdy Nie usypiaj się skończy, gdy zakończysz aplikację lub gdy ta ulegnie awarii. Jeśli nie podasz hasła, nic się nie zmieni. Zadbaj o dobrą wentylację Maca z zamkniętą pokrywą. **Zatrzymaj, gdy bateria spadnie poniżej 20%** kończy sesję, zanim bateria się wyczerpie.
+Na MacBooku możesz też włączyć **Pracuj z zamkniętą pokrywą**. macOS nie ma takiego przełącznika, więc pikapik uruchamia `pmset -a disablesleep 1` i prosi o hasło administratora: tylko administrator może zmienić sposób usypiania Maca. Ustawienie samo wraca do normy, gdy Nie usypiaj się skończy, gdy zakończysz aplikację lub gdy ta ulegnie awarii. Jeśli nie podasz hasła, nic się nie zmieni. Zadbaj o dobrą wentylację Maca z zamkniętą pokrywą. **Zatrzymaj, gdy bateria spadnie poniżej 20%** kończy sesję, zanim bateria się wyczerpie.
 
 Keep Awake oraz tryby wyświetlacza i zamkniętej klapy można umieścić na przycisku w Centrum sterowania, na pasku menu lub w widżecie na pulpicie przez aplikację Skróty, z linkami skopiowanymi z Ustawień › Bez usypiania.
 
@@ -258,7 +258,7 @@ Pokazuje, jak szybki jest teraz twój internet. Kliknij **Sprawdź prędkość**
 <details>
 <summary>Ustawienia</summary>
 
-Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po prostu uruchom pika-tools ponownie z Findera, Launchpada lub Spotlight. Gdy okno jest otwarte, aplikacja pojawia się w Docku i w ⌘Tab.
+Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po prostu uruchom pikapik ponownie z Findera, Launchpada lub Spotlight. Gdy okno jest otwarte, aplikacja pojawia się w Docku i w ⌘Tab.
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
@@ -273,18 +273,18 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 
 Wiele ustawień ma mały obrazek pokazujący, co robią, na przykład Maca, który nie zasypia, albo okno chowające się za Dociem. Obrazek zmienia się razem z przełącznikiem i stoi w miejscu, gdy w Ustawieniach systemowych jest włączone „Ogranicz ruch”.
 
-Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta o potwierdzenie, potem wyłącza narzędzia z tej strony i przywraca ich opcje, jakby pika-tools nigdy ich nie dotykał.
+Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta o potwierdzenie, potem wyłącza narzędzia z tej strony i przywraca ich opcje, jakby pikapik nigdy ich nie dotykał.
 
-**Synchronizuj ustawienia przez iCloud** sprawia, że pika-tools jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pika-tools w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
+**Synchronizuj ustawienia przez iCloud** sprawia, że pikapik jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pika-tools w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
 
 </details>
 
 <details>
 <summary>Uaktualnienia</summary>
 
-pika-tools sprawdza nowe wersje przy uruchomieniu i co 6 godzin. Możesz to wyłączyć w Ustawienia › Ogólne. Gdy pojawi się nowa wersja, w menu pokaże się przycisk **Uaktualnij do …**: jedno kliknięcie i aplikacja pobierze uaktualnienie, zainstaluje je i uruchomi się ponownie. Możesz też sprawdzić ręcznie przyciskiem **Sprawdź teraz** w Ustawienia › Ogólne.
+pikapik sprawdza nowe wersje przy uruchomieniu i co 6 godzin. Możesz to wyłączyć w Ustawienia › Ogólne. Gdy pojawi się nowa wersja, w menu pokaże się przycisk **Uaktualnij do …**: jedno kliknięcie i aplikacja pobierze uaktualnienie, zainstaluje je i uruchomi się ponownie. Możesz też sprawdzić ręcznie przyciskiem **Sprawdź teraz** w Ustawienia › Ogólne.
 
-Z Homebrew możesz też uruchomić `brew upgrade --cask pika-tools`.
+Z Homebrew możesz też uruchomić `brew upgrade --cask pikapik`.
 
 Od wersji 1.3 uprawnienia zostają zachowane po uaktualnieniach.
 
@@ -297,7 +297,7 @@ Od wersji 1.3 uprawnienia zostają zachowane po uaktualnieniach.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
 ```
 
-Jeśli instalacja była przez Homebrew: `brew uninstall --cask --zap pika-tools`.
+Jeśli instalacja była przez Homebrew: `brew uninstall --cask --zap pikapik`.
 
 Oba sposoby kończą aplikację, usuwają ją z rzeczy otwieranych podczas logowania i kasują. Skrypt dodatkowo resetuje jej uprawnienia.
 
@@ -310,20 +310,20 @@ Oba sposoby kończą aplikację, usuwają ją z rzeczy otwieranych podczas logow
 macOS dzieli dostęp do klawiatury i myszy na dwie części. Monitorowanie wprowadzania pozwala aplikacji widzieć zdarzenia, a Dostępność pozwala je zmieniać. Do zablokowania skrótu potrzebne są oba.
 
 **macOS informuje, że aplikacja pochodzi od niezidentyfikowanego dewelopera.**
-pika-tools jest podpisana, ale nie jest poświadczona przez Apple. Homebrew i skrypt instalacyjny załatwiają to za Ciebie. Jeśli korzystasz z pliku dmg, otwórz **Ustawienia systemowe › Prywatność i ochrona** i kliknij **Otwórz mimo to** lub uruchom:
+pikapik jest podpisana, ale nie jest poświadczona przez Apple. Homebrew i skrypt instalacyjny załatwiają to za Ciebie. Jeśli korzystasz z pliku dmg, otwórz **Ustawienia systemowe › Prywatność i ochrona** i kliknij **Otwórz mimo to** lub uruchom:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/pika-tools.app
+xattr -dr com.apple.quarantine /Applications/pikapik.app
 ```
 
 **Czy działa na Macach z procesorem Intel?**
 Tak. To aplikacja uniwersalna dla Apple Silicon i Intel, wymaga macOS 14 Sonoma lub nowszego.
 
 **Uprawnienie jest włączone, ale nic nie działa.**
-W **Ustawieniach systemowych › Prywatność i ochrona** usuń pika-tools z obu list przyciskiem −, a potem dodaj ją ponownie. Na stronie Uprawnienia w ustawieniach pika-tools są przyciski, które otwierają właściwe miejsce.
+W **Ustawieniach systemowych › Prywatność i ochrona** usuń pikapik z obu list przyciskiem −, a potem dodaj ją ponownie. Na stronie Uprawnienia w ustawieniach pikapik są przyciski, które otwierają właściwe miejsce.
 
 </details>
 
-<p align="center">☕ Jeśli pika-tools się przydaje, możesz <a href="https://buymeacoffee.com/pikapik">postawić mi kawę</a> – wszystko idzie na rozwój i wsparcie aplikacji.</p>
+<p align="center">☕ Jeśli pikapik się przydaje, możesz <a href="https://buymeacoffee.com/pikapik">postawić mi kawę</a> – wszystko idzie na rozwój i wsparcie aplikacji.</p>
 
 <p align="center"><sub><a href="../whats-new/README.pl.md">Co nowego</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Zbuduj samodzielnie</a> · <a href="../../LICENSE">Licencja MIT</a> · © 2026 pikapik</sub></p>

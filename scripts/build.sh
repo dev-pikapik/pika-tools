@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-APP="build/pika-tools.app"
+APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert"
 MIN_OS="14.0"
 SIGN_IDENTITY="${SIGN_IDENTITY:--}"
@@ -107,7 +107,7 @@ sign() {
 if [ "$SIGN_IDENTITY" = "-" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
-    /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pika-tools-dev" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-dev" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-dev" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"

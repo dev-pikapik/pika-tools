@@ -4,16 +4,17 @@ cd "$(dirname "$0")/.."
 
 ./scripts/build.sh
 
-APP="build/pika-tools.app"
-DMG="build/pika-tools.dmg"
-ZIP="build/pika-tools.zip"
+APP="build/pikapik.app"
+DMG="build/pikapik.dmg"
+ZIP="build/pikapik.zip"
+OLD_ZIP="build/pika-tools.zip"
 STAGE="build/dmg"
 
-rm -rf "$STAGE" "$DMG" "$ZIP"
+rm -rf "$STAGE" "$DMG" "$ZIP" "$OLD_ZIP"
 mkdir -p "$STAGE"
 cp -R "$APP" "$STAGE/"
 ln -s /Applications "$STAGE/Applications"
-hdiutil create -volname pika-tools -srcfolder "$STAGE" -ov -format UDZO "$DMG" >/dev/null
+hdiutil create -volname pikapik -srcfolder "$STAGE" -ov -format UDZO "$DMG" >/dev/null
 rm -rf "$STAGE"
 
 if [ -n "${NOTARY_PROFILE:-}" ]; then
@@ -24,6 +25,9 @@ if [ -n "${NOTARY_PROFILE:-}" ]; then
 fi
 
 ditto -c -k --keepParent "$APP" "$ZIP"
+ditto "$APP" "$STAGE/pika-tools.app"
+ditto -c -k --keepParent "$STAGE/pika-tools.app" "$OLD_ZIP"
+rm -rf "$STAGE"
 
-shasum -a 256 "$DMG" "$ZIP"
-echo "Done: $DMG and $ZIP"
+shasum -a 256 "$DMG" "$ZIP" "$OLD_ZIP"
+echo "Done: $DMG, $ZIP and $OLD_ZIP for older versions that update themselves"

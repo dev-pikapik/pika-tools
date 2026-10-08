@@ -1,22 +1,22 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
-<h1 align="center">pika-tools</h1>
+<h1 align="center">pikapik</h1>
 <p align="center">Kleine verbeteringen voor toetsenbord, muis, vensters en Finder, gewoon in de menubalk van je Mac.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <b>Nederlands</b> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="../media/settings-nl-dark.png">
-<img src="../media/settings-nl-light.png" alt="Instellingen van pika-tools">
+<img src="../media/settings-nl-light.png" alt="Instellingen van pikapik">
 </picture>
 </p>
 
 ## Installeren
 
 ```bash
-brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 ```
 
-pika-tools staat daarna in de menubalk bovenaan het scherm. Alles blijft uit tot je het zelf aanzet.
+pikapik staat daarna in de menubalk bovenaan het scherm. Alles blijft uit tot je het zelf aanzet.
 
 <details>
 <summary>Geen Homebrew? Twee andere manieren</summary>
@@ -27,7 +27,7 @@ Zonder Homebrew: open Terminal, plak deze regel en druk op Return:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-Of download [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), open het bestand en sleep de app naar de map Apps.
+Of download [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), open het bestand en sleep de app naar de map Apps.
 
 Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vragen om de toestemmingen en zetten ‘Open bij inloggen’ aan. Daarna werkt de app zichzelf bij, zie **Updates**. Verwijderen staat bij **Verwijderen**.
 
@@ -175,14 +175,14 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <details>
 <summary>Eerste keer openen</summary>
 
-pika-tools heeft twee toestemmingen nodig. De eerste keer opent de app de instellingen op de pagina Toestemmingen, die je stap voor stap helpt, en macOS toont zijn eigen meldingen. Ga naar **Systeeminstellingen › Privacy en beveiliging** en zet pika-tools aan bij:
+pikapik heeft twee toestemmingen nodig. De eerste keer opent de app de instellingen op de pagina Toestemmingen, die je stap voor stap helpt, en macOS toont zijn eigen meldingen. Ga naar **Systeeminstellingen › Privacy en beveiliging** en zet pikapik aan bij:
 
 - **Toegankelijkheid**, zodat de app een toetsaanslag of klik kan aanpassen voordat die bij andere apps aankomt.
 - **Invoerbewaking**, zodat de app toetsaanslagen en klikken überhaupt kan zien.
 
 De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet nodig.
 
-pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
+pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
 
 </details>
 
@@ -197,7 +197,7 @@ pika-tools legt niets vast, bewaart niets en verstuurt niets van wat je typt of 
 
 **Home en End naar begin en einde van de regel.** Terwijl je typt, zet Home de cursor aan het begin van de regel en End aan het einde, in plaats van de pagina te scrollen. Met ⇧ selecteren ze tot daar, met ⌘ gaan ze naar het begin of einde van de hele tekst. Buiten tekstvelden, en in terminals, virtuele machines en apps voor extern bureaublad, werken de toetsen zoals voorheen. Je kunt andere apps toevoegen waarin ze gewoon moeten werken. Standaard uit.
 
-**Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pika-tools, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
+**Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pikapik, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
 
 **Per regel scrollen.** Elke klik van het muiswieltje scrolt evenveel regels, hoe snel je het ook draait. Kies van 1 tot 10 regels per klik, standaard 3. Natuurlijk scrollen blijft zoals je het in Systeeminstellingen hebt ingesteld. Werkt alleen voor muizen, het trackpad blijft zoals het is. Standaard uit. Naast de schuifregelaar **Afstand per klik** scrolt een kleine pagina de gekozen afstand, en een stip markeert de standaardwaarde.
 
@@ -221,11 +221,11 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Delete verwijdert bestanden in de Finder.** Selecteer bestanden en druk op ⌫ of ⌦ (fn ⌫ op een laptop): ze gaan naar de Prullenmand, net als met ⌘⌫. Terwijl je een bestand een nieuwe naam geeft, zoekt of in een ander veld typt, wissen de toetsen gewoon letters. Standaard uit.
 
-**Kleinere kopie in de Finder.** Klik met rechts op een bestand in de Finder en kies **Maak kleinere kopie**. Ernaast verschijnt een lichtere versie van een foto, GIF, pdf of video, vaak vele malen kleiner. Ongecomprimeerd geluid zoals WAV of AIFF wordt een compacte M4A. Kan een bestand niet kleiner, dan komt er geen kopie en laat pika-tools dat weten. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
+**Kleinere kopie in de Finder.** Klik met rechts op een bestand in de Finder en kies **Maak kleinere kopie**. Ernaast verschijnt een lichtere versie van een foto, GIF, pdf of video, vaak vele malen kleiner. Ongecomprimeerd geluid zoals WAV of AIFF wordt een compacte M4A. Kan een bestand niet kleiner, dan komt er geen kopie en laat pikapik dat weten. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
 
 **Omzetten in de Finder.** Klik met rechts op een bestand in de Finder en kies **Zet om naar** om het in een ander formaat te bewaren: een afbeelding als JPEG, PNG, HEIC, GIF, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Los van de kleinere kopie aan te zetten. Standaard uit.
 
-**Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pika-tools stelt games voor die het op je Mac vindt. In een game blijft Control-klik een klik, en Control met pijltjes wisselt niet van bureaublad. Ook Minecraft wordt herkend: voeg Minecraft Launcher of CurseForge toe, en de modus gaat aan in Minecraft zelf. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
+**Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pikapik stelt games voor die het op je Mac vindt. In een game blijft Control-klik een klik, en Control met pijltjes wisselt niet van bureaublad. Ook Minecraft wordt herkend: voeg Minecraft Launcher of CurseForge toe, en de modus gaat aan in Minecraft zelf. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
@@ -240,9 +240,9 @@ De app volgt de taal van je systeem of de taal die je in de instellingen kiest. 
 <details>
 <summary>Wakker houden</summary>
 
-Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 seconde tot 365 dagen, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in: typ dagen, uren, minuten en seconden, gebruik ↑ en ↓ of klik op een voorinstelling van 15 minuten tot 8 uur. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. Voor het **Scherm** zijn er twee keuzes. **Altijd aan**: het gaat niet uit, zonder schermbeveiliging of toegangsscherm. **Gaat uit zoals gewoonlijk**: het gaat uit volgens de eigen timer terwijl je Mac blijft werken. **Zet het scherm nu uit** (ook in het menu) zet het meteen uit en je Mac blijft werken: beweeg de muis of druk op een toets om het terug te krijgen. Als je pika-tools stopt, stopt Wakker houden ook.
+Voorkomt dat je Mac in de sluimerstand gaat terwijl je niet achter het toetsenbord zit: voor elke duur van 1 seconde tot 365 dagen, of totdat je het uitzet. Zet het aan in het menu en stel de duur in de instellingen in: typ dagen, uren, minuten en seconden, gebruik ↑ en ↓ of klik op een voorinstelling van 15 minuten tot 8 uur. Het menu laat zien hoeveel tijd er nog over is en wanneer het eindigt. Voor het **Scherm** zijn er twee keuzes. **Altijd aan**: het gaat niet uit, zonder schermbeveiliging of toegangsscherm. **Gaat uit zoals gewoonlijk**: het gaat uit volgens de eigen timer terwijl je Mac blijft werken. **Zet het scherm nu uit** (ook in het menu) zet het meteen uit en je Mac blijft werken: beweeg de muis of druk op een toets om het terug te krijgen. Als je pikapik stopt, stopt Wakker houden ook.
 
-Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft daar geen schakelaar voor, dus pika-tools voert `pmset -a disablesleep 1` uit en vraagt om een beheerderswachtwoord: alleen een beheerder mag wijzigen hoe de Mac sluimert. De instelling gaat vanzelf terug naar normaal als Wakker houden eindigt, als je de app stopt of als hij vastloopt. Voer je het wachtwoord niet in, dan verandert er niets. Zorg voor goede ventilatie als de klep dicht is. **Stoppen als de batterij onder 20% komt** beëindigt de sessie voordat de batterij leeg is.
+Op een MacBook kun je ook **Werken met de klep dicht** aanzetten. macOS heeft daar geen schakelaar voor, dus pikapik voert `pmset -a disablesleep 1` uit en vraagt om een beheerderswachtwoord: alleen een beheerder mag wijzigen hoe de Mac sluimert. De instelling gaat vanzelf terug naar normaal als Wakker houden eindigt, als je de app stopt of als hij vastloopt. Voer je het wachtwoord niet in, dan verandert er niets. Zorg voor goede ventilatie als de klep dicht is. **Stoppen als de batterij onder 20% komt** beëindigt de sessie voordat de batterij leeg is.
 
 Keep Awake, de beeldschermmodus en de modus met gesloten deksel kun je via de app Opdrachten op een knop zetten in het Bedieningscentrum, de menubalk of een widget op het bureaublad, met links die je kopieert in Instellingen › Wakker houden.
 
@@ -258,7 +258,7 @@ Laat zien hoe snel je internet nu is. Klik op **Test snelheid** in Instellingen 
 <details>
 <summary>Instellingen</summary>
 
-Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pika-tools gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
+Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pikapik gewoon opnieuw vanuit de Finder, Launchpad of Spotlight. Zolang het venster open is, staat de app in het Dock en in ⌘Tab.
 
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
@@ -273,18 +273,18 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 
 Veel instellingen hebben een klein plaatje dat laat zien wat ze doen, zoals een Mac die wakker blijft of een venster dat zich achter het Dock verbergt. Het plaatje verandert mee met de schakelaar en staat stil als ‘Verminder beweging’ aan staat in Systeeminstellingen.
 
-Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vraagt eerst om bevestiging, zet daarna de tools op die pagina uit en zet hun opties terug, alsof pika-tools er nooit aan heeft gezeten.
+Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vraagt eerst om bevestiging, zet daarna de tools op die pagina uit en zet hun opties terug, alsof pikapik er nooit aan heeft gezeten.
 
-**Instellingen synchroniseren met iCloud** houdt pika-tools op al je Macs hetzelfde. De instellingen staan in de map pika-tools in iCloud Drive, en de meest recente wijziging wint. Standaard uit, en iCloud Drive moet aanstaan. Toestemmingen worden niet gesynchroniseerd: elke Mac vraagt er zelf om.
+**Instellingen synchroniseren met iCloud** houdt pikapik op al je Macs hetzelfde. De instellingen staan in de map pika-tools in iCloud Drive, en de meest recente wijziging wint. Standaard uit, en iCloud Drive moet aanstaan. Toestemmingen worden niet gesynchroniseerd: elke Mac vraagt er zelf om.
 
 </details>
 
 <details>
 <summary>Updates</summary>
 
-pika-tools zoekt bij het openen en elke 6 uur naar nieuwe versies. Je kunt dat uitzetten bij Instellingen › Algemeen. Is er een nieuwe versie, dan verschijnt in het menu de knop **Werk bij naar …**: één klik en de app downloadt de update, installeert hem en start opnieuw op. Je kunt ook zelf controleren met **Controleer nu** bij Instellingen › Algemeen.
+pikapik zoekt bij het openen en elke 6 uur naar nieuwe versies. Je kunt dat uitzetten bij Instellingen › Algemeen. Is er een nieuwe versie, dan verschijnt in het menu de knop **Werk bij naar …**: één klik en de app downloadt de update, installeert hem en start opnieuw op. Je kunt ook zelf controleren met **Controleer nu** bij Instellingen › Algemeen.
 
-Met Homebrew kun je ook `brew upgrade --cask pika-tools` uitvoeren.
+Met Homebrew kun je ook `brew upgrade --cask pikapik` uitvoeren.
 
 Sinds versie 1.3 blijven de toestemmingen na updates behouden.
 
@@ -297,7 +297,7 @@ Sinds versie 1.3 blijven de toestemmingen na updates behouden.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
 ```
 
-Als je met Homebrew hebt geïnstalleerd: `brew uninstall --cask --zap pika-tools`.
+Als je met Homebrew hebt geïnstalleerd: `brew uninstall --cask --zap pikapik`.
 
 Beide stoppen de app, halen hem uit de inlogonderdelen en verwijderen hem. Het script zet ook de toestemmingen van de app terug.
 
@@ -310,20 +310,20 @@ Beide stoppen de app, halen hem uit de inlogonderdelen en verwijderen hem. Het s
 macOS splitst de toegang tot toetsenbord en muis in tweeën. Met Invoerbewaking kan de app gebeurtenissen zien, met Toegankelijkheid kan hij ze aanpassen. Om een toetscombinatie te blokkeren zijn ze allebei nodig.
 
 **macOS zegt dat de app van een onbekende ontwikkelaar komt.**
-pika-tools is ondertekend, maar niet door Apple notarieel bekrachtigd. Homebrew en het installatiescript regelen dit voor je. Heb je de dmg gebruikt, open dan **Systeeminstellingen › Privacy en beveiliging** en klik op **Toch openen**, of voer uit:
+pikapik is ondertekend, maar niet door Apple notarieel bekrachtigd. Homebrew en het installatiescript regelen dit voor je. Heb je de dmg gebruikt, open dan **Systeeminstellingen › Privacy en beveiliging** en klik op **Toch openen**, of voer uit:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/pika-tools.app
+xattr -dr com.apple.quarantine /Applications/pikapik.app
 ```
 
 **Werkt het op Macs met Intel?**
 Ja. Het is een universele app voor Apple Silicon en Intel, voor macOS 14 Sonoma of nieuwer.
 
 **De toestemming staat aan, maar niets werkt.**
-Verwijder pika-tools in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Op de pagina Toestemmingen in de instellingen van pika-tools staan knoppen die de juiste plek openen.
+Verwijder pikapik in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Op de pagina Toestemmingen in de instellingen van pikapik staan knoppen die de juiste plek openen.
 
 </details>
 
-<p align="center">☕ Vind je pika-tools fijn, dan kun je me <a href="https://buymeacoffee.com/pikapik">trakteren op een koffie</a> — alles gaat naar de ontwikkeling en ondersteuning van de app.</p>
+<p align="center">☕ Vind je pikapik fijn, dan kun je me <a href="https://buymeacoffee.com/pikapik">trakteren op een koffie</a> — alles gaat naar de ontwikkeling en ondersteuning van de app.</p>
 
 <p align="center"><sub><a href="../whats-new/README.nl.md">Wat is er nieuw</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Zelf bouwen</a> · <a href="../../LICENSE">MIT-licentie</a> · © 2026 pikapik</sub></p>

@@ -1,22 +1,22 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
-<h1 align="center">pika-tools</h1>
+<h1 align="center">pikapik</h1>
 <p align="center">Drobná vylepšení klávesnice, myši, oken a Finderu přímo v řádku nabídek vašeho Macu.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <b>Čeština</b> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="../media/settings-cs-dark.png">
-<img src="../media/settings-cs-light.png" alt="Nastavení pika-tools">
+<img src="../media/settings-cs-light.png" alt="Nastavení pikapik">
 </picture>
 </p>
 
 ## Instalace
 
 ```bash
-brew install --cask dev-pikapik/pika-tools/pika-tools && open -a pika-tools
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 ```
 
-pika-tools najdete v řádku nabídek nahoře na obrazovce. Vše je vypnuté, dokud to sami nezapnete.
+pikapik najdete v řádku nabídek nahoře na obrazovce. Vše je vypnuté, dokud to sami nezapnete.
 
 <details>
 <summary>Nemáte Homebrew? Dva další způsoby</summary>
@@ -27,7 +27,7 @@ Bez Homebrew: otevřete Terminál, vložte tento řádek a stiskněte Return:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
-Nebo si stáhněte [pika-tools.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg), otevřete ho a přetáhněte aplikaci do složky Aplikace.
+Nebo si stáhněte [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), otevřete ho a přetáhněte aplikaci do složky Aplikace.
 
 Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o oprávnění a zapnou otevírání po přihlášení. Potom se aplikace aktualizuje sama, viz **Aktualizace**. Jak ji odstranit, najdete v části **Odinstalace**.
 
@@ -175,14 +175,14 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <details>
 <summary>První spuštění</summary>
 
-pika-tools potřebuje dvě oprávnění. Při prvním spuštění otevře nastavení na stránce Oprávnění, která vás provede krok za krokem, a macOS zobrazí vlastní dotazy. Přejděte do **Nastavení systému › Soukromí a zabezpečení** a zapněte pika-tools v seznamech:
+pikapik potřebuje dvě oprávnění. Při prvním spuštění otevře nastavení na stránce Oprávnění, která vás provede krok za krokem, a macOS zobrazí vlastní dotazy. Přejděte do **Nastavení systému › Soukromí a zabezpečení** a zapněte pikapik v seznamech:
 
 - **Zpřístupnění**, aby aplikace mohla změnit stisk klávesy nebo kliknutí dřív, než se dostane k jiným aplikacím.
 - **Sledování vstupu**, aby aplikace vůbec viděla stisky kláves a kliknutí.
 
 Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
-pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
+pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
 
 </details>
 
@@ -197,7 +197,7 @@ pika-tools nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo 
 
 **Home a End na začátek a konec řádku.** Když píšete, Home přesune kurzor na začátek řádku a End na jeho konec, místo aby posouvaly stránku. S ⇧ vyberou text až tam, s ⌘ skočí na začátek nebo konec celého textu. Mimo textová pole a v terminálech, virtuálních počítačích a aplikacích pro vzdálenou plochu fungují klávesy jako dřív. Můžete přidat další aplikace, kde mají fungovat jako obvykle. Ve výchozím stavu vypnuto.
 
-**Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pika-tools a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
+**Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pikapik a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
 
 **Posouvat po řádcích.** Každé cvaknutí kolečka myši posune stejný počet řádků, ať kolečkem točíte jakkoli rychle. Vyberte 1 až 10 řádků na cvaknutí, ve výchozím stavu 3. Přirozené posouvání zůstane tak, jak jste ho nastavili v Nastavení systému. Funguje jen pro myš, trackpad zůstává beze změny. Ve výchozím stavu vypnuto. Vedle posuvníku **Vzdálenost na cvaknutí** se malá stránka posune o zvolenou vzdálenost a tečka označuje výchozí hodnotu.
 
@@ -221,11 +221,11 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Delete maže soubory ve Finderu.** Vyberte soubory a stiskněte ⌫ nebo ⌦ (fn ⌫ na notebooku) – přesunou se do Koše, stejně jako s ⌘⌫. Když přejmenováváte soubor, hledáte nebo píšete do jiného pole, klávesy mažou písmena jako obvykle. Ve výchozím stavu vypnuto.
 
-**Menší kopie ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Vytvořit menší kopii**. Vedle se objeví lehčí verze fotky, GIFu, PDF nebo videa, často několikrát menší. Nekomprimovaný zvuk jako WAV nebo AIFF se změní na úsporné M4A. Pokud soubor už menší být nemůže, kopie se nevytvoří a pika-tools vám to řekne. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
+**Menší kopie ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Vytvořit menší kopii**. Vedle se objeví lehčí verze fotky, GIFu, PDF nebo videa, často několikrát menší. Nekomprimovaný zvuk jako WAV nebo AIFF se změní na úsporné M4A. Pokud soubor už menší být nemůže, kopie se nevytvoří a pikapik vám to řekne. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
 
 **Převod ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Převést na** a soubor se uloží v jiném formátu: obrázek jako JPEG, PNG, HEIC, GIF, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudba jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Zapíná se zvlášť od menší kopie. Ve výchozím stavu vypnuto.
 
-**Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pika-tools vám nabídne hry, které na vašem Macu najde. Ve hře zůstane Control-kliknutí obyčejným kliknutím a Control se šipkami nepřepne plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
+**Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pikapik vám nabídne hry, které na vašem Macu najde. Ve hře zůstane Control-kliknutí obyčejným kliknutím a Control se šipkami nepřepne plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
@@ -240,9 +240,9 @@ Aplikace používá jazyk systému nebo ten, který vyberete v nastavení. K dis
 <details>
 <summary>Nespat</summary>
 
-Nedovolí Macu přejít do režimu spánku, když nejste u klávesnice: na libovolnou dobu od 1 sekundy do 365 dnů, nebo dokud to nevypnete. Zapněte to v nabídce a délku nastavte v nastavení: zadejte dny, hodiny, minuty a sekundy, použijte ↑ a ↓ nebo klikněte na hotovou volbu od 15 minut do 8 hodin. Nabídka ukazuje, kolik času zbývá a kdy to skončí. Pro **Displej** jsou dvě volby. **Stále zapnutý**: nezhasne a neukáže spořič ani zamčenou obrazovku. **Vypne se jako obvykle**: zhasne podle svého časovače, zatímco Mac dál pracuje. **Vypnout displej hned** (je i v nabídce) displej rovnou zhasne a Mac pracuje dál: vrátíte ho pohybem myši nebo stiskem klávesy. Ukončením pika-tools skončí i Nespat.
+Nedovolí Macu přejít do režimu spánku, když nejste u klávesnice: na libovolnou dobu od 1 sekundy do 365 dnů, nebo dokud to nevypnete. Zapněte to v nabídce a délku nastavte v nastavení: zadejte dny, hodiny, minuty a sekundy, použijte ↑ a ↓ nebo klikněte na hotovou volbu od 15 minut do 8 hodin. Nabídka ukazuje, kolik času zbývá a kdy to skončí. Pro **Displej** jsou dvě volby. **Stále zapnutý**: nezhasne a neukáže spořič ani zamčenou obrazovku. **Vypne se jako obvykle**: zhasne podle svého časovače, zatímco Mac dál pracuje. **Vypnout displej hned** (je i v nabídce) displej rovnou zhasne a Mac pracuje dál: vrátíte ho pohybem myši nebo stiskem klávesy. Ukončením pikapik skončí i Nespat.
 
-Na MacBooku můžete zapnout také **Pracovat se zavřeným víkem**. macOS na to nemá přepínač, proto pika-tools spustí `pmset -a disablesleep 1` a požádá o heslo správce: měnit, jak Mac usíná, může jen správce. Nastavení se samo vrátí do normálu, když Nespat skončí, když aplikaci ukončíte nebo když spadne. Pokud heslo nezadáte, nic se nezmění. Se zavřeným víkem dbejte na dobré větrání Macu. **Zastavit, když baterie klesne pod 20 %** ukončí relaci dřív, než se baterie vybije.
+Na MacBooku můžete zapnout také **Pracovat se zavřeným víkem**. macOS na to nemá přepínač, proto pikapik spustí `pmset -a disablesleep 1` a požádá o heslo správce: měnit, jak Mac usíná, může jen správce. Nastavení se samo vrátí do normálu, když Nespat skončí, když aplikaci ukončíte nebo když spadne. Pokud heslo nezadáte, nic se nezmění. Se zavřeným víkem dbejte na dobré větrání Macu. **Zastavit, když baterie klesne pod 20 %** ukončí relaci dřív, než se baterie vybije.
 
 Keep Awake, režimy displeje a zavřeného víka lze dát na tlačítko v Ovládacím centru, v panelu nabídek nebo na widget na ploše přes aplikaci Zkratky, s odkazy zkopírovanými z Nastavení › Bez spánku.
 
@@ -258,7 +258,7 @@ Ukáže, jak rychlý je váš internet právě teď. Klikněte na **Změřit ryc
 <details>
 <summary>Nastavení</summary>
 
-Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pika-tools znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
+Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pikapik znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Bez spánku**: délka, volby pro displej a víko.
@@ -273,18 +273,18 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 
 Mnoho nastavení má malý obrázek, který ukazuje, co dělají, třeba Mac, který neusíná, nebo okno schované za Dockem. Obrázek se mění spolu s přepínačem a stojí, když je v Nastavení systému zapnuté „Omezit pohyb“.
 
-Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se zeptá, pak vypne nástroje na dané stránce a vrátí jejich volby, jako by se jich pika-tools nikdy nedotkl.
+Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se zeptá, pak vypne nástroje na dané stránce a vrátí jejich volby, jako by se jich pikapik nikdy nedotkl.
 
-**Synchronizovat nastavení přes iCloud** udrží pika-tools stejné na všech vašich Macích. Nastavení jsou ve složce pika-tools na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
+**Synchronizovat nastavení přes iCloud** udrží pikapik stejné na všech vašich Macích. Nastavení jsou ve složce pika-tools na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
 
 </details>
 
 <details>
 <summary>Aktualizace</summary>
 
-pika-tools hledá nové verze při spuštění a každých 6 hodin. Můžete to vypnout v Nastavení › Obecné. Když vyjde nová verze, v nabídce se objeví tlačítko **Aktualizovat na …**: jedno kliknutí a aplikace stáhne aktualizaci, nainstaluje ji a restartuje se. Ručně můžete zkontrolovat tlačítkem **Zkontrolovat** v Nastavení › Obecné.
+pikapik hledá nové verze při spuštění a každých 6 hodin. Můžete to vypnout v Nastavení › Obecné. Když vyjde nová verze, v nabídce se objeví tlačítko **Aktualizovat na …**: jedno kliknutí a aplikace stáhne aktualizaci, nainstaluje ji a restartuje se. Ručně můžete zkontrolovat tlačítkem **Zkontrolovat** v Nastavení › Obecné.
 
-S Homebrew můžete také spustit `brew upgrade --cask pika-tools`.
+S Homebrew můžete také spustit `brew upgrade --cask pikapik`.
 
 Od verze 1.3 zůstávají oprávnění po aktualizacích zachována.
 
@@ -297,7 +297,7 @@ Od verze 1.3 zůstávají oprávnění po aktualizacích zachována.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/uninstall.sh)"
 ```
 
-Pokud jste instalovali přes Homebrew: `brew uninstall --cask --zap pika-tools`.
+Pokud jste instalovali přes Homebrew: `brew uninstall --cask --zap pikapik`.
 
 Oba způsoby aplikaci ukončí, odeberou ji z položek po přihlášení a smažou ji. Skript navíc obnoví její oprávnění.
 
@@ -310,20 +310,20 @@ Oba způsoby aplikaci ukončí, odeberou ji z položek po přihlášení a smaž
 macOS dělí přístup ke klávesnici a myši na dvě části. Sledování vstupu aplikaci dovolí události vidět, Zpřístupnění jí dovolí je měnit. K zablokování zkratky jsou potřeba obě.
 
 **macOS hlásí, že aplikace je od neidentifikovaného vývojáře.**
-pika-tools je podepsaná, ale není ověřená (notarizovaná) společností Apple. Homebrew a instalační skript to vyřeší za vás. Pokud jste použili dmg, otevřete **Nastavení systému › Soukromí a zabezpečení** a klikněte na **Přesto otevřít**, nebo spusťte:
+pikapik je podepsaná, ale není ověřená (notarizovaná) společností Apple. Homebrew a instalační skript to vyřeší za vás. Pokud jste použili dmg, otevřete **Nastavení systému › Soukromí a zabezpečení** a klikněte na **Přesto otevřít**, nebo spusťte:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/pika-tools.app
+xattr -dr com.apple.quarantine /Applications/pikapik.app
 ```
 
 **Funguje na Macích s Intelem?**
 Ano. Je to univerzální aplikace pro Apple Silicon i Intel, pro macOS 14 Sonoma nebo novější.
 
 **Oprávnění je zapnuté, ale nic nefunguje.**
-V **Nastavení systému › Soukromí a zabezpečení** odeberte pika-tools z obou seznamů tlačítkem − a pak ji přidejte znovu. Na stránce Oprávnění v nastavení pika-tools jsou tlačítka, která otevřou správné místo.
+V **Nastavení systému › Soukromí a zabezpečení** odeberte pikapik z obou seznamů tlačítkem − a pak ji přidejte znovu. Na stránce Oprávnění v nastavení pikapik jsou tlačítka, která otevřou správné místo.
 
 </details>
 
-<p align="center">☕ Pokud vás pika-tools těší, můžete mi <a href="https://buymeacoffee.com/pikapik">koupit kávu</a> – vše jde na vývoj a podporu aplikace.</p>
+<p align="center">☕ Pokud vás pikapik těší, můžete mi <a href="https://buymeacoffee.com/pikapik">koupit kávu</a> – vše jde na vývoj a podporu aplikace.</p>
 
 <p align="center"><sub><a href="../whats-new/README.cs.md">Novinky</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Sestavení ze zdrojů</a> · <a href="../../LICENSE">Licence MIT</a> · © 2026 pikapik</sub></p>

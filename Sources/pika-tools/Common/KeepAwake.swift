@@ -232,7 +232,7 @@ final class KeepAwake {
 
     private func hold(_ type: String) {
         var id = IOPMAssertionID(0)
-        let result = IOPMAssertionCreateWithName(type as CFString, IOPMAssertionLevel(kIOPMAssertionLevelOn), "pika-tools Keep Awake" as CFString, &id)
+        let result = IOPMAssertionCreateWithName(type as CFString, IOPMAssertionLevel(kIOPMAssertionLevelOn), "pikapik Keep Awake" as CFString, &id)
         if result == kIOReturnSuccess { assertions.append(id) }
     }
 
@@ -253,7 +253,7 @@ final class KeepAwake {
         }
         let flag = "'" + lidFlag.path.replacingOccurrences(of: "'", with: "'\\''") + "'"
         let command = "/usr/bin/pmset -a disablesleep 1 || exit 1; (g=0; while [ -e \(flag) ]; do if /bin/kill -0 \"$(/bin/cat \(flag))\"; then g=0; else g=$((g+2)); [ $g -ge 60 ] && break; fi; /bin/sleep 2; done; /usr/bin/pmset -a disablesleep 0; /bin/rm -f \(flag)) >/dev/null 2>&1 &"
-        if Self.runAsAdmin(command, prompt: String(localized: "pika-tools wants to keep your Mac awake with the lid closed.")) {
+        if Self.runAsAdmin(command, prompt: String(localized: "pikapik wants to keep your Mac awake with the lid closed.")) {
             lidActive = true
             UserDefaults.standard.set(true, forKey: Self.lidFlagKey)
         } else {
@@ -269,7 +269,7 @@ final class KeepAwake {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             guard !self.lidActive else { return }
             if Self.sleepDisabled {
-                _ = Self.runAsAdmin("/usr/bin/pmset -a disablesleep 0", prompt: String(localized: "pika-tools wants to let your Mac sleep with the lid closed again."))
+                _ = Self.runAsAdmin("/usr/bin/pmset -a disablesleep 0", prompt: String(localized: "pikapik wants to let your Mac sleep with the lid closed again."))
             }
             UserDefaults.standard.set(false, forKey: Self.lidFlagKey)
         }
@@ -329,7 +329,7 @@ struct KeepAwakeSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac stays awake until you quit pika-tools"))
+            SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac stays awake until you quit pikapik"))
             Section {
                 KeepAwakeArt()
                 LabeledContent {
@@ -543,7 +543,7 @@ struct ShortcutLink: View {
 
     private var link: String {
         let types = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLTypes") as? [[String: Any]]
-        let scheme = (types?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "pika-tools"
+        let scheme = (types?.first?["CFBundleURLSchemes"] as? [String])?.first ?? "pikapik"
         return "\(scheme)://\(path)"
     }
 

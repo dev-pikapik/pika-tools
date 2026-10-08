@@ -16,8 +16,8 @@ It is written in Swift and SwiftUI, has no dependencies, runs on Apple silicon a
 - Permissions: shows the status of Accessibility and Input Monitoring, and cleans up permissions left by deleted apps.
 
 ## Install
-- Homebrew: `brew install --cask dev-pikapik/pika-tools/pika-tools`
-- Download: https://github.com/dev-pikapik/pika-tools/releases/latest/download/pika-tools.dmg
+- Homebrew: `brew install --cask dev-pikapik/pika-tools/pikapik`
+- Download: https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg
 
 ## Links
 - [README](https://github.com/dev-pikapik/pika-tools/blob/main/README.md)

@@ -50,28 +50,32 @@ jobs:
 
       - name: Verify
         run: |
-          APP=build/pika-tools.app
+          APP=build/pikapik.app
           test -f "$APP/Contents/Resources/Assets.car"
           test -f "$APP/Contents/Resources/AppIcon.icns"
           /usr/libexec/PlistBuddy -c "Print :CFBundleIconName" "$APP/Contents/Info.plist"
           rm -rf build/check && mkdir build/check
+          ditto -x -k build/pikapik.zip build/check
           ditto -x -k build/pika-tools.zip build/check
-          codesign --verify --deep --strict build/check/pika-tools.app
-          codesign -d -r- build/check/pika-tools.app 2>&1 | grep -q 'certificate leaf'
+          for CHECK in build/check/pikapik.app build/check/pika-tools.app; do
+            codesign --verify --deep --strict "$CHECK"
+            codesign -d -r- "$CHECK" 2>&1 | grep -q 'certificate leaf'
+            [ "$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$CHECK/Contents/Info.plist")" = com.pesotchi.pika-tools ]
+          done
 
       - name: Upload test build
         if: github.ref_type != 'tag'
         uses: actions/upload-artifact@v4
         with:
-          name: pika-tools
-          path: build/pika-tools.zip
+          name: pikapik
+          path: build/pikapik.zip
 
       - name: Publish release
         if: github.ref_type == 'tag'
         run: |
           if ./scripts/release-notes.sh "$VERSION" > build/notes.md; then NOTES=(--notes-file build/notes.md); else NOTES=(--generate-notes); fi
-          gh release create "$GITHUB_REF_NAME" build/pika-tools.zip build/pika-tools.dmg \
-            --title "pika-tools $VERSION" \
+          gh release create "$GITHUB_REF_NAME" build/pikapik.zip build/pikapik.dmg build/pika-tools.zip \
+            --title "pikapik $VERSION" \
             "${NOTES[@]}"
 
       - name: Update Homebrew tap
@@ -79,7 +83,7 @@ jobs:
         env:
           TAP_DEPLOY_KEY: ${{ secrets.TAP_DEPLOY_KEY }}
         run: |
-          SHA=$(shasum -a 256 build/pika-tools.zip | cut -d' ' -f1)
+          SHA=$(shasum -a 256 build/pikapik.zip | cut -d' ' -f1)
           KEY="$RUNNER_TEMP/tap_key"
           HOSTS="$RUNNER_TEMP/known_hosts"
           printf '%s\n' "$TAP_DEPLOY_KEY" > "$KEY"
@@ -87,14 +91,14 @@ jobs:
           echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$HOSTS"
           export GIT_SSH_COMMAND="ssh -i $KEY -o IdentitiesOnly=yes -o UserKnownHostsFile=$HOSTS"
           git clone -q git@github.com:dev-pikapik/homebrew-pika-tools.git "$RUNNER_TEMP/tap"
+          ./scripts/cask.sh "$VERSION" "$SHA" > "$RUNNER_TEMP/tap/Casks/pikapik.rb"
           cd "$RUNNER_TEMP/tap"
-          sed -i '' \
-            -e "s/^  version \".*\"/  version \"$VERSION\"/" \
-            -e "s/^  sha256 \".*\"/  sha256 \"$SHA\"/" \
-            Casks/pika-tools.rb
+          echo '{"pika-tools": "pikapik"}' > cask_renames.json
+          git rm -q --ignore-unmatch Casks/pika-tools.rb
+          sed -i '' -e 's|for \[pika-tools\]|for [pikapik]|' -e 's|/pika-tools/pika-tools$|/pika-tools/pikapik|' -e 's| pika-tools$| pikapik|' README.md
           git config user.name pikapik
           git config user.email 241494448+dev-pikapik@users.noreply.github.com
-          git add Casks/pika-tools.rb
-          git diff --cached --quiet || git commit -q -m "pika-tools $VERSION"
+          git add Casks/pikapik.rb cask_renames.json README.md
+          git diff --cached --quiet || git commit -q -m "pikapik $VERSION"
           git push -q origin main
           rm "$KEY"
