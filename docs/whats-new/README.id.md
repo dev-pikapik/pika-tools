@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Kenalan dengan peliharaan di desktop Anda
 
-<sub>1.27.0 · 8 Oktober 2026</sub>
+<sub>1.27.0 · 9 Oktober 2026</sub>
 
 Kini ada teman kecil yang tinggal di bagian bawah layar Anda, dan app ini punya nama baru: pikapik.
 

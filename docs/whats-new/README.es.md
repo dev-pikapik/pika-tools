@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Te presentamos a tu mascota de escritorio
 
-<sub>1.27.0 · 8 de octubre de 2026</sub>
+<sub>1.27.0 · 9 de octubre de 2026</sub>
 
 Ahora vive un amiguito en la parte de abajo de tu pantalla, y la app tiene un nombre nuevo: pikapik.
 

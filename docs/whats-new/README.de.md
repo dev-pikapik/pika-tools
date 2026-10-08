@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Darf ich vorstellen: dein Haustier auf dem Schreibtisch
 
-<sub>1.27.0 · 8. Oktober 2026</sub>
+<sub>1.27.0 · 9. Oktober 2026</sub>
 
 Unten auf deinem Bildschirm wohnt jetzt ein kleiner Freund, und die App hat einen neuen Namen: pikapik.
 

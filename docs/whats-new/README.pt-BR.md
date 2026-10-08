@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Conheça seu bichinho de mesa
 
-<sub>1.27.0 · 8 de outubro de 2026</sub>
+<sub>1.27.0 · 9 de outubro de 2026</sub>
 
 Agora um amiguinho mora na parte de baixo da sua tela, e o app tem um nome novo: pikapik.
 

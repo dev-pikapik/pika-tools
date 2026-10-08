@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Meet your desktop pet
 
-<sub>1.27.0 · October 8, 2026</sub>
+<sub>1.27.0 · October 9, 2026</sub>
 
 A little friend now lives at the bottom of your screen, and the app has a new name: pikapik.
 

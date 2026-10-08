@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Seznamte se s mazlíčkem na ploše
 
-<sub>1.27.0 · 8. října 2026</sub>
+<sub>1.27.0 · 9. října 2026</sub>
 
 Dole na obrazovce teď bydlí malý kamarád a aplikace má nové jméno: pikapik.
 
