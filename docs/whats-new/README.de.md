@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Die Spielbilder werden lebendig
+
+<sub>1.26.1 · 8. Oktober 2026</sub>
+
+Die Bilder auf der Seite „Spiele“ bewegen sich jetzt, und du siehst, was jeder Schalter stoppt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Hinter jedem Schalter auf der Seite „Spiele“ läuft jetzt ein kleines Spiel. Tasten erscheinen und werden gedrückt, und du siehst, was über dein Spiel springen würde, etwa Spotlight oder Mission Control, während das Spiel stehen bleibt. Ist der Schalter an, leuchten die Tasten nur sanft auf, und das Spiel läuft weiter. Leg einen Schalter um, und das Bild zeigt den Unterschied sofort.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Das kleine Spiel folgt dem Aussehen deines Mac: ein sonniger Tag im hellen Modus und eine ruhige Nacht mit Mond und Sternen im dunklen Modus.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+In allen Bildern der App bewegt sich der Zeiger jetzt wie eine Hand: Für weite Wege lässt er sich etwas mehr Zeit, kommt zur Ruhe und klickt erst dann. Beginnt ein Bild von vorn, gleitet es sanft zum Anfang zurück, statt zu springen. Ist das Fenster verdeckt, ruhen die Bilder, und mit „Bewegung reduzieren“ stehen sie still.
+
+**Ausprobieren:** Einstellungen › Spiele
+
+---
+
 ## <a id="v1.26.0"></a>Ein neues Symbol und reiner Tisch bei alten Berechtigungen
 
 <sub>1.26.0 · 8. Oktober 2026</sub>

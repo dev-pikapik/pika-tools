@@ -134,11 +134,11 @@ struct DockHideArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.8, 0.8, 1.1, 1.5]
+    private static let durations = [1.2, 1.1, 0.15, 1.2, 0.15, 1.3]
 
     var body: some View {
-        let step = reduceMotion ? 2 : tick % Self.durations.count
-        let hidden = on && step == 2
+        let step = reduceMotion ? 3 : tick % Self.durations.count
+        let hidden = on && (3...4).contains(step)
         let aimed = step != 0
         IllustrationRow {
             Stage {
@@ -157,10 +157,10 @@ struct DockHideArt: View {
                     .position(x: 150, y: 102)
                 if step >= 2 {
                     ArtRipple()
-                        .id(step)
+                        .id(step < 4)
                         .position(x: 150, y: 100)
                 }
-                ArtCursor()
+                ArtCursor(pressed: step == 2 || step == 4)
                     .cursor(at: aimed ? CGPoint(x: 152, y: 98) : CGPoint(x: 216, y: 70))
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.55), value: step)

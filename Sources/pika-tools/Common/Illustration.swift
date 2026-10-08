@@ -68,18 +68,17 @@ private struct Loop: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
-                guard let window = note.object as? NSWindow, window === SettingsWindow.window else { return }
-                visible = window.occlusionState.contains(.visible)
-            }
+            .settingsVisibility($visible)
             .task(id: Run(visible: visible, reduceMotion: reduceMotion, replay: replay)) {
                 let replaying = replay != played
                 played = replay
                 guard visible, !reduceMotion || replaying else { return }
                 if replaying { tick = 0 }
                 var steps = reduceMotion ? rest ?? durations.count - 1 : Int.max
+                var deadline = ContinuousClock.now
                 while steps > 0, !Task.isCancelled {
-                    try? await Task.sleep(for: .seconds(durations[tick % durations.count]))
+                    deadline += .seconds(durations[tick % durations.count])
+                    try? await Task.sleep(until: deadline, clock: .continuous)
                     guard !Task.isCancelled else { return }
                     tick += 1
                     steps -= 1
@@ -88,7 +87,30 @@ private struct Loop: ViewModifier {
     }
 }
 
+struct ArtTimeline<Content: View>: View {
+    @ViewBuilder var content: (Double?) -> Content
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var visible = true
+    @State private var shown = false
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: 1 / 30, paused: reduceMotion || !visible || !shown)) { context in
+            content(reduceMotion ? nil : context.date.timeIntervalSinceReferenceDate)
+        }
+        .onAppear { shown = true }
+        .onDisappear { shown = false }
+        .settingsVisibility($visible)
+    }
+}
+
 extension View {
+    func settingsVisibility(_ visible: Binding<Bool>) -> some View {
+        onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
+            guard let window = note.object as? NSWindow, window === SettingsWindow.window else { return }
+            visible.wrappedValue = window.occlusionState.contains(.visible)
+        }
+    }
+
     func loop(_ tick: Binding<Int>, _ durations: [Double], replay: Int = 0, rest: Int? = nil) -> some View {
         modifier(Loop(tick: tick, durations: durations, replay: replay, rest: rest))
     }
@@ -378,13 +400,32 @@ struct ArtCursor: View {
             .frame(width: 12, height: 18, alignment: .topLeading)
             .scaleEffect(pressed ? 0.84 : 1, anchor: .topLeading)
             .shadow(color: .black.opacity(pressed ? 0.15 : 0.25), radius: pressed ? 0.8 : 1.5, y: pressed ? 0.5 : 1)
-            .animation(.easeOut(duration: 0.08), value: pressed)
+            .animation(.easeOut(duration: 0.12), value: pressed)
     }
 }
 
 extension View {
     func cursor(at point: CGPoint) -> some View {
-        position(x: point.x + 6, y: point.y + 9)
+        modifier(CursorGlide(point: point))
+    }
+}
+
+private struct CursorGlide: ViewModifier {
+    let point: CGPoint
+    @State private var last: CGPoint?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    func body(content: Content) -> some View {
+        let distance = last.map { hypot(point.x - $0.x, point.y - $0.y) } ?? 0
+        let duration = 0.5 + 0.12 * log2(1 + distance / 12)
+        content
+            .offset(y: point.y)
+            .transaction { $0.animation = reduceMotion ? nil : .timingCurve(0.3, 0.12, 0.36, 1, duration: duration) }
+            .offset(x: point.x)
+            .transaction { $0.animation = reduceMotion ? nil : .timingCurve(0.42, 0, 0.22, 1, duration: duration) }
+            .position(x: 6, y: 9)
+            .onAppear { last = point }
+            .onChange(of: point) { last = point }
     }
 }
 
@@ -565,6 +606,7 @@ struct ArtMouse: View {
 struct ArtTrackpad: View {
     var touch = false
     var slide: CGFloat = 0
+    var swipe: CGFloat = 0
     var width: CGFloat = 60
     var fingers = 2
     @Environment(\.colorScheme) private var scheme
@@ -581,7 +623,7 @@ struct ArtTrackpad: View {
                 }
                 .foregroundStyle(Color.accentColor)
                 .opacity(touch ? 0.9 : 0)
-                .offset(y: slide)
+                .offset(x: swipe, y: slide)
             }
             .frame(width: width, height: 42 * unit)
             .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)

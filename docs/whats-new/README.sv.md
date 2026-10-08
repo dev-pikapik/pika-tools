@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Spelbilderna får liv
+
+<sub>1.26.1 · 8 oktober 2026</sub>
+
+Bilderna på sidan ”Spel” rör sig nu, så du ser vad varje reglage stoppar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Bakom varje reglage på sidan ”Spel” pågår nu ett litet spel. Tangenter dyker upp och trycks ned, och du ser vad som skulle hoppa upp över ditt spel, som Spotlight eller Mission Control, medan spelet stannar. När reglaget är på lyser tangenterna bara mjukt och spelet fortsätter. Slå om ett reglage så visar bilden skillnaden direkt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Det lilla spelet följer utseendet på din Mac: en solig dag i ljust läge och en lugn natt med måne och stjärnor i mörkt läge.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+I alla bilder i appen rör sig pekaren nu som en hand: långa sträckor får ta lite längre tid, den stannar till och klickar först sedan. När en bild börjar om glider den mjukt tillbaka till början i stället för att hoppa. Bilderna vilar när fönstret är dolt, och med ”Minska rörelse” på står de still.
+
+**Prova:** Inställningar › Spel
+
+---
+
 ## <a id="v1.26.0"></a>En ny symbol och rent bord för gamla behörigheter
 
 <sub>1.26.0 · 8 oktober 2026</sub>

@@ -543,7 +543,7 @@ struct GameModePage: View {
         Section {
             ForEach(rows, id: \.rule) { row in
                 VStack(spacing: 10) {
-                    IllustrationRow { GameRuleArt(rule: row.rule) }
+                    IllustrationRow { GameRuleArt(rule: row.rule, keys: row.keys, on: tool.rules.contains(row.rule)) }
                         .opacity(tool.isEnabled ? 1 : 0.5)
                     Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
                         HStack(spacing: 12) {
@@ -603,81 +603,48 @@ struct GameModeArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [1.6, 0.8, 1.1, 1.3, 1.2]
+    private static let durations = [1.8, 0.9, 1.2, 0.8, 1.6, 1.7]
     private static let screen = CGSize(width: 196, height: 108)
     private static let bar = CGRect(x: 39, y: 23, width: 118, height: 22)
 
     var body: some View {
         let step = reduceMotion ? 0 : tick % Self.durations.count
         let search = step == 1 || !on && step == 2
-        let edge = step == 3
+        let edge = step == 4
         let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
         IllustrationRow {
-            Stage {
-                ZStack {
-                    GameScene(hop: step % 2 == 1)
-                    ArtDock(icon: 14)
-                        .offset(y: !on && edge ? 40 : 72)
-                    Capsule()
-                        .fill(.white.opacity(0.85))
-                        .frame(width: 44, height: 2)
-                        .blur(radius: 1.5)
-                        .offset(x: 30, y: Self.screen.height / 2 - 1)
-                        .opacity(on && edge ? 1 : 0)
+            ArtTimeline { time in
+                Stage {
                     ZStack {
-                        GameScene(hop: step % 2 == 1).glassBackdrop(Self.bar)
-                        ArtSpotlight(width: Self.bar.width, height: Self.bar.height)
-                            .position(x: Self.bar.midX, y: Self.bar.midY)
+                        GameScene(time: time ?? GameStory.start)
+                        ArtDock(icon: 14)
+                            .offset(y: !on && edge ? 40 : 72)
+                        Capsule()
+                            .fill(.white.opacity(0.85))
+                            .frame(width: 44, height: 2)
+                            .blur(radius: 1.5)
+                            .offset(x: 30, y: Self.screen.height / 2 - 1)
+                            .opacity(on && edge ? 1 : 0)
+                        ZStack {
+                            GameScene(time: time ?? GameStory.start).glassBackdrop(Self.bar)
+                            ArtSpotlight(width: Self.bar.width, height: Self.bar.height)
+                                .position(x: Self.bar.midX, y: Self.bar.midY)
+                        }
+                        .opacity(search ? (on ? 0.6 : 1) : 0)
+                        .scaleEffect(search ? 1 : 0.9)
+                        .blur(radius: on && !search ? 4 : 0)
                     }
-                    .opacity(search ? (on ? 0.6 : 1) : 0)
-                    .scaleEffect(search ? 1 : 0.9)
-                    .blur(radius: on && !search ? 4 : 0)
+                    .frame(width: Self.screen.width, height: Self.screen.height)
+                    .clipShape(shape)
+                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                    .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
+                    .position(x: 150, y: 64)
+                    ArtCursor()
+                        .cursor(at: (3...4).contains(step) ? CGPoint(x: 180, y: 115) : CGPoint(x: 176, y: 74))
                 }
-                .frame(width: Self.screen.width, height: Self.screen.height)
-                .clipShape(shape)
-                .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
-                .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
-                .position(x: 150, y: 64)
-                ArtCursor()
-                    .cursor(at: edge ? CGPoint(x: 180, y: 115) : CGPoint(x: 176, y: 74))
+                .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
             }
-            .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
         .loop($tick, Self.durations)
-    }
-}
-
-struct GameScene: View {
-    let hop: Bool
-
-    private static let stars: [CGPoint] = [
-        CGPoint(x: -70, y: -36), CGPoint(x: -38, y: -28), CGPoint(x: -84, y: -12), CGPoint(x: 8, y: -40), CGPoint(x: 62, y: -32), CGPoint(x: 84, y: -14),
-    ]
-
-    var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [Color(red: 0.20, green: 0.17, blue: 0.45), Color(red: 0.62, green: 0.33, blue: 0.56), Color(red: 0.98, green: 0.62, blue: 0.45)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            ForEach(Self.stars, id: \.x) { Circle().fill(.white.opacity(0.7)).frame(width: 2, height: 2).offset(x: $0.x, y: $0.y) }
-            Circle()
-                .fill(LinearGradient(colors: [Color(red: 1, green: 0.9, blue: 0.6), Color(red: 1, green: 0.62, blue: 0.4)], startPoint: .top, endPoint: .bottom))
-                .frame(width: 34, height: 34)
-                .offset(x: 36, y: 10)
-            Ellipse().fill(Color(red: 0.36, green: 0.22, blue: 0.48)).frame(width: 190, height: 70).offset(x: -60, y: 50)
-            Ellipse().fill(Color(red: 0.22, green: 0.13, blue: 0.33)).frame(width: 240, height: 70).offset(x: 50, y: 60)
-            Image(systemName: "figure.run")
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(.white)
-                .offset(x: -40, y: hop ? 13 : 17)
-            HStack(spacing: 2) {
-                ForEach(0..<3, id: \.self) { _ in Image(systemName: "heart.fill") }
-            }
-            .font(.system(size: 7))
-            .foregroundStyle(Art.red)
-            .offset(x: -74, y: -44)
-        }
     }
 }

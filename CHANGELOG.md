@@ -4,6 +4,12 @@ All notable changes to this project are documented here. The format is based on 
 
 The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
 
+## [1.26.1] - Unreleased
+
+### Changed
+- The pictures on the Games page now play. Behind each Game Mode switch a little game runs: keys appear and get pressed, and what would pop up over the game shows, like Spotlight or Mission Control, while the game stops. With the switch on, the keys only glow softly and the game keeps going. Flipping a switch shows the difference at once. The game follows the look of your Mac: a sunny day in light mode, a calm night with the moon and stars in dark mode. The keys are the ones set on your Mac.
+- In every picture in the app, the pointer moves like a hand: it takes longer over long distances, comes to rest, and only then clicks, and a picture that starts over glides back to the beginning instead of jumping. The pictures rest while the window is hidden, and with Reduce motion turned on they stand still.
+
 ## [1.26.0] - Unreleased
 
 ### Added

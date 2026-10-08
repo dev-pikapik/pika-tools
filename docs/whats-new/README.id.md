@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Gambar game kini hidup
+
+<sub>1.26.1 · 8 Oktober 2026</sub>
+
+Gambar di halaman “Game” kini bergerak, jadi Anda bisa melihat apa yang dihentikan setiap sakelar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Di balik setiap sakelar di halaman “Game”, kini berjalan sebuah game kecil. Beberapa tombol muncul lalu ditekan, dan Anda melihat apa yang akan muncul di atas game, seperti Spotlight atau Mission Control, sementara game berhenti. Saat sakelar menyala, tombol hanya berpendar lembut dan game terus berjalan. Ubah sebuah sakelar, dan gambar langsung menunjukkan bedanya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Game kecil itu mengikuti tampilan Mac Anda: siang yang cerah di mode terang, dan malam yang tenang dengan bulan dan bintang di mode gelap.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Di semua gambar dalam app, penunjuk kini bergerak seperti tangan: untuk jarak jauh ia butuh sedikit lebih lama, berhenti dulu, baru kemudian mengeklik. Saat gambar mulai lagi, ia kembali ke awal dengan lembut, bukan melompat. Gambar beristirahat saat jendela tersembunyi, dan dengan “Kurangi gerakan” menyala, gambar diam.
+
+**Coba:** Pengaturan › Game
+
+---
+
 ## <a id="v1.26.0"></a>Ikon baru, dan bersih-bersih izin lama
 
 <sub>1.26.0 · 8 Oktober 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Oyun resimleri canlandı
+
+<sub>1.26.1 · 8 Ekim 2026</sub>
+
+“Oyunlar” sayfasındaki resimler artık hareket ediyor; her anahtarın neyi durdurduğunu görüyorsunuz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+“Oyunlar” sayfasındaki her anahtarın arkasında artık küçük bir oyun oynanıyor. Tuşlar belirip basılıyor ve Spotlight ya da Mission Control gibi oyununuzun üstüne neyin fırlayacağını görüyorsunuz; bu sırada oyun duruyor. Anahtar açıkken tuşlar yalnızca hafifçe parlıyor ve oyun sürüyor. Bir anahtarı değiştirin, resim farkı hemen gösterir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Küçük oyun Mac’inizin görünümüne uyar: açık modda güneşli bir gün, koyu modda ay ve yıldızlarla sakin bir gece.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Uygulamadaki tüm resimlerde imleç artık bir el gibi hareket ediyor: uzak yerlere biraz daha uzun sürede gidiyor, duruyor ve ancak sonra tıklıyor. Bir resim baştan başladığında zıplamak yerine yumuşakça başa dönüyor. Pencere gizliyken resimler dinleniyor, “Hareketi azalt” açıkken de yerinde duruyor.
+
+**Deneyin:** Ayarlar › Oyunlar
+
+---
+
 ## <a id="v1.26.0"></a>Yeni bir simge ve eski izinlere temiz bir sayfa
 
 <sub>1.26.0 · 8 Ekim 2026</sub>

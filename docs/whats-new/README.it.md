@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.26.1"></a>Le immagini dei giochi prendono vita
+
+<sub>1.26.1 · 8 ottobre 2026</sub>
+
+Le immagini della pagina «Giochi» ora si muovono, così vedi cosa ferma ogni interruttore.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.26.1/game-previews-dark.png"><img src="../media/whats-new/1.26.1/game-previews-light.png" width="340" alt=""></picture>
+
+Dietro ogni interruttore della pagina «Giochi» ora gira un piccolo gioco. Compaiono dei tasti, vengono premuti, e vedi cosa salterebbe fuori sopra il tuo gioco, come Spotlight o Mission Control, mentre il gioco si ferma. Con l’interruttore attivo, i tasti si illuminano appena e il gioco va avanti. Sposta un interruttore e l’immagine mostra subito la differenza.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Il piccolo gioco segue l’aspetto del tuo Mac: una giornata di sole in modalità chiara e una notte tranquilla con luna e stelle in modalità scura.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+In tutte le immagini dell’app il puntatore ora si muove come una mano: per i tragitti lunghi ci mette un po’ di più, si ferma e solo allora fa clic. Quando un’immagine ricomincia, torna dolcemente all’inizio invece di saltare. Le immagini riposano quando la finestra è nascosta, e con «Riduci movimento» restano ferme.
+
+**Provalo:** Impostazioni › Giochi
+
+---
+
 ## <a id="v1.26.0"></a>Una nuova icona e tabula rasa per i vecchi permessi
 
 <sub>1.26.0 · 8 ottobre 2026</sub>

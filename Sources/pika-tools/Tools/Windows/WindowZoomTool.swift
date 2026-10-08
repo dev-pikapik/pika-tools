@@ -218,7 +218,7 @@ struct WindowZoomArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    private static let durations = [0.9, 0.7, 1.6, 0.9]
+    private static let durations = [1.0, 1.15, 0.15, 1.4, 1.1, 0.15, 1.0]
     private static let screen = CGRect(x: 24, y: 8, width: 252, height: 112)
     private static let zoomed = CGRect(x: 28, y: 18, width: 244, height: 98)
     private static let fullScreen = CGRect(x: 24, y: -6, width: 252, height: 126)
@@ -229,8 +229,9 @@ struct WindowZoomArt: View {
     }
 
     var body: some View {
-        let step = reduceMotion ? 2 : tick % Self.durations.count
-        let frame = step >= 2 ? (on ? Self.zoomed : Self.fullScreen) : Self.small
+        let step = reduceMotion ? 3 : tick % Self.durations.count
+        let big = on ? Self.zoomed : Self.fullScreen
+        let frame = (3...5).contains(step) ? big : Self.small
         let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
         IllustrationRow {
             Stage {
@@ -259,12 +260,16 @@ struct WindowZoomArt: View {
                 .clipShape(shape)
                 .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
                 .position(x: Self.screen.midX, y: Self.screen.midY)
-                if step == 2 {
+                if (2...3).contains(step) {
                     ArtRipple()
                         .position(green(Self.small))
                 }
-                ArtCursor()
-                    .cursor(at: step == 0 ? CGPoint(x: 206, y: 100) : green(step == 3 ? frame : Self.small))
+                if step >= 5 {
+                    ArtRipple()
+                        .position(green(big))
+                }
+                ArtCursor(pressed: step == 2 || step == 5)
+                    .cursor(at: step == 0 ? CGPoint(x: 206, y: 100) : green(step < 4 ? Self.small : big))
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
