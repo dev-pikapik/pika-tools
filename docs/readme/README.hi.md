@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="pika-tools की सेटिंग्स">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-hi-dark.png">
+<img src="../media/settings-hi-light.png" alt="pika-tools की सेटिंग्स">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">नया क्या है</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ख़ुद बिल्ड करें</a> · <a href="../../LICENSE">MIT लाइसेंस</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.hi.md">नया क्या है</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ख़ुद बिल्ड करें</a> · <a href="../../LICENSE">MIT लाइसेंस</a> · © 2026 pikapik</sub></p>

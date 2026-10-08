@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Configurările pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-ro-dark.png">
+<img src="../media/settings-ro-light.png" alt="Configurările pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ Da. Este o aplicație universală pentru Apple Silicon și Intel, cu macOS 14 So
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Noutăți</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilează singur</a> · <a href="../../LICENSE">Licență MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.ro.md">Noutăți</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilează singur</a> · <a href="../../LICENSE">Licență MIT</a> · © 2026 pikapik</sub></p>

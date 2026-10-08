@@ -1,0 +1,137 @@
+<p align="center"><a href="../readme/README.zh-Hant.md"><img src="../media/icon.png" width="96" height="96" alt="pika-tools"></a></p>
+<h1 align="center">pika-tools 更新內容</h1>
+<p align="center">每次更新，幾句話加一張圖，最新的在最前面。</p>
+<p align="center"><sub><a href="README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <b>繁體中文</b> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
+
+---
+
+## <a id="v1.25.0"></a>一鍵加入遊戲，按鍵也能自己決定
+
+<sub>1.25.0 · 2026年10月8日</sub>
+
+從正在打開的 App 裡挑選遊戲，結束和關閉用的按鍵也由你決定。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.0/game-pictures-dark.png"><img src="../media/whats-new/1.25.0/game-pictures-light.png" width="340" alt=""></picture>
+
+按一下「加入遊戲…」，正在打開的 App 會像 Dock 裡那樣以大圖像排開。點一下就能加入，也可以把圖像拖進列表。還可以直接從 Finder 或 Dock 把遊戲拖進來。現在任何 App 都可以當作遊戲，連用 Java 執行的 Minecraft 也行；之前加入的遊戲都會保留。
+
+遊戲模式的開關現在用白話說明，例如「遊戲不會關閉」或「搜尋不會跳出來」，每個開關還配了一張小圖，畫出它擋下的東西。系統裡的名稱，例如 Spotlight，會以灰色顯示在旁邊。
+
+在「設定 › 視窗」中，按一下「結束 App」或「關閉視窗」旁邊的按鍵，然後按下新的按鍵。按 ⌫ 可恢復 ⇧⌘Q 和 ⇧⌘W；如果按鍵已被占用，pika-tools 會先問你。遊戲模式也會使用你的按鍵。另外，設定裡的每個快速鍵現在都會顯示它在你的 Mac 上實際的設定：你自己的按鍵，或「已關閉」。
+
+**試試看：** 設定 › 遊戲，然後按一下「加入遊戲…」
+
+**修正**
+
+- 在 Finder 中剪下檔案時，會遵循你在「系統設定」裡為 Finder 設定的「剪下」快速鍵。
+- 列表中的 App 名稱不再顯示「.app」。
+
+---
+
+## <a id="v1.24.1"></a>速度變化，馬上就看得到
+
+<sub>1.24.1 · 2026年10月8日</sub>
+
+「動畫」頁面現在會告訴你改動在哪裡生效，也會保護你自己設定的值。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
+
+Dock 只有在自動隱藏時才能滑得更快。如果你的 Dock 一直顯示，「自動隱藏和顯示 Dock」開關現在就在速度滑桿正下方。
+
+改動之後，頁面底部會出現一行提示：重新打開 App 後生效。Finder 要重新啟動才會用上快速查看和直欄的新速度，所以這行提示裡有一個「重新啟動 Finder」按鈕。
+
+滑桿絕不會讓你已經調快的東西變慢，例如你在終端機裡用指令調過的。「回復預設值」和解除安裝 pika-tools 會把你之前的值還回來，而不是把它們抹掉。
+
+**試試看：** 設定 › 動畫
+
+**修正**
+
+- Dock 沒有自動隱藏時，不會再無故重新啟動。
+
+---
+
+## <a id="v1.24.0"></a>Mac 動得多快，由你決定
+
+<sub>1.24.0 · 2026年10月8日</sub>
+
+新的「動畫」頁面，決定 Mac 上的東西打開、滑出和出現得有多快。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+一個滑桿就夠了。拖動它，隱藏的 Dock、新視窗、儲存對話框、快速查看和 Finder 中的直欄會一起變快，從「與 macOS 相同」一直到「即時」。
+
+只想調一項？每種效果都有自己的設定，縮到最小效果、Dock 裡跳動的圖像和 Finder 動畫也一樣。每項設定旁邊都有一張小圖，剛好照你選的速度在動。
+
+「回復預設值」只還原 pika-tools 改過的內容，解除安裝時也一樣。如果你曾在終端機裡親自設定過其中某個值，pika-tools 會原樣顯示它。
+
+**試試看：** 設定 › 動畫
+
+---
+
+## <a id="v1.23.2"></a>遊戲模式裡，每個快速鍵都有自己的開關
+
+<sub>1.23.2 · 2026年10月8日</sub>
+
+現在你可以一個一個決定，玩遊戲時遊戲模式要擋下哪些快速鍵。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+⌘Q 和 ⌘W 現在有各自的開關，Spotlight、Siri、⌘Tab、指揮中心、滑動、指標、螢幕等其他項目也一樣。你之前的選擇都會保留。
+
+每一行都準確顯示它擋下的按鍵，所以你總是知道一個開關管什麼。
+
+鍵盤語言設定已從遊戲模式中移除。⌃空白鍵和其他切換語言的方式隨時可用，在遊戲裡也一樣。
+
+**試試看：** 設定 › 遊戲
+
+**修正**
+
+- 同一個快速鍵的按鍵靠得更近，不同快速鍵之間多留了一點空間，一眼就能看出哪個在哪裡結束、下一個從哪裡開始。
+
+---
+
+## <a id="v1.23.1"></a>網速多快，用白話告訴你
+
+<sub>1.23.1 · 2026年10月8日</sub>
+
+「網速測試」會檢查你的網路連線，並簡單告訴你它夠做什麼。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
+
+按一下「測速」，大約半分鐘後就能看到下載、上傳、Ping 和回應能力。數字下方用簡單的話說明，夠不夠看 4K 電影、視訊通話、玩線上遊戲和下載大型檔案。
+
+測速在 Apple 的伺服器上進行，最近一次結果會一直保留到下一次測速。「網速測試」在設定裡有自己的頁面，在選單列面板裡有一行，還有一個給「捷徑」App 用的連結：`pika-tools://speed-test`。
+
+遊戲模式學會了兩件事。阻擋 Control 快速鍵現在歸入了遊戲模式：在遊戲裡，⌃ 點按仍是一般點按，⌃ 快速鍵不會觸發；其他地方 ⌃ 照常使用。它還能辨識 Minecraft：把 Minecraft Launcher 或 CurseForge 加入你的遊戲，當 Minecraft 本身在最前面時，遊戲模式就會開啟。
+
+**試試看：** 設定 › 網速測試，然後按一下「測速」
+
+**修正**
+
+- 自己編譯的 pika-tools 測試版會在 iCloud 雲碟裡分開儲存設定，不會再動到你的設定。
+
+---
+
+## <a id="v1.23.0"></a>遊戲模式：玩遊戲不被打擾
+
+<sub>1.23.0 · 2026年10月7日</sub>
+
+加入你的遊戲，Mac 就不會再把你拉出遊戲。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+玩遊戲時，Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開。⌘Q 和 ⌘W 不會意外關閉遊戲，指標會留在遊戲所在的螢幕上，螢幕也保持開啟。
+
+要結束遊戲，請按 ⇧⌘Q；要關閉遊戲視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。pika-tools 會推薦它在你的 Mac 上找到的遊戲。遊戲模式預設關閉，要你打開才會生效。
+
+「保持喚醒」現在可以選擇螢幕要怎麼做：一直亮著，不顯示螢幕保護程式和鎖定畫面；或者像平常一樣關閉，而 Mac 繼續工作。新的「立即關閉顯示器」按鈕會馬上讓螢幕變暗；移動滑鼠或按任意鍵就會恢復。
+
+**試試看：** 設定 › 遊戲，然後按一下「加入遊戲…」
+
+**修正**
+
+- 在桌上型 Mac 上，「保持喚醒」不再顯示闔上螢幕相關的選項。
+
+---
+
+<p align="center"><sub>更早的版本請見<a href="../../CHANGELOG.md">更新記錄</a>（英文）。</sub></p>

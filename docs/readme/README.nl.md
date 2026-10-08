@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Instellingen van pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-nl-dark.png">
+<img src="../media/settings-nl-light.png" alt="Instellingen van pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ Verwijder pika-tools in **Systeeminstellingen › Privacy en beveiliging** met d
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Wat is er nieuw</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Zelf bouwen</a> · <a href="../../LICENSE">MIT-licentie</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.nl.md">Wat is er nieuw</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Zelf bouwen</a> · <a href="../../LICENSE">MIT-licentie</a> · © 2026 pikapik</sub></p>

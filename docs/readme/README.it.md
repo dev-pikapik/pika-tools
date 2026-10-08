@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Impostazioni di pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-it-dark.png">
+<img src="../media/settings-it-light.png" alt="Impostazioni di pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ In **Impostazioni di Sistema › Privacy e sicurezza**, rimuovi pika-tools da en
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Novità</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap di Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilalo da te</a> · <a href="../../LICENSE">Licenza MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.it.md">Novità</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap di Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilalo da te</a> · <a href="../../LICENSE">Licenza MIT</a> · © 2026 pikapik</sub></p>

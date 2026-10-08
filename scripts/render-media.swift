@@ -30,6 +30,8 @@ enum RenderMedia {
         ("key-repeat", 4.55, AnyView(KeyRepeatArt(on: true))),
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
         ("animations", 4.95, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
+        ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
+        ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleArt(rule: .commandQ)), 64), (AnyView(GameRuleArt(rule: .spotlight)), 52), (AnyView(GameRuleArt(rule: .missionControl)), 72)], height: 36))),
     ]
 
     static func main() {
@@ -67,6 +69,7 @@ enum RenderMedia {
         }
         window.orderOut(nil)
         let url = out.appendingPathComponent("\(name)-\(dark ? "dark" : "light").png")
+        try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
         try? APNG.encode(frames, width: Int(card.width) * 2, height: Int(card.height) * 2, fps: fps).write(to: url)
         print(url.lastPathComponent, frames.count)
     }
@@ -141,6 +144,54 @@ private struct CommandKeysArt: View {
             .animation(.smooth(duration: 0.3), value: step)
         }
         .loop($tick, [0.9, 0.9, 0.5, 1.0, 1.2])
+    }
+}
+
+private struct SwitchRowsArt: View {
+    let rows: [(lead: AnyView, line: CGFloat)]
+    var height: CGFloat = 32
+    @State private var tick = 0
+
+    var body: some View {
+        let step = tick % 4
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        IllustrationRow {
+            VStack(spacing: 0) {
+                ForEach(rows.indices, id: \.self) { index in
+                    HStack(spacing: 10) {
+                        rows[index].lead
+                        Capsule().fill(Color.primary.opacity(0.12)).frame(width: rows[index].line, height: 4)
+                        Spacer(minLength: 0)
+                        ArtSwitch(on: step != index + 1)
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(height: height)
+                }
+            }
+            .frame(width: 252)
+            .background(Color(nsColor: .controlBackgroundColor), in: shape)
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5))
+            .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+            .animation(.smooth(duration: 0.3), value: step)
+        }
+        .loop($tick, [1.2, 1.0, 1.0, 1.0])
+    }
+}
+
+private struct ArtSwitch: View {
+    let on: Bool
+
+    var body: some View {
+        Capsule()
+            .fill(on ? Color.accentColor : Color.primary.opacity(0.16))
+            .frame(width: 26, height: 15)
+            .overlay {
+                Circle()
+                    .fill(.white)
+                    .frame(width: 13, height: 13)
+                    .shadow(color: .black.opacity(0.2), radius: 0.5, y: 0.5)
+                    .offset(x: on ? 5.5 : -5.5)
+            }
     }
 }
 

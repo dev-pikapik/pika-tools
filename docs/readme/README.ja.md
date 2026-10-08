@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="pika-toolsの設定">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-ja-dark.png">
+<img src="../media/settings-ja-light.png" alt="pika-toolsの設定">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">新機能</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ソースからビルド</a> · <a href="../../LICENSE">MITライセンス</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.ja.md">新機能</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ソースからビルド</a> · <a href="../../LICENSE">MITライセンス</a> · © 2026 pikapik</sub></p>

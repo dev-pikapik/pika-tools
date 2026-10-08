@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="pika-tools ayarları">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-tr-dark.png">
+<img src="../media/settings-tr-light.png" alt="pika-tools ayarları">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ Evet. Apple Silicon ve Intel için evrensel bir uygulamadır, macOS 14 Sonoma ve
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Yenilikler</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap’i</a> · <a href="../../CONTRIBUTING.md">Kendiniz derleyin</a> · <a href="../../LICENSE">MIT Lisansı</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.tr.md">Yenilikler</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap’i</a> · <a href="../../CONTRIBUTING.md">Kendiniz derleyin</a> · <a href="../../LICENSE">MIT Lisansı</a> · © 2026 pikapik</sub></p>

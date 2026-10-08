@@ -69,9 +69,10 @@ jobs:
       - name: Publish release
         if: github.ref_type == 'tag'
         run: |
+          if ./scripts/release-notes.sh "$VERSION" > build/notes.md; then NOTES=(--notes-file build/notes.md); else NOTES=(--generate-notes); fi
           gh release create "$GITHUB_REF_NAME" build/pika-tools.zip build/pika-tools.dmg \
             --title "pika-tools $VERSION" \
-            --generate-notes
+            "${NOTES[@]}"
 
       - name: Update cask
         if: github.ref_type == 'tag'

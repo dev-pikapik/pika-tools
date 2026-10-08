@@ -5,8 +5,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="Pengaturan pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-id-dark.png">
+<img src="../media/settings-id-light.png" alt="Pengaturan pika-tools">
 </picture>
 </p>
 
@@ -320,4 +320,4 @@ Di **Pengaturan Sistem › Privasi & Keamanan**, hapus pika-tools dari kedua daf
 
 </details>
 
-<p align="center"><sub><a href="../../CHANGELOG.md">Yang baru</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Bangun sendiri</a> · <a href="../../LICENSE">Lisensi MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.id.md">Yang baru</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Bangun sendiri</a> · <a href="../../LICENSE">Lisensi MIT</a> · © 2026 pikapik</sub></p>

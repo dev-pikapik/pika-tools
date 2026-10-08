@@ -11,8 +11,8 @@
 
 <p align="center">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="../media/settings-en-dark.png">
-<img src="../media/settings-en-light.png" alt="إعدادات pika-tools">
+<source media="(prefers-color-scheme: dark)" srcset="../media/settings-ar-dark.png">
+<img src="../media/settings-ar-light.png" alt="إعدادات pika-tools">
 </picture>
 </p>
 
@@ -394,6 +394,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 <div dir="rtl">
 
-<p align="center"><sub><a href="../../CHANGELOG.md">ما الجديد</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">مستودع Homebrew</a> · <a href="../../CONTRIBUTING.md">البناء بنفسك</a> · <a href="../../LICENSE">ترخيص MIT</a> · © 2026 pikapik</sub></p>
+<p align="center"><sub><a href="../whats-new/README.ar.md">ما الجديد</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">مستودع Homebrew</a> · <a href="../../CONTRIBUTING.md">البناء بنفسك</a> · <a href="../../LICENSE">ترخيص MIT</a> · © 2026 pikapik</sub></p>
 
 </div>
