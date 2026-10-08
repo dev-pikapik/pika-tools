@@ -3,13 +3,31 @@ import SwiftUI
 struct PikaToolsApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     private let registry = ToolRegistry.shared
+    private static let logo = menuBarLogo(opacity: 1)
+    private static let logoOff = menuBarLogo(opacity: 0.45)
+
+    private static func menuBarLogo(opacity: CGFloat) -> NSImage {
+        let svg = Bundle.main.url(forResource: "pikapik", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
+        let image = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { rect in
+            svg?.draw(in: rect.insetBy(dx: -4.2, dy: -4.2), from: .zero, operation: .sourceOver, fraction: opacity)
+            return true
+        }
+        image.isTemplate = true
+        return image
+    }
 
     var body: some Scene {
         MenuBarExtra {
             MenuView(registry: registry)
         } label: {
-            Image(systemName: registry.status.icon)
-                .accessibilityLabel("pika-tools: \(registry.status.title)")
+            Group {
+                if let symbol = registry.status.symbol {
+                    Image(systemName: symbol)
+                } else {
+                    Image(nsImage: registry.status == .off ? Self.logoOff : Self.logo)
+                }
+            }
+            .accessibilityLabel("pika-tools: \(registry.status.title)")
         }
         .menuBarExtraStyle(.window)
         .commands {

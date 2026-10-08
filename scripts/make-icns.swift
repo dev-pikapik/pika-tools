@@ -21,7 +21,7 @@ let background = NSGradient(colors: (fill["linear-gradient"] as! [String]).map(c
 let layers = (json["groups"] as! [[String: Any]])
     .flatMap { $0["layers"] as! [[String: Any]] }
     .reversed()
-    .map { ($0["name"] as! String, NSImage(contentsOf: source.appendingPathComponent("Assets/\($0["image-name"] as! String)"))!) }
+    .map { NSImage(contentsOf: source.appendingPathComponent("Assets/\($0["image-name"] as! String)"))! }
 
 func render(_ px: Int) -> Data {
     let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: px, pixelsHigh: px, bitsPerSample: 8,
@@ -57,12 +57,10 @@ func render(_ px: Int) -> Data {
     cg.beginTransparencyLayer(auxiliaryInfo: nil)
     if px <= 32 {
         cg.translateBy(x: 512, y: 512)
-        cg.scaleBy(x: 1.3, y: 1.3)
-        cg.translateBy(x: -556, y: -437)
-        layers.first { $0.0 == "arrow" }!.1.draw(in: tile)
-    } else {
-        for layer in layers { layer.1.draw(in: tile) }
+        cg.scaleBy(x: 1.2, y: 1.2)
+        cg.translateBy(x: -512, y: -512)
     }
+    for layer in layers { layer.draw(in: tile) }
     cg.endTransparencyLayer()
     cg.restoreGState()
 
@@ -94,5 +92,6 @@ iconutil.arguments = ["-c", "icns", iconset.path, "-o", output.path]
 try iconutil.run()
 iconutil.waitUntilExit()
 guard iconutil.terminationStatus == 0 else { exit(1) }
+try render(256).write(to: root.appendingPathComponent("docs/media/icon.png"))
 print("Done: \(output.path)")
 print("Iconset: \(iconset.path)")
