@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>新圖像，以及舊權限的大掃除
+
+<sub>1.26.0 · 2026年10月8日</sub>
+
+pika-tools 換上新面貌，現在還能清除已刪除 App 留下的權限。
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+新圖像是深色方塊上藍、紫、珊瑚色的 pikapik 標誌。選單列也顯示同樣的形狀，並會配合淺色或深色選單列。所有工具都關閉時，這個形狀會變淡。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+刪除 App 後，macOS 仍會保留你給過它的權限，而「系統設定」沒有辦法移除。現在「權限」頁面有一個名為「已刪除 App 留下的權限」的列表：每個 App 都附上圖像，並顯示它曾被允許做什麼以及時間。「移除」清除一個 App，「全部移除」一次清除全部；重新安裝的 App 只會再問你一次。若要看到這個列表，請給 pika-tools 完整磁碟取用權限：在你按下「移除」之前，它只看不改。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+「動畫」和「遊戲」頁面的圖片依實際尺寸重新繪製，因此很清晰。視窗會帶著圓角縮進 Dock，指標先按一下，之後才打開選單。另外，「關於」底部多了一行低調的文字：「用心打造 · 請我喝杯咖啡」。不會跳出任何東西，也從不提醒你。
+
+**試試看：** 設定 › 權限，然後查看「已刪除 App 留下的權限」
+
+**修正**
+
+- 按一下系統快速鍵會直接打開它在「系統設定」中的區塊，例如 Mission Control，而不只是「鍵盤」。
+- 按鍵旁的提示不會再在「系統設定」打開的瞬間消失。
+
+---
+
 ## <a id="v1.25.2"></a>按一下快速鍵，直接到能更改它的地方
 
 <sub>1.25.2 · 2026年10月8日</sub>

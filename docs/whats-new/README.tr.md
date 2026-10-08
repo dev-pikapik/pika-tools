@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Yeni bir simge ve eski izinlere temiz bir sayfa
+
+<sub>1.26.0 · 8 Ekim 2026</sub>
+
+pika-tools’un yüzü yenilendi ve artık silinen uygulamaların geride bıraktığı izinleri temizliyor.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Yeni simge, koyu bir karo üzerinde mavi, mor ve mercan renginde pikapik işareti. Menü çubuğunda da aynı şekil görünür ve açık ya da koyu menü çubuğuna uyar. Tüm araçlar kapalıyken şekil solar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Bir uygulamayı sildiğinizde macOS ona verdiğiniz izinleri saklar ve Sistem Ayarları’nda bunları kaldırmanın bir yolu yoktur. Artık “İzinler” sayfasında “Silinen uygulamalardan kalanlar” adlı bir liste var: her uygulama simgesiyle, neye izni olduğu ve ne zaman. “Kaldır” bir uygulamayı temizler, “Tümünü Kaldır” hepsini, yeniden yüklediğiniz bir uygulama ise yalnızca tekrar sorar. Listeyi görmek için pika-tools’a Tam Disk Erişimi verin: “Kaldır”a basana kadar yalnızca bakar ve hiçbir şeyi değiştirmez.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+“Animasyonlar” ve “Oyunlar” sayfalarındaki resimler gerçek boyutlarına göre yeniden çizildi, bu yüzden net görünüyor. Bir pencere yuvarlak köşeleriyle Dock’a küçülür; imleç önce tıklar, menü ancak ondan sonra açılır. “Hakkında”nın altında da artık sessiz bir satır var: “Özenle yapıldı · Bana bir kahve ısmarlayın”. Hiçbir şey birden açılmaz, hiçbir şey hatırlatmaz.
+
+**Deneyin:** Ayarlar › İzinler, ardından “Silinen uygulamalardan kalanlar”
+
+**Düzeltilenler**
+
+- Bir sistem kestirmesini tıklamak, yalnızca “Klavye”yi değil, Mission Control gibi doğrudan o kestirmenin bölümünü Sistem Ayarları’nda açar.
+- Tuşların yanındaki ipucu, Sistem Ayarları açılır açılmaz artık kaybolmuyor.
+
+---
+
 ## <a id="v1.25.2"></a>Kestirmeler, değiştirdiğiniz yerde açılır
 
 <sub>1.25.2 · 8 Ekim 2026</sub>

@@ -162,7 +162,11 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br><b>Hoạt ảnh</b>
 <br>Tăng tốc Dock, cửa sổ và Xem nhanh, cho đến tức thì.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Quyền của ứng dụng đã xóa</b>
+<br>Gỡ các quyền mà macOS vẫn giữ cho những ứng dụng bạn đã xóa.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
-Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: mũi tên có dấu bấm khi các công cụ đang chạy, mũi tên bị gạch khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
+Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
 
 Bảng điều khiển trên thanh menu ban đầu chỉ có vài hàng. Bạn tự chọn hàng nào được hiện: nhấp nút hình bút chì ở phía dưới, chọn những gì bạn muốn thấy rồi nhấp **Xong**. Các hàng bị ẩn vẫn hoạt động và vẫn nằm trong Cài đặt. Nếu bảng không vừa màn hình, bạn có thể cuộn nó.
 

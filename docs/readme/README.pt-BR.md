@@ -162,7 +162,11 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br><b>Animações</b>
 <br>Acelere o Dock, as janelas e a Visualização Rápida, até ficarem instantâneos.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Permissões de apps apagados</b>
+<br>Remova as permissões que o macOS guarda para apps que você já apagou.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
-O ícone na barra de menus mostra o estado num relance: uma seta com um clique quando as ferramentas estão funcionando, uma seta riscada quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
+O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
 
 O painel da barra de menus começa com poucas linhas. Você escolhe quais ele mostra: clique no botão de lápis na parte de baixo, marque o que quer ver e clique em **Concluir**. As linhas ocultas continuam funcionando e ficam nos Ajustes. Se o painel não couber na tela, ele rola.
 

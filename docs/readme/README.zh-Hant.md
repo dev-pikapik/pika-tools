@@ -162,7 +162,11 @@ Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求�
 <br><b>動畫</b>
 <br>讓 Dock、視窗和快速查看更快，甚至瞬間完成。
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>已刪除 App 的權限</b>
+<br>清除 macOS 為已刪除的 App 保留的權限。
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ pika-tools 不會記錄、儲存或傳送你輸入或點按的任何內容。事
 
 每個工具在選單和設定中都有各自的開關。
 
-選單列圖像一眼就能看出狀態：工具正在運作時顯示帶有點按標記的箭頭，全部關閉時顯示加上斜線的箭頭，工具已開啟但缺少權限時顯示警告三角形。
+選單列圖像一眼就能看出狀態：工具正在運作時顯示 pikapik 標誌，全部關閉時同一個標誌會變淡，工具已開啟但缺少權限時顯示警告三角形。
 
 選單列面板一開始只顯示幾列。要顯示哪些列，由你決定：按一下底部的鉛筆按鈕，勾選想看到的項目，再按一下**完成**。隱藏的列仍會照常運作，並保留在設定中。面板在螢幕上放不下時，可以捲動。
 

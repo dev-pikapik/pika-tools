@@ -162,7 +162,11 @@ Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 
 <br><b>애니메이션</b>
 <br>Dock, 윈도우, 훑어보기를 더 빠르게, 원하면 즉시 움직이게 합니다.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>삭제한 앱의 권한</b>
+<br>삭제한 앱을 위해 macOS가 남겨 둔 권한을 지웁니다.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ pika-tools는 입력하거나 클릭한 내용을 기록하거나 저장하거�
 
 각 도구에는 메뉴와 설정에 별도의 스위치가 있습니다.
 
-메뉴 막대 아이콘으로 상태를 한눈에 알 수 있습니다. 도구가 작동 중이면 클릭 표시가 있는 화살표, 모두 꺼져 있으면 사선이 그어진 화살표, 도구는 켜져 있지만 권한이 없으면 경고 삼각형이 표시됩니다.
+메뉴 막대 아이콘으로 상태를 한눈에 알 수 있습니다. 도구가 작동 중이면 pikapik 마크, 모두 꺼져 있으면 같은 마크가 흐리게, 도구는 켜져 있지만 권한이 없으면 경고 삼각형이 표시됩니다.
 
 메뉴 막대 패널은 처음에 몇 개의 행만 보여 줍니다. 표시할 행은 직접 고를 수 있습니다. 아래의 연필 버튼을 클릭하고, 보고 싶은 항목을 체크한 다음 **완료**를 클릭하세요. 숨긴 행도 계속 작동하며 설정에 그대로 남아 있습니다. 패널이 화면에 다 들어가지 않으면 스크롤됩니다.
 

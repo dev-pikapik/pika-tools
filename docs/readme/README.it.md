@@ -162,7 +162,11 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <br><b>Animazioni</b>
 <br>Velocizza il Dock, le finestre e Visualizzazione rapida, fino a renderli istantanei.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Permessi delle app eliminate</b>
+<br>Togli i permessi che macOS conserva per le app già eliminate.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
-L’icona nella barra dei menu mostra lo stato a colpo d’occhio: una freccia con un clic quando gli strumenti funzionano, una freccia barrata quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
+L’icona nella barra dei menu mostra lo stato a colpo d’occhio: il simbolo pikapik quando gli strumenti funzionano, lo stesso simbolo più chiaro quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
 
 Il pannello della barra dei menu parte con poche righe. Puoi scegliere quali mostrare: fai clic sul pulsante con la matita in basso, seleziona ciò che vuoi vedere e fai clic su **Fine**. Le righe nascoste continuano a funzionare e restano nelle Impostazioni. Se il pannello non sta nello schermo, scorre.
 

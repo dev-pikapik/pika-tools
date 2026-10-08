@@ -162,7 +162,11 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br><b>Animationer</b>
 <br>Snabba upp Dock, fönster och Snabbtitt, ända till direkt.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Behörigheter för raderade appar</b>
+<br>Ta bort behörigheterna som macOS sparar för appar du redan har raderat.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
-Symbolen i menyraden visar läget med en blick: en pil med ett klick när verktygen arbetar, en överstruken pil när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
+Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
 
 Panelen i menyraden visar först bara några få rader. Du väljer själv vilka som visas: klicka på pennknappen längst ned, markera det du vill se och klicka på **Klar**. Dolda rader fortsätter fungera och finns kvar i Inställningar. Om panelen inte ryms på skärmen går den att scrolla.
 

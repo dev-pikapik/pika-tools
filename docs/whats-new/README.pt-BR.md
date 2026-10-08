@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Um ícone novo e uma faxina nas permissões antigas
+
+<sub>1.26.0 · 8 de outubro de 2026</sub>
+
+O pika-tools ganhou cara nova e agora remove as permissões que os apps apagados deixam para trás.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+O ícone novo é a marca do pikapik em azul, violeta e coral sobre um bloco escuro. A barra de menus mostra a mesma forma, que acompanha uma barra clara ou escura. Quando todas as ferramentas estão desativadas, a forma fica pálida.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Quando você apaga um app, o macOS guarda as permissões que você deu a ele, e os Ajustes do Sistema não têm como removê-las. Agora a página “Permissões” tem uma lista chamada “Restos de apps apagados”: cada app com seu ícone, o que ele podia fazer e quando. “Remover” limpa um app, “Remover Tudo” limpa todos, e um app que você instalar de novo simplesmente vai pedir outra vez. Para ver a lista, dê ao pika-tools Acesso Total ao Disco: ele só olha e não muda nada até você clicar em “Remover”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+As imagens das páginas “Animações” e “Jogos” foram redesenhadas para o tamanho real, por isso ficam nítidas. Uma janela encolhe para o Dock com cantos arredondados, e o ponteiro clica primeiro, só depois um menu abre. E no fim de “Sobre” agora há uma linha discreta: “Feito com carinho · Me pague um café”. Nada aparece de repente, e nada fica lembrando você.
+
+**Experimente:** Ajustes › Permissões, depois “Restos de apps apagados”
+
+**Corrigido**
+
+- Clicar num atalho do sistema abre direto a seção dele nos Ajustes do Sistema, como Mission Control, e não só “Teclado”.
+- A dica ao lado das teclas não some mais assim que os Ajustes do Sistema abrem.
+
+---
+
 ## <a id="v1.25.2"></a>Os atalhos abrem onde você os muda
 
 <sub>1.25.2 · 8 de outubro de 2026</sub>

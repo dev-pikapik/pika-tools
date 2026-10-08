@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Nová ikona a čistý stůl pro stará oprávnění
+
+<sub>1.26.0 · 8. října 2026</sub>
+
+pika-tools má novou tvář a teď umí smazat oprávnění, která po sobě nechaly smazané aplikace.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Nová ikona je značka pikapik v modré, fialové a korálové barvě na tmavé dlaždici. Řádek nabídek ukazuje stejný tvar, který se přizpůsobí světlému i tmavému řádku. Když jsou všechny nástroje vypnuté, tvar zbledne.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Když smažete aplikaci, macOS si nechá oprávnění, která jste jí dali, a v Nastavení systému je odstranit nejde. Teď má stránka „Oprávnění“ seznam „Zbylo po smazaných aplikacích“: každá aplikace se svou ikonou, co směla dělat a kdy. „Odstranit“ vyčistí jednu aplikaci, „Odstranit vše“ všechny najednou a aplikace, kterou nainstalujete znovu, se prostě zeptá ještě jednou. Abyste seznam viděli, dejte pika-tools úplný přístup k disku: jen se dívá a nic nemění, dokud nekliknete na „Odstranit“.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Obrázky na stránkách „Animace“ a „Hry“ jsou nakreslené znovu pro svou skutečnou velikost, takže jsou ostré. Okno se zmenší do Docku se zaoblenými rohy a ukazatel nejdřív klikne a teprve pak se otevře nabídka. A dole v „O aplikaci“ je teď tichý řádek: „Vytvořeno s péčí · Kupte mi kávu“. Nic nevyskakuje a nic vám nepřipomíná.
+
+**Vyzkoušejte:** Nastavení › Oprávnění, pak „Zbylo po smazaných aplikacích“
+
+**Opraveno**
+
+- Kliknutí na systémovou zkratku otevře přímo její oddíl v Nastavení systému, třeba Mission Control, a ne jen „Klávesnice“.
+- Rada vedle kláves už nezmizí hned, jak se otevře Nastavení systému.
+
+---
+
 ## <a id="v1.25.2"></a>Zkratky se otevřou tam, kde je změníte
 
 <sub>1.25.2 · 8. října 2026</sub>

@@ -30,6 +30,7 @@ enum RenderMedia {
         ("key-repeat", 4.55, AnyView(KeyRepeatArt(on: true))),
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
         ("animations", 4.9, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
+        ("leftover-permissions", 3.8, AnyView(LeftoversArt())),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
         ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleArt(rule: .commandQ, height: 32)), 64), (AnyView(GameRuleArt(rule: .spotlight, height: 32)), 52), (AnyView(GameRuleArt(rule: .missionControl, height: 32)), 72)], height: 36))),
         ("whats-new/1.25.1/dock-games", 3.1, AnyView(DockShelfArt())),

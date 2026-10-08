@@ -162,7 +162,11 @@ Tanto Homebrew como el script colocan la app en `/Applications`, la abren, piden
 <br><b>Animaciones</b>
 <br>Acelera el Dock, las ventanas y Vista Rápida, hasta que sean instantáneos.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Permisos de apps eliminadas</b>
+<br>Quita los permisos que macOS guarda para las apps que ya eliminaste.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes.
 
-El icono de la barra de menús muestra el estado de un vistazo: una flecha con un clic cuando las herramientas funcionan, una flecha tachada cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
+El icono de la barra de menús muestra el estado de un vistazo: la marca de pikapik cuando las herramientas funcionan, la misma marca más pálida cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
 
 El panel de la barra de menús empieza con solo unas pocas filas. Tú eliges cuáles muestra: haz clic en el botón del lápiz de abajo, marca lo que quieras ver y haz clic en **Hecho**. Las filas ocultas siguen funcionando y se quedan en Ajustes. Si el panel no cabe en la pantalla, se desplaza.
 

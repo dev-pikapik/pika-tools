@@ -162,7 +162,11 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br><b>Animaties</b>
 <br>Maak het Dock, vensters en Snel bekijken sneller, tot direct aan toe.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Toestemmingen van verwijderde apps</b>
+<br>Haal de toestemmingen weg die macOS bewaart voor apps die je al hebt verwijderd.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
-Het symbool in de menubalk laat in één oogopslag de status zien: een pijl met een klik als de tools werken, een doorgestreepte pijl als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
+Het symbool in de menubalk laat in één oogopslag de status zien: het pikapik-teken als de tools werken, hetzelfde teken maar bleek als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
 
 Het paneel in de menubalk begint met maar een paar rijen. Welke rijen het toont, bepaal je zelf: klik onderaan op de potloodknop, vink aan wat je wilt zien en klik op **Gereed**. Verborgen rijen blijven werken en blijven staan in Instellingen. Past het paneel niet op het scherm, dan kun je scrollen.
 

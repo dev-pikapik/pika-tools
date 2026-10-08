@@ -75,12 +75,15 @@ final class LeftoverModel {
             .appendingPathComponent("Leftover.app", isDirectory: true)
         let executable = stub.appendingPathComponent("Contents/MacOS/Leftover")
         let info: NSDictionary = ["CFBundleIdentifier": id, "CFBundlePackageType": "APPL", "CFBundleExecutable": "Leftover"]
-        try? files.removeItem(at: stub)
-        defer {
+        func clear() {
             run(lsregister, "-u", stub.path)
             try? files.removeItem(at: stub)
         }
-        guard (try? files.createDirectory(at: executable.deletingLastPathComponent(), withIntermediateDirectories: true)) != nil,
+        clear()
+        defer { clear() }
+        guard !LeftoverPermissions.isSystem(id, isPath: false),
+              LeftoverPermissions.place(id, isPath: false, .live) == .gone,
+              (try? files.createDirectory(at: executable.deletingLastPathComponent(), withIntermediateDirectories: true)) != nil,
               (try? files.copyItem(atPath: "/usr/bin/true", toPath: executable.path)) != nil,
               (try? info.write(to: stub.appendingPathComponent("Contents/Info.plist"))) != nil
         else { return }
@@ -297,7 +300,7 @@ private struct ChipFlow: Layout {
     }
 }
 
-private struct LeftoversArt: View {
+struct LeftoversArt: View {
     @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 

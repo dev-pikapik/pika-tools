@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Ikon baru, dan bersih-bersih izin lama
+
+<sub>1.26.0 · 8 Oktober 2026</sub>
+
+pika-tools punya wajah baru, dan kini bisa menghapus izin yang ditinggalkan app yang sudah dihapus.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Ikon barunya adalah tanda pikapik berwarna biru, ungu, dan koral di atas ubin gelap. Bar menu menampilkan bentuk yang sama, yang menyesuaikan diri dengan bar menu terang atau gelap. Saat semua alat mati, bentuknya memudar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Saat Anda menghapus app, macOS tetap menyimpan izin yang pernah Anda berikan, dan Pengaturan Sistem tidak punya cara untuk menghapusnya. Kini halaman “Izin” punya daftar bernama “Sisa dari app yang dihapus”: setiap app dengan ikonnya, apa yang dulu diizinkan, dan kapan. “Hapus” membersihkan satu app, “Hapus Semua” membersihkan semuanya, dan app yang Anda pasang lagi hanya akan meminta izin lagi. Untuk melihat daftarnya, beri pika-tools Akses Disk Penuh: ia hanya melihat dan tidak mengubah apa pun sampai Anda menekan “Hapus”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Gambar di halaman “Animasi” dan “Game” digambar ulang sesuai ukuran aslinya, jadi tampak tajam. Jendela mengecil ke Dock dengan sudut membulat, dan penunjuk mengeklik dulu, baru kemudian menu terbuka. Dan di bagian bawah “Tentang” kini ada satu baris yang tenang: “Dibuat dengan sepenuh hati · Traktir saya kopi”. Tidak ada yang tiba-tiba muncul atau mengingatkan Anda.
+
+**Coba:** Pengaturan › Izin, lalu “Sisa dari app yang dihapus”
+
+**Diperbaiki**
+
+- Mengeklik pintasan sistem kini langsung membuka bagiannya sendiri di Pengaturan Sistem, seperti Mission Control, bukan hanya “Papan Ketik”.
+- Tip di samping tombol tidak lagi hilang begitu Pengaturan Sistem terbuka.
+
+---
+
 ## <a id="v1.25.2"></a>Pintasan terbuka di tempat Anda mengubahnya
 
 <sub>1.25.2 · 8 Oktober 2026</sub>

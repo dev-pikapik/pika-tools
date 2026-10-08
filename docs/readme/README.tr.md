@@ -162,7 +162,11 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br><b>Animasyonlar</b>
 <br>Dock’u, pencereleri ve Hızlı Bakış’ı hızlandırın, anında olacak kadar.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Silinen uygulamaların izinleri</b>
+<br>macOS’in silinmiş uygulamalar için sakladığı izinleri kaldırın.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
-Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken tıklama işaretli bir ok, her şey kapalıyken üstü çizili bir ok, bir araç açık ama izinler eksikken bir uyarı üçgeni.
+Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
 
 Menü çubuğu paneli başta yalnızca birkaç satırla açılır. Hangi satırların görüneceğini sen seçersin: alttaki kalem düğmesine tıkla, görmek istediğin satırları işaretle ve **Bitti**'ye tıkla. Gizlenen satırlar çalışmaya devam eder ve Ayarlar'da kalır. Panel ekrana sığmazsa kaydırılır.
 

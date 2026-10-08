@@ -162,7 +162,11 @@ Homebrew 和脚本都会把 App 放到 `/Applications`，启动它，请求权�
 <br><b>动画</b>
 <br>让程序坞、窗口和快速查看更快，甚至瞬间完成。
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>已删除 App 的权限</b>
+<br>清除 macOS 为已删除的 App 保留的权限。
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ pika-tools 不会记录、存储或发送你输入或点按的任何内容。事
 
 每个工具在菜单和设置中都有单独的开关。
 
-菜单栏图标一眼就能看出状态：工具正在运行时显示带点按标记的箭头，全部关闭时显示带斜线的箭头，工具已打开但缺少权限时显示警告三角形。
+菜单栏图标一眼就能看出状态：工具正在运行时显示 pikapik 标志，全部关闭时同一个标志会变淡，工具已打开但缺少权限时显示警告三角形。
 
 菜单栏面板一开始只显示几行。显示哪些行，由你来选：点按底部的铅笔按钮，勾选想看到的项目，再点按**完成**。隐藏的行仍会照常工作，并保留在设置中。面板在屏幕上放不下时，可以滚动。
 

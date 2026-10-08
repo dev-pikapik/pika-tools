@@ -162,7 +162,11 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br><b>Animacje</b>
 <br>Przyspiesz Dock, okna i Szybki przegląd, nawet do natychmiastowych.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+<br><b>Uprawnienia usuniętych aplikacji</b>
+<br>Usuń uprawnienia, które macOS zachowuje dla już usuniętych aplikacji.
+</td>
 </tr></tbody>
 </table>
 
@@ -225,7 +229,7 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
-Ikona na pasku menu od razu pokazuje stan: strzałka z kliknięciem, gdy narzędzia działają, przekreślona strzałka, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
+Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
 
 Panel na pasku menu na początku pokazuje tylko kilka wierszy. Które wiersze są widoczne, wybierasz sam: kliknij przycisk z ołówkiem na dole, zaznacz to, co chcesz widzieć, i kliknij **Gotowe**. Ukryte wiersze nadal działają i zostają w Ustawieniach. Jeśli panel nie mieści się na ekranie, można go przewijać.
 

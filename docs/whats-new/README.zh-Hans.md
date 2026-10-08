@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>新图标，以及旧权限的大扫除
+
+<sub>1.26.0 · 2026年10月8日</sub>
+
+pika-tools 换了新面孔，现在还能清除已删除 App 留下的权限。
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+新图标是深色方块上蓝、紫、珊瑚色的 pikapik 标志。菜单栏里也是同样的形状，并会跟随浅色或深色菜单栏。所有工具都关闭时，这个形状会变淡。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+删除 App 后，macOS 仍会保留你给过它的权限，而“系统设置”里没有办法移除。现在“权限”页面有一个名为“已删除 App 留下的权限”的列表：每个 App 都带有图标，并显示它曾被允许做什么以及时间。“移除”清除一个 App，“全部移除”一次清除全部；重新安装的 App 只会再问你一次。要看到这个列表，请给 pika-tools 完全磁盘访问权限：在你点按“移除”之前，它只看不改。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+“动画”和“游戏”页面上的图片按真实尺寸重新绘制，因此很清晰。窗口会带着圆角缩进程序坞，指针先点按，然后才打开菜单。另外，“关于”底部多了一行低调的文字：“用心打造 · 请我喝杯咖啡”。不会弹出任何东西，也从不提醒你。
+
+**试试看：** 设置 › 权限，然后查看“已删除 App 留下的权限”
+
+**修复**
+
+- 点按系统快捷键会直接打开“系统设置”里它所在的部分，例如 Mission Control，而不只是“键盘”。
+- 按键旁的提示不会再在“系统设置”打开的一瞬间消失。
+
+---
+
 ## <a id="v1.25.2"></a>点按快捷键，直接去能更改它的地方
 
 <sub>1.25.2 · 2026年10月8日</sub>

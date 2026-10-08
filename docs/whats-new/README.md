@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>A new icon, and a clean slate for old permissions
+
+<sub>1.26.0 · October 8, 2026</sub>
+
+pika-tools has a new face, and it can now clear the permissions that deleted apps leave behind.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+The new icon is the pikapik mark in blue, violet and coral on a dark tile. The menu bar shows the same shape and follows a light or dark menu bar. When every tool is off, the shape turns pale.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now the Permissions page has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. “Remove” clears one app, “Remove All” clears them all, and an app you install again simply asks again. To see the list, give pika-tools Full Disk Access: it only looks and changes nothing until you press “Remove”.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+The pictures on the Animations and Games pages are drawn anew for their real size, so they look sharp. A window shrinks into the Dock with round corners, and the pointer clicks first, and only then a menu opens. And at the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. Nothing pops up or reminds you, ever.
+
+**Try it:** Settings › Permissions, then “Left by deleted apps”
+
+**Fixed**
+
+- Clicking a system shortcut takes you straight to its own section in System Settings, like Mission Control, not just to “Keyboard”.
+- The tip next to the keys no longer disappears the moment System Settings opens.
+
+---
+
 ## <a id="v1.25.2"></a>Shortcuts open where you change them
 
 <sub>1.25.2 · October 8, 2026</sub>

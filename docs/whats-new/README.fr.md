@@ -5,6 +5,33 @@
 
 ---
 
+## <a id="v1.26.0"></a>Une nouvelle icône, et place nette pour les anciennes autorisations
+
+<sub>1.26.0 · 8 octobre 2026</sub>
+
+pika-tools change de visage et efface désormais les autorisations que laissent les apps supprimées.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+La nouvelle icône est le symbole pikapik en bleu, violet et corail sur une tuile sombre. La barre des menus affiche la même forme, qui s’adapte à une barre claire ou sombre. Quand tous les outils sont désactivés, la forme pâlit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
+
+Quand vous supprimez une app, macOS garde les autorisations que vous lui aviez données, et Réglages Système ne permet pas de les retirer. La page « Autorisations » a maintenant une liste « Laissées par des apps supprimées » : chaque app avec son icône, ce qu’elle avait le droit de faire et quand. « Supprimer » efface une app, « Tout supprimer » les efface toutes, et une app que vous réinstallez redemandera simplement. Pour voir la liste, donnez à pika-tools l’accès complet au disque : il ne fait que regarder et ne change rien tant que vous n’appuyez pas sur « Supprimer ».
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
+
+Les images des pages « Animations » et « Jeux » sont redessinées pour leur vraie taille, elles sont donc nettes. Une fenêtre se range dans le Dock avec des coins arrondis, et le pointeur clique d’abord, puis seulement un menu s’ouvre. Et en bas de « À propos », il y a maintenant une ligne discrète : « Fait avec soin · Offrez-moi un café ». Rien ne s’affiche tout seul, et rien ne vous le rappelle.
+
+**Pour essayer :** Réglages › Autorisations, puis « Laissées par des apps supprimées »
+
+**Corrigé**
+
+- Un clic sur un raccourci système ouvre directement sa section dans Réglages Système, comme Mission Control, et pas seulement « Clavier ».
+- L’astuce à côté des touches ne disparaît plus dès que Réglages Système s’ouvre.
+
+---
+
 ## <a id="v1.25.2"></a>Les raccourcis s’ouvrent là où on les modifie
 
 <sub>1.25.2 · 8 octobre 2026</sub>
