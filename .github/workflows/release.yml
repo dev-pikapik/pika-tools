@@ -74,22 +74,6 @@ jobs:
             --title "pika-tools $VERSION" \
             "${NOTES[@]}"
 
-      - name: Update cask
-        if: github.ref_type == 'tag'
-        run: |
-          SHA=$(shasum -a 256 build/pika-tools.zip | cut -d' ' -f1)
-          git fetch -q origin main
-          git checkout -q -B main origin/main
-          sed -i '' \
-            -e "s/^  version \".*\"/  version \"$VERSION\"/" \
-            -e "s/^  sha256 \".*\"/  sha256 \"$SHA\"/" \
-            Casks/pika-tools.rb
-          git config user.name pikapik
-          git config user.email 241494448+dev-pikapik@users.noreply.github.com
-          git add Casks/pika-tools.rb
-          git diff --cached --quiet || git commit -q -m "Cask $VERSION"
-          git push -q origin main
-
       - name: Update Homebrew tap
         if: github.ref_type == 'tag'
         env:

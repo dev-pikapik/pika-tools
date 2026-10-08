@@ -751,6 +751,12 @@ private struct ToolsSettings: View {
 private struct AboutView: View {
     private static let github = Bundle.main.url(forResource: "github", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
 
+    private static var whatsNew: String {
+        let code = Bundle.main.preferredLocalizations.first ?? "en"
+        let page = code != "en" && Language.codes.contains(code) ? "README.\(code).md" : "README.md"
+        return "https://github.com/dev-pikapik/pika-tools/blob/main/docs/whats-new/\(page)"
+    }
+
     @Bindable private var updater = Updater.shared
     private let info = Bundle.main.infoDictionary ?? [:]
     private var version: String {
@@ -784,7 +790,7 @@ private struct AboutView: View {
 
             Section {
                 link("GitHub", "https://github.com/dev-pikapik/pika-tools", symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
-                link(String(localized: "What’s New"), "https://github.com/dev-pikapik/pika-tools/blob/main/CHANGELOG.md", symbol: "newspaper.fill", color: .blue)
+                link(String(localized: "What’s New"), Self.whatsNew, symbol: "newspaper.fill", color: .blue)
                 link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
                 link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)
             } footer: {

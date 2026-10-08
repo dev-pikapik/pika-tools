@@ -1,16 +1,24 @@
 # Changelog
 
-All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Every update to pika-tools, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
+## [1.26.2] - Unreleased
 
-## [1.26.1] - Unreleased
+### Changed
+- What’s New in Settings › About now opens the What’s new page in the language of the app, with a picture for every update, instead of this list.
+- This list is tidier: every version shows the day it came out and links to its release, and the top of the page leads to What’s new in every language.
+- Homebrew updates come only from the dev-pikapik/pika-tools tap. If you added it long ago with the two-step `brew tap` command that pointed at this repository, run `brew tap --custom-remote dev-pikapik/pika-tools https://github.com/dev-pikapik/homebrew-pika-tools` once.
+
+### Fixed
+- Version links in this list that led nowhere now open the right release.
+
+## [1.26.1] - 2026-10-08
 
 ### Changed
 - The pictures on the Games page now play. Behind each Game Mode switch a little game runs: keys appear and get pressed, and what would pop up over the game shows, like Spotlight or Mission Control, while the game stops. With the switch on, the keys only glow softly and the game keeps going. Flipping a switch shows the difference at once. The game follows the look of your Mac: a sunny day in light mode, a calm night with the moon and stars in dark mode. The keys are the ones set on your Mac.
 - In every picture in the app, the pointer moves like a hand: it takes longer over long distances, comes to rest, and only then clicks, and a picture that starts over glides back to the beginning instead of jumping. The pictures rest while the window is hidden, and with Reduce motion turned on they stand still.
 
-## [1.26.0] - Unreleased
+## [1.26.0] - 2026-10-08
 
 ### Added
 - A way to say thanks. At the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. It opens buymeacoffee.com/pikapik in your browser, and everything goes into developing and supporting the app. Nothing pops up or reminds you, ever. The README has the same link, and GitHub shows a Sponsor button.
@@ -23,12 +31,12 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - Clicking a system shortcut now takes you straight to its own list in System Settings, like Mission Control or Screenshots, not just to Keyboard. If pika-tools can’t pick the list for you, Keyboard Shortcuts still opens, and a short tip next to the keys says which list to click. The tip no longer disappears the moment System Settings opens.
 
-## [1.25.2] - Unreleased
+## [1.25.2] - 2026-10-08
 
 ### Fixed
 - Clicking a system shortcut in Settings opens the right place in System Settings. The Spotlight keys open right on Spotlight. For other shortcuts, System Settings opens on Keyboard, and a short tip next to the keys says where to click, like “Keyboard Shortcuts…”, then “Mission Control”. Cut files in Finder points to “App Shortcuts”. Before, every click ended up on Modifier Keys.
 
-## [1.25.1] - Unreleased
+## [1.25.1] - 2026-10-08
 
 ### Changed
 - Every picture on the Animations and Games pages is big now, the same size as the picture at the top of the page. The pictures still move at the speed you pick.
@@ -39,7 +47,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - A game that sits in the Dock but is closed shows up in the list for adding, Minecraft too.
 - The hearts in the small game scenes are no longer cut off at the edge.
 
-## [1.25.0] - Unreleased
+## [1.25.0] - 2026-10-08
 
 ### Added
 - Games: adding a game is easier. Press Add a Game… and pick it from the apps that are open right now, with big icons like in the Dock. One click adds it, or drag the icon into the list. You can also drop a game straight from Finder or the Dock, and the list lights up to show where it goes. Other… still lets you pick any app from a folder.
@@ -53,7 +61,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - Every shortcut in Settings shows how it is really set up on your Mac. Shortcuts you changed in System Settings show your keys, and the ones you turned off say Off. Click one to open the keyboard shortcuts in System Settings.
 - Cut files in Finder follows the Cut shortcut you set for Finder in System Settings.
 
-## [1.24.1] - Unreleased
+## [1.24.1] - 2026-10-08
 
 ### Fixed
 - Animations: the Faster preset never makes anything slower than what you already had. If parts of your Mac were already faster, for example after commands in Terminal, they stay as they are.
@@ -61,12 +69,12 @@ The same updates, told simply with a picture each and in every language, are in 
 - Animations: when the Dock doesn’t hide, the switch to hide it automatically sits right under the speed slider, because the Dock speeds up only when it hides. The Dock no longer restarts for nothing while it stays in place.
 - Animations: after a change, a line at the bottom of the page says that apps show it once you open them again, with one Restart Finder button. Quick Look and columns now offer the button too, since Finder shows them only after a restart.
 
-## [1.24.0] - Unreleased
+## [1.24.0] - 2026-10-08
 
 ### Added
 - Animations: a new page in Settings for how fast things move on your Mac. One slider speeds up the hidden Dock, new windows, Save dialogs, Quick Look and columns in Finder at once, from as in macOS to instant. Each effect can also be tuned on its own, along with the minimize effect, bouncing icons in the Dock and Finder animations. Every setting has a small live picture that moves at exactly the chosen speed. Restore Defaults and uninstalling pika-tools remove only what pika-tools changed, and values you set yourself in Terminal are shown as they are.
 
-## [1.23.2] - Unreleased
+## [1.23.2] - 2026-10-08
 
 ### Changed
 - Game Mode has a switch for each shortcut now. ⌘Q and ⌘W are separate, and so are Spotlight, Siri, ⌘Tab, Mission Control, App Exposé, switching desktops, ⌃F1–⌃F8, emoji, ⌃-click, swipes, the pointer and the screen. Each row shows exactly the keys it stops, and your earlier choices carry over.
@@ -75,7 +83,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Removed
 - The keyboard language setting in Game Mode. ⌃Space and other ways to switch the language always work, even in a game.
 
-## [1.23.1] - Unreleased
+## [1.23.1] - 2026-10-08
 
 ### Added
 - Speed Test shows how fast your internet is right now: download, upload, ping and responsiveness, and in plain words whether it’s enough for 4K movies, video calls, online games and big downloads. It has its own page in Settings, a row for the menu bar panel and a link for Shortcuts. The check runs on Apple’s servers, and the last result stays until the next one.
@@ -84,7 +92,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - Block Control shortcuts is now part of Game Mode: ⌃ works as a plain key only while you play, and as usual everywhere else. In a game, ⌃-click stays a click, and ⌃Space, ⌃ with arrows and other Mac shortcuts with ⌃ don’t fire. It’s on by default; if you had Block Control shortcuts on, it stays on.
 - Game Mode recognizes Minecraft. Add the Minecraft Launcher or CurseForge to your games, and Game Mode turns on while Minecraft itself is in front, not while you’re in the launcher.
 
-## [1.23.0] - Unreleased
+## [1.23.0] - 2026-10-07
 
 ### Added
 - Game Mode keeps your Mac from pulling you out of a game. Add your games, and while you play one, Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over it, ⌘Q and ⌘W don’t close it by accident, the pointer stays on the game’s screen, the keyboard language doesn’t change and the screen stays on. Each of these has its own switch, and pika-tools suggests games it finds on your Mac. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. Off by default, on the Games page.
@@ -94,7 +102,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - Keep Awake lets you choose what the screen does: stay on all the time, with no screen saver or lock screen, or turn off as usual while the Mac keeps working.
 - On Macs without a lid, Keep Awake no longer shows the closed-lid options.
 
-## [1.22.0] - Unreleased
+## [1.22.0] - 2026-10-07
 
 ### Added
 - Home and End go to the start and end of a line while you type. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. Terminals, virtual machines and remote desktop apps keep the keys as they are, and you can add your own exceptions. Off by default, on the Keyboard page.
@@ -103,7 +111,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Changed
 - Descriptions in the app and in the README now say what each tool does on its own, without comparing it to another system.
 
-## [1.21.0] - Unreleased
+## [1.21.0] - 2026-10-07
 
 ### Added
 - Convert To works both ways between pictures: any picture your Mac can open, JPEG included, can become JPEG, PNG, HEIC, GIF, TIFF or PDF. The format the file already has is left out of the list.
@@ -114,7 +122,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - Switching the keyboard language works while the New File name box or the Smaller Copy message is open.
 - No more square corners around the list in the menu bar panel in the light theme.
 
-## [1.20.0] - Unreleased
+## [1.20.0] - 2026-10-07
 
 ### Added
 - Scroll direction for trackpad and mouse: pick Natural or Classic for the trackpad and for the mouse wheel separately. The trackpad choice also covers sideways scrolling, the glide after you lift your fingers and the Magic Mouse. When you turn it on, both start the way System Settings has them, so nothing changes until you pick something else.
@@ -126,7 +134,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - Slider labels on the Mouse page no longer break in the middle of a word when the window is narrow.
 
-## [1.19.0] - Unreleased
+## [1.19.0] - 2026-10-07
 
 ### Added
 - “Smaller Copy” in the Finder right-click menu makes a lighter copy of PNG, JPEG, HEIC, TIFF, PDF and video files next to the original. The original stays as it was.
@@ -144,18 +152,18 @@ The same updates, told simply with a picture each and in every language, are in 
 - The Scroll by lines picture no longer covers the top of its little window.
 - Keep Awake no longer starts its timer over when settings sync through iCloud or are imported with the same duration.
 
-## [1.18.2] - Unreleased
+## [1.18.2] - 2026-10-07
 
 ### Fixed
 - Settings: keys in setting texts are now drawn as key pictures instead of symbols, and the texts are shorter.
 - Scroll by lines: the distance slider no longer jumps while dragging and moves in clear steps of 20 px in pixels mode.
 
-## [1.18.1] - Unreleased
+## [1.18.1] - 2026-10-07
 
 ### Fixed
 - Settings: a single key picture no longer leaves an empty gap before the setting name.
 
-## [1.18.0] - Unreleased
+## [1.18.0] - 2026-10-07
 
 ### Added
 - Settings › Keyboard: “Block Control shortcuts” has a list of apps where Ctrl keeps working as usual, for example a remote desktop app. The list is saved, synced through iCloud Drive and cleared by Restore Defaults.
@@ -168,13 +176,13 @@ The same updates, told simply with a picture each and in every language, are in 
 - One “Distance per click” slider replaces the two wheel sliders, with Slower and Faster at the ends. The tracking speed slider marks the speed the Mac uses by itself.
 - Clearer names: “Block Control shortcuts”, “Switch language”, “Cut files in Finder”. The ⌘Q and ⌘W group lost its heading and paragraph.
 
-## [1.17.1] - Unreleased
+## [1.17.1] - 2026-10-07
 
 ### Fixed
 - Finder: ⌘X and ⌘V now move files every time. Before, Finder sometimes did not notice the changed key, and Return, Enter and F2 sometimes did nothing for the same reason.
 - Finder: ⌘X, ⌘V, Return, Enter and F2 now also work on the Desktop, not only in Finder windows.
 
-## [1.17.0] - Unreleased
+## [1.17.0] - 2026-10-07
 
 ### Added
 - Settings › Windows: “Green button enlarges the window”. Click the green button of a window, and it fills the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as usual. Full screen stays in the button’s menu and on ⌃⌘F. A list of apps keeps the green button working as before. Off by default.
@@ -193,7 +201,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - Some texts showed in English instead of your language.
 
-## [1.16.0] - Unreleased
+## [1.16.0] - 2026-10-06
 
 ### Added
 - Keep Awake: set the timer in days, hours, minutes and seconds. Click a number and type it, press ↑ and ↓ to change it by one, or move between numbers with ← and → or Tab. Ready-made buttons set 15 minutes, 30 minutes, 1 hour, 2 hours or 8 hours in one click.
@@ -203,13 +211,13 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Changed
 - The Keep Awake timer can be anything from 1 second to 365 days instead of a number with a unit. A timer you had already set is converted automatically.
 
-## [1.15.2] - Unreleased
+## [1.15.2] - 2026-10-06
 
 ### Fixed
 - The menu bar panel no longer turns grey when pika-tools was already the active app as you opened it.
 - Finder no longer shows “New File” twice when a test build of pika-tools was also installed.
 
-## [1.15.1] - Unreleased
+## [1.15.1] - 2026-10-06
 
 ### Changed
 - The menu bar panel shows a short hint under each row again. The full description is still in the tooltip. Keep Awake always shows its status.
@@ -218,7 +226,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - The menu bar panel sometimes opened with grey colors instead of your accent color.
 
-## [1.15.0] - Unreleased
+## [1.15.0] - 2026-10-06
 
 ### Changed
 - The menu bar panel is shorter and simpler. All rows sit in one card, each row is a single button without a switch, and descriptions show as a tooltip. Settings, Customize and Quit are now icon buttons.
@@ -227,12 +235,12 @@ The same updates, told simply with a picture each and in every language, are in 
 - Shorter descriptions for Repeat a held key, pointer acceleration, Scroll by lines and Side buttons. Settings › Mouse now says when to use Lines and when Pixels.
 - Russian texts now address you politely and consistently.
 
-## [1.14.1] - Unreleased
+## [1.14.1] - 2026-10-06
 
 ### Fixed
 - The menu bar panel showed only its buttons in 1.14.0. All rows are back, and the panel scrolls only when it is taller than the screen.
 
-## [1.14.0] - Unreleased
+## [1.14.0] - 2026-10-06
 
 ### Added
 - Choose which rows the menu bar panel shows: click Customize…, untick what you don't need, click Done. Hidden rows keep working and stay in Settings.
@@ -240,17 +248,17 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - The menu bar panel no longer runs off the bottom of the screen. When it doesn't fit, it scrolls.
 
-## [1.13.0] - Unreleased
+## [1.13.0] - 2026-10-06
 
 ### Added
 - Scroll by pixels: on the Mouse page, choose Lines or Pixels. In Pixels mode every click of the wheel scrolls exactly 1 to 200 pixels, for apps and games that count scrolling in pixels.
 
-## [1.12.0] - Unreleased
+## [1.12.0] - 2026-10-06
 
 ### Added
 - Buttons for Keep Awake, the display and the lid-closed mode in Control Center, the menu bar or a desktop widget, through the Shortcuts app. Copy a link in Settings › Keep Awake and paste it into a shortcut with Open URLs.
 
-## [1.11.0] - Unreleased
+## [1.11.0] - 2026-10-06
 
 ### Added
 - **New File** in the Finder right-click menu, on the Desktop too: pick it, type a name and get an empty file. Plain text by default. Turn it on in Windows & Apps.
@@ -259,12 +267,12 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - Quit when the last window closes now also reacts to the close button and ⌘W, and checks twice before quitting.
 
-## [1.10.1] - Unreleased
+## [1.10.1] - 2026-10-06
 
 ### Fixed
 - Quit when the last window closes works in apps that keep a closed window in the background, such as Books. Windows on other desktops and in the Dock still keep the app open.
 
-## [1.10.0] - Unreleased
+## [1.10.0] - 2026-10-06
 
 ### Added
 - **Repeat a held key** on the Keyboard page: hold a key and the letter types again and again, like on Windows, instead of the accent menu. Handy in games. Open apps pick it up after a restart.
@@ -276,7 +284,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - ⇧⌘Q and ⇧⌘W quit and close again when ⌘Q and ⌘W are protected.
 
-## [1.9.0] - Unreleased
+## [1.9.0] - 2026-10-06
 
 ### Added
 - **Scroll by lines** on the Mouse page: every click of the wheel scrolls the same number of lines, 1 to 10, however fast you spin it, like on Windows. Mice only, natural scrolling is kept.
@@ -287,7 +295,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Fixed
 - Side buttons no longer press ⌘[ and ⌘]. In Apple apps, Firefox, Opera and ForkLift they go back and forward like a swipe on the trackpad; every other app, such as JetBrains Rider, gets buttons 4 and 5 unchanged.
 
-## [1.8.0] - Unreleased
+## [1.8.0] - 2026-10-06
 
 ### Added
 - Mouse page in Settings. **Turn off pointer acceleration** makes the pointer move exactly as far as the mouse, with its own tracking speed slider. Mice only, the trackpad stays as it is, and macOS gets its own settings back when you turn it off or quit.
@@ -298,31 +306,31 @@ The same updates, told simply with a picture each and in every language, are in 
 - Keyboard and Mouse are now separate pages in Settings, like in System Settings.
 - The Permissions page shows the same Accessibility and Input Monitoring icons as System Settings.
 
-## [1.7.0] - Unreleased
+## [1.7.0] - 2026-10-06
 
 ### Added
 - The app is now available in Romanian, Polish, Turkish, Dutch, Swedish, Czech, Traditional Chinese, Arabic, Hindi, Indonesian, Vietnamese and Thai.
 - README in 23 languages.
 
-## [1.6.0] - Unreleased
+## [1.6.0] - 2026-10-06
 
 ### Changed
 - Language switching with Option+Shift works like on Windows: hold one key and tap the other to switch, as many times as you need, without letting go of both.
 
-## [1.5.2] - Unreleased
+## [1.5.2] - 2026-10-06
 
 ### Fixed
 - Accessibility and Input Monitoring stay allowed after updates. Test builds now use their own bundle ID, so they can no longer take over the permissions or the login item of the installed app.
 - "Open at login" survives updates through Homebrew and always points to the installed app.
 
-## [1.5.1] - Unreleased
+## [1.5.1] - 2026-10-06
 
 ### Changed
 - The Settings window can be resized in width and height, from 700 × 500 to full screen. Rows move their controls below the title when space is tight, and long translations wrap instead of being cut off.
 - The Settings window remembers its size and position between launches.
 - The Settings sidebar is narrower and always stays visible.
 
-## [1.5.0] - Unreleased
+## [1.5.0] - 2026-10-06
 
 ### Added
 - Protect ⌘Q and ⌘W: ⌘Q and ⌘W alone do nothing in every app, ⇧⌘Q quits and ⇧⌘W closes a window. Each key has its own switch.
@@ -337,7 +345,7 @@ The same updates, told simply with a picture each and in every language, are in 
 ### Removed
 - Double-space guard. Its settings are cleaned up on the next launch.
 
-## [1.4.1] - Unreleased
+## [1.4.1] - 2026-10-06
 
 ### Added
 - Back and Forward buttons in the Settings toolbar, with ⌘[ and ⌘].
@@ -356,7 +364,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - An empty area next to the Settings content when the window got wider.
 - Work with the lid closed stayed on after a canceled password prompt.
 
-## [1.4.0] - Unreleased
+## [1.4.0] - 2026-10-06
 
 ### Added
 - Settings window in the style of System Settings: General, Keyboard & Mouse, Keep Awake, Permissions and About, with search in the sidebar. Opens with Settings… or ⌘, in the menu, or when you launch the app again.
@@ -369,7 +377,7 @@ The same updates, told simply with a picture each and in every language, are in 
 - The menu is simpler: tools, Keep Awake, Settings… and Quit. Open at Login moved to Settings › General.
 - The permissions window became the Permissions page in Settings. The menu shows Permissions needed only when something is missing.
 
-## [1.3.0] - Unreleased
+## [1.3.0] - 2026-10-06
 
 ### Added
 - Switch language with Option+Shift: Option then Shift selects the next input source, Shift then Option the previous one. Off by default.
@@ -418,11 +426,49 @@ The same updates, told simply with a picture each and in every language, are in 
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
-[1.4.0]: https://github.com/dev-pikapik/pika-tools/compare/v1.3.0...HEAD
-[1.3.0]: https://github.com/dev-pikapik/pika-tools/compare/v1.2.1...v1.3.0
-[1.2.1]: https://github.com/dev-pikapik/pika-tools/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/dev-pikapik/pika-tools/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/dev-pikapik/pika-tools/compare/v1.0.2...v1.1.0
-[1.0.2]: https://github.com/dev-pikapik/pika-tools/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/dev-pikapik/pika-tools/compare/v1.0.0...v1.0.1
+[1.26.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.26.1
+[1.26.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.26.0
+[1.25.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.25.2
+[1.25.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.25.1
+[1.25.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.25.0
+[1.24.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.24.1
+[1.24.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.24.0
+[1.23.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.23.2
+[1.23.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.23.1
+[1.23.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.23.0
+[1.22.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.22.0
+[1.21.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.21.0
+[1.20.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.20.0
+[1.19.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.19.0
+[1.18.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.18.2
+[1.18.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.18.1
+[1.18.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.18.0
+[1.17.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.17.1
+[1.17.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.17.0
+[1.16.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.16.0
+[1.15.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.15.2
+[1.15.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.15.1
+[1.15.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.15.0
+[1.14.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.14.1
+[1.14.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.14.0
+[1.13.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.13.0
+[1.12.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.12.0
+[1.11.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.11.0
+[1.10.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.10.1
+[1.10.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.10.0
+[1.9.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.9.0
+[1.8.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.8.0
+[1.7.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.7.0
+[1.6.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.6.0
+[1.5.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.5.2
+[1.5.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.5.1
+[1.5.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.5.0
+[1.4.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.4.1
+[1.4.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.4.0
+[1.3.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.3.0
+[1.2.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.2.1
+[1.2.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.2.0
+[1.1.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.1.0
+[1.0.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.0.2
+[1.0.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.0.1
 [1.0.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.0.0

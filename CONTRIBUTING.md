@@ -37,7 +37,6 @@ Sources/pika-tools/
   Common/                            shared UI, permissions, login item, updater
 Resources/<lang>.lproj/              Localizable.strings
 Resources/AppIcon.icon               app icon, AppIcon.icns is the fallback
-Casks/pika-tools.rb                  Homebrew cask
 scripts/                             build, package, release, icon, tests
 ```
 
@@ -86,19 +85,15 @@ English is the development language and the keys are the English text. Use `Stri
 for f in Resources/*.lproj/Localizable.strings; do plutil -lint "$f"; done
 ```
 
-## Private tools
-
-`Private/` is a private submodule with drafts and tools that aren’t public yet. The public build doesn’t depend on it: a regular clone leaves the folder empty, and everything builds as usual.
-
 ## Releasing
 
 ```bash
 ./scripts/release.sh 1.3.0
 ```
 
-The script bumps the version in `Info.plist`, commits, tags `v1.3.0` and pushes. GitHub Actions does the rest on a `macos-26` runner: builds the universal app, signs it, checks the signature, publishes the `.zip` and `.dmg` to Releases and updates `Casks/pika-tools.rb` on `main`. Installed copies pick up the new version on their own.
+The script bumps the version in `Info.plist`, commits, tags `v1.3.0` and pushes. GitHub Actions does the rest on a `macos-26` runner: builds the universal app, signs it, checks the signature, publishes the `.zip` and `.dmg` to Releases and updates the cask in the [Homebrew tap](https://github.com/dev-pikapik/homebrew-pika-tools). Installed copies pick up the new version on their own.
 
-Before running the script, update `CHANGELOG.md` and add the version’s post to all 23 pages in `docs/whats-new/`: a short title, one sentence, a picture, a few short paragraphs and what to try. Pictures live in `docs/media/whats-new/<version>/`, and `scripts/render-media.sh <card>` draws them in light and dark. The script won’t start until every page has the post. The English post becomes the text of the GitHub release; `./scripts/release-notes.sh 1.3.0` shows it.
+Before running the script, add the version to `CHANGELOG.md` under `## [1.3.0] - Unreleased` (the script fills in the date and the link) and add the version’s post to all 23 pages in `docs/whats-new/`: a short title, one sentence, a picture, a few short paragraphs and what to try. Pictures live in `docs/media/whats-new/<version>/`, and `scripts/render-media.sh <card>` draws them in light and dark. The script won’t start until every page has the post. The English post becomes the text of the GitHub release; `./scripts/release-notes.sh 1.3.0` shows it.
 
 ### Signing
 

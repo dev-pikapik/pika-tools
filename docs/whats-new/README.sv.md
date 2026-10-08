@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Nyheter på ditt språk
+
+<sub>1.26.2 · 8 oktober 2026</sub>
+
+”Nyheter” i inställningarna öppnar nu den här sidan, på samma språk som appen.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Öppna Inställningar › Om och klicka på ”Nyheter”. Du hamnar direkt här, på sidan med en bild till varje uppdatering, på det språk som pika-tools talar.
+
+Den fullständiga listan över ändringar är också prydligare. Varje version visar dagen den kom ut, och varje versionsnummer öppnar sin nedladdningssida.
+
+Inget ändras i hur pika-tools fungerar. Uppdateringar kommer som förut, av sig själva eller via Homebrew.
+
+**Prova:** Inställningar › Om › Nyheter
+
+**Åtgärdat**
+
+- ”Nyheter” öppnade en lång teknisk lista på engelska i stället för den här sidan.
+- Länkar i listan över ändringar som inte ledde någonstans öppnar nu rätt sida.
+
+---
+
 ## <a id="v1.26.1"></a>Spelbilderna får liv
 
 <sub>1.26.1 · 8 oktober 2026</sub>

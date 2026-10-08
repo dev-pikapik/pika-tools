@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Yang Baru, dalam bahasa Anda
+
+<sub>1.26.2 · 8 Oktober 2026</sub>
+
+“Yang Baru” di pengaturan kini membuka halaman ini, dalam bahasa yang sama dengan aplikasi.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Buka Pengaturan › Tentang lalu klik “Yang Baru”. Anda langsung tiba di sini, di halaman dengan gambar untuk setiap pembaruan, dalam bahasa yang digunakan pika-tools.
+
+Daftar lengkap perubahan juga lebih rapi. Setiap versi menampilkan hari rilisnya, dan setiap nomor versi membuka halaman unduhannya.
+
+Tidak ada yang berubah dalam cara kerja pika-tools. Pembaruan datang seperti biasa, dengan sendirinya atau lewat Homebrew.
+
+**Coba:** Pengaturan › Tentang › Yang Baru
+
+**Diperbaiki**
+
+- “Yang Baru” dulu membuka daftar teknis panjang dalam bahasa Inggris, bukan halaman ini.
+- Tautan di daftar perubahan yang tidak mengarah ke mana pun kini membuka halaman yang benar.
+
+---
+
 ## <a id="v1.26.1"></a>Gambar game kini hidup
 
 <sub>1.26.1 · 8 Oktober 2026</sub>

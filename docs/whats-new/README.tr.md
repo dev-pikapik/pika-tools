@@ -5,6 +5,29 @@
 
 ---
 
+## <a id="v1.26.2"></a>Yenilikler artık sizin dilinizde
+
+<sub>1.26.2 · 8 Ekim 2026</sub>
+
+Ayarlardaki “Yenilikler” artık bu sayfayı, uygulamayla aynı dilde açıyor.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Ayarlar › Hakkında’yı açıp “Yenilikler”e tıklayın. Doğrudan buraya, her güncellemenin bir resimle anlatıldığı sayfaya gelirsiniz; pika-tools hangi dili konuşuyorsa o dilde.
+
+Değişikliklerin tam listesi de daha düzenli. Her sürüm çıktığı günü gösteriyor, her sürüm numarası da kendi indirme sayfasını açıyor.
+
+pika-tools’un çalışma şeklinde hiçbir şey değişmiyor. Güncellemeler eskisi gibi kendiliğinden ya da Homebrew ile geliyor.
+
+**Deneyin:** Ayarlar › Hakkında › Yenilikler
+
+**Düzeltilenler**
+
+- “Yenilikler” bu sayfa yerine İngilizce, uzun ve teknik bir liste açıyordu.
+- Değişiklik listesinde hiçbir yere gitmeyen bağlantılar artık doğru sayfayı açıyor.
+
+---
+
 ## <a id="v1.26.1"></a>Oyun resimleri canlandı
 
 <sub>1.26.1 · 8 Ekim 2026</sub>
