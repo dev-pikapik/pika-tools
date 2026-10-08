@@ -46,6 +46,8 @@
 "What’s New" = "새로운 기능";
 "Report a Problem" = "문제 보고";
 "License (MIT)" = "라이선스(MIT)";
+"Made with care" = "정성껏 만들었습니다";
+"Buy me a coffee" = "커피 한 잔 사 주기";
 "Your Mac sleeps as usual" = "Mac이 평소처럼 잠자기에 들어갑니다";
 "Until you turn it off" = "끌 때까지";
 "%@ left, until %@" = "%@ 남음, %@까지";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "변경 사항, 릴리스 노트, 버전";
 "bug, issue, feedback, support" = "버그, 문제, 피드백, 지원";
 "open source, legal" = "오픈 소스, 라이선스, 소스 코드, 법률";
+"support, donate, donation, tip, sponsor, thanks" = "후원, 기부, 팁, 스폰서, 감사, 커피";
 "Windows" = "윈도우";
 "Dock" = "Dock";
 "Finder" = "Finder";

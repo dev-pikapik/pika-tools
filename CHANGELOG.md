@@ -6,6 +6,9 @@ The same updates, told simply with a picture each and in every language, are in 
 
 ## [1.25.3] - Unreleased
 
+### Added
+- A way to say thanks. At the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. It opens buymeacoffee.com/pikapik in your browser, and everything goes into developing and supporting the app. Nothing pops up or reminds you, ever. The README has the same link, and GitHub shows a Sponsor button.
+
 ### Changed
 - The pictures on the Animations and Games pages are drawn anew for their size, so they look sharp. A window shrinks into the Dock with round corners, like on a real Mac. The pointer clicks first, and only then a menu or a window opens. Spotlight, the app switcher and the emoji panel are see-through glass, as in macOS Tahoe.
 

@@ -320,4 +320,6 @@ Ta bort pika-tools från båda listorna i **Systeminställningar › Integritet 
 
 </details>
 
+<p align="center">☕ Gillar du pika-tools får du gärna <a href="https://buymeacoffee.com/pikapik">bjuda mig på en kaffe</a> – allt går till att utveckla och underhålla appen.</p>
+
 <p align="center"><sub><a href="../whats-new/README.sv.md">Nyheter</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-tap</a> · <a href="../../CONTRIBUTING.md">Bygg själv</a> · <a href="../../LICENSE">MIT-licens</a> · © 2026 pikapik</sub></p>

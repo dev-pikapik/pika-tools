@@ -159,6 +159,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .about, title: String(localized: "What’s New"), synonyms: "changelog, release notes, version"),
             SettingsItem(tab: .about, title: String(localized: "Report a Problem"), synonyms: "bug, issue, feedback, support"),
             SettingsItem(tab: .about, title: String(localized: "License (MIT)"), synonyms: "open source, legal"),
+            SettingsItem(tab: .about, title: String(localized: "Buy me a coffee"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
             SettingsItem(tab: .about, title: "GitHub", synonyms: "open source, legal"),
         ]
     }
@@ -786,10 +787,13 @@ private struct AboutView: View {
                 link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
                 link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)
             } footer: {
-                Text(verbatim: info["NSHumanReadableCopyright"] as? String ?? "")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity)
+                VStack(spacing: 4) {
+                    Text(verbatim: info["NSHumanReadableCopyright"] as? String ?? "")
+                    CoffeeLine()
+                }
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity)
             }
             RestoreDefaultsSection(
                 message: String(localized: "pika-tools will check for updates automatically again."),
@@ -818,5 +822,36 @@ private struct AboutView: View {
         }
         .buttonStyle(.plain)
         .settingAnchor(title)
+    }
+}
+
+private struct CoffeeLine: View {
+    @State private var hovering = false
+
+    var body: some View {
+        HStack(spacing: 5) {
+            Text("Made with care")
+            Text(verbatim: "·")
+                .accessibilityHidden(true)
+            Link(destination: URL(string: "https://buymeacoffee.com/pikapik")!) {
+                HStack(spacing: 4) {
+                    Image(systemName: "cup.and.saucer.fill")
+                        .imageScale(.small)
+                        .accessibilityHidden(true)
+                    Text("Buy me a coffee")
+                }
+                .foregroundStyle(hovering ? HierarchicalShapeStyle.primary : HierarchicalShapeStyle.secondary)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .onHover { inside in
+                hovering = inside
+                if inside { NSCursor.pointingHand.push() } else { NSCursor.pop() }
+            }
+            .onDisappear {
+                if hovering { NSCursor.pop() }
+            }
+            .settingAnchor(String(localized: "Buy me a coffee"))
+        }
     }
 }

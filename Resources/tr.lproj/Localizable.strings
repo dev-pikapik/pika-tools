@@ -46,6 +46,8 @@
 "What’s New" = "Yenilikler";
 "Report a Problem" = "Sorun Bildir";
 "License (MIT)" = "Lisans (MIT)";
+"Made with care" = "Özenle yapıldı";
+"Buy me a coffee" = "Bana bir kahve ısmarlayın";
 "Your Mac sleeps as usual" = "Mac’iniz her zamanki gibi uyur";
 "Until you turn it off" = "Siz kapatana kadar";
 "%@ left, until %@" = "%@ kaldı, bitiş: %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "değişiklik günlüğü, sürüm notları, sürüm";
 "bug, issue, feedback, support" = "hata, sorun, geri bildirim, destek, bug";
 "open source, legal" = "açık kaynak, open source, yasal, lisans";
+"support, donate, donation, tip, sponsor, thanks" = "destek, bağış, bahşiş, sponsor, teşekkür, kahve";
 "Windows" = "Pencereler";
 "Dock" = "Dock";
 "Finder" = "Finder";

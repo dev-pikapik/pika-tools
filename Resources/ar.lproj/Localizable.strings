@@ -46,6 +46,8 @@
 "What’s New" = "الجديد";
 "Report a Problem" = "الإبلاغ عن مشكلة";
 "License (MIT)" = "الترخيص (MIT)";
+"Made with care" = "صُنع بعناية";
+"Buy me a coffee" = "اشترِ لي قهوة";
 "Your Mac sleeps as usual" = "يدخل جهاز Mac في وضع السكون كالمعتاد";
 "Until you turn it off" = "حتى توقفه بنفسك";
 "%@ left, until %@" = "متبقٍ %@، حتى %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "سجل التغييرات، ملاحظات الإصدار، إصدار";
 "bug, issue, feedback, support" = "خطأ، مشكلة، ملاحظات، دعم";
 "open source, legal" = "مفتوح المصدر، قانوني، ترخيص";
+"support, donate, donation, tip, sponsor, thanks" = "دعم, تبرع, إكرامية, رعاية, شكر, قهوة";
 "Windows" = "النوافذ";
 "Dock" = "Dock";
 "Finder" = "Finder";

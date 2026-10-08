@@ -46,6 +46,8 @@
 "What’s New" = "Có gì mới";
 "Report a Problem" = "Báo cáo sự cố";
 "License (MIT)" = "Giấy phép (MIT)";
+"Made with care" = "Làm bằng cả tấm lòng";
+"Buy me a coffee" = "Mời mình ly cà phê";
 "Your Mac sleeps as usual" = "Máy Mac ngủ như bình thường";
 "Until you turn it off" = "Cho đến khi bạn tắt";
 "%@ left, until %@" = "Còn %@, đến %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "nhật ký thay đổi, ghi chú phát hành, changelog, phiên bản";
 "bug, issue, feedback, support" = "lỗi, bug, sự cố, phản hồi, hỗ trợ";
 "open source, legal" = "mã nguồn mở, open source, giấy phép, pháp lý";
+"support, donate, donation, tip, sponsor, thanks" = "ủng hộ, quyên góp, donate, tip, tài trợ, cảm ơn, cà phê";
 "Windows" = "Cửa sổ";
 "Dock" = "Dock";
 "Finder" = "Finder";

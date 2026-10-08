@@ -46,6 +46,8 @@
 "What’s New" = "Novedades";
 "Report a Problem" = "Informar de un problema";
 "License (MIT)" = "Licencia (MIT)";
+"Made with care" = "Hecho con cariño";
+"Buy me a coffee" = "Invítame a un café";
 "Your Mac sleeps as usual" = "Tu Mac entra en reposo como siempre";
 "Until you turn it off" = "Hasta que lo desactives";
 "%@ left, until %@" = "Quedan %@, hasta las %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "novedades, notas de la versión, versión";
 "bug, issue, feedback, support" = "error, problema, comentarios, soporte";
 "open source, legal" = "código abierto, licencia, legal";
+"support, donate, donation, tip, sponsor, thanks" = "apoyar, donar, donación, propina, patrocinar, gracias, café";
 "Windows" = "Ventanas";
 "Dock" = "Dock";
 "Finder" = "Finder";

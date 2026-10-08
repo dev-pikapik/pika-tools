@@ -320,4 +320,6 @@ Entferne pika-tools unter **Systemeinstellungen › Datenschutz & Sicherheit** m
 
 </details>
 
+<p align="center">☕ Wenn dir pika-tools gefällt, kannst du mir <a href="https://buymeacoffee.com/pikapik">einen Kaffee spendieren</a> – alles fließt in die Entwicklung und Pflege der App.</p>
+
 <p align="center"><sub><a href="../whats-new/README.de.md">Neuigkeiten</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew-Tap</a> · <a href="../../CONTRIBUTING.md">Selbst bauen</a> · <a href="../../LICENSE">MIT-Lizenz</a> · © 2026 pikapik</sub></p>

@@ -46,6 +46,8 @@
 "What’s New" = "新功能";
 "Report a Problem" = "回報問題";
 "License (MIT)" = "授權（MIT）";
+"Made with care" = "用心打造";
+"Buy me a coffee" = "請我喝杯咖啡";
 "Your Mac sleeps as usual" = "Mac 會照常進入睡眠";
 "Until you turn it off" = "直到你關閉為止";
 "%@ left, until %@" = "剩餘 %@，直到 %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "更新記錄, 版本說明, 版本";
 "bug, issue, feedback, support" = "錯誤, 問題, 意見回饋, 支援";
 "open source, legal" = "開放原始碼, 授權, 法律";
+"support, donate, donation, tip, sponsor, thanks" = "支持, 捐款, 斗內, 贊助, 感謝, 咖啡";
 "Windows" = "視窗";
 "Dock" = "Dock";
 "Finder" = "Finder";
