@@ -446,6 +446,8 @@
 "Scale" = "縮放";
 "Suck" = "吸入";
 "Change in System Settings" = "在「系統設定」中更改";
+"In System Settings, click “%@”, then “%@”." = "在「系統設定」中，按一下「%@」，然後按一下「%@」。";
+"In System Settings, click “%@”." = "在「系統設定」中，按一下「%@」。";
 "Type shortcut" = "按下快速鍵";
 "Already used for “%@”" = "已用於「%@」";
 "Your Mac already uses this shortcut" = "你的 Mac 已在使用這個快速鍵";

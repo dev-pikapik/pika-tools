@@ -64,5 +64,15 @@ enum TestShortcuts {
         precondition(Shortcut.conflict(.quit, in: taken) == "Quit")
         precondition(Shortcut.conflict(.close, in: taken) == nil)
         print("conflicts: ok")
+
+        let anchors: Set<String> = ["Shortcuts", "Spotlight", "Services", "Accessibility", "ModifierKeys", "Keyboard"]
+        let base = "x-apple.systempreferences:com.apple.Keyboard-Settings.extension"
+        precondition(Shortcut.keyboardSettings.absoluteString == base)
+        precondition(Shortcut.settingsLink("spotlight", anchors: anchors)?.absoluteString == base + "?Spotlight")
+        precondition(Shortcut.settingsLink("services", anchors: anchors)?.absoluteString == base + "?Services")
+        precondition(Shortcut.settingsLink("universalaccess", anchors: anchors)?.absoluteString == base + "?Accessibility")
+        precondition(["expose", "input_sources", "screenshots", "dock", "keyboardnavigation", "windows", "applications"].allSatisfy { Shortcut.settingsLink($0, anchors: anchors) == nil })
+        precondition(Shortcut.settingsLink(nil, anchors: anchors) == nil && Shortcut.settingsLink("spotlight", anchors: []) == nil)
+        print("settings links: ok")
     }
 }

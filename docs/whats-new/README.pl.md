@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Skróty otwierają się tam, gdzie je zmieniasz
+
+<sub>1.25.2 · 8 października 2026</sub>
+
+Kliknij skrót w Ustawieniach, a Ustawienia systemowe otworzą się we właściwym miejscu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Wcześniej kliknięcie skrótu, na przykład dla Spotlight, zawsze prowadziło do „Klawisze modyfikujące”. Teraz klawisze Spotlight otwierają od razu Spotlight.
+
+Przy innych skrótach Ustawienia systemowe otwierają się na „Klawiatura”, a obok klawiszy pojawia się krótka wskazówka, gdzie kliknąć: „Skróty klawiszowe…”, a potem „Mission Control” albo inną sekcję.
+
+Tak samo działa strona Gry i „Wycinanie plików w Finderze”. Przy wycinaniu plików wskazówka prowadzi do „Skróty aplikacji”.
+
+**Wypróbuj:** Ustawienia › Gry, potem kliknij klawisze obok „Wyszukiwanie nie wyskakuje”
+
+**Poprawki**
+
+- Kliknięcie skrótu nie otwiera już „Klawisze modyfikujące”.
+
+---
+
 ## <a id="v1.25.1"></a>Duże obrazki i gry prosto z Docka
 
 <sub>1.25.1 · 8 października 2026</sub>

@@ -446,6 +446,8 @@
 "Scale" = "크기";
 "Suck" = "빨아들이기";
 "Change in System Settings" = "시스템 설정에서 변경";
+"In System Settings, click “%@”, then “%@”." = "시스템 설정에서 ‘%@’을(를) 클릭한 다음 ‘%@’을(를) 클릭하세요.";
+"In System Settings, click “%@”." = "시스템 설정에서 ‘%@’을(를) 클릭하세요.";
 "Type shortcut" = "단축키를 누르세요";
 "Already used for “%@”" = "이미 ‘%@’에 사용 중";
 "Your Mac already uses this shortcut" = "Mac에서 이미 이 단축키를 사용하고 있습니다";

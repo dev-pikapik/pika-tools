@@ -446,6 +446,8 @@
 "Scale" = "Scale";
 "Suck" = "Suck";
 "Change in System Settings" = "Change in System Settings";
+"In System Settings, click “%@”, then “%@”." = "In System Settings, click “%@”, then “%@”.";
+"In System Settings, click “%@”." = "In System Settings, click “%@”.";
 "Type shortcut" = "Type shortcut";
 "Already used for “%@”" = "Already used for “%@”";
 "Your Mac already uses this shortcut" = "Your Mac already uses this shortcut";

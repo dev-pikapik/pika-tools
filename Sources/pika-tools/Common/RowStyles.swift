@@ -68,15 +68,25 @@ struct KeyCap: View {
 
 struct KeyCaps: View {
     let keys: [String]
-    var system = false
+    var system: SystemShortcuts.Place?
+    @State private var showsHint = false
 
     var body: some View {
-        if system {
-            Button { NSWorkspace.shared.open(SystemShortcuts.settings) } label: { caps }
+        if let system {
+            Button {
+                NSWorkspace.shared.open(system.url)
+                showsHint = system.hint != nil
+            } label: { caps }
                 .buttonStyle(CapsButtonStyle())
                 .help(Text("Change in System Settings"))
                 .accessibilityLabel(Text(verbatim: shown.map { $0.isEmpty ? String(localized: "Off") : $0 }.joined(separator: ", ")))
-                .accessibilityHint(Text("Change in System Settings"))
+                .accessibilityHint(system.hint.map { Text($0) } ?? Text("Change in System Settings"))
+                .popover(isPresented: $showsHint, arrowEdge: .bottom) {
+                    Text(system.hint ?? "")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: 320, alignment: .leading)
+                        .padding(12)
+                }
         } else {
             caps.accessibilityHidden(true)
         }
@@ -113,7 +123,7 @@ struct KeyCaps: View {
 
 struct KeyLabel: View {
     var keys: [String] = []
-    var system = false
+    var system: SystemShortcuts.Place?
     let title: Text
     var subtitle: Text?
 

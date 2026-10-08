@@ -90,6 +90,15 @@ struct Shortcut: Hashable {
         return (UInt16(truncatingIfNeeded: Character(character.lowercased()).unicodeScalars.first!.value), Shortcut(key: key, modifiers: mask))
     }
 
+    static let keyboardSettings = URL(string: "x-apple.systempreferences:com.apple.Keyboard-Settings.extension")!
+
+    static func settingsLink(_ section: String?, anchors: Set<String>) -> URL? {
+        guard let anchor = ["spotlight": "Spotlight", "services": "Services", "universalaccess": "Accessibility"][section ?? ""],
+              anchors.contains(anchor)
+        else { return nil }
+        return URL(string: keyboardSettings.absoluteString + "?" + anchor)
+    }
+
     static func conflict(_ shortcut: Shortcut, in taken: [(message: String, shortcut: Shortcut)]) -> String? {
         taken.first { $0.shortcut == shortcut }?.message
     }

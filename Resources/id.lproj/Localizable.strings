@@ -446,6 +446,8 @@
 "Scale" = "Skala";
 "Suck" = "Isap";
 "Change in System Settings" = "Ubah di Pengaturan Sistem";
+"In System Settings, click “%@”, then “%@”." = "Di Pengaturan Sistem, klik “%@”, lalu “%@”.";
+"In System Settings, click “%@”." = "Di Pengaturan Sistem, klik “%@”.";
 "Type shortcut" = "Tekan pintasan";
 "Already used for “%@”" = "Sudah dipakai untuk “%@”";
 "Your Mac already uses this shortcut" = "Mac Anda sudah memakai pintasan ini";

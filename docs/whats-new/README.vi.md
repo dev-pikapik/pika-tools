@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Phím tắt mở đúng nơi bạn thay đổi nó
+
+<sub>1.25.2 · ngày 8 tháng 10, 2026</sub>
+
+Bấm vào một phím tắt trong Cài đặt, Cài đặt hệ thống sẽ mở đúng chỗ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Trước đây, bấm vào một phím tắt, như phím tắt cho Spotlight, luôn đưa bạn tới “Phím bổ trợ”. Giờ các phím Spotlight mở thẳng Spotlight.
+
+Với các phím tắt khác, Cài đặt hệ thống mở ở “Bàn phím”, và một gợi ý ngắn cạnh các phím cho bạn biết cần bấm vào đâu: “Phím tắt…”, rồi “Mission Control” hoặc mục khác.
+
+Trang Trò chơi và “Cắt tệp trong Finder” cũng vậy. Khi cắt tệp, gợi ý sẽ đưa bạn tới “Phím tắt ứng dụng”.
+
+**Thử ngay:** Cài đặt › Trò chơi, rồi bấm vào các phím cạnh “Tìm kiếm không bật lên”
+
+**Đã sửa**
+
+- Bấm vào phím tắt không còn mở “Phím bổ trợ” nữa.
+
+---
+
 ## <a id="v1.25.1"></a>Hình lớn, và chọn trò chơi ngay từ Dock
 
 <sub>1.25.1 · ngày 8 tháng 10, 2026</sub>

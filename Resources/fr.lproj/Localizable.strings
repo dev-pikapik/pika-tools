@@ -446,6 +446,8 @@
 "Scale" = "Échelle";
 "Suck" = "Aspiration";
 "Change in System Settings" = "Modifier dans Réglages Système";
+"In System Settings, click “%@”, then “%@”." = "Dans Réglages Système, cliquez sur « %@ », puis sur « %@ ».";
+"In System Settings, click “%@”." = "Dans Réglages Système, cliquez sur « %@ ».";
 "Type shortcut" = "Tapez le raccourci";
 "Already used for “%@”" = "Déjà utilisé pour « %@ »";
 "Your Mac already uses this shortcut" = "Votre Mac utilise déjà ce raccourci";

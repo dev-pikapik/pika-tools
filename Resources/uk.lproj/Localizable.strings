@@ -446,6 +446,8 @@
 "Scale" = "Масштаб";
 "Suck" = "Втягування";
 "Change in System Settings" = "Змінити в Системних параметрах";
+"In System Settings, click “%@”, then “%@”." = "У Системних параметрах натисніть «%@», а потім «%@».";
+"In System Settings, click “%@”." = "У Системних параметрах натисніть «%@».";
 "Type shortcut" = "Натисніть сполучення";
 "Already used for “%@”" = "Уже використовується для «%@»";
 "Your Mac already uses this shortcut" = "Ваш Mac уже використовує це сполучення";

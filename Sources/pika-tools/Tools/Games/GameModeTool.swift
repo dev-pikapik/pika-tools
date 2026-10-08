@@ -552,7 +552,7 @@ struct GameModePage: View {
                                 row.system?.foregroundStyle(.secondary)
                             }
                             Spacer(minLength: 0)
-                            if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: !row.rule.hotKeys.isEmpty) }
+                            if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: row.rule.hotKeys.isEmpty ? nil : SystemShortcuts.place(row.rule.hotKeys)) }
                         }
                     }
                 }

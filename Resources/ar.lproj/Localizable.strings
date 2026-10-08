@@ -446,6 +446,8 @@
 "Scale" = "التحجيم";
 "Suck" = "الامتصاص";
 "Change in System Settings" = "التغيير في إعدادات النظام";
+"In System Settings, click “%@”, then “%@”." = "في إعدادات النظام، انقر على «%@»، ثم على «%@».";
+"In System Settings, click “%@”." = "في إعدادات النظام، انقر على «%@».";
 "Type shortcut" = "اضغط الاختصار";
 "Already used for “%@”" = "مستخدم بالفعل في «%@»";
 "Your Mac already uses this shortcut" = "يستخدم جهاز Mac هذا الاختصار بالفعل";

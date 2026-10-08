@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Kestirmeler, değiştirdiğiniz yerde açılır
+
+<sub>1.25.2 · 8 Ekim 2026</sub>
+
+Ayarlar’da bir kestirmeyi tıklayın, Sistem Ayarları doğru yerde açılsın.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Önceden Spotlight gibi bir kestirmeyi tıklamak hep “Niteleme Tuşları”na götürüyordu. Artık Spotlight tuşları doğrudan Spotlight’ı açıyor.
+
+Diğer kestirmelerde Sistem Ayarları “Klavye”de açılır ve tuşların yanında nereyi tıklayacağınızı söyleyen kısa bir ipucu çıkar: önce “Klavye Kestirmeleri…”, sonra “Mission Control” ya da başka bir bölüm.
+
+Oyunlar sayfasında ve “Finder’da dosyaları kes” özelliğinde de aynısı geçerli. Dosya keserken ipucu sizi “Uygulamalar” bölümüne götürür.
+
+**Deneyin:** Ayarlar › Oyunlar, ardından “Arama ekrana gelmez” yanındaki tuşları tıklayın
+
+**Düzeltilenler**
+
+- Bir kestirmeyi tıklamak artık “Niteleme Tuşları”nı açmıyor.
+
+---
+
 ## <a id="v1.25.1"></a>Büyük resimler ve doğrudan Dock’tan oyunlar
 
 <sub>1.25.1 · 8 Ekim 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Les raccourcis s’ouvrent là où on les modifie
+
+<sub>1.25.2 · 8 octobre 2026</sub>
+
+Cliquez sur un raccourci dans Réglages, et Réglages Système s’ouvre au bon endroit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Avant, un clic sur un raccourci, comme celui de Spotlight, menait toujours à « Touches de modification ». Désormais, les touches de Spotlight ouvrent directement Spotlight.
+
+Pour les autres raccourcis, Réglages Système s’ouvre sur « Clavier », et une courte astuce à côté des touches indique où cliquer : « Raccourcis clavier… », puis « Mission Control » ou une autre section.
+
+C’est pareil sur la page Jeux et pour « Couper des fichiers dans le Finder ». Pour couper des fichiers, l’astuce mène à « Raccourcis de l’application ».
+
+**Pour essayer :** Réglages › Jeux, puis cliquez sur les touches à côté de « La recherche ne surgit pas »
+
+**Corrigé**
+
+- Un clic sur un raccourci n’ouvre plus « Touches de modification ».
+
+---
+
 ## <a id="v1.25.1"></a>De grandes images, et vos jeux depuis le Dock
 
 <sub>1.25.1 · 8 octobre 2026</sub>

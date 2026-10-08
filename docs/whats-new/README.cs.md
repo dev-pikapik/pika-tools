@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Zkratky se otevřou tam, kde je změníte
+
+<sub>1.25.2 · 8. října 2026</sub>
+
+Klikněte v Nastavení na zkratku a Nastavení systému se otevře na správném místě.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Dřív kliknutí na zkratku, třeba pro Spotlight, vždy vedlo do „Modifikační klávesy“. Teď klávesy pro Spotlight otevřou rovnou Spotlight.
+
+U ostatních zkratek se Nastavení systému otevře na „Klávesnice“ a vedle kláves se objeví krátká rada, kam kliknout: „Klávesové zkratky…“, potom „Mission Control“ nebo jinou část.
+
+Stejně to funguje na stránce Hry i u „Vyjmout soubory ve Finderu“. U vyjímání souborů vás rada dovede do „Zkratky aplikací“.
+
+**Vyzkoušejte:** Nastavení › Hry, pak klikněte na klávesy vedle „Hledání nevyskočí“
+
+**Opraveno**
+
+- Kliknutí na zkratku už neotevře „Modifikační klávesy“.
+
+---
+
 ## <a id="v1.25.1"></a>Velké obrázky a hry rovnou z Docku
 
 <sub>1.25.1 · 8. října 2026</sub>

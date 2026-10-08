@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Los atajos se abren donde se cambian
+
+<sub>1.25.2 · 8 de octubre de 2026</sub>
+
+Haz clic en un atajo en Ajustes y Ajustes del Sistema se abrirá en el lugar correcto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Antes, al hacer clic en un atajo, como el de Spotlight, siempre acababas en «Teclas de modificación». Ahora las teclas de Spotlight abren Spotlight directamente.
+
+Para los demás atajos, Ajustes del Sistema se abre en «Teclado» y un consejo breve junto a las teclas te dice dónde hacer clic: «Atajos de teclado…» y luego «Mission Control» u otra sección.
+
+Funciona igual en la página Juegos y en «Cortar archivos en el Finder». Para cortar archivos, el consejo te lleva a «Atajos de apps».
+
+**Pruébalo:** Ajustes › Juegos, y luego haz clic en las teclas junto a «La búsqueda no aparece»
+
+**Corregido**
+
+- Hacer clic en un atajo ya no abre «Teclas de modificación».
+
+---
+
 ## <a id="v1.25.1"></a>Imágenes grandes y juegos directo desde el Dock
 
 <sub>1.25.1 · 8 de octubre de 2026</sub>

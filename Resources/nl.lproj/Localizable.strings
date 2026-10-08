@@ -446,6 +446,8 @@
 "Scale" = "Schaal";
 "Suck" = "Opzuigen";
 "Change in System Settings" = "Wijzig in Systeeminstellingen";
+"In System Settings, click “%@”, then “%@”." = "Klik in Systeeminstellingen op ‘%@’ en daarna op ‘%@’.";
+"In System Settings, click “%@”." = "Klik in Systeeminstellingen op ‘%@’.";
 "Type shortcut" = "Typ toetscombinatie";
 "Already used for “%@”" = "Al in gebruik voor ‘%@’";
 "Your Mac already uses this shortcut" = "Je Mac gebruikt deze toetscombinatie al";

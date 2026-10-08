@@ -446,6 +446,8 @@
 "Scale" = "Linear";
 "Suck" = "Sog";
 "Change in System Settings" = "In den Systemeinstellungen ändern";
+"In System Settings, click “%@”, then “%@”." = "Klicke in den Systemeinstellungen auf „%@“ und dann auf „%@“.";
+"In System Settings, click “%@”." = "Klicke in den Systemeinstellungen auf „%@“.";
 "Type shortcut" = "Kurzbefehl drücken";
 "Already used for “%@”" = "Schon belegt für „%@“";
 "Your Mac already uses this shortcut" = "Dein Mac nutzt diesen Kurzbefehl schon";

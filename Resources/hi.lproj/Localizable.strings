@@ -446,6 +446,8 @@
 "Scale" = "स्केल";
 "Suck" = "सोखना";
 "Change in System Settings" = "सिस्टम सेटिंग्ज़ में बदलें";
+"In System Settings, click “%@”, then “%@”." = "सिस्टम सेटिंग्ज़ में “%@” पर क्लिक करें, फिर “%@” पर।";
+"In System Settings, click “%@”." = "सिस्टम सेटिंग्ज़ में “%@” पर क्लिक करें।";
 "Type shortcut" = "शॉर्टकट दबाएँ";
 "Already used for “%@”" = "पहले से “%@” के लिए इस्तेमाल हो रहा है";
 "Your Mac already uses this shortcut" = "आपका Mac यह शॉर्टकट पहले से इस्तेमाल करता है";

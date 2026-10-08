@@ -7,7 +7,7 @@ struct ToggleRow: View {
     var hint: Text?
     var help: Text?
     var keys: [String] = []
-    var systemKeys = false
+    var systemKeys: SystemShortcuts.Place?
     @Binding var isOn: Bool
     @Environment(\.inSettings) private var inSettings
     @State private var hovering = false

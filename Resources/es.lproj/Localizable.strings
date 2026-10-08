@@ -446,6 +446,8 @@
 "Scale" = "Escala";
 "Suck" = "Succión";
 "Change in System Settings" = "Cambiar en Ajustes del Sistema";
+"In System Settings, click “%@”, then “%@”." = "En Ajustes del Sistema, haz clic en «%@» y luego en «%@».";
+"In System Settings, click “%@”." = "En Ajustes del Sistema, haz clic en «%@».";
 "Type shortcut" = "Pulsa el atajo";
 "Already used for “%@”" = "Ya se usa para «%@»";
 "Your Mac already uses this shortcut" = "Tu Mac ya usa este atajo";

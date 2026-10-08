@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.2"></a>Kurzbefehle öffnen sich dort, wo du sie änderst
+
+<sub>1.25.2 · 8. Oktober 2026</sub>
+
+Klicke in den Einstellungen auf einen Kurzbefehl, und die Systemeinstellungen öffnen sich an der richtigen Stelle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Bisher führte ein Klick auf einen Kurzbefehl, etwa den für Spotlight, immer zu „Sondertasten“. Jetzt öffnen die Spotlight-Tasten direkt Spotlight.
+
+Bei den anderen Kurzbefehlen öffnen sich die Systemeinstellungen bei „Tastatur“, und ein kurzer Hinweis neben den Tasten sagt dir, wo du klicken musst: „Tastaturkurzbefehle …“, dann „Mission Control“ oder ein anderer Bereich.
+
+Das gilt auch für die Seite „Spiele“ und für „Dateien im Finder ausschneiden“. Beim Ausschneiden führt der Hinweis zu „App-Kurzbefehle“.
+
+**Ausprobieren:** Einstellungen › Spiele, dann auf die Tasten neben „Die Suche springt nicht auf“ klicken
+
+**Behoben**
+
+- Ein Klick auf einen Kurzbefehl öffnet nicht mehr „Sondertasten“.
+
+---
+
 ## <a id="v1.25.1"></a>Große Bilder und Spiele direkt aus dem Dock
 
 <sub>1.25.1 · 8. Oktober 2026</sub>
