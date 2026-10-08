@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format is based on 
 
 The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
 
+## [1.25.3] - Unreleased
+
+### Changed
+- The pictures on the Animations and Games pages are drawn anew for their size, so they look sharp. A window shrinks into the Dock with round corners, like on a real Mac. The pointer clicks first, and only then a menu or a window opens. Spotlight, the app switcher and the emoji panel are see-through glass, as in macOS Tahoe.
+
 ## [1.25.2] - Unreleased
 
 ### Fixed

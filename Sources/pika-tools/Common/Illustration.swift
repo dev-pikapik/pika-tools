@@ -55,6 +55,7 @@ private struct Loop: ViewModifier {
     @Binding var tick: Int
     let durations: [Double]
     let replay: Int
+    let rest: Int?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var visible = true
     @State private var played = 0
@@ -76,7 +77,7 @@ private struct Loop: ViewModifier {
                 played = replay
                 guard visible, !reduceMotion || replaying else { return }
                 if replaying { tick = 0 }
-                var steps = reduceMotion ? durations.count - 1 : Int.max
+                var steps = reduceMotion ? rest ?? durations.count - 1 : Int.max
                 while steps > 0, !Task.isCancelled {
                     try? await Task.sleep(for: .seconds(durations[tick % durations.count]))
                     guard !Task.isCancelled else { return }
@@ -88,8 +89,8 @@ private struct Loop: ViewModifier {
 }
 
 extension View {
-    func loop(_ tick: Binding<Int>, _ durations: [Double], replay: Int = 0) -> some View {
-        modifier(Loop(tick: tick, durations: durations, replay: replay))
+    func loop(_ tick: Binding<Int>, _ durations: [Double], replay: Int = 0, rest: Int? = nil) -> some View {
+        modifier(Loop(tick: tick, durations: durations, replay: replay, rest: rest))
     }
 
     func spring(_ value: some Equatable, reduceMotion: Bool) -> some View {
@@ -232,13 +233,14 @@ struct ArtMonitor<Face: View>: View {
 
 struct ArtWindow<Content: View>: View {
     var size = CGSize(width: 108, height: 64)
+    var active = true
     @ViewBuilder var content: Content
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
         VStack(spacing: 0) {
             HStack(spacing: 4) {
-                ForEach([Art.red, Art.yellow, Art.green], id: \.self) { Circle().fill($0).frame(width: 6, height: 6) }
+                ForEach([Art.red, Art.yellow, Art.green], id: \.self) { Circle().fill(active ? $0 : Color.primary.opacity(0.18)).frame(width: 6, height: 6) }
                 Spacer(minLength: 0)
             }
             .padding(.horizontal, 7)
@@ -296,18 +298,9 @@ struct ArtQuickLook: View {
             }
             .padding(.horizontal, 7)
             .frame(height: 12)
-            ZStack(alignment: .bottom) {
-                LinearGradient(colors: [.cyan.opacity(0.75), .blue.opacity(0.55)], startPoint: .top, endPoint: .bottom)
-                Circle().fill(.yellow.opacity(0.9)).frame(width: 9, height: 9)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    .padding(6)
-                Image(systemName: "mountain.2.fill")
-                    .font(.system(size: size.height * 0.42))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .offset(y: size.height * 0.06)
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
-            .padding([.horizontal, .bottom], 5)
+            ArtLandscape(size: CGSize(width: size.width - 10, height: size.height - 17))
+                .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
+                .padding([.horizontal, .bottom], 5)
         }
         .frame(width: size.width, height: size.height)
         .background(Color(nsColor: .windowBackgroundColor))
@@ -321,39 +314,42 @@ struct ArtDock: View {
     var appDot = true
     var jump: CGFloat = 0
     var badge = false
+    var icon: CGFloat = 22
 
     private static let colors: [Color] = [.teal, .orange, .accentColor, .pink, .green]
 
     var body: some View {
-        HStack(spacing: 6) {
+        let unit = icon / 22
+        let shape = RoundedRectangle(cornerRadius: 10 * unit, style: .continuous)
+        HStack(spacing: 6 * unit) {
             ForEach(0..<5, id: \.self) { index in
-                VStack(spacing: 3) {
-                    RoundedRectangle(cornerRadius: 5.5, style: .continuous)
+                VStack(spacing: 3 * unit) {
+                    RoundedRectangle(cornerRadius: 5.5 * unit, style: .continuous)
                         .fill(LinearGradient(colors: [Self.colors[index], Self.colors[index].opacity(0.65)], startPoint: .top, endPoint: .bottom))
-                        .frame(width: 22, height: 22)
+                        .frame(width: icon, height: icon)
                         .overlay {
                             if index == 2 {
-                                Image(systemName: "macwindow").font(.system(size: 11, weight: .semibold)).foregroundStyle(.white)
+                                Image(systemName: "macwindow").font(.system(size: 11 * unit, weight: .semibold)).foregroundStyle(.white)
                             }
                         }
                         .overlay(alignment: .topTrailing) {
                             if index == 2 && badge {
-                                Circle().fill(Art.red).frame(width: 8, height: 8).offset(x: 3, y: -3)
+                                Circle().fill(Art.red).frame(width: 8 * unit, height: 8 * unit).offset(x: 3 * unit, y: -3 * unit)
                             }
                         }
                         .offset(y: index == 2 ? -jump : 0)
                     Circle()
                         .fill(Color.primary.opacity(0.55))
-                        .frame(width: 3, height: 3)
+                        .frame(width: 3 * unit, height: 3 * unit)
                         .opacity(index == 1 || (index == 2 && appDot) ? 1 : 0)
                 }
             }
         }
-        .padding(.horizontal, 7)
-        .padding(.top, 5)
-        .padding(.bottom, 3)
-        .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
+        .padding(.horizontal, 7 * unit)
+        .padding(.top, 5 * unit)
+        .padding(.bottom, 3 * unit)
+        .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: shape)
+        .overlay(shape.strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
     }
 }
 
@@ -373,12 +369,16 @@ struct ArtCursor: View {
         }
     }
 
+    var pressed = false
+
     var body: some View {
         Arrow()
             .fill(.black)
             .overlay(Arrow().stroke(.white, lineWidth: 1))
             .frame(width: 12, height: 18, alignment: .topLeading)
-            .shadow(color: .black.opacity(0.25), radius: 1.5, y: 1)
+            .scaleEffect(pressed ? 0.84 : 1, anchor: .topLeading)
+            .shadow(color: .black.opacity(pressed ? 0.15 : 0.25), radius: pressed ? 0.8 : 1.5, y: pressed ? 0.5 : 1)
+            .animation(.easeOut(duration: 0.08), value: pressed)
     }
 }
 
@@ -404,19 +404,20 @@ struct ArtRipple: View {
 struct ArtKey<Label: View>: View {
     let down: Bool
     var width: CGFloat = 34
+    var height: CGFloat = 26
     @ViewBuilder var label: Label
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: height * 0.23, style: .continuous)
         shape
             .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
             .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
             .overlay {
                 label
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .font(.system(size: height / 2, weight: .medium, design: .rounded))
                     .foregroundStyle(down ? Color.white : Color.primary)
             }
-            .frame(width: width, height: 26)
+            .frame(width: width, height: height)
             .shadow(color: .black.opacity(down ? 0.05 : 0.2), radius: down ? 0.5 : 2, y: down ? 0.5 : 2)
             .scaleEffect(down ? 0.93 : 1)
     }
@@ -455,6 +456,68 @@ struct ArtFile: View {
         }
         .padding(4)
         .background(Color.accentColor.opacity(selected ? 0.2 : 0), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+    }
+}
+
+struct ArtLandscape: View {
+    let size: CGSize
+
+    var body: some View {
+        let width = size.width, height = size.height
+        ZStack {
+            LinearGradient(colors: [Color(red: 0.38, green: 0.65, blue: 0.96), Color(red: 0.76, green: 0.88, blue: 1)], startPoint: .top, endPoint: .bottom)
+            Circle().fill(Art.yellow).frame(width: width * 0.18, height: width * 0.18).position(x: width * 0.74, y: height * 0.3)
+            Ellipse().fill(Color(red: 0.47, green: 0.79, blue: 0.43)).frame(width: width * 1.1, height: height * 0.7).position(x: width * 0.2, y: height * 1.02)
+            Ellipse().fill(Color(red: 0.24, green: 0.63, blue: 0.33)).frame(width: width * 1.2, height: height * 0.6).position(x: width * 0.86, y: height * 1.08)
+        }
+        .frame(width: width, height: height)
+    }
+}
+
+struct ArtSpotlight: View {
+    var width: CGFloat = 118
+    var height: CGFloat = 22
+
+    var body: some View {
+        HStack(spacing: height * 0.24) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: height * 0.42, weight: .semibold))
+                .foregroundStyle(Color.primary.opacity(0.6))
+            Capsule().fill(Color.primary.opacity(0.22)).frame(width: width * 0.4, height: height * 0.18)
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, height * 0.38)
+        .frame(width: width, height: height)
+        .artGlass(radius: height / 2)
+    }
+}
+
+private struct ArtGlass: ViewModifier {
+    let radius: CGFloat
+    @Environment(\.colorScheme) private var scheme
+
+    func body(content: Content) -> some View {
+        let dark = scheme == .dark
+        let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
+        content
+            .background(dark ? Color.black.opacity(0.28) : Color.white.opacity(0.5), in: shape)
+            .overlay(shape.strokeBorder(LinearGradient(colors: [.white.opacity(dark ? 0.32 : 0.9), .white.opacity(dark ? 0.06 : 0.25)], startPoint: .top, endPoint: .bottom), lineWidth: 0.8))
+            .shadow(color: .black.opacity(0.22), radius: min(radius / 2, 6), y: min(radius / 4.5, 2.5))
+    }
+}
+
+extension View {
+    func artGlass(radius: CGFloat) -> some View {
+        modifier(ArtGlass(radius: radius))
+    }
+
+    func glassBackdrop(_ frame: CGRect, radius: CGFloat? = nil) -> some View {
+        blur(radius: 6)
+            .mask {
+                RoundedRectangle(cornerRadius: radius ?? frame.height / 2, style: .continuous)
+                    .frame(width: frame.width, height: frame.height)
+                    .position(x: frame.midX, y: frame.midY)
+            }
     }
 }
 
@@ -502,23 +565,25 @@ struct ArtMouse: View {
 struct ArtTrackpad: View {
     var touch = false
     var slide: CGFloat = 0
+    var width: CGFloat = 60
+    var fingers = 2
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
+        let unit = width / 60
+        let shape = RoundedRectangle(cornerRadius: 7 * unit, style: .continuous)
         shape
             .fill(Art.metal(scheme))
             .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
             .overlay {
-                HStack(spacing: 8) {
-                    Circle().frame(width: 10, height: 10)
-                    Circle().frame(width: 10, height: 10)
+                HStack(spacing: 8 * unit) {
+                    ForEach(0..<fingers, id: \.self) { _ in Circle().frame(width: 10 * unit, height: 10 * unit) }
                 }
                 .foregroundStyle(Color.accentColor)
                 .opacity(touch ? 0.9 : 0)
                 .offset(y: slide)
             }
-            .frame(width: 60, height: 42)
+            .frame(width: width, height: 42 * unit)
             .shadow(color: .black.opacity(0.18), radius: 2, y: 1.5)
     }
 }

@@ -440,7 +440,7 @@ private struct SettingArt: View {
     var body: some View {
         switch setting {
         case .dockDelay: DockDelayArt(delay: tool.value(.dockDelay), speed: tool.value(.dockSpeed))
-        case .dockSpeed: DockSpeedArt(speed: tool.value(.dockSpeed))
+        case .dockSpeed: DockSpeedArt(delay: tool.value(.dockDelay), speed: tool.value(.dockSpeed))
         case .bounce: BounceArt(on: tool.value(.bounce) != 0)
         case .windowOpen: WindowOpenArt(on: tool.value(.windowOpen) != 0)
         case .resize: ResizeArt(seconds: tool.value(.resize))
