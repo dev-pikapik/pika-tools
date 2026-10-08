@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Duże obrazki i gry prosto z Docka
+
+<sub>1.25.1 · 8 października 2026</sub>
+
+Każdy przełącznik ma teraz duży obrazek, a „Dodaj grę…” pokazuje to, co masz w Docku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Na stronach Animacje i Gry wszystkie obrazki są teraz duże, tak jak ten na górze strony. Od razu widać, co robi każdy przełącznik, a obrazki nadal ruszają się w tempie, które wybierzesz.
+
+Kliknij „Dodaj grę…”, a zobaczysz swój Dock: aplikacje, które tam trzymasz, i te otwarte teraz, w tej samej kolejności. Gra z Docka pojawia się nawet wtedy, gdy jest zamknięta, Minecraft też. Jedno kliknięcie ją dodaje, a znaczek pokazuje, że jest już na liście. Kliknij jeszcze raz, żeby ją usunąć.
+
+Grę nadal możesz przeciągnąć tutaj z Findera. Nie trzeba już wyciągać jej z Docka, więc Dock nie zaproponuje jej usunięcia.
+
+**Wypróbuj:** Ustawienia › Gry, potem „Dodaj grę…”
+
+**Poprawki**
+
+- Gra, która leży w Docku, ale jest zamknięta, pojawia się teraz na liście do dodania.
+
+---
+
 ## <a id="v1.25.0"></a>Gra dodana jednym kliknięciem i własne klawisze
 
 <sub>1.25.0 · 8 października 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Stora bilder, och spel direkt från Dock
+
+<sub>1.25.1 · 8 oktober 2026</sub>
+
+Varje reglage har nu en stor bild, och ”Lägg till spel…” visar det som finns i din Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+På sidorna Animationer och Spel är alla bilder nu stora, precis som den högst upp på sidan. Du ser direkt vad varje reglage gör, och bilderna rör sig fortfarande i den takt du har valt.
+
+Klicka på ”Lägg till spel…” så ser du din Dock: apparna du har där och de som är öppna just nu, i samma ordning. Ett spel från Dock syns även när det är stängt, Minecraft också. Ett klick lägger till det, och en bock visar att det finns i listan. Klicka igen för att ta bort det.
+
+Du kan fortfarande dra hit ett spel från Finder. Du behöver inte längre dra ut det ur Dock, så Dock erbjuder sig inte heller att ta bort det.
+
+**Prova:** Inställningar › Spel, sedan ”Lägg till spel…”
+
+**Åtgärdat**
+
+- Ett spel som ligger i Dock men är stängt visas nu i listan för att lägga till.
+
+---
+
 ## <a id="v1.25.0"></a>Lägg till ett spel med ett klick, och välj egna tangenter
 
 <sub>1.25.0 · 8 oktober 2026</sub>

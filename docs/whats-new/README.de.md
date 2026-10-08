@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Große Bilder und Spiele direkt aus dem Dock
+
+<sub>1.25.1 · 8. Oktober 2026</sub>
+
+Jeder Schalter hat jetzt ein großes Bild, und „Spiel hinzufügen …“ zeigt, was in deinem Dock ist.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Auf den Seiten „Animationen“ und „Spiele“ sind alle Bilder jetzt groß, genau wie das Bild oben auf der Seite. So siehst du sofort, was jeder Schalter macht, und die Bilder bewegen sich weiter in dem Tempo, das du gewählt hast.
+
+Klick auf „Spiel hinzufügen …“, und du siehst dein Dock: die Apps, die du dort behältst, und die, die gerade offen sind, in derselben Reihenfolge. Ein Spiel aus dem Dock ist auch dann da, wenn es geschlossen ist, Minecraft auch. Ein Klick fügt es hinzu, und ein Häkchen zeigt, dass es in der Liste ist. Klick noch einmal, um es wieder zu entfernen.
+
+Du kannst ein Spiel weiterhin aus dem Finder hierher ziehen. Aus dem Dock musst du es nicht mehr herausziehen, also bietet das Dock auch nicht mehr an, es zu entfernen.
+
+**Ausprobieren:** Einstellungen › Spiele, dann „Spiel hinzufügen …“
+
+**Behoben**
+
+- Ein Spiel, das im Dock liegt, aber geschlossen ist, erscheint jetzt in der Liste zum Hinzufügen.
+
+---
+
 ## <a id="v1.25.0"></a>Ein Spiel mit einem Klick hinzufügen und eigene Tasten wählen
 
 <sub>1.25.0 · 8. Oktober 2026</sub>

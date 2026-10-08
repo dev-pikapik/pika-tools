@@ -26,24 +26,25 @@ struct GameList: View {
 
 private struct GameShelf: View {
     let tool: GameModeTool
-    @State private var apps: [NSRunningApplication] = []
+    @State private var keys: [String] = []
 
     var body: some View {
         let center = NSWorkspace.shared.notificationCenter
-        let shown = apps.filter { !tool.games.contains(GameModeTool.key($0)) }
         VStack(alignment: .leading, spacing: 8) {
-            if shown.isEmpty {
+            if keys.isEmpty {
                 Text("Open your game, and it shows up here")
             } else {
-                Text("Click your game to add it, or drag it to the list")
+                Text("Here’s what’s in your Dock. Click your game to add it")
             }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 76), spacing: 2)], spacing: 2) {
-                ForEach(shown, id: \.processIdentifier) { app in
-                    let key = GameModeTool.key(app)
-                    ShelfTile(name: app.title, icon: app.picture ?? NSImage()) { tool.confirm(key) }
-                        .onDrag { NSItemProvider(object: key as NSString) }
+                ForEach(keys, id: \.self) { key in
+                    let app = AppLabel.info(key)
+                    let added = tool.games.contains(key)
+                    ShelfTile(name: app.name, icon: app.icon, added: added) {
+                        if added { tool.games.removeAll { $0 == key } } else { tool.confirm(key) }
+                    }
                 }
-                ShelfTile(name: String(localized: "Other…"), icon: NSWorkspace.shared.icon(forFile: "/Applications")) {
+                ShelfTile(name: String(localized: "Other…"), icon: NSWorkspace.shared.icon(forFile: "/Applications"), added: false) {
                     AppExclusions.choose().forEach(tool.add)
                 }
             }
@@ -59,17 +60,19 @@ private struct GameShelf: View {
     }
 
     private func refresh() {
-        var seen = Set<String>()
-        apps = NSWorkspace.shared.runningApplications.filter {
-            $0.activationPolicy == .regular && $0.bundleIdentifier?.hasPrefix("com.pesotchi.pika-tools") != true && $0.bundleIdentifier != "com.apple.finder"
-                && seen.insert(GameModeTool.key($0)).inserted
+        func dock(_ key: String) -> [URL] {
+            GameRules.dockFiles(CFPreferencesCopyAppValue(key as CFString, "com.apple.dock" as CFString) as? [Any])
         }
+        let recents = CFPreferencesCopyAppValue("show-recents" as CFString, "com.apple.dock" as CFString) as? Bool ?? true
+        let running = NSWorkspace.shared.runningApplications.filter { $0.activationPolicy == .regular }.map(GameModeTool.key)
+        keys = GameRules.shelf((dock("persistent-apps") + (recents ? dock("recent-apps") : [])).compactMap(GameModeTool.key) + running)
     }
 }
 
 private struct ShelfTile: View {
     let name: String
     let icon: NSImage
+    let added: Bool
     let action: () -> Void
     @State private var hovering = false
 
@@ -79,6 +82,15 @@ private struct ShelfTile: View {
                 Image(nsImage: icon)
                     .resizable()
                     .frame(width: 48, height: 48)
+                    .overlay(alignment: .bottomTrailing) {
+                        if added {
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.system(size: 17, weight: .semibold))
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.white, Color.accentColor)
+                                .offset(x: 3, y: 3)
+                        }
+                    }
                 Text(verbatim: name)
                     .font(.caption)
                     .foregroundStyle(.primary)
@@ -93,6 +105,7 @@ private struct ShelfTile: View {
         .onHover { hovering = $0 }
         .help(name)
         .accessibilityLabel(name)
+        .accessibilityAddTraits(added ? .isSelected : [])
     }
 }
 
@@ -109,7 +122,7 @@ private struct GameDrop: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onDrop(of: [.fileURL, .plainText], isTargeted: $targeted, perform: drop)
+            .onDrop(of: [.fileURL], isTargeted: $targeted, perform: drop)
             .overlayPreferenceValue(GameListBounds.self) { anchors in
                 GeometryReader { proxy in
                     let rect = anchors.map { proxy[$0] }.reduce(CGRect.null) { $0.union($1) }.insetBy(dx: -10, dy: -10)
@@ -128,19 +141,9 @@ private struct GameDrop: ViewModifier {
 
     private func drop(_ providers: [NSItemProvider]) -> Bool {
         for provider in providers {
-            if provider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
-                _ = provider.loadObject(ofClass: URL.self) { url, _ in
-                    guard let url else { return }
-                    DispatchQueue.main.async { GameModeTool.shared.add(url) }
-                }
-            } else {
-                _ = provider.loadObject(ofClass: String.self) { key, _ in
-                    guard let key else { return }
-                    DispatchQueue.main.async {
-                        guard NSWorkspace.shared.runningApplications.contains(where: { GameModeTool.key($0) == key }) else { return }
-                        GameModeTool.shared.confirm(key)
-                    }
-                }
+            _ = provider.loadObject(ofClass: URL.self) { url, _ in
+                guard let url else { return }
+                DispatchQueue.main.async { GameModeTool.shared.add(url) }
             }
         }
         return true

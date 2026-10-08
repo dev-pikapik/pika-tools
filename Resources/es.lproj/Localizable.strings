@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "La pantalla no se atenúa ni se duerme mientras juegas";
 "Your games" = "Tus juegos";
 "Open your game, and it shows up here" = "Abre tu juego y aparecerá aquí";
-"Click your game to add it, or drag it to the list" = "Haz clic en tu juego para añadirlo o arrástralo a la lista";
-"You can also drag a game here from Finder or the Dock" = "También puedes arrastrar un juego aquí desde el Finder o el Dock";
+"Here’s what’s in your Dock. Click your game to add it" = "Aquí está todo lo que hay en tu Dock. Haz clic en tu juego para añadirlo";
+"You can also drag a game here from Finder" = "También puedes arrastrar un juego aquí desde el Finder";
 "Not a Game" = "No es un juego";
 "Looks like a game" = "Parece un juego";
 "game, games, gaming, play, Steam, full screen" = "juego, juegos, gaming, jugar, Steam, pantalla completa";

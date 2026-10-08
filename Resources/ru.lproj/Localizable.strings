@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "Экран не тускнеет и не засыпает, пока вы играете";
 "Your games" = "Ваши игры";
 "Open your game, and it shows up here" = "Откройте игру — и она появится здесь";
-"Click your game to add it, or drag it to the list" = "Нажмите на игру, чтобы добавить её, или перетащите её в список";
-"You can also drag a game here from Finder or the Dock" = "Игру можно перетащить сюда и из Finder или Dock";
+"Here’s what’s in your Dock. Click your game to add it" = "Здесь всё, что есть в Dock. Нажмите на игру, чтобы добавить её";
+"You can also drag a game here from Finder" = "Игру можно перетащить сюда и из Finder";
 "Not a Game" = "Не игра";
 "Looks like a game" = "Похоже на игру";
 "game, games, gaming, play, Steam, full screen" = "игра, игры, игровой, играть, гейминг, Steam, полный экран";

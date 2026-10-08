@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Gambar besar, dan game langsung dari Dock
+
+<sub>1.25.1 · 8 Oktober 2026</sub>
+
+Setiap sakelar kini punya gambar besar, dan “Tambah Game…” menampilkan isi Dock Anda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Di halaman Animasi dan Game, semua gambar kini besar, sama seperti gambar di bagian atas halaman. Langsung terlihat apa yang dilakukan tiap sakelar, dan gambarnya tetap bergerak dengan kecepatan yang Anda pilih.
+
+Tekan “Tambah Game…” dan Anda melihat Dock Anda: app yang Anda simpan di sana dan app yang sedang terbuka, dengan urutan yang sama. Game di Dock tetap muncul meski tertutup, Minecraft juga. Satu klik menambahkannya, dan tanda centang menunjukkan game itu sudah ada di daftar. Klik sekali lagi untuk melepasnya.
+
+Anda masih bisa menyeret game ke sini dari Finder. Tidak perlu lagi menariknya keluar dari Dock, jadi Dock tidak akan menawarkan untuk menghapusnya.
+
+**Coba:** Pengaturan › Game, lalu “Tambah Game…”
+
+**Diperbaiki**
+
+- Game yang ada di Dock tetapi tertutup kini muncul di daftar untuk ditambahkan.
+
+---
+
 ## <a id="v1.25.0"></a>Tambah game dengan satu klik, dan pilih tombol sendiri
 
 <sub>1.25.0 · 8 Oktober 2026</sub>

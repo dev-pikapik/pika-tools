@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Velké obrázky a hry rovnou z Docku
+
+<sub>1.25.1 · 8. října 2026</sub>
+
+Každý přepínač má teď velký obrázek a „Přidat hru…“ ukazuje, co máte v Docku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Na stránkách Animace a Hry jsou teď všechny obrázky velké, stejně jako ten nahoře na stránce. Hned je vidět, co který přepínač dělá, a obrázky se pořád hýbou rychlostí, kterou jste si vybrali.
+
+Klikněte na „Přidat hru…“ a uvidíte svůj Dock: aplikace, které tam máte, a ty, které jsou právě otevřené, ve stejném pořadí. Hra z Docku se ukáže, i když je zavřená, Minecraft taky. Jedno kliknutí ji přidá a fajfka ukáže, že už je v seznamu. Dalším kliknutím ji zase odeberete.
+
+Hru pořád můžete přetáhnout sem z Finderu. Z Docku ji už vytahovat nemusíte, takže Dock nenabídne, že ji odstraní.
+
+**Vyzkoušejte:** Nastavení › Hry, pak „Přidat hru…“
+
+**Opraveno**
+
+- Hra, která je v Docku, ale je zavřená, se teď ukáže v seznamu pro přidání.
+
+---
+
 ## <a id="v1.25.0"></a>Hru přidáte jedním kliknutím a klávesy si zvolíte sami
 
 <sub>1.25.0 · 8. října 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Grote plaatjes, en games zo uit je Dock
+
+<sub>1.25.1 · 8 oktober 2026</sub>
+
+Elke schakelaar heeft nu een groot plaatje, en ‘Voeg game toe…’ laat zien wat er in je Dock staat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Op de pagina’s Animaties en Games zijn alle plaatjes nu groot, net als het plaatje boven aan de pagina. Je ziet meteen wat elke schakelaar doet, en de plaatjes bewegen nog steeds op de snelheid die je kiest.
+
+Klik op ‘Voeg game toe…’ en je ziet je Dock: de apps die je daar bewaart en de apps die nu open zijn, in dezelfde volgorde. Een game uit het Dock staat er ook als hij dicht is, Minecraft ook. Eén klik voegt hem toe, en een vinkje laat zien dat hij in de lijst staat. Klik nog een keer om hem eruit te halen.
+
+Je kunt een game nog steeds vanuit de Finder hierheen slepen. Je hoeft hem niet meer uit het Dock te trekken, dus het Dock biedt ook niet meer aan om hem te verwijderen.
+
+**Probeer het:** Instellingen › Games, dan ‘Voeg game toe…’
+
+**Opgelost**
+
+- Een game die in het Dock staat maar dicht is, verschijnt nu in de lijst om toe te voegen.
+
+---
+
 ## <a id="v1.25.0"></a>Een game toevoegen met één klik, en je eigen toetsen
 
 <sub>1.25.0 · 8 oktober 2026</sub>

@@ -4,6 +4,17 @@ All notable changes to this project are documented here. The format is based on 
 
 The same updates, told simply with a picture each and in every language, are in [What’s new](docs/whats-new/README.md).
 
+## [1.25.1] - Unreleased
+
+### Changed
+- Every picture on the Animations and Games pages is big now, the same size as the picture at the top of the page. The pictures still move at the speed you pick.
+- Add a Game… shows what’s in your Dock: the apps you keep there and the ones open right now, in the same order. A check mark shows a game is already on the list, and a second click takes it off.
+- The tip under the game list talks only about Finder. Picking a game in the list is easier than pulling it out of the Dock, so the Dock no longer offers to remove it.
+
+### Fixed
+- A game that sits in the Dock but is closed shows up in the list for adding, Minecraft too.
+- The hearts in the small game scenes are no longer cut off at the edge.
+
 ## [1.25.0] - Unreleased
 
 ### Added

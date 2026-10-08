@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "プレイ中はディスプレイが暗くならず、スリープもしません";
 "Your games" = "あなたのゲーム";
 "Open your game, and it shows up here" = "ゲームを開くと、ここに表示されます";
-"Click your game to add it, or drag it to the list" = "ゲームをクリックして追加するか、リストにドラッグしてください";
-"You can also drag a game here from Finder or the Dock" = "FinderやDockからゲームをここにドラッグしても追加できます";
+"Here’s what’s in your Dock. Click your game to add it" = "Dockにあるものがここに並んでいます。ゲームをクリックして追加してください";
+"You can also drag a game here from Finder" = "Finderからゲームをここにドラッグしても追加できます";
 "Not a Game" = "ゲームではない";
 "Looks like a game" = "ゲームのようです";
 "game, games, gaming, play, Steam, full screen" = "game, ゲーム, ゲーミング, プレイ, 遊ぶ, Steam, フルスクリーン";

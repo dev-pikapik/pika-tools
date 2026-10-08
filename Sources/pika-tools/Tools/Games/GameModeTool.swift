@@ -119,11 +119,7 @@ final class GameModeTool: Tool {
     }
 
     func add(_ url: URL) {
-        if let app = NSWorkspace.shared.runningApplications.first(where: { $0.bundleURL?.path == url.path || $0.executableURL?.path == url.path }) {
-            return confirm(Self.key(app))
-        }
-        guard url.pathExtension == "app", let bundle = Bundle(url: url) else { return }
-        confirm(GameRules.rule(id: bundle.bundleIdentifier, name: FileManager.default.displayName(atPath: url.path), path: bundle.executableURL?.path ?? ""))
+        Self.key(url).map(confirm)
     }
 
     func dismiss(_ key: String) {
@@ -266,6 +262,17 @@ final class GameModeTool: Tool {
 
     static func key(_ app: NSRunningApplication) -> String {
         GameRules.rule(id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "")
+    }
+
+    static func key(_ url: URL) -> String? {
+        if let app = NSWorkspace.shared.runningApplications.first(where: { $0.bundleURL?.path == url.path || $0.executableURL?.path == url.path }) {
+            return key(app)
+        }
+        if url.pathExtension == "app", let bundle = Bundle(url: url) {
+            return GameRules.rule(id: bundle.bundleIdentifier, name: FileManager.default.displayName(atPath: url.path), path: bundle.executableURL?.path ?? "")
+        }
+        let file = (try? url.resourceValues(forKeys: [.isRegularFileKey]))?.isRegularFile == true
+        return file && FileManager.default.isExecutableFile(atPath: url.path) ? GameRules.rule(id: nil, name: url.lastPathComponent, path: url.path) : nil
     }
 
     private func isGame(_ app: NSRunningApplication) -> Bool {
@@ -479,7 +486,7 @@ struct GameModePage: View {
                 }
                 .gameList()
             } footer: {
-                Text("You can also drag a game here from Finder or the Dock")
+                Text("You can also drag a game here from Finder")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -535,15 +542,18 @@ struct GameModePage: View {
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
         Section {
             ForEach(rows, id: \.rule) { row in
-                Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
-                    HStack(spacing: 12) {
-                        GameRuleArt(rule: row.rule)
-                        HStack(alignment: .firstTextBaseline, spacing: 6) {
-                            RowLabel(Text(row.title), row.subtitle)
-                            row.system?.foregroundStyle(.secondary)
+                VStack(spacing: 10) {
+                    IllustrationRow { GameRuleArt(rule: row.rule) }
+                        .opacity(tool.isEnabled ? 1 : 0.5)
+                    Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
+                        HStack(spacing: 12) {
+                            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                                RowLabel(Text(row.title), row.subtitle)
+                                row.system?.foregroundStyle(.secondary)
+                            }
+                            Spacer(minLength: 0)
+                            if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: !row.rule.hotKeys.isEmpty) }
                         }
-                        Spacer(minLength: 0)
-                        if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: !row.rule.hotKeys.isEmpty) }
                     }
                 }
                 .settingAnchor(row.title)

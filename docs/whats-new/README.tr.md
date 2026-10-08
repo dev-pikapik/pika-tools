@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Büyük resimler ve doğrudan Dock’tan oyunlar
+
+<sub>1.25.1 · 8 Ekim 2026</sub>
+
+Her anahtarın artık büyük bir resmi var ve “Oyun Ekle…” Dock’unuzda ne varsa gösteriyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Animasyonlar ve Oyunlar sayfalarındaki tüm resimler artık büyük, tıpkı sayfanın üstündeki gibi. Her anahtarın ne yaptığı hemen anlaşılıyor ve resimler hâlâ seçtiğiniz hızda hareket ediyor.
+
+“Oyun Ekle…”ye basın, Dock’unuzu görün: orada tuttuğunuz uygulamalar ve şu an açık olanlar, aynı sırayla. Dock’taki bir oyun kapalıyken de görünür, Minecraft da. Tek tıklama onu ekler, bir onay işareti listede olduğunu gösterir. Çıkarmak için bir kez daha tıklayın.
+
+Bir oyunu hâlâ Finder’dan buraya sürükleyebilirsiniz. Artık onu Dock’tan çekip çıkarmanız gerekmiyor, bu yüzden Dock da onu kaldırmayı önermiyor.
+
+**Deneyin:** Ayarlar › Oyunlar, ardından “Oyun Ekle…”
+
+**Düzeltilenler**
+
+- Dock’ta duran ama kapalı olan bir oyun artık ekleme listesinde görünüyor.
+
+---
+
 ## <a id="v1.25.0"></a>Tek tıkla oyun ekleyin, tuşları kendiniz seçin
 
 <sub>1.25.0 · 8 Ekim 2026</sub>

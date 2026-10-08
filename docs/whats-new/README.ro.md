@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.25.1"></a>Imagini mari și jocuri direct din Dock
+
+<sub>1.25.1 · 8 octombrie 2026</sub>
+
+Fiecare comutator are acum o imagine mare, iar „Adaugă un joc…” arată ce ai în Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.25.1/dock-games-dark.png"><img src="../media/whats-new/1.25.1/dock-games-light.png" width="340" alt=""></picture>
+
+Pe paginile Animații și Jocuri, toate imaginile sunt acum mari, ca cea din partea de sus a paginii. Vezi imediat ce face fiecare comutator, iar imaginile se mișcă în continuare cu viteza pe care ai ales-o.
+
+Apasă „Adaugă un joc…” și îți vezi Dock-ul: aplicațiile pe care le ții acolo și cele deschise acum, în aceeași ordine. Un joc din Dock apare chiar dacă e închis, inclusiv Minecraft. Un clic îl adaugă, iar o bifă arată că e în listă. Mai dă un clic ca să-l scoți.
+
+Poți trage în continuare un joc aici din Finder. Nu mai trebuie să-l scoți din Dock, așa că Dock-ul nu-ți mai propune să-l elimini.
+
+**Încearcă:** Configurări › Jocuri, apoi „Adaugă un joc…”
+
+**Reparat**
+
+- Un joc care stă în Dock, dar e închis, apare acum în lista pentru adăugare.
+
+---
+
 ## <a id="v1.25.0"></a>Adaugi un joc dintr-un clic și îți alegi tastele
 
 <sub>1.25.0 · 8 octombrie 2026</sub>

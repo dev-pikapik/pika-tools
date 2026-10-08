@@ -370,7 +370,7 @@ private struct SliderRow: View {
     var body: some View {
         let committed = tool.value(setting)
         let value = setting.label(drag.map(setting.value(at:)) ?? committed).text
-        HStack(spacing: 12) {
+        VStack(alignment: .leading, spacing: 10) {
             SettingArt(tool: tool, setting: setting)
                 .opacity(isEnabled ? 1 : 0.5)
             VStack(alignment: .leading, spacing: 6) {
@@ -396,9 +396,9 @@ private struct FlagRow: View {
     let setting: AnimationSetting
 
     var body: some View {
-        Toggle(isOn: Binding(get: { tool.value(setting) != 0 }, set: { tool.set(setting, $0 ? 1 : 0) })) {
-            HStack(spacing: 12) {
-                SettingArt(tool: tool, setting: setting)
+        VStack(spacing: 10) {
+            SettingArt(tool: tool, setting: setting)
+            Toggle(isOn: Binding(get: { tool.value(setting) != 0 }, set: { tool.set(setting, $0 ? 1 : 0) })) {
                 RowLabel(Text(setting.title), Text(setting.subtitle))
             }
         }
@@ -409,26 +409,24 @@ private struct FlagRow: View {
 
 private struct MinimizeRow: View {
     let tool: AnimationsTool
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static var names: [String] {
         [String(localized: "Genie"), String(localized: "Scale"), String(localized: "Suck")]
     }
 
     var body: some View {
-        let selected = Int(tool.value(.minimize))
         VStack(alignment: .leading, spacing: 10) {
-            RowLabel(Text(AnimationSetting.minimize.title), Text(AnimationSetting.minimize.subtitle))
-            HStack(spacing: 14) {
-                ForEach(Array(Self.names.enumerated()), id: \.offset) { index, name in
-                    ChoiceTile(title: name, selected: selected == index) {
-                        tool.set(.minimize, Double(index))
-                    } content: {
-                        MinimizeArt(effect: index)
+            SettingArt(tool: tool, setting: .minimize)
+            VStack(alignment: .leading, spacing: 6) {
+                RowLabel(Text(AnimationSetting.minimize.title), Text(AnimationSetting.minimize.subtitle))
+                Picker(AnimationSetting.minimize.title, selection: Binding(get: { Int(tool.value(.minimize)) }, set: { tool.set(.minimize, Double($0)) })) {
+                    ForEach(Array(Self.names.enumerated()), id: \.offset) { index, name in
+                        Text(verbatim: name).tag(index)
                     }
                 }
+                .pickerStyle(.segmented)
+                .labelsHidden()
             }
-            .spring(selected, reduceMotion: reduceMotion)
         }
         .settingAnchor(AnimationSetting.minimize.title)
         .help(AnimationSetting.minimize.help)

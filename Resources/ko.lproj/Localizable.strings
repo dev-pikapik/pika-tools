@@ -301,8 +301,8 @@
 "The display doesn’t dim or sleep while you play" = "플레이하는 동안 디스플레이가 어두워지거나 잠자기에 들어가지 않습니다";
 "Your games" = "내 게임";
 "Open your game, and it shows up here" = "게임을 열면 여기에 나타납니다";
-"Click your game to add it, or drag it to the list" = "게임을 클릭해 추가하거나 목록으로 드래그하세요";
-"You can also drag a game here from Finder or the Dock" = "Finder나 Dock에서 게임을 여기로 드래그해도 됩니다";
+"Here’s what’s in your Dock. Click your game to add it" = "Dock에 있는 앱이 모두 여기 있어요. 게임을 클릭해 추가하세요";
+"You can also drag a game here from Finder" = "Finder에서 게임을 여기로 드래그해도 됩니다";
 "Not a Game" = "게임 아님";
 "Looks like a game" = "게임인 것 같습니다";
 "game, games, gaming, play, Steam, full screen" = "game, 게임, 게이밍, 플레이, Steam, 전체 화면";

@@ -2,23 +2,23 @@ import SwiftUI
 
 struct GameRuleArt: View {
     let rule: GameRule
-    @Environment(\.isEnabled) private var isEnabled
+    var height: CGFloat = 108
 
     private static let canvas = CGSize(width: 120, height: 76)
-    private static let size = CGSize(width: 50, height: 32)
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        let scale = height / Self.canvas.height
         Color.clear
-            .frame(width: Self.size.width, height: Self.size.height)
+            .frame(width: Self.canvas.width * scale, height: height)
             .overlay {
                 ZStack { scene }
                     .frame(width: Self.canvas.width, height: Self.canvas.height)
-                    .scaleEffect(Self.size.width / Self.canvas.width)
+                    .scaleEffect(scale)
             }
             .clipShape(shape)
             .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
-            .opacity(isEnabled ? 1 : 0.5)
+            .shadow(color: .black.opacity(0.18), radius: height / 18, y: height / 36)
             .accessibilityHidden(true)
     }
 
@@ -215,6 +215,7 @@ struct GameRuleArt: View {
         GameScene(hop: false)
             .frame(width: 196, height: 108)
             .scaleEffect(Self.canvas.height / 108)
+            .offset(x: 6)
             .frame(width: Self.canvas.width, height: Self.canvas.height)
     }
 
