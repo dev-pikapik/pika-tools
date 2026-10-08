@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Maak kennis met je huisdiertje op het bureaublad
 
-<sub>1.27.0 · 8 oktober 2026</sub>
+<sub>1.27.0 · 9 oktober 2026</sub>
 
 Onderaan je scherm woont nu een klein vriendje, en de app heeft een nieuwe naam: pikapik.
 

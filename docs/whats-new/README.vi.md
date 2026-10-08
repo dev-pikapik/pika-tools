@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Làm quen với thú cưng trên màn hình nền
 
-<sub>1.27.0 · ngày 8 tháng 10, 2026</sub>
+<sub>1.27.0 · ngày 9 tháng 10, 2026</sub>
 
 Giờ đây có một người bạn nhỏ sống ở cạnh dưới màn hình của bạn, và ứng dụng có tên mới: pikapik.
 

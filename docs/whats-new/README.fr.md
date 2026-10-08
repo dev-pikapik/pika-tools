@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Voici votre compagnon de bureau
 
-<sub>1.27.0 · 8 octobre 2026</sub>
+<sub>1.27.0 · 9 octobre 2026</sub>
 
 Un petit ami vit désormais en bas de votre écran, et l’app porte un nouveau nom : pikapik.
 

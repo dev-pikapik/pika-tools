@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Masaüstündeki yeni dostunuzla tanışın
 
-<sub>1.27.0 · 8 Ekim 2026</sub>
+<sub>1.27.0 · 9 Ekim 2026</sub>
 
 Ekranınızın altında artık küçük bir dost yaşıyor ve uygulamanın yeni bir adı var: pikapik.
 

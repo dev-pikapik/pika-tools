@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Poznaj zwierzaka na biurku
 
-<sub>1.27.0 · 8 października 2026</sub>
+<sub>1.27.0 · 9 października 2026</sub>
 
 Na dole ekranu mieszka teraz mały przyjaciel, a aplikacja ma nową nazwę: pikapik.
 

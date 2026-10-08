@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Fă cunoștință cu animăluțul de pe birou
 
-<sub>1.27.0 · 8 octombrie 2026</sub>
+<sub>1.27.0 · 9 octombrie 2026</sub>
 
 Jos pe ecran locuiește acum un mic prieten, iar aplicația are un nume nou: pikapik.
 

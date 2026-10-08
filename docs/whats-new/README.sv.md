@@ -7,7 +7,7 @@
 
 ## <a id="v1.27.0"></a>Möt ditt husdjur på skrivbordet
 
-<sub>1.27.0 · 8 oktober 2026</sub>
+<sub>1.27.0 · 9 oktober 2026</sub>
 
 Längst ner på skärmen bor nu en liten vän, och appen har ett nytt namn: pikapik.
 
