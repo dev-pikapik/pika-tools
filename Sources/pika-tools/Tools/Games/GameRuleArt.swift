@@ -465,26 +465,12 @@ struct GameScene: View {
         let jump = (hero + 14 - gap) / 28
         let air = jump > 0 && jump < 1
         let lift = air ? 60 * jump * (1 - jump) : 0
-        let step = t * .pi * 5
-        let bob = air ? 0 : 0.8 * abs(sin(step))
         let squash = air ? -0.09 * abs(1 - 2 * jump) : jump >= 1 && jump < 1.2 ? 0.14 * (1.2 - jump) / 0.2 : 0
-        let width = 12 * (1 + squash), height = 11 * (1 - squash)
-        let bottom = ground - 1.8 - lift - bob
-        if abs(gap - hero) > 9 {
-            let f = 1 - lift / 30
-            c.fill(Path(ellipseIn: CGRect(x: hero - 5.5 * f, y: ground - 1, width: 11 * f, height: 2.4)), with: .color(.black.opacity(0.13 * f)))
-        }
-        let body = night ? Color(red: 1, green: 0.53, blue: 0.46) : Color(red: 1, green: 0.45, blue: 0.38)
-        let feet = night ? Color(red: 0.86, green: 0.36, blue: 0.36) : Color(red: 0.80, green: 0.30, blue: 0.29)
-        var paws = Path()
-        for side in [-1.0, 1.0] {
-            let stride = air ? 0 : 1.8 * sin(step) * side
-            let up = air ? 0.8 : 1.3 * max(0, cos(step) * side)
-            paws.addRoundedRect(in: CGRect(x: hero + 2.7 * side - 2 + stride, y: air ? bottom - 0.6 : ground - 2.6 - up, width: 4, height: 2.6), cornerSize: CGSize(width: 1.3, height: 1.3))
-        }
-        c.fill(paws, with: .color(feet))
-        c.fill(Path(roundedRect: CGRect(x: hero - width / 2, y: bottom - height, width: width, height: height), cornerRadius: 4, style: .continuous), with: .color(body))
-        c.fill(circle(hero + 2.6, bottom - height + 3.8, 1.25), with: .color(Color(red: 0.13, green: 0.10, blue: 0.20)))
+        let pose = PetPose(step: t * .pi * 5, lift: lift, squash: squash, air: air)
+        var figure = c
+        figure.translateBy(x: hero, y: ground)
+        if abs(gap - hero) > 9 { PetFigure.shadow(pose) { figure.fill($0, with: .color($1)) } }
+        PetFigure.draw(pose, night: night) { figure.fill($0, with: .color($1)) }
 
         for index in 0..<3 {
             c.draw(Text(Image(systemName: "heart.fill")).font(.system(size: 6.5)).foregroundStyle(Art.red), at: CGPoint(x: 16 + 8.5 * CGFloat(index), y: 11))

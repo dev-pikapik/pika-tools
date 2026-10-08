@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Часть разрешений осталась";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS не дала pikapik удалить разрешения этих приложений: %@. Попробуйте ещё раз или удалите их в Системных настройках.";
 "Try Again" = "Повторить";
+
+"Pet" = "Питомец";
+"A little friend who lives at the bottom of your screen" = "Маленький друг, который живёт внизу экрана";
+"Pet on the desktop" = "Питомец на рабочем столе";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Гуляет по нижнему краю экрана, за окнами и Dock. Попробуйте его поднять!";
+"Walks behind your windows" = "Гуляет за окнами";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Нажмите пробел — и он подпрыгнет. Поставьте курсор у него на пути — он через него перепрыгнет";
+"Put the pointer in its way and it jumps over it" = "Поставьте курсор у него на пути — он через него перепрыгнет";
+"Talks sometimes" = "Иногда болтает";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Время от времени садится поболтать и рассказывает, когда вышло обновление";
+"To make it jump when you press Space, allow Input Monitoring" = "Чтобы он прыгал по пробелу, разрешите мониторинг ввода";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "питомец, друг, дружок, персонаж, талисман, рабочий стол, прыжок, пробел";
+"phrases, speech bubble, talk, say, messages, updates" = "фразы, облачко, говорить, болтать, сообщения, обновления";
+"Just a quick patrol break." = "Небольшой перерыв в патрулировании.";
+"Water break? I’ll keep your seat warm." = "Попьём водички? Я посторожу ваше место.";
+"Stretch time! I’d join you, but I have no arms." = "Пора размяться! Я бы с вами, но у меня нет рук.";
+"You’re doing great. I checked." = "У вас всё отлично получается. Я проверил.";
+"Is it snack time yet?" = "А уже пора перекусить?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Посмотрите в окно секунд двадцать. Я посторожу экран.";
+"I’m not lazy. I’m in power-saving mode." = "Я не ленюсь. Я в режиме энергосбережения.";
+"Psst… press Space." = "Псс… нажмите пробел.";
+"Loading motivation… 99%" = "Загрузка мотивации… 99%";
+"This whole edge is my kingdom." = "Весь этот край — моё королевство.";
+"Psst, version %@ is out! Click me." = "Псс, вышла версия %@! Нажмите на меня.";

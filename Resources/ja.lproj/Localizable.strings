@@ -489,3 +489,27 @@
 "Some permissions stayed" = "一部のアクセス許可が残りました";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOSにより、pikapikは%@のアクセス許可を削除できませんでした。もう一度試すか、システム設定で削除してください。";
 "Try Again" = "再試行";
+
+"Pet" = "ペット";
+"A little friend who lives at the bottom of your screen" = "画面の下に住んでいる小さな友だち";
+"Pet on the desktop" = "デスクトップのペット";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "ウインドウやDockの後ろで、画面の下の端をお散歩します。つまみ上げてみて！";
+"Walks behind your windows" = "ウインドウの後ろをお散歩";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "スペースを押すとジャンプします。ポインタを行く手に置くと、飛び越えます";
+"Put the pointer in its way and it jumps over it" = "ポインタを行く手に置くと、飛び越えます";
+"Talks sometimes" = "ときどきおしゃべり";
+"Every now and then it sits down for a chat and tells you when an update is out" = "ときどき座っておしゃべりし、アップデートが出たら教えてくれます";
+"To make it jump when you press Space, allow Input Monitoring" = "スペースでジャンプさせるには、入力監視を許可してください";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "ペット, 相棒, 友だち, キャラクター, マスコット, デスクトップ, ジャンプ, スペース";
+"phrases, speech bubble, talk, say, messages, updates" = "セリフ, 吹き出し, 話す, しゃべる, メッセージ, アップデート";
+"Just a quick patrol break." = "パトロールはちょっと休憩中です。";
+"Water break? I’ll keep your seat warm." = "お水休憩？席はあたためておきます。";
+"Stretch time! I’d join you, but I have no arms." = "ストレッチの時間！一緒にやりたいけど、腕がないんです。";
+"You’re doing great. I checked." = "すごくがんばってますね。確認済みです。";
+"Is it snack time yet?" = "そろそろおやつの時間？";
+"Look out the window for 20 seconds. I’ll guard the screen." = "20秒だけ窓の外を見てみて。画面はぼくが見張っておきます。";
+"I’m not lazy. I’m in power-saving mode." = "サボってません。省エネモードです。";
+"Psst… press Space." = "ねえねえ…スペースを押してみて。";
+"Loading motivation… 99%" = "やる気を読み込み中… 99%";
+"This whole edge is my kingdom." = "この端っこ全部、ぼくの王国です。";
+"Psst, version %@ is out! Click me." = "ねえねえ、バージョン%@が出たよ！ぼくをクリックしてね。";

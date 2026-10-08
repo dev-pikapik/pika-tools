@@ -45,7 +45,7 @@ final class Updater {
             let release = try JSONDecoder().decode(Release.self, from: data)
             let version = release.tag_name.hasPrefix("v") ? String(release.tag_name.dropFirst()) : release.tag_name
             assetURL = release.assets.first { $0.name == "pikapik.zip" }?.browser_download_url
-            if assetURL != nil, version.compare(current, options: .numeric) == .orderedDescending {
+            if assetURL != nil, Version.isNewer(version, than: current) {
                 state = .available(version)
             } else {
                 state = .upToDate

@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Vissa behörigheter blev kvar";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS lät inte pikapik ta bort behörigheterna för %@. Försök igen eller ta bort dem i Systeminställningar.";
 "Try Again" = "Försök igen";
+
+"Pet" = "Husdjur";
+"A little friend who lives at the bottom of your screen" = "En liten vän som bor längst ner på skärmen";
+"Pet on the desktop" = "Husdjur på skrivbordet";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Promenerar längs skärmens nederkant, bakom dina fönster och Dock. Testa att lyfta upp det!";
+"Walks behind your windows" = "Promenerar bakom dina fönster";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Tryck på mellanslag så hoppar det. Ställ pekaren i vägen så hoppar det över den";
+"Put the pointer in its way and it jumps over it" = "Ställ pekaren i vägen så hoppar det över den";
+"Talks sometimes" = "Pratar ibland";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Då och då sätter det sig för en pratstund och berättar när en uppdatering har kommit";
+"To make it jump when you press Space, allow Input Monitoring" = "Tillåt Övervakning av inmatning så att det hoppar när du trycker på mellanslag";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "husdjur, kompis, vän, figur, maskot, skrivbord, hoppa, mellanslag";
+"phrases, speech bubble, talk, say, messages, updates" = "fraser, pratbubbla, prata, säga, meddelanden, uppdateringar";
+"Just a quick patrol break." = "Bara en liten patrullpaus.";
+"Water break? I’ll keep your seat warm." = "Vattenpaus? Jag håller din plats varm.";
+"Stretch time! I’d join you, but I have no arms." = "Dags att sträcka på sig! Jag hade hängt med, men jag har inga armar.";
+"You’re doing great. I checked." = "Du gör det jättebra. Jag har kollat.";
+"Is it snack time yet?" = "Är det mellanmålsdags än?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Titta ut genom fönstret i 20 sekunder. Jag vaktar skärmen.";
+"I’m not lazy. I’m in power-saving mode." = "Jag är inte lat. Jag är i energisparläge.";
+"Psst… press Space." = "Psst… tryck på mellanslag.";
+"Loading motivation… 99%" = "Laddar motivation… 99%";
+"This whole edge is my kingdom." = "Hela den här kanten är mitt kungarike.";
+"Psst, version %@ is out! Click me." = "Psst, version %@ är här! Klicka på mig.";

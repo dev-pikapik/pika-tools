@@ -489,3 +489,27 @@
 "Some permissions stayed" = "Sommige toestemmingen zijn gebleven";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS liet pikapik de toestemmingen van %@ niet verwijderen. Probeer het opnieuw of verwijder ze in Systeeminstellingen.";
 "Try Again" = "Probeer opnieuw";
+
+"Pet" = "Huisdiertje";
+"A little friend who lives at the bottom of your screen" = "Een klein vriendje dat onderaan je scherm woont";
+"Pet on the desktop" = "Huisdiertje op het bureaublad";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "Wandelt langs de onderkant van het scherm, achter je vensters en het Dock. Pak het maar eens op!";
+"Walks behind your windows" = "Wandelt achter je vensters";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "Druk op de spatiebalk en het springt. Zet de aanwijzer in de weg en het springt eroverheen";
+"Put the pointer in its way and it jumps over it" = "Zet de aanwijzer in de weg en het springt eroverheen";
+"Talks sometimes" = "Kletst af en toe";
+"Every now and then it sits down for a chat and tells you when an update is out" = "Gaat af en toe even zitten voor een praatje en laat weten wanneer er een update is";
+"To make it jump when you press Space, allow Input Monitoring" = "Sta Invoermonitoring toe om het te laten springen met de spatiebalk";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "huisdier, maatje, vriendje, figuurtje, mascotte, bureaublad, springen, spatie";
+"phrases, speech bubble, talk, say, messages, updates" = "zinnetjes, tekstballon, praten, zeggen, berichten, updates";
+"Just a quick patrol break." = "Even pauze van mijn rondje.";
+"Water break? I’ll keep your seat warm." = "Even water drinken? Ik houd je plekje warm.";
+"Stretch time! I’d join you, but I have no arms." = "Tijd om te rekken! Ik deed graag mee, maar ik heb geen armen.";
+"You’re doing great. I checked." = "Je doet het super. Ik heb het gecheckt.";
+"Is it snack time yet?" = "Is het al tijd voor een snack?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "Kijk eens 20 seconden uit het raam. Ik bewaak het scherm.";
+"I’m not lazy. I’m in power-saving mode." = "Ik ben niet lui. Ik sta in energiebesparingsmodus.";
+"Psst… press Space." = "Psst… druk op de spatiebalk.";
+"Loading motivation… 99%" = "Motivatie laden… 99%";
+"This whole edge is my kingdom." = "Deze hele rand is mijn koninkrijk.";
+"Psst, version %@ is out! Click me." = "Psst, versie %@ is uit! Klik op mij.";

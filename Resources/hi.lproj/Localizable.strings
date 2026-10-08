@@ -489,3 +489,27 @@
 "Some permissions stayed" = "कुछ अनुमतियाँ रह गईं";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS ने pikapik को %@ की अनुमतियाँ हटाने नहीं दीं। फिर से कोशिश करें या उन्हें सिस्टम सेटिंग्ज़ में हटाएँ।";
 "Try Again" = "फिर से कोशिश करें";
+
+"Pet" = "दोस्त";
+"A little friend who lives at the bottom of your screen" = "एक नन्हा दोस्त जो आपकी स्क्रीन के नीचे रहता है";
+"Pet on the desktop" = "डेस्कटॉप पर नन्हा दोस्त";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "स्क्रीन के निचले किनारे पर, आपकी विंडो और Dock के पीछे टहलता है। उसे उठाकर तो देखिए!";
+"Walks behind your windows" = "आपकी विंडो के पीछे टहलता है";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "स्पेस दबाएँ और वह उछलेगा। पॉइंटर को उसके रास्ते में रखें और वह उसके ऊपर से कूद जाएगा";
+"Put the pointer in its way and it jumps over it" = "पॉइंटर को उसके रास्ते में रखें और वह उसके ऊपर से कूद जाएगा";
+"Talks sometimes" = "कभी-कभी बात करता है";
+"Every now and then it sits down for a chat and tells you when an update is out" = "बीच-बीच में बैठकर गपशप करता है और अपडेट आने पर बताता है";
+"To make it jump when you press Space, allow Input Monitoring" = "स्पेस दबाने पर उछलने के लिए इनपुट मॉनिटरिंग की अनुमति दें";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "दोस्त, पालतू, साथी, किरदार, मैस्कॉट, डेस्कटॉप, उछलना, स्पेस";
+"phrases, speech bubble, talk, say, messages, updates" = "बातें, बुलबुला, बोलना, कहना, संदेश, अपडेट";
+"Just a quick patrol break." = "गश्त से बस एक छोटा-सा ब्रेक।";
+"Water break? I’ll keep your seat warm." = "पानी पीने का ब्रेक? मैं आपकी जगह गरम रखूँगा।";
+"Stretch time! I’d join you, but I have no arms." = "स्ट्रेचिंग का समय! मैं भी साथ देता, पर मेरे हाथ ही नहीं हैं।";
+"You’re doing great. I checked." = "आप बहुत बढ़िया कर रहे हैं। मैंने देख लिया है।";
+"Is it snack time yet?" = "क्या नाश्ते का समय हो गया?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "20 सेकंड खिड़की से बाहर देखिए। स्क्रीन की रखवाली मैं करूँगा।";
+"I’m not lazy. I’m in power-saving mode." = "मैं आलसी नहीं हूँ। मैं पावर सेविंग मोड में हूँ।";
+"Psst… press Space." = "श्श… स्पेस दबाइए।";
+"Loading motivation… 99%" = "मोटिवेशन लोड हो रहा है… 99%";
+"This whole edge is my kingdom." = "यह पूरा किनारा मेरा राज्य है।";
+"Psst, version %@ is out! Click me." = "श्श, वर्शन %@ आ गया है! मुझ पर क्लिक कीजिए।";

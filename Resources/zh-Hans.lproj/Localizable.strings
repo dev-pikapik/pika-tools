@@ -489,3 +489,27 @@
 "Some permissions stayed" = "部分权限没能移除";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS 不允许 pikapik 移除 %@ 的权限。请重试，或在“系统设置”中移除。";
 "Try Again" = "重试";
+
+"Pet" = "宠物";
+"A little friend who lives at the bottom of your screen" = "住在屏幕底部的小伙伴";
+"Pet on the desktop" = "桌面宠物";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "在窗口和程序坞后面，沿着屏幕底边散步。试试把它拎起来！";
+"Walks behind your windows" = "在窗口后面散步";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "按空格键它就会跳。把指针挡在它前面，它会跳过去";
+"Put the pointer in its way and it jumps over it" = "把指针挡在它前面，它会跳过去";
+"Talks sometimes" = "偶尔说说话";
+"Every now and then it sits down for a chat and tells you when an update is out" = "时不时坐下来聊几句，有更新时也会告诉你";
+"To make it jump when you press Space, allow Input Monitoring" = "要让它在按空格键时跳起来，请允许“输入监控”";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "宠物, 伙伴, 朋友, 角色, 吉祥物, 桌面, 跳, 空格";
+"phrases, speech bubble, talk, say, messages, updates" = "台词, 气泡, 说话, 聊天, 消息, 更新";
+"Just a quick patrol break." = "巡逻中，小歇一会儿。";
+"Water break? I’ll keep your seat warm." = "喝口水歇歇？我帮你把座位捂热。";
+"Stretch time! I’d join you, but I have no arms." = "该伸伸懒腰啦！我也想一起，可我没有胳膊。";
+"You’re doing great. I checked." = "你做得很棒。我检查过了。";
+"Is it snack time yet?" = "到点心时间了吗？";
+"Look out the window for 20 seconds. I’ll guard the screen." = "看看窗外 20 秒吧。屏幕我来守着。";
+"I’m not lazy. I’m in power-saving mode." = "我不是偷懒，我在省电模式。";
+"Psst… press Space." = "嘘……按一下空格键。";
+"Loading motivation… 99%" = "正在加载动力…… 99%";
+"This whole edge is my kingdom." = "这整条边都是我的王国。";
+"Psst, version %@ is out! Click me." = "嘘，%@ 版本出来啦！点我看看。";

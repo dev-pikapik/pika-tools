@@ -489,3 +489,27 @@
 "Some permissions stayed" = "สิทธิ์บางส่วนยังอยู่";
 "macOS didn’t let pikapik remove the permissions of %@. Try again, or remove them in System Settings." = "macOS ไม่อนุญาตให้ pikapik เอาสิทธิ์ของ %@ ออก ลองอีกครั้ง หรือเอาออกในการตั้งค่าระบบ";
 "Try Again" = "ลองอีกครั้ง";
+
+"Pet" = "เพื่อนตัวน้อย";
+"A little friend who lives at the bottom of your screen" = "เพื่อนตัวน้อยที่อาศัยอยู่ด้านล่างของหน้าจอ";
+"Pet on the desktop" = "เพื่อนตัวน้อยบนเดสก์ท็อป";
+"Walks along the bottom of the screen, behind your windows and the Dock. Try picking it up!" = "เดินเล่นไปตามขอบล่างของหน้าจอ อยู่หลังหน้าต่างและ Dock ลองจับยกขึ้นดูสิ!";
+"Walks behind your windows" = "เดินเล่นอยู่หลังหน้าต่าง";
+"Press Space and it jumps. Put the pointer in its way and it jumps over it" = "กดเว้นวรรคแล้วมันจะกระโดด วางตัวชี้ขวางทางแล้วมันจะกระโดดข้าม";
+"Put the pointer in its way and it jumps over it" = "วางตัวชี้ขวางทางแล้วมันจะกระโดดข้าม";
+"Talks sometimes" = "พูดบ้างเป็นครั้งคราว";
+"Every now and then it sits down for a chat and tells you when an update is out" = "นาน ๆ ครั้งจะนั่งลงคุยเล่น และบอกเมื่อมีอัปเดตใหม่";
+"To make it jump when you press Space, allow Input Monitoring" = "หากต้องการให้กระโดดเมื่อกดเว้นวรรค ให้อนุญาตการติดตามการป้อนข้อมูล";
+"pet, buddy, friend, character, mascot, desktop, jump, Space" = "สัตว์เลี้ยง, เพื่อน, คู่หู, ตัวละคร, มาสคอต, เดสก์ท็อป, กระโดด, เว้นวรรค";
+"phrases, speech bubble, talk, say, messages, updates" = "ประโยค, บอลลูนคำพูด, พูด, บอก, ข้อความ, อัปเดต";
+"Just a quick patrol break." = "พักลาดตระเวนแป๊บนึง";
+"Water break? I’ll keep your seat warm." = "พักดื่มน้ำไหม? เดี๋ยวจองที่ไว้ให้อุ่น ๆ";
+"Stretch time! I’d join you, but I have no arms." = "ได้เวลายืดเส้นแล้ว! อยากทำด้วยนะ แต่ไม่มีแขน";
+"You’re doing great. I checked." = "คุณทำได้ดีมาก ตรวจสอบแล้ว";
+"Is it snack time yet?" = "ถึงเวลาของว่างหรือยัง?";
+"Look out the window for 20 seconds. I’ll guard the screen." = "มองออกไปนอกหน้าต่างสัก 20 วินาที เดี๋ยวเฝ้าหน้าจอให้";
+"I’m not lazy. I’m in power-saving mode." = "ไม่ได้ขี้เกียจนะ แค่อยู่ในโหมดประหยัดพลังงาน";
+"Psst… press Space." = "ชู่ว… กดเว้นวรรคสิ";
+"Loading motivation… 99%" = "กำลังโหลดแรงบันดาลใจ… 99%";
+"This whole edge is my kingdom." = "ขอบจอทั้งหมดนี้คืออาณาจักรของเรา";
+"Psst, version %@ is out! Click me." = "ชู่ว เวอร์ชัน %@ ออกแล้ว! คลิกที่เราสิ";
