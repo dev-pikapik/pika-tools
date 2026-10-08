@@ -9,7 +9,7 @@ enum GameRules {
         "com.heroicgameslauncher.hgl", "org.prismlauncher.PrismLauncher", "com.mojang.minecraftlauncher", "io.itch.mac",
     ]
 
-    static let minecraftLaunchers: Set<String> = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
+    static let minecraftLaunchers = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
 
     static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 60, 61, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
         + Array(15...26) + Array(28...31) + Array(53...56) + Array(100...107) + Array(150...155) + Array(165...172) + Array(192...195))
@@ -30,10 +30,34 @@ enum GameRules {
 
     static func isGame(id: String?, name: String?, path: String, in games: [String]) -> Bool {
         if let id, minecraftLaunchers.contains(id) { return false }
-        if games.contains(id ?? name ?? "") { return true }
-        let path = path.lowercased()
-        return games.contains(where: minecraftLaunchers.contains)
-            && (path.contains("/minecraft/") && path.contains("/runtime/") || name?.hasPrefix("Minecraft") == true)
+        if games.contains(rule(id: id, name: name, path: path)) { return true }
+        return games.contains(where: minecraftLaunchers.contains) && (minecraft(path) != nil || name?.hasPrefix("Minecraft") == true)
+    }
+
+    static func isRuntime(_ id: String?) -> Bool {
+        guard let id = id?.lowercased() else { return true }
+        return ["java", "python"].contains(where: id.contains)
+    }
+
+    static func rule(id: String?, name: String?, path: String) -> String {
+        guard isRuntime(id), !path.isEmpty else { return id ?? name ?? "" }
+        return minecraft(path) ?? path
+    }
+
+    static func minecraft(_ path: String) -> String? {
+        guard let game = path.range(of: "/minecraft/", options: .caseInsensitive),
+              let runtime = path.range(of: "/runtime/", options: .caseInsensitive, range: game.lowerBound..<path.endIndex)
+        else { return nil }
+        return String(path[..<runtime.upperBound])
+    }
+
+    static func upgraded(_ games: [String], id: String?, name: String?, path: String) -> [String] {
+        let rule = rule(id: id, name: name, path: path)
+        guard let old = id ?? name, old != rule, let index = games.firstIndex(of: old) else { return games }
+        var games = games
+        games.remove(at: index)
+        if !games.contains(rule) { games.insert(rule, at: index) }
+        return games
     }
 
     static func migrateControl(_ defaults: UserDefaults) {

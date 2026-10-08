@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.25.0] - Unreleased
+
+### Added
+- Games: adding a game is easier. Press Add a Game… and pick it from the apps that are open right now, with big icons like in the Dock. One click adds it, or drag the icon into the list. You can also drop a game straight from Finder or the Dock, and the list lights up to show where it goes. Other… still lets you pick any app from a folder.
+- Any app can be a game now, including Minecraft that runs on Java. Game Mode remembers the game itself, so other Java apps don’t turn it on. Games you added before carry over.
+- Every Game Mode switch has a small picture of what it stops.
+
+### Changed
+- Game Mode switches are named in simple words, like “The game doesn’t close” or “Search doesn’t pop up”. The system name, such as Spotlight or Mission Control, sits next to them in gray.
+- App names in lists show without “.app”.
+
 ## [1.24.1] - Unreleased
 
 ### Fixed
