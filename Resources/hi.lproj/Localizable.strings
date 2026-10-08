@@ -46,6 +46,8 @@
 "What’s New" = "नया क्या है";
 "Report a Problem" = "समस्या रिपोर्ट करें";
 "License (MIT)" = "लाइसेंस (MIT)";
+"Made with care" = "दिल से बनाया गया";
+"Buy me a coffee" = "मुझे कॉफ़ी पिलाइए";
 "Your Mac sleeps as usual" = "आपका Mac हमेशा की तरह स्लीप में जाता है";
 "Until you turn it off" = "जब तक आप इसे बंद न करें";
 "%@ left, until %@" = "%@ बाकी, %@ तक";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "बदलाव, रिलीज़ नोट्स, संस्करण, changelog";
 "bug, issue, feedback, support" = "बग, समस्या, फ़ीडबैक, सहायता";
 "open source, legal" = "ओपन सोर्स, कानूनी, लाइसेंस";
+"support, donate, donation, tip, sponsor, thanks" = "सहयोग, दान, डोनेशन, टिप, स्पॉन्सर, धन्यवाद, कॉफ़ी";
 "Windows" = "विंडो";
 "Dock" = "Dock";
 "Finder" = "Finder";

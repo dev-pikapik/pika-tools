@@ -46,6 +46,8 @@
 "What’s New" = "Noutăți";
 "Report a Problem" = "Raportează o problemă";
 "License (MIT)" = "Licență (MIT)";
+"Made with care" = "Făcut cu grijă";
+"Buy me a coffee" = "Cumpără-mi o cafea";
 "Your Mac sleeps as usual" = "Mac-ul intră în repaus ca de obicei";
 "Until you turn it off" = "Până când îl dezactivezi";
 "%@ left, until %@" = "Mai sunt %@, până la %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "jurnal de modificări, note de lansare, versiune";
 "bug, issue, feedback, support" = "eroare, problemă, feedback, asistență, bug";
 "open source, legal" = "open source, juridic, licență";
+"support, donate, donation, tip, sponsor, thanks" = "susținere, donație, donează, bacșiș, sponsor, mulțumesc, cafea";
 "Windows" = "Ferestre";
 "Dock" = "Dock";
 "Finder" = "Finder";

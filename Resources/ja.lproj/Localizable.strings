@@ -46,6 +46,8 @@
 "What’s New" = "新機能";
 "Report a Problem" = "問題を報告";
 "License (MIT)" = "ライセンス(MIT)";
+"Made with care" = "心を込めて開発";
+"Buy me a coffee" = "コーヒーをごちそうする";
 "Your Mac sleeps as usual" = "Mac は通常どおりスリープします";
 "Until you turn it off" = "オフにするまで";
 "%@ left, until %@" = "残り %@（%@ まで）";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "変更履歴, リリースノート, バージョン";
 "bug, issue, feedback, support" = "バグ, 問題, フィードバック, サポート";
 "open source, legal" = "オープンソース, ライセンス, ソースコード";
+"support, donate, donation, tip, sponsor, thanks" = "支援, 寄付, 投げ銭, チップ, スポンサー, お礼, コーヒー";
 "Windows" = "ウインドウ";
 "Dock" = "Dock";
 "Finder" = "Finder";

@@ -320,4 +320,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
+<p align="center">☕ अगर pika-tools आपको पसंद है, तो आप <a href="https://buymeacoffee.com/pikapik">मुझे एक कॉफ़ी पिला सकते हैं</a> — यह सब ऐप को बेहतर बनाने और चलाते रहने में लगता है।</p>
+
 <p align="center"><sub><a href="../whats-new/README.hi.md">नया क्या है</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">ख़ुद बिल्ड करें</a> · <a href="../../LICENSE">MIT लाइसेंस</a> · © 2026 pikapik</sub></p>

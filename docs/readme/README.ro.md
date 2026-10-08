@@ -320,4 +320,6 @@ Da. Este o aplicație universală pentru Apple Silicon și Intel, cu macOS 14 So
 
 </details>
 
+<p align="center">☕ Dacă îți place pika-tools, poți să <a href="https://buymeacoffee.com/pikapik">îmi cumperi o cafea</a> — totul merge în dezvoltarea și întreținerea aplicației.</p>
+
 <p align="center"><sub><a href="../whats-new/README.ro.md">Noutăți</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Tap Homebrew</a> · <a href="../../CONTRIBUTING.md">Compilează singur</a> · <a href="../../LICENSE">Licență MIT</a> · © 2026 pikapik</sub></p>

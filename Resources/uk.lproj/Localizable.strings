@@ -46,6 +46,8 @@
 "What’s New" = "Що нового";
 "Report a Problem" = "Повідомити про проблему";
 "License (MIT)" = "Ліцензія (MIT)";
+"Made with care" = "Зроблено з душею";
+"Buy me a coffee" = "Пригостити кавою";
 "Your Mac sleeps as usual" = "Mac засинає як зазвичай";
 "Until you turn it off" = "Поки не вимкнеш";
 "%@ left, until %@" = "Залишилось %@, до %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "список змін, що нового, версія";
 "bug, issue, feedback, support" = "помилка, баг, проблема, відгук, підтримка";
 "open source, legal" = "відкритий код, ліцензія, вихідний код";
+"support, donate, donation, tip, sponsor, thanks" = "підтримати, донат, пожертва, чайові, спонсор, дякую, кава";
 "Windows" = "Вікна";
 "Dock" = "Dock";
 "Finder" = "Finder";

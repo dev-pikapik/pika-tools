@@ -46,6 +46,8 @@
 "What’s New" = "Wat is er nieuw";
 "Report a Problem" = "Meld een probleem";
 "License (MIT)" = "Licentie (MIT)";
+"Made with care" = "Met zorg gemaakt";
+"Buy me a coffee" = "Trakteer me op koffie";
 "Your Mac sleeps as usual" = "Je Mac gaat zoals gewoonlijk in sluimerstand";
 "Until you turn it off" = "Tot je het uitzet";
 "%@ left, until %@" = "Nog %@, tot %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "wijzigingslog, releasenotes, versie";
 "bug, issue, feedback, support" = "bug, probleem, feedback, ondersteuning";
 "open source, legal" = "open source, juridisch, licentie";
+"support, donate, donation, tip, sponsor, thanks" = "steunen, doneren, donatie, fooi, sponsor, bedankt, koffie";
 "Windows" = "Vensters";
 "Dock" = "Dock";
 "Finder" = "Finder";

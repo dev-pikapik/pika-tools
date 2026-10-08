@@ -320,4 +320,6 @@ xattr -dr com.apple.quarantine /Applications/pika-tools.app
 
 </details>
 
+<p align="center">☕ pika-tools가 마음에 드셨다면 앱 개발과 지원에 쓰일 <a href="https://buymeacoffee.com/pikapik">커피 한 잔을 사 주세요</a>.</p>
+
 <p align="center"><sub><a href="../whats-new/README.ko.md">새로운 기능</a> · <a href="https://github.com/dev-pikapik/homebrew-pika-tools">Homebrew tap</a> · <a href="../../CONTRIBUTING.md">소스에서 빌드</a> · <a href="../../LICENSE">MIT 라이선스</a> · © 2026 pikapik</sub></p>

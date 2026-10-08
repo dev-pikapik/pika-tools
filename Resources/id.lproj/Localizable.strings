@@ -46,6 +46,8 @@
 "What’s New" = "Yang Baru";
 "Report a Problem" = "Laporkan Masalah";
 "License (MIT)" = "Lisensi (MIT)";
+"Made with care" = "Dibuat dengan sepenuh hati";
+"Buy me a coffee" = "Traktir saya kopi";
 "Your Mac sleeps as usual" = "Mac Anda tidur seperti biasa";
 "Until you turn it off" = "Sampai Anda mematikannya";
 "%@ left, until %@" = "Sisa %@, sampai %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "log perubahan, catatan rilis, changelog, versi";
 "bug, issue, feedback, support" = "bug, masalah, umpan balik, dukungan";
 "open source, legal" = "sumber terbuka, open source, lisensi, hukum";
+"support, donate, donation, tip, sponsor, thanks" = "dukung, donasi, tip, sponsor, terima kasih, kopi";
 "Windows" = "Jendela";
 "Dock" = "Dock";
 "Finder" = "Finder";

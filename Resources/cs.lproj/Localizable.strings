@@ -46,6 +46,8 @@
 "What’s New" = "Co je nového";
 "Report a Problem" = "Nahlásit problém";
 "License (MIT)" = "Licence (MIT)";
+"Made with care" = "Vytvořeno s péčí";
+"Buy me a coffee" = "Kupte mi kávu";
 "Your Mac sleeps as usual" = "Mac přechází do režimu spánku jako obvykle";
 "Until you turn it off" = "Dokud to nevypnete";
 "%@ left, until %@" = "Zbývá %@, do %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "seznam změn, poznámky k vydání, verze";
 "bug, issue, feedback, support" = "chyba, problém, zpětná vazba, podpora";
 "open source, legal" = "open source, otevřený zdrojový kód, právní informace, licence";
+"support, donate, donation, tip, sponsor, thanks" = "podpora, dar, příspěvek, spropitné, sponzor, poděkování, káva";
 "Windows" = "Okna";
 "Dock" = "Dock";
 "Finder" = "Finder";

@@ -46,6 +46,8 @@
 "What’s New" = "What’s New";
 "Report a Problem" = "Report a Problem";
 "License (MIT)" = "License (MIT)";
+"Made with care" = "Made with care";
+"Buy me a coffee" = "Buy me a coffee";
 "Your Mac sleeps as usual" = "Your Mac sleeps as usual";
 "Until you turn it off" = "Until you turn it off";
 "%@ left, until %@" = "%@ left, until %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "changelog, release notes, version";
 "bug, issue, feedback, support" = "bug, issue, feedback, support";
 "open source, legal" = "open source, legal";
+"support, donate, donation, tip, sponsor, thanks" = "support, donate, donation, tip, sponsor, thanks";
 "Windows" = "Windows";
 "Dock" = "Dock";
 "Finder" = "Finder";

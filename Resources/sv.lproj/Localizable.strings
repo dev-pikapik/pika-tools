@@ -46,6 +46,8 @@
 "What’s New" = "Nyheter";
 "Report a Problem" = "Rapportera ett problem";
 "License (MIT)" = "Licens (MIT)";
+"Made with care" = "Gjord med omsorg";
+"Buy me a coffee" = "Bjud mig på kaffe";
 "Your Mac sleeps as usual" = "Din Mac går i vila som vanligt";
 "Until you turn it off" = "Tills du stänger av det";
 "%@ left, until %@" = "%@ kvar, till %@";
@@ -93,6 +95,7 @@
 "changelog, release notes, version" = "ändringslogg, versionsinformation, version";
 "bug, issue, feedback, support" = "bugg, fel, problem, feedback, support";
 "open source, legal" = "öppen källkod, juridik, licens";
+"support, donate, donation, tip, sponsor, thanks" = "stöd, donera, donation, dricks, sponsor, tack, kaffe";
 "Windows" = "Fönster";
 "Dock" = "Dock";
 "Finder" = "Finder";
