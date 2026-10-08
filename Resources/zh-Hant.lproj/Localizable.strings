@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "在 Finder 中用 Enter 打開檔案";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "在 Finder 中，按 Return 或 Enter 會打開所選檔案，按 F2 或 fn F2 則重新命名。";
 "return, enter, open, rename, F2, keyboard" = "return, enter, 打開, 重新命名, F2, 鍵盤";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "在 Finder 中，⌘X 會剪下所選檔案，⌘V 會把它們移到貼上的檔案夾。⌘C 可取消剪下。";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "在 Finder 中，%@ 會剪下所選檔案，⌘V 會把它們移到貼上的檔案夾。⌘C 可取消剪下。";
 "cut, paste, move, files, folders, command X" = "剪下, 貼上, 移動, 檔案, 檔案夾, command X";
 "Check for Updates" = "檢查更新";
 "Shortcuts" = "捷徑";
@@ -293,8 +293,8 @@
 "Game Mode" = "遊戲模式";
 "Games" = "遊戲";
 "Your Mac doesn’t pull you out of a game" = "Mac 不會把你拉出遊戲";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。";
-"To leave the game, press ⇧⌘Q" = "要結束遊戲，請按 ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "要結束遊戲，請按 %1$@；要關閉其視窗，請按 %2$@。⌥⌘Esc 永遠有效。";
+"To leave the game, press %@" = "要結束遊戲，請按 %@";
 "The pointer stays in the game" = "指標留在遊戲裡";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock、選單列和熱點不會跳出來，指標也不會跑到另一個螢幕";
 "The screen stays on" = "螢幕保持開啟";
@@ -445,3 +445,13 @@
 "Genie" = "神奇";
 "Scale" = "縮放";
 "Suck" = "吸入";
+"Change in System Settings" = "在「系統設定」中更改";
+"Type shortcut" = "按下快速鍵";
+"Already used for “%@”" = "已用於「%@」";
+"Your Mac already uses this shortcut" = "你的 Mac 已在使用這個快速鍵";
+"Apps already use this shortcut" = "App 已在使用這個快速鍵";
+"Use Anyway" = "仍要使用";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "按一下後按下新的按鍵。Esc 取消，⌫ 恢復為常用按鍵。";
+"Only with these keys" = "僅在按這些鍵時";
+"change shortcut, record keys, Command Shift Q" = "更改快速鍵, 錄製按鍵, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "更改快速鍵, 錄製按鍵, Command Shift W";

@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Finder에서 Enter로 파일 열기";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Finder에서 Return과 Enter는 선택한 파일을 열고, F2 또는 fn F2는 이름을 바꿉니다.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, 열기, 이름 변경, F2, 키보드";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder에서 ⌘X는 선택한 파일을 잘라내고, ⌘V는 붙여넣는 폴더로 옮깁니다. ⌘C를 누르면 잘라내기가 취소됩니다.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder에서 %@는 선택한 파일을 잘라내고, ⌘V는 붙여넣는 폴더로 옮깁니다. ⌘C를 누르면 잘라내기가 취소됩니다.";
 "cut, paste, move, files, folders, command X" = "잘라내기, 붙여넣기, 이동, 파일, 폴더, command X";
 "Check for Updates" = "업데이트 확인";
 "Shortcuts" = "단축어";
@@ -293,8 +293,8 @@
 "Game Mode" = "게임 모드";
 "Games" = "게임";
 "Your Mac doesn’t pull you out of a game" = "게임 중에 Mac이 방해하지 않습니다";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "게임을 끝내려면 ⇧⌘Q를, 창을 닫으려면 ⇧⌘W를 누르세요. ⌥⌘Esc는 항상 작동합니다.";
-"To leave the game, press ⇧⌘Q" = "게임을 끝내려면 ⇧⌘Q를 누르세요";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "게임을 끝내려면 %1$@를, 창을 닫으려면 %2$@를 누르세요. ⌥⌘Esc는 항상 작동합니다.";
+"To leave the game, press %@" = "게임을 끝내려면 %@를 누르세요";
 "The pointer stays in the game" = "포인터가 게임 안에 머무름";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, 메뉴 막대, 핫 코너가 튀어나오지 않고, 포인터가 다른 화면으로 넘어가지 않습니다";
 "The screen stays on" = "화면이 켜진 상태로 유지";
@@ -445,3 +445,13 @@
 "Genie" = "지니";
 "Scale" = "크기";
 "Suck" = "빨아들이기";
+"Change in System Settings" = "시스템 설정에서 변경";
+"Type shortcut" = "단축키를 누르세요";
+"Already used for “%@”" = "이미 ‘%@’에 사용 중";
+"Your Mac already uses this shortcut" = "Mac에서 이미 이 단축키를 사용하고 있습니다";
+"Apps already use this shortcut" = "앱에서 이미 이 단축키를 사용하고 있습니다";
+"Use Anyway" = "그래도 사용";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "클릭한 다음 새 키를 누르세요. Esc는 취소, ⌫는 원래 키로 되돌립니다.";
+"Only with these keys" = "이 키를 눌렀을 때만";
+"change shortcut, record keys, Command Shift Q" = "단축키 변경, 키 기록, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "단축키 변경, 키 기록, Command Shift W";

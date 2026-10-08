@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter, Finder’da dosyaları açar";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Finder’da Return ve Enter seçili dosyaları açar, F2 veya fn F2 ise adlarını değiştirir.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, açmak, yeniden adlandırmak, F2, klavye";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder’da ⌘X seçili dosyaları keser, ⌘V ise onları yapıştırdığınız klasöre taşır. ⌘C kesmeyi iptal eder.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder’da %@ seçili dosyaları keser, ⌘V ise onları yapıştırdığınız klasöre taşır. ⌘C kesmeyi iptal eder.";
 "cut, paste, move, files, folders, command X" = "kes, yapıştır, taşı, dosyalar, klasörler, command X";
 "Check for Updates" = "Güncellemeleri denetle";
 "Shortcuts" = "Kestirmeler";
@@ -293,8 +293,8 @@
 "Game Mode" = "Oyun Modu";
 "Games" = "Oyunlar";
 "Your Mac doesn’t pull you out of a game" = "Mac’iniz sizi oyundan koparmaz";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır.";
-"To leave the game, press ⇧⌘Q" = "Oyundan çıkmak için ⇧⌘Q’ya basın";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Oyundan çıkmak için %1$@’ya, penceresini kapatmak için %2$@’ye basın. ⌥⌘Esc her zaman çalışır.";
+"To leave the game, press %@" = "Oyundan çıkmak için %@’ya basın";
 "The pointer stays in the game" = "İmleç oyunda kalır";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock, menü çubuğu ve etkin köşeler açılmaz, imleç başka bir ekrana kaymaz";
 "The screen stays on" = "Ekran açık kalır";
@@ -445,3 +445,13 @@
 "Genie" = "Cin";
 "Scale" = "Ölçek";
 "Suck" = "Emme";
+"Change in System Settings" = "Sistem Ayarları’nda değiştir";
+"Type shortcut" = "Kestirmeye basın";
+"Already used for “%@”" = "Zaten “%@” için kullanılıyor";
+"Your Mac already uses this shortcut" = "Mac’iniz bu kestirmeyi zaten kullanıyor";
+"Apps already use this shortcut" = "Uygulamalar bu kestirmeyi zaten kullanıyor";
+"Use Anyway" = "Yine de Kullan";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Tıklayın ve yeni tuşlara basın. Esc vazgeçer, ⌫ alışılmış tuşları geri getirir.";
+"Only with these keys" = "Yalnızca bu tuşlarla";
+"change shortcut, record keys, Command Shift Q" = "kestirmeyi değiştir, tuş kaydet, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "kestirmeyi değiştir, tuş kaydet, Command Shift W";

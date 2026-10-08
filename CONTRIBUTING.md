@@ -43,7 +43,13 @@ scripts/                             build, package, release, icon, tests
 
 Ctrl shortcuts are caught with a `CGEventTap` before events reach other apps, for `keyDown`/`keyUp` and the left mouse button (`leftMouseDown`/`leftMouseUp`/`leftMouseDragged`). Events that arrive with Ctrl held lose the Ctrl flag, and the Cmd flag too if Cmd is also held, so Ctrl+Cmd+Space doesn't turn into Cmd+Space (Spotlight) and Ctrl+Cmd-click doesn't become Cmd-click. The `flagsChanged` event for Ctrl itself is left alone, so apps still see Ctrl held while macOS sees no shortcut. Right-click is never touched.
 
-The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp` for Q and W. With Cmd and without Ctrl or Option, the event is dropped. With Shift added, Shift is removed from the event before any app sees it, so ⇧⌘Q reaches the app as ⌘Q. Ctrl+Cmd combinations are left to the Ctrl tool.
+The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. Ctrl+Cmd combinations are left to the Ctrl tool.
+
+Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pika-tools becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Shortcuts.swift scripts/test-shortcuts.swift -o build/test-shortcuts && build/test-shortcuts
+```
 
 Quit on last window uses an `AXObserver` per regular app: it tracks standard windows and, half a second after one is destroyed, quits the app if it has no windows left, including minimized ones and ones on other desktops (checked with `CGWindowListCopyWindowInfo`). Finder, pika-tools and the apps in the exceptions list are skipped.
 

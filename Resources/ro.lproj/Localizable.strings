@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter deschide fișierele în Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "În Finder, Return și Enter deschid fișierele selectate, iar F2 sau fn F2 le redenumește.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, deschide, redenumește, F2, tastatură";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "În Finder, ⌘X decupează fișierele selectate, iar ⌘V le mută în folderul în care lipești. ⌘C anulează decuparea.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "În Finder, %@ decupează fișierele selectate, iar ⌘V le mută în folderul în care lipești. ⌘C anulează decuparea.";
 "cut, paste, move, files, folders, command X" = "decupare, lipire, mutare, fișiere, foldere, command X";
 "Check for Updates" = "Caută actualizări";
 "Shortcuts" = "Comenzi rapide";
@@ -293,8 +293,8 @@
 "Game Mode" = "Modul Joc";
 "Games" = "Jocuri";
 "Your Mac doesn’t pull you out of a game" = "Macul nu te scoate din joc";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu.";
-"To leave the game, press ⇧⌘Q" = "Ca să ieși din joc, apasă ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Ca să ieși dintr-un joc, apasă %1$@, iar ca să-i închizi fereastra, %2$@. ⌥⌘Esc merge mereu.";
+"To leave the game, press %@" = "Ca să ieși din joc, apasă %@";
 "The pointer stays in the game" = "Cursorul rămâne în joc";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Dock-ul, bara de meniu și colțurile active nu apar, iar cursorul nu fuge pe alt ecran";
 "The screen stays on" = "Ecranul rămâne aprins";
@@ -445,3 +445,13 @@
 "Genie" = "Geniu";
 "Scale" = "Scalare";
 "Suck" = "Absorbție";
+"Change in System Settings" = "Modifică în Configurări sistem";
+"Type shortcut" = "Apasă scurtătura";
+"Already used for “%@”" = "Deja folosită pentru „%@”";
+"Your Mac already uses this shortcut" = "Mac-ul tău folosește deja această scurtătură";
+"Apps already use this shortcut" = "Aplicațiile folosesc deja această scurtătură";
+"Use Anyway" = "Folosește oricum";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Fă clic și apasă tastele noi. Esc anulează, ⌫ aduce înapoi tastele obișnuite.";
+"Only with these keys" = "Doar cu aceste taste";
+"change shortcut, record keys, Command Shift Q" = "schimbă scurtătura, înregistrează taste, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "schimbă scurtătura, înregistrează taste, Command Shift W";

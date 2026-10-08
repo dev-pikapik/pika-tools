@@ -108,6 +108,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, option click"),
             SettingsItem(tab: .windows, title: String(localized: "Green button works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "Protect quitting and closing"), synonyms: "quit, close, command, accidental, shortcut"),
+            SettingsItem(tab: .windows, title: String(localized: "Quit app"), synonyms: "change shortcut, record keys, Command Shift Q"),
+            SettingsItem(tab: .windows, title: String(localized: "Close window"), synonyms: "change shortcut, record keys, Command Shift W"),
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
             SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .dock, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, taskbar"),

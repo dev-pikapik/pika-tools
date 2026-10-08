@@ -68,11 +68,31 @@ struct KeyCap: View {
 
 struct KeyCaps: View {
     let keys: [String]
+    var system = false
 
     var body: some View {
+        if system {
+            Button { NSWorkspace.shared.open(SystemShortcuts.settings) } label: { caps }
+                .buttonStyle(CapsButtonStyle())
+                .help(Text("Change in System Settings"))
+                .accessibilityLabel(Text(verbatim: shown.map { $0.isEmpty ? String(localized: "Off") : $0 }.joined(separator: ", ")))
+                .accessibilityHint(Text("Change in System Settings"))
+        } else {
+            caps.accessibilityHidden(true)
+        }
+    }
+
+    private var shown: [String] {
+        let live = keys.filter { !$0.isEmpty }
+        return !keys.isEmpty && live.allSatisfy { $0 == "…" } ? [""] : live
+    }
+
+    private var caps: some View {
         HStack(spacing: 6) {
-            ForEach(Array(keys.enumerated()), id: \.offset) { _, shortcut in
-                if shortcut == "…" {
+            ForEach(Array(shown.enumerated()), id: \.offset) { _, shortcut in
+                if shortcut.isEmpty {
+                    Text("Off").foregroundStyle(.secondary)
+                } else if shortcut == "…" {
                     Text(verbatim: shortcut).foregroundStyle(.secondary)
                 } else {
                     HStack(spacing: 2) {
@@ -82,7 +102,6 @@ struct KeyCaps: View {
             }
         }
         .fixedSize()
-        .accessibilityHidden(true)
     }
 
     static func caps(_ shortcut: String) -> [String] {
@@ -94,12 +113,13 @@ struct KeyCaps: View {
 
 struct KeyLabel: View {
     var keys: [String] = []
+    var system = false
     let title: Text
     var subtitle: Text?
 
     var body: some View {
         HStack(spacing: 12) {
-            if !keys.isEmpty { KeyCaps(keys: keys) }
+            if !keys.isEmpty { KeyCaps(keys: keys, system: system) }
             RowLabel(title, subtitle)
         }
     }

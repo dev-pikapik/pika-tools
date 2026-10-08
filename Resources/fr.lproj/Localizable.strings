@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Entrée ouvre les fichiers dans le Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Dans le Finder, Retour et Entrée ouvrent les fichiers sélectionnés, et F2 ou fn F2 les renomme.";
 "return, enter, open, rename, F2, keyboard" = "retour, entrée, ouvrir, renommer, F2, clavier";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Dans le Finder, ⌘X coupe les fichiers sélectionnés et ⌘V les déplace dans le dossier où vous collez. ⌘C annule la coupe.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Dans le Finder, %@ coupe les fichiers sélectionnés et ⌘V les déplace dans le dossier où vous collez. ⌘C annule la coupe.";
 "cut, paste, move, files, folders, command X" = "couper, coller, déplacer, fichiers, dossiers, commande X";
 "Check for Updates" = "Rechercher des mises à jour";
 "Shortcuts" = "Raccourcis";
@@ -293,8 +293,8 @@
 "Game Mode" = "Mode Jeu";
 "Games" = "Jeux";
 "Your Mac doesn’t pull you out of a game" = "Votre Mac ne vous sort pas du jeu";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Pour quitter un jeu, appuyez sur ⇧⌘Q ; pour fermer sa fenêtre, sur ⇧⌘W. ⌥⌘Esc fonctionne toujours.";
-"To leave the game, press ⇧⌘Q" = "Pour quitter le jeu, appuyez sur ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Pour quitter un jeu, appuyez sur %1$@ ; pour fermer sa fenêtre, sur %2$@. ⌥⌘Esc fonctionne toujours.";
+"To leave the game, press %@" = "Pour quitter le jeu, appuyez sur %@";
 "The pointer stays in the game" = "Le pointeur reste dans le jeu";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Le Dock, la barre des menus et les coins actifs ne surgissent pas, et le pointeur ne glisse pas vers un autre écran";
 "The screen stays on" = "L’écran reste allumé";
@@ -445,3 +445,13 @@
 "Genie" = "Génie";
 "Scale" = "Échelle";
 "Suck" = "Aspiration";
+"Change in System Settings" = "Modifier dans Réglages Système";
+"Type shortcut" = "Tapez le raccourci";
+"Already used for “%@”" = "Déjà utilisé pour « %@ »";
+"Your Mac already uses this shortcut" = "Votre Mac utilise déjà ce raccourci";
+"Apps already use this shortcut" = "Des apps utilisent déjà ce raccourci";
+"Use Anyway" = "Utiliser quand même";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Cliquez, puis appuyez sur les nouvelles touches. Échap annule, ⌫ remet les touches habituelles.";
+"Only with these keys" = "Seulement avec ces touches";
+"change shortcut, record keys, Command Shift Q" = "changer le raccourci, enregistrer les touches, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "changer le raccourci, enregistrer les touches, Command Shift W";

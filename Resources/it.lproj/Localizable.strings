@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Invio apre i file nel Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Nel Finder, Invio ed Enter aprono i file selezionati e F2 o fn F2 li rinomina.";
 "return, enter, open, rename, F2, keyboard" = "invio, return, enter, aprire, rinominare, F2, tastiera";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Nel Finder, ⌘X taglia i file selezionati e ⌘V li sposta nella cartella in cui incolli. ⌘C annulla il taglio.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Nel Finder, %@ taglia i file selezionati e ⌘V li sposta nella cartella in cui incolli. ⌘C annulla il taglio.";
 "cut, paste, move, files, folders, command X" = "taglia, incolla, sposta, file, cartelle, comando X";
 "Check for Updates" = "Controlla aggiornamenti";
 "Shortcuts" = "Comandi rapidi";
@@ -293,8 +293,8 @@
 "Game Mode" = "Modalità gioco";
 "Games" = "Giochi";
 "Your Mac doesn’t pull you out of a game" = "Il Mac non ti tira fuori dal gioco";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "Per uscire da un gioco, premi ⇧⌘Q; per chiuderne la finestra, ⇧⌘W. ⌥⌘Esc funziona sempre.";
-"To leave the game, press ⇧⌘Q" = "Per uscire dal gioco, premi ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "Per uscire da un gioco, premi %1$@; per chiuderne la finestra, %2$@. ⌥⌘Esc funziona sempre.";
+"To leave the game, press %@" = "Per uscire dal gioco, premi %@";
 "The pointer stays in the game" = "Il puntatore resta nel gioco";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "Il Dock, la barra dei menu e gli angoli attivi non spuntano fuori, e il puntatore non scivola su un altro schermo";
 "The screen stays on" = "Lo schermo resta acceso";
@@ -445,3 +445,13 @@
 "Genie" = "Genio";
 "Scale" = "Scala";
 "Suck" = "Risucchio";
+"Change in System Settings" = "Modifica in Impostazioni di Sistema";
+"Type shortcut" = "Premi la scorciatoia";
+"Already used for “%@”" = "Già usata per «%@»";
+"Your Mac already uses this shortcut" = "Il tuo Mac usa già questa scorciatoia";
+"Apps already use this shortcut" = "Le app usano già questa scorciatoia";
+"Use Anyway" = "Usa comunque";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Fai clic e premi i nuovi tasti. Esc annulla, ⌫ rimette i tasti di sempre.";
+"Only with these keys" = "Solo con questi tasti";
+"change shortcut, record keys, Command Shift Q" = "cambiare scorciatoia, registrare tasti, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "cambiare scorciatoia, registrare tasti, Command Shift W";

@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter opens files in Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, open, rename, F2, keyboard";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut.";
 "cut, paste, move, files, folders, command X" = "cut, paste, move, files, folders, command X";
 "Check for Updates" = "Check for Updates";
 "Shortcuts" = "Shortcuts";
@@ -293,8 +293,8 @@
 "Game Mode" = "Game Mode";
 "Games" = "Games";
 "Your Mac doesn’t pull you out of a game" = "Your Mac doesn’t pull you out of a game";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works.";
-"To leave the game, press ⇧⌘Q" = "To leave the game, press ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "To leave a game, press %1$@; to close its window, %2$@. ⌥⌘Esc always works.";
+"To leave the game, press %@" = "To leave the game, press %@";
 "The pointer stays in the game" = "The pointer stays in the game";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen";
 "The screen stays on" = "The screen stays on";
@@ -445,3 +445,13 @@
 "Genie" = "Genie";
 "Scale" = "Scale";
 "Suck" = "Suck";
+"Change in System Settings" = "Change in System Settings";
+"Type shortcut" = "Type shortcut";
+"Already used for “%@”" = "Already used for “%@”";
+"Your Mac already uses this shortcut" = "Your Mac already uses this shortcut";
+"Apps already use this shortcut" = "Apps already use this shortcut";
+"Use Anyway" = "Use Anyway";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "Click and press new keys. Esc cancels, ⌫ brings back the usual keys.";
+"Only with these keys" = "Only with these keys";
+"change shortcut, record keys, Command Shift Q" = "change shortcut, record keys, Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "change shortcut, record keys, Command Shift W";

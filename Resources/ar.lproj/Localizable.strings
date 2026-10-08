@@ -235,7 +235,7 @@
 "Enter opens files in Finder" = "Enter يفتح الملفات في Finder";
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "في Finder، يفتح Return وEnter الملفات المحددة، ويعيد F2 أو fn F2 تسميتها.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, فتح, إعادة تسمية, F2, لوحة المفاتيح";
-"In Finder, ⌘X cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "في Finder، يقصّ ⌘X الملفات المحددة، ثم ينقلها ⌘V إلى المجلد الذي تلصق فيه. ⌘C يلغي القص.";
+"In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "في Finder، يقصّ %@ الملفات المحددة، ثم ينقلها ⌘V إلى المجلد الذي تلصق فيه. ⌘C يلغي القص.";
 "cut, paste, move, files, folders, command X" = "قص, لصق, نقل, ملفات, مجلدات, command X";
 "Check for Updates" = "التحقق من وجود تحديثات";
 "Shortcuts" = "الاختصارات";
@@ -293,8 +293,8 @@
 "Game Mode" = "وضع الألعاب";
 "Games" = "الألعاب";
 "Your Mac doesn’t pull you out of a game" = "لا يُخرجك Mac من اللعبة";
-"To leave a game, press ⇧⌘Q; to close its window, ⇧⌘W. ⌥⌘Esc always works." = "للخروج من اللعبة، اضغط ⇧⌘Q، ولإغلاق نافذتها ⇧⌘W. يعمل ⌥⌘Esc دائمًا.";
-"To leave the game, press ⇧⌘Q" = "للخروج من اللعبة، اضغط ⇧⌘Q";
+"To leave a game, press %@; to close its window, %@. ⌥⌘Esc always works." = "للخروج من اللعبة، اضغط %1$@، ولإغلاق نافذتها %2$@. يعمل ⌥⌘Esc دائمًا.";
+"To leave the game, press %@" = "للخروج من اللعبة، اضغط %@";
 "The pointer stays in the game" = "يبقى المؤشر في اللعبة";
 "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen" = "لا يظهر Dock وشريط القائمة والزوايا النشطة فجأة، ولا ينتقل المؤشر إلى شاشة أخرى";
 "The screen stays on" = "تبقى الشاشة قيد التشغيل";
@@ -445,3 +445,13 @@
 "Genie" = "الجني";
 "Scale" = "التحجيم";
 "Suck" = "الامتصاص";
+"Change in System Settings" = "التغيير في إعدادات النظام";
+"Type shortcut" = "اضغط الاختصار";
+"Already used for “%@”" = "مستخدم بالفعل في «%@»";
+"Your Mac already uses this shortcut" = "يستخدم جهاز Mac هذا الاختصار بالفعل";
+"Apps already use this shortcut" = "تستخدم التطبيقات هذا الاختصار بالفعل";
+"Use Anyway" = "استخدام على أي حال";
+"Click and press new keys. Esc cancels, ⌫ brings back the usual keys." = "انقر ثم اضغط المفاتيح الجديدة. Esc يلغي، و⌫ يعيد المفاتيح المعتادة.";
+"Only with these keys" = "فقط مع هذه المفاتيح";
+"change shortcut, record keys, Command Shift Q" = "تغيير الاختصار، تسجيل المفاتيح، Command Shift Q";
+"change shortcut, record keys, Command Shift W" = "تغيير الاختصار، تسجيل المفاتيح، Command Shift W";

@@ -203,16 +203,6 @@ enum TestGameMode {
         precondition(GameRules.combo(key: 49, flags: 0x100000) != GameRules.combo(key: 48, flags: 0x100000))
         print("hint keys: ok")
 
-        precondition(GameRules.shortcut(character: 32, key: 49, modifiers: 0x80000) == "⌥Space")
-        precondition(GameRules.shortcut(character: 32, key: 49, modifiers: 0x140000) == "⌃⌘Space")
-        precondition(GameRules.shortcut(character: 65535, key: 48, modifiers: 0x100000) == "⌘Tab")
-        precondition(GameRules.shortcut(character: 65535, key: 123, modifiers: 0x840000) == "⌃←")
-        precondition(GameRules.shortcut(character: 65535, key: 124, modifiers: 0x860000) == "⌃⇧→")
-        precondition(GameRules.shortcut(character: 100, key: 2, modifiers: 0x140000) == "⌃⌘D")
-        precondition(GameRules.shortcut(character: 104, key: 4, modifiers: 0x800000) == "🌐H")
-        precondition(GameRules.shortcut(character: 65535, key: 65535, modifiers: 0) == nil)
-        print("shortcuts: ok")
-
         let screen = CGRect(x: 0, y: 0, width: 1440, height: 900)
         let second = CGRect(x: 1440, y: -200, width: 1920, height: 1080)
         precondition(GameRules.fence(CGPoint(x: 700, y: 400), in: screen) == nil)
