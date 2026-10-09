@@ -33,7 +33,7 @@ final class PetStage: NSObject {
     private var last: CFTimeInterval?
     private var observers: [(NotificationCenter, NSObjectProtocol)] = []
     private var asleep = false, locked = false, fullscreen = false
-    private var recheck: Timer?
+    private var watchdog: Timer?
     private var nextTalk: TimeInterval
     private var deck: [PetPhrase] = []
     private var phrase: PetPhrase?
@@ -80,14 +80,15 @@ final class PetStage: NSObject {
 
         monitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in self?.pressed(event.locationInWindow) }
 
-        locked = (CGSessionCopyCurrentDictionary() as? [String: Any])?["CGSSessionScreenIsLocked"] as? Bool ?? false
         layout()
         let width = physics.bounds.width
         physics = PetPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.12), facing: demo == nil && Bool.random() ? -1 : 1)
         physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
         ball = BallPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.4))
         shelter()
-        checkFullscreen()
+        reconcile()
+        watchdog = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.reconcile() }
+        watchdog?.tolerance = 0.5
     }
 
     func stop() {
@@ -95,8 +96,8 @@ final class PetStage: NSObject {
         tossed = false
         link?.invalidate()
         link = nil
-        recheck?.invalidate()
-        recheck = nil
+        watchdog?.invalidate()
+        watchdog = nil
         observers.forEach { $0.0.removeObserver($0.1) }
         observers = []
         if let monitor { NSEvent.removeMonitor(monitor) }
@@ -165,7 +166,7 @@ final class PetStage: NSObject {
 
     private func layout() {
         guard let window, let field, let screen = NSScreen.screens.first else { return }
-        let strip = CGRect(x: screen.frame.minX, y: screen.frame.minY, width: screen.frame.width, height: Self.height)
+        let strip = Self.strip(screen)
         for (panel, up) in [(window, raised), (field, tossed)] {
             panel.level = up ? .statusBar : Self.level
             panel.setFrame(up ? screen.frame : strip, display: false)
@@ -178,6 +179,10 @@ final class PetStage: NSObject {
         shelter()
         place()
         if let bubble { show(bubble) }
+    }
+
+    private static func strip(_ screen: NSScreen) -> CGRect {
+        CGRect(x: screen.frame.minX, y: screen.frame.minY, width: screen.frame.width, height: height)
     }
 
     private func shelter() {
@@ -225,11 +230,6 @@ final class PetStage: NSObject {
         }
         if toy != field.isVisible { toy ? field.orderFrontRegardless() : field.orderOut(nil) }
         if !toy, ball.held { drop() }
-        let waiting = (fullscreen || GameModeTool.shared.isPlaying) && !asleep && !locked
-        if waiting != (recheck != nil) {
-            recheck?.invalidate()
-            recheck = waiting ? Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.checkFullscreen() } : nil
-        }
         let paused = hidden || !window.occlusionState.contains(.visible) && !(toy && field.occlusionState.contains(.visible))
         if paused {
             drop()
@@ -251,6 +251,23 @@ final class PetStage: NSObject {
             return CGRect(dictionaryRepresentation: bounds) == display
         }
         update()
+    }
+
+    private func reconcile() {
+        guard let window, let field, let screen = NSScreen.screens.first else { return }
+        asleep = CGDisplayIsAsleep(CGMainDisplayID()) != 0
+        locked = GameModeTool.screenLocked
+        physics.recover()
+        if physics.aloft != raised || ball.aloft != tossed {
+            rise()
+        } else if [(window, raised), (field, tossed)].contains(where: { $0.level != ($1 ? .statusBar : Self.level) || $0.frame != ($1 ? screen.frame : Self.strip(screen)) }) {
+            layout()
+        }
+        checkFullscreen()
+        for panel in [window, field] where panel.isVisible {
+            let info = CGWindowListCopyWindowInfo(.optionIncludingWindow, CGWindowID(panel.windowNumber)) as? [[String: Any]]
+            if info?.first?[kCGWindowIsOnscreen as String] as? Bool != true { panel.orderFrontRegardless() }
+        }
     }
 
     @objc private func tick(_ link: CADisplayLink) {

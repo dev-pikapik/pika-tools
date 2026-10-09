@@ -289,7 +289,7 @@ final class GameModeTool: Tool {
         )
     }
 
-    private static var screenLocked: Bool {
+    static var screenLocked: Bool {
         let session = CGSessionCopyCurrentDictionary() as? [String: Any]
         return session?["CGSSessionScreenIsLocked"] as? Bool == true || session?[kCGSessionOnConsoleKey] as? Bool == false
     }
