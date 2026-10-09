@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Seu bichinho passeia por todas as telas
+
+<sub>1.29.1 · 9 de outubro de 2026</sub>
+
+Tem mais de um monitor? Seu bichinho e a bola agora vão para onde você olhar, e nunca se perdem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Ao chegar na borda de uma tela, o bichinho simplesmente passa para a próxima, e a bola rola atrás dele. Você também pode pegar o bichinho ou a bola com o mouse e levar para qualquer tela. Se um app entra em tela cheia, eles vão para outra tela para não atrapalhar, e se você desconectar um monitor, eles voltam para a principal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+A bola não fica mais presa no canto. O bichinho corre até ela, joga a bola para trás por cima da cabeça e continua brincando.
+
+E seu bichinho não some mais. A cada dois segundos ele confere se ainda está na tela, e se algo deu errado, depois do repouso, do bloqueio do Mac, da troca de mesa ou da tela cheia, ele volta sozinho na hora.
+
+**Experimente:** Leve o bichinho para outra tela ou role a bola até um canto.
+
+**Corrigido**
+
+- Um bichinho arremessado não pousa mais num retângulo de seleção mais alto do que ele alcança, e não some mais por causa disso.
+
+---
+
 ## <a id="v1.29.0"></a>Seu bichinho ganhou uma bola
 
 <sub>1.29.0 · 9 de outubro de 2026</sub>

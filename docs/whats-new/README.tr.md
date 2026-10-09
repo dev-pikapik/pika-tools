@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Evcil dostun tüm ekranlarında geziyor
+
+<sub>1.29.1 · 9 Ekim 2026</sub>
+
+Birden fazla monitörün mü var? Evcil dostun ve topu artık nereye bakarsan oradalar ve hiç kaybolmuyorlar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Evcil dostun bir ekranın kenarına gelince yan ekrana geçiveriyor, top da arkasından yuvarlanıyor. Evcil dostu ya da topu fareyle tutup istediğin ekrana da taşıyabilirsin. Bir uygulama tam ekrana geçerse rahatsız etmemek için başka bir ekrana gidiyorlar, bir monitörü çıkarırsan ana ekrana dönüyorlar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Top artık köşede sıkışıp kalmıyor. Evcil dostun koşup topu başının üstünden geriye atıyor ve oynamaya devam ediyor.
+
+Evcil dostun artık kaybolmuyor da. İki saniyede bir ekranda olup olmadığını kontrol ediyor; uyku, Mac’i kilitleme, masaüstü değiştirme ya da tam ekrandan sonra bir sorun olursa hemen kendiliğinden geri geliyor.
+
+**Deneyin:** Evcil dostunu başka bir ekrana taşı ya da topu bir köşeye yuvarla.
+
+**Düzeltilenler**
+
+- Fırlatılan evcil dost artık zıplayamayacağı kadar yüksekteki bir seçim kutusuna konmuyor ve bu yüzden kaybolmuyor.
+
+---
+
 ## <a id="v1.29.0"></a>Evcil dostunun artık bir topu var
 
 <sub>1.29.0 · 9 Ekim 2026</sub>

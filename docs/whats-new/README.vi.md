@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Thú cưng dạo khắp mọi màn hình
+
+<sub>1.29.1 · ngày 9 tháng 10, 2026</sub>
+
+Có nhiều hơn một màn hình? Giờ thú cưng và quả bóng đi đến bất cứ đâu bạn nhìn, và không bao giờ bị lạc.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Khi đến mép một màn hình, thú cưng cứ thế bước sang màn hình bên cạnh, và quả bóng lăn theo sau. Bạn cũng có thể nhấc thú cưng hoặc quả bóng bằng chuột và mang sang bất kỳ màn hình nào. Nếu một ứng dụng chuyển sang toàn màn hình, chúng sang màn hình khác để khỏi vướng, còn nếu bạn rút một màn hình ra, chúng quay về màn hình chính.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quả bóng không còn mắc kẹt trong góc. Thú cưng chạy tới, hất bóng ra sau qua đầu và chơi tiếp.
+
+Và thú cưng không còn biến mất. Cứ hai giây nó kiểm tra xem mình còn trên màn hình không, và nếu có gì trục trặc sau khi ngủ, khóa Mac, đổi màn hình nền hay toàn màn hình, nó tự quay lại ngay.
+
+**Thử ngay:** Mang thú cưng sang màn hình khác, hoặc lăn quả bóng vào góc.
+
+**Đã sửa**
+
+- Thú cưng bị ném không còn đáp xuống khung chọn cao hơn sức nhảy của nó, và không còn biến mất vì thế.
+
+---
+
 ## <a id="v1.29.0"></a>Thú cưng đã có quả bóng
 
 <sub>1.29.0 · ngày 9 tháng 10, 2026</sub>

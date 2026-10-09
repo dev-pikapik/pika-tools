@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Votre compagnon se promène sur tous vos écrans
+
+<sub>1.29.1 · 9 octobre 2026</sub>
+
+Plus d’un moniteur ? Votre compagnon et son ballon vont désormais partout où vous regardez, et ne se perdent jamais.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Arrivé au bord d’un écran, votre compagnon passe simplement au suivant, et le ballon roule derrière lui. Vous pouvez aussi prendre le compagnon ou le ballon avec la souris et les porter sur n’importe quel écran. Si une app passe en plein écran, ils filent sur un autre écran pour ne pas gêner, et si vous débranchez un moniteur, ils reviennent sur l’écran principal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Le ballon ne reste plus coincé dans un coin. Votre compagnon accourt, le renvoie par-dessus sa tête et continue de jouer.
+
+Et votre compagnon ne disparaît plus. Toutes les deux secondes, il vérifie qu’il est bien à l’écran, et si quelque chose s’est mal passé, après la veille, le verrouillage du Mac, un changement de bureau ou le plein écran, il revient tout seul aussitôt.
+
+**Pour essayer :** Portez votre compagnon sur un autre écran, ou faites rouler le ballon dans un coin.
+
+**Corrigé**
+
+- Un compagnon lancé ne se pose plus sur un cadre de sélection placé plus haut qu’il ne peut sauter, et ne disparaît plus à cause de cela.
+
+---
+
 ## <a id="v1.29.0"></a>Votre compagnon a un ballon
 
 <sub>1.29.0 · 9 octobre 2026</sub>

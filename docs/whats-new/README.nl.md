@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Je huisdiertje wandelt over al je schermen
+
+<sub>1.29.1 · 9 oktober 2026</sub>
+
+Meer dan één monitor? Je huisdiertje en zijn bal gaan nu overal heen waar je kijkt, en raken nooit meer zoek.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Komt je huisdiertje aan de rand van een scherm, dan stapt het gewoon door naar het volgende, en de bal rolt erachteraan. Je kunt het huisdiertje of de bal ook met de muis oppakken en naar elk scherm brengen. Gaat een app schermvullend, dan gaan ze naar een ander scherm zodat ze niet in de weg zitten, en koppel je een monitor los, dan komen ze terug op het hoofdscherm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+De bal blijft niet meer in een hoek steken. Je huisdiertje rent erheen, schept hem over zijn hoofd naar achteren en speelt verder.
+
+En je huisdiertje verdwijnt niet meer. Elke twee seconden kijkt het of het nog op het scherm staat, en als er iets misging, na de sluimerstand, het vergrendelen van de Mac, een ander bureaublad of schermvullende weergave, komt het meteen vanzelf terug.
+
+**Probeer het:** Breng je huisdiertje naar een ander scherm, of rol de bal in een hoek.
+
+**Opgelost**
+
+- Een gegooid huisdiertje landt niet meer op een selectiekader dat hoger is dan het kan springen, en verdwijnt daardoor niet meer.
+
+---
+
 ## <a id="v1.29.0"></a>Je huisdiertje heeft een bal
 
 <sub>1.29.0 · 9 oktober 2026</sub>

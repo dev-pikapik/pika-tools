@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Il tuo animaletto passeggia su tutti gli schermi
+
+<sub>1.29.1 · 9 ottobre 2026</sub>
+
+Hai più di un monitor? Il tuo animaletto e la sua palla ora vanno ovunque guardi, e non si perdono mai.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quando arriva al bordo di uno schermo, l’animaletto passa semplicemente a quello accanto, e la palla rotola dietro di lui. Puoi anche prendere l’animaletto o la palla con il mouse e portarli su qualsiasi schermo. Se un’app va a tutto schermo, si spostano su un altro schermo per non dare fastidio, e se scolleghi un monitor tornano su quello principale.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La palla non resta più incastrata in un angolo. L’animaletto corre lì, la rilancia all’indietro sopra la testa e continua a giocare.
+
+E il tuo animaletto non sparisce più. Ogni due secondi controlla di essere ancora sullo schermo, e se qualcosa è andato storto, dopo lo stop, il blocco del Mac, il cambio di scrivania o il tutto schermo, torna subito da solo.
+
+**Provalo:** Porta l’animaletto su un altro schermo, o fai rotolare la palla in un angolo.
+
+**Corretto**
+
+- Un animaletto lanciato non atterra più su un riquadro di selezione più alto di quanto possa saltare, e non sparisce più per questo.
+
+---
+
 ## <a id="v1.29.0"></a>Il tuo animaletto ha una palla
 
 <sub>1.29.0 · 9 ottobre 2026</sub>
