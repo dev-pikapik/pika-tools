@@ -8,6 +8,7 @@ final class PetStage: NSObject {
     static let width: CGFloat = 72
     static let height: CGFloat = 190
     static let ground: CGFloat = 4
+    static let spill: CGFloat = 480
 
     private let launched = ProcessInfo.processInfo.systemUptime
     private var window: NSPanel?
@@ -33,6 +34,8 @@ final class PetStage: NSObject {
     private var last: CFTimeInterval?
     private var observers: [(NotificationCenter, NSObjectProtocol)] = []
     private var asleep = false, locked = false, fullscreen = false
+    private var home: CGDirectDisplayID = 0, court: CGDirectDisplayID = 0
+    private var full: Set<CGDirectDisplayID> = []
     private var watchdog: Timer?
     private var nextTalk: TimeInterval
     private var deck: [PetPhrase] = []
@@ -80,8 +83,10 @@ final class PetStage: NSObject {
 
         monitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in self?.pressed(event.locationInWindow) }
 
+        home = NSScreen.screens.first.map(Self.id) ?? 0
+        court = home
         layout()
-        let width = physics.bounds.width
+        let width = petScreen?.frame.width ?? physics.bounds.width
         physics = PetPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.12), facing: demo == nil && Bool.random() ? -1 : 1)
         physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
         ball = BallPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.4))
@@ -117,8 +122,12 @@ final class PetStage: NSObject {
         physics.jump()
     }
 
-    fileprivate func grab(at point: CGPoint) {
-        guard physics.grab(at: point) || ball.grab(at: point) else { return }
+    fileprivate func grab(at point: CGPoint, in panel: NSWindow?) {
+        let origin = panel?.frame.origin ?? .zero
+        func local(_ other: NSWindow?) -> CGPoint {
+            CGPoint(x: point.x + origin.x - (other?.frame.minX ?? origin.x), y: point.y + origin.y - (other?.frame.minY ?? origin.y))
+        }
+        guard physics.grab(at: local(window)) || ball.grab(at: local(field)) else { return }
         NSCursor.closedHand.set()
         rise()
         place()
@@ -164,21 +173,77 @@ final class PetStage: NSObject {
         observers.append((center, token))
     }
 
+    private static func id(_ screen: NSScreen) -> CGDirectDisplayID {
+        screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID ?? 0
+    }
+
+    private var petScreen: NSScreen? {
+        NSScreen.screens.first { Self.id($0) == home } ?? NSScreen.screens.first
+    }
+
+    private var ballScreen: NSScreen? {
+        NSScreen.screens.first { Self.id($0) == court } ?? petScreen
+    }
+
     private func layout() {
-        guard let window, let field, let screen = NSScreen.screens.first else { return }
-        let strip = Self.strip(screen)
-        for (panel, up) in [(window, raised), (field, tossed)] {
+        guard let pet = petScreen, let toy = ballScreen else { return }
+        home = Self.id(pet)
+        court = Self.id(toy)
+        physics.resize(bounds(pet))
+        ball.resize(bounds(toy))
+        arrange()
+    }
+
+    private func arrange() {
+        guard let window, let field, let pet = petScreen, let toy = ballScreen else { return }
+        for (panel, up, screen) in [(window, raised, pet), (field, tossed, toy)] {
             panel.level = up ? .statusBar : Self.level
-            panel.setFrame(up ? screen.frame : strip, display: false)
+            panel.setFrame(up ? screen.frame : Self.strip(screen), display: false)
         }
         for figure in [view, ballView] as [NSView] { figure.frame = CGRect(x: figure.frame.minX, y: 0, width: Self.width, height: Self.height) }
-        let top = max(Self.height, screen.visibleFrame.maxY - screen.frame.minY)
-        let bounds = CGRect(x: 0, y: Self.ground, width: strip.width, height: top - Self.ground)
-        physics.resize(bounds)
-        ball.resize(bounds)
         shelter()
         place()
         if let bubble { show(bubble) }
+    }
+
+    private func bounds(_ screen: NSScreen) -> CGRect {
+        let top = max(Self.height, screen.visibleFrame.maxY - screen.frame.minY)
+        let left = neighbor(screen, -1) == nil ? 0 : Self.spill, right = neighbor(screen, 1) == nil ? 0 : Self.spill
+        return CGRect(x: -left, y: Self.ground, width: screen.frame.width + left + right, height: top - Self.ground)
+    }
+
+    private func neighbor(_ screen: NSScreen, _ side: CGFloat) -> NSScreen? {
+        let a = screen.frame
+        return NSScreen.screens.filter {
+            let b = $0.frame
+            return !full.contains(Self.id($0)) && abs(side > 0 ? b.minX - a.maxX : a.minX - b.maxX) < 1 && b.minY <= a.minY + PetPhysics.hop && b.maxY >= a.minY + Self.height
+        }.min { abs($0.frame.minY - a.minY) < abs($1.frame.minY - a.minY) }
+    }
+
+    private func cross() {
+        var moved = false
+        if let from = petScreen, let to = destination(from, physics.origin.x, physics.state == .held) {
+            physics.move(by: Self.offset(from, to), to: bounds(to))
+            home = Self.id(to)
+            moved = true
+        }
+        if let from = ballScreen, let to = destination(from, ball.center.x, ball.held) {
+            ball.move(by: Self.offset(from, to), to: bounds(to))
+            court = Self.id(to)
+            moved = true
+        }
+        if moved { arrange() }
+    }
+
+    private func destination(_ from: NSScreen, _ x: CGFloat, _ held: Bool) -> NSScreen? {
+        guard held else { return x < 0 ? neighbor(from, -1) : x > from.frame.width ? neighbor(from, 1) : nil }
+        let point = NSEvent.mouseLocation
+        guard fake == nil, !from.frame.contains(point) else { return nil }
+        return NSScreen.screens.first { $0.frame.contains(point) && !full.contains(Self.id($0)) }
+    }
+
+    private static func offset(_ from: NSScreen, _ to: NSScreen) -> CGVector {
+        CGVector(dx: from.frame.minX - to.frame.minX, dy: from.frame.minY - to.frame.minY)
     }
 
     private static func strip(_ screen: NSScreen) -> CGRect {
@@ -186,17 +251,18 @@ final class PetStage: NSObject {
     }
 
     private func shelter() {
-        guard let screen = NSScreen.screens.first else { return }
-        let top = screen.visibleFrame.minY - screen.frame.minY
-        var dock: CGRect?
-        if top > Self.ground + PetPhysics.size.height {
-            dock = CGRect(x: 0, y: 0, width: screen.frame.width, height: top)
-            if let tiles = Self.tiles() { dock = CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top) }
-        }
+        guard let pet = petScreen, let toy = ballScreen else { return }
         physics.roof = Self.height
         ball.roof = Self.height
-        physics.dock = dock
-        ball.dock = dock
+        physics.dock = Self.dock(pet)
+        ball.dock = Self.id(toy) == Self.id(pet) ? physics.dock : Self.dock(toy)
+    }
+
+    private static func dock(_ screen: NSScreen) -> CGRect? {
+        let top = screen.visibleFrame.minY - screen.frame.minY
+        guard top > ground + PetPhysics.size.height else { return nil }
+        guard let tiles = tiles() else { return CGRect(x: 0, y: 0, width: screen.frame.width, height: top) }
+        return CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top)
     }
 
     private static func tiles() -> CGRect? {
@@ -242,25 +308,43 @@ final class PetStage: NSObject {
     }
 
     private func checkFullscreen() {
-        let pid = NSWorkspace.shared.frontmostApplication?.processIdentifier
-        let display = CGDisplayBounds(CGMainDisplayID())
         let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-        fullscreen = pid != nil && windows.contains { info in
-            guard info[kCGWindowOwnerPID as String] as? pid_t == pid, info[kCGWindowLayer as String] as? Int == 0,
-                  let bounds = info[kCGWindowBounds as String] as? NSDictionary else { return false }
-            return CGRect(dictionaryRepresentation: bounds) == display
+        let covers = windows.compactMap { info -> CGRect? in
+            guard info[kCGWindowLayer as String] as? Int == 0, info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
+                  let bounds = info[kCGWindowBounds as String] as? NSDictionary else { return nil }
+            return CGRect(dictionaryRepresentation: bounds)
         }
+        let screens = NSScreen.screens
+        let now = Set(screens.map(Self.id).filter { covers.contains(CGDisplayBounds($0)) })
+        var moved = now != full
+        full = now
+        if let free = screens.first(where: { !now.contains(Self.id($0)) }) {
+            if now.contains(home), !physics.aloft, let from = petScreen {
+                let x = physics.origin.x / from.frame.width * free.frame.width
+                physics.move(by: CGVector(dx: x - physics.origin.x, dy: Self.ground - physics.origin.y), to: bounds(free))
+                home = Self.id(free)
+                moved = true
+            }
+            if now.contains(court), !now.contains(home), !ball.aloft, let from = ballScreen, let to = petScreen {
+                let x = ball.center.x / from.frame.width * to.frame.width
+                ball.move(by: CGVector(dx: x - ball.center.x, dy: Self.ground - ball.center.y), to: bounds(to))
+                court = home
+                moved = true
+            }
+        }
+        if moved { layout() }
+        fullscreen = now.contains(home)
         update()
     }
 
     private func reconcile() {
-        guard let window, let field, let screen = NSScreen.screens.first else { return }
+        guard let window, let field, let pet = petScreen, let toy = ballScreen else { return }
         asleep = CGDisplayIsAsleep(CGMainDisplayID()) != 0
         locked = GameModeTool.screenLocked
         physics.recover()
         if physics.aloft != raised || ball.aloft != tossed {
             rise()
-        } else if [(window, raised), (field, tossed)].contains(where: { $0.level != ($1 ? .statusBar : Self.level) || $0.frame != ($1 ? screen.frame : Self.strip(screen)) }) {
+        } else if [(window, raised, pet), (field, tossed, toy)].contains(where: { $0.level != ($1 ? .statusBar : Self.level) || $0.frame != ($1 ? $2.frame : Self.strip($2)) }) {
             layout()
         }
         checkFullscreen()
@@ -274,41 +358,42 @@ final class PetStage: NSObject {
         let dt = last.map { link.timestamp - $0 } ?? 0
         last = link.timestamp
         play(demo)
-        let point = fake ?? cursor
+        guard let pet = petScreen, let pitch = ballScreen else { return }
+        let point = fake ?? pointer(pet, physics.state == .held), reach = fake ?? pointer(pitch, ball.held)
         if NSEvent.pressedMouseButtons & 1 == 0 { press = nil }
-        physics.ledge = demo == "platform" ? demoLedge : selection
-        ball.ledge = physics.ledge
+        physics.ledge = demo == "platform" ? demoLedge : selection(pet)
+        ball.ledge = demo == "platform" ? demoLedge : selection(pitch)
         physics.step(dt, cursor: point)
-        let toy = field?.isVisible == true, now = ProcessInfo.processInfo.systemUptime
+        let toy = field?.isVisible == true, together = Self.id(pet) == Self.id(pitch), now = ProcessInfo.processInfo.systemUptime
         if toy {
-            physics.kick(&ball)
-            ball.step(dt, cursor: physics.state == .held ? nil : point, body: physics.aloft ? nil : (physics.previous, physics.frame))
+            if together { physics.kick(&ball) }
+            ball.step(dt, cursor: physics.state == .held ? nil : reach, body: physics.aloft || !together ? nil : (physics.previous, physics.frame))
             if ball.impact > 700, physics.grounded || physics.state == .jump { physics.bump(ball.frame) }
             if ball.nudged { chase = min(chase, now + 0.4) }
             if now >= chase {
-                physics.face(ball.center.x)
+                physics.face(ball.center.x + pitch.frame.minX - pet.frame.minX)
                 chase = now + .random(in: 6...16)
             }
         }
         if physics.state == .held || ball.held, fake == nil, NSEvent.pressedMouseButtons & 1 == 0 { drop() }
+        cross()
         rise()
         place()
-        let catchable = point.map(physics.touches) ?? false, reachable = toy && (point.map(ball.touches) ?? false)
+        let catchable = point.map(physics.touches) ?? false, reachable = toy && (reach.map(ball.touches) ?? false)
         if let window, window.ignoresMouseEvents == (catchable || physics.state == .held) { window.ignoresMouseEvents.toggle() }
         if let field, field.ignoresMouseEvents == (reachable || ball.held) { field.ignoresMouseEvents.toggle() }
         if phrase != nil, physics.state != .sit { hideBubble() }
         talk(ProcessInfo.processInfo.systemUptime)
     }
 
-    private var cursor: CGPoint? {
-        guard let screen = NSScreen.screens.first else { return nil }
+    private func pointer(_ screen: NSScreen, _ held: Bool) -> CGPoint? {
         let point = NSEvent.mouseLocation
-        guard physics.state == .held || ball.held || screen.frame.contains(point) else { return nil }
+        guard held || screen.frame.contains(point) else { return nil }
         return CGPoint(x: point.x - screen.frame.minX, y: point.y - screen.frame.minY)
     }
 
-    private var selection: CGRect? {
-        guard let press, let screen = NSScreen.screens.first else { return nil }
+    private func selection(_ screen: NSScreen) -> CGRect? {
+        guard let press else { return nil }
         let point = NSEvent.mouseLocation
         let rect = CGRect(x: min(press.x, point.x), y: min(press.y, point.y), width: abs(point.x - press.x), height: abs(point.y - press.y))
         return rect.width > 4 && rect.height > 4 ? rect.offsetBy(dx: -screen.frame.minX, dy: -screen.frame.minY) : nil
@@ -366,7 +451,7 @@ final class PetStage: NSObject {
         case "hold" where physics.state == .walk && physics.clock > 1.5, "throw" where physics.state == .walk && physics.clock > 1.5:
             fake = CGPoint(x: physics.origin.x, y: physics.frame.maxY - PetPhysics.scruff)
             anchor = fake ?? .zero
-            grab(at: anchor)
+            grab(at: anchor, in: window)
         case "hold" where physics.state == .held, "throw" where physics.state == .held:
             let t = physics.clock
             fake = CGPoint(x: anchor.x + 80 * sin(t * 3), y: anchor.y + 300 * min(t, 1))
@@ -380,7 +465,7 @@ final class PetStage: NSObject {
             fake = ball.center
             anchor = ball.center
             grabbed = ProcessInfo.processInfo.systemUptime
-            grab(at: anchor)
+            grab(at: anchor, in: field)
         case "carry" where ball.held:
             let t = ProcessInfo.processInfo.systemUptime - grabbed
             fake = CGPoint(x: anchor.x + 80 * sin(t * 3), y: anchor.y + 300 * min(t, 1))
@@ -404,8 +489,8 @@ final class PetStage: NSObject {
     }
 
     private var behindDock: Bool {
-        guard let screen = NSScreen.screens.first, screen.visibleFrame.minY > screen.frame.minY else { return false }
-        let x = physics.origin.x / physics.bounds.width
+        guard let screen = petScreen, screen.visibleFrame.minY > screen.frame.minY else { return false }
+        let x = physics.origin.x / screen.frame.width
         return x > 0.18 && x < 0.82
     }
 
@@ -547,7 +632,7 @@ private final class FigureView<Pose: Equatable>: NSView {
 private final class PetHand: NSView {
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
     override func cursorUpdate(with event: NSEvent) { NSCursor.openHand.set() }
-    override func mouseDown(with event: NSEvent) { PetStage.shared.grab(at: event.locationInWindow) }
+    override func mouseDown(with event: NSEvent) { PetStage.shared.grab(at: event.locationInWindow, in: window) }
     override func mouseDragged(with event: NSEvent) { NSCursor.closedHand.set() }
     override func mouseUp(with event: NSEvent) { PetStage.shared.drop() }
 }
