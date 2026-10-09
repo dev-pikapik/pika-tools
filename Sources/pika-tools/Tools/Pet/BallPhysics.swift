@@ -106,6 +106,13 @@ struct BallPhysics {
         previous = frame
     }
 
+    mutating func move(by offset: CGVector, to bounds: CGRect) {
+        center.x += offset.dx
+        center.y += offset.dy
+        trail = Trail()
+        resize(bounds)
+    }
+
     private mutating func advance(_ h: Double, _ pointer: (CGRect, CGRect)?, _ body: (CGRect, CGRect)?) {
         age += h
         if held {

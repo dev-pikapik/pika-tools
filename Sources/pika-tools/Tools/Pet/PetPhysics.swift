@@ -197,6 +197,15 @@ struct PetPhysics {
         previous = frame
     }
 
+    mutating func move(by offset: CGVector, to bounds: CGRect) {
+        self.bounds = bounds
+        origin = CGPoint(x: clamp(origin.x + offset.dx), y: level(origin.y + offset.dy))
+        mark = mark.offsetBy(dx: offset.dx, dy: offset.dy)
+        trail = Trail()
+        cursor = nil
+        previous = frame
+    }
+
     mutating func recover() {
         guard ![origin.x, origin.y, vx, vy].allSatisfy(\.isFinite) || !bounds.insetBy(dx: -1, dy: -1).contains(frame) else { return }
         origin = CGPoint(x: origin.x.isFinite ? clamp(origin.x) : bounds.midX, y: bounds.minY)

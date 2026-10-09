@@ -347,9 +347,9 @@ enum TestPet {
             precondition(pet.grab(at: scruff))
             for _ in 0..<10 { pet.step(1.0 / 30, cursor: CGPoint(x: 700, y: 500)) }
             pet.release()
-            states = trace(&pet, 4) { p, _ in
+            states = trace(&pet, 4, check: { p, _ in
                 precondition(p.aloft || p.frame.maxY <= p.roof + 1e-6 || p.origin.y == floor.minY, "landed above the strip on a ledge at \(top): \(p.frame)")
-            }
+            })
             precondition(states.last == .walk && pet.origin.y == (top + PetPhysics.size.height <= 190 ? top : floor.minY), "ledge at \(top): \(pet.origin)")
         }
         print("a thrown pet lands only on selections that fit under the strip: ok")
@@ -558,5 +558,73 @@ enum TestPet {
         ball.step(1.0 / 30, cursor: CGPoint(x: 900, y: 20))
         precondition(ball.center.x == 700 && ball.vx == 0 && !ball.nudged, "pointer moved during a pause pushed the ball: \(ball.center)")
         print("a pointer that moved during a pause leaves the ball alone: ok")
+
+        func neighbor(_ screens: [CGRect], _ a: CGRect, _ side: CGFloat) -> CGRect? {
+            screens.first { b in abs(side > 0 ? b.minX - a.maxX : a.minX - b.maxX) < 1 && b.minY <= a.minY + PetPhysics.hop && b.maxY >= a.minY + 190 }
+        }
+        func span(_ screens: [CGRect], _ s: CGRect) -> CGRect {
+            let left: CGFloat = neighbor(screens, s, -1) == nil ? 0 : 480, right: CGFloat = neighbor(screens, s, 1) == nil ? 0 : 480
+            return CGRect(x: -left, y: 4, width: s.width + left + right, height: s.height - 4)
+        }
+        func target(_ screens: [CGRect], _ s: CGRect, _ x: CGFloat) -> CGRect? {
+            x < 0 ? neighbor(screens, s, -1) : x > s.width ? neighbor(screens, s, 1) : nil
+        }
+        let level = [CGRect(x: 0, y: 0, width: 800, height: 600), CGRect(x: 800, y: 6, width: 1000, height: 700)]
+        let drop = [CGRect(x: 0, y: 0, width: 800, height: 600), CGRect(x: -1000, y: -150, width: 1000, height: 700)]
+        for (screens, start, facing) in [(level, 700, CGFloat(1)), (drop, 100, -1)] {
+            for dt in [1.0 / 30, 0.25] {
+                var at = screens[0]
+                pet = PetPhysics(bounds: span(screens, at), x: CGFloat(start), facing: facing)
+                var visits: Set<CGFloat> = [at.minX], crossings = 0
+                for _ in 0..<Int(120 / dt) {
+                    let before = (pet.origin.x + at.minX, pet.facing)
+                    pet.step(dt, cursor: nil)
+                    if let to = target(screens, at, pet.origin.x) {
+                        let x = pet.origin.x + at.minX, state = pet.state
+                        pet.move(by: CGVector(dx: at.minX - to.minX, dy: at.minY - to.minY), to: span(screens, to))
+                        precondition(abs(pet.origin.x + to.minX - x) <= (to.minY < at.minY - 1 ? PetPhysics.size.width / 2 : 1e-6) && pet.facing == before.1 && (state != .walk || abs(x - before.0) < 40), "jumped while crossing: \(x) -> \(pet.origin.x + to.minX)")
+                        if to.minY < at.minY - 1 { precondition(pet.state == .walk && pet.origin.y > pet.bounds.minY, "did not fall onto the lower screen") }
+                        at = to
+                        visits.insert(at.minX)
+                        crossings += 1
+                    }
+                    precondition(inside(pet) && pet.origin.x >= -1e-6 && pet.origin.x <= at.width + 1e-6, "left the screens: \(pet.origin) on \(at)")
+                }
+                if screens == level {
+                    precondition(visits.count == 2 && crossings >= 3, "walked \(crossings) times between level screens")
+                } else {
+                    precondition(crossings == 1 && at == screens[1] && pet.origin.y == pet.bounds.minY, "stepped down \(crossings) times, now on \(at)")
+                }
+            }
+        }
+        for dt in [1.0 / 30, 0.25] {
+            var at = level[0]
+            pet = PetPhysics(bounds: span(level, at), x: 700)
+            precondition(pet.grab(at: CGPoint(x: 700, y: pet.frame.maxY - PetPhysics.scruff)))
+            for i in 1...4 { pet.step(1.0 / 60, cursor: CGPoint(x: 700 + 30 * CGFloat(i), y: 60 + 20 * CGFloat(i))) }
+            pet.release()
+            ball = BallPhysics(bounds: span(level, level[0]), x: 700)
+            ball.kick(CGVector(dx: 900, dy: 200))
+            var ballAt = level[0], landed = false, flew = false
+            for _ in 0..<Int(10 / dt) {
+                let vx = pet.vx
+                pet.step(dt, cursor: nil)
+                if let to = target(level, at, pet.origin.x) {
+                    precondition(at != level[0] || pet.state == .thrown && vx > 1000 && pet.vx == vx, "bounced back before crossing: \(pet.vx)")
+                    flew = true
+                    pet.move(by: CGVector(dx: at.minX - to.minX, dy: at.minY - to.minY), to: span(level, to))
+                    at = to
+                }
+                ball.step(dt, cursor: nil)
+                if let to = target(level, ballAt, ball.center.x) {
+                    precondition(ball.vx > 0, "ball bounced back before crossing")
+                    ball.move(by: CGVector(dx: ballAt.minX - to.minX, dy: ballAt.minY - to.minY), to: span(level, to))
+                    ballAt = to
+                }
+                if pet.state == .walk { landed = true }
+            }
+            precondition(flew && landed && ballAt == level[1] && ball.resting, "throw across screens: pet on \(at), ball on \(ballAt)")
+        }
+        print("pet and ball walk, fall, fly and roll from screen to screen: ok")
     }
 }
