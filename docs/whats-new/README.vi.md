@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Êm hơn, nhẹ hơn, và Finder sẵn sàng ngay
+
+<sub>1.27.1 · ngày 9 tháng 10, 2026</sub>
+
+Cài đặt giờ gần như không làm Mac phải gắng sức, và các mục chuột phải trong Finder hoạt động ngay sau khi chuyển sang pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Những hình động nhỏ trong Cài đặt trước đây vẽ lại cả trang nhiều lần mỗi giây, nên chỉ cần mở cửa sổ là Mac đã bận. Giờ mỗi hình chỉ vẽ lại chính nó, tối đa 30 lần mỗi giây, và nghỉ khi bạn cuộn qua hoặc ẩn cửa sổ. Trông vẫn y hệt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Sau khi chuyển từ pika-tools sang pikapik, Finder có thể vẫn tìm ứng dụng cũ, nên “Tệp mới”, “Chuyển sang” và các mục chuột phải khác không làm gì cả. Giờ pikapik nhận ra điều này ở lần mở đầu tiên và tự khởi động lại Finder khi không có cửa sổ Finder nào đang mở và không có gì đang được sao chép. Nếu không, một dòng ngắn trên trang Finder sẽ có nút “Khởi động lại Finder”.
+
+Trong Cài đặt hệ thống, giữa các ứng dụng mở khi đăng nhập, ứng dụng giờ hiện tên mới là pikapik và vẫn được bật.
+
+**Thử ngay:** Cài đặt › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Làm quen với thú cưng trên màn hình nền
 
 <sub>1.27.0 · ngày 9 tháng 10, 2026</sub>

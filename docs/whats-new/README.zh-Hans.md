@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>更安静、更轻巧，访达立即可用
+
+<sub>1.27.1 · 2026年10月9日</sub>
+
+设置几乎不再占用你的 Mac，迁移到 pikapik 后，访达的右键菜单项立即可用。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+设置里的小动画以前每秒会把整个页面重绘很多次，所以只要窗口开着，Mac 就一直在忙。现在每幅图只重绘自己，每秒最多 30 次，滚出视野或窗口隐藏时就会休息。外观完全一样。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+从 pika-tools 迁移到 pikapik 后，访达可能仍在寻找旧的 App，“新建文件”“转换为”等右键菜单项没有反应。现在 pikapik 会在首次启动时发现这一点，如果访达没有打开的窗口、也没有正在拷贝的内容，就自动重新启动访达。否则，访达页面会出现一行简短提示和“重新启动访达”按钮。
+
+在系统设置中登录时打开的 App 列表里，现在显示新名称 pikapik，并保持开启。
+
+**试试看：** 设置 › 访达
+
+---
+
 ## <a id="v1.27.0"></a>来认识一下你的桌面宠物
 
 <sub>1.27.0 · 2026年10月9日</sub>

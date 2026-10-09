@@ -64,7 +64,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
-        LoginItem.shared.restore()
+        let path = Bundle.main.bundlePath
+        let moved = Updater.isNewPlace(path, last: defaults.string(forKey: "app-path"), launchedBefore: defaults.bool(forKey: "launchedBefore"))
+        defaults.set(path, forKey: "app-path")
+        LoginItem.shared.restore(moved: moved)
+        if moved { FinderExtension.register() }
+        FinderRestart.shared.check()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
         for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {

@@ -42,7 +42,6 @@ private struct Click: View {
 
 struct AnimationsArt: View {
     let values: [AnimationSetting: Double]
-    @State private var tick = 6
     @State private var taps = 0
 
     private func value(_ setting: AnimationSetting) -> Double { values[setting] ?? setting.macOS }
@@ -51,13 +50,13 @@ struct AnimationsArt: View {
         let delay = value(.dockDelay), speed = value(.dockSpeed), sheet = value(.resize)
         let opens = value(.windowOpen) != 0
         let durations = [max(speed + 0.4, 1.2), 0.95, max(delay + speed, 0.7) + 0.35, 0.85, 0.15, 0.5, max(sheet, 0.2) + 1.3]
-        let step = tick % durations.count
-        let docked = step >= 2
-        let open = step >= 5
-        let dropped = step >= 6
         let ghosts = delay != AnimationSetting.dockDelay.macOS || speed != AnimationSetting.dockSpeed.macOS
         let icon = CGPoint(x: 150, y: 103)
-        IllustrationRow {
+        IllustrationRow(loop: durations, replay: taps, from: 6) { tick in
+            let step = tick % durations.count
+            let docked = step >= 2
+            let open = step >= 5
+            let dropped = step >= 6
             Stage {
                 ArtWindow(size: CGSize(width: 136, height: 76)) {
                     ZStack(alignment: .top) {
@@ -90,7 +89,6 @@ struct AnimationsArt: View {
             }
         }
         .replays($taps, on: values)
-        .loop($tick, durations, replay: taps)
     }
 }
 
@@ -99,7 +97,6 @@ struct AnimationThumb<Content: View>: View {
     let value: Double
     let rest: Int?
     let content: (Int) -> Content
-    @State private var tick: Int
     @State private var taps = 0
 
     init(durations: [Double], value: Double, rest: Int? = nil, @ViewBuilder content: @escaping (Int) -> Content) {
@@ -107,15 +104,13 @@ struct AnimationThumb<Content: View>: View {
         self.value = value
         self.rest = rest
         self.content = content
-        _tick = State(initialValue: rest ?? durations.count - 1)
     }
 
     var body: some View {
-        IllustrationRow {
+        IllustrationRow(loop: durations, replay: taps, rest: rest, from: rest ?? durations.count - 1) { tick in
             Stage { content(tick % durations.count) }
         }
         .replays($taps, on: value)
-        .loop($tick, durations, replay: taps, rest: rest)
     }
 }
 

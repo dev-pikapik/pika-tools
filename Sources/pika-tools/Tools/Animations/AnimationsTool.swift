@@ -309,17 +309,23 @@ private struct ChangesBar: View {
                 }
                 Spacer(minLength: 0)
                 if tool.finderPending {
-                    Button("Restart Finder") { tool.restartFinder() }
+                    Button("Restart Finder") { FinderRestart.shared.restart() }
                         .help(Text("Finder closes its windows and opens again. Wait until files finish copying."))
                 }
             }
-            .font(.callout)
+            .noticeBar()
+        }
+    }
+}
+
+extension View {
+    func noticeBar() -> some View {
+        font(.callout)
             .foregroundStyle(.secondary)
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
             .background(.bar)
             .overlay(alignment: .top) { Divider() }
-        }
     }
 }
 

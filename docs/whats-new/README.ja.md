@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>静かに、軽く、Finder もすぐ使える
+
+<sub>1.27.1 · 2026年10月9日</sub>
+
+設定画面が Mac にほとんど負担をかけなくなり、pikapik への移行直後から Finder の右クリック項目が使えます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+設定の小さな動くイラストは、これまで 1 秒に何度もページ全体を描き直していたため、ウインドウを開いているだけで Mac に負担がかかっていました。今は各イラストが自分だけを 1 秒に最大 30 回描き直し、スクロールで見えなくなったときやウインドウを隠したときは休みます。見た目はまったく同じです。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+pika-tools から pikapik に移行したあと、Finder が古いアプリを探し続け、「新規ファイル」「変換」などの右クリック項目が動かないことがありました。pikapik は最初の起動でこれに気づき、Finder のウインドウが開いておらずコピー中でもなければ、Finder を自動で再起動します。そうでないときは、Finder のページに短い案内と「Finderを再起動」ボタンが出ます。
+
+システム設定の、ログイン時に開くアプリの一覧に、新しい名前 pikapik で表示され、オンのままです。
+
+**試してみる：** 設定 › Finder
+
+---
+
 ## <a id="v1.27.0"></a>デスクトップのペットがやってきました
 
 <sub>1.27.0 · 2026年10月9日</sub>

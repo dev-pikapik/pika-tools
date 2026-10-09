@@ -241,13 +241,13 @@ enum SettingsWindow {
         let width: CGFloat = 860
         let height = min(720, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
         let host = NSHostingController(rootView: SettingsView())
-        host.sizingOptions = [.minSize]
         host.sceneBridgingOptions = [.toolbars, .title]
         let window = NSWindow(contentViewController: host)
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
         window.toolbarStyle = .unified
         window.collectionBehavior.insert(.fullScreenNone)
         window.isReleasedWhenClosed = false
+        window.contentMinSize = minSize
         window.title = (model.selection ?? .general).title
         window.setContentSize(NSSize(width: width, height: height))
         window.center()
@@ -750,6 +750,9 @@ private struct ToolsSettings: View {
         }
         .formStyle(.grouped)
         .settingsPage()
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if tab == .finder { FinderRestartBar() }
+        }
         .environment(\.inSettings, true)
     }
 }

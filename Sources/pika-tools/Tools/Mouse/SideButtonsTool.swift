@@ -136,7 +136,6 @@ private func sideButtonsCallback(
 struct SideButtonsArt: View {
     let on: Bool
     let swapped: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.45, 0.8, 0.45, 0.45, 0.8, 0.45, 0.8]
@@ -146,12 +145,12 @@ struct SideButtonsArt: View {
     private static let pageWidth: CGFloat = 156
 
     var body: some View {
-        let step = reduceMotion ? 1 : tick % Self.durations.count
-        let action = Self.actions[step]
-        let page = on ? Self.pages[step] : 1
-        let forwardPressed = action == 2 && !swapped || action == 1 && swapped
-        let backPressed = action == 1 && !swapped || action == 2 && swapped
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 1 : tick % Self.durations.count
+            let action = Self.actions[step]
+            let page = on ? Self.pages[step] : 1
+            let forwardPressed = action == 2 && !swapped || action == 1 && swapped
+            let backPressed = action == 1 && !swapped || action == 2 && swapped
             Stage {
                 ArtMouse(sideButtons: true, back: backPressed, forward: forwardPressed)
                     .scaleEffect(2.1)
@@ -180,7 +179,6 @@ struct SideButtonsArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
         }
-        .loop($tick, Self.durations)
     }
 
     private func number(_ text: String, pressed: Bool) -> some View {

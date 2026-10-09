@@ -37,20 +37,19 @@ final class ConvertTool: Tool {
 
 struct ConvertArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.3, 1.15, 0.15, 0.5, 0.85, 0.45, 0.9, 0.25, 0.15, 0.35, 2.0]
     private static let click = CGPoint(x: 112, y: 58)
 
     var body: some View {
-        let step = reduceMotion ? 10 : tick % Self.durations.count
-        let menu = (3...8).contains(step)
-        let picked = (2...9).contains(step)
-        let converted = on && step == 10
-        let row = CGPoint(x: Self.click.x + 40, y: Self.click.y + 28)
-        let jpeg = on ? CGPoint(x: Self.click.x + 128, y: Self.click.y + 28) : row
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 10 : tick % Self.durations.count
+            let menu = (3...8).contains(step)
+            let picked = (2...9).contains(step)
+            let converted = on && step == 10
+            let row = CGPoint(x: Self.click.x + 40, y: Self.click.y + 28)
+            let jpeg = on ? CGPoint(x: Self.click.x + 128, y: Self.click.y + 28) : row
             Stage {
                 ArtWindow(size: CGSize(width: 220, height: 100)) {
                     ZStack {
@@ -89,6 +88,5 @@ struct ConvertArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }

@@ -167,7 +167,6 @@ private func wheelCallback(
 
 struct ScrollArt: View {
     let smooth: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let pitch: CGFloat = 14
@@ -186,28 +185,39 @@ struct ScrollArt: View {
     }
 
     var body: some View {
-        let offset = reduceMotion ? (smooth ? Self.pitch / 2 : 0) : CGFloat(tick) * Self.pitch
-        VStack(spacing: 0) {
-            ForEach(0..<10, id: \.self) { index in
-                HStack(spacing: 6) {
-                    Circle().fill(Color.accentColor.opacity(0.8)).frame(width: 7, height: 7)
-                    Capsule().fill(Color.primary.opacity(0.16)).frame(width: Self.widths[index % 3], height: 5)
-                    Spacer(minLength: 0)
+        ArtLoop(durations: [0.7]) { tick in
+            let offset = reduceMotion ? (smooth ? Self.pitch / 2 : 0) : CGFloat(tick) * Self.pitch
+            VStack(spacing: 0) {
+                ForEach(0..<10, id: \.self) { index in
+                    HStack(spacing: 6) {
+                        Circle().fill(Color.accentColor.opacity(0.8)).frame(width: 7, height: 7)
+                        Capsule().fill(Color.primary.opacity(0.16)).frame(width: Self.widths[index % 3], height: 5)
+                        Spacer(minLength: 0)
+                    }
+                    .padding(.horizontal, 9)
+                    .frame(height: Self.pitch)
                 }
-                .padding(.horizontal, 9)
-                .frame(height: Self.pitch)
             }
+            .modifier(Wrapped(offset: offset))
+            .frame(maxHeight: .infinity, alignment: .top)
+            .background(Color(nsColor: .windowBackgroundColor))
+            .clipped()
+            .animation(reduceMotion ? nil : smooth ? .linear(duration: 0.7) : .snappy(duration: 0.18), value: tick)
         }
-        .modifier(Wrapped(offset: offset))
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background(Color(nsColor: .windowBackgroundColor))
-        .clipped()
-        .animation(reduceMotion ? nil : smooth ? .linear(duration: 0.7) : .snappy(duration: 0.18), value: tick)
-        .loop($tick, [0.7])
+        .hostedApart()
     }
 }
 
 struct ScrollStepArt: View {
+    let on: Bool
+    let distance: CGFloat
+
+    var body: some View {
+        IllustrationRow { ScrollStepScene(on: on, distance: distance) }
+    }
+}
+
+private struct ScrollStepScene: View {
     let on: Bool
     let distance: CGFloat
     @State private var tick = 0
@@ -228,43 +238,42 @@ struct ScrollStepArt: View {
         }
 
         func body(content: Content) -> some View {
-            content.offset(y: -offset.truncatingRemainder(dividingBy: ScrollStepArt.pitch * 3))
+            content.offset(y: -offset.truncatingRemainder(dividingBy: ScrollStepScene.pitch * 3))
         }
     }
 
     var body: some View {
         let step = min(distance * Self.scale, 112)
-        IllustrationRow {
-            Stage {
-                ArtMouse(wheel: clicking)
-                    .scaleEffect(2.3)
-                    .position(x: 62, y: 64)
-                ArtWindow(size: CGSize(width: 140, height: 108)) {
-                    VStack(spacing: 0) {
-                        ForEach(0..<14, id: \.self) { index in
-                            HStack(spacing: 6) {
-                                Circle().fill(Color.accentColor.opacity(0.8)).frame(width: 6, height: 6)
-                                Capsule().fill(Color.primary.opacity(0.16)).frame(width: Self.widths[index % 3], height: 4)
-                                Spacer(minLength: 0)
-                            }
-                            .padding(.horizontal, 10)
-                            .frame(height: Self.pitch)
+        Stage {
+            ArtMouse(wheel: clicking)
+                .scaleEffect(2.3)
+                .position(x: 62, y: 64)
+            ArtWindow(size: CGSize(width: 140, height: 108)) {
+                VStack(spacing: 0) {
+                    ForEach(0..<14, id: \.self) { index in
+                        HStack(spacing: 6) {
+                            Circle().fill(Color.accentColor.opacity(0.8)).frame(width: 6, height: 6)
+                            Capsule().fill(Color.primary.opacity(0.16)).frame(width: Self.widths[index % 3], height: 4)
+                            Spacer(minLength: 0)
                         }
+                        .padding(.horizontal, 10)
+                        .frame(height: Self.pitch)
                     }
-                    .modifier(Wrapped(offset: position))
-                    .frame(height: 94, alignment: .top)
-                    .clipped()
                 }
-                .position(x: 212, y: 64)
-                if on {
-                    VStack(spacing: 0) {
-                        Capsule().fill(Color.accentColor).frame(width: 7, height: 1.5)
-                        Rectangle().fill(Color.accentColor).frame(width: 1.5, height: max(step - 3, 0))
-                        Capsule().fill(Color.accentColor).frame(width: 7, height: 1.5)
-                    }
-                    .position(x: 128, y: 64)
-                    .animation(reduceMotion ? nil : .smooth(duration: 0.25), value: step)
+                .modifier(Wrapped(offset: position))
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.35), value: position)
+                .frame(height: 94, alignment: .top)
+                .clipped()
+            }
+            .position(x: 212, y: 64)
+            if on {
+                VStack(spacing: 0) {
+                    Capsule().fill(Color.accentColor).frame(width: 7, height: 1.5)
+                    Rectangle().fill(Color.accentColor).frame(width: 1.5, height: max(step - 3, 0))
+                    Capsule().fill(Color.accentColor).frame(width: 7, height: 1.5)
                 }
+                .position(x: 128, y: 64)
+                .animation(reduceMotion ? nil : .smooth(duration: 0.25), value: step)
             }
         }
         .loop($tick, [1.6])
@@ -282,12 +291,8 @@ struct ScrollStepArt: View {
 
     private func scroll() {
         let length = on ? distance * Self.scale : Self.uneven[tick % Self.uneven.count]
-        if reduceMotion {
-            position += length
-        } else {
-            withAnimation(.easeOut(duration: 0.35)) { position += length }
-            clicking = true
-        }
+        position += length
+        if !reduceMotion { clicking = true }
     }
 }
 

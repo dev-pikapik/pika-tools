@@ -600,7 +600,6 @@ private struct GameModeSettings: View {
 
 struct GameModeArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.8, 0.9, 1.2, 0.8, 1.6, 1.7]
@@ -608,11 +607,11 @@ struct GameModeArt: View {
     private static let bar = CGRect(x: 39, y: 23, width: 118, height: 22)
 
     var body: some View {
-        let step = reduceMotion ? 0 : tick % Self.durations.count
-        let search = step == 1 || !on && step == 2
-        let edge = step == 4
-        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 0 : tick % Self.durations.count
+            let search = step == 1 || !on && step == 2
+            let edge = step == 4
+            let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
             ArtTimeline { time in
                 Stage {
                     ZStack {
@@ -645,6 +644,5 @@ struct GameModeArt: View {
                 .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
             }
         }
-        .loop($tick, Self.durations)
     }
 }

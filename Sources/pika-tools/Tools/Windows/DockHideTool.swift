@@ -131,16 +131,15 @@ private func dockHideCallback(
 
 struct DockHideArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.2, 1.1, 0.15, 1.2, 0.15, 1.3]
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let hidden = on && (3...4).contains(step)
-        let aimed = step != 0
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 3 : tick % Self.durations.count
+            let hidden = on && (3...4).contains(step)
+            let aimed = step != 0
             Stage {
                 ArtWindow {
                     VStack(alignment: .leading, spacing: 5) {
@@ -165,7 +164,6 @@ struct DockHideArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.55), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 

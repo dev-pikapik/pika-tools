@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Mais silencioso, mais leve e o Finder pronto na hora
+
+<sub>1.27.1 · 9 de outubro de 2026</sub>
+
+Os Ajustes quase não pesam no seu Mac, e os itens do clique direito no Finder funcionam logo depois da mudança para pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+As pequenas imagens animadas dos Ajustes redesenhavam a página inteira muitas vezes por segundo, então uma janela aberta deixava o Mac ocupado. Agora cada imagem redesenha só a si mesma, no máximo 30 vezes por segundo, e descansa quando você rola para longe dela ou oculta a janela. Elas continuam iguaizinhas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Depois da mudança de pika-tools para pikapik, o Finder podia continuar procurando o app antigo, e “Novo arquivo”, “Converter para” e os outros itens do clique direito não faziam nada. Agora o pikapik percebe isso na primeira abertura e reinicia o Finder sozinho quando não há janelas do Finder abertas e nada está sendo copiado. Se não, uma linha curta na página Finder oferece o botão “Reiniciar o Finder”.
+
+Nos Ajustes do Sistema, entre os apps que abrem no início da sessão, o app agora aparece com o novo nome, pikapik, e continua ativado.
+
+**Experimente:** Ajustes › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Conheça seu bichinho de mesa
 
 <sub>1.27.0 · 9 de outubro de 2026</sub>

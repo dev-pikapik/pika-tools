@@ -301,27 +301,8 @@ private struct ChipFlow: Layout {
 }
 
 struct LeftoversArt: View {
-    @State private var visible = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    var body: some View {
-        IllustrationRow {
-            LeftoversLayers(moving: visible && !reduceMotion)
-                .frame(width: Art.stage.width, height: Art.stage.height)
-        }
-        .settingsVisibility($visible)
-    }
-}
-
-private struct LeftoversLayers: NSViewRepresentable {
-    let moving: Bool
-
-    func makeNSView(context: Context) -> LeftoversView { LeftoversView() }
-
-    func updateNSView(_ view: LeftoversView, context: Context) { view.moving = moving }
-}
-
-private final class LeftoversView: NSView {
     private static let center = CGPoint(x: 150, y: 64)
     private static let chips: [(symbol: String, color: Color, at: CGPoint)] = [
         ("camera.fill", .blue, CGPoint(x: 84, y: 38)),
@@ -329,103 +310,37 @@ private final class LeftoversView: NSView {
         ("accessibility", .indigo, CGPoint(x: 216, y: 36)),
         ("rectangle.dashed.badge.record", .pink, CGPoint(x: 228, y: 86)),
     ]
-    private static let cycle = 3.8
-    private static let frames: [(time: Double, clean: Double)] = {
-        let spring = Spring(duration: 0.6, bounce: 0.15)
-        let steps = (0...24).map { Double($0) * 0.025 }
-        return [(0, 0)]
-            + steps.map { (1.6 + $0, spring.value(target: 1.0, time: $0)) }
-            + steps.map { (3.2 + $0, 1 - spring.value(target: 1.0, time: $0)) }
-    }()
 
-    private let tile = CALayer()
-    private let dash = CALayer()
-    private let check = CALayer()
-    private let chipLayers = LeftoversView.chips.map { _ in CALayer() }
-
-    var moving = false {
-        didSet { if moving != oldValue { animate() } }
-    }
-
-    override init(frame: NSRect) {
-        super.init(frame: frame)
-        wantsLayer = true
-        for sprite in [tile, dash] + chipLayers + [check] { layer?.addSublayer(sprite) }
-    }
-
-    required init?(coder: NSCoder) { nil }
-
-    override func viewDidMoveToWindow() {
-        paint()
-        animate()
-    }
-
-    override func viewDidChangeEffectiveAppearance() { paint() }
-
-    override func viewDidChangeBackingProperties() { paint() }
-
-    private func paint() {
-        let scheme: ColorScheme = effectiveAppearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua ? .dark : .light
-        let scale = window?.backingScaleFactor ?? 2
-        let shape = RoundedRectangle(cornerRadius: 17, style: .continuous)
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        draw(tile, shape.fill(Color.primary.opacity(0.04)), side: 72, at: Self.center, scheme: scheme, scale: scale)
-        draw(dash, shape.strokeBorder(Color.secondary.opacity(0.6), style: StrokeStyle(lineWidth: 1.5, dash: [5, 4])), side: 72, at: Self.center, scheme: scheme, scale: scale)
-        for (chip, sprite) in zip(Self.chips, chipLayers) {
-            let view = Image(systemName: chip.symbol)
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(width: 32, height: 32)
-                .background(chip.color.gradient, in: Circle())
-                .shadow(color: .black.opacity(0.15), radius: 2, y: 1)
-            draw(sprite, view, side: 44, at: chip.at, scheme: scheme, scale: scale)
+    var body: some View {
+        IllustrationRow(loop: [2.2, 1.6]) { tick in
+            let clean = !reduceMotion && tick % 2 == 1
+            let tile = RoundedRectangle(cornerRadius: 17, style: .continuous)
+            Stage {
+                tile
+                    .strokeBorder(Color.secondary.opacity(clean ? 0.2 : 0.6), style: StrokeStyle(lineWidth: 1.5, dash: [5, 4]))
+                    .background(tile.fill(Color.primary.opacity(0.04)))
+                    .frame(width: 72, height: 72)
+                    .position(Self.center)
+                ForEach(Self.chips.indices, id: \.self) { index in
+                    let chip = Self.chips[index]
+                    Image(systemName: chip.symbol)
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 32, height: 32)
+                        .background(chip.color.gradient, in: Circle())
+                        .shadow(color: .black.opacity(0.15), radius: 2, y: 1)
+                        .scaleEffect(clean ? 0.2 : 1)
+                        .opacity(clean ? 0 : 1)
+                        .position(clean ? Self.center : chip.at)
+                }
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 34))
+                    .foregroundStyle(.white, Art.green)
+                    .scaleEffect(clean ? 1 : 0.4)
+                    .opacity(clean ? 1 : 0)
+                    .position(Self.center)
+            }
+            .spring(clean, reduceMotion: reduceMotion)
         }
-        draw(check, Image(systemName: "checkmark.circle.fill").font(.system(size: 34)).foregroundStyle(.white, Art.green), side: 48, at: Self.center, scheme: scheme, scale: scale)
-        check.opacity = 0
-        check.setAffineTransform(CGAffineTransform(scaleX: 0.4, y: 0.4))
-        CATransaction.commit()
-    }
-
-    private func draw(_ sprite: CALayer, _ view: some View, side: CGFloat, at point: CGPoint, scheme: ColorScheme, scale: CGFloat) {
-        let renderer = ImageRenderer(content: view.frame(width: side, height: side).environment(\.colorScheme, scheme))
-        renderer.scale = scale
-        sprite.contents = renderer.cgImage
-        sprite.contentsScale = scale
-        sprite.bounds = CGRect(x: 0, y: 0, width: side, height: side)
-        sprite.position = Self.flip(point)
-    }
-
-    private func animate() {
-        for sprite in [dash, check] + chipLayers { sprite.removeAnimation(forKey: "loop") }
-        guard moving, window != nil else { return }
-        loop(dash, track("opacity") { 1 - $0 * 2 / 3 })
-        loop(check, track("transform.scale") { 0.4 + 0.6 * $0 }, track("opacity") { min(max($0, 0), 1) })
-        for (chip, sprite) in zip(Self.chips, chipLayers) {
-            let from = Self.flip(chip.at), to = Self.flip(Self.center)
-            loop(sprite,
-                 track("position") { NSValue(point: CGPoint(x: from.x + (to.x - from.x) * $0, y: from.y + (to.y - from.y) * $0)) },
-                 track("transform.scale") { 1 - 0.8 * $0 },
-                 track("opacity") { max(1 - $0, 0) })
-        }
-    }
-
-    private func track(_ keyPath: String, _ value: (Double) -> Any) -> CAKeyframeAnimation {
-        let animation = CAKeyframeAnimation(keyPath: keyPath)
-        animation.keyTimes = Self.frames.map { NSNumber(value: $0.time / Self.cycle) }
-        animation.values = Self.frames.map { value($0.clean) }
-        return animation
-    }
-
-    private func loop(_ sprite: CALayer, _ tracks: CAKeyframeAnimation...) {
-        let group = CAAnimationGroup()
-        group.animations = tracks
-        group.duration = Self.cycle
-        group.repeatCount = .infinity
-        sprite.add(group, forKey: "loop")
-    }
-
-    private static func flip(_ point: CGPoint) -> CGPoint {
-        CGPoint(x: point.x, y: Art.stage.height - point.y)
     }
 }

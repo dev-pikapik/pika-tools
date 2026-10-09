@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Leiser, leichter, und der Finder ist sofort bereit
+
+<sub>1.27.1 · 9. Oktober 2026</sub>
+
+Die Einstellungen belasten deinen Mac kaum noch, und die Rechtsklick-Befehle im Finder funktionieren gleich nach dem Umzug zu pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Die kleinen bewegten Bilder in den Einstellungen haben früher die ganze Seite viele Male pro Sekunde neu gezeichnet, ein offenes Fenster hielt deinen Mac also beschäftigt. Jetzt zeichnet jedes Bild nur sich selbst neu, höchstens 30-mal pro Sekunde, und ruht, wenn du daran vorbeiscrollst oder das Fenster ausblendest. Sie sehen genauso aus wie vorher.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Nach dem Umzug von pika-tools zu pikapik konnte der Finder weiter nach der alten App suchen, und „Neue Datei“, „Umwandeln in“ und die anderen Rechtsklick-Befehle taten nichts. pikapik bemerkt das jetzt beim ersten Start und startet den Finder selbst neu, wenn keine Finder-Fenster offen sind und nichts kopiert wird. Sonst bietet eine kurze Zeile auf der Finder-Seite die Taste „Finder neu starten“ an.
+
+In den Systemeinstellungen, bei den Apps, die beim Anmelden öffnen, steht jetzt der neue Name pikapik, und die App bleibt eingeschaltet.
+
+**Ausprobieren:** Einstellungen › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Darf ich vorstellen: dein Haustier auf dem Schreibtisch
 
 <sub>1.27.0 · 9. Oktober 2026</sub>

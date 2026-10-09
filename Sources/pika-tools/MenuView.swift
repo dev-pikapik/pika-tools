@@ -129,6 +129,21 @@ struct MenuView: View {
                         .buttonStyle(.plain)
                         .padding(.horizontal, 4)
                     }
+
+                    if FinderRestart.shared.isNeeded {
+                        Button {
+                            FinderRestart.shared.restart()
+                        } label: {
+                            Label("Restart Finder", systemImage: "arrow.clockwise")
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.horizontal, 4)
+                        .help(Text("Restart Finder once to bring back the right-click items"))
+                    }
                 }
                 .background(GeometryReader { geo in
                     Color.clear.onChange(of: geo.size.height, initial: true) { contentHeight = geo.size.height }

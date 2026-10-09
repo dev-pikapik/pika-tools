@@ -215,7 +215,6 @@ private func windowZoomCallback(
 
 struct WindowZoomArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.0, 1.15, 0.15, 1.4, 1.1, 0.15, 1.0]
@@ -229,11 +228,11 @@ struct WindowZoomArt: View {
     }
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let big = on ? Self.zoomed : Self.fullScreen
-        let frame = (3...5).contains(step) ? big : Self.small
-        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 3 : tick % Self.durations.count
+            let big = on ? Self.zoomed : Self.fullScreen
+            let frame = (3...5).contains(step) ? big : Self.small
+            let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
             Stage {
                 ZStack {
                     LinearGradient(colors: [Color.accentColor.opacity(0.4), Color.accentColor.opacity(0.18)], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -273,7 +272,6 @@ struct WindowZoomArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 
