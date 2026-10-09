@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Dein Haustier läuft über alle Bildschirme
+
+<sub>1.29.1 · 9. Oktober 2026</sub>
+
+Mehr als ein Monitor? Dein Haustier und sein Ball sind jetzt überall, wo du hinschaust, und gehen nie verloren.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Am Rand eines Bildschirms geht dein Haustier einfach auf den nächsten weiter, und der Ball rollt hinterher. Du kannst das Haustier oder den Ball auch mit der Maus auf jeden Bildschirm tragen. Geht eine App in den Vollbildmodus, wechseln beide auf einen anderen Bildschirm, damit sie nicht stören. Und wenn du einen Monitor absteckst, kommen sie zum Hauptbildschirm zurück.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Der Ball bleibt nicht mehr in einer Ecke hängen. Dein Haustier läuft hin, schaufelt ihn über den Kopf zurück und spielt weiter.
+
+Und dein Haustier verschwindet nicht mehr. Alle zwei Sekunden prüft es, ob es noch auf dem Bildschirm ist. Lief etwas schief, nach dem Ruhezustand, dem Sperren des Mac, einem Schreibtischwechsel oder dem Vollbildmodus, kommt es von selbst sofort zurück.
+
+**Ausprobieren:** Trag dein Haustier auf einen anderen Bildschirm oder roll den Ball in eine Ecke.
+
+**Behoben**
+
+- Ein geworfenes Haustier landet nicht mehr auf einem Auswahlrahmen, der höher ist, als es springen kann, und verschwindet dadurch nicht mehr.
+
+---
+
 ## <a id="v1.29.0"></a>Dein Haustier hat einen Ball
 
 <sub>1.29.0 · 9. Oktober 2026</sub>

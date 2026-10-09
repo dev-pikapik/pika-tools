@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Ditt husdjur promenerar över alla skärmar
+
+<sub>1.29.1 · 9 oktober 2026</sub>
+
+Har du mer än en skärm? Ditt husdjur och dess boll följer nu med dit du tittar, och kommer aldrig bort.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+När husdjuret kommer till kanten av en skärm går det helt enkelt över till nästa, och bollen rullar efter. Du kan också ta husdjuret eller bollen med musen och bära dem till vilken skärm som helst. Om en app går till helskärm flyttar de till en annan skärm så att de inte är i vägen, och om du kopplar ur en skärm kommer de tillbaka till huvudskärmen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bollen fastnar inte längre i ett hörn. Husdjuret springer dit, skyfflar den bakåt över huvudet och fortsätter leka.
+
+Och husdjuret försvinner inte längre. Varannan sekund kollar det att det fortfarande syns, och om något gick fel, efter vila, när Macen låstes, vid byte av skrivbord eller helskärm, kommer det genast tillbaka av sig självt.
+
+**Prova:** Bär husdjuret till en annan skärm, eller rulla bollen in i ett hörn.
+
+**Åtgärdat**
+
+- Ett kastat husdjur landar inte längre på en markeringsruta som ligger högre än det kan hoppa, och försvinner inte längre på grund av det.
+
+---
+
 ## <a id="v1.29.0"></a>Ditt husdjur har fått en boll
 
 <sub>1.29.0 · 9 oktober 2026</sub>

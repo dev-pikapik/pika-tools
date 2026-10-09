@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Animăluțul se plimbă pe toate ecranele
+
+<sub>1.29.1 · 9 octombrie 2026</sub>
+
+Ai mai mult de un monitor? Animăluțul și mingea lui merg acum oriunde te uiți și nu se mai pierd niciodată.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Când ajunge la marginea unui ecran, animăluțul trece pur și simplu pe următorul, iar mingea se rostogolește după el. Poți și să iei animăluțul sau mingea cu mouse-ul și să le duci pe orice ecran. Dacă o aplicație trece pe ecran complet, se mută pe alt ecran ca să nu încurce, iar dacă deconectezi un monitor, se întorc pe cel principal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Mingea nu mai rămâne blocată într-un colț. Animăluțul aleargă la ea, o aruncă înapoi peste cap și se joacă mai departe.
+
+Și animăluțul nu mai dispare. La fiecare două secunde verifică dacă e încă pe ecran, iar dacă ceva n-a mers, după repaus, blocarea Mac-ului, schimbarea biroului sau ecranul complet, se întoarce singur imediat.
+
+**Încearcă:** Du animăluțul pe alt ecran sau rostogolește mingea într-un colț.
+
+**Reparat**
+
+- Un animăluț aruncat nu mai aterizează pe un chenar de selecție mai înalt decât poate sări și nu mai dispare din cauza asta.
+
+---
+
 ## <a id="v1.29.0"></a>Animăluțul tău are o minge
 
 <sub>1.29.0 · 9 octombrie 2026</sub>

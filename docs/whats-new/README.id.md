@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Peliharaanmu jalan-jalan di semua layar
+
+<sub>1.29.1 · 9 Oktober 2026</sub>
+
+Punya lebih dari satu monitor? Peliharaanmu dan bolanya kini ikut ke mana pun kamu melihat, dan tak pernah hilang.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Saat sampai di tepi satu layar, peliharaanmu langsung pindah ke layar berikutnya, dan bolanya menggelinding mengikuti. Kamu juga bisa mengangkat peliharaan atau bola dengan mouse dan membawanya ke layar mana pun. Kalau sebuah app masuk layar penuh, mereka pindah ke layar lain supaya tidak mengganggu, dan kalau monitor dicabut, mereka kembali ke layar utama.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bola tak lagi tersangkut di sudut. Peliharaanmu berlari ke sana, mencungkilnya ke belakang lewat atas kepala, lalu terus bermain.
+
+Dan peliharaanmu tak lagi menghilang. Setiap dua detik ia memeriksa apakah masih di layar, dan kalau ada yang salah, setelah tidur, Mac dikunci, ganti desktop, atau layar penuh, ia langsung kembali sendiri.
+
+**Coba:** Bawa peliharaanmu ke layar lain, atau gelindingkan bola ke sudut.
+
+**Diperbaiki**
+
+- Peliharaan yang dilempar tak lagi mendarat di kotak pilihan yang lebih tinggi dari lompatannya, dan tak lagi menghilang karenanya.
+
+---
+
 ## <a id="v1.29.0"></a>Peliharaanmu punya bola
 
 <sub>1.29.0 · 9 Oktober 2026</sub>

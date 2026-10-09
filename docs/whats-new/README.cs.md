@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Mazlíček se prochází po všech obrazovkách
+
+<sub>1.29.1 · 9. října 2026</sub>
+
+Máte víc než jeden monitor? Mazlíček a jeho míč teď chodí všude, kam se podíváte, a nikdy se neztratí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Když mazlíček dojde na okraj jedné obrazovky, prostě přejde na vedlejší a míč se kutálí za ním. Mazlíčka nebo míč můžete také vzít myší a přenést na kteroukoli obrazovku. Když se aplikace přepne na celou obrazovku, přesunou se na jinou obrazovku, aby nepřekážely, a když odpojíte monitor, vrátí se na hlavní.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Míč už neuvízne v rohu. Mazlíček k němu doběhne, nabere ho dozadu přes hlavu a hraje si dál.
+
+A mazlíček už nemizí. Každé dvě sekundy si ověří, že je na obrazovce, a když se něco pokazí, po spánku, zamknutí Macu, přepnutí plochy nebo celé obrazovce, hned se sám vrátí.
+
+**Vyzkoušejte:** Přeneste mazlíčka na jinou obrazovku nebo dokutálejte míč do rohu.
+
+**Opraveno**
+
+- Hozený mazlíček už nepřistane na výběrovém rámečku, který je výš, než dokáže doskočit, a kvůli tomu nezmizí.
+
+---
+
 ## <a id="v1.29.0"></a>Mazlíček dostal míč
 
 <sub>1.29.0 · 9. října 2026</sub>

@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>宠物能在所有屏幕上散步了
+
+<sub>1.29.1 · 2026年10月9日</sub>
+
+有不止一台显示器？现在宠物和足球会去你看的每一块屏幕，而且再也不会走丢。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+走到一块屏幕的边缘时，宠物会直接走到旁边的屏幕上，足球也会跟着滚过去。你也可以用鼠标拿起宠物或足球，把它们带到任意屏幕。某个应用进入全屏时，它们会移到另一块屏幕，免得挡路；拔掉显示器时，它们会回到主屏幕。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+足球不会再卡在角落里了。宠物会跑过去，把球从头顶往后一挑，接着玩。
+
+宠物也不会再消失了。它每两秒检查一次自己是否还在屏幕上，如果睡眠、锁定 Mac、切换桌面或全屏之后出了问题，它会马上自己回来。
+
+**试试看：** 把宠物带到另一块屏幕，或者把足球滚到角落里。
+
+**修复**
+
+- 被扔出去的宠物不会再落到它够不着的高处选择框上，也不会因此消失。
+
+---
+
 ## <a id="v1.29.0"></a>宠物有了一个足球
 
 <sub>1.29.0 · 2026年10月9日</sub>

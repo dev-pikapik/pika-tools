@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Zwierzak spaceruje po wszystkich ekranach
+
+<sub>1.29.1 · 9 października 2026</sub>
+
+Masz więcej niż jeden monitor? Zwierzak i jego piłka są teraz wszędzie, gdzie spojrzysz, i nigdy się nie gubią.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Gdy zwierzak dojdzie do krawędzi ekranu, po prostu przechodzi na sąsiedni, a piłka toczy się za nim. Możesz też wziąć zwierzaka albo piłkę myszą i przenieść na dowolny ekran. Gdy aplikacja przejdzie na pełny ekran, przenoszą się na inny ekran, żeby nie przeszkadzać, a gdy odłączysz monitor, wracają na główny.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Piłka już nie utyka w rogu. Zwierzak podbiega, podrzuca ją do tyłu nad głową i bawi się dalej.
+
+I zwierzak już nie znika. Co dwie sekundy sprawdza, czy jest na ekranie, a jeśli coś poszło nie tak, po uśpieniu, zablokowaniu Maca, zmianie biurka albo pełnym ekranie, sam od razu wraca.
+
+**Wypróbuj:** Przenieś zwierzaka na inny ekran albo wtocz piłkę do rogu.
+
+**Poprawki**
+
+- Rzucony zwierzak nie ląduje już na ramce zaznaczenia, która jest wyżej, niż może skoczyć, i przez to nie znika.
+
+---
+
 ## <a id="v1.29.0"></a>Twój zwierzak ma piłkę
 
 <sub>1.29.0 · 9 października 2026</sub>

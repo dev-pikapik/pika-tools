@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Your pet walks across all your screens
+
+<sub>1.29.1 · October 9, 2026</sub>
+
+Got more than one monitor? Your pet and its ball now go wherever you look, and they never get lost.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+When your pet reaches the edge of one screen, it simply steps over to the next one, and the ball rolls after it. You can also pick up the pet or the ball and carry it to any screen. If an app goes full screen, they move to another screen so they don’t get in the way, and if you unplug a monitor, they come back to the main one.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+The ball no longer gets stuck in a corner. Your pet runs up, scoops it back over its head and keeps playing.
+
+And your pet never vanishes anymore. Every two seconds it checks that it’s still on screen, and if something went wrong, after sleep, locking the Mac, switching desktops or full screen, it comes right back on its own.
+
+**Try it:** Carry your pet to another screen, or roll the ball into a corner.
+
+**Fixed**
+
+- A thrown pet no longer lands on a selection box that sits higher than it can reach, and no longer disappears because of it.
+
+---
+
 ## <a id="v1.29.0"></a>Your pet has a ball
 
 <sub>1.29.0 · October 9, 2026</sub>

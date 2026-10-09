@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.29.1"></a>Tu mascota pasea por todas tus pantallas
+
+<sub>1.29.1 · 9 de octubre de 2026</sub>
+
+¿Tienes más de un monitor? Tu mascota y su pelota ya van a donde mires, y nunca se pierden.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Cuando tu mascota llega al borde de una pantalla, pasa sin más a la siguiente, y la pelota rueda detrás. También puedes coger la mascota o la pelota con el ratón y llevarlas a cualquier pantalla. Si una app pasa a pantalla completa, se van a otra pantalla para no molestar, y si desconectas un monitor, vuelven a la principal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La pelota ya no se queda atascada en una esquina. Tu mascota corre hacia ella, la lanza hacia atrás por encima de la cabeza y sigue jugando.
+
+Y tu mascota ya no desaparece. Cada dos segundos comprueba que sigue en pantalla, y si algo salió mal, tras el reposo, al bloquear el Mac, al cambiar de escritorio o con la pantalla completa, vuelve sola enseguida.
+
+**Pruébalo:** Lleva tu mascota a otra pantalla o haz rodar la pelota hasta una esquina.
+
+**Corregido**
+
+- Una mascota lanzada ya no aterriza en un recuadro de selección más alto de lo que puede saltar, y ya no desaparece por eso.
+
+---
+
 ## <a id="v1.29.0"></a>Tu mascota tiene una pelota
 
 <sub>1.29.0 · 9 de octubre de 2026</sub>
