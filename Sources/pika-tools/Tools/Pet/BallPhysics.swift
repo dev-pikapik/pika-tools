@@ -25,6 +25,7 @@ struct BallPhysics {
     private(set) var previous = CGRect.null
     var roof = CGFloat.infinity
     var ledge: CGRect?
+    var dock: CGRect?
     private var cursor: CGRect?
     private var trail = Trail()
     private var age = 0.0
@@ -124,6 +125,7 @@ struct BallPhysics {
             impact = max(impact, hypot(push.0, push.1))
         }
         if let ledge { collide(ledge) }
+        if !thrown, let dock { collide(CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: max(bounds.maxY - dock.maxY, 0) + 2 * Self.radius)) }
         let top = thrown ? bounds.maxY : min(bounds.maxY, roof)
         if center.y + Self.radius > top {
             center.y = top - Self.radius
@@ -202,7 +204,12 @@ struct BallPhysics {
         spin += 1.5 * dt / Self.radius
         guard n.1 > 0.7 else { return }
         supported = true
-        if thrown, center.y + Self.radius + vy * vy / (2 * PetPhysics.gravity) <= min(bounds.maxY, roof) { thrown = false }
+        if thrown, center.y + Self.radius + vy * vy / (2 * PetPhysics.gravity) <= ceiling { thrown = false }
+    }
+
+    private var ceiling: CGFloat {
+        guard let dock, frame.minX < dock.maxX, frame.maxX > dock.minX else { return min(bounds.maxY, roof) }
+        return min(bounds.maxY, roof, dock.maxY)
     }
 
     private mutating func hang(_ point: CGPoint) {
