@@ -276,7 +276,7 @@ struct PetPhysics {
             origin.y = bounds.maxY - Self.size.height
             vy = min(vy, 0)
         }
-        if let ledge, strike(ledge, from: a0) { return land() }
+        if let ledge, ledge.maxY + Self.size.height <= roof, strike(ledge, from: a0) { return land() }
         if state != .thrown, let cap { strike(cap, from: a0) }
         guard origin.y <= bounds.minY else { return }
         origin.y = bounds.minY
@@ -310,7 +310,7 @@ struct PetPhysics {
         switch state {
         case .thrown where !calm && impact >= 640:
             vx = facing * 60
-            vy = 160
+            vy = min(160, (2 * Self.gravity * headroom(to: origin.x)).squareRoot())
             enter(.tumble)
         case .jump, .thrown:
             landed = 0
