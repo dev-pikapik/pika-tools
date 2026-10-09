@@ -497,16 +497,29 @@ enum TestPet {
             states = trace(&pet, 1)
             precondition(states.last == .walk)
         }
-        pet = PetPhysics(bounds: room, x: 1300, facing: 1)
-        ball = BallPhysics(bounds: room, x: room.maxX - BallPhysics.radius)
-        var kicks = 0
-        for _ in 0..<300 {
-            let before = pet.frame
-            pet.step(1.0 / 30, cursor: nil)
-            if pet.kick(&ball) { kicks += 1 }
-            ball.step(1.0 / 30, cursor: nil, body: (before, pet.frame))
+        for (wall, facing) in [(room.maxX - BallPhysics.radius, CGFloat(1)), (room.minX + BallPhysics.radius, -1)] {
+            for calm in [false, true] { for inset in [CGFloat(0), 3, 6, 12, 24, 40, 60, 90, 120, 160, 240] {
+                let x = wall - facing * inset
+                pet = PetPhysics(bounds: room, x: x - facing * 200, facing: facing)
+                pet.calm = calm
+                ball = BallPhysics(bounds: room, x: x)
+                var kicks = 0, freed = false, chase = 0.0
+                for i in 0..<1800 {
+                    let before = pet.frame
+                    pet.step(1.0 / 30, cursor: nil)
+                    if pet.kick(&ball) { kicks += 1 }
+                    ball.step(1.0 / 30, cursor: nil, body: (before, pet.frame))
+                    if ball.impact > 700, pet.grounded || pet.state == .jump { pet.bump(ball.frame) }
+                    if Double(i) / 30 >= chase {
+                        pet.face(ball.center.x)
+                        chase = Double(i) / 30 + 6
+                    }
+                    if kicks > 0, abs(ball.center.x - wall) > max(inset, 60) + 100 { freed = true }
+                    precondition(inBall(ball) && inside(pet))
+                }
+                precondition(kicks >= 3 && freed, "ball stuck in the corner, calm \(calm), inset \(inset), kicks \(kicks) at \(ball.center)")
+            } }
         }
-        precondition(kicks == 0 && pet.facing == -1, "kicked a ball stuck at the wall")
         pet = PetPhysics(bounds: room, x: 700, facing: 1)
         precondition(pet.face(400) && pet.state == .turn && !pet.face(400))
         pet = PetPhysics(bounds: room, x: 700, facing: 1)
@@ -522,7 +535,7 @@ enum TestPet {
             precondition(!overlap(ball.frame.insetBy(dx: 0.5, dy: 0.5), pet.frame), "ball went through the pet")
         }
         precondition(hit > 300, "ball missed the pet: \(hit)")
-        print("pet kicks the ball, turns at a stuck one, the ball bounces off the pet: ok")
+        print("pet kicks the ball, scoops it out of a corner, the ball bounces off the pet: ok")
 
         ball = BallPhysics(bounds: room, x: 700)
         ball.step(1.0 / 30, cursor: CGPoint(x: 500, y: 20))
