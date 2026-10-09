@@ -405,14 +405,14 @@ final class PetStage: NSObject {
 
     private func pressed(_ point: CGPoint) {
         guard link?.isPaused == false, let screen = NSScreen.screens.first else { return press = nil }
+        if let pet = petScreen, let dock = physics.dock, dock.contains(CGPoint(x: point.x - pet.frame.minX, y: point.y - pet.frame.minY)) { return press = nil }
         let spot = CGPoint(x: point.x, y: screen.frame.maxY - point.y)
-        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []
-        let top = windows.first { info in
+        let windows = (CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []).compactMap { info -> (layer: Int, frame: CGRect)? in
             guard info[kCGWindowOwnerPID as String] as? pid_t != getpid(), info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
-                  let bounds = info[kCGWindowBounds as String] as? NSDictionary, let rect = CGRect(dictionaryRepresentation: bounds) else { return false }
-            return rect.contains(spot)
+                  let bounds = info[kCGWindowBounds as String] as? NSDictionary, let rect = CGRect(dictionaryRepresentation: bounds) else { return nil }
+            return (info[kCGWindowLayer as String] as? Int ?? 0, rect)
         }
-        press = top?[kCGWindowLayer as String] as? Int ?? -1 < 0 ? point : nil
+        press = PetPhysics.desktop(spot, windows, displays: NSScreen.screens.map { CGDisplayBounds(Self.id($0)) }) ? point : nil
     }
 
     private func place() {
