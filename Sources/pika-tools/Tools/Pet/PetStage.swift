@@ -264,7 +264,7 @@ final class PetStage: NSObject {
     private static func dock(_ screen: NSScreen) -> CGRect? {
         let top = screen.visibleFrame.minY - screen.frame.minY
         guard top > ground + PetPhysics.size.height else { return nil }
-        guard let tiles = tiles() else { return CGRect(x: 0, y: 0, width: screen.frame.width, height: top) }
+        guard let tiles = tiles() else { return nil }
         return CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top)
     }
 
