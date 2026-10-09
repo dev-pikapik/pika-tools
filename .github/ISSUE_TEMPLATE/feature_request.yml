@@ -13,8 +13,13 @@ body:
     id: idea
     attributes:
       label: How should it work?
-  - type: input
+  - type: dropdown
     id: macos
     attributes:
       label: macOS version
-      placeholder: macOS 15.5
+      options:
+        - macOS 27
+        - macOS 26 Tahoe
+        - macOS 15 Sequoia
+        - macOS 14 Sonoma
+        - Other

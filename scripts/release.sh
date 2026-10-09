@@ -8,6 +8,8 @@ VERSION="${1:-}"
 MISSING=$(grep -LF "id=\"v$VERSION\"" docs/whats-new/README*.md || true)
 [ -z "$MISSING" ] || { echo "Write the What’s new post for $VERSION first. It’s missing in:" >&2; echo "$MISSING" >&2; exit 1; }
 grep -qxF "## [$VERSION] - Unreleased" CHANGELOG.md || { echo "Add “## [$VERSION] - Unreleased” to CHANGELOG.md first." >&2; exit 1; }
+FORM=".github/ISSUE_TEMPLATE/bug_report.yml"
+grep -qxF "        - Latest version" "$FORM" || { echo "“- Latest version” is missing in $FORM." >&2; exit 1; }
 
 PLIST="Sources/pika-tools/Info.plist"
 BUILD=$(( $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST") + 1 ))
@@ -18,7 +20,9 @@ sed -i '' "s/^## \[${VERSION//./\\.}\] - Unreleased$/## [$VERSION] - $(date +%F)
 REF="[$VERSION]: https://github.com/dev-pikapik/pika-tools/releases/tag/v$VERSION"
 grep -qxF "$REF" CHANGELOG.md || { awk -v ref="$REF" '!done && /^\[[0-9]/ { print ref; done = 1 } 1' CHANGELOG.md > CHANGELOG.md.new && mv CHANGELOG.md.new CHANGELOG.md; }
 
-git add "$PLIST" CHANGELOG.md
+grep -qxF "        - \"$VERSION\"" "$FORM" || { awk -v v="        - \"$VERSION\"" '{ print } $0 == "        - Latest version" { print v }' "$FORM" > "$FORM.new" && mv "$FORM.new" "$FORM"; }
+
+git add "$PLIST" CHANGELOG.md "$FORM"
 git commit -q -m "Version $VERSION"
 git tag "v$VERSION"
 git push -q origin HEAD "v$VERSION"
