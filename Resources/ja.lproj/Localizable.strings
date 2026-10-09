@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "ポインタを行く手に置くと、飛び越えます";
 "Talks sometimes" = "ときどきおしゃべり";
 "Every now and then it sits down for a chat and tells you when an update is out" = "ときどき座っておしゃべりし、アップデートが出たら教えてくれます";
+"Ball" = "ボール";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "画面の下の端をボールが転がります。ペットが蹴って遊び、あなたもポインタで蹴ったり、つまんで投げたりできます";
+"toy, football, soccer, kick, play, throw, selection, platform" = "おもちゃ, サッカー, 蹴る, 遊ぶ, 投げる, 選択範囲, 足場";
 "To make it jump when you press Space, allow Input Monitoring" = "スペースでジャンプさせるには、入力監視を許可してください";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "ペット, 相棒, 友だち, キャラクター, マスコット, デスクトップ, ジャンプ, スペース";
 "phrases, speech bubble, talk, say, messages, updates" = "セリフ, 吹き出し, 話す, しゃべる, メッセージ, アップデート";

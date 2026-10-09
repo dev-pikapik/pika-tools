@@ -157,6 +157,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "Your games")),
             SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),
             SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: "phrases, speech bubble, talk, say, messages, updates"),
+            SettingsItem(tab: .pet, title: String(localized: "Ball"), synonyms: "toy, football, soccer, kick, play, throw, selection, platform"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),

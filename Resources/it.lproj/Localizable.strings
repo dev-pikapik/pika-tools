@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Mettigli il puntatore davanti e ci salta sopra";
 "Talks sometimes" = "Ogni tanto parla";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Ogni tanto si siede a fare due chiacchiere e ti avvisa quando esce un aggiornamento";
+"Ball" = "Palla";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "Una palla rotola lungo il bordo inferiore dello schermo. Il tuo animaletto la calcia, e tu puoi colpirla con il puntatore o prenderla e lanciarla";
+"toy, football, soccer, kick, play, throw, selection, platform" = "giocattolo, calcio, pallone, calciare, giocare, lanciare, selezione, piattaforma";
 "To make it jump when you press Space, allow Input Monitoring" = "Per farlo saltare con Spazio, consenti il Monitoraggio input";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "animaletto, amico, compagno, personaggio, mascotte, scrivania, salto, Spazio";
 "phrases, speech bubble, talk, say, messages, updates" = "frasi, fumetto, parlare, dire, messaggi, aggiornamenti";

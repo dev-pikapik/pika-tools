@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Поставте курсор йому на шляху — він його перестрибне";
 "Talks sometimes" = "Іноді балакає";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Час від часу сідає побалакати й розповідає, коли вийшло оновлення";
+"Ball" = "М’яч";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "Нижнім краєм екрана котиться м’яч. Улюбленець його копає, а ви можете штовхнути його курсором або взяти й кинути";
+"toy, football, soccer, kick, play, throw, selection, platform" = "іграшка, футбол, копати, грати, кинути, виділення, платформа";
 "To make it jump when you press Space, allow Input Monitoring" = "Щоб він стрибав від пробілу, дозвольте моніторинг вводу";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "улюбленець, друг, друзяка, персонаж, талісман, робочий стіл, стрибок, пробіл";
 "phrases, speech bubble, talk, say, messages, updates" = "фрази, хмаринка, говорити, балакати, повідомлення, оновлення";

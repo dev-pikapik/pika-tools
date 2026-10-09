@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Put the pointer in its way and it jumps over it";
 "Talks sometimes" = "Talks sometimes";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Every now and then it sits down for a chat and tells you when an update is out";
+"Ball" = "Ball";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it";
+"toy, football, soccer, kick, play, throw, selection, platform" = "toy, football, soccer, kick, play, throw, selection, platform";
 "To make it jump when you press Space, allow Input Monitoring" = "To make it jump when you press Space, allow Input Monitoring";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "pet, buddy, friend, character, mascot, desktop, jump, Space";
 "phrases, speech bubble, talk, say, messages, updates" = "phrases, speech bubble, talk, say, messages, updates";

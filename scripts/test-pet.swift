@@ -297,5 +297,176 @@ enum TestPet {
             precondition(!pet.grounded || pet.origin.y == room.minY, "hovering at step \(i): \(pet.frame)")
         }
         print("jumps stay below the roof: ok")
+
+        let floor = CGRect(x: 0, y: 4, width: 1400, height: 860)
+        let step = CGRect(x: 600, y: 0, width: 200, height: 34)
+        for x in [CGFloat(300), 1100] {
+            pet = PetPhysics(bounds: floor, x: x, facing: x < 700 ? 1 : -1)
+            pet.ledge = step
+            var climbed = false
+            trace(&pet, 20, check: { p, _ in
+                precondition(!overlap(p.frame, step.insetBy(dx: 0.5, dy: 0.5)), "walked into the ledge: \(p.frame)")
+                if p.grounded, p.origin.y == step.maxY { climbed = true }
+            })
+            precondition(climbed, "never climbed from \(x)")
+            while pet.origin.y != step.maxY || !pet.grounded { pet.step(1.0 / 30, cursor: nil) }
+            pet.ledge = nil
+            states = trace(&pet, 2)
+            precondition(states.contains(.jump) && pet.grounded && pet.origin.y == floor.minY, "\(states)")
+        }
+        pet = PetPhysics(bounds: floor, x: 300, facing: 1)
+        let wall = CGRect(x: 600, y: 0, width: 60, height: 400)
+        pet.ledge = wall
+        trace(&pet, 20, check: { p, _ in precondition(!overlap(p.frame, wall.insetBy(dx: 0.5, dy: 0.5)) && p.origin.x < 600) })
+        pet = PetPhysics(bounds: floor, x: 300, facing: 1)
+        let shelf = CGRect(x: 500, y: 60, width: 300, height: 20)
+        pet.ledge = shelf
+        states = trace(&pet, 20)
+        precondition(states.allSatisfy { $0 == .walk || $0 == .turn } && pet.origin.y == floor.minY, "\(states)")
+        print("climbs a selection, walks under a high one, turns at a wall, falls when it goes: ok")
+
+        for i in 0..<40_000 {
+            if i % 2_000 == 0 {
+                pet = PetPhysics(bounds: floor, x: 20 + next() * 1360)
+                pet.roof = 60 + next() * 140
+            }
+            if next() < 0.01 { pet.ledge = next() < 0.3 ? nil : CGRect(x: next() * 1400, y: next() * 120, width: 4 + next() * 400, height: 4 + next() * 160) }
+            if next() < 0.03 { pet.jump() }
+            if pet.grounded, next() < 0.005 { pet.bump(pet.frame.offsetBy(dx: next() < 0.5 ? -20 : 20, dy: 0)) }
+            pet.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.5 ? nil : CGPoint(x: next() * 1400, y: next() * 120))
+            precondition(inside(pet), "left the screen at step \(i): \(pet.frame)")
+            precondition(pet.frame.maxY <= pet.roof + 1e-6 || pet.origin.y == floor.minY, "rose above the roof at step \(i): \(pet.frame) roof \(pet.roof)")
+        }
+        print("selections keep the pet on screen and below the roof: ok")
+
+        func inBall(_ ball: BallPhysics) -> Bool {
+            let f = ball.frame, b = ball.bounds
+            return f.minX >= b.minX - 1e-6 && f.maxX <= b.maxX + 1e-6 && f.minY >= b.minY - 1e-6 && f.maxY <= b.maxY + 1e-6
+        }
+        func settle(_ ball: inout BallPhysics, _ limit: Double, ledge: CGRect? = nil) {
+            var t = 0.0
+            while !ball.resting {
+                ball.step(1.0 / 30, cursor: nil)
+                t += 1.0 / 30
+                precondition(inBall(ball), "ball left the screen: \(ball.frame)")
+                precondition(ball.aloft || ball.frame.maxY <= ball.roof + 1e-6, "ball above the roof: \(ball.frame)")
+                precondition(t < limit, "ball never stopped: \(ball.center) v \(ball.vx), \(ball.vy)")
+            }
+        }
+
+        var ball = BallPhysics(bounds: screen, x: 300)
+        ball.kick(CGVector(dx: 0, dy: 600))
+        var peaks: [CGFloat] = [], rising = true
+        while peaks.count < 3 {
+            ball.step(1.0 / 240, cursor: nil)
+            if rising, ball.vy < 0 { peaks.append(ball.center.y) }
+            rising = ball.vy > 0
+        }
+        precondition(peaks[1] < peaks[0] && peaks[2] < peaks[1] && peaks[1] > peaks[0] * 0.3, "bounces \(peaks)")
+        settle(&ball, 10)
+        ball.kick(CGVector(dx: 300, dy: 0))
+        for _ in 0..<15 { ball.step(1.0 / 30, cursor: nil) }
+        precondition(ball.vx > 0 && ball.vx < 300 && abs(ball.spin + ball.vx / BallPhysics.radius) < 1e-6, "not rolling: \(ball.vx) \(ball.spin)")
+        settle(&ball, 15)
+        print("ball bounces lower each time, rolls and stops: ok")
+
+        ball = BallPhysics(bounds: room, x: 300)
+        var t = 0.0
+        while t < 0.4 {
+            t += 1.0 / 30
+            ball.step(1.0 / 30, cursor: CGPoint(x: 240 + 600 * t, y: 18))
+        }
+        precondition(ball.vx > 100 && ball.center.x > 300, "cursor did not kick: \(ball.vx)")
+        ball = BallPhysics(bounds: screen, x: 300)
+        for i in 0..<60 { ball.step(1.0 / 30, cursor: CGPoint(x: 280 + CGFloat(i), y: 16)) }
+        precondition(ball.center.x == 300 && ball.resting, "a slow pointer pushed the ball")
+        precondition(ball.grab(at: CGPoint(x: 300, y: 12)) && ball.held && ball.aloft)
+        print("a quick pointer kicks the ball, a slow one lets you pick it up: ok")
+
+        for _ in 0..<2_000 {
+            ball = BallPhysics(bounds: room, x: 20 + next() * 1360)
+            ball.roof = 60 + next() * 140
+            var point = CGPoint(x: ball.center.x, y: ball.center.y)
+            precondition(ball.grab(at: point))
+            let angle = next() * 2 * .pi, speed = next() * 3000
+            for _ in 0..<8 {
+                point.x += cos(angle) * speed / 60
+                point.y += sin(angle) * speed / 60
+                ball.step(1.0 / 60, cursor: point)
+                precondition(inBall(ball))
+            }
+            ball.release()
+            precondition(hypot(ball.vx, ball.vy) <= PetPhysics.fling + 1e-6 && !ball.held)
+            settle(&ball, 60)
+            precondition(!ball.aloft)
+        }
+        print("2 000 thrown balls stay on screen and come to rest: ok")
+
+        ball = BallPhysics(bounds: room, x: 700)
+        ball.roof = 90
+        for i in 0..<60_000 {
+            if next() < 0.003 { ball.kick(CGVector(dx: (next() - 0.5) * 3000, dy: next() * 1500)) }
+            if next() < 0.002 { ball.ledge = next() < 0.3 ? nil : CGRect(x: next() * 1400, y: next() * 80, width: 4 + next() * 400, height: 4 + next() * 120) }
+            let point = CGPoint(x: ball.center.x + (next() - 0.5) * 200, y: next() * 100)
+            ball.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.7 ? nil : point)
+            precondition(inBall(ball), "ball left the screen at step \(i): \(ball.frame)")
+            precondition(ball.frame.maxY <= 90 + 1e-6, "ball above the roof at step \(i): \(ball.frame)")
+        }
+        ball.ledge = nil
+        settle(&ball, 30)
+        print("60 000 random kicks keep the ball on screen and below the roof: ok")
+
+        ball = BallPhysics(bounds: room, x: 700)
+        ball.ledge = CGRect(x: 600, y: 0, width: 300, height: 40)
+        ball.step(1.0 / 30, cursor: nil)
+        settle(&ball, 5)
+        precondition(abs(ball.frame.minY - 40) < 0.5 && ball.floor == 40, "ball not on the selection: \(ball.frame)")
+        ball.ledge = nil
+        ball.step(1.0 / 30, cursor: nil)
+        settle(&ball, 5)
+        precondition(ball.frame.minY == room.minY)
+        print("ball rests on a selection and falls when it goes: ok")
+
+        for facing in [CGFloat(1), -1] {
+            pet = PetPhysics(bounds: room, x: 700, facing: facing)
+            ball = BallPhysics(bounds: room, x: 700 + facing * 120)
+            var kicked = false
+            for _ in 0..<300 {
+                let before = pet.frame
+                pet.step(1.0 / 30, cursor: nil)
+                if pet.kick(&ball) { kicked = true }
+                ball.step(1.0 / 30, cursor: nil, body: (before, pet.frame))
+                if kicked { break }
+            }
+            precondition(kicked && pet.state == .kick && ball.vx * facing > 100 && ball.vy > 0, "no kick facing \(facing)")
+            states = trace(&pet, 1)
+            precondition(states.last == .walk)
+        }
+        pet = PetPhysics(bounds: room, x: 1300, facing: 1)
+        ball = BallPhysics(bounds: room, x: room.maxX - BallPhysics.radius)
+        var kicks = 0
+        for _ in 0..<300 {
+            let before = pet.frame
+            pet.step(1.0 / 30, cursor: nil)
+            if pet.kick(&ball) { kicks += 1 }
+            ball.step(1.0 / 30, cursor: nil, body: (before, pet.frame))
+        }
+        precondition(kicks == 0 && pet.facing == -1, "kicked a ball stuck at the wall")
+        pet = PetPhysics(bounds: room, x: 700, facing: 1)
+        precondition(pet.face(400) && pet.state == .turn && !pet.face(400))
+        pet = PetPhysics(bounds: room, x: 700, facing: 1)
+        ball = BallPhysics(bounds: room, x: 400)
+        ball.kick(CGVector(dx: 900, dy: 0))
+        var hit: CGFloat = 0
+        for _ in 0..<30 {
+            let before = pet.frame
+            pet.step(1.0 / 30, cursor: nil)
+            ball.step(1.0 / 30, cursor: nil, body: (before, pet.frame))
+            if ball.impact > 0, hit == 0 { precondition(ball.vx < 0, "ball did not bounce off the pet") }
+            hit = max(hit, ball.impact)
+            precondition(!overlap(ball.frame.insetBy(dx: 0.5, dy: 0.5), pet.frame), "ball went through the pet")
+        }
+        precondition(hit > 300, "ball missed the pet: \(hit)")
+        print("pet kicks the ball, turns at a stuck one, the ball bounces off the pet: ok")
     }
 }

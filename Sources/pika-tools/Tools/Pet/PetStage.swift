@@ -11,14 +11,25 @@ final class PetStage: NSObject {
 
     private let launched = ProcessInfo.processInfo.systemUptime
     private var window: NSPanel?
+    private var field: NSPanel?
     private var bubble: NSPanel?
     private var link: CADisplayLink?
-    private let view = PetView()
+    private let view = FigureView(PetPose()) { pose, night, fill in
+        PetFigure.shadow(pose, fill: fill)
+        PetFigure.draw(pose, night: night, fill: fill)
+    }
+    private let ballView = FigureView(BallPose(), paint: BallFigure.draw)
     private let grip = PetHand()
-    private var raised = false
+    private let ballGrip = PetHand()
+    private var raised = false, tossed = false
     private var fake: CGPoint?
     private var anchor = CGPoint.zero
+    private var grabbed = 0.0
     private var physics = PetPhysics(bounds: CGRect(x: 0, y: ground, width: 600, height: height - ground))
+    private var ball = BallPhysics(bounds: CGRect(x: 0, y: ground, width: 600, height: height - ground), x: 300)
+    private var press: CGPoint?
+    private var monitor: Any?
+    private var chase = 0.0
     private var last: CFTimeInterval?
     private var observers: [(NotificationCenter, NSObjectProtocol)] = []
     private var asleep = false, locked = false, fullscreen = false
@@ -39,23 +50,9 @@ final class PetStage: NSObject {
 
     func start() {
         guard window == nil else { return }
-        let window = NSPanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
-        window.isOpaque = false
-        window.backgroundColor = .clear
-        window.hasShadow = false
-        window.hidesOnDeactivate = false
-        window.ignoresMouseEvents = true
-        window.isReleasedWhenClosed = false
-        window.isExcludedFromWindowsMenu = true
-        window.animationBehavior = .none
-        window.level = Self.level
-        window.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle]
-        window.contentView = PetHand()
-        window.contentView?.wantsLayer = true
-        window.contentView?.addSubview(view)
-        window.contentView?.addSubview(grip)
-        grip.addTrackingArea(NSTrackingArea(rect: .zero, options: [.cursorUpdate, .activeAlways, .inVisibleRect], owner: grip))
+        let window = Self.panel(view, grip), field = Self.panel(ballView, ballGrip)
         self.window = window
+        self.field = field
 
         let link = view.displayLink(target: self, selector: #selector(tick))
         link.preferredFrameRateRange = CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30)
@@ -66,6 +63,7 @@ final class PetStage: NSObject {
         let workspace = NSWorkspace.shared.notificationCenter, local = NotificationCenter.default, distributed = DistributedNotificationCenter.default()
         watch(local, NSApplication.didChangeScreenParametersNotification) { $0.layout() }
         watch(local, NSWindow.didChangeOcclusionStateNotification, window) { _ in }
+        watch(local, NSWindow.didChangeOcclusionStateNotification, field) { _ in }
         watch(workspace, NSWorkspace.screensDidSleepNotification) { $0.asleep = true }
         watch(workspace, NSWorkspace.screensDidWakeNotification) { $0.asleep = false }
         watch(workspace, NSWorkspace.sessionDidResignActiveNotification) { $0.locked = true }
@@ -77,27 +75,37 @@ final class PetStage: NSObject {
             watch(workspace, name) { stage in DispatchQueue.main.async { stage.checkFullscreen() } }
         }
 
+        monitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in self?.pressed(event.locationInWindow) }
+
         locked = (CGSessionCopyCurrentDictionary() as? [String: Any])?["CGSSessionScreenIsLocked"] as? Bool ?? false
         layout()
         let width = physics.bounds.width, roof = physics.roof
         physics = PetPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.12), facing: demo == nil && Bool.random() ? -1 : 1)
         physics.roof = roof
         physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
+        ball = BallPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.4))
+        ball.roof = roof
         checkFullscreen()
     }
 
     func stop() {
         raised = false
+        tossed = false
         link?.invalidate()
         link = nil
         recheck?.invalidate()
         recheck = nil
         observers.forEach { $0.0.removeObserver($0.1) }
         observers = []
+        if let monitor { NSEvent.removeMonitor(monitor) }
+        monitor = nil
+        press = nil
         hideBubble()
         bubble = nil
         window?.orderOut(nil)
         window = nil
+        field?.orderOut(nil)
+        field = nil
         last = nil
     }
 
@@ -107,20 +115,41 @@ final class PetStage: NSObject {
     }
 
     fileprivate func grab(at point: CGPoint) {
-        guard physics.grab(at: point) else { return }
+        guard physics.grab(at: point) || ball.grab(at: point) else { return }
         NSCursor.closedHand.set()
         rise()
         place()
     }
 
     fileprivate func drop() {
-        guard physics.state == .held else { return }
+        guard physics.state == .held || ball.held else { return }
         physics.release()
+        ball.release()
         NSCursor.arrow.set()
     }
 
     private static var level: NSWindow.Level {
         NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.desktopIconWindow)) + 1)
+    }
+
+    private static func panel(_ figure: NSView, _ hand: PetHand) -> NSPanel {
+        let panel = NSPanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
+        panel.isOpaque = false
+        panel.backgroundColor = .clear
+        panel.hasShadow = false
+        panel.hidesOnDeactivate = false
+        panel.ignoresMouseEvents = true
+        panel.isReleasedWhenClosed = false
+        panel.isExcludedFromWindowsMenu = true
+        panel.animationBehavior = .none
+        panel.level = level
+        panel.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle]
+        panel.contentView = PetHand()
+        panel.contentView?.wantsLayer = true
+        panel.contentView?.addSubview(figure)
+        panel.contentView?.addSubview(hand)
+        hand.addTrackingArea(NSTrackingArea(rect: .zero, options: [.cursorUpdate, .activeAlways, .inVisibleRect], owner: hand))
+        return panel
     }
 
     private func watch(_ center: NotificationCenter, _ name: Notification.Name, _ object: AnyObject? = nil, _ action: @escaping (PetStage) -> Void) {
@@ -133,37 +162,46 @@ final class PetStage: NSObject {
     }
 
     private func layout() {
-        guard let window, let screen = NSScreen.screens.first else { return }
-        let frame = raised ? screen.frame : CGRect(x: screen.frame.minX, y: screen.frame.minY, width: screen.frame.width, height: Self.height)
-        window.level = raised ? .statusBar : Self.level
-        window.setFrame(frame, display: false)
-        view.frame = CGRect(x: view.frame.minX, y: 0, width: Self.width, height: Self.height)
+        guard let window, let field, let screen = NSScreen.screens.first else { return }
+        let strip = CGRect(x: screen.frame.minX, y: screen.frame.minY, width: screen.frame.width, height: Self.height)
+        for (panel, up) in [(window, raised), (field, tossed)] {
+            panel.level = up ? .statusBar : Self.level
+            panel.setFrame(up ? screen.frame : strip, display: false)
+        }
+        for figure in [view, ballView] as [NSView] { figure.frame = CGRect(x: figure.frame.minX, y: 0, width: Self.width, height: Self.height) }
         let top = max(Self.height, screen.visibleFrame.maxY - screen.frame.minY)
-        physics.resize(CGRect(x: 0, y: Self.ground, width: frame.width, height: top - Self.ground))
+        let bounds = CGRect(x: 0, y: Self.ground, width: strip.width, height: top - Self.ground)
+        physics.resize(bounds)
+        ball.resize(bounds)
         let dock = screen.visibleFrame.minY - screen.frame.minY
-        physics.roof = dock > Self.ground + PetPhysics.size.height ? dock : .infinity
+        physics.roof = dock > Self.ground + PetPhysics.size.height ? dock : Self.height
+        ball.roof = physics.roof
         place()
         if let bubble { show(bubble) }
     }
 
-    private func update() {
-        guard let window, let link else { return }
+    func update() {
+        guard let window, let field, let link else { return }
         let hidden = asleep || locked || fullscreen || GameModeTool.shared.isPlaying
+        let toy = PetTool.shared.ball && !hidden
         if hidden {
             window.orderOut(nil)
             hideBubble()
         } else if !window.isVisible {
             window.orderFrontRegardless()
         }
+        if toy != field.isVisible { toy ? field.orderFrontRegardless() : field.orderOut(nil) }
+        if !toy { ball.release() }
         let waiting = (fullscreen || GameModeTool.shared.isPlaying) && !asleep && !locked
         if waiting != (recheck != nil) {
             recheck?.invalidate()
             recheck = waiting ? Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.checkFullscreen() } : nil
         }
-        let paused = hidden || !window.occlusionState.contains(.visible)
+        let paused = hidden || !window.occlusionState.contains(.visible) && !(toy && field.occlusionState.contains(.visible))
         if paused {
             drop()
             window.ignoresMouseEvents = true
+            field.ignoresMouseEvents = true
         }
         if paused, !link.isPaused { last = nil }
         if !paused, link.isPaused { physics.resize(physics.bounds) }
@@ -187,12 +225,27 @@ final class PetStage: NSObject {
         last = link.timestamp
         play(demo)
         let point = fake ?? cursor
+        if NSEvent.pressedMouseButtons & 1 == 0 { press = nil }
+        physics.ledge = demo == "platform" ? demoLedge : selection
+        ball.ledge = physics.ledge
         physics.step(dt, cursor: point)
-        if physics.state == .held, fake == nil, NSEvent.pressedMouseButtons & 1 == 0 { drop() }
+        let toy = field?.isVisible == true, now = ProcessInfo.processInfo.systemUptime
+        if toy {
+            physics.kick(&ball)
+            ball.step(dt, cursor: physics.state == .held ? nil : point, body: physics.aloft ? nil : (physics.previous, physics.frame))
+            if ball.impact > 700, physics.grounded || physics.state == .jump { physics.bump(ball.frame) }
+            if ball.nudged { chase = min(chase, now + 0.4) }
+            if now >= chase {
+                physics.face(ball.center.x)
+                chase = now + .random(in: 6...16)
+            }
+        }
+        if physics.state == .held || ball.held, fake == nil, NSEvent.pressedMouseButtons & 1 == 0 { drop() }
         rise()
         place()
-        let catchable = point.map(physics.touches) ?? false
+        let catchable = point.map(physics.touches) ?? false, reachable = toy && (point.map(ball.touches) ?? false)
         if let window, window.ignoresMouseEvents == (catchable || physics.state == .held) { window.ignoresMouseEvents.toggle() }
+        if let field, field.ignoresMouseEvents == (reachable || ball.held) { field.ignoresMouseEvents.toggle() }
         if phrase != nil, physics.state != .sit { hideBubble() }
         talk(ProcessInfo.processInfo.systemUptime)
     }
@@ -200,23 +253,53 @@ final class PetStage: NSObject {
     private var cursor: CGPoint? {
         guard let screen = NSScreen.screens.first else { return nil }
         let point = NSEvent.mouseLocation
-        guard physics.state == .held || screen.frame.contains(point) else { return nil }
+        guard physics.state == .held || ball.held || screen.frame.contains(point) else { return nil }
         return CGPoint(x: point.x - screen.frame.minX, y: point.y - screen.frame.minY)
     }
 
+    private var selection: CGRect? {
+        guard let press, let screen = NSScreen.screens.first else { return nil }
+        let point = NSEvent.mouseLocation
+        let rect = CGRect(x: min(press.x, point.x), y: min(press.y, point.y), width: abs(point.x - press.x), height: abs(point.y - press.y))
+        return rect.width > 4 && rect.height > 4 ? rect.offsetBy(dx: -screen.frame.minX, dy: -screen.frame.minY) : nil
+    }
+
+    private var demoLedge: CGRect? {
+        ProcessInfo.processInfo.systemUptime.truncatingRemainder(dividingBy: 14) < 9 ? CGRect(x: physics.bounds.width * 0.2, y: 0, width: 220, height: 16) : nil
+    }
+
+    private func pressed(_ point: CGPoint) {
+        guard link?.isPaused == false, let screen = NSScreen.screens.first else { return press = nil }
+        let spot = CGPoint(x: point.x, y: screen.frame.maxY - point.y)
+        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []
+        let top = windows.first { info in
+            guard info[kCGWindowOwnerPID as String] as? pid_t != getpid(), info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
+                  let bounds = info[kCGWindowBounds as String] as? NSDictionary, let rect = CGRect(dictionaryRepresentation: bounds) else { return false }
+            return rect.contains(spot)
+        }
+        press = top?[kCGWindowLayer as String] as? Int ?? -1 < 0 ? point : nil
+    }
+
     private func place() {
-        let scale = window?.backingScaleFactor ?? 2
-        let left = physics.origin.x - Self.width / 2
-        let x = (left * scale).rounded(.down) / scale
-        if view.frame.minX != x { view.setFrameOrigin(CGPoint(x: x, y: 0)) }
-        view.shift = left - x
+        put(view, physics.origin.x)
         view.pose = PetPose(physics, scale: Self.scale, time: ProcessInfo.processInfo.systemUptime)
         if grip.frame != physics.frame { grip.frame = physics.frame }
+        put(ballView, ball.center.x)
+        ballView.pose = BallPose(ball, scale: Self.scale)
+        if ballGrip.frame != ball.frame { ballGrip.frame = ball.frame }
+    }
+
+    private func put<Pose>(_ figure: FigureView<Pose>, _ x: CGFloat) {
+        let scale = window?.backingScaleFactor ?? 2
+        let left = x - Self.width / 2, snapped = (left * scale).rounded(.down) / scale
+        if figure.frame.minX != snapped { figure.setFrameOrigin(CGPoint(x: snapped, y: 0)) }
+        figure.shift = left - snapped
     }
 
     private func rise() {
-        guard physics.aloft != raised else { return }
+        guard physics.aloft != raised || ball.aloft != tossed else { return }
         raised = physics.aloft
+        tossed = ball.aloft
         layout()
     }
 
@@ -238,6 +321,20 @@ final class PetStage: NSObject {
             let t = physics.clock
             fake = CGPoint(x: anchor.x + 80 * sin(t * 3), y: anchor.y + 300 * min(t, 1))
             if demo == "throw", t > 2.1 {
+                fake = nil
+                drop()
+            }
+        case "ball" where ball.resting && physics.state == .walk && physics.clock > 2:
+            ball.kick(CGVector(dx: physics.origin.x > ball.center.x ? 420 : -420, dy: 260))
+        case "carry" where ball.resting && physics.state == .walk && physics.clock > 2:
+            fake = ball.center
+            anchor = ball.center
+            grabbed = ProcessInfo.processInfo.systemUptime
+            grab(at: anchor)
+        case "carry" where ball.held:
+            let t = ProcessInfo.processInfo.systemUptime - grabbed
+            fake = CGPoint(x: anchor.x + 80 * sin(t * 3), y: anchor.y + 300 * min(t, 1))
+            if t > 2.1 {
                 fake = nil
                 drop()
             }
@@ -338,16 +435,19 @@ final class PetStage: NSObject {
     }
 }
 
-private final class PetView: NSView {
-    var pose = PetPose() { didSet { if pose != oldValue { render() } } }
+private final class FigureView<Pose: Equatable>: NSView {
+    var pose: Pose { didSet { if pose != oldValue { render() } } }
     var shift: CGFloat = 0 { didSet { if shift != oldValue { render() } } }
+    private let paint: (Pose, Bool, (Path, Color) -> Void) -> Void
     private var shapes: [CAShapeLayer] = []
     private let environment = EnvironmentValues()
 
     private var night: Bool { effectiveAppearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua }
 
-    override init(frame: NSRect) {
-        super.init(frame: frame)
+    init(_ pose: Pose, paint: @escaping (Pose, Bool, (Path, Color) -> Void) -> Void) {
+        self.pose = pose
+        self.paint = paint
+        super.init(frame: .zero)
         wantsLayer = true
         layer?.shadowColor = .black
         layer?.shadowOffset = CGSize(width: 0, height: -1)
@@ -388,8 +488,7 @@ private final class PetView: NSView {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         layer.shadowOpacity = night ? 0.5 : 0.22
-        PetFigure.shadow(pose, fill: fill)
-        PetFigure.draw(pose, night: night, fill: fill)
+        paint(pose, night, fill)
         shapes[index...].forEach { $0.path = nil }
         CATransaction.commit()
     }

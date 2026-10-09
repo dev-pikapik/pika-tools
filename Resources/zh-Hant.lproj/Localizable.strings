@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "把指標擋在它前面，它會跳過去";
 "Talks sometimes" = "偶爾說說話";
 "Every now and then it sits down for a chat and tells you when an update is out" = "不時坐下來聊幾句，有更新時也會告訴你";
+"Ball" = "足球";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "一顆足球沿著螢幕底邊滾來滾去。寵物會踢它，你也可以用指標踢它，或是把它拎起來丟出去";
+"toy, football, soccer, kick, play, throw, selection, platform" = "玩具, 足球, 踢, 玩, 丟, 選取範圍, 平台";
 "To make it jump when you press Space, allow Input Monitoring" = "若要讓它在按空白鍵時跳起來，請允許「輸入監控」";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "寵物, 夥伴, 朋友, 角色, 吉祥物, 桌面, 跳, 空白鍵";
 "phrases, speech bubble, talk, say, messages, updates" = "台詞, 對話框, 說話, 聊天, 訊息, 更新";
