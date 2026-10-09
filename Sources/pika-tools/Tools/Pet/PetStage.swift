@@ -37,6 +37,7 @@ final class PetStage: NSObject {
     private var home: CGDirectDisplayID = 0, court: CGDirectDisplayID = 0
     private var full: Set<CGDirectDisplayID> = []
     private var watchdog: Timer?
+    private var blind: Timer?
     private var nextTalk: TimeInterval
     private var deck: [PetPhrase] = []
     private var phrase: PetPhrase?
@@ -103,6 +104,8 @@ final class PetStage: NSObject {
         link = nil
         watchdog?.invalidate()
         watchdog = nil
+        blind?.invalidate()
+        blind = nil
         observers.forEach { $0.0.removeObserver($0.1) }
         observers = []
         if let monitor { NSEvent.removeMonitor(monitor) }
@@ -296,7 +299,8 @@ final class PetStage: NSObject {
         }
         if toy != field.isVisible { toy ? field.orderFrontRegardless() : field.orderOut(nil) }
         if !toy, ball.held { drop() }
-        let paused = hidden || !window.occlusionState.contains(.visible) && !(toy && field.occlusionState.contains(.visible))
+        let occluded = !hidden && !window.occlusionState.contains(.visible) && !(toy && field.occlusionState.contains(.visible))
+        let paused = hidden || occluded
         if paused {
             drop()
             window.ignoresMouseEvents = true
@@ -305,6 +309,15 @@ final class PetStage: NSObject {
         if paused, !link.isPaused { last = nil }
         if !paused, link.isPaused { physics.resize(physics.bounds) }
         link.isPaused = paused
+        if occluded, blind == nil {
+            let timer = Timer(timeInterval: 0.2, repeats: true) { [weak self] _ in self?.advance(CACurrentMediaTime()) }
+            timer.tolerance = 0.05
+            RunLoop.main.add(timer, forMode: .common)
+            blind = timer
+        } else if !occluded {
+            blind?.invalidate()
+            blind = nil
+        }
     }
 
     private func checkFullscreen() {
@@ -355,8 +368,12 @@ final class PetStage: NSObject {
     }
 
     @objc private func tick(_ link: CADisplayLink) {
-        let dt = last.map { link.timestamp - $0 } ?? 0
-        last = link.timestamp
+        advance(link.timestamp)
+    }
+
+    private func advance(_ time: CFTimeInterval) {
+        let dt = last.map { time - $0 } ?? 0
+        last = time
         play(demo)
         guard let pet = petScreen, let pitch = ballScreen else { return }
         let point = fake ?? pointer(pet, physics.state == .held), reach = fake ?? pointer(pitch, ball.held)
@@ -404,7 +421,7 @@ final class PetStage: NSObject {
     }
 
     private func pressed(_ point: CGPoint) {
-        guard link?.isPaused == false, let screen = NSScreen.screens.first else { return press = nil }
+        guard link?.isPaused == false || blind != nil, let screen = NSScreen.screens.first else { return press = nil }
         if let pet = petScreen, let dock = physics.dock, dock.contains(CGPoint(x: point.x - pet.frame.minX, y: point.y - pet.frame.minY)) { return press = nil }
         let spot = CGPoint(x: point.x, y: screen.frame.maxY - point.y)
         let windows = (CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []).compactMap { info -> (layer: Int, frame: CGRect)? in
