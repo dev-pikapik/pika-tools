@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Ajoutez des apps d’un clic ou d’un glisser
+
+<sub>1.28.0 · 9 octobre 2026</sub>
+
+Chaque liste d’apps des Réglages montre maintenant ce qui se trouve dans votre Dock et ce qui est ouvert, et vous pouvez y glisser des apps depuis le Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Certaines fonctions vous laissent choisir des apps où elles s’effacent, comme le bouton vert ou Début et Fin. Avant, « Ajouter une app… » ouvrait seulement un long dossier avec tout ce que vous avez. Maintenant, une étagère montre les apps de votre Dock et celles ouvertes en ce moment. Cliquez sur une app pour l’ajouter, cliquez encore pour la retirer. Pour le reste, il y a « Autre… ».
+
+Vous pouvez aussi glisser une app depuis le Finder directement sur une liste. La liste s’illumine pour montrer où l’app va arriver. Vos jeux fonctionnent pareil, avec la même étagère.
+
+Et si quelque chose ne va pas, le formulaire de signalement de bug sur GitHub vous laisse maintenant choisir votre version de pikapik et de macOS dans une liste : nous prévenir prend moins de temps.
+
+**Pour essayer :** Réglages › Fenêtres, puis « Ajouter une app… »
+
+**Corrigé**
+
+- Le défilement via AnyDesk ou une autre app de bureau à distance n’est plus inversé deux fois quand les deux Mac utilisent le sens classique. pikapik n’inverse plus que le défilement d’une vraie souris ou d’un vrai trackpad. Si une app fait son propre défilement fluide, comme Mos, réglez le sens dans cette app.
+- Le compagnon reste derrière le Dock quand il saute, comme quand il marche, et revient tout seul quand vous quittez une app en plein écran ou un jeu.
+- Les fins contours autour des petites images des Réglages ne disparaissent plus sur les écrans ordinaires, sans Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Le compagnon reste en vue, et les fenêtres s’ouvrent prêtes
 
 <sub>1.27.3 · 9 octobre 2026</sub>

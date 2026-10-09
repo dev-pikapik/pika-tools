@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>按一下或拖進來，就能加入 App
+
+<sub>1.28.0 · 2026年10月9日</sub>
+
+設定裡的每個 App 列表現在都會顯示 Dock 裡的 App 和正在開啟的 App，你也可以直接從 Finder 把 App 拖進來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+有些功能可以選出讓它們讓路的 App，例如綠色按鈕或 Home 和 End。以前按「加入 App…」只會打開一個裝著所有東西的長檔案夾。現在會出現一個架子，上面是 Dock 裡的 App 和正在開啟的 App。按一下就加入，再按一下就移除。其他 App 可以從「其他…」裡找。
+
+你也可以從 Finder 把 App 直接拖到列表上。列表會亮起來，告訴你 App 會放在哪裡。遊戲也一樣，用的是同一個架子。
+
+如果遇到問題，GitHub 上的問題回報表單現在可以從列表選擇 pikapik 和 macOS 的版本，告訴我們會更快。
+
+**試試看：** 設定 › 視窗，然後按一下「加入 App…」
+
+**修正**
+
+- 兩台 Mac 都使用傳統捲動方向時，透過 AnyDesk 或其他遠端桌面 App 捲動不會再被反轉兩次。現在 pikapik 只反轉來自真正滑鼠或觸控式軌跡板的捲動。如果某個 App 自己做平滑捲動，例如 Mos，請在那個 App 裡設定方向。
+- 寵物跳起來時也會待在 Dock 後面，和走路時一樣；離開全螢幕 App 或遊戲後，牠會自己回來。
+- 設定裡小插圖周圍的細邊框在一般的非 Retina 顯示器上不會再消失。
+
+---
+
 ## <a id="v1.27.3"></a>寵物一直看得到，視窗一打開就能用
 
 <sub>1.27.3 · 2026年10月9日</sub>

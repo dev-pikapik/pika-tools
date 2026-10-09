@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Thêm ứng dụng chỉ bằng một cú bấm hoặc kéo thả
+
+<sub>1.28.0 · ngày 9 tháng 10, 2026</sub>
+
+Mỗi danh sách ứng dụng trong Cài đặt giờ hiển thị những gì có trong Dock và đang mở, và bạn có thể kéo ứng dụng vào đó từ Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Một số tính năng cho bạn chọn những ứng dụng mà chúng sẽ đứng sang một bên, như nút xanh lá hay Home và End. Trước đây, “Thêm ứng dụng…” chỉ mở một thư mục dài chứa mọi thứ. Giờ đây sẽ hiện ra một chiếc kệ với các ứng dụng trong Dock và những ứng dụng đang mở. Bấm vào một ứng dụng để thêm, bấm lần nữa để bỏ ra. Những ứng dụng khác thì có “Khác…”.
+
+Bạn cũng có thể kéo một ứng dụng từ Finder thẳng vào danh sách. Danh sách sẽ sáng lên để cho biết ứng dụng sẽ nằm ở đâu. Trò chơi của bạn cũng vậy, cùng một chiếc kệ.
+
+Và nếu có gì trục trặc, biểu mẫu báo lỗi trên GitHub giờ cho bạn chọn phiên bản pikapik và macOS từ danh sách, nên báo cho chúng tôi nhanh hơn.
+
+**Thử ngay:** Cài đặt › Cửa sổ, rồi “Thêm ứng dụng…”
+
+**Đã sửa**
+
+- Cuộn qua AnyDesk hoặc ứng dụng điều khiển từ xa khác không còn bị đảo hai lần khi cả hai máy Mac dùng hướng cuộn cổ điển. Giờ pikapik chỉ đảo hướng cuộn từ chuột hoặc bàn di chuột thật. Nếu một ứng dụng tự làm cuộn mượt, như Mos, hãy chọn hướng trong ứng dụng đó.
+- Thú cưng ở lại phía sau Dock khi nhảy, giống như khi đi bộ, và tự quay lại sau khi bạn thoát ứng dụng toàn màn hình hoặc trò chơi.
+- Những đường viền mảnh quanh các hình nhỏ trong Cài đặt không còn biến mất trên màn hình thường không có Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Thú cưng luôn trong tầm mắt, cửa sổ mở ra là dùng được ngay
 
 <sub>1.27.3 · ngày 9 tháng 10, 2026</sub>

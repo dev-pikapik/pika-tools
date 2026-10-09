@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Adicione apps com um clique ou arrastando
+
+<sub>1.28.0 · 9 de outubro de 2026</sub>
+
+Toda lista de apps nos Ajustes agora mostra o que está no seu Dock e o que está aberto, e você pode arrastar apps do Finder para ela.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Alguns recursos deixam você escolher apps em que eles ficam de lado, como o botão verde ou Home e End. Antes, “Adicionar app…” só abria uma pasta comprida com tudo o que você tem. Agora aparece uma prateleira com os apps do seu Dock e os que estão abertos agora. Clique em um app para adicioná-lo e clique de novo para tirá-lo. Para todo o resto existe “Outro…”.
+
+Você também pode arrastar um app do Finder direto para uma lista. A lista se ilumina para mostrar onde o app vai entrar. Seus jogos funcionam do mesmo jeito, com a mesma prateleira.
+
+E se algo der errado, o formulário de relato de bug no GitHub agora deixa você escolher a versão do pikapik e do macOS numa lista, então contar para a gente fica mais rápido.
+
+**Experimente:** Ajustes › Janelas, depois “Adicionar app…”
+
+**Corrigido**
+
+- A rolagem pelo AnyDesk ou outro app de acesso remoto não é mais invertida duas vezes quando os dois Macs usam a direção clássica. Agora o pikapik inverte só a rolagem de um mouse ou trackpad de verdade. Se um app faz a própria rolagem suave, como o Mos, escolha a direção nesse app.
+- O bichinho fica atrás do Dock quando pula, igual quando anda, e volta sozinho quando você sai de um app em tela cheia ou de um jogo.
+- As molduras finas em volta das pequenas imagens dos Ajustes não somem mais em telas comuns, sem Retina.
+
+---
+
 ## <a id="v1.27.3"></a>O bichinho sempre à vista, e as janelas abrem prontas
 
 <sub>1.27.3 · 9 de outubro de 2026</sub>

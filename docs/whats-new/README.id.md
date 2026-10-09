@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Tambahkan app dengan sekali klik atau seret
+
+<sub>1.28.0 · 9 Oktober 2026</sub>
+
+Setiap daftar app di Pengaturan kini menampilkan isi Dock Anda dan app yang sedang terbuka, dan Anda bisa menyeret app ke sana dari Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Beberapa fitur membiarkan Anda memilih app tempat fitur itu menyingkir, seperti tombol hijau atau Home dan End. Dulu, “Tambah App…” hanya membuka folder panjang berisi semuanya. Sekarang muncul rak berisi app di Dock dan app yang sedang terbuka. Klik app untuk menambahkannya, klik lagi untuk melepasnya. Untuk yang lain, ada “Lainnya…”.
+
+Anda juga bisa menyeret app dari Finder langsung ke daftar. Daftar akan menyala untuk menunjukkan tempat app itu masuk. Game Anda bekerja dengan cara yang sama, dengan rak yang sama.
+
+Kalau ada yang tidak beres, formulir laporan bug di GitHub kini memungkinkan Anda memilih versi pikapik dan macOS dari daftar, jadi memberi tahu kami lebih cepat.
+
+**Coba:** Pengaturan › Jendela, lalu “Tambah App…”
+
+**Diperbaiki**
+
+- Gulir lewat AnyDesk atau app desktop jarak jauh lain tidak lagi dibalik dua kali saat kedua Mac memakai arah klasik. Kini pikapik hanya membalik gulir dari mouse atau trackpad sungguhan. Jika sebuah app membuat gulir halusnya sendiri, seperti Mos, atur arahnya di app itu.
+- Peliharaan tetap di belakang Dock saat melompat, sama seperti saat berjalan, dan kembali sendiri setelah Anda keluar dari app layar penuh atau game.
+- Bingkai tipis di sekitar gambar kecil di Pengaturan tidak lagi hilang di layar biasa tanpa Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Peliharaan selalu terlihat, dan jendela terbuka siap pakai
 
 <sub>1.27.3 · 9 Oktober 2026</sub>

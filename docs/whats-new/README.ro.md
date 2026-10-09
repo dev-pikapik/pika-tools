@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Adaugi aplicații cu un clic sau trăgându-le
+
+<sub>1.28.0 · 9 octombrie 2026</sub>
+
+Fiecare listă de aplicații din Configurări arată acum ce ai în Dock și ce e deschis acum, iar aplicațiile le poți trage în ea din Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Unele funcții te lasă să alegi aplicații în care se dau la o parte, cum ar fi butonul verde sau Home și End. Înainte, „Adaugă aplicație…” deschidea doar un dosar lung cu tot ce ai. Acum apare un raft cu aplicațiile din Dock și cele deschise chiar acum. Dai clic pe o aplicație ca s-o adaugi, încă un clic ca s-o scoți. Pentru restul există „Altele…”.
+
+Poți și să tragi o aplicație din Finder direct pe o listă. Lista se luminează ca să-ți arate unde ajunge aplicația. Cu jocurile e la fel, cu același raft.
+
+Iar dacă ceva nu merge, formularul pentru raportarea unei erori pe GitHub te lasă acum să alegi versiunea pikapik și macOS dintr-o listă, așa că ne spui mai repede.
+
+**Încearcă:** Configurări › Ferestre, apoi „Adaugă aplicație…”
+
+**Reparat**
+
+- Derularea prin AnyDesk sau altă aplicație de desktop la distanță nu mai e întoarsă de două ori când ambele Mac-uri folosesc direcția clasică. Acum pikapik întoarce doar derularea de la un mouse sau trackpad adevărat. Dacă o aplicație face singură derulare lină, cum ar fi Mos, alege direcția în acea aplicație.
+- Animăluțul rămâne în spatele Dock-ului când sare, la fel ca atunci când merge, și revine singur după ce ieși dintr-o aplicație pe tot ecranul sau dintr-un joc.
+- Ramele subțiri din jurul imaginilor mici din Configurări nu mai dispar pe ecranele obișnuite, fără Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Animăluțul rămâne la vedere, iar ferestrele se deschid gata de lucru
 
 <sub>1.27.3 · 9 octombrie 2026</sub>

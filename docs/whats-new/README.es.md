@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Añade apps con un clic o arrastrándolas
+
+<sub>1.28.0 · 9 de octubre de 2026</sub>
+
+Cada lista de apps en Ajustes muestra ahora lo que hay en tu Dock y lo que está abierto, y puedes arrastrar apps a ella desde el Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Algunas funciones te dejan elegir apps donde se hacen a un lado, como el botón verde o Inicio y Fin. Antes, «Añadir app…» solo abría una carpeta larga con todo lo que tienes. Ahora aparece una estantería con las apps de tu Dock y las que están abiertas. Haz clic en una app para añadirla y otra vez para quitarla. Para todo lo demás está «Otro…».
+
+También puedes arrastrar una app desde el Finder directamente a una lista. La lista se ilumina para mostrar dónde caerá la app. Tus juegos funcionan igual, con la misma estantería.
+
+Y si algo falla, el formulario para informar de errores en GitHub ahora te deja elegir tu versión de pikapik y de macOS de una lista, así contárnoslo lleva menos tiempo.
+
+**Pruébalo:** Ajustes › Ventanas, luego «Añadir app…»
+
+**Corregido**
+
+- El desplazamiento a través de AnyDesk u otra app de escritorio remoto ya no se invierte dos veces cuando usas la dirección clásica en los dos Mac. Ahora pikapik solo invierte el desplazamiento de un ratón o trackpad de verdad. Si una app hace su propio desplazamiento suave, como Mos, elige la dirección en esa app.
+- La mascota se queda detrás del Dock cuando salta, igual que cuando camina, y vuelve sola cuando sales de una app a pantalla completa o de un juego.
+- Los finos bordes alrededor de los pequeños dibujos de Ajustes ya no desaparecen en pantallas normales sin Retina.
+
+---
+
 ## <a id="v1.27.3"></a>La mascota siempre a la vista, y las ventanas se abren listas
 
 <sub>1.27.3 · 9 de octubre de 2026</sub>
