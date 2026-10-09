@@ -3,6 +3,7 @@ import SwiftUI
 struct PetPose: Equatable {
     var step = 0.0
     var lift: CGFloat = 0
+    var floor: CGFloat = 0
     var squash: CGFloat = 0
     var tilt: CGFloat = 0
     var sit: CGFloat = 0
@@ -19,8 +20,8 @@ enum PetFigure {
     static func shadow(_ pose: PetPose, fill: (Path, Color) -> Void) {
         let f = max(0, 1 - pose.lift / 30)
         guard f > 0 else { return }
-        fill(Path(ellipseIn: CGRect(x: -7.5 * f, y: -1.7, width: 15 * f, height: 3.6)), .black.opacity(0.05 * f))
-        fill(Path(ellipseIn: CGRect(x: -5.5 * f, y: -1, width: 11 * f, height: 2.4)), .black.opacity(0.12 * f))
+        fill(Path(ellipseIn: CGRect(x: -7.5 * f, y: -1.7 - pose.floor, width: 15 * f, height: 3.6)), .black.opacity(0.05 * f))
+        fill(Path(ellipseIn: CGRect(x: -5.5 * f, y: -1 - pose.floor, width: 11 * f, height: 2.4)), .black.opacity(0.12 * f))
     }
 
     static func draw(_ pose: PetPose, night: Bool, fill: (Path, Color) -> Void) {
@@ -32,7 +33,7 @@ enum PetFigure {
         let width = 12 * (1 + squash), height = 11 * (1 - squash)
         let raise = 1.8 - 1.4 * sit
         let upright = hang ? 1 : abs(cos(pose.tilt)), lean = hang ? 0 : abs(sin(pose.tilt))
-        let centre = -((height / 2 + raise) * upright + (width / 2 + 0.6) * lean) - pose.lift - bob
+        let centre = -((height / 2 + raise) * upright + (width / 2 + 0.6) * lean) - pose.lift - pose.floor - bob
         let pivot = hang ? height / 2 : 0
         let place = CGAffineTransform(translationX: 0, y: pivot)
             .concatenating(CGAffineTransform(rotationAngle: pose.tilt))
@@ -70,7 +71,9 @@ enum PetFigure {
 
 extension PetPose {
     init(_ pet: PetPhysics, scale: CGFloat, time: Double) {
-        self.init(step: Double(pet.walked / scale) * .pi * 5 / 28, lift: (pet.origin.y - pet.bounds.minY) / scale, facing: pet.facing)
+        self.init(
+            step: Double(pet.walked / scale) * .pi * 5 / 28, lift: (pet.origin.y - pet.floor) / scale, floor: (pet.floor - pet.bounds.minY) / scale, facing: pet.facing
+        )
         let fall = pet.calm ? 0 : .pi / 2 * pet.heading * pet.facing
         switch pet.state {
         case .jump:
@@ -96,6 +99,10 @@ extension PetPose {
             air = true
             squash = -0.09 * min(1, abs(pet.vy) / 300)
             tilt = pet.calm ? 0 : -max(-0.3, min(0.3, pet.vy / 2400))
+        case .kick:
+            let swing = sin(.pi * min(1, pet.clock / pet.hold))
+            step = .pi / 3 * swing
+            tilt = -0.14 * swing
         case .walk:
             squash = pet.landed < 0.15 ? 0.14 * (1 - pet.landed / 0.15) : 0
         case .turn:
@@ -107,5 +114,46 @@ extension PetPose {
     static func ease(_ x: Double) -> CGFloat {
         let x = min(max(x, 0), 1)
         return x * x * (3 - 2 * x)
+    }
+}
+
+struct BallPose: Equatable {
+    var lift: CGFloat = 0
+    var floor: CGFloat = 0
+    var angle: CGFloat = 0
+}
+
+enum BallFigure {
+    static func draw(_ pose: BallPose, night: Bool, fill: (Path, Color) -> Void) {
+        let r = BallPhysics.radius / PetStage.scale
+        let f = max(0, 1 - pose.lift / 30)
+        if f > 0 {
+            fill(Path(ellipseIn: CGRect(x: -3.6 * f, y: -1.2 - pose.floor, width: 7.2 * f, height: 2.4)), .black.opacity(0.12 * f))
+        }
+        let place = CGAffineTransform(rotationAngle: -pose.angle).concatenating(CGAffineTransform(translationX: 0, y: -pose.floor - pose.lift - r))
+        let disc = Path(ellipseIn: CGRect(x: -r, y: -r, width: 2 * r, height: 2 * r))
+        fill(disc.applying(place), night ? Color(white: 0.9) : .white)
+        var patches = pentagon(CGPoint.zero, r * 0.42, 0)
+        for k in 0..<5 {
+            let a = CGFloat(k) * .pi * 2 / 5 - .pi / 2
+            patches.addPath(pentagon(CGPoint(x: cos(a) * r * 1.08, y: sin(a) * r * 1.08), r * 0.4, .pi / 5).intersection(disc))
+        }
+        fill(patches.applying(place), PetFigure.eye)
+    }
+
+    private static func pentagon(_ c: CGPoint, _ size: CGFloat, _ turn: CGFloat) -> Path {
+        Path { path in
+            path.addLines((0..<5).map { k in
+                let a = CGFloat(k) * .pi * 2 / 5 - .pi / 2 + turn
+                return CGPoint(x: c.x + cos(a) * size, y: c.y + sin(a) * size)
+            })
+            path.closeSubpath()
+        }
+    }
+}
+
+extension BallPose {
+    init(_ ball: BallPhysics, scale: CGFloat) {
+        self.init(lift: (ball.frame.minY - ball.floor) / scale, floor: (ball.floor - ball.bounds.minY) / scale, angle: ball.angle)
     }
 }

@@ -21,7 +21,7 @@ struct SettingsFile {
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
         "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",
         "animations-window-open", "animations-resize", "animations-quick-look", "animations-finder-columns", "animations-finder",
-        "pet", "pet-talks",
+        "pet", "pet-talks", "pet-ball",
     ] + GameRule.allCases.map(\.key))
 
     var settings: [String: Any]

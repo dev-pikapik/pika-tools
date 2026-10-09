@@ -1,7 +1,7 @@
 import CoreGraphics
 
 struct PetPhysics {
-    enum State { case walk, turn, jump, tumble, lie, getUp, sit, held, thrown }
+    enum State { case walk, turn, jump, tumble, lie, getUp, sit, kick, held, thrown }
 
     static let size = CGSize(width: 30, height: 32)
     static let pointer = CGSize(width: 16, height: 22)
@@ -13,6 +13,7 @@ struct PetPhysics {
     static let fling: CGFloat = 1800
     static let scruff: CGFloat = 6
     static let shyness = 1.0
+    static let runUp: CGFloat = 24
     static let tick = 1.0 / 120
 
     private(set) var bounds: CGRect
@@ -29,12 +30,13 @@ struct PetPhysics {
     private(set) var shy = 0.0
     var calm = false
     var roof = CGFloat.infinity
+    var ledge: CGRect?
+    private(set) var previous = CGRect.null
     private var cursor: CGRect?
     private var armed = true
     private var mark = CGRect.null
-    private var previous = CGRect.null
     private var age = 0.0
-    private var trail: [(time: Double, point: CGPoint)] = []
+    private var trail = Trail()
 
     init(bounds: CGRect, x: CGFloat? = nil, facing: CGFloat = 1) {
         self.bounds = bounds
@@ -53,6 +55,11 @@ struct PetPhysics {
     var grounded: Bool { state != .jump && state != .tumble && state != .held && state != .thrown }
 
     var aloft: Bool { state == .held || state == .thrown }
+
+    var floor: CGFloat {
+        guard let ledge, origin.y >= ledge.maxY - 0.5, ledge.minX...ledge.maxX ~= origin.x else { return bounds.minY }
+        return ledge.maxY
+    }
 
     static func cursorRect(at point: CGPoint) -> CGRect {
         CGRect(x: point.x, y: point.y - pointer.height, width: pointer.width, height: pointer.height)
@@ -114,8 +121,37 @@ struct PetPhysics {
     }
 
     func touches(_ point: CGPoint) -> Bool {
+        Self.touches(point, previous, frame)
+    }
+
+    static func touches(_ point: CGPoint, _ previous: CGRect, _ frame: CGRect) -> Bool {
         let dot = CGRect(origin: point, size: .zero)
-        return frame.contains(point) || Self.sweep(dot, dot, previous, frame) != nil
+        return frame.contains(point) || sweep(dot, dot, previous, frame) != nil
+    }
+
+    @discardableResult
+    mutating func kick(_ ball: inout BallPhysics) -> Bool {
+        guard state == .walk, !ball.aloft else { return false }
+        let b = ball.frame
+        guard (b.midX - origin.x) * facing > 0, b.minY < origin.y + 10, b.maxY > origin.y else { return false }
+        let gap = facing > 0 ? b.minX - frame.maxX : frame.minX - b.maxX
+        guard gap < 2, gap > -b.width / 2 else { return false }
+        let room = facing > 0 ? ball.bounds.maxX - b.maxX : b.minX - ball.bounds.minX
+        guard room > 4 else {
+            turn(to: -facing)
+            return false
+        }
+        let power = walked.truncatingRemainder(dividingBy: 97) / 97
+        ball.kick(CGVector(dx: facing * (calm ? 140 : 220 + 160 * power), dy: calm ? 60 : 140 + 160 * (1 - power)))
+        enter(.kick, 0.4)
+        return true
+    }
+
+    @discardableResult
+    mutating func face(_ x: CGFloat) -> Bool {
+        guard state == .walk, (x - origin.x) * facing < -Self.size.width else { return false }
+        turn(to: -facing)
+        return true
     }
 
     @discardableResult
@@ -123,7 +159,7 @@ struct PetPhysics {
         guard state != .held, touches(point) else { return false }
         vx = 0
         vy = 0
-        trail = []
+        trail = Trail()
         enter(.held)
         hang(point)
         previous = frame
@@ -132,11 +168,7 @@ struct PetPhysics {
 
     mutating func release() {
         guard state == .held else { return }
-        let speed = hypot(vx, vy), cap = calm ? Self.fling / 2 : Self.fling
-        if speed > cap {
-            vx *= cap / speed
-            vy *= cap / speed
-        }
+        (vx, vy) = Trail.limit(vx, vy, calm ? Self.fling / 2 : Self.fling)
         if abs(vx) > 1 { facing = vx > 0 ? 1 : -1 }
         heading = facing
         shy = Self.shyness
@@ -159,7 +191,7 @@ struct PetPhysics {
         self.bounds = bounds
         origin.x = clamp(origin.x)
         origin.y = level(origin.y)
-        if grounded { origin.y = bounds.minY }
+        if grounded, !standing { origin.y = bounds.minY }
         cursor = nil
         previous = frame
     }
@@ -177,6 +209,7 @@ struct PetPhysics {
                 if !armed, gap(b1) < Self.margin { return turn(to: -facing) }
                 if armed, leap(b1) { return }
             }
+            if let ledge, climb(ledge) { return }
             let x = origin.x + facing * pace * CGFloat(h)
             origin.x = clamp(x)
             walked += abs(origin.x - a0.midX)
@@ -189,22 +222,28 @@ struct PetPhysics {
                 facing = heading
                 enter(.getUp, calm ? 0.3 : 0.5)
             }
-        case .getUp, .sit:
+        case .getUp, .sit, .kick:
             if clock >= hold { enter(.walk) }
         case .held:
             if let b1 { hang(CGPoint(x: b1.minX, y: b1.maxY)) }
             follow()
         case .jump, .tumble, .thrown:
-            fly(CGFloat(h))
+            fly(CGFloat(h), from: a0)
+        }
+        if let ledge, grounded { settle(ledge, from: a0) }
+        if grounded, origin.y > bounds.minY, !standing {
+            vx = state == .walk ? facing * pace : 0
+            vy = 0
+            enter(.jump)
         }
         guard shy == 0, armed, let b0, let b1, state == .walk || state == .turn || state == .jump || state == .sit,
               let t = Self.sweep(a0, frame, b0, b1) else { return }
         let a1 = frame
-        origin = CGPoint(x: a0.midX + (a1.midX - a0.midX) * t, y: grounded ? bounds.minY : a0.minY + (a1.minY - a0.minY) * t)
+        origin = CGPoint(x: a0.midX + (a1.midX - a0.midX) * t, y: grounded ? origin.y : a0.minY + (a1.minY - a0.minY) * t)
         bump(Self.mix(b0, b1, t))
     }
 
-    private mutating func fly(_ h: CGFloat) {
+    private mutating func fly(_ h: CGFloat, from a0: CGRect) {
         let x = origin.x + vx * h
         origin.x = clamp(x)
         if origin.x != x, state == .thrown {
@@ -221,9 +260,28 @@ struct PetPhysics {
             origin.y = bounds.maxY - Self.size.height
             vy = min(vy, 0)
         }
+        if let ledge, overlaps(ledge) {
+            if a0.minY >= ledge.maxY - 0.5, vy <= 0, ledge.minX...ledge.maxX ~= origin.x {
+                origin.y = ledge.maxY
+                return land()
+            } else if a0.maxY <= ledge.minY + 0.5, vy > 0 {
+                origin.y = ledge.minY - Self.size.height
+                vy = 0
+            } else {
+                let x = clamp(a0.midX < ledge.midX ? ledge.minX - Self.size.width / 2 : ledge.maxX + Self.size.width / 2)
+                if !overlaps(ledge, at: x) {
+                    origin.x = x
+                    vx = state == .thrown ? -vx * 0.6 : 0
+                }
+            }
+        }
         guard origin.y <= bounds.minY else { return }
         origin.y = bounds.minY
         guard vy <= 0 else { return }
+        land()
+    }
+
+    private mutating func land() {
         let impact = hypot(vx, vy)
         vx = 0
         vy = 0
@@ -245,21 +303,60 @@ struct PetPhysics {
     }
 
     private mutating func follow() {
-        trail.append((age, origin))
-        trail.removeAll { $0.time < age - 0.08 }
-        guard let first = trail.first, age - first.time > 0.02 else { return (vx, vy) = (0, 0) }
-        vx = (origin.x - first.point.x) / CGFloat(age - first.time)
-        vy = (origin.y - first.point.y) / CGFloat(age - first.time)
+        (vx, vy) = trail.velocity(origin, at: age)
     }
+
+    private mutating func climb(_ ledge: CGRect) -> Bool {
+        let gap = facing > 0 ? ledge.minX - frame.maxX : frame.minX - ledge.maxX
+        let rise = ledge.maxY - origin.y
+        guard gap >= 0, gap <= Self.runUp, rise > 0.5, ledge.minY < frame.maxY else { return false }
+        let landing = min(16, ledge.width / 2) + Self.size.width / 2
+        let d = gap + landing / 2
+        let height = max(rise + 8, rise / (1 - pow(landing / 2 / d, 2)))
+        guard height <= Self.highest, origin.y + height + Self.size.height <= ceiling else { return false }
+        vy = (2 * Self.gravity * height).squareRoot()
+        vx = facing * d * Self.gravity / vy
+        enter(.jump)
+        return true
+    }
+
+    private mutating func settle(_ ledge: CGRect, from a0: CGRect) {
+        guard overlaps(ledge) else { return }
+        let up = ledge.maxY - origin.y
+        let left = clamp(ledge.minX - Self.size.width / 2), right = clamp(ledge.maxX + Self.size.width / 2)
+        var sides = [left, right].filter { !overlaps(ledge, at: $0) }.sorted { abs($0 - origin.x) < abs($1 - origin.x) }
+        if a0.midX < ledge.minX || a0.midX > ledge.maxX { sides.sort { abs($0 - a0.midX) < abs($1 - a0.midX) } }
+        let lift = ledge.minX...ledge.maxX ~= origin.x && ledge.maxY + Self.size.height <= ceiling
+        if lift, up <= sides.first.map({ abs($0 - origin.x) }) ?? .infinity {
+            origin.y = ledge.maxY
+        } else if let x = sides.first {
+            let away: CGFloat = x < origin.x ? -1 : 1
+            origin.x = x
+            if state == .walk, away != facing { turn(to: away) }
+        }
+    }
+
+    private var standing: Bool {
+        guard let ledge else { return false }
+        return abs(origin.y - ledge.maxY) < 0.5 && ledge.minX...ledge.maxX ~= origin.x
+    }
+
+    private func overlaps(_ ledge: CGRect, at x: CGFloat? = nil) -> Bool {
+        var f = frame
+        if let x { f.origin.x = x - Self.size.width / 2 }
+        return f.minX < ledge.maxX - 1e-6 && ledge.minX < f.maxX - 1e-6 && f.minY < ledge.maxY - 1e-6 && ledge.minY < f.maxY - 1e-6
+    }
+
+    private var ceiling: CGFloat { min(bounds.maxY, roof) }
 
     private mutating func leap(_ b: CGRect) -> Bool {
         let d = abs(b.midX - origin.x)
         let span = (b.width + Self.size.width) / 2 + Self.margin
         guard d <= Self.reach, d > span else { return false }
-        let lift = b.maxY - bounds.minY + Self.margin
+        let lift = b.maxY - origin.y + Self.margin
         let height = max(lift + 24, lift / (1 - span * span / (d * d)))
         let land = origin.x + 2 * d * facing
-        guard height <= Self.highest, height + Self.size.height <= min(bounds.maxY, roof) - bounds.minY, clamp(land) == land else { return false }
+        guard height <= Self.highest, origin.y + height + Self.size.height <= ceiling, clamp(land) == land else { return false }
         vy = (2 * Self.gravity * height).squareRoot()
         vx = facing * d / (2 * height / Self.gravity).squareRoot()
         armed = false
@@ -284,8 +381,8 @@ struct PetPhysics {
     }
 
     private var headroom: CGFloat {
-        let room = min(bounds.maxY, roof) - bounds.minY - Self.size.height
-        return max(0, min(bounds.height - Self.size.height, max(Self.hop / 2, room)))
+        let room = ceiling - origin.y - Self.size.height
+        return max(0, min(bounds.maxY - origin.y - Self.size.height, origin.y > bounds.minY ? room : max(Self.hop / 2, room)))
     }
 
     private func gap(_ b: CGRect) -> CGFloat {
@@ -300,7 +397,24 @@ struct PetPhysics {
         min(max(x, bounds.minX + Self.size.width / 2), bounds.maxX - Self.size.width / 2)
     }
 
-    private static func mix(_ a: CGRect, _ b: CGRect, _ t: CGFloat) -> CGRect {
+    static func mix(_ a: CGRect, _ b: CGRect, _ t: CGFloat) -> CGRect {
         a.offsetBy(dx: (b.minX - a.minX) * t, dy: (b.minY - a.minY) * t)
+    }
+}
+
+struct Trail {
+    private var points: [(time: Double, point: CGPoint)] = []
+
+    mutating func velocity(_ point: CGPoint, at time: Double) -> (CGFloat, CGFloat) {
+        points.append((time, point))
+        points.removeAll { $0.time < time - 0.08 }
+        guard let first = points.first, time - first.time > 0.02 else { return (0, 0) }
+        let t = CGFloat(time - first.time)
+        return ((point.x - first.point.x) / t, (point.y - first.point.y) / t)
+    }
+
+    static func limit(_ vx: CGFloat, _ vy: CGFloat, _ cap: CGFloat) -> (CGFloat, CGFloat) {
+        let speed = hypot(vx, vy)
+        return speed > cap ? (vx * cap / speed, vy * cap / speed) : (vx, vy)
     }
 }

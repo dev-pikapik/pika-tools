@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "İmleci yoluna koyun, üstünden atlasın";
 "Talks sometimes" = "Arada bir konuşur";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Arada bir oturup sohbet eder ve bir güncelleme çıktığında haber verir";
+"Ball" = "Top";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "Ekranın alt kenarında bir top yuvarlanır. Evcil dostunuz ona tekme atar; siz de imleçle vurabilir ya da tutup fırlatabilirsiniz";
+"toy, football, soccer, kick, play, throw, selection, platform" = "oyuncak, futbol, tekme, oyun, fırlatmak, seçim, platform";
 "To make it jump when you press Space, allow Input Monitoring" = "Boşluk tuşuyla zıplaması için Girdi İzleme’ye izin verin";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "evcil hayvan, dost, arkadaş, karakter, maskot, masaüstü, zıplamak, Boşluk";
 "phrases, speech bubble, talk, say, messages, updates" = "sözler, konuşma balonu, konuşmak, söylemek, mesajlar, güncellemeler";

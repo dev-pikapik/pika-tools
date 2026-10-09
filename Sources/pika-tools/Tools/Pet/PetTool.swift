@@ -22,24 +22,34 @@ final class PetTool: Tool {
         didSet { UserDefaults.standard.set(talks, forKey: "pet-talks") }
     }
 
+    var ball: Bool {
+        didSet {
+            UserDefaults.standard.set(ball, forKey: "pet-ball")
+            PetStage.shared.update()
+        }
+    }
+
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
     private init() {
         isEnabled = UserDefaults.standard.object(forKey: "pet") as? Bool ?? true
         talks = UserDefaults.standard.object(forKey: "pet-talks") as? Bool ?? true
+        ball = UserDefaults.standard.object(forKey: "pet-ball") as? Bool ?? true
     }
 
-    var isDefault: Bool { isEnabled && talks }
+    var isDefault: Bool { isEnabled && talks && ball }
 
     func reset() {
         isEnabled = true
         talks = true
+        ball = true
     }
 
     func load() {
         isEnabled = UserDefaults.standard.object(forKey: "pet") as? Bool ?? true
         talks = UserDefaults.standard.object(forKey: "pet-talks") as? Bool ?? true
+        ball = UserDefaults.standard.object(forKey: "pet-ball") as? Bool ?? true
     }
 
     var settingsView: AnyView {
@@ -138,6 +148,13 @@ private struct PetSettings: View {
                 title: String(localized: "Talks sometimes"),
                 subtitle: Text("Every now and then it sits down for a chat and tells you when an update is out"),
                 isOn: $tool.talks
+            )
+            .disabled(!tool.isEnabled)
+            ToggleRow(
+                icon: "soccerball",
+                title: String(localized: "Ball"),
+                subtitle: Text("A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it"),
+                isOn: $tool.ball
             )
             .disabled(!tool.isEnabled)
         }

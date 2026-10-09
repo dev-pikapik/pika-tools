@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Postavte mu ukazatel do cesty a přeskočí ho";
 "Talks sometimes" = "Občas promluví";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Občas si sedne na kus řeči a dá vědět, když vyjde aktualizace";
+"Ball" = "Míč";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "Po spodním okraji obrazovky se kutálí míč. Mazlíček do něj kope a vy do něj můžete strčit ukazatelem nebo ho zvednout a hodit";
+"toy, football, soccer, kick, play, throw, selection, platform" = "hračka, fotbal, kopat, hrát, házet, výběr, plošina";
 "To make it jump when you press Space, allow Input Monitoring" = "Aby skákal po stisknutí mezerníku, povolte Monitorování vstupu";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "mazlíček, kámoš, kamarád, postavička, maskot, plocha, skok, mezerník";
 "phrases, speech bubble, talk, say, messages, updates" = "hlášky, bublina, mluvit, říct, zprávy, aktualizace";

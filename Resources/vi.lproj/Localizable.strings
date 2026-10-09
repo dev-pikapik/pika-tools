@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Đặt con trỏ chắn đường là nó nhảy qua";
 "Talks sometimes" = "Thỉnh thoảng trò chuyện";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Thỉnh thoảng nó ngồi xuống tán gẫu và báo cho bạn khi có bản cập nhật";
+"Ball" = "Quả bóng";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "Một quả bóng lăn dọc mép dưới màn hình. Thú cưng sẽ đá nó, còn bạn có thể đá nó bằng con trỏ hoặc nhấc lên rồi ném đi";
+"toy, football, soccer, kick, play, throw, selection, platform" = "đồ chơi, bóng đá, đá, chơi, ném, vùng chọn, bệ";
 "To make it jump when you press Space, allow Input Monitoring" = "Để nó nhảy khi bạn nhấn phím cách, hãy cho phép Theo dõi đầu vào";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "thú cưng, bạn đồng hành, bạn, nhân vật, linh vật, màn hình nền, nhảy, phím cách";
 "phrases, speech bubble, talk, say, messages, updates" = "câu nói, bong bóng thoại, nói, trò chuyện, tin nhắn, cập nhật";

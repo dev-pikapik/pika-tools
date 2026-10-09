@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "ضع المؤشر في طريقه فيقفز فوقه";
 "Talks sometimes" = "يتكلم أحيانًا";
 "Every now and then it sits down for a chat and tells you when an update is out" = "يجلس من حين لآخر ليدردش قليلًا ويخبرك عندما يصدر تحديث";
+"Ball" = "كرة";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "تتدحرج كرة على طول أسفل الشاشة. يركلها رفيقك، ويمكنك أنت أيضًا أن تركلها بالمؤشر أو ترفعها وترميها";
+"toy, football, soccer, kick, play, throw, selection, platform" = "لعبة, كرة قدم, ركل, لعب, رمي, تحديد, منصة";
 "To make it jump when you press Space, allow Input Monitoring" = "ليقفز عند الضغط على مفتاح المسافة، اسمح بمراقبة الإدخال";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "رفيق، حيوان أليف، صديق، شخصية، تميمة، سطح المكتب، قفز، مسافة";
 "phrases, speech bubble, talk, say, messages, updates" = "عبارات، فقاعة كلام، تكلم، قول، رسائل، تحديثات";

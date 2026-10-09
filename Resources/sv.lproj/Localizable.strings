@@ -499,6 +499,9 @@
 "Put the pointer in its way and it jumps over it" = "Ställ pekaren i vägen så hoppar det över den";
 "Talks sometimes" = "Pratar ibland";
 "Every now and then it sits down for a chat and tells you when an update is out" = "Då och då sätter det sig för en pratstund och berättar när en uppdatering har kommit";
+"Ball" = "Boll";
+"A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "En boll rullar längs skärmens nederkant. Ditt husdjur sparkar på den, och du kan sparka den med pekaren eller lyfta upp och kasta den";
+"toy, football, soccer, kick, play, throw, selection, platform" = "leksak, fotboll, sparka, leka, kasta, markering, plattform";
 "To make it jump when you press Space, allow Input Monitoring" = "Tillåt Övervakning av inmatning så att det hoppar när du trycker på mellanslag";
 "pet, buddy, friend, character, mascot, desktop, jump, Space" = "husdjur, kompis, vän, figur, maskot, skrivbord, hoppa, mellanslag";
 "phrases, speech bubble, talk, say, messages, updates" = "fraser, pratbubbla, prata, säga, meddelanden, uppdateringar";
