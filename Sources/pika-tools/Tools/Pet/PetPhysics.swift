@@ -28,6 +28,7 @@ struct PetPhysics {
     private(set) var vy: CGFloat = 0
     private(set) var shy = 0.0
     var calm = false
+    var roof = CGFloat.infinity
     private var cursor: CGRect?
     private var armed = true
     private var mark = CGRect.null
@@ -51,7 +52,7 @@ struct PetPhysics {
 
     var grounded: Bool { state != .jump && state != .tumble && state != .held && state != .thrown }
 
-    var aloft: Bool { state == .held || state == .thrown || state == .jump || state == .tumble }
+    var aloft: Bool { state == .held || state == .thrown }
 
     static func cursorRect(at point: CGPoint) -> CGRect {
         CGRect(x: point.x, y: point.y - pointer.height, width: pointer.width, height: pointer.height)
@@ -99,7 +100,7 @@ struct PetPhysics {
         guard state == .walk || state == .turn || state == .sit else { return false }
         vx = state == .walk ? facing * pace : 0
         if state == .turn { facing = heading }
-        vy = (2 * Self.gravity * max(0, min(Self.hop, bounds.height - Self.size.height))).squareRoot()
+        vy = (2 * Self.gravity * min(Self.hop, headroom)).squareRoot()
         enter(.jump)
         return true
     }
@@ -150,7 +151,7 @@ struct PetPhysics {
         mark = rect
         if calm, grounded { return turn(to: heading) }
         vx = calm ? 0 : heading * 70
-        vy = calm ? min(vy, 0) : state == .jump ? min(vy, 60) : 220
+        vy = calm ? min(vy, 0) : state == .jump ? min(vy, 60) : min(220, (2 * Self.gravity * headroom).squareRoot())
         enter(.tumble)
     }
 
@@ -199,7 +200,7 @@ struct PetPhysics {
         guard shy == 0, armed, let b0, let b1, state == .walk || state == .turn || state == .jump || state == .sit,
               let t = Self.sweep(a0, frame, b0, b1) else { return }
         let a1 = frame
-        origin = CGPoint(x: a0.midX + (a1.midX - a0.midX) * t, y: a0.minY + (a1.minY - a0.minY) * t)
+        origin = CGPoint(x: a0.midX + (a1.midX - a0.midX) * t, y: grounded ? bounds.minY : a0.minY + (a1.minY - a0.minY) * t)
         bump(Self.mix(b0, b1, t))
     }
 
@@ -258,7 +259,7 @@ struct PetPhysics {
         let lift = b.maxY - bounds.minY + Self.margin
         let height = max(lift + 24, lift / (1 - span * span / (d * d)))
         let land = origin.x + 2 * d * facing
-        guard height <= Self.highest, height + Self.size.height <= bounds.height, clamp(land) == land else { return false }
+        guard height <= Self.highest, height + Self.size.height <= min(bounds.maxY, roof) - bounds.minY, clamp(land) == land else { return false }
         vy = (2 * Self.gravity * height).squareRoot()
         vx = facing * d / (2 * height / Self.gravity).squareRoot()
         armed = false
@@ -280,6 +281,11 @@ struct PetPhysics {
 
     private func ahead(_ b: CGRect) -> Bool {
         (b.midX - origin.x) * facing > 0 && b.minY < frame.maxY + Self.margin && b.maxY > frame.minY
+    }
+
+    private var headroom: CGFloat {
+        let room = min(bounds.maxY, roof) - bounds.minY - Self.size.height
+        return max(0, min(bounds.height - Self.size.height, max(Self.hop / 2, room)))
     }
 
     private func gap(_ b: CGRect) -> CGFloat {

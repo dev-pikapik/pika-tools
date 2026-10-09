@@ -22,6 +22,7 @@ final class PetStage: NSObject {
     private var last: CFTimeInterval?
     private var observers: [(NotificationCenter, NSObjectProtocol)] = []
     private var asleep = false, locked = false, fullscreen = false
+    private var recheck: Timer?
     private var nextTalk: TimeInterval
     private var deck: [PetPhrase] = []
     private var phrase: PetPhrase?
@@ -78,8 +79,9 @@ final class PetStage: NSObject {
 
         locked = (CGSessionCopyCurrentDictionary() as? [String: Any])?["CGSSessionScreenIsLocked"] as? Bool ?? false
         layout()
-        let width = physics.bounds.width
+        let width = physics.bounds.width, roof = physics.roof
         physics = PetPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.12), facing: demo == nil && Bool.random() ? -1 : 1)
+        physics.roof = roof
         physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
         checkFullscreen()
     }
@@ -88,6 +90,8 @@ final class PetStage: NSObject {
         raised = false
         link?.invalidate()
         link = nil
+        recheck?.invalidate()
+        recheck = nil
         observers.forEach { $0.0.removeObserver($0.1) }
         observers = []
         hideBubble()
@@ -136,6 +140,8 @@ final class PetStage: NSObject {
         view.frame = CGRect(x: view.frame.minX, y: 0, width: Self.width, height: Self.height)
         let top = max(Self.height, screen.visibleFrame.maxY - screen.frame.minY)
         physics.resize(CGRect(x: 0, y: Self.ground, width: frame.width, height: top - Self.ground))
+        let dock = screen.visibleFrame.minY - screen.frame.minY
+        physics.roof = dock > Self.ground + PetPhysics.size.height ? dock : .infinity
         place()
         if let bubble { show(bubble) }
     }
@@ -148,6 +154,11 @@ final class PetStage: NSObject {
             hideBubble()
         } else if !window.isVisible {
             window.orderFrontRegardless()
+        }
+        let waiting = (fullscreen || GameModeTool.shared.isPlaying) && !asleep && !locked
+        if waiting != (recheck != nil) {
+            recheck?.invalidate()
+            recheck = waiting ? Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.checkFullscreen() } : nil
         }
         let paused = hidden || !window.occlusionState.contains(.visible)
         if paused {

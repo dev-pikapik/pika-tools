@@ -251,5 +251,51 @@ enum TestPet {
         trace(&pet, 0.5, cursor: { CGPoint(x: 400 + 100 * $0, y: 200) })
         precondition(!pet.jump() && pet.state == .held && pet.origin.y > 100)
         print("a held pet ignores Space: ok")
+
+        pet = PetPhysics(bounds: room, x: 400, facing: 1)
+        pet.jump()
+        precondition(pet.state == .jump && !pet.aloft)
+        pet.bump(pet.frame.offsetBy(dx: 20, dy: 0))
+        precondition(pet.state == .tumble && !pet.aloft)
+        trace(&pet, 3)
+        pet.grab(at: CGPoint(x: pet.origin.x, y: 20))
+        precondition(pet.state == .held && pet.aloft)
+        pet.release()
+        precondition(pet.state == .thrown && pet.aloft)
+        print("only a held or thrown pet rises above windows: ok")
+
+        for (roof, hop) in [(CGFloat(60), CGFloat(24)), (40, PetPhysics.hop / 2), (.infinity, PetPhysics.hop)] {
+            pet = PetPhysics(bounds: room, x: 400)
+            pet.roof = roof
+            precondition(pet.jump())
+            var top: CGFloat = 0
+            trace(&pet, 2, check: { p, _ in top = max(top, p.origin.y - room.minY) })
+            precondition(abs(top - hop) < 1, "hop \(top) under roof \(roof)")
+        }
+        for calm in [false, true] {
+            for height in [CGFloat(10), 30, 56] {
+                pet = PetPhysics(bounds: room, x: 300, facing: 1)
+                pet.roof = 60
+                pet.calm = calm
+                let point = CGPoint(x: 500, y: height)
+                states = trace(&pet, 12, cursor: { _ in point }) { p, _ in
+                    precondition(p.frame.maxY <= 60 + 1e-6, "rose above the roof: \(p.frame) cursor at \(height)")
+                }
+                precondition(!states.contains(.jump), "\(states)")
+            }
+        }
+        for i in 0..<20_000 {
+            if i % 2_000 == 0 {
+                pet = PetPhysics(bounds: room, x: 20 + next() * 1360)
+                pet.roof = 60
+            }
+            if next() < 0.03 { pet.jump() }
+            if pet.grounded, next() < 0.01 { pet.bump(pet.frame.offsetBy(dx: next() < 0.5 ? -20 : 20, dy: 0)) }
+            if next() < 0.003 { pet.calm.toggle() }
+            pet.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: CGPoint(x: next() * 1400, y: next() * 80))
+            precondition(pet.frame.maxY <= 60 + 1e-6, "rose above the roof at step \(i): \(pet.frame)")
+            precondition(!pet.grounded || pet.origin.y == room.minY, "hovering at step \(i): \(pet.frame)")
+        }
+        print("jumps stay below the roof: ok")
     }
 }
