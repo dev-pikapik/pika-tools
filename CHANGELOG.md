@@ -2,6 +2,17 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.28.0] - Unreleased
+
+### Added
+- Adding apps to a list is now a click or a drag. Add App… opens a shelf with the apps in your Dock and the apps that are open right now: click one to add it, click it again to take it back, or choose Other… for anything else. You can also drag an app from Finder straight onto a list, and the list lights up to show where it lands. This works for every list of apps in Settings: Home and End, Never quit these apps, the green button and your games.
+- The bug report form on GitHub lets you pick your pikapik version and macOS from a list.
+
+### Fixed
+- Scroll direction no longer turns scrolling around a second time when you control another Mac through AnyDesk or another remote desktop app. pikapik now flips only scrolling that comes from a real mouse or trackpad. If an app makes its own smooth scrolling, like Mos, set the direction in that app.
+- The pet stays behind the Dock when it jumps or tumbles, just like when it walks, and no longer pops out in front of it. After you leave a full-screen app or a game, it comes back by itself.
+- The thin frames around the little pictures in Settings no longer disappear on regular, non-Retina displays.
+
 ## [1.27.3] - 2026-10-09
 
 ### Fixed

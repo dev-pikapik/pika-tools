@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Uygulamaları bir tıkla ya da sürükleyerek ekleyin
+
+<sub>1.28.0 · 9 Ekim 2026</sub>
+
+Ayarlar’daki her uygulama listesi artık Dock’unuzdakileri ve şu an açık olanları gösteriyor; Finder’dan uygulamaları listeye sürükleyebilirsiniz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Bazı özellikler, kenara çekilecekleri uygulamaları seçmenize izin verir; yeşil düğme ya da Home ve End gibi. Eskiden “Uygulama Ekle…” her şeyin olduğu uzun bir klasörü açıyordu. Artık Dock’taki uygulamalarla şu an açık olanların durduğu bir raf çıkıyor. Bir uygulamaya tıklayınca eklenir, bir kez daha tıklayınca çıkar. Geri kalanı için “Diğer…” var.
+
+Bir uygulamayı Finder’dan doğrudan listenin üzerine de sürükleyebilirsiniz. Liste parlayıp uygulamanın nereye gireceğini gösterir. Oyunlarınız da aynı rafla aynı şekilde çalışır.
+
+Bir şeyler ters giderse, GitHub’daki hata bildirme formunda artık pikapik ve macOS sürümünüzü bir listeden seçebilirsiniz; bize anlatmak daha kısa sürer.
+
+**Deneyin:** Ayarlar › Pencereler, sonra “Uygulama Ekle…”
+
+**Düzeltilenler**
+
+- İki Mac’te de klasik kaydırma yönü seçiliyken AnyDesk ya da başka bir uzak masaüstü uygulamasıyla kaydırma artık iki kez ters çevrilmiyor. pikapik artık yalnızca gerçek bir fareden ya da izleme dörtgeninden gelen kaydırmayı çeviriyor. Mos gibi kendi yumuşak kaydırmasını yapan bir uygulama kullanıyorsanız yönü o uygulamada ayarlayın.
+- Dostunuz zıplarken de yürürken olduğu gibi Dock’un arkasında kalıyor ve tam ekran bir uygulamadan ya da oyundan çıkınca kendiliğinden geri geliyor.
+- Ayarlar’daki küçük resimlerin etrafındaki ince çerçeveler, Retina olmayan sıradan ekranlarda artık kaybolmuyor.
+
+---
+
 ## <a id="v1.27.3"></a>Dostunuz hep görünür, pencereler hazır açılır
 
 <sub>1.27.3 · 9 Ekim 2026</sub>

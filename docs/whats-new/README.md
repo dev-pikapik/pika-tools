@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Add apps with a click or a drag
+
+<sub>1.28.0 · October 9, 2026</sub>
+
+Every list of apps in Settings now shows what’s in your Dock and open right now, and you can drag apps onto it from Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Some features let you choose apps where they step aside, like the green button or Home and End. Before, Add App… only opened a long folder of everything you have. Now it shows a shelf with the apps in your Dock and the ones open right now. Click an app to add it, click it again to take it back. For anything else, pick Other…
+
+You can also drag an app from Finder straight onto a list. The list lights up to show where the app will land. Your games work the same way, with the same shelf.
+
+And if something goes wrong, the bug report form on GitHub now lets you pick your pikapik version and macOS from a list, so telling us about it takes less time.
+
+**Try it:** Settings › Windows, then Add App…
+
+**Fixed**
+
+- Scrolling through AnyDesk or another remote desktop app is no longer turned around twice when you use the classic direction on both Macs. pikapik now flips only scrolling from a real mouse or trackpad. If an app makes its own smooth scrolling, like Mos, set the direction in that app.
+- The pet stays behind the Dock when it jumps, just like when it walks, and comes back by itself after you leave a full-screen app or a game.
+- The thin frames around the little pictures in Settings no longer disappear on regular, non-Retina displays.
+
+---
+
 ## <a id="v1.27.3"></a>The pet stays in sight, and windows open ready
 
 <sub>1.27.3 · October 9, 2026</sub>

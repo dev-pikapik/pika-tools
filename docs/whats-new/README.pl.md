@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Aplikacje dodasz jednym kliknięciem albo przeciągając
+
+<sub>1.28.0 · 9 października 2026</sub>
+
+Każda lista aplikacji w Ustawieniach pokazuje teraz to, co masz w Docku i co jest właśnie otwarte, a aplikacje możesz przeciągać na nią z Findera.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Przy niektórych funkcjach wybierasz aplikacje, w których mają się nie wtrącać, na przykład przy zielonym przycisku albo Home i End. Wcześniej „Dodaj aplikację…” otwierało tylko długi folder ze wszystkim. Teraz pojawia się półka z aplikacjami z Docka i tymi, które są teraz otwarte. Kliknij aplikację, żeby ją dodać, i jeszcze raz, żeby ją zabrać. Wszystko inne znajdziesz w „Inne…”.
+
+Możesz też przeciągnąć aplikację z Findera prosto na listę. Lista podświetli się i pokaże, gdzie aplikacja trafi. Z grami jest tak samo, z tą samą półką.
+
+A gdy coś pójdzie nie tak, w formularzu zgłaszania błędu na GitHubie wybierzesz teraz wersję pikapik i macOS z listy, więc opowiesz nam o tym szybciej.
+
+**Wypróbuj:** Ustawienia › Okna, potem „Dodaj aplikację…”
+
+**Poprawki**
+
+- Przewijanie przez AnyDesk lub inną aplikację pulpitu zdalnego nie jest już odwracane dwa razy, gdy na obu Macach ustawiony jest klasyczny kierunek. Teraz pikapik odwraca tylko przewijanie z prawdziwej myszy lub gładzika. Jeśli aplikacja sama robi płynne przewijanie, jak Mos, ustaw kierunek w niej.
+- Zwierzak zostaje za Dockiem, gdy skacze, tak samo jak gdy chodzi, i sam wraca, gdy wyjdziesz z aplikacji na pełnym ekranie albo z gry.
+- Cienkie ramki wokół małych obrazków w Ustawieniach nie znikają już na zwykłych ekranach bez Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Zwierzak zawsze na widoku, a okna otwierają się gotowe
 
 <sub>1.27.3 · 9 października 2026</sub>

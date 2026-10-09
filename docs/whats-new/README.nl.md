@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Apps toevoegen met een klik of door te slepen
+
+<sub>1.28.0 · 9 oktober 2026</sub>
+
+Elke lijst met apps in Instellingen laat nu zien wat er in je Dock staat en wat er nu open is, en je kunt apps er vanuit de Finder op slepen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Bij sommige functies kies je apps waarin ze zich even inhouden, zoals bij de groene knop of Home en End. Vroeger opende ‘Voeg app toe…’ alleen een lange map met alles wat je hebt. Nu verschijnt er een plank met de apps uit je Dock en de apps die nu open zijn. Klik op een app om hem toe te voegen en nog eens om hem weer weg te halen. Voor al het andere is er ‘Andere…’.
+
+Je kunt een app ook vanuit de Finder rechtstreeks op een lijst slepen. De lijst licht op en laat zien waar de app terechtkomt. Je games werken net zo, met dezelfde plank.
+
+En als er iets misgaat, kies je in het formulier voor foutmeldingen op GitHub nu je versie van pikapik en macOS uit een lijst, zodat je het ons sneller vertelt.
+
+**Probeer het:** Instellingen › Vensters, dan ‘Voeg app toe…’
+
+**Opgelost**
+
+- Scrollen via AnyDesk of een andere app voor bureaublad op afstand wordt niet meer twee keer omgedraaid als beide Macs de klassieke richting gebruiken. pikapik draait nu alleen scrollen van een echte muis of trackpad om. Maakt een app zelf zacht scrollen, zoals Mos, stel de richting dan in die app in.
+- Je huisdiertje blijft achter het Dock als het springt, net als wanneer het loopt, en komt vanzelf terug als je een app op het volledige scherm of een game verlaat.
+- De dunne randjes rond de kleine plaatjes in Instellingen verdwijnen niet meer op gewone schermen zonder Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Je huisdiertje blijft in beeld, en vensters openen klaar voor gebruik
 
 <sub>1.27.3 · 9 oktober 2026</sub>

@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Lägg till appar med ett klick eller genom att dra
+
+<sub>1.28.0 · 9 oktober 2026</sub>
+
+Varje lista med appar i Inställningar visar nu vad som finns i Dock och vad som är öppet just nu, och du kan dra appar dit från Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+En del funktioner låter dig välja appar där de håller sig undan, som den gröna knappen eller Home och End. Förut öppnade ”Lägg till app…” bara en lång mapp med allt du har. Nu dyker en hylla upp med apparna i din Dock och de som är öppna just nu. Klicka på en app för att lägga till den och klicka igen för att ta bort den. För allt annat finns ”Annat…”.
+
+Du kan också dra en app från Finder direkt till en lista. Listan lyser upp och visar var appen hamnar. Dina spel fungerar likadant, med samma hylla.
+
+Och om något går fel kan du nu välja din version av pikapik och macOS i en lista i formuläret för felrapporter på GitHub, så går det fortare att berätta för oss.
+
+**Prova:** Inställningar › Fönster, sedan ”Lägg till app…”
+
+**Åtgärdat**
+
+- Rullning via AnyDesk eller en annan app för fjärrskrivbord vänds inte längre två gånger när båda Mac-datorerna använder den klassiska riktningen. pikapik vänder nu bara rullning från en riktig mus eller styrplatta. Om en app gör sin egen mjuka rullning, som Mos, ställer du in riktningen i den appen.
+- Husdjuret stannar bakom Dock när det hoppar, precis som när det går, och kommer tillbaka av sig självt när du lämnar en app i helskärm eller ett spel.
+- De tunna ramarna runt de små bilderna i Inställningar försvinner inte längre på vanliga skärmar utan Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Husdjuret syns alltid, och fönster öppnas redo
 
 <sub>1.27.3 · 9 oktober 2026</sub>

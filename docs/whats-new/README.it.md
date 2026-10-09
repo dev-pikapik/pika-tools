@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Aggiungi app con un clic o trascinandole
+
+<sub>1.28.0 · 9 ottobre 2026</sub>
+
+Ogni elenco di app nelle Impostazioni ora mostra cosa c’è nel Dock e cosa è aperto adesso, e puoi trascinarci le app dal Finder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Alcune funzioni ti fanno scegliere le app in cui si fanno da parte, come il pulsante verde o Inizio e Fine. Prima, «Aggiungi app…» apriva solo una lunga cartella con tutto quello che hai. Ora compare uno scaffale con le app del Dock e quelle aperte in questo momento. Fai clic su un’app per aggiungerla, di nuovo per toglierla. Per tutto il resto c’è «Altro…».
+
+Puoi anche trascinare un’app dal Finder direttamente su un elenco. L’elenco si illumina per mostrarti dove finirà l’app. Con i tuoi giochi funziona allo stesso modo, con lo stesso scaffale.
+
+E se qualcosa va storto, il modulo per segnalare un problema su GitHub ora ti fa scegliere la versione di pikapik e di macOS da un elenco, così raccontarcelo richiede meno tempo.
+
+**Provalo:** Impostazioni › Finestre, poi «Aggiungi app…»
+
+**Corretto**
+
+- Lo scorrimento tramite AnyDesk o un’altra app di desktop remoto non viene più invertito due volte quando usi la direzione classica su entrambi i Mac. Ora pikapik inverte solo lo scorrimento di un vero mouse o trackpad. Se un’app fa da sé lo scorrimento fluido, come Mos, imposta la direzione in quell’app.
+- L’animaletto resta dietro il Dock quando salta, proprio come quando cammina, e torna da solo quando esci da un’app a tutto schermo o da un gioco.
+- Le sottili cornici attorno alle piccole immagini nelle Impostazioni non spariscono più sui normali schermi senza Retina.
+
+---
+
 ## <a id="v1.27.3"></a>L’animaletto resta in vista, e le finestre si aprono pronte
 
 <sub>1.27.3 · 9 ottobre 2026</sub>

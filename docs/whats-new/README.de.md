@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Apps mit einem Klick oder per Ziehen hinzufügen
+
+<sub>1.28.0 · 9. Oktober 2026</sub>
+
+Jede App-Liste in den Einstellungen zeigt jetzt, was im Dock liegt und gerade geöffnet ist, und du kannst Apps einfach aus dem Finder darauf ziehen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Bei manchen Funktionen kannst du Apps auswählen, in denen sie sich zurückhalten, etwa beim grünen Knopf oder bei Home und Ende. Bisher öffnete „App hinzufügen …“ nur einen langen Ordner mit allem. Jetzt erscheint ein Regal mit den Apps aus deinem Dock und denen, die gerade offen sind. Klick auf eine App, und sie ist dabei; klick noch einmal, und sie ist wieder weg. Für alles andere gibt es „Andere …“.
+
+Du kannst eine App auch direkt aus dem Finder auf eine Liste ziehen. Die Liste leuchtet auf und zeigt, wo die App landet. Bei deinen Spielen geht das genauso, mit demselben Regal.
+
+Und falls etwas schiefgeht: Im Formular für Fehlermeldungen auf GitHub wählst du deine pikapik-Version und macOS jetzt aus einer Liste. So erzählst du uns schneller davon.
+
+**Ausprobieren:** Einstellungen › Fenster, dann „App hinzufügen …“
+
+**Behoben**
+
+- Scrollen über AnyDesk oder eine andere Fernsteuerungs-App wird nicht mehr doppelt umgedreht, wenn auf beiden Macs die klassische Richtung eingestellt ist. pikapik dreht jetzt nur noch das Scrollen einer echten Maus oder eines Trackpads um. Wenn eine App selbst weich scrollt, wie Mos, stell die Richtung dort ein.
+- Das Haustier bleibt beim Springen hinter dem Dock, genau wie beim Laufen, und kommt von selbst zurück, wenn du eine Vollbild-App oder ein Spiel verlässt.
+- Die feinen Rahmen um die kleinen Bilder in den Einstellungen verschwinden auf normalen Bildschirmen ohne Retina nicht mehr.
+
+---
+
 ## <a id="v1.27.3"></a>Das Haustier bleibt in Sicht, und Fenster öffnen sich bereit
 
 <sub>1.27.3 · 9. Oktober 2026</sub>

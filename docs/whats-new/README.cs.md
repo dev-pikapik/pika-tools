@@ -5,6 +5,30 @@
 
 ---
 
+## <a id="v1.28.0"></a>Aplikace přidáte jedním kliknutím nebo přetažením
+
+<sub>1.28.0 · 9. října 2026</sub>
+
+Každý seznam aplikací v Nastavení teď ukazuje, co máte v Docku a co je právě otevřené, a aplikace na něj můžete přetáhnout z Finderu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+U některých funkcí si vybíráte aplikace, ve kterých se mají držet stranou, třeba u zeleného tlačítka nebo Home a End. Dřív „Přidat aplikaci…“ otevřelo jen dlouhou složku se vším. Teď se objeví polička s aplikacemi z Docku a těmi, které jsou právě otevřené. Klikněte na aplikaci a je přidaná, klikněte znovu a je pryč. Na všechno ostatní je tu „Jiné…“.
+
+Aplikaci můžete také přetáhnout z Finderu rovnou na seznam. Seznam se rozsvítí a ukáže, kam aplikace dopadne. S hrami to funguje stejně, se stejnou poličkou.
+
+A když se něco pokazí, ve formuláři pro nahlášení chyby na GitHubu si teď verzi pikapik a macOS vyberete ze seznamu, takže nám to řeknete rychleji.
+
+**Vyzkoušejte:** Nastavení › Okna, pak „Přidat aplikaci…“
+
+**Opraveno**
+
+- Posouvání přes AnyDesk nebo jinou aplikaci pro vzdálenou plochu se už neotáčí dvakrát, když oba Macy používají klasický směr. pikapik teď otáčí jen posouvání ze skutečné myši nebo trackpadu. Pokud si aplikace dělá vlastní plynulé posouvání, jako Mos, nastavte směr v ní.
+- Mazlíček zůstává za Dockem, i když skáče, stejně jako když chodí, a sám se vrátí, když opustíte aplikaci na celé obrazovce nebo hru.
+- Tenké rámečky kolem malých obrázků v Nastavení už nemizí na běžných displejích bez Retina.
+
+---
+
 ## <a id="v1.27.3"></a>Mazlíček je pořád vidět a okna se otevírají připravená
 
 <sub>1.27.3 · 9. října 2026</sub>
