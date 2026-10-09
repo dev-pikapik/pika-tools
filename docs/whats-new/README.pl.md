@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Zakończ już nie wyłącza pikapik
+
+<sub>1.30.0 · 9 października 2026</sub>
+
+Wybrałeś Zakończ z przyzwyczajenia? Skróty, „Bez usypiania” i Twój zwierzak nadal działają.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Gdy wybierzesz „Zakończ”, naciśniesz ⌘Q albo zakończysz pikapik z Docka, zamyka on swoje okna i chowa ikonę z paska menu, ale dalej cicho działa w tle: skróty, „Bez usypiania” i zwierzak zostają włączone. Aby przywrócić ikonę, po prostu otwórz pikapik jeszcze raz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Chcesz naprawdę zakończyć? Przytrzymaj Option (⌥) i wybierz „Zakończ” albo naciśnij ⌥⌘Q. Gdy pikapik pierwszy raz przechodzi w tło, wyjaśnia, co się stało, i od razu proponuje zakończenie całkowite.
+
+Wolisz po staremu? Wyłącz „Działaj w tle po zakończeniu” w Ustawieniach › Ogólne. Aktualizacje, zmiana języka, wylogowanie, ponowne uruchomienie i wyłączenie komputera zawsze kończą pikapik całkowicie, więc nigdy nie muszą na niego czekać.
+
+**Wypróbuj:** Naciśnij ⌘Q, a potem otwórz pikapik jeszcze raz, aby przywrócić ikonę.
+
+---
+
 ## <a id="v1.29.1"></a>Zwierzak spaceruje po wszystkich ekranach
 
 <sub>1.29.1 · 9 października 2026</sub>

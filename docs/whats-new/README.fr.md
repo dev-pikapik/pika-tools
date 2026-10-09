@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Quitter n’éteint plus pikapik
+
+<sub>1.30.0 · 9 octobre 2026</sub>
+
+Vous avez choisi Quitter par habitude ? Vos raccourcis, « Rester éveillé » et votre compagnon continuent de fonctionner.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Quand vous choisissez « Quitter », appuyez sur ⌘Q ou quittez pikapik depuis le Dock, il ferme ses fenêtres et masque son icône dans la barre des menus, mais continue discrètement en arrière-plan : les raccourcis, « Rester éveillé » et votre compagnon restent actifs. Pour retrouver l’icône, rouvrez simplement pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vous voulez vraiment quitter ? Maintenez Option (⌥) et choisissez « Quitter », ou appuyez sur ⌥⌘Q. La première fois que pikapik passe en arrière-plan, il vous explique ce qui s’est passé et vous propose de quitter complètement tout de suite.
+
+Vous préférez l’ancien comportement ? Désactivez « Continuer en arrière-plan après Quitter » dans Réglages › Général. Les mises à jour, le changement de langue, la fermeture de session, le redémarrage et l’extinction quittent toujours pikapik complètement, ils n’ont donc jamais à l’attendre.
+
+**Pour essayer :** Appuyez sur ⌘Q, puis rouvrez pikapik pour retrouver son icône.
+
+---
+
 ## <a id="v1.29.1"></a>Votre compagnon se promène sur tous vos écrans
 
 <sub>1.29.1 · 9 octobre 2026</sub>

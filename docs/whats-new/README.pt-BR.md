@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Encerrar não desliga mais o pikapik
+
+<sub>1.30.0 · 9 de outubro de 2026</sub>
+
+Clicou em Encerrar por hábito? Seus atalhos, o «Manter Ativo» e seu bichinho continuam funcionando.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Quando você escolhe «Encerrar», pressiona ⌘Q ou encerra o pikapik pelo Dock, ele fecha as janelas e esconde o ícone da barra de menus, mas continua trabalhando em silêncio em segundo plano: os atalhos, o «Manter Ativo» e seu bichinho continuam ligados. Para trazer o ícone de volta, é só abrir o pikapik de novo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quer encerrar de verdade? Segure Option (⌥) e escolha «Encerrar», ou pressione ⌥⌘Q. Na primeira vez que o pikapik vai para segundo plano, ele explica o que aconteceu e oferece encerrar por completo ali mesmo.
+
+Prefere como antes? Desative «Continuar em segundo plano ao encerrar» em Ajustes › Geral. Atualizações, troca de idioma, sair da conta, reiniciar e desligar sempre encerram o pikapik por completo, então nunca precisam esperar por ele.
+
+**Experimente:** Pressione ⌘Q e depois abra o pikapik de novo para trazer o ícone de volta.
+
+---
+
 ## <a id="v1.29.1"></a>Seu bichinho passeia por todas as telas
 
 <sub>1.29.1 · 9 de outubro de 2026</sub>

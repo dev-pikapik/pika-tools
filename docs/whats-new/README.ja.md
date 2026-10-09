@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>「終了」してもpikapikは止まらなくなりました
+
+<sub>1.30.0 · 2026年10月9日</sub>
+
+うっかり「終了」を選んでも、ショートカット、「スリープさせない」、ペットはそのまま動き続けます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+「終了」を選ぶ、⌘Qを押す、またはDockからpikapikを終了すると、ウインドウを閉じてメニューバーのアイコンを隠しますが、バックグラウンドで静かに動き続けます。ショートカット、「スリープさせない」、ペットはそのままです。アイコンを戻すには、pikapikをもう一度開くだけです。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+本当に終了したいときは、Option（⌥）キーを押しながら「終了」を選ぶか、⌥⌘Qを押します。pikapikが初めてバックグラウンドに移るときは、何が起きたかを説明し、その場で完全に終了することもできます。
+
+以前の動作がよければ、「設定」›「一般」で「終了後もバックグラウンドで動作」をオフにしてください。アップデート、言語の変更、ログアウト、再起動、システム終了のときは、いつもpikapikが完全に終了するので、待たされることはありません。
+
+**試してみる：** ⌘Qを押してから、もう一度pikapikを開いてアイコンを戻してみましょう。
+
+---
+
 ## <a id="v1.29.1"></a>ペットがすべての画面を歩くように
 
 <sub>1.29.1 · 2026年10月9日</sub>

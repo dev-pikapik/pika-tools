@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>종료해도 pikapik이 꺼지지 않습니다
+
+<sub>1.30.0 · 2026년 10월 9일</sub>
+
+습관처럼 종료를 눌렀나요? 단축키, ‘잠자기 방지’, 펫은 그대로 계속 작동합니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+‘종료’를 선택하거나 ⌘Q를 누르거나 Dock에서 pikapik을 종료하면, 창을 닫고 메뉴 막대 아이콘을 숨기지만 백그라운드에서 조용히 계속 작동합니다. 단축키, ‘잠자기 방지’, 펫은 그대로 켜져 있습니다. 아이콘을 다시 보려면 pikapik을 한 번 더 열기만 하면 됩니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+정말 종료하고 싶다면 Option(⌥) 키를 누른 채 ‘종료’를 선택하거나 ⌥⌘Q를 누르세요. pikapik이 처음 백그라운드로 갈 때 무슨 일이 일어났는지 알려 주고, 그 자리에서 완전히 종료할 수도 있습니다.
+
+예전 방식이 더 좋다면 설정 › 일반에서 ‘종료 후에도 백그라운드에서 실행’을 끄세요. 업데이트, 언어 변경, 로그아웃, 재시동, 시스템 종료 때는 언제나 pikapik이 완전히 종료되므로 기다릴 일이 없습니다.
+
+**사용해 보기:** ⌘Q를 누른 다음 pikapik을 다시 열어 아이콘을 되돌려 보세요.
+
+---
+
 ## <a id="v1.29.1"></a>펫이 모든 화면을 걸어 다녀요
 
 <sub>1.29.1 · 2026년 10월 9일</sub>

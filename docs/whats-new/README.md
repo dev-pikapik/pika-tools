@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Quit no longer switches pikapik off
+
+<sub>1.30.0 · October 9, 2026</sub>
+
+Pressed Quit out of habit? Your shortcuts, Keep Awake and your pet keep working anyway.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+When you choose Quit, press ⌘Q or quit pikapik from the Dock, it closes its windows and hides its menu bar icon, but quietly keeps working in the background: shortcuts, Keep Awake and your pet stay on. To bring the icon back, just open pikapik again.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Want to quit for real? Hold Option and choose Quit, or press ⌥⌘Q. The first time pikapik goes into the background, it explains what happened and lets you quit completely right there.
+
+Prefer the old way? Turn off “Keep running after Quit” in Settings › General. Updates, changing the language, logging out, restarting and shutting down always quit pikapik completely, so they never have to wait for it.
+
+**Try it:** Press ⌘Q, then open pikapik again to bring its icon back.
+
+---
+
 ## <a id="v1.29.1"></a>Your pet walks across all your screens
 
 <sub>1.29.1 · October 9, 2026</sub>

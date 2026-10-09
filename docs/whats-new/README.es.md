@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Salir ya no apaga pikapik
+
+<sub>1.30.0 · 9 de octubre de 2026</sub>
+
+¿Pulsaste Salir por costumbre? Tus atajos, «Mantener activo» y tu mascota siguen funcionando igual.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Cuando eliges «Salir», pulsas ⌘Q o cierras pikapik desde el Dock, cierra sus ventanas y oculta su icono de la barra de menús, pero sigue trabajando en silencio en segundo plano: los atajos, «Mantener activo» y tu mascota siguen activos. Para recuperar el icono, simplemente abre pikapik otra vez.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+¿Quieres salir de verdad? Mantén pulsada Opción (⌥) y elige «Salir», o pulsa ⌥⌘Q. La primera vez que pikapik pasa a segundo plano, te explica qué ha pasado y te ofrece salir del todo ahí mismo.
+
+¿Prefieres como antes? Desactiva «Seguir en segundo plano al salir» en Ajustes › General. Las actualizaciones, el cambio de idioma, cerrar sesión, reiniciar y apagar siempre cierran pikapik del todo, así que nunca tienen que esperarlo.
+
+**Pruébalo:** Pulsa ⌘Q y luego abre pikapik otra vez para recuperar su icono.
+
+---
+
 ## <a id="v1.29.1"></a>Tu mascota pasea por todas tus pantallas
 
 <sub>1.29.1 · 9 de octubre de 2026</sub>

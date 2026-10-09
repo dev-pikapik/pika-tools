@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>“退出”不再关掉 pikapik
+
+<sub>1.30.0 · 2026年10月9日</sub>
+
+习惯性地点了“退出”？快捷键、“保持唤醒”和宠物依然照常工作。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+当你选择“退出”、按下 ⌘Q 或从程序坞退出 pikapik 时，它会关闭窗口并隐藏菜单栏图标，但仍在后台安静运行：快捷键、“保持唤醒”和宠物都会继续工作。想让图标回来，只要再次打开 pikapik 即可。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+想真正退出？按住 Option（⌥）键再选择“退出”，或按 ⌥⌘Q。pikapik 第一次进入后台时，会说明发生了什么，并让你当场完全退出。
+
+更喜欢以前的方式？在“设置 › 通用”中关闭“退出后继续在后台运行”。更新、切换语言、退出登录、重新启动和关机时，pikapik 总是会完全退出，绝不会让它们等待。
+
+**试试看：** 按下 ⌘Q，然后再次打开 pikapik，让图标回来。
+
+---
+
 ## <a id="v1.29.1"></a>宠物能在所有屏幕上散步了
 
 <sub>1.29.1 · 2026年10月9日</sub>
