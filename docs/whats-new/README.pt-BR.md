@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Seu bichinho não some mais atrás das janelas
+
+<sub>1.30.2 · 9 de outubro de 2026</sub>
+
+Mesmo quando uma janela cobre o bichinho, ele continua vivo e cai no chão quando você solta a seleção.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quando as janelas cobriam toda a faixa onde o bichinho vive, o pikapik o pausava, e ele podia ficar parado no ar. Agora o bichinho e a bola continuam vivos atrás da janela: andam, caem e brincam. Só o desenho faz uma pausa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Se um retângulo de seleção levantar o bichinho atrás de uma janela, ele cai assim que você solta e aparece de novo perto do Dock.
+
+E um retângulo de seleção não levanta mais o bichinho acima da faixa dele.
+
+**Experimente:** Maximize uma janela, levante o bichinho com um retângulo de seleção atrás dela e solte. Ele cai e aparece perto do Dock.
+
+---
+
 ## <a id="v1.30.1"></a>As seleções na mesa voltaram a funcionar
 
 <sub>1.30.1 · 9 de outubro de 2026</sub>

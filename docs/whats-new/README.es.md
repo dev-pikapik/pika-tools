@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Tu mascota ya no desaparece detrás de las ventanas
+
+<sub>1.30.2 · 9 de octubre de 2026</sub>
+
+Aunque una ventana tape a tu mascota, sigue viva y cae al suelo cuando sueltas la selección.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Cuando las ventanas tapaban toda la franja donde vive tu mascota, pikapik la pausaba y podía quedarse congelada en el aire. Ahora tu mascota y su pelota siguen vivas detrás de la ventana: caminan, caen y juegan. Solo el dibujo se toma un descanso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Si un recuadro de selección levanta a tu mascota detrás de una ventana, cae en cuanto lo sueltas y vuelves a verla junto al Dock.
+
+Y un recuadro de selección ya no levanta a tu mascota más arriba de su franja.
+
+**Pruébalo:** Maximiza una ventana, levanta a tu mascota con un recuadro de selección detrás de ella y suéltalo. Tu mascota cae y aparece junto al Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Las selecciones en el escritorio vuelven a funcionar
 
 <sub>1.30.1 · 9 de octubre de 2026</sub>

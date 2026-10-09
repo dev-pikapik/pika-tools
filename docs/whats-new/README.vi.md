@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Thú cưng không còn biến mất sau cửa sổ
+
+<sub>1.30.2 · ngày 9 tháng 10, 2026</sub>
+
+Ngay cả khi bị cửa sổ che, thú cưng vẫn tiếp tục sống và rơi xuống đất khi bạn thả vùng chọn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Khi cửa sổ che kín cả dải nơi thú cưng sống, pikapik tạm dừng nó, và nó có thể đứng yên giữa không trung. Giờ thú cưng và quả bóng vẫn sống tiếp sau cửa sổ: đi lại, rơi xuống và chơi đùa. Chỉ có việc vẽ là tạm nghỉ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nếu khung chọn nhấc thú cưng lên sau một cửa sổ, nó sẽ rơi xuống ngay khi bạn thả ra và bạn lại thấy nó cạnh Dock.
+
+Và khung chọn không còn nhấc thú cưng cao hơn dải của nó.
+
+**Thử ngay:** Phóng to một cửa sổ, dùng khung chọn nhấc thú cưng lên phía sau nó rồi thả ra. Thú cưng rơi xuống và xuất hiện cạnh Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Khung chọn trên màn hình nền hoạt động trở lại
 
 <sub>1.30.1 · ngày 9 tháng 10, 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Animăluțul nu mai dispare în spatele ferestrelor
+
+<sub>1.30.2 · 9 octombrie 2026</sub>
+
+Chiar și când o fereastră îl acoperă, animăluțul continuă să trăiască și cade pe pământ când eliberezi selecția.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Când ferestrele acopereau toată fâșia în care trăiește animăluțul, pikapik îl punea pe pauză și putea rămâne înțepenit în aer. Acum animăluțul și mingea lui continuă să trăiască în spatele ferestrei: merg, cad și se joacă. Doar desenarea ia o pauză.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Dacă un chenar de selecție ridică animăluțul în spatele unei ferestre, acesta cade imediat ce eliberezi și îl vezi din nou lângă Dock.
+
+Iar un chenar de selecție nu mai ridică animăluțul mai sus de fâșia lui.
+
+**Încearcă:** Mărește o fereastră pe tot ecranul, ridică animăluțul cu un chenar de selecție în spatele ei, apoi eliberează. Animăluțul cade și apare lângă Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Selecțiile de pe birou funcționează din nou
 
 <sub>1.30.1 · 9 octombrie 2026</sub>

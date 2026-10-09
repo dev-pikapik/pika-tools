@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Your pet no longer disappears behind windows
+
+<sub>1.30.2 · October 9, 2026</sub>
+
+Even when a window covers your pet, it keeps living and falls to the ground when you let go of the selection.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+When windows covered the whole strip your pet lives on, pikapik paused it, and it could freeze in mid-air. Now your pet and its ball keep living behind the window: they walk, fall and play. Only the drawing takes a break.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+If a selection box lifts your pet up behind a window, it falls back down as soon as you let go, and you see it by the Dock again.
+
+And a selection box no longer lifts your pet higher than its strip.
+
+**Try it:** Make a window full size, lift your pet with a selection box behind it, then let go. Your pet falls and shows up by the Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Selections on the desktop work again
 
 <sub>1.30.1 · October 9, 2026</sub>

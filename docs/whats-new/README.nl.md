@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Je huisdiertje verdwijnt niet meer achter vensters
+
+<sub>1.30.2 · 9 oktober 2026</sub>
+
+Ook als een venster je huisdiertje bedekt, leeft het door en valt het op de grond zodra je de selectie loslaat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Als vensters de hele strook bedekten waarop je huisdiertje leeft, zette pikapik het op pauze en kon het midden in de lucht blijven hangen. Nu leven je huisdiertje en zijn bal achter het venster gewoon door: ze lopen, vallen en spelen. Alleen het tekenen neemt even pauze.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Tilt een selectiekader je huisdiertje achter een venster op, dan valt het naar beneden zodra je loslaat en zie je het weer bij het Dock.
+
+En een selectiekader tilt je huisdiertje niet meer hoger dan zijn strook.
+
+**Probeer het:** Maak een venster schermvullend, til je huisdiertje erachter op met een selectiekader en laat los. Het valt naar beneden en verschijnt bij het Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Selecties op het bureaublad werken weer
 
 <sub>1.30.1 · 9 oktober 2026</sub>

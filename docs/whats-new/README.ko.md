@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>펫이 더 이상 창 뒤에서 사라지지 않아요
+
+<sub>1.30.2 · 2026년 10월 9일</sub>
+
+창에 가려져도 펫은 계속 움직이고, 선택을 놓으면 땅으로 떨어져요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+펫이 사는 띠를 창이 전부 가리면 pikapik이 펫을 일시 정지해서 펫이 공중에 멈춰 버릴 수 있었어요. 이제 펫과 공은 창 뒤에서도 계속 걷고, 떨어지고, 놀아요. 그리기만 잠시 쉬어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+선택 상자가 창 뒤에서 펫을 들어 올려도, 놓는 순간 펫이 떨어져서 다시 Dock 옆에 보여요.
+
+그리고 선택 상자가 펫을 자기 띠보다 높이 들어 올리지 않아요.
+
+**사용해 보기:** 창을 최대로 키우고, 그 뒤에서 선택 상자로 펫을 들어 올린 다음 놓아 보세요. 펫이 떨어져 Dock 옆에 나타나요.
+
+---
+
 ## <a id="v1.30.1"></a>데스크탑 선택 상자가 다시 작동해요
 
 <sub>1.30.1 · 2026년 10월 9일</sub>

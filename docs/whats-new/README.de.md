@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Dein Haustier verschwindet nicht mehr hinter Fenstern
+
+<sub>1.30.2 · 9. Oktober 2026</sub>
+
+Auch wenn ein Fenster dein Haustier verdeckt, lebt es weiter und fällt zu Boden, sobald du die Auswahl loslässt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wenn Fenster den ganzen Streifen bedeckten, auf dem dein Haustier lebt, hat pikapik es angehalten, und es konnte mitten in der Luft erstarren. Jetzt leben dein Haustier und sein Ball hinter dem Fenster weiter: Sie laufen, fallen und spielen. Nur das Zeichnen macht Pause.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Hebt ein Auswahlrahmen dein Haustier hinter einem Fenster hoch, fällt es herunter, sobald du loslässt, und du siehst es wieder am Dock.
+
+Und ein Auswahlrahmen hebt dein Haustier nicht mehr höher als seinen Streifen.
+
+**Ausprobieren:** Mach ein Fenster bildschirmfüllend, heb dein Haustier mit einem Auswahlrahmen dahinter hoch und lass los. Es fällt herunter und taucht am Dock auf.
+
+---
+
 ## <a id="v1.30.1"></a>Auswahlrahmen auf dem Schreibtisch funktionieren wieder
 
 <sub>1.30.1 · 9. Oktober 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Il tuo animaletto non sparisce più dietro le finestre
+
+<sub>1.30.2 · 9 ottobre 2026</sub>
+
+Anche quando una finestra lo copre, il tuo animaletto continua a vivere e cade a terra quando lasci la selezione.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quando le finestre coprivano tutta la striscia in cui vive il tuo animaletto, pikapik lo metteva in pausa e poteva restare bloccato a mezz’aria. Ora l’animaletto e la sua palla continuano a vivere dietro la finestra: camminano, cadono e giocano. Solo il disegno si prende una pausa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Se un riquadro di selezione solleva l’animaletto dietro una finestra, cade appena lo lasci e lo rivedi vicino al Dock.
+
+E un riquadro di selezione non solleva più l’animaletto oltre la sua striscia.
+
+**Provalo:** Ingrandisci una finestra, solleva l’animaletto con un riquadro di selezione dietro di essa e lascia. Cade e ricompare vicino al Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Le selezioni sulla scrivania funzionano di nuovo
 
 <sub>1.30.1 · 9 ottobre 2026</sub>
