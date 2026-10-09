@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>더 조용하고 가볍게, Finder도 바로
+
+<sub>1.27.1 · 2026년 10월 9일</sub>
+
+설정이 Mac에 거의 부담을 주지 않고, pikapik으로 옮긴 직후부터 Finder 오른쪽 클릭 항목이 작동합니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+설정의 작은 움직이는 그림이 예전에는 1초에 여러 번 페이지 전체를 다시 그려서, 창을 열어 두기만 해도 Mac이 바빴습니다. 이제 각 그림은 자기 자신만 1초에 최대 30번 다시 그리고, 스크롤해서 안 보이거나 창을 가리면 쉽니다. 모양은 그대로입니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+pika-tools에서 pikapik으로 옮긴 뒤 Finder가 예전 앱을 계속 찾아서 ‘새 파일’, ‘변환’ 같은 오른쪽 클릭 항목이 작동하지 않을 수 있었습니다. 이제 pikapik이 처음 실행할 때 이를 알아차리고, 열린 Finder 창이 없고 복사 중인 것도 없으면 Finder를 알아서 재시작합니다. 그렇지 않으면 Finder 페이지에 짧은 안내와 ‘Finder 재시작’ 버튼이 나타납니다.
+
+시스템 설정의 로그인 시 열리는 앱 목록에 이제 새 이름 pikapik으로 표시되고, 켜진 상태로 유지됩니다.
+
+**사용해 보기:** 설정 › Finder
+
+---
+
 ## <a id="v1.27.0"></a>데스크탑 펫을 소개해요
 
 <sub>1.27.0 · 2026년 10월 9일</sub>

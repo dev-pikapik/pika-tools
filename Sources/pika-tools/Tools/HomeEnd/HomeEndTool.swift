@@ -156,7 +156,6 @@ private func homeEndCallback(
 
 struct HomeEndArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.0, 0.9, 0.9, 1.4, 0.8]
@@ -165,10 +164,10 @@ struct HomeEndArt: View {
     private static let end: CGFloat = 132
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let caret = !on ? Self.middle : step == 0 ? Self.middle : step == 2 ? 0 : Self.end
-        let selected = on && step >= 3
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 3 : tick % Self.durations.count
+            let caret = !on ? Self.middle : step == 0 ? Self.middle : step == 2 ? 0 : Self.end
+            let selected = on && step >= 3
             Stage {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 3, style: .continuous)
@@ -197,7 +196,6 @@ struct HomeEndArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 

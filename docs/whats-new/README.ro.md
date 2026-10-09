@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Mai liniștit, mai ușor și Finder gata imediat
+
+<sub>1.27.1 · 9 octombrie 2026</sub>
+
+Configurările aproape că nu mai încarcă Mac-ul, iar comenzile de clic dreapta din Finder merg imediat după mutarea la pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Micile imagini animate din Configurări redesenau toată pagina de multe ori pe secundă, așa că o fereastră deschisă ținea Mac-ul ocupat. Acum fiecare imagine se redesenează doar pe ea însăși, de cel mult 30 de ori pe secundă, și se odihnește când o derulezi din vedere sau ascunzi fereastra. Arată exact la fel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+După mutarea de la pika-tools la pikapik, Finder putea căuta în continuare aplicația veche, iar „Fișier nou”, „Convertește în” și celelalte comenzi de clic dreapta nu făceau nimic. Acum pikapik observă asta la prima pornire și repornește singur Finder când nu e deschisă nicio fereastră Finder și nu se copiază nimic. Altfel, un rând scurt pe pagina Finder îți oferă butonul „Repornește Finder”.
+
+În Configurări sistem, printre aplicațiile care se deschid la autentificare, aplicația apare acum cu noul nume, pikapik, și rămâne activată.
+
+**Încearcă:** Configurări › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Fă cunoștință cu animăluțul de pe birou
 
 <sub>1.27.0 · 9 octombrie 2026</sub>

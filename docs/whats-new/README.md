@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Quieter, lighter, and Finder ready right away
+
+<sub>1.27.1 · October 9, 2026</sub>
+
+Settings now barely use your Mac, and Finder’s right-click items work right after the move to pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+The little moving pictures in Settings used to redraw the whole page many times a second, so an open window kept your Mac busy. Now each picture redraws only itself, no more than 30 times a second, and rests when you scroll past it or hide the window. They look just the same.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+After the move from pika-tools to pikapik, Finder could keep looking for the old app, so New File, Convert To and the other right-click items did nothing. pikapik now notices this on the first launch and restarts Finder by itself when no Finder windows are open and nothing is copying. Otherwise a short line on the Finder page offers a Restart Finder button.
+
+In System Settings, among the apps that open at login, the app now shows its new name, pikapik, and stays turned on.
+
+**Try it:** Settings › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Meet your desktop pet
 
 <sub>1.27.0 · October 9, 2026</sub>

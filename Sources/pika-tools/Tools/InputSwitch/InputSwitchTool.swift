@@ -122,18 +122,17 @@ private func inputSwitchCallback(
 
 struct InputSwitchArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.5, 0.45, 1.5, 0.6]
     private static let languages = ["EN", "RU"]
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let round = tick / Self.durations.count
-        let language = on ? (step >= 3 ? round + 1 : round) % 2 : 0
-        let flash = on && step == 3
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 3 : tick % Self.durations.count
+            let round = tick / Self.durations.count
+            let language = on ? (step >= 3 ? round + 1 : round) % 2 : 0
+            let flash = on && step == 3
             Stage {
                 menuBar(language: language, flash: flash)
                     .position(x: 150, y: 34)
@@ -145,7 +144,6 @@ struct InputSwitchArt: View {
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: language)
         }
-        .loop($tick, Self.durations)
     }
 
     private func menuBar(language: Int, flash: Bool) -> some View {

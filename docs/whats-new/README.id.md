@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Lebih tenang, lebih ringan, dan Finder langsung siap
+
+<sub>1.27.1 · 9 Oktober 2026</sub>
+
+Pengaturan kini hampir tidak membebani Mac, dan item klik kanan di Finder langsung berfungsi setelah pindah ke pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Gambar bergerak kecil di Pengaturan dulu menggambar ulang seluruh halaman berkali-kali per detik, jadi jendela yang terbuka membuat Mac sibuk. Sekarang setiap gambar hanya menggambar ulang dirinya sendiri, paling banyak 30 kali per detik, dan beristirahat saat Anda menggulir melewatinya atau menyembunyikan jendela. Tampilannya tetap sama persis.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Setelah pindah dari pika-tools ke pikapik, Finder bisa terus mencari app lama, sehingga “File Baru”, “Konversi ke”, dan item klik kanan lainnya tidak berbuat apa-apa. Sekarang pikapik menyadarinya saat pertama dibuka dan memulai ulang Finder sendiri jika tidak ada jendela Finder yang terbuka dan tidak ada yang sedang disalin. Jika tidak, satu baris singkat di halaman Finder menawarkan tombol “Mulai Ulang Finder”.
+
+Di Pengaturan Sistem, di antara app yang terbuka saat masuk, app kini tampil dengan nama barunya, pikapik, dan tetap menyala.
+
+**Coba:** Pengaturan › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Kenalan dengan peliharaan di desktop Anda
 
 <sub>1.27.0 · 9 Oktober 2026</sub>

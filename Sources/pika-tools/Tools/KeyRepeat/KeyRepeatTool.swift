@@ -37,7 +37,6 @@ final class KeyRepeatTool: Tool {
 
 struct KeyRepeatArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var scheme
 
@@ -45,11 +44,11 @@ struct KeyRepeatArt: View {
     private static let accents = ["à", "á", "â", "ä", "ã"]
 
     var body: some View {
-        let step = reduceMotion ? 6 : tick % Self.durations.count
-        let down = (1...6).contains(step)
-        let typed = on ? String(repeating: "a", count: step == 7 ? 6 : step) : (step == 0 ? "" : step == 7 ? "â" : "a")
-        let picked = max(step - 2, 0)
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 6 : tick % Self.durations.count
+            let down = (1...6).contains(step)
+            let typed = on ? String(repeating: "a", count: step == 7 ? 6 : step) : (step == 0 ? "" : step == 7 ? "â" : "a")
+            let picked = max(step - 2, 0)
             Stage {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
@@ -74,7 +73,6 @@ struct KeyRepeatArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.25), value: step)
         }
-        .loop($tick, Self.durations)
     }
 
     private func field(_ text: String) -> some View {

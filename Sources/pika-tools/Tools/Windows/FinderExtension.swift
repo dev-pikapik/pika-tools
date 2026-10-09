@@ -55,10 +55,25 @@ final class FinderExtension {
         }
     }
 
+    static func register() {
+        plugIns.forEach { pluginkit("-a", $0.bundlePath) }
+    }
+
+    fileprivate static var plugIns: [Bundle] {
+        guard let folder = Bundle.main.builtInPlugInsURL,
+              let items = try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
+        else { return [] }
+        return items.filter { $0.pathExtension == "appex" }.compactMap(Bundle.init(url:))
+    }
+
     @discardableResult
     private static func pluginkit(_ arguments: String...) -> String {
+        run("/usr/bin/pluginkit", arguments)
+    }
+
+    fileprivate static func run(_ tool: String, _ arguments: [String]) -> String {
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/pluginkit")
+        process.executableURL = URL(fileURLWithPath: tool)
         process.arguments = arguments
         let pipe = Pipe()
         process.standardOutput = pipe
@@ -67,6 +82,77 @@ final class FinderExtension {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         process.waitUntilExit()
         return String(decoding: data, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+@Observable
+final class FinderRestart {
+    static let shared = FinderRestart()
+    private(set) var isNeeded = false
+
+    func check() {
+        DispatchQueue.global(qos: .utility).async {
+            guard let finder = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first,
+                  Self.isStale(finder.processIdentifier)
+            else { return }
+            let safe = Self.isSafe(finder)
+            DispatchQueue.main.async { safe ? self.restart() : (self.isNeeded = true) }
+        }
+    }
+
+    func restart() {
+        isNeeded = false
+        AnimationsTool.shared.restartFinder()
+    }
+
+    private static func isStale(_ finder: pid_t) -> Bool {
+        FinderExtension.plugIns.compactMap(\.bundleIdentifier).contains { id in
+            FinderExtension.run("/bin/launchctl", ["print", "pid/\(finder)/\(id)"])
+                .split(separator: "\n")
+                .map { $0.trimmingCharacters(in: .whitespaces) }
+                .first { $0.hasPrefix("program = ") }
+                .map { !FileManager.default.fileExists(atPath: String($0.dropFirst("program = ".count))) } ?? false
+        }
+    }
+
+    private static func isSafe(_ finder: NSRunningApplication) -> Bool {
+        guard !finder.isActive, !finder.isHidden else { return false }
+        let windows = CGWindowListCopyWindowInfo(.optionAll, kCGNullWindowID) as? [[String: Any]] ?? []
+        let open = windows.contains {
+            $0[kCGWindowOwnerPID as String] as? pid_t == finder.processIdentifier
+                && $0[kCGWindowLayer as String] as? Int == 0
+                && (($0[kCGWindowBounds as String] as? NSDictionary).flatMap { CGRect(dictionaryRepresentation: $0) }?.height ?? 0) > 64
+        }
+        guard !open, let before = diskIO(finder.processIdentifier) else { return false }
+        Thread.sleep(forTimeInterval: 2)
+        guard let after = diskIO(finder.processIdentifier) else { return false }
+        return after - before < 1_000_000
+    }
+
+    private static func diskIO(_ pid: pid_t) -> UInt64? {
+        var info = rusage_info_v4()
+        let result = withUnsafeMutablePointer(to: &info) {
+            $0.withMemoryRebound(to: rusage_info_t?.self, capacity: 1) { proc_pid_rusage(pid, RUSAGE_INFO_V4, $0) }
+        }
+        return result == 0 ? info.ri_diskio_bytesread + info.ri_diskio_byteswritten : nil
+    }
+}
+
+struct FinderRestartBar: View {
+    private let restart = FinderRestart.shared
+
+    var body: some View {
+        if restart.isNeeded {
+            HStack(spacing: 12) {
+                Image(systemName: "arrow.clockwise")
+                    .accessibilityHidden(true)
+                Text("Restart Finder once to bring back the right-click items")
+                Spacer(minLength: 0)
+                Button("Restart Finder") { restart.restart() }
+                    .help(Text("Finder closes its windows and opens again. Wait until files finish copying."))
+            }
+            .noticeBar()
+        }
     }
 }
 

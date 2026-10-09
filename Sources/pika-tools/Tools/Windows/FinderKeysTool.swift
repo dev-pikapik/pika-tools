@@ -267,16 +267,15 @@ private struct ArtFinder<Content: View>: View {
 
 struct FinderOpenArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.4, 1.5, 0.4, 1.5]
 
     var body: some View {
-        let step = reduceMotion ? 2 : tick % Self.durations.count
-        let opened = on && step == 2
-        let renaming = on ? step == 4 : step >= 2
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 2 : tick % Self.durations.count
+            let opened = on && step == 2
+            let renaming = on ? step == 4 : step >= 2
             Stage {
                 ArtFinder(size: CGSize(width: 150, height: 86)) {
                     ArtFile()
@@ -301,22 +300,20 @@ struct FinderOpenArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 
 struct FinderCutArt: View {
     let on: Bool
-    @State private var tick = 0
     private var cut: String { SystemShortcuts.shared.finderCutText }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.6, 0.6, 1.6]
 
     var body: some View {
-        let step = reduceMotion ? 1 : tick % Self.durations.count
-        let moved = on && step >= 2
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 1 : tick % Self.durations.count
+            let moved = on && step >= 2
             Stage {
                 ArtFinder {
                     if !moved { ArtFile(selected: true).opacity(on && step == 1 ? 0.4 : 1) }
@@ -335,22 +332,20 @@ struct FinderCutArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.4), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 
 struct FinderDeleteArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.5, 1.8]
 
     var body: some View {
-        let step = reduceMotion ? 1 : tick % Self.durations.count
-        let trashed = on && step >= 1
-        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 1 : tick % Self.durations.count
+            let trashed = on && step >= 1
+            let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
             Stage {
                 ArtFinder(size: CGSize(width: 150, height: 86)) {
                     ArtFile()
@@ -376,7 +371,6 @@ struct FinderDeleteArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 

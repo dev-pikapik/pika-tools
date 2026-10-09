@@ -163,18 +163,17 @@ final class PointerTool: Tool {
 
 struct PointerArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var scheme
 
     private static let durations = [0.7, 1.4, 1.9]
 
     var body: some View {
-        let step = reduceMotion ? 2 : tick % Self.durations.count
-        let hand = CGFloat([0, 16, 32][step])
-        let pointer = CGFloat([0, 24, on ? 48 : 96][step])
-        let animation: Animation = [Animation.smooth(duration: 0.5), .linear(duration: 1), .easeOut(duration: 0.22)][step]
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 2 : tick % Self.durations.count
+            let hand = CGFloat([0, 16, 32][step])
+            let pointer = CGFloat([0, 24, on ? 48 : 96][step])
+            let animation: Animation = [Animation.smooth(duration: 0.5), .linear(duration: 1), .easeOut(duration: 0.22)][step]
             Stage {
                 RoundedRectangle(cornerRadius: 9, style: .continuous)
                     .fill(Color.primary.opacity(0.07))
@@ -197,7 +196,6 @@ struct PointerArt: View {
             }
             .animation(reduceMotion ? nil : animation, value: step)
         }
-        .loop($tick, Self.durations)
     }
 
     private func trail(from x: CGFloat, length: CGFloat, y: CGFloat, color: Color) -> some View {

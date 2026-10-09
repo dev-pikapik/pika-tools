@@ -20,14 +20,43 @@ enum Art {
 
 struct IllustrationRow<Content: View>: View {
     @ViewBuilder var content: Content
+
+    var body: some View {
+        ArtCard { content }
+            .hostedApart()
+            .frame(maxWidth: .infinity)
+            .frame(height: Art.height)
+            .accessibilityHidden(true)
+    }
+}
+
+extension IllustrationRow {
+    init<Scene: View>(loop durations: [Double], replay: Int = 0, rest: Int? = nil, from tick: Int = 0, @ViewBuilder scene: @escaping (Int) -> Scene) where Content == ArtLoop<Scene> {
+        self.init { ArtLoop(durations: durations, replay: replay, rest: rest, tick: tick, scene: scene) }
+    }
+}
+
+struct ArtLoop<Scene: View>: View {
+    let durations: [Double]
+    var replay = 0
+    var rest: Int?
+    @State var tick = 0
+    @ViewBuilder let scene: (Int) -> Scene
+
+    var body: some View {
+        scene(tick).loop($tick, durations, replay: replay, rest: rest)
+    }
+}
+
+private struct ArtCard<Content: View>: View {
+    @ViewBuilder var content: Content
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: Art.radius, style: .continuous)
         let dark = scheme == .dark
         content
-            .frame(maxWidth: .infinity)
-            .frame(height: Art.height)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                 LinearGradient(
                     colors: [Color.accentColor.opacity(dark ? 0.26 : 0.15), Color.accentColor.opacity(dark ? 0.09 : 0.05)],
@@ -38,7 +67,83 @@ struct IllustrationRow<Content: View>: View {
             )
             .clipShape(shape)
             .overlay(shape.strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5))
-            .accessibilityHidden(true)
+    }
+}
+
+private struct ArtHost: NSViewRepresentable {
+    let content: AnyView
+
+    func makeNSView(context: Context) -> ArtHostingView {
+        let view = ArtHostingView(rootView: AnyView(content.environment(\.self, context.environment)))
+        view.sizingOptions = []
+        return view
+    }
+
+    func updateNSView(_ view: ArtHostingView, context: Context) {
+        view.rootView = AnyView(content.environment(\.self, context.environment))
+    }
+}
+
+private final class ArtHostingView: NSHostingView<AnyView> {
+    private static let frameTime = 1.0 / 30
+    private var rendered = 0.0
+    private var waiting = false
+    private var parked = false
+    private var scrolling: NSObjectProtocol?
+    private var constraintsDue = false
+    private var updatingConstraints = false
+
+    override var needsUpdateConstraints: Bool {
+        get { updatingConstraints }
+        set { if newValue { constraintsDue = true } }
+    }
+
+    override func hitTest(_ point: NSPoint) -> NSView? { nil }
+
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        scrolling.map(NotificationCenter.default.removeObserver)
+        scrolling = enclosingScrollView.map {
+            NotificationCenter.default.addObserver(forName: NSView.boundsDidChangeNotification, object: $0.contentView, queue: .main) { [weak self] _ in
+                guard let self, self.parked else { return }
+                self.parked = false
+                self.needsLayout = true
+            }
+        }
+    }
+
+    override func layout() {
+        guard onScreen else {
+            parked = true
+            return
+        }
+        let now = CACurrentMediaTime()
+        let frame = ((now + 0.002) / Self.frameTime).rounded(.down)
+        guard frame > rendered else {
+            if !waiting {
+                waiting = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + (frame + 1) * Self.frameTime - now) { [weak self] in
+                    self?.waiting = false
+                    self?.needsLayout = true
+                }
+            }
+            return
+        }
+        rendered = frame
+        if constraintsDue {
+            constraintsDue = false
+            updatingConstraints = true
+            updateConstraintsForSubtreeIfNeeded()
+            updatingConstraints = false
+        }
+        super.layout()
+    }
+
+    private var onScreen: Bool {
+        guard let content = window?.contentView else { return false }
+        var rect = convert(bounds, to: nil).intersection(content.convert(content.bounds, to: nil))
+        if let scroll = enclosingScrollView { rect = rect.intersection(scroll.convert(scroll.bounds, to: nil)) }
+        return !rect.isEmpty
     }
 }
 
@@ -109,6 +214,10 @@ extension View {
             guard let window = note.object as? NSWindow, window === SettingsWindow.window else { return }
             visible.wrappedValue = window.occlusionState.contains(.visible)
         }
+    }
+
+    func hostedApart() -> some View {
+        ArtHost(content: AnyView(self))
     }
 
     func loop(_ tick: Binding<Int>, _ durations: [Double], replay: Int = 0, rest: Int? = nil) -> some View {

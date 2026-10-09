@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Daha sessiz, daha hafif, Finder hemen hazır
+
+<sub>1.27.1 · 9 Ekim 2026</sub>
+
+Ayarlar Mac’inizi neredeyse hiç yormuyor ve pikapik’e geçişin hemen ardından Finder’daki sağ tık öğeleri çalışıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Ayarlar’daki küçük hareketli resimler eskiden tüm sayfayı saniyede defalarca yeniden çiziyordu, bu yüzden açık bir pencere Mac’inizi meşgul ediyordu. Artık her resim yalnızca kendini, saniyede en fazla 30 kez yeniden çiziyor ve kaydırıp geçtiğinizde ya da pencereyi gizlediğinizde dinleniyor. Görünüşleri tamamen aynı.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+pika-tools’tan pikapik’e geçtikten sonra Finder eski uygulamayı aramaya devam edebiliyordu ve “Yeni Dosya”, “Dönüştür” ile diğer sağ tık öğeleri hiçbir şey yapmıyordu. Artık pikapik bunu ilk açılışta fark ediyor ve açık Finder penceresi yoksa ve hiçbir şey kopyalanmıyorsa Finder’ı kendisi yeniden başlatıyor. Aksi hâlde Finder sayfasındaki kısa bir satır “Finder’ı yeniden başlat” düğmesini sunuyor.
+
+Sistem Ayarları’nda, oturum açılınca açılan uygulamalar arasında uygulama artık yeni adıyla, pikapik olarak görünüyor ve açık kalıyor.
+
+**Deneyin:** Ayarlar › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Masaüstündeki yeni dostunuzla tanışın
 
 <sub>1.27.0 · 9 Ekim 2026</sub>

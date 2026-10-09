@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Plus discret, plus léger, et le Finder prêt tout de suite
+
+<sub>1.27.1 · 9 octobre 2026</sub>
+
+Les Réglages ne pèsent presque plus sur votre Mac, et les commandes du clic droit dans le Finder marchent dès le passage à pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Les petites images animées des Réglages redessinaient toute la page plusieurs fois par seconde, si bien qu’une fenêtre ouverte occupait votre Mac. Désormais chaque image ne redessine qu’elle-même, au plus 30 fois par seconde, et se repose quand vous la faites défiler hors de vue ou masquez la fenêtre. Elles ont exactement le même aspect.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Après le passage de pika-tools à pikapik, le Finder pouvait continuer à chercher l’ancienne app, et « Nouveau fichier », « Convertir en » et les autres commandes du clic droit ne faisaient rien. pikapik le remarque maintenant au premier lancement et redémarre le Finder tout seul quand aucune fenêtre du Finder n’est ouverte et que rien n’est en cours de copie. Sinon, une courte ligne sur la page Finder propose le bouton « Redémarrer le Finder ».
+
+Dans Réglages Système, parmi les apps ouvertes à la connexion, l’app porte maintenant son nouveau nom, pikapik, et reste activée.
+
+**Pour essayer :** Réglages › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Voici votre compagnon de bureau
 
 <sub>1.27.0 · 9 octobre 2026</sub>

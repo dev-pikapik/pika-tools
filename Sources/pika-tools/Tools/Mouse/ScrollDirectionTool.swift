@@ -150,7 +150,6 @@ private struct ScrollDirectionSettings: View {
 struct ScrollDirectionArt: View {
     let trackpadNatural: Bool
     let mouseNatural: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1, 0.9, 1.1]
@@ -172,10 +171,10 @@ struct ScrollDirectionArt: View {
     }
 
     var body: some View {
-        let step = reduceMotion ? 1 : tick % Self.durations.count
-        let rolls = reduceMotion ? 0 : tick / Self.durations.count + (step == 0 ? 0 : 1)
-        let rolling = step == 1
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 1 : tick % Self.durations.count
+            let rolls = reduceMotion ? 0 : tick / Self.durations.count + (step == 0 ? 0 : 1)
+            let rolling = step == 1
             Stage {
                 ArtTrackpad(touch: rolling, slide: step == 0 ? -9 : 9)
                     .position(x: 40, y: 64)
@@ -195,7 +194,6 @@ struct ScrollDirectionArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
-        .loop($tick, Self.durations)
     }
 
     private func page(natural: Bool, rolls: Int, rolling: Bool, step: Int) -> some View {

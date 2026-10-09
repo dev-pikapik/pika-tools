@@ -397,7 +397,9 @@ struct GameScene: View {
 
     var body: some View {
         let night = scheme == .dark
-        Canvas { context, _ in Self.draw(&context, time, night) }
+        Canvas { context, _ in Self.draw(&context, time, night) } symbols: {
+            Text(Image(systemName: "heart.fill")).font(.system(size: 6.5)).foregroundStyle(Art.red).tag(0)
+        }
     }
 
     private static func circle(_ x: CGFloat, _ y: CGFloat, _ r: CGFloat) -> Path {
@@ -472,8 +474,9 @@ struct GameScene: View {
         if abs(gap - hero) > 9 { PetFigure.shadow(pose) { figure.fill($0, with: .color($1)) } }
         PetFigure.draw(pose, night: night) { figure.fill($0, with: .color($1)) }
 
+        guard let heart = c.resolveSymbol(id: 0) else { return }
         for index in 0..<3 {
-            c.draw(Text(Image(systemName: "heart.fill")).font(.system(size: 6.5)).foregroundStyle(Art.red), at: CGPoint(x: 16 + 8.5 * CGFloat(index), y: 11))
+            c.draw(heart, at: CGPoint(x: 16 + 8.5 * CGFloat(index), y: 11))
         }
     }
 }

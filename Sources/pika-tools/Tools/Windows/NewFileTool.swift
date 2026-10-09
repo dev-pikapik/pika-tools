@@ -108,18 +108,17 @@ private final class NameField: NSTextField {
 
 struct NewFileArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.3, 1.15, 0.15, 0.5, 0.75, 0.25, 0.15, 0.35, 0.9, 1.6]
     private static let click = CGPoint(x: 128, y: 46)
 
     var body: some View {
-        let step = reduceMotion ? 9 : tick % Self.durations.count
-        let menu = (3...6).contains(step)
-        let created = on && step >= 8
-        let row = CGPoint(x: Self.click.x + 18, y: Self.click.y + 26)
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 9 : tick % Self.durations.count
+            let menu = (3...6).contains(step)
+            let created = on && step >= 8
+            let row = CGPoint(x: Self.click.x + 18, y: Self.click.y + 26)
             Stage {
                 ArtWindow(size: CGSize(width: 168, height: 100)) {
                     ArtFile(selected: on && step == 9, renaming: on && step == 8)
@@ -153,6 +152,5 @@ struct NewFileArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }

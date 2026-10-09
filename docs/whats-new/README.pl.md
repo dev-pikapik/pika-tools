@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Ciszej, lżej i Finder gotowy od razu
+
+<sub>1.27.1 · 9 października 2026</sub>
+
+Ustawienia prawie nie obciążają Maca, a polecenia z prawego kliknięcia w Finderze działają zaraz po przeprowadzce do pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Małe ruchome obrazki w Ustawieniach rysowały wcześniej całą stronę od nowa wiele razy na sekundę, więc samo otwarte okno zajmowało Maca. Teraz każdy obrazek rysuje od nowa tylko siebie, najwyżej 30 razy na sekundę, i odpoczywa, gdy go przewiniesz albo ukryjesz okno. Wyglądają dokładnie tak samo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Po przeprowadzce z pika-tools do pikapik Finder mógł dalej szukać starej aplikacji, a „Nowy plik”, „Konwertuj na” i inne polecenia z prawego kliknięcia nic nie robiły. Teraz pikapik zauważa to przy pierwszym uruchomieniu i sam uruchamia Findera ponownie, gdy nie ma otwartych okien Findera i nic się nie kopiuje. W przeciwnym razie na stronie Finder pojawi się krótka linijka z przyciskiem „Uruchom ponownie Findera”.
+
+W Ustawieniach systemowych, wśród aplikacji otwieranych przy logowaniu, aplikacja ma teraz nową nazwę, pikapik, i zostaje włączona.
+
+**Wypróbuj:** Ustawienia › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Poznaj zwierzaka na biurku
 
 <sub>1.27.0 · 9 października 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Stiller, lichter en Finder meteen klaar
+
+<sub>1.27.1 · 9 oktober 2026</sub>
+
+Instellingen belast je Mac nauwelijks nog, en de rechtsklik-onderdelen in Finder werken direct na de verhuizing naar pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+De kleine bewegende plaatjes in Instellingen tekenden eerder de hele pagina vele keren per seconde opnieuw, dus een open venster hield je Mac bezig. Nu tekent elk plaatje alleen zichzelf opnieuw, hooguit 30 keer per seconde, en rust het als je eraan voorbij scrolt of het venster verbergt. Ze zien er precies hetzelfde uit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Na de verhuizing van pika-tools naar pikapik kon Finder blijven zoeken naar de oude app, en ‘Nieuw bestand’, ‘Zet om naar’ en de andere rechtsklik-onderdelen deden niets. pikapik merkt dit nu bij de eerste start en herstart Finder zelf als er geen Finder-vensters open zijn en er niets wordt gekopieerd. Anders biedt een korte regel op de Finder-pagina de knop ‘Herstart Finder’ aan.
+
+In Systeeminstellingen, bij de apps die openen bij het inloggen, staat de app nu onder zijn nieuwe naam, pikapik, en blijft hij aan.
+
+**Probeer het:** Instellingen › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Maak kennis met je huisdiertje op het bureaublad
 
 <sub>1.27.0 · 9 oktober 2026</sub>

@@ -269,15 +269,14 @@ private func quitOnCloseTapCallback(
 
 struct QuitOnCloseArt: View {
     let on: Bool
-    @State private var tick = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.3, 1.15, 0.15, 1.9]
 
     var body: some View {
-        let step = reduceMotion ? 3 : tick % Self.durations.count
-        let closed = step == 3
-        IllustrationRow {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 3 : tick % Self.durations.count
+            let closed = step == 3
             Stage {
                 ArtWindow {
                     VStack(alignment: .leading, spacing: 5) {
@@ -300,7 +299,6 @@ struct QuitOnCloseArt: View {
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
-        .loop($tick, Self.durations)
     }
 }
 

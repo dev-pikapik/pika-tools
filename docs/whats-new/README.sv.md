@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Tystare, lättare och Finder redo direkt
+
+<sub>1.27.1 · 9 oktober 2026</sub>
+
+Inställningar belastar knappt din Mac längre, och högerklicksalternativen i Finder fungerar direkt efter flytten till pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+De små rörliga bilderna i Inställningar ritade förut om hela sidan många gånger i sekunden, så ett öppet fönster höll din Mac sysselsatt. Nu ritar varje bild bara om sig själv, högst 30 gånger i sekunden, och vilar när du rullar förbi den eller gömmer fönstret. De ser precis likadana ut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Efter flytten från pika-tools till pikapik kunde Finder fortsätta leta efter den gamla appen, och ”Ny fil”, ”Konvertera till” och de andra högerklicksalternativen gjorde ingenting. Nu märker pikapik det vid första starten och startar om Finder av sig själv när inga Finder-fönster är öppna och inget kopieras. Annars erbjuder en kort rad på Finder-sidan knappen ”Starta om Finder”.
+
+I Systeminställningar, bland apparna som öppnas vid inloggning, syns appen nu med sitt nya namn, pikapik, och förblir påslagen.
+
+**Prova:** Inställningar › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Möt ditt husdjur på skrivbordet
 
 <sub>1.27.0 · 9 oktober 2026</sub>

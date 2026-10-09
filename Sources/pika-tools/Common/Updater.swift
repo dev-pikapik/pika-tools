@@ -100,6 +100,10 @@ final class Updater {
         return app.deletingLastPathComponent().appendingPathComponent(appName)
     }
 
+    nonisolated static func isNewPlace(_ path: String, last: String?, launchedBefore: Bool) -> Bool {
+        launchedBefore && last != path
+    }
+
     nonisolated static func isBrewManaged(prefixes: [String] = ["/opt/homebrew", "/usr/local"]) -> Bool {
         prefixes.contains { prefix in
             ["pikapik", "pika-tools"].contains { FileManager.default.fileExists(atPath: "\(prefix)/Caskroom/\($0)") }

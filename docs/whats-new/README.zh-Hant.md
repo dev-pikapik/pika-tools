@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>更安靜、更輕巧，Finder 馬上可用
+
+<sub>1.27.1 · 2026年10月9日</sub>
+
+設定幾乎不再佔用你的 Mac，搬到 pikapik 後，Finder 的右鍵選單項目馬上就能用。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+設定裡的小動畫以前每秒會把整個頁面重繪很多次，所以只要視窗開著，Mac 就一直在忙。現在每張圖只重繪自己，每秒最多 30 次，捲出畫面或視窗隱藏時就會休息。外觀完全一樣。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+從 pika-tools 搬到 pikapik 後，Finder 可能還在尋找舊的 App，「新增檔案」、「轉換為」等右鍵選單項目沒有反應。現在 pikapik 會在第一次啟動時發現這件事，如果 Finder 沒有打開的視窗、也沒有正在拷貝的東西，就自動重新啟動 Finder。否則 Finder 頁面會出現一行簡短提示和「重新啟動 Finder」按鈕。
+
+在系統設定中登入時打開的 App 列表裡，現在顯示新名稱 pikapik，並保持開啟。
+
+**試試看：** 設定 › Finder
+
+---
+
 ## <a id="v1.27.0"></a>來認識你的桌面寵物
 
 <sub>1.27.0 · 2026年10月9日</sub>

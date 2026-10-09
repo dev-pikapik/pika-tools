@@ -22,6 +22,11 @@ enum TestRename {
             try! FileManager.default.removeItem(at: cask)
         }
         precondition(!Updater.isBrewManaged(prefixes: [root.path]))
+
+        precondition(!Updater.isNewPlace(new.path, last: nil, launchedBefore: false))
+        precondition(Updater.isNewPlace(new.path, last: nil, launchedBefore: true))
+        precondition(Updater.isNewPlace(new.path, last: old.path, launchedBefore: true))
+        precondition(!Updater.isNewPlace(new.path, last: new.path, launchedBefore: true))
         print("rename: ok")
     }
 }

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.1"></a>Tišší, lehčí a Finder připravený hned
+
+<sub>1.27.1 · 9. října 2026</sub>
+
+Nastavení teď Mac skoro nezatěžuje a položky pravého kliknutí ve Finderu fungují hned po přechodu na pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
+
+Malé pohyblivé obrázky v Nastavení dřív překreslovaly celou stránku mnohokrát za sekundu, takže otevřené okno Mac zaměstnávalo. Teď každý obrázek překresluje jen sám sebe, nejvýš 30krát za sekundu, a odpočívá, když ho odrolujete nebo okno skryjete. Vypadají úplně stejně.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Po přechodu z pika-tools na pikapik mohl Finder dál hledat starou aplikaci a „Nový soubor“, „Převést na“ a další položky pravého kliknutí nic nedělaly. Teď si toho pikapik všimne při prvním spuštění a Finder sám restartuje, když nejsou otevřená žádná okna Finderu a nic se nekopíruje. Jinak se na stránce Finder objeví krátký řádek s tlačítkem „Restartovat Finder“.
+
+V Nastavení systému, mezi aplikacemi otevíranými při přihlášení, má teď aplikace nový název pikapik a zůstává zapnutá.
+
+**Vyzkoušejte:** Nastavení › Finder
+
+---
+
 ## <a id="v1.27.0"></a>Seznamte se s mazlíčkem na ploše
 
 <sub>1.27.0 · 9. října 2026</sub>
