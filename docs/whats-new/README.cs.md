@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Mazlíček a míček už nechodí pod Dock
+
+<sub>1.30.3 · 9. října 2026</sub>
+
+Mazlíček už pod Dockem nechodí ani nespí, takže ho vždycky vidíte.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív mazlíček a míček často chodili a odpočívali přímo pod Dockem, kde je nikdo neviděl. Se zvětšeným oknem to vypadalo, že mazlíček úplně zmizel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teď je pro ně Dock jako zeď. Mazlíček se u jeho okraje otočí a míček se od něj odrazí.
+
+Mazlíček je tak vždycky vidět vedle Docku, i když okno zabírá celou obrazovku.
+
+**Vyzkoušejte:** Zvětšete okno na celou obrazovku a pár minut se dívejte. Mazlíček je pořád vidět vlevo nebo vpravo od Docku.
+
+---
+
 ## <a id="v1.30.2"></a>Mazlíček už nemizí za okny
 
 <sub>1.30.2 · 9. října 2026</sub>

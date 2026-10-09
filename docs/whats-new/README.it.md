@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>L’animaletto e la sua palla non finiscono più sotto il Dock
+
+<sub>1.30.3 · 9 ottobre 2026</sub>
+
+L’animaletto non passeggia e non dorme più sotto il Dock, così lo vedi sempre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima l’animaletto e la sua palla spesso passeggiavano e riposavano proprio sotto il Dock, dove nessuno poteva vederli. Con una finestra ingrandita sembrava che l’animaletto fosse sparito per sempre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ora il Dock è come un muro per loro. L’animaletto si gira al suo bordo e la palla ci rimbalza contro.
+
+Così l’animaletto resta sempre visibile accanto al Dock, anche quando una finestra occupa tutto lo schermo.
+
+**Provalo:** Ingrandisci una finestra a tutto schermo e osserva per un paio di minuti. L’animaletto si vede sempre a sinistra o a destra del Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Il tuo animaletto non sparisce più dietro le finestre
 
 <sub>1.30.2 · 9 ottobre 2026</sub>

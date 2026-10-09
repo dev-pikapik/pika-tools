@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Dein Haustier und sein Ball bleiben nicht mehr unter dem Dock
+
+<sub>1.30.3 · 9. Oktober 2026</sub>
+
+Dein Haustier läuft und schläft nicht mehr unter dem Dock, du siehst es also immer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Früher liefen und lagen dein Haustier und sein Ball oft direkt unter dem Dock, wo niemand sie sehen konnte. Bei einem bildschirmfüllenden Fenster sah es so aus, als wäre dein Haustier ganz verschwunden.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jetzt ist das Dock für sie wie eine Wand. Dein Haustier dreht an seinem Rand um, und der Ball prallt davon ab.
+
+So bleibt dein Haustier immer neben dem Dock sichtbar, auch wenn ein Fenster den ganzen Bildschirm füllt.
+
+**Ausprobieren:** Mach ein Fenster bildschirmfüllend und schau ein paar Minuten zu. Dein Haustier ist immer links oder rechts vom Dock zu sehen.
+
+---
+
 ## <a id="v1.30.2"></a>Dein Haustier verschwindet nicht mehr hinter Fenstern
 
 <sub>1.30.2 · 9. Oktober 2026</sub>

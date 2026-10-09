@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>宠物和球不再躲到程序坞下面
+
+<sub>1.30.3 · 2026年10月9日</sub>
+
+宠物不再在程序坞下面散步或睡觉，所以你总能看到它。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，宠物和球常常就在程序坞正下方散步、休息，谁也看不到它们。窗口放到最大时，看起来就像宠物彻底不见了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+现在程序坞对它们来说就像一堵墙。宠物走到它的边上会掉头，球碰到它会弹回来。
+
+所以即使窗口占满整个屏幕，宠物也总是在程序坞旁边看得见。
+
+**试试看：** 把一个窗口放到最大，观察几分钟。宠物始终出现在程序坞的左边或右边。
+
+---
+
 ## <a id="v1.30.2"></a>宠物不会再在窗口后面消失了
 
 <sub>1.30.2 · 2026年10月9日</sub>

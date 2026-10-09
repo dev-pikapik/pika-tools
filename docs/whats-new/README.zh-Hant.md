@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>寵物和球不再躲到 Dock 下面
+
+<sub>1.30.3 · 2026年10月9日</sub>
+
+寵物不再在 Dock 下面散步或睡覺，所以你隨時都看得到它。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，寵物和球常常就在 Dock 正下方散步、休息，誰也看不到它們。視窗放到最大時，看起來就像寵物徹底不見了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+現在 Dock 對它們來說就像一道牆。寵物走到它的邊緣會轉身，球碰到它會彈回來。
+
+所以即使視窗佔滿整個螢幕，寵物也總是在 Dock 旁邊看得見。
+
+**試試看：** 把一個視窗放到最大，觀察幾分鐘。寵物始終出現在 Dock 的左邊或右邊。
+
+---
+
 ## <a id="v1.30.2"></a>寵物不會再在視窗後面消失了
 
 <sub>1.30.2 · 2026年10月9日</sub>

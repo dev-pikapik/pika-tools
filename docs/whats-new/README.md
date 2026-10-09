@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Your pet and its ball stay out from under the Dock
+
+<sub>1.30.3 · October 9, 2026</sub>
+
+Your pet no longer walks or naps under the Dock, so you can always see it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, your pet and its ball often walked and rested right under the Dock, where nobody could see them. With a full-size window it looked as if your pet was gone for good.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Now the Dock is like a wall for them. Your pet turns around at its edge, and the ball bounces off it.
+
+So your pet always stays in sight next to the Dock, even when a window fills the whole screen.
+
+**Try it:** Make a window full size and watch for a couple of minutes. Your pet is always visible to the left or right of the Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Your pet no longer disappears behind windows
 
 <sub>1.30.2 · October 9, 2026</sub>

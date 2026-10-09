@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Animăluțul și mingea nu mai intră sub Dock
+
+<sub>1.30.3 · 9 octombrie 2026</sub>
+
+Animăluțul nu se mai plimbă și nu mai doarme sub Dock, așa că îl vezi mereu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, animăluțul și mingea se plimbau și se odihneau des chiar sub Dock, unde nu-i vedea nimeni. Cu o fereastră mărită pe tot ecranul părea că animăluțul a dispărut de tot.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Acum Dock-ul e ca un perete pentru ei. Animăluțul se întoarce la marginea lui, iar mingea ricoșează din el.
+
+Așa animăluțul rămâne mereu la vedere lângă Dock, chiar și când o fereastră ocupă tot ecranul.
+
+**Încearcă:** Mărește o fereastră pe tot ecranul și privește câteva minute. Animăluțul se vede mereu în stânga sau în dreapta Dock-ului.
+
+---
+
 ## <a id="v1.30.2"></a>Animăluțul nu mai dispare în spatele ferestrelor
 
 <sub>1.30.2 · 9 octombrie 2026</sub>

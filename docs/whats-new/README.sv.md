@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Ditt husdjur och bollen hamnar inte längre under Dock
+
+<sub>1.30.3 · 9 oktober 2026</sub>
+
+Ditt husdjur går och sover inte längre under Dock, så du ser det alltid.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut gick och vilade ditt husdjur och bollen ofta precis under Dock, där ingen kunde se dem. Med ett fullstort fönster såg det ut som om husdjuret var borta för gott.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu är Dock som en vägg för dem. Husdjuret vänder vid kanten, och bollen studsar mot den.
+
+Så syns husdjuret alltid bredvid Dock, även när ett fönster fyller hela skärmen.
+
+**Prova:** Gör ett fönster fullstort och titta i ett par minuter. Husdjuret syns hela tiden till vänster eller höger om Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Ditt husdjur försvinner inte längre bakom fönster
 
 <sub>1.30.2 · 9 oktober 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Votre compagnon et sa balle ne vont plus sous le Dock
+
+<sub>1.30.3 · 9 octobre 2026</sub>
+
+Votre compagnon ne se promène et ne dort plus sous le Dock, vous le voyez donc toujours.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, votre compagnon et sa balle se promenaient et se reposaient souvent juste sous le Dock, où personne ne pouvait les voir. Avec une fenêtre agrandie, on aurait dit que votre compagnon avait disparu pour de bon.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Désormais, le Dock est comme un mur pour eux. Votre compagnon fait demi-tour à son bord, et la balle rebondit dessus.
+
+Votre compagnon reste donc toujours visible à côté du Dock, même quand une fenêtre occupe tout l’écran.
+
+**Pour essayer :** Agrandissez une fenêtre sur tout l’écran et observez quelques minutes. Votre compagnon est toujours visible à gauche ou à droite du Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Votre compagnon ne disparaît plus derrière les fenêtres
 
 <sub>1.30.2 · 9 octobre 2026</sub>
