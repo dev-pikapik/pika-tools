@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>L’animaletto resta in vista, e le finestre si aprono pronte
+
+<sub>1.27.3 · 9 ottobre 2026</sub>
+
+L’animaletto non si nasconde più dietro le finestre a metà salto, e le finestre di pikapik si aprono pronte all’uso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quando l’animaletto saltava sopra il puntatore o faceva una capriola, poteva scivolare dietro le finestre di altre app e sparire a mezz’aria. Ora resta davanti per tutto il salto e torna dietro le tue finestre appena atterra.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Quando pikapik partiva in silenzio in background, all’accesso, dopo un aggiornamento o da un link pikapik://, le sue finestre potevano aprirsi grigie e restare dietro le altre finché non ci cliccavi sopra. Ora le Impostazioni e la finestra Nuovo file vengono in primo piano, pronte per scrivere.
+
+Lo stesso vale per il messaggio dopo Crea copia più leggera e per l’elenco in cui scegli un’app da aggiungere. Non devi fare nulla.
+
+**Provalo:** Impostazioni › Animaletto
+
+---
+
 ## <a id="v1.27.2"></a>Nuovo file è tornato e le Impostazioni sono ancora più leggere
 
 <sub>1.27.2 · 9 ottobre 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>寵物一直看得到，視窗一打開就能用
+
+<sub>1.27.3 · 2026年10月9日</sub>
+
+寵物不會再在跳到一半時躲到視窗後面，pikapik 的視窗一打開就能直接使用。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+寵物跳過指標或翻跟斗時，可能會鑽到其他 App 的視窗後面，在半空中消失。現在整個跳躍過程中牠都待在前面，落地後再回到你的視窗後面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+當 pikapik 在背景悄悄啟動時，例如登入時、更新後或透過 pikapik:// 連結，它的視窗可能打開時是灰色的，一直留在其他視窗後面，直到你點一下。現在設定和「新增檔案」視窗會來到最前面，可以直接輸入。
+
+「製作較小拷貝」之後的訊息，以及選擇要加入的 App 的列表，也是一樣。你什麼都不用做。
+
+**試試看：** 設定 › 寵物
+
+---
+
 ## <a id="v1.27.2"></a>「新增檔案」回來了，設定也更輕了
 
 <sub>1.27.2 · 2026年10月9日</sub>

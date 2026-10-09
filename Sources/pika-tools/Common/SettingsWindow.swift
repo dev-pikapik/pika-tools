@@ -235,6 +235,11 @@ enum SettingsWindow {
         NSApp.setActivationPolicy(.regular)
         window?.makeKeyAndOrderFront(nil)
         NSApp.activate()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            guard !NSApp.isActive, window?.isVisible == true else { return }
+            NSApp.bringForward()
+            window?.makeKeyAndOrderFront(nil)
+        }
     }
 
     private static func create() {
@@ -869,5 +874,11 @@ private struct CoffeeLine: View {
             }
             .settingAnchor(String(localized: "Buy me a coffee"))
         }
+    }
+}
+
+extension NSApplication {
+    func bringForward() {
+        activate(ignoringOtherApps: true)
     }
 }

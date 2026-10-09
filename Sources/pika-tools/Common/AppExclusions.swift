@@ -32,7 +32,7 @@ struct AppExclusions: View {
         panel.allowedContentTypes = [.applicationBundle]
         panel.allowsMultipleSelection = true
         panel.prompt = String(localized: "Add")
-        NSApp.activate()
+        NSApp.bringForward()
         return panel.runModal() == .OK ? panel.urls : []
     }
 

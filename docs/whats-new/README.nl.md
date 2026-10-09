@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Je huisdiertje blijft in beeld, en vensters openen klaar voor gebruik
+
+<sub>1.27.3 · 9 oktober 2026</sub>
+
+Je huisdiertje verstopt zich niet meer achter vensters midden in een sprong, en de vensters van pikapik openen meteen klaar voor gebruik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Als je huisdiertje over de aanwijzer sprong of een koprol maakte, kon het achter de vensters van andere apps glippen en in de lucht verdwijnen. Nu blijft het de hele sprong vooraan en gaat het na de landing weer achter je vensters.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Als pikapik stilletjes op de achtergrond startte, bij het inloggen, na een update of via een pikapik://-link, konden de vensters grijs openen en achter andere vensters blijven tot je erop klikte. Nu komen Instellingen en het venster Nieuw bestand naar voren, zodat je meteen kunt typen.
+
+Hetzelfde geldt voor de melding na Maak kleinere kopie en voor de lijst waarin je een app kiest om toe te voegen. Je hoeft niets te doen.
+
+**Probeer het:** Instellingen › Huisdiertje
+
+---
+
 ## <a id="v1.27.2"></a>Nieuw bestand is terug, en Instellingen zijn nog lichter
 
 <sub>1.27.2 · 9 oktober 2026</sub>

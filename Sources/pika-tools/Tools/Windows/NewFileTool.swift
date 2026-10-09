@@ -54,7 +54,7 @@ enum NewFile {
         alert.addButton(withTitle: String(localized: "Cancel"))
         alert.window.initialFirstResponder = field
 
-        NSApp.activate()
+        NSApp.bringForward()
         while true {
             guard alert.runModal() == .alertFirstButtonReturn else { return }
             let name = field.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)

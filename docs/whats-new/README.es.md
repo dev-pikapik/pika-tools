@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>La mascota siempre a la vista, y las ventanas se abren listas
+
+<sub>1.27.3 · 9 de octubre de 2026</sub>
+
+La mascota ya no se esconde tras las ventanas a mitad de un salto, y las ventanas de pikapik se abren listas para usar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Cuando la mascota saltaba por encima del puntero o daba una voltereta, podía colarse detrás de las ventanas de otras apps y desaparecer en el aire. Ahora se queda delante durante todo el salto y vuelve detrás de tus ventanas al aterrizar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Cuando pikapik se abría en silencio en segundo plano, al iniciar sesión, tras una actualización o desde un enlace pikapik://, sus ventanas podían abrirse en gris y quedarse detrás de otras hasta que hicieras clic en ellas. Ahora Ajustes y la ventana Archivo nuevo pasan al frente, listas para escribir.
+
+Lo mismo ocurre con el mensaje tras Crear copia más ligera y con la lista donde eliges una app para añadirla. No tienes que hacer nada.
+
+**Pruébalo:** Ajustes › Mascota
+
+---
+
 ## <a id="v1.27.2"></a>Archivo nuevo ha vuelto y los Ajustes son aún más ligeros
 
 <sub>1.27.2 · 9 de octubre de 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Le compagnon reste en vue, et les fenêtres s’ouvrent prêtes
+
+<sub>1.27.3 · 9 octobre 2026</sub>
+
+Le compagnon ne se cache plus derrière les fenêtres en plein saut, et les fenêtres de pikapik s’ouvrent prêtes à l’emploi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quand le compagnon sautait par-dessus le pointeur ou faisait une culbute, il pouvait glisser derrière les fenêtres d’autres apps et disparaître en plein vol. Désormais, il reste devant pendant tout le saut et repasse derrière vos fenêtres une fois posé.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Quand pikapik démarrait discrètement en arrière-plan, à l’ouverture de session, après une mise à jour ou depuis un lien pikapik://, ses fenêtres pouvaient s’ouvrir grisées et rester derrière les autres jusqu’à ce que vous cliquiez dessus. Maintenant, les Réglages et la fenêtre Nouveau fichier passent au premier plan, prêts pour la saisie.
+
+Il en va de même pour le message après Créer une copie allégée et pour la liste où vous choisissez une app à ajouter. Vous n’avez rien à faire.
+
+**Pour essayer :** Réglages › Compagnon
+
+---
+
 ## <a id="v1.27.2"></a>Nouveau fichier est de retour, et les Réglages sont encore plus légers
 
 <sub>1.27.2 · 9 octobre 2026</sub>

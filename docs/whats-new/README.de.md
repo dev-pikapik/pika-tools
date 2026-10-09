@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Das Haustier bleibt in Sicht, und Fenster öffnen sich bereit
+
+<sub>1.27.3 · 9. Oktober 2026</sub>
+
+Das Haustier verschwindet mitten im Sprung nicht mehr hinter Fenstern, und die Fenster von pikapik öffnen sich gleich einsatzbereit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wenn das Haustier über den Zeiger hüpfte oder einen Purzelbaum schlug, konnte es hinter die Fenster anderer Apps rutschen und mitten in der Luft verschwinden. Jetzt bleibt es den ganzen Sprung über vorne und geht nach der Landung wieder hinter deine Fenster.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Wenn pikapik still im Hintergrund startete, bei der Anmeldung, nach einem Update oder über einen pikapik://-Link, konnten seine Fenster grau aufgehen und hinter anderen Fenstern bleiben, bis du sie angeklickt hast. Jetzt kommen die Einstellungen und das Fenster „Neue Datei“ nach vorne, und du kannst sofort tippen.
+
+Das gilt auch für die Meldung nach „Kleinere Kopie erstellen“ und für die Liste, in der du eine App zum Hinzufügen auswählst. Du musst nichts tun.
+
+**Ausprobieren:** Einstellungen › Haustier
+
+---
+
 ## <a id="v1.27.2"></a>Neue Datei ist zurück, und die Einstellungen sind noch leichter
 
 <sub>1.27.2 · 9. Oktober 2026</sub>

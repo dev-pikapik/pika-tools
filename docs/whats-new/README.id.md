@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Peliharaan selalu terlihat, dan jendela terbuka siap pakai
+
+<sub>1.27.3 · 9 Oktober 2026</sub>
+
+Peliharaan tidak lagi bersembunyi di balik jendela di tengah lompatan, dan jendela pikapik terbuka langsung siap dipakai.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Saat peliharaan melompati penunjuk atau berguling, ia bisa menyelinap ke balik jendela app lain dan menghilang di udara. Sekarang ia tetap di depan selama melompat dan kembali ke balik jendela Anda begitu mendarat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Saat pikapik mulai diam-diam di latar belakang, ketika masuk, setelah pembaruan, atau dari tautan pikapik://, jendelanya bisa terbuka abu-abu dan tertinggal di balik jendela lain sampai Anda mengekliknya. Sekarang Pengaturan dan jendela File Baru maju ke depan, siap untuk mengetik.
+
+Hal yang sama berlaku untuk pesan setelah Buat Salinan Lebih Kecil dan daftar tempat Anda memilih app untuk ditambahkan. Anda tidak perlu melakukan apa pun.
+
+**Coba:** Pengaturan › Peliharaan
+
+---
+
 ## <a id="v1.27.2"></a>File Baru kembali, dan Pengaturan makin ringan
 
 <sub>1.27.2 · 9 Oktober 2026</sub>

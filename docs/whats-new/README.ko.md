@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>펫은 언제나 보이고, 창은 바로 쓸 수 있게 열려요
+
+<sub>1.27.3 · 2026년 10월 9일</sub>
+
+펫이 점프 도중에 창 뒤로 숨지 않고, pikapik 창은 바로 쓸 수 있는 상태로 열려요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+펫이 포인터를 뛰어넘거나 데굴데굴 구르면 다른 앱의 창 뒤로 들어가 공중에서 사라질 때가 있었어요. 이제는 점프하는 내내 앞에 있다가, 땅에 내려오면 다시 창 뒤로 돌아가요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+로그인할 때, 업데이트한 뒤, pikapik:// 링크로 pikapik이 백그라운드에서 조용히 시작되면 창이 회색으로 열리고 클릭할 때까지 다른 창 뒤에 남아 있을 때가 있었어요. 이제 설정과 새 파일 창이 앞으로 나와서 바로 입력할 수 있어요.
+
+작은 사본 만들기 뒤에 나오는 메시지와 추가할 앱을 고르는 목록도 마찬가지예요. 따로 하실 일은 없어요.
+
+**사용해 보기:** 설정 › 펫
+
+---
+
 ## <a id="v1.27.2"></a>새 파일이 돌아오고, 설정은 더 가벼워졌어요
 
 <sub>1.27.2 · 2026년 10월 9일</sub>

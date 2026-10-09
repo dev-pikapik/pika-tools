@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Animăluțul rămâne la vedere, iar ferestrele se deschid gata de lucru
+
+<sub>1.27.3 · 9 octombrie 2026</sub>
+
+Animăluțul nu se mai ascunde după ferestre în mijlocul săriturii, iar ferestrele pikapik se deschid gata de folosit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Când animăluțul sărea peste cursor sau se dădea de-a berbeleacul, putea să alunece în spatele ferestrelor altor aplicații și să dispară în aer. Acum rămâne în față pe toată durata săriturii și trece înapoi în spatele ferestrelor tale când aterizează.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Când pikapik pornea discret în fundal, la autentificare, după o actualizare sau dintr-un link pikapik://, ferestrele lui se puteau deschide gri și rămâneau în spatele altora până dădeai clic pe ele. Acum Configurările și fereastra Fișier nou vin în față, gata să scrii.
+
+La fel și cu mesajul de după Creează o copie mai mică și cu lista în care alegi o aplicație de adăugat. Nu trebuie să faci nimic.
+
+**Încearcă:** Configurări › Animăluț
+
+---
+
 ## <a id="v1.27.2"></a>Fișier nou s-a întors, iar Configurările sunt și mai ușoare
 
 <sub>1.27.2 · 9 octombrie 2026</sub>

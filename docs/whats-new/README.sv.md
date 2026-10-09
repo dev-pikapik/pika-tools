@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Husdjuret syns alltid, och fönster öppnas redo
+
+<sub>1.27.3 · 9 oktober 2026</sub>
+
+Husdjuret gömmer sig inte längre bakom fönster mitt i ett hopp, och pikapiks fönster öppnas redo att använda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+När husdjuret hoppade över pekaren eller slog en kullerbytta kunde det glida in bakom andra appars fönster och försvinna mitt i luften. Nu stannar det framför under hela hoppet och går tillbaka bakom dina fönster när det landar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+När pikapik startade tyst i bakgrunden, vid inloggning, efter en uppdatering eller från en pikapik://-länk, kunde fönstren öppnas grå och ligga kvar bakom andra fönster tills du klickade på dem. Nu kommer Inställningar och fönstret Ny fil fram, redo för att skriva.
+
+Samma sak gäller meddelandet efter Skapa mindre kopia och listan där du väljer en app att lägga till. Du behöver inte göra något.
+
+**Prova:** Inställningar › Husdjur
+
+---
+
 ## <a id="v1.27.2"></a>Ny fil är tillbaka, och Inställningar är ännu lättare
 
 <sub>1.27.2 · 9 oktober 2026</sub>
