@@ -71,6 +71,9 @@ final class PetStage: NSObject {
         watch(distributed, Notification.Name("com.apple.screenIsLocked")) { $0.locked = true }
         watch(distributed, Notification.Name("com.apple.screenIsUnlocked")) { $0.locked = false }
         watch(workspace, NSWorkspace.accessibilityDisplayOptionsDidChangeNotification) { $0.physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion }
+        for name in [NSWorkspace.didLaunchApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
+            watch(workspace, name) { stage in DispatchQueue.main.asyncAfter(deadline: .now() + 1) { stage.shelter() } }
+        }
         for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.activeSpaceDidChangeNotification] {
             watch(workspace, name) { stage in DispatchQueue.main.async { stage.checkFullscreen() } }
         }
@@ -79,12 +82,11 @@ final class PetStage: NSObject {
 
         locked = (CGSessionCopyCurrentDictionary() as? [String: Any])?["CGSSessionScreenIsLocked"] as? Bool ?? false
         layout()
-        let width = physics.bounds.width, roof = physics.roof
+        let width = physics.bounds.width
         physics = PetPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.12), facing: demo == nil && Bool.random() ? -1 : 1)
-        physics.roof = roof
         physics.calm = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
         ball = BallPhysics(bounds: physics.bounds, x: width * (demo == nil ? .random(in: 0.1...0.9) : 0.4))
-        ball.roof = roof
+        shelter()
         checkFullscreen()
     }
 
@@ -173,11 +175,42 @@ final class PetStage: NSObject {
         let bounds = CGRect(x: 0, y: Self.ground, width: strip.width, height: top - Self.ground)
         physics.resize(bounds)
         ball.resize(bounds)
-        let dock = screen.visibleFrame.minY - screen.frame.minY
-        physics.roof = dock > Self.ground + PetPhysics.size.height ? dock : Self.height
-        ball.roof = physics.roof
+        shelter()
         place()
         if let bubble { show(bubble) }
+    }
+
+    private func shelter() {
+        guard let screen = NSScreen.screens.first else { return }
+        let top = screen.visibleFrame.minY - screen.frame.minY
+        var dock: CGRect?
+        if top > Self.ground + PetPhysics.size.height {
+            dock = CGRect(x: 0, y: 0, width: screen.frame.width, height: top)
+            if let tiles = Self.tiles() { dock = CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top) }
+        }
+        physics.roof = Self.height
+        ball.roof = Self.height
+        physics.dock = dock
+        ball.dock = dock
+    }
+
+    private static func tiles() -> CGRect? {
+        guard let app = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.dock").first else { return nil }
+        let dock = AXUIElementCreateApplication(app.processIdentifier)
+        AXUIElementSetMessagingTimeout(dock, 0.25)
+        var children: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(dock, kAXChildrenAttribute as CFString, &children) == .success, let children = children as? [AXUIElement] else { return nil }
+        for child in children {
+            var role: CFTypeRef?, position: CFTypeRef?, size: CFTypeRef?
+            var point = CGPoint.zero, extent = CGSize.zero
+            guard AXUIElementCopyAttributeValue(child, kAXRoleAttribute as CFString, &role) == .success, role as? String == kAXListRole,
+                  AXUIElementCopyAttributeValue(child, kAXPositionAttribute as CFString, &position) == .success,
+                  AXUIElementCopyAttributeValue(child, kAXSizeAttribute as CFString, &size) == .success,
+                  let position, let size, AXValueGetValue(position as! AXValue, .cgPoint, &point), AXValueGetValue(size as! AXValue, .cgSize, &extent),
+                  extent.width > 0 else { continue }
+            return CGRect(origin: point, size: extent)
+        }
+        return nil
     }
 
     func update() {
@@ -265,7 +298,7 @@ final class PetStage: NSObject {
     }
 
     private var demoLedge: CGRect? {
-        ProcessInfo.processInfo.systemUptime.truncatingRemainder(dividingBy: 14) < 9 ? CGRect(x: physics.bounds.width * 0.2, y: 0, width: 220, height: 16) : nil
+        ProcessInfo.processInfo.systemUptime.truncatingRemainder(dividingBy: 14) < 9 ? CGRect(x: physics.bounds.width * 0.2, y: 0, width: 220, height: 34) : nil
     }
 
     private func pressed(_ point: CGPoint) {

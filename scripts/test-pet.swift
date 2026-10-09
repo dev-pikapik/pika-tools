@@ -339,6 +339,36 @@ enum TestPet {
         }
         print("selections keep the pet on screen and below the roof: ok")
 
+        let dock = CGRect(x: 500, y: 0, width: 400, height: 60)
+        let cap = CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: 2000)
+        for (x, step) in [(CGFloat(50), CGRect(x: 150, y: 0, width: 200, height: 34)), (1350, CGRect(x: 1050, y: 0, width: 200, height: 34)), (50, CGRect(x: 250, y: 0, width: 300, height: 34))] {
+            pet = PetPhysics(bounds: floor, x: x, facing: x < 700 ? 1 : -1)
+            pet.roof = 190
+            pet.dock = dock
+            pet.ledge = step
+            var climbed = false, under = false
+            trace(&pet, 30, check: { p, _ in
+                precondition(!overlap(p.frame, cap.insetBy(dx: 0.5, dy: 0.5)), "rose above the Dock: \(p.frame)")
+                if p.grounded, p.origin.y == step.maxY { climbed = true }
+                if p.grounded, p.origin.y == floor.minY, dock.minX...dock.maxX ~= p.origin.x { under = true }
+            })
+            precondition(climbed && (under || step.maxX > dock.minX), "climbed \(climbed) under the Dock \(under) from \(x)")
+        }
+        for i in 0..<40_000 {
+            if i % 2_000 == 0 {
+                pet = PetPhysics(bounds: floor, x: next() < 0.5 ? 20 + next() * 460 : 920 + next() * 460)
+                pet.roof = 190
+                pet.dock = dock
+            }
+            if next() < 0.01 { pet.ledge = next() < 0.3 ? nil : CGRect(x: next() * 1400, y: next() * 120, width: 4 + next() * 400, height: 4 + next() * 160) }
+            if next() < 0.03 { pet.jump() }
+            if pet.grounded, next() < 0.005 { pet.bump(pet.frame.offsetBy(dx: next() < 0.5 ? -20 : 20, dy: 0)) }
+            pet.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.5 ? nil : CGPoint(x: next() * 1400, y: next() * 120))
+            precondition(inside(pet), "left the screen at step \(i): \(pet.frame)")
+            precondition(!overlap(pet.frame, cap.insetBy(dx: 0.5, dy: 0.5)) && pet.frame.maxY <= 190 + 1e-6, "rose above the Dock at step \(i): \(pet.frame)")
+        }
+        print("next to the Dock the pet jumps high and climbs, over the Dock it stays below its top: ok")
+
         func inBall(_ ball: BallPhysics) -> Bool {
             let f = ball.frame, b = ball.bounds
             return f.minX >= b.minX - 1e-6 && f.maxX <= b.maxX + 1e-6 && f.minY >= b.minY - 1e-6 && f.maxY <= b.maxY + 1e-6
@@ -415,6 +445,20 @@ enum TestPet {
         ball.ledge = nil
         settle(&ball, 30)
         print("60 000 random kicks keep the ball on screen and below the roof: ok")
+
+        ball = BallPhysics(bounds: room, x: 300)
+        ball.roof = 190
+        ball.dock = dock
+        for i in 0..<60_000 {
+            if next() < 0.003 { ball.kick(CGVector(dx: (next() - 0.5) * 3000, dy: next() * 1500)) }
+            if next() < 0.002 { ball.ledge = next() < 0.3 ? nil : CGRect(x: next() * 1400, y: next() * 80, width: 4 + next() * 400, height: 4 + next() * 120) }
+            let point = CGPoint(x: ball.center.x + (next() - 0.5) * 200, y: next() * 100)
+            ball.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.7 ? nil : point)
+            precondition(inBall(ball), "ball left the screen at step \(i): \(ball.frame)")
+            let c = ball.center, near = CGPoint(x: min(max(c.x, cap.minX), cap.maxX), y: min(max(c.y, cap.minY), cap.maxY))
+            precondition(hypot(c.x - near.x, c.y - near.y) >= BallPhysics.radius - 0.5 && ball.frame.maxY <= 190 + 1e-6, "ball above the Dock at step \(i): \(ball.frame)")
+        }
+        print("60 000 random kicks keep the ball below the Dock top and under the strip next to it: ok")
 
         ball = BallPhysics(bounds: room, x: 700)
         ball.ledge = CGRect(x: 600, y: 0, width: 300, height: 40)
