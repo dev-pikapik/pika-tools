@@ -138,12 +138,12 @@ struct PetPhysics {
         let gap = facing > 0 ? b.minX - frame.maxX : frame.minX - b.maxX
         guard gap < 2, gap > -b.width / 2 else { return false }
         let room = facing > 0 ? ball.bounds.maxX - b.maxX : b.minX - ball.bounds.minX
-        guard room > 4 else {
-            turn(to: -facing)
-            return false
-        }
         let power = walked.truncatingRemainder(dividingBy: 97) / 97
-        ball.kick(CGVector(dx: facing * (calm ? 140 : 220 + 160 * power), dy: calm ? 60 : 140 + 160 * (1 - power)))
+        if room > 4 * Self.size.width {
+            ball.kick(CGVector(dx: facing * (calm ? 140 : 220 + 160 * power), dy: calm ? 60 : 140 + 160 * (1 - power)))
+        } else {
+            ball.kick(CGVector(dx: -facing * (calm ? 120 : 170), dy: calm ? 420 : 520), over: true)
+        }
         enter(.kick, 0.4)
         return true
     }

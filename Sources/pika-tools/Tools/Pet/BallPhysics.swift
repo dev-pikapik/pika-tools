@@ -30,6 +30,7 @@ struct BallPhysics {
     private var trail = Trail()
     private var age = 0.0
     private var supported = false
+    private var over = false
 
     init(bounds: CGRect, x: CGFloat) {
         self.bounds = bounds
@@ -71,8 +72,9 @@ struct BallPhysics {
         cursor = next
     }
 
-    mutating func kick(_ v: CGVector) {
+    mutating func kick(_ v: CGVector, over: Bool = false) {
         (vx, vy) = Trail.limit(v.dx, v.dy, Self.fastest)
+        self.over = over
         spin = -vx / Self.radius
     }
 
@@ -81,6 +83,7 @@ struct BallPhysics {
         guard !held, touches(point) else { return false }
         held = true
         thrown = false
+        over = false
         (vx, vy, spin) = (0, 0, 0)
         trail = Trail()
         hang(point)
@@ -121,7 +124,8 @@ struct BallPhysics {
             if abs(push.0) > abs(push.1), frame.minY - floor < 2 { vy += Self.chip * abs(push.0) }
             (vx, vy) = Trail.limit(vx, vy, Self.fastest)
         }
-        if case let (p0, p1)? = body, let push = hit(a0, p0, p1, h) {
+        if over, vy < 0 { over = false }
+        if !over, case let (p0, p1)? = body, let push = hit(a0, p0, p1, h) {
             impact = max(impact, hypot(push.0, push.1))
         }
         if let ledge { collide(ledge) }
