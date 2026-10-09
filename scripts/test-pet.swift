@@ -339,6 +339,21 @@ enum TestPet {
         }
         print("selections keep the pet on screen and below the roof: ok")
 
+        for top in [CGFloat(120), 150, 170, 300] {
+            pet = PetPhysics(bounds: floor, x: 700)
+            pet.roof = 190
+            pet.ledge = CGRect(x: 600, y: top - 20, width: 200, height: 20)
+            let scruff = CGPoint(x: 700, y: pet.frame.maxY - PetPhysics.scruff)
+            precondition(pet.grab(at: scruff))
+            for _ in 0..<10 { pet.step(1.0 / 30, cursor: CGPoint(x: 700, y: 500)) }
+            pet.release()
+            states = trace(&pet, 4) { p, _ in
+                precondition(p.aloft || p.frame.maxY <= p.roof + 1e-6 || p.origin.y == floor.minY, "landed above the strip on a ledge at \(top): \(p.frame)")
+            }
+            precondition(states.last == .walk && pet.origin.y == (top + PetPhysics.size.height <= 190 ? top : floor.minY), "ledge at \(top): \(pet.origin)")
+        }
+        print("a thrown pet lands only on selections that fit under the strip: ok")
+
         let dock = CGRect(x: 500, y: 0, width: 400, height: 60)
         let cap = CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: 2000)
         for (x, step) in [(CGFloat(50), CGRect(x: 150, y: 0, width: 200, height: 34)), (1350, CGRect(x: 1050, y: 0, width: 200, height: 34)), (50, CGRect(x: 250, y: 0, width: 300, height: 34))] {
