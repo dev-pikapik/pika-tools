@@ -59,6 +59,18 @@ enum TestScroll {
         precondition(fields(pixels) == [-1, -60, -60, 0, 0, 0])
         precondition(pixels.getIntegerValueField(.scrollWheelEventIsContinuous) == 1)
 
+        let classicMouse = ScrollDirection(trackpadNatural: true, mouseNatural: false, systemNatural: true)
+        let posted = wheel(2)
+        let sent = fields(posted)
+        precondition(posted.getIntegerValueField(.eventSourceUnixProcessID) == Int64(getpid()))
+        classicMouse.rewrite(posted)
+        precondition(fields(posted) == sent)
+
+        let hardware = wheel(2)
+        hardware.setIntegerValueField(.eventSourceUnixProcessID, value: 0)
+        classicMouse.rewrite(hardware)
+        precondition(fields(hardware) == sent.map { -$0 })
+
         let device = "mac-a"
         let older = Date(timeIntervalSince1970: 1_000)
         let newer = Date(timeIntervalSince1970: 2_000)
