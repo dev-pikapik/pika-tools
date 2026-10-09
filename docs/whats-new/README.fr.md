@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Votre compagnon ne disparaît plus derrière les fenêtres
+
+<sub>1.30.2 · 9 octobre 2026</sub>
+
+Même caché par une fenêtre, votre compagnon continue de vivre et retombe au sol quand vous relâchez la sélection.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quand des fenêtres recouvraient toute la bande où vit votre compagnon, pikapik le mettait en pause et il pouvait rester figé en l’air. Désormais, votre compagnon et son ballon continuent de vivre derrière la fenêtre : ils marchent, tombent et jouent. Seul le dessin fait une pause.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Si un cadre de sélection soulève votre compagnon derrière une fenêtre, il retombe dès que vous relâchez, et vous le revoyez près du Dock.
+
+Et un cadre de sélection ne soulève plus votre compagnon au-dessus de sa bande.
+
+**Pour essayer :** Agrandissez une fenêtre, soulevez votre compagnon derrière elle avec un cadre de sélection, puis relâchez. Il retombe et réapparaît près du Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Les sélections sur le bureau fonctionnent à nouveau
 
 <sub>1.30.1 · 9 octobre 2026</sub>

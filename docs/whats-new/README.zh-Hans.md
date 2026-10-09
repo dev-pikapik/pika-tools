@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>宠物不会再在窗口后面消失了
+
+<sub>1.30.2 · 2026年10月9日</sub>
+
+即使被窗口挡住，宠物也会继续活动，松开选择框时就会落到地面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前窗口把宠物生活的那条区域整个挡住时，pikapik 会暂停宠物，它可能就停在半空中。现在宠物和足球在窗口后面也会继续活动：走路、下落、玩耍，只有绘制暂停一下。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+如果选择框在窗口后面把宠物举起来，一松开它就会落下，你又能在程序坞旁看到它。
+
+而且选择框不会再把宠物举到它那条区域之上。
+
+**试试看：** 把一个窗口放到最大，在它后面用选择框举起宠物，然后松开。宠物会落下，出现在程序坞旁边。
+
+---
+
 ## <a id="v1.30.1"></a>桌面上的选择框又能用了
 
 <sub>1.30.1 · 2026年10月9日</sub>

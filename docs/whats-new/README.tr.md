@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Evcil dostun artık pencerelerin arkasında kaybolmuyor
+
+<sub>1.30.2 · 9 Ekim 2026</sub>
+
+Bir pencere onu kapatsa bile evcil dostun yaşamaya devam ediyor ve seçimi bıraktığında yere düşüyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Pencereler evcil dostunun yaşadığı şeridi tamamen kapattığında pikapik onu duraklatıyordu ve havada donup kalabiliyordu. Artık evcil dostun ve topu pencerenin arkasında da yaşamaya devam ediyor: yürüyor, düşüyor ve oynuyor. Yalnızca çizim mola veriyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bir seçim kutusu evcil dostunu bir pencerenin arkasında yukarı kaldırırsa, bırakır bırakmaz aşağı düşüyor ve onu yeniden Dock’un yanında görüyorsun.
+
+Ayrıca seçim kutusu evcil dostunu artık kendi şeridinden daha yükseğe kaldırmıyor.
+
+**Deneyin:** Bir pencereyi tam boyuta getir, arkasında evcil dostunu bir seçim kutusuyla kaldır ve bırak. Evcil dostun düşüp Dock’un yanında beliriyor.
+
+---
+
 ## <a id="v1.30.1"></a>Masaüstündeki seçimler yeniden çalışıyor
 
 <sub>1.30.1 · 9 Ekim 2026</sub>

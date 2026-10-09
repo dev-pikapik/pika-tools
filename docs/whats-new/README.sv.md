@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Ditt husdjur försvinner inte längre bakom fönster
+
+<sub>1.30.2 · 9 oktober 2026</sub>
+
+Även när ett fönster täcker ditt husdjur lever det vidare och faller ner när du släpper markeringen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+När fönster täckte hela remsan där ditt husdjur bor pausade pikapik det, och det kunde frysa mitt i luften. Nu lever husdjuret och dess boll vidare bakom fönstret: de går, faller och leker. Bara ritandet tar en paus.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Om en markeringsruta lyfter ditt husdjur bakom ett fönster faller det ner så fort du släpper, och du ser det vid Dock igen.
+
+Och en markeringsruta lyfter inte längre husdjuret högre än dess remsa.
+
+**Prova:** Gör ett fönster fullstort, lyft ditt husdjur med en markeringsruta bakom det och släpp. Husdjuret faller och syns vid Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Markeringar på skrivbordet fungerar igen
 
 <sub>1.30.1 · 9 oktober 2026</sub>

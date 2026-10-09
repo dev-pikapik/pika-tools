@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>ペットがウインドウの裏で消えなくなりました
+
+<sub>1.30.2 · 2026年10月9日</sub>
+
+ウインドウに隠れてもペットは動き続け、選択を離すと地面に落ちてきます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+ペットが暮らす帯をウインドウがすべて覆うと、pikapik はペットを一時停止していたため、空中で固まってしまうことがありました。これからはウインドウの裏でもペットとボールは歩いたり、落ちたり、遊んだりします。お休みするのは描画だけです。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+選択枠でウインドウの裏のペットを持ち上げても、離せばすぐに落ちてきて、また Dock のそばに見えます。
+
+また、選択枠がペットを自分の帯より高く持ち上げることはなくなりました。
+
+**試してみる：** ウインドウを最大化し、その裏でペットを選択枠で持ち上げてから離してみてください。ペットが落ちて Dock のそばに現れます。
+
+---
+
 ## <a id="v1.30.1"></a>デスクトップの選択枠がまた使えるように
 
 <sub>1.30.1 · 2026年10月9日</sub>

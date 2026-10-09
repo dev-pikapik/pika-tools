@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>寵物不會再在視窗後面消失了
+
+<sub>1.30.2 · 2026年10月9日</sub>
+
+即使被視窗擋住，寵物也會繼續活動，放開選取框時就會落到地面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前視窗把寵物生活的那條區域整個擋住時，pikapik 會暫停寵物，牠可能就停在半空中。現在寵物和足球在視窗後面也會繼續活動：走路、落下、玩耍，只有繪製暫停一下。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+如果選取框在視窗後面把寵物舉起來，一放開牠就會落下，你又能在 Dock 旁看到牠。
+
+而且選取框不會再把寵物舉到牠那條區域之上。
+
+**試試看：** 把一個視窗放到最大，在它後面用選取框舉起寵物，然後放開。寵物會落下，出現在 Dock 旁邊。
+
+---
+
 ## <a id="v1.30.1"></a>桌面上的選取框又能用了
 
 <sub>1.30.1 · 2026年10月9日</sub>

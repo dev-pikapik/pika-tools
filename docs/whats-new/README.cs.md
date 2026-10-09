@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Mazlíček už nemizí za okny
+
+<sub>1.30.2 · 9. října 2026</sub>
+
+I když mazlíčka zakryje okno, žije dál a spadne na zem, jakmile pustíte výběr.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Když okna zakryla celý pruh, ve kterém mazlíček žije, pikapik ho pozastavil a mohl zamrznout ve vzduchu. Teď mazlíček a jeho míč žijí dál i za oknem: chodí, padají a hrají si. Odpočívá jen kreslení.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Když výběrový rámeček zvedne mazlíčka za oknem, spadne, jakmile ho pustíte, a zase ho uvidíte u Docku.
+
+A výběrový rámeček už mazlíčka nezvedne výš než jeho pruh.
+
+**Vyzkoušejte:** Zvětšete okno na celou obrazovku, zvedněte za ním mazlíčka výběrovým rámečkem a pusťte. Mazlíček spadne a objeví se u Docku.
+
+---
+
 ## <a id="v1.30.1"></a>Výběr na ploše zase funguje
 
 <sub>1.30.1 · 9. října 2026</sub>

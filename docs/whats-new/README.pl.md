@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Zwierzak nie znika już za oknami
+
+<sub>1.30.2 · 9 października 2026</sub>
+
+Nawet gdy zasłoni go okno, zwierzak dalej żyje i spada na ziemię, gdy puścisz zaznaczenie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Gdy okna zasłaniały cały pasek, na którym mieszka zwierzak, pikapik go wstrzymywał i mógł zastygnąć w powietrzu. Teraz zwierzak i jego piłka żyją dalej za oknem: chodzą, spadają i się bawią. Odpoczywa tylko rysowanie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jeśli ramka zaznaczenia podniesie zwierzaka za oknem, spadnie on, gdy tylko ją puścisz, i znów zobaczysz go przy Docku.
+
+A ramka zaznaczenia nie podnosi już zwierzaka wyżej niż jego pasek.
+
+**Wypróbuj:** Powiększ okno na cały ekran, podnieś zwierzaka ramką zaznaczenia za oknem i puść. Zwierzak spadnie i pojawi się przy Docku.
+
+---
+
 ## <a id="v1.30.1"></a>Zaznaczanie na biurku znów działa
 
 <sub>1.30.1 · 9 października 2026</sub>

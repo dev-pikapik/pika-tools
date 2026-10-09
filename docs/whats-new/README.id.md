@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.2"></a>Peliharaanmu tidak lagi hilang di balik jendela
+
+<sub>1.30.2 · 9 Oktober 2026</sub>
+
+Meski tertutup jendela, peliharaanmu tetap hidup dan jatuh ke tanah saat kamu melepas pilihan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Saat jendela menutupi seluruh jalur tempat peliharaanmu tinggal, pikapik menjedanya, dan ia bisa membeku di udara. Sekarang peliharaan dan bolanya tetap hidup di balik jendela: berjalan, jatuh, dan bermain. Hanya gambarnya yang beristirahat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jika kotak pilihan mengangkat peliharaanmu di balik jendela, ia langsung jatuh begitu kamu melepasnya, dan kamu melihatnya lagi di dekat Dock.
+
+Dan kotak pilihan tidak lagi mengangkat peliharaanmu lebih tinggi dari jalurnya.
+
+**Coba:** Perbesar jendela hingga penuh, angkat peliharaanmu dengan kotak pilihan di baliknya, lalu lepaskan. Peliharaanmu jatuh dan muncul di dekat Dock.
+
+---
+
 ## <a id="v1.30.1"></a>Pilihan di desktop berfungsi lagi
 
 <sub>1.30.1 · 9 Oktober 2026</sub>
