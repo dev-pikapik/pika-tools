@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Avsluta stänger inte längre av pikapik
+
+<sub>1.30.0 · 9 oktober 2026</sub>
+
+Valde du Avsluta av gammal vana? Dina kortkommandon, ”Håll vaken” och ditt husdjur fortsätter ändå att fungera.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+När du väljer ”Avsluta”, trycker på ⌘Q eller avslutar pikapik från Dock stänger det sina fönster och döljer symbolen i menyraden, men fortsätter tyst i bakgrunden: kortkommandon, ”Håll vaken” och ditt husdjur är kvar. Vill du få tillbaka symbolen öppnar du bara pikapik igen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vill du avsluta på riktigt? Håll ned Alternativ (⌥) och välj ”Avsluta”, eller tryck på ⌥⌘Q. Första gången pikapik går till bakgrunden förklarar det vad som hände och låter dig avsluta helt direkt.
+
+Föredrar du det gamla sättet? Stäng av ”Fortsätt i bakgrunden efter Avsluta” i Inställningar › Allmänt. Uppdateringar, byte av språk, utloggning, omstart och avstängning avslutar alltid pikapik helt, så de behöver aldrig vänta på det.
+
+**Prova:** Tryck på ⌘Q och öppna sedan pikapik igen för att få tillbaka symbolen.
+
+---
+
 ## <a id="v1.29.1"></a>Ditt husdjur promenerar över alla skärmar
 
 <sub>1.29.1 · 9 oktober 2026</sub>

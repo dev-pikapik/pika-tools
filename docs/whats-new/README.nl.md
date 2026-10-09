@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Stop zet pikapik niet meer uit
+
+<sub>1.30.0 · 9 oktober 2026</sub>
+
+Uit gewoonte op Stop gedrukt? Je toetscombinaties, ‘Wakker houden’ en je huisdiertje werken gewoon door.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Als je ‘Stop’ kiest, op ⌘Q drukt of pikapik vanuit het Dock stopt, sluit het zijn vensters en verbergt het zijn symbool in de menubalk, maar het blijft stil op de achtergrond werken: toetscombinaties, ‘Wakker houden’ en je huisdiertje blijven aan. Om het symbool terug te krijgen, open je pikapik gewoon nog een keer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wil je echt stoppen? Houd Option (⌥) ingedrukt en kies ‘Stop’, of druk op ⌥⌘Q. De eerste keer dat pikapik naar de achtergrond gaat, legt het uit wat er gebeurde en kun je het daar meteen helemaal stoppen.
+
+Liever zoals vroeger? Zet ‘Op de achtergrond blijven na Stop’ uit in Instellingen › Algemeen. Updates, een andere taal, afmelden, herstarten en uitzetten stoppen pikapik altijd helemaal, dus ze hoeven er nooit op te wachten.
+
+**Probeer het:** Druk op ⌘Q en open pikapik daarna opnieuw om zijn symbool terug te krijgen.
+
+---
+
 ## <a id="v1.29.1"></a>Je huisdiertje wandelt over al je schermen
 
 <sub>1.29.1 · 9 oktober 2026</sub>

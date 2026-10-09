@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Esci non spegne più pikapik
+
+<sub>1.30.0 · 9 ottobre 2026</sub>
+
+Hai scelto Esci per abitudine? Le abbreviazioni, «Resta sveglio» e il tuo animaletto continuano a funzionare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Quando scegli «Esci», premi ⌘Q o chiudi pikapik dal Dock, chiude le sue finestre e nasconde l’icona nella barra dei menu, ma continua a lavorare in silenzio in background: le abbreviazioni, «Resta sveglio» e il tuo animaletto restano attivi. Per riavere l’icona, basta aprire di nuovo pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vuoi uscire davvero? Tieni premuto Opzione (⌥) e scegli «Esci», oppure premi ⌥⌘Q. La prima volta che pikapik passa in background, ti spiega cosa è successo e ti propone di uscire del tutto subito.
+
+Preferisci come prima? Disattiva «Continua in background dopo Esci» in Impostazioni › Generali. Gli aggiornamenti, il cambio di lingua, il logout, il riavvio e lo spegnimento chiudono sempre pikapik del tutto, quindi non devono mai aspettarlo.
+
+**Provalo:** Premi ⌘Q, poi apri di nuovo pikapik per riavere la sua icona.
+
+---
+
 ## <a id="v1.29.1"></a>Il tuo animaletto passeggia su tutti gli schermi
 
 <sub>1.29.1 · 9 ottobre 2026</sub>

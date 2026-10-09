@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Beenden schaltet pikapik nicht mehr aus
+
+<sub>1.30.0 · 9. Oktober 2026</sub>
+
+Aus Gewohnheit auf Beenden gedrückt? Tastenkürzel, „Wach bleiben“ und dein Haustier laufen trotzdem weiter.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Wenn du „Beenden“ wählst, ⌘Q drückst oder pikapik im Dock beendest, schließt es seine Fenster und blendet sein Symbol in der Menüleiste aus, arbeitet aber still im Hintergrund weiter: Tastenkürzel, „Wach bleiben“ und dein Haustier bleiben aktiv. Um das Symbol zurückzuholen, öffne pikapik einfach noch einmal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Willst du wirklich beenden? Halte die Wahltaste (⌥) gedrückt und wähle „Beenden“, oder drücke ⌥⌘Q. Wenn pikapik zum ersten Mal in den Hintergrund geht, erklärt es, was passiert ist, und bietet dir an, es gleich ganz zu beenden.
+
+Lieber wie früher? Schalte „Nach dem Beenden im Hintergrund weiterlaufen“ in Einstellungen › Allgemein aus. Updates, ein Sprachwechsel, Abmelden, Neustart und Ausschalten beenden pikapik immer vollständig, sie müssen also nie darauf warten.
+
+**Ausprobieren:** Drücke ⌘Q und öffne pikapik dann erneut, um sein Symbol zurückzuholen.
+
+---
+
 ## <a id="v1.29.1"></a>Dein Haustier läuft über alle Bildschirme
 
 <sub>1.29.1 · 9. Oktober 2026</sub>

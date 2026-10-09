@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Keluar tidak lagi mematikan pikapik
+
+<sub>1.30.0 · 9 Oktober 2026</sub>
+
+Menekan Keluar karena kebiasaan? Pintasan, “Tetap Terjaga”, dan peliharaan Anda tetap berjalan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Saat Anda memilih “Keluar”, menekan ⌘Q, atau keluar dari pikapik lewat Dock, pikapik menutup jendelanya dan menyembunyikan ikonnya dari bar menu, tetapi tetap bekerja diam-diam di latar: pintasan, “Tetap Terjaga”, dan peliharaan Anda tetap menyala. Untuk mengembalikan ikonnya, cukup buka pikapik lagi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Ingin benar-benar keluar? Tahan Option (⌥) lalu pilih “Keluar”, atau tekan ⌥⌘Q. Saat pertama kali pikapik masuk ke latar, ia menjelaskan apa yang terjadi dan menawarkan untuk keluar sepenuhnya saat itu juga.
+
+Lebih suka cara lama? Matikan “Tetap berjalan di latar setelah Keluar” di Pengaturan › Umum. Pembaruan, mengganti bahasa, keluar akun, memulai ulang, dan mematikan Mac selalu menutup pikapik sepenuhnya, jadi tidak pernah perlu menunggunya.
+
+**Coba:** Tekan ⌘Q, lalu buka pikapik lagi untuk mengembalikan ikonnya.
+
+---
+
 ## <a id="v1.29.1"></a>Peliharaanmu jalan-jalan di semua layar
 
 <sub>1.29.1 · 9 Oktober 2026</sub>

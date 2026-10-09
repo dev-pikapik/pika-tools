@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Çık artık pikapik’i kapatmıyor
+
+<sub>1.30.0 · 9 Ekim 2026</sub>
+
+Alışkanlıkla Çık’a mı bastınız? Kısayollar, “Uyanık Tut” ve evcil dostunuz çalışmaya devam ediyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+“Çık”ı seçtiğinizde, ⌘Q’ya bastığınızda ya da pikapik’ten Dock üzerinden çıktığınızda pencerelerini kapatır ve menü çubuğundaki simgesini gizler, ama arka planda sessizce çalışmaya devam eder: kısayollar, “Uyanık Tut” ve evcil dostunuz açık kalır. Simgeyi geri getirmek için pikapik’i yeniden açmanız yeterli.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Gerçekten çıkmak mı istiyorsunuz? Option (⌥) tuşunu basılı tutup “Çık”ı seçin ya da ⌥⌘Q’ya basın. pikapik ilk kez arka plana geçtiğinde ne olduğunu açıklar ve hemen oradan tamamen çıkmayı önerir.
+
+Eskisi gibi mi olsun? Ayarlar › Genel’de “Çıktıktan sonra arka planda çalış”ı kapatın. Güncellemeler, dil değişikliği, oturumu kapatma, yeniden başlatma ve kapatma pikapik’ten her zaman tamamen çıkar, böylece hiçbiri onu beklemek zorunda kalmaz.
+
+**Deneyin:** ⌘Q’ya basın, sonra simgesini geri getirmek için pikapik’i yeniden açın.
+
+---
+
 ## <a id="v1.29.1"></a>Evcil dostun tüm ekranlarında geziyor
 
 <sub>1.29.1 · 9 Ekim 2026</sub>

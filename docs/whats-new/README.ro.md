@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Ieși nu mai oprește pikapik
+
+<sub>1.30.0 · 9 octombrie 2026</sub>
+
+Ai apăsat Ieși din obișnuință? Scurtăturile, „Menține activ” și animăluțul tău continuă să meargă.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Când alegi „Ieși”, apeși ⌘Q sau închizi pikapik din Dock, își închide ferestrele și își ascunde pictograma din bara de meniuri, dar continuă să lucreze discret în fundal: scurtăturile, „Menține activ” și animăluțul tău rămân pornite. Ca să readuci pictograma, deschide pur și simplu pikapik din nou.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vrei să ieși de-adevăratelea? Ține apăsat Option (⌥) și alege „Ieși” sau apasă ⌥⌘Q. Prima dată când pikapik trece în fundal, îți explică ce s-a întâmplat și îți propune să ieși complet chiar atunci.
+
+Preferi cum era înainte? Dezactivează „Rămâne activ în fundal după Ieși” în Configurări › General. Actualizările, schimbarea limbii, deconectarea, repornirea și oprirea închid mereu pikapik complet, așa că nu trebuie să-l aștepte niciodată.
+
+**Încearcă:** Apasă ⌘Q, apoi deschide din nou pikapik ca să-i readuci pictograma.
+
+---
+
 ## <a id="v1.29.1"></a>Animăluțul se plimbă pe toate ecranele
 
 <sub>1.29.1 · 9 octombrie 2026</sub>

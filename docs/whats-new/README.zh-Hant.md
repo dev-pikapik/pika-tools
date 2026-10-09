@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>「結束」不再關掉 pikapik
+
+<sub>1.30.0 · 2026年10月9日</sub>
+
+習慣性地按了「結束」？快速鍵、「保持喚醒」和寵物仍然照常運作。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+當你選擇「結束」、按下 ⌘Q 或從 Dock 結束 pikapik 時，它會關閉視窗並隱藏選單列圖像，但仍在背景安靜運作：快速鍵、「保持喚醒」和寵物都會繼續開著。想讓圖像回來，只要再次打開 pikapik 即可。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+想真正結束？按住 Option（⌥）鍵再選擇「結束」，或按 ⌥⌘Q。pikapik 第一次進入背景時，會說明發生了什麼，並讓你當場完全結束。
+
+比較喜歡以前的方式？在「設定 › 一般」中關閉「結束後繼續在背景執行」。更新、切換語言、登出、重新開機和關機時，pikapik 一律會完全結束，絕不會讓它們等待。
+
+**試試看：** 按下 ⌘Q，然後再次打開 pikapik，讓圖像回來。
+
+---
+
 ## <a id="v1.29.1"></a>寵物能在所有螢幕上散步了
 
 <sub>1.29.1 · 2026年10月9日</sub>

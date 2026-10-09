@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Ukončit už pikapik nevypíná
+
+<sub>1.30.0 · 9. října 2026</sub>
+
+Zvolili jste Ukončit ze zvyku? Zkratky, „Bez spánku“ i váš mazlíček fungují dál.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Když zvolíte „Ukončit“, stisknete ⌘Q nebo ukončíte pikapik z Docku, zavře svá okna a skryje ikonu v řádku nabídek, ale dál tiše běží na pozadí: zkratky, „Bez spánku“ i mazlíček zůstávají zapnuté. Ikonu vrátíte tak, že pikapik prostě otevřete znovu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Chcete ho opravdu ukončit? Podržte Option (⌥) a zvolte „Ukončit“, nebo stiskněte ⌥⌘Q. Když pikapik poprvé přejde na pozadí, vysvětlí, co se stalo, a hned nabídne úplné ukončení.
+
+Chcete to postaru? Vypněte „Po ukončení běžet na pozadí“ v Nastavení › Obecné. Aktualizace, změna jazyka, odhlášení, restart i vypnutí Macu pikapik vždy ukončí úplně, takže na něj nikdy nemusí čekat.
+
+**Vyzkoušejte:** Stiskněte ⌘Q a pak pikapik otevřete znovu, aby se vrátila jeho ikona.
+
+---
+
 ## <a id="v1.29.1"></a>Mazlíček se prochází po všech obrazovkách
 
 <sub>1.29.1 · 9. října 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.0"></a>Thoát không còn tắt pikapik
+
+<sub>1.30.0 · ngày 9 tháng 10, 2026</sub>
+
+Lỡ bấm Thoát theo thói quen? Phím tắt, “Giữ máy thức” và thú cưng của bạn vẫn tiếp tục hoạt động.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
+
+Khi bạn chọn “Thoát”, nhấn ⌘Q hoặc thoát pikapik từ Dock, ứng dụng đóng cửa sổ và ẩn biểu tượng trên thanh menu, nhưng vẫn lặng lẽ chạy nền: phím tắt, “Giữ máy thức” và thú cưng vẫn bật. Để biểu tượng quay lại, chỉ cần mở pikapik thêm lần nữa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Muốn thoát hẳn? Giữ Option (⌥) rồi chọn “Thoát”, hoặc nhấn ⌥⌘Q. Lần đầu pikapik chuyển sang chạy nền, ứng dụng sẽ giải thích chuyện gì đã xảy ra và cho bạn thoát hẳn ngay tại đó.
+
+Thích cách cũ hơn? Tắt “Tiếp tục chạy nền sau khi Thoát” trong Cài đặt › Cài đặt chung. Khi cập nhật, đổi ngôn ngữ, đăng xuất, khởi động lại và tắt máy, pikapik luôn thoát hẳn, nên chúng không bao giờ phải chờ nó.
+
+**Thử ngay:** Nhấn ⌘Q, rồi mở lại pikapik để biểu tượng quay lại.
+
+---
+
 ## <a id="v1.29.1"></a>Thú cưng dạo khắp mọi màn hình
 
 <sub>1.29.1 · ngày 9 tháng 10, 2026</sub>
