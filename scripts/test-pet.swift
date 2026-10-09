@@ -369,6 +369,17 @@ enum TestPet {
         }
         print("next to the Dock the pet jumps high and climbs, over the Dock it stays below its top: ok")
 
+        var lost = PetPhysics(bounds: screen, x: 300)
+        let calm = lost
+        lost.recover()
+        precondition(lost.origin == calm.origin && lost.state == .walk, "recover moved a pet that was fine")
+        precondition(lost.grab(at: CGPoint(x: CGFloat.nan, y: .nan)) && !lost.origin.x.isFinite, "a broken pointer no longer breaks the pet, update this check")
+        lost.recover()
+        precondition(lost.origin == CGPoint(x: screen.midX, y: screen.minY) && lost.state == .walk && !lost.aloft, "broken pet not put back: \(lost.origin)")
+        lost.step(1, cursor: nil)
+        precondition(inside(lost) && lost.state == .walk, "recovered pet does not walk: \(lost.origin)")
+        print("a broken pet goes back on the ground and walks on: ok")
+
         func inBall(_ ball: BallPhysics) -> Bool {
             let f = ball.frame, b = ball.bounds
             return f.minX >= b.minX - 1e-6 && f.maxX <= b.maxX + 1e-6 && f.minY >= b.minY - 1e-6 && f.maxY <= b.maxY + 1e-6

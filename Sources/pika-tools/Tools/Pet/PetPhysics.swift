@@ -197,6 +197,17 @@ struct PetPhysics {
         previous = frame
     }
 
+    mutating func recover() {
+        guard ![origin.x, origin.y, vx, vy].allSatisfy(\.isFinite) || !bounds.insetBy(dx: -1, dy: -1).contains(frame) else { return }
+        origin = CGPoint(x: origin.x.isFinite ? clamp(origin.x) : bounds.midX, y: bounds.minY)
+        vx = 0
+        vy = 0
+        trail = Trail()
+        enter(.walk)
+        cursor = nil
+        previous = frame
+    }
+
     private mutating func advance(_ h: Double, _ b0: CGRect?, _ b1: CGRect?) {
         clock += h
         landed += h
