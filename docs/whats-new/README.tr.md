@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Evcil dostunun artık bir topu var
+
+<sub>1.29.0 · 9 Ekim 2026</sub>
+
+Ekranın alt kenarında artık küçük bir futbol topu yuvarlanıyor. Evcil dostun onunla oynuyor, sen de oynayabilirsin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Top gerçek bir top gibi yuvarlanıp sekiyor. Evcil dostun peşinden koşuyor, tekmeliyor ve yine kovalıyor. Topu kendin tekmelemek için imleci hızla topun üzerinden geçir ya da tıpkı evcil dost gibi topu tut, taşı ve fırlat.
+
+Küçük bir püf noktası: masaüstünde boş bir yere tıklayıp sürükleyerek bir seçim kutusu çiz, Shift ile ya da Shift olmadan. Fare düğmesini basılı tuttuğun sürece kutu bir rafa dönüşür: evcil dostun üstüne zıplar, top da oraya düşebilir. Bırakınca raf kaybolur.
+
+Masaüstün sakin kalsın mı istiyorsun? Evcil dost ayarlarında Top’u kapat, evcil dostun yine kendi başına gezinsin.
+
+**Deneyin:** Ayarlar › Evcil Dost › Top
+
+**Düzeltilenler**
+
+- Dock’un yanında evcil dost yine istediği kadar yükseğe zıplıyor. Yalnızca tam Dock’un üstündeyken alçakta kalıyor, böylece hiçbir zaman Dock’un üstünden görünmüyor.
+
+---
+
 ## <a id="v1.28.0"></a>Uygulamaları bir tıkla ya da sürükleyerek ekleyin
 
 <sub>1.28.0 · 9 Ekim 2026</sub>

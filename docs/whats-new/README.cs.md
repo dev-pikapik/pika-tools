@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Mazlíček dostal míč
+
+<sub>1.29.0 · 9. října 2026</sub>
+
+Po spodním okraji obrazovky se teď kutálí malý fotbalový míč. Mazlíček si s ním hraje a vy můžete taky.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Míč se kutálí a skáče jako opravdový. Mazlíček za ním běží, kopne do něj a zase ho dohání. Rychle přejeďte ukazatelem přes míč a kopnete do něj sami. Nebo ho chyťte, přeneste a hoďte, stejně jako mazlíčka.
+
+Malý trik: klikněte na prázdné místo na ploše a tažením nakreslete výběrový rámeček, se Shiftem nebo bez něj. Dokud držíte tlačítko myši, rámeček se promění v poličku: mazlíček na ni vyskočí a míč na ní může přistát taky. Pusťte tlačítko a polička zmizí.
+
+Chcete mít na ploše klid? Vypněte Míč v nastavení mazlíčka a bude se zase procházet sám.
+
+**Vyzkoušejte:** Nastavení › Mazlíček › Míč
+
+**Opraveno**
+
+- Vedle Docku mazlíček zase skáče, jak vysoko chce. Dole se drží, jen když je přímo nad Dockem, takže nad ním nikdy nevykukuje.
+
+---
+
 ## <a id="v1.28.0"></a>Aplikace přidáte jedním kliknutím nebo přetažením
 
 <sub>1.28.0 · 9. října 2026</sub>

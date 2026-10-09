@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Il tuo animaletto ha una palla
+
+<sub>1.29.0 · 9 ottobre 2026</sub>
+
+Ora un piccolo pallone da calcio rotola lungo il bordo inferiore dello schermo. L’animaletto ci gioca, e puoi farlo anche tu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La palla rotola e rimbalza come una vera. L’animaletto le corre dietro, la calcia e la rincorre di nuovo. Passa veloce il puntatore sulla palla per calciarla tu, oppure prendila, portala in giro e lanciala, proprio come l’animaletto.
+
+Un piccolo trucco: fai clic su un punto vuoto della scrivania e trascina per disegnare un riquadro di selezione, con o senza Maiuscole. Finché tieni premuto il tasto del mouse, il riquadro diventa una mensola: l’animaletto ci salta sopra e anche la palla può atterrarci. Lascia il tasto e la mensola sparisce.
+
+Preferisci una scrivania tranquilla? Disattiva Palla nelle impostazioni dell’animaletto e tornerà a passeggiare per conto suo.
+
+**Provalo:** Impostazioni › Animaletto › Palla
+
+**Corretto**
+
+- Accanto al Dock l’animaletto torna a saltare in alto quanto vuole. Resta basso solo proprio sopra il Dock, così non spunta mai da dietro.
+
+---
+
 ## <a id="v1.28.0"></a>Aggiungi app con un clic o trascinandole
 
 <sub>1.28.0 · 9 ottobre 2026</sub>

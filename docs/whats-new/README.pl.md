@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Twój zwierzak ma piłkę
+
+<sub>1.29.0 · 9 października 2026</sub>
+
+Na dole ekranu toczy się teraz mała piłka do nogi. Zwierzak się nią bawi, a ty też możesz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Piłka toczy się i odbija jak prawdziwa. Zwierzak biegnie za nią, kopie ją i znowu goni. Przesuń szybko wskaźnik po piłce, żeby kopnąć ją samemu, albo złap ją, przenieś i rzuć, tak jak zwierzaka.
+
+Mały trik: kliknij puste miejsce na biurku i przeciągnij, żeby narysować ramkę zaznaczenia, z Shift albo bez. Dopóki trzymasz przycisk myszy, ramka staje się półką: zwierzak na nią wskakuje, a piłka też może na niej wylądować. Puść przycisk, a półka zniknie.
+
+Wolisz spokój na biurku? Wyłącz Piłkę w ustawieniach zwierzaka, a znowu będzie spacerował sam.
+
+**Wypróbuj:** Ustawienia › Zwierzak › Piłka
+
+**Poprawki**
+
+- Obok Docka zwierzak znowu skacze tak wysoko, jak chce. Nisko trzyma się tylko wtedy, gdy jest dokładnie nad Dockiem, więc nigdy nie wystaje ponad niego.
+
+---
+
 ## <a id="v1.28.0"></a>Aplikacje dodasz jednym kliknięciem albo przeciągając
 
 <sub>1.28.0 · 9 października 2026</sub>

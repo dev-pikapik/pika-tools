@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Votre compagnon a un ballon
+
+<sub>1.29.0 · 9 octobre 2026</sub>
+
+Un petit ballon de foot roule désormais en bas de l’écran. Votre compagnon joue avec, et vous aussi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Le ballon roule et rebondit comme un vrai. Votre compagnon court après, tire dedans et le poursuit encore. Passez vite le pointeur sur le ballon pour tirer vous-même, ou attrapez-le, déplacez-le et lancez-le, comme le compagnon.
+
+Une petite astuce : cliquez sur un endroit vide du bureau et faites glisser pour tracer un cadre de sélection, avec ou sans Maj. Tant que vous gardez le bouton enfoncé, le cadre devient une étagère : votre compagnon saute dessus, et le ballon peut s’y poser aussi. Relâchez, et l’étagère disparaît.
+
+Vous préférez un bureau calme ? Désactivez Ballon dans les réglages du compagnon, et il se promènera de nouveau tout seul.
+
+**Pour essayer :** Réglages › Compagnon › Ballon
+
+**Corrigé**
+
+- À côté du Dock, le compagnon saute de nouveau aussi haut qu’il veut. Il reste bas seulement juste au-dessus du Dock, pour ne jamais dépasser derrière lui.
+
+---
+
 ## <a id="v1.28.0"></a>Ajoutez des apps d’un clic ou d’un glisser
 
 <sub>1.28.0 · 9 octobre 2026</sub>

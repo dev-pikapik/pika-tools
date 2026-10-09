@@ -37,6 +37,7 @@ enum RenderMedia {
         ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),
         ("whats-new/1.25.1/dock-games", 3.85, AnyView(DockShelfArt())),
         ("whats-new/1.28.0/app-shelf", 3.85, AnyView(DockShelfArt(symbol: "safari.fill"))),
+        ("whats-new/1.29.0/pet-ball", PetBallArt.length, AnyView(PetBallArt())),
     ]
 
     static func main() {
@@ -243,6 +244,136 @@ private struct ArtSwitch: View {
                     .shadow(color: .black.opacity(0.2), radius: 0.5, y: 0.5)
                     .offset(x: on ? 5.5 : -5.5)
             }
+    }
+}
+
+private struct PetBallArt: View {
+    static let length = 7.2
+    @Environment(\.colorScheme) private var scheme
+
+    private static let ground: CGFloat = 100
+    private static let scale: CGFloat = 1.2
+
+    private static func arc(_ p: Double, _ height: CGFloat) -> CGFloat { 4 * height * CGFloat(p * (1 - p)) }
+
+    private static func pet(_ t: Double) -> (x: CGFloat, pose: PetPose) {
+        var pose = PetPose()
+        pose.blink = t.truncatingRemainder(dividingBy: 3.1) < 0.13
+        func walk(_ from: CGFloat, _ to: CGFloat, _ p: Double) -> CGFloat {
+            pose.facing = to > from ? 1 : -1
+            pose.step = p * max(1, (abs(to - from) / scale * 5 / 56).rounded()) * 2 * .pi
+            return from + (to - from) * CGFloat(p)
+        }
+        switch t {
+        case ..<1.0: return (walk(40, 66, t / 1.0), pose)
+        case ..<1.35:
+            let swing = sin(.pi * (t - 1.0) / 0.35)
+            pose.step = .pi / 3 * swing
+            pose.tilt = -0.14 * swing
+            return (66, pose)
+        case ..<3.0: return (walk(66, 120, (t - 1.35) / 1.65), pose)
+        case ..<3.6:
+            pose.facing = t < 3.35 ? 1 : -1
+            return (120, pose)
+        case ..<4.4: return (walk(120, 94, (t - 3.6) / 0.8), pose)
+        case ..<4.95:
+            let p = (t - 4.4) / 0.55
+            pose.facing = -1
+            pose.air = true
+            pose.lift = arc(p, 11)
+            pose.squash = -0.09 * abs(1 - 2 * CGFloat(p))
+            return (94 - 32 * CGFloat(p), pose)
+        case ..<5.6:
+            let x = walk(62, 40, (t - 4.95) / 0.65)
+            if t - 4.95 < 0.15 { pose.squash = 0.14 * (1 - CGFloat(t - 4.95) / 0.15) }
+            return (x, pose)
+        default:
+            pose.facing = t < 5.9 ? -1 : 1
+            return (40, pose)
+        }
+    }
+
+    private static func ball(_ t: Double) -> (x: CGFloat, pose: BallPose) {
+        let r = BallPhysics.radius / PetStage.scale
+        var x: CGFloat = 78, pose = BallPose()
+        switch t {
+        case 1.2..<2.8:
+            let p = (t - 1.2) / 1.6
+            x = 78 + 72 * CGFloat(1 - (1 - p) * (1 - p))
+            pose.lift = p < 0.4 ? arc(p / 0.4, 10) : p < 0.6 ? arc((p - 0.4) / 0.2, 3) : 0
+        case 2.8..<3.3: x = 150
+        case 3.3..<4.6:
+            let p = (t - 3.3) / 1.3
+            x = 150 - 72 * PetPose.ease(p)
+            pose.lift = p < 0.75 ? arc(p / 0.75, 26) : arc((p - 0.75) / 0.25, 4)
+        default: break
+        }
+        pose.angle = (x - 78) / scale / r
+        return (x, pose)
+    }
+
+    private static func cursor(_ t: Double) -> CGPoint {
+        let point = switch t {
+        case 2.3..<3.25: CGPoint(x: 166, y: 88)
+        case 3.25..<4.3: CGPoint(x: 128, y: 84)
+        default: CGPoint(x: 150, y: 30)
+        }
+        return CGPoint(x: point.x + 52, y: point.y + 10)
+    }
+
+    var body: some View {
+        let night = scheme == .dark
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        IllustrationRow {
+            ArtTimeline { time in
+                let t = time.map { GameStory.mod($0, Self.length) } ?? 0.5
+                let pet = Self.pet(t), ball = Self.ball(t)
+                Stage {
+                    ZStack {
+                        LinearGradient(
+                            colors: night ? [Color(red: 0.10, green: 0.11, blue: 0.27), Color(red: 0.29, green: 0.20, blue: 0.42)]
+                                : [Color(red: 0.60, green: 0.79, blue: 0.98), Color(red: 0.99, green: 0.86, blue: 0.80)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .overlay {
+                            Ellipse()
+                                .fill(night ? Color(red: 0.36, green: 0.25, blue: 0.50) : Color(red: 1, green: 0.78, blue: 0.70))
+                                .frame(width: 300, height: 90)
+                                .offset(x: 40, y: 70)
+                        }
+                        ArtWindow(size: CGSize(width: 84, height: 52)) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                ForEach([46.0, 60, 34], id: \.self) {
+                                    Capsule().fill(Color.primary.opacity(0.12)).frame(width: $0, height: 4)
+                                }
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 9)
+                        }
+                        .position(x: 54, y: 36)
+                        Canvas { context, _ in
+                            var figure = context
+                            figure.translateBy(x: pet.x, y: Self.ground)
+                            figure.scaleBy(x: Self.scale, y: Self.scale)
+                            PetFigure.shadow(pet.pose) { figure.fill($0, with: .color($1)) }
+                            PetFigure.draw(pet.pose, night: night) { figure.fill($0, with: .color($1)) }
+                            var toy = context
+                            toy.translateBy(x: ball.x, y: Self.ground)
+                            toy.scaleBy(x: Self.scale, y: Self.scale)
+                            BallFigure.draw(ball.pose, night: night) { toy.fill($0, with: .color($1)) }
+                        }
+                    }
+                    .frame(width: 196, height: 108)
+                    .clipShape(shape)
+                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                    .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
+                    .position(x: 150, y: 64)
+                    ArtCursor()
+                        .cursor(at: Self.cursor(t))
+                }
+            }
+        }
     }
 }
 

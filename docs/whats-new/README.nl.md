@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Je huisdiertje heeft een bal
+
+<sub>1.29.0 · 9 oktober 2026</sub>
+
+Onderaan het scherm rolt nu een kleine voetbal. Je huisdiertje speelt ermee, en jij kunt meedoen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+De bal rolt en stuitert als een echte. Je huisdiertje rent erachteraan, schopt hem weg en gaat er weer achteraan. Beweeg de aanwijzer snel tegen de bal om hem zelf te schoppen, of pak hem op, draag hem mee en gooi hem weg, net als het huisdiertje.
+
+Een klein trucje: klik op een lege plek op het bureaublad en sleep om een selectiekader te tekenen, met of zonder Shift. Zolang je de muisknop vasthoudt, wordt het kader een plankje: je huisdiertje springt erop en de bal kan er ook op landen. Laat los en het plankje is weg.
+
+Liever een rustig bureaublad? Zet Bal uit in de instellingen van het huisdiertje, dan wandelt het weer gewoon in zijn eentje rond.
+
+**Probeer het:** Instellingen › Huisdiertje › Bal
+
+**Opgelost**
+
+- Naast het Dock springt het huisdiertje weer zo hoog als het wil. Alleen recht boven het Dock blijft het laag, zodat het er nooit bovenuit piept.
+
+---
+
 ## <a id="v1.28.0"></a>Apps toevoegen met een klik of door te slepen
 
 <sub>1.28.0 · 9 oktober 2026</sub>

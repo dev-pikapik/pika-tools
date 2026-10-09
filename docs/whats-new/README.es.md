@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Tu mascota tiene una pelota
+
+<sub>1.29.0 · 9 de octubre de 2026</sub>
+
+Ahora una pequeña pelota de fútbol rueda por la parte de abajo de la pantalla. Tu mascota juega con ella, y tú también puedes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La pelota rueda y rebota como una de verdad. Tu mascota corre tras ella, la patea y vuelve a perseguirla. Pasa el puntero rápido por la pelota para patearla tú, o agárrala, llévala y lánzala, igual que a la mascota.
+
+Un pequeño truco: haz clic en un lugar vacío del escritorio y arrastra para dibujar un recuadro de selección, con o sin Mayúsculas. Mientras mantienes pulsado el botón, el recuadro se convierte en una repisa: tu mascota salta encima y la pelota también puede caer ahí. Suelta y la repisa desaparece.
+
+¿Prefieres un escritorio tranquilo? Desactiva Pelota en los ajustes de la mascota y volverá a pasear a su aire.
+
+**Pruébalo:** Ajustes › Mascota › Pelota
+
+**Corregido**
+
+- Junto al Dock, la mascota vuelve a saltar tan alto como quiere. Solo se queda abajo justo encima del Dock, así que nunca asoma por detrás.
+
+---
+
 ## <a id="v1.28.0"></a>Añade apps con un clic o arrastrándolas
 
 <sub>1.28.0 · 9 de octubre de 2026</sub>

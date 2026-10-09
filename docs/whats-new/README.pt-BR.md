@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Seu bichinho ganhou uma bola
+
+<sub>1.29.0 · 9 de outubro de 2026</sub>
+
+Agora uma bolinha de futebol rola pela parte de baixo da tela. Seu bichinho brinca com ela, e você também pode.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+A bola rola e quica como uma de verdade. O bichinho corre atrás dela, chuta e corre atrás de novo. Passe o ponteiro rápido pela bola para chutar você mesmo, ou pegue, carregue e jogue a bola, igual ao bichinho.
+
+Um truque: clique num lugar vazio da mesa e arraste para desenhar um retângulo de seleção, com ou sem Shift. Enquanto você segura o botão do mouse, o retângulo vira uma prateleira: o bichinho pula em cima, e a bola também pode cair ali. Solte, e a prateleira some.
+
+Prefere a mesa tranquila? Desligue Bola nos ajustes do bichinho, e ele volta a passear sozinho.
+
+**Experimente:** Ajustes › Bichinho › Bola
+
+**Corrigido**
+
+- Ao lado do Dock, o bichinho volta a pular tão alto quanto quiser. Ele só fica baixinho quando está bem em cima do Dock, então nunca aparece por trás dele.
+
+---
+
 ## <a id="v1.28.0"></a>Adicione apps com um clique ou arrastando
 
 <sub>1.28.0 · 9 de outubro de 2026</sub>
