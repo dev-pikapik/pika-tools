@@ -165,6 +165,7 @@ struct AppDropPage: ViewModifier {
 }
 
 private struct AppDropDelegate: DropDelegate {
+    private static var dropped: Int?
     let targets: [AppDropTarget]
     @Binding var target: String?
 
@@ -180,7 +181,7 @@ private struct AppDropDelegate: DropDelegate {
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
-        target = zone(info)?.id
+        target = NSPasteboard(name: .drag).changeCount == Self.dropped ? nil : zone(info)?.id
         return DropProposal(operation: target == nil ? .forbidden : .copy)
     }
 
@@ -190,6 +191,7 @@ private struct AppDropDelegate: DropDelegate {
 
     func performDrop(info: DropInfo) -> Bool {
         target = nil
+        Self.dropped = NSPasteboard(name: .drag).changeCount
         guard let add = zone(info)?.add else { return false }
         let apps = AppShelf.apps(on: NSPasteboard(name: .drag))
         apps.forEach(add)
