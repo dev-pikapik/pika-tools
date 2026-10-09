@@ -23,6 +23,7 @@ body:
       default: 0
       options:
         - Latest version
+        - "1.29.0"
         - "1.28.0"
         - "1.27.3"
         - "1.27.2"
