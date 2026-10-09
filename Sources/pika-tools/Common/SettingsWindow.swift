@@ -419,6 +419,7 @@ private struct SettingsPage: ViewModifier {
                 .labeledContentStyle(CenteredLabeledContentStyle())
                 .toggleStyle(CenteredSwitchStyle())
                 .labelStyle(.titleAndIcon)
+                .modifier(AppDropPage())
                 .onAppear { scroll(proxy) }
                 .onChange(of: model.highlight) { scroll(proxy) }
         }

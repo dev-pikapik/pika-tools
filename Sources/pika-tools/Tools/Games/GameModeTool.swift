@@ -484,7 +484,7 @@ struct GameModePage: View {
                         }
                     }
                 }
-                .gameList()
+                .appDropZone("games") { tool.add($0) }
             } footer: {
                 Text("You can also drag a game here from Finder")
                     .font(.footnote)
@@ -530,7 +530,6 @@ struct GameModePage: View {
             )
         }
         .formStyle(.grouped)
-        .gameDrop()
         .settingsPage()
         .environment(\.inSettings, true)
     }

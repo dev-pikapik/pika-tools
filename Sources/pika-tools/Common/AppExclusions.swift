@@ -10,19 +10,36 @@ struct AppExclusions: View {
     var skipped: Set<String> = []
     var empty = Text("No apps yet")
     @Environment(\.inSettings) private var inSettings
+    @State private var adding = false
 
     var body: some View {
         if inSettings {
-            LabeledContent {
-                Button("Add App…", systemImage: "plus", action: add)
-            } label: {
-                KeyLabel(keys: keys, title: Text(title), subtitle: apps.isEmpty ? empty : nil)
+            Group {
+                LabeledContent {
+                    if adding && isEnabled {
+                        Button("Done") { adding = false }
+                    } else {
+                        Button("Add App…", systemImage: "plus") { adding = true }
+                    }
+                } label: {
+                    KeyLabel(keys: keys, title: Text(title), subtitle: apps.isEmpty ? empty : nil)
+                }
+                .disabled(!isEnabled)
+                .settingAnchor(title)
+                if adding && isEnabled {
+                    AppShelf(
+                        hint: Text("Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder"),
+                        added: apps,
+                        suggest: suggestions,
+                        toggle: toggle,
+                        other: { Self.choose().forEach(add) }
+                    )
+                }
+                ForEach(apps, id: \.self) { id in
+                    AppRow(bundleID: id) { apps.removeAll { $0 == id } }
+                }
             }
-            .disabled(!isEnabled)
-            .settingAnchor(title)
-            ForEach(apps, id: \.self) { id in
-                AppRow(bundleID: id) { apps.removeAll { $0 == id } }
-            }
+            .appDropZone(title, isEnabled: isEnabled, add: add)
         }
     }
 
@@ -36,9 +53,19 @@ struct AppExclusions: View {
         return panel.runModal() == .OK ? panel.urls : []
     }
 
-    private func add() {
-        let ids = Self.choose().compactMap { Bundle(url: $0)?.bundleIdentifier }
-        apps += ids.filter { !apps.contains($0) && !skipped.contains($0) }
+    private func add(_ url: URL) {
+        guard AppShelf.isApp(url), let id = Bundle(url: url)?.bundleIdentifier, !apps.contains(id), !skipped.contains(id) else { return }
+        apps.append(id)
+    }
+
+    private func toggle(_ id: String) {
+        if apps.contains(id) { apps.removeAll { $0 == id } } else { apps.append(id) }
+    }
+
+    private func suggestions() -> [String] {
+        var seen = skipped
+        return (AppShelf.dock().compactMap { Bundle(url: $0)?.bundleIdentifier } + AppShelf.running.compactMap(\.bundleIdentifier))
+            .filter { !$0.hasPrefix("com.pesotchi.pika-tools") && seen.insert($0).inserted }
     }
 }
 
