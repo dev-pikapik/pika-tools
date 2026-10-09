@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Markeringar på skrivbordet fungerar igen
+
+<sub>1.30.1 · 9 oktober 2026</sub>
+
+Ditt husdjur och dess boll hoppar upp på markeringsrutor igen, och applistor lyser bara upp för appar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+När Dock eller en app för fjärrskrivbord täckte hela skärmen märkte pikapik inte markeringsrutan du drar upp på skrivbordet. Nu gör den det igen, och ditt husdjur och dess boll hoppar upp på den precis som förut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Applistorna i inställningarna lyser bara upp när du drar en app över dem. Andra filer ignoreras: ingen ram visas och inget extra läggs till. Drar du en app tillsammans med andra filer läggs bara appen till.
+
+Och ramen släcks så fort du släpper appen eller flyttar pekaren därifrån.
+
+**Prova:** Dra upp en markeringsruta på skrivbordet och se hur ditt husdjur hoppar upp på den.
+
+---
+
 ## <a id="v1.30.0"></a>Avsluta stänger inte längre av pikapik
 
 <sub>1.30.0 · 9 oktober 2026</sub>

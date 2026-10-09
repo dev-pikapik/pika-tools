@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Las selecciones en el escritorio vuelven a funcionar
+
+<sub>1.30.1 · 9 de octubre de 2026</sub>
+
+Tu mascota y su pelota vuelven a saltar sobre los recuadros de selección, y las listas de apps solo se iluminan con apps.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Cuando el Dock o una app de escritorio remoto ocupaba toda la pantalla, pikapik no notaba el recuadro de selección que dibujas en el escritorio. Ahora vuelve a notarlo, y tu mascota y su pelota saltan sobre él como antes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Las listas de apps en los ajustes solo se iluminan cuando arrastras una app encima. Los demás archivos se ignoran: no aparece ningún marco y no se añade nada de más. Si arrastras una app junto con otros archivos, solo se añade la app.
+
+Y el marco se apaga en cuanto sueltas la app o alejas el puntero.
+
+**Pruébalo:** Dibuja un recuadro de selección en el escritorio y mira cómo tu mascota salta encima.
+
+---
+
 ## <a id="v1.30.0"></a>Salir ya no apaga pikapik
 
 <sub>1.30.0 · 9 de octubre de 2026</sub>

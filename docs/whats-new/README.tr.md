@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Masaüstündeki seçimler yeniden çalışıyor
+
+<sub>1.30.1 · 9 Ekim 2026</sub>
+
+Evcil dostun ve topu yeniden seçim kutularına zıplıyor, uygulama listeleri de yalnızca uygulamalar için yanıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Dock ya da bir uzak masaüstü uygulaması tüm ekranı kapladığında pikapik, masaüstünde çizdiğin seçim kutusunu fark etmiyordu. Artık yeniden fark ediyor; evcil dostun ve topu eskisi gibi kutunun üstüne zıplıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Ayarlardaki uygulama listeleri yalnızca üzerlerine bir uygulama sürüklediğinde yanıyor. Diğer dosyalar yok sayılıyor: çerçeve görünmüyor ve fazladan hiçbir şey eklenmiyor. Bir uygulamayı başka dosyalarla birlikte sürüklersen yalnızca uygulama ekleniyor.
+
+Uygulamayı bıraktığın ya da imleci uzaklaştırdığın anda çerçeve de sönüyor.
+
+**Deneyin:** Masaüstünde bir seçim kutusu çiz ve evcil dostunun üstüne zıplamasını izle.
+
+---
+
 ## <a id="v1.30.0"></a>Çık artık pikapik’i kapatmıyor
 
 <sub>1.30.0 · 9 Ekim 2026</sub>

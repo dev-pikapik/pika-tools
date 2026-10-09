@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Zaznaczanie na biurku znów działa
+
+<sub>1.30.1 · 9 października 2026</sub>
+
+Zwierzak i jego piłka znów wskakują na ramki zaznaczenia, a listy aplikacji podświetlają się tylko dla aplikacji.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Gdy Dock albo aplikacja do zdalnego pulpitu zakrywała cały ekran, pikapik nie zauważał ramki zaznaczenia, którą rysujesz na biurku. Teraz znów ją zauważa, a zwierzak i piłka wskakują na nią jak dawniej.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Listy aplikacji w ustawieniach podświetlają się tylko wtedy, gdy przeciągasz nad nie aplikację. Inne pliki są pomijane: ramka się nie pojawia i nic zbędnego nie zostaje dodane. Jeśli przeciągniesz aplikację razem z innymi plikami, dodana zostanie tylko aplikacja.
+
+A ramka gaśnie, gdy tylko upuścisz aplikację albo odsuniesz kursor.
+
+**Wypróbuj:** Narysuj ramkę zaznaczenia na biurku i zobacz, jak zwierzak na nią wskakuje.
+
+---
+
 ## <a id="v1.30.0"></a>Zakończ już nie wyłącza pikapik
 
 <sub>1.30.0 · 9 października 2026</sub>

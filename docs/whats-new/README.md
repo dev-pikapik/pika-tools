@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Selections on the desktop work again
+
+<sub>1.30.1 · October 9, 2026</sub>
+
+Your pet and its ball jump onto selection boxes again, and app lists light up only for apps.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+When the Dock or a remote desktop app covered the whole screen, pikapik didn’t notice the selection box you drew on the desktop. Now it does again, and your pet and its ball jump onto it just like before.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+App lists in Settings light up only when you drag an app over them. Other files are ignored: no frame appears and nothing extra gets added. If you drag an app together with other files, only the app is added.
+
+And the frame goes out as soon as you drop the app or move the pointer away.
+
+**Try it:** Draw a selection box on the desktop and watch your pet jump onto it.
+
+---
+
 ## <a id="v1.30.0"></a>Quit no longer switches pikapik off
 
 <sub>1.30.0 · October 9, 2026</sub>

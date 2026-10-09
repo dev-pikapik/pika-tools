@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Selecțiile de pe birou funcționează din nou
+
+<sub>1.30.1 · 9 octombrie 2026</sub>
+
+Animăluțul și mingea lui sar din nou pe chenarele de selecție, iar listele de aplicații se aprind doar pentru aplicații.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Când Dockul sau o aplicație de acces la distanță acoperea tot ecranul, pikapik nu observa chenarul de selecție pe care îl desenezi pe birou. Acum îl observă din nou, iar animăluțul și mingea lui sar pe el ca înainte.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Listele de aplicații din configurări se aprind doar când tragi o aplicație peste ele. Celelalte fișiere sunt ignorate: nu apare niciun chenar și nu se adaugă nimic în plus. Dacă tragi o aplicație împreună cu alte fișiere, se adaugă doar aplicația.
+
+Iar chenarul se stinge imediat ce dai drumul aplicației sau muți cursorul în altă parte.
+
+**Încearcă:** Desenează un chenar de selecție pe birou și privește cum animăluțul sare pe el.
+
+---
+
 ## <a id="v1.30.0"></a>Ieși nu mai oprește pikapik
 
 <sub>1.30.0 · 9 octombrie 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>데스크탑 선택 상자가 다시 작동해요
+
+<sub>1.30.1 · 2026년 10월 9일</sub>
+
+펫과 공이 다시 선택 상자 위로 뛰어오르고, 앱 목록은 앱일 때만 빛나요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Dock이나 원격 데스크탑 앱이 화면 전체를 덮고 있으면 데스크탑에 그린 선택 상자를 pikapik이 알아채지 못했어요. 이제 다시 알아채고, 펫과 공이 예전처럼 그 위로 뛰어올라요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+설정의 앱 목록은 앱을 끌어왔을 때만 빛나요. 다른 파일은 무시돼서 테두리도 나타나지 않고 쓸데없는 항목도 추가되지 않아요. 앱을 다른 파일과 함께 끌어오면 앱만 추가돼요.
+
+그리고 앱을 놓거나 포인터를 치우면 테두리가 바로 꺼져요.
+
+**사용해 보기:** 데스크탑에 선택 상자를 그리고 펫이 그 위로 뛰어오르는 걸 지켜보세요.
+
+---
+
 ## <a id="v1.30.0"></a>종료해도 pikapik이 꺼지지 않습니다
 
 <sub>1.30.0 · 2026년 10월 9일</sub>

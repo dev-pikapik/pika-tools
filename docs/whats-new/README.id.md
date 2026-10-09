@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Pilihan di desktop berfungsi lagi
+
+<sub>1.30.1 · 9 Oktober 2026</sub>
+
+Peliharaanmu dan bolanya kembali melompat ke kotak pilihan, dan daftar app hanya menyala untuk app.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Saat Dock atau app desktop jarak jauh menutupi seluruh layar, pikapik tidak menyadari kotak pilihan yang kamu gambar di desktop. Sekarang ia menyadarinya lagi, dan peliharaanmu serta bolanya melompat ke atasnya seperti dulu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Daftar app di pengaturan hanya menyala saat kamu menyeret app ke atasnya. File lain diabaikan: bingkai tidak muncul dan tidak ada yang ikut ditambahkan. Kalau kamu menyeret app bersama file lain, hanya app yang ditambahkan.
+
+Dan bingkainya padam begitu kamu melepas app atau menjauhkan penunjuk.
+
+**Coba:** Gambar kotak pilihan di desktop dan lihat peliharaanmu melompat ke atasnya.
+
+---
+
 ## <a id="v1.30.0"></a>Keluar tidak lagi mematikan pikapik
 
 <sub>1.30.0 · 9 Oktober 2026</sub>

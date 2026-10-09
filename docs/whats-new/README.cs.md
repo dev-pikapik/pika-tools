@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Výběr na ploše zase funguje
+
+<sub>1.30.1 · 9. října 2026</sub>
+
+Mazlíček a jeho míč zase skáčou na výběrové rámečky a seznamy aplikací se rozsvítí jen pro aplikace.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Když Dock nebo aplikace pro vzdálenou plochu zakrývala celou obrazovku, pikapik si nevšiml výběrového rámečku, který kreslíte na ploše. Teď si ho zase všimne a mazlíček s míčem na něj skáčou jako dřív.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Seznamy aplikací v nastavení se rozsvítí, jen když nad ně přetáhnete aplikaci. Ostatní soubory se přehlížejí: rámeček se neobjeví a nic navíc se nepřidá. Když přetáhnete aplikaci spolu s jinými soubory, přidá se jen aplikace.
+
+A rámeček zhasne hned, jak aplikaci pustíte nebo odsunete ukazatel.
+
+**Vyzkoušejte:** Nakreslete na ploše výběrový rámeček a sledujte, jak na něj mazlíček vyskočí.
+
+---
+
 ## <a id="v1.30.0"></a>Ukončit už pikapik nevypíná
 
 <sub>1.30.0 · 9. října 2026</sub>

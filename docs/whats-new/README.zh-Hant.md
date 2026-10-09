@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>桌面上的選取框又能用了
+
+<sub>1.30.1 · 2026年10月9日</sub>
+
+寵物和足球又會跳上選取框了，App 列表也只在拖入 App 時才亮起。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+當 Dock 或遠端桌面 App 蓋滿整個螢幕時，pikapik 察覺不到你在桌面上畫的選取框。現在又能察覺了，寵物和足球會像以前一樣跳上去。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+設定裡的 App 列表只在你把 App 拖過來時才亮起。其他檔案會被略過：不會出現邊框，也不會多加任何東西。如果把 App 和其他檔案一起拖進來，只會加入 App。
+
+一放開 App 或把指標移開，邊框就會立刻熄滅。
+
+**試試看：** 在桌面上畫一個選取框，看看寵物跳上去。
+
+---
+
 ## <a id="v1.30.0"></a>「結束」不再關掉 pikapik
 
 <sub>1.30.0 · 2026年10月9日</sub>
