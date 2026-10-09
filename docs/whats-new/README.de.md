@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Dein Haustier hat einen Ball
+
+<sub>1.29.0 · 9. Oktober 2026</sub>
+
+Unten am Bildschirmrand rollt jetzt ein kleiner Fußball. Dein Haustier spielt damit, und du kannst mitspielen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Der Ball rollt und springt wie ein echter. Dein Haustier rennt hinterher, schießt ihn weg und jagt ihm wieder nach. Fahr mit dem Zeiger schnell gegen den Ball, um ihn selbst zu schießen, oder heb ihn auf, trag ihn herum und wirf ihn, genau wie das Haustier.
+
+Ein kleiner Trick: Klick auf eine freie Stelle des Schreibtischs und zieh einen Auswahlrahmen auf, mit oder ohne Shift. Solange du die Maustaste hältst, wird der Rahmen zum Regalbrett: Dein Haustier springt hinauf, und auch der Ball kann darauf landen. Lass los, und das Brett ist wieder weg.
+
+Lieber Ruhe auf dem Schreibtisch? Schalte Ball in den Haustier-Einstellungen aus, dann spaziert dein Haustier wieder für sich allein.
+
+**Ausprobieren:** Einstellungen › Haustier › Ball
+
+**Behoben**
+
+- Neben dem Dock springt das Haustier wieder so hoch, wie es will. Nur direkt über dem Dock bleibt es unten, damit es nie darüber hinausschaut.
+
+---
+
 ## <a id="v1.28.0"></a>Apps mit einem Klick oder per Ziehen hinzufügen
 
 <sub>1.28.0 · 9. Oktober 2026</sub>

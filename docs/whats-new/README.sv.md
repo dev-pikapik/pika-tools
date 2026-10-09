@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Ditt husdjur har fått en boll
+
+<sub>1.29.0 · 9 oktober 2026</sub>
+
+Nu rullar en liten fotboll längs skärmens nederkant. Husdjuret leker med den, och det kan du också.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bollen rullar och studsar som en riktig. Husdjuret springer efter den, sparkar iväg den och jagar den igen. Dra pekaren snabbt mot bollen för att sparka den själv, eller ta upp den, bär den och kasta den, precis som husdjuret.
+
+Ett litet trick: klicka på en tom plats på skrivbordet och dra för att rita en markeringsram, med eller utan Skift. Så länge du håller ner musknappen blir ramen en hylla: husdjuret hoppar upp på den, och bollen kan också landa där. Släpp, så försvinner hyllan.
+
+Vill du hellre ha lugnt på skrivbordet? Stäng av Boll i husdjurets inställningar, så går det runt på egen hand igen.
+
+**Prova:** Inställningar › Husdjur › Boll
+
+**Åtgärdat**
+
+- Bredvid Dock hoppar husdjuret återigen så högt det vill. Det håller sig lågt bara när det är precis ovanför Dock, så det sticker aldrig upp ovanför den.
+
+---
+
 ## <a id="v1.28.0"></a>Lägg till appar med ett klick eller genom att dra
 
 <sub>1.28.0 · 9 oktober 2026</sub>

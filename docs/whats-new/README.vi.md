@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Thú cưng đã có quả bóng
+
+<sub>1.29.0 · ngày 9 tháng 10, 2026</sub>
+
+Giờ có một quả bóng đá nhỏ lăn dọc mép dưới màn hình. Thú cưng chơi với nó, và bạn cũng chơi cùng được.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quả bóng lăn và nảy như bóng thật. Thú cưng chạy theo, sút nó rồi lại đuổi theo. Lướt nhanh con trỏ vào quả bóng để tự sút, hoặc nhặt bóng lên, mang đi và ném, y như với thú cưng.
+
+Có một mẹo nhỏ: bấm vào chỗ trống trên màn hình nền rồi kéo để vẽ khung chọn, có hoặc không giữ Shift. Khi bạn còn giữ nút chuột, khung chọn biến thành một cái kệ: thú cưng nhảy lên đó, và bóng cũng có thể rơi lên. Thả nút ra là kệ biến mất.
+
+Muốn màn hình nền yên tĩnh hơn? Tắt Quả bóng trong cài đặt thú cưng, và nó lại tự đi dạo như trước.
+
+**Thử ngay:** Cài đặt › Thú cưng › Quả bóng
+
+**Đã sửa**
+
+- Bên cạnh Dock, thú cưng lại nhảy cao bao nhiêu tùy thích. Nó chỉ ở thấp khi đang ngay phía trên Dock, nên không bao giờ ló lên trên Dock.
+
+---
+
 ## <a id="v1.28.0"></a>Thêm ứng dụng chỉ bằng một cú bấm hoặc kéo thả
 
 <sub>1.28.0 · ngày 9 tháng 10, 2026</sub>

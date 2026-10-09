@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Your pet has a ball
+
+<sub>1.29.0 · October 9, 2026</sub>
+
+A little football now rolls along the bottom of your screen. Your pet plays with it, and so can you.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+The ball rolls and bounces like a real one. Your pet runs after it, kicks it and chases it again. Flick the pointer quickly into the ball to kick it yourself, or pick it up, carry it and throw it, just like the pet.
+
+Here’s a little trick. Click an empty spot on the desktop and drag to draw a selection box, with or without Shift. While you hold the mouse button, the box turns into a shelf: your pet jumps up onto it, and the ball can land there too. Let go, and the shelf is gone.
+
+Rather keep the desktop calm? Turn off Ball in the pet settings, and your pet goes back to walking on its own.
+
+**Try it:** Settings › Pet › Ball
+
+**Fixed**
+
+- Next to the Dock, the pet jumps as high as it likes again. It stays low only while it’s right over the Dock, so it never peeks out above it.
+
+---
+
 ## <a id="v1.28.0"></a>Add apps with a click or a drag
 
 <sub>1.28.0 · October 9, 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Animăluțul tău are o minge
+
+<sub>1.29.0 · 9 octombrie 2026</sub>
+
+Acum o mică minge de fotbal se rostogolește pe marginea de jos a ecranului. Animăluțul se joacă cu ea, și poți și tu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Mingea se rostogolește și sare ca una adevărată. Animăluțul fuge după ea, o lovește și o urmărește din nou. Trece repede cursorul peste minge ca s-o lovești tu, sau prinde-o, mut-o și arunc-o, la fel ca pe animăluț.
+
+Un mic truc: dă clic pe un loc gol al biroului și trage ca să desenezi un chenar de selecție, cu sau fără Shift. Cât timp ții apăsat butonul mouse-ului, chenarul devine un raft: animăluțul sare pe el, iar mingea poate ateriza acolo. Dă drumul, și raftul dispare.
+
+Preferi un birou liniștit? Dezactivează Minge în configurările animăluțului, și el se va plimba din nou singur.
+
+**Încearcă:** Configurări › Animăluț › Minge
+
+**Reparat**
+
+- Lângă Dock, animăluțul sare din nou cât de sus vrea. Rămâne jos doar când e chiar deasupra Dockului, așa că nu mai iese niciodată peste el.
+
+---
+
 ## <a id="v1.28.0"></a>Adaugi aplicații cu un clic sau trăgându-le
 
 <sub>1.28.0 · 9 octombrie 2026</sub>

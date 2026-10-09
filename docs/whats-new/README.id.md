@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.29.0"></a>Peliharaanmu punya bola
+
+<sub>1.29.0 · 9 Oktober 2026</sub>
+
+Sekarang ada bola sepak kecil yang bergulir di tepi bawah layar. Peliharaanmu bermain dengannya, dan kamu juga bisa ikut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bolanya bergulir dan memantul seperti bola sungguhan. Peliharaan berlari mengejarnya, menendangnya, lalu mengejarnya lagi. Gerakkan penunjuk cepat ke arah bola untuk menendangnya sendiri, atau ambil bolanya, bawa, dan lempar, sama seperti peliharaan.
+
+Ada trik kecil: klik tempat kosong di desktop lalu seret untuk menggambar kotak pilihan, dengan atau tanpa Shift. Selama tombol mouse ditahan, kotak itu jadi rak: peliharaan melompat ke atasnya, dan bola juga bisa mendarat di sana. Lepaskan, dan raknya hilang.
+
+Lebih suka desktop yang tenang? Matikan Bola di pengaturan peliharaan, dan ia kembali berjalan-jalan sendiri.
+
+**Coba:** Pengaturan › Peliharaan › Bola
+
+**Diperbaiki**
+
+- Di samping Dock, peliharaan kembali melompat setinggi yang ia mau. Ia tetap rendah hanya saat tepat berada di atas Dock, jadi tidak pernah menyembul di atasnya.
+
+---
+
 ## <a id="v1.28.0"></a>Tambahkan app dengan sekali klik atau seret
 
 <sub>1.28.0 · 9 Oktober 2026</sub>
