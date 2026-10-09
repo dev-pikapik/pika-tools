@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "ねえねえ、バージョン%@が出たよ！ぼくをクリックしてね。";
 "Restart Finder once to bring back the right-click items" = "Finderを一度再起動すると、右クリックの項目が戻ります";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Dockにあるものと、いま開いているものがここに並んでいます。アプリをクリックして追加するか、Finderからここにドラッグしてください";
+"Keep running after Quit" = "終了後もバックグラウンドで動作";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "「終了」でウインドウは閉じますが、ショートカット、「スリープさせない」、ペットは動き続けます。完全に終了するにはOption（⌥）キーを押したままにします";
+"Quit Completely" = "完全に終了";
+"pikapik keeps working in the background" = "pikapikはバックグラウンドで動作しています";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "ショートカット、「スリープさせない」、ペットはそのまま使えます。メニューバーのアイコンを戻すには、pikapikをもう一度開いてください。完全に終了するには、Option（⌥）キーを押したまま「終了」を選びます。";
+"background, quit, close, exit, hide, menu bar icon, option" = "バックグラウンド, 終了, 閉じる, 隠す, メニューバーアイコン, option";

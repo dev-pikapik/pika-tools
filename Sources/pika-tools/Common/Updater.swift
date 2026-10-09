@@ -89,7 +89,7 @@ final class Updater {
                                 newApp.path, target.path, appURL.path]
             try helper.run()
             if target != appURL { LoginItem.shared.apply(false) }
-            NSApp.terminate(nil)
+            Background.quit()
         } catch {
             state = .failed(String(localized: "Download failed. Try again later"))
         }

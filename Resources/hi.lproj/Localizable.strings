@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "श्श, वर्शन %@ आ गया है! मुझ पर क्लिक कीजिए।";
 "Restart Finder once to bring back the right-click items" = "राइट-क्लिक वाले विकल्प वापस लाने के लिए Finder को एक बार रीस्टार्ट करें";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "यहाँ वह है जो आपके Dock में है और अभी खुला है। जोड़ने के लिए किसी ऐप पर क्लिक करें, या उसे Finder से यहाँ खींच लाएँ";
+"Keep running after Quit" = "बंद करने के बाद भी बैकग्राउंड में चलता रहे";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“बंद करें” विंडो बंद कर देता है, पर शॉर्टकट, “जगाए रखें” और दोस्त चलते रहते हैं। पूरी तरह बंद करने के लिए Option (⌥) दबाए रखें";
+"Quit Completely" = "पूरी तरह बंद करें";
+"pikapik keeps working in the background" = "pikapik बैकग्राउंड में चल रहा है";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "शॉर्टकट, “जगाए रखें” और दोस्त चालू रहते हैं। मेन्यू बार में आइकन वापस लाने के लिए pikapik को फिर से खोलें। पूरी तरह बंद करने के लिए “बंद करें” चुनते समय Option (⌥) दबाए रखें।";
+"background, quit, close, exit, hide, menu bar icon, option" = "बैकग्राउंड, बंद करें, बाहर निकलें, छिपाएँ, मेन्यू बार आइकन, option";

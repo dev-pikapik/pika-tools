@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Псс, вийшла версія %@! Натисніть на мене.";
 "Restart Finder once to bring back the right-click items" = "Перезапустіть Finder один раз, щоб повернути пункти правого кліку";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Тут те, що є в Dock і відкрите зараз. Натисніть на застосунок, щоб додати його, або перетягніть його сюди з Finder";
+"Keep running after Quit" = "Працювати у фоні після виходу";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "«Вийти» закриває вікна, а сполучення клавіш, «Не засинати» й улюбленець далі працюють. Щоб вийти повністю, утримуйте Option (⌥)";
+"Quit Completely" = "Вийти повністю";
+"pikapik keeps working in the background" = "pikapik і далі працює у фоні";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Сполучення клавіш, «Не засинати» й улюбленець працюють як раніше. Щоб повернути значок у рядок меню, відкрийте pikapik ще раз. Щоб вийти повністю, утримуйте Option (⌥), коли вибираєте «Вийти».";
+"background, quit, close, exit, hide, menu bar icon, option" = "фон, фоновий режим, вихід, закрити, сховати, значок у рядку меню, option";

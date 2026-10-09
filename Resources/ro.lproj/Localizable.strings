@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Pst, a apărut versiunea %@! Faceți clic pe mine.";
 "Restart Finder once to bring back the right-click items" = "Repornește Finder o dată ca să revină opțiunile de la clic dreapta";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Aici e ce ai în Dock și ce e deschis acum. Fă clic pe o aplicație ca s-o adaugi sau trage-o aici din Finder";
+"Keep running after Quit" = "Rămâne activ în fundal după Ieși";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "„Ieși” închide ferestrele, dar scurtăturile, „Menține activ” și animăluțul continuă să funcționeze. Ține apăsat Option (⌥) ca să ieși complet";
+"Quit Completely" = "Ieși complet";
+"pikapik keeps working in the background" = "pikapik continuă să funcționeze în fundal";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Scurtăturile, „Menține activ” și animăluțul rămân pornite. Deschide din nou pikapik ca să-i readuci pictograma în bara de meniu. Ca să ieși complet, ține apăsat Option (⌥) când alegi „Ieși”.";
+"background, quit, close, exit, hide, menu bar icon, option" = "fundal, ieși, închide, ascunde, pictogramă bara de meniu, option";

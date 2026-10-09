@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psst, phiên bản %@ ra rồi! Bấm vào mình nhé.";
 "Restart Finder once to bring back the right-click items" = "Khởi động lại Finder một lần để các mục bấm chuột phải trở lại";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Đây là những gì trong Dock và đang mở. Bấm vào một ứng dụng để thêm, hoặc kéo ứng dụng từ Finder vào đây";
+"Keep running after Quit" = "Tiếp tục chạy nền sau khi Thoát";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“Thoát” đóng các cửa sổ, nhưng phím tắt, “Giữ máy thức” và thú cưng vẫn hoạt động. Giữ Option (⌥) để thoát hẳn";
+"Quit Completely" = "Thoát hẳn";
+"pikapik keeps working in the background" = "pikapik vẫn chạy trong nền";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Phím tắt, “Giữ máy thức” và thú cưng vẫn bật. Mở lại pikapik để biểu tượng quay lại thanh menu. Để thoát hẳn, giữ Option (⌥) khi chọn “Thoát”.";
+"background, quit, close, exit, hide, menu bar icon, option" = "chạy nền, thoát, đóng, ẩn, biểu tượng thanh menu, option";

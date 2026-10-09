@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Pişt, %@ sürümü çıktı! Bana tıklayın.";
 "Restart Finder once to bring back the right-click items" = "Sağ tık öğelerinin geri gelmesi için Finder’ı bir kez yeniden başlatın";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Dock’unuzdakiler ve şu an açık olanlar burada. Eklemek için bir uygulamaya tıklayın ya da Finder’dan buraya sürükleyin";
+"Keep running after Quit" = "Çıktıktan sonra arka planda çalış";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“Çık” pencereleri kapatır, ama kısayollar, “Uyanık Tut” ve evcil dost çalışmaya devam eder. Tamamen çıkmak için Option (⌥) tuşunu basılı tut";
+"Quit Completely" = "Tamamen Çık";
+"pikapik keeps working in the background" = "pikapik arka planda çalışmaya devam ediyor";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Kısayollar, “Uyanık Tut” ve evcil dost açık kalır. Menü çubuğundaki simgeyi geri getirmek için pikapik’i yeniden aç. Tamamen çıkmak için “Çık”ı seçerken Option (⌥) tuşunu basılı tut.";
+"background, quit, close, exit, hide, menu bar icon, option" = "arka plan, çık, kapat, gizle, menü çubuğu simgesi, option";

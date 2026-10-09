@@ -79,6 +79,7 @@ struct SettingsItem: Identifiable {
     static var all: [SettingsItem] {
         [
             SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
+            SettingsItem(tab: .general, title: String(localized: "Keep running after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
             SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
             SettingsItem(tab: .general, title: String(localized: "Settings file"), synonyms: "backup, export, import, restore, JSON"),
@@ -272,7 +273,7 @@ enum SettingsWindow {
         helper.arguments = ["-c", "while kill -0 \"$1\" 2>/dev/null; do sleep 0.2; done; open \"$2\" --args --settings",
                             "pika-restart", String(ProcessInfo.processInfo.processIdentifier), Bundle.main.bundleURL.path]
         try? helper.run()
-        NSApp.terminate(nil)
+        Background.quit()
     }
 }
 
@@ -559,6 +560,7 @@ final class Language {
 private struct GeneralSettings: View {
     @Bindable private var loginItem = LoginItem.shared
     @AppStorage("appearance") private var appearance = Appearance.system
+    @AppStorage(Background.key) private var keepRunning = true
     @Bindable private var language = Language.shared
     @Bindable private var sync = SettingsSync.shared
 
@@ -577,6 +579,10 @@ private struct GeneralSettings: View {
                          : String(localized: "Starts on its own when you log in")))
                 }
                 .settingAnchor(String(localized: "Open at Login"))
+                Toggle(isOn: $keepRunning) {
+                    RowLabel(Text("Keep running after Quit"), Text("Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely"))
+                }
+                .settingAnchor(String(localized: "Keep running after Quit"))
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
                         .fixedSize()

@@ -51,6 +51,9 @@ import AppKit
         item(menu, String(localized: "Open at Login"), #selector(toggleLogin)).state = LoginItem.shared.isOn ? .on : .off
         menu.addItem(.separator())
         item(menu, String(localized: "Quit"), #selector(quit), key: "q")
+        let full = item(menu, String(localized: "Quit Completely"), #selector(quitCompletely), key: "q")
+        full.keyEquivalentModifierMask = [.command, .option]
+        full.isAlternate = true
         return menu
     }
 
@@ -66,10 +69,8 @@ import AppKit
     @objc private func openPermissions() { SettingsWindow.show(.permissions) }
     @objc private func openAbout() { SettingsWindow.show(.about) }
     @objc private func toggleLogin() { LoginItem.shared.set(!LoginItem.shared.isOn) }
-    @objc private func quit() {
-        KeepAwake.shared.set(.off)
-        NSApp.terminate(nil)
-    }
+    @objc private func quit() { NSApp.terminate(nil) }
+    @objc private func quitCompletely() { Background.quitCompletely() }
 
     @objc private func checkUpdates() {
         SettingsWindow.show(.about)

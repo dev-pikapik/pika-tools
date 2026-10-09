@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Псс, вышла версия %@! Нажмите на меня.";
 "Restart Finder once to bring back the right-click items" = "Перезапустите Finder один раз, чтобы вернуть пункты правого клика";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Здесь то, что есть в Dock и открыто сейчас. Нажмите на приложение, чтобы добавить его, или перетащите его сюда из Finder";
+"Keep running after Quit" = "Работать в фоне после выхода";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "«Выйти» закрывает окна, а сочетания клавиш, «Не засыпать» и питомец продолжают работать. Чтобы выйти совсем, удерживайте Option (⌥)";
+"Quit Completely" = "Выйти полностью";
+"pikapik keeps working in the background" = "pikapik продолжает работать в фоне";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Сочетания клавиш, «Не засыпать» и питомец работают как прежде. Чтобы вернуть значок в строку меню, откройте pikapik ещё раз. Чтобы выйти совсем, удерживайте Option (⌥), когда выбираете «Выйти».";
+"background, quit, close, exit, hide, menu bar icon, option" = "фон, фоновый режим, выход, закрыть, скрыть, значок в строке меню, option";

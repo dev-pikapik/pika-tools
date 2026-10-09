@@ -166,7 +166,7 @@ struct MenuView: View {
                     Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
                         .help("Customize…")
                     Spacer(minLength: 8)
-                    Button { KeepAwake.shared.set(.off); NSApp.terminate(nil) } label: { Label("Quit", systemImage: "power") }
+                    Button { NSApp.terminate(nil) } label: { Label("Quit", systemImage: "power") }
                         .keyboardShortcut("q")
                         .help("Quit")
                 }

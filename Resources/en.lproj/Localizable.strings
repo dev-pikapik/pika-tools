@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psst, version %@ is out! Click me.";
 "Restart Finder once to bring back the right-click items" = "Restart Finder once to bring back the right-click items";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder";
+"Keep running after Quit" = "Keep running after Quit";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely";
+"Quit Completely" = "Quit Completely";
+"pikapik keeps working in the background" = "pikapik keeps working in the background";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit.";
+"background, quit, close, exit, hide, menu bar icon, option" = "background, quit, close, exit, hide, menu bar icon, option";
