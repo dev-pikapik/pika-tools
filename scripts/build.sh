@@ -5,7 +5,13 @@ cd "$(dirname "$0")/.."
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert"
 MIN_OS="14.0"
-SIGN_IDENTITY="${SIGN_IDENTITY:--}"
+DEV_IDENTITY="pikapik Dev"
+if [ -z "${SIGN_IDENTITY:-}" ]; then
+    SIGN_IDENTITY=-
+    security unlock-keychain -p "" "$HOME/Library/Keychains/pikapik-dev.keychain-db" 2>/dev/null || true
+    security find-certificate -c "$DEV_IDENTITY" >/dev/null 2>&1 && SIGN_IDENTITY="$DEV_IDENTITY"
+fi
+DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo 1 || true)
 
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
@@ -104,7 +110,7 @@ sign() {
     fi
 }
 
-if [ "$SIGN_IDENTITY" = "-" ]; then
+if [ -n "$DEV" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-dev" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-dev" "$APP/Contents/Info.plist"
