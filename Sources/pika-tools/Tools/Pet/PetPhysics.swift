@@ -144,7 +144,8 @@ struct PetPhysics {
         guard (b.midX - origin.x) * facing > 0, b.minY < origin.y + 10, b.maxY > origin.y else { return false }
         let gap = facing > 0 ? b.minX - frame.maxX : frame.minX - b.maxX
         guard gap < 2, gap > -b.width / 2 else { return false }
-        let room = facing > 0 ? ball.bounds.maxX - b.maxX : b.minX - ball.bounds.minX
+        var room = facing > 0 ? ball.bounds.maxX - b.maxX : b.minX - ball.bounds.minX
+        if let dock = ball.dock, facing > 0 ? dock.minX >= b.maxX : dock.maxX <= b.minX { room = min(room, facing > 0 ? dock.minX - b.maxX : b.minX - dock.maxX) }
         let power = walked.truncatingRemainder(dividingBy: 97) / 97
         if room > 4 * Self.size.width {
             ball.kick(CGVector(dx: facing * (calm ? 140 : 220 + 160 * power), dy: calm ? 60 : 140 + 160 * (1 - power)))
@@ -238,6 +239,7 @@ struct PetPhysics {
                 if armed, leap(b1) { return }
             }
             if let ledge, climb(ledge) { return }
+            if let cap, overlaps(cap), (a0.midX < cap.midX) == (facing > 0) { return turn(to: -facing) }
             let x = origin.x + facing * pace * CGFloat(h)
             origin.x = clamp(x)
             if let cap, overlaps(cap), !overlaps(cap, at: a0.midX) {
@@ -391,7 +393,7 @@ struct PetPhysics {
     }
 
     private var cap: CGRect? {
-        dock.map { CGRect(x: $0.minX, y: $0.maxY, width: $0.width, height: max(bounds.maxY - $0.maxY, 0) + Self.size.height) }
+        dock.map { CGRect(x: $0.minX, y: bounds.minY - Self.size.height, width: $0.width, height: bounds.height + 2 * Self.size.height) }
     }
 
     private mutating func leap(_ b: CGRect) -> Bool {

@@ -366,19 +366,25 @@ enum TestPet {
         print("a thrown pet lands only on selections that fit under the strip: ok")
 
         let dock = CGRect(x: 500, y: 0, width: 400, height: 60)
-        let cap = CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: 2000)
+        let cap = CGRect(x: dock.minX, y: -2000, width: dock.width, height: 4000)
         for (x, step) in [(CGFloat(50), CGRect(x: 150, y: 0, width: 200, height: 34)), (1350, CGRect(x: 1050, y: 0, width: 200, height: 34)), (50, CGRect(x: 250, y: 0, width: 300, height: 34))] {
             pet = PetPhysics(bounds: floor, x: x, facing: x < 700 ? 1 : -1)
             pet.roof = 190
             pet.dock = dock
             pet.ledge = step
-            var climbed = false, under = false
+            var climbed = false
             trace(&pet, 30, check: { p, _ in
-                precondition(!overlap(p.frame, cap.insetBy(dx: 0.5, dy: 0.5)), "rose above the Dock: \(p.frame)")
+                precondition(!overlap(p.frame, cap.insetBy(dx: 0.5, dy: 0.5)), "went behind the Dock: \(p.frame)")
                 if p.grounded, p.origin.y == step.maxY { climbed = true }
-                if p.grounded, p.origin.y == floor.minY, dock.minX...dock.maxX ~= p.origin.x { under = true }
             })
-            precondition(climbed && (under || step.maxX > dock.minX), "climbed \(climbed) under the Dock \(under) from \(x)")
+            precondition(climbed, "never climbed from \(x)")
+        }
+        for (x, facing) in [(CGFloat(560), CGFloat(1)), (840, -1), (700, 1)] {
+            pet = PetPhysics(bounds: floor, x: x, facing: facing)
+            pet.roof = 190
+            pet.dock = dock
+            trace(&pet, 20)
+            precondition(!overlap(pet.frame, cap.insetBy(dx: 0.5, dy: 0.5)) && (x < dock.midX) == (pet.origin.x < dock.minX), "stayed behind the Dock from \(x): \(pet.frame)")
         }
         for i in 0..<40_000 {
             if i % 2_000 == 0 {
@@ -393,7 +399,7 @@ enum TestPet {
             precondition(inside(pet), "left the screen at step \(i): \(pet.frame)")
             precondition(!overlap(pet.frame, cap.insetBy(dx: 0.5, dy: 0.5)) && pet.frame.maxY <= 190 + 1e-6, "rose above the Dock at step \(i): \(pet.frame)")
         }
-        print("next to the Dock the pet jumps high and climbs, over the Dock it stays below its top: ok")
+        print("the pet never walks behind the Dock and leaves it by the nearest side: ok")
 
         var lost = PetPhysics(bounds: screen, x: 300)
         let calm = lost
@@ -493,9 +499,19 @@ enum TestPet {
             ball.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.7 ? nil : point)
             precondition(inBall(ball), "ball left the screen at step \(i): \(ball.frame)")
             let c = ball.center, near = CGPoint(x: min(max(c.x, cap.minX), cap.maxX), y: min(max(c.y, cap.minY), cap.maxY))
-            precondition(hypot(c.x - near.x, c.y - near.y) >= BallPhysics.radius - 0.5 && ball.frame.maxY <= 190 + 1e-6, "ball above the Dock at step \(i): \(ball.frame)")
+            precondition(hypot(c.x - near.x, c.y - near.y) >= BallPhysics.radius - 0.5 && ball.frame.maxY <= 190 + 1e-6, "ball behind the Dock at step \(i): \(ball.frame)")
         }
-        print("60 000 random kicks keep the ball below the Dock top and under the strip next to it: ok")
+        print("60 000 random kicks never leave the ball behind the Dock: ok")
+
+        for x in [CGFloat(560), 700, 840] {
+            ball = BallPhysics(bounds: room, x: x)
+            ball.roof = 190
+            ball.dock = dock
+            ball.step(1.0 / 30, cursor: nil)
+            settle(&ball, 5)
+            precondition(ball.frame.maxX <= dock.minX + 0.5 || ball.frame.minX >= dock.maxX - 0.5, "ball stayed behind the Dock from \(x): \(ball.frame)")
+        }
+        print("a ball behind the Dock rolls out: ok")
 
         ball = BallPhysics(bounds: room, x: 700)
         ball.ledge = CGRect(x: 600, y: 0, width: 300, height: 40)
