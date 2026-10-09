@@ -388,6 +388,18 @@ struct GameRuleFrame: View {
 
 struct GameScene: View {
     var time = GameStory.start
+
+    var body: some View {
+        ZStack {
+            GameLayer(time: (time * 15).rounded(.down) / 15)
+            GameLayer(time: time, pet: true)
+        }
+    }
+}
+
+private struct GameLayer: View {
+    let time: Double
+    var pet = false
     @Environment(\.colorScheme) private var scheme
 
     private static let hero: CGFloat = 58, ground: CGFloat = 82
@@ -397,9 +409,18 @@ struct GameScene: View {
 
     var body: some View {
         let night = scheme == .dark
-        Canvas { context, _ in Self.draw(&context, time, night) } symbols: {
-            Text(Image(systemName: "heart.fill")).font(.system(size: 6.5)).foregroundStyle(Art.red).tag(0)
+        if pet {
+            Canvas { context, _ in Self.drawPet(&context, time, night) }
+        } else {
+            Canvas { context, _ in Self.draw(&context, time, night) } symbols: {
+                Text(Image(systemName: "heart.fill")).font(.system(size: 6.5)).foregroundStyle(Art.red).tag(0)
+            }
         }
+    }
+
+    private static func gaps(_ t: Double) -> [CGFloat] {
+        let shift = CGFloat(GameStory.mod(t * 28 - 111.2, 56))
+        return (-1...4).map { CGFloat($0) * 56 - shift }
     }
 
     private static func circle(_ x: CGFloat, _ y: CGFloat, _ r: CGFloat) -> Path {
@@ -443,8 +464,7 @@ struct GameScene: View {
         c.fill(far, with: .color(night ? Color(red: 0.13, green: 0.16, blue: 0.32) : Color(red: 0.71, green: 0.88, blue: 0.76)))
         c.fill(near, with: .color(night ? Color(red: 0.16, green: 0.20, blue: 0.38) : Color(red: 0.61, green: 0.83, blue: 0.68)))
 
-        let shift = CGFloat(GameStory.mod(t * 28 - 111.2, 56))
-        let gaps = (-1...4).map { CGFloat($0) * 56 - shift }
+        let gaps = gaps(t)
         var grass = Path(), soil = Path()
         for gap in gaps {
             grass.addRoundedRect(in: CGRect(x: gap + 7, y: ground, width: 42, height: 40), cornerSize: CGSize(width: 5, height: 5), style: .continuous)
@@ -463,20 +483,21 @@ struct GameScene: View {
             c.fill(Path(ellipseIn: CGRect(x: gap - w * 0.55, y: y - h * 0.55, width: w * 1.1, height: h * 1.1)), with: .color(shine.opacity(fade)))
         }
 
-        let gap = gaps.min { abs($0 - hero) < abs($1 - hero) } ?? 0
+        guard let heart = c.resolveSymbol(id: 0) else { return }
+        for index in 0..<3 {
+            c.draw(heart, at: CGPoint(x: 16 + 8.5 * CGFloat(index), y: 11))
+        }
+    }
+
+    private static func drawPet(_ c: inout GraphicsContext, _ t: Double, _ night: Bool) {
+        let gap = gaps(t).min { abs($0 - hero) < abs($1 - hero) } ?? 0
         let jump = (hero + 14 - gap) / 28
         let air = jump > 0 && jump < 1
         let lift = air ? 60 * jump * (1 - jump) : 0
         let squash = air ? -0.09 * abs(1 - 2 * jump) : jump >= 1 && jump < 1.2 ? 0.14 * (1.2 - jump) / 0.2 : 0
         let pose = PetPose(step: t * .pi * 5, lift: lift, squash: squash, air: air)
-        var figure = c
-        figure.translateBy(x: hero, y: ground)
-        if abs(gap - hero) > 9 { PetFigure.shadow(pose) { figure.fill($0, with: .color($1)) } }
-        PetFigure.draw(pose, night: night) { figure.fill($0, with: .color($1)) }
-
-        guard let heart = c.resolveSymbol(id: 0) else { return }
-        for index in 0..<3 {
-            c.draw(heart, at: CGPoint(x: 16 + 8.5 * CGFloat(index), y: 11))
-        }
+        c.translateBy(x: hero, y: ground)
+        if abs(gap - hero) > 9 { PetFigure.shadow(pose) { c.fill($0, with: .color($1)) } }
+        PetFigure.draw(pose, night: night) { c.fill($0, with: .color($1)) }
     }
 }

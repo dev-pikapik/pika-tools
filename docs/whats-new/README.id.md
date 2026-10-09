@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>File Baru kembali, dan Pengaturan makin ringan
+
+<sub>1.27.2 · 9 Oktober 2026</sub>
+
+File Baru kembali ada di menu klik kanan Finder untuk semua orang, dan Pengaturan makin sedikit membebani Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Setelah pembaruan terakhir, Finder bisa memulai ulang File Baru di latar belakang dan lupa di folder mana ia bekerja, sehingga pilihan itu diam-diam hilang dari menu klik kanan. Sekarang File Baru mengingatkan Finder tentang foldernya setiap kali dimulai, dan pikapik memeriksa sesaat setelah dibuka bahwa Finder sudah mengingatnya. Kamu tidak perlu melakukan apa pun.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Gambar bergerak di Pengaturan sekarang hanya bergerak saat setidaknya separuh gambar terlihat di layar. Di gambar game, pahlawan kecil tetap bergerak 30 kali per detik, sedangkan bukit dan tanah di belakangnya 15 kali. Jadi halaman Game jauh lebih sedikit membebani Mac. Tampilannya tetap sama.
+
+Setelah pembaruan, pikapik tidak lagi menambahkan ulang pilihan Finder-nya kecuali app benar-benar pindah tempat, jadi Finder tidak perlu memuatnya ulang setiap kali.
+
+**Coba:** Pengaturan › Game
+
+---
+
 ## <a id="v1.27.1"></a>Lebih tenang, lebih ringan, dan Finder langsung siap
 
 <sub>1.27.1 · 9 Oktober 2026</sub>

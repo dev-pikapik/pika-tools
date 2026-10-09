@@ -6,12 +6,7 @@ final class CompressExtension: FIFinderSync {
 
     override init() {
         super.init()
-        let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .skipHiddenVolumes) ?? []
-        FIFinderSyncController.default().directoryURLs = Set(volumes + [URL(fileURLWithPath: "/")])
-        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { note in
-            guard let volume = note.userInfo?[NSWorkspace.volumeURLUserInfoKey] as? URL else { return }
-            FIFinderSyncController.default().directoryURLs.insert(volume)
-        }
+        Folders.watch()
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {

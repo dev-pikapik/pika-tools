@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Tệp mới đã trở lại, Cài đặt còn nhẹ hơn nữa
+
+<sub>1.27.2 · ngày 9 tháng 10, 2026</sub>
+
+Tệp mới đã có lại trong menu chuột phải của Finder cho mọi người, và Cài đặt càng ít làm nặng máy Mac hơn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Sau bản cập nhật trước, Finder có thể khởi động lại Tệp mới ở chế độ nền và quên mất nó hoạt động trong những thư mục nào, nên mục này lặng lẽ biến mất khỏi menu chuột phải. Giờ đây mỗi lần khởi động, Tệp mới nhắc lại cho Finder các thư mục của nó, và pikapik kiểm tra ngay sau khi mở rằng Finder đã ghi nhớ. Bạn không cần làm gì cả.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Các hình động trong Cài đặt giờ chỉ chuyển động khi ít nhất một nửa hình hiện trên màn hình. Trong hình trò chơi, nhân vật nhỏ vẫn chuyển động 30 lần mỗi giây, còn đồi và mặt đất phía sau thì 15 lần. Nhờ vậy trang Trò chơi làm nặng máy Mac ít hơn nhiều. Mọi thứ vẫn trông như cũ.
+
+Sau khi cập nhật, pikapik không còn thêm lại các mục Finder của mình trừ khi ứng dụng thật sự được chuyển sang chỗ mới, nên Finder không phải tải lại chúng mỗi lần.
+
+**Thử ngay:** Cài đặt › Trò chơi
+
+---
+
 ## <a id="v1.27.1"></a>Êm hơn, nhẹ hơn, và Finder sẵn sàng ngay
 
 <sub>1.27.1 · ngày 9 tháng 10, 2026</sub>

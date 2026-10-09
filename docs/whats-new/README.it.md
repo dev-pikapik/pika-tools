@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Nuovo file è tornato e le Impostazioni sono ancora più leggere
+
+<sub>1.27.2 · 9 ottobre 2026</sub>
+
+Nuovo file torna per tutti nel menu del clic destro del Finder, e le Impostazioni chiedono ancora meno al tuo Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Dopo l’ultimo aggiornamento, il Finder poteva riavviare Nuovo file in background e dimenticare in quali cartelle lavora, così la voce spariva in silenzio dal menu del clic destro. Ora Nuovo file ricorda al Finder le sue cartelle a ogni avvio, e pikapik controlla poco dopo l’apertura che il Finder le abbia ricevute. Non devi fare nulla.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Le immagini animate nelle Impostazioni ora si muovono solo quando almeno metà dell’immagine è sullo schermo. Nelle immagini dei giochi il piccolo eroe si muove sempre 30 volte al secondo, mentre le colline e il terreno dietro di lui 15. Così la pagina Giochi chiede molto meno al tuo Mac. Tutto ha lo stesso aspetto.
+
+Dopo un aggiornamento, pikapik non aggiunge più di nuovo le sue voci del Finder a meno che l’app non si sia davvero spostata, così il Finder non deve ricaricarle ogni volta.
+
+**Provalo:** Impostazioni › Giochi
+
+---
+
 ## <a id="v1.27.1"></a>Più silenzioso, più leggero e il Finder pronto subito
 
 <sub>1.27.1 · 9 ottobre 2026</sub>

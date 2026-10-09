@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>「新規ファイル」が戻り、設定はさらに軽く
+
+<sub>1.27.2 · 2026年10月9日</sub>
+
+Finder の右クリックメニューに、すべての人の「新規ファイル」が戻りました。設定の負担もさらに小さくなりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+前回のアップデートのあと、Finder が裏で「新規ファイル」を再起動し、どのフォルダで使えるかを忘れてしまうことがありました。そのため、右クリックメニューから項目が静かに消えていました。これからは「新規ファイル」が起動するたびに Finder へフォルダを伝え直し、pikapik も起動の少しあとで Finder が覚えているか確かめます。何もする必要はありません。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+設定の動く絵は、絵の半分以上が画面に見えているときだけ動くようになりました。ゲームの絵では、小さな主人公はこれまでどおり 1 秒に 30 回、後ろの丘と地面は 15 回動きます。そのため「ゲーム」のページは Mac の負担がずっと小さくなりました。見た目は変わりません。
+
+アップデートのあと、アプリが本当に別の場所に移ったときだけ Finder の項目を登録し直すようにしました。Finder が毎回読み込み直す必要はもうありません。
+
+**試してみる：** 設定 › ゲーム
+
+---
+
 ## <a id="v1.27.1"></a>静かに、軽く、Finder もすぐ使える
 
 <sub>1.27.1 · 2026年10月9日</sub>

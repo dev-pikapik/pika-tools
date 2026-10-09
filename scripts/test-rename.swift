@@ -27,6 +27,14 @@ enum TestRename {
         precondition(Updater.isNewPlace(new.path, last: nil, launchedBefore: true))
         precondition(Updater.isNewPlace(new.path, last: old.path, launchedBefore: true))
         precondition(!Updater.isNewPlace(new.path, last: new.path, launchedBefore: true))
+
+        let line = "+    com.pesotchi.pika-tools.new-file(1.27.1)\tD9AD182A\t2026-10-09 00:11:22 +0000\t"
+        let appex = "/Applications/pikapik.app/Contents/PlugIns/NewFile.appex"
+        precondition(Updater.isRegistered(appex, in: line + appex))
+        precondition(!Updater.isRegistered(appex, in: line + "/Applications/pika-tools.app/Contents/PlugIns/NewFile.appex"))
+        precondition(!Updater.isRegistered(appex, in: line + "/Users/me" + appex))
+        precondition(!Updater.isRegistered(appex, in: "  (no matches)"))
+        precondition(!Updater.isRegistered(appex, in: ""))
         print("rename: ok")
     }
 }

@@ -104,6 +104,10 @@ final class Updater {
         launchedBefore && last != path
     }
 
+    nonisolated static func isRegistered(_ path: String, in listing: String) -> Bool {
+        listing.split(separator: "\n").contains { $0.hasSuffix("\t" + path) }
+    }
+
     nonisolated static func isBrewManaged(prefixes: [String] = ["/opt/homebrew", "/usr/local"]) -> Bool {
         prefixes.contains { prefix in
             ["pikapik", "pika-tools"].contains { FileManager.default.fileExists(atPath: "\(prefix)/Caskroom/\($0)") }

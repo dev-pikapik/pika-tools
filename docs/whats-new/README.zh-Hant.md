@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>「新增檔案」回來了，設定也更輕了
+
+<sub>1.27.2 · 2026年10月9日</sub>
+
+所有人的 Finder 右鍵選單都重新出現「新增檔案」，設定對 Mac 的負擔也更小了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+上次更新後，Finder 可能會在背景重新啟動「新增檔案」，並忘記它在哪些檔案夾中運作，於是這個項目悄悄從右鍵選單消失。現在「新增檔案」每次啟動都會提醒 Finder 它的檔案夾，pikapik 也會在啟動後不久確認 Finder 已經記住。你不需要做任何事。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+設定裡的動畫圖片現在只在至少一半畫面出現在螢幕上時才會播放。在遊戲圖片裡，小主角依然每秒動 30 次，身後的山丘和地面每秒動 15 次，所以「遊戲」頁面對 Mac 的負擔小了很多。看起來和以前一樣。
+
+更新之後，只有在 App 真的換了位置時，pikapik 才會重新加入它的 Finder 項目，Finder 不必每次都重新載入。
+
+**試試看：** 設定 › 遊戲
+
+---
+
 ## <a id="v1.27.1"></a>更安靜、更輕巧，Finder 馬上可用
 
 <sub>1.27.1 · 2026年10月9日</sub>

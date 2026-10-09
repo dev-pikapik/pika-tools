@@ -56,7 +56,17 @@ final class FinderExtension {
     }
 
     static func register() {
-        plugIns.forEach { pluginkit("-a", $0.bundlePath) }
+        for plugIn in plugIns where !Updater.isRegistered(plugIn.bundlePath, in: pluginkit("-m", "-v", "-i", plugIn.bundleIdentifier ?? "")) {
+            pluginkit("-a", plugIn.bundlePath)
+        }
+    }
+
+    static func refreshFinderRecord() {
+        DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 20) {
+            let map = UserDefaults.standard.dictionary(forKey: "com.apple.finder.SyncExtensions")?["dirMap"] as? [String: [String]] ?? [:]
+            guard let id = plugIns.compactMap(\.bundleIdentifier).first(where: { (map[$0]?.isEmpty ?? true) && pluginkit("-m", "-i", $0).hasPrefix("+") }) else { return }
+            pluginkit("-e", "use", "-i", id)
+        }
     }
 
     fileprivate static var plugIns: [Bundle] {

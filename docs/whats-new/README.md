@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>New File is back, and Settings are even lighter
+
+<sub>1.27.2 · October 9, 2026</sub>
+
+New File is back in Finder’s right-click menu for everyone, and Settings ask even less of your Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+After the last update, Finder could restart New File in the background and forget which folders it works in, so the item quietly vanished from the right-click menu. Now New File reminds Finder of its folders every time it starts, and pikapik checks a little after launch that Finder got the message. You don’t need to do anything.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+The moving pictures in Settings now play only while at least half of a picture is on screen. In the game pictures the little hero still moves 30 times a second, and the hills and ground behind it 15 times, so the Games page asks much less of your Mac. Everything looks the same.
+
+After an update, pikapik no longer re-adds its Finder items unless the app really moved, so Finder doesn’t have to reload them every time.
+
+**Try it:** Settings › Games
+
+---
+
 ## <a id="v1.27.1"></a>Quieter, lighter, and Finder ready right away
 
 <sub>1.27.1 · October 9, 2026</sub>
