@@ -3,6 +3,7 @@ import SwiftUI
 struct PikaToolsApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     private let registry = ToolRegistry.shared
+    private let background = Background.shared
     private static let logo = menuBarLogo(opacity: 1)
     private static let logoOff = menuBarLogo(opacity: 0.45)
 
@@ -17,7 +18,7 @@ struct PikaToolsApp: App {
     }
 
     var body: some Scene {
-        MenuBarExtra {
+        MenuBarExtra(isInserted: Binding(get: { background.iconShown }, set: { background.iconShown = $0 })) {
             MenuView(registry: registry)
         } label: {
             Group {
@@ -92,9 +93,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         signals = [SIGTERM, SIGINT, SIGHUP].map { number in
             signal(number, SIG_IGN)
             let source = DispatchSource.makeSignalSource(signal: number, queue: .main)
-            source.setEventHandler { NSApp.terminate(nil) }
+            source.setEventHandler { Background.quit() }
             source.resume()
             return source
+        }
+
+        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { _ in
+            Background.shared.quitting = true
         }
 
         if !permissions.allGranted {
@@ -106,8 +111,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        Background.shared.iconShown = true
         SettingsWindow.show()
         return false
+    }
+
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        let background = Background.shared
+        if background.quitting || Background.isOutsideQuit { return .terminateNow }
+        guard Background.isOn, !NSEvent.modifierFlags.contains(.option) else {
+            KeepAwake.shared.set(.off)
+            return .terminateNow
+        }
+        background.hide()
+        return .terminateCancel
     }
 
     func applicationWillTerminate(_ notification: Notification) {

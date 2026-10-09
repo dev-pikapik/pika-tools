@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psst, version %@ är här! Klicka på mig.";
 "Restart Finder once to bring back the right-click items" = "Starta om Finder en gång så kommer högerklicksvalen tillbaka";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Här är det som finns i ditt Dock och det som är öppet nu. Klicka på en app för att lägga till den, eller dra hit den från Finder";
+"Keep running after Quit" = "Fortsätt i bakgrunden efter Avsluta";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "”Avsluta” stänger fönstren, men kortkommandon, ”Håll vaken” och husdjuret fortsätter att fungera. Håll ned Alternativ (⌥) för att avsluta helt";
+"Quit Completely" = "Avsluta helt";
+"pikapik keeps working in the background" = "pikapik fortsätter i bakgrunden";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Kortkommandon, ”Håll vaken” och husdjuret är fortfarande på. Öppna pikapik igen för att få tillbaka symbolen i menyraden. Håll ned Alternativ (⌥) när du väljer ”Avsluta” för att avsluta helt.";
+"background, quit, close, exit, hide, menu bar icon, option" = "bakgrund, avsluta, stäng, dölj, menyradssymbol, alternativ, option";

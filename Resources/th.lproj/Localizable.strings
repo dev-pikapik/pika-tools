@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "ชู่ว เวอร์ชัน %@ ออกแล้ว! คลิกที่เราสิ";
 "Restart Finder once to bring back the right-click items" = "เริ่ม Finder ใหม่หนึ่งครั้งเพื่อให้รายการคลิกขวากลับมา";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "นี่คือสิ่งที่อยู่ใน Dock และที่เปิดอยู่ตอนนี้ คลิกแอปเพื่อเพิ่ม หรือลากแอปมาที่นี่จาก Finder";
+"Keep running after Quit" = "ทำงานต่อเบื้องหลังหลังจากออก";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“ออก” จะปิดหน้าต่าง แต่ปุ่มลัด “ไม่ให้หลับ” และเพื่อนตัวน้อยยังทำงานต่อ กด Option (⌥) ค้างไว้เพื่อออกจริงๆ";
+"Quit Completely" = "ออกจริงๆ";
+"pikapik keeps working in the background" = "pikapik ยังทำงานอยู่เบื้องหลัง";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "ปุ่มลัด “ไม่ให้หลับ” และเพื่อนตัวน้อยยังเปิดอยู่ เปิด pikapik อีกครั้งเพื่อให้ไอคอนกลับมาที่แถบเมนู หากต้องการออกจริงๆ ให้กด Option (⌥) ค้างไว้ตอนเลือก “ออก”";
+"background, quit, close, exit, hide, menu bar icon, option" = "เบื้องหลัง, ออก, ปิด, ซ่อน, ไอคอนแถบเมนู, option";

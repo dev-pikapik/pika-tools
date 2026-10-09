@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psiu, a versão %@ saiu! Clique em mim.";
 "Restart Finder once to bring back the right-click items" = "Reinicie o Finder uma vez para trazer de volta as opções do clique direito";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Aqui está o que há no seu Dock e o que está aberto agora. Clique em um app para adicioná-lo ou arraste-o do Finder para cá";
+"Keep running after Quit" = "Continuar em segundo plano ao encerrar";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“Encerrar” fecha as janelas, mas os atalhos, o “Manter Ativo” e o bichinho continuam funcionando. Segure Option (⌥) para encerrar de vez";
+"Quit Completely" = "Encerrar de vez";
+"pikapik keeps working in the background" = "O pikapik continua funcionando em segundo plano";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Os atalhos, o “Manter Ativo” e o bichinho continuam ligados. Abra o pikapik de novo para trazer o ícone de volta à barra de menus. Para encerrar de vez, segure Option (⌥) ao escolher “Encerrar”.";
+"background, quit, close, exit, hide, menu bar icon, option" = "segundo plano, encerrar, sair, fechar, ocultar, ícone da barra de menus, option";

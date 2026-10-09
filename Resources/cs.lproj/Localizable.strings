@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Pst, vyšla verze %@! Klikněte na mě.";
 "Restart Finder once to bring back the right-click items" = "Restartujte Finder jednou a položky z nabídky pravého kliku se vrátí";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Tady je, co máte v Docku a co je právě otevřené. Klikněte na aplikaci, abyste ji přidali, nebo ji sem přetáhněte z Finderu";
+"Keep running after Quit" = "Po ukončení běžet na pozadí";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "„Ukončit“ zavře okna, ale zkratky, „Bez spánku“ a mazlíček dál fungují. Pro úplné ukončení podržte Option (⌥)";
+"Quit Completely" = "Úplně ukončit";
+"pikapik keeps working in the background" = "pikapik dál běží na pozadí";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Zkratky, „Bez spánku“ a mazlíček zůstávají zapnuté. Ikonu v řádku nabídek vrátíte tím, že pikapik znovu otevřete. Pro úplné ukončení podržte Option (⌥), když vybíráte „Ukončit“.";
+"background, quit, close, exit, hide, menu bar icon, option" = "pozadí, ukončit, zavřít, skrýt, ikona v řádku nabídek, option";

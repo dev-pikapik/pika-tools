@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psst, versi %@ sudah keluar! Klik aku.";
 "Restart Finder once to bring back the right-click items" = "Mulai ulang Finder sekali agar item klik kanan muncul lagi";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Ini yang ada di Dock Anda dan yang sedang terbuka. Klik app untuk menambahkannya, atau seret ke sini dari Finder";
+"Keep running after Quit" = "Tetap berjalan di latar setelah Keluar";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“Keluar” menutup jendela, tetapi pintasan, “Tetap Terjaga”, dan peliharaan tetap bekerja. Tahan Option (⌥) untuk keluar sepenuhnya";
+"Quit Completely" = "Keluar Sepenuhnya";
+"pikapik keeps working in the background" = "pikapik tetap berjalan di latar belakang";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Pintasan, “Tetap Terjaga”, dan peliharaan tetap aktif. Buka pikapik lagi untuk memunculkan kembali ikonnya di bar menu. Untuk keluar sepenuhnya, tahan Option (⌥) saat memilih “Keluar”.";
+"background, quit, close, exit, hide, menu bar icon, option" = "latar belakang, keluar, tutup, sembunyikan, ikon bar menu, option";

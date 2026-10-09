@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "Psst, Version %@ ist da! Klick mich an.";
 "Restart Finder once to bring back the right-click items" = "Starte den Finder einmal neu, damit die Rechtsklick-Befehle zurückkommen";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Hier ist, was in deinem Dock ist und gerade läuft. Klick auf eine App, um sie hinzuzufügen, oder zieh sie aus dem Finder hierher";
+"Keep running after Quit" = "Nach dem Beenden im Hintergrund weiterlaufen";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "„Beenden“ schließt die Fenster, aber Tastenkürzel, „Wach bleiben“ und das Haustier funktionieren weiter. Halte Wahltaste (⌥) gedrückt, um ganz zu beenden";
+"Quit Completely" = "Vollständig beenden";
+"pikapik keeps working in the background" = "pikapik läuft im Hintergrund weiter";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Tastenkürzel, „Wach bleiben“ und das Haustier bleiben aktiv. Öffne pikapik erneut, um das Symbol in der Menüleiste zurückzuholen. Um ganz zu beenden, halte die Wahltaste (⌥) gedrückt, wenn du „Beenden“ wählst.";
+"background, quit, close, exit, hide, menu bar icon, option" = "Hintergrund, beenden, schließen, ausblenden, Menüleistensymbol, Wahltaste, option";

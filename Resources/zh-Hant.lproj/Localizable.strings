@@ -518,3 +518,9 @@
 "Psst, version %@ is out! Click me." = "噓，%@ 版本出來囉！點我看看。";
 "Restart Finder once to bring back the right-click items" = "重新啟動 Finder 一次，即可找回右鍵選單中的項目";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "這裡是 Dock 裡和正在打開的 App。按一下 App 來加入，或從 Finder 把它拖到這裡";
+"Keep running after Quit" = "結束後繼續在背景執行";
+"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "「結束」會關閉視窗，但快速鍵、「保持喚醒」和寵物會繼續運作。按住 Option（⌥）鍵可完全結束";
+"Quit Completely" = "完全結束";
+"pikapik keeps working in the background" = "pikapik 仍在背景執行";
+"Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "快速鍵、「保持喚醒」和寵物都會繼續運作。再次打開 pikapik 即可讓選單列圖像回來。若要完全結束，請在選擇「結束」時按住 Option（⌥）鍵。";
+"background, quit, close, exit, hide, menu bar icon, option" = "背景, 結束, 關閉, 隱藏, 選單列圖像, option";
