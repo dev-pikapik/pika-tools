@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Dostunuz hep görünür, pencereler hazır açılır
+
+<sub>1.27.3 · 9 Ekim 2026</sub>
+
+Evcil dostunuz zıplarken artık pencerelerin arkasına saklanmıyor ve pikapik pencereleri hemen kullanıma hazır açılıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Evcil dostunuz imlecin üzerinden atladığında ya da takla attığında, başka uygulamaların pencerelerinin arkasına kayıp havada kaybolabiliyordu. Artık zıplama boyunca önde kalıyor, yere inince yeniden pencerelerinizin arkasına geçiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+pikapik oturum açılırken, bir güncellemeden sonra ya da bir pikapik:// bağlantısıyla arka planda sessizce başladığında, pencereleri gri açılıp siz tıklayana kadar diğerlerinin arkasında kalabiliyordu. Artık Ayarlar ve Yeni Dosya penceresi öne geliyor, hemen yazabilirsiniz.
+
+Küçük Kopya Oluştur sonrasındaki ileti ve eklemek için uygulama seçtiğiniz liste için de aynısı geçerli. Hiçbir şey yapmanız gerekmiyor.
+
+**Deneyin:** Ayarlar › Evcil Dost
+
+---
+
 ## <a id="v1.27.2"></a>Yeni Dosya geri döndü, Ayarlar daha da hafifledi
 
 <sub>1.27.2 · 9 Ekim 2026</sub>

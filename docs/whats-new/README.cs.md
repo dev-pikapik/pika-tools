@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Mazlíček je pořád vidět a okna se otevírají připravená
+
+<sub>1.27.3 · 9. října 2026</sub>
+
+Mazlíček se uprostřed skoku už neschovává za okna a okna pikapik se otevírají rovnou připravená k použití.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Když mazlíček skákal přes ukazatel nebo dělal kotrmelec, mohl zaplout za okna jiných aplikací a zmizet ve vzduchu. Teď zůstává vepředu po celý skok a po dopadu se zase vrací za vaše okna.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Když se pikapik potichu spustil na pozadí, při přihlášení, po aktualizaci nebo z odkazu pikapik://, mohla se jeho okna otevřít šedá a zůstat za ostatními, dokud jste na ně neklikli. Teď Nastavení a okénko Nový soubor přijdou dopředu a můžete hned psát.
+
+Totéž platí pro zprávu po Vytvořit menší kopii a pro seznam, kde vybíráte aplikaci k přidání. Nemusíte nic dělat.
+
+**Vyzkoušejte:** Nastavení › Mazlíček
+
+---
+
 ## <a id="v1.27.2"></a>Nový soubor je zpět a Nastavení je ještě lehčí
 
 <sub>1.27.2 · 9. října 2026</sub>

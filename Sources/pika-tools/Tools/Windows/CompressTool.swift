@@ -226,7 +226,7 @@ private final class CompressQueue {
         }
         RunLoop.main.perform {
             MainActor.assumeIsolated {
-                NSApp.activate()
+                NSApp.bringForward()
                 alert.runModal()
             }
         }

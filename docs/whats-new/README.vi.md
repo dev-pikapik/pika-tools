@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Thú cưng luôn trong tầm mắt, cửa sổ mở ra là dùng được ngay
+
+<sub>1.27.3 · ngày 9 tháng 10, 2026</sub>
+
+Thú cưng không còn trốn sau cửa sổ giữa chừng cú nhảy, và cửa sổ của pikapik mở ra là dùng được ngay.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Khi thú cưng nhảy qua con trỏ hoặc lộn nhào, nó có thể lọt ra sau cửa sổ của ứng dụng khác và biến mất giữa không trung. Giờ nó ở phía trước suốt cú nhảy và quay lại sau cửa sổ của bạn khi đáp xuống.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Khi pikapik lặng lẽ khởi động trong nền, lúc đăng nhập, sau khi cập nhật hoặc từ một liên kết pikapik://, cửa sổ của nó có thể mở ra màu xám và nằm sau các cửa sổ khác cho tới khi bạn bấm vào. Giờ Cài đặt và cửa sổ Tệp mới hiện ra phía trước, sẵn sàng để bạn gõ.
+
+Thông báo sau Tạo bản sao nhỏ hơn và danh sách nơi bạn chọn ứng dụng để thêm cũng vậy. Bạn không cần làm gì cả.
+
+**Thử ngay:** Cài đặt › Thú cưng
+
+---
+
 ## <a id="v1.27.2"></a>Tệp mới đã trở lại, Cài đặt còn nhẹ hơn nữa
 
 <sub>1.27.2 · ngày 9 tháng 10, 2026</sub>

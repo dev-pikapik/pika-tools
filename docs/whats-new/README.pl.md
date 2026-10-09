@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>Zwierzak zawsze na widoku, a okna otwierają się gotowe
+
+<sub>1.27.3 · 9 października 2026</sub>
+
+Zwierzak nie chowa się już za oknami w połowie skoku, a okna pikapik otwierają się od razu gotowe do pracy.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Gdy zwierzak przeskakiwał nad kursorem albo fikał koziołka, mógł wślizgnąć się za okna innych aplikacji i zniknąć w powietrzu. Teraz przez cały skok zostaje z przodu, a po wylądowaniu wraca za Twoje okna.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Gdy pikapik uruchamiał się po cichu w tle, przy logowaniu, po aktualizacji albo z linku pikapik://, jego okna mogły otwierać się szare i zostawać za innymi, dopóki ich nie kliknąłeś. Teraz Ustawienia i okienko Nowy plik wychodzą na wierzch i od razu można pisać.
+
+Tak samo jest z komunikatem po Utwórz mniejszą kopię i z listą, w której wybierasz aplikację do dodania. Nie musisz nic robić.
+
+**Wypróbuj:** Ustawienia › Zwierzak
+
+---
+
 ## <a id="v1.27.2"></a>Nowy plik wrócił, a Ustawienia są jeszcze lżejsze
 
 <sub>1.27.2 · 9 października 2026</sub>

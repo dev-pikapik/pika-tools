@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>O bichinho sempre à vista, e as janelas abrem prontas
+
+<sub>1.27.3 · 9 de outubro de 2026</sub>
+
+O bichinho não se esconde mais atrás das janelas no meio do pulo, e as janelas do pikapik abrem prontas para usar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Quando o bichinho pulava por cima do ponteiro ou dava uma cambalhota, ele podia escorregar para trás das janelas de outros apps e sumir no ar. Agora ele fica na frente durante todo o pulo e volta para trás das suas janelas assim que pousa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Quando o pikapik abria quietinho em segundo plano, ao iniciar a sessão, depois de uma atualização ou por um link pikapik://, as janelas dele podiam abrir cinzas e ficar atrás das outras até você clicar nelas. Agora os Ajustes e a janela Novo arquivo vêm para a frente, prontos para digitar.
+
+O mesmo vale para a mensagem depois de Criar cópia menor e para a lista em que você escolhe um app para adicionar. Você não precisa fazer nada.
+
+**Experimente:** Ajustes › Bichinho
+
+---
+
 ## <a id="v1.27.2"></a>Novo arquivo voltou, e os Ajustes ficaram ainda mais leves
 
 <sub>1.27.2 · 9 de outubro de 2026</sub>

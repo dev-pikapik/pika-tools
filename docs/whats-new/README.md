@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>The pet stays in sight, and windows open ready
+
+<sub>1.27.3 · October 9, 2026</sub>
+
+The pet no longer hides behind windows in the middle of a jump, and pikapik’s windows open ready to use.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+When the pet hopped over the pointer or took a tumble, it could slip behind the windows of other apps and vanish in mid-air. Now it stays in front for the whole jump and goes back behind your windows once it lands.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+When pikapik started quietly in the background, at login, after an update or from a pikapik:// link, its windows could open gray and stay behind other windows until you clicked them. Now Settings and the New File box come to the front, ready for you to type.
+
+The same goes for the message after Make a Smaller Copy and for the list where you pick an app to add. You don’t need to do anything.
+
+**Try it:** Settings › Pet
+
+---
+
 ## <a id="v1.27.2"></a>New File is back, and Settings are even lighter
 
 <sub>1.27.2 · October 9, 2026</sub>

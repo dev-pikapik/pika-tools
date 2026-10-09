@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.3"></a>宠物一直看得见，窗口一打开就能用
+
+<sub>1.27.3 · 2026年10月9日</sub>
+
+宠物不会再在跳到一半时躲到窗口后面，pikapik 的窗口一打开就能直接使用。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+宠物跳过指针或翻跟头时，可能会钻到其他 App 的窗口后面，在半空中消失。现在整个跳跃过程中它都待在前面，落地后再回到你的窗口后面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+当 pikapik 在后台悄悄启动时，比如登录时、更新后或通过 pikapik:// 链接，它的窗口可能打开时是灰色的，一直留在其他窗口后面，直到你点一下。现在设置和“新建文件”窗口会来到最前面，可以直接输入。
+
+“制作较小副本”之后的提示，以及选择要添加的 App 的列表，也是一样。你什么都不用做。
+
+**试试看：** 设置 › 宠物
+
+---
+
 ## <a id="v1.27.2"></a>“新建文件”回来了，设置也更轻了
 
 <sub>1.27.2 · 2026年10月9日</sub>

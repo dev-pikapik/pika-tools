@@ -51,7 +51,7 @@ struct PetPhysics {
 
     var grounded: Bool { state != .jump && state != .tumble && state != .held && state != .thrown }
 
-    var aloft: Bool { state == .held || state == .thrown }
+    var aloft: Bool { state == .held || state == .thrown || state == .jump || state == .tumble }
 
     static func cursorRect(at point: CGPoint) -> CGRect {
         CGRect(x: point.x, y: point.y - pointer.height, width: pointer.width, height: pointer.height)
