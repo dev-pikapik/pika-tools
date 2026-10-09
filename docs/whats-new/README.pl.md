@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Zwierzak i piłka nie chowają się już pod Dockiem
+
+<sub>1.30.3 · 9 października 2026</sub>
+
+Zwierzak nie spaceruje ani nie śpi już pod Dockiem, więc zawsze go widać.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej zwierzak i piłka często spacerowali i odpoczywali tuż pod Dockiem, gdzie nikt ich nie widział. Przy oknie powiększonym na cały ekran wyglądało, jakby zwierzak zniknął na dobre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teraz Dock jest dla nich jak ściana. Zwierzak zawraca przy jego krawędzi, a piłka się od niego odbija.
+
+Dzięki temu zwierzaka zawsze widać obok Docka, nawet gdy okno zajmuje cały ekran.
+
+**Wypróbuj:** Powiększ okno na cały ekran i popatrz przez kilka minut. Zwierzaka cały czas widać po lewej albo po prawej stronie Docka.
+
+---
+
 ## <a id="v1.30.2"></a>Zwierzak nie znika już za oknami
 
 <sub>1.30.2 · 9 października 2026</sub>

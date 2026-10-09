@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Seu bichinho e a bola não ficam mais embaixo do Dock
+
+<sub>1.30.3 · 9 de outubro de 2026</sub>
+
+Seu bichinho não passeia nem dorme mais embaixo do Dock, então você sempre o vê.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, o bichinho e a bola muitas vezes passeavam e descansavam bem embaixo do Dock, onde ninguém os via. Com uma janela maximizada, parecia que o bichinho tinha sumido de vez.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Agora o Dock é como uma parede para eles. O bichinho dá meia-volta na borda dele, e a bola quica nele.
+
+Assim o bichinho sempre fica visível ao lado do Dock, mesmo quando uma janela ocupa a tela toda.
+
+**Experimente:** Maximize uma janela e observe por alguns minutos. O bichinho fica sempre visível à esquerda ou à direita do Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Seu bichinho não some mais atrás das janelas
 
 <sub>1.30.2 · 9 de outubro de 2026</sub>

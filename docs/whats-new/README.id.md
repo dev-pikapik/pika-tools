@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Peliharaanmu dan bolanya tak lagi masuk ke bawah Dock
+
+<sub>1.30.3 · 9 Oktober 2026</sub>
+
+Peliharaanmu tidak lagi berjalan atau tidur di bawah Dock, jadi kamu selalu bisa melihatnya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu peliharaanmu dan bolanya sering berjalan dan beristirahat tepat di bawah Dock, tempat tak ada yang bisa melihat mereka. Dengan jendela yang diperbesar penuh, peliharaanmu seolah hilang selamanya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Sekarang Dock seperti dinding bagi mereka. Peliharaanmu berbalik di tepinya, dan bola memantul darinya.
+
+Jadi peliharaanmu selalu terlihat di samping Dock, bahkan saat jendela memenuhi seluruh layar.
+
+**Coba:** Perbesar jendela hingga penuh dan amati beberapa menit. Peliharaanmu selalu terlihat di kiri atau kanan Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Peliharaanmu tidak lagi hilang di balik jendela
 
 <sub>1.30.2 · 9 Oktober 2026</sub>

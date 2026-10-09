@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Tu mascota y su pelota ya no se meten bajo el Dock
+
+<sub>1.30.3 · 9 de octubre de 2026</sub>
+
+Tu mascota ya no pasea ni duerme bajo el Dock, así que siempre puedes verla.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, tu mascota y su pelota solían pasear y descansar justo debajo del Dock, donde nadie podía verlas. Con una ventana maximizada parecía que tu mascota había desaparecido para siempre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ahora el Dock es como una pared para ellas. Tu mascota se da la vuelta en su borde y la pelota rebota en él.
+
+Así tu mascota siempre se ve junto al Dock, incluso cuando una ventana ocupa toda la pantalla.
+
+**Pruébalo:** Maximiza una ventana y observa un par de minutos. Tu mascota siempre se ve a la izquierda o a la derecha del Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Tu mascota ya no desaparece detrás de las ventanas
 
 <sub>1.30.2 · 9 de octubre de 2026</sub>

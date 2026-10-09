@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>펫과 공이 더 이상 Dock 아래로 숨지 않아요
+
+<sub>1.30.3 · 2026년 10월 9일</sub>
+
+펫이 더 이상 Dock 아래에서 걷거나 자지 않아서 언제나 보여요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 펫과 공이 아무도 볼 수 없는 Dock 바로 아래에서 자주 걷고 쉬었어요. 창을 최대로 키우면 펫이 아예 사라진 것처럼 보였어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+이제 Dock은 펫과 공에게 벽과 같아요. 펫은 Dock 가장자리에서 돌아서고, 공은 Dock에 맞고 튕겨 나와요.
+
+그래서 창이 화면을 가득 채워도 펫은 언제나 Dock 옆에 보여요.
+
+**사용해 보기:** 창을 최대로 키우고 몇 분 동안 지켜보세요. 펫이 언제나 Dock 왼쪽이나 오른쪽에 보여요.
+
+---
+
 ## <a id="v1.30.2"></a>펫이 더 이상 창 뒤에서 사라지지 않아요
 
 <sub>1.30.2 · 2026년 10월 9일</sub>

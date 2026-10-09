@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Evcil dostun ve topu artık Dock’un altına girmiyor
+
+<sub>1.30.3 · 9 Ekim 2026</sub>
+
+Evcil dostun artık Dock’un altında yürümüyor ya da uyumuyor, yani onu hep görüyorsun.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Önceden evcil dostun ve topu, kimsenin göremediği Dock’un tam altında sık sık yürüyüp dinleniyordu. Tam boyutlu bir pencereyle evcil dostun tamamen kaybolmuş gibi görünüyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Artık Dock onlar için bir duvar gibi. Evcil dostun Dock’un kenarında geri dönüyor, top da ona çarpıp sekiyor.
+
+Böylece bir pencere tüm ekranı kaplasa bile evcil dostun hep Dock’un yanında görünüyor.
+
+**Deneyin:** Bir pencereyi tam boyuta getir ve birkaç dakika izle. Evcil dostun hep Dock’un solunda ya da sağında görünüyor.
+
+---
+
 ## <a id="v1.30.2"></a>Evcil dostun artık pencerelerin arkasında kaybolmuyor
 
 <sub>1.30.2 · 9 Ekim 2026</sub>

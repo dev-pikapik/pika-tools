@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Thú cưng và quả bóng không còn chui xuống dưới Dock
+
+<sub>1.30.3 · ngày 9 tháng 10, 2026</sub>
+
+Thú cưng không còn đi dạo hay ngủ dưới Dock nữa, nên bạn luôn nhìn thấy nó.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây thú cưng và quả bóng hay đi dạo và nằm nghỉ ngay dưới Dock, nơi không ai nhìn thấy. Khi cửa sổ được phóng to, trông như thú cưng đã biến mất hẳn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Giờ Dock giống như một bức tường với chúng. Thú cưng quay lại ở mép Dock, còn quả bóng nảy ra khi chạm vào.
+
+Vì vậy thú cưng luôn hiện rõ cạnh Dock, kể cả khi một cửa sổ chiếm cả màn hình.
+
+**Thử ngay:** Phóng to một cửa sổ và quan sát vài phút. Thú cưng luôn hiện ở bên trái hoặc bên phải Dock.
+
+---
+
 ## <a id="v1.30.2"></a>Thú cưng không còn biến mất sau cửa sổ
 
 <sub>1.30.2 · ngày 9 tháng 10, 2026</sub>

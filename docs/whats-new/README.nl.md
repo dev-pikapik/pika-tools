@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>Je huisdiertje en de bal gaan niet meer onder het Dock
+
+<sub>1.30.3 · 9 oktober 2026</sub>
+
+Je huisdiertje loopt en slaapt niet meer onder het Dock, dus je ziet het altijd.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vroeger liepen en rustten je huisdiertje en de bal vaak precies onder het Dock, waar niemand ze kon zien. Met een schermvullend venster leek het alsof je huisdiertje voorgoed weg was.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu is het Dock voor hen als een muur. Je huisdiertje keert om bij de rand ervan, en de bal stuitert ertegen terug.
+
+Zo blijft je huisdiertje altijd zichtbaar naast het Dock, ook als een venster het hele scherm vult.
+
+**Probeer het:** Maak een venster schermvullend en kijk een paar minuten. Je huisdiertje is steeds links of rechts van het Dock te zien.
+
+---
+
 ## <a id="v1.30.2"></a>Je huisdiertje verdwijnt niet meer achter vensters
 
 <sub>1.30.2 · 9 oktober 2026</sub>

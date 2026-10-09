@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.3"></a>ペットとボールが Dock の下に隠れなくなりました
+
+<sub>1.30.3 · 2026年10月9日</sub>
+
+ペットが Dock の下で歩いたり眠ったりしなくなったので、いつでも姿が見えます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+これまでペットとボールは、だれにも見えない Dock の真下でよく歩いたり休んだりしていました。ウインドウを最大化していると、ペットがすっかりいなくなったように見えました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+これからは Dock が壁の役目をします。ペットは Dock の端で向きを変え、ボールは Dock で跳ね返ります。
+
+だからウインドウが画面いっぱいでも、ペットはいつも Dock のそばに見えています。
+
+**試してみる：** ウインドウを最大化して、数分ながめてみてください。ペットはいつも Dock の左か右に見えています。
+
+---
+
 ## <a id="v1.30.2"></a>ペットがウインドウの裏で消えなくなりました
 
 <sub>1.30.2 · 2026年10月9日</sub>
