@@ -66,6 +66,13 @@ struct PetPhysics {
         CGRect(x: point.x, y: point.y - pointer.height, width: pointer.width, height: pointer.height)
     }
 
+    static func desktop(_ spot: CGPoint, _ windows: [(layer: Int, frame: CGRect)], displays: [CGRect]) -> Bool {
+        let top = windows.first { window in
+            window.frame.contains(spot) && !(window.layer > 0 && displays.contains { window.frame.contains($0) })
+        }
+        return top.map { $0.layer < 0 } ?? true
+    }
+
     static func sweep(_ a0: CGRect, _ a1: CGRect, _ b0: CGRect, _ b1: CGRect) -> CGFloat? {
         let box = b0.insetBy(dx: -a0.width / 2, dy: -a0.height / 2)
         let axes = [

@@ -325,6 +325,17 @@ enum TestPet {
         precondition(states.allSatisfy { $0 == .walk || $0 == .turn } && pet.origin.y == floor.minY, "\(states)")
         print("climbs a selection, walks under a high one, turns at a wall, falls when it goes: ok")
 
+        let display = CGRect(x: 0, y: 0, width: 3440, height: 1440)
+        let desk = [(layer: -2147483603, frame: display)]
+        let dockOverlay = (layer: 20, frame: display), remoteOverlay = (layer: 3, frame: display)
+        let app = (layer: 0, frame: CGRect(x: 0, y: 0, width: 3440, height: 1380)), menu = (layer: 24, frame: CGRect(x: 0, y: 0, width: 3440, height: 24))
+        let corner = CGPoint(x: 300, y: 1410)
+        precondition(PetPhysics.desktop(corner, [dockOverlay] + desk, displays: [display]), "the Dock covering the whole screen hides the desktop")
+        precondition(PetPhysics.desktop(corner, [remoteOverlay, dockOverlay] + desk, displays: [display]), "a screen-wide overlay hides the desktop")
+        precondition(!PetPhysics.desktop(CGPoint(x: 300, y: 600), [dockOverlay, app] + desk, displays: [display]), "a click on a window starts a selection")
+        precondition(!PetPhysics.desktop(CGPoint(x: 300, y: 10), [menu, dockOverlay] + desk, displays: [display]), "a click on the menu bar starts a selection")
+        print("a drag on the desktop becomes a selection even under the Dock and screen-wide overlays: ok")
+
         for i in 0..<40_000 {
             if i % 2_000 == 0 {
                 pet = PetPhysics(bounds: floor, x: 20 + next() * 1360)
