@@ -355,7 +355,7 @@ struct FinderDeleteArt: View {
                 .position(x: 104, y: 62)
                 shape
                     .fill(Color(nsColor: .controlBackgroundColor))
-                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                    .overlay(shape.hairline(Color.primary.opacity(0.14)))
                     .overlay {
                         Image(systemName: trashed ? "trash.fill" : "trash")
                             .font(.system(size: 21, weight: .medium))

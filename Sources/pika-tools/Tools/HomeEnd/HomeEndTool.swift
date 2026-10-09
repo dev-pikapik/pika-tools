@@ -185,7 +185,7 @@ struct HomeEndArt: View {
                 .padding(.horizontal, 16)
                 .frame(height: 34)
                 .background(Color(nsColor: .textBackgroundColor), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+                .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).hairline(Color.primary.opacity(0.18)))
                 .position(x: 150, y: 42)
                 ArtKey(down: step == 3, width: 38) { Text(verbatim: "⇧") }
                     .position(x: 88, y: 96)

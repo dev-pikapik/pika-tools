@@ -169,7 +169,7 @@ struct InputSwitchArt: View {
         .padding(.horizontal, 8)
         .frame(width: 250, height: 26)
         .background(Color(nsColor: .windowBackgroundColor).opacity(0.85), in: shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.12)))
     }
 }
 
