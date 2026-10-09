@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Khung chọn trên màn hình nền hoạt động trở lại
+
+<sub>1.30.1 · ngày 9 tháng 10, 2026</sub>
+
+Thú cưng và quả bóng lại nhảy lên khung chọn, còn danh sách ứng dụng chỉ sáng lên với ứng dụng.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Khi Dock hoặc một ứng dụng điều khiển máy từ xa che kín màn hình, pikapik không nhận ra khung chọn bạn vẽ trên màn hình nền. Giờ nó nhận ra trở lại, và thú cưng cùng quả bóng nhảy lên đó như trước.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Danh sách ứng dụng trong phần cài đặt chỉ sáng lên khi bạn kéo một ứng dụng tới. Các tệp khác bị bỏ qua: không hiện khung và không có gì thừa được thêm vào. Nếu bạn kéo ứng dụng cùng với các tệp khác, chỉ ứng dụng được thêm.
+
+Và khung tắt ngay khi bạn thả ứng dụng hoặc đưa con trỏ đi chỗ khác.
+
+**Thử ngay:** Vẽ một khung chọn trên màn hình nền và xem thú cưng nhảy lên đó.
+
+---
+
 ## <a id="v1.30.0"></a>Thoát không còn tắt pikapik
 
 <sub>1.30.0 · ngày 9 tháng 10, 2026</sub>

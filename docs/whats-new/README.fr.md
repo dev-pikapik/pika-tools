@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Les sélections sur le bureau fonctionnent à nouveau
+
+<sub>1.30.1 · 9 octobre 2026</sub>
+
+Votre compagnon et son ballon sautent à nouveau sur les cadres de sélection, et les listes d’apps ne s’allument que pour des apps.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quand le Dock ou une app de bureau à distance couvrait tout l’écran, pikapik ne voyait pas le cadre de sélection que vous tracez sur le bureau. C’est réparé : votre compagnon et son ballon sautent dessus comme avant.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Dans les réglages, les listes d’apps ne s’allument que lorsque vous faites glisser une app dessus. Les autres fichiers sont ignorés : aucun cadre n’apparaît et rien de superflu n’est ajouté. Si vous faites glisser une app avec d’autres fichiers, seule l’app est ajoutée.
+
+Et le cadre s’éteint dès que vous lâchez l’app ou que vous éloignez le pointeur.
+
+**Pour essayer :** Tracez un cadre de sélection sur le bureau et regardez votre compagnon sauter dessus.
+
+---
+
 ## <a id="v1.30.0"></a>Quitter n’éteint plus pikapik
 
 <sub>1.30.0 · 9 octobre 2026</sub>

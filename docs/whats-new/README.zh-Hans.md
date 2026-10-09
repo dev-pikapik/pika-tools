@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>桌面上的选择框又能用了
+
+<sub>1.30.1 · 2026年10月9日</sub>
+
+宠物和足球又会跳上选择框了，应用列表也只在拖入应用时才亮起。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+当程序坞或远程桌面应用盖满整个屏幕时，pikapik 察觉不到你在桌面上画的选择框。现在又能察觉了，宠物和足球会像以前一样跳上去。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+设置里的应用列表只在你把应用拖过来时才亮起。其他文件会被忽略：不出现边框，也不会多加任何东西。如果把应用和其他文件一起拖进来，只会添加应用。
+
+一松开应用或把指针移开，边框就会立刻熄灭。
+
+**试试看：** 在桌面上画一个选择框，看看宠物跳上去。
+
+---
+
 ## <a id="v1.30.0"></a>“退出”不再关掉 pikapik
 
 <sub>1.30.0 · 2026年10月9日</sub>

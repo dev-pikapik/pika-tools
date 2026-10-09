@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Auswahlrahmen auf dem Schreibtisch funktionieren wieder
+
+<sub>1.30.1 · 9. Oktober 2026</sub>
+
+Dein Haustier und sein Ball springen wieder auf Auswahlrahmen, und App-Listen leuchten nur noch für Apps auf.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Wenn das Dock oder eine Fernwartungs-App den ganzen Bildschirm bedeckte, bemerkte pikapik den Auswahlrahmen nicht, den du auf dem Schreibtisch aufziehst. Jetzt klappt das wieder, und dein Haustier und sein Ball springen darauf wie früher.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+App-Listen in den Einstellungen leuchten nur auf, wenn du eine App darüberziehst. Andere Dateien werden ignoriert: Es erscheint kein Rahmen und nichts Überflüssiges wird hinzugefügt. Ziehst du eine App zusammen mit anderen Dateien, wird nur die App hinzugefügt.
+
+Und der Rahmen erlischt, sobald du die App loslässt oder den Zeiger wegbewegst.
+
+**Ausprobieren:** Zieh auf dem Schreibtisch einen Auswahlrahmen auf und sieh zu, wie dein Haustier daraufspringt.
+
+---
+
 ## <a id="v1.30.0"></a>Beenden schaltet pikapik nicht mehr aus
 
 <sub>1.30.0 · 9. Oktober 2026</sub>

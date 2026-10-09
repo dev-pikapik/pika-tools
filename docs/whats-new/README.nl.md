@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Selecties op het bureaublad werken weer
+
+<sub>1.30.1 · 9 oktober 2026</sub>
+
+Je huisdiertje en zijn bal springen weer op selectiekaders, en app-lijsten lichten alleen nog op voor apps.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Als het Dock of een app voor extern bureaublad het hele scherm bedekte, merkte pikapik het selectiekader niet op dat je op het bureaublad tekent. Nu wel weer, en je huisdiertje en zijn bal springen er net als vroeger op.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+App-lijsten in de instellingen lichten alleen op als je er een app overheen sleept. Andere bestanden worden genegeerd: er verschijnt geen kader en er wordt niets extra’s toegevoegd. Sleep je een app samen met andere bestanden, dan wordt alleen de app toegevoegd.
+
+En het kader gaat uit zodra je de app loslaat of de aanwijzer wegbeweegt.
+
+**Probeer het:** Teken een selectiekader op het bureaublad en kijk hoe je huisdiertje erop springt.
+
+---
+
 ## <a id="v1.30.0"></a>Stop zet pikapik niet meer uit
 
 <sub>1.30.0 · 9 oktober 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>デスクトップの選択枠がまた使えるように
+
+<sub>1.30.1 · 2026年10月9日</sub>
+
+ペットとボールがまた選択枠に飛び乗り、アプリのリストはアプリのときだけ光るようになりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Dockやリモートデスクトップのアプリが画面全体を覆っていると、デスクトップに描いた選択枠にpikapikが気づけませんでした。今はまた気づけるようになり、ペットとボールが以前のように枠に飛び乗ります。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+設定のアプリのリストは、アプリをドラッグしてきたときだけ光ります。ほかのファイルは無視され、枠も出ず、余計なものも追加されません。アプリをほかのファイルと一緒にドラッグしても、追加されるのはアプリだけです。
+
+そして枠は、アプリをドロップしたりポインタを離したりするとすぐに消えます。
+
+**試してみる：** デスクトップに選択枠を描いて、ペットが飛び乗るのを見てみてください。
+
+---
+
 ## <a id="v1.30.0"></a>「終了」してもpikapikは止まらなくなりました
 
 <sub>1.30.0 · 2026年10月9日</sub>

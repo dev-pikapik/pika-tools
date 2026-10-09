@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>Le selezioni sulla scrivania funzionano di nuovo
+
+<sub>1.30.1 · 9 ottobre 2026</sub>
+
+Il tuo animaletto e la sua palla saltano di nuovo sui riquadri di selezione, e le liste di app si illuminano solo per le app.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quando il Dock o un’app di desktop remoto copriva tutto lo schermo, pikapik non si accorgeva del riquadro di selezione che disegni sulla scrivania. Ora se ne accorge di nuovo, e il tuo animaletto e la sua palla ci saltano sopra come prima.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Le liste di app nelle impostazioni si illuminano solo quando ci trascini sopra un’app. Gli altri file vengono ignorati: non compare nessuna cornice e non si aggiunge niente di troppo. Se trascini un’app insieme ad altri file, viene aggiunta solo l’app.
+
+E la cornice si spegne appena lasci andare l’app o allontani il puntatore.
+
+**Provalo:** Disegna un riquadro di selezione sulla scrivania e guarda il tuo animaletto saltarci sopra.
+
+---
+
 ## <a id="v1.30.0"></a>Esci non spegne più pikapik
 
 <sub>1.30.0 · 9 ottobre 2026</sub>

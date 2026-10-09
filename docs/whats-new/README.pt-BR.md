@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.1"></a>As seleções na mesa voltaram a funcionar
+
+<sub>1.30.1 · 9 de outubro de 2026</sub>
+
+Seu bichinho e a bola voltam a pular nos retângulos de seleção, e as listas de apps só se acendem para apps.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quando o Dock ou um app de acesso remoto cobria a tela inteira, o pikapik não percebia o retângulo de seleção que você desenha na mesa. Agora ele percebe de novo, e seu bichinho e a bola pulam nele como antes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+As listas de apps nos ajustes só se acendem quando você arrasta um app por cima. Outros arquivos são ignorados: nenhuma moldura aparece e nada a mais é adicionado. Se você arrastar um app junto com outros arquivos, só o app é adicionado.
+
+E a moldura se apaga assim que você solta o app ou afasta o ponteiro.
+
+**Experimente:** Desenhe um retângulo de seleção na mesa e veja seu bichinho pular nele.
+
+---
+
 ## <a id="v1.30.0"></a>Encerrar não desliga mais o pikapik
 
 <sub>1.30.0 · 9 de outubro de 2026</sub>
