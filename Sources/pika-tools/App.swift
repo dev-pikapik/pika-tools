@@ -70,6 +70,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         LoginItem.shared.restore(moved: moved)
         if moved { FinderExtension.register() }
         FinderRestart.shared.check()
+        FinderExtension.refreshFinderRecord()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
         for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {

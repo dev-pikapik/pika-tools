@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Nieuw bestand is terug, en Instellingen zijn nog lichter
+
+<sub>1.27.2 · 9 oktober 2026</sub>
+
+Nieuw bestand staat voor iedereen weer in het rechtsklikmenu van de Finder, en Instellingen vragen nog minder van je Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Na de vorige update kon de Finder Nieuw bestand op de achtergrond opnieuw starten en vergeten in welke mappen het werkt. Dan verdween het onderdeel stilletjes uit het rechtsklikmenu. Nu herinnert Nieuw bestand de Finder bij elke start aan zijn mappen, en controleert pikapik kort na het openen of de Finder het heeft onthouden. Je hoeft niets te doen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+De bewegende plaatjes in Instellingen spelen nu alleen als minstens de helft van een plaatje in beeld is. In de gameplaatjes beweegt de kleine held nog steeds 30 keer per seconde, en de heuvels en de grond erachter 15 keer. Zo vraagt de pagina Games veel minder van je Mac. Alles ziet er hetzelfde uit.
+
+Na een update voegt pikapik zijn Finder-onderdelen alleen opnieuw toe als de app echt is verhuisd, zodat de Finder ze niet elke keer opnieuw hoeft te laden.
+
+**Probeer het:** Instellingen › Games
+
+---
+
 ## <a id="v1.27.1"></a>Stiller, lichter en Finder meteen klaar
 
 <sub>1.27.1 · 9 oktober 2026</sub>

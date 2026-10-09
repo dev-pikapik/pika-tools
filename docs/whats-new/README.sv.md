@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Ny fil är tillbaka, och Inställningar är ännu lättare
+
+<sub>1.27.2 · 9 oktober 2026</sub>
+
+Ny fil finns åter i Finders högerklicksmeny för alla, och Inställningar kräver ännu mindre av din Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Efter förra uppdateringen kunde Finder starta om Ny fil i bakgrunden och glömma vilka mappar den arbetar i, så att alternativet tyst försvann från högerklicksmenyn. Nu påminner Ny fil Finder om sina mappar varje gång den startar, och pikapik kontrollerar strax efter start att Finder har kommit ihåg dem. Du behöver inte göra något.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+De rörliga bilderna i Inställningar spelas nu bara när minst halva bilden syns på skärmen. I spelbilderna rör sig den lilla hjälten fortfarande 30 gånger i sekunden, och kullarna och marken bakom 15 gånger. Därför kräver sidan Spel mycket mindre av din Mac. Allt ser likadant ut.
+
+Efter en uppdatering lägger pikapik bara till sina Finder-alternativ igen om appen verkligen har flyttats, så att Finder inte behöver läsa in dem på nytt varje gång.
+
+**Prova:** Inställningar › Spel
+
+---
+
 ## <a id="v1.27.1"></a>Tystare, lättare och Finder redo direkt
 
 <sub>1.27.1 · 9 oktober 2026</sub>

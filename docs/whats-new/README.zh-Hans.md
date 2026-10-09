@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>“新建文件”回来了，设置也更轻了
+
+<sub>1.27.2 · 2026年10月9日</sub>
+
+所有人的访达右键菜单里都重新有了“新建文件”，设置对 Mac 的占用也更少了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+上次更新后，访达可能会在后台重启“新建文件”，并忘记它在哪些文件夹里工作，于是这个项目悄悄从右键菜单里消失了。现在“新建文件”每次启动都会提醒访达它的文件夹，pikapik 也会在启动后不久确认访达已经记住。你什么都不用做。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+设置里的动画图片现在只在至少一半画面出现在屏幕上时才会播放。在游戏图片里，小主角依然每秒动 30 次，身后的山丘和地面每秒动 15 次，所以“游戏”页面对 Mac 的占用少了很多。看起来和以前一样。
+
+更新之后，只有在 App 真的换了位置时，pikapik 才会重新添加它的访达项目，访达不用每次都重新加载它们。
+
+**试试看：** 设置 › 游戏
+
+---
+
 ## <a id="v1.27.1"></a>更安静、更轻巧，访达立即可用
 
 <sub>1.27.1 · 2026年10月9日</sub>

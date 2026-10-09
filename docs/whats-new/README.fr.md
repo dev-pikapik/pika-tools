@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Nouveau fichier est de retour, et les Réglages sont encore plus légers
+
+<sub>1.27.2 · 9 octobre 2026</sub>
+
+Nouveau fichier revient pour tout le monde dans le menu du clic droit du Finder, et les Réglages sollicitent encore moins votre Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Après la dernière mise à jour, le Finder pouvait relancer Nouveau fichier en arrière-plan et oublier dans quels dossiers il travaille : l’option disparaissait alors sans bruit du menu du clic droit. Désormais, Nouveau fichier rappelle ses dossiers au Finder à chaque démarrage, et pikapik vérifie peu après son lancement que le Finder les a bien retenus. Vous n’avez rien à faire.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Les images animées des Réglages ne bougent plus que lorsqu’au moins la moitié de l’image est à l’écran. Dans les images de jeu, le petit héros bouge toujours 30 fois par seconde, et les collines et le sol derrière lui 15 fois. La page Jeux sollicite donc beaucoup moins votre Mac. Tout a le même aspect.
+
+Après une mise à jour, pikapik ne réinstalle plus ses options du Finder sauf si l’app a vraiment changé de place, et le Finder n’a plus à les recharger à chaque fois.
+
+**Pour essayer :** Réglages › Jeux
+
+---
+
 ## <a id="v1.27.1"></a>Plus discret, plus léger, et le Finder prêt tout de suite
 
 <sub>1.27.1 · 9 octobre 2026</sub>

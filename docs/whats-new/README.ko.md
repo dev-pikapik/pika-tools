@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>새 파일이 돌아오고, 설정은 더 가벼워졌어요
+
+<sub>1.27.2 · 2026년 10월 9일</sub>
+
+이제 모두의 Finder 오른쪽 클릭 메뉴에 새 파일이 다시 나타나고, 설정은 Mac에 부담을 더 적게 줘요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+지난 업데이트 뒤 Finder가 새 파일을 백그라운드에서 다시 시작하면서 어느 폴더에서 동작하는지 잊어버릴 때가 있었어요. 그러면 오른쪽 클릭 메뉴에서 항목이 조용히 사라졌죠. 이제 새 파일은 시작할 때마다 Finder에 폴더를 다시 알려 주고, pikapik도 실행 직후 Finder가 잘 기억하는지 확인해요. 따로 할 일은 없어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+설정의 움직이는 그림은 이제 그림의 절반 이상이 화면에 보일 때만 움직여요. 게임 그림 속 작은 주인공은 여전히 1초에 30번, 뒤의 언덕과 땅은 15번 움직여요. 그래서 게임 페이지가 Mac에 주는 부담이 훨씬 줄었어요. 모습은 그대로예요.
+
+업데이트 뒤에는 앱이 정말로 다른 위치로 옮겨졌을 때만 Finder 항목을 다시 등록해요. 그래서 Finder가 매번 다시 불러올 필요가 없어요.
+
+**사용해 보기:** 설정 › 게임
+
+---
+
 ## <a id="v1.27.1"></a>더 조용하고 가볍게, Finder도 바로
 
 <sub>1.27.1 · 2026년 10월 9일</sub>

@@ -74,13 +74,14 @@ private struct ArtHost: NSViewRepresentable {
     let content: AnyView
 
     func makeNSView(context: Context) -> ArtHostingView {
-        let view = ArtHostingView(rootView: AnyView(content.environment(\.self, context.environment)))
+        let view = ArtHostingView(rootView: AnyView(EmptyView()))
         view.sizingOptions = []
+        view.show(content, context.environment)
         return view
     }
 
     func updateNSView(_ view: ArtHostingView, context: Context) {
-        view.rootView = AnyView(content.environment(\.self, context.environment))
+        view.show(content, context.environment)
     }
 }
 
@@ -92,6 +93,27 @@ private final class ArtHostingView: NSHostingView<AnyView> {
     private var scrolling: NSObjectProtocol?
     private var constraintsDue = false
     private var updatingConstraints = false
+    private var content = AnyView(EmptyView())
+    private var environment = EnvironmentValues()
+    private var playing = true
+
+    func show(_ content: AnyView, _ environment: EnvironmentValues) {
+        self.content = content
+        self.environment = environment
+        refresh()
+    }
+
+    private func refresh() {
+        var environment = environment
+        environment.artPlaying = playing
+        rootView = AnyView(content.environment(\.self, environment))
+    }
+
+    private func play() {
+        guard (shown >= 0.5) != playing else { return }
+        playing.toggle()
+        refresh()
+    }
 
     override var needsUpdateConstraints: Bool {
         get { updatingConstraints }
@@ -105,7 +127,9 @@ private final class ArtHostingView: NSHostingView<AnyView> {
         scrolling.map(NotificationCenter.default.removeObserver)
         scrolling = enclosingScrollView.map {
             NotificationCenter.default.addObserver(forName: NSView.boundsDidChangeNotification, object: $0.contentView, queue: .main) { [weak self] _ in
-                guard let self, self.parked else { return }
+                guard let self else { return }
+                self.play()
+                guard self.parked, self.shown > 0 else { return }
                 self.parked = false
                 self.needsLayout = true
             }
@@ -113,7 +137,9 @@ private final class ArtHostingView: NSHostingView<AnyView> {
     }
 
     override func layout() {
-        guard onScreen else {
+        let shown = shown
+        if (shown >= 0.5) != playing { DispatchQueue.main.async { [weak self] in self?.play() } }
+        guard shown > 0 else {
             parked = true
             return
         }
@@ -139,11 +165,12 @@ private final class ArtHostingView: NSHostingView<AnyView> {
         super.layout()
     }
 
-    private var onScreen: Bool {
-        guard let content = window?.contentView else { return false }
-        var rect = convert(bounds, to: nil).intersection(content.convert(content.bounds, to: nil))
+    private var shown: CGFloat {
+        guard let root = window?.contentView else { return 0 }
+        let frame = convert(bounds, to: nil)
+        var rect = frame.intersection(root.convert(root.bounds, to: nil))
         if let scroll = enclosingScrollView { rect = rect.intersection(scroll.convert(scroll.bounds, to: nil)) }
-        return !rect.isEmpty
+        return rect.isEmpty ? 0 : rect.width * rect.height / (frame.width * frame.height)
     }
 }
 
@@ -162,6 +189,7 @@ private struct Loop: ViewModifier {
     let replay: Int
     let rest: Int?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.artPlaying) private var playing
     @State private var visible = true
     @State private var played = 0
 
@@ -174,10 +202,10 @@ private struct Loop: ViewModifier {
     func body(content: Content) -> some View {
         content
             .settingsVisibility($visible)
-            .task(id: Run(visible: visible, reduceMotion: reduceMotion, replay: replay)) {
+            .task(id: Run(visible: visible && playing, reduceMotion: reduceMotion, replay: replay)) {
                 let replaying = replay != played
                 played = replay
-                guard visible, !reduceMotion || replaying else { return }
+                guard visible, playing, !reduceMotion || replaying else { return }
                 if replaying { tick = 0 }
                 var steps = reduceMotion ? rest ?? durations.count - 1 : Int.max
                 var deadline = ContinuousClock.now
@@ -195,16 +223,28 @@ private struct Loop: ViewModifier {
 struct ArtTimeline<Content: View>: View {
     @ViewBuilder var content: (Double?) -> Content
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.artPlaying) private var playing
     @State private var visible = true
     @State private var shown = false
 
     var body: some View {
-        TimelineView(.animation(minimumInterval: 1 / 30, paused: reduceMotion || !visible || !shown)) { context in
+        TimelineView(.animation(minimumInterval: 1 / 30, paused: reduceMotion || !visible || !shown || !playing)) { context in
             content(reduceMotion ? nil : context.date.timeIntervalSinceReferenceDate)
         }
         .onAppear { shown = true }
         .onDisappear { shown = false }
         .settingsVisibility($visible)
+    }
+}
+
+private struct ArtPlayingKey: EnvironmentKey {
+    static let defaultValue = true
+}
+
+private extension EnvironmentValues {
+    var artPlaying: Bool {
+        get { self[ArtPlayingKey.self] }
+        set { self[ArtPlayingKey.self] = newValue }
     }
 }
 

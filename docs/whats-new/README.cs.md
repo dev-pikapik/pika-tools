@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Nový soubor je zpět a Nastavení je ještě lehčí
+
+<sub>1.27.2 · 9. října 2026</sub>
+
+Nový soubor je zase u všech v nabídce pravého kliknutí ve Finderu a Nastavení Mac zatěžuje ještě méně.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Po minulé aktualizaci mohl Finder Nový soubor na pozadí znovu spustit a zapomenout, ve kterých složkách funguje, takže položka potichu zmizela z nabídky pravého kliknutí. Teď Nový soubor při každém spuštění Finderu své složky připomene a pikapik krátce po spuštění ověří, že si je Finder zapamatoval. Nemusíte nic dělat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Pohyblivé obrázky v Nastavení se teď hýbou, jen když je na obrazovce vidět aspoň polovina obrázku. V herních obrázcích se malý hrdina dál hýbe 30krát za sekundu a kopce a země za ním 15krát. Stránka Hry tak Mac zatěžuje mnohem méně. Všechno vypadá stejně.
+
+Po aktualizaci pikapik znovu přidává své položky do Finderu jen tehdy, když se aplikace opravdu přesunula, takže je Finder nemusí pokaždé načítat znovu.
+
+**Vyzkoušejte:** Nastavení › Hry
+
+---
+
 ## <a id="v1.27.1"></a>Tišší, lehčí a Finder připravený hned
 
 <sub>1.27.1 · 9. října 2026</sub>

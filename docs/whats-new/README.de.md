@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Neue Datei ist zurück, und die Einstellungen sind noch leichter
+
+<sub>1.27.2 · 9. Oktober 2026</sub>
+
+Neue Datei steht für alle wieder im Kontextmenü des Finders, und die Einstellungen fordern deinen Mac noch weniger.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Nach dem letzten Update konnte der Finder Neue Datei im Hintergrund neu starten und dabei vergessen, in welchen Ordnern es arbeitet. Dann verschwand der Eintrag still aus dem Kontextmenü. Jetzt erinnert Neue Datei den Finder bei jedem Start an seine Ordner, und pikapik prüft kurz nach dem Start, ob der Finder es sich gemerkt hat. Du musst nichts tun.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Die bewegten Bilder in den Einstellungen laufen jetzt nur, solange mindestens die Hälfte eines Bildes zu sehen ist. In den Spielbildern bewegt sich der kleine Held weiterhin 30-mal pro Sekunde, die Hügel und der Boden dahinter 15-mal. So fordert die Seite Spiele deinen Mac viel weniger. Alles sieht aus wie vorher.
+
+Nach einem Update fügt pikapik seine Finder-Einträge nur noch neu hinzu, wenn die App wirklich umgezogen ist. So muss der Finder sie nicht jedes Mal neu laden.
+
+**Ausprobieren:** Einstellungen › Spiele
+
+---
+
 ## <a id="v1.27.1"></a>Leiser, leichter, und der Finder ist sofort bereit
 
 <sub>1.27.1 · 9. Oktober 2026</sub>

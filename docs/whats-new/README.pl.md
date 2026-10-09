@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Nowy plik wrócił, a Ustawienia są jeszcze lżejsze
+
+<sub>1.27.2 · 9 października 2026</sub>
+
+Nowy plik znów jest w menu prawego kliknięcia w Finderze u wszystkich, a Ustawienia jeszcze mniej obciążają Maca.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Po ostatniej aktualizacji Finder mógł po cichu uruchomić Nowy plik od nowa i zapomnieć, w których folderach działa, więc pozycja znikała z menu prawego kliknięcia. Teraz Nowy plik przy każdym starcie przypomina Finderowi o swoich folderach, a pikapik chwilę po uruchomieniu sprawdza, czy Finder je zapamiętał. Nie musisz nic robić.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Ruchome obrazki w Ustawieniach poruszają się teraz tylko wtedy, gdy widać na ekranie co najmniej połowę obrazka. Na obrazkach z grami mały bohater nadal porusza się 30 razy na sekundę, a wzgórza i ziemia za nim 15 razy. Dzięki temu strona Gry dużo mniej obciąża Maca. Wszystko wygląda tak samo.
+
+Po aktualizacji pikapik nie dodaje już na nowo swoich pozycji w Finderze, chyba że aplikacja naprawdę zmieniła miejsce, więc Finder nie musi ich za każdym razem wczytywać od nowa.
+
+**Wypróbuj:** Ustawienia › Gry
+
+---
+
 ## <a id="v1.27.1"></a>Ciszej, lżej i Finder gotowy od razu
 
 <sub>1.27.1 · 9 października 2026</sub>

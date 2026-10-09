@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Novo arquivo voltou, e os Ajustes ficaram ainda mais leves
+
+<sub>1.27.2 · 9 de outubro de 2026</sub>
+
+Novo arquivo está de volta ao menu do clique direito do Finder para todos, e os Ajustes pedem ainda menos do seu Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Depois da última atualização, o Finder podia reiniciar o Novo arquivo em segundo plano e esquecer em quais pastas ele funciona, e o item sumia sem aviso do menu do clique direito. Agora o Novo arquivo lembra o Finder das suas pastas toda vez que inicia, e o pikapik confere, logo depois de abrir, que o Finder recebeu o recado. Você não precisa fazer nada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+As imagens animadas dos Ajustes agora só se movem enquanto pelo menos metade da imagem está na tela. Nas imagens de jogos, o pequeno herói continua se movendo 30 vezes por segundo, e as colinas e o chão atrás dele, 15. Assim a página Jogos pede muito menos do seu Mac. Tudo continua com a mesma cara.
+
+Depois de uma atualização, o pikapik não adiciona de novo os seus itens do Finder, a menos que o app tenha mudado de lugar de verdade, e o Finder não precisa recarregá-los toda vez.
+
+**Experimente:** Ajustes › Jogos
+
+---
+
 ## <a id="v1.27.1"></a>Mais silencioso, mais leve e o Finder pronto na hora
 
 <sub>1.27.1 · 9 de outubro de 2026</sub>

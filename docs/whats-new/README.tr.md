@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Yeni Dosya geri döndü, Ayarlar daha da hafifledi
+
+<sub>1.27.2 · 9 Ekim 2026</sub>
+
+Yeni Dosya herkes için Finder’ın sağ tık menüsüne geri döndü, Ayarlar da Mac’ini daha az yoruyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+Son güncellemeden sonra Finder, Yeni Dosya’yı arka planda yeniden başlatıp hangi klasörlerde çalıştığını unutabiliyordu; bu yüzden öğe sağ tık menüsünden sessizce kayboluyordu. Artık Yeni Dosya her açılışta Finder’a klasörlerini yeniden hatırlatıyor, pikapik de açıldıktan kısa süre sonra Finder’ın bunu aldığını kontrol ediyor. Senin bir şey yapman gerekmiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Ayarlar’daki hareketli resimler artık yalnızca resmin en az yarısı ekranda görünürken oynuyor. Oyun resimlerinde küçük kahraman yine saniyede 30 kez, arkasındaki tepeler ve zemin ise 15 kez hareket ediyor. Böylece Oyunlar sayfası Mac’ini çok daha az yoruyor. Her şey aynı görünüyor.
+
+Güncellemeden sonra pikapik, uygulama gerçekten başka bir yere taşınmadıkça Finder öğelerini yeniden eklemiyor; Finder da onları her seferinde yeniden yüklemek zorunda kalmıyor.
+
+**Deneyin:** Ayarlar › Oyunlar
+
+---
+
 ## <a id="v1.27.1"></a>Daha sessiz, daha hafif, Finder hemen hazır
 
 <sub>1.27.1 · 9 Ekim 2026</sub>

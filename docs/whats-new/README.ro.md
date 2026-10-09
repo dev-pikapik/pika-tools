@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.27.2"></a>Fișier nou s-a întors, iar Configurările sunt și mai ușoare
+
+<sub>1.27.2 · 9 octombrie 2026</sub>
+
+Fișier nou e din nou în meniul de clic dreapta din Finder pentru toată lumea, iar Configurările cer și mai puțin de la Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
+
+După ultima actualizare, Finder putea reporni Fișier nou în fundal și uita în ce dosare lucrează, așa că opțiunea dispărea discret din meniul de clic dreapta. Acum Fișier nou îi amintește lui Finder dosarele sale la fiecare pornire, iar pikapik verifică la scurt timp după lansare că Finder le-a reținut. Nu trebuie să faci nimic.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Imaginile animate din Configurări se mișcă acum doar cât timp se vede pe ecran cel puțin jumătate din imagine. În imaginile cu jocuri, micul erou se mișcă tot de 30 de ori pe secundă, iar dealurile și pământul din spatele lui de 15 ori. Așa pagina Jocuri cere mult mai puțin de la Mac. Totul arată la fel.
+
+După o actualizare, pikapik nu își mai adaugă din nou opțiunile în Finder decât dacă aplicația s-a mutat cu adevărat, așa că Finder nu mai trebuie să le reîncarce de fiecare dată.
+
+**Încearcă:** Configurări › Jocuri
+
+---
+
 ## <a id="v1.27.1"></a>Mai liniștit, mai ușor și Finder gata imediat
 
 <sub>1.27.1 · 9 octombrie 2026</sub>

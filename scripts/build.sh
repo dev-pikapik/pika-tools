@@ -39,7 +39,7 @@ for ARCH in arm64 x86_64; do
             -application-extension \
             "${EMIT[@]}" \
             -Xlinker -e -Xlinker _NSExtensionMain \
-            Extensions/"$EXT"/*.swift \
+            Extensions/"$EXT"/*.swift Extensions/Shared/*.swift \
             -o "build/$EXT-$ARCH"
     done
 done
