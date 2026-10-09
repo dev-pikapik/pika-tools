@@ -4,6 +4,7 @@ struct PikaToolsApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     private let registry = ToolRegistry.shared
     private let background = Background.shared
+    @AppStorage(Background.key) private var keepRunning = true
     private static let logo = menuBarLogo(opacity: 1)
     private static let logoOff = menuBarLogo(opacity: 0.45)
 
@@ -35,6 +36,12 @@ struct PikaToolsApp: App {
             CommandGroup(replacing: .appSettings) {
                 Button("Settings…") { SettingsWindow.show() }
                     .keyboardShortcut(",")
+            }
+            CommandGroup(after: .appTermination) {
+                if keepRunning {
+                    Button("Quit Completely") { Background.quitCompletely() }
+                        .keyboardShortcut("q", modifiers: [.command, .option])
+                }
             }
             CommandGroup(replacing: .help) {}
         }
