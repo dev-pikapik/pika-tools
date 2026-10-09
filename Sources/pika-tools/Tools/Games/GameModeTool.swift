@@ -634,7 +634,7 @@ struct GameModeArt: View {
                     }
                     .frame(width: Self.screen.width, height: Self.screen.height)
                     .clipShape(shape)
-                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                    .overlay(shape.hairline(Color.primary.opacity(0.14)))
                     .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
                     .position(x: 150, y: 64)
                     ArtCursor()

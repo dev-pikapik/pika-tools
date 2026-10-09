@@ -18,6 +18,22 @@ enum Art {
     }
 }
 
+private struct Hairline<Outline: InsettableShape, Style: ShapeStyle>: View {
+    let shape: Outline
+    let style: Style
+    @Environment(\.displayScale) private var scale
+
+    var body: some View {
+        shape.strokeBorder(style, lineWidth: 1 / max(scale, 1))
+    }
+}
+
+extension InsettableShape {
+    func hairline(_ style: some ShapeStyle) -> some View {
+        Hairline(shape: self, style: style)
+    }
+}
+
 struct IllustrationRow<Content: View>: View {
     @ViewBuilder var content: Content
 
@@ -66,7 +82,7 @@ private struct ArtCard<Content: View>: View {
                 in: shape
             )
             .clipShape(shape)
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.08)))
     }
 }
 
@@ -284,7 +300,7 @@ struct ChoiceTile<Content: View>: View {
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .overlay {
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .strokeBorder(.separator, lineWidth: 0.5)
+                            .hairline(.separator)
                     }
                     .overlay {
                         if selected {
@@ -423,7 +439,7 @@ struct ArtWindow<Content: View>: View {
         .frame(width: size.width, height: size.height)
         .background(Color(nsColor: .windowBackgroundColor))
         .clipShape(shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.14)))
         .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
     }
 }
@@ -437,7 +453,7 @@ struct ArtSheet: View {
             Capsule().fill(Color.primary.opacity(0.14)).frame(width: size.width * 0.45, height: 3.5)
             RoundedRectangle(cornerRadius: 2, style: .continuous)
                 .fill(Color(nsColor: .textBackgroundColor))
-                .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+                .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous).hairline(Color.primary.opacity(0.18)))
                 .frame(height: 7)
             Spacer(minLength: 0)
             HStack(spacing: 4) {
@@ -450,7 +466,7 @@ struct ArtSheet: View {
         .frame(width: size.width, height: size.height)
         .background(Color(nsColor: .windowBackgroundColor))
         .clipShape(shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.14)))
         .shadow(color: .black.opacity(0.2), radius: 5, y: 3)
     }
 }
@@ -476,7 +492,7 @@ struct ArtQuickLook: View {
         .frame(width: size.width, height: size.height)
         .background(Color(nsColor: .windowBackgroundColor))
         .clipShape(shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.14)))
         .shadow(color: .black.opacity(0.22), radius: 7, y: 4)
     }
 }
@@ -520,7 +536,7 @@ struct ArtDock: View {
         .padding(.top, 5 * unit)
         .padding(.bottom, 3 * unit)
         .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.12)))
     }
 }
 
@@ -601,7 +617,7 @@ struct ArtKey<Label: View>: View {
         let shape = RoundedRectangle(cornerRadius: height * 0.23, style: .continuous)
         shape
             .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.18)))
             .overlay {
                 label
                     .font(.system(size: height / 2, weight: .medium, design: .rounded))
@@ -622,7 +638,7 @@ struct ArtFile: View {
         VStack(spacing: 4) {
             page
                 .fill(Color(nsColor: .textBackgroundColor))
-                .overlay(page.strokeBorder(Color.primary.opacity(0.25), lineWidth: 0.5))
+                .overlay(page.hairline(Color.primary.opacity(0.25)))
                 .overlay {
                     VStack(spacing: 2.5) {
                         ForEach(0..<3, id: \.self) { _ in Capsule().fill(Color.primary.opacity(0.2)).frame(width: 10, height: 1.5) }
@@ -722,7 +738,7 @@ struct ArtMouse: View {
         let shape = UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 11, bottomTrailingRadius: 11, topTrailingRadius: 12)
         shape
             .fill(Art.metal(scheme))
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.18)))
             .overlay(alignment: .top) {
                 Rectangle().fill(Color.primary.opacity(0.2)).frame(width: 0.5, height: 15)
             }
@@ -765,7 +781,7 @@ struct ArtTrackpad: View {
         let shape = RoundedRectangle(cornerRadius: 7 * unit, style: .continuous)
         shape
             .fill(Art.metal(scheme))
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.18)))
             .overlay {
                 HStack(spacing: 8 * unit) {
                     ForEach(0..<fingers, id: \.self) { _ in Circle().frame(width: 10 * unit, height: 10 * unit) }
@@ -789,7 +805,7 @@ struct ArtMenu<Content: View>: View {
             .padding(3)
             .frame(width: width)
             .background(Color(nsColor: .windowBackgroundColor), in: shape)
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.14)))
             .shadow(color: .black.opacity(0.2), radius: 6, y: 3)
     }
 }

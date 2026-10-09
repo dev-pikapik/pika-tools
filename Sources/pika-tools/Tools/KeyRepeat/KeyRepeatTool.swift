@@ -52,7 +52,7 @@ struct KeyRepeatArt: View {
             Stage {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(down ? Color.accentColor : Color(nsColor: .controlBackgroundColor))
-                    .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+                    .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).hairline(Color.primary.opacity(0.18)))
                     .overlay {
                         Text(verbatim: "A")
                             .font(.system(size: 17, weight: .medium, design: .rounded))
@@ -86,7 +86,7 @@ struct KeyRepeatArt: View {
         .padding(.horizontal, 10)
         .frame(width: 168, height: 32)
         .background(Color(nsColor: .textBackgroundColor), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+        .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).hairline(Color.primary.opacity(0.18)))
     }
 
     private func popup(picked: Int) -> some View {
@@ -101,7 +101,7 @@ struct KeyRepeatArt: View {
         }
         .padding(4)
         .background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: 9, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 9, style: .continuous).strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .overlay(RoundedRectangle(cornerRadius: 9, style: .continuous).hairline(Color.primary.opacity(0.14)))
         .shadow(color: .black.opacity(0.18), radius: 5, y: 2)
     }
 }

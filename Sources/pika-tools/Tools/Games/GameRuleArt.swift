@@ -85,7 +85,7 @@ struct GameRuleFrame: View {
                 .scaleEffect(scale)
             }
             .clipShape(shape)
-            .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+            .overlay(shape.hairline(Color.primary.opacity(0.14)))
             .shadow(color: .black.opacity(0.18), radius: height / 18, y: height / 36)
             .accessibilityHidden(true)
     }

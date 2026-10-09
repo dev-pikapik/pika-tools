@@ -257,7 +257,7 @@ struct WindowZoomArt: View {
                 }
                 .frame(width: Self.screen.width, height: Self.screen.height)
                 .clipShape(shape)
-                .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+                .overlay(shape.hairline(Color.primary.opacity(0.14)))
                 .position(x: Self.screen.midX, y: Self.screen.midY)
                 if (2...3).contains(step) {
                     ArtRipple()

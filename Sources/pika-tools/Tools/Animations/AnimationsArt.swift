@@ -474,7 +474,7 @@ struct MinimizeArt: View {
         .padding(.horizontal, 6)
         .padding(.vertical, 5)
         .background(Color(nsColor: .windowBackgroundColor).opacity(0.75), in: shape)
-        .overlay(shape.strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
+        .overlay(shape.hairline(Color.primary.opacity(0.12)))
     }
 }
 
