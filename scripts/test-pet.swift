@@ -508,6 +508,31 @@ enum TestPet {
         precondition(ball.frame.minY == room.minY)
         print("ball rests on a selection and falls when it goes: ok")
 
+        for dt in [1.0 / 30, 0.2] {
+            pet = PetPhysics(bounds: room, x: 700)
+            pet.roof = 190
+            ball = BallPhysics(bounds: room, x: 760)
+            ball.roof = 190
+            var top: CGFloat = 10, rode: CGFloat = 0
+            while top < 500 {
+                top += 60 * CGFloat(dt)
+                let platform = CGRect(x: 500, y: 0, width: 400, height: top)
+                pet.ledge = platform
+                ball.ledge = platform
+                pet.step(dt, cursor: nil)
+                ball.step(dt, cursor: nil)
+                rode = max(rode, pet.origin.y)
+                precondition(pet.frame.maxY <= 190 + 1e-6, "selection lifted the pet above the strip at \(top), dt \(dt): \(pet.frame)")
+                precondition(ball.frame.maxY <= 190 + 1e-6, "selection lifted the ball above the strip at \(top), dt \(dt): \(ball.frame)")
+            }
+            pet.ledge = nil
+            ball.ledge = nil
+            for _ in 0..<Int(4 / dt) { pet.step(dt, cursor: nil) }
+            settle(&ball, 8)
+            precondition(rode > 120 && pet.grounded && pet.origin.y == room.minY && ball.frame.minY == room.minY, "dt \(dt): rode \(rode), pet \(pet.origin) \(pet.state), ball \(ball.frame)")
+        }
+        print("a selection dragged up past the strip drops the pet and the ball, even at 5 frames a second: ok")
+
         for facing in [CGFloat(1), -1] {
             pet = PetPhysics(bounds: room, x: 700, facing: facing)
             ball = BallPhysics(bounds: room, x: 700 + facing * 120)
