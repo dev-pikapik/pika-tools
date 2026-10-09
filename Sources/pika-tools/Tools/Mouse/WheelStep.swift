@@ -75,6 +75,7 @@ struct ScrollDirection {
     }
 
     func rewrite(_ event: CGEvent) {
+        guard event.getIntegerValueField(.eventSourceUnixProcessID) == 0 else { return }
         let natural = natural(
             continuous: event.getIntegerValueField(.scrollWheelEventIsContinuous),
             phase: event.getIntegerValueField(.scrollWheelEventScrollPhase),
