@@ -52,6 +52,11 @@ struct AppShelf: View {
     static func isApp(_ url: URL) -> Bool {
         (try? url.resourceValues(forKeys: [.contentTypeKey]))?.contentType?.conforms(to: .applicationBundle) == true
     }
+
+    static func apps(on pasteboard: NSPasteboard) -> [URL] {
+        let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL] ?? []
+        return urls.filter(isApp)
+    }
 }
 
 private struct ShelfTile: View {
@@ -169,7 +174,9 @@ private struct AppDropDelegate: DropDelegate {
     }
 
     func validateDrop(info: DropInfo) -> Bool {
-        !targets.isEmpty && info.hasItemsConforming(to: [.fileURL])
+        let valid = !targets.isEmpty && !AppShelf.apps(on: NSPasteboard(name: .drag)).isEmpty
+        if !valid { target = nil }
+        return valid
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
@@ -184,13 +191,9 @@ private struct AppDropDelegate: DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         target = nil
         guard let add = zone(info)?.add else { return false }
-        for provider in info.itemProviders(for: [.fileURL]) {
-            _ = provider.loadObject(ofClass: URL.self) { url, _ in
-                guard let url else { return }
-                DispatchQueue.main.async { add(url) }
-            }
-        }
-        return true
+        let apps = AppShelf.apps(on: NSPasteboard(name: .drag))
+        apps.forEach(add)
+        return !apps.isEmpty
     }
 }
 
