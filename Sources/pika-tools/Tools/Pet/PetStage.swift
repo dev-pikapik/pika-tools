@@ -224,7 +224,7 @@ final class PetStage: NSObject {
             window.orderFrontRegardless()
         }
         if toy != field.isVisible { toy ? field.orderFrontRegardless() : field.orderOut(nil) }
-        if !toy { ball.release() }
+        if !toy, ball.held { drop() }
         let waiting = (fullscreen || GameModeTool.shared.isPlaying) && !asleep && !locked
         if waiting != (recheck != nil) {
             recheck?.invalidate()

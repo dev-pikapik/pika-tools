@@ -61,7 +61,7 @@ struct BallPhysics {
         previous = frame
         nudged = false
         impact = 0
-        let n = max(1, Int((dt / Self.tick).rounded(.up)))
+        let n = Int((dt / Self.tick).rounded(.up))
         for i in 0..<n {
             let s0 = CGFloat(i) / CGFloat(n), s1 = CGFloat(i + 1) / CGFloat(n)
             var pointer: (CGRect, CGRect)?

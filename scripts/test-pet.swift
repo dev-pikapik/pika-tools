@@ -512,5 +512,12 @@ enum TestPet {
         }
         precondition(hit > 300, "ball missed the pet: \(hit)")
         print("pet kicks the ball, turns at a stuck one, the ball bounces off the pet: ok")
+
+        ball = BallPhysics(bounds: room, x: 700)
+        ball.step(1.0 / 30, cursor: CGPoint(x: 500, y: 20))
+        ball.step(0, cursor: CGPoint(x: 900, y: 20))
+        ball.step(1.0 / 30, cursor: CGPoint(x: 900, y: 20))
+        precondition(ball.center.x == 700 && ball.vx == 0 && !ball.nudged, "pointer moved during a pause pushed the ball: \(ball.center)")
+        print("a pointer that moved during a pause leaves the ball alone: ok")
     }
 }
