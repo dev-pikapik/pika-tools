@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Em tela cheia, seu bichinho descansa em todas as telas
+
+<sub>1.30.6 · 10 de outubro de 2026</sub>
+
+Enquanto qualquer app está em tela cheia, o bichinho e a bola agora se escondem em todos os monitores.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, quando você abria um vídeo ou jogo em tela cheia, o bichinho e a bola às vezes fugiam para outro monitor e continuavam brincando lá.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Agora, enquanto qualquer app está em tela cheia, eles se escondem em todos os seus monitores. Saia da tela cheia e eles voltam na hora.
+
+Atrás de janelas comuns eles continuam se escondendo como antes.
+
+**Experimente:** Se você tem dois monitores, abra um vídeo em tela cheia em um deles. O bichinho e a bola somem dos dois e voltam quando você sai da tela cheia.
+
+---
+
 ## <a id="v1.30.5"></a>Seu bichinho sai da frente enquanto você assiste ou joga
 
 <sub>1.30.5 · 10 de outubro de 2026</sub>

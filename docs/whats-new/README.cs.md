@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Na celé obrazovce si mazlíček dá pauzu všude
+
+<sub>1.30.6 · 10. října 2026</sub>
+
+Když je jakákoli aplikace na celou obrazovku, mazlíček a míček se teď schovají na všech monitorech.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív, když jste pustili video nebo hru na celou obrazovku, mazlíček a míček někdy utekli na jiný monitor a hráli si tam dál.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teď, dokud je jakákoli aplikace na celou obrazovku, schovají se na všech vašich monitorech. Ukončete režim celé obrazovky a hned se vrátí.
+
+Za běžnými okny se schovávají stejně jako dřív.
+
+**Vyzkoušejte:** Máte-li dva monitory, pusťte na jednom z nich video na celou obrazovku. Mazlíček a míček zmizí z obou a vrátí se, až celou obrazovku ukončíte.
+
+---
+
 ## <a id="v1.30.5"></a>Mazlíček uhne, když se díváte nebo hrajete
 
 <sub>1.30.5 · 10. října 2026</sub>

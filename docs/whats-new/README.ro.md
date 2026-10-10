@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Pe tot ecranul, animăluțul ia o pauză peste tot
+
+<sub>1.30.6 · 10 octombrie 2026</sub>
+
+Cât orice aplicație e pe tot ecranul, animăluțul și mingea se ascund acum pe toate monitoarele.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, când deschideai un video sau un joc pe tot ecranul, animăluțul și mingea fugeau uneori pe alt monitor și se jucau acolo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Acum, cât orice aplicație e pe tot ecranul, se ascund pe toate monitoarele tale. Ieși din ecranul complet și se întorc imediat.
+
+În spatele ferestrelor obișnuite se ascund la fel ca înainte.
+
+**Încearcă:** Dacă ai două monitoare, pune un video pe tot ecranul pe unul dintre ele. Animăluțul și mingea dispar de pe amândouă și se întorc când ieși din ecranul complet.
+
+---
+
 ## <a id="v1.30.5"></a>Animăluțul se dă la o parte cât te uiți sau joci
 
 <sub>1.30.5 · 10 octombrie 2026</sub>

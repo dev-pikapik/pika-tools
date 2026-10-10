@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Full screen means your pet takes a break everywhere
+
+<sub>1.30.6 · October 10, 2026</sub>
+
+While any app is in full screen, your pet and its ball now hide on every display.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, when you opened a video or a game in full screen, your pet and its ball sometimes ran off to another screen and kept playing there.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Now, while any app is in full screen, they hide on all your displays. Leave full screen, and they come right back.
+
+Behind ordinary windows they still slip in and out, just like before.
+
+**Try it:** If you have two displays, open a video in full screen on one of them. Your pet and its ball disappear from both and come back when you leave full screen.
+
+---
+
 ## <a id="v1.30.5"></a>Your pet steps aside while you watch or play
 
 <sub>1.30.5 · October 10, 2026</sub>

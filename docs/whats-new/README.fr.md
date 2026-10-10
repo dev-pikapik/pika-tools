@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>En plein écran, votre compagnon fait une pause partout
+
+<sub>1.30.6 · 10 octobre 2026</sub>
+
+Quand une app est en plein écran, votre compagnon et sa balle se cachent maintenant sur tous les écrans.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, quand vous mettiez une vidéo ou un jeu en plein écran, votre compagnon et sa balle filaient parfois sur un autre écran pour continuer à jouer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Maintenant, tant qu’une app est en plein écran, ils se cachent sur tous vos écrans. Quittez le plein écran, et ils reviennent aussitôt.
+
+Derrière les fenêtres ordinaires, ils se glissent toujours comme avant.
+
+**Pour essayer :** Si vous avez deux écrans, mettez une vidéo en plein écran sur l’un d’eux. Votre compagnon et sa balle disparaissent des deux et reviennent quand vous quittez le plein écran.
+
+---
+
 ## <a id="v1.30.5"></a>Votre compagnon s’efface quand vous regardez ou jouez
 
 <sub>1.30.5 · 10 octobre 2026</sub>
