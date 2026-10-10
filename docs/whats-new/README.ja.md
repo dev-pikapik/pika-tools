@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>ゲーム中は画面の隅が静かに
+
+<sub>1.30.8 · 2026年10月10日</sub>
+
+ゲームモードでは、画面の端や隅にマウスを動かしても、ホットコーナーが反応したり隠したDockが出てきたりしなくなりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+これまではゲームの途中でマウスが画面の隅や端に行くと、ホットコーナーが反応したり、隠したDockが出てきたりすることがありました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+いまはゲームモードが、遊んでいるあいだホットコーナーと隠したDockをオフにします。ゲームを終えて数秒後、またはpikapikを終了したときに、もとどおりに戻ります。
+
+さらに、ゲームの画面の端でポインタがカクつかなくなりました。
+
+**試してみる：** ゲームモードをオンにしてゲームを始め、マウスを画面の隅へ動かしてみてください。何も出てきません。
+
+---
+
 ## <a id="v1.30.7"></a>ペットが動画の前に出てこなくなりました
 
 <sub>1.30.7 · 2026年10月10日</sub>

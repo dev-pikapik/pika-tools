@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Os cantos da tela ficam quietos enquanto você joga
+
+<sub>1.30.8 · 10 de outubro de 2026</sub>
+
+No Modo Jogo, o mouse nas bordas e nos cantos da tela não aciona mais os cantos ativos nem puxa o Dock oculto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Antes, no meio da partida, levar o mouse a um canto ou à borda da tela podia acionar um canto ativo ou puxar o Dock oculto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Agora o Modo Jogo desliga os cantos ativos e o Dock oculto enquanto você joga. Alguns segundos depois que você sai do jogo, ou quando fecha o pikapik, eles voltam exatamente como estavam.
+
+E o ponteiro não engasga mais na borda da tela do jogo.
+
+**Experimente:** Ative o Modo Jogo, abra um jogo e leve o mouse a um canto da tela. Nada aparece.
+
+---
+
 ## <a id="v1.30.7"></a>Seu bichinho não entra mais no seu vídeo
 
 <sub>1.30.7 · 10 de outubro de 2026</sub>

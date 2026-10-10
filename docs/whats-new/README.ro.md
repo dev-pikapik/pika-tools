@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Colțurile ecranului stau liniștite cât joci
+
+<sub>1.30.8 · 10 octombrie 2026</sub>
+
+În Modul Joc, mouse-ul la marginile și în colțurile ecranului nu mai pornește colțurile active și nu mai scoate Dock-ul ascuns.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Înainte, în mijlocul jocului, mouse-ul într-un colț sau la marginea ecranului putea porni un colț activ sau scotea Dock-ul ascuns.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Acum Modul Joc oprește colțurile active și Dock-ul ascuns cât joci. La câteva secunde după ce ieși din joc, sau când închizi pikapik, revin exact cum erau.
+
+Iar cursorul nu se mai poticnește la marginea ecranului cu jocul.
+
+**Încearcă:** Pornește Modul Joc, deschide un joc și du mouse-ul într-un colț al ecranului. Nu apare nimic.
+
+---
+
 ## <a id="v1.30.7"></a>Animăluțul nu-ți mai intră în video
 
 <sub>1.30.7 · 10 octombrie 2026</sub>

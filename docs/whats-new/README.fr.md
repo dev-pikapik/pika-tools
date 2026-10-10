@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Les coins de l’écran restent calmes pendant que vous jouez
+
+<sub>1.30.8 · 10 octobre 2026</sub>
+
+En Mode Jeu, la souris sur les bords et dans les coins de l’écran ne déclenche plus les coins actifs et ne fait plus sortir le Dock masqué.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Avant, en pleine partie, la souris dans un coin ou au bord de l’écran pouvait déclencher un coin actif ou faire sortir le Dock masqué.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Maintenant, le Mode Jeu désactive les coins actifs et le Dock masqué pendant que vous jouez. Quelques secondes après avoir quitté le jeu, ou quand vous quittez pikapik, ils reviennent exactement comme avant.
+
+Et le pointeur ne saccade plus au bord de l’écran du jeu.
+
+**Pour essayer :** Activez le Mode Jeu, lancez un jeu et emmenez la souris dans un coin de l’écran. Rien ne surgit.
+
+---
+
 ## <a id="v1.30.7"></a>Votre compagnon ne s’invite plus dans votre vidéo
 
 <sub>1.30.7 · 10 octobre 2026</sub>

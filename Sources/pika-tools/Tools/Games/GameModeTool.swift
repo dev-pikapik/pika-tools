@@ -90,6 +90,7 @@ final class GameModeTool: Tool {
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
         isEnabled = defaults.bool(forKey: id)
+        if game == nil { DockEdges.restore() }
     }
 
     var isDefault: Bool {
@@ -174,6 +175,7 @@ final class GameModeTool: Tool {
         hinted = false
         if rules.contains(.cursor) || rules.contains(.swipes) { moveFence() }
         if rules.contains(.cursor) {
+            DockEdges.calm()
             fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
         }
         if rules.contains(.display) {
@@ -191,6 +193,7 @@ final class GameModeTool: Tool {
         fenceTimer = nil
         fence?.stop()
         fence = nil
+        DockEdges.restoreSoon()
         combos = []
         if let assertion { IOPMAssertionRelease(assertion) }
         assertion = nil
@@ -312,6 +315,52 @@ final class GameModeTool: Tool {
         var count: UInt32 = 0
         CGGetDisplaysWithPoint(CGPoint(x: window.midX, y: window.midY), 1, &display, &count)
         return count > 0 ? CGDisplayBounds(display) : nil
+    }
+}
+
+enum DockEdges {
+    private static let key = "game-mode-dock", dock = "com.apple.dock" as CFString
+    private static let corners = ["wvous-tl-corner", "wvous-tr-corner", "wvous-bl-corner", "wvous-br-corner"], delay = "autohide-delay"
+    private static var pending: DispatchWorkItem?
+
+    static func calm() {
+        pending?.cancel()
+        pending = nil
+        guard UserDefaults.standard.dictionary(forKey: key) == nil else { return }
+        CFPreferencesAppSynchronize(dock)
+        var saved: [String: Any] = [:]
+        for name in corners + [delay] { saved[name] = CFPreferencesCopyAppValue(name as CFString, dock) ?? "" }
+        let active = corners.filter { (saved[$0] as? Int ?? 0) > 1 }
+        let hides = CFPreferencesGetAppBooleanValue("autohide" as CFString, dock, nil)
+        guard !active.isEmpty || hides else { return }
+        UserDefaults.standard.set(saved, forKey: key)
+        for name in active { CFPreferencesSetAppValue(name as CFString, 0 as CFNumber, dock) }
+        if hides { CFPreferencesSetAppValue(delay as CFString, 1000.0 as CFNumber, dock) }
+        relaunch()
+    }
+
+    static func restoreSoon() {
+        guard UserDefaults.standard.dictionary(forKey: key) != nil, pending == nil else { return }
+        let work = DispatchWorkItem { restore() }
+        pending = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: work)
+    }
+
+    static func restore() {
+        pending?.cancel()
+        pending = nil
+        guard let saved = UserDefaults.standard.dictionary(forKey: key) else { return }
+        UserDefaults.standard.removeObject(forKey: key)
+        for name in corners + [delay] {
+            let value = saved[name].flatMap { $0 as? String == "" ? nil : $0 as CFPropertyList }
+            CFPreferencesSetAppValue(name as CFString, value, dock)
+        }
+        relaunch()
+    }
+
+    private static func relaunch() {
+        CFPreferencesAppSynchronize(dock)
+        try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
     }
 }
 
@@ -443,6 +492,7 @@ private func cursorFenceCallback(
     case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
         if let frame = fence.frame, let point = GameRules.fence(event.location, in: frame) {
             event.location = point
+            CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
             CGWarpMouseCursorPosition(point)
         }
     default:

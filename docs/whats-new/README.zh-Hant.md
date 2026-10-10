@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>玩遊戲時，螢幕角落安安靜靜
+
+<sub>1.30.8 · 2026年10月10日</sub>
+
+在遊戲模式下，滑鼠移到螢幕邊緣和角落時，不會再觸發熱點，也不會拉出隱藏的 Dock。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+以前玩到一半，滑鼠移到螢幕角落或邊緣，可能會觸發熱點，或把隱藏的 Dock 拉出來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+現在，遊戲模式會在你玩遊戲時關掉熱點和隱藏的 Dock。離開遊戲幾秒後，或結束 pikapik 時，它們會原樣回來。
+
+而且指標在遊戲所在螢幕的邊緣不會再卡頓。
+
+**試試看：** 打開遊戲模式，開始一場遊戲，把滑鼠移到螢幕角落。什麼都不會跳出來。
+
+---
+
 ## <a id="v1.30.7"></a>寵物不再闖進你的影片
 
 <sub>1.30.7 · 2026年10月10日</sub>

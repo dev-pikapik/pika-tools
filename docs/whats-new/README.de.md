@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Die Bildschirmecken bleiben still, während du spielst
+
+<sub>1.30.8 · 10. Oktober 2026</sub>
+
+Im Spielmodus lösen Mausbewegungen an Rändern und Ecken keine aktiven Ecken mehr aus und holen kein ausgeblendetes Dock mehr hervor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Früher konnte die Maus in einer Ecke oder am Bildschirmrand mitten im Spiel eine aktive Ecke auslösen oder ein ausgeblendetes Dock hervorholen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Jetzt schaltet der Spielmodus aktive Ecken und das ausgeblendete Dock ab, solange du spielst. Ein paar Sekunden nachdem du das Spiel verlässt oder pikapik beendest, sind sie genau wie vorher wieder da.
+
+Und der Zeiger ruckelt nicht mehr am Rand des Bildschirms mit dem Spiel.
+
+**Ausprobieren:** Schalte den Spielmodus ein, starte ein Spiel und bewege die Maus in eine Bildschirmecke. Nichts springt auf.
+
+---
+
 ## <a id="v1.30.7"></a>Dein Haustier bleibt aus deinem Video raus
 
 <sub>1.30.7 · 10. Oktober 2026</sub>
