@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Na pełnym ekranie zwierzak odpoczywa wszędzie
+
+<sub>1.30.6 · 10 października 2026</sub>
+
+Gdy dowolna aplikacja działa na pełnym ekranie, zwierzak i piłka chowają się teraz na wszystkich monitorach.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej, gdy włączałeś film albo grę na pełnym ekranie, zwierzak i piłka czasem uciekali na inny monitor i tam bawili się dalej.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teraz, gdy dowolna aplikacja jest na pełnym ekranie, chowają się na wszystkich twoich monitorach. Wyjdź z pełnego ekranu, a od razu wrócą.
+
+Za zwykłymi oknami nadal chowają się tak jak wcześniej.
+
+**Wypróbuj:** Jeśli masz dwa monitory, włącz film na pełnym ekranie na jednym z nich. Zwierzak i piłka znikną z obu i wrócą, gdy wyjdziesz z pełnego ekranu.
+
+---
+
 ## <a id="v1.30.5"></a>Zwierzak schodzi z drogi, gdy oglądasz albo grasz
 
 <sub>1.30.5 · 10 października 2026</sub>

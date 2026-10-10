@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>A schermo intero l’animaletto si riposa ovunque
+
+<sub>1.30.6 · 10 ottobre 2026</sub>
+
+Quando un’app è a schermo intero, l’animaletto e la sua palla ora si nascondono su tutti i monitor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, quando aprivi un video o un gioco a schermo intero, l’animaletto e la sua palla a volte scappavano su un altro monitor e continuavano a giocare lì.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ora, finché un’app è a schermo intero, si nascondono su tutti i tuoi monitor. Esci dallo schermo intero e tornano subito.
+
+Dietro le finestre normali continuano a nascondersi come prima.
+
+**Provalo:** Se hai due monitor, apri un video a schermo intero su uno dei due. L’animaletto e la sua palla spariscono da entrambi e tornano quando esci dallo schermo intero.
+
+---
+
 ## <a id="v1.30.5"></a>L’animaletto si fa da parte mentre guardi o giochi
 
 <sub>1.30.5 · 10 ottobre 2026</sub>

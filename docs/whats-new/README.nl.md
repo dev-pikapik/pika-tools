@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Bij schermvullend neemt je huisdiertje overal pauze
+
+<sub>1.30.6 · 10 oktober 2026</sub>
+
+Zolang een app schermvullend is, verstoppen je huisdiertje en de bal zich nu op alle schermen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eerst, als je een video of game schermvullend opende, liepen je huisdiertje en de bal soms naar een ander scherm en speelden daar verder.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu verstoppen ze zich op al je schermen zolang een app schermvullend is. Sluit schermvullend af en ze zijn meteen terug.
+
+Achter gewone vensters verstoppen ze zich nog net als vroeger.
+
+**Probeer het:** Heb je twee schermen, zet dan op één ervan een video schermvullend. Je huisdiertje en de bal verdwijnen van allebei en komen terug zodra je schermvullend afsluit.
+
+---
+
 ## <a id="v1.30.5"></a>Je huisdiertje gaat opzij terwijl je kijkt of speelt
 
 <sub>1.30.5 · 10 oktober 2026</sub>

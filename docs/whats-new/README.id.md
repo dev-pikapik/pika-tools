@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Saat layar penuh, peliharaanmu istirahat di semua layar
+
+<sub>1.30.6 · 10 Oktober 2026</sub>
+
+Selama ada aplikasi dalam layar penuh, peliharaanmu dan bolanya kini bersembunyi di semua layar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, saat kamu membuka video atau game dalam layar penuh, peliharaanmu dan bolanya kadang kabur ke layar lain dan terus bermain di sana.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Sekarang, selama ada aplikasi dalam layar penuh, mereka bersembunyi di semua layarmu. Keluar dari layar penuh, dan mereka langsung kembali.
+
+Di balik jendela biasa, mereka tetap bersembunyi seperti dulu.
+
+**Coba:** Kalau kamu punya dua layar, putar video dalam layar penuh di salah satunya. Peliharaanmu dan bolanya hilang dari keduanya dan kembali saat kamu keluar dari layar penuh.
+
+---
+
 ## <a id="v1.30.5"></a>Peliharaanmu minggir saat kamu menonton atau bermain
 
 <sub>1.30.5 · 10 Oktober 2026</sub>

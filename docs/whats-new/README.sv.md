@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>I helskärm tar ditt husdjur paus överallt
+
+<sub>1.30.6 · 10 oktober 2026</sub>
+
+Medan någon app är i helskärm gömmer sig ditt husdjur och bollen nu på alla skärmar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut, när du öppnade en video eller ett spel i helskärm, sprang ditt husdjur och bollen ibland över till en annan skärm och fortsatte leka där.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu gömmer de sig på alla dina skärmar så länge någon app är i helskärm. Lämna helskärm, så är de tillbaka direkt.
+
+Bakom vanliga fönster gömmer de sig precis som förut.
+
+**Prova:** Har du två skärmar, visa en video i helskärm på den ena. Ditt husdjur och bollen försvinner från båda och kommer tillbaka när du lämnar helskärm.
+
+---
+
 ## <a id="v1.30.5"></a>Ditt husdjur kliver åt sidan medan du tittar eller spelar
 
 <sub>1.30.5 · 10 oktober 2026</sub>

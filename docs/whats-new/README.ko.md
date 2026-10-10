@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>전체 화면일 땐 펫이 모든 화면에서 쉬어요
+
+<sub>1.30.6 · 2026년 10월 10일</sub>
+
+어떤 앱이든 전체 화면일 때 펫과 공이 이제 모든 디스플레이에서 숨어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 영상이나 게임을 전체 화면으로 열면 펫과 공이 가끔 다른 화면으로 옮겨 가서 계속 놀았어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+이제 어떤 앱이든 전체 화면인 동안 모든 디스플레이에서 숨어요. 전체 화면을 끝내면 바로 돌아와요.
+
+일반 창 뒤로 숨는 건 전과 똑같아요.
+
+**사용해 보기:** 디스플레이가 두 대라면 한쪽에서 영상을 전체 화면으로 틀어 보세요. 펫과 공이 두 화면 모두에서 사라졌다가 전체 화면을 끝내면 돌아와요.
+
+---
+
 ## <a id="v1.30.5"></a>영상을 보거나 게임할 때 펫이 비켜 줘요
 
 <sub>1.30.5 · 2026년 10월 10일</sub>

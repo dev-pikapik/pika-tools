@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>全屏时，宠物在所有屏幕上都去休息
+
+<sub>1.30.6 · 2026年10月10日</sub>
+
+只要有应用处于全屏，宠物和球现在会在所有显示器上藏起来。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前全屏打开视频或游戏时，宠物和球有时会跑到另一块屏幕上继续玩。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+现在，只要有应用处于全屏，它们会在你所有的显示器上藏起来。退出全屏，它们马上回来。
+
+在普通窗口后面，它们还是和以前一样躲进躲出。
+
+**试试看：** 如果你有两块显示器，在其中一块上全屏播放视频。宠物和球会从两块屏幕上消失，退出全屏后再回来。
+
+---
+
 ## <a id="v1.30.5"></a>看视频、玩游戏时，宠物会自觉让开
 
 <sub>1.30.5 · 2026年10月10日</sub>

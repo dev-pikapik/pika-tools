@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Con pantalla completa, tu mascota descansa en todas partes
+
+<sub>1.30.6 · 10 de octubre de 2026</sub>
+
+Mientras cualquier app está a pantalla completa, tu mascota y su pelota ahora se esconden en todas las pantallas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, al poner un vídeo o un juego a pantalla completa, tu mascota y su pelota a veces se iban a otra pantalla y seguían jugando allí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ahora, mientras cualquier app está a pantalla completa, se esconden en todas tus pantallas. Sal de la pantalla completa y vuelven al momento.
+
+Detrás de las ventanas normales siguen escondiéndose igual que antes.
+
+**Pruébalo:** Si tienes dos pantallas, pon un vídeo a pantalla completa en una de ellas. Tu mascota y su pelota desaparecen de ambas y vuelven cuando sales de la pantalla completa.
+
+---
+
 ## <a id="v1.30.5"></a>Tu mascota se aparta mientras ves algo o juegas
 
 <sub>1.30.5 · 10 de octubre de 2026</sub>

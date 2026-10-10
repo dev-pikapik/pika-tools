@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>全螢幕時，寵物在所有螢幕上都去休息
+
+<sub>1.30.6 · 2026年10月10日</sub>
+
+只要有 App 處於全螢幕，寵物和球現在會在所有顯示器上躲起來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前全螢幕打開影片或遊戲時，寵物和球有時會跑到另一台螢幕上繼續玩。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+現在，只要有 App 處於全螢幕，它們會在你所有的顯示器上躲起來。離開全螢幕，它們馬上回來。
+
+在一般視窗後面，它們還是和以前一樣躲進躲出。
+
+**試試看：** 如果你有兩台顯示器，在其中一台上全螢幕播放影片。寵物和球會從兩台螢幕上消失，離開全螢幕後再回來。
+
+---
+
 ## <a id="v1.30.5"></a>看影片、玩遊戲時，寵物會自動讓開
 
 <sub>1.30.5 · 2026年10月10日</sub>

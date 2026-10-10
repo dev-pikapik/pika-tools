@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Tam ekranda evcil dostun her yerde mola veriyor
+
+<sub>1.30.6 · 10 Ekim 2026</sub>
+
+Herhangi bir uygulama tam ekrandayken evcil dostun ve topu artık tüm ekranlarda saklanıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Önceden bir videoyu ya da oyunu tam ekran açtığında evcil dostun ve topu bazen başka bir ekrana kaçıp orada oynamaya devam ediyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Artık herhangi bir uygulama tam ekrandayken tüm ekranlarında saklanıyorlar. Tam ekrandan çıkınca hemen geri geliyorlar.
+
+Sıradan pencerelerin arkasına ise eskisi gibi saklanıyorlar.
+
+**Deneyin:** İki ekranın varsa birinde bir videoyu tam ekran aç. Evcil dostun ve topu ikisinden de kaybolur, tam ekrandan çıkınca geri gelir.
+
+---
+
 ## <a id="v1.30.5"></a>Video izlerken ya da oyun oynarken evcil dostun kenara çekiliyor
 
 <sub>1.30.5 · 10 Ekim 2026</sub>

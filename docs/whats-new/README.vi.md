@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Khi toàn màn hình, thú cưng nghỉ ngơi ở mọi màn hình
+
+<sub>1.30.6 · ngày 10 tháng 10, 2026</sub>
+
+Khi có bất kỳ ứng dụng nào đang toàn màn hình, thú cưng và quả bóng giờ ẩn đi trên mọi màn hình.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, khi bạn mở video hay game toàn màn hình, thú cưng và quả bóng đôi khi chạy sang màn hình khác và chơi tiếp ở đó.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Giờ đây, khi có ứng dụng đang toàn màn hình, chúng ẩn đi trên tất cả màn hình của bạn. Thoát toàn màn hình là chúng quay lại ngay.
+
+Sau các cửa sổ thông thường, chúng vẫn ẩn như trước.
+
+**Thử ngay:** Nếu bạn có hai màn hình, hãy mở một video toàn màn hình trên một trong hai. Thú cưng và quả bóng biến mất khỏi cả hai và quay lại khi bạn thoát toàn màn hình.
+
+---
+
 ## <a id="v1.30.5"></a>Thú cưng tránh sang một bên khi bạn xem phim hay chơi game
 
 <sub>1.30.5 · ngày 10 tháng 10, 2026</sub>

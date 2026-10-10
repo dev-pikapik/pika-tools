@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>フルスクリーンのあいだ、ペットはどの画面でもひと休み
+
+<sub>1.30.6 · 2026年10月10日</sub>
+
+どれかのアプリがフルスクリーンのあいだ、ペットとボールはすべてのディスプレイで隠れるようになりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+これまでは動画やゲームをフルスクリーンにすると、ペットとボールが別の画面へ移って、そこで遊び続けることがありました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+いまはどれかのアプリがフルスクリーンのあいだ、すべてのディスプレイで隠れます。フルスクリーンを終えると、すぐに戻ってきます。
+
+ふつうのウインドウの裏に隠れるのは、これまでどおりです。
+
+**試してみる：** ディスプレイが2台あれば、片方で動画をフルスクリーンにしてみてください。ペットとボールは両方の画面から消え、フルスクリーンを終えると戻ってきます。
+
+---
+
 ## <a id="v1.30.5"></a>動画やゲームのあいだ、ペットはそっと隠れます
 
 <sub>1.30.5 · 2026年10月10日</sub>

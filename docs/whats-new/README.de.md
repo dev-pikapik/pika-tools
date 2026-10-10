@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.6"></a>Im Vollbild macht dein Haustier überall Pause
+
+<sub>1.30.6 · 10. Oktober 2026</sub>
+
+Solange eine App im Vollbild läuft, verstecken sich dein Haustier und sein Ball jetzt auf allen Bildschirmen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Früher, wenn du ein Video oder Spiel im Vollbild geöffnet hast, sind dein Haustier und sein Ball manchmal auf einen anderen Bildschirm gelaufen und haben dort weitergespielt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jetzt verstecken sie sich auf all deinen Bildschirmen, solange irgendeine App im Vollbild läuft. Verlässt du das Vollbild, sind sie sofort wieder da.
+
+Hinter normalen Fenstern verschwinden sie weiterhin genau wie früher.
+
+**Ausprobieren:** Wenn du zwei Bildschirme hast, öffne auf einem davon ein Video im Vollbild. Dein Haustier und sein Ball verschwinden von beiden und kommen zurück, sobald du das Vollbild verlässt.
+
+---
+
 ## <a id="v1.30.5"></a>Dein Haustier macht Platz, wenn du schaust oder spielst
 
 <sub>1.30.5 · 10. Oktober 2026</sub>

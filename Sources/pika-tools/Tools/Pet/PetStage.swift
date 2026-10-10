@@ -290,7 +290,7 @@ final class PetStage: NSObject {
     func update() {
         guard let window, let field, let link else { return }
         let hidden = asleep || locked || fullscreen || GameModeTool.shared.isPlaying
-        let toy = PetTool.shared.ball && !hidden && !full.contains(court)
+        let toy = PetTool.shared.ball && !hidden
         if hidden {
             window.orderOut(nil)
             hideBubble()
@@ -353,7 +353,7 @@ final class PetStage: NSObject {
             }
         }
         if moved { layout() }
-        fullscreen = now.contains(home)
+        fullscreen = !now.isEmpty
         update()
     }
 
