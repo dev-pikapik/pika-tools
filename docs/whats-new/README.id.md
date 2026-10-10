@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Gestur bahasa dalam game
+
+<sub>1.31.1 · 11 Oktober 2026</sub>
+
+Sederhana secara bawaan, dengan katalog sistem lengkap saat diperlukan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Gestur bahasa pikapik berfungsi dalam game meskipun pintasan bahasa macOS belum ditetapkan atau dinonaktifkan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Otomatis menjeda tindakan yang membuka jendela atau memindahkan fokus. Pintasan bahasa singkat yang disengaja mengganti sumber tanpa jendela sistem. Tombol gerak yang ditahan punya prioritas, jadi berlari dan melompat tidak mengganti bahasa tanpa sengaja.
+
+Setiap tindakan bisa diatur dalam katalog yang dapat dicari. Bahasa bisa berjalan di latar; tindakan lain bisa dijeda atau diizinkan seperti biasa. Pilihan disinkronkan. Aplikasi lain yang memantau tombol tampil terpisah. Paksa Keluar tetap tersedia.
+
+**Coba:** Tahan ⌥ dan ketuk ⇧: bahasa berikutnya. Tahan ⇧ dan ketuk ⌥: sebelumnya
+
+---
+
 ## <a id="v1.31.0"></a>Mode Game tahu pintasan Mac kamu
 
 <sub>1.31.0 · 11 Oktober 2026</sub>

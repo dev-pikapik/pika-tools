@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Changer de langue en jeu
+
+<sub>1.31.1 · 11 octobre 2026</sub>
+
+Simple par défaut, avec le catalogue système complet au besoin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Le geste de langue de pikapik fonctionne en jeu même si les raccourcis de langue de macOS ne sont pas attribués ou sont désactivés.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatique suspend les actions qui ouvrent des fenêtres ou déplacent le focus. Un raccourci de langue bref et volontaire change la source sans fenêtre système. Les touches de déplacement maintenues ont priorité pour éviter les changements de langue pendant la course et les sauts.
+
+Chaque action se règle dans le catalogue avec recherche. La langue peut changer en arrière-plan; les autres actions peuvent être suspendues ou autorisées normalement. Les choix sont synchronisés. Les autres apps observant le clavier sont affichées séparément. Forcer à quitter reste disponible.
+
+**Pour essayer :** Maintenez ⌥ et appuyez sur ⇧ : langue suivante. Maintenez ⇧ et appuyez sur ⌥ : précédente
+
+---
+
 ## <a id="v1.31.0"></a>Le mode Jeu connaît les raccourcis de votre Mac
 
 <sub>1.31.0 · 11 octobre 2026</sub>

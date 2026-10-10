@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>ゲーム中の言語切り替えジェスチャー
+
+<sub>1.31.1 · 2026年10月11日</sub>
+
+通常はシンプル。必要ならシステムの全一覧を確認できます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+macOSの言語ショートカットが未割り当てまたはオフでも、ゲーム中にpikapikの言語切り替えジェスチャーを使えます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+自動ではウインドウを開く操作やフォーカスを移す操作を一時停止します。意図した素早い言語切り替えはシステムのウインドウを出さずに実行します。移動キーを押し続けているときはゲーム操作を優先し、走ったり跳んだりしても言語が勝手に変わりません。
+
+検索できる一覧で操作ごとに調整できます。言語切り替えはバックグラウンドで動かせ、他の操作は停止または通常動作を選べます。設定は同期されます。キーを監視する他のアプリは別に表示され、強制終了は常に使えます。
+
+**試してみる：** ⌥ を押したまま ⇧ を押すと次の言語、⇧ を押したまま ⌥ を押すと前の言語
+
+---
+
 ## <a id="v1.31.0"></a>ゲームモードがMacのショートカットを把握
 
 <sub>1.31.0 · 2026年10月11日</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Gesta pro jazyk ve hrách
+
+<sub>1.31.1 · 11. října 2026</sub>
+
+Ve výchozím stavu jednoduché, s úplným systémovým katalogem podle potřeby.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Jazykové gesto pikapik funguje ve hře i tehdy, když jazykové zkratky macOS nejsou přiřazené nebo jsou vypnuté.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automaticky pozastaví akce otevírající okna nebo měnící fokus. Krátká úmyslná jazyková zkratka změní zdroj bez systémového okna. Držené klávesy pohybu mají přednost, takže běh a skákání nezmění jazyk náhodou.
+
+Každou akci lze upravit v katalogu s vyhledáváním. Jazyk může běžet na pozadí; jiné akce lze pozastavit nebo běžně povolit. Volby se synchronizují. Jiné aplikace sledující klávesy jsou zvlášť. Vynutit ukončení zůstává dostupné.
+
+**Vyzkoušejte:** Podržte ⌥ a stiskněte ⇧: další jazyk. Podržte ⇧ a stiskněte ⌥: předchozí
+
+---
+
 ## <a id="v1.31.0"></a>Herní režim zná zkratky vašeho Macu
 
 <sub>1.31.0 · 11. října 2026</sub>

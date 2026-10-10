@@ -22,6 +22,6 @@ Per-action choices are stored by action identifier in `game-mode-system-shortcut
 
 ## Validation
 
-`scripts/test-system-shortcuts.swift` checks discovery beyond the starting range, remapped keys, duplicate combinations, per-action choices, deliberate language input and held movement keys, and compares live discovery with the native catalogue. `scripts/render-system-shortcuts.swift` renders the available preview families in light and dark. `scripts/dump-system-shortcuts.swift` writes an inspectable snapshot without committing user-specific key assignments.
+`scripts/test-system-shortcuts.swift` checks discovery beyond the starting range, remapped keys, duplicate combinations, per-action choices, deliberate language input and held movement keys, and compares live discovery with the native catalogue. `scripts/test-game-language.swift` checks modifier release before and after the game observer updates its state, and protects held movement keys. pikapik’s own gesture does not depend on an assigned macOS input-source shortcut. `scripts/render-system-shortcuts.swift` renders the available preview families in light and dark. `scripts/dump-system-shortcuts.swift` writes an inspectable snapshot without committing user-specific key assignments.
 
 The shortcut-link crash fixed in 1.30.14 was a separate issue: a lazy compact-map lookup read a changing accessibility row twice. The second read could return nil after the first had succeeded, triggering a Swift trap. The lookup now reads each node once, with a regression test for disappearing text.

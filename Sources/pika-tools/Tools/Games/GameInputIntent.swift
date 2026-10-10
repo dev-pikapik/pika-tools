@@ -25,6 +25,12 @@ struct GameInputIntent {
         return time - started <= 450_000_000
     }
 
+    func allowsGesture(flags: CGEventFlags, at time: UInt64) -> Bool {
+        var current = self
+        current.changed(flags, at: time)
+        return current.allows(nil, flags: flags, at: time)
+    }
+
     mutating func pressed(_ key: Int64, down: Bool) {
         if down { held.insert(key) } else { held.remove(key) }
     }

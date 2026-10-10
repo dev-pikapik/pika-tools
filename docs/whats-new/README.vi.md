@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Cử chỉ đổi ngôn ngữ trong trò chơi
+
+<sub>1.31.1 · 11 tháng 10 năm 2026</sub>
+
+Mặc định đơn giản, với toàn bộ danh mục hệ thống khi cần.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Cử chỉ đổi ngôn ngữ của pikapik hoạt động trong trò chơi ngay cả khi phím tắt ngôn ngữ của macOS chưa được gán hoặc đã tắt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Tự động tạm dừng tác vụ mở cửa sổ hoặc chuyển tiêu điểm. Phím tắt ngôn ngữ nhanh có chủ ý đổi nguồn mà không mở cửa sổ hệ thống. Phím di chuyển được giữ có ưu tiên, nên chạy và nhảy không vô tình đổi ngôn ngữ.
+
+Mỗi tác vụ có thể chỉnh trong danh mục có tìm kiếm. Ngôn ngữ có thể đổi trong nền; tác vụ khác có thể tạm dừng hoặc cho chạy bình thường. Lựa chọn được đồng bộ. Ứng dụng khác theo dõi phím hiển thị riêng. Buộc thoát vẫn khả dụng.
+
+**Thử ngay:** Giữ ⌥ và nhấn ⇧: ngôn ngữ tiếp theo. Giữ ⇧ và nhấn ⌥: ngôn ngữ trước
+
+---
+
 ## <a id="v1.31.0"></a>Chế độ trò chơi biết các phím tắt của Mac
 
 <sub>1.31.0 · 11 tháng 10 năm 2026</sub>

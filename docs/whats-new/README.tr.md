@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Oyunlarda dil hareketleri
+
+<sub>1.31.1 · 11 Ekim 2026</sub>
+
+Varsayılan olarak sade, gerektiğinde tüm sistem kataloğu yanında.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+macOS dil kısayolları atanmamış veya kapatılmış olsa bile pikapik dil hareketi oyunda çalışır.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Otomatik, pencere açan veya odağı değiştiren eylemleri duraklatır. Hızlı ve kasıtlı dil kısayolu sistem penceresi olmadan kaynağı değiştirir. Basılı hareket tuşları önceliklidir; koşmak ve zıplamak yanlışlıkla dili değiştirmez.
+
+Her eylem aranabilir katalogda ayarlanabilir. Dil arka planda değişebilir; diğer eylemler duraklatılabilir veya normal çalışabilir. Seçimler eşitlenir. Tuşları izleyen diğer uygulamalar ayrı gösterilir. Çıkmaya Zorla kullanılabilir kalır.
+
+**Deneyin:** ⌥ basılıyken ⇧ tuşuna basın: sonraki dil. ⇧ basılıyken ⌥ tuşuna basın: önceki dil
+
+---
+
 ## <a id="v1.31.0"></a>Oyun Modu Mac’inin kısayollarını biliyor
 
 <sub>1.31.0 · 11 Ekim 2026</sub>

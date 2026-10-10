@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>게임 중 언어 전환 제스처
+
+<sub>1.31.1 · 2026년 10월 11일</sub>
+
+기본은 간단하게, 필요할 때는 전체 시스템 목록을 확인하세요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+macOS 언어 단축키가 지정되지 않았거나 꺼져 있어도 게임에서 pikapik 언어 전환 제스처를 사용할 수 있습니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+자동 모드는 창을 열거나 포커스를 옮기는 동작을 일시 중지해요. 빠르고 의도적인 언어 단축키는 시스템 창 없이 입력 소스를 바꿔요. 누르고 있는 이동 키가 우선하므로 달리기와 점프가 실수로 언어를 바꾸지 않아요.
+
+검색 가능한 목록에서 동작마다 조정할 수 있어요. 언어는 백그라운드에서 바꾸고 다른 동작은 중지하거나 평소처럼 허용할 수 있어요. 선택은 동기화돼요. 키를 관찰하는 다른 앱은 따로 표시되고 강제 종료는 계속 사용할 수 있어요.
+
+**사용해 보기:** ⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어
+
+---
+
 ## <a id="v1.31.0"></a>게임 모드가 Mac의 단축키를 알아요
 
 <sub>1.31.0 · 2026년 10월 11일</sub>

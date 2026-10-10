@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Taalgebaren in games
+
+<sub>1.31.1 · 11 oktober 2026</sub>
+
+Standaard eenvoudig, met de volledige systeemcatalogus wanneer nodig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Het taalgebaar van pikapik werkt in de game, ook als de taalsneltoetsen van macOS niet zijn toegewezen of zijn uitgeschakeld.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatisch pauzeert acties die vensters openen of focus verplaatsen. Een kort bewust taalkortcommando wisselt de bron zonder systeemvenster. Vastgehouden bewegingstoetsen hebben voorrang, zodat rennen en springen niet per ongeluk de taal wisselen.
+
+Elke actie is instelbaar in de doorzoekbare catalogus. Taal kan in de achtergrond wisselen; andere acties kun je pauzeren of normaal toestaan. Keuzes worden gesynchroniseerd. Andere apps die toetsen volgen staan apart. Forceer stop blijft beschikbaar.
+
+**Probeer het:** Houd ⌥ ingedrukt en tik op ⇧: volgende taal. Houd ⇧ ingedrukt en tik op ⌥: vorige
+
+---
+
 ## <a id="v1.31.0"></a>Spelmodus kent de sneltoetsen van je Mac
 
 <sub>1.31.0 · 11 oktober 2026</sub>

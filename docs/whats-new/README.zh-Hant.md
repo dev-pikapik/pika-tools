@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>遊戲中的語言切換手勢
+
+<sub>1.31.1 · 2026年10月11日</sub>
+
+預設簡單易用，需要時可查看完整系統目錄。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+即使 macOS 的語言快速鍵未指派或已關閉，pikapik 的語言切換手勢仍可在遊戲中使用。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+自動模式暫停開啟視窗或轉移焦點的操作。快速且有意的語言快速鍵直接切換輸入來源，不彈出系統視窗。持續按住的移動鍵優先，因此跑動和跳躍不會意外切換語言。
+
+每項操作可在可搜尋目錄中調整。語言可在背景切換；其他操作可暫停或允許正常執行。選擇會同步。其他監看鍵盤的App單獨顯示，強制結束仍可用。
+
+**試試看：** 按住 ⌥ 再按 ⇧：下一個語言。按住 ⇧ 再按 ⌥：上一個語言
+
+---
+
 ## <a id="v1.31.0"></a>遊戲模式了解你的Mac快速鍵
 
 <sub>1.31.0 · 2026年10月11日</sub>

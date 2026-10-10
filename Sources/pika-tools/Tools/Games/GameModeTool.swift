@@ -77,8 +77,8 @@ final class GameModeTool: Tool {
     @ObservationIgnored fileprivate var inputIntent = GameInputIntent()
     @ObservationIgnored fileprivate var allowedAppShortcuts: Set<UInt64> = []
 
-    var allowsLanguageGesture: Bool {
-        !languageBindings.isEmpty && inputIntent.allows(nil, flags: CGEventSource.flagsState(.combinedSessionState), at: DispatchTime.now().uptimeNanoseconds)
+    func allowsLanguageGesture(flags: CGEventFlags, at time: UInt64) -> Bool {
+        inputIntent.allowsGesture(flags: flags, at: time)
     }
 
     private init() {
