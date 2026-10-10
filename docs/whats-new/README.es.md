@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Tu mascota se aparta mientras ves algo o juegas
+
+<sub>1.30.5 · 10 de octubre de 2026</sub>
+
+Tu mascota y su pelota ahora se esconden mientras una app está a pantalla completa, también en los Mac con notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, en un Mac con notch, tu mascota podía quedarse encima de un vídeo o un juego a pantalla completa, y la pelota a veces aparecía sobre una app a pantalla completa en otra pantalla.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ahora, mientras una app ocupa toda la pantalla, tu mascota y su pelota esperan fuera de la vista. Sal de la pantalla completa y vuelven al momento.
+
+Detrás de las ventanas normales siguen escondiéndose igual que antes.
+
+**Pruébalo:** Pon un vídeo a pantalla completa o abre un juego. Tu mascota y su pelota no molestan hasta que termines.
+
+---
+
 ## <a id="v1.30.4"></a>Tu mascota sigue a la vista cuando salta o viaja en una selección
 
 <sub>1.30.4 · 10 de octubre de 2026</sub>

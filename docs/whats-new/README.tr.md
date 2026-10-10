@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Video izlerken ya da oyun oynarken evcil dostun kenara çekiliyor
+
+<sub>1.30.5 · 10 Ekim 2026</sub>
+
+Bir uygulama tam ekrandayken evcil dostun ve topu artık saklanıyor, çentikli Mac’lerde de.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Önceden çentikli bir Mac’te evcil dostun tam ekran bir videonun ya da oyunun üstünde kalabiliyordu, top da bazen başka bir ekrandaki tam ekran uygulamanın üstünde beliriyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Artık bir uygulama tüm ekranı kapladığı sürece evcil dostun ve topu gözden uzakta bekliyor. Tam ekrandan çıkınca hemen geri geliyorlar.
+
+Sıradan pencerelerin arkasına ise eskisi gibi saklanıyorlar.
+
+**Deneyin:** Bir videoyu tam ekran aç ya da bir oyun başlat. İşin bitene kadar evcil dostun ve topu seni rahatsız etmez.
+
+---
+
 ## <a id="v1.30.4"></a>Evcil dostun zıplarken ya da seçim kutusuyla yükselirken hep görünüyor
 
 <sub>1.30.4 · 10 Ekim 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Your pet steps aside while you watch or play
+
+<sub>1.30.5 · October 10, 2026</sub>
+
+Your pet and its ball now hide while an app is in full screen, on Macs with a notch too.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, on a Mac with a notch, your pet could stay on top of a full-screen video or game, and the ball sometimes popped up over a full-screen app on another display.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Now, while an app fills the whole screen, your pet and its ball wait out of sight. Leave full screen, and they come right back.
+
+Behind ordinary windows they still slip in and out, just like before.
+
+**Try it:** Open a video in full screen or start a game. Your pet and its ball stay out of the way until you’re done.
+
+---
+
 ## <a id="v1.30.4"></a>Your pet stays in sight when it jumps or rides a selection
 
 <sub>1.30.4 · October 10, 2026</sub>

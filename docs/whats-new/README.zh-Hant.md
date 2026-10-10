@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>看影片、玩遊戲時，寵物會自動讓開
+
+<sub>1.30.5 · 2026年10月10日</sub>
+
+App 全螢幕時，寵物和球現在會躲起來，有瀏海的 Mac 上也一樣。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前在有瀏海的 Mac 上，寵物可能會停在全螢幕影片或遊戲上面，球有時還會跳到另一台顯示器上的全螢幕 App 上方。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+現在，只要 App 佔滿整個螢幕，寵物和球就在看不見的地方等著。離開全螢幕，它們馬上回來。
+
+在一般視窗後面，它們還是和以前一樣躲進躲出。
+
+**試試看：** 全螢幕播放一段影片或開始一場遊戲。在你結束之前，寵物和球都不會打擾你。
+
+---
+
 ## <a id="v1.30.4"></a>寵物跳起來或搭著選取框上升時，一直看得見
 
 <sub>1.30.4 · 2026年10月10日</sub>

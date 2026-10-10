@@ -290,7 +290,7 @@ final class PetStage: NSObject {
     func update() {
         guard let window, let field, let link else { return }
         let hidden = asleep || locked || fullscreen || GameModeTool.shared.isPlaying
-        let toy = PetTool.shared.ball && !hidden
+        let toy = PetTool.shared.ball && !hidden && !full.contains(court)
         if hidden {
             window.orderOut(nil)
             hideBubble()
@@ -322,13 +322,20 @@ final class PetStage: NSObject {
 
     private func checkFullscreen() {
         let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-        let covers = windows.compactMap { info -> CGRect? in
-            guard info[kCGWindowLayer as String] as? Int == 0, info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
-                  let bounds = info[kCGWindowBounds as String] as? NSDictionary else { return nil }
-            return CGRect(dictionaryRepresentation: bounds)
+        func rects(_ layer: Int) -> [CGRect] {
+            windows.compactMap { info -> CGRect? in
+                guard info[kCGWindowLayer as String] as? Int == layer, info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
+                      let bounds = info[kCGWindowBounds as String] as? NSDictionary else { return nil }
+                return CGRect(dictionaryRepresentation: bounds)
+            }
         }
+        let covers = rects(0), bars = rects(Int(CGWindowLevelForKey(.mainMenuWindow)))
         let screens = NSScreen.screens
-        let now = Set(screens.map(Self.id).filter { covers.contains(CGDisplayBounds($0)) })
+        let now = Set(screens.filter { screen in
+            let display = CGDisplayBounds(Self.id(screen)), top = screen.safeAreaInsets.top
+            let body = CGRect(x: display.minX, y: display.minY + top, width: display.width, height: display.height - top)
+            return covers.contains { $0.contains(top > 0 ? body : display) } && !bars.contains { $0.intersects(display) }
+        }.map(Self.id))
         var moved = now != full
         full = now
         if let free = screens.first(where: { !now.contains(Self.id($0)) }) {

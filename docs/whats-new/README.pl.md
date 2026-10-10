@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Zwierzak schodzi z drogi, gdy oglądasz albo grasz
+
+<sub>1.30.5 · 10 października 2026</sub>
+
+Zwierzak i piłka chowają się teraz, gdy aplikacja działa na pełnym ekranie, także na Macach z notchem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej na Macu z notchem zwierzak potrafił zostać na wierzchu filmu lub gry na pełnym ekranie, a piłka czasem wyskakiwała nad aplikacją na pełnym ekranie na innym monitorze.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teraz, gdy aplikacja zajmuje cały ekran, zwierzak i piłka czekają poza zasięgiem wzroku. Wyjdź z pełnego ekranu, a od razu wrócą.
+
+Za zwykłymi oknami nadal chowają się tak jak wcześniej.
+
+**Wypróbuj:** Włącz film na pełnym ekranie albo uruchom grę. Zwierzak i piłka nie przeszkadzają, dopóki nie skończysz.
+
+---
+
 ## <a id="v1.30.4"></a>Zwierzaka widać, gdy skacze albo jedzie na zaznaczeniu
 
 <sub>1.30.4 · 10 października 2026</sub>

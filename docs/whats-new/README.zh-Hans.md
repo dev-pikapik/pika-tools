@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>看视频、玩游戏时，宠物会自觉让开
+
+<sub>1.30.5 · 2026年10月10日</sub>
+
+应用全屏时，宠物和球现在会藏起来，带刘海的 Mac 上也一样。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前在带刘海的 Mac 上，宠物可能会停在全屏视频或游戏上面，球有时还会跳到另一块显示器上的全屏应用上方。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+现在，只要应用占满整个屏幕，宠物和球就在看不见的地方等着。退出全屏，它们马上回来。
+
+在普通窗口后面，它们还是和以前一样躲进躲出。
+
+**试试看：** 全屏播放一段视频或开始一局游戏。在你结束之前，宠物和球都不会打扰你。
+
+---
+
 ## <a id="v1.30.4"></a>宠物跳起来或搭着选择框上升时，一直看得见
 
 <sub>1.30.4 · 2026年10月10日</sub>

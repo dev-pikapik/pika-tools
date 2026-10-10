@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>영상을 보거나 게임할 때 펫이 비켜 줘요
+
+<sub>1.30.5 · 2026년 10월 10일</sub>
+
+앱이 전체 화면일 때 펫과 공이 이제 숨어요. 노치가 있는 Mac에서도요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 노치가 있는 Mac에서 펫이 전체 화면 영상이나 게임 위에 남아 있을 때가 있었고, 공이 다른 디스플레이의 전체 화면 앱 위로 튀어나오기도 했어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+이제 앱이 화면 전체를 채우는 동안 펫과 공은 보이지 않는 곳에서 기다려요. 전체 화면을 끝내면 바로 돌아와요.
+
+일반 창 뒤로 숨는 건 전과 똑같아요.
+
+**사용해 보기:** 영상을 전체 화면으로 틀거나 게임을 시작해 보세요. 다 끝날 때까지 펫과 공이 방해하지 않아요.
+
+---
+
 ## <a id="v1.30.4"></a>펫이 점프하거나 선택 상자를 타고 올라가도 보여요
 
 <sub>1.30.4 · 2026년 10월 10일</sub>

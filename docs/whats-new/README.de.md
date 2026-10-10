@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Dein Haustier macht Platz, wenn du schaust oder spielst
+
+<sub>1.30.5 · 10. Oktober 2026</sub>
+
+Dein Haustier und sein Ball verstecken sich jetzt, solange eine App im Vollbild läuft, auch auf Macs mit Notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Früher konnte dein Haustier auf einem Mac mit Notch über einem Video oder Spiel im Vollbild bleiben, und der Ball tauchte manchmal über einer Vollbild-App auf einem anderen Bildschirm auf.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jetzt warten dein Haustier und sein Ball außer Sicht, solange eine App den ganzen Bildschirm füllt. Verlässt du das Vollbild, sind sie sofort wieder da.
+
+Hinter normalen Fenstern verschwinden sie weiterhin genau wie früher.
+
+**Ausprobieren:** Öffne ein Video im Vollbild oder starte ein Spiel. Dein Haustier und sein Ball halten sich raus, bis du fertig bist.
+
+---
+
 ## <a id="v1.30.4"></a>Dein Haustier bleibt sichtbar, wenn es springt oder auf einer Auswahl mitfährt
 
 <sub>1.30.4 · 10. Oktober 2026</sub>

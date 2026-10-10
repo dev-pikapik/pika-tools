@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>動画やゲームのあいだ、ペットはそっと隠れます
+
+<sub>1.30.5 · 2026年10月10日</sub>
+
+アプリがフルスクリーンのあいだ、ペットとボールは隠れるようになりました。ノッチのあるMacでも同じです。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+これまでノッチのあるMacでは、フルスクリーンの動画やゲームの上にペットが残ることがあり、ボールが別のディスプレイのフルスクリーンアプリの上に飛び出すこともありました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+いまはアプリが画面全体に広がっているあいだ、ペットとボールは見えないところで待っています。フルスクリーンを終えると、すぐに戻ってきます。
+
+ふつうのウインドウの裏に隠れるのは、これまでどおりです。
+
+**試してみる：** 動画をフルスクリーンで再生するか、ゲームを始めてみてください。終わるまでペットとボールはじゃまをしません。
+
+---
+
 ## <a id="v1.30.4"></a>ジャンプ中も選択枠に乗っているときも、ペットが見えるようになりました
 
 <sub>1.30.4 · 2026年10月10日</sub>
