@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Je huisdiertje blijft in beeld als het springt of op een selectie meerijdt
+
+<sub>1.30.4 · 10 oktober 2026</sub>
+
+Je huisdiertje en de bal verdwijnen niet meer achter vensters terwijl ze in de lucht zijn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Als je huisdiertje vroeger over de aanwijzer sprong of op een selectiekader omhoog reed, bedekte een schermvullend venster het, en leek het alsof je huisdiertje weg was.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Zolang je huisdiertje of de bal hoger is dan het Dock, zie je ze nu vóór je vensters. Terug op de grond gaan ze er weer achter.
+
+En je huisdiertje kan weer achter het Dock lopen, net als vroeger.
+
+**Probeer het:** Maak een venster schermvullend, begin op het bureaublad naast het Dock een selectiekader zodat je huisdiertje erop klimt, en sleep het langzaam omhoog. Je huisdiertje rijdt erop mee vóór het venster.
+
+---
+
 ## <a id="v1.30.3"></a>Je huisdiertje en de bal gaan niet meer onder het Dock
 
 <sub>1.30.3 · 9 oktober 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Dein Haustier bleibt sichtbar, wenn es springt oder auf einer Auswahl mitfährt
+
+<sub>1.30.4 · 10. Oktober 2026</sub>
+
+Dein Haustier und sein Ball verschwinden nicht mehr hinter Fenstern, solange sie in der Luft sind.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wenn dein Haustier früher über den Zeiger sprang oder auf einem Auswahlrahmen nach oben fuhr, hat ein bildschirmfüllendes Fenster es verdeckt, und es sah so aus, als wäre es verschwunden.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Solange dein Haustier oder sein Ball jetzt höher als das Dock ist, siehst du sie vor deinen Fenstern. Zurück am Boden gehen sie wieder dahinter.
+
+Und dein Haustier kann wieder hinter dem Dock laufen, genau wie früher.
+
+**Ausprobieren:** Mach ein Fenster bildschirmfüllend, zieh auf dem Schreibtisch neben dem Dock einen Auswahlrahmen auf, damit dein Haustier hinaufklettert, und zieh ihn langsam nach oben. Dein Haustier fährt darauf vor dem Fenster mit.
+
+---
+
 ## <a id="v1.30.3"></a>Dein Haustier und sein Ball bleiben nicht mehr unter dem Dock
 
 <sub>1.30.3 · 9. Oktober 2026</sub>

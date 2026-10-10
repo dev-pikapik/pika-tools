@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Animăluțul rămâne la vedere când sare sau urcă pe o selecție
+
+<sub>1.30.4 · 10 octombrie 2026</sub>
+
+Animăluțul și mingea nu mai dispar în spatele ferestrelor cât timp sunt în aer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, când animăluțul sărea peste cursor sau urca pe un chenar de selecție, o fereastră mărită pe tot ecranul îl acoperea și părea că a dispărut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Acum, cât timp animăluțul sau mingea sunt mai sus decât Dock-ul, se văd în fața ferestrelor tale. Înapoi pe pământ, trec din nou în spatele lor.
+
+Iar animăluțul poate să se plimbe din nou în spatele Dock-ului, ca înainte.
+
+**Încearcă:** Mărește o fereastră pe tot ecranul, începe un chenar de selecție pe birou lângă Dock, ca animăluțul să urce pe el, și trage-l încet în sus. Animăluțul urcă odată cu el, în fața ferestrei.
+
+---
+
 ## <a id="v1.30.3"></a>Animăluțul și mingea nu mai intră sub Dock
 
 <sub>1.30.3 · 9 octombrie 2026</sub>

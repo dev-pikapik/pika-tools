@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Peliharaanmu tetap terlihat saat melompat atau menumpang kotak pilihan
+
+<sub>1.30.4 · 10 Oktober 2026</sub>
+
+Peliharaanmu dan bolanya tidak lagi hilang di balik jendela saat sedang di udara.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, saat peliharaanmu melompati penunjuk atau naik menumpang kotak pilihan, jendela yang diperbesar penuh menutupinya, dan peliharaanmu seolah hilang.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Sekarang, selama peliharaanmu atau bolanya lebih tinggi dari Dock, mereka tampil di depan jendelamu. Begitu kembali ke tanah, mereka masuk lagi ke balik jendela.
+
+Dan peliharaanmu bisa berjalan di balik Dock lagi, sama seperti dulu.
+
+**Coba:** Perbesar jendela hingga penuh, mulai kotak pilihan di desktop di samping Dock supaya peliharaanmu naik ke atasnya, lalu seret pelan-pelan ke atas. Peliharaanmu ikut naik di depan jendela.
+
+---
+
 ## <a id="v1.30.3"></a>Peliharaanmu dan bolanya tak lagi masuk ke bawah Dock
 
 <sub>1.30.3 · 9 Oktober 2026</sub>

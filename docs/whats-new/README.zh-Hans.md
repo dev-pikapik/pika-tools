@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>宠物跳起来或搭着选择框上升时，一直看得见
+
+<sub>1.30.4 · 2026年10月10日</sub>
+
+宠物和球在半空中时，不会再消失在窗口后面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，宠物跳过指针或搭着选择框往上升时，会被放到最大的窗口挡住，看起来就像宠物不见了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+现在，只要宠物或球比程序坞高，它们就会显示在窗口前面。回到地面后，又会回到窗口后面。
+
+而且宠物又能像以前一样在程序坞后面散步了。
+
+**试试看：** 把一个窗口放到最大，在桌面上程序坞旁边开始画选择框，让宠物爬上去，然后慢慢往上拖。宠物会搭着它在窗口前面上升。
+
+---
+
 ## <a id="v1.30.3"></a>宠物和球不再躲到程序坞下面
 
 <sub>1.30.3 · 2026年10月9日</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Ditt husdjur syns när det hoppar eller åker med en markering
+
+<sub>1.30.4 · 10 oktober 2026</sub>
+
+Ditt husdjur och bollen försvinner inte längre bakom fönster medan de är i luften.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut, när ditt husdjur hoppade över pekaren eller åkte upp på en markeringsruta, täcktes det av ett fullstort fönster, och det såg ut som om husdjuret var borta.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu syns husdjuret och bollen framför dina fönster så länge de är högre än Dock. Tillbaka på marken går de bakom fönstren igen.
+
+Och husdjuret kan gå bakom Dock igen, precis som förut.
+
+**Prova:** Gör ett fönster fullstort, börja en markeringsruta på skrivbordet bredvid Dock så att husdjuret klättrar upp, och dra den sakta uppåt. Husdjuret åker med framför fönstret.
+
+---
+
 ## <a id="v1.30.3"></a>Ditt husdjur och bollen hamnar inte längre under Dock
 
 <sub>1.30.3 · 9 oktober 2026</sub>

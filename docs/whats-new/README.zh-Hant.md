@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>寵物跳起來或搭著選取框上升時，一直看得見
+
+<sub>1.30.4 · 2026年10月10日</sub>
+
+寵物和球在半空中時，不會再消失在視窗後面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，寵物跳過指標或搭著選取框往上升時，會被放到最大的視窗擋住，看起來就像寵物不見了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+現在，只要寵物或球比 Dock 高，它們就會顯示在視窗前面。回到地面後，又會回到視窗後面。
+
+而且寵物又能像以前一樣在 Dock 後面散步了。
+
+**試試看：** 把一個視窗放到最大，在桌面上 Dock 旁邊開始畫選取框，讓寵物爬上去，然後慢慢往上拖移。寵物會搭著它在視窗前面上升。
+
+---
+
 ## <a id="v1.30.3"></a>寵物和球不再躲到 Dock 下面
 
 <sub>1.30.3 · 2026年10月9日</sub>

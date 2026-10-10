@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Thú cưng vẫn hiện rõ khi nhảy hay ngồi trên khung chọn đi lên
+
+<sub>1.30.4 · ngày 10 tháng 10, 2026</sub>
+
+Thú cưng và quả bóng không còn biến mất sau cửa sổ khi đang ở trên không.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, khi thú cưng nhảy qua con trỏ hoặc ngồi trên khung chọn đi lên, cửa sổ được phóng to sẽ che mất nó, trông như thú cưng đã biến mất.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Giờ đây, khi thú cưng hoặc quả bóng ở cao hơn Dock, chúng hiện ra phía trước cửa sổ. Khi trở lại mặt đất, chúng lại đi ra sau cửa sổ.
+
+Và thú cưng lại có thể đi dạo phía sau Dock, giống như trước.
+
+**Thử ngay:** Phóng to một cửa sổ, bắt đầu vẽ khung chọn trên màn hình nền cạnh Dock để thú cưng trèo lên, rồi từ từ kéo lên trên. Thú cưng ngồi trên khung chọn đi lên phía trước cửa sổ.
+
+---
+
 ## <a id="v1.30.3"></a>Thú cưng và quả bóng không còn chui xuống dưới Dock
 
 <sub>1.30.3 · ngày 9 tháng 10, 2026</sub>
