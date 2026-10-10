@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>快捷键链接不再导致崩溃
+
+<sub>1.30.14 · 2026年10月11日</sub>
+
+点击已关闭的快捷键不会再退出pikapik。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+在游戏页面，即使没有设置按键，也可以点击快捷键。系统设置会安全打开。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+之前，设置窗口打开时pikapik可能会两次读取同一个正在变化的行。如果两次读取之间文字消失，应用就会崩溃。
+
+现在每行只读取一次，缺失的文字会被跳过。其他页面的快捷键链接也得到修复。
+
+**试试看：** 在游戏页面点击已关闭的快捷键。
+
+---
+
 ## <a id="v1.30.13"></a>按住Control，继续玩游戏
 
 <sub>1.30.13 · 2026年10月10日</sub>

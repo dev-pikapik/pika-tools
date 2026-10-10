@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Tautan pintasan terbuka tanpa crash
+
+<sub>1.30.14 · 11 Oktober 2026</sub>
+
+Mengeklik pintasan yang mati tidak lagi menutup pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Di halaman Game, kamu bisa mengeklik pintasan meski belum ada tombol yang ditetapkan. Pengaturan Sistem terbuka dengan aman.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Sebelumnya pikapik bisa membaca baris yang berubah dua kali saat jendela terbuka. Jika teks hilang di antara bacaan, aplikasi crash.
+
+Setiap baris kini dibaca sekali. Teks yang hilang dilewati. Perbaikan juga mencakup tautan pintasan di halaman lain.
+
+**Coba:** Klik pintasan yang mati di halaman Game.
+
+---
+
 ## <a id="v1.30.13"></a>Tahan Control dan terus bermain
 
 <sub>1.30.13 · 10 Oktober 2026</sub>

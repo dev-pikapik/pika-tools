@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Kısayol bağlantıları çökmeden açılıyor
+
+<sub>1.30.14 · 11 Ekim 2026</sub>
+
+Kapalı bir kısayola tıklamak artık pikapik’i kapatmıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Oyunlar sayfasında tuş atanmamış bir kısayola da tıklayabilirsin. Sistem Ayarları güvenle açılır.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Önceden pencere açılırken pikapik değişen aynı satırı iki kez okuyabiliyordu. Metin iki okuma arasında kaybolursa uygulama çöküyordu.
+
+Her satır artık bir kez okunur. Eksik metin atlanır. Düzeltme diğer sayfalardaki kısayol bağlantılarını da kapsar.
+
+**Deneyin:** Oyunlar sayfasında kapalı bir kısayola tıkla.
+
+---
+
 ## <a id="v1.30.13"></a>Control’ü basılı tut ve oynamaya devam et
 
 <sub>1.30.13 · 10 Ekim 2026</sub>

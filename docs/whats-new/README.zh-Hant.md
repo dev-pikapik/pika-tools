@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>快速鍵連結不再導致當機
+
+<sub>1.30.14 · 2026年10月11日</sub>
+
+點擊已關閉的快速鍵不會再結束pikapik。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+在遊戲頁面，即使沒有設定按鍵，也可以點擊快速鍵。系統設定會安全開啟。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+之前，設定視窗開啟時pikapik可能會兩次讀取同一個正在變化的列。如果兩次讀取之間文字消失，App就會當機。
+
+現在每列只讀取一次，缺失的文字會被略過。其他頁面的快速鍵連結也得到修復。
+
+**試試看：** 在遊戲頁面點擊已關閉的快速鍵。
+
+---
+
 ## <a id="v1.30.13"></a>按住Control，繼續玩遊戲
 
 <sub>1.30.13 · 2026年10月10日</sub>

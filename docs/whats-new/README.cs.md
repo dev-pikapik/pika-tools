@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Odkazy na zkratky se otevírají bez pádu
+
+<sub>1.30.14 · 11. října 2026</sub>
+
+Kliknutí na vypnutou zkratku už nezavře pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Na stránce Hry můžete kliknout na zkratku i bez přiřazených kláves. Nastavení systému se otevře bezpečně.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dříve mohl pikapik přečíst tentýž měnící se řádek dvakrát během otevírání okna. Když text mezi čteními zmizel, aplikace spadla.
+
+Každý řádek se nyní čte jednou. Chybějící text se přeskočí. Oprava platí i pro odkazy na zkratky na dalších stránkách.
+
+**Vyzkoušejte:** Klikněte na vypnutou zkratku na stránce Hry.
+
+---
+
 ## <a id="v1.30.13"></a>Držte Control a hrajte dál
 
 <sub>1.30.13 · 10. října 2026</sub>

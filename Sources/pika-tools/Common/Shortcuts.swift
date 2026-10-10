@@ -107,6 +107,13 @@ struct Shortcut: Hashable {
         return (table, row)
     }
 
+    static func firstText<Element>(_ elements: [Element], read: (Element) -> String?) -> String? {
+        for element in elements {
+            if let text = read(element) { return text }
+        }
+        return nil
+    }
+
     static func conflict(_ shortcut: Shortcut, in taken: [(message: String, shortcut: Shortcut)]) -> String? {
         taken.first { $0.shortcut == shortcut }?.message
     }

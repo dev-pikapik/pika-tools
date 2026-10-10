@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Liên kết phím tắt mở mà không bị lỗi
+
+<sub>1.30.14 · 11 tháng 10 năm 2026</sub>
+
+Nhấp vào phím tắt đang tắt không còn đóng pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Trên trang Trò chơi, bạn có thể nhấp phím tắt dù chưa có phím được gán. Cài đặt hệ thống mở an toàn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Trước đây pikapik có thể đọc cùng một hàng đang thay đổi hai lần khi cửa sổ mở. Nếu chữ biến mất giữa hai lần đọc, ứng dụng bị lỗi.
+
+Mỗi hàng giờ chỉ được đọc một lần. Chữ bị thiếu sẽ được bỏ qua. Các liên kết phím tắt ở trang khác cũng được sửa.
+
+**Thử ngay:** Nhấp vào phím tắt đang tắt trên trang Trò chơi.
+
+---
+
 ## <a id="v1.30.13"></a>Giữ Control và tiếp tục chơi
 
 <sub>1.30.13 · ngày 10 tháng 10, 2026</sub>

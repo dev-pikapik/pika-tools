@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>शॉर्टकट लिंक बिना क्रैश खुलते हैं
+
+<sub>1.30.14 · 11 अक्टूबर 2026</sub>
+
+बंद शॉर्टकट पर क्लिक करने से pikapik अब बंद नहीं होता।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+गेम पेज पर बिना कुंजी वाले शॉर्टकट पर भी क्लिक कर सकते हैं। सिस्टम सेटिंग्स सुरक्षित रूप से खुलती हैं।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+पहले विंडो खुलते समय pikapik बदलती हुई एक ही पंक्ति दो बार पढ़ सकता था। अगर बीच में टेक्स्ट गायब हो जाता, ऐप क्रैश हो जाता था।
+
+हर पंक्ति अब एक बार पढ़ी जाती है। गायब टेक्स्ट छोड़ दिया जाता है। दूसरे पेज के शॉर्टकट लिंक भी ठीक हुए हैं।
+
+**आज़माएँ:** गेम पेज पर बंद शॉर्टकट पर क्लिक करें।
+
+---
+
 ## <a id="v1.30.13"></a>Control दबाए रखें और खेलते रहें
 
 <sub>1.30.13 · 10 अक्टूबर 2026</sub>

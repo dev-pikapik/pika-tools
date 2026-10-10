@@ -126,7 +126,7 @@ final class SystemShortcuts {
         }
         func text(_ element: AXUIElement, _ depth: Int) -> String? {
             if value(element, kAXRoleAttribute) == kAXStaticTextRole, let text: String = value(element, kAXValueAttribute), !text.isEmpty { return text }
-            return depth == 0 ? nil : children(element).lazy.compactMap { text($0, depth - 1) }.first
+            return depth == 0 ? nil : Shortcut.firstText(children(element)) { text($0, depth - 1) }
         }
         let deadline = Date() + 4
         var stable = 0

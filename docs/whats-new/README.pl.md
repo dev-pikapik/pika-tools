@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Linki skrótów otwierają się bez awarii
+
+<sub>1.30.14 · 11 października 2026</sub>
+
+Kliknięcie wyłączonego skrótu nie zamyka już pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Na stronie Gry można kliknąć skrót nawet bez przypisanych klawiszy. Ustawienia systemowe otwierają się bezpiecznie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Wcześniej pikapik mógł dwa razy odczytać ten sam zmieniający się wiersz podczas otwierania okna. Jeśli tekst znikał między odczytami, aplikacja ulegała awarii.
+
+Każdy wiersz jest teraz czytany raz. Brakujący tekst jest pomijany. Poprawka obejmuje też linki skrótów na innych stronach.
+
+**Wypróbuj:** Kliknij wyłączony skrót na stronie Gry.
+
+---
+
 ## <a id="v1.30.13"></a>Trzymaj Control i graj dalej
 
 <sub>1.30.13 · 10 października 2026</sub>

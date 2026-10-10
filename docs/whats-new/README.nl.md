@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Sneltoetslinks openen zonder crash
+
+<sub>1.30.14 · 11 oktober 2026</sub>
+
+Klikken op een uitgeschakelde sneltoets sluit pikapik niet meer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Op de Spellen-pagina kun je een sneltoets aanklikken zonder toegewezen toetsen. Systeeminstellingen opent veilig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Eerder kon pikapik dezelfde veranderende rij twee keer lezen terwijl het venster opende. Als de tekst tussendoor verdween, crashte de app.
+
+Elke rij wordt nu eenmaal gelezen. Ontbrekende tekst wordt overgeslagen. De fix geldt ook voor sneltoetslinks op andere pagina’s.
+
+**Probeer het:** Klik op een uitgeschakelde sneltoets op de Spellen-pagina.
+
+---
+
 ## <a id="v1.30.13"></a>Houd Control vast en speel verder
 
 <sub>1.30.13 · 10 oktober 2026</sub>

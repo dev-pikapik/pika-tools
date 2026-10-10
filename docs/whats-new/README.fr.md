@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Les liens de raccourcis s’ouvrent sans plantage
+
+<sub>1.30.14 · 11 octobre 2026</sub>
+
+Cliquer sur un raccourci désactivé ne ferme plus pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Sur la page Jeux, cliquez sur un raccourci même si aucune touche n’est définie. Réglages Système s’ouvre sans risque.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+pikapik pouvait lire deux fois la même ligne changeante pendant l’ouverture de la fenêtre. Si le texte disparaissait entre les lectures, l’app plantait.
+
+Chaque ligne est désormais lue une fois. Le texte manquant est ignoré. Cela corrige aussi les liens de raccourcis des autres pages.
+
+**Pour essayer :** Cliquez sur un raccourci désactivé sur la page Jeux.
+
+---
+
 ## <a id="v1.30.13"></a>Gardez Control enfoncé et continuez à jouer
 
 <sub>1.30.13 · 10 octobre 2026</sub>

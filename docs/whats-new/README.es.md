@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Los enlaces de atajos se abren sin fallos
+
+<sub>1.30.14 · 11 de octubre de 2026</sub>
+
+Pulsar un atajo desactivado ya no cierra pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+En la página Juegos puedes pulsar un atajo aunque no tenga teclas asignadas. Ajustes del Sistema se abre de forma segura.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Antes pikapik podía leer dos veces la misma fila cambiante mientras se abría la ventana. Si el texto desaparecía entre las lecturas, la app fallaba.
+
+Ahora cada fila se lee una vez. El texto ausente se omite. También se corrigen los enlaces de atajos en otras páginas.
+
+**Pruébalo:** Pulsa un atajo desactivado en la página Juegos.
+
+---
+
 ## <a id="v1.30.13"></a>Mantén Control y sigue jugando
 
 <sub>1.30.13 · 10 de octubre de 2026</sub>

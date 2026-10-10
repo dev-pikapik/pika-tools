@@ -14,6 +14,22 @@ enum TestShortcuts {
         precondition(Shortcut.text(character: 65535, key: 65535, modifiers: 0) == nil)
         print("text: ok")
 
+        var reads = 0
+        let changing = Shortcut.firstText([1]) { _ in
+            reads += 1
+            return reads == 1 ? "Off" : nil
+        }
+        precondition(changing == "Off" && reads == 1)
+        var visited: [Int] = []
+        let first = Shortcut.firstText([0, 1, 2]) { element in
+            visited.append(element)
+            return element == 1 ? "Input Sources" : nil
+        }
+        precondition(first == "Input Sources" && visited == [0, 1])
+        precondition(Shortcut.firstText([0, 1]) { _ in nil } == nil)
+        precondition(Shortcut.firstText([Int]()) { _ in "Unused" } == nil)
+        print("changing settings text: ok")
+
         let arrow = Shortcut(key: 123, modifiers: 0x840000)
         precondition(arrow == Shortcut(key: 123, modifiers: 0x40000) && arrow.modifiers == 0x40000)
         precondition(Shortcut(key: 4, modifiers: 0x800100) == Shortcut(key: 4, modifiers: 0x800000))
