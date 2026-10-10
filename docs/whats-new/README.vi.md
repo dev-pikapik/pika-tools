@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Thú cưng vẫn hiện khi nhảy
+
+<sub>1.30.10 · ngày 10 tháng 10, 2026</sub>
+
+Thú cưng không còn biến mất sau cửa sổ khi nhảy trên màn hình không có Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, nếu Dock nằm ở màn hình khác hoặc đang ẩn, thú cưng nhảy ra sau cửa sổ và biến mất cho đến khi chạm đất. Giờ đây, ngay khi rời mặt đất, nó hiện trước cửa sổ trên mọi màn hình, dù có Dock hay không. Quả bóng cũng vậy.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Cửa sổ chỉ chạm vào mép thú cưng sẽ không còn che nó khi nhảy. Thú cưng chỉ ở sau cửa sổ khi cửa sổ thật sự che kín nó, như video bạn đang xem.
+
+Trên mặt đất, thú cưng và quả bóng vẫn dạo chơi sau cửa sổ của bạn như trước.
+
+**Thử ngay:** Cho Dock tự ẩn hoặc chuyển nó sang màn hình khác, rồi nhấn phím cách cạnh một cửa sổ. Thú cưng sẽ nhảy lên trước cửa sổ đó.
+
+---
+
 ## <a id="v1.30.9"></a>Toàn màn hình là của bạn, và quả bóng chơi đẹp
 
 <sub>1.30.9 · ngày 10 tháng 10, 2026</sub>

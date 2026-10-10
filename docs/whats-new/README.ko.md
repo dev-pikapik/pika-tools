@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>펫이 점프해도 보여요
+
+<sub>1.30.10 · 2026년 10월 10일</sub>
+
+Dock이 없는 화면에서 펫이 점프할 때 더 이상 창 뒤로 사라지지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 Dock이 다른 디스플레이에 있거나 숨겨져 있으면 펫이 창 뒤로 뛰어올라 착지할 때까지 보이지 않았어요. 이제는 땅에서 떨어지는 순간 Dock이 있든 없든 어느 화면에서나 창 앞에 보여요. 공도 마찬가지예요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+펫의 가장자리에만 닿은 창은 이제 점프하는 펫을 가리지 않아요. 보고 있는 영상처럼 창이 펫을 정말로 덮고 있을 때만 펫이 창 뒤에 머물러요.
+
+땅에서는 예전처럼 펫과 공이 창 뒤에서 돌아다녀요.
+
+**사용해 보기:** Dock을 자동으로 숨기거나 다른 디스플레이로 옮긴 다음, 창 옆에서 스페이스 바를 눌러 보세요. 펫이 창 앞에서 점프해요.
+
+---
+
 ## <a id="v1.30.9"></a>전체 화면은 온전히 내 것, 공도 공정하게
 
 <sub>1.30.9 · 2026년 10월 10일</sub>

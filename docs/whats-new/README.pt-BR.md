@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>O bichinho fica à vista quando pula
+
+<sub>1.30.10 · 10 de outubro de 2026</sub>
+
+O bichinho não some mais atrás das janelas quando pula numa tela sem Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, se o Dock estava em outra tela ou oculto, o bichinho pulava atrás das janelas e sumia até aterrissar. Agora, assim que sai do chão, ele aparece na frente das janelas em qualquer tela, com ou sem Dock. A bola também.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Uma janela que só encosta na borda do bichinho não o esconde mais durante o pulo. Ele fica atrás de uma janela só quando ela o cobre de verdade, como um vídeo que você está vendo.
+
+No chão, o bichinho e a bola passeiam atrás das suas janelas, como antes.
+
+**Experimente:** Deixe o Dock se ocultar ou leve-o para outra tela e aperte Espaço ao lado de uma janela. O bichinho pula na frente dela.
+
+---
+
 ## <a id="v1.30.9"></a>A tela cheia é sua, e a bola joga limpo
 
 <sub>1.30.9 · 10 de outubro de 2026</sub>

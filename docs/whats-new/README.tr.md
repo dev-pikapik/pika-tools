@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Evcil dostun zıplarken görünür kalıyor
+
+<sub>1.30.10 · 10 Ekim 2026</sub>
+
+Evcil dostun, Dock olmayan bir ekranda zıpladığında artık pencerelerin arkasında kaybolmuyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eskiden Dock başka bir ekrandaysa ya da gizliyse, evcil dostun pencerelerin arkasına zıplıyor ve yere inene kadar görünmüyordu. Artık yerden ayrıldığı anda, Dock olsun olmasın her ekranda pencerelerin önünde görünüyor. Top da öyle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Evcil dostunun yalnızca kenarına değen bir pencere artık onu zıplarken gizlemiyor. Evcil dostun bir pencerenin arkasında yalnızca pencere onu gerçekten örttüğünde kalıyor, izlediğin bir video gibi.
+
+Yerde ise evcil dostun ve topu, eskisi gibi pencerelerinin arkasında dolaşıyor.
+
+**Deneyin:** Dock’u otomatik gizlenecek şekilde ayarla ya da başka bir ekrana taşı, sonra bir pencerenin yanında Boşluk tuşuna bas. Evcil dostun pencerenin önünde zıplar.
+
+---
+
 ## <a id="v1.30.9"></a>Tam ekran senin, top da kurallara uyuyor
 
 <sub>1.30.9 · 10 Ekim 2026</sub>

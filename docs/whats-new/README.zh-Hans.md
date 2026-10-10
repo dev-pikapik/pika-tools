@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>宠物跳起来也看得见
+
+<sub>1.30.10 · 2026年10月10日</sub>
+
+在没有程序坞的屏幕上，宠物跳起来不会再消失在窗口后面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，如果程序坞在另一台显示器上或被隐藏，宠物会跳到窗口后面，落地前一直看不见。现在它一离开地面，就会出现在窗口前面，不管哪块屏幕、有没有程序坞都一样。球也是这样。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+只碰到宠物边缘的窗口，不会再在跳跃时把它挡住。只有窗口真正盖住宠物时，比如你正在看的视频，它才会留在窗口后面。
+
+回到地面后，宠物和球像以前一样在窗口后面散步。
+
+**试试看：** 让程序坞自动隐藏，或把它移到另一台显示器，然后在窗口旁按空格键。宠物会在窗口前面跳起来。
+
+---
+
 ## <a id="v1.30.9"></a>全屏归你，球也守规矩了
 
 <sub>1.30.9 · 2026年10月10日</sub>

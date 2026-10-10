@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Dein Haustier bleibt im Blick, wenn es springt
+
+<sub>1.30.10 · 10. Oktober 2026</sub>
+
+Dein Haustier verschwindet nicht mehr hinter Fenstern, wenn es auf einem Bildschirm ohne Dock springt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Bisher sprang dein Haustier hinter deine Fenster und war bis zur Landung weg, wenn das Dock auf einem anderen Bildschirm lag oder ausgeblendet war. Jetzt erscheint es vor deinen Fenstern, sobald es den Boden verlässt, auf jedem Bildschirm, mit oder ohne Dock. Der Ball macht es genauso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ein Fenster, das dein Haustier nur am Rand berührt, versteckt es beim Springen nicht mehr. Dein Haustier bleibt nur hinter einem Fenster, das es wirklich verdeckt, etwa einem Video, das du gerade schaust.
+
+Am Boden laufen dein Haustier und sein Ball wie gewohnt hinter deinen Fenstern.
+
+**Ausprobieren:** Lass das Dock automatisch ausblenden oder schieb es auf einen anderen Bildschirm und drück neben einem Fenster die Leertaste. Dein Haustier springt davor.
+
+---
+
 ## <a id="v1.30.9"></a>Das Vollbild gehört dir, und der Ball spielt fair
 
 <sub>1.30.9 · 10. Oktober 2026</sub>
