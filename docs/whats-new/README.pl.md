@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Zwierzak nie wchodzi już w kadr
+
+<sub>1.30.7 · 10 października 2026</sub>
+
+Gdy zwierzak albo piłka są za oknem, zostają tam, nawet gdy skaczą lub latają.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej, gdy zwierzak albo piłka chowali się za filmem lub grą, skok czy lot mógł ich wynieść prosto nad to, co oglądasz. Spacja do pauzowania filmu też wywabiała zwierzaka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teraz zostają za oknem, które ich zasłania, cokolwiek robią. A film na pełnym ekranie w Firefoksie chowa ich od razu.
+
+Za zwykłymi oknami nadal chowają się tak jak wcześniej.
+
+**Wypróbuj:** Włącz film w dużym oknie, które zasłania dół ekranu, i naciśnij spację, żeby go zatrzymać. Zwierzak zostanie za filmem.
+
+---
+
 ## <a id="v1.30.6"></a>Na pełnym ekranie zwierzak odpoczywa wszędzie
 
 <sub>1.30.6 · 10 października 2026</sub>

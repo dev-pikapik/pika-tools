@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Animăluțul nu-ți mai intră în video
+
+<sub>1.30.7 · 10 octombrie 2026</sub>
+
+Când animăluțul sau mingea sunt în spatele unei ferestre, rămân acolo chiar și când sar sau zboară.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, dacă animăluțul sau mingea se ascundeau în spatele unui video sau joc, o săritură sau un zbor îi putea scoate chiar peste ce te uitai. Și tasta Spațiu pentru pauză scotea animăluțul la vedere.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Acum rămân în spatele ferestrei care îi acoperă, orice ar face. Iar un video pe tot ecranul în Firefox îi ascunde imediat.
+
+În spatele ferestrelor obișnuite se ascund la fel ca înainte.
+
+**Încearcă:** Pornește un video într-o fereastră mare care acoperă partea de jos a ecranului și apasă Spațiu ca să-l pui pe pauză. Animăluțul rămâne în spatele videoului.
+
+---
+
 ## <a id="v1.30.6"></a>Pe tot ecranul, animăluțul ia o pauză peste tot
 
 <sub>1.30.6 · 10 octombrie 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Votre compagnon ne s’invite plus dans votre vidéo
+
+<sub>1.30.7 · 10 octobre 2026</sub>
+
+Quand votre compagnon ou sa balle est derrière une fenêtre, il y reste, même quand il saute ou s’envole.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, si votre compagnon ou sa balle se cachait derrière une vidéo ou un jeu, un saut ou un vol pouvait le faire surgir juste par-dessus ce que vous regardiez. La touche Espace pour mettre une vidéo en pause le faisait sortir aussi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Maintenant, ils restent derrière la fenêtre qui les couvre, quoi qu’ils fassent. Et une vidéo en plein écran dans Firefox les cache tout de suite.
+
+Derrière les fenêtres ordinaires, ils se glissent toujours comme avant.
+
+**Pour essayer :** Lancez une vidéo dans une grande fenêtre qui couvre le bas de l’écran et appuyez sur Espace pour la mettre en pause. Votre compagnon reste derrière la vidéo.
+
+---
+
 ## <a id="v1.30.6"></a>En plein écran, votre compagnon fait une pause partout
 
 <sub>1.30.6 · 10 octobre 2026</sub>

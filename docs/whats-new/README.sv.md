@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Ditt husdjur håller sig borta från din video
+
+<sub>1.30.7 · 10 oktober 2026</sub>
+
+När ditt husdjur eller bollen är bakom ett fönster stannar de där, även när de hoppar eller flyger.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut kunde ett hopp eller en flygtur få ditt husdjur eller bollen att dyka upp rakt över det du tittade på, fast de gömde sig bakom en video eller ett spel. Att trycka på mellanslag för att pausa en video lockade också fram husdjuret.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu stannar de bakom fönstret som täcker dem, vad de än gör. Och en video i helskärm i Firefox gömmer dem direkt.
+
+Bakom vanliga fönster gömmer de sig precis som förut.
+
+**Prova:** Spela upp en video i ett stort fönster som täcker skärmens nederkant och tryck på mellanslag för att pausa. Ditt husdjur stannar bakom videon.
+
+---
+
 ## <a id="v1.30.6"></a>I helskärm tar ditt husdjur paus överallt
 
 <sub>1.30.6 · 10 oktober 2026</sub>

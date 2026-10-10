@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Peliharaanmu tidak lagi menerobos videomu
+
+<sub>1.30.7 · 10 Oktober 2026</sub>
+
+Saat peliharaanmu atau bolanya ada di balik jendela, mereka tetap di sana meski melompat atau terbang.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, kalau peliharaanmu atau bolanya bersembunyi di balik video atau game, satu lompatan atau terbang bisa memunculkannya tepat di atas yang sedang kamu tonton. Menekan Spasi untuk menjeda video juga memancing peliharaanmu keluar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Sekarang mereka tetap di balik jendela yang menutupinya, apa pun yang mereka lakukan. Dan video layar penuh di Firefox langsung menyembunyikan mereka.
+
+Di balik jendela biasa, mereka tetap bersembunyi seperti dulu.
+
+**Coba:** Putar video di jendela besar yang menutupi bagian bawah layar dan tekan Spasi untuk menjedanya. Peliharaanmu tetap di balik video.
+
+---
+
 ## <a id="v1.30.6"></a>Saat layar penuh, peliharaanmu istirahat di semua layar
 
 <sub>1.30.6 · 10 Oktober 2026</sub>

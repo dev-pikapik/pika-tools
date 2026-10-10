@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Dein Haustier bleibt aus deinem Video raus
+
+<sub>1.30.7 · 10. Oktober 2026</sub>
+
+Ist dein Haustier oder sein Ball hinter einem Fenster, bleibt es dort, auch wenn es springt oder fliegt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Früher konnte ein Sprung oder Flug dein Haustier oder seinen Ball genau über das holen, was du gerade schaust, obwohl sie sich hinter einem Video oder Spiel versteckt hatten. Auch die Leertaste zum Anhalten eines Videos hat dein Haustier hervorgelockt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jetzt bleiben sie hinter dem Fenster, das sie verdeckt, egal was sie tun. Und ein Vollbild-Video in Firefox versteckt sie sofort.
+
+Hinter normalen Fenstern verschwinden sie weiterhin genau wie früher.
+
+**Ausprobieren:** Spiel ein Video in einem großen Fenster ab, das den unteren Bildschirmrand verdeckt, und drück die Leertaste zum Anhalten. Dein Haustier bleibt hinter dem Video.
+
+---
+
 ## <a id="v1.30.6"></a>Im Vollbild macht dein Haustier überall Pause
 
 <sub>1.30.6 · 10. Oktober 2026</sub>
