@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>L’animaletto si fa da parte mentre guardi o giochi
+
+<sub>1.30.5 · 10 ottobre 2026</sub>
+
+L’animaletto e la sua palla ora si nascondono quando un’app è a schermo intero, anche sui Mac con notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, su un Mac con notch, l’animaletto poteva restare sopra un video o un gioco a schermo intero, e la palla a volte spuntava sopra un’app a schermo intero su un altro monitor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ora, finché un’app riempie tutto lo schermo, l’animaletto e la sua palla aspettano fuori vista. Esci dallo schermo intero e tornano subito.
+
+Dietro le finestre normali continuano a nascondersi come prima.
+
+**Provalo:** Apri un video a schermo intero o avvia un gioco. L’animaletto e la sua palla non danno fastidio finché non hai finito.
+
+---
+
 ## <a id="v1.30.4"></a>L’animaletto resta in vista quando salta o viaggia su una selezione
 
 <sub>1.30.4 · 10 ottobre 2026</sub>

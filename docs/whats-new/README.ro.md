@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Animăluțul se dă la o parte cât te uiți sau joci
+
+<sub>1.30.5 · 10 octombrie 2026</sub>
+
+Animăluțul și mingea se ascund acum cât o aplicație e pe tot ecranul, inclusiv pe Mac-urile cu notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, pe un Mac cu notch, animăluțul putea rămâne deasupra unui video sau joc pe tot ecranul, iar mingea apărea uneori peste o aplicație pe tot ecranul de pe alt monitor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Acum, cât o aplicație umple tot ecranul, animăluțul și mingea așteaptă deoparte. Ieși din ecranul complet și se întorc imediat.
+
+În spatele ferestrelor obișnuite se ascund la fel ca înainte.
+
+**Încearcă:** Pune un video pe tot ecranul sau pornește un joc. Animăluțul și mingea nu te deranjează până termini.
+
+---
+
 ## <a id="v1.30.4"></a>Animăluțul rămâne la vedere când sare sau urcă pe o selecție
 
 <sub>1.30.4 · 10 octombrie 2026</sub>

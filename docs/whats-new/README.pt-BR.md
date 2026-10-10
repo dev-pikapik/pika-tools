@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Seu bichinho sai da frente enquanto você assiste ou joga
+
+<sub>1.30.5 · 10 de outubro de 2026</sub>
+
+Seu bichinho e a bola agora se escondem enquanto um app está em tela cheia, inclusive nos Macs com notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, num Mac com notch, o bichinho podia ficar por cima de um vídeo ou jogo em tela cheia, e a bola às vezes aparecia sobre um app em tela cheia em outro monitor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Agora, enquanto um app ocupa a tela inteira, o bichinho e a bola esperam fora de vista. Saia da tela cheia e eles voltam na hora.
+
+Atrás de janelas comuns eles continuam se escondendo como antes.
+
+**Experimente:** Abra um vídeo em tela cheia ou comece um jogo. O bichinho e a bola não atrapalham até você terminar.
+
+---
+
 ## <a id="v1.30.4"></a>Seu bichinho fica à vista quando pula ou pega carona numa seleção
 
 <sub>1.30.4 · 10 de outubro de 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Je huisdiertje gaat opzij terwijl je kijkt of speelt
+
+<sub>1.30.5 · 10 oktober 2026</sub>
+
+Je huisdiertje en de bal verstoppen zich nu zolang een app schermvullend is, ook op Macs met een notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eerst kon je huisdiertje op een Mac met een notch boven op een schermvullende video of game blijven staan, en de bal dook soms op boven een schermvullende app op een ander scherm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu wachten je huisdiertje en de bal uit het zicht zolang een app het hele scherm vult. Sluit schermvullend af en ze zijn meteen terug.
+
+Achter gewone vensters verstoppen ze zich nog net als vroeger.
+
+**Probeer het:** Zet een video schermvullend of start een game. Je huisdiertje en de bal blijven uit de weg tot je klaar bent.
+
+---
+
 ## <a id="v1.30.4"></a>Je huisdiertje blijft in beeld als het springt of op een selectie meerijdt
 
 <sub>1.30.4 · 10 oktober 2026</sub>

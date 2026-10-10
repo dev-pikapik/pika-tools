@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Peliharaanmu minggir saat kamu menonton atau bermain
+
+<sub>1.30.5 · 10 Oktober 2026</sub>
+
+Peliharaanmu dan bolanya kini bersembunyi saat aplikasi dalam layar penuh, juga di Mac dengan notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, di Mac dengan notch, peliharaanmu bisa tetap di atas video atau game layar penuh, dan bolanya kadang muncul di atas aplikasi layar penuh di layar lain.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Sekarang, selama aplikasi memenuhi seluruh layar, peliharaanmu dan bolanya menunggu di luar pandangan. Keluar dari layar penuh, dan mereka langsung kembali.
+
+Di balik jendela biasa, mereka tetap bersembunyi seperti dulu.
+
+**Coba:** Putar video dalam layar penuh atau mulai game. Peliharaanmu dan bolanya tidak mengganggu sampai kamu selesai.
+
+---
+
 ## <a id="v1.30.4"></a>Peliharaanmu tetap terlihat saat melompat atau menumpang kotak pilihan
 
 <sub>1.30.4 · 10 Oktober 2026</sub>

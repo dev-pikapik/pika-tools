@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Thú cưng tránh sang một bên khi bạn xem phim hay chơi game
+
+<sub>1.30.5 · ngày 10 tháng 10, 2026</sub>
+
+Thú cưng và quả bóng giờ sẽ ẩn đi khi một ứng dụng đang toàn màn hình, kể cả trên Mac có tai thỏ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, trên Mac có tai thỏ, thú cưng có thể nằm đè lên video hay game toàn màn hình, và quả bóng đôi khi bật lên trên ứng dụng toàn màn hình ở màn hình khác.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Giờ đây, khi một ứng dụng chiếm cả màn hình, thú cưng và quả bóng chờ ở chỗ khuất. Thoát toàn màn hình là chúng quay lại ngay.
+
+Sau các cửa sổ thông thường, chúng vẫn ẩn như trước.
+
+**Thử ngay:** Mở một video toàn màn hình hoặc bắt đầu một game. Thú cưng và quả bóng sẽ không làm phiền cho đến khi bạn xong.
+
+---
+
 ## <a id="v1.30.4"></a>Thú cưng vẫn hiện rõ khi nhảy hay ngồi trên khung chọn đi lên
 
 <sub>1.30.4 · ngày 10 tháng 10, 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Ditt husdjur kliver åt sidan medan du tittar eller spelar
+
+<sub>1.30.5 · 10 oktober 2026</sub>
+
+Ditt husdjur och bollen gömmer sig nu medan en app är i helskärm, även på Mac med notch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut kunde ditt husdjur på en Mac med notch ligga kvar ovanpå en video eller ett spel i helskärm, och bollen dök ibland upp över en helskärmsapp på en annan skärm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu väntar ditt husdjur och bollen utom synhåll så länge en app fyller hela skärmen. Lämna helskärm, så är de tillbaka direkt.
+
+Bakom vanliga fönster gömmer de sig precis som förut.
+
+**Prova:** Visa en video i helskärm eller starta ett spel. Ditt husdjur och bollen håller sig undan tills du är klar.
+
+---
+
 ## <a id="v1.30.4"></a>Ditt husdjur syns när det hoppar eller åker med en markering
 
 <sub>1.30.4 · 10 oktober 2026</sub>

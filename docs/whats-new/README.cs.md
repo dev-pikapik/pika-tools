@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.5"></a>Mazlíček uhne, když se díváte nebo hrajete
+
+<sub>1.30.5 · 10. října 2026</sub>
+
+Mazlíček a míček se teď schovají, když je aplikace na celou obrazovku, i na Macích s výřezem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív na Macu s výřezem mohl mazlíček zůstat nad videem nebo hrou na celou obrazovku a míček občas vyskočil nad aplikací na celou obrazovku na jiném monitoru.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teď, dokud aplikace zabírá celou obrazovku, mazlíček a míček čekají mimo dohled. Ukončete režim celé obrazovky a hned se vrátí.
+
+Za běžnými okny se schovávají stejně jako dřív.
+
+**Vyzkoušejte:** Pusťte video na celou obrazovku nebo spusťte hru. Mazlíček a míček nebudou rušit, dokud neskončíte.
+
+---
+
 ## <a id="v1.30.4"></a>Mazlíček je vidět, když skáče nebo se veze na výběru
 
 <sub>1.30.4 · 10. října 2026</sub>
