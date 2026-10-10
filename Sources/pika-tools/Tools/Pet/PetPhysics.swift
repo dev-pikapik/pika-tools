@@ -293,7 +293,10 @@ struct PetPhysics {
             vy = min(vy, 0)
         }
         if let ledge, ledge.maxY + Self.size.height <= roof, strike(ledge, from: a0) { return land() }
-        if state != .thrown, let cap { strike(cap, from: a0) }
+        if state != .thrown, let cap, a0.maxY <= cap.minY + 0.5, overlaps(cap) {
+            origin.y = cap.minY - Self.size.height
+            vy = min(vy, 0)
+        }
         guard origin.y <= bounds.minY else { return }
         origin.y = bounds.minY
         guard vy <= 0 else { return }

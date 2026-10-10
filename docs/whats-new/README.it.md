@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Lo schermo intero è tuo, e la palla gioca pulito
+
+<sub>1.30.9 · 10 ottobre 2026</sub>
+
+L’animaletto non sbuca più in un video a schermo intero, e la palla non urta più cose che non ci sono.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, mentre guardavi un video a schermo intero, l’animaletto poteva spuntare ogni tanto. Ora pikapik chiede direttamente a macOS se uno schermo è a schermo intero e ricontrolla quando il passaggio è finito. L’animaletto e la sua palla restano nascosti finché non esci dallo schermo intero.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La palla non rimbalza più contro il vuoto. Vola sopra il Dock invece di sbattere contro un muro invisibile. Il mouse ora colpisce la palla solo quando il puntatore la tocca davvero. Un tocco leggero la fa rotolare, un colpo veloce la fa volare. E se l’animaletto o la sua palla si nascondono dietro una finestra, il mouse sopra quella finestra li lascia stare.
+
+Trascinare un file sulla scrivania non costruisce più un gradino per l’animaletto. Lo fa solo un riquadro di selezione.
+
+**Provalo:** Guarda un video a schermo intero e mettilo in pausa qualche volta con la barra spaziatrice. L’animaletto resta nascosto. Poi colpisci la palla con un colpo di mouse.
+
+---
+
 ## <a id="v1.30.8"></a>Gli angoli dello schermo restano tranquilli mentre giochi
 
 <sub>1.30.8 · 10 ottobre 2026</sub>

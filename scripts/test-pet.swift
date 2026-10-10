@@ -477,11 +477,22 @@ enum TestPet {
             let point = CGPoint(x: ball.center.x + (next() - 0.5) * 200, y: next() * 100)
             ball.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.7 ? nil : point)
             precondition(inBall(ball), "ball left the screen at step \(i): \(ball.frame)")
-            precondition(ball.frame.maxY <= 90 + 1e-6, "ball above the roof at step \(i): \(ball.frame)")
+            precondition(ball.thrown || ball.frame.maxY <= 90 + 1e-6, "ball above the roof at step \(i): \(ball.frame)")
         }
         ball.ledge = nil
         settle(&ball, 30)
-        print("60 000 random kicks keep the ball on screen and below the roof: ok")
+        print("60 000 random kicks keep the ball on screen and below the roof unless it was flung: ok")
+
+        ball = BallPhysics(bounds: room, x: 300)
+        ball.roof = 190
+        for i in 0..<40 { ball.step(1.0 / 60, cursor: CGPoint(x: 100 + 30 * CGFloat(i), y: ball.center.y + 30)) }
+        precondition(ball.resting && ball.center.x == 300, "a pointer passing above the ball touched it: \(ball.center)")
+        ball.step(1.0 / 60, cursor: CGPoint(x: 300, y: ball.center.y - 40))
+        for i in 0..<6 { ball.step(1.0 / 60, cursor: CGPoint(x: 300, y: ball.center.y - 40 + 50 * CGFloat(i + 1))) }
+        precondition(ball.thrown && ball.vy > 0, "a hard flick up did not throw the ball: \(ball.vy)")
+        settle(&ball, 30)
+        precondition(!ball.aloft)
+        print("the pointer hits only near the ball and a hard flick throws it: ok")
 
         ball = BallPhysics(bounds: room, x: 300)
         ball.roof = 190
@@ -492,10 +503,25 @@ enum TestPet {
             let point = CGPoint(x: ball.center.x + (next() - 0.5) * 200, y: next() * 100)
             ball.step(next() < 0.05 ? Double(next()) * 0.25 : 1.0 / 30, cursor: next() < 0.7 ? nil : point)
             precondition(inBall(ball), "ball left the screen at step \(i): \(ball.frame)")
-            let c = ball.center, near = CGPoint(x: min(max(c.x, cap.minX), cap.maxX), y: min(max(c.y, cap.minY), cap.maxY))
-            precondition(hypot(c.x - near.x, c.y - near.y) >= BallPhysics.radius - 0.5 && ball.frame.maxY <= 190 + 1e-6, "ball above the Dock at step \(i): \(ball.frame)")
+            let under = ball.previous.maxY <= dock.maxY + 0.5 && ball.previous.maxX > dock.minX + 60 && ball.previous.minX < dock.maxX - 60 && ball.frame.maxX > dock.minX && ball.frame.minX < dock.maxX
+            precondition(ball.thrown || !under || ball.frame.maxY <= dock.maxY + 0.5, "ball rose out of the Dock at step \(i): \(ball.frame)")
+            precondition(ball.thrown || ball.frame.maxY <= 190 + 1e-6, "ball above the strip at step \(i): \(ball.frame)")
         }
-        print("60 000 random kicks keep the ball below the Dock top and under the strip next to it: ok")
+        print("60 000 random kicks keep the ball under the Dock once it is there: ok")
+
+        ball = BallPhysics(bounds: room, x: 400)
+        ball.roof = 190
+        ball.dock = dock
+        ball.kick(CGVector(dx: 400, dy: 560))
+        var crossed = false
+        for _ in 0..<120 {
+            ball.step(1.0 / 60, cursor: nil)
+            precondition(ball.vx > 0 || ball.center.x > dock.maxX - 20, "the ball hit an invisible wall over the Dock: \(ball.center)")
+            if ball.center.x > dock.minX + 60, ball.frame.minY > dock.maxY { crossed = true }
+        }
+        settle(&ball, 30)
+        precondition(crossed && ball.frame.minY == room.minY, "the ball did not fly over the Dock: \(ball.frame)")
+        print("the ball flies over the Dock without an invisible wall: ok")
 
         ball = BallPhysics(bounds: room, x: 700)
         ball.ledge = CGRect(x: 600, y: 0, width: 300, height: 40)

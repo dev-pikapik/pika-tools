@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>A tela cheia é sua, e a bola joga limpo
+
+<sub>1.30.9 · 10 de outubro de 2026</sub>
+
+O bichinho não aparece mais num vídeo em tela cheia, e a bola não bate mais em coisas que não estão lá.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, enquanto você assistia a um vídeo em tela cheia, o bichinho às vezes aparecia. Agora o pikapik pergunta direto ao macOS se uma tela está em tela cheia e confere de novo quando a troca termina. O bichinho e a bola ficam escondidos até você sair da tela cheia.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+A bola não quica mais no vazio. Ela voa por cima do Dock em vez de bater numa parede invisível. O mouse agora acerta a bola só quando o ponteiro realmente encosta nela. Um toque leve faz ela rolar, um movimento rápido faz ela voar. E se o bichinho ou a bola estão escondidos atrás de uma janela, o mouse sobre essa janela deixa eles em paz.
+
+Arrastar um arquivo pela mesa não cria mais um degrau para o bichinho. Só um quadro de seleção faz isso.
+
+**Experimente:** Assista a um vídeo em tela cheia e pause algumas vezes com a barra de espaço. O bichinho não aparece. Depois dê um peteleco com o mouse na bola.
+
+---
+
 ## <a id="v1.30.8"></a>Os cantos da tela ficam quietos enquanto você joga
 
 <sub>1.30.8 · 10 de outubro de 2026</sub>

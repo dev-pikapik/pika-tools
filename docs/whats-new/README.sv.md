@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Helskärmen är din, och bollen spelar schysst
+
+<sub>1.30.9 · 10 oktober 2026</sub>
+
+Ditt husdjur smyger inte längre in i en video i helskärm, och bollen krockar inte med saker som inte finns.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut kunde ditt husdjur dyka upp ibland medan du tittade på en video i helskärm. Nu frågar pikapik macOS direkt om en skärm visar något i helskärm och kollar en gång till när bytet är klart. Ditt husdjur och bollen håller sig gömda tills du lämnar helskärm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bollen studsar inte längre mot tom luft. Den flyger över Dock i stället för att slå i en osynlig vägg. Musen träffar nu bollen bara när pekaren verkligen nuddar den. En lätt beröring får den att rulla, ett snabbt svep får den att flyga. Och om ditt husdjur eller bollen gömmer sig bakom ett fönster låter musen över det fönstret dem vara.
+
+Att dra en fil över skrivbordet bygger inte längre ett trappsteg åt ditt husdjur. Det gör bara en markeringsram.
+
+**Prova:** Titta på en video i helskärm och pausa den några gånger med mellanslag. Ditt husdjur syns inte. Svep sedan med musen mot bollen.
+
+---
+
 ## <a id="v1.30.8"></a>Skärmens hörn håller tyst medan du spelar
 
 <sub>1.30.8 · 10 oktober 2026</sub>

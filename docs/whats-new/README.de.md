@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Das Vollbild gehört dir, und der Ball spielt fair
+
+<sub>1.30.9 · 10. Oktober 2026</sub>
+
+Dein Haustier schlüpft nicht mehr in ein Video im Vollbild, und der Ball stößt nicht mehr an Dinge, die gar nicht da sind.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Früher konnte dein Haustier ab und zu auftauchen, während du ein Video im Vollbild geschaut hast. Jetzt fragt pikapik macOS direkt, ob ein Bildschirm im Vollbild ist, und prüft noch einmal, wenn der Wechsel vorbei ist. Dein Haustier und sein Ball bleiben versteckt, bis du das Vollbild verlässt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Der Ball prallt nicht mehr an leerer Luft ab. Er fliegt über das Dock, statt gegen eine unsichtbare Wand darüber zu stoßen. Die Maus trifft den Ball jetzt nur, wenn der Zeiger ihn wirklich berührt. Eine leichte Berührung lässt ihn rollen, ein schneller Schwung lässt ihn fliegen. Und versteckt sich dein Haustier oder sein Ball hinter einem Fenster, lässt die Maus über diesem Fenster sie in Ruhe.
+
+Eine Datei über den Schreibtisch zu ziehen, baut deinem Haustier keine Stufe mehr. Das macht nur ein Auswahlrahmen.
+
+**Ausprobieren:** Schau ein Video im Vollbild und pausiere es ein paar Mal mit der Leertaste. Dein Haustier bleibt unsichtbar. Dann schwing die Maus gegen den Ball.
+
+---
+
 ## <a id="v1.30.8"></a>Die Bildschirmecken bleiben still, während du spielst
 
 <sub>1.30.8 · 10. Oktober 2026</sub>
