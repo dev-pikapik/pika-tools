@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Přetáhněte hru z Monitoru aktivity
+
+<sub>1.30.12 · 10. října 2026</sub>
+
+Herní režim přijímá procesy přetažené z Monitoru aktivity.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Najděte proces hry a přetáhněte řádek na Vaše hry v Nastavení → Hry.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Hry přes Javu fungují i bez běžné ikony v Docku. Dříve se tyto řádky ignorovaly, protože obsahují číslo a název procesu místo souboru.
+
+Hra se uloží pro další spuštění. Minecraft se zobrazí pod svým názvem. Číslo a název musí odpovídat spuštěnému procesu.
+
+**Vyzkoušejte:** Přetáhněte řádek java spuštěného Minecraftu na Vaše hry.
+
+---
+
 ## <a id="v1.30.11"></a>Přidejte hru, když běží
 
 <sub>1.30.11 · 10. října 2026</sub>

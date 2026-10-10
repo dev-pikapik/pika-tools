@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Kéo trò chơi từ Giám sát hoạt động
+
+<sub>1.30.12 · ngày 10 tháng 10, 2026</sub>
+
+Chế độ trò chơi nhận tiến trình kéo từ Giám sát hoạt động.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Tìm tiến trình trò chơi rồi kéo hàng vào Trò chơi của bạn trong Cài đặt → Trò chơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Trò chơi Java cũng dùng được khi không có biểu tượng thông thường trong Dock. Trước đây các hàng này bị bỏ qua vì chứa số và tên tiến trình thay vì tệp.
+
+Trò chơi được lưu cho những lần mở sau. Minecraft hiện đúng tên. Số và tên phải khớp với tiến trình đang chạy.
+
+**Thử ngay:** Kéo hàng java của Minecraft đang mở vào Trò chơi của bạn.
+
+---
+
 ## <a id="v1.30.11"></a>Thêm trò chơi ngay khi đang chạy
 
 <sub>1.30.11 · ngày 10 tháng 10, 2026</sub>

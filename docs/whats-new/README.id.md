@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Seret game dari Monitor Aktivitas
+
+<sub>1.30.12 · 10 Oktober 2026</sub>
+
+Mode Game menerima proses yang diseret dari Monitor Aktivitas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Cari proses game lalu seret barisnya ke Game Anda di Pengaturan → Game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Game Java juga bekerja tanpa ikon biasa di Dock. Sebelumnya baris ini diabaikan karena berisi nomor dan nama proses, bukan file.
+
+Game tersimpan untuk peluncuran berikutnya. Minecraft tampil dengan namanya sendiri. Nomor dan nama harus cocok dengan proses yang berjalan.
+
+**Coba:** Seret baris java Minecraft yang sedang terbuka ke Game Anda.
+
+---
+
 ## <a id="v1.30.11"></a>Tambahkan game saat sedang berjalan
 
 <sub>1.30.11 · 10 Oktober 2026</sub>

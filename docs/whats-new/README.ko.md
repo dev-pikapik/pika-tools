@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>활성 상태 보기에서 게임을 드래그하세요
+
+<sub>1.30.12 · 2026년 10월 10일</sub>
+
+게임 모드가 활성 상태 보기에서 드래그한 프로세스를 받아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+게임 프로세스를 찾아 설정 → 게임의 내 게임으로 행을 드래그하세요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock에 일반 아이콘이 없는 Java 게임도 추가할 수 있어요. 이전에는 파일 대신 프로세스 번호와 이름이 담긴 행이 무시되었어요.
+
+게임은 다음 실행 때도 기억되고 Minecraft는 자기 이름으로 표시돼요. 번호와 이름은 실행 중인 프로세스와 일치해야 해요.
+
+**사용해 보기:** 실행 중인 Minecraft의 java 행을 내 게임으로 드래그하세요.
+
+---
+
 ## <a id="v1.30.11"></a>실행 중인 게임을 바로 추가하세요
 
 <sub>1.30.11 · 2026년 10월 10일</sub>

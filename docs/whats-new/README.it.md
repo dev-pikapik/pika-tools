@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Trascina il gioco da Monitoraggio Attività
+
+<sub>1.30.12 · 10 ottobre 2026</sub>
+
+La modalità Gioco accetta processi trascinati da Monitoraggio Attività.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Trova il processo del gioco e trascina la riga su I tuoi giochi in Impostazioni → Giochi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Funziona anche con giochi Java senza la normale icona nel Dock. Prima queste righe venivano ignorate perché contengono numero e nome del processo, non un file.
+
+Il gioco resta salvato per gli avvii futuri. Minecraft appare con il suo nome. Numero e nome devono corrispondere a un processo in esecuzione.
+
+**Provalo:** Trascina la riga java di Minecraft aperto su I tuoi giochi.
+
+---
+
 ## <a id="v1.30.11"></a>Aggiungi il gioco mentre è aperto
 
 <sub>1.30.11 · 10 ottobre 2026</sub>

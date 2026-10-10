@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Sleep je spel uit Activiteitenweergave
+
+<sub>1.30.12 · 10 oktober 2026</sub>
+
+Spelmodus accepteert processen uit Activiteitenweergave.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Zoek het spelproces en sleep de rij naar Je spellen in Instellingen → Spellen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Java-spellen werken ook zonder normaal pictogram in het Dock. Deze rijen werden eerder genegeerd omdat ze een procesnummer en naam bevatten in plaats van een bestand.
+
+Het spel blijft bewaard voor volgende starts. Minecraft verschijnt onder zijn eigen naam. Nummer en naam moeten passen bij een draaiend proces.
+
+**Probeer het:** Sleep de java-rij van je geopende Minecraft naar Je spellen.
+
+---
+
 ## <a id="v1.30.11"></a>Voeg je spel toe terwijl het draait
 
 <sub>1.30.11 · 10 oktober 2026</sub>

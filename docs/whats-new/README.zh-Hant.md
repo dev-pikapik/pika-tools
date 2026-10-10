@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>從活動監視器拖入遊戲
+
+<sub>1.30.12 · 2026年10月10日</sub>
+
+遊戲模式現在支援從活動監視器拖入程序。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+找到遊戲程序，將其所在列拖到設定 → 遊戲中的「你的遊戲」。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+沒有普通Dock圖示的Java遊戲也能加入。之前這些列會被忽略，因為其中是程序編號和名稱，而不是檔案。
+
+遊戲會儲存供以後啟動使用，Minecraft會顯示自己的名稱。編號和名稱必須符合正在執行的程序。
+
+**試試看：** 將正在執行的Minecraft對應的java列拖到「你的遊戲」。
+
+---
+
 ## <a id="v1.30.11"></a>直接加入正在執行的遊戲
 
 <sub>1.30.11 · 2026年10月10日</sub>

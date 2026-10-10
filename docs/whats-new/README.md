@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Drag your game from Activity Monitor
+
+<sub>1.30.12 · October 10, 2026</sub>
+
+Game Mode now accepts processes dragged from Activity Monitor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Find the game’s process and drag its row onto Your games in Settings → Games.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Java games work too, even without a normal app icon in the Dock. Before, these rows were ignored because they contain a process number and name instead of a file.
+
+The game stays saved for future launches. Minecraft appears under its own name. The number and name must match a running process.
+
+**Try it:** Drag the java row for your running Minecraft onto Your games.
+
+---
+
 ## <a id="v1.30.11"></a>Add your game while it’s running
 
 <sub>1.30.11 · October 10, 2026</sub>

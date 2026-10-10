@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>गतिविधि मॉनिटर से गेम खींचकर जोड़ें
+
+<sub>1.30.12 · 10 अक्टूबर 2026</sub>
+
+गेम मोड गतिविधि मॉनिटर से खींची गई प्रक्रियाएँ स्वीकार करता है।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+गेम की प्रक्रिया ढूँढें और उसकी पंक्ति को सेटिंग्स → गेम में आपके गेम पर खींचें।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock में सामान्य आइकन के बिना Java गेम भी काम करते हैं। पहले ये पंक्तियाँ अनदेखी होती थीं क्योंकि इनमें फ़ाइल के बजाय प्रक्रिया की संख्या और नाम होते हैं।
+
+गेम अगले लॉन्च के लिए सहेजा जाता है। Minecraft अपने नाम से दिखता है। संख्या और नाम चल रही प्रक्रिया से मिलने चाहिए।
+
+**आज़माएँ:** चल रहे Minecraft की java पंक्ति को आपके गेम पर खींचें।
+
+---
+
 ## <a id="v1.30.11"></a>चलते हुए गेम को सीधे जोड़ें
 
 <sub>1.30.11 · 10 अक्टूबर 2026</sub>

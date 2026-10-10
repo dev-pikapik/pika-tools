@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>从活动监视器拖入游戏
+
+<sub>1.30.12 · 2026年10月10日</sub>
+
+游戏模式现在支持从活动监视器拖入进程。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+找到游戏进程，将其所在行拖到设置 → 游戏中的「你的游戏」。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+没有普通程序坞图标的Java游戏也能添加。之前这些行会被忽略，因为其中是进程编号和名称，而不是文件。
+
+游戏会保存供以后启动使用，Minecraft会显示自己的名称。编号和名称必须匹配正在运行的进程。
+
+**试试看：** 将正在运行的Minecraft对应的java行拖到「你的游戏」。
+
+---
+
 ## <a id="v1.30.11"></a>直接添加正在运行的游戏
 
 <sub>1.30.11 · 2026年10月10日</sub>

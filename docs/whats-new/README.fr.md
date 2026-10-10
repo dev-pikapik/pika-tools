@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Glissez votre jeu depuis Moniteur d’activité
+
+<sub>1.30.12 · 10 octobre 2026</sub>
+
+Le mode Jeu accepte les processus glissés depuis Moniteur d’activité.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Trouvez le processus du jeu et glissez sa ligne sur Vos jeux dans Réglages → Jeux.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Les jeux Java fonctionnent aussi sans icône habituelle dans le Dock. Ces lignes étaient ignorées car elles contiennent un numéro et un nom de processus au lieu d’un fichier.
+
+Le jeu reste enregistré pour les prochains lancements. Minecraft apparaît sous son nom. Le numéro et le nom doivent correspondre à un processus en cours.
+
+**Pour essayer :** Glissez la ligne java de Minecraft ouvert sur Vos jeux.
+
+---
+
 ## <a id="v1.30.11"></a>Ajoutez votre jeu pendant qu’il tourne
 
 <sub>1.30.11 · 10 octobre 2026</sub>

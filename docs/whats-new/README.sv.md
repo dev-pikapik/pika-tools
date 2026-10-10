@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Dra ditt spel från Aktivitetskontroll
+
+<sub>1.30.12 · 10 oktober 2026</sub>
+
+Spelläge tar emot processer som dras från Aktivitetskontroll.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Hitta spelets process och dra raden till Dina spel i Inställningar → Spel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Java-spel fungerar även utan en vanlig ikon i Dock. Tidigare ignorerades dessa rader eftersom de innehåller processnummer och namn i stället för en fil.
+
+Spelet sparas för nästa start. Minecraft visas med sitt eget namn. Nummer och namn måste passa en process som körs.
+
+**Prova:** Dra java-raden för ditt öppna Minecraft till Dina spel.
+
+---
+
 ## <a id="v1.30.11"></a>Lägg till ditt spel medan det körs
 
 <sub>1.30.11 · 10 oktober 2026</sub>

@@ -64,9 +64,11 @@ struct AppShelf: View {
         (try? url.resourceValues(forKeys: [.contentTypeKey]))?.contentType?.conforms(to: .applicationBundle) == true
     }
 
-    static func apps(on pasteboard: NSPasteboard, accepting accepts: (URL) -> Bool = isApp) -> [URL] {
+    static func apps(on pasteboard: NSPasteboard, accepting accepts: (URL) -> Bool = isApp, textFiles: ((String) -> [URL])? = nil) -> [URL] {
         let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL] ?? []
-        return urls.filter(accepts)
+        let processes = textFiles?(pasteboard.string(forType: .string) ?? "") ?? []
+        var seen = Set<URL>()
+        return (urls + processes).filter { accepts($0) && seen.insert($0).inserted }
     }
 }
 
@@ -115,6 +117,7 @@ private struct AppDropZone {
     let bounds: Anchor<CGRect>
     let add: ((URL) -> Void)?
     let accepts: (URL) -> Bool
+    let textFiles: ((String) -> [URL])?
 }
 
 private struct AppDropZones: PreferenceKey {
@@ -130,6 +133,11 @@ private struct AppDropTarget: Equatable {
     let frame: CGRect
     let add: ((URL) -> Void)?
     let accepts: (URL) -> Bool
+    let textFiles: ((String) -> [URL])?
+
+    func files(on board: NSPasteboard) -> [URL] {
+        AppShelf.apps(on: board, accepting: accepts, textFiles: textFiles)
+    }
 
     static func == (a: Self, b: Self) -> Bool {
         a.id == b.id && a.frame == b.frame
@@ -142,7 +150,7 @@ struct AppDropPage: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onDrop(of: [.fileURL], delegate: AppDropDelegate(targets: targets, target: $target))
+            .onDrop(of: [.fileURL, .plainText], delegate: AppDropDelegate(targets: targets, target: $target))
             .overlayPreferenceValue(AppDropZones.self) { zones in
                 GeometryReader { proxy in
                     let resolved = Self.resolve(zones, proxy)
@@ -168,9 +176,9 @@ struct AppDropPage: ViewModifier {
         for zone in zones {
             let rect = proxy[zone.bounds].insetBy(dx: -10, dy: -10)
             if let index = targets.firstIndex(where: { $0.id == zone.id }) {
-                targets[index] = AppDropTarget(id: zone.id, frame: targets[index].frame.union(rect), add: zone.add, accepts: zone.accepts)
+                targets[index] = AppDropTarget(id: zone.id, frame: targets[index].frame.union(rect), add: zone.add, accepts: zone.accepts, textFiles: zone.textFiles)
             } else {
-                targets.append(AppDropTarget(id: zone.id, frame: rect, add: zone.add, accepts: zone.accepts))
+                targets.append(AppDropTarget(id: zone.id, frame: rect, add: zone.add, accepts: zone.accepts, textFiles: zone.textFiles))
             }
         }
         return targets
@@ -188,14 +196,14 @@ private struct AppDropDelegate: DropDelegate {
     }
 
     func validateDrop(info: DropInfo) -> Bool {
-        let valid = targets.contains { $0.add != nil && !AppShelf.apps(on: NSPasteboard(name: .drag), accepting: $0.accepts).isEmpty }
+        let valid = targets.contains { $0.add != nil && !$0.files(on: NSPasteboard(name: .drag)).isEmpty }
         if !valid { target = nil }
         return valid
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
         let board = NSPasteboard(name: .drag)
-        if board.changeCount != Self.dropped, let zone = zone(info), !AppShelf.apps(on: board, accepting: zone.accepts).isEmpty {
+        if board.changeCount != Self.dropped, let zone = zone(info), !zone.files(on: board).isEmpty {
             target = zone.id
         } else {
             target = nil
@@ -211,14 +219,14 @@ private struct AppDropDelegate: DropDelegate {
         target = nil
         Self.dropped = NSPasteboard(name: .drag).changeCount
         guard let zone = zone(info), let add = zone.add else { return false }
-        let apps = AppShelf.apps(on: NSPasteboard(name: .drag), accepting: zone.accepts)
+        let apps = zone.files(on: NSPasteboard(name: .drag))
         apps.forEach(add)
         return !apps.isEmpty
     }
 }
 
 extension View {
-    func appDropZone(_ id: String, isEnabled: Bool = true, accepting accepts: @escaping (URL) -> Bool = AppShelf.isApp, add: @escaping (URL) -> Void) -> some View {
-        anchorPreference(key: AppDropZones.self, value: .bounds) { [AppDropZone(id: id, bounds: $0, add: isEnabled ? add : nil, accepts: accepts)] }
+    func appDropZone(_ id: String, isEnabled: Bool = true, accepting accepts: @escaping (URL) -> Bool = AppShelf.isApp, textFiles: ((String) -> [URL])? = nil, add: @escaping (URL) -> Void) -> some View {
+        anchorPreference(key: AppDropZones.self, value: .bounds) { [AppDropZone(id: id, bounds: $0, add: isEnabled ? add : nil, accepts: accepts, textFiles: textFiles)] }
     }
 }
