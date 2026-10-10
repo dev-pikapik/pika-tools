@@ -11,16 +11,22 @@ enum GameRules {
 
     static let minecraftLaunchers = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
 
-    static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 60, 61, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
+    static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
         + Array(15...26) + Array(28...31) + Array(53...56) + Array(100...107) + Array(150...155) + Array(165...172) + Array(192...195))
     static let retiredKeys = ["game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-control", "game-mode-layout"]
 
-    static func hotKeys(_ rules: Set<GameRule>, appSwitcher: Bool) -> [Int32] {
-        GameRule.allCases.filter(rules.contains).flatMap(\.hotKeys) + (appSwitcher && rules.contains(.appSwitcher) ? [1, 2] : [])
+    static func hotKeys(_ rules: Set<GameRule>, appSwitcher: Bool, input: [Int32] = []) -> [Int32] {
+        let keys = GameRule.allCases.filter(rules.contains).flatMap(\.hotKeys) + (appSwitcher && rules.contains(.appSwitcher) ? [1, 2] : [])
+        return keys + (rules.contains(.focusKeys) ? input.filter { !keys.contains($0) } : [])
     }
 
     static func isGameInput(_ modifiers: UInt64) -> Bool {
-        modifiers & 0x140000 == 0x40000
+        modifiers & 0x100000 == 0 || modifiers & 0x40000 != 0
+    }
+
+    static func blocksAppShortcut(key: Int, flags: CGEventFlags, rules: Set<GameRule>) -> Bool {
+        !isGameInput(flags.rawValue)
+            && (key == kVK_Tab && rules.contains(.appSwitcher) || [kVK_ANSI_H, kVK_ANSI_M].contains(key) && rules.contains(.hide))
     }
 
     static func clickFlags(_ type: CGEventType, _ flags: CGEventFlags, playing: Bool, blocksControl: Bool) -> CGEventFlags {
@@ -168,7 +174,7 @@ enum GameRule: String, CaseIterable {
         case .desktopNumbers: Array(118...149)
         case .emoji: [50]
             case .lookUp: [70]
-        case .focusKeys: Array(7...13) + [57, 159]
+        case .focusKeys: Array(7...13) + [57, 60, 61, 159]
         case .globe: [190, 196, 197] + Array(210...214) + Array(237...258)
         case .commandQ, .commandW, .swipes, .controlClick, .cursor, .display: []
         }
@@ -210,6 +216,15 @@ enum SymbolicHotKeys {
     private static let reader = dlsym(library, "CGSGetSymbolicHotKeyValue").map { unsafeBitCast($0, to: Value.self) }
 
     static var available: Bool { setter != nil && getter != nil }
+
+    static var gameInputs: [Int32] {
+        let configured = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any] ?? [:]
+        let ids = Set((0..<300).map(Int32.init) + configured.keys.compactMap(Int32.init))
+        return ids.sorted().filter { id in
+            guard let value = value(id), value.key != UInt16.max else { return false }
+            return GameRules.isGameInput(value.modifiers)
+        }
+    }
 
     static func isEnabled(_ id: Int32) -> Bool {
         getter?(id) ?? false

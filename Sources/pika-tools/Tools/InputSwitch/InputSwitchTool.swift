@@ -69,6 +69,7 @@ final class InputSwitchTool: Tool {
     }
 
     fileprivate static func select(_ direction: InputSwitchGesture.Direction) {
+        guard !GameModeTool.shared.isPlaying else { return }
         let filter = [
             kTISPropertyInputSourceCategory: kTISCategoryKeyboardInputSource as Any,
             kTISPropertyInputSourceIsSelectCapable: true,
@@ -111,7 +112,9 @@ private func inputSwitchCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .flagsChanged:
-        if let direction = tool.gesture.flagsChanged(event.flags), !GameModeTool.shared.isPlaying {
+        if GameModeTool.shared.isPlaying {
+            tool.gesture = InputSwitchGesture()
+        } else if let direction = tool.gesture.flagsChanged(event.flags) {
             DispatchQueue.main.async { InputSwitchTool.select(direction) }
         }
     default:

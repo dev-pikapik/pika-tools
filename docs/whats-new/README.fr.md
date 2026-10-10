@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Gardez Control enfoncé et continuez à jouer
+
+<sub>1.30.13 · 10 octobre 2026</sub>
+
+Control ne laisse plus le changement de langue voler la barre d’espace au jeu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Maintenez Control pour courir et appuyez sur Espace pour sauter. En mode Jeu, le changement de langue par Control+Espace ou Control+Option+Espace est suspendu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Les autres raccourcis macOS avec Control, ou Maj et Option sans Command, sont aussi suspendus, y compris vos propres choix. Appuis, relâchements et touches maintenues arrivent ensemble au jeu.
+
+Le geste de langue de pikapik et les raccourcis de fermeture utilisant ces touches ne gênent pas non plus. En quittant le jeu, les raccourcis système reviennent exactement comme avant.
+
+**Pour essayer :** Maintenez Control, déplacez-vous et appuyez plusieurs fois sur Espace. Quittez le jeu puis changez de langue comme d’habitude.
+
+---
+
 ## <a id="v1.30.12"></a>Glissez votre jeu depuis Moniteur d’activité
 
 <sub>1.30.12 · 10 octobre 2026</sub>

@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Centre de notifications, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, balayer, gestes, trackpad";
 "symbols, dictionary" = "symboles, dictionnaire";
-"keyboard focus, function keys" = "focus clavier, touches de fonction";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "focus clavier, touches de fonction, Control Espace, Ctrl, Shift, Option, disposition du clavier, source de saisie, option, maj, alt";
 "fn, globe key" = "fn, touche globe";
 "animations, motion, fast, faster, instant, speed up" = "animations, mouvement, rapide, plus rapide, instantané, accélérer";
 "autohide, hide Dock, delay, wait" = "masquer automatiquement, masquer le Dock, délai, attente";

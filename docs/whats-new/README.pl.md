@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Trzymaj Control i graj dalej
+
+<sub>1.30.13 · 10 października 2026</sub>
+
+Control nie pozwala już zmianie języka zabrać Spacji grze.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Trzymaj Control, aby biec, i naciskaj Spację, aby skakać. W trybie gry zmiana języka przez Control+Spacja i Control+Option+Spacja jest wstrzymana.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Inne skróty macOS z Control lub z Shift i Option bez Command też są wstrzymane, również własne ustawienia. Naciśnięcia, puszczanie i trzymane klawisze trafiają razem do gry.
+
+Gest zmiany języka pikapik i skróty wyjścia z modyfikatorami gry też nie przeszkadzają. Po wyjściu z gry skróty systemu wracają dokładnie do wcześniejszego stanu.
+
+**Wypróbuj:** Trzymaj Control, poruszaj się i kilka razy naciśnij Spację. Wyjdź z gry i zmień język jak zwykle.
+
+---
+
 ## <a id="v1.30.12"></a>Przeciągnij grę z Monitora aktywności
 
 <sub>1.30.12 · 10 października 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Hold Control and keep playing
+
+<sub>1.30.13 · October 10, 2026</sub>
+
+Control no longer lets language switching take Space away from your game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Hold Control to run and press Space to jump. In Game Mode, switching input languages with Control+Space or Control+Option+Space is paused.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Other macOS shortcuts using Control, or Shift and Option without Command, are paused too, including your own assignments. Key presses, releases and held modifiers keep reaching the game together.
+
+pikapik’s language gesture and quit shortcuts with game modifiers also stay out of the way. When you leave the game, your system shortcuts return exactly as they were.
+
+**Try it:** Hold Control, move and press Space several times. Then leave the game and switch languages as usual.
+
+---
+
 ## <a id="v1.30.12"></a>Drag your game from Activity Monitor
 
 <sub>1.30.12 · October 10, 2026</sub>

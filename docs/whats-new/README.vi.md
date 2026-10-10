@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Giữ Control và tiếp tục chơi
+
+<sub>1.30.13 · ngày 10 tháng 10, 2026</sub>
+
+Control không còn để chuyển ngôn ngữ lấy mất phím cách của trò chơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Giữ Control để chạy và nhấn phím cách để nhảy. Trong Chế độ trò chơi, chuyển ngôn ngữ bằng Control+phím cách và Control+Option+phím cách được tạm dừng.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Các phím tắt macOS khác dùng Control, hoặc Shift và Option không có Command, cũng tạm dừng, kể cả tổ hợp bạn tự đặt. Nhấn, thả và giữ phím vẫn cùng được truyền vào trò chơi.
+
+Cử chỉ ngôn ngữ của pikapik và phím tắt thoát dùng phím bổ trợ trò chơi cũng không can thiệp. Khi rời trò chơi, phím tắt hệ thống trở lại đúng như trước.
+
+**Thử ngay:** Giữ Control, di chuyển và nhấn phím cách vài lần. Sau đó rời trò chơi và chuyển ngôn ngữ như bình thường.
+
+---
+
 ## <a id="v1.30.12"></a>Kéo trò chơi từ Giám sát hoạt động
 
 <sub>1.30.12 · ngày 10 tháng 10, 2026</sub>

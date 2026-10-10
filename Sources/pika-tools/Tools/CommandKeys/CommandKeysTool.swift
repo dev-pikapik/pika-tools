@@ -157,7 +157,8 @@ private func commandKeysCallback(
             post(held.target, down: false, proxy)
             return nil
         }
-        if type == .keyDown, let target = tool.triggers[Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: flags.rawValue)] {
+        if type == .keyDown, !GameModeTool.shared.isPlaying || !GameRules.isGameInput(flags.rawValue),
+           let target = tool.triggers[Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: flags.rawValue)] {
             guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else { return nil }
             tool.held = (code, target)
             post(target, down: true, proxy)

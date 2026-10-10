@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, 알림 센터, 스테이지 매니저";
 "Spaces, swipe, gestures, trackpad" = "Spaces, 쓸어넘기기, 제스처, 트랙패드";
 "symbols, dictionary" = "기호, 사전";
-"keyboard focus, function keys" = "키보드 포커스, 기능 키";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "키보드 포커스, 기능 키, Control 스페이스, Ctrl, Shift, Option, 키보드 레이아웃, 입력 소스, option, shift, alt";
 "fn, globe key" = "fn, 지구본 키";
 "animations, motion, fast, faster, instant, speed up" = "애니메이션, 동작, 빠르게, 더 빠르게, 즉시, 속도 높이기";
 "autohide, hide Dock, delay, wait" = "자동으로 가리기, Dock 가리기, 지연, 대기";

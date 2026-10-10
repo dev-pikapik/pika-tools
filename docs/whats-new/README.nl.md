@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Houd Control vast en speel verder
+
+<sub>1.30.13 · 10 oktober 2026</sub>
+
+Control laat het wisselen van taal de spatiebalk niet meer van je spel afpakken.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Houd Control vast om te rennen en druk op Spatie om te springen. In Spelmodus wordt taalwisseling met Control+Spatie of Control+Option+Spatie gepauzeerd.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Andere macOS-sneltoetsen met Control, of met Shift en Option zonder Command, worden ook gepauzeerd, inclusief je eigen keuzes. Indrukken, loslaten en vastgehouden toetsen bereiken samen het spel.
+
+Ook pikapiks taalgebaar en afsluitsneltoetsen met spelmodifiers zitten niet in de weg. Wanneer je het spel verlaat, keren systeemsneltoetsen terug zoals ze waren.
+
+**Probeer het:** Houd Control vast, beweeg en druk meerdere keren op Spatie. Verlaat daarna het spel en wissel van taal zoals altijd.
+
+---
+
 ## <a id="v1.30.12"></a>Sleep je spel uit Activiteitenweergave
 
 <sub>1.30.12 · 10 oktober 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Držte Control a hrajte dál
+
+<sub>1.30.13 · 10. října 2026</sub>
+
+Control už nedovolí změně jazyka vzít hře mezerník.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Držte Control pro běh a stiskněte mezerník pro skok. V herním režimu se přepínání jazyka přes Control+mezerník a Control+Option+mezerník pozastaví.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Pozastaví se i další zkratky macOS s Control nebo se Shift a Option bez Command, včetně vlastních nastavení. Stisknutí, uvolnění a držené klávesy se dostávají do hry současně.
+
+Gesto jazyka pikapik a zkratky ukončení s herními modifikátory také neruší. Po opuštění hry se systémové zkratky vrátí přesně do původního stavu.
+
+**Vyzkoušejte:** Držte Control, pohybujte se a několikrát stiskněte mezerník. Pak opusťte hru a přepněte jazyk jako obvykle.
+
+---
+
 ## <a id="v1.30.12"></a>Přetáhněte hru z Monitoru aktivity
 
 <sub>1.30.12 · 10. října 2026</sub>

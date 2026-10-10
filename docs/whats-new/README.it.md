@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Tieni premuto Control e continua a giocare
+
+<sub>1.30.13 · 10 ottobre 2026</sub>
+
+Control non lascia più che il cambio di lingua sottragga Spazio al gioco.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Tieni Control per correre e premi Spazio per saltare. In modalità Gioco, il cambio di lingua con Control+Spazio e Control+Option+Spazio viene sospeso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Anche gli altri comandi macOS con Control, o Maiusc e Option senza Command, sono sospesi, comprese le tue assegnazioni. Pressioni, rilasci e tasti tenuti premuti arrivano insieme al gioco.
+
+Il gesto della lingua di pikapik e i comandi di uscita con modificatori di gioco non interferiscono. Quando lasci il gioco, i comandi di sistema tornano esattamente com’erano.
+
+**Provalo:** Tieni Control, muoviti e premi Spazio più volte. Poi lascia il gioco e cambia lingua come sempre.
+
+---
+
 ## <a id="v1.30.12"></a>Trascina il gioco da Monitoraggio Attività
 
 <sub>1.30.12 · 10 ottobre 2026</sub>

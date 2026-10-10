@@ -150,7 +150,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "Swipes don’t switch desktops"), synonyms: "Spaces, swipe, gestures, trackpad"),
             SettingsItem(tab: .games, title: String(localized: "Emoji don’t open"), synonyms: "symbols, dictionary"),
             SettingsItem(tab: .games, title: String(localized: "The dictionary doesn’t pop up"), synonyms: "Look Up"),
-            SettingsItem(tab: .games, title: String(localized: "The keyboard stays in the game"), synonyms: "keyboard focus, function keys"),
+            SettingsItem(tab: .games, title: String(localized: "The keyboard stays in the game"), synonyms: "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language"),
             SettingsItem(tab: .games, title: String(localized: "🌐 shortcuts are paused"), synonyms: "fn, globe key"),
             SettingsItem(tab: .games, title: String(localized: "⌃-click works as a plain click"), synonyms: "ctrl, control key, shortcuts, right-click, context menu"),
             SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),

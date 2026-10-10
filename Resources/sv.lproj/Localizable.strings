@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Notiscenter, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, svepa, gester, styrplatta";
 "symbols, dictionary" = "symboler, ordlista";
-"keyboard focus, function keys" = "tangentbordsfokus, funktionstangenter";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "tangentbordsfokus, funktionstangenter, Control Mellanslag, Ctrl, Shift, Option, tangentbordslayout, inmatningskälla, alternativ, skift, option, shift, alt";
 "fn, globe key" = "fn, jordglobstangent";
 "animations, motion, fast, faster, instant, speed up" = "animationer, rörelse, snabb, snabbare, direkt, snabba upp";
 "autohide, hide Dock, delay, wait" = "göm automatiskt, göm Dock, fördröjning, vänta";

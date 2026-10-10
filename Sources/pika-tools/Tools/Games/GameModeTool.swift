@@ -177,7 +177,7 @@ final class GameModeTool: Tool {
 
     private func enter(_ app: NSRunningApplication) {
         game = app
-        trace.disable(GameRules.hotKeys(rules, appSwitcher: tap != nil))
+        trace.disable(GameRules.hotKeys(rules, appSwitcher: tap != nil, input: SymbolicHotKeys.gameInputs))
         combos = Set(
             (HotKeyTrace.ids(trace.defaults) ?? []).compactMap(SymbolicHotKeys.value)
                 .filter { !GameRules.isGameInput($0.modifiers) }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
@@ -483,8 +483,7 @@ private func gameModeCallback(
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags
         guard tool.isPlaying else { break }
-        let blocked = flags.contains(.maskCommand) && !flags.contains(.maskControl)
-            && (key == kVK_Tab && tool.rules.contains(.appSwitcher) || [kVK_ANSI_H, kVK_ANSI_M].contains(key) && tool.rules.contains(.hide))
+        let blocked = GameRules.blocksAppShortcut(key: key, flags: flags, rules: tool.rules)
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
     case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
@@ -579,7 +578,7 @@ struct GameModePage: View {
             rules(Text("Keyboard"), [
                 Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
                 Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
-                Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(12, "⌃F1"), "…", key(57, "⌃F8")]),
+                Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(60, "⌃" + String(localized: "Space")), key(12, "⌃F1"), "…"]),
                 Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
             ])
             rules(Text("Mouse and screen"), [

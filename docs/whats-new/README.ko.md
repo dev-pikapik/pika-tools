@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Control을 누른 채 계속 플레이하세요
+
+<sub>1.30.13 · 2026년 10월 10일</sub>
+
+Control을 누를 때 언어 전환이 게임의 스페이스 키를 가로채지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Control을 누른 채 달리고 스페이스로 점프하세요. 게임 모드에서는 Control+스페이스와 Control+Option+스페이스의 언어 전환이 일시 중지돼요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Control을 쓰거나 Command 없이 Shift, Option을 쓰는 다른 macOS 단축키와 직접 설정한 조합도 일시 중지돼요. 키 누르기, 떼기, 계속 누르기가 함께 게임에 전달돼요.
+
+pikapik의 언어 전환 제스처와 게임 수정 키를 쓰는 종료 단축키도 방해하지 않아요. 게임을 떠나면 시스템 단축키가 원래대로 돌아와요.
+
+**사용해 보기:** Control을 누른 채 이동하고 스페이스를 여러 번 누르세요. 게임을 떠난 뒤 평소처럼 언어를 바꿔 보세요.
+
+---
+
 ## <a id="v1.30.12"></a>활성 상태 보기에서 게임을 드래그하세요
 
 <sub>1.30.12 · 2026년 10월 10일</sub>

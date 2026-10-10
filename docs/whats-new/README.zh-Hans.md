@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>按住Control，继续玩游戏
+
+<sub>1.30.13 · 2026年10月10日</sub>
+
+按住Control时，切换语言不再抢走游戏的空格键。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+按住Control跑动，按空格跳跃。游戏模式会暂停Control+空格和Control+Option+空格的语言切换。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+其他使用Control，或不带Command的Shift、Option组合的macOS快捷键，包括你自己设置的组合，也会暂停。按下、松开和持续按住的键会一起传给游戏。
+
+pikapik的语言切换手势和使用游戏修饰键的退出快捷键也不会干扰操作。离开游戏后，系统快捷键会恢复原样。
+
+**试试看：** 按住Control移动，多次按空格。然后离开游戏，像往常一样切换语言。
+
+---
+
 ## <a id="v1.30.12"></a>从活动监视器拖入游戏
 
 <sub>1.30.12 · 2026年10月10日</sub>

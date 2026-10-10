@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Tahan Control dan terus bermain
+
+<sub>1.30.13 · 10 Oktober 2026</sub>
+
+Control tidak lagi membiarkan pergantian bahasa mengambil Spasi dari game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Tahan Control untuk berlari dan tekan Spasi untuk melompat. Dalam Mode Game, pergantian bahasa dengan Control+Spasi dan Control+Option+Spasi dijeda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Pintasan macOS lain dengan Control, atau Shift dan Option tanpa Command, juga dijeda, termasuk pilihan sendiri. Tekanan, pelepasan dan tombol yang ditahan tetap mencapai game bersama.
+
+Gestur bahasa pikapik dan pintasan keluar dengan pengubah game juga tidak mengganggu. Saat meninggalkan game, pintasan sistem kembali persis seperti sebelumnya.
+
+**Coba:** Tahan Control, bergerak dan tekan Spasi beberapa kali. Lalu tinggalkan game dan ganti bahasa seperti biasa.
+
+---
+
 ## <a id="v1.30.12"></a>Seret game dari Monitor Aktivitas
 
 <sub>1.30.12 · 10 Oktober 2026</sub>

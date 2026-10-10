@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Berichtencentrum, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, vegen, gebaren, trackpad";
 "symbols, dictionary" = "symbolen, woordenboek";
-"keyboard focus, function keys" = "toetsenbordfocus, functietoetsen";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "toetsenbordfocus, functietoetsen, Control Spatie, Ctrl, Shift, Option, toetsenbordindeling, invoerbron, option, shift, alt";
 "fn, globe key" = "fn, wereldbol-toets";
 "animations, motion, fast, faster, instant, speed up" = "animaties, beweging, snel, sneller, direct, versnellen";
 "autohide, hide Dock, delay, wait" = "automatisch verbergen, Dock verbergen, vertraging, wachten";
