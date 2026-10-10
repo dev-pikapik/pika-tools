@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>全螢幕歸你，球也守規矩了
+
+<sub>1.30.9 · 2026年10月10日</sub>
+
+寵物不會再在全螢幕影片裡冒出來，球也不會再撞上根本不存在的東西。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，你全螢幕看影片時，寵物偶爾會冒出來。現在 pikapik 會直接問 macOS 螢幕是否處於全螢幕，並在切換結束後再確認一次。在你離開全螢幕之前，寵物和球都會一直躲著。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+球不會再從空氣中彈回來了。它會直接飛過 Dock，不再撞上上方看不見的牆。現在只有指標真正碰到球時，滑鼠才會打中它。輕輕一碰球會滾動，快速一揮球就飛起來。如果寵物或球躲在視窗後面，在那個視窗上移動滑鼠也不會打擾它們。
+
+在桌面上拖移檔案不會再幫寵物搭出台階了，只有選取框才會。
+
+**試試看：** 全螢幕看一段影片，用空白鍵暫停幾次，寵物不會出現。然後用滑鼠朝球一揮。
+
+---
+
 ## <a id="v1.30.8"></a>玩遊戲時，螢幕角落安安靜靜
 
 <sub>1.30.8 · 2026年10月10日</sub>

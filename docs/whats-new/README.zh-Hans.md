@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>全屏归你，球也守规矩了
+
+<sub>1.30.9 · 2026年10月10日</sub>
+
+宠物不会再在全屏视频里冒出来，球也不会再撞上根本不存在的东西。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，你全屏看视频时，宠物偶尔会冒出来。现在 pikapik 会直接问 macOS 屏幕是否处于全屏，并在切换结束后再确认一次。在你退出全屏之前，宠物和球都会一直藏着。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+球不会再从空气中弹回来了。它会直接飞过程序坞，不再撞上上方看不见的墙。现在只有指针真正碰到球时，鼠标才会击中它。轻轻一碰球会滚动，快速一挥球就飞起来。如果宠物或球躲在窗口后面，在那个窗口上移动鼠标也不会打扰它们。
+
+在桌面上拖动文件不会再给宠物搭出台阶了，只有选择框才会。
+
+**试试看：** 全屏看一段视频，用空格键暂停几次，宠物不会出现。然后用鼠标朝球一挥。
+
+---
+
 ## <a id="v1.30.8"></a>玩游戏时，屏幕角落安安静静
 
 <sub>1.30.8 · 2026年10月10日</sub>

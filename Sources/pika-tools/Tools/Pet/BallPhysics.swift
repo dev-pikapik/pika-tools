@@ -10,6 +10,7 @@ struct BallPhysics {
     static let chip: CGFloat = 0.3
     static let fastest: CGFloat = 1400
     static let nudge: CGFloat = 120
+    static let reach: CGFloat = 6
     static let tick = 1.0 / 240
 
     private(set) var bounds: CGRect
@@ -126,17 +127,21 @@ struct BallPhysics {
         center.x += vx * h
         center.y += vy * h
         angle += spin * h
-        if case let (b0, b1)? = pointer, hypot(b1.midX - b0.midX, b1.midY - b0.midY) >= Self.nudge * h, let push = hit(a0, b0, b1, h) {
+        if case let (b0, b1)? = pointer, let push = poke(a0, Self.tip(b0), Self.tip(b1), h) {
             nudged = true
             if abs(push.0) > abs(push.1), frame.minY - floor < 2 { vy += Self.chip * abs(push.0) }
             (vx, vy) = Trail.limit(vx, vy, Self.fastest)
+            if !thrown, vy > 0, center.y + Self.radius + vy * vy / (2 * PetPhysics.gravity) > min(bounds.maxY, roof) { thrown = true }
         }
         if over, vy < 0 { over = false }
         if !over, case let (p0, p1)? = body, let push = hit(a0, p0, p1, h) {
             impact = max(impact, hypot(push.0, push.1))
         }
         if let ledge { collide(ledge) }
-        if !thrown, let dock { collide(CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: max(bounds.maxY - dock.maxY, 0) + 2 * Self.radius)) }
+        if !thrown, let dock, a0.maxY <= dock.maxY + 0.5, center.y + Self.radius > dock.maxY, center.x + Self.radius > dock.minX, center.x - Self.radius < dock.maxX {
+            center.y = dock.maxY - Self.radius
+            if vy > 0 { vy = -vy * Self.bounce }
+        }
         let top = thrown ? bounds.maxY : min(bounds.maxY, roof)
         if center.y + Self.radius > top {
             center.y = top - Self.radius
@@ -173,6 +178,29 @@ struct BallPhysics {
         if n.1 > 0 { center.y = max(center.y, b1.maxY + Self.radius) }
         if n.1 < 0 { center.y = min(center.y, b1.minY - Self.radius) }
         let rn = (vx - (b1.midX - b0.midX) / h) * n.0 + (vy - (b1.midY - b0.midY) / h) * n.1
+        guard rn < 0 else { return (0, 0) }
+        let push = (-(1 + Self.springy) * rn * n.0, -(1 + Self.springy) * rn * n.1)
+        vx += push.0
+        vy += push.1
+        return push
+    }
+
+    static func tip(_ cursor: CGRect) -> CGPoint {
+        CGPoint(x: cursor.minX + 5, y: cursor.maxY - 8)
+    }
+
+    private mutating func poke(_ a0: CGRect, _ c0: CGPoint, _ c1: CGPoint, _ h: CGFloat) -> (CGFloat, CGFloat)? {
+        let u = ((c1.x - c0.x) / h, (c1.y - c0.y) / h)
+        guard hypot(u.0, u.1) >= Self.nudge else { return nil }
+        let r = Self.radius + Self.reach
+        let p = (a0.midX - c0.x, a0.midY - c0.y), d = (center.x - c1.x - p.0, center.y - c1.y - p.1)
+        let a = d.0 * d.0 + d.1 * d.1, b = p.0 * d.0 + p.1 * d.1, c = p.0 * p.0 + p.1 * p.1 - r * r
+        guard c > 0, b < 0, b * b >= a * c else { return nil }
+        let t = (-b - (b * b - a * c).squareRoot()) / a
+        guard t <= 1 else { return nil }
+        let n = ((p.0 + d.0 * t) / r, (p.1 + d.1 * t) / r)
+        center = CGPoint(x: c1.x + n.0 * r, y: c1.y + n.1 * r)
+        let rn = (vx - u.0) * n.0 + (vy - u.1) * n.1
         guard rn < 0 else { return (0, 0) }
         let push = (-(1 + Self.springy) * rn * n.0, -(1 + Self.springy) * rn * n.1)
         vx += push.0

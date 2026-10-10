@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Celá obrazovka patří vám a míček hraje fér
+
+<sub>1.30.9 · 10. října 2026</sub>
+
+Mazlíček už nevykukuje do videa na celé obrazovce a míček nenaráží do věcí, které tam nejsou.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív, když jste se dívali na video na celé obrazovce, mazlíček občas vykoukl. Teď se pikapik ptá přímo macOS, jestli je na obrazovce něco na celou obrazovku, a po dokončení přepnutí to zkontroluje ještě jednou. Mazlíček a míček zůstanou schovaní, dokud celou obrazovku neopustíte.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Míček se už neodráží od prázdného vzduchu. Přeletí přes Dock, místo aby narazil do neviditelné zdi. Myš teď do míčku trefí, jen když se ho ukazatel opravdu dotkne. Lehký dotek ho rozkutálí, rychlé máchnutí ho pošle do vzduchu. A když se mazlíček nebo míček schovává za oknem, myš nad tím oknem je nechá být.
+
+Přetažení souboru přes plochu už mazlíčkovi nepostaví schůdek. To dokáže jen výběrový rámeček.
+
+**Vyzkoušejte:** Pusťte si video na celou obrazovku a několikrát ho mezerníkem pozastavte. Mazlíček se neukáže. Pak máchněte myší do míčku.
+
+---
+
 ## <a id="v1.30.8"></a>Rohy obrazovky při hraní mlčí
 
 <sub>1.30.8 · 10. října 2026</sub>

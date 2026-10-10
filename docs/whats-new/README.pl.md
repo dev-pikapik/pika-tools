@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Pełny ekran jest twój, a piłka gra uczciwie
+
+<sub>1.30.9 · 10 października 2026</sub>
+
+Zwierzak nie wyskakuje już w filmie na pełnym ekranie, a piłka nie obija się o rzeczy, których nie ma.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej podczas oglądania filmu na pełnym ekranie zwierzak czasem się pojawiał. Teraz pikapik pyta macOS wprost, czy na ekranie jest coś otwarte na pełnym ekranie, i sprawdza jeszcze raz, gdy przełączanie się skończy. Zwierzak i piłka zostają ukryte, dopóki nie wyjdziesz z pełnego ekranu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Piłka nie odbija się już od pustego powietrza. Przelatuje nad Dockiem, zamiast uderzać w niewidzialną ścianę. Mysz trafia teraz w piłkę tylko wtedy, gdy kursor naprawdę jej dotyka. Lekkie dotknięcie ją toczy, szybki ruch posyła ją w powietrze. A jeśli zwierzak lub piłka chowają się za oknem, mysz nad tym oknem zostawia je w spokoju.
+
+Przeciąganie pliku po biurku nie buduje już zwierzakowi stopnia. Robi to tylko ramka zaznaczenia.
+
+**Wypróbuj:** Obejrzyj film na pełnym ekranie i kilka razy zatrzymaj go spacją. Zwierzak się nie pokaże. Potem machnij myszą w piłkę.
+
+---
+
 ## <a id="v1.30.8"></a>Rogi ekranu milczą, gdy grasz
 
 <sub>1.30.8 · 10 października 2026</sub>

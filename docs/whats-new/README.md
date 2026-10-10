@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Full screen stays yours, and the ball plays fair
+
+<sub>1.30.9 · October 10, 2026</sub>
+
+Your pet no longer slips into a full-screen video, and the ball stops bumping into things that aren’t there.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, while you watched a full-screen video, your pet could pop up now and then. Now pikapik asks macOS directly whether a screen is in full screen and checks once more when the switch is over. Your pet and its ball stay hidden until you leave full screen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+The ball no longer bounces off empty air. It flies over the Dock instead of hitting an invisible wall above it. The mouse now hits the ball only when the pointer really touches it. A light touch rolls it, a quick flick sends it flying. And if your pet or its ball is hiding behind a window, moving the mouse over that window leaves them alone.
+
+Dragging a file across the desktop no longer builds a step for your pet. Only a selection frame does.
+
+**Try it:** Watch a video in full screen and pause it with Space a few times. Your pet stays out of sight. Then flick the mouse at the ball.
+
+---
+
 ## <a id="v1.30.8"></a>Screen corners stay quiet while you play
 
 <sub>1.30.8 · October 10, 2026</sub>

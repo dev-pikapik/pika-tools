@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>전체 화면은 온전히 내 것, 공도 공정하게
+
+<sub>1.30.9 · 2026년 10월 10일</sub>
+
+전체 화면 영상에 펫이 더 이상 끼어들지 않고, 공도 없는 것에 부딪히지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 전체 화면으로 영상을 볼 때 펫이 가끔 튀어나왔어요. 이제 pikapik이 화면이 전체 화면인지 macOS에 직접 묻고, 전환이 끝나면 한 번 더 확인해요. 전체 화면에서 나올 때까지 펫과 공은 숨어 있어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+공이 빈 공간에서 튕겨 나오지 않아요. Dock 위의 보이지 않는 벽에 부딪히지 않고 그대로 넘어가요. 이제 마우스는 포인터가 공에 정말 닿을 때만 공을 쳐요. 살짝 닿으면 굴러가고, 빠르게 휘두르면 날아가요. 펫이나 공이 창 뒤에 숨어 있으면, 그 창 위에서 마우스를 움직여도 건드리지 않아요.
+
+데스크탑에서 파일을 드래그해도 더 이상 펫의 발판이 생기지 않아요. 발판은 선택 상자로만 생겨요.
+
+**사용해 보기:** 영상을 전체 화면으로 보면서 스페이스로 몇 번 일시 정지해 보세요. 펫은 나오지 않아요. 그다음 마우스로 공을 휙 쳐 보세요.
+
+---
+
 ## <a id="v1.30.8"></a>게임하는 동안 화면 모서리가 조용해요
 
 <sub>1.30.8 · 2026년 10월 10일</sub>

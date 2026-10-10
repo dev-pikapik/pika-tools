@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>La pantalla completa es tuya, y la pelota juega limpio
+
+<sub>1.30.9 · 10 de octubre de 2026</sub>
+
+Tu mascota ya no se cuela en un video a pantalla completa, y la pelota ya no choca con cosas que no están ahí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, mientras veías un video a pantalla completa, tu mascota podía asomarse de vez en cuando. Ahora pikapik le pregunta directamente a macOS si una pantalla está a pantalla completa y vuelve a comprobarlo cuando termina el cambio. Tu mascota y su pelota se quedan escondidas hasta que salgas de la pantalla completa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La pelota ya no rebota contra el aire. Pasa volando por encima del Dock en vez de chocar con una pared invisible. El ratón ahora golpea la pelota solo cuando el puntero de verdad la toca. Un toque suave la hace rodar, un movimiento rápido la manda a volar. Y si tu mascota o su pelota se esconden detrás de una ventana, el ratón sobre esa ventana las deja en paz.
+
+Arrastrar un archivo por el escritorio ya no le construye un escalón a tu mascota. Solo lo hace un marco de selección.
+
+**Pruébalo:** Mira un video a pantalla completa y páusalo varias veces con la barra espaciadora. Tu mascota no aparece. Luego lanza el ratón contra la pelota.
+
+---
+
 ## <a id="v1.30.8"></a>Las esquinas de la pantalla se quedan quietas mientras juegas
 
 <sub>1.30.8 · 10 de octubre de 2026</sub>

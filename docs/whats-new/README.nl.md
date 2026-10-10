@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Volledig scherm is van jou, en de bal speelt eerlijk
+
+<sub>1.30.9 · 10 oktober 2026</sub>
+
+Je huisdiertje glipt niet meer in een video op volledig scherm, en de bal botst niet meer tegen dingen die er niet zijn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Vroeger kon je huisdiertje af en toe opduiken terwijl je een video op volledig scherm keek. Nu vraagt pikapik macOS rechtstreeks of een scherm op volledig scherm staat, en kijkt nog een keer als de overgang klaar is. Je huisdiertje en de bal blijven verstopt tot je volledig scherm verlaat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+De bal stuitert niet meer tegen lege lucht. Hij vliegt over het Dock heen in plaats van tegen een onzichtbare muur te botsen. De muis raakt de bal nu alleen als de aanwijzer hem echt aanraakt. Een lichte tik laat hem rollen, een snelle zwaai laat hem vliegen. En als je huisdiertje of de bal zich achter een venster verstopt, laat de muis boven dat venster ze met rust.
+
+Een bestand over het bureaublad slepen bouwt geen trapje meer voor je huisdiertje. Dat doet alleen een selectiekader.
+
+**Probeer het:** Kijk een video op volledig scherm en pauzeer hem een paar keer met de spatiebalk. Je huisdiertje blijft uit beeld. Zwaai daarna met de muis naar de bal.
+
+---
+
 ## <a id="v1.30.8"></a>Schermhoeken blijven stil terwijl je speelt
 
 <sub>1.30.8 · 10 oktober 2026</sub>

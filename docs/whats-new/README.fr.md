@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Le plein écran est à vous, et la balle joue franc jeu
+
+<sub>1.30.9 · 10 octobre 2026</sub>
+
+Votre compagnon ne se glisse plus dans une vidéo en plein écran, et la balle ne se cogne plus contre des choses qui n’existent pas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, pendant une vidéo en plein écran, votre compagnon pouvait surgir de temps en temps. Désormais, pikapik demande directement à macOS si un écran est en plein écran, et vérifie encore une fois quand la transition est finie. Votre compagnon et sa balle restent cachés jusqu’à ce que vous quittiez le plein écran.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+La balle ne rebondit plus sur du vide. Elle passe au-dessus du Dock au lieu de heurter un mur invisible. La souris ne frappe la balle que si le pointeur la touche vraiment. Un léger contact la fait rouler, un geste vif la fait s’envoler. Et si votre compagnon ou sa balle se cache derrière une fenêtre, la souris au-dessus de cette fenêtre les laisse tranquilles.
+
+Faire glisser un fichier sur le bureau ne construit plus de marche pour votre compagnon. Seul un cadre de sélection le fait.
+
+**Pour essayer :** Regardez une vidéo en plein écran et mettez-la en pause plusieurs fois avec la barre d’espace. Votre compagnon reste invisible. Puis donnez un coup de souris dans la balle.
+
+---
+
 ## <a id="v1.30.8"></a>Les coins de l’écran restent calmes pendant que vous jouez
 
 <sub>1.30.8 · 10 octobre 2026</sub>

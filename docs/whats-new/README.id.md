@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Layar penuh milikmu, dan bolanya main jujur
+
+<sub>1.30.9 · 10 Oktober 2026</sub>
+
+Peliharaanmu tak lagi muncul di video layar penuh, dan bolanya tak lagi menabrak hal yang tidak ada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, saat kamu menonton video layar penuh, peliharaanmu kadang muncul. Sekarang pikapik bertanya langsung ke macOS apakah sebuah layar sedang dalam mode layar penuh, lalu memeriksa sekali lagi setelah peralihannya selesai. Peliharaanmu dan bolanya tetap bersembunyi sampai kamu keluar dari layar penuh.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Bola tak lagi memantul dari udara kosong. Ia terbang melewati Dock alih-alih menabrak dinding tak terlihat di atasnya. Mouse sekarang mengenai bola hanya saat penunjuk benar-benar menyentuhnya. Sentuhan ringan membuatnya menggelinding, ayunan cepat membuatnya terbang. Dan kalau peliharaanmu atau bolanya bersembunyi di balik jendela, mouse di atas jendela itu tidak mengganggu mereka.
+
+Menyeret file di desktop tak lagi membuat pijakan untuk peliharaanmu. Hanya bingkai pilihan yang melakukannya.
+
+**Coba:** Tonton video dalam layar penuh dan jeda beberapa kali dengan Spasi. Peliharaanmu tidak muncul. Lalu sentil bola dengan mouse.
+
+---
+
 ## <a id="v1.30.8"></a>Sudut layar tetap tenang saat kamu bermain
 
 <sub>1.30.8 · 10 Oktober 2026</sub>

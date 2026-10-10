@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Ecranul complet e al tău, iar mingea joacă cinstit
+
+<sub>1.30.9 · 10 octombrie 2026</sub>
+
+Animăluțul nu mai apare într-un video pe tot ecranul, iar mingea nu se mai lovește de lucruri care nu există.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, cât te uitai la un video pe tot ecranul, animăluțul mai apărea din când în când. Acum pikapik întreabă direct macOS dacă pe un ecran e deschis ceva pe tot ecranul și mai verifică o dată după ce trecerea se termină. Animăluțul și mingea rămân ascunse până ieși din ecranul complet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Mingea nu mai ricoșează din aer. Zboară peste Dock în loc să se lovească de un perete invizibil. Mouse-ul lovește acum mingea doar când cursorul o atinge cu adevărat. O atingere ușoară o rostogolește, o mișcare rapidă o trimite în zbor. Iar dacă animăluțul sau mingea se ascund după o fereastră, mouse-ul de deasupra ferestrei îi lasă în pace.
+
+Când tragi un fișier pe desktop, animăluțul nu mai primește o treaptă. Doar un cadru de selecție face asta.
+
+**Încearcă:** Uită-te la un video pe tot ecranul și pune-l pe pauză de câteva ori cu tasta Space. Animăluțul nu apare. Apoi lovește mingea cu o mișcare de mouse.
+
+---
+
 ## <a id="v1.30.8"></a>Colțurile ecranului stau liniștite cât joci
 
 <sub>1.30.8 · 10 octombrie 2026</sub>

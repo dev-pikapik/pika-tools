@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Toàn màn hình là của bạn, và quả bóng chơi đẹp
+
+<sub>1.30.9 · ngày 10 tháng 10, 2026</sub>
+
+Thú cưng không còn chui vào video toàn màn hình, và quả bóng không còn va vào những thứ không hề có.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, khi bạn xem video toàn màn hình, thú cưng thỉnh thoảng lại ló ra. Giờ pikapik hỏi thẳng macOS xem màn hình có đang ở chế độ toàn màn hình không, và kiểm tra lại một lần nữa khi chuyển xong. Thú cưng và quả bóng sẽ ẩn cho đến khi bạn thoát toàn màn hình.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Quả bóng không còn nảy ra từ khoảng không. Nó bay qua Dock thay vì đập vào một bức tường vô hình phía trên. Giờ chuột chỉ đánh trúng quả bóng khi con trỏ thật sự chạm vào nó. Chạm nhẹ thì bóng lăn, vung nhanh thì bóng bay. Còn nếu thú cưng hoặc quả bóng đang trốn sau một cửa sổ, chuột di trên cửa sổ đó sẽ để yên cho chúng.
+
+Kéo một tệp trên màn hình nền không còn tạo bậc thang cho thú cưng nữa. Chỉ khung chọn mới làm được điều đó.
+
+**Thử ngay:** Xem một video toàn màn hình và nhấn phím cách để tạm dừng vài lần. Thú cưng sẽ không xuất hiện. Sau đó vung chuột vào quả bóng.
+
+---
+
 ## <a id="v1.30.8"></a>Góc màn hình yên lặng khi bạn chơi
 
 <sub>1.30.8 · ngày 10 tháng 10, 2026</sub>

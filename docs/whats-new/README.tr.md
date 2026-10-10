@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.9"></a>Tam ekran senin, top da kurallara uyuyor
+
+<sub>1.30.9 · 10 Ekim 2026</sub>
+
+Evcil dostun artık tam ekran videoya karışmıyor, top da orada olmayan şeylere çarpmıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eskiden tam ekran video izlerken evcil dostun arada bir ortaya çıkabiliyordu. Artık pikapik bir ekranın tam ekranda olup olmadığını doğrudan macOS’e soruyor ve geçiş bitince bir kez daha bakıyor. Tam ekrandan çıkana kadar evcil dostun ve topu saklı kalıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Top artık boşluktan sekmiyor. Dock’un üstündeki görünmez bir duvara çarpmak yerine üzerinden uçup geçiyor. Fare artık topa yalnızca imleç ona gerçekten dokunduğunda vuruyor. Hafif bir dokunuş topu yuvarlıyor, hızlı bir hamle onu uçuruyor. Evcil dostun ya da topu bir pencerenin arkasına saklandıysa, o pencerenin üstündeki fare onlara dokunmuyor.
+
+Masaüstünde bir dosyayı sürüklemek artık evcil dostuna basamak kurmuyor. Bunu yalnızca bir seçim çerçevesi yapıyor.
+
+**Deneyin:** Tam ekran bir video izle ve birkaç kez boşluk tuşuyla durdur. Evcil dostun görünmeyecek. Sonra fareyle topa hızlıca vur.
+
+---
+
 ## <a id="v1.30.8"></a>Oyun oynarken ekran köşeleri sessiz kalıyor
 
 <sub>1.30.8 · 10 Ekim 2026</sub>
