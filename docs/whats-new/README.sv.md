@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Språkgester i spel
+
+<sub>1.31.1 · 11 oktober 2026</sub>
+
+Enkelt som standard, med hela systemkatalogen när du behöver den.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Språkgesten i pikapik fungerar i spelet även när macOS språkkortkommandon saknar tilldelning eller är avstängda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatiskt pausar åtgärder som öppnar fönster eller flyttar fokus. En kort avsiktlig språkgenväg byter källa utan systemfönster. Nedhållna rörelsetangenter går först, så att springa och hoppa inte byter språk av misstag.
+
+Varje åtgärd kan ändras i den sökbara katalogen. Språk kan bytas i bakgrunden; andra åtgärder kan pausas eller tillåtas normalt. Valen synkroniseras. Andra appar som bevakar tangenter visas separat. Tvångsavsluta är fortfarande tillgängligt.
+
+**Prova:** Håll ned ⌥ och tryck på ⇧: nästa språk. Håll ned ⇧ och tryck på ⌥: föregående
+
+---
+
 ## <a id="v1.31.0"></a>Spelläge känner till Macens genvägar
 
 <sub>1.31.0 · 11 oktober 2026</sub>

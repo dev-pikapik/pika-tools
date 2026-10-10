@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Gesti della lingua nei giochi
+
+<sub>1.31.1 · 11 ottobre 2026</sub>
+
+Semplice per impostazione predefinita, con il catalogo completo quando serve.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Il gesto della lingua di pikapik funziona nel gioco anche se le scorciatoie della lingua di macOS non sono assegnate o sono disattivate.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatico sospende le azioni che aprono finestre o spostano il focus. Un comando della lingua breve e intenzionale cambia la sorgente senza una finestra di sistema. I tasti di movimento tenuti premuti hanno priorità, così correre e saltare non cambiano lingua per sbaglio.
+
+Ogni azione si regola nel catalogo con ricerca. La lingua può cambiare in background; le altre azioni possono essere sospese o consentite normalmente. Le scelte vengono sincronizzate. Le altre app che osservano i tasti compaiono a parte. Uscita forzata resta disponibile.
+
+**Provalo:** Tieni premuto ⌥ e premi ⇧: lingua successiva. Tieni premuto ⇧ e premi ⌥: precedente
+
+---
+
 ## <a id="v1.31.0"></a>La modalità Gioco conosce i comandi del Mac
 
 <sub>1.31.0 · 11 ottobre 2026</sub>

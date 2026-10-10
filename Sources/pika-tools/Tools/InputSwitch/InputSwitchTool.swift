@@ -98,7 +98,7 @@ private func inputSwitchCallback(
     case .flagsChanged:
         if let direction = tool.gesture.flagsChanged(event.flags) {
             if GameModeTool.shared.isPlaying {
-                if GameModeTool.shared.allowsLanguageGesture { DispatchQueue.main.async { InputSwitchTool.selectInGame(direction) } }
+                if GameModeTool.shared.allowsLanguageGesture(flags: event.flags, at: event.timestamp) { DispatchQueue.main.async { InputSwitchTool.selectInGame(direction) } }
             } else {
                 DispatchQueue.main.async { InputSwitchTool.select(direction) }
             }

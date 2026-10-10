@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Language gestures in games
+
+<sub>1.31.1 · October 11, 2026</sub>
+
+Simple by default, with the full system catalogue when you need it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+pikapik’s language gesture works in games even when macOS language shortcuts are unassigned or turned off.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatic pauses actions that open windows or move focus. A quick deliberate language shortcut switches the input source silently. Held movement keys keep their priority, so running and jumping don’t change the language by accident.
+
+Each action can be adjusted in the searchable catalogue. Language actions can run in the background; other actions can be paused or allowed normally. Choices sync with your settings. Other apps watching the keyboard appear separately, and Force Quit stays available.
+
+**Try it:** Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous
+
+---
+
 ## <a id="v1.31.0"></a>Game Mode knows your Mac’s shortcuts
 
 <sub>1.31.0 · October 11, 2026</sub>

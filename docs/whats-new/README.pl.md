@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Gest zmiany języka w grze
+
+<sub>1.31.1 · 11 października 2026</sub>
+
+Domyślnie prosto, z pełnym katalogiem systemowym w razie potrzeby.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Gest zmiany języka pikapik działa w grze nawet wtedy, gdy skróty językowe macOS nie są przypisane lub są wyłączone.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatycznie wstrzymuje akcje otwierające okna lub przenoszące fokus. Krótki, celowy skrót języka zmienia źródło bez okna systemowego. Trzymane klawisze ruchu mają priorytet, więc bieganie i skoki nie zmieniają języka przypadkiem.
+
+Każdą akcję można ustawić w przeszukiwanym katalogu. Język może zmieniać się w tle; inne akcje można wstrzymać lub pozwolić im działać normalnie. Wybory się synchronizują. Inne aplikacje obserwujące klawisze są osobno, a Wymuś koniec pozostaje dostępne.
+
+**Wypróbuj:** Przytrzymaj ⌥ i naciśnij ⇧: następny język. Przytrzymaj ⇧ i naciśnij ⌥: poprzedni
+
+---
+
 ## <a id="v1.31.0"></a>Tryb gry zna skróty Twojego Maca
 
 <sub>1.31.0 · 11 października 2026</sub>

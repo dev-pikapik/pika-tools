@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Gestos de idioma nos jogos
+
+<sub>1.31.1 · 11 de outubro de 2026</sub>
+
+Simples por padrão, com o catálogo completo do sistema quando precisar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+O gesto de idioma do pikapik funciona no jogo mesmo quando os atalhos de idioma do macOS não estão definidos ou estão desativados.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automático pausa ações que abrem janelas ou mudam o foco. Um atalho de idioma rápido e intencional troca a fonte sem janela do sistema. Teclas de movimento mantidas têm prioridade para que correr e pular não troquem o idioma por acidente.
+
+Cada ação pode ser ajustada no catálogo com busca. O idioma pode mudar em segundo plano; outras ações podem ser pausadas ou permitidas normalmente. As escolhas sincronizam. Outros apps observando o teclado aparecem à parte. Forçar Encerrar continua disponível.
+
+**Experimente:** Segure ⌥ e toque em ⇧: próximo idioma. Segure ⇧ e toque em ⌥: anterior
+
+---
+
 ## <a id="v1.31.0"></a>O Modo Jogo conhece os atalhos do seu Mac
 
 <sub>1.31.0 · 11 de outubro de 2026</sub>

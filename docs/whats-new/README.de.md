@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.1"></a>Sprachgesten im Spiel
+
+<sub>1.31.1 · 11. Oktober 2026</sub>
+
+Standardmäßig einfach, mit dem vollständigen Systemkatalog bei Bedarf.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
+
+Die Sprachgeste von pikapik funktioniert im Spiel auch dann, wenn die macOS-Sprachkurzbefehle nicht belegt oder ausgeschaltet sind.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatisch pausiert Aktionen, die Fenster öffnen oder den Fokus wechseln. Ein kurzes bewusstes Sprachkürzel wechselt die Eingabequelle ohne Systemfenster. Gehaltene Bewegungstasten haben Vorrang, damit Rennen und Springen nicht versehentlich die Sprache ändern.
+
+Jede Aktion lässt sich im durchsuchbaren Katalog einstellen. Sprachaktionen können im Hintergrund laufen; andere Aktionen lassen sich pausieren oder normal erlauben. Die Auswahl wird synchronisiert. Andere Apps mit Tastenzugriff erscheinen separat. Sofort beenden bleibt verfügbar.
+
+**Ausprobieren:** ⌥ halten und ⇧ tippen: nächste Sprache. ⇧ halten und ⌥ tippen: vorherige
+
+---
+
 ## <a id="v1.31.0"></a>Der Spielmodus kennt die Kürzel deines Macs
 
 <sub>1.31.0 · 11. Oktober 2026</sub>
