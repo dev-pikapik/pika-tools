@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Screen corners stay quiet while you play
+
+<sub>1.30.8 · October 10, 2026</sub>
+
+In Game Mode, the mouse at the edges and corners of the screen no longer sets off hot corners or pulls out a hidden Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Before, while you played, moving the mouse into a corner or to the edge of the screen could set off a hot corner or pull out a hidden Dock right in the middle of a game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Now Game Mode switches hot corners and the hidden Dock off while you play. A few seconds after you leave the game, or when you quit pikapik, they come back exactly as they were.
+
+And the pointer no longer stutters at the edge of the game’s screen.
+
+**Try it:** Turn on Game Mode, start a game, and move the mouse into a corner of the screen. Nothing pops up.
+
+---
+
 ## <a id="v1.30.7"></a>Your pet stays out of your video
 
 <sub>1.30.7 · October 10, 2026</sub>

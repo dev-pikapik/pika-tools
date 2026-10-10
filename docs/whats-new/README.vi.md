@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Góc màn hình yên lặng khi bạn chơi
+
+<sub>1.30.8 · ngày 10 tháng 10, 2026</sub>
+
+Ở Chế độ trò chơi, đưa chuột ra mép và góc màn hình không còn kích hoạt góc nóng hay kéo Dock đang ẩn ra nữa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Trước đây, giữa ván chơi, chuột chạm góc hay mép màn hình có thể kích hoạt góc nóng hoặc kéo Dock đang ẩn ra.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Giờ đây, Chế độ trò chơi tắt góc nóng và Dock ẩn trong lúc bạn chơi. Vài giây sau khi bạn rời game, hoặc khi thoát pikapik, chúng trở lại y như cũ.
+
+Và con trỏ không còn giật ở mép màn hình đang chạy game.
+
+**Thử ngay:** Bật Chế độ trò chơi, mở một game rồi đưa chuột vào góc màn hình. Không có gì bật ra.
+
+---
+
 ## <a id="v1.30.7"></a>Thú cưng không còn chen vào video của bạn
 
 <sub>1.30.7 · ngày 10 tháng 10, 2026</sub>

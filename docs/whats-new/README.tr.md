@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Oyun oynarken ekran köşeleri sessiz kalıyor
+
+<sub>1.30.8 · 10 Ekim 2026</sub>
+
+Oyun Modu’nda fareyi ekranın kenarlarına ve köşelerine götürmek artık etkin köşeleri tetiklemiyor ve gizli Dock’u çıkarmıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Önceden oyunun ortasında fare ekranın bir köşesine ya da kenarına gidince etkin bir köşe tetiklenebiliyor ya da gizli Dock açılabiliyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Artık Oyun Modu, sen oynarken etkin köşeleri ve gizli Dock’u kapatıyor. Oyundan çıktıktan birkaç saniye sonra ya da pikapik’i kapattığında tam eskisi gibi geri geliyorlar.
+
+Üstelik imleç oyunun olduğu ekranın kenarında artık takılmıyor.
+
+**Deneyin:** Oyun Modu’nu aç, bir oyun başlat ve fareyi ekranın bir köşesine götür. Hiçbir şey açılmaz.
+
+---
+
 ## <a id="v1.30.7"></a>Evcil dostun artık videonun önüne çıkmıyor
 
 <sub>1.30.7 · 10 Ekim 2026</sub>

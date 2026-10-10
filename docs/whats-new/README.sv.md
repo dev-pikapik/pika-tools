@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Skärmens hörn håller tyst medan du spelar
+
+<sub>1.30.8 · 10 oktober 2026</sub>
+
+I Spelläge sätter musen vid skärmens kanter och hörn inte längre igång aktiva hörn och drar inte fram en dold Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Förut kunde musen i ett hörn eller vid skärmkanten sätta igång ett aktivt hörn eller dra fram en dold Dock mitt i spelet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Nu stänger Spelläge av aktiva hörn och den dolda Docken medan du spelar. Några sekunder efter att du lämnat spelet, eller när du avslutar pikapik, kommer de tillbaka precis som de var.
+
+Och pekaren hackar inte längre vid kanten av skärmen med spelet.
+
+**Prova:** Slå på Spelläge, starta ett spel och för musen till ett hörn av skärmen. Inget dyker upp.
+
+---
+
 ## <a id="v1.30.7"></a>Ditt husdjur håller sig borta från din video
 
 <sub>1.30.7 · 10 oktober 2026</sub>

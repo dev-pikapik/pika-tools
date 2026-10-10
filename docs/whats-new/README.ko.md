@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>게임하는 동안 화면 모서리가 조용해요
+
+<sub>1.30.8 · 2026년 10월 10일</sub>
+
+게임 모드에서 마우스를 화면 가장자리나 모서리로 옮겨도 이제 핫 코너가 켜지거나 숨긴 Dock이 나오지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+전에는 게임 도중 마우스가 화면 모서리나 가장자리로 가면 핫 코너가 켜지거나 숨긴 Dock이 튀어나오곤 했어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+이제 게임 모드가 게임하는 동안 핫 코너와 숨긴 Dock을 꺼 둬요. 게임을 끝내고 몇 초 뒤, 또는 pikapik을 종료하면 원래대로 돌아와요.
+
+그리고 게임 화면 가장자리에서 포인터가 더 이상 끊기지 않아요.
+
+**사용해 보기:** 게임 모드를 켜고 게임을 시작한 다음, 마우스를 화면 모서리로 옮겨 보세요. 아무것도 튀어나오지 않아요.
+
+---
+
 ## <a id="v1.30.7"></a>펫이 더 이상 영상 앞에 끼어들지 않아요
 
 <sub>1.30.7 · 2026년 10월 10일</sub>

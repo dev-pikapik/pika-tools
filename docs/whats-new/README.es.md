@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Las esquinas de la pantalla se quedan quietas mientras juegas
+
+<sub>1.30.8 · 10 de octubre de 2026</sub>
+
+En el Modo de juego, el ratón en los bordes y esquinas de la pantalla ya no activa las esquinas activas ni saca el Dock oculto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Antes, en plena partida, llevar el ratón a una esquina o al borde de la pantalla podía activar una esquina activa o sacar el Dock oculto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Ahora el Modo de juego apaga las esquinas activas y el Dock oculto mientras juegas. Unos segundos después de salir del juego, o al cerrar pikapik, vuelven tal como estaban.
+
+Y el puntero ya no da tirones en el borde de la pantalla del juego.
+
+**Pruébalo:** Activa el Modo de juego, abre un juego y lleva el ratón a una esquina de la pantalla. No aparece nada.
+
+---
+
 ## <a id="v1.30.7"></a>Tu mascota ya no se mete en tu vídeo
 
 <sub>1.30.7 · 10 de octubre de 2026</sub>

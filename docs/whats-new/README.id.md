@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Sudut layar tetap tenang saat kamu bermain
+
+<sub>1.30.8 · 10 Oktober 2026</sub>
+
+Di Mode Game, mouse di tepi dan sudut layar tidak lagi memicu sudut aktif atau menarik keluar Dock yang tersembunyi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dulu, di tengah permainan, mouse di sudut atau tepi layar bisa memicu sudut aktif atau menarik keluar Dock yang tersembunyi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Sekarang Mode Game mematikan sudut aktif dan Dock tersembunyi selama kamu bermain. Beberapa detik setelah kamu keluar dari game, atau saat menutup pikapik, semuanya kembali persis seperti semula.
+
+Dan penunjuk tidak lagi tersendat di tepi layar tempat game berjalan.
+
+**Coba:** Nyalakan Mode Game, mulai game, lalu gerakkan mouse ke sudut layar. Tidak ada yang muncul.
+
+---
+
 ## <a id="v1.30.7"></a>Peliharaanmu tidak lagi menerobos videomu
 
 <sub>1.30.7 · 10 Oktober 2026</sub>

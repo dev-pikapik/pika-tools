@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>玩游戏时，屏幕角落安安静静
+
+<sub>1.30.8 · 2026年10月10日</sub>
+
+在游戏模式下，鼠标移到屏幕边缘和角落时，不会再触发触发角，也不会拉出隐藏的程序坞。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+以前玩到一半，鼠标移到屏幕角落或边缘，可能会触发触发角，或者把隐藏的程序坞拉出来。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+现在，游戏模式会在你玩游戏时关掉触发角和隐藏的程序坞。退出游戏几秒后，或者退出 pikapik 时，它们会原样回来。
+
+而且指针在游戏所在屏幕的边缘不会再卡顿。
+
+**试试看：** 打开游戏模式，开始一局游戏，把鼠标移到屏幕角落。什么都不会弹出来。
+
+---
+
 ## <a id="v1.30.7"></a>宠物不再闯进你的视频
 
 <sub>1.30.7 · 2026年10月10日</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Gli angoli dello schermo restano tranquilli mentre giochi
+
+<sub>1.30.8 · 10 ottobre 2026</sub>
+
+In Modalità gioco, il mouse ai bordi e negli angoli dello schermo non attiva più gli angoli attivi e non fa più uscire il Dock nascosto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Prima, nel bel mezzo di una partita, il mouse in un angolo o sul bordo dello schermo poteva attivare un angolo attivo o far uscire il Dock nascosto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Ora la Modalità gioco spegne gli angoli attivi e il Dock nascosto mentre giochi. Qualche secondo dopo che esci dal gioco, o quando chiudi pikapik, tornano esattamente com’erano.
+
+E il puntatore non scatta più sul bordo dello schermo del gioco.
+
+**Provalo:** Attiva la Modalità gioco, avvia un gioco e porta il mouse in un angolo dello schermo. Non spunta fuori niente.
+
+---
+
 ## <a id="v1.30.7"></a>L’animaletto non si intromette più nel tuo video
 
 <sub>1.30.7 · 10 ottobre 2026</sub>

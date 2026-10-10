@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Rogi ekranu milczą, gdy grasz
+
+<sub>1.30.8 · 10 października 2026</sub>
+
+W trybie gry mysz przy krawędziach i w rogach ekranu nie uruchamia już aktywnych narożników ani nie wysuwa ukrytego Docka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Wcześniej w środku rozgrywki mysz w rogu albo przy krawędzi ekranu mogła uruchomić aktywny narożnik albo wysunąć ukryty Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Teraz tryb gry wyłącza aktywne narożniki i ukryty Dock na czas gry. Kilka sekund po wyjściu z gry albo po zamknięciu pikapik wracają dokładnie takie, jakie były.
+
+A wskaźnik nie szarpie już przy krawędzi ekranu z grą.
+
+**Wypróbuj:** Włącz tryb gry, uruchom grę i przesuń mysz w róg ekranu. Nic nie wyskoczy.
+
+---
+
 ## <a id="v1.30.7"></a>Zwierzak nie wchodzi już w kadr
 
 <sub>1.30.7 · 10 października 2026</sub>

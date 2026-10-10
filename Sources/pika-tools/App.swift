@@ -139,5 +139,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         SpeedTest.shared.cancel()
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
         GameModeTool.shared.leave()
+        DockEdges.restore()
     }
 }

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Schermhoeken blijven stil terwijl je speelt
+
+<sub>1.30.8 · 10 oktober 2026</sub>
+
+In de Gamemodus zet de muis aan de randen en in de hoeken van het scherm geen actieve hoeken meer aan en haalt hij geen verborgen Dock meer tevoorschijn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Eerst kon de muis midden in een spel in een hoek of aan de rand van het scherm een actieve hoek aanzetten of het verborgen Dock tevoorschijn halen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Nu zet de Gamemodus actieve hoeken en het verborgen Dock uit terwijl je speelt. Een paar seconden nadat je het spel verlaat, of als je pikapik stopt, komen ze precies zo terug als ze waren.
+
+En de aanwijzer hapert niet meer aan de rand van het scherm met de game.
+
+**Probeer het:** Zet de Gamemodus aan, start een game en beweeg de muis naar een hoek van het scherm. Er springt niets tevoorschijn.
+
+---
+
 ## <a id="v1.30.7"></a>Je huisdiertje blijft uit je video
 
 <sub>1.30.7 · 10 oktober 2026</sub>

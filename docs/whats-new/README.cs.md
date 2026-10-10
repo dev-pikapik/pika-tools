@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.8"></a>Rohy obrazovky při hraní mlčí
+
+<sub>1.30.8 · 10. října 2026</sub>
+
+V Herním režimu myš u okrajů a v rozích obrazovky už nespouští aktivní rohy ani nevysouvá skrytý Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dřív mohla myš uprostřed hry v rohu nebo u okraje obrazovky spustit aktivní roh nebo vysunout skrytý Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Teď Herní režim aktivní rohy a skrytý Dock na dobu hraní vypne. Pár sekund po odchodu ze hry nebo při ukončení pikapik se vrátí přesně tak, jak byly.
+
+A ukazatel už u okraje obrazovky se hrou necuká.
+
+**Vyzkoušejte:** Zapněte Herní režim, spusťte hru a přesuňte myš do rohu obrazovky. Nic nevyskočí.
+
+---
+
 ## <a id="v1.30.7"></a>Mazlíček už neleze do vašeho videa
 
 <sub>1.30.7 · 10. října 2026</sub>
