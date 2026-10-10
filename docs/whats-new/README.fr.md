@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Ajoutez votre jeu pendant qu’il tourne
+
+<sub>1.30.11 · 10 octobre 2026</sub>
+
+Vos jeux ouverts apparaissent désormais en premier lors de l’ajout.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages → Jeux → Ajouter un jeu et cliquez sur votre jeu en cours. Les jeux utilisant Java ou d’autres environnements apparaissent aussi, même sans fichier .app. Minecraft s’appelle Minecraft au lieu de java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Les apps du Dock ont leur propre liste à déplier. Vous trouvez ainsi tout de suite le jeu ouvert.
+
+Autre… et le glisser-déposer acceptent aussi le fichier exécutable du jeu, en plus des apps. Une fois ajouté, le mode Jeu s’active lorsque vous passez au jeu.
+
+**Pour essayer :** Laissez le jeu ouvert, choisissez Ajouter un jeu et cliquez sur son icône. Plus besoin de chercher dans les dossiers.
+
+---
+
 ## <a id="v1.30.10"></a>Votre compagnon reste visible quand il saute
 
 <sub>1.30.10 · 10 octobre 2026</sub>

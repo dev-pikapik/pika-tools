@@ -30,6 +30,7 @@ enum GameRules {
 
     static func isGame(id: String?, name: String?, path: String, in games: [String]) -> Bool {
         if let id, minecraftLaunchers.contains(id) { return false }
+        if !path.isEmpty, games.contains(path) { return true }
         if games.contains(rule(id: id, name: name, path: path)) { return true }
         return games.contains(where: minecraftLaunchers.contains) && (minecraft(path) != nil || name?.hasPrefix("Minecraft") == true)
     }

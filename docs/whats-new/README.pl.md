@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Dodaj grę, kiedy jest uruchomiona
+
+<sub>1.30.11 · 10 października 2026</sub>
+
+Otwarte gry są teraz widoczne jako pierwsze podczas dodawania gry.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzystające z Javy i innych środowisk też się pojawiają, nawet bez pliku .app. Minecraft ma nazwę Minecraft zamiast java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Aplikacje z Docka mają osobną rozwijaną listę, dzięki czemu od razu znajdziesz uruchomioną grę.
+
+Inne… oraz przeciąganie przyjmują też plik wykonywalny gry, oprócz aplikacji. Po dodaniu tryb gry włącza się, gdy przejdziesz do gry.
+
+**Wypróbuj:** Zostaw grę otwartą, wybierz Dodaj grę i kliknij jej ikonę. Bez szukania folderów.
+
+---
+
 ## <a id="v1.30.10"></a>Zwierzak nie znika, gdy skacze
 
 <sub>1.30.10 · 10 października 2026</sub>

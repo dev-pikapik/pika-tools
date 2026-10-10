@@ -137,7 +137,7 @@ struct AppLabel: View {
 
 extension NSRunningApplication {
     var title: String {
-        dock("name") ?? (minecraft ? "Minecraft" : nil) ?? localizedName ?? executableURL?.lastPathComponent ?? ""
+        (minecraft ? "Minecraft" : nil) ?? dock("name") ?? localizedName ?? executableURL?.lastPathComponent ?? ""
     }
 
     var picture: NSImage? {

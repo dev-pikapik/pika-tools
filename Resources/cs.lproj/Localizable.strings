@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik dál běží na pozadí";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Zkratky, „Bez spánku“ a mazlíček zůstávají zapnuté. Ikonu v řádku nabídek vrátíte tím, že pikapik znovu otevřete. Pro úplné ukončení podržte Option (⌥), když vybíráte „Ukončit“.";
 "background, quit, close, exit, hide, menu bar icon, option" = "pozadí, ukončit, zavřít, skrýt, ikona v řádku nabídek, option";
+
+"Open now. Click your game to add it" = "Právě otevřené. Kliknutím přidejte svou hru";
+"From the Dock" = "Z Docku";

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Add your game while it’s running
+
+<sub>1.30.11 · October 10, 2026</sub>
+
+Your open games are now the first thing you see when you add a game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Open Settings → Games → Add a Game and click your running game. Games through Java and other runtimes appear here too, even without an app bundle. Minecraft appears as Minecraft instead of java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+The apps in your Dock now have their own foldout list, so you can reach the game you’re playing right away.
+
+Other… and drag and drop also accept the game’s executable file, as well as app bundles. Once added, Game Mode turns on when you switch to the game.
+
+**Try it:** Leave your game open, choose Add a Game, and click its icon. No hunting through folders.
+
+---
+
 ## <a id="v1.30.10"></a>Your pet stays in sight when it jumps
 
 <sub>1.30.10 · October 10, 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>실행 중인 게임을 바로 추가하세요
+
+<sub>1.30.11 · 2026년 10월 10일</sub>
+
+게임을 추가할 때 열려 있는 게임이 먼저 표시돼요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+설정 → 게임 → 게임 추가에서 실행 중인 게임을 클릭하세요. Java나 다른 실행 환경을 사용하는 게임도 .app 파일 없이 표시돼요. Minecraft는 java 대신 Minecraft로 표시돼요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock의 앱은 별도의 접이식 목록으로 정리되어 실행 중인 게임을 바로 찾을 수 있어요.
+
+기타…와 드래그 앤 드롭은 앱뿐 아니라 게임의 실행 파일도 받아요. 추가한 뒤 게임으로 전환하면 게임 모드가 켜져요.
+
+**사용해 보기:** 게임을 열어 둔 채 게임 추가를 선택하고 아이콘을 클릭하세요. 폴더를 찾을 필요가 없어요.
+
+---
+
 ## <a id="v1.30.10"></a>펫이 점프해도 보여요
 
 <sub>1.30.10 · 2026년 10월 10일</sub>

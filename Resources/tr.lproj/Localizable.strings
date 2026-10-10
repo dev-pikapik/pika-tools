@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik arka planda çalışmaya devam ediyor";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Kısayollar, “Uyanık Tut” ve evcil dost açık kalır. Menü çubuğundaki simgeyi geri getirmek için pikapik’i yeniden aç. Tamamen çıkmak için “Çık”ı seçerken Option (⌥) tuşunu basılı tut.";
 "background, quit, close, exit, hide, menu bar icon, option" = "arka plan, çık, kapat, gizle, menü çubuğu simgesi, option";
+
+"Open now. Click your game to add it" = "Şu anda açık. Eklemek için oyununa tıkla";
+"From the Dock" = "Dock’tan";

@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik continue de fonctionner en arrière-plan";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Les raccourcis, « Rester éveillé » et le compagnon restent actifs. Rouvrez pikapik pour retrouver son icône dans la barre des menus. Pour quitter complètement, maintenez Option (⌥) en choisissant « Quitter ».";
 "background, quit, close, exit, hide, menu bar icon, option" = "arrière-plan, quitter, fermer, masquer, icône de la barre des menus, option";
+
+"Open now. Click your game to add it" = "Ouvert en ce moment. Cliquez sur votre jeu pour l’ajouter";
+"From the Dock" = "Depuis le Dock";

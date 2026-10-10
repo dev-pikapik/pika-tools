@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Lägg till ditt spel medan det körs
+
+<sub>1.30.11 · 10 oktober 2026</sub>
+
+Dina öppna spel visas nu först när du lägger till ett spel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar → Spel → Lägg till ett spel och klicka på spelet som körs. Spel via Java och andra miljöer visas också, även utan en .app-fil. Minecraft heter Minecraft i stället för java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Apparna i Dock har nu en egen utfällbar lista, så du hittar ditt öppna spel direkt.
+
+Annat… och dra och släpp tar även emot spelets körbara fil, utöver appar. När spelet är tillagt startar Spelläge när du växlar till det.
+
+**Prova:** Låt spelet vara öppet, välj Lägg till ett spel och klicka på dess ikon. Du behöver inte leta i mappar.
+
+---
+
 ## <a id="v1.30.10"></a>Ditt husdjur syns när det hoppar
 
 <sub>1.30.10 · 10 oktober 2026</sub>

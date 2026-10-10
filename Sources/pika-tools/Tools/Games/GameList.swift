@@ -28,14 +28,24 @@ private struct GameShelf: View {
 
     var body: some View {
         AppShelf(
-            hint: Text("Here’s what’s in your Dock. Click your game to add it"),
+            hint: Text("Open now. Click your game to add it"),
             empty: Text("Open your game, and it shows up here"),
             added: tool.games,
-            suggest: { GameRules.shelf(AppShelf.dock().compactMap(GameModeTool.key) + AppShelf.running.map(GameModeTool.key)) },
-            toggle: { key in
-                if tool.games.contains(key) { tool.games.removeAll { $0 == key } } else { tool.confirm(key) }
-            },
-            other: { AppExclusions.choose().forEach(tool.add) }
+            suggest: { GameRules.shelf(AppShelf.windowed.map(GameModeTool.key)) },
+            toggle: toggle,
+            other: { GameModeTool.choose().forEach(tool.add) }
         )
+        DisclosureGroup("From the Dock") {
+            AppShelf(
+                hint: Text("Here’s what’s in your Dock. Click your game to add it"),
+                added: tool.games,
+                suggest: { GameRules.shelf(AppShelf.dock().compactMap(GameModeTool.key)) },
+                toggle: toggle
+            )
+        }
+    }
+
+    private func toggle(_ key: String) {
+        if tool.games.contains(key) { tool.games.removeAll { $0 == key } } else { tool.confirm(key) }
     }
 }

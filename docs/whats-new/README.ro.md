@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Adaugă jocul cât timp rulează
+
+<sub>1.30.11 · 10 octombrie 2026</sub>
+
+Jocurile deschise apar acum primele când adaugi un joc.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. Apar și jocurile care folosesc Java sau alte medii, chiar fără un fișier .app. Minecraft apare ca Minecraft, nu java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Aplicațiile din Dock au acum o listă separată, care se poate extinde, ca să găsești imediat jocul deschis.
+
+Altele… și tragerea fișierelor acceptă și fișierul executabil al jocului, pe lângă aplicații. După adăugare, modul Joc se activează când treci la joc.
+
+**Încearcă:** Lasă jocul deschis, alege Adaugă un joc și apasă pe pictogramă. Nu mai cauți prin dosare.
+
+---
+
 ## <a id="v1.30.10"></a>Animăluțul rămâne la vedere când sare
 
 <sub>1.30.10 · 10 octombrie 2026</sub>

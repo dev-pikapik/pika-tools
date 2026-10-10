@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik і далі працює у фоні";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Сполучення клавіш, «Не засинати» й улюбленець працюють як раніше. Щоб повернути значок у рядок меню, відкрийте pikapik ще раз. Щоб вийти повністю, утримуйте Option (⌥), коли вибираєте «Вийти».";
 "background, quit, close, exit, hide, menu bar icon, option" = "фон, фоновий режим, вихід, закрити, сховати, значок у рядку меню, option";
+
+"Open now. Click your game to add it" = "Відкрито зараз. Натисніть на гру, щоб додати її";
+"From the Dock" = "З Dock";

@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapikはバックグラウンドで動作しています";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "ショートカット、「スリープさせない」、ペットはそのまま使えます。メニューバーのアイコンを戻すには、pikapikをもう一度開いてください。完全に終了するには、Option（⌥）キーを押したまま「終了」を選びます。";
 "background, quit, close, exit, hide, menu bar icon, option" = "バックグラウンド, 終了, 閉じる, 隠す, メニューバーアイコン, option";
+
+"Open now. Click your game to add it" = "起動中です。ゲームをクリックして追加できます";
+"From the Dock" = "Dockから";

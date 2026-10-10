@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Tambahkan game saat sedang berjalan
+
+<sub>1.30.11 · 10 Oktober 2026</sub>
+
+Game yang terbuka kini tampil pertama saat menambahkan game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan → Game → Tambahkan Game dan klik game yang berjalan. Game melalui Java dan lingkungan lain juga tampil, meski tanpa file .app. Minecraft tampil sebagai Minecraft, bukan java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Aplikasi di Dock kini punya daftar terpisah yang bisa dibuka, agar game yang berjalan langsung ditemukan.
+
+Lainnya… dan seret dan lepas juga menerima file yang dapat dijalankan dari game, selain aplikasi. Setelah ditambahkan, Mode Game menyala saat beralih ke game.
+
+**Coba:** Biarkan game terbuka, pilih Tambahkan Game, lalu klik ikonnya. Tidak perlu mencari folder.
+
+---
+
 ## <a id="v1.30.10"></a>Peliharaanmu tetap terlihat saat melompat
 
 <sub>1.30.10 · 10 Oktober 2026</sub>

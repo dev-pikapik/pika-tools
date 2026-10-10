@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Přidejte hru, když běží
+
+<sub>1.30.11 · 10. října 2026</sub>
+
+Otevřené hry se nyní při přidávání zobrazují jako první.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Objeví se i hry přes Javu a jiná prostředí, i bez souboru .app. Minecraft se jmenuje Minecraft místo java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Aplikace z Docku mají samostatný rozbalovací seznam, takže otevřenou hru najdete hned.
+
+Jiné… a přetažení přijímají také spustitelný soubor hry, vedle aplikací. Po přidání se herní režim zapne, když přejdete do hry.
+
+**Vyzkoušejte:** Nechte hru otevřenou, zvolte Přidat hru a klikněte na její ikonu. Bez hledání ve složkách.
+
+---
+
 ## <a id="v1.30.10"></a>Mazlíček je vidět, i když skáče
 
 <sub>1.30.10 · 10. října 2026</sub>

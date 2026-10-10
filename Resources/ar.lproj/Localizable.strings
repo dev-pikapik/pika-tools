@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "يواصل pikapik العمل في الخلفية";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "تبقى الاختصارات و«منع السكون» والرفيق قيد التشغيل. افتح pikapik مرة أخرى لإعادة أيقونته إلى شريط القوائم. للإنهاء تمامًا، اضغط مطولًا على Option (⌥) عند اختيار «إنهاء».";
 "background, quit, close, exit, hide, menu bar icon, option" = "الخلفية, إنهاء, إغلاق, إخفاء, أيقونة شريط القوائم, option";
+
+"Open now. Click your game to add it" = "مفتوح الآن. انقر على لعبتك لإضافتها";
+"From the Dock" = "من Dock";
