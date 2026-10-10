@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Thêm trò chơi ngay khi đang chạy
+
+<sub>1.30.11 · ngày 10 tháng 10, 2026</sub>
+
+Các trò chơi đang mở giờ xuất hiện đầu tiên khi thêm trò chơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơi đang chạy. Trò chơi qua Java và các môi trường khác cũng xuất hiện, ngay cả khi không có tệp .app. Minecraft hiển thị là Minecraft thay vì java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Các ứng dụng trong Dock giờ có danh sách thu gọn riêng, giúp bạn tìm ngay trò chơi đang mở.
+
+Khác… và kéo thả cũng nhận tệp thực thi của trò chơi, ngoài ứng dụng. Sau khi thêm, Chế độ trò chơi bật khi bạn chuyển sang trò chơi.
+
+**Thử ngay:** Để trò chơi mở, chọn Thêm trò chơi rồi nhấp vào biểu tượng. Không cần tìm trong thư mục.
+
+---
+
 ## <a id="v1.30.10"></a>Thú cưng vẫn hiện khi nhảy
 
 <sub>1.30.10 · ngày 10 tháng 10, 2026</sub>

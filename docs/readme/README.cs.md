@@ -234,6 +234,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pikapik vám nabídne hry, které na vašem Macu najde. Ve hře zůstane Control-kliknutí obyčejným kliknutím a Control se šipkami nepřepne plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
 
+Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Objeví se i hry přes Javu a jiná prostředí, i bez souboru .app. Minecraft se jmenuje Minecraft místo java.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.

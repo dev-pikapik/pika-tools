@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>起動中のゲームをそのまま追加
+
+<sub>1.30.11 · 2026年10月10日</sub>
+
+ゲームを追加するとき、起動中のゲームが最初に表示されます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+設定 → ゲーム → ゲームを追加を開き、起動中のゲームをクリックしてください。Javaなどで動くゲームも、.appファイルがなくても表示されます。MinecraftはjavaではなくMinecraftと表示されます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dockのアプリは別の折りたたみリストにまとまり、起動中のゲームがすぐに見つかります。
+
+その他…やドラッグ＆ドロップでは、アプリに加えてゲームの実行ファイルも追加できます。追加後は、ゲームに切り替えるとゲームモードが有効になります。
+
+**試してみる：** ゲームを起動したまま「ゲームを追加」を選び、アイコンをクリックしてください。フォルダを探す必要はありません。
+
+---
+
 ## <a id="v1.30.10"></a>ジャンプしてもペットが見えたまま
 
 <sub>1.30.10 · 2026年10月10日</sub>

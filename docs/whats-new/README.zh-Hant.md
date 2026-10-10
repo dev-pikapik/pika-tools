@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>直接加入正在執行的遊戲
+
+<sub>1.30.11 · 2026年10月10日</sub>
+
+加入遊戲時，已開啟的遊戲現在會最先顯示。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+開啟設定 → 遊戲 → 加入遊戲，點擊正在執行的遊戲。透過Java或其他執行環境啟動的遊戲也會顯示，即使沒有.app檔案。Minecraft會顯示為Minecraft，而不是java。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock中的App現在放在單獨的摺疊列表中，讓你立即找到正在玩的遊戲。
+
+其他…和拖放現在也支援加入遊戲的執行檔，以及App。加入後，切換到遊戲時，遊戲模式會自動開啟。
+
+**試試看：** 保持遊戲執行，選擇加入遊戲，再點擊圖示。無需在檔案夾中尋找。
+
+---
+
 ## <a id="v1.30.10"></a>寵物跳起來也看得見
 
 <sub>1.30.10 · 2026年10月10日</sub>

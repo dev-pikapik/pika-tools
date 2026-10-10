@@ -234,6 +234,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Spielmodus.** Füg deine Spiele hinzu, und solange du spielst, reißt dich dein Mac nicht aus dem Spiel. Spotlight, Siri, ⌘Tab, Mission Control und Wischen zwischen Schreibtischen öffnen sich nicht über dem Spiel, ⌘Q und ⌘W schließen es nicht aus Versehen, der Zeiger rutscht nicht ins Dock, in die Menüleiste oder auf einen anderen Bildschirm, und der Bildschirm bleibt an. Jeder dieser Punkte hat einen eigenen Schalter auf der Seite „Spiele“, und pikapik schlägt Spiele vor, die es auf deinem Mac findet. Im Spiel bleibt Ctrl-Klick ein Klick, und Ctrl mit Pfeiltasten wechselt den Schreibtisch nicht. Auch Minecraft wird erkannt: Füge den Minecraft Launcher oder CurseForge hinzu, dann schaltet sich der Modus in Minecraft selbst ein. Um ein Spiel zu beenden, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. Sobald du das Spiel verlässt, funktioniert alles wie gewohnt. Standardmäßig aus.
 
+Öffne Einstellungen → Spiele → Spiel hinzufügen und klicke auf dein laufendes Spiel. Auch Spiele über Java und andere Laufzeitumgebungen erscheinen hier, selbst ohne .app. Minecraft heißt Minecraft statt java.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.

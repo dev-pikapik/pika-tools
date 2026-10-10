@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Oyununu çalışırken ekle
+
+<sub>1.30.11 · 10 Ekim 2026</sub>
+
+Oyun eklerken açık oyunlar artık ilk sırada görünüyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla. Java ve diğer ortamlarla çalışan oyunlar, .app dosyası olmasa da burada görünür. Minecraft, java yerine Minecraft adıyla görünür.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock’taki uygulamaların artık ayrı bir açılır listesi var. Böylece açık oyununu hemen bulabilirsin.
+
+Diğer… ve sürükleyip bırakma, uygulamaların yanında oyunun çalıştırılabilir dosyasını da kabul eder. Ekledikten sonra oyuna geçtiğinde Oyun Modu açılır.
+
+**Deneyin:** Oyununu açık bırak, Oyun Ekle’yi seç ve simgesine tıkla. Klasör aramana gerek yok.
+
+---
+
 ## <a id="v1.30.10"></a>Evcil dostun zıplarken görünür kalıyor
 
 <sub>1.30.10 · 10 Ekim 2026</sub>

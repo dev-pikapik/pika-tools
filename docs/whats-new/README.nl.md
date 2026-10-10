@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Voeg je spel toe terwijl het draait
+
+<sub>1.30.11 · 10 oktober 2026</sub>
+
+Je geopende spellen staan nu vooraan wanneer je een spel toevoegt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. Ook spellen via Java en andere omgevingen verschijnen hier, zelfs zonder .app-bestand. Minecraft heet Minecraft in plaats van java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Apps uit het Dock hebben nu een eigen uitklapbare lijst. Zo vind je je geopende spel meteen.
+
+Andere… en slepen accepteren ook het uitvoerbare bestand van het spel, naast apps. Na het toevoegen gaat Spelmodus aan zodra je naar het spel schakelt.
+
+**Probeer het:** Laat je spel open, kies Spel toevoegen en klik op het pictogram. Je hoeft geen mappen te doorzoeken.
+
+---
+
 ## <a id="v1.30.10"></a>Je huisdiertje blijft in beeld als het springt
 
 <sub>1.30.10 · 10 oktober 2026</sub>

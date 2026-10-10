@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Aggiungi il gioco mentre è aperto
+
+<sub>1.30.11 · 10 ottobre 2026</sub>
+
+I giochi aperti compaiono per primi quando aggiungi un gioco.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni → Giochi → Aggiungi un gioco e fai clic sul gioco in esecuzione. Compaiono anche i giochi che usano Java o altri ambienti, senza un file .app. Minecraft si chiama Minecraft anziché java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Le app del Dock hanno un elenco espandibile separato, così trovi subito il gioco aperto.
+
+Altro… e il trascinamento accettano anche il file eseguibile del gioco, oltre alle app. Dopo averlo aggiunto, la modalità Gioco si attiva quando passi al gioco.
+
+**Provalo:** Lascia il gioco aperto, scegli Aggiungi un gioco e fai clic sulla sua icona. Niente ricerche tra le cartelle.
+
+---
+
 ## <a id="v1.30.10"></a>L’animaletto resta in vista quando salta
 
 <sub>1.30.10 · 10 ottobre 2026</sub>

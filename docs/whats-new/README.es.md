@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Añade tu juego mientras está abierto
+
+<sub>1.30.11 · 10 de octubre de 2026</sub>
+
+Los juegos abiertos aparecen primero al añadir un juego.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Abre Ajustes → Juegos → Añadir un juego y haz clic en el juego abierto. También aparecen los juegos que usan Java u otros entornos, incluso sin archivo .app. Minecraft se muestra como Minecraft en lugar de java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Las apps del Dock tienen su propia lista desplegable para que encuentres enseguida el juego abierto.
+
+Otro… y arrastrar y soltar también aceptan el archivo ejecutable del juego, además de las apps. Tras añadirlo, el modo Juego se activa cuando cambias al juego.
+
+**Pruébalo:** Deja el juego abierto, elige Añadir un juego y pulsa su icono. No hace falta buscar carpetas.
+
+---
+
 ## <a id="v1.30.10"></a>Tu mascota se deja ver cuando salta
 
 <sub>1.30.10 · 10 de octubre de 2026</sub>

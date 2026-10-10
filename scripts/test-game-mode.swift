@@ -58,6 +58,8 @@ enum TestGameMode {
         precondition(!GameRules.isGame(id: "com.mojang.minecraftlauncher", name: "Minecraft Launcher", path: "/Applications/Minecraft.app/Contents/MacOS/launcher", in: mojang))
         precondition(!GameRules.isGame(id: "com.overwolf.curseforge", name: "CurseForge", path: "/Applications/CurseForge.app/Contents/MacOS/CurseForge", in: overwolf))
         precondition(GameRules.isGame(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game", in: ["com.a.game"]))
+        precondition(GameRules.isGame(id: "com.a.game", name: "Game", path: "/Applications/Game.app/Contents/MacOS/Game", in: ["/Applications/Game.app/Contents/MacOS/Game"]))
+        precondition(!GameRules.isGame(id: "com.b.game", name: "Other", path: "/Applications/Other.app/Contents/MacOS/Other", in: ["/Applications/Game.app/Contents/MacOS/Game"]))
         precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "/opt/wine", in: ["/opt/wine"]))
         precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "", in: ["Wine Game"]))
         precondition(!GameRules.isGame(id: "com.a.game", name: "Game", path: java, in: ["com.b.game"]))

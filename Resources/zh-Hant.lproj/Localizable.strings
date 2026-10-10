@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik 仍在背景執行";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "快速鍵、「保持喚醒」和寵物都會繼續運作。再次打開 pikapik 即可讓選單列圖像回來。若要完全結束，請在選擇「結束」時按住 Option（⌥）鍵。";
 "background, quit, close, exit, hide, menu bar icon, option" = "背景, 結束, 關閉, 隱藏, 選單列圖像, option";
+
+"Open now. Click your game to add it" = "目前已開啟。點擊遊戲即可加入";
+"From the Dock" = "來自 Dock";

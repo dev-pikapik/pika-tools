@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>直接添加正在运行的游戏
+
+<sub>1.30.11 · 2026年10月10日</sub>
+
+添加游戏时，已打开的游戏现在会最先显示。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+打开设置 → 游戏 → 添加游戏，点击正在运行的游戏。通过Java或其他运行环境启动的游戏也会显示，即使没有.app文件。Minecraft会显示为Minecraft，而不是java。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+程序坞中的应用现在放在单独的折叠列表中，让你立即找到正在玩的游戏。
+
+其他…和拖放现在也支持添加游戏的可执行文件，以及应用。添加后，切换到游戏时，游戏模式会自动开启。
+
+**试试看：** 保持游戏运行，选择添加游戏，再点击图标。无需在文件夹中寻找。
+
+---
+
 ## <a id="v1.30.10"></a>宠物跳起来也看得见
 
 <sub>1.30.10 · 2026年10月10日</sub>

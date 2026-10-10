@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.11"></a>Füge dein Spiel hinzu, während es läuft
+
+<sub>1.30.11 · 10. Oktober 2026</sub>
+
+Beim Hinzufügen siehst du jetzt zuerst deine geöffneten Spiele.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen → Spiele → Spiel hinzufügen und klicke auf dein laufendes Spiel. Auch Spiele über Java und andere Laufzeitumgebungen erscheinen hier, selbst ohne .app. Minecraft heißt Minecraft statt java.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Die Apps im Dock haben jetzt eine eigene aufklappbare Liste. So findest du dein laufendes Spiel sofort.
+
+Über Andere… und per Drag-and-drop kannst du neben Apps auch die ausführbare Datei des Spiels hinzufügen. Danach aktiviert sich der Spielmodus, wenn du zum Spiel wechselst.
+
+**Ausprobieren:** Lass dein Spiel geöffnet, wähle Spiel hinzufügen und klicke auf sein Symbol. Kein Suchen in Ordnern.
+
+---
+
 ## <a id="v1.30.10"></a>Dein Haustier bleibt im Blick, wenn es springt
 
 <sub>1.30.10 · 10. Oktober 2026</sub>

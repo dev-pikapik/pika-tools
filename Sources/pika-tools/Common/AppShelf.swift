@@ -8,7 +8,7 @@ struct AppShelf: View {
     let added: [String]
     let suggest: () -> [String]
     let toggle: (String) -> Void
-    let other: () -> Void
+    var other: (() -> Void)?
     @State private var keys: [String] = []
 
     var body: some View {
@@ -20,7 +20,9 @@ struct AppShelf: View {
                     let app = AppLabel.info(key)
                     ShelfTile(name: app.name, icon: app.icon, added: added.contains(key)) { toggle(key) }
                 }
-                ShelfTile(name: String(localized: "Other…"), icon: NSWorkspace.shared.icon(forFile: "/Applications"), added: false, action: other)
+                if let other {
+                    ShelfTile(name: String(localized: "Other…"), icon: NSWorkspace.shared.icon(forFile: "/Applications"), added: false, action: other)
+                }
             }
             .padding(6)
             .background(.fill.quaternary, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -49,13 +51,22 @@ struct AppShelf: View {
         NSWorkspace.shared.runningApplications.filter { $0.activationPolicy == .regular }
     }
 
+    static var windowed: [NSRunningApplication] {
+        let windows = CGWindowListCopyWindowInfo([.optionAll, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+        let owners = Set(windows.compactMap { window -> pid_t? in
+            guard window[kCGWindowLayer as String] as? Int == 0 else { return nil }
+            return window[kCGWindowOwnerPID as String] as? pid_t
+        })
+        return NSWorkspace.shared.runningApplications.filter { $0.activationPolicy == .regular || owners.contains($0.processIdentifier) }
+    }
+
     static func isApp(_ url: URL) -> Bool {
         (try? url.resourceValues(forKeys: [.contentTypeKey]))?.contentType?.conforms(to: .applicationBundle) == true
     }
 
-    static func apps(on pasteboard: NSPasteboard) -> [URL] {
+    static func apps(on pasteboard: NSPasteboard, accepting accepts: (URL) -> Bool = isApp) -> [URL] {
         let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL] ?? []
-        return urls.filter(isApp)
+        return urls.filter(accepts)
     }
 }
 
@@ -103,6 +114,7 @@ private struct AppDropZone {
     let id: String
     let bounds: Anchor<CGRect>
     let add: ((URL) -> Void)?
+    let accepts: (URL) -> Bool
 }
 
 private struct AppDropZones: PreferenceKey {
@@ -117,6 +129,7 @@ private struct AppDropTarget: Equatable {
     let id: String
     let frame: CGRect
     let add: ((URL) -> Void)?
+    let accepts: (URL) -> Bool
 
     static func == (a: Self, b: Self) -> Bool {
         a.id == b.id && a.frame == b.frame
@@ -155,9 +168,9 @@ struct AppDropPage: ViewModifier {
         for zone in zones {
             let rect = proxy[zone.bounds].insetBy(dx: -10, dy: -10)
             if let index = targets.firstIndex(where: { $0.id == zone.id }) {
-                targets[index] = AppDropTarget(id: zone.id, frame: targets[index].frame.union(rect), add: zone.add)
+                targets[index] = AppDropTarget(id: zone.id, frame: targets[index].frame.union(rect), add: zone.add, accepts: zone.accepts)
             } else {
-                targets.append(AppDropTarget(id: zone.id, frame: rect, add: zone.add))
+                targets.append(AppDropTarget(id: zone.id, frame: rect, add: zone.add, accepts: zone.accepts))
             }
         }
         return targets
@@ -175,13 +188,18 @@ private struct AppDropDelegate: DropDelegate {
     }
 
     func validateDrop(info: DropInfo) -> Bool {
-        let valid = !targets.isEmpty && !AppShelf.apps(on: NSPasteboard(name: .drag)).isEmpty
+        let valid = targets.contains { $0.add != nil && !AppShelf.apps(on: NSPasteboard(name: .drag), accepting: $0.accepts).isEmpty }
         if !valid { target = nil }
         return valid
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
-        target = NSPasteboard(name: .drag).changeCount == Self.dropped ? nil : zone(info)?.id
+        let board = NSPasteboard(name: .drag)
+        if board.changeCount != Self.dropped, let zone = zone(info), !AppShelf.apps(on: board, accepting: zone.accepts).isEmpty {
+            target = zone.id
+        } else {
+            target = nil
+        }
         return DropProposal(operation: target == nil ? .forbidden : .copy)
     }
 
@@ -192,15 +210,15 @@ private struct AppDropDelegate: DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         target = nil
         Self.dropped = NSPasteboard(name: .drag).changeCount
-        guard let add = zone(info)?.add else { return false }
-        let apps = AppShelf.apps(on: NSPasteboard(name: .drag))
+        guard let zone = zone(info), let add = zone.add else { return false }
+        let apps = AppShelf.apps(on: NSPasteboard(name: .drag), accepting: zone.accepts)
         apps.forEach(add)
         return !apps.isEmpty
     }
 }
 
 extension View {
-    func appDropZone(_ id: String, isEnabled: Bool = true, add: @escaping (URL) -> Void) -> some View {
-        anchorPreference(key: AppDropZones.self, value: .bounds) { [AppDropZone(id: id, bounds: $0, add: isEnabled ? add : nil)] }
+    func appDropZone(_ id: String, isEnabled: Bool = true, accepting accepts: @escaping (URL) -> Bool = AppShelf.isApp, add: @escaping (URL) -> Void) -> some View {
+        anchorPreference(key: AppDropZones.self, value: .bounds) { [AppDropZone(id: id, bounds: $0, add: isEnabled ? add : nil, accepts: accepts)] }
     }
 }

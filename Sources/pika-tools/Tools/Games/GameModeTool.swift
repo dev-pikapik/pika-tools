@@ -123,6 +123,15 @@ final class GameModeTool: Tool {
         Self.key(url).map(confirm)
     }
 
+    static func choose() -> [URL] {
+        let panel = NSOpenPanel()
+        panel.directoryURL = URL(fileURLWithPath: "/Applications")
+        panel.allowsMultipleSelection = true
+        panel.prompt = String(localized: "Add")
+        NSApp.bringForward()
+        return panel.runModal() == .OK ? panel.urls.filter { key($0) != nil } : []
+    }
+
     func dismiss(_ key: String) {
         if !notGames.contains(key) { notGames.append(key) }
     }
@@ -146,8 +155,9 @@ final class GameModeTool: Tool {
             let id = Bundle(url: url)?.bundleIdentifier
             return Self.looksLikeGame(id, url) || id == "com.mojang.minecraftlauncher" ? id : nil
         }
-        let running = NSWorkspace.shared.runningApplications
-            .filter { $0.activationPolicy == .regular && Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL) }
+        let running = AppShelf.windowed
+            .filter { Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL)
+                || GameRules.minecraft($0.executableURL?.path ?? "") != nil }
             .map(Self.key)
         var seen = Set(games + notGames + [""])
         suggestions = (running + installed).filter { seen.insert($0).inserted }
@@ -534,7 +544,7 @@ struct GameModePage: View {
                         }
                     }
                 }
-                .appDropZone("games") { tool.add($0) }
+                .appDropZone("games", accepting: { GameModeTool.key($0) != nil }) { tool.add($0) }
             } footer: {
                 Text("You can also drag a game here from Finder")
                     .font(.footnote)

@@ -524,3 +524,6 @@
 "pikapik keeps working in the background" = "pikapik ยังทำงานอยู่เบื้องหลัง";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "ปุ่มลัด “ไม่ให้หลับ” และเพื่อนตัวน้อยยังเปิดอยู่ เปิด pikapik อีกครั้งเพื่อให้ไอคอนกลับมาที่แถบเมนู หากต้องการออกจริงๆ ให้กด Option (⌥) ค้างไว้ตอนเลือก “ออก”";
 "background, quit, close, exit, hide, menu bar icon, option" = "เบื้องหลัง, ออก, ปิด, ซ่อน, ไอคอนแถบเมนู, option";
+
+"Open now. Click your game to add it" = "เปิดอยู่ตอนนี้ คลิกเกมเพื่อเพิ่ม";
+"From the Dock" = "จาก Dock";
