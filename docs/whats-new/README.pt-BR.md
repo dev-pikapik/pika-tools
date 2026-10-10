@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Seu bichinho fica à vista quando pula ou pega carona numa seleção
+
+<sub>1.30.4 · 10 de outubro de 2026</sub>
+
+Seu bichinho e a bola não somem mais atrás das janelas enquanto estão no ar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, quando o bichinho pulava por cima do ponteiro ou subia num retângulo de seleção, uma janela maximizada o cobria, e parecia que ele tinha sumido.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Agora, enquanto o bichinho ou a bola estão mais altos que o Dock, eles aparecem na frente das suas janelas. De volta ao chão, vão para trás delas de novo.
+
+E o bichinho pode passear atrás do Dock de novo, como antes.
+
+**Experimente:** Maximize uma janela, comece um retângulo de seleção na mesa ao lado do Dock para o bichinho subir nele e arraste devagar para cima. O bichinho pega carona nele na frente da janela.
+
+---
+
 ## <a id="v1.30.3"></a>Seu bichinho e a bola não ficam mais embaixo do Dock
 
 <sub>1.30.3 · 9 de outubro de 2026</sub>

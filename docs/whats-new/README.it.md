@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>L’animaletto resta in vista quando salta o viaggia su una selezione
+
+<sub>1.30.4 · 10 ottobre 2026</sub>
+
+L’animaletto e la sua palla non spariscono più dietro le finestre mentre sono in aria.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, quando l’animaletto saltava sopra il puntatore o saliva su un riquadro di selezione, una finestra ingrandita lo copriva e sembrava che fosse sparito.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ora, finché l’animaletto o la sua palla sono più in alto del Dock, si vedono davanti alle tue finestre. Tornati a terra, passano di nuovo dietro.
+
+E l’animaletto può di nuovo passeggiare dietro il Dock, proprio come prima.
+
+**Provalo:** Ingrandisci una finestra a tutto schermo, inizia un riquadro di selezione sulla scrivania accanto al Dock perché l’animaletto ci salga sopra, e trascinalo piano verso l’alto. L’animaletto ci viaggia sopra davanti alla finestra.
+
+---
+
 ## <a id="v1.30.3"></a>L’animaletto e la sua palla non finiscono più sotto il Dock
 
 <sub>1.30.3 · 9 ottobre 2026</sub>

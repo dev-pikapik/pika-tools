@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Mazlíček je vidět, když skáče nebo se veze na výběru
+
+<sub>1.30.4 · 10. října 2026</sub>
+
+Mazlíček a míček už nemizí za okny, když jsou ve vzduchu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív, když mazlíček skákal přes ukazatel nebo se vezl nahoru na výběrovém rámečku, zakrylo ho zvětšené okno a vypadalo to, že zmizel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teď, dokud je mazlíček nebo míček výš než Dock, jsou vidět před okny. Zpátky na zemi zase zalezou za ně.
+
+A mazlíček zase může chodit za Dockem, stejně jako dřív.
+
+**Vyzkoušejte:** Zvětšete okno na celou obrazovku, začněte na ploše vedle Docku výběrový rámeček, aby na něj mazlíček vylezl, a pomalu ho táhněte nahoru. Mazlíček se na něm veze před oknem.
+
+---
+
 ## <a id="v1.30.3"></a>Mazlíček a míček už nechodí pod Dock
 
 <sub>1.30.3 · 9. října 2026</sub>

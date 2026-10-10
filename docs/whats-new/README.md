@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Your pet stays in sight when it jumps or rides a selection
+
+<sub>1.30.4 · October 10, 2026</sub>
+
+Your pet and its ball no longer vanish behind windows while they are up in the air.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, when your pet jumped over the pointer or rode a selection box up, a full-size window covered it, and it looked as if your pet was gone.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Now, while your pet or its ball is higher than the Dock, they show in front of your windows. Back on the ground, they go behind them again.
+
+And your pet can walk behind the Dock again, just like before.
+
+**Try it:** Make a window full size, start a selection box on the desktop next to the Dock so your pet climbs on, and slowly drag it up. Your pet rides it in front of the window.
+
+---
+
 ## <a id="v1.30.3"></a>Your pet and its ball stay out from under the Dock
 
 <sub>1.30.3 · October 9, 2026</sub>

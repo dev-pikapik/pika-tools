@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Zwierzaka widać, gdy skacze albo jedzie na zaznaczeniu
+
+<sub>1.30.4 · 10 października 2026</sub>
+
+Zwierzak i piłka nie znikają już za oknami, gdy są w powietrzu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej, gdy zwierzak przeskakiwał nad kursorem albo wjeżdżał w górę na ramce zaznaczenia, zasłaniało go okno powiększone na cały ekran i wyglądało, jakby zniknął.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teraz, dopóki zwierzak albo piłka są wyżej niż Dock, pokazują się przed oknami. Po powrocie na ziemię znów chowają się za nimi.
+
+A zwierzak znów może spacerować za Dockiem, tak jak dawniej.
+
+**Wypróbuj:** Powiększ okno na cały ekran, zacznij ramkę zaznaczenia na biurku obok Docka, żeby zwierzak na nią wszedł, i powoli ciągnij ją w górę. Zwierzak jedzie na niej przed oknem.
+
+---
+
 ## <a id="v1.30.3"></a>Zwierzak i piłka nie chowają się już pod Dockiem
 
 <sub>1.30.3 · 9 października 2026</sub>

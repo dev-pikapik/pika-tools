@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Votre compagnon reste visible quand il saute ou monte sur une sélection
+
+<sub>1.30.4 · 10 octobre 2026</sub>
+
+Votre compagnon et sa balle ne disparaissent plus derrière les fenêtres quand ils sont en l’air.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, quand votre compagnon sautait par-dessus le pointeur ou montait sur un cadre de sélection, une fenêtre agrandie le cachait, et on aurait dit qu’il avait disparu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Désormais, tant que votre compagnon ou sa balle est plus haut que le Dock, ils passent devant vos fenêtres. De retour au sol, ils repassent derrière.
+
+Et votre compagnon peut de nouveau se promener derrière le Dock, comme avant.
+
+**Pour essayer :** Agrandissez une fenêtre sur tout l’écran, commencez un cadre de sélection sur le bureau à côté du Dock pour que votre compagnon monte dessus, puis tirez-le lentement vers le haut. Votre compagnon monte avec lui, devant la fenêtre.
+
+---
+
 ## <a id="v1.30.3"></a>Votre compagnon et sa balle ne vont plus sous le Dock
 
 <sub>1.30.3 · 9 octobre 2026</sub>

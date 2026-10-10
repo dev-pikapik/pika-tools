@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>펫이 점프하거나 선택 상자를 타고 올라가도 보여요
+
+<sub>1.30.4 · 2026년 10월 10일</sub>
+
+펫과 공이 공중에 있는 동안 더 이상 창 뒤로 사라지지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 펫이 포인터를 뛰어넘거나 선택 상자를 타고 올라가면 최대로 키운 창에 가려져서 펫이 사라진 것처럼 보였어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+이제 펫이나 공이 Dock보다 높이 있는 동안에는 창 앞에 보여요. 땅으로 돌아오면 다시 창 뒤로 가요.
+
+그리고 펫은 예전처럼 다시 Dock 뒤를 걸어 다닐 수 있어요.
+
+**사용해 보기:** 창을 최대로 키우고, 데스크탑에서 Dock 옆에 선택 상자를 그리기 시작해 펫이 올라타게 한 다음 천천히 위로 드래그해 보세요. 펫이 상자를 타고 창 앞으로 올라가요.
+
+---
+
 ## <a id="v1.30.3"></a>펫과 공이 더 이상 Dock 아래로 숨지 않아요
 
 <sub>1.30.3 · 2026년 10월 9일</sub>

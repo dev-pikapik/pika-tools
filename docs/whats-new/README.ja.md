@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>ジャンプ中も選択枠に乗っているときも、ペットが見えるようになりました
+
+<sub>1.30.4 · 2026年10月10日</sub>
+
+ペットとボールが空中にいるあいだ、ウインドウの裏で消えることはなくなりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+これまでは、ペットがポインタを飛び越えたり選択枠に乗って上がったりすると、最大化したウインドウに隠れてしまい、ペットがいなくなったように見えました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+これからは、ペットやボールが Dock より高いところにいるあいだ、ウインドウの手前に見えます。地面に戻ると、またウインドウの後ろに入ります。
+
+そしてペットは、前と同じように Dock の後ろをまた歩けるようになりました。
+
+**試してみる：** ウインドウを最大化し、デスクトップの Dock の横で選択枠を描き始めてペットを乗せ、ゆっくり上へドラッグしてみてください。ペットは選択枠に乗ったまま、ウインドウの手前を上がっていきます。
+
+---
+
 ## <a id="v1.30.3"></a>ペットとボールが Dock の下に隠れなくなりました
 
 <sub>1.30.3 · 2026年10月9日</sub>

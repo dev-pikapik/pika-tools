@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Evcil dostun zıplarken ya da seçim kutusuyla yükselirken hep görünüyor
+
+<sub>1.30.4 · 10 Ekim 2026</sub>
+
+Evcil dostun ve topu havadayken artık pencerelerin arkasında kaybolmuyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Önceden evcil dostun imlecin üzerinden atladığında ya da bir seçim kutusuyla yukarı çıktığında tam boyutlu bir pencere onu kapatıyordu ve sanki kaybolmuş gibi görünüyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Artık evcil dostun ya da topu Dock’tan yüksekteyken pencerelerinin önünde görünüyor. Yere dönünce yeniden pencerelerin arkasına geçiyorlar.
+
+Ve evcil dostun yine eskisi gibi Dock’un arkasında gezebiliyor.
+
+**Deneyin:** Bir pencereyi tam boyuta getir, evcil dostun üstüne çıksın diye masaüstünde Dock’un yanında bir seçim kutusu çizmeye başla ve onu yavaşça yukarı sürükle. Evcil dostun kutunun üstünde pencerenin önünden yukarı çıkıyor.
+
+---
+
 ## <a id="v1.30.3"></a>Evcil dostun ve topu artık Dock’un altına girmiyor
 
 <sub>1.30.3 · 9 Ekim 2026</sub>

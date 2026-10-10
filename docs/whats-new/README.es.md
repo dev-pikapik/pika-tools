@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.4"></a>Tu mascota sigue a la vista cuando salta o viaja en una selección
+
+<sub>1.30.4 · 10 de octubre de 2026</sub>
+
+Tu mascota y su pelota ya no desaparecen detrás de las ventanas mientras están en el aire.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, cuando tu mascota saltaba por encima del puntero o subía en un recuadro de selección, una ventana maximizada la tapaba y parecía que había desaparecido.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ahora, mientras tu mascota o su pelota están más arriba que el Dock, se ven delante de tus ventanas. Al volver al suelo, pasan otra vez detrás.
+
+Y tu mascota puede volver a pasear detrás del Dock, como antes.
+
+**Pruébalo:** Maximiza una ventana, empieza un recuadro de selección en el escritorio junto al Dock para que tu mascota se suba y arrástralo despacio hacia arriba. Tu mascota viaja en él delante de la ventana.
+
+---
+
 ## <a id="v1.30.3"></a>Tu mascota y su pelota ya no se meten bajo el Dock
 
 <sub>1.30.3 · 9 de octubre de 2026</sub>
