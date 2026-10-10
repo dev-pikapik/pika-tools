@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Your pet stays out of your video
+
+<sub>1.30.7 · October 10, 2026</sub>
+
+When your pet or its ball is behind a window, it stays there even when it jumps or flies.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, if your pet or its ball was hiding behind a video or a game, a jump or a flight could pop it up right over what you were watching. Pressing Space to pause a video could bring it out too.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Now they stay behind the window that covers them, whatever they do. And a full-screen video in Firefox hides them right away.
+
+Behind ordinary windows they still slip in and out, just like before.
+
+**Try it:** Play a video in a big window that covers the bottom of the screen and press Space to pause it. Your pet stays behind the video.
+
+---
+
 ## <a id="v1.30.6"></a>Full screen means your pet takes a break everywhere
 
 <sub>1.30.6 · October 10, 2026</sub>

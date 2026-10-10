@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>펫이 더 이상 영상 앞에 끼어들지 않아요
+
+<sub>1.30.7 · 2026년 10월 10일</sub>
+
+펫이나 공이 창 뒤에 있으면 점프하거나 날아도 그대로 뒤에 있어요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+전에는 펫이나 공이 영상이나 게임 뒤에 숨어 있어도, 점프하거나 날면 보고 있던 화면 위로 튀어나오곤 했어요. 영상을 멈추려고 스페이스 바를 눌러도 펫이 나왔고요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+이제는 무엇을 하든 자기를 가린 창 뒤에 그대로 있어요. 그리고 Firefox에서 영상을 전체 화면으로 보면 바로 숨어요.
+
+일반 창 뒤로 숨는 건 전과 똑같아요.
+
+**사용해 보기:** 화면 아래쪽까지 덮는 큰 창에서 영상을 틀고 스페이스 바로 멈춰 보세요. 펫은 영상 뒤에 그대로 있어요.
+
+---
+
 ## <a id="v1.30.6"></a>전체 화면일 땐 펫이 모든 화면에서 쉬어요
 
 <sub>1.30.6 · 2026년 10월 10일</sub>

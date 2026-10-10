@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Seu bichinho não entra mais no seu vídeo
+
+<sub>1.30.7 · 10 de outubro de 2026</sub>
+
+Quando o bichinho ou a bola estão atrás de uma janela, eles ficam lá mesmo quando pulam ou voam.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, se o bichinho ou a bola estavam escondidos atrás de um vídeo ou jogo, um pulo ou um voo podia jogá-los bem por cima do que você estava vendo. Apertar Espaço para pausar um vídeo também fazia o bichinho aparecer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Agora eles ficam atrás da janela que os cobre, façam o que fizerem. E um vídeo em tela cheia no Firefox os esconde na hora.
+
+Atrás de janelas comuns eles continuam se escondendo como antes.
+
+**Experimente:** Abra um vídeo numa janela grande que cubra a parte de baixo da tela e aperte Espaço para pausar. O bichinho fica atrás do vídeo.
+
+---
+
 ## <a id="v1.30.6"></a>Em tela cheia, seu bichinho descansa em todas as telas
 
 <sub>1.30.6 · 10 de outubro de 2026</sub>

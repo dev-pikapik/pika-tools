@@ -22,7 +22,7 @@ final class PetStage: NSObject {
     private let ballView = FigureView(BallPose(), paint: BallFigure.draw)
     private let grip = PetHand()
     private let ballGrip = PetHand()
-    private var raised = false, tossed = false
+    private var raised = false, tossed = false, hiddenUp = false, hiddenToss = false
     private var fake: CGPoint?
     private var anchor = CGPoint.zero
     private var grabbed = 0.0
@@ -66,8 +66,8 @@ final class PetStage: NSObject {
 
         let workspace = NSWorkspace.shared.notificationCenter, local = NotificationCenter.default, distributed = DistributedNotificationCenter.default()
         watch(local, NSApplication.didChangeScreenParametersNotification) { $0.layout() }
-        watch(local, NSWindow.didChangeOcclusionStateNotification, window) { _ in }
-        watch(local, NSWindow.didChangeOcclusionStateNotification, field) { _ in }
+        watch(local, NSWindow.didChangeOcclusionStateNotification, window) { $0.checkFullscreen() }
+        watch(local, NSWindow.didChangeOcclusionStateNotification, field) { $0.checkFullscreen() }
         watch(workspace, NSWorkspace.screensDidSleepNotification) { $0.asleep = true }
         watch(workspace, NSWorkspace.screensDidWakeNotification) { $0.asleep = false }
         watch(workspace, NSWorkspace.sessionDidResignActiveNotification) { $0.locked = true }
@@ -247,6 +247,19 @@ final class PetStage: NSObject {
 
     private static func offset(_ from: NSScreen, _ to: NSScreen) -> CGVector {
         CGVector(dx: from.frame.minX - to.frame.minX, dy: from.frame.minY - to.frame.minY)
+    }
+
+    private static func covered(_ body: CGRect, on screen: NSScreen) -> Bool {
+        let top = NSScreen.screens.first?.frame.maxY ?? 0
+        let spot = CGRect(x: screen.frame.minX + body.minX, y: top - screen.frame.minY - body.maxY, width: body.width, height: body.height)
+        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+        let me = Int(ProcessInfo.processInfo.processIdentifier)
+        return windows.contains { info in
+            guard info[kCGWindowLayer as String] as? Int == 0, info[kCGWindowOwnerPID as String] as? Int != me,
+                  info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
+                  let bounds = (info[kCGWindowBounds as String] as? NSDictionary).flatMap({ CGRect(dictionaryRepresentation: $0) }) else { return false }
+            return bounds.intersects(spot)
+        }
     }
 
     private static func strip(_ screen: NSScreen) -> CGRect {
@@ -459,8 +472,8 @@ final class PetStage: NSObject {
 
     private func lift() {
         guard let window, let field else { return }
-        for (panel, up, body, floor, dock) in [(window, raised, physics.frame, physics.bounds.minY, physics.dock), (field, tossed, ball.frame, ball.bounds.minY, ball.dock)] {
-            let level = up ? .statusBar : dock.map({ body.minY > floor + 0.5 && body.maxY > $0.maxY }) == true ? Self.front : Self.level
+        for (panel, up, buried, body, floor, dock) in [(window, raised, hiddenUp, physics.frame, physics.bounds.minY, physics.dock), (field, tossed, hiddenToss, ball.frame, ball.bounds.minY, ball.dock)] {
+            let level = up && !buried ? .statusBar : dock.map({ body.minY > floor + 0.5 && body.maxY > $0.maxY }) == true ? Self.front : Self.level
             if panel.level != level { panel.level = level }
         }
         if let bubble, bubble.level != window.level { bubble.level = window.level }
@@ -472,6 +485,8 @@ final class PetStage: NSObject {
 
     private func rise() {
         guard physics.aloft != raised || ball.aloft != tossed else { return }
+        if physics.aloft, !raised, let pet = petScreen { hiddenUp = Self.covered(physics.frame, on: pet) }
+        if ball.aloft, !tossed, let toy = ballScreen { hiddenToss = Self.covered(ball.frame, on: toy) }
         raised = physics.aloft
         tossed = ball.aloft
         layout()

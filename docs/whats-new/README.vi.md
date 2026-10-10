@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Thú cưng không còn chen vào video của bạn
+
+<sub>1.30.7 · ngày 10 tháng 10, 2026</sub>
+
+Khi thú cưng hoặc quả bóng ở sau một cửa sổ, chúng vẫn ở đó kể cả khi nhảy hay bay.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Trước đây, nếu thú cưng hoặc quả bóng đang trốn sau video hay game, một cú nhảy hay bay có thể khiến chúng hiện ngay trên thứ bạn đang xem. Nhấn phím cách để tạm dừng video cũng làm thú cưng chui ra.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Giờ đây, dù làm gì, chúng vẫn ở sau cửa sổ đang che chúng. Và video toàn màn hình trong Firefox giấu chúng đi ngay.
+
+Sau các cửa sổ thông thường, chúng vẫn ẩn như trước.
+
+**Thử ngay:** Phát video trong một cửa sổ lớn che phần dưới màn hình rồi nhấn phím cách để tạm dừng. Thú cưng vẫn ở sau video.
+
+---
+
 ## <a id="v1.30.6"></a>Khi toàn màn hình, thú cưng nghỉ ngơi ở mọi màn hình
 
 <sub>1.30.6 · ngày 10 tháng 10, 2026</sub>

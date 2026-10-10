@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>宠物不再闯进你的视频
+
+<sub>1.30.7 · 2026年10月10日</sub>
+
+宠物或球躲在窗口后面时，就算跳起来或飞起来，也会一直待在后面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，宠物或球躲在视频或游戏后面时，一跳或一飞就可能冒到你正在看的画面上方。按空格键暂停视频，也会把宠物引出来。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+现在，不管它们做什么，都会待在挡住它们的窗口后面。在 Firefox 里全屏看视频，它们会马上藏起来。
+
+在普通窗口后面，它们还是和以前一样躲进躲出。
+
+**试试看：** 在一个盖住屏幕底部的大窗口里播放视频，按空格键暂停。宠物会留在视频后面。
+
+---
+
 ## <a id="v1.30.6"></a>全屏时，宠物在所有屏幕上都去休息
 
 <sub>1.30.6 · 2026年10月10日</sub>

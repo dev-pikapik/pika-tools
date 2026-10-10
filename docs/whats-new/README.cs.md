@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Mazlíček už neleze do vašeho videa
+
+<sub>1.30.7 · 10. října 2026</sub>
+
+Když je mazlíček nebo míček za oknem, zůstane tam, i když skáče nebo letí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív, když se mazlíček nebo míček schovával za videem nebo hrou, mohl ho skok nebo let vynést přímo nad to, na co se díváte. I mezerník pro pozastavení videa mazlíčka vylákal ven.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Teď zůstávají za oknem, které je zakrývá, ať dělají cokoli. A video na celou obrazovku ve Firefoxu je schová hned.
+
+Za běžnými okny se schovávají stejně jako dřív.
+
+**Vyzkoušejte:** Pusťte video ve velkém okně, které zakrývá spodek obrazovky, a stiskněte mezerník pro pozastavení. Mazlíček zůstane za videem.
+
+---
+
 ## <a id="v1.30.6"></a>Na celé obrazovce si mazlíček dá pauzu všude
 
 <sub>1.30.6 · 10. října 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>寵物不再闖進你的影片
+
+<sub>1.30.7 · 2026年10月10日</sub>
+
+寵物或球躲在視窗後面時，就算跳起來或飛起來，也會一直待在後面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，寵物或球躲在影片或遊戲後面時，一跳或一飛就可能冒到你正在看的畫面上方。按空白鍵暫停影片，也會把寵物引出來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+現在，不管它們做什麼，都會待在擋住它們的視窗後面。在 Firefox 裡全螢幕看影片，它們會馬上躲起來。
+
+在一般視窗後面，它們還是和以前一樣躲進躲出。
+
+**試試看：** 在一個蓋住螢幕底部的大視窗裡播放影片，按空白鍵暫停。寵物會留在影片後面。
+
+---
+
 ## <a id="v1.30.6"></a>全螢幕時，寵物在所有螢幕上都去休息
 
 <sub>1.30.6 · 2026年10月10日</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>L’animaletto non si intromette più nel tuo video
+
+<sub>1.30.7 · 10 ottobre 2026</sub>
+
+Quando l’animaletto o la sua palla sono dietro una finestra, restano lì anche quando saltano o volano.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, se l’animaletto o la sua palla si nascondevano dietro un video o un gioco, un salto o un volo poteva farli spuntare proprio sopra quello che stavi guardando. Anche premere Spazio per mettere in pausa un video faceva uscire l’animaletto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ora restano dietro la finestra che li copre, qualunque cosa facciano. E un video a schermo intero in Firefox li nasconde subito.
+
+Dietro le finestre normali continuano a nascondersi come prima.
+
+**Provalo:** Avvia un video in una finestra grande che copre la parte bassa dello schermo e premi Spazio per metterlo in pausa. L’animaletto resta dietro il video.
+
+---
+
 ## <a id="v1.30.6"></a>A schermo intero l’animaletto si riposa ovunque
 
 <sub>1.30.6 · 10 ottobre 2026</sub>

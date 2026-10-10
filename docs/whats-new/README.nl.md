@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Je huisdiertje blijft uit je video
+
+<sub>1.30.7 · 10 oktober 2026</sub>
+
+Zit je huisdiertje of de bal achter een venster, dan blijft het daar, ook als het springt of vliegt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eerst kon een sprong of vlucht je huisdiertje of de bal precies boven op wat je keek laten verschijnen, ook als ze zich achter een video of game verstopten. Op de spatiebalk drukken om een video te pauzeren lokte je huisdiertje ook tevoorschijn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Nu blijven ze achter het venster dat ze bedekt, wat ze ook doen. En een schermvullende video in Firefox verstopt ze meteen.
+
+Achter gewone vensters verstoppen ze zich nog net als vroeger.
+
+**Probeer het:** Speel een video af in een groot venster dat de onderkant van het scherm bedekt en druk op de spatiebalk om te pauzeren. Je huisdiertje blijft achter de video.
+
+---
+
 ## <a id="v1.30.6"></a>Bij schermvullend neemt je huisdiertje overal pauze
 
 <sub>1.30.6 · 10 oktober 2026</sub>

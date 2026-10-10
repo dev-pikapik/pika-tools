@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>ペットが動画の前に出てこなくなりました
+
+<sub>1.30.7 · 2026年10月10日</sub>
+
+ペットやボールがウインドウの裏にいるときは、ジャンプしても飛んでも裏にいたままです。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+これまでは、ペットやボールが動画やゲームの裏に隠れていても、ジャンプや飛行で見ている画面の上に飛び出すことがありました。動画を止めようとスペースキーを押すと、ペットが出てくることもありました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+いまは何をしていても、覆っているウインドウの裏にいたままです。Firefoxでフルスクリーンの動画を再生すると、すぐに隠れます。
+
+ふつうのウインドウの裏に隠れるのは、これまでどおりです。
+
+**試してみる：** 画面の下まで覆う大きなウインドウで動画を再生し、スペースキーで一時停止してみてください。ペットは動画の裏にいたままです。
+
+---
+
 ## <a id="v1.30.6"></a>フルスクリーンのあいだ、ペットはどの画面でもひと休み
 
 <sub>1.30.6 · 2026年10月10日</sub>

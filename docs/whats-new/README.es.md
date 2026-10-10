@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Tu mascota ya no se mete en tu vídeo
+
+<sub>1.30.7 · 10 de octubre de 2026</sub>
+
+Cuando tu mascota o su pelota están detrás de una ventana, se quedan ahí aunque salten o vuelen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, si tu mascota o su pelota se escondían detrás de un vídeo o un juego, un salto o un vuelo podía sacarlas justo encima de lo que estabas viendo. Pulsar Espacio para pausar un vídeo también hacía salir a tu mascota.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ahora se quedan detrás de la ventana que las tapa, hagan lo que hagan. Y un vídeo a pantalla completa en Firefox las esconde al instante.
+
+Detrás de las ventanas normales siguen escondiéndose igual que antes.
+
+**Pruébalo:** Pon un vídeo en una ventana grande que tape la parte de abajo de la pantalla y pulsa Espacio para pausarlo. Tu mascota se queda detrás del vídeo.
+
+---
+
 ## <a id="v1.30.6"></a>Con pantalla completa, tu mascota descansa en todas partes
 
 <sub>1.30.6 · 10 de octubre de 2026</sub>

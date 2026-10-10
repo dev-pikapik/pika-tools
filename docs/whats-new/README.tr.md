@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.7"></a>Evcil dostun artık videonun önüne çıkmıyor
+
+<sub>1.30.7 · 10 Ekim 2026</sub>
+
+Evcil dostun ya da topu bir pencerenin arkasındaysa, zıplasa ya da uçsa bile orada kalıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Önceden evcil dostun ya da topu bir videonun veya oyunun arkasına saklanmışken bir zıplama ya da uçuş onu tam izlediğin şeyin üstüne çıkarabiliyordu. Videoyu duraklatmak için Boşluk tuşuna basmak da evcil dostunu ortaya çıkarıyordu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Artık ne yaparlarsa yapsınlar, onları örten pencerenin arkasında kalıyorlar. Firefox’ta tam ekran video da onları hemen saklıyor.
+
+Sıradan pencerelerin arkasına ise eskisi gibi saklanıyorlar.
+
+**Deneyin:** Ekranın altını kaplayan büyük bir pencerede video aç ve duraklatmak için Boşluk tuşuna bas. Evcil dostun videonun arkasında kalır.
+
+---
+
 ## <a id="v1.30.6"></a>Tam ekranda evcil dostun her yerde mola veriyor
 
 <sub>1.30.6 · 10 Ekim 2026</sub>
