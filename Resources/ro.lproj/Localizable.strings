@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Deschis acum. Apasă pe joc pentru a-l adăuga";
 "From the Dock" = "Din Dock";
+
+"Automatically" = "Automat";
+"Pause while playing" = "Oprește temporar în joc";
+"Run without interrupting" = "Execută fără întrerupere";
+"Run normally" = "Execută normal";
+"System key" = "Tastă de sistem";
+"Force Quit" = "Închidere forțată";
+"System action %@" = "Acțiune de sistem %@";
+"Other system shortcuts" = "Alte scurtături de sistem";
+"Current macOS shortcuts. Automatic protects the game." = "Scurtăturile macOS actuale. Automat protejează jocul.";
+"Search system shortcuts" = "Caută scurtături de sistem";
+"Refresh" = "Reîmprospătează";
+"While playing" = "În timpul jocului";
+"Always available" = "Mereu disponibil";
+"No key assigned" = "Nicio tastă alocată";
+"Off in macOS" = "Oprit în macOS";
+"System keyboard shortcuts" = "Scurtături de tastatură ale sistemului";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Unele acțiuni macOS nu au nume publicat. Alte aplicații pot avea propriile scurtături.";
+"More game settings" = "Mai multe configurări de joc";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Scurtăturile rapide de limbă lucrează discret. Tastele de joc ținute ajung la joc.";
+"Other apps watching keys" = "Alte aplicații care urmăresc tastele";
+"Can change keys" = "Poate schimba tastele";
+"Only listens" = "Doar urmărește";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Aceste aplicații nu își publică scurtăturile în catalogul macOS.";
+"Process %@" = "Proces %@";

@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Otwarte teraz. Kliknij grę, aby ją dodać";
 "From the Dock" = "Z Docka";
+
+"Automatically" = "Automatycznie";
+"Pause while playing" = "Wstrzymaj podczas gry";
+"Run without interrupting" = "Wykonuj bez przerywania";
+"Run normally" = "Wykonuj normalnie";
+"System key" = "Klawisz systemowy";
+"Force Quit" = "Wymuś koniec";
+"System action %@" = "Działanie systemowe %@";
+"Other system shortcuts" = "Inne skróty systemowe";
+"Current macOS shortcuts. Automatic protects the game." = "Aktualne skróty macOS. Tryb automatyczny chroni grę.";
+"Search system shortcuts" = "Szukaj skrótów systemowych";
+"Refresh" = "Odśwież";
+"While playing" = "Podczas gry";
+"Always available" = "Zawsze dostępne";
+"No key assigned" = "Brak przypisanych klawiszy";
+"Off in macOS" = "Wyłączone w macOS";
+"System keyboard shortcuts" = "Systemowe skróty klawiaturowe";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Niektóre działania macOS nie mają opublikowanej nazwy. Inne aplikacje mogą mieć własne skróty.";
+"More game settings" = "Więcej ustawień gry";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Szybkie skróty języka działają dyskretnie. Trzymane klawisze gry trafiają do gry.";
+"Other apps watching keys" = "Inne aplikacje obserwujące klawisze";
+"Can change keys" = "Może zmieniać klawisze";
+"Only listens" = "Tylko obserwuje";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Te aplikacje nie publikują skrótów w katalogu macOS.";
+"Process %@" = "Proces %@";

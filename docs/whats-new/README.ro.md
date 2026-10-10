@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Modul Joc cunoaște scurtăturile Macului
+
+<sub>1.31.0 · 11 octombrie 2026</sub>
+
+Simplu implicit, cu întregul catalog al sistemului când ai nevoie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Activează modul Joc și joacă. Configurările suplimentare au catalogul publicat de Mac, tastele actuale și o previzualizare animată pentru fiecare acțiune.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automat oprește acțiunile care deschid ferestre sau mută focalizarea. O scurtătură de limbă rapidă și intenționată schimbă sursa fără fereastra sistemului. Tastele de mișcare ținute au prioritate, astfel că alergarea și salturile nu schimbă limba accidental.
+
+Fiecare acțiune se poate regla în catalogul cu căutare. Limba poate fi schimbată în fundal; alte acțiuni pot fi oprite sau permise normal. Alegerile se sincronizează. Alte aplicații care urmăresc tastele apar separat. Închiderea forțată rămâne disponibilă.
+
+**Încearcă:** Deschide configurările suplimentare, caută o scurtătură de captură sau limbă și compară previzualizarea cu și fără protecție.
+
+---
+
 ## <a id="v1.30.14"></a>Linkurile scurtăturilor se deschid fără blocare
 
 <sub>1.30.14 · 11 octombrie 2026</sub>

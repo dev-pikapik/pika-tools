@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Chế độ trò chơi biết các phím tắt của Mac
+
+<sub>1.31.0 · 11 tháng 10 năm 2026</sub>
+
+Mặc định đơn giản, với toàn bộ danh mục hệ thống khi cần.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Bật Chế độ trò chơi và chơi. Thêm cài đặt trò chơi chứa danh mục Mac, các phím hiện tại và xem trước động cho mỗi tác vụ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Tự động tạm dừng tác vụ mở cửa sổ hoặc chuyển tiêu điểm. Phím tắt ngôn ngữ nhanh có chủ ý đổi nguồn mà không mở cửa sổ hệ thống. Phím di chuyển được giữ có ưu tiên, nên chạy và nhảy không vô tình đổi ngôn ngữ.
+
+Mỗi tác vụ có thể chỉnh trong danh mục có tìm kiếm. Ngôn ngữ có thể đổi trong nền; tác vụ khác có thể tạm dừng hoặc cho chạy bình thường. Lựa chọn được đồng bộ. Ứng dụng khác theo dõi phím hiển thị riêng. Buộc thoát vẫn khả dụng.
+
+**Thử ngay:** Mở cài đặt bổ sung, tìm phím tắt chụp ảnh hoặc ngôn ngữ rồi so sánh xem trước có và không có bảo vệ.
+
+---
+
 ## <a id="v1.30.14"></a>Liên kết phím tắt mở mà không bị lỗi
 
 <sub>1.30.14 · 11 tháng 10 năm 2026</sub>

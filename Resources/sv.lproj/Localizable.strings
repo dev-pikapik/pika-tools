@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Öppet nu. Klicka på ditt spel för att lägga till det";
 "From the Dock" = "Från Dock";
+
+"Automatically" = "Automatiskt";
+"Pause while playing" = "Pausa under spel";
+"Run without interrupting" = "Kör utan avbrott";
+"Run normally" = "Kör som vanligt";
+"System key" = "Systemtangent";
+"Force Quit" = "Tvångsavsluta";
+"System action %@" = "Systemåtgärd %@";
+"Other system shortcuts" = "Andra systemgenvägar";
+"Current macOS shortcuts. Automatic protects the game." = "Aktuella macOS-genvägar. Automatiskt skyddar spelet.";
+"Search system shortcuts" = "Sök systemgenvägar";
+"Refresh" = "Uppdatera";
+"While playing" = "Under spel";
+"Always available" = "Alltid tillgängligt";
+"No key assigned" = "Inga tangenter tilldelade";
+"Off in macOS" = "Avstängt i macOS";
+"System keyboard shortcuts" = "Systemets kortkommandon";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Vissa macOS-åtgärder har inget publicerat namn. Andra appar kan ha egna genvägar.";
+"More game settings" = "Fler spelinställningar";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Snabba språkgenvägar arbetar tyst. Nedhållna speltangenter når spelet.";
+"Other apps watching keys" = "Andra appar som bevakar tangenter";
+"Can change keys" = "Kan ändra tangenter";
+"Only listens" = "Lyssnar bara";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Dessa appar publicerar inte sina genvägar i macOS-katalogen.";
+"Process %@" = "Process %@";

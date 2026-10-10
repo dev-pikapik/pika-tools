@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Tryb gry zna skróty Twojego Maca
+
+<sub>1.31.0 · 11 października 2026</sub>
+
+Domyślnie prosto, z pełnym katalogiem systemowym w razie potrzeby.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Włącz tryb gry i graj. Więcej ustawień gry zawiera katalog publikowany przez Maca, bieżące klawisze i animowany podgląd każdej akcji.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatycznie wstrzymuje akcje otwierające okna lub przenoszące fokus. Krótki, celowy skrót języka zmienia źródło bez okna systemowego. Trzymane klawisze ruchu mają priorytet, więc bieganie i skoki nie zmieniają języka przypadkiem.
+
+Każdą akcję można ustawić w przeszukiwanym katalogu. Język może zmieniać się w tle; inne akcje można wstrzymać lub pozwolić im działać normalnie. Wybory się synchronizują. Inne aplikacje obserwujące klawisze są osobno, a Wymuś koniec pozostaje dostępne.
+
+**Wypróbuj:** Otwórz dodatkowe ustawienia, wyszukaj skrót zrzutu lub języka i porównaj podgląd z ochroną i bez niej.
+
+---
+
 ## <a id="v1.30.14"></a>Linki skrótów otwierają się bez awarii
 
 <sub>1.30.14 · 11 października 2026</sub>

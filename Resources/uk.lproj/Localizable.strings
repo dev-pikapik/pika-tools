@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Відкрито зараз. Натисніть на гру, щоб додати її";
 "From the Dock" = "З Dock";
+
+"Automatically" = "Автоматично";
+"Pause while playing" = "Призупинити в грі";
+"Run without interrupting" = "Виконувати без перешкод";
+"Run normally" = "Виконувати як завжди";
+"System key" = "Системна клавіша";
+"Force Quit" = "Примусове завершення";
+"System action %@" = "Системна дія %@";
+"Other system shortcuts" = "Інші системні поєднання";
+"Current macOS shortcuts. Automatic protects the game." = "Поточні поєднання macOS. Автоматичний режим захищає гру.";
+"Search system shortcuts" = "Пошук системних поєднань";
+"Refresh" = "Оновити";
+"While playing" = "Під час гри";
+"Always available" = "Завжди доступно";
+"No key assigned" = "Клавіші не призначені";
+"Off in macOS" = "Вимкнено в macOS";
+"System keyboard shortcuts" = "Системні поєднання клавіш";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Деякі дії macOS не мають опублікованої назви. Інші програми можуть мати власні поєднання.";
+"More game settings" = "Додаткові параметри гри";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Короткі поєднання зміни мови працюють без перешкод. Затиснуті ігрові клавіші надходять до гри.";
+"Other apps watching keys" = "Інші програми, що стежать за клавішами";
+"Can change keys" = "Може змінювати введення";
+"Only listens" = "Лише спостерігає";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Ці програми не публікують свої поєднання в каталозі macOS.";
+"Process %@" = "Процес %@";

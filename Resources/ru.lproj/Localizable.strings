@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Открыто сейчас. Нажмите на игру, чтобы добавить её";
 "From the Dock" = "Из Dock";
+
+"Automatically" = "Автоматически";
+"Pause while playing" = "Приостановить в игре";
+"Run without interrupting" = "Выполнять без помех";
+"Run normally" = "Выполнять как обычно";
+"System key" = "Системная клавиша";
+"Force Quit" = "Завершение принудительно";
+"System action %@" = "Системное действие %@";
+"Other system shortcuts" = "Другие системные сочетания";
+"Current macOS shortcuts. Automatic protects the game." = "Текущие сочетания macOS. Автоматический режим защищает игру.";
+"Search system shortcuts" = "Поиск системных сочетаний";
+"Refresh" = "Обновить";
+"While playing" = "Во время игры";
+"Always available" = "Всегда доступно";
+"No key assigned" = "Клавиши не назначены";
+"Off in macOS" = "Выключено в macOS";
+"System keyboard shortcuts" = "Системные сочетания клавиш";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "У некоторых действий macOS нет опубликованного имени. У других программ могут быть свои сочетания.";
+"More game settings" = "Дополнительные настройки игры";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Короткие сочетания смены языка работают без помех. Зажатые игровые клавиши поступают в игру.";
+"Other apps watching keys" = "Другие программы, наблюдающие за клавишами";
+"Can change keys" = "Может изменять ввод";
+"Only listens" = "Только наблюдает";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Эти программы не публикуют свои сочетания в каталоге macOS.";
+"Process %@" = "Процесс %@";

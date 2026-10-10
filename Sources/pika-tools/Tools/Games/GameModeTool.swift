@@ -14,6 +14,7 @@ final class GameModeTool: Tool {
 
     private static let gamesKey = "game-mode-games"
     private static let notGamesKey = "game-mode-not-games"
+    private static let systemShortcutsKey = "game-mode-system-shortcuts"
 
     private(set) var isActive = false
     private(set) var game: NSRunningApplication?
@@ -51,6 +52,19 @@ final class GameModeTool: Tool {
         }
     }
 
+    var systemShortcuts: [String] {
+        didSet {
+            UserDefaults.standard.set(systemShortcuts, forKey: Self.systemShortcutsKey)
+            leave()
+            update()
+        }
+    }
+
+    func setSystemShortcut(_ id: Int32, mode: GameShortcutMode) {
+        systemShortcuts = systemShortcuts.filter { $0.split(separator: ":").first != Substring(String(id)) }
+            + (mode == .automatic ? [] : ["\(id):\(mode.rawValue)"])
+    }
+
     @ObservationIgnored fileprivate var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var combos: Set<UInt64> = []
@@ -59,6 +73,13 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var fenceTimer: Timer?
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
+    @ObservationIgnored fileprivate var languageBindings: [UInt64: (direction: InputSwitchGesture.Direction, automatic: Bool)] = [:]
+    @ObservationIgnored fileprivate var inputIntent = GameInputIntent()
+    @ObservationIgnored fileprivate var allowedAppShortcuts: Set<UInt64> = []
+
+    var allowsLanguageGesture: Bool {
+        !languageBindings.isEmpty && inputIntent.allows(nil, flags: CGEventSource.flagsState(.combinedSessionState), at: DispatchTime.now().uptimeNanoseconds)
+    }
 
     private init() {
         let defaults = UserDefaults.standard
@@ -68,6 +89,7 @@ final class GameModeTool: Tool {
         rules = Self.savedRules
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
+        systemShortcuts = defaults.stringArray(forKey: Self.systemShortcutsKey) ?? []
 
         let center = NSWorkspace.shared.notificationCenter
         for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
@@ -89,12 +111,13 @@ final class GameModeTool: Tool {
         rules = Self.savedRules
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
+        systemShortcuts = defaults.stringArray(forKey: Self.systemShortcutsKey) ?? []
         isEnabled = defaults.bool(forKey: id)
         if game == nil { DockEdges.restore() }
     }
 
     var isDefault: Bool {
-        !isEnabled && rules.count == GameRule.allCases.count && games.isEmpty && notGames.isEmpty
+        !isEnabled && rules.count == GameRule.allCases.count && games.isEmpty && notGames.isEmpty && systemShortcuts.isEmpty
     }
 
     func reset() {
@@ -102,6 +125,7 @@ final class GameModeTool: Tool {
         rules = Set(GameRule.allCases)
         games = []
         notGames = []
+        systemShortcuts = []
     }
 
     var settingsView: AnyView {
@@ -177,10 +201,15 @@ final class GameModeTool: Tool {
 
     private func enter(_ app: NSRunningApplication) {
         game = app
-        trace.disable(GameRules.hotKeys(rules, appSwitcher: tap != nil, input: SymbolicHotKeys.gameInputs))
+        let catalog = SystemShortcutCatalog.load()
+        trace.disable(SystemShortcutCatalog.selected(catalog, rules: rules, values: systemShortcuts, appSwitcher: tap != nil))
+        languageBindings = tap == nil ? [:] : SystemShortcutCatalog.languageBindings(catalog, rules: rules, values: systemShortcuts, disabled: Set(HotKeyTrace.ids(trace.defaults) ?? []))
+        let choices = SystemGameShortcut.overrides(systemShortcuts)
+        allowedAppShortcuts = Set(catalog.filter { $0.assigned && $0.mode(rules: rules, overrides: choices) == .system }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) })
+        inputIntent = GameInputIntent(held: Set((0..<128).filter { ![54, 55, 56, 57, 58, 59, 60, 61, 62, 63].contains($0) && CGEventSource.keyState(.combinedSessionState, key: CGKeyCode($0)) }.map(Int64.init)))
         combos = Set(
             (HotKeyTrace.ids(trace.defaults) ?? []).compactMap(SymbolicHotKeys.value)
-                .filter { !GameRules.isGameInput($0.modifiers) }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
+                .filter { !GameRules.isGameInput($0.modifiers) && languageBindings[GameRules.combo(key: Int64($0.key), flags: $0.modifiers)] == nil }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
         )
         hinted = false
         if rules.contains(.cursor) || rules.contains(.swipes) { moveFence() }
@@ -205,6 +234,9 @@ final class GameModeTool: Tool {
         fence = nil
         DockEdges.restoreSoon()
         combos = []
+        languageBindings = [:]
+        inputIntent = GameInputIntent()
+        allowedAppShortcuts = []
         if let assertion { IOPMAssertionRelease(assertion) }
         assertion = nil
         trace.restore()
@@ -240,7 +272,7 @@ final class GameModeTool: Tool {
     }
 
     private func startTap() {
-        let types: [CGEventType] = [.keyDown, .keyUp, .leftMouseDown, .leftMouseUp, .leftMouseDragged]
+        let types: [CGEventType] = [.keyDown, .keyUp, .flagsChanged, .leftMouseDown, .leftMouseUp, .leftMouseDragged]
         let mask = types.reduce(CGEventMask(0)) { $0 | (1 << $1.rawValue) }
 
         guard let tap = CGEvent.tapCreate(
@@ -483,9 +515,22 @@ private func gameModeCallback(
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         let flags = event.flags
         guard tool.isPlaying else { break }
-        let blocked = GameRules.blocksAppShortcut(key: key, flags: flags, rules: tool.rules)
+        if type == .keyDown, event.getIntegerValueField(.keyboardEventAutorepeat) == 0 {
+            let combo = GameRules.combo(key: Int64(key), flags: flags.rawValue)
+            if let binding = tool.languageBindings[combo], !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+                let pid = tool.game?.processIdentifier
+                DispatchQueue.main.async {
+                    guard tool.game?.processIdentifier == pid, NSWorkspace.shared.frontmostApplication?.processIdentifier == pid, tool.languageBindings[combo] != nil else { return }
+                    InputSwitchTool.selectInGame(binding.direction)
+                }
+            }
+        }
+        tool.inputIntent.pressed(Int64(key), down: type == .keyDown)
+        let blocked = GameRules.blocksAppShortcut(key: key, flags: flags, rules: tool.rules, allowed: tool.allowedAppShortcuts)
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
+    case .flagsChanged:
+        if tool.isPlaying { tool.inputIntent.changed(event.flags, at: event.timestamp) }
     case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
         event.flags = GameRules.clickFlags(type, event.flags, playing: tool.isPlaying, blocksControl: tool.rules.contains(.controlClick))
     default:
@@ -523,6 +568,7 @@ private func cursorFenceCallback(
 
 struct GameModePage: View {
     @Bindable private var tool = GameModeTool.shared
+    @State private var advanced = false
 
     var body: some View {
         Form {
@@ -556,39 +602,48 @@ struct GameModePage: View {
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
-            rules(Text("Closing the game"), [
-                Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
-                Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
-            ], footer: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."))
-            rules(Text("Apps"), [
-                Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
-                Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
-                Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], subtitle: Text("Spotlight")),
-                Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
-                Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], subtitle: Text("Launchpad")),
-            ])
-            rules(Text("Desktops"), [
-                Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], subtitle: Text("Mission Control")),
-                Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], subtitle: Text("App Exposé")),
-                Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
-                Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
-                Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
-                Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
-            ])
-            rules(Text("Keyboard"), [
-                Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
-                Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
-                Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(60, "⌃" + String(localized: "Space")), key(12, "⌃F1"), "…"]),
-                Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
-            ])
-            rules(Text("Mouse and screen"), [
-                Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
-                Rule(
-                    .cursor, String(localized: "The pointer stays in the game"),
-                    subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
-                ),
-                Rule(.display, String(localized: "The screen stays on"), subtitle: Text("The display doesn’t dim or sleep while you play")),
-            ])
+            Section {
+                DisclosureGroup("More game settings", isExpanded: $advanced) {
+                    Text("Quick language shortcuts work silently. Held game keys stay in the game.")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                }
+            }
+            if advanced {
+                rules(Text("Closing the game"), [
+                    Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
+                    Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
+                ], footer: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."))
+                rules(Text("Apps"), [
+                    Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
+                    Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
+                    Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], subtitle: Text("Spotlight")),
+                    Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
+                    Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], subtitle: Text("Launchpad")),
+                ])
+                rules(Text("Desktops"), [
+                    Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], subtitle: Text("Mission Control")),
+                    Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], subtitle: Text("App Exposé")),
+                    Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
+                    Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
+                    Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
+                    Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
+                ])
+                rules(Text("Keyboard"), [
+                    Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
+                    Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
+                    Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(60, "⌃" + String(localized: "Space")), key(12, "⌃F1"), "…"]),
+                    Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
+                ])
+                rules(Text("Mouse and screen"), [
+                    Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
+                    Rule(
+                        .cursor, String(localized: "The pointer stays in the game"),
+                        subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
+                    ),
+                    Rule(.display, String(localized: "The screen stays on"), subtitle: Text("The display doesn’t dim or sleep while you play")),
+                ])
+                SystemShortcutList(tool: tool)
+            }
             RestoreDefaultsSection(
                 message: String(localized: "These will turn off and go back to their default options: \(tool.title)"),
                 isDefault: tool.isDefault,
@@ -598,6 +653,9 @@ struct GameModePage: View {
         .formStyle(.grouped)
         .settingsPage()
         .environment(\.inSettings, true)
+        .onChange(of: SettingsWindow.model.highlight, initial: true) {
+            if let title = SettingsWindow.model.highlight, title != tool.title && title != String(localized: "Your games") { advanced = true }
+        }
     }
 
     private func key(_ id: Int32, _ fallback: String) -> String {

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Mode Game tahu pintasan Mac kamu
+
+<sub>1.31.0 · 11 Oktober 2026</sub>
+
+Sederhana secara bawaan, dengan katalog sistem lengkap saat diperlukan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Nyalakan Mode Game dan bermain. Pengaturan game lainnya memuat katalog Mac, tombol saat ini dan pratinjau animasi untuk setiap tindakan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Otomatis menjeda tindakan yang membuka jendela atau memindahkan fokus. Pintasan bahasa singkat yang disengaja mengganti sumber tanpa jendela sistem. Tombol gerak yang ditahan punya prioritas, jadi berlari dan melompat tidak mengganti bahasa tanpa sengaja.
+
+Setiap tindakan bisa diatur dalam katalog yang dapat dicari. Bahasa bisa berjalan di latar; tindakan lain bisa dijeda atau diizinkan seperti biasa. Pilihan disinkronkan. Aplikasi lain yang memantau tombol tampil terpisah. Paksa Keluar tetap tersedia.
+
+**Coba:** Buka pengaturan tambahan, cari pintasan tangkapan layar atau bahasa dan bandingkan pratinjau dengan dan tanpa perlindungan.
+
+---
+
 ## <a id="v1.30.14"></a>Tautan pintasan terbuka tanpa crash
 
 <sub>1.30.14 · 11 Oktober 2026</sub>

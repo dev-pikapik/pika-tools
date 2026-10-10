@@ -156,6 +156,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),
             SettingsItem(tab: .games, title: String(localized: "The screen stays on")),
             SettingsItem(tab: .games, title: String(localized: "Your games")),
+            SettingsItem(tab: .games, title: String(localized: "System keyboard shortcuts")),
             SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),
             SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: "phrases, speech bubble, talk, say, messages, updates"),
             SettingsItem(tab: .pet, title: String(localized: "Ball"), synonyms: "toy, football, soccer, kick, play, throw, selection, platform"),
@@ -225,6 +226,8 @@ enum SettingsWindow {
 
     static let model = Model()
     private(set) static var window: NSWindow?
+
+    static var preview: some View { SettingsView() }
 
     static let minSize = NSSize(width: 660, height: 460)
 

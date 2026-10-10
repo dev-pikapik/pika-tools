@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "当前已打开。点击游戏即可添加";
 "From the Dock" = "来自程序坞";
+
+"Automatically" = "自动";
+"Pause while playing" = "游戏时暂停";
+"Run without interrupting" = "执行但不中断";
+"Run normally" = "正常执行";
+"System key" = "系统按键";
+"Force Quit" = "强制退出";
+"System action %@" = "系统操作 %@";
+"Other system shortcuts" = "其他系统快捷键";
+"Current macOS shortcuts. Automatic protects the game." = "当前macOS快捷键。自动模式保护游戏。";
+"Search system shortcuts" = "搜索系统快捷键";
+"Refresh" = "刷新";
+"While playing" = "游戏期间";
+"Always available" = "始终可用";
+"No key assigned" = "未设置按键";
+"Off in macOS" = "macOS中已关闭";
+"System keyboard shortcuts" = "系统键盘快捷键";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "部分macOS操作未公开名称。其他应用可能有自己的快捷键。";
+"More game settings" = "更多游戏设置";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "快速语言快捷键不会干扰。持续按住的游戏键会传给游戏。";
+"Other apps watching keys" = "其他监视按键的应用";
+"Can change keys" = "可以修改按键";
+"Only listens" = "仅监听";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "这些应用不会在macOS目录中公开自己的快捷键。";
+"Process %@" = "进程 %@";

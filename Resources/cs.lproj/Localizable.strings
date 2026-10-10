@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Právě otevřené. Kliknutím přidejte svou hru";
 "From the Dock" = "Z Docku";
+
+"Automatically" = "Automaticky";
+"Pause while playing" = "Pozastavit při hraní";
+"Run without interrupting" = "Spustit bez přerušení";
+"Run normally" = "Spustit běžně";
+"System key" = "Systémová klávesa";
+"Force Quit" = "Vynutit ukončení";
+"System action %@" = "Systémová akce %@";
+"Other system shortcuts" = "Další systémové zkratky";
+"Current macOS shortcuts. Automatic protects the game." = "Aktuální zkratky macOS. Automatický režim chrání hru.";
+"Search system shortcuts" = "Hledat systémové zkratky";
+"Refresh" = "Obnovit";
+"While playing" = "Při hraní";
+"Always available" = "Vždy dostupné";
+"No key assigned" = "Klávesy nepřiřazeny";
+"Off in macOS" = "Vypnuto v macOS";
+"System keyboard shortcuts" = "Systémové klávesové zkratky";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Některé akce macOS nemají zveřejněný název. Jiné aplikace mohou mít vlastní zkratky.";
+"More game settings" = "Další nastavení hry";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Rychlé jazykové zkratky pracují tiše. Držené herní klávesy se dostávají do hry.";
+"Other apps watching keys" = "Další aplikace sledující klávesy";
+"Can change keys" = "Může měnit klávesy";
+"Only listens" = "Pouze sleduje";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Tyto aplikace nezveřejňují zkratky v katalogu macOS.";
+"Process %@" = "Proces %@";

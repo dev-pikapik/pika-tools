@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Oyun Modu Mac’inin kısayollarını biliyor
+
+<sub>1.31.0 · 11 Ekim 2026</sub>
+
+Varsayılan olarak sade, gerektiğinde tüm sistem kataloğu yanında.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Oyun Modu’nu aç ve oyna. Diğer oyun ayarları, Mac’in yayımladığı kataloğu, güncel tuşları ve her eylem için animasyonlu önizlemeyi içerir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Otomatik, pencere açan veya odağı değiştiren eylemleri duraklatır. Hızlı ve kasıtlı dil kısayolu sistem penceresi olmadan kaynağı değiştirir. Basılı hareket tuşları önceliklidir; koşmak ve zıplamak yanlışlıkla dili değiştirmez.
+
+Her eylem aranabilir katalogda ayarlanabilir. Dil arka planda değişebilir; diğer eylemler duraklatılabilir veya normal çalışabilir. Seçimler eşitlenir. Tuşları izleyen diğer uygulamalar ayrı gösterilir. Çıkmaya Zorla kullanılabilir kalır.
+
+**Deneyin:** Ek ayarları aç, ekran görüntüsü veya dil kısayolunu ara ve koruma açıkken ve kapalıyken önizlemeyi karşılaştır.
+
+---
+
 ## <a id="v1.30.14"></a>Kısayol bağlantıları çökmeden açılıyor
 
 <sub>1.30.14 · 11 Ekim 2026</sub>

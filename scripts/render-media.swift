@@ -38,6 +38,7 @@ enum RenderMedia {
         ("whats-new/1.25.1/dock-games", 3.85, AnyView(DockShelfArt())),
         ("whats-new/1.28.0/app-shelf", 3.85, AnyView(DockShelfArt(symbol: "safari.fill"))),
         ("whats-new/1.29.0/pet-ball", PetBallArt.length, AnyView(PetBallArt())),
+        ("whats-new/1.31.0/system-shortcuts", 6.2, AnyView(SystemShortcutsCard())),
     ]
 
     static func main() {
@@ -112,6 +113,22 @@ private struct KeepAwakeCard: View {
     var body: some View {
         KeepAwakeScene(on: tick % 2 == 1, bright: true, closed: false, hasLid: true, remaining: nil)
             .loop($tick, [1.4, 2.6])
+    }
+}
+
+private struct SystemShortcutsCard: View {
+    private let entries = SystemShortcutCatalog.load()
+
+    var body: some View {
+        IllustrationRow(loop: [1.4, 2.4, 2.4]) { tick in
+            HStack(spacing: 8) {
+                ForEach([SystemShortcutKind.screenshot, .language, .window], id: \.self) { kind in
+                    if let entry = entries.first(where: { $0.kind == kind }) {
+                        SystemShortcutFrame(entry: entry, story: .still(on: tick > 0), height: 60, background: kind == .language && tick > 0)
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "अभी खुला है। जोड़ने के लिए अपने गेम पर क्लिक करें";
 "From the Dock" = "Dock से";
+
+"Automatically" = "अपने आप";
+"Pause while playing" = "खेलते समय रोकें";
+"Run without interrupting" = "बिना बाधा चलाएँ";
+"Run normally" = "सामान्य रूप से चलाएँ";
+"System key" = "सिस्टम कुंजी";
+"Force Quit" = "बलपूर्वक बंद करें";
+"System action %@" = "सिस्टम कार्रवाई %@";
+"Other system shortcuts" = "अन्य सिस्टम शॉर्टकट";
+"Current macOS shortcuts. Automatic protects the game." = "मौजूदा macOS शॉर्टकट। अपने आप मोड गेम की रक्षा करता है।";
+"Search system shortcuts" = "सिस्टम शॉर्टकट खोजें";
+"Refresh" = "रीफ़्रेश";
+"While playing" = "खेलते समय";
+"Always available" = "हमेशा उपलब्ध";
+"No key assigned" = "कोई कुंजी निर्धारित नहीं";
+"Off in macOS" = "macOS में बंद";
+"System keyboard shortcuts" = "सिस्टम कीबोर्ड शॉर्टकट";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "कुछ macOS कार्रवाइयों के नाम प्रकाशित नहीं हैं। दूसरे ऐप के अपने शॉर्टकट हो सकते हैं।";
+"More game settings" = "और गेम सेटिंग्स";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "तेज़ भाषा शॉर्टकट चुपचाप काम करते हैं। दबाए हुए गेम की कुंजियाँ गेम तक पहुँचती हैं।";
+"Other apps watching keys" = "कुंजियाँ देखने वाले अन्य ऐप";
+"Can change keys" = "कुंजियाँ बदल सकता है";
+"Only listens" = "सिर्फ़ देखता है";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "ये ऐप macOS सूची में अपने शॉर्टकट प्रकाशित नहीं करते।";
+"Process %@" = "प्रक्रिया %@";
