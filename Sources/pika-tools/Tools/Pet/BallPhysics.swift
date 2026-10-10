@@ -136,7 +136,7 @@ struct BallPhysics {
             impact = max(impact, hypot(push.0, push.1))
         }
         if let ledge { collide(ledge) }
-        if !thrown, let dock { collide(CGRect(x: dock.minX, y: bounds.minY - 2 * Self.radius, width: dock.width, height: bounds.height + 4 * Self.radius)) }
+        if !thrown, let dock { collide(CGRect(x: dock.minX, y: dock.maxY, width: dock.width, height: max(bounds.maxY - dock.maxY, 0) + 2 * Self.radius)) }
         let top = thrown ? bounds.maxY : min(bounds.maxY, roof)
         if center.y + Self.radius > top {
             center.y = top - Self.radius
