@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Control दबाए रखें और खेलते रहें
+
+<sub>1.30.13 · 10 अक्टूबर 2026</sub>
+
+Control दबाने पर भाषा बदलना अब गेम का स्पेस नहीं छीनता।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+दौड़ने के लिए Control दबाए रखें और कूदने के लिए स्पेस दबाएँ। गेम मोड में Control+स्पेस और Control+Option+स्पेस से भाषा बदलना रुक जाता है।
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Control वाले या Command के बिना Shift और Option वाले दूसरे macOS शॉर्टकट और आपके चुने हुए संयोजन भी रुकते हैं। कुंजी दबाना, छोड़ना और दबाए रखना साथ में गेम तक पहुँचते हैं।
+
+pikapik का भाषा इशारा और गेम मॉडिफ़ायर वाले बाहर निकलने के शॉर्टकट भी बाधा नहीं बनते। गेम छोड़ने पर सिस्टम शॉर्टकट पहले जैसे लौट आते हैं।
+
+**आज़माएँ:** Control दबाए रखें, चलें और कई बार स्पेस दबाएँ। फिर गेम छोड़कर हमेशा की तरह भाषा बदलें।
+
+---
+
 ## <a id="v1.30.12"></a>गतिविधि मॉनिटर से गेम खींचकर जोड़ें
 
 <sub>1.30.12 · 10 अक्टूबर 2026</sub>

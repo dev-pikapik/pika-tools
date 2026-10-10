@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Håll Control nere och fortsätt spela
+
+<sub>1.30.13 · 10 oktober 2026</sub>
+
+Control låter inte längre språkbytet ta mellanslag från ditt spel.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Håll Control för att springa och tryck på mellanslag för att hoppa. I Spelläge pausas språkbyte med Control+mellanslag och Control+Option+mellanslag.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Andra macOS-genvägar med Control, eller Shift och Option utan Command, pausas också, inklusive dina egna val. Tryck, släpp och nedhållna tangenter når spelet tillsammans.
+
+pikapiks språkrörelse och avslutningsgenvägar med spelmodifierare stör inte heller. När du lämnar spelet återgår systemgenvägarna precis som de var.
+
+**Prova:** Håll Control, rör dig och tryck på mellanslag några gånger. Lämna sedan spelet och byt språk som vanligt.
+
+---
+
 ## <a id="v1.30.12"></a>Dra ditt spel från Aktivitetskontroll
 
 <sub>1.30.12 · 10 oktober 2026</sub>

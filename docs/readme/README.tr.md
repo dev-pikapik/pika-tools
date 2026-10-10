@@ -234,7 +234,7 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Oyun Modu.** Oyunlarınızı ekleyin; siz oynarken Mac sizi oyundan koparmaz. Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz, ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç Dock’a, menü çubuğuna ya da başka bir ekrana kaymaz ve ekran açık kalır. Bunların her birinin Oyunlar sayfasında kendi anahtarı vardır; pikapik ayrıca Mac’inizde bulduğu oyunları önerir. Oyunda Control-tıklama normal bir tıklama olarak kalır, Control ile ok tuşları masaüstünü değiştirmez. Minecraft da tanınır: Minecraft Launcher’ı ya da CurseForge’u ekleyin, mod Minecraft’ın içinde açılır. Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. Oyundan çıktığınız anda her şey her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
-Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla. Java ve diğer ortamlarla çalışan oyunlar, .app dosyası olmasa da burada görünür. Minecraft, java yerine Minecraft adıyla görünür. Oyunun işlemini bul ve satırını Ayarlar → Oyunlar içindeki Oyunların alanına sürükle.
+Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla. Java ve diğer ortamlarla çalışan oyunlar, .app dosyası olmasa da burada görünür. Minecraft, java yerine Minecraft adıyla görünür. Oyunun işlemini bul ve satırını Ayarlar → Oyunlar içindeki Oyunların alanına sürükle. Koşmak için Control’ü basılı tut ve zıplamak için Boşluk’a bas. Oyun Modu’nda Control+Boşluk ve Control+Option+Boşluk ile dil değiştirme duraklatılır.
 
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 

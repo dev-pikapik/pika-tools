@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Control’ü basılı tut ve oynamaya devam et
+
+<sub>1.30.13 · 10 Ekim 2026</sub>
+
+Control artık dil değişiminin oyundaki Boşluk tuşunu almasına izin vermiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Koşmak için Control’ü basılı tut ve zıplamak için Boşluk’a bas. Oyun Modu’nda Control+Boşluk ve Control+Option+Boşluk ile dil değiştirme duraklatılır.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Control kullanan veya Command olmadan Shift ve Option kullanan diğer macOS kısayolları, kendi atadıkların da dahil, duraklatılır. Basılan, bırakılan ve basılı tutulan tuşlar oyuna birlikte ulaşır.
+
+pikapik’in dil hareketi ve oyun değiştiricilerini kullanan çıkış kısayolları da karışmaz. Oyundan çıkınca sistem kısayolları eski haline döner.
+
+**Deneyin:** Control’ü basılı tut, hareket et ve Boşluk’a birkaç kez bas. Sonra oyundan çıkıp dili normal şekilde değiştir.
+
+---
+
 ## <a id="v1.30.12"></a>Oyununu Etkinlik Monitörü’nden sürükle
 
 <sub>1.30.12 · 10 Ekim 2026</sub>

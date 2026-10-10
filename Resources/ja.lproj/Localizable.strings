@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, 通知センター, ステージマネージャ";
 "Spaces, swipe, gestures, trackpad" = "Spaces, スワイプ, ジェスチャ, トラックパッド";
 "symbols, dictionary" = "記号, 辞書";
-"keyboard focus, function keys" = "キーボードフォーカス, ファンクションキー";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "キーボードフォーカス, ファンクションキー, Control スペース, Ctrl, Shift, Option, キーボードレイアウト, 入力ソース, option, shift, alt";
 "fn, globe key" = "fn, 地球儀キー";
 "animations, motion, fast, faster, instant, speed up" = "アニメーション, 動き, 速い, もっと速く, 瞬時, 高速化";
 "autohide, hide Dock, delay, wait" = "自動的に表示/非表示, Dockを隠す, 遅延, 待ち時間";

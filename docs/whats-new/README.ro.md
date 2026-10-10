@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Ține Control apăsat și continuă jocul
+
+<sub>1.30.13 · 10 octombrie 2026</sub>
+
+Control nu mai lasă schimbarea limbii să ia tasta Spațiu din joc.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Ține Control pentru a alerga și apasă Spațiu pentru a sări. În modul Joc, schimbarea limbii cu Control+Spațiu sau Control+Option+Spațiu este oprită temporar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Și alte scurtături macOS cu Control, sau cu Shift și Option fără Command, sunt oprite temporar, inclusiv cele alese de tine. Apăsările, eliberările și tastele ținute ajung împreună la joc.
+
+Gestul de limbă din pikapik și scurtăturile de ieșire cu modificatori de joc nu încurcă nici ele. Când ieși din joc, scurtăturile sistemului revin exact cum erau.
+
+**Încearcă:** Ține Control, mișcă-te și apasă Spațiu de câteva ori. Apoi ieși din joc și schimbă limba ca de obicei.
+
+---
+
 ## <a id="v1.30.12"></a>Trage jocul din Monitor activitate
 
 <sub>1.30.12 · 10 octombrie 2026</sub>

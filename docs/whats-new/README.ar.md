@@ -7,6 +7,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>اضغط Control باستمرار وواصل اللعب
+
+<sub>1.30.13 · 10 أكتوبر 2026</sub>
+
+لم يعد Control يسمح لتبديل اللغة بأخذ مفتاح المسافة من اللعبة.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+اضغط Control باستمرار للجري واضغط المسافة للقفز. في وضع الألعاب يتوقف تبديل اللغة عبر Control+المسافة وControl+Option+المسافة مؤقتاً.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+تتوقف أيضاً اختصارات macOS الأخرى التي تستخدم Control، أو Shift وOption دون Command، بما فيها تخصيصاتك. تصل ضغطات المفاتيح وإفلاتها والمفاتيح المضغوطة معاً إلى اللعبة.
+
+لا تتدخل أيضاً حركة لغة pikapik واختصارات الخروج التي تستخدم مفاتيح اللعب المعدّلة. عند مغادرة اللعبة تعود اختصارات النظام تماماً كما كانت.
+
+**جرّبه:** اضغط Control باستمرار وتحرك واضغط المسافة عدة مرات. ثم غادر اللعبة وبدّل اللغة كالمعتاد.
+
+---
+
 ## <a id="v1.30.12"></a>اسحب لعبتك من مراقب النشاط
 
 <sub>1.30.12 · 10 أكتوبر 2026</sub>

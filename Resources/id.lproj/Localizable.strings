@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Pusat Pemberitahuan, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, gesek, gerakan, trackpad";
 "symbols, dictionary" = "simbol, kamus";
-"keyboard focus, function keys" = "fokus keyboard, tombol fungsi";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "fokus keyboard, tombol fungsi, Control Spasi, Ctrl, Shift, Option, tata letak papan ketik, sumber input, keyboard, option, shift, alt";
 "fn, globe key" = "fn, tombol globe";
 "animations, motion, fast, faster, instant, speed up" = "animasi, gerakan, cepat, lebih cepat, instan, percepat";
 "autohide, hide Dock, delay, wait" = "sembunyikan otomatis, sembunyikan Dock, jeda, tunggu";

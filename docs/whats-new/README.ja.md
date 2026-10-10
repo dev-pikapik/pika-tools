@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Controlを押したまま遊べます
+
+<sub>1.30.13 · 2026年10月10日</sub>
+
+Controlによる言語切り替えでゲームのスペースキーが奪われなくなりました。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Controlを押したまま走り、スペースでジャンプできます。ゲームモードではControl+スペースやControl+Option+スペースによる言語切り替えを一時停止します。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Controlを使うショートカットや、CommandなしでShiftやOptionを使うmacOSショートカットも、自分で設定した組み合わせを含めて一時停止します。キーを押す、離す、押し続ける操作が同時にゲームへ届きます。
+
+pikapikの言語切り替えジェスチャーやゲーム用の修飾キーを使う終了ショートカットも操作を妨げません。ゲームを離れるとシステムのショートカットは元どおりに戻ります。
+
+**試してみる：** Controlを押したまま移動し、スペースを何度か押してください。ゲームを離れてから普段どおり言語を切り替えてみましょう。
+
+---
+
 ## <a id="v1.30.12"></a>アクティビティモニタからゲームをドラッグ
 
 <sub>1.30.12 · 2026年10月10日</sub>

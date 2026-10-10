@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Тримайте Control і грайте
+
+<sub>1.30.13 · 10 жовтня 2026</sub>
+
+Control більше не дає зміні мови забрати пробіл у гри.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Тримайте Control для бігу та натискайте пробіл для стрибка. В ігровому режимі зміна мови через Control+пробіл і Control+Option+пробіл призупиняється.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Інші поєднання macOS із Control, а також із Shift чи Option без Command теж призупиняються, зокрема призначені вами. Натискання, відпускання та затиснуті клавіші надходять у гру разом.
+
+Жест зміни мови pikapik та поєднання виходу з ігровими модифікаторами теж не втручаються. Після виходу з гри системні поєднання повертаються такими, як були.
+
+**Спробувати:** Тримайте Control, рухайтеся та кілька разів натисніть пробіл. Потім вийдіть із гри та змініть мову як зазвичай.
+
+---
+
 ## <a id="v1.30.12"></a>Перетягніть гру з Монітора активності
 
 <sub>1.30.12 · 10 жовтня 2026</sub>

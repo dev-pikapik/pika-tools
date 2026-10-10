@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Mantén Control y sigue jugando
+
+<sub>1.30.13 · 10 de octubre de 2026</sub>
+
+Control ya no deja que el cambio de idioma le quite Espacio al juego.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Mantén Control para correr y pulsa Espacio para saltar. En modo Juego se pausa el cambio de idioma con Control+Espacio y Control+Option+Espacio.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+También se pausan otros atajos de macOS con Control, o Mayús y Option sin Command, incluidos los que hayas asignado. Las pulsaciones, liberaciones y teclas mantenidas llegan juntas al juego.
+
+El gesto de idioma de pikapik y los atajos de salida con modificadores de juego tampoco interfieren. Al salir del juego, los atajos del sistema vuelven exactamente como estaban.
+
+**Pruébalo:** Mantén Control, muévete y pulsa Espacio varias veces. Después sal del juego y cambia de idioma como siempre.
+
+---
+
 ## <a id="v1.30.12"></a>Arrastra tu juego desde Monitor de Actividad
 
 <sub>1.30.12 · 10 de octubre de 2026</sub>

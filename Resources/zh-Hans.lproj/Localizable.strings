@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "调度中心, Spaces, 通知中心, 台前调度";
 "Spaces, swipe, gestures, trackpad" = "Spaces, 轻扫, 手势, 触控板";
 "symbols, dictionary" = "符号, 词典";
-"keyboard focus, function keys" = "键盘焦点, 功能键";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "键盘焦点, 功能键, Control 空格, Ctrl, Shift, Option, 键盘布局, 输入法, 输入源, option, shift, alt";
 "fn, globe key" = "fn, 地球仪键";
 "animations, motion, fast, faster, instant, speed up" = "动画, 动态, 快, 更快, 即时, 加速";
 "autohide, hide Dock, delay, wait" = "自动隐藏, 隐藏程序坞, 延迟, 等待";

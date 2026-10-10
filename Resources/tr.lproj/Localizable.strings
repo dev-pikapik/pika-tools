@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Bildirim Merkezi, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, kaydırma, hareketler, izleme dörtgeni";
 "symbols, dictionary" = "simgeler, sözlük";
-"keyboard focus, function keys" = "klavye odağı, işlev tuşları";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "klavye odağı, işlev tuşları, Control Boşluk, Ctrl, Shift, Option, klavye düzeni, girdi kaynağı, option, shift, alt";
 "fn, globe key" = "fn, küre tuşu";
 "animations, motion, fast, faster, instant, speed up" = "animasyonlar, hareket, hızlı, daha hızlı, anında, hızlandır";
 "autohide, hide Dock, delay, wait" = "otomatik gizle, Dock’u gizle, gecikme, bekleme";

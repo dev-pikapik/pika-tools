@@ -19,7 +19,7 @@ enum TestGameMode {
         let ids = GameRule.allCases.flatMap(\.hotKeys) + [1, 2]
         let all = Set(GameRule.allCases)
         precondition(Set(ids).count == ids.count)
-        precondition(GameRules.neverBlocked.isDisjoint(with: ids) && GameRules.neverBlocked.isSuperset(of: [60, 61, 156]))
+        precondition(GameRules.neverBlocked.isDisjoint(with: ids) && GameRules.neverBlocked.contains(156))
         precondition(Set(GameRule.allCases.map(\.key)).count == all.count)
         precondition(GameRules.hotKeys([], appSwitcher: true).isEmpty)
         precondition(GameRules.hotKeys([.commandQ, .commandW, .swipes, .controlClick, .cursor, .display], appSwitcher: true).isEmpty)
@@ -30,9 +30,30 @@ enum TestGameMode {
         precondition(GameRule.spotlight.hotKeys.contains(64) && GameRule.siri.hotKeys == [186] && GameRule.hide.hotKeys.contains(233))
         precondition(GameRule.missionControl.hotKeys.contains(32) && GameRule.appWindows.hotKeys.contains(33) && GameRule.showDesktop.hotKeys.contains(37))
         precondition(Set(GameRule.desktops.hotKeys).isSuperset(of: [79, 81]) && Set(GameRule.desktopNumbers.hotKeys).isSuperset(of: [118, 126]))
-        precondition(Set(GameRule.focusKeys.hotKeys).isSuperset(of: [7, 12, 57, 159]) && GameRule.emoji.hotKeys == [50] && GameRule.lookUp.hotKeys == [70])
+        precondition(Set(GameRule.focusKeys.hotKeys).isSuperset(of: [7, 12, 57, 60, 61, 159]) && GameRule.emoji.hotKeys == [50] && GameRule.lookUp.hotKeys == [70])
         precondition(GameRules.isGameInput(0x40000) && GameRules.isGameInput(0x840000))
-        precondition(!GameRules.isGameInput(0x140000) && !GameRules.isGameInput(0x100000) && !GameRules.isGameInput(0x80000))
+        precondition(GameRules.isGameInput(0x140000) && GameRules.isGameInput(0x80000) && GameRules.isGameInput(0))
+        precondition(!GameRules.isGameInput(0x100000) && !GameRules.isGameInput(0x180000))
+        precondition(GameRules.hotKeys([.focusKeys], appSwitcher: false, input: [60, 61, 999]).filter { $0 == 60 }.count == 1)
+        precondition(GameRules.hotKeys([.focusKeys], appSwitcher: false, input: [60, 61, 999]).contains(999))
+        precondition(!GameRules.hotKeys([.spotlight], appSwitcher: false, input: [60, 61, 999]).contains(60))
+        let modifiers: [CGEventFlags] = [.maskControl, .maskShift, .maskAlternate, .maskSecondaryFn]
+        for combination in 0..<16 {
+            let flags = modifiers.enumerated().reduce(CGEventFlags()) { combination & (1 << $1.offset) == 0 ? $0 : $0.union($1.element) }
+            precondition(GameRules.isGameInput(flags.rawValue))
+            for key in 0..<128 {
+                precondition(!GameRules.blocksAppShortcut(key: key, flags: flags, rules: all))
+                for down in [true, false] {
+                    let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down)!
+                    event.flags = flags
+                    precondition(GameRules.clickFlags(event.type, event.flags, playing: true, blocksControl: true) == flags)
+                }
+            }
+        }
+        precondition(!GameRules.blocksAppShortcut(key: kVK_Space, flags: [.maskControl, .maskShift], rules: all))
+        precondition(!GameRules.blocksAppShortcut(key: kVK_Tab, flags: [.maskControl, .maskCommand], rules: all))
+        precondition(GameRules.blocksAppShortcut(key: kVK_Tab, flags: .maskCommand, rules: all))
+        precondition(GameRules.blocksAppShortcut(key: kVK_ANSI_H, flags: .maskCommand, rules: all))
         print("rules: ok")
 
         let control: CGEventFlags = [.maskControl, .maskCommand, .maskShift]
@@ -173,6 +194,13 @@ enum TestGameMode {
         UserDefaults(suiteName: suite)!.set([60, 61], forKey: HotKeyTrace.key)
         trace().restore()
         precondition(table[60] == true && table[61] == true)
+        table[61] = false
+        table[999] = true
+        table[156] = true
+        trace().disable(GameRules.hotKeys([.focusKeys], appSwitcher: false, input: [60, 61, 999]))
+        precondition(table[60] == false && table[61] == false && table[999] == false && table[156] == true)
+        trace().restore()
+        precondition(table[60] == true && table[61] == false && table[999] == true && table[156] == true)
         UserDefaults(suiteName: suite)!.set([Int.max, 64], forKey: HotKeyTrace.key)
         table[64] = false
         trace().restore()

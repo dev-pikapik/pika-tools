@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>Halte Control gedrückt und spiele weiter
+
+<sub>1.30.13 · 10. Oktober 2026</sub>
+
+Control lässt den Sprachwechsel deinem Spiel nicht mehr die Leertaste wegnehmen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Halte Control zum Laufen und drücke die Leertaste zum Springen. Im Spielmodus wird der Sprachwechsel mit Control+Leertaste und Control+Option+Leertaste pausiert.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Andere macOS-Tastenkürzel mit Control oder mit Shift und Option ohne Command werden ebenfalls pausiert, auch eigene Zuweisungen. Tastendrücke, Loslassen und gehaltene Tasten erreichen das Spiel gemeinsam.
+
+Auch pikapiks Sprachgeste und Beenden-Kürzel mit Spieltasten stören nicht. Wenn du das Spiel verlässt, funktionieren die Systemkürzel wieder genau wie vorher.
+
+**Ausprobieren:** Halte Control, bewege dich und drücke mehrmals die Leertaste. Verlasse dann das Spiel und wechsle wie gewohnt die Sprache.
+
+---
+
 ## <a id="v1.30.12"></a>Ziehe dein Spiel aus der Aktivitätsanzeige
 
 <sub>1.30.12 · 10. Oktober 2026</sub>

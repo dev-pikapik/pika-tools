@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.13"></a>กด Control ค้างไว้แล้วเล่นต่อได้เลย
+
+<sub>1.30.13 · 10 ตุลาคม 2569</sub>
+
+การเปลี่ยนภาษาเมื่อกด Control ไม่แย่งปุ่มเว้นวรรคจากเกมอีกแล้ว
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+กด Control ค้างเพื่อวิ่งและกดเว้นวรรคเพื่อกระโดด ในโหมดเกม การเปลี่ยนภาษาด้วย Control+เว้นวรรคและ Control+Option+เว้นวรรคจะหยุดชั่วคราว
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+ปุ่มลัด macOS อื่นที่ใช้ Control หรือ Shift และ Option โดยไม่มี Command รวมถึงที่คุณตั้งเองก็หยุดชั่วคราว การกด ปล่อย และกดปุ่มค้างยังส่งถึงเกมพร้อมกัน
+
+ท่าทางเปลี่ยนภาษาของ pikapik และปุ่มลัดออกจากเกมที่ใช้ปุ่มปรับแต่งของเกมก็ไม่แทรกแซง เมื่อออกจากเกม ปุ่มลัดระบบจะกลับมาเหมือนเดิมทุกอย่าง
+
+**ลองใช้:** กด Control ค้าง เคลื่อนที่ แล้วกดเว้นวรรคหลายครั้ง จากนั้นออกจากเกมแล้วเปลี่ยนภาษาตามปกติ
+
+---
+
 ## <a id="v1.30.12"></a>ลากเกมจากตัวตรวจสอบกิจกรรม
 
 <sub>1.30.12 · 10 ตุลาคม 2569</sub>

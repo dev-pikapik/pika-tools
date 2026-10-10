@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, ศูนย์การแจ้งเตือน, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, ปัด, ท่าทาง, แทร็คแพด";
 "symbols, dictionary" = "สัญลักษณ์, พจนานุกรม";
-"keyboard focus, function keys" = "โฟกัสแป้นพิมพ์, ปุ่มฟังก์ชัน";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "โฟกัสแป้นพิมพ์, ปุ่มฟังก์ชัน, Control เว้นวรรค, Ctrl, Shift, Option, รูปแบบแป้นพิมพ์, แหล่งป้อนข้อมูล, คีย์บอร์ด, option, shift, alt";
 "fn, globe key" = "fn, ปุ่มลูกโลก";
 "animations, motion, fast, faster, instant, speed up" = "ภาพเคลื่อนไหว, การเคลื่อนไหว, เร็ว, เร็วขึ้น, ทันที, เร่งความเร็ว";
 "autohide, hide Dock, delay, wait" = "ซ่อนอัตโนมัติ, ซ่อน Dock, หน่วงเวลา, รอ";

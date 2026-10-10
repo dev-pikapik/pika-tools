@@ -390,7 +390,7 @@
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Центр уведомлений, Stage Manager, рабочие столы";
 "Spaces, swipe, gestures, trackpad" = "Spaces, смахивание, жесты, трекпад";
 "symbols, dictionary" = "символы, словарь, поиск слова";
-"keyboard focus, function keys" = "фокус клавиатуры, функциональные клавиши";
+"keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "фокус клавиатуры, функциональные клавиши, Control Пробел, Ctrl, Shift, Option, раскладка, источник ввода, option, shift, alt, переключение языка";
 "fn, globe key" = "fn, глобус, клавиша глобуса";
 "animations, motion, fast, faster, instant, speed up" = "анимации, движение, быстро, быстрее, мгновенно, ускорить";
 "autohide, hide Dock, delay, wait" = "автоскрытие, скрывать Dock, задержка, ожидание";
