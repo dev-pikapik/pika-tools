@@ -29,6 +29,17 @@ enum TestAppDrop {
             precondition(minecraft.title == "Minecraft")
             precondition(GameModeTool.key(minecraft).hasSuffix("/runtime/"))
             precondition(GameModeTool.key(minecraft.executableURL!) == GameModeTool.key(minecraft))
+            board.clearContents()
+            board.setString("\(minecraft.processIdentifier)\tjava\t7,02 ГБ\t4,78 ГБ\tme\t97,5\t27,2\t94\t741\t", forType: .string)
+            precondition(AppShelf.apps(on: board).isEmpty)
+            let files = AppShelf.apps(on: board, accepting: { GameModeTool.key($0) != nil }, textFiles: GameModeTool.processFiles)
+            precondition(files == [minecraft.executableURL!])
+            precondition(files.compactMap(GameModeTool.key) == [GameModeTool.key(minecraft)])
+            let actual = AppShelf.apps(on: NSPasteboard(name: .drag), accepting: { GameModeTool.key($0) != nil }, textFiles: GameModeTool.processFiles)
+            if NSPasteboard(name: .drag).string(forType: .string)?.contains("\(minecraft.processIdentifier)\tjava") == true {
+                precondition(actual == [minecraft.executableURL!])
+                print("Activity Monitor drag: ok")
+            }
             print("running Minecraft: ok")
         }
 

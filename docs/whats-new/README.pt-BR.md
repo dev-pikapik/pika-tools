@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Arraste o jogo do Monitor de Atividade
+
+<sub>1.30.12 · 10 de outubro de 2026</sub>
+
+O Modo Jogo aceita processos arrastados do Monitor de Atividade.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Encontre o processo do jogo e arraste a linha para Seus jogos em Ajustes → Jogos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Jogos Java funcionam mesmo sem um ícone comum no Dock. Antes essas linhas eram ignoradas porque contêm o número e nome do processo, não um arquivo.
+
+O jogo fica salvo para próximas vezes. Minecraft aparece com seu nome. O número e nome precisam corresponder a um processo em execução.
+
+**Experimente:** Arraste a linha java do Minecraft aberto para Seus jogos.
+
+---
+
 ## <a id="v1.30.11"></a>Adicione seu jogo enquanto ele está aberto
 
 <sub>1.30.11 · 10 de outubro de 2026</sub>

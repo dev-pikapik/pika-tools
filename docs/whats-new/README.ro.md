@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Trage jocul din Monitor activitate
+
+<sub>1.30.12 · 10 octombrie 2026</sub>
+
+Modul Joc acceptă procese trase din Monitor activitate.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Găsește procesul jocului și trage rândul pe Jocurile tale în Configurări → Jocuri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Jocurile Java funcționează și fără o pictogramă obișnuită în Dock. Înainte, aceste rânduri erau ignorate fiindcă au numărul și numele procesului, nu un fișier.
+
+Jocul rămâne salvat pentru pornirile viitoare. Minecraft apare cu numele său. Numărul și numele trebuie să corespundă unui proces deschis.
+
+**Încearcă:** Trage rândul java al jocului Minecraft deschis pe Jocurile tale.
+
+---
+
 ## <a id="v1.30.11"></a>Adaugă jocul cât timp rulează
 
 <sub>1.30.11 · 10 octombrie 2026</sub>

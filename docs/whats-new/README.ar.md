@@ -7,6 +7,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>اسحب لعبتك من مراقب النشاط
+
+<sub>1.30.12 · 10 أكتوبر 2026</sub>
+
+يقبل وضع الألعاب العمليات المسحوبة من مراقب النشاط.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+ابحث عن عملية اللعبة واسحب صفها إلى ألعابك في الإعدادات ← الألعاب.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+تعمل ألعاب Java أيضاً دون أيقونة عادية في Dock. كانت هذه الصفوف تُتجاهل لأنها تحتوي رقم العملية واسمها بدلاً من ملف.
+
+تُحفظ اللعبة للتشغيل لاحقاً. يظهر Minecraft باسمه. يجب أن يطابق الرقم والاسم عملية قيد التشغيل.
+
+**جرّبه:** اسحب صف java الخاص بلعبة Minecraft المفتوحة إلى ألعابك.
+
+---
+
 ## <a id="v1.30.11"></a>أضف لعبتك وهي تعمل
 
 <sub>1.30.11 · 10 أكتوبر 2026</sub>

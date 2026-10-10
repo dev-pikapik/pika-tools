@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>アクティビティモニタからゲームをドラッグ
+
+<sub>1.30.12 · 2026年10月10日</sub>
+
+ゲームモードにアクティビティモニタのプロセスをドラッグして追加できます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+ゲームのプロセスを見つけ、設定 → ゲームの「あなたのゲーム」へ行をドラッグしてください。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dockに通常のアイコンがないJavaゲームでも使えます。以前はファイルではなくプロセス番号と名前を含む行が無視されていました。
+
+ゲームは次回以降も保存され、Minecraftは本来の名前で表示されます。番号と名前は起動中のプロセスと一致する必要があります。
+
+**試してみる：** 起動中のMinecraftのjavaの行を「あなたのゲーム」へドラッグしてください。
+
+---
+
 ## <a id="v1.30.11"></a>起動中のゲームをそのまま追加
 
 <sub>1.30.11 · 2026年10月10日</sub>

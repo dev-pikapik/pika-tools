@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Ziehe dein Spiel aus der Aktivitätsanzeige
+
+<sub>1.30.12 · 10. Oktober 2026</sub>
+
+Der Spielmodus nimmt jetzt Prozesse aus der Aktivitätsanzeige an.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Suche den Spielprozess und ziehe seine Zeile auf Deine Spiele unter Einstellungen → Spiele.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Java-Spiele funktionieren auch ohne normales Symbol im Dock. Bisher wurden diese Zeilen ignoriert, weil sie Prozessnummer und Namen statt einer Datei enthalten.
+
+Das Spiel bleibt für spätere Starts gespeichert. Minecraft erscheint unter seinem Namen. Nummer und Name müssen zu einem laufenden Prozess passen.
+
+**Ausprobieren:** Ziehe die java-Zeile deines laufenden Minecraft auf Deine Spiele.
+
+---
+
 ## <a id="v1.30.11"></a>Füge dein Spiel hinzu, während es läuft
 
 <sub>1.30.11 · 10. Oktober 2026</sub>

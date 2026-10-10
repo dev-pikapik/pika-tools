@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>ลากเกมจากตัวตรวจสอบกิจกรรม
+
+<sub>1.30.12 · 10 ตุลาคม 2569</sub>
+
+โหมดเกมรับโปรเซสที่ลากจากตัวตรวจสอบกิจกรรมได้แล้ว
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+หาโปรเซสเกม แล้วลากแถวไปที่เกมของคุณในการตั้งค่า → เกม
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+เกม Java ที่ไม่มีไอคอนปกติใน Dock ก็ใช้ได้ ก่อนหน้านี้แถวเหล่านี้ถูกละเลย เพราะมีหมายเลขและชื่อโปรเซสแทนไฟล์
+
+เกมจะถูกบันทึกไว้สำหรับการเปิดครั้งต่อไป Minecraft จะแสดงชื่อของตัวเอง หมายเลขและชื่อต้องตรงกับโปรเซสที่กำลังทำงาน
+
+**ลองใช้:** ลากแถว java ของ Minecraft ที่เปิดอยู่ไปที่เกมของคุณ
+
+---
+
 ## <a id="v1.30.11"></a>เพิ่มเกมได้ทันทีขณะเกมกำลังทำงาน
 
 <sub>1.30.11 · 10 ตุลาคม 2569</sub>

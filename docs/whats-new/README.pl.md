@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Przeciągnij grę z Monitora aktywności
+
+<sub>1.30.12 · 10 października 2026</sub>
+
+Tryb gry przyjmuje procesy przeciągnięte z Monitora aktywności.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Znajdź proces gry i przeciągnij jego wiersz na Twoje gry w Ustawieniach → Gry.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Gry Java działają też bez zwykłej ikony w Docku. Wcześniej te wiersze były ignorowane, bo zawierają numer i nazwę procesu zamiast pliku.
+
+Gra zostaje zapisana na kolejne uruchomienia. Minecraft ma własną nazwę. Numer i nazwa muszą pasować do uruchomionego procesu.
+
+**Wypróbuj:** Przeciągnij wiersz java uruchomionego Minecrafta na Twoje gry.
+
+---
+
 ## <a id="v1.30.11"></a>Dodaj grę, kiedy jest uruchomiona
 
 <sub>1.30.11 · 10 października 2026</sub>

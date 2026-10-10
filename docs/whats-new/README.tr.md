@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.12"></a>Oyununu Etkinlik Monitörü’nden sürükle
+
+<sub>1.30.12 · 10 Ekim 2026</sub>
+
+Oyun Modu Etkinlik Monitörü’nden sürüklenen işlemleri kabul ediyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.28.0/app-shelf-dark.png"><img src="../media/whats-new/1.28.0/app-shelf-light.png" width="340" alt=""></picture>
+
+Oyunun işlemini bul ve satırını Ayarlar → Oyunlar içindeki Oyunların alanına sürükle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Dock’ta normal simgesi olmayan Java oyunları da çalışır. Önceden bu satırlar dosya yerine işlem numarası ve adı içerdiği için yok sayılıyordu.
+
+Oyun sonraki açılışlar için kaydedilir. Minecraft kendi adıyla görünür. Numara ve ad çalışan bir işlemle eşleşmelidir.
+
+**Deneyin:** Açık Minecraft’ın java satırını Oyunların alanına sürükle.
+
+---
+
 ## <a id="v1.30.11"></a>Oyununu çalışırken ekle
 
 <sub>1.30.11 · 10 Ekim 2026</sub>

@@ -234,5 +234,17 @@ enum TestGameMode {
             == ["com.a.game", "com.b.game", "/opt/wine"])
         precondition(GameRules.shelf([]).isEmpty)
         print("dock shelf: ok")
+
+        let processes: [Int32: [String]] = [19810: ["java"], 42: ["Other Game", "game"], 79: ["java"]]
+        let processRows = { (text: String) in GameRules.processIDs(text) { processes[$0] ?? [] } }
+        precondition(processRows("19810\tjava\t7,02 ГБ\t4,78 ГБ\tme\t97,5\t27,2\t94\t741\t") == [19810])
+        precondition(processRows("java\t97,5\t19810\tme\nOther Game\t42\t0,0") == [19810, 42])
+        precondition(processRows("19810\tjava\n19810\tjava") == [19810])
+        precondition(processRows("19810\twrong name").isEmpty)
+        precondition(processRows("19810\tjava\t79").isEmpty)
+        precondition(processRows("19810").isEmpty && processRows("java").isEmpty && processRows("19810 java").isEmpty)
+        precondition(processRows("0\tjava\n-1\tjava\n99999\tjava").isEmpty)
+        precondition(processRows(String(repeating: "x", count: 65_537) + "\n19810\tjava").isEmpty)
+        print("process rows: ok")
     }
 }

@@ -277,6 +277,13 @@ final class GameModeTool: Tool {
         GameRules.rule(id: app.bundleIdentifier, name: app.localizedName, path: app.executableURL?.path ?? "")
     }
 
+    static func processFiles(_ text: String) -> [URL] {
+        GameRules.processIDs(text) { pid in
+            guard let app = NSRunningApplication(processIdentifier: pid), !app.isTerminated else { return [] }
+            return [app.localizedName, app.executableURL?.lastPathComponent].compactMap { $0 }
+        }.compactMap { NSRunningApplication(processIdentifier: $0)?.executableURL }
+    }
+
     static func key(_ url: URL) -> String? {
         if let app = NSWorkspace.shared.runningApplications.first(where: { $0.bundleURL?.path == url.path || $0.executableURL?.path == url.path }) {
             return key(app)
@@ -544,7 +551,7 @@ struct GameModePage: View {
                         }
                     }
                 }
-                .appDropZone("games", accepting: { GameModeTool.key($0) != nil }) { tool.add($0) }
+                .appDropZone("games", accepting: { GameModeTool.key($0) != nil }, textFiles: GameModeTool.processFiles) { tool.add($0) }
             } footer: {
                 Text("You can also drag a game here from Finder")
                     .font(.footnote)

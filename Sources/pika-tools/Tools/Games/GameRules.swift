@@ -73,6 +73,20 @@ enum GameRules {
         return keys.filter { !$0.isEmpty && !$0.hasPrefix("com.pesotchi.pika-tools") && $0 != "com.apple.finder" && seen.insert($0).inserted }
     }
 
+    static func processIDs(_ text: String, names: (Int32) -> [String]) -> [Int32] {
+        guard text.utf8.count <= 65_536 else { return [] }
+        var seen = Set<Int32>()
+        return text.split(whereSeparator: \.isNewline).compactMap { line in
+            let fields = line.split(separator: "\t").map { $0.trimmingCharacters(in: .whitespaces) }
+            guard fields.count > 1 else { return nil }
+            let candidates = Set(fields.compactMap(Int32.init)).filter { pid in
+                pid > 0 && names(pid).contains(where: fields.contains)
+            }
+            guard candidates.count == 1, let pid = candidates.first, seen.insert(pid).inserted else { return nil }
+            return pid
+        }
+    }
+
     static func migrateControl(_ defaults: UserDefaults) {
         if defaults.object(forKey: "ctrl-keys") as? Bool == true { defaults.set(true, forKey: "game-mode-control") }
         ["ctrl-keys", "ctrl-keys-excluded"].forEach(defaults.removeObject)
