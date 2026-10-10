@@ -200,12 +200,12 @@ final class PetStage: NSObject {
     private func arrange() {
         guard let window, let field, let pet = petScreen, let toy = ballScreen else { return }
         for (panel, up, screen) in [(window, raised, pet), (field, tossed, toy)] {
-            panel.level = up ? .statusBar : Self.level
             panel.setFrame(up ? screen.frame : Self.strip(screen), display: false)
         }
         for figure in [view, ballView] as [NSView] { figure.frame = CGRect(x: figure.frame.minX, y: 0, width: Self.width, height: Self.height) }
         shelter()
         place()
+        lift()
         if let bubble { show(bubble) }
     }
 
@@ -264,7 +264,7 @@ final class PetStage: NSObject {
     private static func dock(_ screen: NSScreen) -> CGRect? {
         let top = screen.visibleFrame.minY - screen.frame.minY
         guard top > ground + PetPhysics.size.height else { return nil }
-        guard let tiles = tiles() else { return nil }
+        guard let tiles = tiles() else { return CGRect(x: 0, y: 0, width: screen.frame.width, height: top) }
         return CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top)
     }
 
@@ -357,9 +357,10 @@ final class PetStage: NSObject {
         physics.recover()
         if physics.aloft != raised || ball.aloft != tossed {
             rise()
-        } else if [(window, raised, pet), (field, tossed, toy)].contains(where: { $0.level != ($1 ? .statusBar : Self.level) || $0.frame != ($1 ? $2.frame : Self.strip($2)) }) {
+        } else if [(window, raised, pet), (field, tossed, toy)].contains(where: { $0.frame != ($1 ? $2.frame : Self.strip($2)) }) {
             layout()
         }
+        lift()
         checkFullscreen()
         for panel in [window, field] where panel.isVisible {
             let info = CGWindowListCopyWindowInfo(.optionIncludingWindow, CGWindowID(panel.windowNumber)) as? [[String: Any]]
@@ -396,6 +397,7 @@ final class PetStage: NSObject {
         cross()
         rise()
         place()
+        lift()
         let catchable = point.map(physics.touches) ?? false, reachable = toy && (reach.map(ball.touches) ?? false)
         if let window, window.ignoresMouseEvents == (catchable || physics.state == .held) { window.ignoresMouseEvents.toggle() }
         if let field, field.ignoresMouseEvents == (reachable || ball.held) { field.ignoresMouseEvents.toggle() }
@@ -446,6 +448,19 @@ final class PetStage: NSObject {
         let left = x - Self.width / 2, snapped = (left * scale).rounded(.down) / scale
         if figure.frame.minX != snapped { figure.setFrameOrigin(CGPoint(x: snapped, y: 0)) }
         figure.shift = left - snapped
+    }
+
+    private func lift() {
+        guard let window, let field else { return }
+        for (panel, up, body, floor, dock) in [(window, raised, physics.frame, physics.bounds.minY, physics.dock), (field, tossed, ball.frame, ball.bounds.minY, ball.dock)] {
+            let level = up ? .statusBar : dock.map({ body.minY > floor + 0.5 && body.maxY > $0.maxY }) == true ? Self.front : Self.level
+            if panel.level != level { panel.level = level }
+        }
+        if let bubble, bubble.level != window.level { bubble.level = window.level }
+    }
+
+    private static var front: NSWindow.Level {
+        NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.dockWindow)) - 1)
     }
 
     private func rise() {
