@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Animăluțul rămâne la vedere când sare
+
+<sub>1.30.10 · 10 octombrie 2026</sub>
+
+Animăluțul nu mai dispare în spatele ferestrelor când sare pe un ecran fără Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Înainte, dacă Dock-ul era pe alt ecran sau ascuns, animăluțul sărea în spatele ferestrelor și dispărea până ateriza. Acum, imediat ce se desprinde de pământ, apare în fața ferestrelor pe orice ecran, cu sau fără Dock. La fel și mingea.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+O fereastră care doar atinge marginea animăluțului nu-l mai ascunde când sare. Rămâne în spatele unei ferestre doar când fereastra chiar îl acoperă, ca un video pe care îl urmărești.
+
+Pe pământ, animăluțul și mingea lui se plimbă în spatele ferestrelor, ca înainte.
+
+**Încearcă:** Lasă Dock-ul să se ascundă sau mută-l pe alt ecran, apoi apasă Spațiu lângă o fereastră. Animăluțul sare în fața ei.
+
+---
+
 ## <a id="v1.30.9"></a>Ecranul complet e al tău, iar mingea joacă cinstit
 
 <sub>1.30.9 · 10 octombrie 2026</sub>

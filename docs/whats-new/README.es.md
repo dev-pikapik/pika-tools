@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Tu mascota se deja ver cuando salta
+
+<sub>1.30.10 · 10 de octubre de 2026</sub>
+
+Tu mascota ya no desaparece detrás de las ventanas cuando salta en una pantalla sin Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Antes, si el Dock estaba en otra pantalla u oculto, tu mascota saltaba detrás de tus ventanas y desaparecía hasta aterrizar. Ahora, en cuanto se despega del suelo, se ve delante de tus ventanas en cualquier pantalla, con Dock o sin él. La pelota también.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Una ventana que solo roza el borde de tu mascota ya no la esconde al saltar. Tu mascota se queda detrás de una ventana solo cuando esta la tapa de verdad, como un video que estás viendo.
+
+En el suelo, tu mascota y su pelota pasean detrás de tus ventanas, como siempre.
+
+**Pruébalo:** Haz que el Dock se oculte o llévalo a otra pantalla y pulsa Espacio junto a una ventana. Tu mascota salta delante de ella.
+
+---
+
 ## <a id="v1.30.9"></a>La pantalla completa es tuya, y la pelota juega limpio
 
 <sub>1.30.9 · 10 de octubre de 2026</sub>

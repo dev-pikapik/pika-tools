@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Peliharaanmu tetap terlihat saat melompat
+
+<sub>1.30.10 · 10 Oktober 2026</sub>
+
+Peliharaanmu tak lagi menghilang di balik jendela saat melompat di layar tanpa Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dulu, kalau Dock ada di layar lain atau disembunyikan, peliharaanmu melompat ke balik jendela dan menghilang sampai mendarat. Sekarang, begitu lepas dari tanah, ia tampil di depan jendela di layar mana pun, ada Dock atau tidak. Bolanya juga begitu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Jendela yang hanya menyentuh tepi peliharaanmu tak lagi menyembunyikannya saat melompat. Peliharaanmu tetap di balik jendela hanya kalau jendela itu benar-benar menutupinya, seperti video yang sedang kamu tonton.
+
+Di tanah, peliharaanmu dan bolanya berjalan-jalan di balik jendelamu seperti biasa.
+
+**Coba:** Biarkan Dock bersembunyi otomatis atau pindahkan ke layar lain, lalu tekan Spasi di samping jendela. Peliharaanmu melompat di depannya.
+
+---
+
 ## <a id="v1.30.9"></a>Layar penuh milikmu, dan bolanya main jujur
 
 <sub>1.30.9 · 10 Oktober 2026</sub>

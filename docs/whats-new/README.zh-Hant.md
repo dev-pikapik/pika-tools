@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>寵物跳起來也看得見
+
+<sub>1.30.10 · 2026年10月10日</sub>
+
+在沒有 Dock 的螢幕上，寵物跳起來不會再消失在視窗後面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+以前，如果 Dock 在另一台顯示器上或被隱藏，寵物會跳到視窗後面，落地前一直看不見。現在它一離開地面，就會出現在視窗前面，不管哪個螢幕、有沒有 Dock 都一樣。球也是這樣。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+只碰到寵物邊緣的視窗，不會再在跳躍時把它擋住。只有視窗真正蓋住寵物時，例如你正在看的影片，它才會留在視窗後面。
+
+回到地面後，寵物和球像以前一樣在視窗後面散步。
+
+**試試看：** 讓 Dock 自動隱藏，或把它移到另一台顯示器，然後在視窗旁按空白鍵。寵物會在視窗前面跳起來。
+
+---
+
 ## <a id="v1.30.9"></a>全螢幕歸你，球也守規矩了
 
 <sub>1.30.9 · 2026年10月10日</sub>

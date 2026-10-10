@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Your pet stays in sight when it jumps
+
+<sub>1.30.10 · October 10, 2026</sub>
+
+Your pet no longer disappears behind windows when it jumps on a screen without the Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Before, if the Dock was on another display or hidden, your pet jumped behind your windows and vanished until it landed. Now, as soon as it leaves the ground, it shows in front of your windows on every screen, with or without the Dock. The ball does the same.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+A window that only touches the edge of your pet no longer keeps it hidden when it jumps. Your pet stays behind a window only when the window really covers it, like a video you’re watching.
+
+Back on the ground, your pet and its ball walk behind your windows again, just like before.
+
+**Try it:** Let the Dock hide or move it to another display, then press Space next to a window. Your pet jumps in front of it.
+
+---
+
 ## <a id="v1.30.9"></a>Full screen stays yours, and the ball plays fair
 
 <sub>1.30.9 · October 10, 2026</sub>

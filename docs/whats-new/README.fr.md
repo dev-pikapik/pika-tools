@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Votre compagnon reste visible quand il saute
+
+<sub>1.30.10 · 10 octobre 2026</sub>
+
+Votre compagnon ne disparaît plus derrière les fenêtres quand il saute sur un écran sans Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Avant, si le Dock était sur un autre écran ou masqué, votre compagnon sautait derrière vos fenêtres et disparaissait jusqu’à l’atterrissage. Désormais, dès qu’il quitte le sol, il passe devant vos fenêtres sur tous les écrans, avec ou sans Dock. La balle aussi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Une fenêtre qui ne fait que toucher le bord de votre compagnon ne le cache plus pendant un saut. Il reste derrière une fenêtre seulement quand elle le recouvre vraiment, comme une vidéo que vous regardez.
+
+Au sol, votre compagnon et sa balle se promènent derrière vos fenêtres, comme avant.
+
+**Pour essayer :** Masquez le Dock automatiquement ou placez-le sur un autre écran, puis appuyez sur Espace à côté d’une fenêtre. Votre compagnon saute devant.
+
+---
+
 ## <a id="v1.30.9"></a>Le plein écran est à vous, et la balle joue franc jeu
 
 <sub>1.30.9 · 10 octobre 2026</sub>

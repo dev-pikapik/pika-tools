@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>L’animaletto resta in vista quando salta
+
+<sub>1.30.10 · 10 ottobre 2026</sub>
+
+L’animaletto non sparisce più dietro le finestre quando salta su uno schermo senza Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Prima, se il Dock era su un altro schermo o nascosto, l’animaletto saltava dietro le finestre e spariva fino all’atterraggio. Ora, appena si stacca da terra, compare davanti alle finestre su ogni schermo, con o senza Dock. Lo stesso vale per la palla.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Una finestra che sfiora solo il bordo dell’animaletto non lo nasconde più durante il salto. Resta dietro una finestra solo quando la finestra lo copre davvero, come un video che stai guardando.
+
+A terra, l’animaletto e la sua palla passeggiano dietro le tue finestre, come prima.
+
+**Provalo:** Fai nascondere il Dock o spostalo su un altro schermo, poi premi Spazio accanto a una finestra. L’animaletto salta davanti.
+
+---
+
 ## <a id="v1.30.9"></a>Lo schermo intero è tuo, e la palla gioca pulito
 
 <sub>1.30.9 · 10 ottobre 2026</sub>

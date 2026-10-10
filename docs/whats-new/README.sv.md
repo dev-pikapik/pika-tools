@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Ditt husdjur syns när det hoppar
+
+<sub>1.30.10 · 10 oktober 2026</sub>
+
+Ditt husdjur försvinner inte längre bakom fönster när det hoppar på en skärm utan Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Förut, om Dock låg på en annan skärm eller var dold, hoppade ditt husdjur bakom dina fönster och syntes inte förrän det landade. Nu syns det framför dina fönster så fort det lämnar marken, på alla skärmar, med eller utan Dock. Bollen likaså.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Ett fönster som bara nuddar kanten på ditt husdjur döljer det inte längre när det hoppar. Ditt husdjur stannar bakom ett fönster bara när fönstret verkligen täcker det, som en video du tittar på.
+
+På marken går ditt husdjur och dess boll bakom dina fönster, precis som förut.
+
+**Prova:** Låt Dock döljas automatiskt eller flytta den till en annan skärm, och tryck på mellanslag bredvid ett fönster. Ditt husdjur hoppar framför det.
+
+---
+
 ## <a id="v1.30.9"></a>Helskärmen är din, och bollen spelar schysst
 
 <sub>1.30.9 · 10 oktober 2026</sub>

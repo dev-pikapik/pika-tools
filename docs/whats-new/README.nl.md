@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Je huisdiertje blijft in beeld als het springt
+
+<sub>1.30.10 · 10 oktober 2026</sub>
+
+Je huisdiertje verdwijnt niet meer achter vensters als het springt op een scherm zonder Dock.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Eerst sprong je huisdiertje achter je vensters en was het weg tot de landing als het Dock op een ander scherm stond of verborgen was. Nu verschijnt het voor je vensters zodra het de grond verlaat, op elk scherm, met of zonder Dock. De bal ook.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Een venster dat alleen de rand van je huisdiertje raakt, verbergt het niet meer tijdens een sprong. Je huisdiertje blijft alleen achter een venster als dat het echt bedekt, zoals een video waar je naar kijkt.
+
+Op de grond lopen je huisdiertje en zijn bal zoals altijd achter je vensters.
+
+**Probeer het:** Laat het Dock automatisch verbergen of zet het op een ander scherm en druk naast een venster op de spatiebalk. Je huisdiertje springt ervoor.
+
+---
+
 ## <a id="v1.30.9"></a>Volledig scherm is van jou, en de bal speelt eerlijk
 
 <sub>1.30.9 · 10 oktober 2026</sub>

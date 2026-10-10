@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Zwierzak nie znika, gdy skacze
+
+<sub>1.30.10 · 10 października 2026</sub>
+
+Zwierzak nie chowa się już za oknami, gdy skacze na ekranie bez Docka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wcześniej, gdy Dock był na innym ekranie albo się ukrywał, zwierzak skakał za oknami i znikał aż do lądowania. Teraz, gdy tylko oderwie się od ziemi, widać go przed oknami na każdym ekranie, z Dockiem i bez. Piłka tak samo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Okno, które tylko dotyka krawędzi zwierzaka, nie chowa go już w czasie skoku. Zwierzak zostaje za oknem tylko wtedy, gdy okno naprawdę go zasłania, na przykład film, który oglądasz.
+
+Na ziemi zwierzak i jego piłka spacerują za Twoimi oknami, tak jak wcześniej.
+
+**Wypróbuj:** Włącz automatyczne ukrywanie Docka albo przenieś go na inny ekran i naciśnij spację obok okna. Zwierzak podskoczy przed nim.
+
+---
+
 ## <a id="v1.30.9"></a>Pełny ekran jest twój, a piłka gra uczciwie
 
 <sub>1.30.9 · 10 października 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.10"></a>Mazlíček je vidět, i když skáče
+
+<sub>1.30.10 · 10. října 2026</sub>
+
+Mazlíček už nemizí za okny, když skáče na obrazovce bez Docku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dřív, když byl Dock na jiném monitoru nebo skrytý, mazlíček skočil za vaše okna a zmizel, dokud nedopadl. Teď je vidět před okny hned, jak se odlepí od země, na každé obrazovce, s Dockem i bez něj. Míček stejně tak.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.29.0/pet-ball-dark.png"><img src="../media/whats-new/1.29.0/pet-ball-light.png" width="340" alt=""></picture>
+
+Okno, které se mazlíčka dotýká jen okrajem, ho už při skoku neschová. Mazlíček zůstane za oknem, jen když ho okno opravdu zakrývá, třeba video, které sledujete.
+
+Na zemi se mazlíček a jeho míček procházejí za vašimi okny jako dřív.
+
+**Vyzkoušejte:** Nechte Dock automaticky skrývat nebo ho přesuňte na jiný monitor a vedle okna stiskněte mezerník. Mazlíček vyskočí před ním.
+
+---
+
 ## <a id="v1.30.9"></a>Celá obrazovka patří vám a míček hraje fér
 
 <sub>1.30.9 · 10. října 2026</sub>

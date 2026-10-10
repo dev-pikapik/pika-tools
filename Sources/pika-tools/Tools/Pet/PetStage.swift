@@ -286,7 +286,7 @@ final class PetStage: NSObject {
             guard info[kCGWindowLayer as String] as? Int == 0, info[kCGWindowOwnerPID as String] as? Int != me,
                   info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
                   let bounds = (info[kCGWindowBounds as String] as? NSDictionary).flatMap({ CGRect(dictionaryRepresentation: $0) }) else { return false }
-            return bounds.intersects(spot)
+            return bounds.contains(CGPoint(x: spot.midX, y: spot.midY))
         }
     }
 
@@ -514,7 +514,7 @@ final class PetStage: NSObject {
     private func lift() {
         guard let window, let field else { return }
         for (panel, up, buried, body, floor, dock, screen) in [(window, raised, hiddenUp, physics.frame, physics.bounds.minY, physics.dock, petScreen), (field, tossed, hiddenToss, ball.frame, ball.bounds.minY, ball.dock, ballScreen)] {
-            var level = up && !buried ? .statusBar : dock.map({ body.minY > floor + 0.5 && body.maxY > $0.maxY }) == true ? Self.front : Self.level
+            var level = up && !buried ? .statusBar : body.minY > floor + 0.5 && body.maxY > (dock?.maxY ?? floor) ? Self.front : Self.level
             let number = panel.windowNumber
             if level != Self.front {
                 sunk.remove(number)
