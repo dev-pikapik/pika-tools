@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Links de atalhos abrem sem travar
+
+<sub>1.30.14 · 11 de outubro de 2026</sub>
+
+Clicar em um atalho desligado não fecha mais o pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Na página Jogos, você pode clicar em um atalho mesmo sem teclas atribuídas. Ajustes do Sistema abre com segurança.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Antes pikapik podia ler duas vezes a mesma linha que mudava enquanto a janela abria. Se o texto sumisse entre as leituras, o app travava.
+
+Cada linha agora é lida uma vez. O texto ausente é ignorado. A correção também vale para links de atalhos em outras páginas.
+
+**Experimente:** Clique em um atalho desligado na página Jogos.
+
+---
+
 ## <a id="v1.30.13"></a>Segure Control e continue jogando
 
 <sub>1.30.13 · 10 de outubro de 2026</sub>

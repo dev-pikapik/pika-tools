@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Linkurile scurtăturilor se deschid fără blocare
+
+<sub>1.30.14 · 11 octombrie 2026</sub>
+
+Apăsarea unei scurtături oprite nu mai închide pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Pe pagina Jocuri poți apăsa pe o scurtătură chiar fără taste alocate. Configurări sistem se deschide în siguranță.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Înainte pikapik putea citi de două ori același rând care se schimba în timp ce se deschidea fereastra. Dacă textul dispărea între citiri, aplicația se bloca.
+
+Fiecare rând este acum citit o dată. Textul lipsă este sărit. Corecția acoperă și linkurile scurtăturilor de pe alte pagini.
+
+**Încearcă:** Apasă pe o scurtătură oprită pe pagina Jocuri.
+
+---
+
 ## <a id="v1.30.13"></a>Ține Control apăsat și continuă jocul
 
 <sub>1.30.13 · 10 octombrie 2026</sub>

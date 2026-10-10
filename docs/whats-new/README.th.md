@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>ลิงก์ปุ่มลัดเปิดได้โดยแอปไม่ล่ม
+
+<sub>1.30.14 · 11 ตุลาคม 2026</sub>
+
+คลิกปุ่มลัดที่ปิดอยู่แล้ว pikapik ไม่ปิดตัวอีกต่อไป
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+ในหน้าเกม คุณคลิกปุ่มลัดได้แม้ยังไม่ได้กำหนดปุ่ม การตั้งค่าระบบจะเปิดอย่างปลอดภัย
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+ก่อนหน้านี้ pikapik อาจอ่านแถวเดียวที่กำลังเปลี่ยนสองครั้งขณะเปิดหน้าต่าง หากข้อความหายไประหว่างการอ่าน แอปจะล่ม
+
+ตอนนี้แต่ละแถวอ่านเพียงครั้งเดียว ข้อความที่หายไปจะถูกข้าม การแก้ไขนี้ครอบคลุมลิงก์ปุ่มลัดในหน้าอื่นด้วย
+
+**ลองใช้:** คลิกปุ่มลัดที่ปิดอยู่ในหน้าเกม
+
+---
+
 ## <a id="v1.30.13"></a>กด Control ค้างไว้แล้วเล่นต่อได้เลย
 
 <sub>1.30.13 · 10 ตุลาคม 2569</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>단축키 링크가 충돌 없이 열려요
+
+<sub>1.30.14 · 2026년 10월 11일</sub>
+
+꺼진 단축키를 클릭해도 pikapik이 종료되지 않아요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+게임 페이지에서 키가 지정되지 않은 단축키도 클릭할 수 있어요. 시스템 설정이 안전하게 열려요.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+이전에는 설정 창이 열리는 동안 변하는 같은 행을 두 번 읽기도 했어요. 그 사이 글자가 사라지면 앱이 충돌했어요.
+
+이제 각 행을 한 번만 읽어요. 없는 글자는 건너뛰어요. 다른 페이지의 단축키 링크에도 적용돼요.
+
+**사용해 보기:** 게임 페이지에서 꺼진 단축키를 클릭하세요.
+
+---
+
 ## <a id="v1.30.13"></a>Control을 누른 채 계속 플레이하세요
 
 <sub>1.30.13 · 2026년 10월 10일</sub>

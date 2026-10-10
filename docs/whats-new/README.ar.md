@@ -7,6 +7,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>تفتح روابط الاختصارات دون تعطل
+
+<sub>1.30.14 · 11 أكتوبر 2026</sub>
+
+لم يعد النقر على اختصار متوقف يغلق pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+في صفحة الألعاب يمكنك النقر على اختصار حتى دون تعيين مفاتيح. تفتح إعدادات النظام بأمان.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+كان pikapik يقرأ أحياناً الصف المتغير نفسه مرتين أثناء فتح النافذة. إذا اختفى النص بين القراءتين كان التطبيق يتعطل.
+
+يُقرأ كل صف الآن مرة واحدة. يُتجاوز النص المفقود. يشمل الإصلاح روابط الاختصارات في الصفحات الأخرى أيضاً.
+
+**جرّبه:** انقر على اختصار متوقف في صفحة الألعاب.
+
+---
+
 ## <a id="v1.30.13"></a>اضغط Control باستمرار وواصل اللعب
 
 <sub>1.30.13 · 10 أكتوبر 2026</sub>

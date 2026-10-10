@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Shortcut links open without a crash
+
+<sub>1.30.14 · October 11, 2026</sub>
+
+Clicking a shortcut marked Off no longer quits pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+On the Games page, you can click a shortcut even when no keys are assigned. System Settings opens safely.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Before, pikapik could read the same changing row twice while the settings window opened. If the text disappeared between those reads, the app crashed.
+
+Each row is now read once. Missing text is skipped, and the same fix covers shortcut links on other pages.
+
+**Try it:** Click a shortcut marked Off on the Games page.
+
+---
+
 ## <a id="v1.30.13"></a>Hold Control and keep playing
 
 <sub>1.30.13 · October 10, 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Tastenkürzel-Links öffnen ohne Absturz
+
+<sub>1.30.14 · 11. Oktober 2026</sub>
+
+Ein Klick auf ein ausgeschaltetes Tastenkürzel beendet pikapik nicht mehr.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Auf der Spiele-Seite kannst du ein Tastenkürzel anklicken, auch wenn keine Tasten zugewiesen sind. Die Systemeinstellungen öffnen sicher.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Bisher konnte pikapik dieselbe sich ändernde Zeile zweimal lesen, während das Einstellungsfenster öffnete. Verschwand der Text dazwischen, stürzte die App ab.
+
+Jede Zeile wird jetzt einmal gelesen. Fehlender Text wird übersprungen. Das gilt auch für Tastenkürzel-Links auf anderen Seiten.
+
+**Ausprobieren:** Klicke auf ein ausgeschaltetes Tastenkürzel auf der Spiele-Seite.
+
+---
+
 ## <a id="v1.30.13"></a>Halte Control gedrückt und spiele weiter
 
 <sub>1.30.13 · 10. Oktober 2026</sub>

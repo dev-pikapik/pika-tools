@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>I collegamenti ai comandi si aprono senza arresti
+
+<sub>1.30.14 · 11 ottobre 2026</sub>
+
+Fare clic su un comando disattivato non chiude più pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+Nella pagina Giochi puoi fare clic su un comando anche senza tasti assegnati. Impostazioni di Sistema si apre in sicurezza.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Prima pikapik poteva leggere due volte la stessa riga che cambiava mentre si apriva la finestra. Se il testo spariva tra le letture, l’app si arrestava.
+
+Ogni riga viene ora letta una volta. Il testo mancante viene saltato. La correzione copre anche i collegamenti nelle altre pagine.
+
+**Provalo:** Fai clic su un comando disattivato nella pagina Giochi.
+
+---
+
 ## <a id="v1.30.13"></a>Tieni premuto Control e continua a giocare
 
 <sub>1.30.13 · 10 ottobre 2026</sub>

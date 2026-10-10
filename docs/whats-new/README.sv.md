@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>Genvägslänkar öppnas utan krasch
+
+<sub>1.30.14 · 11 oktober 2026</sub>
+
+Att klicka på en avstängd genväg stänger inte längre pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+På Spel-sidan kan du klicka på en genväg utan tilldelade tangenter. Systeminställningar öppnas säkert.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Tidigare kunde pikapik läsa samma ändrade rad två gånger medan fönstret öppnades. Om texten försvann mellan läsningarna kraschade appen.
+
+Varje rad läses nu en gång. Saknad text hoppas över. Fixen gäller även genvägslänkar på andra sidor.
+
+**Prova:** Klicka på en avstängd genväg på Spel-sidan.
+
+---
+
 ## <a id="v1.30.13"></a>Håll Control nere och fortsätt spela
 
 <sub>1.30.13 · 10 oktober 2026</sub>

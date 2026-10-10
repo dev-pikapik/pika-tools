@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.30.14"></a>ショートカットのリンクでクラッシュしなくなりました
+
+<sub>1.30.14 · 2026年10月11日</sub>
+
+オフのショートカットをクリックしてもpikapikは終了しません。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.23.2/game-shortcuts-dark.png"><img src="../media/whats-new/1.23.2/game-shortcuts-light.png" width="340" alt=""></picture>
+
+ゲームのページでは、キーが未設定のショートカットもクリックできます。システム設定が安全に開きます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+以前は設定ウインドウが開く間に、変化する同じ行を2回読み取ることがありました。その間に文字が消えるとアプリがクラッシュしていました。
+
+各行は1回だけ読み取るようになりました。見つからない文字は飛ばします。他のページのショートカットリンクにも対応しています。
+
+**試してみる：** ゲームのページでオフのショートカットをクリックしてください。
+
+---
+
 ## <a id="v1.30.13"></a>Controlを押したまま遊べます
 
 <sub>1.30.13 · 2026年10月10日</sub>
