@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "เปิดอยู่ตอนนี้ คลิกเกมเพื่อเพิ่ม";
 "From the Dock" = "จาก Dock";
+
+"Automatically" = "อัตโนมัติ";
+"Pause while playing" = "หยุดชั่วคราวขณะเล่น";
+"Run without interrupting" = "ทำงานโดยไม่ขัดจังหวะ";
+"Run normally" = "ทำงานตามปกติ";
+"System key" = "ปุ่มระบบ";
+"Force Quit" = "บังคับออก";
+"System action %@" = "การทำงานระบบ %@";
+"Other system shortcuts" = "ปุ่มลัดระบบอื่น ๆ";
+"Current macOS shortcuts. Automatic protects the game." = "ปุ่มลัด macOS ปัจจุบัน โหมดอัตโนมัติปกป้องเกม";
+"Search system shortcuts" = "ค้นหาปุ่มลัดระบบ";
+"Refresh" = "รีเฟรช";
+"While playing" = "ขณะเล่น";
+"Always available" = "ใช้ได้เสมอ";
+"No key assigned" = "ยังไม่ได้กำหนดปุ่ม";
+"Off in macOS" = "ปิดใน macOS";
+"System keyboard shortcuts" = "ปุ่มลัดแป้นพิมพ์ระบบ";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "บางการทำงานของ macOS ไม่มีชื่อที่เผยแพร่ แอปอื่นอาจมีปุ่มลัดของตัวเอง";
+"More game settings" = "การตั้งค่าเกมเพิ่มเติม";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "ปุ่มลัดเปลี่ยนภาษาแบบเร็วทำงานเงียบ ๆ ปุ่มเกมที่กดค้างจะส่งถึงเกม";
+"Other apps watching keys" = "แอปอื่นที่เฝ้าดูปุ่ม";
+"Can change keys" = "เปลี่ยนปุ่มได้";
+"Only listens" = "เฝ้าดูเท่านั้น";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "แอปเหล่านี้ไม่เผยแพร่ปุ่มลัดในแค็ตตาล็อก macOS";
+"Process %@" = "โปรเซส %@";

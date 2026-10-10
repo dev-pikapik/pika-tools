@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Der Spielmodus kennt die Kürzel deines Macs
+
+<sub>1.31.0 · 11. Oktober 2026</sub>
+
+Standardmäßig einfach, mit dem vollständigen Systemkatalog bei Bedarf.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Schalte den Spielmodus ein und spiele. Weitere Spieleinstellungen enthält den Katalog deines Macs mit aktuellen Tasten und einer animierten Vorschau für jede Aktion.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatisch pausiert Aktionen, die Fenster öffnen oder den Fokus wechseln. Ein kurzes bewusstes Sprachkürzel wechselt die Eingabequelle ohne Systemfenster. Gehaltene Bewegungstasten haben Vorrang, damit Rennen und Springen nicht versehentlich die Sprache ändern.
+
+Jede Aktion lässt sich im durchsuchbaren Katalog einstellen. Sprachaktionen können im Hintergrund laufen; andere Aktionen lassen sich pausieren oder normal erlauben. Die Auswahl wird synchronisiert. Andere Apps mit Tastenzugriff erscheinen separat. Sofort beenden bleibt verfügbar.
+
+**Ausprobieren:** Öffne Weitere Spieleinstellungen, suche ein Bildschirmfoto- oder Sprachkürzel und vergleiche die Vorschau mit und ohne Schutz.
+
+---
+
 ## <a id="v1.30.14"></a>Tastenkürzel-Links öffnen ohne Absturz
 
 <sub>1.30.14 · 11. Oktober 2026</sub>

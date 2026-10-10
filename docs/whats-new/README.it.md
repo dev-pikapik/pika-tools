@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>La modalità Gioco conosce i comandi del Mac
+
+<sub>1.31.0 · 11 ottobre 2026</sub>
+
+Semplice per impostazione predefinita, con il catalogo completo quando serve.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Attiva la modalità Gioco e gioca. Altre impostazioni di gioco contiene il catalogo del Mac con i tasti attuali e un’anteprima animata per ogni azione.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatico sospende le azioni che aprono finestre o spostano il focus. Un comando della lingua breve e intenzionale cambia la sorgente senza una finestra di sistema. I tasti di movimento tenuti premuti hanno priorità, così correre e saltare non cambiano lingua per sbaglio.
+
+Ogni azione si regola nel catalogo con ricerca. La lingua può cambiare in background; le altre azioni possono essere sospese o consentite normalmente. Le scelte vengono sincronizzate. Le altre app che osservano i tasti compaiono a parte. Uscita forzata resta disponibile.
+
+**Provalo:** Apri le impostazioni aggiuntive, cerca un comando di cattura o lingua e confronta l’anteprima con e senza protezione.
+
+---
+
 ## <a id="v1.30.14"></a>I collegamenti ai comandi si aprono senza arresti
 
 <sub>1.30.14 · 11 ottobre 2026</sub>

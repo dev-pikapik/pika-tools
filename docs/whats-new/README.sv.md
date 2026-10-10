@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Spelläge känner till Macens genvägar
+
+<sub>1.31.0 · 11 oktober 2026</sub>
+
+Enkelt som standard, med hela systemkatalogen när du behöver den.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Slå på Spelläge och spela. Fler spelinställningar innehåller Macens katalog med aktuella tangenter och en animerad förhandsvisning för varje åtgärd.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatiskt pausar åtgärder som öppnar fönster eller flyttar fokus. En kort avsiktlig språkgenväg byter källa utan systemfönster. Nedhållna rörelsetangenter går först, så att springa och hoppa inte byter språk av misstag.
+
+Varje åtgärd kan ändras i den sökbara katalogen. Språk kan bytas i bakgrunden; andra åtgärder kan pausas eller tillåtas normalt. Valen synkroniseras. Andra appar som bevakar tangenter visas separat. Tvångsavsluta är fortfarande tillgängligt.
+
+**Prova:** Öppna extra inställningar, sök en skärmfoto- eller språkgenväg och jämför förhandsvisningen med och utan skydd.
+
+---
+
 ## <a id="v1.30.14"></a>Genvägslänkar öppnas utan krasch
 
 <sub>1.30.14 · 11 oktober 2026</sub>

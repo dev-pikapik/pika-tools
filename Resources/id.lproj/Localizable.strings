@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Sedang terbuka. Klik game untuk menambahkannya";
 "From the Dock" = "Dari Dock";
+
+"Automatically" = "Otomatis";
+"Pause while playing" = "Jeda saat bermain";
+"Run without interrupting" = "Jalankan tanpa gangguan";
+"Run normally" = "Jalankan seperti biasa";
+"System key" = "Tombol sistem";
+"Force Quit" = "Paksa Keluar";
+"System action %@" = "Tindakan sistem %@";
+"Other system shortcuts" = "Pintasan sistem lainnya";
+"Current macOS shortcuts. Automatic protects the game." = "Pintasan macOS saat ini. Otomatis melindungi game.";
+"Search system shortcuts" = "Cari pintasan sistem";
+"Refresh" = "Segarkan";
+"While playing" = "Saat bermain";
+"Always available" = "Selalu tersedia";
+"No key assigned" = "Belum ada tombol";
+"Off in macOS" = "Mati di macOS";
+"System keyboard shortcuts" = "Pintasan keyboard sistem";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Beberapa tindakan macOS tidak punya nama yang dipublikasikan. Aplikasi lain bisa punya pintasan sendiri.";
+"More game settings" = "Pengaturan game lainnya";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Pintasan bahasa cepat bekerja diam-diam. Tombol game yang ditahan mencapai game.";
+"Other apps watching keys" = "Aplikasi lain yang memantau tombol";
+"Can change keys" = "Bisa mengubah tombol";
+"Only listens" = "Hanya memantau";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Aplikasi ini tidak mempublikasikan pintasan dalam katalog macOS.";
+"Process %@" = "Proses %@";

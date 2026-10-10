@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Ouvert en ce moment. Cliquez sur votre jeu pour l’ajouter";
 "From the Dock" = "Depuis le Dock";
+
+"Automatically" = "Automatiquement";
+"Pause while playing" = "Suspendre pendant le jeu";
+"Run without interrupting" = "Exécuter sans interruption";
+"Run normally" = "Exécuter normalement";
+"System key" = "Touche système";
+"Force Quit" = "Forcer à quitter";
+"System action %@" = "Action système %@";
+"Other system shortcuts" = "Autres raccourcis système";
+"Current macOS shortcuts. Automatic protects the game." = "Raccourcis macOS actuels. Automatique protège le jeu.";
+"Search system shortcuts" = "Rechercher des raccourcis système";
+"Refresh" = "Actualiser";
+"While playing" = "Pendant le jeu";
+"Always available" = "Toujours disponible";
+"No key assigned" = "Aucune touche définie";
+"Off in macOS" = "Désactivé dans macOS";
+"System keyboard shortcuts" = "Raccourcis clavier système";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Certaines actions macOS n’ont pas de nom publié. D’autres apps peuvent avoir leurs propres raccourcis.";
+"More game settings" = "Autres réglages de jeu";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Les raccourcis de langue rapides restent discrets. Les touches maintenues arrivent au jeu.";
+"Other apps watching keys" = "Autres apps observant les touches";
+"Can change keys" = "Peut modifier les touches";
+"Only listens" = "Observe uniquement";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Ces apps ne publient pas leurs raccourcis dans le catalogue macOS.";
+"Process %@" = "Processus %@";

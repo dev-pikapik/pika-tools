@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Şu anda açık. Eklemek için oyununa tıkla";
 "From the Dock" = "Dock’tan";
+
+"Automatically" = "Otomatik";
+"Pause while playing" = "Oynarken duraklat";
+"Run without interrupting" = "Kesintisiz çalıştır";
+"Run normally" = "Normal çalıştır";
+"System key" = "Sistem tuşu";
+"Force Quit" = "Çıkmaya Zorla";
+"System action %@" = "Sistem eylemi %@";
+"Other system shortcuts" = "Diğer sistem kısayolları";
+"Current macOS shortcuts. Automatic protects the game." = "Güncel macOS kısayolları. Otomatik oyunu korur.";
+"Search system shortcuts" = "Sistem kısayollarını ara";
+"Refresh" = "Yenile";
+"While playing" = "Oynarken";
+"Always available" = "Her zaman kullanılabilir";
+"No key assigned" = "Tuş atanmamış";
+"Off in macOS" = "macOS’ta kapalı";
+"System keyboard shortcuts" = "Sistem klavye kısayolları";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Bazı macOS eylemlerinin adı yayımlanmaz. Diğer uygulamaların kendi kısayolları olabilir.";
+"More game settings" = "Diğer oyun ayarları";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Hızlı dil kısayolları sessiz çalışır. Basılı oyun tuşları oyuna ulaşır.";
+"Other apps watching keys" = "Tuşları izleyen diğer uygulamalar";
+"Can change keys" = "Tuşları değiştirebilir";
+"Only listens" = "Yalnızca izler";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Bu uygulamalar kısayollarını macOS kataloğunda yayımlamaz.";
+"Process %@" = "İşlem %@";

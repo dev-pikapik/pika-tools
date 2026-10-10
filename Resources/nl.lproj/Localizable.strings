@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Nu geopend. Klik op je spel om het toe te voegen";
 "From the Dock" = "Uit het Dock";
+
+"Automatically" = "Automatisch";
+"Pause while playing" = "Pauzeren tijdens spelen";
+"Run without interrupting" = "Uitvoeren zonder onderbreking";
+"Run normally" = "Normaal uitvoeren";
+"System key" = "Systeemtoets";
+"Force Quit" = "Forceer stop";
+"System action %@" = "Systeemactie %@";
+"Other system shortcuts" = "Andere systeemsneltoetsen";
+"Current macOS shortcuts. Automatic protects the game." = "Huidige macOS-sneltoetsen. Automatisch beschermt het spel.";
+"Search system shortcuts" = "Systeemsneltoetsen zoeken";
+"Refresh" = "Vernieuwen";
+"While playing" = "Tijdens spelen";
+"Always available" = "Altijd beschikbaar";
+"No key assigned" = "Geen toetsen toegewezen";
+"Off in macOS" = "Uitgeschakeld in macOS";
+"System keyboard shortcuts" = "Systeemsneltoetsen";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Sommige macOS-acties hebben geen gepubliceerde naam. Andere apps kunnen eigen sneltoetsen hebben.";
+"More game settings" = "Meer spelinstellingen";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Snelle taalsneltoetsen werken onopvallend. Vastgehouden speltoetsen bereiken het spel.";
+"Other apps watching keys" = "Andere apps die toetsen volgen";
+"Can change keys" = "Kan toetsen wijzigen";
+"Only listens" = "Volgt alleen";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Deze apps publiceren hun sneltoetsen niet in de macOS-catalogus.";
+"Process %@" = "Proces %@";

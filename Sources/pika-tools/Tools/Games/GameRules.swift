@@ -24,8 +24,8 @@ enum GameRules {
         modifiers & 0x100000 == 0 || modifiers & 0x40000 != 0
     }
 
-    static func blocksAppShortcut(key: Int, flags: CGEventFlags, rules: Set<GameRule>) -> Bool {
-        !isGameInput(flags.rawValue)
+    static func blocksAppShortcut(key: Int, flags: CGEventFlags, rules: Set<GameRule>, allowed: Set<UInt64> = []) -> Bool {
+        !allowed.contains(combo(key: Int64(key), flags: flags.rawValue)) && !isGameInput(flags.rawValue)
             && (key == kVK_Tab && rules.contains(.appSwitcher) || [kVK_ANSI_H, kVK_ANSI_M].contains(key) && rules.contains(.hide))
     }
 

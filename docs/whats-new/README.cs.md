@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Herní režim zná zkratky vašeho Macu
+
+<sub>1.31.0 · 11. října 2026</sub>
+
+Ve výchozím stavu jednoduché, s úplným systémovým katalogem podle potřeby.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Zapněte herní režim a hrajte. Další nastavení hry obsahuje katalog Macu s aktuálními klávesami a animovaným náhledem každé akce.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automaticky pozastaví akce otevírající okna nebo měnící fokus. Krátká úmyslná jazyková zkratka změní zdroj bez systémového okna. Držené klávesy pohybu mají přednost, takže běh a skákání nezmění jazyk náhodou.
+
+Každou akci lze upravit v katalogu s vyhledáváním. Jazyk může běžet na pozadí; jiné akce lze pozastavit nebo běžně povolit. Volby se synchronizují. Jiné aplikace sledující klávesy jsou zvlášť. Vynutit ukončení zůstává dostupné.
+
+**Vyzkoušejte:** Otevřete další nastavení, vyhledejte zkratku snímku nebo jazyka a porovnejte náhled se zapnutou a vypnutou ochranou.
+
+---
+
 ## <a id="v1.30.14"></a>Odkazy na zkratky se otevírají bez pádu
 
 <sub>1.30.14 · 11. října 2026</sub>

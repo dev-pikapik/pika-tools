@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>O Modo Jogo conhece os atalhos do seu Mac
+
+<sub>1.31.0 · 11 de outubro de 2026</sub>
+
+Simples por padrão, com o catálogo completo do sistema quando precisar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Ligue o Modo Jogo e jogue. Mais ajustes do jogo tem o catálogo publicado pelo Mac, com teclas atuais e uma prévia animada para cada ação.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automático pausa ações que abrem janelas ou mudam o foco. Um atalho de idioma rápido e intencional troca a fonte sem janela do sistema. Teclas de movimento mantidas têm prioridade para que correr e pular não troquem o idioma por acidente.
+
+Cada ação pode ser ajustada no catálogo com busca. O idioma pode mudar em segundo plano; outras ações podem ser pausadas ou permitidas normalmente. As escolhas sincronizam. Outros apps observando o teclado aparecem à parte. Forçar Encerrar continua disponível.
+
+**Experimente:** Abra os ajustes adicionais, busque um atalho de captura ou idioma e compare a prévia com e sem proteção.
+
+---
+
 ## <a id="v1.30.14"></a>Links de atalhos abrem sem travar
 
 <sub>1.30.14 · 11 de outubro de 2026</sub>

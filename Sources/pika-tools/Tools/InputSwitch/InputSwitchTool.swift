@@ -70,33 +70,17 @@ final class InputSwitchTool: Tool {
 
     fileprivate static func select(_ direction: InputSwitchGesture.Direction) {
         guard !GameModeTool.shared.isPlaying else { return }
-        let filter = [
-            kTISPropertyInputSourceCategory: kTISCategoryKeyboardInputSource as Any,
-            kTISPropertyInputSourceIsSelectCapable: true,
-            kTISPropertyInputSourceIsEnabled: true,
-        ] as CFDictionary
-        guard let all = TISCreateInputSourceList(filter, false)?.takeRetainedValue() as? [TISInputSource] else { return }
+        InputSources.select(direction)
+    }
 
-        let types = [kTISTypeKeyboardLayout, kTISTypeKeyboardInputMode, kTISTypeKeyboardInputMethodWithoutModes]
-            .map { $0! as String }
-        let sources = all.filter { types.contains(string($0, kTISPropertyInputSourceType) ?? "") }
-        guard sources.count > 1 else { return }
-
-        let current = TISCopyCurrentKeyboardInputSource()?.takeRetainedValue()
-        let currentID = current.flatMap { string($0, kTISPropertyInputSourceID) }
-        let target: Int
-        if let index = sources.firstIndex(where: { string($0, kTISPropertyInputSourceID) == currentID }) {
-            let step = direction == .next ? 1 : sources.count - 1
-            target = (index + step) % sources.count
-        } else {
-            target = direction == .next ? 0 : sources.count - 1
-        }
-        TISSelectInputSource(sources[target])
+    static func selectInGame(_ direction: InputSwitchGesture.Direction) {
+        guard let game = GameModeTool.shared.game,
+              NSWorkspace.shared.frontmostApplication?.processIdentifier == game.processIdentifier else { return }
+        InputSources.select(direction)
     }
 
     static func string(_ source: TISInputSource, _ key: CFString) -> String? {
-        guard let value = TISGetInputSourceProperty(source, key) else { return nil }
-        return Unmanaged<CFString>.fromOpaque(value).takeUnretainedValue() as String
+        InputSources.string(source, key)
     }
 }
 
@@ -112,10 +96,12 @@ private func inputSwitchCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .flagsChanged:
-        if GameModeTool.shared.isPlaying {
-            tool.gesture = InputSwitchGesture()
-        } else if let direction = tool.gesture.flagsChanged(event.flags) {
-            DispatchQueue.main.async { InputSwitchTool.select(direction) }
+        if let direction = tool.gesture.flagsChanged(event.flags) {
+            if GameModeTool.shared.isPlaying {
+                if GameModeTool.shared.allowsLanguageGesture { DispatchQueue.main.async { InputSwitchTool.selectInGame(direction) } }
+            } else {
+                DispatchQueue.main.async { InputSwitchTool.select(direction) }
+            }
         }
     default:
         tool.gesture.interrupt()

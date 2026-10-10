@@ -16,7 +16,7 @@ struct SettingsFile {
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
         "finder-open", "finder-cut", "finder-delete",
-        "game-mode", "game-mode-games", "game-mode-not-games",
+        "game-mode", "game-mode-games", "game-mode-not-games", "game-mode-system-shortcuts",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
         "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",

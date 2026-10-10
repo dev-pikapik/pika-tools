@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Spelmodus kent de sneltoetsen van je Mac
+
+<sub>1.31.0 · 11 oktober 2026</sub>
+
+Standaard eenvoudig, met de volledige systeemcatalogus wanneer nodig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Zet Spelmodus aan en speel. Meer spelinstellingen bevat de catalogus van je Mac, actuele toetsen en een bewegende preview voor elke actie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatisch pauzeert acties die vensters openen of focus verplaatsen. Een kort bewust taalkortcommando wisselt de bron zonder systeemvenster. Vastgehouden bewegingstoetsen hebben voorrang, zodat rennen en springen niet per ongeluk de taal wisselen.
+
+Elke actie is instelbaar in de doorzoekbare catalogus. Taal kan in de achtergrond wisselen; andere acties kun je pauzeren of normaal toestaan. Keuzes worden gesynchroniseerd. Andere apps die toetsen volgen staan apart. Forceer stop blijft beschikbaar.
+
+**Probeer het:** Open de extra instellingen, zoek een screenshot- of taalsneltoets en vergelijk de preview met en zonder bescherming.
+
+---
+
 ## <a id="v1.30.14"></a>Sneltoetslinks openen zonder crash
 
 <sub>1.30.14 · 11 oktober 2026</sub>

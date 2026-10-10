@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>遊戲模式了解你的Mac快速鍵
+
+<sub>1.31.0 · 2026年10月11日</sub>
+
+預設簡單易用，需要時可查看完整系統目錄。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+開啟遊戲模式就能玩。更多遊戲設定中有Mac公開的完整目錄、目前按鍵設定，以及每項操作的動畫預覽。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+自動模式暫停開啟視窗或轉移焦點的操作。快速且有意的語言快速鍵直接切換輸入來源，不彈出系統視窗。持續按住的移動鍵優先，因此跑動和跳躍不會意外切換語言。
+
+每項操作可在可搜尋目錄中調整。語言可在背景切換；其他操作可暫停或允許正常執行。選擇會同步。其他監看鍵盤的App單獨顯示，強制結束仍可用。
+
+**試試看：** 開啟更多遊戲設定，搜尋截圖或語言快速鍵，比較保護開啟和關閉時的預覽。
+
+---
+
 ## <a id="v1.30.14"></a>快速鍵連結不再導致當機
 
 <sub>1.30.14 · 2026年10月11日</sub>

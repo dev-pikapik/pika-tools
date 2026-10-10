@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Open now. Click your game to add it";
 "From the Dock" = "From the Dock";
+
+"Automatically" = "Automatically";
+"Pause while playing" = "Pause while playing";
+"Run without interrupting" = "Run without interrupting";
+"Run normally" = "Run normally";
+"System key" = "System key";
+"Force Quit" = "Force Quit";
+"System action %@" = "System action %@";
+"Other system shortcuts" = "Other system shortcuts";
+"Current macOS shortcuts. Automatic protects the game." = "Current macOS shortcuts. Automatic protects the game.";
+"Search system shortcuts" = "Search system shortcuts";
+"Refresh" = "Refresh";
+"While playing" = "While playing";
+"Always available" = "Always available";
+"No key assigned" = "No key assigned";
+"Off in macOS" = "Off in macOS";
+"System keyboard shortcuts" = "System keyboard shortcuts";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Some macOS actions have no published name. Other apps may have their own shortcuts.";
+"More game settings" = "More game settings";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Quick language shortcuts work silently. Held game keys stay in the game.";
+"Other apps watching keys" = "Other apps watching keys";
+"Can change keys" = "Can change keys";
+"Only listens" = "Only listens";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "These apps don’t publish their shortcuts in the macOS catalogue.";
+"Process %@" = "Process %@";

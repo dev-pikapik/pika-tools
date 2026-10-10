@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "Jetzt geöffnet. Klicke auf dein Spiel, um es hinzuzufügen";
 "From the Dock" = "Aus dem Dock";
+
+"Automatically" = "Automatisch";
+"Pause while playing" = "Beim Spielen pausieren";
+"Run without interrupting" = "Ohne Unterbrechung ausführen";
+"Run normally" = "Normal ausführen";
+"System key" = "Systemtaste";
+"Force Quit" = "Sofort beenden";
+"System action %@" = "Systemaktion %@";
+"Other system shortcuts" = "Weitere Systemkürzel";
+"Current macOS shortcuts. Automatic protects the game." = "Aktuelle macOS-Kürzel. Automatisch schützt das Spiel.";
+"Search system shortcuts" = "Systemkürzel suchen";
+"Refresh" = "Aktualisieren";
+"While playing" = "Beim Spielen";
+"Always available" = "Immer verfügbar";
+"No key assigned" = "Keine Tasten zugewiesen";
+"Off in macOS" = "In macOS ausgeschaltet";
+"System keyboard shortcuts" = "Systemtastenkürzel";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Manche macOS-Aktionen haben keinen veröffentlichten Namen. Andere Apps können eigene Kürzel haben.";
+"More game settings" = "Weitere Spieleinstellungen";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "Kurze Sprachkürzel arbeiten unauffällig. Gehaltene Spieltasten erreichen das Spiel.";
+"Other apps watching keys" = "Andere Apps mit Tastenzugriff";
+"Can change keys" = "Kann Tasten verändern";
+"Only listens" = "Liest nur mit";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "Diese Apps veröffentlichen ihre Kürzel nicht im macOS-Katalog.";
+"Process %@" = "Prozess %@";

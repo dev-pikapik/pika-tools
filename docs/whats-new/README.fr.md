@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Le mode Jeu connaît les raccourcis de votre Mac
+
+<sub>1.31.0 · 11 octobre 2026</sub>
+
+Simple par défaut, avec le catalogue système complet au besoin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Activez le mode Jeu et jouez. Autres réglages de jeu contient le catalogue publié par votre Mac, avec les touches actuelles et un aperçu animé pour chaque action.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatique suspend les actions qui ouvrent des fenêtres ou déplacent le focus. Un raccourci de langue bref et volontaire change la source sans fenêtre système. Les touches de déplacement maintenues ont priorité pour éviter les changements de langue pendant la course et les sauts.
+
+Chaque action se règle dans le catalogue avec recherche. La langue peut changer en arrière-plan; les autres actions peuvent être suspendues ou autorisées normalement. Les choix sont synchronisés. Les autres apps observant le clavier sont affichées séparément. Forcer à quitter reste disponible.
+
+**Pour essayer :** Ouvrez les réglages supplémentaires, recherchez un raccourci de capture ou de langue et comparez l’aperçu avec et sans protection.
+
+---
+
 ## <a id="v1.30.14"></a>Les liens de raccourcis s’ouvrent sans plantage
 
 <sub>1.30.14 · 11 octobre 2026</sub>

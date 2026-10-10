@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "지금 실행 중이에요. 게임을 클릭하여 추가하세요";
 "From the Dock" = "Dock에서";
+
+"Automatically" = "자동";
+"Pause while playing" = "플레이 중 일시 중지";
+"Run without interrupting" = "방해 없이 실행";
+"Run normally" = "평소처럼 실행";
+"System key" = "시스템 키";
+"Force Quit" = "강제 종료";
+"System action %@" = "시스템 동작 %@";
+"Other system shortcuts" = "다른 시스템 단축키";
+"Current macOS shortcuts. Automatic protects the game." = "현재 macOS 단축키예요. 자동 모드가 게임을 보호해요.";
+"Search system shortcuts" = "시스템 단축키 검색";
+"Refresh" = "새로고침";
+"While playing" = "플레이 중";
+"Always available" = "항상 사용 가능";
+"No key assigned" = "지정된 키 없음";
+"Off in macOS" = "macOS에서 꺼짐";
+"System keyboard shortcuts" = "시스템 키보드 단축키";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "일부 macOS 동작은 이름이 공개되지 않아요. 다른 앱에는 자체 단축키가 있을 수 있어요.";
+"More game settings" = "추가 게임 설정";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "빠른 언어 단축키는 조용히 작동해요. 누르고 있는 게임 키는 게임에 전달돼요.";
+"Other apps watching keys" = "키를 관찰하는 다른 앱";
+"Can change keys" = "키를 변경할 수 있음";
+"Only listens" = "관찰만 함";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "이 앱들은 macOS 목록에 단축키를 공개하지 않아요.";
+"Process %@" = "프로세스 %@";

@@ -527,3 +527,28 @@
 
 "Open now. Click your game to add it" = "起動中です。ゲームをクリックして追加できます";
 "From the Dock" = "Dockから";
+
+"Automatically" = "自動";
+"Pause while playing" = "ゲーム中は一時停止";
+"Run without interrupting" = "中断せずに実行";
+"Run normally" = "通常どおり実行";
+"System key" = "システムキー";
+"Force Quit" = "強制終了";
+"System action %@" = "システム操作 %@";
+"Other system shortcuts" = "その他のシステムショートカット";
+"Current macOS shortcuts. Automatic protects the game." = "現在のmacOSショートカット。自動でゲームを保護します。";
+"Search system shortcuts" = "システムショートカットを検索";
+"Refresh" = "更新";
+"While playing" = "ゲーム中";
+"Always available" = "常に利用可能";
+"No key assigned" = "キー未設定";
+"Off in macOS" = "macOSでオフ";
+"System keyboard shortcuts" = "システムのキーボードショートカット";
+"Some macOS actions have no published name. Other apps may have their own shortcuts." = "一部のmacOS操作は名前が公開されていません。他のアプリには独自のショートカットがある場合があります。";
+"More game settings" = "その他のゲーム設定";
+"Quick language shortcuts work silently. Held game keys stay in the game." = "素早い言語切り替えは静かに動作します。押し続けたゲームキーはゲームに届きます。";
+"Other apps watching keys" = "キーを監視している他のアプリ";
+"Can change keys" = "キーを変更可能";
+"Only listens" = "監視のみ";
+"These apps don’t publish their shortcuts in the macOS catalogue." = "これらのアプリはmacOSの一覧にショートカットを公開していません。";
+"Process %@" = "プロセス %@";

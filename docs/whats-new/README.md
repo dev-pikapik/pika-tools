@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>Game Mode knows your Mac’s shortcuts
+
+<sub>1.31.0 · October 11, 2026</sub>
+
+Simple by default, with the full system catalogue when you need it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Turn on Game Mode and play. More game settings holds the catalogue published by your Mac, with current key assignments and an animated preview for every action.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+Automatic pauses actions that open windows or move focus. A quick deliberate language shortcut switches the input source silently. Held movement keys keep their priority, so running and jumping don’t change the language by accident.
+
+Each action can be adjusted in the searchable catalogue. Language actions can run in the background; other actions can be paused or allowed normally. Choices sync with your settings. Other apps watching the keyboard appear separately, and Force Quit stays available.
+
+**Try it:** Open More game settings, search for a screenshot or language shortcut, and compare its preview with the protection on and off.
+
+---
+
 ## <a id="v1.30.14"></a>Shortcut links open without a crash
 
 <sub>1.30.14 · October 11, 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.31.0"></a>游戏模式了解你的Mac快捷键
+
+<sub>1.31.0 · 2026年10月11日</sub>
+
+默认简单易用，需要时可查看完整系统目录。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+开启游戏模式就能玩。更多游戏设置中有Mac公开的完整目录、当前按键设置，以及每项操作的动画预览。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+
+自动模式暂停打开窗口或转移焦点的操作。快速且有意的语言快捷键直接切换输入源，不弹出系统窗口。持续按住的移动键优先，因此跑动和跳跃不会意外切换语言。
+
+每项操作可在可搜索目录中调整。语言可在后台切换；其他操作可暂停或允许正常执行。选择会同步。其他监视键盘的应用单独显示，强制退出仍可用。
+
+**试试看：** 打开更多游戏设置，搜索截图或语言快捷键，对比保护开启和关闭时的预览。
+
+---
+
 ## <a id="v1.30.14"></a>快捷键链接不再导致崩溃
 
 <sub>1.30.14 · 2026年10月11日</sub>
