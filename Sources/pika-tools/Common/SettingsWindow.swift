@@ -891,6 +891,10 @@ private struct AboutView: View {
             }
             #endif
 
+            #if APPSTORE
+            TipJarSection()
+            #endif
+
             Section {
                 link("GitHub", "https://github.com/dev-pikapik/pika-tools", symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
                 link(String(localized: "What’s New"), Self.whatsNew, symbol: "newspaper.fill", color: .blue)

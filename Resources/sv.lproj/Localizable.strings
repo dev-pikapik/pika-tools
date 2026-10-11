@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Fläktarna gick tillbaka till Auto för att skydda din Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fläkt, varv, kylning, svalare, varm, värme, ljud, tyst, högljudd, temperatur, termisk";
 "allow, helper, password, administrator, install, remove" = "tillåt, hjälpprogram, lösenord, administratör, installera, ta bort";
+"Say thanks" = "Säg tack";
+"Optional tip. It unlocks nothing." = "Valfri dricks. Låser inte upp något.";
+"Small tip" = "Liten dricks";
+"Medium tip" = "Medelstor dricks";
+"Large tip" = "Stor dricks";
+"Thank you! It means a lot." = "Tack! Det betyder mycket.";
+"Tips are not available right now." = "Dricks är inte tillgänglig just nu.";
+"The tip did not go through." = "Dricksen gick inte igenom.";

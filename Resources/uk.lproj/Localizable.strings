@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Вентилятори повернулися в режим «Авто», щоб Mac не перегрівся";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "вентилятор, кулер, оберти, об/хв, охолодження, спекотно, нагрівання, шум, тихо, гучно, температура";
 "allow, helper, password, administrator, install, remove" = "дозволити, помічник, пароль, адміністратор, встановити, прибрати";
+"Say thanks" = "Подякувати";
+"Optional tip. It unlocks nothing." = "Чайові за бажанням. Нічого не відкривають.";
+"Small tip" = "Невеликі чайові";
+"Medium tip" = "Середні чайові";
+"Large tip" = "Великі чайові";
+"Thank you! It means a lot." = "Дякуємо! Нам дуже приємно.";
+"Tips are not available right now." = "Чайові зараз недоступні.";
+"The tip did not go through." = "Не вдалося надіслати чайові.";

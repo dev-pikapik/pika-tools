@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Quạt đã trở về Tự động để giữ an toàn cho Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "quạt, vòng/phút, làm mát, mát hơn, nóng, nhiệt, ồn, yên tĩnh, to, nhiệt độ";
 "allow, helper, password, administrator, install, remove" = "cho phép, trợ giúp, mật khẩu, quản trị viên, cài đặt, gỡ";
+"Say thanks" = "Gửi lời cảm ơn";
+"Optional tip. It unlocks nothing." = "Tiền típ tùy ý. Không mở khóa gì cả.";
+"Small tip" = "Típ nhỏ";
+"Medium tip" = "Típ vừa";
+"Large tip" = "Típ lớn";
+"Thank you! It means a lot." = "Cảm ơn bạn! Điều này rất ý nghĩa.";
+"Tips are not available right now." = "Hiện chưa thể gửi tiền típ.";
+"The tip did not go through." = "Không gửi được tiền típ.";

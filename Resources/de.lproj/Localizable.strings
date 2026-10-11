@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Die Lüfter sind auf Automatisch zurückgegangen, um deinen Mac zu schützen";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "Lüfter, U/min, Kühlung, kühler, heiß, Hitze, Lärm, leise, laut, Temperatur, thermisch";
 "allow, helper, password, administrator, install, remove" = "erlauben, Hilfsprogramm, Kennwort, Administrator, installieren, entfernen";
+"Say thanks" = "Danke sagen";
+"Optional tip. It unlocks nothing." = "Freiwilliges Trinkgeld. Schaltet nichts frei.";
+"Small tip" = "Kleines Trinkgeld";
+"Medium tip" = "Mittleres Trinkgeld";
+"Large tip" = "Großes Trinkgeld";
+"Thank you! It means a lot." = "Danke! Das bedeutet uns viel.";
+"Tips are not available right now." = "Trinkgeld ist gerade nicht verfügbar.";
+"The tip did not go through." = "Das Trinkgeld ist nicht durchgegangen.";

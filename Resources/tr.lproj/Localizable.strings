@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Mac’inizi korumak için fanlar Otomatik’e döndü";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, dev/dk, soğutma, daha serin, sıcak, ısı, gürültü, sessiz, yüksek ses, sıcaklık, termal";
 "allow, helper, password, administrator, install, remove" = "izin ver, yardımcı, parola, yönetici, kur, kaldır";
+"Say thanks" = "Teşekkür et";
+"Optional tip. It unlocks nothing." = "İsteğe bağlı bahşiş. Hiçbir şeyin kilidini açmaz.";
+"Small tip" = "Küçük bahşiş";
+"Medium tip" = "Orta bahşiş";
+"Large tip" = "Büyük bahşiş";
+"Thank you! It means a lot." = "Teşekkürler! Bizim için çok değerli.";
+"Tips are not available right now." = "Bahşiş şu anda kullanılamıyor.";
+"The tip did not go through." = "Bahşiş gönderilemedi.";

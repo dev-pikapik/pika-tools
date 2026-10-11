@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "พัดลมกลับเป็นอัตโนมัติเพื่อความปลอดภัยของ Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "พัดลม, รอบ, ระบายความร้อน, เย็น, ร้อน, ความร้อน, เสียงดัง, เงียบ, อุณหภูมิ";
 "allow, helper, password, administrator, install, remove" = "อนุญาต, ตัวช่วย, รหัสผ่าน, ผู้ดูแลระบบ, ติดตั้ง, ลบ";
+"Say thanks" = "ขอบคุณ";
+"Optional tip. It unlocks nothing." = "ทิปตามสะดวก ไม่ปลดล็อกอะไรเพิ่ม";
+"Small tip" = "ทิปเล็ก";
+"Medium tip" = "ทิปกลาง";
+"Large tip" = "ทิปใหญ่";
+"Thank you! It means a lot." = "ขอบคุณมาก! มีความหมายกับเรามาก";
+"Tips are not available right now." = "ขณะนี้ยังให้ทิปไม่ได้";
+"The tip did not go through." = "ส่งทิปไม่สำเร็จ";
