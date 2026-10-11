@@ -43,132 +43,137 @@ Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求�
 <br>Mac 想醒多久就醒多久，闔上螢幕也可以。
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>風扇</b>
+<br>查看風扇轉得有多快，並選擇它的轉速。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>保護 ⌘Q 和 ⌘W</b>
 <br>不會誤結束或誤關閉。真的要這麼做時，加上 ⇧。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>較小拷貝</b>
 <br>在照片、PDF 或影片上按右鍵，旁邊就會出現較小的拷貝。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>轉換</b>
 <br>從右鍵選單把圖片、影片或歌曲存成其他格式。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>切換語言</b>
 <br>按住 ⌥ 再點一下 ⇧，就能切換鍵盤語言。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>關閉最後一個視窗時結束</b>
 <br>關閉 App 的最後一個視窗，App 也會跟著結束。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>綠色按鈕放大視窗</b>
 <br>視窗填滿螢幕，但不進入全螢幕模式。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>在 Dock 中按一下以隱藏</b>
 <br>按一下正在使用的 App，它就會讓開。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>新增檔案</b>
 <br>在 Finder 中按右鍵、輸入名稱，空白檔案就完成了。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X 搬移檔案</b>
 <br>在 Finder 中剪下檔案，再貼到想要的位置。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter 打開檔案</b>
 <br>在 Finder 中選取檔案，按 Enter 就能打開。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete 丟到垃圾桶</b>
 <br>在 Finder 中按 ⌫，選取的檔案就會丟到垃圾桶。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>遊戲模式</b>
 <br>玩遊戲時，不會有東西跳到遊戲上面，也不會把遊戲關掉。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>網速測試</b>
 <br>網路有多快、夠做什麼，一看就知道。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>滑鼠側邊按鈕</b>
 <br>按鈕 4 和 5 用於返回和前進，就像在觸控式軌跡板上滑動。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>按行捲動</b>
 <br>無論滾輪轉多快，每一格都捲動相同的距離。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>捲動方向</b>
 <br>觸控式軌跡板一個方向，滑鼠另一個方向。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>關閉指標加速</b>
 <br>手移動多少，指標就移動多少。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>按住按鍵連續輸入</b>
 <br>按住按鍵會重複輸入字母，而不是跳出重音符號選單。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home 和 End</b>
 <br>輸入時跳到行首或行尾。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>動畫</b>
 <br>讓 Dock、視窗和快速查看更快，甚至瞬間完成。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>已刪除 App 的權限</b>
 <br>清除 macOS 為已刪除的 App 保留的權限。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>桌面寵物</b>
@@ -275,6 +280,7 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 
 - **一般**：登入時打開、外觀（跟隨系統、淺色或深色）、語言、更新和備份：把設定輸出為檔案或從檔案輸入，也可以透過 iCloud 雲碟同步。
 - **保持喚醒**：時間長度、顯示器和螢幕闔上選項。
+- **風扇**：查看每個風扇的轉速，選擇自動或手動轉速。
 - **網速測試**：測網速，看看它適合做什麼。
 - **鍵盤**：語言切換、按鍵重複、Home 和 End。
 - **滑鼠**：指標加速和軌跡速度、按行捲動、捲動方向、側邊按鈕。
