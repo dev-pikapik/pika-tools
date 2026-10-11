@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Questa azione macOS è disattivata quando il gioco è in primo piano. Quando lo lasci, funziona come prima.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Ogni pressione cambia lingua senza il menu di sistema. Gli stessi tasti continuano a raggiungere il gioco.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS esegue l’azione normalmente, anche se apre una finestra o sposta il focus dal gioco.";
+"Choose your home folder once so pikapik can save files next to yours." = "Scegli una volta la tua cartella Home così pikapik potrà salvare i file accanto ai tuoi.";
+"Choose this folder so pikapik can save files next to yours." = "Scegli questa cartella così pikapik potrà salvare i file accanto ai tuoi.";
+"Allow Access" = "Consenti accesso";
 "Fans" = "Ventole";
 "Fan speed" = "Velocità delle ventole";
 "Fan control" = "Controllo ventole";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Le ventole sono tornate su Auto per proteggere il Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventola, giri, raffreddamento, più fresco, caldo, calore, rumore, silenzioso, forte, temperatura, termico";
 "allow, helper, password, administrator, install, remove" = "consenti, assistente, password, amministratore, installa, rimuovi";
+"Say thanks" = "Dì grazie";
+"Optional tip. It unlocks nothing." = "Mancia facoltativa. Non sblocca nulla.";
+"Small tip" = "Mancia piccola";
+"Medium tip" = "Mancia media";
+"Large tip" = "Mancia grande";
+"Thank you! It means a lot." = "Grazie! Significa molto.";
+"Tips are not available right now." = "Le mance non sono disponibili al momento.";
+"The tip did not go through." = "La mancia non è andata a buon fine.";

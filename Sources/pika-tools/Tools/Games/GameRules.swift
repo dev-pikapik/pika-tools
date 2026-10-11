@@ -209,6 +209,50 @@ struct HotKeyTrace {
 }
 
 enum SymbolicHotKeys {
+    static var gameInputs: [Int32] {
+        let configured = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any] ?? [:]
+        let ids = Set((0..<300).map(Int32.init) + configured.keys.compactMap(Int32.init))
+        return ids.sorted().filter { id in
+            guard let value = value(id), value.key != UInt16.max else { return false }
+            return GameRules.isGameInput(value.modifiers)
+        }
+    }
+
+    #if APPSTORE
+    private static var swallowed: [Int32: UInt64] = [:]
+
+    private static func configured(_ id: Int32) -> (enabled: Bool, character: UInt16, key: UInt16, modifiers: UInt64)? {
+        let all = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any]
+        guard let entry = all?[String(id)] as? [String: Any],
+              let parameters = (entry["value"] as? [String: Any])?["parameters"] as? [Int], parameters.count == 3,
+              parameters[1] != Int(UInt16.max), parameters[2] & 0x100000 != 0, parameters[2] & 0x800000 == 0
+        else { return nil }
+        let enabled = (entry["enabled"] as? NSNumber)?.boolValue ?? true
+        return (enabled, UInt16(truncatingIfNeeded: parameters[0]), UInt16(truncatingIfNeeded: parameters[1]), UInt64(parameters[2]))
+    }
+
+    static var available: Bool { true }
+
+    static func swallows(key: Int, flags: UInt64) -> Bool {
+        swallowed.values.contains(GameRules.combo(key: Int64(key), flags: flags))
+    }
+
+    static func isEnabled(_ id: Int32) -> Bool {
+        configured(id)?.enabled == true && swallowed[id] == nil
+    }
+
+    static func set(_ id: Int32, _ on: Bool) {
+        if on {
+            swallowed[id] = nil
+        } else if let value = configured(id) {
+            swallowed[id] = GameRules.combo(key: Int64(value.key), flags: value.modifiers)
+        }
+    }
+
+    static func value(_ id: Int32) -> (character: UInt16, key: UInt16, modifiers: UInt64)? {
+        configured(id).map { ($0.character, $0.key, $0.modifiers) }
+    }
+    #else
     private typealias SetEnabled = @convention(c) (Int32, Bool) -> Int32
     private typealias IsEnabled = @convention(c) (Int32) -> Bool
     private typealias Value = @convention(c) (Int32, UnsafeMutablePointer<UInt16>, UnsafeMutablePointer<UInt16>, UnsafeMutablePointer<UInt64>) -> Int32
@@ -219,15 +263,6 @@ enum SymbolicHotKeys {
     private static let reader = dlsym(library, "CGSGetSymbolicHotKeyValue").map { unsafeBitCast($0, to: Value.self) }
 
     static var available: Bool { setter != nil && getter != nil }
-
-    static var gameInputs: [Int32] {
-        let configured = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any] ?? [:]
-        let ids = Set((0..<300).map(Int32.init) + configured.keys.compactMap(Int32.init))
-        return ids.sorted().filter { id in
-            guard let value = value(id), value.key != UInt16.max else { return false }
-            return GameRules.isGameInput(value.modifiers)
-        }
-    }
 
     static func isEnabled(_ id: Int32) -> Bool {
         getter?(id) ?? false
@@ -244,4 +279,5 @@ enum SymbolicHotKeys {
         guard reader?(id, &character, &key, &modifiers) == 0 else { return nil }
         return (character, key, modifiers)
     }
+    #endif
 }

@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Cette action macOS est désactivée quand le jeu est au premier plan. Quand vous le quittez, elle fonctionne comme avant.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Chaque appui change la langue sans menu système. Les mêmes touches continuent d’atteindre le jeu.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS exécute l’action normalement, même si elle ouvre une fenêtre ou détourne le focus du jeu.";
+"Choose your home folder once so pikapik can save files next to yours." = "Choisissez une fois votre dossier personnel pour que pikapik puisse enregistrer des fichiers à côté des vôtres.";
+"Choose this folder so pikapik can save files next to yours." = "Choisissez ce dossier pour que pikapik puisse enregistrer des fichiers à côté des vôtres.";
+"Allow Access" = "Autoriser l’accès";
 "Fans" = "Ventilateurs";
 "Fan speed" = "Vitesse des ventilateurs";
 "Fan control" = "Contrôle des ventilateurs";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Les ventilateurs sont repassés en Auto pour protéger votre Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilateur, tr/min, refroidissement, plus frais, chaud, chaleur, bruit, silencieux, fort, température, thermique";
 "allow, helper, password, administrator, install, remove" = "autoriser, assistant, mot de passe, administrateur, installer, supprimer";
+"Say thanks" = "Dire merci";
+"Optional tip. It unlocks nothing." = "Pourboire facultatif. Il ne débloque rien.";
+"Small tip" = "Petit pourboire";
+"Medium tip" = "Pourboire moyen";
+"Large tip" = "Gros pourboire";
+"Thank you! It means a lot." = "Merci ! Cela compte beaucoup.";
+"Tips are not available right now." = "Les pourboires sont indisponibles pour le moment.";
+"The tip did not go through." = "Le pourboire n’a pas abouti.";

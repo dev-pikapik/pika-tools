@@ -318,17 +318,6 @@ private struct ChangesBar: View {
     }
 }
 
-extension View {
-    func noticeBar() -> some View {
-        font(.callout)
-            .foregroundStyle(.secondary)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
-            .background(.bar)
-            .overlay(alignment: .top) { Divider() }
-    }
-}
-
 private struct SpeedRow: View {
     let tool: AnimationsTool
     @State private var drag: Double?

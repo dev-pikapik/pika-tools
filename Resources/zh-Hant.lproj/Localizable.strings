@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "遊戲在前景時，此 macOS 動作會被停用。離開遊戲後，它恢復原來的行為。";
 "Every press switches language without the system menu. The same keys still reach the game." = "每次按下都會切換語言，而不開啟系統選單。同樣的按鍵仍會傳給遊戲。";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS 正常執行此動作，即使它開啟視窗或從遊戲奪取焦點。";
+"Choose your home folder once so pikapik can save files next to yours." = "請選擇一次你的個人檔案夾，這樣 pikapik 就能把檔案儲存在你的檔案旁邊。";
+"Choose this folder so pikapik can save files next to yours." = "請選擇此檔案夾，這樣 pikapik 就能把檔案儲存在你的檔案旁邊。";
+"Allow Access" = "允許存取";
 "Fans" = "風扇";
 "Fan speed" = "風扇轉速";
 "Fan control" = "風扇控制";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "為了保護你的 Mac，風扇已恢復為自動";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "風扇, 轉速, rpm, 散熱, 降溫, 熱, 發燙, 噪音, 安靜, 吵, 溫度";
 "allow, helper, password, administrator, install, remove" = "允許, 輔助, 密碼, 管理員, 安裝, 移除";
+"Say thanks" = "說聲謝謝";
+"Optional tip. It unlocks nothing." = "自願打賞，不會解鎖任何內容。";
+"Small tip" = "小額打賞";
+"Medium tip" = "中額打賞";
+"Large tip" = "大額打賞";
+"Thank you! It means a lot." = "謝謝！這對我們意義重大。";
+"Tips are not available right now." = "目前無法打賞。";
+"The tip did not go through." = "打賞未能完成。";

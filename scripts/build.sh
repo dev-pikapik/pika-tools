@@ -13,8 +13,10 @@ if [ -z "${SIGN_IDENTITY:-}" ]; then
 fi
 DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo 1 || true)
 
+APPSTORE_ID=com.pesotchi.pika-tools.appstore
 rm -rf build
-mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Library/LaunchServices" build/strings
+mkdir -p "$APP/Contents/MacOS" build/strings
+[ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
@@ -23,7 +25,18 @@ while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.s
 SOURCES+=(Extensions/Convert/ConvertFormats.swift)
 
 FLAGS=()
-if [ -d Private/Sources ] && [ -n "$(find Private/Sources -name '*.swift' -print -quit)" ]; then
+if [ -n "${APPSTORE:-}" ]; then
+    FLAGS+=(-D APPSTORE)
+    KEPT=()
+    for f in "${SOURCES[@]}"; do
+        case $f in
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift) ;;
+            *) KEPT+=("$f") ;;
+        esac
+    done
+    SOURCES=("${KEPT[@]}")
+    echo "App Store build"
+elif [ -d Private/Sources ] && [ -n "$(find Private/Sources -name '*.swift' -print -quit)" ]; then
     while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Private/Sources -name '*.swift' -print0)
     FLAGS+=(-D PIKA_PRIVATE)
     echo "Including Private/Sources"
@@ -38,7 +51,7 @@ for ARCH in arm64 x86_64; do
         "${EMIT[@]}" \
         "${SOURCES[@]}" \
         -o "build/pika-tools-$ARCH"
-    swiftc -O -whole-module-optimization \
+    [ -n "${APPSTORE:-}" ] || swiftc -O -whole-module-optimization \
         -module-name FanHelper \
         -target "$ARCH-apple-macos$MIN_OS" \
         Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
@@ -55,13 +68,15 @@ for ARCH in arm64 x86_64; do
     done
 done
 
-./scripts/check-strings.sh build/strings
+[ -n "${APPSTORE:-}" ] || ./scripts/check-strings.sh build/strings
 rm -rf build/strings
 
 lipo -create build/pika-tools-arm64 build/pika-tools-x86_64 -output "$APP/Contents/MacOS/pika-tools"
 rm build/pika-tools-arm64 build/pika-tools-x86_64
-lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
-rm build/fan-helper-arm64 build/fan-helper-x86_64
+if [ -z "${APPSTORE:-}" ]; then
+    lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
+    rm build/fan-helper-arm64 build/fan-helper-x86_64
+fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
     APPEX="$APP/Contents/PlugIns/$EXT.appex"
@@ -88,6 +103,7 @@ RES="$APP/Contents/Resources"
 mkdir -p "$RES"
 cp -R Resources/*.lproj "$RES/"
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
+[ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
 if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
         --compile "$RES" \
         --app-icon AppIcon \
@@ -117,7 +133,24 @@ sign() {
     fi
 }
 
-if [ -n "$DEV" ]; then
+group_entitlements() {
+    local OUT="build/$2.entitlements"
+    cp "$1" "$OUT"
+    /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups array" -c "Add :com.apple.security.application-groups:0 string $TEAM_ID.com.pesotchi.pika-tools" "$OUT"
+    echo "$OUT"
+}
+
+if [ -n "${APPSTORE:-}" ]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName $APPSTORE_ID" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-store" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-store" "$APP/Contents/Info.plist"
+    for EXT in $EXTENSIONS; do
+        PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
+        ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
+        /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.appstore.}" "$PLIST"
+        /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pikapik-store" "$PLIST"
+    done
+elif [ -n "$DEV" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-dev" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-dev" "$APP/Contents/Info.plist"
@@ -128,11 +161,20 @@ if [ -n "$DEV" ]; then
         /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
     done
 fi
+APP_ENTITLEMENTS=()
 for EXT in $EXTENSIONS; do
-    sign --entitlements "Extensions/$EXT/$EXT.entitlements" "$APP/Contents/PlugIns/$EXT.appex"
+    ENTITLEMENTS="Extensions/$EXT/$EXT.entitlements"
+    [ -n "${APPSTORE:-}" ] && [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" "$EXT")"
+    sign --entitlements "$ENTITLEMENTS" "$APP/Contents/PlugIns/$EXT.appex"
 done
-HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
-sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
-sign "$APP"
+if [ -n "${APPSTORE:-}" ]; then
+    ENTITLEMENTS=Resources/AppStore.entitlements
+    [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app)"
+    APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
+else
+    HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
+    sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
+fi
+sign ${APP_ENTITLEMENTS[@]+"${APP_ENTITLEMENTS[@]}"} "$APP"
 
 echo "Done: $APP ($(lipo -archs "$APP/Contents/MacOS/pika-tools"))"

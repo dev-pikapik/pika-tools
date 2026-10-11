@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "गेम सामने होने पर यह macOS क्रिया बंद रहती है। गेम से बाहर जाने पर पहले की तरह काम करती है।";
 "Every press switches language without the system menu. The same keys still reach the game." = "हर दबाव पर सिस्टम मेनू के बिना भाषा बदलती है। वही कुंजियाँ गेम तक भी पहुँचती रहती हैं।";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS क्रिया सामान्य रूप से चलाता है, भले ही वह विंडो खोले या गेम से फ़ोकस हटा दे।";
+"Choose your home folder once so pikapik can save files next to yours." = "अपना होम फ़ोल्डर एक बार चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके।";
+"Choose this folder so pikapik can save files next to yours." = "यह फ़ोल्डर चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके।";
+"Allow Access" = "पहुँच की अनुमति दें";
 "Fans" = "पंखे";
 "Fan speed" = "पंखे की गति";
 "Fan control" = "पंखा नियंत्रण";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "आपके Mac को सुरक्षित रखने के लिए पंखे ऑटो पर लौट आए";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "पंखा, आरपीएम, ठंडा, कूलिंग, गर्म, गर्मी, शोर, शांत, तेज़, तापमान";
 "allow, helper, password, administrator, install, remove" = "अनुमति, सहायक, पासवर्ड, एडमिनिस्ट्रेटर, इंस्टॉल, हटाएँ";
+"Say thanks" = "धन्यवाद कहें";
+"Optional tip. It unlocks nothing." = "वैकल्पिक टिप। इससे कुछ अनलॉक नहीं होता।";
+"Small tip" = "छोटी टिप";
+"Medium tip" = "मध्यम टिप";
+"Large tip" = "बड़ी टिप";
+"Thank you! It means a lot." = "धन्यवाद! हमारे लिए यह बहुत मायने रखता है।";
+"Tips are not available right now." = "टिप अभी उपलब्ध नहीं है।";
+"The tip did not go through." = "टिप पूरी नहीं हो सकी।";

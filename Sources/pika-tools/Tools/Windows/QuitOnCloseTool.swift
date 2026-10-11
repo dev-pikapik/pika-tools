@@ -209,6 +209,9 @@ final class QuitOnCloseTool: Tool {
             return true
         }
         if candidates.contains(where: { $0[kCGWindowIsOnscreen as String] as? Bool == true }) { return true }
+        #if APPSTORE
+        return !candidates.isEmpty
+        #else
         let visible = visibleSpaces()
         return candidates.contains { info in
             guard let id = info[kCGWindowNumber as String] as? Int,
@@ -216,8 +219,10 @@ final class QuitOnCloseTool: Tool {
             else { return false }
             return !spaces.isEmpty && spaces.allSatisfy { !visible.contains($0.intValue) }
         }
+        #endif
     }
 
+    #if !APPSTORE
     private static func visibleSpaces() -> Set<Int> {
         let displays = CGSCopyManagedDisplaySpaces(CGSMainConnectionID())?.takeRetainedValue() as? [[String: Any]] ?? []
         return Set(displays.compactMap { display in
@@ -225,11 +230,14 @@ final class QuitOnCloseTool: Tool {
             return (current?["ManagedSpaceID"] as? Int) ?? (current?["id64"] as? Int)
         })
     }
+    #endif
 }
 
+#if !APPSTORE
 @_silgen_name("CGSMainConnectionID") private func CGSMainConnectionID() -> Int32
 @_silgen_name("CGSCopySpacesForWindows") private func CGSCopySpacesForWindows(_ cid: Int32, _ mask: Int32, _ windows: CFArray) -> Unmanaged<CFArray>?
 @_silgen_name("CGSCopyManagedDisplaySpaces") private func CGSCopyManagedDisplaySpaces(_ cid: Int32) -> Unmanaged<CFArray>?
+#endif
 
 private func quitOnCloseCallback(observer: AXObserver, element: AXUIElement, notification: CFString, refcon: UnsafeMutableRawPointer?) {
     guard let refcon else { return }

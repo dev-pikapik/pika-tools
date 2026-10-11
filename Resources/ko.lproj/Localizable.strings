@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "게임이 맨 앞에 있는 동안 이 macOS 동작은 비활성화됩니다. 게임을 벗어나면 이전처럼 작동합니다.";
 "Every press switches language without the system menu. The same keys still reach the game." = "누를 때마다 시스템 메뉴 없이 언어가 바뀝니다. 같은 키는 계속 게임에 전달됩니다.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "윈도우를 열거나 게임의 포커스를 가져가더라도 macOS가 동작을 정상 실행합니다.";
+"Choose your home folder once so pikapik can save files next to yours." = "pikapik이 내 파일 옆에 파일을 저장할 수 있도록 홈 폴더를 한 번만 선택해 주세요.";
+"Choose this folder so pikapik can save files next to yours." = "pikapik이 내 파일 옆에 파일을 저장할 수 있도록 이 폴더를 선택해 주세요.";
+"Allow Access" = "접근 허용";
 "Fans" = "팬";
 "Fan speed" = "팬 속도";
 "Fan control" = "팬 제어";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Mac을 보호하기 위해 팬이 자동으로 돌아갔습니다";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "팬, rpm, 냉각, 시원, 뜨거움, 열, 소음, 조용, 시끄러움, 온도";
 "allow, helper, password, administrator, install, remove" = "허용, 도우미, 암호, 관리자, 설치, 제거";
+"Say thanks" = "감사 전하기";
+"Optional tip. It unlocks nothing." = "선택 사항인 팁입니다. 잠기는 기능은 없습니다.";
+"Small tip" = "작은 팁";
+"Medium tip" = "중간 팁";
+"Large tip" = "큰 팁";
+"Thank you! It means a lot." = "감사합니다! 큰 힘이 됩니다.";
+"Tips are not available right now." = "지금은 팁을 이용할 수 없습니다.";
+"The tip did not go through." = "팁을 보내지 못했습니다.";

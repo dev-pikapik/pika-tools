@@ -41,19 +41,23 @@ import AppKit
         if !Permissions.shared.allGranted {
             item(menu, String(localized: "Permissions needed"), #selector(openPermissions))
         }
+        #if !APPSTORE
         if case .available(let version) = Updater.shared.state {
             item(menu, String(localized: "Update to \(version)"), #selector(installUpdate))
         } else {
             item(menu, String(localized: "Check for Updates"), #selector(checkUpdates))
         }
+        #endif
         item(menu, String(localized: "About"), #selector(openAbout))
         menu.addItem(.separator())
         item(menu, String(localized: "Open at Login"), #selector(toggleLogin)).state = LoginItem.shared.isOn ? .on : .off
         menu.addItem(.separator())
         item(menu, String(localized: "Quit"), #selector(quit), key: "q")
+        #if !APPSTORE
         let full = item(menu, String(localized: "Quit Completely"), #selector(quitCompletely), key: "q")
         full.keyEquivalentModifierMask = [.command, .option]
         full.isAlternate = true
+        #endif
         return menu
     }
 
@@ -72,6 +76,7 @@ import AppKit
     @objc private func quit() { NSApp.terminate(nil) }
     @objc private func quitCompletely() { Background.quitCompletely() }
 
+    #if !APPSTORE
     @objc private func checkUpdates() {
         SettingsWindow.show(.about)
         Task { await Updater.shared.check() }
@@ -80,4 +85,5 @@ import AppKit
     @objc private func installUpdate() {
         Task { await Updater.shared.install() }
     }
+    #endif
 }

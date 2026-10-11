@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Denna macOS-åtgärd är avstängd när spelet är i förgrunden. När du lämnar spelet fungerar den som förut.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Varje tryck byter språk utan systemmenyn. Samma tangenter når fortfarande spelet.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS utför åtgärden normalt, även om den öppnar ett fönster eller flyttar fokus från spelet.";
+"Choose your home folder once so pikapik can save files next to yours." = "Välj din hemmapp en gång så att pikapik kan spara filer bredvid dina.";
+"Choose this folder so pikapik can save files next to yours." = "Välj den här mappen så att pikapik kan spara filer bredvid dina.";
+"Allow Access" = "Tillåt åtkomst";
 "Fans" = "Fläktar";
 "Fan speed" = "Fläkthastighet";
 "Fan control" = "Fläktstyrning";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Fläktarna gick tillbaka till Auto för att skydda din Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fläkt, varv, kylning, svalare, varm, värme, ljud, tyst, högljudd, temperatur, termisk";
 "allow, helper, password, administrator, install, remove" = "tillåt, hjälpprogram, lösenord, administratör, installera, ta bort";
+"Say thanks" = "Säg tack";
+"Optional tip. It unlocks nothing." = "Valfri dricks. Låser inte upp något.";
+"Small tip" = "Liten dricks";
+"Medium tip" = "Medelstor dricks";
+"Large tip" = "Stor dricks";
+"Thank you! It means a lot." = "Tack! Det betyder mycket.";
+"Tips are not available right now." = "Dricks är inte tillgänglig just nu.";
+"The tip did not go through." = "Dricksen gick inte igenom.";

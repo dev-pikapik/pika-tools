@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Oyun öndeyken bu macOS eylemi devre dışıdır. Oyundan ayrılınca eskisi gibi çalışır.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Her basış, sistem menüsünü açmadan dili değiştirir. Aynı tuşlar oyuna ulaşmaya devam eder.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS eylemi normal şekilde çalıştırır; pencere açsa veya odağı oyundan alsa bile.";
+"Choose your home folder once so pikapik can save files next to yours." = "pikapik’in dosyaları seninkilerin yanına kaydedebilmesi için ana klasörünü bir kez seç.";
+"Choose this folder so pikapik can save files next to yours." = "pikapik’in dosyaları seninkilerin yanına kaydedebilmesi için bu klasörü seç.";
+"Allow Access" = "Erişime İzin Ver";
 "Fans" = "Fanlar";
 "Fan speed" = "Fan hızı";
 "Fan control" = "Fan kontrolü";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Mac’inizi korumak için fanlar Otomatik’e döndü";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, dev/dk, soğutma, daha serin, sıcak, ısı, gürültü, sessiz, yüksek ses, sıcaklık, termal";
 "allow, helper, password, administrator, install, remove" = "izin ver, yardımcı, parola, yönetici, kur, kaldır";
+"Say thanks" = "Teşekkür et";
+"Optional tip. It unlocks nothing." = "İsteğe bağlı bahşiş. Hiçbir şeyin kilidini açmaz.";
+"Small tip" = "Küçük bahşiş";
+"Medium tip" = "Orta bahşiş";
+"Large tip" = "Büyük bahşiş";
+"Thank you! It means a lot." = "Teşekkürler! Bizim için çok değerli.";
+"Tips are not available right now." = "Bahşiş şu anda kullanılamıyor.";
+"The tip did not go through." = "Bahşiş gönderilemedi.";

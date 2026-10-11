@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Пока игра на переднем плане, это действие macOS отключено. Когда вы уходите из игры, оно работает как раньше.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Каждое нажатие сочетания меняет язык без системного меню. Те же клавиши продолжают поступать в игру.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS выполняет действие как обычно, даже если оно открывает окно или уводит фокус из игры.";
+"Choose your home folder once so pikapik can save files next to yours." = "Выберите домашнюю папку один раз, чтобы pikapik мог сохранять файлы рядом с вашими.";
+"Choose this folder so pikapik can save files next to yours." = "Выберите эту папку, чтобы pikapik мог сохранять файлы рядом с вашими.";
+"Allow Access" = "Разрешить доступ";
 "Fans" = "Вентиляторы";
 "Fan speed" = "Скорость вентиляторов";
 "Fan control" = "Управление вентиляторами";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Вентиляторы вернулись в режим «Авто», чтобы Mac не перегрелся";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "вентилятор, кулер, обороты, об/мин, охлаждение, жарко, нагрев, шум, тихо, громко, температура";
 "allow, helper, password, administrator, install, remove" = "разрешить, помощник, пароль, администратор, установить, удалить";
+"Say thanks" = "Сказать спасибо";
+"Optional tip. It unlocks nothing." = "Чаевые по желанию. Ничего не открывают.";
+"Small tip" = "Маленькие чаевые";
+"Medium tip" = "Средние чаевые";
+"Large tip" = "Большие чаевые";
+"Thank you! It means a lot." = "Спасибо! Нам очень приятно.";
+"Tips are not available right now." = "Чаевые сейчас недоступны.";
+"The tip did not go through." = "Не удалось отправить чаевые.";
