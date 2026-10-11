@@ -86,6 +86,20 @@ struct SettingsItem: Identifiable {
     }
 
     static var all: [SettingsItem] {
+        #if APPSTORE
+        let hidden = [
+            String(localized: "Keep running after Quit"), String(localized: "Sync settings with iCloud"), String(localized: "Repeat a held key"),
+            String(localized: "Turn off pointer acceleration"), String(localized: "Tracking speed"), String(localized: "Left by deleted apps"), String(localized: "iCloud Drive"),
+            String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
+            String(localized: "Turn off the display now"),
+        ]
+        return allItems.filter { $0.tab != .animations && $0.tab != .speedTest && !hidden.contains($0.title) }
+        #else
+        return allItems
+        #endif
+    }
+
+    private static var allItems: [SettingsItem] {
         [
             SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
             SettingsItem(tab: .general, title: String(localized: "Keep running after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
@@ -305,7 +319,11 @@ private struct SettingsView: View {
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    #if APPSTORE
+                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
+                    #else
                     Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games, .pet]) }
+                    #endif
                     Section { rows([.permissions, .about]) }
                 } else {
                     results
@@ -404,7 +422,12 @@ private struct SettingsView: View {
             )
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
-        case .animations: AnimationsPage()
+        case .animations:
+            #if APPSTORE
+            EmptyView()
+            #else
+            AnimationsPage()
+            #endif
         case .games: GameModePage()
         case .pet: PetPage()
         case .permissions: PermissionsView()
@@ -607,10 +630,12 @@ private struct GeneralSettings: View {
                          : String(localized: "Starts on its own when you log in")))
                 }
                 .settingAnchor(String(localized: "Open at Login"))
+                #if !APPSTORE
                 Toggle(isOn: $keepRunning) {
                     RowLabel(Text("Keep running after Quit"), Text("Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely"))
                 }
                 .settingAnchor(String(localized: "Keep running after Quit"))
+                #endif
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
                         .fixedSize()
@@ -639,6 +664,7 @@ private struct GeneralSettings: View {
                 }
                 .padding(.vertical, 2)
                 .settingAnchor(String(localized: "Settings file"))
+                #if !APPSTORE
                 Toggle(isOn: $sync.isEnabled) {
                     RowLabel(Text("Sync settings with iCloud"), Text(syncStatus))
                 }
@@ -651,6 +677,7 @@ private struct GeneralSettings: View {
                     }
                     .foregroundStyle(.secondary)
                 }
+                #endif
             }
             RestoreDefaultsSection(
                 message: String(localized: "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are."),
@@ -807,7 +834,9 @@ private struct AboutView: View {
         return "https://github.com/dev-pikapik/pika-tools/blob/main/docs/whats-new/\(page)"
     }
 
+    #if !APPSTORE
     @Bindable private var updater = Updater.shared
+    #endif
     private let info = Bundle.main.infoDictionary ?? [:]
     private var version: String {
         "\(info["CFBundleShortVersionString"] ?? "")"
@@ -821,6 +850,9 @@ private struct AboutView: View {
         Form {
             SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
 
+            #if APPSTORE
+            Section { LabeledContent { EmptyView() } label: { RowLabel(Text("Version \(version)")) } }
+            #else
             Section("Updates") {
                 Toggle("Check for updates automatically", isOn: $updater.checksAutomatically)
                     .settingAnchor(String(localized: "Check for updates automatically"))
@@ -837,6 +869,7 @@ private struct AboutView: View {
                         .textSelection(.enabled)
                 }
             }
+            #endif
 
             Section {
                 link("GitHub", "https://github.com/dev-pikapik/pika-tools", symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
@@ -846,18 +879,22 @@ private struct AboutView: View {
             } footer: {
                 VStack(spacing: 4) {
                     Text(verbatim: info["NSHumanReadableCopyright"] as? String ?? "")
+                    #if !APPSTORE
                     CoffeeLine()
+                    #endif
                 }
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity)
             }
+            #if !APPSTORE
             RestoreDefaultsSection(
                 message: String(localized: "pikapik will check for updates automatically again."),
                 isDefault: updater.checksAutomatically
             ) {
                 updater.checksAutomatically = true
             }
+            #endif
         }
         .formStyle(.grouped)
         .settingsPage()
@@ -882,6 +919,7 @@ private struct AboutView: View {
     }
 }
 
+#if !APPSTORE
 private struct CoffeeLine: View {
     @State private var hovering = false
 
@@ -912,6 +950,7 @@ private struct CoffeeLine: View {
         }
     }
 }
+#endif
 
 extension NSApplication {
     func bringForward() {

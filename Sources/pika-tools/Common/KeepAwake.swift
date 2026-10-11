@@ -17,6 +17,10 @@ final class KeepAwake {
     private static let sessionEndKey = "keep-awake-session-end"
     private static let bridgeKey = "keep-awake-bridge"
 
+    #if APPSTORE
+    // APPSTORE: lid-closed mode needs administrator rights and pmset; no public replacement
+    let hasLid = false
+    #else
     let hasLid: Bool = {
         if let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
            let sources = IOPSCopyPowerSourcesList(info)?.takeRetainedValue() as? [CFTypeRef],
@@ -31,6 +35,7 @@ final class KeepAwake {
             IORegistryEntryCreateCFProperty(service, $0 as CFString, kCFAllocatorDefault, 0) != nil
         })
     }()
+    #endif
 
     private(set) var mode = Mode.off
     private(set) var endDate: Date?
@@ -182,6 +187,9 @@ final class KeepAwake {
     }
 
     func handOff() {
+        #if APPSTORE
+        return
+        #else
         guard mode != .off else { return }
         let bridge = Process()
         bridge.executableURL = URL(fileURLWithPath: "/usr/bin/caffeinate")
@@ -189,21 +197,28 @@ final class KeepAwake {
         bridge.arguments = [keepsDisplayOn ? "-di" : "-i", "-t", String(seconds)]
         guard (try? bridge.run()) != nil else { return }
         UserDefaults.standard.set(Int(bridge.processIdentifier), forKey: Self.bridgeKey)
+        #endif
     }
 
+    #if !APPSTORE
     static func turnOffDisplay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/pmset"), arguments: ["displaysleepnow"])
         }
     }
+    #endif
 
     private static func stopBridge() {
+        #if APPSTORE
+        UserDefaults.standard.removeObject(forKey: bridgeKey)
+        #else
         let pid = pid_t(UserDefaults.standard.integer(forKey: bridgeKey))
         UserDefaults.standard.removeObject(forKey: bridgeKey)
         guard pid > 0 else { return }
         var name = [CChar](repeating: 0, count: 64)
         proc_name(pid, &name, UInt32(name.count))
         if String(cString: name) == "caffeinate" { kill(pid, SIGTERM) }
+        #endif
     }
 
     private func update() {
@@ -236,6 +251,10 @@ final class KeepAwake {
         if result == kIOReturnSuccess { assertions.append(id) }
     }
 
+    #if APPSTORE
+    private func setLid(_ on: Bool) {}
+    func restoreLidSleepIfNeeded() {}
+    #else
     private func setLid(_ on: Bool) {
         guard on != lidActive else { return }
         guard on else {
@@ -298,6 +317,7 @@ final class KeepAwake {
             .executeAndReturnError(&error)
         return error == nil
     }
+    #endif
 
     private var batteryLevel: Int? {
         guard let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
@@ -373,12 +393,14 @@ struct KeepAwakeSettings: View {
                 }
                 .padding(.vertical, 4)
                 .settingAnchor(String(localized: "Display"))
+                #if !APPSTORE
                 LabeledContent {
                     Button("Turn Off") { KeepAwake.turnOffDisplay() }
                 } label: {
                     RowLabel(Text("Turn off the display now"), Text("Your Mac keeps working. To bring the display back, move the mouse or press a key."))
                 }
                 .settingAnchor(String(localized: "Turn off the display now"))
+                #endif
             }
 
             if keepAwake.hasLid {

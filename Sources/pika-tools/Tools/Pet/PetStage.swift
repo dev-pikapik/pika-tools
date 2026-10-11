@@ -254,6 +254,10 @@ final class PetStage: NSObject {
         CGVector(dx: from.frame.minX - to.frame.minX, dy: from.frame.minY - to.frame.minY)
     }
 
+    #if APPSTORE
+    // APPSTORE: public Spaces/fullscreen detection replaces the SkyLight space-type lookup
+    private static let space: ((String) -> Int32)? = nil
+    #else
     private static let space: ((String) -> Int32)? = {
         typealias Connection = @convention(c) () -> Int32
         typealias Current = @convention(c) (Int32, CFString) -> UInt64
@@ -269,6 +273,7 @@ final class PetStage: NSObject {
             return kind(cid, current(cid, display as CFString))
         }
     }()
+    #endif
 
     private static func fullscreen(_ screen: NSScreen) -> Bool {
         guard let space else { return false }
@@ -597,11 +602,13 @@ final class PetStage: NSObject {
     }
 
     private func nextPhrase() -> PetPhrase {
+        #if !APPSTORE
         let state = MainActor.assumeIsolated { Updater.shared.state }
         if !dev, case .available(let version) = state, UserDefaults.standard.string(forKey: "pet-told-update") != version {
             UserDefaults.standard.set(version, forKey: "pet-told-update")
             return PetPhrases.update(version)
         }
+        #endif
         if deck.isEmpty { deck = PetPhrases.all.filter { $0.id != "space" || PetTool.shared.listening }.shuffled() }
         return deck.removeLast()
     }

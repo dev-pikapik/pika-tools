@@ -26,6 +26,9 @@ final class SpeedTest {
     }
 
     func start() {
+        #if APPSTORE
+        failure = .failed
+        #else
         guard process == nil else { return }
         try? FileManager.default.removeItem(at: file)
         failure = nil
@@ -68,6 +71,7 @@ final class SpeedTest {
         self.output = output
         live = (0, 0)
         phase = .starting
+        #endif
     }
 
     func cancel() {

@@ -343,7 +343,12 @@ final class GameModeTool: Tool {
 
     static var screenLocked: Bool {
         let session = CGSessionCopyCurrentDictionary() as? [String: Any]
+        #if APPSTORE
+        // APPSTORE: public lock notifications replace the CGSession lock key
+        return session?[kCGSessionOnConsoleKey] as? Bool == false
+        #else
         return session?["CGSSessionScreenIsLocked"] as? Bool == true || session?[kCGSessionOnConsoleKey] as? Bool == false
+        #endif
     }
 
     private static var savedRules: Set<GameRule> {
@@ -367,6 +372,14 @@ final class GameModeTool: Tool {
     }
 }
 
+#if APPSTORE
+enum DockEdges {
+    // APPSTORE: Dock hot corners and autohide can't be changed from the sandbox; the cursor fence covers the edges
+    static func calm() {}
+    static func restoreSoon() {}
+    static func restore() {}
+}
+#else
 enum DockEdges {
     private static let key = "game-mode-dock", dock = "com.apple.dock" as CFString
     private static let corners = ["wvous-tl-corner", "wvous-tr-corner", "wvous-bl-corner", "wvous-br-corner"], delay = "autohide-delay"
@@ -412,6 +425,7 @@ enum DockEdges {
         try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
     }
 }
+#endif
 
 private final class CursorFence {
     let frame: CGRect?
