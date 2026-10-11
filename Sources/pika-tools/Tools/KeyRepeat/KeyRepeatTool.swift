@@ -28,6 +28,10 @@ final class KeyRepeatTool: Tool {
         if isEnabled { Self.write(false as CFBoolean) }
     }
 
+    static func uninstall() {
+        if UserDefaults.standard.bool(forKey: "key-repeat") { write(nil) }
+    }
+
     private static func write(_ value: CFPropertyList?) {
         let key = "ApplePressAndHoldEnabled" as CFString
         CFPreferencesSetValue(key, value, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost)
