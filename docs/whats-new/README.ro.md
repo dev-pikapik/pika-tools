@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Vezi cât de repede se învârt ventilatoarele
+
+<sub>1.32.0 · 11 octombrie 2026</sub>
+
+O filă nouă, Ventilatoare, arată fiecare ventilator live și te lasă să alegi viteza.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Ventilatoarele au acum o filă a lor în Setări și un rând în meniu. Vezi în timp real cât de repede se învârte fiecare, iar alături se învârte un ventilator mic odată cu el.
+
+Lasă pe Auto și Mac-ul decide singur, ca întotdeauna. Sau alege Manual și trage un singur glisor ca să setezi viteza dorită. Prima dată permiți o singură dată cu parola de administrator, și gata.
+
+Este făcut să fie sigur. Ventilatoarele revin la Auto când închizi pikapik, când Mac-ul intră în repaus, dacă pikapik se oprește din cauza unei erori sau când Mac-ul se încălzește.
+
+**Încearcă:** Deschide Setări › Ventilatoare și urmărește viteza. Alege Manual ca să încerci glisorul.
+
+---
+
 ## <a id="v1.31.4"></a>Detalii când ai nevoie
 
 <sub>1.31.4 · 11 octombrie 2026</sub>

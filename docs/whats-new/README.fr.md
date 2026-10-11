@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Voyez à quelle vitesse tournent vos ventilateurs
+
+<sub>1.32.0 · 11 octobre 2026</sub>
+
+Un nouvel onglet Ventilateurs affiche chaque ventilateur en direct et vous laisse choisir sa vitesse.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Les ventilateurs ont maintenant leur propre onglet dans les réglages et une ligne dans le menu. Vous voyez en temps réel à quelle vitesse tourne chaque ventilateur, avec un petit ventilateur qui tourne en même temps.
+
+Laissez sur Auto et votre Mac décide, comme toujours. Ou choisissez Manuel et réglez la vitesse voulue avec un seul curseur. La première fois, vous l’autorisez une seule fois avec le mot de passe administrateur, et c’est tout.
+
+Tout est pensé pour la sécurité. Les ventilateurs repassent en Auto quand vous quittez pikapik, quand votre Mac se met en veille, si pikapik plante ou quand votre Mac chauffe trop.
+
+**Pour essayer :** Ouvrez Réglages › Ventilateurs et regardez la vitesse. Choisissez Manuel pour essayer le curseur.
+
+---
+
 ## <a id="v1.31.4"></a>Les détails au bon moment
 
 <sub>1.31.4 · 11 octobre 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Se hur fort dina fläktar snurrar
+
+<sub>1.32.0 · 11 oktober 2026</sub>
+
+En ny flik, Fläktar, visar varje fläkt live och låter dig välja hastighet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fläktarna har nu en egen flik i Inställningar och en rad i menyn. Du ser i realtid hur fort varje fläkt snurrar just nu, med en liten fläkt som snurrar med bredvid.
+
+Låt den stå på Auto så bestämmer din Mac själv, som vanligt. Eller välj Manuell och dra i ett enda reglage för att ställa in den hastighet du vill. Första gången tillåter du det en gång med ditt administratörslösenord, sedan är det klart.
+
+Det är byggt för att vara säkert. Fläktarna går tillbaka till Auto när du avslutar pikapik, när din Mac går i vila, om pikapik kraschar eller när din Mac blir varm.
+
+**Prova:** Öppna Inställningar › Fläktar och titta på hastigheten. Välj Manuell för att prova reglaget.
+
+---
+
 ## <a id="v1.31.4"></a>Detaljer när du behöver dem
 
 <sub>1.31.4 · 11 oktober 2026</sub>

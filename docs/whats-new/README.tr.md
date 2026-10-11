@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Fanlarınızın ne kadar hızlı döndüğünü görün
+
+<sub>1.32.0 · 11 Ekim 2026</sub>
+
+Yeni Fanlar sekmesi her fanı canlı gösterir ve hızını seçmenizi sağlar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fanların artık Ayarlar’da kendi sekmesi ve menüde kendi satırı var. Her fanın şu an ne kadar hızlı döndüğünü gerçek zamanlı görürsünüz, yanında da onunla birlikte dönen küçük bir fan vardır.
+
+Otomatik’te bırakırsanız Mac’iniz her zamanki gibi kendisi karar verir. Ya da Elle’yi seçip tek bir kaydırıcıyla istediğiniz hızı ayarlayın. İlk seferde yönetici parolanızla bir kez izin vermeniz yeterli.
+
+Güvenli olacak şekilde tasarlandı. pikapik’ten çıktığınızda, Mac’iniz uykuya geçtiğinde, pikapik beklenmedik şekilde kapandığında ya da Mac’iniz ısındığında fanlar Otomatik’e döner.
+
+**Deneyin:** Ayarlar › Fanlar’ı açıp hıza bakın. Kaydırıcıyı denemek için Elle’yi seçin.
+
+---
+
 ## <a id="v1.31.4"></a>Ayrıntılar gerektiğinde
 
 <sub>1.31.4 · 11 Ekim 2026</sub>
