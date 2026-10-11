@@ -1,6 +1,9 @@
 import AppKit
 import SwiftUI
 
+func AXIsProcessTrusted() -> Bool { true }
+func CGPreflightListenEventAccess() -> Bool { true }
+
 @main
 @MainActor
 enum RenderMedia {
@@ -43,6 +46,7 @@ enum RenderMedia {
         ("whats-new/1.31.2/game-settings", 5.4, AnyView(GameSettingsCard())),
         ("whats-new/1.31.3/game-preview", 5.4, AnyView(UnifiedGamePreviewCard())),
         ("whats-new/1.31.4/game-choices", 5.4, AnyView(GameChoicesCard())),
+        ("whats-new/1.33.0/permissions", 5.4, AnyView(PermissionsCard())),
     ]
 
     static func main() {
@@ -229,6 +233,59 @@ private struct GameChoicesCard: View {
     }
 }
 
+private struct PermissionsCard: View {
+    var body: some View {
+        IllustrationRow(loop: [2.7, 2.7]) { tick in
+            let allowed = tick % 2 == 1
+            let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+            VStack(spacing: 0) {
+                PermissionArtRow(permission: .accessibility, granted: true)
+                PermissionArtRow(permission: .inputMonitoring, granted: true)
+                PermissionArtRow(permission: .fans, granted: allowed)
+                Divider().padding(.horizontal, 10)
+                HStack(spacing: 8) {
+                    SectionIcon(symbol: "fan", color: .blue, size: 18)
+                    Capsule().fill(Color.primary.opacity(0.14)).frame(height: 4)
+                        .overlay(alignment: .leading) { Capsule().fill(Color.accentColor).frame(width: 52, height: 4) }
+                        .overlay(alignment: .leading) { Circle().fill(.white).frame(width: 12, height: 12).shadow(color: .black.opacity(0.25), radius: 1, y: 0.5).offset(x: 46) }
+                }
+                .padding(.horizontal, 10)
+                .frame(height: 26)
+                .opacity(allowed ? 1 : 0.4)
+            }
+            .frame(width: 300)
+            .background(Color(nsColor: .controlBackgroundColor), in: shape)
+            .overlay(shape.strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5))
+            .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+            .animation(.smooth(duration: 0.3), value: allowed)
+        }
+    }
+}
+
+private struct PermissionArtRow: View {
+    let permission: Permission
+    let granted: Bool
+
+    var body: some View {
+        HStack(spacing: 8) {
+            SectionIcon(symbol: permission.symbol, color: .blue, size: 18)
+            Text(verbatim: permission.title).font(.system(size: 11, weight: .medium))
+            Spacer(minLength: 4)
+            Text(granted ? "Turn Off" : "Allow")
+                .font(.system(size: 9.5))
+                .padding(.horizontal, 7)
+                .frame(height: 17)
+                .background(Color.primary.opacity(0.07), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 5, style: .continuous).strokeBorder(Color.primary.opacity(0.12), lineWidth: 0.5))
+            Image(systemName: granted ? "checkmark.circle.fill" : "xmark.circle.fill")
+                .font(.system(size: 13))
+                .foregroundStyle(granted ? Color.green : Color.orange)
+        }
+        .padding(.horizontal, 10)
+        .frame(height: 26)
+    }
+}
+
 private struct CommandKeysArt: View {
     @State private var tick = 0
 
@@ -375,7 +432,7 @@ private struct PetBallArt: View {
         pose.blink = t.truncatingRemainder(dividingBy: 3.1) < 0.13
         func walk(_ from: CGFloat, _ to: CGFloat, _ p: Double) -> CGFloat {
             pose.facing = to > from ? 1 : -1
-            pose.step = p * max(1, (abs(to - from) / scale * 5 / 56).rounded()) * 2 * .pi
+            pose.step = p * Double(max(1, (abs(to - from) / scale * 5 / 56).rounded())) * 2 * .pi
             return from + (to - from) * CGFloat(p)
         }
         switch t {
@@ -589,8 +646,9 @@ enum APNG {
         })
         chunk("tRNS", palette.map { UInt8($0 >> 24) })
         for (index, part) in parts.enumerated() {
-            chunk("fcTL", be(sequence) + be(UInt32(part.w)) + be(UInt32(part.h)) + be(UInt32(part.x)) + be(UInt32(part.y))
-                + be(UInt16(part.length)) + be(UInt16(fps)) + [0, part.over ? 1 : 0])
+            let frame: [UInt8] = be(UInt32(part.w)) + be(UInt32(part.h)) + be(UInt32(part.x)) + be(UInt32(part.y))
+            let timing: [UInt8] = be(UInt16(part.length)) + be(UInt16(fps)) + [0, part.over ? 1 : 0]
+            chunk("fcTL", be(sequence) + frame + timing)
             sequence += 1
             let data = try zlib((0..<part.h).flatMap { [0] + part.pixels[$0 * part.w..<($0 + 1) * part.w] })
             if index == 0 {
@@ -634,7 +692,8 @@ enum APNG {
         let palette: [UInt32] = [0] + boxes.map { box in
             let weight = colors[box].reduce(0) { $0 + $1.count }
             return [0, 8, 16, 24].reduce(UInt32(0)) { color, shift in
-                color | UInt32((colors[box].reduce(0) { $0 + Int($1.color >> UInt32(shift) & 0xFF) * $1.count } + weight / 2) / weight) << UInt32(shift)
+                let sum = colors[box].reduce(0) { $0 + Int($1.color >> UInt32(shift) & 0xFF) * $1.count }
+                return color | UInt32((sum + weight / 2) / weight) << UInt32(shift)
             }
         }
         return palette

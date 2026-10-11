@@ -194,6 +194,8 @@ pikapik are nevoie de două permisiuni. La prima pornire, deschide configurăril
 
 Aplicația observă schimbarea în câteva secunde, fără repornire.
 
+Unele funcții cer mai mult atunci când le folosești: **Controlul ventilatoarelor**, **Extensii Finder**, **iCloud Drive** și **Acces complet la disc**. Toate sunt pe pagina Permisiuni din configurări: fiecare permisiune are un rând care spune la ce servește, o bifă verde sau o cruce portocalie și un singur buton: **Permite** când lipsește, **Stinge** când e activă. Așa poți retrage orice permisiune chiar acolo.
+
 pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Singura cerere în rețea este verificarea actualizărilor, care întreabă GitHub care este cea mai nouă versiune.
 
 </details>
@@ -280,14 +282,14 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
-- **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală.
+- **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală, după ce Controlul ventilatoarelor este permis.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.
 - **Finder**: fișier nou, copie mai mică și conversie, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
-- **Permisiuni**: starea ambelor permisiuni și a iCloud Drive când sincronizarea este pornită, cu butoane care deschid locul potrivit din Configurări sistem.
+- **Permisiuni**: toate permisiunile pe care le folosește pikapik, fiecare cu starea ei și cu un buton pentru a o permite sau a o stinge. Un instrument căruia îi lipsește o permisiune apare în gri, iar un clic pe el deschide această pagină la rândul potrivit.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 
 Multe setări au o imagine mică ce arată ce fac, de exemplu un Mac care rămâne treaz sau o fereastră care se ascunde în spatele Dock-ului. Imaginea se schimbă odată cu comutatorul și stă pe loc când „Reducere mișcare” este activată în Configurări sistem.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Da. Este o aplicație universală pentru Apple Silicon și Intel, cu macOS 14 Sonoma sau mai nou.
 
 **Permisiunea este activată, dar nu funcționează nimic.**
-În **Configurări sistem › Confidențialitate și securitate**, elimină pikapik din ambele liste cu butonul −, apoi adaug-o din nou. Pagina Permisiuni din configurările pikapik are butoane care deschid locul potrivit.
+În **Configurări sistem › Confidențialitate și securitate**, elimină pikapik din ambele liste cu butonul −, apoi adaug-o din nou. Sau fă-o din pikapik: pe pagina Permisiuni, apasă **Stinge** pentru fiecare permisiune, apoi din nou **Permite**.
 
 </details>
 

@@ -194,6 +194,8 @@ pikapik heeft twee toestemmingen nodig. De eerste keer opent de app de instellin
 
 De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet nodig.
 
+Sommige functies vragen om meer als je ze gebruikt: **Ventilatorbeheer**, **Finder-extensies**, **iCloud Drive** en **Volledige schijftoegang**. Alles staat op de pagina Toestemmingen in de instellingen: elke toestemming heeft een regel over waarvoor ze dient, een groen vinkje of een oranje kruisje en één knop: **Toestaan** als ze ontbreekt, **Zet uit** als ze aan staat. Zo trek je elke toestemming meteen terug.
+
 pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
 
 </details>
@@ -280,14 +282,14 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
-- **Ventilatoren**: de snelheid van elke ventilator, Auto of een handmatige snelheid.
+- **Ventilatoren**: de snelheid van elke ventilator, Auto of een handmatige snelheid zodra Ventilatorbeheer is toegestaan.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.
 - **Finder**: nieuw bestand, kleinere kopie en omzetten, openen met Return, knippen met ⌘X en verwijderen met ⌫.
-- **Toestemmingen**: de status van beide toestemmingen, en van iCloud Drive als synchronisatie aanstaat, met knoppen die de juiste plek in Systeeminstellingen openen.
+- **Toestemmingen**: alle toestemmingen die pikapik gebruikt, elk met zijn status en één knop om ze toe te staan of uit te zetten. Een functie waarvoor een toestemming ontbreekt, ziet er half grijs uit; een klik erop opent deze pagina bij de juiste regel.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 
 Veel instellingen hebben een klein plaatje dat laat zien wat ze doen, zoals een Mac die wakker blijft of een venster dat zich achter het Dock verbergt. Het plaatje verandert mee met de schakelaar en staat stil als ‘Verminder beweging’ aan staat in Systeeminstellingen.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Ja. Het is een universele app voor Apple Silicon en Intel, voor macOS 14 Sonoma of nieuwer.
 
 **De toestemming staat aan, maar niets werkt.**
-Verwijder pikapik in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Op de pagina Toestemmingen in de instellingen van pikapik staan knoppen die de juiste plek openen.
+Verwijder pikapik in **Systeeminstellingen › Privacy en beveiliging** met de knop − uit beide lijsten en voeg de app daarna opnieuw toe. Of doe het in pikapik zelf: klik op de pagina Toestemmingen bij elke toestemming op **Zet uit** en daarna weer op **Toestaan**.
 
 </details>
 

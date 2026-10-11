@@ -194,6 +194,8 @@ pikapik braucht zwei Berechtigungen. Beim ersten Start öffnen sich die Einstell
 
 Die App erkennt die Änderung innerhalb von ein, zwei Sekunden, ein Neustart ist nicht nötig.
 
+Manche Funktionen brauchen zusätzliche Berechtigungen: **Lüftersteuerung**, **Finder-Erweiterungen**, **iCloud Drive** und **Festplattenvollzugriff**. Alle stehen auf der Seite „Berechtigungen“ in den Einstellungen. Jede hat eine Zeile dazu, wofür sie da ist, einen grünen Haken oder ein orangefarbenes Kreuz und eine Taste: **Erlauben**, wenn sie fehlt, **Ausschalten**, wenn sie an ist. So kannst du jede Berechtigung gleich dort zurücknehmen.
+
 pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. Die einzige Netzwerkanfrage ist die Suche nach Updates, bei der GitHub nach der neuesten Version gefragt wird.
 
 </details>
@@ -280,14 +282,14 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
-- **Lüfter**: Geschwindigkeit jedes Lüfters sehen, Automatisch oder eine eigene Geschwindigkeit wählen.
+- **Lüfter**: Geschwindigkeit jedes Lüfters sehen, Automatisch oder eine eigene Geschwindigkeit wählen, sobald die Lüftersteuerung erlaubt ist.
 - **Speedtest**: Internetgeschwindigkeit messen und sehen, wofür sie reicht.
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Ausblenden per Klick im Dock.
 - **Finder**: neue Datei, kleinere Kopie und Umwandeln, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
-- **Berechtigungen**: der Status beider Berechtigungen und von iCloud Drive, wenn die Synchronisierung läuft, mit Tasten, die die richtige Stelle in den Systemeinstellungen öffnen.
+- **Berechtigungen**: alle Berechtigungen, die pikapik nutzt, jeweils mit Status und einer Taste zum Erlauben oder Ausschalten. Ein Tool, dem eine Berechtigung fehlt, wirkt halb ausgegraut; ein Klick darauf öffnet diese Seite bei der passenden Zeile.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.
 
 Viele Einstellungen haben ein kleines Bild, das zeigt, was sie tun, etwa einen Mac, der wach bleibt, oder ein Fenster, das sich hinter dem Dock versteckt. Das Bild ändert sich mit dem Schalter und steht still, wenn in den Systemeinstellungen „Bewegung reduzieren“ aktiviert ist.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Ja. Es ist eine universelle App für Apple Silicon und Intel, ab macOS 14 Sonoma.
 
 **Die Berechtigung ist an, aber nichts funktioniert.**
-Entferne pikapik unter **Systemeinstellungen › Datenschutz & Sicherheit** mit der Taste − aus beiden Listen und füge die App dann wieder hinzu. Auf der Seite „Berechtigungen“ in den Einstellungen von pikapik gibt es Tasten, die die richtige Stelle öffnen.
+Entferne pikapik unter **Systemeinstellungen › Datenschutz & Sicherheit** mit der Taste − aus beiden Listen und füge die App dann wieder hinzu. Oder mach es in pikapik: Drücke auf der Seite „Berechtigungen“ bei jeder Berechtigung auf **Ausschalten** und danach wieder auf **Erlauben**.
 
 </details>
 

@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik her 1,5 saniyede bir denetler, bu yüzden hiçbir şeyi yeniden başlatmanız gerekmez. Zaten listedeyse ama çalışmıyorsa − düğmesiyle kaldırıp yeniden ekleyin.";
 "Allowed" = "İzin verildi";
 "Not allowed" = "İzin verilmedi";
+"Allow" = "İzin Ver";
+"For some features" = "Bazı özellikler için";
+"Finder Extensions" = "Finder Eklentileri";
+"Folders" = "Klasörler";
+"Lets the app choose how fast your fans spin" = "Uygulamanın fanların hızını seçmesini sağlar";
+"Lets the app add items to the right-click menu in Finder" = "Uygulamanın Finder’daki sağ tık menüsüne öğe eklemesini sağlar";
+"Lets the app save new files next to yours" = "Uygulamanın yeni dosyaları sizin dosyalarınızın yanına kaydetmesini sağlar";
+"Lets the app find permissions left by deleted apps" = "Uygulamanın silinen uygulamalardan kalan izinleri bulmasını sağlar";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS bunları yalnızca Sistem Ayarları’nda kapatmanıza izin verir. Düğme doğru listeyi açar; pikapik’i orada kapatırsınız.";
+"Needs a permission. Click to allow it." = "İzin gerekiyor. İzin vermek için tıklayın.";
+"Grey tools need a permission. Click one to allow it." = "Gri araçlar için izin gerekir. İzin vermek için birine tıklayın.";
+"Turn off %@?" = "%@ kapatılsın mı?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik yeniden başlayacak ve buna ihtiyaç duyan araçlar, yeniden izin verene kadar gri olacak.";
 "Open" = "Aç";
 "Settings…" = "Ayarlar…";
 "Permissions needed" = "İzin gerekiyor";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, dizüstü, laptop, MacBook, harici ekran, kapak";
 "battery, power, charge" = "pil, güç, şarj";
 "privacy, security, access" = "gizlilik, güvenlik, erişim";
+"privacy, security, access, files, save, home" = "gizlilik, güvenlik, erişim, dosyalar, kaydet, ev klasörü";
+"privacy, security, access, right-click, menu, extension" = "gizlilik, güvenlik, erişim, sağ tık, menü, eklenti";
+"privacy, security, access, files, disk" = "gizlilik, güvenlik, erişim, dosyalar, disk";
 "update, new version, software update" = "güncelleme, yeni sürüm, yazılım güncelleme";
 "changelog, release notes, version" = "değişiklik günlüğü, sürüm notları, sürüm";
 "bug, issue, feedback, support" = "hata, sorun, geri bildirim, destek, bug";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Ayarları Dışa Aktar…";
 "Save all settings to a file, or load them from one" = "Tüm ayarları bir dosyaya kaydedin ya da bir dosyadan yükleyin";
 "Turn on iCloud Drive in System Settings" = "Sistem Ayarları’nda iCloud Drive’ı açın";
-"Allow pikapik to use iCloud Drive in System Settings" = "Sistem Ayarları’nda pikapik’in iCloud Drive’ı kullanmasına izin verin";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Görünüm ve Dil yeniden sistemi izleyecek ve iCloud eşzamanlaması kapanacak. “Oturum Açıldığında Aç” ve iCloud Drive’daki ayarlar olduğu gibi kalır.";
 "OK" = "Tamam";
 "Replace your settings?" = "Ayarlarınız değiştirilsin mi?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "“%@” klasöründe görünecek.";
 "Create" = "Oluştur";
 "Type a name without “/” or “:”." = "“/” veya “:” içermeyen bir ad yazın.";
-"Turn it on in System Settings" = "Sistem Ayarları’nda açın";
-"Open Finder Extensions…" = "Finder Uzantılarını Aç…";
 "Smaller Copy in Finder" = "Finder’da Küçük Kopya";
 "Convert in Finder" = "Finder’da Dönüştürme";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Finder’da bir dosyaya sağ tıklayıp “Küçük Kopya Oluştur”u seçin. Fotoğraflar, GIF’ler, PDF’ler, videolar ve WAV ya da AIFF gibi sıkıştırılmamış seslerle çalışır; ses M4A olur. Orijinal olduğu gibi kalır. Dosya daha fazla küçülemiyorsa kopya oluşturulmaz.";
@@ -614,8 +627,6 @@
 "Fan control" = "Fan kontrolü";
 "Fan %lld" = "Fan %lld";
 "See how fast your fans spin and choose their speed" = "Fanlarınızın ne kadar hızlı döndüğünü görün ve hızlarını seçin";
-"Allow control" = "Kontrole izin ver";
-"Needs your administrator password once" = "Yönetici parolanız bir kez gerekir";
 "This Mac has no fans" = "Bu Mac’te fan yok";
 "It cools itself quietly, so there is nothing to set" = "Kendini sessizce soğutur, ayarlanacak bir şey yok";
 "rpm" = "dev/dk";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik fan kontrolünü kaldırmak istiyor.";
 "Not allowed: no administrator password" = "İzin verilmedi: yönetici parolası yok";
 "Not removed: no administrator password" = "Kaldırılmadı: yönetici parolası yok";
-"Couldn’t change the fan speed. Try Allow control again." = "Fan hızı değiştirilemedi. Kontrole izin ver’i yeniden deneyin.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Fan hızı değiştirilemedi. Fan kontrolüne yeniden izin vermeyi deneyin.";
 "Fans went back to Auto to keep your Mac safe" = "Mac’inizi korumak için fanlar Otomatik’e döndü";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, dev/dk, soğutma, daha serin, sıcak, ısı, gürültü, sessiz, yüksek ses, sıcaklık, termal";
 "allow, helper, password, administrator, install, remove" = "izin ver, yardımcı, parola, yönetici, kur, kaldır";

@@ -194,6 +194,8 @@ pikapik cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đ
 
 Ứng dụng nhận ra thay đổi trong vài giây, không cần khởi động lại.
 
+Một số tính năng cần thêm quyền khi bạn dùng chúng: **Điều khiển quạt**, **Tiện ích mở rộng của Finder**, **iCloud Drive** và **Truy cập toàn bộ ổ đĩa**. Tất cả nằm ở trang Quyền trong cài đặt: mỗi quyền có một dòng nói quyền đó để làm gì, dấu tích xanh hoặc dấu gạch chéo cam, và một nút: **Cho phép** khi còn thiếu, **Tắt** khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó.
+
 pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Yêu cầu mạng duy nhất là kiểm tra cập nhật, hỏi GitHub phiên bản mới nhất.
 
 </details>
@@ -280,14 +282,14 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
-- **Quạt**: tốc độ từng quạt, chọn Tự động hoặc tốc độ thủ công.
+- **Quạt**: tốc độ từng quạt, chọn Tự động hoặc tốc độ thủ công sau khi cho phép Điều khiển quạt.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn và chuyển định dạng, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
-- **Quyền**: trạng thái của cả hai quyền, và của iCloud Drive khi bật đồng bộ, kèm nút mở đúng chỗ trong Cài đặt hệ thống.
+- **Quyền**: mọi quyền pikapik dùng, mỗi quyền có trạng thái và một nút để cho phép hoặc tắt. Công cụ thiếu quyền sẽ hiện mờ màu xám, bấm vào đó sẽ mở trang này đúng dòng cần.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
 
 Nhiều cài đặt có một hình nhỏ cho thấy chúng làm gì, chẳng hạn một chiếc Mac không ngủ hoặc một cửa sổ ẩn sau Dock. Hình thay đổi cùng công tắc và đứng yên khi “Giảm chuyển động” được bật trong Cài đặt hệ thống.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Có. Đây là ứng dụng universal cho Apple silicon và Intel, chạy trên macOS 14 Sonoma trở lên.
 
 **Đã bật quyền nhưng không có gì hoạt động.**
-Trong **Cài đặt hệ thống › Quyền riêng tư & Bảo mật**, xóa pikapik khỏi cả hai danh sách bằng nút −, rồi thêm lại. Trang Quyền trong cài đặt của pikapik có các nút mở đúng chỗ.
+Trong **Cài đặt hệ thống › Quyền riêng tư & Bảo mật**, xóa pikapik khỏi cả hai danh sách bằng nút −, rồi thêm lại. Hoặc làm ngay trong pikapik: ở trang Quyền, bấm **Tắt** cho từng quyền rồi bấm **Cho phép** lại.
 
 </details>
 

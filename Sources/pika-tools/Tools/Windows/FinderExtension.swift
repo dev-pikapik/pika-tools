@@ -3,6 +3,8 @@ import SwiftUI
 
 @Observable
 final class FinderExtension {
+    static var all: [FinderExtension] = []
+
     private(set) var isActive = false
     private(set) var needsSettings = false
 
@@ -15,6 +17,27 @@ final class FinderExtension {
         self.key = key
         id = (Bundle.main.bundleIdentifier ?? "com.pesotchi.pika-tools") + "." + key
         refresh()
+        Self.all.append(self)
+    }
+
+    static func allow() {
+        #if !APPSTORE
+        all.filter(\.needsSettings).forEach { $0.isEnabled = true }
+        guard all.contains(where: \.needsSettings) else { return }
+        #endif
+        FIFinderSyncController.showExtensionManagementInterface()
+    }
+
+    static func turnOff() {
+        #if APPSTORE
+        FIFinderSyncController.showExtensionManagementInterface()
+        #else
+        all.filter { $0.isActive || $0.needsSettings }.forEach { $0.isEnabled = false }
+        #endif
+    }
+
+    static func refreshWaiting() {
+        all.filter(\.needsSettings).forEach { $0.refresh() }
     }
 
     var isEnabled: Bool {
@@ -23,7 +46,6 @@ final class FinderExtension {
             #if APPSTORE
             UserDefaults.standard.set(newValue, forKey: key)
             refresh()
-            needsSettings = newValue && !isActive
             return
             #else
             if newValue, let plugIns = Bundle.main.builtInPlugInsURL {
@@ -38,8 +60,9 @@ final class FinderExtension {
 
     func refresh() {
         #if APPSTORE
-        isActive = UserDefaults.standard.bool(forKey: key) && FIFinderSyncController.isExtensionEnabled
-        if isActive { needsSettings = false }
+        let wanted = UserDefaults.standard.bool(forKey: key)
+        isActive = wanted && FIFinderSyncController.isExtensionEnabled
+        needsSettings = wanted && !isActive
         #else
         isActive = Self.pluginkit("-m", "-i", id).hasPrefix("+")
         if isActive {
@@ -206,15 +229,5 @@ struct FinderExtensionSettings: View {
     var body: some View {
         if inSettings, let art { art(finder.isEnabled) }
         ToggleRow(icon: tool.icon, title: tool.title, subtitle: subtitle, hint: hint, help: help, isOn: $finder.isEnabled)
-        if finder.needsSettings {
-            if inSettings {
-                LabeledContent("Turn it on in System Settings") {
-                    Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { FIFinderSyncController.showExtensionManagementInterface() }
-                }
-            } else {
-                Button("Open Finder Extensions…", systemImage: "puzzlepiece.extension") { FIFinderSyncController.showExtensionManagementInterface() }
-                    .padding([.horizontal, .bottom], 10)
-            }
-        }
     }
 }

@@ -94,10 +94,12 @@ struct SettingsItem: Identifiable {
             String(localized: "Keep running after Quit"), String(localized: "Sync settings with iCloud"), String(localized: "Repeat a held key"),
             String(localized: "Turn off pointer acceleration"), String(localized: "Tracking speed"), String(localized: "Left by deleted apps"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
-            String(localized: "Turn off the display now"),
+            String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
         ]
-        return allItems.filter { $0.tab != .animations && $0.tab != .fans && !hidden.contains($0.title) }
-            + [SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks")]
+        return allItems.filter { $0.tab != .animations && $0.tab != .fans && !hidden.contains($0.title) } + [
+            SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
+            SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
+        ]
         #else
         return allItems
         #endif
@@ -121,7 +123,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
         ] : []) + [
             SettingsItem(tab: .fans, title: String(localized: "Fan speed"), synonyms: "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal"),
-            SettingsItem(tab: .fans, title: String(localized: "Fan control"), synonyms: "allow, helper, password, administrator, install, remove"),
+            SettingsItem(tab: .permissions, title: String(localized: "Fan control"), synonyms: "allow, helper, password, administrator, install, remove"),
             SettingsItem(tab: .speedTest, title: String(localized: "Check Speed"), synonyms: "internet, Wi-Fi, network, bandwidth, ping, Mbps, speedtest"),
             SettingsItem(tab: .speedTest, title: String(localized: "What it’s good for"), synonyms: "4K, video, calls, games, downloads"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
@@ -193,6 +195,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: String(localized: "Finder Extensions"), synonyms: "privacy, security, access, right-click, menu, extension"),
+            SettingsItem(tab: .permissions, title: String(localized: "Full Disk Access"), synonyms: "privacy, security, access, files, disk"),
             SettingsItem(tab: .permissions, title: String(localized: "Left by deleted apps"), synonyms: "permissions, privacy, deleted apps, cleanup, tcc"),
             SettingsItem(tab: .about, title: String(localized: "Check for updates automatically"), synonyms: "update, new version, software update"),
             SettingsItem(tab: .about, title: String(localized: "What’s New"), synonyms: "changelog, release notes, version"),
@@ -306,19 +310,20 @@ enum SettingsWindow {
         self.window = window
     }
 
-    static func restart() {
+    static func restart(opening argument: String = "--settings", resetting service: String? = nil) {
         #if APPSTORE
         let configuration = NSWorkspace.OpenConfiguration()
         configuration.createsNewApplicationInstance = true
-        configuration.arguments = ["--settings"]
+        configuration.arguments = [argument]
         NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { _, error in
             DispatchQueue.main.async { if error == nil { Background.quit() } }
         }
         #else
         let helper = Process()
         helper.executableURL = URL(fileURLWithPath: "/bin/bash")
-        helper.arguments = ["-c", "while kill -0 \"$1\" 2>/dev/null; do sleep 0.2; done; open \"$2\" --args --settings",
-                            "pika-restart", String(ProcessInfo.processInfo.processIdentifier), Bundle.main.bundleURL.path]
+        helper.arguments = ["-c", "while kill -0 \"$1\" 2>/dev/null; do sleep 0.2; done; [ -z \"$4\" ] || /usr/bin/tccutil reset \"$4\" \"$3\"; open \"$2\" --args \"$5\"",
+                            "pika-restart", String(ProcessInfo.processInfo.processIdentifier), Bundle.main.bundleURL.path,
+                            Bundle.main.bundleIdentifier ?? "", service ?? "", argument]
         try? helper.run()
         Background.quit()
         #endif
@@ -690,11 +695,14 @@ private struct GeneralSettings: View {
                     RowLabel(Text("Sync settings with iCloud"), Text(syncStatus))
                 }
                 .settingAnchor(String(localized: "Sync settings with iCloud"))
-                if sync.state == .noDrive || sync.state == .noAccess {
-                    LabeledContent(sync.state == .noDrive
-                                   ? String(localized: "Turn on iCloud Drive in System Settings")
-                                   : String(localized: "Allow pikapik to use iCloud Drive in System Settings")) {
+                if sync.state == .noDrive {
+                    LabeledContent("Turn on iCloud Drive in System Settings") {
                         Button("Open", systemImage: "arrow.up.forward.app") { sync.openSettings() }
+                    }
+                    .foregroundStyle(.secondary)
+                } else if sync.state == .noAccess {
+                    LabeledContent("Needs a permission. Click to allow it.") {
+                        Button("Allow") { Permissions.shared.ask([.iCloud]) }
                     }
                     .foregroundStyle(.secondary)
                 }
@@ -819,15 +827,16 @@ private struct ToolsSettings: View {
     let text: String
     var headings: [String: LocalizedStringKey] = [:]
 
+    private var tools: [any Tool] { ToolRegistry.shared.tools.filter { $0.tab == tab } }
+
     var body: some View {
         Form {
             SettingsHeader(tab: tab, text: text)
-            let tools = ToolRegistry.shared.tools.filter { $0.tab == tab }
             ForEach(tools, id: \.id) { tool in
                 if let heading = headings[tool.id] {
-                    Section(heading) { tool.settingsView }
+                    Section(heading) { tool.settingsView.needs(tool.needs) }
                 } else {
-                    Section { tool.settingsView }
+                    Section { tool.settingsView.needs(tool.needs) }
                 }
             }
             RestoreDefaultsSection(
@@ -840,7 +849,10 @@ private struct ToolsSettings: View {
         .formStyle(.grouped)
         .settingsPage()
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            if tab == .finder { FinderRestartBar() }
+            VStack(spacing: 0) {
+                PermissionBar(permissions: tools.flatMap(\.needs))
+                if tab == .finder { FinderRestartBar() }
+            }
         }
         .environment(\.inSettings, true)
     }

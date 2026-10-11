@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again.";
 "Allowed" = "Allowed";
 "Not allowed" = "Not allowed";
+"Allow" = "Allow";
+"For some features" = "For some features";
+"Finder Extensions" = "Finder Extensions";
+"Folders" = "Folders";
+"Lets the app choose how fast your fans spin" = "Lets the app choose how fast your fans spin";
+"Lets the app add items to the right-click menu in Finder" = "Lets the app add items to the right-click menu in Finder";
+"Lets the app save new files next to yours" = "Lets the app save new files next to yours";
+"Lets the app find permissions left by deleted apps" = "Lets the app find permissions left by deleted apps";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off.";
+"Needs a permission. Click to allow it." = "Needs a permission. Click to allow it.";
+"Grey tools need a permission. Click one to allow it." = "Grey tools need a permission. Click one to allow it.";
+"Turn off %@?" = "Turn off %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik will restart, and the tools that need it will turn grey until you allow it again.";
 "Open" = "Open";
 "Settings…" = "Settings…";
 "Permissions needed" = "Permissions needed";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, external display";
 "battery, power, charge" = "battery, power, charge";
 "privacy, security, access" = "privacy, security, access";
+"privacy, security, access, files, save, home" = "privacy, security, access, files, save, home";
+"privacy, security, access, right-click, menu, extension" = "privacy, security, access, right-click, menu, extension";
+"privacy, security, access, files, disk" = "privacy, security, access, files, disk";
 "update, new version, software update" = "update, new version, software update";
 "changelog, release notes, version" = "changelog, release notes, version";
 "bug, issue, feedback, support" = "bug, issue, feedback, support";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Export Settings…";
 "Save all settings to a file, or load them from one" = "Save all settings to a file, or load them from one";
 "Turn on iCloud Drive in System Settings" = "Turn on iCloud Drive in System Settings";
-"Allow pikapik to use iCloud Drive in System Settings" = "Allow pikapik to use iCloud Drive in System Settings";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are.";
 "OK" = "OK";
 "Replace your settings?" = "Replace your settings?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "It will appear in “%@”.";
 "Create" = "Create";
 "Type a name without “/” or “:”." = "Type a name without “/” or “:”.";
-"Turn it on in System Settings" = "Turn it on in System Settings";
-"Open Finder Extensions…" = "Open Finder Extensions…";
 "Smaller Copy in Finder" = "Smaller Copy in Finder";
 "Convert in Finder" = "Convert in Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made.";
@@ -614,8 +627,6 @@
 "Fan control" = "Fan control";
 "Fan %lld" = "Fan %lld";
 "See how fast your fans spin and choose their speed" = "See how fast your fans spin and choose their speed";
-"Allow control" = "Allow control";
-"Needs your administrator password once" = "Needs your administrator password once";
 "This Mac has no fans" = "This Mac has no fans";
 "It cools itself quietly, so there is nothing to set" = "It cools itself quietly, so there is nothing to set";
 "rpm" = "rpm";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik wants to remove fan control.";
 "Not allowed: no administrator password" = "Not allowed: no administrator password";
 "Not removed: no administrator password" = "Not removed: no administrator password";
-"Couldn’t change the fan speed. Try Allow control again." = "Couldn’t change the fan speed. Try Allow control again.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Couldn’t change the fan speed. Try allowing fan control again.";
 "Fans went back to Auto to keep your Mac safe" = "Fans went back to Auto to keep your Mac safe";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal";
 "allow, helper, password, administrator, install, remove" = "allow, helper, password, administrator, install, remove";

@@ -194,6 +194,8 @@ pikapik potrzebuje dwóch uprawnień. Przy pierwszym uruchomieniu otwiera ustawi
 
 Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
+Niektóre funkcje proszą o więcej, kiedy z nich korzystasz: **Sterowanie wentylatorami**, **Rozszerzenia Findera**, **iCloud Drive** i **Pełny dostęp do dysku**. Wszystko jest na stronie Uprawnienia w ustawieniach: każde uprawnienie ma wiersz z opisem, do czego służy, zielony ptaszek albo pomarańczowy krzyżyk i jeden przycisk: **Zezwól**, gdy go brakuje, **Wyłącz**, gdy jest włączone. Dzięki temu każde uprawnienie cofniesz od razu na miejscu.
+
 pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Jedyne połączenie z siecią to sprawdzanie uaktualnień, które pyta GitHub o najnowsze wydanie.
 
 </details>
@@ -280,14 +282,14 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
-- **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie.
+- **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie, gdy zezwolono na Sterowanie wentylatorami.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
 - **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
-- **Uprawnienia**: stan obu uprawnień, a przy włączonej synchronizacji także iCloud Drive, z przyciskami, które otwierają właściwe miejsce w Ustawieniach systemowych.
+- **Uprawnienia**: wszystkie uprawnienia, których używa pikapik, każde z własnym stanem i przyciskiem do zezwolenia lub wyłączenia. Narzędzie, któremu brakuje uprawnienia, wygląda na wyszarzone, a kliknięcie go otwiera tę stronę przy właściwym wierszu.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 
 Wiele ustawień ma mały obrazek pokazujący, co robią, na przykład Maca, który nie zasypia, albo okno chowające się za Dociem. Obrazek zmienia się razem z przełącznikiem i stoi w miejscu, gdy w Ustawieniach systemowych jest włączone „Ogranicz ruch”.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Tak. To aplikacja uniwersalna dla Apple Silicon i Intel, wymaga macOS 14 Sonoma lub nowszego.
 
 **Uprawnienie jest włączone, ale nic nie działa.**
-W **Ustawieniach systemowych › Prywatność i ochrona** usuń pikapik z obu list przyciskiem −, a potem dodaj ją ponownie. Na stronie Uprawnienia w ustawieniach pikapik są przyciski, które otwierają właściwe miejsce.
+W **Ustawieniach systemowych › Prywatność i ochrona** usuń pikapik z obu list przyciskiem −, a potem dodaj ją ponownie. Możesz też zrobić to w pikapik: na stronie Uprawnienia kliknij **Wyłącz** przy każdym uprawnieniu, a potem znowu **Zezwól**.
 
 </details>
 

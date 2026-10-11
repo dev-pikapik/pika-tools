@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik は 1.5 秒ごとに自動で確認するので、再起動は不要です。リストにあるのに動作しない場合は、「−」ボタンで削除してから追加し直してください。";
 "Allowed" = "許可済み";
 "Not allowed" = "未許可";
+"Allow" = "許可";
+"For some features" = "一部の機能用";
+"Finder Extensions" = "Finder機能拡張";
+"Folders" = "フォルダ";
+"Lets the app choose how fast your fans spin" = "ファンの回転数を選ぶため";
+"Lets the app add items to the right-click menu in Finder" = "Finderの右クリックメニューに項目を追加するため";
+"Lets the app save new files next to yours" = "新しいファイルをあなたのファイルの隣に保存するため";
+"Lets the app find permissions left by deleted apps" = "削除したアプリが残した許可を見つけるため";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "これらをオフにできるのは「システム設定」だけです。ボタンを押すと該当のリストが開くので、そこで pikapik をオフにしてください。";
+"Needs a permission. Click to allow it." = "許可が必要です。クリックして許可してください。";
+"Grey tools need a permission. Click one to allow it." = "グレーのツールには許可が必要です。いずれかをクリックして許可してください。";
+"Turn off %@?" = "%@をオフにしますか?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik が再起動し、必要とするツールは、もう一度許可するまでグレーになります。";
 "Open" = "開く";
 "Settings…" = "設定…";
 "Permissions needed" = "許可が必要です";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "クラムシェル, ふた, ノートブック, MacBook, 外部ディスプレイ";
 "battery, power, charge" = "バッテリー, 電源, 充電";
 "privacy, security, access" = "プライバシー, セキュリティ, アクセス";
+"privacy, security, access, files, save, home" = "プライバシー, セキュリティ, アクセス, ファイル, 保存, ホーム";
+"privacy, security, access, right-click, menu, extension" = "プライバシー, セキュリティ, アクセス, 右クリック, メニュー, 機能拡張";
+"privacy, security, access, files, disk" = "プライバシー, セキュリティ, アクセス, ファイル, ディスク";
 "update, new version, software update" = "アップデート, 新しいバージョン, ソフトウェア・アップデート";
 "changelog, release notes, version" = "変更履歴, リリースノート, バージョン";
 "bug, issue, feedback, support" = "バグ, 問題, フィードバック, サポート";
@@ -182,7 +198,6 @@
 "Export Settings…" = "設定を書き出す…";
 "Save all settings to a file, or load them from one" = "すべての設定をファイルに保存したり、ファイルから読み込んだりできます";
 "Turn on iCloud Drive in System Settings" = "システム設定でiCloud Driveをオンにしてください";
-"Allow pikapik to use iCloud Drive in System Settings" = "システム設定でpikapikにiCloud Driveの使用を許可してください";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "外観と言語は再びシステムに従い、iCloudでの同期はオフになります。「ログイン時に開く」とiCloud Driveに保存された設定はそのままです。";
 "OK" = "OK";
 "Replace your settings?" = "設定を置き換えますか?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "「%@」に作成されます。";
 "Create" = "作成";
 "Type a name without “/” or “:”." = "「/」や「:」を含まない名前を入力してください。";
-"Turn it on in System Settings" = "システム設定でオンにしてください";
-"Open Finder Extensions…" = "Finder機能拡張を開く…";
 "Smaller Copy in Finder" = "Finderで小さいコピー";
 "Convert in Finder" = "Finderで変換";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Finderでファイルを右クリックして「小さいコピーを作成」を選びます。写真、GIF、PDF、ビデオ、WAVやAIFFなどの非圧縮サウンドに使え、サウンドはM4Aになります。元のファイルはそのまま残ります。これ以上小さくできない場合、コピーは作成されません。";
@@ -614,8 +627,6 @@
 "Fan control" = "ファンコントロール";
 "Fan %lld" = "ファン %lld";
 "See how fast your fans spin and choose their speed" = "ファンの回転の速さを確認し、速さを選べます";
-"Allow control" = "コントロールを許可";
-"Needs your administrator password once" = "管理者パスワードが一度だけ必要です";
 "This Mac has no fans" = "この Mac にはファンがありません";
 "It cools itself quietly, so there is nothing to set" = "静かに自分で冷えるので、設定するものはありません";
 "rpm" = "rpm";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik がファンコントロールを取り除こうとしています。";
 "Not allowed: no administrator password" = "許可されませんでした：管理者パスワードがありません";
 "Not removed: no administrator password" = "取り除かれませんでした：管理者パスワードがありません";
-"Couldn’t change the fan speed. Try Allow control again." = "ファンの回転数を変更できませんでした。もう一度「コントロールを許可」をお試しください。";
+"Couldn’t change the fan speed. Try allowing fan control again." = "ファンの回転数を変更できませんでした。もう一度ファンコントロールを許可してください。";
 "Fans went back to Auto to keep your Mac safe" = "Mac を守るため、ファンは自動に戻りました";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ファン, 回転数, rpm, 冷却, 冷やす, 熱い, 熱, 騒音, 静か, うるさい, 温度";
 "allow, helper, password, administrator, install, remove" = "許可, ヘルパー, パスワード, 管理者, インストール, 削除";

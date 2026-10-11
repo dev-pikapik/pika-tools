@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Semua izin di satu tempat
+
+<sub>1.33.0 · 11 Oktober 2026</sub>
+
+Pengaturan › Izin kini menampilkan semua yang dipakai pikapik dan memungkinkan Anda mencabut izin apa pun.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Pengaturan › Izin kini menampilkan setiap izin yang dipakai pikapik, dari Aksesibilitas dan Pemantauan Input hingga Kontrol kipas, Ekstensi Finder, iCloud Drive, dan Akses Disk Penuh. Setiap baris menjelaskan dalam satu kalimat kegunaannya, dengan tanda centang hijau saat aktif dan tanda silang oranye saat belum ada.
+
+Setiap baris punya satu tombol: Izinkan saat izin belum ada, Matikan saat sudah aktif. Jadi Anda bisa mencabut izin apa pun langsung di sana, tanpa mencari-cari di Pengaturan Sistem. Untuk Aksesibilitas dan Pemantauan Input, pikapik bertanya dulu lalu memulai ulang tanpa izin tersebut.
+
+Alat yang membutuhkan izin yang belum Anda berikan tampak setengah abu-abu. Klik alat itu, lalu Izin terbuka dengan baris yang tepat disorot, siap untuk satu klik pada Izinkan.
+
+**Coba:** Buka Pengaturan › Izin dan lihat setiap barisnya. Klik alat yang abu-abu untuk langsung menuju izin yang dibutuhkannya.
+
+---
+
 ## <a id="v1.32.2"></a>Pemasangan lebih aman, dan pembaruan tidak pernah menghilangkan aplikasi
 
 <sub>1.32.2 · 11 Oktober 2026</sub>

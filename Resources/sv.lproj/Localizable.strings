@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik kontrollerar var 1,5:e sekund, så du behöver inte starta om något. Om appen redan finns i en lista men inte fungerar tar du bort den med knappen − och lägger till den igen.";
 "Allowed" = "Tillåten";
 "Not allowed" = "Inte tillåten";
+"Allow" = "Tillåt";
+"For some features" = "För vissa funktioner";
+"Finder Extensions" = "Finder-tillägg";
+"Folders" = "Mappar";
+"Lets the app choose how fast your fans spin" = "Låter appen välja hur snabbt fläktarna snurrar";
+"Lets the app add items to the right-click menu in Finder" = "Låter appen lägga till val i högerklicksmenyn i Finder";
+"Lets the app save new files next to yours" = "Låter appen spara nya filer bredvid dina";
+"Lets the app find permissions left by deleted apps" = "Låter appen hitta behörigheter som raderade appar lämnat kvar";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS låter dig stänga av dem bara i Systeminställningar. Knappen öppnar rätt lista, där du stänger av pikapik.";
+"Needs a permission. Click to allow it." = "Behöver en behörighet. Klicka för att tillåta den.";
+"Grey tools need a permission. Click one to allow it." = "Gråa verktyg behöver en behörighet. Klicka på ett för att tillåta den.";
+"Turn off %@?" = "Stänga av %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik startar om, och verktygen som behöver den blir gråa tills du tillåter den igen.";
 "Open" = "Öppna";
 "Settings…" = "Inställningar…";
 "Permissions needed" = "Behörigheter behövs";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "stängt lock, bärbar dator, laptop, MacBook, extern bildskärm";
 "battery, power, charge" = "batteri, ström, laddning";
 "privacy, security, access" = "integritet, säkerhet, åtkomst";
+"privacy, security, access, files, save, home" = "integritet, säkerhet, åtkomst, filer, spara, hemmapp";
+"privacy, security, access, right-click, menu, extension" = "integritet, säkerhet, åtkomst, högerklick, meny, tillägg";
+"privacy, security, access, files, disk" = "integritet, säkerhet, åtkomst, filer, disk";
 "update, new version, software update" = "uppdatering, ny version, programuppdatering";
 "changelog, release notes, version" = "ändringslogg, versionsinformation, version";
 "bug, issue, feedback, support" = "bugg, fel, problem, feedback, support";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Exportera inställningar…";
 "Save all settings to a file, or load them from one" = "Spara alla inställningar i en fil eller läs in dem från en fil";
 "Turn on iCloud Drive in System Settings" = "Slå på iCloud Drive i Systeminställningar";
-"Allow pikapik to use iCloud Drive in System Settings" = "Ge pikapik tillgång till iCloud Drive i Systeminställningar";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Utseende och Språk följer systemet igen, och synkronisering med iCloud stängs av. ”Öppna vid inloggning” och inställningarna i iCloud Drive förblir som de är.";
 "OK" = "OK";
 "Replace your settings?" = "Vill du ersätta dina inställningar?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Den hamnar i ”%@”.";
 "Create" = "Skapa";
 "Type a name without “/” or “:”." = "Skriv ett namn utan ”/” eller ”:”.";
-"Turn it on in System Settings" = "Slå på i Systeminställningar";
-"Open Finder Extensions…" = "Öppna Finder-tillägg…";
 "Smaller Copy in Finder" = "Mindre kopia i Finder";
 "Convert in Finder" = "Konvertering i Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Högerklicka på en fil i Finder och välj ”Skapa mindre kopia”. Fungerar med bilder, GIF:ar, PDF:er, videor och okomprimerat ljud som WAV eller AIFF, som blir M4A. Originalet förblir som det är. Om filen inte kan bli mindre skapas ingen kopia.";
@@ -614,8 +627,6 @@
 "Fan control" = "Fläktstyrning";
 "Fan %lld" = "Fläkt %lld";
 "See how fast your fans spin and choose their speed" = "Se hur snabbt fläktarna snurrar och välj deras hastighet";
-"Allow control" = "Tillåt styrning";
-"Needs your administrator password once" = "Kräver ditt administratörslösenord en gång";
 "This Mac has no fans" = "Den här Macen har inga fläktar";
 "It cools itself quietly, so there is nothing to set" = "Den kyler sig själv tyst, så det finns inget att ställa in";
 "rpm" = "varv/min";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik vill ta bort fläktstyrningen.";
 "Not allowed: no administrator password" = "Inte tillåtet: inget administratörslösenord";
 "Not removed: no administrator password" = "Inte borttaget: inget administratörslösenord";
-"Couldn’t change the fan speed. Try Allow control again." = "Det gick inte att ändra fläkthastigheten. Försök med Tillåt styrning igen.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Det gick inte att ändra fläkthastigheten. Försök tillåta fläktstyrningen igen.";
 "Fans went back to Auto to keep your Mac safe" = "Fläktarna gick tillbaka till Auto för att skydda din Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fläkt, varv, kylning, svalare, varm, värme, ljud, tyst, högljudd, temperatur, termisk";
 "allow, helper, password, administrator, install, remove" = "tillåt, hjälpprogram, lösenord, administratör, installera, ta bort";

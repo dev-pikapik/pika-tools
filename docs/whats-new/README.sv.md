@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Alla behörigheter på ett ställe
+
+<sub>1.33.0 · 11 oktober 2026</sub>
+
+Inställningar › Behörigheter visar nu allt som pikapik använder och låter dig ta tillbaka vilken behörighet som helst.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Inställningar › Behörigheter visar nu varje behörighet som pikapik använder, från Hjälpmedel och Övervakning av inmatning till Fläktstyrning, Finder-tillägg, iCloud Drive och Full skivåtkomst. Varje rad förklarar med en mening vad den är till för, med en grön bock när den är på och ett orange kryss när den saknas.
+
+Varje rad har en enda knapp: Tillåt när behörigheten saknas, Stäng av när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där, utan att leta i Systeminställningar. För Hjälpmedel och Övervakning av inmatning frågar pikapik först och startar sedan om utan dem.
+
+Ett verktyg som behöver en behörighet du inte har gett ser halvgrått ut. Klicka på det, så öppnas Behörigheter med rätt rad markerad, redo för ett klick på Tillåt.
+
+**Prova:** Öppna Inställningar › Behörigheter och titta på varje rad. Klicka på ett grått verktyg för att hoppa direkt till den behörighet det behöver.
+
+---
+
 ## <a id="v1.32.2"></a>Säkrare installation, och uppdateringar tappar aldrig appen
 
 <sub>1.32.2 · 11 oktober 2026</sub>
