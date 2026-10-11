@@ -45,6 +45,10 @@ final class FinderKeys {
     }
 
     private func stop() {
+        if let held {
+            self.held = nil
+            Self.send(held.target, held.flags, down: false, nil)
+        }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
             CFMachPortInvalidate(tap)
@@ -107,10 +111,10 @@ final class FinderKeys {
         return true
     }
 
-    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy) {
+    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
         guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
         event.flags = flags
-        event.tapPostEvent(proxy)
+        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 
     private func cancelCut() {

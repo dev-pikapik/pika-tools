@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Säkrare installation, och uppdateringar tappar aldrig appen
+
+<sub>1.32.2 · 11 oktober 2026</sub>
+
+En omgång rättningar som gör installation, uppdatering och avinstallation säkrare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fläkthjälpen installeras nu försiktigare och kontrolleras innan den startar. Om en uppdatering inte kan kopieras ligger din nuvarande pikapik kvar. Vid avinstallation tas fläkthjälpen också bort, och din inställning för tangentupprepning, Dock-hörnen och systemgenvägarna återställs.
+
+Nedhållna tangenter fastnar inte längre när ett verktyg startar om, och när du stänger av ”Upprepa en nedhållen tangent” får du tillbaka din egen inställning för accentmenyn. Husdjuret vilar medan skärmen sover eller är låst, och en kopia av archive.tar.gz heter nu archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>Manuell fläkthastighet fungerar redan första gången
+
+<sub>1.32.1 · 11 oktober 2026</sub>
+
+Att välja Manuell under Fläktar hoppar inte längre tillbaka till Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Ibland skickade första trycket på Manuell tillbaka fläktarna till Auto med en säkerhetsvarning, och först andra trycket fungerade. Nu ligger Manuell kvar redan från första försöket.
+
+Om en fläkt ändå lämnar Manuell av sig själv sätter pikapik den på riktigt tillbaka till Auto, så det du ser stämmer alltid med vad din Mac gör.
+
+Du behöver inte tillåta något igen. Uppdatera så fungerar det.
+
+**Prova:** Öppna Inställningar › Fläktar och välj Manuell.
+
+---
+
 ## <a id="v1.32.0"></a>Se hur fort dina fläktar snurrar
 
 <sub>1.32.0 · 11 oktober 2026</sub>

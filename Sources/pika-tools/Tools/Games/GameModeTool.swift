@@ -427,7 +427,7 @@ enum DockEdges {
 
     private static func relaunch() {
         CFPreferencesAppSynchronize(dock)
-        try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
     }
 }
 #endif

@@ -36,12 +36,14 @@ final class Updater {
 
     func check() async {
         guard state != .installing else { return }
+        let previous = state
         state = .checking
         do {
             let url = URL(string: "https://api.github.com/repos/\(Self.repo)/releases/latest")!
             var request = URLRequest(url: url)
             request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
+            try Self.ensureSuccess(response)
             let release = try JSONDecoder().decode(Release.self, from: data)
             let version = release.tag_name.hasPrefix("v") ? String(release.tag_name.dropFirst()) : release.tag_name
             assetURL = release.assets.first { $0.name == "pikapik.zip" }?.browser_download_url
@@ -51,7 +53,9 @@ final class Updater {
                 state = .upToDate
             }
         } catch {
-            state = .failed(String(localized: "Couldn’t check for updates"))
+            if case .available = previous { state = previous } else {
+                state = .failed(String(localized: "Couldn’t check for updates"))
+            }
         }
     }
 
@@ -65,7 +69,8 @@ final class Updater {
         }
         state = .installing
         do {
-            let (zip, _) = try await URLSession.shared.download(from: assetURL)
+            let (zip, response) = try await URLSession.shared.download(from: assetURL)
+            try Self.ensureSuccess(response)
             let dir = FileManager.default.temporaryDirectory.appendingPathComponent("pika-tools-update-\(UUID().uuidString)")
             try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
             try run("/usr/bin/ditto", ["-x", "-k", zip.path, dir.path])
@@ -77,10 +82,16 @@ final class Updater {
 
             let script = """
             while kill -0 "$1" 2>/dev/null; do sleep 0.2; done
-            rm -rf "$3" && ditto "$2" "$3" && { [ "$4" = "$3" ] || rm -rf "$4"; }
+            rm -rf "$3.new"
+            if ditto "$2" "$3.new" && rm -rf "$3" && mv "$3.new" "$3"; then
+                [ "$4" = "$3" ] || rm -rf "$4"
+            else
+                rm -rf "$3.new"
+                [ -d "$3" ] || target="$4"
+            fi
             xattr -dr com.apple.quarantine "$3"
             rm -rf "$(dirname "$2")"
-            open "$3"
+            open "${target:-$3}"
             """
             let helper = Process()
             helper.executableURL = URL(fileURLWithPath: "/bin/bash")
@@ -93,6 +104,10 @@ final class Updater {
         } catch {
             state = .failed(String(localized: "Download failed. Try again later"))
         }
+    }
+
+    private nonisolated static func ensureSuccess(_ response: URLResponse) throws {
+        guard let status = (response as? HTTPURLResponse)?.statusCode, (200..<300).contains(status) else { throw URLError(.badServerResponse) }
     }
 
     nonisolated static func destination(of app: URL, brewManaged: Bool) -> URL {

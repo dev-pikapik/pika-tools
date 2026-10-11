@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Cài đặt an toàn hơn, cập nhật không bao giờ làm mất ứng dụng
+
+<sub>1.32.2 · 11 tháng 10 năm 2026</sub>
+
+Một loạt bản sửa giúp cài đặt, cập nhật và gỡ cài đặt an toàn hơn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Trình hỗ trợ quạt giờ được cài cẩn thận hơn và được kiểm tra trước khi chạy. Nếu bản cập nhật không sao chép được, pikapik hiện tại của bạn vẫn nằm nguyên đó. Khi gỡ cài đặt, trình hỗ trợ quạt cũng bị xoá, còn cài đặt lặp phím, các góc Dock và phím tắt hệ thống của bạn được khôi phục.
+
+Phím đang giữ không còn bị kẹt khi một công cụ khởi động lại, và khi tắt “Lặp lại phím đang giữ”, cài đặt menu dấu của riêng bạn được trả lại. Thú cưng nghỉ ngơi khi màn hình ngủ hoặc bị khoá, và bản sao của archive.tar.gz giờ có tên archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>Tốc độ quạt thủ công có hiệu lực ngay lần đầu
+
+<sub>1.32.1 · 11 tháng 10 năm 2026</sub>
+
+Chọn Thủ công trong Quạt không còn bị quay lại Tự động.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Đôi khi lần chạm đầu tiên vào Thủ công khiến quạt quay về Tự động kèm cảnh báo an toàn, và chỉ lần thứ hai mới được. Giờ Thủ công giữ nguyên ngay từ lần đầu.
+
+Nếu một quạt tự thoát khỏi chế độ Thủ công, pikapik sẽ đưa nó về Tự động thật sự, nên những gì bạn thấy luôn khớp với việc Mac đang làm.
+
+Bạn không cần cho phép lại gì cả. Cập nhật là dùng được ngay.
+
+**Thử ngay:** Mở Cài đặt › Quạt và chọn Thủ công.
+
+---
+
 ## <a id="v1.32.0"></a>Xem quạt của bạn quay nhanh đến đâu
 
 <sub>1.32.0 · 11 tháng 10 năm 2026</sub>

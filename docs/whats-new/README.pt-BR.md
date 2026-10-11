@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Instalação mais segura e atualizações que nunca perdem o app
+
+<sub>1.32.2 · 11 de outubro de 2026</sub>
+
+Uma rodada de correções para instalar, atualizar e desinstalar com mais segurança.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+O assistente dos ventiladores agora é instalado com mais cuidado e verificado antes de iniciar. Se uma atualização não puder ser copiada, o seu pikapik atual continua onde está. Ao desinstalar, o assistente dos ventiladores também é removido e a sua configuração de repetição de teclas, os cantos do Dock e os atalhos do sistema voltam ao que eram.
+
+Teclas seguradas não ficam mais presas quando uma ferramenta reinicia, e ao desligar “Repetir uma tecla segurada” você recupera a sua própria configuração do menu de acentos. O bichinho descansa enquanto a tela está em repouso ou bloqueada, e uma cópia de archive.tar.gz agora se chama archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>A velocidade manual dos ventiladores vale já na primeira vez
+
+<sub>1.32.1 · 11 de outubro de 2026</sub>
+
+Escolher Manual em Ventiladores não volta mais para Automático.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Às vezes o primeiro toque em Manual devolvia os ventiladores para Automático com um aviso de segurança, e só o segundo funcionava. Agora o Manual vale já na primeira tentativa.
+
+Se um ventilador sair do modo Manual sozinho, o pikapik o devolve para Automático de verdade, então o que você vê sempre corresponde ao que o seu Mac está fazendo.
+
+Você não precisa permitir nada de novo. Atualize e pronto.
+
+**Experimente:** Abra Ajustes › Ventiladores e escolha Manual.
+
+---
+
 ## <a id="v1.32.0"></a>Veja a que velocidade suas ventoinhas giram
 
 <sub>1.32.0 · 11 de outubro de 2026</sub>
