@@ -606,3 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "การทำงาน macOS นี้จะปิดเมื่อเกมอยู่ด้านหน้า เมื่อออกจากเกมจะทำงานเหมือนเดิม";
 "Every press switches language without the system menu. The same keys still reach the game." = "ทุกครั้งที่กดจะเปลี่ยนภาษาโดยไม่เปิดเมนูระบบ ปุ่มเดียวกันยังส่งถึงเกม";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS ทำงานตามปกติ แม้จะเปิดหน้าต่างหรือดึงโฟกัสออกจากเกม";
+"Choose your home folder once so pikapik can save files next to yours." = "เลือกโฟลเดอร์โฮมของคุณหนึ่งครั้ง เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณได้";
+"Choose this folder so pikapik can save files next to yours." = "เลือกโฟลเดอร์นี้ เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณได้";
+"Allow Access" = "อนุญาตการเข้าถึง";

@@ -117,10 +117,12 @@ enum Compress {
         let query = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
         let target = url.host == "convert" ? query.first(where: { $0.name == "to" })?.value : nil
         guard url.host == "compress" || target != nil else { return }
-        let jobs = query
+        let files = query
             .compactMap { $0.name == "path" ? $0.value : nil }
             .filter { $0.hasPrefix("/") }
             .map { URL(fileURLWithPath: $0) }
+        guard FolderAccess.ensure(files.map { $0.deletingLastPathComponent() }) else { return }
+        let jobs = files
             .filter { (try? $0.resourceValues(forKeys: [.isRegularFileKey]).isRegularFile) == true }
             .filter { file in
                 guard let target else { return Compressor.canCompress(file) }

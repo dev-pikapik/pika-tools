@@ -19,10 +19,6 @@ struct MenuView: View {
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
     private func isShown(_ id: String) -> Bool {
-        #if APPSTORE
-        // APPSTORE: Speed Test returns once a public measurement replaces networkQuality
-        if id == "speed-test" { return false }
-        #endif
         return customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
     }
 

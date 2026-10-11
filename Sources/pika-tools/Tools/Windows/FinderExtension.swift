@@ -21,10 +21,9 @@ final class FinderExtension {
         get { isActive }
         set {
             #if APPSTORE
-            // APPSTORE: FIFinderSyncController.isExtensionEnabled replaces pluginkit
             UserDefaults.standard.set(newValue, forKey: key)
-            isActive = newValue
-            needsSettings = newValue
+            refresh()
+            needsSettings = newValue && !isActive
             return
             #else
             if newValue, let plugIns = Bundle.main.builtInPlugInsURL {
@@ -39,7 +38,8 @@ final class FinderExtension {
 
     func refresh() {
         #if APPSTORE
-        isActive = UserDefaults.standard.bool(forKey: key)
+        isActive = UserDefaults.standard.bool(forKey: key) && FIFinderSyncController.isExtensionEnabled
+        if isActive { needsSettings = false }
         #else
         isActive = Self.pluginkit("-m", "-i", id).hasPrefix("+")
         if isActive {
