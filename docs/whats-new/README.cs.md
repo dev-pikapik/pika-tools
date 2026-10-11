@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Jednotný vzhled herních nastavení
+
+<sub>1.31.3 · 11. října 2026</sub>
+
+Stejné náhledy a srozumitelnější volby zkratek.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Každá zkratka má nyní stejný široký náhled jako ochrana hry a ostatní stránky nastavení. Pod ním je popis, ovládání a vysvětlení vybrané možnosti.
+
+«Podle pravidel herního režimu». Krátká zkratka změní jazyk bez nabídky. Držené herní klávesy brání nechtěné změně jazyka.
+
+«Vypnout ve hrách». Tato akce macOS je vypnutá, když je hra v popředí. Po opuštění hry funguje jako dříve. «Povolit ve hrách». macOS provádí akci normálně, i když otevře okno nebo přenese zaměření ze hry.
+
+**Vyzkoušejte:** Otevřete další herní nastavení, rozbalte systémové ovládání a zvolte chování akce při hraní.
+
+---
+
 ## <a id="v1.31.2"></a>Srozumitelnější herní nastavení
 
 <sub>1.31.2 · 11. října 2026</sub>

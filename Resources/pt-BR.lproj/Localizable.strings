@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Aberto agora. Clique no seu jogo para adicioná-lo";
 "From the Dock" = "Do Dock";
 
-"Automatically" = "Automaticamente";
-"Pause while playing" = "Pausar ao jogar";
-"Run without interrupting" = "Executar sem interromper";
-"Run normally" = "Executar normalmente";
 "System key" = "Tecla do sistema";
 "Force Quit" = "Forçar Encerrar";
 "System action %@" = "Ação do sistema %@";
 "Other system shortcuts" = "Outros atalhos do sistema";
-"Current macOS shortcuts. Automatic protects the game." = "Atalhos atuais do macOS. Automático protege o jogo.";
 "Search system shortcuts" = "Buscar atalhos do sistema";
 "Refresh" = "Atualizar";
 "While playing" = "Ao jogar";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Proteção do jogo";
 "Closing the game, the pointer and display." = "Saída do jogo, cursor e tela.";
 "Apps that can observe or change keyboard input." = "Apps que podem ler ou alterar a entrada do teclado.";
+
+"Follow Game Mode rules" = "Seguir as regras do Modo de Jogo";
+"Disable in games" = "Desativar nos jogos";
+"Switch language on every press" = "Trocar idioma a cada pressão";
+"Allow in games" = "Permitir nos jogos";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Um atalho breve muda o idioma sem menu. As teclas de jogo mantidas pressionadas evitam trocas acidentais.";
+"Game Mode pauses this action according to its general protection rules." = "O Modo de Jogo pausa esta ação conforme as regras gerais de proteção.";
+"Your game rules allow this action. It works as configured in macOS." = "Suas regras de jogo permitem esta ação. Ela funciona conforme os ajustes do macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Esta ação do macOS fica desativada quando o jogo está em primeiro plano. Ao sair, ela funciona como antes.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Cada pressão troca o idioma sem o menu do sistema. As mesmas teclas continuam chegando ao jogo.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "O macOS executa a ação normalmente, mesmo que abra uma janela ou tire o foco do jogo.";
+"Choose what each shortcut does while you play." = "Escolha o que cada atalho faz enquanto você joga.";

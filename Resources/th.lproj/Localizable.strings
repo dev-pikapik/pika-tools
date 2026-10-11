@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "เปิดอยู่ตอนนี้ คลิกเกมเพื่อเพิ่ม";
 "From the Dock" = "จาก Dock";
 
-"Automatically" = "อัตโนมัติ";
-"Pause while playing" = "หยุดชั่วคราวขณะเล่น";
-"Run without interrupting" = "ทำงานโดยไม่ขัดจังหวะ";
-"Run normally" = "ทำงานตามปกติ";
 "System key" = "ปุ่มระบบ";
 "Force Quit" = "บังคับออก";
 "System action %@" = "การทำงานระบบ %@";
 "Other system shortcuts" = "ปุ่มลัดระบบอื่น ๆ";
-"Current macOS shortcuts. Automatic protects the game." = "ปุ่มลัด macOS ปัจจุบัน โหมดอัตโนมัติปกป้องเกม";
 "Search system shortcuts" = "ค้นหาปุ่มลัดระบบ";
 "Refresh" = "รีเฟรช";
 "While playing" = "ขณะเล่น";
@@ -606,3 +601,15 @@
 "Game safeguards" = "การป้องกันเกม";
 "Closing the game, the pointer and display." = "การออกจากเกม ตัวชี้ และจอภาพ";
 "Apps that can observe or change keyboard input." = "แอปที่อ่านหรือเปลี่ยนการป้อนข้อมูลจากแป้นพิมพ์ได้";
+
+"Follow Game Mode rules" = "ตามกฎโหมดเกม";
+"Disable in games" = "ปิดใช้งานในเกม";
+"Switch language on every press" = "เปลี่ยนภาษาทุกครั้งที่กด";
+"Allow in games" = "อนุญาตในเกม";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "ปุ่มลัดที่กดสั้น ๆ จะเปลี่ยนภาษาโดยไม่เปิดเมนู การกดปุ่มเกมค้างช่วยป้องกันการเปลี่ยนภาษาโดยไม่ตั้งใจ";
+"Game Mode pauses this action according to its general protection rules." = "โหมดเกมพักการทำงานนี้ตามกฎการป้องกันทั่วไป";
+"Your game rules allow this action. It works as configured in macOS." = "กฎเกมของคุณอนุญาตการทำงานนี้ จึงทำงานตามการตั้งค่า macOS";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "การทำงาน macOS นี้จะปิดเมื่อเกมอยู่ด้านหน้า เมื่อออกจากเกมจะทำงานเหมือนเดิม";
+"Every press switches language without the system menu. The same keys still reach the game." = "ทุกครั้งที่กดจะเปลี่ยนภาษาโดยไม่เปิดเมนูระบบ ปุ่มเดียวกันยังส่งถึงเกม";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS ทำงานตามปกติ แม้จะเปิดหน้าต่างหรือดึงโฟกัสออกจากเกม";
+"Choose what each shortcut does while you play." = "เลือกว่าปุ่มลัดแต่ละชุดทำอะไรระหว่างเล่นเกม";

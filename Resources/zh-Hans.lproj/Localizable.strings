@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "当前已打开。点击游戏即可添加";
 "From the Dock" = "来自程序坞";
 
-"Automatically" = "自动";
-"Pause while playing" = "游戏时暂停";
-"Run without interrupting" = "执行但不中断";
-"Run normally" = "正常执行";
 "System key" = "系统按键";
 "Force Quit" = "强制退出";
 "System action %@" = "系统操作 %@";
 "Other system shortcuts" = "其他系统快捷键";
-"Current macOS shortcuts. Automatic protects the game." = "当前macOS快捷键。自动模式保护游戏。";
 "Search system shortcuts" = "搜索系统快捷键";
 "Refresh" = "刷新";
 "While playing" = "游戏期间";
@@ -606,3 +601,15 @@
 "Game safeguards" = "游戏保护";
 "Closing the game, the pointer and display." = "退出游戏、指针与显示屏。";
 "Apps that can observe or change keyboard input." = "可以读取或修改键盘输入的应用。";
+
+"Follow Game Mode rules" = "遵循游戏模式规则";
+"Disable in games" = "在游戏中禁用";
+"Switch language on every press" = "每次按下都切换语言";
+"Allow in games" = "在游戏中允许";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "短按快捷键可切换语言而不打开菜单。按住游戏按键时会避免误切换语言。";
+"Game Mode pauses this action according to its general protection rules." = "游戏模式按常规保护规则暂停此操作。";
+"Your game rules allow this action. It works as configured in macOS." = "你的游戏规则允许此操作。它会按 macOS 中的设置运行。";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "游戏在前台时，此 macOS 操作会被禁用。离开游戏后，它恢复原来的行为。";
+"Every press switches language without the system menu. The same keys still reach the game." = "每次按下都会切换语言，而不打开系统菜单。同样的按键仍会传给游戏。";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS 正常执行此操作，即使它打开窗口或从游戏夺取焦点。";
+"Choose what each shortcut does while you play." = "选择每个快捷键在游戏中的行为。";

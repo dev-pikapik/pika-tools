@@ -6,10 +6,10 @@ enum GameShortcutMode: String, CaseIterable {
 
     var title: String {
         switch self {
-        case .automatic: String(localized: "Automatically")
-        case .pause: String(localized: "Pause while playing")
-        case .background: String(localized: "Run without interrupting")
-        case .system: String(localized: "Run normally")
+        case .automatic: String(localized: "Follow Game Mode rules")
+        case .pause: String(localized: "Disable in games")
+        case .background: String(localized: "Switch language on every press")
+        case .system: String(localized: "Allow in games")
         }
     }
 }

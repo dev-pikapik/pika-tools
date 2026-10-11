@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Un style commun aux réglages de jeu
+
+<sub>1.31.3 · 11 octobre 2026</sub>
+
+Des aperçus harmonisés et des choix plus clairs.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Chaque raccourci a désormais le même aperçu large que les protections du jeu et les autres pages de réglages. Sa description, ses commandes et l’explication du choix sélectionné se trouvent dessous.
+
+«Suivre les règles du mode Jeu». Un raccourci bref change la langue sans menu. Les touches de jeu maintenues empêchent un changement accidentel.
+
+«Désactiver en jeu». Cette action macOS est désactivée quand le jeu est au premier plan. Quand vous le quittez, elle fonctionne comme avant. «Autoriser en jeu». macOS exécute l’action normalement, même si elle ouvre une fenêtre ou détourne le focus du jeu.
+
+**Pour essayer :** Ouvrez les réglages de jeu supplémentaires, développez les commandes système et choisissez le comportement d’une action pendant le jeu.
+
+---
+
 ## <a id="v1.31.2"></a>Des réglages de jeu plus clairs
 
 <sub>1.31.2 · 11 octobre 2026</sub>

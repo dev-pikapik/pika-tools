@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "مفتوح الآن. انقر على لعبتك لإضافتها";
 "From the Dock" = "من Dock";
 
-"Automatically" = "تلقائياً";
-"Pause while playing" = "إيقاف مؤقت أثناء اللعب";
-"Run without interrupting" = "تنفيذ دون مقاطعة";
-"Run normally" = "تنفيذ كالمعتاد";
 "System key" = "مفتاح نظام";
 "Force Quit" = "فرض الإنهاء";
 "System action %@" = "إجراء النظام %@";
 "Other system shortcuts" = "اختصارات نظام أخرى";
-"Current macOS shortcuts. Automatic protects the game." = "اختصارات macOS الحالية. الوضع التلقائي يحمي اللعبة.";
 "Search system shortcuts" = "البحث عن اختصارات النظام";
 "Refresh" = "تحديث";
 "While playing" = "أثناء اللعب";
@@ -606,3 +601,15 @@
 "Game safeguards" = "حماية اللعبة";
 "Closing the game, the pointer and display." = "إغلاق اللعبة والمؤشر والشاشة.";
 "Apps that can observe or change keyboard input." = "تطبيقات يمكنها قراءة إدخال لوحة المفاتيح أو تغييره.";
+
+"Follow Game Mode rules" = "اتباع قواعد وضع الألعاب";
+"Disable in games" = "تعطيل في الألعاب";
+"Switch language on every press" = "تغيير اللغة مع كل ضغطة";
+"Allow in games" = "السماح في الألعاب";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "يغيّر الاختصار القصير اللغة دون قائمة. تمنع مفاتيح اللعب المضغوطة تغيير اللغة بالخطأ.";
+"Game Mode pauses this action according to its general protection rules." = "يوقف وضع الألعاب هذا الإجراء وفق قواعد الحماية العامة.";
+"Your game rules allow this action. It works as configured in macOS." = "تسمح قواعد اللعب بهذا الإجراء. يعمل حسب إعدادات macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "يتوقف إجراء macOS هذا عندما تكون اللعبة في المقدمة. عند مغادرة اللعبة يعمل كما كان.";
+"Every press switches language without the system menu. The same keys still reach the game." = "تغيّر كل ضغطة اللغة دون قائمة النظام. تظل المفاتيح نفسها تصل إلى اللعبة.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "ينفّذ macOS الإجراء كالمعتاد حتى لو فتح نافذة أو نقل التركيز من اللعبة.";
+"Choose what each shortcut does while you play." = "اختر ما يفعله كل اختصار أثناء اللعب.";

@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Sedang terbuka. Klik game untuk menambahkannya";
 "From the Dock" = "Dari Dock";
 
-"Automatically" = "Otomatis";
-"Pause while playing" = "Jeda saat bermain";
-"Run without interrupting" = "Jalankan tanpa gangguan";
-"Run normally" = "Jalankan seperti biasa";
 "System key" = "Tombol sistem";
 "Force Quit" = "Paksa Keluar";
 "System action %@" = "Tindakan sistem %@";
 "Other system shortcuts" = "Pintasan sistem lainnya";
-"Current macOS shortcuts. Automatic protects the game." = "Pintasan macOS saat ini. Otomatis melindungi game.";
 "Search system shortcuts" = "Cari pintasan sistem";
 "Refresh" = "Segarkan";
 "While playing" = "Saat bermain";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Perlindungan game";
 "Closing the game, the pointer and display." = "Keluar dari game, penunjuk, dan layar.";
 "Apps that can observe or change keyboard input." = "App yang dapat membaca atau mengubah input papan ketik.";
+
+"Follow Game Mode rules" = "Ikuti aturan Mode Game";
+"Disable in games" = "Nonaktifkan dalam game";
+"Switch language on every press" = "Ganti bahasa setiap tekanan";
+"Allow in games" = "Izinkan dalam game";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Pintasan singkat mengganti bahasa tanpa menu. Tombol game yang ditahan mencegah perubahan tidak sengaja.";
+"Game Mode pauses this action according to its general protection rules." = "Mode Game menjeda tindakan ini sesuai aturan perlindungan umum.";
+"Your game rules allow this action. It works as configured in macOS." = "Aturan game Anda mengizinkan tindakan ini. Tindakan berjalan sesuai pengaturan macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Tindakan macOS ini dinonaktifkan saat game berada di depan. Setelah Anda meninggalkan game, tindakan berfungsi seperti semula.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Setiap tekanan mengganti bahasa tanpa menu sistem. Tombol yang sama tetap diterima game.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS menjalankan tindakan secara normal, meski membuka jendela atau memindahkan fokus dari game.";
+"Choose what each shortcut does while you play." = "Pilih apa yang dilakukan setiap pintasan saat bermain.";

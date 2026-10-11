@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Şu anda açık. Eklemek için oyununa tıkla";
 "From the Dock" = "Dock’tan";
 
-"Automatically" = "Otomatik";
-"Pause while playing" = "Oynarken duraklat";
-"Run without interrupting" = "Kesintisiz çalıştır";
-"Run normally" = "Normal çalıştır";
 "System key" = "Sistem tuşu";
 "Force Quit" = "Çıkmaya Zorla";
 "System action %@" = "Sistem eylemi %@";
 "Other system shortcuts" = "Diğer sistem kısayolları";
-"Current macOS shortcuts. Automatic protects the game." = "Güncel macOS kısayolları. Otomatik oyunu korur.";
 "Search system shortcuts" = "Sistem kısayollarını ara";
 "Refresh" = "Yenile";
 "While playing" = "Oynarken";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Oyun koruması";
 "Closing the game, the pointer and display." = "Oyundan çıkış, işaretçi ve ekran.";
 "Apps that can observe or change keyboard input." = "Klavye girişini okuyabilen veya değiştirebilen uygulamalar.";
+
+"Follow Game Mode rules" = "Oyun Modu kurallarına uy";
+"Disable in games" = "Oyunlarda devre dışı bırak";
+"Switch language on every press" = "Her basışta dili değiştir";
+"Allow in games" = "Oyunlarda izin ver";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Kısa bir kısayol dili menüsüz değiştirir. Basılı oyun tuşları yanlışlıkla dil değiştirmeyi önler.";
+"Game Mode pauses this action according to its general protection rules." = "Oyun Modu bu eylemi genel koruma kurallarına göre duraklatır.";
+"Your game rules allow this action. It works as configured in macOS." = "Oyun kurallarınız bu eyleme izin verir. macOS ayarlarına göre çalışır.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Oyun öndeyken bu macOS eylemi devre dışıdır. Oyundan ayrılınca eskisi gibi çalışır.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Her basış, sistem menüsünü açmadan dili değiştirir. Aynı tuşlar oyuna ulaşmaya devam eder.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS eylemi normal şekilde çalıştırır; pencere açsa veya odağı oyundan alsa bile.";
+"Choose what each shortcut does while you play." = "Oynarken her kısayolun ne yapacağını seçin.";

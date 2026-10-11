@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Giao diện thống nhất cho cài đặt trò chơi
+
+<sub>1.31.3 · 11 tháng 10 năm 2026</sub>
+
+Bản xem trước đồng bộ và tùy chọn phím tắt rõ ràng hơn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Mỗi phím tắt giờ có bản xem trước rộng giống phần bảo vệ trò chơi và các trang cài đặt khác. Bên dưới là mô tả, điều khiển và giải thích tùy chọn đã chọn.
+
+«Theo quy tắc Chế độ trò chơi». Phím tắt ngắn đổi ngôn ngữ không cần menu. Giữ phím trò chơi ngăn đổi ngôn ngữ ngoài ý muốn.
+
+«Tắt trong trò chơi». Hành động macOS này bị tắt khi trò chơi ở phía trước. Khi rời trò chơi, hành động hoạt động như trước. «Cho phép trong trò chơi». macOS chạy hành động bình thường, kể cả khi mở cửa sổ hoặc lấy tiêu điểm khỏi trò chơi.
+
+**Thử ngay:** Mở cài đặt trò chơi bổ sung, mở rộng điều khiển hệ thống và chọn hành vi của hành động khi chơi.
+
+---
+
 ## <a id="v1.31.2"></a>Cài đặt trò chơi rõ ràng hơn
 
 <sub>1.31.2 · 11 tháng 10 năm 2026</sub>

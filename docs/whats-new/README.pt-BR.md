@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Um só estilo para os ajustes de jogo
+
+<sub>1.31.3 · 11 de outubro de 2026</sub>
+
+Prévias uniformes e escolhas mais claras.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Cada atalho agora tem a mesma prévia ampla das proteções do jogo e das outras páginas de ajustes. A descrição, os controles e a explicação da opção escolhida ficam abaixo.
+
+«Seguir as regras do Modo de Jogo». Um atalho breve muda o idioma sem menu. As teclas de jogo mantidas pressionadas evitam trocas acidentais.
+
+«Desativar nos jogos». Esta ação do macOS fica desativada quando o jogo está em primeiro plano. Ao sair, ela funciona como antes. «Permitir nos jogos». O macOS executa a ação normalmente, mesmo que abra uma janela ou tire o foco do jogo.
+
+**Experimente:** Abra Mais ajustes de jogo, expanda os controles do sistema e escolha como uma ação funciona enquanto você joga.
+
+---
+
 ## <a id="v1.31.2"></a>Ajustes de jogo mais claros
 
 <sub>1.31.2 · 11 de outubro de 2026</sub>

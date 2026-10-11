@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Un stil comun pentru setările de joc
+
+<sub>1.31.3 · 11 octombrie 2026</sub>
+
+Previzualizări uniforme și opțiuni mai clare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Fiecare scurtătură are acum aceeași previzualizare lată ca protecțiile jocului și celelalte pagini de setări. Dedesubt sunt descrierea, comenzile și explicația opțiunii alese.
+
+«Urmează regulile modului de joc». O scurtătură rapidă schimbă limba fără meniu. Tastele de joc ținute apăsate împiedică schimbarea accidentală.
+
+«Dezactivează în jocuri». Această acțiune macOS este dezactivată când jocul este în prim-plan. Când pleci, funcționează ca înainte. «Permite în jocuri». macOS execută acțiunea normal, chiar dacă deschide o fereastră sau mută focalizarea din joc.
+
+**Încearcă:** Deschide setările suplimentare de joc, extinde comenzile sistemului și alege comportamentul unei acțiuni în timpul jocului.
+
+---
+
 ## <a id="v1.31.2"></a>Setări de joc mai clare
 
 <sub>1.31.2 · 11 octombrie 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Enhetliga spelinställningar
+
+<sub>1.31.3 · 11 oktober 2026</sub>
+
+Likadana förhandsvisningar och tydligare kortkommandon.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Varje kortkommando har nu samma breda förhandsvisning som spelskyddet och de andra inställningssidorna. Beskrivning, reglage och förklaring av det valda alternativet finns under den.
+
+«Följ spellägets regler». Ett kort kommando byter språk utan meny. Nedtryckta speltangenter förhindrar oavsiktliga språkbyten.
+
+«Inaktivera i spel». Denna macOS-åtgärd är avstängd när spelet är i förgrunden. När du lämnar spelet fungerar den som förut. «Tillåt i spel». macOS utför åtgärden normalt, även om den öppnar ett fönster eller flyttar fokus från spelet.
+
+**Prova:** Öppna fler spelinställningar, fäll ut systemkontroller och välj hur en åtgärd fungerar medan du spelar.
+
+---
+
 ## <a id="v1.31.2"></a>Tydligare spelinställningar
 
 <sub>1.31.2 · 11 oktober 2026</sub>

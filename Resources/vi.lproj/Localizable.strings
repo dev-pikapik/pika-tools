@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Đang mở. Nhấp vào trò chơi để thêm";
 "From the Dock" = "Từ Dock";
 
-"Automatically" = "Tự động";
-"Pause while playing" = "Tạm dừng khi chơi";
-"Run without interrupting" = "Chạy không gián đoạn";
-"Run normally" = "Chạy như bình thường";
 "System key" = "Phím hệ thống";
 "Force Quit" = "Buộc thoát";
 "System action %@" = "Tác vụ hệ thống %@";
 "Other system shortcuts" = "Phím tắt hệ thống khác";
-"Current macOS shortcuts. Automatic protects the game." = "Phím tắt macOS hiện tại. Tự động bảo vệ trò chơi.";
 "Search system shortcuts" = "Tìm phím tắt hệ thống";
 "Refresh" = "Làm mới";
 "While playing" = "Khi chơi";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Bảo vệ trò chơi";
 "Closing the game, the pointer and display." = "Thoát trò chơi, con trỏ và màn hình.";
 "Apps that can observe or change keyboard input." = "Ứng dụng có thể đọc hoặc thay đổi đầu vào bàn phím.";
+
+"Follow Game Mode rules" = "Theo quy tắc Chế độ trò chơi";
+"Disable in games" = "Tắt trong trò chơi";
+"Switch language on every press" = "Đổi ngôn ngữ mỗi lần nhấn";
+"Allow in games" = "Cho phép trong trò chơi";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Phím tắt ngắn đổi ngôn ngữ không cần menu. Giữ phím trò chơi ngăn đổi ngôn ngữ ngoài ý muốn.";
+"Game Mode pauses this action according to its general protection rules." = "Chế độ trò chơi tạm dừng hành động này theo quy tắc bảo vệ chung.";
+"Your game rules allow this action. It works as configured in macOS." = "Quy tắc trò chơi của bạn cho phép hành động này. Hành động chạy theo cài đặt macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Hành động macOS này bị tắt khi trò chơi ở phía trước. Khi rời trò chơi, hành động hoạt động như trước.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Mỗi lần nhấn đổi ngôn ngữ mà không mở menu hệ thống. Các phím đó vẫn được gửi tới trò chơi.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS chạy hành động bình thường, kể cả khi mở cửa sổ hoặc lấy tiêu điểm khỏi trò chơi.";
+"Choose what each shortcut does while you play." = "Chọn hành vi của từng phím tắt khi bạn chơi.";

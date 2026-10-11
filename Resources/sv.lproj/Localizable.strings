@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Öppet nu. Klicka på ditt spel för att lägga till det";
 "From the Dock" = "Från Dock";
 
-"Automatically" = "Automatiskt";
-"Pause while playing" = "Pausa under spel";
-"Run without interrupting" = "Kör utan avbrott";
-"Run normally" = "Kör som vanligt";
 "System key" = "Systemtangent";
 "Force Quit" = "Tvångsavsluta";
 "System action %@" = "Systemåtgärd %@";
 "Other system shortcuts" = "Andra systemgenvägar";
-"Current macOS shortcuts. Automatic protects the game." = "Aktuella macOS-genvägar. Automatiskt skyddar spelet.";
 "Search system shortcuts" = "Sök systemgenvägar";
 "Refresh" = "Uppdatera";
 "While playing" = "Under spel";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Spelskydd";
 "Closing the game, the pointer and display." = "Avsluta spelet, pekare och skärm.";
 "Apps that can observe or change keyboard input." = "Appar som kan läsa eller ändra tangentbordsinmatning.";
+
+"Follow Game Mode rules" = "Följ spellägets regler";
+"Disable in games" = "Inaktivera i spel";
+"Switch language on every press" = "Byt språk vid varje tryck";
+"Allow in games" = "Tillåt i spel";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Ett kort kommando byter språk utan meny. Nedtryckta speltangenter förhindrar oavsiktliga språkbyten.";
+"Game Mode pauses this action according to its general protection rules." = "Spelläget pausar åtgärden enligt de allmänna skyddsreglerna.";
+"Your game rules allow this action. It works as configured in macOS." = "Dina spelregler tillåter åtgärden. Den fungerar enligt inställningarna i macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Denna macOS-åtgärd är avstängd när spelet är i förgrunden. När du lämnar spelet fungerar den som förut.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Varje tryck byter språk utan systemmenyn. Samma tangenter når fortfarande spelet.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS utför åtgärden normalt, även om den öppnar ett fönster eller flyttar fokus från spelet.";
+"Choose what each shortcut does while you play." = "Välj vad varje kortkommando gör medan du spelar.";
