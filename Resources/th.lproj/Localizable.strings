@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik ตรวจสอบทุก 1.5 วินาที จึงไม่ต้องเริ่มการทำงานใหม่ หากอยู่ในรายการแล้วแต่ไม่ทำงาน ให้เอาออกด้วยปุ่ม − แล้วเพิ่มอีกครั้ง";
 "Allowed" = "อนุญาตแล้ว";
 "Not allowed" = "ไม่ได้อนุญาต";
+"Allow" = "อนุญาต";
+"For some features" = "สำหรับบางฟีเจอร์";
+"Finder Extensions" = "ส่วนขยาย Finder";
+"Folders" = "โฟลเดอร์";
+"Lets the app choose how fast your fans spin" = "ให้แอปเลือกความเร็วในการหมุนของพัดลม";
+"Lets the app add items to the right-click menu in Finder" = "ให้แอปเพิ่มรายการในเมนูคลิกขวาใน Finder";
+"Lets the app save new files next to yours" = "ให้แอปบันทึกไฟล์ใหม่ไว้ข้างไฟล์ของคุณ";
+"Lets the app find permissions left by deleted apps" = "ให้แอปค้นหาการอนุญาตที่เหลือจากแอปที่ลบไปแล้ว";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS ให้ปิดสิ่งเหล่านี้ได้เฉพาะในการตั้งค่าระบบ ปุ่มนี้จะเปิดรายการที่ถูกต้อง แล้วคุณปิด pikapik ได้ที่นั่น";
+"Needs a permission. Click to allow it." = "ต้องมีการอนุญาต คลิกเพื่ออนุญาต";
+"Grey tools need a permission. Click one to allow it." = "เครื่องมือที่เป็นสีเทาต้องมีการอนุญาต คลิกที่ตัวใดก็ได้เพื่ออนุญาต";
+"Turn off %@?" = "ปิด %@ หรือไม่";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik จะเริ่มใหม่ และเครื่องมือที่ต้องใช้สิ่งนี้จะเป็นสีเทาจนกว่าคุณจะอนุญาตอีกครั้ง";
 "Open" = "เปิด";
 "Settings…" = "การตั้งค่า…";
 "Permissions needed" = "ต้องการการอนุญาต";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "ปิดฝา, clamshell, แล็ปท็อป, MacBook, จอภาพภายนอก";
 "battery, power, charge" = "แบตเตอรี่, พลังงาน, ชาร์จ";
 "privacy, security, access" = "ความเป็นส่วนตัว, ความปลอดภัย, การเข้าถึง";
+"privacy, security, access, files, save, home" = "ความเป็นส่วนตัว, ความปลอดภัย, การเข้าถึง, ไฟล์, บันทึก, โฮม";
+"privacy, security, access, right-click, menu, extension" = "ความเป็นส่วนตัว, ความปลอดภัย, การเข้าถึง, คลิกขวา, เมนู, ส่วนขยาย";
+"privacy, security, access, files, disk" = "ความเป็นส่วนตัว, ความปลอดภัย, การเข้าถึง, ไฟล์, ดิสก์";
 "update, new version, software update" = "อัปเดต, เวอร์ชันใหม่, รายการอัปเดตซอฟต์แวร์, update";
 "changelog, release notes, version" = "บันทึกการเปลี่ยนแปลง, หมายเหตุประจำรุ่น, changelog, เวอร์ชัน";
 "bug, issue, feedback, support" = "บั๊ก, bug, ปัญหา, คำติชม, การสนับสนุน";
@@ -182,7 +198,6 @@
 "Export Settings…" = "ส่งออกการตั้งค่า…";
 "Save all settings to a file, or load them from one" = "บันทึกการตั้งค่าทั้งหมดลงในไฟล์ หรือโหลดจากไฟล์";
 "Turn on iCloud Drive in System Settings" = "เปิด iCloud Drive ในการตั้งค่าระบบ";
-"Allow pikapik to use iCloud Drive in System Settings" = "อนุญาตให้ pikapik ใช้ iCloud Drive ในการตั้งค่าระบบ";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "ลักษณะที่ปรากฏและภาษาจะกลับไปเป็นตามระบบ และการซิงค์กับ iCloud จะปิด “เปิดเมื่อเข้าสู่ระบบ” และการตั้งค่าที่บันทึกไว้ใน iCloud Drive จะยังคงเหมือนเดิม";
 "OK" = "ตกลง";
 "Replace your settings?" = "แทนที่การตั้งค่าของคุณหรือไม่";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "ไฟล์จะอยู่ใน “%@”";
 "Create" = "สร้าง";
 "Type a name without “/” or “:”." = "พิมพ์ชื่อที่ไม่มี “/” หรือ “:”";
-"Turn it on in System Settings" = "เปิดใช้ในการตั้งค่าระบบ";
-"Open Finder Extensions…" = "เปิดส่วนขยาย Finder…";
 "Smaller Copy in Finder" = "สำเนาที่เล็กลงใน Finder";
 "Convert in Finder" = "แปลงไฟล์ใน Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "คลิกขวาที่ไฟล์ใน Finder แล้วเลือก “สร้างสำเนาที่เล็กลง” ใช้ได้กับรูปภาพ GIF PDF วิดีโอ และเสียงที่ไม่บีบอัด เช่น WAV หรือ AIFF ซึ่งจะกลายเป็น M4A ต้นฉบับยังอยู่เหมือนเดิม ถ้าไฟล์เล็กลงอีกไม่ได้ จะไม่มีการสร้างสำเนา";
@@ -614,8 +627,6 @@
 "Fan control" = "การควบคุมพัดลม";
 "Fan %lld" = "พัดลม %lld";
 "See how fast your fans spin and choose their speed" = "ดูว่าพัดลมหมุนเร็วแค่ไหน และเลือกความเร็วได้";
-"Allow control" = "อนุญาตให้ควบคุม";
-"Needs your administrator password once" = "ต้องใช้รหัสผ่านผู้ดูแลระบบเพียงครั้งเดียว";
 "This Mac has no fans" = "Mac เครื่องนี้ไม่มีพัดลม";
 "It cools itself quietly, so there is nothing to set" = "เครื่องระบายความร้อนเองอย่างเงียบ ๆ จึงไม่มีอะไรให้ตั้งค่า";
 "rpm" = "รอบ/นาที";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik ต้องการลบการควบคุมพัดลม";
 "Not allowed: no administrator password" = "ไม่ได้อนุญาต: ไม่มีรหัสผ่านผู้ดูแลระบบ";
 "Not removed: no administrator password" = "ไม่ได้ลบ: ไม่มีรหัสผ่านผู้ดูแลระบบ";
-"Couldn’t change the fan speed. Try Allow control again." = "เปลี่ยนความเร็วพัดลมไม่ได้ ลอง “อนุญาตให้ควบคุม” อีกครั้ง";
+"Couldn’t change the fan speed. Try allowing fan control again." = "เปลี่ยนความเร็วพัดลมไม่ได้ ลองอนุญาตให้ควบคุมพัดลมอีกครั้ง";
 "Fans went back to Auto to keep your Mac safe" = "พัดลมกลับเป็นอัตโนมัติเพื่อความปลอดภัยของ Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "พัดลม, รอบ, ระบายความร้อน, เย็น, ร้อน, ความร้อน, เสียงดัง, เงียบ, อุณหภูมิ";
 "allow, helper, password, administrator, install, remove" = "อนุญาต, ตัวช่วย, รหัสผ่าน, ผู้ดูแลระบบ, ติดตั้ง, ลบ";

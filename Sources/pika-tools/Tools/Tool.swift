@@ -10,6 +10,7 @@ protocol Tool: AnyObject {
     var settingsView: AnyView { get }
     var tab: SettingsTab { get }
     var isDefault: Bool { get }
+    var needs: [Permission] { get }
     func refresh()
     func reset()
     func load()
@@ -18,6 +19,7 @@ protocol Tool: AnyObject {
 extension Tool {
     var tab: SettingsTab { .keyboard }
     var isDefault: Bool { !isEnabled }
+    var needs: [Permission] { [.accessibility, .inputMonitoring] }
     func reset() { isEnabled = false }
     func load() { isEnabled = UserDefaults.standard.bool(forKey: id) }
 }

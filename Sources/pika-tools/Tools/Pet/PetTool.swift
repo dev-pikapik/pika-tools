@@ -9,6 +9,7 @@ final class PetTool: Tool {
     var title: String { String(localized: "Pet") }
     var tab: SettingsTab { .pet }
     var isActive: Bool { isEnabled }
+    var needs: [Permission] { [] }
     private(set) var listening = false
 
     var isEnabled: Bool {
@@ -159,10 +160,10 @@ private struct PetSettings: View {
             .disabled(!tool.isEnabled)
         }
         if inSettings, tool.isEnabled, !tool.listening {
-            LabeledContent(String(localized: "To make it jump when you press Space, allow Input Monitoring")) {
-                Button("Open", systemImage: "arrow.up.forward.app") { Permissions.shared.openSettings("Privacy_ListenEvent") }
-            }
-            .foregroundStyle(.secondary)
+            Text("To make it jump when you press Space, allow Input Monitoring")
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .needs([.inputMonitoring])
         }
     }
 }

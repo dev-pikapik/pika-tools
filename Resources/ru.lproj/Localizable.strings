@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "Проверяю сам каждые 1,5 секунды — перезапускать ничего не нужно. Если pikapik уже стоит в списке, но не работает, удалите его кнопкой «−» и добавьте заново.";
 "Allowed" = "Есть доступ";
 "Not allowed" = "Нет доступа";
+"Allow" = "Разрешить";
+"For some features" = "Для некоторых функций";
+"Finder Extensions" = "Расширения Finder";
+"Folders" = "Папки";
+"Lets the app choose how fast your fans spin" = "Чтобы выбирать скорость вентиляторов";
+"Lets the app add items to the right-click menu in Finder" = "Чтобы добавлять пункты в меню правого клика в Finder";
+"Lets the app save new files next to yours" = "Чтобы сохранять новые файлы рядом с вашими";
+"Lets the app find permissions left by deleted apps" = "Чтобы находить разрешения, оставшиеся от удалённых приложений";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS позволяет выключить их только в Системных настройках. Кнопка откроет нужный список, где вы выключите pikapik.";
+"Needs a permission. Click to allow it." = "Нужно разрешение. Нажмите, чтобы разрешить.";
+"Grey tools need a permission. Click one to allow it." = "Серые инструменты требуют разрешения. Нажмите на любой из них, чтобы разрешить.";
+"Turn off %@?" = "Выключить %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik перезапустится, а инструменты, которым это нужно, станут серыми, пока вы снова не разрешите.";
 "Open" = "Открыть";
 "Settings…" = "Настройки…";
 "Permissions needed" = "Нужны разрешения";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "крышка, ноутбук, MacBook, внешний монитор, закрытый режим";
 "battery, power, charge" = "батарея, аккумулятор, питание, заряд";
 "privacy, security, access" = "конфиденциальность, безопасность, доступ";
+"privacy, security, access, files, save, home" = "конфиденциальность, безопасность, доступ, файлы, сохранение, домашняя папка";
+"privacy, security, access, right-click, menu, extension" = "конфиденциальность, безопасность, доступ, правый клик, меню, расширение";
+"privacy, security, access, files, disk" = "конфиденциальность, безопасность, доступ, файлы, диск";
 "update, new version, software update" = "обновление, новая версия, обновление ПО";
 "changelog, release notes, version" = "список изменений, что нового, версия";
 "bug, issue, feedback, support" = "ошибка, баг, проблема, отзыв, поддержка";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Экспортировать настройки…";
 "Save all settings to a file, or load them from one" = "Сохраните все настройки в файл или загрузите их из файла";
 "Turn on iCloud Drive in System Settings" = "Включите iCloud Drive в Системных настройках";
-"Allow pikapik to use iCloud Drive in System Settings" = "Разрешите pikapik доступ к iCloud Drive в Системных настройках";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "«Оформление» и «Язык» снова будут как в системе, а синхронизация через iCloud выключится. «Открывать при входе» и настройки в iCloud Drive не изменятся.";
 "OK" = "ОК";
 "Replace your settings?" = "Заменить настройки?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Он появится в папке «%@».";
 "Create" = "Создать";
 "Type a name without “/” or “:”." = "Введите имя без «/» и «:».";
-"Turn it on in System Settings" = "Включите в Системных настройках";
-"Open Finder Extensions…" = "Открыть расширения Finder…";
 "Smaller Copy in Finder" = "Копия поменьше в Finder";
 "Convert in Finder" = "Конвертация в Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Правый клик по файлу в Finder › «Сделать копию поменьше». Подходит для фото, GIF, PDF, видео и несжатого звука вроде WAV или AIFF — он станет M4A. Оригинал остаётся как был. Если файл меньше уже не сделать, копия не появится.";
@@ -614,8 +627,6 @@
 "Fan control" = "Управление вентиляторами";
 "Fan %lld" = "Вентилятор %lld";
 "See how fast your fans spin and choose their speed" = "Смотрите, как быстро крутятся вентиляторы, и выбирайте их скорость";
-"Allow control" = "Разрешить управление";
-"Needs your administrator password once" = "Один раз понадобится пароль администратора";
 "This Mac has no fans" = "В этом Mac нет вентиляторов";
 "It cools itself quietly, so there is nothing to set" = "Он охлаждается тихо сам, настраивать нечего";
 "rpm" = "об/мин";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik хочет убрать управление вентиляторами.";
 "Not allowed: no administrator password" = "Не разрешено: нет пароля администратора";
 "Not removed: no administrator password" = "Не убрано: нет пароля администратора";
-"Couldn’t change the fan speed. Try Allow control again." = "Не удалось изменить скорость вентиляторов. Нажмите «Разрешить управление» ещё раз.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Не удалось изменить скорость вентиляторов. Разрешите управление вентиляторами ещё раз.";
 "Fans went back to Auto to keep your Mac safe" = "Вентиляторы вернулись в режим «Авто», чтобы Mac не перегрелся";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "вентилятор, кулер, обороты, об/мин, охлаждение, жарко, нагрев, шум, тихо, громко, температура";
 "allow, helper, password, administrator, install, remove" = "разрешить, помощник, пароль, администратор, установить, удалить";

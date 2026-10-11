@@ -10,6 +10,7 @@ final class AnimationsTool: Tool {
     var title: String { String(localized: "Animations") }
     var tab: SettingsTab { .animations }
     var isActive: Bool { isEnabled }
+    var needs: [Permission] { [] }
     var isDefault: Bool { owned.isEmpty }
 
     var isEnabled: Bool {

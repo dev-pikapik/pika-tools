@@ -15,6 +15,7 @@ final class ConvertTool: Tool {
     }
 
     var isActive: Bool { finder.isActive }
+    var needs: [Permission] { [.finder] }
 
     var isEnabled: Bool {
         get { finder.isEnabled }
