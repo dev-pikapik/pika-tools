@@ -43,132 +43,137 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br>Mac nie zaśnie, dopóki tego potrzebujesz, nawet z zamkniętą klapą.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>Wentylatory</b>
+<br>Zobacz, jak szybko kręcą się wentylatory, i wybierz ich prędkość.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Ochrona ⌘Q i ⌘W</b>
 <br>Nic nie zamknie się przypadkiem. Dodaj ⇧, gdy naprawdę chcesz.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Mniejsza kopia</b>
 <br>Kliknij prawym przyciskiem zdjęcie, PDF lub wideo, a obok pojawi się lżejsza kopia.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Konwersja</b>
 <br>Zapisz obraz, wideo lub utwór w innym formacie z menu pod prawym przyciskiem.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Zmiana języka</b>
 <br>Przytrzymaj ⌥ i stuknij ⇧, by zmienić język klawiatury.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Zakończ z ostatnim oknem</b>
 <br>Zamknij ostatnie okno aplikacji, a aplikacja też się zakończy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Zielony przycisk powiększa</b>
 <br>Okno wypełnia ekran bez przechodzenia na pełny ekran.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Ukrywanie kliknięciem w Docku</b>
 <br>Kliknij aplikację, w której jesteś, a zejdzie z drogi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Nowy plik</b>
 <br>Prawy przycisk w Finderze, nazwa i pusty plik gotowy.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X przenosi pliki</b>
 <br>Wytnij pliki w Finderze i wklej je tam, gdzie chcesz.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter otwiera pliki</b>
 <br>Zaznacz pliki w Finderze i naciśnij Enter, by je otworzyć.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete do Kosza</b>
 <br>Naciśnij ⌫ w Finderze, a zaznaczone pliki trafią do Kosza.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Tryb gry</b>
 <br>Gdy grasz, nic nie wyskoczy nad grą ani jej nie zamknie.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test prędkości</b>
 <br>Jak szybki jest Twój internet i do czego wystarczy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boczne przyciski</b>
 <br>Przyciski 4 i 5 cofają i przechodzą dalej, jak przesunięcie palcami.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Przewijanie o wiersze</b>
 <br>Każdy ząbek kółka przewija tyle samo, niezależnie od tempa.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Kierunek przewijania</b>
 <br>Jeden kierunek dla gładzika, drugi dla myszy.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez przyspieszenia wskaźnika</b>
 <br>Wskaźnik przesuwa się dokładnie tyle, co Twoja ręka.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Powtarzaj przytrzymany klawisz</b>
 <br>Przytrzymaj klawisz, by pisał raz za razem, bez menu akcentów.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home i End</b>
 <br>Skacz na początek lub koniec wiersza podczas pisania.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animacje</b>
 <br>Przyspiesz Dock, okna i Szybki przegląd, nawet do natychmiastowych.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Uprawnienia usuniętych aplikacji</b>
 <br>Usuń uprawnienia, które macOS zachowuje dla już usuniętych aplikacji.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Zwierzak na biurku</b>
@@ -275,6 +280,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
+- **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.

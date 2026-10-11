@@ -14,7 +14,7 @@ fi
 DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo 1 || true)
 
 rm -rf build
-mkdir -p "$APP/Contents/MacOS" build/strings
+mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Library/LaunchServices" build/strings
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
@@ -38,6 +38,11 @@ for ARCH in arm64 x86_64; do
         "${EMIT[@]}" \
         "${SOURCES[@]}" \
         -o "build/pika-tools-$ARCH"
+    swiftc -O -whole-module-optimization \
+        -module-name FanHelper \
+        -target "$ARCH-apple-macos$MIN_OS" \
+        Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
+        -o "build/fan-helper-$ARCH"
     for EXT in $EXTENSIONS; do
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
@@ -55,6 +60,8 @@ rm -rf build/strings
 
 lipo -create build/pika-tools-arm64 build/pika-tools-x86_64 -output "$APP/Contents/MacOS/pika-tools"
 rm build/pika-tools-arm64 build/pika-tools-x86_64
+lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
+rm build/fan-helper-arm64 build/fan-helper-x86_64
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
     APPEX="$APP/Contents/PlugIns/$EXT.appex"
@@ -124,6 +131,8 @@ fi
 for EXT in $EXTENSIONS; do
     sign --entitlements "Extensions/$EXT/$EXT.entitlements" "$APP/Contents/PlugIns/$EXT.appex"
 done
+HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
+sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
 sign "$APP"
 
 echo "Done: $APP ($(lipo -archs "$APP/Contents/MacOS/pika-tools"))"

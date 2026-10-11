@@ -11,8 +11,11 @@ enum GameRules {
 
     static let minecraftLaunchers = ["com.mojang.minecraftlauncher", "com.overwolf.curseforge"]
 
-    static let neverBlocked: Set<Int32> = Set([0, 6, 58, 59, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
-        + Array(15...26) + Array(28...31) + Array(53...56) + Array(100...107) + Array(150...155) + Array(165...172) + Array(192...195))
+    static let neverBlocked: Set<Int32> = {
+        var ids: [Int32] = [0, 6, 58, 59, 73, 156, 160, 161, 162, 177, 181, 182, 184, 185, 189, 260, 261, 262]
+        for range in [15...26, 28...31, 53...56, 100...107, 150...155, 165...172, 192...195] as [ClosedRange<Int32>] { ids += range }
+        return Set(ids)
+    }()
     static let retiredKeys = ["game-mode-search", "game-mode-switching", "game-mode-quit", "game-mode-control", "game-mode-layout"]
 
     static func hotKeys(_ rules: Set<GameRule>, appSwitcher: Bool, input: [Int32] = []) -> [Int32] {
@@ -191,7 +194,7 @@ struct HotKeyTrace {
         let saved = Self.ids(defaults) ?? []
         let off = ids.filter { !saved.contains($0) && isEnabled($0) }
         guard !off.isEmpty else { return }
-        defaults.set((saved + off).map(Int.init), forKey: Self.key)
+        defaults.set((saved + off).map { Int($0) }, forKey: Self.key)
         off.forEach { setEnabled($0, false) }
     }
 
