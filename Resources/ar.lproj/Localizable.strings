@@ -543,14 +543,13 @@
 
 "System key" = "مفتاح نظام";
 "Force Quit" = "فرض الإنهاء";
-"System action %@" = "إجراء النظام %@";
 "Other system shortcuts" = "اختصارات نظام أخرى";
 "While playing" = "أثناء اللعب";
 "Always available" = "متاح دائماً";
 "No key assigned" = "لا مفاتيح معيّنة";
 "Off in macOS" = "متوقف في macOS";
 "System keyboard shortcuts" = "اختصارات لوحة مفاتيح النظام";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "بعض إجراءات macOS ليس لها اسم منشور. قد تكون للتطبيقات الأخرى اختصاراتها الخاصة.";
+"Other apps may have their own shortcuts." = "قد تكون للتطبيقات الأخرى اختصاراتها الخاصة.";
 "More game settings" = "إعدادات ألعاب إضافية";
 "Other apps watching keys" = "تطبيقات أخرى تراقب المفاتيح";
 "Can change keys" = "يمكنه تغيير المفاتيح";

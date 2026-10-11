@@ -543,14 +543,13 @@
 
 "System key" = "Sistem tuşu";
 "Force Quit" = "Çıkmaya Zorla";
-"System action %@" = "Sistem eylemi %@";
 "Other system shortcuts" = "Diğer sistem kısayolları";
 "While playing" = "Oynarken";
 "Always available" = "Her zaman kullanılabilir";
 "No key assigned" = "Tuş atanmamış";
 "Off in macOS" = "macOS’ta kapalı";
 "System keyboard shortcuts" = "Sistem klavye kısayolları";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Bazı macOS eylemlerinin adı yayımlanmaz. Diğer uygulamaların kendi kısayolları olabilir.";
+"Other apps may have their own shortcuts." = "Diğer uygulamaların kendi kısayolları olabilir.";
 "More game settings" = "Diğer oyun ayarları";
 "Other apps watching keys" = "Tuşları izleyen diğer uygulamalar";
 "Can change keys" = "Tuşları değiştirebilir";

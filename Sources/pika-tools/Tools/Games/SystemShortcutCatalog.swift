@@ -51,8 +51,9 @@ struct SystemGameShortcut: Identifiable {
     let modifiers: UInt64
     let enabled: Bool
 
-    var emergency: Bool { id == 0 || key == UInt16(kVK_Escape) && modifiers & 0x1E0000 == 0x180000 }
+    var emergency: Bool { id == 0 || key == UInt16(kVK_Escape) && modifiers & 0x1C0000 == 0x180000 }
     var assigned: Bool { key != UInt16.max }
+    var listed: Bool { SystemShortcutCatalog.nonempty(name) != nil }
     var controller: GameRule? { Self.controller(id) }
     var supportsBackground: Bool { [60, 61].contains(id) }
     var previewRule: GameRule? { rawName.lowercased().contains("siri") ? .siri : controller }
@@ -157,8 +158,8 @@ enum SystemShortcutCatalog {
         return ids.compactMap { id in
             guard let value = values[id] else { return nil }
             let label = metadata[id]
-            let emergency = id == 0 || value.key == UInt16(kVK_Escape) && value.modifiers & 0x1E0000 == 0x180000
-            let name = nonempty(label?.name) ?? (emergency ? String(localized: "Force Quit") : legacyName(id)) ?? String(localized: "System action \(String(id))")
+            let emergency = id == 0 || value.key == UInt16(kVK_Escape) && value.modifiers & 0x1C0000 == 0x180000
+            let name = nonempty(label?.name) ?? (emergency ? String(localized: "Force Quit") : legacyName(id)) ?? ""
             let section = label?.section ?? (SystemGameShortcut.controller(id).map { "game-\($0.rawValue)" } ?? "other")
             return SystemGameShortcut(
                 id: id, name: name, section: section,
@@ -214,11 +215,7 @@ enum SystemShortcutCatalog {
 
     private static func metadata() -> [Int32: Metadata] {
         guard let bundle = Bundle(path: "/System/Library/ExtensionKit/Extensions/KeyboardSettings.appex") else { return [:] }
-        let table = bundle.url(forResource: "DefaultShortcutsTable", withExtension: "loctable")
-            .flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
-        let languages = UserDefaults.standard.stringArray(forKey: "AppleLanguages")
-        let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: languages).first ?? "en"
-        let localized = table[language] as? [String: String] ?? [:]
+        let localized = strings(bundle, "DefaultShortcutsTable")
         let items = bundle.url(forResource: "DefaultShortcutsTable", withExtension: "xml")
             .flatMap { NSArray(contentsOf: $0) as? [[String: Any]] } ?? []
         var result: [Int32: Metadata] = [:]
@@ -239,6 +236,26 @@ enum SystemShortcutCatalog {
         for group in items {
             for child in group["elements"] as? [[String: Any]] ?? [] { walk(child, group["identifier"] as? String ?? "other", title(group), []) }
         }
+        for (twin, id) in [16: 15, 18: 17, 20: 19, 22: 21, 154: 53, 166: 53, 170: 53, 155: 54, 165: 54, 169: 54] as [Int32: Int32] where result[twin] == nil {
+            result[twin] = result[id]
+        }
+        if let reader = Bundle(path: "/System/Library/ExtensionKit/Extensions/AccessibilitySettingsExtension.appex"),
+           let id = reader.url(forResource: "DefaultAccessibilityReaderShortcutsTable", withExtension: "xml").flatMap({ NSArray(contentsOf: $0) as? [[String: Any]] })?.first?["sybmolichotkey"] as? Int32,
+           let name = nonempty(strings(reader, "Localizable")["accessibilityReader.title"]),
+           let accessibility = result.values.first(where: { $0.section == "universalaccess" }) {
+            result[id] = Metadata(name: name, rawName: "Accessibility Reader", section: accessibility.section, sectionName: accessibility.sectionName)
+        }
+        let dictation = nonempty(strings(bundle, "Localizable")["Dictation.SectionTitle"]) ?? "Dictation"
+        result[164] = Metadata(name: dictation, rawName: "Dictation", section: "dictation", sectionName: dictation)
+        result[176] = Metadata(name: "Siri", rawName: "Siri", section: "siri", sectionName: "Siri")
         return result
+    }
+
+    private static func strings(_ bundle: Bundle, _ name: String) -> [String: String] {
+        let table = bundle.url(forResource: name, withExtension: "loctable")
+            .flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
+        let languages = UserDefaults.standard.stringArray(forKey: "AppleLanguages")
+        let language = Bundle.preferredLocalizations(from: Array(table.keys), forPreferences: languages).first ?? "en"
+        return (table[language] as? [String: Any] ?? [:]).compactMapValues { $0 as? String }
     }
 }

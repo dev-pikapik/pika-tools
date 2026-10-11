@@ -83,7 +83,7 @@ struct SettingsItem: Identifiable {
     var id: String { target ?? title }
 
     static func shortcut(_ entry: SystemGameShortcut) -> SettingsItem {
-        SettingsItem(tab: .games, title: entry.displayName,
+        SettingsItem(tab: .games, title: entry.name,
                      synonyms: [entry.rawName, entry.sectionName, entry.group.title, entry.group.detail, entry.description.text, entry.supportsBackground ? String(localized: "Switch language") + ", Switch language" : "", "game games gaming", String(entry.id)].joined(separator: ", "),
                      target: entry.anchor, detail: entry.group.title + " · " + (entry.text ?? String(localized: "No key assigned")), keys: entry.text ?? "")
     }
@@ -234,7 +234,7 @@ enum SettingsWindow {
         var searchItems: [SettingsItem] { SettingsItem.all + systemShortcuts.map(SettingsItem.shortcut) }
         var highlightedShortcut: SystemGameShortcut? { systemShortcuts.first { $0.anchor == highlight } }
 
-        func refreshShortcuts() { systemShortcuts = SystemShortcutCatalog.load() }
+        func refreshShortcuts() { systemShortcuts = SystemShortcutCatalog.load().filter(\.listed) }
 
         func goBack() {
             guard let tab = back.popLast() else { return }
