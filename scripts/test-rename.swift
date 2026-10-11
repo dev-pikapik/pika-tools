@@ -35,6 +35,13 @@ enum TestRename {
         precondition(!Updater.isRegistered(appex, in: line + "/Users/me" + appex))
         precondition(!Updater.isRegistered(appex, in: "  (no matches)"))
         precondition(!Updater.isRegistered(appex, in: ""))
+        for name in ["archive.tar.gz", "archive.tar.bz2", "archive.tar.xz"] {
+            let taken = root.appendingPathComponent(name)
+            try! Data().write(to: taken)
+            let twin = NewFile.uniqueURL(for: name, in: root).lastPathComponent
+            precondition(twin == name.replacingOccurrences(of: "archive", with: "archive 2"), twin)
+        }
+        precondition(NewFile.uniqueURL(for: "notes.txt", in: root).lastPathComponent == "notes.txt")
         print("rename: ok")
     }
 }
