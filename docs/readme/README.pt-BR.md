@@ -194,6 +194,8 @@ O pikapik precisa de duas permissões. Na primeira vez, ele abre os ajustes na p
 
 O app percebe a mudança em um ou dois segundos, sem precisar reiniciar.
 
+Alguns recursos pedem algo a mais quando você os usa: **Controle das ventoinhas**, **Extensões do Finder**, **iCloud Drive** e **Acesso Total ao Disco**. Tudo fica na página Permissões dos ajustes: cada permissão tem uma linha dizendo para que serve, uma marca de seleção verde ou uma cruz laranja e um só botão: **Permitir** quando falta, **Desligar** quando está ativa. Assim você retira qualquer permissão ali mesmo.
+
 O pikapik não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. A única conexão de rede é a busca por atualizações, que pergunta ao GitHub qual é a versão mais recente.
 
 </details>
@@ -280,14 +282,14 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
 - **Manter Ativo**: duração e opções de tela e de tampa.
-- **Ventoinhas**: velocidade de cada ventoinha, modo Auto ou velocidade manual.
+- **Ventoinhas**: velocidade de cada ventoinha, modo Auto ou velocidade manual quando o controle das ventoinhas está permitido.
 - **Teste de velocidade**: mede a internet e mostra para que ela serve.
 - **Teclado**: troca de idioma, repetição de teclas, Home e End.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.
 - **Finder**: novo arquivo, cópia menor e conversão, abrir com Return, recortar com ⌘X e apagar com ⌫.
-- **Permissões**: o estado das duas permissões, e do iCloud Drive quando a sincronização está ligada, com botões que abrem o lugar certo nos Ajustes do Sistema.
+- **Permissões**: todas as permissões que o pikapik usa, cada uma com seu estado e um botão para permitir ou desligar. Uma ferramenta sem a permissão de que precisa aparece em cinza; clicar nela abre esta página na linha certa.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 
 Muitos ajustes vêm com uma imagem pequena que mostra o que eles fazem, como um Mac que continua ativo ou uma janela que se esconde atrás do Dock. A imagem muda junto com o interruptor e fica parada quando “Reduzir movimento” está ativado em Ajustes do Sistema.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Sim. É um app universal para Apple Silicon e Intel, com macOS 14 Sonoma ou posterior.
 
 **A permissão está ativada, mas nada funciona.**
-Em **Ajustes do Sistema › Privacidade e Segurança**, remova o pikapik das duas listas com o botão − e adicione-o de novo. A página Permissões nos ajustes do pikapik tem botões que abrem o lugar certo.
+Em **Ajustes do Sistema › Privacidade e Segurança**, remova o pikapik das duas listas com o botão − e adicione-o de novo. Ou faça isso no próprio pikapik: na página Permissões, clique em **Desligar** em cada permissão e depois em **Permitir** de novo.
 
 </details>
 

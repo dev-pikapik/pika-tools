@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Todos los permisos en un solo lugar
+
+<sub>1.33.0 · 11 de octubre de 2026</sub>
+
+Ajustes › Permisos ahora reúne todo lo que usa pikapik y te deja retirar cualquier permiso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Ajustes › Permisos ahora muestra cada permiso que usa pikapik, desde Accesibilidad y Monitorización de entrada hasta Control de ventiladores, Extensiones de Finder, iCloud Drive y Acceso total al disco. Cada fila dice en una frase para qué sirve, con una marca verde cuando está activo y una cruz naranja cuando falta.
+
+Cada fila tiene un solo botón: Permitir cuando falta, Apagar cuando está activo. Así puedes retirar cualquier permiso ahí mismo, sin buscar en Ajustes del Sistema. En Accesibilidad y Monitorización de entrada, pikapik te pregunta primero y después se reinicia sin ellos.
+
+Una herramienta que necesita un permiso que no has dado aparece en gris. Haz clic en ella y se abre Permisos con la fila correcta resaltada, lista para un clic en Permitir.
+
+**Pruébalo:** Abre Ajustes › Permisos y echa un vistazo a cada fila. Haz clic en una herramienta gris para ir directo al permiso que necesita.
+
+---
+
 ## <a id="v1.32.2"></a>Instalación más segura y actualizaciones que nunca pierden la app
 
 <sub>1.32.2 · 11 de octubre de 2026</sub>

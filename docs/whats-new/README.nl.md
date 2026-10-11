@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Alle toestemmingen op één plek
+
+<sub>1.33.0 · 11 oktober 2026</sub>
+
+Instellingen › Toestemmingen toont nu alles wat pikapik gebruikt en laat je elke toestemming weer intrekken.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Instellingen › Toestemmingen toont nu elke toestemming die pikapik gebruikt, van Toegankelijkheid en Invoermonitoring tot Ventilatorbeheer, Finder-extensies, iCloud Drive en Volledige schijftoegang. Elke rij legt in één zin uit waarvoor de toestemming dient, met een groen vinkje als die aan staat en een oranje kruisje als die ontbreekt.
+
+Elke rij heeft één knop: Toestaan als de toestemming ontbreekt, Zet uit als ze aan staat. Zo trek je elke toestemming meteen terug, zonder te zoeken in Systeeminstellingen. Bij Toegankelijkheid en Invoermonitoring vraagt pikapik eerst om bevestiging en start daarna opnieuw zonder die toestemmingen.
+
+Een functie die een toestemming nodig heeft die je nog niet hebt gegeven, ziet er half grijs uit. Klik erop en Toestemmingen opent met de juiste rij gemarkeerd, klaar voor één klik op Toestaan.
+
+**Probeer het:** Open Instellingen › Toestemmingen en bekijk elke rij. Klik op een grijze functie om meteen naar de bijbehorende toestemming te gaan.
+
+---
+
 ## <a id="v1.32.2"></a>Veiliger installeren, en updates verliezen de app nooit
 
 <sub>1.32.2 · 11 oktober 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Alle Berechtigungen an einem Ort
+
+<sub>1.33.0 · 11. Oktober 2026</sub>
+
+Unter Einstellungen › Berechtigungen steht jetzt alles, was pikapik nutzt, und jede Berechtigung können Sie dort zurücknehmen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Einstellungen › Berechtigungen zeigt jetzt jede Berechtigung, die pikapik nutzt: von Bedienungshilfen und Eingabeüberwachung bis zu Lüftersteuerung, Finder-Erweiterungen, iCloud Drive und Festplattenvollzugriff. Jede Zeile sagt in einem Satz, wofür sie da ist, mit grünem Haken, wenn sie an ist, und orangefarbenem Kreuz, wenn sie fehlt.
+
+Jede Zeile hat eine Schaltfläche: „Erlauben“, wenn die Berechtigung fehlt, „Ausschalten“, wenn sie an ist. So nehmen Sie jede Berechtigung gleich dort zurück, ohne in den Systemeinstellungen zu suchen. Bei Bedienungshilfen und Eingabeüberwachung fragt pikapik erst nach und startet dann ohne sie neu.
+
+Ein Tool, das eine noch nicht erteilte Berechtigung braucht, wirkt halb ausgegraut. Klicken Sie darauf, dann öffnet sich „Berechtigungen“ mit der passenden Zeile, bereit für einen Klick auf „Erlauben“.
+
+**Ausprobieren:** Öffnen Sie Einstellungen › Berechtigungen und sehen Sie sich jede Zeile an. Klicken Sie auf ein ausgegrautes Tool, um direkt zur nötigen Berechtigung zu springen.
+
+---
+
 ## <a id="v1.32.2"></a>Sicherere Installation, und Updates verlieren die App nie
 
 <sub>1.32.2 · 11. Oktober 2026</sub>

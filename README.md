@@ -194,6 +194,8 @@ pikapik needs two permissions. On first launch it opens Settings on the Permissi
 
 The app picks up the change within a couple of seconds, no restart needed.
 
+Some features ask for more when you use them: **Fan control**, **Finder Extensions**, **iCloud Drive** and **Full Disk Access**. They're all on the Permissions page in Settings: each permission has a line about what it's for, a green check or an orange cross, and one button, **Allow** when it's missing and **Turn Off** when it's on. So you can take any permission back right there.
+
 pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. The only network request is the update check, which asks GitHub for the latest release.
 
 </details>
@@ -280,14 +282,14 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Keep Awake**: duration, display and lid options.
-- **Fans**: see each fan’s speed, choose Auto or a manual speed.
+- **Fans**: see each fan’s speed, choose Auto or a manual speed once Fan control is allowed.
 - **Speed Test**: check the internet speed and see what it's good for.
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.
 - **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
-- **Permissions**: the status of both permissions, and of iCloud Drive when sync is on, with buttons that open the right place in System Settings.
+- **Permissions**: every permission pikapik uses, each with its status and one button to allow it or turn it off. A tool that is missing a permission looks half-grey, and clicking it opens this page at the right row.
 - **About**: version, links to the changelog and to report a problem.
 
 Many settings come with a small picture of what they do, such as a Mac staying awake or a window hiding behind the Dock. The picture changes together with the switch and stands still when Reduce Motion is on in System Settings.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Yes. It's a universal app for Apple Silicon and Intel, macOS 14 Sonoma or later.
 
 **The permission is on, but nothing works.**
-In **System Settings › Privacy & Security**, remove pikapik from both lists with the − button, then add it again. The Permissions page in pikapik Settings has buttons that open the right place.
+In **System Settings › Privacy & Security**, remove pikapik from both lists with the − button, then add it again. Or do it in pikapik: on the Permissions page, click **Turn Off** for each permission, then **Allow** again.
 
 </details>
 
