@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Installation plus sûre, et une mise à jour ne perd jamais l’app
+
+<sub>1.32.2 · 11 octobre 2026</sub>
+
+Une série de corrections pour installer, mettre à jour et désinstaller en toute sécurité.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+L’assistant des ventilateurs s’installe désormais plus soigneusement et est vérifié avant de démarrer. Si une mise à jour ne peut pas être copiée, votre pikapik actuel reste en place. La désinstallation retire aussi l’assistant des ventilateurs et rétablit votre réglage de répétition des touches, les coins du Dock et les raccourcis système.
+
+Les touches maintenues ne restent plus bloquées quand un outil redémarre, et en désactivant « Répéter une touche maintenue », vous retrouvez votre propre réglage du menu des accents. L’animal se repose quand l’écran est en veille ou verrouillé, et une copie de archive.tar.gz s’appelle désormais archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>La vitesse manuelle des ventilateurs tient dès le premier essai
 
 <sub>1.32.1 · 11 octobre 2026</sub>

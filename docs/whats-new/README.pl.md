@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Bezpieczniejsza instalacja, a aktualizacje nie gubią aplikacji
+
+<sub>1.32.2 · 11 października 2026</sub>
+
+Seria poprawek, które czynią instalację, aktualizację i usuwanie bezpieczniejszymi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Pomocnik wentylatorów jest teraz instalowany staranniej i sprawdzany przed uruchomieniem. Jeśli aktualizacji nie da się skopiować, obecny pikapik zostaje na miejscu. Przy odinstalowaniu usuwany jest też pomocnik wentylatorów, a Twoje ustawienie powtarzania klawiszy, rogi Docka i skróty systemowe wracają do poprzedniego stanu.
+
+Przytrzymane klawisze nie zacinają się już, gdy narzędzie się restartuje, a po wyłączeniu „Powtarzaj przytrzymany klawisz” wraca Twoje własne ustawienie menu akcentów. Zwierzak odpoczywa, gdy ekran śpi lub jest zablokowany, a kopia archive.tar.gz nazywa się teraz archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Ręczna prędkość wentylatorów działa już za pierwszym razem
 
 <sub>1.32.1 · 11 października 2026</sub>

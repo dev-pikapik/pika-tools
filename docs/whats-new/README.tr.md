@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Daha güvenli kurulum, güncellemeler uygulamayı asla kaybetmez
+
+<sub>1.32.2 · 11 Ekim 2026</sub>
+
+Kurulumu, güncellemeyi ve kaldırmayı daha güvenli yapan bir dizi düzeltme.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fan yardımcısı artık daha özenle kuruluyor ve başlamadan önce doğrulanıyor. Bir güncelleme kopyalanamazsa mevcut pikapik olduğu gibi kalır. Kaldırırken fan yardımcısı da silinir; tuş tekrarı ayarınız, Dock köşeleri ve sistem kısayolları eski haline döner.
+
+Bir araç yeniden başladığında basılı tutulan tuşlar artık takılı kalmaz; “Basılı tutulan tuşu tekrarla” kapatılınca kendi vurgu menüsü ayarınız geri gelir. Ekran uykudayken veya kilitliyken evcil hayvan dinlenir; archive.tar.gz kopyası artık archive 2.tar.gz adını alır.
+
+---
+
 ## <a id="v1.32.1"></a>Elle fan hızı ilk denemede tutuyor
 
 <sub>1.32.1 · 11 Ekim 2026</sub>

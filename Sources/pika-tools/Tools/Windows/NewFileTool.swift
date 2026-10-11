@@ -71,8 +71,12 @@ enum NewFile {
     }
 
     static func uniqueURL(for name: String, in folder: URL) -> URL {
-        let base = (name as NSString).deletingPathExtension
-        let ext = (name as NSString).pathExtension
+        var base = (name as NSString).deletingPathExtension
+        var ext = (name as NSString).pathExtension
+        if base.lowercased().hasSuffix(".tar") {
+            base = (base as NSString).deletingPathExtension
+            ext = "tar." + ext
+        }
         var url = folder.appending(path: name)
         var number = 2
         while FileManager.default.fileExists(atPath: url.path) {

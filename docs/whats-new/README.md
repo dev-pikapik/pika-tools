@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Safer installs, and updates that never lose the app
+
+<sub>1.32.2 · October 11, 2026</sub>
+
+A round of fixes that make installing, updating and uninstalling safer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+The fan helper is now installed more carefully and checked before it starts. If an update can’t be copied, your current pikapik stays in place. Uninstalling now also removes the fan helper and puts back your key repeat setting, Dock corners and system shortcuts.
+
+Keys you hold no longer get stuck when a tool restarts, and turning off Repeat a held key gives you back your own accent-menu setting. The pet rests while your screen is asleep or locked, and a copy of archive.tar.gz is now called archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Manual fan speed now sticks on the first try
 
 <sub>1.32.1 · October 11, 2026</sub>
