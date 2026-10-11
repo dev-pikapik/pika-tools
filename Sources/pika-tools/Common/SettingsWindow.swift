@@ -377,15 +377,26 @@ private struct SettingsView: View {
         }
         .searchable(text: $model.search, placement: .sidebar)
         .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
-        .onChange(of: tab, initial: true) { SettingsWindow.window?.title = tab.title }
+        .onChange(of: tab, initial: true) {
+            SettingsWindow.window?.title = tab.title
+            PetProgress.shared.mark("page:\(tab.rawValue)")
+            if tab == .pet { PetProgress.shared.add(.visits) }
+        }
         .onAppear { model.refreshShortcuts() }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in model.refreshShortcuts() }
+        #if !APPSTORE
+        .environment(\.openURL, OpenURLAction { url in
+            if url.host == "github.com", url.pathComponents.dropFirst().first == "dev-pikapik" { PetProgress.shared.add(.github) }
+            return .systemAction(url)
+        })
+        #endif
     }
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
         ForEach(tabs) { tab in
             Label { Text(tab.title) } icon: { tab.icon() }
                 .tag(tab)
+                .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
         }
     }
 
