@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>更安全的安裝，更新不再遺失 App
+
+<sub>1.32.2 · 2026年10月11日</sub>
+
+一批讓安裝、更新與解除安裝更安全的修正。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+風扇小幫手現在安裝得更謹慎，並在啟動前經過驗證。如果更新無法拷貝，目前的 pikapik 會原封不動保留。解除安裝時也會移除風扇小幫手，並還原你的按鍵重複設定、Dock 角落與系統快速鍵。
+
+工具重新啟動時，按住的按鍵不再卡住；關閉「重複按住的按鍵」後，會還原你自己的重音選單設定。螢幕休眠或鎖定時寵物會休息，archive.tar.gz 的拷貝現在叫 archive 2.tar.gz。
+
+---
+
 ## <a id="v1.32.1"></a>風扇手動轉速第一次就能生效
 
 <sub>1.32.1 · 2026年10月11日</sub>

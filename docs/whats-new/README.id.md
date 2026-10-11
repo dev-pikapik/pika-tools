@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Pemasangan lebih aman, dan pembaruan tidak pernah menghilangkan aplikasi
+
+<sub>1.32.2 · 11 Oktober 2026</sub>
+
+Serangkaian perbaikan agar memasang, memperbarui, dan menghapus lebih aman.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Pembantu kipas kini dipasang lebih hati-hati dan diperiksa sebelum dijalankan. Jika pembaruan tidak bisa disalin, pikapik Anda yang sekarang tetap di tempatnya. Saat dihapus, pembantu kipas ikut dibuang, dan pengaturan pengulangan tombol, sudut Dock, serta pintasan sistem Anda dikembalikan.
+
+Tombol yang ditahan tidak lagi macet saat sebuah alat dimulai ulang, dan saat “Ulangi tombol yang ditahan” dimatikan, pengaturan menu aksen milik Anda kembali. Hewan peliharaan beristirahat saat layar tidur atau terkunci, dan salinan archive.tar.gz kini bernama archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Kecepatan kipas manual langsung berlaku pada percobaan pertama
 
 <sub>1.32.1 · 11 Oktober 2026</sub>

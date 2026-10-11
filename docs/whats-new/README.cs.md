@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Bezpečnější instalace a aktualizace, které aplikaci nikdy neztratí
+
+<sub>1.32.2 · 11. října 2026</sub>
+
+Série oprav, které dělají instalaci, aktualizaci i odinstalaci bezpečnější.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Pomocník ventilátorů se nyní instaluje pečlivěji a před spuštěním se ověřuje. Pokud se aktualizaci nepodaří zkopírovat, váš současný pikapik zůstane na místě. Při odinstalaci se odstraní i pomocník ventilátorů a vrátí se vaše nastavení opakování kláves, rohy Docku a systémové zkratky.
+
+Držené klávesy se už nezasekávají, když se nástroj restartuje, a po vypnutí „Opakovat podrženou klávesu“ se vám vrátí vaše vlastní nastavení nabídky akcentů. Mazlíček odpočívá, dokud obrazovka spí nebo je zamčená, a kopie archive.tar.gz se nyní jmenuje archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Ruční rychlost ventilátorů platí hned na první pokus
 
 <sub>1.32.1 · 11. října 2026</sub>
