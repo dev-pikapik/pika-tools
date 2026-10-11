@@ -543,14 +543,13 @@
 
 "System key" = "Tombol sistem";
 "Force Quit" = "Paksa Keluar";
-"System action %@" = "Tindakan sistem %@";
 "Other system shortcuts" = "Pintasan sistem lainnya";
 "While playing" = "Saat bermain";
 "Always available" = "Selalu tersedia";
 "No key assigned" = "Belum ada tombol";
 "Off in macOS" = "Mati di macOS";
 "System keyboard shortcuts" = "Pintasan keyboard sistem";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Beberapa tindakan macOS tidak punya nama yang dipublikasikan. Aplikasi lain bisa punya pintasan sendiri.";
+"Other apps may have their own shortcuts." = "Aplikasi lain bisa punya pintasan sendiri.";
 "More game settings" = "Pengaturan game lainnya";
 "Other apps watching keys" = "Aplikasi lain yang memantau tombol";
 "Can change keys" = "Bisa mengubah tombol";

@@ -543,14 +543,13 @@
 
 "System key" = "Tastă de sistem";
 "Force Quit" = "Închidere forțată";
-"System action %@" = "Acțiune de sistem %@";
 "Other system shortcuts" = "Alte scurtături de sistem";
 "While playing" = "În timpul jocului";
 "Always available" = "Mereu disponibil";
 "No key assigned" = "Nicio tastă alocată";
 "Off in macOS" = "Oprit în macOS";
 "System keyboard shortcuts" = "Scurtături de tastatură ale sistemului";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Unele acțiuni macOS nu au nume publicat. Alte aplicații pot avea propriile scurtături.";
+"Other apps may have their own shortcuts." = "Alte aplicații pot avea propriile scurtături.";
 "More game settings" = "Mai multe configurări de joc";
 "Other apps watching keys" = "Alte aplicații care urmăresc tastele";
 "Can change keys" = "Poate schimba tastele";

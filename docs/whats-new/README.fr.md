@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Les groupes de raccourcis s’ouvrent instantanément
+
+<sub>1.33.2 · 11 octobre 2026</sub>
+
+Même le plus long groupe de raccourcis système s’ouvre aussitôt, et chaque ligne a un nom clair.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Avant, la fenêtre des réglages se figeait un instant à l’ouverture d’un groupe de plusieurs dizaines de lignes, car toutes les lignes et leurs aperçus animés étaient construits d’un coup. Désormais, seules les lignes visibles et quelques voisines sont construites. Les lignes « Action système » suivies d’un numéro ont aussi disparu : Dictée, Siri et les touches de luminosité et de zoom affichent leur vrai nom, et les actions que macOS ne nomme pas sont masquées, mais restent suspendues dans les jeux comme avant.
+
+---
+
 ## <a id="v1.33.1"></a>Les groupes de raccourcis s’ouvrent sans blocage
 
 <sub>1.33.1 · 11 octobre 2026</sub>

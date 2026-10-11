@@ -543,14 +543,13 @@
 
 "System key" = "系統按鍵";
 "Force Quit" = "強制結束";
-"System action %@" = "系統操作 %@";
 "Other system shortcuts" = "其他系統快速鍵";
 "While playing" = "遊戲期間";
 "Always available" = "始終可用";
 "No key assigned" = "未設定按鍵";
 "Off in macOS" = "macOS中已關閉";
 "System keyboard shortcuts" = "系統鍵盤快速鍵";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "部分macOS操作未公開名稱。其他App可能有自己的快速鍵。";
+"Other apps may have their own shortcuts." = "其他App可能有自己的快速鍵。";
 "More game settings" = "更多遊戲設定";
 "Other apps watching keys" = "其他監看按鍵的App";
 "Can change keys" = "可以修改按鍵";

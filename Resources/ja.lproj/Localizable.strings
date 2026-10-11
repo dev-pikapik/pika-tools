@@ -543,14 +543,13 @@
 
 "System key" = "システムキー";
 "Force Quit" = "強制終了";
-"System action %@" = "システム操作 %@";
 "Other system shortcuts" = "その他のシステムショートカット";
 "While playing" = "ゲーム中";
 "Always available" = "常に利用可能";
 "No key assigned" = "キー未設定";
 "Off in macOS" = "macOSでオフ";
 "System keyboard shortcuts" = "システムのキーボードショートカット";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "一部のmacOS操作は名前が公開されていません。他のアプリには独自のショートカットがある場合があります。";
+"Other apps may have their own shortcuts." = "他のアプリには独自のショートカットがある場合があります。";
 "More game settings" = "その他のゲーム設定";
 "Other apps watching keys" = "キーを監視している他のアプリ";
 "Can change keys" = "キーを変更可能";

@@ -543,14 +543,13 @@
 
 "System key" = "Systeemtoets";
 "Force Quit" = "Forceer stop";
-"System action %@" = "Systeemactie %@";
 "Other system shortcuts" = "Andere systeemsneltoetsen";
 "While playing" = "Tijdens spelen";
 "Always available" = "Altijd beschikbaar";
 "No key assigned" = "Geen toetsen toegewezen";
 "Off in macOS" = "Uitgeschakeld in macOS";
 "System keyboard shortcuts" = "Systeemsneltoetsen";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Sommige macOS-acties hebben geen gepubliceerde naam. Andere apps kunnen eigen sneltoetsen hebben.";
+"Other apps may have their own shortcuts." = "Andere apps kunnen eigen sneltoetsen hebben.";
 "More game settings" = "Meer spelinstellingen";
 "Other apps watching keys" = "Andere apps die toetsen volgen";
 "Can change keys" = "Kan toetsen wijzigen";

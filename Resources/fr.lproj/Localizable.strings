@@ -543,14 +543,13 @@
 
 "System key" = "Touche système";
 "Force Quit" = "Forcer à quitter";
-"System action %@" = "Action système %@";
 "Other system shortcuts" = "Autres raccourcis système";
 "While playing" = "Pendant le jeu";
 "Always available" = "Toujours disponible";
 "No key assigned" = "Aucune touche définie";
 "Off in macOS" = "Désactivé dans macOS";
 "System keyboard shortcuts" = "Raccourcis clavier système";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Certaines actions macOS n’ont pas de nom publié. D’autres apps peuvent avoir leurs propres raccourcis.";
+"Other apps may have their own shortcuts." = "D’autres apps peuvent avoir leurs propres raccourcis.";
 "More game settings" = "Autres réglages de jeu";
 "Other apps watching keys" = "Autres apps observant les touches";
 "Can change keys" = "Peut modifier les touches";

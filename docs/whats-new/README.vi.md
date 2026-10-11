@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Nhóm phím tắt mở ngay lập tức
+
+<sub>1.33.2 · 11 tháng 10 năm 2026</sub>
+
+Ngay cả nhóm phím tắt hệ thống dài nhất cũng mở ngay, và dòng nào cũng có tên rõ ràng.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Trước đây cửa sổ cài đặt bị khựng một lúc khi mở một nhóm có hàng chục dòng, vì mọi dòng cùng ảnh xem trước động được tạo cùng lúc. Giờ chỉ những dòng đang hiện trên màn hình và vài dòng gần đó mới được tạo. Các dòng tên “Tác vụ hệ thống” kèm con số cũng biến mất: Đọc chính tả, Siri, các phím độ sáng và thu phóng hiện đúng tên thật, còn các tác vụ mà macOS không đặt tên sẽ bị ẩn nhưng vẫn được tạm dừng trong game như trước.
+
+---
+
 ## <a id="v1.33.1"></a>Nhóm phím tắt mở ra không còn giật
 
 <sub>1.33.1 · 11 tháng 10 năm 2026</sub>

@@ -5,6 +5,7 @@ struct SystemShortcutList: View {
     @Bindable var tool: GameModeTool
     @State private var expanded: Set<GameShortcutGroup> = []
     @State private var listeners: [KeyboardListener] = []
+    static let viewport = "system-shortcuts-viewport"
     private var entries: [SystemGameShortcut] { SettingsWindow.model.systemShortcuts }
 
     var body: some View {
@@ -15,7 +16,7 @@ struct SystemShortcutList: View {
                     DisclosureGroup(isExpanded: Binding(get: { expanded.contains(group) }, set: { if $0 { expanded.insert(group) } else { expanded.remove(group) } })) {
                         if expanded.contains(group) {
                             ForEach(rows) { row in
-                                SystemShortcutRow(entry: row, tool: tool).padding(.vertical, 14)
+                                WindowedShortcutRow(entry: row, tool: tool)
                                 if row.id != rows.last?.id { Divider() }
                             }
                         }
@@ -47,7 +48,7 @@ struct SystemShortcutList: View {
                 Text(verbatim: String(entries.count)).foregroundStyle(.secondary)
             }
         } footer: {
-            Text("Some macOS actions have no published name. Other apps may have their own shortcuts.")
+            Text("Other apps may have their own shortcuts.")
                 .font(.footnote).foregroundStyle(.secondary)
         }
         .settingAnchor(String(localized: "System keyboard shortcuts"))
@@ -82,12 +83,11 @@ struct SystemShortcutRow: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .settingAnchor(entry.anchor)
     }
 
     private var explanation: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(verbatim: entry.displayName)
+            Text(verbatim: entry.name)
             if let detail = entry.detail {
                 Text(verbatim: detail).font(.subheadline).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -114,6 +114,69 @@ struct SystemShortcutRow: View {
             GameShortcutPicker(entry: entry, rules: tool.rules, selection: Binding(get: { choice }, set: { tool.setSystemShortcut(entry.id, mode: $0) }))
                 .disabled(!tool.isEnabled)
         }
+    }
+}
+
+struct WindowedShortcutRow: View {
+    let entry: SystemGameShortcut
+    @Bindable var tool: GameModeTool
+    @State private var near = false
+    @State private var width: CGFloat = 0
+
+    private struct Slot: Equatable {
+        let near: Bool
+        let width: CGFloat
+    }
+
+    var body: some View {
+        Group {
+            if near {
+                SystemShortcutRow(entry: entry, tool: tool)
+                    .onGeometryChange(for: CGSize.self) { $0.size } action: { RowHeights.record(entry, $0) }
+            } else {
+                Color.clear.frame(height: RowHeights.estimate(entry)).accessibilityElement().accessibilityLabel(Text(verbatim: entry.name))
+            }
+        }
+        .settingAnchor(entry.anchor)
+        .padding(.vertical, 14)
+        .onGeometryChange(for: Slot.self) { proxy in
+            let width = proxy.size.width.rounded()
+            guard let viewport = proxy.bounds(of: .named(SystemShortcutList.viewport)) else { return Slot(near: false, width: width) }
+            return Slot(near: viewport.insetBy(dx: 0, dy: -viewport.height / 2).intersects(CGRect(origin: .zero, size: proxy.size)), width: width)
+        } action: { slot in
+            RowHeights.sync(slot.width)
+            if slot.width != width { width = slot.width }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) { if near != slot.near { near = slot.near } }
+        }
+    }
+}
+
+private enum RowHeights {
+    private static var width: CGFloat = 0
+    private static var typical: CGFloat = 207
+    private static var byID: [Int32: CGFloat] = [:]
+    private static var byShape: [String: CGFloat] = [:]
+
+    static func estimate(_ entry: SystemGameShortcut) -> CGFloat {
+        byID[entry.id] ?? byShape[shape(entry)] ?? typical
+    }
+
+    static func record(_ entry: SystemGameShortcut, _ size: CGSize) {
+        sync(size.width.rounded())
+        byID[entry.id] = size.height
+        byShape[shape(entry)] = size.height
+        typical += (size.height - typical) / 4
+    }
+
+    static func sync(_ width: CGFloat) {
+        guard width != self.width else { return }
+        self.width = width
+        byID = [:]
+        byShape = [:]
+    }
+
+    private static func shape(_ entry: SystemGameShortcut) -> String {
+        "\(entry.detail ?? "")|\(entry.text?.count ?? 0)|\(entry.emergency)|\(entry.assigned && !entry.enabled)"
     }
 }
 
