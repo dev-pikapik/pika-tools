@@ -12,7 +12,7 @@ final class KeyRepeatTool: Tool {
         didSet {
             guard isEnabled != oldValue else { return }
             UserDefaults.standard.set(isEnabled, forKey: id)
-            Self.write(isEnabled ? false as CFBoolean : nil)
+            isEnabled ? Self.enable() : Self.restore()
         }
     }
 
@@ -29,11 +29,27 @@ final class KeyRepeatTool: Tool {
     }
 
     static func uninstall() {
-        if UserDefaults.standard.bool(forKey: "key-repeat") { write(nil) }
+        if UserDefaults.standard.bool(forKey: "key-repeat") { restore() }
+    }
+
+    private static let savedKey = "key-repeat-saved"
+    private static let key = "ApplePressAndHoldEnabled" as CFString
+
+    private static func enable() {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: savedKey) == nil {
+            defaults.set((CFPreferencesCopyValue(key, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost) as? Bool).map { [$0] } ?? [], forKey: savedKey)
+        }
+        write(false as CFBoolean)
+    }
+
+    private static func restore() {
+        let saved = UserDefaults.standard.array(forKey: savedKey) as? [Bool]
+        UserDefaults.standard.removeObject(forKey: savedKey)
+        write(saved?.first.map { $0 as CFBoolean })
     }
 
     private static func write(_ value: CFPropertyList?) {
-        let key = "ApplePressAndHoldEnabled" as CFString
         CFPreferencesSetValue(key, value, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost)
         CFPreferencesSynchronize(kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost)
     }
