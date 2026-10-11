@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Nhóm phím tắt mở ra không còn giật
+
+<sub>1.33.1 · 11 tháng 10 năm 2026</sub>
+
+Trang Trò chơi vẫn mượt khi mở một danh sách dài có nhiều bản xem trước.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Trước đây, mở một nhóm phím tắt bàn phím hệ thống làm cửa sổ cài đặt đứng hình tới ba giây, vì mỗi hàng cùng bản xem trước của nó bị tính toán nhiều lần. Giờ mỗi hàng chỉ được tính một lần, nên các nhóm mở ra gần như ngay lập tức.
+
+---
+
 ## <a id="v1.33.0"></a>Mọi quyền gói gọn một chỗ
 
 <sub>1.33.0 · 11 tháng 10 năm 2026</sub>

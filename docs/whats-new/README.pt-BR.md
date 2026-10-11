@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Grupos de atalhos abrem sem travar
+
+<sub>1.33.1 · 11 de outubro de 2026</sub>
+
+A página Jogos continua fluida ao abrir uma lista longa de prévias.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Abrir um grupo de atalhos de teclado do sistema travava a janela de ajustes por até três segundos, porque cada linha com sua prévia era calculada várias vezes. Agora cada linha é calculada uma única vez, então os grupos abrem quase na hora.
+
+---
+
 ## <a id="v1.33.0"></a>Todas as permissões em um só lugar
 
 <sub>1.33.0 · 11 de outubro de 2026</sub>

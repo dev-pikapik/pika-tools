@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Shortcut groups open without a freeze
+
+<sub>1.33.1 · October 11, 2026</sub>
+
+The Games page stays smooth when a long list of previews opens.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Opening a group of system keyboard shortcuts used to freeze the settings window for up to three seconds, because every row with its preview was laid out several times. Now each row is laid out once, so groups open almost at once.
+
+---
+
 ## <a id="v1.33.0"></a>Every permission in one place
 
 <sub>1.33.0 · October 11, 2026</sub>

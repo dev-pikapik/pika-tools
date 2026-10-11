@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Skupiny zkratek se otevírají bez zasekávání
+
+<sub>1.33.1 · 11. října 2026</sub>
+
+Stránka Hry zůstává plynulá, i když se rozbalí dlouhý seznam náhledů.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Rozbalení skupiny systémových klávesových zkratek dřív zamrazilo okno nastavení až na tři sekundy, protože se každý řádek s náhledem počítal několikrát. Teď se každý řádek počítá jen jednou, takže se skupiny otevírají téměř okamžitě.
+
+---
+
 ## <a id="v1.33.0"></a>Všechna oprávnění na jednom místě
 
 <sub>1.33.0 · 11. října 2026</sub>

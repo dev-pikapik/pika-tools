@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Grupy skrótów otwierają się bez zacięć
+
+<sub>1.33.1 · 11 października 2026</sub>
+
+Strona Gry działa płynnie, gdy rozwija się długa lista podglądów.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Rozwinięcie grupy systemowych skrótów klawiaturowych zamrażało okno ustawień nawet na trzy sekundy, bo każdy wiersz z podglądem był obliczany kilka razy. Teraz każdy wiersz jest obliczany tylko raz, więc grupy otwierają się niemal od razu.
+
+---
+
 ## <a id="v1.33.0"></a>Wszystkie uprawnienia w jednym miejscu
 
 <sub>1.33.0 · 11 października 2026</sub>
