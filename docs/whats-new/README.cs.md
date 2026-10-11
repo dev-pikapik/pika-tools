@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Podívejte se, jak rychle se točí ventilátory
+
+<sub>1.32.0 · 11. října 2026</sub>
+
+Nový panel Ventilátory ukazuje každý ventilátor živě a dovolí vám vybrat rychlost.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Ventilátory mají teď v Nastavení vlastní panel a v nabídce vlastní řádek. V reálném čase vidíte, jak rychle se každý z nich právě točí, a vedle něj se točí malý ventilátor.
+
+Nechte Auto a Mac se rozhodne sám, jako vždy. Nebo zvolte Ručně a jedním posuvníkem nastavte rychlost, jakou chcete. Poprvé to jednou povolíte heslem správce, a to je vše.
+
+Je to postavené tak, aby to bylo bezpečné. Ventilátory se vrátí na Auto, když ukončíte pikapik, když Mac usne, když pikapik havaruje nebo když se Mac zahřeje.
+
+**Vyzkoušejte:** Otevřete Nastavení › Ventilátory a podívejte se na rychlost. Zvolte Ručně a vyzkoušejte posuvník.
+
+---
+
 ## <a id="v1.31.4"></a>Podrobnosti, když je potřebujete
 
 <sub>1.31.4 · 11. října 2026</sub>

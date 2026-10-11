@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Zie hoe snel je ventilatoren draaien
+
+<sub>1.32.0 · 11 oktober 2026</sub>
+
+Een nieuw tabblad Ventilatoren toont elke ventilator live en laat je de snelheid kiezen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Ventilatoren hebben nu een eigen tabblad in Instellingen en een rij in het menu. Je ziet in realtime hoe snel elke ventilator nu draait, met een kleine ventilator ernaast die meedraait.
+
+Laat het op Auto staan en je Mac bepaalt het zelf, zoals altijd. Of kies Handmatig en stel met één schuifregelaar de snelheid in die je wilt. De eerste keer geef je eenmalig toestemming met je beheerderswachtwoord, en dat is alles.
+
+Het is gemaakt om veilig te zijn. De ventilatoren gaan terug naar Auto als je pikapik afsluit, als je Mac in slaap gaat, als pikapik crasht of als je Mac heet wordt.
+
+**Probeer het:** Open Instellingen › Ventilatoren en bekijk de snelheid. Kies Handmatig om de schuifregelaar te proberen.
+
+---
+
 ## <a id="v1.31.4"></a>Details wanneer je ze nodig hebt
 
 <sub>1.31.4 · 11 oktober 2026</sub>

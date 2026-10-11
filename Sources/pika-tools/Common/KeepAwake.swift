@@ -307,7 +307,7 @@ final class KeepAwake {
         }
     }
 
-    private static func runAsAdmin(_ command: String, prompt: String) -> Bool {
+    static func runAsAdmin(_ command: String, prompt: String) -> Bool {
         let quote = { (text: String) in
             "\"" + text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"") + "\""
         }

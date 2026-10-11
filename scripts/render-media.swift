@@ -10,6 +10,7 @@ enum RenderMedia {
 
     static let cards: [(name: String, seconds: Double, art: AnyView)] = [
         ("keep-awake", 4.0, AnyView(KeepAwakeCard())),
+        ("fans", 1.6, AnyView(FanScene(rpm: 2500, maximum: 6000, manual: false))),
         ("command-keys", 4.5, AnyView(CommandKeysArt())),
         ("compress", 6.6, AnyView(CompressArt(on: true))),
         ("convert", 8.05, AnyView(ConvertArt(on: true))),
