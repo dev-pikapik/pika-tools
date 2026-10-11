@@ -700,6 +700,11 @@ private struct GeneralSettings: View {
                         Button("Open", systemImage: "arrow.up.forward.app") { sync.openSettings() }
                     }
                     .foregroundStyle(.secondary)
+                } else if sync.state == .noAccess {
+                    LabeledContent("Needs a permission. Click to allow it.") {
+                        Button("Allow") { Permissions.shared.ask([.iCloud]) }
+                    }
+                    .foregroundStyle(.secondary)
                 }
                 #endif
             }

@@ -9,7 +9,7 @@ final class CompressTool: Tool {
     private let finder = FinderExtension(bundle: "Compress", key: "compress")
 
     var isActive: Bool { finder.isActive }
-    var needs: [Permission] { [.finder] }
+    var needs: [Permission] { finder.needsSettings ? [.finder] : [] }
 
     var isEnabled: Bool {
         get { finder.isEnabled }
