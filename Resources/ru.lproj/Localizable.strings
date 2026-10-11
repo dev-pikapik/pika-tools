@@ -543,14 +543,13 @@
 
 "System key" = "Системная клавиша";
 "Force Quit" = "Завершение принудительно";
-"System action %@" = "Системное действие %@";
 "Other system shortcuts" = "Другие системные сочетания";
 "While playing" = "Во время игры";
 "Always available" = "Всегда доступно";
 "No key assigned" = "Клавиши не назначены";
 "Off in macOS" = "Выключено в macOS";
 "System keyboard shortcuts" = "Системные сочетания клавиш";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "У некоторых действий macOS нет опубликованного имени. У других программ могут быть свои сочетания.";
+"Other apps may have their own shortcuts." = "У других программ могут быть свои сочетания.";
 "More game settings" = "Дополнительные настройки игры";
 "Other apps watching keys" = "Другие программы, наблюдающие за клавишами";
 "Can change keys" = "Может изменять ввод";

@@ -543,14 +543,13 @@
 
 "System key" = "सिस्टम कुंजी";
 "Force Quit" = "बलपूर्वक बंद करें";
-"System action %@" = "सिस्टम कार्रवाई %@";
 "Other system shortcuts" = "अन्य सिस्टम शॉर्टकट";
 "While playing" = "खेलते समय";
 "Always available" = "हमेशा उपलब्ध";
 "No key assigned" = "कोई कुंजी निर्धारित नहीं";
 "Off in macOS" = "macOS में बंद";
 "System keyboard shortcuts" = "सिस्टम कीबोर्ड शॉर्टकट";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "कुछ macOS कार्रवाइयों के नाम प्रकाशित नहीं हैं। दूसरे ऐप के अपने शॉर्टकट हो सकते हैं।";
+"Other apps may have their own shortcuts." = "दूसरे ऐप के अपने शॉर्टकट हो सकते हैं।";
 "More game settings" = "और गेम सेटिंग्स";
 "Other apps watching keys" = "कुंजियाँ देखने वाले अन्य ऐप";
 "Can change keys" = "कुंजियाँ बदल सकता है";

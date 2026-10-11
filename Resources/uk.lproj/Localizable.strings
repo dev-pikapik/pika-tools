@@ -543,14 +543,13 @@
 
 "System key" = "Системна клавіша";
 "Force Quit" = "Примусове завершення";
-"System action %@" = "Системна дія %@";
 "Other system shortcuts" = "Інші системні поєднання";
 "While playing" = "Під час гри";
 "Always available" = "Завжди доступно";
 "No key assigned" = "Клавіші не призначені";
 "Off in macOS" = "Вимкнено в macOS";
 "System keyboard shortcuts" = "Системні поєднання клавіш";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Деякі дії macOS не мають опублікованої назви. Інші програми можуть мати власні поєднання.";
+"Other apps may have their own shortcuts." = "Інші програми можуть мати власні поєднання.";
 "More game settings" = "Додаткові параметри гри";
 "Other apps watching keys" = "Інші програми, що стежать за клавішами";
 "Can change keys" = "Може змінювати введення";

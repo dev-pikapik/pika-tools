@@ -543,14 +543,13 @@
 
 "System key" = "Tecla do sistema";
 "Force Quit" = "Forçar Encerrar";
-"System action %@" = "Ação do sistema %@";
 "Other system shortcuts" = "Outros atalhos do sistema";
 "While playing" = "Ao jogar";
 "Always available" = "Sempre disponível";
 "No key assigned" = "Sem teclas atribuídas";
 "Off in macOS" = "Desligado no macOS";
 "System keyboard shortcuts" = "Atalhos de teclado do sistema";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Algumas ações do macOS não têm nome publicado. Outros apps podem ter seus próprios atalhos.";
+"Other apps may have their own shortcuts." = "Outros apps podem ter seus próprios atalhos.";
 "More game settings" = "Mais ajustes do jogo";
 "Other apps watching keys" = "Outros apps observando teclas";
 "Can change keys" = "Pode alterar teclas";

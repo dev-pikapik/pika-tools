@@ -543,14 +543,13 @@
 
 "System key" = "ปุ่มระบบ";
 "Force Quit" = "บังคับออก";
-"System action %@" = "การทำงานระบบ %@";
 "Other system shortcuts" = "ปุ่มลัดระบบอื่น ๆ";
 "While playing" = "ขณะเล่น";
 "Always available" = "ใช้ได้เสมอ";
 "No key assigned" = "ยังไม่ได้กำหนดปุ่ม";
 "Off in macOS" = "ปิดใน macOS";
 "System keyboard shortcuts" = "ปุ่มลัดแป้นพิมพ์ระบบ";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "บางการทำงานของ macOS ไม่มีชื่อที่เผยแพร่ แอปอื่นอาจมีปุ่มลัดของตัวเอง";
+"Other apps may have their own shortcuts." = "แอปอื่นอาจมีปุ่มลัดของตัวเอง";
 "More game settings" = "การตั้งค่าเกมเพิ่มเติม";
 "Other apps watching keys" = "แอปอื่นที่เฝ้าดูปุ่ม";
 "Can change keys" = "เปลี่ยนปุ่มได้";

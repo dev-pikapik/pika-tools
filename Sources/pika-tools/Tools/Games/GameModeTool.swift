@@ -687,6 +687,7 @@ struct GameModePage: View {
             )
         }
         .formStyle(.grouped)
+        .coordinateSpace(.named(SystemShortcutList.viewport))
         .settingsPage()
         .environment(\.inSettings, true)
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
