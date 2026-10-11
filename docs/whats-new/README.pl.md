@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Zobacz, jak szybko kręcą się wentylatory
+
+<sub>1.32.0 · 11 października 2026</sub>
+
+Nowa karta Wentylatory pokazuje każdy wentylator na żywo i pozwala wybrać jego prędkość.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Wentylatory mają teraz własną kartę w Ustawieniach i wiersz w menu. Widzisz w czasie rzeczywistym, jak szybko kręci się każdy z nich, a obok kręci się mały wentylator.
+
+Zostaw Auto, a Mac zdecyduje sam, jak zawsze. Albo wybierz Ręcznie i jednym suwakiem ustaw prędkość, jaką chcesz. Za pierwszym razem zezwalasz na to jednorazowo hasłem administratora i to wszystko.
+
+Całość zaprojektowano z myślą o bezpieczeństwie. Wentylatory wracają do Auto, gdy zamykasz pikapik, gdy Mac przechodzi w stan uśpienia, gdy pikapik zakończy działanie awaryjnie albo gdy Mac się nagrzeje.
+
+**Wypróbuj:** Otwórz Ustawienia › Wentylatory i zobacz prędkość. Wybierz Ręcznie, aby wypróbować suwak.
+
+---
+
 ## <a id="v1.31.4"></a>Szczegóły wtedy, gdy ich potrzebujesz
 
 <sub>1.31.4 · 11 października 2026</sub>

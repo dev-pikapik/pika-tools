@@ -43,132 +43,137 @@ Homebrew でもスクリプトでも、アプリは `/Applications` に入り、
 <br>必要なあいだMacを起こしたまま。蓋を閉じていても大丈夫です。
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>ファン</b>
+<br>ファンの回転の速さを確認し、速さを選べます。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>⌘Qと⌘Wを保護</b>
 <br>うっかり終了したり閉じたりしません。意図して使うときは⇧を足します。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>小さいコピー</b>
 <br>写真やPDF、ビデオを右クリックすると、隣に軽いコピーができます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>変換</b>
 <br>画像やビデオ、曲を右クリックから別の形式で保存できます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>言語を切り替え</b>
 <br>⌥を押したまま⇧を押すと、キーボードの言語が切り替わります。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>最後のウインドウで終了</b>
 <br>アプリの最後のウインドウを閉じると、アプリも終了します。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>緑のボタンで拡大</b>
 <br>フルスクリーンにせず、ウインドウを画面いっぱいに広げます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Dockのクリックで隠す</b>
 <br>使っているアプリのアイコンをクリックすると、さっと隠れます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>新規ファイル</b>
 <br>Finderで右クリックして名前を入れるだけで、空のファイルができます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘Xでファイルを移動</b>
 <br>Finderでファイルを切り取って、好きな場所にペーストできます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enterでファイルを開く</b>
 <br>Finderでファイルを選んでEnterを押すと開きます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Deleteでゴミ箱へ</b>
 <br>Finderで⌫を押すと、選んだファイルがゴミ箱に入ります。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>ゲームモード</b>
 <br>プレイ中は、ゲームの上に何も開かず、うっかり閉じることもありません。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>速度テスト</b>
 <br>インターネットの速さと、それで何ができるかがわかります。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>サイドボタン</b>
 <br>ボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>行単位でスクロール</b>
 <br>ホイールをどれだけ速く回しても、1クリックで同じだけスクロールします。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>スクロール方向</b>
 <br>トラックパッドとマウスで、別々の方向を選べます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>ポインタの加速をオフ</b>
 <br>手を動かしたぶんだけ、ポインタが正確に動きます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>キーを押し続けて連続入力</b>
 <br>キーを押し続けると、アクセントメニューの代わりに文字が繰り返されます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>HomeとEnd</b>
 <br>入力中に行頭や行末へジャンプします。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>アニメーション</b>
 <br>Dock、ウインドウ、クイックルックを速く。瞬時にもできます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>削除したアプリの許可</b>
 <br>削除したアプリのために macOS が残している許可を取り除けます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>デスクトップのペット</b>
@@ -275,6 +280,7 @@ MacBook では **蓋を閉じても動作** をオンにすることもできま
 
 - **一般**: ログイン時に開く、外観モード(システム、ライト、ダーク)、言語、アップデート、バックアップ(設定をファイルとして書き出し・読み込み、または iCloud Drive で同期)。
 - **スリープさせない**: 長さ、ディスプレイと蓋のオプション。
+- **ファン**: 各ファンの回転数の表示、自動または手動の速さの選択。
 - **速度テスト**: インターネットの速さと、それで何ができるか。
 - **キーボード**: 言語の切り替え、キーのリピート、Home と End。
 - **マウス**: ポインタの加速と軌跡の速さ、行単位のスクロール、スクロール方向、サイドボタン。

@@ -43,132 +43,137 @@ Homebrew і скрипт самі кладуть програму в `/Applicati
 <br>Mac не засне, скільки потрібно, навіть із закритою кришкою.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>Вентилятори</b>
+<br>Дивіться, як швидко крутяться вентилятори, і обирайте їхню швидкість.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Захист ⌘Q і ⌘W</b>
 <br>Нічого не закриється випадково. Коли треба, додайте ⇧.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Менша копія</b>
 <br>Правий клік на фото, PDF чи відео — і поруч з’явиться легша копія.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Конвертація</b>
 <br>Збережіть картинку, відео чи пісню в іншому форматі просто з меню правого кліку.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Зміна мови</b>
 <br>Тримайте ⌥ і натисніть ⇧ — мова клавіатури зміниться.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Вихід з останнім вікном</b>
 <br>Закрили останнє вікно — програма теж закрилася.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Зелена кнопка збільшує</b>
 <br>Вікно розтягується на весь екран без повноекранного режиму.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Сховати кліком у Dock</b>
 <br>Клацніть значок програми, у якій ви зараз, і вона зникне з очей.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Новий файл</b>
 <br>Правий клік у Finder, ім’я — і порожній файл готовий.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X переносить файли</b>
 <br>Виріжте файли у Finder і вставте туди, куди треба.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Return відкриває файли</b>
 <br>Виберіть файли у Finder і натисніть Return, щоб відкрити.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete — у Кошик</b>
 <br>Натисніть ⌫ у Finder, і вибрані файли підуть у Кошик.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Ігровий режим</b>
 <br>Поки ви граєте, ніщо не вискочить поверх гри й не закриє її.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Швидкість інтернету</b>
 <br>Наскільки швидкий у вас інтернет і на що його вистачить.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Бічні кнопки миші</b>
 <br>Кнопки 4 і 5 гортають назад і вперед, як свайп.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Прокрутка рядками</b>
 <br>Кожен клік коліщатка прокручує однаково, хоч як швидко крутите.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Напрям прокрутки</b>
 <br>Один напрям для трекпада, інший для миші.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Без прискорення курсора</b>
 <br>Курсор проходить рівно стільки, скільки ваша рука.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Повтор клавіші</b>
 <br>Утримуйте клавішу — літера повторюється, без меню з акцентами.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home і End</b>
 <br>Перехід на початок чи кінець рядка, поки ви друкуєте.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Анімації</b>
 <br>Dock, вікна і Швидкий перегляд стануть швидшими — аж до миттєвих.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Дозволи видалених програм</b>
 <br>Приберіть дозволи, які macOS зберігає для вже видалених програм.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Улюбленець на робочому столі</b>
@@ -275,6 +280,7 @@ pikapik не записує, не зберігає й нікуди не надс
 
 - **Загальні**: відкриття під час входу, вигляд (як у системі, світлий або темний), мова, оновлення та резервна копія: експорт та імпорт параметрів файлом або синхронізація через iCloud Drive.
 - **Не засинати**: тривалість, екран і кришка.
+- **Вентилятори**: швидкість кожного вентилятора, режим «Авто» або ручна швидкість.
 - **Швидкість інтернету**: перевірка швидкості й для чого її вистачить.
 - **Клавіатура**: зміна мови, повтор клавіш, Home і End.
 - **Миша**: прискорення курсора і швидкість пересування, прокручування рядками, напрямок прокручування, бічні кнопки.

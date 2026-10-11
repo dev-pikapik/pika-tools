@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Mira a qué velocidad giran tus ventiladores
+
+<sub>1.32.0 · 11 de octubre de 2026</sub>
+
+Una nueva pestaña Ventiladores muestra cada ventilador en vivo y te deja elegir su velocidad.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Los ventiladores ahora tienen su propia pestaña en Ajustes y una fila en el menú. Ves en tiempo real a qué velocidad gira cada uno, junto a un pequeño ventilador que gira con él.
+
+Déjalo en Auto y tu Mac decide, como siempre. O elige Manual y mueve un solo control deslizante para fijar la velocidad que quieras. La primera vez lo permites una sola vez con la contraseña de administrador, y ya está.
+
+Está pensado para ser seguro. Los ventiladores vuelven a Auto cuando sales de pikapik, cuando tu Mac se suspende, si pikapik se cierra por un fallo o cuando tu Mac se calienta.
+
+**Pruébalo:** Abre Ajustes › Ventiladores y mira la velocidad. Elige Manual para probar el control deslizante.
+
+---
+
 ## <a id="v1.31.4"></a>Detalles cuando los necesitas
 
 <sub>1.31.4 · 11 de octubre de 2026</sub>

@@ -43,132 +43,137 @@ Homebrew와 스크립트 모두 앱을 `/Applications`에 넣고, 실행하고, 
 <br>필요한 만큼 Mac이 깨어 있습니다. 덮개를 닫아도요.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>팬</b>
+<br>팬이 얼마나 빠르게 도는지 보고 속도를 선택하세요.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>⌘Q와 ⌘W 보호</b>
 <br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르세요.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>작은 사본</b>
 <br>사진, PDF, 비디오를 오른쪽 클릭하면 옆에 더 가벼운 사본이 생깁니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>변환</b>
 <br>이미지, 비디오, 노래를 오른쪽 클릭으로 다른 포맷으로 저장합니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>언어 전환</b>
 <br>⌥를 누른 채 ⇧를 탭하면 키보드 언어가 바뀝니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>마지막 윈도우와 함께 종료</b>
 <br>앱의 마지막 윈도우를 닫으면 앱도 종료됩니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>녹색 버튼으로 확대</b>
 <br>전체 화면으로 바꾸지 않고 윈도우가 화면을 채웁니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Dock 클릭으로 가리기</b>
 <br>사용 중인 앱을 클릭하면 살짝 비켜 줍니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>새 파일</b>
 <br>Finder에서 오른쪽 클릭하고 이름만 입력하면 빈 파일이 생깁니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X로 파일 이동</b>
 <br>Finder에서 파일을 잘라내고 원하는 곳에 붙여 넣으세요.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter로 파일 열기</b>
 <br>Finder에서 파일을 선택하고 Enter를 누르면 열립니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete로 휴지통에</b>
 <br>Finder에서 ⌫를 누르면 선택한 파일이 휴지통으로 갑니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>게임 모드</b>
 <br>게임하는 동안 그 위로 아무것도 뜨지 않고, 게임이 닫히지도 않습니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>속도 테스트</b>
 <br>인터넷이 얼마나 빠른지, 무엇을 하기에 충분한지 알려 줍니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>측면 버튼</b>
 <br>4번, 5번 버튼으로 뒤로, 앞으로. 트랙패드에서 쓸어넘기듯이요.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>줄 단위로 스크롤</b>
 <br>휠을 얼마나 빨리 돌려도 한 칸에 같은 만큼 스크롤됩니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>스크롤 방향</b>
 <br>트랙패드와 마우스에 각각 다른 방향을 고를 수 있습니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>포인터 가속 끄기</b>
 <br>손을 움직인 만큼 포인터가 정확히 움직입니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>키를 누르고 있으면 반복 입력</b>
 <br>키를 누르고 있으면 악센트 메뉴 대신 글자가 반복됩니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home과 End</b>
 <br>입력하는 중에 줄의 처음이나 끝으로 이동합니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>애니메이션</b>
 <br>Dock, 윈도우, 훑어보기를 더 빠르게, 원하면 즉시 움직이게 합니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>삭제한 앱의 권한</b>
 <br>삭제한 앱을 위해 macOS가 남겨 둔 권한을 지웁니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>데스크탑 펫</b>
@@ -275,6 +280,7 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 
 - **일반**: 로그인 시 열기, 모양(시스템, 라이트, 다크), 언어, 업데이트, 백업(설정을 파일로 내보내고 가져오기, 또는 iCloud Drive로 동기화).
 - **잠자기 방지**: 기간, 디스플레이 및 덮개 옵션.
+- **팬**: 각 팬의 속도 확인, 자동 또는 수동 속도 선택.
 - **속도 테스트**: 인터넷 속도와 그 속도로 할 수 있는 일.
 - **키보드**: 언어 전환, 키 반복, Home과 End.
 - **마우스**: 포인터 가속과 이동 속도, 줄 단위 스크롤, 스크롤 방향, 측면 버튼.
