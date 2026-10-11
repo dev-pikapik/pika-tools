@@ -25,6 +25,13 @@ if [ -d "$DEST" ] || [ -d "$OLD" ]; then
     $SUDO rm -rf "$DEST" "$OLD"
 fi
 
+FANS="/Library/PrivilegedHelperTools/$BUNDLE_ID.fans"
+if [ -e "$FANS" ]; then
+    say "Removing fan control"
+    sudo launchctl bootout "system/$BUNDLE_ID.fans" >/dev/null 2>&1 || true
+    sudo rm -f "$FANS" "/Library/LaunchDaemons/$BUNDLE_ID.fans.plist"
+fi
+
 say "Resetting permissions and settings"
 tccutil reset Accessibility "$BUNDLE_ID" >/dev/null 2>&1 || true
 tccutil reset ListenEvent "$BUNDLE_ID" >/dev/null 2>&1 || true
