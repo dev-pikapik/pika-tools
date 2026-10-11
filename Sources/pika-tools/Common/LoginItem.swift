@@ -23,7 +23,11 @@ final class LoginItem {
 
     func restore(moved: Bool = false) {
         let defaults = UserDefaults.standard
+        #if APPSTORE
+        let wanted = defaults.object(forKey: Self.key) as? Bool ?? (status == .enabled)
+        #else
         let wanted = defaults.object(forKey: Self.key) as? Bool ?? (!defaults.bool(forKey: "launchedBefore") || status == .enabled)
+        #endif
         defaults.set(wanted, forKey: Self.key)
         if moved, wanted, status == .enabled { try? SMAppService.mainApp.unregister() }
         apply(wanted)

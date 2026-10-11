@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "This macOS action is disabled while the game is in front. When you leave, it works as before.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Every press switches language without the system menu. The same keys still reach the game.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS runs the action normally, even if it opens a window or takes focus from the game.";
+"Choose your home folder once so pikapik can save files next to yours." = "Choose your home folder once so pikapik can save files next to yours.";
+"Choose this folder so pikapik can save files next to yours." = "Choose this folder so pikapik can save files next to yours.";
+"Allow Access" = "Allow Access";
 "Fans" = "Fans";
 "Fan speed" = "Fan speed";
 "Fan control" = "Fan control";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Fans went back to Auto to keep your Mac safe";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal";
 "allow, helper, password, administrator, install, remove" = "allow, helper, password, administrator, install, remove";
+"Say thanks" = "Say thanks";
+"Optional tip. It unlocks nothing." = "Optional tip. It unlocks nothing.";
+"Small tip" = "Small tip";
+"Medium tip" = "Medium tip";
+"Large tip" = "Large tip";
+"Thank you! It means a lot." = "Thank you! It means a lot.";
+"Tips are not available right now." = "Tips are not available right now.";
+"The tip did not go through." = "The tip did not go through.";

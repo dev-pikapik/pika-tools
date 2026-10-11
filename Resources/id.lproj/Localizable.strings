@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Tindakan macOS ini dinonaktifkan saat game berada di depan. Setelah Anda meninggalkan game, tindakan berfungsi seperti semula.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Setiap tekanan mengganti bahasa tanpa menu sistem. Tombol yang sama tetap diterima game.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS menjalankan tindakan secara normal, meski membuka jendela atau memindahkan fokus dari game.";
+"Choose your home folder once so pikapik can save files next to yours." = "Pilih folder utama Anda sekali saja agar pikapik dapat menyimpan file di samping file Anda.";
+"Choose this folder so pikapik can save files next to yours." = "Pilih folder ini agar pikapik dapat menyimpan file di samping file Anda.";
+"Allow Access" = "Izinkan Akses";
 "Fans" = "Kipas";
 "Fan speed" = "Kecepatan kipas";
 "Fan control" = "Kontrol kipas";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Kipas kembali ke Otomatis untuk menjaga Mac Anda tetap aman";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "kipas, rpm, pendingin, lebih sejuk, panas, suhu, bising, senyap, keras, temperatur, termal";
 "allow, helper, password, administrator, install, remove" = "izinkan, pembantu, kata sandi, administrator, pasang, hapus";
+"Say thanks" = "Ucapkan terima kasih";
+"Optional tip. It unlocks nothing." = "Tip opsional. Tidak membuka apa pun.";
+"Small tip" = "Tip kecil";
+"Medium tip" = "Tip sedang";
+"Large tip" = "Tip besar";
+"Thank you! It means a lot." = "Terima kasih! Ini sangat berarti.";
+"Tips are not available right now." = "Tip sedang tidak tersedia.";
+"The tip did not go through." = "Tip tidak berhasil dikirim.";

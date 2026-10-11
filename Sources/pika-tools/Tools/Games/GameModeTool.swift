@@ -252,6 +252,9 @@ final class GameModeTool: Tool {
     }
 
     fileprivate func received(_ name: String) {
+        #if APPSTORE
+        Self.locked = name == "com.apple.screenIsLocked"
+        #endif
         if name == "com.apple.screenIsLocked" {
             leave()
         } else {
@@ -341,9 +344,17 @@ final class GameModeTool: Tool {
         )
     }
 
+    #if APPSTORE
+    private static var locked = false
+    #endif
+
     static var screenLocked: Bool {
         let session = CGSessionCopyCurrentDictionary() as? [String: Any]
+        #if APPSTORE
+        return locked || session?[kCGSessionOnConsoleKey] as? Bool == false
+        #else
         return session?["CGSSessionScreenIsLocked"] as? Bool == true || session?[kCGSessionOnConsoleKey] as? Bool == false
+        #endif
     }
 
     private static var savedRules: Set<GameRule> {
@@ -367,6 +378,13 @@ final class GameModeTool: Tool {
     }
 }
 
+#if APPSTORE
+enum DockEdges {
+    static func calm() {}
+    static func restoreSoon() {}
+    static func restore() {}
+}
+#else
 enum DockEdges {
     private static let key = "game-mode-dock", dock = "com.apple.dock" as CFString
     private static let corners = ["wvous-tl-corner", "wvous-tr-corner", "wvous-bl-corner", "wvous-br-corner"], delay = "autohide-delay"
@@ -412,6 +430,7 @@ enum DockEdges {
         _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
     }
 }
+#endif
 
 private final class CursorFence {
     let frame: CGRect?
@@ -529,6 +548,9 @@ private func gameModeCallback(
         let blocked = GameRules.blocksAppShortcut(key: key, flags: flags, rules: tool.rules, allowed: tool.allowedAppShortcuts)
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
+        #if APPSTORE
+        if SymbolicHotKeys.swallows(key: key, flags: flags.rawValue) { return nil }
+        #endif
     case .flagsChanged:
         if tool.isPlaying { tool.inputIntent.changed(event.flags, at: event.timestamp) }
     case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
@@ -680,7 +702,10 @@ struct GameModePage: View {
     }
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
-        Section {
+        #if APPSTORE
+        let rows = rows.filter { $0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil } }
+        #endif
+        return Section {
             ForEach(rows, id: \.rule) { row in
                 VStack(spacing: 10) {
                     IllustrationRow { GameRuleArt(rule: row.rule, keys: row.keys, on: tool.rules.contains(row.rule)) }

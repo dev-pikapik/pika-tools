@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Hành động macOS này bị tắt khi trò chơi ở phía trước. Khi rời trò chơi, hành động hoạt động như trước.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Mỗi lần nhấn đổi ngôn ngữ mà không mở menu hệ thống. Các phím đó vẫn được gửi tới trò chơi.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS chạy hành động bình thường, kể cả khi mở cửa sổ hoặc lấy tiêu điểm khỏi trò chơi.";
+"Choose your home folder once so pikapik can save files next to yours." = "Hãy chọn thư mục chính của bạn một lần để pikapik có thể lưu tệp cạnh tệp của bạn.";
+"Choose this folder so pikapik can save files next to yours." = "Hãy chọn thư mục này để pikapik có thể lưu tệp cạnh tệp của bạn.";
+"Allow Access" = "Cho phép truy cập";
 "Fans" = "Quạt";
 "Fan speed" = "Tốc độ quạt";
 "Fan control" = "Điều khiển quạt";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Quạt đã trở về Tự động để giữ an toàn cho Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "quạt, vòng/phút, làm mát, mát hơn, nóng, nhiệt, ồn, yên tĩnh, to, nhiệt độ";
 "allow, helper, password, administrator, install, remove" = "cho phép, trợ giúp, mật khẩu, quản trị viên, cài đặt, gỡ";
+"Say thanks" = "Gửi lời cảm ơn";
+"Optional tip. It unlocks nothing." = "Tiền típ tùy ý. Không mở khóa gì cả.";
+"Small tip" = "Típ nhỏ";
+"Medium tip" = "Típ vừa";
+"Large tip" = "Típ lớn";
+"Thank you! It means a lot." = "Cảm ơn bạn! Điều này rất ý nghĩa.";
+"Tips are not available right now." = "Hiện chưa thể gửi tiền típ.";
+"The tip did not go through." = "Không gửi được tiền típ.";

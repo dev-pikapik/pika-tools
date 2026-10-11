@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "การทำงาน macOS นี้จะปิดเมื่อเกมอยู่ด้านหน้า เมื่อออกจากเกมจะทำงานเหมือนเดิม";
 "Every press switches language without the system menu. The same keys still reach the game." = "ทุกครั้งที่กดจะเปลี่ยนภาษาโดยไม่เปิดเมนูระบบ ปุ่มเดียวกันยังส่งถึงเกม";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS ทำงานตามปกติ แม้จะเปิดหน้าต่างหรือดึงโฟกัสออกจากเกม";
+"Choose your home folder once so pikapik can save files next to yours." = "เลือกโฟลเดอร์โฮมของคุณหนึ่งครั้ง เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณได้";
+"Choose this folder so pikapik can save files next to yours." = "เลือกโฟลเดอร์นี้ เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณได้";
+"Allow Access" = "อนุญาตการเข้าถึง";
 "Fans" = "พัดลม";
 "Fan speed" = "ความเร็วพัดลม";
 "Fan control" = "การควบคุมพัดลม";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "พัดลมกลับเป็นอัตโนมัติเพื่อความปลอดภัยของ Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "พัดลม, รอบ, ระบายความร้อน, เย็น, ร้อน, ความร้อน, เสียงดัง, เงียบ, อุณหภูมิ";
 "allow, helper, password, administrator, install, remove" = "อนุญาต, ตัวช่วย, รหัสผ่าน, ผู้ดูแลระบบ, ติดตั้ง, ลบ";
+"Say thanks" = "ขอบคุณ";
+"Optional tip. It unlocks nothing." = "ทิปตามสะดวก ไม่ปลดล็อกอะไรเพิ่ม";
+"Small tip" = "ทิปเล็ก";
+"Medium tip" = "ทิปกลาง";
+"Large tip" = "ทิปใหญ่";
+"Thank you! It means a lot." = "ขอบคุณมาก! มีความหมายกับเรามาก";
+"Tips are not available right now." = "ขณะนี้ยังให้ทิปไม่ได้";
+"The tip did not go through." = "ส่งทิปไม่สำเร็จ";

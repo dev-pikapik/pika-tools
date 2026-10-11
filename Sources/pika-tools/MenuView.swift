@@ -19,10 +19,14 @@ struct MenuView: View {
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
     private func isShown(_ id: String) -> Bool {
-        customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
+        return customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
     }
 
+    #if APPSTORE
+    private var showsFans: Bool { false }
+    #else
     private var showsFans: Bool { FanControl.shared.hasFans && isShown("fans") }
+    #endif
 
     private var visibleTabs: [SettingsTab] {
         [.keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
@@ -103,6 +107,7 @@ struct MenuView: View {
                                 }
                             }
 
+                            #if !APPSTORE
                             if showsFans {
                                 if customizing {
                                     customizeRow(icon: "fan", title: String(localized: "Fans"), id: "fans")
@@ -110,6 +115,7 @@ struct MenuView: View {
                                     FanRow()
                                 }
                             }
+                            #endif
 
                             ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
                                 if index > 0 || isShown("keep-awake") || isShown("speed-test") || showsFans { groupDivider }
@@ -203,6 +209,7 @@ struct MenuView: View {
             }
             .pickerStyle(.radioGroup)
             .labelsHidden()
+            #if !APPSTORE
             Button {
                 NSApp.keyWindow?.close()
                 KeepAwake.turnOffDisplay()
@@ -215,6 +222,7 @@ struct MenuView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
+            #endif
         }
         .padding(.leading, 46)
         .padding(.trailing, 8)
@@ -228,6 +236,7 @@ struct MenuView: View {
 
     @ViewBuilder
     private var updateFooter: some View {
+        #if !APPSTORE
         let updater = Updater.shared
         if case .available(let version) = updater.state {
             Button {
@@ -238,5 +247,6 @@ struct MenuView: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        #endif
     }
 }

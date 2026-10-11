@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "To działanie macOS jest wyłączone, gdy gra jest na pierwszym planie. Po jej opuszczeniu działa jak wcześniej.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Każde naciśnięcie zmienia język bez menu systemowego. Te same klawisze nadal trafiają do gry.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS wykonuje działanie normalnie, nawet jeśli otwiera okno lub przenosi fokus z gry.";
+"Choose your home folder once so pikapik can save files next to yours." = "Wybierz raz swój folder domowy, aby pikapik mógł zapisywać pliki obok Twoich.";
+"Choose this folder so pikapik can save files next to yours." = "Wybierz ten folder, aby pikapik mógł zapisywać pliki obok Twoich.";
+"Allow Access" = "Zezwól na dostęp";
 "Fans" = "Wentylatory";
 "Fan speed" = "Prędkość wentylatorów";
 "Fan control" = "Sterowanie wentylatorami";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Wentylatory wróciły do trybu Auto, aby chronić Maca";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "wentylator, obroty, obr./min, chłodzenie, chłodniej, gorąco, ciepło, hałas, cicho, głośno, temperatura";
 "allow, helper, password, administrator, install, remove" = "zezwól, pomocnik, hasło, administrator, zainstaluj, usuń";
+"Say thanks" = "Podziękuj";
+"Optional tip. It unlocks nothing." = "Napiwek dobrowolny. Niczego nie odblokowuje.";
+"Small tip" = "Mały napiwek";
+"Medium tip" = "Średni napiwek";
+"Large tip" = "Duży napiwek";
+"Thank you! It means a lot." = "Dziękujemy! To dla nas dużo znaczy.";
+"Tips are not available right now." = "Napiwki są teraz niedostępne.";
+"The tip did not go through." = "Nie udało się wysłać napiwku.";

@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Deze macOS-actie is uitgeschakeld zolang de game vooraan staat. Als je weggaat, werkt ze weer zoals voorheen.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Elke druk wisselt de taal zonder systeemmenu. Dezelfde toetsen blijven de game bereiken.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS voert de actie normaal uit, ook als ze een venster opent of de focus van de game wegneemt.";
+"Choose your home folder once so pikapik can save files next to yours." = "Kies één keer je thuismap, zodat pikapik bestanden naast de jouwe kan bewaren.";
+"Choose this folder so pikapik can save files next to yours." = "Kies deze map, zodat pikapik bestanden naast de jouwe kan bewaren.";
+"Allow Access" = "Toegang toestaan";
 "Fans" = "Ventilatoren";
 "Fan speed" = "Ventilatorsnelheid";
 "Fan control" = "Ventilatorbeheer";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "De ventilatoren zijn teruggegaan naar Auto om je Mac te beschermen";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilator, tpm, koeling, koeler, heet, warmte, geluid, stil, luid, temperatuur, thermisch";
 "allow, helper, password, administrator, install, remove" = "toestaan, hulpprogramma, wachtwoord, beheerder, installeren, verwijderen";
+"Say thanks" = "Bedankje geven";
+"Optional tip. It unlocks nothing." = "Optionele fooi. Ontgrendelt niets.";
+"Small tip" = "Kleine fooi";
+"Medium tip" = "Gemiddelde fooi";
+"Large tip" = "Grote fooi";
+"Thank you! It means a lot." = "Bedankt! Dat betekent veel.";
+"Tips are not available right now." = "Fooien zijn nu niet beschikbaar.";
+"The tip did not go through." = "De fooi is niet gelukt.";

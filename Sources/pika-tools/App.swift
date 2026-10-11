@@ -37,12 +37,14 @@ struct PikaToolsApp: App {
                 Button("Settings…") { SettingsWindow.show() }
                     .keyboardShortcut(",")
             }
+            #if !APPSTORE
             CommandGroup(after: .appTermination) {
                 if keepRunning {
                     Button("Quit Completely") { Background.quitCompletely() }
                         .keyboardShortcut("q", modifiers: [.command, .option])
                 }
             }
+            #endif
             CommandGroup(replacing: .help) {}
         }
     }
@@ -73,7 +75,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let path = Bundle.main.bundlePath
+        #if APPSTORE
+        let moved = false
+        #else
         let moved = Updater.isNewPlace(path, last: defaults.string(forKey: "app-path"), launchedBefore: defaults.bool(forKey: "launchedBefore"))
+        #endif
         defaults.set(path, forKey: "app-path")
         LoginItem.shared.restore(moved: moved)
         if moved { FinderExtension.register() }
@@ -93,10 +99,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         permissions.onChange = { ToolRegistry.shared.refresh() }
         ToolRegistry.shared.refresh()
         SettingsSync.shared.refresh()
+        #if APPSTORE
+        TipJar.shared.start()
+        #else
         Updater.shared.start()
+        #endif
         StatusMenu.shared.start()
         KeepAwake.shared.resume()
         KeepAwake.shared.restoreLidSleepIfNeeded()
+        #if !APPSTORE
         FanControl.shared.start()
         signals = [SIGTERM, SIGINT, SIGHUP].map { number in
             signal(number, SIG_IGN)
@@ -105,6 +116,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             source.resume()
             return source
         }
+        #endif
 
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { _ in
             Background.shared.quitting = true
@@ -137,9 +149,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
+        #if !APPSTORE
         FanControl.shared.handOff()
+        #endif
         SpeedTest.shared.cancel()
+        #if !APPSTORE
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
+        #endif
         GameModeTool.shared.leave()
         DockEdges.restore()
     }

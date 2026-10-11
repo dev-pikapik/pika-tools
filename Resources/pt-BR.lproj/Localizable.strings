@@ -606,6 +606,9 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Esta ação do macOS fica desativada quando o jogo está em primeiro plano. Ao sair, ela funciona como antes.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Cada pressão troca o idioma sem o menu do sistema. As mesmas teclas continuam chegando ao jogo.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "O macOS executa a ação normalmente, mesmo que abra uma janela ou tire o foco do jogo.";
+"Choose your home folder once so pikapik can save files next to yours." = "Escolha sua pasta pessoal uma vez para o pikapik salvar arquivos ao lado dos seus.";
+"Choose this folder so pikapik can save files next to yours." = "Escolha esta pasta para o pikapik salvar arquivos ao lado dos seus.";
+"Allow Access" = "Permitir acesso";
 "Fans" = "Ventoinhas";
 "Fan speed" = "Velocidade das ventoinhas";
 "Fan control" = "Controle das ventoinhas";
@@ -629,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "As ventoinhas voltaram para Auto para proteger seu Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventoinha, ventilador, rpm, resfriamento, mais frio, quente, calor, barulho, silencioso, alto, temperatura, térmico";
 "allow, helper, password, administrator, install, remove" = "permitir, ajudante, senha, administrador, instalar, remover";
+"Say thanks" = "Agradecer";
+"Optional tip. It unlocks nothing." = "Gorjeta opcional. Não desbloqueia nada.";
+"Small tip" = "Gorjeta pequena";
+"Medium tip" = "Gorjeta média";
+"Large tip" = "Gorjeta grande";
+"Thank you! It means a lot." = "Obrigado! Isso significa muito.";
+"Tips are not available right now." = "As gorjetas não estão disponíveis agora.";
+"The tip did not go through." = "A gorjeta não foi concluída.";

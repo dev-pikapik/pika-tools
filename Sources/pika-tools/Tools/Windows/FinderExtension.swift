@@ -20,16 +20,27 @@ final class FinderExtension {
     var isEnabled: Bool {
         get { isActive }
         set {
+            #if APPSTORE
+            UserDefaults.standard.set(newValue, forKey: key)
+            refresh()
+            needsSettings = newValue && !isActive
+            return
+            #else
             if newValue, let plugIns = Bundle.main.builtInPlugInsURL {
                 Self.pluginkit("-a", plugIns.appending(path: bundle + ".appex").path)
             }
             Self.pluginkit("-e", newValue ? "use" : "ignore", "-i", id)
             refresh()
             needsSettings = newValue && !isActive
+            #endif
         }
     }
 
     func refresh() {
+        #if APPSTORE
+        isActive = UserDefaults.standard.bool(forKey: key) && FIFinderSyncController.isExtensionEnabled
+        if isActive { needsSettings = false }
+        #else
         isActive = Self.pluginkit("-m", "-i", id).hasPrefix("+")
         if isActive {
             needsSettings = false
@@ -38,6 +49,7 @@ final class FinderExtension {
         if UserDefaults.standard.object(forKey: key) as? Bool != isActive {
             UserDefaults.standard.set(isActive, forKey: key)
         }
+        #endif
     }
 
     func load() {
@@ -45,6 +57,10 @@ final class FinderExtension {
         if saved != isActive { isEnabled = saved }
     }
 
+    #if APPSTORE
+    static func register() {}
+    static func refreshFinderRecord() {}
+    #else
     private func ignoreOtherCopies() {
         guard !id.contains(".dev.") else { return }
         for line in Self.pluginkit("-m", "-p", "com.apple.FinderSync").split(separator: "\n") where line.hasPrefix("+") {
@@ -93,8 +109,19 @@ final class FinderExtension {
         process.waitUntilExit()
         return String(decoding: data, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    #endif
 }
 
+#if APPSTORE
+@Observable
+final class FinderRestart {
+    static let shared = FinderRestart()
+    private(set) var isNeeded = false
+
+    func check() {}
+    func restart() {}
+}
+#else
 @Observable
 final class FinderRestart {
     static let shared = FinderRestart()
@@ -147,6 +174,7 @@ final class FinderRestart {
         return result == 0 ? info.ri_diskio_bytesread + info.ri_diskio_byteswritten : nil
     }
 }
+#endif
 
 struct FinderRestartBar: View {
     private let restart = FinderRestart.shared

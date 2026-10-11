@@ -114,6 +114,9 @@ final class SystemShortcuts {
     }
 
     private static func select(_ title: String, sections: Set<String>) -> Bool {
+        #if APPSTORE
+        return false
+        #else
         func value<T>(_ element: AXUIElement, _ name: String) -> T? {
             var value: CFTypeRef?
             return AXUIElementCopyAttributeValue(element, name as CFString, &value) == .success ? value as? T : nil
@@ -155,6 +158,7 @@ final class SystemShortcuts {
             }
         }
         return false
+        #endif
     }
 
     private static let table: (names: [Int: String], sections: [Int: String], titles: [String: String], button: String, anchors: Set<String>) = {
