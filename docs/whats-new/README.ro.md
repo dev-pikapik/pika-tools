@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Detalii când ai nevoie
+
+<sub>1.31.4 · 11 octombrie 2026</sub>
+
+O pagină de jocuri mai calmă și o singură căutare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Fiecare mod își explică efectul în lista derulantă. Când lista este închisă, pe pagină rămâne doar numele ales.
+
+Descrierile care repetă numele acțiunii au fost eliminate. Informațiile suplimentare utile rămân.
+
+Căutarea globală găsește acțiuni de sistem după nume, sens și taste. Un rezultat deschide și evidențiază setarea exactă.
+
+**Încearcă:** Găsește o acțiune în căutarea globală și deschide lista modurilor sale.
+
+---
+
 ## <a id="v1.31.3"></a>Un stil comun pentru setările de joc
 
 <sub>1.31.3 · 11 octombrie 2026</sub>

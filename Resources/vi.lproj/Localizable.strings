@@ -532,8 +532,6 @@
 "Force Quit" = "Buộc thoát";
 "System action %@" = "Tác vụ hệ thống %@";
 "Other system shortcuts" = "Phím tắt hệ thống khác";
-"Search system shortcuts" = "Tìm phím tắt hệ thống";
-"Refresh" = "Làm mới";
 "While playing" = "Khi chơi";
 "Always available" = "Luôn khả dụng";
 "No key assigned" = "Chưa gán phím";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Phím tắt bàn phím hệ thống";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Một số tác vụ macOS không có tên được công bố. Ứng dụng khác có thể có phím tắt riêng.";
 "More game settings" = "Thêm cài đặt trò chơi";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Phím tắt ngôn ngữ nhanh hoạt động yên lặng. Phím chơi được giữ vẫn đến trò chơi.";
 "Other apps watching keys" = "Ứng dụng khác theo dõi phím";
 "Can change keys" = "Có thể thay đổi phím";
 "Only listens" = "Chỉ theo dõi";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Hiện hoặc ẩn Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Chạy hành động macOS được nêu. Giữ nó tạm dừng nếu làm gián đoạn trò chơi.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS cung cấp các phím nhưng không đặt tên hành động này. Bạn vẫn có thể chọn cách nó hoạt động trong trò chơi.";
-"Stays paused while you play." = "Tạm dừng khi bạn chơi.";
-"Changes language without opening the system menu." = "Đổi ngôn ngữ mà không mở menu hệ thống.";
-"Runs as set in macOS." = "Chạy theo cài đặt của macOS.";
 "Expanded" = "Đã mở rộng";
 "Collapsed" = "Đã thu gọn";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Tinh chỉnh bảo vệ và khám phá phím tắt của Mac.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Hành động macOS này bị tắt khi trò chơi ở phía trước. Khi rời trò chơi, hành động hoạt động như trước.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Mỗi lần nhấn đổi ngôn ngữ mà không mở menu hệ thống. Các phím đó vẫn được gửi tới trò chơi.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS chạy hành động bình thường, kể cả khi mở cửa sổ hoặc lấy tiêu điểm khỏi trò chơi.";
-"Choose what each shortcut does while you play." = "Chọn hành vi của từng phím tắt khi bạn chơi.";

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Details wanneer je ze nodig hebt
+
+<sub>1.31.4 · 11 oktober 2026</sub>
+
+Een rustigere spelpagina en één zoekveld.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Elke modus legt zijn werking uit in de keuzelijst. Als die gesloten is, blijft alleen de gekozen naam op de pagina staan.
+
+Beschrijvingen die de actienaam herhalen zijn verwijderd. Nuttige extra informatie blijft behouden.
+
+De algemene zoekfunctie vindt systeemacties op naam, betekenis en toetsen. Een resultaat opent en markeert precies die instelling.
+
+**Probeer het:** Zoek een actie met de algemene zoekfunctie en open de moduslijst.
+
+---
+
 ## <a id="v1.31.3"></a>Eén stijl voor spelinstellingen
 
 <sub>1.31.3 · 11 oktober 2026</sub>

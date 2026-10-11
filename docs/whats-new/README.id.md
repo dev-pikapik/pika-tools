@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Detail saat dibutuhkan
+
+<sub>1.31.4 · 11 Oktober 2026</sub>
+
+Halaman game lebih tenang dan satu pencarian.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Setiap mode menjelaskan fungsinya di dalam daftar tarik turun. Saat ditutup, hanya nama pilihan yang tersisa di halaman.
+
+Deskripsi yang mengulang nama tindakan dihapus. Informasi tambahan yang berguna tetap ada.
+
+Pencarian global menemukan tindakan sistem berdasarkan nama, makna, dan tombol. Memilih hasil membuka dan menyorot pengaturan yang tepat.
+
+**Coba:** Temukan tindakan di pencarian global dan buka daftar modenya.
+
+---
+
 ## <a id="v1.31.3"></a>Satu tampilan untuk pengaturan game
 
 <sub>1.31.3 · 11 Oktober 2026</sub>

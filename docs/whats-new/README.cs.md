@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Podrobnosti, když je potřebujete
+
+<sub>1.31.4 · 11. října 2026</sub>
+
+Klidnější herní stránka a jedno hledání.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Každý režim vysvětluje své chování v rozbalovacím seznamu. Po zavření zůstane na stránce jen vybraný název.
+
+Popisy opakující název akce byly odstraněny. Užitečné doplňující informace zůstávají.
+
+Globální hledání najde systémové akce podle názvu, významu a kláves. Výsledek otevře a zvýrazní přesné nastavení.
+
+**Vyzkoušejte:** Najděte akci v globálním hledání a otevřete seznam jejích režimů.
+
+---
+
 ## <a id="v1.31.3"></a>Jednotný vzhled herních nastavení
 
 <sub>1.31.3 · 11. října 2026</sub>

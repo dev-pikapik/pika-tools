@@ -532,8 +532,6 @@
 "Force Quit" = "Închidere forțată";
 "System action %@" = "Acțiune de sistem %@";
 "Other system shortcuts" = "Alte scurtături de sistem";
-"Search system shortcuts" = "Caută scurtături de sistem";
-"Refresh" = "Reîmprospătează";
 "While playing" = "În timpul jocului";
 "Always available" = "Mereu disponibil";
 "No key assigned" = "Nicio tastă alocată";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Scurtături de tastatură ale sistemului";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Unele acțiuni macOS nu au nume publicat. Alte aplicații pot avea propriile scurtături.";
 "More game settings" = "Mai multe configurări de joc";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Scurtăturile rapide de limbă lucrează discret. Tastele de joc ținute ajung la joc.";
 "Other apps watching keys" = "Alte aplicații care urmăresc tastele";
 "Can change keys" = "Poate schimba tastele";
 "Only listens" = "Doar urmărește";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Arată sau ascunde Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Execută acțiunea macOS indicată. Las-o în pauză dacă îți întrerupe jocul.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS oferă tastele, dar nu numele acțiunii. Poți alege în continuare comportamentul ei în jocuri.";
-"Stays paused while you play." = "În pauză cât timp te joci.";
-"Changes language without opening the system menu." = "Schimbă limba fără meniul sistemului.";
-"Runs as set in macOS." = "Funcționează conform setărilor macOS.";
 "Expanded" = "Extins";
 "Collapsed" = "Restrâns";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Ajustează protecția și explorează scurtăturile Macului.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Această acțiune macOS este dezactivată când jocul este în prim-plan. Când pleci, funcționează ca înainte.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Fiecare apăsare schimbă limba fără meniul sistemului. Aceleași taste ajung în continuare la joc.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS execută acțiunea normal, chiar dacă deschide o fereastră sau mută focalizarea din joc.";
-"Choose what each shortcut does while you play." = "Alege ce face fiecare scurtătură în timp ce te joci.";

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Details when you need them
+
+<sub>1.31.4 · October 11, 2026</sub>
+
+A calmer Games page and one search.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Every mode explains what it does inside the dropdown. When closed, only its name stays on the page.
+
+Descriptions that repeat the action name are removed. Useful extra information stays.
+
+Global search finds system actions by name, meaning and keys. Selecting a result opens and highlights that exact setting.
+
+**Try it:** Find an action in global search and open its mode list.
+
+---
+
 ## <a id="v1.31.3"></a>One style for game settings
 
 <sub>1.31.3 · October 11, 2026</sub>

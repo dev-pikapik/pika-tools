@@ -605,12 +605,11 @@ struct GameModePage: View {
             }
             Section {
                 DisclosureGroup(isExpanded: $advanced) {
-                    Text("Quick language shortcuts work silently. Held game keys stay in the game.")
-                        .font(.subheadline).foregroundStyle(.secondary)
+                    EmptyView()
                 } label: {
                     GameDisclosureLabel(title: String(localized: "More game settings"), detail: String(localized: "Fine-tune protection and explore your Mac’s shortcuts."), symbol: "slider.horizontal.3")
                 }
-                .disclosureGroupStyle(GameDisclosureStyle())
+                .disclosureGroupStyle(GameDisclosureStyle(contentSpacing: 0))
             }
             if advanced {
                 SystemShortcutList(tool: tool)
@@ -671,7 +670,7 @@ struct GameModePage: View {
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
             if let title = SettingsWindow.model.highlight, title != tool.title && title != String(localized: "Your games") {
                 advanced = true
-                if title == String(localized: "Game safeguards") || !GameShortcutGroup.allCases.contains(where: { $0.title == title }) && title != String(localized: "System keyboard shortcuts") { safeguards = true }
+                if title == String(localized: "Game safeguards") || SettingsWindow.model.highlightedShortcut == nil && !GameShortcutGroup.allCases.contains(where: { $0.title == title }) && title != String(localized: "System keyboard shortcuts") { safeguards = true }
             }
         }
     }
@@ -688,7 +687,7 @@ struct GameModePage: View {
                         .opacity(tool.isEnabled ? 1 : 0.5)
                     Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
                         HStack(spacing: 12) {
-                            RowLabel(Text(row.title), Text(verbatim: row.rule.description.text))
+                            RowLabel(Text(row.title), row.rule.detail.map { Text(verbatim: $0) })
                             Spacer(minLength: 0)
                             if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: row.rule.hotKeys.isEmpty ? nil : SystemShortcuts.place(row.rule.hotKeys)) }
                         }

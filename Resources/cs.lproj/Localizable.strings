@@ -532,8 +532,6 @@
 "Force Quit" = "Vynutit ukončení";
 "System action %@" = "Systémová akce %@";
 "Other system shortcuts" = "Další systémové zkratky";
-"Search system shortcuts" = "Hledat systémové zkratky";
-"Refresh" = "Obnovit";
 "While playing" = "Při hraní";
 "Always available" = "Vždy dostupné";
 "No key assigned" = "Klávesy nepřiřazeny";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Systémové klávesové zkratky";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Některé akce macOS nemají zveřejněný název. Jiné aplikace mohou mít vlastní zkratky.";
 "More game settings" = "Další nastavení hry";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Rychlé jazykové zkratky pracují tiše. Držené herní klávesy se dostávají do hry.";
 "Other apps watching keys" = "Další aplikace sledující klávesy";
 "Can change keys" = "Může měnit klávesy";
 "Only listens" = "Pouze sleduje";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Zobrazuje nebo skrývá Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Provádí uvedenou akci macOS. Nechte ji pozastavenou, pokud ruší hru.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS poskytuje klávesy, ale ne název akce. Přesto můžete vybrat její chování ve hrách.";
-"Stays paused while you play." = "Pozastaveno během hraní.";
-"Changes language without opening the system menu." = "Mění jazyk bez otevření systémové nabídky.";
-"Runs as set in macOS." = "Funguje podle nastavení macOS.";
 "Expanded" = "Rozbaleno";
 "Collapsed" = "Sbaleno";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Upravte ochranu a prozkoumejte zkratky svého Macu.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Tato akce macOS je vypnutá, když je hra v popředí. Po opuštění hry funguje jako dříve.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Každý stisk změní jazyk bez systémové nabídky. Stejné klávesy stále dostává i hra.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS provádí akci normálně, i když otevře okno nebo přenese zaměření ze hry.";
-"Choose what each shortcut does while you play." = "Vyberte, co každá zkratka dělá během hraní.";
