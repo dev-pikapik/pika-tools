@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Le ventole sono tornate su Auto per proteggere il Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventola, giri, raffreddamento, più fresco, caldo, calore, rumore, silenzioso, forte, temperatura, termico";
 "allow, helper, password, administrator, install, remove" = "consenti, assistente, password, amministratore, installa, rimuovi";
+"Say thanks" = "Dì grazie";
+"Optional tip. It unlocks nothing." = "Mancia facoltativa. Non sblocca nulla.";
+"Small tip" = "Mancia piccola";
+"Medium tip" = "Mancia media";
+"Large tip" = "Mancia grande";
+"Thank you! It means a lot." = "Grazie! Significa molto.";
+"Tips are not available right now." = "Le mance non sono disponibili al momento.";
+"The tip did not go through." = "La mancia non è andata a buon fine.";

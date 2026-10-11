@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "As ventoinhas voltaram para Auto para proteger seu Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventoinha, ventilador, rpm, resfriamento, mais frio, quente, calor, barulho, silencioso, alto, temperatura, térmico";
 "allow, helper, password, administrator, install, remove" = "permitir, ajudante, senha, administrador, instalar, remover";
+"Say thanks" = "Agradecer";
+"Optional tip. It unlocks nothing." = "Gorjeta opcional. Não desbloqueia nada.";
+"Small tip" = "Gorjeta pequena";
+"Medium tip" = "Gorjeta média";
+"Large tip" = "Gorjeta grande";
+"Thank you! It means a lot." = "Obrigado! Isso significa muito.";
+"Tips are not available right now." = "As gorjetas não estão disponíveis agora.";
+"The tip did not go through." = "A gorjeta não foi concluída.";

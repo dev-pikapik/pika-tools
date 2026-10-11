@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Ventilátory se vrátily na Auto, aby váš Mac zůstal v bezpečí";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilátor, otáčky, ot/min, chlazení, chladnější, horko, teplo, hluk, tichý, hlasitý, teplota";
 "allow, helper, password, administrator, install, remove" = "povolit, pomocník, heslo, správce, nainstalovat, odebrat";
+"Say thanks" = "Poděkovat";
+"Optional tip. It unlocks nothing." = "Spropitné je dobrovolné. Nic neodemyká.";
+"Small tip" = "Malé spropitné";
+"Medium tip" = "Střední spropitné";
+"Large tip" = "Velké spropitné";
+"Thank you! It means a lot." = "Děkujeme! Moc to pro nás znamená.";
+"Tips are not available right now." = "Spropitné teď není k dispozici.";
+"The tip did not go through." = "Spropitné se nepodařilo odeslat.";

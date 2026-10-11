@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "عادت المراوح إلى الوضع التلقائي لحماية جهاز Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "مروحة, دورات, تبريد, أبرد, حار, حرارة, ضجيج, هادئ, عالٍ, درجة الحرارة";
 "allow, helper, password, administrator, install, remove" = "سماح, مساعد, كلمة سر, مسؤول, تثبيت, إزالة";
+"Say thanks" = "قل شكرًا";
+"Optional tip. It unlocks nothing." = "بقشيش اختياري. لا يفتح أي شيء.";
+"Small tip" = "بقشيش صغير";
+"Medium tip" = "بقشيش متوسط";
+"Large tip" = "بقشيش كبير";
+"Thank you! It means a lot." = "شكرًا لك! هذا يعني لنا الكثير.";
+"Tips are not available right now." = "البقشيش غير متاح حاليًا.";
+"The tip did not go through." = "لم يكتمل البقشيش.";

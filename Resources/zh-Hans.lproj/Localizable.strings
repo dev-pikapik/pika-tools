@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "为了保护你的 Mac，风扇已恢复为自动";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "风扇, 转速, rpm, 散热, 降温, 热, 发烫, 噪音, 安静, 吵, 温度";
 "allow, helper, password, administrator, install, remove" = "允许, 辅助, 密码, 管理员, 安装, 移除";
+"Say thanks" = "说声谢谢";
+"Optional tip. It unlocks nothing." = "自愿打赏，不会解锁任何内容。";
+"Small tip" = "小额打赏";
+"Medium tip" = "中额打赏";
+"Large tip" = "大额打赏";
+"Thank you! It means a lot." = "谢谢！这对我们意义重大。";
+"Tips are not available right now." = "目前无法打赏。";
+"The tip did not go through." = "打赏未能完成。";

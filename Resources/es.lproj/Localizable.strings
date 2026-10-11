@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Los ventiladores volvieron a Auto para proteger tu Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilador, rpm, refrigeración, más fresco, calor, caliente, ruido, silencio, fuerte, temperatura, térmico";
 "allow, helper, password, administrator, install, remove" = "permitir, ayudante, contraseña, administrador, instalar, quitar";
+"Say thanks" = "Dar las gracias";
+"Optional tip. It unlocks nothing." = "Propina opcional. No desbloquea nada.";
+"Small tip" = "Propina pequeña";
+"Medium tip" = "Propina mediana";
+"Large tip" = "Propina grande";
+"Thank you! It means a lot." = "¡Gracias! Significa mucho.";
+"Tips are not available right now." = "Las propinas no están disponibles ahora.";
+"The tip did not go through." = "La propina no se pudo completar.";

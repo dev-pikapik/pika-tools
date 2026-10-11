@@ -632,3 +632,11 @@
 "Fans went back to Auto to keep your Mac safe" = "Wentylatory wróciły do trybu Auto, aby chronić Maca";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "wentylator, obroty, obr./min, chłodzenie, chłodniej, gorąco, ciepło, hałas, cicho, głośno, temperatura";
 "allow, helper, password, administrator, install, remove" = "zezwól, pomocnik, hasło, administrator, zainstaluj, usuń";
+"Say thanks" = "Podziękuj";
+"Optional tip. It unlocks nothing." = "Napiwek dobrowolny. Niczego nie odblokowuje.";
+"Small tip" = "Mały napiwek";
+"Medium tip" = "Średni napiwek";
+"Large tip" = "Duży napiwek";
+"Thank you! It means a lot." = "Dziękujemy! To dla nas dużo znaczy.";
+"Tips are not available right now." = "Napiwki są teraz niedostępne.";
+"The tip did not go through." = "Nie udało się wysłać napiwku.";

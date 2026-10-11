@@ -99,7 +99,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         permissions.onChange = { ToolRegistry.shared.refresh() }
         ToolRegistry.shared.refresh()
         SettingsSync.shared.refresh()
-        #if !APPSTORE
+        #if APPSTORE
+        TipJar.shared.start()
+        #else
         Updater.shared.start()
         #endif
         StatusMenu.shared.start()
