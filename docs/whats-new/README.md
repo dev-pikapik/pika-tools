@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>See how fast your fans spin
+
+<sub>1.32.0 · October 11, 2026</sub>
+
+A new Fans tab shows every fan live, and lets you pick its speed.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fans now has its own tab in Settings and a row in the menu. You see how fast each fan is spinning right now, in real time, next to a little fan that spins along with it.
+
+Leave it on Auto and your Mac decides, like always. Or choose Manual and drag one slider to set the speed you want. The first time, you allow it once with your administrator password, and that’s all.
+
+It’s built to be safe. The fans go back to Auto when you quit pikapik, when your Mac goes to sleep, if pikapik crashes, or when your Mac gets hot.
+
+**Try it:** Open Settings › Fans and watch the speed. Pick Manual to try the slider.
+
+---
+
 ## <a id="v1.31.4"></a>Details when you need them
 
 <sub>1.31.4 · October 11, 2026</sub>

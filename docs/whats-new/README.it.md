@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Guarda quanto veloce girano le tue ventole
+
+<sub>1.32.0 · 11 ottobre 2026</sub>
+
+Una nuova scheda Ventole mostra ogni ventola in diretta e ti lascia scegliere la velocità.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Le ventole ora hanno una scheda tutta loro nelle Impostazioni e una riga nel menu. Vedi in tempo reale quanto veloce gira ogni ventola, con una piccola ventola che gira insieme a lei.
+
+Lascia su Auto e il Mac decide da solo, come sempre. Oppure scegli Manuale e trascina un solo cursore per impostare la velocità che vuoi. La prima volta lo consenti una volta sola con la password di amministratore, e basta.
+
+È pensato per essere sicuro. Le ventole tornano su Auto quando esci da pikapik, quando il Mac va in stop, se pikapik si chiude per un errore o quando il Mac si scalda troppo.
+
+**Provalo:** Apri Impostazioni › Ventole e guarda la velocità. Scegli Manuale per provare il cursore.
+
+---
+
 ## <a id="v1.31.4"></a>I dettagli quando servono
 
 <sub>1.31.4 · 11 ottobre 2026</sub>

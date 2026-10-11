@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Lihat seberapa cepat kipas Anda berputar
+
+<sub>1.32.0 · 11 Oktober 2026</sub>
+
+Tab Kipas yang baru menampilkan setiap kipas secara langsung dan memungkinkan Anda memilih kecepatannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Kipas kini punya tab sendiri di Pengaturan dan satu baris di menu. Anda melihat secara langsung seberapa cepat tiap kipas berputar saat ini, dengan kipas kecil yang ikut berputar di sebelahnya.
+
+Biarkan di Otomatis, dan Mac Anda yang memutuskan seperti biasa. Atau pilih Manual dan geser satu penggeser untuk mengatur kecepatan yang Anda mau. Pertama kali, Anda mengizinkannya sekali dengan kata sandi administrator, dan selesai.
+
+Dibuat agar aman. Kipas kembali ke Otomatis saat Anda keluar dari pikapik, saat Mac masuk mode tidur, jika pikapik berhenti karena error, atau saat Mac menjadi panas.
+
+**Coba:** Buka Pengaturan › Kipas dan lihat kecepatannya. Pilih Manual untuk mencoba penggesernya.
+
+---
+
 ## <a id="v1.31.4"></a>Detail saat dibutuhkan
 
 <sub>1.31.4 · 11 Oktober 2026</sub>
