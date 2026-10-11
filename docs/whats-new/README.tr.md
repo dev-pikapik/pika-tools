@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Kısayol grupları anında açılıyor
+
+<sub>1.33.2 · 11 Ekim 2026</sub>
+
+En uzun sistem kısayolu grubu bile hemen açılıyor ve her satırın anlaşılır bir adı var.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Eskiden onlarca satırlık bir grup açıldığında ayarlar penceresi bir an donuyordu, çünkü tüm satırlar ve hareketli önizlemeleri aynı anda oluşturuluyordu. Artık yalnızca ekranda görünen satırlar ve yakınındaki birkaç satır oluşturuluyor. “Sistem eylemi” ve bir sayıdan oluşan satırlar da kalktı: Dikte, Siri, parlaklık ve büyütme tuşları gerçek adlarıyla görünüyor; macOS’un ad vermediği eylemler gizleniyor ama oyunlarda eskisi gibi duraklatılmaya devam ediyor.
+
+---
+
 ## <a id="v1.33.1"></a>Kısayol grupları takılmadan açılıyor
 
 <sub>1.33.1 · 11 Ekim 2026</sub>

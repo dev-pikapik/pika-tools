@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Grupy skrótów otwierają się natychmiast
+
+<sub>1.33.2 · 11 października 2026</sub>
+
+Nawet najdłuższa grupa skrótów systemowych otwiera się od razu, a każdy wiersz ma czytelną nazwę.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Wcześniej okno ustawień na chwilę się zacinało, gdy otwierała się grupa z dziesiątkami wierszy, bo wszystkie wiersze z animowanymi podglądami powstawały naraz. Teraz powstają tylko wiersze widoczne na ekranie i kilka sąsiednich. Zniknęły też wiersze „Działanie systemowe” z numerem: Dyktowanie, Siri oraz klawisze jasności i powiększenia pokazują prawdziwe nazwy, a działania, którym macOS nie nadaje nazwy, są ukryte, ale w grach nadal są wstrzymywane jak dotąd.
+
+---
+
 ## <a id="v1.33.1"></a>Grupy skrótów otwierają się bez zacięć
 
 <sub>1.33.1 · 11 października 2026</sub>

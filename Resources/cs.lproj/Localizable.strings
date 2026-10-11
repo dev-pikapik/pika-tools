@@ -543,14 +543,13 @@
 
 "System key" = "Systémová klávesa";
 "Force Quit" = "Vynutit ukončení";
-"System action %@" = "Systémová akce %@";
 "Other system shortcuts" = "Další systémové zkratky";
 "While playing" = "Při hraní";
 "Always available" = "Vždy dostupné";
 "No key assigned" = "Klávesy nepřiřazeny";
 "Off in macOS" = "Vypnuto v macOS";
 "System keyboard shortcuts" = "Systémové klávesové zkratky";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Některé akce macOS nemají zveřejněný název. Jiné aplikace mohou mít vlastní zkratky.";
+"Other apps may have their own shortcuts." = "Jiné aplikace mohou mít vlastní zkratky.";
 "More game settings" = "Další nastavení hry";
 "Other apps watching keys" = "Další aplikace sledující klávesy";
 "Can change keys" = "Může měnit klávesy";

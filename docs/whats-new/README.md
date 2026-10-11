@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Shortcut groups open instantly
+
+<sub>1.33.2 · October 11, 2026</sub>
+
+Even the longest group of system shortcuts opens at once, and every row has a clear name.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+A group with dozens of rows used to freeze the settings window for a moment, because every row and its animated preview was built at once. Now only the rows you can see, plus a few around them, are built. Rows called “System action” with a number are gone too: Dictation, Siri and the brightness and zoom keys show their real names, and actions macOS gives no name to are hidden but still paused in games as before.
+
+---
+
 ## <a id="v1.33.1"></a>Shortcut groups open without a freeze
 
 <sub>1.33.1 · October 11, 2026</sub>

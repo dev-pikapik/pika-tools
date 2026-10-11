@@ -543,14 +543,13 @@
 
 "System key" = "Phím hệ thống";
 "Force Quit" = "Buộc thoát";
-"System action %@" = "Tác vụ hệ thống %@";
 "Other system shortcuts" = "Phím tắt hệ thống khác";
 "While playing" = "Khi chơi";
 "Always available" = "Luôn khả dụng";
 "No key assigned" = "Chưa gán phím";
 "Off in macOS" = "Tắt trong macOS";
 "System keyboard shortcuts" = "Phím tắt bàn phím hệ thống";
-"Some macOS actions have no published name. Other apps may have their own shortcuts." = "Một số tác vụ macOS không có tên được công bố. Ứng dụng khác có thể có phím tắt riêng.";
+"Other apps may have their own shortcuts." = "Ứng dụng khác có thể có phím tắt riêng.";
 "More game settings" = "Thêm cài đặt trò chơi";
 "Other apps watching keys" = "Ứng dụng khác theo dõi phím";
 "Can change keys" = "Có thể thay đổi phím";

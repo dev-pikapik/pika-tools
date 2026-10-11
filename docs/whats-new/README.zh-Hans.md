@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>快捷键分组立即打开
+
+<sub>1.33.2 · 2026年10月11日</sub>
+
+即使是最长的系统快捷键分组也会马上打开，每一行都有清楚的名称。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+以前打开一个有几十行的分组时，设置窗口会卡住片刻，因为所有行和它们的动画预览会一次性生成。现在只生成屏幕上看得到的行和附近的几行。显示为“系统操作”加编号的行也不见了：听写、Siri、亮度和缩放键显示真实名称，macOS没有命名的操作会被隐藏，但在游戏中仍和以前一样会被暂停。
+
+---
+
 ## <a id="v1.33.1"></a>快捷键分组展开不再卡顿
 
 <sub>1.33.1 · 2026年10月11日</sub>

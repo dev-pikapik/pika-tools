@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Grupos de atalhos abrem na hora
+
+<sub>1.33.2 · 11 de outubro de 2026</sub>
+
+Até o grupo mais longo de atalhos do sistema abre logo, e cada linha tem um nome claro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Antes, a janela de ajustes travava por um instante ao abrir um grupo com dezenas de linhas, porque todas as linhas e suas prévias animadas eram montadas de uma vez. Agora só são montadas as linhas visíveis e algumas próximas. As linhas “Ação do sistema” com um número também sumiram: Ditado, Siri e as teclas de brilho e zoom mostram o nome real, e as ações que o macOS não nomeia ficam ocultas, mas continuam pausadas nos jogos como antes.
+
+---
+
 ## <a id="v1.33.1"></a>Grupos de atalhos abrem sem travar
 
 <sub>1.33.1 · 11 de outubro de 2026</sub>

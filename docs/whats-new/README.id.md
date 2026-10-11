@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Grup pintasan terbuka seketika
+
+<sub>1.33.2 · 11 Oktober 2026</sub>
+
+Grup pintasan sistem yang paling panjang pun langsung terbuka, dan setiap baris punya nama yang jelas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Dulu jendela pengaturan sempat macet sebentar saat grup berisi puluhan baris dibuka, karena semua baris beserta pratinjau animasinya dibuat sekaligus. Sekarang hanya baris yang terlihat dan beberapa di sekitarnya yang dibuat. Baris bernama “Tindakan sistem” dengan sebuah angka juga hilang: Dikte, Siri, serta tombol kecerahan dan zoom menampilkan nama aslinya, dan tindakan yang tidak diberi nama oleh macOS disembunyikan, tetapi tetap dijeda saat bermain game seperti sebelumnya.
+
+---
+
 ## <a id="v1.33.1"></a>Grup pintasan terbuka tanpa macet
 
 <sub>1.33.1 · 11 Oktober 2026</sub>

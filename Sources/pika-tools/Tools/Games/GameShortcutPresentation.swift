@@ -142,8 +142,6 @@ extension SystemGameShortcut {
         }
     }
 
-    var displayName: String { SystemShortcutCatalog.nonempty(name) ?? String(localized: "System action \(String(id))") }
-
     var description: GameShortcutDescription {
         if rawName.lowercased().contains("dock hiding") { return .dock }
         if rawName.lowercased().contains("siri") { return .siri }

@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Skupiny zkratek se otevírají okamžitě
+
+<sub>1.33.2 · 11. října 2026</sub>
+
+I ta nejdelší skupina systémových zkratek se otevře hned a každý řádek má jasný název.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Dřív se okno nastavení na chvíli zaseklo, když se otevírala skupina s desítkami řádků, protože se všechny řádky i s animovanými náhledy vytvářely najednou. Teď se vytvářejí jen řádky, které jsou vidět, a pár sousedních. Zmizely i řádky „Systémová akce“ s číslem: Diktování, Siri a klávesy jasu a zvětšení ukazují svůj skutečný název a akce, kterým macOS nedává název, jsou skryté, ale ve hrách se dál pozastavují stejně jako dřív.
+
+---
+
 ## <a id="v1.33.1"></a>Skupiny zkratek se otevírají bez zasekávání
 
 <sub>1.33.1 · 11. října 2026</sub>

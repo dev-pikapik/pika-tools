@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Genvägsgrupper öppnas direkt
+
+<sub>1.33.2 · 11 oktober 2026</sub>
+
+Även den längsta gruppen systemgenvägar öppnas med en gång, och varje rad har ett tydligt namn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Tidigare hakade inställningsfönstret upp sig en stund när en grupp med dussintals rader öppnades, eftersom alla rader och deras animerade förhandsvisningar byggdes på en gång. Nu byggs bara de rader som syns och några i närheten. Raderna ”Systemåtgärd” med ett nummer är också borta: Diktering, Siri och tangenterna för ljusstyrka och zoom visar sina riktiga namn, och åtgärder som macOS inte namnger döljs men pausas fortfarande i spel precis som förut.
+
+---
+
 ## <a id="v1.33.1"></a>Grupper med kortkommandon öppnas utan att hacka
 
 <sub>1.33.1 · 11 oktober 2026</sub>
