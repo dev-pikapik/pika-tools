@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>ショートカットのグループがすぐに開くように
+
+<sub>1.33.1 · 2026年10月11日</sub>
+
+プレビューの多い長いリストを開いても、「ゲーム」ページがもたつきません。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+これまでシステムのキーボードショートカットのグループを開くと、各行とそのプレビューが何度も計算されるため、設定ウインドウが最大3秒ほど固まっていました。今後は各行を一度だけ計算するので、グループはほぼすぐに開きます。
+
+---
+
 ## <a id="v1.33.0"></a>すべての許可を、ひとつの場所に
 
 <sub>1.33.0 · 2026年10月11日</sub>

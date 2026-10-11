@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>단축키 그룹이 멈춤 없이 열립니다
+
+<sub>1.33.1 · 2026년 10월 11일</sub>
+
+미리보기가 많은 긴 목록을 열어도 게임 페이지가 부드럽게 동작합니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+이전에는 시스템 키보드 단축키 그룹을 열면 각 행과 미리보기를 여러 번 계산하느라 설정 창이 최대 3초 동안 멈췄습니다. 이제 각 행을 한 번만 계산하므로 그룹이 거의 바로 열립니다.
+
+---
+
 ## <a id="v1.33.0"></a>모든 권한을 한곳에서
 
 <sub>1.33.0 · 2026년 10월 11일</sub>

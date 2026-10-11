@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Kürzelgruppen öffnen sich ohne Hänger
+
+<sub>1.33.1 · 11. Oktober 2026</sub>
+
+Die Seite „Spiele“ bleibt flüssig, wenn eine lange Liste mit Vorschauen aufklappt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Beim Aufklappen einer Gruppe von Systemtastenkürzeln fror das Einstellungsfenster bisher bis zu drei Sekunden ein, weil jede Zeile mit ihrer Vorschau mehrmals berechnet wurde. Jetzt wird jede Zeile nur einmal berechnet, sodass sich Gruppen fast sofort öffnen.
+
+---
+
 ## <a id="v1.33.0"></a>Alle Berechtigungen an einem Ort
 
 <sub>1.33.0 · 11. Oktober 2026</sub>

@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Les groupes de raccourcis s’ouvrent sans blocage
+
+<sub>1.33.1 · 11 octobre 2026</sub>
+
+La page Jeux reste fluide quand une longue liste d’aperçus s’ouvre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Ouvrir un groupe de raccourcis clavier système figeait la fenêtre des réglages jusqu’à trois secondes, car chaque ligne et son aperçu étaient calculés plusieurs fois. Désormais, chaque ligne n’est calculée qu’une fois : les groupes s’ouvrent presque aussitôt.
+
+---
+
 ## <a id="v1.33.0"></a>Toutes les autorisations au même endroit
 
 <sub>1.33.0 · 11 octobre 2026</sub>
