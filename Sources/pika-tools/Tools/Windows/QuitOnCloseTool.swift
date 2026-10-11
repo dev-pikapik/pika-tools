@@ -210,7 +210,6 @@ final class QuitOnCloseTool: Tool {
         }
         if candidates.contains(where: { $0[kCGWindowIsOnscreen as String] as? Bool == true }) { return true }
         #if APPSTORE
-        // APPSTORE: public Spaces API replaces the CGS window-space check
         return !candidates.isEmpty
         #else
         let visible = visibleSpaces()

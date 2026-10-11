@@ -37,12 +37,14 @@ struct PikaToolsApp: App {
                 Button("Settings…") { SettingsWindow.show() }
                     .keyboardShortcut(",")
             }
+            #if !APPSTORE
             CommandGroup(after: .appTermination) {
                 if keepRunning {
                     Button("Quit Completely") { Background.quitCompletely() }
                         .keyboardShortcut("q", modifiers: [.command, .option])
                 }
             }
+            #endif
             CommandGroup(replacing: .help) {}
         }
     }

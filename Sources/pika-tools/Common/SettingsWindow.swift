@@ -93,7 +93,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Turn off the display now"),
         ]
-        return allItems.filter { $0.tab != .animations && $0.tab != .speedTest && !hidden.contains($0.title) }
+        return allItems.filter { $0.tab != .animations && !hidden.contains($0.title) }
         #else
         return allItems
         #endif
@@ -301,12 +301,21 @@ enum SettingsWindow {
     }
 
     static func restart() {
+        #if APPSTORE
+        let configuration = NSWorkspace.OpenConfiguration()
+        configuration.createsNewApplicationInstance = true
+        configuration.arguments = ["--settings"]
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { _, error in
+            DispatchQueue.main.async { if error == nil { Background.quit() } }
+        }
+        #else
         let helper = Process()
         helper.executableURL = URL(fileURLWithPath: "/bin/bash")
         helper.arguments = ["-c", "while kill -0 \"$1\" 2>/dev/null; do sleep 0.2; done; open \"$2\" --args --settings",
                             "pika-restart", String(ProcessInfo.processInfo.processIdentifier), Bundle.main.bundleURL.path]
         try? helper.run()
         Background.quit()
+        #endif
     }
 }
 
@@ -320,7 +329,7 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .keepAwake, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
+                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
                     #else
                     Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games, .pet]) }
                     #endif

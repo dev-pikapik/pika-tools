@@ -606,3 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "गेम सामने होने पर यह macOS क्रिया बंद रहती है। गेम से बाहर जाने पर पहले की तरह काम करती है।";
 "Every press switches language without the system menu. The same keys still reach the game." = "हर दबाव पर सिस्टम मेनू के बिना भाषा बदलती है। वही कुंजियाँ गेम तक भी पहुँचती रहती हैं।";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS क्रिया सामान्य रूप से चलाता है, भले ही वह विंडो खोले या गेम से फ़ोकस हटा दे।";
+"Choose your home folder once so pikapik can save files next to yours." = "अपना होम फ़ोल्डर एक बार चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके।";
+"Choose this folder so pikapik can save files next to yours." = "यह फ़ोल्डर चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके।";
+"Allow Access" = "पहुँच की अनुमति दें";

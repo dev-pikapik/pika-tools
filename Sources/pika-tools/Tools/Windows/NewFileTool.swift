@@ -37,6 +37,7 @@ enum NewFile {
               path.hasPrefix("/"),
               ToolRegistry.shared.tools.contains(where: { $0 is NewFileTool && $0.isActive })
         else { return }
+        guard FolderAccess.ensure([URL(fileURLWithPath: path, isDirectory: true)]) else { return }
         var isFolder: ObjCBool = false
         guard FileManager.default.fileExists(atPath: path, isDirectory: &isFolder), isFolder.boolValue else { return }
         RunLoop.main.perform { ask(in: URL(fileURLWithPath: path, isDirectory: true)) }

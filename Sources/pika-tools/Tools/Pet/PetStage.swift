@@ -255,8 +255,18 @@ final class PetStage: NSObject {
     }
 
     #if APPSTORE
-    // APPSTORE: public Spaces/fullscreen detection replaces the SkyLight space-type lookup
-    private static let space: ((String) -> Int32)? = nil
+    private static func fullscreen(_ screen: NSScreen) -> Bool {
+        let top = NSScreen.screens.first?.frame.maxY ?? 0
+        let frame = CGRect(x: screen.frame.minX, y: top - screen.frame.maxY, width: screen.frame.width, height: screen.frame.height)
+        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+        let me = Int(ProcessInfo.processInfo.processIdentifier)
+        return windows.contains { info in
+            guard info[kCGWindowLayer as String] as? Int == 0, info[kCGWindowOwnerPID as String] as? Int != me,
+                  info[kCGWindowAlpha as String] as? Double ?? 1 > 0,
+                  let bounds = (info[kCGWindowBounds as String] as? NSDictionary).flatMap({ CGRect(dictionaryRepresentation: $0) }) else { return false }
+            return bounds.equalTo(frame)
+        }
+    }
     #else
     private static let space: ((String) -> Int32)? = {
         typealias Connection = @convention(c) () -> Int32
@@ -273,7 +283,6 @@ final class PetStage: NSObject {
             return kind(cid, current(cid, display as CFString))
         }
     }()
-    #endif
 
     private static func fullscreen(_ screen: NSScreen) -> Bool {
         guard let space else { return false }
@@ -281,6 +290,7 @@ final class PetStage: NSObject {
         guard let uuid = CGDisplayCreateUUIDFromDisplayID(id(screen))?.takeRetainedValue(), let name = CFUUIDCreateString(nil, uuid) else { return false }
         return space(name as String) == 4
     }
+    #endif
 
     private static func covered(_ body: CGRect, on screen: NSScreen) -> Bool {
         let top = NSScreen.screens.first?.frame.maxY ?? 0

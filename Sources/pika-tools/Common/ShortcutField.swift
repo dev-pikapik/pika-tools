@@ -115,7 +115,6 @@ final class SystemShortcuts {
 
     private static func select(_ title: String, sections: Set<String>) -> Bool {
         #if APPSTORE
-        // APPSTORE: the hint text replaces driving System Settings through Accessibility
         return false
         #else
         func value<T>(_ element: AXUIElement, _ name: String) -> T? {

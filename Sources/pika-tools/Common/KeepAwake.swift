@@ -18,7 +18,6 @@ final class KeepAwake {
     private static let bridgeKey = "keep-awake-bridge"
 
     #if APPSTORE
-    // APPSTORE: lid-closed mode needs administrator rights and pmset; no public replacement
     let hasLid = false
     #else
     let hasLid: Bool = {

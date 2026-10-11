@@ -252,6 +252,9 @@ final class GameModeTool: Tool {
     }
 
     fileprivate func received(_ name: String) {
+        #if APPSTORE
+        Self.locked = name == "com.apple.screenIsLocked"
+        #endif
         if name == "com.apple.screenIsLocked" {
             leave()
         } else {
@@ -341,11 +344,14 @@ final class GameModeTool: Tool {
         )
     }
 
+    #if APPSTORE
+    private static var locked = false
+    #endif
+
     static var screenLocked: Bool {
         let session = CGSessionCopyCurrentDictionary() as? [String: Any]
         #if APPSTORE
-        // APPSTORE: public lock notifications replace the CGSession lock key
-        return session?[kCGSessionOnConsoleKey] as? Bool == false
+        return locked || session?[kCGSessionOnConsoleKey] as? Bool == false
         #else
         return session?["CGSSessionScreenIsLocked"] as? Bool == true || session?[kCGSessionOnConsoleKey] as? Bool == false
         #endif
@@ -374,7 +380,6 @@ final class GameModeTool: Tool {
 
 #if APPSTORE
 enum DockEdges {
-    // APPSTORE: Dock hot corners and autohide can't be changed from the sandbox; the cursor fence covers the edges
     static func calm() {}
     static func restoreSoon() {}
     static func restore() {}
@@ -543,6 +548,9 @@ private func gameModeCallback(
         let blocked = GameRules.blocksAppShortcut(key: key, flags: flags, rules: tool.rules, allowed: tool.allowedAppShortcuts)
         if type == .keyDown, blocked || tool.combos.contains(GameRules.combo(key: Int64(key), flags: flags.rawValue)) { tool.hint() }
         if blocked { return nil }
+        #if APPSTORE
+        if SymbolicHotKeys.swallows(key: key, flags: flags.rawValue) { return nil }
+        #endif
     case .flagsChanged:
         if tool.isPlaying { tool.inputIntent.changed(event.flags, at: event.timestamp) }
     case .leftMouseDown, .leftMouseUp, .leftMouseDragged:
@@ -694,7 +702,10 @@ struct GameModePage: View {
     }
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
-        Section {
+        #if APPSTORE
+        let rows = rows.filter { $0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil } }
+        #endif
+        return Section {
             ForEach(rows, id: \.rule) { row in
                 VStack(spacing: 10) {
                     IllustrationRow { GameRuleArt(rule: row.rule, keys: row.keys, on: tool.rules.contains(row.rule)) }
