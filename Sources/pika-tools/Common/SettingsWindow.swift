@@ -97,6 +97,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Turn off the display now"),
         ]
         return allItems.filter { $0.tab != .animations && $0.tab != .fans && !hidden.contains($0.title) }
+            + [SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks")]
         #else
         return allItems
         #endif
