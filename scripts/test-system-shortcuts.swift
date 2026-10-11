@@ -34,6 +34,11 @@ struct TestSystemShortcuts {
         precondition(!GameRules.blocksAppShortcut(key: kVK_Tab, flags: .maskCommand, rules: all, allowed: [GameRules.combo(key: Int64(kVK_Tab), flags: CGEventFlags.maskCommand.rawValue)]))
         let discovered = SystemShortcutCatalog.discover(count: 3, known: [90_000]) { [60, 4000, 90_000].contains($0) }
         precondition(discovered == [60, 4000, 90_000])
+        precondition(SystemShortcutCatalog.nonempty(nil) == nil)
+        precondition(SystemShortcutCatalog.nonempty(" \n\t") == nil)
+        let unnamed = SystemGameShortcut(id: 10_000, name: " \n", section: "other", sectionName: "", rawName: "", key: .max, character: 0, modifiers: 0, enabled: false)
+        precondition(!unnamed.displayName.isEmpty && unnamed.group == .other && unnamed.description == .other)
+        precondition(input.group == .language && emergency.group == .windows)
         print("catalogue policies and remapped keys: ok")
 
         var intent = GameInputIntent()
@@ -58,6 +63,9 @@ struct TestSystemShortcuts {
         precondition(catalog.allSatisfy { !$0.name.isEmpty && !$0.sectionName.isEmpty })
         precondition(catalog.filter { $0.section == "screenshots" }.count >= 5)
         precondition(catalog.filter { $0.id == 60 || $0.id == 61 }.count == 2)
+        precondition(catalog.allSatisfy { !$0.displayName.isEmpty && !$0.description.text.isEmpty && !$0.group.title.isEmpty && !$0.group.detail.isEmpty })
+        precondition(GameShortcutGroup.allCases.reduce(0) { count, group in count + catalog.filter { $0.group == group }.count } == catalog.count)
+        precondition(Set(catalog.filter { $0.section == "screenshots" }.map(\.group)) == [.screenshots])
         print("live macOS catalogue:", records.count, "published records,", catalog.count, "actions found")
     }
 }

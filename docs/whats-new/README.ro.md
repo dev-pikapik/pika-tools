@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Setări de joc mai clare
+
+<sub>1.31.2 · 11 octombrie 2026</sub>
+
+Ajustează protecția și explorează scurtăturile Macului.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Opt teme clare înlocuiesc folderele repetate. Fiecare titlu are un nume, o explicație, o pictogramă și un număr. Apasă oriunde pe rând pentru a-l deschide.
+
+Fiecare acțiune își explică rolul lângă previzualizarea animată. Tastele actuale și comportamentul în joc au un rând separat. Căutarea găsește și descrierile.
+
+Tastele neatribuite au un link clar către Configurări sistem. Protecțiile generale ale jocului sunt grupate separat, iar alegerile tale se păstrează.
+
+**Încearcă:** Deschide Mai multe setări de joc, extinde o temă și compară descrierea unei acțiuni cu previzualizarea.
+
+---
+
 ## <a id="v1.31.1"></a>Gesturi pentru limbă în jocuri
 
 <sub>1.31.1 · 11 octombrie 2026</sub>

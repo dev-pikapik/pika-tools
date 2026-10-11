@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Pengaturan game yang lebih jelas
+
+<sub>1.31.2 · 11 Oktober 2026</sub>
+
+Sesuaikan perlindungan dan jelajahi pintasan Mac Anda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Delapan topik jelas menggantikan folder yang berulang. Setiap judul memiliki nama, penjelasan, ikon, dan jumlah. Klik di mana saja pada baris untuk membukanya.
+
+Setiap tindakan menjelaskan fungsinya di samping pratinjau animasi. Tombol saat ini dan perilaku dalam game memiliki baris tersendiri. Pencarian juga menemukan deskripsi.
+
+Tombol yang belum ditetapkan memiliki tautan jelas ke Pengaturan Sistem. Perlindungan game umum dikumpulkan terpisah, dan pilihan Anda tetap tersimpan.
+
+**Coba:** Buka pengaturan game tambahan, perluas topik, lalu bandingkan deskripsi tindakan dengan pratinjaunya.
+
+---
+
 ## <a id="v1.31.1"></a>Gestur bahasa dalam game
 
 <sub>1.31.1 · 11 Oktober 2026</sub>

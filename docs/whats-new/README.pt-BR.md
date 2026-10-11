@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Ajustes de jogo mais claros
+
+<sub>1.31.2 · 11 de outubro de 2026</sub>
+
+Ajuste a proteção e explore os atalhos do Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Oito temas claros substituem as pastas repetidas. Cada título tem nome, explicação, ícone e contagem. Clique em qualquer ponto da linha para abrir a seção.
+
+Cada ação explica o que faz ao lado da prévia animada. As teclas atuais e o comportamento nos jogos têm sua própria linha. A busca também encontra descrições.
+
+As teclas não definidas têm um link claro para os Ajustes do Sistema. As proteções gerais do jogo ficam em uma seção separada, e suas escolhas são preservadas.
+
+**Experimente:** Abra Mais ajustes de jogo, expanda um tema e compare a descrição de uma ação com a prévia.
+
+---
+
 ## <a id="v1.31.1"></a>Gestos de idioma nos jogos
 
 <sub>1.31.1 · 11 de outubro de 2026</sub>

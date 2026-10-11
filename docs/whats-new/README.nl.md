@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Duidelijkere game-instellingen
+
+<sub>1.31.2 · 11 oktober 2026</sub>
+
+Pas de bescherming aan en ontdek de sneltoetsen van je Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Acht duidelijke onderwerpen vervangen herhaalde mappen. Elke kop heeft een naam, uitleg, pictogram en aantal. Klik ergens op de rij om het onderdeel te openen.
+
+Elke actie legt naast de geanimeerde preview uit wat ze doet. De huidige toetsen en het gedrag in games staan op een eigen rij. Je kunt ook op beschrijvingen zoeken.
+
+Niet-toegewezen toetsen hebben een duidelijke link naar Systeeminstellingen. Algemene gamebescherming staat apart en je keuzes blijven bewaard.
+
+**Probeer het:** Open Meer game-instellingen, klap een onderwerp uit en vergelijk de beschrijving van een actie met de preview.
+
+---
+
 ## <a id="v1.31.1"></a>Taalgebaren in games
 
 <sub>1.31.1 · 11 oktober 2026</sub>

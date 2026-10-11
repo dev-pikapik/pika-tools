@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Impostazioni di gioco più chiare
+
+<sub>1.31.2 · 11 ottobre 2026</sub>
+
+Regola la protezione ed esplora le scorciatoie del Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Otto argomenti chiari sostituiscono le cartelle ripetute. Ogni titolo ha un nome, una spiegazione, un’icona e un conteggio. Fai clic in qualsiasi punto della riga per aprirlo.
+
+Ogni azione spiega la propria funzione accanto all’anteprima animata. I tasti attuali e il comportamento nel gioco hanno una riga dedicata. La ricerca trova anche le descrizioni.
+
+I tasti non assegnati hanno un collegamento chiaro a Impostazioni di Sistema. Le protezioni generali del gioco sono raccolte separatamente e le tue scelte restano salvate.
+
+**Provalo:** Apri Altre impostazioni di gioco, espandi un argomento e confronta la descrizione di un’azione con la sua anteprima.
+
+---
+
 ## <a id="v1.31.1"></a>Gesti della lingua nei giochi
 
 <sub>1.31.1 · 11 ottobre 2026</sub>

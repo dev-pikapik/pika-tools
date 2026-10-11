@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Srozumitelnější herní nastavení
+
+<sub>1.31.2 · 11. října 2026</sub>
+
+Upravte ochranu a prozkoumejte zkratky svého Macu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Osm jasných témat nahrazuje opakované složky. Každý nadpis má název, vysvětlení, ikonu a počet. Kliknutím kamkoli na řádek jej otevřete.
+
+Každá akce vysvětluje svůj účel vedle animovaného náhledu. Aktuální klávesy a chování ve hře mají vlastní řádek. Hledání zahrnuje také popisy.
+
+Nepřiřazené klávesy mají jasný odkaz do Nastavení systému. Obecná ochrana hry je v samostatné sekci a vaše volby zůstávají zachované.
+
+**Vyzkoušejte:** Otevřete další herní nastavení, rozbalte téma a porovnejte popis akce s jejím náhledem.
+
+---
+
 ## <a id="v1.31.1"></a>Gesta pro jazyk ve hrách
 
 <sub>1.31.1 · 11. října 2026</sub>
