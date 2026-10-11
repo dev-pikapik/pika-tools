@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Oyunlarda fare ve izleme dörtgeni
+
+<sub>1.34.0 · 11 Ekim 2026</sub>
+
+Kaydırmalar, kıstırma hareketleri ve etkin köşeler artık klavye kısayolları gibi sizi oyundan çıkarmıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Ayarlar › Oyunlar › Diğer oyun ayarları altında “Fare ve izleme dörtgeni” adlı bir grup var. Yalnızca Mac’inizde macOS’ta açık olanları, Apple’ın kendi adlarıyla ve her biri için küçük bir çizimle gösterir: fare düğmesindeki kısayollar, masaüstleri ve tam ekran uygulamalar arasında kaydırma, Mission Control ve App Exposé, uygulamalar için kıstırma ve masaüstü için parmakları açma, Bildirim Merkezi için sağ kenardan kaydırma ve her etkin köşe ile yaptığı eylem. Bir oyun öndeyken bunlar duraklatılır; böylece yanlışlıkla yapılan bir kaydırma ya da ekran köşesine değen imleç sizi oyundan çıkaramaz. Oyunun içindeki hareketler çalışmaya devam eder. Her biri her zamanki gibi çalışacak şekilde ayarlanabilir.
+
+---
+
 ## <a id="v1.33.2"></a>Kısayol grupları anında açılıyor
 
 <sub>1.33.2 · 11 Ekim 2026</sub>

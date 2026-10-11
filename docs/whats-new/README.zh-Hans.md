@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>游戏中的鼠标和触控板
+
+<sub>1.34.0 · 2026年10月11日</sub>
+
+轻扫、捏合和触发角现在和键盘快捷键一样，不会再把你带出游戏。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+设置 › 游戏 › 更多游戏设置中有一个“鼠标和触控板”分组。它只列出你的 Mac 上在 macOS 里已开启的项目，使用 Apple 的原名，并为每一项配有小插图：鼠标按键上的快捷键、在桌面和全屏 App 之间轻扫、调度中心和 App Exposé、捏合打开 App、张开显示桌面、从右边缘轻扫打开通知中心，以及每个触发角和它执行的操作。游戏在最前面时，这些操作会被暂停，所以不小心轻扫或碰到屏幕角落，都不会把你带出游戏。游戏内的手势照常工作。每一项也都可以设为照常工作。
+
+---
+
 ## <a id="v1.33.2"></a>快捷键分组立即打开
 
 <sub>1.33.2 · 2026年10月11日</sub>

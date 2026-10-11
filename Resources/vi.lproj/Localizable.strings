@@ -391,7 +391,7 @@
 "Show Desktop" = "Hiển thị Màn hình nền";
 "Desktops don’t switch" = "Màn hình nền không chuyển";
 "Desktops don’t switch by number" = "Màn hình nền không chuyển theo số";
-"Swipes don’t switch desktops" = "Thao tác vuốt không chuyển màn hình nền";
+"Gestures don’t leave the game" = "Cử chỉ không đưa bạn ra khỏi trò chơi";
 "Emoji don’t open" = "Biểu tượng cảm xúc không mở";
 "The dictionary doesn’t pop up" = "Từ điển không bật lên";
 "Look Up" = "Tra cứu";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, trình chuyển ứng dụng";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Trung tâm thông báo, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, vuốt, cử chỉ, bàn di chuột";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, vuốt, chụm, cử chỉ, bàn di chuột, Magic Mouse, Mission Control, Trung tâm thông báo";
 "symbols, dictionary" = "ký hiệu, từ điển";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "tiêu điểm bàn phím, phím chức năng, Control Dấu cách, Ctrl, Shift, Option, bố cục bàn phím, nguồn đầu vào, bộ gõ, option, shift, alt";
 "fn, globe key" = "fn, phím quả địa cầu";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "Ứng dụng và cửa sổ";
 "Screenshots" = "Ảnh chụp màn hình";
+"Mouse and trackpad" = "Chuột và bàn di chuột";
 "System controls" = "Chức năng của Mac";
 "Other macOS actions" = "Hành động macOS khác";
 "Switch languages without leaving the game." = "Đổi ngôn ngữ mà không rời trò chơi.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, Spaces và màn hình nền.";
 "Pictures of the screen and screen recording." = "Ảnh chụp và ghi màn hình.";
 "Keyboard focus, emoji and the Globe key." = "Tiêu điểm bàn phím, emoji và phím quả địa cầu.";
+"Mouse buttons, gestures and hot corners." = "Nút chuột, cử chỉ và góc nóng.";
 "Zoom, colours, spoken feedback and captions." = "Thu phóng, màu sắc, phản hồi giọng nói và phụ đề.";
 "Search, sound, brightness and other Mac controls." = "Tìm kiếm, âm thanh, độ sáng và chức năng Mac khác.";
 "Actions whose purpose macOS doesn’t publish." = "Các hành động mà macOS không công bố mục đích.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "Ngăn phím tắt thoát bị nhấn nhầm kết thúc trò chơi.";
 "Prevents an accidental close shortcut from closing the game window." = "Ngăn phím tắt đóng bị nhấn nhầm đóng cửa sổ trò chơi.";
 "Lets you hold Control and click without opening a context menu." = "Cho phép giữ Control và bấm mà không mở menu ngữ cảnh.";
-"Keeps trackpad swipes from moving the game to another desktop." = "Ngăn thao tác vuốt bàn di chuột đổi màn hình nền khi chơi.";
 "Shows or hides the Dock." = "Hiện hoặc ẩn Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Chạy hành động macOS được nêu. Giữ nó tạm dừng nếu làm gián đoạn trò chơi.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS cung cấp các phím nhưng không đặt tên hành động này. Bạn vẫn có thể chọn cách nó hoạt động trong trò chơi.";

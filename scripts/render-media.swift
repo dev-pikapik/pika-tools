@@ -47,6 +47,7 @@ enum RenderMedia {
         ("whats-new/1.31.3/game-preview", 5.4, AnyView(UnifiedGamePreviewCard())),
         ("whats-new/1.31.4/game-choices", 5.4, AnyView(GameChoicesCard())),
         ("whats-new/1.33.0/permissions", 5.4, AnyView(PermissionsCard())),
+        ("whats-new/1.34.0/pointer-shortcuts", 5.4, AnyView(PointerShortcutsCard())),
     ]
 
     static func main() {
@@ -134,6 +135,23 @@ private struct SystemShortcutsCard: View {
                     if let entry = entries.first(where: { $0.kind == kind }) {
                         SystemShortcutFrame(entry: entry, story: .still(on: tick > 0), height: 60, background: kind == .language && tick > 0)
                     }
+                }
+            }
+        }
+    }
+}
+
+private struct PointerShortcutsCard: View {
+    private let entries: [SystemGameShortcut] = {
+        let prefs: [String: Any] = ["TrackpadFourFingerVertSwipeGesture": 0, "MouseTwoFingerDoubleTapGesture": 3, "wvous-br-corner": 14]
+        return PointerShortcuts.rows(read: { _, key in prefs[key] }, names: { $1 })
+    }()
+
+    var body: some View {
+        IllustrationRow(loop: [2.2, 3.2]) { tick in
+            HStack(spacing: 8) {
+                ForEach(entries.filter { [100_002, 100_003, 100_013].contains($0.id) }) { entry in
+                    SystemShortcutFrame(entry: entry, story: .still(on: tick % 2 == 1), height: 60)
                 }
             }
         }

@@ -45,7 +45,7 @@ struct SystemShortcutFrame: View {
             .overlay {
                 ZStack {
                     scene
-                    keys.position(x: 85, y: 94)
+                    cause.position(x: 85, y: entry.pointer == nil ? 94 : 88)
                 }
                 .frame(width: 170, height: 108)
                 .scaleEffect(scale)
@@ -56,7 +56,7 @@ struct SystemShortcutFrame: View {
             .accessibilityHidden(true)
     }
 
-    private var game: some View {
+    var game: some View {
         GameScene(time: story.time)
             .frame(width: 196, height: 108)
             .offset(x: 9)
@@ -155,16 +155,9 @@ struct SystemShortcutFrame: View {
             }
         case .notifications:
             game
-            if hit > 0 {
-                VStack(spacing: 6) {
-                    ForEach(0..<3, id: \.self) { _ in
-                        HStack(spacing: 6) {
-                            Image(systemName: "bell.fill").foregroundStyle(Color.accentColor)
-                            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 44, height: 4)
-                        }.font(.system(size: 10)).padding(8).artGlass(radius: 7)
-                    }
-                }.offset(x: 35 * (1 - hit)).opacity(hit).position(x: 125, y: 46)
-            }
+            notificationStack
+        case .pointer:
+            pointerScene
         case .voice:
             game
             panel {
@@ -225,6 +218,22 @@ struct SystemShortcutFrame: View {
         }
     }
 
+    var notificationStack: some View {
+        VStack(spacing: 6) {
+            ForEach(0..<3, id: \.self) { _ in
+                HStack(spacing: 6) {
+                    Image(systemName: "bell.fill").foregroundStyle(Color.accentColor)
+                    Capsule().fill(Color.primary.opacity(0.2)).frame(width: 44, height: 4)
+                }.font(.system(size: 10)).padding(8).artGlass(radius: 7)
+            }
+        }
+        .offset(x: 35 * (1 - story.hit)).opacity(story.hit).position(x: 125, y: 46)
+    }
+
+    @ViewBuilder private var cause: some View {
+        if let pointer = entry.pointer { pointerCause(pointer) } else { keys }
+    }
+
     private var keys: some View {
         let glyphs = entry.text.map(KeyCaps.caps) ?? []
         return HStack(spacing: 3) {
@@ -247,7 +256,7 @@ struct SystemShortcutFrame: View {
         .animation(.easeOut(duration: 0.1), value: story.down)
     }
 
-    private func panel<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
+    func panel<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
         content().artGlass(radius: 11)
             .scaleEffect(0.92 + 0.08 * story.hit)
             .opacity(story.hit)

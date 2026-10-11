@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>遊戲中的滑鼠與觸控板
+
+<sub>1.34.0 · 2026年10月11日</sub>
+
+滑動、捏合和熱角現在與鍵盤快速鍵一樣，不會再把你帶出遊戲。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+設定 › 遊戲 › 更多遊戲設定中有一個「滑鼠與觸控板」群組。它只列出你的 Mac 上在 macOS 中已開啟的項目，使用 Apple 的原名，並為每一項附上小圖：滑鼠按鍵上的快速鍵、在桌面和全螢幕 App 之間滑動、指揮中心與 App Exposé、捏合以開啟 App、張開以顯示桌面、從右邊緣滑動以開啟通知中心，以及每個熱角和它執行的動作。遊戲在最前面時，這些操作會暫停，所以不小心滑動或碰到螢幕角落，都不會把你帶出遊戲。遊戲內的手勢照常運作。每一項也都可以設為照常運作。
+
+---
+
 ## <a id="v1.33.2"></a>快速鍵分組立即開啟
 
 <sub>1.33.2 · 2026年10月11日</sub>

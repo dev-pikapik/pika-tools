@@ -245,6 +245,8 @@ Bật Chế độ trò chơi và chơi. Thêm cài đặt trò chơi chứa danh
 
 Tự động tạm dừng tác vụ mở cửa sổ hoặc chuyển tiêu điểm. Phím tắt ngôn ngữ nhanh có chủ ý đổi nguồn mà không mở cửa sổ hệ thống. Phím di chuyển được giữ có ưu tiên, nên chạy và nhảy không vô tình đổi ngôn ngữ.
 
+Trong Cài đặt → Trò chơi → Thêm cài đặt trò chơi có nhóm “Chuột và bàn di chuột”. Nhóm này chỉ liệt kê những gì đang bật trong macOS trên Mac của bạn, với tên gọi của Apple và một hình vẽ nhỏ cho từng mục: phím tắt trên nút chuột, vuốt giữa các màn hình nền và ứng dụng toàn màn hình, Mission Control và App Exposé, chụm ngón tay cho ứng dụng và xòe ngón tay cho màn hình nền, vuốt từ cạnh phải cho Trung tâm thông báo và mỗi góc nóng cùng thao tác của nó. Khi trò chơi ở phía trước, tất cả được tạm dừng, nên một cú vuốt nhầm hay chạm vào góc màn hình sẽ không đưa bạn ra khỏi trò chơi. Các cử chỉ bên trong trò chơi vẫn hoạt động bình thường. Mỗi mục có thể đặt để hoạt động như bình thường.
+
 Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơi đang chạy. Trò chơi qua Java và các môi trường khác cũng xuất hiện, ngay cả khi không có tệp .app. Minecraft hiển thị là Minecraft thay vì java. Tìm tiến trình trò chơi rồi kéo hàng vào Trò chơi của bạn trong Cài đặt → Trò chơi.
 
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.

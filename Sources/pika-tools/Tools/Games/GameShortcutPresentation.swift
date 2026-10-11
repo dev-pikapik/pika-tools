@@ -1,7 +1,7 @@
 import Foundation
 
 enum GameShortcutGroup: String, CaseIterable, Identifiable {
-    case language, windows, desktops, screenshots, keyboard, accessibility, system, other
+    case language, windows, desktops, screenshots, keyboard, pointer, accessibility, system, other
 
     var id: String { rawValue }
 
@@ -12,6 +12,7 @@ enum GameShortcutGroup: String, CaseIterable, Identifiable {
         case .desktops: String(localized: "Desktops")
         case .screenshots: String(localized: "Screenshots")
         case .keyboard: String(localized: "Keyboard")
+        case .pointer: String(localized: "Mouse and trackpad")
         case .accessibility: String(localized: "Accessibility")
         case .system: String(localized: "System controls")
         case .other: String(localized: "Other macOS actions")
@@ -25,6 +26,7 @@ enum GameShortcutGroup: String, CaseIterable, Identifiable {
         case .desktops: String(localized: "Mission Control, Spaces and the desktop.")
         case .screenshots: String(localized: "Pictures of the screen and screen recording.")
         case .keyboard: String(localized: "Keyboard focus, emoji and the Globe key.")
+        case .pointer: String(localized: "Mouse buttons, gestures and hot corners.")
         case .accessibility: String(localized: "Zoom, colours, spoken feedback and captions.")
         case .system: String(localized: "Search, sound, brightness and other Mac controls.")
         case .other: String(localized: "Actions whose purpose macOS doesn’t publish.")
@@ -38,6 +40,7 @@ enum GameShortcutGroup: String, CaseIterable, Identifiable {
         case .desktops: "rectangle.3.group"
         case .screenshots: "camera"
         case .keyboard: "keyboard"
+        case .pointer: "computermouse"
         case .accessibility: "accessibility"
         case .system: "slider.horizontal.3"
         case .other: "ellipsis"
@@ -46,7 +49,7 @@ enum GameShortcutGroup: String, CaseIterable, Identifiable {
 }
 
 enum GameShortcutDescription: Equatable {
-    case language, windows, desktops, screenshot, capture, zoom, contrast, invert, voice, captions, presenter, focus, brightness, volume, note, notifications, forceQuit, apps, spotlight, siri, launchpad, emoji, dictionary, keyboard, globe, quit, close, click, cursor, display, swipes, dock, named, other
+    case language, windows, desktops, screenshot, capture, zoom, contrast, invert, voice, captions, presenter, focus, brightness, volume, note, notifications, forceQuit, apps, spotlight, siri, launchpad, emoji, dictionary, keyboard, globe, quit, close, click, cursor, display, dock, named, other
 
     var text: String {
         switch self {
@@ -80,7 +83,6 @@ enum GameShortcutDescription: Equatable {
         case .click: String(localized: "Lets you hold Control and click without opening a context menu.")
         case .cursor: String(localized: "The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
         case .display: String(localized: "The display doesn’t dim or sleep while you play")
-        case .swipes: String(localized: "Keeps trackpad swipes from moving the game to another desktop.")
         case .dock: String(localized: "Shows or hides the Dock.")
         case .named: String(localized: "Runs the named macOS action. Keep it paused if it interrupts your game.")
         case .other: String(localized: "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games.")
@@ -104,8 +106,7 @@ extension GameRule {
         case .spotlight: .spotlight
         case .siri: .siri
         case .launchpad: .launchpad
-        case .missionControl, .appWindows, .showDesktop, .desktops, .desktopNumbers: .desktops
-        case .swipes: .swipes
+        case .missionControl, .appWindows, .showDesktop, .desktops, .desktopNumbers, .swipes: .desktops
         case .emoji: .emoji
         case .lookUp: .dictionary
         case .focusKeys: .keyboard
@@ -121,6 +122,7 @@ extension SystemGameShortcut {
     var anchor: String { "system-shortcut:\(id)" }
 
     var detail: String? {
+        if let pointer { return pointer.detail }
         if let controller, controller.detail == nil { return nil }
         return switch description {
         case .dock, .brightness, .volume, .contrast, .invert, .captions, .focus, .siri, .screenshot, .named: nil
@@ -143,6 +145,7 @@ extension SystemGameShortcut {
     }
 
     var description: GameShortcutDescription {
+        if pointer != nil { return .named }
         if rawName.lowercased().contains("dock hiding") { return .dock }
         if rawName.lowercased().contains("siri") { return .siri }
         switch kind {
@@ -163,16 +166,18 @@ extension SystemGameShortcut {
         case .notifications: return .notifications
         case .forceQuit: return .forceQuit
         case .existing: return controller?.description ?? .other
+        case .pointer: return .named
         case .other: return SystemShortcutCatalog.nonempty(rawName) == nil ? .other : .named
         }
     }
 
     var group: GameShortcutGroup {
+        if pointer != nil { return .pointer }
         if section == "screenshots" { return .screenshots }
         return switch description {
         case .language: .language
         case .windows, .apps, .launchpad, .forceQuit, .quit, .close: .windows
-        case .desktops, .swipes: .desktops
+        case .desktops: .desktops
         case .screenshot, .capture: .screenshots
         case .keyboard, .emoji, .dictionary, .globe, .click: .keyboard
         case .zoom, .contrast, .invert, .voice, .captions: .accessibility

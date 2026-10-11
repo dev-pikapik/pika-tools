@@ -245,6 +245,8 @@ Activează modul Joc și joacă. Configurările suplimentare au catalogul public
 
 Automat oprește acțiunile care deschid ferestre sau mută focalizarea. O scurtătură de limbă rapidă și intenționată schimbă sursa fără fereastra sistemului. Tastele de mișcare ținute au prioritate, astfel că alergarea și salturile nu schimbă limba accidental.
 
+În Configurări → Jocuri → Mai multe configurări de joc există grupul „Mouse și trackpad”. Arată doar ce este activat în macOS pe Mac-ul tău, cu numele date de Apple și un desen mic pentru fiecare: scurtături pe un buton al mouse-ului, glisarea între desktopuri și aplicații pe tot ecranul, Mission Control și App Exposé, ciupirea pentru aplicații și îndepărtarea degetelor pentru desktop, glisarea de la marginea dreaptă pentru Centrul de notificări și fiecare colț activ cu acțiunea lui. Cât timp un joc este în prim-plan, acestea sunt oprite, așa că o glisare accidentală sau o atingere a unui colț al ecranului nu te scoate din joc. Gesturile din interiorul jocului continuă să funcționeze. Fiecare poate fi setat să funcționeze ca de obicei.
+
 Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. Apar și jocurile care folosesc Java sau alte medii, chiar fără un fișier .app. Minecraft apare ca Minecraft, nu java. Găsește procesul jocului și trage rândul pe Jocurile tale în Configurări → Jocuri.
 
 Fiecare instrument are propriul comutator în meniu și în configurări.

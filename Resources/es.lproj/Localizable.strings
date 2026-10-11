@@ -391,7 +391,7 @@
 "Show Desktop" = "Mostrar escritorio";
 "Desktops don’t switch" = "Los escritorios no cambian";
 "Desktops don’t switch by number" = "Los escritorios no cambian por número";
-"Swipes don’t switch desktops" = "Los deslizamientos no cambian de escritorio";
+"Gestures don’t leave the game" = "Los gestos no sacan del juego";
 "Emoji don’t open" = "Los emoji no se abren";
 "The dictionary doesn’t pop up" = "El diccionario no aparece";
 "Look Up" = "Consultar";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Comando Tab, selector de apps";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Centro de notificaciones, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, deslizar, gestos, trackpad";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, deslizar, pellizcar, gestos, trackpad, Magic Mouse, Mission Control, Centro de notificaciones";
 "symbols, dictionary" = "símbolos, diccionario";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "foco del teclado, teclas de función, Control Espacio, Ctrl, Shift, Option, distribución de teclado, fuente de entrada, opción, mayúsculas, alt";
 "fn, globe key" = "fn, tecla globo";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "Apps y ventanas";
 "Screenshots" = "Capturas de pantalla";
+"Mouse and trackpad" = "Ratón y trackpad";
 "System controls" = "Funciones del Mac";
 "Other macOS actions" = "Otras acciones de macOS";
 "Switch languages without leaving the game." = "Cambia de idioma sin salir del juego.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, Spaces y el escritorio.";
 "Pictures of the screen and screen recording." = "Capturas y grabaciones de pantalla.";
 "Keyboard focus, emoji and the Globe key." = "Foco del teclado, emoji y tecla globo.";
+"Mouse buttons, gestures and hot corners." = "Botones del ratón, gestos y esquinas activas.";
 "Zoom, colours, spoken feedback and captions." = "Zoom, colores, lectura en voz alta y subtítulos.";
 "Search, sound, brightness and other Mac controls." = "Búsqueda, sonido, brillo y otras funciones del Mac.";
 "Actions whose purpose macOS doesn’t publish." = "Acciones cuyo propósito macOS no publica.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "Evita que un atajo accidental de salida cierre el juego.";
 "Prevents an accidental close shortcut from closing the game window." = "Evita que un atajo accidental cierre la ventana del juego.";
 "Lets you hold Control and click without opening a context menu." = "Permite mantener Control y hacer clic sin abrir un menú contextual.";
-"Keeps trackpad swipes from moving the game to another desktop." = "Evita que los gestos del trackpad cambien de escritorio durante el juego.";
 "Shows or hides the Dock." = "Muestra u oculta el Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Ejecuta la acción de macOS indicada. Déjala en pausa si interrumpe el juego.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS proporciona las teclas, pero no el nombre de esta acción. Aun así puedes elegir cómo funciona en juegos.";

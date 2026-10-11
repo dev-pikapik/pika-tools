@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Muis en trackpad in games
+
+<sub>1.34.0 · 11 oktober 2026</sub>
+
+Vegen, knijpen en actieve hoeken halen je niet meer uit je game, net als toetscombinaties.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+In Instellingen › Spellen › Meer spelinstellingen staat een groep ‘Muis en trackpad’. Daarin staat alleen wat in macOS op je Mac is ingeschakeld, met de namen van Apple en een kleine tekening bij elk onderdeel: toetscombinaties op een muisknop, vegen tussen bureaubladen en apps in volledig scherm, Mission Control en App Exposé, knijpen voor apps en spreiden voor het bureaublad, vegen vanaf de rechterrand voor het Berichtencentrum en elke actieve hoek met de actie die erbij hoort. Zolang een game vooraan staat, zijn ze gepauzeerd, zodat een onbedoelde veeg of een aanraking van een hoek van het scherm je niet uit de game haalt. Gebaren in de game blijven gewoon werken. Elk onderdeel kan zo worden ingesteld dat het werkt zoals gewoonlijk.
+
+---
+
 ## <a id="v1.33.2"></a>Sneltoetsgroepen openen meteen
 
 <sub>1.33.2 · 11 oktober 2026</sub>

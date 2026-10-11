@@ -85,7 +85,7 @@ struct SettingsItem: Identifiable {
     static func shortcut(_ entry: SystemGameShortcut) -> SettingsItem {
         SettingsItem(tab: .games, title: entry.name,
                      synonyms: [entry.rawName, entry.sectionName, entry.group.title, entry.group.detail, entry.description.text, entry.supportsBackground ? String(localized: "Switch language") + ", Switch language" : "", "game games gaming", String(entry.id)].joined(separator: ", "),
-                     target: entry.anchor, detail: entry.group.title + " · " + (entry.text ?? String(localized: "No key assigned")), keys: entry.text ?? "")
+                     target: entry.anchor, detail: [entry.group.title, entry.text ?? (entry.pointer == nil ? String(localized: "No key assigned") : entry.pointer?.detail)].compactMap { $0 }.joined(separator: " · "), keys: entry.text ?? "")
     }
 
     static var all: [SettingsItem] {
@@ -178,7 +178,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "The game doesn’t slide off the screen"), synonyms: "Show Desktop"),
             SettingsItem(tab: .games, title: String(localized: "Desktops don’t switch"), synonyms: "Spaces, swipe, gestures, trackpad"),
             SettingsItem(tab: .games, title: String(localized: "Desktops don’t switch by number"), synonyms: "Spaces, swipe, gestures, trackpad"),
-            SettingsItem(tab: .games, title: String(localized: "Swipes don’t switch desktops"), synonyms: "Spaces, swipe, gestures, trackpad"),
+            SettingsItem(tab: .games, title: String(localized: "Gestures don’t leave the game"), synonyms: "Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center"),
             SettingsItem(tab: .games, title: String(localized: "Emoji don’t open"), synonyms: "symbols, dictionary"),
             SettingsItem(tab: .games, title: String(localized: "The dictionary doesn’t pop up"), synonyms: "Look Up"),
             SettingsItem(tab: .games, title: String(localized: "The keyboard stays in the game"), synonyms: "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language"),
