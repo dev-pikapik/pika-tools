@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Mus och styrplatta i spel
+
+<sub>1.34.0 · 11 oktober 2026</sub>
+
+Svep, nyp och aktiva hörn tar dig inte längre ut ur spelet, precis som kortkommandon.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Under Inställningar › Spel › Fler spelinställningar finns gruppen ”Mus och styrplatta”. Den visar bara det som är aktiverat i macOS på din Mac, med Apples egna namn och en liten teckning för varje: kortkommandon på en musknapp, svep mellan skrivbord och appar i helskärm, Mission Control och App Exposé, nyp för appar och sprid fingrarna för skrivbordet, svep från högerkanten för Aviseringscenter och varje aktivt hörn med sin åtgärd. Medan ett spel är i förgrunden är de pausade, så ett oavsiktligt svep eller en snabb beröring av ett skärmhörn tar dig inte ut ur spelet. Gester inne i spelet fungerar som vanligt. Var och en kan ställas in så att den fungerar som vanligt.
+
+---
+
 ## <a id="v1.33.2"></a>Genvägsgrupper öppnas direkt
 
 <sub>1.33.2 · 11 oktober 2026</sub>

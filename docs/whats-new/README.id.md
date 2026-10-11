@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Mouse dan trackpad di dalam game
+
+<sub>1.34.0 · 11 Oktober 2026</sub>
+
+Gesekan, cubitan, dan sudut aktif kini tidak lagi mengeluarkan Anda dari game, seperti pintasan keyboard.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Game › Pengaturan game lainnya ada grup “Mouse dan trackpad”. Grup ini hanya menampilkan apa yang aktif di macOS pada Mac Anda, dengan nama dari Apple dan gambar kecil untuk setiap item: pintasan pada tombol mouse, geser antar desktop dan app layar penuh, Mission Control dan App Exposé, cubit untuk app dan rentangkan untuk Desktop, geser dari tepi kanan untuk Pusat Pemberitahuan, dan setiap sudut aktif beserta aksinya. Selama game berada di depan, semuanya dijeda, jadi geseran tak sengaja atau sentuhan di sudut layar tidak akan mengeluarkan Anda dari game. Gestur di dalam game tetap berfungsi. Setiap item bisa diatur agar bekerja seperti biasa.
+
+---
+
 ## <a id="v1.33.2"></a>Grup pintasan terbuka seketika
 
 <sub>1.33.2 · 11 Oktober 2026</sub>

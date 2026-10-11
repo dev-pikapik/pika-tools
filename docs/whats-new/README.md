@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Mouse and trackpad shortcuts in games
+
+<sub>1.34.0 · October 11, 2026</sub>
+
+Swipes, pinches and hot corners now stay out of your game, just like keyboard shortcuts.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Settings › Games › More game settings has a group called Mouse and trackpad. It lists only what is turned on in macOS on your Mac, with Apple’s own names and a small drawing for each: shortcuts on a mouse button, swiping between desktops and full-screen apps, Mission Control and App Exposé, pinching for Apps and spreading for the Desktop, the swipe in from the right edge for Notification Centre, and every hot corner with the action it runs. While a game is in front they are paused, so a stray swipe or a brush against a screen corner can’t pull you out of it. Gestures inside the game keep working. Each one can be set to work as usual.
+
+---
+
 ## <a id="v1.33.2"></a>Shortcut groups open instantly
 
 <sub>1.33.2 · October 11, 2026</sub>

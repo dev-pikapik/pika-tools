@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Maus und Trackpad in Spielen
+
+<sub>1.34.0 · 11. Oktober 2026</sub>
+
+Wischgesten, Zusammenziehen der Finger und aktive Ecken holen dich jetzt nicht mehr aus dem Spiel, genau wie Tastaturkurzbefehle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Unter Einstellungen › Spiele › Weitere Spieleinstellungen gibt es die Gruppe „Maus und Trackpad“. Sie zeigt nur, was in macOS auf deinem Mac eingeschaltet ist, mit den Namen von Apple und einer kleinen Zeichnung zu jedem Eintrag: Kurzbefehle auf einer Maustaste, Wischen zwischen Schreibtischen und Apps im Vollbildmodus, Mission Control und App Exposé, Zusammenziehen der Finger für Apps und Spreizen für den Schreibtisch, das Wischen vom rechten Rand für die Mitteilungszentrale und jede aktive Ecke mit ihrer Aktion. Solange ein Spiel vorn ist, sind sie pausiert. Eine versehentliche Wischgeste oder ein Streifen über eine Bildschirmecke holt dich dann nicht aus dem Spiel. Gesten innerhalb des Spiels funktionieren weiter. Jeder Eintrag lässt sich auf normales Verhalten stellen.
+
+---
+
 ## <a id="v1.33.2"></a>Kürzelgruppen öffnen sich sofort
 
 <sub>1.33.2 · 11. Oktober 2026</sub>

@@ -391,7 +391,7 @@
 "Show Desktop" = "إظهار سطح المكتب";
 "Desktops don’t switch" = "لا تتبدّل أسطح المكتب";
 "Desktops don’t switch by number" = "لا تتبدّل أسطح المكتب بالأرقام";
-"Swipes don’t switch desktops" = "لا يبدّل التمرير بالأصابع أسطح المكتب";
+"Gestures don’t leave the game" = "الإيماءات لا تُخرجك من اللعبة";
 "Emoji don’t open" = "لا تفتح الإيموجي";
 "The dictionary doesn’t pop up" = "لا يظهر القاموس فجأة";
 "Look Up" = "بحث";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, مبدّل التطبيقات";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, مركز الإشعارات, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, تمرير, إيماءات, لوحة التعقب";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, تمرير, قرص, إيماءات, لوحة التعقب, Magic Mouse, إدارة المهام, مركز الإشعارات";
 "symbols, dictionary" = "رموز, قاموس";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "تركيز لوحة المفاتيح, مفاتيح الوظائف, Control مسافة, Ctrl, Shift, Option, تخطيط لوحة المفاتيح، مصدر الإدخال، option، shift، alt، عربي";
 "fn, globe key" = "fn, مفتاح الكرة الأرضية";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "التطبيقات والنوافذ";
 "Screenshots" = "لقطات الشاشة";
+"Mouse and trackpad" = "الماوس ولوحة التعقب";
 "System controls" = "وظائف Mac";
 "Other macOS actions" = "إجراءات macOS الأخرى";
 "Switch languages without leaving the game." = "بدّل اللغة دون مغادرة اللعبة.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control والمساحات وسطح المكتب.";
 "Pictures of the screen and screen recording." = "صور الشاشة وتسجيلها.";
 "Keyboard focus, emoji and the Globe key." = "تركيز لوحة المفاتيح والإيموجي ومفتاح الكرة الأرضية.";
+"Mouse buttons, gestures and hot corners." = "أزرار الماوس والإيماءات والزوايا النشطة.";
 "Zoom, colours, spoken feedback and captions." = "التكبير والألوان والملاحظات الصوتية والتعليقات النصية.";
 "Search, sound, brightness and other Mac controls." = "البحث والصوت والسطوع ووظائف Mac الأخرى.";
 "Actions whose purpose macOS doesn’t publish." = "إجراءات لا ينشر macOS الغرض منها.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "يمنع اختصار خروج غير مقصود من إنهاء اللعبة.";
 "Prevents an accidental close shortcut from closing the game window." = "يمنع اختصار إغلاق غير مقصود من إغلاق نافذة اللعبة.";
 "Lets you hold Control and click without opening a context menu." = "يتيح الضغط على Control والنقر دون فتح قائمة سياقية.";
-"Keeps trackpad swipes from moving the game to another desktop." = "يمنع السحب على لوحة التعقب من تبديل سطح المكتب أثناء اللعب.";
 "Shows or hides the Dock." = "يعرض Dock أو يخفيه.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "ينفّذ إجراء macOS المذكور. أبقه متوقفًا إن كان يقاطع اللعبة.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "يوفّر macOS المفاتيح دون اسم هذا الإجراء. يظل بإمكانك اختيار سلوكه في الألعاب.";

@@ -391,7 +391,7 @@
 "Show Desktop" = "显示桌面";
 "Desktops don’t switch" = "桌面不会切换";
 "Desktops don’t switch by number" = "桌面不会按编号切换";
-"Swipes don’t switch desktops" = "轻扫不会切换桌面";
+"Gestures don’t leave the game" = "手势不会离开游戏";
 "Emoji don’t open" = "表情符号不会打开";
 "The dictionary doesn’t pop up" = "词典不会弹出";
 "Look Up" = "查询";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, 应用切换器";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "调度中心, Spaces, 通知中心, 台前调度";
 "Spaces, swipe, gestures, trackpad" = "Spaces, 轻扫, 手势, 触控板";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, 轻扫, 捏合, 手势, 触控板, Magic Mouse, 调度中心, 通知中心";
 "symbols, dictionary" = "符号, 词典";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "键盘焦点, 功能键, Control 空格, Ctrl, Shift, Option, 键盘布局, 输入法, 输入源, option, shift, alt";
 "fn, globe key" = "fn, 地球仪键";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "应用与窗口";
 "Screenshots" = "屏幕截图";
+"Mouse and trackpad" = "鼠标和触控板";
 "System controls" = "Mac 功能";
 "Other macOS actions" = "其他 macOS 操作";
 "Switch languages without leaving the game." = "切换语言，继续留在游戏中。";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control、空间与桌面。";
 "Pictures of the screen and screen recording." = "屏幕截图与屏幕录制。";
 "Keyboard focus, emoji and the Globe key." = "键盘焦点、表情符号与地球键。";
+"Mouse buttons, gestures and hot corners." = "鼠标按钮、手势和触发角。";
 "Zoom, colours, spoken feedback and captions." = "缩放、颜色、语音反馈与字幕。";
 "Search, sound, brightness and other Mac controls." = "搜索、声音、亮度及其他 Mac 功能。";
 "Actions whose purpose macOS doesn’t publish." = "macOS 未公开用途的操作。";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "防止误按退出快捷键结束游戏。";
 "Prevents an accidental close shortcut from closing the game window." = "防止误按关闭快捷键关闭游戏窗口。";
 "Lets you hold Control and click without opening a context menu." = "允许按住 Control 并点击，而不打开快捷菜单。";
-"Keeps trackpad swipes from moving the game to another desktop." = "防止触控板轻扫在游戏中切换桌面。";
 "Shows or hides the Dock." = "显示或隐藏 Dock。";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "执行所列的 macOS 操作。如果它打断游戏，请将其暂停。";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS 提供按键，但未提供操作名称。你仍可选择它在游戏中的行为。";

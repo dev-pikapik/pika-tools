@@ -391,7 +391,7 @@
 "Show Desktop" = "デスクトップを表示";
 "Desktops don’t switch" = "デスクトップが切り替わらない";
 "Desktops don’t switch by number" = "番号でデスクトップが切り替わらない";
-"Swipes don’t switch desktops" = "スワイプでデスクトップが切り替わらない";
+"Gestures don’t leave the game" = "ジェスチャでゲームから離れない";
 "Emoji don’t open" = "絵文字が開かない";
 "The dictionary doesn’t pop up" = "辞書が飛び出さない";
 "Look Up" = "調べる";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, アプリスイッチャー";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, 通知センター, ステージマネージャ";
 "Spaces, swipe, gestures, trackpad" = "Spaces, スワイプ, ジェスチャ, トラックパッド";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, スワイプ, ピンチ, ジェスチャ, トラックパッド, Magic Mouse, Mission Control, 通知センター";
 "symbols, dictionary" = "記号, 辞書";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "キーボードフォーカス, ファンクションキー, Control スペース, Ctrl, Shift, Option, キーボードレイアウト, 入力ソース, option, shift, alt";
 "fn, globe key" = "fn, 地球儀キー";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "アプリとウインドウ";
 "Screenshots" = "スクリーンショット";
+"Mouse and trackpad" = "マウスとトラックパッド";
 "System controls" = "Macの機能";
 "Other macOS actions" = "その他のmacOS操作";
 "Switch languages without leaving the game." = "ゲームを離れずに言語を切り替えます。";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control、Spaces、デスクトップ。";
 "Pictures of the screen and screen recording." = "スクリーンショットと画面収録。";
 "Keyboard focus, emoji and the Globe key." = "キーボードフォーカス、絵文字、地球儀キー。";
+"Mouse buttons, gestures and hot corners." = "マウスのボタン、ジェスチャ、ホットコーナー。";
 "Zoom, colours, spoken feedback and captions." = "ズーム、色、読み上げ、字幕。";
 "Search, sound, brightness and other Mac controls." = "検索、音量、明るさなどMacの機能。";
 "Actions whose purpose macOS doesn’t publish." = "macOSが用途を公開していない操作。";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "終了ショートカットの誤操作でゲームが終了するのを防ぎます。";
 "Prevents an accidental close shortcut from closing the game window." = "閉じるショートカットの誤操作でゲームのウインドウが閉じるのを防ぎます。";
 "Lets you hold Control and click without opening a context menu." = "Controlを押しながらクリックしてもコンテキストメニューを開きません。";
-"Keeps trackpad swipes from moving the game to another desktop." = "ゲーム中のトラックパッドのスワイプでデスクトップが切り替わるのを防ぎます。";
 "Shows or hides the Dock." = "Dockを表示または非表示にします。";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "表示されたmacOS操作を実行します。ゲームを妨げる場合は一時停止してください。";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOSはキーを提供していますが、操作名は公開していません。ゲーム中の動作は選べます。";
