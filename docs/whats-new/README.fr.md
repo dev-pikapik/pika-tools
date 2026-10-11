@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>La vitesse manuelle des ventilateurs tient dès le premier essai
+
+<sub>1.32.1 · 11 octobre 2026</sub>
+
+Choisir Manuel dans Ventilateurs ne repasse plus en Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Parfois, le premier toucher sur Manuel remettait les ventilateurs en Auto avec un avertissement de sécurité, et seul le second fonctionnait. Manuel tient désormais dès le premier essai.
+
+Si un ventilateur quitte quand même le mode Manuel tout seul, pikapik le remet réellement en Auto : ce que vous voyez correspond toujours à ce que fait votre Mac.
+
+Inutile de tout réautoriser. Mettez à jour, et ça fonctionne.
+
+**Pour essayer :** Ouvrez Réglages › Ventilateurs et choisissez Manuel.
+
+---
+
 ## <a id="v1.32.0"></a>Voyez à quelle vitesse tournent vos ventilateurs
 
 <sub>1.32.0 · 11 octobre 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Manual fan speed now sticks on the first try
+
+<sub>1.32.1 · October 11, 2026</sub>
+
+Choosing Manual in Fans no longer bounces back to Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Sometimes the first tap on Manual sent the fans back to Auto with a safety warning, and only the second tap worked. Manual now holds from the first try.
+
+If a fan ever does leave Manual by itself, pikapik now puts it back to Auto for real, so what you see always matches what your Mac is doing.
+
+You don’t need to allow anything again. Update, and it just works.
+
+**Try it:** Open Settings › Fans and pick Manual.
+
+---
+
 ## <a id="v1.32.0"></a>See how fast your fans spin
 
 <sub>1.32.0 · October 11, 2026</sub>
