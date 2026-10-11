@@ -16,6 +16,7 @@ DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo
 APPSTORE_ID=com.pesotchi.pika-tools.appstore
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
+[ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
@@ -29,7 +30,7 @@ if [ -n "${APPSTORE:-}" ]; then
     KEPT=()
     for f in "${SOURCES[@]}"; do
         case $f in
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -50,6 +51,11 @@ for ARCH in arm64 x86_64; do
         "${EMIT[@]}" \
         "${SOURCES[@]}" \
         -o "build/pika-tools-$ARCH"
+    [ -n "${APPSTORE:-}" ] || swiftc -O -whole-module-optimization \
+        -module-name FanHelper \
+        -target "$ARCH-apple-macos$MIN_OS" \
+        Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
+        -o "build/fan-helper-$ARCH"
     for EXT in $EXTENSIONS; do
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
@@ -67,6 +73,10 @@ rm -rf build/strings
 
 lipo -create build/pika-tools-arm64 build/pika-tools-x86_64 -output "$APP/Contents/MacOS/pika-tools"
 rm build/pika-tools-arm64 build/pika-tools-x86_64
+if [ -z "${APPSTORE:-}" ]; then
+    lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
+    rm build/fan-helper-arm64 build/fan-helper-x86_64
+fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
     APPEX="$APP/Contents/PlugIns/$EXT.appex"
@@ -161,6 +171,9 @@ if [ -n "${APPSTORE:-}" ]; then
     ENTITLEMENTS=Resources/AppStore.entitlements
     [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app)"
     APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
+else
+    HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
+    sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
 fi
 sign ${APP_ENTITLEMENTS[@]+"${APP_ENTITLEMENTS[@]}"} "$APP"
 

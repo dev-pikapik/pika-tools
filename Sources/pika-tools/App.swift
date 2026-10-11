@@ -87,7 +87,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         FinderExtension.refreshFinderRecord()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["convert", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["convert", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -106,6 +106,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         KeepAwake.shared.resume()
         KeepAwake.shared.restoreLidSleepIfNeeded()
         #if !APPSTORE
+        FanControl.shared.start()
         signals = [SIGTERM, SIGINT, SIGHUP].map { number in
             signal(number, SIG_IGN)
             let source = DispatchSource.makeSignalSource(signal: number, queue: .main)
@@ -146,6 +147,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
+        #if !APPSTORE
+        FanControl.shared.handOff()
+        #endif
         SpeedTest.shared.cancel()
         #if !APPSTORE
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }

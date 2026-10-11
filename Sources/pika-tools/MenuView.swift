@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "command-keys,compress,convert,dock-hide,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,new-file,quit-on-close,side-buttons,speed-test,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "command-keys,compress,convert,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,new-file,quit-on-close,side-buttons,speed-test,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -21,6 +21,12 @@ struct MenuView: View {
     private func isShown(_ id: String) -> Bool {
         return customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
     }
+
+    #if APPSTORE
+    private var showsFans: Bool { false }
+    #else
+    private var showsFans: Bool { FanControl.shared.hasFans && isShown("fans") }
+    #endif
 
     private var visibleTabs: [SettingsTab] {
         [.keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
@@ -63,7 +69,7 @@ struct MenuView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    if !visibleTabs.isEmpty || isShown("keep-awake") || isShown("speed-test") {
+                    if !visibleTabs.isEmpty || isShown("keep-awake") || isShown("speed-test") || showsFans {
                         VStack(spacing: 0) {
                             if isShown("keep-awake") {
                                 if customizing {
@@ -101,8 +107,18 @@ struct MenuView: View {
                                 }
                             }
 
+                            #if !APPSTORE
+                            if showsFans {
+                                if customizing {
+                                    customizeRow(icon: "fan", title: String(localized: "Fans"), id: "fans")
+                                } else {
+                                    FanRow()
+                                }
+                            }
+                            #endif
+
                             ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
-                                if index > 0 || isShown("keep-awake") || isShown("speed-test") { groupDivider }
+                                if index > 0 || isShown("keep-awake") || isShown("speed-test") || showsFans { groupDivider }
                                 ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
                                     if customizing {
                                         customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
