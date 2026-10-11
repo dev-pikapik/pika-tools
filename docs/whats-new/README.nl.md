@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Sneltoetsgroepen openen zonder haperen
+
+<sub>1.33.1 · 11 oktober 2026</sub>
+
+De pagina Games blijft soepel als een lange lijst met voorbeelden opengaat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Het openklappen van een groep systeemsneltoetsen liet het instellingenvenster tot drie seconden vastlopen, omdat elke rij met zijn voorbeeld meerdere keren werd berekend. Nu wordt elke rij maar één keer berekend, dus groepen openen bijna direct.
+
+---
+
 ## <a id="v1.33.0"></a>Alle toestemmingen op één plek
 
 <sub>1.33.0 · 11 oktober 2026</sub>

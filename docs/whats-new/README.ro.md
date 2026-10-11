@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Grupurile de scurtături se deschid fără blocaje
+
+<sub>1.33.1 · 11 octombrie 2026</sub>
+
+Pagina Jocuri rămâne fluidă când se deschide o listă lungă de previzualizări.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Deschiderea unui grup de scurtături de tastatură ale sistemului bloca fereastra de setări până la trei secunde, pentru că fiecare rând cu previzualizarea lui era calculat de mai multe ori. Acum fiecare rând este calculat o singură dată, așa că grupurile se deschid aproape imediat.
+
+---
+
 ## <a id="v1.33.0"></a>Toate permisiunile într-un singur loc
 
 <sub>1.33.0 · 11 octombrie 2026</sub>

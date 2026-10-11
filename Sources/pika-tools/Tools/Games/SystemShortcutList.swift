@@ -75,15 +75,10 @@ struct SystemShortcutRow: View {
         VStack(alignment: .leading, spacing: 10) {
             IllustrationRow { SystemShortcutArt(entry: entry, on: mode != .system, background: mode == .background) }
                 .opacity(tool.isEnabled ? 1 : 0.5)
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: 12) {
-                    explanation.frame(minWidth: 180, maxWidth: .infinity, alignment: .leading)
-                    controls
-                }
-                VStack(alignment: .leading, spacing: 10) {
-                    explanation
-                    controls.frame(maxWidth: .infinity, alignment: .trailing)
-                }
+            BesideOrBelow {
+                explanation
+                shortcut
+                behaviour
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -104,13 +99,6 @@ struct SystemShortcutRow: View {
         }
     }
 
-    private var controls: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 12) { shortcut; behaviour }.fixedSize()
-            VStack(alignment: .trailing, spacing: 8) { shortcut; behaviour }
-        }
-    }
-
     @ViewBuilder private var shortcut: some View {
         if let text = entry.text {
             KeyCaps(keys: [text], system: SystemShortcuts.place([entry.id]))
@@ -126,6 +114,52 @@ struct SystemShortcutRow: View {
             GameShortcutPicker(entry: entry, rules: tool.rules, selection: Binding(get: { choice }, set: { tool.setSystemShortcut(entry.id, mode: $0) }))
                 .disabled(!tool.isEnabled)
         }
+    }
+}
+
+private struct BesideOrBelow: Layout {
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let frames = place(subviews, width: proposal.width)
+        return CGSize(width: frames.map(\.maxX).max() ?? 0, height: frames.map(\.maxY).max() ?? 0)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (subview, frame) in zip(subviews, place(subviews, width: bounds.width)) {
+            subview.place(at: CGPoint(x: bounds.minX + frame.minX, y: bounds.minY + frame.minY), proposal: ProposedViewSize(frame.size))
+        }
+    }
+
+    private func place(_ subviews: Subviews, width: CGFloat?) -> [CGRect] {
+        let shortcut = subviews[1].sizeThatFits(.unspecified)
+        let behaviour = subviews[2].sizeThatFits(.unspecified)
+        let controls = shortcut.width + 12 + behaviour.width
+        let beside = max(180, subviews[0].sizeThatFits(.unspecified).width) + 12 + controls
+        let width = width ?? beside
+        let row = max(shortcut.height, behaviour.height)
+        if beside <= width {
+            let column = width - 12 - controls
+            let text = subviews[0].sizeThatFits(ProposedViewSize(width: column, height: nil))
+            let height = max(text.height, row)
+            return [
+                CGRect(x: 0, y: (height - text.height) / 2, width: column, height: text.height),
+                CGRect(x: width - controls, y: (height - shortcut.height) / 2, width: shortcut.width, height: shortcut.height),
+                CGRect(x: width - behaviour.width, y: (height - behaviour.height) / 2, width: behaviour.width, height: behaviour.height),
+            ]
+        }
+        let text = subviews[0].sizeThatFits(ProposedViewSize(width: width, height: nil))
+        let top = text.height + 10
+        if controls <= width {
+            return [
+                CGRect(x: 0, y: 0, width: width, height: text.height),
+                CGRect(x: width - controls, y: top + (row - shortcut.height) / 2, width: shortcut.width, height: shortcut.height),
+                CGRect(x: width - behaviour.width, y: top + (row - behaviour.height) / 2, width: behaviour.width, height: behaviour.height),
+            ]
+        }
+        return [
+            CGRect(x: 0, y: 0, width: width, height: text.height),
+            CGRect(x: width - shortcut.width, y: top, width: shortcut.width, height: shortcut.height),
+            CGRect(x: width - behaviour.width, y: top + shortcut.height + 8, width: behaviour.width, height: behaviour.height),
+        ]
     }
 }
 

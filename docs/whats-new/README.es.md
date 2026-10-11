@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Los grupos de atajos se abren sin bloqueos
+
+<sub>1.33.1 · 11 de octubre de 2026</sub>
+
+La página Juegos sigue fluida al abrir una lista larga de vistas previas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Al abrir un grupo de atajos de teclado del sistema, la ventana de ajustes se congelaba hasta tres segundos, porque cada fila con su vista previa se calculaba varias veces. Ahora cada fila se calcula una sola vez, así que los grupos se abren casi al instante.
+
+---
+
 ## <a id="v1.33.0"></a>Todos los permisos en un solo lugar
 
 <sub>1.33.0 · 11 de octubre de 2026</sub>

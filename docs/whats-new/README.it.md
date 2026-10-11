@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>I gruppi di comandi rapidi si aprono senza blocchi
+
+<sub>1.33.1 · 11 ottobre 2026</sub>
+
+La pagina Giochi resta fluida quando si apre un lungo elenco di anteprime.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Aprire un gruppo di comandi rapidi di sistema bloccava la finestra delle impostazioni fino a tre secondi, perché ogni riga con la sua anteprima veniva calcolata più volte. Ora ogni riga viene calcolata una sola volta, quindi i gruppi si aprono quasi subito.
+
+---
+
 ## <a id="v1.33.0"></a>Tutti i permessi in un solo posto
 
 <sub>1.33.0 · 11 ottobre 2026</sub>

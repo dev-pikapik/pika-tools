@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Grup pintasan terbuka tanpa macet
+
+<sub>1.33.1 · 11 Oktober 2026</sub>
+
+Halaman Game tetap lancar saat daftar panjang berisi pratinjau dibuka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Sebelumnya, membuka grup pintasan keyboard sistem membuat jendela pengaturan macet hingga tiga detik, karena setiap baris beserta pratinjaunya dihitung berkali-kali. Kini setiap baris hanya dihitung sekali, sehingga grup terbuka hampir seketika.
+
+---
+
 ## <a id="v1.33.0"></a>Semua izin di satu tempat
 
 <sub>1.33.0 · 11 Oktober 2026</sub>

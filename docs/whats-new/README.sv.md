@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Grupper med kortkommandon öppnas utan att hacka
+
+<sub>1.33.1 · 11 oktober 2026</sub>
+
+Sidan Spel förblir smidig när en lång lista med förhandsvisningar fälls ut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Att fälla ut en grupp med systemets kortkommandon fick inställningsfönstret att frysa i upp till tre sekunder, eftersom varje rad med sin förhandsvisning beräknades flera gånger. Nu beräknas varje rad bara en gång, så grupperna öppnas nästan direkt.
+
+---
+
 ## <a id="v1.33.0"></a>Alla behörigheter på ett ställe
 
 <sub>1.33.0 · 11 oktober 2026</sub>
