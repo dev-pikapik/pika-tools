@@ -2,6 +2,17 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.33.0] - Unreleased
+
+### Added
+- Settings › Permissions is now the one place for every permission pikapik uses. Accessibility and Input Monitoring come first. Under For some features, Fan control, Finder Extensions, iCloud Drive and Full Disk Access appear when something needs them. Each row says what it is for, shows a green check or an orange cross, and has one button: Allow when it is missing, Turn Off when it is on. The App Store version lists only what it uses.
+- Every permission can be taken back from inside pikapik. Accessibility and Input Monitoring ask first, then pikapik restarts without them; the App Store version opens the right System Settings list, because macOS lets you switch these off only there. Fan control removes the fan helper after the administrator password. Finder Extensions removes the Finder menu items. iCloud Drive stops syncing and removes the access. Full Disk Access is removed, or its list opens if macOS keeps it.
+- A tool that needs a missing permission looks half-grey. Click it and Permissions opens with the right row highlighted. A bar at the bottom of the page says “Grey tools need a permission. Click one to allow it.” and has an Allow button.
+
+### Changed
+- Fans no longer asks for anything itself: the speed controls stay grey until Fan control is allowed in Permissions.
+- The Open Finder Extensions… button on the Finder page and the Full Disk Access request in Left by deleted apps moved to Permissions.
+
 ## [1.32.2] - 2026-10-11
 
 ### Fixed

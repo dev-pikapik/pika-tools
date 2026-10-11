@@ -194,6 +194,8 @@ pikapik behöver två behörigheter. Första gången öppnas inställningarna p�
 
 Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 
+Vissa funktioner ber om mer när du använder dem: **Fläktstyrning**, **Finder-tillägg**, **iCloud Drive** och **Full skivåtkomst**. Allt finns på sidan Behörigheter i inställningarna: varje behörighet har en rad om vad den är till för, en grön bock eller ett orange kryss och en enda knapp: **Tillåt** när den saknas, **Stäng av** när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där.
+
 pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. Den enda nätverksförfrågan är sökningen efter uppdateringar, som frågar GitHub efter den senaste versionen.
 
 </details>
@@ -280,14 +282,14 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Håll vaken**: tid, alternativ för skärm och lock.
-- **Fläktar**: hastigheten för varje fläkt, Auto eller en egen hastighet.
+- **Fläktar**: hastigheten för varje fläkt, Auto eller en egen hastighet när Fläktstyrning är tillåten.
 - **Hastighetstest**: mät internet och se vad det räcker till.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
 - **Finder**: ny fil, mindre kopia och konvertering, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
-- **Behörigheter**: status för båda behörigheterna, och för iCloud Drive när synkronisering är på, med knappar som öppnar rätt ställe i Systeminställningar.
+- **Behörigheter**: alla behörigheter som pikapik använder, var och en med sin status och en knapp för att tillåta eller stänga av den. Ett verktyg som saknar en behörighet ser halvgrått ut, och ett klick på det öppnar den här sidan vid rätt rad.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 
 Många inställningar har en liten bild som visar vad de gör, till exempel en Mac som förblir vaken eller ett fönster som göms bakom Dock. Bilden ändras tillsammans med reglaget och står stilla när ”Reducera rörelser” är aktiverat i Systeminställningar.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Ja. Det är en universell app för Apple Silicon och Intel, för macOS 14 Sonoma eller senare.
 
 **Behörigheten är på, men ingenting fungerar.**
-Ta bort pikapik från båda listorna i **Systeminställningar › Integritet och säkerhet** med knappen − och lägg sedan till den igen. På sidan Behörigheter i pikapik inställningar finns knappar som öppnar rätt ställe.
+Ta bort pikapik från båda listorna i **Systeminställningar › Integritet och säkerhet** med knappen − och lägg sedan till den igen. Eller gör det i pikapik: klicka på sidan Behörigheter på **Stäng av** för varje behörighet och sedan på **Tillåt** igen.
 
 </details>
 

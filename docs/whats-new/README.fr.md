@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Toutes les autorisations au même endroit
+
+<sub>1.33.0 · 11 octobre 2026</sub>
+
+Réglages › Autorisations liste maintenant tout ce que pikapik utilise, et vous permet de reprendre n’importe laquelle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Réglages › Autorisations affiche maintenant chaque autorisation utilisée par pikapik, d’Accessibilité et Surveillance de l’entrée à Contrôle des ventilateurs, Extensions du Finder, iCloud Drive et Accès complet au disque. Chaque ligne explique en une phrase à quoi elle sert, avec une coche verte quand elle est activée et une croix orange quand elle manque.
+
+Chaque ligne a un seul bouton : Autoriser quand l’autorisation manque, Éteindre quand elle est active. Vous pouvez donc reprendre n’importe quelle autorisation sur place, sans fouiller dans Réglages Système. Pour Accessibilité et Surveillance de l’entrée, pikapik demande d’abord confirmation, puis redémarre sans elles.
+
+Un outil qui a besoin d’une autorisation que vous n’avez pas donnée apparaît à moitié grisé. Cliquez dessus : Autorisations s’ouvre sur la bonne ligne, prête pour un clic sur Autoriser.
+
+**Pour essayer :** Ouvrez Réglages › Autorisations et regardez chaque ligne. Cliquez sur un outil grisé pour aller droit à l’autorisation dont il a besoin.
+
+---
+
 ## <a id="v1.32.2"></a>Installation plus sûre, et une mise à jour ne perd jamais l’app
 
 <sub>1.32.2 · 11 octobre 2026</sub>

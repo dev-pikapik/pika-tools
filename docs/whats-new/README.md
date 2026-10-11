@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Every permission in one place
+
+<sub>1.33.0 · October 11, 2026</sub>
+
+Settings › Permissions now lists everything pikapik uses, and lets you take back any of it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Settings › Permissions now lists every permission pikapik uses, from Accessibility and Input Monitoring to Fan control, Finder Extensions, iCloud Drive and Full Disk Access. Each row says in one line what it is for, with a green check when it’s on and an orange cross when it’s missing.
+
+Every row has one button: Allow when it’s missing, Turn Off when it’s on. So you can take any permission back right there, without digging through System Settings. For Accessibility and Input Monitoring, pikapik asks first and then restarts without them.
+
+A tool that needs a permission you haven’t given looks half-grey. Click it, and Permissions opens with the right row highlighted, ready for one click on Allow.
+
+**Try it:** Open Settings › Permissions and look at each row. Click a grey tool to jump to the permission it needs.
+
+---
+
 ## <a id="v1.32.2"></a>Safer installs, and updates that never lose the app
 
 <sub>1.32.2 · October 11, 2026</sub>

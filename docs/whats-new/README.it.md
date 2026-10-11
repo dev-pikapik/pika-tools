@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Tutti i permessi in un solo posto
+
+<sub>1.33.0 · 11 ottobre 2026</sub>
+
+Impostazioni › Permessi ora elenca tutto ciò che usa pikapik e ti lascia revocare qualsiasi permesso.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Impostazioni › Permessi ora mostra ogni permesso che usa pikapik, da Accessibilità e Monitoraggio input a Controllo ventole, Estensioni del Finder, iCloud Drive e Accesso completo al disco. Ogni riga dice in una frase a cosa serve, con una spunta verde quando è attivo e una croce arancione quando manca.
+
+Ogni riga ha un solo pulsante: Consenti quando manca, Spegni quando è attivo. Così puoi revocare qualsiasi permesso proprio lì, senza cercare in Impostazioni di Sistema. Per Accessibilità e Monitoraggio input, pikapik chiede prima conferma e poi si riavvia senza questi permessi.
+
+Uno strumento che ha bisogno di un permesso che non hai dato appare in grigio. Fai clic su di esso e si apre Permessi con la riga giusta evidenziata, pronta per un clic su Consenti.
+
+**Provalo:** Apri Impostazioni › Permessi e dai un’occhiata a ogni riga. Fai clic su uno strumento in grigio per andare dritto al permesso che gli serve.
+
+---
+
 ## <a id="v1.32.2"></a>Installazione più sicura, e gli aggiornamenti non perdono mai l’app
 
 <sub>1.32.2 · 11 ottobre 2026</sub>

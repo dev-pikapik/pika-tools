@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Wszystkie uprawnienia w jednym miejscu
+
+<sub>1.33.0 · 11 października 2026</sub>
+
+Ustawienia › Uprawnienia pokazują teraz wszystko, czego używa pikapik, i pozwalają cofnąć każde uprawnienie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Ustawienia › Uprawnienia pokazują teraz każde uprawnienie, którego używa pikapik: od Dostępności i Monitorowania wprowadzania po Sterowanie wentylatorami, Rozszerzenia Findera, iCloud Drive i Pełny dostęp do dysku. Każdy wiersz jednym zdaniem mówi, do czego służy, a zielony ptaszek oznacza, że jest włączone, pomarańczowy krzyżyk — że brakuje.
+
+Każdy wiersz ma jeden przycisk: Zezwól, gdy uprawnienia brakuje, Wyłącz, gdy jest włączone. Dzięki temu cofniesz dowolne uprawnienie od razu na miejscu, bez szukania w Ustawieniach systemowych. Przy Dostępności i Monitorowaniu wprowadzania pikapik najpierw pyta, a potem uruchamia się ponownie bez nich.
+
+Narzędzie, które potrzebuje nienadanego jeszcze uprawnienia, wygląda na wyszarzone. Kliknij je, a otworzą się Uprawnienia z podświetlonym właściwym wierszem, gotowe na jedno kliknięcie w Zezwól.
+
+**Wypróbuj:** Otwórz Ustawienia › Uprawnienia i przyjrzyj się każdemu wierszowi. Kliknij wyszarzone narzędzie, żeby od razu przejść do uprawnienia, którego potrzebuje.
+
+---
+
 ## <a id="v1.32.2"></a>Bezpieczniejsza instalacja, a aktualizacje nie gubią aplikacji
 
 <sub>1.32.2 · 11 października 2026</sub>
