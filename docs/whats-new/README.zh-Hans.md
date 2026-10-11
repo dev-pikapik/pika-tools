@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>快捷键分组展开不再卡顿
+
+<sub>1.33.1 · 2026年10月11日</sub>
+
+在“游戏”页面展开含大量预览的长列表时依然流畅。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+以前展开一组系统键盘快捷键时，设置窗口会卡住最多三秒，因为每一行及其预览都要计算好几次。现在每一行只计算一次，分组几乎立即展开。
+
+---
+
 ## <a id="v1.33.0"></a>所有权限，集中在一处
 
 <sub>1.33.0 · 2026年10月11日</sub>

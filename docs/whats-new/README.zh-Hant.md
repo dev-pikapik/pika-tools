@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>快速鍵群組展開不再卡頓
+
+<sub>1.33.1 · 2026年10月11日</sub>
+
+在「遊戲」頁面展開含大量預覽的長列表時依然流暢。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+以往展開一組系統鍵盤快速鍵時，設定視窗會卡住最多三秒，因為每一列及其預覽都要計算好幾次。現在每一列只計算一次，群組幾乎立即展開。
+
+---
+
 ## <a id="v1.33.0"></a>所有權限，集中在一處
 
 <sub>1.33.0 · 2026年10月11日</sub>

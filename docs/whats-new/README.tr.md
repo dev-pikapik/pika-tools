@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.1"></a>Kısayol grupları takılmadan açılıyor
+
+<sub>1.33.1 · 11 Ekim 2026</sub>
+
+Önizlemelerle dolu uzun bir liste açıldığında Oyunlar sayfası akıcı kalıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Bir sistem klavye kısayolları grubunu açmak, her satır ve önizlemesi birkaç kez hesaplandığı için ayarlar penceresini üç saniyeye kadar donduruyordu. Artık her satır yalnızca bir kez hesaplanıyor; gruplar neredeyse anında açılıyor.
+
+---
+
 ## <a id="v1.33.0"></a>Tüm izinler tek yerde
 
 <sub>1.33.0 · 11 Ekim 2026</sub>
