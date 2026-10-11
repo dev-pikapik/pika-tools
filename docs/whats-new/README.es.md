@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Detalles cuando los necesitas
+
+<sub>1.31.4 · 11 de octubre de 2026</sub>
+
+Una página de juegos más tranquila y una sola búsqueda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Cada modo explica su función dentro de la lista desplegable. Al cerrarla, solo queda el nombre elegido en la página.
+
+Se han eliminado las descripciones que repiten el nombre de la acción. La información adicional útil se conserva.
+
+La búsqueda global encuentra acciones del sistema por nombre, función y teclas. Un resultado abre y resalta el ajuste exacto.
+
+**Pruébalo:** Busca una acción en la búsqueda global y abre su lista de modos.
+
+---
+
 ## <a id="v1.31.3"></a>Un mismo estilo para los ajustes de juego
 
 <sub>1.31.3 · 11 de octubre de 2026</sub>

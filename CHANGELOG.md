@@ -2,6 +2,13 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.31.4] - Unreleased
+
+### Changed
+- Game shortcut choices show an explanation beneath every option inside the dropdown. The settings page keeps only the selected name; redundant action descriptions and repeated guidance have been removed.
+- Games uses the global settings search. It indexes each live macOS action, its topic, meaning and assigned keys, understands modifier symbols and names, and ranks exact key combinations first. Selecting a result opens its group and highlights that specific action, including actions with identical names.
+- The shortcut catalogue refreshes when settings opens and when pikapik becomes active. Saved game protection rules and choices keep their behaviour.
+
 ## [1.31.3] - 2026-10-11
 
 ### Changed

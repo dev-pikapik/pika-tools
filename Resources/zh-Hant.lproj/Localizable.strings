@@ -532,8 +532,6 @@
 "Force Quit" = "強制結束";
 "System action %@" = "系統操作 %@";
 "Other system shortcuts" = "其他系統快速鍵";
-"Search system shortcuts" = "搜尋系統快速鍵";
-"Refresh" = "重新整理";
 "While playing" = "遊戲期間";
 "Always available" = "始終可用";
 "No key assigned" = "未設定按鍵";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "系統鍵盤快速鍵";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "部分macOS操作未公開名稱。其他App可能有自己的快速鍵。";
 "More game settings" = "更多遊戲設定";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "快速語言快速鍵不會干擾。持續按住的遊戲鍵會傳給遊戲。";
 "Other apps watching keys" = "其他監看按鍵的App";
 "Can change keys" = "可以修改按鍵";
 "Only listens" = "僅監聽";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "顯示或隱藏 Dock。";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "執行所列的 macOS 動作。如果它中斷遊戲，請將其暫停。";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS 提供按鍵，但未提供動作名稱。你仍可選擇它在遊戲中的行為。";
-"Stays paused while you play." = "遊戲期間保持暫停。";
-"Changes language without opening the system menu." = "切換語言而不開啟系統選單。";
-"Runs as set in macOS." = "依 macOS 中的設定執行。";
 "Expanded" = "已展開";
 "Collapsed" = "已收合";
 "Fine-tune protection and explore your Mac’s shortcuts." = "調整保護並探索 Mac 的快速鍵。";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "遊戲在前景時，此 macOS 動作會被停用。離開遊戲後，它恢復原來的行為。";
 "Every press switches language without the system menu. The same keys still reach the game." = "每次按下都會切換語言，而不開啟系統選單。同樣的按鍵仍會傳給遊戲。";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS 正常執行此動作，即使它開啟視窗或從遊戲奪取焦點。";
-"Choose what each shortcut does while you play." = "選擇每個快速鍵在遊戲中的行為。";

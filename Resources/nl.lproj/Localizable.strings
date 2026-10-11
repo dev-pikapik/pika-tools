@@ -532,8 +532,6 @@
 "Force Quit" = "Forceer stop";
 "System action %@" = "Systeemactie %@";
 "Other system shortcuts" = "Andere systeemsneltoetsen";
-"Search system shortcuts" = "Systeemsneltoetsen zoeken";
-"Refresh" = "Vernieuwen";
 "While playing" = "Tijdens spelen";
 "Always available" = "Altijd beschikbaar";
 "No key assigned" = "Geen toetsen toegewezen";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Systeemsneltoetsen";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Sommige macOS-acties hebben geen gepubliceerde naam. Andere apps kunnen eigen sneltoetsen hebben.";
 "More game settings" = "Meer spelinstellingen";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Snelle taalsneltoetsen werken onopvallend. Vastgehouden speltoetsen bereiken het spel.";
 "Other apps watching keys" = "Andere apps die toetsen volgen";
 "Can change keys" = "Kan toetsen wijzigen";
 "Only listens" = "Volgt alleen";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Toont of verbergt het Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Voert de genoemde macOS-actie uit. Pauzeer deze als hij de game onderbreekt.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS geeft de toetsen, maar niet de naam van deze actie. Je kunt het gedrag in games toch kiezen.";
-"Stays paused while you play." = "Gepauzeerd terwijl je speelt.";
-"Changes language without opening the system menu." = "Verandert de taal zonder het systeemmenu te openen.";
-"Runs as set in macOS." = "Werkt zoals ingesteld in macOS.";
 "Expanded" = "Uitgeklapt";
 "Collapsed" = "Ingeklapt";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Pas de bescherming aan en ontdek de sneltoetsen van je Mac.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Deze macOS-actie is uitgeschakeld zolang de game vooraan staat. Als je weggaat, werkt ze weer zoals voorheen.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Elke druk wisselt de taal zonder systeemmenu. Dezelfde toetsen blijven de game bereiken.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS voert de actie normaal uit, ook als ze een venster opent of de focus van de game wegneemt.";
-"Choose what each shortcut does while you play." = "Kies wat elke sneltoets doet terwijl je speelt.";

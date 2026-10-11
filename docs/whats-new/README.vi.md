@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Chi tiết khi bạn cần
+
+<sub>1.31.4 · 11 tháng 10 năm 2026</sub>
+
+Trang trò chơi gọn hơn và một ô tìm kiếm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Mỗi chế độ giải thích cách hoạt động ngay trong danh sách thả xuống. Khi đóng danh sách, trang chỉ hiển thị tên đã chọn.
+
+Đã bỏ mô tả lặp lại tên hành động. Thông tin bổ sung hữu ích vẫn được giữ lại.
+
+Tìm kiếm chung tìm hành động hệ thống theo tên, ý nghĩa và phím. Chọn kết quả sẽ mở và làm nổi bật đúng cài đặt đó.
+
+**Thử ngay:** Tìm hành động trong tìm kiếm chung và mở danh sách chế độ của nó.
+
+---
+
 ## <a id="v1.31.3"></a>Giao diện thống nhất cho cài đặt trò chơi
 
 <sub>1.31.3 · 11 tháng 10 năm 2026</sub>

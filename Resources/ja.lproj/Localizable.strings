@@ -532,8 +532,6 @@
 "Force Quit" = "強制終了";
 "System action %@" = "システム操作 %@";
 "Other system shortcuts" = "その他のシステムショートカット";
-"Search system shortcuts" = "システムショートカットを検索";
-"Refresh" = "更新";
 "While playing" = "ゲーム中";
 "Always available" = "常に利用可能";
 "No key assigned" = "キー未設定";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "システムのキーボードショートカット";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "一部のmacOS操作は名前が公開されていません。他のアプリには独自のショートカットがある場合があります。";
 "More game settings" = "その他のゲーム設定";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "素早い言語切り替えは静かに動作します。押し続けたゲームキーはゲームに届きます。";
 "Other apps watching keys" = "キーを監視している他のアプリ";
 "Can change keys" = "キーを変更可能";
 "Only listens" = "監視のみ";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Dockを表示または非表示にします。";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "表示されたmacOS操作を実行します。ゲームを妨げる場合は一時停止してください。";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOSはキーを提供していますが、操作名は公開していません。ゲーム中の動作は選べます。";
-"Stays paused while you play." = "プレイ中は一時停止します。";
-"Changes language without opening the system menu." = "システムメニューを開かずに言語を変更します。";
-"Runs as set in macOS." = "macOSの設定に従って動作します。";
 "Expanded" = "展開済み";
 "Collapsed" = "折りたたみ済み";
 "Fine-tune protection and explore your Mac’s shortcuts." = "保護を調整してMacのショートカットを確認します。";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "ゲームが最前面にある間、このmacOS操作は無効になります。ゲームを離れると以前の動作に戻ります。";
 "Every press switches language without the system menu. The same keys still reach the game." = "押すたびにシステムメニューを開かずに言語を切り替えます。同じキーは引き続きゲームに届きます。";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "ウインドウを開いたりゲームからフォーカスを移したりする場合も、macOSは通常どおり操作を実行します。";
-"Choose what each shortcut does while you play." = "プレイ中の各ショートカットの動作を選びます。";

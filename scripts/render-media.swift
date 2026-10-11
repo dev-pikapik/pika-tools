@@ -41,6 +41,7 @@ enum RenderMedia {
         ("whats-new/1.31.0/system-shortcuts", 6.2, AnyView(SystemShortcutsCard())),
         ("whats-new/1.31.2/game-settings", 5.4, AnyView(GameSettingsCard())),
         ("whats-new/1.31.3/game-preview", 5.4, AnyView(UnifiedGamePreviewCard())),
+        ("whats-new/1.31.4/game-choices", 5.4, AnyView(GameChoicesCard())),
     ]
 
     static func main() {
@@ -197,6 +198,33 @@ private struct UnifiedGamePreviewCard: View {
         }
         .padding(.bottom, 8)
         .loop($tick, [2.7, 2.7])
+    }
+}
+
+private struct GameChoicesCard: View {
+    private let entry = SystemGameShortcut(id: 60, name: "", section: "input_sources", sectionName: "", rawName: "", key: 49, character: 32, modifiers: 0x40000, enabled: true)
+
+    var body: some View {
+        IllustrationRow(loop: [2.7, 2.7]) { tick in
+            VStack(spacing: 4) {
+                ForEach([GameShortcutMode.automatic, .pause], id: \.self) { mode in
+                    let selected = mode == (tick % 2 == 0 ? .automatic : .pause)
+                    HStack(alignment: .top, spacing: 7) {
+                        Image(systemName: "checkmark").font(.system(size: 10, weight: .semibold))
+                            .foregroundStyle(Color.accentColor).opacity(selected ? 1 : 0).frame(width: 12).padding(.top, 1)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(verbatim: mode.title).font(.system(size: 11, weight: .medium))
+                            Text(verbatim: entry.explanation(for: mode, rules: Set(GameRule.allCases)))
+                                .font(.system(size: 9)).foregroundStyle(.secondary).lineLimit(2)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(7)
+                    .background(Color.accentColor.opacity(selected ? 0.1 : 0), in: RoundedRectangle(cornerRadius: 7))
+                }
+            }
+            .padding(.horizontal, 10)
+        }
     }
 }
 

@@ -73,8 +73,17 @@ struct SettingsItem: Identifiable {
     let tab: SettingsTab
     let title: String
     var synonyms = ""
+    var target: String?
+    var detail: String?
+    var keys = ""
 
-    var id: String { title }
+    var id: String { target ?? title }
+
+    static func shortcut(_ entry: SystemGameShortcut) -> SettingsItem {
+        SettingsItem(tab: .games, title: entry.displayName,
+                     synonyms: [entry.rawName, entry.sectionName, entry.group.title, entry.group.detail, entry.description.text, entry.supportsBackground ? String(localized: "Switch language") + ", Switch language" : "", "game games gaming", String(entry.id)].joined(separator: ", "),
+                     target: entry.anchor, detail: entry.group.title + " · " + (entry.text ?? String(localized: "No key assigned")), keys: entry.text ?? "")
+    }
 
     static var all: [SettingsItem] {
         [
@@ -176,7 +185,7 @@ struct SettingsItem: Identifiable {
 
     func matches(_ query: String) -> Bool {
         let words = synonyms + ", " + Bundle.main.localizedString(forKey: synonyms, value: nil, table: nil)
-        return [title, words].contains { $0.localizedStandardContains(query) }
+        return (target == nil || SettingsSearch.matchesKeys(query, keys: keys)) && SettingsSearch.matches(query, fields: [title, words, tab.title, keys])
     }
 }
 
@@ -192,10 +201,16 @@ enum SettingsWindow {
         }
         var search = ""
         var highlight: String?
+        var systemShortcuts: [SystemGameShortcut] = []
         var confirmingReset = false
         private(set) var back: [SettingsTab] = []
         private(set) var forward: [SettingsTab] = []
         @ObservationIgnored private var navigating = false
+
+        var searchItems: [SettingsItem] { SettingsItem.all + systemShortcuts.map(SettingsItem.shortcut) }
+        var highlightedShortcut: SystemGameShortcut? { systemShortcuts.first { $0.anchor == highlight } }
+
+        func refreshShortcuts() { systemShortcuts = SystemShortcutCatalog.load() }
 
         func goBack() {
             guard let tab = back.popLast() else { return }
@@ -289,7 +304,7 @@ private struct SettingsView: View {
         let tab = model.selection ?? .general
         NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.selection) {
-                if model.search.isEmpty {
+                if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games, .pet]) }
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -325,6 +340,8 @@ private struct SettingsView: View {
         .searchable(text: $model.search, placement: .sidebar)
         .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
         .onChange(of: tab, initial: true) { SettingsWindow.window?.title = tab.title }
+        .onAppear { model.refreshShortcuts() }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in model.refreshShortcuts() }
     }
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
@@ -336,8 +353,12 @@ private struct SettingsView: View {
 
     @ViewBuilder
     private var results: some View {
-        let query = model.search.trimmingCharacters(in: .whitespaces)
-        let items = SettingsItem.all.filter { $0.matches(query) }
+        let query = model.search.trimmingCharacters(in: .whitespacesAndNewlines)
+        let items = model.searchItems.filter { $0.matches(query) }.sorted {
+            let left = SettingsSearch.score(query, title: $0.title, keys: $0.keys)
+            let right = SettingsSearch.score(query, title: $1.title, keys: $1.keys)
+            return left == right ? $0.id.localizedStandardCompare($1.id) == .orderedAscending : left > right
+        }
         let tabs = SettingsTab.allCases.filter { tab in
             tab.title.localizedStandardContains(query) || items.contains { $0.tab == tab }
         }
@@ -352,9 +373,12 @@ private struct SettingsView: View {
                 .tag(tab)
             ForEach(items.filter { $0.tab == tab }) { item in
                 Button { model.open(item) } label: {
-                    Text(item.title)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title).foregroundStyle(.secondary).lineLimit(2)
+                        if let detail = item.detail {
+                            Text(verbatim: detail).font(.caption).foregroundStyle(.tertiary).lineLimit(2)
+                        }
+                    }
                         .padding(.leading, SettingsTab.iconSize + 6)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .contentShape(Rectangle())

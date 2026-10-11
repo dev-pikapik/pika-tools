@@ -532,8 +532,6 @@
 "Force Quit" = "बलपूर्वक बंद करें";
 "System action %@" = "सिस्टम कार्रवाई %@";
 "Other system shortcuts" = "अन्य सिस्टम शॉर्टकट";
-"Search system shortcuts" = "सिस्टम शॉर्टकट खोजें";
-"Refresh" = "रीफ़्रेश";
 "While playing" = "खेलते समय";
 "Always available" = "हमेशा उपलब्ध";
 "No key assigned" = "कोई कुंजी निर्धारित नहीं";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "सिस्टम कीबोर्ड शॉर्टकट";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "कुछ macOS कार्रवाइयों के नाम प्रकाशित नहीं हैं। दूसरे ऐप के अपने शॉर्टकट हो सकते हैं।";
 "More game settings" = "और गेम सेटिंग्स";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "तेज़ भाषा शॉर्टकट चुपचाप काम करते हैं। दबाए हुए गेम की कुंजियाँ गेम तक पहुँचती हैं।";
 "Other apps watching keys" = "कुंजियाँ देखने वाले अन्य ऐप";
 "Can change keys" = "कुंजियाँ बदल सकता है";
 "Only listens" = "सिर्फ़ देखता है";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Dock दिखाता या छिपाता है।";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "बताई गई macOS क्रिया चलाता है। अगर वह गेम में बाधा डालती है तो उसे रोके रखें।";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS कुंजियाँ देता है, लेकिन क्रिया का नाम नहीं बताता। फिर भी गेम में उसका व्यवहार चुन सकते हैं।";
-"Stays paused while you play." = "खेलते समय रुका रहता है।";
-"Changes language without opening the system menu." = "सिस्टम मेनू खोले बिना भाषा बदलता है।";
-"Runs as set in macOS." = "macOS की सेटिंग के अनुसार चलता है।";
 "Expanded" = "विस्तारित";
 "Collapsed" = "संक्षिप्त";
 "Fine-tune protection and explore your Mac’s shortcuts." = "सुरक्षा समायोजित करें और Mac के शॉर्टकट देखें।";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "गेम सामने होने पर यह macOS क्रिया बंद रहती है। गेम से बाहर जाने पर पहले की तरह काम करती है।";
 "Every press switches language without the system menu. The same keys still reach the game." = "हर दबाव पर सिस्टम मेनू के बिना भाषा बदलती है। वही कुंजियाँ गेम तक भी पहुँचती रहती हैं।";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS क्रिया सामान्य रूप से चलाता है, भले ही वह विंडो खोले या गेम से फ़ोकस हटा दे।";
-"Choose what each shortcut does while you play." = "खेलते समय हर शॉर्टकट का काम चुनें।";

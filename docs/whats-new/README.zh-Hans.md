@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>需要时再看详情
+
+<sub>1.31.4 · 2026年10月11日</sub>
+
+更简洁的游戏页面，统一的搜索。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+每种模式都在下拉列表中解释其作用。关闭列表后，页面只显示所选名称。
+
+已移除重复操作名称的说明。有用的补充信息仍然保留。
+
+全局搜索可按名称、含义和按键查找系统操作。选择结果会打开并突出显示对应设置。
+
+**试试看：** 在全局搜索中查找操作，然后打开模式列表。
+
+---
+
 ## <a id="v1.31.3"></a>统一游戏设置的样式
 
 <sub>1.31.3 · 2026年10月11日</sub>

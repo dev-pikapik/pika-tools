@@ -532,8 +532,6 @@
 "Force Quit" = "강제 종료";
 "System action %@" = "시스템 동작 %@";
 "Other system shortcuts" = "다른 시스템 단축키";
-"Search system shortcuts" = "시스템 단축키 검색";
-"Refresh" = "새로고침";
 "While playing" = "플레이 중";
 "Always available" = "항상 사용 가능";
 "No key assigned" = "지정된 키 없음";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "시스템 키보드 단축키";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "일부 macOS 동작은 이름이 공개되지 않아요. 다른 앱에는 자체 단축키가 있을 수 있어요.";
 "More game settings" = "추가 게임 설정";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "빠른 언어 단축키는 조용히 작동해요. 누르고 있는 게임 키는 게임에 전달돼요.";
 "Other apps watching keys" = "키를 관찰하는 다른 앱";
 "Can change keys" = "키를 변경할 수 있음";
 "Only listens" = "관찰만 함";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Dock을 표시하거나 가립니다.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "표시된 macOS 동작을 실행합니다. 게임을 방해하면 일시 정지해 두세요.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS는 키를 제공하지만 동작의 이름은 공개하지 않습니다. 게임에서의 동작은 선택할 수 있습니다.";
-"Stays paused while you play." = "플레이 중에는 일시 정지됩니다.";
-"Changes language without opening the system menu." = "시스템 메뉴를 열지 않고 언어를 바꿉니다.";
-"Runs as set in macOS." = "macOS 설정대로 작동합니다.";
 "Expanded" = "펼쳐짐";
 "Collapsed" = "접힘";
 "Fine-tune protection and explore your Mac’s shortcuts." = "보호를 조정하고 Mac 단축키를 살펴보세요.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "게임이 맨 앞에 있는 동안 이 macOS 동작은 비활성화됩니다. 게임을 벗어나면 이전처럼 작동합니다.";
 "Every press switches language without the system menu. The same keys still reach the game." = "누를 때마다 시스템 메뉴 없이 언어가 바뀝니다. 같은 키는 계속 게임에 전달됩니다.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "윈도우를 열거나 게임의 포커스를 가져가더라도 macOS가 동작을 정상 실행합니다.";
-"Choose what each shortcut does while you play." = "플레이 중 각 단축키의 동작을 선택하세요.";

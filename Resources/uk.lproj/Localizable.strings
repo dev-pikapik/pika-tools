@@ -532,8 +532,6 @@
 "Force Quit" = "Примусове завершення";
 "System action %@" = "Системна дія %@";
 "Other system shortcuts" = "Інші системні поєднання";
-"Search system shortcuts" = "Пошук системних поєднань";
-"Refresh" = "Оновити";
 "While playing" = "Під час гри";
 "Always available" = "Завжди доступно";
 "No key assigned" = "Клавіші не призначені";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Системні поєднання клавіш";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Деякі дії macOS не мають опублікованої назви. Інші програми можуть мати власні поєднання.";
 "More game settings" = "Додаткові параметри гри";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Короткі поєднання зміни мови працюють без перешкод. Затиснуті ігрові клавіші надходять до гри.";
 "Other apps watching keys" = "Інші програми, що стежать за клавішами";
 "Can change keys" = "Може змінювати введення";
 "Only listens" = "Лише спостерігає";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Показує або приховує Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Виконує вказану дію macOS. Залиште її на паузі, якщо вона заважає грі.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS повідомляє клавіші, але не назву дії. Її поведінку в грі все одно можна вибрати.";
-"Stays paused while you play." = "На паузі, поки ви граєте.";
-"Changes language without opening the system menu." = "Змінює мову без системного меню.";
-"Runs as set in macOS." = "Працює як налаштовано в macOS.";
 "Expanded" = "Розгорнуто";
 "Collapsed" = "Згорнуто";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Налаштуйте захист і дослідіть поєднання вашого Mac.";
@@ -612,4 +606,3 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Поки гра на передньому плані, цю дію macOS вимкнено. Коли ви залишаєте гру, вона працює як раніше.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Кожне натискання поєднання змінює мову без системного меню. Ті самі клавіші продовжують надходити до гри.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS виконує дію як завжди, навіть якщо вона відкриває вікно або забирає фокус із гри.";
-"Choose what each shortcut does while you play." = "Виберіть, що робить кожне поєднання під час гри.";

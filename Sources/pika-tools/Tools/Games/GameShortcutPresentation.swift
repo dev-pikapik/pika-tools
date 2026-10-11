@@ -89,6 +89,13 @@ enum GameShortcutDescription: Equatable {
 }
 
 extension GameRule {
+    var detail: String? {
+        switch self {
+        case .appSwitcher, .hide, .siri, .swipes: nil
+        default: description.text
+        }
+    }
+
     var description: GameShortcutDescription {
         switch self {
         case .commandQ: .quit
@@ -111,6 +118,16 @@ extension GameRule {
 }
 
 extension SystemGameShortcut {
+    var anchor: String { "system-shortcut:\(id)" }
+
+    var detail: String? {
+        if let controller, controller.detail == nil { return nil }
+        return switch description {
+        case .dock, .brightness, .volume, .contrast, .invert, .captions, .focus, .siri, .screenshot, .named: nil
+        default: description.text
+        }
+    }
+
     func explanation(for choice: GameShortcutMode, rules: Set<GameRule>) -> String {
         switch choice {
         case .automatic:
@@ -174,14 +191,4 @@ extension SystemGameShortcut {
         }
     }
 
-    func behaviour(_ mode: GameShortcutMode) -> String {
-        if emergency { return String(localized: "Always available") }
-        if !assigned { return String(localized: "No key assigned") }
-        if !enabled { return String(localized: "Off in macOS") }
-        switch mode {
-        case .automatic, .pause: return String(localized: "Stays paused while you play.")
-        case .background: return String(localized: "Changes language without opening the system menu.")
-        case .system: return String(localized: "Runs as set in macOS.")
-        }
-    }
 }
