@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Sicherere Installation, und Updates verlieren die App nie
+
+<sub>1.32.2 · 11. Oktober 2026</sub>
+
+Eine Runde Korrekturen für sichereres Installieren, Aktualisieren und Deinstallieren.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Der Lüfter-Helfer wird jetzt sorgfältiger installiert und vor dem Start geprüft. Lässt sich ein Update nicht kopieren, bleibt Ihr aktuelles pikapik erhalten. Beim Deinstallieren wird auch der Lüfter-Helfer entfernt, und Ihre Einstellung für die Tastenwiederholung, die Dock-Ecken und die Systemkurzbefehle werden zurückgesetzt.
+
+Gehaltene Tasten bleiben nicht mehr hängen, wenn ein Werkzeug neu startet, und beim Ausschalten von „Gehaltene Taste wiederholen“ bekommen Sie Ihre eigene Einstellung für das Akzentmenü zurück. Das Haustier ruht, solange der Bildschirm schläft oder gesperrt ist, und eine Kopie von archive.tar.gz heißt jetzt archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Manuelle Lüfterdrehzahl klappt jetzt gleich beim ersten Mal
 
 <sub>1.32.1 · 11. Oktober 2026</sub>

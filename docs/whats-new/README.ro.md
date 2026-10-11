@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Instalare mai sigură, iar actualizările nu pierd niciodată aplicația
+
+<sub>1.32.2 · 11 octombrie 2026</sub>
+
+O serie de remedieri care fac instalarea, actualizarea și dezinstalarea mai sigure.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Asistentul ventilatoarelor se instalează acum mai atent și este verificat înainte de pornire. Dacă o actualizare nu poate fi copiată, pikapik-ul actual rămâne la locul lui. La dezinstalare se elimină și asistentul ventilatoarelor, iar setarea de repetare a tastelor, colțurile Dock și scurtăturile de sistem revin cum erau.
+
+Tastele ținute apăsate nu se mai blochează când o unealtă repornește, iar dacă opriți „Repetă o tastă ținută apăsată”, vă recăpătați propria setare a meniului de accente. Animalul se odihnește cât ecranul e în repaus sau blocat, iar o copie a lui archive.tar.gz se numește acum archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>Viteza manuală a ventilatoarelor ține din prima încercare
 
 <sub>1.32.1 · 11 octombrie 2026</sub>

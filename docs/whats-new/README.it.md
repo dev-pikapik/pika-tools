@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Installazione più sicura, e gli aggiornamenti non perdono mai l’app
+
+<sub>1.32.2 · 11 ottobre 2026</sub>
+
+Una serie di correzioni per installare, aggiornare e disinstallare in modo più sicuro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+L’assistente delle ventole ora viene installato con più cura e verificato prima dell’avvio. Se un aggiornamento non si riesce a copiare, il tuo pikapik attuale resta al suo posto. La disinstallazione rimuove anche l’assistente delle ventole e ripristina l’impostazione di ripetizione dei tasti, gli angoli del Dock e le scorciatoie di sistema.
+
+I tasti tenuti premuti non restano più bloccati quando uno strumento si riavvia, e disattivando «Ripeti un tasto tenuto premuto» riavrai la tua impostazione del menu degli accenti. L’animaletto riposa mentre lo schermo è in stop o bloccato, e una copia di archive.tar.gz ora si chiama archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>La velocità manuale delle ventole resta al primo tentativo
 
 <sub>1.32.1 · 11 ottobre 2026</sub>
