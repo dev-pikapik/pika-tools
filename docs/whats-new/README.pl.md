@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Ręczna prędkość wentylatorów działa już za pierwszym razem
+
+<sub>1.32.1 · 11 października 2026</sub>
+
+Wybranie Ręcznie w Wentylatorach nie wraca już do Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Czasem pierwsze dotknięcie Ręcznie przywracało wentylatory do Auto z ostrzeżeniem o bezpieczeństwie i dopiero drugie działało. Teraz Ręcznie trzyma od pierwszej próby.
+
+Jeśli wentylator sam wyjdzie z trybu ręcznego, pikapik naprawdę przywróci go do Auto, więc to, co widzisz, zawsze zgadza się z tym, co robi Twój Mac.
+
+Nie musisz niczego zezwalać ponownie. Zaktualizuj i działa.
+
+**Wypróbuj:** Otwórz Ustawienia › Wentylatory i wybierz Ręcznie.
+
+---
+
 ## <a id="v1.32.0"></a>Zobacz, jak szybko kręcą się wentylatory
 
 <sub>1.32.0 · 11 października 2026</sub>

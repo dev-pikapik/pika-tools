@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Kecepatan kipas manual langsung berlaku pada percobaan pertama
+
+<sub>1.32.1 · 11 Oktober 2026</sub>
+
+Memilih Manual di Kipas tidak lagi kembali ke Otomatis.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Kadang ketukan pertama pada Manual mengembalikan kipas ke Otomatis dengan peringatan keamanan, dan baru ketukan kedua yang berhasil. Sekarang Manual bertahan sejak percobaan pertama.
+
+Jika sebuah kipas keluar dari mode Manual dengan sendirinya, pikapik kini benar-benar mengembalikannya ke Otomatis, sehingga yang Anda lihat selalu sama dengan yang dilakukan Mac Anda.
+
+Anda tidak perlu mengizinkan apa pun lagi. Perbarui, lalu langsung berfungsi.
+
+**Coba:** Buka Pengaturan › Kipas dan pilih Manual.
+
+---
+
 ## <a id="v1.32.0"></a>Lihat seberapa cepat kipas Anda berputar
 
 <sub>1.32.0 · 11 Oktober 2026</sub>
