@@ -133,3 +133,14 @@ struct KeyLabel: View {
         }
     }
 }
+
+extension View {
+    func noticeBar() -> some View {
+        font(.callout)
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .background(.bar)
+            .overlay(alignment: .top) { Divider() }
+    }
+}

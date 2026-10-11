@@ -12,7 +12,11 @@ final class Background: NSObject {
 
     private override init() {}
 
+    #if APPSTORE
+    static var isOn: Bool { false }
+    #else
     static var isOn: Bool { UserDefaults.standard.object(forKey: key) as? Bool ?? true }
+    #endif
 
     static var isOutsideQuit: Bool {
         guard let event = NSAppleEventManager.shared().currentAppleEvent,

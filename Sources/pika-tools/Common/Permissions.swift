@@ -17,8 +17,10 @@ final class Permissions {
     private init() {}
 
     func request() {
+        #if !APPSTORE
         if !accessibility { resetStale("Accessibility") }
         if !inputMonitoring { resetStale("ListenEvent") }
+        #endif
         if !accessibility {
             let key = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String
             AXIsProcessTrustedWithOptions([key: true] as CFDictionary)
@@ -29,6 +31,7 @@ final class Permissions {
         startPolling()
     }
 
+    #if !APPSTORE
     private func resetStale(_ service: String) {
         guard let id = Bundle.main.bundleIdentifier else { return }
         let process = Process()
@@ -37,6 +40,7 @@ final class Permissions {
         try? process.run()
         process.waitUntilExit()
     }
+    #endif
 
     func refresh() {
         let ax = AXIsProcessTrusted()
@@ -102,6 +106,7 @@ struct PermissionsView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
+            #if !APPSTORE
             if sync.isEnabled {
                 Section {
                     PermissionRow(
@@ -113,7 +118,10 @@ struct PermissionsView: View {
                     ) { sync.openSettings() }
                 }
             }
+            #endif
+            #if !APPSTORE
             LeftoverPermissionsSection()
+            #endif
         }
         .formStyle(.grouped)
         .settingsPage()

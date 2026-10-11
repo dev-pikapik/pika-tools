@@ -19,7 +19,11 @@ struct MenuView: View {
     private var hidden: Set<String> { Set(hiddenList.split(separator: ",").map(String.init)) }
 
     private func isShown(_ id: String) -> Bool {
-        customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
+        #if APPSTORE
+        // APPSTORE: Speed Test returns once a public measurement replaces networkQuality
+        if id == "speed-test" { return false }
+        #endif
+        return customizing || !hidden.contains(id) || id == GameModeTool.shared.id && GameModeTool.shared.isPlaying
     }
 
     private var visibleTabs: [SettingsTab] {
@@ -193,6 +197,7 @@ struct MenuView: View {
             }
             .pickerStyle(.radioGroup)
             .labelsHidden()
+            #if !APPSTORE
             Button {
                 NSApp.keyWindow?.close()
                 KeepAwake.turnOffDisplay()
@@ -205,6 +210,7 @@ struct MenuView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
+            #endif
         }
         .padding(.leading, 46)
         .padding(.trailing, 8)
@@ -218,6 +224,7 @@ struct MenuView: View {
 
     @ViewBuilder
     private var updateFooter: some View {
+        #if !APPSTORE
         let updater = Updater.shared
         if case .available(let version) = updater.state {
             Button {
@@ -228,5 +235,6 @@ struct MenuView: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        #endif
     }
 }

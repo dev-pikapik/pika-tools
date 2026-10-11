@@ -60,28 +60,36 @@ let privateTools: [any Tool] = []
 final class ToolRegistry {
     static let shared = ToolRegistry()
 
-    let tools: [any Tool] = [
-        InputSwitchTool(),
-        KeyRepeatTool(),
-        HomeEndTool(),
-        PointerTool(),
-        WheelTool(),
-        ScrollDirectionTool(),
-        SideButtonsTool(),
-        WindowZoomTool(),
-        CommandKeysTool(),
-        QuitOnCloseTool(),
-        DockHideTool(),
-        NewFileTool(),
-        CompressTool(),
-        ConvertTool(),
-        FinderOpenTool(),
-        FinderCutTool(),
-        FinderDeleteTool(),
-        AnimationsTool.shared,
-        GameModeTool.shared,
-        PetTool.shared,
-    ] + privateTools
+    let tools: [any Tool] = {
+        var list: [any Tool] = []
+        list.append(InputSwitchTool())
+        #if !APPSTORE
+        list.append(KeyRepeatTool())
+        #endif
+        list.append(HomeEndTool())
+        #if !APPSTORE
+        list.append(PointerTool())
+        #endif
+        list.append(WheelTool())
+        list.append(ScrollDirectionTool())
+        list.append(SideButtonsTool())
+        list.append(WindowZoomTool())
+        list.append(CommandKeysTool())
+        list.append(QuitOnCloseTool())
+        list.append(DockHideTool())
+        list.append(NewFileTool())
+        list.append(CompressTool())
+        list.append(ConvertTool())
+        list.append(FinderOpenTool())
+        list.append(FinderCutTool())
+        list.append(FinderDeleteTool())
+        #if !APPSTORE
+        list.append(AnimationsTool.shared)
+        #endif
+        list.append(GameModeTool.shared)
+        list.append(PetTool.shared)
+        return list + privateTools
+    }()
 
     var status: ToolStatus {
         if GameModeTool.shared.isPlaying { return .playing }
