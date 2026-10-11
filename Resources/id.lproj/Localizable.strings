@@ -532,8 +532,6 @@
 "Force Quit" = "Paksa Keluar";
 "System action %@" = "Tindakan sistem %@";
 "Other system shortcuts" = "Pintasan sistem lainnya";
-"Search system shortcuts" = "Cari pintasan sistem";
-"Refresh" = "Segarkan";
 "While playing" = "Saat bermain";
 "Always available" = "Selalu tersedia";
 "No key assigned" = "Belum ada tombol";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Pintasan keyboard sistem";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Beberapa tindakan macOS tidak punya nama yang dipublikasikan. Aplikasi lain bisa punya pintasan sendiri.";
 "More game settings" = "Pengaturan game lainnya";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Pintasan bahasa cepat bekerja diam-diam. Tombol game yang ditahan mencapai game.";
 "Other apps watching keys" = "Aplikasi lain yang memantau tombol";
 "Can change keys" = "Bisa mengubah tombol";
 "Only listens" = "Hanya memantau";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Menampilkan atau menyembunyikan Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Menjalankan tindakan macOS yang disebutkan. Jeda tindakan itu jika mengganggu game.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS menyediakan tombol, tetapi tidak memberi nama tindakan ini. Anda tetap bisa memilih perilakunya dalam game.";
-"Stays paused while you play." = "Tetap dijeda saat Anda bermain.";
-"Changes language without opening the system menu." = "Mengganti bahasa tanpa membuka menu sistem.";
-"Runs as set in macOS." = "Berjalan sesuai pengaturan macOS.";
 "Expanded" = "Diperluas";
 "Collapsed" = "Diciutkan";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Sesuaikan perlindungan dan jelajahi pintasan Mac Anda.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Tindakan macOS ini dinonaktifkan saat game berada di depan. Setelah Anda meninggalkan game, tindakan berfungsi seperti semula.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Setiap tekanan mengganti bahasa tanpa menu sistem. Tombol yang sama tetap diterima game.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS menjalankan tindakan secara normal, meski membuka jendela atau memindahkan fokus dari game.";
-"Choose what each shortcut does while you play." = "Pilih apa yang dilakukan setiap pintasan saat bermain.";
 "Fans" = "Kipas";
 "Fan speed" = "Kecepatan kipas";
 "Fan control" = "Kontrol kipas";

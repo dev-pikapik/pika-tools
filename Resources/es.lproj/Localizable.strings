@@ -532,8 +532,6 @@
 "Force Quit" = "Forzar salida";
 "System action %@" = "Acción del sistema %@";
 "Other system shortcuts" = "Otros atajos del sistema";
-"Search system shortcuts" = "Buscar atajos del sistema";
-"Refresh" = "Actualizar";
 "While playing" = "Al jugar";
 "Always available" = "Siempre disponible";
 "No key assigned" = "Sin teclas asignadas";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Atajos de teclado del sistema";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Algunas acciones de macOS no tienen nombre publicado. Otras apps pueden tener sus propios atajos.";
 "More game settings" = "Más ajustes del juego";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Los atajos rápidos de idioma actúan sin molestar. Las teclas mantenidas llegan al juego.";
 "Other apps watching keys" = "Otras apps que observan teclas";
 "Can change keys" = "Puede cambiar las teclas";
 "Only listens" = "Solo observa";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Muestra u oculta el Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Ejecuta la acción de macOS indicada. Déjala en pausa si interrumpe el juego.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS proporciona las teclas, pero no el nombre de esta acción. Aun así puedes elegir cómo funciona en juegos.";
-"Stays paused while you play." = "En pausa mientras juegas.";
-"Changes language without opening the system menu." = "Cambia el idioma sin abrir el menú del sistema.";
-"Runs as set in macOS." = "Funciona según los ajustes de macOS.";
 "Expanded" = "Expandido";
 "Collapsed" = "Contraído";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Ajusta la protección y explora los atajos de tu Mac.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Esta acción de macOS se desactiva cuando el juego está en primer plano. Al salir, funciona como antes.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Cada pulsación cambia el idioma sin el menú del sistema. Las mismas teclas siguen llegando al juego.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS ejecuta la acción normalmente, aunque abra una ventana o quite el foco al juego.";
-"Choose what each shortcut does while you play." = "Elige qué hace cada atajo mientras juegas.";
 "Fans" = "Ventiladores";
 "Fan speed" = "Velocidad de los ventiladores";
 "Fan control" = "Control de ventiladores";

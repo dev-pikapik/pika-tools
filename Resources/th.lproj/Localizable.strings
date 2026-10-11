@@ -532,8 +532,6 @@
 "Force Quit" = "บังคับออก";
 "System action %@" = "การทำงานระบบ %@";
 "Other system shortcuts" = "ปุ่มลัดระบบอื่น ๆ";
-"Search system shortcuts" = "ค้นหาปุ่มลัดระบบ";
-"Refresh" = "รีเฟรช";
 "While playing" = "ขณะเล่น";
 "Always available" = "ใช้ได้เสมอ";
 "No key assigned" = "ยังไม่ได้กำหนดปุ่ม";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "ปุ่มลัดแป้นพิมพ์ระบบ";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "บางการทำงานของ macOS ไม่มีชื่อที่เผยแพร่ แอปอื่นอาจมีปุ่มลัดของตัวเอง";
 "More game settings" = "การตั้งค่าเกมเพิ่มเติม";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "ปุ่มลัดเปลี่ยนภาษาแบบเร็วทำงานเงียบ ๆ ปุ่มเกมที่กดค้างจะส่งถึงเกม";
 "Other apps watching keys" = "แอปอื่นที่เฝ้าดูปุ่ม";
 "Can change keys" = "เปลี่ยนปุ่มได้";
 "Only listens" = "เฝ้าดูเท่านั้น";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "แสดงหรือซ่อน Dock";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "เรียกใช้การทำงาน macOS ที่ระบุ ให้พักไว้หากรบกวนเกม";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS ให้ข้อมูลปุ่มแต่ไม่ระบุชื่อการทำงาน คุณยังเลือกพฤติกรรมในเกมได้";
-"Stays paused while you play." = "พักไว้ระหว่างที่คุณเล่น";
-"Changes language without opening the system menu." = "เปลี่ยนภาษาโดยไม่เปิดเมนูระบบ";
-"Runs as set in macOS." = "ทำงานตามการตั้งค่า macOS";
 "Expanded" = "ขยายแล้ว";
 "Collapsed" = "ย่อแล้ว";
 "Fine-tune protection and explore your Mac’s shortcuts." = "ปรับการป้องกันและสำรวจปุ่มลัดของ Mac";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "การทำงาน macOS นี้จะปิดเมื่อเกมอยู่ด้านหน้า เมื่อออกจากเกมจะทำงานเหมือนเดิม";
 "Every press switches language without the system menu. The same keys still reach the game." = "ทุกครั้งที่กดจะเปลี่ยนภาษาโดยไม่เปิดเมนูระบบ ปุ่มเดียวกันยังส่งถึงเกม";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS ทำงานตามปกติ แม้จะเปิดหน้าต่างหรือดึงโฟกัสออกจากเกม";
-"Choose what each shortcut does while you play." = "เลือกว่าปุ่มลัดแต่ละชุดทำอะไรระหว่างเล่นเกม";
 "Fans" = "พัดลม";
 "Fan speed" = "ความเร็วพัดลม";
 "Fan control" = "การควบคุมพัดลม";

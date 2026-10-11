@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>I dettagli quando servono
+
+<sub>1.31.4 · 11 ottobre 2026</sub>
+
+Una pagina Giochi più tranquilla e una sola ricerca.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Ogni modalità spiega il proprio effetto nell’elenco a discesa. Quando è chiuso, sulla pagina resta solo il nome scelto.
+
+Le descrizioni che ripetono il nome dell’azione sono state rimosse. Le informazioni aggiuntive utili restano.
+
+La ricerca globale trova le azioni di sistema per nome, funzione e tasti. Un risultato apre ed evidenzia l’impostazione esatta.
+
+**Provalo:** Trova un’azione nella ricerca globale e apri il suo elenco di modalità.
+
+---
+
 ## <a id="v1.31.3"></a>Uno stile comune per le impostazioni di gioco
 
 <sub>1.31.3 · 11 ottobre 2026</sub>

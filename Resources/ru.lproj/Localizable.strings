@@ -532,8 +532,6 @@
 "Force Quit" = "Завершение принудительно";
 "System action %@" = "Системное действие %@";
 "Other system shortcuts" = "Другие системные сочетания";
-"Search system shortcuts" = "Поиск системных сочетаний";
-"Refresh" = "Обновить";
 "While playing" = "Во время игры";
 "Always available" = "Всегда доступно";
 "No key assigned" = "Клавиши не назначены";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Системные сочетания клавиш";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "У некоторых действий macOS нет опубликованного имени. У других программ могут быть свои сочетания.";
 "More game settings" = "Дополнительные настройки игры";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Короткие сочетания смены языка работают без помех. Зажатые игровые клавиши поступают в игру.";
 "Other apps watching keys" = "Другие программы, наблюдающие за клавишами";
 "Can change keys" = "Может изменять ввод";
 "Only listens" = "Только наблюдает";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Показывает или скрывает Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Выполняет указанное действие macOS. Оставьте его на паузе, если оно мешает игре.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS сообщает клавиши, но не название действия. Его поведение в игре всё равно можно выбрать.";
-"Stays paused while you play." = "На паузе, пока вы играете.";
-"Changes language without opening the system menu." = "Меняет язык без системного меню.";
-"Runs as set in macOS." = "Работает как настроено в macOS.";
 "Expanded" = "Развёрнуто";
 "Collapsed" = "Свёрнуто";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Настройте защиту и изучите сочетания вашего Mac.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Пока игра на переднем плане, это действие macOS отключено. Когда вы уходите из игры, оно работает как раньше.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Каждое нажатие сочетания меняет язык без системного меню. Те же клавиши продолжают поступать в игру.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS выполняет действие как обычно, даже если оно открывает окно или уводит фокус из игры.";
-"Choose what each shortcut does while you play." = "Выберите, что делает каждое сочетание во время игры.";
 "Fans" = "Вентиляторы";
 "Fan speed" = "Скорость вентиляторов";
 "Fan control" = "Управление вентиляторами";

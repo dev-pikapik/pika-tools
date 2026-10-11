@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Les détails au bon moment
+
+<sub>1.31.4 · 11 octobre 2026</sub>
+
+Une page Jeux plus calme et une seule recherche.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Chaque mode explique son effet dans la liste déroulante. Une fois la liste fermée, seul le nom choisi reste sur la page.
+
+Les descriptions qui répètent le nom de l’action sont retirées. Les informations supplémentaires utiles sont conservées.
+
+La recherche globale trouve les actions système par nom, fonction et touches. Un résultat ouvre et met en évidence le réglage précis.
+
+**Pour essayer :** Trouvez une action dans la recherche globale et ouvrez sa liste de modes.
+
+---
+
 ## <a id="v1.31.3"></a>Un style commun aux réglages de jeu
 
 <sub>1.31.3 · 11 octobre 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Ayrıntılar gerektiğinde
+
+<sub>1.31.4 · 11 Ekim 2026</sub>
+
+Daha sade bir oyun sayfası ve tek bir arama.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Her mod ne yaptığını açılır listede açıklar. Liste kapandığında sayfada yalnızca seçilen ad kalır.
+
+Eylem adını tekrarlayan açıklamalar kaldırıldı. Yararlı ek bilgiler korundu.
+
+Genel arama sistem eylemlerini ad, anlam ve tuşlara göre bulur. Bir sonuç tam olarak o ayarı açar ve vurgular.
+
+**Deneyin:** Genel aramada bir eylem bulun ve mod listesini açın.
+
+---
+
 ## <a id="v1.31.3"></a>Oyun ayarlarında ortak görünüm
 
 <sub>1.31.3 · 11 Ekim 2026</sub>
