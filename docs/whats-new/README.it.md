@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>La velocità manuale delle ventole resta al primo tentativo
+
+<sub>1.32.1 · 11 ottobre 2026</sub>
+
+Scegliere Manuale in Ventole non torna più su Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+A volte il primo tocco su Manuale riportava le ventole su Auto con un avviso di sicurezza, e funzionava solo il secondo. Ora Manuale resta attivo già al primo tentativo.
+
+Se una ventola esce comunque da sola dalla modalità Manuale, pikapik la riporta davvero su Auto, così ciò che vedi corrisponde sempre a ciò che fa il tuo Mac.
+
+Non devi consentire di nuovo nulla. Aggiorna e funziona.
+
+**Provalo:** Apri Impostazioni › Ventole e scegli Manuale.
+
+---
+
 ## <a id="v1.32.0"></a>Guarda quanto veloce girano le tue ventole
 
 <sub>1.32.0 · 11 ottobre 2026</sub>

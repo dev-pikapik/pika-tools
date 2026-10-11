@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Viteza manuală a ventilatoarelor ține din prima încercare
+
+<sub>1.32.1 · 11 octombrie 2026</sub>
+
+Alegerea Manual la Ventilatoare nu mai revine la Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Uneori prima atingere pe Manual readucea ventilatoarele la Auto cu un avertisment de siguranță, iar abia a doua funcționa. Acum Manual rămâne din prima încercare.
+
+Dacă un ventilator iese totuși singur din modul Manual, pikapik îl readuce cu adevărat la Auto, așa că ce vedeți corespunde mereu cu ce face Mac-ul dvs.
+
+Nu trebuie să permiteți nimic din nou. Actualizați și funcționează.
+
+**Încearcă:** Deschideți Setări › Ventilatoare și alegeți Manual.
+
+---
+
 ## <a id="v1.32.0"></a>Vezi cât de repede se învârt ventilatoarele
 
 <sub>1.32.0 · 11 octombrie 2026</sub>

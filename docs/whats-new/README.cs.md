@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Ruční rychlost ventilátorů platí hned na první pokus
+
+<sub>1.32.1 · 11. října 2026</sub>
+
+Volba Ručně u Ventilátorů se už nevrací zpět na Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Někdy první klepnutí na Ručně vrátilo ventilátory na Auto s bezpečnostním upozorněním a teprve druhé zabralo. Teď Ručně vydrží už od prvního pokusu.
+
+Pokud ventilátor ručního režimu přesto sám opustí, pikapik ho skutečně vrátí na Auto, takže to, co vidíte, vždy odpovídá tomu, co váš Mac dělá.
+
+Nemusíte nic znovu povolovat. Aktualizujte a funguje to.
+
+**Vyzkoušejte:** Otevřete Nastavení › Ventilátory a zvolte Ručně.
+
+---
+
 ## <a id="v1.32.0"></a>Podívejte se, jak rychle se točí ventilátory
 
 <sub>1.32.0 · 11. října 2026</sub>

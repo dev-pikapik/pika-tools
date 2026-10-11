@@ -13,6 +13,7 @@ final class FanControl {
     @ObservationIgnored private var timer: Timer?
     @ObservationIgnored private var watchers = 0
     @ObservationIgnored private var connection: NSXPCConnection?
+    @ObservationIgnored private var requested: [Int: Date] = [:]
 
     private(set) var fans: [SMCFan] = []
     private(set) var wanted: [Int: Double] = [:]
@@ -69,7 +70,7 @@ final class FanControl {
         error = nil
         helper.setManual(fan: fan.id, rpm: rpm) { ok in
             DispatchQueue.main.async {
-                if ok { self.wanted[fan.id] = rpm } else { self.wanted[fan.id] = nil; self.fail() }
+                if ok { self.wanted[fan.id] = rpm; self.requested[fan.id] = Date() } else { self.wanted[fan.id] = nil; self.fail() }
                 self.refresh()
             }
         }
@@ -149,9 +150,11 @@ final class FanControl {
     private func refresh() {
         guard let smc else { return }
         fans = smc.fans()
-        let dropped = wanted.keys.filter { id in !(fans.first { $0.id == id }?.manual ?? false) }
+        let dropped = wanted.keys.filter { id in
+            !(fans.first { $0.id == id }?.manual ?? false) && Date().timeIntervalSince(requested[id] ?? .distantPast) > 3
+        }
         guard !dropped.isEmpty else { return }
-        dropped.forEach { wanted[$0] = nil }
+        dropped.forEach(setAuto)
         error = String(localized: "Fans went back to Auto to keep your Mac safe")
     }
 
