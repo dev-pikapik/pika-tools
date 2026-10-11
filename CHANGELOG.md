@@ -2,6 +2,17 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.32.2] - Unreleased
+
+### Fixed
+- Fans: the helper is installed from a file written by the administrator and its signature is checked before it starts. A fan that reports no speed range is ignored, and the forced test mode ends if setting a manual speed fails.
+- Updates: if the new app can't be copied, the installed pikapik stays in place instead of being deleted. A download that comes back with an error is no longer saved as an update, and a failed re-check no longer hides an update that was already found.
+- Uninstalling, including `brew zap`, removes the fan helper. Uninstalling also puts back the key repeat setting, the Dock corners and the system shortcuts that pikapik had changed.
+- Repeat a held key: turning it off gives back your own accent-menu setting.
+- Command keys, Home and End, and Finder keys: a remapped key you are holding is released when the tool restarts, so it no longer stays stuck.
+- The pet skips its background checks while the screen is asleep or locked, so it uses less energy when idle.
+- New file: copies of files with a double extension are numbered like `archive 2.tar.gz` instead of `archive.tar 2.gz`.
+
 ## [1.32.1] - 2026-10-11
 
 ### Fixed

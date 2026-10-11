@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.32.2"></a>Instalación más segura y actualizaciones que nunca pierden la app
+
+<sub>1.32.2 · 11 de octubre de 2026</sub>
+
+Una tanda de arreglos para instalar, actualizar y desinstalar con más seguridad.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+El ayudante de ventiladores ahora se instala con más cuidado y se comprueba antes de arrancar. Si una actualización no se puede copiar, tu pikapik actual se queda donde está. Al desinstalar también se quita el ayudante de ventiladores y se restauran tu ajuste de repetición de teclas, las esquinas del Dock y los atajos del sistema.
+
+Las teclas mantenidas ya no se quedan atascadas cuando una herramienta se reinicia, y al desactivar «Repetir una tecla mantenida» recuperas tu propio ajuste del menú de acentos. La mascota descansa mientras la pantalla está en reposo o bloqueada, y una copia de archive.tar.gz ahora se llama archive 2.tar.gz.
+
+---
+
 ## <a id="v1.32.1"></a>La velocidad manual de los ventiladores se mantiene al primer intento
 
 <sub>1.32.1 · 11 de octubre de 2026</sub>

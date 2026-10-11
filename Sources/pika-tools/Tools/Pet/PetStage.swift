@@ -402,6 +402,7 @@ final class PetStage: NSObject {
         guard let window, let field, let pet = petScreen, let toy = ballScreen else { return }
         asleep = CGDisplayIsAsleep(CGMainDisplayID()) != 0
         locked = GameModeTool.screenLocked
+        guard !asleep, !locked else { return update() }
         physics.recover()
         if physics.aloft != raised || ball.aloft != tossed {
             rise()
