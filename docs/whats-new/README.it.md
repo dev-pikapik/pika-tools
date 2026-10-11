@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>I gruppi di comandi si aprono all’istante
+
+<sub>1.33.2 · 11 ottobre 2026</sub>
+
+Anche il gruppo più lungo di comandi di sistema si apre subito, e ogni riga ha un nome chiaro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Prima la finestra delle impostazioni si bloccava per un attimo quando si apriva un gruppo di decine di righe, perché tutte le righe e le loro anteprime animate venivano create insieme. Ora vengono create solo le righe visibili e poche altre vicine. Sono sparite anche le righe «Azione di sistema» con un numero: Dettatura, Siri e i tasti di luminosità e zoom mostrano il loro vero nome, e le azioni a cui macOS non dà un nome sono nascoste, ma restano in pausa nei giochi come prima.
+
+---
+
 ## <a id="v1.33.1"></a>I gruppi di comandi rapidi si aprono senza blocchi
 
 <sub>1.33.1 · 11 ottobre 2026</sub>
