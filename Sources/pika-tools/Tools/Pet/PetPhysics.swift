@@ -2,6 +2,7 @@ import CoreGraphics
 
 struct PetPhysics {
     enum State { case walk, turn, jump, tumble, lie, getUp, sit, kick, held, thrown }
+    enum Event { case jump, leap, climb, tumble, fling }
 
     static let size = CGSize(width: 30, height: 32)
     static let pointer = CGSize(width: 16, height: 22)
@@ -11,6 +12,7 @@ struct PetPhysics {
     static let reach: CGFloat = 48
     static let margin: CGFloat = 4
     static let fling: CGFloat = 1800
+    static let slam: CGFloat = 640
     static let scruff: CGFloat = 6
     static let shyness = 1.0
     static let runUp: CGFloat = 24
@@ -28,6 +30,7 @@ struct PetPhysics {
     private(set) var vx: CGFloat = 0
     private(set) var vy: CGFloat = 0
     private(set) var shy = 0.0
+    private(set) var events: [Event] = []
     var calm = false
     var roof = CGFloat.infinity
     var dock: CGRect?
@@ -117,7 +120,13 @@ struct PetPhysics {
         if state == .turn { facing = heading }
         vy = (2 * Self.gravity * min(Self.hop, headroom(to: origin.x + vx * 2 * (2 * Self.hop / Self.gravity).squareRoot()))).squareRoot()
         enter(.jump)
+        events.append(.jump)
         return true
+    }
+
+    mutating func drain() -> [Event] {
+        defer { events = [] }
+        return events
     }
 
     @discardableResult
@@ -324,10 +333,11 @@ struct PetPhysics {
 
     private mutating func land() {
         let impact = hypot(vx, vy)
+        if state == .thrown, impact >= Self.slam { events.append(.fling) }
         vx = 0
         vy = 0
         switch state {
-        case .thrown where !calm && impact >= 640:
+        case .thrown where !calm && impact >= Self.slam:
             vx = facing * 60
             vy = min(160, (2 * Self.gravity * headroom(to: origin.x)).squareRoot())
             enter(.tumble)
@@ -358,6 +368,7 @@ struct PetPhysics {
         vy = (2 * Self.gravity * height).squareRoot()
         vx = facing * d * Self.gravity / vy
         enter(.jump)
+        events.append(.climb)
         return true
     }
 
@@ -410,6 +421,7 @@ struct PetPhysics {
         armed = false
         mark = b
         enter(.jump)
+        events.append(.leap)
         return true
     }
 
@@ -422,6 +434,7 @@ struct PetPhysics {
         state = next
         clock = 0
         hold = seconds
+        if next == .tumble { events.append(.tumble) }
     }
 
     private func ahead(_ b: CGRect) -> Bool {
