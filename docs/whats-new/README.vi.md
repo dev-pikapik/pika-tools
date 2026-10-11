@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.1"></a>Tốc độ quạt thủ công có hiệu lực ngay lần đầu
+
+<sub>1.32.1 · 11 tháng 10 năm 2026</sub>
+
+Chọn Thủ công trong Quạt không còn bị quay lại Tự động.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Đôi khi lần chạm đầu tiên vào Thủ công khiến quạt quay về Tự động kèm cảnh báo an toàn, và chỉ lần thứ hai mới được. Giờ Thủ công giữ nguyên ngay từ lần đầu.
+
+Nếu một quạt tự thoát khỏi chế độ Thủ công, pikapik sẽ đưa nó về Tự động thật sự, nên những gì bạn thấy luôn khớp với việc Mac đang làm.
+
+Bạn không cần cho phép lại gì cả. Cập nhật là dùng được ngay.
+
+**Thử ngay:** Mở Cài đặt › Quạt và chọn Thủ công.
+
+---
+
 ## <a id="v1.32.0"></a>Xem quạt của bạn quay nhanh đến đâu
 
 <sub>1.32.0 · 11 tháng 10 năm 2026</sub>
