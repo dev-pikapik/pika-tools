@@ -6,6 +6,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Launch. Expected: no permission prompt at launch except what the Permissions page asks for; menu bar icon appears.
 - Turn on Window zoom (or any Keyboard/Mouse/Windows tool). Expected: Accessibility prompt, then Input Monitoring if needed. Status shows "Needs Access" until granted, then "Active".
 - Revoke a permission in System Settings while the app runs. Expected: status returns to "Needs Access" without a crash; granting it again restores the tool without relaunch.
+- A tool that needs a missing permission is half-grey and does nothing when toggled; clicking it opens the Permissions page on the row to allow. Turn Off on Accessibility and Input Monitoring opens the right System Settings list (this build cannot revoke them itself). The Folders row: Allow shows the home folder panel; Turn Off forgets the saved folders and the next file action asks again.
 - Settings has no Fans, Animations, Key repeat, Pointer, Updates, iCloud sync, "Keep running after Quit" or "Turn off the display now" rows. Search for "fan" and "pointer" finds nothing.
 
 ## Settings
@@ -14,7 +15,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Open at Login on and off. Expected: it appears and disappears in System Settings > Login Items.
 
 ## Finder
-- Turn on New File, Smaller Copy, Convert. Expected: "Open Finder Extensions..." button; enable each extension in System Settings > Login Items & Extensions > Finder; return to pikapik and the row shows active.
+- Turn on New File, Smaller Copy, Convert. Expected: the three tools turn grey; clicking one opens the Permissions page on the Finder Extensions row. Allow opens System Settings > Login Items & Extensions > Finder; enable each extension; return to pikapik and the row shows a green check and the tools are no longer grey. Turn Off opens the same list.
 - Right-click in a folder > New File. Expected: NSOpenPanel asks once for the home folder; after Allow Access the file is created and the panel does not return after relaunch.
 - Smaller Copy and Convert on a file in Downloads and on an external volume. Expected: folder prompt when needed, output saved next to the original.
 - Known gap: turning a Finder tool off in pikapik does not hide the Finder menu item; disable the extension in System Settings.

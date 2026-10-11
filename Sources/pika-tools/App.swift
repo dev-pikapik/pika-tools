@@ -97,6 +97,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         Appearance.saved.apply()
         let permissions = Permissions.shared
         permissions.onChange = { ToolRegistry.shared.refresh() }
+        NotificationCenter.default.addObserver(forName: NSApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
+            Permissions.shared.refresh()
+            FinderExtension.refreshWaiting()
+        }
         ToolRegistry.shared.refresh()
         SettingsSync.shared.refresh()
         #if APPSTORE
@@ -122,7 +126,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Background.shared.quitting = true
         }
 
-        if !permissions.allGranted {
+        if CommandLine.arguments.contains("--permissions") {
+            SettingsWindow.show(.permissions)
+        } else if !permissions.allGranted {
             permissions.request()
             SettingsWindow.show(.permissions)
         } else if CommandLine.arguments.contains("--settings") {

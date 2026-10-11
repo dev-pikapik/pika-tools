@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik sprawdza co 1,5 sekundy, więc nie trzeba niczego uruchamiać ponownie. Jeśli aplikacja jest już na liście, ale nie działa, usuń ją przyciskiem − i dodaj ponownie.";
 "Allowed" = "Dozwolone";
 "Not allowed" = "Niedozwolone";
+"Allow" = "Zezwól";
+"For some features" = "Dla niektórych funkcji";
+"Finder Extensions" = "Rozszerzenia Findera";
+"Folders" = "Foldery";
+"Lets the app choose how fast your fans spin" = "Pozwala aplikacji wybierać prędkość wentylatorów";
+"Lets the app add items to the right-click menu in Finder" = "Pozwala aplikacji dodawać pozycje do menu prawego kliku w Finderze";
+"Lets the app save new files next to yours" = "Pozwala aplikacji zapisywać nowe pliki obok Twoich";
+"Lets the app find permissions left by deleted apps" = "Pozwala aplikacji znaleźć uprawnienia pozostawione przez usunięte aplikacje";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS pozwala wyłączyć te uprawnienia tylko w Ustawieniach systemowych. Przycisk otwiera właściwą listę, na której wyłączasz pikapik.";
+"Needs a permission. Click to allow it." = "Wymaga uprawnienia. Kliknij, aby je nadać.";
+"Grey tools need a permission. Click one to allow it." = "Wyszarzone narzędzia wymagają uprawnienia. Kliknij jedno z nich, aby je nadać.";
+"Turn off %@?" = "Wyłączyć %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik uruchomi się ponownie, a narzędzia, które tego potrzebują, będą wyszarzone, dopóki ponownie nie zezwolisz.";
 "Open" = "Otwórz";
 "Settings…" = "Ustawienia…";
 "Permissions needed" = "Potrzebne uprawnienia";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, zewnętrzny monitor, pokrywa";
 "battery, power, charge" = "bateria, zasilanie, ładowanie";
 "privacy, security, access" = "prywatność, ochrona, bezpieczeństwo, dostęp";
+"privacy, security, access, files, save, home" = "prywatność, ochrona, bezpieczeństwo, dostęp, pliki, zapis, folder domowy";
+"privacy, security, access, right-click, menu, extension" = "prywatność, ochrona, bezpieczeństwo, dostęp, prawy przycisk, menu, rozszerzenie";
+"privacy, security, access, files, disk" = "prywatność, ochrona, bezpieczeństwo, dostęp, pliki, dysk";
 "update, new version, software update" = "uaktualnienie, aktualizacja, nowa wersja, uaktualnienia oprogramowania";
 "changelog, release notes, version" = "lista zmian, informacje o wersji, wersja";
 "bug, issue, feedback, support" = "błąd, problem, opinia, wsparcie, pomoc, bug";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Eksportuj ustawienia…";
 "Save all settings to a file, or load them from one" = "Zapisz wszystkie ustawienia w pliku lub wczytaj je z pliku";
 "Turn on iCloud Drive in System Settings" = "Włącz iCloud Drive w Ustawieniach systemowych";
-"Allow pikapik to use iCloud Drive in System Settings" = "Pozwól pikapik na dostęp do iCloud Drive w Ustawieniach systemowych";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Wygląd i Język znów będą zgodne z systemem, a synchronizacja przez iCloud zostanie wyłączona. „Otwieraj po zalogowaniu” i ustawienia zapisane w iCloud Drive pozostaną bez zmian.";
 "OK" = "OK";
 "Replace your settings?" = "Zastąpić ustawienia?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Pojawi się w „%@”.";
 "Create" = "Utwórz";
 "Type a name without “/” or “:”." = "Wpisz nazwę bez „/” i „:”.";
-"Turn it on in System Settings" = "Włącz w Ustawieniach systemowych";
-"Open Finder Extensions…" = "Otwórz rozszerzenia Findera…";
 "Smaller Copy in Finder" = "Mniejsza kopia w Finderze";
 "Convert in Finder" = "Konwersja w Finderze";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Kliknij prawym plik w Finderze i wybierz „Utwórz mniejszą kopię”. Działa ze zdjęciami, GIF-ami, PDF-ami, wideo i nieskompresowanym dźwiękiem, np. WAV lub AIFF, który zmienia się w M4A. Oryginał zostaje bez zmian. Jeśli pliku nie da się już zmniejszyć, kopia nie powstaje.";
@@ -614,8 +627,6 @@
 "Fan control" = "Sterowanie wentylatorami";
 "Fan %lld" = "Wentylator %lld";
 "See how fast your fans spin and choose their speed" = "Zobacz, jak szybko kręcą się wentylatory, i wybierz ich prędkość";
-"Allow control" = "Zezwól na sterowanie";
-"Needs your administrator password once" = "Jednorazowo potrzebne jest hasło administratora";
 "This Mac has no fans" = "Ten Mac nie ma wentylatorów";
 "It cools itself quietly, so there is nothing to set" = "Chłodzi się sam po cichu, więc nie ma nic do ustawienia";
 "rpm" = "obr./min";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik chce usunąć sterowanie wentylatorami.";
 "Not allowed: no administrator password" = "Brak zezwolenia: brak hasła administratora";
 "Not removed: no administrator password" = "Nie usunięto: brak hasła administratora";
-"Couldn’t change the fan speed. Try Allow control again." = "Nie udało się zmienić prędkości wentylatorów. Spróbuj ponownie wybrać Zezwól na sterowanie.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Nie udało się zmienić prędkości wentylatorów. Spróbuj ponownie zezwolić na sterowanie wentylatorami.";
 "Fans went back to Auto to keep your Mac safe" = "Wentylatory wróciły do trybu Auto, aby chronić Maca";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "wentylator, obroty, obr./min, chłodzenie, chłodniej, gorąco, ciepło, hałas, cicho, głośno, temperatura";
 "allow, helper, password, administrator, install, remove" = "zezwól, pomocnik, hasło, administrator, zainstaluj, usuń";

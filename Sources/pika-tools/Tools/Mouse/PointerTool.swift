@@ -7,6 +7,7 @@ final class PointerTool: Tool {
     let id = "linear-pointer"
     let icon = "cursorarrow.motionlines"
     var title: String { String(localized: "Turn off pointer acceleration") }
+    var needs: [Permission] { [] }
     let tab = SettingsTab.mouse
 
     static let speedRange = 0.2...3.0

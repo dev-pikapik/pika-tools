@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik kiểm tra mỗi 1,5 giây, nên bạn không cần khởi động lại gì cả. Nếu ứng dụng đã có trong danh sách nhưng không hoạt động, hãy xóa bằng nút − rồi thêm lại.";
 "Allowed" = "Đã cho phép";
 "Not allowed" = "Chưa cho phép";
+"Allow" = "Cho phép";
+"For some features" = "Cho một số tính năng";
+"Finder Extensions" = "Tiện ích mở rộng của Finder";
+"Folders" = "Thư mục";
+"Lets the app choose how fast your fans spin" = "Cho phép ứng dụng chọn tốc độ quay của quạt";
+"Lets the app add items to the right-click menu in Finder" = "Cho phép ứng dụng thêm mục vào menu bấm chuột phải trong Finder";
+"Lets the app save new files next to yours" = "Cho phép ứng dụng lưu tệp mới cạnh tệp của bạn";
+"Lets the app find permissions left by deleted apps" = "Cho phép ứng dụng tìm các quyền còn lại từ ứng dụng đã xóa";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS chỉ cho phép tắt các quyền này trong Cài đặt hệ thống. Nút này mở đúng danh sách, nơi bạn tắt pikapik.";
+"Needs a permission. Click to allow it." = "Cần được cấp quyền. Bấm để cho phép.";
+"Grey tools need a permission. Click one to allow it." = "Các công cụ màu xám cần được cấp quyền. Bấm vào một công cụ để cho phép.";
+"Turn off %@?" = "Tắt %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik sẽ khởi động lại, và các công cụ cần quyền này sẽ chuyển màu xám cho đến khi bạn cho phép lại.";
 "Open" = "Mở";
 "Settings…" = "Cài đặt…";
 "Permissions needed" = "Cần cấp quyền";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "gập nắp, clamshell, laptop, MacBook, màn hình ngoài";
 "battery, power, charge" = "pin, nguồn điện, sạc";
 "privacy, security, access" = "quyền riêng tư, bảo mật, truy cập";
+"privacy, security, access, files, save, home" = "quyền riêng tư, bảo mật, truy cập, tệp, lưu, thư mục chính";
+"privacy, security, access, right-click, menu, extension" = "quyền riêng tư, bảo mật, truy cập, bấm chuột phải, menu, tiện ích mở rộng";
+"privacy, security, access, files, disk" = "quyền riêng tư, bảo mật, truy cập, tệp, đĩa";
 "update, new version, software update" = "cập nhật, phiên bản mới, cập nhật phần mềm, update";
 "changelog, release notes, version" = "nhật ký thay đổi, ghi chú phát hành, changelog, phiên bản";
 "bug, issue, feedback, support" = "lỗi, bug, sự cố, phản hồi, hỗ trợ";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Xuất cài đặt…";
 "Save all settings to a file, or load them from one" = "Lưu tất cả cài đặt vào tệp hoặc tải chúng từ tệp";
 "Turn on iCloud Drive in System Settings" = "Bật iCloud Drive trong Cài đặt hệ thống";
-"Allow pikapik to use iCloud Drive in System Settings" = "Cho phép pikapik sử dụng iCloud Drive trong Cài đặt hệ thống";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Giao diện và Ngôn ngữ sẽ theo hệ thống trở lại, và đồng bộ hóa iCloud sẽ tắt. “Mở khi đăng nhập” và cài đặt đã lưu trong iCloud Drive vẫn giữ nguyên.";
 "OK" = "OK";
 "Replace your settings?" = "Thay thế cài đặt của bạn?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Tệp sẽ xuất hiện trong “%@”.";
 "Create" = "Tạo";
 "Type a name without “/” or “:”." = "Nhập tên không có “/” hoặc “:”.";
-"Turn it on in System Settings" = "Bật trong Cài đặt hệ thống";
-"Open Finder Extensions…" = "Mở tiện ích mở rộng Finder…";
 "Smaller Copy in Finder" = "Bản sao nhỏ hơn trong Finder";
 "Convert in Finder" = "Chuyển đổi trong Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Bấm chuột phải vào tệp trong Finder và chọn “Tạo bản sao nhỏ hơn”. Dùng được cho ảnh, GIF, PDF, video và âm thanh chưa nén như WAV hoặc AIFF, sẽ được chuyển thành M4A. Tệp gốc vẫn giữ nguyên. Nếu tệp không thể nhỏ hơn nữa, sẽ không có bản sao nào được tạo.";
@@ -614,8 +627,6 @@
 "Fan control" = "Điều khiển quạt";
 "Fan %lld" = "Quạt %lld";
 "See how fast your fans spin and choose their speed" = "Xem quạt quay nhanh cỡ nào và chọn tốc độ cho quạt";
-"Allow control" = "Cho phép điều khiển";
-"Needs your administrator password once" = "Chỉ cần mật khẩu quản trị viên một lần";
 "This Mac has no fans" = "Máy Mac này không có quạt";
 "It cools itself quietly, so there is nothing to set" = "Máy tự làm mát êm ái nên không có gì để chỉnh";
 "rpm" = "vòng/phút";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik muốn gỡ điều khiển quạt.";
 "Not allowed: no administrator password" = "Chưa được cho phép: không có mật khẩu quản trị viên";
 "Not removed: no administrator password" = "Chưa được gỡ: không có mật khẩu quản trị viên";
-"Couldn’t change the fan speed. Try Allow control again." = "Không đổi được tốc độ quạt. Hãy thử Cho phép điều khiển lại.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Không đổi được tốc độ quạt. Hãy thử cho phép điều khiển quạt lại.";
 "Fans went back to Auto to keep your Mac safe" = "Quạt đã trở về Tự động để giữ an toàn cho Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "quạt, vòng/phút, làm mát, mát hơn, nóng, nhiệt, ồn, yên tĩnh, to, nhiệt độ";
 "allow, helper, password, administrator, install, remove" = "cho phép, trợ giúp, mật khẩu, quản trị viên, cài đặt, gỡ";

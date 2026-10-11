@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik to kontroluje každých 1,5 sekundy, takže nic není potřeba restartovat. Pokud už v seznamu je, ale nefunguje, odstraňte ho tlačítkem − a přidejte znovu.";
 "Allowed" = "Povoleno";
 "Not allowed" = "Nepovoleno";
+"Allow" = "Povolit";
+"For some features" = "Pro některé funkce";
+"Finder Extensions" = "Rozšíření Finderu";
+"Folders" = "Složky";
+"Lets the app choose how fast your fans spin" = "Umožňuje aplikaci nastavit rychlost otáčení ventilátorů";
+"Lets the app add items to the right-click menu in Finder" = "Umožňuje aplikaci přidat položky do nabídky pravého kliku ve Finderu";
+"Lets the app save new files next to yours" = "Umožňuje aplikaci ukládat nové soubory vedle vašich";
+"Lets the app find permissions left by deleted apps" = "Umožňuje aplikaci najít oprávnění, která zbyla po smazaných aplikacích";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS umožňuje tato oprávnění vypnout jen v Nastavení systému. Tlačítko otevře správný seznam, kde pikapik vypnete.";
+"Needs a permission. Click to allow it." = "Potřebuje oprávnění. Kliknutím ho povolíte.";
+"Grey tools need a permission. Click one to allow it." = "Šedé nástroje potřebují oprávnění. Kliknutím na některý ho povolíte.";
+"Turn off %@?" = "Vypnout %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik se restartuje a nástroje, které to potřebují, zešednou, dokud to znovu nepovolíte.";
 "Open" = "Otevřít";
 "Settings…" = "Nastavení…";
 "Permissions needed" = "Je potřeba oprávnění";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "zavřené víko, notebook, laptop, MacBook, externí displej";
 "battery, power, charge" = "baterie, napájení, nabíjení";
 "privacy, security, access" = "soukromí, zabezpečení, přístup";
+"privacy, security, access, files, save, home" = "soukromí, zabezpečení, přístup, soubory, ukládání, domovská složka";
+"privacy, security, access, right-click, menu, extension" = "soukromí, zabezpečení, přístup, pravé kliknutí, nabídka, rozšíření";
+"privacy, security, access, files, disk" = "soukromí, zabezpečení, přístup, soubory, disk";
 "update, new version, software update" = "aktualizace, nová verze, aktualizace softwaru";
 "changelog, release notes, version" = "seznam změn, poznámky k vydání, verze";
 "bug, issue, feedback, support" = "chyba, problém, zpětná vazba, podpora";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Exportovat nastavení…";
 "Save all settings to a file, or load them from one" = "Uložte všechna nastavení do souboru nebo je načtěte ze souboru";
 "Turn on iCloud Drive in System Settings" = "Zapněte iCloud Drive v Nastavení systému";
-"Allow pikapik to use iCloud Drive in System Settings" = "Povolte pikapik přístup k iCloud Drive v Nastavení systému";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Vzhled a Jazyk se znovu budou řídit systémem a synchronizace přes iCloud se vypne. „Otevřít při přihlášení“ a nastavení uložená na iCloud Drive zůstanou beze změny.";
 "OK" = "OK";
 "Replace your settings?" = "Nahradit nastavení?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Objeví se ve složce „%@“.";
 "Create" = "Vytvořit";
 "Type a name without “/” or “:”." = "Napište název bez „/“ a „:“.";
-"Turn it on in System Settings" = "Zapněte v Nastavení systému";
-"Open Finder Extensions…" = "Otevřít rozšíření Finderu…";
 "Smaller Copy in Finder" = "Menší kopie ve Finderu";
 "Convert in Finder" = "Převod ve Finderu";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Klikněte pravým na soubor ve Finderu a vyberte „Vytvořit menší kopii“. Funguje s fotkami, GIFy, PDF, videi a nekomprimovaným zvukem jako WAV nebo AIFF, ze kterého se stane M4A. Originál zůstane beze změny. Pokud soubor už menší být nemůže, kopie se nevytvoří.";
@@ -614,8 +627,6 @@
 "Fan control" = "Ovládání ventilátorů";
 "Fan %lld" = "Ventilátor %lld";
 "See how fast your fans spin and choose their speed" = "Podívejte se, jak rychle se ventilátory točí, a vyberte jejich rychlost";
-"Allow control" = "Povolit ovládání";
-"Needs your administrator password once" = "Jednou je potřeba heslo správce";
 "This Mac has no fans" = "Tento Mac nemá žádné ventilátory";
 "It cools itself quietly, so there is nothing to set" = "Chladí se tiše sám, takže není co nastavovat";
 "rpm" = "ot/min";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik chce odebrat ovládání ventilátorů.";
 "Not allowed: no administrator password" = "Nepovoleno: chybí heslo správce";
 "Not removed: no administrator password" = "Neodebráno: chybí heslo správce";
-"Couldn’t change the fan speed. Try Allow control again." = "Rychlost ventilátorů se nepodařilo změnit. Zkuste znovu Povolit ovládání.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Rychlost ventilátorů se nepodařilo změnit. Zkuste ovládání ventilátorů povolit znovu.";
 "Fans went back to Auto to keep your Mac safe" = "Ventilátory se vrátily na Auto, aby váš Mac zůstal v bezpečí";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilátor, otáčky, ot/min, chlazení, chladnější, horko, teplo, hluk, tichý, hlasitý, teplota";
 "allow, helper, password, administrator, install, remove" = "povolit, pomocník, heslo, správce, nainstalovat, odebrat";

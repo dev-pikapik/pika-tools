@@ -9,6 +9,7 @@ final class NewFileTool: Tool {
     private let finder = FinderExtension(bundle: "NewFile", key: "new-file")
 
     var isActive: Bool { finder.isActive }
+    var needs: [Permission] { [.finder] }
 
     var isEnabled: Bool {
         get { finder.isEnabled }

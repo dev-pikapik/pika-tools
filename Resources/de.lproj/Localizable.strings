@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik prüft alle 1,5 Sekunden selbst, ein Neustart ist nicht nötig. Steht pikapik schon in der Liste, funktioniert aber nicht, entferne es mit „−“ und füge es erneut hinzu.";
 "Allowed" = "Erlaubt";
 "Not allowed" = "Nicht erlaubt";
+"Allow" = "Erlauben";
+"For some features" = "Für einige Funktionen";
+"Finder Extensions" = "Finder-Erweiterungen";
+"Folders" = "Ordner";
+"Lets the app choose how fast your fans spin" = "Damit die App bestimmen kann, wie schnell sich die Lüfter drehen";
+"Lets the app add items to the right-click menu in Finder" = "Damit die App Befehle zum Rechtsklick-Menü im Finder hinzufügen kann";
+"Lets the app save new files next to yours" = "Damit die App neue Dateien neben deinen speichern kann";
+"Lets the app find permissions left by deleted apps" = "Damit die App Berechtigungen finden kann, die gelöschte Apps hinterlassen haben";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS lässt dich diese Berechtigungen nur in den Systemeinstellungen ausschalten. Die Taste öffnet die richtige Liste, in der du pikapik ausschaltest.";
+"Needs a permission. Click to allow it." = "Braucht eine Berechtigung. Klicke, um sie zu erlauben.";
+"Grey tools need a permission. Click one to allow it." = "Ausgegraute Tools brauchen eine Berechtigung. Klicke eines an, um sie zu erlauben.";
+"Turn off %@?" = "%@ ausschalten?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik startet neu, und die Tools, die sie brauchen, werden grau, bis du sie wieder erlaubst.";
 "Open" = "Öffnen";
 "Settings…" = "Einstellungen …";
 "Permissions needed" = "Berechtigungen nötig";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "Deckel, Notebook, MacBook, externer Bildschirm, zugeklappt";
 "battery, power, charge" = "Batterie, Akku, Strom, Ladung";
 "privacy, security, access" = "Datenschutz, Sicherheit, Zugriff";
+"privacy, security, access, files, save, home" = "Datenschutz, Sicherheit, Zugriff, Dateien, speichern, Home-Ordner";
+"privacy, security, access, right-click, menu, extension" = "Datenschutz, Sicherheit, Zugriff, Rechtsklick, Menü, Erweiterung";
+"privacy, security, access, files, disk" = "Datenschutz, Sicherheit, Zugriff, Dateien, Festplatte";
 "update, new version, software update" = "Update, neue Version, Softwareupdate, Aktualisierung";
 "changelog, release notes, version" = "Änderungen, Versionshinweise, Version";
 "bug, issue, feedback, support" = "Fehler, Problem, Feedback, Support";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Einstellungen exportieren …";
 "Save all settings to a file, or load them from one" = "Alle Einstellungen in einer Datei sichern oder aus einer Datei laden";
 "Turn on iCloud Drive in System Settings" = "Schalte iCloud Drive in den Systemeinstellungen ein";
-"Allow pikapik to use iCloud Drive in System Settings" = "Erlaube pikapik den Zugriff auf iCloud Drive in den Systemeinstellungen";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Erscheinungsbild und Sprache folgen wieder dem System, und die iCloud-Synchronisierung wird ausgeschaltet. „Beim Anmelden öffnen“ und die Einstellungen in iCloud Drive bleiben, wie sie sind.";
 "OK" = "OK";
 "Replace your settings?" = "Einstellungen ersetzen?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Sie erscheint in „%@“.";
 "Create" = "Erstellen";
 "Type a name without “/” or “:”." = "Gib einen Namen ohne „/“ oder „:“ ein.";
-"Turn it on in System Settings" = "In den Systemeinstellungen einschalten";
-"Open Finder Extensions…" = "Finder-Erweiterungen öffnen …";
 "Smaller Copy in Finder" = "Kleinere Kopie im Finder";
 "Convert in Finder" = "Umwandeln im Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Rechtsklick auf eine Datei im Finder und „Kleinere Kopie erstellen“ wählen. Funktioniert mit Fotos, GIFs, PDFs, Videos und unkomprimiertem Ton wie WAV oder AIFF, der zu M4A wird. Das Original bleibt, wie es ist. Lässt sich die Datei nicht weiter verkleinern, wird keine Kopie erstellt.";
@@ -614,8 +627,6 @@
 "Fan control" = "Lüftersteuerung";
 "Fan %lld" = "Lüfter %lld";
 "See how fast your fans spin and choose their speed" = "Sieh, wie schnell deine Lüfter drehen, und wähle ihre Geschwindigkeit";
-"Allow control" = "Steuerung erlauben";
-"Needs your administrator password once" = "Benötigt einmalig dein Administratorkennwort";
 "This Mac has no fans" = "Dieser Mac hat keine Lüfter";
 "It cools itself quietly, so there is nothing to set" = "Er kühlt sich leise von selbst, daher gibt es nichts einzustellen";
 "rpm" = "U/min";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik möchte die Lüftersteuerung entfernen.";
 "Not allowed: no administrator password" = "Nicht erlaubt: kein Administratorkennwort";
 "Not removed: no administrator password" = "Nicht entfernt: kein Administratorkennwort";
-"Couldn’t change the fan speed. Try Allow control again." = "Die Lüftergeschwindigkeit konnte nicht geändert werden. Wähle „Steuerung erlauben“ erneut.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Die Lüftergeschwindigkeit konnte nicht geändert werden. Erlaube die Lüftersteuerung noch einmal.";
 "Fans went back to Auto to keep your Mac safe" = "Die Lüfter sind auf Automatisch zurückgegangen, um deinen Mac zu schützen";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "Lüfter, U/min, Kühlung, kühler, heiß, Hitze, Lärm, leise, laut, Temperatur, thermisch";
 "allow, helper, password, administrator, install, remove" = "erlauben, Hilfsprogramm, Kennwort, Administrator, installieren, entfernen";
