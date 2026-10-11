@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Installation plus sûre, et une mise à jour ne perd jamais l’app
+
+<sub>1.32.2 · 11 octobre 2026</sub>
+
+Une série de corrections pour installer, mettre à jour et désinstaller en toute sécurité.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+L’assistant des ventilateurs s’installe désormais plus soigneusement et est vérifié avant de démarrer. Si une mise à jour ne peut pas être copiée, votre pikapik actuel reste en place. La désinstallation retire aussi l’assistant des ventilateurs et rétablit votre réglage de répétition des touches, les coins du Dock et les raccourcis système.
+
+Les touches maintenues ne restent plus bloquées quand un outil redémarre, et en désactivant « Répéter une touche maintenue », vous retrouvez votre propre réglage du menu des accents. L’animal se repose quand l’écran est en veille ou verrouillé, et une copie de archive.tar.gz s’appelle désormais archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>La vitesse manuelle des ventilateurs tient dès le premier essai
+
+<sub>1.32.1 · 11 octobre 2026</sub>
+
+Choisir Manuel dans Ventilateurs ne repasse plus en Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Parfois, le premier toucher sur Manuel remettait les ventilateurs en Auto avec un avertissement de sécurité, et seul le second fonctionnait. Manuel tient désormais dès le premier essai.
+
+Si un ventilateur quitte quand même le mode Manuel tout seul, pikapik le remet réellement en Auto : ce que vous voyez correspond toujours à ce que fait votre Mac.
+
+Inutile de tout réautoriser. Mettez à jour, et ça fonctionne.
+
+**Pour essayer :** Ouvrez Réglages › Ventilateurs et choisissez Manuel.
+
+---
+
 ## <a id="v1.32.0"></a>Voyez à quelle vitesse tournent vos ventilateurs
 
 <sub>1.32.0 · 11 octobre 2026</sub>

@@ -158,7 +158,7 @@ final class SMC {
     func fans() -> [SMCFan] {
         let mode = modeKey
         return (0..<count).compactMap { id in
-            guard let current = value("F\(id)Ac"), let low = value("F\(id)Mn"), let high = value("F\(id)Mx") else { return nil }
+            guard let current = value("F\(id)Ac"), let low = value("F\(id)Mn"), let high = value("F\(id)Mx"), high > low else { return nil }
             return SMCFan(id: id, current: current, minimum: low, maximum: high, manual: value(mode(id)) == 1)
         }
     }
@@ -173,9 +173,10 @@ final class SMC {
                 Thread.sleep(forTimeInterval: 0.5)
                 unlocked = write(mode, 1)
             }
-            guard unlocked else { return false }
+            guard unlocked else { write("Ftst", 0); return false }
         }
-        return write("F\(id)Tg", SMCCodec.clamp(rpm, min: low, max: high))
+        guard write("F\(id)Tg", SMCCodec.clamp(rpm, min: low, max: high)) else { setAuto(fan: id); return false }
+        return true
     }
 
     func setAuto(fan id: Int) {

@@ -13,6 +13,7 @@ final class FanControl {
     @ObservationIgnored private var timer: Timer?
     @ObservationIgnored private var watchers = 0
     @ObservationIgnored private var connection: NSXPCConnection?
+    @ObservationIgnored private var requested: [Int: Date] = [:]
 
     private(set) var fans: [SMCFan] = []
     private(set) var wanted: [Int: Double] = [:]
@@ -69,7 +70,7 @@ final class FanControl {
         error = nil
         helper.setManual(fan: fan.id, rpm: rpm) { ok in
             DispatchQueue.main.async {
-                if ok { self.wanted[fan.id] = rpm } else { self.wanted[fan.id] = nil; self.fail() }
+                if ok { self.wanted[fan.id] = rpm; self.requested[fan.id] = Date() } else { self.wanted[fan.id] = nil; self.fail() }
                 self.refresh()
             }
         }
@@ -89,13 +90,14 @@ final class FanControl {
         guard !busy, FileManager.default.fileExists(atPath: Self.bundled.path) else { return fail() }
         busy = true
         error = nil
-        let plist = FileManager.default.temporaryDirectory.appendingPathComponent(Self.label + ".plist")
         let contents: [String: Any] = [
             "Label": Self.label,
             "ProgramArguments": [Self.binary],
             "MachServices": [Self.label: true],
         ]
-        guard (contents as NSDictionary).write(to: plist, atomically: true) else { busy = false; return fail() }
+        guard let xml = try? PropertyListSerialization.data(fromPropertyList: contents, format: .xml, options: 0),
+              let requirement = FanHelperInfo.requirement(identifier: Self.label)
+        else { busy = false; return fail() }
         let q = Self.quoted
         let steps = [
             "(/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1 || true)",
@@ -103,7 +105,8 @@ final class FanControl {
             "/bin/cp -f \(q(Self.bundled.path)) \(q(Self.binary))",
             "/usr/sbin/chown root:wheel \(q(Self.binary))",
             "/bin/chmod 755 \(q(Self.binary))",
-            "/bin/cp -f \(q(plist.path)) \(q(Self.plist))",
+            "/usr/bin/codesign --verify \(q("-R=" + requirement)) \(q(Self.binary)) || { /bin/rm -f \(q(Self.binary)); exit 1; }",
+            "/usr/bin/printf %s \(q(String(decoding: xml, as: UTF8.self).replacingOccurrences(of: "\n", with: ""))) > \(q(Self.plist))",
             "/usr/sbin/chown root:wheel \(q(Self.plist))",
             "/bin/chmod 644 \(q(Self.plist))",
             "/bin/launchctl bootstrap system \(q(Self.plist))",
@@ -111,7 +114,6 @@ final class FanControl {
         let prompt = String(localized: "pikapik wants to allow changing the fan speed.")
         DispatchQueue.global().async {
             let ok = KeepAwake.runAsAdmin(steps.joined(separator: " && "), prompt: prompt)
-            try? FileManager.default.removeItem(at: plist)
             DispatchQueue.main.async {
                 self.busy = false
                 if ok { self.probe() } else { self.error = String(localized: "Not allowed: no administrator password") }
@@ -149,9 +151,11 @@ final class FanControl {
     private func refresh() {
         guard let smc else { return }
         fans = smc.fans()
-        let dropped = wanted.keys.filter { id in !(fans.first { $0.id == id }?.manual ?? false) }
+        let dropped = wanted.keys.filter { id in
+            !(fans.first { $0.id == id }?.manual ?? false) && Date().timeIntervalSince(requested[id] ?? .distantPast) > 3
+        }
         guard !dropped.isEmpty else { return }
-        dropped.forEach { wanted[$0] = nil }
+        dropped.forEach(setAuto)
         error = String(localized: "Fans went back to Auto to keep your Mac safe")
     }
 

@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Daha güvenli kurulum, güncellemeler uygulamayı asla kaybetmez
+
+<sub>1.32.2 · 11 Ekim 2026</sub>
+
+Kurulumu, güncellemeyi ve kaldırmayı daha güvenli yapan bir dizi düzeltme.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Fan yardımcısı artık daha özenle kuruluyor ve başlamadan önce doğrulanıyor. Bir güncelleme kopyalanamazsa mevcut pikapik olduğu gibi kalır. Kaldırırken fan yardımcısı da silinir; tuş tekrarı ayarınız, Dock köşeleri ve sistem kısayolları eski haline döner.
+
+Bir araç yeniden başladığında basılı tutulan tuşlar artık takılı kalmaz; “Basılı tutulan tuşu tekrarla” kapatılınca kendi vurgu menüsü ayarınız geri gelir. Ekran uykudayken veya kilitliyken evcil hayvan dinlenir; archive.tar.gz kopyası artık archive 2.tar.gz adını alır.
+
+---
+
+## <a id="v1.32.1"></a>Elle fan hızı ilk denemede tutuyor
+
+<sub>1.32.1 · 11 Ekim 2026</sub>
+
+Fanlar bölümünde Manuel seçmek artık Otomatik'e geri dönmüyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Bazen Manuel'e ilk dokunuş, fanları bir güvenlik uyarısıyla Otomatik'e döndürüyordu ve ancak ikinci dokunuş işe yarıyordu. Artık Manuel ilk denemeden itibaren tutuyor.
+
+Bir fan yine de kendiliğinden Manuel'den çıkarsa pikapik onu gerçekten Otomatik'e alır; yani gördüğünüz her zaman Mac'inizin yaptığıyla aynıdır.
+
+Yeniden izin vermeniz gerekmez. Güncelleyin, hemen çalışır.
+
+**Deneyin:** Ayarlar › Fanlar'ı açın ve Manuel'i seçin.
+
+---
+
 ## <a id="v1.32.0"></a>Fanlarınızın ne kadar hızlı döndüğünü görün
 
 <sub>1.32.0 · 11 Ekim 2026</sub>

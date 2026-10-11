@@ -125,6 +125,10 @@ final class CommandKeysTool: Tool {
     }
 
     private func stop() {
+        if let held {
+            self.held = nil
+            post(held.target, down: false, nil)
+        }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
             CFMachPortInvalidate(tap)
@@ -176,10 +180,10 @@ private func commandKeysCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy) {
+private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy?) {
     guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
     key.flags = .maskCommand
-    key.tapPostEvent(proxy)
+    if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
 private struct CommandKeysSettings: View {

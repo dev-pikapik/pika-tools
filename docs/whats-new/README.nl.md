@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Veiliger installeren, en updates verliezen de app nooit
+
+<sub>1.32.2 · 11 oktober 2026</sub>
+
+Een reeks reparaties die installeren, updaten en verwijderen veiliger maakt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+De ventilatorhelper wordt nu zorgvuldiger geïnstalleerd en gecontroleerd voordat hij start. Als een update niet gekopieerd kan worden, blijft je huidige pikapik gewoon staan. Bij het verwijderen verdwijnt ook de ventilatorhelper en komen je instelling voor toetsherhaling, de Dock-hoeken en de systeemsneltoetsen terug.
+
+Ingehouden toetsen blijven niet meer hangen als een tool opnieuw start, en als je ‘Ingehouden toets herhalen’ uitzet, krijg je je eigen instelling voor het accentmenu terug. Het huisdier rust zolang het scherm slaapt of vergrendeld is, en een kopie van archive.tar.gz heet nu archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>Handmatige ventilatorsnelheid werkt al de eerste keer
+
+<sub>1.32.1 · 11 oktober 2026</sub>
+
+Handmatig kiezen bij Ventilatoren springt niet meer terug naar Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Soms zette de eerste tik op Handmatig de ventilatoren met een veiligheidswaarschuwing terug naar Auto, en werkte pas de tweede. Nu blijft Handmatig al de eerste keer staan.
+
+Als een ventilator toch uit zichzelf de handmatige stand verlaat, zet pikapik hem nu echt terug op Auto, zodat wat je ziet altijd klopt met wat je Mac doet.
+
+Je hoeft niets opnieuw toe te staan. Werk bij en het werkt.
+
+**Probeer het:** Open Instellingen › Ventilatoren en kies Handmatig.
+
+---
+
 ## <a id="v1.32.0"></a>Zie hoe snel je ventilatoren draaien
 
 <sub>1.32.0 · 11 oktober 2026</sub>

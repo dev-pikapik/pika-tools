@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Sicherere Installation, und Updates verlieren die App nie
+
+<sub>1.32.2 · 11. Oktober 2026</sub>
+
+Eine Runde Korrekturen für sichereres Installieren, Aktualisieren und Deinstallieren.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Der Lüfter-Helfer wird jetzt sorgfältiger installiert und vor dem Start geprüft. Lässt sich ein Update nicht kopieren, bleibt Ihr aktuelles pikapik erhalten. Beim Deinstallieren wird auch der Lüfter-Helfer entfernt, und Ihre Einstellung für die Tastenwiederholung, die Dock-Ecken und die Systemkurzbefehle werden zurückgesetzt.
+
+Gehaltene Tasten bleiben nicht mehr hängen, wenn ein Werkzeug neu startet, und beim Ausschalten von „Gehaltene Taste wiederholen“ bekommen Sie Ihre eigene Einstellung für das Akzentmenü zurück. Das Haustier ruht, solange der Bildschirm schläft oder gesperrt ist, und eine Kopie von archive.tar.gz heißt jetzt archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>Manuelle Lüfterdrehzahl klappt jetzt gleich beim ersten Mal
+
+<sub>1.32.1 · 11. Oktober 2026</sub>
+
+„Manuell“ bei den Lüftern springt nicht mehr zurück auf Automatisch.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Manchmal schickte der erste Tipp auf „Manuell“ die Lüfter mit einer Sicherheitswarnung zurück auf „Automatisch“, und erst der zweite Tipp funktionierte. Jetzt hält „Manuell“ gleich beim ersten Versuch.
+
+Sollte ein Lüfter den manuellen Modus doch einmal von selbst verlassen, setzt pikapik ihn jetzt tatsächlich auf „Automatisch“ zurück. Was Sie sehen, entspricht also immer dem, was Ihr Mac tut.
+
+Sie müssen nichts erneut erlauben. Aktualisieren, und es funktioniert.
+
+**Ausprobieren:** Öffnen Sie Einstellungen › Lüfter und wählen Sie „Manuell“.
+
+---
+
 ## <a id="v1.32.0"></a>Sehen, wie schnell Ihre Lüfter drehen
 
 <sub>1.32.0 · 11. Oktober 2026</sub>

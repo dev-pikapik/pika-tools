@@ -5,6 +5,38 @@
 
 ---
 
+## <a id="v1.32.2"></a>Bezpečnější instalace a aktualizace, které aplikaci nikdy neztratí
+
+<sub>1.32.2 · 11. října 2026</sub>
+
+Série oprav, které dělají instalaci, aktualizaci i odinstalaci bezpečnější.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Pomocník ventilátorů se nyní instaluje pečlivěji a před spuštěním se ověřuje. Pokud se aktualizaci nepodaří zkopírovat, váš současný pikapik zůstane na místě. Při odinstalaci se odstraní i pomocník ventilátorů a vrátí se vaše nastavení opakování kláves, rohy Docku a systémové zkratky.
+
+Držené klávesy se už nezasekávají, když se nástroj restartuje, a po vypnutí „Opakovat podrženou klávesu“ se vám vrátí vaše vlastní nastavení nabídky akcentů. Mazlíček odpočívá, dokud obrazovka spí nebo je zamčená, a kopie archive.tar.gz se nyní jmenuje archive 2.tar.gz.
+
+---
+
+## <a id="v1.32.1"></a>Ruční rychlost ventilátorů platí hned na první pokus
+
+<sub>1.32.1 · 11. října 2026</sub>
+
+Volba Ručně u Ventilátorů se už nevrací zpět na Auto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Někdy první klepnutí na Ručně vrátilo ventilátory na Auto s bezpečnostním upozorněním a teprve druhé zabralo. Teď Ručně vydrží už od prvního pokusu.
+
+Pokud ventilátor ručního režimu přesto sám opustí, pikapik ho skutečně vrátí na Auto, takže to, co vidíte, vždy odpovídá tomu, co váš Mac dělá.
+
+Nemusíte nic znovu povolovat. Aktualizujte a funguje to.
+
+**Vyzkoušejte:** Otevřete Nastavení › Ventilátory a zvolte Ručně.
+
+---
+
 ## <a id="v1.32.0"></a>Podívejte se, jak rychle se točí ventilátory
 
 <sub>1.32.0 · 11. října 2026</sub>
