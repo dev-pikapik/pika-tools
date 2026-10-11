@@ -161,6 +161,7 @@ enum Permission: CaseIterable {
         case .fullDisk:
             permissions.reset("SystemPolicyAllFiles")
             permissions.refresh()
+            if permissions.fileAccess { permissions.openSettings(pane) }
         #endif
         case .finder: FinderExtension.turnOff()
         #if APPSTORE
