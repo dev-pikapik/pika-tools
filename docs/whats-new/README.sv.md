@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Tydligare spelinställningar
+
+<sub>1.31.2 · 11 oktober 2026</sub>
+
+Anpassa skyddet och utforska kortkommandona på din Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Åtta tydliga ämnen ersätter upprepade mappar. Varje rubrik har namn, förklaring, symbol och antal. Klicka var som helst på raden för att öppna den.
+
+Varje åtgärd förklarar vad den gör bredvid den animerade förhandsvisningen. Aktuella tangenter och beteendet i spel har en egen rad. Sökningen hittar även beskrivningar.
+
+Tangenter utan tilldelning har en tydlig länk till Systeminställningar. Allmänna spelskydd samlas separat och dina val behålls.
+
+**Prova:** Öppna Fler spelinställningar, fäll ut ett ämne och jämför en åtgärds beskrivning med förhandsvisningen.
+
+---
+
 ## <a id="v1.31.1"></a>Språkgester i spel
 
 <sub>1.31.1 · 11 oktober 2026</sub>

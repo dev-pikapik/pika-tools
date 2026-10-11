@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Des réglages de jeu plus clairs
+
+<sub>1.31.2 · 11 octobre 2026</sub>
+
+Ajustez la protection et explorez les raccourcis de votre Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Huit thèmes clairs remplacent les dossiers répétés. Chaque titre a un nom, une explication, une icône et un compteur. Cliquez n’importe où sur la ligne pour l’ouvrir.
+
+Chaque action explique son rôle à côté de son aperçu animé. Ses touches et son comportement en jeu ont leur propre ligne. La recherche trouve aussi les descriptions.
+
+Les touches non attribuées ont un lien clair vers les Réglages Système. Les protections générales du jeu sont regroupées séparément et vos choix sont conservés.
+
+**Pour essayer :** Ouvrez les réglages de jeu supplémentaires, développez un thème et comparez la description d’une action à son aperçu.
+
+---
+
 ## <a id="v1.31.1"></a>Changer de langue en jeu
 
 <sub>1.31.1 · 11 octobre 2026</sub>

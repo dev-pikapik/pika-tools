@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Game settings with a clear purpose
+
+<sub>1.31.2 · October 11, 2026</sub>
+
+Fine-tune protection and explore your Mac’s shortcuts.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Eight clear topics replace the repeated folders. Every heading has a name, an explanation, an icon and a count. Click anywhere on its row to open it.
+
+Each action shows what it does beside its animated preview. Its current keys and behaviour in games have their own row. Search also understands descriptions.
+
+Unassigned keys have a clear link to System Settings. General game safeguards are collected separately, and your choices are preserved.
+
+**Try it:** Open More game settings, expand a topic and compare an action’s description with its preview.
+
+---
+
 ## <a id="v1.31.1"></a>Language gestures in games
 
 <sub>1.31.1 · October 11, 2026</sub>

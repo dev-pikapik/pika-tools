@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Cài đặt trò chơi rõ ràng hơn
+
+<sub>1.31.2 · 11 tháng 10 năm 2026</sub>
+
+Tinh chỉnh bảo vệ và khám phá phím tắt của Mac.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Tám chủ đề rõ ràng thay thế các thư mục lặp lại. Mỗi tiêu đề có tên, giải thích, biểu tượng và số lượng. Bấm vào bất kỳ vị trí nào trong hàng để mở.
+
+Mỗi hành động giải thích công dụng cạnh bản xem trước động. Các phím hiện tại và hành vi trong trò chơi có hàng riêng. Tìm kiếm cũng tìm được phần mô tả.
+
+Các phím chưa được gán có liên kết rõ ràng đến Cài đặt hệ thống. Bảo vệ trò chơi chung nằm ở phần riêng và lựa chọn của bạn được giữ lại.
+
+**Thử ngay:** Mở cài đặt trò chơi bổ sung, mở rộng một chủ đề rồi so sánh mô tả hành động với bản xem trước.
+
+---
+
 ## <a id="v1.31.1"></a>Cử chỉ đổi ngôn ngữ trong trò chơi
 
 <sub>1.31.1 · 11 tháng 10 năm 2026</sub>

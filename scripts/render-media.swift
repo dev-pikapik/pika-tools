@@ -39,6 +39,7 @@ enum RenderMedia {
         ("whats-new/1.28.0/app-shelf", 3.85, AnyView(DockShelfArt(symbol: "safari.fill"))),
         ("whats-new/1.29.0/pet-ball", PetBallArt.length, AnyView(PetBallArt())),
         ("whats-new/1.31.0/system-shortcuts", 6.2, AnyView(SystemShortcutsCard())),
+        ("whats-new/1.31.2/game-settings", 5.4, AnyView(GameSettingsCard())),
     ]
 
     static func main() {
@@ -128,6 +129,48 @@ private struct SystemShortcutsCard: View {
                     }
                 }
             }
+        }
+    }
+}
+
+private struct GameSettingsCard: View {
+    var body: some View {
+        IllustrationRow(loop: [1.8, 3.6]) { tick in
+            VStack(spacing: 7) {
+                HStack(spacing: 9) {
+                    Image(systemName: GameShortcutGroup.language.symbol)
+                        .font(.system(size: 15)).foregroundStyle(Color.accentColor)
+                        .frame(width: 28, height: 28)
+                        .background(Color.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 7))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(verbatim: GameShortcutGroup.language.title).font(.system(size: 12, weight: .semibold))
+                        Text(verbatim: GameShortcutGroup.language.detail).font(.system(size: 9)).foregroundStyle(.secondary)
+                    }
+                    Spacer(minLength: 2)
+                    Text(verbatim: "2").font(.system(size: 10)).foregroundStyle(.secondary)
+                    Image(systemName: "chevron.right").font(.system(size: 8, weight: .semibold))
+                        .rotationEffect(.degrees(tick % 2 == 1 ? 90 : 0)).foregroundStyle(.secondary)
+                }
+                if tick % 2 == 1 {
+                    HStack(spacing: 12) {
+                        GameRuleFrame(rule: .focusKeys, keys: ["⌃Space"], story: .still(on: true), height: 54)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(verbatim: GameShortcutDescription.language.text).font(.system(size: 10, weight: .medium))
+                            Text(verbatim: GameShortcutMode.automatic.title).font(.system(size: 9)).foregroundStyle(.secondary)
+                        }.frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                } else {
+                    HStack(spacing: 9) {
+                        Image(systemName: GameShortcutGroup.screenshots.symbol).foregroundStyle(Color.accentColor).frame(width: 28)
+                        Text(verbatim: GameShortcutGroup.screenshots.title).font(.system(size: 12, weight: .semibold))
+                        Spacer()
+                        Text(verbatim: "9").font(.system(size: 10)).foregroundStyle(.secondary)
+                        Image(systemName: "chevron.right").font(.system(size: 8, weight: .semibold)).foregroundStyle(.secondary)
+                    }.frame(height: 36)
+                }
+            }
+            .padding(.horizontal, 18)
+            .animation(.easeInOut(duration: 0.25), value: tick)
         }
     }
 }

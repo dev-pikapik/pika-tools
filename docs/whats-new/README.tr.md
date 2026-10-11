@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Daha anlaşılır oyun ayarları
+
+<sub>1.31.2 · 11 Ekim 2026</sub>
+
+Korumayı ayarlayın ve Mac’inizin kısayollarını keşfedin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Tekrarlanan klasörler yerine sekiz anlaşılır konu var. Her başlıkta ad, açıklama, simge ve sayı bulunur. Açmak için satırın herhangi bir yerine tıklayın.
+
+Her eylem, animasyonlu önizlemenin yanında ne yaptığını açıklar. Geçerli tuşlar ve oyunlardaki davranış ayrı bir satırda yer alır. Arama açıklamaları da bulur.
+
+Atanmamış tuşlar için Sistem Ayarları’na açık bir bağlantı bulunur. Genel oyun korumaları ayrı bir bölümde toplanır ve seçimleriniz korunur.
+
+**Deneyin:** Diğer oyun ayarlarını açın, bir konuyu genişletin ve eylemin açıklamasını önizlemeyle karşılaştırın.
+
+---
+
 ## <a id="v1.31.1"></a>Oyunlarda dil hareketleri
 
 <sub>1.31.1 · 11 Ekim 2026</sub>

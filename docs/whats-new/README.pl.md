@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Czytelniejsze ustawienia gry
+
+<sub>1.31.2 · 11 października 2026</sub>
+
+Dostosuj ochronę i poznaj skróty swojego Maca.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Osiem jasnych tematów zastępuje powtarzające się foldery. Każdy nagłówek ma nazwę, opis, ikonę i licznik. Kliknij dowolne miejsce w wierszu, aby go otworzyć.
+
+Każde działanie objaśnia swój cel obok animowanego podglądu. Aktualne klawisze i zachowanie w grze mają osobny wiersz. Wyszukiwanie obejmuje również opisy.
+
+Nieprzypisane klawisze mają czytelny link do Ustawień systemowych. Ogólne zabezpieczenia gry są w osobnej sekcji, a Twoje wybory zostają zachowane.
+
+**Wypróbuj:** Otwórz dodatkowe ustawienia gry, rozwiń temat i porównaj opis działania z podglądem.
+
+---
+
 ## <a id="v1.31.1"></a>Gest zmiany języka w grze
 
 <sub>1.31.1 · 11 października 2026</sub>

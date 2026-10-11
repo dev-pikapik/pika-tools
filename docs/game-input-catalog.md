@@ -16,7 +16,9 @@ The catalogue on the development Mac contains 234 actions. The 201 assigned acti
 
 Automatic is the default for every action. Actions that open windows or move focus are paused. Input-source actions can run in the background. A modifier chord is considered deliberate when it is short (up to 450 ms) and no other game key is held. Explicit Background mode lets the user request the action without that intent check. Physical key-down and key-up events continue through the game input path. The supported background action set is explicit: an unsupported action cannot be assigned to Background through the UI.
 
-More game settings contains the searchable catalogue and the existing detailed rules. Each catalogue action has a preview using the same game timeline, key caps and animation continuity as the original Game Mode previews. Unknown actions use an explicitly generic system-action preview.
+More game settings starts with eight stable topics. Each heading has a name, an explanation, an icon and a count, and its whole row opens the topic. Each action keeps its explanation beside the preview, with current keys and behaviour in a separate row. The layout stacks at narrow widths. Unassigned keys link to System Settings; their descriptions stay visible. Search includes descriptions and topics, opens matching topics automatically and still permits collapsing individual results. General Game safeguards are collected separately, with explanations for every switch.
+
+Each catalogue action has a preview using the same game timeline, key caps and animation continuity as the original Game Mode previews. Unknown actions use an explicitly generic system-action preview. Empty published names fall back to a visible action identifier. Nested names keep their immediate parent topic for context.
 
 Per-action choices are stored by action identifier in `game-mode-system-shortcuts`, included in settings backup and sync. Existing group rules remain the baseline for their known actions. A per-action choice takes priority. Emergency Force Quit stays available.
 

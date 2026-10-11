@@ -569,6 +569,7 @@ private func cursorFenceCallback(
 struct GameModePage: View {
     @Bindable private var tool = GameModeTool.shared
     @State private var advanced = false
+    @State private var safeguards = false
 
     var body: some View {
         Form {
@@ -603,46 +604,60 @@ struct GameModePage: View {
                     .foregroundStyle(.secondary)
             }
             Section {
-                DisclosureGroup("More game settings", isExpanded: $advanced) {
+                DisclosureGroup(isExpanded: $advanced) {
                     Text("Quick language shortcuts work silently. Held game keys stay in the game.")
                         .font(.subheadline).foregroundStyle(.secondary)
+                } label: {
+                    GameDisclosureLabel(title: String(localized: "More game settings"), detail: String(localized: "Fine-tune protection and explore your Mac’s shortcuts."), symbol: "slider.horizontal.3")
                 }
+                .disclosureGroupStyle(GameDisclosureStyle())
             }
             if advanced {
-                rules(Text("Closing the game"), [
-                    Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
-                    Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
-                ], footer: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."))
-                rules(Text("Apps"), [
-                    Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
-                    Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
-                    Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], subtitle: Text("Spotlight")),
-                    Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
-                    Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], subtitle: Text("Launchpad")),
-                ])
-                rules(Text("Desktops"), [
-                    Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], subtitle: Text("Mission Control")),
-                    Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], subtitle: Text("App Exposé")),
-                    Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
-                    Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
-                    Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
-                    Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
-                ])
-                rules(Text("Keyboard"), [
-                    Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
-                    Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
-                    Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(60, "⌃" + String(localized: "Space")), key(12, "⌃F1"), "…"]),
-                    Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
-                ])
-                rules(Text("Mouse and screen"), [
-                    Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
-                    Rule(
-                        .cursor, String(localized: "The pointer stays in the game"),
-                        subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
-                    ),
-                    Rule(.display, String(localized: "The screen stays on"), subtitle: Text("The display doesn’t dim or sleep while you play")),
-                ])
                 SystemShortcutList(tool: tool)
+                Section {
+                    DisclosureGroup(isExpanded: $safeguards) {
+                        Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works.").font(.subheadline).foregroundStyle(.secondary)
+                    } label: {
+                        GameDisclosureLabel(title: String(localized: "Game safeguards"), detail: String(localized: "Closing the game, the pointer and display."), symbol: "shield", count: GameRule.allCases.count)
+                    }
+                    .disclosureGroupStyle(GameDisclosureStyle())
+                    .settingAnchor(String(localized: "Game safeguards"))
+                }
+                if safeguards {
+                    rules(Text("Closing the game"), [
+                        Rule(.commandQ, String(localized: "The game doesn’t close"), ["⌘Q"]),
+                        Rule(.commandW, String(localized: "The game window doesn’t close"), ["⌘W"]),
+                    ], footer: Text("To leave a game, press \(CommandKeysTool.quit.text); to close its window, \(CommandKeysTool.close.text). ⌥⌘Esc always works."))
+                    rules(Text("Apps"), [
+                        Rule(.appSwitcher, String(localized: "Apps and windows don’t switch"), ["⌘Tab", key(27, "⌘`")]),
+                        Rule(.hide, String(localized: "The game doesn’t hide"), ["⌘H", key(233, "⌘M")]),
+                        Rule(.spotlight, String(localized: "Search doesn’t pop up"), [key(64, "⌘" + String(localized: "Space"))], subtitle: Text("Spotlight")),
+                        Rule(.siri, String(localized: "Siri and voice typing don’t start"), [key(186, "🎤")]),
+                        Rule(.launchpad, String(localized: "The app grid doesn’t open"), [key(173, "F4")], subtitle: Text("Launchpad")),
+                    ])
+                    rules(Text("Desktops"), [
+                        Rule(.missionControl, String(localized: "The view of all windows doesn’t open"), [key(32, "⌃↑")], subtitle: Text("Mission Control")),
+                        Rule(.appWindows, String(localized: "The view of the game’s windows doesn’t open"), [key(33, "⌃↓")], subtitle: Text("App Exposé")),
+                        Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
+                        Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
+                        Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
+                        Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
+                    ])
+                    rules(Text("Keyboard"), [
+                        Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
+                        Rule(.lookUp, String(localized: "The dictionary doesn’t pop up"), [key(70, "⌃⌘D")], subtitle: Text("Look Up")),
+                        Rule(.focusKeys, String(localized: "The keyboard stays in the game"), [key(60, "⌃" + String(localized: "Space")), key(12, "⌃F1"), "…"]),
+                        Rule(.globe, String(localized: "🌐 shortcuts are paused"), ["🌐"]),
+                    ])
+                    rules(Text("Mouse and screen"), [
+                        Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
+                        Rule(
+                            .cursor, String(localized: "The pointer stays in the game"),
+                            subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")
+                        ),
+                        Rule(.display, String(localized: "The screen stays on"), subtitle: Text("The display doesn’t dim or sleep while you play")),
+                    ])
+                }
             }
             RestoreDefaultsSection(
                 message: String(localized: "These will turn off and go back to their default options: \(tool.title)"),
@@ -654,7 +669,10 @@ struct GameModePage: View {
         .settingsPage()
         .environment(\.inSettings, true)
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
-            if let title = SettingsWindow.model.highlight, title != tool.title && title != String(localized: "Your games") { advanced = true }
+            if let title = SettingsWindow.model.highlight, title != tool.title && title != String(localized: "Your games") {
+                advanced = true
+                if title == String(localized: "Game safeguards") || !GameShortcutGroup.allCases.contains(where: { $0.title == title }) && title != String(localized: "System keyboard shortcuts") { safeguards = true }
+            }
         }
     }
 
@@ -670,7 +688,7 @@ struct GameModePage: View {
                         .opacity(tool.isEnabled ? 1 : 0.5)
                     Toggle(isOn: Binding { tool.rules.contains(row.rule) } set: { if $0 { tool.rules.insert(row.rule) } else { tool.rules.remove(row.rule) } }) {
                         HStack(spacing: 12) {
-                            RowLabel(Text(row.title), row.subtitle)
+                            RowLabel(Text(row.title), Text(verbatim: row.rule.description.text))
                             Spacer(minLength: 0)
                             if !row.keys.isEmpty { KeyCaps(keys: row.keys, system: row.rule.hotKeys.isEmpty ? nil : SystemShortcuts.place(row.rule.hotKeys)) }
                         }

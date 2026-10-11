@@ -115,6 +115,10 @@ struct SystemGameShortcut: Identifiable {
 }
 
 enum SystemShortcutCatalog {
+    static func nonempty(_ text: String?) -> String? {
+        guard let text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return nil }
+        return text
+    }
     struct Metadata {
         let name: String
         let rawName: String
@@ -154,11 +158,11 @@ enum SystemShortcutCatalog {
             guard let value = values[id] else { return nil }
             let label = metadata[id]
             let emergency = id == 0 || value.key == UInt16(kVK_Escape) && value.modifiers & 0x1E0000 == 0x180000
-            let name = label?.name ?? (emergency ? String(localized: "Force Quit") : legacyName(id)) ?? String(localized: "System action \(String(id))")
+            let name = nonempty(label?.name) ?? (emergency ? String(localized: "Force Quit") : legacyName(id)) ?? String(localized: "System action \(String(id))")
             let section = label?.section ?? (SystemGameShortcut.controller(id).map { "game-\($0.rawValue)" } ?? "other")
             return SystemGameShortcut(
                 id: id, name: name, section: section,
-                sectionName: label?.sectionName ?? legacyName(id) ?? String(localized: "Other system shortcuts"),
+                sectionName: nonempty(label?.sectionName) ?? legacyName(id) ?? String(localized: "Other system shortcuts"),
                 rawName: label?.rawName ?? "", key: value.key, character: value.character, modifiers: value.modifiers,
                 enabled: paused.contains(id) || SymbolicHotKeys.isEnabled(id)
             )
@@ -219,16 +223,22 @@ enum SystemShortcutCatalog {
             .flatMap { NSArray(contentsOf: $0) as? [[String: Any]] } ?? []
         var result: [Int32: Metadata] = [:]
         func raw(_ item: [String: Any]) -> String { (item["name"] as? String ?? "").replacingOccurrences(of: "DO_NOT_LOCALIZE: ", with: "") }
-        func title(_ item: [String: Any]) -> String { localized[raw(item)] ?? raw(item) }
-        func walk(_ item: [String: Any], _ section: String, _ sectionName: String) {
+        func title(_ item: [String: Any]) -> String { nonempty(localized[raw(item)]) ?? raw(item) }
+        func walk(_ item: [String: Any], _ section: String, _ sectionName: String, _ context: [(title: String, raw: String)]) {
             for key in ["sybmolichotkey", "slow_sybmolichotkey", "prefs_sybmolichotkey"] {
                 if let id = item[key] as? Int32 {
-                    result[id] = Metadata(name: title(item), rawName: raw(item), section: section, sectionName: sectionName)
+                    result[id] = Metadata(
+                        name: (context.suffix(1).map(\.title) + [title(item)]).compactMap(nonempty).joined(separator: " · "),
+                        rawName: (context.map(\.raw) + [raw(item)]).compactMap(nonempty).joined(separator: " · "),
+                        section: section, sectionName: sectionName
+                    )
                 }
             }
-            for child in item["elements"] as? [[String: Any]] ?? [] { walk(child, section, sectionName) }
+            for child in item["elements"] as? [[String: Any]] ?? [] { walk(child, section, sectionName, context + [(title(item), raw(item))]) }
         }
-        for group in items { walk(group, group["identifier"] as? String ?? "other", title(group)) }
+        for group in items {
+            for child in group["elements"] as? [[String: Any]] ?? [] { walk(child, group["identifier"] as? String ?? "other", title(group), []) }
+        }
         return result
     }
 }

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.2"></a>Spieloptionen mit klarem Zweck
+
+<sub>1.31.2 · 11. Oktober 2026</sub>
+
+Schutz anpassen und die Kurzbefehle deines Mac erkunden.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.2/game-settings-dark.png"><img src="../media/whats-new/1.31.2/game-settings-light.png" width="340" alt=""></picture>
+
+Acht klare Themen ersetzen wiederholte Ordner. Jede Überschrift hat einen Namen, eine Erklärung, ein Symbol und eine Anzahl. Ein Klick auf die ganze Zeile öffnet den Abschnitt.
+
+Jede Aktion erklärt ihre Funktion neben der animierten Vorschau. Die aktuellen Tasten und das Verhalten im Spiel stehen in einer eigenen Zeile. Die Suche findet auch Beschreibungen.
+
+Nicht belegte Tasten haben einen klaren Link zu den Systemeinstellungen. Allgemeine Schutzoptionen sind getrennt gesammelt, und deine Auswahl bleibt erhalten.
+
+**Ausprobieren:** Öffne Weitere Spieloptionen, klappe ein Thema auf und vergleiche die Beschreibung einer Aktion mit ihrer Vorschau.
+
+---
+
 ## <a id="v1.31.1"></a>Sprachgesten im Spiel
 
 <sub>1.31.1 · 11. Oktober 2026</sub>
