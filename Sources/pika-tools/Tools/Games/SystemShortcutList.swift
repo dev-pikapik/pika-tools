@@ -31,7 +31,7 @@ struct SystemShortcutList: View {
 
     var body: some View {
         Section {
-            Text("Current macOS shortcuts. Automatic protects the game.")
+            Text("Choose what each shortcut does while you play.")
                 .font(.subheadline).foregroundStyle(.secondary)
             HStack {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
@@ -104,29 +104,26 @@ struct SystemShortcutRow: View {
 
     private var choices: [Int32: GameShortcutMode] { SystemGameShortcut.overrides(tool.systemShortcuts) }
     private var mode: GameShortcutMode { entry.mode(rules: tool.rules, overrides: choices) }
+    private var choice: GameShortcutMode { choices[entry.id] ?? .automatic }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            ViewThatFits(in: .horizontal) {
-                HStack(alignment: .center, spacing: 18) {
-                    preview
-                    explanation.frame(minWidth: 220, maxWidth: .infinity, alignment: .leading)
-                }
-                VStack(alignment: .leading, spacing: 12) {
-                    explanation
-                    preview.frame(maxWidth: .infinity)
-                }
-            }
+        VStack(alignment: .leading, spacing: 10) {
+            IllustrationRow { SystemShortcutArt(entry: entry, on: mode != .system, background: mode == .background) }
+                .opacity(tool.isEnabled ? 1 : 0.5)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 12) {
-                    shortcut
-                    Spacer(minLength: 12)
-                    behaviour
+                    explanation.frame(minWidth: 180, maxWidth: .infinity, alignment: .leading)
+                    controls
                 }
                 VStack(alignment: .leading, spacing: 10) {
-                    shortcut
-                    behaviour
+                    explanation
+                    controls.frame(maxWidth: .infinity, alignment: .trailing)
                 }
+            }
+            if !entry.emergency {
+                Text(verbatim: entry.explanation(for: choice, rules: tool.rules))
+                    .font(.footnote).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -135,20 +132,22 @@ struct SystemShortcutRow: View {
 
     private var explanation: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(verbatim: entry.displayName).fontWeight(.medium)
+            Text(verbatim: entry.displayName)
             Text(verbatim: entry.description.text).font(.subheadline).foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            if entry.assigned, !entry.emergency {
-                Text(verbatim: entry.behaviour(mode)).font(.caption).foregroundStyle(.secondary)
+            if entry.assigned, !entry.enabled, !entry.emergency {
+                Text("Off in macOS").font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
 
-    private var preview: some View {
-        SystemShortcutArt(entry: entry, on: mode != .system, background: mode == .background)
-            .hostedApart().frame(width: 170, height: 108)
-            .opacity(tool.isEnabled && entry.assigned && entry.enabled ? 1 : 0.5).accessibilityHidden(true)
+    private var controls: some View {
+        HStack(spacing: 12) {
+            shortcut
+            behaviour
+        }
+        .fixedSize(horizontal: true, vertical: false)
     }
 
     @ViewBuilder private var shortcut: some View {
@@ -163,16 +162,14 @@ struct SystemShortcutRow: View {
         if entry.emergency {
             Label("Always available", systemImage: "lock.open").font(.subheadline).foregroundStyle(.secondary)
         } else {
-            HStack(spacing: 8) {
-                Text("While playing").font(.subheadline).foregroundStyle(.secondary)
-                Picker("While playing", selection: Binding(get: { choices[entry.id] ?? .automatic }, set: { tool.setSystemShortcut(entry.id, mode: $0) })) {
-                    ForEach(GameShortcutMode.allCases.filter { $0 != .background || entry.supportsBackground }, id: \.self) { choice in
-                        Text(choice.title).tag(choice)
-                    }
+            Picker("While playing", selection: Binding(get: { choice }, set: { tool.setSystemShortcut(entry.id, mode: $0) })) {
+                ForEach(GameShortcutMode.allCases.filter { $0 != .background || entry.supportsBackground }, id: \.self) { option in
+                    Text(option.title).tag(option)
+                        .help(Text(verbatim: entry.explanation(for: option, rules: tool.rules)))
                 }
-                .labelsHidden().fixedSize().disabled(!tool.isEnabled)
             }
-            .fixedSize(horizontal: true, vertical: false)
+            .labelsHidden().fixedSize().disabled(!tool.isEnabled)
+            .help(Text(verbatim: entry.explanation(for: choice, rules: tool.rules)))
         }
     }
 }

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Einheitliche Spieloptionen
+
+<sub>1.31.3 · 11. Oktober 2026</sub>
+
+Passende Vorschauen und verständliche Kurzbefehle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Jeder Kurzbefehl hat jetzt dieselbe breite Vorschau wie der Spielschutz und die anderen Einstellungsseiten. Darunter stehen Beschreibung, Bedienelemente und eine Erklärung der gewählten Option.
+
+«Spielmodus-Regeln verwenden». Ein kurzer Tastendruck wechselt die Sprache ohne Menü. Gedrückte Spieltasten verhindern versehentliche Wechsel.
+
+«In Spielen deaktivieren». Diese macOS-Aktion ist deaktiviert, solange das Spiel im Vordergrund ist. Danach funktioniert sie wie zuvor. «In Spielen erlauben». macOS führt die Aktion normal aus, auch wenn sie ein Fenster öffnet oder den Fokus vom Spiel nimmt.
+
+**Ausprobieren:** Öffne Weitere Spieloptionen, klappe die Systemsteuerung auf und wähle das Verhalten einer Aktion beim Spielen.
+
+---
+
 ## <a id="v1.31.2"></a>Spieloptionen mit klarem Zweck
 
 <sub>1.31.2 · 11. Oktober 2026</sub>

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Jednolity wygląd ustawień gry
+
+<sub>1.31.3 · 11 października 2026</sub>
+
+Spójne podglądy i bardziej zrozumiałe opcje skrótów.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Każdy skrót ma teraz taki sam szeroki podgląd jak ochrona gry i pozostałe strony ustawień. Pod nim znajdują się opis, elementy sterujące i wyjaśnienie wybranej opcji.
+
+«Według reguł trybu gry». Krótkie naciśnięcie zmienia język bez menu. Przytrzymywane klawisze gry zapobiegają przypadkowej zmianie.
+
+«Wyłącz w grach». To działanie macOS jest wyłączone, gdy gra jest na pierwszym planie. Po jej opuszczeniu działa jak wcześniej. «Zezwól w grach». macOS wykonuje działanie normalnie, nawet jeśli otwiera okno lub przenosi fokus z gry.
+
+**Wypróbuj:** Otwórz dodatkowe ustawienia gry, rozwiń funkcje systemu i wybierz zachowanie działania podczas gry.
+
+---
+
 ## <a id="v1.31.2"></a>Czytelniejsze ustawienia gry
 
 <sub>1.31.2 · 11 października 2026</sub>

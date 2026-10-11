@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Eén stijl voor spelinstellingen
+
+<sub>1.31.3 · 11 oktober 2026</sub>
+
+Gelijke voorbeelden en duidelijkere sneltoetskeuzes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Elke sneltoets heeft nu hetzelfde brede voorbeeld als de spelbeveiliging en de andere instellingenpagina’s. Daaronder staan de beschrijving, bediening en uitleg van de gekozen optie.
+
+«Volg de regels van Gamemodus». Een korte sneltoets wisselt de taal zonder menu. Ingedrukte gametoetsen voorkomen onbedoelde wissels.
+
+«Uitschakelen in games». Deze macOS-actie is uitgeschakeld zolang de game vooraan staat. Als je weggaat, werkt ze weer zoals voorheen. «Toestaan in games». macOS voert de actie normaal uit, ook als ze een venster opent of de focus van de game wegneemt.
+
+**Probeer het:** Open de extra spelinstellingen, klap de systeembediening uit en kies hoe een actie tijdens het spelen werkt.
+
+---
+
 ## <a id="v1.31.2"></a>Duidelijkere game-instellingen
 
 <sub>1.31.2 · 11 oktober 2026</sub>

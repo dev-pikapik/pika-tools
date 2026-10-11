@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Nu geopend. Klik op je spel om het toe te voegen";
 "From the Dock" = "Uit het Dock";
 
-"Automatically" = "Automatisch";
-"Pause while playing" = "Pauzeren tijdens spelen";
-"Run without interrupting" = "Uitvoeren zonder onderbreking";
-"Run normally" = "Normaal uitvoeren";
 "System key" = "Systeemtoets";
 "Force Quit" = "Forceer stop";
 "System action %@" = "Systeemactie %@";
 "Other system shortcuts" = "Andere systeemsneltoetsen";
-"Current macOS shortcuts. Automatic protects the game." = "Huidige macOS-sneltoetsen. Automatisch beschermt het spel.";
 "Search system shortcuts" = "Systeemsneltoetsen zoeken";
 "Refresh" = "Vernieuwen";
 "While playing" = "Tijdens spelen";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Gamebescherming";
 "Closing the game, the pointer and display." = "De game sluiten, aanwijzer en scherm.";
 "Apps that can observe or change keyboard input." = "Apps die toetsenbordinvoer kunnen lezen of wijzigen.";
+
+"Follow Game Mode rules" = "Volg de regels van Gamemodus";
+"Disable in games" = "Uitschakelen in games";
+"Switch language on every press" = "Taal wisselen bij elke druk";
+"Allow in games" = "Toestaan in games";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Een korte sneltoets wisselt de taal zonder menu. Ingedrukte gametoetsen voorkomen onbedoelde wissels.";
+"Game Mode pauses this action according to its general protection rules." = "Gamemodus pauzeert deze actie volgens de algemene beschermingsregels.";
+"Your game rules allow this action. It works as configured in macOS." = "Je gameregels staan deze actie toe. Ze werkt zoals ingesteld in macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Deze macOS-actie is uitgeschakeld zolang de game vooraan staat. Als je weggaat, werkt ze weer zoals voorheen.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Elke druk wisselt de taal zonder systeemmenu. Dezelfde toetsen blijven de game bereiken.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS voert de actie normaal uit, ook als ze een venster opent of de focus van de game wegneemt.";
+"Choose what each shortcut does while you play." = "Kies wat elke sneltoets doet terwijl je speelt.";

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Oyun ayarlarında ortak görünüm
+
+<sub>1.31.3 · 11 Ekim 2026</sub>
+
+Tutarlı önizlemeler ve daha açık kısayol seçenekleri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Her kısayol artık oyun korumaları ve diğer ayar sayfalarıyla aynı geniş önizlemeyi kullanır. Altında açıklama, kontroller ve seçilen seçeneğin açıklaması bulunur.
+
+«Oyun Modu kurallarına uy». Kısa bir kısayol dili menüsüz değiştirir. Basılı oyun tuşları yanlışlıkla dil değiştirmeyi önler.
+
+«Oyunlarda devre dışı bırak». Oyun öndeyken bu macOS eylemi devre dışıdır. Oyundan ayrılınca eskisi gibi çalışır. «Oyunlarda izin ver». macOS eylemi normal şekilde çalıştırır; pencere açsa veya odağı oyundan alsa bile.
+
+**Deneyin:** Ek oyun ayarlarını açın, sistem kontrollerini genişletin ve oynarken bir eylemin nasıl çalışacağını seçin.
+
+---
+
 ## <a id="v1.31.2"></a>Daha anlaşılır oyun ayarları
 
 <sub>1.31.2 · 11 Ekim 2026</sub>

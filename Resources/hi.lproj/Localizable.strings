@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "अभी खुला है। जोड़ने के लिए अपने गेम पर क्लिक करें";
 "From the Dock" = "Dock से";
 
-"Automatically" = "अपने आप";
-"Pause while playing" = "खेलते समय रोकें";
-"Run without interrupting" = "बिना बाधा चलाएँ";
-"Run normally" = "सामान्य रूप से चलाएँ";
 "System key" = "सिस्टम कुंजी";
 "Force Quit" = "बलपूर्वक बंद करें";
 "System action %@" = "सिस्टम कार्रवाई %@";
 "Other system shortcuts" = "अन्य सिस्टम शॉर्टकट";
-"Current macOS shortcuts. Automatic protects the game." = "मौजूदा macOS शॉर्टकट। अपने आप मोड गेम की रक्षा करता है।";
 "Search system shortcuts" = "सिस्टम शॉर्टकट खोजें";
 "Refresh" = "रीफ़्रेश";
 "While playing" = "खेलते समय";
@@ -606,3 +601,15 @@
 "Game safeguards" = "गेम की सुरक्षा";
 "Closing the game, the pointer and display." = "गेम बंद करना, पॉइंटर और डिस्प्ले।";
 "Apps that can observe or change keyboard input." = "ऐप जो कीबोर्ड इनपुट पढ़ या बदल सकते हैं।";
+
+"Follow Game Mode rules" = "गेम मोड के नियमों के अनुसार";
+"Disable in games" = "गेम में बंद करें";
+"Switch language on every press" = "हर दबाव पर भाषा बदलें";
+"Allow in games" = "गेम में अनुमति दें";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "छोटा शॉर्टकट मेनू के बिना भाषा बदलता है। गेम की कुंजियाँ दबाए रखने से अनचाही भाषा बदलने से बचते हैं।";
+"Game Mode pauses this action according to its general protection rules." = "गेम मोड सामान्य सुरक्षा नियमों के अनुसार यह क्रिया रोकता है।";
+"Your game rules allow this action. It works as configured in macOS." = "आपके गेम के नियम इस क्रिया को अनुमति देते हैं। यह macOS की सेटिंग के अनुसार काम करती है।";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "गेम सामने होने पर यह macOS क्रिया बंद रहती है। गेम से बाहर जाने पर पहले की तरह काम करती है।";
+"Every press switches language without the system menu. The same keys still reach the game." = "हर दबाव पर सिस्टम मेनू के बिना भाषा बदलती है। वही कुंजियाँ गेम तक भी पहुँचती रहती हैं।";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS क्रिया सामान्य रूप से चलाता है, भले ही वह विंडो खोले या गेम से फ़ोकस हटा दे।";
+"Choose what each shortcut does while you play." = "खेलते समय हर शॉर्टकट का काम चुनें।";

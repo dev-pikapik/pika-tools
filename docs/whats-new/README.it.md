@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Uno stile comune per le impostazioni di gioco
+
+<sub>1.31.3 · 11 ottobre 2026</sub>
+
+Anteprime uniformi e scelte più chiare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Ogni scorciatoia ha ora la stessa anteprima ampia delle protezioni del gioco e delle altre pagine delle impostazioni. Sotto trovi descrizione, controlli e spiegazione dell’opzione selezionata.
+
+«Segui le regole della modalità Gioco». Una scorciatoia breve cambia lingua senza menu. I tasti di gioco tenuti premuti evitano cambi accidentali.
+
+«Disattiva nei giochi». Questa azione macOS è disattivata quando il gioco è in primo piano. Quando lo lasci, funziona come prima. «Consenti nei giochi». macOS esegue l’azione normalmente, anche se apre una finestra o sposta il focus dal gioco.
+
+**Provalo:** Apri Altre impostazioni di gioco, espandi i controlli di sistema e scegli il comportamento di un’azione mentre giochi.
+
+---
+
 ## <a id="v1.31.2"></a>Impostazioni di gioco più chiare
 
 <sub>1.31.2 · 11 ottobre 2026</sub>

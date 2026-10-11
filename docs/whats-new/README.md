@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>One style for game settings
+
+<sub>1.31.3 · October 11, 2026</sub>
+
+Matching previews and clearer shortcut choices.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Every shortcut now has the same wide preview as Game safeguards and the other settings pages. Its description and controls sit underneath, with an explanation of the selected choice.
+
+«Follow Game Mode rules». A quick shortcut switches language without a menu. Holding game keys prevents accidental switching.
+
+«Disable in games». This macOS action is disabled while the game is in front. When you leave, it works as before. «Allow in games». macOS runs the action normally, even if it opens a window or takes focus from the game.
+
+**Try it:** Open More game settings, expand System controls and choose how an action behaves while you play.
+
+---
+
 ## <a id="v1.31.2"></a>Game settings with a clear purpose
 
 <sub>1.31.2 · October 11, 2026</sub>

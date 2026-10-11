@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.3"></a>Satu tampilan untuk pengaturan game
+
+<sub>1.31.3 · 11 Oktober 2026</sub>
+
+Pratinjau seragam dan pilihan pintasan yang lebih jelas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.3/game-preview-dark.png"><img src="../media/whats-new/1.31.3/game-preview-light.png" width="340" alt=""></picture>
+
+Setiap pintasan kini memiliki pratinjau lebar yang sama dengan perlindungan game dan halaman pengaturan lain. Deskripsi, kontrol, dan penjelasan pilihan berada di bawahnya.
+
+«Ikuti aturan Mode Game». Pintasan singkat mengganti bahasa tanpa menu. Tombol game yang ditahan mencegah perubahan tidak sengaja.
+
+«Nonaktifkan dalam game». Tindakan macOS ini dinonaktifkan saat game berada di depan. Setelah Anda meninggalkan game, tindakan berfungsi seperti semula. «Izinkan dalam game». macOS menjalankan tindakan secara normal, meski membuka jendela atau memindahkan fokus dari game.
+
+**Coba:** Buka pengaturan game tambahan, perluas kontrol sistem, lalu pilih perilaku tindakan saat bermain.
+
+---
+
 ## <a id="v1.31.2"></a>Pengaturan game yang lebih jelas
 
 <sub>1.31.2 · 11 Oktober 2026</sub>

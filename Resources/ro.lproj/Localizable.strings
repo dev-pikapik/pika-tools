@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Deschis acum. Apasă pe joc pentru a-l adăuga";
 "From the Dock" = "Din Dock";
 
-"Automatically" = "Automat";
-"Pause while playing" = "Oprește temporar în joc";
-"Run without interrupting" = "Execută fără întrerupere";
-"Run normally" = "Execută normal";
 "System key" = "Tastă de sistem";
 "Force Quit" = "Închidere forțată";
 "System action %@" = "Acțiune de sistem %@";
 "Other system shortcuts" = "Alte scurtături de sistem";
-"Current macOS shortcuts. Automatic protects the game." = "Scurtăturile macOS actuale. Automat protejează jocul.";
 "Search system shortcuts" = "Caută scurtături de sistem";
 "Refresh" = "Reîmprospătează";
 "While playing" = "În timpul jocului";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Protecția jocului";
 "Closing the game, the pointer and display." = "Închiderea jocului, cursorul și ecranul.";
 "Apps that can observe or change keyboard input." = "Aplicații care pot citi sau modifica introducerea de la tastatură.";
+
+"Follow Game Mode rules" = "Urmează regulile modului de joc";
+"Disable in games" = "Dezactivează în jocuri";
+"Switch language on every press" = "Schimbă limba la fiecare apăsare";
+"Allow in games" = "Permite în jocuri";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "O scurtătură rapidă schimbă limba fără meniu. Tastele de joc ținute apăsate împiedică schimbarea accidentală.";
+"Game Mode pauses this action according to its general protection rules." = "Modul de joc pune această acțiune în pauză conform regulilor generale de protecție.";
+"Your game rules allow this action. It works as configured in macOS." = "Regulile tale de joc permit această acțiune. Funcționează conform setărilor macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Această acțiune macOS este dezactivată când jocul este în prim-plan. Când pleci, funcționează ca înainte.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Fiecare apăsare schimbă limba fără meniul sistemului. Aceleași taste ajung în continuare la joc.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS execută acțiunea normal, chiar dacă deschide o fereastră sau mută focalizarea din joc.";
+"Choose what each shortcut does while you play." = "Alege ce face fiecare scurtătură în timp ce te joci.";

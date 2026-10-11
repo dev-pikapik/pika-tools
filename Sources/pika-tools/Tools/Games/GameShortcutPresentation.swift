@@ -111,6 +111,20 @@ extension GameRule {
 }
 
 extension SystemGameShortcut {
+    func explanation(for choice: GameShortcutMode, rules: Set<GameRule>) -> String {
+        switch choice {
+        case .automatic:
+            switch mode(rules: rules, overrides: [:]) {
+            case .background: String(localized: "A quick shortcut switches language without a menu. Holding game keys prevents accidental switching.")
+            case .automatic, .pause: String(localized: "Game Mode pauses this action according to its general protection rules.")
+            case .system: String(localized: "Your game rules allow this action. It works as configured in macOS.")
+            }
+        case .pause: String(localized: "This macOS action is disabled while the game is in front. When you leave, it works as before.")
+        case .background: String(localized: "Every press switches language without the system menu. The same keys still reach the game.")
+        case .system: String(localized: "macOS runs the action normally, even if it opens a window or takes focus from the game.")
+        }
+    }
+
     var displayName: String { SystemShortcutCatalog.nonempty(name) ?? String(localized: "System action \(String(id))") }
 
     var description: GameShortcutDescription {

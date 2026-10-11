@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Open now. Click your game to add it";
 "From the Dock" = "From the Dock";
 
-"Automatically" = "Automatically";
-"Pause while playing" = "Pause while playing";
-"Run without interrupting" = "Run without interrupting";
-"Run normally" = "Run normally";
 "System key" = "System key";
 "Force Quit" = "Force Quit";
 "System action %@" = "System action %@";
 "Other system shortcuts" = "Other system shortcuts";
-"Current macOS shortcuts. Automatic protects the game." = "Current macOS shortcuts. Automatic protects the game.";
 "Search system shortcuts" = "Search system shortcuts";
 "Refresh" = "Refresh";
 "While playing" = "While playing";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Game safeguards";
 "Closing the game, the pointer and display." = "Closing the game, the pointer and display.";
 "Apps that can observe or change keyboard input." = "Apps that can observe or change keyboard input.";
+
+"Follow Game Mode rules" = "Follow Game Mode rules";
+"Disable in games" = "Disable in games";
+"Switch language on every press" = "Switch language on every press";
+"Allow in games" = "Allow in games";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "A quick shortcut switches language without a menu. Holding game keys prevents accidental switching.";
+"Game Mode pauses this action according to its general protection rules." = "Game Mode pauses this action according to its general protection rules.";
+"Your game rules allow this action. It works as configured in macOS." = "Your game rules allow this action. It works as configured in macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "This macOS action is disabled while the game is in front. When you leave, it works as before.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Every press switches language without the system menu. The same keys still reach the game.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS runs the action normally, even if it opens a window or takes focus from the game.";
+"Choose what each shortcut does while you play." = "Choose what each shortcut does while you play.";

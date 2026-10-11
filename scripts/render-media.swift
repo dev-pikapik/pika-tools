@@ -40,6 +40,7 @@ enum RenderMedia {
         ("whats-new/1.29.0/pet-ball", PetBallArt.length, AnyView(PetBallArt())),
         ("whats-new/1.31.0/system-shortcuts", 6.2, AnyView(SystemShortcutsCard())),
         ("whats-new/1.31.2/game-settings", 5.4, AnyView(GameSettingsCard())),
+        ("whats-new/1.31.3/game-preview", 5.4, AnyView(UnifiedGamePreviewCard())),
     ]
 
     static func main() {
@@ -172,6 +173,30 @@ private struct GameSettingsCard: View {
             .padding(.horizontal, 18)
             .animation(.easeInOut(duration: 0.25), value: tick)
         }
+    }
+}
+
+private struct UnifiedGamePreviewCard: View {
+    @State private var tick = 0
+
+    var body: some View {
+        let background = tick % 2 == 0
+        VStack(alignment: .leading, spacing: 7) {
+            IllustrationRow {
+                GameRuleFrame(rule: .focusKeys, keys: ["⌃Space"], story: .still(on: true), height: 108)
+            }
+            .frame(width: 680).scaleEffect(0.5).frame(width: 340, height: 64)
+            HStack(spacing: 8) {
+                Text(verbatim: GameShortcutGroup.language.title).font(.system(size: 12, weight: .medium))
+                Spacer(minLength: 4)
+                Text(verbatim: (background ? GameShortcutMode.automatic : .system).title).font(.system(size: 10))
+                Image(systemName: "chevron.up.chevron.down").font(.system(size: 7))
+            }
+            Text(verbatim: background ? GameShortcutDescription.language.text : String(localized: "macOS runs the action normally, even if it opens a window or takes focus from the game."))
+                .font(.system(size: 9)).foregroundStyle(.secondary).lineLimit(2)
+        }
+        .padding(.bottom, 8)
+        .loop($tick, [2.7, 2.7])
     }
 }
 

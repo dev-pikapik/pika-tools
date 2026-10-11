@@ -528,15 +528,10 @@
 "Open now. Click your game to add it" = "Právě otevřené. Kliknutím přidejte svou hru";
 "From the Dock" = "Z Docku";
 
-"Automatically" = "Automaticky";
-"Pause while playing" = "Pozastavit při hraní";
-"Run without interrupting" = "Spustit bez přerušení";
-"Run normally" = "Spustit běžně";
 "System key" = "Systémová klávesa";
 "Force Quit" = "Vynutit ukončení";
 "System action %@" = "Systémová akce %@";
 "Other system shortcuts" = "Další systémové zkratky";
-"Current macOS shortcuts. Automatic protects the game." = "Aktuální zkratky macOS. Automatický režim chrání hru.";
 "Search system shortcuts" = "Hledat systémové zkratky";
 "Refresh" = "Obnovit";
 "While playing" = "Při hraní";
@@ -606,3 +601,15 @@
 "Game safeguards" = "Ochrana hry";
 "Closing the game, the pointer and display." = "Ukončení hry, ukazatel a obrazovka.";
 "Apps that can observe or change keyboard input." = "Aplikace, které mohou číst nebo měnit vstup klávesnice.";
+
+"Follow Game Mode rules" = "Podle pravidel herního režimu";
+"Disable in games" = "Vypnout ve hrách";
+"Switch language on every press" = "Změnit jazyk při každém stisku";
+"Allow in games" = "Povolit ve hrách";
+"A quick shortcut switches language without a menu. Holding game keys prevents accidental switching." = "Krátká zkratka změní jazyk bez nabídky. Držené herní klávesy brání nechtěné změně jazyka.";
+"Game Mode pauses this action according to its general protection rules." = "Herní režim tuto akci pozastaví podle obecných pravidel ochrany.";
+"Your game rules allow this action. It works as configured in macOS." = "Vaše herní pravidla tuto akci povolují. Funguje podle nastavení macOS.";
+"This macOS action is disabled while the game is in front. When you leave, it works as before." = "Tato akce macOS je vypnutá, když je hra v popředí. Po opuštění hry funguje jako dříve.";
+"Every press switches language without the system menu. The same keys still reach the game." = "Každý stisk změní jazyk bez systémové nabídky. Stejné klávesy stále dostává i hra.";
+"macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS provádí akci normálně, i když otevře okno nebo přenese zaměření ze hry.";
+"Choose what each shortcut does while you play." = "Vyberte, co každá zkratka dělá během hraní.";
