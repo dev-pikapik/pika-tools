@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>需要時再看詳細資訊
+
+<sub>1.31.4 · 2026年10月11日</sub>
+
+更簡潔的遊戲頁面，統一的搜尋。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+每種模式都在下拉列表中解釋其作用。關閉列表後，頁面只顯示所選名稱。
+
+已移除重複動作名稱的說明。有用的補充資訊仍然保留。
+
+全域搜尋可依名稱、含義和按鍵尋找系統動作。選擇結果會開啟並突顯對應設定。
+
+**試試看：** 在全域搜尋中尋找動作，然後開啟模式列表。
+
+---
+
 ## <a id="v1.31.3"></a>統一遊戲設定的樣式
 
 <sub>1.31.3 · 2026年10月11日</sub>

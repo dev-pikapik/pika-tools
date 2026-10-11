@@ -25,6 +25,7 @@ struct GameDisclosureLabel: View {
                 Text(verbatim: String(count))
                     .font(.caption.monospacedDigit())
                     .foregroundStyle(.secondary)
+                    .fixedSize()
                     .padding(.horizontal, 7).padding(.vertical, 3)
                     .background(.quaternary, in: Capsule())
             }
@@ -34,6 +35,7 @@ struct GameDisclosureLabel: View {
 }
 
 struct GameDisclosureStyle: DisclosureGroupStyle {
+    var contentSpacing: CGFloat = 12
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     func makeBody(configuration: Configuration) -> some View {
@@ -55,7 +57,7 @@ struct GameDisclosureStyle: DisclosureGroupStyle {
             .buttonStyle(.plain)
             .foregroundStyle(.primary)
             .accessibilityValue(configuration.isExpanded ? Text("Expanded") : Text("Collapsed"))
-            if configuration.isExpanded { configuration.content.padding(.top, 12) }
+            if configuration.isExpanded { configuration.content.padding(.top, contentSpacing) }
         }
     }
 }

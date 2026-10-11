@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Szczegóły wtedy, gdy ich potrzebujesz
+
+<sub>1.31.4 · 11 października 2026</sub>
+
+Spokojniejsza strona gier i jedno wyszukiwanie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Każdy tryb wyjaśnia swoje działanie na liście rozwijanej. Po jej zamknięciu na stronie zostaje tylko wybrana nazwa.
+
+Usunięto opisy powtarzające nazwę działania. Przydatne dodatkowe informacje pozostają.
+
+Wyszukiwanie globalne znajduje działania systemowe według nazwy, znaczenia i klawiszy. Wynik otwiera i wyróżnia konkretne ustawienie.
+
+**Wypróbuj:** Znajdź działanie w wyszukiwaniu globalnym i otwórz listę jego trybów.
+
+---
+
 ## <a id="v1.31.3"></a>Jednolity wygląd ustawień gry
 
 <sub>1.31.3 · 11 października 2026</sub>

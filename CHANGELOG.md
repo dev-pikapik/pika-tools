@@ -7,6 +7,13 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Added
 - Fans: see the speed of each fan, then choose Auto or a manual speed after allowing it once with the administrator password. The fans go back to Auto when you quit pikapik, when the Mac sleeps, or if it gets hot.
 
+## [1.31.4] - 2026-10-11
+
+### Changed
+- Game shortcut choices show an explanation beneath every option inside the dropdown. The settings page keeps only the selected name; redundant action descriptions and repeated guidance have been removed.
+- Games uses the global settings search. It indexes each live macOS action, its topic, meaning and assigned keys, understands modifier symbols and names, and ranks exact key combinations first. Selecting a result opens its group and highlights that specific action, including actions with identical names.
+- The shortcut catalogue refreshes when settings opens and when pikapik becomes active. Saved game protection rules and choices keep their behaviour.
+
 ## [1.31.3] - 2026-10-11
 
 ### Changed
@@ -620,6 +627,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.31.4]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.31.4
 [1.31.3]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.31.3
 [1.31.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.31.2
 [1.31.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.31.1

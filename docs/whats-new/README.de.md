@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Details, wenn du sie brauchst
+
+<sub>1.31.4 · 11. Oktober 2026</sub>
+
+Eine ruhigere Spielseite und eine gemeinsame Suche.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Jeder Modus erklärt seine Wirkung direkt in der Auswahlliste. Ist sie geschlossen, bleibt nur der gewählte Name auf der Seite.
+
+Beschreibungen, die den Aktionsnamen wiederholen, wurden entfernt. Nützliche Zusatzinformationen bleiben erhalten.
+
+Die gemeinsame Suche findet Systemaktionen nach Name, Bedeutung und Tasten. Ein Ergebnis öffnet und markiert genau diese Einstellung.
+
+**Ausprobieren:** Finde eine Aktion in der gemeinsamen Suche und öffne ihre Modusliste.
+
+---
+
 ## <a id="v1.31.3"></a>Einheitliche Spieloptionen
 
 <sub>1.31.3 · 11. Oktober 2026</sub>

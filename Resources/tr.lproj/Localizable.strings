@@ -532,8 +532,6 @@
 "Force Quit" = "Çıkmaya Zorla";
 "System action %@" = "Sistem eylemi %@";
 "Other system shortcuts" = "Diğer sistem kısayolları";
-"Search system shortcuts" = "Sistem kısayollarını ara";
-"Refresh" = "Yenile";
 "While playing" = "Oynarken";
 "Always available" = "Her zaman kullanılabilir";
 "No key assigned" = "Tuş atanmamış";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Sistem klavye kısayolları";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Bazı macOS eylemlerinin adı yayımlanmaz. Diğer uygulamaların kendi kısayolları olabilir.";
 "More game settings" = "Diğer oyun ayarları";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Hızlı dil kısayolları sessiz çalışır. Basılı oyun tuşları oyuna ulaşır.";
 "Other apps watching keys" = "Tuşları izleyen diğer uygulamalar";
 "Can change keys" = "Tuşları değiştirebilir";
 "Only listens" = "Yalnızca izler";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Dock’u gösterir veya gizler.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Belirtilen macOS eylemini çalıştırır. Oyunu bölüyorsa duraklatılmış bırakın.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS tuşları verir ancak eylemin adını vermez. Oyunlardaki davranışını yine de seçebilirsiniz.";
-"Stays paused while you play." = "Oynarken duraklatılmış kalır.";
-"Changes language without opening the system menu." = "Sistem menüsünü açmadan dil değiştirir.";
-"Runs as set in macOS." = "macOS ayarlarına göre çalışır.";
 "Expanded" = "Genişletildi";
 "Collapsed" = "Daraltıldı";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Korumayı ayarlayın ve Mac’inizin kısayollarını keşfedin.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Oyun öndeyken bu macOS eylemi devre dışıdır. Oyundan ayrılınca eskisi gibi çalışır.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Her basış, sistem menüsünü açmadan dili değiştirir. Aynı tuşlar oyuna ulaşmaya devam eder.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS eylemi normal şekilde çalıştırır; pencere açsa veya odağı oyundan alsa bile.";
-"Choose what each shortcut does while you play." = "Oynarken her kısayolun ne yapacağını seçin.";
 "Fans" = "Fanlar";
 "Fan speed" = "Fan hızı";
 "Fan control" = "Fan kontrolü";

@@ -532,8 +532,6 @@
 "Force Quit" = "فرض الإنهاء";
 "System action %@" = "إجراء النظام %@";
 "Other system shortcuts" = "اختصارات نظام أخرى";
-"Search system shortcuts" = "البحث عن اختصارات النظام";
-"Refresh" = "تحديث";
 "While playing" = "أثناء اللعب";
 "Always available" = "متاح دائماً";
 "No key assigned" = "لا مفاتيح معيّنة";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "اختصارات لوحة مفاتيح النظام";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "بعض إجراءات macOS ليس لها اسم منشور. قد تكون للتطبيقات الأخرى اختصاراتها الخاصة.";
 "More game settings" = "إعدادات ألعاب إضافية";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "تعمل اختصارات اللغة السريعة بهدوء. تصل مفاتيح اللعب المضغوطة إلى اللعبة.";
 "Other apps watching keys" = "تطبيقات أخرى تراقب المفاتيح";
 "Can change keys" = "يمكنه تغيير المفاتيح";
 "Only listens" = "يراقب فقط";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "يعرض Dock أو يخفيه.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "ينفّذ إجراء macOS المذكور. أبقه متوقفًا إن كان يقاطع اللعبة.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "يوفّر macOS المفاتيح دون اسم هذا الإجراء. يظل بإمكانك اختيار سلوكه في الألعاب.";
-"Stays paused while you play." = "يبقى متوقفًا أثناء اللعب.";
-"Changes language without opening the system menu." = "يغيّر اللغة دون فتح قائمة النظام.";
-"Runs as set in macOS." = "يعمل وفق إعدادات macOS.";
 "Expanded" = "موسّع";
 "Collapsed" = "مطوي";
 "Fine-tune protection and explore your Mac’s shortcuts." = "اضبط الحماية واستكشف اختصارات Mac.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "يتوقف إجراء macOS هذا عندما تكون اللعبة في المقدمة. عند مغادرة اللعبة يعمل كما كان.";
 "Every press switches language without the system menu. The same keys still reach the game." = "تغيّر كل ضغطة اللغة دون قائمة النظام. تظل المفاتيح نفسها تصل إلى اللعبة.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "ينفّذ macOS الإجراء كالمعتاد حتى لو فتح نافذة أو نقل التركيز من اللعبة.";
-"Choose what each shortcut does while you play." = "اختر ما يفعله كل اختصار أثناء اللعب.";
 "Fans" = "المراوح";
 "Fan speed" = "سرعة المراوح";
 "Fan control" = "التحكم بالمراوح";

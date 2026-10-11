@@ -532,8 +532,6 @@
 "Force Quit" = "Tvångsavsluta";
 "System action %@" = "Systemåtgärd %@";
 "Other system shortcuts" = "Andra systemgenvägar";
-"Search system shortcuts" = "Sök systemgenvägar";
-"Refresh" = "Uppdatera";
 "While playing" = "Under spel";
 "Always available" = "Alltid tillgängligt";
 "No key assigned" = "Inga tangenter tilldelade";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "Systemets kortkommandon";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "Vissa macOS-åtgärder har inget publicerat namn. Andra appar kan ha egna genvägar.";
 "More game settings" = "Fler spelinställningar";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "Snabba språkgenvägar arbetar tyst. Nedhållna speltangenter når spelet.";
 "Other apps watching keys" = "Andra appar som bevakar tangenter";
 "Can change keys" = "Kan ändra tangenter";
 "Only listens" = "Lyssnar bara";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "Visar eller döljer Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Utför den angivna macOS-åtgärden. Pausa den om den stör spelet.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS anger tangenterna men inte åtgärdens namn. Du kan ändå välja hur den fungerar i spel.";
-"Stays paused while you play." = "Pausad medan du spelar.";
-"Changes language without opening the system menu." = "Byter språk utan att öppna systemmenyn.";
-"Runs as set in macOS." = "Fungerar enligt inställningarna i macOS.";
 "Expanded" = "Utfälld";
 "Collapsed" = "Hopfälld";
 "Fine-tune protection and explore your Mac’s shortcuts." = "Anpassa skyddet och utforska kortkommandona på din Mac.";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "Denna macOS-åtgärd är avstängd när spelet är i förgrunden. När du lämnar spelet fungerar den som förut.";
 "Every press switches language without the system menu. The same keys still reach the game." = "Varje tryck byter språk utan systemmenyn. Samma tangenter når fortfarande spelet.";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS utför åtgärden normalt, även om den öppnar ett fönster eller flyttar fokus från spelet.";
-"Choose what each shortcut does while you play." = "Välj vad varje kortkommando gör medan du spelar.";
 "Fans" = "Fläktar";
 "Fan speed" = "Fläkthastighet";
 "Fan control" = "Fläktstyrning";

@@ -3,47 +3,17 @@ import SwiftUI
 
 struct SystemShortcutList: View {
     @Bindable var tool: GameModeTool
-    @State private var entries: [SystemGameShortcut] = []
-    @State private var search = ""
     @State private var expanded: Set<GameShortcutGroup> = []
-    @State private var collapsedResults: Set<GameShortcutGroup> = []
     @State private var listeners: [KeyboardListener] = []
-
-    private var isSearching: Bool { !search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-
-    private func isOpen(_ group: GameShortcutGroup) -> Bool { isSearching ? !collapsedResults.contains(group) : expanded.contains(group) }
-
-    private func open(_ group: GameShortcutGroup, _ value: Bool) {
-        if isSearching {
-            if value { collapsedResults.remove(group) } else { collapsedResults.insert(group) }
-        } else {
-            if value { expanded.insert(group) } else { expanded.remove(group) }
-        }
-    }
-
-    private var filtered: [SystemGameShortcut] {
-        let query = search.trimmingCharacters(in: .whitespacesAndNewlines)
-        return query.isEmpty ? entries : entries.filter {
-            [$0.displayName, $0.rawName, $0.group.title, $0.description.text, $0.sectionName, $0.text ?? "", String($0.id)]
-                .contains { $0.localizedCaseInsensitiveContains(query) }
-        }
-    }
+    private var entries: [SystemGameShortcut] { SettingsWindow.model.systemShortcuts }
 
     var body: some View {
         Section {
-            Text("Choose what each shortcut does while you play.")
-                .font(.subheadline).foregroundStyle(.secondary)
-            HStack {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
-                TextField("Search system shortcuts", text: $search)
-                    .textFieldStyle(.roundedBorder).labelsHidden()
-                Button("Refresh") { refresh() }
-            }
             ForEach(GameShortcutGroup.allCases) { group in
-                let rows = filtered.filter { $0.group == group }
+                let rows = entries.filter { $0.group == group }
                 if !rows.isEmpty {
-                    DisclosureGroup(isExpanded: Binding(get: { isOpen(group) }, set: { open(group, $0) })) {
-                        if isOpen(group) {
+                    DisclosureGroup(isExpanded: Binding(get: { expanded.contains(group) }, set: { if $0 { expanded.insert(group) } else { expanded.remove(group) } })) {
+                        if expanded.contains(group) {
                             ForEach(rows) { row in
                                 SystemShortcutRow(entry: row, tool: tool).padding(.vertical, 14)
                                 if row.id != rows.last?.id { Divider() }
@@ -56,10 +26,7 @@ struct SystemShortcutList: View {
                     .settingAnchor(group.title)
                 }
             }
-            if filtered.isEmpty, isSearching {
-                Text("No Results").foregroundStyle(.secondary).padding(.vertical, 12)
-            }
-            if !listeners.isEmpty, !isSearching {
+            if !listeners.isEmpty {
                 DisclosureGroup {
                     ForEach(listeners) { listener in
                         LabeledContent {
@@ -85,15 +52,13 @@ struct SystemShortcutList: View {
         }
         .settingAnchor(String(localized: "System keyboard shortcuts"))
         .onAppear(perform: refresh)
-        .onChange(of: search) { collapsedResults = [] }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in refresh() }
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
-            if let group = GameShortcutGroup.allCases.first(where: { $0.title == SettingsWindow.model.highlight }) { expanded.insert(group) }
+            if let group = SettingsWindow.model.highlightedShortcut?.group ?? GameShortcutGroup.allCases.first(where: { $0.title == SettingsWindow.model.highlight }) { expanded.insert(group) }
         }
     }
 
     private func refresh() {
-        entries = SystemShortcutCatalog.load()
         listeners = KeyboardListener.load()
     }
 }
@@ -120,21 +85,18 @@ struct SystemShortcutRow: View {
                     controls.frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
-            if !entry.emergency {
-                Text(verbatim: entry.explanation(for: choice, rules: tool.rules))
-                    .font(.footnote).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .settingAnchor(entry.displayName)
+        .settingAnchor(entry.anchor)
     }
 
     private var explanation: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(verbatim: entry.displayName)
-            Text(verbatim: entry.description.text).font(.subheadline).foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
+            if let detail = entry.detail {
+                Text(verbatim: detail).font(.subheadline).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             if entry.assigned, !entry.enabled, !entry.emergency {
                 Text("Off in macOS").font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -143,11 +105,10 @@ struct SystemShortcutRow: View {
     }
 
     private var controls: some View {
-        HStack(spacing: 12) {
-            shortcut
-            behaviour
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 12) { shortcut; behaviour }.fixedSize()
+            VStack(alignment: .trailing, spacing: 8) { shortcut; behaviour }
         }
-        .fixedSize(horizontal: true, vertical: false)
     }
 
     @ViewBuilder private var shortcut: some View {
@@ -162,14 +123,8 @@ struct SystemShortcutRow: View {
         if entry.emergency {
             Label("Always available", systemImage: "lock.open").font(.subheadline).foregroundStyle(.secondary)
         } else {
-            Picker("While playing", selection: Binding(get: { choice }, set: { tool.setSystemShortcut(entry.id, mode: $0) })) {
-                ForEach(GameShortcutMode.allCases.filter { $0 != .background || entry.supportsBackground }, id: \.self) { option in
-                    Text(option.title).tag(option)
-                        .help(Text(verbatim: entry.explanation(for: option, rules: tool.rules)))
-                }
-            }
-            .labelsHidden().fixedSize().disabled(!tool.isEnabled)
-            .help(Text(verbatim: entry.explanation(for: choice, rules: tool.rules)))
+            GameShortcutPicker(entry: entry, rules: tool.rules, selection: Binding(get: { choice }, set: { tool.setSystemShortcut(entry.id, mode: $0) }))
+                .disabled(!tool.isEnabled)
         }
     }
 }

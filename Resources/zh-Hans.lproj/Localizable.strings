@@ -532,8 +532,6 @@
 "Force Quit" = "强制退出";
 "System action %@" = "系统操作 %@";
 "Other system shortcuts" = "其他系统快捷键";
-"Search system shortcuts" = "搜索系统快捷键";
-"Refresh" = "刷新";
 "While playing" = "游戏期间";
 "Always available" = "始终可用";
 "No key assigned" = "未设置按键";
@@ -541,7 +539,6 @@
 "System keyboard shortcuts" = "系统键盘快捷键";
 "Some macOS actions have no published name. Other apps may have their own shortcuts." = "部分macOS操作未公开名称。其他应用可能有自己的快捷键。";
 "More game settings" = "更多游戏设置";
-"Quick language shortcuts work silently. Held game keys stay in the game." = "快速语言快捷键不会干扰。持续按住的游戏键会传给游戏。";
 "Other apps watching keys" = "其他监视按键的应用";
 "Can change keys" = "可以修改按键";
 "Only listens" = "仅监听";
@@ -592,9 +589,6 @@
 "Shows or hides the Dock." = "显示或隐藏 Dock。";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "执行所列的 macOS 操作。如果它打断游戏，请将其暂停。";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS 提供按键，但未提供操作名称。你仍可选择它在游戏中的行为。";
-"Stays paused while you play." = "游戏期间保持暂停。";
-"Changes language without opening the system menu." = "切换语言而不打开系统菜单。";
-"Runs as set in macOS." = "按 macOS 中的设置运行。";
 "Expanded" = "已展开";
 "Collapsed" = "已折叠";
 "Fine-tune protection and explore your Mac’s shortcuts." = "调整保护并探索 Mac 的快捷键。";
@@ -612,7 +606,6 @@
 "This macOS action is disabled while the game is in front. When you leave, it works as before." = "游戏在前台时，此 macOS 操作会被禁用。离开游戏后，它恢复原来的行为。";
 "Every press switches language without the system menu. The same keys still reach the game." = "每次按下都会切换语言，而不打开系统菜单。同样的按键仍会传给游戏。";
 "macOS runs the action normally, even if it opens a window or takes focus from the game." = "macOS 正常执行此操作，即使它打开窗口或从游戏夺取焦点。";
-"Choose what each shortcut does while you play." = "选择每个快捷键在游戏中的行为。";
 "Fans" = "风扇";
 "Fan speed" = "风扇转速";
 "Fan control" = "风扇控制";

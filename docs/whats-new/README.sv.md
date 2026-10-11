@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.31.4"></a>Detaljer när du behöver dem
+
+<sub>1.31.4 · 11 oktober 2026</sub>
+
+En lugnare spelsida och en enda sökning.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.4/game-choices-dark.png"><img src="../media/whats-new/1.31.4/game-choices-light.png" width="340" alt=""></picture>
+
+Varje läge förklarar sin funktion i rullgardinslistan. När den är stängd finns bara det valda namnet kvar på sidan.
+
+Beskrivningar som upprepar åtgärdens namn har tagits bort. Användbar extra information finns kvar.
+
+Den globala sökningen hittar systemåtgärder efter namn, betydelse och tangenter. Ett resultat öppnar och markerar exakt den inställningen.
+
+**Prova:** Hitta en åtgärd i den globala sökningen och öppna dess lägeslista.
+
+---
+
 ## <a id="v1.31.3"></a>Enhetliga spelinställningar
 
 <sub>1.31.3 · 11 oktober 2026</sub>

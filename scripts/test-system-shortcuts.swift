@@ -39,6 +39,17 @@ struct TestSystemShortcuts {
         let unnamed = SystemGameShortcut(id: 10_000, name: " \n", section: "other", sectionName: "", rawName: "", key: .max, character: 0, modifiers: 0, enabled: false)
         precondition(!unnamed.displayName.isEmpty && unnamed.group == .other && unnamed.description == .other)
         precondition(input.group == .language && emergency.group == .windows)
+        let inputItem = SettingsItem.shortcut(input)
+        let nextInputItem = SettingsItem.shortcut(entry(61))
+        precondition(inputItem.title == nextInputItem.title && inputItem.id != nextInputItem.id)
+        precondition(inputItem.matches("Ctrl+Space") && !inputItem.matches("Command+Space"))
+        precondition(inputItem.matches("Switch language"))
+        let model = SettingsWindow.Model()
+        model.systemShortcuts = [input, entry(61)]
+        model.open(nextInputItem)
+        precondition(model.selection == .games && model.highlightedShortcut?.id == 61)
+        let dock = SystemGameShortcut(id: 52, name: "Toggle Dock hiding", section: "other", sectionName: "", rawName: "Turn Dock Hiding On/Off", key: 2, character: 100, modifiers: 0x180000, enabled: true)
+        precondition(dock.detail == nil && input.detail != nil && unnamed.detail != nil)
         print("catalogue policies and remapped keys: ok")
 
         var intent = GameInputIntent()
