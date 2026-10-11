@@ -43,132 +43,137 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br>Votre Mac reste éveillé aussi longtemps qu’il le faut, même écran rabattu.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+<br><b>Ventilateurs</b>
+<br>Voyez la vitesse de vos ventilateurs et choisissez-la.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Protéger ⌘Q et ⌘W</b>
 <br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Copie allégée</b>
 <br>Clic droit sur une photo, un PDF ou une vidéo, et une copie plus légère apparaît.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Conversion</b>
 <br>Enregistrez une image, une vidéo ou un morceau dans un autre format d’un clic droit.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Changer de langue</b>
 <br>Maintenez ⌥ et touchez ⇧ pour changer la langue du clavier.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Quitter avec la dernière fenêtre</b>
 <br>Fermez la dernière fenêtre d’une app, et l’app se ferme aussi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Le bouton vert agrandit</b>
 <br>La fenêtre remplit l’écran sans passer en plein écran.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Masquer d’un clic dans le Dock</b>
 <br>Cliquez sur l’app que vous utilisez, et elle s’efface.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Nouveau fichier</b>
 <br>Clic droit dans le Finder, un nom, et le fichier vide est prêt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X déplace les fichiers</b>
 <br>Coupez des fichiers dans le Finder et collez-les où vous voulez.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Entrée ouvre les fichiers</b>
 <br>Sélectionnez des fichiers dans le Finder et appuyez sur Entrée pour les ouvrir.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Supprimer vers la Corbeille</b>
 <br>Appuyez sur ⌫ dans le Finder, et les fichiers sélectionnés vont à la Corbeille.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Mode Jeu</b>
 <br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test de débit</b>
 <br>La vitesse de votre connexion, et ce qu’elle permet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boutons latéraux</b>
 <br>Les boutons 4 et 5 reculent et avancent, comme un balayage.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Défiler par lignes</b>
 <br>Chaque cran de la molette fait défiler d’autant, quelle que soit la vitesse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Sens de défilement</b>
 <br>Un sens pour le trackpad, un autre pour la souris.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sans accélération du pointeur</b>
 <br>Le pointeur parcourt exactement la distance de votre main.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Répéter une touche maintenue</b>
 <br>Maintenez une touche pour la répéter, sans menu des accents.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home et End</b>
 <br>Allez au début ou à la fin de la ligne pendant la saisie.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Accélérez le Dock, les fenêtres et Coup d’œil, jusqu’à l’instantané.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Autorisations des apps supprimées</b>
 <br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Compagnon sur le bureau</b>
@@ -275,6 +280,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 
 - **Général** : ouverture à la connexion, apparence (Système, Clair ou Sombre), langue, mises à jour et sauvegarde : exporter et importer les réglages sous forme de fichier, ou les synchroniser avec iCloud Drive.
 - **Rester éveillé** : durée, options d’écran et de capot.
+- **Ventilateurs** : vitesse de chaque ventilateur, mode Auto ou vitesse manuelle.
 - **Test de débit** : mesurer la connexion et voir ce qu’elle permet.
 - **Clavier** : changement de langue, répétition des touches, Home et End.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.

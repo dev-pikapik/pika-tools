@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Sehen, wie schnell Ihre Lüfter drehen
+
+<sub>1.32.0 · 11. Oktober 2026</sub>
+
+Ein neuer Tab „Lüfter“ zeigt jeden Lüfter live und lässt Sie die Drehzahl wählen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Die Lüfter haben jetzt einen eigenen Tab in den Einstellungen und eine Zeile im Menü. Sie sehen in Echtzeit, wie schnell sich jeder Lüfter gerade dreht, und daneben dreht sich ein kleiner Lüfter mit.
+
+Lassen Sie es auf „Automatisch“, dann entscheidet Ihr Mac wie gewohnt. Oder wählen Sie „Manuell“ und stellen die gewünschte Drehzahl mit einem einzigen Regler ein. Beim ersten Mal erlauben Sie das einmalig mit Ihrem Administratorpasswort, mehr ist nicht nötig.
+
+Es ist auf Sicherheit ausgelegt. Die Lüfter kehren zu „Automatisch“ zurück, wenn Sie pikapik beenden, wenn Ihr Mac in den Ruhezustand geht, wenn pikapik abstürzt oder wenn Ihr Mac heiß wird.
+
+**Ausprobieren:** Öffnen Sie Einstellungen › Lüfter und beobachten Sie die Drehzahl. Wählen Sie „Manuell“, um den Regler auszuprobieren.
+
+---
+
 ## <a id="v1.31.4"></a>Details, wenn du sie brauchst
 
 <sub>1.31.4 · 11. Oktober 2026</sub>

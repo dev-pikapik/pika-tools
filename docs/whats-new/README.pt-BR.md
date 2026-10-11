@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Veja a que velocidade suas ventoinhas giram
+
+<sub>1.32.0 · 11 de outubro de 2026</sub>
+
+Uma nova aba Ventoinhas mostra cada ventoinha ao vivo e deixa você escolher a velocidade.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+As ventoinhas agora têm uma aba própria em Ajustes e uma linha no menu. Você vê em tempo real a que velocidade cada uma está girando, com uma ventoinha pequena girando junto.
+
+Deixe em Auto e o Mac decide, como sempre. Ou escolha Manual e arraste um único controle para definir a velocidade que quiser. Na primeira vez, você permite uma única vez com a senha de administrador, e pronto.
+
+Tudo foi feito para ser seguro. As ventoinhas voltam para Auto quando você sai do pikapik, quando o Mac entra em repouso, se o pikapik fechar por um erro ou quando o Mac esquenta demais.
+
+**Experimente:** Abra Ajustes › Ventoinhas e veja a velocidade. Escolha Manual para testar o controle.
+
+---
+
 ## <a id="v1.31.4"></a>Detalhes quando você precisa
 
 <sub>1.31.4 · 11 de outubro de 2026</sub>

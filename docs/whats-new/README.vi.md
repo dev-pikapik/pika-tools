@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.32.0"></a>Xem quạt của bạn quay nhanh đến đâu
+
+<sub>1.32.0 · 11 tháng 10 năm 2026</sub>
+
+Thẻ Quạt mới hiển thị từng quạt trực tiếp và cho bạn chọn tốc độ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Quạt giờ có thẻ riêng trong Cài đặt và một dòng trong menu. Bạn thấy ngay theo thời gian thực mỗi quạt đang quay nhanh thế nào, cùng một chiếc quạt nhỏ quay theo bên cạnh.
+
+Để ở Tự động thì Mac tự quyết định như mọi khi. Hoặc chọn Thủ công và kéo một thanh trượt để đặt tốc độ bạn muốn. Lần đầu, bạn chỉ cần cho phép một lần bằng mật khẩu quản trị viên là xong.
+
+Tính năng được làm để an toàn. Quạt trở về Tự động khi bạn thoát pikapik, khi Mac chuyển sang chế độ ngủ, nếu pikapik bị lỗi và đóng đột ngột, hoặc khi Mac nóng lên.
+
+**Thử ngay:** Mở Cài đặt › Quạt và xem tốc độ. Chọn Thủ công để thử thanh trượt.
+
+---
+
 ## <a id="v1.31.4"></a>Chi tiết khi bạn cần
 
 <sub>1.31.4 · 11 tháng 10 năm 2026</sub>
