@@ -34,7 +34,12 @@ cask "pikapik" do
 
   uninstall quit: "com.pesotchi.pika-tools"
 
-  zap trash: [
+  zap launchctl: "com.pesotchi.pika-tools.fans",
+      delete:    [
+        "/Library/LaunchDaemons/com.pesotchi.pika-tools.fans.plist",
+        "/Library/PrivilegedHelperTools/com.pesotchi.pika-tools.fans",
+      ],
+      trash:     [
     "~/Library/Application Scripts/com.pesotchi.pika-tools.compress",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.convert",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.new-file",
