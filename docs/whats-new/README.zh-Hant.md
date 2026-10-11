@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>快速鍵分組立即開啟
+
+<sub>1.33.2 · 2026年10月11日</sub>
+
+即使是最長的系統快速鍵分組也會馬上開啟，每一列都有清楚的名稱。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+以前開啟一個有幾十列的分組時，設定視窗會卡住片刻，因為所有列和它們的動畫預覽會一次產生。現在只產生螢幕上看得到的列和附近的幾列。顯示為「系統操作」加編號的列也不見了：聽寫、Siri、亮度和縮放鍵顯示真實名稱，macOS沒有命名的操作會被隱藏，但在遊戲中仍和以前一樣會被暫停。
+
+---
+
 ## <a id="v1.33.1"></a>快速鍵群組展開不再卡頓
 
 <sub>1.33.1 · 2026年10月11日</sub>

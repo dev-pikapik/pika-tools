@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Kürzelgruppen öffnen sich sofort
+
+<sub>1.33.2 · 11. Oktober 2026</sub>
+
+Selbst die längste Gruppe von Systemkürzeln geht sofort auf, und jede Zeile hat einen verständlichen Namen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Bisher stockte das Einstellungsfenster kurz, wenn sich eine Gruppe mit Dutzenden Zeilen öffnete, weil alle Zeilen samt animierter Vorschau auf einmal aufgebaut wurden. Jetzt werden nur die sichtbaren Zeilen und einige in ihrer Nähe aufgebaut. Auch die Zeilen „Systemaktion“ mit Nummer sind verschwunden: Diktat, Siri und die Tasten für Helligkeit und Zoom zeigen ihre echten Namen, und Aktionen, denen macOS keinen Namen gibt, sind ausgeblendet, werden in Spielen aber weiterhin pausiert.
+
+---
+
 ## <a id="v1.33.1"></a>Kürzelgruppen öffnen sich ohne Hänger
 
 <sub>1.33.1 · 11. Oktober 2026</sub>

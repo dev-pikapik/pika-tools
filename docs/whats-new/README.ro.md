@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Grupurile de scurtături se deschid instantaneu
+
+<sub>1.33.2 · 11 octombrie 2026</sub>
+
+Chiar și cel mai lung grup de scurtături de sistem se deschide imediat, iar fiecare rând are un nume clar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Înainte, fereastra de setări se bloca o clipă la deschiderea unui grup cu zeci de rânduri, pentru că toate rândurile și previzualizările lor animate erau construite deodată. Acum se construiesc doar rândurile vizibile și câteva din apropiere. Au dispărut și rândurile „Acțiune de sistem” urmate de un număr: Dictarea, Siri și tastele de luminozitate și zoom își arată numele real, iar acțiunile cărora macOS nu le dă un nume sunt ascunse, dar rămân în pauză în jocuri ca înainte.
+
+---
+
 ## <a id="v1.33.1"></a>Grupurile de scurtături se deschid fără blocaje
 
 <sub>1.33.1 · 11 octombrie 2026</sub>

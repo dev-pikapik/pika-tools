@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Sneltoetsgroepen openen meteen
+
+<sub>1.33.2 · 11 oktober 2026</sub>
+
+Zelfs de langste groep systeemsneltoetsen gaat direct open, en elke rij heeft een duidelijke naam.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Eerst bleef het instellingenvenster even hangen als er een groep met tientallen rijen openging, omdat alle rijen met hun bewegende voorbeelden tegelijk werden opgebouwd. Nu worden alleen de zichtbare rijen en een paar in de buurt opgebouwd. Ook de rijen “Systeemactie” met een nummer zijn weg: Dicteren, Siri en de toetsen voor helderheid en zoom tonen hun echte naam, en acties die macOS geen naam geeft zijn verborgen, maar worden in games nog steeds gepauzeerd zoals eerst.
+
+---
+
 ## <a id="v1.33.1"></a>Sneltoetsgroepen openen zonder haperen
 
 <sub>1.33.1 · 11 oktober 2026</sub>

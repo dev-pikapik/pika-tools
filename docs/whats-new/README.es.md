@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.33.2"></a>Los grupos de atajos se abren al instante
+
+<sub>1.33.2 · 11 de octubre de 2026</sub>
+
+Incluso el grupo más largo de atajos del sistema se abre enseguida, y cada fila tiene un nombre claro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.31.0/system-shortcuts-dark.png"><img src="../media/whats-new/1.31.0/system-shortcuts-light.png" width="340" alt=""></picture>
+
+Antes, la ventana de ajustes se congelaba un momento al abrir un grupo de decenas de filas, porque todas las filas y sus vistas previas animadas se construían a la vez. Ahora solo se construyen las filas visibles y unas pocas cercanas. También desaparecieron las filas «Acción del sistema» con un número: Dictado, Siri y las teclas de brillo y zoom muestran su nombre real, y las acciones a las que macOS no pone nombre se ocultan, pero se siguen pausando en los juegos como antes.
+
+---
+
 ## <a id="v1.33.1"></a>Los grupos de atajos se abren sin bloqueos
 
 <sub>1.33.1 · 11 de octubre de 2026</sub>
