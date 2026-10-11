@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Všechna oprávnění na jednom místě
+
+<sub>1.33.0 · 11. října 2026</sub>
+
+Nastavení › Oprávnění nově ukazuje vše, co pikapik používá, a každé oprávnění můžete vzít zpět.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Nastavení › Oprávnění nově ukazuje každé oprávnění, které pikapik používá, od Zpřístupnění a Monitorování vstupu až po Ovládání ventilátorů, Rozšíření Finderu, iCloud Drive a Úplný přístup k disku. Každý řádek jednou větou říká, k čemu slouží, a zelená fajfka znamená, že je zapnuté, oranžový křížek, že chybí.
+
+Každý řádek má jedno tlačítko: Povolit, když oprávnění chybí, Vypnout, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam, bez hledání v Nastavení systému. U Zpřístupnění a Monitorování vstupu se pikapik nejdřív zeptá a pak se bez nich znovu spustí.
+
+Nástroj, který potřebuje oprávnění, jež jste mu zatím nedali, vypadá napůl šedě. Klikněte na něj a otevře se Oprávnění se zvýrazněným správným řádkem, připravené na jedno kliknutí na Povolit.
+
+**Vyzkoušejte:** Otevřete Nastavení › Oprávnění a prohlédněte si každý řádek. Kliknutím na šedý nástroj se hned dostanete k oprávnění, které potřebuje.
+
+---
+
 ## <a id="v1.32.2"></a>Bezpečnější instalace a aktualizace, které aplikaci nikdy neztratí
 
 <sub>1.32.2 · 11. října 2026</sub>

@@ -194,6 +194,8 @@ pikapik memerlukan dua izin. Saat pertama kali dibuka, app menampilkan pengatura
 
 App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 
+Beberapa fitur meminta lebih saat Anda menggunakannya: **Kontrol kipas**, **Ekstensi Finder**, **iCloud Drive**, dan **Akses Disk Penuh**. Semuanya ada di halaman Izin dalam pengaturan: setiap izin punya satu baris tentang kegunaannya, tanda centang hijau atau tanda silang oranye, dan satu tombol: **Izinkan** saat belum ada, **Matikan** saat sudah aktif. Jadi Anda bisa mencabut izin apa pun langsung di sana.
+
 pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. Satu-satunya permintaan jaringan adalah pemeriksaan pembaruan, yang menanyakan rilis terbaru ke GitHub.
 
 </details>
@@ -280,14 +282,14 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
-- **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual.
+- **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual setelah Kontrol kipas diizinkan.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: menyembunyikan dengan klik di Dock.
 - **Finder**: file baru, salinan lebih kecil dan konversi, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
-- **Izin**: status kedua izin, dan status iCloud Drive saat sinkronisasi menyala, dengan tombol yang membuka tempat yang tepat di Pengaturan Sistem.
+- **Izin**: semua izin yang dipakai pikapik, masing-masing dengan statusnya dan satu tombol untuk mengizinkan atau mematikannya. Alat yang kekurangan izin tampak setengah abu-abu, dan jika diklik, halaman ini terbuka di baris yang tepat.
 - **Tentang**: versi, tautan ke catatan perubahan dan untuk melaporkan masalah.
 
 Banyak pengaturan dilengkapi gambar kecil yang menunjukkan fungsinya, misalnya Mac yang tetap terjaga atau jendela yang bersembunyi di balik Dock. Gambar berubah bersama sakelar dan diam saja saat “Kurangi Gerakan” aktif di Pengaturan Sistem.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Ya. Ini adalah app universal untuk Apple silicon dan Intel, dengan macOS 14 Sonoma atau lebih baru.
 
 **Izin sudah menyala, tetapi tidak ada yang bekerja.**
-Di **Pengaturan Sistem › Privasi & Keamanan**, hapus pikapik dari kedua daftar dengan tombol −, lalu tambahkan lagi. Halaman Izin di pengaturan pikapik punya tombol yang membuka tempat yang tepat.
+Di **Pengaturan Sistem › Privasi & Keamanan**, hapus pikapik dari kedua daftar dengan tombol −, lalu tambahkan lagi. Atau lakukan di pikapik: di halaman Izin, klik **Matikan** pada setiap izin, lalu **Izinkan** lagi.
 
 </details>
 

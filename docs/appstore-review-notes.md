@@ -20,7 +20,7 @@ The app asks for two permissions, only when a feature that needs them is switche
 To reproduce each prompt:
 1. Open pikapik from the menu bar, then Settings.
 2. Turn on any feature from the Keyboard, Mouse or Windows tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
-3. The Permissions page in Settings shows both states and opens System Settings > Privacy & Security.
+3. The Permissions page in Settings lists Accessibility, Input Monitoring, Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
 
 Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere.
 

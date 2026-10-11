@@ -145,7 +145,7 @@ final class FanControl {
     }
 
     private func fail() {
-        error = String(localized: "Couldn’t change the fan speed. Try Allow control again.")
+        error = String(localized: "Couldn’t change the fan speed. Try allowing fan control again.")
     }
 
     private func refresh() {
@@ -159,7 +159,7 @@ final class FanControl {
         error = String(localized: "Fans went back to Auto to keep your Mac safe")
     }
 
-    private func probe() {
+    func probe() {
         guard FileManager.default.contentsEqual(atPath: Self.binary, andPath: Self.bundled.path), let helper = helper() else {
             ready = false
             return

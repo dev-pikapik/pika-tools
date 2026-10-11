@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Tüm izinler tek yerde
+
+<sub>1.33.0 · 11 Ekim 2026</sub>
+
+Ayarlar › İzinler artık pikapik’in kullandığı her şeyi listeliyor ve istediğiniz izni geri almanızı sağlıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Ayarlar › İzinler artık pikapik’in kullandığı her izni gösteriyor: Erişilebilirlik ve Girdi İzleme’den Fan kontrolü, Finder Eklentileri, iCloud Drive ve Tam Disk Erişimi’ne kadar. Her satır ne işe yaradığını tek cümleyle anlatır; açıksa yeşil bir onay işareti, eksikse turuncu bir çarpı görünür.
+
+Her satırda tek bir düğme var: izin eksikse İzin Ver, açıksa Kapat. Böylece herhangi bir izni Sistem Ayarları’nda aranmadan hemen oradan geri alabilirsiniz. Erişilebilirlik ve Girdi İzleme için pikapik önce sorar, sonra bu izinler olmadan yeniden başlar.
+
+Henüz vermediğiniz bir izne ihtiyaç duyan araç soluk, gri görünür. Üzerine tıkladığınızda İzinler, doğru satır vurgulanmış olarak açılır; geriye tek bir İzin Ver tıklaması kalır.
+
+**Deneyin:** Ayarlar › İzinler’i açıp her satıra göz atın. Gri bir araca tıklayarak ihtiyaç duyduğu izne doğrudan geçebilirsiniz.
+
+---
+
 ## <a id="v1.32.2"></a>Daha güvenli kurulum, güncellemeler uygulamayı asla kaybetmez
 
 <sub>1.32.2 · 11 Ekim 2026</sub>

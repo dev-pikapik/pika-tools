@@ -5,10 +5,26 @@ enum FolderAccess {
     private static let key = "folder-access"
     private static var open: [URL] = []
 
+    static let home = URL(fileURLWithPath: String(cString: getpwuid(getuid())?.pointee.pw_dir ?? strdup("/")), isDirectory: true).resolvingSymlinksInPath()
+
+    static var isGranted: Bool {
+        !(UserDefaults.standard.dictionary(forKey: key) ?? [:]).isEmpty
+    }
+
+    static func allow() {
+        _ = ask(home)
+    }
+
+    static func forget() {
+        open.forEach { $0.stopAccessingSecurityScopedResource() }
+        open = []
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+
     static func ensure(_ folders: [URL]) -> Bool {
         folders.allSatisfy { folder in
             let folder = folder.resolvingSymlinksInPath()
-            return open.contains { covers($0.path, folder.path) && FileManager.default.isWritableFile(atPath: folder.path) }
+            return open.contains { covers($0.resolvingSymlinksInPath().path, folder.path) && FileManager.default.isWritableFile(atPath: folder.path) }
                 || restore(folder) || ask(folder)
         }
     }
@@ -34,14 +50,13 @@ enum FolderAccess {
                 continue
             }
             if stale, let fresh = try? root.bookmarkData(options: .withSecurityScope) { saved[path] = fresh }
-            open.append(root.resolvingSymlinksInPath())
+            open.append(root)
             return true
         }
         return false
     }
 
     private static func ask(_ folder: URL) -> Bool {
-        let home = URL(fileURLWithPath: String(cString: getpwuid(getuid())?.pointee.pw_dir ?? strdup("/")), isDirectory: true).resolvingSymlinksInPath()
         let inHome = covers(home.path, folder.path)
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
@@ -60,7 +75,7 @@ enum FolderAccess {
             var saved = UserDefaults.standard.dictionary(forKey: key) as? [String: Data] ?? [:]
             saved[url.resolvingSymlinksInPath().path] = data
             UserDefaults.standard.set(saved, forKey: key)
-            open.append(url.resolvingSymlinksInPath())
+            open.append(url)
             return true
         }
         return false

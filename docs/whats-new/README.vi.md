@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Mọi quyền gói gọn một chỗ
+
+<sub>1.33.0 · 11 tháng 10 năm 2026</sub>
+
+Cài đặt › Quyền giờ liệt kê mọi thứ pikapik dùng, và cho bạn thu hồi bất kỳ quyền nào.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Cài đặt › Quyền giờ hiển thị mọi quyền mà pikapik dùng, từ Trợ năng và Theo dõi đầu vào đến Điều khiển quạt, Tiện ích mở rộng của Finder, iCloud Drive và Truy cập toàn bộ ổ đĩa. Mỗi dòng nói bằng một câu quyền đó dùng để làm gì, kèm dấu tích xanh khi đang bật và dấu gạch chéo cam khi còn thiếu.
+
+Mỗi dòng có một nút duy nhất: Cho phép khi còn thiếu, Tắt khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó, không cần lục tìm trong Cài đặt hệ thống. Với Trợ năng và Theo dõi đầu vào, pikapik sẽ hỏi trước rồi khởi động lại mà không có chúng.
+
+Một công cụ cần quyền bạn chưa cấp sẽ hiện mờ màu xám. Bấm vào nó, Quyền sẽ mở ra với đúng dòng được làm nổi bật, chỉ còn một lần bấm Cho phép.
+
+**Thử ngay:** Mở Cài đặt › Quyền và xem từng dòng. Bấm vào một công cụ màu xám để đến thẳng quyền mà nó cần.
+
+---
+
 ## <a id="v1.32.2"></a>Cài đặt an toàn hơn, cập nhật không bao giờ làm mất ứng dụng
 
 <sub>1.32.2 · 11 tháng 10 năm 2026</sub>

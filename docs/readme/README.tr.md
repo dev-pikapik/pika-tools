@@ -194,6 +194,8 @@ pikapik’in iki izne ihtiyacı vardır. İlk açılışta ayarlar, sizi adım a
 
 Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya gerek yoktur.
 
+Bazı özellikler kullandığınızda ek izin ister: **Fan kontrolü**, **Finder Eklentileri**, **iCloud Drive** ve **Tam Disk Erişimi**. Hepsi ayarlardaki İzinler sayfasında toplanır: her iznin ne işe yaradığını anlatan bir satırı, yeşil bir onay işareti ya da turuncu bir çarpısı ve tek bir düğmesi vardır: izin eksikse **İzin Ver**, açıksa **Kapat**. Böylece herhangi bir izni hemen oradan geri alabilirsiniz.
+
 pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Tek ağ isteği güncelleme denetimidir: GitHub’a en son sürüm sorulur.
 
 </details>
@@ -280,14 +282,14 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
-- **Fanlar**: her fanın hızı, Otomatik veya elle seçilen hız.
+- **Fanlar**: her fanın hızı, Fan kontrolüne izin verildiğinde Otomatik veya elle seçilen hız.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
 - **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
-- **İzinler**: iki iznin durumu, eşzamanlama açıkken iCloud Drive’ın durumu ve Sistem Ayarları’nda doğru yeri açan düğmeler.
+- **İzinler**: pikapik’in kullandığı tüm izinler; her birinin durumu ve izin vermek ya da kapatmak için bir düğmesi. Bir izni eksik olan araç yarı soluk gri görünür; üzerine tıklamak bu sayfayı doğru satırda açar.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 
 Birçok ayarın, ne yaptığını gösteren küçük bir resmi vardır; örneğin uyumayan bir Mac ya da Dock’un arkasına saklanan bir pencere. Resim, anahtarla birlikte değişir ve Sistem Ayarları’nda “Hareketi Azalt” açıksa hareketsiz kalır.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Evet. Apple Silicon ve Intel için evrensel bir uygulamadır, macOS 14 Sonoma veya sonrası gerekir.
 
 **İzin açık ama hiçbir şey çalışmıyor.**
-**Sistem Ayarları › Gizlilik ve Güvenlik** bölümünde pikapik’i − düğmesiyle iki listeden de kaldırın, sonra yeniden ekleyin. pikapik ayarlarındaki İzinler sayfasında doğru yeri açan düğmeler vardır.
+**Sistem Ayarları › Gizlilik ve Güvenlik** bölümünde pikapik’i − düğmesiyle iki listeden de kaldırın, sonra yeniden ekleyin. Ya da bunu pikapik içinde yapın: İzinler sayfasında her izin için **Kapat**’a, ardından yeniden **İzin Ver**’e tıklayın.
 
 </details>
 

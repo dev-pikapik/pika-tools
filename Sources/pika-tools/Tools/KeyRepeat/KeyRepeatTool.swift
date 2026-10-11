@@ -7,6 +7,7 @@ final class KeyRepeatTool: Tool {
     var title: String { String(localized: "Repeat a held key") }
 
     var isActive: Bool { isEnabled }
+    var needs: [Permission] { [] }
 
     var isEnabled: Bool {
         didSet {

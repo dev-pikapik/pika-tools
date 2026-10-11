@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik controleert elke 1,5 seconde, dus je hoeft niets opnieuw te starten. Staat het al in een lijst maar werkt het niet? Verwijder het met de −-knop en voeg het opnieuw toe.";
 "Allowed" = "Toegestaan";
 "Not allowed" = "Niet toegestaan";
+"Allow" = "Toestaan";
+"For some features" = "Voor sommige functies";
+"Finder Extensions" = "Finder-extensies";
+"Folders" = "Mappen";
+"Lets the app choose how fast your fans spin" = "Laat de app kiezen hoe snel de ventilatoren draaien";
+"Lets the app add items to the right-click menu in Finder" = "Laat de app opties toevoegen aan het rechtsklikmenu in de Finder";
+"Lets the app save new files next to yours" = "Laat de app nieuwe bestanden naast de jouwe bewaren";
+"Lets the app find permissions left by deleted apps" = "Laat de app toestemmingen vinden die verwijderde apps hebben achtergelaten";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS laat je deze alleen uitzetten in Systeeminstellingen. De knop opent de juiste lijst, waar je pikapik uitzet.";
+"Needs a permission. Click to allow it." = "Heeft toestemming nodig. Klik om die te geven.";
+"Grey tools need a permission. Click one to allow it." = "Grijze functies hebben toestemming nodig. Klik op een functie om die te geven.";
+"Turn off %@?" = "%@ uitzetten?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik start opnieuw op en de functies die dit nodig hebben worden grijs totdat je het weer toestaat.";
 "Open" = "Open";
 "Settings…" = "Instellingen…";
 "Permissions needed" = "Toestemmingen nodig";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, extern beeldscherm, deksel";
 "battery, power, charge" = "batterij, accu, stroom, opladen";
 "privacy, security, access" = "privacy, beveiliging, toegang";
+"privacy, security, access, files, save, home" = "privacy, beveiliging, toegang, bestanden, bewaren, thuismap";
+"privacy, security, access, right-click, menu, extension" = "privacy, beveiliging, toegang, rechtsklik, menu, extensie";
+"privacy, security, access, files, disk" = "privacy, beveiliging, toegang, bestanden, schijf";
 "update, new version, software update" = "update, nieuwe versie, software-update";
 "changelog, release notes, version" = "wijzigingslog, releasenotes, versie";
 "bug, issue, feedback, support" = "bug, probleem, feedback, ondersteuning";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Exporteer instellingen…";
 "Save all settings to a file, or load them from one" = "Bewaar alle instellingen in een bestand of laad ze uit een bestand";
 "Turn on iCloud Drive in System Settings" = "Zet iCloud Drive aan in Systeeminstellingen";
-"Allow pikapik to use iCloud Drive in System Settings" = "Geef pikapik toegang tot iCloud Drive in Systeeminstellingen";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Weergave en Taal volgen weer het systeem en synchronisatie met iCloud wordt uitgeschakeld. 'Open bij inloggen' en de instellingen in iCloud Drive blijven zoals ze zijn.";
 "OK" = "OK";
 "Replace your settings?" = "Je instellingen vervangen?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Het verschijnt in ‘%@’.";
 "Create" = "Maak aan";
 "Type a name without “/” or “:”." = "Typ een naam zonder ‘/’ of ‘:’.";
-"Turn it on in System Settings" = "Zet het aan in Systeeminstellingen";
-"Open Finder Extensions…" = "Open Finder-extensies…";
 "Smaller Copy in Finder" = "Kleinere kopie in de Finder";
 "Convert in Finder" = "Omzetten in de Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Klik met rechts op een bestand in de Finder en kies ‘Maak kleinere kopie’. Werkt met foto’s, GIF’s, pdf’s, video’s en ongecomprimeerd geluid zoals WAV of AIFF, dat M4A wordt. Het origineel blijft zoals het is. Kan het bestand niet kleiner, dan wordt er geen kopie gemaakt.";
@@ -614,8 +627,6 @@
 "Fan control" = "Ventilatorbeheer";
 "Fan %lld" = "Ventilator %lld";
 "See how fast your fans spin and choose their speed" = "Zie hoe snel je ventilatoren draaien en kies hun snelheid";
-"Allow control" = "Beheer toestaan";
-"Needs your administrator password once" = "Eénmalig is je beheerderswachtwoord nodig";
 "This Mac has no fans" = "Deze Mac heeft geen ventilatoren";
 "It cools itself quietly, so there is nothing to set" = "Hij koelt zichzelf stil af, dus er valt niets in te stellen";
 "rpm" = "tpm";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik wil het ventilatorbeheer verwijderen.";
 "Not allowed: no administrator password" = "Niet toegestaan: geen beheerderswachtwoord";
 "Not removed: no administrator password" = "Niet verwijderd: geen beheerderswachtwoord";
-"Couldn’t change the fan speed. Try Allow control again." = "De ventilatorsnelheid kon niet worden gewijzigd. Probeer Beheer toestaan opnieuw.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "De ventilatorsnelheid kon niet worden gewijzigd. Sta het ventilatorbeheer opnieuw toe.";
 "Fans went back to Auto to keep your Mac safe" = "De ventilatoren zijn teruggegaan naar Auto om je Mac te beschermen";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilator, tpm, koeling, koeler, heet, warmte, geluid, stil, luid, temperatuur, thermisch";
 "allow, helper, password, administrator, install, remove" = "toestaan, hulpprogramma, wachtwoord, beheerder, installeren, verwijderen";

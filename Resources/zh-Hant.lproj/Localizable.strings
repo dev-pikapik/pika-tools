@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik 每 1.5 秒會自動檢查一次，不需要重新啟動。如果已在列表中卻無法運作，請用「−」按鈕移除後再重新加入。";
 "Allowed" = "已允許";
 "Not allowed" = "未允許";
+"Allow" = "允許";
+"For some features" = "用於部分功能";
+"Finder Extensions" = "Finder 擴充功能";
+"Folders" = "檔案夾";
+"Lets the app choose how fast your fans spin" = "讓 App 選擇風扇轉速";
+"Lets the app add items to the right-click menu in Finder" = "讓 App 在 Finder 的右鍵選單中加入項目";
+"Lets the app save new files next to yours" = "讓 App 把新檔案儲存在你的檔案旁邊";
+"Lets the app find permissions left by deleted apps" = "讓 App 找出已刪除 App 留下的權限";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS 只允許你在「系統設定」中關閉這些權限。按鈕會打開對應的列表，在那裡關閉 pikapik 即可。";
+"Needs a permission. Click to allow it." = "需要權限。點按即可允許。";
+"Grey tools need a permission. Click one to allow it." = "灰色的工具需要權限。點按其中任一個即可允許。";
+"Turn off %@?" = "要關閉「%@」嗎？";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik 會重新啟動，需要此權限的工具會變灰，直到你再次允許。";
 "Open" = "打開";
 "Settings…" = "設定…";
 "Permissions needed" = "需要權限";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "闔上, 蓋上螢幕, 筆電, MacBook, 外接顯示器";
 "battery, power, charge" = "電池, 電源, 充電, 電量";
 "privacy, security, access" = "隱私權, 安全性, 存取權";
+"privacy, security, access, files, save, home" = "隱私權, 安全性, 存取權, 檔案, 儲存, 個人檔案夾";
+"privacy, security, access, right-click, menu, extension" = "隱私權, 安全性, 存取權, 右鍵, 選單, 擴充功能";
+"privacy, security, access, files, disk" = "隱私權, 安全性, 存取權, 檔案, 磁碟";
 "update, new version, software update" = "更新, 新版本, 軟體更新";
 "changelog, release notes, version" = "更新記錄, 版本說明, 版本";
 "bug, issue, feedback, support" = "錯誤, 問題, 意見回饋, 支援";
@@ -182,7 +198,6 @@
 "Export Settings…" = "輸出設定⋯";
 "Save all settings to a file, or load them from one" = "將所有設定儲存到檔案，或從檔案載入";
 "Turn on iCloud Drive in System Settings" = "請在「系統設定」中開啟 iCloud 雲碟";
-"Allow pikapik to use iCloud Drive in System Settings" = "請在「系統設定」中允許 pikapik 使用 iCloud 雲碟";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "「外觀」和「語言」會重新跟隨系統，iCloud 同步會關閉。「登入時打開」和儲存在 iCloud 雲碟中的設定維持不變。";
 "OK" = "好";
 "Replace your settings?" = "要取代你的設定嗎？";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "它會出現在「%@」中。";
 "Create" = "建立";
 "Type a name without “/” or “:”." = "請輸入不含「/」或「:」的名稱。";
-"Turn it on in System Settings" = "請在系統設定中開啟";
-"Open Finder Extensions…" = "打開 Finder 延伸功能⋯";
 "Smaller Copy in Finder" = "在 Finder 中製作較小拷貝";
 "Convert in Finder" = "在 Finder 中轉換";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "在 Finder 中按右鍵點按檔案，然後選擇「製作較小拷貝」。適用於照片、GIF、PDF、影片，以及 WAV 或 AIFF 等未壓縮的聲音（會變成 M4A）。原始檔案維持不變。如果檔案無法再縮小，就不會製作拷貝。";
@@ -614,8 +627,6 @@
 "Fan control" = "風扇控制";
 "Fan %lld" = "風扇 %lld";
 "See how fast your fans spin and choose their speed" = "查看風扇轉得有多快，並選擇它的轉速";
-"Allow control" = "允許控制";
-"Needs your administrator password once" = "只需輸入一次管理員密碼";
 "This Mac has no fans" = "這台 Mac 沒有風扇";
 "It cools itself quietly, so there is nothing to set" = "它會安靜地自行散熱，不需要設定";
 "rpm" = "轉/分";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik 想要移除風扇控制。";
 "Not allowed: no administrator password" = "未允許：沒有管理員密碼";
 "Not removed: no administrator password" = "未移除：沒有管理員密碼";
-"Couldn’t change the fan speed. Try Allow control again." = "無法更改風扇轉速。請再試一次「允許控制」。";
+"Couldn’t change the fan speed. Try allowing fan control again." = "無法更改風扇轉速。請再次允許控制風扇。";
 "Fans went back to Auto to keep your Mac safe" = "為了保護你的 Mac，風扇已恢復為自動";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "風扇, 轉速, rpm, 散熱, 降溫, 熱, 發燙, 噪音, 安靜, 吵, 溫度";
 "allow, helper, password, administrator, install, remove" = "允許, 輔助, 密碼, 管理員, 安裝, 移除";

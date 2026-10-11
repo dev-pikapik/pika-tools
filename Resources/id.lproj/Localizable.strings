@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik memeriksa setiap 1,5 detik, jadi tidak perlu memulai ulang apa pun. Jika sudah ada di daftar tetapi tidak berfungsi, hapus dengan tombol − lalu tambahkan lagi.";
 "Allowed" = "Diizinkan";
 "Not allowed" = "Tidak diizinkan";
+"Allow" = "Izinkan";
+"For some features" = "Untuk beberapa fitur";
+"Finder Extensions" = "Ekstensi Finder";
+"Folders" = "Folder";
+"Lets the app choose how fast your fans spin" = "Memungkinkan app memilih kecepatan putaran kipas";
+"Lets the app add items to the right-click menu in Finder" = "Memungkinkan app menambah item ke menu klik kanan di Finder";
+"Lets the app save new files next to yours" = "Memungkinkan app menyimpan file baru di samping file Anda";
+"Lets the app find permissions left by deleted apps" = "Memungkinkan app menemukan izin yang tertinggal dari app yang dihapus";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS hanya mengizinkan Anda mematikannya di Pengaturan Sistem. Tombol ini membuka daftar yang tepat, tempat Anda mematikan pikapik.";
+"Needs a permission. Click to allow it." = "Perlu izin. Klik untuk mengizinkan.";
+"Grey tools need a permission. Click one to allow it." = "Alat yang berwarna abu-abu perlu izin. Klik salah satunya untuk mengizinkan.";
+"Turn off %@?" = "Matikan %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik akan dimulai ulang, dan alat yang membutuhkannya akan berwarna abu-abu sampai Anda mengizinkannya lagi.";
 "Open" = "Buka";
 "Settings…" = "Pengaturan…";
 "Permissions needed" = "Perlu izin";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, penutup, laptop, MacBook, layar eksternal";
 "battery, power, charge" = "baterai, daya, pengisian";
 "privacy, security, access" = "privasi, keamanan, akses";
+"privacy, security, access, files, save, home" = "privasi, keamanan, akses, file, simpan, folder home";
+"privacy, security, access, right-click, menu, extension" = "privasi, keamanan, akses, klik kanan, menu, ekstensi";
+"privacy, security, access, files, disk" = "privasi, keamanan, akses, file, disk";
 "update, new version, software update" = "pembaruan, update, versi baru, pembaruan perangkat lunak";
 "changelog, release notes, version" = "log perubahan, catatan rilis, changelog, versi";
 "bug, issue, feedback, support" = "bug, masalah, umpan balik, dukungan";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Ekspor Pengaturan…";
 "Save all settings to a file, or load them from one" = "Simpan semua pengaturan ke file, atau muat dari file";
 "Turn on iCloud Drive in System Settings" = "Nyalakan iCloud Drive di Pengaturan Sistem";
-"Allow pikapik to use iCloud Drive in System Settings" = "Izinkan pikapik menggunakan iCloud Drive di Pengaturan Sistem";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Tampilan dan Bahasa akan kembali mengikuti sistem, dan penyelarasan iCloud akan dimatikan. “Buka saat Masuk” dan pengaturan yang tersimpan di iCloud Drive tetap seperti semula.";
 "OK" = "OKE";
 "Replace your settings?" = "Ganti pengaturan Anda?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "File akan muncul di “%@”.";
 "Create" = "Buat";
 "Type a name without “/” or “:”." = "Ketik nama tanpa “/” atau “:”.";
-"Turn it on in System Settings" = "Nyalakan di Pengaturan Sistem";
-"Open Finder Extensions…" = "Buka Ekstensi Finder…";
 "Smaller Copy in Finder" = "Salinan Lebih Kecil di Finder";
 "Convert in Finder" = "Konversi di Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Klik kanan file di Finder dan pilih “Buat Salinan Lebih Kecil”. Bisa untuk foto, GIF, PDF, video, dan suara tanpa kompresi seperti WAV atau AIFF, yang menjadi M4A. File asli tetap seperti semula. Jika file tidak bisa lebih kecil lagi, salinan tidak dibuat.";
@@ -614,8 +627,6 @@
 "Fan control" = "Kontrol kipas";
 "Fan %lld" = "Kipas %lld";
 "See how fast your fans spin and choose their speed" = "Lihat seberapa cepat kipas berputar dan pilih kecepatannya";
-"Allow control" = "Izinkan kontrol";
-"Needs your administrator password once" = "Perlu kata sandi administrator Anda sekali saja";
 "This Mac has no fans" = "Mac ini tidak punya kipas";
 "It cools itself quietly, so there is nothing to set" = "Mac ini mendinginkan diri dengan senyap, jadi tidak ada yang perlu diatur";
 "rpm" = "rpm";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik ingin menghapus kontrol kipas.";
 "Not allowed: no administrator password" = "Tidak diizinkan: tanpa kata sandi administrator";
 "Not removed: no administrator password" = "Tidak dihapus: tanpa kata sandi administrator";
-"Couldn’t change the fan speed. Try Allow control again." = "Kecepatan kipas tidak bisa diubah. Coba Izinkan kontrol lagi.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Kecepatan kipas tidak bisa diubah. Coba izinkan kontrol kipas lagi.";
 "Fans went back to Auto to keep your Mac safe" = "Kipas kembali ke Otomatis untuk menjaga Mac Anda tetap aman";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "kipas, rpm, pendingin, lebih sejuk, panas, suhu, bising, senyap, keras, temperatur, termal";
 "allow, helper, password, administrator, install, remove" = "izinkan, pembantu, kata sandi, administrator, pasang, hapus";

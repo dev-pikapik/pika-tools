@@ -194,6 +194,8 @@ pikapik potřebuje dvě oprávnění. Při prvním spuštění otevře nastaven�
 
 Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
+Některé funkce žádají při použití o něco víc: **Ovládání ventilátorů**, **Rozšíření Finderu**, **iCloud Drive** a **Úplný přístup k disku**. Všechno je na stránce Oprávnění v nastavení: každé oprávnění má řádek o tom, k čemu slouží, zelenou fajfku nebo oranžový křížek a jedno tlačítko: **Povolit**, když chybí, **Vypnout**, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam.
+
 pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
 
 </details>
@@ -280,14 +282,14 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Bez spánku**: délka, volby pro displej a víko.
-- **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost.
+- **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost, jakmile je povolené Ovládání ventilátorů.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.
 - **Finder**: nový soubor, menší kopie a převod, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
-- **Oprávnění**: stav obou oprávnění a iCloud Drive, když je zapnutá synchronizace, s tlačítky, která otevřou správné místo v Nastavení systému.
+- **Oprávnění**: všechna oprávnění, která pikapik používá, každé se svým stavem a tlačítkem pro povolení nebo vypnutí. Nástroj, kterému chybí oprávnění, vypadá napůl šedě a kliknutí na něj otevře tuto stránku u správného řádku.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 
 Mnoho nastavení má malý obrázek, který ukazuje, co dělají, třeba Mac, který neusíná, nebo okno schované za Dockem. Obrázek se mění spolu s přepínačem a stojí, když je v Nastavení systému zapnuté „Omezit pohyb“.
@@ -339,7 +341,7 @@ xattr -dr com.apple.quarantine /Applications/pikapik.app
 Ano. Je to univerzální aplikace pro Apple Silicon i Intel, pro macOS 14 Sonoma nebo novější.
 
 **Oprávnění je zapnuté, ale nic nefunguje.**
-V **Nastavení systému › Soukromí a zabezpečení** odeberte pikapik z obou seznamů tlačítkem − a pak ji přidejte znovu. Na stránce Oprávnění v nastavení pikapik jsou tlačítka, která otevřou správné místo.
+V **Nastavení systému › Soukromí a zabezpečení** odeberte pikapik z obou seznamů tlačítkem − a pak ji přidejte znovu. Nebo to udělejte přímo v pikapik: na stránce Oprávnění u každého oprávnění klikněte na **Vypnout** a pak znovu na **Povolit**.
 
 </details>
 

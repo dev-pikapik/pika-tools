@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.33.0"></a>Toate permisiunile într-un singur loc
+
+<sub>1.33.0 · 11 octombrie 2026</sub>
+
+Setări › Permisiuni arată acum tot ce folosește pikapik și vă lasă să retrageți orice permisiune.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.33.0/permissions-dark.png"><img src="../media/whats-new/1.33.0/permissions-light.png" width="340" alt=""></picture>
+
+Setări › Permisiuni arată acum fiecare permisiune pe care o folosește pikapik, de la Accesibilitate și Monitorizare introducere până la Controlul ventilatoarelor, Extensii Finder, iCloud Drive și Acces complet la disc. Fiecare rând spune într-o frază la ce servește, cu o bifă verde când e activă și o cruce portocalie când lipsește.
+
+Fiecare rând are un singur buton: Permite când lipsește, Stinge când e activă. Așa puteți retrage orice permisiune chiar acolo, fără să căutați prin Setări de sistem. Pentru Accesibilitate și Monitorizare introducere, pikapik vă întreabă mai întâi și apoi repornește fără ele.
+
+O unealtă care are nevoie de o permisiune pe care nu ați dat-o apare în gri. Faceți clic pe ea și se deschide Permisiuni cu rândul potrivit evidențiat, gata de un clic pe Permite.
+
+**Încearcă:** Deschideți Setări › Permisiuni și priviți fiecare rând. Faceți clic pe o unealtă gri ca să ajungeți direct la permisiunea de care are nevoie.
+
+---
+
 ## <a id="v1.32.2"></a>Instalare mai sigură, iar actualizările nu pierd niciodată aplicația
 
 <sub>1.32.2 · 11 octombrie 2026</sub>

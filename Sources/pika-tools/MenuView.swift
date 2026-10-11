@@ -123,7 +123,7 @@ struct MenuView: View {
                                     if customizing {
                                         customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
                                     } else {
-                                        tool.settingsView
+                                        tool.settingsView.needs(tool.needs)
                                     }
                                 }
                             }

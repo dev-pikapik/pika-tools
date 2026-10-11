@@ -108,40 +108,39 @@ struct LeftoverPermissionsSection: View {
 
     var body: some View {
         Section {
-            LeftoversArt()
-                .settingAnchor(String(localized: "Left by deleted apps"))
-            switch model.state {
-            case .loading:
-                EmptyView()
-            case .noAccess:
-                PermissionRow(
-                    icon: "com.apple.graphic-icon.privacy",
-                    symbol: "hand.raised.fill",
-                    title: String(localized: "Full Disk Access"),
-                    subtitle: String(localized: "To find them, pikapik needs to read the list of permissions. It only looks and changes nothing until you press Remove."),
-                    granted: false
-                ) { Permissions.shared.openSettings("Privacy_AllFiles") }
-            case .ready:
-                if !model.stuck.isEmpty {
-                    StuckRow(apps: model.stuck, retry: { model.remove(model.stuck) })
-                }
-                if model.apps.isEmpty {
-                    LabeledContent {
-                        EmptyView()
-                    } label: {
-                        HStack(spacing: 10) {
-                            Image(systemName: "checkmark.seal.fill")
-                                .font(.title2)
-                                .foregroundStyle(.green)
-                                .accessibilityHidden(true)
-                            RowLabel(Text("Nothing to clean up"), Text("Every permission belongs to an app that’s still on your Mac."))
+            Group {
+                LeftoversArt()
+                    .settingAnchor(String(localized: "Left by deleted apps"))
+                switch model.state {
+                case .loading:
+                    EmptyView()
+                case .noAccess:
+                    Text("To find them, pikapik needs to read the list of permissions. It only looks and changes nothing until you press Remove.")
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                case .ready:
+                    if !model.stuck.isEmpty {
+                        StuckRow(apps: model.stuck, retry: { model.remove(model.stuck) })
+                    }
+                    if model.apps.isEmpty {
+                        LabeledContent {
+                            EmptyView()
+                        } label: {
+                            HStack(spacing: 10) {
+                                Image(systemName: "checkmark.seal.fill")
+                                    .font(.title2)
+                                    .foregroundStyle(.green)
+                                    .accessibilityHidden(true)
+                                RowLabel(Text("Nothing to clean up"), Text("Every permission belongs to an app that’s still on your Mac."))
+                            }
                         }
                     }
-                }
-                ForEach(model.apps) { app in
-                    LeftoverRow(app: app, removing: model.removing.contains(app.client)) { confirming = [app] }
+                    ForEach(model.apps) { app in
+                        LeftoverRow(app: app, removing: model.removing.contains(app.client)) { confirming = [app] }
+                    }
                 }
             }
+            .needs([.fullDisk])
         } header: {
             Text("Left by deleted apps")
         } footer: {

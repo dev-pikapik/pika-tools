@@ -10,20 +10,8 @@ struct FanSettings: View {
                 ForEach(control.fans, id: \.id) { fan in
                     FanCard(fan: fan, title: control.fans.count > 1 ? Text("Fan \(fan.id + 1)") : nil)
                 }
-                Section {
-                    LabeledContent {
-                        if control.ready {
-                            Button("Remove") { control.uninstall() }
-                        } else {
-                            Button("Allow control") { control.install() }
-                                .buttonStyle(.borderedProminent)
-                        }
-                    } label: {
-                        RowLabel(Text("Fan control"), control.ready ? Text("Allowed") : Text("Needs your administrator password once"))
-                    }
-                    .disabled(control.busy)
-                    .settingAnchor(String(localized: "Fan control"))
-                    if let error = control.error {
+                if let error = control.error {
+                    Section {
                         Label(error, systemImage: "exclamationmark.triangle.fill")
                             .foregroundStyle(.orange)
                     }
@@ -38,6 +26,9 @@ struct FanSettings: View {
         }
         .formStyle(.grouped)
         .settingsPage()
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            PermissionBar(permissions: control.hasFans ? [.fans] : [])
+        }
         .onAppear { control.watch() }
         .onDisappear { control.unwatch() }
     }
@@ -72,7 +63,7 @@ private struct FanCard: View {
                         .foregroundStyle(.secondary)
                 }
                 .accessibilityElement(children: .combine)
-                if control.ready {
+                VStack(spacing: 14) {
                     Picker("Fan speed", selection: Binding(get: { manual }, set: { choose(manual: $0) })) {
                         Text("Auto").tag(false)
                         Text("Manual").tag(true)
@@ -96,6 +87,7 @@ private struct FanCard: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+                .needs([.fans])
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 6)
@@ -157,6 +149,7 @@ struct FanRow: View {
                 RoundedRectangle(cornerRadius: 8, style: .continuous).fill(.fill.quaternary)
             }
         }
+        .needs([.fans])
         .onHover { hovering = $0 }
         .onAppear { watch(true) }
         .onDisappear { watch(false) }

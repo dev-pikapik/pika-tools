@@ -25,6 +25,19 @@
 "pikapik checks every 1.5 seconds, so there’s no need to restart anything. If it’s already in a list but doesn’t work, remove it with the − button and add it again." = "pikapik verifică la fiecare 1,5 secunde, deci nu trebuie să repornești nimic. Dacă e deja în listă, dar nu funcționează, elimin-o cu butonul − și adaug-o din nou.";
 "Allowed" = "Permis";
 "Not allowed" = "Nepermis";
+"Allow" = "Permite";
+"For some features" = "Pentru unele funcții";
+"Finder Extensions" = "Extensii Finder";
+"Folders" = "Foldere";
+"Lets the app choose how fast your fans spin" = "Permite aplicației să aleagă viteza ventilatoarelor";
+"Lets the app add items to the right-click menu in Finder" = "Permite aplicației să adauge opțiuni în meniul de clic dreapta din Finder";
+"Lets the app save new files next to yours" = "Permite aplicației să salveze fișiere noi lângă ale tale";
+"Lets the app find permissions left by deleted apps" = "Permite aplicației să găsească permisiunile rămase de la aplicații șterse";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS îți permite să le oprești doar din Configurări sistem. Butonul deschide lista potrivită, unde oprești pikapik.";
+"Needs a permission. Click to allow it." = "Are nevoie de o permisiune. Dă clic pentru a o permite.";
+"Grey tools need a permission. Click one to allow it." = "Instrumentele gri au nevoie de o permisiune. Dă clic pe unul pentru a o permite.";
+"Turn off %@?" = "Stingi %@?";
+"pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik va reporni, iar instrumentele care au nevoie de ea vor deveni gri până o permiți din nou.";
 "Open" = "Deschide";
 "Settings…" = "Configurări…";
 "Permissions needed" = "Sunt necesare permisiuni";
@@ -91,6 +104,9 @@
 "clamshell, laptop, MacBook, external display" = "clamshell, laptop, MacBook, monitor extern, capac";
 "battery, power, charge" = "baterie, alimentare, încărcare";
 "privacy, security, access" = "confidențialitate, securitate, acces";
+"privacy, security, access, files, save, home" = "confidențialitate, securitate, acces, fișiere, salvare, folder acasă";
+"privacy, security, access, right-click, menu, extension" = "confidențialitate, securitate, acces, clic dreapta, meniu, extensie";
+"privacy, security, access, files, disk" = "confidențialitate, securitate, acces, fișiere, disc";
 "update, new version, software update" = "actualizare, versiune nouă, actualizare software";
 "changelog, release notes, version" = "jurnal de modificări, note de lansare, versiune";
 "bug, issue, feedback, support" = "eroare, problemă, feedback, asistență, bug";
@@ -182,7 +198,6 @@
 "Export Settings…" = "Exportă configurările…";
 "Save all settings to a file, or load them from one" = "Salvați toate configurările într-un fișier sau încărcați-le dintr-un fișier";
 "Turn on iCloud Drive in System Settings" = "Activați iCloud Drive în Configurări sistem";
-"Allow pikapik to use iCloud Drive in System Settings" = "Permiteți pikapik să folosească iCloud Drive în Configurări sistem";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are." = "Aspectul și Limba vor urma din nou sistemul, iar sincronizarea cu iCloud se va dezactiva. „Deschide la login” și configurările salvate în iCloud Drive rămân neschimbate.";
 "OK" = "OK";
 "Replace your settings?" = "Înlocuiți configurările?";
@@ -211,8 +226,6 @@
 "It will appear in “%@”." = "Va apărea în „%@”.";
 "Create" = "Creează";
 "Type a name without “/” or “:”." = "Scrie un nume fără „/” sau „:”.";
-"Turn it on in System Settings" = "Activează în Configurări sistem";
-"Open Finder Extensions…" = "Deschide extensiile Finder…";
 "Smaller Copy in Finder" = "Copie mai mică în Finder";
 "Convert in Finder" = "Conversie în Finder";
 "Right-click a file in Finder and choose Make a Smaller Copy. Works with photos, GIFs, PDFs, videos and uncompressed sound like WAV or AIFF, which becomes M4A. The original stays as it is. If the file can’t get any smaller, no copy is made." = "Fă clic dreapta pe un fișier în Finder și alege „Creează o copie mai mică”. Funcționează cu fotografii, GIF-uri, PDF-uri, videoclipuri și sunet necomprimat, ca WAV sau AIFF, care devine M4A. Originalul rămâne neschimbat. Dacă fișierul nu poate fi mai mic, nu se face nicio copie.";
@@ -614,8 +627,6 @@
 "Fan control" = "Controlul ventilatoarelor";
 "Fan %lld" = "Ventilator %lld";
 "See how fast your fans spin and choose their speed" = "Vezi cât de repede se rotesc ventilatoarele și alege viteza lor";
-"Allow control" = "Permite controlul";
-"Needs your administrator password once" = "Este nevoie o singură dată de parola de administrator";
 "This Mac has no fans" = "Acest Mac nu are ventilatoare";
 "It cools itself quietly, so there is nothing to set" = "Se răcește singur, în liniște, așa că nu e nimic de setat";
 "rpm" = "rot/min";
@@ -628,7 +639,7 @@
 "pikapik wants to remove fan control." = "pikapik vrea să elimine controlul ventilatoarelor.";
 "Not allowed: no administrator password" = "Nepermis: fără parola de administrator";
 "Not removed: no administrator password" = "Neeliminat: fără parola de administrator";
-"Couldn’t change the fan speed. Try Allow control again." = "Viteza ventilatoarelor nu a putut fi schimbată. Încearcă din nou Permite controlul.";
+"Couldn’t change the fan speed. Try allowing fan control again." = "Viteza ventilatoarelor nu a putut fi schimbată. Încearcă să permiți din nou controlul ventilatoarelor.";
 "Fans went back to Auto to keep your Mac safe" = "Ventilatoarele au revenit la Auto pentru a-ți proteja Mac-ul";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilator, rotații, rot/min, răcire, mai rece, cald, căldură, zgomot, liniște, tare, temperatură";
 "allow, helper, password, administrator, install, remove" = "permite, ajutor, parolă, administrator, instalează, elimină";
