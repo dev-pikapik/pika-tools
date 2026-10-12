@@ -5,15 +5,43 @@ enum TestRename {
     static func main() {
         let old = URL(fileURLWithPath: "/Applications/pika-tools.app")
         let new = URL(fileURLWithPath: "/Applications/pikapik.app")
-        let own = URL(fileURLWithPath: "/Users/me/Apps/My Tools.app")
-        precondition(Updater.destination(of: old, brewManaged: false) == new)
-        precondition(Updater.destination(of: old, brewManaged: true) == old)
-        precondition(Updater.destination(of: new, brewManaged: false) == new)
-        precondition(Updater.destination(of: own, brewManaged: false) == own)
-        precondition(Updater.destination(of: URL(fileURLWithPath: "/Users/me/pika-tools.app"), brewManaged: false).path == "/Users/me/pikapik.app")
 
         let root = FileManager.default.temporaryDirectory.appendingPathComponent("test-rename-\(UUID().uuidString)")
         defer { try? FileManager.default.removeItem(at: root) }
+        let ownID = "com.pesotchi.pika-tools"
+        func plist(_ id: String?) -> Data {
+            let info: [String: String] = id.map { ["CFBundleIdentifier": $0] } ?? [:]
+            return try! PropertyListSerialization.data(fromPropertyList: info, format: .xml, options: 0)
+        }
+        func applications(newName info: Data?) -> URL {
+            let dir = root.appendingPathComponent(UUID().uuidString)
+            let contents = dir.appendingPathComponent("pikapik.app/Contents")
+            try! FileManager.default.createDirectory(at: contents, withIntermediateDirectories: true)
+            if let info { try! info.write(to: contents.appendingPathComponent("Info.plist")) }
+            return dir
+        }
+        func oldApp(in dir: URL) -> URL { dir.appendingPathComponent("pika-tools.app") }
+        func destination(in dir: URL, brewManaged: Bool = false, id: String? = ownID) -> URL {
+            Updater.destination(of: oldApp(in: dir), brewManaged: brewManaged, ownID: id)
+        }
+        let free = root.appendingPathComponent("free")
+        let mine = applications(newName: plist(ownID))
+        let store = applications(newName: plist("com.pikapik.tools"))
+        let noInfo = applications(newName: nil)
+        let unreadable = applications(newName: Data("not a plist".utf8))
+        let noID = applications(newName: plist(nil))
+        precondition(destination(in: free).path == free.path + "/pikapik.app")
+        precondition(destination(in: mine).path == mine.path + "/pikapik.app")
+        for dir in [store, noInfo, unreadable, noID] { precondition(destination(in: dir) == oldApp(in: dir), dir.path) }
+        precondition(destination(in: noID, id: nil) == oldApp(in: noID))
+        for dir in [free, mine, store] { precondition(destination(in: dir, brewManaged: true) == oldApp(in: dir), dir.path) }
+        for dir in [free, mine, store] {
+            for name in ["pikapik.app", "My Tools.app"] {
+                let app = dir.appendingPathComponent(name)
+                precondition(Updater.destination(of: app, brewManaged: false, ownID: ownID) == app, app.path)
+            }
+        }
+
         precondition(!Updater.isBrewManaged(prefixes: [root.path]))
         for token in ["pika-tools", "pikapik"] {
             let cask = root.appendingPathComponent("Caskroom/\(token)")

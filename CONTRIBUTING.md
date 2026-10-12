@@ -81,7 +81,7 @@ Permissions left by deleted apps are read from the system TCC database (`/Librar
 swiftc -parse-as-library Sources/pika-tools/Common/LeftoverPermissions.swift scripts/test-leftover-permissions.swift -o build/test-leftover-permissions && build/test-leftover-permissions
 ```
 
-The app used to be called pika-tools. A copy named `pika-tools.app` that wasn't installed with Homebrew renames itself to `pikapik.app` on launch and opens again; the updater does the same when it installs a new version. Homebrew copies stay where they are until `brew upgrade` moves them. Every release also carries `pika-tools.zip` with the app under its old name, because older versions download that file. The path logic lives in `Updater`:
+The app used to be called pika-tools. A copy named `pika-tools.app` that wasn't installed with Homebrew renames itself to `pikapik.app` on launch and opens again; the updater does the same when it installs a new version. Homebrew copies stay where they are until `brew upgrade` moves them. If a `pikapik.app` that isn't this app already sits next to it (the App Store version, whose bundle id is `com.pikapik.tools`, or anything without a readable `Info.plist`), the copy keeps its old name and updates in place. Every release also carries `pika-tools.zip` with the app under its old name, because older versions download that file. The path logic lives in `Updater`:
 
 ```bash
 swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-rename.swift -o build/test-rename && build/test-rename
