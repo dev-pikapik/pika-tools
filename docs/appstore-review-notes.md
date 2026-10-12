@@ -44,4 +44,4 @@ Tips unlock nothing. All features work the same without them. If the products ca
 - The only network use is the Speed Test the user starts, and the App Store tip purchase.
 
 ## Not in this build
-Features that need private APIs or root rights are absent: key repeat tuning, pointer acceleration, Animations tweaks, Fan control, the automatic updater and the leftover-permissions cleaner. The sandbox is on.
+Features that need private APIs or root rights are absent: key repeat tuning, pointer acceleration, Animations tweaks, Fan control, the automatic updater, the leftover-permissions cleaner and the Uninstaller. The sandbox is on.

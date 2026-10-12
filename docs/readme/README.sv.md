@@ -180,6 +180,14 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Ta bort appar</b>
+<br>Ta bort en app med filer. Allt kan läggas tillbaka.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mer information
@@ -253,6 +261,10 @@ Under Inställningar → Spel → Fler spelinställningar finns gruppen ”Mus o
 
 För att veta när en utmärkelse är på väg räknar pikapik bara det du och ditt husdjur gör: steg, hur ofta du lyfter upp och kastar det, hopp, klättringar, bollspel och pratstunder, dagar tillsammans, om ni var tillsammans tidigt på morgonen, efter midnatt eller på en helg, vilka sidor i Inställningar du har öppnat och vad du har provat. Utanför Mac App Store noterar pikapik också om du har öppnat vår GitHub-sida från Inställningar. Siffrorna, datumet för varje utmärkelse och vad husdjuret har på sig stannar på den här Mac-datorn. Ingenting skickas någonstans, och inget av det hamnar i den exporterade inställningsfilen eller i iCloud-synkroniseringen. Du kan radera allt när som helst i Inställningar › Husdjur, och då börjar husdjuret om från början.
 
+**Ta bort appar.** Öppna Inställningar › Ta bort appar, välj en app i listan eller släpp en på bilden, så visar pikapik allt som appen sparar på din Mac: själva appen, dess sparade data, inställningar, tillfälliga filer, bakgrundshjälpare och mer, var och en med skälet till att den finns med. Filer som tydligt hör till appen är ikryssade, filer som bara kanske hör ihop med den är det inte, och filer som även andra appar använder är markerade. Välj vad som ska bort och klicka på **Flytta till papperskorgen**. Inget raderas för gott: allt hamnar i papperskorgen. Om appen är öppen ber pikapik den först att avsluta sig, och om några filer kräver en administratör frågar din Mac efter ditt lösenord en gång.
+
+Ångrade du dig? Klicka på **Lägg tillbaka** så hamnar allt där det låg och bakgrundshjälparna startar igen. De tio senaste borttagningarna väntar under ”Nyligen borttagna” så länge deras filer ligger kvar i papperskorgen. **Återställ appen** behåller appen och tar bara bort dess sparade data, inställningar och tillfälliga filer, vilket kan hjälpa när en app krånglar. Appar som du själv flyttat till papperskorgen visas under ”I papperskorgen”, tillsammans med filerna de lämnade kvar, och ”Rester av borttagna appar” hittar filer från appar som redan är borta. Reglaget ”Erbjud städning när en app hamnar i papperskorgen” är avstängt från början, och inget tas bort förrän du väljer. För att se allt som en app sparar behöver sidan **Full skivåtkomst**. Det här verktyget finns inte i versionen från Mac App Store.
+
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
@@ -295,6 +307,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
 - **Finder**: ny fil, mindre kopia och konvertering, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
+- **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Spel**: din lista med spel och alternativen för Spelläge.
 - **Husdjur**: slå på eller av husdjuret, låt det prata och leka med bollen, klä på det och se dina utmärkelser.
 - **Behörigheter**: alla behörigheter som pikapik använder, var och en med sin status och en knapp för att tillåta eller stänga av den. Ett verktyg som saknar en behörighet ser halvgrått ut, och ett klick på det öppnar den här sidan vid rätt rad.

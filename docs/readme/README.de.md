@@ -180,6 +180,14 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Apps entfernen</b>
+<br>App samt Dateien entfernen. Alles lässt sich zurücklegen.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren
@@ -253,6 +261,10 @@ Unter Einstellungen → Spiele → Weitere Spieleinstellungen gibt es die Gruppe
 
 Damit pikapik weiß, wann eine Auszeichnung fällig ist, zählt es nur, was du und dein Haustier tun: Schritte, wie oft du es hochhebst und wirfst, seine Sprünge, Kletterpartien, Ballspiele und Gespräche, die gemeinsamen Tage, ob ihr früh am Morgen, nach Mitternacht oder am Wochenende zusammen wart, welche Seiten der Einstellungen du geöffnet und was du anprobiert hast. Außerhalb des Mac App Store merkt sich pikapik außerdem, ob du aus den Einstellungen heraus unsere GitHub-Seite geöffnet hast. Diese Zahlen, das Datum jeder Auszeichnung und das, was dein Haustier trägt, bleiben auf diesem Mac. Nichts wird irgendwohin gesendet, und nichts davon landet in der exportierten Einstellungsdatei oder in der iCloud-Synchronisierung. Du kannst alles jederzeit in Einstellungen › Haustier löschen, dann fängt dein Haustier von vorn an.
 
+**Apps entfernen.** Öffne Einstellungen › Apps entfernen, such dir eine App aus der Liste aus oder zieh eine auf das Bild, und pikapik zeigt alles, was die App auf deinem Mac aufbewahrt: die App selbst, ihre gespeicherten Daten, Einstellungen, temporäre Dateien, Hintergrundhelfer und mehr, jeweils mit dem Grund, warum sie in der Liste steht. Dateien, die eindeutig zur App gehören, sind angehakt, Dateien, die nur vielleicht dazugehören, nicht, und Dateien, die auch andere Apps nutzen, sind markiert. Wähle aus, was weg soll, und klicke auf **In den Papierkorb legen**. Nichts wird endgültig gelöscht: Alles kommt in den Papierkorb. Ist die App geöffnet, bittet pikapik sie zuerst, sich zu beenden, und brauchen manche Dateien einen Administrator, fragt dein Mac einmal nach deinem Passwort.
+
+Doch anders überlegt? Klicke auf **Zurücklegen**, dann ist alles wieder da, wo es war, und die Hintergrundhelfer starten wieder. Die letzten zehn Entfernungen warten unter „Zuletzt entfernt“, solange ihre Dateien im Papierkorb liegen. **App zurücksetzen** behält die App und entfernt nur ihre gespeicherten Daten, Einstellungen und temporären Dateien, was helfen kann, wenn eine App spinnt. Apps, die du selbst in den Papierkorb gelegt hast, erscheinen unter „Im Papierkorb“ samt den Dateien, die sie hinterlassen haben, und „Reste entfernter Apps“ findet Dateien von Apps, die schon weg sind. Der Schalter „Aufräumen anbieten, wenn eine App in den Papierkorb kommt“ ist standardmäßig aus, und nichts wird entfernt, bevor du wählst. Damit die Seite alles sehen kann, was eine App aufbewahrt, braucht sie den **Festplattenvollzugriff**. Dieses Werkzeug gibt es nicht in der Version aus dem Mac App Store.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
@@ -295,6 +307,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Ausblenden per Klick im Dock.
 - **Finder**: neue Datei, kleinere Kopie und Umwandeln, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
+- **Apps entfernen**: eine App samt Dateien entfernen, alles später zurücklegen und aufräumen, was entfernte Apps hinterlassen haben.
 - **Spiele**: deine Spiele und die Einstellungen des Spielmodus.
 - **Haustier**: an- und ausschalten, Plaudern und Ball, Kleiderschrank und Auszeichnungen.
 - **Berechtigungen**: alle Berechtigungen, die pikapik nutzt, jeweils mit Status und einer Taste zum Erlauben oder Ausschalten. Ein Tool, dem eine Berechtigung fehlt, wirkt halb ausgegraut; ein Klick darauf öffnet diese Seite bei der passenden Zeile.

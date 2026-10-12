@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Rimuovi le app senza pensieri
+
+<sub>1.36.0 · 12 ottobre 2026</sub>
+
+La nuova funzione Rimuovi app toglie un’app con tutti i suoi file e rimette tutto a posto se cambi idea.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Rimuovi app e scegli un’app, oppure trascinala sull’immagine. pikapik mostra tutto ciò che l’app conserva sul tuo Mac, con il motivo di ogni file. I file che appartengono chiaramente all’app sono spuntati, quelli che forse c’entrano soltanto no. Fai clic su «Sposta nel Cestino» e tutto va nel Cestino, quindi niente viene eliminato per sempre.
+
+Hai cambiato idea? Fai clic su «Rimetti a posto» e tutto torna dov’era. Le ultime dieci rimozioni restano in «Rimossi di recente» finché i loro file sono nel Cestino. «Reimposta app» tiene l’app e toglie solo i suoi dati salvati, le impostazioni e i file temporanei, nel caso faccia i capricci.
+
+Hai spostato tu un’app nel Cestino? La pagina elenca queste app e i file che hanno lasciato, e puoi attivare un interruttore che propone di fare pulizia ogni volta che un’app va nel Cestino. Non viene rimosso nulla finché non scegli. Per vedere tutto, la pagina ha bisogno dell’Accesso completo al disco.
+
+---
+
 ## <a id="v1.35.0"></a>Vesti il tuo animaletto
 
 <sub>1.35.0 · 12 ottobre 2026</sub>

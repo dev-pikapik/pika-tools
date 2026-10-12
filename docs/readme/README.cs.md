@@ -180,6 +180,14 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Odinstalace aplikací</b>
+<br>Odeberte aplikaci s jejími soubory. Vše lze vrátit.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti
@@ -253,6 +261,10 @@ Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Obj
 
 Aby pikapik věděl, kdy je čas na ocenění, počítá jen to, co děláte vy a váš mazlíček: kroky, kolikrát ho zvednete a hodíte, skoky, lezení, hru s míčem a řeči, společné dny, jestli jste byli spolu brzy ráno, po půlnoci nebo o víkendu, které stránky nastavení jste otevřeli a co jste vyzkoušeli. Mimo Mac App Store si pikapik také poznamenává, zda jste z Nastavení otevřeli naši stránku na GitHubu. Tato čísla, datum každého ocenění a to, co má mazlíček na sobě, zůstávají v tomto Macu. Nic se nikam neposílá a nic z toho nejde do exportovaného souboru nastavení ani do synchronizace přes iCloud. Všechno můžete kdykoli smazat v Nastavení › Mazlíček a mazlíček začne od nuly.
 
+**Odinstalace aplikací.** Otevřete Nastavení › Odinstalace aplikací, vyberte aplikaci ze seznamu nebo ji přetáhněte na obrázek a pikapik ukáže vše, co aplikace ve vašem Macu uchovává: samotnou aplikaci, její uložená data, nastavení, dočasné soubory, pomocníky na pozadí a další věci, u každé s důvodem, proč je v seznamu. Soubory, které k aplikaci jednoznačně patří, jsou zaškrtnuté, soubory, které s ní jen možná souvisejí, ne, a soubory, které používají i jiné aplikace, jsou označené. Vyberte, co odebrat, a klikněte na **Přesunout do Koše**. Nic se nemaže natrvalo: všechno skončí v Koši. Je-li aplikace otevřená, pikapik ji nejdřív požádá o ukončení, a pokud některé soubory vyžadují správce, Mac vás jednou požádá o heslo.
+
+Rozmysleli jste si to? Klikněte na **Vrátit zpět** a všechno se vrátí na původní místo a pomocníci na pozadí se znovu spustí. Posledních deset odebrání čeká v části „Nedávno odebrané“, dokud jsou jejich soubory v Koši. **Resetovat aplikaci** ponechá aplikaci a odebere jen její uložená data, nastavení a dočasné soubory, což může pomoci, když se aplikace chová divně. Aplikace, které jste do Koše přesunuli sami, se objeví v části „V Koši“ spolu se soubory, které po sobě nechaly, a část „Zbytky po odebraných aplikacích“ najde soubory aplikací, které už neexistují. Přepínač „Nabídnout úklid, když aplikace skončí v Koši“ je ve výchozím stavu vypnutý a nic se neodebere, dokud nevyberete. Aby stránka viděla všechno, co aplikace uchovává, potřebuje **Úplný přístup k disku**. Tento nástroj není ve verzi z Mac App Store.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
@@ -295,6 +307,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.
 - **Finder**: nový soubor, menší kopie a převod, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
+- **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Hry**: seznam vašich her a volby Herního režimu.
 - **Mazlíček**: zapnutí a vypnutí, povídání a míč, šatník a ocenění.
 - **Oprávnění**: všechna oprávnění, která pikapik používá, každé se svým stavem a tlačítkem pro povolení nebo vypnutí. Nástroj, kterému chybí oprávnění, vypadá napůl šedě a kliknutí na něj otevře tuto stránku u správného řádku.

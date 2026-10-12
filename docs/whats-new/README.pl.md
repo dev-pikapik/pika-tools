@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Usuwaj aplikacje bez obaw
+
+<sub>1.36.0 · 12 października 2026</sub>
+
+Nowe Usuwanie aplikacji usuwa aplikację razem ze wszystkimi plikami i przywraca wszystko, jeśli zmienisz zdanie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Usuwanie aplikacji i wybierz aplikację albo upuść ją na obrazek. pikapik pokaże wszystko, co aplikacja trzyma na twoim Macu, i powód, dla którego każdy plik jest na liście. Pliki, które wyraźnie należą do aplikacji, są zaznaczone, a te tylko możliwe powiązane nie są. Kliknij „Przenieś do Kosza”, a wszystko trafi do Kosza, więc nic nie jest kasowane na zawsze.
+
+Zmieniasz zdanie? Kliknij „Przywróć”, a wszystko wróci na swoje miejsce. Ostatnie dziesięć usunięć czeka w sekcji „Ostatnio usunięte”, dopóki ich pliki są w Koszu. „Zresetuj aplikację” zostawia aplikację i usuwa tylko jej zapisane dane, ustawienia i pliki tymczasowe, na wypadek gdyby szwankowała.
+
+Przenosisz aplikacje do Kosza ręcznie? Strona pokaże też takie aplikacje razem z plikami, które po sobie zostawiły, a specjalny przełącznik będzie proponował sprzątanie za każdym razem, gdy aplikacja trafi do Kosza. Nic nie jest usuwane, dopóki nie wybierzesz. Żeby zobaczyć wszystko, strona potrzebuje uprawnienia „Pełny dostęp do dysku”.
+
+---
+
 ## <a id="v1.35.0"></a>Ubierz swojego zwierzaka
 
 <sub>1.35.0 · 12 października 2026</sub>

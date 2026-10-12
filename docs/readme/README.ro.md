@@ -180,6 +180,14 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Eliminare aplicații</b>
+<br>Elimină o aplicație și fișierele ei. Poți pune totul la loc.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii
@@ -253,6 +261,10 @@ Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. 
 
 Ca să știe când se cuvine un premiu, pikapik numără doar ce faceți tu și animăluțul: pașii, de câte ori l-ai ridicat și l-ai aruncat, săriturile, cățărările, jocurile cu mingea și discuțiile, zilele petrecute împreună, dacă ați fost împreună dimineața devreme, după miezul nopții sau în weekend, paginile din Configurări pe care le-ai deschis și piesele pe care le-ai probat. În afara Mac App Store, pikapik notează și dacă ai deschis din Configurări pagina noastră de GitHub. Aceste numere, data fiecărui premiu și ce poartă animăluțul rămân pe acest Mac. Nimic nu este trimis nicăieri și nimic din toate acestea nu intră în fișierul de configurări exportat sau în sincronizarea iCloud. Poți șterge totul oricând din Configurări › Animăluț, iar animăluțul o ia de la zero.
 
+**Eliminare aplicații.** Deschide Configurări › Eliminare aplicații, alege o aplicație din listă sau trage una peste imagine, iar pikapik arată tot ce păstrează aplicația pe Mac-ul tău: aplicația în sine, datele ei salvate, setările, fișierele temporare, ajutoarele din fundal și altele, fiecare cu motivul pentru care apare. Fișierele care aparțin clar aplicației sunt bifate, cele care poate au legătură nu sunt, iar cele pe care le folosesc și alte aplicații sunt marcate. Alege ce vrei să elimini și apasă **Mută în Coș**. Nimic nu se șterge definitiv: totul ajunge în Coș. Dacă aplicația este deschisă, pikapik îi cere mai întâi să se închidă, iar dacă unele fișiere cer un administrator, Mac-ul îți va cere parola o singură dată.
+
+Te-ai răzgândit? Apasă **Pune la loc** și totul revine unde a fost, iar ajutoarele din fundal pornesc din nou. Ultimele zece eliminări așteaptă la „Eliminate recent” cât timp fișierele lor sunt în Coș. **Resetează aplicația** păstrează aplicația și elimină doar datele ei salvate, setările și fișierele temporare, ceea ce poate ajuta când o aplicație se poartă ciudat. Aplicațiile pe care le-ai mutat tu în Coș apar la „În Coș”, împreună cu fișierele rămase, iar „Resturi de la aplicații eliminate” găsește fișierele unor aplicații care nu mai există. Comutatorul „Oferă curățarea când o aplicație ajunge în Coș” este oprit implicit și nu se elimină nimic până nu alegi tu. Ca să vadă tot ce păstrează o aplicație, pagina are nevoie de **Acces complet la disc**. Acest instrument nu există în versiunea din Mac App Store.
+
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
@@ -295,6 +307,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.
 - **Finder**: fișier nou, copie mai mică și conversie, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
+- **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.
 - **Animăluț**: pornit sau oprit, vorbit și minge, garderoba și premiile.
 - **Permisiuni**: toate permisiunile pe care le folosește pikapik, fiecare cu starea ei și cu un buton pentru a o permite sau a o stinge. Un instrument căruia îi lipsește o permisiune apare în gri, iar un clic pe el deschide această pagină la rândul potrivit.

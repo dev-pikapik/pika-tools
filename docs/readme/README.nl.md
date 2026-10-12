@@ -180,6 +180,14 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Apps verwijderen</b>
+<br>Verwijder een app met alle bestanden. Alles kan terug.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Meer weten
@@ -253,6 +261,10 @@ Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. O
 
 Om te weten wanneer een onderscheiding toekomt, telt pikapik alleen wat jij en je huisdiertje doen: stappen, hoe vaak je het oppakt en gooit, sprongen, klimpartijen, balspelletjes en praatjes, dagen samen, of jullie vroeg in de ochtend, na middernacht of in het weekend samen waren, welke pagina’s van Instellingen je opende en wat je hebt gepast. Buiten de Mac App Store noteert pikapik ook of je vanuit Instellingen onze GitHub-pagina hebt geopend. Deze aantallen, de datum van elke onderscheiding en wat je huisdiertje draagt blijven op deze Mac. Er wordt niets ergens naartoe verstuurd en niets hiervan komt in het geëxporteerde instellingenbestand of in de iCloud-synchronisatie. Je kunt alles op elk moment wissen in Instellingen › Huisdiertje, en je huisdiertje begint opnieuw.
 
+**Apps verwijderen.** Open Instellingen › Apps verwijderen, kies een app uit de lijst of sleep er een op het plaatje, en pikapik toont alles wat die app op je Mac bewaart: de app zelf, de bewaarde gegevens, instellingen, tijdelijke bestanden, achtergrondhulpjes en meer, elk met de reden waarom het in de lijst staat. Bestanden die duidelijk bij de app horen zijn aangevinkt, bestanden die er misschien mee te maken hebben niet, en bestanden die ook andere apps gebruiken zijn gemarkeerd. Kies wat weg moet en klik op **Verplaats naar Prullenmand**. Er wordt niets definitief gewist: alles gaat naar de Prullenmand. Staat de app open, dan vraagt pikapik de app eerst om te stoppen, en hebben sommige bestanden een beheerder nodig, dan vraagt je Mac één keer om je wachtwoord.
+
+Bedacht je je? Klik op **Zet terug** en alles staat weer waar het stond, terwijl de achtergrondhulpjes opnieuw starten. De laatste tien verwijderingen blijven onder ‘Onlangs verwijderd’ staan zolang hun bestanden in de Prullenmand liggen. **App resetten** houdt de app en verwijdert alleen de bewaarde gegevens, instellingen en tijdelijke bestanden, wat kan helpen als een app raar doet. Apps die je zelf in de Prullenmand hebt gezet staan onder ‘In de Prullenmand’, samen met de bestanden die ze achterlieten, en ‘Resten van verwijderde apps’ vindt bestanden van apps die al weg zijn. De schakelaar ‘Bied opruimen aan als een app in de Prullenmand komt’ staat standaard uit, en er wordt niets verwijderd voordat jij kiest. Om alles te kunnen zien wat een app bewaart, heeft de pagina **Volledige schijftoegang** nodig. Deze tool zit niet in de versie uit de Mac App Store.
+
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
 Het symbool in de menubalk laat in één oogopslag de status zien: het pikapik-teken als de tools werken, hetzelfde teken maar bleek als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
@@ -295,6 +307,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.
 - **Finder**: nieuw bestand, kleinere kopie en omzetten, openen met Return, knippen met ⌘X en verwijderen met ⌫.
+- **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
 - **Games**: je lijst met games en de opties van de Gamemodus.
 - **Huisdiertje**: zet het aan of uit, laat het kletsen en met de bal spelen, kleed het aan en bekijk je onderscheidingen.
 - **Toestemmingen**: alle toestemmingen die pikapik gebruikt, elk met zijn status en één knop om ze toe te staan of uit te zetten. Een functie waarvoor een toestemming ontbreekt, ziet er half grijs uit; een klik erop opent deze pagina bij de juiste regel.

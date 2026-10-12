@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Apps entfernen ohne Sorge
+
+<sub>1.36.0 · 12. Oktober 2026</sub>
+
+Das neue Entfernen von Apps nimmt eine App mit allen Dateien weg und legt alles zurück, wenn du es dir anders überlegst.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Apps entfernen und such dir eine App aus oder zieh sie auf das Bild. pikapik zeigt alles, was die App auf deinem Mac aufbewahrt, und sagt dir bei jeder Datei, warum sie in der Liste steht. Dateien, die eindeutig zur App gehören, sind angehakt, solche, die nur vielleicht dazugehören, nicht. Klicke auf „In den Papierkorb legen“, und alles kommt in den Papierkorb, sodass nichts endgültig gelöscht wird.
+
+Doch anders überlegt? Klicke auf „Zurücklegen“, und alles ist wieder da, wo es war. Die letzten zehn Entfernungen warten unter „Zuletzt entfernt“, solange ihre Dateien noch im Papierkorb liegen. „App zurücksetzen“ behält die App und entfernt nur ihre gespeicherten Daten, Einstellungen und temporären Dateien, falls sie spinnt.
+
+Eine App selbst in den Papierkorb gelegt? Die Seite listet solche Apps samt den Dateien auf, die sie hinterlassen haben, und wenn du einen Schalter einschaltest, bietet pikapik jedes Mal an aufzuräumen, sobald eine App in den Papierkorb kommt. Nichts wird entfernt, bevor du wählst. Damit die Seite alles sehen kann, braucht sie den Festplattenvollzugriff.
+
+---
+
 ## <a id="v1.35.0"></a>Zieh dein Haustier an
 
 <sub>1.35.0 · 12. Oktober 2026</sub>

@@ -180,6 +180,14 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Usuwanie aplikacji</b>
+<br>Usuń aplikację z plikami. Wszystko można przywrócić.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów
@@ -253,6 +261,10 @@ Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzy
 
 Żeby wiedzieć, kiedy należy się nagroda, pikapik liczy tylko to, co robicie ty i zwierzak: kroki, ile razy go podnosisz i rzucasz, skoki, wspinaczki, zabawy piłką i rozmowy, wspólne dni, czy byliście razem wcześnie rano, po północy albo w weekend, które strony ustawień otwierasz i co przymierzasz. Poza Mac App Store pikapik zapisuje też, czy z Ustawień otwarto naszą stronę na GitHubie. Te liczby, data każdej nagrody i to, w co zwierzak jest ubrany, zostają na tym Macu. Nic nie jest nigdzie wysyłane i nic z tego nie trafia do wyeksportowanego pliku ustawień ani do synchronizacji przez iCloud. Wszystko możesz w każdej chwili wymazać w Ustawieniach › Zwierzak, a zwierzak zacznie od zera.
 
+**Usuwanie aplikacji.** Otwórz Ustawienia › Usuwanie aplikacji, wybierz aplikację z listy albo upuść ją na obrazek, a pikapik pokaże wszystko, co ta aplikacja trzyma na twoim Macu: samą aplikację, jej zapisane dane, ustawienia, pliki tymczasowe, pomocników w tle i nie tylko, każdą pozycję z powodem, dla którego jest na liście. Pliki, które wyraźnie należą do aplikacji, są zaznaczone, te tylko możliwe powiązane nie są, a pliki używane także przez inne aplikacje mają oznaczenie. Wybierz, co usunąć, i kliknij **Przenieś do Kosza**. Nic nie jest kasowane na zawsze: wszystko trafia do Kosza. Jeśli aplikacja jest otwarta, pikapik najpierw prosi ją o zamknięcie, a jeśli jakieś pliki wymagają administratora, Mac zapyta o hasło tylko raz.
+
+Jeśli zmienisz zdanie, kliknij **Przywróć**: wszystko wróci na swoje miejsce, a pomocnicy w tle znów ruszą. Ostatnie dziesięć usunięć czeka w sekcji „Ostatnio usunięte”, dopóki ich pliki są w Koszu. **Zresetuj aplikację** zostawia aplikację i usuwa tylko jej zapisane dane, ustawienia i pliki tymczasowe, co może pomóc, gdy aplikacja szwankuje. Aplikacje przeniesione przez ciebie do Kosza pojawiają się w sekcji „W Koszu” razem z plikami, które po sobie zostawiły, a sekcja „Pozostałości po usuniętych aplikacjach” znajduje pliki aplikacji, których już nie ma. Przełącznik „Proponuj sprzątanie, gdy aplikacja trafi do Kosza” jest domyślnie wyłączony i nic nie jest usuwane, dopóki nie wybierzesz. Żeby zobaczyć wszystko, co trzyma aplikacja, strona potrzebuje uprawnienia **Pełny dostęp do dysku**. Tego narzędzia nie ma w wersji z Mac App Store.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
@@ -295,6 +307,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
 - **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
+- **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.
 - **Zwierzak**: włączanie i wyłączanie, rozmowy i piłka, garderoba i nagrody.
 - **Uprawnienia**: wszystkie uprawnienia, których używa pikapik, każde z własnym stanem i przyciskiem do zezwolenia lub wyłączenia. Narzędzie, któremu brakuje uprawnienia, wygląda na wyszarzone, a kliknięcie go otwiera tę stronę przy właściwym wierszu.
