@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mus och styrplatta i spel
 
-<sub>1.34.0 · 11 oktober 2026</sub>
+<sub>1.34.0 · 12 oktober 2026</sub>
 
 Svep, nyp och aktiva hörn tar dig inte längre ut ur spelet, precis som kortkommandon.
 

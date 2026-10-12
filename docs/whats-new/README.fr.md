@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Souris et trackpad dans les jeux
 
-<sub>1.34.0 · 11 octobre 2026</sub>
+<sub>1.34.0 · 12 octobre 2026</sub>
 
 Les balayages, les pincements et les coins actifs ne vous sortent plus du jeu, comme les raccourcis clavier.
 

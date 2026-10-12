@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Maus und Trackpad in Spielen
 
-<sub>1.34.0 · 11. Oktober 2026</sub>
+<sub>1.34.0 · 12. Oktober 2026</sub>
 
 Wischgesten, Zusammenziehen der Finger und aktive Ecken holen dich jetzt nicht mehr aus dem Spiel, genau wie Tastaturkurzbefehle.
 

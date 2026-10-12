@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mouse dan trackpad di dalam game
 
-<sub>1.34.0 · 11 Oktober 2026</sub>
+<sub>1.34.0 · 12 Oktober 2026</sub>
 
 Gesekan, cubitan, dan sudut aktif kini tidak lagi mengeluarkan Anda dari game, seperti pintasan keyboard.
 

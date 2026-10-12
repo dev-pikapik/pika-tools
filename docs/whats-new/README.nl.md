@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Muis en trackpad in games
 
-<sub>1.34.0 · 11 oktober 2026</sub>
+<sub>1.34.0 · 12 oktober 2026</sub>
 
 Vegen, knijpen en actieve hoeken halen je niet meer uit je game, net als toetscombinaties.
 
