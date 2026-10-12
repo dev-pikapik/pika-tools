@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.2"></a>與 App Store 版本並存時，更新更安全
+
+<sub>1.38.2 · 2026年10月12日</sub>
+
+如果 Mac 上同時有來自 App Store 的 pikapik，GitHub 版本現在會在原位置更新，不會動到 App Store 版本。
+
+先前，如果 GitHub 版本仍使用舊名稱 pika-tools，而且不是透過 Homebrew 安裝，更新就不會安裝，而是會打開 App Store 版本，pikapik 的「登入時打開」也會被關閉。
+
+---
+
 ## <a id="v1.38.1"></a>更穩定的 Finder 選單
 
 <sub>1.38.1 · 2026年10月12日</sub>

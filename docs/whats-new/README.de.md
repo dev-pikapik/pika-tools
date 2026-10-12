@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.2"></a>Sichere Updates neben der Version aus dem App Store
+
+<sub>1.38.2 · 12. Oktober 2026</sub>
+
+Hast du pikapik auch aus dem App Store auf deinem Mac, wird die GitHub-Version jetzt an Ort und Stelle aktualisiert und die Version aus dem App Store bleibt unangetastet.
+
+Früher wurde das Update nicht installiert, wenn die GitHub-Version noch ihren alten Namen pika-tools trug und nicht mit Homebrew installiert war. Stattdessen öffnete sich die Version aus dem App Store, und das Öffnen von pikapik beim Anmelden wurde ausgeschaltet.
+
+---
+
 ## <a id="v1.38.1"></a>Ein verlässlicheres Finder-Menü
 
 <sub>1.38.1 · 12. Oktober 2026</sub>

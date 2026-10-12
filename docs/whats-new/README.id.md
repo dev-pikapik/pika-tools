@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.2"></a>Pembaruan lebih aman di samping versi App Store
+
+<sub>1.38.2 · 12 Oktober 2026</sub>
+
+Jika pikapik dari App Store juga ada di Mac Anda, versi GitHub kini diperbarui di tempatnya dan tidak menyentuh versi App Store.
+
+Sebelumnya, jika versi GitHub masih memakai nama lamanya, pika-tools, dan tidak dipasang lewat Homebrew, pembaruan tidak terpasang, versi App Store terbuka sebagai gantinya, dan pembukaan pikapik saat login dimatikan.
+
+---
+
 ## <a id="v1.38.1"></a>Menu Finder yang lebih andal
 
 <sub>1.38.1 · 12 Oktober 2026</sub>
