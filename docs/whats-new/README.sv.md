@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>FPS-etiketten hänger med i ditt spel
+
+<sub>1.37.1 · 12 oktober 2026</sub>
+
+Flytta spelfönstret, så följer FPS-etiketten nu med direkt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Tidigare kom etiketten ikapp ett fönster i rörelse bara ungefär en gång i sekunden och släpade därför efter. Nu kontrollerar den fönstret vid varje bildruta på skärmen och ligger högst några tusendels sekund efter. När fönstret står still kontrollerar den mer sällan, så den belastar knappt din Mac medan du spelar. Den hoppar inte heller iväg längre när en del av fönstret hamnar utanför skärmkanten.
+
+Om ett lugnt spel som schack visar 0 är allt som det ska: sådana spel ritar en ny bild bara när något rör sig. Siffran stiger medan en pjäs glider och sjunker tillbaka till 0 när brädet står still.
+
+---
+
 ## <a id="v1.37.0"></a>Se hur smidigt ditt spel går
 
 <sub>1.37.0 · 12 oktober 2026</sub>

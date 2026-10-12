@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Cho biết trò chơi chạy mượt đến đâu";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây. Một số trò chơi, chủ yếu là các trò cũ, chỉ có thể được đếm qua tính năng ghi màn hình, và khi đó con số không thể cao hơn tần số làm tươi của màn hình.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây. Con số được đếm qua tính năng ghi màn hình, nên không thể cao hơn tần số làm tươi của màn hình.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Các trò chơi tĩnh như cờ vua chỉ vẽ hình mới khi có thứ gì đó chuyển động, nên 0 là bình thường với chúng.";
 "Corner for FPS" = "Góc hiện FPS";
 "Top left corner" = "Góc trên bên trái";
 "Top right corner" = "Góc trên bên phải";

@@ -409,27 +409,33 @@ final class GameModeTool: Tool {
         FrameRateCorner(rawValue: UserDefaults.standard.string(forKey: frameRateCornerKey) ?? "") ?? .standard
     }
 
-    static func window(of pid: pid_t) -> CGRect? {
+    static func window(of pid: pid_t) -> (id: CGWindowID, frame: CGRect)? {
         let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-        let windows = list.compactMap { info -> CGRect? in
+        let windows = list.compactMap { info -> (id: CGWindowID, frame: CGRect)? in
             guard info[kCGWindowOwnerPID as String] as? pid_t == pid,
                   info[kCGWindowLayer as String] as? Int == 0,
-                  let bounds = info[kCGWindowBounds as String] as? NSDictionary
+                  let id = info[kCGWindowNumber as String] as? CGWindowID,
+                  let bounds = info[kCGWindowBounds as String] as? NSDictionary,
+                  let frame = CGRect(dictionaryRepresentation: bounds)
             else { return nil }
-            return CGRect(dictionaryRepresentation: bounds)
+            return (id, frame)
         }
-        return windows.max(by: { $0.width * $0.height < $1.width * $1.height })
+        return windows.max(by: { $0.frame.width * $0.frame.height < $1.frame.width * $1.frame.height })
     }
 
-    static func display(at point: CGPoint) -> CGDirectDisplayID? {
-        var display = CGDirectDisplayID(0)
+    // The display that shows the largest part of the window, so a window half off the screen keeps its display.
+    static func display(of window: CGRect) -> CGDirectDisplayID? {
+        var displays = [CGDirectDisplayID](repeating: 0, count: 16)
         var count: UInt32 = 0
-        CGGetDisplaysWithPoint(point, 1, &display, &count)
-        return count > 0 ? display : nil
+        CGGetDisplaysWithRect(window, 16, &displays, &count)
+        return displays.prefix(Int(count)).max { a, b in
+            let x = CGDisplayBounds(a).intersection(window), y = CGDisplayBounds(b).intersection(window)
+            return x.width * x.height < y.width * y.height
+        }
     }
 
     private static func screen(of pid: pid_t) -> CGRect? {
-        guard let window = window(of: pid), let display = display(at: CGPoint(x: window.midX, y: window.midY)) else { return nil }
+        guard let window = window(of: pid)?.frame, let display = display(of: window) else { return nil }
         return CGDisplayBounds(display)
     }
 }

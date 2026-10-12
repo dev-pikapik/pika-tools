@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Eticheta FPS ține pasul cu jocul tău
+
+<sub>1.37.1 · 12 octombrie 2026</sub>
+
+Mută fereastra jocului, iar eticheta FPS se mișcă acum odată cu ea.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Înainte, eticheta se alinia cu o fereastră în mișcare doar cam o dată pe secundă, așa că rămânea în urmă. Acum verifică fereastra la fiecare cadru al ecranului și nu întârzie niciodată mai mult de câteva miimi de secundă. Când fereastra stă pe loc, verifică mai rar, deci aproape nu-ți solicită Mac-ul cât joci. În plus, nu mai sare în alt loc când o parte din fereastră trece de marginea ecranului.
+
+Dacă un joc liniștit, precum șahul, arată 0, totul e în regulă: astfel de jocuri desenează o imagine nouă doar când se mișcă ceva. Numărul crește cât timp o piesă alunecă și revine la 0 când tabla stă nemișcată.
+
+---
+
 ## <a id="v1.37.0"></a>Vezi cât de fluid rulează jocul
 
 <sub>1.37.0 · 12 octombrie 2026</sub>

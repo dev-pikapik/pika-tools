@@ -2,6 +2,13 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.37.1] - Unreleased
+
+### Fixed
+- Games: the FPS label now moves together with the game window. It used to catch up with a moving window only once a second, so it trailed far behind while you dragged the window; now it checks the window on every frame of the screen and keeps up within a few thousandths of a second. Once the window has stood still for half a second, it checks 30 times a second, so it costs almost nothing while you play.
+- Games: the FPS label no longer jumps to a corner of the main screen when more than half of the game window is past the edge of the screen. It stays with the window on the display that shows the largest part of it, and Game Mode now picks that same display when it keeps the pointer from slipping onto another screen.
+- Games: the help for Show FPS now explains that calm games like chess draw a new picture only when something moves, so a 0 there is normal.
+
 ## [1.37.0] - 2026-10-12
 
 ### Added

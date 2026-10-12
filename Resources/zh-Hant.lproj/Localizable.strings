@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "顯示遊戲執行得有多流暢";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS 是每秒影格數，也就是遊戲每秒繪製的畫面數。少數遊戲（多為較舊的遊戲）只能透過螢幕錄製來計數，此時數值不會超過螢幕的更新率。";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS 是每秒影格數，也就是遊戲每秒繪製的畫面數。它透過螢幕錄製來計數，因此數值不會超過螢幕的更新率。";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "像西洋棋這樣的安靜遊戲只在有東西移動時才繪製新畫面，所以顯示 0 是正常的。";
 "Corner for FPS" = "顯示 FPS 的角落";
 "Top left corner" = "左上角";
 "Top right corner" = "右上角";

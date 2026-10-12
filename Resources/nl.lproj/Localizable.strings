@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Toont hoe soepel de game loopt";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent. Een paar games, meestal oudere, kunnen alleen via schermopname worden geteld, en dan kan het getal niet hoger zijn dan de verversingssnelheid van het scherm.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent. Het wordt geteld via schermopname, dus het getal kan niet hoger zijn dan de verversingssnelheid van het scherm.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Rustige games zoals schaken tekenen alleen een nieuw beeld als er iets beweegt, dus 0 is bij hen normaal.";
 "Corner for FPS" = "Hoek voor FPS";
 "Top left corner" = "Hoek linksboven";
 "Top right corner" = "Hoek rechtsboven";

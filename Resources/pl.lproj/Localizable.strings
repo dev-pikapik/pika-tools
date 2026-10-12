@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Pokazuje, jak płynnie działa gra";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Niektóre gry, głównie starsze, można policzyć tylko przez nagrywanie ekranu, a wtedy liczba nie może być wyższa niż częstotliwość odświeżania ekranu.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Są liczone przez nagrywanie ekranu, więc liczba nie może być wyższa niż częstotliwość odświeżania ekranu.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Spokojne gry, takie jak szachy, rysują nowy obraz tylko wtedy, gdy coś się porusza, więc 0 jest u nich normalne.";
 "Corner for FPS" = "Róg dla FPS";
 "Top left corner" = "Lewy górny róg";
 "Top right corner" = "Prawy górny róg";

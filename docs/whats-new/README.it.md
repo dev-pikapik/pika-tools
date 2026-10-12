@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>L’etichetta FPS segue il tuo gioco senza ritardi
+
+<sub>1.37.1 · 12 ottobre 2026</sub>
+
+Sposta la finestra del gioco e ora l’etichetta FPS la segue all’istante.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Prima l’etichetta raggiungeva una finestra in movimento solo circa una volta al secondo, e così restava indietro. Ora controlla la finestra a ogni fotogramma dello schermo e non è mai in ritardo di più di qualche millesimo di secondo. Quando la finestra è ferma, la controlla meno spesso, così pesa pochissimo sul tuo Mac mentre giochi. Inoltre non salta più altrove quando parte della finestra esce dal bordo dello schermo.
+
+Se un gioco tranquillo come gli scacchi mostra 0, va tutto bene: questi giochi disegnano una nuova immagine solo quando qualcosa si muove. Il numero sale mentre un pezzo scivola e torna a 0 quando la scacchiera è ferma.
+
+---
+
 ## <a id="v1.37.0"></a>Guarda quanto scorre bene il tuo gioco
 
 <sub>1.37.0 · 12 ottobre 2026</sub>

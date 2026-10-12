@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Nhãn FPS giờ bám sát trò chơi của bạn
+
+<sub>1.37.1 · 12 tháng 10 năm 2026</sub>
+
+Khi bạn kéo cửa sổ trò chơi, nhãn FPS sẽ di chuyển ngay cùng với nó.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Trước đây, nhãn chỉ đuổi kịp cửa sổ đang di chuyển khoảng một lần mỗi giây nên bị tụt lại phía sau. Giờ đây, nhãn kiểm tra cửa sổ ở mỗi khung hình của màn hình và chỉ chậm hơn tối đa vài phần nghìn giây. Khi cửa sổ đứng yên, nhãn kiểm tra thưa hơn, nên hầu như không làm nặng máy Mac khi bạn chơi. Nhãn cũng không còn nhảy sang chỗ khác khi một phần cửa sổ vượt ra ngoài mép màn hình.
+
+Nếu một trò chơi tĩnh như cờ vua hiển thị 0 thì không có gì bất thường: những trò chơi như vậy chỉ vẽ hình mới khi có thứ gì đó chuyển động. Con số tăng lên khi một quân cờ trượt đi và trở về 0 khi bàn cờ đứng yên.
+
+---
+
 ## <a id="v1.37.0"></a>Xem trò chơi chạy mượt đến đâu
 
 <sub>1.37.0 · 12 tháng 10 năm 2026</sub>

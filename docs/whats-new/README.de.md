@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Die FPS-Anzeige hält mit deinem Spiel Schritt
+
+<sub>1.37.1 · 12. Oktober 2026</sub>
+
+Verschiebe das Spielfenster, und die FPS-Anzeige wandert jetzt direkt mit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Bisher holte die Anzeige ein bewegtes Fenster nur etwa einmal pro Sekunde ein und hinkte deshalb hinterher. Jetzt prüft sie das Fenster bei jedem neuen Bild auf dem Bildschirm und liegt höchstens ein paar Tausendstelsekunden zurück. Steht das Fenster still, prüft sie seltener, sodass sie deinen Mac beim Spielen kaum belastet. Außerdem springt sie nicht mehr weg, wenn ein Teil des Fensters über den Bildschirmrand hinausragt.
+
+Zeigt ein ruhiges Spiel wie Schach 0 an, ist alles in Ordnung: Solche Spiele zeichnen nur dann ein neues Bild, wenn sich etwas bewegt. Die Zahl steigt, während eine Figur gleitet, und fällt wieder auf 0, sobald das Brett ruht.
+
+---
+
 ## <a id="v1.37.0"></a>Sieh, wie flüssig dein Spiel läuft
 
 <sub>1.37.0 · 12. Oktober 2026</sub>

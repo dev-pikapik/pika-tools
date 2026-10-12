@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Menampilkan seberapa mulus game berjalan";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik. Beberapa game, kebanyakan yang lama, hanya bisa dihitung lewat perekaman layar, dan saat itu angkanya tidak bisa melebihi kecepatan refresh layar.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik. Angkanya dihitung lewat perekaman layar, jadi tidak bisa melebihi kecepatan refresh layar.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Game yang tenang seperti catur hanya menggambar gambar baru saat ada yang bergerak, jadi angka 0 itu normal.";
 "Corner for FPS" = "Sudut untuk FPS";
 "Top left corner" = "Sudut kiri atas";
 "Top right corner" = "Sudut kanan atas";
