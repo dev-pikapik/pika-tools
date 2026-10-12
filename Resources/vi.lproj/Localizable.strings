@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "trang phục, hóa trang, pháp sư, cướp biển, phi hành gia, siêu anh hùng, cao bồi, nàng tiên, vua, quý ông, nhà khoa học, thám tử";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "huy chương, thành tích, cúp, huy hiệu, phần thưởng, tiến trình, mở khóa, đã nhận";
 "reset, delete, clear, start over, privacy" = "đặt lại, xóa, dọn sạch, bắt đầu lại, quyền riêng tư";
+"Show FPS" = "Hiện FPS";
+"Shows how smoothly the game runs" = "Cho biết trò chơi chạy mượt đến đâu";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây. Các trò chơi cũ được đếm qua tính năng ghi màn hình, nên con số của chúng không thể cao hơn tần số làm tươi của màn hình.";
+"Corner for FPS" = "Góc hiện FPS";
+"Top left corner" = "Góc trên bên trái";
+"Top right corner" = "Góc trên bên phải";
+"Bottom left corner" = "Góc dưới bên trái";
+"Bottom right corner" = "Góc dưới bên phải";
+"Only for older games" = "Chỉ cho trò chơi cũ";
+"Needed to count frames" = "Cần để đếm khung hình";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "tốc độ khung hình, khung hình mỗi giây, bộ đếm, hiệu năng, giật, ghi màn hình";

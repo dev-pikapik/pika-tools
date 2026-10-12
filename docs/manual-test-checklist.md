@@ -23,6 +23,9 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 ## Game Mode
 - Turn on, start a game. Expected: Cmd+Space and Cmd+` are swallowed while playing; the rules list shows only shortcuts that exist on this Mac.
 - Quit the game, lock the screen mid-game. Expected: shortcuts work again at once; Dock corners and hiding are untouched in this build.
+- Settings > Games > Show FPS, turn on without Screen Recording. Expected: the Screen Recording prompt appears right then, never later during a game; a Screen Recording row with "Needed to count frames" shows under the switch until it is allowed (if macOS asks to reopen pikapik, do that) and then disappears. Deny it: the pill shows a dimmed "—", with no crash and no further prompts.
+- Start a game with Show FPS on. Expected: a small pill with a dash appears in the chosen corner of the game window (top corners sit below its title bar), then shows the frame rate; a game drawing 30 frames a second shows about 30, a frozen picture shows a dimmed 0, and no number goes above the screen's refresh rate. Quit the game: the pill fades out at once.
+- Click each corner of the picture under Show FPS, then turn the switch off and on again while the game runs. Expected: the pill in the picture and the one over the game move to the corner at once, hovering a corner shows its name, off fades the pill out and on brings it back without restarting the game. With Reduce Motion on, the pill appears and goes without fading. Repeat with a native fullscreen game and a game on a second display: the pill shows in the chosen corner of that display.
 
 ## Speed Test
 - Run a full test (about 20 s). Expected: ping, download, upload fill in, then a result. Cancel mid-way: returns to idle, next run works. Turn Wi-Fi off and run: "offline" message.

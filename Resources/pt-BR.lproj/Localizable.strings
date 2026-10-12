@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "traje, fantasia, mago, pirata, astronauta, super-herói, cowboy, fada, rei, cavalheiro, cientista, detetive";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medalhas, conquistas, troféus, emblemas, recompensas, progresso, desbloquear, ganho";
 "reset, delete, clear, start over, privacy" = "redefinir, apagar, limpar, recomeçar, privacidade";
+"Show FPS" = "Mostrar FPS";
+"Shows how smoothly the game runs" = "Mostra o quanto o jogo roda com fluidez";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS significa quadros por segundo: quantas imagens o jogo desenha a cada segundo. Os jogos mais antigos são contados pela gravação de tela, então o número deles não pode passar da taxa de atualização da tela.";
+"Corner for FPS" = "Canto para o FPS";
+"Top left corner" = "Canto superior esquerdo";
+"Top right corner" = "Canto superior direito";
+"Bottom left corner" = "Canto inferior esquerdo";
+"Bottom right corner" = "Canto inferior direito";
+"Only for older games" = "Só para jogos mais antigos";
+"Needed to count frames" = "Necessário para contar os quadros";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "taxa de quadros, quadros por segundo, contador, desempenho, lag, gravação de tela";

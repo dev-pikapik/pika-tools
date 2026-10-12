@@ -200,6 +200,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "The pointer stays in the game"), synonyms: "mouse, cursor, Dock, menu bar, hot corners, edges, second display"),
             SettingsItem(tab: .games, title: String(localized: "The screen stays on")),
             SettingsItem(tab: .games, title: String(localized: "Your games")),
+            SettingsItem(tab: .games, title: String(localized: "Show FPS"), synonyms: "frame rate, frames per second, counter, performance, lag, screen recording"),
+            SettingsItem(tab: .games, title: String(localized: "Corner for FPS")),
             SettingsItem(tab: .games, title: String(localized: "System keyboard shortcuts")),
             SettingsItem(tab: .games, title: String(localized: "Game safeguards")),
             SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),

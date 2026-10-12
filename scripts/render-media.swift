@@ -3,6 +3,7 @@ import SwiftUI
 
 func AXIsProcessTrusted() -> Bool { true }
 func CGPreflightListenEventAccess() -> Bool { true }
+func CGPreflightScreenCaptureAccess() -> Bool { true }
 
 @main
 @MainActor

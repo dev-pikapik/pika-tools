@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "زي، تنكر، ساحر، قرصان، رائد فضاء، بطل خارق، راعي بقر، جنية، ملك، رجل نبيل، عالِم، محقق";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "ميداليات، إنجازات، كؤوس، شارات، مكافآت، تقدم، فتح، مكتسبة";
 "reset, delete, clear, start over, privacy" = "إعادة ضبط، حذف، مسح، بدء من جديد، خصوصية";
+"Show FPS" = "إظهار FPS";
+"Shows how smoothly the game runs" = "يعرض مدى سلاسة تشغيل اللعبة";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS تعني عدد الإطارات في الثانية: كم صورة ترسمها اللعبة كل ثانية. تُحسب الألعاب الأقدم عبر تسجيل الشاشة، لذا لا يمكن أن يتجاوز رقمها معدل تحديث الشاشة.";
+"Corner for FPS" = "زاوية عرض FPS";
+"Top left corner" = "الزاوية العلوية اليسرى";
+"Top right corner" = "الزاوية العلوية اليمنى";
+"Bottom left corner" = "الزاوية السفلية اليسرى";
+"Bottom right corner" = "الزاوية السفلية اليمنى";
+"Only for older games" = "للألعاب الأقدم فقط";
+"Needed to count frames" = "مطلوب لحساب الإطارات";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "معدل الإطارات, إطارات في الثانية, عدّاد, الأداء, تأخر, تسجيل الشاشة";

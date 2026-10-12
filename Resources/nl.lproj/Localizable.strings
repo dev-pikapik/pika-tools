@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "outfit, kostuum, tovenaar, piraat, astronaut, superheld, cowboy, fee, koning, gentleman, wetenschapper, detective";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medailles, prestaties, trofeeën, badges, beloningen, voortgang, ontgrendelen, behaald";
 "reset, delete, clear, start over, privacy" = "resetten, verwijderen, wissen, opnieuw beginnen, privacy";
+"Show FPS" = "FPS tonen";
+"Shows how smoothly the game runs" = "Toont hoe soepel de game loopt";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent. Oudere games worden geteld via schermopname, dus hun getal kan niet hoger zijn dan de verversingssnelheid van het scherm.";
+"Corner for FPS" = "Hoek voor FPS";
+"Top left corner" = "Hoek linksboven";
+"Top right corner" = "Hoek rechtsboven";
+"Bottom left corner" = "Hoek linksonder";
+"Bottom right corner" = "Hoek rechtsonder";
+"Only for older games" = "Alleen voor oudere games";
+"Needed to count frames" = "Nodig om beelden te tellen";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "framerate, beelden per seconde, teller, prestaties, lag, schermopname";
