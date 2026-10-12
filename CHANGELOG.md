@@ -2,7 +2,7 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.35.0] - Unreleased
+## [1.35.0] - 2026-10-12
 
 ### Added
 - Your pet now has a wardrobe. Settings › Pet shows 38 things to wear in seven groups: hats, face, neckwear, tops, bottoms, shoes and extras such as a cape, a balloon or wings. Each thing has a rank from Common to Legendary. Six are free from the start (a cap, sunglasses, a bow tie, a T-shirt, jeans and sneakers) and the rest are unlocked by awards. Click a thing to put it on your pet or take it off, or choose Take Everything Off. What your pet wears is kept between launches.
@@ -686,6 +686,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.35.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.35.0
 [1.34.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.34.0
 [1.33.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.33.2
 [1.33.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.33.1
