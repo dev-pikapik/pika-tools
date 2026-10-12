@@ -192,6 +192,14 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br>Un petit compteur indique la fluidité de votre jeu, dans le coin que vous choisissez.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archives</b>
+<br>Ouvrez les RAR et d’autres archives, ou regroupez des fichiers dans un ZIP, d’un clic droit.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## En savoir plus
@@ -250,6 +258,12 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 **Copie allégée dans le Finder.** Clic droit sur un fichier dans le Finder, puis **Créer une copie allégée**. Une version plus légère d’une photo, d’un GIF, d’un PDF ou d’une vidéo apparaît juste à côté, souvent plusieurs fois plus petite. Le son non compressé, comme WAV ou AIFF, devient un M4A compact. Si le fichier ne peut pas être plus léger, aucune copie n’est créée et pikapik vous le dit. L’original reste intact, et rien ne quitte votre Mac. Désactivé par défaut.
 
 **Conversion dans le Finder.** Clic droit sur un fichier dans le Finder, puis **Convertir en** pour l’enregistrer dans un autre format : une image en JPEG, PNG, HEIC, GIF, TIFF ou PDF, une vidéo en MP4, MOV ou seulement le son, de la musique en M4A, WAV ou AIFF. L’original reste intact, et rien ne quitte votre Mac. S’active séparément de la copie allégée. Désactivé par défaut.
+
+**Archives dans le Finder.** Clic droit sur une archive dans le Finder, puis **Extraire** : ses fichiers apparaissent à côté. Clic droit sur tout autre fichier ou dossier, puis **Créer une archive…** pour obtenir un ZIP, un 7Z, un TAR.GZ ou un TAR.XZ. Un ZIP ou un 7Z peut avoir un mot de passe, et toute archive peut être divisée en parties, par exemple de 15 Mo pour l’e-mail ou de 4 Go pour une clé USB. Un ZIP créé ainsi ne contient aucun fichier système caché, garde lisibles les noms dans toutes les langues et accepte les fichiers de plus de 4 Go. Désactivé par défaut. Absent de la version du Mac App Store.
+
+pikapik ouvre aussi ce que macOS ne sait pas ouvrir : les RAR, même répartis en plusieurs parties, les 7Z protégés par mot de passe, les jeux de parties comme .001, .z01, .r00 et .part1.rar, ainsi que les ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM et bien d’autres. Un double-clic les ouvre dans pikapik. Les noms de fichiers des anciens ZIP, par exemple en cyrillique, en japonais ou en chinois, s’affichent correctement. L’interrupteur **Ouvrir les archives avec cette app**, dans Réglages › Finder, confie aussi les ZIP et les 7Z à pikapik, tandis que les TAR et les GZ restent à l’app d’archives intégrée, qui s’en occupe déjà très bien. pikapik sait ouvrir le RAR, mais pas le créer : la licence du RAR n’autorise que l’extraction.
+
+Une fenêtre demande le mot de passe, **Arrêter** interrompt n’importe quelle tâche, et d’une archive endommagée ou incomplète, pikapik récupère ce qui est encore lisible. Si une archive gonflait jusqu’à une taille énorme, pikapik vous demande confirmation avant de l’extraire, et il s’arrête à temps quand le disque est sur le point d’être plein. Les archives qui tentent d’écrire en dehors de leur propre dossier sont bloquées. Sélectionnez une archive dans le Finder et appuyez sur Espace pour voir ce qu’elle contient.
 
 **Mode Jeu.** Ajoutez vos jeux, et pendant que vous jouez, votre Mac ne vous fait pas sortir du jeu. Spotlight, Siri, ⌘Tab, Mission Control et les balayages entre bureaux ne s’ouvrent pas par-dessus le jeu, ⌘Q et ⌘W ne le ferment pas par accident, le pointeur ne glisse pas vers le Dock, la barre des menus ou un autre écran, et l’écran reste allumé. Chacun de ces réglages a son propre interrupteur sur la page Jeux, et pikapik vous propose les jeux qu’il trouve sur votre Mac. Dans un jeu, Contrôle-clic reste un simple clic, et Contrôle avec les flèches ne change pas de bureau. Minecraft est reconnu aussi : ajoutez Minecraft Launcher ou CurseForge, et le mode s’active dans Minecraft lui-même. Pour quitter un jeu, appuyez sur ⇧⌘Q ; pour fermer sa fenêtre, sur ⇧⌘W. ⌥⌘Esc fonctionne toujours. Dès que vous quittez le jeu, tout fonctionne comme d’habitude. Désactivé par défaut.
 
@@ -312,7 +326,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : masquer d’un clic dans le Dock.
-- **Finder** : nouveau fichier, copie allégée et conversion, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
+- **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
 - **Compagnon** : l’activer ou le désactiver, le laisser bavarder et jouer au ballon, l’habiller et voir vos récompenses.

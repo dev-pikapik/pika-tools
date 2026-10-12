@@ -192,6 +192,14 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br>Một bộ đếm nhỏ ở góc bạn chọn cho biết trò chơi chạy mượt đến đâu.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Tệp lưu trữ</b>
+<br>Giải nén RAR và các tệp lưu trữ khác, hoặc gói tệp thành ZIP, chỉ bằng một cú bấm chuột phải.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Chi tiết
@@ -250,6 +258,12 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 **Bản sao nhỏ hơn trong Finder.** Bấm chuột phải vào tệp trong Finder và chọn **Tạo bản sao nhỏ hơn**. Một bản nhẹ hơn của ảnh, GIF, PDF hoặc video được lưu ngay bên cạnh, thường nhỏ hơn nhiều lần. Âm thanh chưa nén như WAV hoặc AIFF sẽ thành tệp M4A gọn nhẹ. Nếu tệp không thể nhỏ hơn nữa, sẽ không có bản sao nào và pikapik sẽ báo cho bạn. Tệp gốc vẫn giữ nguyên và không có gì rời khỏi máy Mac của bạn. Mặc định tắt.
 
 **Chuyển đổi trong Finder.** Bấm chuột phải vào tệp trong Finder và chọn **Chuyển sang** để lưu tệp ở định dạng khác: ảnh thành JPEG, PNG, HEIC, GIF, TIFF hoặc PDF, video thành MP4, MOV hoặc chỉ lấy âm thanh, nhạc thành M4A, WAV hoặc AIFF. Tệp gốc vẫn giữ nguyên và không có gì rời khỏi máy Mac của bạn. Bật riêng với bản sao nhỏ hơn. Mặc định tắt.
+
+**Tệp lưu trữ trong Finder.** Bấm chuột phải vào một tệp lưu trữ trong Finder và chọn **Giải nén**, các tệp của nó sẽ hiện ra ngay bên cạnh. Bấm chuột phải vào tệp hoặc thư mục khác và chọn **Tạo tệp lưu trữ…** để tạo ZIP, 7Z, TAR.GZ hoặc TAR.XZ. ZIP và 7Z có thể đặt mật khẩu, và tệp lưu trữ nào cũng có thể chia thành nhiều phần, chẳng hạn mỗi phần 15 MB để gửi email hoặc 4 GB cho ổ USB. ZIP tạo theo cách này không chứa các tệp ẩn do hệ thống thêm vào, giữ cho tên tệp ở mọi ngôn ngữ vẫn đọc được và xử lý được cả tệp lớn hơn 4 GB. Mặc định tắt. Không có trong phiên bản Mac App Store.
+
+pikapik cũng mở được những gì macOS không mở được: RAR, kể cả khi chia thành nhiều phần, 7Z khóa bằng mật khẩu, các bộ nhiều phần như .001, .z01, .r00 và .part1.rar, cùng ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM và nhiều loại khác. Bấm đúp là mở trong pikapik. Tên tệp trong các ZIP cũ, chẳng hạn bằng chữ Kirin, tiếng Nhật hay tiếng Trung, hiện ra đọc được. Công tắc **Mở tệp lưu trữ bằng ứng dụng này** trong Cài đặt › Finder cũng giao ZIP và 7Z cho pikapik, còn TAR và GZ vẫn thuộc về ứng dụng lưu trữ có sẵn, vốn đã xử lý chúng tốt. pikapik giải nén được RAR nhưng không tạo được RAR: giấy phép RAR chỉ cho phép giải nén.
+
+Một cửa sổ sẽ hỏi mật khẩu, **Dừng** hủy bất kỳ tác vụ nào, và từ tệp lưu trữ bị hỏng hoặc chưa đầy đủ, pikapik lấy ra những gì vẫn còn đọc được. pikapik hỏi trước khi giải nén một tệp lưu trữ sẽ phình ra kích thước khổng lồ, dừng đúng lúc nếu ổ đĩa sắp đầy, và chặn những tệp lưu trữ cố ghi ra ngoài thư mục của chính chúng. Chọn một tệp lưu trữ trong Finder rồi nhấn phím cách để xem bên trong có gì.
 
 **Chế độ trò chơi.** Thêm trò chơi của bạn, và trong lúc bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi. Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi, ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ không trượt sang Dock, thanh menu hay màn hình khác, và màn hình luôn sáng. Mỗi mục có công tắc riêng trên trang Trò chơi, và pikapik gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Trong trò chơi, Control-bấm vẫn là một cú bấm bình thường, còn Control với phím mũi tên không đổi màn hình nền. Minecraft cũng được nhận ra: thêm Minecraft Launcher hoặc CurseForge, và chế độ sẽ bật ngay trong Minecraft. Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. Ngay khi bạn rời trò chơi, mọi thứ hoạt động như bình thường. Mặc định tắt.
 
@@ -312,7 +326,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.
-- **Finder**: tạo tệp mới, bản sao nhỏ hơn và chuyển định dạng, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
+- **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
 - **Gỡ ứng dụng**: gỡ một ứng dụng cùng các tệp của nó, đặt lại tất cả sau này và dọn những gì ứng dụng đã gỡ để lại.
 - **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.
 - **Thú cưng**: bật hoặc tắt thú cưng, cho nó trò chuyện và chơi bóng, chọn quần áo cho nó và xem giải thưởng của bạn.

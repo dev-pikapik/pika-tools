@@ -192,6 +192,14 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br>Küçük bir sayaç, seçtiğiniz köşede oyunun ne kadar akıcı çalıştığını gösterir.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Arşivler</b>
+<br>RAR ve diğer arşivleri açın ya da dosyaları sağ tıklamayla bir ZIP’e toplayın.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar
@@ -250,6 +258,12 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 **Finder’da Küçük Kopya.** Finder’da bir dosyaya sağ tıklayıp **Küçük Kopya Oluştur**’u seçin. Bir fotoğrafın, GIF’in, PDF’in veya videonun genellikle birkaç kat daha küçük bir sürümü hemen yanına kaydedilir. WAV veya AIFF gibi sıkıştırılmamış ses, kompakt bir M4A olur. Dosya daha fazla küçülemiyorsa kopya oluşturulmaz ve pikapik bunu size söyler. Orijinal olduğu gibi kalır ve hiçbir şey Mac’inizden çıkmaz. Varsayılan olarak kapalı.
 
 **Finder’da Dönüştürme.** Finder’da bir dosyaya sağ tıklayıp **Dönüştür**’ü seçin; dosya başka bir biçimde kaydedilir: resim JPEG, PNG, HEIC, GIF, TIFF veya PDF, video MP4, MOV ya da yalnızca ses, müzik M4A, WAV veya AIFF olarak. Orijinal olduğu gibi kalır ve hiçbir şey Mac’inizden çıkmaz. Küçük Kopya’dan ayrı açılıp kapanır. Varsayılan olarak kapalı.
+
+**Finder’da Arşivler.** Finder’da bir arşive sağ tıklayıp **Arşivden Çıkar**’ı seçin; dosyaları hemen yanında belirir. Başka bir dosyaya veya klasöre sağ tıklayıp **Arşiv Oluştur…** komutunu seçin; ZIP, 7Z, TAR.GZ veya TAR.XZ elde edersiniz. ZIP ve 7Z parolalı olabilir, her arşiv de parçalara bölünebilir; örneğin e-posta için 15 MB’lık, USB bellek için 4 GB’lık parçalar. Bu şekilde hazırlanan bir ZIP’te sistemin eklediği gizli dosyalar olmaz, her dildeki dosya adları okunur kalır ve 4 GB’tan büyük dosyalar da sorunsuz işlenir. Varsayılan olarak kapalı. Mac App Store sürümünde yok.
+
+pikapik, macOS’un açamadıklarını da açar: birkaç parçaya bölünmüş olsa bile RAR, parolayla korunan 7Z, .001, .z01, .r00 ve .part1.rar gibi parça kümeleri, ayrıca ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM ve daha fazlası. Çift tıklayınca pikapik’te açılırlar. Eski ZIP’lerdeki dosya adları, örneğin Kiril, Japonca veya Çince olanlar, okunur çıkar. Ayarlar › Finder’daki **Arşivleri bu uygulamayla aç** anahtarı ZIP ve 7Z’yi de pikapik’e verir; TAR ve GZ ise bunları zaten iyi işleyen yerleşik arşiv uygulamasında kalır. pikapik RAR’ı açabilir ama oluşturamaz: RAR lisansı yalnızca arşivden çıkarmaya izin verir.
+
+Bir pencere parolayı sorar, **Durdur** her işi iptal eder ve hasarlı ya da eksik bir arşivden pikapik hâlâ okunabilen her şeyi çıkarır. Devasa bir boyuta şişecek bir arşivi çıkarmadan önce sorar, disk dolacaksa zamanında durur ve kendi klasörünün dışına yazmaya çalışan arşivleri engeller. Finder’da bir arşivi seçip Boşluk tuşuna basarak içindekileri önizleyebilirsiniz.
 
 **Oyun Modu.** Oyunlarınızı ekleyin; siz oynarken Mac sizi oyundan koparmaz. Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz, ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç Dock’a, menü çubuğuna ya da başka bir ekrana kaymaz ve ekran açık kalır. Bunların her birinin Oyunlar sayfasında kendi anahtarı vardır; pikapik ayrıca Mac’inizde bulduğu oyunları önerir. Oyunda Control-tıklama normal bir tıklama olarak kalır, Control ile ok tuşları masaüstünü değiştirmez. Minecraft da tanınır: Minecraft Launcher’ı ya da CurseForge’u ekleyin, mod Minecraft’ın içinde açılır. Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. Oyundan çıktığınız anda her şey her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
@@ -312,7 +326,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
-- **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
+- **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
 - **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
 - **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.
 - **Evcil Dost**: açıp kapatma, sohbet ve top, gardırop ve ödüller.

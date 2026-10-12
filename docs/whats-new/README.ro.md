@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Deschide și creează arhive în Finder
+
+<sub>1.38.0 · 12 octombrie 2026</sub>
+
+Noul „Arhive în Finder” deschide RAR și alte arhive pe care macOS nu le poate deschide și creează ZIP și 7Z din meniul de clic dreapta.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Finder și pornește „Arhive în Finder”. Fă clic dreapta pe o arhivă și alege „Extrage”, iar fișierele ei apar alături. Fă clic dreapta pe orice alt fișier sau folder și alege „Creează arhivă…” ca să obții un ZIP, 7Z, TAR.GZ sau TAR.XZ. ZIP și 7Z pot avea parolă, iar orice arhivă poate fi împărțită în părți, de exemplu de câte 15 MB pentru e-mail. Un ZIP făcut așa nu are fișiere de serviciu ascunse și păstrează lizibile numele în orice limbă.
+
+pikapik deschide și ce nu poate deschide macOS: RAR, chiar împărțit în mai multe fișiere, 7Z cu parolă, ZIPX, CAB, LZH, ARJ, ZST, WIM și altele. Un dublu clic le deschide în pikapik. Numele fișierelor din ZIP-urile vechi, de exemplu în chirilică, japoneză sau chineză, ies lizibile. Comutatorul „Deschide arhivele cu această aplicație” face ca pikapik să preia și ZIP-urile, și 7Z-urile, iar TAR și GZ rămân la aplicația de arhive integrată, care le tratează deja bine.
+
+O fereastră cere parola, „Oprește” anulează orice lucrare, iar dintr-o arhivă deteriorată pikapik scoate ce se mai poate citi. Te întreabă înainte să extragă o arhivă care ar ajunge la o dimensiune uriașă și blochează arhivele care încearcă să scrie în afara propriului folder. Nu există în versiunea din Mac App Store. Apasă Spațiu pe o arhivă ca să vezi ce conține.
+
+---
+
 ## <a id="v1.37.3"></a>Eticheta FPS cere permisiunea în locul potrivit
 
 <sub>1.37.3 · 12 octombrie 2026</sub>

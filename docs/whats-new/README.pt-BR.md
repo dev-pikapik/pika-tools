@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Abra e crie arquivos compactados no Finder
+
+<sub>1.38.0 · 12 de outubro de 2026</sub>
+
+Os novos “Arquivos compactados no Finder” abrem RAR e outros arquivos que o macOS não abre, e criam ZIP e 7Z com o botão direito.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Finder e ative “Arquivos compactados no Finder”. Clique com o botão direito em um arquivo compactado e escolha “Extrair”, e os arquivos dele aparecem ao lado. Clique com o botão direito em qualquer outro arquivo ou pasta e escolha “Criar arquivo compactado…” para gerar um ZIP, 7Z, TAR.GZ ou TAR.XZ. ZIP e 7Z podem ter senha, e qualquer arquivo compactado pode ser dividido em partes, por exemplo de 15 MB para e-mail. Um ZIP criado assim não tem arquivos de serviço ocultos e mantém legíveis os nomes em qualquer idioma.
+
+O pikapik também abre o que o macOS não abre: RAR, até dividido em vários arquivos, 7Z protegido por senha, ZIPX, CAB, LZH, ARJ, ZST, WIM e mais. Clicar duas vezes neles os abre no pikapik. Os nomes de arquivos em ZIPs antigos, por exemplo em cirílico, japonês ou chinês, agora aparecem legíveis. A opção “Abrir arquivos compactados com este app” também entrega ZIP e 7Z ao pikapik, enquanto TAR e GZ ficam com o app de arquivos compactados do sistema, que já cuida bem deles.
+
+Uma janela pede a senha, “Parar” cancela qualquer tarefa e, de um arquivo compactado danificado, o pikapik tira o que ainda dá para ler. Antes de extrair um arquivo compactado que cresceria até um tamanho enorme, o pikapik pergunta, e arquivos que tentam gravar fora da própria pasta são bloqueados. Não está na versão da Mac App Store. Selecione um arquivo compactado e aperte Espaço para ver o que há dentro.
+
+---
+
 ## <a id="v1.37.3"></a>A etiqueta de FPS pede permissão no lugar certo
 
 <sub>1.37.3 · 12 de outubro de 2026</sub>

@@ -2,7 +2,7 @@
 
 > pikapik (formerly pika-tools) is a free, open-source (MIT) menu bar app for macOS 14 and newer. It collects small conveniences for the keyboard, mouse, windows and Finder in one place. Everything is off until you turn it on.
 
-It is written in Swift and SwiftUI, has no dependencies, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
+It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip tool bundled for archives, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
 
 ## What it does
 - Game Mode: while you play, Spotlight, Siri, ⌘Tab and Mission Control don't pop up over the game, ⌘Q and ⌘W don't close it, and the display stays on.
@@ -12,6 +12,7 @@ It is written in Swift and SwiftUI, has no dependencies, runs on Apple silicon a
 - Windows: enlarge with the green button, ⌘Q and ⌘W protection, quit an app when its last window closes.
 - Dock: click an app's icon in the Dock to hide the app.
 - Finder: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
+- Archives: right-click an archive to extract it, or any file or folder to make a ZIP, 7Z, TAR.GZ or TAR.XZ, with a password or split into parts. It also opens RAR and other archives that macOS can't, and Space shows what is inside. Not in the Mac App Store version.
 - Uninstaller: remove an app together with the files it keeps on the Mac, put it all back later, and clean up what removed apps left behind. Everything goes to the Trash, nothing is deleted for good. Not in the Mac App Store version.
 - Speed Test: check the internet speed and see what it is good for.
 - Pet: a little friend walks along the bottom of the screen behind the windows. It jumps on Space and over the pointer, and you can pick it up and throw it. You can dress it from a wardrobe of more than 30 things and ready-made looks, which are unlocked by awards earned as you play together. Awards are counted only on this Mac, nothing is sent anywhere, and you can erase them in Settings › Pet.

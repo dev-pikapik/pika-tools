@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Open and make archives in Finder
+
+<sub>1.38.0 · October 12, 2026</sub>
+
+The new Archives in Finder opens RAR and other archives that macOS can’t, and makes ZIP and 7Z from the right-click menu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Open Settings › Finder and turn on Archives in Finder. Right-click an archive and choose Extract, and its files appear next to it. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z, TAR.GZ or TAR.XZ. ZIP and 7Z can have a password, and any archive can be split into parts, for example 15 MB ones for email. A ZIP made this way has no hidden service files and keeps names in any language readable.
+
+pikapik also opens what macOS can’t: RAR, even split into several files, 7Z locked with a password, ZIPX, CAB, LZH, ARJ, ZST, WIM and more. Double-click opens them in pikapik. File names in old ZIPs, for example in Cyrillic, Japanese or Chinese, come out readable. A switch, Open archives with this app, also hands ZIP and 7Z to pikapik, while TAR and GZ stay with the built-in archive app, which already handles them well.
+
+A window asks for the password, Stop cancels any job, and from a damaged archive pikapik takes out what can still be read. It asks before unpacking an archive that would swell to a huge size, and blocks archives that try to write outside their own folder. Not in the Mac App Store version. Press Space on an archive to preview what is inside.
+
+---
+
 ## <a id="v1.37.3"></a>Show FPS now asks in the right place
 
 <sub>1.37.3 · October 12, 2026</sub>

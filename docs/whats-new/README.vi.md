@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Mở và tạo tệp lưu trữ ngay trong Finder
+
+<sub>1.38.0 · 12 tháng 10 năm 2026</sub>
+
+“Tệp lưu trữ trong Finder” mới mở được RAR và các tệp lưu trữ khác mà macOS không mở được, đồng thời tạo ZIP và 7Z từ menu bấm chuột phải.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Finder và bật “Tệp lưu trữ trong Finder”. Bấm chuột phải vào một tệp lưu trữ và chọn “Giải nén”, các tệp của nó sẽ hiện ra ngay bên cạnh. Bấm chuột phải vào tệp hoặc thư mục khác và chọn “Tạo tệp lưu trữ…” để tạo ZIP, 7Z, TAR.GZ hoặc TAR.XZ. ZIP và 7Z có thể đặt mật khẩu, và tệp lưu trữ nào cũng có thể chia thành nhiều phần, chẳng hạn mỗi phần 15 MB để gửi email. ZIP tạo theo cách này không chứa các tệp ẩn do hệ thống thêm vào và giữ cho tên tệp ở mọi ngôn ngữ vẫn đọc được.
+
+pikapik cũng mở được những gì macOS không mở được: RAR, kể cả khi chia thành nhiều tệp, 7Z khóa bằng mật khẩu, ZIPX, CAB, LZH, ARJ, ZST, WIM và nhiều loại khác. Bấm đúp là mở trong pikapik. Tên tệp trong các ZIP cũ, chẳng hạn bằng chữ Kirin, tiếng Nhật hay tiếng Trung, hiện ra đọc được. Công tắc “Mở tệp lưu trữ bằng ứng dụng này” cũng giao ZIP và 7Z cho pikapik, còn TAR và GZ vẫn thuộc về ứng dụng lưu trữ có sẵn, vốn đã xử lý chúng tốt.
+
+Một cửa sổ sẽ hỏi mật khẩu, “Dừng” hủy bất kỳ tác vụ nào, và từ tệp lưu trữ bị hỏng, pikapik lấy ra những gì vẫn còn đọc được. pikapik hỏi trước khi giải nén một tệp lưu trữ sẽ phình ra kích thước khổng lồ, và chặn những tệp lưu trữ cố ghi ra ngoài thư mục của chính chúng. Không có trong phiên bản Mac App Store. Chọn một tệp lưu trữ rồi nhấn phím cách để xem bên trong có gì.
+
+---
+
 ## <a id="v1.37.3"></a>Nhãn FPS giờ xin quyền đúng chỗ
 
 <sub>1.37.3 · 12 tháng 10 năm 2026</sub>

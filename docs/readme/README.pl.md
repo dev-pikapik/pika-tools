@@ -192,6 +192,14 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br>Mały licznik w wybranym rogu pokazuje, jak płynnie działa gra.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archiwa</b>
+<br>Wypakuj RAR i inne archiwa albo spakuj pliki do archiwum ZIP, klikając prawym przyciskiem.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów
@@ -250,6 +258,12 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 **Mniejsza kopia w Finderze.** Kliknij prawym plik w Finderze i wybierz **Utwórz mniejszą kopię**. Obok pojawi się lżejsza wersja zdjęcia, GIF-a, PDF-a lub wideo, często kilka razy mniejsza. Nieskompresowany dźwięk, np. WAV lub AIFF, zmienia się w zgrabny M4A. Jeśli pliku nie da się już zmniejszyć, kopia nie powstaje, a pikapik o tym mówi. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Domyślnie wyłączone.
 
 **Konwersja w Finderze.** Kliknij prawym plik w Finderze i wybierz **Konwertuj na**, aby zapisać go w innym formacie: obraz jako JPEG, PNG, HEIC, GIF, TIFF lub PDF, wideo jako MP4, MOV albo sam dźwięk, muzykę jako M4A, WAV lub AIFF. Oryginał zostaje bez zmian i nic nie opuszcza Twojego Maca. Włącza się osobno od mniejszej kopii. Domyślnie wyłączone.
+
+**Archiwa w Finderze.** Kliknij prawym archiwum w Finderze i wybierz **Wypakuj**, a jego pliki pojawią się obok. Kliknij prawym dowolny inny plik lub folder i wybierz **Utwórz archiwum…**, aby powstał ZIP, 7Z, TAR.GZ lub TAR.XZ. ZIP i 7Z mogą mieć hasło, a każde archiwum można podzielić na części, na przykład po 15 MB do poczty albo po 4 GB na pendrive. ZIP zrobiony w ten sposób nie zawiera ukrytych plików dodawanych przez system, zachowuje czytelne nazwy w każdym języku i obsługuje pliki większe niż 4 GB. Domyślnie wyłączone. Nie ma tego w wersji z Mac App Store.
+
+pikapik otwiera też to, czego nie otworzy macOS: RAR, nawet podzielony na części, 7Z zabezpieczony hasłem, zestawy części takie jak .001, .z01, .r00 i .part1.rar oraz ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM i inne. Po dwukrotnym kliknięciu otwiera je pikapik. Nazwy plików w starych archiwach ZIP, na przykład zapisane cyrylicą, po japońsku lub po chińsku, wyświetlają się czytelnie. Przełącznik **Otwieraj archiwa w tej aplikacji** w Ustawieniach › Finder sprawia, że pikapik przejmuje także ZIP i 7Z, a TAR i GZ zostają przy wbudowanej aplikacji do archiwów, która już dobrze sobie z nimi radzi. pikapik potrafi otworzyć RAR, ale nie stworzyć go: licencja RAR pozwala tylko na wypakowywanie.
+
+Okno pyta o hasło, **Zatrzymaj** przerywa każde zadanie, a z uszkodzonego lub niekompletnego archiwum pikapik wyciąga to, co da się jeszcze odczytać. Pyta, zanim wypakuje archiwum, które rozrosłoby się do ogromnego rozmiaru, zatrzymuje się na czas, gdy dysk miałby się zapełnić, i blokuje archiwa próbujące zapisywać poza własnym folderem. Zaznacz archiwum w Finderze i naciśnij spację, aby podejrzeć, co jest w środku.
 
 **Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pikapik podpowiada gry, które znajdzie na Twoim Macu. W grze Control-kliknięcie pozostaje zwykłym kliknięciem, a Control ze strzałkami nie zmienia biurka. Rozpoznaje też Minecrafta: dodaj Minecraft Launcher lub CurseForge, a tryb włączy się w samym Minecrafcie. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
 
@@ -312,7 +326,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
-- **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
+- **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.
 - **Zwierzak**: włączanie i wyłączanie, rozmowy i piłka, garderoba i nagrody.

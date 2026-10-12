@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Open en maak archieven in de Finder
+
+<sub>1.38.0 · 12 oktober 2026</sub>
+
+Het nieuwe Archieven in de Finder opent RAR en andere archieven die macOS niet aankan, en maakt ZIP en 7Z via het rechtsklikmenu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Finder en zet ‘Archieven in de Finder’ aan. Klik met rechts op een archief en kies ‘Uitpakken’, en de bestanden verschijnen ernaast. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z, TAR.GZ of TAR.XZ te maken. ZIP en 7Z kunnen een wachtwoord hebben, en elk archief kan in delen worden opgesplitst, bijvoorbeeld van 15 MB voor e-mail. Een ZIP die zo is gemaakt bevat geen verborgen bestanden die het systeem toevoegt en houdt namen in elke taal leesbaar.
+
+pikapik opent ook wat macOS niet kan openen: RAR, zelfs verdeeld over meerdere bestanden, 7Z met een wachtwoord, ZIPX, CAB, LZH, ARJ, ZST, WIM en meer. Dubbelklikken opent ze in pikapik. Bestandsnamen in oude ZIP-bestanden, bijvoorbeeld in Cyrillisch, Japans of Chinees, komen leesbaar uit de bus. Met de schakelaar ‘Open archieven met deze app’ neemt pikapik ook ZIP en 7Z over, terwijl TAR en GZ bij de ingebouwde archiefapp blijven, die daar al goed mee overweg kan.
+
+Een venster vraagt om het wachtwoord, ‘Stop’ breekt elke taak af, en uit een beschadigd archief haalt pikapik wat nog te lezen is. Het vraagt eerst om bevestiging voordat het een archief uitpakt dat tot een enorme omvang zou opzwellen, en blokkeert archieven die buiten hun eigen map proberen te schrijven. Zit niet in de versie uit de Mac App Store. Selecteer een archief en druk op de spatiebalk om te zien wat erin zit.
+
+---
+
 ## <a id="v1.37.3"></a>Het FPS-labeltje vraagt nu op de juiste plek
 
 <sub>1.37.3 · 12 oktober 2026</sub>

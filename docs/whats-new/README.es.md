@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Abre y crea archivos comprimidos en el Finder
+
+<sub>1.38.0 · 12 de octubre de 2026</sub>
+
+Los nuevos «Archivos comprimidos en el Finder» abren RAR y otros archivos que macOS no entiende, y crean ZIP y 7Z con un clic derecho.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Finder y activa «Archivos comprimidos en el Finder». Haz clic derecho en un archivo comprimido y elige «Extraer», y sus archivos aparecen a su lado. Haz clic derecho en cualquier otro archivo o carpeta y elige «Crear archivo comprimido…» para obtener un ZIP, 7Z, TAR.GZ o TAR.XZ. Un ZIP o un 7Z puede llevar contraseña, y cualquier archivo comprimido se puede dividir en partes, por ejemplo de 15 MB para el correo. Un ZIP creado así no lleva archivos ocultos de servicio y conserva legibles los nombres en cualquier idioma.
+
+pikapik también abre lo que macOS no puede: RAR, incluso dividido en varios archivos, 7Z protegido con contraseña, ZIPX, CAB, LZH, ARJ, ZST, WIM y más. Un doble clic los abre en pikapik. Los nombres de archivo de ZIP antiguos, por ejemplo en cirílico, japonés o chino, ahora se leen bien. El interruptor «Abrir archivos comprimidos con esta app» también pasa los ZIP y 7Z a pikapik, mientras que los TAR y GZ se quedan con la app de archivos comprimidos integrada, que ya los maneja bien.
+
+Una ventana pide la contraseña, «Detener» cancela cualquier tarea, y de un archivo comprimido dañado pikapik saca lo que aún se puede leer. Antes de extraer un archivo comprimido que se hincharía hasta un tamaño enorme, pikapik pregunta, y los que intentan escribir fuera de su propia carpeta quedan bloqueados. No está en la versión de la Mac App Store. Selecciona un archivo comprimido y pulsa Espacio para ver lo que contiene.
+
+---
+
 ## <a id="v1.37.3"></a>La etiqueta de FPS pide el permiso en el lugar correcto
 
 <sub>1.37.3 · 12 de octubre de 2026</sub>

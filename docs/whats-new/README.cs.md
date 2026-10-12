@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Otevírejte a vytvářejte archivy ve Finderu
+
+<sub>1.38.0 · 12. října 2026</sub>
+
+Nové „Archivy ve Finderu“ otevírají RAR a další archivy, které macOS neotevře, a z nabídky pravého kliknutí vytvářejí ZIP a 7Z.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Finder a zapněte „Archivy ve Finderu“. Klikněte pravým na archiv, vyberte „Rozbalit“ a jeho soubory se objeví vedle něj. Klikněte pravým na jakýkoli jiný soubor nebo složku, vyberte „Vytvořit archiv…“ a vznikne ZIP, 7Z, TAR.GZ nebo TAR.XZ. ZIP a 7Z mohou mít heslo a každý archiv lze rozdělit na části, například po 15 MB pro e-mail. ZIP vytvořený tímto způsobem neobsahuje skryté soubory, které přidává systém, a názvy v jakémkoli jazyce zůstanou čitelné.
+
+pikapik otevře i to, co macOS neotevře: RAR, třeba rozdělený do více souborů, 7Z chráněný heslem, ZIPX, CAB, LZH, ARJ, ZST, WIM a další. Po dvojkliku je otevře pikapik. Názvy souborů ve starých archivech ZIP, například v azbuce, japonštině nebo čínštině, se zobrazí čitelně. Přepínač „Otevírat archivy v této aplikaci“ zařídí, že i ZIP a 7Z otevře pikapik, zatímco TAR a GZ zůstanou u vestavěné aplikace pro archivy, která si s nimi už dobře poradí.
+
+Okno se zeptá na heslo, „Zastavit“ zruší jakoukoli úlohu a z poškozeného archivu pikapik vytáhne, co se ještě dá přečíst. Před rozbalením archivu, který by nabobtnal do obrovské velikosti, se zeptá, a archivy, které se pokoušejí zapisovat mimo vlastní složku, zablokuje. Ve verzi z Mac App Store tato funkce není. Vyberte archiv a stiskněte mezerník, abyste viděli, co obsahuje.
+
+---
+
 ## <a id="v1.37.3"></a>Štítek FPS se teď ptá na správném místě
 
 <sub>1.37.3 · 12. října 2026</sub>

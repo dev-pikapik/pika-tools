@@ -18,6 +18,7 @@ enum RenderMedia {
         ("command-keys", 4.5, AnyView(CommandKeysArt())),
         ("compress", 6.6, AnyView(CompressArt(on: true))),
         ("convert", 8.05, AnyView(ConvertArt(on: true))),
+        ("archive", 11.9, AnyView(ArchiveArt(on: true))),
         ("input-switch", 7.9, AnyView(InputSwitchArt(on: true))),
         ("quit-on-close", 4.5, AnyView(QuitOnCloseArt(on: true))),
         ("window-zoom", 5.95, AnyView(WindowZoomArt(on: true))),

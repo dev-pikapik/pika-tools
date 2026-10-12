@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Ouvrez et créez des archives dans le Finder
+
+<sub>1.38.0 · 12 octobre 2026</sub>
+
+Les nouvelles « Archives dans le Finder » ouvrent les RAR et d’autres archives que macOS ne sait pas lire, et créent des ZIP et des 7Z d’un clic droit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Finder et activez « Archives dans le Finder ». Faites un clic droit sur une archive et choisissez « Extraire » : ses fichiers apparaissent à côté. Faites un clic droit sur tout autre fichier ou dossier et choisissez « Créer une archive… » pour obtenir un ZIP, un 7Z, un TAR.GZ ou un TAR.XZ. Un ZIP ou un 7Z peut avoir un mot de passe, et toute archive peut être divisée en parties, par exemple de 15 Mo pour l’e-mail. Un ZIP créé ainsi ne contient aucun fichier système caché et garde lisibles les noms dans toutes les langues.
+
+pikapik ouvre aussi ce que macOS ne sait pas ouvrir : les RAR, même répartis en plusieurs fichiers, les 7Z protégés par mot de passe, les ZIPX, CAB, LZH, ARJ, ZST, WIM et bien d’autres. Un double-clic les ouvre dans pikapik. Les noms de fichiers des anciens ZIP, par exemple en cyrillique, en japonais ou en chinois, s’affichent désormais correctement. L’interrupteur « Ouvrir les archives avec cette app » confie aussi les ZIP et les 7Z à pikapik, tandis que les TAR et les GZ restent à l’app d’archives intégrée, qui s’en occupe déjà très bien.
+
+Une fenêtre demande le mot de passe, « Arrêter » interrompt n’importe quelle tâche, et d’une archive endommagée, pikapik récupère ce qui est encore lisible. Avant d’extraire une archive qui gonflerait jusqu’à une taille énorme, pikapik vous demande confirmation, et les archives qui tentent d’écrire en dehors de leur propre dossier sont bloquées. Absent de la version du Mac App Store. Sélectionnez une archive et appuyez sur Espace pour voir ce qu’elle contient.
+
+---
+
 ## <a id="v1.37.3"></a>La pastille FPS demande l’autorisation au bon endroit
 
 <sub>1.37.3 · 12 octobre 2026</sub>

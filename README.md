@@ -192,6 +192,14 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <br>A small counter shows how smoothly your game runs, in the corner you choose.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/archive-dark.png"><img src="docs/media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archives</b>
+<br>Unpack RAR and other archives, or pack files into a ZIP, with a right-click.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Details
@@ -250,6 +258,12 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 **Smaller Copy in Finder.** Right-click a file in Finder and choose **Make a Smaller Copy**. A lighter version of a photo, GIF, PDF or video appears right next to it, often several times smaller. Uncompressed sound like WAV or AIFF becomes a compact M4A. If a file can’t get any smaller, no copy is made and pikapik tells you so. The original stays as it is, and nothing leaves your Mac. Off by default.
 
 **Convert in Finder.** Right-click a file in Finder and choose **Convert To** to save it in another format: a picture as JPEG, PNG, HEIC, GIF, TIFF or PDF, a video as MP4, MOV or just its sound, music as M4A, WAV or AIFF. The original stays as it is, and nothing leaves your Mac. Turns on separately from Smaller Copy. Off by default.
+
+**Archives in Finder.** Right-click an archive in Finder and choose **Extract**, and its files appear next to it. Right-click any other file or folder and choose **Create Archive…** to make a ZIP, 7Z, TAR.GZ or TAR.XZ. ZIP and 7Z can have a password, and any archive can be split into parts, for example 15 MB ones for email or 4 GB ones for a USB drive. A ZIP made this way has no hidden service files, keeps names in any language readable and handles files over 4 GB. Off by default. Not in the Mac App Store version.
+
+pikapik also opens what macOS can’t: RAR, even split into parts, 7Z locked with a password, split sets such as .001, .z01, .r00 and .part1.rar, and ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM and more. Double-click opens them in pikapik. File names in old ZIPs, for example in Cyrillic, Japanese or Chinese, come out readable. A switch, **Open archives with this app**, in Settings › Finder also hands ZIP and 7Z to pikapik, while TAR and GZ stay with the built-in archive app, which already handles them well. pikapik can unpack RAR but not make it: the RAR license allows only unpacking.
+
+A window asks for the password, **Stop** cancels any job, and from a damaged or unfinished archive pikapik takes out what can still be read. It asks before unpacking an archive that would swell to a huge size, stops in time if the disk would fill up, and blocks archives that try to write outside their own folder. Press Space on an archive in Finder to preview what is inside.
 
 **Game Mode.** Add your games, and while you play one, your Mac doesn’t pull you out of it. Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over the game, ⌘Q and ⌘W don’t close it by accident, the pointer doesn’t slip onto the Dock, the menu bar or another screen, and the screen stays on. Each of these has its own switch on the Games page, and pikapik suggests games it finds on your Mac. In a game, Ctrl-click stays a click, and Ctrl+arrows don’t switch the desktop. Minecraft is recognized too: add the Minecraft Launcher or CurseForge, and Game Mode turns on inside Minecraft itself. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. As soon as you leave the game, everything works as usual. Off by default.
 
@@ -312,7 +326,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.
-- **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
+- **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Games**: your list of games and the Game Mode options.
 - **Pet**: turn the little friend on or off, let it chat and play with a ball, dress it up and see your awards.
