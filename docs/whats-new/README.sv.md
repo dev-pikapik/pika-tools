@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>En stabilare Finder-meny
+
+<sub>1.38.1 · 12 oktober 2026</sub>
+
+pikapiks alternativ i högerklicksmenyn i Finder försvinner inte längre när du ansluter en skiva, öppnar en skivavbild, väcker din Mac ur vila eller byter till Finder.
+
+I sällsynta fall avslutades hjälpprogrammet som visar dem just då.
+
+---
+
 ## <a id="v1.38.0"></a>Öppna och skapa arkiv i Finder
 
 <sub>1.38.0 · 12 oktober 2026</sub>

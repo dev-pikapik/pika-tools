@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Bardziej niezawodne menu Findera
+
+<sub>1.38.1 · 12 października 2026</sub>
+
+Polecenia pikapik w menu pod prawym przyciskiem myszy w Finderze nie znikają już po podłączeniu dysku, otwarciu obrazu dysku, wybudzeniu Maca ani po przejściu do Findera.
+
+W rzadkich przypadkach program pomocniczy, który je wyświetla, zamykał się właśnie w tym momencie.
+
+---
+
 ## <a id="v1.38.0"></a>Otwieraj i twórz archiwa w Finderze
 
 <sub>1.38.0 · 12 października 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Un meniu Finder mai fiabil
+
+<sub>1.38.1 · 12 octombrie 2026</sub>
+
+Opțiunile pikapik din meniul de clic dreapta al Finder nu mai dispar la conectarea unui disc, la deschiderea unei imagini de disc, la trezirea Mac-ului din repaus sau la trecerea în Finder.
+
+În cazuri rare, asistentul care le afișează se închidea exact în acel moment.
+
+---
+
 ## <a id="v1.38.0"></a>Deschide și creează arhive în Finder
 
 <sub>1.38.0 · 12 octombrie 2026</sub>

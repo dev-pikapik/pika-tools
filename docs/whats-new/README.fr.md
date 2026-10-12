@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Un menu du Finder plus fiable
+
+<sub>1.38.1 · 12 octobre 2026</sub>
+
+Les commandes que pikapik ajoute au Finder, accessibles d’un clic droit, ne disparaissent plus lorsque vous connectez un disque, ouvrez une image disque, réactivez votre Mac ou passez au Finder.
+
+Dans de rares cas, l’assistant qui les affiche se fermait à ce moment-là.
+
+---
+
 ## <a id="v1.38.0"></a>Ouvrez et créez des archives dans le Finder
 
 <sub>1.38.0 · 12 octobre 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Daha sağlam bir Finder menüsü
+
+<sub>1.38.1 · 12 Ekim 2026</sub>
+
+pikapik’in Finder’daki sağ tık menüsü öğeleri artık bir disk bağladığınızda, bir disk görüntüsü açtığınızda, Mac’inizi uykudan uyandırdığınızda ya da Finder’a geçtiğinizde kaybolmuyor.
+
+Nadir durumlarda, bu öğeleri gösteren yardımcı program tam o anda kapanıyordu.
+
+---
+
 ## <a id="v1.38.0"></a>Arşivler artık Finder’da açılıyor ve oluşturuluyor
 
 <sub>1.38.0 · 12 Ekim 2026</sub>
