@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Synchronizovaná nastavení jsou teď ve složce pikapik
+
+<sub>1.39.2 · 13. října 2026</sub>
+
+Pokud synchronizujete nastavení přes iCloud, jsou teď na iCloud Drive ve složce pikapik místo pika-tools a pikapik je tam přesune sám.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Nemusíte nic dělat: nastavení zůstávají stejná a stará složka zmizí, jakmile se přesunou. Pokud jsou v ní vaše vlastní soubory, zůstane na místě. Pokud synchronizujete více Maců, aktualizujte pikapik na každém z nich, aby si nastavení dál sdílely.
+
+**Opraveno**
+
+- Úplné odstranění pikapik přes Homebrew (brew uninstall --zap) teď smaže i seznam nedávno odebraných aplikací.
+- Starší příspěvky na této stránce teď aplikaci říkají pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Obvyklé záhlaví v oknech archivů
 
 <sub>1.39.1 · 13. října 2026</sub>

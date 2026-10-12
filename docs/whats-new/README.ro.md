@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Configurările sincronizate stau acum într-un dosar pikapik
+
+<sub>1.39.2 · 13 octombrie 2026</sub>
+
+Dacă sincronizezi configurările cu iCloud, acum ele stau în iCloud Drive, într-un dosar numit pikapik în loc de pika-tools, iar pikapik le mută acolo singur.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Nu trebuie să faci nimic: configurările rămân la fel, iar dosarul vechi dispare după ce s-au mutat. Dacă ai pus în el fișiere proprii, rămâne unde este. Dacă sincronizezi mai multe Mac-uri, actualizează pikapik pe fiecare, ca să-și împartă în continuare configurările.
+
+**Reparat**
+
+- Eliminarea completă a pikapik cu Homebrew (brew uninstall --zap) șterge acum și lista aplicațiilor eliminate recent.
+- Postările mai vechi de pe această pagină numesc acum aplicația pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Bara de titlu obișnuită în ferestrele pentru arhive
 
 <sub>1.39.1 · 13 octombrie 2026</sub>

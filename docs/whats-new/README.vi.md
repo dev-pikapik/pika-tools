@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Cài đặt đồng bộ giờ nằm trong thư mục pikapik
+
+<sub>1.39.2 · 13 tháng 10 năm 2026</sub>
+
+Nếu bạn đồng bộ hóa cài đặt với iCloud, giờ đây cài đặt nằm trong iCloud Drive, ở thư mục tên pikapik thay vì pika-tools, và pikapik tự chuyển chúng sang đó.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Bạn không cần làm gì cả: cài đặt vẫn giữ nguyên, và thư mục cũ biến mất sau khi cài đặt đã được chuyển. Nếu bạn để tệp của riêng mình trong đó, thư mục vẫn ở nguyên chỗ. Nếu bạn đồng bộ nhiều máy Mac, hãy cập nhật pikapik trên từng máy để chúng tiếp tục dùng chung cài đặt.
+
+**Đã sửa**
+
+- Gỡ pikapik hoàn toàn bằng Homebrew (brew uninstall --zap) giờ cũng xóa luôn danh sách ứng dụng đã gỡ gần đây.
+- Các bài viết cũ trên trang này giờ gọi ứng dụng là pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Thanh tiêu đề quen thuộc trong cửa sổ lưu trữ
 
 <sub>1.39.1 · 13 tháng 10 năm 2026</sub>

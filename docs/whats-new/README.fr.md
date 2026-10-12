@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Les réglages synchronisés sont désormais dans un dossier pikapik
+
+<sub>1.39.2 · 13 octobre 2026</sub>
+
+Si vous synchronisez vos réglages avec iCloud, ils se trouvent désormais dans iCloud Drive, dans un dossier pikapik au lieu de pika-tools, et pikapik les y déplace tout seul.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Vous n’avez rien à faire : vos réglages restent les mêmes, et l’ancien dossier disparaît une fois qu’ils ont été déplacés. Si vous y avez mis vos propres fichiers, il reste à sa place. Si vous synchronisez plusieurs Mac, mettez à jour pikapik sur chacun d’eux pour qu’ils continuent de partager leurs réglages.
+
+**Corrigé**
+
+- La suppression complète de pikapik avec Homebrew (brew uninstall --zap) efface désormais aussi la liste des apps supprimées récemment.
+- Les anciens articles de cette page appellent désormais l’app pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>La barre de titre habituelle dans les fenêtres d’archive
 
 <sub>1.39.1 · 13 octobre 2026</sub>

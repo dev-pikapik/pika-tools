@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Los ajustes sincronizados ahora están en una carpeta pikapik
+
+<sub>1.39.2 · 13 de octubre de 2026</sub>
+
+Si sincronizas tus ajustes con iCloud, ahora están en iCloud Drive, en una carpeta llamada pikapik en lugar de pika-tools, y pikapik los mueve allí por sí solo.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+No tienes que hacer nada: tus ajustes siguen igual y la carpeta antigua desaparece cuando se han movido. Si guardaste en ella archivos tuyos, se queda donde está. Si sincronizas varios Mac, actualiza pikapik en cada uno para que sigan compartiendo los ajustes.
+
+**Corregido**
+
+- Eliminar pikapik por completo con Homebrew (brew uninstall --zap) ahora también borra la lista de apps eliminadas recientemente.
+- Las publicaciones anteriores de esta página ahora llaman a la app pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>La barra de título de siempre en las ventanas de archivos comprimidos
 
 <sub>1.39.1 · 13 de octubre de 2026</sub>

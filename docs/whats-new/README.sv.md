@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Synkade inställningar ligger nu i en mapp som heter pikapik
+
+<sub>1.39.2 · 13 oktober 2026</sub>
+
+Om du synkar inställningarna med iCloud ligger de nu i iCloud Drive i en mapp som heter pikapik i stället för pika-tools, och pikapik flyttar dem dit själv.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Du behöver inte göra något: inställningarna är desamma, och den gamla mappen försvinner när de har flyttats. Om du har lagt egna filer i den ligger den kvar. Om du synkar flera Mac-datorer, uppdatera pikapik på var och en så att de fortsätter dela inställningar.
+
+**Åtgärdat**
+
+- När du tar bort pikapik helt med Homebrew (brew uninstall --zap) raderas nu även listan över nyligen borttagna appar.
+- Äldre inlägg på den här sidan kallar nu appen pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Den vanliga namnlisten i arkivfönstren
 
 <sub>1.39.1 · 13 oktober 2026</sub>

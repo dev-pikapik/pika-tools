@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Synced settings now live in a pikapik folder
+
+<sub>1.39.2 · October 13, 2026</sub>
+
+If you sync settings with iCloud, they now live in a folder called pikapik in iCloud Drive instead of pika-tools, and pikapik moves them there by itself.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+You don’t need to do anything: your settings stay as they are, and the old folder goes away once they have moved. If you put files of your own in it, it stays where it is. If you sync several Macs, update pikapik on each of them so they keep sharing settings.
+
+**Fixed**
+
+- Removing pikapik completely with Homebrew (brew uninstall --zap) now also deletes its list of recently removed apps.
+- Older posts on this page now call the app pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>The usual title bar in archive windows
 
 <sub>1.39.1 · October 13, 2026</sub>

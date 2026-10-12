@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Pengaturan yang diselaraskan kini ada di folder pikapik
+
+<sub>1.39.2 · 13 Oktober 2026</sub>
+
+Jika Anda menyelaraskan pengaturan dengan iCloud, pengaturan kini disimpan di iCloud Drive dalam folder bernama pikapik, bukan pika-tools, dan pikapik memindahkannya ke sana sendiri.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Anda tidak perlu melakukan apa pun: pengaturan Anda tetap sama, dan folder lama hilang setelah pengaturannya dipindahkan. Jika Anda menaruh file sendiri di dalamnya, folder itu tetap di tempatnya. Jika Anda menyelaraskan beberapa Mac, perbarui pikapik di setiap Mac agar tetap berbagi pengaturan.
+
+**Diperbaiki**
+
+- Menghapus pikapik sepenuhnya dengan Homebrew (brew uninstall --zap) kini juga menghapus daftar app yang baru dihapus.
+- Postingan lama di halaman ini kini menyebut app ini pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Bilah judul yang biasa di jendela arsip
 
 <sub>1.39.1 · 13 Oktober 2026</sub>

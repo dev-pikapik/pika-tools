@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Eşzamanlanan ayarlar artık pikapik klasöründe
+
+<sub>1.39.2 · 13 Ekim 2026</sub>
+
+Ayarlarınızı iCloud ile eşzamanlıyorsanız, artık iCloud Drive’da pika-tools yerine pikapik adlı klasörde duruyorlar ve pikapik onları oraya kendisi taşıyor.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Hiçbir şey yapmanıza gerek yok: ayarlarınız olduğu gibi kalır ve taşındıktan sonra eski klasör kaybolur. İçine kendi dosyalarınızı koyduysanız klasör yerinde kalır. Birden fazla Mac’i eşzamanlıyorsanız, ayarları paylaşmaya devam etmeleri için her birinde pikapik’i güncelleyin.
+
+**Düzeltilenler**
+
+- pikapik’i Homebrew ile tamamen kaldırmak (brew uninstall --zap) artık son kaldırılan uygulamaların listesini de siliyor.
+- Bu sayfadaki eski yazılar artık uygulamayı pikapik olarak anıyor.
+
+---
+
 ## <a id="v1.39.1"></a>Arşiv pencerelerinde alışık olduğunuz başlık çubuğu
 
 <sub>1.39.1 · 13 Ekim 2026</sub>

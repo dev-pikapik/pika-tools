@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>同步的设置现在放在 pikapik 文件夹中
+
+<sub>1.39.2 · 2026年10月13日</sub>
+
+如果你通过 iCloud 同步设置，设置现在保存在 iCloud 云盘的 pikapik 文件夹中，而不是 pika-tools，pikapik 会自动把它们移过去。
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+你无需做任何事：设置保持不变，移动完成后旧文件夹会消失。如果你在里面放了自己的文件，它会留在原处。如果你在多台 Mac 上同步，请在每台 Mac 上更新 pikapik，让它们继续共享设置。
+
+**修复**
+
+- 用 Homebrew 彻底移除 pikapik（brew uninstall --zap）时，现在也会删除“最近移除”的 App 列表。
+- 本页较早的文章现在也把 App 称为 pikapik。
+
+---
+
 ## <a id="v1.39.1"></a>压缩文件窗口恢复常见的标题栏
 
 <sub>1.39.1 · 2026年10月13日</sub>

@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Gesynchroniseerde instellingen staan nu in een map pikapik
+
+<sub>1.39.2 · 13 oktober 2026</sub>
+
+Synchroniseer je je instellingen met iCloud, dan staan ze nu in iCloud Drive in een map met de naam pikapik in plaats van pika-tools, en pikapik zet ze daar zelf naartoe.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Je hoeft niets te doen: je instellingen blijven hetzelfde en de oude map verdwijnt zodra ze verhuisd zijn. Heb je er eigen bestanden in gezet, dan blijft hij staan. Synchroniseer je meerdere Macs, werk pikapik dan op elke Mac bij, zodat ze instellingen blijven delen.
+
+**Opgelost**
+
+- Als je pikapik helemaal verwijdert met Homebrew (brew uninstall --zap), wordt nu ook de lijst met onlangs verwijderde apps gewist.
+- Oudere berichten op deze pagina noemen de app nu pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>De vertrouwde titelbalk in archiefvensters
 
 <sub>1.39.1 · 13 oktober 2026</sub>
