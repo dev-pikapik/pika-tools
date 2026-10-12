@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "發生問題。請再試一次。";
 "Couldn’t extract “%@”" = "無法解壓縮「%@」";
 "The file may be damaged." = "檔案可能已損毀。";
+"Expands to %@" = "解壓縮後：%@";
+"Protected with a password" = "受密碼保護";
+"Part of a multi-part archive" = "分割壓縮檔的一部分";
+"Damaged. Showing what could be read." = "檔案已損毀。僅顯示能讀取的內容。";
+"Only the first items are shown." = "僅顯示前面的項目。";
+"Contains a program. Open it only if you trust where it came from." = "包含程式。僅在信任來源時才打開。";

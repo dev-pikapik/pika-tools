@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "問題が発生しました。もう一度お試しください。";
 "Couldn’t extract “%@”" = "「%@」を展開できませんでした";
 "The file may be damaged." = "ファイルが破損している可能性があります。";
+"Expands to %@" = "展開後: %@";
+"Protected with a password" = "パスワードで保護されています";
+"Part of a multi-part archive" = "分割アーカイブの一部です";
+"Damaged. Showing what could be read." = "破損しています。読み取れた内容を表示しています。";
+"Only the first items are shown." = "最初の項目のみ表示しています。";
+"Contains a program. Open it only if you trust where it came from." = "プログラムが含まれています。入手元を信頼できる場合のみ開いてください。";

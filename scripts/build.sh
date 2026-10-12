@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.."
 
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert"
-[ -n "${APPSTORE:-}" ] || EXTENSIONS="$EXTENSIONS Archive"
+[ -n "${APPSTORE:-}" ] || EXTENSIONS="$EXTENSIONS Archive Preview"
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -62,13 +62,14 @@ for ARCH in arm64 x86_64; do
     for EXT in $EXTENSIONS; do
         SHARED=(Extensions/Shared/*.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
+        [ "$EXT" != Preview ] || SHARED=()
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
             -target "$ARCH-apple-macos$MIN_OS" \
             -application-extension \
             "${EMIT[@]}" \
             -Xlinker -e -Xlinker _NSExtensionMain \
-            Extensions/"$EXT"/*.swift "${SHARED[@]}" \
+            Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} \
             -o "build/$EXT-$ARCH"
     done
 done
@@ -101,9 +102,11 @@ for EXT in $EXTENSIONS; do
             Compress) TEXTS='Make a Smaller Copy' NAME='Smaller Copy in Finder' ;;
             Convert) TEXTS='Convert To|M4A \(Audio Only\)' NAME='Convert in Finder' ;;
             Archive) TEXTS='Extract|Create Archive…' NAME='Archives in Finder' ;;
+            Preview) TEXTS='%lld items|Expands to %@|It could fill up your disk.|Protected with a password|Part of a multi-part archive|Damaged. Showing what could be read.|Only the first items are shown.|Contains a program. Open it only if you trust where it came from.' NAME='Archives in Finder' ;;
         esac
         grep -E "^\"($TEXTS)\" = " "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
         grep "^\"$NAME\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"CFBundleDisplayName"/' > "$OUT/InfoPlist.strings"
+        [ "$EXT" != Preview ] || cp "$LPROJ/Localizable.stringsdict" "$OUT/"
     done
 done
 
@@ -178,7 +181,7 @@ elif [ -n "$DEV" ]; then
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
         /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.dev.}" "$PLIST"
-        /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
+        [ "$EXT" = Preview ] || /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
     done
 fi
 APP_ENTITLEMENTS=()

@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Bir şeyler ters gitti. Lütfen tekrar deneyin.";
 "Couldn’t extract “%@”" = "“%@” arşivden çıkarılamadı";
 "The file may be damaged." = "Dosya hasarlı olabilir.";
+"Expands to %@" = "Açıldığında: %@";
+"Protected with a password" = "Parolayla korunuyor";
+"Part of a multi-part archive" = "Çok parçalı bir arşivin parçası";
+"Damaged. Showing what could be read." = "Hasarlı. Okunabilen kısım gösteriliyor.";
+"Only the first items are shown." = "Yalnızca ilk öğeler gösteriliyor.";
+"Contains a program. Open it only if you trust where it came from." = "Bir program içeriyor. Yalnızca kaynağına güveniyorsanız açın.";

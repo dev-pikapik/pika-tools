@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Đã xảy ra lỗi. Hãy thử lại.";
 "Couldn’t extract “%@”" = "Không giải nén được “%@”";
 "The file may be damaged." = "Có thể tệp bị hỏng.";
+"Expands to %@" = "Sau khi giải nén: %@";
+"Protected with a password" = "Được bảo vệ bằng mật khẩu";
+"Part of a multi-part archive" = "Một phần của tệp lưu trữ nhiều phần";
+"Damaged. Showing what could be read." = "Bị hỏng. Đang hiển thị phần đọc được.";
+"Only the first items are shown." = "Chỉ hiển thị các mục đầu tiên.";
+"Contains a program. Open it only if you trust where it came from." = "Có chứa một chương trình. Chỉ mở nếu bạn tin tưởng nguồn của nó.";

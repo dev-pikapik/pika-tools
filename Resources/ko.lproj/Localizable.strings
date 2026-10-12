@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "문제가 발생했습니다. 다시 시도하세요.";
 "Couldn’t extract “%@”" = "‘%@’ 압축을 풀 수 없습니다";
 "The file may be damaged." = "파일이 손상되었을 수 있습니다.";
+"Expands to %@" = "압축 해제 후: %@";
+"Protected with a password" = "암호로 보호됨";
+"Part of a multi-part archive" = "여러 개로 나뉜 압축 파일의 일부";
+"Damaged. Showing what could be read." = "손상되었습니다. 읽을 수 있는 내용만 표시합니다.";
+"Only the first items are shown." = "처음 일부 항목만 표시합니다.";
+"Contains a program. Open it only if you trust where it came from." = "프로그램이 들어 있습니다. 출처를 신뢰할 수 있을 때만 여세요.";

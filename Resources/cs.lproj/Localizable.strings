@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Něco se pokazilo. Zkuste to znovu.";
 "Couldn’t extract “%@”" = "„%@“ se nepodařilo rozbalit";
 "The file may be damaged." = "Soubor může být poškozený.";
+"Expands to %@" = "Po rozbalení: %@";
+"Protected with a password" = "Chráněno heslem";
+"Part of a multi-part archive" = "Část vícedílného archivu";
+"Damaged. Showing what could be read." = "Poškozeno. Zobrazeno je to, co se podařilo přečíst.";
+"Only the first items are shown." = "Zobrazeny jsou jen první položky.";
+"Contains a program. Open it only if you trust where it came from." = "Obsahuje program. Otevírejte ho jen tehdy, pokud zdroji důvěřujete.";

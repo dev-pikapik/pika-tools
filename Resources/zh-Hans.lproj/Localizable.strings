@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "出了点问题。请再试一次。";
 "Couldn’t extract “%@”" = "无法解压缩“%@”";
 "The file may be damaged." = "文件可能已损坏。";
+"Expands to %@" = "解压后：%@";
+"Protected with a password" = "受密码保护";
+"Part of a multi-part archive" = "分卷压缩文件的一部分";
+"Damaged. Showing what could be read." = "文件已损坏。仅显示能读取的内容。";
+"Only the first items are shown." = "仅显示前面的项目。";
+"Contains a program. Open it only if you trust where it came from." = "包含程序。仅在信任来源时才打开。";

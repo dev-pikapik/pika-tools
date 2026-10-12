@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "เกิดข้อผิดพลาด ลองอีกครั้ง";
 "Couldn’t extract “%@”" = "แตกไฟล์ “%@” ไม่ได้";
 "The file may be damaged." = "ไฟล์อาจเสียหาย";
+"Expands to %@" = "หลังแตกไฟล์: %@";
+"Protected with a password" = "ป้องกันด้วยรหัสผ่าน";
+"Part of a multi-part archive" = "ส่วนหนึ่งของไฟล์บีบอัดแบบหลายส่วน";
+"Damaged. Showing what could be read." = "ไฟล์เสียหาย แสดงเฉพาะส่วนที่อ่านได้";
+"Only the first items are shown." = "แสดงเฉพาะรายการแรก ๆ เท่านั้น";
+"Contains a program. Open it only if you trust where it came from." = "มีโปรแกรมอยู่ข้างใน เปิดเฉพาะเมื่อคุณเชื่อถือแหล่งที่มา";

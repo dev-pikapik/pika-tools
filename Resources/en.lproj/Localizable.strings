@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Something went wrong. Please try again.";
 "Couldn’t extract “%@”" = "Couldn’t extract “%@”";
 "The file may be damaged." = "The file may be damaged.";
+"Expands to %@" = "Expands to %@";
+"Protected with a password" = "Protected with a password";
+"Part of a multi-part archive" = "Part of a multi-part archive";
+"Damaged. Showing what could be read." = "Damaged. Showing what could be read.";
+"Only the first items are shown." = "Only the first items are shown.";
+"Contains a program. Open it only if you trust where it came from." = "Contains a program. Open it only if you trust where it came from.";

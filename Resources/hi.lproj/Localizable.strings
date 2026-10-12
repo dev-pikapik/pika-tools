@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "कुछ गड़बड़ हो गई। कृपया फिर कोशिश करें।";
 "Couldn’t extract “%@”" = "“%@” एक्सट्रैक्ट नहीं किया जा सका";
 "The file may be damaged." = "हो सकता है फ़ाइल ख़राब हो।";
+"Expands to %@" = "एक्सट्रैक्ट होने पर: %@";
+"Protected with a password" = "पासवर्ड से सुरक्षित";
+"Part of a multi-part archive" = "कई हिस्सों में बँटे आर्काइव का एक हिस्सा";
+"Damaged. Showing what could be read." = "ख़राब है। जितना पढ़ा जा सका, उतना दिखाया गया है।";
+"Only the first items are shown." = "सिर्फ़ शुरुआती आइटम दिखाए गए हैं।";
+"Contains a program. Open it only if you trust where it came from." = "इसमें एक प्रोग्राम है। इसे तभी खोलें जब आपको इसके स्रोत पर भरोसा हो।";

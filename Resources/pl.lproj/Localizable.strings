@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Coś poszło nie tak. Spróbuj ponownie.";
 "Couldn’t extract “%@”" = "Nie udało się wypakować „%@”";
 "The file may be damaged." = "Plik może być uszkodzony.";
+"Expands to %@" = "Po wypakowaniu: %@";
+"Protected with a password" = "Chronione hasłem";
+"Part of a multi-part archive" = "Część archiwum wieloczęściowego";
+"Damaged. Showing what could be read." = "Uszkodzone. Pokazano to, co udało się odczytać.";
+"Only the first items are shown." = "Wyświetlono tylko pierwsze elementy.";
+"Contains a program. Open it only if you trust where it came from." = "Zawiera program. Otwieraj go tylko wtedy, gdy ufasz jego źródłu.";

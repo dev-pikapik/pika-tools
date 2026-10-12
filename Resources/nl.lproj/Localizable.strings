@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Er ging iets mis. Probeer het opnieuw.";
 "Couldn’t extract “%@”" = "‘%@’ kan niet worden uitgepakt";
 "The file may be damaged." = "Het bestand is mogelijk beschadigd.";
+"Expands to %@" = "Na het uitpakken: %@";
+"Protected with a password" = "Beveiligd met een wachtwoord";
+"Part of a multi-part archive" = "Onderdeel van een archief in meerdere delen";
+"Damaged. Showing what could be read." = "Beschadigd. Dit is wat er gelezen kon worden.";
+"Only the first items are shown." = "Alleen de eerste onderdelen worden getoond.";
+"Contains a program. Open it only if you trust where it came from." = "Bevat een programma. Open het alleen als je de bron vertrouwt.";

@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Terjadi masalah. Coba lagi.";
 "Couldn’t extract “%@”" = "“%@” tidak bisa diekstrak";
 "The file may be damaged." = "File mungkin rusak.";
+"Expands to %@" = "Setelah diekstrak: %@";
+"Protected with a password" = "Dilindungi kata sandi";
+"Part of a multi-part archive" = "Bagian dari arsip multi-bagian";
+"Damaged. Showing what could be read." = "Rusak. Menampilkan bagian yang bisa dibaca.";
+"Only the first items are shown." = "Hanya item pertama yang ditampilkan.";
+"Contains a program. Open it only if you trust where it came from." = "Berisi program. Buka hanya jika Anda memercayai sumbernya.";

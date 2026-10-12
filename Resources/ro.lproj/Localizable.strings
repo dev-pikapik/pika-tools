@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Ceva nu a mers bine. Încearcă din nou.";
 "Couldn’t extract “%@”" = "„%@” nu a putut fi extras";
 "The file may be damaged." = "Fișierul poate fi deteriorat.";
+"Expands to %@" = "După extragere: %@";
+"Protected with a password" = "Protejat cu parolă";
+"Part of a multi-part archive" = "Parte dintr-o arhivă în mai multe părți";
+"Damaged. Showing what could be read." = "Deteriorată. Se afișează ce a putut fi citit.";
+"Only the first items are shown." = "Sunt afișate doar primele elemente.";
+"Contains a program. Open it only if you trust where it came from." = "Conține un program. Deschide-l doar dacă ai încredere în sursă.";

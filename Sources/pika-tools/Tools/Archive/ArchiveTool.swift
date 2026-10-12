@@ -7,7 +7,7 @@ final class ArchiveTool: Tool {
     let icon = "doc.zipper"
     var title: String { String(localized: "Archives in Finder") }
     let tab = SettingsTab.finder
-    private let finder = FinderExtension(bundle: "Archive", key: "archive")
+    private let finder = FinderExtension(bundle: "Archive", key: "archive", preview: true)
     private let defaultApp = ArchiveDefaultApp()
 
     var isActive: Bool { finder.isActive }

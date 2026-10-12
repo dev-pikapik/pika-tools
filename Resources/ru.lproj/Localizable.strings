@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Что-то пошло не так. Попробуйте ещё раз.";
 "Couldn’t extract “%@”" = "Не удалось распаковать «%@»";
 "The file may be damaged." = "Возможно, файл повреждён.";
+"Expands to %@" = "После распаковки: %@";
+"Protected with a password" = "Защищено паролем";
+"Part of a multi-part archive" = "Часть многотомного архива";
+"Damaged. Showing what could be read." = "Архив повреждён. Показано то, что удалось прочитать.";
+"Only the first items are shown." = "Показаны только первые элементы.";
+"Contains a program. Open it only if you trust where it came from." = "Содержит программу. Открывайте её, только если доверяете источнику.";

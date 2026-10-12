@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "حدث خطأ ما. حاول مرة أخرى.";
 "Couldn’t extract “%@”" = "تعذّر استخراج «%@»";
 "The file may be damaged." = "ربما يكون الملف تالفًا.";
+"Expands to %@" = "بعد الاستخراج: %@";
+"Protected with a password" = "محمي بكلمة سر";
+"Part of a multi-part archive" = "جزء من ملف مضغوط متعدد الأجزاء";
+"Damaged. Showing what could be read." = "الملف تالف. يتم عرض ما أمكن قراءته.";
+"Only the first items are shown." = "يتم عرض العناصر الأولى فقط.";
+"Contains a program. Open it only if you trust where it came from." = "يحتوي على برنامج. لا تفتحه إلا إذا كنت تثق بمصدره.";

@@ -931,3 +931,9 @@
 "Something went wrong. Please try again." = "Något gick fel. Försök igen.";
 "Couldn’t extract “%@”" = "”%@” kunde inte packas upp";
 "The file may be damaged." = "Filen kan vara skadad.";
+"Expands to %@" = "Uppackat: %@";
+"Protected with a password" = "Skyddat med lösenord";
+"Part of a multi-part archive" = "Del av ett arkiv i flera delar";
+"Damaged. Showing what could be read." = "Skadat. Visar det som gick att läsa.";
+"Only the first items are shown." = "Bara de första objekten visas.";
+"Contains a program. Open it only if you trust where it came from." = "Innehåller ett program. Öppna det bara om du litar på källan.";
