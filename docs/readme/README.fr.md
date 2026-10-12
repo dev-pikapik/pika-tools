@@ -177,7 +177,7 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Compagnon sur le bureau</b>
-<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter.
+<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ L’app détecte le changement en une ou deux secondes, sans redémarrage.
 
 Certaines fonctions demandent davantage : **Contrôle des ventilateurs**, **Extensions du Finder**, **iCloud Drive** et **Accès complet au disque**. Tout se trouve sur la page Autorisations des réglages : chaque autorisation a une ligne qui dit à quoi elle sert, une coche verte ou une croix orange, et un seul bouton : **Autoriser** quand elle manque, **Éteindre** quand elle est active. Vous pouvez ainsi reprendre n’importe quelle autorisation sur place.
 
-pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. La seule requête réseau est la recherche de mises à jour, qui demande à GitHub la dernière version.
+pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. pikapik ne se connecte à internet que pour les mises à jour (il demande à GitHub la dernière version et ne la télécharge que si vous choisissez de mettre à jour) et pour le test de débit, quand vous le lancez (avec les serveurs d’Apple). La version du Mac App Store est mise à jour par l’App Store, et son test de débit utilise Cloudflare. La progression de votre compagnon (pas, lancers, récompenses et le reste) est comptée uniquement sur ce Mac et n’est jamais envoyée nulle part. Vous pouvez l’effacer dans Réglages › Compagnon.
 
 </details>
 
@@ -249,6 +249,10 @@ Dans Réglages → Jeux → Autres réglages de jeu, le groupe « Souris et trac
 
 Ouvrez Réglages → Jeux → Ajouter un jeu et cliquez sur votre jeu en cours. Les jeux utilisant Java ou d’autres environnements apparaissent aussi, même sans fichier .app. Minecraft s’appelle Minecraft au lieu de java. Trouvez le processus du jeu et glissez sa ligne sur Vos jeux dans Réglages → Jeux.
 
+**Garde-robe et récompenses du compagnon.** Ouvrez Réglages › Compagnon pour habiller votre compagnon : plus de 30 vêtements et accessoires, des chapeaux et lunettes aux capes et aux ailes, et des tenues toutes prêtes comme le sorcier, le pirate ou l’astronaute. Quelques pièces sont offertes dès le départ. Les autres sont des récompenses qui arrivent quand vous jouez ensemble : attrapez votre compagnon et lancez-le, faites rouler le ballon, regardez-le grimper sur les fenêtres et bavarder, ou tenez-lui simplement compagnie jour après jour. Votre compagnon vous prévient quand vous avez gagné une nouvelle récompense.
+
+Pour savoir quand une récompense est due, pikapik compte uniquement ce que vous et votre compagnon faites : les pas, les fois où vous le prenez et le lancez, ses sauts, ses escalades, les parties de ballon et les conversations, les jours passés ensemble, si vous étiez ensemble tôt le matin, après minuit ou le week-end, les pages des Réglages ouvertes et les pièces essayées. En dehors du Mac App Store, pikapik note aussi si vous avez ouvert notre page GitHub depuis les Réglages. Ces chiffres, la date de chaque récompense et la tenue de votre compagnon restent sur ce Mac. Rien n’est envoyé nulle part, et rien de tout cela n’entre dans le fichier de réglages exporté ni dans la synchronisation iCloud. Vous pouvez tout effacer à tout moment dans Réglages › Compagnon, et votre compagnon repart de zéro.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
@@ -291,6 +295,8 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : masquer d’un clic dans le Dock.
 - **Finder** : nouveau fichier, copie allégée et conversion, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
+- **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
+- **Compagnon** : l’activer ou le désactiver, le laisser bavarder et jouer au ballon, l’habiller et voir vos récompenses.
 - **Autorisations** : toutes les autorisations utilisées par pikapik, chacune avec son état et un bouton pour l’autoriser ou l’éteindre. Un outil auquel il manque une autorisation apparaît à moitié grisé ; un clic dessus ouvre cette page sur la bonne ligne.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 

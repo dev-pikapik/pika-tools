@@ -133,7 +133,9 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .lark: "sunrise.fill"
         case .owl: "moon.zzz.fill"
         case .weekend: "sun.max.fill"
-        case .week, .month, .hundred: "calendar"
+        case .week: "7.square.fill"
+        case .month: "30.square.fill"
+        case .hundred: "crown.fill"
         case .collector: "trophy.fill"
         }
     }
