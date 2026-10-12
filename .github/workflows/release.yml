@@ -42,6 +42,9 @@ jobs:
           security list-keychains -d user -s "$KC" $(security list-keychains -d user | tr -d '"')
           rm "$RUNNER_TEMP/sign.p12"
           if [ "$DEVID" = true ]; then
+            curl -fsSL https://www.apple.com/certificateauthority/DeveloperIDG2CA.cer -o "$RUNNER_TEMP/g2.cer"
+            security import "$RUNNER_TEMP/g2.cer" -k "$KC"
+            security find-identity -p codesigning "$KC"
             IDENTITY=$(security find-identity -v -p codesigning "$KC" | sed -n 's/.*"\(Developer ID Application:.*\)"/\1/p' | head -1)
             [ -n "$IDENTITY" ]
             echo "SIGN_IDENTITY=$IDENTITY" >> "$GITHUB_ENV"
