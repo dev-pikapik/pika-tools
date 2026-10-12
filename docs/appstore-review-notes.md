@@ -63,23 +63,18 @@ To reproduce each prompt:
 Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere.
 
 ## Pet wardrobe and awards
-Settings > Pet has a wardrobe of 38 things the pet can wear, 10 ready-made looks and 24 awards. Six things are free and the rest are unlocked by awards, which are earned only by using the pet. Nothing is sold, and tips and network access unlock nothing.
+Settings > Pet has a wardrobe of 38 things the pet can wear, 10 ready-made looks and 24 awards. Six things are free and the rest are unlocked by awards, which are earned only by using the pet. Nothing is sold, and network access unlocks nothing.
 
 The app keeps plain totals of what the user and the pet do (steps, pick-ups, high throws, jumps, leaps, climbs, tumbles, catches, kicks, ball pushes, phrases, days together, Settings pages opened, things tried on, visits to the Pet page), the date of each award and the worn outfit. They are stored only in the app's preferences under five keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit), are never sent anywhere and are not part of exported settings. The totals never record which keys were pressed or what was clicked. Erase Progress… in the Awards section of Settings > Pet deletes all five keys after a confirmation.
 
-## Tips (in-app purchase)
-Settings > About has an optional tip jar with three consumable in-app purchases:
-- com.pesotchi.pika-tools.appstore.tip.small
-- com.pesotchi.pika-tools.appstore.tip.medium
-- com.pesotchi.pika-tools.appstore.tip.large
-
-Tips unlock nothing. All features work the same without them. If the products cannot be loaded, the page shows a short message and a Try Again button.
+## In-app purchases
+This version has no in-app purchases. The tip jar in Settings > About stays hidden while no tip products exist in App Store Connect.
 
 ## Privacy
 - No login, no account.
 - No data collection, no analytics, no advertising, no tracking. See the privacy manifest in the bundle.
 - Pet progress (plain totals, award dates and the worn outfit) stays in the app's preferences on this Mac, is never sent anywhere and can be erased in Settings > Pet.
-- The only network use is the Speed Test the user starts, and the App Store tip purchase.
+- The only network use is the Speed Test the user starts.
 
 ## Not in this build
 Features that need private APIs or root rights are absent: key repeat tuning, pointer acceleration, Animations tweaks, Fan control, the automatic updater, the leftover-permissions cleaner and the Uninstaller. The sandbox is on.
