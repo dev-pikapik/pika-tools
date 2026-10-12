@@ -7,7 +7,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Turn on Window zoom (or any Keyboard/Mouse/Windows tool). Expected: Accessibility prompt, then Input Monitoring if needed. Status shows "Needs Access" until granted, then "Active".
 - Revoke a permission in System Settings while the app runs. Expected: status returns to "Needs Access" without a crash; granting it again restores the tool without relaunch.
 - A tool that needs a missing permission is half-grey and does nothing when toggled; clicking it opens the Permissions page on the row to allow. Turn Off on Accessibility and Input Monitoring opens the right System Settings list (this build cannot revoke them itself). The Folders row: Allow shows the home folder panel; Turn Off forgets the saved folders and the next file action asks again.
-- Settings has no Fans, Animations, Key repeat, Pointer, Updates, iCloud sync, "Keep running after Quit" or "Turn off the display now" rows. Search for "fan" and "pointer" finds nothing.
+- Settings has no Fans, Animations, Uninstaller, Key repeat, Pointer, Updates, iCloud sync, "Keep running after Quit" or "Turn off the display now" rows. Search for "fan", "pointer" and "uninstall" finds nothing.
 
 ## Settings
 - Change Appearance and Language, press Restart in Settings. Expected: app relaunches with Settings open, choices kept.
@@ -48,3 +48,4 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Fan control: open Settings > Fans, turn on manual control. Expected: one admin prompt to install the helper; speed changes follow the slider; quitting or killing pikapik returns fans to automatic within seconds.
 - Updates: About > Check Now finds a newer release, installs and relaunches.
 - Pet awards: Settings > Pet shows 25 awards. Click the GitHub link in Settings > About. Expected: the "Open Source" award is earned. With iCloud sync on, a second Mac does not receive the awards or the outfit.
+- Uninstaller: in Settings > Uninstaller drop a small test app on the picture and click Move to Trash. Expected: the app and its files are in the Trash, the removal is listed under Recently removed, and Put Back returns everything. An app that is open is asked to quit first, and an item that needs an administrator asks for the password once. Turn on "Offer to clean up when an app goes to the Trash" and drag an app to the Trash in Finder. Expected: Settings opens on this page with that app and the files it left behind, and nothing is removed until you choose.

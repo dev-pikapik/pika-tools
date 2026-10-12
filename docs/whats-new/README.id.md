@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Hapus app tanpa khawatir
+
+<sub>1.36.0 · 12 Oktober 2026</sub>
+
+Hapus App yang baru menghapus sebuah app beserta semua filenya, dan mengembalikan semuanya jika Anda berubah pikiran.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Hapus App dan pilih sebuah app, atau seret app ke gambar. pikapik menampilkan semua yang disimpan app itu di Mac Anda, lengkap dengan alasan untuk setiap file. File yang jelas milik app diberi centang, sedangkan file yang hanya mungkin terkait tidak. Klik “Pindahkan ke Tong Sampah”, dan semuanya masuk ke Tong Sampah, jadi tidak ada yang dihapus permanen.
+
+Berubah pikiran? Klik “Kembalikan”, dan semuanya kembali ke tempat semula. Sepuluh penghapusan terakhir menunggu di “Baru dihapus” selama file-nya masih ada di Tong Sampah. “Reset app” mempertahankan app dan hanya menghapus data tersimpan, pengaturan, dan file sementara miliknya, kalau app itu bermasalah.
+
+Anda sendiri yang memindahkan app ke Tong Sampah? Halaman ini juga menampilkan app seperti itu beserta file yang ditinggalkannya, dan Anda bisa menyalakan sakelar yang menawarkan pembersihan setiap kali ada app masuk ke Tong Sampah. Tidak ada yang dihapus sebelum Anda memilih. Agar semuanya terlihat, halaman ini memerlukan Akses Disk Penuh.
+
+---
+
 ## <a id="v1.35.0"></a>Dandani peliharaan Anda
 
 <sub>1.35.0 · 12 Oktober 2026</sub>

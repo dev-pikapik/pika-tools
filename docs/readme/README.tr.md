@@ -180,6 +180,14 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın. Onu gardırobundaki kıyafetlerle giydirin ve birlikte oynarken ödüller kazanın.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Uygulamaları Kaldır</b>
+<br>Uygulamayı dosyalarıyla kaldırın. Hepsi geri konabilir.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar
@@ -253,6 +261,10 @@ Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla.
 
 Ödülün ne zaman geldiğini bilmek için pikapik yalnızca sizin ve evcil dostunuzun yaptıklarını sayar: adımlar, onu kaç kez tutup fırlattığınız, zıplamalar, tırmanışlar, top oyunları ve sohbetler, birlikte geçen günler, sabahın erken saatlerinde, gece yarısından sonra ya da hafta sonu birlikte olup olmadığınız, açtığınız Ayarlar sayfaları ve denediğiniz parçalar. Mac App Store dışındaki sürümde pikapik, Ayarlar’dan GitHub sayfamızı açıp açmadığınızı da not eder. Bu sayılar, her ödülün tarihi ve evcil dostunuzun üzerindekiler yalnızca bu Mac’te kalır. Hiçbir yere gönderilmez ve hiçbiri dışa aktarılan ayar dosyasına ya da iCloud eşitlemesine girmez. Hepsini istediğiniz zaman Ayarlar › Evcil Dost sayfasından silebilirsiniz; evcil dostunuz baştan başlar.
 
+**Uygulamaları Kaldır.** Ayarlar › Uygulamaları Kaldır sayfasını açın, listeden bir uygulama seçin ya da bir uygulamayı resmin üzerine bırakın; pikapik o uygulamanın Mac’inizde sakladığı her şeyi gösterir: uygulamanın kendisi, kayıtlı verileri, ayarları, geçici dosyaları, arka plan yardımcıları ve daha fazlası; her biri listede olma nedeniyle birlikte. Açıkça uygulamaya ait olan dosyalar işaretlidir, yalnızca ilgili olabilecek dosyalar işaretli değildir, başka uygulamaların da kullandığı dosyalar ise etiketlenir. Kaldırılacakları seçin ve **Çöp Sepeti’ne taşı** düğmesine tıklayın. Hiçbir şey kalıcı olarak silinmez: her şey Çöp Sepeti’ne gider. Uygulama açıksa pikapik önce ondan kapanmasını ister; bazı dosyalar yönetici gerektiriyorsa Mac’iniz parolanızı yalnızca bir kez sorar.
+
+Fikrinizi mi değiştirdiniz? **Geri koy** düğmesine tıklayın; her şey eski yerine döner ve arka plan yardımcıları yeniden başlar. Son on kaldırma, dosyaları Çöp Sepeti’nde durduğu sürece “Son kaldırılanlar” bölümünde bekler. **Uygulamayı sıfırla** uygulamayı olduğu gibi bırakır, yalnızca kayıtlı verilerini, ayarlarını ve geçici dosyalarını kaldırır; bir uygulama düzgün çalışmadığında işe yarayabilir. Çöp Sepeti’ne kendiniz taşıdığınız uygulamalar, geride bıraktıkları dosyalarla birlikte “Çöp Sepeti’nde” bölümünde görünür; “Kaldırılan uygulamaların kalıntıları” ise artık olmayan uygulamaların dosyalarını bulur. “Bir uygulama Çöp Sepeti’ne gidince temizlik öner” anahtarı varsayılan olarak kapalıdır ve siz seçmeden hiçbir şey kaldırılmaz. Bir uygulamanın sakladığı her şeyi görmek için sayfanın **Tam Disk Erişimi** iznine ihtiyacı vardır. Bu araç Mac App Store sürümünde yoktur.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
@@ -295,6 +307,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
 - **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
+- **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
 - **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.
 - **Evcil Dost**: açıp kapatma, sohbet ve top, gardırop ve ödüller.
 - **İzinler**: pikapik’in kullandığı tüm izinler; her birinin durumu ve izin vermek ya da kapatmak için bir düğmesi. Bir izni eksik olan araç yarı soluk gri görünür; üzerine tıklamak bu sayfayı doğru satırda açar.

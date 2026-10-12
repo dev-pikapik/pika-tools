@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Ta bort appar utan oro
+
+<sub>1.36.0 · 12 oktober 2026</sub>
+
+Nya Ta bort appar tar bort en app med alla dess filer och lägger tillbaka allt om du ångrar dig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Ta bort appar och välj en app, eller släpp en på bilden. pikapik visar allt som appen sparar på din Mac, med skälet till varje fil. Filer som tydligt hör till appen är ikryssade, och filer som bara kanske hör ihop med den är det inte. Klicka på ”Flytta till papperskorgen”, så hamnar allt i papperskorgen och inget raderas för gott.
+
+Ångrade du dig? Klicka på ”Lägg tillbaka”, så hamnar allt där det låg. De tio senaste borttagningarna väntar under ”Nyligen borttagna” så länge deras filer ligger kvar i papperskorgen. ”Återställ appen” behåller appen och tar bara bort dess sparade data, inställningar och tillfälliga filer, om den skulle krångla.
+
+Har du själv lagt en app i papperskorgen? Sidan visar sådana appar och filerna de lämnade kvar, och med ett reglage kan pikapik erbjuda städning varje gång en app hamnar i papperskorgen. Inget tas bort förrän du väljer. För att se allt behöver sidan Full skivåtkomst.
+
+---
+
 ## <a id="v1.35.0"></a>Klä på ditt husdjur
 
 <sub>1.35.0 · 12 oktober 2026</sub>

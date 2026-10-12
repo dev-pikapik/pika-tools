@@ -22,5 +22,65 @@
 			<string>%lld wiersza na kliknięcie</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld element</string>
+			<key>few</key>
+			<string>%lld elementy</string>
+			<key>many</key>
+			<string>%lld elementów</string>
+			<key>other</key>
+			<string>%lld elementu</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Przeniesiono %lld element (%@) do Kosza</string>
+			<key>few</key>
+			<string>Przeniesiono %lld elementy (%@) do Kosza</string>
+			<key>many</key>
+			<string>Przeniesiono %lld elementów (%@) do Kosza</string>
+			<key>other</key>
+			<string>Przeniesiono %lld elementu (%@) do Kosza</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Przywrócono %lld element</string>
+			<key>few</key>
+			<string>Przywrócono %lld elementy</string>
+			<key>many</key>
+			<string>Przywrócono %lld elementów</string>
+			<key>other</key>
+			<string>Przywrócono %lld elementu</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

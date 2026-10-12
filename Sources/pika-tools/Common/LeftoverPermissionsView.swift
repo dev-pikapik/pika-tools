@@ -68,7 +68,7 @@ final class LeftoverModel {
         }
     }
 
-    private static func forget(_ id: String) {
+    static func forget(_ id: String) {
         let files = FileManager.default
         let stub = files.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             .appendingPathComponent(Bundle.main.bundleIdentifier ?? "pika-tools", isDirectory: true)

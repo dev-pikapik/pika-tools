@@ -144,12 +144,24 @@ private struct AppDropTarget: Equatable {
     }
 }
 
+private struct AppDropTargetKey: EnvironmentKey {
+    static let defaultValue: String? = nil
+}
+
+extension EnvironmentValues {
+    var appDropTarget: String? {
+        get { self[AppDropTargetKey.self] }
+        set { self[AppDropTargetKey.self] = newValue }
+    }
+}
+
 struct AppDropPage: ViewModifier {
     @State private var targets: [AppDropTarget] = []
     @State private var target: String?
 
     func body(content: Content) -> some View {
         content
+            .environment(\.appDropTarget, target)
             .onDrop(of: [.fileURL, .plainText], delegate: AppDropDelegate(targets: targets, target: $target))
             .overlayPreferenceValue(AppDropZones.self) { zones in
                 GeometryReader { proxy in

@@ -180,6 +180,14 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy. Chọn đồ cho nó trong tủ quần áo riêng và nhận giải thưởng khi cùng chơi.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Gỡ ứng dụng</b>
+<br>Gỡ ứng dụng cùng các tệp của nó. Có thể hoàn lại tất cả.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Chi tiết
@@ -253,6 +261,10 @@ Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơ
 
 Để biết lúc nào đến lượt một giải thưởng, pikapik chỉ đếm những gì bạn và thú cưng làm: số bước chân, số lần bạn nhấc và tung nó, các cú nhảy, những lần trèo, các ván bóng, những lần trò chuyện, số ngày bên nhau, việc hai bạn có ở bên nhau vào sáng sớm, sau nửa đêm hay cuối tuần không, những trang Cài đặt bạn đã mở và những món bạn đã thử. Ngoài Mac App Store, pikapik còn ghi lại việc bạn có mở trang GitHub của chúng tôi từ Cài đặt hay không. Các con số này, ngày nhận mỗi giải thưởng và bộ đồ thú cưng đang mặc chỉ nằm trên máy Mac này. Không có gì được gửi đi đâu cả, và không thứ nào trong đó vào tệp cài đặt đã xuất hay đồng bộ iCloud. Bạn có thể xóa tất cả bất cứ lúc nào trong Cài đặt › Thú cưng, và thú cưng sẽ bắt đầu lại từ đầu.
 
+**Gỡ ứng dụng.** Mở Cài đặt › Gỡ ứng dụng, chọn một ứng dụng trong danh sách hoặc thả một ứng dụng lên hình minh họa, và pikapik sẽ cho bạn thấy mọi thứ ứng dụng đó lưu trên Mac của bạn: chính ứng dụng, dữ liệu đã lưu, cài đặt, tệp tạm, trình trợ giúp nền và nhiều thứ khác, mỗi mục kèm lý do nó có trong danh sách. Những tệp rõ ràng thuộc về ứng dụng được đánh dấu chọn, những tệp chỉ có thể liên quan thì không, còn những tệp mà ứng dụng khác cũng dùng sẽ có nhãn riêng. Chọn thứ cần gỡ rồi nhấp **Chuyển vào Thùng rác**. Không có gì bị xóa vĩnh viễn: tất cả đều vào Thùng rác. Nếu ứng dụng đang mở, pikapik sẽ đề nghị nó thoát trước, và nếu một số tệp cần quyền quản trị viên, Mac sẽ hỏi mật khẩu của bạn một lần.
+
+Đổi ý rồi? Nhấp **Đặt lại chỗ cũ**, mọi thứ sẽ trở về chỗ cũ và các trình trợ giúp nền chạy lại. Mười lần gỡ gần nhất nằm trong “Đã gỡ gần đây” chừng nào các tệp của chúng còn trong Thùng rác. **Đặt lại ứng dụng** giữ nguyên ứng dụng và chỉ gỡ dữ liệu đã lưu, cài đặt và tệp tạm của nó, có thể giúp ích khi một ứng dụng trục trặc. Ứng dụng bạn tự chuyển vào Thùng rác xuất hiện trong “Trong Thùng rác” cùng các tệp nó để lại, còn “Tệp còn sót của ứng dụng đã gỡ” tìm các tệp của những ứng dụng đã biến mất. Công tắc “Đề nghị dọn dẹp khi ứng dụng được chuyển vào Thùng rác” mặc định tắt, và không có gì bị gỡ cho đến khi bạn chọn. Để thấy được mọi thứ một ứng dụng lưu, trang này cần **Truy cập toàn bộ ổ đĩa**. Công cụ này không có trong phiên bản Mac App Store.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
@@ -295,6 +307,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn và chuyển định dạng, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
+- **Gỡ ứng dụng**: gỡ một ứng dụng cùng các tệp của nó, đặt lại tất cả sau này và dọn những gì ứng dụng đã gỡ để lại.
 - **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.
 - **Thú cưng**: bật hoặc tắt thú cưng, cho nó trò chuyện và chơi bóng, chọn quần áo cho nó và xem giải thưởng của bạn.
 - **Quyền**: mọi quyền pikapik dùng, mỗi quyền có trạng thái và một nút để cho phép hoặc tắt. Công cụ thiếu quyền sẽ hiện mờ màu xám, bấm vào đó sẽ mở trang này đúng dòng cần.
