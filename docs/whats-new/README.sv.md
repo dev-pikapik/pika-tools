@@ -812,11 +812,11 @@ pika-tools heter nu pikapik. Dina behörigheter, inställningar och länkar i Ge
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Öppna Inställningar › Om och klicka på ”Nyheter”. Du hamnar direkt här, på sidan med en bild till varje uppdatering, på det språk som pika-tools talar.
+Öppna Inställningar › Om och klicka på ”Nyheter”. Du hamnar direkt här, på sidan med en bild till varje uppdatering, på det språk som pikapik talar.
 
 Den fullständiga listan över ändringar är också prydligare. Varje version visar dagen den kom ut, och varje versionsnummer öppnar sin nedladdningssida.
 
-Inget ändras i hur pika-tools fungerar. Uppdateringar kommer som förut, av sig själva eller via Homebrew.
+Inget ändras i hur pikapik fungerar. Uppdateringar kommer som förut, av sig själva eller via Homebrew.
 
 **Prova:** Inställningar › Om › Nyheter
 
@@ -853,7 +853,7 @@ I alla bilder i appen rör sig pekaren nu som en hand: långa sträckor får ta 
 
 <sub>1.26.0 · 8 oktober 2026</sub>
 
-pika-tools har fått ett nytt ansikte och rensar nu behörigheterna som raderade appar lämnar kvar.
+pikapik har fått ett nytt ansikte och rensar nu behörigheterna som raderade appar lämnar kvar.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Den nya symbolen är pikapik-märket i blått, violett och korall på en mörk p
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-När du raderar en app behåller macOS behörigheterna du gav den, och i Systeminställningar går de inte att ta bort. Nu har sidan ”Behörigheter” en lista som heter ”Kvar efter raderade appar”: varje app med sin symbol, vad den fick göra och när. ”Ta bort” rensar en app, ”Ta bort alla” rensar alla, och en app du installerar igen frågar helt enkelt på nytt. För att se listan ger du pika-tools full skivåtkomst: den tittar bara och ändrar ingenting förrän du trycker på ”Ta bort”.
+När du raderar en app behåller macOS behörigheterna du gav den, och i Systeminställningar går de inte att ta bort. Nu har sidan ”Behörigheter” en lista som heter ”Kvar efter raderade appar”: varje app med sin symbol, vad den fick göra och när. ”Ta bort” rensar en app, ”Ta bort alla” rensar alla, och en app du installerar igen frågar helt enkelt på nytt. För att se listan ger du pikapik full skivåtkomst: den tittar bara och ändrar ingenting förrän du trycker på ”Ta bort”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Klicka på ”Lägg till spel…”, så visas apparna som är öppna just nu me
 
 Reglagen i Spelläge talar nu klarspråk, som ”Spelet stängs inte” eller ”Sökningen dyker inte upp”, och vart och ett har en liten bild av det som stoppas. Namnet i systemet, som Spotlight, står bredvid i grått.
 
-I Inställningar › Fönster klickar du på tangenterna bredvid ”Avsluta app” eller ”Stäng fönster” och trycker på nya. ⌫ tar tillbaka ⇧⌘Q och ⇧⌘W, och om tangenterna redan används frågar pika-tools först. Spelläge använder också dina tangenter. Och varje kortkommando i Inställningar visar nu hur det verkligen är inställt på din Mac: dina tangenter, eller Av.
+I Inställningar › Fönster klickar du på tangenterna bredvid ”Avsluta app” eller ”Stäng fönster” och trycker på nya. ⌫ tar tillbaka ⇧⌘Q och ⇧⌘W, och om tangenterna redan används frågar pikapik först. Spelläge använder också dina tangenter. Och varje kortkommando i Inställningar visar nu hur det verkligen är inställt på din Mac: dina tangenter, eller Av.
 
 **Prova:** Inställningar › Spel, sedan ”Lägg till spel…”
 
@@ -955,7 +955,7 @@ Dock kan bara glida fram snabbare om den göms. Om din alltid syns ligger reglag
 
 Efter en ändring säger en rad längst ned på sidan att appar tar till sig den när du öppnar dem igen. Finder visar nya hastigheter för Snabbtitt och kolumner först efter en omstart, så raden har en knapp, ”Starta om Finder”.
 
-Skjutreglaget gör aldrig något långsammare som du redan hade snabbat upp, till exempel med kommandon i Terminal. Och ”Återställ förval” eller att avinstallera pika-tools ger tillbaka värdena du hade innan, i stället för att radera dem.
+Skjutreglaget gör aldrig något långsammare som du redan hade snabbat upp, till exempel med kommandon i Terminal. Och ”Återställ förval” eller att avinstallera pikapik ger tillbaka värdena du hade innan, i stället för att radera dem.
 
 **Prova:** Inställningar › Animationer
 
@@ -977,7 +977,7 @@ Ett skjutreglage räcker. Dra i det, så blir dold Dock, nya fönster, spara-dia
 
 Vill du bara justera en sak? Varje effekt har en egen inställning, och det har även minimeringseffekten, studsande symboler i Dock och Finder-animationer. Bredvid varje inställning rör sig en liten bild i exakt den hastighet du valt.
 
-”Återställ förval” återställer bara det som pika-tools har ändrat, och avinstallation gör samma sak. Om du någon gång själv har ställt in ett av värdena i Terminal visar pika-tools det som det är.
+”Återställ förval” återställer bara det som pikapik har ändrat, och avinstallation gör samma sak. Om du någon gång själv har ställt in ett av värdena i Terminal visar pikapik det som det är.
 
 **Prova:** Inställningar › Animationer
 
@@ -1015,7 +1015,7 @@ Hastighetstest kollar din anslutning och berättar enkelt vad den räcker till.
 
 Klicka på ”Testa hastigheten”, så ser du efter ungefär en halv minut nedladdning, uppladdning, ping och responsivitet. Under siffrorna står det i enkla ord om det räcker för 4K-filmer, videosamtal, onlinespel och stora nedladdningar.
 
-Mätningen görs på Apples servrar, och det senaste resultatet ligger kvar till nästa. Hastighetstest har en egen sida i Inställningar, en rad i menyradspanelen och en länk för appen Genvägar: `pika-tools://speed-test`.
+Mätningen görs på Apples servrar, och det senaste resultatet ligger kvar till nästa. Hastighetstest har en egen sida i Inställningar, en rad i menyradspanelen och en länk för appen Genvägar: `pikapik://speed-test`.
 
 Spelläge har lärt sig två saker. Att blockera kontroll-kortkommandon ingår nu i det: i ett spel förblir ⌃-klick ett klick och kortkommandon med ⌃ gör ingenting; överallt annars fungerar ⌃ som vanligt. Och det känner igen Minecraft: lägg till Minecraft Launcher eller CurseForge bland dina spel, så slås Spelläge på när själva Minecraft ligger överst.
 
@@ -1023,7 +1023,7 @@ Spelläge har lärt sig två saker. Att blockera kontroll-kortkommandon ingår n
 
 **Åtgärdat**
 
-- Testversioner av pika-tools som folk bygger själva håller sina inställningar för sig i iCloud Drive och rör inte längre dina.
+- Testversioner av pikapik som folk bygger själva håller sina inställningar för sig i iCloud Drive och rör inte längre dina.
 
 ---
 
@@ -1037,7 +1037,7 @@ Lägg till dina spel, så slutar din Mac att dra ut dig ur dem.
 
 Medan du spelar öppnas inte Spotlight, Siri, ⌘Tab, Mission Control och svep mellan skrivbord ovanpå spelet. ⌘Q och ⌘W stänger det inte av misstag, pekaren stannar på spelets skärm och skärmen förblir på.
 
-Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. pika-tools föreslår spel som det hittar på din Mac. Spelläge är avstängt tills du slår på det.
+Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. pikapik föreslår spel som det hittar på din Mac. Spelläge är avstängt tills du slår på det.
 
 Med Håll vaken väljer du nu vad skärmen gör: förblir på, utan skärmsläckare eller låsskärm, eller släcks som vanligt medan din Mac fortsätter arbeta. Den nya knappen ”Stäng av skärmen nu” släcker den direkt; rör musen eller tryck på en tangent för att få tillbaka den.
 

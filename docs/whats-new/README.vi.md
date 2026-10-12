@@ -812,11 +812,11 @@ pika-tools giờ có tên là pikapik. Quyền, cài đặt và các liên kết
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Mở Cài đặt › Giới thiệu và bấm “Có gì mới”. Bạn sẽ đến thẳng đây, trang có một hình cho mỗi bản cập nhật, bằng ngôn ngữ mà pika-tools đang dùng.
+Mở Cài đặt › Giới thiệu và bấm “Có gì mới”. Bạn sẽ đến thẳng đây, trang có một hình cho mỗi bản cập nhật, bằng ngôn ngữ mà pikapik đang dùng.
 
 Danh sách thay đổi đầy đủ cũng gọn gàng hơn. Mỗi phiên bản ghi rõ ngày ra mắt, và mỗi số phiên bản mở trang tải về của nó.
 
-Cách pika-tools hoạt động không có gì thay đổi. Bản cập nhật vẫn đến như trước, tự động hoặc qua Homebrew.
+Cách pikapik hoạt động không có gì thay đổi. Bản cập nhật vẫn đến như trước, tự động hoặc qua Homebrew.
 
 **Thử ngay:** Cài đặt › Giới thiệu › Có gì mới
 
@@ -853,7 +853,7 @@ Trong mọi hình của ứng dụng, con trỏ giờ di chuyển như một bà
 
 <sub>1.26.0 · ngày 8 tháng 10, 2026</sub>
 
-pika-tools có diện mạo mới, và giờ có thể xóa các quyền mà ứng dụng đã xóa để lại.
+pikapik có diện mạo mới, và giờ có thể xóa các quyền mà ứng dụng đã xóa để lại.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Biểu tượng mới là dấu pikapik màu xanh dương, tím và san hô trê
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Khi bạn xóa một ứng dụng, macOS vẫn giữ các quyền bạn đã cấp cho nó, và Cài đặt hệ thống không có cách nào để gỡ chúng. Giờ trang “Quyền” có một danh sách tên là “Còn lại từ ứng dụng đã xóa”: mỗi ứng dụng kèm biểu tượng, những gì nó từng được phép làm và khi nào. “Xóa” dọn một ứng dụng, “Xóa tất cả” dọn hết, còn ứng dụng bạn cài lại sẽ chỉ hỏi lại từ đầu. Để xem danh sách, hãy cấp cho pika-tools quyền Truy cập toàn bộ ổ đĩa: nó chỉ xem và không thay đổi gì cho đến khi bạn bấm “Xóa”.
+Khi bạn xóa một ứng dụng, macOS vẫn giữ các quyền bạn đã cấp cho nó, và Cài đặt hệ thống không có cách nào để gỡ chúng. Giờ trang “Quyền” có một danh sách tên là “Còn lại từ ứng dụng đã xóa”: mỗi ứng dụng kèm biểu tượng, những gì nó từng được phép làm và khi nào. “Xóa” dọn một ứng dụng, “Xóa tất cả” dọn hết, còn ứng dụng bạn cài lại sẽ chỉ hỏi lại từ đầu. Để xem danh sách, hãy cấp cho pikapik quyền Truy cập toàn bộ ổ đĩa: nó chỉ xem và không thay đổi gì cho đến khi bạn bấm “Xóa”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Nhấn “Thêm trò chơi…”, các ứng dụng đang mở sẽ hiện ra v�
 
 Công tắc của Chế độ trò chơi giờ nói bằng lời dễ hiểu, như “Trò chơi không đóng” hay “Tìm kiếm không bật lên”, và mỗi công tắc có một hình nhỏ về thứ nó chặn. Tên trong hệ thống, như Spotlight, nằm bên cạnh bằng màu xám.
 
-Trong Cài đặt › Cửa sổ, bấm vào phím cạnh “Thoát ứng dụng” hoặc “Đóng cửa sổ” rồi nhấn phím mới. ⌫ đưa ⇧⌘Q và ⇧⌘W trở lại, và nếu phím đã được dùng, pika-tools sẽ hỏi bạn trước. Chế độ trò chơi cũng dùng phím của bạn. Và mọi phím tắt trong Cài đặt giờ hiện đúng cách chúng thật sự được đặt trên máy Mac của bạn: phím của bạn, hoặc Tắt.
+Trong Cài đặt › Cửa sổ, bấm vào phím cạnh “Thoát ứng dụng” hoặc “Đóng cửa sổ” rồi nhấn phím mới. ⌫ đưa ⇧⌘Q và ⇧⌘W trở lại, và nếu phím đã được dùng, pikapik sẽ hỏi bạn trước. Chế độ trò chơi cũng dùng phím của bạn. Và mọi phím tắt trong Cài đặt giờ hiện đúng cách chúng thật sự được đặt trên máy Mac của bạn: phím của bạn, hoặc Tắt.
 
 **Thử ngay:** Cài đặt › Trò chơi, rồi “Thêm trò chơi…”
 
@@ -955,7 +955,7 @@ Dock chỉ có thể trượt nhanh hơn khi nó tự ẩn. Nếu Dock của b�
 
 Sau khi thay đổi, một dòng ở cuối trang cho biết ứng dụng sẽ áp dụng khi bạn mở lại. Finder chỉ hiện tốc độ mới của Xem nhanh và cột sau khi khởi động lại, nên dòng đó có nút “Khởi động lại Finder”.
 
-Thanh trượt không bao giờ làm chậm thứ bạn đã tăng tốc từ trước, ví dụ bằng lệnh trong Terminal. Còn “Khôi phục mặc định” hay gỡ cài đặt pika-tools sẽ trả lại các giá trị bạn có trước đó, thay vì xóa chúng.
+Thanh trượt không bao giờ làm chậm thứ bạn đã tăng tốc từ trước, ví dụ bằng lệnh trong Terminal. Còn “Khôi phục mặc định” hay gỡ cài đặt pikapik sẽ trả lại các giá trị bạn có trước đó, thay vì xóa chúng.
 
 **Thử ngay:** Cài đặt › Hoạt ảnh
 
@@ -977,7 +977,7 @@ Một thanh trượt là đủ. Kéo nó, và Dock đang ẩn, cửa sổ mới,
 
 Muốn chỉnh riêng một thứ? Mỗi hiệu ứng có cài đặt riêng, hiệu ứng thu nhỏ, biểu tượng nảy trong Dock và hoạt ảnh Finder cũng vậy. Cạnh mỗi cài đặt, một hình nhỏ chuyển động đúng với tốc độ bạn chọn.
 
-“Khôi phục mặc định” chỉ hoàn tác những gì pika-tools đã đổi, gỡ cài đặt cũng vậy. Nếu bạn từng tự đặt một trong các giá trị này trong Terminal, pika-tools sẽ hiện nó đúng như vậy.
+“Khôi phục mặc định” chỉ hoàn tác những gì pikapik đã đổi, gỡ cài đặt cũng vậy. Nếu bạn từng tự đặt một trong các giá trị này trong Terminal, pikapik sẽ hiện nó đúng như vậy.
 
 **Thử ngay:** Cài đặt › Hoạt ảnh
 
@@ -1015,7 +1015,7 @@ Kiểm tra tốc độ đo kết nối của bạn và nói đơn giản là nó
 
 Nhấn “Kiểm tra tốc độ”, và sau khoảng nửa phút bạn sẽ thấy tải xuống, tải lên, ping và độ phản hồi. Dưới các con số, vài lời đơn giản cho biết như vậy có đủ để xem phim 4K, gọi video, chơi game trực tuyến và tải tệp lớn hay không.
 
-Việc đo chạy trên máy chủ của Apple, và kết quả gần nhất được giữ đến lần đo sau. Kiểm tra tốc độ có trang riêng trong Cài đặt, một dòng trong bảng ở thanh menu và một liên kết cho ứng dụng Phím tắt: `pika-tools://speed-test`.
+Việc đo chạy trên máy chủ của Apple, và kết quả gần nhất được giữ đến lần đo sau. Kiểm tra tốc độ có trang riêng trong Cài đặt, một dòng trong bảng ở thanh menu và một liên kết cho ứng dụng Phím tắt: `pikapik://speed-test`.
 
 Chế độ trò chơi học thêm hai điều. Chặn phím tắt Control giờ là một phần của nó: trong trò chơi, ⌃-bấm vẫn là một cú bấm và phím tắt với ⌃ không chạy; ở mọi nơi khác, ⌃ hoạt động như thường. Và nó nhận ra Minecraft: thêm Minecraft Launcher hoặc CurseForge vào trò chơi của bạn, Chế độ trò chơi sẽ bật khi chính Minecraft ở phía trước.
 
@@ -1023,7 +1023,7 @@ Chế độ trò chơi học thêm hai điều. Chặn phím tắt Control giờ
 
 **Đã sửa**
 
-- Các bản thử nghiệm pika-tools do mọi người tự build giờ lưu cài đặt riêng trong iCloud Drive và không còn đụng đến cài đặt của bạn.
+- Các bản thử nghiệm pikapik do mọi người tự build giờ lưu cài đặt riêng trong iCloud Drive và không còn đụng đến cài đặt của bạn.
 
 ---
 
@@ -1037,7 +1037,7 @@ Thêm trò chơi của bạn, và máy Mac sẽ thôi kéo bạn ra khỏi chún
 
 Trong lúc bạn chơi, Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi. ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ ở yên trên màn hình của trò chơi và màn hình luôn sáng.
 
-Để thoát trò chơi, nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. pika-tools gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Chế độ trò chơi tắt cho đến khi bạn bật nó.
+Để thoát trò chơi, nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. pikapik gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Chế độ trò chơi tắt cho đến khi bạn bật nó.
 
 Giữ máy thức giờ cho bạn chọn màn hình sẽ làm gì: luôn sáng, không có trình bảo vệ màn hình hay màn hình khóa, hoặc tắt như thường trong khi máy Mac vẫn làm việc. Nút mới “Tắt màn hình ngay” làm tối màn hình lập tức; di chuột hoặc nhấn một phím để màn hình sáng lại.
 

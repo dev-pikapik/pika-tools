@@ -812,11 +812,11 @@ Ayarlardaki “Yenilikler” artık bu sayfayı, uygulamayla aynı dilde açıyo
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Ayarlar › Hakkında’yı açıp “Yenilikler”e tıklayın. Doğrudan buraya, her güncellemenin bir resimle anlatıldığı sayfaya gelirsiniz; pika-tools hangi dili konuşuyorsa o dilde.
+Ayarlar › Hakkında’yı açıp “Yenilikler”e tıklayın. Doğrudan buraya, her güncellemenin bir resimle anlatıldığı sayfaya gelirsiniz; pikapik hangi dili konuşuyorsa o dilde.
 
 Değişikliklerin tam listesi de daha düzenli. Her sürüm çıktığı günü gösteriyor, her sürüm numarası da kendi indirme sayfasını açıyor.
 
-pika-tools’un çalışma şeklinde hiçbir şey değişmiyor. Güncellemeler eskisi gibi kendiliğinden ya da Homebrew ile geliyor.
+pikapik’in çalışma şeklinde hiçbir şey değişmiyor. Güncellemeler eskisi gibi kendiliğinden ya da Homebrew ile geliyor.
 
 **Deneyin:** Ayarlar › Hakkında › Yenilikler
 
@@ -853,7 +853,7 @@ Uygulamadaki tüm resimlerde imleç artık bir el gibi hareket ediyor: uzak yerl
 
 <sub>1.26.0 · 8 Ekim 2026</sub>
 
-pika-tools’un yüzü yenilendi ve artık silinen uygulamaların geride bıraktığı izinleri temizliyor.
+pikapik’in yüzü yenilendi ve artık silinen uygulamaların geride bıraktığı izinleri temizliyor.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Yeni simge, koyu bir karo üzerinde mavi, mor ve mercan renginde pikapik işaret
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Bir uygulamayı sildiğinizde macOS ona verdiğiniz izinleri saklar ve Sistem Ayarları’nda bunları kaldırmanın bir yolu yoktur. Artık “İzinler” sayfasında “Silinen uygulamalardan kalanlar” adlı bir liste var: her uygulama simgesiyle, neye izni olduğu ve ne zaman. “Kaldır” bir uygulamayı temizler, “Tümünü Kaldır” hepsini, yeniden yüklediğiniz bir uygulama ise yalnızca tekrar sorar. Listeyi görmek için pika-tools’a Tam Disk Erişimi verin: “Kaldır”a basana kadar yalnızca bakar ve hiçbir şeyi değiştirmez.
+Bir uygulamayı sildiğinizde macOS ona verdiğiniz izinleri saklar ve Sistem Ayarları’nda bunları kaldırmanın bir yolu yoktur. Artık “İzinler” sayfasında “Silinen uygulamalardan kalanlar” adlı bir liste var: her uygulama simgesiyle, neye izni olduğu ve ne zaman. “Kaldır” bir uygulamayı temizler, “Tümünü Kaldır” hepsini, yeniden yüklediğiniz bir uygulama ise yalnızca tekrar sorar. Listeyi görmek için pikapik’e Tam Disk Erişimi verin: “Kaldır”a basana kadar yalnızca bakar ve hiçbir şeyi değiştirmez.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Artık oyunu açık uygulamalar arasından seçebilir, çıkma ve kapatma tuşla
 
 Oyun Modu anahtarları artık sade bir dille konuşuyor, örneğin “Oyun kapanmaz” ya da “Arama ekrana gelmez”, ve her birinin neyi durdurduğunu gösteren küçük bir resmi var. Spotlight gibi sistemdeki adı da yanında gri olarak durur.
 
-Ayarlar › Pencereler’de “Uygulamadan çık” ya da “Pencereyi kapat”ın yanındaki tuşlara tıklayın ve yenilerine basın. ⌫ ⇧⌘Q ve ⇧⌘W’yi geri getirir; tuşlar zaten kullanılıyorsa pika-tools önce size sorar. Oyun Modu da sizin tuşlarınızı kullanır. Ayrıca Ayarlar’daki her kestirme artık Mac’inizde gerçekte nasıl ayarlandığını gösteriyor: sizin tuşlarınız ya da Kapalı.
+Ayarlar › Pencereler’de “Uygulamadan çık” ya da “Pencereyi kapat”ın yanındaki tuşlara tıklayın ve yenilerine basın. ⌫ ⇧⌘Q ve ⇧⌘W’yi geri getirir; tuşlar zaten kullanılıyorsa pikapik önce size sorar. Oyun Modu da sizin tuşlarınızı kullanır. Ayrıca Ayarlar’daki her kestirme artık Mac’inizde gerçekte nasıl ayarlandığını gösteriyor: sizin tuşlarınız ya da Kapalı.
 
 **Deneyin:** Ayarlar › Oyunlar, ardından “Oyun Ekle…”
 
@@ -955,7 +955,7 @@ Dock yalnızca gizlendiğinde daha hızlı kayabilir. Sizinki hep yerinde duruyo
 
 Bir değişiklikten sonra sayfanın altındaki bir satır, uygulamaları yeniden açtığınızda değişikliğin geçerli olacağını söyler. Finder, Hızlı Bakış ve sütunların yeni hızını ancak yeniden başlatıldıktan sonra gösterir; bu yüzden satırda bir “Finder’ı yeniden başlat” düğmesi var.
 
-Sürgü, örneğin Terminal komutlarıyla zaten hızlandırdığınız bir şeyi asla yavaşlatmaz. “Saptanmışlara Dön” ya da pika-tools’u kaldırmak da değerlerinizi silmek yerine önceki hâllerine geri getirir.
+Sürgü, örneğin Terminal komutlarıyla zaten hızlandırdığınız bir şeyi asla yavaşlatmaz. “Saptanmışlara Dön” ya da pikapik’i kaldırmak da değerlerinizi silmek yerine önceki hâllerine geri getirir.
 
 **Deneyin:** Ayarlar › Animasyonlar
 
@@ -977,7 +977,7 @@ Tek bir sürgü yeter. Onu kaydırdığınızda gizli Dock, yeni pencereler, Kay
 
 Yalnızca bir şeyi mi ayarlamak istiyorsunuz? Her efektin kendi ayarı var; küçültme efekti, Dock’ta zıplayan simgeler ve Finder animasyonları için de öyle. Her ayarın yanında küçük bir resim tam seçtiğiniz hızda hareket eder.
 
-“Saptanmışlara Dön” yalnızca pika-tools’un değiştirdiklerini geri alır; uygulamayı kaldırmak da aynısını yapar. Bu değerlerden birini bir zamanlar Terminal’de kendiniz ayarladıysanız, pika-tools onu olduğu gibi gösterir.
+“Saptanmışlara Dön” yalnızca pikapik’in değiştirdiklerini geri alır; uygulamayı kaldırmak da aynısını yapar. Bu değerlerden birini bir zamanlar Terminal’de kendiniz ayarladıysanız, pikapik onu olduğu gibi gösterir.
 
 **Deneyin:** Ayarlar › Animasyonlar
 
@@ -1015,7 +1015,7 @@ Hız Testi bağlantınızı kontrol eder ve neye yettiğini size basitçe söyle
 
 “Hızı Ölç”e basın; yarım dakika kadar sonra indirme, yükleme, ping ve tepki hızını görürsünüz. Rakamların altında, 4K filmler, görüntülü aramalar, çevrimiçi oyunlar ve büyük indirmeler için yeterli olup olmadığı basit kelimelerle yazar.
 
-Ölçüm Apple’ın sunucularında yapılır ve son sonuç bir sonrakine kadar kalır. Hız Testi’nin Ayarlar’da kendi sayfası, menü çubuğu panelinde bir satırı ve Kestirmeler uygulaması için bir bağlantısı var: `pika-tools://speed-test`.
+Ölçüm Apple’ın sunucularında yapılır ve son sonuç bir sonrakine kadar kalır. Hız Testi’nin Ayarlar’da kendi sayfası, menü çubuğu panelinde bir satırı ve Kestirmeler uygulaması için bir bağlantısı var: `pikapik://speed-test`.
 
 Oyun Modu iki şey öğrendi. Control kestirmelerini engelleme artık onun bir parçası: oyunda ⌃-tıklama normal bir tıklama olarak kalır ve ⌃ kestirmeleri çalışmaz; başka her yerde ⌃ her zamanki gibi çalışır. Bir de Minecraft’ı tanıyor: Minecraft Launcher’ı ya da CurseForge’u oyunlarınıza ekleyin, Minecraft’ın kendisi öndeyken Oyun Modu açılır.
 
@@ -1023,7 +1023,7 @@ Oyun Modu iki şey öğrendi. Control kestirmelerini engelleme artık onun bir p
 
 **Düzeltilenler**
 
-- İnsanların kendi derlediği pika-tools test sürümleri ayarlarını iCloud Drive’da ayrı tutar ve artık sizinkilere dokunmaz.
+- İnsanların kendi derlediği pikapik test sürümleri ayarlarını iCloud Drive’da ayrı tutar ve artık sizinkilere dokunmaz.
 
 ---
 
@@ -1037,7 +1037,7 @@ Oyunlarınızı ekleyin, Mac sizi onlardan koparmayı bıraksın.
 
 Siz oynarken Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz. ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç oyunun ekranında kalır ve ekran açık kalır.
 
-Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. pika-tools Mac’inizde bulduğu oyunları önerir. Oyun Modu siz açana kadar kapalıdır.
+Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. pikapik Mac’inizde bulduğu oyunları önerir. Oyun Modu siz açana kadar kapalıdır.
 
 Uyanık Tut artık ekranın ne yapacağını seçmenize izin veriyor: ekran koruyucu ve kilit ekranı olmadan açık kalsın ya da Mac çalışmaya devam ederken her zamanki gibi kapansın. Yeni “Ekranı şimdi kapat” düğmesi ekranı hemen karartır; geri getirmek için fareyi oynatın ya da bir tuşa basın.
 

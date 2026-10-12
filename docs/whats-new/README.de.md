@@ -812,11 +812,11 @@ pika-tools heißt jetzt pikapik. Deine Berechtigungen, Einstellungen und Links i
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Öffne Einstellungen › Über und klicke auf „Neuerungen“. Du landest genau hier, auf der Seite mit einem Bild zu jedem Update, in der Sprache, die pika-tools spricht.
+Öffne Einstellungen › Über und klicke auf „Neuerungen“. Du landest genau hier, auf der Seite mit einem Bild zu jedem Update, in der Sprache, die pikapik spricht.
 
 Auch die vollständige Liste der Änderungen ist aufgeräumter. Jede Version zeigt den Tag, an dem sie erschienen ist, und jede Versionsnummer öffnet ihre Download-Seite.
 
-An der Arbeitsweise von pika-tools ändert sich nichts. Updates kommen wie bisher, von selbst oder über Homebrew.
+An der Arbeitsweise von pikapik ändert sich nichts. Updates kommen wie bisher, von selbst oder über Homebrew.
 
 **Ausprobieren:** Einstellungen › Über › Neuerungen
 
@@ -853,7 +853,7 @@ In allen Bildern der App bewegt sich der Zeiger jetzt wie eine Hand: Für weite 
 
 <sub>1.26.0 · 8. Oktober 2026</sub>
 
-pika-tools hat ein neues Gesicht und räumt jetzt die Berechtigungen auf, die gelöschte Apps zurücklassen.
+pikapik hat ein neues Gesicht und räumt jetzt die Berechtigungen auf, die gelöschte Apps zurücklassen.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Das neue Symbol ist das pikapik-Zeichen in Blau, Violett und Koralle auf einer d
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Wenn du eine App löschst, behält macOS die Berechtigungen, die du ihr gegeben hast, und in den Systemeinstellungen lassen sie sich nicht entfernen. Jetzt hat die Seite „Berechtigungen“ die Liste „Von gelöschten Apps übrig“: jede App mit ihrem Symbol, was sie durfte und wann. „Entfernen“ räumt eine App auf, „Alle entfernen“ alle auf einmal, und eine App, die du wieder installierst, fragt einfach neu. Damit du die Liste siehst, gib pika-tools den Festplattenvollzugriff: Es schaut nur und ändert nichts, bis du auf „Entfernen“ klickst.
+Wenn du eine App löschst, behält macOS die Berechtigungen, die du ihr gegeben hast, und in den Systemeinstellungen lassen sie sich nicht entfernen. Jetzt hat die Seite „Berechtigungen“ die Liste „Von gelöschten Apps übrig“: jede App mit ihrem Symbol, was sie durfte und wann. „Entfernen“ räumt eine App auf, „Alle entfernen“ alle auf einmal, und eine App, die du wieder installierst, fragt einfach neu. Damit du die Liste siehst, gib pikapik den Festplattenvollzugriff: Es schaut nur und ändert nichts, bis du auf „Entfernen“ klickst.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Klick auf „Spiel hinzufügen …“, und die gerade geöffneten Apps erscheine
 
 Die Schalter im Spielmodus sprechen jetzt Klartext, etwa „Das Spiel schließt sich nicht“ oder „Die Suche springt nicht auf“, und jeder hat ein kleines Bild von dem, was er stoppt. Der Name im System, etwa Spotlight, steht grau daneben.
 
-Klick unter Einstellungen › Fenster auf die Tasten neben „App beenden“ oder „Fenster schließen“ und drück neue. ⌫ holt ⇧⌘Q und ⇧⌘W zurück, und wenn die Tasten schon belegt sind, fragt pika-tools zuerst nach. Der Spielmodus nutzt ebenfalls deine Tasten. Und jeder Kurzbefehl in den Einstellungen zeigt jetzt, wie er auf deinem Mac wirklich eingerichtet ist: deine Tasten oder „Aus“.
+Klick unter Einstellungen › Fenster auf die Tasten neben „App beenden“ oder „Fenster schließen“ und drück neue. ⌫ holt ⇧⌘Q und ⇧⌘W zurück, und wenn die Tasten schon belegt sind, fragt pikapik zuerst nach. Der Spielmodus nutzt ebenfalls deine Tasten. Und jeder Kurzbefehl in den Einstellungen zeigt jetzt, wie er auf deinem Mac wirklich eingerichtet ist: deine Tasten oder „Aus“.
 
 **Ausprobieren:** Einstellungen › Spiele, dann „Spiel hinzufügen …“
 
@@ -955,7 +955,7 @@ Das Dock fährt nur dann schneller ein und aus, wenn es sich ausblendet. Bleibt 
 
 Nach einer Änderung sagt dir eine Zeile unten auf der Seite, dass Apps sie übernehmen, sobald du sie neu öffnest. Neues Tempo für Übersicht und Spalten zeigt der Finder erst nach einem Neustart, deshalb hat die Zeile eine Schaltfläche „Finder neu starten“.
 
-Der Regler macht nie etwas langsamer, das du schon beschleunigt hattest, zum Beispiel mit Befehlen im Terminal. Und „Standard wiederherstellen“ oder das Deinstallieren von pika-tools bringt deine vorherigen Werte zurück, statt sie zu löschen.
+Der Regler macht nie etwas langsamer, das du schon beschleunigt hattest, zum Beispiel mit Befehlen im Terminal. Und „Standard wiederherstellen“ oder das Deinstallieren von pikapik bringt deine vorherigen Werte zurück, statt sie zu löschen.
 
 **Ausprobieren:** Einstellungen › Animationen
 
@@ -977,7 +977,7 @@ Ein Regler reicht. Schieb ihn, und das ausgeblendete Dock, neue Fenster, Sichern
 
 Du willst nur eine Sache anpassen? Jeder Effekt hat seine eigene Einstellung, genau wie der Effekt beim Ablegen, hüpfende Symbole im Dock und Finder-Animationen. Neben jeder Einstellung bewegt sich ein kleines Bild genau in dem Tempo, das du gewählt hast.
 
-„Standard wiederherstellen“ setzt nur zurück, was pika-tools geändert hat, und beim Deinstallieren passiert dasselbe. Hast du einen dieser Werte früher selbst im Terminal gesetzt, zeigt pika-tools ihn so, wie er ist.
+„Standard wiederherstellen“ setzt nur zurück, was pikapik geändert hat, und beim Deinstallieren passiert dasselbe. Hast du einen dieser Werte früher selbst im Terminal gesetzt, zeigt pikapik ihn so, wie er ist.
 
 **Ausprobieren:** Einstellungen › Animationen
 
@@ -1015,7 +1015,7 @@ Der Speedtest prüft deine Verbindung und sagt dir einfach, wofür sie reicht.
 
 Klick auf „Geschwindigkeit prüfen“, und nach etwa einer halben Minute siehst du Download, Upload, Ping und Reaktionsfähigkeit. Unter den Zahlen steht in einfachen Worten, ob es für 4K-Filme, Videoanrufe, Online-Spiele und große Downloads reicht.
 
-Die Messung läuft über Server von Apple, und das letzte Ergebnis bleibt bis zur nächsten Messung stehen. Der Speedtest hat eine eigene Seite in den Einstellungen, eine Zeile im Feld der Menüleiste und einen Link für die App „Kurzbefehle“: `pika-tools://speed-test`.
+Die Messung läuft über Server von Apple, und das letzte Ergebnis bleibt bis zur nächsten Messung stehen. Der Speedtest hat eine eigene Seite in den Einstellungen, eine Zeile im Feld der Menüleiste und einen Link für die App „Kurzbefehle“: `pikapik://speed-test`.
 
 Der Spielmodus kann zwei neue Dinge. Das Blockieren von Ctrl-Kurzbefehlen gehört jetzt zu ihm: Im Spiel bleibt ⌃-Klick ein Klick und Kurzbefehle mit ⌃ lösen nichts aus, überall sonst funktioniert ⌃ wie gewohnt. Außerdem erkennt er Minecraft: Füg den Minecraft Launcher oder CurseForge zu deinen Spielen hinzu, und der Spielmodus schaltet sich ein, sobald Minecraft selbst vorne ist.
 
@@ -1023,7 +1023,7 @@ Der Spielmodus kann zwei neue Dinge. Das Blockieren von Ctrl-Kurzbefehlen gehör
 
 **Behoben**
 
-- Testversionen von pika-tools, die man selbst baut, halten ihre Einstellungen in iCloud Drive getrennt und rühren deine nicht mehr an.
+- Testversionen von pikapik, die man selbst baut, halten ihre Einstellungen in iCloud Drive getrennt und rühren deine nicht mehr an.
 
 ---
 
@@ -1037,7 +1037,7 @@ Füg deine Spiele hinzu, und dein Mac reißt dich nicht mehr aus ihnen heraus.
 
 Während du spielst, öffnen sich Spotlight, Siri, ⌘Tab, Mission Control und Wischen zwischen Schreibtischen nicht über dem Spiel. ⌘Q und ⌘W schließen es nicht aus Versehen, der Zeiger bleibt auf dem Bildschirm des Spiels, und der Bildschirm bleibt an.
 
-Um ein Spiel zu verlassen, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. pika-tools schlägt Spiele vor, die es auf deinem Mac findet. Der Spielmodus bleibt aus, bis du ihn einschaltest.
+Um ein Spiel zu verlassen, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. pikapik schlägt Spiele vor, die es auf deinem Mac findet. Der Spielmodus bleibt aus, bis du ihn einschaltest.
 
 Bei „Wach bleiben“ wählst du jetzt, was der Bildschirm macht: anbleiben, ohne Bildschirmschoner und Sperrbildschirm, oder wie gewohnt ausgehen, während dein Mac weiterarbeitet. Die neue Schaltfläche „Display jetzt ausschalten“ macht ihn sofort dunkel; beweg die Maus oder drück eine Taste, und er ist wieder da.
 

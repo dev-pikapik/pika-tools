@@ -812,11 +812,11 @@ What’s New in Settings now opens the What’s new page, in the same language a
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Open Settings › About and click What’s New. You get the What’s new page, with a picture for every update, in the language pika-tools speaks.
+Open Settings › About and click What’s New. You get the What’s new page, with a picture for every update, in the language pikapik speaks.
 
 The full list of changes is tidier too. Every version shows the day it came out, and every version number opens its download page.
 
-Nothing changes in how pika-tools works. Updates arrive as before, on their own or through Homebrew.
+Nothing changes in how pikapik works. Updates arrive as before, on their own or through Homebrew.
 
 **Try it:** Settings › About › What’s New
 
@@ -853,7 +853,7 @@ In every picture in the app, the pointer now moves like a hand: it takes a bit l
 
 <sub>1.26.0 · October 8, 2026</sub>
 
-pika-tools has a new face, and it can now clear the permissions that deleted apps leave behind.
+pikapik has a new face, and it can now clear the permissions that deleted apps leave behind.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ The new icon is the pikapik mark in blue, violet and coral on a dark tile. The m
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now the Permissions page has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. “Remove” clears one app, “Remove All” clears them all, and an app you install again simply asks again. To see the list, give pika-tools Full Disk Access: it only looks and changes nothing until you press “Remove”.
+When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now the Permissions page has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. “Remove” clears one app, “Remove All” clears them all, and an app you install again simply asks again. To see the list, give pikapik Full Disk Access: it only looks and changes nothing until you press “Remove”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Press Add a Game…, and the apps that are open right now appear with big icons,
 
 Game Mode switches now speak plainly, like “The game doesn’t close” or “Search doesn’t pop up”, and each has a small picture of what it stops. The system name, such as Spotlight, sits next to it in gray.
 
-In Settings › Windows, click the keys next to Quit app or Close window and press new ones. ⌫ brings back ⇧⌘Q and ⇧⌘W, and if the keys are already taken, pika-tools asks first. Game Mode uses your keys too. And every shortcut in Settings now shows how it’s really set up on your Mac: your keys, or Off.
+In Settings › Windows, click the keys next to Quit app or Close window and press new ones. ⌫ brings back ⇧⌘Q and ⇧⌘W, and if the keys are already taken, pikapik asks first. Game Mode uses your keys too. And every shortcut in Settings now shows how it’s really set up on your Mac: your keys, or Off.
 
 **Try it:** Settings › Games, then Add a Game…
 
@@ -955,7 +955,7 @@ The Dock can slide out faster only if it hides. If yours always stays in place, 
 
 After a change, a line at the bottom of the page says that apps pick it up once you open them again. Finder shows new Quick Look and column speeds only after a restart, so the line has a Restart Finder button.
 
-The slider never slows down what you had already sped up, for example with commands in Terminal. And Restore Defaults or uninstalling pika-tools brings back the values you had before, instead of erasing them.
+The slider never slows down what you had already sped up, for example with commands in Terminal. And Restore Defaults or uninstalling pikapik brings back the values you had before, instead of erasing them.
 
 **Try it:** Settings › Animations
 
@@ -977,7 +977,7 @@ One slider does it all. Move it, and the hidden Dock, new windows, Save dialogs,
 
 Want to tune just one thing? Each effect has its own setting, and so do the minimize effect, bouncing icons in the Dock and Finder animations. Next to every setting, a small picture moves at exactly the speed you chose.
 
-Restore Defaults puts back only what pika-tools changed, and so does uninstalling it. If you once set one of these values yourself in Terminal, pika-tools shows it as it is.
+Restore Defaults puts back only what pikapik changed, and so does uninstalling it. If you once set one of these values yourself in Terminal, pikapik shows it as it is.
 
 **Try it:** Settings › Animations
 
@@ -1015,7 +1015,7 @@ Speed Test checks your connection and tells you simply what it’s good for.
 
 Press Check Speed, and in about half a minute you’ll see download, upload, ping and responsiveness. Below the numbers, plain words say whether it’s enough for 4K movies, video calls, online games and big downloads.
 
-The check runs on Apple’s servers, and the last result stays until the next one. Speed Test has its own page in Settings, a row in the menu bar panel and a link for the Shortcuts app: `pika-tools://speed-test`.
+The check runs on Apple’s servers, and the last result stays until the next one. Speed Test has its own page in Settings, a row in the menu bar panel and a link for the Shortcuts app: `pikapik://speed-test`.
 
 Game Mode learned two things. Blocking Control shortcuts is now part of it: in a game, ⌃-click stays a click and ⌃ shortcuts don’t fire, and everywhere else ⌃ works as usual. And it recognizes Minecraft: add the Minecraft Launcher or CurseForge to your games, and Game Mode turns on while Minecraft itself is in front.
 
@@ -1023,7 +1023,7 @@ Game Mode learned two things. Blocking Control shortcuts is now part of it: in a
 
 **Fixed**
 
-- Test versions of pika-tools that people build themselves keep their settings apart in iCloud Drive and no longer touch yours.
+- Test versions of pikapik that people build themselves keep their settings apart in iCloud Drive and no longer touch yours.
 
 ---
 
@@ -1037,7 +1037,7 @@ Add your games, and your Mac stops pulling you out of them.
 
 While you play, Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over the game. ⌘Q and ⌘W don’t close it by accident, the pointer stays on the game’s screen, and the screen stays on.
 
-To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. pika-tools suggests games it finds on your Mac. Game Mode is off until you turn it on.
+To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. pikapik suggests games it finds on your Mac. Game Mode is off until you turn it on.
 
 Keep Awake lets you choose what the screen does: stay on, with no screen saver or lock screen, or turn off as usual while your Mac keeps working. The new Turn off the display now button darkens it at once; move the mouse or press a key to bring it back.
 

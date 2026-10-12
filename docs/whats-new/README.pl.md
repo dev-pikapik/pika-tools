@@ -812,11 +812,11 @@ pika-tools nazywa się teraz pikapik. Uprawnienia, ustawienia i linki w Skrótac
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Otwórz Ustawienia › Informacje i kliknij „Co nowego”. Trafiasz prosto tutaj, na stronę z obrazkiem do każdej aktualizacji, w języku, którym mówi pika-tools.
+Otwórz Ustawienia › Informacje i kliknij „Co nowego”. Trafiasz prosto tutaj, na stronę z obrazkiem do każdej aktualizacji, w języku, którym mówi pikapik.
 
 Pełna lista zmian też jest bardziej uporządkowana. Każda wersja pokazuje dzień wydania, a każdy numer wersji otwiera jej stronę pobierania.
 
-W działaniu pika-tools nic się nie zmienia. Aktualizacje przychodzą jak dotąd, same albo przez Homebrew.
+W działaniu pikapik nic się nie zmienia. Aktualizacje przychodzą jak dotąd, same albo przez Homebrew.
 
 **Wypróbuj:** Ustawienia › Informacje › Co nowego
 
@@ -853,7 +853,7 @@ Na wszystkich obrazkach w aplikacji wskaźnik porusza się teraz jak ręka: na d
 
 <sub>1.26.0 · 8 października 2026</sub>
 
-pika-tools ma nową twarz i teraz usuwa uprawnienia, które zostają po usuniętych aplikacjach.
+pikapik ma nową twarz i teraz usuwa uprawnienia, które zostają po usuniętych aplikacjach.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Nowa ikona to znak pikapik w kolorach niebieskim, fioletowym i koralowym na ciem
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Gdy usuwasz aplikację, macOS zachowuje nadane jej uprawnienia, a w Ustawieniach systemowych nie da się ich usunąć. Teraz na stronie „Uprawnienia” jest lista „Pozostałości po usuniętych aplikacjach”: każda aplikacja z ikoną, co mogła robić i kiedy. „Usuń” czyści jedną aplikację, „Usuń wszystkie” wszystkie naraz, a aplikacja zainstalowana ponownie po prostu zapyta jeszcze raz. Żeby zobaczyć listę, daj pika-tools pełny dostęp do dysku: tylko patrzy i niczego nie zmienia, dopóki nie klikniesz „Usuń”.
+Gdy usuwasz aplikację, macOS zachowuje nadane jej uprawnienia, a w Ustawieniach systemowych nie da się ich usunąć. Teraz na stronie „Uprawnienia” jest lista „Pozostałości po usuniętych aplikacjach”: każda aplikacja z ikoną, co mogła robić i kiedy. „Usuń” czyści jedną aplikację, „Usuń wszystkie” wszystkie naraz, a aplikacja zainstalowana ponownie po prostu zapyta jeszcze raz. Żeby zobaczyć listę, daj pikapik pełny dostęp do dysku: tylko patrzy i niczego nie zmienia, dopóki nie klikniesz „Usuń”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Kliknij „Dodaj grę…”, a otwarte teraz aplikacje pojawią się jako duże 
 
 Przełączniki Trybu gry mówią teraz prosto, na przykład „Gra się nie zamyka” albo „Wyszukiwanie nie wyskakuje”, a każdy ma mały obrazek tego, co zatrzymuje. Nazwa systemowa, na przykład Spotlight, stoi obok na szaro.
 
-W Ustawienia › Okna kliknij klawisze obok „Zakończ aplikację” lub „Zamknij okno” i naciśnij nowe. ⌫ przywraca ⇧⌘Q i ⇧⌘W, a jeśli klawisze są już zajęte, pika-tools najpierw zapyta. Tryb gry też korzysta z Twoich klawiszy. A każdy skrót w Ustawieniach pokazuje teraz, jak naprawdę jest ustawiony na Twoim Macu: Twoje klawisze albo „Wyłączone”.
+W Ustawienia › Okna kliknij klawisze obok „Zakończ aplikację” lub „Zamknij okno” i naciśnij nowe. ⌫ przywraca ⇧⌘Q i ⇧⌘W, a jeśli klawisze są już zajęte, pikapik najpierw zapyta. Tryb gry też korzysta z Twoich klawiszy. A każdy skrót w Ustawieniach pokazuje teraz, jak naprawdę jest ustawiony na Twoim Macu: Twoje klawisze albo „Wyłączone”.
 
 **Wypróbuj:** Ustawienia › Gry, potem „Dodaj grę…”
 
@@ -955,7 +955,7 @@ Dock może wysuwać się szybciej tylko wtedy, gdy się ukrywa. Jeśli Twój zaw
 
 Po zmianie na dole strony pojawia się wiersz: aplikacje ją przejmą, gdy otworzysz je ponownie. Finder pokazuje nową szybkość Szybkiego przeglądu i kolumn dopiero po ponownym uruchomieniu, dlatego w tym wierszu jest przycisk „Uruchom ponownie Findera”.
 
-Suwak nigdy nie spowolni tego, co już było przyspieszone, na przykład Twoimi poleceniami w Terminalu. A „Przywróć domyślne” i odinstalowanie pika-tools przywracają Twoje wcześniejsze wartości, zamiast je kasować.
+Suwak nigdy nie spowolni tego, co już było przyspieszone, na przykład Twoimi poleceniami w Terminalu. A „Przywróć domyślne” i odinstalowanie pikapik przywracają Twoje wcześniejsze wartości, zamiast je kasować.
 
 **Wypróbuj:** Ustawienia › Animacje
 
@@ -977,7 +977,7 @@ Wystarczy jeden suwak. Przesuń go, a ukryty Dock, nowe okna, okna zapisywania, 
 
 Chcesz dostroić tylko jedną rzecz? Każdy efekt ma własne ustawienie, tak samo jak efekt minimalizowania, podskakujące ikony w Docku i animacje Findera. Obok każdego ustawienia mały obrazek porusza się dokładnie z wybraną przez Ciebie szybkością.
 
-„Przywróć domyślne” cofa tylko zmiany wprowadzone przez pika-tools, i odinstalowanie działa tak samo. Jeśli któraś z tych wartości była wcześniej ustawiona przez Ciebie w Terminalu, pika-tools pokaże ją bez zmian.
+„Przywróć domyślne” cofa tylko zmiany wprowadzone przez pikapik, i odinstalowanie działa tak samo. Jeśli któraś z tych wartości była wcześniej ustawiona przez Ciebie w Terminalu, pikapik pokaże ją bez zmian.
 
 **Wypróbuj:** Ustawienia › Animacje
 
@@ -1015,7 +1015,7 @@ Test prędkości sprawdza połączenie i po prostu mówi, do czego ono wystarczy
 
 Kliknij „Sprawdź prędkość”, a po mniej więcej pół minuty zobaczysz pobieranie, wysyłanie, ping i responsywność. Pod liczbami proste słowa mówią, czy to wystarczy na filmy 4K, rozmowy wideo, gry online i duże pobierania.
 
-Pomiar odbywa się na serwerach Apple, a ostatni wynik zostaje do następnego. Test prędkości ma własną stronę w Ustawieniach, wiersz w panelu na pasku menu i link dla aplikacji Skróty: `pika-tools://speed-test`.
+Pomiar odbywa się na serwerach Apple, a ostatni wynik zostaje do następnego. Test prędkości ma własną stronę w Ustawieniach, wiersz w panelu na pasku menu i link dla aplikacji Skróty: `pikapik://speed-test`.
 
 Tryb gry nauczył się dwóch rzeczy. Blokowanie skrótów z Control jest teraz jego częścią: w grze ⌃-kliknięcie zostaje zwykłym kliknięciem, a skróty z ⌃ nie działają; poza grą ⌃ działa jak zwykle. Rozpoznaje też Minecrafta: dodaj do gier Minecraft Launcher lub CurseForge, a Tryb gry włączy się, gdy na pierwszym planie będzie sam Minecraft.
 
@@ -1023,7 +1023,7 @@ Tryb gry nauczył się dwóch rzeczy. Blokowanie skrótów z Control jest teraz 
 
 **Poprawki**
 
-- Wersje testowe pika-tools budowane samodzielnie trzymają swoje ustawienia osobno w iCloud Drive i nie ruszają już Twoich.
+- Wersje testowe pikapik budowane samodzielnie trzymają swoje ustawienia osobno w iCloud Drive i nie ruszają już Twoich.
 
 ---
 
@@ -1037,7 +1037,7 @@ Dodaj swoje gry, a Mac przestanie Cię z nich wyrywać.
 
 Podczas gry Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą. ⌘Q i ⌘W nie zamkną jej przypadkiem, wskaźnik zostaje na ekranie gry, a ekran nie gaśnie.
 
-Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno, ⇧⌘W. ⌥⌘Esc działa zawsze. pika-tools podpowiada gry, które znajdzie na Twoim Macu. Tryb gry jest wyłączony, dopóki go nie włączysz.
+Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno, ⇧⌘W. ⌥⌘Esc działa zawsze. pikapik podpowiada gry, które znajdzie na Twoim Macu. Tryb gry jest wyłączony, dopóki go nie włączysz.
 
 Narzędzie „Bez usypiania” pozwala teraz wybrać, co robi ekran: zostaje włączony, bez wygaszacza i ekranu blokady, albo gaśnie jak zwykle, a Mac dalej pracuje. Nowy przycisk „Wyłącz ekran teraz” od razu go wygasza; porusz myszą lub naciśnij klawisz, by wrócił.
 

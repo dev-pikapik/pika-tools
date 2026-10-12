@@ -812,11 +812,11 @@ pika-tools se numește acum pikapik. Permisiunile, configurările și linkurile 
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Deschide Configurări › Despre și dă clic pe „Noutăți”. Ajungi direct aici, pe pagina cu o imagine pentru fiecare actualizare, în limba în care vorbește pika-tools.
+Deschide Configurări › Despre și dă clic pe „Noutăți”. Ajungi direct aici, pe pagina cu o imagine pentru fiecare actualizare, în limba în care vorbește pikapik.
 
 Și lista completă a schimbărilor e mai ordonată. Fiecare versiune arată ziua în care a apărut, iar fiecare număr de versiune deschide pagina ei de descărcare.
 
-În felul în care funcționează pika-tools nu se schimbă nimic. Actualizările vin ca înainte, singure sau prin Homebrew.
+În felul în care funcționează pikapik nu se schimbă nimic. Actualizările vin ca înainte, singure sau prin Homebrew.
 
 **Încearcă:** Configurări › Despre › Noutăți
 
@@ -853,7 +853,7 @@ Jocul mic urmează aspectul Mac-ului tău: o zi însorită în modul luminos și
 
 <sub>1.26.0 · 8 octombrie 2026</sub>
 
-pika-tools are o față nouă și acum șterge permisiunile rămase după aplicațiile șterse.
+pikapik are o față nouă și acum șterge permisiunile rămase după aplicațiile șterse.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Pictograma nouă este semnul pikapik în albastru, violet și coral pe o plăcu�
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Când ștergi o aplicație, macOS păstrează permisiunile pe care i le-ai dat, iar din Configurări sistem nu le poți elimina. Acum pagina „Permisiuni” are o listă numită „Rămase de la aplicații șterse”: fiecare aplicație cu pictograma ei, ce avea voie să facă și când. „Elimină” curăță o aplicație, „Elimină tot” le curăță pe toate, iar o aplicație pe care o instalezi din nou doar va cere din nou. Ca să vezi lista, dă-i lui pika-tools acces complet la disc: doar se uită și nu schimbă nimic până nu apeși „Elimină”.
+Când ștergi o aplicație, macOS păstrează permisiunile pe care i le-ai dat, iar din Configurări sistem nu le poți elimina. Acum pagina „Permisiuni” are o listă numită „Rămase de la aplicații șterse”: fiecare aplicație cu pictograma ei, ce avea voie să facă și când. „Elimină” curăță o aplicație, „Elimină tot” le curăță pe toate, iar o aplicație pe care o instalezi din nou doar va cere din nou. Ca să vezi lista, dă-i lui pikapik acces complet la disc: doar se uită și nu schimbă nimic până nu apeși „Elimină”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Apasă „Adaugă un joc…”, iar aplicațiile deschise acum apar cu pictogram
 
 Comutatoarele din Modul Joc vorbesc simplu acum, de exemplu „Jocul nu se închide” sau „Căutarea nu apare”, și fiecare are o imagine mică cu ce oprește. Numele din sistem, de exemplu Spotlight, stă alături, în gri.
 
-În Configurări › Ferestre, dă clic pe tastele de lângă „Ieși din aplicație” sau „Închide fereastra” și apasă altele noi. ⌫ aduce înapoi ⇧⌘Q și ⇧⌘W, iar dacă tastele sunt deja folosite, pika-tools te întreabă mai întâi. Modul Joc folosește și el tastele tale. Și fiecare scurtătură din Configurări arată acum cum e setată cu adevărat pe Mac-ul tău: tastele tale sau Dezactivat.
+În Configurări › Ferestre, dă clic pe tastele de lângă „Ieși din aplicație” sau „Închide fereastra” și apasă altele noi. ⌫ aduce înapoi ⇧⌘Q și ⇧⌘W, iar dacă tastele sunt deja folosite, pikapik te întreabă mai întâi. Modul Joc folosește și el tastele tale. Și fiecare scurtătură din Configurări arată acum cum e setată cu adevărat pe Mac-ul tău: tastele tale sau Dezactivat.
 
 **Încearcă:** Configurări › Jocuri, apoi „Adaugă un joc…”
 
@@ -955,7 +955,7 @@ Dock-ul poate culisa mai repede doar dacă se ascunde. Dacă al tău stă mereu 
 
 După o schimbare, un rând din partea de jos a paginii îți spune că aplicațiile o preiau după ce le redeschizi. Finder arată noile viteze pentru Privire rapidă și coloane doar după o repornire, așa că rândul are un buton „Repornește Finder”.
 
-Glisorul nu încetinește niciodată ce ai accelerat deja, de exemplu cu comenzi în Terminal. Iar „Restaurează valorile implicite” sau dezinstalarea pika-tools îți aduc înapoi valorile de dinainte, în loc să le șteargă.
+Glisorul nu încetinește niciodată ce ai accelerat deja, de exemplu cu comenzi în Terminal. Iar „Restaurează valorile implicite” sau dezinstalarea pikapik îți aduc înapoi valorile de dinainte, în loc să le șteargă.
 
 **Încearcă:** Configurări › Animații
 
@@ -977,7 +977,7 @@ Un singur glisor face totul. Mută-l, iar Dock-ul ascuns, ferestrele noi, dialog
 
 Vrei să reglezi doar un lucru? Fiecare efect are setarea lui, la fel ca efectul de minimizare, pictogramele care sar în Dock și animațiile Finder. Lângă fiecare setare, o imagine mică se mișcă exact cu viteza aleasă de tine.
 
-„Restaurează valorile implicite” readuce doar ce a schimbat pika-tools, iar dezinstalarea face la fel. Dacă ai setat cândva singur una dintre aceste valori în Terminal, pika-tools o arată așa cum e.
+„Restaurează valorile implicite” readuce doar ce a schimbat pikapik, iar dezinstalarea face la fel. Dacă ai setat cândva singur una dintre aceste valori în Terminal, pikapik o arată așa cum e.
 
 **Încearcă:** Configurări › Animații
 
@@ -1015,7 +1015,7 @@ Viteza internetului îți verifică conexiunea și îți spune simplu la ce e bu
 
 Apasă „Verifică viteza” și, în vreo jumătate de minut, vezi descărcarea, încărcarea, ping-ul și reactivitatea. Sub cifre, cuvinte simple îți spun dacă ajunge pentru filme 4K, apeluri video, jocuri online și descărcări mari.
 
-Verificarea se face pe serverele Apple, iar ultimul rezultat rămâne până la următorul. Viteza internetului are pagina ei în Configurări, un rând în panoul din bara de meniu și un link pentru aplicația Scurtături: `pika-tools://speed-test`.
+Verificarea se face pe serverele Apple, iar ultimul rezultat rămâne până la următorul. Viteza internetului are pagina ei în Configurări, un rând în panoul din bara de meniu și un link pentru aplicația Scurtături: `pikapik://speed-test`.
 
 Modul Joc a învățat două lucruri. Blocarea scurtăturilor cu Control face acum parte din el: în joc, ⌃-clic rămâne un clic și scurtăturile cu ⌃ nu pornesc; în rest, ⌃ merge ca de obicei. Și recunoaște Minecraft: adaugă Minecraft Launcher sau CurseForge la jocurile tale, iar Modul Joc pornește când în față e chiar Minecraft.
 
@@ -1023,7 +1023,7 @@ Modul Joc a învățat două lucruri. Blocarea scurtăturilor cu Control face ac
 
 **Reparat**
 
-- Versiunile de test ale pika-tools pe care oamenii le construiesc singuri își țin configurările separat în iCloud Drive și nu le mai ating pe ale tale.
+- Versiunile de test ale pikapik pe care oamenii le construiesc singuri își țin configurările separat în iCloud Drive și nu le mai ating pe ale tale.
 
 ---
 
@@ -1037,7 +1037,7 @@ Adaugă-ți jocurile, iar Mac-ul nu te mai scoate din ele.
 
 Cât timp joci, Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc. ⌘Q și ⌘W nu îl închid din greșeală, cursorul rămâne pe ecranul jocului, iar ecranul rămâne aprins.
 
-Ca să ieși dintr-un joc, apasă ⇧⌘Q; ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. pika-tools îți sugerează jocurile pe care le găsește pe Mac. Modul Joc stă oprit până îl pornești tu.
+Ca să ieși dintr-un joc, apasă ⇧⌘Q; ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. pikapik îți sugerează jocurile pe care le găsește pe Mac. Modul Joc stă oprit până îl pornești tu.
 
 Menține activ te lasă să alegi ce face ecranul: rămâne aprins, fără economizor de ecran și fără ecran de blocare, sau se stinge ca de obicei, în timp ce Mac-ul lucrează mai departe. Noul buton „Stinge ecranul acum” îl stinge pe loc; mișcă mouse-ul sau apasă o tastă ca să revină.
 

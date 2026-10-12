@@ -812,11 +812,11 @@ pika-tools ahora se llama pikapik. Tus permisos, ajustes y enlaces de Atajos sig
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Abre Ajustes › Acerca de y haz clic en «Novedades». Llegas justo aquí, a la página con una imagen para cada actualización, en el idioma que habla pika-tools.
+Abre Ajustes › Acerca de y haz clic en «Novedades». Llegas justo aquí, a la página con una imagen para cada actualización, en el idioma que habla pikapik.
 
 La lista completa de cambios también está más ordenada. Cada versión muestra el día en que salió, y cada número de versión abre su página de descarga.
 
-Nada cambia en cómo funciona pika-tools. Las actualizaciones llegan como antes, solas o con Homebrew.
+Nada cambia en cómo funciona pikapik. Las actualizaciones llegan como antes, solas o con Homebrew.
 
 **Pruébalo:** Ajustes › Acerca de › Novedades
 
@@ -853,7 +853,7 @@ En todas las imágenes de la app, el puntero ahora se mueve como una mano: tarda
 
 <sub>1.26.0 · 8 de octubre de 2026</sub>
 
-pika-tools estrena cara y ahora quita los permisos que dejan las apps eliminadas.
+pikapik estrena cara y ahora quita los permisos que dejan las apps eliminadas.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ El icono nuevo es la marca de pikapik en azul, violeta y coral sobre un mosaico 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Cuando eliminas una app, macOS guarda los permisos que le diste, y Ajustes del Sistema no tiene forma de quitarlos. Ahora la página «Permisos» tiene una lista llamada «Restos de apps eliminadas»: cada app con su icono, qué podía hacer y cuándo. «Eliminar» limpia una app, «Eliminar todo» las limpia todas, y una app que vuelvas a instalar simplemente volverá a preguntar. Para ver la lista, dale a pika-tools acceso total al disco: solo mira y no cambia nada hasta que pulses «Eliminar».
+Cuando eliminas una app, macOS guarda los permisos que le diste, y Ajustes del Sistema no tiene forma de quitarlos. Ahora la página «Permisos» tiene una lista llamada «Restos de apps eliminadas»: cada app con su icono, qué podía hacer y cuándo. «Eliminar» limpia una app, «Eliminar todo» las limpia todas, y una app que vuelvas a instalar simplemente volverá a preguntar. Para ver la lista, dale a pikapik acceso total al disco: solo mira y no cambia nada hasta que pulses «Eliminar».
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Pulsa «Añadir juego…» y las apps abiertas ahora aparecerán con iconos gran
 
 Los interruptores del modo de juego ahora hablan claro, como «El juego no se cierra» o «La búsqueda no aparece», y cada uno tiene un pequeño dibujo de lo que detiene. El nombre del sistema, como Spotlight, aparece al lado en gris.
 
-En Ajustes › Ventanas, haz clic en las teclas junto a «Salir de la app» o «Cerrar ventana» y pulsa otras nuevas. ⌫ recupera ⇧⌘Q y ⇧⌘W, y si las teclas ya están en uso, pika-tools te pregunta primero. El modo de juego también usa tus teclas. Y cada atajo de Ajustes muestra ahora cómo está configurado de verdad en tu Mac: tus teclas, o Desactivado.
+En Ajustes › Ventanas, haz clic en las teclas junto a «Salir de la app» o «Cerrar ventana» y pulsa otras nuevas. ⌫ recupera ⇧⌘Q y ⇧⌘W, y si las teclas ya están en uso, pikapik te pregunta primero. El modo de juego también usa tus teclas. Y cada atajo de Ajustes muestra ahora cómo está configurado de verdad en tu Mac: tus teclas, o Desactivado.
 
 **Pruébalo:** Ajustes › Juegos, y luego «Añadir juego…»
 
@@ -955,7 +955,7 @@ El Dock solo puede deslizarse más rápido si se oculta. Si el tuyo siempre est�
 
 Después de un cambio, una línea al final de la página te avisa de que las apps lo aplican cuando las vuelves a abrir. Finder muestra la nueva velocidad de Vista Rápida y de las columnas solo tras reiniciarse, así que la línea trae un botón «Reiniciar Finder».
 
-El regulador nunca hace más lento lo que ya habías acelerado, por ejemplo con comandos en Terminal. Y «Restaurar valores por omisión» o desinstalar pika-tools devuelve los valores que tenías antes, en vez de borrarlos.
+El regulador nunca hace más lento lo que ya habías acelerado, por ejemplo con comandos en Terminal. Y «Restaurar valores por omisión» o desinstalar pikapik devuelve los valores que tenías antes, en vez de borrarlos.
 
 **Pruébalo:** Ajustes › Animaciones
 
@@ -977,7 +977,7 @@ Basta con un regulador. Muévelo, y el Dock oculto, las ventanas nuevas, los di�
 
 ¿Quieres ajustar solo una cosa? Cada efecto tiene su propio ajuste, igual que el efecto al minimizar, los iconos que rebotan en el Dock y las animaciones de Finder. Junto a cada ajuste, una pequeña imagen se mueve exactamente a la velocidad que elegiste.
 
-«Restaurar valores por omisión» deshace solo lo que cambió pika-tools, y desinstalarlo hace lo mismo. Si alguna vez pusiste tú uno de estos valores en Terminal, pika-tools lo muestra tal cual.
+«Restaurar valores por omisión» deshace solo lo que cambió pikapik, y desinstalarlo hace lo mismo. Si alguna vez pusiste tú uno de estos valores en Terminal, pikapik lo muestra tal cual.
 
 **Pruébalo:** Ajustes › Animaciones
 
@@ -1015,7 +1015,7 @@ Velocidad de internet comprueba tu conexión y te dice, sin rodeos, para qué te
 
 Pulsa «Comprobar velocidad» y en medio minuto verás descarga, subida, ping y capacidad de respuesta. Bajo los números, unas palabras sencillas te dicen si basta para películas en 4K, videollamadas, juegos en línea y descargas grandes.
 
-La prueba se hace en servidores de Apple, y el último resultado se queda hasta la siguiente. Velocidad de internet tiene su propia página en Ajustes, una fila en el panel de la barra de menús y un enlace para la app Atajos: `pika-tools://speed-test`.
+La prueba se hace en servidores de Apple, y el último resultado se queda hasta la siguiente. Velocidad de internet tiene su propia página en Ajustes, una fila en el panel de la barra de menús y un enlace para la app Atajos: `pikapik://speed-test`.
 
 El modo de juego aprendió dos cosas. Bloquear los atajos con Control ahora forma parte de él: en un juego, ⌃-clic sigue siendo un clic y los atajos con ⌃ no se activan; en todo lo demás, ⌃ funciona como siempre. Y reconoce Minecraft: añade Minecraft Launcher o CurseForge a tus juegos, y el modo de juego se activa cuando Minecraft en sí está en primer plano.
 
@@ -1023,7 +1023,7 @@ El modo de juego aprendió dos cosas. Bloquear los atajos con Control ahora form
 
 **Corregido**
 
-- Las versiones de prueba de pika-tools que cada uno compila guardan sus ajustes aparte en iCloud Drive y ya no tocan los tuyos.
+- Las versiones de prueba de pikapik que cada uno compila guardan sus ajustes aparte en iCloud Drive y ya no tocan los tuyos.
 
 ---
 
@@ -1037,7 +1037,7 @@ Añade tus juegos, y tu Mac deja de sacarte de ellos.
 
 Mientras juegas, Spotlight, Siri, ⌘Tab, Mission Control y los deslizamientos entre escritorios no se abren encima del juego. ⌘Q y ⌘W no lo cierran por accidente, el puntero se queda en la pantalla del juego y la pantalla sigue encendida.
 
-Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc funciona siempre. pika-tools te sugiere los juegos que encuentra en tu Mac. El modo de juego está desactivado hasta que lo activas.
+Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc funciona siempre. pikapik te sugiere los juegos que encuentra en tu Mac. El modo de juego está desactivado hasta que lo activas.
 
 Mantener activo te deja elegir qué hace la pantalla: seguir encendida, sin salvapantallas ni pantalla de bloqueo, o apagarse como siempre mientras tu Mac sigue trabajando. El nuevo botón «Apagar la pantalla ahora» la apaga al momento; mueve el ratón o pulsa una tecla para que vuelva.
 

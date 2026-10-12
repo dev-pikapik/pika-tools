@@ -812,11 +812,11 @@ pika-tools heet nu pikapik. Je toestemmingen, instellingen en links in Opdrachte
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Open Instellingen › Over en klik op ‘Wat is er nieuw’. Je komt meteen hier, op de pagina met een plaatje bij elke update, in de taal die pika-tools spreekt.
+Open Instellingen › Over en klik op ‘Wat is er nieuw’. Je komt meteen hier, op de pagina met een plaatje bij elke update, in de taal die pikapik spreekt.
 
 Ook de volledige lijst met wijzigingen is netter. Elke versie toont de dag waarop ze uitkwam, en elk versienummer opent de downloadpagina ervan.
 
-Aan hoe pika-tools werkt verandert niets. Updates komen zoals altijd, vanzelf of via Homebrew.
+Aan hoe pikapik werkt verandert niets. Updates komen zoals altijd, vanzelf of via Homebrew.
 
 **Probeer het:** Instellingen › Over › Wat is er nieuw
 
@@ -853,7 +853,7 @@ In alle plaatjes van de app beweegt de aanwijzer nu als een hand: voor lange afs
 
 <sub>1.26.0 · 8 oktober 2026</sub>
 
-pika-tools heeft een nieuw gezicht en ruimt nu de toestemmingen op die verwijderde apps achterlaten.
+pikapik heeft een nieuw gezicht en ruimt nu de toestemmingen op die verwijderde apps achterlaten.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +861,7 @@ Het nieuwe symbool is het pikapik-teken in blauw, violet en koraal op een donker
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Als je een app verwijdert, bewaart macOS de toestemmingen die je hem gaf, en in Systeeminstellingen kun je ze niet weghalen. Nu heeft de pagina ‘Toestemmingen’ een lijst ‘Achtergelaten door verwijderde apps’: elke app met zijn symbool, wat hij mocht en wanneer. ‘Verwijder’ ruimt één app op, ‘Verwijder alles’ ze allemaal, en een app die je opnieuw installeert, vraagt het gewoon nog een keer. Om de lijst te zien, geef je pika-tools volledige schijftoegang: het kijkt alleen en verandert niets tot je op ‘Verwijder’ klikt.
+Als je een app verwijdert, bewaart macOS de toestemmingen die je hem gaf, en in Systeeminstellingen kun je ze niet weghalen. Nu heeft de pagina ‘Toestemmingen’ een lijst ‘Achtergelaten door verwijderde apps’: elke app met zijn symbool, wat hij mocht en wanneer. ‘Verwijder’ ruimt één app op, ‘Verwijder alles’ ze allemaal, en een app die je opnieuw installeert, vraagt het gewoon nog een keer. Om de lijst te zien, geef je pikapik volledige schijftoegang: het kijkt alleen en verandert niets tot je op ‘Verwijder’ klikt.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +932,7 @@ Klik op ‘Voeg game toe…’, en de apps die nu open zijn verschijnen met grot
 
 De schakelaars van Gamemodus spreken nu gewone taal, zoals ‘De game sluit niet’ of ‘Zoeken springt niet open’, en elk heeft een klein plaatje van wat hij tegenhoudt. De naam in het systeem, zoals Spotlight, staat er grijs naast.
 
-Klik in Instellingen › Vensters op de toetsen naast ‘Stop app’ of ‘Sluit venster’ en druk nieuwe in. Met ⌫ krijg je ⇧⌘Q en ⇧⌘W terug, en als de toetsen al in gebruik zijn, vraagt pika-tools het eerst. Gamemodus gebruikt ook jouw toetsen. En elke toetscombinatie in Instellingen laat nu zien hoe die echt op je Mac is ingesteld: jouw toetsen, of Uit.
+Klik in Instellingen › Vensters op de toetsen naast ‘Stop app’ of ‘Sluit venster’ en druk nieuwe in. Met ⌫ krijg je ⇧⌘Q en ⇧⌘W terug, en als de toetsen al in gebruik zijn, vraagt pikapik het eerst. Gamemodus gebruikt ook jouw toetsen. En elke toetscombinatie in Instellingen laat nu zien hoe die echt op je Mac is ingesteld: jouw toetsen, of Uit.
 
 **Probeer het:** Instellingen › Games, dan ‘Voeg game toe…’
 
@@ -955,7 +955,7 @@ Het Dock kan alleen sneller in- en uitschuiven als het zich verbergt. Staat het 
 
 Na een wijziging zegt een regel onderaan de pagina dat apps die overnemen zodra je ze opnieuw opent. De Finder toont nieuwe snelheden voor Snel bekijken en kolommen pas na een herstart, dus die regel heeft een knop ‘Herstart Finder’.
 
-De schuif maakt nooit iets trager dat je al sneller had gemaakt, bijvoorbeeld met opdrachten in Terminal. En ‘Herstel standaardinstellingen’ of pika-tools verwijderen zet de waarden terug die je eerst had, in plaats van ze te wissen.
+De schuif maakt nooit iets trager dat je al sneller had gemaakt, bijvoorbeeld met opdrachten in Terminal. En ‘Herstel standaardinstellingen’ of pikapik verwijderen zet de waarden terug die je eerst had, in plaats van ze te wissen.
 
 **Probeer het:** Instellingen › Animaties
 
@@ -977,7 +977,7 @@ Eén schuif is genoeg. Verschuif hem, en het verborgen Dock, nieuwe vensters, be
 
 Wil je maar één ding aanpassen? Elk effect heeft zijn eigen instelling, net als het minimaliseereffect, stuiterende symbolen in het Dock en Finder-animaties. Naast elke instelling beweegt een klein plaatje precies op de snelheid die je kiest.
 
-‘Herstel standaardinstellingen’ zet alleen terug wat pika-tools heeft veranderd, en verwijderen doet hetzelfde. Heb je ooit zelf een van deze waarden in Terminal ingesteld, dan toont pika-tools die zoals hij is.
+‘Herstel standaardinstellingen’ zet alleen terug wat pikapik heeft veranderd, en verwijderen doet hetzelfde. Heb je ooit zelf een van deze waarden in Terminal ingesteld, dan toont pikapik die zoals hij is.
 
 **Probeer het:** Instellingen › Animaties
 
@@ -1015,7 +1015,7 @@ Snelheidstest controleert je verbinding en vertelt simpel waar die goed voor is.
 
 Klik op ‘Test snelheid’ en na ongeveer een halve minuut zie je download, upload, ping en reactiesnelheid. Onder de cijfers staat in gewone woorden of het genoeg is voor 4K-films, videogesprekken, online games en grote downloads.
 
-De meting loopt via servers van Apple en het laatste resultaat blijft staan tot de volgende. Snelheidstest heeft een eigen pagina in Instellingen, een rij in het menubalkpaneel en een link voor de app Opdrachten: `pika-tools://speed-test`.
+De meting loopt via servers van Apple en het laatste resultaat blijft staan tot de volgende. Snelheidstest heeft een eigen pagina in Instellingen, een rij in het menubalkpaneel en een link voor de app Opdrachten: `pikapik://speed-test`.
 
 Gamemodus heeft twee dingen geleerd. Het blokkeren van Control-combinaties hoort er nu bij: in een game blijft ⌃-klik een klik en doen combinaties met ⌃ niets; overal elders werkt ⌃ zoals altijd. En hij herkent Minecraft: voeg de Minecraft Launcher of CurseForge toe aan je games, en Gamemodus gaat aan zodra Minecraft zelf vooraan staat.
 
@@ -1023,7 +1023,7 @@ Gamemodus heeft twee dingen geleerd. Het blokkeren van Control-combinaties hoort
 
 **Opgelost**
 
-- Testversies van pika-tools die mensen zelf bouwen, houden hun instellingen apart in iCloud Drive en komen niet meer aan de jouwe.
+- Testversies van pikapik die mensen zelf bouwen, houden hun instellingen apart in iCloud Drive en komen niet meer aan de jouwe.
 
 ---
 
@@ -1037,7 +1037,7 @@ Voeg je games toe, en je Mac haalt je er niet meer uit.
 
 Terwijl je speelt, openen Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen niet boven de game. ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer blijft op het scherm van de game en het scherm blijft aan.
 
-Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. pika-tools stelt games voor die het op je Mac vindt. Gamemodus staat uit tot je hem aanzet.
+Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. pikapik stelt games voor die het op je Mac vindt. Gamemodus staat uit tot je hem aanzet.
 
 Bij Wakker houden kies je nu wat het scherm doet: aan blijven, zonder schermbeveiliging of vergrendelscherm, of zoals gewoonlijk uitgaan terwijl je Mac doorwerkt. Met de nieuwe knop ‘Zet het scherm nu uit’ wordt het meteen donker; beweeg de muis of druk op een toets om het terug te halen.
 
