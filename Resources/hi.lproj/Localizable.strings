@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "“%@” ने जो पीछे छोड़ा, pikapik उसे हटाना चाहता है।";
 "Uninstaller" = "ऐप हटाएँ";
 "Remove an app" = "ऐप हटाएँ";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "अनइंस्टॉल, हटाएँ, मिटाएँ, ऐप, एप्लिकेशन, सफ़ाई, बचा हुआ, ट्रैश, रीसेट";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "अनइंस्टॉल, ऐप हटाएँ, ऐप डिलीट, हटाएँ, डिलीट, ऐप, एप्लिकेशन, क्लीनर, सफ़ाई, बची फ़ाइलें, ट्रैश, रीसेट, वापस रखें, रीस्टोर, पूर्ववत, मिटाएँ, बचा हुआ";
 "Remove an app and its files. You can put it all back." = "ऐप और उसकी फ़ाइलें हटाएँ। सब वापस रख सकते हैं।";
 "Search apps" = "ऐप खोजें";
 "Sort by" = "क्रमबद्ध करें";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld आइटम";
 "Moved %lld items (%@) to the Trash" = "%lld आइटम (%@) ट्रैश में भेजे गए";
 "Put back %lld items" = "%lld आइटम वापस रखे गए";
+"In the Trash" = "ट्रैश में";
+"Leftovers of removed apps" = "हटाए गए ऐप की बची फ़ाइलें";
+"Recently removed" = "हाल ही में हटाए गए";
+"Changed %@" = "बदला गया %@";
+"Removed %@" = "हटाया गया %@";
+"Offer to clean up when an app goes to the Trash" = "ऐप ट्रैश में जाने पर सफ़ाई का सुझाव दें";
+"Nothing is removed until you choose" = "आपके चुनने तक कुछ नहीं हटता";
+"Looks like the app is gone. Pick what to remove." = "लगता है ऐप हट चुका है। चुनें कि क्या हटाना है।";
+"You moved this app to the Trash, but its files are still on your Mac." = "आपने इस ऐप को ट्रैश में डाला, लेकिन इसकी फ़ाइलें अब भी आपके Mac पर हैं।";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "अनइंस्टॉल, ऐप हटाएँ, ऐप डिलीट, बची फ़ाइलें, सफ़ाई, ट्रैश, कूड़ेदान, निगरानी, अपने आप, सुझाव, सूचना";

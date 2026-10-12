@@ -57,9 +57,32 @@ actor UninstallerEngine {
         await ready().remover.restore(record)
     }
 
-    static func measure(_ found: [Leftover]) -> Int64? {
+    func records() -> [AppRemover.Record] {
+        ready().remover.records()
+    }
+
+    func trashed() -> [AppIdentity] {
+        ready().footprint.trashed()
+    }
+
+    func orphans() -> [OrphanGroup] {
+        ready().footprint.orphans()
+    }
+
+    func offer(_ url: URL, dismissed: Set<String>) -> AppIdentity? {
+        parts = nil
+        let parts = ready()
+        guard !parts.remover.records().contains(where: { $0.moves.contains { $0.trash == url.path } }),
+              let app = parts.footprint.trashed().first(where: { $0.url.path == url.path }),
+              !dismissed.contains(app.dismissalKey),
+              parts.footprint.scan(app).contains(where: { $0.kind != .app })
+        else { return nil }
+        return app
+    }
+
+    static func measure(_ found: [Leftover], everything: Bool = false) -> Int64? {
         var total: Int64 = 0
-        for item in found where item.preselected && item.packageID == nil {
+        for item in found where (everything || item.preselected) && item.packageID == nil && !AppInventory.isInTrash(item.url) {
             if Task.isCancelled { return nil }
             total += AppFootprint.allocatedSize(of: item.url)
         }
@@ -99,6 +122,28 @@ final class AppEntry: Identifiable {
     }
 }
 
+struct Remnant: Identifiable {
+    let app: AppIdentity
+    let items: [Leftover]
+    var changed: Date?
+    var size: Int64?
+
+    var id: String { app.id }
+}
+
+struct Removal: Identifiable {
+    enum State {
+        case idle
+        case working
+        case done(AppRemover.Restoration)
+    }
+
+    let record: AppRemover.Record
+    var state = State.idle
+
+    var id: String { record.id }
+}
+
 @MainActor
 final class Question {
     let force: Bool
@@ -130,15 +175,17 @@ final class UninstallSession: Identifiable {
 
     nonisolated let id: String
     let app: AppIdentity
+    let leftoversOnly: Bool
     var plan = RemovalPlan([])
     var phase = Phase.scanning
     var question: Question?
     var notice: String?
     @ObservationIgnored var work: Task<Void, Never>?
 
-    init(app: AppIdentity) {
+    init(app: AppIdentity, leftoversOnly: Bool = false) {
         id = app.id
         self.app = app
+        self.leftoversOnly = leftoversOnly
     }
 
     var isBusy: Bool {
@@ -168,7 +215,14 @@ final class UninstallerModel {
     var running: Set<String> = []
     var plays = 0
     var notice: String?
-    var session: UninstallSession?
+    var trashed: [Remnant] = []
+    var orphans: [Remnant] = []
+    var removed: [Removal] = []
+    var session: UninstallSession? {
+        didSet {
+            if session == nil, let ended = oldValue { settle(ended) }
+        }
+    }
     private(set) var loaded = false
 
     @ObservationIgnored private let engine = UninstallerEngine()
@@ -180,11 +234,15 @@ final class UninstallerModel {
     @ObservationIgnored private var fill: Task<Void, Never>?
     @ObservationIgnored private var resorting: Task<Void, Never>?
     @ObservationIgnored private var hushing: Task<Void, Never>?
+    @ObservationIgnored private var candidates: [URL] = []
+    @ObservationIgnored private var dismissed: Set<String> = []
+    @ObservationIgnored private var draining = false
 
     private init() {}
 
     func appear() {
         refreshRunning()
+        removed.removeAll { if case .done = $0.state { true } else { false } }
         reload()
     }
 
@@ -200,6 +258,7 @@ final class UninstallerModel {
             let listing = await engine.reload()
             guard !Task.isCancelled else { return }
             merge(listing)
+            await gather()
             await measure()
         }
     }
@@ -227,15 +286,26 @@ final class UninstallerModel {
         return icon
     }
 
-    func open(_ app: AppIdentity) {
-        guard session == nil else { return }
-        guard Permissions.shared.fileAccess else { return Permissions.shared.ask([.fullDisk]) }
-        let opened = UninstallSession(app: app)
-        session = opened
+    func icon(of app: AppIdentity) -> NSImage {
+        icons[app.url.path] ?? (FileManager.default.fileExists(atPath: app.url.path) ? icon(at: app.url) : NSWorkspace.shared.icon(for: .applicationBundle))
+    }
+
+    func open(_ app: AppIdentity, notice: String? = nil) {
+        guard let opened = start(app, leftoversOnly: false) else { return }
+        opened.notice = notice
         opened.work = Task {
             let found = await engine.scan(app)
             guard !Task.isCancelled else { return }
             opened.plan = RemovalPlan(found)
+            opened.phase = .choosing
+            await size(opened)
+        }
+    }
+
+    func open(leftovers group: Remnant) {
+        guard let opened = start(group.app, leftoversOnly: true) else { return }
+        opened.work = Task {
+            opened.plan = RemovalPlan(group.items)
             opened.phase = .choosing
             await size(opened)
         }
@@ -278,6 +348,22 @@ final class UninstallerModel {
         }
     }
 
+    func putBack(_ record: AppRemover.Record) {
+        guard let index = removed.firstIndex(where: { $0.id == record.id }), case .idle = removed[index].state else { return }
+        removed[index].state = .working
+        Task {
+            await pause()
+            let result = await engine.restore(record)
+            if let index = removed.firstIndex(where: { $0.id == record.id }) { removed[index].state = .done(result) }
+            reload()
+        }
+    }
+
+    func offer(_ urls: [URL]) {
+        candidates += urls.filter { !candidates.contains($0) }
+        drain()
+    }
+
     func close() {
         session?.work?.cancel()
         session = nil
@@ -287,6 +373,40 @@ final class UninstallerModel {
         guard let current = session else { return false }
         return await withCheckedContinuation { continuation in
             current.question = Question(force: force, name: current.app.displayName, continuation: continuation)
+        }
+    }
+
+    private func start(_ app: AppIdentity, leftoversOnly: Bool) -> UninstallSession? {
+        guard session == nil else { return nil }
+        guard Permissions.shared.fileAccess else {
+            Permissions.shared.ask([.fullDisk])
+            return nil
+        }
+        let opened = UninstallSession(app: app, leftoversOnly: leftoversOnly)
+        session = opened
+        return opened
+    }
+
+    private func settle(_ ended: UninstallSession) {
+        if AppInventory.isInTrash(ended.app.url) { dismissed.insert(ended.app.dismissalKey) }
+        drain()
+    }
+
+    private func drain() {
+        guard !draining, session == nil, !candidates.isEmpty, Permissions.shared.fileAccess else { return }
+        draining = true
+        Task {
+            defer { draining = false }
+            while session == nil, !candidates.isEmpty {
+                let url = candidates.removeFirst()
+                guard let app = await engine.offer(url, dismissed: dismissed) else { continue }
+                guard session == nil else {
+                    candidates.insert(url, at: 0)
+                    break
+                }
+                SettingsWindow.show(.uninstaller)
+                open(app, notice: String(localized: "You moved this app to the Trash, but its files are still on your Mac."))
+            }
         }
     }
 
@@ -304,6 +424,48 @@ final class UninstallerModel {
         }
         loaded = true
         reshuffle()
+    }
+
+    private func gather() async {
+        guard Permissions.shared.fileAccess else {
+            trashed = []
+            orphans = []
+            removed = []
+            return
+        }
+        updateRemoved(await engine.records())
+        var apps: [Remnant] = []
+        for app in await engine.trashed() {
+            let items = await engine.scan(app).filter { $0.kind != .app }
+            if !items.isEmpty { apps.append(Remnant(app: app, items: items)) }
+        }
+        let groups = await engine.orphans().map { Remnant(app: AppIdentity(leftovers: $0), items: $0.items, changed: $0.newest) }
+        guard !Task.isCancelled else { return }
+        trashed = Self.carrying(apps, over: trashed)
+        orphans = Self.carrying(groups, over: orphans)
+        for item in trashed where item.size == nil {
+            guard !Task.isCancelled, let size = await total(of: item.items) else { return }
+            if let index = trashed.firstIndex(where: { $0.id == item.id }) { trashed[index].size = size }
+        }
+        for item in orphans where item.size == nil {
+            guard !Task.isCancelled, let size = await total(of: item.items, everything: true) else { return }
+            if let index = orphans.firstIndex(where: { $0.id == item.id }) { orphans[index].size = size }
+        }
+    }
+
+    private func updateRemoved(_ fresh: [AppRemover.Record]) {
+        let busy = removed.filter { if case .idle = $0.state { false } else { true } }
+        let known = Set(busy.map(\.id))
+        removed = (busy + fresh.filter { !known.contains($0.id) }.map { Removal(record: $0) }).sorted { $0.record.date > $1.record.date }
+    }
+
+    private static func carrying(_ fresh: [Remnant], over old: [Remnant]) -> [Remnant] {
+        let before = Dictionary(old.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        return fresh.map { item in
+            var item = item
+            if let earlier = before[item.id], earlier.items == item.items { item.size = earlier.size }
+            return item
+        }
     }
 
     private func measure() async {
@@ -326,8 +488,8 @@ final class UninstallerModel {
         return nil
     }
 
-    private func total(of found: [Leftover]) async -> Int64? {
-        let job = Task.detached(priority: .utility) { UninstallerEngine.measure(found) }
+    private func total(of found: [Leftover], everything: Bool = false) async -> Int64? {
+        let job = Task.detached(priority: .utility) { UninstallerEngine.measure(found, everything: everything) }
         return await withTaskCancellationHandler { await job.value } onCancel: { job.cancel() }
     }
 

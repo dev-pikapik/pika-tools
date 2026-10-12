@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik wants to remove what “%@” left behind.";
 "Uninstaller" = "Uninstaller";
 "Remove an app" = "Remove an app";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo";
 "Remove an app and its files. You can put it all back." = "Remove an app and its files. You can put it all back.";
 "Search apps" = "Search apps";
 "Sort by" = "Sort by";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld items";
 "Moved %lld items (%@) to the Trash" = "Moved %lld items (%@) to the Trash";
 "Put back %lld items" = "Put back %lld items";
+"In the Trash" = "In the Trash";
+"Leftovers of removed apps" = "Leftovers of removed apps";
+"Recently removed" = "Recently removed";
+"Changed %@" = "Changed %@";
+"Removed %@" = "Removed %@";
+"Offer to clean up when an app goes to the Trash" = "Offer to clean up when an app goes to the Trash";
+"Nothing is removed until you choose" = "Nothing is removed until you choose";
+"Looks like the app is gone. Pick what to remove." = "Looks like the app is gone. Pick what to remove.";
+"You moved this app to the Trash, but its files are still on your Mac." = "You moved this app to the Trash, but its files are still on your Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify";

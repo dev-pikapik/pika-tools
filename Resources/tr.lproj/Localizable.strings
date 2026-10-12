@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik, “%@” uygulamasının geride bıraktıklarını kaldırmak istiyor.";
 "Uninstaller" = "Uygulamaları Kaldır";
 "Remove an app" = "Uygulama kaldır";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "kaldır, sil, kaldırma, uygulama, program, temizleyici, artıklar, çöp, sıfırla";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "kaldır, uygulama kaldır, uygulama sil, sil, uygulama, program, temizleyici, temizlik, kalıntılar, çöp sepeti, sıfırla, geri koy, geri yükle, geri al, kaldırma, artıklar, çöp";
 "Remove an app and its files. You can put it all back." = "Uygulamayı dosyalarıyla kaldırın. Hepsi geri konabilir.";
 "Search apps" = "Uygulama ara";
 "Sort by" = "Sıralama ölçütü";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld öğe";
 "Moved %lld items (%@) to the Trash" = "%lld öğe (%@) Çöp Sepeti’ne taşındı";
 "Put back %lld items" = "%lld öğe geri konuldu";
+"In the Trash" = "Çöp Sepeti’nde";
+"Leftovers of removed apps" = "Kaldırılan uygulamaların kalıntıları";
+"Recently removed" = "Son kaldırılanlar";
+"Changed %@" = "%@ değiştirildi";
+"Removed %@" = "%@ kaldırıldı";
+"Offer to clean up when an app goes to the Trash" = "Bir uygulama Çöp Sepeti’ne gidince temizlik öner";
+"Nothing is removed until you choose" = "Siz seçmeden hiçbir şey kaldırılmaz";
+"Looks like the app is gone. Pick what to remove." = "Uygulama artık yok. Kaldırılacakları seçin.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Bu uygulamayı Çöp Sepeti’ne taşıdınız, ancak dosyaları hâlâ Mac’inizde duruyor.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "kaldır, uygulama kaldır, uygulama sil, kalıntılar, temizlik, çöp sepeti, çöp, izleme, otomatik, öner, bildirim";

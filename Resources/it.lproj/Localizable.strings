@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik vuole rimuovere ciò che «%@» ha lasciato.";
 "Uninstaller" = "Rimuovi app";
 "Remove an app" = "Rimuovi un’app";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "disinstalla, elimina, rimuovi, cancella, app, applicazione, pulizia, resti, cestino, reimposta";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "disinstalla, rimuovi app, elimina app, elimina, rimuovi, app, applicazione, pulitore, pulizia, resti, cestino, ripristina, rimetti a posto, recupera, annulla, cancella, reimposta";
 "Remove an app and its files. You can put it all back." = "Rimuovi un’app e i suoi file. Puoi rimettere tutto.";
 "Search apps" = "Cerca app";
 "Sort by" = "Ordina per";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld elementi";
 "Moved %lld items (%@) to the Trash" = "%lld elementi (%@) spostati nel Cestino";
 "Put back %lld items" = "%lld elementi rimessi a posto";
+"In the Trash" = "Nel Cestino";
+"Leftovers of removed apps" = "Resti di app rimosse";
+"Recently removed" = "Rimossi di recente";
+"Changed %@" = "Modificato %@";
+"Removed %@" = "Rimosso %@";
+"Offer to clean up when an app goes to the Trash" = "Proponi di fare pulizia quando un’app va nel Cestino";
+"Nothing is removed until you choose" = "Non viene rimosso nulla finché non scegli";
+"Looks like the app is gone. Pick what to remove." = "L’app sembra sparita. Scegli cosa rimuovere.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Hai spostato questa app nel Cestino, ma i suoi file sono ancora sul Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "disinstalla, rimuovi app, elimina app, resti, pulizia, cestino, monitora, automatico, proponi, avvisa";

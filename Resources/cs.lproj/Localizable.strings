@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik chce odstranit to, co po sobě zanechala aplikace „%@“.";
 "Uninstaller" = "Odinstalace aplikací";
 "Remove an app" = "Odebrat aplikaci";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "odinstalovat, smazat, odstranit, odebrat, aplikace, program, čistič, zbytky, koš, resetovat";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "odinstalovat, odebrat aplikaci, smazat aplikaci, smazat, odebrat, aplikace, program, čistič, úklid, zbytky, koš, resetovat, vrátit zpět, obnovit, zpět, odstranit";
 "Remove an app and its files. You can put it all back." = "Odeberte aplikaci s jejími soubory. Vše lze vrátit.";
 "Search apps" = "Hledat aplikace";
 "Sort by" = "Řadit podle";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld položky";
 "Moved %lld items (%@) to the Trash" = "Do Koše se přesunulo %lld položky (%@)";
 "Put back %lld items" = "Vrátilo se %lld položky";
+"In the Trash" = "V Koši";
+"Leftovers of removed apps" = "Zbytky po odebraných aplikacích";
+"Recently removed" = "Nedávno odebrané";
+"Changed %@" = "Změněno %@";
+"Removed %@" = "Odebráno %@";
+"Offer to clean up when an app goes to the Trash" = "Nabídnout úklid, když aplikace skončí v Koši";
+"Nothing is removed until you choose" = "Nic se neodebere, dokud nevyberete";
+"Looks like the app is gone. Pick what to remove." = "Aplikace už je pryč. Vyberte, co odebrat.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Tuto aplikaci jste přesunuli do Koše, ale její soubory jsou pořád ve vašem Macu.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "odinstalovat, odebrat aplikaci, smazat aplikaci, zbytky, úklid, koš, odpadky, sledovat, automaticky, nabídnout, upozornit";

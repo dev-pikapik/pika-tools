@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik vrea să elimine ce a lăsat în urmă aplicația „%@”.";
 "Uninstaller" = "Eliminare aplicații";
 "Remove an app" = "Elimină o aplicație";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "dezinstalează, șterge, elimină, aplicație, program, curățare, resturi, coș, resetează";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "dezinstalează, elimină aplicația, șterge aplicația, șterge, elimină, aplicație, program, curățare, resturi, coș, resetare, pune la loc, restaurează, anulează, resetează";
 "Remove an app and its files. You can put it all back." = "Elimină o aplicație și fișierele ei. Poți pune totul la loc.";
 "Search apps" = "Caută aplicații";
 "Sort by" = "Sortează după";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld de elemente";
 "Moved %lld items (%@) to the Trash" = "%lld de elemente (%@) mutate în Coș";
 "Put back %lld items" = "%lld de elemente puse la loc";
+"In the Trash" = "În Coș";
+"Leftovers of removed apps" = "Resturi de la aplicații eliminate";
+"Recently removed" = "Eliminate recent";
+"Changed %@" = "Modificat %@";
+"Removed %@" = "Eliminat %@";
+"Offer to clean up when an app goes to the Trash" = "Oferă curățarea când o aplicație ajunge în Coș";
+"Nothing is removed until you choose" = "Nu se elimină nimic până nu alegi tu";
+"Looks like the app is gone. Pick what to remove." = "Se pare că aplicația nu mai e. Alege ce să elimini.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Ai mutat această aplicație în Coș, dar fișierele ei sunt încă pe Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "dezinstalează, elimină aplicația, șterge aplicația, resturi, curățare, coș, coș de gunoi, monitorizare, automat, oferă, notificare";

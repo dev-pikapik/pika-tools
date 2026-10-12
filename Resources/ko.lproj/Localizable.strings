@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik이(가) ‘%@’ 앱이 남긴 항목을 제거하려고 합니다.";
 "Uninstaller" = "앱 제거";
 "Remove an app" = "앱 제거";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "삭제, 제거, 언인스톨, 앱, 애플리케이션, 정리, 잔여 파일, 휴지통, 초기화";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "삭제, 앱 제거, 앱 삭제, 제거, 앱, 애플리케이션, 클리너, 정리, 남은 파일, 휴지통, 재설정, 되돌리기, 복원, 실행 취소, 언인스톨, 잔여 파일, 초기화";
 "Remove an app and its files. You can put it all back." = "앱과 앱의 파일을 제거합니다. 모두 되돌릴 수 있습니다.";
 "Search apps" = "앱 검색";
 "Sort by" = "정렬 기준";
@@ -721,3 +721,13 @@
 "%lld items" = "항목 %lld개";
 "Moved %lld items (%@) to the Trash" = "항목 %lld개(%@)를 휴지통으로 이동했습니다";
 "Put back %lld items" = "항목 %lld개를 되돌렸습니다";
+"In the Trash" = "휴지통에 있음";
+"Leftovers of removed apps" = "제거한 앱의 남은 파일";
+"Recently removed" = "최근 제거됨";
+"Changed %@" = "%@ 변경됨";
+"Removed %@" = "%@ 제거됨";
+"Offer to clean up when an app goes to the Trash" = "앱을 휴지통으로 옮기면 정리 제안";
+"Nothing is removed until you choose" = "직접 선택하기 전에는 아무것도 제거되지 않습니다";
+"Looks like the app is gone. Pick what to remove." = "앱이 이미 없는 것 같습니다. 제거할 항목을 선택하세요.";
+"You moved this app to the Trash, but its files are still on your Mac." = "이 앱을 휴지통으로 옮겼지만 앱의 파일은 아직 Mac에 남아 있습니다.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "삭제, 앱 제거, 앱 삭제, 남은 파일, 정리, 휴지통, 감시, 자동, 제안, 알림";

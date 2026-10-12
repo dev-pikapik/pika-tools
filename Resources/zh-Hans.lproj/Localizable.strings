@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik 想要移除“%@”留下的内容。";
 "Uninstaller" = "卸载 App";
 "Remove an app" = "移除 App";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "卸载, 删除, 移除, App, 应用, 清理, 残留, 废纸篓, 重置";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "卸载, 移除 App, 删除 App, 删除, 移除, App, 应用, 应用程序, 清理, 残留, 废纸篓, 重置, 放回, 恢复, 撤销";
 "Remove an app and its files. You can put it all back." = "移除 App 及其文件。一切都能放回。";
 "Search apps" = "搜索 App";
 "Sort by" = "排序方式";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld 个项目";
 "Moved %lld items (%@) to the Trash" = "已将 %lld 个项目（%@）移到废纸篓";
 "Put back %lld items" = "已放回 %lld 个项目";
+"In the Trash" = "在废纸篓中";
+"Leftovers of removed apps" = "已移除 App 的残留文件";
+"Recently removed" = "最近移除";
+"Changed %@" = "%@更改";
+"Removed %@" = "%@移除";
+"Offer to clean up when an app goes to the Trash" = "App 被移到废纸篓时，提议清理";
+"Nothing is removed until you choose" = "你选择之前不会移除任何内容";
+"Looks like the app is gone. Pick what to remove." = "App 似乎已经不在了。请选择要移除的内容。";
+"You moved this app to the Trash, but its files are still on your Mac." = "你已把此 App 移到废纸篓，但它的文件仍在你的 Mac 上。";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "卸载, 移除 App, 删除 App, 残留, 清理, 废纸篓, 垃圾桶, 监视, 自动, 提示, 通知";

@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik vill ta bort det som ”%@” lämnade kvar.";
 "Uninstaller" = "Ta bort appar";
 "Remove an app" = "Ta bort en app";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "avinstallera, radera, ta bort, app, program, rensare, rester, papperskorg, återställ";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "avinstallera, ta bort app, radera app, radera, ta bort, app, applikation, rensare, städa, rester, papperskorg, återställ, lägg tillbaka, ångra, program";
 "Remove an app and its files. You can put it all back." = "Ta bort en app med filer. Allt kan läggas tillbaka.";
 "Search apps" = "Sök appar";
 "Sort by" = "Sortera efter";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld objekt";
 "Moved %lld items (%@) to the Trash" = "%lld objekt (%@) flyttades till papperskorgen";
 "Put back %lld items" = "%lld objekt lades tillbaka";
+"In the Trash" = "I papperskorgen";
+"Leftovers of removed apps" = "Rester av borttagna appar";
+"Recently removed" = "Nyligen borttagna";
+"Changed %@" = "Ändrad %@";
+"Removed %@" = "Borttagen %@";
+"Offer to clean up when an app goes to the Trash" = "Erbjud städning när en app hamnar i papperskorgen";
+"Nothing is removed until you choose" = "Inget tas bort förrän du väljer";
+"Looks like the app is gone. Pick what to remove." = "Appen verkar vara borta. Välj vad som ska tas bort.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Du flyttade den här appen till papperskorgen, men filerna finns kvar på din Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "avinstallera, ta bort app, radera app, rester, städa, papperskorg, bevaka, automatiskt, erbjud, avisera";

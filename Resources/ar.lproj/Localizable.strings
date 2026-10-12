@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "يريد pikapik إزالة ما تركه التطبيق «%@».";
 "Uninstaller" = "إزالة التطبيقات";
 "Remove an app" = "إزالة تطبيق";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "إزالة, حذف, إلغاء تثبيت, تطبيق, برنامج, تنظيف, بقايا, سلة المهملات, إعادة ضبط";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "إزالة التثبيت, إزالة تطبيق, حذف تطبيق, حذف, إزالة, تطبيق, برنامج, منظف, تنظيف, بقايا, سلة المهملات, إعادة ضبط, إرجاع, استعادة, تراجع, إلغاء تثبيت";
 "Remove an app and its files. You can put it all back." = "أزل تطبيقًا مع ملفاته، ويمكنك إرجاع كل شيء.";
 "Search apps" = "بحث في التطبيقات";
 "Sort by" = "ترتيب حسب";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld عنصر";
 "Moved %lld items (%@) to the Trash" = "نُقل %lld عنصر (%@) إلى سلة المهملات";
 "Put back %lld items" = "أُرجع %lld عنصر";
+"In the Trash" = "في سلة المهملات";
+"Leftovers of removed apps" = "بقايا التطبيقات المحذوفة";
+"Recently removed" = "أُزيلت مؤخرًا";
+"Changed %@" = "تغيّر %@";
+"Removed %@" = "أُزيل %@";
+"Offer to clean up when an app goes to the Trash" = "اقتراح التنظيف عند نقل تطبيق إلى سلة المهملات";
+"Nothing is removed until you choose" = "لا يُزال شيء إلا بعد أن تختار";
+"Looks like the app is gone. Pick what to remove." = "يبدو أن التطبيق اختفى. اختر ما تريد إزالته.";
+"You moved this app to the Trash, but its files are still on your Mac." = "نقلتَ هذا التطبيق إلى سلة المهملات، لكن ملفاته ما زالت على جهاز Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "إزالة التثبيت, إزالة تطبيق, حذف تطبيق, بقايا, تنظيف, سلة المهملات, سلة, مراقبة, تلقائي, اقتراح, إشعار";
