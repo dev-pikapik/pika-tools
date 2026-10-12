@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Ratón y trackpad en los juegos
 
-<sub>1.34.0 · 11 de octubre de 2026</sub>
+<sub>1.34.0 · 12 de octubre de 2026</sub>
 
 Los deslizamientos, los pellizcos y las esquinas activas ya no te sacan del juego, igual que los atajos de teclado.
 

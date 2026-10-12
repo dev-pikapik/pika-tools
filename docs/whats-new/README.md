@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mouse and trackpad shortcuts in games
 
-<sub>1.34.0 · October 11, 2026</sub>
+<sub>1.34.0 · October 12, 2026</sub>
 
 Swipes, pinches and hot corners now stay out of your game, just like keyboard shortcuts.
 

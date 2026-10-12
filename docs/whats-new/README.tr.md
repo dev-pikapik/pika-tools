@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Oyunlarda fare ve izleme dörtgeni
 
-<sub>1.34.0 · 11 Ekim 2026</sub>
+<sub>1.34.0 · 12 Ekim 2026</sub>
 
 Kaydırmalar, kıstırma hareketleri ve etkin köşeler artık klavye kısayolları gibi sizi oyundan çıkarmıyor.
 
