@@ -4,7 +4,6 @@ import SwiftUI
 
 struct UninstallerSheet: View {
     let session: UninstallSession
-    private let model = UninstallerModel.shared
 
     var body: some View {
         VStack(spacing: 0) {

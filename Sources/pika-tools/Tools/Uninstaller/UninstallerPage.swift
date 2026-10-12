@@ -123,10 +123,12 @@ private struct InstalledRow: View {
                             .accessibilityLabel(Text("Open now"))
                     }
                 }
-                Text(entry.app.byline)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                if !entry.app.byline.isEmpty {
+                    Text(entry.app.byline)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
             }
             Spacer(minLength: 8)
             VStack(alignment: .trailing, spacing: 1) {
