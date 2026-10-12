@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Mouse e trackpad nei giochi
+
+<sub>1.34.0 · 11 ottobre 2026</sub>
+
+Scorrimenti, pizzichi e angoli attivi non ti portano più fuori dal gioco, proprio come le scorciatoie da tastiera.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Giochi › Altre impostazioni di gioco c’è un gruppo chiamato «Mouse e trackpad». Mostra solo ciò che è attivo in macOS sul tuo Mac, con i nomi di Apple e un piccolo disegno per ciascuno: scorciatoie su un pulsante del mouse, scorrimento tra scrivanie e app a schermo intero, Mission Control e App Exposé, pizzico per le app e allargamento delle dita per la scrivania, scorrimento dal bordo destro per il Centro notifiche e ogni angolo attivo con la sua azione. Finché un gioco è in primo piano, sono sospesi, così uno scorrimento involontario o uno sfioramento di un angolo dello schermo non ti porta fuori dal gioco. I gesti all’interno del gioco continuano a funzionare. Ognuno si può impostare per funzionare come al solito.
+
+---
+
 ## <a id="v1.33.2"></a>I gruppi di comandi si aprono all’istante
 
 <sub>1.33.2 · 11 ottobre 2026</sub>

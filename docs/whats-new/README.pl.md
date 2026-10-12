@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Mysz i gładzik w grach
+
+<sub>1.34.0 · 11 października 2026</sub>
+
+Przesunięcia, szczypnięcia i aktywne rogi nie wyrzucają już z gry, tak jak skróty klawiszowe.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+W ustawieniach (Ustawienia › Gry › Więcej ustawień gry) jest grupa „Mysz i gładzik”. Pokazuje tylko to, co jest włączone w macOS na twoim Macu, z nazwami od Apple i małym rysunkiem przy każdej pozycji: skróty na przycisku myszy, przesuwanie między biurkami i aplikacjami pełnoekranowymi, Mission Control i App Exposé, szczypnięcie dla aplikacji i rozsunięcie palców dla biurka, przesunięcie od prawej krawędzi dla Centrum powiadomień i każdy aktywny róg z jego działaniem. Gdy gra jest na wierzchu, wszystko to jest wstrzymane, więc przypadkowe przesunięcie palców albo muśnięcie rogu ekranu nie wyrzuci cię z gry. Gesty w samej grze nadal działają. Każdą pozycję można ustawić tak, by działała jak zwykle.
+
+---
+
 ## <a id="v1.33.2"></a>Grupy skrótów otwierają się natychmiast
 
 <sub>1.33.2 · 11 października 2026</sub>

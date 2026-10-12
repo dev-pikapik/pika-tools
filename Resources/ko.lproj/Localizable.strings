@@ -391,7 +391,7 @@
 "Show Desktop" = "데스크탑 보기";
 "Desktops don’t switch" = "데스크탑이 전환되지 않음";
 "Desktops don’t switch by number" = "번호로 데스크탑이 전환되지 않음";
-"Swipes don’t switch desktops" = "쓸어넘기기로 데스크탑이 전환되지 않음";
+"Gestures don’t leave the game" = "제스처로 게임에서 벗어나지 않음";
 "Emoji don’t open" = "이모지가 열리지 않음";
 "The dictionary doesn’t pop up" = "사전이 튀어나오지 않음";
 "Look Up" = "찾아보기";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, 앱 전환기";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, 알림 센터, 스테이지 매니저";
 "Spaces, swipe, gestures, trackpad" = "Spaces, 쓸어넘기기, 제스처, 트랙패드";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, 쓸어넘기기, 핀치, 제스처, 트랙패드, Magic Mouse, Mission Control, 알림 센터";
 "symbols, dictionary" = "기호, 사전";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "키보드 포커스, 기능 키, Control 스페이스, Ctrl, Shift, Option, 키보드 레이아웃, 입력 소스, option, shift, alt";
 "fn, globe key" = "fn, 지구본 키";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "앱과 윈도우";
 "Screenshots" = "스크린샷";
+"Mouse and trackpad" = "마우스 및 트랙패드";
 "System controls" = "Mac 기능";
 "Other macOS actions" = "기타 macOS 동작";
 "Switch languages without leaving the game." = "게임을 벗어나지 않고 언어를 바꾸세요.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, Spaces, 데스크탑.";
 "Pictures of the screen and screen recording." = "스크린샷과 화면 기록.";
 "Keyboard focus, emoji and the Globe key." = "키보드 포커스, 이모티콘, 지구본 키.";
+"Mouse buttons, gestures and hot corners." = "마우스 버튼, 제스처 및 핫 코너.";
 "Zoom, colours, spoken feedback and captions." = "확대, 색상, 음성 피드백, 자막.";
 "Search, sound, brightness and other Mac controls." = "검색, 소리, 밝기와 기타 Mac 기능.";
 "Actions whose purpose macOS doesn’t publish." = "macOS가 용도를 공개하지 않는 동작.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "잘못 누른 종료 단축키가 게임을 종료하지 못하게 합니다.";
 "Prevents an accidental close shortcut from closing the game window." = "잘못 누른 닫기 단축키가 게임 윈도우를 닫지 못하게 합니다.";
 "Lets you hold Control and click without opening a context menu." = "Control을 누른 채 클릭해도 컨텍스트 메뉴가 열리지 않게 합니다.";
-"Keeps trackpad swipes from moving the game to another desktop." = "게임 중 트랙패드 쓸어넘기기가 데스크탑을 전환하지 못하게 합니다.";
 "Shows or hides the Dock." = "Dock을 표시하거나 가립니다.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "표시된 macOS 동작을 실행합니다. 게임을 방해하면 일시 정지해 두세요.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS는 키를 제공하지만 동작의 이름은 공개하지 않습니다. 게임에서의 동작은 선택할 수 있습니다.";

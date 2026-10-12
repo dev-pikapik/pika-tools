@@ -245,6 +245,8 @@ Nyalakan Mode Game dan bermain. Pengaturan game lainnya memuat katalog Mac, tomb
 
 Otomatis menjeda tindakan yang membuka jendela atau memindahkan fokus. Pintasan bahasa singkat yang disengaja mengganti sumber tanpa jendela sistem. Tombol gerak yang ditahan punya prioritas, jadi berlari dan melompat tidak mengganti bahasa tanpa sengaja.
 
+Di Pengaturan → Game → Pengaturan game lainnya ada grup “Mouse dan trackpad”. Grup ini hanya menampilkan apa yang aktif di macOS pada Mac Anda, dengan nama dari Apple dan gambar kecil untuk setiap item: pintasan pada tombol mouse, geser antar desktop dan app layar penuh, Mission Control dan App Exposé, cubit untuk app dan rentangkan untuk Desktop, geser dari tepi kanan untuk Pusat Pemberitahuan, dan setiap sudut aktif beserta aksinya. Selama game berada di depan, semuanya dijeda, jadi geseran tak sengaja atau sentuhan di sudut layar tidak akan mengeluarkan Anda dari game. Gestur di dalam game tetap berfungsi. Setiap item bisa diatur agar bekerja seperti biasa.
+
 Buka Pengaturan → Game → Tambahkan Game dan klik game yang berjalan. Game melalui Java dan lingkungan lain juga tampil, meski tanpa file .app. Minecraft tampil sebagai Minecraft, bukan java. Cari proses game lalu seret barisnya ke Game Anda di Pengaturan → Game.
 
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.

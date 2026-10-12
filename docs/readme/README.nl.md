@@ -245,6 +245,8 @@ Zet Spelmodus aan en speel. Meer spelinstellingen bevat de catalogus van je Mac,
 
 Automatisch pauzeert acties die vensters openen of focus verplaatsen. Een kort bewust taalkortcommando wisselt de bron zonder systeemvenster. Vastgehouden bewegingstoetsen hebben voorrang, zodat rennen en springen niet per ongeluk de taal wisselen.
 
+In Instellingen → Spellen → Meer spelinstellingen staat een groep ‘Muis en trackpad’. Daarin staat alleen wat in macOS op je Mac is ingeschakeld, met de namen van Apple en een kleine tekening bij elk onderdeel: toetscombinaties op een muisknop, vegen tussen bureaubladen en apps in volledig scherm, Mission Control en App Exposé, knijpen voor apps en spreiden voor het bureaublad, vegen vanaf de rechterrand voor het Berichtencentrum en elke actieve hoek met de actie die erbij hoort. Zolang een game vooraan staat, zijn ze gepauzeerd, zodat een onbedoelde veeg of een aanraking van een hoek van het scherm je niet uit de game haalt. Gebaren in de game blijven gewoon werken. Elk onderdeel kan zo worden ingesteld dat het werkt zoals gewoonlijk.
+
 Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. Ook spellen via Java en andere omgevingen verschijnen hier, zelfs zonder .app-bestand. Minecraft heet Minecraft in plaats van java. Zoek het spelproces en sleep de rij naar Je spellen in Instellingen → Spellen.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
