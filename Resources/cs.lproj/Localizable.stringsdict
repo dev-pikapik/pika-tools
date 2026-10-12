@@ -22,5 +22,65 @@
 			<string>%lld řádků na cvaknutí</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld položka</string>
+			<key>few</key>
+			<string>%lld položky</string>
+			<key>many</key>
+			<string>%lld položky</string>
+			<key>other</key>
+			<string>%lld položek</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Do Koše se přesunula %lld položka (%@)</string>
+			<key>few</key>
+			<string>Do Koše se přesunuly %lld položky (%@)</string>
+			<key>many</key>
+			<string>Do Koše se přesunulo %lld položky (%@)</string>
+			<key>other</key>
+			<string>Do Koše se přesunulo %lld položek (%@)</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Vrátila se %lld položka</string>
+			<key>few</key>
+			<string>Vrátily se %lld položky</string>
+			<key>many</key>
+			<string>Vrátilo se %lld položky</string>
+			<key>other</key>
+			<string>Vrátilo se %lld položek</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
