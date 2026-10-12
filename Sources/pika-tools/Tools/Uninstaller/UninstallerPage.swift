@@ -42,11 +42,11 @@ struct UninstallerPage: View {
         }
         .formStyle(.grouped)
         .coordinateSpace(.named(Self.viewport))
-        .onGeometryChange(for: CGFloat.self) { $0.size.height - $0.safeAreaInsets.top } action: { sheetHeight = min(540, max(360, $0 - 24)) }
         .settingsPage()
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PermissionBar(permissions: [.fullDisk])
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { sheetHeight = min(540, max(360, $0 - 40)) }
         .environment(\.inSettings, true)
         .sheet(item: $model.session) { UninstallerSheet(session: $0, height: sheetHeight) }
         .onAppear {
