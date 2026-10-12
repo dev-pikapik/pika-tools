@@ -10,6 +10,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Changed
 - Install: the install command from the README now installs pikapik only if it is signed by its developer and has passed Apple’s malware check, and otherwise stops without changing anything. If the download fails, it says so instead of trying to build the app from source, which needed Apple’s developer tools. The README now starts with this command, since it needs nothing else installed; Homebrew and the dmg work as before.
 - Archives: the three archive windows have a fresh look. The window for a new archive shows the icon of the format you pick, with a lock when it has a password, a wide format switch with a short hint under it, and the password and splitting options together in one card. The window that asks for a password shows the archive’s own icon and says right under the field when the password is wrong. The progress window got the same clean look.
+- Updates: pikapik installs an update only if it is signed by its developer. A download signed by anyone else is refused, and the installed app stays as it is.
 
 ## [1.38.2] - 2026-10-12
 
