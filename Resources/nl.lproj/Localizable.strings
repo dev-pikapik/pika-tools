@@ -707,6 +707,8 @@
 "Copy Path" = "Kopieer pad";
 "Reset App" = "App resetten";
 "Keeps the app and removes its data, settings and temporary files" = "Houdt de app en verwijdert de gegevens, instellingen en tijdelijke bestanden";
+"Select All" = "Alles selecteren";
+"Deselect All" = "Alles deselecteren";
 "Move to Trash" = "Verplaats naar Prullenmand";
 "Move to Trash · %@" = "Verplaats naar Prullenmand · %@";
 "Already in the Trash" = "Staat al in de Prullenmand";

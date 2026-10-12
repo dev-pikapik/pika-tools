@@ -707,6 +707,8 @@
 "Copy Path" = "Sao chép đường dẫn";
 "Reset App" = "Đặt lại ứng dụng";
 "Keeps the app and removes its data, settings and temporary files" = "Giữ lại ứng dụng và xóa dữ liệu, cài đặt và tệp tạm của nó";
+"Select All" = "Chọn tất cả";
+"Deselect All" = "Bỏ chọn tất cả";
 "Move to Trash" = "Chuyển vào Thùng rác";
 "Move to Trash · %@" = "Chuyển vào Thùng rác · %@";
 "Already in the Trash" = "Đã ở trong Thùng rác";

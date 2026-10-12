@@ -707,6 +707,8 @@
 "Copy Path" = "Copiază calea";
 "Reset App" = "Resetează aplicația";
 "Keeps the app and removes its data, settings and temporary files" = "Păstrează aplicația și elimină datele, setările și fișierele ei temporare";
+"Select All" = "Selectează tot";
+"Deselect All" = "Deselectează tot";
 "Move to Trash" = "Mută în Coș";
 "Move to Trash · %@" = "Mută în Coș · %@";
 "Already in the Trash" = "Deja în Coș";

@@ -707,6 +707,8 @@
 "Copy Path" = "パスをコピー";
 "Reset App" = "アプリをリセット";
 "Keeps the app and removes its data, settings and temporary files" = "アプリは残し、データ・設定・一時ファイルを削除します";
+"Select All" = "すべてを選択";
+"Deselect All" = "すべての選択を解除";
 "Move to Trash" = "ゴミ箱に入れる";
 "Move to Trash · %@" = "ゴミ箱に入れる · %@";
 "Already in the Trash" = "すでにゴミ箱にあります";

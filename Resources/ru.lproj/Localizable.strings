@@ -707,6 +707,8 @@
 "Copy Path" = "Скопировать путь";
 "Reset App" = "Сбросить программу";
 "Keeps the app and removes its data, settings and temporary files" = "Программа остаётся, а её данные, настройки и временные файлы удаляются";
+"Select All" = "Выбрать все";
+"Deselect All" = "Снять выбор";
 "Move to Trash" = "Переместить в Корзину";
 "Move to Trash · %@" = "Переместить в Корзину · %@";
 "Already in the Trash" = "Уже в Корзине";

@@ -707,6 +707,8 @@
 "Copy Path" = "경로 복사";
 "Reset App" = "앱 초기화";
 "Keeps the app and removes its data, settings and temporary files" = "앱은 그대로 두고 데이터, 설정, 임시 파일을 제거합니다";
+"Select All" = "모두 선택";
+"Deselect All" = "모두 선택 해제";
 "Move to Trash" = "휴지통으로 이동";
 "Move to Trash · %@" = "휴지통으로 이동 · %@";
 "Already in the Trash" = "이미 휴지통에 있음";

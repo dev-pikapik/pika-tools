@@ -66,10 +66,12 @@ private struct SheetHero: View {
                     Text(session.app.displayName)
                         .font(.title2.bold())
                         .lineLimit(1)
-                    Text(session.leftoversOnly ? String(localized: "Looks like the app is gone. Pick what to remove.") : session.app.details)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
+                    if let line = session.leftoversOnly ? session.app.sourceID : session.app.details {
+                        Text(line)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                 }
                 Spacer(minLength: 12)
                 if case .choosing = session.phase {
@@ -169,6 +171,10 @@ private struct ChoiceView: View {
                     Button("Reset App") { model.remove(reset: true) }
                         .disabled(plan.chosen(reset: true).isEmpty)
                         .help(Text("Keeps the app and removes its data, settings and temporary files"))
+                } else {
+                    Button(plan.allOn ? String(localized: "Deselect All") : String(localized: "Select All")) {
+                        session.plan.setAll(on: !session.plan.allOn)
+                    }
                 }
                 Button {
                     model.remove(reset: false)

@@ -707,6 +707,8 @@
 "Copy Path" = "पाथ कॉपी करें";
 "Reset App" = "ऐप रीसेट करें";
 "Keeps the app and removes its data, settings and temporary files" = "ऐप को रखता है और उसका डेटा, सेटिंग्ज़ और अस्थायी फ़ाइलें हटाता है";
+"Select All" = "सभी चुनें";
+"Deselect All" = "सभी का चयन रद्द करें";
 "Move to Trash" = "ट्रैश में भेजें";
 "Move to Trash · %@" = "ट्रैश में भेजें · %@";
 "Already in the Trash" = "पहले से ट्रैश में है";

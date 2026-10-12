@@ -99,7 +99,7 @@ struct LeftoversSection: View {
             Section("Leftovers of removed apps") {
                 ForEach(model.orphans) { item in
                     Button { model.open(leftovers: item) } label: {
-                        AppRowLabel(icon: model.icon(of: item.app), name: item.app.displayName, byline: item.changed.map { UninstallerText.changed($0) } ?? "") {
+                        AppRowLabel(icon: model.icon(of: item.app), name: item.app.displayName, byline: item.app.sourceID ?? item.changed.map { UninstallerText.changed($0) } ?? "") {
                             SizeColumn(size: item.size, caption: String(localized: "\(item.items.count) items"))
                             RowChevron()
                         }
