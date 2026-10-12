@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Elimină aplicații fără griji
+
+<sub>1.36.0 · 12 octombrie 2026</sub>
+
+Noua funcție Eliminare aplicații scoate o aplicație cu toate fișierele ei și pune totul la loc dacă te răzgândești.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Deschide Configurări › Eliminare aplicații și alege o aplicație sau trage una peste imagine. pikapik arată tot ce păstrează aplicația pe Mac-ul tău, cu motivul pentru fiecare fișier. Fișierele care aparțin clar aplicației sunt bifate, iar cele care poate au legătură nu sunt. Apasă „Mută în Coș” și totul ajunge în Coș, așa că nimic nu se șterge definitiv.
+
+Te-ai răzgândit? Apasă „Pune la loc” și totul revine unde a fost. Ultimele zece eliminări așteaptă la „Eliminate recent” cât timp fișierele lor sunt în Coș. „Resetează aplicația” păstrează aplicația și elimină doar datele ei salvate, setările și fișierele temporare, în caz că se poartă ciudat.
+
+Ai mutat tu o aplicație în Coș? Pagina arată și aceste aplicații, cu fișierele rămase, iar un comutator poate oferi curățarea de fiecare dată când o aplicație ajunge în Coș. Nu se elimină nimic până nu alegi tu. Pentru a vedea tot, pagina are nevoie de Acces complet la disc.
+
+---
+
 ## <a id="v1.35.0"></a>Îmbracă-ți animăluțul
 
 <sub>1.35.0 · 12 octombrie 2026</sub>

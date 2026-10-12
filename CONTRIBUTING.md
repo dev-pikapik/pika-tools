@@ -97,6 +97,30 @@ The app and the pet tell you about an update only when the latest release is new
 swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
 ```
 
+Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. It is not part of the App Store build. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift scripts/test-uninstaller.swift -o build/test-uninstaller && build/test-uninstaller
+```
+
+`AppRemover` moves what `AppFootprint` found to the Trash, asks for the administrator password once for the files only an administrator can move, and keeps a record so everything can be put back. Quitting apps, `launchctl`, the password prompt and Finder are all passed in as closures, so the test runs the real logic against a made-up home folder with fakes. Only a few tiny `pika-uninstall-test-*` files go through your real Trash, and the test puts them back. The Finder fallback needs the Automation permission, which the direct build declares in `Resources/Direct.entitlements`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Sources/pika-tools/Tools/Uninstaller/AppRemover.swift scripts/test-app-remover.swift -o build/test-app-remover && build/test-app-remover
+```
+
+The Uninstaller page keeps its choices in `UninstallerLogic`: how the app list is sorted, what is ticked and what is not, the total on the **Move to Trash** button, how apps in the Trash and leftovers of removed apps are shown, and the wording of sizes and dates. The test gives it made-up apps and files, so nothing real is read or touched:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Sources/pika-tools/Tools/Uninstaller/UninstallerLogic.swift scripts/test-uninstaller-ui.swift -o build/test-uninstaller-ui && build/test-uninstaller-ui
+```
+
+`TrashWatcher` is what makes **Offer to clean up when an app goes to the Trash** work: it watches the Trash, ignores the apps that are already there when it starts, reports only the ones that arrive later, and stays quiet once stopped or when the folder cannot be read. The test watches a folder of its own in the temporary directory, never your real Trash, and takes about eight seconds. The folder stays in the temporary directory, which macOS clears itself:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Uninstaller/TrashWatcher.swift scripts/test-trash-watcher.swift -o build/test-trash-watcher && build/test-trash-watcher
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.

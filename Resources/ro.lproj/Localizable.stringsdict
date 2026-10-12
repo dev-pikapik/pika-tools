@@ -20,5 +20,59 @@
 			<string>%lld de rânduri per clic</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld element</string>
+			<key>few</key>
+			<string>%lld elemente</string>
+			<key>other</key>
+			<string>%lld de elemente</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld element (%@) mutat în Coș</string>
+			<key>few</key>
+			<string>%lld elemente (%@) mutate în Coș</string>
+			<key>other</key>
+			<string>%lld de elemente (%@) mutate în Coș</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld element pus la loc</string>
+			<key>few</key>
+			<string>%lld elemente puse la loc</string>
+			<key>other</key>
+			<string>%lld de elemente puse la loc</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

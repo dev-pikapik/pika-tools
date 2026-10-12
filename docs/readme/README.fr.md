@@ -180,6 +180,14 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Supprimer des apps</b>
+<br>Supprimez une app et ses fichiers. Tout est récupérable.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## En savoir plus
@@ -253,6 +261,10 @@ Ouvrez Réglages → Jeux → Ajouter un jeu et cliquez sur votre jeu en cours. 
 
 Pour savoir quand une récompense est due, pikapik compte uniquement ce que vous et votre compagnon faites : les pas, les fois où vous le prenez et le lancez, ses sauts, ses escalades, les parties de ballon et les conversations, les jours passés ensemble, si vous étiez ensemble tôt le matin, après minuit ou le week-end, les pages des Réglages ouvertes et les pièces essayées. En dehors du Mac App Store, pikapik note aussi si vous avez ouvert notre page GitHub depuis les Réglages. Ces chiffres, la date de chaque récompense et la tenue de votre compagnon restent sur ce Mac. Rien n’est envoyé nulle part, et rien de tout cela n’entre dans le fichier de réglages exporté ni dans la synchronisation iCloud. Vous pouvez tout effacer à tout moment dans Réglages › Compagnon, et votre compagnon repart de zéro.
 
+**Supprimer des apps.** Ouvrez Réglages › Supprimer des apps, choisissez une app dans la liste ou déposez-en une sur l’image, et pikapik affiche tout ce que cette app garde sur votre Mac : l’app elle-même, ses données enregistrées, ses réglages, ses fichiers temporaires, ses assistants en arrière-plan et plus encore, chaque élément avec la raison de sa présence. Les fichiers qui appartiennent clairement à l’app sont cochés, ceux qui n’y sont peut-être liés que de loin ne le sont pas, et ceux que d’autres apps utilisent aussi sont signalés. Choisissez ce qu’il faut supprimer et cliquez sur **Mettre à la Corbeille**. Rien n’est effacé définitivement : tout va à la Corbeille. Si l’app est ouverte, pikapik lui demande d’abord de se fermer, et si certains fichiers exigent un administrateur, votre Mac demandera une seule fois votre mot de passe.
+
+Vous avez changé d’avis ? Cliquez sur **Remettre en place** : tout revient où c’était et les assistants en arrière-plan redémarrent. Les dix dernières suppressions restent sous « Supprimés récemment » tant que leurs fichiers sont dans la Corbeille. **Réinitialiser l’app** garde l’app et ne supprime que ses données enregistrées, ses réglages et ses fichiers temporaires, ce qui peut aider quand une app se comporte mal. Les apps que vous avez mises à la Corbeille vous-même apparaissent sous « Dans la Corbeille », avec les fichiers qu’elles ont laissés, et « Restes d’apps supprimées » retrouve les fichiers d’apps déjà disparues. L’interrupteur « Proposer de nettoyer quand une app va à la Corbeille » est désactivé par défaut, et rien n’est supprimé tant que vous n’avez pas choisi. Pour tout voir, la page a besoin de l’**Accès complet au disque**. Cet outil n’existe pas dans la version du Mac App Store.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
@@ -295,6 +307,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : masquer d’un clic dans le Dock.
 - **Finder** : nouveau fichier, copie allégée et conversion, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
+- **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
 - **Compagnon** : l’activer ou le désactiver, le laisser bavarder et jouer au ballon, l’habiller et voir vos récompenses.
 - **Autorisations** : toutes les autorisations utilisées par pikapik, chacune avec son état et un bouton pour l’autoriser ou l’éteindre. Un outil auquel il manque une autorisation apparaît à moitié grisé ; un clic dessus ouvre cette page sur la bonne ligne.

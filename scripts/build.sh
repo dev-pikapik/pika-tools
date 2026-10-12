@@ -30,7 +30,7 @@ if [ -n "${APPSTORE:-}" ]; then
     KEPT=()
     for f in "${SOURCES[@]}"; do
         case $f in
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -102,6 +102,13 @@ done
 RES="$APP/Contents/Resources"
 mkdir -p "$RES"
 cp -R Resources/*.lproj "$RES/"
+if [ -z "${APPSTORE:-}" ]; then
+    FINDER_TEXT='pikapik asks Finder to move apps to the Trash when macOS doesn’t let it do that itself.'
+    /usr/libexec/PlistBuddy -c "Add :NSAppleEventsUsageDescription string $FINDER_TEXT" "$APP/Contents/Info.plist"
+    for LPROJ in Resources/*.lproj; do
+        grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+    done
+fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
 if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
@@ -172,6 +179,7 @@ if [ -n "${APPSTORE:-}" ]; then
     [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app)"
     APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
 else
+    APP_ENTITLEMENTS=(--entitlements Resources/Direct.entitlements)
     HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
     sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
 fi

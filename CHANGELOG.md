@@ -2,6 +2,18 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.36.0] - Unreleased
+
+### Added
+- Uninstaller: a new page in Settings removes an app together with the files it keeps on your Mac. It is not in the App Store version. Pick an app from the list, which you can search and sort by name or by when you last used it, or drop an app on the picture at the top of the page. pikapik looks for everything the app keeps and shows it in groups: The app, Saved data, Private storage, Temporary files, Settings, Background helpers, Add-ons, Logs and Installer records. Every item says why it is listed, for example “Belongs to the app”, “Has the app’s name”, “Installed with Homebrew” or “Might be related”.
+- Uninstaller: files that clearly belong to the app are ticked, files that are only maybe related are not, and files that other apps use too are marked “Also used by …” and left unticked. Select All and Deselect All change the whole list, a right click on a file offers Quick Look, Show in Finder and Copy Path, and the button shows the total size, like “Move to Trash · 1.2 GB”.
+- Uninstaller: nothing is deleted for good, everything goes to the Trash. The app’s background helpers are stopped first. If the app is open, pikapik asks it to quit, and offers Force Quit only if it did not close. If some files need an administrator, your Mac asks for the password once. When macOS does not allow a move, the result says why and has a button that opens the right pane of System Settings: App Management, or Automation for Finder, which pikapik asks to move the app when macOS does not let it do that itself.
+- Uninstaller: Put Back returns everything to where it was and starts the background helpers again, and whatever cannot be put back is listed with the reason. The last ten removals stay under Recently removed for as long as their files are in the Trash.
+- Uninstaller: Reset App keeps the app and removes only its saved data, settings and temporary files, which can help when an app misbehaves.
+- Uninstaller: In the Trash lists the apps you moved to the Trash yourself, with the files they left behind, and Leftovers of removed apps finds files of apps that are already gone.
+- Uninstaller: a switch, Offer to clean up when an app goes to the Trash, opens this page on the app you just trashed. It is off by default, and nothing is removed until you choose.
+- Uninstaller: Full Disk Access is needed to see everything an app keeps, and the page asks for it with a button.
+
 ## [1.35.0] - 2026-10-12
 
 ### Added

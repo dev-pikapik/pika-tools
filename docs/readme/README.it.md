@@ -180,6 +180,14 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Rimuovi app</b>
+<br>Rimuovi un’app e i suoi file. Puoi rimettere tutto.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Più dettagli
@@ -253,6 +261,10 @@ Apri Impostazioni → Giochi → Aggiungi un gioco e fai clic sul gioco in esecu
 
 Per sapere quando spetta un premio, pikapik conta solo quello che fate tu e il tuo animaletto: passi, quante volte lo prendi e lo lanci, salti, arrampicate, partite con la palla e chiacchierate, giorni passati insieme, se eravate insieme all’alba, dopo mezzanotte o nel fine settimana, le pagine delle Impostazioni che hai aperto e i capi che hai provato. Fuori dal Mac App Store, pikapik annota anche se hai aperto la nostra pagina GitHub dalle Impostazioni. Questi numeri, la data di ogni premio e ciò che indossa il tuo animaletto restano su questo Mac. Non viene inviato nulla da nessuna parte e niente di tutto ciò finisce nel file delle impostazioni esportato o nella sincronizzazione iCloud. Puoi cancellare tutto quando vuoi in Impostazioni › Animaletto, e il tuo animaletto ricomincia da zero.
 
+**Rimuovi app.** Apri Impostazioni › Rimuovi app, scegli un’app dall’elenco o trascinane una sull’immagine, e pikapik mostra tutto ciò che quell’app conserva sul tuo Mac: l’app stessa, i suoi dati salvati, le impostazioni, i file temporanei, gli aiutanti in background e altro, ognuno con il motivo per cui compare. I file che appartengono chiaramente all’app sono spuntati, quelli che forse c’entrano soltanto no, e quelli usati anche da altre app sono segnalati. Scegli cosa togliere e fai clic su **Sposta nel Cestino**. Niente viene eliminato per sempre: tutto va nel Cestino. Se l’app è aperta, pikapik le chiede prima di chiudersi e, se alcuni file richiedono un amministratore, il Mac chiederà la password una sola volta.
+
+Hai cambiato idea? Fai clic su **Rimetti a posto** e tutto torna dov’era, mentre gli aiutanti in background ripartono. Le ultime dieci rimozioni restano in «Rimossi di recente» finché i loro file sono nel Cestino. **Reimposta app** tiene l’app e toglie solo i suoi dati salvati, le impostazioni e i file temporanei, e può servire quando un’app fa i capricci. Le app che hai spostato tu nel Cestino compaiono in «Nel Cestino», insieme ai file che hanno lasciato, e «Resti di app rimosse» trova i file di app ormai sparite. L’interruttore «Proponi di fare pulizia quando un’app va nel Cestino» è spento di default, e non viene rimosso nulla finché non scegli. Per vedere tutto ciò che un’app conserva, la pagina ha bisogno dell’**Accesso completo al disco**. Questo strumento non è nella versione del Mac App Store.
+
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: il simbolo pikapik quando gli strumenti funzionano, lo stesso simbolo più chiaro quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
@@ -295,6 +307,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: nascondere con un clic nel Dock.
 - **Finder**: nuovo file, copia più leggera e conversione, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
+- **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.
 - **Animaletto**: accensione, chiacchiere e palla, guardaroba e premi.
 - **Permessi**: tutti i permessi usati da pikapik, ciascuno con il suo stato e un pulsante per consentirlo o spegnerlo. Uno strumento a cui manca un permesso appare in grigio; un clic su di esso apre questa pagina sulla riga giusta.

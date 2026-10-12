@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Apps verwijderen zonder zorgen
+
+<sub>1.36.0 · 12 oktober 2026</sub>
+
+Met het nieuwe Apps verwijderen haal je een app met alle bestanden weg, en zet je alles terug als je bedenkt dat het toch niet moet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Apps verwijderen en kies een app, of sleep er een op het plaatje. pikapik toont alles wat de app op je Mac bewaart, met bij elk bestand de reden. Bestanden die duidelijk bij de app horen zijn aangevinkt, bestanden die er misschien mee te maken hebben niet. Klik op Verplaats naar Prullenmand en alles gaat naar de Prullenmand, dus er wordt niets definitief gewist.
+
+Bedacht je je? Klik op Zet terug en alles staat weer waar het stond. De laatste tien verwijderingen blijven onder Onlangs verwijderd staan zolang hun bestanden in de Prullenmand liggen. App resetten houdt de app en verwijdert alleen de bewaarde gegevens, instellingen en tijdelijke bestanden, voor als een app raar doet.
+
+Zelf een app in de Prullenmand gezet? De pagina toont die apps ook, met de bestanden die ze achterlieten, en een schakelaar laat pikapik opruimen aanbieden zodra een app in de Prullenmand komt. Er wordt niets verwijderd voordat jij kiest. Om alles te zien heeft de pagina Volledige schijftoegang nodig.
+
+---
+
 ## <a id="v1.35.0"></a>Kleed je huisdiertje aan
 
 <sub>1.35.0 · 12 oktober 2026</sub>

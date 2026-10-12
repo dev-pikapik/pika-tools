@@ -180,6 +180,14 @@ Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, memi
 <br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Hapus App</b>
+<br>Hapus app beserta filenya. Semua bisa dikembalikan.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya
@@ -253,6 +261,10 @@ Buka Pengaturan → Game → Tambahkan Game dan klik game yang berjalan. Game me
 
 Untuk tahu kapan penghargaan diberikan, pikapik hanya menghitung apa yang dilakukan Anda dan peliharaan: langkah, berapa kali Anda mengangkat dan melemparnya, lompatan, panjatan, permainan bola, obrolan, hari bersama, apakah kalian bersama pagi-pagi sekali, lewat tengah malam, atau di akhir pekan, halaman Pengaturan yang Anda buka, dan barang yang Anda coba. Di luar Mac App Store, pikapik juga mencatat apakah Anda membuka halaman GitHub kami dari Pengaturan. Angka-angka ini, tanggal tiap penghargaan, dan apa yang dikenakan peliharaan tetap ada di Mac ini. Tidak ada yang dikirim ke mana pun, dan tidak ada yang masuk ke berkas pengaturan yang diekspor atau sinkronisasi iCloud. Anda bisa menghapus semuanya kapan saja di Pengaturan › Peliharaan, lalu peliharaan mulai dari awal lagi.
 
+**Hapus App.** Buka Pengaturan › Hapus App, pilih app dari daftar atau seret app ke gambar, dan pikapik menampilkan semua yang disimpan app itu di Mac Anda: app itu sendiri, data tersimpan, pengaturan, file sementara, pembantu latar belakang, dan lainnya, masing-masing dengan alasan mengapa ia ada di daftar. File yang jelas milik app diberi centang, file yang hanya mungkin terkait tidak, dan file yang juga dipakai app lain diberi tanda. Pilih apa yang mau dihapus, lalu klik **Pindahkan ke Tong Sampah**. Tidak ada yang dihapus permanen: semuanya masuk ke Tong Sampah. Jika app sedang terbuka, pikapik meminta app itu keluar lebih dulu, dan jika sebagian file memerlukan administrator, Mac akan meminta kata sandi Anda satu kali.
+
+Berubah pikiran? Klik **Kembalikan**, dan semuanya kembali ke tempat semula, sementara pembantu latar belakang dijalankan lagi. Sepuluh penghapusan terakhir menunggu di “Baru dihapus” selama file-nya masih ada di Tong Sampah. **Reset app** mempertahankan app dan hanya menghapus data tersimpan, pengaturan, dan file sementara miliknya, yang bisa membantu saat sebuah app bermasalah. App yang Anda pindahkan sendiri ke Tong Sampah muncul di “Di Tong Sampah”, lengkap dengan file yang ditinggalkannya, dan “Sisa app yang sudah dihapus” menemukan file milik app yang sudah tidak ada. Sakelar “Tawarkan pembersihan saat app masuk ke Tong Sampah” mati secara bawaan, dan tidak ada yang dihapus sebelum Anda memilih. Agar bisa melihat semua yang disimpan sebuah app, halaman ini memerlukan **Akses Disk Penuh**. Alat ini tidak ada di versi Mac App Store.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
 Ikon di bar menu menunjukkan status sekilas: tanda pikapik saat alat bekerja, tanda yang sama tetapi pucat saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
@@ -295,6 +307,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: menyembunyikan dengan klik di Dock.
 - **Finder**: file baru, salinan lebih kecil dan konversi, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
+- **Hapus App**: hapus app beserta filenya, kembalikan semuanya nanti, dan bersihkan sisa dari app yang sudah dihapus.
 - **Game**: daftar game Anda dan opsi Mode Game.
 - **Peliharaan**: nyalakan atau matikan peliharaan, biarkan ia mengobrol dan bermain bola, dandani, dan lihat penghargaan Anda.
 - **Izin**: semua izin yang dipakai pikapik, masing-masing dengan statusnya dan satu tombol untuk mengizinkan atau mematikannya. Alat yang kekurangan izin tampak setengah abu-abu, dan jika diklik, halaman ini terbuka di baris yang tepat.

@@ -18,5 +18,53 @@
 			<string>%lld linhas por clique</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld item</string>
+			<key>other</key>
+			<string>%lld itens</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld item (%@) movido para o Lixo</string>
+			<key>other</key>
+			<string>%lld itens (%@) movidos para o Lixo</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld item devolvido ao lugar</string>
+			<key>other</key>
+			<string>%lld itens devolvidos ao lugar</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

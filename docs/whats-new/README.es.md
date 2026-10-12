@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Elimina apps sin preocuparte
+
+<sub>1.36.0 · 12 de octubre de 2026</sub>
+
+El nuevo Eliminar apps quita una app con todos sus archivos y lo devuelve todo a su sitio si cambias de idea.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Eliminar apps y elige una app, o suelta una sobre la imagen. pikapik muestra todo lo que la app guarda en tu Mac, con el motivo de cada archivo. Los archivos que claramente pertenecen a la app vienen marcados, y los que solo quizá estén relacionados, no. Haz clic en «Mover a la Papelera» y todo va a la Papelera, así que no se borra nada para siempre.
+
+¿Has cambiado de idea? Haz clic en «Devolver a su sitio» y todo vuelve donde estaba. Las diez últimas eliminaciones esperan en «Eliminado recientemente» mientras sus archivos sigan en la Papelera. «Restablecer app» conserva la app y quita solo sus datos guardados, ajustes y archivos temporales, por si falla.
+
+¿Moviste tú una app a la Papelera? La página muestra esas apps y los archivos que dejaron, y puedes activar un interruptor que ofrece limpiar cada vez que una app va a la Papelera. No se quita nada hasta que elijas. Para verlo todo, la página necesita Acceso total al disco.
+
+---
+
 ## <a id="v1.35.0"></a>Viste a tu mascota
 
 <sub>1.35.0 · 12 de octubre de 2026</sub>
