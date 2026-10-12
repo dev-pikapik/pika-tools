@@ -106,6 +106,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Turn off pointer acceleration"), String(localized: "Tracking speed"), String(localized: "Left by deleted apps"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
+            String(localized: "Archives in Finder"), String(localized: "Open all archives with pikapik"),
         ]
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
@@ -162,6 +163,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop"),
             SettingsItem(tab: .finder, title: String(localized: "Smaller Copy in Finder"), synonyms: "compress, shrink, smaller, reduce size, optimize, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF, TinyPNG"),
             SettingsItem(tab: .finder, title: String(localized: "Convert in Finder"), synonyms: "convert, format, export, save as, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF"),
+            SettingsItem(tab: .finder, title: String(localized: "Archives in Finder"), synonyms: "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu"),
+            SettingsItem(tab: .finder, title: String(localized: "Open all archives with pikapik"), synonyms: "archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz"),
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X"),
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),

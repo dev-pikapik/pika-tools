@@ -21,10 +21,12 @@ if [ -z "$DIR" ]; then
         ${FLAGS[@]+"${FLAGS[@]}"} \
         -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
         "${SOURCES[@]}" -o "$DIR/app.o"
-    for EXT in NewFile Compress Convert; do
+    for EXT in NewFile Compress Convert Archive; do
+        SHARED=(Extensions/Shared/*.swift)
+        [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
         swiftc -wmo -c -module-name "$EXT" -target arm64-apple-macos14.0 -application-extension \
             -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
-            Extensions/"$EXT"/*.swift Extensions/Shared/*.swift -o "$DIR/$EXT.o"
+            Extensions/"$EXT"/*.swift "${SHARED[@]}" -o "$DIR/$EXT.o"
     done
 fi
 

@@ -82,6 +82,9 @@ final class ToolRegistry {
         list.append(NewFileTool())
         list.append(CompressTool())
         list.append(ConvertTool())
+        #if !APPSTORE
+        list.append(ArchiveTool())
+        #endif
         list.append(FinderOpenTool())
         list.append(FinderCutTool())
         list.append(FinderDeleteTool())

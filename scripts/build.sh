@@ -4,6 +4,7 @@ cd "$(dirname "$0")/.."
 
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert"
+[ -n "${APPSTORE:-}" ] || EXTENSIONS="$EXTENSIONS Archive"
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -59,13 +60,15 @@ for ARCH in arm64 x86_64; do
         Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
         -o "build/fan-helper-$ARCH"
     for EXT in $EXTENSIONS; do
+        SHARED=(Extensions/Shared/*.swift)
+        [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
             -target "$ARCH-apple-macos$MIN_OS" \
             -application-extension \
             "${EMIT[@]}" \
             -Xlinker -e -Xlinker _NSExtensionMain \
-            Extensions/"$EXT"/*.swift Extensions/Shared/*.swift \
+            Extensions/"$EXT"/*.swift "${SHARED[@]}" \
             -o "build/$EXT-$ARCH"
     done
 done
@@ -97,6 +100,7 @@ for EXT in $EXTENSIONS; do
             NewFile) TEXTS='New File' NAME='New File in Finder' ;;
             Compress) TEXTS='Make a Smaller Copy' NAME='Smaller Copy in Finder' ;;
             Convert) TEXTS='Convert To|M4A \(Audio Only\)' NAME='Convert in Finder' ;;
+            Archive) TEXTS='Extract|Create Archive…' NAME='Archives in Finder' ;;
         esac
         grep -E "^\"($TEXTS)\" = " "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
         grep "^\"$NAME\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"CFBundleDisplayName"/' > "$OUT/InfoPlist.strings"
@@ -111,6 +115,7 @@ if [ -z "${APPSTORE:-}" ]; then
     /usr/libexec/PlistBuddy -c "Add :NSAppleEventsUsageDescription string $FINDER_TEXT" "$APP/Contents/Info.plist"
     for LPROJ in Resources/*.lproj; do
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+        grep '^"Archive" = ' "$LPROJ/Localizable.strings" >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
 fi
@@ -156,6 +161,7 @@ group_entitlements() {
 
 if [ -n "${APPSTORE:-}" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" -c "Add :ITSAppUsesNonExemptEncryption bool false" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Delete :CFBundleDocumentTypes" -c "Delete :UTImportedTypeDeclarations" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName $APPSTORE_ID" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-store" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-store" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do

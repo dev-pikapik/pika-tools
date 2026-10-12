@@ -15,6 +15,7 @@ struct SettingsFile {
         "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
         "side-buttons", "side-buttons-swap",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
+        "archive", "archive-format", "archive-split",
         "finder-open", "finder-cut", "finder-delete",
         "game-mode", "game-mode-games", "game-mode-not-games", "game-mode-system-shortcuts", "game-mode-fps", "game-mode-fps-corner",
         "keep-awake-mode", "keep-awake-duration",
