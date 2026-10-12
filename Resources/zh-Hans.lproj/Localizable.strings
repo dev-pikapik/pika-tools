@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "右键点按 › 解压缩或创建压缩文件";
 "Right-click a file or folder" = "右键点按文件或文件夹";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "在访达中右键点按压缩文件，然后选择“解压缩”。右键点按其他任意文件或文件夹，然后选择“创建压缩文件…”，即可生成 ZIP、7Z 或 TAR，还可以设置密码。";
-"Open all archives with pikapik" = "用 pikapik 打开所有压缩文件";
+"Open archives with this app" = "用此 App 打开压缩文件";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "压缩文件, 解压缩, 解压, 提取, zip, rar, 7z, tar, 密码, 分割, 右键, 上下文菜单";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "压缩文件, 默认应用, 打开方式, 双击, 解压, zip, 7z, tar, gz, bz2, xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "压缩文件, 默认应用, 打开方式, 双击, 解压, zip, 7z";
 "Extract" = "解压缩";
 "Create Archive…" = "创建压缩文件…";
 "Archive" = "压缩文件";

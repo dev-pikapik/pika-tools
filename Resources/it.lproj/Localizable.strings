@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "Clic destro › Estrai o Crea archivio";
 "Right-click a file or folder" = "Clic destro su un file o una cartella";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Fai clic destro su un archivio nel Finder e scegli “Estrai”. Fai clic destro su un altro file o cartella e scegli “Crea archivio…” per ottenere uno ZIP, un 7Z o un TAR, con una password se vuoi.";
-"Open all archives with pikapik" = "Apri tutti gli archivi con pikapik";
+"Open archives with this app" = "Apri gli archivi con questa app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archivio, estrai, decomprimi, scompatta, zip, rar, 7z, tar, password, dividi, clic destro, menu contestuale";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "archivio, app predefinita, apri con, doppio clic, decomprimi, zip, 7z, tar, gz, bz2, xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "archivio, app predefinita, apri con, doppio clic, decomprimi, zip, 7z";
 "Extract" = "Estrai";
 "Create Archive…" = "Crea archivio…";
 "Archive" = "Archivio";

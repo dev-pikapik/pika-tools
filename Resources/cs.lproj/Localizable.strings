@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "Pravý klik › Rozbalit nebo Vytvořit archiv";
 "Right-click a file or folder" = "Pravý klik na soubor nebo složku";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Klikněte pravým na archiv ve Finderu a vyberte „Rozbalit“. Klikněte pravým na jiný soubor nebo složku a vyberte „Vytvořit archiv…“, vznikne ZIP, 7Z nebo TAR, podle přání s heslem.";
-"Open all archives with pikapik" = "Otevírat všechny archivy v pikapik";
+"Open archives with this app" = "Otevírat archivy v této aplikaci";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archiv, rozbalit, extrahovat, zip, rar, 7z, tar, heslo, rozdělit, pravý klik, kontextová nabídka";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "archiv, výchozí aplikace, otevřít v, dvojklik, rozbalit, zip, 7z, tar, gz, bz2, xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "archiv, výchozí aplikace, otevřít v, dvojklik, rozbalit, zip, 7z";
 "Extract" = "Rozbalit";
 "Create Archive…" = "Vytvořit archiv…";
 "Archive" = "Archiv";

@@ -46,9 +46,9 @@ private struct ArchiveSettings: View {
         ) { AnyView(ArchiveArt(on: $0)) }
         if inSettings {
             Toggle(isOn: Binding(get: { defaultApp.isOn }, set: { defaultApp.set($0) })) {
-                RowLabel(Text("Open all archives with pikapik"), Text(verbatim: "ZIP · 7Z · TAR · GZ · BZ2 · XZ"))
+                RowLabel(Text("Open archives with this app"), Text(verbatim: "ZIP · 7Z"))
             }
-            .settingAnchor(String(localized: "Open all archives with pikapik"))
+            .settingAnchor(String(localized: "Open archives with this app"))
             .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in defaultApp.refresh() }
         }
     }
@@ -57,10 +57,7 @@ private struct ArchiveSettings: View {
 @Observable
 final class ArchiveDefaultApp {
     private static let system = "com.apple.archiveutility"
-    private static let types = [
-        "public.zip-archive", "org.7-zip.7-zip-archive", "public.tar-archive", "org.gnu.gnu-zip-tar-archive", "org.gnu.gnu-zip-archive",
-        "public.bzip2-archive", "public.tar-bzip2-archive", "org.tukaani.xz-archive", "org.tukaani.tar-xz-archive",
-    ].compactMap { UTType($0) }
+    private static let types = ["public.zip-archive", "org.7-zip.7-zip-archive"].compactMap { UTType($0) }
 
     private(set) var isOn = false
 

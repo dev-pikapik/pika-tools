@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "คลิกขวา › แตกไฟล์ หรือ สร้างไฟล์บีบอัด";
 "Right-click a file or folder" = "คลิกขวาที่ไฟล์หรือโฟลเดอร์";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "คลิกขวาที่ไฟล์บีบอัดใน Finder แล้วเลือก “แตกไฟล์” คลิกขวาที่ไฟล์หรือโฟลเดอร์อื่น แล้วเลือก “สร้างไฟล์บีบอัด…” เพื่อสร้าง ZIP, 7Z หรือ TAR จะตั้งรหัสผ่านด้วยก็ได้";
-"Open all archives with pikapik" = "เปิดไฟล์บีบอัดทั้งหมดด้วย pikapik";
+"Open archives with this app" = "เปิดไฟล์บีบอัดด้วยแอปนี้";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "ไฟล์บีบอัด, แตกไฟล์, คลายซิป, zip, rar, 7z, tar, รหัสผ่าน, แบ่ง, คลิกขวา, เมนูบริบท";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "ไฟล์บีบอัด, แอปเริ่มต้น, เปิดด้วย, ดับเบิลคลิก, แตกไฟล์, zip, 7z, tar, gz, bz2, xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "ไฟล์บีบอัด, แอปเริ่มต้น, เปิดด้วย, ดับเบิลคลิก, แตกไฟล์, zip, 7z";
 "Extract" = "แตกไฟล์";
 "Create Archive…" = "สร้างไฟล์บีบอัด…";
 "Archive" = "ไฟล์บีบอัด";

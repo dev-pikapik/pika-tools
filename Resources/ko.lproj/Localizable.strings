@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "우클릭 › 압축 풀기 또는 압축 파일 만들기";
 "Right-click a file or folder" = "파일이나 폴더를 우클릭";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Finder에서 압축 파일을 오른쪽 클릭하고 ‘압축 풀기’를 선택하세요. 다른 파일이나 폴더를 오른쪽 클릭하고 ‘압축 파일 만들기…’를 선택하면 ZIP, 7Z, TAR를 만들 수 있으며, 원하면 암호도 걸 수 있습니다.";
-"Open all archives with pikapik" = "모든 압축 파일을 pikapik으로 열기";
+"Open archives with this app" = "압축 파일을 이 앱으로 열기";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "압축 파일, 압축 풀기, 압축 해제, 풀기, zip, rar, 7z, tar, 암호, 나누기, 오른쪽 클릭, 컨텍스트 메뉴";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "압축 파일, 기본 앱, 다음으로 열기, 더블 클릭, 압축 해제, zip, 7z, tar, gz, bz2, xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "압축 파일, 기본 앱, 다음으로 열기, 더블 클릭, 압축 해제, zip, 7z";
 "Extract" = "압축 풀기";
 "Create Archive…" = "압축 파일 만들기…";
 "Archive" = "압축 파일";

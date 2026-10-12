@@ -883,9 +883,9 @@
 "Right-click › Extract or Create Archive" = "انقر بزر الماوس الأيمن › استخراج أو إنشاء ملف مضغوط";
 "Right-click a file or folder" = "انقر بزر الماوس الأيمن على ملف أو مجلد";
 "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "انقر بزر الماوس الأيمن على ملف مضغوط في Finder واختر «استخراج». انقر بزر الماوس الأيمن على أي ملف أو مجلد آخر واختر «إنشاء ملف مضغوط…» لإنشاء ZIP أو 7Z أو TAR، مع كلمة سر إن شئت.";
-"Open all archives with pikapik" = "فتح كل الملفات المضغوطة باستخدام pikapik";
+"Open archives with this app" = "فتح الملفات المضغوطة باستخدام هذا التطبيق";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "ملف مضغوط، أرشيف، استخراج، فك الضغط، zip، rar، 7z، tar، كلمة سر، تقسيم، النقر بزر الماوس الأيمن، قائمة السياق";
-"archive, default app, open with, double-click, unzip, zip, 7z, tar, gz, bz2, xz" = "ملف مضغوط، أرشيف، التطبيق الافتراضي، فتح باستخدام، نقر مزدوج، فك الضغط، zip، 7z، tar، gz، bz2، xz";
+"archive, default app, open with, double-click, unzip, zip, 7z" = "ملف مضغوط، أرشيف، التطبيق الافتراضي، فتح باستخدام، نقر مزدوج، فك الضغط، zip، 7z";
 "Extract" = "استخراج";
 "Create Archive…" = "إنشاء ملف مضغوط…";
 "Archive" = "ملف مضغوط";
