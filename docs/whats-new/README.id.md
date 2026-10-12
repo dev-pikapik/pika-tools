@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12 Oktober 2026</sub>
 
-Item pikapik di menu klik kanan Finder kini tidak lagi hilang saat Anda menghubungkan disk, membuka image disk, membangunkan Mac, atau beralih ke Finder. Dalam kasus yang jarang terjadi, program pembantu yang menampilkannya tertutup tepat pada saat itu.
+Item pikapik di menu klik kanan Finder kini tidak lagi hilang saat Anda menghubungkan disk, membuka image disk, membangunkan Mac, atau beralih ke Finder.
+
+Dalam kasus yang jarang terjadi, program pembantu yang menampilkannya tertutup tepat pada saat itu.
 
 ---
 

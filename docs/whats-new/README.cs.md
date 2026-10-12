@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12. října 2026</sub>
 
-Položky pikapik v nabídce pravého kliknutí ve Finderu už nemizí po připojení disku, otevření obrazu disku, probuzení Macu ani po přepnutí do Finderu. Ve vzácných případech se pomocný program, který je zobrazuje, právě v tu chvíli ukončil.
+Položky pikapik v nabídce pravého kliknutí ve Finderu už nemizí po připojení disku, otevření obrazu disku, probuzení Macu ani po přepnutí do Finderu.
+
+Ve vzácných případech se pomocný program, který je zobrazuje, právě v tu chvíli ukončil.
 
 ---
 

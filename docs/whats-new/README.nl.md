@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12 oktober 2026</sub>
 
-De opties van pikapik in het rechtsklikmenu van de Finder verdwijnen niet meer als je een schijf aansluit, een schijfkopie opent, je Mac uit de sluimerstand haalt of naar de Finder gaat. In zeldzame gevallen stopte het hulpprogramma dat ze toont precies op dat moment.
+De opties van pikapik in het rechtsklikmenu van de Finder verdwijnen niet meer als je een schijf aansluit, een schijfkopie opent, je Mac uit de sluimerstand haalt of naar de Finder gaat.
+
+In zeldzame gevallen stopte het hulpprogramma dat ze toont precies op dat moment.
 
 ---
 
