@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Arată cât de fluid rulează jocul";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă. Câteva jocuri, mai ales cele mai vechi, pot fi numărate doar prin înregistrarea ecranului, iar atunci numărul nu poate depăși rata de reîmprospătare a ecranului.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă. Cadrele sunt numărate prin înregistrarea ecranului, așa că numărul nu poate depăși rata de reîmprospătare a ecranului.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Jocurile liniștite, precum șahul, desenează o imagine nouă doar când se mișcă ceva, așa că 0 e normal pentru ele.";
 "Corner for FPS" = "Colțul pentru FPS";
 "Top left corner" = "Colțul din stânga sus";
 "Top right corner" = "Colțul din dreapta sus";

@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Ukazuje, jak plynule hra běží";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Některé hry, hlavně starší, se dají spočítat jen přes záznam obrazovky, a pak číslo nemůže být vyšší než obnovovací frekvence obrazovky.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Počítá se přes záznam obrazovky, proto číslo nemůže být vyšší než obnovovací frekvence obrazovky.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Klidné hry jako šachy nakreslí nový obrázek, jen když se něco pohne, takže 0 je u nich normální.";
 "Corner for FPS" = "Roh pro FPS";
 "Top left corner" = "Levý horní roh";
 "Top right corner" = "Pravý horní roh";
