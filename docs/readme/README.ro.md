@@ -177,7 +177,7 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animăluț pe birou</b>
-<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară.
+<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Aplicația observă schimbarea în câteva secunde, fără repornire.
 
 Unele funcții cer mai mult atunci când le folosești: **Controlul ventilatoarelor**, **Extensii Finder**, **iCloud Drive** și **Acces complet la disc**. Toate sunt pe pagina Permisiuni din configurări: fiecare permisiune are un rând care spune la ce servește, o bifă verde sau o cruce portocalie și un singur buton: **Permite** când lipsește, **Stinge** când e activă. Așa poți retrage orice permisiune chiar acolo.
 
-pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Singura cerere în rețea este verificarea actualizărilor, care întreabă GitHub care este cea mai nouă versiune.
+pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. pikapik se conectează la internet doar pentru actualizări (întreabă GitHub care este cea mai nouă versiune și o descarcă numai dacă alegi să actualizezi) și pentru testul de viteză, când îl pornești (folosește serverele Apple). Versiunea din Mac App Store este actualizată de App Store, iar testul ei de viteză folosește Cloudflare. Progresul animăluțului (pași, aruncări, premii și altele asemenea) este numărat doar pe acest Mac și nu este trimis nicăieri. Îl poți șterge din Configurări › Animăluț.
 
 </details>
 
@@ -249,6 +249,10 @@ Automat oprește acțiunile care deschid ferestre sau mută focalizarea. O scurt
 
 Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. Apar și jocurile care folosesc Java sau alte medii, chiar fără un fișier .app. Minecraft apare ca Minecraft, nu java. Găsește procesul jocului și trage rândul pe Jocurile tale în Configurări → Jocuri.
 
+**Garderoba și premiile animăluțului.** Deschide Configurări › Animăluț ca să-ți îmbraci animăluțul: peste 30 de piese, de la pălării și ochelari până la pelerine și aripi, plus ținute gata făcute, cum ar fi vrăjitor, pirat sau astronaut. Câteva piese sunt gratuite de la început. Restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu nou, animăluțul îți spune.
+
+Ca să știe când se cuvine un premiu, pikapik numără doar ce faceți tu și animăluțul: pașii, de câte ori l-ai ridicat și l-ai aruncat, săriturile, cățărările, jocurile cu mingea și discuțiile, zilele petrecute împreună, dacă ați fost împreună dimineața devreme, după miezul nopții sau în weekend, paginile din Configurări pe care le-ai deschis și piesele pe care le-ai probat. În afara Mac App Store, pikapik notează și dacă ai deschis din Configurări pagina noastră de GitHub. Aceste numere, data fiecărui premiu și ce poartă animăluțul rămân pe acest Mac. Nimic nu este trimis nicăieri și nimic din toate acestea nu intră în fișierul de configurări exportat sau în sincronizarea iCloud. Poți șterge totul oricând din Configurări › Animăluț, iar animăluțul o ia de la zero.
+
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
@@ -291,6 +295,8 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.
 - **Finder**: fișier nou, copie mai mică și conversie, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
+- **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.
+- **Animăluț**: pornit sau oprit, vorbit și minge, garderoba și premiile.
 - **Permisiuni**: toate permisiunile pe care le folosește pikapik, fiecare cu starea ei și cu un buton pentru a o permite sau a o stinge. Un instrument căruia îi lipsește o permisiune apare în gri, iar un clic pe el deschide această pagină la rândul potrivit.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 

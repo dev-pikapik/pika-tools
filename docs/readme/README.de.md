@@ -177,7 +177,7 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Haustier auf dem Schreibtisch</b>
-<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft.
+<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Die App erkennt die Änderung innerhalb von ein, zwei Sekunden, ein Neustart ist
 
 Manche Funktionen brauchen zusätzliche Berechtigungen: **Lüftersteuerung**, **Finder-Erweiterungen**, **iCloud Drive** und **Festplattenvollzugriff**. Alle stehen auf der Seite „Berechtigungen“ in den Einstellungen. Jede hat eine Zeile dazu, wofür sie da ist, einen grünen Haken oder ein orangefarbenes Kreuz und eine Taste: **Erlauben**, wenn sie fehlt, **Ausschalten**, wenn sie an ist. So kannst du jede Berechtigung gleich dort zurücknehmen.
 
-pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. Die einzige Netzwerkanfrage ist die Suche nach Updates, bei der GitHub nach der neuesten Version gefragt wird.
+pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. pikapik geht nur für Updates ins Netz (es fragt GitHub nach der neuesten Version und lädt sie nur herunter, wenn du dich fürs Aktualisieren entscheidest) und für den Speedtest, wenn du ihn startest (dabei werden die Server von Apple genutzt). Die Version aus dem Mac App Store wird vom App Store aktualisiert, und ihr Speedtest nutzt Cloudflare. Der Fortschritt deines Haustiers (Schritte, Würfe, Auszeichnungen und Ähnliches) wird nur auf diesem Mac gezählt und nie irgendwohin gesendet. Du kannst ihn in Einstellungen › Haustier löschen.
 
 </details>
 
@@ -249,6 +249,10 @@ Unter Einstellungen → Spiele → Weitere Spieleinstellungen gibt es die Gruppe
 
 Öffne Einstellungen → Spiele → Spiel hinzufügen und klicke auf dein laufendes Spiel. Auch Spiele über Java und andere Laufzeitumgebungen erscheinen hier, selbst ohne .app. Minecraft heißt Minecraft statt java. Suche den Spielprozess und ziehe seine Zeile auf Deine Spiele unter Einstellungen → Spiele.
 
+**Kleiderschrank und Auszeichnungen fürs Haustier.** Öffne Einstellungen › Haustier, um dein Haustier anzuziehen: mehr als 30 Teile, von Hüten und Brillen bis zu Umhängen und Flügeln, dazu fertige Outfits wie Zauberer, Pirat oder Astronaut. Ein paar Teile sind von Anfang an frei. Die übrigen sind Auszeichnungen, die ihr beim gemeinsamen Spielen sammelt: Heb dein Haustier hoch und wirf es, kick den Ball herum, sieh zu, wie es auf Fenster klettert und plaudert, oder leiste ihm einfach Tag für Tag Gesellschaft. Wenn du eine neue Auszeichnung verdient hast, sagt dir dein Haustier Bescheid.
+
+Damit pikapik weiß, wann eine Auszeichnung fällig ist, zählt es nur, was du und dein Haustier tun: Schritte, wie oft du es hochhebst und wirfst, seine Sprünge, Kletterpartien, Ballspiele und Gespräche, die gemeinsamen Tage, ob ihr früh am Morgen, nach Mitternacht oder am Wochenende zusammen wart, welche Seiten der Einstellungen du geöffnet und was du anprobiert hast. Außerhalb des Mac App Store merkt sich pikapik außerdem, ob du aus den Einstellungen heraus unsere GitHub-Seite geöffnet hast. Diese Zahlen, das Datum jeder Auszeichnung und das, was dein Haustier trägt, bleiben auf diesem Mac. Nichts wird irgendwohin gesendet, und nichts davon landet in der exportierten Einstellungsdatei oder in der iCloud-Synchronisierung. Du kannst alles jederzeit in Einstellungen › Haustier löschen, dann fängt dein Haustier von vorn an.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
@@ -291,6 +295,8 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Ausblenden per Klick im Dock.
 - **Finder**: neue Datei, kleinere Kopie und Umwandeln, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
+- **Spiele**: deine Spiele und die Einstellungen des Spielmodus.
+- **Haustier**: an- und ausschalten, Plaudern und Ball, Kleiderschrank und Auszeichnungen.
 - **Berechtigungen**: alle Berechtigungen, die pikapik nutzt, jeweils mit Status und einer Taste zum Erlauben oder Ausschalten. Ein Tool, dem eine Berechtigung fehlt, wirkt halb ausgegraut; ein Klick darauf öffnet diese Seite bei der passenden Zeile.
 - **Über**: Version, Links zum Änderungsprotokoll und zum Melden eines Problems.
 

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Dandani peliharaan Anda
+
+<sub>1.35.0 · 12 Oktober 2026</sub>
+
+Peliharaan Anda kini punya lemari pakaian, dan Anda meraih barang baru untuk dipakainya sambil bermain bersama.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Peliharaan dan pilih apa yang dipakai peliharaan Anda: topi, kacamata, syal, kaus, sepatu, jubah, bahkan sayap. Dia langsung memakainya. Beberapa barang gratis, sisanya adalah penghargaan yang datang saat Anda bermain bersama: angkat peliharaan lalu lempar, tendang bolanya, lihat dia memanjat jendela dan mengobrol, atau sekadar temani dia hari demi hari. Saat Anda meraih penghargaan, peliharaan akan memberi tahu Anda.
+
+Gaya siap pakai mendandani peliharaan dari kepala sampai kaki dengan sekali klik: penyihir, bajak laut, astronaut, pahlawan super, raja, dan masih banyak lagi. Setiap gaya siap dipakai setelah Anda meraih semua bagiannya.
+
+Hanya angka sederhana yang disimpan, seperti langkah, lemparan, dan hari bersama. Angka itu tetap di Mac Anda, tidak ada yang dikirim ke mana pun, dan Anda bisa menghapusnya kapan saja di Pengaturan › Peliharaan.
+
+---
+
 ## <a id="v1.34.0"></a>Mouse dan trackpad di dalam game
 
 <sub>1.34.0 · 12 Oktober 2026</sub>

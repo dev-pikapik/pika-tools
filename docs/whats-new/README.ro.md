@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Îmbracă-ți animăluțul
+
+<sub>1.35.0 · 12 octombrie 2026</sub>
+
+Animăluțul tău are acum o garderobă, iar piese noi câștigi jucându-vă împreună.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Deschide Configurări › Animăluț și alege ce poartă animăluțul: pălării, ochelari, fulare, tricouri, încălțăminte, pelerine și chiar aripi. Animăluțul le îmbracă pe loc. Câteva piese sunt gratuite, iar restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu, animăluțul îți spune.
+
+Ținutele gata făcute îl îmbracă din cap până în picioare cu un singur clic: vrăjitor, pirat, astronaut, supererou, rege și altele. O ținută e gata când ai câștigat toate piesele ei.
+
+Se păstrează doar numere simple, cum ar fi pașii, aruncările și zilele petrecute împreună. Ele rămân pe Mac-ul tău, nimic nu este trimis nicăieri, iar tu le poți șterge oricând din Configurări › Animăluț.
+
+---
+
 ## <a id="v1.34.0"></a>Mouse și trackpad în jocuri
 
 <sub>1.34.0 · 12 octombrie 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Evcil dostunuzu giydirin
+
+<sub>1.35.0 · 12 Ekim 2026</sub>
+
+Evcil dostunuzun artık bir gardırobu var, birlikte oynadıkça giyecek yeni şeyler kazanıyorsunuz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Ayarlar › Evcil Dost sayfasını açın ve evcil dostunuzun neler giyeceğini seçin: şapkalar, gözlükler, atkılar, tişörtler, ayakkabılar, pelerinler ve hatta kanatlar. Evcil dostunuz hemen giyer. Birkaç parça ücretsizdir, gerisi birlikte oynarken gelen ödüllerdir: evcil dostunuzu tutup fırlatın, topu tekmeleyin, pencerelere tırmanışını ve konuşmasını izleyin ya da günden güne yalnızca ona eşlik edin. Bir ödül kazandığınızda evcil dostunuz size söyler.
+
+Hazır kombinler evcil dostunuzu tek tıkla baştan aşağı giydirir: büyücü, korsan, astronot, süper kahraman, kral ve daha fazlası. Bir kombinin tüm parçalarını kazandığınızda o kombin hazır olur.
+
+Yalnızca adımlar, fırlatmalar ve birlikte geçen günler gibi basit sayılar tutulur. Bunlar Mac’inizde kalır, hiçbir yere gönderilmez ve istediğiniz zaman Ayarlar › Evcil Dost sayfasından silebilirsiniz.
+
+---
+
 ## <a id="v1.34.0"></a>Oyunlarda fare ve izleme dörtgeni
 
 <sub>1.34.0 · 12 Ekim 2026</sub>
