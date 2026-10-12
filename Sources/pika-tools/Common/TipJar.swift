@@ -66,46 +66,46 @@ final class TipJar {
 struct TipJarSection: View {
     @Bindable private var jar = TipJar.shared
 
+    // No tip products in App Store Connect yet (or the store is unreachable):
+    // show nothing rather than a section that can't do anything.
     var body: some View {
-        Section {
-            LabeledContent {
-                EmptyView()
-            } label: {
-                RowLabel(Text("Say thanks"), Text("Optional tip. It unlocks nothing."))
-            }
-            .settingAnchor(String(localized: "Say thanks"))
-            if jar.thanked {
-                Label("Thank you! It means a lot.", systemImage: "heart.fill")
-                    .foregroundStyle(.pink)
-            } else {
-                switch jar.state {
-                case .loading:
-                    ProgressView().controlSize(.small).frame(maxWidth: .infinity)
-                case .unavailable:
-                    LabeledContent {
-                        Button("Try Again") { Task { await jar.load() } }
-                    } label: {
-                        Text("Tips are not available right now.").foregroundStyle(.secondary)
-                    }
-                case .ready:
-                    HStack(spacing: 8) {
-                        ForEach(jar.products, id: \.id) { product in
-                            Button {
-                                Task { await jar.buy(product) }
-                            } label: {
-                                VStack(spacing: 2) {
-                                    TipJar.name(product.id)
-                                    Text(verbatim: product.displayPrice).foregroundStyle(.secondary)
+        if jar.state != .unavailable || jar.thanked {
+            Section {
+                LabeledContent {
+                    EmptyView()
+                } label: {
+                    RowLabel(Text("Say thanks"), Text("Optional tip. It unlocks nothing."))
+                }
+                .settingAnchor(String(localized: "Say thanks"))
+                if jar.thanked {
+                    Label("Thank you! It means a lot.", systemImage: "heart.fill")
+                        .foregroundStyle(.pink)
+                } else {
+                    switch jar.state {
+                    case .loading:
+                        ProgressView().controlSize(.small).frame(maxWidth: .infinity)
+                    case .unavailable:
+                        EmptyView()
+                    case .ready:
+                        HStack(spacing: 8) {
+                            ForEach(jar.products, id: \.id) { product in
+                                Button {
+                                    Task { await jar.buy(product) }
+                                } label: {
+                                    VStack(spacing: 2) {
+                                        TipJar.name(product.id)
+                                        Text(verbatim: product.displayPrice).foregroundStyle(.secondary)
+                                    }
+                                    .frame(maxWidth: .infinity)
                                 }
-                                .frame(maxWidth: .infinity)
+                                .buttonStyle(.bordered)
+                                .controlSize(.large)
                             }
-                            .buttonStyle(.bordered)
-                            .controlSize(.large)
                         }
-                    }
-                    .disabled(jar.buying)
-                    if jar.failed {
-                        Text("The tip did not go through.").font(.subheadline).foregroundStyle(.secondary)
+                        .disabled(jar.buying)
+                        if jar.failed {
+                            Text("The tip did not go through.").font(.subheadline).foregroundStyle(.secondary)
+                        }
                     }
                 }
             }
