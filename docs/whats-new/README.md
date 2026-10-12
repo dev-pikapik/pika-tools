@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>See how smoothly your game runs
+
+<sub>1.37.0 · October 12, 2026</sub>
+
+The new Show FPS puts a small counter in a corner of your game, so you can see how smoothly it runs.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Open Settings › Games and turn on Show FPS. While Game Mode is on, a small dark label with a number appears in a corner of any game. FPS means frames per second: how many pictures the game draws each second, so a higher number means a smoother game. Click a corner of the picture above the switch to choose where the label sits.
+
+Clicks go straight through the label, and it follows the game window. A dash means the first frames haven’t arrived yet, and a faded 0 means the game has stopped drawing. Show FPS is off until you turn it on.
+
+On macOS 27, macOS counts most games itself, so no permission is needed. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above your screen’s refresh rate. On macOS 14 to 26 and in the Mac App Store version, every game is counted that way, so Show FPS asks for Screen Recording. No picture is ever saved or sent.
+
+---
+
 ## <a id="v1.36.0"></a>Remove apps without worry
 
 <sub>1.36.0 · October 12, 2026</sub>

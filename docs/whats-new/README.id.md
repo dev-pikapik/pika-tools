@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Lihat seberapa mulus game berjalan
+
+<sub>1.37.0 · 12 Oktober 2026</sub>
+
+Tampilkan FPS yang baru menaruh penghitung kecil di sudut game Anda, sehingga Anda langsung tahu seberapa mulus game berjalan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Game dan nyalakan “Tampilkan FPS”. Selama Mode Game aktif, label kecil gelap berisi angka muncul di sudut game mana pun. FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik, dan makin tinggi angkanya, makin mulus game berjalan. Klik sudut pada gambar di atas sakelar untuk memilih letak label.
+
+Klik langsung menembus label, dan label mengikuti jendela game. Tanda hubung berarti frame pertama belum datang, dan angka 0 yang pudar berarti game berhenti menggambar. “Tampilkan FPS” mati sampai Anda menyalakannya.
+
+Di macOS 27, sebagian besar game dihitung oleh macOS sendiri, jadi tidak perlu izin. Beberapa game, biasanya yang lama, hanya bisa dihitung lewat perekaman layar, dan saat itu angkanya tidak bisa melebihi kecepatan refresh layar. Di macOS 14–26 dan di versi Mac App Store, semua game dihitung dengan cara ini, jadi saat “Tampilkan FPS” dinyalakan, pikapik meminta “Perekaman Layar”. Tidak ada gambar yang disimpan atau dikirim.
+
+---
+
 ## <a id="v1.36.0"></a>Hapus app tanpa khawatir
 
 <sub>1.36.0 · 12 Oktober 2026</sub>

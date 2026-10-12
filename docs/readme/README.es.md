@@ -186,7 +186,11 @@ Tanto Homebrew como el script colocan la app en `/Applications`, la abren, piden
 <br><b>Eliminar apps</b>
 <br>Elimina una app y sus archivos. Puedes devolver todo.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Mostrar FPS</b>
+<br>Un pequeño contador muestra lo fluido que va tu juego, en la esquina que elijas.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automático pausa las acciones que abren ventanas o cambian el foco. Un atajo de
 En Ajustes → Juegos → Más ajustes del juego hay un grupo llamado «Ratón y trackpad». Muestra solo lo que está activado en macOS en tu Mac, con los nombres de Apple y un pequeño dibujo para cada uno: atajos en un botón del ratón, deslizar entre escritorios y apps a pantalla completa, Mission Control y App Exposé, pellizcar para las apps y separar los dedos para el escritorio, deslizar desde el borde derecho para el Centro de notificaciones y cada esquina activa con su acción. Mientras un juego está al frente, quedan en pausa, así que un deslizamiento accidental o un roce con la esquina de la pantalla no te sacará del juego. Los gestos dentro del juego siguen funcionando. Cada uno se puede dejar funcionando como siempre.
 
 Abre Ajustes → Juegos → Añadir un juego y haz clic en el juego abierto. También aparecen los juegos que usan Java u otros entornos, incluso sin archivo .app. Minecraft se muestra como Minecraft en lugar de java. Busca el proceso del juego y arrastra su fila a Tus juegos en Ajustes → Juegos.
+
+**Mostrar FPS.** FPS son los fotogramas por segundo: cuántas imágenes dibuja el juego cada segundo. Activa **Mostrar FPS** en la página Juegos y, mientras el Modo de juego esté activado, una pequeña etiqueta oscura con ese número aparece en una esquina de cualquier juego. Haz clic en una esquina de la imagen que hay sobre el interruptor para elegirla. Un guion significa que aún no han llegado los primeros fotogramas, y un 0 atenuado, que el juego ha dejado de dibujar. En macOS 27, macOS cuenta por sí mismo la mayoría de los juegos, sin permiso. Un juego que macOS no puede contar, casi siempre uno antiguo, se cuenta mediante la grabación de pantalla: entonces aparece en Ajustes la fila **Grabación de pantalla**, pikapik nunca la pide durante una partida y la cifra no puede superar la frecuencia de actualización de la pantalla. En macOS 14 a 26 y en la versión de la Mac App Store todos los juegos se cuentan así, por eso al activar **Mostrar FPS** pikapik pide **Grabación de pantalla**. No se guarda ni se envía ninguna imagen. Desactivado por defecto.
 
 **Armario y premios de la mascota.** Abre Ajustes › Mascota para vestir a tu mascota: más de 30 prendas, desde gorros y gafas hasta capas y alas, y disfraces ya preparados, como mago, pirata o astronauta. Unas pocas son gratis desde el principio. El resto son premios que llegan mientras jugáis juntos: coge a tu mascota y lánzala, dale patadas a la pelota, mírala trepar por las ventanas y charlar, o simplemente hazle compañía día tras día. Cuando consigas un premio nuevo, tu mascota te lo dirá.
 

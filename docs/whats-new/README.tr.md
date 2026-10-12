@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Oyununuzun akıcılığını görün
+
+<sub>1.37.0 · 12 Ekim 2026</sub>
+
+Yeni “FPS’yi göster” anahtarı, oyununuzun bir köşesine küçük bir sayaç koyar; oyunun ne kadar akıcı çalıştığını hemen görürsünüz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Ayarlar › Oyunlar sayfasına gidin ve “FPS’yi göster” anahtarını açın. Oyun Modu açıkken herhangi bir oyunun bir köşesinde sayı gösteren küçük, koyu bir etiket görünür. FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği; sayı ne kadar yüksekse oyun o kadar akıcıdır. Etiketin yerini seçmek için anahtarın üstündeki resimde bir köşeye tıklayın.
+
+Tıklamalar etiketin içinden geçer ve etiket oyun penceresini takip eder. Tire, ilk karelerin henüz gelmediği anlamına gelir; soluk bir 0 ise oyunun çizmeyi bıraktığı anlamına gelir. “FPS’yi göster” siz açana kadar kapalıdır.
+
+macOS 27’de oyunların çoğunu macOS kendisi sayar, bu yüzden izin gerekmez. Bazı oyunlar, çoğunlukla eskiler, yalnızca ekran kaydı üzerinden sayılabilir ve bu durumda sayı ekranın yenileme hızını aşamaz. macOS 14–26’da ve Mac App Store sürümünde tüm oyunlar bu şekilde sayılır; bu yüzden “FPS’yi göster” açıldığında pikapik “Ekran Kaydı” izni ister. Hiçbir görüntü saklanmaz veya gönderilmez.
+
+---
+
 ## <a id="v1.36.0"></a>Uygulamaları tasasızca kaldırın
 
 <sub>1.36.0 · 12 Ekim 2026</sub>

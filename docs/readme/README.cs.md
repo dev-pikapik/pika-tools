@@ -186,7 +186,11 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br><b>Odinstalace aplikací</b>
 <br>Odeberte aplikaci s jejími soubory. Vše lze vrátit.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Zobrazit FPS</b>
+<br>Malé počítadlo v rohu, který si zvolíte, ukazuje, jak plynule hra běží.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automaticky pozastaví akce otevírající okna nebo měnící fokus. Krátká �
 V Nastavení → Hry → Další nastavení hry je skupina „Myš a trackpad“. Zobrazuje jen to, co je v macOS na vašem Macu zapnuté, s názvy od Applu a malým obrázkem u každé položky: zkratky na tlačítku myši, přejetí mezi plochami a aplikacemi na celou obrazovku, Mission Control a App Exposé, sevření prstů pro aplikace a rozevření pro plochu, přejetí od pravého okraje pro Oznamovací centrum a každý aktivní roh s jeho akcí. Dokud je hra v popředí, jsou pozastavené, takže nechtěné přejetí nebo dotek rohu obrazovky vás z hry nevyvede. Gesta uvnitř hry fungují dál. Každou položku lze nastavit tak, aby fungovala jako obvykle.
 
 Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Objeví se i hry přes Javu a jiná prostředí, i bez souboru .app. Minecraft se jmenuje Minecraft místo java. Najděte proces hry a přetáhněte řádek na Vaše hry v Nastavení → Hry.
+
+**Zobrazit FPS.** FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Zapněte **Zobrazit FPS** na stránce Hry a dokud je zapnutý Herní režim, objeví se v rohu každé hry malý tmavý štítek s tímto číslem. Roh vyberete kliknutím na obrázek nad přepínačem. Pomlčka znamená, že první snímky ještě nedorazily, a pobledlá 0 znamená, že hra přestala kreslit. V macOS 27 většinu her počítá sám macOS, bez jakéhokoli oprávnění. Hru, kterou macOS spočítat neumí, většinou starší, pikapik počítá přes záznam obrazovky: v Nastavení se pak objeví řádek **Záznam obrazovky**, pikapik o oprávnění nikdy nežádá během hry a číslo nemůže být vyšší než obnovovací frekvence obrazovky. V macOS 14–26 a ve verzi z Mac App Store se tak počítají všechny hry, proto po zapnutí **Zobrazit FPS** pikapik požádá o **Záznam obrazovky**. Žádný obraz se neukládá ani neodesílá. Ve výchozím stavu vypnuto.
 
 **Šatník a ocenění mazlíčka.** Otevřete Nastavení › Mazlíček a oblékněte svého mazlíčka: přes 30 kousků, od klobouků a brýlí po pláště a křídla, a hotové kostýmy třeba pro čaroděje, piráta nebo astronauta. Pár kousků je zdarma hned od začátku. Zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte nové ocenění, mazlíček vám to řekne.
 

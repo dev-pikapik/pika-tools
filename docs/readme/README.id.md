@@ -186,7 +186,11 @@ Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, memi
 <br><b>Hapus App</b>
 <br>Hapus app beserta filenya. Semua bisa dikembalikan.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Tampilkan FPS</b>
+<br>Penghitung kecil di sudut pilihan Anda menunjukkan seberapa mulus game berjalan.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Otomatis menjeda tindakan yang membuka jendela atau memindahkan fokus. Pintasan 
 Di Pengaturan → Game → Pengaturan game lainnya ada grup “Mouse dan trackpad”. Grup ini hanya menampilkan apa yang aktif di macOS pada Mac Anda, dengan nama dari Apple dan gambar kecil untuk setiap item: pintasan pada tombol mouse, geser antar desktop dan app layar penuh, Mission Control dan App Exposé, cubit untuk app dan rentangkan untuk Desktop, geser dari tepi kanan untuk Pusat Pemberitahuan, dan setiap sudut aktif beserta aksinya. Selama game berada di depan, semuanya dijeda, jadi geseran tak sengaja atau sentuhan di sudut layar tidak akan mengeluarkan Anda dari game. Gestur di dalam game tetap berfungsi. Setiap item bisa diatur agar bekerja seperti biasa.
 
 Buka Pengaturan → Game → Tambahkan Game dan klik game yang berjalan. Game melalui Java dan lingkungan lain juga tampil, meski tanpa file .app. Minecraft tampil sebagai Minecraft, bukan java. Cari proses game lalu seret barisnya ke Game Anda di Pengaturan → Game.
+
+**Tampilkan FPS.** FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik. Nyalakan **Tampilkan FPS** di halaman Game, dan selama Mode Game aktif, label kecil gelap berisi angka itu muncul di sudut game mana pun. Klik sudut pada gambar di atas sakelar untuk memilihnya. Tanda hubung berarti frame pertama belum datang, dan angka 0 yang pudar berarti game berhenti menggambar. Di macOS 27, sebagian besar game dihitung oleh macOS sendiri, tanpa izin. Game yang tidak bisa dihitung macOS, biasanya game lama, dihitung lewat perekaman layar: baris **Perekaman Layar** lalu muncul di Pengaturan, pikapik tidak pernah memintanya saat Anda bermain, dan angkanya tidak bisa melebihi kecepatan refresh layar. Di macOS 14–26 dan di versi Mac App Store, semua game dihitung dengan cara ini, jadi saat **Tampilkan FPS** dinyalakan, pikapik meminta **Perekaman Layar**. Tidak ada gambar yang disimpan atau dikirim. Mati secara default.
 
 **Lemari pakaian dan penghargaan peliharaan.** Buka Pengaturan › Peliharaan untuk mendandani peliharaan Anda: lebih dari 30 barang, dari topi dan kacamata sampai jubah dan sayap, serta gaya siap pakai seperti penyihir, bajak laut, atau astronaut. Beberapa barang gratis sejak awal. Sisanya adalah penghargaan yang datang saat Anda bermain bersama: angkat peliharaan lalu lempar, tendang bolanya, lihat dia memanjat jendela dan mengobrol, atau sekadar temani dia hari demi hari. Saat Anda meraih penghargaan baru, peliharaan akan memberi tahu Anda.
 

@@ -186,7 +186,11 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <br><b>Uninstaller</b>
 <br>Remove an app and its files. You can put it all back.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-fps-dark.png"><img src="docs/media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Show FPS</b>
+<br>A small counter shows how smoothly your game runs, in the corner you choose.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatic pauses actions that open windows or move focus. A quick deliberate lan
 Settings → Games → More game settings has a group called Mouse and trackpad. It lists only what is turned on in macOS on your Mac, with Apple’s own names and a small drawing for each: shortcuts on a mouse button, swiping between desktops and full-screen apps, Mission Control and App Exposé, pinching for Apps and spreading for the Desktop, the swipe in from the right edge for Notification Centre, and every hot corner with the action it runs. While a game is in front they are paused, so a stray swipe or a brush against a screen corner can’t pull you out of it. Gestures inside the game keep working. Each one can be set to work as usual.
 
 Open Settings → Games → Add a Game and click your running game. Games through Java and other runtimes appear here too, even without an app bundle. Minecraft appears as Minecraft instead of java. Find the game’s process and drag its row onto Your games in Settings → Games.
+
+**Show FPS.** FPS means frames per second: how many pictures the game draws each second. Switch on **Show FPS** on the Games page, and while Game Mode is on, a small dark label with that number sits in a corner of any game. Click a corner on the picture above the switch to choose it. A dash means the first frames haven’t arrived yet, and a faded 0 means the game has stopped drawing. On macOS 27 most games are counted by macOS itself, with no permission. A game it can’t count, mostly an older one, is counted through screen recording: the Screen Recording row then appears in Settings, pikapik never asks during a game, and the number can’t go above the screen’s refresh rate. On macOS 14 to 26 and in the Mac App Store version every game is counted this way, so switching Show FPS on asks for **Screen Recording**. No picture is kept or sent. Off by default.
 
 **Pet wardrobe and awards.** Open Settings › Pet to dress your pet: more than 30 things to wear, from hats and glasses to capes and wings, and ready-made looks such as a wizard, a pirate or an astronaut. A few are free from the start. The rest are awards that come as you play together: pick your pet up and toss it, kick the ball around, watch it climb windows and chat, or simply keep it company day after day. Your pet tells you when you have earned a new one.
 

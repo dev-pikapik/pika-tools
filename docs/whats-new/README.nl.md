@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Zie hoe soepel je game loopt
+
+<sub>1.37.0 · 12 oktober 2026</sub>
+
+De nieuwe optie FPS tonen zet een klein tellertje in een hoek van je game, zodat je meteen ziet hoe soepel de game loopt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Games en zet FPS tonen aan. Zolang de Gamemodus aanstaat, verschijnt in een hoek van elke game een klein donker labeltje met een getal. FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent, en hoe hoger het getal, hoe soepeler de game loopt. Kies de hoek door erop te klikken in het plaatje boven de schakelaar.
+
+Klikken gaan dwars door het labeltje heen, en het volgt het gamevenster. Een streepje betekent dat de eerste beelden er nog niet zijn, en een vervaagde 0 dat de game niets meer tekent. FPS tonen staat uit tot je het aanzet.
+
+Onder macOS 27 telt macOS de meeste games zelf, dus je hebt geen toestemming nodig. Een paar games, meestal oudere, kunnen alleen via schermopname worden geteld, en dan kan het getal niet hoger zijn dan de verversingssnelheid van het scherm. Onder macOS 14 tot en met 26 en in de versie uit de Mac App Store wordt elke game zo geteld, dus als je FPS tonen aanzet, vraagt pikapik om Schermopname. Er wordt nooit een beeld bewaard of verstuurd.
+
+---
+
 ## <a id="v1.36.0"></a>Apps verwijderen zonder zorgen
 
 <sub>1.36.0 · 12 oktober 2026</sub>

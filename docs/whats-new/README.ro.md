@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Vezi cât de fluid rulează jocul
+
+<sub>1.37.0 · 12 octombrie 2026</sub>
+
+Noua opțiune „Afișează FPS” pune un mic contor într-un colț al jocului, ca să vezi cât de fluid rulează.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Deschide Configurări › Jocuri și pornește „Afișează FPS”. Cât timp Modul Joc este pornit, o mică etichetă închisă la culoare, cu un număr, apare într-un colț al oricărui joc. FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă, iar cu cât numărul e mai mare, cu atât jocul e mai fluid. Apasă pe un colț în imaginea de deasupra comutatorului ca să alegi unde stă eticheta.
+
+Apăsările trec prin etichetă, iar ea urmează fereastra jocului. O liniuță înseamnă că primele cadre nu au ajuns încă, iar un 0 estompat înseamnă că jocul a încetat să deseneze. „Afișează FPS” e oprit până îl pornești.
+
+Pe macOS 27, cele mai multe jocuri sunt numărate chiar de macOS, deci nu e nevoie de nicio permisiune. Câteva jocuri, mai ales cele vechi, pot fi numărate doar prin înregistrarea ecranului, iar atunci numărul nu poate depăși rata de reîmprospătare a ecranului. Pe macOS 14–26 și în versiunea din Mac App Store toate jocurile sunt numărate așa, de aceea, când pornești „Afișează FPS”, pikapik cere „Înregistrare ecran”. Nicio imagine nu e păstrată sau trimisă.
+
+---
+
 ## <a id="v1.36.0"></a>Elimină aplicații fără griji
 
 <sub>1.36.0 · 12 octombrie 2026</sub>
