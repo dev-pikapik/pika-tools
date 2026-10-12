@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12. Oktober 2026</sub>
 
-Die Einträge von pikapik, die per Rechtsklick im Finder erscheinen, verschwinden nicht mehr, wenn du ein Laufwerk anschließt, ein Disk-Image öffnest, deinen Mac aus dem Ruhezustand weckst oder zum Finder wechselst. In seltenen Fällen wurde der Helfer, der sie anzeigt, genau in diesem Moment beendet.
+Die Einträge von pikapik, die per Rechtsklick im Finder erscheinen, verschwinden nicht mehr, wenn du ein Laufwerk anschließt, ein Disk-Image öffnest, deinen Mac aus dem Ruhezustand weckst oder zum Finder wechselst.
+
+In seltenen Fällen wurde der Helfer, der sie anzeigt, genau in diesem Moment beendet.
 
 ---
 

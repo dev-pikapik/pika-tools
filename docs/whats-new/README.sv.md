@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12 oktober 2026</sub>
 
-pikapiks alternativ i högerklicksmenyn i Finder försvinner inte längre när du ansluter en skiva, öppnar en skivavbild, väcker din Mac ur vila eller byter till Finder. I sällsynta fall avslutades hjälpprogrammet som visar dem just då.
+pikapiks alternativ i högerklicksmenyn i Finder försvinner inte längre när du ansluter en skiva, öppnar en skivavbild, väcker din Mac ur vila eller byter till Finder.
+
+I sällsynta fall avslutades hjälpprogrammet som visar dem just då.
 
 ---
 

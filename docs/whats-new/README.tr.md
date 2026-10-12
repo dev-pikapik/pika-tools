@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12 Ekim 2026</sub>
 
-pikapik’in Finder’daki sağ tık menüsü öğeleri artık bir disk bağladığınızda, bir disk görüntüsü açtığınızda, Mac’inizi uykudan uyandırdığınızda ya da Finder’a geçtiğinizde kaybolmuyor. Nadir durumlarda, bu öğeleri gösteren yardımcı program tam o anda kapanıyordu.
+pikapik’in Finder’daki sağ tık menüsü öğeleri artık bir disk bağladığınızda, bir disk görüntüsü açtığınızda, Mac’inizi uykudan uyandırdığınızda ya da Finder’a geçtiğinizde kaybolmuyor.
+
+Nadir durumlarda, bu öğeleri gösteren yardımcı program tam o anda kapanıyordu.
 
 ---
 

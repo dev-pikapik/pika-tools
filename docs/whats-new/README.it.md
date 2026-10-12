@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · 12 ottobre 2026</sub>
 
-Le voci che pikapik aggiunge al Finder con un clic destro non spariscono più quando si collega un disco, si apre un’immagine disco, si riattiva il Mac o si passa al Finder. In rari casi, l’assistente che le mostra si chiudeva proprio in quel momento.
+Le voci che pikapik aggiunge al Finder con un clic destro non spariscono più quando si collega un disco, si apre un’immagine disco, si riattiva il Mac o si passa al Finder.
+
+In rari casi, l’assistente che le mostra si chiudeva proprio in quel momento.
 
 ---
 

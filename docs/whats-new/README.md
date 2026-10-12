@@ -9,7 +9,9 @@
 
 <sub>1.38.1 · October 12, 2026</sub>
 
-pikapik’s items in the Finder right-click menu no longer go missing when you connect a disk, open a disk image, wake your Mac or switch to Finder. In rare cases, the helper that shows them used to quit at that moment.
+pikapik’s items in the Finder right-click menu no longer go missing when you connect a disk, open a disk image, wake your Mac or switch to Finder.
+
+In rare cases, the helper that shows them used to quit at that moment.
 
 ---
 
