@@ -306,7 +306,7 @@ enum SettingsWindow {
 
     private static func create() {
         let width: CGFloat = 860
-        let height = min(720, (NSScreen.main?.visibleFrame.height ?? 900) - 80)
+        let height = min(760, (NSScreen.main?.visibleFrame.height ?? 900) - 40)
         let host = NSHostingController(rootView: SettingsView())
         host.sceneBridgingOptions = [.toolbars, .title]
         let window = NSWindow(contentViewController: host)
@@ -318,7 +318,7 @@ enum SettingsWindow {
         window.title = (model.selection ?? .general).title
         window.setContentSize(NSSize(width: width, height: height))
         window.center()
-        window.setFrameAutosaveName("Settings")
+        window.setFrameAutosaveName("Settings Window")
         let saved = window.contentRect(forFrameRect: window.frame).size
         window.setContentSize(NSSize(width: max(saved.width, minSize.width), height: max(saved.height, minSize.height)))
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
