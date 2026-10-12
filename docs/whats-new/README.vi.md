@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Chuột và bàn di chuột trong trò chơi
 
-<sub>1.34.0 · 11 tháng 10 năm 2026</sub>
+<sub>1.34.0 · 12 tháng 10 năm 2026</sub>
 
 Vuốt, chụm và góc nóng giờ không còn đưa bạn ra khỏi trò chơi, giống như phím tắt bàn phím.
 
