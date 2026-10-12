@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-26
     env:
       GH_TOKEN: ${{ github.token }}
-      NOTARIZE: ${{ secrets.NOTARY_KEY != '' }}
+      NOTARIZE: ${{ secrets.NOTARY_KEY != '' || secrets.NOTARY_PASSWORD != '' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -62,11 +62,18 @@ jobs:
           NOTARY_KEY: ${{ secrets.NOTARY_KEY }}
           NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
           NOTARY_ISSUER: ${{ secrets.NOTARY_ISSUER }}
+          NOTARY_APPLE_ID: ${{ secrets.NOTARY_APPLE_ID }}
+          NOTARY_PASSWORD: ${{ secrets.NOTARY_PASSWORD }}
+          NOTARY_TEAM_ID: ${{ secrets.NOTARY_TEAM_ID }}
         run: |
           KEY="$RUNNER_TEMP/notary.p8"
           trap 'rm -f "$KEY"' EXIT
-          printf '%s\n' "$NOTARY_KEY" > "$KEY"
-          AUTH=(--key "$KEY" --key-id "$NOTARY_KEY_ID" --issuer "$NOTARY_ISSUER")
+          if [ -n "$NOTARY_KEY" ]; then
+            printf '%s\n' "$NOTARY_KEY" > "$KEY"
+            AUTH=(--key "$KEY" --key-id "$NOTARY_KEY_ID" --issuer "$NOTARY_ISSUER")
+          else
+            AUTH=(--apple-id "$NOTARY_APPLE_ID" --password "$NOTARY_PASSWORD" --team-id "$NOTARY_TEAM_ID")
+          fi
           for ZIP in build/pikapik.zip build/pika-tools.zip; do
             xcrun notarytool submit "$ZIP" "${AUTH[@]}" --wait --output-format json > build/notary.json
             cat build/notary.json
