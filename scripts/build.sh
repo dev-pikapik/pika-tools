@@ -13,7 +13,7 @@ if [ -z "${SIGN_IDENTITY:-}" ]; then
 fi
 DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo 1 || true)
 
-APPSTORE_ID=com.pesotchi.pika-tools.appstore
+APPSTORE_ID=com.pikapik.tools
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
@@ -157,7 +157,7 @@ if [ -n "${APPSTORE:-}" ]; then
     for EXT in $EXTENSIONS; do
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
-        /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.appstore.}" "$PLIST"
+        /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/com.pesotchi.pika-tools./$APPSTORE_ID.}" "$PLIST"
         /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pikapik-store" "$PLIST"
     done
 elif [ -n "$DEV" ]; then

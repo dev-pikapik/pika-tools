@@ -1,6 +1,6 @@
 # Manual test checklist (App Store build)
 
-Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a fresh user or after `tccutil reset All com.pesotchi.pika-tools.appstore`.
+Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a fresh user or after `tccutil reset All com.pikapik.tools`.
 
 ## First run and permissions
 - Launch. Expected: no permission prompt at launch except what the Permissions page asks for; menu bar icon appears.
@@ -39,7 +39,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Open Settings > Pet. Expected: Wardrobe shows 38 things in seven groups with six unlocked, Looks shows 10 looks, Awards shows 24 awards and no "Open Source" award. Click an unlocked thing: the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing: its award opens and nothing is worn. Click a look with missing pieces: nothing is worn.
 - Earn an award (pick the pet up and throw it high 10 times). Expected: the pet announces it, Pet in the sidebar shows a badge, the award and what it unlocks are marked "New" until you leave the page, and the unlocked things can be worn. Quit and relaunch: outfit, counts and awards are kept.
 - Export Settings and open the file. Expected: no pet-counts, pet-awards, pet-seen, pet-fresh or pet-outfit. Restore Defaults keeps the awards and the outfit.
-- Erase Progress... and confirm. Expected: awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read com.pesotchi.pika-tools.appstore` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off. Expected: same result, no error.
+- Erase Progress... and confirm. Expected: awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read com.pikapik.tools` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off. Expected: same result, no error.
 
 ## Quit on close
 - Turn on, close the last window of an app, then repeat with the app's windows on another Space and with a minimized window. Expected: app quits only when no windows remain anywhere.
