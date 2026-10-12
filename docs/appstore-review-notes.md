@@ -4,12 +4,19 @@
 pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its own; everything lives in the menu bar and one Settings window. Every feature is off by default and is switched on by the user, one by one.
 
 ## Features in this build
-- Keyboard: Switch language (input source shortcut), Home and End go to the start and end of a line, Command key shortcuts.
+- Keyboard: Switch language (input source shortcut), Command key shortcuts.
 - Mouse: Scroll by lines (mouse wheel), Scroll direction for trackpad and mouse, Side buttons go back and forward.
-- Windows: Green button enlarges the window, Quit when the last window closes, Protect quitting and closing.
-- Dock: Hide with a click in the Dock.
-- Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions), Enter opens files, Cut files, Delete removes files.
+- Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions).
 - Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
+
+## Not in the App Store version
+These features need to look inside other apps, which the App Sandbox does not allow. They are only in the version we distribute outside the App Store.
+- Home and End go to the start and end of a line.
+- Green button enlarges the window.
+- Quit when the last window closes (also Protect quitting and closing).
+- Hide with a click in the Dock.
+- Enter opens files, Cut files and Delete removes files in Finder.
+- Key repeat, pointer shortcuts, Archives in Finder, Animations, Trash watcher, fan control and the built-in updater.
 
 ## How to try it
 No account or demo login is needed. Open pikapik from the menu bar, then Settings.
@@ -22,14 +29,8 @@ Tools that work with no permission:
 
 Tools that need a permission (the prompt appears when the tool is switched on):
 - Switch language (Input Monitoring): Settings > Keyboard, turn on, pick a shortcut, press it in any text field.
-- Home and End (Input Monitoring): Settings > Keyboard, turn on, press Home in a text field; the cursor goes to the start of the line.
 - Command key shortcuts (Input Monitoring): Settings > Keyboard, turn on, use the Command key shortcuts in any text field.
 - Scroll by lines, Scroll direction, Side buttons (Input Monitoring): Settings > Mouse, turn on, then scroll or press a side button.
-- Green button enlarges the window (Accessibility): Settings > Windows, turn on, click the green button of any window.
-- Quit when the last window closes (Accessibility): Settings > Windows, turn on, close the last window of an app such as TextEdit; the app quits.
-- Protect quitting and closing (Accessibility): Settings > Windows, turn on, press Command Q; the app asks to press it again.
-- Hide with a click in the Dock (Accessibility): Settings > Dock, turn on, click the icon of the front app in the Dock; its windows hide.
-- Enter opens files, Cut files, Delete removes files (Accessibility, Input Monitoring): Settings > Finder, turn on, select a file in Finder and press Enter, Command X or Delete.
 - Pet (Accessibility): Settings > Pet, turn on; the pet appears on the desktop.
 - Game Mode > Show FPS (Screen Recording): Settings > Games, turn on Game Mode, then Show FPS.
 
@@ -50,13 +51,13 @@ Open at Login is off by default. It is a switch in Settings > General that the u
 ## Permissions
 The app asks for up to three permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
 
-- Accessibility: Window zoom, Quit on close, Protect quitting, Hide with a click in the Dock, Enter/Cut/Delete in Finder, and Pet use it to read window and Dock element positions and to send the requested shortcut to the frontmost app.
-- Input Monitoring: Switch language, Home and End, Command keys, Scroll by lines, Scroll direction, Side buttons, and the Finder keys use it to see the key or mouse event the user configured so the app can act on it.
+- Accessibility: Pet uses it to read where the Dock is, so the pet can walk along it.
+- Input Monitoring: Switch language, Command keys, Scroll by lines, Scroll direction and Side buttons use it to see the key or mouse event the user configured so the app can act on it.
 - Screen Recording: Show FPS (Settings > Games, optional) uses it to count how many frames a game draws each second, from a tiny low-resolution ScreenCaptureKit view of the game's display. Only the number of changed frames is kept; no picture is ever stored, logged or sent anywhere.
 
 To reproduce each prompt:
 1. Open pikapik from the menu bar, then Settings.
-2. Turn on any feature from the Keyboard, Mouse or Windows tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
+2. Turn on any feature from the Keyboard or Mouse tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
 3. In Settings > Games turn on Game Mode, then Show FPS. The line "Needs a permission. Click to allow it." appears under the switch; its Allow button opens the Permissions page on the Screen Recording row and the system Screen Recording prompt appears. Nothing is ever asked while a game is running.
 4. The Permissions page in Settings lists Accessibility, Input Monitoring, Screen Recording (only while Show FPS is on and the permission is missing), Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
 
