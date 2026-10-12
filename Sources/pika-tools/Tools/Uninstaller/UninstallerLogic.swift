@@ -181,6 +181,16 @@ extension AppIdentity {
     var details: String {
         [version.isEmpty ? nil : String(localized: "Version \(version)"), organization.isEmpty ? nil : organization].compactMap { $0 }.joined(separator: " · ")
     }
+
+    init(leftovers group: OrphanGroup) {
+        var id = group.id
+        if case .byID(let found)? = group.items.first?.reason { id = found }
+        self.init(url: URL(fileURLWithPath: "/Leftovers/\(group.id)/\(group.name).app"), bundleID: id)
+    }
+
+    var dismissalKey: String {
+        bundleID.isEmpty ? displayName : bundleID.lowercased()
+    }
 }
 
 enum UninstallerText {
@@ -197,5 +207,13 @@ enum UninstallerText {
 
     static func used(_ date: Date, now: Date = Date()) -> String {
         relative.localizedString(for: date, relativeTo: now)
+    }
+
+    static func changed(_ date: Date, now: Date = Date()) -> String {
+        String(localized: "Changed \(used(min(date, now), now: now))")
+    }
+
+    static func removed(_ date: Date, now: Date = Date()) -> String {
+        String(localized: "Removed \(used(min(date, now), now: now))")
     }
 }

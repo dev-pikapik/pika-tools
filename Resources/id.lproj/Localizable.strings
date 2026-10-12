@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik ingin menghapus apa yang ditinggalkan “%@”.";
 "Uninstaller" = "Hapus App";
 "Remove an app" = "Hapus app";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "copot, hapus, buang, app, aplikasi, pembersih, sisa, tong sampah, atur ulang";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "copot, hapus app, hapus aplikasi, hapus, buang, app, aplikasi, pembersih, bersihkan, sisa, tong sampah, atur ulang, kembalikan, pulihkan, urungkan";
 "Remove an app and its files. You can put it all back." = "Hapus app beserta filenya. Semua bisa dikembalikan.";
 "Search apps" = "Cari app";
 "Sort by" = "Urutkan menurut";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld item";
 "Moved %lld items (%@) to the Trash" = "%lld item (%@) dipindahkan ke Tong Sampah";
 "Put back %lld items" = "%lld item dikembalikan";
+"In the Trash" = "Di Tong Sampah";
+"Leftovers of removed apps" = "Sisa app yang sudah dihapus";
+"Recently removed" = "Baru dihapus";
+"Changed %@" = "Diubah %@";
+"Removed %@" = "Dihapus %@";
+"Offer to clean up when an app goes to the Trash" = "Tawarkan pembersihan saat app masuk ke Tong Sampah";
+"Nothing is removed until you choose" = "Tidak ada yang dihapus sebelum Anda memilih";
+"Looks like the app is gone. Pick what to remove." = "App tampaknya sudah hilang. Pilih apa yang dihapus.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Anda memindahkan app ini ke Tong Sampah, tetapi filenya masih ada di Mac Anda.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "copot, hapus app, hapus aplikasi, sisa, bersihkan, tong sampah, pantau, otomatis, tawarkan, beri tahu";

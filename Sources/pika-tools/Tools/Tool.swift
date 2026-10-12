@@ -90,6 +90,9 @@ final class ToolRegistry {
         #endif
         list.append(GameModeTool.shared)
         list.append(PetTool.shared)
+        #if !APPSTORE
+        list.append(TrashWatchTool.shared)
+        #endif
         return list + privateTools
     }()
 

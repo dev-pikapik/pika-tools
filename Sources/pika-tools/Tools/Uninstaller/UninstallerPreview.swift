@@ -4,6 +4,7 @@ import SwiftUI
 
 struct UninstallerSheet: View {
     let session: UninstallSession
+    var height: CGFloat = 540
 
     var body: some View {
         VStack(spacing: 0) {
@@ -26,7 +27,7 @@ struct UninstallerSheet: View {
                 RestoredView(session: session, result: result)
             }
         }
-        .frame(width: 600, height: 540)
+        .frame(width: 600, height: height)
         .interactiveDismissDisabled(session.isBusy)
         .alert(
             session.question.map { $0.force ? String(localized: "Force quit “\($0.name)”?") : String(localized: "Quit “\($0.name)”?") } ?? "",
@@ -57,7 +58,7 @@ private struct SheetHero: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 14) {
-                Image(nsImage: model.icon(at: session.app.url))
+                Image(nsImage: model.icon(of: session.app))
                     .resizable()
                     .frame(width: 64, height: 64)
                     .accessibilityHidden(true)
@@ -65,7 +66,7 @@ private struct SheetHero: View {
                     Text(session.app.displayName)
                         .font(.title2.bold())
                         .lineLimit(1)
-                    Text(session.app.details)
+                    Text(session.leftoversOnly ? String(localized: "Looks like the app is gone. Pick what to remove.") : session.app.details)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
@@ -415,7 +416,7 @@ private struct RestoredView: View {
                         Text(session.app.displayName)
                             .foregroundStyle(.secondary)
                         if !result.stayed.isEmpty {
-                            stayed
+                            StayedList(stays: result.stayed)
                                 .padding(.top, 14)
                         }
                     }
@@ -433,13 +434,17 @@ private struct RestoredView: View {
             .padding(16)
         }
     }
+}
 
-    private var stayed: some View {
+struct StayedList: View {
+    let stays: [AppRemover.Stay]
+
+    var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("These stayed where they are")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
-            ForEach(result.stayed, id: \.url) { stay in
+            ForEach(stays, id: \.url) { stay in
                 VStack(alignment: .leading, spacing: 2) {
                     Text(stay.url.lastPathComponent)
                         .lineLimit(1)

@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik wil verwijderen wat ‘%@’ heeft achtergelaten.";
 "Uninstaller" = "Apps verwijderen";
 "Remove an app" = "App verwijderen";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "deïnstalleren, verwijderen, wissen, app, programma, opruimen, restjes, prullenmand, resetten";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "verwijderen, app verwijderen, app wissen, wissen, app, applicatie, opruimer, opruimen, resten, prullenmand, resetten, terugzetten, herstellen, ongedaan maken, deïnstalleren, programma, restjes";
 "Remove an app and its files. You can put it all back." = "Verwijder een app met alle bestanden. Alles kan terug.";
 "Search apps" = "Zoek apps";
 "Sort by" = "Sorteer op";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld onderdelen";
 "Moved %lld items (%@) to the Trash" = "%lld onderdelen (%@) naar de Prullenmand verplaatst";
 "Put back %lld items" = "%lld onderdelen teruggezet";
+"In the Trash" = "In de Prullenmand";
+"Leftovers of removed apps" = "Resten van verwijderde apps";
+"Recently removed" = "Onlangs verwijderd";
+"Changed %@" = "Gewijzigd %@";
+"Removed %@" = "Verwijderd %@";
+"Offer to clean up when an app goes to the Trash" = "Bied opruimen aan als een app in de Prullenmand komt";
+"Nothing is removed until you choose" = "Er wordt niets verwijderd tot jij kiest";
+"Looks like the app is gone. Pick what to remove." = "De app lijkt weg. Kies wat je wilt verwijderen.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Je hebt deze app naar de Prullenmand verplaatst, maar de bestanden staan nog op je Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "verwijderen, app verwijderen, app wissen, resten, opruimen, prullenmand, prullenbak, bewaken, automatisch, aanbieden, melding";

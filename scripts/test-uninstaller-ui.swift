@@ -93,6 +93,19 @@ struct TestUninstallerUI {
         precondition(LeftoverKind.allCases.allSatisfy { !$0.title.isEmpty && !$0.symbol.isEmpty })
         precondition(UninstallerText.used(now - 3 * 86_400, now: now) != UninstallerText.used(now - 86_400, now: now))
         precondition(!UninstallerText.size(12_400_000_000).isEmpty)
-        print("uninstaller page: sorting, selection, totals, trashed apps, wording: ok")
+
+        var kept = item("/Users/me/Library/Caches/Org.Test.Gone", .caches, on: false)
+        kept.reason = .byID("Org.Test.Gone")
+        let gone = OrphanGroup(id: "org.test.gone", name: "Gone", items: [kept], newest: now - 40 * 86_400)
+        let twin = OrphanGroup(id: "gone", name: "Gone", items: [], newest: now)
+        let left = AppIdentity(leftovers: gone)
+        precondition(left.displayName == "Gone" && left.bundleID == "Org.Test.Gone")
+        precondition(AppIdentity(leftovers: twin).id != left.id && AppIdentity(leftovers: twin).bundleID == "gone")
+        precondition(left.dismissalKey == "org.test.gone" && AppIdentity(url: URL(fileURLWithPath: "/Applications/Plain.app"), bundleID: "").dismissalKey == "Plain")
+        precondition(RemovalPlan(gone.items).chosen().isEmpty && RemovalPlan(gone.items).groups.map(\.kind) == [.caches])
+        precondition(!UninstallerText.changed(now - 86_400, now: now).isEmpty)
+        precondition(UninstallerText.changed(now + 3_600, now: now) == UninstallerText.changed(now, now: now))
+        precondition(UninstallerText.removed(now - 86_400, now: now) != UninstallerText.changed(now - 86_400, now: now))
+        print("uninstaller page: sorting, selection, totals, trashed apps, leftovers, wording: ok")
     }
 }

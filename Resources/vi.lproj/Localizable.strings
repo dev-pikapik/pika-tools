@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik muốn gỡ bỏ những gì “%@” để lại.";
 "Uninstaller" = "Gỡ ứng dụng";
 "Remove an app" = "Gỡ một ứng dụng";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "gỡ cài đặt, xóa, gỡ, ứng dụng, app, dọn dẹp, tệp còn sót, thùng rác, đặt lại";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "gỡ cài đặt, gỡ ứng dụng, xóa ứng dụng, xóa, gỡ, ứng dụng, trình dọn dẹp, dọn dẹp, tệp còn sót, thùng rác, đặt lại, hoàn lại, khôi phục, hoàn tác, app";
 "Remove an app and its files. You can put it all back." = "Gỡ ứng dụng cùng các tệp của nó. Có thể hoàn lại tất cả.";
 "Search apps" = "Tìm ứng dụng";
 "Sort by" = "Sắp xếp theo";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld mục";
 "Moved %lld items (%@) to the Trash" = "Đã chuyển %lld mục (%@) vào Thùng rác";
 "Put back %lld items" = "Đã đặt lại %lld mục";
+"In the Trash" = "Trong Thùng rác";
+"Leftovers of removed apps" = "Tệp còn sót của ứng dụng đã gỡ";
+"Recently removed" = "Đã gỡ gần đây";
+"Changed %@" = "Thay đổi %@";
+"Removed %@" = "Đã gỡ %@";
+"Offer to clean up when an app goes to the Trash" = "Đề nghị dọn dẹp khi ứng dụng được chuyển vào Thùng rác";
+"Nothing is removed until you choose" = "Không có gì bị gỡ cho đến khi bạn chọn";
+"Looks like the app is gone. Pick what to remove." = "Có vẻ ứng dụng đã mất. Hãy chọn thứ cần gỡ.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Bạn đã chuyển ứng dụng này vào Thùng rác, nhưng các tệp của nó vẫn còn trên Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "gỡ cài đặt, gỡ ứng dụng, xóa ứng dụng, tệp còn sót, dọn dẹp, thùng rác, theo dõi, tự động, đề nghị, thông báo";

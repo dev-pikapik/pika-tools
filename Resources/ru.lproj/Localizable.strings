@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik хочет убрать то, что оставило после себя приложение «%@».";
 "Uninstaller" = "Удаление программ";
 "Remove an app" = "Удалить программу";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "удалить, удаление, деинсталляция, программа, приложение, очистка, остатки, корзина, сброс";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "удалить, удалить программу, удалить приложение, удаление, программа, приложение, очистка, остатки, корзина, сброс, вернуть, восстановить, отменить, деинсталляция";
 "Remove an app and its files. You can put it all back." = "Удаление программы и её файлов. Всё можно вернуть.";
 "Search apps" = "Поиск программ";
 "Sort by" = "Сортировка";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld элементов";
 "Moved %lld items (%@) to the Trash" = "В Корзину перемещено %lld элементов (%@)";
 "Put back %lld items" = "Возвращено %lld элементов";
+"In the Trash" = "В Корзине";
+"Leftovers of removed apps" = "Остатки удалённых программ";
+"Recently removed" = "Недавно удалённые";
+"Changed %@" = "Изменено %@";
+"Removed %@" = "Удалено %@";
+"Offer to clean up when an app goes to the Trash" = "Предлагать очистку, когда программа попадает в Корзину";
+"Nothing is removed until you choose" = "Ничего не удалится, пока вы не выберете";
+"Looks like the app is gone. Pick what to remove." = "Похоже, программы уже нет. Выберите, что удалить.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Вы переместили эту программу в Корзину, но её файлы всё ещё на вашем Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "удалить, удалить программу, удалить приложение, остатки, очистка, корзина, следить, автоматически, предлагать, уведомление";

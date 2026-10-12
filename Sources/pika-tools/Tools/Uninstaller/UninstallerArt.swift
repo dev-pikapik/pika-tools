@@ -45,6 +45,42 @@ private struct UninstallerScene: View {
     }
 }
 
+struct TrashWatchArt: View {
+    let on: Bool
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [1.0, 0.8, 0.5, 0.5, 0.4, 0.4, 1.8, 0.6]
+    private static let bin = CGPoint(x: 98, y: 78)
+    private static let mouth = CGPoint(x: 98, y: 60)
+    private static let tile = CGPoint(x: 36, y: 66)
+
+    var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? (on ? 6 : 0) : tick % Self.durations.count
+            let shown = on && (3...6).contains(step)
+            Stage {
+                AppTile()
+                    .modifier(Glide(gone: (1...7).contains(step), rest: Self.tile, mouth: Self.mouth, scale: 1))
+                Bin(open: (1...2).contains(step), lit: false)
+                    .position(Self.bin)
+                ArtWindow(size: CGSize(width: 136, height: 72)) {
+                    HStack(spacing: 2) {
+                        ForEach(0..<3, id: \.self) { index in
+                            ArtFile()
+                                .scaleEffect(shown && step >= 4 + index ? 1 : 0.6)
+                                .opacity(shown && step >= 4 + index ? 1 : 0)
+                        }
+                    }
+                }
+                .scaleEffect(shown ? 1 : 0.88)
+                .opacity(shown ? 1 : 0)
+                .position(x: 218, y: 62)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
+        }
+    }
+}
+
 private struct Glide: ViewModifier {
     let gone: Bool
     let rest: CGPoint

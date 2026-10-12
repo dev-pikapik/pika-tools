@@ -4,6 +4,8 @@ import SwiftUI
 struct UninstallerPage: View {
     @Bindable private var model = UninstallerModel.shared
     private let permissions = Permissions.shared
+    private let watch = TrashWatchTool.shared
+    @State private var sheetHeight: CGFloat = 540
     static let viewport = "uninstaller-list"
 
     var body: some View {
@@ -13,6 +15,8 @@ struct UninstallerPage: View {
                 UninstallerArt(replay: model.plays)
                     .appDropZone("uninstaller") { model.open(dropped: $0) }
             }
+            TrashedSection()
+            RemovedSection()
             Section {
                 Group {
                     searchRow
@@ -33,15 +37,18 @@ struct UninstallerPage: View {
                 }
                 .needs([.fullDisk])
             }
+            LeftoversSection()
+            Section { watch.settingsView.needs(watch.needs) }
         }
         .formStyle(.grouped)
         .coordinateSpace(.named(Self.viewport))
+        .onGeometryChange(for: CGFloat.self) { $0.size.height - $0.safeAreaInsets.top } action: { sheetHeight = min(540, max(360, $0 - 24)) }
         .settingsPage()
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PermissionBar(permissions: [.fullDisk])
         }
         .environment(\.inSettings, true)
-        .sheet(item: $model.session) { UninstallerSheet(session: $0) }
+        .sheet(item: $model.session) { UninstallerSheet(session: $0, height: sheetHeight) }
         .onAppear {
             permissions.refresh()
             model.appear()
@@ -106,48 +113,9 @@ private struct InstalledRow: View {
     }
 
     private var label: some View {
-        HStack(spacing: 10) {
-            Image(nsImage: model.icon(at: entry.app.url))
-                .resizable()
-                .frame(width: 28, height: 28)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 1) {
-                HStack(spacing: 6) {
-                    Text(entry.app.displayName)
-                        .lineLimit(1)
-                    if running {
-                        Circle()
-                            .fill(.green)
-                            .frame(width: 6, height: 6)
-                            .help(Text("Open now"))
-                            .accessibilityLabel(Text("Open now"))
-                    }
-                }
-                if !entry.app.byline.isEmpty {
-                    Text(entry.app.byline)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                }
-            }
-            Spacer(minLength: 8)
-            VStack(alignment: .trailing, spacing: 1) {
-                Text(entry.size.map(UninstallerText.size) ?? "")
-                    .monospacedDigit()
-                    .frame(height: 17, alignment: .trailing)
-                Text(entry.lastUsed.map { UninstallerText.used(min($0, Date())) } ?? "")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                    .frame(height: 14, alignment: .trailing)
-            }
-            .frame(width: 110, alignment: .trailing)
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.tertiary)
-                .accessibilityHidden(true)
+        AppRowLabel(icon: model.icon(at: entry.app.url), name: entry.app.displayName, running: running, byline: entry.app.byline) {
+            SizeColumn(size: entry.size, caption: entry.lastUsed.map { UninstallerText.used(min($0, Date())) } ?? "")
+            RowChevron()
         }
-        .contentShape(Rectangle())
     }
 }

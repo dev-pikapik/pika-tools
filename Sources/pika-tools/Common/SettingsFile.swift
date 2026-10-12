@@ -22,7 +22,7 @@ struct SettingsFile {
         "fans-rpm",
         "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",
         "animations-window-open", "animations-resize", "animations-quick-look", "animations-finder-columns", "animations-finder",
-        "pet", "pet-talks", "pet-ball",
+        "pet", "pet-talks", "pet-ball", "uninstaller-trash-watch",
     ] + GameRule.allCases.map(\.key))
 
     var settings: [String: Any]

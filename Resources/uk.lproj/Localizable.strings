@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik хоче прибрати те, що залишила після себе програма «%@».";
 "Uninstaller" = "Видалення програм";
 "Remove an app" = "Видалити програму";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "видалити, видалення, деінсталяція, програма, застосунок, очищення, залишки, смітник, скидання";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "видалити, видалити програму, видалити застосунок, видалення, програма, застосунок, очищення, залишки, смітник, скидання, повернути, відновити, скасувати, деінсталяція";
 "Remove an app and its files. You can put it all back." = "Видалення програми та її файлів. Усе можна повернути.";
 "Search apps" = "Пошук програм";
 "Sort by" = "Сортування";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld елементів";
 "Moved %lld items (%@) to the Trash" = "До Смітника переміщено %lld елементів (%@)";
 "Put back %lld items" = "Повернуто %lld елементів";
+"In the Trash" = "У Смітнику";
+"Leftovers of removed apps" = "Залишки видалених програм";
+"Recently removed" = "Нещодавно видалені";
+"Changed %@" = "Змінено %@";
+"Removed %@" = "Видалено %@";
+"Offer to clean up when an app goes to the Trash" = "Пропонувати очищення, коли програма потрапляє до Смітника";
+"Nothing is removed until you choose" = "Нічого не буде видалено, поки ви не оберете";
+"Looks like the app is gone. Pick what to remove." = "Схоже, програми вже немає. Виберіть, що видалити.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Ви перемістили цю програму до Смітника, але її файли досі на вашому Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "видалити, видалити програму, видалити застосунок, залишки, очищення, смітник, кошик, стеження, автоматично, пропонувати, сповіщення";

@@ -668,7 +668,7 @@
 "pikapik wants to remove what “%@” left behind." = "pikapik souhaite supprimer ce que « %@ » a laissé derrière.";
 "Uninstaller" = "Supprimer des apps";
 "Remove an app" = "Supprimer une app";
-"uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset" = "désinstaller, supprimer, effacer, retirer, app, application, nettoyeur, restes, corbeille, réinitialiser";
+"uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "désinstaller, supprimer une app, effacer une app, supprimer, effacer, app, application, nettoyeur, nettoyer, restes, corbeille, réinitialiser, remettre, restaurer, annuler, retirer";
 "Remove an app and its files. You can put it all back." = "Supprimez une app et ses fichiers. Tout est récupérable.";
 "Search apps" = "Rechercher une app";
 "Sort by" = "Trier par";
@@ -721,3 +721,13 @@
 "%lld items" = "%lld éléments";
 "Moved %lld items (%@) to the Trash" = "%lld éléments (%@) déplacés vers la Corbeille";
 "Put back %lld items" = "%lld éléments remis en place";
+"In the Trash" = "Dans la Corbeille";
+"Leftovers of removed apps" = "Restes d’apps supprimées";
+"Recently removed" = "Supprimés récemment";
+"Changed %@" = "Modifié %@";
+"Removed %@" = "Supprimé %@";
+"Offer to clean up when an app goes to the Trash" = "Proposer de nettoyer quand une app va à la Corbeille";
+"Nothing is removed until you choose" = "Rien n’est supprimé tant que vous n’avez pas choisi";
+"Looks like the app is gone. Pick what to remove." = "L’app semble disparue. Choisissez quoi supprimer.";
+"You moved this app to the Trash, but its files are still on your Mac." = "Vous avez mis cette app à la Corbeille, mais ses fichiers sont toujours sur votre Mac.";
+"uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify" = "désinstaller, supprimer une app, effacer une app, restes, nettoyer, corbeille, poubelle, surveiller, automatique, proposer, prévenir";
