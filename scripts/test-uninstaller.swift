@@ -170,6 +170,7 @@ enum UninstallerTests {
         words()
         slack()
         vendors()
+        shared()
         ownership()
         links()
         jobs()
@@ -324,6 +325,7 @@ enum UninstallerTests {
         let drive = w.app("Google Drive", id: "com.google.drivefs", team: "EQHXZ8M8AV", org: "Google LLC")
         let gadget = w.app("Gadget", id: "com.acme.gadget")
         let toolbox = w.app("Acme Toolbox", id: "com.acme.toolbox")
+        let gizmo = w.app("Gizmo", id: "com.zeta.gizmo")
         let word = w.app("Word", id: "com.msoft.Word", team: "UBF8T346G9", groups: ["UBF8T346G9.shared"], org: "Msoft Corporation")
         let excel = w.app("Excel", id: "com.msoft.Excel", team: "UBF8T346G9", groups: ["UBF8T346G9.shared"], org: "Msoft Corporation")
         let twin = w.app("Twin", id: "com.twin.app")
@@ -331,7 +333,7 @@ enum UninstallerTests {
         let lib = "home/Library"
         for path in [
             "Application Support/Google/Chrome", "Application Support/Google/Drive", "Application Support/Google/Other", "Caches/Google/Chrome", "Caches/Google/Drive",
-            "Application Support/Acme/Gadget", "Caches/Acme",
+            "Application Support/Acme/Gadget", "Caches/Acme", "Application Support/Zeta/Gizmo", "Application Support/Zeta/com.zeta.gizmo.plist",
             "Group Containers/UBF8T346G9.shared", "Group Containers/UBF8T346G9.other",
             "Application Support/Msoft/Word", "Application Support/Msoft/Excel", "Application Support/Msoft/Common",
             "Containers/com.twin.app", "Application Support/Twin",
@@ -354,10 +356,18 @@ enum UninstallerTests {
         let alone = w.scan(w.footprint([gadget]), gadget)
         expect(alone, [
             "root/Applications/Gadget.app": true,
-            "\(lib)/Application Support/Acme": true,
-            "\(lib)/Caches/Acme": true,
+            "\(lib)/Application Support/Acme/Gadget": true,
+            "\(lib)/Application Support/Acme/Settings.json": false,
+            "\(lib)/Caches/Acme/data": false,
         ], "Gadget alone")
-        check(alone, "\(lib)/Application Support/Acme", .vendor, .appData)
+        check(alone, "\(lib)/Application Support/Acme/Settings.json", .related, .appData)
+        check(alone, "\(lib)/Caches/Acme/data", .related, .caches)
+        let owned = w.scan(w.footprint([gizmo]), gizmo)
+        expect(owned, [
+            "root/Applications/Gizmo.app": true,
+            "\(lib)/Application Support/Zeta": true,
+        ], "Gizmo owns its folder")
+        check(owned, "\(lib)/Application Support/Zeta", .vendor, .appData)
         expect(w.scan(w.footprint([gadget, toolbox]), gadget), [
             "root/Applications/Gadget.app": true,
             "\(lib)/Application Support/Acme/Gadget": true,
@@ -392,6 +402,21 @@ enum UninstallerTests {
         ], "Twin")
         precondition(twinFound["\(lib)/Containers/com.twin.app"]?.sharedWith == ["Twin"])
         precondition(w.scan(twins, twinHome)["\(lib)/Containers/com.twin.app"]?.preselected == false)
+    }
+
+    static func shared() {
+        let w = World()
+        defer { w.destroy() }
+        let gadget = w.app("Gadget", id: "com.acme.gadget")
+        w.node("root/Users/Shared/Gadget")
+        w.node("root/Users/Shared/com.acme.gadget")
+        let found = w.scan(w.footprint([gadget]), gadget)
+        expect(found, [
+            "root/Applications/Gadget.app": true,
+            "root/Users/Shared/Gadget": false,
+            "root/Users/Shared/com.acme.gadget": true,
+        ], "Shared")
+        check(found, "root/Users/Shared/Gadget", .byName, .appData)
     }
 
     static func ownership() {
@@ -734,7 +759,14 @@ enum UninstallerTests {
         let roots = w.roots()
         precondition(names(AppInventory.installed(roots)) == ["Alpha", "Beta", "Dupe", "Home", "Install macOS Foo", "Pages", "Safari", "Setty", "Tool"], "\(names(AppInventory.installed(roots)))")
         precondition(Set(names(AppInventory.system(roots))) == ["Sys", "Notes", "Disk Utility", "Finder", "Pages", "Safari", "Install macOS Foo", "Terminal"], "\(names(AppInventory.system(roots)))")
-        precondition(AppFootprint(roots: roots).installed.count == 9)
+        let footprint = AppFootprint(roots: roots)
+        precondition(footprint.installed.count == 9)
+        func identity(_ path: String) -> AppIdentity { AppIdentity.read(at: w.at(path), signed: false)! }
+        precondition(footprint.isSystem(identity("root/System/Applications/Sys.app")) && footprint.isSystem(identity("root/Applications/LinkedSys.app")))
+        precondition(!footprint.isSystem(identity("root/Applications/Alpha.app")) && !footprint.isSystem(identity("home/Applications/DupeLink.app")))
+        w.link("home/Calculator.app", to: "/System/Applications/Calculator.app")
+        let calculator = identity("home/Calculator.app")
+        precondition(!calculator.url.path.hasPrefix("/System/") && AppFootprint(roots: .live, installed: [], system: []).isSystem(calculator))
 
         let contents = "root/Applications/Big.app/Contents"
         w.app("Big", id: "com.big.app", executable: "BigExe", nested: ["com.big.app.login"], labels: ["com.big.app.other"],
