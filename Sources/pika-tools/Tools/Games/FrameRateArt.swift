@@ -30,7 +30,8 @@ struct FrameRateSettings: View {
                 subtitle: Text("Shows how smoothly the game runs"),
                 help: Text(FrameRateMeter.hasTrace
                     ? String(localized: "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate.")
-                    : String(localized: "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate.")),
+                    : String(localized: "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate."))
+                    + Text(verbatim: " ") + Text("Calm games like chess draw a new picture only when something moves, so 0 is normal for them."),
                 isOn: Binding { tool.showsFrameRate } set: { turn($0) }
             )
             if Permission.screenRecording.isShown {

@@ -53,7 +53,7 @@ private struct LivePill: View {
     }
 }
 
-final class FrameRateMeter {
+final class FrameRateMeter: NSObject {
     static let shared = FrameRateMeter()
 
     static var hasTrace: Bool {
@@ -78,12 +78,17 @@ final class FrameRateMeter {
     private var session = 0
     private var source = FrameRateSource(traceCanRun: false, at: 0)
     private var ticker: Timer?
+    private var follower: CADisplayLink?
+    private var gameWindow: CGWindowID?
+    private var followed = CGRect.null
+    private var movedAt = 0.0
+    private var calm = false
     private var capture: ScreenFrames?
     #if !APPSTORE
     private var trace: PerfTrace?
     #endif
 
-    private init() {}
+    private override init() {}
 
     private var now: Double { ProcessInfo.processInfo.systemUptime }
     private var pillSize: CGSize { model.wide ? Self.wide : Self.narrow }
@@ -119,12 +124,19 @@ final class FrameRateMeter {
         place(locate())
         if !panel.isVisible { panel.alphaValue = 0 }
         panel.orderFrontRegardless()
+        follower = panel.displayLink(target: self, selector: #selector(follow))
+        follower?.add(to: .main, forMode: .common)
         fade(to: 1)
     }
 
     private func end() {
         ticker?.invalidate()
         ticker = nil
+        follower?.invalidate()
+        follower = nil
+        gameWindow = nil
+        followed = .null
+        calm = false
         capture?.stop()
         capture = nil
         #if !APPSTORE
@@ -171,11 +183,37 @@ final class FrameRateMeter {
         }
     }
 
-    private func locate() -> (window: CGRect, display: CGDirectDisplayID)? {
-        guard let game, let window = GameModeTool.window(of: game),
-              let display = GameModeTool.display(at: CGPoint(x: window.midX, y: window.midY))
+    // Checks the game window on every frame of the screen, so the pill moves together with it.
+    // After half a second without movement it checks 30 times a second.
+    @objc private func follow(_ link: CADisplayLink) {
+        if let gameWindow, let frame = Self.frame(of: gameWindow), frame != followed {
+            followed = frame
+            movedAt = link.timestamp
+            place(spot(frame))
+            capture?.follow(frame)
+        }
+        let calm = link.timestamp - movedAt > 0.5
+        guard calm != self.calm else { return }
+        self.calm = calm
+        link.preferredFrameRateRange = calm ? CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30) : .default
+    }
+
+    private static func frame(of window: CGWindowID) -> CGRect? {
+        guard let info = (CGWindowListCopyWindowInfo(.optionIncludingWindow, window) as? [[String: Any]])?.first,
+              info[kCGWindowIsOnscreen as String] as? Bool == true,
+              let bounds = info[kCGWindowBounds as String] as? NSDictionary
         else { return nil }
-        return (window, display)
+        return CGRect(dictionaryRepresentation: bounds)
+    }
+
+    private func locate() -> (window: CGRect, display: CGDirectDisplayID)? {
+        let found = game.flatMap(GameModeTool.window(of:))
+        gameWindow = found?.id
+        return found.flatMap { spot($0.frame) }
+    }
+
+    private func spot(_ window: CGRect) -> (window: CGRect, display: CGDirectDisplayID)? {
+        GameModeTool.display(of: window).map { (window, $0) }
     }
 
     private func place(_ spot: (window: CGRect, display: CGDirectDisplayID)?) {

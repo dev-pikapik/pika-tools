@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "दिखाता है कि गेम कितनी सहजता से चल रहा है";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS का मतलब है फ़्रेम प्रति सेकंड: गेम हर सेकंड कितनी तस्वीरें बनाता है। कुछ गेम, ज़्यादातर पुराने, सिर्फ़ स्क्रीन रिकॉर्डिंग के ज़रिए गिने जा सकते हैं, और तब संख्या स्क्रीन की रिफ़्रेश दर से ज़्यादा नहीं हो सकती।";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS का मतलब है फ़्रेम प्रति सेकंड: गेम हर सेकंड कितनी तस्वीरें बनाता है। इन्हें स्क्रीन रिकॉर्डिंग के ज़रिए गिना जाता है, इसलिए संख्या स्क्रीन की रिफ़्रेश दर से ज़्यादा नहीं हो सकती।";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "शतरंज जैसे शांत गेम नई तस्वीर तभी बनाते हैं जब कुछ हिलता है, इसलिए उनमें 0 होना सामान्य है।";
 "Corner for FPS" = "FPS के लिए कोना";
 "Top left corner" = "ऊपर बायाँ कोना";
 "Top right corner" = "ऊपर दायाँ कोना";

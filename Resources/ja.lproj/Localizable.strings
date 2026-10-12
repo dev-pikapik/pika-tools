@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "ゲームがどれだけなめらかに動いているかを表示します";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPSは1秒あたりのフレーム数、つまりゲームが1秒間に描く絵の枚数です。一部のゲーム、主に古いゲームは画面収録でしか数えられず、その場合、数値は画面のリフレッシュレートを超えられません。";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPSは1秒あたりのフレーム数、つまりゲームが1秒間に描く絵の枚数です。画面収録を使って数えるため、数値は画面のリフレッシュレートを超えられません。";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "チェスのような静かなゲームは、何かが動いたときだけ新しい絵を描くので、0 でも正常です。";
 "Corner for FPS" = "FPSを表示する隅";
 "Top left corner" = "左上の隅";
 "Top right corner" = "右上の隅";

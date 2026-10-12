@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Показує, наскільки плавно йде гра";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS — це кадри за секунду: скільки зображень гра малює щосекунди. Деякі ігри, здебільшого старі, можна порахувати лише через запис екрана, і тоді число не може бути вищим за частоту оновлення екрана.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS — це кадри за секунду: скільки зображень гра малює щосекунди. Вони рахуються через запис екрана, тому число не може бути вищим за частоту оновлення екрана.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Спокійні ігри на кшталт шахів малюють нове зображення, лише коли щось рухається, тому 0 для них — це нормально.";
 "Corner for FPS" = "Кут для FPS";
 "Top left corner" = "Лівий верхній кут";
 "Top right corner" = "Правий верхній кут";

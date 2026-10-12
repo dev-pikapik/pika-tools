@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Oyunun ne kadar akıcı çalıştığını gösterir";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği. Bazı oyunlar, çoğunlukla eskiler, yalnızca ekran kaydı üzerinden sayılabilir ve bu durumda sayı ekranın yenileme hızını aşamaz.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği. Ekran kaydı üzerinden sayılır; bu yüzden sayı ekranın yenileme hızını aşamaz.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Satranç gibi sakin oyunlar yalnızca bir şey hareket ettiğinde yeni bir resim çizer, bu yüzden onlarda 0 normaldir.";
 "Corner for FPS" = "FPS için köşe";
 "Top left corner" = "Sol üst köşe";
 "Top right corner" = "Sağ üst köşe";

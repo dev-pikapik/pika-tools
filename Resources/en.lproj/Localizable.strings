@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "Shows how smoothly the game runs";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "Calm games like chess draw a new picture only when something moves, so 0 is normal for them.";
 "Corner for FPS" = "Corner for FPS";
 "Top left corner" = "Top left corner";
 "Top right corner" = "Top right corner";

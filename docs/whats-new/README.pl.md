@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Plakietka FPS nadąża za twoją grą
+
+<sub>1.37.1 · 12 października 2026</sub>
+
+Przesuń okno gry, a plakietka FPS przesunie się teraz razem z nim.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Wcześniej plakietka doganiała przesuwane okno tylko mniej więcej raz na sekundę, więc zostawała w tyle. Teraz sprawdza okno przy każdej klatce ekranu i nigdy nie spóźnia się o więcej niż kilka tysięcznych sekundy. Gdy okno stoi w miejscu, sprawdza je rzadziej, dzięki czemu podczas gry prawie nie obciąża twojego Maca. Nie przeskakuje też już w inne miejsce, gdy część okna wychodzi poza krawędź ekranu.
+
+Jeśli spokojna gra, taka jak szachy, pokazuje 0, wszystko jest w porządku: takie gry rysują nowy obraz tylko wtedy, gdy coś się porusza. Liczba rośnie, gdy figura się przesuwa, i wraca do 0, gdy na szachownicy wszystko zamiera.
+
+---
+
 ## <a id="v1.37.0"></a>Zobacz, jak płynnie działa twoja gra
 
 <sub>1.37.0 · 12 października 2026</sub>

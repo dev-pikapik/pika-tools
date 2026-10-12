@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Het FPS-labeltje houdt je game bij
+
+<sub>1.37.1 · 12 oktober 2026</sub>
+
+Verplaats het gamevenster en het FPS-labeltje beweegt nu gewoon mee.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Voorheen haalde het labeltje een bewegend venster maar ongeveer één keer per seconde in, waardoor het achterbleef. Nu kijkt het bij elk beeld van het scherm waar het venster staat en loopt het hooguit een paar duizendsten van een seconde achter. Staat het venster stil, dan kijkt het minder vaak, zodat je Mac er tijdens het spelen bijna niets van merkt. Ook springt het niet meer weg als een deel van het venster over de rand van het scherm gaat.
+
+Toont een rustige game zoals schaken 0, dan is er niets aan de hand: zulke games tekenen alleen een nieuw beeld als er iets beweegt. Het getal stijgt terwijl een stuk schuift en zakt terug naar 0 als het bord stilstaat.
+
+---
+
 ## <a id="v1.37.0"></a>Zie hoe soepel je game loopt
 
 <sub>1.37.0 · 12 oktober 2026</sub>

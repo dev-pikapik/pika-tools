@@ -870,6 +870,7 @@
 "Shows how smoothly the game runs" = "يعرض مدى سلاسة تشغيل اللعبة";
 "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS تعني عدد الإطارات في الثانية: كم صورة ترسمها اللعبة كل ثانية. بعض الألعاب، ومعظمها قديم، لا يمكن حسابها إلا عبر تسجيل الشاشة، وعندئذٍ لا يمكن أن يتجاوز الرقم معدل تحديث الشاشة.";
 "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS تعني عدد الإطارات في الثانية: كم صورة ترسمها اللعبة كل ثانية. يُحسب الرقم عبر تسجيل الشاشة، لذا لا يمكن أن يتجاوز معدل تحديث الشاشة.";
+"Calm games like chess draw a new picture only when something moves, so 0 is normal for them." = "الألعاب الهادئة مثل الشطرنج لا ترسم صورة جديدة إلا عندما يتحرك شيء ما، لذا فإن 0 أمر طبيعي فيها.";
 "Corner for FPS" = "زاوية عرض FPS";
 "Top left corner" = "الزاوية العلوية اليسرى";
 "Top right corner" = "الزاوية العلوية اليمنى";
