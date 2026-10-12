@@ -15,6 +15,8 @@ cd pika-tools
 
 `install.sh` can also build from source: add `-- --source` after the install command from the README.
 
+The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks it against a pinned SHA-256), so the first build needs a network connection. The App Store build leaves it out.
+
 Local builds are signed ad-hoc, which is fine for your own Mac. macOS treats every ad-hoc build as a new app, so after a rebuild you may need to remove pikapik from Accessibility and Input Monitoring with the − button and add it again.
 
 To sign with a Developer ID and notarize:
@@ -82,7 +84,7 @@ swiftc -parse-as-library Sources/pika-tools/Common/LeftoverPermissions.swift scr
 The app used to be called pika-tools. A copy named `pika-tools.app` that wasn't installed with Homebrew renames itself to `pikapik.app` on launch and opens again; the updater does the same when it installs a new version. Homebrew copies stay where they are until `brew upgrade` moves them. Every release also carries `pika-tools.zip` with the app under its old name, because older versions download that file. The path logic lives in `Updater`:
 
 ```bash
-swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift scripts/test-rename.swift -o build/test-rename && build/test-rename
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-rename.swift -o build/test-rename && build/test-rename
 ```
 
 The pet lives in a borderless window one level above the desktop icons, so every normal window and the Dock cover it. The window lets clicks through everywhere except the pet itself: on each frame it checks whether the pointer is over the pet’s hitbox, swept over the last frame so a fast pet can still be caught. While you hold or throw the pet, the window grows to the whole screen and rises above the Dock, and it drops back behind everything once the pet lands. It joins all Spaces, stays out of Mission Control and the app switcher, and hides during full-screen apps, Game Mode, screen sleep and the lock screen. It ticks at 30 frames per second only while it is on screen. Space comes from a listen-only `CGEventTap`, so the key is never changed or delayed. Walking, jumps, bumps, holding and throwing live in `PetPhysics`, which has no AppKit and steps in fixed slices of 1/120 s: the pet and the pointer are rectangles, their relative motion is swept every slice so nothing tunnels through, and the pet always stays inside the screen and on the ground. A throw takes the pointer speed over the last 80 ms, capped, bounces off the sides and never goes above the menu bar, and the pointer can’t knock the pet over for a second after it is let go. The phrases are one list in `PetPhrases`, each with an id, ready for partner lines. You can test the physics without the app:
@@ -127,6 +129,12 @@ swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/
 swiftc -parse-as-library Sources/pika-tools/Tools/Uninstaller/TrashWatcher.swift scripts/test-trash-watcher.swift -o build/test-trash-watcher && build/test-trash-watcher
 ```
 
+The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR.XZ files and opens RAR and many more. It runs the bundled `7zz`, plus `ditto` and `bsdtar` for ZIP names in older encodings, as separate programs, and checks every result before it is shown: nothing lands outside the output folder, links that point out are removed, setuid bits are stripped, and the archive's quarantine flag is copied onto everything extracted. The test makes its own archives, including broken and hostile ones, in a temporary folder, mounts a 16 MB scratch disk image to run out of space on purpose, and takes about ten seconds. Run it from the repository root: it uses `Vendor/7zip/7zz` (`scripts/fetch-7zip.sh` puts it there) or the tool named in `PIKA_7ZZ`. For RAR, set `PIKA_RAR_SAMPLES` to a folder of your own `.rar` files, otherwise that part is skipped:
+
+```bash
+swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
@@ -166,3 +174,7 @@ The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dar
 ```bash
 swift scripts/make-icns.swift
 ```
+
+## Third-party software
+
+The direct build includes the 7-Zip command line tool (`7zz`) from [www.7-zip.org](https://www.7-zip.org), licensed under the GNU LGPL 2.1 with the unRAR restriction. It runs as a separate program, its license is in the app as `Contents/Resources/7-Zip License.txt`, and its source code is attached to every release as `7-Zip-26.04-source.tar.xz`.

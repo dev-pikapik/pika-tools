@@ -14,7 +14,7 @@ if [ $# -eq 0 ]; then find "$OUT" -maxdepth 1 -type f -delete; fi
 SOURCES=()
 while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' ! -name main.swift -print0)
 swiftc -O -parse-as-library -module-name PikaTools -target "$(uname -m)-apple-macos14.0" \
-    "${SOURCES[@]}" Extensions/Convert/ConvertFormats.swift scripts/render-media.swift \
+    "${SOURCES[@]}" Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/render-media.swift \
     -o "$APP/Contents/MacOS/render-media"
 
 PLIST="$APP/Contents/Info.plist"

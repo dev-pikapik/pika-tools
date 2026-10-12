@@ -17,12 +17,14 @@ APPSTORE_ID=com.pikapik.tools
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
+[ -n "${APPSTORE:-}" ] || ./scripts/fetch-7zip.sh
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
 SOURCES=()
 while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' -print0)
 SOURCES+=(Extensions/Convert/ConvertFormats.swift)
+[ -n "${APPSTORE:-}" ] || SOURCES+=(Extensions/Preview/ZipNames.swift)
 
 FLAGS=()
 if [ -n "${APPSTORE:-}" ]; then
@@ -30,7 +32,7 @@ if [ -n "${APPSTORE:-}" ]; then
     KEPT=()
     for f in "${SOURCES[@]}"; do
         case $f in
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*|*/Tools/Archive/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -76,6 +78,7 @@ rm build/pika-tools-arm64 build/pika-tools-x86_64
 if [ -z "${APPSTORE:-}" ]; then
     lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
     rm build/fan-helper-arm64 build/fan-helper-x86_64
+    cp Vendor/7zip/7zz "$APP/Contents/MacOS/7zz"
 fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
@@ -109,6 +112,7 @@ if [ -z "${APPSTORE:-}" ]; then
     for LPROJ in Resources/*.lproj; do
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
+    cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
@@ -183,8 +187,9 @@ if [ -n "${APPSTORE:-}" ]; then
     APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
 else
     APP_ENTITLEMENTS=(--entitlements Resources/Direct.entitlements)
-    HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
-    sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
+    BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist")"
+    sign --identifier "$BUNDLE_ID.fans" "$APP/Contents/Library/LaunchServices/fan-helper"
+    sign --identifier "$BUNDLE_ID.7zz" "$APP/Contents/MacOS/7zz"
 fi
 sign ${APP_ENTITLEMENTS[@]+"${APP_ENTITLEMENTS[@]}"} "$APP"
 

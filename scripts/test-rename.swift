@@ -38,10 +38,10 @@ enum TestRename {
         for name in ["archive.tar.gz", "archive.tar.bz2", "archive.tar.xz"] {
             let taken = root.appendingPathComponent(name)
             try! Data().write(to: taken)
-            let twin = NewFile.uniqueURL(for: name, in: root).lastPathComponent
+            let twin = FileManager.default.uniqueURL(for: name, in: root).lastPathComponent
             precondition(twin == name.replacingOccurrences(of: "archive", with: "archive 2"), twin)
         }
-        precondition(NewFile.uniqueURL(for: "notes.txt", in: root).lastPathComponent == "notes.txt")
+        precondition(FileManager.default.uniqueURL(for: "notes.txt", in: root).lastPathComponent == "notes.txt")
         print("rename: ok")
     }
 }

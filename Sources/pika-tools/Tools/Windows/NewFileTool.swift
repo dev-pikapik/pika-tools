@@ -72,24 +72,8 @@ enum NewFile {
         !name.isEmpty && name != "." && name != ".." && !name.contains("/") && !name.contains(":")
     }
 
-    static func uniqueURL(for name: String, in folder: URL) -> URL {
-        var base = (name as NSString).deletingPathExtension
-        var ext = (name as NSString).pathExtension
-        if base.lowercased().hasSuffix(".tar") {
-            base = (base as NSString).deletingPathExtension
-            ext = "tar." + ext
-        }
-        var url = folder.appending(path: name)
-        var number = 2
-        while FileManager.default.fileExists(atPath: url.path) {
-            url = folder.appending(path: ext.isEmpty ? "\(base) \(number)" : "\(base) \(number).\(ext)")
-            number += 1
-        }
-        return url
-    }
-
     private static func create(_ name: String, in folder: URL) {
-        let url = uniqueURL(for: name, in: folder)
+        let url = FileManager.default.uniqueURL(for: name, in: folder)
         do {
             try Data().write(to: url, options: .withoutOverwriting)
         } catch {
