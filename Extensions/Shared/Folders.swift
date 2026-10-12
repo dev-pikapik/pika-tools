@@ -13,7 +13,7 @@ enum Folders {
         let center = NSWorkspace.shared.notificationCenter
         center.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { note in
             guard let volume = note.userInfo?[NSWorkspace.volumeURLUserInfoKey] as? URL else { return }
-            FIFinderSyncController.default().directoryURLs.insert(volume)
+            if FIFinderSyncController.default().directoryURLs?.insert(volume) == nil { resend() }
         }
         center.addObserver(forName: NSWorkspace.didActivateApplicationNotification, object: nil, queue: .main) { note in
             guard (note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication)?.bundleIdentifier == "com.apple.finder" else { return }
@@ -33,6 +33,6 @@ enum Folders {
     private static func resendIfLost() {
         guard sent.timeIntervalSinceNow < -60 else { return }
         let map = UserDefaults.standard.dictionary(forKey: "com.apple.finder.SyncExtensions")?["dirMap"] as? [String: [String]]
-        if FIFinderSyncController.default().directoryURLs.isEmpty || map?[Bundle.main.bundleIdentifier ?? ""]?.isEmpty ?? true { resend() }
+        if FIFinderSyncController.default().directoryURLs?.isEmpty ?? true || map?[Bundle.main.bundleIdentifier ?? ""]?.isEmpty ?? true { resend() }
     }
 }
