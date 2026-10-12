@@ -25,4 +25,8 @@ enum PetPhrases {
     static func update(_ version: String) -> PetPhrase {
         PetPhrase(id: "update", text: String(localized: "Psst, version \(version) is out! Click me."))
     }
+
+    static func award(_ award: PetAward) -> PetPhrase {
+        PetPhrase(id: "award", text: String(localized: "I got a new award: “\(award.title)”! Click me."))
+    }
 }

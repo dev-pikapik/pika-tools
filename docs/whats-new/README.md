@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Dress up your pet
+
+<sub>1.35.0 · October 12, 2026</sub>
+
+Your pet has a wardrobe now, and you earn new things to wear as you play together.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Open Settings › Pet and pick what your pet wears: hats, glasses, scarves, shirts, shoes, capes and even wings. Your pet puts it on right away. A few things are free, and the rest are awards that come as you play together: pick your pet up and toss it, kick the ball around, watch it climb windows and chat, or simply keep it company day after day. When you earn one, your pet tells you.
+
+Ready-made looks dress your pet from head to toe in one click: a wizard, a pirate, an astronaut, a superhero, a king and more. A look is ready once you have earned all its pieces.
+
+Only simple counts are kept, like steps, throws and days together. They stay on your Mac, nothing is sent anywhere, and you can erase them any time in Settings › Pet.
+
+---
+
+## <a id="v1.34.0"></a>Mouse and trackpad shortcuts in games
+
+<sub>1.34.0 · October 12, 2026</sub>
+
+Swipes, pinches and hot corners now stay out of your game, just like keyboard shortcuts.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Settings › Games › More game settings has a group called Mouse and trackpad. It lists only what is turned on in macOS on your Mac, with Apple’s own names and a small drawing for each: shortcuts on a mouse button, swiping between desktops and full-screen apps, Mission Control and App Exposé, pinching for Apps and spreading for the Desktop, the swipe in from the right edge for Notification Centre, and every hot corner with the action it runs. While a game is in front they are paused, so a stray swipe or a brush against a screen corner can’t pull you out of it. Gestures inside the game keep working. Each one can be set to work as usual.
+
+---
+
 ## <a id="v1.33.2"></a>Shortcut groups open instantly
 
 <sub>1.33.2 · October 11, 2026</sub>

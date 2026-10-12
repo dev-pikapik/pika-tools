@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Viste a tu mascota
+
+<sub>1.35.0 · 12 de octubre de 2026</sub>
+
+Tu mascota ya tiene armario, y consigues prendas nuevas mientras jugáis juntos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Mascota y elige lo que lleva puesto tu mascota: gorros, gafas, bufandas, camisetas, zapatos, capas e incluso alas. Se lo pone al instante. Unas pocas prendas son gratis y el resto son premios que llegan mientras jugáis juntos: coge a tu mascota y lánzala, dale patadas a la pelota, mírala trepar por las ventanas y charlar, o simplemente hazle compañía día tras día. Cuando consigas un premio, tu mascota te lo dirá.
+
+Los disfraces ya preparados la visten de pies a cabeza con un clic: mago, pirata, astronauta, superhéroe, rey y más. Un disfraz está listo cuando has conseguido todas sus piezas.
+
+Solo se guardan números sencillos, como pasos, lanzamientos y días juntos. Se quedan en tu Mac, no se envía nada a ninguna parte y puedes borrarlos cuando quieras en Ajustes › Mascota.
+
+---
+
+## <a id="v1.34.0"></a>Ratón y trackpad en los juegos
+
+<sub>1.34.0 · 12 de octubre de 2026</sub>
+
+Los deslizamientos, los pellizcos y las esquinas activas ya no te sacan del juego, igual que los atajos de teclado.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+En Ajustes › Juegos › Más ajustes del juego hay un grupo llamado «Ratón y trackpad». Muestra solo lo que está activado en macOS en tu Mac, con los nombres de Apple y un pequeño dibujo para cada uno: atajos en un botón del ratón, deslizar entre escritorios y apps a pantalla completa, Mission Control y App Exposé, pellizcar para las apps y separar los dedos para el escritorio, deslizar desde el borde derecho para el Centro de notificaciones y cada esquina activa con su acción. Mientras un juego está al frente, quedan en pausa, así que un deslizamiento accidental o un roce con la esquina de la pantalla no te sacará del juego. Los gestos dentro del juego siguen funcionando. Cada uno se puede dejar funcionando como siempre.
+
+---
+
 ## <a id="v1.33.2"></a>Los grupos de atajos se abren al instante
 
 <sub>1.33.2 · 11 de octubre de 2026</sub>

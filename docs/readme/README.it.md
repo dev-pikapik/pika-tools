@@ -177,7 +177,7 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animaletto sulla scrivania</b>
-<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare.
+<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ L’app si accorge della modifica in un paio di secondi, senza bisogno di riavvi
 
 Alcune funzioni chiedono qualcosa in più quando le usi: **Controllo ventole**, **Estensioni del Finder**, **iCloud Drive** e **Accesso completo al disco**. Sono tutte nella pagina Permessi delle impostazioni: ogni permesso ha una riga che dice a cosa serve, una spunta verde o una croce arancione e un solo pulsante: **Consenti** quando manca, **Spegni** quando è attivo. Così puoi revocare qualsiasi permesso proprio lì.
 
-pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. L’unica richiesta di rete è il controllo degli aggiornamenti, che chiede a GitHub qual è l’ultima versione.
+pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. pikapik va online solo per gli aggiornamenti (chiede a GitHub qual è l’ultima versione e la scarica solo se scegli di aggiornare) e per la misura della velocità quando la avvii tu (usa i server di Apple). La versione del Mac App Store viene aggiornata dall’App Store, e la sua misura della velocità usa Cloudflare. I progressi del tuo animaletto (passi, lanci, premi e simili) vengono contati solo su questo Mac e non sono mai inviati da nessuna parte. Puoi cancellarli in Impostazioni › Animaletto.
 
 </details>
 
@@ -245,7 +245,13 @@ Attiva la modalità Gioco e gioca. Altre impostazioni di gioco contiene il catal
 
 Automatico sospende le azioni che aprono finestre o spostano il focus. Un comando della lingua breve e intenzionale cambia la sorgente senza una finestra di sistema. I tasti di movimento tenuti premuti hanno priorità, così correre e saltare non cambiano lingua per sbaglio.
 
+In Impostazioni → Giochi → Altre impostazioni di gioco c’è un gruppo chiamato «Mouse e trackpad». Mostra solo ciò che è attivo in macOS sul tuo Mac, con i nomi di Apple e un piccolo disegno per ciascuno: scorciatoie su un pulsante del mouse, scorrimento tra scrivanie e app a schermo intero, Mission Control e App Exposé, pizzico per le app e allargamento delle dita per la scrivania, scorrimento dal bordo destro per il Centro notifiche e ogni angolo attivo con la sua azione. Finché un gioco è in primo piano, sono sospesi, così uno scorrimento involontario o uno sfioramento di un angolo dello schermo non ti porta fuori dal gioco. I gesti all’interno del gioco continuano a funzionare. Ognuno si può impostare per funzionare come al solito.
+
 Apri Impostazioni → Giochi → Aggiungi un gioco e fai clic sul gioco in esecuzione. Compaiono anche i giochi che usano Java o altri ambienti, senza un file .app. Minecraft si chiama Minecraft anziché java. Trova il processo del gioco e trascina la riga su I tuoi giochi in Impostazioni → Giochi.
+
+**Guardaroba e premi dell’animaletto.** Apri Impostazioni › Animaletto per vestire il tuo animaletto: più di 30 capi, da cappelli e occhiali a mantelli e ali, e look già pronti come mago, pirata o astronauta. Alcuni sono gratis fin dall’inizio. Gli altri sono premi che arrivano mentre giocate insieme: prendi in mano il tuo animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ottieni un nuovo premio, te lo dice lui.
+
+Per sapere quando spetta un premio, pikapik conta solo quello che fate tu e il tuo animaletto: passi, quante volte lo prendi e lo lanci, salti, arrampicate, partite con la palla e chiacchierate, giorni passati insieme, se eravate insieme all’alba, dopo mezzanotte o nel fine settimana, le pagine delle Impostazioni che hai aperto e i capi che hai provato. Fuori dal Mac App Store, pikapik annota anche se hai aperto la nostra pagina GitHub dalle Impostazioni. Questi numeri, la data di ogni premio e ciò che indossa il tuo animaletto restano su questo Mac. Non viene inviato nulla da nessuna parte e niente di tutto ciò finisce nel file delle impostazioni esportato o nella sincronizzazione iCloud. Puoi cancellare tutto quando vuoi in Impostazioni › Animaletto, e il tuo animaletto ricomincia da zero.
 
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
@@ -289,6 +295,8 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: nascondere con un clic nel Dock.
 - **Finder**: nuovo file, copia più leggera e conversione, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
+- **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.
+- **Animaletto**: accensione, chiacchiere e palla, guardaroba e premi.
 - **Permessi**: tutti i permessi usati da pikapik, ciascuno con il suo stato e un pulsante per consentirlo o spegnerlo. Uno strumento a cui manca un permesso appare in grigio; un clic su di esso apre questa pagina sulla riga giusta.
 - **Info**: versione, link alle novità e per segnalare un problema.
 

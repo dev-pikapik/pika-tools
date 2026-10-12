@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Mặc đồ cho thú cưng
+
+<sub>1.35.0 · 12 tháng 10 năm 2026</sub>
+
+Thú cưng của bạn giờ có tủ quần áo, và bạn nhận thêm đồ để mặc khi cùng chơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Thú cưng và chọn thú cưng sẽ mặc gì: mũ, kính, khăn, áo sơ mi, giày, áo choàng và cả đôi cánh. Nó mặc ngay lập tức. Vài món miễn phí, còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận được giải thưởng, thú cưng sẽ báo cho bạn.
+
+Các trang phục làm sẵn mặc cho thú cưng từ đầu đến chân chỉ với một cú bấm: phù thủy, cướp biển, phi hành gia, siêu anh hùng, nhà vua và nhiều trang phục khác. Mỗi trang phục sẵn sàng khi bạn đã nhận đủ mọi món của nó.
+
+Chỉ những con số đơn giản được lưu, như số bước, số lần tung và số ngày bên nhau. Chúng nằm lại trên máy Mac của bạn, không có gì được gửi đi đâu, và bạn có thể xóa chúng bất cứ lúc nào trong Cài đặt › Thú cưng.
+
+---
+
+## <a id="v1.34.0"></a>Chuột và bàn di chuột trong trò chơi
+
+<sub>1.34.0 · 12 tháng 10 năm 2026</sub>
+
+Vuốt, chụm và góc nóng giờ không còn đưa bạn ra khỏi trò chơi, giống như phím tắt bàn phím.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Trong Cài đặt › Trò chơi › Thêm cài đặt trò chơi có nhóm “Chuột và bàn di chuột”. Nhóm này chỉ liệt kê những gì đang bật trong macOS trên Mac của bạn, với tên gọi của Apple và một hình vẽ nhỏ cho từng mục: phím tắt trên nút chuột, vuốt giữa các màn hình nền và ứng dụng toàn màn hình, Mission Control và App Exposé, chụm ngón tay cho ứng dụng và xòe ngón tay cho màn hình nền, vuốt từ cạnh phải cho Trung tâm thông báo và mỗi góc nóng cùng thao tác của nó. Khi trò chơi ở phía trước, tất cả được tạm dừng, nên một cú vuốt nhầm hay chạm vào góc màn hình sẽ không đưa bạn ra khỏi trò chơi. Các cử chỉ bên trong trò chơi vẫn hoạt động bình thường. Mỗi mục có thể đặt để hoạt động như bình thường.
+
+---
+
 ## <a id="v1.33.2"></a>Nhóm phím tắt mở ngay lập tức
 
 <sub>1.33.2 · 11 tháng 10 năm 2026</sub>

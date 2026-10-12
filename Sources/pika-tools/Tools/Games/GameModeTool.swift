@@ -71,6 +71,7 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var hinted = false
     @ObservationIgnored private var fence: CursorFence?
     @ObservationIgnored private var fenceTimer: Timer?
+    @ObservationIgnored private var swipes: (blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) = (false, [], [])
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
     @ObservationIgnored fileprivate var languageBindings: [UInt64: (direction: InputSwitchGesture.Direction, automatic: Bool)] = [:]
@@ -207,14 +208,17 @@ final class GameModeTool: Tool {
         let choices = SystemGameShortcut.overrides(systemShortcuts)
         allowedAppShortcuts = Set(catalog.filter { $0.assigned && $0.mode(rules: rules, overrides: choices) == .system }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) })
         inputIntent = GameInputIntent(held: Set((0..<128).filter { ![54, 55, 56, 57, 58, 59, 60, 61, 62, 63].contains($0) && CGEventSource.keyState(.combinedSessionState, key: CGKeyCode($0)) }.map(Int64.init)))
+        let pointerIDs = Set(catalog.filter { $0.pointer != nil }.map(\.id))
         combos = Set(
-            (HotKeyTrace.ids(trace.defaults) ?? []).compactMap(SymbolicHotKeys.value)
+            (HotKeyTrace.ids(trace.defaults) ?? []).filter { !pointerIDs.contains($0) }.compactMap(SymbolicHotKeys.value)
                 .filter { !GameRules.isGameInput($0.modifiers) && languageBindings[GameRules.combo(key: Int64($0.key), flags: $0.modifiers)] == nil }.map { GameRules.combo(key: Int64($0.key), flags: $0.modifiers) }
         )
         hinted = false
-        if rules.contains(.cursor) || rules.contains(.swipes) { moveFence() }
+        let paused = PointerShortcuts.paused(catalog, rules: rules, values: systemShortcuts)
+        swipes = (paused.blocksAll, paused.except, Set(PointerShortcuts.sides.indices).subtracting(paused.corners))
+        if rules.contains(.cursor) || paused.blocksAll || !paused.except.isEmpty { moveFence() }
+        DockEdges.calm(corners: paused.corners, hidesDock: rules.contains(.cursor))
         if rules.contains(.cursor) {
-            DockEdges.calm()
             fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
         }
         if rules.contains(.display) {
@@ -232,6 +236,7 @@ final class GameModeTool: Tool {
         fenceTimer = nil
         fence?.stop()
         fence = nil
+        swipes = (false, [], [])
         DockEdges.restoreSoon()
         combos = []
         languageBindings = [:]
@@ -267,7 +272,7 @@ final class GameModeTool: Tool {
         let frame = rules.contains(.cursor) ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
         guard fence == nil || fence?.frame != frame else { return }
         fence?.stop()
-        fence = CursorFence(frame: frame, dropsSwipes: rules.contains(.swipes))
+        fence = CursorFence(frame: frame, blocksAll: swipes.blocksAll, except: swipes.except, corners: swipes.corners)
     }
 
     private func refreshCommandKeys() {
@@ -380,7 +385,8 @@ final class GameModeTool: Tool {
 
 #if APPSTORE
 enum DockEdges {
-    static func calm() {}
+    static var journal: [String: Any] { [:] }
+    static func calm(corners: Set<Int>, hidesDock: Bool) {}
     static func restoreSoon() {}
     static func restore() {}
 }
@@ -390,17 +396,29 @@ enum DockEdges {
     private static let corners = ["wvous-tl-corner", "wvous-tr-corner", "wvous-bl-corner", "wvous-br-corner"], delay = "autohide-delay"
     private static var pending: DispatchWorkItem?
 
-    static func calm() {
+    static var journal: [String: Any] { UserDefaults.standard.dictionary(forKey: key) ?? [:] }
+
+    static func calm(corners wanted: Set<Int>, hidesDock: Bool) {
         pending?.cancel()
         pending = nil
-        guard UserDefaults.standard.dictionary(forKey: key) == nil else { return }
         CFPreferencesAppSynchronize(dock)
-        var saved: [String: Any] = [:]
-        for name in corners + [delay] { saved[name] = CFPreferencesCopyAppValue(name as CFString, dock) ?? "" }
-        let active = corners.filter { (saved[$0] as? Int ?? 0) > 1 }
-        let hides = CFPreferencesGetAppBooleanValue("autohide" as CFString, dock, nil)
-        guard !active.isEmpty || hides else { return }
-        UserDefaults.standard.set(saved, forKey: key)
+        let saved = journal
+        func current(_ name: String) -> Int { ((saved[name] ?? CFPreferencesCopyAppValue(name as CFString, dock) as Any?) as? NSNumber)?.intValue ?? 0 }
+        let active = wanted.sorted().map { corners[$0] }.filter { current($0) > 1 }
+        let hides = hidesDock && CFPreferencesGetAppBooleanValue("autohide" as CFString, dock, nil)
+        let targets = active + (hides ? [delay] : [])
+        if !saved.isEmpty {
+            guard Set(saved.keys) != Set(targets) else { return }
+            let wrote = reset()
+            if targets.isEmpty {
+                if wrote { relaunch() }
+                return
+            }
+        }
+        guard !targets.isEmpty else { return }
+        var original: [String: Any] = [:]
+        for name in targets { original[name] = CFPreferencesCopyAppValue(name as CFString, dock) ?? "" }
+        UserDefaults.standard.set(original, forKey: key)
         for name in active { CFPreferencesSetAppValue(name as CFString, 0 as CFNumber, dock) }
         if hides { CFPreferencesSetAppValue(delay as CFString, 1000.0 as CFNumber, dock) }
         relaunch()
@@ -416,13 +434,24 @@ enum DockEdges {
     static func restore() {
         pending?.cancel()
         pending = nil
-        guard let saved = UserDefaults.standard.dictionary(forKey: key) else { return }
+        guard !journal.isEmpty, reset() else { return }
+        relaunch()
+    }
+
+    static func restorable(_ saved: [String: Any], current: (String) -> Any?) -> [String: Any] {
+        saved.filter { name, _ in (current(name) as? NSNumber)?.doubleValue == (name == delay ? 1000.0 : 0.0) }
+    }
+
+    private static func reset() -> Bool {
+        CFPreferencesAppSynchronize(dock)
+        let saved = journal
         UserDefaults.standard.removeObject(forKey: key)
-        for name in corners + [delay] {
-            let value = saved[name].flatMap { $0 as? String == "" ? nil : $0 as CFPropertyList }
+        let ours = restorable(saved) { CFPreferencesCopyAppValue($0 as CFString, dock) }
+        for (name, original) in ours {
+            let value = original as? String == "" ? nil : original as CFPropertyList
             CFPreferencesSetAppValue(name as CFString, value, dock)
         }
-        relaunch()
+        return !ours.isEmpty
     }
 
     private static func relaunch() {
@@ -434,15 +463,20 @@ enum DockEdges {
 
 private final class CursorFence {
     let frame: CGRect?
-    let dropsSwipes: Bool
+    let blocksAll: Bool
+    let except: Set<Int64>
+    let corners: Set<Int>
+    fileprivate var holding: Bool?
     fileprivate private(set) var tap: CFMachPort?
     private var loop: CFRunLoop?
 
-    init(frame: CGRect?, dropsSwipes: Bool) {
+    init(frame: CGRect?, blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) {
         self.frame = frame
-        self.dropsSwipes = dropsSwipes
+        self.blocksAll = blocksAll
+        self.except = except
+        self.corners = corners
         let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
-        let mask = moves.reduce(CGEventMask(dropsSwipes ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
+        let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
         guard mask != 0 else { return }
         let ready = DispatchSemaphore(value: 0)
         let thread = Thread { [self] in
@@ -573,16 +607,20 @@ private func cursorFenceCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
     case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
-        if let frame = fence.frame, let point = GameRules.fence(event.location, in: frame) {
+        if let frame = fence.frame, let point = GameRules.fence(event.location, in: frame, corners: fence.corners) {
             event.location = point
             CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
             CGWarpMouseCursorPosition(point)
         }
     default:
-        if fence.dropsSwipes, type.rawValue == 30,
-           event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23,
-           event.getIntegerValueField(CGEventField(rawValue: 123)!) == 1 {
-            return nil
+        if type.rawValue == 30, event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23 {
+            let gate = GameRules.dropsSwipe(
+                phase: event.getIntegerValueField(CGEventField(rawValue: 132)!),
+                motion: event.getIntegerValueField(CGEventField(rawValue: 123)!),
+                blocksAll: fence.blocksAll, except: fence.except, holding: fence.holding
+            )
+            fence.holding = gate.holding
+            if gate.drops { return nil }
         }
     }
     return Unmanaged.passUnretained(event)
@@ -662,7 +700,6 @@ struct GameModePage: View {
                         Rule(.showDesktop, String(localized: "The game doesn’t slide off the screen"), [key(36, "F11")], subtitle: Text("Show Desktop")),
                         Rule(.desktops, String(localized: "Desktops don’t switch"), [key(79, "⌃←"), key(81, "⌃→")]),
                         Rule(.desktopNumbers, String(localized: "Desktops don’t switch by number"), [key(118, "⌃1"), "…"]),
-                        Rule(.swipes, String(localized: "Swipes don’t switch desktops")),
                     ])
                     rules(Text("Keyboard"), [
                         Rule(.emoji, String(localized: "Emoji don’t open"), [key(50, "⌃⌘" + String(localized: "Space"))]),
@@ -672,6 +709,7 @@ struct GameModePage: View {
                     ])
                     rules(Text("Mouse and screen"), [
                         Rule(.controlClick, String(localized: "⌃-click works as a plain click"), ["⌃"]),
+                        Rule(.swipes, String(localized: "Gestures don’t leave the game")),
                         Rule(
                             .cursor, String(localized: "The pointer stays in the game"),
                             subtitle: Text("The Dock, menu bar and hot corners don’t pop up, and the pointer doesn’t slip onto another screen")

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Kleed je huisdiertje aan
+
+<sub>1.35.0 · 12 oktober 2026</sub>
+
+Je huisdiertje heeft nu een kledingkast, en onder het spelen verdien je nieuwe dingen om aan te trekken.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Huisdiertje en kies wat je huisdiertje draagt: hoeden, brillen, sjaals, shirts, schoenen, capes en zelfs vleugels. Het trekt het meteen aan. Een paar dingen zijn gratis, de rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een onderscheiding verdient, vertelt je huisdiertje het je.
+
+Kant-en-klare outfits kleden je huisdiertje met één klik van top tot teen aan: tovenaar, piraat, astronaut, superheld, koning en meer. Een outfit is klaar zodra je alle onderdelen hebt verdiend.
+
+Alleen simpele aantallen worden bewaard, zoals stappen, worpen en dagen samen. Ze blijven op je Mac, er wordt niets ergens naartoe verstuurd en je kunt ze altijd wissen in Instellingen › Huisdiertje.
+
+---
+
+## <a id="v1.34.0"></a>Muis en trackpad in games
+
+<sub>1.34.0 · 12 oktober 2026</sub>
+
+Vegen, knijpen en actieve hoeken halen je niet meer uit je game, net als toetscombinaties.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+In Instellingen › Spellen › Meer spelinstellingen staat een groep ‘Muis en trackpad’. Daarin staat alleen wat in macOS op je Mac is ingeschakeld, met de namen van Apple en een kleine tekening bij elk onderdeel: toetscombinaties op een muisknop, vegen tussen bureaubladen en apps in volledig scherm, Mission Control en App Exposé, knijpen voor apps en spreiden voor het bureaublad, vegen vanaf de rechterrand voor het Berichtencentrum en elke actieve hoek met de actie die erbij hoort. Zolang een game vooraan staat, zijn ze gepauzeerd, zodat een onbedoelde veeg of een aanraking van een hoek van het scherm je niet uit de game haalt. Gebaren in de game blijven gewoon werken. Elk onderdeel kan zo worden ingesteld dat het werkt zoals gewoonlijk.
+
+---
+
 ## <a id="v1.33.2"></a>Sneltoetsgroepen openen meteen
 
 <sub>1.33.2 · 11 oktober 2026</sub>

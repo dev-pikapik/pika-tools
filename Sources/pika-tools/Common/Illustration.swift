@@ -772,20 +772,23 @@ struct ArtTrackpad: View {
     var touch = false
     var slide: CGFloat = 0
     var swipe: CGFloat = 0
+    var pinch: CGFloat = 1
     var width: CGFloat = 60
     var fingers = 2
     @Environment(\.colorScheme) private var scheme
 
     var body: some View {
         let unit = width / 60
+        let dot = (fingers > 3 ? 7 : 10) * unit, gap = (fingers > 3 ? 4 : 8) * unit
         let shape = RoundedRectangle(cornerRadius: 7 * unit, style: .continuous)
         shape
             .fill(Art.metal(scheme))
             .overlay(shape.hairline(Color.primary.opacity(0.18)))
             .overlay {
-                HStack(spacing: 8 * unit) {
-                    ForEach(0..<fingers, id: \.self) { _ in Circle().frame(width: 10 * unit, height: 10 * unit) }
+                HStack(spacing: gap) {
+                    ForEach(0..<fingers, id: \.self) { _ in Circle().frame(width: dot, height: dot) }
                 }
+                .scaleEffect(pinch)
                 .foregroundStyle(Color.accentColor)
                 .opacity(touch ? 0.9 : 0)
                 .offset(x: swipe, y: slide)

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Vesti il tuo animaletto
+
+<sub>1.35.0 · 12 ottobre 2026</sub>
+
+Il tuo animaletto ha un guardaroba, e giocando insieme ottieni nuovi capi da fargli indossare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Animaletto e scegli cosa fargli indossare: cappelli, occhiali, sciarpe, magliette, scarpe, mantelli e perfino ali. Lo indossa subito. Alcuni capi sono gratis, gli altri sono premi che arrivano mentre giocate insieme: prendi in mano l’animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ne ottieni uno, te lo dice lui.
+
+I look già pronti lo vestono da capo a piedi con un clic: mago, pirata, astronauta, supereroe, re e altri. Un look è pronto quando hai ottenuto tutti i suoi pezzi.
+
+Vengono conservati solo numeri semplici, come passi, lanci e giorni insieme. Restano sul tuo Mac, non viene inviato nulla da nessuna parte e puoi cancellarli quando vuoi in Impostazioni › Animaletto.
+
+---
+
+## <a id="v1.34.0"></a>Mouse e trackpad nei giochi
+
+<sub>1.34.0 · 12 ottobre 2026</sub>
+
+Scorrimenti, pizzichi e angoli attivi non ti portano più fuori dal gioco, proprio come le scorciatoie da tastiera.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Giochi › Altre impostazioni di gioco c’è un gruppo chiamato «Mouse e trackpad». Mostra solo ciò che è attivo in macOS sul tuo Mac, con i nomi di Apple e un piccolo disegno per ciascuno: scorciatoie su un pulsante del mouse, scorrimento tra scrivanie e app a schermo intero, Mission Control e App Exposé, pizzico per le app e allargamento delle dita per la scrivania, scorrimento dal bordo destro per il Centro notifiche e ogni angolo attivo con la sua azione. Finché un gioco è in primo piano, sono sospesi, così uno scorrimento involontario o uno sfioramento di un angolo dello schermo non ti porta fuori dal gioco. I gesti all’interno del gioco continuano a funzionare. Ognuno si può impostare per funzionare come al solito.
+
+---
+
 ## <a id="v1.33.2"></a>I gruppi di comandi si aprono all’istante
 
 <sub>1.33.2 · 11 ottobre 2026</sub>

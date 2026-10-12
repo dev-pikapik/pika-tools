@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Oblékněte svého mazlíčka
+
+<sub>1.35.0 · 12. října 2026</sub>
+
+Mazlíček má šatník a při společné hře získáváte nové oblečení.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Mazlíček a vyberte, co bude mazlíček nosit: klobouky, brýle, šály, trička, boty, pláště a dokonce křídla. Hned si to oblékne. Pár kousků je zdarma, zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte ocenění, mazlíček vám to řekne.
+
+Hotové kostýmy ho jedním kliknutím oblečou od hlavy až k patě: čaroděj, pirát, astronaut, superhrdina, král a další. Kostým je připravený, jakmile získáte všechny jeho součásti.
+
+Ukládají se jen jednoduchá čísla, například kroky, hody a společné dny. Zůstávají ve vašem Macu, nic se nikam neposílá a smazat je můžete kdykoli v Nastavení › Mazlíček.
+
+---
+
+## <a id="v1.34.0"></a>Myš a trackpad ve hrách
+
+<sub>1.34.0 · 12. října 2026</sub>
+
+Přejetí, sevření prstů a aktivní rohy vás už z hry nevyvedou, stejně jako klávesové zkratky.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+V Nastavení › Hry › Další nastavení hry je skupina „Myš a trackpad“. Zobrazuje jen to, co je v macOS na vašem Macu zapnuté, s názvy od Applu a malým obrázkem u každé položky: zkratky na tlačítku myši, přejetí mezi plochami a aplikacemi na celou obrazovku, Mission Control a App Exposé, sevření prstů pro aplikace a rozevření pro plochu, přejetí od pravého okraje pro Oznamovací centrum a každý aktivní roh s jeho akcí. Dokud je hra v popředí, jsou pozastavené, takže nechtěné přejetí nebo dotek rohu obrazovky vás z hry nevyvede. Gesta uvnitř hry fungují dál. Každou položku lze nastavit tak, aby fungovala jako obvykle.
+
+---
+
 ## <a id="v1.33.2"></a>Skupiny zkratek se otevírají okamžitě
 
 <sub>1.33.2 · 11. října 2026</sub>

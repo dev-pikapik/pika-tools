@@ -85,6 +85,12 @@ The pet lives in a borderless window one level above the desktop icons, so every
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetPhysics.swift Sources/pika-tools/Tools/Pet/BallPhysics.swift scripts/test-pet.swift -o build/test-pet && build/test-pet
 ```
 
+Awards and wardrobe unlocks live in `PetProgress`. `PetPhysics` reports what the pet does (jumps, leaps over the pointer, climbs, tumbles, hard throws) and `PetStage` adds it up while no demo runs, together with steps, kicks, phrases and the days, nights and weekends you spend together. Everything stays on the Mac in five keys, `pet-counts`, `pet-awards`, `pet-seen`, `pet-fresh` and `pet-outfit`; they are not part of the settings file, so Restore Defaults leaves them alone. The rules run without the app too:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetWardrobe.swift Sources/pika-tools/Tools/Pet/PetAwards.swift scripts/test-awards.swift -o build/test-awards && build/test-awards
+```
+
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
 
 ```bash
