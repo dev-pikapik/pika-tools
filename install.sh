@@ -10,9 +10,11 @@ OLD="/Applications/pika-tools.app"
 
 say() { printf '\033[1m→ %s\033[0m\n' "$1"; }
 fail() { printf '\033[31m✗ %s\033[0m\n' "$1" >&2; exit 1; }
+ours() { [ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$1/Contents/Info.plist" 2>/dev/null)" = "com.pesotchi.pika-tools" ]; }
 
 [ "$(uname)" = "Darwin" ] || fail "pikapik runs only on macOS."
 [ "$(sw_vers -productVersion | cut -d. -f1)" -ge 14 ] || fail "pikapik needs macOS 14 Sonoma or later."
+[ ! -e "$DEST" ] || ours "$DEST" || fail "pikapik from the App Store is already on this Mac ($DEST). To install the GitHub version, move it to the Trash first, then run this command again."
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -61,7 +63,9 @@ fi
 say "Copying to /Applications"
 SUDO=""
 [ -w /Applications ] || SUDO="sudo"
-$SUDO rm -rf "$DEST" "$OLD"
+for app in "$DEST" "$OLD"; do
+    if ours "$app"; then $SUDO rm -rf "$app"; fi
+done
 $SUDO ditto "$NEW_APP" "$DEST"
 $SUDO xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
 
