@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mouse e trackpad nos jogos
 
-<sub>1.34.0 · 11 de outubro de 2026</sub>
+<sub>1.34.0 · 12 de outubro de 2026</sub>
 
 Gestos de deslizar, pinça e cantos ativos não tiram mais você do jogo, assim como os atalhos de teclado.
 

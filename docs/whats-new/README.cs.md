@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Myš a trackpad ve hrách
 
-<sub>1.34.0 · 11. října 2026</sub>
+<sub>1.34.0 · 12. října 2026</sub>
 
 Přejetí, sevření prstů a aktivní rohy vás už z hry nevyvedou, stejně jako klávesové zkratky.
 

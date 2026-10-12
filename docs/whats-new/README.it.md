@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mouse e trackpad nei giochi
 
-<sub>1.34.0 · 11 ottobre 2026</sub>
+<sub>1.34.0 · 12 ottobre 2026</sub>
 
 Scorrimenti, pizzichi e angoli attivi non ti portano più fuori dal gioco, proprio come le scorciatoie da tastiera.
 

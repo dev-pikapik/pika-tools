@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mysz i gładzik w grach
 
-<sub>1.34.0 · 11 października 2026</sub>
+<sub>1.34.0 · 12 października 2026</sub>
 
 Przesunięcia, szczypnięcia i aktywne rogi nie wyrzucają już z gry, tak jak skróty klawiszowe.
 

@@ -7,7 +7,7 @@
 
 ## <a id="v1.34.0"></a>Mouse și trackpad în jocuri
 
-<sub>1.34.0 · 11 octombrie 2026</sub>
+<sub>1.34.0 · 12 octombrie 2026</sub>
 
 Glisările, ciupirile și colțurile active nu te mai scot din joc, la fel ca scurtăturile de tastatură.
 
