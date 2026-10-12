@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Jendela arsip baru, dan kata sandi diketik dua kali
+
+<sub>1.39.0 · 13 Oktober 2026</sub>
+
+Saat Anda melindungi arsip baru dengan kata sandi, kini Anda mengetiknya dua kali, agar salah ketik tidak membuat Anda terkunci dari file sendiri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Di bawah kolom muncul baris hijau saat kedua kata sandi cocok, atau baris merah saat tidak, dan “Buat” menunggu sampai keduanya sama.
+
+Semua jendela arsip tampil baru: ikon besar, satu sakelar untuk kata sandi, dan satu baris pendek yang memberi tahu apakah nama file tetap terlihat, seperti di ZIP, atau ikut disembunyikan, seperti di 7Z. Di macOS 26, tombolnya terbuat dari Liquid Glass.
+
+Memasang juga jadi lebih mudah: perintah di bagian atas halaman pikapik di GitHub tidak butuh apa pun lagi di Mac Anda. Perintah ini memasang pikapik hanya jika unduhannya ditandatangani pengembangnya dan lolos pemeriksaan malware Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Pembaruan lebih aman di samping versi App Store
 
 <sub>1.38.2 · 12 Oktober 2026</sub>

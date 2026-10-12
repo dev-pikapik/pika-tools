@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nya arkivfönster, och lösenordet skrivs två gånger
+
+<sub>1.39.0 · 13 oktober 2026</sub>
+
+När du skyddar ett nytt arkiv med lösenord skriver du det nu två gånger, så att ett stavfel inte låser ute dig från dina egna filer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Under fälten visas en grön rad när lösenorden stämmer överens, eller en röd när de inte gör det, och ”Skapa” väntar tills de är lika.
+
+Alla arkivfönster har fått ett nytt utseende: en stor symbol, ett enda reglage för lösenordet och en kort rad som berättar om filnamnen förblir synliga, som i ZIP, eller också döljs, som i 7Z. I macOS 26 är knapparna gjorda av Liquid Glass.
+
+Installationen är också enklare: kommandot överst på pikapiks sida på GitHub behöver inget annat på din Mac. Det installerar pikapik bara om nedladdningen är signerad av utvecklaren och har klarat Apples kontroll av skadlig kod.
+
+---
+
 ## <a id="v1.38.2"></a>Säkrare uppdateringar bredvid versionen från App Store
 
 <sub>1.38.2 · 12 oktober 2026</sub>

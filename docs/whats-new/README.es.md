@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nuevas ventanas de archivos comprimidos y la contraseña dos veces
+
+<sub>1.39.0 · 13 de octubre de 2026</sub>
+
+Cuando pones contraseña a un nuevo archivo comprimido, ahora la escribes dos veces, para que una errata no te deje sin acceso a tus propios archivos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Debajo de los campos aparece una línea verde cuando las contraseñas coinciden, o roja cuando no, y «Crear» espera hasta que coincidan.
+
+Todas las ventanas de archivos comprimidos tienen un aspecto nuevo: un icono grande, un solo interruptor para la contraseña y una línea breve que te dice si los nombres de los archivos quedan a la vista, como en ZIP, o también se ocultan, como en 7Z. En macOS 26 los botones son de Liquid Glass.
+
+Instalar también es más fácil: el comando al principio de la página de pikapik en GitHub no necesita nada más en tu Mac. Instala pikapik solo si la descarga está firmada por su desarrollador y ha pasado la revisión de malware de Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Actualizaciones más seguras junto a la versión de la App Store
 
 <sub>1.38.2 · 12 de octubre de 2026</sub>

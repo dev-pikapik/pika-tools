@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Ferestre noi pentru arhive și parola scrisă de două ori
+
+<sub>1.39.0 · 13 octombrie 2026</sub>
+
+Când pui o parolă pe o arhivă nouă, acum o scrii de două ori, ca o greșeală de tastare să nu te lase fără acces la propriile fișiere.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Sub câmpuri apare un rând verde când parolele se potrivesc sau unul roșu când nu, iar „Creează” așteaptă până când sunt la fel.
+
+Toate ferestrele pentru arhive arată nou: o pictogramă mare, un singur comutator pentru parolă și un rând scurt care îți spune dacă numele fișierelor rămân vizibile, ca la ZIP, sau sunt ascunse și ele, ca la 7Z. Pe macOS 26 butoanele sunt din Liquid Glass.
+
+Și instalarea e mai simplă: comanda din capul paginii pikapik de pe GitHub nu are nevoie de nimic altceva pe Mac-ul tău. Instalează pikapik doar dacă descărcarea e semnată de dezvoltator și a trecut verificarea Apple pentru programe rău intenționate.
+
+---
+
 ## <a id="v1.38.2"></a>Actualizări mai sigure alături de versiunea din App Store
 
 <sub>1.38.2 · 12 octombrie 2026</sub>

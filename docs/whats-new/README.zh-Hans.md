@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>全新的压缩文件窗口，密码需输入两次
+
+<sub>1.39.0 · 2026年10月13日</sub>
+
+给新的压缩文件设置密码时，现在需要输入两次，免得一个笔误让你打不开自己的文件。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+两次密码一致时，输入框下方会出现一行绿字，不一致时则是红字；在一致之前，“创建”无法点按。
+
+所有压缩文件窗口都焕然一新：大图标、一个用于密码的开关，以及一行简短提示，告诉你文件名是像 ZIP 那样仍然可见，还是像 7Z 那样一并隐藏。在 macOS 26 上，按钮采用 Liquid Glass 材质。
+
+安装也更简单了：GitHub 上 pikapik 页面开头的命令不需要你的 Mac 再装任何东西。只有当下载的文件带有开发者签名并通过了 Apple 的恶意软件检查时，它才会安装 pikapik。
+
+---
+
 ## <a id="v1.38.2"></a>与 App Store 版本并存时，更新更安全
 
 <sub>1.38.2 · 2026年10月12日</sub>

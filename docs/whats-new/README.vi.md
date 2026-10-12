@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Cửa sổ lưu trữ mới, và mật khẩu nhập hai lần
+
+<sub>1.39.0 · 13 tháng 10 năm 2026</sub>
+
+Khi đặt mật khẩu cho tệp lưu trữ mới, giờ bạn nhập nó hai lần, để một lỗi gõ phím không khiến bạn không mở được chính tệp của mình.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Dưới các ô nhập sẽ hiện một dòng màu xanh lá khi hai mật khẩu khớp nhau, hoặc màu đỏ khi không khớp, và “Tạo” sẽ chờ đến khi chúng giống nhau.
+
+Mọi cửa sổ lưu trữ đều có diện mạo mới: biểu tượng lớn, một công tắc duy nhất cho mật khẩu và một dòng ngắn cho bạn biết tên tệp vẫn hiển thị như với ZIP, hay cũng được ẩn đi như với 7Z. Trên macOS 26, các nút được làm bằng Liquid Glass.
+
+Cài đặt cũng đơn giản hơn: lệnh ở đầu trang pikapik trên GitHub không cần thêm gì trên máy Mac của bạn. Lệnh này chỉ cài pikapik nếu tệp tải về có chữ ký của nhà phát triển và đã qua bước kiểm tra phần mềm độc hại của Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Cập nhật an toàn hơn bên cạnh phiên bản App Store
 
 <sub>1.38.2 · 12 tháng 10 năm 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nuove finestre per gli archivi e la password scritta due volte
+
+<sub>1.39.0 · 13 ottobre 2026</sub>
+
+Quando proteggi un nuovo archivio con una password, ora la scrivi due volte, così un errore di battitura non ti chiude fuori dai tuoi stessi file.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Sotto i campi compare una riga verde quando le password coincidono, o rossa quando non coincidono, e «Crea» aspetta finché non sono uguali.
+
+Tutte le finestre degli archivi hanno un aspetto nuovo: un’icona grande, un solo interruttore per la password e una breve riga che ti dice se i nomi dei file restano visibili, come nello ZIP, o vengono nascosti anche loro, come nel 7Z. Su macOS 26 i pulsanti sono in Liquid Glass.
+
+Anche l’installazione è più semplice: il comando in cima alla pagina di pikapik su GitHub non richiede nient’altro sul tuo Mac. Installa pikapik solo se il download è firmato dallo sviluppatore e ha superato il controllo antimalware di Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Aggiornamenti più sicuri accanto alla versione dell’App Store
 
 <sub>1.38.2 · 12 ottobre 2026</sub>
