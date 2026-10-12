@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Mặc đồ cho thú cưng
+
+<sub>1.35.0 · 12 tháng 10 năm 2026</sub>
+
+Thú cưng của bạn giờ có tủ quần áo, và bạn nhận thêm đồ để mặc khi cùng chơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Thú cưng và chọn thú cưng sẽ mặc gì: mũ, kính, khăn, áo sơ mi, giày, áo choàng và cả đôi cánh. Nó mặc ngay lập tức. Vài món miễn phí, còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận được giải thưởng, thú cưng sẽ báo cho bạn.
+
+Các trang phục làm sẵn mặc cho thú cưng từ đầu đến chân chỉ với một cú bấm: phù thủy, cướp biển, phi hành gia, siêu anh hùng, nhà vua và nhiều trang phục khác. Mỗi trang phục sẵn sàng khi bạn đã nhận đủ mọi món của nó.
+
+Chỉ những con số đơn giản được lưu, như số bước, số lần tung và số ngày bên nhau. Chúng nằm lại trên máy Mac của bạn, không có gì được gửi đi đâu, và bạn có thể xóa chúng bất cứ lúc nào trong Cài đặt › Thú cưng.
+
+---
+
 ## <a id="v1.34.0"></a>Chuột và bàn di chuột trong trò chơi
 
 <sub>1.34.0 · 12 tháng 10 năm 2026</sub>

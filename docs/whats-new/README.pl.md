@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Ubierz swojego zwierzaka
+
+<sub>1.35.0 · 12 października 2026</sub>
+
+Zwierzak ma już garderobę, a nowe rzeczy zdobywasz, kiedy bawicie się razem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Zwierzak i wybierz, co ma nosić zwierzak: kapelusze, okulary, szaliki, koszulki, buty, peleryny, a nawet skrzydła. Ubiera to od razu. Kilka rzeczy jest za darmo, a reszta to nagrody, które przychodzą podczas wspólnej zabawy: podnieś zwierzaka i rzuć nim, pokop piłkę, patrz, jak wspina się na okna i gada, albo po prostu dotrzymuj mu towarzystwa dzień po dniu. Kiedy zdobędziesz nagrodę, zwierzak ci o tym powie.
+
+Gotowe przebrania ubierają zwierzaka od stóp do głów jednym kliknięciem: czarodziej, pirat, astronauta, superbohater, król i inne. Przebranie jest gotowe, gdy zdobędziesz wszystkie jego części.
+
+Zapisywane są tylko proste liczby, jak kroki, rzuty i wspólne dni. Zostają na twoim Macu, nic nie jest nigdzie wysyłane, a wymazać je możesz w każdej chwili w Ustawieniach › Zwierzak.
+
+---
+
 ## <a id="v1.34.0"></a>Mysz i gładzik w grach
 
 <sub>1.34.0 · 12 października 2026</sub>

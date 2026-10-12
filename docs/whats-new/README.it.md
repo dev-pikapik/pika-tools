@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Vesti il tuo animaletto
+
+<sub>1.35.0 · 12 ottobre 2026</sub>
+
+Il tuo animaletto ha un guardaroba, e giocando insieme ottieni nuovi capi da fargli indossare.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Animaletto e scegli cosa fargli indossare: cappelli, occhiali, sciarpe, magliette, scarpe, mantelli e perfino ali. Lo indossa subito. Alcuni capi sono gratis, gli altri sono premi che arrivano mentre giocate insieme: prendi in mano l’animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ne ottieni uno, te lo dice lui.
+
+I look già pronti lo vestono da capo a piedi con un clic: mago, pirata, astronauta, supereroe, re e altri. Un look è pronto quando hai ottenuto tutti i suoi pezzi.
+
+Vengono conservati solo numeri semplici, come passi, lanci e giorni insieme. Restano sul tuo Mac, non viene inviato nulla da nessuna parte e puoi cancellarli quando vuoi in Impostazioni › Animaletto.
+
+---
+
 ## <a id="v1.34.0"></a>Mouse e trackpad nei giochi
 
 <sub>1.34.0 · 12 ottobre 2026</sub>
