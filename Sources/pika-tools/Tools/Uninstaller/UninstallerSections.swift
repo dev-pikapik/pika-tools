@@ -63,7 +63,7 @@ struct SizeColumn: View {
 
 struct RowChevron: View {
     var body: some View {
-        Image(systemName: "chevron.right")
+        Image(systemName: "chevron.forward")
             .font(.caption.weight(.semibold))
             .foregroundStyle(.tertiary)
             .accessibilityHidden(true)
