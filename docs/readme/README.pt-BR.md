@@ -186,7 +186,11 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br><b>Remover apps</b>
 <br>Remova um app e seus arquivos. Dá para devolver tudo.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Mostrar FPS</b>
+<br>Um pequeno contador mostra a fluidez do seu jogo, no canto que você escolher.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automático pausa ações que abrem janelas ou mudam o foco. Um atalho de idioma
 Em Ajustes → Jogos → Mais ajustes do jogo há um grupo chamado “Mouse e trackpad”. Ele mostra só o que está ativado no macOS no seu Mac, com os nomes da Apple e um pequeno desenho para cada item: atalhos em um botão do mouse, deslizar entre mesas e apps em tela inteira, Mission Control e App Exposé, pinça para apps e afastar os dedos para a mesa, deslizar a partir da borda direita para a Central de Notificações e cada canto ativo com a ação que ele executa. Enquanto um jogo está em primeiro plano, eles ficam pausados, então um deslize acidental ou um toque no canto da tela não tira você do jogo. Os gestos dentro do jogo continuam funcionando. Cada item pode ser configurado para funcionar como de costume.
 
 Abra Ajustes → Jogos → Adicionar um jogo e clique no jogo em execução. Jogos que usam Java e outros ambientes também aparecem, mesmo sem arquivo .app. Minecraft aparece como Minecraft em vez de java. Encontre o processo do jogo e arraste a linha para Seus jogos em Ajustes → Jogos.
+
+**Mostrar FPS.** FPS significa quadros por segundo: quantas imagens o jogo desenha a cada segundo. Ative **Mostrar FPS** na página Jogos e, enquanto o Modo Jogo estiver ligado, uma pequena etiqueta escura com esse número aparece em um canto de qualquer jogo. Clique em um canto da imagem acima da chave para escolhê-lo. Um traço significa que os primeiros quadros ainda não chegaram, e um 0 esmaecido, que o jogo parou de desenhar. No macOS 27, o próprio macOS conta a maioria dos jogos, sem permissão. Um jogo que o macOS não consegue contar, em geral um mais antigo, é contado pela gravação de tela: a linha **Gravação de Tela** aparece então nos Ajustes, o pikapik nunca a pede durante uma partida e o número não pode passar da taxa de atualização da tela. No macOS 14 a 26 e na versão da Mac App Store todos os jogos são contados assim, por isso ligar **Mostrar FPS** pede **Gravação de Tela**. Nenhuma imagem é guardada nem enviada. Desligado por padrão.
 
 **Guarda-roupa e prêmios do bichinho.** Abra Ajustes › Bichinho para vestir o seu bichinho: mais de 30 peças, de chapéus e óculos a capas e asas, e looks prontos como mago, pirata ou astronauta. Algumas peças são grátis desde o começo. O resto são prêmios que chegam enquanto vocês brincam juntos: pegue o bichinho e jogue para o alto, chute a bola, veja ele subir nas janelas e conversar, ou simplesmente faça companhia a ele dia após dia. Quando você ganhar um prêmio novo, o bichinho avisa.
 

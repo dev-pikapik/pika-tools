@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Se hur smidigt ditt spel går
+
+<sub>1.37.0 · 12 oktober 2026</sub>
+
+Nya Visa FPS lägger en liten räknare i ett hörn av spelet, så att du ser hur smidigt det går.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Spel och slå på ”Visa FPS”. Så länge Spelläge är på visas en liten mörk etikett med ett tal i ett hörn av alla spel. FPS betyder bilder per sekund: hur många bilder spelet ritar varje sekund, och ju högre tal, desto smidigare går spelet. Välj hörn genom att klicka på det i bilden ovanför reglaget.
+
+Klick går rakt igenom etiketten, som följer spelfönstret. Ett streck betyder att de första bilderna inte har kommit ännu, och en blek 0 att spelet har slutat rita. ”Visa FPS” är av tills du slår på det.
+
+På macOS 27 räknar macOS själv de flesta spel, så ingen behörighet behövs. Några spel, mest äldre, går bara att räkna via skärminspelning, och då kan siffran inte bli högre än skärmens uppdateringsfrekvens. På macOS 14–26 och i versionen från Mac App Store räknas alla spel så, och därför ber pikapik om ”Skärminspelning” när du slår på ”Visa FPS”. Ingen bild sparas eller skickas.
+
+---
+
 ## <a id="v1.36.0"></a>Ta bort appar utan oro
 
 <sub>1.36.0 · 12 oktober 2026</sub>

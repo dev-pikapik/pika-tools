@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Zobacz, jak płynnie działa twoja gra
+
+<sub>1.37.0 · 12 października 2026</sub>
+
+Nowe „Pokaż FPS” umieszcza w rogu gry mały licznik, dzięki czemu od razu widzisz, jak płynnie ona działa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Gry i włącz „Pokaż FPS”. Gdy Tryb gry jest włączony, w rogu każdej gry pojawia się mała ciemna plakietka z liczbą. FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy, a im większa liczba, tym płynniejsza gra. Aby wybrać róg, kliknij go na obrazku nad przełącznikiem.
+
+Kliknięcia przechodzą przez plakietkę, a ona podąża za oknem gry. Kreska oznacza, że pierwsze klatki jeszcze nie dotarły, a przygaszone 0 — że gra przestała rysować. Opcja „Pokaż FPS” jest wyłączona, dopóki jej nie włączysz.
+
+W macOS 27 większość gier liczy sam macOS, więc nie potrzeba żadnego uprawnienia. Niektóre gry, głównie starsze, można policzyć tylko przez nagrywanie ekranu, a wtedy liczba nie może być wyższa niż częstotliwość odświeżania ekranu. W macOS 14–26 i w wersji z Mac App Store każda gra jest liczona w ten sposób, dlatego po włączeniu „Pokaż FPS” pikapik prosi o uprawnienie „Nagrywanie ekranu”. Żaden obraz nie jest zapisywany ani wysyłany.
+
+---
+
 ## <a id="v1.36.0"></a>Usuwaj aplikacje bez obaw
 
 <sub>1.36.0 · 12 października 2026</sub>

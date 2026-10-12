@@ -186,7 +186,11 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br><b>Eliminare aplicații</b>
 <br>Elimină o aplicație și fișierele ei. Poți pune totul la loc.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Afișează FPS</b>
+<br>Un mic contor arată cât de fluid rulează jocul, în colțul pe care îl alegi.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automat oprește acțiunile care deschid ferestre sau mută focalizarea. O scurt
 În Configurări → Jocuri → Mai multe configurări de joc există grupul „Mouse și trackpad”. Arată doar ce este activat în macOS pe Mac-ul tău, cu numele date de Apple și un desen mic pentru fiecare: scurtături pe un buton al mouse-ului, glisarea între desktopuri și aplicații pe tot ecranul, Mission Control și App Exposé, ciupirea pentru aplicații și îndepărtarea degetelor pentru desktop, glisarea de la marginea dreaptă pentru Centrul de notificări și fiecare colț activ cu acțiunea lui. Cât timp un joc este în prim-plan, acestea sunt oprite, așa că o glisare accidentală sau o atingere a unui colț al ecranului nu te scoate din joc. Gesturile din interiorul jocului continuă să funcționeze. Fiecare poate fi setat să funcționeze ca de obicei.
 
 Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. Apar și jocurile care folosesc Java sau alte medii, chiar fără un fișier .app. Minecraft apare ca Minecraft, nu java. Găsește procesul jocului și trage rândul pe Jocurile tale în Configurări → Jocuri.
+
+**Afișează FPS.** FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă. Activează **Afișează FPS** pe pagina Jocuri și, cât timp Modul Joc este pornit, o mică etichetă închisă la culoare, cu acest număr, apare într-un colț al oricărui joc. Apasă pe un colț în imaginea de deasupra comutatorului ca să-l alegi. O liniuță înseamnă că primele cadre nu au ajuns încă, iar un 0 estompat înseamnă că jocul a încetat să deseneze. Pe macOS 27, cele mai multe jocuri sunt numărate chiar de macOS, fără nicio permisiune. Un joc pe care macOS nu-l poate număra, de obicei unul mai vechi, este numărat prin înregistrarea ecranului: atunci apare în Configurări rândul **Înregistrare ecran**, pikapik nu cere niciodată permisiunea în timpul unui joc, iar numărul nu poate depăși rata de reîmprospătare a ecranului. Pe macOS 14–26 și în versiunea din Mac App Store toate jocurile sunt numărate astfel, de aceea pornirea **Afișează FPS** cere **Înregistrare ecran**. Nicio imagine nu este păstrată sau trimisă. Oprit implicit.
 
 **Garderoba și premiile animăluțului.** Deschide Configurări › Animăluț ca să-ți îmbraci animăluțul: peste 30 de piese, de la pălării și ochelari până la pelerine și aripi, plus ținute gata făcute, cum ar fi vrăjitor, pirat sau astronaut. Câteva piese sunt gratuite de la început. Restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu nou, animăluțul îți spune.
 

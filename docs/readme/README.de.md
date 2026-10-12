@@ -186,7 +186,11 @@ Homebrew und das Skript legen die App in `/Applications` ab, starten sie, fragen
 <br><b>Apps entfernen</b>
 <br>App samt Dateien entfernen. Alles lässt sich zurücklegen.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>FPS anzeigen</b>
+<br>Ein kleiner Zähler zeigt in der Ecke deiner Wahl, wie flüssig dein Spiel läuft.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatisch pausiert Aktionen, die Fenster öffnen oder den Fokus wechseln. Ein 
 Unter Einstellungen → Spiele → Weitere Spieleinstellungen gibt es die Gruppe „Maus und Trackpad“. Sie zeigt nur, was in macOS auf deinem Mac eingeschaltet ist, mit den Namen von Apple und einer kleinen Zeichnung zu jedem Eintrag: Kurzbefehle auf einer Maustaste, Wischen zwischen Schreibtischen und Apps im Vollbildmodus, Mission Control und App Exposé, Zusammenziehen der Finger für Apps und Spreizen für den Schreibtisch, das Wischen vom rechten Rand für die Mitteilungszentrale und jede aktive Ecke mit ihrer Aktion. Solange ein Spiel vorn ist, sind sie pausiert. Eine versehentliche Wischgeste oder ein Streifen über eine Bildschirmecke holt dich dann nicht aus dem Spiel. Gesten innerhalb des Spiels funktionieren weiter. Jeder Eintrag lässt sich auf normales Verhalten stellen.
 
 Öffne Einstellungen → Spiele → Spiel hinzufügen und klicke auf dein laufendes Spiel. Auch Spiele über Java und andere Laufzeitumgebungen erscheinen hier, selbst ohne .app. Minecraft heißt Minecraft statt java. Suche den Spielprozess und ziehe seine Zeile auf Deine Spiele unter Einstellungen → Spiele.
+
+**FPS anzeigen.** FPS heißt Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet. Schalte **FPS anzeigen** auf der Seite „Spiele“ ein, und solange der Spielmodus an ist, sitzt in einer Ecke jedes Spiels eine kleine dunkle Anzeige mit dieser Zahl. Die Ecke wählst du per Klick auf das Bild über dem Schalter. Ein Strich bedeutet, dass die ersten Bilder noch nicht da sind, eine blasse 0, dass das Spiel nichts mehr zeichnet. Unter macOS 27 zählt macOS die meisten Spiele selbst, ganz ohne Erlaubnis. Ein Spiel, das macOS nicht zählen kann, meist ein älteres, zählt pikapik über die Bildschirmaufnahme: Dann erscheint in den Einstellungen die Zeile **Bildschirmaufnahme**, pikapik fragt nie mitten im Spiel danach, und die Zahl kann nicht höher sein als die Bildwiederholrate des Bildschirms. Unter macOS 14 bis 26 und in der Version aus dem Mac App Store wird jedes Spiel so gezählt, deshalb fragt pikapik beim Einschalten von **FPS anzeigen** nach der **Bildschirmaufnahme**. Es wird kein Bild gespeichert oder gesendet. Standardmäßig aus.
 
 **Kleiderschrank und Auszeichnungen fürs Haustier.** Öffne Einstellungen › Haustier, um dein Haustier anzuziehen: mehr als 30 Teile, von Hüten und Brillen bis zu Umhängen und Flügeln, dazu fertige Outfits wie Zauberer, Pirat oder Astronaut. Ein paar Teile sind von Anfang an frei. Die übrigen sind Auszeichnungen, die ihr beim gemeinsamen Spielen sammelt: Heb dein Haustier hoch und wirf es, kick den Ball herum, sieh zu, wie es auf Fenster klettert und plaudert, oder leiste ihm einfach Tag für Tag Gesellschaft. Wenn du eine neue Auszeichnung verdient hast, sagt dir dein Haustier Bescheid.
 

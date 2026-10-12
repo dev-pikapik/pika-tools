@@ -186,7 +186,11 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <br><b>Uygulamaları Kaldır</b>
 <br>Uygulamayı dosyalarıyla kaldırın. Hepsi geri konabilir.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>FPS’yi göster</b>
+<br>Küçük bir sayaç, seçtiğiniz köşede oyunun ne kadar akıcı çalıştığını gösterir.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Otomatik, pencere açan veya odağı değiştiren eylemleri duraklatır. Hızlı
 Ayarlar → Oyunlar → Diğer oyun ayarları altında “Fare ve izleme dörtgeni” adlı bir grup var. Yalnızca Mac’inizde macOS’ta açık olanları, Apple’ın kendi adlarıyla ve her biri için küçük bir çizimle gösterir: fare düğmesindeki kısayollar, masaüstleri ve tam ekran uygulamalar arasında kaydırma, Mission Control ve App Exposé, uygulamalar için kıstırma ve masaüstü için parmakları açma, Bildirim Merkezi için sağ kenardan kaydırma ve her etkin köşe ile yaptığı eylem. Bir oyun öndeyken bunlar duraklatılır; böylece yanlışlıkla yapılan bir kaydırma ya da ekran köşesine değen imleç sizi oyundan çıkaramaz. Oyunun içindeki hareketler çalışmaya devam eder. Her biri her zamanki gibi çalışacak şekilde ayarlanabilir.
 
 Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla. Java ve diğer ortamlarla çalışan oyunlar, .app dosyası olmasa da burada görünür. Minecraft, java yerine Minecraft adıyla görünür. Oyunun işlemini bul ve satırını Ayarlar → Oyunlar içindeki Oyunların alanına sürükle.
+
+**FPS’yi göster.** FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği. Oyunlar sayfasında **FPS’yi göster** seçeneğini açın; Oyun Modu açıkken herhangi bir oyunun bir köşesinde bu sayıyı gösteren küçük, koyu bir etiket görünür. Köşeyi, anahtarın üstündeki resimde tıklayarak seçersiniz. Tire, ilk karelerin henüz gelmediği anlamına gelir; soluk bir 0 ise oyunun çizmeyi bıraktığı anlamına gelir. macOS 27’de oyunların çoğunu macOS kendisi sayar, izin gerekmez. macOS’un sayamadığı bir oyun, çoğunlukla eski bir oyun, ekran kaydı üzerinden sayılır: Ayarlar’da **Ekran Kaydı** satırı belirir, pikapik oyun sırasında asla izin istemez ve sayı ekranın yenileme hızını aşamaz. macOS 14–26’da ve Mac App Store sürümünde tüm oyunlar bu şekilde sayılır; bu yüzden **FPS’yi göster** açıldığında pikapik **Ekran Kaydı** izni ister. Hiçbir görüntü saklanmaz veya gönderilmez. Varsayılan olarak kapalıdır.
 
 **Evcil dostun gardırobu ve ödüller.** Evcil dostunuzu giydirmek için Ayarlar › Evcil Dost sayfasını açın: şapkalardan gözlüklere, pelerinlerden kanatlara 30’dan fazla parça ve büyücü, korsan ya da astronot gibi hazır kombinler. Birkaç parça en baştan ücretsizdir. Gerisi birlikte oynarken gelen ödüllerdir: evcil dostunuzu tutup fırlatın, topu tekmeleyin, pencerelere tırmanışını ve konuşmasını izleyin ya da günden güne yalnızca ona eşlik edin. Yeni bir ödül kazandığınızda evcil dostunuz size söyler.
 

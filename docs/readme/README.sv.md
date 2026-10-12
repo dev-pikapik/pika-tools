@@ -186,7 +186,11 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br><b>Ta bort appar</b>
 <br>Ta bort en app med filer. Allt kan läggas tillbaka.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Visa FPS</b>
+<br>En liten räknare visar hur smidigt spelet går, i det hörn du väljer.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatiskt pausar åtgärder som öppnar fönster eller flyttar fokus. En kort 
 Under Inställningar → Spel → Fler spelinställningar finns gruppen ”Mus och styrplatta”. Den visar bara det som är aktiverat i macOS på din Mac, med Apples egna namn och en liten teckning för varje: kortkommandon på en musknapp, svep mellan skrivbord och appar i helskärm, Mission Control och App Exposé, nyp för appar och sprid fingrarna för skrivbordet, svep från högerkanten för Aviseringscenter och varje aktivt hörn med sin åtgärd. Medan ett spel är i förgrunden är de pausade, så ett oavsiktligt svep eller en snabb beröring av ett skärmhörn tar dig inte ut ur spelet. Gester inne i spelet fungerar som vanligt. Var och en kan ställas in så att den fungerar som vanligt.
 
 Öppna Inställningar → Spel → Lägg till ett spel och klicka på spelet som körs. Spel via Java och andra miljöer visas också, även utan en .app-fil. Minecraft heter Minecraft i stället för java. Hitta spelets process och dra raden till Dina spel i Inställningar → Spel.
+
+**Visa FPS.** FPS betyder bilder per sekund: hur många bilder spelet ritar varje sekund. Slå på **Visa FPS** på sidan Spel, så visas en liten mörk etikett med det talet i ett hörn av alla spel så länge Spelläge är på. Välj hörn genom att klicka på det i bilden ovanför reglaget. Ett streck betyder att de första bilderna inte har kommit ännu, och en blek 0 att spelet har slutat rita. På macOS 27 räknar macOS själv de flesta spel, utan behörighet. Ett spel som macOS inte kan räkna, oftast ett äldre, räknas via skärminspelning: då dyker raden **Skärminspelning** upp i Inställningar, pikapik ber aldrig om den under ett spel och siffran kan inte bli högre än skärmens uppdateringsfrekvens. På macOS 14–26 och i versionen från Mac App Store räknas alla spel så, så när du slår på **Visa FPS** ber pikapik om **Skärminspelning**. Ingen bild sparas eller skickas. Av som standard.
 
 **Husdjurets garderob och utmärkelser.** Öppna Inställningar › Husdjur för att klä på ditt husdjur: över 30 plagg och tillbehör, från hattar och glasögon till kappor och vingar, och färdiga outfits som trollkarl, pirat eller astronaut. Några få är gratis från start. Resten är utmärkelser som kommer medan ni leker tillsammans: lyft upp husdjuret och kasta det, sparka runt bollen, titta på när det klättrar på fönster och pratar, eller håll det helt enkelt sällskap dag efter dag. När du har fått en ny utmärkelse säger husdjuret till.
 

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Voyez la fluidité de votre jeu
+
+<sub>1.37.0 · 12 octobre 2026</sub>
+
+Le nouvel interrupteur « Afficher les FPS » place un petit compteur dans un coin de votre jeu : vous voyez tout de suite s’il est fluide.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Jeux et activez « Afficher les FPS ». Tant que le Mode Jeu est activé, une petite pastille sombre avec un nombre s’affiche dans un coin de n’importe quel jeu. Les FPS sont les images par seconde : le nombre d’images que le jeu dessine chaque seconde, et plus il est élevé, plus le jeu est fluide. Pour choisir le coin, cliquez sur l’un des coins de l’image au-dessus de l’interrupteur.
+
+Les clics traversent la pastille, qui suit la fenêtre du jeu. Un tiret signifie que les premières images ne sont pas encore arrivées, et un 0 grisé que le jeu ne dessine plus rien. « Afficher les FPS » reste désactivé tant que vous ne l’activez pas.
+
+Sous macOS 27, macOS compte lui-même la plupart des jeux, sans autorisation. Quelques jeux, surtout anciens, ne peuvent être comptés que via l’enregistrement de l’écran, et le nombre ne peut alors pas dépasser la fréquence de rafraîchissement de l’écran. Sous macOS 14 à 26 et dans la version du Mac App Store, tous les jeux sont comptés ainsi : pikapik demande donc « Enregistrement de l’écran » quand vous activez « Afficher les FPS ». Aucune image n’est conservée ni envoyée.
+
+---
+
 ## <a id="v1.36.0"></a>Supprimez vos apps sans souci
 
 <sub>1.36.0 · 12 octobre 2026</sub>

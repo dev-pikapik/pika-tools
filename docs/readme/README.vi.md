@@ -186,7 +186,11 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <br><b>Gỡ ứng dụng</b>
 <br>Gỡ ứng dụng cùng các tệp của nó. Có thể hoàn lại tất cả.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Hiện FPS</b>
+<br>Một bộ đếm nhỏ ở góc bạn chọn cho biết trò chơi chạy mượt đến đâu.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Tự động tạm dừng tác vụ mở cửa sổ hoặc chuyển tiêu điể
 Trong Cài đặt → Trò chơi → Thêm cài đặt trò chơi có nhóm “Chuột và bàn di chuột”. Nhóm này chỉ liệt kê những gì đang bật trong macOS trên Mac của bạn, với tên gọi của Apple và một hình vẽ nhỏ cho từng mục: phím tắt trên nút chuột, vuốt giữa các màn hình nền và ứng dụng toàn màn hình, Mission Control và App Exposé, chụm ngón tay cho ứng dụng và xòe ngón tay cho màn hình nền, vuốt từ cạnh phải cho Trung tâm thông báo và mỗi góc nóng cùng thao tác của nó. Khi trò chơi ở phía trước, tất cả được tạm dừng, nên một cú vuốt nhầm hay chạm vào góc màn hình sẽ không đưa bạn ra khỏi trò chơi. Các cử chỉ bên trong trò chơi vẫn hoạt động bình thường. Mỗi mục có thể đặt để hoạt động như bình thường.
 
 Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơi đang chạy. Trò chơi qua Java và các môi trường khác cũng xuất hiện, ngay cả khi không có tệp .app. Minecraft hiển thị là Minecraft thay vì java. Tìm tiến trình trò chơi rồi kéo hàng vào Trò chơi của bạn trong Cài đặt → Trò chơi.
+
+**Hiện FPS.** FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây. Bật **Hiện FPS** trên trang Trò chơi, và khi Chế độ trò chơi đang bật, một nhãn nhỏ màu tối ghi con số đó sẽ hiện ở một góc của bất kỳ trò chơi nào. Nhấp vào một góc trên hình phía trên công tắc để chọn góc đó. Dấu gạch nghĩa là những khung hình đầu tiên chưa đến, còn số 0 mờ nghĩa là trò chơi đã ngừng vẽ. Trên macOS 27, phần lớn trò chơi do chính macOS đếm, không cần quyền nào. Trò chơi mà macOS không đếm được, thường là trò cũ, sẽ được đếm qua tính năng ghi màn hình: khi đó dòng **Ghi màn hình** xuất hiện trong Cài đặt, pikapik không bao giờ xin quyền trong lúc chơi, và con số không thể cao hơn tần số làm tươi của màn hình. Trên macOS 14–26 và trong phiên bản Mac App Store, mọi trò chơi đều được đếm theo cách này, nên khi bạn bật **Hiện FPS**, pikapik sẽ xin quyền **Ghi màn hình**. Không có hình ảnh nào được lưu hay gửi đi. Mặc định tắt.
 
 **Tủ quần áo và giải thưởng của thú cưng.** Mở Cài đặt › Thú cưng để mặc đồ cho thú cưng: hơn 30 món, từ mũ và kính đến áo choàng và đôi cánh, cùng những trang phục làm sẵn như phù thủy, cướp biển hay phi hành gia. Một vài món có sẵn miễn phí. Phần còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận giải thưởng mới, thú cưng sẽ báo cho bạn.
 

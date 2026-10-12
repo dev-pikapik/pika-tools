@@ -186,7 +186,11 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <br><b>Usuwanie aplikacji</b>
 <br>Usuń aplikację z plikami. Wszystko można przywrócić.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Pokaż FPS</b>
+<br>Mały licznik w wybranym rogu pokazuje, jak płynnie działa gra.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatycznie wstrzymuje akcje otwierające okna lub przenoszące fokus. Krótki
 W ustawieniach (Ustawienia → Gry → Więcej ustawień gry) jest grupa „Mysz i gładzik”. Pokazuje tylko to, co jest włączone w macOS na twoim Macu, z nazwami od Apple i małym rysunkiem przy każdej pozycji: skróty na przycisku myszy, przesuwanie między biurkami i aplikacjami pełnoekranowymi, Mission Control i App Exposé, szczypnięcie dla aplikacji i rozsunięcie palców dla biurka, przesunięcie od prawej krawędzi dla Centrum powiadomień i każdy aktywny róg z jego działaniem. Gdy gra jest na wierzchu, wszystko to jest wstrzymane, więc przypadkowe przesunięcie palców albo muśnięcie rogu ekranu nie wyrzuci cię z gry. Gesty w samej grze nadal działają. Każdą pozycję można ustawić tak, by działała jak zwykle.
 
 Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzystające z Javy i innych środowisk też się pojawiają, nawet bez pliku .app. Minecraft ma nazwę Minecraft zamiast java. Znajdź proces gry i przeciągnij jego wiersz na Twoje gry w Ustawieniach → Gry.
+
+**Pokaż FPS.** FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Włącz **Pokaż FPS** na stronie Gry, a gdy Tryb gry jest włączony, w rogu każdej gry pojawi się mała ciemna plakietka z tą liczbą. Wybierz róg, klikając go na obrazku nad przełącznikiem. Kreska oznacza, że pierwsze klatki jeszcze nie dotarły, a przygaszone 0 — że gra przestała rysować. W macOS 27 większość gier liczy sam macOS, bez żadnego uprawnienia. Grę, której macOS nie potrafi policzyć, zwykle starszą, pikapik liczy przez nagrywanie ekranu: wtedy w Ustawieniach pojawia się wiersz **Nagrywanie ekranu**, pikapik nigdy nie prosi o uprawnienie w trakcie gry, a liczba nie może być wyższa niż częstotliwość odświeżania ekranu. W macOS 14–26 i w wersji z Mac App Store każda gra jest liczona w ten sposób, dlatego po włączeniu **Pokaż FPS** pikapik poprosi o uprawnienie **Nagrywanie ekranu**. Żaden obraz nie jest zapisywany ani wysyłany. Domyślnie wyłączone.
 
 **Garderoba i nagrody zwierzaka.** Otwórz Ustawienia › Zwierzak, żeby ubrać zwierzaka: ponad 30 rzeczy, od czapek i okularów po peleryny i skrzydła, oraz gotowe przebrania, takie jak czarodziej, pirat czy astronauta. Kilka rzeczy jest za darmo od początku. Reszta to nagrody, które przychodzą podczas wspólnej zabawy: podnieś zwierzaka i rzuć nim, pokop piłkę, patrz, jak wspina się na okna i gada, albo po prostu dotrzymuj mu towarzystwa dzień po dniu. Kiedy zdobędziesz nową nagrodę, zwierzak ci o tym powie.
 
