@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>La etiqueta de FPS sigue a tu juego sin retraso
+
+<sub>1.37.1 · 12 de octubre de 2026</sub>
+
+Mueve la ventana del juego y la etiqueta de FPS ahora se mueve con ella.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Antes, la etiqueta alcanzaba una ventana en movimiento solo una vez por segundo, más o menos, por lo que se quedaba atrás. Ahora revisa la ventana en cada fotograma de la pantalla y nunca va más de unas milésimas de segundo por detrás. Cuando la ventana está quieta, la revisa con menos frecuencia, así que apenas carga tu Mac mientras juegas. Además, ya no salta a otro sitio cuando parte de la ventana sale por el borde de la pantalla.
+
+Si un juego tranquilo como el ajedrez muestra 0, no pasa nada: esos juegos solo dibujan una imagen nueva cuando algo se mueve. El número sube mientras una pieza se desliza y vuelve a 0 cuando el tablero se queda quieto.
+
+---
+
 ## <a id="v1.37.0"></a>Mira lo fluido que va tu juego
 
 <sub>1.37.0 · 12 de octubre de 2026</sub>

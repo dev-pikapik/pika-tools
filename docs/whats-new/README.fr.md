@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>La pastille FPS suit votre jeu sans retard
+
+<sub>1.37.1 · 12 octobre 2026</sub>
+
+Déplacez la fenêtre du jeu : la pastille FPS se déplace désormais avec elle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Auparavant, la pastille ne rattrapait une fenêtre en mouvement qu’environ une fois par seconde, si bien qu’elle traînait derrière. Désormais, elle vérifie la fenêtre à chaque image de l’écran et n’a jamais plus de quelques millièmes de seconde de retard. Quand la fenêtre ne bouge pas, elle vérifie moins souvent et sollicite donc à peine votre Mac pendant que vous jouez. Et elle ne saute plus ailleurs quand une partie de la fenêtre dépasse le bord de l’écran.
+
+Si un jeu calme comme les échecs affiche 0, tout va bien : ces jeux ne dessinent une nouvelle image que lorsque quelque chose bouge. Le nombre augmente pendant qu’une pièce glisse et retombe à 0 quand l’échiquier est immobile.
+
+---
+
 ## <a id="v1.37.0"></a>Voyez la fluidité de votre jeu
 
 <sub>1.37.0 · 12 octobre 2026</sub>

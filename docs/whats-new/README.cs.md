@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Štítek FPS drží krok s vaší hrou
+
+<sub>1.37.1 · 12. října 2026</sub>
+
+Posuňte okno hry a štítek FPS se teď posune spolu s ním.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Dřív štítek doháněl pohybující se okno jen zhruba jednou za sekundu, takže se opožďoval. Teď kontroluje okno při každém snímku obrazovky a nikdy se nezpozdí o víc než pár tisícin sekundy. Když okno stojí, kontroluje ho méně často, proto váš Mac při hraní skoro nezatěžuje. A už neodskočí jinam, když část okna přesahuje okraj obrazovky.
+
+Když klidná hra jako šachy ukazuje 0, je všechno v pořádku: takové hry kreslí nový obrázek, jen když se něco pohne. Číslo roste, dokud figurka klouže, a když se na šachovnici nic nehýbe, vrátí se na 0.
+
+---
+
 ## <a id="v1.37.0"></a>Podívejte se, jak plynule hra běží
 
 <sub>1.37.0 · 12. října 2026</sub>

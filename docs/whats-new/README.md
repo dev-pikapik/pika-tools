@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>The FPS label keeps up with your game
+
+<sub>1.37.1 · October 12, 2026</sub>
+
+Move the game window, and the FPS label now moves right along with it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+The label used to catch up with a moving window only about once a second, and trailed behind it. Now it checks the window on every frame of the screen and is never more than a few thousandths of a second behind. When the window stands still, it checks less often, so it puts almost no load on your Mac while you play. It also no longer jumps away when part of the window goes past the edge of the screen.
+
+If a calm game like chess shows 0, nothing is wrong: games like that draw a new picture only when something moves. The number goes up while a piece slides and drops back to 0 when the board is still.
+
+---
+
 ## <a id="v1.37.0"></a>See how smoothly your game runs
 
 <sub>1.37.0 · October 12, 2026</sub>

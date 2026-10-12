@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>FPS etiketi oyununuzdan geri kalmıyor
+
+<sub>1.37.1 · 12 Ekim 2026</sub>
+
+Oyun penceresini taşıyın; FPS etiketi artık onunla birlikte hareket ediyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Eskiden etiket, hareket eden bir pencereye yaklaşık saniyede bir kez yetişiyor ve geride kalıyordu. Artık pencereyi ekranın her karesinde kontrol ediyor ve en fazla saniyenin birkaç binde biri kadar geride kalıyor. Pencere dururken daha seyrek kontrol ediyor, bu yüzden oyun sırasında Mac’inizi neredeyse hiç yormuyor. Ayrıca pencerenin bir kısmı ekranın kenarından taştığında artık başka bir yere atlamıyor.
+
+Satranç gibi sakin bir oyun 0 gösteriyorsa sorun yok: Bu tür oyunlar yalnızca bir şey hareket ettiğinde yeni bir resim çizer. Bir taş kayarken sayı yükselir, tahta durunca yeniden 0’a döner.
+
+---
+
 ## <a id="v1.37.0"></a>Oyununuzun akıcılığını görün
 
 <sub>1.37.0 · 12 Ekim 2026</sub>

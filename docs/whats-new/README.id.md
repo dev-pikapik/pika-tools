@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.1"></a>Label FPS kini mengikuti game Anda tanpa tertinggal
+
+<sub>1.37.1 · 12 Oktober 2026</sub>
+
+Geser jendela game, dan label FPS kini ikut bergerak bersamanya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Dulu label hanya menyusul jendela yang bergerak sekitar sekali per detik, sehingga tertinggal di belakang. Sekarang label memeriksa jendela di setiap bingkai layar dan paling lambat hanya beberapa milidetik di belakangnya. Saat jendela diam, label lebih jarang memeriksanya, jadi hampir tidak membebani Mac Anda saat bermain. Label juga tidak lagi melompat ke tempat lain saat sebagian jendela melewati tepi layar.
+
+Jika game yang tenang seperti catur menampilkan 0, itu wajar: game seperti itu hanya membuat gambar baru saat ada yang bergerak. Angkanya naik saat bidak bergeser dan kembali ke 0 saat papan diam.
+
+---
+
 ## <a id="v1.37.0"></a>Lihat seberapa mulus game berjalan
 
 <sub>1.37.0 · 12 Oktober 2026</sub>
