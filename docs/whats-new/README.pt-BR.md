@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Vista o seu bichinho
+
+<sub>1.35.0 · 12 de outubro de 2026</sub>
+
+O bichinho agora tem um guarda-roupa, e você ganha peças novas enquanto vocês brincam juntos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Bichinho e escolha o que o bichinho vai vestir: chapéus, óculos, cachecóis, camisetas, sapatos, capas e até asas. Ele coloca na hora. Algumas peças são grátis e o resto são prêmios que chegam enquanto vocês brincam juntos: pegue o bichinho e jogue para o alto, chute a bola, veja ele subir nas janelas e conversar, ou simplesmente faça companhia a ele dia após dia. Quando você ganhar um prêmio, o bichinho avisa.
+
+Looks prontos vestem o bichinho da cabeça aos pés com um clique: mago, pirata, astronauta, super-herói, rei e mais. Um look fica pronto quando você ganha todas as peças dele.
+
+Só números simples são guardados, como passos, arremessos e dias juntos. Eles ficam no seu Mac, nada é enviado para lugar nenhum e você pode apagá-los quando quiser em Ajustes › Bichinho.
+
+---
+
 ## <a id="v1.34.0"></a>Mouse e trackpad nos jogos
 
 <sub>1.34.0 · 12 de outubro de 2026</sub>

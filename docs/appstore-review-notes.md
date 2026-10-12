@@ -9,7 +9,7 @@ pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its
 - Windows: Green button enlarges the window, Quit when the last window closes, Protect quitting and closing.
 - Dock: Hide with a click in the Dock.
 - Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions), Enter opens files, Cut files, Delete removes files.
-- Extras: Game Mode, Pet (a small animated companion on the desktop), Keep Awake, Speed Test.
+- Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
 
 ## Permissions
 The app asks for two permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
@@ -24,6 +24,11 @@ To reproduce each prompt:
 
 Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere.
 
+## Pet wardrobe and awards
+Settings > Pet has a wardrobe of 38 things the pet can wear, 10 ready-made looks and 24 awards. Six things are free and the rest are unlocked by awards, which are earned only by using the pet. Nothing is sold, and tips and network access unlock nothing.
+
+The app keeps plain totals of what the user and the pet do (steps, pick-ups, high throws, jumps, leaps, climbs, tumbles, catches, kicks, ball pushes, phrases, days together, Settings pages opened, things tried on, visits to the Pet page), the date of each award and the worn outfit. They are stored only in the app's preferences under five keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit), are never sent anywhere and are not part of exported settings. The totals never record which keys were pressed or what was clicked. Erase Progress… in the Awards section of Settings > Pet deletes all five keys after a confirmation.
+
 ## Tips (in-app purchase)
 Settings > About has an optional tip jar with three consumable in-app purchases:
 - com.pesotchi.pika-tools.appstore.tip.small
@@ -35,6 +40,7 @@ Tips unlock nothing. All features work the same without them. If the products ca
 ## Privacy
 - No login, no account.
 - No data collection, no analytics, no advertising, no tracking. See the privacy manifest in the bundle.
+- Pet progress (plain totals, award dates and the worn outfit) stays in the app's preferences on this Mac, is never sent anywhere and can be erased in Settings > Pet.
 - The only network use is the Speed Test the user starts, and the App Store tip purchase.
 
 ## Not in this build

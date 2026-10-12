@@ -177,7 +177,7 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Husdjur på skrivbordet</b>
-<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den.
+<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 
 Vissa funktioner ber om mer när du använder dem: **Fläktstyrning**, **Finder-tillägg**, **iCloud Drive** och **Full skivåtkomst**. Allt finns på sidan Behörigheter i inställningarna: varje behörighet har en rad om vad den är till för, en grön bock eller ett orange kryss och en enda knapp: **Tillåt** när den saknas, **Stäng av** när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där.
 
-pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. Den enda nätverksförfrågan är sökningen efter uppdateringar, som frågar GitHub efter den senaste versionen.
+pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. pikapik går bara online för uppdateringar (den frågar GitHub efter den senaste versionen och laddar bara ner den om du väljer att uppdatera) och för hastighetstestet när du startar det (då används Apples servrar). Versionen från Mac App Store uppdateras av App Store, och dess hastighetstest använder Cloudflare. Husdjurets framsteg (steg, kast, utmärkelser och liknande) räknas bara på den här Mac-datorn och skickas aldrig någonstans. Du kan radera dem i Inställningar › Husdjur.
 
 </details>
 
@@ -249,6 +249,10 @@ Under Inställningar → Spel → Fler spelinställningar finns gruppen ”Mus o
 
 Öppna Inställningar → Spel → Lägg till ett spel och klicka på spelet som körs. Spel via Java och andra miljöer visas också, även utan en .app-fil. Minecraft heter Minecraft i stället för java. Hitta spelets process och dra raden till Dina spel i Inställningar → Spel.
 
+**Husdjurets garderob och utmärkelser.** Öppna Inställningar › Husdjur för att klä på ditt husdjur: över 30 plagg och tillbehör, från hattar och glasögon till kappor och vingar, och färdiga outfits som trollkarl, pirat eller astronaut. Några få är gratis från start. Resten är utmärkelser som kommer medan ni leker tillsammans: lyft upp husdjuret och kasta det, sparka runt bollen, titta på när det klättrar på fönster och pratar, eller håll det helt enkelt sällskap dag efter dag. När du har fått en ny utmärkelse säger husdjuret till.
+
+För att veta när en utmärkelse är på väg räknar pikapik bara det du och ditt husdjur gör: steg, hur ofta du lyfter upp och kastar det, hopp, klättringar, bollspel och pratstunder, dagar tillsammans, om ni var tillsammans tidigt på morgonen, efter midnatt eller på en helg, vilka sidor i Inställningar du har öppnat och vad du har provat. Utanför Mac App Store noterar pikapik också om du har öppnat vår GitHub-sida från Inställningar. Siffrorna, datumet för varje utmärkelse och vad husdjuret har på sig stannar på den här Mac-datorn. Ingenting skickas någonstans, och inget av det hamnar i den exporterade inställningsfilen eller i iCloud-synkroniseringen. Du kan radera allt när som helst i Inställningar › Husdjur, och då börjar husdjuret om från början.
+
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
@@ -291,6 +295,8 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
 - **Finder**: ny fil, mindre kopia och konvertering, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
+- **Spel**: din lista med spel och alternativen för Spelläge.
+- **Husdjur**: slå på eller av husdjuret, låt det prata och leka med bollen, klä på det och se dina utmärkelser.
 - **Behörigheter**: alla behörigheter som pikapik använder, var och en med sin status och en knapp för att tillåta eller stänga av den. Ett verktyg som saknar en behörighet ser halvgrått ut, och ett klick på det öppnar den här sidan vid rätt rad.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 

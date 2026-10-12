@@ -43,6 +43,8 @@ final class PetStage: NSObject {
     private var nextTalk: TimeInterval
     private var deck: [PetPhrase] = []
     private var phrase: PetPhrase?
+    private var nudging = false
+    private var ticked = 0.0
 
     private override init() {
         nextTalk = launched + .random(in: 600...840)
@@ -53,6 +55,8 @@ final class PetStage: NSObject {
     private var demo: String? {
         dev ? UserDefaults.standard.string(forKey: "pet-demo") : nil
     }
+
+    private var progress: PetProgress? { demo == nil ? .shared : nil }
 
     func start() {
         guard window == nil else { return }
@@ -135,7 +139,13 @@ final class PetStage: NSObject {
         func local(_ other: NSWindow?) -> CGPoint {
             CGPoint(x: point.x + origin.x - (other?.frame.minX ?? origin.x), y: point.y + origin.y - (other?.frame.minY ?? origin.y))
         }
-        guard physics.grab(at: local(window)) || ball.grab(at: local(field)) else { return }
+        let airborne = !physics.grounded
+        let lifted = physics.grab(at: local(window))
+        guard lifted || ball.grab(at: local(field)) else { return }
+        if lifted {
+            progress?.add(.lifts)
+            if airborne { progress?.add(.catches) }
+        }
         NSCursor.closedHand.set()
         rise()
         place()
@@ -144,7 +154,9 @@ final class PetStage: NSObject {
     fileprivate func drop() {
         guard physics.state == .held || ball.held else { return }
         physics.release()
+        let carried = ball.held
         ball.release()
+        if carried, hypot(ball.vx, ball.vy) >= BallPhysics.nudge { progress?.add(.plays) }
         NSCursor.arrow.set()
     }
 
@@ -449,13 +461,24 @@ final class PetStage: NSObject {
         physics.step(dt, cursor: point)
         let toy = field?.isVisible == true, together = Self.id(pet) == Self.id(pitch), now = ProcessInfo.processInfo.systemUptime
         if toy {
-            if together { physics.kick(&ball) }
+            if together, physics.kick(&ball) { progress?.add(.kicks) }
             ball.step(dt, cursor: physics.state == .held ? nil : reach, body: physics.aloft || !together ? nil : (physics.previous, physics.frame))
             if ball.impact > 700, physics.grounded || physics.state == .jump { physics.bump(ball.frame) }
             if ball.nudged { chase = min(chase, now + 0.4) }
+            if ball.nudged, !nudging { progress?.add(.plays) }
+            nudging = ball.nudged
             if now >= chase {
                 physics.face(ball.center.x + pitch.frame.minX - pet.frame.minX)
                 chase = now + .random(in: 6...16)
+            }
+        }
+        let events = physics.drain()
+        if let progress {
+            events.forEach { progress.add($0.counter) }
+            progress.walk(physics.walked)
+            if now >= ticked {
+                ticked = now + 30
+                progress.tick(now: Date())
             }
         }
         if physics.state == .held || ball.held, fake == nil, NSEvent.pressedMouseButtons & 1 == 0 { drop() }
@@ -513,7 +536,9 @@ final class PetStage: NSObject {
 
     private func place() {
         put(view, physics.origin.x)
-        view.pose = PetPose(physics, scale: Self.scale, time: ProcessInfo.processInfo.systemUptime)
+        var pose = PetPose(physics, scale: Self.scale, time: ProcessInfo.processInfo.systemUptime)
+        pose.outfit = PetProgress.shared.outfit
+        view.pose = pose
         if grip.frame != physics.frame { grip.frame = physics.frame }
         put(ballView, ball.center.x)
         ballView.pose = BallPose(ball, scale: Self.scale)
@@ -597,6 +622,9 @@ final class PetStage: NSObject {
     }
 
     private func talk(_ now: TimeInterval) {
+        if let progress, progress.hasNews {
+            if PetTool.shared.talks { nextTalk = min(nextTalk, now + 3) } else { progress.hush() }
+        }
         guard now >= nextTalk, physics.state == .walk, demo == nil else { return }
         guard PetTool.shared.talks else { return nextTalk = now + .random(in: 1200...1800) }
         let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
@@ -613,6 +641,7 @@ final class PetStage: NSObject {
     }
 
     private func nextPhrase() -> PetPhrase {
+        if let award = progress?.news.first { return PetPhrases.award(award) }
         #if !APPSTORE
         let state = MainActor.assumeIsolated { Updater.shared.state }
         if !dev, case .available(let version) = state, UserDefaults.standard.string(forKey: "pet-told-update") != version {
@@ -640,7 +669,7 @@ final class PetStage: NSObject {
     private func say(_ phrase: PetPhrase, for seconds: Double) {
         guard physics.sit(seconds) else { return }
         hideBubble()
-        let clickable = phrase.id == "update" || phrase.link != nil
+        let clickable = phrase.id == "update" || phrase.id == "award" || phrase.link != nil
         let panel = NSPanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: true)
         panel.isOpaque = false
         panel.backgroundColor = .clear
@@ -659,6 +688,7 @@ final class PetStage: NSObject {
         show(panel)
         panel.orderFrontRegardless()
         NSAnimationContext.runAnimationGroup { $0.duration = 0.25; panel.animator().alphaValue = 1 }
+        if phrase.id == "award" { progress?.popNews() } else { progress?.add(.phrases) }
     }
 
     private func show(_ panel: NSPanel) {
@@ -683,10 +713,24 @@ final class PetStage: NSObject {
     private func open(_ phrase: PetPhrase) {
         if phrase.id == "update" {
             SettingsWindow.show(.about)
+        } else if phrase.id == "award" {
+            SettingsWindow.show(.pet)
         } else if let link = phrase.link {
             NSWorkspace.shared.open(link)
         }
         hideBubble()
+    }
+}
+
+private extension PetPhysics.Event {
+    var counter: PetCounter {
+        switch self {
+        case .jump: .jumps
+        case .leap: .leaps
+        case .climb: .climbs
+        case .tumble: .tumbles
+        case .fling: .flights
+        }
     }
 }
 

@@ -192,6 +192,10 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),
             SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: "phrases, speech bubble, talk, say, messages, updates"),
             SettingsItem(tab: .pet, title: String(localized: "Ball"), synonyms: "toy, football, soccer, kick, play, throw, selection, platform"),
+            SettingsItem(tab: .pet, title: String(localized: "Wardrobe"), synonyms: "clothes, outfit, costume, dress up, hats, glasses, scarf, shoes, cape, wings"),
+            SettingsItem(tab: .pet, title: String(localized: "Looks"), synonyms: "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective"),
+            SettingsItem(tab: .pet, title: String(localized: "Awards"), synonyms: "medals, achievements, trophies, badges, rewards, progress, unlock, earned"),
+            SettingsItem(tab: .pet, title: String(localized: "Erase Progress…"), synonyms: "reset, delete, clear, start over, privacy"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -377,15 +381,26 @@ private struct SettingsView: View {
         }
         .searchable(text: $model.search, placement: .sidebar)
         .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
-        .onChange(of: tab, initial: true) { SettingsWindow.window?.title = tab.title }
+        .onChange(of: tab, initial: true) {
+            SettingsWindow.window?.title = tab.title
+            PetProgress.shared.mark("page:\(tab.rawValue)")
+            if tab == .pet { PetProgress.shared.add(.visits) }
+        }
         .onAppear { model.refreshShortcuts() }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in model.refreshShortcuts() }
+        #if !APPSTORE
+        .environment(\.openURL, OpenURLAction { url in
+            if url.host == "github.com", url.pathComponents.dropFirst().first == "dev-pikapik" { PetProgress.shared.add(.github) }
+            return .systemAction(url)
+        })
+        #endif
     }
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
         ForEach(tabs) { tab in
             Label { Text(tab.title) } icon: { tab.icon() }
                 .tag(tab)
+                .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
         }
     }
 

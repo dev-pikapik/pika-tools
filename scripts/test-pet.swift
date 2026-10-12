@@ -325,6 +325,75 @@ enum TestPet {
         precondition(states.allSatisfy { $0 == .walk || $0 == .turn } && pet.origin.y == floor.minY, "\(states)")
         print("climbs a selection, walks under a high one, turns at a wall, falls when it goes: ok")
 
+        func run(_ pet: inout PetPhysics, _ seconds: Double, cursor: CGPoint? = nil) -> [PetPhysics.Event] {
+            var events = pet.drain()
+            for _ in 0..<Int(seconds * 30) {
+                pet.step(1.0 / 30, cursor: cursor)
+                events += pet.drain()
+            }
+            return events
+        }
+        func lifted(_ pet: inout PetPhysics, to height: CGFloat) {
+            let x = pet.origin.x
+            pet.grab(at: CGPoint(x: x, y: pet.frame.midY))
+            for _ in 0..<20 { pet.step(1.0 / 30, cursor: CGPoint(x: x, y: height)) }
+        }
+        pet = PetPhysics(bounds: room, x: 400, facing: 1)
+        precondition(pet.jump())
+        precondition(pet.drain() == [.jump] && pet.drain().isEmpty)
+        precondition(!pet.jump() && pet.drain().isEmpty, "a refused jump left an event")
+        precondition(run(&pet, 2).isEmpty, "landing a hop left an event")
+        pet.grab(at: CGPoint(x: pet.origin.x, y: pet.frame.midY))
+        precondition(!pet.jump() && pet.drain().isEmpty, "a held pet jumped")
+        for height in [CGFloat(10), 30, 56] {
+            pet = PetPhysics(bounds: screen, x: 100, facing: 1)
+            var events: [PetPhysics.Event] = [], hops = 0
+            for _ in 0..<360 {
+                let before = pet.state
+                pet.step(1.0 / 30, cursor: CGPoint(x: 300, y: height))
+                if before != .jump, pet.state == .jump { hops += 1 }
+                events += pet.drain()
+            }
+            precondition(hops > 0 && events == Array(repeating: .leap, count: hops), "\(hops) leaps over a cursor at \(height): \(events)")
+        }
+        pet = PetPhysics(bounds: floor, x: 300, facing: 1)
+        pet.ledge = step
+        var climbs: [PetPhysics.Event] = [], frames = 0
+        while !(pet.grounded && pet.origin.y == step.maxY) && frames < 600 {
+            pet.step(1.0 / 30, cursor: nil)
+            climbs += pet.drain()
+            frames += 1
+        }
+        precondition(pet.origin.y == step.maxY && climbs == [.climb], "climbed \(climbs)")
+        pet = PetPhysics(bounds: room, x: 400, facing: 1)
+        pet.bump(pet.frame.offsetBy(dx: 20, dy: 0))
+        precondition(pet.drain() == [.tumble])
+        precondition(run(&pet, 3).isEmpty, "a tumble was counted again while it got up")
+        pet.calm = true
+        pet.bump(pet.frame.offsetBy(dx: 20, dy: 0))
+        precondition(pet.state == .turn && pet.drain().isEmpty, "a calm bump on the ground counted as a tumble")
+        pet.jump()
+        pet.bump(pet.frame.offsetBy(dx: 20, dy: 0))
+        precondition(pet.state == .tumble && pet.drain() == [.jump, .tumble])
+        for calm in [false, true] {
+            pet = PetPhysics(bounds: room, x: 700)
+            pet.calm = calm
+            pet.grab(at: CGPoint(x: 700, y: 30))
+            for i in 1...12 { pet.step(1.0 / 120, cursor: CGPoint(x: 700, y: 30 + 3000 * CGFloat(i) / 120)) }
+            pet.release()
+            let events = run(&pet, 8)
+            precondition(events == (calm ? [] : [.fling, .tumble]), "thrown up, calm \(calm): \(events)")
+        }
+        pet = PetPhysics(bounds: room, x: 700)
+        lifted(&pet, to: 130)
+        pet.release()
+        precondition(run(&pet, 4).isEmpty, "a short drop counted as a throw")
+        pet = PetPhysics(bounds: room, x: 700)
+        lifted(&pet, to: 500)
+        pet.release()
+        precondition(run(&pet, 6) == [.fling, .tumble], "a long drop was not counted as a throw")
+        print("jumps, leaps, climbs, tumbles and hard throws are reported once each: ok")
+
         let display = CGRect(x: 0, y: 0, width: 3440, height: 1440)
         let desk = [(layer: -2147483603, frame: display)]
         let dockOverlay = (layer: 20, frame: display), remoteOverlay = (layer: 3, frame: display)

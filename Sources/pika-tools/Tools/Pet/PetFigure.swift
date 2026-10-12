@@ -12,6 +12,7 @@ struct PetPose: Equatable {
     var hang = false
     var dizzy = false
     var blink = false
+    var outfit: [PetSlot: PetItem] = [:]
 }
 
 enum PetFigure {
@@ -28,10 +29,11 @@ enum PetFigure {
         let body = night ? Color(red: 1, green: 0.53, blue: 0.46) : Color(red: 1, green: 0.45, blue: 0.38)
         let feet = night ? Color(red: 0.86, green: 0.36, blue: 0.36) : Color(red: 0.80, green: 0.30, blue: 0.29)
         let air = pose.air, hang = pose.hang, sit = pose.sit
+        let rise: CGFloat = pose.outfit[.feet] == .skates ? 1.2 : 0
         let bob = air ? 0 : 0.8 * abs(sin(pose.step)) * (1 - sit)
         let squash = pose.squash + 0.06 * sit
         let width = 12 * (1 + squash), height = 11 * (1 - squash)
-        let raise = 1.8 - 1.4 * sit
+        let raise = 1.8 - 1.4 * sit + rise * (1 - sit)
         let upright = hang ? 1 : abs(cos(pose.tilt)), lean = hang ? 0 : abs(sin(pose.tilt))
         let centre = -((height / 2 + raise) * upright + (width / 2 + 0.6) * lean) - pose.lift - pose.floor - bob
         let pivot = hang ? height / 2 : 0
@@ -40,21 +42,30 @@ enum PetFigure {
             .concatenating(CGAffineTransform(translationX: 0, y: centre - pivot))
             .concatenating(CGAffineTransform(scaleX: pose.facing, y: 1))
 
-        var paws = Path()
+        var paws = Path(), soles: [CGRect] = []
         for side in [-1.0, 1.0] {
             let stride = air ? 0 : 1.8 * sin(pose.step) * side * (1 - sit)
             let up = air ? 0.8 : 1.3 * max(0, cos(pose.step) * side) * (1 - sit)
             let x = (hang ? 2.9 : 2.7) * side - 2 + stride
             let walking = air ? height / 2 - (hang ? 0.5 : 0.6) : height / 2 - 0.8 - up + bob
-            let y = walking + (-2.6 - centre - walking) * sit
-            paws.addRoundedRect(in: CGRect(x: x + (3.4 + 1.6 * side - x - 2) * sit, y: y, width: 4, height: 2.6), cornerSize: CGSize(width: 1.3, height: 1.3))
+            let y = walking + (-2.6 - rise - centre - walking) * sit
+            let paw = CGRect(x: x + (3.4 + 1.6 * side - x - 2) * sit, y: y, width: 4, height: 2.6)
+            paws.addRoundedRect(in: paw, cornerSize: CGSize(width: 1.3, height: 1.3))
+            soles.append(paw)
         }
         paws = paws.applying(place)
-        if sit < 0.5 { fill(paws, feet) }
-        fill(Path(roundedRect: CGRect(x: -width / 2, y: -height / 2, width: width, height: height), cornerRadius: 4, style: .continuous).applying(place), body)
-        if sit >= 0.5 { fill(paws, feet) }
-
+        let shape = Path(roundedRect: CGRect(x: -width / 2, y: -height / 2, width: width, height: height), cornerRadius: 4, style: .continuous)
         let eye = CGPoint(x: 2.6, y: -height / 2 + 3.8)
+        let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place)
+        wear.draw(.back, fill)
+        if sit < 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
+        fill(shape.applying(place), body)
+        wear.draw(.base, fill)
+        wear.draw(.legs, fill)
+        wear.draw(.outer, fill)
+        if sit >= 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
+        wear.draw(.neck, fill)
+
         if pose.dizzy {
             var cross = Path()
             for angle in [CGFloat.pi / 4, -.pi / 4] {
@@ -66,6 +77,9 @@ enum PetFigure {
             let tall: CGFloat = pose.blink ? 0.5 : 2.5
             fill(Path(ellipseIn: CGRect(x: eye.x - 1.25, y: eye.y - tall / 2, width: 2.5, height: tall)).applying(place), Self.eye)
         }
+        wear.draw(.face, fill)
+        wear.draw(.head, fill)
+        wear.draw(.glass, fill)
     }
 }
 

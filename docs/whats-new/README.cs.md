@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Oblékněte svého mazlíčka
+
+<sub>1.35.0 · 12. října 2026</sub>
+
+Mazlíček má šatník a při společné hře získáváte nové oblečení.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Mazlíček a vyberte, co bude mazlíček nosit: klobouky, brýle, šály, trička, boty, pláště a dokonce křídla. Hned si to oblékne. Pár kousků je zdarma, zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte ocenění, mazlíček vám to řekne.
+
+Hotové kostýmy ho jedním kliknutím oblečou od hlavy až k patě: čaroděj, pirát, astronaut, superhrdina, král a další. Kostým je připravený, jakmile získáte všechny jeho součásti.
+
+Ukládají se jen jednoduchá čísla, například kroky, hody a společné dny. Zůstávají ve vašem Macu, nic se nikam neposílá a smazat je můžete kdykoli v Nastavení › Mazlíček.
+
+---
+
 ## <a id="v1.34.0"></a>Myš a trackpad ve hrách
 
 <sub>1.34.0 · 12. října 2026</sub>

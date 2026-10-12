@@ -177,7 +177,7 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Bichinho na mesa</b>
-<br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular.
+<br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ O app percebe a mudança em um ou dois segundos, sem precisar reiniciar.
 
 Alguns recursos pedem algo a mais quando você os usa: **Controle das ventoinhas**, **Extensões do Finder**, **iCloud Drive** e **Acesso Total ao Disco**. Tudo fica na página Permissões dos ajustes: cada permissão tem uma linha dizendo para que serve, uma marca de seleção verde ou uma cruz laranja e um só botão: **Permitir** quando falta, **Desligar** quando está ativa. Assim você retira qualquer permissão ali mesmo.
 
-O pikapik não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. A única conexão de rede é a busca por atualizações, que pergunta ao GitHub qual é a versão mais recente.
+O pikapik não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. O pikapik só acessa a internet para atualizações (pergunta ao GitHub qual é a versão mais recente e só a baixa se você escolher atualizar) e para o teste de velocidade, quando você o inicia (usa os servidores da Apple). A versão da Mac App Store é atualizada pela App Store, e o teste de velocidade dela usa a Cloudflare. O progresso do bichinho (passos, arremessos, prêmios e coisas assim) é contado só neste Mac e nunca é enviado para lugar nenhum. Você pode apagá-lo em Ajustes › Bichinho.
 
 </details>
 
@@ -249,6 +249,10 @@ Em Ajustes → Jogos → Mais ajustes do jogo há um grupo chamado “Mouse e tr
 
 Abra Ajustes → Jogos → Adicionar um jogo e clique no jogo em execução. Jogos que usam Java e outros ambientes também aparecem, mesmo sem arquivo .app. Minecraft aparece como Minecraft em vez de java. Encontre o processo do jogo e arraste a linha para Seus jogos em Ajustes → Jogos.
 
+**Guarda-roupa e prêmios do bichinho.** Abra Ajustes › Bichinho para vestir o seu bichinho: mais de 30 peças, de chapéus e óculos a capas e asas, e looks prontos como mago, pirata ou astronauta. Algumas peças são grátis desde o começo. O resto são prêmios que chegam enquanto vocês brincam juntos: pegue o bichinho e jogue para o alto, chute a bola, veja ele subir nas janelas e conversar, ou simplesmente faça companhia a ele dia após dia. Quando você ganhar um prêmio novo, o bichinho avisa.
+
+Para saber quando um prêmio é devido, o pikapik conta só o que você e o bichinho fazem: passos, quantas vezes você o pega e o joga, pulos, subidas, partidas de bola e conversas, dias juntos, se vocês estiveram juntos de manhã cedo, depois da meia-noite ou no fim de semana, as páginas dos Ajustes que você abriu e as peças que experimentou. Fora da Mac App Store, o pikapik também anota se você abriu a nossa página do GitHub nos Ajustes. Esses números, a data de cada prêmio e o que o bichinho está vestindo ficam neste Mac. Nada é enviado para lugar nenhum, e nada disso entra no arquivo de ajustes exportado nem na sincronização do iCloud. Você pode apagar tudo quando quiser em Ajustes › Bichinho, e o bichinho recomeça do zero.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
@@ -291,6 +295,8 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.
 - **Finder**: novo arquivo, cópia menor e conversão, abrir com Return, recortar com ⌘X e apagar com ⌫.
+- **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.
+- **Bichinho**: ligar ou desligar o bichinho, conversas e bola, guarda-roupa e prêmios.
 - **Permissões**: todas as permissões que o pikapik usa, cada uma com seu estado e um botão para permitir ou desligar. Uma ferramenta sem a permissão de que precisa aparece em cinza; clicar nela abre esta página na linha certa.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 
