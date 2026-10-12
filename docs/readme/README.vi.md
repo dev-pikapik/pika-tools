@@ -200,7 +200,11 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br><b>Tệp lưu trữ</b>
 <br>Giải nén RAR và các tệp lưu trữ khác, hoặc gói tệp thành ZIP, chỉ bằng một cú bấm chuột phải.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Giữ Dock trên một màn hình</b>
+<br>Dock không còn nhảy sang màn hình khác. Giữ ⌥ để chủ động di chuyển.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
 
 **Ẩn bằng một lần bấm trong Dock.** Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, ứng dụng sẽ ẩn đi. Bấm lần nữa để hiện lại. Tắt theo mặc định.
+
+**Giữ Dock trên một màn hình.** Khi có nhiều màn hình, macOS chuyển Dock sang màn hình khác ngay khi con trỏ đẩy vào cạnh dưới của màn hình đó, hoặc cạnh trái hay cạnh phải nếu Dock nằm ở bên cạnh. Khi bật công tắc này, Dock ở nguyên chỗ cũ và các góc nóng vẫn hoạt động bình thường. Để chủ động di chuyển Dock, hãy giữ ⌥ và đẩy con trỏ vào cạnh của màn hình kia. Không cần cấp quyền nào. Công tắc **Đưa Dock trở lại** đưa Dock về màn hình của nó sau khi ngủ hoặc khi màn hình thay đổi. Công tắc này cần quyền **Trợ năng** và không có trong phiên bản Mac App Store. Cả hai công tắc đều tắt theo mặc định.
 
 **Nút xanh lá phóng to cửa sổ.** Bấm vào nút xanh lá của cửa sổ, cửa sổ sẽ lấp đầy màn hình mà không vào chế độ toàn màn hình. Bấm lần nữa để trở lại kích thước cũ. Giữ ⌥ thì nút hoạt động như bình thường. Chế độ toàn màn hình vẫn có trong menu của nút và ở ⌃⌘F. Bạn có thể lập danh sách các ứng dụng mà nút xanh lá cần hoạt động như bình thường. Tắt theo mặc định.
 
@@ -327,7 +333,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
-- **Dock**: ẩn bằng một lần bấm trong Dock.
+- **Dock**: ẩn bằng một lần bấm trong Dock, giữ Dock trên một màn hình và đưa Dock trở lại.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
 - **Gỡ ứng dụng**: gỡ một ứng dụng cùng các tệp của nó, đặt lại tất cả sau này và dọn những gì ứng dụng đã gỡ để lại.
 - **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.

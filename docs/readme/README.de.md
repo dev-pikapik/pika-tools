@@ -200,7 +200,11 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br><b>Archive</b>
 <br>RAR und andere Archive entpacken oder Dateien per Rechtsklick in ein ZIP packen.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Dock auf einem Display halten</b>
+<br>Das Dock springt nicht mehr auf ein anderes Display. Mit gedrückter ⌥-Taste verschiebst du es gezielt.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
 
 **Mit einem Klick im Dock ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und sie wird ausgeblendet. Ein weiterer Klick holt sie zurück. Standardmäßig aus.
+
+**Dock auf einem Display halten.** Bei mehreren Displays verschiebt macOS das Dock auf ein anderes Display, sobald der Zeiger gegen dessen unteren Rand drückt, oder gegen den linken oder rechten Rand, wenn das Dock seitlich liegt. Ist die Funktion an, bleibt das Dock, wo es ist, und die aktiven Ecken funktionieren weiter. Um es gezielt zu verschieben, halte ⌥ gedrückt und drücke den Zeiger gegen den Rand des anderen Displays. Dafür ist keine Erlaubnis nötig. **Dock zurückholen** bringt das Dock nach dem Ruhezustand oder wenn sich Displays ändern auf sein Display zurück. Das braucht die Erlaubnis **Bedienungshilfen** und fehlt in der Version aus dem Mac App Store. Beide Schalter sind standardmäßig aus.
 
 **Grüner Knopf vergrößert das Fenster.** Klicke auf den grünen Knopf eines Fensters, und es füllt den Bildschirm, ohne in den Vollbildmodus zu wechseln. Noch ein Klick bringt die vorherige Größe zurück. Halte ⌥ gedrückt, dann funktioniert der Knopf wie immer. Vollbild bleibt im Menü des Knopfs und auf ⌃⌘F. Du kannst Apps auflisten, in denen der grüne Knopf wie gewohnt funktionieren soll. Standardmäßig aus.
 
@@ -327,7 +333,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
-- **Dock**: Ausblenden per Klick im Dock.
+- **Dock**: Ausblenden per Klick im Dock, Dock auf einem Display halten und Dock zurückholen.
 - **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
 - **Apps entfernen**: eine App samt Dateien entfernen, alles später zurücklegen und aufräumen, was entfernte Apps hinterlassen haben.
 - **Spiele**: deine Spiele und die Einstellungen des Spielmodus.

@@ -200,7 +200,11 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br><b>Archiwa</b>
 <br>Wypakuj RAR i inne archiwa albo spakuj pliki do archiwum ZIP, klikając prawym przyciskiem.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Trzymaj Dock na jednym ekranie</b>
+<br>Dock nie skacze już na inny ekran. Przytrzymaj ⌥, aby celowo go przenieść.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
 **Ukrywanie kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a zostanie ukryta. Kliknij ponownie, aby ją przywrócić. Domyślnie wyłączone.
+
+**Trzymaj Dock na jednym ekranie.** Przy kilku ekranach macOS przenosi Dock na inny ekran, gdy tylko wskaźnik zacznie napierać na dolną krawędź tego ekranu, albo na lewą lub prawą, jeśli Dock jest z boku. Gdy przełącznik jest włączony, Dock zostaje tam, gdzie jest, a aktywne rogi dalej działają. Aby przenieść go celowo, przytrzymaj ⌥ i dociśnij wskaźnik do krawędzi drugiego ekranu. Nie są potrzebne żadne uprawnienia. Przełącznik **Przywracaj Dock** odsyła Dock na jego ekran po uśpieniu lub zmianie ekranów. Wymaga uprawnienia **Dostępność** i nie ma go w wersji z Mac App Store. Oba przełączniki są domyślnie wyłączone.
 
 **Zielony przycisk powiększa okno.** Kliknij zielony przycisk okna, a okno wypełni ekran, nie przechodząc w pełny ekran. Kliknij ponownie, aby wrócić do poprzedniego rozmiaru. Przytrzymaj ⌥, a przycisk zadziała jak zawsze. Pełny ekran nadal jest w menu przycisku i pod ⌃⌘F. Możesz wypisać aplikacje, w których zielony przycisk ma działać jak zwykle. Domyślnie wyłączone.
 
@@ -327,7 +333,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
-- **Dock**: ukrywanie kliknięciem w Docku.
+- **Dock**: ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.

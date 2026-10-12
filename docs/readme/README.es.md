@@ -200,7 +200,11 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br><b>Archivos comprimidos</b>
 <br>Abre RAR y otros archivos comprimidos, o reúne archivos en un ZIP, con un clic derecho.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Mantener el Dock en una sola pantalla</b>
+<br>El Dock ya no salta a otra pantalla. Mantén pulsada ⌥ para moverlo a propósito.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
 **Ocultar con un clic en el Dock.** Haz clic en el icono del Dock de la app que estás usando y se ocultará. Vuelve a hacer clic para que reaparezca. Desactivado por omisión.
+
+**Mantener el Dock en una sola pantalla.** Con varias pantallas, macOS mueve el Dock a otra pantalla en cuanto el puntero empuja contra su borde inferior, o contra el izquierdo o el derecho si el Dock está en un lateral. Con el interruptor activado, el Dock se queda donde está y las esquinas activas siguen funcionando. Para moverlo a propósito, mantén pulsada ⌥ y empuja el puntero contra el borde de la otra pantalla. No hace falta ningún permiso. **Devolver el Dock a su sitio** lleva el Dock de vuelta a su pantalla tras el reposo o cuando cambian las pantallas. Necesita el permiso **Accesibilidad** y no está en la versión de la Mac App Store. Los dos interruptores están desactivados por omisión.
 
 **El botón verde amplía la ventana.** Haz clic en el botón verde de una ventana y esta crece hasta llenar la pantalla, sin pasar a pantalla completa. Otro clic devuelve el tamaño anterior. Si mantienes pulsado ⌥, el botón funciona como siempre. La pantalla completa sigue en el menú del botón y con ⌃⌘F. Puedes indicar las apps en las que el botón verde debe funcionar como siempre. Desactivado por omisión.
 
@@ -327,7 +333,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Teclado**: cambio de idioma, repetición de teclas, Home y End.
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
-- **Dock**: ocultar con un clic en el Dock.
+- **Dock**: ocultar con un clic en el Dock, mantener el Dock en una sola pantalla y devolverlo a su sitio.
 - **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X y borrar con ⌫.
 - **Eliminar apps**: eliminar una app con sus archivos, devolverlo todo a su sitio más tarde y limpiar lo que dejaron las apps eliminadas.
 - **Juegos**: tu lista de juegos y las opciones del Modo de juego.

@@ -23,6 +23,7 @@ enum RenderMedia {
         ("quit-on-close", 4.5, AnyView(QuitOnCloseArt(on: true))),
         ("window-zoom", 5.95, AnyView(WindowZoomArt(on: true))),
         ("dock-hide", 5.1, AnyView(DockHideArt(on: true))),
+        ("dock-display", 4.7, AnyView(DockDisplayArt(on: true))),
         ("new-file", 7.1, AnyView(NewFileArt(on: true))),
         ("finder-cut", 3.7, AnyView(FinderCutArt(on: true))),
         ("finder-open", 4.7, AnyView(FinderOpenArt(on: true))),

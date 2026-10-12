@@ -200,7 +200,11 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br><b>Archivy</b>
 <br>Pravým kliknutím rozbalíte RAR a další archivy nebo sbalíte soubory do archivu ZIP.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Držet Dock na jednom displeji</b>
+<br>Dock už neskáče na jiný displej. Podržením ⌥ ho přesunete záměrně.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
 **Skrytí kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a skryje se. Dalším kliknutím ji vrátíte. Ve výchozím stavu vypnuto.
+
+**Držet Dock na jednom displeji.** Když máte víc displejů, macOS přesune Dock na jiný displej, jakmile ukazatel zatlačí na jeho spodní okraj, případně na levý či pravý okraj, je-li Dock na boku. Po zapnutí zůstane Dock tam, kde je, a aktivní rohy dál fungují. Chcete-li ho přesunout záměrně, podržte ⌥ a zatlačte ukazatelem na okraj druhého displeje. Žádné oprávnění není potřeba. Přepínač **Vracet Dock zpět** vrací Dock po spánku nebo při změně displejů na jeho displej. Vyžaduje oprávnění **Zpřístupnění** a ve verzi z Mac App Store není. Oba přepínače jsou ve výchozím stavu vypnuté.
 
 **Zelené tlačítko zvětší okno.** Klikněte na zelené tlačítko okna a okno se zvětší tak, aby vyplnilo obrazovku, aniž by přešlo do režimu celé obrazovky. Dalším kliknutím se vrátí původní velikost. S podrženým ⌥ tlačítko funguje jako vždy. Celá obrazovka zůstává v nabídce tlačítka a na ⌃⌘F. Můžete sestavit seznam aplikací, ve kterých má zelené tlačítko fungovat jako obvykle. Ve výchozím stavu vypnuto.
 
@@ -327,7 +333,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
-- **Dock**: skrytí kliknutím v Docku.
+- **Dock**: skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Hry**: seznam vašich her a volby Herního režimu.

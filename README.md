@@ -200,7 +200,11 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br><b>Archives</b>
 <br>Unpack RAR and other archives, or pack files into a ZIP, with a right-click.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-display-dark.png"><img src="docs/media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Keep the Dock on one display</b>
+<br>The Dock no longer jumps to another display. Hold ⌥ to move it on purpose.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 **Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
 **Hide with a click in the Dock.** Click the Dock icon of the app you're in, and it hides. Click again to bring it back. Off by default.
+
+**Keep the Dock on one display.** With several displays, macOS moves the Dock to another display as soon as the pointer pushes against that display’s bottom edge, or its left or right edge if the Dock is at the side. With this on, the Dock stays where it is, and hot corners keep working. To move it on purpose, hold ⌥ and push the pointer against the edge of the other display. No permission is needed. **Bring the Dock back** returns the Dock to its display after sleep or when displays change. It needs **Accessibility** and is not in the Mac App Store version. Both switches are off by default.
 
 **Green button enlarges the window.** Click the green button of a window, and it grows to fill the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as it always did. Full screen stays in the button's menu and on ⌃⌘F. You can list apps where the green button should work as usual. Off by default.
 
@@ -327,7 +333,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
-- **Dock**: hide with a click in the Dock.
+- **Dock**: hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Games**: your list of games and the Game Mode options.
