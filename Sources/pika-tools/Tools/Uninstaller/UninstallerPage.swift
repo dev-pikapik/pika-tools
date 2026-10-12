@@ -12,10 +12,10 @@ struct UninstallerPage: View {
         Form {
             SettingsHeader(tab: .uninstaller, text: String(localized: "Remove an app and its files. You can put it all back."))
             Section {
-                UninstallerArt(replay: model.plays)
+                watch.settingsView
+                    .needs(watch.needs)
                     .appDropZone("uninstaller") { model.open(dropped: $0) }
             }
-            Section { watch.settingsView.needs(watch.needs) }
             TrashedSection()
             RemovedSection()
             Section {

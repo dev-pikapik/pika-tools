@@ -1,52 +1,8 @@
 import SwiftUI
 
-struct UninstallerArt: View {
-    var replay = 0
-    @Environment(\.appDropTarget) private var target
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-
-    private static let durations = [1.0, 0.8, 0.45, 0.45, 0.45, 0.7, 0.5, 86_400.0]
-
-    var body: some View {
-        let lit = target != nil
-        IllustrationRow(loop: Self.durations, replay: replay) { tick in
-            UninstallerScene(step: reduceMotion ? 0 : tick % Self.durations.count, lit: lit)
-        }
-    }
-}
-
-private struct UninstallerScene: View {
-    let step: Int
-    let lit: Bool
-
-    private static let bin = CGPoint(x: 226, y: 78)
-    private static let mouth = CGPoint(x: 226, y: 60)
-    private static let tile = CGPoint(x: 100, y: 66)
-    private static let files = [CGPoint(x: 38, y: 34), CGPoint(x: 56, y: 68), CGPoint(x: 36, y: 100)]
-
-    var body: some View {
-        Stage {
-            Circle()
-                .fill(Color.accentColor)
-                .frame(width: 96, height: 96)
-                .blur(radius: 24)
-                .opacity(lit ? 0.5 : 0)
-                .position(Self.bin)
-                .animation(.smooth(duration: 0.3), value: lit)
-            ForEach(0..<3, id: \.self) { index in
-                ArtFile()
-                    .modifier(Glide(gone: (2 + index...5).contains(step), rest: Self.files[index], mouth: Self.mouth, scale: 0.7))
-            }
-            AppTile()
-                .modifier(Glide(gone: (1...5).contains(step), rest: Self.tile, mouth: Self.mouth, scale: 1))
-            Bin(open: (1...4).contains(step) || lit, lit: lit)
-                .position(Self.bin)
-        }
-    }
-}
-
 struct TrashWatchArt: View {
     let on: Bool
+    @Environment(\.appDropTarget) private var target
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [1.0, 0.8, 0.5, 0.5, 0.4, 0.4, 1.8, 0.6]
@@ -55,13 +11,14 @@ struct TrashWatchArt: View {
     private static let tile = CGPoint(x: 36, y: 66)
 
     var body: some View {
+        let lit = target != nil
         IllustrationRow(loop: Self.durations) { tick in
             let step = reduceMotion ? (on ? 6 : 0) : tick % Self.durations.count
             let shown = on && (3...6).contains(step)
             Stage {
                 AppTile()
                     .modifier(Glide(gone: (1...7).contains(step), rest: Self.tile, mouth: Self.mouth, scale: 1))
-                Bin(open: (1...2).contains(step), lit: false)
+                Bin(open: (1...2).contains(step) || lit, lit: lit)
                     .position(Self.bin)
                 ArtWindow(size: CGSize(width: 136, height: 72)) {
                     HStack(spacing: 2) {
