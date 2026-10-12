@@ -15,16 +15,19 @@ for IDENTITY in "$APP_IDENTITY" "$INSTALLER_IDENTITY"; do
     }
 done
 
+for NAME in APP_PROFILE NEWFILE_PROFILE COMPRESS_PROFILE CONVERT_PROFILE; do
+    [ -f "${!NAME:-}" ] || {
+        echo "$NAME is not set or the file is missing. Set it to the .provisionprofile downloaded from developer.apple.com > Profiles for this target." >&2
+        exit 1
+    }
+done
+
 APPSTORE=1 TEAM_ID="$TEAM_ID" ./scripts/build.sh
 
-embed() {
-    local PROFILE="${1:-}" TARGET="$2"
-    [ -z "$PROFILE" ] || cp "$PROFILE" "$TARGET/Contents/embedded.provisionprofile"
-}
-embed "${APP_PROFILE:-}" "$APP"
-embed "${NEWFILE_PROFILE:-}" "$APP/Contents/PlugIns/NewFile.appex"
-embed "${COMPRESS_PROFILE:-}" "$APP/Contents/PlugIns/Compress.appex"
-embed "${CONVERT_PROFILE:-}" "$APP/Contents/PlugIns/Convert.appex"
+cp "$APP_PROFILE" "$APP/Contents/embedded.provisionprofile"
+cp "$NEWFILE_PROFILE" "$APP/Contents/PlugIns/NewFile.appex/Contents/embedded.provisionprofile"
+cp "$COMPRESS_PROFILE" "$APP/Contents/PlugIns/Compress.appex/Contents/embedded.provisionprofile"
+cp "$CONVERT_PROFILE" "$APP/Contents/PlugIns/Convert.appex/Contents/embedded.provisionprofile"
 
 sign() { codesign --force --options runtime --timestamp --sign "$APP_IDENTITY" "$@"; }
 for EXT in $EXTENSIONS; do

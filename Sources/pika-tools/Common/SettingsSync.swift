@@ -129,7 +129,11 @@ final class SettingsSync {
             device = UUID().uuidString
             defaults.set(device, forKey: Self.deviceKey)
         }
+        #if APPSTORE
+        isEnabled = false // the sandbox has no iCloud Drive access, so sync stays off
+        #else
         isEnabled = defaults.bool(forKey: Self.enabledKey)
+        #endif
         last = SettingsBackup.snapshot
         let center = NotificationCenter.default
         center.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in

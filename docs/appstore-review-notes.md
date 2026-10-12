@@ -11,6 +11,42 @@ pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its
 - Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions), Enter opens files, Cut files, Delete removes files.
 - Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
 
+## How to try it
+No account or demo login is needed. Open pikapik from the menu bar, then Settings.
+
+Tools that work with no permission:
+- Keep Awake: Settings > Keep Awake, turn it on; the Mac will not sleep until it is turned off or the chosen duration ends.
+- Speed Test: Settings > Speed Test, press Check Speed; download and upload speed appear in a few seconds.
+- Settings file: Settings > General, press Export Settings…, then Import Settings… to load the file back.
+- Finder extensions: see below.
+
+Tools that need a permission (the prompt appears when the tool is switched on):
+- Switch language (Input Monitoring): Settings > Keyboard, turn on, pick a shortcut, press it in any text field.
+- Home and End (Input Monitoring): Settings > Keyboard, turn on, press Home in a text field; the cursor goes to the start of the line.
+- Command key shortcuts (Input Monitoring): Settings > Keyboard, turn on, use the Command key shortcuts in any text field.
+- Scroll by lines, Scroll direction, Side buttons (Input Monitoring): Settings > Mouse, turn on, then scroll or press a side button.
+- Green button enlarges the window (Accessibility): Settings > Windows, turn on, click the green button of any window.
+- Quit when the last window closes (Accessibility): Settings > Windows, turn on, close the last window of an app such as TextEdit; the app quits.
+- Protect quitting and closing (Accessibility): Settings > Windows, turn on, press Command Q; the app asks to press it again.
+- Hide with a click in the Dock (Accessibility): Settings > Dock, turn on, click the icon of the front app in the Dock; its windows hide.
+- Enter opens files, Cut files, Delete removes files (Accessibility, Input Monitoring): Settings > Finder, turn on, select a file in Finder and press Enter, Command X or Delete.
+- Pet (Accessibility): Settings > Pet, turn on; the pet appears on the desktop.
+- Game Mode > Show FPS (Screen Recording): Settings > Games, turn on Game Mode, then Show FPS.
+
+## Finder extensions
+They need no permission prompt, only a switch in System Settings > General > Login Items & Extensions > Finder. Settings > Permissions > Finder Extensions opens it.
+- New File in Finder: right-click the empty space in a Finder window, choose New File, pick a type; the file is created in that folder.
+- Smaller Copy in Finder: right-click an image, video or PDF, choose Make a Smaller Copy; a smaller copy is saved next to the original.
+- Convert in Finder: right-click an image, audio or video file, choose Convert To and a format; the converted copy is saved next to the original.
+The first time, the app asks the user to choose the folder it may save into (Settings > Permissions > Folders).
+
+## Keep Awake and Speed Test
+- Keep Awake only asks macOS not to sleep while it is on. It reads and sends nothing.
+- Speed Test runs only when the user presses Check Speed. The only server contacted is speed.cloudflare.com, and no personal data is sent.
+
+## Open at Login
+Open at Login is off by default. It is a switch in Settings > General that the user turns on.
+
 ## Permissions
 The app asks for up to three permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
 
