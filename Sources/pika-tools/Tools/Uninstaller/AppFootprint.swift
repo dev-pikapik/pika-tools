@@ -690,7 +690,7 @@ final class AppFootprint {
         Place(.root, "Library/PrivilegedHelperTools", .background, [.id, .helper]),
         Place(.root, "Library/Extensions", .extensions, [.embedded, .name, .soft]),
         Place(.root, "Library/Frameworks", .extensions, [.embedded, .name, .soft]),
-        Place(.root, "Users/Shared", .appData, [.id, .name]),
+        Place(.root, "Users/Shared", .appData, [.id, .name, .soft]),
     ]
 
     fileprivate func directory(_ place: Place) -> URL {
@@ -937,6 +937,12 @@ extension AppFootprint {
         self.init(roots: roots, installed: AppInventory.installed(roots), system: AppInventory.system(roots))
     }
 
+    func isSystem(_ app: AppIdentity) -> Bool {
+        let real = app.url.resolvingSymlinksInPath().path
+        let prefix = roots.root.resolvingSymlinksInPath().appendingPathComponent("System").path + "/"
+        return (real + "/").hasPrefix(prefix) || system.contains { $0.url.resolvingSymlinksInPath().path == real }
+    }
+
     func scan(_ app: AppIdentity) -> [Leftover] {
         let run = makeRun(app)
         merge(makeLeftover(app.url, kind: .app, reason: .bundle, preselected: true), into: run)
@@ -1036,13 +1042,19 @@ extension AppFootprint {
 
     fileprivate func scanVendorFolder(_ run: Run, _ url: URL, kind: LeftoverKind) {
         guard !isProtected(url, for: run.app, names: [url.lastPathComponent]) else { return }
-        let sharers = run.owners.sharers(ofVendor: AppNames.squash(url.lastPathComponent), team: run.app.teamID, excluding: run.app.url)
-        if sharers.isEmpty {
+        let alone = run.owners.sharers(ofVendor: AppNames.squash(url.lastPathComponent), team: run.app.teamID, excluding: run.app.url).isEmpty
+        let children = listing(url).map { (name: $0, claims: run.owners.claims($0, mode: [.id, .name, .vendorChild])) }
+        let ownsAll = alone && children.allSatisfy { child in
+            guard let (claim, shared) = run.verdict(child.claims) else { return false }
+            return shared.isEmpty && preselects(claim, run.app)
+        }
+        if ownsAll {
             merge(makeLeftover(url, kind: kind, reason: .vendor, preselected: true), into: run)
             return
         }
-        for child in listing(url) {
-            propose(run, url.appendingPathComponent(child), kind: kind, claims: run.owners.claims(child, mode: [.id, .name, .vendorChild]), names: [child])
+        for child in children {
+            let claims = alone && child.claims.isEmpty ? [run.me: Claim(tier: 1, spec: 0, reason: .related)] : child.claims
+            propose(run, url.appendingPathComponent(child.name), kind: kind, claims: claims, names: [child.name])
         }
     }
 

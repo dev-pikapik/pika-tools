@@ -165,6 +165,7 @@ final class AppRemover {
     let quitSeconds: Double
     private let bases: [(path: String, real: String)]
     private let files = FileManager.default
+    private static let recordsLock = NSLock()
 
     init(footprint: AppFootprint, hooks: Hooks, store: URL, trash: URL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".Trash"), quitSeconds: Double = 5) {
         self.footprint = footprint
@@ -187,7 +188,7 @@ final class AppRemover {
     }
 
     static func guardedMove(_ source: String, to destination: String, device: Int32, inode: UInt64) -> String {
-        "[ \"$(/usr/bin/stat -f '%d:%i' \(quoted(source)))\" = '\(device):\(inode)' ] && /bin/mv -n \(quoted(source)) \(quoted(destination))"
+        "[ ! -e \(quoted(destination)) ] && [ \"$(/usr/bin/stat -f '%d:%i' \(quoted(source)))\" = '\(device):\(inode)' ] && /bin/mv -n \(quoted(source)) \(quoted(destination))"
     }
 
     func remove(_ app: AppIdentity, items: [Leftover]) async -> Report {
@@ -244,13 +245,17 @@ final class AppRemover {
         }
         if !work.moves.isEmpty {
             let record = Record(id: UUID().uuidString, appName: app.displayName, date: Date(), bytes: work.report.bytes, moves: work.moves, jobs: work.jobs.filter { !exists($0.plist) })
-            write([record] + records())
+            Self.recordsLock.withLock { write([record] + prune()) }
             work.report.record = record
         }
         return work.report
     }
 
     func records() -> [Record] {
+        Self.recordsLock.withLock { prune() }
+    }
+
+    private func prune() -> [Record] {
         let stored = (try? JSONDecoder().decode([Record].self, from: Data(contentsOf: recordsFile))) ?? []
         let kept = stored.compactMap { record -> Record? in
             var record = record
@@ -288,10 +293,11 @@ final class AppRemover {
             let outcome = await hooks.admin((steps + ["exit 0"]).joined(separator: "; "), String(localized: "pikapik wants to put back what it removed."))
             result.cancelled = outcome == .cancelled
             for move in rooted {
-                if exists(move.original) {
+                if isSame(move.original, device: move.device, inode: move.inode) {
                     back.insert(move.original)
                 } else {
-                    result.stayed.append(Stay(url: URL(fileURLWithPath: move.original), why: result.cancelled ? .cancelled : .failed))
+                    let why: Stay.Why = result.cancelled ? .cancelled : exists(move.original) ? .occupied : .failed
+                    result.stayed.append(Stay(url: URL(fileURLWithPath: move.original), why: why))
                 }
             }
         }

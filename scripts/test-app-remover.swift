@@ -284,6 +284,7 @@ enum AppRemoverTests {
         await adminBatch()
         await adminGuard()
         await adminRestore()
+        await adminOccupied()
         await cancelled()
         await survivors()
         await finderMoves()
@@ -292,6 +293,7 @@ enum AppRemoverTests {
         await jobs()
         await forgetting()
         await keeping()
+        await racing()
         messages()
         let left = Rig.real.filter(World.present)
         precondition(left.isEmpty, "left in the Trash: \(left)")
@@ -477,7 +479,7 @@ enum AppRemoverTests {
         let trash = w.at("trash").path
         func q(_ text: String) -> String { "'" + text.replacingOccurrences(of: "'", with: "'\\''") + "'" }
         func step(_ item: Leftover, to name: String) -> String {
-            "[ \"$(/usr/bin/stat -f '%d:%i' \(q(item.url.path)))\" = '\(item.device):\(item.inode)' ] && /bin/mv -n \(q(item.url.path)) \(q(trash + "/" + name))"
+            "[ ! -e \(q(trash + "/" + name)) ] && [ \"$(/usr/bin/stat -f '%d:%i' \(q(item.url.path)))\" = '\(item.device):\(item.inode)' ] && /bin/mv -n \(q(item.url.path)) \(q(trash + "/" + name))"
         }
         let script = rig.admin.scripts.first ?? ""
         precondition(rig.admin.scripts.count == 1 && rig.admin.prompts == ["pikapik wants to remove what “\(app.displayName)” left behind."], "\(rig.admin.prompts)")
@@ -555,6 +557,54 @@ enum AppRemoverTests {
         precondition(back.restored == 0 && back.stayed.map(\.why) == [.failed], "\(back)")
         precondition(!w.exists(path) && (try? String(contentsOfFile: move.trash, encoding: .utf8)) == "stranger")
         precondition(rig.remover.records().isEmpty)
+    }
+
+    static func adminOccupied() async {
+        let rig = Rig()
+        let w = rig.w
+        let app = w.app(w.unique("app"), id: "com.example.occupied")
+        let path = "root/Library/Application Support/\(w.unique("occupied"))"
+        w.file(path + "/data", "original")
+        let item = w.item(path, admin: true)
+        let report = await rig.remove(app, [item])
+        guard let record = report.record, let move = record.moves.first else { preconditionFailure("\(report)") }
+
+        rig.admin.before = { w.file(path + "/data", "reinstalled") }
+        let back = await rig.remover.restore(record)
+        precondition(back.restored == 0 && !back.cancelled && back.stayed.map(\.why) == [.occupied], "\(back)")
+        precondition(rig.admin.scripts.count == 2 && rig.admin.scripts[1].contains("[ ! -e '\(w.at(path).path)' ] && "), "\(rig.admin.scripts)")
+        precondition(w.text(path + "/data") == "reinstalled" && !w.exists(path + "/" + (move.trash as NSString).lastPathComponent), "nested in the new copy")
+        precondition(w.same(move.trash, item) && rig.remover.records() == [record])
+    }
+
+    static func racing() async {
+        let rig = Rig()
+        let w = rig.w
+        let app = w.app(w.unique("app"), id: "com.example.racing")
+        let remover = rig.remover!
+        func pick(_ count: Int) -> [Leftover] {
+            (0..<count).map { _ in
+                let path = "home/Library/Application Support/\(w.unique("race"))"
+                w.file(path)
+                return w.item(path)
+            }
+        }
+        let warm = await remover.remove(app, items: pick(1))
+        guard let first = warm.record else { preconditionFailure("\(warm)") }
+        _ = await remover.restore(first)
+        for round in 1...3 {
+            let made: [AppRemover.Record] = await withTaskGroup(of: AppRemover.Record?.self) { group in
+                for item in pick(8) { group.addTask { await remover.remove(app, items: [item]).record } }
+                var records: [AppRemover.Record] = []
+                for await record in group { if let record { records.append(record) } }
+                return records
+            }
+            let kept = Set(remover.records().map(\.id))
+            let lost = made.filter { !kept.contains($0.id) }.count
+            for record in made { _ = await remover.restore(record) }
+            precondition(made.count == 8 && lost == 0, "round \(round): \(lost) of \(made.count) records lost")
+        }
+        precondition(remover.records().isEmpty)
     }
 
     static func cancelled() async {
