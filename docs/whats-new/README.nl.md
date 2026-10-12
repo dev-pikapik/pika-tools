@@ -5,6 +5,14 @@
 
 ---
 
+## <a id="v1.38.1"></a>Een betrouwbaarder Finder-menu
+
+<sub>1.38.1 · 12 oktober 2026</sub>
+
+De opties van pikapik in het rechtsklikmenu van de Finder verdwijnen niet meer als je een schijf aansluit, een schijfkopie opent, je Mac uit de sluimerstand haalt of naar de Finder gaat. In zeldzame gevallen stopte het hulpprogramma dat ze toont precies op dat moment.
+
+---
+
 ## <a id="v1.38.0"></a>Open en maak archieven in de Finder
 
 <sub>1.38.0 · 12 oktober 2026</sub>

@@ -5,6 +5,14 @@
 
 ---
 
+## <a id="v1.38.1"></a>Ein verlässlicheres Finder-Menü
+
+<sub>1.38.1 · 12. Oktober 2026</sub>
+
+Die Einträge von pikapik, die per Rechtsklick im Finder erscheinen, verschwinden nicht mehr, wenn du ein Laufwerk anschließt, ein Disk-Image öffnest, deinen Mac aus dem Ruhezustand weckst oder zum Finder wechselst. In seltenen Fällen wurde der Helfer, der sie anzeigt, genau in diesem Moment beendet.
+
+---
+
 ## <a id="v1.38.0"></a>Archive im Finder öffnen und erstellen
 
 <sub>1.38.0 · 12. Oktober 2026</sub>

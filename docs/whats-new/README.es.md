@@ -5,6 +5,14 @@
 
 ---
 
+## <a id="v1.38.1"></a>Un menú del Finder más fiable
+
+<sub>1.38.1 · 12 de octubre de 2026</sub>
+
+Las opciones que pikapik añade al Finder con un clic derecho ya no desaparecen al conectar un disco, abrir una imagen de disco, reactivar el Mac o cambiar al Finder. En casos poco frecuentes, el asistente que las muestra se cerraba justo en ese momento.
+
+---
+
 ## <a id="v1.38.0"></a>Abre y crea archivos comprimidos en el Finder
 
 <sub>1.38.0 · 12 de octubre de 2026</sub>

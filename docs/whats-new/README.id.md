@@ -5,6 +5,14 @@
 
 ---
 
+## <a id="v1.38.1"></a>Menu Finder yang lebih andal
+
+<sub>1.38.1 · 12 Oktober 2026</sub>
+
+Item pikapik di menu klik kanan Finder kini tidak lagi hilang saat Anda menghubungkan disk, membuka image disk, membangunkan Mac, atau beralih ke Finder. Dalam kasus yang jarang terjadi, program pembantu yang menampilkannya tertutup tepat pada saat itu.
+
+---
+
 ## <a id="v1.38.0"></a>Buka dan buat arsip di Finder
 
 <sub>1.38.0 · 12 Oktober 2026</sub>
