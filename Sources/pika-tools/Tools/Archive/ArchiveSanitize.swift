@@ -28,7 +28,7 @@ extension Archive {
 
     static func staysInside(link path: String, root: String) -> Bool {
         guard let target = try? FileManager.default.destinationOfSymbolicLink(atPath: path), !target.isEmpty, !target.hasPrefix("/"),
-              var current = resolved((path as NSString).deletingLastPathComponent) else { return false }
+              var current = resolved((path as NSString).deletingLastPathComponent), isInside(current, root) else { return false }
         for part in target.split(separator: "/") where part != "." {
             if part == ".." {
                 current = (current as NSString).deletingLastPathComponent
@@ -57,28 +57,47 @@ extension Archive {
         guard let base = resolved(root.path) else { throw ArchiveError.failed("no output") }
         var items = 0
         var files = 0
-        try sweep(base, root: base, value: value, items: &items, files: &files)
+        let top = survivors(in: base)
+        try sweep(base, root: top.count == 1 ? base + "/" + top[0] : base, value: value, items: &items, files: &files)
         return (items, files)
+    }
+
+    static func entries(of folder: String) -> [String] {
+        guard let stream = opendir(folder) else { return [] }
+        defer { closedir(stream) }
+        var names: [String] = []
+        while let entry = readdir(stream) {
+            let name = withUnsafePointer(to: entry.pointee.d_name) { $0.withMemoryRebound(to: CChar.self, capacity: Int(entry.pointee.d_namlen) + 1) { String(cString: $0) } }
+            if name != ".", name != ".." { names.append(name) }
+        }
+        return names
+    }
+
+    private static func survivors(in folder: String) -> [String] {
+        var kept: [String] = []
+        for name in entries(of: folder) {
+            if isJunk(path: name) {
+                unlock(folder + "/" + name)
+                try? FileManager.default.removeItem(atPath: folder + "/" + name)
+            } else {
+                kept.append(name)
+            }
+        }
+        return kept
     }
 
     static func unlock(_ folder: String) {
         var info = stat()
         guard lstat(folder, &info) == 0, info.st_mode & S_IFMT == S_IFDIR else { return }
         chmod(folder, (info.st_mode & 0o777) | 0o700)
-        for name in (try? FileManager.default.contentsOfDirectory(atPath: folder)) ?? [] { unlock(folder + "/" + name) }
+        for name in entries(of: folder) { unlock(folder + "/" + name) }
     }
 
     private static func sweep(_ folder: String, root: String, value: Data?, items: inout Int, files: inout Int) throws {
-        let manager = FileManager.default
-        for name in (try? manager.contentsOfDirectory(atPath: folder)) ?? [] {
+        for name in survivors(in: folder) {
             let path = folder + "/" + name
             var info = stat()
             guard lstat(path, &info) == 0 else { continue }
-            guard !isJunk(path: name) else {
-                unlock(path)
-                try? manager.removeItem(atPath: path)
-                continue
-            }
             let mode = info.st_mode & 0o777
             switch info.st_mode & S_IFMT {
             case S_IFDIR:

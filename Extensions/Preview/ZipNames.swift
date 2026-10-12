@@ -20,7 +20,7 @@ enum ZipNames {
         guard let file = try? FileHandle(forReadingFrom: url), let length = try? file.seekToEnd(), length >= 22 else { return nil }
         defer { try? file.close() }
         func bytes(_ offset: UInt64, _ count: Int) -> [UInt8]? {
-            guard (try? file.seek(toOffset: offset)) != nil, let data = try? file.read(upToCount: count), data.count == count else { return nil }
+            guard offset <= length, UInt64(count) <= length - offset, (try? file.seek(toOffset: offset)) != nil, let data = try? file.read(upToCount: count), data.count == count else { return nil }
             return [UInt8](data)
         }
         let window = Int(min(length, 22 + 65535 + 20))
@@ -38,8 +38,8 @@ enum ZipNames {
             guard let record = bytes(tail.u64(eocd - 12), 56), record.u32(0) == 0x06064b50 else { return nil }
             disk = Int(record.u32(16))
             directoryDisk = Int(record.u32(20))
-            onDisk = Int(record.u64(24))
-            total = Int(record.u64(32))
+            onDisk = Int(clamping: record.u64(24))
+            total = Int(clamping: record.u64(32))
             size = record.u64(40)
             offset = record.u64(48)
         }
@@ -261,15 +261,18 @@ enum ZipNames {
 
         func score(_ names: ArraySlice<[UInt8]>) -> Int? {
             var total = 0
-            for name in names {
+            var room = 1 << 16
+            for name in names where room > 0 {
                 var scalars: [UInt32] = []
                 var at = 0
-                while at < name.count {
+                let end = min(name.count, 256, room)
+                while at < end {
                     guard let piece = unit(name, at) else { return nil }
                     if piece.scalar >= 0x80 { total += weight(piece.scalar, piece.length, piece.lead, piece.trail) }
                     scalars.append(piece.scalar)
                     at += piece.length
                 }
+                room -= at
                 var word = 0
                 var accented = false
                 var lower: UInt32?
@@ -334,7 +337,7 @@ enum ZipNames {
 }
 
 private extension Array where Element == UInt8 {
-    func u16(_ at: Int) -> Int { Int(self[at]) | Int(self[at + 1]) << 8 }
+    func u16(_ at: Int) -> Int { at >= 0 && at + 1 < count ? Int(self[at]) | Int(self[at + 1]) << 8 : 0 }
     func u32(_ at: Int) -> UInt64 { UInt64(u16(at)) | UInt64(u16(at + 2)) << 16 }
     func u64(_ at: Int) -> UInt64 { u32(at) | u32(at + 4) << 32 }
 }

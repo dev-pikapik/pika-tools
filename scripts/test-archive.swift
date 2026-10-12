@@ -50,6 +50,10 @@ enum TestArchive {
         streams()
         finderZip()
         legacyNames()
+        zipReader()
+        watching()
+        placedLinks()
+        appleDouble()
         cancelling()
         rar()
         precondition(itemFolders() <= leftovers, "temporary folders left behind: \(itemFolders() - leftovers)")
@@ -101,6 +105,16 @@ enum TestArchive {
         let big = path(fresh("huge"), "big.zip")
         try! lying.write(to: big)
         expect(.huge(expanded: 3_000_000_000, packed: Int64(lying.count)), "zip claiming 3 GB from a few bytes") { _ = try Archive.extract(big) }
+        precondition(!Archive.exceeds(1 << 30, expanded: 0) && Archive.exceeds((1 << 30) + 1, expanded: 0))
+        precondition(!Archive.exceeds(3 << 30, expanded: 2 << 30) && Archive.exceeds((4 << 30) + 1, expanded: 2 << 30))
+        precondition(!Archive.exceeds(.max, expanded: .max) && Archive.exceeds(.max, expanded: 1))
+        let roomy: Int64 = 1 << 40
+        precondition(Archive.overrun(written: 1 << 20, expanded: 1 << 20, packed: 1, free: roomy, allowHuge: false) == nil)
+        precondition(Archive.overrun(written: 2 << 30, expanded: 10, packed: 5, free: roomy, allowHuge: false) == .huge(expanded: 2 << 30, packed: 5))
+        precondition(Archive.overrun(written: 2 << 30, expanded: 10, packed: 5, free: roomy, allowHuge: true) == nil)
+        precondition(Archive.overrun(written: 1 << 20, expanded: 8 << 20, packed: 5, free: Archive.reserve - 1, allowHuge: true) == .noSpace(needed: 8 << 20, free: Archive.reserve - 1))
+        precondition(Archive.overrun(written: 8 << 20, expanded: 10, packed: 5, free: 0, allowHuge: false) == .noSpace(needed: 0, free: 0))
+        precondition(Archive.overrun(written: 0, expanded: 0, packed: 0, free: Archive.reserve, allowHuge: false) == nil)
         print("limits ok")
     }
 
@@ -111,14 +125,15 @@ enum TestArchive {
         let big = try! Archive.create(items: [zeros], name: "big", format: .zip)[0]
         let small = try! Archive.create(items: [notes], name: "small", format: .zip)[0]
         precondition(tool("/usr/bin/bzip2", ["-k", zeros.path]) == 0)
-        let volume = fresh("tiny")
-        let image = root.appendingPathComponent("tiny.dmg")
-        guard tool("/usr/bin/hdiutil", ["create", "-size", "16m", "-fs", "ExFAT", "-volname", "PikaTiny", image.path]) == 0,
-              tool("/usr/bin/hdiutil", ["attach", "-nobrowse", "-mountpoint", volume.path, image.path]) == 0 else {
+        guard let volume = disk("16m") else {
             print("space skipped (no disk image could be attached)")
             return
         }
         let stored = [big, small, work.appendingPathComponent("zeros.bin.bz2")].map { move([$0], into: volume)[0] }
+        var lying = try! Data(contentsOf: stored[0])
+        let central = lying.range(of: Data([0x50, 0x4B, 0x01, 0x02]), options: .backwards)!.lowerBound
+        lying.replaceSubrange((central + 24)..<(central + 28), with: Data([10, 0, 0, 0]))
+        try! lying.write(to: path(volume, "lying.zip"))
 
         var opened: URL?
         let fits = failure { opened = try Archive.extract(stored[1]) }
@@ -126,6 +141,10 @@ enum TestArchive {
         let before = Archive.freeSpace(of: volume) ?? 0
         let known = failure { _ = try Archive.extract(stored[0]) }
         let unknown = failure { _ = try Archive.extract(stored[2]) }
+        let lied = failure { _ = try Archive.extract(path(volume, "lying.zip")) }
+        let room = Archive.freeSpace(of: volume) ?? 0
+        let snug = failure { try Archive.checkSpace(room - Archive.reserve - (64 << 10), in: volume) }
+        let tight = failure { try Archive.checkSpace(room - Archive.reserve + (64 << 10), in: volume) }
         let filler = volume.appendingPathComponent("filler")
         try? manager.createDirectory(at: filler, withIntermediateDirectories: true)
         try? random(9 << 20).write(to: filler.appendingPathComponent("data.bin"))
@@ -142,7 +161,10 @@ enum TestArchive {
         precondition(left > 0)
         guard case .noSpace(let wanted, _)? = full else { preconditionFailure("create: \(String(describing: full))") }
         precondition(wanted == 9 << 20)
-        precondition(names == ["big.zip", "small.zip", "zeros.bin.bz2"], "left on the volume: \(names)")
+        guard case .noSpace(0, _)? = lied else { preconditionFailure("a zip that claims 10 bytes: \(String(describing: lied))") }
+        precondition(snug == nil, "the reserve was counted twice: \(String(describing: snug))")
+        guard case .noSpace? = tight else { preconditionFailure("no reserve was kept: \(String(describing: tight))") }
+        precondition(names == ["big.zip", "lying.zip", "small.zip", "zeros.bin.bz2"], "left on the volume: \(names)")
         precondition(before - after < 256 << 10, "the failed runs kept \(before - after) bytes")
         print("space ok")
     }
@@ -314,6 +336,16 @@ enum TestArchive {
         let next = try! Archive.create(items: [box], name: "S", format: .zip)
         precondition(next.map(\.lastPathComponent) == ["S 3.zip"], "a plain name must not sit next to a part set: \(next)")
         precondition(failure { _ = try Archive.create(items: [box], name: "bad/name", format: .zip) } == .failed("bad name or split size"))
+        for tiny: Int64 in [1, 1_024, 65_535] {
+            precondition(failure { _ = try Archive.create(items: [box], name: "Tiny", format: .zip, splitBytes: tiny) } == .failed("bad name or split size"), "\(tiny)-byte parts")
+        }
+        precondition(try! Archive.create(items: [box], name: "Least", format: .zip, splitBytes: 65_536).count >= 4)
+        let neighbours = fresh("split-neighbours")
+        for name in ["a.zip.00000000001", "a.zip.00000000002", "a.zip.99999999999", "c.rar", "c.r-1"] { put(neighbours, name) }
+        let begun = Date()
+        let gap = Archive.parts(of: path(neighbours, "a.zip.00000000001"))
+        precondition(gap.missing == "a.zip.00000000003" && gap.urls.count == 2 && Date().timeIntervalSince(begun) < 1, "\(String(describing: gap.missing)) after \(Date().timeIntervalSince(begun)) s")
+        precondition(Archive.parts(of: path(neighbours, "c.rar")).missing == nil)
         print("split ok")
     }
 
@@ -334,6 +366,8 @@ enum TestArchive {
         let values = recorder.values
         precondition(values.last == 1 && values == values.sorted() && values.allSatisfy { $0 >= 0 && $0 <= 1 }, "\(values)")
         precondition(same(try! Archive.extract(soloZip), path(folder, "Solo 2")))
+        link(folder, "Solo 3", "nowhere")
+        precondition(same(try! Archive.extract(soloZip), path(folder, "Solo 4")) && (try? manager.destinationOfSymbolicLink(atPath: path(folder, "Solo 3").path)) == "nowhere", "a dangling link was taken for a free name")
         let folded = try! Archive.extract(manyZip)
         precondition(same(folded, path(folder, "Many")) && tree(folded) == ["a.txt", "b.txt"])
         precondition(same(try! Archive.extract(manyZip), path(folder, "Many 2")))
@@ -548,6 +582,168 @@ enum TestArchive {
         print("legacy names ok")
     }
 
+    static func zipReader() {
+        let folder = fresh("zip-reader")
+        let file = path(folder, "x.zip")
+        func read(_ data: Data) -> ZipNames.Directory? {
+            try! data.write(to: file)
+            return ZipNames.read(file)
+        }
+        var tiny = Data([0x50, 0x4B, 3, 4]) + Data(count: 40)
+        tiny.put32(0x0605_4b50)
+        [0, 0, 1, 1].forEach { tiny.put16($0) }
+        tiny.put32(2)
+        tiny.put32(0)
+        tiny.put16(0)
+        precondition(tiny.count == 66 && read(tiny) == nil)
+        precondition(read(zip64End(count: .max, size: 0, offset: 0, at: 0)) == nil)
+        for bad in [tiny, zip64End(count: .max, size: 0, offset: 0, at: 0)] {
+            try! bad.write(to: file)
+            _ = failure { _ = try Archive.probe(file) }
+        }
+
+        let unicode = Array("\u{FC}n\u{EF}.txt".utf8)
+        let rich = zip64([
+            (name: Array("a.txt".utf8), extra: field(0x0001, le64(5_000) + le64(900)), method: 8),
+            (name: try! legacyBytes("\u{41F}\u{440}\u{438}\u{432}\u{435}\u{442}.txt", encoding: dosRussian), extra: [], method: 8),
+            (name: Array("uni.txt".utf8), extra: field(0x7075, [1, 0, 0, 0, 0] + unicode), method: 0),
+            (name: Array("enc.bin".utf8), extra: field(0x9901, [2, 0, 0x41, 0x45, 3, 8, 0]), method: 99),
+        ])
+        let entries = read(rich)?.entries ?? []
+        precondition(entries.count == 4 && entries[0].size == 5_000 && entries[0].packed == 900 && entries[2].name == "\u{FC}n\u{EF}.txt" && entries[3].method == 8, "\(entries)")
+        let plain = rawZip([(name: Array("a.txt".utf8), data: Array("hello".utf8)), (name: Array("dir/".utf8), data: []), (name: Array("dir/b.txt".utf8), data: Array("bye".utf8))])
+        precondition(read(plain)?.entries.count == 3)
+        var seed: UInt64 = 0x9E37_79B9_7F4A_7C15
+        func next() -> Int {
+            seed ^= seed << 13
+            seed ^= seed >> 7
+            seed ^= seed << 17
+            return Int(truncatingIfNeeded: seed >> 1)
+        }
+        let edges: [UInt64] = [0, 1, 2, 3, 0x7F, 0x80, 0xFF, 0xFFFF, 0x7FFF_FFFF, 0xFFFF_FFFF, 0x7FFF_FFFF_FFFF_FFFF, .max]
+        let started = Date()
+        for round in 0..<3_000 {
+            var bytes = [UInt8](round % 2 == 0 ? rich : plain)
+            if round % 3 == 0 {
+                bytes.removeLast(next() % bytes.count)
+            } else {
+                for _ in 0..<(1 + next() % 3) {
+                    let at = next() % bytes.count
+                    var value = edges[next() % edges.count]
+                    for index in at..<min(at + [1, 2, 4, 8][next() % 4], bytes.count) {
+                        bytes[index] = UInt8(truncatingIfNeeded: value)
+                        value >>= 8
+                    }
+                }
+            }
+            _ = read(Data(bytes))
+        }
+        precondition(Date().timeIntervalSince(started) < 20, "reading 3000 damaged zips took \(Date().timeIntervalSince(started)) s")
+
+        let twice = zip64([
+            (name: Array("one.bin".utf8), extra: field(0x0001, le64(.max) + le64(1)), method: 8),
+            (name: Array("two.bin".utf8), extra: field(0x0001, le64(.max) + le64(1)), method: 8),
+        ])
+        let sums = path(fresh("zip-sums"), "sums.zip")
+        try! twice.write(to: sums)
+        expect(.huge(expanded: .max, packed: Int64(twice.count)), "sizes adding up past Int64.max") { _ = try Archive.extract(sums) }
+        let records = Archive.Records()
+        ["Path = a", "Size = 18446744073709551615", "", "Path = b", "Size = 9223372036854775807", ""].forEach(records.feed)
+        precondition(records.tally.listing.info.expandedSize == .max)
+
+        let line = try! legacyBytes("\u{414}\u{43E}\u{43A}\u{443}\u{43C}\u{435}\u{43D}\u{442}\u{44B} \u{41E}\u{442}\u{447}\u{451}\u{442} \u{437}\u{430} \u{433}\u{43E}\u{434} ", encoding: dosRussian)
+        let long = (0..<(60_000 / line.count)).flatMap { _ in line }
+        let begun = Date()
+        let page = ZipNames.detect(Array(repeating: long, count: 300))
+        precondition(page == "CP866" && Date().timeIntervalSince(begun) < 2, "\(page) after \(Date().timeIntervalSince(begun)) s")
+        print("zip reader ok")
+    }
+
+    static func watching() {
+        let verdict = ArchiveError.noSpace(needed: 7, free: 3)
+        let started = Date()
+        let calls = Recorder()
+        let sleeper = Archive.Stage(URL(fileURLWithPath: "/bin/sleep"), ["60"])
+        precondition(failure { _ = try Archive.run([sleeper], job: Archive.Job(), watch: { calls.add(0); return verdict }) } == verdict, "the verdict was not thrown")
+        precondition(Date().timeIntervalSince(started) < 10 && !calls.values.isEmpty, "the stopped process kept running")
+        let quick = Archive.Stage(URL(fileURLWithPath: "/usr/bin/true"), [])
+        precondition(failure { _ = try Archive.run([quick], job: Archive.Job(), watch: { verdict }) } == verdict, "no check after the process ended")
+        precondition(try! Archive.run([quick], job: Archive.Job(), watch: { nil }) == [0])
+
+        let folder = fresh("sizes")
+        put(folder, "a.bin", Data(count: 100))
+        put(folder, "dir/b.bin", Data(count: 50))
+        put(folder, "dir/._c", Data(count: 7))
+        link(folder, "alias", "a.bin")
+        precondition(Archive.size(of: folder.path) == 157)
+        precondition(Archive.watcher(over: folder, in: folder, info: Archive.Info(), allowHuge: false)() == nil)
+        print("watch ok")
+    }
+
+    static func placedLinks() {
+        let source = fresh("placed-links-source")
+        put(source, "pack/a.txt")
+        put(source, "pack/sub/b.txt")
+        link(source, "pack/inside", "a.txt")
+        link(source, "pack/sub/back", "../a.txt")
+        for (name, target) in [("up", ".."), ("sibling", "../ghost.txt"), ("sub/deep", "../.."), ("sub/ghost", "../../ghost.txt")] { link(source, "pack/" + name, target) }
+        let inside = ["a.txt", "inside -> a.txt", "sub/", "sub/b.txt", "sub/back -> ../a.txt"]
+        let single = fresh("placed-links-single")
+        try! manager.copyItem(at: path(source, "pack"), to: path(single, "pack"))
+        _ = try! Archive.sanitize(single, marking: nil)
+        precondition(tree(path(single, "pack")) == inside, "\(tree(path(single, "pack")))")
+        let folded = fresh("placed-links-folded")
+        try! manager.copyItem(at: path(source, "pack"), to: path(folded, "pack"))
+        put(folded, "other.txt")
+        _ = try! Archive.sanitize(folded, marking: nil)
+        precondition(tree(path(folded, "pack")) == tree(path(source, "pack")), "\(tree(path(folded, "pack")))")
+
+        precondition(tool("/usr/bin/tar", ["-cf", "pack.tar", "pack"], in: source) == 0)
+        precondition(tool("/usr/bin/zip", ["-qry", "pack.zip", "pack"], in: source) == 0)
+        precondition(setxattr(path(source, "pack/a.txt").path, "user.pika", Array("hi".utf8), 2, 0, 0) == 0)
+        precondition(tool("/usr/bin/ditto", ["-c", "-k", "--sequesterRsrc", "--keepParent", "pack", "finder.zip"], in: source) == 0)
+        for (made, name, route, expected) in [("pack.tar", "pack.tar", Archive.Route.sevenZip, Array(inside.dropLast())), ("pack.zip", "pack.zip", .sevenZip, Array(inside.dropLast())), ("finder.zip", "pack.zip", .ditto, inside)] {
+            let folder = fresh("placed-links")
+            let archive = path(folder, name)
+            try! manager.copyItem(at: path(source, made), to: archive)
+            precondition(try! Archive.inspect(archive, password: nil, job: Archive.Job(), deep: false).route == route, "\(made) took another route")
+            let result = try! Archive.extract(archive)
+            precondition(same(result, path(folder, "pack")) && tree(result) == expected, "\(made): \(tree(result))")
+        }
+        print("placed links ok")
+    }
+
+    static func appleDouble() {
+        let source = fresh("apple-double-source")
+        put(source, "pack/a.txt")
+        put(source, "pack/._a.txt", Data("forged".utf8))
+        chmod(put(source, "pack/._evil.command", Data("#!/bin/sh\n".utf8)).path, 0o755)
+        put(source, "pack/sub/._x")
+        put(source, "pack/sub/ok.txt")
+        put(source, "pack/sub/.DS_Store")
+        precondition(Archive.entries(of: path(source, "pack").path).sorted() == ["._a.txt", "._evil.command", "a.txt", "sub"])
+        precondition(tool("/usr/bin/zip", ["-qr", "pack.zip", "pack"], in: source) == 0)
+        let value = "0083;5f3e1c2a;Safari;"
+        let volume = disk("16m")
+        defer { if let volume { tool("/usr/bin/hdiutil", ["detach", "-force", volume.path]) } }
+        if volume == nil { print("apple double: the exFAT part was skipped (no disk image could be attached)") }
+        for place in [fresh("apple-double")] + (volume.map { [$0] } ?? []) {
+            let archive = path(place, "pack.zip")
+            try! manager.copyItem(at: path(source, "pack.zip"), to: archive)
+            precondition(setxattr(archive.path, quarantineKey, Array(value.utf8), value.utf8.count, 0, 0) == 0)
+            let result = try! Archive.extract(archive)
+            let found = raw(result.path)
+            let label = place == volume ? "exFAT" : "APFS"
+            precondition(found.filter { !$0.hasPrefix("._") && !$0.contains("/._") } == ["a.txt", "sub", "sub/ok.txt"], "\(label): \(found)")
+            precondition(!found.contains("._evil.command") && !found.contains("sub/._x") && !found.contains("sub/.DS_Store"), "\(label): \(found)")
+            precondition((try? Data(contentsOf: path(result, "._a.txt"))) != Data("forged".utf8), "\(label): the shipped ._a.txt survived")
+            if place != volume { precondition(found == ["a.txt", "sub", "sub/ok.txt"], "\(label): \(found)") }
+            precondition((try? Data(contentsOf: path(result, "a.txt"))) == Data("x".utf8))
+            for item in ["", "/a.txt", "/sub", "/sub/ok.txt"] { precondition(quarantine(result.path + item) == value, "\(label): no quarantine on \(item)") }
+        }
+        print("apple double ok")
+    }
+
     static func cancelling() {
         let folder = fresh("cancel")
         let box = path(folder, "box")
@@ -640,6 +836,55 @@ enum TestArchive {
         end.put32(UInt32(body.count))
         end.put16(0)
         return body + directory + end
+    }
+
+    static func field(_ id: Int, _ body: [UInt8]) -> [UInt8] {
+        var head = Data()
+        head.put16(id)
+        head.put16(body.count)
+        return [UInt8](head) + body
+    }
+
+    static func le64(_ value: UInt64) -> [UInt8] {
+        (0..<8).map { UInt8(truncatingIfNeeded: value >> UInt64(8 * $0)) }
+    }
+
+    static func zip64End(count: UInt64, size: UInt64, offset: UInt64, at record: Int) -> Data {
+        var data = Data()
+        data.put32(0x0606_4b50)
+        data.append(contentsOf: le64(44))
+        [45, 45].forEach { data.put16($0) }
+        data.put32(0)
+        data.put32(0)
+        for value in [count, count, size, offset] { data.append(contentsOf: le64(value)) }
+        data.put32(0x0706_4b50)
+        data.put32(0)
+        data.append(contentsOf: le64(UInt64(record)))
+        data.put32(1)
+        data.put32(0x0605_4b50)
+        [0, 0, 0xFFFF, 0xFFFF].forEach { data.put16($0) }
+        data.put32(0xFFFF_FFFF)
+        data.put32(0xFFFF_FFFF)
+        data.put16(0)
+        return data
+    }
+
+    static func zip64(_ entries: [(name: [UInt8], extra: [UInt8], method: Int)]) -> Data {
+        var directory = Data()
+        for entry in entries {
+            directory.put32(0x0201_4b50)
+            [45, 45, 0, entry.method, 0, 0x21].forEach { directory.put16($0) }
+            directory.put32(0)
+            directory.put32(0xFFFF_FFFF)
+            directory.put32(0xFFFF_FFFF)
+            directory.put16(entry.name.count)
+            directory.put16(entry.extra.count)
+            [0, 0, 0].forEach { directory.put16($0) }
+            directory.put32(0)
+            directory.put32(0)
+            directory.append(contentsOf: entry.name + entry.extra)
+        }
+        return directory + zip64End(count: UInt64(entries.count), size: UInt64(directory.count), offset: 0, at: directory.count)
     }
 
     static func checksum(_ bytes: [UInt8]) -> UInt32 {
@@ -769,6 +1014,25 @@ enum TestArchive {
 
     static func files(_ folder: URL) -> [String] {
         tree(folder).filter { !$0.hasSuffix("/") }
+    }
+
+    static func raw(_ folder: String, _ prefix: String = "") -> [String] {
+        var found: [String] = []
+        for name in Archive.entries(of: folder).sorted() {
+            var info = stat()
+            precondition(lstat(folder + "/" + name, &info) == 0)
+            found.append(prefix + name)
+            if info.st_mode & S_IFMT == S_IFDIR { found += raw(folder + "/" + name, prefix + name + "/") }
+        }
+        return found
+    }
+
+    static func disk(_ size: String) -> URL? {
+        let volume = fresh("tiny")
+        let image = root.appendingPathComponent("tiny-\(UUID().uuidString.prefix(6)).dmg")
+        guard tool("/usr/bin/hdiutil", ["create", "-size", size, "-fs", "ExFAT", "-volname", "PikaTiny", image.path]) == 0,
+              tool("/usr/bin/hdiutil", ["attach", "-nobrowse", "-mountpoint", volume.path, image.path]) == 0 else { return nil }
+        return volume
     }
 
     static func all(_ folder: String) -> [String] {

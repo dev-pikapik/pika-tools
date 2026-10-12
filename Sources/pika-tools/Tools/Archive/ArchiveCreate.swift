@@ -15,7 +15,7 @@ extension Archive {
         guard let sample = items.first, Set(items.map { $0.deletingLastPathComponent().standardizedFileURL.path }).count == 1 else {
             throw ArchiveError.failed("items must share one folder")
         }
-        guard !name.isEmpty, !name.contains("/"), (splitBytes ?? 1) > 0 else { throw ArchiveError.failed("bad name or split size") }
+        guard !name.isEmpty, !name.contains("/"), (splitBytes ?? 65_536) >= 65_536 else { throw ArchiveError.failed("bad name or split size") }
         let secret = password.flatMap { $0.isEmpty ? nil : $0 }
         if let secret, !format.supportsPassword || secret.contains(where: \.isNewline) || (format == .zip && !secret.allSatisfy(\.isASCII)) {
             throw ArchiveError.unsupportedPassword

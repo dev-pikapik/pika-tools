@@ -15,7 +15,7 @@ cd pika-tools
 
 `install.sh` can also build from source: add `-- --source` after the install command from the README.
 
-The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks it against a pinned SHA-256), so the first build needs a network connection. The App Store build leaves it out.
+The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks the download and the copy in `Vendor/` against pinned SHA-256 values and fetches it again when they differ), so the first build needs a network connection. The App Store build leaves it out.
 
 Local builds are signed ad-hoc, which is fine for your own Mac. macOS treats every ad-hoc build as a new app, so after a rebuild you may need to remove pikapik from Accessibility and Input Monitoring with the − button and add it again.
 
@@ -129,7 +129,7 @@ swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/
 swiftc -parse-as-library Sources/pika-tools/Tools/Uninstaller/TrashWatcher.swift scripts/test-trash-watcher.swift -o build/test-trash-watcher && build/test-trash-watcher
 ```
 
-The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR.XZ files and opens RAR and many more. It runs the bundled `7zz`, plus `ditto` and `bsdtar` for ZIP names in older encodings, as separate programs, and checks every result before it is shown: nothing lands outside the output folder, links that point out are removed, setuid bits are stripped, and the archive's quarantine flag is copied onto everything extracted. The test makes its own archives, including broken and hostile ones, in a temporary folder, mounts a 16 MB scratch disk image to run out of space on purpose, and takes about ten seconds. Run it from the repository root: it uses `Vendor/7zip/7zz` (`scripts/fetch-7zip.sh` puts it there) or the tool named in `PIKA_7ZZ`. For RAR, set `PIKA_RAR_SAMPLES` to a folder of your own `.rar` files, otherwise that part is skipped:
+The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR.XZ files and opens RAR and many more. It runs the bundled `7zz`, plus `ditto` and `bsdtar` for ZIP names in older encodings, as separate programs, and checks every result before it is shown: nothing lands outside the output folder, links that point out are removed, setuid bits are stripped, the archive's quarantine flag is copied onto everything extracted, and an unpacking that writes far more than the archive announced is stopped. The test makes its own archives, including broken and hostile ones, in a temporary folder, mounts a 16 MB scratch disk image to run out of space on purpose, and takes about ten seconds. Run it from the repository root: it uses `Vendor/7zip/7zz` (`scripts/fetch-7zip.sh` puts it there) or the tool named in `PIKA_7ZZ`. For RAR, set `PIKA_RAR_SAMPLES` to a folder of your own `.rar` files, otherwise that part is skipped:
 
 ```bash
 swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive

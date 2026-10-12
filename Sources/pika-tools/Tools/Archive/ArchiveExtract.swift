@@ -3,6 +3,7 @@ import Foundation
 extension Archive {
     private static let hugeSize: Int64 = 1 << 30
     private static let hugeRatio: Int64 = 1000
+    static let reserve: Int64 = 4 << 20
 
     static func extract(_ url: URL, password: String? = nil, allowPartial: Bool = false, allowHuge: Bool = false, job: Job = Job(), progress: @escaping @Sendable (Double) -> Void = { _ in }) throws -> URL {
         let secret = try checked(password)
@@ -21,7 +22,8 @@ extension Archive {
         }
         try checkSpace(info.expandedSize, in: destination)
         let meter = Meter(progress)
-        let diagnosis = try unpack(first, listing: listing, password: secret, into: temporary, job: job, meter: meter)
+        let watch = watcher(over: temporary, in: destination, info: info, allowHuge: allowHuge)
+        let diagnosis = try unpack(first, listing: listing, password: secret, into: temporary, job: job, meter: meter, watch: watch)
         if diagnosis.password { throw secret == nil ? ArchiveError.needsPassword : ArchiveError.wrongPassword }
         if let missing = diagnosis.missing { throw ArchiveError.missingPart(missing) }
         if diagnosis.space { throw ArchiveError.noSpace(needed: info.expandedSize, free: freeSpace(of: destination) ?? 0) }
@@ -47,14 +49,48 @@ extension Archive {
     }
 
     static func freeSpace(of folder: URL) -> Int64? {
-        guard let values = try? folder.resourceValues(forKeys: [.volumeAvailableCapacityKey, .volumeAvailableCapacityForImportantUsageKey]) else { return nil }
+        guard let values = try? URL(fileURLWithPath: folder.path).resourceValues(forKeys: [.volumeAvailableCapacityKey, .volumeAvailableCapacityForImportantUsageKey]) else { return nil }
         // the important-usage figure adds purgeable space on APFS but reads 0 on HFS+, FAT and exFAT volumes
         return max(values.volumeAvailableCapacityForImportantUsage ?? 0, Int64(values.volumeAvailableCapacity ?? 0))
     }
 
     static func checkSpace(_ needed: Int64, in folder: URL) throws {
-        guard let free = freeSpace(of: folder), needed > free else { return }
+        guard let free = freeSpace(of: folder), needed > free - reserve else { return }
         throw ArchiveError.noSpace(needed: needed, free: free)
+    }
+
+    static func exceeds(_ written: Int64, expanded: Int64) -> Bool {
+        written > hugeSize && written - expanded > expanded
+    }
+
+    static func overrun(written: Int64, expanded: Int64, packed: Int64, free: Int64, allowHuge: Bool) -> ArchiveError? {
+        if !allowHuge, exceeds(written, expanded: expanded) { return .huge(expanded: written, packed: packed) }
+        return free < reserve ? .noSpace(needed: expanded > written ? expanded : 0, free: free) : nil
+    }
+
+    static func watcher(over root: URL, in destination: URL, info: Info, allowHuge: Bool) -> () -> ArchiveError? {
+        let start = freeSpace(of: destination)
+        return {
+            guard let start, let free = freeSpace(of: destination) else { return nil }
+            let used = start - free
+            let written = !allowHuge && exceeds(used, expanded: info.expandedSize) ? size(of: root.path) : used
+            return overrun(written: written, expanded: info.expandedSize, packed: info.packedSize, free: free, allowHuge: allowHuge)
+        }
+    }
+
+    static func size(of folder: String) -> Int64 {
+        var total: Int64 = 0
+        for name in entries(of: folder) {
+            let path = folder + "/" + name
+            var info = stat()
+            guard lstat(path, &info) == 0 else { continue }
+            switch info.st_mode & S_IFMT {
+            case S_IFDIR: total += min(size(of: path), .max - total)
+            case S_IFREG: total += min(info.st_size, .max - total)
+            default: break
+            }
+        }
+        return total
     }
 
     static func workspace(near url: URL) throws -> (destination: URL, temporary: URL) {
@@ -71,12 +107,12 @@ extension Archive {
 
     static func clear(_ folder: URL) {
         _ = try? sanitize(folder, marking: nil)
-        for name in (try? FileManager.default.contentsOfDirectory(atPath: folder.path)) ?? [] {
+        for name in entries(of: folder.path) {
             try? FileManager.default.removeItem(atPath: folder.path + "/" + name)
         }
     }
 
-    private static func unpack(_ first: URL, listing: Listing, password: String?, into root: URL, job: Job, meter: Meter) throws -> Diagnosis {
+    private static func unpack(_ first: URL, listing: Listing, password: String?, into root: URL, job: Job, meter: Meter, watch: @escaping () -> ArchiveError?) throws -> Diagnosis {
         let files = listing.files
         let native: Stage? = switch listing.route {
         case .sevenZip: nil
@@ -86,7 +122,7 @@ extension Archive {
         if let native {
             let statuses = try run([native], job: job, errors: { line in
                 if line.hasPrefix("copying file ") || line.hasPrefix("x ") { meter.tick(of: files) }
-            })
+            }, watch: watch)
             if statuses == [0] { return Diagnosis([]) }
             clear(root)
         }
@@ -105,7 +141,7 @@ extension Archive {
         } else {
             stages = [Stage(tool, ["x", "-aou", "-bso0", "-bsp1", "-sccUTF-8", "-o" + root.path] + secret.arguments + [first.path], input: secret.input)]
         }
-        let statuses = try run(stages, job: job, output: report, errors: report)
+        let statuses = try run(stages, job: job, output: report, errors: report, watch: watch)
         var diagnosis = Diagnosis(messages.lines, stream: listing.inner != nil || streamExtensions.contains(streamExtension(first)))
         if listing.inner != nil { diagnosis.bad.removeAll { listing.info.names.contains($0) } }
         if statuses.contains(where: { $0 > 2 }) { diagnosis.other = diagnosis.other ?? "stopped" }
@@ -113,7 +149,7 @@ extension Archive {
     }
 
     private static func place(_ root: URL, archive: URL, in destination: URL, marking value: Data?) throws -> URL {
-        let names = ((try? FileManager.default.contentsOfDirectory(atPath: root.path)) ?? []).sorted()
+        let names = entries(of: root.path).filter { !isJunk(path: $0) }.sorted()
         if names.count == 1 { return try move(root.appending(path: names[0]), into: destination) }
         let folder = try makeFolder(named: baseName(archive), in: destination)
         do {

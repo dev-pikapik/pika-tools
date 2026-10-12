@@ -59,10 +59,10 @@ extension Archive {
         private var seen = Set<String>()
 
         mutating func add(_ path: String, folder: Bool, size: Int64, encrypted: Bool) {
+            listing.info.expandedSize += min(size, .max - listing.info.expandedSize)
             guard !isJunk(path: path) else { return }
             listing.info.entries += 1
             listing.files += folder ? 0 : 1
-            listing.info.expandedSize += size
             if encrypted { listing.info.isEncrypted = true }
             guard let top = path.split(separator: "/").first(where: { $0 != "." }), listing.info.names.count < 1000, seen.insert(String(top)).inserted else { return }
             listing.info.names.append(String(top))
@@ -91,7 +91,7 @@ extension Archive {
             switch line[..<range.lowerBound] {
             case "Path": path = path ?? value
             case "Folder": folder = value == "+"
-            case "Size": size = Int64(value) ?? 0
+            case "Size": size = UInt64(value).map { Int64(clamping: $0) } ?? 0
             case "Encrypted": encrypted = value == "+"
             default: break
             }

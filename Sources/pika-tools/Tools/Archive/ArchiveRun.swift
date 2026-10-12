@@ -107,7 +107,7 @@ extension Archive {
         return value
     }
 
-    static func run(_ stages: [Stage], job: Job, listing: Bool = false, output: ((String) -> Void)? = nil, errors: ((String) -> Void)? = nil) throws -> [Int32] {
+    static func run(_ stages: [Stage], job: Job, listing: Bool = false, output: ((String) -> Void)? = nil, errors: ((String) -> Void)? = nil, watch: (() -> ArchiveError?)? = nil) throws -> [Int32] {
         _ = ignoreBrokenPipes
         guard !job.isCancelled else { throw ArchiveError.cancelled }
         let errorPipe = Pipe()
@@ -171,9 +171,19 @@ extension Archive {
         }
         read(errorPipe, progress: true, errors)
         if output != nil { read(outputPipe, progress: !listing, output) }
-        processes.forEach { _ in finished.wait() }
+        var verdict: ArchiveError?
+        var running = processes.count
+        while running > 0 {
+            if finished.wait(timeout: watch == nil ? .distantFuture : .now() + 0.1) == .success {
+                running -= 1
+            } else if verdict == nil, let found = watch?() {
+                verdict = found
+                processes.filter(\.isRunning).forEach { $0.terminate() }
+            }
+        }
         readers.wait()
         if job.isCancelled { throw ArchiveError.cancelled }
+        if let verdict = verdict ?? watch?() { throw verdict }
         return processes.map(\.terminationStatus)
     }
 }

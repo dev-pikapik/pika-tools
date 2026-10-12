@@ -135,7 +135,8 @@ enum Archive {
     private static func sequence(_ name: String, _ siblings: [String]) -> [String] {
         let lower = name.lowercased()
         if let part = PartName(name) {
-            let last = siblings.compactMap { PartName($0) }.filter { $0.matches(part) }.map(\.number).max() ?? 1
+            let matching = siblings.compactMap { PartName($0) }.filter { $0.matches(part) }
+            let last = min(matching.map(\.number).max() ?? 1, matching.count + 1)
             return (1...max(last, 1)).map { part.name($0) }
         }
         let stem = (name as NSString).deletingPathExtension
@@ -150,7 +151,7 @@ enum Archive {
         }
         if lower.hasSuffix(".rar") {
             let last = numbers("r").max()
-            guard let last else { return [name] }
+            guard let last, last >= 0 else { return [name] }
             return [name] + (0...last).map { stem + (upper ? ".R" : ".r") + String(format: "%02d", $0) }
         }
         if lower.hasSuffix(".zip") {

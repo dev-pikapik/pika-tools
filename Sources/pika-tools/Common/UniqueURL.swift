@@ -12,8 +12,12 @@ extension FileManager {
                 ext = "tar." + ext
             }
         }
+        func exists(_ path: String) -> Bool {
+            var info = stat()
+            return lstat(path, &info) == 0
+        }
         func taken(_ url: URL) -> Bool {
-            fileExists(atPath: url.path) || stride(from: 1, through: parts, by: 1).contains { fileExists(atPath: url.path + String(format: ".%03d", $0)) }
+            exists(url.path) || stride(from: 1, through: parts, by: 1).contains { exists(url.path + String(format: ".%03d", $0)) }
         }
         var url = folder.appending(path: name)
         var number = 2
