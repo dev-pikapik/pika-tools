@@ -391,7 +391,7 @@
 "Show Desktop" = "Toon bureaublad";
 "Desktops don’t switch" = "Bureaubladen wisselen niet";
 "Desktops don’t switch by number" = "Bureaubladen wisselen niet per nummer";
-"Swipes don’t switch desktops" = "Veeggebaren wisselen geen bureaublad";
+"Gestures don’t leave the game" = "Gebaren halen je niet uit de game";
 "Emoji don’t open" = "Emoji openen niet";
 "The dictionary doesn’t pop up" = "Het woordenboek springt niet open";
 "Look Up" = "Zoek op";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, appkiezer";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Berichtencentrum, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, vegen, gebaren, trackpad";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, vegen, knijpen, gebaren, trackpad, Magic Mouse, Mission Control, Meldingencentrum";
 "symbols, dictionary" = "symbolen, woordenboek";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "toetsenbordfocus, functietoetsen, Control Spatie, Ctrl, Shift, Option, toetsenbordindeling, invoerbron, option, shift, alt";
 "fn, globe key" = "fn, wereldbol-toets";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "Apps en vensters";
 "Screenshots" = "Schermafbeeldingen";
+"Mouse and trackpad" = "Muis en trackpad";
 "System controls" = "Mac-functies";
 "Other macOS actions" = "Andere macOS-acties";
 "Switch languages without leaving the game." = "Wissel van taal zonder de game te verlaten.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, Spaces en het bureaublad.";
 "Pictures of the screen and screen recording." = "Schermafbeeldingen en schermopnamen.";
 "Keyboard focus, emoji and the Globe key." = "Toetsenbordfocus, emoji en de globustoets.";
+"Mouse buttons, gestures and hot corners." = "Muisknoppen, gebaren en actieve hoeken.";
 "Zoom, colours, spoken feedback and captions." = "Zoom, kleuren, gesproken feedback en ondertitels.";
 "Search, sound, brightness and other Mac controls." = "Zoeken, geluid, helderheid en andere Mac-functies.";
 "Actions whose purpose macOS doesn’t publish." = "Acties waarvan macOS het doel niet publiceert.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "Voorkomt dat een onbedoelde afsluittoets de game beëindigt.";
 "Prevents an accidental close shortcut from closing the game window." = "Voorkomt dat een onbedoelde sneltoets het gamevenster sluit.";
 "Lets you hold Control and click without opening a context menu." = "Laat je Control ingedrukt houden en klikken zonder contextmenu.";
-"Keeps trackpad swipes from moving the game to another desktop." = "Voorkomt dat trackpadgebaren tijdens het spelen van bureaublad wisselen.";
 "Shows or hides the Dock." = "Toont of verbergt het Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Voert de genoemde macOS-actie uit. Pauzeer deze als hij de game onderbreekt.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS geeft de toetsen, maar niet de naam van deze actie. Je kunt het gedrag in games toch kiezen.";

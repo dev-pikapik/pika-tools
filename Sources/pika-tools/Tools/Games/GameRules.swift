@@ -127,10 +127,15 @@ enum GameRules {
             || id == nil && ["wine", "crossover", "whisky", "game porting toolkit"].contains(where: path.contains)
     }
 
-    static func fence(_ point: CGPoint, in frame: CGRect) -> CGPoint? {
+    static func fence(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
+        let reaches = corners.contains { corner in
+            abs(point.x - (corner % 2 == 0 ? frame.minX : frame.maxX - 1)) <= 3
+                && abs(point.y - (corner < 2 ? frame.minY : frame.maxY - 1)) <= 3
+        }
+        let inset: CGFloat = reaches ? 0 : 1
         let fenced = CGPoint(
-            x: min(max(point.x, frame.minX + 1), frame.maxX - 2),
-            y: min(max(point.y, frame.minY + 1), frame.maxY - 2)
+            x: min(max(point.x, frame.minX + inset), frame.maxX - 1 - inset),
+            y: min(max(point.y, frame.minY + inset), frame.maxY - 1 - inset)
         )
         return fenced == point ? nil : fenced
     }
@@ -142,6 +147,12 @@ enum GameRules {
 
     static func combo(key: Int64, flags: UInt64) -> UInt64 {
         UInt64(truncatingIfNeeded: key) << 32 | flags & 0x9E0000
+    }
+
+    static func dropsSwipe(phase: Int64, motion: Int64, blocksAll: Bool, except: Set<Int64>, holding: Bool?) -> (drops: Bool, holding: Bool?) {
+        let decided = blocksAll != except.contains(motion)
+        let drops = phase == 1 ? decided : holding ?? decided
+        return (drops, phase == 4 || phase == 8 ? nil : drops)
     }
 }
 

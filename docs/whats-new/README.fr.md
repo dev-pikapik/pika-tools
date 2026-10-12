@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Souris et trackpad dans les jeux
+
+<sub>1.34.0 · 11 octobre 2026</sub>
+
+Les balayages, les pincements et les coins actifs ne vous sortent plus du jeu, comme les raccourcis clavier.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Jeux › Autres réglages de jeu, le groupe « Souris et trackpad » liste uniquement ce qui est activé dans macOS sur votre Mac, avec les noms d’Apple et un petit dessin pour chaque élément : raccourcis sur un bouton de la souris, balayage entre bureaux et apps en plein écran, Mission Control et App Exposé, pincement pour les apps et écartement pour le bureau, balayage depuis le bord droit pour le centre de notifications et chaque coin actif avec son action. Tant qu’un jeu est au premier plan, ils sont suspendus : un balayage involontaire ou un effleurement d’un coin de l’écran ne vous sortira pas du jeu. Les gestes à l’intérieur du jeu continuent de fonctionner. Chaque élément peut être réglé pour fonctionner comme d’habitude.
+
+---
+
 ## <a id="v1.33.2"></a>Les groupes de raccourcis s’ouvrent instantanément
 
 <sub>1.33.2 · 11 octobre 2026</sub>

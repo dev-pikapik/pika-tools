@@ -391,7 +391,7 @@
 "Show Desktop" = "Показать рабочий стол";
 "Desktops don’t switch" = "Рабочие столы не переключаются";
 "Desktops don’t switch by number" = "Рабочие столы не переключаются по номеру";
-"Swipes don’t switch desktops" = "Смахивания не переключают рабочие столы";
+"Gestures don’t leave the game" = "Жесты не уводят из игры";
 "Emoji don’t open" = "Эмодзи не открываются";
 "The dictionary doesn’t pop up" = "Словарь не выскакивает";
 "Look Up" = "Найти";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Command Tab, переключатель приложений";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Центр уведомлений, Stage Manager, рабочие столы";
 "Spaces, swipe, gestures, trackpad" = "Spaces, смахивание, жесты, трекпад";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, смахивание, щипок, жесты, трекпад, Magic Mouse, Mission Control, Центр уведомлений";
 "symbols, dictionary" = "символы, словарь, поиск слова";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "фокус клавиатуры, функциональные клавиши, Control Пробел, Ctrl, Shift, Option, раскладка, источник ввода, option, shift, alt, переключение языка";
 "fn, globe key" = "fn, глобус, клавиша глобуса";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "Приложения и окна";
 "Screenshots" = "Снимки экрана";
+"Mouse and trackpad" = "Мышь и трекпад";
 "System controls" = "Функции Mac";
 "Other macOS actions" = "Другие действия macOS";
 "Switch languages without leaving the game." = "Переключайте язык, оставаясь в игре.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, рабочие столы и обзор окон.";
 "Pictures of the screen and screen recording." = "Снимки экрана и запись видео.";
 "Keyboard focus, emoji and the Globe key." = "Фокус клавиатуры, эмодзи и клавиша глобуса.";
+"Mouse buttons, gestures and hot corners." = "Кнопки мыши, жесты и активные углы.";
 "Zoom, colours, spoken feedback and captions." = "Масштаб, цвета, озвучивание и субтитры.";
 "Search, sound, brightness and other Mac controls." = "Поиск, звук, яркость и другие функции Mac.";
 "Actions whose purpose macOS doesn’t publish." = "Действия, назначение которых macOS не раскрывает.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "Защищает игру от случайного нажатия сочетания выхода.";
 "Prevents an accidental close shortcut from closing the game window." = "Защищает окно игры от случайного нажатия сочетания закрытия.";
 "Lets you hold Control and click without opening a context menu." = "Позволяет держать Control и нажимать мышь без контекстного меню.";
-"Keeps trackpad swipes from moving the game to another desktop." = "Не даёт смахиваниям по трекпаду переключать рабочий стол во время игры.";
 "Shows or hides the Dock." = "Показывает или скрывает Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Выполняет указанное действие macOS. Оставьте его на паузе, если оно мешает игре.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS сообщает клавиши, но не название действия. Его поведение в игре всё равно можно выбрать.";

@@ -245,6 +245,8 @@ Activa el modo Juego y juega. Más ajustes del juego contiene el catálogo de tu
 
 Automático pausa las acciones que abren ventanas o cambian el foco. Un atajo de idioma breve e intencionado cambia la fuente sin una ventana del sistema. Las teclas de movimiento mantenidas tienen prioridad para que correr y saltar no cambien el idioma por accidente.
 
+En Ajustes → Juegos → Más ajustes del juego hay un grupo llamado «Ratón y trackpad». Muestra solo lo que está activado en macOS en tu Mac, con los nombres de Apple y un pequeño dibujo para cada uno: atajos en un botón del ratón, deslizar entre escritorios y apps a pantalla completa, Mission Control y App Exposé, pellizcar para las apps y separar los dedos para el escritorio, deslizar desde el borde derecho para el Centro de notificaciones y cada esquina activa con su acción. Mientras un juego está al frente, quedan en pausa, así que un deslizamiento accidental o un roce con la esquina de la pantalla no te sacará del juego. Los gestos dentro del juego siguen funcionando. Cada uno se puede dejar funcionando como siempre.
+
 Abre Ajustes → Juegos → Añadir un juego y haz clic en el juego abierto. También aparecen los juegos que usan Java u otros entornos, incluso sin archivo .app. Minecraft se muestra como Minecraft en lugar de java. Busca el proceso del juego y arrastra su fila a Tus juegos en Ajustes → Juegos.
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes.

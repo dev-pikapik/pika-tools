@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.34.0"></a>Chuột và bàn di chuột trong trò chơi
+
+<sub>1.34.0 · 11 tháng 10 năm 2026</sub>
+
+Vuốt, chụm và góc nóng giờ không còn đưa bạn ra khỏi trò chơi, giống như phím tắt bàn phím.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Trong Cài đặt › Trò chơi › Thêm cài đặt trò chơi có nhóm “Chuột và bàn di chuột”. Nhóm này chỉ liệt kê những gì đang bật trong macOS trên Mac của bạn, với tên gọi của Apple và một hình vẽ nhỏ cho từng mục: phím tắt trên nút chuột, vuốt giữa các màn hình nền và ứng dụng toàn màn hình, Mission Control và App Exposé, chụm ngón tay cho ứng dụng và xòe ngón tay cho màn hình nền, vuốt từ cạnh phải cho Trung tâm thông báo và mỗi góc nóng cùng thao tác của nó. Khi trò chơi ở phía trước, tất cả được tạm dừng, nên một cú vuốt nhầm hay chạm vào góc màn hình sẽ không đưa bạn ra khỏi trò chơi. Các cử chỉ bên trong trò chơi vẫn hoạt động bình thường. Mỗi mục có thể đặt để hoạt động như bình thường.
+
+---
+
 ## <a id="v1.33.2"></a>Nhóm phím tắt mở ngay lập tức
 
 <sub>1.33.2 · 11 tháng 10 năm 2026</sub>

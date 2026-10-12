@@ -391,7 +391,7 @@
 "Show Desktop" = "Visa skrivbord";
 "Desktops don’t switch" = "Skrivbord byts inte";
 "Desktops don’t switch by number" = "Skrivbord byts inte med nummer";
-"Swipes don’t switch desktops" = "Svepningar byter inte skrivbord";
+"Gestures don’t leave the game" = "Gester tar dig inte ut ur spelet";
 "Emoji don’t open" = "Emoji öppnas inte";
 "The dictionary doesn’t pop up" = "Ordboken dyker inte upp";
 "Look Up" = "Slå upp";
@@ -402,6 +402,7 @@
 "Command Tab, app switcher" = "Kommando Tab, appväxlare";
 "Mission Control, Spaces, Notification Center, Stage Manager" = "Mission Control, Spaces, Notiscenter, Stage Manager";
 "Spaces, swipe, gestures, trackpad" = "Spaces, svepa, gester, styrplatta";
+"Spaces, swipe, pinch, gestures, trackpad, Magic Mouse, Mission Control, Notification Center" = "Spaces, svepa, nypa, gester, styrplatta, Magic Mouse, Mission Control, Notiscenter";
 "symbols, dictionary" = "symboler, ordlista";
 "keyboard focus, function keys, Control Space, Ctrl, Shift, Option, input source, language" = "tangentbordsfokus, funktionstangenter, Control Mellanslag, Ctrl, Shift, Option, tangentbordslayout, inmatningskälla, alternativ, skift, option, shift, alt";
 "fn, globe key" = "fn, jordglobstangent";
@@ -559,6 +560,7 @@
 
 "Apps and windows" = "Appar och fönster";
 "Screenshots" = "Skärmbilder";
+"Mouse and trackpad" = "Mus och styrplatta";
 "System controls" = "Mac-funktioner";
 "Other macOS actions" = "Andra macOS-åtgärder";
 "Switch languages without leaving the game." = "Byt språk utan att lämna spelet.";
@@ -566,6 +568,7 @@
 "Mission Control, Spaces and the desktop." = "Mission Control, Spaces och skrivbordet.";
 "Pictures of the screen and screen recording." = "Skärmbilder och skärminspelning.";
 "Keyboard focus, emoji and the Globe key." = "Tangentbordsfokus, emoji och globtangenten.";
+"Mouse buttons, gestures and hot corners." = "Musknappar, gester och aktiva hörn.";
 "Zoom, colours, spoken feedback and captions." = "Zoom, färger, talad återkoppling och undertexter.";
 "Search, sound, brightness and other Mac controls." = "Sökning, ljud, ljusstyrka och andra Mac-funktioner.";
 "Actions whose purpose macOS doesn’t publish." = "Åtgärder vars syfte macOS inte publicerar.";
@@ -597,7 +600,6 @@
 "Prevents an accidental quit shortcut from ending the game." = "Hindrar ett oavsiktligt avslutningskommando från att avsluta spelet.";
 "Prevents an accidental close shortcut from closing the game window." = "Hindrar ett oavsiktligt kortkommando från att stänga spelfönstret.";
 "Lets you hold Control and click without opening a context menu." = "Låter dig hålla Control och klicka utan en kontextmeny.";
-"Keeps trackpad swipes from moving the game to another desktop." = "Hindrar svepningar på styrplattan från att byta skrivbord i spelet.";
 "Shows or hides the Dock." = "Visar eller döljer Dock.";
 "Runs the named macOS action. Keep it paused if it interrupts your game." = "Utför den angivna macOS-åtgärden. Pausa den om den stör spelet.";
 "macOS provides the keys but doesn’t name this action. You can still choose how it behaves in games." = "macOS anger tangenterna men inte åtgärdens namn. Du kan ändå välja hur den fungerar i spel.";
