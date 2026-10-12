@@ -10,7 +10,7 @@ if [ -z "$DIR" ]; then
     trap 'rm -rf "$DIR"' EXIT
     SOURCES=()
     while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' -print0)
-    SOURCES+=(Extensions/Convert/ConvertFormats.swift)
+    SOURCES+=(Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift)
     FLAGS=()
     if [ -d Private/Sources ] && [ -n "$(find Private/Sources -name '*.swift' -print -quit)" ]; then
         while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Private/Sources -name '*.swift' -print0)
@@ -21,10 +21,13 @@ if [ -z "$DIR" ]; then
         ${FLAGS[@]+"${FLAGS[@]}"} \
         -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
         "${SOURCES[@]}" -o "$DIR/app.o"
-    for EXT in NewFile Compress Convert; do
+    for EXT in NewFile Compress Convert Archive Preview; do
+        SHARED=(Extensions/Shared/*.swift)
+        [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
+        [ "$EXT" != Preview ] || SHARED=()
         swiftc -wmo -c -module-name "$EXT" -target arm64-apple-macos14.0 -application-extension \
             -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
-            Extensions/"$EXT"/*.swift Extensions/Shared/*.swift -o "$DIR/$EXT.o"
+            Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} -o "$DIR/$EXT.o"
     done
 fi
 

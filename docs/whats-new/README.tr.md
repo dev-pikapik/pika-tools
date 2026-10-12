@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Arşivler artık Finder’da açılıyor ve oluşturuluyor
+
+<sub>1.38.0 · 12 Ekim 2026</sub>
+
+Yeni “Finder’da Arşivler”, macOS’un açamadığı RAR gibi arşivleri açar ve sağ tık menüsünden ZIP ile 7Z oluşturur.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Ayarlar › Finder sayfasını açın ve “Finder’da Arşivler” anahtarını açın. Bir arşive sağ tıklayıp “Arşivden Çıkar” komutunu seçin; dosyaları hemen yanında belirir. Başka bir dosyaya veya klasöre sağ tıklayıp “Arşiv Oluştur…” komutunu seçin; ZIP, 7Z, TAR.GZ veya TAR.XZ elde edersiniz. ZIP ve 7Z parolalı olabilir, her arşiv de parçalara bölünebilir; örneğin e-posta için 15 MB’lık parçalar. Bu şekilde hazırlanan bir ZIP’te sistemin eklediği gizli dosyalar olmaz ve her dildeki dosya adları okunur kalır.
+
+pikapik, macOS’un açamadıklarını da açar: birkaç dosyaya bölünmüş olsa bile RAR, parolayla korunan 7Z, ZIPX, CAB, LZH, ARJ, ZST, WIM ve daha fazlası. Çift tıklayınca pikapik’te açılırlar. Eski ZIP’lerdeki dosya adları, örneğin Kiril, Japonca veya Çince olanlar, okunur çıkar. “Arşivleri bu uygulamayla aç” anahtarı ZIP ve 7Z’yi de pikapik’e verir; TAR ve GZ ise bunları zaten iyi işleyen yerleşik arşiv uygulamasında kalır.
+
+Bir pencere parolayı sorar, “Durdur” her işi iptal eder ve hasarlı bir arşivden pikapik hâlâ okunabilen her şeyi çıkarır. Devasa bir boyuta şişecek bir arşivi çıkarmadan önce sorar, kendi klasörünün dışına yazmaya çalışan arşivleri de engeller. Mac App Store sürümünde yoktur. Bir arşivi seçip Boşluk tuşuna basarak içindekileri önizleyebilirsiniz.
+
+---
+
 ## <a id="v1.37.3"></a>FPS etiketi izni doğru yerde istiyor
 
 <sub>1.37.3 · 12 Ekim 2026</sub>

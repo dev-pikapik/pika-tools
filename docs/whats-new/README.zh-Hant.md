@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>在 Finder 中打開和建立壓縮檔
+
+<sub>1.38.0 · 2026年10月12日</sub>
+
+新的「Finder 中的壓縮檔」可以打開 RAR 等 macOS 打不開的壓縮檔，還能在右鍵選單裡建立 ZIP 和 7Z。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+打開「設定 › Finder」，開啟「Finder 中的壓縮檔」。在壓縮檔上按右鍵點按並選擇「解壓縮」，裡面的檔案就會出現在它旁邊。在其他任何檔案或檔案夾上按右鍵點按並選擇「建立壓縮檔…」，即可產生 ZIP、7Z、TAR.GZ 或 TAR.XZ。ZIP 和 7Z 可以設定密碼，任何壓縮檔都可以分成多個部分，例如適合用電子郵件寄送的 15 MB 一份。這樣產生的 ZIP 不夾帶系統產生的隱藏檔案，任何語言的檔名也都能正常顯示。
+
+pikapik 還能打開 macOS 打不開的檔案：RAR（包括分成多個檔案的）、帶密碼的 7Z、ZIPX、CAB、LZH、ARJ、ZST、WIM 等。連按兩下就會在 pikapik 中打開。舊版 ZIP 裡的檔名，例如西里爾文、日文或中文的，也能正常顯示。開關「用此 App 打開壓縮檔」還會把 ZIP 和 7Z 也交給 pikapik，而 TAR 和 GZ 仍由內建的壓縮檔 App 處理，它本來就處理得很好。
+
+會彈出視窗詢問密碼，「停止」可以取消任何工作，對於損壞的壓縮檔，pikapik 會取出仍然可以讀取的部分。解壓縮後會膨脹到巨大體積的壓縮檔，pikapik 會先詢問你，並攔下那些試圖寫到自己檔案夾之外的壓縮檔。Mac App Store 版本中沒有此功能。選取壓縮檔後按空白鍵，即可預覽裡面有什麼。
+
+---
+
 ## <a id="v1.37.3"></a>FPS 現在在正確的地方請求權限
 
 <sub>1.37.3 · 2026年10月12日</sub>

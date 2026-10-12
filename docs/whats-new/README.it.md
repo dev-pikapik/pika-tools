@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Apri e crea archivi nel Finder
+
+<sub>1.38.0 · 12 ottobre 2026</sub>
+
+I nuovi «Archivi nel Finder» aprono RAR e altri archivi che macOS non sa aprire, e creano ZIP e 7Z con un clic destro.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Finder e attiva «Archivi nel Finder». Fai clic destro su un archivio e scegli «Estrai», e i suoi file compaiono accanto. Fai clic destro su un altro file o cartella e scegli «Crea archivio…» per ottenere uno ZIP, un 7Z, un TAR.GZ o un TAR.XZ. Uno ZIP o un 7Z può avere una password, e qualsiasi archivio si può dividere in parti, per esempio da 15 MB per l’e-mail. Uno ZIP creato così non contiene file di servizio nascosti e mantiene leggibili i nomi in qualsiasi lingua.
+
+pikapik apre anche ciò che macOS non sa aprire: RAR, anche diviso in più file, 7Z protetto da password, ZIPX, CAB, LZH, ARJ, ZST, WIM e altro ancora. Con un doppio clic si aprono in pikapik. I nomi dei file nei vecchi ZIP, per esempio in cirillico, giapponese o cinese, ora si leggono correttamente. L’interruttore «Apri gli archivi con questa app» affida a pikapik anche ZIP e 7Z, mentre TAR e GZ restano all’app per archivi integrata, che li gestisce già bene.
+
+Una finestra chiede la password, «Interrompi» ferma qualsiasi operazione, e da un archivio danneggiato pikapik recupera ciò che si può ancora leggere. Prima di estrarre un archivio che si gonfierebbe fino a una dimensione enorme, pikapik chiede conferma, e gli archivi che cercano di scrivere fuori dalla propria cartella vengono bloccati. Non è nella versione del Mac App Store. Seleziona un archivio e premi Spazio per vedere cosa contiene.
+
+---
+
 ## <a id="v1.37.3"></a>L’etichetta FPS chiede il permesso al posto giusto
 
 <sub>1.37.3 · 12 ottobre 2026</sub>

@@ -192,6 +192,14 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <br>Un piccolo contatore mostra quanto scorre bene il gioco, nell’angolo che scegli.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archivi</b>
+<br>Apri RAR e altri archivi, o riunisci i file in uno ZIP, con un clic destro.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Più dettagli
@@ -250,6 +258,12 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 **Copia più leggera nel Finder.** Clic destro su un file nel Finder e scegli **Crea copia più leggera**. Accanto compare una versione più leggera di una foto, una GIF, un PDF o un video, spesso molte volte più piccola. L’audio non compresso, come WAV o AIFF, diventa un M4A compatto. Se il file non può diventare più leggero, la copia non viene creata e pikapik te lo dice. L’originale resta com’è e niente lascia il tuo Mac. Disattivato di default.
 
 **Conversione nel Finder.** Clic destro su un file nel Finder e scegli **Converti in** per salvarlo in un altro formato: un’immagine come JPEG, PNG, HEIC, GIF, TIFF o PDF, un video come MP4, MOV o solo l’audio, la musica come M4A, WAV o AIFF. L’originale resta com’è e niente lascia il tuo Mac. Si attiva separatamente dalla copia più leggera. Disattivato di default.
+
+**Archivi nel Finder.** Clic destro su un archivio nel Finder e scegli **Estrai**, e i suoi file compaiono accanto. Clic destro su un altro file o cartella e scegli **Crea archivio…** per ottenere uno ZIP, un 7Z, un TAR.GZ o un TAR.XZ. Uno ZIP o un 7Z può avere una password, e qualsiasi archivio si può dividere in parti, per esempio da 15 MB per l’e-mail o da 4 GB per una chiavetta USB. Uno ZIP creato così non contiene file di servizio nascosti, mantiene leggibili i nomi in qualsiasi lingua e accetta file oltre i 4 GB. Disattivato di default. Non è nella versione del Mac App Store.
+
+pikapik apre anche ciò che macOS non sa aprire: RAR, anche diviso in parti, 7Z protetto da password, set di parti come .001, .z01, .r00 e .part1.rar, e inoltre ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM e altro ancora. Con un doppio clic si aprono in pikapik. I nomi dei file nei vecchi ZIP, per esempio in cirillico, giapponese o cinese, si leggono correttamente. L’interruttore **Apri gli archivi con questa app**, in Impostazioni › Finder, affida a pikapik anche ZIP e 7Z, mentre TAR e GZ restano all’app per archivi integrata, che li gestisce già bene. pikapik può aprire i RAR ma non crearli: la licenza RAR consente solo l’estrazione.
+
+Una finestra chiede la password, **Interrompi** ferma qualsiasi operazione, e da un archivio danneggiato o incompleto pikapik recupera ciò che si può ancora leggere. Se un archivio si gonfiasse fino a una dimensione enorme, pikapik chiede conferma prima di estrarlo, e si ferma in tempo quando il disco sta per riempirsi. Gli archivi che cercano di scrivere fuori dalla propria cartella vengono bloccati. Seleziona un archivio nel Finder e premi Spazio per vedere cosa contiene.
 
 **Modalità gioco.** Aggiungi i tuoi giochi e, mentre giochi, il Mac non ti tira fuori dal gioco. Spotlight, Siri, ⌘Tab, Mission Control e gli scorrimenti tra le scrivanie non si aprono sopra il gioco, ⌘Q e ⌘W non lo chiudono per sbaglio, il puntatore non scivola sul Dock, sulla barra dei menu o su un altro schermo e lo schermo resta acceso. Ognuna di queste opzioni ha il suo interruttore nella pagina Giochi, e pikapik ti suggerisce i giochi che trova sul tuo Mac. Nel gioco, Control-clic resta un semplice clic, e Control con le frecce non cambia scrivania. Riconosce anche Minecraft: aggiungi Minecraft Launcher o CurseForge, e la modalità si attiva dentro Minecraft stesso. Per uscire da un gioco, premi ⇧⌘Q; per chiuderne la finestra, ⇧⌘W. ⌥⌘Esc funziona sempre. Appena esci dal gioco, tutto funziona come al solito. Disattivato di default.
 
@@ -312,7 +326,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: nascondere con un clic nel Dock.
-- **Finder**: nuovo file, copia più leggera e conversione, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
+- **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.
 - **Animaletto**: accensione, chiacchiere e palla, guardaroba e premi.

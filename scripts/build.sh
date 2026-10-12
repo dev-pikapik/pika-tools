@@ -4,6 +4,7 @@ cd "$(dirname "$0")/.."
 
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert"
+[ -n "${APPSTORE:-}" ] || EXTENSIONS="$EXTENSIONS Archive Preview"
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -17,12 +18,14 @@ APPSTORE_ID=com.pikapik.tools
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
+[ -n "${APPSTORE:-}" ] || ./scripts/fetch-7zip.sh
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
 SOURCES=()
 while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' -print0)
 SOURCES+=(Extensions/Convert/ConvertFormats.swift)
+[ -n "${APPSTORE:-}" ] || SOURCES+=(Extensions/Preview/ZipNames.swift)
 
 FLAGS=()
 if [ -n "${APPSTORE:-}" ]; then
@@ -30,7 +33,7 @@ if [ -n "${APPSTORE:-}" ]; then
     KEPT=()
     for f in "${SOURCES[@]}"; do
         case $f in
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*|*/Tools/Archive/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -57,13 +60,16 @@ for ARCH in arm64 x86_64; do
         Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
         -o "build/fan-helper-$ARCH"
     for EXT in $EXTENSIONS; do
+        SHARED=(Extensions/Shared/*.swift)
+        [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
+        [ "$EXT" != Preview ] || SHARED=()
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
             -target "$ARCH-apple-macos$MIN_OS" \
             -application-extension \
             "${EMIT[@]}" \
             -Xlinker -e -Xlinker _NSExtensionMain \
-            Extensions/"$EXT"/*.swift Extensions/Shared/*.swift \
+            Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} \
             -o "build/$EXT-$ARCH"
     done
 done
@@ -76,6 +82,7 @@ rm build/pika-tools-arm64 build/pika-tools-x86_64
 if [ -z "${APPSTORE:-}" ]; then
     lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
     rm build/fan-helper-arm64 build/fan-helper-x86_64
+    cp Vendor/7zip/7zz "$APP/Contents/MacOS/7zz"
 fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
@@ -94,9 +101,12 @@ for EXT in $EXTENSIONS; do
             NewFile) TEXTS='New File' NAME='New File in Finder' ;;
             Compress) TEXTS='Make a Smaller Copy' NAME='Smaller Copy in Finder' ;;
             Convert) TEXTS='Convert To|M4A \(Audio Only\)' NAME='Convert in Finder' ;;
+            Archive) TEXTS='Extract|Create Archive…' NAME='Archives in Finder' ;;
+            Preview) TEXTS='%lld items|Expands to %@|It could fill up your disk.|Protected with a password|Part of a multi-part archive|Damaged. Showing what could be read.|Only the first items are shown.|Contains a program. Open it only if you trust where it came from.' NAME='Archives in Finder' ;;
         esac
         grep -E "^\"($TEXTS)\" = " "$LPROJ/Localizable.strings" > "$OUT/Localizable.strings"
         grep "^\"$NAME\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"CFBundleDisplayName"/' > "$OUT/InfoPlist.strings"
+        [ "$EXT" != Preview ] || cp "$LPROJ/Localizable.stringsdict" "$OUT/"
     done
 done
 
@@ -108,7 +118,9 @@ if [ -z "${APPSTORE:-}" ]; then
     /usr/libexec/PlistBuddy -c "Add :NSAppleEventsUsageDescription string $FINDER_TEXT" "$APP/Contents/Info.plist"
     for LPROJ in Resources/*.lproj; do
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+        grep '^"Archive" = ' "$LPROJ/Localizable.strings" >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
+    cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
@@ -152,6 +164,7 @@ group_entitlements() {
 
 if [ -n "${APPSTORE:-}" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" -c "Add :ITSAppUsesNonExemptEncryption bool false" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Delete :CFBundleDocumentTypes" -c "Delete :UTImportedTypeDeclarations" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName $APPSTORE_ID" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-store" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-store" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do
@@ -168,7 +181,7 @@ elif [ -n "$DEV" ]; then
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
         /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.dev.}" "$PLIST"
-        /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
+        [ "$EXT" = Preview ] || /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
     done
 fi
 APP_ENTITLEMENTS=()
@@ -183,8 +196,9 @@ if [ -n "${APPSTORE:-}" ]; then
     APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
 else
     APP_ENTITLEMENTS=(--entitlements Resources/Direct.entitlements)
-    HELPER_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist").fans"
-    sign --identifier "$HELPER_ID" "$APP/Contents/Library/LaunchServices/fan-helper"
+    BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Contents/Info.plist")"
+    sign --identifier "$BUNDLE_ID.fans" "$APP/Contents/Library/LaunchServices/fan-helper"
+    sign --identifier "$BUNDLE_ID.7zz" "$APP/Contents/MacOS/7zz"
 fi
 sign ${APP_ENTITLEMENTS[@]+"${APP_ENTITLEMENTS[@]}"} "$APP"
 

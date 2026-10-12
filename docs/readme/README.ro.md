@@ -192,6 +192,14 @@ Atât Homebrew, cât și scriptul pun aplicația în `/Applications`, o pornesc,
 <br>Un mic contor arată cât de fluid rulează jocul, în colțul pe care îl alegi.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Arhive</b>
+<br>Extrage RAR și alte arhive sau împachetează fișiere într-un ZIP, cu un clic dreapta.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii
@@ -250,6 +258,12 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 **Copie mai mică în Finder.** Clic dreapta pe un fișier în Finder și alege **Creează o copie mai mică**. Alături apare o versiune mai ușoară a unei fotografii, a unui GIF, PDF sau video, adesea de câteva ori mai mică. Sunetul necomprimat, ca WAV sau AIFF, devine un M4A compact. Dacă fișierul nu poate fi mai mic, nu se face nicio copie, iar pikapik îți spune asta. Originalul rămâne neschimbat și nimic nu pleacă de pe Mac. Implicit dezactivat.
 
 **Conversie în Finder.** Clic dreapta pe un fișier în Finder și alege **Convertește în** ca să-l salvezi în alt format: o imagine ca JPEG, PNG, HEIC, GIF, TIFF sau PDF, un video ca MP4, MOV sau doar sunetul, muzica ca M4A, WAV sau AIFF. Originalul rămâne neschimbat și nimic nu pleacă de pe Mac. Se activează separat de copia mai mică. Implicit dezactivat.
+
+**Arhive în Finder.** Clic dreapta pe o arhivă în Finder și alege **Extrage**, iar fișierele ei apar alături. Clic dreapta pe orice alt fișier sau folder și alege **Creează arhivă…** ca să obții un ZIP, 7Z, TAR.GZ sau TAR.XZ. ZIP și 7Z pot avea parolă, iar orice arhivă poate fi împărțită în părți, de exemplu de câte 15 MB pentru e-mail sau de câte 4 GB pentru o unitate USB. Un ZIP făcut așa nu are fișiere de serviciu ascunse, păstrează lizibile numele în orice limbă și acceptă fișiere de peste 4 GB. Implicit dezactivat. Nu există în versiunea din Mac App Store.
+
+pikapik deschide și ce nu poate deschide macOS: RAR, chiar împărțit în părți, 7Z cu parolă, seturi de părți ca .001, .z01, .r00 și .part1.rar, plus ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM și altele. Un dublu clic le deschide în pikapik. Numele fișierelor din ZIP-urile vechi, de exemplu în chirilică, japoneză sau chineză, ies lizibile. Comutatorul **Deschide arhivele cu această aplicație**, din Setări › Finder, face ca pikapik să preia și ZIP-urile, și 7Z-urile, iar TAR și GZ rămân la aplicația de arhive integrată, care le tratează deja bine. pikapik extrage RAR, dar nu creează RAR: licența RAR permite doar extragerea.
+
+O fereastră cere parola, **Oprește** anulează orice lucrare, iar dintr-o arhivă deteriorată sau neterminată pikapik scoate ce se mai poate citi. Te întreabă înainte să extragă o arhivă care ar ajunge la o dimensiune uriașă, se oprește la timp dacă discul s-ar umple și blochează arhivele care încearcă să scrie în afara propriului folder. Apasă Spațiu pe o arhivă în Finder ca să vezi ce conține.
 
 **Modul Joc.** Adaugă-ți jocurile și, cât timp joci, Mac-ul nu te scoate din joc. Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc, ⌘Q și ⌘W nu îl închid din greșeală, cursorul nu alunecă spre Dock, bara de meniu sau alt ecran, iar ecranul rămâne aprins. Fiecare dintre acestea are propriul comutator pe pagina Jocuri, iar pikapik îți sugerează jocurile pe care le găsește pe Mac. În joc, Control-clic rămâne un clic obișnuit, iar Control cu săgețile nu schimbă desktopul. Recunoaște și Minecraft: adaugă Minecraft Launcher sau CurseForge, iar modul pornește chiar în Minecraft. Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. Imediat ce ieși din joc, totul merge ca de obicei. Implicit dezactivat.
 
@@ -312,7 +326,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: ascundere cu un clic în Dock.
-- **Finder**: fișier nou, copie mai mică și conversie, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
+- **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.
 - **Animăluț**: pornit sau oprit, vorbit și minge, garderoba și premiile.

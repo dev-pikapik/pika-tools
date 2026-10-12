@@ -117,7 +117,9 @@ jobs:
           ditto -x -k build/pika-tools.zip build/check
           for CHECK in build/check/pikapik.app build/check/pika-tools.app; do
             codesign --verify --deep --strict "$CHECK"
-            codesign -d -r- "$CHECK" 2>&1 | grep -q 'certificate leaf'
+            for SIGNED in "$CHECK" "$CHECK/Contents/MacOS/7zz" "$CHECK"/Contents/PlugIns/*.appex; do
+              codesign -d -r- "$SIGNED" 2>&1 | grep -q 'certificate leaf'
+            done
             [ "$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$CHECK/Contents/Info.plist")" = com.pesotchi.pika-tools ]
           done
 
@@ -132,7 +134,8 @@ jobs:
         if: github.ref_type == 'tag'
         run: |
           if ./scripts/release-notes.sh "$VERSION" > build/notes.md; then NOTES=(--notes-file build/notes.md); else NOTES=(--generate-notes); fi
-          gh release create "$GITHUB_REF_NAME" build/pikapik.zip build/pikapik.dmg build/pika-tools.zip \
+          ./scripts/fetch-7zip.sh --source build
+          gh release create "$GITHUB_REF_NAME" build/pikapik.zip build/pikapik.dmg build/pika-tools.zip build/7-Zip-26.04-source.tar.xz \
             --title "pikapik $VERSION" \
             "${NOTES[@]}"
 

@@ -11,12 +11,17 @@ final class FinderExtension {
     private let bundle: String
     private let key: String
     private let id: String
+    private let preview: Bool
 
-    init(bundle: String, key: String) {
+    init(bundle: String, key: String, preview: Bool = false) {
         self.bundle = bundle
         self.key = key
+        self.preview = preview
         id = (Bundle.main.bundleIdentifier ?? "com.pesotchi.pika-tools") + "." + key
         refresh()
+        #if !APPSTORE
+        if preview, !isActive { Self.pluginkit("-e", "ignore", "-i", Self.previewID) }
+        #endif
         Self.all.append(self)
     }
 
@@ -48,10 +53,8 @@ final class FinderExtension {
             refresh()
             return
             #else
-            if newValue, let plugIns = Bundle.main.builtInPlugInsURL {
-                Self.pluginkit("-a", plugIns.appending(path: bundle + ".appex").path)
-            }
-            Self.pluginkit("-e", newValue ? "use" : "ignore", "-i", id)
+            Self.elect(newValue, bundle: bundle, id: id)
+            if preview { Self.elect(newValue, bundle: "Preview", id: Self.previewID) }
             refresh()
             needsSettings = newValue && !isActive
             #endif
@@ -103,7 +106,7 @@ final class FinderExtension {
     static func refreshFinderRecord() {
         DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 20) {
             let map = UserDefaults.standard.dictionary(forKey: "com.apple.finder.SyncExtensions")?["dirMap"] as? [String: [String]] ?? [:]
-            guard let id = plugIns.compactMap(\.bundleIdentifier).first(where: { (map[$0]?.isEmpty ?? true) && pluginkit("-m", "-i", $0).hasPrefix("+") }) else { return }
+            guard let id = finderPlugIns.compactMap(\.bundleIdentifier).first(where: { (map[$0]?.isEmpty ?? true) && pluginkit("-m", "-i", $0).hasPrefix("+") }) else { return }
             pluginkit("-e", "use", "-i", id)
         }
     }
@@ -113,6 +116,19 @@ final class FinderExtension {
               let items = try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
         else { return [] }
         return items.filter { $0.pathExtension == "appex" }.compactMap(Bundle.init(url:))
+    }
+
+    fileprivate static var finderPlugIns: [Bundle] {
+        plugIns.filter { ($0.infoDictionary?["NSExtension"] as? [String: Any])?["NSExtensionPointIdentifier"] as? String == "com.apple.FinderSync" }
+    }
+
+    private static let previewID = (Bundle.main.bundleIdentifier ?? "com.pesotchi.pika-tools") + ".preview"
+
+    private static func elect(_ on: Bool, bundle: String, id: String) {
+        if on, let plugIns = Bundle.main.builtInPlugInsURL {
+            pluginkit("-a", plugIns.appending(path: bundle + ".appex").path)
+        }
+        pluginkit("-e", on ? "use" : "ignore", "-i", id)
     }
 
     @discardableResult
@@ -166,7 +182,7 @@ final class FinderRestart {
     }
 
     private static func isStale(_ finder: pid_t) -> Bool {
-        FinderExtension.plugIns.compactMap(\.bundleIdentifier).contains { id in
+        FinderExtension.finderPlugIns.compactMap(\.bundleIdentifier).contains { id in
             FinderExtension.run("/bin/launchctl", ["print", "pid/\(finder)/\(id)"])
                 .split(separator: "\n")
                 .map { $0.trimmingCharacters(in: .whitespaces) }

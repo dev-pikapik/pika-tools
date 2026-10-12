@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Buka dan buat arsip di Finder
+
+<sub>1.38.0 · 12 Oktober 2026</sub>
+
+Arsip di Finder yang baru membuka RAR dan arsip lain yang tidak bisa dibuka macOS, serta membuat ZIP dan 7Z dari menu klik kanan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Finder dan nyalakan “Arsip di Finder”. Klik kanan sebuah arsip dan pilih “Ekstrak”, lalu file-nya muncul di sebelahnya. Klik kanan file atau folder lain dan pilih “Buat Arsip…” untuk membuat ZIP, 7Z, TAR.GZ, atau TAR.XZ. ZIP dan 7Z bisa diberi kata sandi, dan arsip apa pun bisa dipisah menjadi beberapa bagian, misalnya 15 MB per bagian untuk email. ZIP yang dibuat dengan cara ini tidak berisi file tersembunyi yang ditambahkan sistem dan menjaga nama dalam bahasa apa pun tetap terbaca.
+
+pikapik juga membuka apa yang tidak bisa dibuka macOS: RAR, bahkan yang terpecah menjadi beberapa file, 7Z yang dikunci dengan kata sandi, ZIPX, CAB, LZH, ARJ, ZST, WIM, dan lainnya. Klik dua kali akan membukanya di pikapik. Nama file di ZIP lama, misalnya yang memakai aksara Sirilik, Jepang, atau Tionghoa, tampil terbaca. Sakelar “Buka arsip dengan app ini” juga menyerahkan ZIP dan 7Z ke pikapik, sementara TAR dan GZ tetap ditangani app arsip bawaan, yang memang sudah menanganinya dengan baik.
+
+Sebuah jendela menanyakan kata sandi, “Berhenti” membatalkan pekerjaan apa pun, dan dari arsip yang rusak pikapik mengambil apa yang masih bisa dibaca. pikapik bertanya dulu sebelum mengekstrak arsip yang akan membengkak menjadi ukuran sangat besar, dan memblokir arsip yang mencoba menulis di luar foldernya sendiri. Tidak ada di versi Mac App Store. Pilih sebuah arsip lalu tekan Spasi untuk melihat isinya.
+
+---
+
 ## <a id="v1.37.3"></a>Label FPS kini meminta izin di tempat yang tepat
 
 <sub>1.37.3 · 12 Oktober 2026</sub>

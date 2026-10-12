@@ -2,6 +2,17 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.38.0] - Unreleased
+
+### Added
+- Archives: Archives in Finder adds two items to the Finder right-click menu. On an archive, Extract puts its files next to it. On any other file or folder, Create Archive… makes a ZIP, 7Z, TAR.GZ or TAR.XZ. It is off by default: switch it on in Settings › Finder. It is not in the App Store version.
+- Archives: ZIP and 7Z can have a password, and any archive can be split into parts, for example 15 MB ones for email or 4 GB ones for a USB drive. A ZIP made this way has no hidden service files (.DS_Store, __MACOSX and the like), keeps names in any language readable and handles files over 4 GB.
+- Archives: pikapik also opens what macOS can’t: RAR, even split into parts, 7Z locked with a password, split sets such as .001, .z01, .r00 and .part1.rar, and ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM and more. Double-click opens them in pikapik. pikapik can unpack RAR but not make it: the RAR license allows only unpacking.
+- Archives: file names in old ZIPs that were written in a local code page, for example Cyrillic, Greek, Hebrew, Arabic, Thai, Japanese, Korean or Chinese, come out readable. pikapik works out the code page from the names themselves and takes your system languages into account.
+- Archives: a switch, Open archives with this app, in Settings › Finder also hands ZIP and 7Z to pikapik, while TAR and GZ stay with the built-in archive app, which already handles them well.
+- Archives: a window asks for the password, Stop cancels any job, and from a damaged or unfinished archive pikapik takes out what can still be read. It asks before unpacking an archive that would swell to a huge size, stops in time if the disk would fill up, and blocks archives that try to write outside their own folder.
+- Archives: press Space on an archive in Finder to see what is inside without unpacking it. The preview shows the unpacked size and notes when the archive has a password, comes in parts, is damaged, would swell to a huge size or contains a program. A big or slow archive is shown only in part, at most 5,000 items read within 1.5 seconds, and the preview says so. It is switched on and off together with Archives in Finder.
+
 ## [1.37.3] - 2026-10-12
 
 ### Fixed

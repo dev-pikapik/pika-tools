@@ -192,6 +192,14 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <br>Malé počítadlo v rohu, který si zvolíte, ukazuje, jak plynule hra běží.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archivy</b>
+<br>Pravým kliknutím rozbalíte RAR a další archivy nebo sbalíte soubory do archivu ZIP.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti
@@ -250,6 +258,12 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 **Menší kopie ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Vytvořit menší kopii**. Vedle se objeví lehčí verze fotky, GIFu, PDF nebo videa, často několikrát menší. Nekomprimovaný zvuk jako WAV nebo AIFF se změní na úsporné M4A. Pokud soubor už menší být nemůže, kopie se nevytvoří a pikapik vám to řekne. Originál zůstane beze změny a nic neopustí váš Mac. Ve výchozím stavu vypnuto.
 
 **Převod ve Finderu.** Klikněte pravým na soubor ve Finderu a vyberte **Převést na** a soubor se uloží v jiném formátu: obrázek jako JPEG, PNG, HEIC, GIF, TIFF nebo PDF, video jako MP4, MOV nebo jen zvuk, hudba jako M4A, WAV nebo AIFF. Originál zůstane beze změny a nic neopustí váš Mac. Zapíná se zvlášť od menší kopie. Ve výchozím stavu vypnuto.
+
+**Archivy ve Finderu.** Klikněte pravým na archiv ve Finderu, vyberte **Rozbalit** a jeho soubory se objeví vedle něj. Klikněte pravým na jakýkoli jiný soubor nebo složku, vyberte **Vytvořit archiv…** a vznikne ZIP, 7Z, TAR.GZ nebo TAR.XZ. ZIP a 7Z mohou mít heslo a každý archiv lze rozdělit na části, například po 15 MB pro e-mail nebo po 4 GB pro USB disk. ZIP vytvořený tímto způsobem neobsahuje skryté soubory, které přidává systém, názvy v jakémkoli jazyce zůstanou čitelné a zvládne i soubory větší než 4 GB. Ve výchozím stavu vypnuto. Ve verzi z Mac App Store tato funkce není.
+
+pikapik otevře i to, co macOS neotevře: RAR, třeba rozdělený na části, 7Z chráněný heslem, sady částí jako .001, .z01, .r00 a .part1.rar a také ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM a další. Po dvojkliku je otevře pikapik. Názvy souborů ve starých archivech ZIP, například v azbuce, japonštině nebo čínštině, se zobrazí čitelně. Přepínač **Otevírat archivy v této aplikaci** v Nastavení › Finder zařídí, že i ZIP a 7Z otevře pikapik, zatímco TAR a GZ zůstanou u vestavěné aplikace pro archivy, která si s nimi už dobře poradí. pikapik umí RAR rozbalit, ale nevytvoří ho: licence RAR povoluje jen rozbalování.
+
+Okno se zeptá na heslo, **Zastavit** zruší jakoukoli úlohu a z poškozeného nebo neúplného archivu pikapik vytáhne, co se ještě dá přečíst. Před rozbalením archivu, který by nabobtnal do obrovské velikosti, se zeptá, včas se zastaví, kdyby se měl zaplnit disk, a archivy, které se pokoušejí zapisovat mimo vlastní složku, zablokuje. Vyberte archiv ve Finderu a stiskněte mezerník, abyste viděli, co obsahuje.
 
 **Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pikapik vám nabídne hry, které na vašem Macu najde. Ve hře zůstane Control-kliknutí obyčejným kliknutím a Control se šipkami nepřepne plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
 
@@ -312,7 +326,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.
-- **Finder**: nový soubor, menší kopie a převod, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
+- **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Hry**: seznam vašich her a volby Herního režimu.
 - **Mazlíček**: zapnutí a vypnutí, povídání a míč, šatník a ocenění.

@@ -270,7 +270,7 @@ private final class CompressQueue {
             let after = try output.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? before
             guard Double(after) <= Double(before) * 0.95 else { return nil }
         }
-        let copy = NewFile.uniqueURL(for: name, in: folder)
+        let copy = manager.uniqueURL(for: name, in: folder)
         try manager.moveItem(at: output, to: copy)
         return copy
     }

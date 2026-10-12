@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.38.0"></a>Otwieraj i twórz archiwa w Finderze
+
+<sub>1.38.0 · 12 października 2026</sub>
+
+Nowe „Archiwa w Finderze” otwierają archiwa RAR i inne, których macOS nie potrafi otworzyć, a z menu pod prawym przyciskiem myszy tworzą ZIP i 7Z.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Finder i włącz „Archiwa w Finderze”. Kliknij archiwum prawym przyciskiem i wybierz „Wypakuj”, a jego pliki pojawią się obok. Kliknij prawym przyciskiem dowolny inny plik lub folder i wybierz „Utwórz archiwum…”, aby powstał ZIP, 7Z, TAR.GZ lub TAR.XZ. ZIP i 7Z mogą mieć hasło, a każde archiwum można podzielić na części, na przykład po 15 MB do poczty. ZIP zrobiony w ten sposób nie zawiera ukrytych plików dodawanych przez system i zachowuje czytelne nazwy w każdym języku.
+
+pikapik otwiera też to, czego nie otworzy macOS: RAR, nawet podzielony na kilka plików, 7Z zabezpieczony hasłem, ZIPX, CAB, LZH, ARJ, ZST, WIM i inne. Po dwukrotnym kliknięciu otwiera je pikapik. Nazwy plików w starych archiwach ZIP, na przykład zapisane cyrylicą, po japońsku lub po chińsku, wyświetlają się czytelnie. Przełącznik „Otwieraj archiwa w tej aplikacji” sprawia, że pikapik przejmuje także ZIP i 7Z, a TAR i GZ zostają przy wbudowanej aplikacji do archiwów, która już dobrze sobie z nimi radzi.
+
+Okno pyta o hasło, „Zatrzymaj” przerywa każde zadanie, a z uszkodzonego archiwum pikapik wyciąga to, co da się jeszcze odczytać. Pyta, zanim wypakuje archiwum, które rozrosłoby się do ogromnego rozmiaru, i blokuje archiwa próbujące zapisywać poza własnym folderem. Nie ma tego w wersji z Mac App Store. Zaznacz archiwum i naciśnij spację, aby podejrzeć, co jest w środku.
+
+---
+
 ## <a id="v1.37.3"></a>Plakietka FPS prosi o zgodę we właściwym miejscu
 
 <sub>1.37.3 · 12 października 2026</sub>

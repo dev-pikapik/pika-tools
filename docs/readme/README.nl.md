@@ -192,6 +192,14 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br>Een kleine teller laat in de hoek van je keuze zien hoe soepel je game loopt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Archieven</b>
+<br>Pak RAR en andere archieven uit, of verpak bestanden in een ZIP, met een rechtsklik.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Meer weten
@@ -250,6 +258,12 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 **Kleinere kopie in de Finder.** Klik met rechts op een bestand in de Finder en kies **Maak kleinere kopie**. Ernaast verschijnt een lichtere versie van een foto, GIF, pdf of video, vaak vele malen kleiner. Ongecomprimeerd geluid zoals WAV of AIFF wordt een compacte M4A. Kan een bestand niet kleiner, dan komt er geen kopie en laat pikapik dat weten. Het origineel blijft zoals het is en niets verlaat je Mac. Standaard uit.
 
 **Omzetten in de Finder.** Klik met rechts op een bestand in de Finder en kies **Zet om naar** om het in een ander formaat te bewaren: een afbeelding als JPEG, PNG, HEIC, GIF, TIFF of PDF, een video als MP4, MOV of alleen het geluid, muziek als M4A, WAV of AIFF. Het origineel blijft zoals het is en niets verlaat je Mac. Los van de kleinere kopie aan te zetten. Standaard uit.
+
+**Archieven in de Finder.** Klik met rechts op een archief in de Finder en kies **Uitpakken**, en de bestanden verschijnen ernaast. Klik met rechts op een ander bestand of een map en kies **Maak archief…** om een ZIP, 7Z, TAR.GZ of TAR.XZ te maken. ZIP en 7Z kunnen een wachtwoord hebben, en elk archief kan in delen worden opgesplitst, bijvoorbeeld van 15 MB voor e-mail of van 4 GB voor een USB-stick. Een ZIP die zo is gemaakt bevat geen verborgen bestanden die het systeem toevoegt, houdt namen in elke taal leesbaar en kan bestanden van meer dan 4 GB aan. Standaard uit. Zit niet in de versie uit de Mac App Store.
+
+pikapik opent ook wat macOS niet kan openen: RAR, zelfs verdeeld over delen, 7Z met een wachtwoord, reeksen zoals .001, .z01, .r00 en .part1.rar, en ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM en meer. Dubbelklikken opent ze in pikapik. Bestandsnamen in oude ZIP-bestanden, bijvoorbeeld in Cyrillisch, Japans of Chinees, komen leesbaar uit de bus. Met de schakelaar **Open archieven met deze app** in Instellingen › Finder neemt pikapik ook ZIP en 7Z over, terwijl TAR en GZ bij de ingebouwde archiefapp blijven, die daar al goed mee overweg kan. pikapik kan RAR uitpakken maar niet maken: de RAR-licentie staat alleen uitpakken toe.
+
+Een venster vraagt om het wachtwoord, **Stop** breekt elke taak af, en uit een beschadigd of onvolledig archief haalt pikapik wat nog te lezen is. Het vraagt eerst om bevestiging voordat het een archief uitpakt dat tot een enorme omvang zou opzwellen, stopt op tijd als de schijf vol dreigt te raken en blokkeert archieven die buiten hun eigen map proberen te schrijven. Selecteer een archief in de Finder en druk op de spatiebalk om te zien wat erin zit.
 
 **Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pikapik stelt games voor die het op je Mac vindt. In een game blijft Control-klik een klik, en Control met pijltjes wisselt niet van bureaublad. Ook Minecraft wordt herkend: voeg Minecraft Launcher of CurseForge toe, en de modus gaat aan in Minecraft zelf. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
 
@@ -312,7 +326,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.
-- **Finder**: nieuw bestand, kleinere kopie en omzetten, openen met Return, knippen met ⌘X en verwijderen met ⌫.
+- **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
 - **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
 - **Games**: je lijst met games en de opties van de Gamemodus.
 - **Huisdiertje**: zet het aan of uit, laat het kletsen en met de bal spelen, kleed het aan en bekijk je onderscheidingen.

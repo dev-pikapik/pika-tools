@@ -192,6 +192,14 @@ Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om
 <br>En liten räknare visar hur smidigt spelet går, i det hörn du väljer.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Arkiv</b>
+<br>Packa upp RAR och andra arkiv, eller packa ihop filer till en ZIP, med ett högerklick.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mer information
@@ -250,6 +258,12 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 **Mindre kopia i Finder.** Högerklicka på en fil i Finder och välj **Skapa mindre kopia**. Bredvid hamnar en lättare version av ett foto, en GIF, en PDF eller en video, ofta flera gånger mindre. Okomprimerat ljud som WAV eller AIFF blir en kompakt M4A. Om filen inte kan bli mindre skapas ingen kopia, och pikapik säger till. Originalet förblir som det är och inget lämnar din Mac. Av som standard.
 
 **Konvertering i Finder.** Högerklicka på en fil i Finder och välj **Konvertera till** för att spara den i ett annat format: en bild som JPEG, PNG, HEIC, GIF, TIFF eller PDF, en video som MP4, MOV eller bara ljudet, musik som M4A, WAV eller AIFF. Originalet förblir som det är och inget lämnar din Mac. Slås på separat från mindre kopia. Av som standard.
+
+**Arkiv i Finder.** Högerklicka på ett arkiv i Finder och välj **Packa upp**, så dyker filerna upp bredvid det. Högerklicka på en annan fil eller mapp och välj **Skapa arkiv…** för att göra en ZIP, 7Z, TAR.GZ eller TAR.XZ. ZIP och 7Z kan ha lösenord, och varje arkiv kan delas upp i delar, till exempel på 15 MB för e-post eller på 4 GB för ett USB-minne. En ZIP som görs så har inga dolda filer som systemet lägger till, behåller namn på alla språk läsbara och klarar filer över 4 GB. Av som standard. Finns inte i versionen från Mac App Store.
+
+pikapik öppnar också sådant som macOS inte kan: RAR, även uppdelat i delar, 7Z med lösenord, delade uppsättningar som .001, .z01, .r00 och .part1.rar, samt ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM och fler. Dubbelklicka så öppnas de i pikapik. Filnamn i gamla ZIP-filer, till exempel på kyrilliska, japanska eller kinesiska, blir läsbara. Med reglaget **Öppna arkiv med den här appen** i Inställningar › Finder tar pikapik också över ZIP och 7Z, medan TAR och GZ stannar hos den inbyggda arkivappen, som redan hanterar dem bra. pikapik kan packa upp RAR men inte skapa det: RAR-licensen tillåter bara uppackning.
+
+Ett fönster frågar efter lösenordet, **Stoppa** avbryter vilket jobb som helst, och ur ett skadat eller ofullständigt arkiv plockar pikapik ut det som fortfarande går att läsa. Det frågar innan ett arkiv packas upp som skulle svälla till en enorm storlek, stoppar i tid om disken skulle bli full och blockerar arkiv som försöker skriva utanför sin egen mapp. Markera ett arkiv i Finder och tryck på mellanslag för att se vad som finns i det.
 
 **Spelläge.** Lägg till dina spel, så drar din Mac inte ut dig ur spelet medan du spelar. Spotlight, Siri, ⌘Tab, Mission Control och svep mellan skrivbord öppnas inte ovanpå spelet, ⌘Q och ⌘W stänger det inte av misstag, pekaren glider inte till Dock, menyraden eller en annan skärm, och skärmen förblir på. Var och en av dessa har ett eget reglage på sidan Spel, och pikapik föreslår spel som det hittar på din Mac. I ett spel förblir kontroll-klick ett vanligt klick, och kontroll med pilar byter inte skrivbord. Minecraft känns också igen: lägg till Minecraft Launcher eller CurseForge, så slås läget på i själva Minecraft. Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. Så fort du lämnar spelet fungerar allt som vanligt. Av som standard.
 
@@ -312,7 +326,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: göm med ett klick i Dock.
-- **Finder**: ny fil, mindre kopia och konvertering, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
+- **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Spel**: din lista med spel och alternativen för Spelläge.
 - **Husdjur**: slå på eller av husdjuret, låt det prata och leka med bollen, klä på det och se dina utmärkelser.

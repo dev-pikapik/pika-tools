@@ -40,13 +40,17 @@ cask "pikapik" do
         "/Library/PrivilegedHelperTools/com.pesotchi.pika-tools.fans",
       ],
       trash:     [
+    "~/Library/Application Scripts/com.pesotchi.pika-tools.archive",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.compress",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.convert",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.new-file",
+    "~/Library/Application Scripts/com.pesotchi.pika-tools.preview",
     "~/Library/Caches/com.pesotchi.pika-tools",
+    "~/Library/Containers/com.pesotchi.pika-tools.archive",
     "~/Library/Containers/com.pesotchi.pika-tools.compress",
     "~/Library/Containers/com.pesotchi.pika-tools.convert",
     "~/Library/Containers/com.pesotchi.pika-tools.new-file",
+    "~/Library/Containers/com.pesotchi.pika-tools.preview",
     "~/Library/HTTPStorages/com.pesotchi.pika-tools",
     "~/Library/Preferences/com.pesotchi.pika-tools.plist",
   ]

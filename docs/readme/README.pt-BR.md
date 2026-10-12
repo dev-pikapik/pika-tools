@@ -192,6 +192,14 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br>Um pequeno contador mostra a fluidez do seu jogo, no canto que você escolher.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
+<br><b>Arquivos compactados</b>
+<br>Abra RAR e outros arquivos compactados, ou junte arquivos em um ZIP, com o botão direito.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes
@@ -250,6 +258,12 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 **Cópia menor no Finder.** Clique com o botão direito num arquivo no Finder e escolha **Criar cópia menor**. Ao lado aparece uma versão mais leve de uma foto, GIF, PDF ou vídeo, muitas vezes várias vezes menor. Som sem compressão, como WAV ou AIFF, vira um M4A compacto. Se o arquivo não puder ficar menor, nenhuma cópia é criada e o pikapik avisa. O original continua igual e nada sai do seu Mac. Desativado por padrão.
 
 **Conversão no Finder.** Clique com o botão direito num arquivo no Finder e escolha **Converter para** para salvá-lo em outro formato: uma imagem como JPEG, PNG, HEIC, GIF, TIFF ou PDF, um vídeo como MP4, MOV ou só o som, música como M4A, WAV ou AIFF. O original continua igual e nada sai do seu Mac. Liga separadamente da cópia menor. Desativado por padrão.
+
+**Arquivos compactados no Finder.** Clique com o botão direito num arquivo compactado no Finder e escolha **Extrair**, e os arquivos dele aparecem ao lado. Clique com o botão direito em qualquer outro arquivo ou pasta e escolha **Criar arquivo compactado…** para gerar um ZIP, 7Z, TAR.GZ ou TAR.XZ. ZIP e 7Z podem ter senha, e qualquer arquivo compactado pode ser dividido em partes, por exemplo de 15 MB para e-mail ou de 4 GB para um pen drive. Um ZIP criado assim não tem arquivos de serviço ocultos, mantém legíveis os nomes em qualquer idioma e aceita arquivos com mais de 4 GB. Desativado por padrão. Não está na versão da Mac App Store.
+
+O pikapik também abre o que o macOS não abre: RAR, até dividido em partes, 7Z protegido por senha, conjuntos de partes como .001, .z01, .r00 e .part1.rar, além de ZIPX, CAB, LZH, ARJ, ZST, LZMA, WIM e mais. Clicar duas vezes neles os abre no pikapik. Os nomes de arquivos em ZIPs antigos, por exemplo em cirílico, japonês ou chinês, aparecem legíveis. A opção **Abrir arquivos compactados com este app**, em Ajustes › Finder, também entrega ZIP e 7Z ao pikapik, enquanto TAR e GZ ficam com o app de arquivos compactados do sistema, que já cuida bem deles. O pikapik sabe abrir RAR, mas não criar: a licença do RAR só permite extrair.
+
+Uma janela pede a senha, **Parar** cancela qualquer tarefa e, de um arquivo compactado danificado ou incompleto, o pikapik tira o que ainda dá para ler. Se um arquivo compactado crescesse até um tamanho enorme, o pikapik pergunta antes de extrair, e para a tempo quando o disco está prestes a encher. Arquivos compactados que tentam gravar fora da própria pasta são bloqueados. Selecione um arquivo compactado no Finder e aperte Espaço para ver o que há dentro.
 
 **Modo Jogo.** Adicione seus jogos e, enquanto você joga, o Mac não tira você do jogo. Spotlight, Siri, ⌘Tab, Mission Control e os gestos entre mesas não abrem por cima do jogo, ⌘Q e ⌘W não o fecham sem querer, o ponteiro não escapa para o Dock, a barra de menus ou outra tela, e a tela continua ligada. Cada uma dessas opções tem a própria chave na página Jogos, e o pikapik sugere os jogos que encontra no seu Mac. No jogo, Control-clique continua sendo um clique, e Control com as setas não troca de mesa. O Minecraft também é reconhecido: adicione o Minecraft Launcher ou o CurseForge, e o modo liga dentro do próprio Minecraft. Para sair de um jogo, pressione ⇧⌘Q; para fechar a janela dele, ⇧⌘W. ⌥⌘Esc sempre funciona. Assim que você sai do jogo, tudo funciona como sempre. Desativado por padrão.
 
@@ -312,7 +326,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.
-- **Finder**: novo arquivo, cópia menor e conversão, abrir com Return, recortar com ⌘X e apagar com ⌫.
+- **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.
 - **Bichinho**: ligar ou desligar o bichinho, conversas e bola, guarda-roupa e prêmios.
