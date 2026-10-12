@@ -29,6 +29,9 @@ cp "$NEWFILE_PROFILE" "$APP/Contents/PlugIns/NewFile.appex/Contents/embedded.pro
 cp "$COMPRESS_PROFILE" "$APP/Contents/PlugIns/Compress.appex/Contents/embedded.provisionprofile"
 cp "$CONVERT_PROFILE" "$APP/Contents/PlugIns/Convert.appex/Contents/embedded.provisionprofile"
 
+# Profiles downloaded or AirDropped carry com.apple.quarantine, which App Store processing rejects (ITMS-91109).
+xattr -cr "$APP"
+
 sign() { codesign --force --options runtime --timestamp --sign "$APP_IDENTITY" "$@"; }
 for EXT in $EXTENSIONS; do
     sign --entitlements "build/$EXT.entitlements" "$APP/Contents/PlugIns/$EXT.appex"

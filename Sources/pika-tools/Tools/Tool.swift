@@ -68,26 +68,34 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(KeyRepeatTool())
         #endif
+        #if !APPSTORE
         list.append(HomeEndTool())
+        #endif
         #if !APPSTORE
         list.append(PointerTool())
         #endif
         list.append(WheelTool())
         list.append(ScrollDirectionTool())
         list.append(SideButtonsTool())
+        #if !APPSTORE
         list.append(WindowZoomTool())
+        #endif
         list.append(CommandKeysTool())
+        #if !APPSTORE
         list.append(QuitOnCloseTool())
         list.append(DockHideTool())
+        #endif
         list.append(NewFileTool())
         list.append(CompressTool())
         list.append(ConvertTool())
         #if !APPSTORE
         list.append(ArchiveTool())
         #endif
+        #if !APPSTORE
         list.append(FinderOpenTool())
         list.append(FinderCutTool())
         list.append(FinderDeleteTool())
+        #endif
         #if !APPSTORE
         list.append(AnimationsTool.shared)
         #endif
