@@ -73,10 +73,17 @@ private struct SheetHero: View {
                 Spacer(minLength: 12)
                 if case .choosing = session.phase {
                     VStack(alignment: .trailing, spacing: 2) {
-                        Text(session.plan.bytes().map(UninstallerText.size) ?? "")
-                            .font(.system(size: 28, weight: .semibold, design: .rounded))
-                            .monospacedDigit()
-                            .frame(height: 34, alignment: .trailing)
+                        Group {
+                            if let total = session.plan.bytes() {
+                                Text(UninstallerText.size(total))
+                                    .font(.system(size: 28, weight: .semibold, design: .rounded))
+                                    .monospacedDigit()
+                            } else {
+                                ProgressView()
+                                    .controlSize(.small)
+                            }
+                        }
+                        .frame(height: 34, alignment: .trailing)
                         Text(String(localized: "\(session.plan.chosen().count) items"))
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
@@ -201,7 +208,7 @@ private struct GroupHeader: View {
                 .font(.headline)
                 .foregroundStyle(.primary)
             Spacer()
-            Text(plan.bytes(of: group).map(UninstallerText.size) ?? "")
+            Text(group.items.allSatisfy { $0.packageID != nil } ? "" : plan.bytes(of: group).map(UninstallerText.size) ?? "")
                 .font(.subheadline)
                 .monospacedDigit()
                 .foregroundStyle(.secondary)
@@ -310,28 +317,30 @@ private struct RemovedView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                VStack(spacing: 10) {
-                    if report.removed > 0 {
-                        DrawnCheck()
-                    } else {
-                        Image(systemName: "info.circle")
-                            .font(.system(size: 44))
+            GeometryReader { proxy in
+                ScrollView {
+                    VStack(spacing: 10) {
+                        if report.removed > 0 {
+                            DrawnCheck()
+                        } else {
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 44))
+                                .foregroundStyle(.secondary)
+                                .frame(width: 64, height: 64)
+                        }
+                        Text(report.removed > 0 ? String(localized: "Moved \(report.removed) items (\(UninstallerText.size(report.bytes))) to the Trash") : String(localized: "Nothing was moved"))
+                            .font(.title2.bold())
+                            .multilineTextAlignment(.center)
+                        Text(session.app.displayName)
                             .foregroundStyle(.secondary)
-                            .frame(width: 64, height: 64)
+                        if !report.survivors.isEmpty {
+                            survivors
+                                .padding(.top, 14)
+                        }
                     }
-                    Text(report.removed > 0 ? String(localized: "Moved \(report.removed) items (\(UninstallerText.size(report.bytes))) to the Trash") : String(localized: "Nothing was moved"))
-                        .font(.title2.bold())
-                        .multilineTextAlignment(.center)
-                    Text(session.app.displayName)
-                        .foregroundStyle(.secondary)
-                    if !report.survivors.isEmpty {
-                        survivors
-                            .padding(.top, 14)
-                    }
+                    .padding(24)
+                    .frame(maxWidth: .infinity, minHeight: proxy.size.height)
                 }
-                .padding(24)
-                .frame(maxWidth: .infinity)
             }
             Divider()
             HStack(spacing: 10) {
@@ -366,11 +375,12 @@ private struct RemovedView: View {
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
+                        if let step = survivor.step {
+                            Button(step.title) { step.perform(for: survivor.url) }
+                                .padding(.top, 6)
+                        }
                     }
-                    Spacer(minLength: 8)
-                    if let step = survivor.step {
-                        Button(step.title) { step.perform(for: survivor.url) }
-                    }
+                    Spacer(minLength: 0)
                 }
                 .help(survivor.url.path)
             }
@@ -388,28 +398,30 @@ private struct RestoredView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                VStack(spacing: 10) {
-                    if result.restored > 0 {
-                        DrawnCheck()
-                    } else {
-                        Image(systemName: "info.circle")
-                            .font(.system(size: 44))
+            GeometryReader { proxy in
+                ScrollView {
+                    VStack(spacing: 10) {
+                        if result.restored > 0 {
+                            DrawnCheck()
+                        } else {
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 44))
+                                .foregroundStyle(.secondary)
+                                .frame(width: 64, height: 64)
+                        }
+                        Text(result.restored > 0 ? String(localized: "Put back \(result.restored) items") : String(localized: "Nothing was put back"))
+                            .font(.title2.bold())
+                            .multilineTextAlignment(.center)
+                        Text(session.app.displayName)
                             .foregroundStyle(.secondary)
-                            .frame(width: 64, height: 64)
+                        if !result.stayed.isEmpty {
+                            stayed
+                                .padding(.top, 14)
+                        }
                     }
-                    Text(result.restored > 0 ? String(localized: "Put back \(result.restored) items") : String(localized: "Nothing was put back"))
-                        .font(.title2.bold())
-                        .multilineTextAlignment(.center)
-                    Text(session.app.displayName)
-                        .foregroundStyle(.secondary)
-                    if !result.stayed.isEmpty {
-                        stayed
-                            .padding(.top, 14)
-                    }
+                    .padding(24)
+                    .frame(maxWidth: .infinity, minHeight: proxy.size.height)
                 }
-                .padding(24)
-                .frame(maxWidth: .infinity)
             }
             Divider()
             HStack {

@@ -689,7 +689,7 @@
 "Installer records" = "Записи установщика";
 "The app itself" = "Сама программа";
 "Belongs to the app" = "Принадлежит программе";
-"Has the app’s name" = "Названо как программа";
+"Has the app’s name" = "Совпадает по имени";
 "Shared with its helpers" = "Общее с её помощниками";
 "Runs in the background" = "Работает в фоне";
 "The app’s helper" = "Помощник программы";
