@@ -218,7 +218,7 @@ struct ArchiveBoardView: View {
     let stop: (ArchiveRow) -> Void
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 12) {
             ForEach(board.rows.prefix(4)) { row in
                 ArchiveRowView(row: row) { stop(row) }
             }
@@ -228,9 +228,7 @@ struct ArchiveBoardView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .padding(20)
-        .frame(width: 340)
-        .ignoresSafeArea()
+        .archiveChrome(width: 348)
     }
 }
 
@@ -260,7 +258,7 @@ private struct ArchiveRowView: View {
                     .font(.title3)
                     .foregroundStyle(.secondary)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.borderless)
             .help(Text("Stop"))
             .accessibilityLabel(Text("Stop"))
         }

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>새로워진 압축 파일 창, 암호는 두 번 입력
+
+<sub>1.39.0 · 2026년 10월 13일</sub>
+
+새 압축 파일에 암호를 걸 때 이제 두 번 입력합니다. 오타 때문에 내 파일을 못 여는 일이 없습니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+두 암호가 같으면 입력란 아래에 초록색 줄이, 다르면 빨간색 줄이 나타나고, 같아질 때까지 ‘생성’은 누를 수 없습니다.
+
+모든 압축 파일 창이 새 모습이 되었습니다. 큰 아이콘, 암호용 스위치 하나, 그리고 파일 이름이 ZIP처럼 그대로 보이는지, 7Z처럼 함께 숨겨지는지 알려 주는 짧은 줄이 있습니다. macOS 26에서는 버튼이 Liquid Glass로 되어 있습니다.
+
+설치도 더 쉬워졌습니다. GitHub의 pikapik 페이지 맨 위에 있는 명령은 Mac에 다른 것을 설치하지 않아도 됩니다. 내려받은 파일에 개발자 서명이 있고 Apple의 악성 소프트웨어 검사를 통과한 경우에만 pikapik를 설치합니다.
+
+---
+
 ## <a id="v1.38.2"></a>App Store 버전과 함께 있어도 더 안전한 업데이트
 
 <sub>1.38.2 · 2026년 10월 12일</sub>

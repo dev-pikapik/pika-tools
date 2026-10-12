@@ -901,12 +901,10 @@
 "The smallest size" = "ขนาดเล็กที่สุด";
 "For servers and developers" = "สำหรับเซิร์ฟเวอร์และนักพัฒนา";
 "Smaller, for servers and developers" = "เล็กลง สำหรับเซิร์ฟเวอร์และนักพัฒนา";
-"No password" = "ไม่มีรหัสผ่าน";
 "Some computers need an extra app to open it" = "คอมพิวเตอร์บางเครื่องต้องใช้แอปเพิ่มเติมเพื่อเปิด";
 "File names are hidden too" = "ชื่อไฟล์จะถูกซ่อนด้วย";
 "Use English letters, numbers and symbols only" = "ใช้ได้เฉพาะตัวอักษรอังกฤษ ตัวเลข และสัญลักษณ์";
 "TAR archives can’t have a password" = "ไฟล์ TAR ตั้งรหัสผ่านไม่ได้";
-"Split into parts" = "แบ่งเป็นส่วน";
 "Don’t split" = "ไม่แบ่ง";
 "15 MB, for email" = "15 MB สำหรับอีเมล";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "ไฟล์เสียหาย แสดงเฉพาะส่วนที่อ่านได้";
 "Only the first items are shown." = "แสดงเฉพาะรายการแรก ๆ เท่านั้น";
 "Contains a program. Open it only if you trust where it came from." = "มีโปรแกรมอยู่ข้างใน เปิดเฉพาะเมื่อคุณเชื่อถือแหล่งที่มา";
+"New Archive" = "ไฟล์บีบอัดใหม่";
+"File names stay visible" = "ชื่อไฟล์ยังมองเห็นได้";
+"Repeat password" = "ป้อนรหัสผ่านอีกครั้ง";
+"Passwords don’t match" = "รหัสผ่านไม่ตรงกัน";
+"Passwords match" = "รหัสผ่านตรงกัน";
+"Split archive" = "แบ่งไฟล์บีบอัด";

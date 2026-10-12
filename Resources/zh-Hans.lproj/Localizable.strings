@@ -901,12 +901,10 @@
 "The smallest size" = "体积最小";
 "For servers and developers" = "适用于服务器和开发者";
 "Smaller, for servers and developers" = "体积更小，适用于服务器和开发者";
-"No password" = "无密码";
 "Some computers need an extra app to open it" = "有些电脑需要额外的应用才能打开";
 "File names are hidden too" = "文件名也会被隐藏";
 "Use English letters, numbers and symbols only" = "仅限英文字母、数字和符号";
 "TAR archives can’t have a password" = "TAR 压缩文件不能设置密码";
-"Split into parts" = "分成多个部分";
 "Don’t split" = "不分割";
 "15 MB, for email" = "15 MB，适合邮件";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "文件已损坏。仅显示能读取的内容。";
 "Only the first items are shown." = "仅显示前面的项目。";
 "Contains a program. Open it only if you trust where it came from." = "包含程序。仅在信任来源时才打开。";
+"New Archive" = "新建压缩文件";
+"File names stay visible" = "文件名仍然可见";
+"Repeat password" = "再次输入密码";
+"Passwords don’t match" = "两次输入的密码不一致";
+"Passwords match" = "两次输入的密码一致";
+"Split archive" = "分割压缩文件";

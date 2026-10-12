@@ -901,12 +901,10 @@
 "The smallest size" = "가장 작은 크기";
 "For servers and developers" = "서버와 개발자용";
 "Smaller, for servers and developers" = "더 작게, 서버와 개발자용";
-"No password" = "암호 없음";
 "Some computers need an extra app to open it" = "일부 컴퓨터에서는 열려면 별도의 앱이 필요합니다";
 "File names are hidden too" = "파일 이름도 숨겨집니다";
 "Use English letters, numbers and symbols only" = "영문자, 숫자, 기호만 사용하세요";
 "TAR archives can’t have a password" = "TAR 압축 파일에는 암호를 설정할 수 없습니다";
-"Split into parts" = "여러 부분으로 나누기";
 "Don’t split" = "나누지 않음";
 "15 MB, for email" = "15 MB, 이메일용";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "손상되었습니다. 읽을 수 있는 내용만 표시합니다.";
 "Only the first items are shown." = "처음 일부 항목만 표시합니다.";
 "Contains a program. Open it only if you trust where it came from." = "프로그램이 들어 있습니다. 출처를 신뢰할 수 있을 때만 여세요.";
+"New Archive" = "새 압축 파일";
+"File names stay visible" = "파일 이름은 그대로 보입니다";
+"Repeat password" = "암호 다시 입력";
+"Passwords don’t match" = "암호가 일치하지 않습니다";
+"Passwords match" = "암호가 일치합니다";
+"Split archive" = "압축 파일 나누기";

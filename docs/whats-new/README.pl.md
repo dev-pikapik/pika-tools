@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nowe okna archiwów i hasło wpisywane dwa razy
+
+<sub>1.39.0 · 13 października 2026</sub>
+
+Gdy zabezpieczasz nowe archiwum hasłem, wpisujesz je teraz dwa razy, więc literówka nie odetnie cię od własnych plików.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Pod polami pojawia się zielony wiersz, gdy hasła się zgadzają, albo czerwony, gdy nie, a „Utwórz” czeka, aż będą takie same.
+
+Wszystkie okna archiwów mają nowy wygląd: dużą ikonę, jeden przełącznik do hasła i krótki wiersz, który mówi, czy nazwy plików zostaną widoczne, jak w ZIP, czy też zostaną ukryte, jak w 7Z. W macOS 26 przyciski są z Liquid Glass.
+
+Instalacja też jest prostsza: polecenie na początku strony pikapik na GitHubie nie potrzebuje niczego więcej na twoim Macu. Instaluje pikapik tylko wtedy, gdy pobrany plik jest podpisany przez twórcę i przeszedł kontrolę Apple pod kątem złośliwego oprogramowania.
+
+---
+
 ## <a id="v1.38.2"></a>Bezpieczniejsze aktualizacje obok wersji z App Store
 
 <sub>1.38.2 · 12 października 2026</sub>

@@ -78,7 +78,8 @@ final class Updater {
             guard Bundle(url: newApp)?.bundleIdentifier == Bundle.main.bundleIdentifier else {
                 throw CocoaError(.fileReadCorruptFile)
             }
-            try run("/usr/bin/codesign", ["--verify", "--deep", "--strict", newApp.path])
+            // Only a copy signed by our own Developer ID team gets installed.
+            try run("/usr/bin/codesign", ["--verify", "--deep", "--strict", "-R", "=anchor apple generic and certificate leaf[subject.OU] = \"5N3968Z6Y9\"", newApp.path])
 
             let script = """
             while kill -0 "$1" 2>/dev/null; do sleep 0.2; done

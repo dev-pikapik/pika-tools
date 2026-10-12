@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Novas janelas de arquivos compactados e a senha digitada duas vezes
+
+<sub>1.39.0 · 13 de outubro de 2026</sub>
+
+Quando você põe senha em um novo arquivo compactado, agora a digita duas vezes, para que um erro de digitação não tranque você fora dos seus próprios arquivos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Embaixo dos campos aparece uma linha verde quando as senhas coincidem, ou vermelha quando não, e “Criar” espera até que elas sejam iguais.
+
+Todas as janelas de arquivos compactados ganharam um visual novo: um ícone grande, um único botão para ativar a senha e uma linha curta que diz se os nomes dos arquivos continuam visíveis, como no ZIP, ou também ficam ocultos, como no 7Z. No macOS 26 os botões são de Liquid Glass.
+
+Instalar também ficou mais fácil: o comando no topo da página do pikapik no GitHub não precisa de mais nada no seu Mac. Ele só instala o pikapik se o download for assinado pelo desenvolvedor e tiver passado na verificação de malware da Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Atualizações mais seguras ao lado da versão da App Store
 
 <sub>1.38.2 · 12 de outubro de 2026</sub>

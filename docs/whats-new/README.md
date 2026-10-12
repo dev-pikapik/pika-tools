@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>New archive windows, and the password typed twice
+
+<sub>1.39.0 · October 13, 2026</sub>
+
+When you put a password on a new archive, you now type it twice, so a typo can’t lock you out of your own files.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Under the fields, a green line appears when the passwords match, or a red one when they don’t, and Create waits until they match.
+
+All archive windows have a new look: a large icon, one switch for the password, and a short line that tells you whether file names stay visible, as in ZIP, or are hidden too, as in 7Z. On macOS 26 the buttons are made of Liquid Glass.
+
+Installing is simpler too: the command at the top of the pikapik page on GitHub needs nothing else on your Mac. It installs pikapik only if the download is signed by its developer and has passed Apple’s malware check.
+
+---
+
 ## <a id="v1.38.2"></a>Safer updates next to the App Store version
 
 <sub>1.38.2 · October 12, 2026</sub>

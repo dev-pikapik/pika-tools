@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Neue Archivfenster, und das Passwort zweimal
+
+<sub>1.39.0 · 13. Oktober 2026</sub>
+
+Wenn du ein neues Archiv mit einem Passwort schützt, gibst du es jetzt zweimal ein, damit dich ein Tippfehler nicht aus deinen eigenen Dateien aussperrt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Unter den Feldern erscheint eine grüne Zeile, wenn die Passwörter übereinstimmen, oder eine rote, wenn nicht, und „Erstellen“ wartet, bis sie gleich sind.
+
+Alle Archivfenster sehen neu aus: ein großes Symbol, ein einziger Schalter für das Passwort und eine kurze Zeile, die dir sagt, ob die Dateinamen sichtbar bleiben, wie bei ZIP, oder ebenfalls verborgen werden, wie bei 7Z. Unter macOS 26 sind die Tasten aus Liquid Glass.
+
+Auch die Installation ist einfacher: Der Befehl oben auf der pikapik-Seite bei GitHub braucht sonst nichts auf deinem Mac. Er installiert pikapik nur, wenn der Download vom Entwickler signiert ist und Apples Prüfung auf Schadsoftware bestanden hat.
+
+---
+
 ## <a id="v1.38.2"></a>Sichere Updates neben der Version aus dem App Store
 
 <sub>1.38.2 · 12. Oktober 2026</sub>

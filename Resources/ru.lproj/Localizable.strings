@@ -901,12 +901,10 @@
 "The smallest size" = "Самый маленький размер";
 "For servers and developers" = "Для серверов и разработчиков";
 "Smaller, for servers and developers" = "Меньше размер, для серверов и разработчиков";
-"No password" = "Без пароля";
 "Some computers need an extra app to open it" = "Некоторым компьютерам для открытия нужна отдельная программа";
 "File names are hidden too" = "Имена файлов тоже скрыты";
 "Use English letters, numbers and symbols only" = "Только английские буквы, цифры и символы";
 "TAR archives can’t have a password" = "TAR-архив нельзя защитить паролем";
-"Split into parts" = "Разделить на части";
 "Don’t split" = "Не делить";
 "15 MB, for email" = "15 МБ, для почты";
 "100 MB" = "100 МБ";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Архив повреждён. Показано то, что удалось прочитать.";
 "Only the first items are shown." = "Показаны только первые элементы.";
 "Contains a program. Open it only if you trust where it came from." = "Содержит программу. Открывайте её, только если доверяете источнику.";
+"New Archive" = "Новый архив";
+"File names stay visible" = "Имена файлов останутся видны";
+"Repeat password" = "Повторите пароль";
+"Passwords don’t match" = "Пароли не совпадают";
+"Passwords match" = "Пароли совпадают";
+"Split archive" = "Разделить архив";

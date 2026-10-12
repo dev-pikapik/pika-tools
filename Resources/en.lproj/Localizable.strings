@@ -901,12 +901,10 @@
 "The smallest size" = "The smallest size";
 "For servers and developers" = "For servers and developers";
 "Smaller, for servers and developers" = "Smaller, for servers and developers";
-"No password" = "No password";
 "Some computers need an extra app to open it" = "Some computers need an extra app to open it";
 "File names are hidden too" = "File names are hidden too";
 "Use English letters, numbers and symbols only" = "Use English letters, numbers and symbols only";
 "TAR archives can’t have a password" = "TAR archives can’t have a password";
-"Split into parts" = "Split into parts";
 "Don’t split" = "Don’t split";
 "15 MB, for email" = "15 MB, for email";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Damaged. Showing what could be read.";
 "Only the first items are shown." = "Only the first items are shown.";
 "Contains a program. Open it only if you trust where it came from." = "Contains a program. Open it only if you trust where it came from.";
+"New Archive" = "New Archive";
+"File names stay visible" = "File names stay visible";
+"Repeat password" = "Repeat password";
+"Passwords don’t match" = "Passwords don’t match";
+"Passwords match" = "Passwords match";
+"Split archive" = "Split archive";

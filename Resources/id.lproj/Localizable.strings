@@ -901,12 +901,10 @@
 "The smallest size" = "Ukuran terkecil";
 "For servers and developers" = "Untuk server dan developer";
 "Smaller, for servers and developers" = "Lebih kecil, untuk server dan developer";
-"No password" = "Tanpa kata sandi";
 "Some computers need an extra app to open it" = "Beberapa komputer memerlukan app tambahan untuk membukanya";
 "File names are hidden too" = "Nama file juga disembunyikan";
 "Use English letters, numbers and symbols only" = "Gunakan hanya huruf Inggris, angka, dan simbol";
 "TAR archives can’t have a password" = "Arsip TAR tidak bisa diberi kata sandi";
-"Split into parts" = "Pisah menjadi beberapa bagian";
 "Don’t split" = "Jangan pisah";
 "15 MB, for email" = "15 MB, untuk email";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Rusak. Menampilkan bagian yang bisa dibaca.";
 "Only the first items are shown." = "Hanya item pertama yang ditampilkan.";
 "Contains a program. Open it only if you trust where it came from." = "Berisi program. Buka hanya jika Anda memercayai sumbernya.";
+"New Archive" = "Arsip baru";
+"File names stay visible" = "Nama file tetap terlihat";
+"Repeat password" = "Ulangi kata sandi";
+"Passwords don’t match" = "Kata sandi tidak cocok";
+"Passwords match" = "Kata sandi cocok";
+"Split archive" = "Pisahkan arsip";

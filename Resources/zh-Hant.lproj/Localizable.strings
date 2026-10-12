@@ -901,12 +901,10 @@
 "The smallest size" = "檔案最小";
 "For servers and developers" = "適用於伺服器和開發人員";
 "Smaller, for servers and developers" = "檔案更小，適用於伺服器和開發人員";
-"No password" = "無密碼";
 "Some computers need an extra app to open it" = "有些電腦需要額外的 App 才能打開";
 "File names are hidden too" = "檔案名稱也會隱藏";
 "Use English letters, numbers and symbols only" = "僅限英文字母、數字和符號";
 "TAR archives can’t have a password" = "TAR 壓縮檔無法設定密碼";
-"Split into parts" = "分成多個部分";
 "Don’t split" = "不分割";
 "15 MB, for email" = "15 MB，適合郵件";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "檔案已損毀。僅顯示能讀取的內容。";
 "Only the first items are shown." = "僅顯示前面的項目。";
 "Contains a program. Open it only if you trust where it came from." = "包含程式。僅在信任來源時才打開。";
+"New Archive" = "新增壓縮檔";
+"File names stay visible" = "檔案名稱仍會顯示";
+"Repeat password" = "再次輸入密碼";
+"Passwords don’t match" = "兩次輸入的密碼不一致";
+"Passwords match" = "兩次輸入的密碼一致";
+"Split archive" = "分割壓縮檔";

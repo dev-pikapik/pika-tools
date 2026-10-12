@@ -901,12 +901,10 @@
 "The smallest size" = "Zo klein mogelijk";
 "For servers and developers" = "Voor servers en ontwikkelaars";
 "Smaller, for servers and developers" = "Kleiner, voor servers en ontwikkelaars";
-"No password" = "Geen wachtwoord";
 "Some computers need an extra app to open it" = "Sommige computers hebben een extra app nodig";
 "File names are hidden too" = "Ook de bestandsnamen zijn verborgen";
 "Use English letters, numbers and symbols only" = "Gebruik alleen Engelse letters, cijfers en symbolen";
 "TAR archives can’t have a password" = "TAR-archieven kunnen geen wachtwoord hebben";
-"Split into parts" = "Opsplitsen in delen";
 "Don’t split" = "Niet opsplitsen";
 "15 MB, for email" = "15 MB, voor e-mail";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Beschadigd. Dit is wat er gelezen kon worden.";
 "Only the first items are shown." = "Alleen de eerste onderdelen worden getoond.";
 "Contains a program. Open it only if you trust where it came from." = "Bevat een programma. Open het alleen als je de bron vertrouwt.";
+"New Archive" = "Nieuw archief";
+"File names stay visible" = "De bestandsnamen blijven zichtbaar";
+"Repeat password" = "Herhaal wachtwoord";
+"Passwords don’t match" = "De wachtwoorden komen niet overeen";
+"Passwords match" = "De wachtwoorden komen overeen";
+"Split archive" = "Archief opsplitsen";

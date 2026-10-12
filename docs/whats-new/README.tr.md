@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Yeni arşiv pencereleri ve iki kez yazılan parola
+
+<sub>1.39.0 · 13 Ekim 2026</sub>
+
+Yeni bir arşive parola koyduğunuzda artık onu iki kez yazıyorsunuz; böylece bir yazım hatası sizi kendi dosyalarınızın dışında bırakmaz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Parolalar eşleşince alanların altında yeşil, eşleşmeyince kırmızı bir satır belirir ve “Oluştur” onlar aynı olana kadar bekler.
+
+Tüm arşiv pencerelerinin görünümü yenilendi: büyük bir simge, parola için tek bir anahtar ve dosya adlarının ZIP’teki gibi görünür mü kalacağını, yoksa 7Z’deki gibi onların da mı gizleneceğini söyleyen kısa bir satır. macOS 26’da düğmeler Liquid Glass’tan yapılmıştır.
+
+Kurulum da kolaylaştı: GitHub’daki pikapik sayfasının başındaki komut, Mac’inizde başka hiçbir şeye ihtiyaç duymuyor. pikapik’i yalnızca indirilen dosya geliştiricisi tarafından imzalanmışsa ve Apple’ın kötü amaçlı yazılım denetiminden geçmişse kurar.
+
+---
+
 ## <a id="v1.38.2"></a>App Store sürümünün yanında daha güvenli güncellemeler
 
 <sub>1.38.2 · 12 Ekim 2026</sub>

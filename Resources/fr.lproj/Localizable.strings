@@ -901,12 +901,10 @@
 "The smallest size" = "La plus petite taille";
 "For servers and developers" = "Pour les serveurs et les développeurs";
 "Smaller, for servers and developers" = "Plus petit, pour les serveurs et les développeurs";
-"No password" = "Aucun mot de passe";
 "Some computers need an extra app to open it" = "Certains ordinateurs ont besoin d’une app pour l’ouvrir";
 "File names are hidden too" = "Les noms de fichiers sont aussi masqués";
 "Use English letters, numbers and symbols only" = "Lettres anglaises, chiffres et symboles uniquement";
 "TAR archives can’t have a password" = "Une archive TAR ne peut pas avoir de mot de passe";
-"Split into parts" = "Diviser en parties";
 "Don’t split" = "Ne pas diviser";
 "15 MB, for email" = "15 Mo, pour l’e-mail";
 "100 MB" = "100 Mo";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Archive endommagée. Affichage de ce qui a pu être lu.";
 "Only the first items are shown." = "Seuls les premiers éléments sont affichés.";
 "Contains a program. Open it only if you trust where it came from." = "Contient un programme. Ne l’ouvrez que si vous faites confiance à sa source.";
+"New Archive" = "Nouvelle archive";
+"File names stay visible" = "Les noms de fichiers restent visibles";
+"Repeat password" = "Répétez le mot de passe";
+"Passwords don’t match" = "Les mots de passe ne correspondent pas";
+"Passwords match" = "Les mots de passe correspondent";
+"Split archive" = "Diviser l’archive";

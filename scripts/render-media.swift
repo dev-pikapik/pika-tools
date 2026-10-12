@@ -53,6 +53,7 @@ enum RenderMedia {
         ("whats-new/1.33.0/permissions", 5.4, AnyView(PermissionsCard())),
         ("whats-new/1.34.0/pointer-shortcuts", 5.4, AnyView(PointerShortcutsCard())),
         ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
+        ("whats-new/1.39.0/archive-password", ArchivePasswordCard.length, AnyView(ArchivePasswordCard())),
     ]
 
     static func main() {
@@ -935,5 +936,94 @@ enum APNG {
             b = (b + a) % 65521
         }
         return [0x78, 0x9C] + deflated + withUnsafeBytes(of: (b << 16 | a).bigEndian) { Array($0) }
+    }
+}
+
+private struct ArchivePasswordCard: View {
+    static let length = 7.4
+
+    var body: some View {
+        IllustrationRow {
+            ArtTimeline { time in
+                ArchivePasswordScene(t: time.map { GameStory.mod($0, Self.length) } ?? 5)
+            }
+        }
+    }
+}
+
+/// The password is typed, then repeated with one key too many: the red line shows and Create stays off until the extra key is erased.
+private struct ArchivePasswordScene: View {
+    let t: Double
+
+    private var first: Int { typed(from: 0.5, upTo: 8) }
+    private var second: Int { t < 3.8 ? typed(from: 1.7, upTo: 9) : 8 }
+    private var differ: Bool { second == 9 }
+    private var match: Bool { t >= 3.8 }
+    private var fade: Double { 1 - ramp(6.6, 0.4) }
+    private var ready: Double { match ? min(ramp(3.8, 0.25), fade) : 0 }
+
+    var body: some View {
+        let panel = RoundedRectangle(cornerRadius: 12, style: .continuous)
+        HStack(spacing: 16) {
+            ArchiveHero(icon: NSWorkspace.shared.icon(for: Archive.Format.zip.type), locked: true)
+            VStack(alignment: .leading, spacing: 6) {
+                field(first, focused: t < 1.5)
+                field(second, focused: t >= 1.5)
+                status
+                HStack(spacing: 8) {
+                    button(ready: 0)
+                    button(ready: ready)
+                }
+                .padding(.top, 2)
+            }
+            .frame(width: 160)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .background(panel.fill(Color(nsColor: .windowBackgroundColor)).shadow(color: .black.opacity(0.15), radius: 5, y: 2))
+        .overlay(panel.hairline(Color.primary.opacity(0.12)))
+    }
+
+    private func typed(from start: Double, upTo count: Int) -> Int {
+        t < start ? 0 : min(count, Int((t - start) / 0.1) + 1)
+    }
+
+    private func ramp(_ start: Double, _ duration: Double) -> Double {
+        min(1, max(0, (t - start) / duration))
+    }
+
+    private func field(_ count: Int, focused: Bool) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 5, style: .continuous)
+        return HStack(spacing: 3.5) {
+            HStack(spacing: 3.5) {
+                ForEach(0..<count, id: \.self) { _ in Circle().frame(width: 5, height: 5) }
+            }
+            .opacity(fade)
+            if focused { Rectangle().frame(width: 1, height: 11) }
+        }
+        .foregroundStyle(Color.primary.opacity(0.85))
+        .padding(.leading, 7)
+        .frame(maxWidth: .infinity, minHeight: 18, maxHeight: 18, alignment: .leading)
+        .background(shape.fill(Color(nsColor: .textBackgroundColor)))
+        .overlay(shape.hairline(Color.primary.opacity(0.18)))
+        .overlay(shape.inset(by: -2).stroke(Color.accentColor.opacity(focused ? 0.45 : 0), lineWidth: 2.5))
+    }
+
+    private var status: some View {
+        HStack(spacing: 4) {
+            Image(systemName: match ? "checkmark.circle.fill" : "xmark.circle.fill")
+                .font(.system(size: 10, weight: .semibold))
+            Capsule().frame(width: match ? 58 : 76, height: 4).opacity(0.45)
+        }
+        .foregroundStyle(match ? Art.green : Art.red)
+        .frame(height: 12)
+        .opacity(differ || match ? fade : 0)
+    }
+
+    private func button(ready: Double) -> some View {
+        Capsule().fill(Color.primary.opacity(0.08))
+            .overlay(Capsule().fill(Color.accentColor).opacity(ready))
+            .overlay(Capsule().fill(Color.primary.opacity(0.22)).overlay(Capsule().fill(.white).opacity(ready)).frame(width: 28, height: 4))
+            .frame(maxWidth: .infinity, minHeight: 20, maxHeight: 20)
     }
 }

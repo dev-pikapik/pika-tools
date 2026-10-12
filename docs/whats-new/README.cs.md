@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nová okna archivů a heslo zadávané dvakrát
+
+<sub>1.39.0 · 13. října 2026</sub>
+
+Když nový archiv chráníte heslem, zadáváte ho teď dvakrát, aby vás překlep nepřipravil o přístup k vlastním souborům.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Pod poli se objeví zelený řádek, když se hesla shodují, nebo červený, když ne, a „Vytvořit“ počká, dokud nebudou stejná.
+
+Všechna okna archivů mají nový vzhled: velkou ikonu, jeden přepínač pro heslo a krátký řádek, který vám řekne, jestli názvy souborů zůstanou vidět, jako v ZIP, nebo se skryjí také, jako v 7Z. V macOS 26 jsou tlačítka z Liquid Glass.
+
+Instalace je také jednodušší: příkaz na začátku stránky pikapik na GitHubu na vašem Macu nepotřebuje nic dalšího. Nainstaluje pikapik, jen když je stažený soubor podepsaný vývojářem a prošel kontrolou Apple na škodlivý software.
+
+---
+
 ## <a id="v1.38.2"></a>Bezpečnější aktualizace vedle verze z App Store
 
 <sub>1.38.2 · 12. října 2026</sub>

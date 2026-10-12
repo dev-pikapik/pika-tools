@@ -901,12 +901,10 @@
 "The smallest size" = "いちばん小さいサイズ";
 "For servers and developers" = "サーバーや開発者向け";
 "Smaller, for servers and developers" = "より小さく、サーバーや開発者向け";
-"No password" = "パスワードなし";
 "Some computers need an extra app to open it" = "開くために別のアプリが必要なコンピュータもあります";
 "File names are hidden too" = "ファイル名も隠されます";
 "Use English letters, numbers and symbols only" = "英字、数字、記号のみ使用できます";
 "TAR archives can’t have a password" = "TARアーカイブにはパスワードを設定できません";
-"Split into parts" = "分割";
 "Don’t split" = "分割しない";
 "15 MB, for email" = "15 MB（メール用）";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "破損しています。読み取れた内容を表示しています。";
 "Only the first items are shown." = "最初の項目のみ表示しています。";
 "Contains a program. Open it only if you trust where it came from." = "プログラムが含まれています。入手元を信頼できる場合のみ開いてください。";
+"New Archive" = "新規アーカイブ";
+"File names stay visible" = "ファイル名は表示されたままです";
+"Repeat password" = "パスワードを再入力";
+"Passwords don’t match" = "パスワードが一致しません";
+"Passwords match" = "パスワードが一致しています";
+"Split archive" = "アーカイブを分割";

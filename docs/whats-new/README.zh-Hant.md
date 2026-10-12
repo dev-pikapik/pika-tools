@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>全新的壓縮檔視窗，密碼要輸入兩次
+
+<sub>1.39.0 · 2026年10月13日</sub>
+
+為新的壓縮檔設定密碼時，現在要輸入兩次，免得一個打錯字讓你打不開自己的檔案。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+兩次密碼相同時，輸入欄位下方會出現一行綠字，不同時則是紅字；在相同之前，「建立」無法按下。
+
+所有壓縮檔視窗都換上新外觀：大圖像、一個用於密碼的開關，以及一行簡短提示，告訴你檔名是像 ZIP 那樣仍然看得到，還是像 7Z 那樣一併隱藏。在 macOS 26 上，按鈕採用 Liquid Glass 材質。
+
+安裝也更簡單了：GitHub 上 pikapik 頁面開頭的指令不需要你的 Mac 再裝任何東西。只有當下載的檔案帶有開發者簽名並通過 Apple 的惡意軟體檢查時，它才會安裝 pikapik。
+
+---
+
 ## <a id="v1.38.2"></a>與 App Store 版本並存時，更新更安全
 
 <sub>1.38.2 · 2026年10月12日</sub>

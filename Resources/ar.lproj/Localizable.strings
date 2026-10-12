@@ -901,12 +901,10 @@
 "The smallest size" = "أصغر حجم";
 "For servers and developers" = "للخوادم والمطورين";
 "Smaller, for servers and developers" = "أصغر، للخوادم والمطورين";
-"No password" = "بدون كلمة سر";
 "Some computers need an extra app to open it" = "تحتاج بعض الأجهزة إلى تطبيق إضافي لفتحه";
 "File names are hidden too" = "تُخفى أسماء الملفات أيضًا";
 "Use English letters, numbers and symbols only" = "استخدم أحرفًا إنجليزية وأرقامًا ورموزًا فقط";
 "TAR archives can’t have a password" = "لا يمكن وضع كلمة سر لملفات TAR المضغوطة";
-"Split into parts" = "تقسيم إلى أجزاء";
 "Don’t split" = "بدون تقسيم";
 "15 MB, for email" = "15 ميغابايت، للبريد الإلكتروني";
 "100 MB" = "100 ميغابايت";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "الملف تالف. يتم عرض ما أمكن قراءته.";
 "Only the first items are shown." = "يتم عرض العناصر الأولى فقط.";
 "Contains a program. Open it only if you trust where it came from." = "يحتوي على برنامج. لا تفتحه إلا إذا كنت تثق بمصدره.";
+"New Archive" = "ملف مضغوط جديد";
+"File names stay visible" = "تبقى أسماء الملفات ظاهرة";
+"Repeat password" = "أعد كتابة كلمة السر";
+"Passwords don’t match" = "كلمتا السر غير متطابقتين";
+"Passwords match" = "كلمتا السر متطابقتان";
+"Split archive" = "تقسيم الملف";

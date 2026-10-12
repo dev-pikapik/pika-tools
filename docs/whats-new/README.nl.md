@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nieuwe archiefvensters, en het wachtwoord twee keer
+
+<sub>1.39.0 · 13 oktober 2026</sub>
+
+Als je een nieuw archief met een wachtwoord beveiligt, typ je het nu twee keer, zodat een tikfout je niet buitensluit van je eigen bestanden.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Onder de velden verschijnt een groene regel als de wachtwoorden overeenkomen, of een rode als dat niet zo is, en ‘Maak aan’ wacht tot ze gelijk zijn.
+
+Alle archiefvensters hebben een nieuw uiterlijk: een groot symbool, één schakelaar voor het wachtwoord en een korte regel die je vertelt of bestandsnamen zichtbaar blijven, zoals bij ZIP, of ook verborgen worden, zoals bij 7Z. Op macOS 26 zijn de knoppen van Liquid Glass.
+
+Installeren is ook eenvoudiger: de opdracht bovenaan de pikapik-pagina op GitHub heeft verder niets nodig op je Mac. Die installeert pikapik alleen als de download door de ontwikkelaar is ondertekend en door Apples controle op malware is gekomen.
+
+---
+
 ## <a id="v1.38.2"></a>Veiligere updates naast de versie uit de App Store
 
 <sub>1.38.2 · 12 oktober 2026</sub>

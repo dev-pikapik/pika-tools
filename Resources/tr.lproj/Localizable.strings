@@ -901,12 +901,10 @@
 "The smallest size" = "En küçük boyut";
 "For servers and developers" = "Sunucular ve geliştiriciler için";
 "Smaller, for servers and developers" = "Daha küçük, sunucular ve geliştiriciler için";
-"No password" = "Parola yok";
 "Some computers need an extra app to open it" = "Bazı bilgisayarlarda açmak için ek uygulama gerekir";
 "File names are hidden too" = "Dosya adları da gizlenir";
 "Use English letters, numbers and symbols only" = "Yalnızca İngilizce harf, rakam ve simge kullanın";
 "TAR archives can’t have a password" = "TAR arşivlerine parola konamaz";
-"Split into parts" = "Parçalara böl";
 "Don’t split" = "Bölme";
 "15 MB, for email" = "15 MB, e-posta için";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Hasarlı. Okunabilen kısım gösteriliyor.";
 "Only the first items are shown." = "Yalnızca ilk öğeler gösteriliyor.";
 "Contains a program. Open it only if you trust where it came from." = "Bir program içeriyor. Yalnızca kaynağına güveniyorsanız açın.";
+"New Archive" = "Yeni arşiv";
+"File names stay visible" = "Dosya adları görünür kalır";
+"Repeat password" = "Parolayı tekrar girin";
+"Passwords don’t match" = "Parolalar eşleşmiyor";
+"Passwords match" = "Parolalar eşleşiyor";
+"Split archive" = "Arşivi böl";

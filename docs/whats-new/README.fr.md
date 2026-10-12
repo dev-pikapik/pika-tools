@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.0"></a>Nouvelles fenêtres d’archive, et le mot de passe saisi deux fois
+
+<sub>1.39.0 · 13 octobre 2026</sub>
+
+Quand vous protégez une nouvelle archive par un mot de passe, vous le saisissez désormais deux fois, pour qu’une faute de frappe ne vous empêche pas d’ouvrir vos propres fichiers.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.0/archive-password-dark.png"><img src="../media/whats-new/1.39.0/archive-password-light.png" width="340" alt=""></picture>
+
+Sous les champs, une ligne verte apparaît quand les mots de passe correspondent, ou une ligne rouge quand ils diffèrent, et « Créer » attend qu’ils soient identiques.
+
+Toutes les fenêtres d’archive ont un nouvel aspect : une grande icône, un seul interrupteur pour le mot de passe et une courte ligne qui vous dit si les noms de fichiers restent visibles, comme dans un ZIP, ou sont masqués eux aussi, comme dans un 7Z. Sous macOS 26, les boutons sont en Liquid Glass.
+
+L’installation est plus simple aussi : la commande en haut de la page de pikapik sur GitHub n’a besoin de rien d’autre sur votre Mac. Elle n’installe pikapik que si le téléchargement est signé par son développeur et a passé le contrôle anti-malware d’Apple.
+
+---
+
 ## <a id="v1.38.2"></a>Des mises à jour plus sûres à côté de la version de l’App Store
 
 <sub>1.38.2 · 12 octobre 2026</sub>
