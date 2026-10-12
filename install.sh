@@ -11,6 +11,11 @@ OLD="/Applications/pika-tools.app"
 say() { printf '\033[1m→ %s\033[0m\n' "$1"; }
 fail() { printf '\033[31m✗ %s\033[0m\n' "$1" >&2; exit 1; }
 ours() { [ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$1/Contents/Info.plist" 2>/dev/null)" = "com.pesotchi.pika-tools" ]; }
+# Signed with pikapik's Developer ID (team 5N3968Z6Y9) and notarized by Apple.
+trusted() {
+    codesign --verify --deep --strict -R '=anchor apple generic and identifier "com.pesotchi.pika-tools" and certificate leaf[subject.OU] = "5N3968Z6Y9"' "$1" 2>/dev/null \
+        && spctl --assess --type execute "$1" 2>/dev/null
+}
 
 [ "$(uname)" = "Darwin" ] || fail "pikapik runs only on macOS."
 [ "$(sw_vers -productVersion | cut -d. -f1)" -ge 14 ] || fail "pikapik needs macOS 14 Sonoma or later."
@@ -44,14 +49,13 @@ if [ "${1:-}" = "--source" ]; then
     build_from_source
 else
     say "Downloading the latest version"
-    if curl -fsSL "$REPO/releases/latest/download/pikapik.zip" -o "$WORK/pikapik.zip" \
+    curl -fsSL "$REPO/releases/latest/download/pikapik.zip" -o "$WORK/pikapik.zip" \
         && ditto -x -k "$WORK/pikapik.zip" "$WORK/app" \
-        && [ -d "$WORK/app/$APP_NAME" ]; then
-        NEW_APP="$WORK/app/$APP_NAME"
-    else
-        say "No ready build found, building from source"
-        build_from_source
-    fi
+        && [ -d "$WORK/app/$APP_NAME" ] \
+        || fail "Couldn't download pikapik. Check your internet connection and run this command again."
+    NEW_APP="$WORK/app/$APP_NAME"
+    say "Checking the developer's signature and Apple's malware check"
+    trusted "$NEW_APP" || fail "This copy isn't signed by pikapik's developer or hasn't passed Apple's malware check, so nothing was installed. Please report it: $REPO/issues"
 fi
 
 if pgrep -x pika-tools >/dev/null; then
@@ -67,7 +71,6 @@ for app in "$DEST" "$OLD"; do
     if ours "$app"; then $SUDO rm -rf "$app"; fi
 done
 $SUDO ditto "$NEW_APP" "$DEST"
-$SUDO xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
 
 say "Launching"
 open "$DEST"
