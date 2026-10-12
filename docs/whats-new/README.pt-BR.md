@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>A etiqueta de FPS pede permissão no lugar certo
+
+<sub>1.37.3 · 12 de outubro de 2026</sub>
+
+A Gravação de Tela para a etiqueta de FPS agora é permitida na página Permissões, junto com todas as outras permissões.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Para contar os quadros de um jogo, “Mostrar FPS” pode precisar da Gravação de Tela. Antes, o pikapik pedia isso na própria página Jogos. Agora ela fica junto com todas as outras permissões: quando “Mostrar FPS” precisa dela, uma linha “Gravação de Tela” aparece em Ajustes › Permissões, e você clica em “Permitir” ali.
+
+Na página Jogos você agora vê só a linha de sempre embaixo da chave: “Precisa de uma permissão. Clique para permitir.” O botão “Permitir” dela leva direto à linha “Gravação de Tela”. Ligar “Mostrar FPS” não abre mais uma pergunta sozinho, e o pikapik continua sem pedir nada enquanto você joga.
+
+---
+
 ## <a id="v1.37.2"></a>Verificado pela Apple
 
 <sub>1.37.2 · 12 de outubro de 2026</sub>

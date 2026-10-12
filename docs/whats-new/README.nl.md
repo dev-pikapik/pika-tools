@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Het FPS-labeltje vraagt nu op de juiste plek
+
+<sub>1.37.3 · 12 oktober 2026</sub>
+
+Toestemming voor schermopname voor het FPS-labeltje geef je nu op de pagina Toestemmingen, samen met alle andere toestemmingen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Om de beelden van een game te tellen kan FPS tonen Schermopname nodig hebben. Eerst vroeg pikapik daar op de pagina Games zelf om. Nu staat het bij alle andere toestemmingen: als FPS tonen het nodig heeft, verschijnt er in Instellingen › Toestemmingen een rij Schermopname, en daar klik je op Toestaan.
+
+Op de pagina Games zie je nu alleen nog de gebruikelijke regel onder de schakelaar: “Heeft toestemming nodig. Klik om die te geven.” De knop Toestaan daarin brengt je rechtstreeks naar de rij Schermopname. Als je FPS tonen aanzet, springt er niet meer vanzelf een vraag op, en pikapik vraagt nog steeds niets terwijl je speelt.
+
+---
+
 ## <a id="v1.37.2"></a>Gecontroleerd door Apple
 
 <sub>1.37.2 · 12 oktober 2026</sub>

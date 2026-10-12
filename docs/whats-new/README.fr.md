@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>La pastille FPS demande l’autorisation au bon endroit
+
+<sub>1.37.3 · 12 octobre 2026</sub>
+
+L’enregistrement de l’écran pour la pastille FPS s’autorise désormais sur la page Autorisations, avec toutes les autres autorisations.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Pour compter les images d’un jeu, « Afficher les FPS » peut avoir besoin de l’enregistrement de l’écran. Avant, pikapik le demandait directement sur la page Jeux. Il se trouve maintenant avec toutes les autres autorisations : quand « Afficher les FPS » en a besoin, une ligne « Enregistrement de l’écran » apparaît dans Réglages › Autorisations, et vous y cliquez sur « Autoriser ».
+
+Sur la page Jeux, il ne reste que la ligne habituelle sous l’interrupteur : « Nécessite une autorisation. Cliquez pour l’accorder. » Son bouton « Autoriser » vous mène droit à la ligne « Enregistrement de l’écran ». Activer « Afficher les FPS » ne pose plus de question tout seul, et pikapik ne demande toujours rien pendant que vous jouez.
+
+---
+
 ## <a id="v1.37.2"></a>Vérifié par Apple
 
 <sub>1.37.2 · 12 octobre 2026</sub>

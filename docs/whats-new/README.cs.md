@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Štítek FPS se teď ptá na správném místě
+
+<sub>1.37.3 · 12. října 2026</sub>
+
+Záznam obrazovky pro štítek FPS teď povolíte na stránce Oprávnění, spolu se všemi ostatními oprávněními.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+K počítání snímků hry může „Zobrazit FPS“ potřebovat Záznam obrazovky. Dřív o něj pikapik žádal přímo na stránce Hry. Teď je u všech ostatních oprávnění: když ho „Zobrazit FPS“ potřebuje, objeví se v Nastavení na stránce Oprávnění řádek „Záznam obrazovky“ a tam kliknete na „Povolit“.
+
+Na stránce Hry teď pod přepínačem zůstává jen obvyklý řádek: „Potřebuje oprávnění. Kliknutím ho povolíte.“ Tlačítko „Povolit“ v něm vás zavede rovnou na řádek „Záznam obrazovky“. Zapnutí „Zobrazit FPS“ už samo nevyvolá otázku a během hry pikapik pořád nikdy nic nežádá.
+
+---
+
 ## <a id="v1.37.2"></a>Ověřeno Applem
 
 <sub>1.37.2 · 12. října 2026</sub>

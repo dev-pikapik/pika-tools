@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Show FPS now asks in the right place
+
+<sub>1.37.3 · October 12, 2026</sub>
+
+Screen Recording for the FPS counter is now allowed on the Permissions page, together with all the other permissions.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+To count the frames of a game, Show FPS may need Screen Recording. Before, pikapik asked for it right on the Games page. Now it sits with every other permission: when Show FPS needs it, a Screen Recording row appears in Settings › Permissions, and you click Allow there.
+
+On the Games page you now only see the usual line under the switch, “Needs a permission. Click to allow it.” Its Allow button takes you straight to the Screen Recording row. Turning on Show FPS no longer pops up a question by itself, and pikapik still never asks while you play.
+
+---
+
 ## <a id="v1.37.2"></a>Checked by Apple
 
 <sub>1.37.2 · October 12, 2026</sub>

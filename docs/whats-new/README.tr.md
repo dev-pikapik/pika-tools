@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>FPS etiketi izni doğru yerde istiyor
+
+<sub>1.37.3 · 12 Ekim 2026</sub>
+
+FPS etiketi için Ekran Kaydı artık diğer tüm izinlerle birlikte İzinler sayfasında verilir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Bir oyunun karelerini saymak için “FPS’yi göster” Ekran Kaydı iznine ihtiyaç duyabilir. Eskiden pikapik bunu doğrudan Oyunlar sayfasında isterdi. Şimdi öbür izinlerin yanında duruyor: “FPS’yi göster” buna ihtiyaç duyduğunda Ayarlar’daki İzinler sayfasında “Ekran Kaydı” satırı belirir ve orada “İzin Ver”e tıklarsınız.
+
+Oyunlar sayfasında artık anahtarın altında yalnızca her zamanki satır görünür: “İzin gerekiyor. İzin vermek için tıklayın.” Satırdaki “İzin Ver” düğmesi sizi doğrudan “Ekran Kaydı” satırına götürür. “FPS’yi göster” açıldığında artık kendiliğinden soru çıkmaz, oyun sırasında da pikapik yine hiçbir şey istemez.
+
+---
+
 ## <a id="v1.37.2"></a>Apple tarafından doğrulandı
 
 <sub>1.37.2 · 12 Ekim 2026</sub>

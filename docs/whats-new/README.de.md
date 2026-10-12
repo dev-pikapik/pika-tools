@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Die FPS-Anzeige fragt jetzt am richtigen Ort nach
+
+<sub>1.37.3 · 12. Oktober 2026</sub>
+
+Die Bildschirmaufnahme für die FPS-Anzeige erlaubst du jetzt auf der Seite „Berechtigungen“, zusammen mit allen anderen Berechtigungen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Um die Bilder eines Spiels zu zählen, braucht „FPS anzeigen“ vielleicht die Bildschirmaufnahme. Früher hat pikapik direkt auf der Seite „Spiele“ danach gefragt. Jetzt steht sie bei allen anderen Berechtigungen: Wenn „FPS anzeigen“ sie braucht, erscheint in den Einstellungen auf der Seite „Berechtigungen“ die Zeile „Bildschirmaufnahme“, und du klickst dort auf „Erlauben“.
+
+Auf der Seite „Spiele“ siehst du jetzt nur noch die gewohnte Zeile unter dem Schalter: „Braucht eine Berechtigung. Klicke, um sie zu erlauben.“ Ihre Taste „Erlauben“ führt dich direkt zur Zeile „Bildschirmaufnahme“. Das Einschalten von „FPS anzeigen“ stellt keine Frage mehr von selbst, und mitten im Spiel fragt pikapik weiterhin nie.
+
+---
+
 ## <a id="v1.37.2"></a>Von Apple geprüft
 
 <sub>1.37.2 · 12. Oktober 2026</sub>
