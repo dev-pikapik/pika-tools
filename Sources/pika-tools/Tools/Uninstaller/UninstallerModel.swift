@@ -213,7 +213,6 @@ final class UninstallerModel {
     var query = ""
     var sort = AppSort.name
     var running: Set<String> = []
-    var plays = 0
     var notice: String?
     var trashed: [Remnant] = []
     var orphans: [Remnant] = []
@@ -537,7 +536,6 @@ final class UninstallerModel {
             current.phase = .choosing
         } else {
             current.phase = .removed(report)
-            if report.record != nil { plays += 1 }
         }
         reload()
     }
