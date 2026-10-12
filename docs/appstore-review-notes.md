@@ -21,7 +21,7 @@ The app asks for up to three permissions, only when a feature that needs them is
 To reproduce each prompt:
 1. Open pikapik from the menu bar, then Settings.
 2. Turn on any feature from the Keyboard, Mouse or Windows tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
-3. In Settings > Games turn on Game Mode, then Show FPS. The system Screen Recording prompt appears at that moment and never later while a game is running.
+3. In Settings > Games turn on Game Mode, then Show FPS. The line "Needs a permission. Click to allow it." appears under the switch; its Allow button opens the Permissions page on the Screen Recording row and the system Screen Recording prompt appears. Nothing is ever asked while a game is running.
 4. The Permissions page in Settings lists Accessibility, Input Monitoring, Screen Recording (only while Show FPS is on and the permission is missing), Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
 
 Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere.

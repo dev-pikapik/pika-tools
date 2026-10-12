@@ -787,7 +787,7 @@ struct GameModePage: View {
         .settingsPage()
         .environment(\.inSettings, true)
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
-            let simple = [tool.title, String(localized: "Your games"), String(localized: "Show FPS"), String(localized: "Corner for FPS"), Permission.screenRecording.title]
+            let simple = [tool.title, String(localized: "Your games"), String(localized: "Show FPS"), String(localized: "Corner for FPS")]
             if let title = SettingsWindow.model.highlight, !simple.contains(title) {
                 advanced = true
                 if title == String(localized: "Game safeguards") || SettingsWindow.model.highlightedShortcut == nil && !GameShortcutGroup.allCases.contains(where: { $0.title == title }) && title != String(localized: "System keyboard shortcuts") { safeguards = true }

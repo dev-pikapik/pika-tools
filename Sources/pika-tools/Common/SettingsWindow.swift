@@ -213,6 +213,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .pet, title: String(localized: "Erase Progress…"), synonyms: "reset, delete, clear, start over, privacy"),
             SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: String(localized: "Screen Recording"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Finder Extensions"), synonyms: "privacy, security, access, right-click, menu, extension"),
             SettingsItem(tab: .permissions, title: String(localized: "Full Disk Access"), synonyms: "privacy, security, access, files, disk"),
