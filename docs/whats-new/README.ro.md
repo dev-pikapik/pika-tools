@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Verificat de Apple
+
+<sub>1.37.2 · 12 octombrie 2026</sub>
+
+pikapik este acum semnat de un dezvoltator Apple verificat și controlat de Apple. De aceea macOS nu te mai avertizează la prima deschidere.
+
+După această actualizare, macOS poate cere din nou permisiunile pe care i le-ai dat lui pikapik, de exemplu Accesibilitate, Monitorizare intrare sau Acces complet la disc. Permite-le încă o dată în Setări de sistem › Confidențialitate și securitate. Dacă folosești controlul ventilatoarelor, permite-l din nou în setările pikapik, iar macOS îți va cere parola o dată.
+
+---
+
 ## <a id="v1.37.1"></a>Eticheta FPS ține pasul cu jocul tău
 
 <sub>1.37.1 · 12 octombrie 2026</sub>

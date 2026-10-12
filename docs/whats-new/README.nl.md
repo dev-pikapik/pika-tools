@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Gecontroleerd door Apple
+
+<sub>1.37.2 · 12 oktober 2026</sub>
+
+pikapik is nu ondertekend door een geverifieerde Apple-ontwikkelaar en gecontroleerd door Apple. Daarom waarschuwt macOS niet meer als je het voor het eerst opent.
+
+Na deze update vraagt macOS misschien opnieuw om de rechten die je aan pikapik gaf, zoals Toegankelijkheid, Invoercontrole of Volledige schijftoegang. Sta ze nog één keer toe in Systeeminstellingen › Privacy en beveiliging. Gebruik je de ventilatorregeling, sta die dan opnieuw toe in de instellingen van pikapik; macOS vraagt dan eenmalig om je wachtwoord.
+
+---
+
 ## <a id="v1.37.1"></a>Het FPS-labeltje houdt je game bij
 
 <sub>1.37.1 · 12 oktober 2026</sub>

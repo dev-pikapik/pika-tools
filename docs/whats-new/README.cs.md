@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Ověřeno Applem
+
+<sub>1.37.2 · 12. října 2026</sub>
+
+pikapik je teď podepsaný ověřeným vývojářem Apple a zkontrolovaný Applem. Proto vás macOS při prvním otevření už nevaruje.
+
+Po této aktualizaci se macOS může znovu zeptat na oprávnění, která jste pikapiku dali, třeba Zpřístupnění, Sledování vstupu nebo Plný přístup k disku. Povolte je ještě jednou v Nastavení systému › Soukromí a zabezpečení. Pokud používáte ovládání ventilátorů, povolte ho znovu v nastavení pikapiku a macOS se jednou zeptá na heslo.
+
+---
+
 ## <a id="v1.37.1"></a>Štítek FPS drží krok s vaší hrou
 
 <sub>1.37.1 · 12. října 2026</sub>
