@@ -110,9 +110,13 @@ final class Updater {
         guard let status = (response as? HTTPURLResponse)?.statusCode, (200..<300).contains(status) else { throw URLError(.badServerResponse) }
     }
 
-    nonisolated static func destination(of app: URL, brewManaged: Bool) -> URL {
+    nonisolated static func destination(of app: URL, brewManaged: Bool, ownID: String? = Bundle.main.bundleIdentifier) -> URL {
         guard !brewManaged, app.lastPathComponent == oldAppName else { return app }
-        return app.deletingLastPathComponent().appendingPathComponent(appName)
+        let renamed = app.deletingLastPathComponent().appendingPathComponent(appName)
+        guard FileManager.default.fileExists(atPath: renamed.path) else { return renamed }
+        // A pikapik.app that isn't ours, such as the App Store version, stays untouched: keep the old name and update in place.
+        guard let id = NSDictionary(contentsOf: renamed.appendingPathComponent("Contents/Info.plist"))?["CFBundleIdentifier"] as? String, id == ownID else { return app }
+        return renamed
     }
 
     nonisolated static func isNewPlace(_ path: String, last: String?, launchedBefore: Bool) -> Bool {
