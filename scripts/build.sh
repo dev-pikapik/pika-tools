@@ -83,6 +83,7 @@ for EXT in $EXTENSIONS; do
     lipo -create "build/$EXT-arm64" "build/$EXT-x86_64" -output "$APPEX/Contents/MacOS/$EXT"
     rm "build/$EXT-arm64" "build/$EXT-x86_64"
     cp "Extensions/$EXT/Info.plist" "$APPEX/Contents/Info.plist"
+    [ -z "${APPSTORE:-}" ] || { mkdir -p "$APPEX/Contents/Resources" && cp Resources/PrivacyInfo.xcprivacy "$APPEX/Contents/Resources/"; }
     for KEY in CFBundleShortVersionString CFBundleVersion; do
         /usr/libexec/PlistBuddy -c "Set :$KEY $(/usr/libexec/PlistBuddy -c "Print :$KEY" "$APP/Contents/Info.plist")" "$APPEX/Contents/Info.plist"
     done
@@ -143,12 +144,14 @@ sign() {
 group_entitlements() {
     local OUT="build/$2.entitlements"
     cp "$1" "$OUT"
-    /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups array" -c "Add :com.apple.security.application-groups:0 string $TEAM_ID.com.pesotchi.pika-tools" "$OUT"
+    local BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$3/Contents/Info.plist")"
+    /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups array" -c "Add :com.apple.security.application-groups:0 string $TEAM_ID.com.pesotchi.pika-tools" \
+        -c "Add :com.apple.application-identifier string $TEAM_ID.$BUNDLE_ID" -c "Add :com.apple.developer.team-identifier string $TEAM_ID" "$OUT"
     echo "$OUT"
 }
 
 if [ -n "${APPSTORE:-}" ]; then
-    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" -c "Add :ITSAppUsesNonExemptEncryption bool false" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName $APPSTORE_ID" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-store" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-store" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do
@@ -171,12 +174,12 @@ fi
 APP_ENTITLEMENTS=()
 for EXT in $EXTENSIONS; do
     ENTITLEMENTS="Extensions/$EXT/$EXT.entitlements"
-    [ -n "${APPSTORE:-}" ] && [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" "$EXT")"
+    [ -n "${APPSTORE:-}" ] && [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" "$EXT" "$APP/Contents/PlugIns/$EXT.appex")"
     sign --entitlements "$ENTITLEMENTS" "$APP/Contents/PlugIns/$EXT.appex"
 done
 if [ -n "${APPSTORE:-}" ]; then
     ENTITLEMENTS=Resources/AppStore.entitlements
-    [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app)"
+    [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app "$APP")"
     APP_ENTITLEMENTS=(--entitlements "$ENTITLEMENTS")
 else
     APP_ENTITLEMENTS=(--entitlements Resources/Direct.entitlements)
