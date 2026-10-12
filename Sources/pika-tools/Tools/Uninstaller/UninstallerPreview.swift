@@ -481,6 +481,8 @@ private struct DrawnCheck: View {
 }
 
 private struct CheckStroke: Shape {
+    var layoutDirectionBehavior: LayoutDirectionBehavior { .fixed }
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
         path.move(to: CGPoint(x: rect.minX + rect.width * 0.28, y: rect.minY + rect.height * 0.52))
