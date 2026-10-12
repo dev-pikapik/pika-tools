@@ -133,8 +133,12 @@ struct FrameRateSource {
         lastTrace.map { now - $0 > Self.silence } ?? false
     }
 
+    func wantsCapture(at now: Double) -> Bool {
+        lastTrace == nil && !tried && now - begun >= wait
+    }
+
     mutating func startsCapture(at now: Double, allowed: () -> Bool) -> Bool {
-        guard lastTrace == nil, !tried, now - begun >= wait, allowed() else { return false }
+        guard wantsCapture(at: now), allowed() else { return false }
         tried = true
         return true
     }

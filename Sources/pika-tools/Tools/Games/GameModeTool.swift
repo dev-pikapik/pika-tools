@@ -17,6 +17,7 @@ final class GameModeTool: Tool {
     private static let systemShortcutsKey = "game-mode-system-shortcuts"
     private static let frameRateKey = "game-mode-fps"
     private static let frameRateCornerKey = "game-mode-fps-corner"
+    private static let frameRateRecordingKey = "game-mode-fps-recording"
 
     private(set) var isActive = false
     private(set) var game: NSRunningApplication?
@@ -76,6 +77,10 @@ final class GameModeTool: Tool {
         }
     }
 
+    var needsRecording: Bool {
+        didSet { UserDefaults.standard.set(needsRecording, forKey: Self.frameRateRecordingKey) }
+    }
+
     func setSystemShortcut(_ id: Int32, mode: GameShortcutMode) {
         systemShortcuts = systemShortcuts.filter { $0.split(separator: ":").first != Substring(String(id)) }
             + (mode == .automatic ? [] : ["\(id):\(mode.rawValue)"])
@@ -109,6 +114,7 @@ final class GameModeTool: Tool {
         systemShortcuts = defaults.stringArray(forKey: Self.systemShortcutsKey) ?? []
         showsFrameRate = defaults.bool(forKey: Self.frameRateKey)
         frameRateCorner = Self.savedCorner
+        needsRecording = defaults.bool(forKey: Self.frameRateRecordingKey)
 
         let center = NSWorkspace.shared.notificationCenter
         for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {

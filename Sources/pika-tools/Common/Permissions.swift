@@ -25,7 +25,7 @@ enum Permission: CaseIterable {
         case .screenRecording:
             ("com.apple.graphic-icon.screen-recording", "rectangle.dashed.badge.record",
              String(localized: "Screen Recording"),
-             FrameRateMeter.hasTrace ? String(localized: "Only for older games") : String(localized: "Needed to count frames"))
+             FrameRateMeter.hasTrace ? String(localized: "Needed for some games") : String(localized: "Needed to count frames"))
         #if !APPSTORE
         case .fans:
             ("", "fan", String(localized: "Fan control"), String(localized: "Lets the app choose how fast your fans spin"))
@@ -63,7 +63,8 @@ enum Permission: CaseIterable {
 
     var isShown: Bool {
         switch self {
-        case .screenRecording: GameModeTool.shared.showsFrameRate && !Permissions.shared.screenRecording
+        case .screenRecording:
+            GameModeTool.shared.showsFrameRate && !Permissions.shared.screenRecording && (!FrameRateMeter.hasTrace || GameModeTool.shared.needsRecording)
         #if !APPSTORE
         case .fans: FanControl.shared.hasFans
         case .iCloud: SettingsSync.shared.isEnabled
@@ -263,7 +264,7 @@ final class Permissions {
         timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] timer in
             guard let self else { return timer.invalidate() }
             refresh()
-            if allGranted && !Permission.screenRecording.isShown {
+            if allGranted {
                 timer.invalidate()
                 self.timer = nil
             }

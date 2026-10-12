@@ -868,12 +868,13 @@
 "reset, delete, clear, start over, privacy" = "reset, usuń, wyczyść, zacznij od nowa, prywatność";
 "Show FPS" = "Pokaż FPS";
 "Shows how smoothly the game runs" = "Pokazuje, jak płynnie działa gra";
-"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Starsze gry są liczone przez nagrywanie ekranu, więc ich liczba nie może być wyższa niż częstotliwość odświeżania ekranu.";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Niektóre gry, głównie starsze, można policzyć tylko przez nagrywanie ekranu, a wtedy liczba nie może być wyższa niż częstotliwość odświeżania ekranu.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Są liczone przez nagrywanie ekranu, więc liczba nie może być wyższa niż częstotliwość odświeżania ekranu.";
 "Corner for FPS" = "Róg dla FPS";
 "Top left corner" = "Lewy górny róg";
 "Top right corner" = "Prawy górny róg";
 "Bottom left corner" = "Lewy dolny róg";
 "Bottom right corner" = "Prawy dolny róg";
-"Only for older games" = "Tylko dla starszych gier";
+"Needed for some games" = "Potrzebne dla niektórych gier";
 "Needed to count frames" = "Potrzebne do liczenia klatek";
 "frame rate, frames per second, counter, performance, lag, screen recording" = "liczba klatek, klatki na sekundę, licznik, wydajność, lag, nagrywanie ekranu";

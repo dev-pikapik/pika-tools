@@ -28,7 +28,9 @@ struct FrameRateSettings: View {
                 icon: "speedometer",
                 title: String(localized: "Show FPS"),
                 subtitle: Text("Shows how smoothly the game runs"),
-                help: Text("FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate."),
+                help: Text(FrameRateMeter.hasTrace
+                    ? String(localized: "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate.")
+                    : String(localized: "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate.")),
                 isOn: Binding { tool.showsFrameRate } set: { turn($0) }
             )
             if Permission.screenRecording.isShown {
@@ -36,10 +38,8 @@ struct FrameRateSettings: View {
             }
         }
         .disabled(!tool.isEnabled)
-        .onAppear {
-            permissions.refresh()
-            if Permission.screenRecording.isShown { permissions.startPolling() }
-        }
+        .onAppear { permissions.refresh() }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in permissions.refresh() }
     }
 
     private func turn(_ on: Bool) {
@@ -50,7 +50,7 @@ struct FrameRateSettings: View {
     }
 }
 
-private struct FrameRatePicture: View {
+struct FrameRatePicture: View {
     let corner: FrameRateCorner
     let on: Bool
     let select: (FrameRateCorner) -> Void

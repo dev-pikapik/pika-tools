@@ -868,12 +868,13 @@
 "reset, delete, clear, start over, privacy" = "reset, delete, clear, start over, privacy";
 "Show FPS" = "Show FPS";
 "Shows how smoothly the game runs" = "Shows how smoothly the game runs";
-"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate.";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate.";
 "Corner for FPS" = "Corner for FPS";
 "Top left corner" = "Top left corner";
 "Top right corner" = "Top right corner";
 "Bottom left corner" = "Bottom left corner";
 "Bottom right corner" = "Bottom right corner";
-"Only for older games" = "Only for older games";
+"Needed for some games" = "Needed for some games";
 "Needed to count frames" = "Needed to count frames";
 "frame rate, frames per second, counter, performance, lag, screen recording" = "frame rate, frames per second, counter, performance, lag, screen recording";

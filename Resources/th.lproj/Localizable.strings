@@ -868,12 +868,13 @@
 "reset, delete, clear, start over, privacy" = "รีเซ็ต, ลบ, ล้าง, เริ่มใหม่, ความเป็นส่วนตัว";
 "Show FPS" = "แสดง FPS";
 "Shows how smoothly the game runs" = "แสดงว่าเกมลื่นไหลแค่ไหน";
-"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS คือจำนวนเฟรมต่อวินาที หรือจำนวนภาพที่เกมวาดในทุกวินาที เกมรุ่นเก่าจะนับผ่านการบันทึกหน้าจอ ตัวเลขจึงสูงกว่าอัตราการรีเฟรชของหน้าจอไม่ได้";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS คือจำนวนเฟรมต่อวินาที หรือจำนวนภาพที่เกมวาดในทุกวินาที เกมบางเกม ส่วนใหญ่เป็นเกมรุ่นเก่า นับได้ผ่านการบันทึกหน้าจอเท่านั้น และในกรณีนั้นตัวเลขจะสูงกว่าอัตราการรีเฟรชของหน้าจอไม่ได้";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS คือจำนวนเฟรมต่อวินาที หรือจำนวนภาพที่เกมวาดในทุกวินาที ระบบนับผ่านการบันทึกหน้าจอ ตัวเลขจึงสูงกว่าอัตราการรีเฟรชของหน้าจอไม่ได้";
 "Corner for FPS" = "มุมสำหรับ FPS";
 "Top left corner" = "มุมซ้ายบน";
 "Top right corner" = "มุมขวาบน";
 "Bottom left corner" = "มุมซ้ายล่าง";
 "Bottom right corner" = "มุมขวาล่าง";
-"Only for older games" = "สำหรับเกมรุ่นเก่าเท่านั้น";
+"Needed for some games" = "จำเป็นสำหรับบางเกม";
 "Needed to count frames" = "จำเป็นสำหรับการนับเฟรม";
 "frame rate, frames per second, counter, performance, lag, screen recording" = "เฟรมเรต, เฟรมต่อวินาที, ตัวนับ, ประสิทธิภาพ, กระตุก, บันทึกหน้าจอ";

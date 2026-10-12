@@ -868,12 +868,13 @@
 "reset, delete, clear, start over, privacy" = "reset, smazat, vymazat, začít znovu, soukromí";
 "Show FPS" = "Zobrazit FPS";
 "Shows how smoothly the game runs" = "Ukazuje, jak plynule hra běží";
-"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Starší hry se počítají přes záznam obrazovky, proto jejich číslo nemůže být vyšší než obnovovací frekvence obrazovky.";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Některé hry, hlavně starší, se dají spočítat jen přes záznam obrazovky, a pak číslo nemůže být vyšší než obnovovací frekvence obrazovky.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Počítá se přes záznam obrazovky, proto číslo nemůže být vyšší než obnovovací frekvence obrazovky.";
 "Corner for FPS" = "Roh pro FPS";
 "Top left corner" = "Levý horní roh";
 "Top right corner" = "Pravý horní roh";
 "Bottom left corner" = "Levý dolní roh";
 "Bottom right corner" = "Pravý dolní roh";
-"Only for older games" = "Jen pro starší hry";
+"Needed for some games" = "Potřebné pro některé hry";
 "Needed to count frames" = "Potřebné k počítání snímků";
 "frame rate, frames per second, counter, performance, lag, screen recording" = "snímková frekvence, snímky za sekundu, počítadlo, výkon, zpomalení, záznam obrazovky";

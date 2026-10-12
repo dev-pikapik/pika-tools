@@ -184,5 +184,15 @@ enum TestFrameRate {
         let tooSoon = early.startsCapture(at: 1, allowed: { asked += 1; return true })
         precondition(!tooSoon && asked == 2)
         print("which counter measures the game: ok")
+
+        var learning = FrameRateSource(traceCanRun: true, at: 0)
+        precondition(!learning.wantsCapture(at: 2.9) && learning.wantsCapture(at: 3))
+        precondition(!learning.startsCapture(at: 3, allowed: { false }) && learning.wantsCapture(at: 4))
+        precondition(learning.startsCapture(at: 4, allowed: { true }) && !learning.wantsCapture(at: 5))
+        var counted = FrameRateSource(traceCanRun: true, at: 0)
+        counted.traced(at: 1)
+        precondition(!counted.wantsCapture(at: 10))
+        precondition(FrameRateSource(traceCanRun: false, at: 7).wantsCapture(at: 7))
+        print("when the screen has to be recorded: ok")
     }
 }

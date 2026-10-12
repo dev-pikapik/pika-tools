@@ -6,10 +6,12 @@ import SwiftUI
 @Observable
 final class FrameRateModel {
     var shown = FrameRateShown.measuring
+    var wide = false
 }
 
 struct FramePill: View {
     let shown: FrameRateShown
+    var wide = false
     var scale: CGFloat = 1
 
     private var number: String {
@@ -25,9 +27,9 @@ struct FramePill: View {
     }
 
     var body: some View {
-        HStack(spacing: 4 * scale) {
-            ZStack(alignment: .trailing) {
-                Text(verbatim: "000").hidden()
+        HStack(alignment: .firstTextBaseline, spacing: 4 * scale) {
+            ZStack(alignment: isLive ? .trailing : .center) {
+                Text(verbatim: wide ? "000" : "00").hidden()
                 Text(verbatim: number).foregroundStyle(.white.opacity(isLive ? 1 : 0.5))
             }
             .font(.system(size: 15 * scale, weight: .semibold).monospacedDigit())
@@ -47,7 +49,7 @@ private struct LivePill: View {
     let model: FrameRateModel
 
     var body: some View {
-        FramePill(shown: model.shown)
+        FramePill(shown: model.shown, wide: model.wide)
     }
 }
 
@@ -60,6 +62,13 @@ final class FrameRateMeter {
         #else
         PerfTrace.exists
         #endif
+    }
+
+    private static let narrow = fitting(wide: false)
+    private static let wide = fitting(wide: true)
+
+    private static func fitting(wide: Bool) -> CGSize {
+        NSHostingView(rootView: FramePill(shown: .measuring, wide: wide)).fittingSize
     }
 
     private let model = FrameRateModel()
@@ -77,6 +86,7 @@ final class FrameRateMeter {
     private init() {}
 
     private var now: Double { ProcessInfo.processInfo.systemUptime }
+    private var pillSize: CGSize { model.wide ? Self.wide : Self.narrow }
 
     func show(_ pid: pid_t, corner: FrameRateCorner) {
         self.corner = corner
@@ -97,6 +107,7 @@ final class FrameRateMeter {
         game = pid
         session += 1
         model.shown = .measuring
+        model.wide = false
         var tracing = false
         #if !APPSTORE
         let current = session
@@ -128,7 +139,14 @@ final class FrameRateMeter {
         source.traced(at: now)
         capture?.stop()
         capture = nil
-        model.shown = FrameRateShown(fps)
+        present(FrameRateShown(fps))
+    }
+
+    private func present(_ shown: FrameRateShown) {
+        model.shown = shown
+        guard !model.wide, case .live(let fps) = shown, fps >= 100 else { return }
+        model.wide = true
+        place(locate())
     }
 
     private func tick() {
@@ -136,8 +154,12 @@ final class FrameRateMeter {
         place(spot)
         let time = now
         if source.traceStalled(at: time) { model.shown = .paused }
-        if capture == nil, source.startsCapture(at: time, allowed: CGPreflightScreenCaptureAccess) {
-            capture = ScreenFrames(display: spot?.display ?? CGMainDisplayID())
+        if capture == nil, source.wantsCapture(at: time) {
+            if source.startsCapture(at: time, allowed: CGPreflightScreenCaptureAccess) {
+                capture = ScreenFrames(display: spot?.display ?? CGMainDisplayID())
+            } else if Self.hasTrace, !GameModeTool.shared.needsRecording {
+                GameModeTool.shared.needsRecording = true
+            }
         }
         if let current = capture, let display = spot?.display, display != current.display {
             current.stop()
@@ -145,7 +167,7 @@ final class FrameRateMeter {
         }
         if let capture {
             capture.follow(spot?.window)
-            model.shown = capture.takeRate(at: time).map(FrameRateShown.init) ?? .measuring
+            present(capture.takeRate(at: time).map(FrameRateShown.init) ?? .measuring)
         }
     }
 
@@ -166,7 +188,7 @@ final class FrameRateMeter {
         } else {
             area = (NSScreen.main ?? NSScreen.screens.first)?.visibleFrame ?? .zero
         }
-        let frame = FramePillPlace.frame(of: panel.frame.size, corner: corner, in: area, belowTitleBar: belowTitleBar)
+        let frame = FramePillPlace.frame(of: pillSize, corner: corner, in: area, belowTitleBar: belowTitleBar)
         if frame != panel.frame { panel.setFrame(frame, display: false) }
     }
 
@@ -184,7 +206,7 @@ final class FrameRateMeter {
 
     private func makePanel() -> NSPanel {
         let view = NSHostingView(rootView: LivePill(model: model))
-        let panel = NSPanel(contentRect: NSRect(origin: .zero, size: view.fittingSize), styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
+        let panel = NSPanel(contentRect: NSRect(origin: .zero, size: pillSize), styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         panel.contentView = view
         panel.isOpaque = false
         panel.backgroundColor = .clear
