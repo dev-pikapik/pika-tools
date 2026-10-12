@@ -6,7 +6,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Fixed
 - Updates: if pikapik from the App Store is also on your Mac, the GitHub version now updates in place and leaves the App Store copy alone. Before, when the GitHub version still had its old name, pika-tools, and wasn’t installed with Homebrew, the update didn’t install, the App Store copy opened instead, and opening pikapik at login was switched off. A pikapik.app that isn’t this app is now never touched; the GitHub version keeps its old name and updates where it is.
-- Install and uninstall commands: they no longer delete a pikapik.app that isn’t the GitHub version. If pikapik from the App Store is on your Mac, the install command now stops before changing anything and asks you to move it to the Trash first, and the uninstall command leaves it in place and says so. Before, both tried to delete it, which could succeed once they asked for your administrator password.
+- Install and uninstall commands: they no longer delete a pikapik.app that isn’t the GitHub version. If pikapik from the App Store is on your Mac, the install command now stops before changing anything and asks you to move it to the Trash first, and the uninstall command leaves it in place, no longer quits it if it’s open, and says so. Before, both tried to delete it, which could succeed once they asked for your administrator password.
 
 ## [1.38.1] - 2026-10-12
 
