@@ -22,5 +22,65 @@
 			<string>%lld рядка за клацання</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld елемент</string>
+			<key>few</key>
+			<string>%lld елементи</string>
+			<key>many</key>
+			<string>%lld елементів</string>
+			<key>other</key>
+			<string>%lld елемента</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>До Смітника переміщено %lld елемент (%@)</string>
+			<key>few</key>
+			<string>До Смітника переміщено %lld елементи (%@)</string>
+			<key>many</key>
+			<string>До Смітника переміщено %lld елементів (%@)</string>
+			<key>other</key>
+			<string>До Смітника переміщено %lld елемента (%@)</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Повернуто %lld елемент</string>
+			<key>few</key>
+			<string>Повернуто %lld елементи</string>
+			<key>many</key>
+			<string>Повернуто %lld елементів</string>
+			<key>other</key>
+			<string>Повернуто %lld елемента</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

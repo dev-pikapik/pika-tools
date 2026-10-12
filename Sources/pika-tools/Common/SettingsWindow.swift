@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, games, pet, permissions, about
+    case general, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -18,6 +18,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: String(localized: "Dock")
         case .finder: String(localized: "Finder")
         case .animations: String(localized: "Animations")
+        case .uninstaller: String(localized: "Uninstaller")
         case .games: String(localized: "Games")
         case .pet: String(localized: "Pet")
         case .permissions: String(localized: "Permissions")
@@ -37,6 +38,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: "dock.rectangle"
         case .finder: "folder.fill"
         case .animations: "hare.fill"
+        case .uninstaller: "xmark.bin.fill"
         case .games: "gamecontroller.fill"
         case .pet: "pawprint.fill"
         case .permissions: "hand.raised.fill"
@@ -52,11 +54,20 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: .cyan
         case .games: .purple
         case .animations: .pink
+        case .uninstaller: .brown
         case .keepAwake: .orange
         case .fans: .teal
         case .pet: .red
         case .speedTest: .green
         }
+    }
+
+    var isAvailable: Bool {
+        #if APPSTORE
+        ![.animations, .fans, .uninstaller].contains(self)
+        #else
+        true
+        #endif
     }
 
     static var iconSize: CGFloat {
@@ -96,7 +107,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
         ]
-        return allItems.filter { $0.tab != .animations && $0.tab != .fans && !hidden.contains($0.title) } + [
+        return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
         ]
@@ -154,6 +165,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X"),
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
+            SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, delete, remove, app, application, cleaner, leftovers, trash, reset"),
             SettingsItem(tab: .animations, title: String(localized: "Animation speed"), synonyms: "animations, motion, fast, faster, instant, speed up"),
             SettingsItem(tab: .animations, title: String(localized: "Delay before the Dock appears"), synonyms: "autohide, hide Dock, delay, wait"),
             SettingsItem(tab: .animations, title: String(localized: "How fast the Dock slides out"), synonyms: "autohide, hide Dock, speed"),
@@ -342,7 +354,7 @@ private struct SettingsView: View {
                     #if APPSTORE
                     Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
                     #else
-                    Section { rows([.general, .keepAwake, .fans, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .games, .pet]) }
+                    Section { rows([.general, .keepAwake, .fans, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -398,7 +410,7 @@ private struct SettingsView: View {
             return left == right ? $0.id.localizedStandardCompare($1.id) == .orderedAscending : left > right
         }
         let tabs = SettingsTab.allCases.filter { tab in
-            tab.title.localizedStandardContains(query) || items.contains { $0.tab == tab }
+            tab.isAvailable && (tab.title.localizedStandardContains(query) || items.contains { $0.tab == tab })
         }
         if tabs.isEmpty {
             Text("No Results")
@@ -453,6 +465,12 @@ private struct SettingsView: View {
             EmptyView()
             #else
             AnimationsPage()
+            #endif
+        case .uninstaller:
+            #if APPSTORE
+            EmptyView()
+            #else
+            UninstallerPage()
             #endif
         case .games: GameModePage()
         case .pet: PetPage()

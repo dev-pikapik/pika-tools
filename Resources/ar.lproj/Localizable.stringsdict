@@ -26,5 +26,77 @@
 			<string>%lld سطر لكل نقرة</string>
 		</dict>
 	</dict>
+	<key>%lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>zero</key>
+			<string>%lld عنصر</string>
+			<key>one</key>
+			<string>عنصر واحد</string>
+			<key>two</key>
+			<string>عنصران</string>
+			<key>few</key>
+			<string>%lld عناصر</string>
+			<key>many</key>
+			<string>%lld عنصرًا</string>
+			<key>other</key>
+			<string>%lld عنصر</string>
+		</dict>
+	</dict>
+	<key>Moved %lld items (%@) to the Trash</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>zero</key>
+			<string>لم يُنقل أي عنصر (%2$@) إلى سلة المهملات</string>
+			<key>one</key>
+			<string>نُقل عنصر واحد (%2$@) إلى سلة المهملات</string>
+			<key>two</key>
+			<string>نُقل عنصران (%2$@) إلى سلة المهملات</string>
+			<key>few</key>
+			<string>نُقلت %lld عناصر (%@) إلى سلة المهملات</string>
+			<key>many</key>
+			<string>نُقل %lld عنصرًا (%@) إلى سلة المهملات</string>
+			<key>other</key>
+			<string>نُقل %lld عنصر (%@) إلى سلة المهملات</string>
+		</dict>
+	</dict>
+	<key>Put back %lld items</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>zero</key>
+			<string>لم يُرجَع أي عنصر</string>
+			<key>one</key>
+			<string>أُرجع عنصر واحد</string>
+			<key>two</key>
+			<string>أُرجع عنصران</string>
+			<key>few</key>
+			<string>أُرجعت %lld عناصر</string>
+			<key>many</key>
+			<string>أُرجع %lld عنصرًا</string>
+			<key>other</key>
+			<string>أُرجع %lld عنصر</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
