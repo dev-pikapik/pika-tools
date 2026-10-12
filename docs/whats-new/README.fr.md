@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Supprimez vos apps sans souci
+
+<sub>1.36.0 · 12 octobre 2026</sub>
+
+Le nouvel outil Supprimer des apps retire une app avec tous ses fichiers et remet tout en place si vous changez d’avis.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Supprimer des apps, puis choisissez une app ou déposez-la sur l’image. pikapik affiche tout ce que l’app garde sur votre Mac, avec la raison de chaque fichier. Les fichiers qui appartiennent clairement à l’app sont cochés, ceux qui n’y sont peut-être liés que de loin ne le sont pas. Cliquez sur « Mettre à la Corbeille » : tout va à la Corbeille, donc rien n’est effacé définitivement.
+
+Vous avez changé d’avis ? Cliquez sur « Remettre en place » et tout revient où c’était. Les dix dernières suppressions restent sous « Supprimés récemment » tant que leurs fichiers sont dans la Corbeille. « Réinitialiser l’app » garde l’app et ne supprime que ses données enregistrées, ses réglages et ses fichiers temporaires, au cas où elle se comporte mal.
+
+Vous avez mis une app à la Corbeille vous-même ? La page liste ces apps et les fichiers qu’elles ont laissés, et un interrupteur permet de proposer un nettoyage chaque fois qu’une app va à la Corbeille. Rien n’est supprimé tant que vous n’avez pas choisi. Pour tout voir, la page a besoin de l’Accès complet au disque.
+
+---
+
 ## <a id="v1.35.0"></a>Habillez votre compagnon
 
 <sub>1.35.0 · 12 octobre 2026</sub>

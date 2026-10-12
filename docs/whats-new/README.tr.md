@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Uygulamaları tasasızca kaldırın
+
+<sub>1.36.0 · 12 Ekim 2026</sub>
+
+Yeni Uygulamaları Kaldır sayfası, bir uygulamayı tüm dosyalarıyla kaldırır; fikrinizi değiştirirseniz hepsini geri koyar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Ayarlar › Uygulamaları Kaldır sayfasını açın ve bir uygulama seçin ya da bir uygulamayı resmin üzerine bırakın. pikapik, uygulamanın Mac’inizde sakladığı her şeyi, her dosyanın listede olma nedeniyle birlikte gösterir. Açıkça uygulamaya ait olan dosyalar işaretlidir, yalnızca ilgili olabilecekler değildir. “Çöp Sepeti’ne taşı” düğmesine tıklayın; her şey Çöp Sepeti’ne gider, yani hiçbir şey kalıcı olarak silinmez.
+
+Fikrinizi mi değiştirdiniz? “Geri koy” düğmesine tıklayın, her şey eski yerine döner. Son on kaldırma, dosyaları Çöp Sepeti’nde durduğu sürece “Son kaldırılanlar” bölümünde bekler. “Uygulamayı sıfırla” uygulamayı bırakır; yalnızca kayıtlı verilerini, ayarlarını ve geçici dosyalarını kaldırır, uygulama düzgün çalışmazsa işe yarar.
+
+Bir uygulamayı Çöp Sepeti’ne kendiniz mi taşıdınız? Sayfa bu uygulamaları ve bıraktıkları dosyaları da listeler; bir anahtarı açarsanız pikapik, bir uygulama Çöp Sepeti’ne her gittiğinde temizlik önerir. Siz seçmeden hiçbir şey kaldırılmaz. Her şeyi görmek için sayfanın Tam Disk Erişimi iznine ihtiyacı vardır.
+
+---
+
 ## <a id="v1.35.0"></a>Evcil dostunuzu giydirin
 
 <sub>1.35.0 · 12 Ekim 2026</sub>

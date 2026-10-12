@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Odebírejte aplikace bez obav
+
+<sub>1.36.0 · 12. října 2026</sub>
+
+Nová Odinstalace aplikací odebere aplikaci se všemi soubory a vrátí vše zpět, když si to rozmyslíte.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Odinstalace aplikací a vyberte aplikaci, nebo ji přetáhněte na obrázek. pikapik ukáže vše, co aplikace ve vašem Macu uchovává, a u každého souboru uvede důvod. Soubory, které k aplikaci jednoznačně patří, jsou zaškrtnuté, a ty, které s ní jen možná souvisejí, ne. Klikněte na „Přesunout do Koše“ a všechno skončí v Koši, takže se nic nemaže natrvalo.
+
+Rozmysleli jste si to? Klikněte na „Vrátit zpět“ a všechno se vrátí na původní místo. Posledních deset odebrání čeká v části „Nedávno odebrané“, dokud jsou jejich soubory v Koši. „Resetovat aplikaci“ ponechá aplikaci a odebere jen její uložená data, nastavení a dočasné soubory, kdyby se chovala divně.
+
+Přesunuli jste aplikaci do Koše sami? Stránka takové aplikace a soubory, které po sobě nechaly, také ukáže a přepínač může nabídnout úklid pokaždé, když aplikace skončí v Koši. Nic se neodebere, dokud nevyberete. Aby stránka viděla všechno, potřebuje Úplný přístup k disku.
+
+---
+
 ## <a id="v1.35.0"></a>Oblékněte svého mazlíčka
 
 <sub>1.35.0 · 12. října 2026</sub>

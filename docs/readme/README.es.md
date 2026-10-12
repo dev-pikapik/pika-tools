@@ -180,6 +180,14 @@ Tanto Homebrew como el script colocan la app en `/Applications`, la abren, piden
 <br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Eliminar apps</b>
+<br>Elimina una app y sus archivos. Puedes devolver todo.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Más detalles
@@ -253,6 +261,10 @@ Abre Ajustes → Juegos → Añadir un juego y haz clic en el juego abierto. Tam
 
 Para saber cuándo toca un premio, pikapik solo cuenta lo que hacéis tú y tu mascota: pasos, las veces que la coges y la lanzas, sus saltos, trepadas, partidas de pelota y charlas, los días juntos, si estuvisteis juntos de madrugada, pasada la medianoche o en fin de semana, las páginas de Ajustes que abriste y las prendas que probaste. Fuera de la Mac App Store, pikapik también anota si abriste nuestra página de GitHub desde Ajustes. Estos números, la fecha de cada premio y lo que lleva puesto tu mascota se quedan en este Mac. No se envía nada a ninguna parte y nada de esto entra en el archivo de ajustes exportado ni en la sincronización con iCloud. Puedes borrarlo todo cuando quieras en Ajustes › Mascota, y tu mascota empezará de cero.
 
+**Eliminar apps.** Abre Ajustes › Eliminar apps, elige una app de la lista o suelta una sobre la imagen, y pikapik muestra todo lo que esa app guarda en tu Mac: la app en sí, sus datos guardados, ajustes, archivos temporales, ayudantes en segundo plano y más, cada cosa con el motivo por el que aparece. Los archivos que claramente pertenecen a la app vienen marcados, los que solo quizá estén relacionados no, y los que también usan otras apps están señalados. Elige qué quitar y haz clic en **Mover a la Papelera**. Nada se borra para siempre: todo va a la Papelera. Si la app está abierta, pikapik le pide primero que se cierre, y si algunos archivos necesitan un administrador, tu Mac pedirá tu contraseña una sola vez.
+
+¿Has cambiado de idea? Haz clic en **Devolver a su sitio** y todo vuelve donde estaba, y los ayudantes en segundo plano arrancan de nuevo. Las diez últimas eliminaciones esperan en «Eliminado recientemente» mientras sus archivos sigan en la Papelera. **Restablecer app** conserva la app y quita solo sus datos guardados, ajustes y archivos temporales, lo que puede ayudar cuando una app falla. Las apps que moviste tú a la Papelera aparecen en «En la Papelera», con los archivos que dejaron, y «Restos de apps eliminadas» encuentra archivos de apps que ya no están. El interruptor «Ofrecer limpiar cuando una app va a la Papelera» viene desactivado, y no se quita nada hasta que elijas. Para ver todo lo que guarda una app, la página necesita **Acceso total al disco**. Esta herramienta no está en la versión de la Mac App Store.
+
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes.
 
 El icono de la barra de menús muestra el estado de un vistazo: la marca de pikapik cuando las herramientas funcionan, la misma marca más pálida cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
@@ -295,6 +307,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: ocultar con un clic en el Dock.
 - **Finder**: archivo nuevo, copia más ligera y conversión, abrir con Intro, cortar con ⌘X y borrar con ⌫.
+- **Eliminar apps**: eliminar una app con sus archivos, devolverlo todo a su sitio más tarde y limpiar lo que dejaron las apps eliminadas.
 - **Juegos**: tu lista de juegos y las opciones del Modo de juego.
 - **Mascota**: actívala o desactívala, deja que charle y juegue con la pelota, vístela y mira tus premios.
 - **Permisos**: todos los permisos que usa pikapik, cada uno con su estado y un botón para permitirlo o apagarlo. Una herramienta a la que le falta un permiso aparece en gris; al hacer clic en ella se abre esta página en la fila correcta.

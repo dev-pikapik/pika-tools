@@ -180,6 +180,14 @@ Tanto o Homebrew quanto o script colocam o app em `/Applications`, abrem o app, 
 <br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+<br><b>Remover apps</b>
+<br>Remova um app e seus arquivos. Dá para devolver tudo.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes
@@ -253,6 +261,10 @@ Abra Ajustes → Jogos → Adicionar um jogo e clique no jogo em execução. Jog
 
 Para saber quando um prêmio é devido, o pikapik conta só o que você e o bichinho fazem: passos, quantas vezes você o pega e o joga, pulos, subidas, partidas de bola e conversas, dias juntos, se vocês estiveram juntos de manhã cedo, depois da meia-noite ou no fim de semana, as páginas dos Ajustes que você abriu e as peças que experimentou. Fora da Mac App Store, o pikapik também anota se você abriu a nossa página do GitHub nos Ajustes. Esses números, a data de cada prêmio e o que o bichinho está vestindo ficam neste Mac. Nada é enviado para lugar nenhum, e nada disso entra no arquivo de ajustes exportado nem na sincronização do iCloud. Você pode apagar tudo quando quiser em Ajustes › Bichinho, e o bichinho recomeça do zero.
 
+**Remover apps.** Abra Ajustes › Remover apps, escolha um app na lista ou solte um sobre a imagem, e o pikapik mostra tudo o que esse app guarda no seu Mac: o próprio app, seus dados salvos, ajustes, arquivos temporários, ajudantes em segundo plano e mais, cada item com o motivo de estar na lista. Os arquivos que claramente pertencem ao app vêm marcados, os que só talvez tenham relação não, e os que outros apps também usam ficam sinalizados. Escolha o que remover e clique em **Mover para o Lixo**. Nada é apagado de vez: tudo vai para o Lixo. Se o app estiver aberto, o pikapik pede primeiro que ele se feche e, se alguns arquivos precisarem de um administrador, o Mac vai pedir sua senha uma vez.
+
+Mudou de ideia? Clique em **Devolver** e tudo volta para onde estava, e os ajudantes em segundo plano começam de novo. As dez últimas remoções ficam em “Removidos recentemente” enquanto os arquivos delas estiverem no Lixo. **Redefinir app** mantém o app e remove só os dados salvos, os ajustes e os arquivos temporários dele, o que pode ajudar quando um app dá problema. Os apps que você mesmo moveu para o Lixo aparecem em “No Lixo”, com os arquivos que deixaram, e “Sobras de apps removidos” encontra arquivos de apps que já se foram. A chave “Oferecer limpeza quando um app for para o Lixo” vem desligada, e nada é removido até você escolher. Para ver tudo o que um app guarda, a página precisa do **Acesso Total ao Disco**. Esta ferramenta não está na versão da Mac App Store.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
@@ -295,6 +307,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: ocultar com um clique no Dock.
 - **Finder**: novo arquivo, cópia menor e conversão, abrir com Return, recortar com ⌘X e apagar com ⌫.
+- **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.
 - **Bichinho**: ligar ou desligar o bichinho, conversas e bola, guarda-roupa e prêmios.
 - **Permissões**: todas as permissões que o pikapik usa, cada uma com seu estado e um botão para permitir ou desligar. Uma ferramenta sem a permissão de que precisa aparece em cinza; clicar nela abre esta página na linha certa.

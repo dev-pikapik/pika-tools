@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Gỡ ứng dụng không lo nghĩ
+
+<sub>1.36.0 · 12 tháng 10 năm 2026</sub>
+
+Tính năng Gỡ ứng dụng mới gỡ một ứng dụng cùng mọi tệp của nó, và đặt lại tất cả nếu bạn đổi ý.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Gỡ ứng dụng rồi chọn một ứng dụng, hoặc thả nó lên hình minh họa. pikapik cho bạn thấy mọi thứ ứng dụng đó lưu trên Mac của bạn, kèm lý do cho từng tệp. Những tệp rõ ràng thuộc về ứng dụng được đánh dấu chọn, còn những tệp chỉ có thể liên quan thì không. Nhấp “Chuyển vào Thùng rác”, mọi thứ sẽ vào Thùng rác, nên không có gì bị xóa vĩnh viễn.
+
+Đổi ý rồi? Nhấp “Đặt lại chỗ cũ”, mọi thứ sẽ về đúng chỗ cũ. Mười lần gỡ gần nhất nằm trong “Đã gỡ gần đây” chừng nào các tệp của chúng còn trong Thùng rác. “Đặt lại ứng dụng” giữ nguyên ứng dụng và chỉ gỡ dữ liệu đã lưu, cài đặt và tệp tạm của nó, phòng khi nó trục trặc.
+
+Tự chuyển ứng dụng vào Thùng rác? Trang này cũng liệt kê những ứng dụng đó cùng các tệp chúng để lại, và bạn có thể bật một công tắc để pikapik đề nghị dọn dẹp mỗi khi có ứng dụng vào Thùng rác. Không có gì bị gỡ cho đến khi bạn chọn. Để thấy được mọi thứ, trang này cần Truy cập toàn bộ ổ đĩa.
+
+---
+
 ## <a id="v1.35.0"></a>Mặc đồ cho thú cưng
 
 <sub>1.35.0 · 12 tháng 10 năm 2026</sub>

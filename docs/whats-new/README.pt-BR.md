@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Remova apps sem medo
+
+<sub>1.36.0 · 12 de outubro de 2026</sub>
+
+O novo Remover apps tira um app com todos os arquivos e devolve tudo se você mudar de ideia.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Remover apps e escolha um app, ou solte um sobre a imagem. O pikapik mostra tudo o que o app guarda no seu Mac, com o motivo de cada arquivo. Os arquivos que claramente pertencem ao app vêm marcados, e os que só talvez tenham relação, não. Clique em “Mover para o Lixo” e tudo vai para o Lixo, então nada é apagado de vez.
+
+Mudou de ideia? Clique em “Devolver” e tudo volta para onde estava. As dez últimas remoções ficam em “Removidos recentemente” enquanto os arquivos delas estiverem no Lixo. “Redefinir app” mantém o app e remove só os dados salvos, os ajustes e os arquivos temporários dele, caso ele dê problema.
+
+Moveu um app para o Lixo por conta própria? A página lista esses apps e os arquivos que eles deixaram, e você pode ligar uma chave que oferece limpeza sempre que um app for para o Lixo. Nada é removido até você escolher. Para ver tudo, a página precisa do Acesso Total ao Disco.
+
+---
+
 ## <a id="v1.35.0"></a>Vista o seu bichinho
 
 <sub>1.35.0 · 12 de outubro de 2026</sub>

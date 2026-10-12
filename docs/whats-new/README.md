@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.36.0"></a>Remove apps without worry
+
+<sub>1.36.0 · October 12, 2026</sub>
+
+The new Uninstaller removes an app with all its files, and puts it all back if you change your mind.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
+
+Open Settings › Uninstaller and pick an app, or drop one on the picture. pikapik shows everything the app keeps on your Mac, with the reason for each file. Files that clearly belong to the app are ticked, and the ones that are only maybe related are not. Click Move to Trash, and everything goes to the Trash, so nothing is deleted for good.
+
+Changed your mind? Click Put Back and it all returns where it was. The last ten removals wait under Recently removed while their files are still in the Trash. Reset App keeps the app and removes only its saved data, settings and temporary files, in case it misbehaves.
+
+Moved an app to the Trash yourself? The page lists those apps and the files they left behind, and you can turn on a switch that offers to clean up each time an app goes to the Trash. Nothing is removed until you choose. The page needs Full Disk Access to see everything.
+
+---
+
 ## <a id="v1.35.0"></a>Dress up your pet
 
 <sub>1.35.0 · October 12, 2026</sub>
