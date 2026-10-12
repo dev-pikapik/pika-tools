@@ -12,24 +12,26 @@
 
 ## Kurulum
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik ekranın üstündeki menü çubuğunda görünür. Siz açana kadar her şey kapalı kalır.
-
-<details>
-<summary>Homebrew yok mu? İki yol daha</summary>
-
-Homebrew olmadan: Terminal’i açın, bu satırı yapıştırın ve Return tuşuna basın:
+Terminal’i açın, bu satırı yapıştırın ve Return tuşuna basın:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+Komut, en son sürümü GitHub’dan indirir ve yalnızca geliştiricisi tarafından imzalanmışsa ve Apple’ın kötü amaçlı yazılım denetiminden geçmişse kurar. pikapik ekranın üstündeki menü çubuğunda görünür. Siz açana kadar her şey kapalı kalır.
+
+<details>
+<summary>Diğer yollar: Homebrew veya dmg</summary>
+
+Homebrew ile:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Ya da [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg) dosyasını indirin, açın ve uygulamayı Uygulamalar klasörüne sürükleyin.
 
-Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinleri ister ve “Girişte Aç” seçeneğini açar. Bundan sonra uygulama kendini güncel tutar, bkz. **Güncellemeler**. Kaldırmak için bkz. **Kaldırma**.
+Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, açar, izinleri ister ve “Girişte Aç” seçeneğini açar. Bundan sonra uygulama kendini güncel tutar, bkz. **Güncellemeler**. Kaldırmak için bkz. **Kaldırma**.
 
 </details>
 
@@ -372,11 +374,7 @@ Homebrew ile kurduysanız: `brew uninstall --cask --zap pikapik`.
 macOS klavye ve fare erişimini ikiye ayırır. Girdi İzleme uygulamanın olayları görmesini, Erişilebilirlik ise onları değiştirmesini sağlar. Bir kestirmeyi engellemek için ikisi de gerekir.
 
 **macOS uygulamanın tanımlanmamış bir geliştiriciden geldiğini söylüyor.**
-pikapik imzalıdır, ancak Apple tarafından onaylanmamıştır (notarize edilmemiştir). Homebrew ve kurulum betiği bunu sizin yerinize halleder. dmg kullandıysanız **Sistem Ayarları › Gizlilik ve Güvenlik** bölümünü açıp **Yine de Aç** düğmesine tıklayın ya da şunu çalıştırın:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik, geliştiricisi tarafından imzalanmıştır ve Apple’ın kötü amaçlı yazılım denetiminden geçer, bu yüzden bu uyarının görünmemesi gerekir. Yine de görünürse **Sistem Ayarları › Gizlilik ve Güvenlik** bölümünü açıp **Yine de Aç** düğmesine tıklayın.
 
 **Intel işlemcili Mac’lerde çalışır mı?**
 Evet. Apple Silicon ve Intel için evrensel bir uygulamadır, macOS 14 Sonoma veya sonrası gerekir.

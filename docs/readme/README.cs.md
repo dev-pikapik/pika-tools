@@ -12,24 +12,26 @@
 
 ## Instalace
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik najdete v řádku nabídek nahoře na obrazovce. Vše je vypnuté, dokud to sami nezapnete.
-
-<details>
-<summary>Nemáte Homebrew? Dva další způsoby</summary>
-
-Bez Homebrew: otevřete Terminál, vložte tento řádek a stiskněte Return:
+Otevřete Terminál, vložte tento řádek a stiskněte Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+Příkaz stáhne nejnovější verzi z GitHubu a nainstaluje ji, jen pokud je podepsaná vývojářem a prošla kontrolou společnosti Apple na škodlivý software. pikapik najdete v řádku nabídek nahoře na obrazovce. Vše je vypnuté, dokud to sami nezapnete.
+
+<details>
+<summary>Jiné způsoby: Homebrew nebo dmg</summary>
+
+S Homebrew:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Nebo si stáhněte [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), otevřete ho a přetáhněte aplikaci do složky Aplikace.
 
-Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o oprávnění a zapnou otevírání po přihlášení. Potom se aplikace aktualizuje sama, viz **Aktualizace**. Jak ji odstranit, najdete v části **Odinstalace**.
+Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí ji, požádají o oprávnění a zapnou otevírání po přihlášení. Potom se aplikace aktualizuje sama, viz **Aktualizace**. Jak ji odstranit, najdete v části **Odinstalace**.
 
 </details>
 
@@ -372,11 +374,7 @@ Oba způsoby aplikaci ukončí, odeberou ji z položek po přihlášení a smaž
 macOS dělí přístup ke klávesnici a myši na dvě části. Sledování vstupu aplikaci dovolí události vidět, Zpřístupnění jí dovolí je měnit. K zablokování zkratky jsou potřeba obě.
 
 **macOS hlásí, že aplikace je od neidentifikovaného vývojáře.**
-pikapik je podepsaná, ale není ověřená (notarizovaná) společností Apple. Homebrew a instalační skript to vyřeší za vás. Pokud jste použili dmg, otevřete **Nastavení systému › Soukromí a zabezpečení** a klikněte na **Přesto otevřít**, nebo spusťte:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik je podepsaná vývojářem a prošla kontrolou společnosti Apple na škodlivý software, takže by se tato zpráva neměla zobrazovat. Pokud se přesto zobrazí, otevřete **Nastavení systému › Soukromí a zabezpečení** a klikněte na **Přesto otevřít**.
 
 **Funguje na Macích s Intelem?**
 Ano. Je to univerzální aplikace pro Apple Silicon i Intel, pro macOS 14 Sonoma nebo novější.

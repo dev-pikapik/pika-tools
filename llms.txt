@@ -19,6 +19,7 @@ It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip too
 - Permissions: lists every permission the app uses (Accessibility, Input Monitoring, Fan control, Finder Extensions, iCloud Drive, Full Disk Access) with a live status and one button, Allow or Turn Off; tools that need a missing permission look half-grey and open this page when clicked. It also cleans up permissions left by deleted apps.
 
 ## Install
+- Terminal: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"` (installs the latest release only if it is signed by its developer and notarized by Apple)
 - Homebrew: `brew install --cask dev-pikapik/pika-tools/pikapik`
 - Download: https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg
 

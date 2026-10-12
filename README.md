@@ -12,24 +12,26 @@
 
 ## Install
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik appears in the menu bar at the top of the screen. Everything stays off until you turn it on.
-
-<details>
-<summary>No Homebrew? Two other ways</summary>
-
-Without Homebrew, open Terminal, paste this line and press Return:
+Open Terminal, paste this line and press Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+It downloads the latest version from GitHub and installs it only if it is signed by its developer and has passed Apple's malware check. pikapik appears in the menu bar at the top of the screen. Everything stays off until you turn it on.
+
+<details>
+<summary>Other ways: Homebrew or a dmg</summary>
+
+With Homebrew:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Or download [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), open it and drag the app to Applications.
 
-Homebrew and the script both put the app in `/Applications`, launch it, ask for permissions and turn on Open at Login. After that the app updates itself, see **Updates**. To remove it, see **Uninstall**.
+The command above and Homebrew both put the app in `/Applications`, launch it, ask for permissions and turn on Open at Login. After that the app updates itself, see **Updates**. To remove it, see **Uninstall**.
 
 </details>
 
@@ -372,11 +374,7 @@ Both quit the app, remove it from login items and delete it. The script also res
 macOS splits keyboard and mouse access in two. Input Monitoring lets the app see events, Accessibility lets it change them. Blocking a shortcut needs both.
 
 **macOS says the app is from an unidentified developer.**
-pikapik is signed, but not notarized by Apple. Homebrew and the install script take care of this for you. If you used the dmg, open **System Settings › Privacy & Security** and click **Open Anyway**, or run:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik is signed by its developer and passes Apple's malware check, so this message shouldn't appear. If it does, open **System Settings › Privacy & Security** and click **Open Anyway**.
 
 **Does it work on Intel Macs?**
 Yes. It's a universal app for Apple Silicon and Intel, macOS 14 Sonoma or later.

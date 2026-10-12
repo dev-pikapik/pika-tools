@@ -12,24 +12,26 @@
 
 ## Installera
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik syns i menyraden högst upp på skärmen. Allt är avstängt tills du själv slår på det.
-
-<details>
-<summary>Ingen Homebrew? Två andra sätt</summary>
-
-Utan Homebrew: öppna Terminal, klistra in den här raden och tryck på returtangenten:
+Öppna Terminal, klistra in den här raden och tryck på returtangenten:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+Kommandot hämtar den senaste versionen från GitHub och installerar den bara om den är signerad av utvecklaren och har klarat Apples kontroll av skadlig programvara. pikapik syns i menyraden högst upp på skärmen. Allt är avstängt tills du själv slår på det.
+
+<details>
+<summary>Andra sätt: Homebrew eller en dmg-fil</summary>
+
+Med Homebrew:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Eller hämta [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), öppna filen och dra appen till mappen Program.
 
-Både Homebrew och skriptet lägger appen i `/Applications`, öppnar den, ber om behörigheterna och slår på ”Öppna vid inloggning”. Därefter uppdaterar appen sig själv, se **Uppdateringar**. Hur du tar bort den står under **Avinstallera**.
+Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, ber om behörigheterna och slår på ”Öppna vid inloggning”. Därefter uppdaterar appen sig själv, se **Uppdateringar**. Hur du tar bort den står under **Avinstallera**.
 
 </details>
 
@@ -372,11 +374,7 @@ Båda avslutar appen, tar bort den från inloggningsobjekten och raderar den. Sk
 macOS delar upp åtkomsten till tangentbord och mus i två delar. Indataövervakning låter appen se händelser och Hjälpmedel låter den ändra dem. För att blockera ett kortkommando behövs båda.
 
 **macOS säger att appen kommer från en oidentifierad utvecklare.**
-pikapik är signerad men inte notariserad av Apple. Homebrew och installationsskriptet tar hand om det åt dig. Om du använde dmg-filen öppnar du **Systeminställningar › Integritet och säkerhet** och klickar på **Öppna ändå**, eller kör:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik är signerad av utvecklaren och klarar Apples kontroll av skadlig programvara, så det här meddelandet bör inte visas. Om det ändå visas öppnar du **Systeminställningar › Integritet och säkerhet** och klickar på **Öppna ändå**.
 
 **Fungerar den på Mac-datorer med Intel?**
 Ja. Det är en universell app för Apple Silicon och Intel, för macOS 14 Sonoma eller senare.

@@ -12,24 +12,26 @@
 
 ## インストール
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-インストールすると、画面上部のメニューバーにpikapikが表示されます。オンにするまで、どの機能もオフのままです。
-
-<details>
-<summary>Homebrewがない場合は、ほかに2つの方法があります</summary>
-
-Homebrew を使わない場合は、ターミナルを開いて次の行をペーストし、return キーを押します:
+ターミナルを開いて次の行をペーストし、return キーを押します:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+このコマンドは、最新版を GitHub からダウンロードし、開発元の署名があり、Apple による悪質なソフトウェアのチェックに合格している場合にだけインストールします。インストールすると、画面上部のメニューバーにpikapikが表示されます。オンにするまで、どの機能もオフのままです。
+
+<details>
+<summary>ほかの方法: Homebrew または dmg</summary>
+
+Homebrew を使う場合:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 または [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg) をダウンロードして開き、アプリを「アプリケーション」フォルダにドラッグします。
 
-Homebrew でもスクリプトでも、アプリは `/Applications` に入り、起動して、許可を求め、「ログイン時に開く」をオンにします。その後はアプリが自動でアップデートされます。**アップデート**を参照してください。削除するときは**アンインストール**を参照してください。
+上のコマンドでも Homebrew でも、アプリは `/Applications` に入り、起動して、許可を求め、「ログイン時に開く」をオンにします。その後はアプリが自動でアップデートされます。**アップデート**を参照してください。削除するときは**アンインストール**を参照してください。
 
 </details>
 
@@ -372,11 +374,7 @@ Homebrew でインストールした場合: `brew uninstall --cask --zap pikapik
 macOS はキーボードとマウスへのアクセスを 2 つに分けています。入力監視ではイベントを読み取ることができ、アクセシビリティではそれを変更できます。ショートカットをブロックするには両方が必要です。
 
 **「開発元が未確認」と表示されます。**
-pikapik は署名されていますが、Apple による公証は受けていません。Homebrew とインストールスクリプトがこれに対処します。dmg を使った場合は **システム設定 › プライバシーとセキュリティ** を開いて **このまま開く** をクリックするか、次を実行します:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik は開発元の署名があり、Apple の悪質なソフトウェアのチェックにも合格しているため、このメッセージは表示されないはずです。表示された場合は、**システム設定 › プライバシーとセキュリティ** を開いて **このまま開く** をクリックします。
 
 **Intel 搭載の Mac で使えますか?**
 はい。Apple シリコンと Intel の両方に対応したユニバーサルアプリで、macOS 14 Sonoma 以降で動作します。

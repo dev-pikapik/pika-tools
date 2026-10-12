@@ -12,24 +12,26 @@
 
 ## Cài đặt
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik sẽ nằm trên thanh menu ở phía trên màn hình. Mọi thứ đều tắt cho đến khi bạn bật lên.
-
-<details>
-<summary>Không có Homebrew? Còn hai cách khác</summary>
-
-Không dùng Homebrew: mở Terminal, dán dòng này rồi nhấn Return:
+Mở Terminal, dán dòng này rồi nhấn Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+Lệnh này tải về phiên bản mới nhất từ GitHub và chỉ cài đặt nếu phiên bản đó được nhà phát triển ký và đã vượt qua bước kiểm tra phần mềm độc hại của Apple. pikapik sẽ nằm trên thanh menu ở phía trên màn hình. Mọi thứ đều tắt cho đến khi bạn bật lên.
+
+<details>
+<summary>Các cách khác: Homebrew hoặc tệp dmg</summary>
+
+Với Homebrew:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Hoặc tải về [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), mở tệp và kéo ứng dụng vào thư mục Ứng dụng.
 
-Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, mở ứng dụng, xin quyền và bật “Mở khi đăng nhập”. Sau đó ứng dụng tự cập nhật, xem **Cập nhật**. Để gỡ bỏ, xem **Gỡ cài đặt**.
+Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Applications`, mở ứng dụng, xin quyền và bật “Mở khi đăng nhập”. Sau đó ứng dụng tự cập nhật, xem **Cập nhật**. Để gỡ bỏ, xem **Gỡ cài đặt**.
 
 </details>
 
@@ -372,11 +374,7 @@ Cả hai cách đều thoát ứng dụng, gỡ nó khỏi các mục đăng nh�
 macOS chia quyền truy cập bàn phím và chuột làm hai. Theo dõi đầu vào cho phép ứng dụng thấy các sự kiện, còn Trợ năng cho phép thay đổi chúng. Muốn chặn một phím tắt thì cần cả hai.
 
 **macOS báo ứng dụng đến từ nhà phát triển không xác định.**
-pikapik đã được ký, nhưng chưa được Apple công chứng. Homebrew và tập lệnh cài đặt sẽ lo việc này cho bạn. Nếu bạn dùng tệp dmg, hãy mở **Cài đặt hệ thống › Quyền riêng tư & Bảo mật** và bấm **Vẫn mở**, hoặc chạy:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik được nhà phát triển ký và vượt qua bước kiểm tra phần mềm độc hại của Apple, nên thông báo này bình thường sẽ không xuất hiện. Nếu nó vẫn xuất hiện, hãy mở **Cài đặt hệ thống › Quyền riêng tư & Bảo mật** và bấm **Vẫn mở**.
 
 **Có chạy trên máy Mac dùng chip Intel không?**
 Có. Đây là ứng dụng universal cho Apple silicon và Intel, chạy trên macOS 14 Sonoma trở lên.

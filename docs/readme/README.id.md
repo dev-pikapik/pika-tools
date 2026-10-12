@@ -12,24 +12,26 @@
 
 ## Instalasi
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik muncul di bar menu di bagian atas layar. Semuanya tetap mati sampai Anda menyalakannya.
-
-<details>
-<summary>Tidak punya Homebrew? Ada dua cara lain</summary>
-
-Tanpa Homebrew, buka Terminal, tempel baris ini, lalu tekan Return:
+Buka Terminal, tempel baris ini, lalu tekan Return:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+Perintah ini mengunduh versi terbaru dari GitHub dan hanya memasangnya jika versi itu ditandatangani oleh pengembangnya dan lolos pemeriksaan Apple terhadap perangkat lunak berbahaya. pikapik muncul di bar menu di bagian atas layar. Semuanya tetap mati sampai Anda menyalakannya.
+
+<details>
+<summary>Cara lain: Homebrew atau dmg</summary>
+
+Dengan Homebrew:
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Atau unduh [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), buka, lalu seret app ke folder Aplikasi.
 
-Homebrew maupun skrip sama-sama menaruh app di `/Applications`, membukanya, meminta izin, dan menyalakan “Buka saat Masuk”. Setelah itu, app memperbarui dirinya sendiri, lihat **Pembaruan**. Untuk menghapusnya, lihat **Hapus instalasi**.
+Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membukanya, meminta izin, dan menyalakan “Buka saat Masuk”. Setelah itu, app memperbarui dirinya sendiri, lihat **Pembaruan**. Untuk menghapusnya, lihat **Hapus instalasi**.
 
 </details>
 
@@ -372,11 +374,7 @@ Keduanya keluar dari app, menghapusnya dari item masuk, dan menghapus app. Skrip
 macOS membagi akses ke papan ketik dan mouse menjadi dua. Pemantauan Input membuat app bisa melihat peristiwa, sedangkan Aksesibilitas membuatnya bisa mengubah peristiwa itu. Untuk memblokir pintasan, keduanya diperlukan.
 
 **macOS mengatakan app berasal dari pengembang yang tidak dikenal.**
-pikapik sudah ditandatangani, tetapi tidak dinotarisasi oleh Apple. Homebrew dan skrip instalasi mengurus hal ini untuk Anda. Jika Anda memakai dmg, buka **Pengaturan Sistem › Privasi & Keamanan** dan klik **Tetap Buka**, atau jalankan:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik ditandatangani oleh pengembangnya dan lolos pemeriksaan Apple terhadap perangkat lunak berbahaya, jadi pesan ini seharusnya tidak muncul. Jika tetap muncul, buka **Pengaturan Sistem › Privasi & Keamanan** dan klik **Tetap Buka**.
 
 **Apakah berjalan di Mac Intel?**
 Ya. Ini adalah app universal untuk Apple silicon dan Intel, dengan macOS 14 Sonoma atau lebih baru.
