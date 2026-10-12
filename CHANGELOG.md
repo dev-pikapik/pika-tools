@@ -2,7 +2,7 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.34.0] - Unreleased
+## [1.34.0] - 2026-10-12
 
 ### Added
 - Games: system mouse and trackpad shortcuts now have their own group, Mouse and trackpad, under More game settings. It lists only what is turned on in macOS on your Mac, with Apple’s own names and a small drawing for each: shortcuts on a mouse button, swiping between desktops and full-screen apps, Mission Control and App Exposé (also the two-finger double tap on a Magic Mouse), pinching for Apps and spreading for the Desktop, the swipe in from the right edge that opens Notification Centre, and every hot corner you have set, named after the action it runs. Each row has the same choice as a keyboard shortcut: follow the Game Mode rules, disable in games, or allow in games. The App Store version lists the gestures only, not mouse buttons or hot corners.
@@ -678,6 +678,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.34.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.34.0
 [1.33.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.33.2
 [1.33.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.33.1
 [1.33.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.33.0
