@@ -24,22 +24,9 @@
 
 </div>
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
 <div dir="rtl">
 
-بعد التثبيت يظهر pikapik في شريط القائمة أعلى الشاشة. يبقى كل شيء متوقفًا حتى تشغّله بنفسك.
-
-</div>
-
-<details>
-<summary dir="rtl">لا يوجد Homebrew؟ هناك طريقتان أخريان</summary>
-
-<div dir="rtl">
-
-بدون Homebrew، افتح Terminal والصق هذا السطر واضغط على مفتاح Return:
+افتح Terminal والصق هذا السطر واضغط على مفتاح Return:
 
 </div>
 
@@ -49,9 +36,28 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 
 <div dir="rtl">
 
+ينزّل هذا الأمر أحدث إصدار من GitHub، ولا يثبّته إلا إذا كان موقّعًا من مطوّره وقد اجتاز فحص Apple للبرامج الضارة. بعد التثبيت يظهر pikapik في شريط القائمة أعلى الشاشة. يبقى كل شيء متوقفًا حتى تشغّله بنفسك.
+
+</div>
+
+<details>
+<summary dir="rtl">طرق أخرى: Homebrew أو ملف dmg</summary>
+
+<div dir="rtl">
+
+باستخدام Homebrew:
+
+</div>
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
+<div dir="rtl">
+
 أو نزّل [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg) وافتحه واسحب التطبيق إلى مجلد التطبيقات.
 
-يضع كل من Homebrew والسكربت التطبيق في `/Applications`، ثم يشغّله ويطلب الأذونات ويفعّل «الفتح عند تسجيل الدخول». بعد ذلك يحدّث التطبيق نفسه بنفسه، راجع **التحديثات**. لإزالته، راجع **إلغاء التثبيت**.
+يضع كل من الأمر أعلاه وHomebrew التطبيق في `/Applications`، ثم يشغّله ويطلب الأذونات ويفعّل «الفتح عند تسجيل الدخول». بعد ذلك يحدّث التطبيق نفسه بنفسه، راجع **التحديثات**. لإزالته، راجع **إلغاء التثبيت**.
 
 </div>
 
@@ -438,15 +444,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 يقسم macOS الوصول إلى لوحة المفاتيح والماوس إلى قسمين. تتيح مراقبة الإدخال للتطبيق رؤية الأحداث، وتتيح له تسهيلات الاستخدام تغييرها. يتطلب حظر اختصار كليهما.
 
 **يقول macOS إن التطبيق من مطوّر غير معروف.**
-pikapik موقّع، لكنه غير موثَّق من Apple. يتولى Homebrew وسكربت التثبيت هذا الأمر نيابة عنك. إذا استخدمت ملف dmg، فافتح **إعدادات النظام › الخصوصية والأمن** وانقر على **الفتح على أي حال**، أو شغّل:
-
-</div>
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
-
-<div dir="rtl">
+pikapik موقّع من مطوّره ويجتاز فحص Apple للبرامج الضارة، لذلك لا يُفترض أن تظهر هذه الرسالة. إذا ظهرت، فافتح **إعدادات النظام › الخصوصية والأمن** وانقر على **الفتح على أي حال**.
 
 **هل يعمل على أجهزة Mac بمعالج Intel؟**
 نعم. إنه تطبيق عام لـ Apple Silicon وIntel، ويتطلب macOS 14 Sonoma أو أحدث.

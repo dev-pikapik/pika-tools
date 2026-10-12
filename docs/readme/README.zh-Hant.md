@@ -12,24 +12,26 @@
 
 ## 安裝
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-安裝後，pikapik 會出現在螢幕頂端的選單列。在你開啟之前，所有功能都保持關閉。
-
-<details>
-<summary>沒有 Homebrew？還有兩種方式</summary>
-
-不使用 Homebrew 時，打開「終端機」，貼上下面這一行，然後按下 Return 鍵：
+打開「終端機」，貼上下面這一行，然後按下 Return 鍵：
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+這行指令會從 GitHub 下載最新版本，只有在它由開發者簽署，並且通過 Apple 的惡意軟體檢查時才會安裝。安裝後，pikapik 會出現在螢幕頂端的選單列。在你開啟之前，所有功能都保持關閉。
+
+<details>
+<summary>其他方式：Homebrew 或 dmg</summary>
+
+使用 Homebrew 時：
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 或下載 [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg)，打開後將 App 拖到「應用程式」檔案夾。
 
-Homebrew 和指令碼都會把 App 放到 `/Applications`，啟動它，要求權限，並開啟「登入時打開」。之後 App 會自動更新，請參閱**更新**。若要移除，請參閱**解除安裝**。
+上面的指令和 Homebrew 都會把 App 放到 `/Applications`，啟動它，要求權限，並開啟「登入時打開」。之後 App 會自動更新，請參閱**更新**。若要移除，請參閱**解除安裝**。
 
 </details>
 
@@ -372,11 +374,7 @@ pikapik 會在啟動時以及每隔 6 小時檢查新版本。你可以在「設
 macOS 把對鍵盤和滑鼠的存取分成兩部分。「輸入監控」讓 App 能看到事件，「輔助使用」讓 App 能修改事件。阻擋快速鍵兩者都需要。
 
 **macOS 提示 App 來自未識別的開發者。**
-pikapik 已簽署，但未經 Apple 公證。Homebrew 和安裝指令碼會幫你處理這一點。如果你用的是 dmg，請打開 **系統設定 › 隱私權與安全性** 並按一下 **強制打開**，或執行：
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik 由開發者簽署，並通過 Apple 的惡意軟體檢查，因此不應該出現這個提示。如果仍然出現，請打開 **系統設定 › 隱私權與安全性** 並按一下 **強制打開**。
 
 **支援搭載 Intel 處理器的 Mac 嗎？**
 支援。這是適用於 Apple 晶片和 Intel 的通用 App，需要 macOS 14 Sonoma 或以上版本。

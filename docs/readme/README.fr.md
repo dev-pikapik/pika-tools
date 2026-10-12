@@ -12,24 +12,26 @@
 
 ## Installation
 
-```bash
-brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
-```
-
-pikapik apparaît dans la barre des menus, en haut de l’écran. Tout reste éteint tant que vous ne l’activez pas.
-
-<details>
-<summary>Pas de Homebrew ? Deux autres façons</summary>
-
-Sans Homebrew, ouvrez Terminal, collez cette ligne et appuyez sur Retour :
+Ouvrez Terminal, collez cette ligne et appuyez sur Retour :
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/dev-pikapik/pika-tools/main/install.sh)"
 ```
 
+La commande télécharge la dernière version depuis GitHub et ne l’installe que si elle est signée par son développeur et a réussi la vérification d’Apple contre les logiciels malveillants. pikapik apparaît dans la barre des menus, en haut de l’écran. Tout reste éteint tant que vous ne l’activez pas.
+
+<details>
+<summary>Autres façons : Homebrew ou un dmg</summary>
+
+Avec Homebrew :
+
+```bash
+brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
+```
+
 Ou téléchargez [pikapik.dmg](https://github.com/dev-pikapik/pika-tools/releases/latest/download/pikapik.dmg), ouvrez-le et faites glisser l’app dans le dossier Applications.
 
-Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent, demandent les autorisations et activent l’ouverture à la connexion. Ensuite, l’app se met à jour toute seule, voir **Mises à jour**. Pour la supprimer, voir **Désinstallation**.
+La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`, la lancent, demandent les autorisations et activent l’ouverture à la connexion. Ensuite, l’app se met à jour toute seule, voir **Mises à jour**. Pour la supprimer, voir **Désinstallation**.
 
 </details>
 
@@ -372,11 +374,7 @@ Les deux quittent l’app, la retirent des éléments d’ouverture et la suppri
 macOS sépare l’accès au clavier et à la souris en deux. La surveillance de l’entrée permet à l’app de voir les évènements, l’accessibilité lui permet de les modifier. Pour bloquer un raccourci, il faut les deux.
 
 **macOS indique que l’app provient d’un développeur non identifié.**
-pikapik est signée, mais pas notarisée par Apple. Homebrew et le script d’installation s’en chargent pour vous. Si vous avez utilisé le dmg, ouvrez **Réglages Système › Confidentialité et sécurité** et cliquez sur **Ouvrir quand même**, ou exécutez :
-
-```bash
-xattr -dr com.apple.quarantine /Applications/pikapik.app
-```
+pikapik est signée par son développeur et réussit la vérification d’Apple contre les logiciels malveillants, ce message ne devrait donc pas apparaître. S’il apparaît quand même, ouvrez **Réglages Système › Confidentialité et sécurité** et cliquez sur **Ouvrir quand même**.
 
 **Fonctionne-t-elle sur les Mac Intel ?**
 Oui. C’est une app universelle pour Apple Silicon et Intel, à partir de macOS 14 Sonoma.
