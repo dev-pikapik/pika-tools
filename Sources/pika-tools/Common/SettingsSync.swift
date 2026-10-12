@@ -91,8 +91,9 @@ final class SettingsSync {
 
     static let shared = SettingsSync()
     static let drive = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Mobile Documents/com~apple~CloudDocs")
-    static let folder = drive.appendingPathComponent(Bundle.main.bundleIdentifier?.hasSuffix(".dev") == true ? "pika-tools-dev" : "pika-tools")
-    static let file = folder.appendingPathComponent("settings.json")
+    private static let suffix = Bundle.main.bundleIdentifier?.hasSuffix(".dev") == true ? "-dev" : ""
+    static let folder = drive.appendingPathComponent("pikapik" + suffix)
+    static let file = folder.appendingPathComponent(SettingsFile.name)
 
     private static let enabledKey = "settings-sync"
     private static let modifiedKey = "settings-sync-modified"
@@ -160,6 +161,7 @@ final class SettingsSync {
         guard isEnabled else { return state = .off }
         let manager = FileManager.default
         guard manager.fileExists(atPath: Self.drive.path) else { return state = .noDrive }
+        SettingsFile.moveFolder(from: Self.drive.appendingPathComponent("pika-tools" + Self.suffix), to: Self.folder)
         do {
             try manager.createDirectory(at: Self.folder, withIntermediateDirectories: true)
             _ = try manager.contentsOfDirectory(atPath: Self.folder.path)

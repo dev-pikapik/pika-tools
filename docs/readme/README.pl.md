@@ -339,7 +339,7 @@ Wiele ustawień ma mały obrazek pokazujący, co robią, na przykład Maca, któ
 
 Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta o potwierdzenie, potem wyłącza narzędzia z tej strony i przywraca ich opcje, jakby pikapik nigdy ich nie dotykał.
 
-**Synchronizuj ustawienia przez iCloud** sprawia, że pikapik jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pika-tools w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
+**Synchronizuj ustawienia przez iCloud** sprawia, że pikapik jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pikapik w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
 
 </details>
 

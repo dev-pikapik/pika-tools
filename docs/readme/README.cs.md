@@ -339,7 +339,7 @@ Mnoho nastavení má malý obrázek, který ukazuje, co dělají, třeba Mac, kt
 
 Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se zeptá, pak vypne nástroje na dané stránce a vrátí jejich volby, jako by se jich pikapik nikdy nedotkl.
 
-**Synchronizovat nastavení přes iCloud** udrží pikapik stejné na všech vašich Macích. Nastavení jsou ve složce pika-tools na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
+**Synchronizovat nastavení přes iCloud** udrží pikapik stejné na všech vašich Macích. Nastavení jsou ve složce pikapik na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
 
 </details>
 

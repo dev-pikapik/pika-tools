@@ -339,7 +339,7 @@ Banyak pengaturan dilengkapi gambar kecil yang menunjukkan fungsinya, misalnya M
 
 Setiap halaman memiliki tombol **Pulihkan Default…** di bagian bawah. Tombol ini bertanya terlebih dahulu, lalu mematikan alat di halaman tersebut dan mengembalikan pilihannya, seolah pikapik tidak pernah menyentuhnya.
 
-**Selaraskan pengaturan dengan iCloud** menjaga pikapik tetap sama di semua Mac Anda. Pengaturan disimpan di folder pika-tools di iCloud Drive, dan perubahan terbaru yang berlaku. Mati secara default dan memerlukan iCloud Drive yang menyala. Izin tidak ikut disinkronkan: setiap Mac memintanya sendiri.
+**Selaraskan pengaturan dengan iCloud** menjaga pikapik tetap sama di semua Mac Anda. Pengaturan disimpan di folder pikapik di iCloud Drive, dan perubahan terbaru yang berlaku. Mati secara default dan memerlukan iCloud Drive yang menyala. Izin tidak ikut disinkronkan: setiap Mac memintanya sendiri.
 
 </details>
 
