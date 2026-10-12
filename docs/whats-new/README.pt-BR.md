@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>A barra de título de sempre nas janelas de arquivos compactados
+
+<sub>1.39.1 · 13 de outubro de 2026</sub>
+
+As janelas de arquivos compactados voltaram a ter a barra de título de sempre do macOS, com três botões redondos à esquerda.
+
+Você pode arrastar uma janela pela parte de cima, como em qualquer lugar do Mac. Na janela de um novo arquivo compactado e na janela da senha, o botão vermelho fecha a janela sem criar nem descompactar nada. Os botões que não têm função em uma janela ficam cinza. A janela que mostra o andamento de uma cópia menor ou da conversão de um arquivo também ganhou esses botões. Agora a chave “Abrir arquivos compactados com este app” lembra qual app abria os arquivos ZIP e 7Z antes e os devolve a ele quando você a desativa.
+
+---
+
 ## <a id="v1.39.0"></a>Novas janelas de arquivos compactados e a senha digitada duas vezes
 
 <sub>1.39.0 · 13 de outubro de 2026</sub>

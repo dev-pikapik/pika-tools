@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Arşiv pencerelerinde alışık olduğunuz başlık çubuğu
+
+<sub>1.39.1 · 13 Ekim 2026</sub>
+
+Arşiv pencerelerinde yine macOS’in alışık olduğunuz başlık çubuğu ve solda üç yuvarlak düğme var.
+
+Mac’in her yerinde olduğu gibi bir pencereyi üst kısmından sürükleyebilirsiniz. Yeni arşiv penceresinde ve parola penceresinde kırmızı düğme, hiçbir şey oluşturmadan ya da açmadan pencereyi kapatır. Pencerede işe yaramayan düğmeler gri görünür. Küçük kopya oluşturma ya da dosya dönüştürme sırasında ilerlemeyi gösteren pencerede de artık aynı düğmeler var. “Arşivleri bu uygulamayla aç” anahtarı artık ZIP ve 7Z dosyalarını daha önce hangi uygulamanın açtığını hatırlıyor ve kapattığınızda dosyaları o uygulamaya geri veriyor.
+
+---
+
 ## <a id="v1.39.0"></a>Yeni arşiv pencereleri ve iki kez yazılan parola
 
 <sub>1.39.0 · 13 Ekim 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>The usual title bar in archive windows
+
+<sub>1.39.1 · October 13, 2026</sub>
+
+The archive windows have the usual macOS title bar again, with three round buttons on the left.
+
+You can drag a window by its top, as anywhere on the Mac. In the window for a new archive and in the password window, the red button closes the window without creating or unpacking anything. Buttons that have nothing to do in a window are grey. The progress window for smaller copies and converted files got the same buttons. From now on, the “Open archives with this app” switch remembers which app opened ZIP and 7Z files before and gives them back to it when you turn the switch off.
+
+---
+
 ## <a id="v1.39.0"></a>New archive windows, and the password typed twice
 
 <sub>1.39.0 · October 13, 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Zwykły pasek tytułu w oknach archiwów
+
+<sub>1.39.1 · 13 października 2026</sub>
+
+Okna archiwów znów mają zwykły pasek tytułu macOS z trzema okrągłymi przyciskami po lewej.
+
+Okno można przeciągnąć za górną część, jak wszędzie na Macu. W oknie nowego archiwum i w oknie hasła czerwony przycisk zamyka okno, niczego nie tworząc ani nie rozpakowując. Przyciski, które w oknie są niepotrzebne, są szare. Te same przyciski ma teraz także okno, które pokazuje postęp tworzenia mniejszej kopii lub konwersji pliku. Przełącznik „Otwieraj archiwa w tej aplikacji” zapamiętuje teraz, która aplikacja otwierała wcześniej pliki ZIP i 7Z, i po wyłączeniu oddaje je tej aplikacji.
+
+---
+
 ## <a id="v1.39.0"></a>Nowe okna archiwów i hasło wpisywane dwa razy
 
 <sub>1.39.0 · 13 października 2026</sub>

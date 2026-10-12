@@ -2,6 +2,13 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.39.1] - Unreleased
+
+### Fixed
+- Archives: the archive windows have the usual macOS title bar again. The window’s name is at the top, you drag the window by it, and the three buttons are on the left. In the window for a new archive and in the password window, the red button works like Cancel. Buttons that do nothing in these small windows are grey, as in other Mac apps.
+- Smaller Copy and Convert To: the progress window has the three buttons in its title bar too. They are grey, because the window closes by itself and has its own Cancel button.
+- Archives: from now on, the “Open archives with this app” switch remembers which app opened ZIP and 7Z files before and gives them back to it when you turn the switch off. If that app is gone, they go to Archive Utility.
+
 ## [1.39.0] - 2026-10-13
 
 ### Added

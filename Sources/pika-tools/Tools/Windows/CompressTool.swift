@@ -236,7 +236,9 @@ private final class CompressQueue {
     }
 
     private func showPanel() {
-        let panel = NSPanel(contentRect: .zero, styleMask: [.titled, .nonactivatingPanel], backing: .buffered, defer: false)
+        let panel = NSPanel(contentRect: .zero, styleMask: [.titled, .closable, .nonactivatingPanel], backing: .buffered, defer: false)
+        // Without .closable the title bar shows no buttons at all. The window closes by itself and has its own Cancel.
+        panel.standardWindowButton(.closeButton)?.isEnabled = false
         panel.contentView = NSHostingView(rootView: CompressProgressView(progress: progress) { [weak self] in self?.cancel() })
         panel.setContentSize(panel.contentView?.fittingSize ?? .zero)
         panel.isReleasedWhenClosed = false

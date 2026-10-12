@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Bara de titlu obișnuită în ferestrele pentru arhive
+
+<sub>1.39.1 · 13 octombrie 2026</sub>
+
+Ferestrele pentru arhive au din nou bara de titlu obișnuită din macOS, cu trei butoane rotunde în stânga.
+
+Poți trage o fereastră de partea de sus, ca oriunde pe Mac. În fereastra pentru o arhivă nouă și în cea pentru parolă, butonul roșu închide fereastra fără să creeze sau să dezarhiveze ceva. Butoanele care nu au ce face într-o fereastră sunt gri. Fereastra care arată cum avansează o copie mai mică sau conversia unui fișier are acum aceleași butoane. Acum comutatorul „Deschide arhivele cu această aplicație” ține minte ce aplicație deschidea înainte fișierele ZIP și 7Z și i le dă înapoi când îl dezactivezi.
+
+---
+
 ## <a id="v1.39.0"></a>Ferestre noi pentru arhive și parola scrisă de două ori
 
 <sub>1.39.0 · 13 octombrie 2026</sub>

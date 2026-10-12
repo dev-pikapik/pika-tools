@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Thanh tiêu đề quen thuộc trong cửa sổ lưu trữ
+
+<sub>1.39.1 · 13 tháng 10 năm 2026</sub>
+
+Các cửa sổ lưu trữ lại có thanh tiêu đề quen thuộc của macOS, với ba nút tròn ở bên trái.
+
+Bạn có thể kéo cửa sổ ở phần trên cùng, như ở mọi nơi trên máy Mac. Trong cửa sổ tạo bản lưu trữ mới và cửa sổ mật khẩu, nút đỏ đóng cửa sổ mà không tạo hay giải nén gì cả. Những nút không có tác dụng trong cửa sổ sẽ có màu xám. Cửa sổ hiển thị tiến trình khi tạo bản sao nhỏ hơn hoặc chuyển đổi tệp giờ cũng có các nút này. Giờ đây, công tắc “Mở tệp lưu trữ bằng ứng dụng này” ghi nhớ ứng dụng đã mở tệp ZIP và 7Z trước đó, và trả tệp về ứng dụng đó khi bạn tắt công tắc.
+
+---
+
 ## <a id="v1.39.0"></a>Cửa sổ lưu trữ mới, và mật khẩu nhập hai lần
 
 <sub>1.39.0 · 13 tháng 10 năm 2026</sub>

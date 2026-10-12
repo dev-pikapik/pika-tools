@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Bilah judul yang biasa di jendela arsip
+
+<sub>1.39.1 · 13 Oktober 2026</sub>
+
+Jendela arsip kembali memiliki bilah judul macOS yang biasa, dengan tiga tombol bulat di kiri.
+
+Anda bisa menyeret jendela dari bagian atasnya, seperti di mana pun di Mac. Di jendela arsip baru dan jendela kata sandi, tombol merah menutup jendela tanpa membuat atau mengekstrak apa pun. Tombol yang tidak berguna di sebuah jendela berwarna abu-abu. Jendela yang menampilkan kemajuan saat membuat salinan lebih kecil atau mengonversi file kini juga punya tombol yang sama. Kini sakelar “Buka arsip dengan app ini” mengingat app yang sebelumnya membuka file ZIP dan 7Z, lalu mengembalikannya ke app itu saat Anda mematikannya.
+
+---
+
 ## <a id="v1.39.0"></a>Jendela arsip baru, dan kata sandi diketik dua kali
 
 <sub>1.39.0 · 13 Oktober 2026</sub>

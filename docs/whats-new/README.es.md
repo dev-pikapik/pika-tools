@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>La barra de título de siempre en las ventanas de archivos comprimidos
+
+<sub>1.39.1 · 13 de octubre de 2026</sub>
+
+Las ventanas de archivos comprimidos vuelven a tener la barra de título de siempre de macOS, con tres botones redondos a la izquierda.
+
+Puedes arrastrar una ventana por la parte de arriba, como en cualquier parte del Mac. En la ventana de un archivo comprimido nuevo y en la de la contraseña, el botón rojo cierra la ventana sin crear ni descomprimir nada. Los botones que no tienen nada que hacer en una ventana aparecen en gris. La ventana que muestra el progreso al crear una copia más ligera o convertir un archivo también tiene ahora estos botones. Ahora el interruptor «Abrir archivos comprimidos con esta app» recuerda qué app abría antes los archivos ZIP y 7Z, y se los devuelve al desactivarlo.
+
+---
+
 ## <a id="v1.39.0"></a>Nuevas ventanas de archivos comprimidos y la contraseña dos veces
 
 <sub>1.39.0 · 13 de octubre de 2026</sub>

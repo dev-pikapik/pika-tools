@@ -3,21 +3,24 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 final class ArchivePanel: NSPanel {
-    init<Content: View>(_ controller: NSHostingController<Content>, activating: Bool) {
-        let chrome: NSWindow.StyleMask = [.titled, .fullSizeContentView]
-        super.init(contentRect: .zero, styleMask: activating ? chrome : chrome.union(.nonactivatingPanel), backing: .buffered, defer: false)
-        controller.safeAreaRegions = []
+    private let onClose: (() -> Void)?
+
+    init<Content: View>(_ controller: NSHostingController<Content>, activating: Bool, onClose: (() -> Void)? = nil) {
+        self.onClose = onClose
+        super.init(contentRect: .zero, styleMask: activating ? [.titled, .closable] : [.titled, .closable, .nonactivatingPanel], backing: .buffered, defer: false)
         contentViewController = controller
         setContentSize(controller.view.fittingSize)
-        titlebarAppearsTransparent = true
-        titleVisibility = .hidden
-        for button in [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton] { standardWindowButton(button)?.isHidden = true }
         isMovableByWindowBackground = true
         isReleasedWhenClosed = false
         hidesOnDeactivate = false
         level = .floating
         center()
+        // A window that can't close, minimize or zoom shows no buttons at all, so a panel nobody closes keeps a grey red button.
+        if onClose == nil { standardWindowButton(.closeButton)?.isEnabled = false }
     }
+
+    // The close button answers the prompt the way Cancel does, so whoever waits for it always gets a reply.
+    override func performClose(_ sender: Any?) { onClose?() }
 }
 
 extension View {
@@ -231,11 +234,7 @@ struct ArchiveCreateView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            VStack(spacing: 8) {
-                ArchiveHero(icon: NSWorkspace.shared.icon(for: model.format.type), identity: model.format.fileExtension, locked: model.usesPassword)
-                Text("New Archive")
-                    .font(.title3.weight(.semibold))
-            }
+            ArchiveHero(icon: NSWorkspace.shared.icon(for: model.format.type), identity: model.format.fileExtension, locked: model.usesPassword)
             HStack(spacing: 6) {
                 TextField("Name", text: $model.name)
                     .textFieldStyle(.roundedBorder)
@@ -394,7 +393,7 @@ final class ArchiveCreatePrompt {
             answer = continuation
             let controller = NSHostingController(rootView: ArchiveCreateView(model: model) { [self] request in finish(request) })
             controller.sizingOptions = [.preferredContentSize]
-            let panel = ArchivePanel(controller, activating: true)
+            let panel = ArchivePanel(controller, activating: true) { [weak self] in self?.finish(nil) }
             panel.title = String(localized: "New Archive")
             self.panel = panel
             NSApp.bringForward()
@@ -509,7 +508,7 @@ final class ArchivePasswordPrompt {
         if panel == nil {
             let controller = NSHostingController(rootView: ArchivePasswordView(model: model, submit: { [weak self] in self?.submit($0) }, cancel: { [weak self] in self?.close() }))
             controller.sizingOptions = [.preferredContentSize]
-            panel = ArchivePanel(controller, activating: true)
+            panel = ArchivePanel(controller, activating: true) { [weak self] in self?.close() }
         }
         panel?.title = model.name
         NSApp.bringForward()

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>La solita barra del titolo nelle finestre degli archivi
+
+<sub>1.39.1 · 13 ottobre 2026</sub>
+
+Le finestre degli archivi hanno di nuovo la solita barra del titolo di macOS, con tre pulsanti rotondi a sinistra.
+
+Una finestra si trascina dalla parte superiore, come ovunque sul Mac. Nella finestra per un nuovo archivio e in quella della password, il pulsante rosso chiude la finestra senza creare né estrarre nulla. I pulsanti che in una finestra non servono sono grigi. Anche la finestra che mostra l’avanzamento di una copia più leggera o della conversione di un file ora ha questi pulsanti. Ora l’interruttore «Apri gli archivi con questa app» ricorda quale app apriva prima i file ZIP e 7Z e glieli restituisce quando lo disattivi.
+
+---
+
 ## <a id="v1.39.0"></a>Nuove finestre per gli archivi e la password scritta due volte
 
 <sub>1.39.0 · 13 ottobre 2026</sub>

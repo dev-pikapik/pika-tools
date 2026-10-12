@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Obvyklé záhlaví v oknech archivů
+
+<sub>1.39.1 · 13. října 2026</sub>
+
+Okna archivů mají znovu obvyklé záhlaví macOS se třemi kulatými tlačítky vlevo.
+
+Okno můžete přetáhnout za horní část, stejně jako všude na Macu. V okně nového archivu a v okně hesla červené tlačítko okno zavře, aniž by cokoli vytvořilo nebo rozbalilo. Tlačítka, která v okně nejsou potřeba, jsou šedá. Stejná tlačítka má nyní i okno, které ukazuje průběh vytváření menší kopie nebo převodu souboru. Přepínač „Otevírat archivy v této aplikaci“ si nyní pamatuje, která aplikace dříve otevírala soubory ZIP a 7Z, a když ho vypnete, vrátí je této aplikaci.
+
+---
+
 ## <a id="v1.39.0"></a>Nová okna archivů a heslo zadávané dvakrát
 
 <sub>1.39.0 · 13. října 2026</sub>

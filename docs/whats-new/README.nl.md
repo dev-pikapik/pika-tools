@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>De vertrouwde titelbalk in archiefvensters
+
+<sub>1.39.1 · 13 oktober 2026</sub>
+
+De archiefvensters hebben weer de vertrouwde titelbalk van macOS, met drie ronde knoppen links.
+
+Je kunt een venster aan de bovenkant slepen, zoals overal op de Mac. In het venster voor een nieuw archief en in het wachtwoordvenster sluit de rode knop het venster zonder iets aan te maken of uit te pakken. Knoppen die in een venster niets te doen hebben, zijn grijs. Het venster dat de voortgang toont bij het maken van een kleinere kopie of het omzetten van een bestand, heeft nu dezelfde knoppen. De schakelaar ‘Open archieven met deze app’ onthoudt nu welke app ZIP- en 7Z-bestanden eerst opende, en geeft ze daaraan terug als je hem uitzet.
+
+---
+
 ## <a id="v1.39.0"></a>Nieuwe archiefvensters, en het wachtwoord twee keer
 
 <sub>1.39.0 · 13 oktober 2026</sub>
