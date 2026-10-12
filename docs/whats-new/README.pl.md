@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Plakietka FPS prosi o zgodę we właściwym miejscu
+
+<sub>1.37.3 · 12 października 2026</sub>
+
+Zgodę na nagrywanie ekranu dla plakietki FPS dajesz teraz na stronie Uprawnienia, razem ze wszystkimi innymi uprawnieniami.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Żeby policzyć klatki gry, „Pokaż FPS” może potrzebować nagrywania ekranu. Wcześniej pikapik prosił o nie wprost na stronie Gry. Teraz jest ono razem ze wszystkimi innymi uprawnieniami: gdy „Pokaż FPS” go potrzebuje, na stronie Uprawnienia w Ustawieniach pojawia się wiersz „Nagrywanie ekranu”, a ty klikasz w nim „Zezwól”.
+
+Na stronie Gry zostaje teraz tylko zwykły wiersz pod przełącznikiem: „Wymaga uprawnienia. Kliknij, aby je nadać.” Jego przycisk „Zezwól” prowadzi prosto do wiersza „Nagrywanie ekranu”. Włączenie „Pokaż FPS” nie wyświetla już samo pytania, a pikapik nadal o nic nie prosi w trakcie gry.
+
+---
+
 ## <a id="v1.37.2"></a>Sprawdzone przez Apple
 
 <sub>1.37.2 · 12 października 2026</sub>

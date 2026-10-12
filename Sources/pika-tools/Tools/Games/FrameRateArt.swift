@@ -32,22 +32,18 @@ struct FrameRateSettings: View {
                     ? String(localized: "FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate.")
                     : String(localized: "FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate."))
                     + Text(verbatim: " ") + Text("Calm games like chess draw a new picture only when something moves, so 0 is normal for them."),
-                isOn: Binding { tool.showsFrameRate } set: { turn($0) }
+                isOn: $tool.showsFrameRate
             )
             if Permission.screenRecording.isShown {
-                PermissionRow(permission: .screenRecording)
+                LabeledContent("Needs a permission. Click to allow it.") {
+                    Button("Allow") { permissions.ask([.screenRecording]) }
+                }
+                .foregroundStyle(.secondary)
             }
         }
         .disabled(!tool.isEnabled)
         .onAppear { permissions.refresh() }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in permissions.refresh() }
-    }
-
-    private func turn(_ on: Bool) {
-        tool.showsFrameRate = on
-        guard on, !FrameRateMeter.hasTrace, !tool.isPlaying else { return }
-        permissions.refresh()
-        permissions.request([.screenRecording])
     }
 }
 

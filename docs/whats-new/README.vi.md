@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Nhãn FPS giờ xin quyền đúng chỗ
+
+<sub>1.37.3 · 12 tháng 10 năm 2026</sub>
+
+Quyền Ghi màn hình cho nhãn FPS giờ được cho phép ở trang Quyền, cùng với tất cả các quyền khác.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Để đếm khung hình của một trò chơi, “Hiện FPS” có thể cần quyền Ghi màn hình. Trước đây pikapik xin quyền này ngay trên trang Trò chơi. Giờ nó nằm chung với mọi quyền khác: khi “Hiện FPS” cần đến, dòng “Ghi màn hình” sẽ hiện ra trong Cài đặt › Quyền, và bạn bấm “Cho phép” ở đó.
+
+Trên trang Trò chơi, bạn giờ chỉ còn thấy dòng quen thuộc dưới công tắc: “Cần được cấp quyền. Bấm để cho phép.” Nút “Cho phép” trong dòng đó đưa bạn thẳng tới dòng “Ghi màn hình”. Bật “Hiện FPS” không còn tự bật lên câu hỏi nữa, và pikapik vẫn không bao giờ xin gì khi bạn đang chơi.
+
+---
+
 ## <a id="v1.37.2"></a>Đã được Apple kiểm tra
 
 <sub>1.37.2 · 12 tháng 10 năm 2026</sub>

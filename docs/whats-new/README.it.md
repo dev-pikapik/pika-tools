@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>L’etichetta FPS chiede il permesso al posto giusto
+
+<sub>1.37.3 · 12 ottobre 2026</sub>
+
+La registrazione dello schermo per l’etichetta FPS ora si consente nella pagina Permessi, insieme a tutti gli altri permessi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Per contare i fotogrammi di un gioco, «Mostra FPS» può aver bisogno della registrazione dello schermo. Prima pikapik la chiedeva proprio nella pagina Giochi. Ora sta insieme a tutti gli altri permessi: quando «Mostra FPS» ne ha bisogno, compare una riga «Registrazione schermo» in Impostazioni › Permessi, e lì fai clic su «Consenti».
+
+Nella pagina Giochi ora vedi solo la solita riga sotto l’interruttore: «Serve un permesso. Fai clic per consentirlo.» Il suo pulsante «Consenti» ti porta dritto alla riga «Registrazione schermo». Attivare «Mostra FPS» non fa più comparire da solo una domanda, e pikapik continua a non chiedere nulla mentre giochi.
+
+---
+
 ## <a id="v1.37.2"></a>Verificato da Apple
 
 <sub>1.37.2 · 12 ottobre 2026</sub>

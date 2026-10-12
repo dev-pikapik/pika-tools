@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Eticheta FPS cere permisiunea în locul potrivit
+
+<sub>1.37.3 · 12 octombrie 2026</sub>
+
+Înregistrarea ecranului pentru eticheta FPS se permite acum pe pagina Permisiuni, laolaltă cu toate celelalte permisiuni.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Ca să numere cadrele unui joc, „Afișează FPS” poate avea nevoie de Înregistrare ecran. Înainte, pikapik o cerea chiar pe pagina Jocuri. Acum e la un loc cu toate celelalte permisiuni: când „Afișează FPS” are nevoie de ea, apare un rând „Înregistrare ecran” în Setări › Permisiuni, iar tu dai clic acolo pe „Permite”.
+
+Pe pagina Jocuri vezi acum doar rândul obișnuit de sub comutator: „Are nevoie de o permisiune. Dă clic pentru a o permite.” Butonul lui „Permite” te duce direct la rândul „Înregistrare ecran”. Pornirea lui „Afișează FPS” nu mai scoate singură o întrebare, iar pikapik tot nu cere nimic în timp ce joci.
+
+---
+
 ## <a id="v1.37.2"></a>Verificat de Apple
 
 <sub>1.37.2 · 12 octombrie 2026</sub>

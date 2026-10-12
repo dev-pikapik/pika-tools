@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>Label FPS kini meminta izin di tempat yang tepat
+
+<sub>1.37.3 · 12 Oktober 2026</sub>
+
+Izin Perekaman Layar untuk label FPS kini diberikan di halaman Izin, bersama semua izin lainnya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Untuk menghitung frame sebuah game, “Tampilkan FPS” bisa memerlukan Perekaman Layar. Dulu pikapik memintanya langsung di halaman Game. Kini izin itu berada bersama semua izin lainnya: saat “Tampilkan FPS” memerlukannya, baris “Perekaman Layar” muncul di Pengaturan › Izin, dan Anda klik “Izinkan” di sana.
+
+Di halaman Game, Anda kini hanya melihat baris yang biasa di bawah sakelar: “Perlu izin. Klik untuk mengizinkan.” Tombol “Izinkan” di baris itu membawa Anda langsung ke baris “Perekaman Layar”. Menyalakan “Tampilkan FPS” tidak lagi memunculkan pertanyaan dengan sendirinya, dan pikapik tetap tidak pernah meminta apa pun saat Anda bermain.
+
+---
+
 ## <a id="v1.37.2"></a>Diperiksa Apple
 
 <sub>1.37.2 · 12 Oktober 2026</sub>

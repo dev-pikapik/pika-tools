@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.37.3"></a>FPS-etiketten frågar nu på rätt ställe
+
+<sub>1.37.3 · 12 oktober 2026</sub>
+
+Skärminspelning för FPS-etiketten tillåter du nu på sidan Behörigheter, tillsammans med alla andra behörigheter.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+För att räkna bilderna i ett spel kan ”Visa FPS” behöva Skärminspelning. Tidigare frågade pikapik efter den direkt på sidan Spel. Nu finns den bland alla andra behörigheter: när ”Visa FPS” behöver den dyker raden ”Skärminspelning” upp i Inställningar › Behörigheter, och där klickar du på ”Tillåt”.
+
+På sidan Spel ser du nu bara den vanliga raden under reglaget: ”Behöver en behörighet. Klicka för att tillåta den.” Knappen ”Tillåt” i den tar dig rakt till raden ”Skärminspelning”. När du slår på ”Visa FPS” dyker ingen fråga upp av sig själv längre, och pikapik frågar fortfarande aldrig medan du spelar.
+
+---
+
 ## <a id="v1.37.2"></a>Kontrollerad av Apple
 
 <sub>1.37.2 · 12 oktober 2026</sub>
