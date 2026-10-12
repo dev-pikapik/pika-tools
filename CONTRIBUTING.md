@@ -97,6 +97,12 @@ Removing an app completely starts with `AppFootprint`, which finds everything an
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift scripts/test-uninstaller.swift -o build/test-uninstaller && build/test-uninstaller
 ```
 
+`AppRemover` moves what `AppFootprint` found to the Trash, asks for the administrator password once for the files only an administrator can move, and keeps a record so everything can be put back. Quitting apps, `launchctl`, the password prompt and Finder are all passed in as closures, so the test runs the real logic against a made-up home folder with fakes. Only a few tiny `pika-uninstall-test-*` files go through your real Trash, and the test puts them back. The Finder fallback needs the Automation permission, which the direct build declares in `Resources/Direct.entitlements`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Sources/pika-tools/Tools/Uninstaller/AppRemover.swift scripts/test-app-remover.swift -o build/test-app-remover && build/test-app-remover
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
