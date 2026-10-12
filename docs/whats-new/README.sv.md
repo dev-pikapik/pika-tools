@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Klä på ditt husdjur
+
+<sub>1.35.0 · 12 oktober 2026</sub>
+
+Ditt husdjur har fått en garderob, och när ni leker tillsammans vinner du nya plagg.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Husdjur och välj vad ditt husdjur ska ha på sig: hattar, glasögon, halsdukar, tröjor, skor, kappor och till och med vingar. Det tar på sig plagget direkt. Några plagg är gratis, resten är utmärkelser som kommer medan ni leker tillsammans: lyft upp husdjuret och kasta det, sparka runt bollen, titta på när det klättrar på fönster och pratar, eller håll det helt enkelt sällskap dag efter dag. När du har fått en utmärkelse säger husdjuret till.
+
+Färdiga outfits klär på husdjuret från topp till tå med ett klick: trollkarl, pirat, astronaut, superhjälte, kung och fler. En outfit är klar när du har fått alla dess delar.
+
+Bara enkla siffror sparas, som steg, kast och dagar tillsammans. De stannar på din Mac, ingenting skickas någonstans och du kan radera dem när som helst i Inställningar › Husdjur.
+
+---
+
 ## <a id="v1.34.0"></a>Mus och styrplatta i spel
 
 <sub>1.34.0 · 12 oktober 2026</sub>

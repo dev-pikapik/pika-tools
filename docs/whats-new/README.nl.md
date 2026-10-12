@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Kleed je huisdiertje aan
+
+<sub>1.35.0 · 12 oktober 2026</sub>
+
+Je huisdiertje heeft nu een kledingkast, en onder het spelen verdien je nieuwe dingen om aan te trekken.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Huisdiertje en kies wat je huisdiertje draagt: hoeden, brillen, sjaals, shirts, schoenen, capes en zelfs vleugels. Het trekt het meteen aan. Een paar dingen zijn gratis, de rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een onderscheiding verdient, vertelt je huisdiertje het je.
+
+Kant-en-klare outfits kleden je huisdiertje met één klik van top tot teen aan: tovenaar, piraat, astronaut, superheld, koning en meer. Een outfit is klaar zodra je alle onderdelen hebt verdiend.
+
+Alleen simpele aantallen worden bewaard, zoals stappen, worpen en dagen samen. Ze blijven op je Mac, er wordt niets ergens naartoe verstuurd en je kunt ze altijd wissen in Instellingen › Huisdiertje.
+
+---
+
 ## <a id="v1.34.0"></a>Muis en trackpad in games
 
 <sub>1.34.0 · 12 oktober 2026</sub>

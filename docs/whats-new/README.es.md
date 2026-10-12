@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.35.0"></a>Viste a tu mascota
+
+<sub>1.35.0 · 12 de octubre de 2026</sub>
+
+Tu mascota ya tiene armario, y consigues prendas nuevas mientras jugáis juntos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Mascota y elige lo que lleva puesto tu mascota: gorros, gafas, bufandas, camisetas, zapatos, capas e incluso alas. Se lo pone al instante. Unas pocas prendas son gratis y el resto son premios que llegan mientras jugáis juntos: coge a tu mascota y lánzala, dale patadas a la pelota, mírala trepar por las ventanas y charlar, o simplemente hazle compañía día tras día. Cuando consigas un premio, tu mascota te lo dirá.
+
+Los disfraces ya preparados la visten de pies a cabeza con un clic: mago, pirata, astronauta, superhéroe, rey y más. Un disfraz está listo cuando has conseguido todas sus piezas.
+
+Solo se guardan números sencillos, como pasos, lanzamientos y días juntos. Se quedan en tu Mac, no se envía nada a ninguna parte y puedes borrarlos cuando quieras en Ajustes › Mascota.
+
+---
+
 ## <a id="v1.34.0"></a>Ratón y trackpad en los juegos
 
 <sub>1.34.0 · 12 de octubre de 2026</sub>
