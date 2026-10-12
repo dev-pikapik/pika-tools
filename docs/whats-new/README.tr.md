@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Apple tarafından doğrulandı
+
+<sub>1.37.2 · 12 Ekim 2026</sub>
+
+pikapik artık doğrulanmış bir Apple geliştiricisi tarafından imzalandı ve Apple tarafından kontrol edildi. Bu yüzden macOS ilk açılışta artık uyarı vermez.
+
+Bu güncellemeden sonra macOS, pikapik’e verdiğiniz izinleri, örneğin Erişilebilirlik, Girdi İzleme veya Tam Disk Erişimi’ni yeniden isteyebilir. Sistem Ayarları › Gizlilik ve Güvenlik bölümünden bir kez daha izin verin. Fan kontrolünü kullanıyorsanız pikapik ayarlarından yeniden izin verin; macOS parolanızı bir kez sorar.
+
+---
+
 ## <a id="v1.37.1"></a>FPS etiketi oyununuzdan geri kalmıyor
 
 <sub>1.37.1 · 12 Ekim 2026</sub>
