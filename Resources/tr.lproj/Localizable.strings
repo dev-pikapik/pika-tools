@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "kombin, kostüm, büyücü, korsan, astronot, süper kahraman, kovboy, peri, kral, centilmen, bilim insanı, dedektif";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "madalyalar, başarılar, kupalar, rozetler, ödüller, ilerleme, kilidi aç, kazanıldı";
 "reset, delete, clear, start over, privacy" = "sıfırla, sil, temizle, baştan başla, gizlilik";
+"Show FPS" = "FPS’yi göster";
+"Shows how smoothly the game runs" = "Oyunun ne kadar akıcı çalıştığını gösterir";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği. Eski oyunlar ekran kaydı üzerinden sayılır; bu yüzden sayıları ekranın yenileme hızını aşamaz.";
+"Corner for FPS" = "FPS için köşe";
+"Top left corner" = "Sol üst köşe";
+"Top right corner" = "Sağ üst köşe";
+"Bottom left corner" = "Sol alt köşe";
+"Bottom right corner" = "Sağ alt köşe";
+"Only for older games" = "Yalnızca eski oyunlar için";
+"Needed to count frames" = "Kareleri saymak için gerekli";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "kare hızı, saniyedeki kare, sayaç, performans, takılma, ekran kaydı";

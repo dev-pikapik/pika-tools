@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "ținută, costum, vrăjitor, pirat, astronaut, supererou, cowboy, zână, rege, gentleman, om de știință, detectiv";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medalii, realizări, trofee, insigne, recompense, progres, deblocare, câștigat";
 "reset, delete, clear, start over, privacy" = "resetare, ștergere, golire, de la capăt, confidențialitate";
+"Show FPS" = "Afișează FPS";
+"Shows how smoothly the game runs" = "Arată cât de fluid rulează jocul";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă. Jocurile mai vechi sunt numărate prin înregistrarea ecranului, așa că numărul lor nu poate depăși rata de reîmprospătare a ecranului.";
+"Corner for FPS" = "Colțul pentru FPS";
+"Top left corner" = "Colțul din stânga sus";
+"Top right corner" = "Colțul din dreapta sus";
+"Bottom left corner" = "Colțul din stânga jos";
+"Bottom right corner" = "Colțul din dreapta jos";
+"Only for older games" = "Doar pentru jocuri mai vechi";
+"Needed to count frames" = "Necesar pentru a număra cadrele";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "rată de cadre, cadre pe secundă, contor, performanță, lag, înregistrare ecran";

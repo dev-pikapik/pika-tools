@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "服裝, 造型, 巫師, 海盜, 太空人, 超級英雄, 牛仔, 仙子, 國王, 紳士, 科學家, 偵探";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "獎章, 成就, 獎盃, 徽章, 獎勵, 進度, 解鎖, 獲得";
 "reset, delete, clear, start over, privacy" = "重置, 刪除, 清除, 重新開始, 隱私";
+"Show FPS" = "顯示 FPS";
+"Shows how smoothly the game runs" = "顯示遊戲執行得有多流暢";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS 是每秒影格數，也就是遊戲每秒繪製的畫面數。較舊的遊戲透過螢幕錄製來計數，因此數值不會超過螢幕的更新率。";
+"Corner for FPS" = "顯示 FPS 的角落";
+"Top left corner" = "左上角";
+"Top right corner" = "右上角";
+"Bottom left corner" = "左下角";
+"Bottom right corner" = "右下角";
+"Only for older games" = "僅適用於較舊的遊戲";
+"Needed to count frames" = "用於計算影格數";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "影格率, 每秒影格數, 計數器, 效能, 卡頓, 螢幕錄製";

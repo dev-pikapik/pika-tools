@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "образ, наряд, костюм, волшебник, пират, астронавт, супергерой, ковбой, фея, король, джентльмен, учёный, детектив";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "медали, достижения, трофеи, значки, призы, прогресс, открыть, получено";
 "reset, delete, clear, start over, privacy" = "сброс, удалить, очистить, начать заново, конфиденциальность";
+"Show FPS" = "Показывать FPS";
+"Shows how smoothly the game runs" = "Показывает, насколько плавно идёт игра";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS — это кадры в секунду: сколько картинок игра рисует за секунду. Старые игры считаются через запись экрана, поэтому их число не может быть выше частоты обновления экрана.";
+"Corner for FPS" = "Угол для FPS";
+"Top left corner" = "Левый верхний угол";
+"Top right corner" = "Правый верхний угол";
+"Bottom left corner" = "Левый нижний угол";
+"Bottom right corner" = "Правый нижний угол";
+"Only for older games" = "Только для старых игр";
+"Needed to count frames" = "Нужно, чтобы считать кадры";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "частота кадров, кадры в секунду, счётчик, производительность, лаги, запись экрана";

@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "pakaian, kostum, penyihir, bajak laut, astronaut, superhero, koboi, peri, raja, gentleman, ilmuwan, detektif";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medali, pencapaian, piala, lencana, hadiah, progres, buka kunci, diraih";
 "reset, delete, clear, start over, privacy" = "atur ulang, hapus, bersihkan, mulai dari awal, privasi";
+"Show FPS" = "Tampilkan FPS";
+"Shows how smoothly the game runs" = "Menampilkan seberapa mulus game berjalan";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik. Game yang lebih lama dihitung lewat perekaman layar, jadi angkanya tidak bisa melebihi kecepatan refresh layar.";
+"Corner for FPS" = "Sudut untuk FPS";
+"Top left corner" = "Sudut kiri atas";
+"Top right corner" = "Sudut kanan atas";
+"Bottom left corner" = "Sudut kiri bawah";
+"Bottom right corner" = "Sudut kanan bawah";
+"Only for older games" = "Hanya untuk game lama";
+"Needed to count frames" = "Diperlukan untuk menghitung frame";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "frame rate, frame per detik, penghitung, performa, lag, perekaman layar";

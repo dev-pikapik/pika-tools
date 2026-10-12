@@ -866,3 +866,14 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "의상, 코스튬, 마법사, 해적, 우주비행사, 슈퍼히어로, 카우보이, 요정, 왕, 신사, 과학자, 탐정";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "메달, 업적, 트로피, 배지, 보상, 진행 상황, 잠금 해제, 획득";
 "reset, delete, clear, start over, privacy" = "초기화, 삭제, 지우기, 처음부터, 개인정보 보호";
+"Show FPS" = "FPS 표시";
+"Shows how smoothly the game runs" = "게임이 얼마나 부드럽게 실행되는지 보여줍니다";
+"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS는 초당 프레임 수, 즉 게임이 1초에 그리는 그림의 수입니다. 오래된 게임은 화면 기록으로 계산하기 때문에 숫자가 화면 주사율보다 높아질 수 없습니다.";
+"Corner for FPS" = "FPS를 표시할 모서리";
+"Top left corner" = "왼쪽 위 모서리";
+"Top right corner" = "오른쪽 위 모서리";
+"Bottom left corner" = "왼쪽 아래 모서리";
+"Bottom right corner" = "오른쪽 아래 모서리";
+"Only for older games" = "오래된 게임에만 해당";
+"Needed to count frames" = "프레임을 세는 데 필요합니다";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "프레임 속도, 초당 프레임, 카운터, 성능, 렉, 화면 기록";
