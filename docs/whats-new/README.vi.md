@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Đã được Apple kiểm tra
+
+<sub>1.37.2 · 12 tháng 10 năm 2026</sub>
+
+pikapik giờ được ký bởi nhà phát triển Apple đã xác minh và được Apple kiểm tra. Vì vậy macOS không còn cảnh báo khi bạn mở lần đầu.
+
+Sau bản cập nhật này, macOS có thể hỏi lại các quyền bạn đã cấp cho pikapik, như Trợ năng, Giám sát đầu vào hoặc Toàn quyền truy cập đĩa. Hãy cho phép lại một lần trong Cài đặt hệ thống › Quyền riêng tư & Bảo mật. Nếu bạn dùng điều khiển quạt, hãy cho phép lại trong cài đặt của pikapik, và macOS sẽ hỏi mật khẩu một lần.
+
+---
+
 ## <a id="v1.37.1"></a>Nhãn FPS giờ bám sát trò chơi của bạn
 
 <sub>1.37.1 · 12 tháng 10 năm 2026</sub>

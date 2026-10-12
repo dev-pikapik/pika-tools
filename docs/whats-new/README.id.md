@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Diperiksa Apple
+
+<sub>1.37.2 · 12 Oktober 2026</sub>
+
+pikapik kini ditandatangani oleh pengembang Apple yang terverifikasi dan diperiksa oleh Apple. Jadi macOS tidak lagi memberi peringatan saat Anda membukanya pertama kali.
+
+Setelah pembaruan ini, macOS mungkin meminta lagi izin yang pernah Anda berikan ke pikapik, seperti Aksesibilitas, Pemantauan Input, atau Akses Disk Penuh. Izinkan sekali lagi di Pengaturan Sistem › Privasi & Keamanan. Jika Anda memakai kontrol kipas, izinkan lagi di pengaturan pikapik, dan macOS akan menanyakan kata sandi satu kali.
+
+---
+
 ## <a id="v1.37.1"></a>Label FPS kini mengikuti game Anda tanpa tertinggal
 
 <sub>1.37.1 · 12 Oktober 2026</sub>

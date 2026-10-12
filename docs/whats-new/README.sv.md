@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.37.2"></a>Kontrollerad av Apple
+
+<sub>1.37.2 · 12 oktober 2026</sub>
+
+pikapik är nu signerad av en verifierad Apple-utvecklare och kontrollerad av Apple. Därför varnar macOS inte längre när du öppnar den första gången.
+
+Efter den här uppdateringen kan macOS fråga om de behörigheter du gav pikapik igen, till exempel Hjälpmedel, Inmatningsövervakning eller Full diskåtkomst. Tillåt dem en gång till i Systeminställningar › Integritet och säkerhet. Om du använder fläktstyrningen, tillåt den igen i pikapiks inställningar, så frågar macOS efter ditt lösenord en gång.
+
+---
+
 ## <a id="v1.37.1"></a>FPS-etiketten hänger med i ditt spel
 
 <sub>1.37.1 · 12 oktober 2026</sub>
