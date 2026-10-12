@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>La barre de titre habituelle dans les fenêtres d’archive
+
+<sub>1.39.1 · 13 octobre 2026</sub>
+
+Les fenêtres d’archive retrouvent la barre de titre habituelle de macOS, avec trois boutons ronds à gauche.
+
+Vous pouvez déplacer une fenêtre en la faisant glisser par le haut, comme partout sur le Mac. Dans la fenêtre d’une nouvelle archive et dans celle du mot de passe, le bouton rouge ferme la fenêtre sans rien créer ni décompresser. Les boutons qui n’ont rien à faire dans une fenêtre sont gris. La fenêtre qui affiche la progression d’une copie allégée ou d’une conversion de fichier a maintenant les mêmes boutons. Désormais, l’option « Ouvrir les archives avec cette app » retient quelle app ouvrait les fichiers ZIP et 7Z avant, et les lui rend quand vous la désactivez.
+
+---
+
 ## <a id="v1.39.0"></a>Nouvelles fenêtres d’archive, et le mot de passe saisi deux fois
 
 <sub>1.39.0 · 13 octobre 2026</sub>

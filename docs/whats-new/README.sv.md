@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Den vanliga namnlisten i arkivfönstren
+
+<sub>1.39.1 · 13 oktober 2026</sub>
+
+Arkivfönstren har åter den vanliga namnlisten i macOS, med tre runda knappar till vänster.
+
+Du kan dra ett fönster i överkanten, precis som överallt på Mac. I fönstret för ett nytt arkiv och i lösenordsfönstret stänger den röda knappen fönstret utan att skapa eller packa upp något. Knappar som inte behövs i ett fönster är grå. Fönstret som visar förloppet när en mindre kopia skapas eller en fil konverteras har nu också samma knappar. Reglaget ”Öppna arkiv med den här appen” kommer nu ihåg vilken app som öppnade ZIP- och 7Z-filer tidigare och ger tillbaka dem till den när du stänger av det.
+
+---
+
 ## <a id="v1.39.0"></a>Nya arkivfönster, och lösenordet skrivs två gånger
 
 <sub>1.39.0 · 13 oktober 2026</sub>

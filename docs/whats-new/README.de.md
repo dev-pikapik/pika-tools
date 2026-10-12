@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.1"></a>Die gewohnte Titelleiste in Archivfenstern
+
+<sub>1.39.1 · 13. Oktober 2026</sub>
+
+Die Archivfenster haben wieder die gewohnte macOS-Titelleiste mit drei runden Tasten links.
+
+Du kannst ein Fenster wie überall auf dem Mac an seinem oberen Rand ziehen. Im Fenster für ein neues Archiv und im Passwortfenster schließt die rote Taste das Fenster, ohne etwas zu erstellen oder zu entpacken. Tasten, die in einem Fenster nichts zu tun haben, sind grau. Dieselben Tasten hat jetzt auch das Fenster, das den Fortschritt beim Erstellen einer kleineren Kopie oder beim Umwandeln einer Datei zeigt. Der Schalter „Archive in dieser App öffnen“ merkt sich jetzt, welche App ZIP- und 7Z-Dateien vorher geöffnet hat, und gibt sie ihr beim Ausschalten zurück.
+
+---
+
 ## <a id="v1.39.0"></a>Neue Archivfenster, und das Passwort zweimal
 
 <sub>1.39.0 · 13. Oktober 2026</sub>
