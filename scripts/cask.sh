@@ -45,6 +45,7 @@ cask "pikapik" do
     "~/Library/Application Scripts/com.pesotchi.pika-tools.convert",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.new-file",
     "~/Library/Application Scripts/com.pesotchi.pika-tools.preview",
+    "~/Library/Application Support/pika-tools",
     "~/Library/Caches/com.pesotchi.pika-tools",
     "~/Library/Containers/com.pesotchi.pika-tools.archive",
     "~/Library/Containers/com.pesotchi.pika-tools.compress",
