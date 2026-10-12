@@ -177,7 +177,7 @@ Zarówno Homebrew, jak i skrypt umieszczają aplikację w `/Applications`, uruch
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Zwierzak na biurku</b>
-<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy.
+<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
 Niektóre funkcje proszą o więcej, kiedy z nich korzystasz: **Sterowanie wentylatorami**, **Rozszerzenia Findera**, **iCloud Drive** i **Pełny dostęp do dysku**. Wszystko jest na stronie Uprawnienia w ustawieniach: każde uprawnienie ma wiersz z opisem, do czego służy, zielony ptaszek albo pomarańczowy krzyżyk i jeden przycisk: **Zezwól**, gdy go brakuje, **Wyłącz**, gdy jest włączone. Dzięki temu każde uprawnienie cofniesz od razu na miejscu.
 
-pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Jedyne połączenie z siecią to sprawdzanie uaktualnień, które pyta GitHub o najnowsze wydanie.
+pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. pikapik łączy się z internetem tylko po uaktualnienia (pyta GitHub o najnowsze wydanie i pobiera je tylko wtedy, gdy zdecydujesz się uaktualnić) oraz do testu prędkości, gdy go uruchomisz (korzysta z serwerów Apple). Wersję z Mac App Store uaktualnia App Store, a jej test prędkości korzysta z Cloudflare. Postępy zwierzaka (kroki, rzuty, nagrody i tym podobne) są liczone tylko na tym Macu i nigdy nigdzie nie są wysyłane. Możesz je wymazać w Ustawieniach › Zwierzak.
 
 </details>
 
@@ -249,6 +249,10 @@ W ustawieniach (Ustawienia → Gry → Więcej ustawień gry) jest grupa „Mysz
 
 Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzystające z Javy i innych środowisk też się pojawiają, nawet bez pliku .app. Minecraft ma nazwę Minecraft zamiast java. Znajdź proces gry i przeciągnij jego wiersz na Twoje gry w Ustawieniach → Gry.
 
+**Garderoba i nagrody zwierzaka.** Otwórz Ustawienia › Zwierzak, żeby ubrać zwierzaka: ponad 30 rzeczy, od czapek i okularów po peleryny i skrzydła, oraz gotowe przebrania, takie jak czarodziej, pirat czy astronauta. Kilka rzeczy jest za darmo od początku. Reszta to nagrody, które przychodzą podczas wspólnej zabawy: podnieś zwierzaka i rzuć nim, pokop piłkę, patrz, jak wspina się na okna i gada, albo po prostu dotrzymuj mu towarzystwa dzień po dniu. Kiedy zdobędziesz nową nagrodę, zwierzak ci o tym powie.
+
+Żeby wiedzieć, kiedy należy się nagroda, pikapik liczy tylko to, co robicie ty i zwierzak: kroki, ile razy go podnosisz i rzucasz, skoki, wspinaczki, zabawy piłką i rozmowy, wspólne dni, czy byliście razem wcześnie rano, po północy albo w weekend, które strony ustawień otwierasz i co przymierzasz. Poza Mac App Store pikapik zapisuje też, czy z Ustawień otwarto naszą stronę na GitHubie. Te liczby, data każdej nagrody i to, w co zwierzak jest ubrany, zostają na tym Macu. Nic nie jest nigdzie wysyłane i nic z tego nie trafia do wyeksportowanego pliku ustawień ani do synchronizacji przez iCloud. Wszystko możesz w każdej chwili wymazać w Ustawieniach › Zwierzak, a zwierzak zacznie od zera.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
@@ -291,6 +295,8 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: ukrywanie kliknięciem w Docku.
 - **Finder**: nowy plik, mniejsza kopia i konwersja, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
+- **Gry**: lista twoich gier i ustawienia Trybu gry.
+- **Zwierzak**: włączanie i wyłączanie, rozmowy i piłka, garderoba i nagrody.
 - **Uprawnienia**: wszystkie uprawnienia, których używa pikapik, każde z własnym stanem i przyciskiem do zezwolenia lub wyłączenia. Narzędzie, któremu brakuje uprawnienia, wygląda na wyszarzone, a kliknięcie go otwiera tę stronę przy właściwym wierszu.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 

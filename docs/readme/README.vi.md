@@ -177,7 +177,7 @@ Cả Homebrew và tập lệnh đều đặt ứng dụng vào `/Applications`, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Thú cưng trên màn hình nền</b>
-<br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy.
+<br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy. Chọn đồ cho nó trong tủ quần áo riêng và nhận giải thưởng khi cùng chơi.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ pikapik cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đ
 
 Một số tính năng cần thêm quyền khi bạn dùng chúng: **Điều khiển quạt**, **Tiện ích mở rộng của Finder**, **iCloud Drive** và **Truy cập toàn bộ ổ đĩa**. Tất cả nằm ở trang Quyền trong cài đặt: mỗi quyền có một dòng nói quyền đó để làm gì, dấu tích xanh hoặc dấu gạch chéo cam, và một nút: **Cho phép** khi còn thiếu, **Tắt** khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó.
 
-pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Yêu cầu mạng duy nhất là kiểm tra cập nhật, hỏi GitHub phiên bản mới nhất.
+pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. pikapik chỉ kết nối mạng để cập nhật (hỏi GitHub phiên bản mới nhất và chỉ tải về khi bạn chọn cập nhật) và để kiểm tra tốc độ khi bạn bắt đầu (dùng máy chủ của Apple). Bản trên Mac App Store do App Store cập nhật, và phần kiểm tra tốc độ của bản này dùng Cloudflare. Tiến trình của thú cưng (số bước, lần tung, giải thưởng và những thứ tương tự) chỉ được đếm trên máy Mac này và không bao giờ được gửi đi đâu cả. Bạn có thể xóa trong Cài đặt › Thú cưng.
 
 </details>
 
@@ -249,6 +249,10 @@ Trong Cài đặt → Trò chơi → Thêm cài đặt trò chơi có nhóm “C
 
 Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơi đang chạy. Trò chơi qua Java và các môi trường khác cũng xuất hiện, ngay cả khi không có tệp .app. Minecraft hiển thị là Minecraft thay vì java. Tìm tiến trình trò chơi rồi kéo hàng vào Trò chơi của bạn trong Cài đặt → Trò chơi.
 
+**Tủ quần áo và giải thưởng của thú cưng.** Mở Cài đặt › Thú cưng để mặc đồ cho thú cưng: hơn 30 món, từ mũ và kính đến áo choàng và đôi cánh, cùng những trang phục làm sẵn như phù thủy, cướp biển hay phi hành gia. Một vài món có sẵn miễn phí. Phần còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận giải thưởng mới, thú cưng sẽ báo cho bạn.
+
+Để biết lúc nào đến lượt một giải thưởng, pikapik chỉ đếm những gì bạn và thú cưng làm: số bước chân, số lần bạn nhấc và tung nó, các cú nhảy, những lần trèo, các ván bóng, những lần trò chuyện, số ngày bên nhau, việc hai bạn có ở bên nhau vào sáng sớm, sau nửa đêm hay cuối tuần không, những trang Cài đặt bạn đã mở và những món bạn đã thử. Ngoài Mac App Store, pikapik còn ghi lại việc bạn có mở trang GitHub của chúng tôi từ Cài đặt hay không. Các con số này, ngày nhận mỗi giải thưởng và bộ đồ thú cưng đang mặc chỉ nằm trên máy Mac này. Không có gì được gửi đi đâu cả, và không thứ nào trong đó vào tệp cài đặt đã xuất hay đồng bộ iCloud. Bạn có thể xóa tất cả bất cứ lúc nào trong Cài đặt › Thú cưng, và thú cưng sẽ bắt đầu lại từ đầu.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
@@ -291,6 +295,8 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: ẩn bằng một lần bấm trong Dock.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn và chuyển định dạng, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
+- **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.
+- **Thú cưng**: bật hoặc tắt thú cưng, cho nó trò chuyện và chơi bóng, chọn quần áo cho nó và xem giải thưởng của bạn.
 - **Quyền**: mọi quyền pikapik dùng, mỗi quyền có trạng thái và một nút để cho phép hoặc tắt. Công cụ thiếu quyền sẽ hiện mờ màu xám, bấm vào đó sẽ mở trang này đúng dòng cần.
 - **Giới thiệu**: phiên bản, liên kết đến nhật ký thay đổi và để báo cáo sự cố.
 

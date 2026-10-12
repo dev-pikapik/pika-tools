@@ -32,6 +32,10 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 
 ## Pet
 - Turn on, switch an app to fullscreen on each display. Expected: pet hides on that display only and returns when fullscreen ends; works across Spaces and after sleep/wake.
+- Open Settings > Pet. Expected: Wardrobe shows 38 things in seven groups with six unlocked, Looks shows 10 looks, Awards shows 24 awards and no "Open Source" award. Click an unlocked thing: the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing: its award opens and nothing is worn. Click a look with missing pieces: nothing is worn.
+- Earn an award (pick the pet up and throw it high 10 times). Expected: the pet announces it, Pet in the sidebar shows a badge, the award and what it unlocks are marked "New" until you leave the page, and the unlocked things can be worn. Quit and relaunch: outfit, counts and awards are kept.
+- Export Settings and open the file. Expected: no pet-counts, pet-awards, pet-seen, pet-fresh or pet-outfit. Restore Defaults keeps the awards and the outfit.
+- Erase Progress... and confirm. Expected: awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read com.pesotchi.pika-tools.appstore` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off. Expected: same result, no error.
 
 ## Quit on close
 - Turn on, close the last window of an app, then repeat with the app's windows on another Space and with a minimized window. Expected: app quits only when no windows remain anywhere.
@@ -43,3 +47,4 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 
 - Fan control: open Settings > Fans, turn on manual control. Expected: one admin prompt to install the helper; speed changes follow the slider; quitting or killing pikapik returns fans to automatic within seconds.
 - Updates: About > Check Now finds a newer release, installs and relaunches.
+- Pet awards: Settings > Pet shows 25 awards. Click the GitHub link in Settings > About. Expected: the "Open Source" award is earned. With iCloud sync on, a second Mac does not receive the awards or the outfit.

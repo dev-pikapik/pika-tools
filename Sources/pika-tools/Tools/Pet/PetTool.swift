@@ -115,6 +115,7 @@ private func petCallback(proxy: CGEventTapProxy, type: CGEventType, event: CGEve
 
 struct PetPage: View {
     @Bindable private var tool = PetTool.shared
+    @State private var award: PetAward?
 
     var body: some View {
         Form {
@@ -123,10 +124,15 @@ struct PetPage: View {
                 PetArt(on: tool.isEnabled)
                 tool.settingsView
             }
+            PetWardrobeSection { award = $0 }
+            PetLooksSection()
+            PetAwardsSection { award = $0 }
         }
         .formStyle(.grouped)
         .settingsPage()
         .environment(\.inSettings, true)
+        .sheet(item: $award) { AwardSheet(award: $0) }
+        .onDisappear { PetProgress.shared.clearFresh(PetProgress.shared.fresh) }
     }
 }
 
@@ -191,8 +197,8 @@ struct PetArt: View {
         var bubble = 0.0
     }
 
-    private static func frame(_ t: Double) -> Frame {
-        var frame = Frame(), start = 0.0, previous = Move.getUp
+    private static func frame(_ t: Double, outfit: [PetSlot: PetItem]) -> Frame {
+        var frame = Frame(pose: PetPose(outfit: outfit)), start = 0.0, previous = Move.getUp
         for (move, time, dx) in script {
             guard t >= start + time else {
                 let p = (t - start) / time
@@ -248,11 +254,12 @@ struct PetArt: View {
 
     var body: some View {
         let night = scheme == .dark
+        let outfit = PetProgress.shared.outfit
         let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
         IllustrationRow {
             ArtTimeline { time in
                 let t = time.map { GameStory.mod($0, Self.length) } ?? Self.still
-                let frame = Self.frame(t)
+                let frame = Self.frame(t, outfit: outfit)
                 Stage {
                     ArtKey(down: (4.72..<4.9).contains(t), width: 44, height: 20) {
                         Text("Space").lineLimit(1).minimumScaleFactor(0.5).padding(.horizontal, 3)

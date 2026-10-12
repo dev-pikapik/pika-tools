@@ -177,7 +177,7 @@ Homebrew de betik de uygulamayı `/Applications` klasörüne koyar, açar, izinl
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Masaüstünde evcil dost</b>
-<br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın.
+<br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın. Onu gardırobundaki kıyafetlerle giydirin ve birlikte oynarken ödüller kazanın.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya ge
 
 Bazı özellikler kullandığınızda ek izin ister: **Fan kontrolü**, **Finder Eklentileri**, **iCloud Drive** ve **Tam Disk Erişimi**. Hepsi ayarlardaki İzinler sayfasında toplanır: her iznin ne işe yaradığını anlatan bir satırı, yeşil bir onay işareti ya da turuncu bir çarpısı ve tek bir düğmesi vardır: izin eksikse **İzin Ver**, açıksa **Kapat**. Böylece herhangi bir izni hemen oradan geri alabilirsiniz.
 
-pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Tek ağ isteği güncelleme denetimidir: GitHub’a en son sürüm sorulur.
+pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. pikapik internete yalnızca güncellemeler için (GitHub’a en son sürümü sorar, güncellemeyi seçerseniz de indirir) ve siz başlattığınızda hız testi için (Apple sunucularını kullanır) bağlanır. Mac App Store sürümünü App Store günceller, hız testi ise Cloudflare kullanır. Evcil dostunuzun ilerlemesi (adımlar, fırlatmalar, ödüller ve benzerleri) yalnızca bu Mac’te sayılır ve hiçbir yere gönderilmez. Ayarlar › Evcil Dost sayfasından silebilirsiniz.
 
 </details>
 
@@ -249,6 +249,10 @@ Ayarlar → Oyunlar → Diğer oyun ayarları altında “Fare ve izleme dörtge
 
 Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla. Java ve diğer ortamlarla çalışan oyunlar, .app dosyası olmasa da burada görünür. Minecraft, java yerine Minecraft adıyla görünür. Oyunun işlemini bul ve satırını Ayarlar → Oyunlar içindeki Oyunların alanına sürükle.
 
+**Evcil dostun gardırobu ve ödüller.** Evcil dostunuzu giydirmek için Ayarlar › Evcil Dost sayfasını açın: şapkalardan gözlüklere, pelerinlerden kanatlara 30’dan fazla parça ve büyücü, korsan ya da astronot gibi hazır kombinler. Birkaç parça en baştan ücretsizdir. Gerisi birlikte oynarken gelen ödüllerdir: evcil dostunuzu tutup fırlatın, topu tekmeleyin, pencerelere tırmanışını ve konuşmasını izleyin ya da günden güne yalnızca ona eşlik edin. Yeni bir ödül kazandığınızda evcil dostunuz size söyler.
+
+Ödülün ne zaman geldiğini bilmek için pikapik yalnızca sizin ve evcil dostunuzun yaptıklarını sayar: adımlar, onu kaç kez tutup fırlattığınız, zıplamalar, tırmanışlar, top oyunları ve sohbetler, birlikte geçen günler, sabahın erken saatlerinde, gece yarısından sonra ya da hafta sonu birlikte olup olmadığınız, açtığınız Ayarlar sayfaları ve denediğiniz parçalar. Mac App Store dışındaki sürümde pikapik, Ayarlar’dan GitHub sayfamızı açıp açmadığınızı da not eder. Bu sayılar, her ödülün tarihi ve evcil dostunuzun üzerindekiler yalnızca bu Mac’te kalır. Hiçbir yere gönderilmez ve hiçbiri dışa aktarılan ayar dosyasına ya da iCloud eşitlemesine girmez. Hepsini istediğiniz zaman Ayarlar › Evcil Dost sayfasından silebilirsiniz; evcil dostunuz baştan başlar.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
@@ -291,6 +295,8 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak gizleme.
 - **Finder**: yeni dosya, küçük kopya ve dönüştürme, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
+- **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.
+- **Evcil Dost**: açıp kapatma, sohbet ve top, gardırop ve ödüller.
 - **İzinler**: pikapik’in kullandığı tüm izinler; her birinin durumu ve izin vermek ya da kapatmak için bir düğmesi. Bir izni eksik olan araç yarı soluk gri görünür; üzerine tıklamak bu sayfayı doğru satırda açar.
 - **Hakkında**: sürüm, değişiklik günlüğü bağlantısı ve sorun bildirme bağlantısı.
 
