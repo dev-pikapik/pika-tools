@@ -901,12 +901,10 @@
 "The smallest size" = "सबसे छोटा आकार";
 "For servers and developers" = "सर्वर और डेवलपर के लिए";
 "Smaller, for servers and developers" = "और छोटा, सर्वर और डेवलपर के लिए";
-"No password" = "कोई पासवर्ड नहीं";
 "Some computers need an extra app to open it" = "कुछ कंप्यूटरों पर खोलने के लिए एक अतिरिक्त ऐप चाहिए";
 "File names are hidden too" = "फ़ाइलों के नाम भी छिप जाते हैं";
 "Use English letters, numbers and symbols only" = "सिर्फ़ अंग्रेज़ी अक्षर, अंक और चिह्न इस्तेमाल करें";
 "TAR archives can’t have a password" = "TAR आर्काइव पर पासवर्ड नहीं लग सकता";
-"Split into parts" = "हिस्सों में बाँटें";
 "Don’t split" = "न बाँटें";
 "15 MB, for email" = "15 MB, ईमेल के लिए";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "ख़राब है। जितना पढ़ा जा सका, उतना दिखाया गया है।";
 "Only the first items are shown." = "सिर्फ़ शुरुआती आइटम दिखाए गए हैं।";
 "Contains a program. Open it only if you trust where it came from." = "इसमें एक प्रोग्राम है। इसे तभी खोलें जब आपको इसके स्रोत पर भरोसा हो।";
+"New Archive" = "नया आर्काइव";
+"File names stay visible" = "फ़ाइलों के नाम दिखते रहते हैं";
+"Repeat password" = "पासवर्ड दोबारा लिखें";
+"Passwords don’t match" = "पासवर्ड मेल नहीं खाते";
+"Passwords match" = "पासवर्ड मेल खाते हैं";
+"Split archive" = "आर्काइव बाँटें";

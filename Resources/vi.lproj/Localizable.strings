@@ -901,12 +901,10 @@
 "The smallest size" = "Dung lượng nhỏ nhất";
 "For servers and developers" = "Dành cho máy chủ và nhà phát triển";
 "Smaller, for servers and developers" = "Nhỏ hơn, dành cho máy chủ và nhà phát triển";
-"No password" = "Không có mật khẩu";
 "Some computers need an extra app to open it" = "Một số máy tính cần thêm một ứng dụng để mở";
 "File names are hidden too" = "Tên tệp cũng được ẩn";
 "Use English letters, numbers and symbols only" = "Chỉ dùng chữ cái tiếng Anh, chữ số và ký hiệu";
 "TAR archives can’t have a password" = "Tệp TAR không thể có mật khẩu";
-"Split into parts" = "Chia thành nhiều phần";
 "Don’t split" = "Không chia";
 "15 MB, for email" = "15 MB, để gửi email";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Bị hỏng. Đang hiển thị phần đọc được.";
 "Only the first items are shown." = "Chỉ hiển thị các mục đầu tiên.";
 "Contains a program. Open it only if you trust where it came from." = "Có chứa một chương trình. Chỉ mở nếu bạn tin tưởng nguồn của nó.";
+"New Archive" = "Tệp lưu trữ mới";
+"File names stay visible" = "Tên tệp vẫn hiển thị";
+"Repeat password" = "Nhập lại mật khẩu";
+"Passwords don’t match" = "Mật khẩu không khớp";
+"Passwords match" = "Mật khẩu khớp";
+"Split archive" = "Chia tệp lưu trữ";

@@ -901,12 +901,10 @@
 "The smallest size" = "Cea mai mică dimensiune";
 "For servers and developers" = "Pentru servere și dezvoltatori";
 "Smaller, for servers and developers" = "Mai mic, pentru servere și dezvoltatori";
-"No password" = "Fără parolă";
 "Some computers need an extra app to open it" = "Unele computere au nevoie de o aplicație în plus";
 "File names are hidden too" = "Și numele fișierelor sunt ascunse";
 "Use English letters, numbers and symbols only" = "Folosește doar litere englezești, cifre și simboluri";
 "TAR archives can’t have a password" = "Arhivele TAR nu pot avea parolă";
-"Split into parts" = "Împarte în părți";
 "Don’t split" = "Nu împărți";
 "15 MB, for email" = "15 MB, pentru e-mail";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Deteriorată. Se afișează ce a putut fi citit.";
 "Only the first items are shown." = "Sunt afișate doar primele elemente.";
 "Contains a program. Open it only if you trust where it came from." = "Conține un program. Deschide-l doar dacă ai încredere în sursă.";
+"New Archive" = "Arhivă nouă";
+"File names stay visible" = "Numele fișierelor rămân vizibile";
+"Repeat password" = "Repetă parola";
+"Passwords don’t match" = "Parolele nu se potrivesc";
+"Passwords match" = "Parolele se potrivesc";
+"Split archive" = "Împarte arhiva";

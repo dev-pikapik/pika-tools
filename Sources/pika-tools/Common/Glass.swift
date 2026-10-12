@@ -28,6 +28,19 @@ extension View {
         #endif
     }
 
+    @ViewBuilder
+    func glassProminentButtons() -> some View {
+        #if compiler(>=6.2)
+        if #available(macOS 26, *) {
+            buttonStyle(.glassProminent)
+        } else {
+            buttonStyle(.borderedProminent)
+        }
+        #else
+        buttonStyle(.borderedProminent)
+        #endif
+    }
+
     private func materialCard(_ shape: RoundedRectangle) -> some View {
         background(.regularMaterial, in: shape)
             .overlay(shape.strokeBorder(Color(nsColor: .separatorColor).opacity(0.6), lineWidth: 0.5))

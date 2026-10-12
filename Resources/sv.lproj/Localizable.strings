@@ -901,12 +901,10 @@
 "The smallest size" = "Minsta möjliga storlek";
 "For servers and developers" = "För servrar och utvecklare";
 "Smaller, for servers and developers" = "Mindre, för servrar och utvecklare";
-"No password" = "Inget lösenord";
 "Some computers need an extra app to open it" = "Vissa datorer behöver en extra app för att öppna det";
 "File names are hidden too" = "Filnamnen döljs också";
 "Use English letters, numbers and symbols only" = "Använd bara engelska bokstäver, siffror och symboler";
 "TAR archives can’t have a password" = "TAR-arkiv kan inte ha lösenord";
-"Split into parts" = "Dela upp i delar";
 "Don’t split" = "Dela inte upp";
 "15 MB, for email" = "15 MB, för e-post";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Skadat. Visar det som gick att läsa.";
 "Only the first items are shown." = "Bara de första objekten visas.";
 "Contains a program. Open it only if you trust where it came from." = "Innehåller ett program. Öppna det bara om du litar på källan.";
+"New Archive" = "Nytt arkiv";
+"File names stay visible" = "Filnamnen förblir synliga";
+"Repeat password" = "Upprepa lösenordet";
+"Passwords don’t match" = "Lösenorden matchar inte";
+"Passwords match" = "Lösenorden matchar";
+"Split archive" = "Dela upp arkivet";

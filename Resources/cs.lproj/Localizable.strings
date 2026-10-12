@@ -901,12 +901,10 @@
 "The smallest size" = "Nejmenší velikost";
 "For servers and developers" = "Pro servery a vývojáře";
 "Smaller, for servers and developers" = "Menší, pro servery a vývojáře";
-"No password" = "Bez hesla";
 "Some computers need an extra app to open it" = "Některé počítače potřebují k otevření další aplikaci";
 "File names are hidden too" = "Názvy souborů jsou také skryté";
 "Use English letters, numbers and symbols only" = "Používejte jen anglická písmena, číslice a symboly";
 "TAR archives can’t have a password" = "Archivy TAR nemohou mít heslo";
-"Split into parts" = "Rozdělit na části";
 "Don’t split" = "Nedělit";
 "15 MB, for email" = "15 MB, pro e-mail";
 "100 MB" = "100 MB";
@@ -936,3 +934,9 @@
 "Damaged. Showing what could be read." = "Poškozeno. Zobrazeno je to, co se podařilo přečíst.";
 "Only the first items are shown." = "Zobrazeny jsou jen první položky.";
 "Contains a program. Open it only if you trust where it came from." = "Obsahuje program. Otevírejte ho jen tehdy, pokud zdroji důvěřujete.";
+"New Archive" = "Nový archiv";
+"File names stay visible" = "Názvy souborů zůstanou viditelné";
+"Repeat password" = "Zopakujte heslo";
+"Passwords don’t match" = "Hesla se neshodují";
+"Passwords match" = "Hesla se shodují";
+"Split archive" = "Rozdělit archiv";
