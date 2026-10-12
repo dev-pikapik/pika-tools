@@ -186,7 +186,11 @@ Sia Homebrew sia lo script mettono l’app in `/Applications`, la avviano, chied
 <br><b>Rimuovi app</b>
 <br>Rimuovi un’app e i suoi file. Puoi rimettere tutto.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Mostra FPS</b>
+<br>Un piccolo contatore mostra quanto scorre bene il gioco, nell’angolo che scegli.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatico sospende le azioni che aprono finestre o spostano il focus. Un comand
 In Impostazioni → Giochi → Altre impostazioni di gioco c’è un gruppo chiamato «Mouse e trackpad». Mostra solo ciò che è attivo in macOS sul tuo Mac, con i nomi di Apple e un piccolo disegno per ciascuno: scorciatoie su un pulsante del mouse, scorrimento tra scrivanie e app a schermo intero, Mission Control e App Exposé, pizzico per le app e allargamento delle dita per la scrivania, scorrimento dal bordo destro per il Centro notifiche e ogni angolo attivo con la sua azione. Finché un gioco è in primo piano, sono sospesi, così uno scorrimento involontario o uno sfioramento di un angolo dello schermo non ti porta fuori dal gioco. I gesti all’interno del gioco continuano a funzionare. Ognuno si può impostare per funzionare come al solito.
 
 Apri Impostazioni → Giochi → Aggiungi un gioco e fai clic sul gioco in esecuzione. Compaiono anche i giochi che usano Java o altri ambienti, senza un file .app. Minecraft si chiama Minecraft anziché java. Trova il processo del gioco e trascina la riga su I tuoi giochi in Impostazioni → Giochi.
+
+**Mostra FPS.** FPS significa fotogrammi al secondo: quante immagini disegna il gioco ogni secondo. Attiva **Mostra FPS** nella pagina Giochi e, finché la Modalità gioco è attiva, una piccola etichetta scura con quel numero compare in un angolo di qualsiasi gioco. Fai clic su un angolo dell’immagine sopra l’interruttore per sceglierlo. Un trattino significa che i primi fotogrammi non sono ancora arrivati, e uno 0 sbiadito che il gioco ha smesso di disegnare. Con macOS 27 la maggior parte dei giochi viene contata da macOS stesso, senza permessi. Un gioco che macOS non riesce a contare, per lo più uno vecchio, viene contato tramite la registrazione dello schermo: nelle Impostazioni compare allora la riga **Registrazione schermo**, pikapik non la chiede mai durante una partita e il numero non può superare la frequenza di aggiornamento dello schermo. Con macOS da 14 a 26 e nella versione del Mac App Store ogni gioco viene contato così, perciò attivando **Mostra FPS** pikapik chiede **Registrazione schermo**. Nessuna immagine viene conservata o inviata. Disattivato di default.
 
 **Guardaroba e premi dell’animaletto.** Apri Impostazioni › Animaletto per vestire il tuo animaletto: più di 30 capi, da cappelli e occhiali a mantelli e ali, e look già pronti come mago, pirata o astronauta. Alcuni sono gratis fin dall’inizio. Gli altri sono premi che arrivano mentre giocate insieme: prendi in mano il tuo animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ottieni un nuovo premio, te lo dice lui.
 

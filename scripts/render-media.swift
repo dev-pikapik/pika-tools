@@ -3,6 +3,7 @@ import SwiftUI
 
 func AXIsProcessTrusted() -> Bool { true }
 func CGPreflightListenEventAccess() -> Bool { true }
+func CGPreflightScreenCaptureAccess() -> Bool { true }
 
 @main
 @MainActor
@@ -26,6 +27,7 @@ enum RenderMedia {
         ("finder-open", 4.7, AnyView(FinderOpenArt(on: true))),
         ("finder-delete", 3.2, AnyView(FinderDeleteArt(on: true))),
         ("game-mode", 8.0, AnyView(GameModeArt(on: true))),
+        ("game-fps", 4.0, AnyView(FrameRatePicture(corner: .topRight, on: true, select: { _ in }))),
         ("pet", 16.65, AnyView(PetArt(on: true))),
         ("speed-test", 5.4, AnyView(SpeedTestArt())),
         ("side-buttons", 5.1, AnyView(SideButtonsArt(on: true, swapped: false))),

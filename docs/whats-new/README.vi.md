@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Xem trò chơi chạy mượt đến đâu
+
+<sub>1.37.0 · 12 tháng 10 năm 2026</sub>
+
+Tính năng Hiện FPS mới đặt một bộ đếm nhỏ ở góc trò chơi, để bạn thấy ngay trò chơi chạy mượt đến đâu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Trò chơi rồi bật “Hiện FPS”. Khi Chế độ trò chơi đang bật, một nhãn nhỏ màu tối ghi con số xuất hiện ở một góc của bất kỳ trò chơi nào. FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây, và con số càng cao thì trò chơi càng mượt. Nhấp vào một góc trên hình phía trên công tắc để chọn vị trí của nhãn.
+
+Nhấp chuột đi xuyên qua nhãn, và nhãn đi theo cửa sổ trò chơi. Dấu gạch nghĩa là những khung hình đầu tiên chưa đến, còn số 0 mờ nghĩa là trò chơi đã ngừng vẽ. “Hiện FPS” tắt cho đến khi bạn bật nó.
+
+Trên macOS 27, phần lớn trò chơi do chính macOS đếm, nên không cần quyền nào. Một số trò chơi, thường là trò cũ, chỉ đếm được qua tính năng ghi màn hình, và khi đó con số không thể cao hơn tần số làm tươi của màn hình. Trên macOS 14–26 và trong phiên bản Mac App Store, mọi trò chơi đều được đếm theo cách này, nên khi bạn bật “Hiện FPS”, pikapik sẽ xin quyền “Ghi màn hình”. Không có hình ảnh nào được lưu hay gửi đi.
+
+---
+
 ## <a id="v1.36.0"></a>Gỡ ứng dụng không lo nghĩ
 
 <sub>1.36.0 · 12 tháng 10 năm 2026</sub>

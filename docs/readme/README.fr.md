@@ -186,7 +186,11 @@ Homebrew et le script placent tous deux l’app dans `/Applications`, la lancent
 <br><b>Supprimer des apps</b>
 <br>Supprimez une app et ses fichiers. Tout est récupérable.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>Afficher les FPS</b>
+<br>Un petit compteur indique la fluidité de votre jeu, dans le coin que vous choisissez.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatique suspend les actions qui ouvrent des fenêtres ou déplacent le focus
 Dans Réglages → Jeux → Autres réglages de jeu, le groupe « Souris et trackpad » liste uniquement ce qui est activé dans macOS sur votre Mac, avec les noms d’Apple et un petit dessin pour chaque élément : raccourcis sur un bouton de la souris, balayage entre bureaux et apps en plein écran, Mission Control et App Exposé, pincement pour les apps et écartement pour le bureau, balayage depuis le bord droit pour le centre de notifications et chaque coin actif avec son action. Tant qu’un jeu est au premier plan, ils sont suspendus : un balayage involontaire ou un effleurement d’un coin de l’écran ne vous sortira pas du jeu. Les gestes à l’intérieur du jeu continuent de fonctionner. Chaque élément peut être réglé pour fonctionner comme d’habitude.
 
 Ouvrez Réglages → Jeux → Ajouter un jeu et cliquez sur votre jeu en cours. Les jeux utilisant Java ou d’autres environnements apparaissent aussi, même sans fichier .app. Minecraft s’appelle Minecraft au lieu de java. Trouvez le processus du jeu et glissez sa ligne sur Vos jeux dans Réglages → Jeux.
+
+**Afficher les FPS.** Les FPS sont les images par seconde : le nombre d’images que le jeu dessine chaque seconde. Activez **Afficher les FPS** sur la page Jeux, et tant que le Mode Jeu est activé, une petite pastille sombre avec ce nombre s’affiche dans un coin de n’importe quel jeu. Cliquez sur un coin de l’image au-dessus de l’interrupteur pour le choisir. Un tiret signifie que les premières images ne sont pas encore arrivées, et un 0 grisé que le jeu ne dessine plus rien. Sous macOS 27, la plupart des jeux sont comptés par macOS lui-même, sans autorisation. Un jeu que macOS ne peut pas compter, le plus souvent un jeu ancien, est compté via l’enregistrement de l’écran : la ligne **Enregistrement de l’écran** apparaît alors dans les Réglages, pikapik ne la demande jamais pendant une partie, et le nombre ne peut pas dépasser la fréquence de rafraîchissement de l’écran. Sous macOS 14 à 26 et dans la version du Mac App Store, tous les jeux sont comptés ainsi, c’est pourquoi activer **Afficher les FPS** demande l’**Enregistrement de l’écran**. Aucune image n’est conservée ni envoyée. Désactivé par défaut.
 
 **Garde-robe et récompenses du compagnon.** Ouvrez Réglages › Compagnon pour habiller votre compagnon : plus de 30 vêtements et accessoires, des chapeaux et lunettes aux capes et aux ailes, et des tenues toutes prêtes comme le sorcier, le pirate ou l’astronaute. Quelques pièces sont offertes dès le départ. Les autres sont des récompenses qui arrivent quand vous jouez ensemble : attrapez votre compagnon et lancez-le, faites rouler le ballon, regardez-le grimper sur les fenêtres et bavarder, ou tenez-lui simplement compagnie jour après jour. Votre compagnon vous prévient quand vous avez gagné une nouvelle récompense.
 

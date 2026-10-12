@@ -15,6 +15,9 @@ final class GameModeTool: Tool {
     private static let gamesKey = "game-mode-games"
     private static let notGamesKey = "game-mode-not-games"
     private static let systemShortcutsKey = "game-mode-system-shortcuts"
+    private static let frameRateKey = "game-mode-fps"
+    private static let frameRateCornerKey = "game-mode-fps-corner"
+    private static let frameRateRecordingKey = "game-mode-fps-recording"
 
     private(set) var isActive = false
     private(set) var game: NSRunningApplication?
@@ -60,6 +63,24 @@ final class GameModeTool: Tool {
         }
     }
 
+    var showsFrameRate: Bool {
+        didSet {
+            UserDefaults.standard.set(showsFrameRate, forKey: Self.frameRateKey)
+            syncFrameRate()
+        }
+    }
+
+    var frameRateCorner: FrameRateCorner {
+        didSet {
+            UserDefaults.standard.set(frameRateCorner.rawValue, forKey: Self.frameRateCornerKey)
+            syncFrameRate()
+        }
+    }
+
+    var needsRecording: Bool {
+        didSet { UserDefaults.standard.set(needsRecording, forKey: Self.frameRateRecordingKey) }
+    }
+
     func setSystemShortcut(_ id: Int32, mode: GameShortcutMode) {
         systemShortcuts = systemShortcuts.filter { $0.split(separator: ":").first != Substring(String(id)) }
             + (mode == .automatic ? [] : ["\(id):\(mode.rawValue)"])
@@ -91,6 +112,9 @@ final class GameModeTool: Tool {
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
         systemShortcuts = defaults.stringArray(forKey: Self.systemShortcutsKey) ?? []
+        showsFrameRate = defaults.bool(forKey: Self.frameRateKey)
+        frameRateCorner = Self.savedCorner
+        needsRecording = defaults.bool(forKey: Self.frameRateRecordingKey)
 
         let center = NSWorkspace.shared.notificationCenter
         for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
@@ -113,12 +137,15 @@ final class GameModeTool: Tool {
         games = defaults.stringArray(forKey: Self.gamesKey) ?? []
         notGames = defaults.stringArray(forKey: Self.notGamesKey) ?? []
         systemShortcuts = defaults.stringArray(forKey: Self.systemShortcutsKey) ?? []
+        showsFrameRate = defaults.bool(forKey: Self.frameRateKey)
+        frameRateCorner = Self.savedCorner
         isEnabled = defaults.bool(forKey: id)
         if game == nil { DockEdges.restore() }
     }
 
     var isDefault: Bool {
         !isEnabled && rules.count == GameRule.allCases.count && games.isEmpty && notGames.isEmpty && systemShortcuts.isEmpty
+            && !showsFrameRate && frameRateCorner == .standard
     }
 
     func reset() {
@@ -127,6 +154,8 @@ final class GameModeTool: Tool {
         games = []
         notGames = []
         systemShortcuts = []
+        showsFrameRate = false
+        frameRateCorner = .standard
     }
 
     var settingsView: AnyView {
@@ -229,6 +258,7 @@ final class GameModeTool: Tool {
             if result == kIOReturnSuccess { assertion = id }
         }
         refreshCommandKeys()
+        syncFrameRate()
     }
 
     func leave() {
@@ -247,7 +277,16 @@ final class GameModeTool: Tool {
         trace.restore()
         guard game != nil else { return }
         game = nil
+        syncFrameRate()
         refreshCommandKeys()
+    }
+
+    private func syncFrameRate() {
+        if showsFrameRate, let game {
+            FrameRateMeter.shared.show(game.processIdentifier, corner: frameRateCorner)
+        } else {
+            FrameRateMeter.shared.hide()
+        }
     }
 
     func hint() {
@@ -366,7 +405,11 @@ final class GameModeTool: Tool {
         Set(GameRule.allCases.filter { UserDefaults.standard.object(forKey: $0.key) as? Bool ?? true })
     }
 
-    private static func screen(of pid: pid_t) -> CGRect? {
+    private static var savedCorner: FrameRateCorner {
+        FrameRateCorner(rawValue: UserDefaults.standard.string(forKey: frameRateCornerKey) ?? "") ?? .standard
+    }
+
+    static func window(of pid: pid_t) -> CGRect? {
         let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
         let windows = list.compactMap { info -> CGRect? in
             guard info[kCGWindowOwnerPID as String] as? pid_t == pid,
@@ -375,11 +418,19 @@ final class GameModeTool: Tool {
             else { return nil }
             return CGRect(dictionaryRepresentation: bounds)
         }
-        guard let window = windows.max(by: { $0.width * $0.height < $1.width * $1.height }) else { return nil }
+        return windows.max(by: { $0.width * $0.height < $1.width * $1.height })
+    }
+
+    static func display(at point: CGPoint) -> CGDirectDisplayID? {
         var display = CGDirectDisplayID(0)
         var count: UInt32 = 0
-        CGGetDisplaysWithPoint(CGPoint(x: window.midX, y: window.midY), 1, &display, &count)
-        return count > 0 ? CGDisplayBounds(display) : nil
+        CGGetDisplaysWithPoint(point, 1, &display, &count)
+        return count > 0 ? display : nil
+    }
+
+    private static func screen(of pid: pid_t) -> CGRect? {
+        guard let window = window(of: pid), let display = display(at: CGPoint(x: window.midX, y: window.midY)) else { return nil }
+        return CGDisplayBounds(display)
     }
 }
 
@@ -663,6 +714,7 @@ struct GameModePage: View {
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
+            FrameRateSettings(tool: tool)
             Section {
                 DisclosureGroup(isExpanded: $advanced) {
                     EmptyView()
@@ -729,7 +781,8 @@ struct GameModePage: View {
         .settingsPage()
         .environment(\.inSettings, true)
         .onChange(of: SettingsWindow.model.highlight, initial: true) {
-            if let title = SettingsWindow.model.highlight, title != tool.title && title != String(localized: "Your games") {
+            let simple = [tool.title, String(localized: "Your games"), String(localized: "Show FPS"), String(localized: "Corner for FPS"), Permission.screenRecording.title]
+            if let title = SettingsWindow.model.highlight, !simple.contains(title) {
                 advanced = true
                 if title == String(localized: "Game safeguards") || SettingsWindow.model.highlightedShortcut == nil && !GameShortcutGroup.allCases.contains(where: { $0.title == title }) && title != String(localized: "System keyboard shortcuts") { safeguards = true }
             }

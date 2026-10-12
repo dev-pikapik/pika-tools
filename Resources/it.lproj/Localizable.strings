@@ -866,3 +866,15 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "outfit, costume, mago, pirata, astronauta, supereroe, cowboy, fata, re, gentiluomo, scienziato, detective";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medaglie, traguardi, trofei, badge, ricompense, progressi, sbloccare, ottenuto";
 "reset, delete, clear, start over, privacy" = "reimposta, elimina, cancella, ricomincia, privacy";
+"Show FPS" = "Mostra FPS";
+"Shows how smoothly the game runs" = "Mostra quanto scorre bene il gioco";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS significa fotogrammi al secondo: quante immagini disegna il gioco ogni secondo. Alcuni giochi, per lo più vecchi, si possono contare solo tramite la registrazione dello schermo, e allora il numero non può superare la frequenza di aggiornamento dello schermo.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS significa fotogrammi al secondo: quante immagini disegna il gioco ogni secondo. Vengono contati tramite la registrazione dello schermo, quindi il numero non può superare la frequenza di aggiornamento dello schermo.";
+"Corner for FPS" = "Angolo per gli FPS";
+"Top left corner" = "Angolo in alto a sinistra";
+"Top right corner" = "Angolo in alto a destra";
+"Bottom left corner" = "Angolo in basso a sinistra";
+"Bottom right corner" = "Angolo in basso a destra";
+"Needed for some games" = "Serve per alcuni giochi";
+"Needed to count frames" = "Serve per contare i fotogrammi";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "frame rate, fotogrammi al secondo, contatore, prestazioni, lag, registrazione schermo";

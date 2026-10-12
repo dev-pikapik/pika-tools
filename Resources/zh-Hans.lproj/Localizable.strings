@@ -866,3 +866,15 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "服装, 造型, 巫师, 海盗, 宇航员, 超级英雄, 牛仔, 仙子, 国王, 绅士, 科学家, 侦探";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "奖章, 成就, 奖杯, 徽章, 奖励, 进度, 解锁, 获得";
 "reset, delete, clear, start over, privacy" = "重置, 删除, 清除, 重新开始, 隐私";
+"Show FPS" = "显示 FPS";
+"Shows how smoothly the game runs" = "显示游戏运行得有多流畅";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS 指每秒帧数，也就是游戏每秒绘制的画面数。少数游戏（多为较旧的游戏）只能通过屏幕录制来计数，此时数值不会超过屏幕的刷新率。";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS 指每秒帧数，也就是游戏每秒绘制的画面数。它通过屏幕录制来计数，因此数值不会超过屏幕的刷新率。";
+"Corner for FPS" = "FPS 显示的角落";
+"Top left corner" = "左上角";
+"Top right corner" = "右上角";
+"Bottom left corner" = "左下角";
+"Bottom right corner" = "右下角";
+"Needed for some games" = "部分游戏需要";
+"Needed to count frames" = "用于统计帧数";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "帧率, 每秒帧数, 计数器, 性能, 卡顿, 屏幕录制";

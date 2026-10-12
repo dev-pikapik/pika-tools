@@ -866,3 +866,15 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "образ, вбрання, костюм, чарівник, пірат, астронавт, супергерой, ковбой, фея, король, джентльмен, науковець, детектив";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "медалі, досягнення, трофеї, значки, призи, прогрес, відкрити, отримано";
 "reset, delete, clear, start over, privacy" = "скидання, видалити, очистити, почати заново, конфіденційність";
+"Show FPS" = "Показувати FPS";
+"Shows how smoothly the game runs" = "Показує, наскільки плавно йде гра";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS — це кадри за секунду: скільки зображень гра малює щосекунди. Деякі ігри, здебільшого старі, можна порахувати лише через запис екрана, і тоді число не може бути вищим за частоту оновлення екрана.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS — це кадри за секунду: скільки зображень гра малює щосекунди. Вони рахуються через запис екрана, тому число не може бути вищим за частоту оновлення екрана.";
+"Corner for FPS" = "Кут для FPS";
+"Top left corner" = "Лівий верхній кут";
+"Top right corner" = "Правий верхній кут";
+"Bottom left corner" = "Лівий нижній кут";
+"Bottom right corner" = "Правий нижній кут";
+"Needed for some games" = "Потрібно для деяких ігор";
+"Needed to count frames" = "Потрібно, щоб рахувати кадри";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "частота кадрів, кадри за секунду, лічильник, продуктивність, лаги, запис екрана";

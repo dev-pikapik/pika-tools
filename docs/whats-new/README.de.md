@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Sieh, wie flüssig dein Spiel läuft
+
+<sub>1.37.0 · 12. Oktober 2026</sub>
+
+Der neue Schalter „FPS anzeigen“ setzt einen kleinen Zähler in eine Ecke deines Spiels, damit du siehst, wie flüssig es läuft.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Spiele und schalte „FPS anzeigen“ ein. Solange der Spielmodus an ist, sitzt in einer Ecke jedes Spiels eine kleine dunkle Anzeige mit einer Zahl. FPS heißt Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet, und je höher die Zahl, desto flüssiger läuft es. Die Ecke wählst du mit einem Klick auf das Bild über dem Schalter.
+
+Klicks gehen einfach durch die Anzeige hindurch, und sie folgt dem Spielfenster. Ein Strich heißt, dass die ersten Bilder noch nicht da sind, eine blasse 0, dass das Spiel nichts mehr zeichnet. „FPS anzeigen“ ist aus, bis du es einschaltest.
+
+Unter macOS 27 zählt macOS die meisten Spiele selbst, deshalb ist keine Erlaubnis nötig. Einige Spiele, meist ältere, lassen sich nur über die Bildschirmaufnahme zählen, und dann kann die Zahl nicht höher sein als die Bildwiederholrate des Bildschirms. Unter macOS 14 bis 26 und in der Version aus dem Mac App Store wird jedes Spiel so gezählt, deshalb bittet pikapik beim Einschalten von „FPS anzeigen“ um die „Bildschirmaufnahme“. Es wird nie ein Bild gespeichert oder gesendet.
+
+---
+
 ## <a id="v1.36.0"></a>Apps entfernen ohne Sorge
 
 <sub>1.36.0 · 12. Oktober 2026</sub>

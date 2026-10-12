@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Mira lo fluido que va tu juego
+
+<sub>1.37.0 · 12 de octubre de 2026</sub>
+
+El nuevo «Mostrar FPS» pone un pequeño contador en una esquina de tu juego para que veas lo fluido que va.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Juegos y activa «Mostrar FPS». Mientras el Modo de juego esté activado, aparece una pequeña etiqueta oscura con un número en una esquina de cualquier juego. FPS son los fotogramas por segundo: cuántas imágenes dibuja el juego cada segundo, y cuanto mayor es el número, más fluido va el juego. Haz clic en una esquina de la imagen que hay sobre el interruptor para elegir dónde se coloca.
+
+Los clics atraviesan la etiqueta, que sigue a la ventana del juego. Un guion significa que aún no han llegado los primeros fotogramas, y un 0 atenuado, que el juego ha dejado de dibujar. «Mostrar FPS» está desactivado hasta que lo actives.
+
+En macOS 27, macOS cuenta por sí mismo la mayoría de los juegos, así que no hace falta ningún permiso. Algunos juegos, sobre todo antiguos, solo se pueden contar mediante la grabación de pantalla, y entonces la cifra no puede superar la frecuencia de actualización de la pantalla. En macOS 14 a 26 y en la versión de la Mac App Store todos los juegos se cuentan así, por eso al activar «Mostrar FPS» pikapik pide «Grabación de pantalla». No se guarda ni se envía ninguna imagen.
+
+---
+
 ## <a id="v1.36.0"></a>Elimina apps sin preocuparte
 
 <sub>1.36.0 · 12 de octubre de 2026</sub>

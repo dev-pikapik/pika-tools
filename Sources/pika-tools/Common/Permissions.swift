@@ -3,7 +3,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 enum Permission: CaseIterable {
-    case accessibility, inputMonitoring
+    case accessibility, inputMonitoring, screenRecording
     #if !APPSTORE
     case fans
     #endif
@@ -22,6 +22,10 @@ enum Permission: CaseIterable {
         case .inputMonitoring:
             ("com.apple.graphic-icon.input-monitoring", "keyboard.badge.eye",
              String(localized: "Input Monitoring"), String(localized: "Lets the app see clicks and keys"))
+        case .screenRecording:
+            ("com.apple.graphic-icon.screen-recording", "rectangle.dashed.badge.record",
+             String(localized: "Screen Recording"),
+             FrameRateMeter.hasTrace ? String(localized: "Needed for some games") : String(localized: "Needed to count frames"))
         #if !APPSTORE
         case .fans:
             ("", "fan", String(localized: "Fan control"), String(localized: "Lets the app choose how fast your fans spin"))
@@ -52,12 +56,15 @@ enum Permission: CaseIterable {
         switch self {
         case .accessibility: "Privacy_Accessibility"
         case .inputMonitoring: "Privacy_ListenEvent"
+        case .screenRecording: "Privacy_ScreenCapture"
         default: "Privacy_AllFiles"
         }
     }
 
     var isShown: Bool {
         switch self {
+        case .screenRecording:
+            GameModeTool.shared.showsFrameRate && !Permissions.shared.screenRecording && (!FrameRateMeter.hasTrace || GameModeTool.shared.needsRecording)
         #if !APPSTORE
         case .fans: FanControl.shared.hasFans
         case .iCloud: SettingsSync.shared.isEnabled
@@ -72,6 +79,7 @@ enum Permission: CaseIterable {
         return switch self {
         case .accessibility: permissions.accessibility
         case .inputMonitoring: permissions.inputMonitoring
+        case .screenRecording: permissions.screenRecording
         #if !APPSTORE
         case .fans: FanControl.shared.ready
         case .iCloud: SettingsSync.shared.state != .noAccess
@@ -110,7 +118,7 @@ enum Permission: CaseIterable {
 
     var opensSettingsToTurnOff: Bool {
         #if APPSTORE
-        self == .accessibility || self == .inputMonitoring || self == .finder
+        self == .accessibility || self == .inputMonitoring || self == .screenRecording || self == .finder
         #else
         false
         #endif
@@ -120,14 +128,14 @@ enum Permission: CaseIterable {
         #if APPSTORE
         false
         #else
-        self == .accessibility || self == .inputMonitoring
+        self == .accessibility || self == .inputMonitoring || self == .screenRecording
         #endif
     }
 
     func allow() {
         let permissions = Permissions.shared
         switch self {
-        case .accessibility, .inputMonitoring:
+        case .accessibility, .inputMonitoring, .screenRecording:
             permissions.request([self])
             permissions.openSettings(pane)
         #if !APPSTORE
@@ -147,11 +155,11 @@ enum Permission: CaseIterable {
     func turnOff() {
         let permissions = Permissions.shared
         switch self {
-        case .accessibility, .inputMonitoring:
+        case .accessibility, .inputMonitoring, .screenRecording:
             #if APPSTORE
             permissions.openSettings(pane)
             #else
-            SettingsWindow.restart(opening: "--permissions", resetting: self == .accessibility ? "Accessibility" : "ListenEvent")
+            SettingsWindow.restart(opening: "--permissions", resetting: self == .accessibility ? "Accessibility" : self == .inputMonitoring ? "ListenEvent" : "ScreenCapture")
             #endif
         #if !APPSTORE
         case .fans: FanControl.shared.uninstall()
@@ -180,6 +188,7 @@ final class Permissions {
     private(set) var accessibility = AXIsProcessTrusted()
     private(set) var inputMonitoring = CGPreflightListenEventAccess()
     private(set) var fileAccess = Permissions.hasFileAccess
+    private(set) var screenRecording = CGPreflightScreenCaptureAccess()
 
     var allGranted: Bool { accessibility && inputMonitoring }
 
@@ -212,6 +221,9 @@ final class Permissions {
         if input {
             CGRequestListenEventAccess()
         }
+        if !screenRecording && wanted.contains(.screenRecording) {
+            CGRequestScreenCaptureAccess()
+        }
         startPolling()
     }
 
@@ -238,10 +250,12 @@ final class Permissions {
         let ax = AXIsProcessTrusted()
         let input = CGPreflightListenEventAccess()
         let files = Self.hasFileAccess
-        guard ax != accessibility || input != inputMonitoring || files != fileAccess else { return }
+        let capture = CGPreflightScreenCaptureAccess()
+        guard ax != accessibility || input != inputMonitoring || files != fileAccess || capture != screenRecording else { return }
         accessibility = ax
         inputMonitoring = input
         fileAccess = files
+        screenRecording = capture
         onChange?()
     }
 

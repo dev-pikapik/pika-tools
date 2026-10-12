@@ -12,15 +12,17 @@ pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its
 - Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
 
 ## Permissions
-The app asks for two permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
+The app asks for up to three permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
 
 - Accessibility: Window zoom, Quit on close, Protect quitting, Hide with a click in the Dock, Enter/Cut/Delete in Finder, and Pet use it to read window and Dock element positions and to send the requested shortcut to the frontmost app.
 - Input Monitoring: Switch language, Home and End, Command keys, Scroll by lines, Scroll direction, Side buttons, and the Finder keys use it to see the key or mouse event the user configured so the app can act on it.
+- Screen Recording: Show FPS (Settings > Games, optional) uses it to count how many frames a game draws each second, from a tiny low-resolution ScreenCaptureKit view of the game's display. Only the number of changed frames is kept; no picture is ever stored, logged or sent anywhere.
 
 To reproduce each prompt:
 1. Open pikapik from the menu bar, then Settings.
 2. Turn on any feature from the Keyboard, Mouse or Windows tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
-3. The Permissions page in Settings lists Accessibility, Input Monitoring, Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
+3. In Settings > Games turn on Game Mode, then Show FPS. The system Screen Recording prompt appears at that moment and never later while a game is running.
+4. The Permissions page in Settings lists Accessibility, Input Monitoring, Screen Recording (only while Show FPS is on and the permission is missing), Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
 
 Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere.
 

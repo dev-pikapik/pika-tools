@@ -186,7 +186,11 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <br><b>Apps verwijderen</b>
 <br>Verwijder een app met alle bestanden. Alles kan terug.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+<br><b>FPS tonen</b>
+<br>Een kleine teller laat in de hoek van je keuze zien hoe soepel je game loopt.
+</td>
 </tr></tbody>
 </table>
 
@@ -256,6 +260,8 @@ Automatisch pauzeert acties die vensters openen of focus verplaatsen. Een kort b
 In Instellingen → Spellen → Meer spelinstellingen staat een groep ‘Muis en trackpad’. Daarin staat alleen wat in macOS op je Mac is ingeschakeld, met de namen van Apple en een kleine tekening bij elk onderdeel: toetscombinaties op een muisknop, vegen tussen bureaubladen en apps in volledig scherm, Mission Control en App Exposé, knijpen voor apps en spreiden voor het bureaublad, vegen vanaf de rechterrand voor het Berichtencentrum en elke actieve hoek met de actie die erbij hoort. Zolang een game vooraan staat, zijn ze gepauzeerd, zodat een onbedoelde veeg of een aanraking van een hoek van het scherm je niet uit de game haalt. Gebaren in de game blijven gewoon werken. Elk onderdeel kan zo worden ingesteld dat het werkt zoals gewoonlijk.
 
 Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. Ook spellen via Java en andere omgevingen verschijnen hier, zelfs zonder .app-bestand. Minecraft heet Minecraft in plaats van java. Zoek het spelproces en sleep de rij naar Je spellen in Instellingen → Spellen.
+
+**FPS tonen.** FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent. Zet **FPS tonen** aan op de pagina Games, en zolang de Gamemodus aanstaat, staat er in een hoek van elke game een klein donker labeltje met dat getal. Kies de hoek door erop te klikken in het plaatje boven de schakelaar. Een streepje betekent dat de eerste beelden er nog niet zijn, en een vervaagde 0 dat de game niets meer tekent. Onder macOS 27 telt macOS de meeste games zelf, zonder toestemming. Een game die macOS niet kan tellen, meestal een oudere game, wordt geteld via schermopname: dan verschijnt in Instellingen de rij **Schermopname**, vraagt pikapik er nooit om tijdens een game en kan het getal niet hoger zijn dan de verversingssnelheid van het scherm. Onder macOS 14 tot en met 26 en in de versie uit de Mac App Store wordt elke game zo geteld, dus als je **FPS tonen** aanzet, vraagt pikapik om **Schermopname**. Er wordt geen beeld bewaard of verstuurd. Standaard uit.
 
 **Kledingkast en onderscheidingen van je huisdiertje.** Open Instellingen › Huisdiertje om je huisdiertje aan te kleden: meer dan 30 dingen, van hoeden en brillen tot capes en vleugels, en kant-en-klare outfits zoals tovenaar, piraat of astronaut. Een paar dingen zijn vanaf het begin gratis. De rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een nieuwe onderscheiding hebt verdiend, vertelt je huisdiertje het je.
 

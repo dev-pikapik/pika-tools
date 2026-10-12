@@ -866,3 +866,15 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "outfit, kostym, trollkarl, pirat, astronaut, superhjälte, cowboy, älva, kung, gentleman, forskare, detektiv";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "medaljer, prestationer, troféer, märken, belöningar, framsteg, låsa upp, intjänat";
 "reset, delete, clear, start over, privacy" = "återställ, ta bort, rensa, börja om, integritet";
+"Show FPS" = "Visa FPS";
+"Shows how smoothly the game runs" = "Visar hur smidigt spelet går";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS betyder bilder per sekund: hur många bilder spelet ritar varje sekund. Några spel, mest äldre, går bara att räkna via skärminspelning, och då kan siffran inte bli högre än skärmens uppdateringsfrekvens.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS betyder bilder per sekund: hur många bilder spelet ritar varje sekund. Det räknas via skärminspelning, så siffran kan inte bli högre än skärmens uppdateringsfrekvens.";
+"Corner for FPS" = "Hörn för FPS";
+"Top left corner" = "Övre vänstra hörnet";
+"Top right corner" = "Övre högra hörnet";
+"Bottom left corner" = "Nedre vänstra hörnet";
+"Bottom right corner" = "Nedre högra hörnet";
+"Needed for some games" = "Behövs för vissa spel";
+"Needed to count frames" = "Behövs för att räkna bilder";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "bildfrekvens, bilder per sekund, räknare, prestanda, lagg, skärminspelning";

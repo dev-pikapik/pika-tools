@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.37.0"></a>Podívejte se, jak plynule hra běží
+
+<sub>1.37.0 · 12. října 2026</sub>
+
+Nové „Zobrazit FPS“ ukazuje v rohu hry malé počítadlo, takže hned vidíte, jak plynule hra běží.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Hry a zapněte „Zobrazit FPS“. Dokud je zapnutý Herní režim, objeví se v rohu každé hry malý tmavý štítek s číslem. FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu, a čím vyšší číslo, tím plynulejší hra. Roh vyberete kliknutím na něj v obrázku nad přepínačem.
+
+Na kliknutí štítek nereaguje a pohybuje se s oknem hry. Pomlčka znamená, že první snímky ještě nedorazily, a pobledlá 0 znamená, že hra přestala kreslit. „Zobrazit FPS“ je vypnuté, dokud ho nezapnete.
+
+V macOS 27 většinu her počítá sám macOS, takže oprávnění není potřeba. Některé hry, hlavně starší, se dají spočítat jen přes záznam obrazovky, a pak číslo nemůže být vyšší než obnovovací frekvence obrazovky. V macOS 14–26 a ve verzi z Mac App Store se tak počítají všechny hry, proto pikapik při zapnutí „Zobrazit FPS“ požádá o „Záznam obrazovky“. Žádný obraz se neukládá ani neodesílá.
+
+---
+
 ## <a id="v1.36.0"></a>Odebírejte aplikace bez obav
 
 <sub>1.36.0 · 12. října 2026</sub>

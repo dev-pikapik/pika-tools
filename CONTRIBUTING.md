@@ -51,6 +51,12 @@ Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHot
 swiftc -parse-as-library Sources/pika-tools/Common/Shortcuts.swift scripts/test-shortcuts.swift -o build/test-shortcuts && build/test-shortcuts
 ```
 
+The FPS counter over a game (Settings > Games > Show FPS) is `Games/FrameRate.swift`, which has no AppKit, and `Games/FrameRateMeter.swift`, the overlay and the two counters. The direct build on macOS 27 and later asks `/usr/bin/metalperftrace listen --json --pid` for the presented frames per second of the largest layer that presented anything. The tool buffers its output unless it is a terminal, so it gets a pty, and a small shell reading from a pipe that pikapik holds open stops it when pikapik quits or crashes. Games it can't see (OpenGL, older macOS, the App Store build) are counted from a small ScreenCaptureKit stream of the display, which needs Screen Recording: a frame counts only when the changed area covers at least 30% of the game window, so the number can't go above the screen's refresh rate. The stream starts only after three seconds without a number from `metalperftrace`, only if the permission is already granted, and never for a game it has already measured. On macOS 27 a game that needs the stream while the permission is missing makes pikapik remember it (`game-mode-fps-recording`, never reset or exported), and only then does Settings show the Screen Recording row; older macOS and the App Store build show it whenever Show FPS is on. The pill has room for two digits and grows to three, anchored in its corner, once a value of 100 or more arrives in a game. You can test the logic without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Games/FrameRate.swift scripts/test-frame-rate.swift -o build/test-frame-rate && build/test-frame-rate
+```
+
 Quit on last window uses an `AXObserver` per regular app: it tracks standard windows and, half a second after one is destroyed, quits the app if it has no windows left, including minimized ones and ones on other desktops (checked with `CGWindowListCopyWindowInfo`). Finder, pikapik and the apps in the exceptions list are skipped.
 
 Hide with a Dock click is a `CGEventTap` on the left mouse button. On a plain click it asks the Dock for the element under the pointer with `AXUIElementCopyElementAtPosition`. If that is the icon of the frontmost app and the app has a visible window, the click is dropped and the app hides. Otherwise the click goes to the Dock as usual.

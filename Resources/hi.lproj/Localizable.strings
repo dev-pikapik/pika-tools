@@ -866,3 +866,15 @@
 "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective" = "पोशाक, कॉस्ट्यूम, जादूगर, समुद्री डाकू, अंतरिक्ष यात्री, सुपरहीरो, काउबॉय, परी, राजा, जेंटलमैन, वैज्ञानिक, जासूस";
 "medals, achievements, trophies, badges, rewards, progress, unlock, earned" = "मेडल, उपलब्धियाँ, ट्रॉफ़ी, बैज, इनाम, प्रगति, अनलॉक, हासिल";
 "reset, delete, clear, start over, privacy" = "रीसेट, मिटाना, हटाना, फिर से शुरू, गोपनीयता";
+"Show FPS" = "FPS दिखाएँ";
+"Shows how smoothly the game runs" = "दिखाता है कि गेम कितनी सहजता से चल रहा है";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS का मतलब है फ़्रेम प्रति सेकंड: गेम हर सेकंड कितनी तस्वीरें बनाता है। कुछ गेम, ज़्यादातर पुराने, सिर्फ़ स्क्रीन रिकॉर्डिंग के ज़रिए गिने जा सकते हैं, और तब संख्या स्क्रीन की रिफ़्रेश दर से ज़्यादा नहीं हो सकती।";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS का मतलब है फ़्रेम प्रति सेकंड: गेम हर सेकंड कितनी तस्वीरें बनाता है। इन्हें स्क्रीन रिकॉर्डिंग के ज़रिए गिना जाता है, इसलिए संख्या स्क्रीन की रिफ़्रेश दर से ज़्यादा नहीं हो सकती।";
+"Corner for FPS" = "FPS के लिए कोना";
+"Top left corner" = "ऊपर बायाँ कोना";
+"Top right corner" = "ऊपर दायाँ कोना";
+"Bottom left corner" = "नीचे बायाँ कोना";
+"Bottom right corner" = "नीचे दायाँ कोना";
+"Needed for some games" = "कुछ गेम के लिए ज़रूरी";
+"Needed to count frames" = "फ़्रेम गिनने के लिए ज़रूरी";
+"frame rate, frames per second, counter, performance, lag, screen recording" = "फ़्रेम रेट, फ़्रेम प्रति सेकंड, काउंटर, परफ़ॉर्मेंस, लैग, स्क्रीन रिकॉर्डिंग";
