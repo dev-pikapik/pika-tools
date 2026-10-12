@@ -707,6 +707,8 @@
 "Copy Path" = "Kopírovat cestu";
 "Reset App" = "Resetovat aplikaci";
 "Keeps the app and removes its data, settings and temporary files" = "Ponechá aplikaci a odstraní její data, nastavení a dočasné soubory";
+"Select All" = "Vybrat vše";
+"Deselect All" = "Zrušit výběr";
 "Move to Trash" = "Přesunout do Koše";
 "Move to Trash · %@" = "Přesunout do Koše · %@";
 "Already in the Trash" = "Už je v Koši";

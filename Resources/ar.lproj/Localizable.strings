@@ -707,6 +707,8 @@
 "Copy Path" = "نسخ المسار";
 "Reset App" = "إعادة ضبط التطبيق";
 "Keeps the app and removes its data, settings and temporary files" = "يُبقي التطبيق ويزيل بياناته وإعداداته وملفاته المؤقتة";
+"Select All" = "تحديد الكل";
+"Deselect All" = "إلغاء تحديد الكل";
 "Move to Trash" = "نقل إلى سلة المهملات";
 "Move to Trash · %@" = "نقل إلى سلة المهملات · %@";
 "Already in the Trash" = "موجود في سلة المهملات بالفعل";

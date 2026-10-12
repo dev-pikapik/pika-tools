@@ -70,6 +70,16 @@ struct TestUninstallerUI {
         frozen.set(.app, on: true)
         precondition(frozen.chosen().count == 1)
 
+        var loose = RemovalPlan([item("/Users/me/Library/Caches/org.test.gone", .caches, on: false), item("/Users/me/Library/Preferences/org.test.gone.plist", .preferences, on: false), item(inTrash, .app, on: false)])
+        precondition(!loose.allOn && loose.chosen().isEmpty)
+        loose.setAll(on: true)
+        precondition(loose.allOn && loose.chosen().count == 2 && !loose.isOn(loose.items[2]))
+        loose.setAll(on: false)
+        precondition(!loose.allOn && loose.chosen().isEmpty)
+        loose.set(loose.items[0], on: true)
+        precondition(!loose.allOn && loose.chosen().count == 1)
+        precondition(!RemovalPlan([]).allOn && !RemovalPlan([item(inTrash, .app)]).allOn)
+
         precondition(RemovalPlan([]).chosen().isEmpty && RemovalPlan([]).bytes() == 0)
         precondition(plan.items[5].title == "org.test.alpha.pkg" && plan.items[1].title == "Alpha")
 
@@ -93,6 +103,7 @@ struct TestUninstallerUI {
         precondition(LeftoverKind.allCases.allSatisfy { !$0.title.isEmpty && !$0.symbol.isEmpty })
         precondition(UninstallerText.used(now - 3 * 86_400, now: now) != UninstallerText.used(now - 86_400, now: now))
         precondition(!UninstallerText.size(12_400_000_000).isEmpty)
+        precondition(UninstallerText.size(0).contains { $0.isNumber })
 
         var kept = item("/Users/me/Library/Caches/Org.Test.Gone", .caches, on: false)
         kept.reason = .byID("Org.Test.Gone")
@@ -101,6 +112,8 @@ struct TestUninstallerUI {
         let left = AppIdentity(leftovers: gone)
         precondition(left.displayName == "Gone" && left.bundleID == "Org.Test.Gone")
         precondition(AppIdentity(leftovers: twin).id != left.id && AppIdentity(leftovers: twin).bundleID == "gone")
+        let titledByID = AppIdentity(leftovers: OrphanGroup(id: "org.test.default", name: "org.test.default", items: [], newest: now))
+        precondition(left.sourceID == "Org.Test.Gone" && titledByID.displayName == "org.test.default" && titledByID.sourceID == nil)
         precondition(left.dismissalKey == "org.test.gone" && AppIdentity(url: URL(fileURLWithPath: "/Applications/Plain.app"), bundleID: "").dismissalKey == "Plain")
         precondition(RemovalPlan(gone.items).chosen().isEmpty && RemovalPlan(gone.items).groups.map(\.kind) == [.caches])
         precondition(!UninstallerText.changed(now - 86_400, now: now).isEmpty)

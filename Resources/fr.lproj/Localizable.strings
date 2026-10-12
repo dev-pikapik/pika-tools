@@ -707,6 +707,8 @@
 "Copy Path" = "Copier le chemin";
 "Reset App" = "Réinitialiser l’app";
 "Keeps the app and removes its data, settings and temporary files" = "Garde l’app et supprime ses données, réglages et fichiers temporaires";
+"Select All" = "Tout sélectionner";
+"Deselect All" = "Tout désélectionner";
 "Move to Trash" = "Mettre à la Corbeille";
 "Move to Trash · %@" = "Mettre à la Corbeille · %@";
 "Already in the Trash" = "Déjà dans la Corbeille";

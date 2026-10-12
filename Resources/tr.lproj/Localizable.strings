@@ -707,6 +707,8 @@
 "Copy Path" = "Yolu kopyala";
 "Reset App" = "Uygulamayı sıfırla";
 "Keeps the app and removes its data, settings and temporary files" = "Uygulamayı tutar; verilerini, ayarlarını ve geçici dosyalarını kaldırır";
+"Select All" = "Tümünü seç";
+"Deselect All" = "Seçimi kaldır";
 "Move to Trash" = "Çöp Sepeti’ne taşı";
 "Move to Trash · %@" = "Çöp Sepeti’ne taşı · %@";
 "Already in the Trash" = "Zaten Çöp Sepeti’nde";

@@ -707,6 +707,8 @@
 "Copy Path" = "Kopiera sökväg";
 "Reset App" = "Återställ appen";
 "Keeps the app and removes its data, settings and temporary files" = "Behåller appen och tar bort dess data, inställningar och tillfälliga filer";
+"Select All" = "Markera allt";
+"Deselect All" = "Avmarkera allt";
 "Move to Trash" = "Flytta till papperskorgen";
 "Move to Trash · %@" = "Flytta till papperskorgen · %@";
 "Already in the Trash" = "Redan i papperskorgen";

@@ -177,9 +177,14 @@ enum AppNames {
             var words = part.split { $0 == "-" || $0 == "_" }.map(String.init)
             while let last = words.last, tails.contains(last.lowercased()), words.count > 1 { words.removeLast() }
             if words.count == 1, tails.contains(words[0].lowercased()) { continue }
-            return words.map { word in word.prefix(1).uppercased() + word.dropFirst() }.joined(separator: " ")
+            let title = words.map { word in word.prefix(1).uppercased() + word.dropFirst() }.joined(separator: " ")
+            return isClear(title) ? title : id
         }
         return id
+    }
+
+    private static func isClear(_ title: String) -> Bool {
+        title.filter(\.isLetter).count >= 4 && title.filter(\.isNumber).count * 2 <= title.count && !generic.contains(squash(title))
     }
 }
 

@@ -707,6 +707,8 @@
 "Copy Path" = "拷贝路径";
 "Reset App" = "重置 App";
 "Keeps the app and removes its data, settings and temporary files" = "保留 App，并移除其数据、设置和临时文件";
+"Select All" = "全选";
+"Deselect All" = "取消全选";
 "Move to Trash" = "移到废纸篓";
 "Move to Trash · %@" = "移到废纸篓 · %@";
 "Already in the Trash" = "已在废纸篓中";

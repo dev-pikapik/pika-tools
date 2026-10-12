@@ -39,49 +39,6 @@ final class TrashWatchTool: Tool {
     }
 }
 
-private final class TrashWatcher {
-    private let folder = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(".Trash")
-    private let found: ([URL]) -> Void
-    private var source: DispatchSourceFileSystemObject?
-    private var pending: DispatchWorkItem?
-    private var seen: Set<String> = []
-
-    init?(found: @escaping ([URL]) -> Void) {
-        self.found = found
-        let descriptor = open(folder.path, O_EVTONLY)
-        guard descriptor >= 0 else { return nil }
-        seen = Set(apps())
-        let source = DispatchSource.makeFileSystemObjectSource(fileDescriptor: descriptor, eventMask: [.write, .rename, .delete], queue: .main)
-        source.setEventHandler { [weak self] in
-            self?.pending?.cancel()
-            let work = DispatchWorkItem { self?.check() }
-            self?.pending = work
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: work)
-        }
-        source.setCancelHandler { close(descriptor) }
-        source.resume()
-        self.source = source
-    }
-
-    func stop() {
-        pending?.cancel()
-        pending = nil
-        source?.cancel()
-        source = nil
-    }
-
-    private func apps() -> [String] {
-        ((try? FileManager.default.contentsOfDirectory(atPath: folder.path)) ?? []).filter { $0.hasSuffix(".app") }
-    }
-
-    private func check() {
-        let now = Set(apps())
-        let fresh = now.subtracting(seen)
-        seen = now
-        if !fresh.isEmpty { found(fresh.sorted().map { folder.appendingPathComponent($0) }) }
-    }
-}
-
 private struct TrashWatchSettings: View {
     @Bindable var tool: TrashWatchTool
     @Environment(\.inSettings) private var inSettings

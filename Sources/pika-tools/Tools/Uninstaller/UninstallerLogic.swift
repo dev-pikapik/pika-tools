@@ -88,6 +88,15 @@ struct RemovalPlan {
         if on { selected.formUnion(ids) } else { selected.subtract(ids) }
     }
 
+    mutating func setAll(on: Bool) {
+        LeftoverKind.allCases.forEach { set($0, on: on) }
+    }
+
+    var allOn: Bool {
+        let live = items.filter { !inert.contains($0.id) }
+        return !live.isEmpty && live.allSatisfy { selected.contains($0.id) }
+    }
+
     mutating func setSizes(_ sizes: [String: Int64]) {
         for index in items.indices {
             if let size = sizes[items[index].id] { items[index].size = size }
@@ -188,6 +197,10 @@ extension AppIdentity {
         self.init(url: URL(fileURLWithPath: "/Leftovers/\(group.id)/\(group.name).app"), bundleID: id)
     }
 
+    var sourceID: String? {
+        bundleID == displayName ? nil : bundleID
+    }
+
     var dismissalKey: String {
         bundleID.isEmpty ? displayName : bundleID.lowercased()
     }
@@ -201,8 +214,16 @@ enum UninstallerText {
         return formatter
     }()
 
+    private static let nothing: ByteCountFormatter = {
+        let formatter = ByteCountFormatter()
+        formatter.countStyle = .file
+        formatter.allowedUnits = .useKB
+        formatter.allowsNonnumericFormatting = false
+        return formatter
+    }()
+
     static func size(_ bytes: Int64) -> String {
-        ByteCountFormatter.string(fromByteCount: bytes, countStyle: .file)
+        bytes == 0 ? nothing.string(fromByteCount: 0) : ByteCountFormatter.string(fromByteCount: bytes, countStyle: .file)
     }
 
     static func used(_ date: Date, now: Date = Date()) -> String {

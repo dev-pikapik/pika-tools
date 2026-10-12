@@ -200,6 +200,10 @@ enum UninstallerTests {
         precondition(AppNames.processName("-2024-01-01-000000.ips") == nil && AppNames.processName("Slack_E1B2C3D4.plist") == nil)
         precondition(AppNames.orphanTitle("com.gone.app") == "Gone")
         precondition(AppNames.orphanTitle("com.big-corp.photo-editor.helper") == "Photo Editor")
+        precondition(AppNames.orphanTitle("org.test.pixel9") == "Pixel9" && AppNames.orphanTitle("org.test.Wolf") == "Wolf")
+        for unclear in ["org.test.default", "org.test.oai", "org.test.230313mzl4w4u92", "org.test.sync-helper", "org.test.ab12"] {
+            precondition(AppNames.orphanTitle(unclear) == unclear, unclear)
+        }
         precondition(AppNames.dottedPrefixes("a.b.c") == ["a.b.c", "a.b", "a"])
         precondition(AppNames.idForms("ABCDE12345.group.com.x.y") == ["abcde12345.group.com.x.y", "group.com.x.y", "com.x.y"])
         for junk in ["", "go", "ab", "helper", "support", "icloud", "mobilesync", "addressbook", "dock"] {
@@ -823,7 +827,7 @@ enum UninstallerTests {
         precondition(groups.map(\.id) == ["com.eight.days", "com.dead.app", "com.gone.app", "com.linked.app", "com.cloud.shared"].sorted { lhs, rhs in
             AppNames.orphanTitle(lhs).localizedCaseInsensitiveCompare(AppNames.orphanTitle(rhs)) == .orderedAscending
         }, "\(groups.map(\.id))")
-        precondition(groups.map(\.name) == ["Days", "Dead", "Gone", "Linked", "Shared"], "\(groups.map(\.name))")
+        precondition(groups.map(\.name) == ["com.cloud.shared", "Days", "Dead", "Gone", "Linked"], "\(groups.map(\.name))")
         precondition(groups.allSatisfy { group in group.items.allSatisfy { !$0.preselected && $0.sharedWith.isEmpty } })
         let gone = groups.first { $0.id == "com.gone.app" }!
         precondition(gone.items.count == 7 && Set(gone.items.map(\.kind)) == [.preferences, .caches, .containers, .appData], "\(gone.items.map { w.rel($0.url) })")

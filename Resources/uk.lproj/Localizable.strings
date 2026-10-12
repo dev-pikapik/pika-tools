@@ -707,6 +707,8 @@
 "Copy Path" = "Скопіювати шлях";
 "Reset App" = "Скинути програму";
 "Keeps the app and removes its data, settings and temporary files" = "Програма лишається, а її дані, налаштування й тимчасові файли видаляються";
+"Select All" = "Вибрати все";
+"Deselect All" = "Зняти вибір";
 "Move to Trash" = "Перемістити до Смітника";
 "Move to Trash · %@" = "Перемістити до Смітника · %@";
 "Already in the Trash" = "Уже у Смітнику";

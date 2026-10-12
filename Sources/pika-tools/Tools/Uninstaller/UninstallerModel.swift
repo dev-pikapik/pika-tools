@@ -304,6 +304,7 @@ final class UninstallerModel {
 
     func open(leftovers group: Remnant) {
         guard let opened = start(group.app, leftoversOnly: true) else { return }
+        opened.notice = String(localized: "Looks like the app is gone. Pick what to remove.")
         opened.work = Task {
             opened.plan = RemovalPlan(group.items)
             opened.phase = .choosing

@@ -15,6 +15,7 @@ struct UninstallerPage: View {
                 UninstallerArt(replay: model.plays)
                     .appDropZone("uninstaller") { model.open(dropped: $0) }
             }
+            Section { watch.settingsView.needs(watch.needs) }
             TrashedSection()
             RemovedSection()
             Section {
@@ -38,7 +39,6 @@ struct UninstallerPage: View {
                 .needs([.fullDisk])
             }
             LeftoversSection()
-            Section { watch.settingsView.needs(watch.needs) }
         }
         .formStyle(.grouped)
         .coordinateSpace(.named(Self.viewport))
