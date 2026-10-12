@@ -868,12 +868,13 @@
 "reset, delete, clear, start over, privacy" = "zurücksetzen, löschen, leeren, neu anfangen, Datenschutz";
 "Show FPS" = "FPS anzeigen";
 "Shows how smoothly the game runs" = "Zeigt, wie flüssig das Spiel läuft";
-"FPS means frames per second: how many pictures the game draws each second. Older games are counted through screen recording, so their number can’t go above the screen’s refresh rate." = "FPS bedeutet Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet. Ältere Spiele werden über die Bildschirmaufnahme gezählt, deshalb kann ihre Zahl nicht höher sein als die Bildwiederholrate des Bildschirms.";
+"FPS means frames per second: how many pictures the game draws each second. A few games, mostly older ones, can only be counted through screen recording, and then the number can’t go above the screen’s refresh rate." = "FPS bedeutet Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet. Einige Spiele, meist ältere, lassen sich nur über die Bildschirmaufnahme zählen, und dann kann die Zahl nicht höher sein als die Bildwiederholrate des Bildschirms.";
+"FPS means frames per second: how many pictures the game draws each second. It’s counted through screen recording, so the number can’t go above the screen’s refresh rate." = "FPS bedeutet Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet. Gezählt wird über die Bildschirmaufnahme, deshalb kann die Zahl nicht höher sein als die Bildwiederholrate des Bildschirms.";
 "Corner for FPS" = "Ecke für FPS";
 "Top left corner" = "Ecke oben links";
 "Top right corner" = "Ecke oben rechts";
 "Bottom left corner" = "Ecke unten links";
 "Bottom right corner" = "Ecke unten rechts";
-"Only for older games" = "Nur für ältere Spiele";
+"Needed for some games" = "Nötig für manche Spiele";
 "Needed to count frames" = "Nötig, um Bilder zu zählen";
 "frame rate, frames per second, counter, performance, lag, screen recording" = "Bildrate, Bilder pro Sekunde, Zähler, Leistung, Ruckeln, Bildschirmaufnahme";
