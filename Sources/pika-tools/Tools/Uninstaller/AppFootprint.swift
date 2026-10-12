@@ -748,7 +748,7 @@ final class AppFootprint {
         return names
     }
 
-    fileprivate func isProtected(_ url: URL, for app: AppIdentity, names: [String], allowLink: Bool = false) -> Bool {
+    func isProtected(_ url: URL, for app: AppIdentity, names: [String], allowLink: Bool = false) -> Bool {
         let path = url.standardizedFileURL.path
         if protectedPaths.contains(path) || url.pathComponents.contains("Keychains") { return true }
         let usrLocalBin = roots.atRoot("usr/local/bin").standardizedFileURL.path + "/"

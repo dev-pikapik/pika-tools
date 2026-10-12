@@ -308,13 +308,17 @@ final class KeepAwake {
     }
 
     static func runAsAdmin(_ command: String, prompt: String) -> Bool {
-        let quote = { (text: String) in
-            "\"" + text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"") + "\""
-        }
+        runScript("do shell script \(scriptQuoted(command)) with prompt \(scriptQuoted(prompt)) with administrator privileges").error == 0
+    }
+
+    static func runScript(_ source: String) -> (text: String?, error: Int) {
         var error: NSDictionary?
-        NSAppleScript(source: "do shell script \(quote(command)) with prompt \(quote(prompt)) with administrator privileges")?
-            .executeAndReturnError(&error)
-        return error == nil
+        let result = NSAppleScript(source: source)?.executeAndReturnError(&error)
+        return (result?.stringValue, error.map { $0[NSAppleScript.errorNumber] as? Int ?? -1 } ?? 0)
+    }
+
+    static func scriptQuoted(_ text: String) -> String {
+        "\"" + text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"") + "\""
     }
     #endif
 
