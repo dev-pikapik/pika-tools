@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Um menu do Finder mais confiável
+
+<sub>1.38.1 · 12 de outubro de 2026</sub>
+
+Os itens que o pikapik adiciona ao Finder com o botão direito não somem mais quando você conecta um disco, abre uma imagem de disco, reativa o Mac ou muda para o Finder.
+
+Em casos raros, o assistente que os mostra fechava justamente nesse momento.
+
+---
+
 ## <a id="v1.38.0"></a>Abra e crie arquivos compactados no Finder
 
 <sub>1.38.0 · 12 de outubro de 2026</sub>

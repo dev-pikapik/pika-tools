@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>A steadier Finder menu
+
+<sub>1.38.1 · October 12, 2026</sub>
+
+pikapik’s items in the Finder right-click menu no longer go missing when you connect a disk, open a disk image, wake your Mac or switch to Finder.
+
+In rare cases, the helper that shows them used to quit at that moment.
+
+---
+
 ## <a id="v1.38.0"></a>Open and make archives in Finder
 
 <sub>1.38.0 · October 12, 2026</sub>

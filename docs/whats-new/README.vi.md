@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.38.1"></a>Menu Finder ổn định hơn
+
+<sub>1.38.1 · 12 tháng 10 năm 2026</sub>
+
+Các mục của pikapik trong menu bấm chuột phải của Finder không còn biến mất khi bạn kết nối ổ đĩa, mở ảnh đĩa, đánh thức máy Mac hoặc chuyển sang Finder.
+
+Trước đây, trong một số ít trường hợp, chương trình trợ giúp hiển thị các mục này bị đóng ngay lúc đó.
+
+---
+
 ## <a id="v1.38.0"></a>Mở và tạo tệp lưu trữ ngay trong Finder
 
 <sub>1.38.0 · 12 tháng 10 năm 2026</sub>
