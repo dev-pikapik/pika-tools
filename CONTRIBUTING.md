@@ -4,7 +4,7 @@ Bug reports and ideas are welcome in [Issues](https://github.com/dev-pikapik/pik
 
 ## Building from source
 
-All you need is the Xcode Command Line Tools. Xcode itself isn't required: the app is built with plain `swiftc`.
+You need Xcode 26 or newer, the Command Line Tools alone are not enough. There is no Xcode project: `build.sh` calls `swiftc` directly. If `xcode-select -p` points to the Command Line Tools, run the scripts with `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`.
 
 ```bash
 git clone https://github.com/dev-pikapik/pika-tools.git
