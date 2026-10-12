@@ -47,6 +47,8 @@ enum RenderMedia {
         ("whats-new/1.31.3/game-preview", 5.4, AnyView(UnifiedGamePreviewCard())),
         ("whats-new/1.31.4/game-choices", 5.4, AnyView(GameChoicesCard())),
         ("whats-new/1.33.0/permissions", 5.4, AnyView(PermissionsCard())),
+        ("whats-new/1.34.0/pointer-shortcuts", 5.4, AnyView(PointerShortcutsCard())),
+        ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
     ]
 
     static func main() {
@@ -134,6 +136,23 @@ private struct SystemShortcutsCard: View {
                     if let entry = entries.first(where: { $0.kind == kind }) {
                         SystemShortcutFrame(entry: entry, story: .still(on: tick > 0), height: 60, background: kind == .language && tick > 0)
                     }
+                }
+            }
+        }
+    }
+}
+
+private struct PointerShortcutsCard: View {
+    private let entries: [SystemGameShortcut] = {
+        let prefs: [String: Any] = ["TrackpadFourFingerVertSwipeGesture": 0, "MouseTwoFingerDoubleTapGesture": 3, "wvous-br-corner": 14]
+        return PointerShortcuts.rows(read: { _, key in prefs[key] }, names: { $1 })
+    }()
+
+    var body: some View {
+        IllustrationRow(loop: [2.2, 3.2]) { tick in
+            HStack(spacing: 8) {
+                ForEach(entries.filter { [100_002, 100_003, 100_013].contains($0.id) }) { entry in
+                    SystemShortcutFrame(entry: entry, story: .still(on: tick % 2 == 1), height: 60)
                 }
             }
         }
@@ -544,6 +563,176 @@ private struct PetBallArt: View {
                         .cursor(at: Self.cursor(t))
                 }
             }
+        }
+    }
+}
+
+private struct WardrobeCard: View {
+    static let length = 9.6
+
+    var body: some View {
+        IllustrationRow {
+            ArtTimeline { time in
+                WardrobeScene(t: time.map { GameStory.mod($0, Self.length) } ?? 7.5)
+            }
+        }
+    }
+}
+
+private struct WardrobeScene: View {
+    let t: Double
+    @Environment(\.colorScheme) private var scheme
+
+    private static let award = PetAward.stylist
+    private static let looks = ["wizard", "astronaut", "pirate", "hero"].compactMap { id in PetLook.all.first { $0.id == id }?.outfit }
+    private static let lens = CGRect(x: -13, y: -22, width: 26, height: 23)
+    private static let tiles = [CGPoint(x: 193, y: 37), CGPoint(x: 247, y: 37), CGPoint(x: 193, y: 91), CGPoint(x: 247, y: 91)]
+    private static let picks = [0.7, 2.2, 3.7, 5.2]
+    private static let swap = 0.1
+    private static let ground = CGPoint(x: 82, y: 112)
+    private static let scale: CGFloat = 3.4
+    private static let centre = CGPoint(x: 220, y: 64)
+    private static let medalSize: CGFloat = 78
+    private static let confetti = [Art.yellow, Color(red: 1, green: 0.56, blue: 0.70), Art.yellow, Color.accentColor]
+    private static let twinkles: [(offset: CGPoint, start: Double, size: CGFloat)] = [
+        (CGPoint(x: -50, y: -36), 7.0, 6), (CGPoint(x: 52, y: -38), 7.3, 5), (CGPoint(x: 56, y: 24), 7.55, 6),
+        (CGPoint(x: -46, y: 34), 7.8, 4.5), (CGPoint(x: 4, y: -56), 8.05, 4),
+    ]
+
+    private static let route: [(Double, CGPoint)] = {
+        let tips = tiles.map { CGPoint(x: $0.x + 10, y: $0.y + 8) }
+        var stops = [(0.1, CGPoint(x: tips[0].x + 6, y: -26)), (picks[0] - 0.1, tips[0])]
+        for k in 1..<tips.count {
+            stops += [(picks[k - 1] + 0.5, tips[k - 1]), (picks[k] - 0.1, tips[k])]
+        }
+        return stops + [(picks[tips.count - 1] + 0.5, tips[tips.count - 1]), (6.3, CGPoint(x: 336, y: 128))]
+    }()
+
+    private var current: Int { Self.picks.lastIndex { t >= $0 + Self.swap } ?? Self.picks.count - 1 }
+
+    private var pose: PetPose {
+        var pose = PetPose(outfit: Self.looks[current])
+        pose.blink = GameStory.mod(t + 0.4, 3.2) < 0.13
+        let jumps = Self.picks.map { ($0 + Self.swap, 6.0) } + [(6.6, 7.5), (7.2, 7.5)]
+        for (start, height) in jumps {
+            let p = (t - start) / 0.5
+            if (0..<1).contains(p) {
+                pose.air = true
+                pose.lift = 4 * height * p * (1 - p)
+                pose.squash = -0.09 * abs(1 - 2 * p)
+            } else if (1..<1.4).contains(p) {
+                pose.squash = 0.14 * (1 - (p - 1) / 0.4)
+            }
+        }
+        return pose
+    }
+
+    private static func star(_ centre: CGPoint, _ radius: CGFloat) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: centre.x, y: centre.y - radius))
+        path.addQuadCurve(to: CGPoint(x: centre.x + radius, y: centre.y), control: centre)
+        path.addQuadCurve(to: CGPoint(x: centre.x, y: centre.y + radius), control: centre)
+        path.addQuadCurve(to: CGPoint(x: centre.x - radius, y: centre.y), control: centre)
+        path.addQuadCurve(to: CGPoint(x: centre.x, y: centre.y - radius), control: centre)
+        return path
+    }
+
+    private func burst(_ context: GraphicsContext, at centre: CGPoint, from start: Double, reach: CGSize) {
+        let p = (t - start) / 0.8
+        guard (0..<1).contains(p) else { return }
+        let out = CGFloat(0.55 + 0.45 * (1 - (1 - p) * (1 - p)))
+        for k in 0..<8 {
+            let angle = CGFloat(k) * .pi / 4 + 0.39
+            let point = CGPoint(x: centre.x + reach.width * out * cos(angle), y: centre.y + reach.height * out * sin(angle))
+            let radius = (k.isMultiple(of: 2) ? 5.5 : 3.5) * CGFloat(sin(.pi * p))
+            context.fill(Self.star(point, radius), with: .color(Self.confetti[k % Self.confetti.count]))
+        }
+    }
+
+    private func tile(_ index: Int) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
+        let selected = index == current
+        return PetThumb(outfit: Self.looks[index], lens: Self.lens)
+            .frame(width: 38, height: 34)
+            .frame(width: 46, height: 46)
+            .background(selected ? Color.accentColor.opacity(0.16) : Color(nsColor: .controlBackgroundColor), in: shape)
+            .overlay(shape.strokeBorder(selected ? Color.accentColor : Color.primary.opacity(0.12), lineWidth: selected ? 2 : 0.5))
+            .shadow(color: .black.opacity(0.12), radius: 2, y: 1)
+            .scaleEffect((0..<0.14).contains(t - Self.picks[index]) ? 0.92 : 1)
+            .position(Self.tiles[index])
+    }
+
+    private var medal: some View {
+        let size = Self.medalSize
+        let arrive = min(max((t - 6.3) / 0.6, 0), 1)
+        let overshoot = 1 + 2.70158 * pow(arrive - 1, 3) + 1.70158 * pow(arrive - 1, 2)
+        let leave = GameStory.ramp(t, 8.95, 0.4)
+        let sweep = (t - 7.0) / 0.8
+        return Medal(award: Self.award, size: size)
+            .overlay {
+                if (0..<1).contains(sweep) {
+                    let glint = 1.3 * sweep - 0.15
+                    MedalShape(kind: Self.award.kind, inset: size * 0.08)
+                        .fill(LinearGradient(
+                            stops: [
+                                .init(color: .white.opacity(0), location: 0.2),
+                                .init(color: .white.opacity(0.5), location: 0.42),
+                                .init(color: .white.opacity(0.9), location: 0.5),
+                                .init(color: .white.opacity(0.5), location: 0.58),
+                                .init(color: .white.opacity(0), location: 0.8),
+                            ],
+                            startPoint: UnitPoint(x: glint - 0.3, y: glint - 0.3),
+                            endPoint: UnitPoint(x: glint + 0.3, y: glint + 0.3)
+                        ))
+                }
+            }
+            .scaleEffect((0.25 + 0.75 * overshoot) * (1 - 0.2 * leave))
+            .rotationEffect(.degrees((1 - arrive) * -16))
+            .shadow(color: .black.opacity(0.2), radius: 5, y: 3)
+            .offset(y: 1.5 * sin(2 * .pi * t / 2.4))
+            .opacity(GameStory.ramp(t, 6.3, 0.25) * (1 - leave))
+            .position(Self.centre)
+    }
+
+    private var pointer: some View {
+        var tip = Self.route[Self.route.count - 1].1
+        if let next = Self.route.firstIndex(where: { t < $0.0 }) {
+            let (t0, from) = Self.route[max(next - 1, 0)], (t1, to) = Self.route[next]
+            let e = next > 0 ? CGFloat(GameStory.ramp(t, t0, t1 - t0)) : 0
+            tip = CGPoint(x: from.x + (to.x - from.x) * e, y: from.y + (to.y - from.y) * e)
+        }
+        return ArtCursor(pressed: Self.picks.contains { (0..<0.14).contains(t - $0) })
+            .position(x: tip.x + 6, y: tip.y + 9)
+    }
+
+    var body: some View {
+        let night = scheme == .dark
+        let grid = t < 7 ? 1 - GameStory.ramp(t, 6.0, 0.35) : GameStory.ramp(t, 9.2, 0.35)
+        Stage {
+            ZStack {
+                ForEach(0..<Self.tiles.count, id: \.self) { tile($0) }
+            }
+            .scaleEffect(0.88 + 0.12 * grid, anchor: UnitPoint(x: Self.centre.x / 300, y: 0.5))
+            .opacity(grid)
+            medal
+            Canvas { context, _ in
+                var figure = context
+                figure.translateBy(x: Self.ground.x, y: Self.ground.y)
+                figure.scaleBy(x: Self.scale, y: Self.scale)
+                PetFigure.shadow(pose) { figure.fill($0, with: .color($1)) }
+                PetFigure.draw(pose, night: night) { figure.fill($0, with: .color($1)) }
+                for pick in Self.picks {
+                    burst(context, at: CGPoint(x: Self.ground.x, y: Self.ground.y - 40), from: pick + Self.swap, reach: CGSize(width: 58, height: 40))
+                }
+                burst(context, at: Self.centre, from: 6.5, reach: CGSize(width: 62, height: 50))
+                for twinkle in Self.twinkles {
+                    let p = (t - twinkle.start) / 0.7
+                    guard (0..<1).contains(p) else { continue }
+                    let at = CGPoint(x: Self.centre.x + twinkle.offset.x, y: Self.centre.y + twinkle.offset.y)
+                    context.fill(Self.star(at, twinkle.size * CGFloat(sin(.pi * p))), with: .color(Art.yellow))
+                }
+            }
+            pointer
         }
     }
 }

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Habillez votre compagnon
+
+<sub>1.35.0 · 12 octobre 2026</sub>
+
+Votre compagnon a maintenant une garde-robe, et vous gagnez de nouvelles pièces en jouant ensemble.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Compagnon et choisissez ce que porte votre compagnon : chapeaux, lunettes, écharpes, chemises, chaussures, capes et même des ailes. Il l’enfile aussitôt. Quelques pièces sont offertes, les autres sont des récompenses qui arrivent quand vous jouez ensemble : attrapez votre compagnon et lancez-le, faites rouler le ballon, regardez-le grimper sur les fenêtres et bavarder, ou tenez-lui simplement compagnie jour après jour. Quand vous gagnez une récompense, il vous le dit.
+
+Des tenues toutes prêtes l’habillent de la tête aux pieds d’un seul clic : sorcier, pirate, astronaute, super-héros, roi et d’autres. Une tenue est prête dès que vous avez gagné toutes ses pièces.
+
+Seuls des chiffres simples sont gardés, comme les pas, les lancers et les jours passés ensemble. Ils restent sur votre Mac, rien n’est envoyé nulle part et vous pouvez les effacer à tout moment dans Réglages › Compagnon.
+
+---
+
+## <a id="v1.34.0"></a>Souris et trackpad dans les jeux
+
+<sub>1.34.0 · 12 octobre 2026</sub>
+
+Les balayages, les pincements et les coins actifs ne vous sortent plus du jeu, comme les raccourcis clavier.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Jeux › Autres réglages de jeu, le groupe « Souris et trackpad » liste uniquement ce qui est activé dans macOS sur votre Mac, avec les noms d’Apple et un petit dessin pour chaque élément : raccourcis sur un bouton de la souris, balayage entre bureaux et apps en plein écran, Mission Control et App Exposé, pincement pour les apps et écartement pour le bureau, balayage depuis le bord droit pour le centre de notifications et chaque coin actif avec son action. Tant qu’un jeu est au premier plan, ils sont suspendus : un balayage involontaire ou un effleurement d’un coin de l’écran ne vous sortira pas du jeu. Les gestes à l’intérieur du jeu continuent de fonctionner. Chaque élément peut être réglé pour fonctionner comme d’habitude.
+
+---
+
 ## <a id="v1.33.2"></a>Les groupes de raccourcis s’ouvrent instantanément
 
 <sub>1.33.2 · 11 octobre 2026</sub>

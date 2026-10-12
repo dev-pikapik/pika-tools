@@ -177,7 +177,7 @@ Homebrew and the script both put the app in `/Applications`, launch it, ask for 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
 <br><b>Pet on the desktop</b>
-<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump.
+<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ The app picks up the change within a couple of seconds, no restart needed.
 
 Some features ask for more when you use them: **Fan control**, **Finder Extensions**, **iCloud Drive** and **Full Disk Access**. They're all on the Permissions page in Settings: each permission has a line about what it's for, a green check or an orange cross, and one button, **Allow** when it's missing and **Turn Off** when it's on. So you can take any permission back right there.
 
-pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. The only network request is the update check, which asks GitHub for the latest release.
+pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. pikapik goes online only for updates (it asks GitHub for the latest release and downloads it only if you choose to update) and for the Speed Test when you start it (it uses Apple's servers). The Mac App Store version is updated by the App Store, and its Speed Test uses Cloudflare. The progress of your pet (steps, throws, awards and the like) is counted only on this Mac and never sent anywhere. You can erase it in Settings › Pet.
 
 </details>
 
@@ -245,7 +245,13 @@ Turn on Game Mode and play. More game settings holds the catalogue published by 
 
 Automatic pauses actions that open windows or move focus. A quick deliberate language shortcut switches the input source silently. Held movement keys keep their priority, so running and jumping don’t change the language by accident.
 
+Settings → Games → More game settings has a group called Mouse and trackpad. It lists only what is turned on in macOS on your Mac, with Apple’s own names and a small drawing for each: shortcuts on a mouse button, swiping between desktops and full-screen apps, Mission Control and App Exposé, pinching for Apps and spreading for the Desktop, the swipe in from the right edge for Notification Centre, and every hot corner with the action it runs. While a game is in front they are paused, so a stray swipe or a brush against a screen corner can’t pull you out of it. Gestures inside the game keep working. Each one can be set to work as usual.
+
 Open Settings → Games → Add a Game and click your running game. Games through Java and other runtimes appear here too, even without an app bundle. Minecraft appears as Minecraft instead of java. Find the game’s process and drag its row onto Your games in Settings → Games.
+
+**Pet wardrobe and awards.** Open Settings › Pet to dress your pet: more than 30 things to wear, from hats and glasses to capes and wings, and ready-made looks such as a wizard, a pirate or an astronaut. A few are free from the start. The rest are awards that come as you play together: pick your pet up and toss it, kick the ball around, watch it climb windows and chat, or simply keep it company day after day. Your pet tells you when you have earned a new one.
+
+To know when an award is due, pikapik only counts what you and your pet do: steps, pick-ups, throws, jumps, climbs, ball games, chats, days together, whether you were together early in the morning, after midnight or at a weekend, the Settings pages you opened and the things you tried on. Outside the Mac App Store, pikapik also notes whether you opened our GitHub page from Settings. The counts, the date of each award and what your pet wears stay on this Mac. Nothing is sent anywhere, and none of it goes into the exported settings file or iCloud sync. Erase it all any time in Settings › Pet, and your pet starts over.
 
 Each tool has its own switch in the menu and in Settings.
 
@@ -289,6 +295,8 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: hide with a click in the Dock.
 - **Finder**: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash.
+- **Games**: your list of games and the Game Mode options.
+- **Pet**: turn the little friend on or off, let it chat and play with a ball, dress it up and see your awards.
 - **Permissions**: every permission pikapik uses, each with its status and one button to allow it or turn it off. A tool that is missing a permission looks half-grey, and clicking it opens this page at the right row.
 - **About**: version, links to the changelog and to report a problem.
 

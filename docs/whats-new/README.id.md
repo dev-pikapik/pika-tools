@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Dandani peliharaan Anda
+
+<sub>1.35.0 · 12 Oktober 2026</sub>
+
+Peliharaan Anda kini punya lemari pakaian, dan Anda meraih barang baru untuk dipakainya sambil bermain bersama.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Peliharaan dan pilih apa yang dipakai peliharaan Anda: topi, kacamata, syal, kaus, sepatu, jubah, bahkan sayap. Dia langsung memakainya. Beberapa barang gratis, sisanya adalah penghargaan yang datang saat Anda bermain bersama: angkat peliharaan lalu lempar, tendang bolanya, lihat dia memanjat jendela dan mengobrol, atau sekadar temani dia hari demi hari. Saat Anda meraih penghargaan, peliharaan akan memberi tahu Anda.
+
+Gaya siap pakai mendandani peliharaan dari kepala sampai kaki dengan sekali klik: penyihir, bajak laut, astronaut, pahlawan super, raja, dan masih banyak lagi. Setiap gaya siap dipakai setelah Anda meraih semua bagiannya.
+
+Hanya angka sederhana yang disimpan, seperti langkah, lemparan, dan hari bersama. Angka itu tetap di Mac Anda, tidak ada yang dikirim ke mana pun, dan Anda bisa menghapusnya kapan saja di Pengaturan › Peliharaan.
+
+---
+
+## <a id="v1.34.0"></a>Mouse dan trackpad di dalam game
+
+<sub>1.34.0 · 12 Oktober 2026</sub>
+
+Gesekan, cubitan, dan sudut aktif kini tidak lagi mengeluarkan Anda dari game, seperti pintasan keyboard.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Game › Pengaturan game lainnya ada grup “Mouse dan trackpad”. Grup ini hanya menampilkan apa yang aktif di macOS pada Mac Anda, dengan nama dari Apple dan gambar kecil untuk setiap item: pintasan pada tombol mouse, geser antar desktop dan app layar penuh, Mission Control dan App Exposé, cubit untuk app dan rentangkan untuk Desktop, geser dari tepi kanan untuk Pusat Pemberitahuan, dan setiap sudut aktif beserta aksinya. Selama game berada di depan, semuanya dijeda, jadi geseran tak sengaja atau sentuhan di sudut layar tidak akan mengeluarkan Anda dari game. Gestur di dalam game tetap berfungsi. Setiap item bisa diatur agar bekerja seperti biasa.
+
+---
+
 ## <a id="v1.33.2"></a>Grup pintasan terbuka seketika
 
 <sub>1.33.2 · 11 Oktober 2026</sub>

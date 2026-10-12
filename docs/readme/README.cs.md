@@ -177,7 +177,7 @@ Homebrew i skript uloží aplikaci do `/Applications`, spustí ji, požádají o
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mazlíček na ploše</b>
-<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí.
+<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
 Některé funkce žádají při použití o něco víc: **Ovládání ventilátorů**, **Rozšíření Finderu**, **iCloud Drive** a **Úplný přístup k disku**. Všechno je na stránce Oprávnění v nastavení: každé oprávnění má řádek o tom, k čemu slouží, zelenou fajfku nebo oranžový křížek a jedno tlačítko: **Povolit**, když chybí, **Vypnout**, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam.
 
-pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Jediný síťový požadavek je kontrola aktualizací, která se GitHubu ptá na nejnovější verzi.
+pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. pikapik se připojuje k internetu jen kvůli aktualizacím (ptá se GitHubu na nejnovější verzi a stáhne ji, jen když se rozhodnete aktualizovat) a kvůli testu rychlosti, když ho spustíte (používá servery Apple). Verzi z Mac App Store aktualizuje App Store a její test rychlosti používá Cloudflare. Postup mazlíčka (kroky, hody, ocenění a podobně) se počítá jen v tomto Macu a nikam se neposílá. Smazat ho můžete v Nastavení › Mazlíček.
 
 </details>
 
@@ -245,7 +245,13 @@ Zapněte herní režim a hrajte. Další nastavení hry obsahuje katalog Macu s 
 
 Automaticky pozastaví akce otevírající okna nebo měnící fokus. Krátká úmyslná jazyková zkratka změní zdroj bez systémového okna. Držené klávesy pohybu mají přednost, takže běh a skákání nezmění jazyk náhodou.
 
+V Nastavení → Hry → Další nastavení hry je skupina „Myš a trackpad“. Zobrazuje jen to, co je v macOS na vašem Macu zapnuté, s názvy od Applu a malým obrázkem u každé položky: zkratky na tlačítku myši, přejetí mezi plochami a aplikacemi na celou obrazovku, Mission Control a App Exposé, sevření prstů pro aplikace a rozevření pro plochu, přejetí od pravého okraje pro Oznamovací centrum a každý aktivní roh s jeho akcí. Dokud je hra v popředí, jsou pozastavené, takže nechtěné přejetí nebo dotek rohu obrazovky vás z hry nevyvede. Gesta uvnitř hry fungují dál. Každou položku lze nastavit tak, aby fungovala jako obvykle.
+
 Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Objeví se i hry přes Javu a jiná prostředí, i bez souboru .app. Minecraft se jmenuje Minecraft místo java. Najděte proces hry a přetáhněte řádek na Vaše hry v Nastavení → Hry.
+
+**Šatník a ocenění mazlíčka.** Otevřete Nastavení › Mazlíček a oblékněte svého mazlíčka: přes 30 kousků, od klobouků a brýlí po pláště a křídla, a hotové kostýmy třeba pro čaroděje, piráta nebo astronauta. Pár kousků je zdarma hned od začátku. Zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte nové ocenění, mazlíček vám to řekne.
+
+Aby pikapik věděl, kdy je čas na ocenění, počítá jen to, co děláte vy a váš mazlíček: kroky, kolikrát ho zvednete a hodíte, skoky, lezení, hru s míčem a řeči, společné dny, jestli jste byli spolu brzy ráno, po půlnoci nebo o víkendu, které stránky nastavení jste otevřeli a co jste vyzkoušeli. Mimo Mac App Store si pikapik také poznamenává, zda jste z Nastavení otevřeli naši stránku na GitHubu. Tato čísla, datum každého ocenění a to, co má mazlíček na sobě, zůstávají v tomto Macu. Nic se nikam neposílá a nic z toho nejde do exportovaného souboru nastavení ani do synchronizace přes iCloud. Všechno můžete kdykoli smazat v Nastavení › Mazlíček a mazlíček začne od nuly.
 
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
@@ -289,6 +295,8 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: skrytí kliknutím v Docku.
 - **Finder**: nový soubor, menší kopie a převod, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
+- **Hry**: seznam vašich her a volby Herního režimu.
+- **Mazlíček**: zapnutí a vypnutí, povídání a míč, šatník a ocenění.
 - **Oprávnění**: všechna oprávnění, která pikapik používá, každé se svým stavem a tlačítkem pro povolení nebo vypnutí. Nástroj, kterému chybí oprávnění, vypadá napůl šedě a kliknutí na něj otevře tuto stránku u správného řádku.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 

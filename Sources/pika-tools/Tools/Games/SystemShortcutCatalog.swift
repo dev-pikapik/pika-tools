@@ -15,7 +15,7 @@ enum GameShortcutMode: String, CaseIterable {
 }
 
 enum SystemShortcutKind: String, CaseIterable {
-    case existing, screenshot, selection, capturePanel, zoom, contrast, invert, voice, captions, presenter, focusMode, brightness, volume, window, language, note, notifications, forceQuit, other
+    case existing, screenshot, selection, capturePanel, zoom, contrast, invert, voice, captions, presenter, focusMode, brightness, volume, window, language, note, notifications, forceQuit, pointer, other
 
     var symbol: String {
         switch self {
@@ -36,6 +36,7 @@ enum SystemShortcutKind: String, CaseIterable {
         case .note: "note.text"
         case .notifications: "bell.fill"
         case .forceQuit: "xmark.app.fill"
+        case .pointer: "computermouse"
         }
     }
 }
@@ -50,11 +51,12 @@ struct SystemGameShortcut: Identifiable {
     let character: UInt16
     let modifiers: UInt64
     let enabled: Bool
+    var pointer: PointerTrigger? = nil
 
     var emergency: Bool { id == 0 || key == UInt16(kVK_Escape) && modifiers & 0x1C0000 == 0x180000 }
     var assigned: Bool { key != UInt16.max }
     var listed: Bool { SystemShortcutCatalog.nonempty(name) != nil }
-    var controller: GameRule? { Self.controller(id) }
+    var controller: GameRule? { pointer?.controller ?? Self.controller(id) }
     var supportsBackground: Bool { [60, 61].contains(id) }
     var previewRule: GameRule? { rawName.lowercased().contains("siri") ? .siri : controller }
 
@@ -67,6 +69,7 @@ struct SystemGameShortcut: Identifiable {
 
     var kind: SystemShortcutKind {
         let raw = rawName.lowercased()
+        if pointer != nil { return .pointer }
         if emergency { return .forceQuit }
         if raw.contains("siri") { return .existing }
         if section == "screenshots" {
@@ -155,8 +158,9 @@ enum SystemShortcutCatalog {
             return true
         }
         let paused = Set(HotKeyTrace.ids(.standard) ?? [])
-        return ids.compactMap { id in
-            guard let value = values[id] else { return nil }
+        let buttons = PointerShortcuts.buttons(configured)
+        let keyboard = ids.compactMap { id -> SystemGameShortcut? in
+            guard let value = values[id], !buttons.contains(id) else { return nil }
             let label = metadata[id]
             let emergency = id == 0 || value.key == UInt16(kVK_Escape) && value.modifiers & 0x1C0000 == 0x180000
             let name = nonempty(label?.name) ?? (emergency ? String(localized: "Force Quit") : legacyName(id)) ?? ""
@@ -168,12 +172,14 @@ enum SystemShortcutCatalog {
                 enabled: paused.contains(id) || SymbolicHotKeys.isEnabled(id)
             )
         }
+        let mouse = PointerShortcuts.buttonRows(buttons, metadata: metadata, active: { paused.contains($0) || SymbolicHotKeys.isEnabled($0) }, names: PointerShortcuts.appleNames)
+        return keyboard + mouse + PointerShortcuts.load()
     }
 
     static func selected(_ entries: [SystemGameShortcut], rules: Set<GameRule>, values: [String], appSwitcher: Bool) -> [Int32] {
         var ids = Set(GameRules.hotKeys(rules, appSwitcher: appSwitcher))
         let overrides = SystemGameShortcut.overrides(values)
-        for entry in entries {
+        for entry in entries where !PointerShortcuts.isSynthetic(entry.id) {
             if entry.mode(rules: rules, overrides: overrides) != .system { ids.insert(entry.id) } else { ids.remove(entry.id) }
         }
         return ids.sorted()
@@ -251,7 +257,7 @@ enum SystemShortcutCatalog {
         return result
     }
 
-    private static func strings(_ bundle: Bundle, _ name: String) -> [String: String] {
+    static func strings(_ bundle: Bundle, _ name: String) -> [String: String] {
         let table = bundle.url(forResource: name, withExtension: "loctable")
             .flatMap { NSDictionary(contentsOf: $0) as? [String: Any] } ?? [:]
         let languages = UserDefaults.standard.stringArray(forKey: "AppleLanguages")

@@ -177,7 +177,7 @@ Tanto Homebrew como el script colocan la app en `/Applications`, la abren, piden
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mascota en el escritorio</b>
-<br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte.
+<br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ La app detecta el cambio en un par de segundos, sin necesidad de reiniciar.
 
 Algunas funciones piden algo más cuando las usas: **Control de ventiladores**, **Extensiones de Finder**, **iCloud Drive** y **Acceso total al disco**. Todo está en la página Permisos de los ajustes: cada permiso tiene una línea que dice para qué sirve, una marca verde o una cruz naranja y un solo botón: **Permitir** cuando falta, **Apagar** cuando está activo. Así puedes retirar cualquier permiso ahí mismo.
 
-pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los eventos se procesan en memoria y se transmiten al instante. La única conexión de red es la búsqueda de actualizaciones, que pregunta a GitHub cuál es la última versión.
+pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los eventos se procesan en memoria y se transmiten al instante. pikapik solo se conecta a internet para las actualizaciones (pregunta a GitHub cuál es la última versión y solo la descarga si decides actualizar) y para la prueba de velocidad cuando tú la inicias (usa los servidores de Apple). La versión de la Mac App Store la actualiza la App Store, y su prueba de velocidad usa Cloudflare. El progreso de tu mascota (pasos, lanzamientos, premios y similares) se cuenta solo en este Mac y nunca se envía a ninguna parte. Puedes borrarlo en Ajustes › Mascota.
 
 </details>
 
@@ -245,7 +245,13 @@ Activa el modo Juego y juega. Más ajustes del juego contiene el catálogo de tu
 
 Automático pausa las acciones que abren ventanas o cambian el foco. Un atajo de idioma breve e intencionado cambia la fuente sin una ventana del sistema. Las teclas de movimiento mantenidas tienen prioridad para que correr y saltar no cambien el idioma por accidente.
 
+En Ajustes → Juegos → Más ajustes del juego hay un grupo llamado «Ratón y trackpad». Muestra solo lo que está activado en macOS en tu Mac, con los nombres de Apple y un pequeño dibujo para cada uno: atajos en un botón del ratón, deslizar entre escritorios y apps a pantalla completa, Mission Control y App Exposé, pellizcar para las apps y separar los dedos para el escritorio, deslizar desde el borde derecho para el Centro de notificaciones y cada esquina activa con su acción. Mientras un juego está al frente, quedan en pausa, así que un deslizamiento accidental o un roce con la esquina de la pantalla no te sacará del juego. Los gestos dentro del juego siguen funcionando. Cada uno se puede dejar funcionando como siempre.
+
 Abre Ajustes → Juegos → Añadir un juego y haz clic en el juego abierto. También aparecen los juegos que usan Java u otros entornos, incluso sin archivo .app. Minecraft se muestra como Minecraft en lugar de java. Busca el proceso del juego y arrastra su fila a Tus juegos en Ajustes → Juegos.
+
+**Armario y premios de la mascota.** Abre Ajustes › Mascota para vestir a tu mascota: más de 30 prendas, desde gorros y gafas hasta capas y alas, y disfraces ya preparados, como mago, pirata o astronauta. Unas pocas son gratis desde el principio. El resto son premios que llegan mientras jugáis juntos: coge a tu mascota y lánzala, dale patadas a la pelota, mírala trepar por las ventanas y charlar, o simplemente hazle compañía día tras día. Cuando consigas un premio nuevo, tu mascota te lo dirá.
+
+Para saber cuándo toca un premio, pikapik solo cuenta lo que hacéis tú y tu mascota: pasos, las veces que la coges y la lanzas, sus saltos, trepadas, partidas de pelota y charlas, los días juntos, si estuvisteis juntos de madrugada, pasada la medianoche o en fin de semana, las páginas de Ajustes que abriste y las prendas que probaste. Fuera de la Mac App Store, pikapik también anota si abriste nuestra página de GitHub desde Ajustes. Estos números, la fecha de cada premio y lo que lleva puesto tu mascota se quedan en este Mac. No se envía nada a ninguna parte y nada de esto entra en el archivo de ajustes exportado ni en la sincronización con iCloud. Puedes borrarlo todo cuando quieras en Ajustes › Mascota, y tu mascota empezará de cero.
 
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes.
 
@@ -289,6 +295,8 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: ocultar con un clic en el Dock.
 - **Finder**: archivo nuevo, copia más ligera y conversión, abrir con Intro, cortar con ⌘X y borrar con ⌫.
+- **Juegos**: tu lista de juegos y las opciones del Modo de juego.
+- **Mascota**: actívala o desactívala, deja que charle y juegue con la pelota, vístela y mira tus premios.
 - **Permisos**: todos los permisos que usa pikapik, cada uno con su estado y un botón para permitirlo o apagarlo. Una herramienta a la que le falta un permiso aparece en gris; al hacer clic en ella se abre esta página en la fila correcta.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 

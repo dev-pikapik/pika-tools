@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Îmbracă-ți animăluțul
+
+<sub>1.35.0 · 12 octombrie 2026</sub>
+
+Animăluțul tău are acum o garderobă, iar piese noi câștigi jucându-vă împreună.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Deschide Configurări › Animăluț și alege ce poartă animăluțul: pălării, ochelari, fulare, tricouri, încălțăminte, pelerine și chiar aripi. Animăluțul le îmbracă pe loc. Câteva piese sunt gratuite, iar restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu, animăluțul îți spune.
+
+Ținutele gata făcute îl îmbracă din cap până în picioare cu un singur clic: vrăjitor, pirat, astronaut, supererou, rege și altele. O ținută e gata când ai câștigat toate piesele ei.
+
+Se păstrează doar numere simple, cum ar fi pașii, aruncările și zilele petrecute împreună. Ele rămân pe Mac-ul tău, nimic nu este trimis nicăieri, iar tu le poți șterge oricând din Configurări › Animăluț.
+
+---
+
+## <a id="v1.34.0"></a>Mouse și trackpad în jocuri
+
+<sub>1.34.0 · 12 octombrie 2026</sub>
+
+Glisările, ciupirile și colțurile active nu te mai scot din joc, la fel ca scurtăturile de tastatură.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+În Configurări › Jocuri › Mai multe configurări de joc există grupul „Mouse și trackpad”. Arată doar ce este activat în macOS pe Mac-ul tău, cu numele date de Apple și un desen mic pentru fiecare: scurtături pe un buton al mouse-ului, glisarea între desktopuri și aplicații pe tot ecranul, Mission Control și App Exposé, ciupirea pentru aplicații și îndepărtarea degetelor pentru desktop, glisarea de la marginea dreaptă pentru Centrul de notificări și fiecare colț activ cu acțiunea lui. Cât timp un joc este în prim-plan, acestea sunt oprite, așa că o glisare accidentală sau o atingere a unui colț al ecranului nu te scoate din joc. Gesturile din interiorul jocului continuă să funcționeze. Fiecare poate fi setat să funcționeze ca de obicei.
+
+---
+
 ## <a id="v1.33.2"></a>Grupurile de scurtături se deschid instantaneu
 
 <sub>1.33.2 · 11 octombrie 2026</sub>

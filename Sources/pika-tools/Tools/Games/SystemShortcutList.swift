@@ -100,7 +100,13 @@ struct SystemShortcutRow: View {
     }
 
     @ViewBuilder private var shortcut: some View {
-        if let text = entry.text {
+        if let pointer = entry.pointer {
+            if pointer.modifiers.isEmpty {
+                Button("Change in System Settings") { NSWorkspace.shared.open(pointer.settings) }.buttonStyle(.link)
+            } else {
+                KeyCaps(keys: [pointer.modifiers], system: SystemShortcuts.Place(url: pointer.settings, hint: nil))
+            }
+        } else if let text = entry.text {
             KeyCaps(keys: [text], system: SystemShortcuts.place([entry.id]))
         } else {
             ShortcutAssignmentLink(place: SystemShortcuts.place([entry.id]))
@@ -176,7 +182,7 @@ private enum RowHeights {
     }
 
     private static func shape(_ entry: SystemGameShortcut) -> String {
-        "\(entry.detail ?? "")|\(entry.text?.count ?? 0)|\(entry.emergency)|\(entry.assigned && !entry.enabled)"
+        "\(entry.detail ?? "")|\(entry.text?.count ?? 0)|\(entry.emergency)|\(entry.assigned && !entry.enabled)|\(entry.pointer != nil)"
     }
 }
 

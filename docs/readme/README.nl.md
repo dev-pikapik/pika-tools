@@ -177,7 +177,7 @@ Zowel Homebrew als het script zetten de app in `/Applications`, openen hem, vrag
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Huisdiertje op het bureaublad</b>
-<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt.
+<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen.
 </td>
 </tr></tbody>
 </table>
@@ -196,7 +196,7 @@ De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet
 
 Sommige functies vragen om meer als je ze gebruikt: **Ventilatorbeheer**, **Finder-extensies**, **iCloud Drive** en **Volledige schijftoegang**. Alles staat op de pagina Toestemmingen in de instellingen: elke toestemming heeft een regel over waarvoor ze dient, een groen vinkje of een oranje kruisje en één knop: **Toestaan** als ze ontbreekt, **Zet uit** als ze aan staat. Zo trek je elke toestemming meteen terug.
 
-pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Het enige netwerkverzoek is de controle op updates, waarbij GitHub om de nieuwste versie wordt gevraagd.
+pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. pikapik gaat alleen online voor updates (het vraagt GitHub om de nieuwste versie en downloadt die alleen als je ervoor kiest om bij te werken) en voor de snelheidstest als je die start (daarbij worden servers van Apple gebruikt). De versie uit de Mac App Store wordt door de App Store bijgewerkt, en de snelheidstest daarvan gebruikt Cloudflare. De voortgang van je huisdiertje (stappen, worpen, onderscheidingen en dergelijke) wordt alleen op deze Mac geteld en nooit ergens naartoe verstuurd. Je kunt die wissen in Instellingen › Huisdiertje.
 
 </details>
 
@@ -245,7 +245,13 @@ Zet Spelmodus aan en speel. Meer spelinstellingen bevat de catalogus van je Mac,
 
 Automatisch pauzeert acties die vensters openen of focus verplaatsen. Een kort bewust taalkortcommando wisselt de bron zonder systeemvenster. Vastgehouden bewegingstoetsen hebben voorrang, zodat rennen en springen niet per ongeluk de taal wisselen.
 
+In Instellingen → Spellen → Meer spelinstellingen staat een groep ‘Muis en trackpad’. Daarin staat alleen wat in macOS op je Mac is ingeschakeld, met de namen van Apple en een kleine tekening bij elk onderdeel: toetscombinaties op een muisknop, vegen tussen bureaubladen en apps in volledig scherm, Mission Control en App Exposé, knijpen voor apps en spreiden voor het bureaublad, vegen vanaf de rechterrand voor het Berichtencentrum en elke actieve hoek met de actie die erbij hoort. Zolang een game vooraan staat, zijn ze gepauzeerd, zodat een onbedoelde veeg of een aanraking van een hoek van het scherm je niet uit de game haalt. Gebaren in de game blijven gewoon werken. Elk onderdeel kan zo worden ingesteld dat het werkt zoals gewoonlijk.
+
 Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. Ook spellen via Java en andere omgevingen verschijnen hier, zelfs zonder .app-bestand. Minecraft heet Minecraft in plaats van java. Zoek het spelproces en sleep de rij naar Je spellen in Instellingen → Spellen.
+
+**Kledingkast en onderscheidingen van je huisdiertje.** Open Instellingen › Huisdiertje om je huisdiertje aan te kleden: meer dan 30 dingen, van hoeden en brillen tot capes en vleugels, en kant-en-klare outfits zoals tovenaar, piraat of astronaut. Een paar dingen zijn vanaf het begin gratis. De rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een nieuwe onderscheiding hebt verdiend, vertelt je huisdiertje het je.
+
+Om te weten wanneer een onderscheiding toekomt, telt pikapik alleen wat jij en je huisdiertje doen: stappen, hoe vaak je het oppakt en gooit, sprongen, klimpartijen, balspelletjes en praatjes, dagen samen, of jullie vroeg in de ochtend, na middernacht of in het weekend samen waren, welke pagina’s van Instellingen je opende en wat je hebt gepast. Buiten de Mac App Store noteert pikapik ook of je vanuit Instellingen onze GitHub-pagina hebt geopend. Deze aantallen, de datum van elke onderscheiding en wat je huisdiertje draagt blijven op deze Mac. Er wordt niets ergens naartoe verstuurd en niets hiervan komt in het geëxporteerde instellingenbestand of in de iCloud-synchronisatie. Je kunt alles op elk moment wissen in Instellingen › Huisdiertje, en je huisdiertje begint opnieuw.
 
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
@@ -289,6 +295,8 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: verbergen met een klik in het Dock.
 - **Finder**: nieuw bestand, kleinere kopie en omzetten, openen met Return, knippen met ⌘X en verwijderen met ⌫.
+- **Games**: je lijst met games en de opties van de Gamemodus.
+- **Huisdiertje**: zet het aan of uit, laat het kletsen en met de bal spelen, kleed het aan en bekijk je onderscheidingen.
 - **Toestemmingen**: alle toestemmingen die pikapik gebruikt, elk met zijn status en één knop om ze toe te staan of uit te zetten. Een functie waarvoor een toestemming ontbreekt, ziet er half grijs uit; een klik erop opent deze pagina bij de juiste regel.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 

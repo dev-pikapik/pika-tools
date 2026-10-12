@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.35.0"></a>Vista o seu bichinho
+
+<sub>1.35.0 · 12 de outubro de 2026</sub>
+
+O bichinho agora tem um guarda-roupa, e você ganha peças novas enquanto vocês brincam juntos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.35.0/wardrobe-dark.png"><img src="../media/whats-new/1.35.0/wardrobe-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Bichinho e escolha o que o bichinho vai vestir: chapéus, óculos, cachecóis, camisetas, sapatos, capas e até asas. Ele coloca na hora. Algumas peças são grátis e o resto são prêmios que chegam enquanto vocês brincam juntos: pegue o bichinho e jogue para o alto, chute a bola, veja ele subir nas janelas e conversar, ou simplesmente faça companhia a ele dia após dia. Quando você ganhar um prêmio, o bichinho avisa.
+
+Looks prontos vestem o bichinho da cabeça aos pés com um clique: mago, pirata, astronauta, super-herói, rei e mais. Um look fica pronto quando você ganha todas as peças dele.
+
+Só números simples são guardados, como passos, arremessos e dias juntos. Eles ficam no seu Mac, nada é enviado para lugar nenhum e você pode apagá-los quando quiser em Ajustes › Bichinho.
+
+---
+
+## <a id="v1.34.0"></a>Mouse e trackpad nos jogos
+
+<sub>1.34.0 · 12 de outubro de 2026</sub>
+
+Gestos de deslizar, pinça e cantos ativos não tiram mais você do jogo, assim como os atalhos de teclado.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.34.0/pointer-shortcuts-dark.png"><img src="../media/whats-new/1.34.0/pointer-shortcuts-light.png" width="340" alt=""></picture>
+
+Em Ajustes › Jogos › Mais ajustes do jogo há um grupo chamado “Mouse e trackpad”. Ele mostra só o que está ativado no macOS no seu Mac, com os nomes da Apple e um pequeno desenho para cada item: atalhos em um botão do mouse, deslizar entre mesas e apps em tela inteira, Mission Control e App Exposé, pinça para apps e afastar os dedos para a mesa, deslizar a partir da borda direita para a Central de Notificações e cada canto ativo com a ação que ele executa. Enquanto um jogo está em primeiro plano, eles ficam pausados, então um deslize acidental ou um toque no canto da tela não tira você do jogo. Os gestos dentro do jogo continuam funcionando. Cada item pode ser configurado para funcionar como de costume.
+
+---
+
 ## <a id="v1.33.2"></a>Grupos de atalhos abrem na hora
 
 <sub>1.33.2 · 11 de outubro de 2026</sub>
