@@ -80,6 +80,7 @@ final class ToolRegistry {
         list.append(SideButtonsTool())
         list.append(HideAppTool())
         #if !APPSTORE
+        list.append(MiddleClickTool())
         list.append(WindowZoomTool())
         #endif
         list.append(CommandKeysTool())

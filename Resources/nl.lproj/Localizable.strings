@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, beeldscherm, scherm, externe monitor, dimmen, donkerder, lichter, achtergrondverlichting";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "toetsenbord, F1, F2, helderheid omhoog, helderheid omlaag, toetsen, monitor, scherm";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dimmen, donkerder, softwarematig dimmen, monitor, beeldscherm, scherm";
+"Middle click on the trackpad" = "Middelklik op het trackpad";
+"Like the middle mouse button" = "Net als de middelste muisknop";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Tik of klik met drie of vier vingers om een link in een nieuw tabblad te openen of een tabblad te sluiten, net als met de middelste muisknop.";
+"Fingers" = "Vingers";
+"Three fingers" = "Drie vingers";
+"Four fingers" = "Vier vingers";
+"Tap or click with three fingers" = "Tik of klik met drie vingers";
+"Tap or click with four fingers" = "Tik of klik met vier vingers";
+"Click only: a tap looks up the word" = "Alleen klikken: tikken zoekt het woord op";
+"Click only: tap to click is off" = "Alleen klikken: ‘Tikken om te klikken’ staat uit";
+"Three-finger drag is on: choose four fingers" = "‘Slepen met drie vingers’ staat aan: kies vier vingers";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "middelste knop, klik met scrollwiel, drie vingers, vier vingers, tikken, link openen in nieuw tabblad, tabblad sluiten";
+"middle click, three, four, tap, click, trackpad" = "middelklik, drie, vier, tikken, klikken, trackpad";

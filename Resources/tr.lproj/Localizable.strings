@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitör, ekran, harici ekran, karartma, daha koyu, daha parlak, arka ışık";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klavye, F1, F2, parlaklığı artır, parlaklığı azalt, tuşlar, monitör, ekran";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, karartma, daha koyu, yazılımla karartma, monitör, ekran";
+"Middle click on the trackpad" = "İzleme dörtgeninde orta tıklama";
+"Like the middle mouse button" = "Farenin orta düğmesi gibi";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Bir bağlantıyı yeni sekmede açmak ya da bir sekmeyi kapatmak için üç veya dört parmakla dokunun ya da tıklayın; farenin orta düğmesi gibi.";
+"Fingers" = "Parmaklar";
+"Three fingers" = "Üç parmak";
+"Four fingers" = "Dört parmak";
+"Tap or click with three fingers" = "Üç parmakla dokunun ya da tıklayın";
+"Tap or click with four fingers" = "Dört parmakla dokunun ya da tıklayın";
+"Click only: a tap looks up the word" = "Yalnızca tıklama: dokunma sözcüğün anlamını gösterir";
+"Click only: tap to click is off" = "Yalnızca tıklama: “Tıklamak için dokunma” kapalı";
+"Three-finger drag is on: choose four fingers" = "Üç parmakla sürükleme açık: dört parmak seçin";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "orta düğme, tekerlek tıklaması, üç parmak, dört parmak, dokunma, bağlantıyı yeni sekmede aç, sekmeyi kapat";
+"middle click, three, four, tap, click, trackpad" = "orta tıklama, üç, dört, dokunma, tıklama, izleme dörtgeni";

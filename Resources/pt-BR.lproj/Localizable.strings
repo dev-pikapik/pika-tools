@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, tela, tela externa, escurecer, mais escuro, mais claro, retroiluminação";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "teclado, F1, F2, aumentar brilho, diminuir brilho, teclas, monitor, tela";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, escurecer, mais escuro, escurecimento por software, monitor, tela";
+"Middle click on the trackpad" = "Clique do meio no trackpad";
+"Like the middle mouse button" = "Como o botão do meio do mouse";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Toque ou clique com três ou quatro dedos para abrir um link em uma nova aba ou fechar uma aba, como com o botão do meio do mouse.";
+"Fingers" = "Dedos";
+"Three fingers" = "Três dedos";
+"Four fingers" = "Quatro dedos";
+"Tap or click with three fingers" = "Toque ou clique com três dedos";
+"Tap or click with four fingers" = "Toque ou clique com quatro dedos";
+"Click only: a tap looks up the word" = "Só clique: o toque pesquisa a palavra";
+"Click only: tap to click is off" = "Só clique: “Tocar para clicar” está desativado";
+"Three-finger drag is on: choose four fingers" = "Arrastar com três dedos está ativado: escolha quatro";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "botão do meio, clique da roda, três dedos, quatro dedos, toque, abrir link em nova aba, fechar aba";
+"middle click, three, four, tap, click, trackpad" = "clique do meio, três, quatro, toque, clique, trackpad";

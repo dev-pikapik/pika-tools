@@ -266,6 +266,13 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br>Lỡ gõ ghbdtn thay vì привет? Nhấn phím cách là sửa xong.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Bấm giữa trên bàn di chuột</b>
+<br>Chạm bằng ba ngón tay để mở liên kết trong tab mới, giống như nút giữa của chuột.
+</td>
+</tr></tbody>
 </table>
 
 ## Chi tiết
@@ -314,6 +321,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 **Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 giúp lùi và tiến trong Finder, Safari và các ứng dụng khác của Apple cũng như trong nhiều ứng dụng khác, giống như vuốt trên bàn di chuột. Các ứng dụng tự xử lý hai nút này sẽ nhận chúng nguyên trạng. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
 
 **Nút chuột ẩn ứng dụng hiện tại.** Bật **Ẩn ứng dụng hiện tại bằng nút chuột** trong Cài đặt › Chuột rồi nhấn nút bạn muốn dùng, chẳng hạn nút giữa hoặc một nút bên. Từ đó, nhấn một lần là ẩn ứng dụng ở phía trước, giống hệt ⌘H: ứng dụng vẫn chạy, và bấm vào biểu tượng của nó trong Dock sẽ đưa nó trở lại. Khi bạn chơi game với Chế độ trò chơi đang bật, nút vẫn hoạt động trong game như thường. Tắt theo mặc định.
+
+**Bấm giữa trên bàn di chuột.** Chạm hoặc bấm bằng ba ngón tay, bàn di chuột sẽ hoạt động như nút giữa của chuột: trong hầu hết trình duyệt, thao tác này mở liên kết trong tab mới hoặc đóng tab. Bạn cũng có thể chọn bốn ngón tay thay vì ba. Để chạm được, hãy bật **Chạm để bấm** trong Cài đặt hệ thống › Bàn di chuột. Nếu ở đó “Tra cứu & bộ dò tìm dữ liệu” được đặt là chạm bằng ba ngón tay, ba ngón tay chỉ có thể bấm, còn nếu kéo bằng ba ngón tay đang bật, hãy chọn bốn ngón tay. Hàng **Ngón tay** trong Cài đặt cho biết điều gì hoạt động trên máy Mac của bạn. Chuột vẫn giữ nguyên. Tính năng này cần quyền **Trợ năng** và **Theo dõi đầu vào** và không có trong phiên bản Mac App Store. Mặc định tắt.
 
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
 
@@ -414,7 +423,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cổng**: chương trình nào đang chiếm cổng nào, địa chỉ và chi tiết, cùng một nút để giải phóng cổng.
 - **Âm thanh**: âm lượng ứng dụng, thanh trượt và nút tắt tiếng cho mỗi ứng dụng phát âm thanh.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End, sửa từ gõ nhầm bố cục.
-- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên, nút ẩn ứng dụng hiện tại.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên, nút ẩn ứng dụng hiện tại, bấm giữa trên bàn di chuột.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: thu nhỏ hoặc ẩn bằng một lần bấm trong Dock và giữ Dock trên một màn hình.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X, xóa bằng ⌫, ẩn biểu tượng trên màn hình nền và hiện tệp ẩn.

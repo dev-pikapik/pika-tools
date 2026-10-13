@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, displej, obrazovka, externí monitor, ztlumení, tmavší, světlejší, podsvícení";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klávesnice, F1, F2, zvýšit jas, snížit jas, klávesy, monitor, displej";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, ztlumení, tmavší, softwarové ztmavení, monitor, displej, obrazovka";
+"Middle click on the trackpad" = "Prostřední kliknutí na trackpadu";
+"Like the middle mouse button" = "Jako prostřední tlačítko myši";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Klepnutím nebo kliknutím třemi či čtyřmi prsty otevřete odkaz na nové kartě nebo zavřete kartu, jako prostředním tlačítkem myši.";
+"Fingers" = "Prsty";
+"Three fingers" = "Tři prsty";
+"Four fingers" = "Čtyři prsty";
+"Tap or click with three fingers" = "Klepněte nebo klikněte třemi prsty";
+"Tap or click with four fingers" = "Klepněte nebo klikněte čtyřmi prsty";
+"Click only: a tap looks up the word" = "Jen kliknutí: klepnutí vyhledá význam slova";
+"Click only: tap to click is off" = "Jen kliknutí: „Kliknutí klepnutím“ je vypnuté";
+"Three-finger drag is on: choose four fingers" = "„Tažení třemi prsty“ je zapnuté: zvolte čtyři prsty";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "prostřední tlačítko, kliknutí kolečkem, tři prsty, čtyři prsty, klepnutí, otevřít odkaz na nové kartě, zavřít kartu";
+"middle click, three, four, tap, click, trackpad" = "prostřední kliknutí, tři, čtyři, klepnutí, kliknutí, trackpad";

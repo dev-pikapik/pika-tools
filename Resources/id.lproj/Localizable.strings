@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, layar, tampilan, layar eksternal, redup, lebih gelap, lebih terang, lampu latar";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "papan ketik, keyboard, F1, F2, naikkan kecerahan, turunkan kecerahan, tombol, monitor, layar";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, redup, lebih gelap, peredupan perangkat lunak, monitor, layar";
+"Middle click on the trackpad" = "Klik tengah di trackpad";
+"Like the middle mouse button" = "Seperti tombol tengah tetikus";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Ketuk atau klik dengan tiga atau empat jari untuk membuka tautan di tab baru atau menutup tab, seperti tombol tengah tetikus.";
+"Fingers" = "Jari";
+"Three fingers" = "Tiga jari";
+"Four fingers" = "Empat jari";
+"Tap or click with three fingers" = "Ketuk atau klik dengan tiga jari";
+"Tap or click with four fingers" = "Ketuk atau klik dengan empat jari";
+"Click only: a tap looks up the word" = "Hanya klik: ketukan menampilkan arti kata";
+"Click only: tap to click is off" = "Hanya klik: “Ketuk untuk mengeklik” mati";
+"Three-finger drag is on: choose four fingers" = "“Seret Tiga Jari” menyala: pilih empat jari";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "tombol tengah, klik roda, tiga jari, empat jari, ketuk, buka tautan di tab baru, tutup tab";
+"middle click, three, four, tap, click, trackpad" = "klik tengah, tiga, empat, ketuk, klik, trackpad";

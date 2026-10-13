@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "شاشة، شاشة خارجية، عرض، تعتيم، أغمق، أسطع، إضاءة خلفية";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "لوحة المفاتيح، F1، F2، رفع السطوع، خفض السطوع، مفاتيح، شاشة";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "غاما، تعتيم، أغمق، تعتيم برمجي، شاشة، عرض";
+"Middle click on the trackpad" = "النقر الأوسط على لوحة التعقب";
+"Like the middle mouse button" = "مثل زر الماوس الأوسط";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "اضغط أو انقر بثلاثة أصابع أو أربعة لفتح رابط في علامة تبويب جديدة أو إغلاق علامة تبويب، مثل زر الماوس الأوسط.";
+"Fingers" = "الأصابع";
+"Three fingers" = "ثلاثة أصابع";
+"Four fingers" = "أربعة أصابع";
+"Tap or click with three fingers" = "اضغط أو انقر بثلاثة أصابع";
+"Tap or click with four fingers" = "اضغط أو انقر بأربعة أصابع";
+"Click only: a tap looks up the word" = "النقر فقط: الضغط يعرض معنى الكلمة";
+"Click only: tap to click is off" = "النقر فقط: «الضغط للنقر» متوقف";
+"Three-finger drag is on: choose four fingers" = "«السحب بثلاثة أصابع» قيد التشغيل: اختر أربعة أصابع";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "الزر الأوسط، النقر بالعجلة، ثلاثة أصابع، أربعة أصابع، ضغط، فتح الرابط في علامة تبويب جديدة، إغلاق علامة التبويب";
+"middle click, three, four, tap, click, trackpad" = "النقر الأوسط، ثلاثة، أربعة، ضغط، نقر، لوحة التعقب";

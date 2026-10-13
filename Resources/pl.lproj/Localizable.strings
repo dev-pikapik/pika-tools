@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, wyświetlacz, ekran, monitor zewnętrzny, przygaszanie, ciemniej, jaśniej, podświetlenie";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klawiatura, F1, F2, zwiększ jasność, zmniejsz jasność, klawisze, monitor, wyświetlacz";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, przygaszanie, ciemniej, programowe przyciemnianie, monitor, wyświetlacz, ekran";
+"Middle click on the trackpad" = "Środkowe kliknięcie na gładziku";
+"Like the middle mouse button" = "Jak środkowy przycisk myszy";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Stuknij lub kliknij trzema albo czterema palcami, aby otworzyć link w nowej karcie lub zamknąć kartę, jak środkowym przyciskiem myszy.";
+"Fingers" = "Palce";
+"Three fingers" = "Trzy palce";
+"Four fingers" = "Cztery palce";
+"Tap or click with three fingers" = "Stuknij lub kliknij trzema palcami";
+"Tap or click with four fingers" = "Stuknij lub kliknij czterema palcami";
+"Click only: a tap looks up the word" = "Tylko kliknięcie: stuknięcie pokazuje znaczenie słowa";
+"Click only: tap to click is off" = "Tylko kliknięcie: „Klikanie stuknięciem” jest wyłączone";
+"Three-finger drag is on: choose four fingers" = "Włączone przeciąganie trzema palcami: wybierz cztery";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "środkowy przycisk, kliknięcie kółkiem, trzy palce, cztery palce, stuknięcie, otwórz link w nowej karcie, zamknij kartę";
+"middle click, three, four, tap, click, trackpad" = "środkowe kliknięcie, trzy, cztery, stuknięcie, kliknięcie, gładzik";

@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, afișaj, ecran, monitor extern, estompare, mai întunecat, mai luminos, iluminare de fundal";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tastatură, F1, F2, mărește luminozitatea, micșorează luminozitatea, taste, monitor, afișaj";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, estompare, mai întunecat, estompare software, monitor, afișaj, ecran";
+"Middle click on the trackpad" = "Clic de mijloc pe trackpad";
+"Like the middle mouse button" = "Ca butonul din mijloc al mausului";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Atinge sau fă clic cu trei sau patru degete ca să deschizi un link într-o filă nouă sau să închizi o filă, ca și cu butonul din mijloc al mausului.";
+"Fingers" = "Degete";
+"Three fingers" = "Trei degete";
+"Four fingers" = "Patru degete";
+"Tap or click with three fingers" = "Atinge sau fă clic cu trei degete";
+"Tap or click with four fingers" = "Atinge sau fă clic cu patru degete";
+"Click only: a tap looks up the word" = "Doar clic: atingerea caută cuvântul";
+"Click only: tap to click is off" = "Doar clic: „Atingere pentru clic” e dezactivată";
+"Three-finger drag is on: choose four fingers" = "Tragerea cu trei degete e activată: alege patru";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "butonul din mijloc, clic cu rotița, trei degete, patru degete, atingere, deschide linkul într-o filă nouă, închide fila";
+"middle click, three, four, tap, click, trackpad" = "clic de mijloc, trei, patru, atingere, clic, trackpad";

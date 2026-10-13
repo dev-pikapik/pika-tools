@@ -266,6 +266,13 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br>Hai scritto ghbdtn invece di привет? Premi Spazio e la parola si corregge.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Clic centrale sul trackpad</b>
+<br>Tocca con tre dita per aprire un link in una nuova scheda, come con il tasto centrale del mouse.
+</td>
+</tr></tbody>
 </table>
 
 ## Più dettagli
@@ -314,6 +321,8 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 **Tasti laterali per indietro e avanti.** I tasti 4 e 5 del mouse vanno indietro e avanti nel Finder, in Safari e in altre app Apple e in molte altre app, proprio come uno swipe sul trackpad. Le app che gestiscono questi tasti da sole li ricevono così come sono. Se il tuo mouse li ha invertiti, attiva **Inverti i tasti laterali**. Disattivato di default.
 
 **Un tasto del mouse nasconde l’app corrente.** Attiva **Nascondi l’app corrente con un tasto del mouse** in Impostazioni › Mouse e premi il tasto che vuoi usare, per esempio il tasto centrale o uno laterale. Da quel momento basta premerlo una volta per nascondere l’app in primo piano, proprio come ⌘H: l’app resta in esecuzione, e un clic sulla sua icona nel Dock la fa ricomparire. Mentre giochi con la Modalità gioco attiva, il tasto funziona nel gioco come sempre. Disattivato di default.
+
+**Clic centrale sul trackpad.** Tocca o fai clic con tre dita e il trackpad funziona come il tasto centrale del mouse: nella maggior parte dei browser così apri un link in una nuova scheda o chiudi una scheda. Puoi anche scegliere quattro dita. Per toccare devi attivare **Tocca per fare clic** in Impostazioni di Sistema › Trackpad. Se lì «Cerca info e rilevatori dati» è impostato sul tocco con tre dita, con tre dita puoi solo fare clic, e se «Trascina con tre dita» è attivo, scegli quattro dita. La riga **Dita** in Impostazioni ti dice cosa funziona sul tuo Mac. Il mouse resta com’è. Richiede i permessi **Accessibilità** e **Monitoraggio input**, e non è nella versione del Mac App Store. Disattivato di default.
 
 **Esci quando si chiude l’ultima finestra.** Chiudi l’ultima finestra di un’app e l’app si chiude. Il Finder resta aperto, così come le app con finestre su altre scrivanie o nel Dock. Puoi indicare le app che non devono mai chiudersi in questo modo. Disattivato di default.
 
@@ -414,7 +423,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Porte**: quale programma occupa quale porta, i suoi indirizzi e i dettagli, e un pulsante per liberare la porta.
 - **Suono**: volume delle app, con un cursore e un pulsante per silenziare ogni app che riproduce suoni.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End, correzione del layout sbagliato.
-- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali, un tasto che nasconde l’app corrente.
+- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali, un tasto che nasconde l’app corrente, clic centrale sul trackpad.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: ridurre o nascondere con un clic nel Dock e tenere il Dock su un solo schermo.
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X, eliminazione con ⌫, occultamento delle icone della scrivania e visualizzazione dei file nascosti.

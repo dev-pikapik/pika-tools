@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "монитор, дисплей, экран, внешний монитор, затемнение, темнее, ярче, подсветка";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "клавиатура, F1, F2, ярче, темнее, клавиши, монитор, дисплей";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "гамма, затемнение, темнее, программное затемнение, монитор, дисплей, экран";
+"Middle click on the trackpad" = "Средний щелчок на трекпаде";
+"Like the middle mouse button" = "Как средняя кнопка мыши";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Коснитесь или нажмите тремя или четырьмя пальцами, чтобы открыть ссылку в новой вкладке или закрыть вкладку, как средней кнопкой мыши.";
+"Fingers" = "Пальцы";
+"Three fingers" = "Три пальца";
+"Four fingers" = "Четыре пальца";
+"Tap or click with three fingers" = "Коснитесь или нажмите тремя пальцами";
+"Tap or click with four fingers" = "Коснитесь или нажмите четырьмя пальцами";
+"Click only: a tap looks up the word" = "Только нажатие: касание показывает значение слова";
+"Click only: tap to click is off" = "Только нажатие: «Касание для нажатия» выключено";
+"Three-finger drag is on: choose four fingers" = "Включено перетягивание тремя пальцами: выберите четыре";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "средняя кнопка, щелчок колесом, три пальца, четыре пальца, касание, открыть ссылку в новой вкладке, закрыть вкладку";
+"middle click, three, four, tap, click, trackpad" = "средний щелчок, три, четыре, касание, нажатие, трекпад";

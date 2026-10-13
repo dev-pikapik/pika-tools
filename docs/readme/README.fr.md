@@ -266,6 +266,13 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br>Vous avez tapé ghbdtn au lieu de привет ? Appuyez sur Espace, et c’est corrigé.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Clic du milieu sur le trackpad</b>
+<br>Touchez avec trois doigts pour ouvrir un lien dans un nouvel onglet, comme avec le bouton du milieu de la souris.
+</td>
+</tr></tbody>
 </table>
 
 ## En savoir plus
@@ -314,6 +321,8 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 **Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris font précédent et suivant dans le Finder, Safari et les autres apps Apple, ainsi que dans de nombreuses autres apps, comme un balayage sur le trackpad. Les apps qui gèrent elles-mêmes ces boutons les reçoivent tels quels. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
 
 **Un bouton de la souris masque l’app active.** Activez **Masquer l’app active avec un bouton de la souris** dans Réglages › Souris et appuyez sur le bouton que vous voulez utiliser, par exemple le bouton du milieu ou un bouton latéral. Ensuite, un appui masque l’app au premier plan, exactement comme ⌘H : l’app continue de tourner, et un clic sur son icône dans le Dock la fait revenir. Quand vous jouez avec le Mode Jeu activé, le bouton fonctionne normalement dans le jeu. Désactivé par défaut.
+
+**Clic du milieu sur le trackpad.** Touchez ou cliquez avec trois doigts, et le trackpad agit comme le bouton du milieu de la souris : dans la plupart des navigateurs, cela ouvre un lien dans un nouvel onglet ou ferme un onglet. Vous pouvez aussi choisir quatre doigts. Pour que le toucher fonctionne, activez **Toucher pour cliquer** dans Réglages Système › Trackpad. Si « Recherche et détection de données » y est réglé sur un toucher avec 3 doigts, trois doigts ne peuvent que cliquer, et si « Faire glisser avec 3 doigts » est activé, choisissez quatre doigts. La ligne **Doigts** dans Réglages indique ce qui fonctionne sur votre Mac. La souris ne change pas. Cette fonction nécessite les autorisations **Accessibilité** et **Surveillance de l’entrée**, et n’existe pas dans la version du Mac App Store. Désactivé par défaut.
 
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
 
@@ -414,7 +423,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Ports** : quel programme occupe quel port, ses adresses et ses détails, et un bouton pour libérer le port.
 - **Son** : volume des apps, avec un curseur et un bouton pour couper le son de chaque app qui joue du son.
 - **Clavier** : changement de langue, répétition des touches, Home et End, correction de la mauvaise disposition.
-- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux, un bouton qui masque l’app active.
+- **Souris** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux, un bouton qui masque l’app active, clic du milieu sur le trackpad.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : réduire ou masquer d’un clic dans le Dock et garder le Dock sur un seul écran.
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X, supprimer avec ⌫, masquer les icônes du bureau et afficher les fichiers masqués.

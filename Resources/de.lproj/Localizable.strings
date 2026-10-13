@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "Monitor, Display, Bildschirm, externer Monitor, abdunkeln, dunkler, heller, Hintergrundbeleuchtung";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "Tastatur, F1, F2, heller, dunkler, Tasten, Monitor, Display";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "Gamma, abdunkeln, dunkler, Software-Abdunkelung, Monitor, Display, Bildschirm";
+"Middle click on the trackpad" = "Mittelklick auf dem Trackpad";
+"Like the middle mouse button" = "Wie die mittlere Maustaste";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Tippe oder klicke mit drei oder vier Fingern, um einen Link in einem neuen Tab zu öffnen oder einen Tab zu schließen – wie mit der mittleren Maustaste.";
+"Fingers" = "Finger";
+"Three fingers" = "Drei Finger";
+"Four fingers" = "Vier Finger";
+"Tap or click with three fingers" = "Tippe oder klicke mit drei Fingern";
+"Tap or click with four fingers" = "Tippe oder klicke mit vier Fingern";
+"Click only: a tap looks up the word" = "Nur Klicken: Tippen schlägt das Wort nach";
+"Click only: tap to click is off" = "Nur Klicken: „Klick durch Tippen“ ist aus";
+"Three-finger drag is on: choose four fingers" = "„Mit drei Fingern bewegen“ ist an: Wähle vier Finger";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "mittlere Taste, mittlere Maustaste, Mausradklick, drei Finger, vier Finger, tippen, Link in neuem Tab öffnen, Tab schließen";
+"middle click, three, four, tap, click, trackpad" = "Mittelklick, drei, vier, tippen, klicken, Trackpad";

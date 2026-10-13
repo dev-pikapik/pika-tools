@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "màn hình, monitor, màn hình ngoài, làm tối, tối hơn, sáng hơn, đèn nền";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "bàn phím, F1, F2, tăng độ sáng, giảm độ sáng, phím, màn hình";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, làm tối, tối hơn, làm tối bằng phần mềm, màn hình";
+"Middle click on the trackpad" = "Bấm giữa trên bàn di chuột";
+"Like the middle mouse button" = "Giống như nút giữa của chuột";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Chạm hoặc bấm bằng ba hoặc bốn ngón tay để mở liên kết trong tab mới hoặc đóng tab, giống như nút giữa của chuột.";
+"Fingers" = "Ngón tay";
+"Three fingers" = "Ba ngón tay";
+"Four fingers" = "Bốn ngón tay";
+"Tap or click with three fingers" = "Chạm hoặc bấm bằng ba ngón tay";
+"Tap or click with four fingers" = "Chạm hoặc bấm bằng bốn ngón tay";
+"Click only: a tap looks up the word" = "Chỉ bấm: chạm sẽ tra cứu từ";
+"Click only: tap to click is off" = "Chỉ bấm: “Chạm để bấm” đang tắt";
+"Three-finger drag is on: choose four fingers" = "Kéo bằng ba ngón tay đang bật: hãy chọn bốn ngón";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "nút giữa, bấm con lăn, ba ngón tay, bốn ngón tay, chạm, mở liên kết trong tab mới, đóng tab";
+"middle click, three, four, tap, click, trackpad" = "bấm giữa, ba, bốn, chạm, bấm, bàn di chuột";

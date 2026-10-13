@@ -266,6 +266,13 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br>привет yerine ghbdtn mi yazdınız? Boşluk tuşuna basın, hemen düzelsin.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>İzleme dörtgeninde orta tıklama</b>
+<br>Bir bağlantıyı yeni sekmede açmak için üç parmakla dokunun; farenin orta düğmesi gibi.
+</td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar
@@ -314,6 +321,8 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 **Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Finder’da, Safari’de ve diğer Apple uygulamalarında, ayrıca birçok başka uygulamada geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. Bu düğmeleri kendisi işleyen uygulamalar onları olduğu gibi alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 
 **Fare düğmesi geçerli uygulamayı gizler.** Ayarlar › Fare sayfasında **Fare düğmesiyle geçerli uygulamayı gizle** seçeneğini açın ve kullanmak istediğiniz düğmeye basın, örneğin orta düğmeye ya da bir yan düğmeye. Bundan sonra tek basış öndeki uygulamayı tıpkı ⌘H gibi gizler: uygulama çalışmaya devam eder, Dock’taki simgesine tıklayınca geri gelir. Oyun Modu açıkken oyun oynadığınız sürece düğme oyunda her zamanki gibi çalışır. Varsayılan olarak kapalıdır.
+
+**İzleme dörtgeninde orta tıklama.** Üç parmakla dokunduğunuzda ya da tıkladığınızda izleme dörtgeni farenin orta düğmesi gibi çalışır: çoğu tarayıcıda bu, bir bağlantıyı yeni sekmede açar ya da bir sekmeyi kapatır. İsterseniz üç yerine dört parmak seçebilirsiniz. Dokunmanın çalışması için Sistem Ayarları › İzleme Dörtgeni’nde **Tıklamak için dokunma** açık olmalıdır. Orada “Araştırma ve veri algılayıcıları” üç parmakla dokunmaya ayarlıysa üç parmak yalnızca tıklayabilir; üç parmakla sürükleme açıksa dört parmak seçin. Ayarlar’daki **Parmaklar** satırı bu Mac’te neyin çalıştığını gösterir. Fare olduğu gibi kalır. **Erişilebilirlik** ve **Girdi İzleme** izinlerini gerektirir ve Mac App Store sürümünde yoktur. Varsayılan olarak kapalı.
 
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
@@ -414,7 +423,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Portlar**: hangi programın hangi portu tuttuğu, adresleri ve ayrıntıları, portu serbest bırakan bir düğme.
 - **Ses**: uygulama sesi, ses çalan her uygulama için bir sürgü ve bir sessize alma düğmesi.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End, yanlış klavye düzenini düzeltme.
-- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler, geçerli uygulamayı gizleyen bir düğme.
+- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler, geçerli uygulamayı gizleyen bir düğme, izleme dörtgeninde orta tıklama.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak küçültme veya gizleme ve Dock’u tek ekranda tutma.
 - **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme, ⌫ ile silme, masaüstü simgelerini gizleme ve gizli dosyaları gösterme.

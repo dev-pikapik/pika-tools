@@ -266,6 +266,13 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br>ghbdtn getypt in plaats van привет? Druk op de spatiebalk en het woord staat goed.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Middelklik op het trackpad</b>
+<br>Tik met drie vingers om een link in een nieuw tabblad te openen, net als met de middelste muisknop.
+</td>
+</tr></tbody>
 </table>
 
 ## Meer weten
@@ -314,6 +321,8 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 **Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in de Finder, Safari en andere Apple-apps en in veel andere apps, net als een veeg op het trackpad. Apps die deze knoppen zelf afhandelen, krijgen ze ongewijzigd. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
 
 **Een muisknop verbergt de huidige app.** Zet **Verberg de huidige app met een muisknop** aan in Instellingen › Muis en druk op de knop die je wilt gebruiken, bijvoorbeeld de middelste knop of een zijknop. Daarna verbergt één druk de app op de voorgrond, precies zoals ⌘H: de app blijft draaien, en een klik op zijn symbool in het Dock haalt hem terug. Terwijl je met de Gamemodus aan speelt, werkt de knop in de game zoals altijd. Standaard uit.
+
+**Middelklik op het trackpad.** Tik of klik met drie vingers, en het trackpad werkt als de middelste muisknop: in de meeste browsers opent dat een link in een nieuw tabblad of sluit het een tabblad. Je kunt ook vier vingers kiezen. Voor tikken moet **Tikken om te klikken** aanstaan in Systeeminstellingen › Trackpad. Staat ‘Opzoeken en datadetectie’ daar op tikken met drie vingers, dan kunnen drie vingers alleen klikken, en staat ‘Slepen met drie vingers’ aan, kies dan vier vingers. De rij **Vingers** in Instellingen laat zien wat er op jouw Mac werkt. De muis blijft zoals hij is. Deze functie heeft de toestemmingen **Toegankelijkheid** en **Invoerbewaking** nodig en zit niet in de versie uit de Mac App Store. Standaard uit.
 
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
 
@@ -414,7 +423,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Poorten**: welk programma welke poort bezet houdt, de adressen en details, en een knop om de poort vrij te maken.
 - **Geluid**: app-volume, een schuifregelaar en een dempknop voor elke app die geluid afspeelt.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End, verkeerde indeling corrigeren.
-- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen, een knop die de huidige app verbergt.
+- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen, een knop die de huidige app verbergt, middelklik op het trackpad.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: minimaliseren of verbergen met een klik in het Dock en het Dock op één scherm houden.
 - **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X, verwijderen met ⌫, bureaubladsymbolen verbergen en verborgen bestanden tonen.

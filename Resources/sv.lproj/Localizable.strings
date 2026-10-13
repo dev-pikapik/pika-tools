@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "bildskärm, skärm, monitor, extern bildskärm, dämpa, mörkare, ljusare, bakgrundsbelysning";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tangentbord, F1, F2, öka ljusstyrka, minska ljusstyrka, tangenter, bildskärm, skärm";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dämpa, mörkare, mjukvarudämpning, bildskärm, skärm";
+"Middle click on the trackpad" = "Mittklick på styrplattan";
+"Like the middle mouse button" = "Som mittknappen på en mus";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Tryck eller klicka med tre eller fyra fingrar för att öppna en länk i en ny flik eller stänga en flik, som med mittknappen på en mus.";
+"Fingers" = "Fingrar";
+"Three fingers" = "Tre fingrar";
+"Four fingers" = "Fyra fingrar";
+"Tap or click with three fingers" = "Tryck eller klicka med tre fingrar";
+"Tap or click with four fingers" = "Tryck eller klicka med fyra fingrar";
+"Click only: a tap looks up the word" = "Bara klick: ett tryck slår upp ordet";
+"Click only: tap to click is off" = "Bara klick: ”Tryck för att klicka” är av";
+"Three-finger drag is on: choose four fingers" = "Trefingersdragning är på: välj fyra fingrar";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "mittknapp, hjulklick, tre fingrar, fyra fingrar, tryck, öppna länk i ny flik, stäng flik";
+"middle click, three, four, tap, click, trackpad" = "mittklick, tre, fyra, tryck, klick, styrplatta";

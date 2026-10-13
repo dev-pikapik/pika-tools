@@ -75,6 +75,12 @@ The language switch uses a listen-only `CGEventTap`, so it never changes or dela
 swiftc -parse-as-library Sources/pika-tools/Tools/InputSwitch/InputSwitchGesture.swift scripts/test-input-switch.swift -o build/test-input-switch && build/test-input-switch
 ```
 
+Middle click on the trackpad uses two `CGEventTap`s. A listen-only one reads the fingers from gesture events with `NSEvent.allTouches()`, leaving out resting thumbs, and `MiddleClickGesture` decides when a quick tap with the chosen number of fingers ends; pikapik then posts a middle button click at the pointer. The other one turns a left or right press made while that many fingers are down into the middle button: down, drag and up. Both read the trackpad settings each time, so a three-finger tap stays with Look up and a three-finger press with three-finger drag. The tap decision can be tested without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Mouse/MiddleClickGesture.swift scripts/test-middle-click.swift -o build/test-middle-click && build/test-middle-click
+```
+
 Animations writes hidden macOS preferences with `CFPreferencesSetAppValue`: the Dock keys go to `com.apple.dock`, the Finder key to `com.apple.finder` and the rest to the global domain. pikapik remembers which keys it wrote, so Restore Defaults and `--uninstall` delete exactly those; a value set in Terminal is shown as it is and stays until you move its slider. A change to a Dock key restarts the Dock once, 0.6 seconds after the last change, and Finder restarts only from its button. The slider math and what gets written live in `AnimationSetting`, which you can test without the app:
 
 ```bash

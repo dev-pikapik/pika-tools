@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dim, darker, software dimming, monitor, display, screen";
+"Middle click on the trackpad" = "Middle click on the trackpad";
+"Like the middle mouse button" = "Like the middle mouse button";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button.";
+"Fingers" = "Fingers";
+"Three fingers" = "Three fingers";
+"Four fingers" = "Four fingers";
+"Tap or click with three fingers" = "Tap or click with three fingers";
+"Tap or click with four fingers" = "Tap or click with four fingers";
+"Click only: a tap looks up the word" = "Click only: a tap looks up the word";
+"Click only: tap to click is off" = "Click only: tap to click is off";
+"Three-finger drag is on: choose four fingers" = "Three-finger drag is on: choose four fingers";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab";
+"middle click, three, four, tap, click, trackpad" = "middle click, three, four, tap, click, trackpad";

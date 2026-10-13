@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "모니터, 디스플레이, 화면, 외장 디스플레이, 어둡게, 더 어둡게, 더 밝게, 백라이트";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "키보드, F1, F2, 밝기 올리기, 밝기 내리기, 키, 모니터, 디스플레이";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "감마, 어둡게, 더 어둡게, 소프트웨어 밝기 조절, 모니터, 디스플레이, 화면";
+"Middle click on the trackpad" = "트랙패드에서 가운데 클릭";
+"Like the middle mouse button" = "마우스 가운데 버튼처럼";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "세 손가락이나 네 손가락으로 탭하거나 클릭하면 마우스 가운데 버튼처럼 링크를 새 탭에서 열거나 탭을 닫을 수 있습니다.";
+"Fingers" = "손가락";
+"Three fingers" = "세 손가락";
+"Four fingers" = "네 손가락";
+"Tap or click with three fingers" = "세 손가락으로 탭하거나 클릭하세요";
+"Tap or click with four fingers" = "네 손가락으로 탭하거나 클릭하세요";
+"Click only: a tap looks up the word" = "클릭만 가능: 탭하면 단어를 찾아봅니다";
+"Click only: tap to click is off" = "클릭만 가능: ‘탭하여 클릭하기’ 꺼짐";
+"Three-finger drag is on: choose four fingers" = "‘세 손가락으로 드래그하기’ 켜짐: 네 손가락을 선택하세요";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "가운데 버튼, 휠 클릭, 세 손가락, 네 손가락, 탭, 새 탭에서 링크 열기, 탭 닫기";
+"middle click, three, four, tap, click, trackpad" = "가운데 클릭, 세 손가락, 네 손가락, 탭, 클릭, 트랙패드";

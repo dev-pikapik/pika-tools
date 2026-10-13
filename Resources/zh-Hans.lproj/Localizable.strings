@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "显示器, 显示屏, 屏幕, 外接显示器, 调暗, 更暗, 更亮, 背光";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "键盘, F1, F2, 调高亮度, 调低亮度, 按键, 显示器, 显示屏";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "伽马, 调暗, 更暗, 软件调暗, 显示器, 显示屏, 屏幕";
+"Middle click on the trackpad" = "触控板中键点按";
+"Like the middle mouse button" = "就像鼠标中键";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "用三指或四指轻点或点按，即可在新标签页中打开链接或关闭标签页，就像鼠标中键一样。";
+"Fingers" = "手指";
+"Three fingers" = "三指";
+"Four fingers" = "四指";
+"Tap or click with three fingers" = "三指轻点或点按";
+"Tap or click with four fingers" = "四指轻点或点按";
+"Click only: a tap looks up the word" = "仅限点按：轻点用于查询词语";
+"Click only: tap to click is off" = "仅限点按：“轻点以点按”已关闭";
+"Three-finger drag is on: choose four fingers" = "三指拖移已打开：请选择四指";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "中键, 滚轮点击, 三指, 四指, 轻点, 在新标签页中打开链接, 关闭标签页";
+"middle click, three, four, tap, click, trackpad" = "中键点击, 三, 四, 轻点, 点按, 触控板";

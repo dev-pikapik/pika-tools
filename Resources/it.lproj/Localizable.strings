@@ -1168,3 +1168,16 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "monitor, schermo, display, monitor esterno, oscurare, più scuro, più chiaro, retroilluminazione";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tastiera, F1, F2, aumenta luminosità, diminuisci luminosità, tasti, monitor, schermo";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, oscurare, più scuro, oscuramento software, monitor, schermo, display";
+"Middle click on the trackpad" = "Clic centrale sul trackpad";
+"Like the middle mouse button" = "Come il tasto centrale del mouse";
+"Tap or click with three or four fingers to open a link in a new tab or close a tab, like the middle mouse button." = "Tocca o fai clic con tre o quattro dita per aprire un link in una nuova scheda o chiudere una scheda, come con il tasto centrale del mouse.";
+"Fingers" = "Dita";
+"Three fingers" = "Tre dita";
+"Four fingers" = "Quattro dita";
+"Tap or click with three fingers" = "Tocca o fai clic con tre dita";
+"Tap or click with four fingers" = "Tocca o fai clic con quattro dita";
+"Click only: a tap looks up the word" = "Solo clic: il tocco mostra la definizione della parola";
+"Click only: tap to click is off" = "Solo clic: «Tocca per fare clic» è disattivato";
+"Three-finger drag is on: choose four fingers" = "«Trascina con tre dita» è attivo: scegli quattro dita";
+"middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab" = "tasto centrale, clic della rotella, tre dita, quattro dita, tocco, apri link in una nuova scheda, chiudi scheda";
+"middle click, three, four, tap, click, trackpad" = "clic centrale, tre, quattro, tocco, clic, trackpad";
