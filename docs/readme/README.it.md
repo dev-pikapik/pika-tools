@@ -212,6 +212,11 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br><b>Tieni il Dock su un solo schermo</b>
 <br>Il Dock non salta più su un altro schermo. Tieni premuto ⌥ per spostarlo apposta.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Correggi il layout sbagliato</b>
+<br>Hai scritto ghbdtn invece di привет? Premi Spazio e la parola si corregge.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ L’app si accorge della modifica in un paio di secondi, senza bisogno di riavvi
 
 Alcune funzioni chiedono qualcosa in più quando le usi: **Controllo ventole**, **Estensioni del Finder**, **iCloud Drive**, **Accesso completo al disco** e **Registrazione schermo**. Sono tutte nella pagina Permessi delle impostazioni: ogni permesso ha una riga che dice a cosa serve, una spunta verde o una croce arancione e un solo pulsante: **Consenti** quando manca, **Spegni** quando è attivo. Così puoi revocare qualsiasi permesso proprio lì.
 
-pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. pikapik va online solo per gli aggiornamenti (chiede a GitHub qual è l’ultima versione e la scarica solo se scegli di aggiornare) e per la misura della velocità quando la avvii tu (usa i server di Apple). La versione del Mac App Store viene aggiornata dall’App Store, e la sua misura della velocità usa Cloudflare. I progressi del tuo animaletto (passi, lanci, premi e simili) vengono contati solo su questo Mac e non sono mai inviati da nessuna parte. Puoi cancellarli in Impostazioni › Animaletto.
+pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. Per correggere le parole scritte con il layout sbagliato, pikapik tiene in memoria solo le ultime parole che hai scritto e le dimentica appena fai clic o passi a un’altra app. Le uniche parole che salva sono quelle che gli hai chiesto di lasciare stare, solo su questo Mac, finché non le cancelli in Impostazioni › Tastiera. pikapik va online solo per gli aggiornamenti (chiede a GitHub qual è l’ultima versione e la scarica solo se scegli di aggiornare) e per la misura della velocità quando la avvii tu (usa i server di Apple). La versione del Mac App Store viene aggiornata dall’App Store, e la sua misura della velocità usa Cloudflare. I progressi del tuo animaletto (passi, lanci, premi e simili) vengono contati solo su questo Mac e non sono mai inviati da nessuna parte. Puoi cancellarli in Impostazioni › Animaletto.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicch
 **Ripeti un tasto tenuto premuto.** Tieni premuto un tasto e la lettera viene scritta più e più volte, invece di aprire il menu degli accenti. Comodo nei giochi e quando scrivi. Le app già aperte lo applicano dopo il riavvio. Se lo disattivi, macOS torna a comportarsi come sempre. Disattivato di default.
 
 **Home ed End vanno a inizio e fine riga.** Mentre scrivi, Home porta il cursore all’inizio della riga ed End alla fine, invece di scorrere la pagina. Con ⇧ selezionano fin lì, con ⌘ vanno all’inizio o alla fine di tutto il testo. Fuori dai campi di testo, e nei terminali, nelle macchine virtuali e nelle app di desktop remoto, i tasti funzionano come prima. Puoi aggiungere altre app in cui devono funzionare come al solito. Disattivato di default.
+
+**Correggi le parole scritte con il layout sbagliato.** Se una parola esce senza senso, come ghbdtn invece di привет, pikapik la riscrive nel layout giusto appena premi Spazio o Invio, e cambia layout perché la parola successiva venga giusta. Funziona con tutti i layout di tastiera che hai aggiunto sul Mac. Una parola cambia solo se non esiste in nessuna delle tue lingue e gli stessi tasti in un altro layout danno una parola comune, così nomi, refusi e parole rare restano come li hai scritti, e lo stesso vale per il testo nei campi delle password, in Terminale e nelle app che scegli tu. Premi ⌃⇧Spazio per correggere l’ultima parola o il testo selezionato, e premi di nuovo per provare gli altri layout. Subito dopo una correzione, gli stessi tasti la annullano, e pikapik non correggerà più quella parola da solo. Puoi cambiare la scorciatoia in Impostazioni › Tastiera. Nella versione del Mac App Store, seleziona il testo e scegli «Correggi layout tastiera» nel menu «Servizi». Disattivato di default.
 
 **Disattiva l’accelerazione del puntatore.** Il puntatore si sposta esattamente quanto il mouse, a qualsiasi velocità lo muovi. Un cursore **Velocità puntatore** ne regola la velocità. Funziona solo con i mouse, il trackpad resta com’è. Disattivala o esci da pikapik e macOS riprende le sue impostazioni. Disattivato di default.
 
@@ -366,7 +373,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Temperatura**: quanto è caldo il Mac, nel complesso e per ogni componente, come processore, memoria e batteria.
 - **Velocità internet**: misura la connessione e mostra a cosa basta.
 - **Porte**: quale programma occupa quale porta, i suoi indirizzi e i dettagli, e un pulsante per liberare la porta.
-- **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
+- **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End, correzione del layout sbagliato.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: ridurre o nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.

@@ -212,6 +212,11 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br><b>Ține Dock-ul pe un singur ecran</b>
 <br>Dock-ul nu mai sare pe alt ecran. Ține apăsat ⌥ ca să-l muți intenționat.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corectează aranjamentul greșit</b>
+<br>Ai scris ghbdtn în loc de привет? Apasă Spațiu și cuvântul se corectează.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Aplicația observă schimbarea în câteva secunde, fără repornire.
 
 Unele funcții cer mai mult atunci când le folosești: **Controlul ventilatoarelor**, **Extensii Finder**, **iCloud Drive**, **Acces complet la disc** și **Înregistrare ecran**. Toate sunt pe pagina Permisiuni din configurări: fiecare permisiune are un rând care spune la ce servește, o bifă verde sau o cruce portocalie și un singur buton: **Permite** când lipsește, **Stinge** când e activă. Așa poți retrage orice permisiune chiar acolo.
 
-pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. pikapik se conectează la internet doar pentru actualizări (întreabă GitHub care este cea mai nouă versiune și o descarcă numai dacă alegi să actualizezi) și pentru testul de viteză, când îl pornești (folosește serverele Apple). Versiunea din Mac App Store este actualizată de App Store, iar testul ei de viteză folosește Cloudflare. Progresul animăluțului (pași, aruncări, premii și altele asemenea) este numărat doar pe acest Mac și nu este trimis nicăieri. Îl poți șterge din Configurări › Animăluț.
+pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Ca să corecteze cuvintele scrise în aranjamentul greșit, pikapik ține în memorie doar ultimele câteva cuvinte tastate și le uită imediat ce dai clic sau treci în altă aplicație. Singurele cuvinte pe care le salvează sunt cele pe care i-ai cerut să le lase neschimbate, doar pe acest Mac, până când le ștergi din Configurări › Tastatură. pikapik se conectează la internet doar pentru actualizări (întreabă GitHub care este cea mai nouă versiune și o descarcă numai dacă alegi să actualizezi) și pentru testul de viteză, când îl pornești (folosește serverele Apple). Versiunea din Mac App Store este actualizată de App Store, iar testul ei de viteză folosește Cloudflare. Progresul animăluțului (pași, aruncări, premii și altele asemenea) este numărat doar pe acest Mac și nu este trimis nicăieri. Îl poți șterge din Configurări › Animăluț.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi s
 **Repetă tasta ținută apăsată.** Ține apăsată o tastă și litera se scrie din nou și din nou, în loc să apară meniul cu accente. Util în jocuri și când scrii. Aplicațiile deja deschise preiau asta după repornire. Dacă o dezactivezi, macOS se poartă din nou ca de obicei. Dezactivat implicit.
 
 **Home și End la începutul și sfârșitul rândului.** Cât timp scrii, Home duce cursorul la începutul rândului, iar End la sfârșitul lui, în loc să deruleze pagina. Cu ⇧ selectează până acolo, cu ⌘ merg la începutul sau sfârșitul întregului text. În afara câmpurilor de text, precum și în terminale, mașini virtuale și aplicații de desktop la distanță, tastele funcționează ca înainte. Poți adăuga și alte aplicații în care să funcționeze ca de obicei. Implicit dezactivat.
+
+**Corectarea cuvintelor scrise în aranjamentul greșit.** Dacă un cuvânt iese fără niciun sens, cum ar fi ghbdtn în loc de привет, pikapik îl rescrie în aranjamentul corect imediat ce apeși Spațiu sau Return și schimbă aranjamentul, ca următorul cuvânt să iasă bine. Funcționează cu toate aranjamentele de tastatură pe care le-ai adăugat pe Mac. Un cuvânt se schimbă doar dacă nu există în niciuna dintre limbile tale, iar aceleași taste dau într-un alt aranjament un cuvânt obișnuit, așa că numele, greșelile de tastare și cuvintele rare rămân cum le-ai scris, la fel ca textul din câmpurile pentru parole, din Terminal și din aplicațiile pe care le alegi. Apasă ⌃⇧Spațiu ca să corectezi ultimul cuvânt sau textul selectat și apasă din nou ca să încerci celelalte aranjamente. Imediat după o corectare, aceleași taste o anulează, iar pikapik nu mai corectează singur acel cuvânt. Poți schimba scurtătura în Configurări › Tastatură. În versiunea din Mac App Store, selectează textul și alege „Corectează aranjamentul tastaturii” din meniul „Servicii”. Implicit dezactivat.
 
 **Dezactivează accelerarea cursorului.** Cursorul se mișcă exact cât mausul, oricât de repede l-ai mișca. Un glisor **Viteză urmărire** stabilește cât de repede merge. Funcționează doar cu mausuri, trackpadul rămâne cum este. Dezactiveaz-o sau închide pikapik, iar macOS își recapătă propriile setări. Dezactivat implicit.
 
@@ -366,7 +373,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Temperatură**: cât de cald este Mac-ul, per total și pentru fiecare componentă, cum ar fi procesorul, memoria și bateria.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
 - **Porturi**: ce program a ocupat fiecare port, adresele și detaliile lui și un buton care eliberează portul.
-- **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
+- **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End, corectarea aranjamentului greșit.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.

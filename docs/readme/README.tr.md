@@ -212,6 +212,11 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br><b>Dock’u tek ekranda tut</b>
 <br>Dock artık başka bir ekrana atlamaz. Bilerek taşımak için ⌥ tuşunu basılı tutun.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Yanlış klavye düzenini düzelt</b>
+<br>привет yerine ghbdtn mi yazdınız? Boşluk tuşuna basın, hemen düzelsin.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya ge
 
 Bazı özellikler kullandığınızda ek izin ister: **Fan kontrolü**, **Finder Eklentileri**, **iCloud Drive**, **Tam Disk Erişimi** ve **Ekran Kaydı**. Hepsi ayarlardaki İzinler sayfasında toplanır: her iznin ne işe yaradığını anlatan bir satırı, yeşil bir onay işareti ya da turuncu bir çarpısı ve tek bir düğmesi vardır: izin eksikse **İzin Ver**, açıksa **Kapat**. Böylece herhangi bir izni hemen oradan geri alabilirsiniz.
 
-pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. pikapik internete yalnızca güncellemeler için (GitHub’a en son sürümü sorar, güncellemeyi seçerseniz de indirir) ve siz başlattığınızda hız testi için (Apple sunucularını kullanır) bağlanır. Mac App Store sürümünü App Store günceller, hız testi ise Cloudflare kullanır. Evcil dostunuzun ilerlemesi (adımlar, fırlatmalar, ödüller ve benzerleri) yalnızca bu Mac’te sayılır ve hiçbir yere gönderilmez. Ayarlar › Evcil Dost sayfasından silebilirsiniz.
+pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Yanlış klavye düzeninde yazılan sözcükleri düzeltebilmek için pikapik yalnızca son yazdığınız birkaç sözcüğü bellekte tutar ve tıkladığınız ya da başka bir uygulamaya geçtiğiniz anda bunları unutur. Kaydettiği sözcükler yalnızca olduğu gibi bırakmasını istedikleriniz olur; bunlar da yalnızca bu Mac’te, siz Ayarlar › Klavye sayfasından temizleyene kadar saklanır. pikapik internete yalnızca güncellemeler için (GitHub’a en son sürümü sorar, güncellemeyi seçerseniz de indirir) ve siz başlattığınızda hız testi için (Apple sunucularını kullanır) bağlanır. Mac App Store sürümünü App Store günceller, hız testi ise Cloudflare kullanır. Evcil dostunuzun ilerlemesi (adımlar, fırlatmalar, ödüller ve benzerleri) yalnızca bu Mac’te sayılır ve hiçbir yere gönderilmez. Ayarlar › Evcil Dost sayfasından silebilirsiniz.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz 
 **Basılı tutulan tuşu tekrarla.** Bir tuşu basılı tuttuğunuzda aksan menüsü yerine harf tekrar tekrar yazılır. Oyunlarda ve yazarken işe yarar. Zaten açık olan uygulamalar bunu yeniden başlatıldıktan sonra kullanır. Kapattığınızda macOS her zamanki gibi çalışır. Varsayılan olarak kapalıdır.
 
 **Home ve End satır başına ve sonuna gider.** Yazarken Home imleci satırın başına, End ise sonuna taşır; sayfa kaymaz. ⇧ ile oraya kadar seçer, ⌘ ile tüm metnin başına veya sonuna gider. Metin alanlarının dışında ve terminallerde, sanal makinelerde ve uzak masaüstü uygulamalarında tuşlar eskisi gibi çalışır. Her zamanki gibi çalışmaları gereken başka uygulamalar da ekleyebilirsiniz. Varsayılan olarak kapalı.
+
+**Yanlış klavye düzeninde yazılan sözcükleri düzeltme.** Bir sözcük anlamsız çıkarsa, örneğin привет yerine ghbdtn, Boşluk veya Return tuşuna bastığınız anda pikapik onu doğru düzende yeniden yazar ve sonraki sözcük doğru çıksın diye düzeni de değiştirir. Mac’inize eklediğiniz tüm klavye düzenleriyle çalışır. Bir sözcük yalnızca dillerinizin hiçbirinde yoksa ve aynı tuşlar başka bir düzende yaygın bir sözcük oluşturuyorsa değişir; bu yüzden adlar, yazım hataları ve nadir sözcükler yazdığınız gibi kalır, parola alanlarında, Terminal’de ve seçtiğiniz uygulamalarda da hiçbir şey değişmez. Son sözcüğü veya seçili metni düzeltmek için ⌃⇧Boşluk’a basın, diğer düzenlerinizi denemek için yeniden basın. Bir düzeltmenin hemen ardından aynı tuşlar onu geri alır ve pikapik o sözcüğü bir daha kendiliğinden düzeltmez. Kestirmeyi Ayarlar › Klavye sayfasından değiştirebilirsiniz. Mac App Store sürümünde metni seçin, ardından “Servisler” menüsünden “Klavye Düzenini Düzelt” komutunu seçin. Varsayılan olarak kapalı.
 
 **İmleç hızlandırmayı kapat.** Fareyi ne kadar hızlı hareket ettirirseniz ettirin, imleç tam olarak fare kadar hareket eder. **İzleme hızı** sürgüsü imlecin ne kadar hızlı gideceğini ayarlar. Yalnızca farelerle çalışır, İzleme Dörtgeni olduğu gibi kalır. Özelliği kapatın ya da pikapik’tan çıkın, macOS kendi ayarlarına geri döner. Varsayılan olarak kapalıdır.
 
@@ -366,7 +373,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Sıcaklık**: Mac’inizin ne kadar ısındığı, genel olarak ve işlemci, bellek, pil gibi her parça için.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
 - **Portlar**: hangi programın hangi portu tuttuğu, adresleri ve ayrıntıları, portu serbest bırakan bir düğme.
-- **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
+- **Klavye**: dil değiştirme, tuş tekrarı, Home ve End, yanlış klavye düzenini düzeltme.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.

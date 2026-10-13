@@ -41,6 +41,7 @@ enum RenderMedia {
         ("linear-pointer", 4.0, AnyView(PointerArt(on: true))),
         ("key-repeat", 4.55, AnyView(KeyRepeatArt(on: true))),
         ("home-end", 5.0, AnyView(HomeEndArt(on: true))),
+        ("layout-fix", 3.95, AnyView(LayoutFixArt(on: true))),
         ("animations", 6.2, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
         ("leftover-permissions", 3.8, AnyView(LeftoversArt())),
         ("uninstaller", 6.0, AnyView(TrashWatchArt(on: true))),

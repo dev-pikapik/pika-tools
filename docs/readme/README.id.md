@@ -212,6 +212,11 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br><b>Pertahankan Dock di satu layar</b>
 <br>Dock tidak lagi melompat ke layar lain. Tahan ⌥ untuk memindahkannya dengan sengaja.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Perbaiki tata letak yang salah</b>
+<br>Mengetik ghbdtn alih-alih привет? Tekan Spasi dan langsung diperbaiki.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 
 Beberapa fitur meminta lebih saat Anda menggunakannya: **Kontrol kipas**, **Ekstensi Finder**, **iCloud Drive**, **Akses Disk Penuh**, dan **Perekaman Layar**. Semuanya ada di halaman Izin dalam pengaturan: setiap izin punya satu baris tentang kegunaannya, tanda centang hijau atau tanda silang oranye, dan satu tombol: **Izinkan** saat belum ada, **Matikan** saat sudah aktif. Jadi Anda bisa mencabut izin apa pun langsung di sana.
 
-pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. pikapik hanya terhubung ke internet untuk pembaruan (menanyakan rilis terbaru ke GitHub dan mengunduhnya hanya jika Anda memilih memperbarui) serta untuk Tes Kecepatan saat Anda memulainya (memakai server Apple). Versi Mac App Store diperbarui oleh App Store, dan Tes Kecepatannya memakai Cloudflare. Kemajuan peliharaan (langkah, lemparan, penghargaan, dan sejenisnya) dihitung hanya di Mac ini dan tidak pernah dikirim ke mana pun. Anda bisa menghapusnya di Pengaturan › Peliharaan.
+pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. Untuk memperbaiki kata yang diketik dengan tata letak yang salah, pikapik hanya mengingat beberapa kata terakhir yang Anda ketik, di memori saja, dan melupakannya begitu Anda mengeklik atau berpindah app. Satu-satunya kata yang disimpannya adalah kata yang Anda minta untuk dibiarkan apa adanya, hanya di Mac ini, sampai Anda menghapusnya di Pengaturan › Papan Ketik. pikapik hanya terhubung ke internet untuk pembaruan (menanyakan rilis terbaru ke GitHub dan mengunduhnya hanya jika Anda memilih memperbarui) serta untuk Tes Kecepatan saat Anda memulainya (memakai server Apple). Versi Mac App Store diperbarui oleh App Store, dan Tes Kecepatannya memakai Cloudflare. Kemajuan peliharaan (langkah, lemparan, penghargaan, dan sejenisnya) dihitung hanya di Mac ini dan tidak pernah dikirim ke mana pun. Anda bisa menghapusnya di Pengaturan › Peliharaan.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau kli
 **Ulangi tombol yang ditahan.** Tahan sebuah tombol dan hurufnya terketik berulang kali, bukan muncul menu aksen. Berguna saat bermain game dan mengetik. App yang sudah terbuka menerapkannya setelah dimulai ulang. Matikan, dan macOS kembali bekerja seperti biasa. Mati secara default.
 
 **Home dan End ke awal dan akhir baris.** Saat Anda mengetik, Home memindahkan kursor ke awal baris dan End ke akhirnya, bukan menggulir halaman. Dengan ⇧ keduanya memilih sampai di sana, dengan ⌘ keduanya ke awal atau akhir seluruh teks. Di luar kolom teks, serta di terminal, mesin virtual, dan app desktop jarak jauh, tombolnya berfungsi seperti sebelumnya. Anda bisa menambahkan app lain tempat tombol ini harus berfungsi seperti biasa. Mati secara bawaan.
+
+**Perbaiki kata yang diketik dengan tata letak yang salah.** Jika sebuah kata jadi tidak terbaca, misalnya ghbdtn alih-alih привет, pikapik mengetiknya ulang dengan tata letak yang benar begitu Anda menekan Spasi atau Return, lalu mengganti tata letak agar kata berikutnya langsung benar. Fitur ini bekerja dengan semua tata letak papan ketik yang sudah Anda tambahkan di Mac. Sebuah kata hanya diubah jika kata itu tidak ada di bahasa mana pun yang Anda pakai dan tombol yang sama di tata letak lain menghasilkan kata yang umum, sehingga nama, salah ketik, dan kata yang jarang dipakai tetap seperti yang Anda ketik, begitu juga teks di kolom kata sandi, Terminal, dan app yang Anda pilih. Tekan ⌃⇧Spasi untuk memperbaiki kata terakhir atau teks yang dipilih, dan tekan lagi untuk mencoba tata letak Anda yang lain. Tepat setelah perbaikan, tombol yang sama membatalkannya, dan pikapik tidak akan lagi memperbaiki kata itu secara otomatis. Anda bisa mengubah pintasannya di Pengaturan › Papan Ketik. Di versi Mac App Store, pilih teksnya lalu pilih “Perbaiki Tata Letak Papan Ketik” di menu “Layanan”. Mati secara bawaan.
 
 **Matikan akselerasi penunjuk.** Penunjuk bergerak persis sejauh gerakan tetikus, secepat apa pun Anda menggerakkannya. Penggeser **Kecepatan melacak** mengatur seberapa cepat penunjuk bergerak. Hanya berlaku untuk tetikus, trackpad tetap seperti semula. Matikan fitur ini atau keluar dari pikapik, dan macOS mendapatkan kembali pengaturannya sendiri. Mati secara default.
 
@@ -366,7 +373,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Suhu**: seberapa hangat Mac Anda, secara keseluruhan dan per komponen, seperti prosesor, memori, dan baterai.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.
 - **Port**: program mana yang memakai port mana, alamat dan detailnya, serta tombol untuk membebaskan port.
-- **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
+- **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End, perbaikan tata letak yang salah.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.

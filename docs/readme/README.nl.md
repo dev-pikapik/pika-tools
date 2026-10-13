@@ -212,6 +212,11 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br><b>Houd het Dock op één scherm</b>
 <br>Het Dock springt niet meer naar een ander scherm. Houd ⌥ ingedrukt om het bewust te verplaatsen.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corrigeer de verkeerde indeling</b>
+<br>ghbdtn getypt in plaats van привет? Druk op de spatiebalk en het woord staat goed.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet
 
 Sommige functies vragen om meer als je ze gebruikt: **Ventilatorbeheer**, **Finder-extensies**, **iCloud Drive**, **Volledige schijftoegang** en **Schermopname**. Alles staat op de pagina Toestemmingen in de instellingen: elke toestemming heeft een regel over waarvoor ze dient, een groen vinkje of een oranje kruisje en één knop: **Toestaan** als ze ontbreekt, **Zet uit** als ze aan staat. Zo trek je elke toestemming meteen terug.
 
-pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. pikapik gaat alleen online voor updates (het vraagt GitHub om de nieuwste versie en downloadt die alleen als je ervoor kiest om bij te werken) en voor de snelheidstest als je die start (daarbij worden servers van Apple gebruikt). De versie uit de Mac App Store wordt door de App Store bijgewerkt, en de snelheidstest daarvan gebruikt Cloudflare. De voortgang van je huisdiertje (stappen, worpen, onderscheidingen en dergelijke) wordt alleen op deze Mac geteld en nooit ergens naartoe verstuurd. Je kunt die wissen in Instellingen › Huisdiertje.
+pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Om woorden te corrigeren die je in de verkeerde indeling typt, houdt pikapik alleen je laatste paar woorden in het geheugen en vergeet het die zodra je klikt of naar een andere app gaat. Het bewaart alleen de woorden die het op jouw verzoek met rust moet laten, en alleen op deze Mac, tot je ze wist in Instellingen › Toetsenbord. pikapik gaat alleen online voor updates (het vraagt GitHub om de nieuwste versie en downloadt die alleen als je ervoor kiest om bij te werken) en voor de snelheidstest als je die start (daarbij worden servers van Apple gebruikt). De versie uit de Mac App Store wordt door de App Store bijgewerkt, en de snelheidstest daarvan gebruikt Cloudflare. De voortgang van je huisdiertje (stappen, worpen, onderscheidingen en dergelijke) wordt alleen op deze Mac geteld en nooit ergens naartoe verstuurd. Je kunt die wissen in Instellingen › Huisdiertje.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aan
 **Ingedrukte toets herhalen.** Houd een toets ingedrukt en de letter wordt steeds opnieuw getypt, in plaats van dat het accentmenu verschijnt. Handig in games en bij het typen. Apps die al open zijn nemen dit over na een herstart. Zet je het uit, dan werkt macOS weer zoals altijd. Standaard uit.
 
 **Home en End naar begin en einde van de regel.** Terwijl je typt, zet Home de cursor aan het begin van de regel en End aan het einde, in plaats van de pagina te scrollen. Met ⇧ selecteren ze tot daar, met ⌘ gaan ze naar het begin of einde van de hele tekst. Buiten tekstvelden, en in terminals, virtuele machines en apps voor extern bureaublad, werken de toetsen zoals voorheen. Je kunt andere apps toevoegen waarin ze gewoon moeten werken. Standaard uit.
+
+**Woorden corrigeren die je in de verkeerde indeling typt.** Komt een woord eruit als koeterwaals, zoals ghbdtn in plaats van привет, dan typt pikapik het opnieuw in de juiste indeling zodra je op de spatiebalk of Return drukt, en wisselt het van indeling zodat het volgende woord meteen goed komt. Het werkt met elke toetsenbordindeling die je op je Mac hebt toegevoegd. Een woord verandert alleen als het in geen van je talen bestaat en dezelfde toetsen in een andere indeling een veelgebruikt woord geven. Namen, typfouten en zeldzame woorden blijven dus zoals je ze typte, en ook in wachtwoordvelden, Terminal en de apps die je kiest verandert er niets. Druk op ⌃⇧Spatie om het laatste woord of de geselecteerde tekst te corrigeren, en druk nog eens om je andere indelingen te proberen. Direct na een correctie maken dezelfde toetsen die ongedaan, en pikapik corrigeert dat woord daarna niet meer uit zichzelf. Je kunt de toetscombinatie wijzigen in Instellingen › Toetsenbord. In de versie uit de Mac App Store selecteer je de tekst en kies je ‘Corrigeer toetsenbordindeling’ in het menu ‘Voorzieningen’. Standaard uit.
 
 **Aanwijzerversnelling uitschakelen.** De aanwijzer beweegt precies zo ver als de muis, hoe snel je hem ook beweegt. Met een schuifknop **Snelheid aanwijzer** stel je in hoe snel hij gaat. Werkt alleen met muizen, het trackpad blijft zoals het is. Zet het uit of stop pikapik, en macOS krijgt zijn eigen instellingen terug. Standaard uit.
 
@@ -366,7 +373,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Temperatuur**: hoe warm je Mac is, in het algemeen en per onderdeel, zoals de processor, het geheugen en de batterij.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.
 - **Poorten**: welk programma welke poort bezet houdt, de adressen en details, en een knop om de poort vrij te maken.
-- **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
+- **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End, verkeerde indeling corrigeren.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: minimaliseren of verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.

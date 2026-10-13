@@ -212,6 +212,11 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br><b>Mantener el Dock en una sola pantalla</b>
 <br>El Dock ya no salta a otra pantalla. Mantén pulsada ⌥ para moverlo a propósito.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corregir la distribución equivocada</b>
+<br>¿Escribiste ghbdtn en vez de привет? Pulsa Espacio y se corrige.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ La app detecta el cambio en un par de segundos, sin necesidad de reiniciar.
 
 Algunas funciones piden algo más cuando las usas: **Control de ventiladores**, **Extensiones de Finder**, **iCloud Drive**, **Acceso total al disco** y **Grabación de pantalla**. Todo está en la página Permisos de los ajustes: cada permiso tiene una línea que dice para qué sirve, una marca verde o una cruz naranja y un solo botón: **Permitir** cuando falta, **Apagar** cuando está activo. Así puedes retirar cualquier permiso ahí mismo.
 
-pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los eventos se procesan en memoria y se transmiten al instante. pikapik solo se conecta a internet para las actualizaciones (pregunta a GitHub cuál es la última versión y solo la descarga si decides actualizar) y para la prueba de velocidad cuando tú la inicias (usa los servidores de Apple). La versión de la Mac App Store la actualiza la App Store, y su prueba de velocidad usa Cloudflare. El progreso de tu mascota (pasos, lanzamientos, premios y similares) se cuenta solo en este Mac y nunca se envía a ninguna parte. Puedes borrarlo en Ajustes › Mascota.
+pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los eventos se procesan en memoria y se transmiten al instante. Para corregir palabras escritas con la distribución equivocada, pikapik mantiene en memoria solo las últimas palabras que escribiste y las olvida en cuanto haces clic o cambias de app. Las únicas palabras que guarda son las que le pediste que dejara como estaban, solo en este Mac, hasta que las borres en Ajustes › Teclado. pikapik solo se conecta a internet para las actualizaciones (pregunta a GitHub cuál es la última versión y solo la descarga si decides actualizar) y para la prueba de velocidad cuando tú la inicias (usa los servidores de Apple). La versión de la Mac App Store la actualiza la App Store, y su prueba de velocidad usa Cloudflare. El progreso de tu mascota (pasos, lanzamientos, premios y similares) se cuenta solo en este Mac y nunca se envía a ninguna parte. Puedes borrarlo en Ajustes › Mascota.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los even
 **Repetir una tecla mantenida.** Mantén pulsada una tecla y la letra se escribe una y otra vez, en lugar de abrir el menú de acentos. Viene genial en juegos y al escribir. Las apps que ya están abiertas lo aplican tras reiniciarlas. Si lo desactivas, macOS vuelve a funcionar como siempre. Desactivado por omisión.
 
 **Home y End van al inicio y al final de la línea.** Mientras escribes, Home lleva el cursor al inicio de la línea y End a su final, en lugar de desplazar la página. Con ⇧ seleccionan hasta ahí, con ⌘ van al inicio o al final de todo el texto. Fuera de los campos de texto, y en terminales, máquinas virtuales y apps de escritorio remoto, las teclas funcionan como antes. Puedes añadir otras apps donde deban funcionar como siempre. Desactivado por omisión.
+
+**Corregir palabras escritas con la distribución equivocada.** Si una palabra sale hecha un galimatías, por ejemplo ghbdtn en vez de привет, pikapik la vuelve a escribir con la distribución correcta en cuanto pulsas Espacio o Retorno, y cambia de distribución para que la siguiente palabra salga bien. Funciona con todas las distribuciones de teclado que hayas añadido en tu Mac. Una palabra solo cambia si no existe en ninguno de tus idiomas y las mismas teclas en otra distribución dan una palabra habitual, así que los nombres, las erratas y las palabras poco comunes se quedan como las escribiste, igual que el texto de los campos de contraseña, de Terminal y de las apps que elijas. Pulsa ⌃⇧Espacio para corregir la última palabra o el texto seleccionado, y vuelve a pulsarlo para probar tus otras distribuciones. Justo después de una corrección, las mismas teclas la deshacen, y pikapik ya no corregirá esa palabra por su cuenta. Puedes cambiar el atajo en Ajustes › Teclado. En la versión de la Mac App Store, selecciona el texto y elige «Corregir distribución de teclado» en el menú «Servicios». Desactivado por omisión.
 
 **Desactivar la aceleración del puntero.** El puntero se mueve exactamente lo mismo que el ratón, por rápido que lo muevas. Un regulador **Velocidad del cursor** ajusta lo rápido que va. Solo funciona con ratones; el trackpad se queda como está. Desactívalo o sal de pikapik y macOS recupera sus propios ajustes. Desactivado por omisión.
 
@@ -366,7 +373,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Temperatura**: lo caliente que está tu Mac, en general y por piezas, como el procesador, la memoria y la batería.
 - **Velocidad de internet**: comprueba la velocidad y para qué te sirve.
 - **Puertos**: qué programa ocupa cada puerto, sus direcciones y detalles, y un botón para liberar el puerto.
-- **Teclado**: cambio de idioma, repetición de teclas, Home y End.
+- **Teclado**: cambio de idioma, repetición de teclas, Home y End, corrección de la distribución equivocada.
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: minimizar u ocultar con un clic en el Dock, mantener el Dock en una sola pantalla y devolverlo a su sitio.

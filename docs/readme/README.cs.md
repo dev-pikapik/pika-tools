@@ -212,6 +212,11 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br><b>Držet Dock na jednom displeji</b>
 <br>Dock už neskáče na jiný displej. Podržením ⌥ ho přesunete záměrně.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Opravit špatné rozložení</b>
+<br>Napsali jste ghbdtn místo привет? Stiskněte mezerník a slovo se opraví.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
 Některé funkce žádají při použití o něco víc: **Ovládání ventilátorů**, **Rozšíření Finderu**, **iCloud Drive**, **Úplný přístup k disku** a **Záznam obrazovky**. Všechno je na stránce Oprávnění v nastavení: každé oprávnění má řádek o tom, k čemu slouží, zelenou fajfku nebo oranžový křížek a jedno tlačítko: **Povolit**, když chybí, **Vypnout**, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam.
 
-pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. pikapik se připojuje k internetu jen kvůli aktualizacím (ptá se GitHubu na nejnovější verzi a stáhne ji, jen když se rozhodnete aktualizovat) a kvůli testu rychlosti, když ho spustíte (používá servery Apple). Verzi z Mac App Store aktualizuje App Store a její test rychlosti používá Cloudflare. Postup mazlíčka (kroky, hody, ocenění a podobně) se počítá jen v tomto Macu a nikam se neposílá. Smazat ho můžete v Nastavení › Mazlíček.
+pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Aby mohl opravovat slova napsaná ve špatném rozložení, drží pikapik v paměti jen několik posledních napsaných slov a zapomene je, jakmile kliknete nebo přejdete do jiné aplikace. Ukládá jen slova, která podle vás nemá opravovat, a to jen v tomto Macu, dokud je nevymažete v Nastavení › Klávesnice. pikapik se připojuje k internetu jen kvůli aktualizacím (ptá se GitHubu na nejnovější verzi a stáhne ji, jen když se rozhodnete aktualizovat) a kvůli testu rychlosti, když ho spustíte (používá servery Apple). Verzi z Mac App Store aktualizuje App Store a její test rychlosti používá Cloudflare. Postup mazlíčka (kroky, hody, ocenění a podobně) se počítá jen v tomto Macu a nikam se neposílá. Smazat ho můžete v Nastavení › Mazlíček.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na 
 **Opakovat drženou klávesu.** Podržte klávesu a písmeno se píše znovu a znovu, místo aby se ukázala nabídka akcentů. Hodí se ve hrách i při psaní. Už otevřené aplikace to převezmou po restartu. Když to vypnete, macOS se chová jako obvykle. Ve výchozím stavu vypnuto.
 
 **Home a End na začátek a konec řádku.** Když píšete, Home přesune kurzor na začátek řádku a End na jeho konec, místo aby posouvaly stránku. S ⇧ vyberou text až tam, s ⌘ skočí na začátek nebo konec celého textu. Mimo textová pole a v terminálech, virtuálních počítačích a aplikacích pro vzdálenou plochu fungují klávesy jako dřív. Můžete přidat další aplikace, kde mají fungovat jako obvykle. Ve výchozím stavu vypnuto.
+
+**Oprava slov napsaných ve špatném rozložení.** Když slovo vyjde jako hatmatilka, třeba ghbdtn místo привет, pikapik ho přepíše ve správném rozložení, jakmile stisknete mezerník nebo Return, a přepne rozložení, aby další slovo vyšlo správně. Funguje se všemi rozloženími klávesnice, která jste si do Macu přidali. Slovo se změní jen tehdy, když neexistuje v žádném z vašich jazyků a stejné klávesy v jiném rozložení dávají běžné slovo, takže jména, překlepy a méně častá slova zůstanou tak, jak jste je napsali, a stejně tak text v polích pro hesla, v Terminálu a v aplikacích, které si vyberete. Stiskněte ⌃⇧Mezerník a opraví se poslední slovo nebo vybraný text, dalším stisknutím vyzkoušíte jiná rozložení. Hned po opravě ji tytéž klávesy vrátí zpět a pikapik už to slovo sám opravovat nebude. Zkratku můžete změnit v Nastavení › Klávesnice. Ve verzi z Mac App Store vyberte text a v nabídce „Služby“ zvolte „Opravit rozložení klávesnice“. Ve výchozím stavu vypnuto.
 
 **Vypnout zrychlení ukazatele.** Ukazatel se posune přesně tolik jako myš, ať s ní pohybujete jakkoli rychle. Jezdec **Rychlost ukazatele** určuje, jak rychle se pohybuje. Funguje jen s myší, trackpad zůstane, jak je. Vypněte funkci nebo ukončete pikapik a macOS dostane zpět svoje vlastní nastavení. Ve výchozím stavu vypnuto.
 
@@ -366,7 +373,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Teplota**: jak moc je Mac zahřátý, celkově i po jednotlivých součástech, například procesor, paměť a baterie.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.
 - **Porty**: který program zabral který port, jeho adresy a podrobnosti a tlačítko, které port uvolní.
-- **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
+- **Klávesnice**: přepínání jazyka, opakování kláves, Home a End, oprava špatného rozložení.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: minimalizace nebo skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.

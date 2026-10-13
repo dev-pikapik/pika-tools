@@ -212,6 +212,11 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br><b>Giữ Dock trên một màn hình</b>
 <br>Dock không còn nhảy sang màn hình khác. Giữ ⌥ để chủ động di chuyển.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Sửa gõ nhầm bố cục</b>
+<br>Lỡ gõ ghbdtn thay vì привет? Nhấn phím cách là sửa xong.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ pikapik cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đ
 
 Một số tính năng cần thêm quyền khi bạn dùng chúng: **Điều khiển quạt**, **Tiện ích mở rộng của Finder**, **iCloud Drive**, **Truy cập toàn bộ ổ đĩa** và **Ghi màn hình**. Tất cả nằm ở trang Quyền trong cài đặt: mỗi quyền có một dòng nói quyền đó để làm gì, dấu tích xanh hoặc dấu gạch chéo cam, và một nút: **Cho phép** khi còn thiếu, **Tắt** khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó.
 
-pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. pikapik chỉ kết nối mạng để cập nhật (hỏi GitHub phiên bản mới nhất và chỉ tải về khi bạn chọn cập nhật) và để kiểm tra tốc độ khi bạn bắt đầu (dùng máy chủ của Apple). Bản trên Mac App Store do App Store cập nhật, và phần kiểm tra tốc độ của bản này dùng Cloudflare. Tiến trình của thú cưng (số bước, lần tung, giải thưởng và những thứ tương tự) chỉ được đếm trên máy Mac này và không bao giờ được gửi đi đâu cả. Bạn có thể xóa trong Cài đặt › Thú cưng.
+pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Để sửa từ gõ nhầm bố cục bàn phím, pikapik chỉ giữ vài từ bạn gõ gần nhất trong bộ nhớ và quên chúng ngay khi bạn bấm chuột hoặc chuyển sang ứng dụng khác. Những từ duy nhất được lưu lại là các từ bạn đã yêu cầu để nguyên, chỉ trên máy Mac này, cho đến khi bạn xóa chúng trong Cài đặt › Bàn phím. pikapik chỉ kết nối mạng để cập nhật (hỏi GitHub phiên bản mới nhất và chỉ tải về khi bạn chọn cập nhật) và để kiểm tra tốc độ khi bạn bắt đầu (dùng máy chủ của Apple). Bản trên Mac App Store do App Store cập nhật, và phần kiểm tra tốc độ của bản này dùng Cloudflare. Tiến trình của thú cưng (số bước, lần tung, giải thưởng và những thứ tương tự) chỉ được đếm trên máy Mac này và không bao giờ được gửi đi đâu cả. Bạn có thể xóa trong Cài đặt › Thú cưng.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạ
 **Lặp lại phím khi giữ.** Giữ một phím là chữ được gõ lặp lại liên tục thay vì hiện menu dấu. Rất tiện khi chơi game và khi gõ. Các app đang mở sẵn sẽ áp dụng sau khi khởi động lại. Tắt đi là macOS hoạt động như bình thường. Tắt theo mặc định.
 
 **Home và End đến đầu và cuối dòng.** Khi bạn gõ, Home đưa con trỏ về đầu dòng và End đến cuối dòng, thay vì cuộn trang. Kèm ⇧ sẽ chọn đến đó, kèm ⌘ sẽ đến đầu hoặc cuối toàn bộ văn bản. Bên ngoài ô văn bản, cũng như trong terminal, máy ảo và ứng dụng màn hình từ xa, các phím vẫn hoạt động như trước. Bạn có thể thêm các ứng dụng khác mà phím cần hoạt động như bình thường. Mặc định tắt.
+
+**Sửa từ gõ nhầm bố cục bàn phím.** Nếu một từ gõ ra thành chuỗi ký tự vô nghĩa, như ghbdtn thay vì привет, pikapik sẽ gõ lại từ đó bằng bố cục đúng ngay khi bạn nhấn phím cách hoặc Return, rồi chuyển bố cục để từ tiếp theo gõ ra đúng. Tính năng này hoạt động với mọi bố cục bàn phím bạn đã thêm trên máy Mac. Một từ chỉ bị đổi khi nó không phải là từ trong bất kỳ ngôn ngữ nào của bạn và cùng các phím đó ở bố cục khác lại ra một từ thông dụng, vì vậy tên riêng, lỗi gõ phím và những từ ít gặp vẫn giữ nguyên như bạn đã gõ, văn bản trong ô mật khẩu, Terminal và các ứng dụng bạn chọn cũng vậy. Nhấn ⌃⇧Dấu cách để sửa từ cuối cùng hoặc văn bản đã chọn, và nhấn lần nữa để thử các bố cục khác của bạn. Ngay sau khi sửa, nhấn lại đúng các phím đó sẽ hoàn tác, và pikapik sẽ không tự sửa từ đó nữa. Bạn có thể đổi phím tắt trong Cài đặt › Bàn phím. Trong phiên bản Mac App Store, hãy chọn văn bản rồi chọn “Sửa bố cục bàn phím” trong menu “Dịch vụ”. Mặc định tắt.
 
 **Tắt tăng tốc con trỏ.** Con trỏ di chuyển đúng bằng quãng đường của chuột, dù bạn di chuyển nhanh đến đâu. Thanh trượt **Tốc độ di chuyển** đặt tốc độ của con trỏ. Chỉ hoạt động với chuột, bàn di chuột vẫn giữ nguyên. Tắt tính năng hoặc thoát pikapik, macOS sẽ lấy lại cài đặt của chính nó. Tắt theo mặc định.
 
@@ -366,7 +373,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Nhiệt độ**: máy Mac nóng đến mức nào, tổng thể và từng bộ phận, như bộ xử lý, bộ nhớ và pin.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.
 - **Cổng**: chương trình nào đang chiếm cổng nào, địa chỉ và chi tiết, cùng một nút để giải phóng cổng.
-- **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
+- **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End, sửa từ gõ nhầm bố cục.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: thu nhỏ hoặc ẩn bằng một lần bấm trong Dock, giữ Dock trên một màn hình và đưa Dock trở lại.

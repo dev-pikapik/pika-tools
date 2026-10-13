@@ -212,6 +212,11 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br><b>Håll Dock på en skärm</b>
 <br>Dock hoppar inte längre till en annan skärm. Håll ned ⌥ för att flytta den med flit.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Rätta fel layout</b>
+<br>Skrev du ghbdtn i stället för привет? Tryck på mellanslag så blir det rätt.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 
 Vissa funktioner ber om mer när du använder dem: **Fläktstyrning**, **Finder-tillägg**, **iCloud Drive**, **Full skivåtkomst** och **Skärminspelning**. Allt finns på sidan Behörigheter i inställningarna: varje behörighet har en rad om vad den är till för, en grön bock eller ett orange kryss och en enda knapp: **Tillåt** när den saknas, **Stäng av** när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där.
 
-pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. pikapik går bara online för uppdateringar (den frågar GitHub efter den senaste versionen och laddar bara ner den om du väljer att uppdatera) och för hastighetstestet när du startar det (då används Apples servrar). Versionen från Mac App Store uppdateras av App Store, och dess hastighetstest använder Cloudflare. Husdjurets framsteg (steg, kast, utmärkelser och liknande) räknas bara på den här Mac-datorn och skickas aldrig någonstans. Du kan radera dem i Inställningar › Husdjur.
+pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. För att kunna rätta ord som skrivits med fel layout håller pikapik bara de senaste orden du har skrivit i minnet och glömmer dem så fort du klickar eller byter app. De enda ord som sparas är de som du har bett pikapik att låta vara, och bara på den här Mac-datorn, tills du rensar dem i Inställningar › Tangentbord. pikapik går bara online för uppdateringar (den frågar GitHub efter den senaste versionen och laddar bara ner den om du väljer att uppdatera) och för hastighetstestet när du startar det (då används Apples servrar). Versionen från Mac App Store uppdateras av App Store, och dess hastighetstest använder Cloudflare. Husdjurets framsteg (steg, kast, utmärkelser och liknande) räknas bara på den här Mac-datorn och skickas aldrig någonstans. Du kan radera dem i Inställningar › Husdjur.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik spelar inte in, sparar inte och skickar inte något av det du skriver el
 **Upprepa en nedhållen tangent.** Håll ned en tangent så skrivs bokstaven om och om igen i stället för att accentmenyn visas. Smidigt i spel och när du skriver. Appar som redan är öppna använder det efter en omstart. Stänger du av det fungerar macOS som vanligt igen. Av som standard.
 
 **Home och End till början och slutet av raden.** Medan du skriver flyttar Home markören till början av raden och End till slutet, i stället för att rulla sidan. Med ⇧ markerar de fram dit, med ⌘ går de till början eller slutet av hela texten. Utanför textfält, och i terminaler, virtuella maskiner och appar för fjärrskrivbord, fungerar tangenterna som förut. Du kan lägga till fler appar där de ska fungera som vanligt. Av som standard.
+
+**Rätta ord som skrivits med fel layout.** Om ett ord blir rena rappakaljan, som ghbdtn i stället för привет, skriver pikapik om det med rätt layout så fort du trycker på mellanslag eller Return, och byter layout så att nästa ord blir rätt. Det fungerar med alla tangentbordslayouter som du har lagt till på din Mac. Ett ord ändras bara om det inte finns på något av dina språk och samma tangenter i en annan layout ger ett vanligt ord, så namn, skrivfel och ovanliga ord blir kvar som du skrev dem, och detsamma gäller lösenordsfält, Terminal och de appar du väljer. Tryck på ⌃⇧Mellanslag för att rätta det senaste ordet eller markerad text, och tryck igen för att prova dina andra layouter. Direkt efter en rättning ångrar samma tangenter den, och pikapik rättar inte det ordet av sig självt igen. Du kan ändra kortkommandot i Inställningar › Tangentbord. I versionen från Mac App Store markerar du texten och väljer ”Rätta tangentbordslayout” i menyn ”Tjänster”. Av som standard.
 
 **Stäng av pekaracceleration.** Pekaren rör sig exakt lika långt som musen, hur snabbt du än rör den. Reglaget **Pekarhastighet** ställer in hur snabbt pekaren rör sig. Fungerar bara med möss, styrplattan förblir som den är. Stäng av funktionen eller avsluta pikapik så får macOS tillbaka sina egna inställningar. Av som standard.
 
@@ -366,7 +373,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Temperatur**: hur varm din Mac är, totalt och för varje del, som processorn, minnet och batteriet.
 - **Hastighetstest**: mät internet och se vad det räcker till.
 - **Portar**: vilket program som har tagit vilken port, dess adresser och detaljer och en knapp som frigör porten.
-- **Tangentbord**: byte av språk, tangentupprepning, Home och End.
+- **Tangentbord**: byte av språk, tangentupprepning, Home och End, rättning av fel layout.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.

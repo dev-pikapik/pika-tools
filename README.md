@@ -212,6 +212,11 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br><b>Keep the Dock on one display</b>
 <br>The Dock no longer jumps to another display. Hold ⌥ to move it on purpose.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/layout-fix-dark.png"><img src="docs/media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Fix the wrong layout</b>
+<br>Typed ghbdtn instead of привет? Press Space and it’s fixed.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ The app picks up the change within a couple of seconds, no restart needed.
 
 Some features ask for more when you use them: **Fan control**, **Finder Extensions**, **iCloud Drive**, **Full Disk Access** and **Screen Recording**. They're all on the Permissions page in Settings: each permission has a line about what it's for, a green check or an orange cross, and one button, **Allow** when it's missing and **Turn Off** when it's on. So you can take any permission back right there.
 
-pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. pikapik goes online only for updates (it asks GitHub for the latest release and downloads it only if you choose to update) and for the Speed Test when you start it (it uses Apple's servers). The Mac App Store version is updated by the App Store, and its Speed Test uses Cloudflare. The progress of your pet (steps, throws, awards and the like) is counted only on this Mac and never sent anywhere. You can erase it in Settings › Pet.
+pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. To fix words typed in the wrong layout, pikapik keeps only the last few words you typed, in memory, and forgets them when you click or switch apps. The only words it saves are the ones you asked it to leave alone, on this Mac, until you clear them in Settings › Keyboard. pikapik goes online only for updates (it asks GitHub for the latest release and downloads it only if you choose to update) and for the Speed Test when you start it (it uses Apple's servers). The Mac App Store version is updated by the App Store, and its Speed Test uses Cloudflare. The progress of your pet (steps, throws, awards and the like) is counted only on this Mac and never sent anywhere. You can erase it in Settings › Pet.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik doesn't record, store or send anything you type or click. Events are han
 **Repeat a held key.** Hold a key and it types the letter again and again instead of showing the accent menu. Handy in games and when you type fast. Apps that are already open pick it up after a restart. Turn it off and macOS works as usual again. Off by default.
 
 **Home and End go to the start and end of a line.** While you type, Home moves the cursor to the start of the line and End to its end, instead of scrolling the page. Add ⇧ to select up to there, or ⌘ to jump to the start or end of the whole text. Outside text fields, and in terminals, virtual machines and remote desktop apps, the keys work as before. You can list other apps where they should work as usual. Off by default.
+
+**Fix words typed in the wrong layout.** If a word comes out as gibberish, like ghbdtn instead of привет, pikapik retypes it in the right layout as soon as you press Space or Return, and switches the layout so the next word comes out right. It works with every keyboard layout you’ve added on your Mac. A word changes only when it isn’t a word in any of your languages and the same keys in another layout give a common one, so names, typos and rare words stay as you typed them, and so do password fields, Terminal and the apps you choose. Press ⌃⇧Space to fix the last word or the selected text, and press it again to try your other layouts. Right after a fix, the same keys undo it, and pikapik won’t fix that word on its own again. You can change the shortcut in Settings › Keyboard. In the Mac App Store version, select the text and choose Fix Wrong Keyboard Layout in the Services menu. Off by default.
 
 **Turn off pointer acceleration.** The pointer moves exactly as far as the mouse does, however fast you move it. A **Tracking speed** slider sets how fast it goes. Works for mice only, the trackpad stays as it is. Turn it off or quit pikapik, and macOS gets its own settings back. Off by default.
 
@@ -366,7 +373,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Temperature**: how warm your Mac is, overall and for each part, such as the processor, memory and battery.
 - **Speed Test**: check the internet speed and see what it's good for.
 - **Ports**: which program took which port, its addresses and details, and a button to free the port.
-- **Keyboard**: language switch, key repeat, Home and End.
+- **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
