@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Het Dock blijft op zijn scherm, hoe snel je de muis ook beweegt
+
+<sub>1.48.0 · 13 oktober 2026</sub>
+
+‘Houd het Dock op één scherm’ gebruikt nu een instelling van het Dock zelf, dus het Dock volgt de aanwijzer niet meer naar een ander scherm, ook niet bij snelle bewegingen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Voorheen duwde pikapik de aanwijzer terug van de onderrand van het andere scherm, maar met een snelle muisbeweging kon het Dock toch nog overspringen. Nu zet de schakelaar die verplaatsing in het Dock zelf uit, en raakt pikapik de aanwijzer helemaal niet meer aan. Het Dock leest deze instelling alleen bij het opstarten, dus als je de schakelaar aan- of uitzet, start het Dock één keer opnieuw op. Stond de schakelaar al aan, dan start het Dock na de update ook één keer opnieuw op.
+
+Wil je het Dock bewust verplaatsen, maak dan een ander scherm het hoofdbeeldscherm. Klik op ‘Hoofdbeeldscherm’ onder de schakelaar om Systeeminstellingen › Beeldschermen te openen, klik op het gewenste scherm en kies ‘Hoofdbeeldscherm’ bij ‘Gebruik als’. Het Dock gaat dan naar dat scherm.
+
+De schakelaar ‘Haal het Dock terug’ is verdwenen: die werkte ook door de aanwijzer weg te duwen, en het Dock volgt de aanwijzer nu niet meer. ‘Houd het Dock op één scherm’ heeft geen toestemming nodig en staat standaard uit. De schakelaar zit niet in de versie uit de Mac App Store, omdat apps uit de App Store de instellingen van het Dock niet kunnen wijzigen.
+
+**Probeer het:** Instellingen › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Een opgeruimd bureaublad met één klik
 
 <sub>1.47.0 · 13 oktober 2026</sub>

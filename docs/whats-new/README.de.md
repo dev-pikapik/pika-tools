@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Das Dock bleibt auf seinem Display, egal wie schnell du die Maus bewegst
+
+<sub>1.48.0 · 13. Oktober 2026</sub>
+
+„Dock auf einem Display halten“ nutzt jetzt eine Einstellung des Docks selbst, sodass das Dock dem Zeiger nicht mehr auf ein anderes Display folgt, auch nicht bei schnellen Bewegungen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Bisher hat pikapik den Zeiger vom unteren Rand des anderen Displays weggeschoben, und mit einer schnellen Mausbewegung konnte das Dock trotzdem hinüberspringen. Jetzt stellt der Schalter diesen Wechsel im Dock selbst ab, und pikapik rührt den Zeiger gar nicht mehr an. Das Dock liest diese Einstellung nur beim Start, deshalb startet es einmal neu, wenn du den Schalter ein- oder ausschaltest. War der Schalter schon an, startet das Dock auch nach dem Update einmal neu.
+
+Um das Dock gezielt zu verschieben, mach ein anderes Display zum Hauptbildschirm. Klicke unter dem Schalter auf „Hauptbildschirm“, um Systemeinstellungen › Displays zu öffnen. Klicke dort auf das gewünschte Display und wähle bei „Verwenden als“ die Option „Hauptbildschirm“. Dann wechselt das Dock auf dieses Display.
+
+Den Schalter „Dock zurückholen“ gibt es nicht mehr: Auch er funktionierte, indem er den Zeiger wegschob, und das Dock folgt dem Zeiger jetzt nicht mehr. „Dock auf einem Display halten“ braucht keine Erlaubnis und ist standardmäßig aus. In der Version aus dem Mac App Store fehlt der Schalter, weil Apps aus dem App Store die Einstellungen des Docks nicht ändern können.
+
+**Ausprobieren:** Einstellungen › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Ein aufgeräumter Schreibtisch mit einem Klick
 
 <sub>1.47.0 · 13. Oktober 2026</sub>

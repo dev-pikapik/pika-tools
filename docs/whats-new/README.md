@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>The Dock stays on its display, however fast you move
+
+<sub>1.48.0 · October 13, 2026</sub>
+
+Keep the Dock on one display now uses the Dock’s own setting, so the Dock no longer follows the pointer to another display at any speed.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Before, pikapik pushed the pointer back from the bottom edge of the other display, and with a quick flick of the mouse the Dock could still jump. Now the switch turns that move off in the Dock itself, and pikapik doesn’t touch the pointer at all. The Dock reads this setting only when it starts, so turning the switch on or off restarts the Dock once. If the switch was already on, the Dock also restarts once after the update.
+
+To move the Dock on purpose, make another display the main one. Click Main display under the switch to open System Settings › Displays, click the display you want, then choose Main display in Use as. The Dock moves to it.
+
+The Bring the Dock back switch is gone: it also worked by pushing the pointer, and the Dock no longer follows the pointer. Keep the Dock on one display needs no permission and is off by default. It’s not in the Mac App Store version, because apps from the App Store can’t change the Dock’s settings.
+
+**Try it:** Settings › Dock
+
+---
+
 ## <a id="v1.47.0"></a>A clean desktop in one click
 
 <sub>1.47.0 · October 13, 2026</sub>
