@@ -42,9 +42,7 @@ final class DesktopIconsTool: Tool {
         }
     }
 
-    var isDefault: Bool { !hidden }
     var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
-    func reset() { if hidden { isOn = false } }
     func refresh() { hidden = Self.read() }
 
     private static let domain = "com.apple.WindowManager" as CFString
@@ -79,9 +77,7 @@ final class HiddenFilesTool: Tool {
         }
     }
 
-    var isDefault: Bool { !shown }
     var settingsView: AnyView { AnyView(HiddenFilesSettings(tool: self)) }
-    func reset() { if shown { isOn = false } }
     func refresh() { shown = Self.read() }
 
     private static let domain = "com.apple.finder" as CFString
