@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Homebrew updates no longer restart the Dock
+
+<sub>1.40.2 · October 13, 2026</sub>
+
+When you update pikapik with Homebrew, the Dock no longer disappears for a moment.
+
+The update to this version may still restart the Dock one last time, because that step is still done by the version you had before. Updates after that leave it alone.
+
+---
+
 ## <a id="v1.40.1"></a>One click in the Dock puts the windows away
 
 <sub>1.40.1 · October 13, 2026</sub>

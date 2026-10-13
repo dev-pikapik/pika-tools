@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Aktualizacje przez Homebrew już nie restartują Docka
+
+<sub>1.40.2 · 13 października 2026</sub>
+
+Gdy aktualizujesz pikapik przez Homebrew, Dock już nie znika na chwilę.
+
+Aktualizacja do tej wersji może jeszcze ostatni raz zrestartować Docka, bo ten krok nadal wykonuje poprzednia wersja. Kolejne aktualizacje już go nie ruszają.
+
+---
+
 ## <a id="v1.40.1"></a>Jedno kliknięcie w Docku chowa okna
 
 <sub>1.40.1 · 13 października 2026</sub>

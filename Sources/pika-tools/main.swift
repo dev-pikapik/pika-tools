@@ -1,6 +1,7 @@
 import Foundation
 
 if CommandLine.arguments.contains("--uninstall") {
+    if Brew.replacesApp(Brew.ancestors()) { exit(0) }
     LoginItem.shared.apply(false)
     #if !APPSTORE
     AnimationsTool.uninstall()

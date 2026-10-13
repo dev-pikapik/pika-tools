@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Homebrew ile güncelleme artık Dock’u yeniden başlatmıyor
+
+<sub>1.40.2 · 13 Ekim 2026</sub>
+
+Homebrew ile pikapik’i güncellediğinizde Dock artık bir anlığına kaybolmuyor.
+
+Bu sürüme yapılan güncelleme Dock’u son bir kez daha yeniden başlatabilir, çünkü bu adımı hâlâ önceki sürüm yapıyor. Sonraki güncellemeler Dock’a dokunmuyor.
+
+---
+
 ## <a id="v1.40.1"></a>Dock’ta tek tıklama pencereleri kaldırır
 
 <sub>1.40.1 · 13 Ekim 2026</sub>

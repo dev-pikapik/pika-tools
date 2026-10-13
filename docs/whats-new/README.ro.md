@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Actualizările cu Homebrew nu mai repornesc Dock-ul
+
+<sub>1.40.2 · 13 octombrie 2026</sub>
+
+Când actualizezi pikapik cu Homebrew, Dock-ul nu mai dispare pentru o clipă.
+
+Actualizarea la această versiune mai poate reporni Dock-ul o ultimă dată, pentru că acest pas îl face încă versiunea pe care o aveai înainte. Actualizările următoare îl lasă în pace.
+
+---
+
 ## <a id="v1.40.1"></a>Un clic în Dock strânge ferestrele
 
 <sub>1.40.1 · 13 octombrie 2026</sub>

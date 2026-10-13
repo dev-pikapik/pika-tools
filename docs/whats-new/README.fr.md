@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Les mises à jour avec Homebrew ne redémarrent plus le Dock
+
+<sub>1.40.2 · 13 octobre 2026</sub>
+
+Quand vous mettez à jour pikapik avec Homebrew, le Dock ne disparaît plus un instant.
+
+La mise à jour vers cette version peut encore redémarrer le Dock une dernière fois, car cette étape est toujours effectuée par la version que vous aviez avant. Les mises à jour suivantes n’y touchent plus.
+
+---
+
 ## <a id="v1.40.1"></a>Un clic dans le Dock range les fenêtres
 
 <sub>1.40.1 · 13 octobre 2026</sub>

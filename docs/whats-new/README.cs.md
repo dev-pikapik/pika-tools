@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Aktualizace přes Homebrew už nerestartují Dock
+
+<sub>1.40.2 · 13. října 2026</sub>
+
+Když aktualizujete pikapik přes Homebrew, Dock už na okamžik nezmizí.
+
+Aktualizace na tuto verzi může Dock ještě naposledy restartovat, protože tento krok stále provádí předchozí verze. Další aktualizace už na Dock nesahají.
+
+---
+
 ## <a id="v1.40.1"></a>Jedno kliknutí v Docku uklidí okna
 
 <sub>1.40.1 · 13. října 2026</sub>
