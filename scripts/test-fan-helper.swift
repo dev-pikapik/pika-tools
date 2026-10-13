@@ -53,21 +53,29 @@ enum TestFanHelper {
         ]
         for (name, path) in rejected {
             let before = FileManager.default.contents(atPath: installed)
-            precondition(!FanHelperInfo.replace(installed, with: path, requirement: requirement), name)
+            precondition(!FanHelperInfo.stage(installed, from: path, requirement: requirement), name)
+            precondition(!FileManager.default.fileExists(atPath: installed + ".new"), name)
+            try? FileManager.default.copyItem(atPath: path, toPath: installed + ".new")
+            precondition(!FanHelperInfo.commit(installed, requirement: requirement), name)
             precondition(FileManager.default.contents(atPath: installed) == before, name)
             precondition(!FileManager.default.fileExists(atPath: installed + ".new"), name)
             print("rejects \(name): ok")
         }
 
         for (name, path) in [("newer", make("v11", build: 11)), ("same build", make("v11b", build: 11, code: 1))] {
-            precondition(FanHelperInfo.replace(installed, with: path, requirement: requirement), name)
+            let before = FileManager.default.contents(atPath: installed)
+            precondition(FanHelperInfo.stage(installed, from: path, requirement: requirement), name)
+            precondition(FileManager.default.contents(atPath: installed) == before, "\(name): changed before commit")
+            precondition(FileManager.default.contentsEqual(atPath: installed + ".new", andPath: path), "\(name): staged copy")
+            precondition(FanHelperInfo.commit(installed, requirement: requirement), name)
             precondition(FileManager.default.contentsEqual(atPath: installed, andPath: path), name)
             precondition(!FileManager.default.fileExists(atPath: installed + ".new"), name)
             let mode = (try! FileManager.default.attributesOfItem(atPath: installed))[.posixPermissions] as! Int
             precondition(mode == 0o755, "\(name): mode \(String(mode, radix: 8))")
             print("accepts \(name): ok")
         }
-        precondition(!FanHelperInfo.replace(installed, with: dir + "/v10", requirement: requirement), "back to 10")
+        precondition(!FanHelperInfo.stage(installed, from: dir + "/v10", requirement: requirement), "back to 10")
+        precondition(!FanHelperInfo.commit(installed, requirement: requirement), "nothing staged")
         print("rejects going back after an update: ok")
     }
 }

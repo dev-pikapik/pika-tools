@@ -105,7 +105,7 @@ final class FanControl {
         let steps = [
             "(/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1 || true)",
             "/bin/mkdir -p /Library/PrivilegedHelperTools",
-            "/bin/rm -f \(q(Self.binary))",
+            "/bin/rm -f \(q(Self.binary)) \(q(Self.binary + ".new"))",
             "/bin/cp \(q(Self.bundled.path)) \(q(Self.binary))",
             "/usr/sbin/chown root:wheel \(q(Self.binary))",
             "/bin/chmod 755 \(q(Self.binary))",

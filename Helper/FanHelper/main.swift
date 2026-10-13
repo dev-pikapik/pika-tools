@@ -59,10 +59,7 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
                 last = clients == 0
             }
             lock.unlock()
-            if last {
-                resetAll()
-                exit(0)
-            }
+            if last { finish() }
         }
         connection.invalidationHandler = leave
         connection.interruptionHandler = leave
@@ -91,7 +88,14 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
     func update(from path: String, reply: @escaping (Bool) -> Void) {
         updates.lock()
         defer { updates.unlock() }
-        reply(candidate.map { FanHelperInfo.replace(CommandLine.arguments[0], with: path, requirement: $0) } ?? false)
+        reply(candidate.map { FanHelperInfo.stage(CommandLine.arguments[0], from: path, requirement: $0) } ?? false)
+    }
+
+    func finish() -> Never {
+        resetAll()
+        updates.lock()
+        if let candidate { FanHelperInfo.commit(CommandLine.arguments[0], requirement: candidate) }
+        exit(0)
     }
 }
 
@@ -110,10 +114,7 @@ var signals = [DispatchSourceSignal]()
 for number in [SIGTERM, SIGINT] {
     signal(number, SIG_IGN)
     let source = DispatchSource.makeSignalSource(signal: number, queue: .main)
-    source.setEventHandler {
-        service.resetAll()
-        exit(0)
-    }
+    source.setEventHandler { service.finish() }
     source.resume()
     signals.append(source)
 }

@@ -51,12 +51,23 @@ enum FanHelperInfo {
         return Int(build)
     }
 
-    static func replace(_ target: String, with source: String, requirement: String) -> Bool {
+    static func stage(_ target: String, from source: String, requirement: String) -> Bool {
         let staged = target + ".new"
         unlink(staged)
         guard let data = FileManager.default.contents(atPath: source),
               FileManager.default.createFile(atPath: staged, contents: data, attributes: [.posixPermissions: 0o755]),
-              let candidate = build(staged, requirement: requirement), candidate >= build(target) ?? 0,
+              let candidate = build(staged, requirement: requirement), candidate >= build(target) ?? 0
+        else {
+            unlink(staged)
+            return false
+        }
+        return true
+    }
+
+    @discardableResult
+    static func commit(_ target: String, requirement: String) -> Bool {
+        let staged = target + ".new"
+        guard let candidate = build(staged, requirement: requirement), candidate >= build(target) ?? 0,
               rename(staged, target) == 0
         else {
             unlink(staged)
