@@ -128,7 +128,8 @@ enum LeftoverPermissions {
 
     private static let services: [(ids: [String], name: () -> String, symbol: String, pane: String)] = [
         (["Accessibility", "PostEvent"], { String(localized: "Accessibility") }, "accessibility", "Privacy_Accessibility"),
-        (["ScreenCapture", "AudioCapture"], { String(localized: "Screen Recording") }, "rectangle.dashed.badge.record", "Privacy_ScreenCapture"),
+        (["ScreenCapture"], { String(localized: "Screen Recording") }, "rectangle.dashed.badge.record", "Privacy_ScreenCapture"),
+        (["AudioCapture"], { String(localized: "System Audio Recording") }, "waveform", "Privacy_AudioCapture"),
         (["ListenEvent"], { String(localized: "Input Monitoring") }, "keyboard.badge.eye", "Privacy_ListenEvent"),
         (["SystemPolicyAllFiles", "EndpointSecurityClient"], { String(localized: "Full Disk Access") }, "internaldrive", "Privacy_AllFiles"),
         (["Camera"], { String(localized: "Camera") }, "camera", "Privacy_Camera"),

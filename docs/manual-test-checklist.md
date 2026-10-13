@@ -31,6 +31,15 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 ## Speed Test
 - Run a full test (about 20 s). Expected: ping, download, upload fill in, then a result. Cancel mid-way: returns to idle, next run works. Turn Wi-Fi off and run: "offline" message.
 
+## App Volume (macOS 14.2 or later)
+- On macOS 14.0 or 14.1. Expected: no Sound page in Settings and no App Volume row in the menu bar panel.
+- Settings > Sound > App Volume on, without the permission. Expected: no prompt yet; the row is half-grey and clicking it opens the Permissions page on the System Audio Recording row. Allow shows the system prompt (after a refusal it opens System Settings > Privacy & Security instead); Turn Off also opens System Settings in this build. Once allowed, the row has a green check and the list says "No apps are playing sound".
+- Start a stub app that plays a quiet tone (never a program you use) and keep another app playing sound. Expected: both appear in the list with their icon, a slider at 100% and a mute button.
+- Drag the stub's slider down. Expected: only the stub gets quieter, smoothly and without clicks, and it is silent at the left end; the other app, the Mac's volume and the output device do not change. Back at 100% the stub plays as before.
+- Press the stub's mute button. Expected: it falls silent at once, its slider greys out and the button shows a crossed speaker with the tip "Unmute"; press again and the sound returns at the old level. Relaunch pikapik: the level and the mute are kept.
+- Quit the stub. Expected: its row dims and goes after about 30 seconds, unless the stub is muted or below 100%, then it stays dimmed.
+- Quit pikapik with Cmd+Q while the stub is below 100%, then repeat and force quit it. Expected: the stub is back at full volume at once both times, and neither while it ran nor after that does Audio MIDI Setup or System Settings > Sound show an extra device (the helper aggregate is private and is gone with the app).
+
 ## Keep Awake
 - Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed or display-off rows.
 

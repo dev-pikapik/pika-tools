@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "автоматично, авто, Пробіл, Return, розкладка";
 "shortcut, undo, convert, selection, layout" = "сполучення клавіш, скасувати, конвертувати, виділення, розкладка";
 "exceptions, exclude, list, layout" = "винятки, виключити, список, розкладка";
+"Sound" = "Звук";
+"App Volume" = "Гучність програм";
+"Works with any app that plays sound" = "Працює з будь-якою програмою, що відтворює звук";
+"Lower or mute any app without touching the others." = "Зменшуйте гучність або вимикайте звук будь-якої програми, не чіпаючи решту.";
+"Each app gets its own volume." = "Кожна програма має власну гучність.";
+"No apps are playing sound" = "Жодна програма зараз не відтворює звук";
+"Mute" = "Вимкнути звук";
+"Unmute" = "Увімкнути звук";
+"Volume of %@" = "Гучність: %@";
+"System Audio Recording" = "Запис системного звуку";
+"To change each app’s volume" = "Щоб змінювати гучність кожної програми";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik пропускає звук кожної програми через себе, щоб змінити його гучність. Нічого не записується й не зберігається.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "мікшер, вимкнути звук програми, гучність програми, гучність, звук, аудіо, тихо, гучно";

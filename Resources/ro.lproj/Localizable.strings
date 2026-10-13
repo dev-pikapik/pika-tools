@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automat, auto, Spațiu, Return, aranjament";
 "shortcut, undo, convert, selection, layout" = "scurtătură, anulează, convertește, selecție, aranjament";
 "exceptions, exclude, list, layout" = "excepții, excludere, listă, aranjament";
+"Sound" = "Sunet";
+"App Volume" = "Volumul aplicațiilor";
+"Works with any app that plays sound" = "Funcționează cu orice aplicație care redă sunet";
+"Lower or mute any app without touching the others." = "Redu volumul sau oprește sunetul oricărei aplicații, fără să le afectezi pe celelalte.";
+"Each app gets its own volume." = "Fiecare aplicație are propriul volum.";
+"No apps are playing sound" = "Nicio aplicație nu redă sunet";
+"Mute" = "Fără sunet";
+"Unmute" = "Cu sunet";
+"Volume of %@" = "Volumul pentru %@";
+"System Audio Recording" = "Înregistrarea audio a sistemului";
+"To change each app’s volume" = "Pentru a schimba volumul fiecărei aplicații";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik trece sunetul fiecărei aplicații prin el însuși pentru a-i schimba volumul. Nimic nu este înregistrat sau salvat.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, oprește sunetul aplicației, volum pe aplicație, volum, sunet, audio, încet, tare";

@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automatique, auto, Espace, Retour, disposition";
 "shortcut, undo, convert, selection, layout" = "raccourci, annuler, convertir, sélection, disposition";
 "exceptions, exclude, list, layout" = "exceptions, exclure, liste, disposition";
+"Sound" = "Son";
+"App Volume" = "Volume des apps";
+"Works with any app that plays sound" = "Fonctionne avec n’importe quelle app qui joue du son";
+"Lower or mute any app without touching the others." = "Baissez le volume de n’importe quelle app ou coupez-en le son, sans toucher aux autres.";
+"Each app gets its own volume." = "Chaque app a son propre volume.";
+"No apps are playing sound" = "Aucune app ne joue de son";
+"Mute" = "Couper le son";
+"Unmute" = "Réactiver le son";
+"Volume of %@" = "Volume de %@";
+"System Audio Recording" = "Enregistrement de l’audio système";
+"To change each app’s volume" = "Pour changer le volume de chaque app";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik fait passer le son de chaque app par lui-même pour en changer le volume. Rien n’est enregistré ni conservé.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixeur, couper une app, volume par app, volume, son, audio, silencieux, fort";

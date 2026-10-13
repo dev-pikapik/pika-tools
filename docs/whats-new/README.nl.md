@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Elke app heeft zijn eigen volume
+
+<sub>1.45.0 · 13 oktober 2026</sub>
+
+Zet een luid gesprek zachter, demp een lawaaierig spel en laat je muziek zoals die is.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Geluid en zet ‘App-volume’ aan. Elke app die geluid afspeelt krijgt een eigen schuifregelaar en een dempknop, in Instellingen en in het menu. Het volume van je Mac en van de andere apps verandert niet, en pikapik onthoudt het niveau van elke app. Een app die je op vol volume laat staan, wordt nooit aangeraakt.
+
+Om het volume van een app te wijzigen, leidt pikapik het geluid ervan door zichzelf heen. Daarvoor heeft het de toestemming ‘Opname van systeemaudio’ nodig, die je toestaat op de pagina ‘Toestemmingen’. Het geluid wordt alleen doorgegeven: het wordt niet opgenomen, bewaard of ergens naartoe gestuurd, en de microfoon wordt niet gebruikt. Vereist macOS 14.2 of nieuwer (op macOS 14.0 en 14.1 blijft het verborgen) en staat standaard uit.
+
+**Probeer het:** Instellingen › Geluid › App-volume
+
+---
+
 ## <a id="v1.44.3"></a>Woorden die je in de verkeerde indeling typt, corrigeren zichzelf
 
 <sub>1.44.3 · 13 oktober 2026</sub>

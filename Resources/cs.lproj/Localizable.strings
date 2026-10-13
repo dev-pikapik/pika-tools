@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automaticky, auto, Mezerník, Return, rozložení";
 "shortcut, undo, convert, selection, layout" = "zkratka, vrátit, převést, výběr, rozložení";
 "exceptions, exclude, list, layout" = "výjimky, vyloučit, seznam, rozložení";
+"Sound" = "Zvuk";
+"App Volume" = "Hlasitost aplikací";
+"Works with any app that plays sound" = "Funguje s každou aplikací, která přehrává zvuk";
+"Lower or mute any app without touching the others." = "Ztište nebo ztlumte libovolnou aplikaci, aniž byste ovlivnili ostatní.";
+"Each app gets its own volume." = "Každá aplikace má vlastní hlasitost.";
+"No apps are playing sound" = "Žádná aplikace nepřehrává zvuk";
+"Mute" = "Ztlumit";
+"Unmute" = "Zrušit ztlumení";
+"Volume of %@" = "Hlasitost: %@";
+"System Audio Recording" = "Nahrávání zvuku systému";
+"To change each app’s volume" = "Pro změnu hlasitosti každé aplikace";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik pouští zvuk každé aplikace přes sebe, aby mohl změnit její hlasitost. Nic se nenahrává ani neukládá.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixážní pult, ztlumit aplikaci, hlasitost aplikace, hlasitost, zvuk, audio, ticho, hlasitě";

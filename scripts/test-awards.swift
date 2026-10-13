@@ -2,7 +2,7 @@ import Foundation
 import Observation
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, games, pet, permissions, about
+    case general, keepAwake, fans, speedTest, sound, keyboard, mouse, windows, dock, finder, animations, games, pet, permissions, about
 
     var id: Self { self }
     var isAvailable: Bool { true }

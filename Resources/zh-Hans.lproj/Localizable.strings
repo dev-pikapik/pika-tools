@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "自动, 自动修正, 空格, Return, 布局";
 "shortcut, undo, convert, selection, layout" = "快捷键, 撤销, 转换, 所选内容, 布局";
 "exceptions, exclude, list, layout" = "例外, 排除, 列表, 布局";
+"Sound" = "声音";
+"App Volume" = "App 音量";
+"Works with any app that plays sound" = "适用于任何播放声音的 App";
+"Lower or mute any app without touching the others." = "调低或静音任意 App，不影响其他 App。";
+"Each app gets its own volume." = "每个 App 都有自己的音量。";
+"No apps are playing sound" = "没有 App 正在播放声音";
+"Mute" = "静音";
+"Unmute" = "取消静音";
+"Volume of %@" = "%@ 的音量";
+"System Audio Recording" = "系统音频录制";
+"To change each app’s volume" = "用于调整每个 App 的音量";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik 会让每个 App 的声音先经过自己，以便调整音量。不会录制或保存任何内容。";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "调音台, App 静音, 单个 App 音量, 音量, 声音, 音频, 安静, 大声";

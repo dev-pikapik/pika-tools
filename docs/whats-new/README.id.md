@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Setiap app punya volumenya sendiri
+
+<sub>1.45.0 · 13 Oktober 2026</sub>
+
+Kecilkan panggilan yang terlalu keras, bisukan game yang berisik, dan biarkan musik Anda apa adanya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Suara dan nyalakan “Volume App”. Setiap app yang memutar suara mendapat slider dan tombol bisu sendiri, di Pengaturan maupun di menu. Volume Mac Anda dan app lain tidak berubah, dan pikapik mengingat level tiap app. App yang Anda biarkan di volume penuh tidak pernah disentuh.
+
+Untuk mengubah volume sebuah app, pikapik meneruskan suaranya melalui dirinya sendiri, jadi ia membutuhkan izin “Perekaman Audio Sistem”, yang Anda izinkan di halaman “Izin”. Suara hanya diteruskan: tidak direkam, disimpan, atau dikirim ke mana pun, dan mikrofon tidak digunakan. Memerlukan macOS 14.2 atau lebih baru (di macOS 14.0 dan 14.1 tetap tersembunyi) dan mati secara default.
+
+**Coba:** Pengaturan › Suara › Volume App
+
+---
+
 ## <a id="v1.44.3"></a>Kata yang diketik dengan tata letak yang salah diperbaiki otomatis
 
 <sub>1.44.3 · 13 Oktober 2026</sub>

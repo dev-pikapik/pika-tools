@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Varje app har sin egen volym
+
+<sub>1.45.0 · 13 oktober 2026</sub>
+
+Sänk ett högljutt samtal, stäng av ljudet för ett bullrigt spel och låt musiken vara som den är.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Ljud och slå på ”Appvolym”. Varje app som spelar upp ljud får ett eget reglage och en knapp för att stänga av ljudet, i Inställningar och i menyn. Volymen på din Mac och på de andra apparna ändras inte, och pikapik kommer ihåg nivån för varje app. En app som du lämnar på full volym rörs aldrig.
+
+För att ändra en apps volym leder pikapik dess ljud genom sig själv, så det behöver behörigheten ”Inspelning av systemljud”, som du tillåter på sidan ”Behörigheter”. Ljudet leds bara vidare: det spelas inte in, sparas inte och skickas ingenstans, och mikrofonen används inte. Kräver macOS 14.2 eller senare (i macOS 14.0 och 14.1 förblir det dolt) och är av som standard.
+
+**Prova:** Inställningar › Ljud › Appvolym
+
+---
+
 ## <a id="v1.44.3"></a>Ord som skrivs med fel layout rättar sig själva
 
 <sub>1.44.3 · 13 oktober 2026</sub>

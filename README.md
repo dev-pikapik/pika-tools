@@ -236,7 +236,11 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br><b>Ports</b>
 <br>See which program took a port, and free it.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/app-volume-dark.png"><img src="docs/media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>App Volume</b>
+<br>Lower or mute any app without touching the others.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik needs two permissions. On first launch it opens Settings on the Permissi
 
 The app picks up the change within a couple of seconds, no restart needed.
 
-Some features ask for more when you use them: **Fan control**, **Finder Extensions**, **iCloud Drive**, **Full Disk Access** and **Screen Recording**. They're all on the Permissions page in Settings: each permission has a line about what it's for, a green check or an orange cross, and one button, **Allow** when it's missing and **Turn Off** when it's on. So you can take any permission back right there.
+Some features ask for more when you use them: **Fan control**, **Finder Extensions**, **iCloud Drive**, **Full Disk Access**, **Screen Recording** and **System Audio Recording**. They're all on the Permissions page in Settings: each permission has a line about what it's for, a green check or an orange cross, and one button, **Allow** when it's missing and **Turn Off** when it's on. So you can take any permission back right there.
 
 pikapik doesn't record, store or send anything you type or click. Events are handled in memory and passed on right away. To fix words typed in the wrong layout, pikapik keeps only the last few words you typed, in memory, and forgets them when you click or switch apps. The only words it saves are the ones you asked it to leave alone, on this Mac, until you clear them in Settings › Keyboard. pikapik goes online only for updates (it asks GitHub for the latest release and downloads it only if you choose to update) and for the Speed Test when you start it (it uses Apple's servers). The Mac App Store version is updated by the App Store, and its Speed Test uses Cloudflare. The progress of your pet (steps, throws, awards and the like) is counted only on this Mac and never sent anywhere. You can erase it in Settings › Pet.
 
@@ -260,6 +264,8 @@ pikapik doesn't record, store or send anything you type or click. Events are han
 
 <details>
 <summary>Every tool in detail</summary>
+
+**App Volume.** Open Settings › Sound and switch on **App Volume**. Every app that plays sound gets its own slider and a mute button, in Settings and in the menu bar panel. Lower a loud video call, mute a noisy game and leave your music as it is: the volume of your Mac and of the other apps stays the same. pikapik remembers the level of each app, and an app you leave at full volume is never touched. To change an app's volume, pikapik passes its sound through itself, so it needs the **System Audio Recording** permission, which you allow on the Permissions page. The sound is only passed on: it isn't recorded, saved or sent anywhere, and the microphone isn't used. It needs macOS 14.2 or later and is hidden on macOS 14.0 and 14.1. Off by default.
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
@@ -373,6 +379,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Temperature**: how warm your Mac is, overall and for each part, such as the processor, memory and battery.
 - **Speed Test**: check the internet speed and see what it's good for.
 - **Ports**: which program took which port, its addresses and details, and a button to free the port.
+- **Sound**: App Volume, a slider and a mute button for every app that plays sound.
 - **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).

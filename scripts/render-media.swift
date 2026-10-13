@@ -46,6 +46,7 @@ enum RenderMedia {
         ("leftover-permissions", 3.8, AnyView(LeftoversArt())),
         ("uninstaller", 6.0, AnyView(TrashWatchArt(on: true))),
         ("background", BackgroundCard.length, AnyView(BackgroundCard())),
+        ("app-volume", 4.8, AnyView(AppVolumeArt(on: true))),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
         ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleFrame(rule: .commandQ, story: .still(on: false), height: 32)), 64), (AnyView(GameRuleFrame(rule: .spotlight, story: .still(on: false), height: 32)), 52), (AnyView(GameRuleFrame(rule: .missionControl, story: .still(on: false), height: 32)), 72)], height: 36))),
         ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),
@@ -63,6 +64,7 @@ enum RenderMedia {
         ("whats-new/1.39.3/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
         ("whats-new/1.40.1/dock-minimize", DockMinimizeCard.length, AnyView(DockMinimizeCard())),
         ("whats-new/1.43.0/background", BackgroundCard.length, AnyView(BackgroundCard())),
+        ("whats-new/1.45.0/app-volume", AppVolumeMixerCard.length, AnyView(AppVolumeMixerCard())),
     ]
 
     static func main() {
@@ -1414,5 +1416,115 @@ private struct PortsCard: View {
     private static var box: some View {
         let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
         return shape.fill(Color.primary.opacity(0.04)).overlay(shape.hairline(Color.primary.opacity(0.08)))
+    }
+}
+
+private struct AppVolumeMixerCard: View {
+    static let length = 8.0
+
+    var body: some View {
+        IllustrationRow {
+            ArtTimeline { time in
+                AppVolumeMixerScene(t: time.map { GameStory.mod($0, Self.length) } ?? 5)
+            }
+        }
+    }
+}
+
+private struct AppVolumeMixerScene: View {
+    let t: Double
+
+    private static let apps: [(symbol: String, color: Color, caption: CGFloat)] = [
+        ("phone.fill", Art.green, 44), ("gamecontroller.fill", .accentColor, 36), ("music.note", Art.red, 40),
+    ]
+    private static let left: CGFloat = 140
+    private static let width: CGFloat = 84
+    private static let route: [(Double, CGPoint)] = [
+        (0, CGPoint(x: 268, y: 112)), (1.2, CGPoint(x: 224, y: 31)), (1.3, CGPoint(x: 224, y: 31)), (2.5, CGPoint(x: 161, y: 31)),
+        (2.6, CGPoint(x: 161, y: 31)), (3.7, CGPoint(x: 244, y: 64)), (4.1, CGPoint(x: 244, y: 64)), (5.2, CGPoint(x: 268, y: 112)),
+    ]
+
+    private var back: Double { 1 - GameStory.ramp(t, 7.2, 0.5) }
+    private var lowered: Double { GameStory.ramp(t, 1.3, 1.2) * back }
+    private var muted: Double { GameStory.ramp(t, 3.85, 0.2) * back }
+    private var dragging: Bool { (1.3..<2.55).contains(t) }
+    private var clicking: Bool { (3.85..<3.99).contains(t) }
+
+    private var pointer: some View {
+        var tip = Self.route[Self.route.count - 1].1
+        if let next = Self.route.firstIndex(where: { t < $0.0 }) {
+            let (t0, from) = Self.route[max(next - 1, 0)], (t1, to) = Self.route[next]
+            let e = next > 0 ? CGFloat(GameStory.ramp(t, t0, t1 - t0)) : 0
+            tip = CGPoint(x: from.x + (to.x - from.x) * e, y: from.y + (to.y - from.y) * e)
+        }
+        return ArtCursor(pressed: dragging || clicking)
+            .position(x: tip.x + 6, y: tip.y + 9)
+    }
+
+    var body: some View {
+        let panel = RoundedRectangle(cornerRadius: 12, style: .continuous)
+        Stage {
+            panel.fill(Color(nsColor: .windowBackgroundColor))
+                .shadow(color: .black.opacity(0.15), radius: 5, y: 2)
+                .overlay(panel.hairline(Color.primary.opacity(0.12)))
+                .frame(width: 232, height: 108)
+                .position(x: 150, y: 64)
+            ForEach(0..<Self.apps.count, id: \.self) { row($0) }
+            pointer
+        }
+    }
+
+    private func row(_ index: Int) -> some View {
+        let app = Self.apps[index]
+        let y = 31 + 33 * CGFloat(index)
+        let mute = index == 1 ? muted : 0
+        return ZStack {
+            tile(app.symbol, color: app.color)
+                .saturation(1 - 0.65 * mute)
+                .position(x: 59, y: y)
+            Capsule().fill(Color.primary.opacity(0.3))
+                .frame(width: app.caption, height: 5)
+                .position(x: 78 + app.caption / 2, y: y)
+            slider(level: index == 0 ? CGFloat(1 - 0.75 * lowered) : 1, y: y)
+                .opacity(1 - 0.6 * mute)
+            speaker(muted: mute)
+                .scaleEffect(index == 1 && clicking ? 0.85 : 1)
+                .position(x: 244, y: y)
+        }
+    }
+
+    private func tile(_ symbol: String, color: Color) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        return shape
+            .fill(LinearGradient(colors: [color, color.opacity(0.7)], startPoint: .top, endPoint: .bottom))
+            .overlay(shape.hairline(Color.white.opacity(0.25)))
+            .overlay(Image(systemName: symbol).font(.system(size: 11, weight: .semibold)).foregroundStyle(.white))
+            .frame(width: 22, height: 22)
+            .shadow(color: .black.opacity(0.18), radius: 2, y: 1)
+    }
+
+    private func slider(level: CGFloat, y: CGFloat) -> some View {
+        ZStack {
+            Capsule().fill(Color.primary.opacity(0.15))
+                .frame(width: Self.width, height: 4)
+                .position(x: Self.left + Self.width / 2, y: y)
+            Capsule().fill(Color.accentColor)
+                .frame(width: Self.width * level, height: 4)
+                .position(x: Self.left + Self.width * level / 2, y: y)
+            Circle().fill(.white)
+                .overlay(Circle().strokeBorder(Color.primary.opacity(0.18), lineWidth: 0.5))
+                .frame(width: 12, height: 12)
+                .shadow(color: .black.opacity(0.22), radius: 1.5, y: 1)
+                .position(x: Self.left + Self.width * level, y: y)
+        }
+    }
+
+    private func speaker(muted: Double) -> some View {
+        ZStack {
+            Image(systemName: "speaker.wave.2.fill").foregroundStyle(Color.secondary).opacity(1 - muted)
+            Image(systemName: "speaker.slash.fill").foregroundStyle(Color.accentColor).opacity(muted)
+        }
+        .font(.system(size: 12))
+        .frame(width: 20, height: 20)
     }
 }

@@ -3,7 +3,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 enum Permission: CaseIterable {
-    case accessibility, inputMonitoring, screenRecording
+    case accessibility, inputMonitoring, screenRecording, systemAudio
     #if !APPSTORE
     case fans
     #endif
@@ -26,6 +26,8 @@ enum Permission: CaseIterable {
             ("com.apple.graphic-icon.screen-recording", "rectangle.dashed.badge.record",
              String(localized: "Screen Recording"),
              FrameRateMeter.hasTrace ? String(localized: "Needed for some games") : String(localized: "Needed to count frames"))
+        case .systemAudio:
+            ("", "waveform", String(localized: "System Audio Recording"), String(localized: "To change each app’s volume"))
         #if !APPSTORE
         case .fans:
             ("", "fan", String(localized: "Fan control"), String(localized: "Lets the app choose how fast your fans spin"))
@@ -57,6 +59,7 @@ enum Permission: CaseIterable {
         case .accessibility: "Privacy_Accessibility"
         case .inputMonitoring: "Privacy_ListenEvent"
         case .screenRecording: "Privacy_ScreenCapture"
+        case .systemAudio: "Privacy_AudioCapture"
         default: "Privacy_AllFiles"
         }
     }
@@ -65,6 +68,8 @@ enum Permission: CaseIterable {
         switch self {
         case .screenRecording:
             GameModeTool.shared.showsFrameRate && !Permissions.shared.screenRecording && (!FrameRateMeter.hasTrace || GameModeTool.shared.needsRecording)
+        case .systemAudio:
+            if #available(macOS 14.2, *) { AppVolumeTool.shared.isEnabled || Permissions.shared.systemAudioRequested } else { false }
         #if !APPSTORE
         case .fans: FanControl.shared.hasFans
         case .iCloud: SettingsSync.shared.isEnabled
@@ -80,6 +85,7 @@ enum Permission: CaseIterable {
         case .accessibility: permissions.accessibility
         case .inputMonitoring: permissions.inputMonitoring
         case .screenRecording: permissions.screenRecording
+        case .systemAudio: permissions.systemAudio
         #if !APPSTORE
         case .fans: FanControl.shared.ready
         case .iCloud: SettingsSync.shared.state != .noAccess
@@ -110,15 +116,15 @@ enum Permission: CaseIterable {
 
     var opensSettingsToAllow: Bool {
         #if APPSTORE
-        self != .folders
+        self == .systemAudio ? Permissions.shared.systemAudioAsked : self != .folders
         #else
-        self != .fans
+        self == .systemAudio ? Permissions.shared.systemAudioAsked : self != .fans
         #endif
     }
 
     var opensSettingsToTurnOff: Bool {
         #if APPSTORE
-        self == .accessibility || self == .inputMonitoring || self == .screenRecording || self == .finder
+        self == .accessibility || self == .inputMonitoring || self == .screenRecording || self == .systemAudio || self == .finder
         #else
         false
         #endif
@@ -128,7 +134,7 @@ enum Permission: CaseIterable {
         #if APPSTORE
         false
         #else
-        self == .accessibility || self == .inputMonitoring || self == .screenRecording
+        self == .accessibility || self == .inputMonitoring || self == .screenRecording || self == .systemAudio
         #endif
     }
 
@@ -138,6 +144,12 @@ enum Permission: CaseIterable {
         case .accessibility, .inputMonitoring, .screenRecording:
             permissions.request([self])
             permissions.openSettings(pane)
+        case .systemAudio:
+            if #available(macOS 14.2, *) {
+                let asked = permissions.systemAudioAsked
+                permissions.systemAudioAsked = true
+                AudioCaptureProbe.shared.allow(opening: asked ? { permissions.openSettings(pane) } : nil)
+            }
         #if !APPSTORE
         case .fans: FanControl.shared.install()
         case .iCloud: SettingsSync.shared.openSettings()
@@ -160,6 +172,14 @@ enum Permission: CaseIterable {
             permissions.openSettings(pane)
             #else
             SettingsWindow.restart(opening: "--permissions", resetting: self == .accessibility ? "Accessibility" : self == .inputMonitoring ? "ListenEvent" : "ScreenCapture")
+            #endif
+        case .systemAudio:
+            #if APPSTORE
+            permissions.openSettings(pane)
+            #else
+            permissions.systemAudioAsked = false
+            permissions.setSystemAudio(false)
+            SettingsWindow.restart(opening: "--permissions", resetting: "AudioCapture")
             #endif
         #if !APPSTORE
         case .fans: FanControl.shared.uninstall()
@@ -189,6 +209,13 @@ final class Permissions {
     private(set) var inputMonitoring = CGPreflightListenEventAccess()
     private(set) var fileAccess = Permissions.hasFileAccess
     private(set) var screenRecording = CGPreflightScreenCaptureAccess()
+    private(set) var systemAudio = UserDefaults.standard.bool(forKey: "system-audio-granted") {
+        didSet { UserDefaults.standard.set(systemAudio, forKey: "system-audio-granted") }
+    }
+    private(set) var systemAudioRequested = false
+    var systemAudioAsked = UserDefaults.standard.bool(forKey: "system-audio-asked") {
+        didSet { UserDefaults.standard.set(systemAudioAsked, forKey: "system-audio-asked") }
+    }
 
     var allGranted: Bool { accessibility && inputMonitoring }
 
@@ -224,6 +251,7 @@ final class Permissions {
         if !screenRecording && wanted.contains(.screenRecording) {
             CGRequestScreenCaptureAccess()
         }
+        if wanted.contains(.systemAudio) { systemAudioRequested = true }
         startPolling()
     }
 
@@ -257,6 +285,16 @@ final class Permissions {
         fileAccess = files
         screenRecording = capture
         onChange?()
+    }
+
+    func setSystemAudio(_ granted: Bool) {
+        guard granted != systemAudio else { return }
+        systemAudio = granted
+        onChange?()
+    }
+
+    func checkSystemAudio() {
+        if #available(macOS 14.2, *) { AudioCaptureProbe.shared.check() }
     }
 
     func startPolling() {
@@ -390,6 +428,19 @@ struct PermissionRow: View {
     let permission: Permission
     @State private var confirming = false
 
+    @ViewBuilder
+    private var label: some View {
+        let content = HStack(spacing: 10) {
+            PermissionIcon(type: permission.icon, symbol: permission.symbol)
+            RowLabel(Text(permission.title), Text(permission.subtitle))
+        }
+        if permission == .systemAudio {
+            content.help(Text("pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved."))
+        } else {
+            content
+        }
+    }
+
     var body: some View {
         let granted = permission.isGranted
         LabeledContent {
@@ -411,10 +462,7 @@ struct PermissionRow: View {
                     .accessibilityLabel(granted ? String(localized: "Allowed") : String(localized: "Not allowed"))
             }
         } label: {
-            HStack(spacing: 10) {
-                PermissionIcon(type: permission.icon, symbol: permission.symbol)
-                RowLabel(Text(permission.title), Text(permission.subtitle))
-            }
+            label
         }
         .settingAnchor(permission.title)
         .confirmationDialog("Turn off \(permission.title)?", isPresented: $confirming, titleVisibility: .visible) {

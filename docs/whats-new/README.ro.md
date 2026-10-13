@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Fiecare aplicație are propriul volum
+
+<sub>1.45.0 · 13 octombrie 2026</sub>
+
+Redu un apel prea tare, oprește sunetul unui joc zgomotos și lasă muzica așa cum este.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Sunet și pornește „Volumul aplicațiilor”. Fiecare aplicație care redă sunet primește propriul cursor și un buton pentru oprirea sunetului, în Setări și în meniu. Volumul Mac-ului și al celorlalte aplicații nu se schimbă, iar pikapik reține nivelul fiecărei aplicații. O aplicație pe care o lași la volum maxim nu este atinsă niciodată.
+
+Ca să schimbe volumul unei aplicații, pikapik trece sunetul ei prin el însuși, de aceea are nevoie de permisiunea „Înregistrarea audio a sistemului”, pe care o permiți în pagina „Permisiuni”. Sunetul este doar trecut mai departe: nu este înregistrat, salvat sau trimis nicăieri, iar microfonul nu este folosit. Necesită macOS 14.2 sau mai nou (pe macOS 14.0 și 14.1 rămâne ascuns) și este dezactivat implicit.
+
+**Încearcă:** Setări › Sunet › Volumul aplicațiilor
+
+---
+
 ## <a id="v1.44.3"></a>Cuvintele scrise în aranjamentul greșit se corectează singure
 
 <sub>1.44.3 · 13 octombrie 2026</sub>

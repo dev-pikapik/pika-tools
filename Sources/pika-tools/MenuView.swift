@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "app-volume,archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -29,7 +29,7 @@ struct MenuView: View {
     #endif
 
     private var visibleTabs: [SettingsTab] {
-        [.keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
+        [.sound, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
 
     private func binding(_ id: String) -> Binding<Bool> {

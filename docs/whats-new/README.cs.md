@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Každá aplikace má vlastní hlasitost
+
+<sub>1.45.0 · 13. října 2026</sub>
+
+Ztište hlasitý hovor, ztlumte hlučnou hru a hudbu nechte, jak je.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Zvuk a zapněte „Hlasitost aplikací“. Každá aplikace, která přehrává zvuk, dostane vlastní posuvník a tlačítko pro ztlumení, v Nastavení i v nabídce. Hlasitost vašeho Macu a ostatních aplikací se nezmění a pikapik si pamatuje úroveň každé aplikace. Aplikace, kterou necháte na plnou hlasitost, se nikdy nedotkne.
+
+Aby mohl hlasitost aplikace měnit, pouští pikapik její zvuk přes sebe, a proto potřebuje oprávnění „Nahrávání zvuku systému“, které povolíte na stránce „Oprávnění“. Zvuk se jen předává dál: nenahrává se, neukládá ani nikam neposílá a mikrofon se nepoužívá. Vyžaduje macOS 14.2 nebo novější (v macOS 14.0 a 14.1 zůstává skryté) a je ve výchozím stavu vypnuté.
+
+**Vyzkoušejte:** Nastavení › Zvuk › Hlasitost aplikací
+
+---
+
 ## <a id="v1.44.3"></a>Slova napsaná ve špatném rozložení se opraví sama
 
 <sub>1.44.3 · 13. října 2026</sub>

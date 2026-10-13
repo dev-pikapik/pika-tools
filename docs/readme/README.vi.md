@@ -236,7 +236,11 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br><b>Cổng</b>
 <br>Xem chương trình nào đang chiếm cổng và giải phóng cổng đó.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Âm lượng ứng dụng</b>
+<br>Giảm hoặc tắt tiếng bất kỳ ứng dụng nào mà không ảnh hưởng đến các ứng dụng khác.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đ
 
 Ứng dụng nhận ra thay đổi trong vài giây, không cần khởi động lại.
 
-Một số tính năng cần thêm quyền khi bạn dùng chúng: **Điều khiển quạt**, **Tiện ích mở rộng của Finder**, **iCloud Drive**, **Truy cập toàn bộ ổ đĩa** và **Ghi màn hình**. Tất cả nằm ở trang Quyền trong cài đặt: mỗi quyền có một dòng nói quyền đó để làm gì, dấu tích xanh hoặc dấu gạch chéo cam, và một nút: **Cho phép** khi còn thiếu, **Tắt** khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó.
+Một số tính năng cần thêm quyền khi bạn dùng chúng: **Điều khiển quạt**, **Tiện ích mở rộng của Finder**, **iCloud Drive**, **Truy cập toàn bộ ổ đĩa**, **Ghi màn hình** và **Ghi âm thanh hệ thống**. Tất cả nằm ở trang Quyền trong cài đặt: mỗi quyền có một dòng nói quyền đó để làm gì, dấu tích xanh hoặc dấu gạch chéo cam, và một nút: **Cho phép** khi còn thiếu, **Tắt** khi đang bật. Nhờ vậy bạn có thể thu hồi bất kỳ quyền nào ngay tại đó.
 
 pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạn gõ hay bấm. Các sự kiện được xử lý trong bộ nhớ và chuyển tiếp ngay. Để sửa từ gõ nhầm bố cục bàn phím, pikapik chỉ giữ vài từ bạn gõ gần nhất trong bộ nhớ và quên chúng ngay khi bạn bấm chuột hoặc chuyển sang ứng dụng khác. Những từ duy nhất được lưu lại là các từ bạn đã yêu cầu để nguyên, chỉ trên máy Mac này, cho đến khi bạn xóa chúng trong Cài đặt › Bàn phím. pikapik chỉ kết nối mạng để cập nhật (hỏi GitHub phiên bản mới nhất và chỉ tải về khi bạn chọn cập nhật) và để kiểm tra tốc độ khi bạn bắt đầu (dùng máy chủ của Apple). Bản trên Mac App Store do App Store cập nhật, và phần kiểm tra tốc độ của bản này dùng Cloudflare. Tiến trình của thú cưng (số bước, lần tung, giải thưởng và những thứ tương tự) chỉ được đếm trên máy Mac này và không bao giờ được gửi đi đâu cả. Bạn có thể xóa trong Cài đặt › Thú cưng.
 
@@ -260,6 +264,8 @@ pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạ
 
 <details>
 <summary>Từng công cụ chi tiết</summary>
+
+**Âm lượng ứng dụng.** Mở Cài đặt › Âm thanh rồi bật **Âm lượng ứng dụng**. Mỗi ứng dụng phát âm thanh có thanh trượt riêng và nút tắt tiếng, trong Cài đặt lẫn trong menu. Hãy giảm âm lượng cuộc gọi video quá to, tắt tiếng một trò chơi ồn ào và để nhạc của bạn như cũ: âm lượng của Mac và của các ứng dụng khác không thay đổi. pikapik nhớ mức âm lượng của từng ứng dụng, và ứng dụng nào bạn để ở âm lượng tối đa thì không bao giờ bị đụng đến. Để đổi âm lượng của một ứng dụng, pikapik cho âm thanh của ứng dụng đó đi qua chính nó, nên cần quyền **Ghi âm thanh hệ thống**, mà bạn cho phép ở trang Quyền. Âm thanh chỉ được chuyển tiếp: không được ghi lại, lưu hay gửi đi đâu, và micro không được dùng. Cần macOS 14.2 trở lên và bị ẩn trên macOS 14.0 và 14.1. Tắt theo mặc định.
 
 **Bảo vệ ⌘Q và ⌘W.** Chỉ nhấn ⌘Q hoặc ⌘W thì không có gì xảy ra, nên bạn sẽ không vô tình thoát ứng dụng hay đóng cửa sổ. Thêm Shift khi bạn thật sự muốn: ⇧⌘Q để thoát, ⇧⌘W để đóng. Hoạt động trong mọi ứng dụng. Mỗi phím có công tắc riêng. Tắt theo mặc định.
 
@@ -373,6 +379,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Nhiệt độ**: máy Mac nóng đến mức nào, tổng thể và từng bộ phận, như bộ xử lý, bộ nhớ và pin.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.
 - **Cổng**: chương trình nào đang chiếm cổng nào, địa chỉ và chi tiết, cùng một nút để giải phóng cổng.
+- **Âm thanh**: âm lượng ứng dụng, thanh trượt và nút tắt tiếng cho mỗi ứng dụng phát âm thanh.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End, sửa từ gõ nhầm bố cục.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).

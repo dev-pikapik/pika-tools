@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "자동, 오토, 스페이스, Return, 레이아웃";
 "shortcut, undo, convert, selection, layout" = "단축키, 실행 취소, 변환, 선택 영역, 레이아웃";
 "exceptions, exclude, list, layout" = "예외, 제외, 목록, 레이아웃";
+"Sound" = "사운드";
+"App Volume" = "앱 음량";
+"Works with any app that plays sound" = "소리를 내는 모든 앱에서 작동합니다";
+"Lower or mute any app without touching the others." = "다른 앱은 그대로 두고 원하는 앱의 음량을 낮추거나 음소거하세요.";
+"Each app gets its own volume." = "앱마다 음량이 따로 있습니다.";
+"No apps are playing sound" = "소리를 내는 앱이 없습니다";
+"Mute" = "음소거";
+"Unmute" = "음소거 해제";
+"Volume of %@" = "%@ 음량";
+"System Audio Recording" = "시스템 오디오 녹음";
+"To change each app’s volume" = "앱별 음량을 바꾸기 위해";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik은 음량을 바꾸기 위해 각 앱의 소리를 자신을 거쳐 보냅니다. 아무것도 녹음되거나 저장되지 않습니다.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "믹서, 앱 음소거, 앱별 음량, 음량, 소리, 오디오, 조용히, 크게";

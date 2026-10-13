@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>每个 App 都有自己的音量
+
+<sub>1.45.0 · 2026年10月13日</sub>
+
+吵闹的通话调低，嘈杂的游戏静音，音乐保持原样。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+打开“设置”›“声音”，再开启“App 音量”。每个播放声音的 App 都有自己的滑块和静音按钮，在设置和菜单里都能用。你 Mac 的音量和其他 App 的音量不会变，pikapik 会记住每个 App 的音量。保持最大音量的 App 绝不会被改动。
+
+要改变某个 App 的音量，pikapik 会让它的声音先经过自己，所以需要“系统音频录制”权限，你可以在“权限”页面允许。声音只是被转交，不会被录制、保存或发送到任何地方，也不使用麦克风。需要 macOS 14.2 或更高版本（在 macOS 14.0 和 14.1 上会隐藏），默认关闭。
+
+**试试看：** 设置 › 声音 › App 音量
+
+---
+
 ## <a id="v1.44.3"></a>用错键盘布局输入的文字会自动修正
 
 <sub>1.44.3 · 2026年10月13日</sub>

@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automatisk, auto, Mellanslag, Return, layout";
 "shortcut, undo, convert, selection, layout" = "kortkommando, ångra, konvertera, markering, layout";
 "exceptions, exclude, list, layout" = "undantag, exkludera, lista, layout";
+"Sound" = "Ljud";
+"App Volume" = "Appvolym";
+"Works with any app that plays sound" = "Fungerar med alla appar som spelar upp ljud";
+"Lower or mute any app without touching the others." = "Sänk volymen eller stäng av ljudet för valfri app utan att påverka de andra.";
+"Each app gets its own volume." = "Varje app har sin egen volym.";
+"No apps are playing sound" = "Inga appar spelar upp ljud";
+"Mute" = "Stäng av ljudet";
+"Unmute" = "Slå på ljudet";
+"Volume of %@" = "Volym för %@";
+"System Audio Recording" = "Inspelning av systemljud";
+"To change each app’s volume" = "För att ändra volymen för varje app";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik leder varje apps ljud genom sig själv för att ändra volymen. Ingenting spelas in eller sparas.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, ljud av för app, volym per app, volym, ljud, audio, tyst, högt";

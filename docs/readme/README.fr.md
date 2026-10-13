@@ -236,7 +236,11 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br><b>Ports</b>
 <br>Voyez quel programme occupe un port, et libérez-le.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Volume des apps</b>
+<br>Baissez le volume de n’importe quelle app ou coupez-en le son, sans toucher aux autres.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik a besoin de deux autorisations. Au premier lancement, elle ouvre les ré
 
 L’app détecte le changement en une ou deux secondes, sans redémarrage.
 
-Certaines fonctions demandent davantage : **Contrôle des ventilateurs**, **Extensions du Finder**, **iCloud Drive**, **Accès complet au disque** et **Enregistrement de l’écran**. Tout se trouve sur la page Autorisations des réglages : chaque autorisation a une ligne qui dit à quoi elle sert, une coche verte ou une croix orange, et un seul bouton : **Autoriser** quand elle manque, **Éteindre** quand elle est active. Vous pouvez ainsi reprendre n’importe quelle autorisation sur place.
+Certaines fonctions demandent davantage : **Contrôle des ventilateurs**, **Extensions du Finder**, **iCloud Drive**, **Accès complet au disque**, **Enregistrement de l’écran** et **Enregistrement de l’audio système**. Tout se trouve sur la page Autorisations des réglages : chaque autorisation a une ligne qui dit à quoi elle sert, une coche verte ou une croix orange, et un seul bouton : **Autoriser** quand elle manque, **Éteindre** quand elle est active. Vous pouvez ainsi reprendre n’importe quelle autorisation sur place.
 
 pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. Pour corriger les mots tapés avec la mauvaise disposition, pikapik ne garde en mémoire que vos tout derniers mots et les oublie dès que vous cliquez ou changez d’app. Les seuls mots qu’il enregistre sont ceux que vous lui avez demandé de laisser tels quels, sur ce Mac uniquement, jusqu’à ce que vous les effaciez dans Réglages › Clavier. pikapik ne se connecte à internet que pour les mises à jour (il demande à GitHub la dernière version et ne la télécharge que si vous choisissez de mettre à jour) et pour le test de débit, quand vous le lancez (avec les serveurs d’Apple). La version du Mac App Store est mise à jour par l’App Store, et son test de débit utilise Cloudflare. La progression de votre compagnon (pas, lancers, récompenses et le reste) est comptée uniquement sur ce Mac et n’est jamais envoyée nulle part. Vous pouvez l’effacer dans Réglages › Compagnon.
 
@@ -260,6 +264,8 @@ pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou c
 
 <details>
 <summary>Chaque outil en détail</summary>
+
+**Volume des apps.** Ouvre Réglages › Son et active **Volume des apps**. Chaque app qui joue du son a son propre curseur et un bouton pour couper le son, dans les Réglages et dans le menu. Baisse le volume d’un appel vidéo trop fort, coupe le son d’un jeu bruyant et laisse ta musique comme elle est : le volume de ton Mac et celui des autres apps ne change pas. pikapik retient le volume de chaque app, et une app que tu laisses à fond n’est jamais touchée. Pour changer le volume d’une app, pikapik fait passer son son par lui-même, il a donc besoin de l’autorisation **Enregistrement de l’audio système**, que tu accordes sur la page Autorisations. Le son est seulement transmis : il n’est ni enregistré, ni conservé, ni envoyé nulle part, et le micro n’est pas utilisé. Il faut macOS 14.2 ou plus récent ; sous macOS 14.0 et 14.1, la fonction est masquée. Désactivé par défaut.
 
 **Protéger ⌘Q et ⌘W.** ⌘Q et ⌘W seuls ne font rien, vous ne quittez donc pas une app ni ne fermez une fenêtre par accident. Ajoutez Maj pour le faire exprès : ⇧⌘Q quitte, ⇧⌘W ferme. Fonctionne dans toutes les apps. Chaque touche a son propre interrupteur. Désactivé par défaut.
 
@@ -373,6 +379,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Température** : la chaleur de votre Mac, au global et pour chaque composant, comme le processeur, la mémoire et la batterie.
 - **Test de débit** : mesurer la connexion et voir ce qu’elle permet.
 - **Ports** : quel programme occupe quel port, ses adresses et ses détails, et un bouton pour libérer le port.
+- **Son** : volume des apps, avec un curseur et un bouton pour couper le son de chaque app qui joue du son.
 - **Clavier** : changement de langue, répétition des touches, Home et End, correction de la mauvaise disposition.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).

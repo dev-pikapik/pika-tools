@@ -103,6 +103,9 @@ final class ToolRegistry {
         #endif
         list.append(GameModeTool.shared)
         list.append(PetTool.shared)
+        if #available(macOS 14.2, *) {
+            list.append(AppVolumeTool.shared)
+        }
         #if !APPSTORE
         list.append(TrashWatchTool.shared)
         #endif
