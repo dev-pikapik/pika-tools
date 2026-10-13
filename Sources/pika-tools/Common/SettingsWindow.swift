@@ -529,6 +529,32 @@ extension View {
     func settingsPage() -> some View {
         modifier(SettingsPage())
     }
+
+    func whileShown(in window: @escaping (NSWindow) -> Bool = { $0 === SettingsWindow.window }, _ shown: @escaping (Bool) -> Void) -> some View {
+        modifier(WhileShown(window: window, shown: shown))
+    }
+}
+
+private struct WhileShown: ViewModifier {
+    let window: (NSWindow) -> Bool
+    let shown: (Bool) -> Void
+    @State private var on = false
+
+    private func set(_ value: Bool) {
+        guard value != on else { return }
+        on = value
+        shown(value)
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear { set(true) }
+            .onDisappear { set(false) }
+            .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
+                guard let changed = note.object as? NSWindow, window(changed) else { return }
+                set(changed.occlusionState.contains(.visible))
+            }
+    }
 }
 
 private struct SettingAnchor: ViewModifier {

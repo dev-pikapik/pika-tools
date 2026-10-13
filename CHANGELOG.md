@@ -9,6 +9,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Fixed
 - Menu: if you picked which rows the pikapik menu shows, Keep the Dock on one display no longer turns up there on its own. It starts hidden like every new row; to show it, click the pencil at the bottom of the menu and select it.
+- Fans and Battery: when you close Settings, pikapik stops checking the fans and the battery right away. Before, it kept checking them in the background if Settings was closed on one of these pages.
 
 ## [1.41.1] - 2026-10-13
 

@@ -40,8 +40,7 @@ struct BatterySettings: View {
         .formStyle(.grouped)
         .settingsPage()
         .animation(.snappy, value: battery.health)
-        .onAppear { battery.watch() }
-        .onDisappear { battery.unwatch() }
+        .whileShown { if $0 { battery.watch() } else { battery.unwatch() } }
     }
 
     private func health(_ state: BatteryState) -> some View {

@@ -42,8 +42,7 @@ struct TemperatureSettings: View {
         }
         .formStyle(.grouped)
         .settingsPage()
-        .onAppear { model.watch() }
-        .onDisappear { model.unwatch() }
+        .whileShown { if $0 { model.watch() } else { model.unwatch() } }
     }
 }
 
@@ -134,13 +133,6 @@ struct ThermalScene: View {
 struct TemperatureRow: View {
     private let model = Temperatures.shared
     @State private var hovering = false
-    @State private var watching = false
-
-    private func watch(_ on: Bool) {
-        guard on != watching else { return }
-        watching = on
-        if on { model.watch() } else { model.unwatch() }
-    }
 
     private var summary: String {
         #if !APPSTORE
@@ -185,11 +177,6 @@ struct TemperatureRow: View {
             }
         }
         .onHover { hovering = $0 }
-        .onAppear { watch(true) }
-        .onDisappear { watch(false) }
-        .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
-            guard let window = note.object as? NSWindow, NSStringFromClass(type(of: window)).contains("MenuBarExtraWindow") else { return }
-            watch(window.occlusionState.contains(.visible))
-        }
+        .whileShown(in: StatusMenu.isPanel) { if $0 { model.watch() } else { model.unwatch() } }
     }
 }
