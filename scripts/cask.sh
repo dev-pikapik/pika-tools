@@ -24,15 +24,16 @@ cask "pikapik" do
     remove "{{appdir}}/pika-tools.app", recursive: true
   end
 
-  uninstall_preflight_steps do
-    run "{{appdir}}/pikapik.app/Contents/MacOS/pika-tools", args: ["--uninstall"], must_succeed: false
-  end
-
   uninstall_postflight_steps do
     remove "{{appdir}}/pika-tools.app", recursive: true
   end
 
-  uninstall quit: "com.pesotchi.pika-tools"
+  uninstall quit:   "com.pesotchi.pika-tools",
+            script: {
+              executable:   "/usr/bin/env",
+              args:         ["#{appdir}/pikapik.app/Contents/MacOS/pika-tools", "--uninstall"],
+              must_succeed: false,
+            }
 
   zap launchctl: "com.pesotchi.pika-tools.fans",
       delete:    [
