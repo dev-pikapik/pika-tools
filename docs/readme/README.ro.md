@@ -227,7 +227,7 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Ține Dock-ul pe un singur ecran</b>
-<br>Dock-ul nu mai sare pe alt ecran. Ține apăsat ⌥ ca să-l muți intenționat.
+<br>Dock-ul nu mai sare pe alt ecran. Ca să-l muți, setează alt ecran ca principal.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Minimizează sau ascunde cu un clic în Dock.** Dă clic pe pictograma din Dock a aplicației în care lucrezi și toate ferestrele ei coboară în Dock. Dă clic din nou ca să le readuci pe toate. Poți alege și ca un clic să ascundă toată aplicația, ca ⌘H. Dezactivat implicit.
 
-**Ține Dock-ul pe un singur ecran.** Cu mai multe ecrane, macOS mută Dock-ul pe alt ecran de îndată ce indicatorul apasă pe marginea de jos a acelui ecran, sau pe cea din stânga ori din dreapta dacă Dock-ul se află pe lateral. Cu comutatorul pornit, Dock-ul rămâne unde este, iar colțurile active continuă să funcționeze. Ca să-l muți intenționat, ține apăsat ⌥ și împinge indicatorul spre marginea celuilalt ecran. Nu este nevoie de nicio permisiune. Comutatorul **Readu Dock-ul** îl pune la loc pe ecranul lui după repaus sau când se schimbă ecranele. Are nevoie de permisiunea **Accesibilitate** și nu există în versiunea din Mac App Store. Ambele comutatoare sunt dezactivate implicit.
+**Ține Dock-ul pe un singur ecran.** Cu mai multe ecrane, macOS mută Dock-ul pe alt ecran de îndată ce indicatorul apasă pe marginea de jos a acelui ecran. Cu comutatorul pornit, asta nu se mai întâmplă, oricât de repede ai mișca indicatorul: pikapik oprește mutarea printr-o setare a Dock-ului însuși și nu atinge niciodată indicatorul. Ca să muți Dock-ul intenționat, setează alt ecran ca principal: în **Configurări sistem › Afișaje**, fă clic pe acel ecran și alege **Afișaj principal** la **Utilizați ca**, iar Dock-ul se mută odată cu el. Rândul **Afișaj principal** de sub comutator deschide această pagină. Dock-ul își citește setarea doar când pornește, așa că, atunci când pornești sau oprești comutatorul, Dock-ul repornește o dată. Nu este nevoie de nicio permisiune. Comutatorul este dezactivat implicit și nu există în versiunea din Mac App Store.
 
 **Butonul verde mărește fereastra.** Dă clic pe butonul verde al unei ferestre, iar ea se mărește până umple ecranul, fără să treacă în ecran complet. Dă clic din nou ca să revii la mărimea de dinainte. Ține apăsat ⌥, iar butonul funcționează ca de obicei. Ecranul complet rămâne în meniul butonului și pe ⌃⌘F. Poți face o listă cu aplicațiile în care butonul verde să funcționeze ca de obicei. Dezactivat implicit.
 
@@ -406,7 +406,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End, corectarea aranjamentului greșit.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale, un buton care ascunde aplicația curentă.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
-- **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
+- **Dock**: minimizare sau ascundere cu un clic în Dock și ținerea Dock-ului pe un singur ecran.
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X, ștergere cu ⌫, ascunderea pictogramelor de pe desktop și afișarea fișierelor ascunse.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Sarcini în fundal**: tot ce rulează în fundal, ce aplicație l-a adăugat și un buton ca să oprești sarcinile tale și să le pornești din nou.

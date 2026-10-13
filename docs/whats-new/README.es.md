@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>El Dock se queda en su pantalla, por muy rápido que muevas el ratón
+
+<sub>1.48.0 · 13 de octubre de 2026</sub>
+
+«Mantener el Dock en una sola pantalla» ahora usa el propio ajuste del Dock, así que el Dock ya no sigue al puntero a otra pantalla, ni siquiera con movimientos rápidos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Antes, pikapik apartaba el puntero del borde inferior de la otra pantalla, y con un movimiento rápido del ratón el Dock aún podía saltar. Ahora el interruptor desactiva ese cambio en el propio Dock, y pikapik ya no toca el puntero para nada. El Dock solo lee este ajuste al arrancar, así que al activar o desactivar el interruptor el Dock se reinicia una vez. Si el interruptor ya estaba activado, el Dock también se reinicia una vez después de la actualización.
+
+Para mover el Dock a propósito, haz que otra pantalla sea la principal. Haz clic en «Pantalla principal», debajo del interruptor, para abrir Ajustes del Sistema › Pantallas. Después, haz clic en la pantalla que quieras y elige «Pantalla principal» en «Usar como». El Dock se pasa a esa pantalla.
+
+El interruptor «Devolver el Dock a su sitio» ya no está: también funcionaba apartando el puntero, y el Dock ya no sigue al puntero. «Mantener el Dock en una sola pantalla» no necesita ningún permiso y está desactivado por omisión. No está en la versión de la Mac App Store, porque las apps de la App Store no pueden cambiar los ajustes del Dock.
+
+**Pruébalo:** Ajustes › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Un escritorio despejado con un clic
 
 <sub>1.47.0 · 13 de octubre de 2026</sub>

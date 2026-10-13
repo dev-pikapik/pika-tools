@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock stannar på sin skärm, hur snabbt du än rör musen
+
+<sub>1.48.0 · 13 oktober 2026</sub>
+
+”Håll Dock på en skärm” använder nu en inställning i själva Dock, så Dock följer inte längre med pekaren till en annan skärm, oavsett hastighet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Tidigare sköt pikapik tillbaka pekaren från nederkanten av den andra skärmen, men med en snabb musrörelse kunde Dock ändå hoppa över. Nu stänger reglaget av den flytten i själva Dock, och pikapik rör inte pekaren alls. Dock läser den här inställningen bara vid start, så när du slår på eller av reglaget startas Dock om en gång. Om reglaget redan var på startas Dock också om en gång efter uppdateringen.
+
+Vill du flytta Dock med flit, gör en annan skärm till huvudbildskärm. Klicka på ”Huvudbildskärm” under reglaget för att öppna Systeminställningar › Bildskärmar, klicka på skärmen du vill ha och välj ”Huvudbildskärm” vid ”Använd som”. Dock flyttar då till den skärmen.
+
+Reglaget ”Ta tillbaka Dock” finns inte längre: det fungerade också genom att skjuta undan pekaren, och Dock följer inte längre pekaren. ”Håll Dock på en skärm” kräver ingen behörighet och är av som standard. Det finns inte i versionen från Mac App Store, eftersom appar från App Store inte kan ändra inställningarna för Dock.
+
+**Prova:** Inställningar › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Ett rent skrivbord med ett klick
 
 <sub>1.47.0 · 13 oktober 2026</sub>

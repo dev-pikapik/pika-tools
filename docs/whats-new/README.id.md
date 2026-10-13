@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock tetap di layarnya, secepat apa pun Anda menggerakkan mouse
+
+<sub>1.48.0 · 13 Oktober 2026</sub>
+
+“Pertahankan Dock di satu layar” kini memakai pengaturan milik Dock sendiri, jadi Dock tidak lagi mengikuti penunjuk ke layar lain, secepat apa pun gerakannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Sebelumnya, pikapik mendorong penunjuk menjauh dari tepi bawah layar yang lain, tetapi dengan gerakan mouse yang cepat, Dock masih bisa melompat. Sekarang sakelar ini mematikan perpindahan itu di Dock sendiri, dan pikapik sama sekali tidak menyentuh penunjuk. Dock hanya membaca pengaturan ini saat mulai, jadi menyalakan atau mematikan sakelar akan memulai ulang Dock sekali. Jika sakelar sudah menyala sebelumnya, Dock juga dimulai ulang sekali setelah pembaruan.
+
+Untuk memindahkan Dock dengan sengaja, jadikan layar lain sebagai layar utama. Klik “Layar utama” di bawah sakelar untuk membuka Pengaturan Sistem › Layar, klik layar yang Anda inginkan, lalu pilih “Layar utama” di “Gunakan sebagai”. Dock akan pindah ke layar itu.
+
+Sakelar “Kembalikan Dock” sudah tidak ada: sakelar itu juga bekerja dengan mendorong penunjuk, dan kini Dock tidak lagi mengikuti penunjuk. “Pertahankan Dock di satu layar” tidak memerlukan izin apa pun dan mati secara default. Sakelar ini tidak ada di versi Mac App Store, karena app dari App Store tidak dapat mengubah pengaturan Dock.
+
+**Coba:** Pengaturan › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Desktop rapi dengan sekali klik
 
 <sub>1.47.0 · 13 Oktober 2026</sub>

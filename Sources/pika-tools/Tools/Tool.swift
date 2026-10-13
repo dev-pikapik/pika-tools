@@ -86,8 +86,8 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(QuitOnCloseTool())
         list.append(DockHideTool())
-        #endif
         list.append(DockDisplayTool())
+        #endif
         list.append(NewFileTool())
         list.append(CompressTool())
         list.append(ConvertTool())

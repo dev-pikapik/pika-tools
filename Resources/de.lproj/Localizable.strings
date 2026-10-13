@@ -119,7 +119,6 @@
 "Finder" = "Finder";
 "Size" = "Größe";
 "Closing and Quitting" = "Schließen und Beenden";
-"A fix for the Dock." = "Ein Helfer für das Dock.";
 "Protect quitting and closing" = "Beenden und Schließen schützen";
 "Quit and close need one more key" = "Beenden und Schließen brauchen eine Taste mehr";
 "Quit app" = "App beenden";
@@ -138,10 +137,11 @@
 "close button, red button, terminate, exit" = "Schließen-Taste, roter Knopf, beenden, verlassen";
 "exceptions, exclude, list" = "Ausnahmen, ausschließen, Liste";
 "Keep the Dock on one display" = "Dock auf einem Display halten";
-"Hold ⌥ to move it on purpose" = "Mit gedrückter ⌥-Taste gezielt verschieben";
-"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Das Dock bleibt auf dem Display, auf dem es gerade ist, auch wenn der Zeiger den Rand eines anderen Displays erreicht. Zum Verschieben halte ⌥ gedrückt und drücke den Zeiger gegen den Rand des anderen Displays.";
-"Bring the Dock back" = "Dock zurückholen";
-"After sleep or when displays change" = "Nach dem Ruhezustand oder wenn sich Displays ändern";
+"To move it, make another display the main one" = "Um es zu verschieben, mach ein anderes Display zum Hauptbildschirm";
+"The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Das Dock springt nicht mehr auf ein anderes Display, wenn der Zeiger dessen unteren Rand erreicht, egal wie schnell du ihn bewegst. Um das Dock zu verschieben, mach ein anderes Display zum Hauptbildschirm. Beim Ein- und Ausschalten startet das Dock neu.";
+"Main display" = "Hauptbildschirm";
+"Click the display you want, then choose “Main display” in “Use as”" = "Klicke auf das gewünschte Display und wähle bei „Verwenden als“ die Option „Hauptbildschirm“";
+"primary, main screen, Displays settings" = "primär, Hauptmonitor, Displays-Einstellungen";
 "Fixes for the Dock" = "Helfer für das Dock";
 "Dock, display, monitor, screen, jump, move" = "Dock, Display, Monitor, Bildschirm, springen, wandern, verschieben";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicke auf das Symbol der App, die du gerade nutzt, um sie auszublenden. Noch ein Klick holt sie zurück.";

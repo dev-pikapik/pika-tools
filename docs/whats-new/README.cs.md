@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock zůstává na svém displeji, ať myší pohybujete jakkoli rychle
+
+<sub>1.48.0 · 13. října 2026</sub>
+
+„Držet Dock na jednom displeji“ teď využívá vlastní nastavení Docku, takže Dock už za ukazatelem nepřejde na jiný displej ani při rychlém pohybu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Dřív pikapik odsouval ukazatel od spodního okraje druhého displeje, ale při rychlém pohybu myší mohl Dock přesto přeskočit. Teď přepínač toto přesouvání vypíná přímo v Docku a pikapik na ukazatel vůbec nesahá. Dock toto nastavení čte jen při spuštění, proto se po zapnutí nebo vypnutí přepínače jednou restartuje. Pokud byl přepínač už zapnutý, Dock se jednou restartuje i po aktualizaci.
+
+Chcete-li Dock přesunout záměrně, nastavte jako hlavní jiný displej. Klikněte na „Hlavní monitor“ pod přepínačem a otevře se Nastavení systému › Monitory. Klikněte na požadovaný displej a v nabídce „Používat jako“ vyberte „Hlavní monitor“. Dock se přesune na tento displej.
+
+Přepínač „Vracet Dock zpět“ zmizel: také fungoval odsouváním ukazatele a Dock už za ukazatelem nepřechází. „Držet Dock na jednom displeji“ nepotřebuje žádné oprávnění a ve výchozím stavu je vypnutý. Ve verzi z Mac App Store není, protože aplikace z App Store nemohou měnit nastavení Docku.
+
+**Vyzkoušejte:** Nastavení › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Čistá plocha jedním kliknutím
 
 <sub>1.47.0 · 13. října 2026</sub>

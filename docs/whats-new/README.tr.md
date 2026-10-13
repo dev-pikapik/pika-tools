@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Fareyi ne kadar hızlı hareket ettirirseniz ettirin, Dock kendi ekranında kalıyor
+
+<sub>1.48.0 · 13 Ekim 2026</sub>
+
+“Dock’u tek ekranda tut” artık Dock’un kendi ayarını kullanıyor, böylece imleç ne kadar hızlı giderse gitsin Dock onu izleyip başka bir ekrana geçmiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Önceden pikapik imleci diğer ekranın alt kenarından geri itiyordu, ama fareyle hızlı bir hareket yapınca Dock yine de atlayabiliyordu. Artık anahtar bu geçişi doğrudan Dock’ta kapatıyor ve pikapik imlece hiç dokunmuyor. Dock bu ayarı yalnızca açılırken okuduğu için anahtarı açtığınızda veya kapattığınızda Dock bir kez yeniden başlar. Anahtar zaten açıksa Dock güncellemeden sonra da bir kez yeniden başlar.
+
+Dock’u bilerek taşımak için başka bir ekranı ana ekran yapın. Anahtarın altındaki “Ana ekran” öğesini tıkladığınızda Sistem Ayarları › Ekranlar açılır. İstediğiniz ekranı tıklayın, sonra “Şöyle Kullan” menüsünden “Ana ekran” seçeneğini seçin. Dock o ekrana geçer.
+
+“Dock’u geri getir” anahtarı artık yok: o da imleci iterek çalışıyordu, Dock ise artık imleci izlemiyor. “Dock’u tek ekranda tut” hiçbir izin gerektirmez ve varsayılan olarak kapalıdır. Mac App Store sürümünde bu anahtar yoktur, çünkü App Store’dan alınan uygulamalar Dock’un ayarlarını değiştiremez.
+
+**Deneyin:** Ayarlar › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Tek tıkla tertemiz masaüstü
 
 <sub>1.47.0 · 13 Ekim 2026</sub>

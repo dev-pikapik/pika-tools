@@ -227,7 +227,7 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Garder le Dock sur un seul écran</b>
-<br>Le Dock ne saute plus sur un autre écran. Maintenez ⌥ pour le déplacer volontairement.
+<br>Le Dock ne saute plus sur un autre écran. Pour le déplacer, faites d’un autre écran l’écran principal.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Réduire ou masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et toutes ses fenêtres rejoignent le Dock. Cliquez de nouveau pour les faire toutes revenir. Vous pouvez aussi faire en sorte que le clic masque l’app entière, comme ⌘H. Désactivé par défaut.
 
-**Garder le Dock sur un seul écran.** Avec plusieurs écrans, macOS déplace le Dock sur un autre écran dès que le pointeur pousse contre son bord inférieur, ou contre son bord gauche ou droit si le Dock est sur le côté. Avec l’interrupteur activé, le Dock reste où il est et les coins actifs continuent de fonctionner. Pour le déplacer volontairement, maintenez ⌥ et poussez le pointeur contre le bord de l’autre écran. Aucune autorisation n’est nécessaire. **Ramener le Dock** remet le Dock sur son écran après la veille ou un changement d’écrans. Cet interrupteur nécessite l’autorisation **Accessibilité** et n’existe pas dans la version du Mac App Store. Les deux interrupteurs sont désactivés par défaut.
+**Garder le Dock sur un seul écran.** Avec plusieurs écrans, macOS déplace le Dock sur un autre écran dès que le pointeur pousse contre son bord inférieur. Avec l’interrupteur activé, cela n’arrive plus, même si vous déplacez le pointeur très vite : pikapik désactive ce déplacement avec un réglage du Dock lui-même et ne touche jamais au pointeur. Pour déplacer le Dock volontairement, faites d’un autre écran l’écran principal : dans **Réglages Système › Moniteurs**, cliquez sur cet écran et choisissez **Écran principal** dans **Utiliser comme**, et le Dock le suit. La ligne **Écran principal** sous l’interrupteur ouvre cette page. Le Dock ne lit son réglage qu’au démarrage, donc activer ou désactiver l’interrupteur redémarre le Dock une fois. Aucune autorisation n’est nécessaire. L’interrupteur est désactivé par défaut et n’existe pas dans la version du Mac App Store.
 
 **Le bouton vert agrandit la fenêtre.** Cliquez sur le bouton vert d’une fenêtre : elle remplit l’écran sans passer en plein écran. Un autre clic rétablit la taille précédente. Si vous maintenez ⌥, le bouton fonctionne comme d’habitude. Le plein écran reste dans le menu du bouton et sur ⌃⌘F. Vous pouvez lister les apps où le bouton vert doit fonctionner comme d’habitude. Désactivé par défaut.
 
@@ -406,7 +406,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Clavier** : changement de langue, répétition des touches, Home et End, correction de la mauvaise disposition.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux, un bouton qui masque l’app active.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
-- **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
+- **Dock** : réduire ou masquer d’un clic dans le Dock et garder le Dock sur un seul écran.
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X, supprimer avec ⌫, masquer les icônes du bureau et afficher les fichiers masqués.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Tâches en arrière-plan** : tout ce qui tourne en arrière-plan, l’app qui l’a ajouté et un bouton pour éteindre vos propres tâches et les rallumer.

@@ -227,7 +227,7 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Pertahankan Dock di satu layar</b>
-<br>Dock tidak lagi melompat ke layar lain. Tahan ⌥ untuk memindahkannya dengan sengaja.
+<br>Dock tidak lagi melompat ke layar lain. Untuk memindahkannya, jadikan layar lain sebagai layar utama.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Minimalkan atau sembunyikan dengan klik di Dock.** Klik ikon Dock dari app yang sedang Anda gunakan, dan semua jendelanya turun ke Dock. Klik lagi untuk memunculkan semuanya kembali. Anda juga bisa membuat klik itu menyembunyikan seluruh app, seperti ⌘H. Mati secara default.
 
-**Pertahankan Dock di satu layar.** Dengan beberapa layar, macOS memindahkan Dock ke layar lain begitu penunjuk menekan tepi bawah layar itu, atau tepi kiri atau kanannya jika Dock ada di samping. Saat dinyalakan, Dock tetap di tempatnya dan sudut aktif tetap berfungsi. Untuk memindahkannya dengan sengaja, tahan ⌥ dan dorong penunjuk ke tepi layar yang lain. Tidak perlu izin apa pun. Sakelar **Kembalikan Dock** membawa Dock kembali ke layarnya setelah tidur atau saat layar berubah. Sakelar ini memerlukan izin **Aksesibilitas** dan tidak ada di versi Mac App Store. Kedua sakelar mati secara default.
+**Pertahankan Dock di satu layar.** Dengan beberapa layar, macOS memindahkan Dock ke layar lain begitu penunjuk menekan tepi bawah layar itu. Saat dinyalakan, hal itu tidak terjadi lagi, secepat apa pun Anda menggerakkan penunjuk: pikapik mematikan perpindahan ini lewat pengaturan milik Dock sendiri dan tidak pernah menyentuh penunjuk. Untuk memindahkan Dock dengan sengaja, jadikan layar lain sebagai layar utama: di **Pengaturan Sistem › Layar**, klik layar itu lalu pilih **Layar utama** di **Gunakan sebagai**, dan Dock akan ikut pindah. Baris **Layar utama** di bawah sakelar membuka halaman tersebut. Dock hanya membaca pengaturannya saat dimulai, jadi menyalakan atau mematikan sakelar akan memulai ulang Dock satu kali. Tidak perlu izin apa pun. Sakelar ini mati secara default dan tidak ada di versi Mac App Store.
 
 **Tombol hijau memperbesar jendela.** Klik tombol hijau pada jendela, dan jendela akan memenuhi layar tanpa masuk ke layar penuh. Klik lagi untuk mengembalikan ukuran sebelumnya. Tahan ⌥, dan tombol bekerja seperti biasa. Layar penuh tetap ada di menu tombol dan di ⌃⌘F. Anda bisa membuat daftar app yang tombol hijaunya harus bekerja seperti biasa. Mati secara default.
 
@@ -406,7 +406,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End, perbaikan tata letak yang salah.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping, tombol yang menyembunyikan app saat ini.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
-- **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
+- **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock dan mempertahankan Dock di satu layar.
 - **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, hapus dengan ⌫, sembunyikan ikon desktop, dan tampilkan file tersembunyi.
 - **Hapus App**: hapus app beserta filenya, kembalikan semuanya nanti, dan bersihkan sisa dari app yang sudah dihapus.
 - **Tugas Latar Belakang**: semua yang berjalan di latar belakang, app mana yang menambahkannya, dan tombol untuk mematikan tugas Anda sendiri lalu menyalakannya lagi.

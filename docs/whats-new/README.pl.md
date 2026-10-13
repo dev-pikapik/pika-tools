@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock zostaje na swoim ekranie, nieważne, jak szybko ruszasz myszą
+
+<sub>1.48.0 · 13 października 2026</sub>
+
+„Trzymaj Dock na jednym ekranie” korzysta teraz z ustawienia samego Docka, więc Dock nie przechodzi już za wskaźnikiem na inny ekran, nawet przy szybkim ruchu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Wcześniej pikapik odsuwał wskaźnik od dolnej krawędzi drugiego ekranu, a przy szybkim ruchu myszą Dock i tak mógł przeskoczyć. Teraz przełącznik wyłącza to przechodzenie w samym Docku, a pikapik w ogóle nie dotyka wskaźnika. Dock odczytuje to ustawienie tylko przy uruchamianiu, dlatego po włączeniu lub wyłączeniu przełącznika Dock raz uruchamia się ponownie. Jeśli przełącznik był już włączony, Dock raz uruchomi się ponownie także po aktualizacji.
+
+Aby celowo przenieść Dock, ustaw inny ekran jako główny. Kliknij „Wyświetlacz główny” pod przełącznikiem, aby otworzyć Ustawienia systemowe › Wyświetlacze, kliknij wybrany ekran, a następnie w menu „Używaj jako” wybierz „Wyświetlacz główny”. Dock przejdzie na ten ekran.
+
+Przełącznika „Przywracaj Dock” już nie ma: on też działał, odsuwając wskaźnik, a teraz Dock nie podąża już za wskaźnikiem. „Trzymaj Dock na jednym ekranie” nie wymaga żadnych uprawnień i jest domyślnie wyłączony. Nie ma go w wersji z Mac App Store, bo aplikacje z App Store nie mogą zmieniać ustawień Docka.
+
+**Wypróbuj:** Ustawienia › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Czyste biurko jednym kliknięciem
 
 <sub>1.47.0 · 13 października 2026</sub>

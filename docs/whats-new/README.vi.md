@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock ở lại trên màn hình của nó, dù bạn di chuyển chuột nhanh đến đâu
+
+<sub>1.48.0 · 13 tháng 10 năm 2026</sub>
+
+“Giữ Dock trên một màn hình” giờ dùng chính cài đặt của Dock, nên Dock không còn đi theo con trỏ sang màn hình khác, dù ở tốc độ nào.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Trước đây, pikapik đẩy con trỏ lùi khỏi cạnh dưới của màn hình kia, nhưng chỉ cần hất chuột thật nhanh là Dock vẫn có thể nhảy sang. Giờ đây công tắc tắt việc chuyển này ngay trong Dock, và pikapik hoàn toàn không động đến con trỏ. Dock chỉ đọc cài đặt này khi khởi động, nên khi bạn bật hoặc tắt công tắc, Dock sẽ khởi động lại một lần. Nếu công tắc đã bật từ trước, Dock cũng sẽ khởi động lại một lần sau khi cập nhật.
+
+Để chủ động di chuyển Dock, hãy đặt màn hình khác làm màn hình chính. Bấm vào “Màn hình chính” bên dưới công tắc để mở Cài đặt hệ thống › Màn hình, bấm vào màn hình bạn muốn, rồi chọn “Màn hình chính” trong “Dùng làm”. Dock sẽ chuyển sang màn hình đó.
+
+Công tắc “Đưa Dock trở lại” không còn nữa: nó cũng hoạt động bằng cách đẩy con trỏ, mà giờ Dock không còn đi theo con trỏ. “Giữ Dock trên một màn hình” không cần quyền nào và tắt theo mặc định. Công tắc này không có trong phiên bản Mac App Store, vì ứng dụng từ App Store không thể thay đổi cài đặt của Dock.
+
+**Thử ngay:** Cài đặt › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Màn hình nền gọn gàng chỉ với một cú nhấp
 
 <sub>1.47.0 · 13 tháng 10 năm 2026</sub>

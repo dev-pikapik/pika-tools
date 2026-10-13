@@ -227,7 +227,7 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Håll Dock på en skärm</b>
-<br>Dock hoppar inte längre till en annan skärm. Håll ned ⌥ för att flytta den med flit.
+<br>Dock hoppar inte längre till en annan skärm. Gör en annan skärm till huvudbildskärm för att flytta den.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Minimera eller göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så hamnar alla dess fönster i Dock. Klicka igen för att ta fram dem alla. Du kan också låta klicket gömma hela appen, som ⌘H. Av som standard.
 
-**Håll Dock på en skärm.** Med flera skärmar flyttar macOS Dock till en annan skärm så fort pekaren trycker mot dess nederkant, eller mot vänster eller höger kant om Dock ligger på sidan. När reglaget är på stannar Dock där den är, och aktiva hörn fortsätter att fungera. Vill du flytta den med flit, håll ned ⌥ och tryck pekaren mot kanten av den andra skärmen. Ingen behörighet behövs. Reglaget **Ta tillbaka Dock** för tillbaka Dock till sin skärm efter vila eller när skärmar ändras. Det kräver behörigheten **Hjälpmedel** och finns inte i versionen från Mac App Store. Båda reglagen är av som standard.
+**Håll Dock på en skärm.** Med flera skärmar flyttar macOS Dock till en annan skärm så fort pekaren trycker mot dess nederkant. När reglaget är på händer det inte längre, hur snabbt du än rör pekaren: pikapik stänger av flytten med Docks egen inställning och påverkar aldrig pekaren. Vill du flytta Dock med flit, gör en annan skärm till huvudbildskärm: klicka på den skärmen i **Systeminställningar › Bildskärmar** och välj **Huvudbildskärm** vid **Använd som**, så följer Dock med. Raden **Huvudbildskärm** under reglaget öppnar den sidan. Dock läser sin inställning bara när den startar, så när du slår på eller av reglaget startas Dock om en gång. Ingen behörighet behövs. Reglaget är av som standard och finns inte i versionen från Mac App Store.
 
 **Gröna knappen förstorar fönstret.** Klicka på fönstrets gröna knapp så fyller det skärmen, utan att gå till helskärm. Klicka igen för att få tillbaka den förra storleken. Håll ned ⌥ så fungerar knappen som vanligt. Helskärm finns kvar i knappens meny och på ⌃⌘F. Du kan göra en lista över appar där gröna knappen ska fungera som vanligt. Av som standard.
 
@@ -406,7 +406,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End, rättning av fel layout.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar, en knapp som gömmer den aktuella appen.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
-- **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
+- **Dock**: minimera eller göm med ett klick i Dock och håll Dock på en skärm.
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X, radera med ⌫, göm skrivbordssymboler och visa gömda filer.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Bakgrundsuppgifter**: allt som körs i bakgrunden, vilken app som lade till det och en knapp för att stänga av dina egna uppgifter och slå på dem igen.

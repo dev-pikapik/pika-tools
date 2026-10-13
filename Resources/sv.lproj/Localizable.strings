@@ -119,7 +119,6 @@
 "Finder" = "Finder";
 "Size" = "Storlek";
 "Closing and Quitting" = "Stänga och avsluta";
-"A fix for the Dock." = "En fix för Dock.";
 "Protect quitting and closing" = "Skydda avsluta och stäng";
 "Quit and close need one more key" = "Avsluta och stäng kräver en tangent till";
 "Quit app" = "Avsluta app";
@@ -138,10 +137,11 @@
 "close button, red button, terminate, exit" = "stängningsknapp, röd knapp, avsluta, terminate, exit";
 "exceptions, exclude, list" = "undantag, exkludera, lista";
 "Keep the Dock on one display" = "Håll Dock på en skärm";
-"Hold ⌥ to move it on purpose" = "Håll ned ⌥ för att flytta den med flit";
-"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Dock stannar på skärmen där den är nu, även när pekaren når kanten av en annan skärm. Flytta den genom att hålla ned ⌥ och trycka pekaren mot kanten av den andra skärmen.";
-"Bring the Dock back" = "Ta tillbaka Dock";
-"After sleep or when displays change" = "Efter vila eller när skärmar ändras";
+"To move it, make another display the main one" = "Gör en annan skärm till huvudbildskärm för att flytta den";
+"The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock hoppar inte längre till en annan skärm när pekaren når dess nederkant, hur snabbt du än rör den. Gör en annan skärm till huvudbildskärm för att flytta Dock. Dock startas om när du slår på eller av det här.";
+"Main display" = "Huvudbildskärm";
+"Click the display you want, then choose “Main display” in “Use as”" = "Klicka på skärmen du vill ha och välj ”Huvudbildskärm” vid ”Använd som”";
+"primary, main screen, Displays settings" = "primär, huvudskärm, inställningar för Skärmar";
 "Fixes for the Dock" = "Fixar för Dock";
 "Dock, display, monitor, screen, jump, move" = "Dock, skärm, bildskärm, monitor, hoppar, flytta";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicka på symbolen för appen du använder för att gömma den. Klicka igen för att ta tillbaka den.";

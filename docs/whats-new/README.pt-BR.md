@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>O Dock fica na tela dele, por mais rápido que você mova o mouse
+
+<sub>1.48.0 · 13 de outubro de 2026</sub>
+
+“Manter o Dock em uma só tela” agora usa o próprio ajuste do Dock, então o Dock não vai mais atrás do ponteiro para outra tela, nem com movimentos rápidos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Antes, o pikapik afastava o ponteiro da borda inferior da outra tela, mas com um movimento rápido do mouse o Dock ainda podia pular. Agora a chave desliga essa mudança no próprio Dock, e o pikapik nem toca mais no ponteiro. O Dock só lê esse ajuste quando inicia, então ativar ou desativar a chave reinicia o Dock uma vez. Se a chave já estava ativada, o Dock também reinicia uma vez depois da atualização.
+
+Para mover o Dock de propósito, torne outra tela a principal. Clique em “Tela principal” abaixo da chave para abrir Ajustes do Sistema › Telas, clique na tela desejada e escolha “Tela principal” em “Usar como”. O Dock passa para essa tela.
+
+A chave “Trazer o Dock de volta” não existe mais: ela também funcionava afastando o ponteiro, e o Dock não segue mais o ponteiro. “Manter o Dock em uma só tela” não precisa de nenhuma permissão e vem desativada por padrão. Ela não está na versão da Mac App Store, porque apps da App Store não podem mudar os ajustes do Dock.
+
+**Experimente:** Ajustes › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Mesa limpa com um clique
 
 <sub>1.47.0 · 13 de outubro de 2026</sub>

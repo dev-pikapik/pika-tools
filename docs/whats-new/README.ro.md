@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Dock-ul rămâne pe ecranul lui, oricât de repede miști mausul
+
+<sub>1.48.0 · 13 octombrie 2026</sub>
+
+„Ține Dock-ul pe un singur ecran” folosește acum o setare a Dock-ului însuși, așa că Dock-ul nu mai urmează cursorul pe alt ecran, indiferent de viteză.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Înainte, pikapik împingea cursorul înapoi de la marginea de jos a celuilalt ecran, dar la o mișcare rapidă a mausului Dock-ul tot putea să sară. Acum comutatorul oprește această mutare chiar în Dock, iar pikapik nu mai atinge deloc cursorul. Dock-ul citește setarea doar când pornește, așa că atunci când pornești sau oprești comutatorul, Dock-ul repornește o dată. Dacă acest comutator era deja pornit, Dock-ul repornește o dată și după actualizare.
+
+Ca să muți Dock-ul intenționat, setează alt ecran ca principal. Fă clic pe „Afișaj principal” sub comutator ca să deschizi Configurări sistem › Afișaje, fă clic pe ecranul dorit, apoi alege „Afișaj principal” la „Utilizați ca”. Dock-ul se mută pe acel ecran.
+
+Comutatorul „Readu Dock-ul” nu mai există: și el funcționa împingând cursorul, iar acum Dock-ul nu mai urmează cursorul. „Ține Dock-ul pe un singur ecran” nu are nevoie de nicio permisiune și este dezactivat implicit. Nu există în versiunea din Mac App Store, pentru că aplicațiile din App Store nu pot schimba setările Dock-ului.
+
+**Încearcă:** Setări › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Un desktop curat dintr-un clic
 
 <sub>1.47.0 · 13 octombrie 2026</sub>

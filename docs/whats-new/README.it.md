@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Il Dock resta sul suo schermo, per quanto velocemente tu muova il mouse
+
+<sub>1.48.0 · 13 ottobre 2026</sub>
+
+«Tieni il Dock su un solo schermo» ora usa un’impostazione del Dock stesso, così il Dock non segue più il puntatore su un altro schermo, nemmeno con movimenti rapidi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Prima pikapik allontanava il puntatore dal bordo inferiore dell’altro schermo, ma con uno scatto veloce del mouse il Dock poteva comunque saltare. Ora l’interruttore disattiva questo spostamento direttamente nel Dock, e pikapik non tocca più affatto il puntatore. Il Dock legge questa impostazione solo all’avvio, quindi quando attivi o disattivi l’interruttore il Dock si riavvia una volta. Se l’interruttore era già attivo, il Dock si riavvia una volta anche dopo l’aggiornamento.
+
+Per spostare il Dock apposta, rendi principale un altro schermo. Fai clic su «Schermo principale» sotto l’interruttore per aprire Impostazioni di Sistema › Schermi, fai clic sullo schermo che vuoi, poi scegli «Schermo principale» in «Utilizza come». Il Dock passa su quello schermo.
+
+L’interruttore «Riporta il Dock al suo posto» non c’è più: anche lui funzionava allontanando il puntatore, e ora il Dock non segue più il puntatore. «Tieni il Dock su un solo schermo» non richiede alcun permesso ed è disattivato di default. Non è nella versione del Mac App Store, perché le app dell’App Store non possono modificare le impostazioni del Dock.
+
+**Provalo:** Impostazioni › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Una scrivania in ordine con un clic
 
 <sub>1.47.0 · 13 ottobre 2026</sub>

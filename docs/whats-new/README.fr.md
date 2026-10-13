@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.48.0"></a>Le Dock reste sur son écran, aussi vite que vous bougiez la souris
+
+<sub>1.48.0 · 13 octobre 2026</sub>
+
+« Garder le Dock sur un seul écran » utilise maintenant le réglage du Dock lui-même : le Dock ne suit plus le pointeur vers un autre écran, quelle que soit la vitesse.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Avant, pikapik écartait le pointeur du bord inférieur de l’autre écran, mais d’un mouvement rapide de la souris, le Dock pouvait quand même sauter. Désormais, l’interrupteur désactive ce déplacement dans le Dock lui-même, et pikapik ne touche plus du tout au pointeur. Le Dock ne lit ce réglage qu’au démarrage : activer ou désactiver l’interrupteur redémarre donc le Dock une fois. Si l’interrupteur était déjà activé, le Dock redémarre aussi une fois après la mise à jour.
+
+Pour déplacer le Dock volontairement, faites d’un autre écran l’écran principal. Cliquez sur « Écran principal » sous l’interrupteur pour ouvrir Réglages Système › Moniteurs, cliquez sur l’écran voulu, puis choisissez « Écran principal » dans « Utiliser comme ». Le Dock passe alors sur cet écran.
+
+L’interrupteur « Ramener le Dock » a disparu : lui aussi fonctionnait en écartant le pointeur, et le Dock ne suit plus le pointeur. « Garder le Dock sur un seul écran » ne demande aucune autorisation et est désactivé par défaut. Il n’existe pas dans la version du Mac App Store, car les apps de l’App Store ne peuvent pas modifier les réglages du Dock.
+
+**Pour essayer :** Réglages › Dock
+
+---
+
 ## <a id="v1.47.0"></a>Un bureau dégagé en un clic
 
 <sub>1.47.0 · 13 octobre 2026</sub>

@@ -227,7 +227,7 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Tieni il Dock su un solo schermo</b>
-<br>Il Dock non salta più su un altro schermo. Tieni premuto ⌥ per spostarlo apposta.
+<br>Il Dock non salta più su un altro schermo. Per spostarlo, rendi principale un altro schermo.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Riduci o nascondi con un clic nel Dock.** Fai clic sull’icona nel Dock dell’app che stai usando e tutte le sue finestre scendono nel Dock. Fai di nuovo clic per riaverle tutte. Puoi anche fare in modo che il clic nasconda l’intera app, come ⌘H. Disattivato di default.
 
-**Tieni il Dock su un solo schermo.** Con più schermi, macOS sposta il Dock su un altro schermo non appena il puntatore spinge contro il suo bordo inferiore, o contro quello sinistro o destro se il Dock è di lato. Con l’interruttore attivo, il Dock resta dov’è e gli angoli attivi continuano a funzionare. Per spostarlo apposta, tieni premuto ⌥ e spingi il puntatore contro il bordo dell’altro schermo. Non serve alcun permesso. **Riporta il Dock al suo posto** rimette il Dock sul suo schermo dopo lo stop o quando cambiano gli schermi. Richiede il permesso **Accessibilità** e non è nella versione del Mac App Store. I due interruttori sono disattivati di default.
+**Tieni il Dock su un solo schermo.** Con più schermi, macOS sposta il Dock su un altro schermo non appena il puntatore spinge contro il suo bordo inferiore. Con l’interruttore attivo, questo non succede più, per quanto velocemente tu muova il puntatore: pikapik disattiva lo spostamento con un’impostazione del Dock stesso e non tocca mai il puntatore. Per spostare il Dock apposta, rendi principale un altro schermo: in **Impostazioni di Sistema › Schermi**, fai clic su quello schermo e scegli **Schermo principale** in **Utilizza come**, e il Dock lo segue. La riga **Schermo principale** sotto l’interruttore apre questa pagina. Il Dock legge la sua impostazione solo all’avvio, quindi quando attivi o disattivi l’interruttore si riavvia una volta. Non serve alcun permesso. L’interruttore è disattivato di default e non è nella versione del Mac App Store.
 
 **Il pulsante verde ingrandisce la finestra.** Fai clic sul pulsante verde di una finestra e questa si allarga fino a riempire lo schermo, senza passare a schermo intero. Un altro clic riporta la misura precedente. Tieni premuto ⌥ e il pulsante funziona come sempre. Lo schermo intero resta nel menu del pulsante e con ⌃⌘F. Puoi elencare le app in cui il pulsante verde deve funzionare come sempre. Disattivato di default.
 
@@ -406,7 +406,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End, correzione del layout sbagliato.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali, un tasto che nasconde l’app corrente.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
-- **Dock**: ridurre o nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.
+- **Dock**: ridurre o nascondere con un clic nel Dock e tenere il Dock su un solo schermo.
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X, eliminazione con ⌫, occultamento delle icone della scrivania e visualizzazione dei file nascosti.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Attività in background**: tutto ciò che gira in background, quale app l’ha aggiunto e un pulsante per spegnere le tue attività e riaccenderle.

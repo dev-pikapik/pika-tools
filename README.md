@@ -227,7 +227,7 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-display-dark.png"><img src="docs/media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Keep the Dock on one display</b>
-<br>The Dock no longer jumps to another display. Hold ⌥ to move it on purpose.
+<br>The Dock no longer jumps to another display. To move it, make another display the main one.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/layout-fix-dark.png"><img src="docs/media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Minimize or hide with a click in the Dock.** Click the Dock icon of the app you're in, and all its windows go down to the Dock. Click again to bring them all back. You can also make the click hide the whole app, like ⌘H. Off by default.
 
-**Keep the Dock on one display.** With several displays, macOS moves the Dock to another display as soon as the pointer pushes against that display’s bottom edge, or its left or right edge if the Dock is at the side. With this on, the Dock stays where it is, and hot corners keep working. To move it on purpose, hold ⌥ and push the pointer against the edge of the other display. No permission is needed. **Bring the Dock back** returns the Dock to its display after sleep or when displays change. It needs **Accessibility** and is not in the Mac App Store version. Both switches are off by default.
+**Keep the Dock on one display.** With several displays, macOS moves the Dock to another display as soon as the pointer pushes against that display’s bottom edge. With this on, that no longer happens, however fast you move the pointer: pikapik turns the move off with the Dock’s own setting and never touches the pointer. To move the Dock on purpose, make another display the main one: in **System Settings › Displays**, click that display and choose **Main display** in **Use as**, and the Dock goes with it. The **Main display** row under the switch opens that page. The Dock reads its setting only when it starts, so turning the switch on or off restarts the Dock once. No permission is needed. It’s off by default and isn’t in the Mac App Store version.
 
 **Green button enlarges the window.** Click the green button of a window, and it grows to fill the screen without going full screen. Click again to bring back the previous size. Hold ⌥ and the button works as it always did. Full screen stays in the button's menu and on ⌃⌘F. You can list apps where the green button should work as usual. Off by default.
 
@@ -406,7 +406,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
-- **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
+- **Dock**: minimize or hide with a click in the Dock and keep the Dock on one display.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash, hiding desktop icons and showing hidden files.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Background Tasks**: everything that runs in the background, which app added it, and a button to turn your own tasks off and back on.

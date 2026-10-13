@@ -119,7 +119,6 @@
 "Finder" = "Finder";
 "Size" = "Size";
 "Closing and Quitting" = "Closing and Quitting";
-"A fix for the Dock." = "A fix for the Dock.";
 "Protect quitting and closing" = "Protect quitting and closing";
 "Quit and close need one more key" = "Quit and close need one more key";
 "Quit app" = "Quit app";
@@ -138,10 +137,11 @@
 "close button, red button, terminate, exit" = "close button, red button, terminate, exit";
 "exceptions, exclude, list" = "exceptions, exclude, list";
 "Keep the Dock on one display" = "Keep the Dock on one display";
-"Hold ⌥ to move it on purpose" = "Hold ⌥ to move it on purpose";
-"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display.";
-"Bring the Dock back" = "Bring the Dock back";
-"After sleep or when displays change" = "After sleep or when displays change";
+"To move it, make another display the main one" = "To move it, make another display the main one";
+"The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock.";
+"Main display" = "Main display";
+"Click the display you want, then choose “Main display” in “Use as”" = "Click the display you want, then choose “Main display” in “Use as”";
+"primary, main screen, Displays settings" = "primary, main screen, Displays settings";
 "Fixes for the Dock" = "Fixes for the Dock";
 "Dock, display, monitor, screen, jump, move" = "Dock, display, monitor, screen, jump, move";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Click the icon of the app you’re in to hide it. Click again to bring it back.";
