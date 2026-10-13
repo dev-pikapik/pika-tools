@@ -213,6 +213,14 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br>Dock artık başka bir ekrana atlamaz. Bilerek taşımak için ⌥ tuşunu basılı tutun.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Sıcaklık</b>
+<br>İşlemciden pile kadar, Mac’inizin içinin ne kadar ısındığını görün.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar
@@ -300,6 +308,8 @@ Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla.
 
 Fikrinizi mi değiştirdiniz? **Geri koy** düğmesine tıklayın; her şey eski yerine döner ve arka plan yardımcıları yeniden başlar. Son on kaldırma, dosyaları Çöp Sepeti’nde durduğu sürece “Son kaldırılanlar” bölümünde bekler. **Uygulamayı sıfırla** uygulamayı olduğu gibi bırakır, yalnızca kayıtlı verilerini, ayarlarını ve geçici dosyalarını kaldırır; bir uygulama düzgün çalışmadığında işe yarayabilir. Çöp Sepeti’ne kendiniz taşıdığınız uygulamalar, geride bıraktıkları dosyalarla birlikte “Çöp Sepeti’nde” bölümünde görünür; “Kaldırılan uygulamaların kalıntıları” ise artık olmayan uygulamaların dosyalarını bulur. “Bir uygulama Çöp Sepeti’ne gidince temizlik öner” anahtarı varsayılan olarak kapalıdır ve siz seçmeden hiçbir şey kaldırılmaz. Bir uygulamanın sakladığı her şeyi görmek için sayfanın **Tam Disk Erişimi** iznine ihtiyacı vardır. Bu araç Mac App Store sürümünde yoktur.
 
+**Sıcaklık.** Mac’inizin içinin ne kadar ısındığını görmek için Ayarlar › Sıcaklık sayfasını açın. En üstte tek bir kelime durumu özetler: “Normal”, “Ilık”, “Sıcak” ya da “Çok sıcak”. Altındaki satır, Mac’inizin tam hızda mı çalıştığını yoksa soğumak için mi yavaşladığını söyler. Aşağıda her parçanın, sensör kodu yerine anlaşılır bir adla kendi satırı vardır: işlemci, grafik, bellek, depolama, Wi-Fi ve pil. Yalnızca Mac’inizde sensörü olan parçalar görünür. Her satır dereceyi ve o parçanın normal aralığına göre yeşil, sarı ya da kırmızı olan kısa bir çubuğu gösterir. Değerler iki saniyede bir ve yalnızca siz bakarken yenilenir, bu yüzden Mac’inizi neredeyse hiç yormaz. Parola ya da izin gerekmez. Menü çubuğu paneline bir “Sıcaklık” satırı da ekleyebilirsiniz. Mac App Store sürümü yalnızca genel seviyeyi gösterir.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
@@ -337,6 +347,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Pil**: şarj düzeyi, dolmasına kalan süre veya kalan kullanım süresi, durum, maksimum kapasite, devir sayısı, güç adaptörü ve vat cinsinden güç, bir de pilin ömrünü uzatmak için ipuçları. Yalnızca bilgi gösterir: şarj sınırı **Sistem Ayarları › Pil** içinde kalır. Yalnızca pili olan Mac’lerde görünür.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
 - **Fanlar**: her fanın hızı, Fan kontrolüne izin verildiğinde Otomatik veya elle seçilen hız.
+- **Sıcaklık**: Mac’inizin ne kadar ısındığı, genel olarak ve işlemci, bellek, pil gibi her parça için.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.

@@ -213,6 +213,14 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br>Het Dock springt niet meer naar een ander scherm. Houd ⌥ ingedrukt om het bewust te verplaatsen.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatuur</b>
+<br>Zie hoe warm je Mac vanbinnen is, van de processor tot de batterij.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Meer weten
@@ -300,6 +308,8 @@ Om te weten wanneer een onderscheiding toekomt, telt pikapik alleen wat jij en j
 
 Bedacht je je? Klik op **Zet terug** en alles staat weer waar het stond, terwijl de achtergrondhulpjes opnieuw starten. De laatste tien verwijderingen blijven onder ‘Onlangs verwijderd’ staan zolang hun bestanden in de Prullenmand liggen. **App resetten** houdt de app en verwijdert alleen de bewaarde gegevens, instellingen en tijdelijke bestanden, wat kan helpen als een app raar doet. Apps die je zelf in de Prullenmand hebt gezet staan onder ‘In de Prullenmand’, samen met de bestanden die ze achterlieten, en ‘Resten van verwijderde apps’ vindt bestanden van apps die al weg zijn. De schakelaar ‘Bied opruimen aan als een app in de Prullenmand komt’ staat standaard uit, en er wordt niets verwijderd voordat jij kiest. Om alles te kunnen zien wat een app bewaart, heeft de pagina **Volledige schijftoegang** nodig. Deze tool zit niet in de versie uit de Mac App Store.
 
+**Temperatuur.** Open Instellingen › Temperatuur om te zien hoe warm je Mac vanbinnen is. Bovenaan vat één woord het samen, van ‘Normaal’ tot ‘Erg heet’, met een regel die zegt of je Mac op volle snelheid werkt of trager wordt om af te koelen. Daaronder heeft elk onderdeel een eigen rij met een gewone naam in plaats van een sensorcode: processor, grafische chip, geheugen, opslag, wifi en batterij, afhankelijk van de sensoren in je Mac. Elke rij toont de graden en een korte balk die groen, geel of rood wordt, afgemeten aan het normale bereik van dat onderdeel. De waarden worden elke twee seconden bijgewerkt, en alleen terwijl je kijkt, dus ze kosten je Mac bijna niets. Je hebt geen wachtwoord of toestemming nodig. Je kunt ook een rij ‘Temperatuur’ toevoegen aan het paneel in de menubalk. De versie uit de Mac App Store toont alleen het algemene niveau.
+
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
 Het symbool in de menubalk laat in één oogopslag de status zien: het pikapik-teken als de tools werken, hetzelfde teken maar bleek als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
@@ -337,6 +347,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Batterij**: oplaadniveau, tijd tot vol of resterende tijd, conditie, maximumcapaciteit, aantal cycli, lichtnetadapter en vermogen in watt, plus tips om je batterij langer mee te laten gaan. De pagina toont alleen informatie: de oplaadlimiet blijft in **Systeeminstellingen › Batterij**. Alleen te zien op een Mac met een batterij.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
 - **Ventilatoren**: de snelheid van elke ventilator, Auto of een handmatige snelheid zodra Ventilatorbeheer is toegestaan.
+- **Temperatuur**: hoe warm je Mac is, in het algemeen en per onderdeel, zoals de processor, het geheugen en de batterij.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.

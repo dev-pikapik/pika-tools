@@ -16,6 +16,7 @@ enum RenderMedia {
         ("keep-awake", 4.0, AnyView(KeepAwakeCard())),
         ("fans", 1.6, AnyView(FanScene(rpm: 2500, maximum: 6000, manual: false))),
         ("battery", 2.0, AnyView(BatteryScene(charge: 80, phase: .charging))),
+        ("temperatures", 2 * .pi / 1.2, AnyView(ThermalScene(level: 0))),
         ("command-keys", 4.5, AnyView(CommandKeysArt())),
         ("compress", 6.6, AnyView(CompressArt(on: true))),
         ("convert", 8.05, AnyView(ConvertArt(on: true))),

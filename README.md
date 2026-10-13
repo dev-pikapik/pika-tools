@@ -213,6 +213,14 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br>The Dock no longer jumps to another display. Hold ⌥ to move it on purpose.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/temperatures-dark.png"><img src="docs/media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperature</b>
+<br>See how warm your Mac is inside, from the processor to the battery.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Details
@@ -300,6 +308,8 @@ To know when an award is due, pikapik only counts what you and your pet do: step
 
 Changed your mind? Click **Put Back**, and everything returns to where it was and the background helpers start again. The last ten removals wait under Recently removed for as long as their files are in the Trash. **Reset App** keeps the app and removes only its saved data, settings and temporary files, which can help when an app misbehaves. Apps you moved to the Trash yourself appear under In the Trash, with the files they left behind, and Leftovers of removed apps finds files of apps that are already gone. A switch, Offer to clean up when an app goes to the Trash, is off by default, and nothing is removed until you choose. The page needs **Full Disk Access** to see everything an app keeps. The Uninstaller is not in the Mac App Store version.
 
+**Temperature.** Open Settings › Temperature to see how warm your Mac is inside. At the top, one word sums it up, from Normal to Very hot, with a line that says whether your Mac is running at full speed or slowing down to cool off. Below, each part has its own row with a plain name instead of a sensor code: processor, graphics, memory, storage, Wi-Fi and battery, whichever your Mac has sensors for. Each row shows the degrees and a short bar that turns green, yellow or red, judged against the normal range for that part. The numbers refresh every two seconds, and only while you are looking at them, so they cost your Mac next to nothing. No password or permission is needed. You can also add a Temperature row to the menu bar panel. The Mac App Store version shows only the overall level.
+
 Each tool has its own switch in the menu and in Settings.
 
 The menu bar icon shows the state at a glance: the pikapik mark when the tools are working, the same mark turned pale when everything is off, and a warning triangle when a tool is on but permissions are missing.
@@ -337,6 +347,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Battery**: charge, time until full or time left, condition, maximum capacity, cycle count, power adapter and watts, and tips to make it last. It only shows information: the charge limit stays in **System Settings › Battery**. Only on a Mac with a battery.
 - **Keep Awake**: duration, display and lid options.
 - **Fans**: see each fan’s speed, choose Auto or a manual speed once Fan control is allowed.
+- **Temperature**: how warm your Mac is, overall and for each part, such as the processor, memory and battery.
 - **Speed Test**: check the internet speed and see what it's good for.
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.

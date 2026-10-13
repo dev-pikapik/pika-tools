@@ -213,6 +213,14 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br>Dock tidak lagi melompat ke layar lain. Tahan ⌥ untuk memindahkannya dengan sengaja.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Suhu</b>
+<br>Lihat seberapa hangat bagian dalam Mac Anda, dari prosesor sampai baterai.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya
@@ -300,6 +308,8 @@ Untuk tahu kapan penghargaan diberikan, pikapik hanya menghitung apa yang dilaku
 
 Berubah pikiran? Klik **Kembalikan**, dan semuanya kembali ke tempat semula, sementara pembantu latar belakang dijalankan lagi. Sepuluh penghapusan terakhir menunggu di “Baru dihapus” selama file-nya masih ada di Tong Sampah. **Reset app** mempertahankan app dan hanya menghapus data tersimpan, pengaturan, dan file sementara miliknya, yang bisa membantu saat sebuah app bermasalah. App yang Anda pindahkan sendiri ke Tong Sampah muncul di “Di Tong Sampah”, lengkap dengan file yang ditinggalkannya, dan “Sisa app yang sudah dihapus” menemukan file milik app yang sudah tidak ada. Sakelar “Tawarkan pembersihan saat app masuk ke Tong Sampah” mati secara bawaan, dan tidak ada yang dihapus sebelum Anda memilih. Agar bisa melihat semua yang disimpan sebuah app, halaman ini memerlukan **Akses Disk Penuh**. Alat ini tidak ada di versi Mac App Store.
 
+**Suhu.** Buka Pengaturan › Suhu untuk melihat seberapa hangat bagian dalam Mac Anda. Di bagian atas, satu kata merangkum semuanya, dari “Normal” sampai “Sangat panas”, dengan satu baris yang menjelaskan apakah Mac Anda berjalan dengan kecepatan penuh atau melambat agar dingin. Di bawahnya, setiap komponen punya baris sendiri dengan nama yang mudah dipahami, bukan kode sensor: prosesor, grafis, memori, penyimpanan, Wi-Fi, dan baterai, sesuai sensor yang ada di Mac Anda. Setiap baris menunjukkan derajat dan bilah pendek yang berubah hijau, kuning, atau merah menurut rentang normal komponen itu. Angkanya diperbarui setiap dua detik dan hanya saat Anda melihatnya, jadi hampir tidak membebani Mac Anda. Tidak perlu kata sandi atau izin. Anda juga bisa menambahkan baris “Suhu” ke panel bar menu. Versi Mac App Store hanya menampilkan tingkat keseluruhan.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
 Ikon di bar menu menunjukkan status sekilas: tanda pikapik saat alat bekerja, tanda yang sama tetapi pucat saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
@@ -337,6 +347,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Baterai**: tingkat daya, waktu hingga penuh atau sisa waktu, kondisi, kapasitas maksimum, jumlah siklus, adaptor daya dan daya dalam watt, serta tips agar baterai lebih awet. Halaman ini hanya menampilkan informasi: batas pengisian daya tetap ada di **Pengaturan Sistem › Baterai**. Hanya muncul di Mac yang punya baterai.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
 - **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual setelah Kontrol kipas diizinkan.
+- **Suhu**: seberapa hangat Mac Anda, secara keseluruhan dan per komponen, seperti prosesor, memori, dan baterai.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.

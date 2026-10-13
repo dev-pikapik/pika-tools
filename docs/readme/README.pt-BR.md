@@ -213,6 +213,14 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br>O Dock não pula mais para outra tela. Mantenha ⌥ pressionada para movê-lo de propósito.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatura</b>
+<br>Veja o quanto o Mac está quente por dentro, do processador à bateria.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes
@@ -300,6 +308,8 @@ Para saber quando um prêmio é devido, o pikapik conta só o que você e o bich
 
 Mudou de ideia? Clique em **Devolver** e tudo volta para onde estava, e os ajudantes em segundo plano começam de novo. As dez últimas remoções ficam em “Removidos recentemente” enquanto os arquivos delas estiverem no Lixo. **Redefinir app** mantém o app e remove só os dados salvos, os ajustes e os arquivos temporários dele, o que pode ajudar quando um app dá problema. Os apps que você mesmo moveu para o Lixo aparecem em “No Lixo”, com os arquivos que deixaram, e “Sobras de apps removidos” encontra arquivos de apps que já se foram. A chave “Oferecer limpeza quando um app for para o Lixo” vem desligada, e nada é removido até você escolher. Para ver tudo o que um app guarda, a página precisa do **Acesso Total ao Disco**. Esta ferramenta não está na versão da Mac App Store.
 
+**Temperatura.** Abra Ajustes › Temperatura para ver o quanto o Mac está quente por dentro. No topo, uma só palavra resume tudo, de “Normal” a “Muito quente”, com uma linha que diz se o Mac está funcionando na velocidade máxima ou ficando mais lento para esfriar. Abaixo, cada peça tem sua própria linha com um nome simples em vez de um código de sensor: processador, gráficos, memória, armazenamento, Wi-Fi e bateria, conforme os sensores do seu Mac. Cada linha mostra os graus e uma barra curta que fica verde, amarela ou vermelha de acordo com a faixa normal daquela peça. Os números são atualizados a cada dois segundos e só enquanto você está olhando, então quase não pesam no Mac. Não é preciso senha nem permissão. Você também pode adicionar uma linha “Temperatura” ao painel da barra de menus. A versão da Mac App Store mostra só o nível geral.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
@@ -337,6 +347,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Bateria**: carga, tempo até a carga completa ou tempo restante, condição, capacidade máxima, número de ciclos, adaptador de energia e potência em watts, além de dicas para a bateria durar mais. A página só mostra informações: o limite de carga continua em **Ajustes do Sistema › Bateria**. Aparece apenas em um Mac com bateria.
 - **Manter Ativo**: duração e opções de tela e de tampa.
 - **Ventoinhas**: velocidade de cada ventoinha, modo Auto ou velocidade manual quando o controle das ventoinhas está permitido.
+- **Temperatura**: o quanto o Mac está quente, no geral e por peça, como o processador, a memória e a bateria.
 - **Teste de velocidade**: mede a internet e mostra para que ela serve.
 - **Teclado**: troca de idioma, repetição de teclas, Home e End.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.

@@ -213,6 +213,14 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br>Dock không còn nhảy sang màn hình khác. Giữ ⌥ để chủ động di chuyển.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Nhiệt độ</b>
+<br>Xem bên trong máy Mac nóng đến mức nào, từ bộ xử lý đến pin.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Chi tiết
@@ -300,6 +308,8 @@ Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơ
 
 Đổi ý rồi? Nhấp **Đặt lại chỗ cũ**, mọi thứ sẽ trở về chỗ cũ và các trình trợ giúp nền chạy lại. Mười lần gỡ gần nhất nằm trong “Đã gỡ gần đây” chừng nào các tệp của chúng còn trong Thùng rác. **Đặt lại ứng dụng** giữ nguyên ứng dụng và chỉ gỡ dữ liệu đã lưu, cài đặt và tệp tạm của nó, có thể giúp ích khi một ứng dụng trục trặc. Ứng dụng bạn tự chuyển vào Thùng rác xuất hiện trong “Trong Thùng rác” cùng các tệp nó để lại, còn “Tệp còn sót của ứng dụng đã gỡ” tìm các tệp của những ứng dụng đã biến mất. Công tắc “Đề nghị dọn dẹp khi ứng dụng được chuyển vào Thùng rác” mặc định tắt, và không có gì bị gỡ cho đến khi bạn chọn. Để thấy được mọi thứ một ứng dụng lưu, trang này cần **Truy cập toàn bộ ổ đĩa**. Công cụ này không có trong phiên bản Mac App Store.
 
+**Nhiệt độ.** Mở Cài đặt › Nhiệt độ để xem bên trong máy Mac nóng đến mức nào. Ở trên cùng, một từ tóm tắt tất cả, từ “Bình thường” đến “Rất nóng”, kèm một dòng cho biết máy Mac đang chạy hết tốc độ hay đang chậm lại để hạ nhiệt. Bên dưới, mỗi bộ phận có một dòng riêng với tên dễ hiểu thay cho mã cảm biến: bộ xử lý, đồ họa, bộ nhớ, ổ lưu trữ, Wi-Fi và pin, tùy theo cảm biến mà máy Mac của bạn có. Mỗi dòng hiện số độ và một thanh ngắn chuyển sang xanh lá, vàng hoặc đỏ theo mức bình thường của bộ phận đó. Các con số cập nhật mỗi hai giây và chỉ khi bạn đang xem, nên gần như không làm nặng máy Mac. Không cần mật khẩu hay quyền nào. Bạn cũng có thể thêm dòng “Nhiệt độ” vào bảng điều khiển trên thanh menu. Phiên bản Mac App Store chỉ hiện mức chung.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
@@ -337,6 +347,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Pin**: mức pin, thời gian đến khi đầy hoặc thời gian còn lại, tình trạng, dung lượng tối đa, số lượng chu kỳ, bộ tiếp hợp nguồn và công suất tính bằng watt, cùng mẹo giúp pin dùng được lâu hơn. Trang chỉ hiển thị thông tin: giới hạn sạc vẫn nằm trong **Cài đặt hệ thống › Pin**. Chỉ xuất hiện trên Mac có pin.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
 - **Quạt**: tốc độ từng quạt, chọn Tự động hoặc tốc độ thủ công sau khi cho phép Điều khiển quạt.
+- **Nhiệt độ**: máy Mac nóng đến mức nào, tổng thể và từng bộ phận, như bộ xử lý, bộ nhớ và pin.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
