@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Voyez l’état de votre batterie
+
+<sub>1.41.0 · 13 octobre 2026</sub>
+
+Une nouvelle page Batterie dans les Réglages montre l’usure de la batterie, ce qui la charge et comment la faire durer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Batterie. Vous voyez la charge et ce qui se passe avec la batterie en ce moment, son état, sa capacité maximum par rapport à celle d’une batterie neuve, et le nombre de cycles déjà effectués sur les 1000 pour lesquels elle est conçue.
+
+Quand votre Mac est branché, la page affiche l’adaptateur secteur et sa puissance et, pendant la charge, aussi la puissance de charge, c’est-à-dire ce qui entre dans la batterie en ce moment. Quand votre Mac fonctionne sur batterie, la page affiche ce qu’il consomme en ce moment.
+
+Des conseils en bas de la page aident la batterie à durer plus longtemps, et « Réglages Batterie… » ouvre Batterie dans Réglages Système, où vous choisissez comment macOS la charge. La page ne modifie rien et ne demande aucune autorisation, y compris dans la version du Mac App Store. Elle n’apparaît que sur les Mac dotés d’une batterie.
+
+**Corrigé**
+
+- Supprimer pikapik avec Homebrew désactive désormais aussi « Ouvrir à la connexion » et rétablit les réglages système modifiés par l’app, comme les animations, la répétition des touches et les coins actifs. Si pikapik s’est mis à jour tout seul, exécutez une fois brew upgrade --cask pikapik avant de le supprimer.
+
+---
+
 ## <a id="v1.40.2"></a>Les mises à jour avec Homebrew ne redémarrent plus le Dock
 
 <sub>1.40.2 · 13 octobre 2026</sub>

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Vezi cum stă bateria
+
+<sub>1.41.0 · 13 octombrie 2026</sub>
+
+Pagina nouă Baterie din Setări arată cât de uzată este bateria, cu ce se încarcă și cum o poți face să țină mai mult.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Baterie. Vezi nivelul de încărcare și ce se întâmplă acum cu bateria, starea ei, capacitatea maximă față de momentul în care era nouă și numărul de cicluri parcurse din cele 1.000 pentru care a fost proiectată.
+
+Când Mac-ul este conectat la priză, pagina arată adaptorul de alimentare și puterea lui, iar în timpul încărcării și puterea de încărcare, adică ce intră în baterie chiar acum. Când Mac-ul rulează pe baterie, pagina arată cât consumă în acest moment.
+
+Sfaturile de jos ajută bateria să reziste mai mult, iar „Configurări Baterie…” deschide Baterie în Configurări sistem, unde alegi cum o încarcă macOS. Pagina nu schimbă nimic și nu are nevoie de nicio permisiune, nici în versiunea din Mac App Store. Apare doar pe Mac-urile cu baterie.
+
+**Reparat**
+
+- Eliminarea pikapik cu Homebrew dezactivează acum și „Deschide la autentificare” și readuce configurările de sistem modificate de aplicație, precum animațiile, repetarea tastelor și colțurile active. Dacă pikapik s-a actualizat singur, rulează o dată brew upgrade --cask pikapik înainte de a-l elimina.
+
+---
+
 ## <a id="v1.40.2"></a>Actualizările cu Homebrew nu mai repornesc Dock-ul
 
 <sub>1.40.2 · 13 octombrie 2026</sub>

@@ -2,13 +2,14 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
+    case general, battery, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
 
     var id: Self { self }
 
     var title: String {
         switch self {
         case .general: String(localized: "General")
+        case .battery: String(localized: "Battery")
         case .keepAwake: String(localized: "Keep Awake")
         case .fans: String(localized: "Fans")
         case .speedTest: String(localized: "Speed Test")
@@ -29,6 +30,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
     private var symbol: String {
         switch self {
         case .general: "gearshape.fill"
+        case .battery: "battery.100percent"
         case .keepAwake: "cup.and.saucer.fill"
         case .fans: "fan"
         case .speedTest: "speedometer"
@@ -58,15 +60,16 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .keepAwake: .orange
         case .fans: .teal
         case .pet: .red
-        case .speedTest: .green
+        case .speedTest, .battery: .green
         }
     }
 
     var isAvailable: Bool {
+        if self == .battery { return Battery.isPresent }
         #if APPSTORE
-        ![.animations, .fans, .uninstaller].contains(self)
+        return ![.animations, .fans, .uninstaller].contains(self)
         #else
-        true
+        return true
         #endif
     }
 
@@ -114,7 +117,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
         ]
         #else
-        return allItems
+        return allItems.filter { $0.tab.isAvailable }
         #endif
     }
 
@@ -135,6 +138,9 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
         ] : []) + [
+            SettingsItem(tab: .battery, title: String(localized: "Battery Health"), synonyms: "battery, condition, maximum capacity, cycle count, cycles, wear, service, replace"),
+            SettingsItem(tab: .battery, title: String(localized: "Power Adapter"), synonyms: "charger, charging, watts, power use, adapter, plug"),
+            SettingsItem(tab: .battery, title: String(localized: "Keep It Healthy"), synonyms: "charge limit, 80%, optimized battery charging, charging on hold, heat, temperature, storage, tips"),
             SettingsItem(tab: .fans, title: String(localized: "Fan speed"), synonyms: "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal"),
             SettingsItem(tab: .permissions, title: String(localized: "Fan control"), synonyms: "allow, helper, password, administrator, install, remove"),
             SettingsItem(tab: .speedTest, title: String(localized: "Check Speed"), synonyms: "internet, Wi-Fi, network, bandwidth, ping, Mbps, speedtest"),
@@ -316,7 +322,7 @@ enum SettingsWindow {
 
     private static func create() {
         let width: CGFloat = 860
-        let height = min(760, (NSScreen.main?.visibleFrame.height ?? 900) - 40)
+        let height = min(800, (NSScreen.main?.visibleFrame.height ?? 900) - 40)
         let host = NSHostingController(rootView: SettingsView())
         host.sceneBridgingOptions = [.toolbars, .title]
         let window = NSWindow(contentViewController: host)
@@ -328,7 +334,7 @@ enum SettingsWindow {
         window.title = (model.selection ?? .general).title
         window.setContentSize(NSSize(width: width, height: height))
         window.center()
-        window.setFrameAutosaveName("Settings Window")
+        window.setFrameAutosaveName("Settings Frame")
         let saved = window.contentRect(forFrameRect: window.frame).size
         window.setContentSize(NSSize(width: max(saved.width, minSize.width), height: max(saved.height, minSize.height)))
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
@@ -367,9 +373,9 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
                     #else
-                    Section { rows([.general, .keepAwake, .fans, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .fans, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -420,7 +426,7 @@ private struct SettingsView: View {
     }
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
-        ForEach(tabs) { tab in
+        ForEach(tabs.filter(\.isAvailable)) { tab in
             Label { Text(tab.title) } icon: { tab.icon() }
                 .tag(tab)
                 .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
@@ -475,6 +481,7 @@ private struct SettingsView: View {
             #else
             FanSettings()
             #endif
+        case .battery: BatterySettings()
         case .speedTest: SpeedTestSettings()
         case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
         case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))

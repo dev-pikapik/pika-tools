@@ -52,154 +52,161 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>แบตเตอรี่</b>
+<br>ดูสภาพ ความจุ และจำนวนรอบของแบตเตอรี่ ดูว่ามีกำลังไฟเข้ามากเท่าไร และจะทำให้ใช้ได้นานขึ้นได้อย่างไร
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>ป้องกัน ⌘Q และ ⌘W</b>
 <br>ไม่มีอะไรปิดไปโดยไม่ตั้งใจ ถ้าตั้งใจจริงให้กด ⇧ เพิ่ม
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>สำเนาที่เล็กลง</b>
 <br>คลิกขวาที่รูป PDF หรือวิดีโอ แล้วจะได้สำเนาที่เบากว่าวางอยู่ข้างๆ
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>แปลงไฟล์</b>
 <br>บันทึกรูป วิดีโอ หรือเพลงเป็นรูปแบบอื่นได้จากเมนูคลิกขวา
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>สลับภาษา</b>
 <br>กด ⌥ ค้างไว้แล้วแตะ ⇧ เพื่อเปลี่ยนภาษาแป้นพิมพ์
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>ปิดแอปพร้อมหน้าต่างสุดท้าย</b>
 <br>ปิดหน้าต่างสุดท้ายของแอป แล้วแอปจะปิดตามไปด้วย
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>ปุ่มสีเขียวขยายหน้าต่าง</b>
 <br>หน้าต่างขยายเต็มจอโดยไม่เข้าโหมดเต็มหน้าจอ
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>ย่อด้วยการคลิกใน Dock</b>
 <br>คลิกแอปที่กำลังใช้อยู่ แล้วแอปจะหลบไป
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>ไฟล์ใหม่</b>
 <br>คลิกขวาใน Finder พิมพ์ชื่อ แล้วไฟล์เปล่าก็พร้อมใช้
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X ย้ายไฟล์</b>
 <br>ตัดไฟล์ใน Finder แล้ววางไว้ที่ไหนก็ได้
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter เปิดไฟล์</b>
 <br>เลือกไฟล์ใน Finder แล้วกด Enter เพื่อเปิด
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete ลงถังขยะ</b>
 <br>กด ⌫ ใน Finder แล้วไฟล์ที่เลือกจะไปอยู่ในถังขยะ
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>โหมดเกม</b>
 <br>ระหว่างเล่น จะไม่มีอะไรเด้งขึ้นมาทับเกมหรือปิดเกมไป
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>ทดสอบความเร็ว</b>
 <br>อินเทอร์เน็ตเร็วแค่ไหน และพอสำหรับอะไรบ้าง
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>ปุ่มด้านข้างเมาส์</b>
 <br>ปุ่ม 4 และ 5 ใช้ย้อนกลับและไปข้างหน้า เหมือนปัดบนแทร็คแพด
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>เลื่อนทีละบรรทัด</b>
 <br>หมุนล้อเร็วแค่ไหน แต่ละคลิกก็เลื่อนเท่ากัน
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>ทิศทางการเลื่อน</b>
 <br>ทิศหนึ่งสำหรับแทร็คแพด อีกทิศสำหรับเมาส์
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>ปิดความเร่งตัวชี้</b>
 <br>ตัวชี้เคลื่อนที่เท่ากับที่มือขยับพอดี
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>พิมพ์ซ้ำเมื่อกดแป้นค้างไว้</b>
 <br>กดแป้นค้างไว้เพื่อพิมพ์ซ้ำ โดยไม่มีเมนูอักษรพิเศษ
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home และ End</b>
 <br>กระโดดไปต้นหรือท้ายบรรทัดขณะพิมพ์
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>ภาพเคลื่อนไหว</b>
 <br>เร่ง Dock หน้าต่าง และดูด่วนให้เร็วขึ้น จนถึงทันที
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>สิทธิ์ของแอปที่ลบไปแล้ว</b>
 <br>ล้างสิทธิ์ที่ macOS ยังเก็บไว้ให้แอปที่คุณลบไปแล้ว
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>เพื่อนตัวน้อยบนเดสก์ท็อป</b>
 <br>เพื่อนตัวน้อยเดินเล่นอยู่หลังหน้าต่างของคุณ จับขึ้นมาแล้วโยน หรือกดเว้นวรรคให้มันกระโดด เลือกชุดให้มันจากตู้เสื้อผ้าของมัน แล้วรับรางวัลระหว่างที่เล่นด้วยกัน มันกระฉับกระเฉงขณะคุณพิมพ์ และงีบหลับเมื่อคุณลุกไป
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>ลบแอป</b>
 <br>ลบแอปและไฟล์ของแอป เอากลับคืนได้ทั้งหมด
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>แสดง FPS</b>
 <br>ตัวนับเล็ก ๆ ในมุมที่คุณเลือกจะบอกว่าเกมลื่นไหลแค่ไหน
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>ไฟล์บีบอัด</b>
 <br>แตก RAR และไฟล์บีบอัดอื่น หรือรวมไฟล์เป็น ZIP ได้ด้วยการคลิกขวา
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>ให้ Dock อยู่บนจอเดียว</b>
@@ -327,6 +334,7 @@ Keep Awake โหมดหน้าจอ และโหมดปิดฝา �
 เปิดการตั้งค่าจากเมนูด้วย **การตั้งค่า…** หรือ ⌘, หรือเปิด pikapik อีกครั้งจาก Finder, Launchpad หรือ Spotlight ขณะที่หน้าต่างเปิดอยู่ แอปจะแสดงใน Dock และใน ⌘Tab
 
 - **ทั่วไป**: เปิดเมื่อเข้าสู่ระบบ ลักษณะที่ปรากฏ (ระบบ สว่าง หรือมืด) ภาษา การอัปเดต และการสำรองข้อมูล: ส่งออกและนำเข้าการตั้งค่าเป็นไฟล์ หรือซิงค์ผ่าน iCloud Drive
+- **แบตเตอรี่**: ระดับประจุ เวลาก่อนชาร์จเต็มหรือเวลาที่ใช้ได้อีก สภาพ ความจุสูงสุด จำนวนรอบ อะแดปเตอร์แปลงไฟและกำลังไฟเป็นวัตต์ และเคล็ดลับให้แบตเตอรี่ใช้ได้นานขึ้น หน้านี้แสดงข้อมูลเท่านั้น ขีดจำกัดการชาร์จยังคงอยู่ใน**การตั้งค่าระบบ › แบตเตอรี่** แสดงเฉพาะบน Mac ที่มีแบตเตอรี่
 - **ไม่ให้หลับ**: ระยะเวลา ตัวเลือกจอภาพและฝา
 - **พัดลม**: ดูความเร็วของพัดลมแต่ละตัว เลือกอัตโนมัติหรือกำหนดความเร็วเอง เมื่ออนุญาตการควบคุมพัดลมแล้ว
 - **ทดสอบความเร็ว**: ตรวจความเร็วอินเทอร์เน็ตและดูว่าเหมาะกับอะไร

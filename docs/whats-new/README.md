@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>See how your battery is doing
+
+<sub>1.41.0 · October 13, 2026</sub>
+
+A new Battery page in Settings shows how worn the battery is, what charges it and how to make it last.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Open Settings › Battery. You see the charge and what is happening with the battery right now, its condition, its maximum capacity compared with when it was new, and how many charge cycles it has used of the 1,000 it’s designed for.
+
+When your Mac is plugged in, the page shows the power adapter and its wattage, and while charging also how much power goes into the battery. When your Mac runs on battery, the page shows how much power it uses right now.
+
+Tips at the bottom help the battery last longer, and Battery Settings… opens Battery in System Settings, where you choose how macOS charges it. The page changes nothing and needs no permission, also in the Mac App Store version. It appears only on Macs with a battery.
+
+**Fixed**
+
+- Removing pikapik with Homebrew now also turns off Open at Login and puts back the system settings it changed, such as animations, key repeat and hot corners. If pikapik has been updating itself, run brew upgrade --cask pikapik once before you remove it.
+
+---
+
 ## <a id="v1.40.2"></a>Homebrew updates no longer restart the Dock
 
 <sub>1.40.2 · October 13, 2026</sub>

@@ -52,154 +52,161 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Bateria</b>
+<br>Veja a condição da sua bateria, a capacidade e o número de ciclos, quanta energia entra e como fazer com que ela dure mais.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Proteger ⌘Q e ⌘W</b>
 <br>Nada fecha sem querer. Adicione ⇧ quando for de propósito.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Cópia menor</b>
 <br>Clique com o botão direito em uma foto, PDF ou vídeo e ganhe uma cópia mais leve.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Conversão</b>
 <br>Salve uma imagem, um vídeo ou uma música em outro formato pelo botão direito.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Trocar de idioma</b>
 <br>Segure ⌥ e toque em ⇧ para trocar o idioma do teclado.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Encerrar com a última janela</b>
 <br>Feche a última janela de um app, e o app também é encerrado.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>O botão verde amplia</b>
 <br>A janela ocupa a tela toda sem entrar em tela cheia.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimizar com um clique no Dock</b>
 <br>Clique no app que você está usando, e ele sai da frente.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Novo arquivo</b>
 <br>Botão direito no Finder, um nome, e o arquivo vazio está pronto.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X move arquivos</b>
 <br>Recorte arquivos no Finder e cole onde quiser.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter abre arquivos</b>
 <br>Selecione arquivos no Finder e pressione Enter para abri-los.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete manda para o Lixo</b>
 <br>Pressione ⌫ no Finder, e os arquivos selecionados vão para o Lixo.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modo Jogo</b>
 <br>Enquanto você joga, nada abre por cima do jogo nem o fecha.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Teste de velocidade</b>
 <br>A velocidade da sua internet e para que ela dá.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Botões laterais</b>
 <br>Os botões 4 e 5 voltam e avançam, como um gesto no trackpad.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Rolar por linhas</b>
 <br>Cada clique da roda rola o mesmo tanto, não importa a velocidade.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direção de rolagem</b>
 <br>Uma direção para o trackpad e outra para o mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sem aceleração do cursor</b>
 <br>O cursor anda exatamente o quanto a sua mão anda.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetir tecla segurada</b>
 <br>Segure uma tecla para repeti-la, sem o menu de acentos.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home e End</b>
 <br>Vá ao início ou ao fim da linha enquanto digita.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animações</b>
 <br>Acelere o Dock, as janelas e a Visualização Rápida, até ficarem instantâneos.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissões de apps apagados</b>
 <br>Remova as permissões que o macOS guarda para apps que você já apagou.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Bichinho na mesa</b>
 <br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos. Ele fica animado enquanto você digita e cochila quando você se afasta.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Remover apps</b>
 <br>Remova um app e seus arquivos. Dá para devolver tudo.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Mostrar FPS</b>
 <br>Um pequeno contador mostra a fluidez do seu jogo, no canto que você escolher.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arquivos compactados</b>
 <br>Abra RAR e outros arquivos compactados, ou junte arquivos em um ZIP, com o botão direito.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Manter o Dock em uma só tela</b>
@@ -327,6 +334,7 @@ Mostra a velocidade da sua internet agora. Clique em **Testar velocidade** em Aj
 Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo pelo Finder, Launchpad ou Spotlight. Enquanto a janela estiver aberta, o app aparece no Dock e no ⌘Tab.
 
 - **Geral**: abrir ao iniciar sessão, aparência (Sistema, Claro ou Escuro), idioma, atualizações e backup: exportar e importar os ajustes como arquivo, ou sincronizá-los pelo iCloud Drive.
+- **Bateria**: carga, tempo até a carga completa ou tempo restante, condição, capacidade máxima, número de ciclos, adaptador de energia e potência em watts, além de dicas para a bateria durar mais. A página só mostra informações: o limite de carga continua em **Ajustes do Sistema › Bateria**. Aparece apenas em um Mac com bateria.
 - **Manter Ativo**: duração e opções de tela e de tampa.
 - **Ventoinhas**: velocidade de cada ventoinha, modo Auto ou velocidade manual quando o controle das ventoinhas está permitido.
 - **Teste de velocidade**: mede a internet e mostra para que ela serve.

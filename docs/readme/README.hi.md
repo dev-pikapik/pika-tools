@@ -52,154 +52,161 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>बैटरी</b>
+<br>देखें कि आपकी बैटरी की स्थिति, क्षमता और चक्र गणना क्या है, उसमें कितनी पावर जा रही है, और उसे ज़्यादा समय तक कैसे चलाएँ।
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>⌘Q और ⌘W सुरक्षित</b>
 <br>गलती से कुछ बंद नहीं होगा। जानबूझकर करना हो तो ⇧ जोड़ें।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>छोटी कॉपी</b>
 <br>फ़ोटो, PDF या वीडियो पर राइट-क्लिक करें, और बगल में हल्की कॉपी बन जाएगी।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>कन्वर्ट</b>
 <br>राइट-क्लिक से तस्वीर, वीडियो या गाना दूसरे फ़ॉर्मैट में सेव करें।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>भाषा बदलें</b>
 <br>⌥ दबाए रखें और ⇧ टैप करें, कीबोर्ड की भाषा बदल जाएगी।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>आख़िरी विंडो के साथ बंद</b>
 <br>ऐप की आख़िरी विंडो बंद करें, और ऐप भी बंद हो जाएगा।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>हरा बटन बड़ा करता है</b>
 <br>विंडो फ़ुल स्क्रीन मोड में गए बिना पूरी स्क्रीन भर देती है।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Dock में क्लिक से मिनिमाइज़ करें</b>
 <br>जिस ऐप में आप हैं, उस पर क्लिक करें, वह रास्ते से हट जाएगा।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>नई फ़ाइल</b>
 <br>Finder में राइट-क्लिक करें, नाम लिखें, और ख़ाली फ़ाइल तैयार।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X से फ़ाइलें ले जाएँ</b>
 <br>Finder में फ़ाइलें काटें और जहाँ चाहें पेस्ट करें।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter से फ़ाइलें खोलें</b>
 <br>Finder में फ़ाइलें चुनें और खोलने के लिए Enter दबाएँ।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete से ट्रैश में</b>
 <br>Finder में ⌫ दबाएँ, और चुनी गई फ़ाइलें ट्रैश में चली जाएँगी।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>गेम मोड</b>
 <br>खेलते समय गेम के ऊपर कुछ नहीं खुलता और गेम बंद नहीं होता।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>स्पीड टेस्ट</b>
 <br>इंटरनेट कितना तेज़ है और किन कामों के लिए काफ़ी है।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>माउस के साइड बटन</b>
 <br>बटन 4 और 5 पीछे और आगे ले जाते हैं, ट्रैकपैड पर स्वाइप की तरह।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>पंक्तियों के हिसाब से स्क्रोल</b>
 <br>व्हील कितनी भी तेज़ घुमाएँ, हर क्लिक बराबर स्क्रोल करता है।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>स्क्रॉल दिशा</b>
 <br>ट्रैकपैड के लिए एक दिशा, माउस के लिए दूसरी।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>पॉइंटर ऐक्सलरेशन बंद</b>
 <br>पॉइंटर ठीक उतना ही चलता है जितना आपका हाथ।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>दबाए रखने पर कुंजी दोहराएं</b>
 <br>कुंजी दबाए रखें, वह बार-बार टाइप होगी, ऐक्सेंट मेन्यू के बिना।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home और End</b>
 <br>टाइप करते हुए लाइन की शुरुआत या अंत पर जाएँ।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>एनिमेशन</b>
 <br>Dock, विंडो और क्विक लुक को तेज़ करें, चाहें तो तुरंत।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>डिलीट किए गए ऐप्स की अनुमतियाँ</b>
 <br>जिन ऐप्स को आप डिलीट कर चुके हैं, उनके लिए macOS जो अनुमतियाँ रखे रहता है, उन्हें हटाएँ।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>डेस्कटॉप पर नन्हा दोस्त</b>
 <br>एक नन्हा दोस्त आपकी विंडो के पीछे टहलता है। उसे उठाकर उछालें, या स्पेस दबाएँ और वह कूदेगा। अलमारी से उसे सजाएँ और साथ खेलते हुए पुरस्कार जीतें। आप टाइप करते हैं तो वह फुर्तीला हो जाता है और आपके जाते ही ऊँघने लगता है।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>ऐप हटाएँ</b>
 <br>ऐप और उसकी फ़ाइलें हटाएँ। सब वापस रख सकते हैं।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPS दिखाएँ</b>
 <br>एक छोटा काउंटर आपके चुने कोने में दिखाता है कि गेम कितनी सहजता से चल रहा है।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>आर्काइव</b>
 <br>राइट-क्लिक से RAR और दूसरे आर्काइव खोलें, या फ़ाइलों को ZIP में समेटें।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock को एक ही डिस्प्ले पर रखें</b>
@@ -327,6 +334,7 @@ Keep Awake, डिस्प्ले मोड और ढक्कन बंद 
 मेनू में **सेटिंग्ज़…** से या ⌘, दबाकर सेटिंग्ज़ खोलें, या Finder, Launchpad या Spotlight से pikapik को फिर से खोलें। जब तक विंडो खुली है, ऐप Dock और ⌘Tab में दिखती है।
 
 - **सामान्य**: लॉगिन पर खोलें, रूप (सिस्टम, लाइट या डार्क), भाषा, अपडेट और बैकअप: सेटिंग्ज़ को फ़ाइल के रूप में एक्सपोर्ट और इंपोर्ट करें, या iCloud Drive से सिंक करें।
+- **बैटरी**: चार्ज, पूरा चार्ज होने तक का समय या बचा हुआ समय, स्थिति, अधिकतम क्षमता, चक्र गणना, पावर अडैप्टर और वाट में पावर, और बैटरी को ज़्यादा समय तक चलाने के सुझाव। यह पेज सिर्फ़ जानकारी दिखाता है: चार्जिंग की सीमा **सिस्टम सेटिंग्ज़ › बैटरी** में ही रहती है। यह सिर्फ़ बैटरी वाले Mac पर दिखता है।
 - **जगाए रखें**: अवधि, डिस्प्ले और ढक्कन के विकल्प।
 - **पंखे**: हर पंखे की गति, पंखा नियंत्रण की अनुमति मिलने पर ऑटो या मैनुअल गति चुनना।
 - **स्पीड टेस्ट**: इंटरनेट की स्पीड जाँचें और देखें कि यह किसके लिए ठीक है।

@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Xem pin của bạn đang thế nào
+
+<sub>1.41.0 · 13 tháng 10 năm 2026</sub>
+
+Trang Pin mới trong Cài đặt cho biết pin đã hao mòn đến đâu, nguồn nào sạc cho pin và cách giúp pin dùng được lâu hơn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Pin. Bạn sẽ thấy mức sạc và điều đang diễn ra với pin lúc này, tình trạng của pin, dung lượng tối đa so với lúc còn mới, và số lượng chu kỳ pin đã dùng trong tổng số 1.000 chu kỳ mà pin được thiết kế.
+
+Khi Mac của bạn được cắm điện, trang này hiển thị bộ tiếp hợp nguồn và công suất của nó, và khi đang sạc còn hiển thị công suất sạc, tức là lượng điện đang đi vào pin lúc này. Khi Mac của bạn chạy bằng pin, trang này hiển thị lượng điện máy đang dùng lúc này.
+
+Các mẹo ở cuối giúp pin dùng được lâu hơn, còn “Cài đặt pin…” mở Pin trong Cài đặt hệ thống, nơi bạn chọn cách macOS sạc pin. Trang này không thay đổi gì và không cần cấp quyền nào, kể cả trong phiên bản Mac App Store. Trang chỉ xuất hiện trên máy Mac có pin.
+
+**Đã sửa**
+
+- Giờ đây, khi xóa pikapik bằng Homebrew, tính năng “Mở khi đăng nhập” cũng được tắt và các cài đặt hệ thống mà ứng dụng đã thay đổi, như hoạt ảnh, lặp lại phím và góc nóng, được khôi phục. Nếu pikapik đã tự cập nhật, hãy chạy brew upgrade --cask pikapik một lần trước khi xóa.
+
+---
+
 ## <a id="v1.40.2"></a>Cập nhật bằng Homebrew không còn khởi động lại Dock
 
 <sub>1.40.2 · 13 tháng 10 năm 2026</sub>

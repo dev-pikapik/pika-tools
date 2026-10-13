@@ -52,154 +52,161 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Baterai</b>
+<br>Lihat kondisi, kapasitas, dan jumlah siklus baterai, berapa banyak daya yang masuk, serta cara membuatnya lebih awet.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Lindungi ⌘Q dan ⌘W</b>
 <br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Salinan Lebih Kecil</b>
 <br>Klik kanan foto, PDF, atau video, dan salinan yang lebih ringan muncul di sebelahnya.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Konversi</b>
 <br>Simpan gambar, video, atau lagu dalam format lain lewat klik kanan.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Ganti bahasa</b>
 <br>Tahan ⌥ lalu ketuk ⇧ untuk mengganti bahasa keyboard.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Keluar bersama jendela terakhir</b>
 <br>Tutup jendela terakhir sebuah app, dan app itu ikut keluar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Tombol hijau memperbesar</b>
 <br>Jendela memenuhi layar tanpa masuk mode layar penuh.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimalkan dengan klik di Dock</b>
 <br>Klik app yang sedang Anda pakai, dan app itu menyingkir.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>File Baru</b>
 <br>Klik kanan di Finder, ketik nama, dan file kosong pun siap.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X memindahkan file</b>
 <br>Potong file di Finder lalu tempel di mana saja.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter membuka file</b>
 <br>Pilih file di Finder lalu tekan Enter untuk membukanya.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete ke Tempat Sampah</b>
 <br>Tekan ⌫ di Finder, dan file yang dipilih masuk ke Tempat Sampah.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Mode Game</b>
 <br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Tes Kecepatan</b>
 <br>Seberapa cepat internet Anda dan cukup untuk apa saja.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Tombol samping</b>
 <br>Tombol 4 dan 5 untuk kembali dan maju, seperti usapan di trackpad.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Gulir per baris</b>
 <br>Setiap klik roda menggulir sama jauh, secepat apa pun diputar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Arah gulir</b>
 <br>Satu arah untuk trackpad, arah lain untuk tetikus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Tanpa akselerasi penunjuk</b>
 <br>Penunjuk bergerak persis sejauh tangan Anda.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ulangi tombol yang ditahan</b>
 <br>Tahan tombol untuk mengetiknya berulang kali, tanpa menu aksen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home dan End</b>
 <br>Lompat ke awal atau akhir baris saat mengetik.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasi</b>
 <br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Izin app yang sudah dihapus</b>
 <br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Peliharaan di desktop</b>
 <br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Hapus App</b>
 <br>Hapus app beserta filenya. Semua bisa dikembalikan.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Tampilkan FPS</b>
 <br>Penghitung kecil di sudut pilihan Anda menunjukkan seberapa mulus game berjalan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arsip</b>
 <br>Ekstrak RAR dan arsip lain, atau kemas file jadi ZIP, dengan klik kanan.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Pertahankan Dock di satu layar</b>
@@ -327,6 +334,7 @@ Menunjukkan seberapa cepat internetmu saat ini. Klik **Cek Kecepatan** di Pengat
 Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pikapik dari Finder, Launchpad, atau Spotlight. Selama jendelanya terbuka, app muncul di Dock dan di ⌘Tab.
 
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
+- **Baterai**: tingkat daya, waktu hingga penuh atau sisa waktu, kondisi, kapasitas maksimum, jumlah siklus, adaptor daya dan daya dalam watt, serta tips agar baterai lebih awet. Halaman ini hanya menampilkan informasi: batas pengisian daya tetap ada di **Pengaturan Sistem › Baterai**. Hanya muncul di Mac yang punya baterai.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
 - **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual setelah Kontrol kipas diizinkan.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.

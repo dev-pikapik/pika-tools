@@ -52,154 +52,161 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/battery-dark.png"><img src="docs/media/battery-light.png" width="340" alt=""></picture>
+<br><b>Battery</b>
+<br>See your battery’s condition, capacity and cycle count, how much power goes in, and how to make it last.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/command-keys-dark.png"><img src="docs/media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Protect ⌘Q and ⌘W</b>
 <br>Nothing quits or closes by accident. Add ⇧ when you mean it.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/compress-dark.png"><img src="docs/media/compress-light.png" width="340" alt=""></picture>
 <br><b>Smaller copy</b>
 <br>Right-click a photo, PDF or video to get a lighter copy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/convert-dark.png"><img src="docs/media/convert-light.png" width="340" alt=""></picture>
 <br><b>Convert</b>
 <br>Save a picture, video or song in another format from the right-click menu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/input-switch-dark.png"><img src="docs/media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Switch language</b>
 <br>Hold ⌥ and tap ⇧ to change the keyboard language.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/quit-on-close-dark.png"><img src="docs/media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Quit with the last window</b>
 <br>Close an app’s last window, and the app quits too.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/window-zoom-dark.png"><img src="docs/media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Green button enlarges</b>
 <br>The window fills the screen without going full screen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-hide-dark.png"><img src="docs/media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimize with a Dock click</b>
 <br>Click the app you’re in, and it steps out of the way.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/new-file-dark.png"><img src="docs/media/new-file-light.png" width="340" alt=""></picture>
 <br><b>New file</b>
 <br>Right-click in Finder, type a name, and an empty file appears.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/finder-cut-dark.png"><img src="docs/media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X moves files</b>
 <br>Cut files in Finder and paste them where you want.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/finder-open-dark.png"><img src="docs/media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Return opens files</b>
 <br>Select files in Finder and press Return to open them.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/finder-delete-dark.png"><img src="docs/media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete to Trash</b>
 <br>Press ⌫ in Finder, and the selected files go to the Trash.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Game Mode</b>
 <br>While you play, nothing pops up over the game or closes it.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/speed-test-dark.png"><img src="docs/media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Speed Test</b>
 <br>How fast your internet is, and what it’s good for.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/side-buttons-dark.png"><img src="docs/media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Side mouse buttons</b>
 <br>Buttons 4 and 5 go back and forward, like a swipe.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-lines-dark.png"><img src="docs/media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scroll by lines</b>
 <br>Every click of the wheel scrolls the same, however fast you spin it.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-direction-dark.png"><img src="docs/media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scroll direction</b>
 <br>One direction for the trackpad, another for the mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/linear-pointer-dark.png"><img src="docs/media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>No pointer acceleration</b>
 <br>The pointer moves exactly as far as your hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/key-repeat-dark.png"><img src="docs/media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repeat a held key</b>
 <br>Hold a key to type it again and again, without the accent menu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/home-end-dark.png"><img src="docs/media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home and End</b>
 <br>Jump to the start or end of a line while you type.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/animations-dark.png"><img src="docs/media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Speed up the Dock, windows and Quick Look, all the way to instant.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/leftover-permissions-dark.png"><img src="docs/media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissions of deleted apps</b>
 <br>Remove the permissions macOS still keeps for apps you deleted.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
 <br><b>Pet on the desktop</b>
 <br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/uninstaller-dark.png"><img src="docs/media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Uninstaller</b>
 <br>Remove an app and its files. You can put it all back.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-fps-dark.png"><img src="docs/media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Show FPS</b>
 <br>A small counter shows how smoothly your game runs, in the corner you choose.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/archive-dark.png"><img src="docs/media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archives</b>
 <br>Unpack RAR and other archives, or pack files into a ZIP, with a right-click.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-display-dark.png"><img src="docs/media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Keep the Dock on one display</b>
@@ -327,6 +334,7 @@ Shows how fast your internet is right now. Click **Check Speed** in Settings ›
 Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again from Finder, Launchpad or Spotlight. While the window is open, the app shows up in the Dock and in ⌘Tab.
 
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
+- **Battery**: charge, time until full or time left, condition, maximum capacity, cycle count, power adapter and watts, and tips to make it last. It only shows information: the charge limit stays in **System Settings › Battery**. Only on a Mac with a battery.
 - **Keep Awake**: duration, display and lid options.
 - **Fans**: see each fan’s speed, choose Auto or a manual speed once Fan control is allowed.
 - **Speed Test**: check the internet speed and see what it's good for.
