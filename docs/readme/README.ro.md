@@ -219,7 +219,11 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br><b>Temperatură</b>
 <br>Vezi cât de cald este Mac-ul în interior, de la procesor la baterie.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Sarcini în fundal</b>
+<br>Vezi ce rulează în fundal și de unde a venit.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Te-ai răzgândit? Apasă **Pune la loc** și totul revine unde a fost, iar ajut
 
 **Temperatură.** Deschide Configurări › Temperatură ca să vezi cât de cald este Mac-ul în interior. Sus, un singur cuvânt spune totul, de la „Normal” la „Foarte fierbinte”, iar un rând dedesubt arată dacă Mac-ul funcționează la viteză maximă sau încetinește ca să se răcească. Mai jos, fiecare componentă are rândul ei, cu un nume simplu în loc de un cod de senzor: procesor, grafică, memorie, stocare, Wi-Fi și baterie, după senzorii pe care îi are Mac-ul tău. Fiecare rând arată gradele și o bară scurtă care devine verde, galbenă sau portocalie, după intervalul normal pentru acea componentă. Valorile se actualizează la fiecare două secunde și doar cât timp te uiți la ele, așa că aproape nu încarcă Mac-ul. Nu e nevoie de parolă sau de permisiuni. Poți adăuga și un rând „Temperatură” în panoul din bara de meniu. Versiunea din Mac App Store arată doar nivelul general.
 
+Pagina **Sarcini în fundal** arată tot ce pornește singur pe Mac-ul tău: aplicații care se deschid la autentificare, servicii din fundal, ajutoare ascunse în aplicații și resturi de la aplicații pe care le-ai eliminat deja. La fiecare sarcină vezi ce aplicație a adăugat-o, dacă rulează chiar acum și unde se află fișierul ei, iar un clic arată fișierul în Finder. Sarcinile tale se opresc dintr-un buton și pornesc din nou la fel de ușor, fără să se șteargă nimic. Sarcinile pentru toți utilizatorii și pentru tot Mac-ul țin de macOS, așa că butonul lor deschide Articole de autentificare în Configurări sistem. În versiunea din Mac App Store, pagina doar arată sarcinile: îi dai o singură dată acces la folderul tău principal în fereastra obișnuită Deschide, iar butoanele deschid Articole de autentificare.
+
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
@@ -355,6 +361,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
+- **Sarcini în fundal**: tot ce rulează în fundal, ce aplicație l-a adăugat și un buton ca să oprești sarcinile tale și să le pornești din nou.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.
 - **Animăluț**: pornit sau oprit, vorbit, viață în ritmul tău și minge, garderoba și premiile.
 - **Permisiuni**: toate permisiunile pe care le folosește pikapik, fiecare cu starea ei și cu un buton pentru a o permite sau a o stinge. Un instrument căruia îi lipsește o permisiune apare în gri, iar un clic pe el deschide această pagină la rândul potrivit.

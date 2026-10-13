@@ -219,7 +219,11 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br><b>Suhu</b>
 <br>Lihat seberapa hangat bagian dalam Mac Anda, dari prosesor sampai baterai.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Tugas Latar Belakang</b>
+<br>Lihat apa yang berjalan di latar belakang dan dari mana asalnya.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Berubah pikiran? Klik **Kembalikan**, dan semuanya kembali ke tempat semula, sem
 
 **Suhu.** Buka Pengaturan › Suhu untuk melihat seberapa hangat bagian dalam Mac Anda. Di bagian atas, satu kata merangkum semuanya, dari “Normal” sampai “Sangat panas”, dengan satu baris yang menjelaskan apakah Mac Anda berjalan dengan kecepatan penuh atau melambat agar dingin. Di bawahnya, setiap komponen punya baris sendiri dengan nama yang mudah dipahami, bukan kode sensor: prosesor, grafis, memori, penyimpanan, Wi-Fi, dan baterai, sesuai sensor yang ada di Mac Anda. Setiap baris menunjukkan derajat dan bilah pendek yang berubah hijau, kuning, atau oranye menurut rentang normal komponen itu. Angkanya diperbarui setiap dua detik dan hanya saat Anda melihatnya, jadi hampir tidak membebani Mac Anda. Tidak perlu kata sandi atau izin. Anda juga bisa menambahkan baris “Suhu” ke panel bar menu. Versi Mac App Store hanya menampilkan tingkat keseluruhan.
 
+Halaman **Tugas Latar Belakang** menampilkan semua yang mulai berjalan sendiri di Mac Anda: app yang terbuka saat masuk, layanan latar belakang, pembantu yang terselip di dalam app, dan sisa app yang sudah Anda hapus. Setiap tugas menunjukkan app mana yang menambahkannya, apakah tugas itu sedang berjalan sekarang, dan di mana file-nya berada; sekali klik, file-nya tampil di Finder. Tugas milik Anda sendiri bisa dimatikan dengan satu tombol dan dinyalakan lagi sama mudahnya, tanpa ada yang dihapus. Tugas untuk semua pengguna dan untuk seluruh Mac adalah milik macOS, jadi tombolnya membuka Item Login di Pengaturan Sistem. Di versi Mac App Store, halaman ini hanya menampilkan tugas: Anda memberi akses ke folder utama Anda sekali saja di jendela Buka yang biasa, dan tombol-tombolnya membuka Item Login.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
 Ikon di bar menu menunjukkan status sekilas: tanda pikapik saat alat bekerja, tanda yang sama tetapi pucat saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
@@ -355,6 +361,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
 - **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
 - **Hapus App**: hapus app beserta filenya, kembalikan semuanya nanti, dan bersihkan sisa dari app yang sudah dihapus.
+- **Tugas Latar Belakang**: semua yang berjalan di latar belakang, app mana yang menambahkannya, dan tombol untuk mematikan tugas Anda sendiri lalu menyalakannya lagi.
 - **Game**: daftar game Anda dan opsi Mode Game.
 - **Peliharaan**: nyalakan atau matikan peliharaan, biarkan ia mengobrol, mengikuti ritme Anda, dan bermain bola, dandani, dan lihat penghargaan Anda.
 - **Izin**: semua izin yang dipakai pikapik, masing-masing dengan statusnya dan satu tombol untuk mengizinkan atau mematikannya. Alat yang kekurangan izin tampak setengah abu-abu, dan jika diklik, halaman ini terbuka di baris yang tepat.

@@ -219,7 +219,11 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br><b>Temperatuur</b>
 <br>Zie hoe warm je Mac vanbinnen is, van de processor tot de batterij.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Achtergrondtaken</b>
+<br>Bekijk wat er op de achtergrond draait en waar het vandaan komt.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Bedacht je je? Klik op **Zet terug** en alles staat weer waar het stond, terwijl
 
 **Temperatuur.** Open Instellingen › Temperatuur om te zien hoe warm je Mac vanbinnen is. Bovenaan vat één woord het samen, van ‘Normaal’ tot ‘Erg heet’, met een regel die zegt of je Mac op volle snelheid werkt of trager wordt om af te koelen. Daaronder heeft elk onderdeel een eigen rij met een gewone naam in plaats van een sensorcode: processor, grafische chip, geheugen, opslag, wifi en batterij, afhankelijk van de sensoren in je Mac. Elke rij toont de graden en een korte balk die groen, geel of oranje wordt, afgemeten aan het normale bereik van dat onderdeel. De waarden worden elke twee seconden bijgewerkt, en alleen terwijl je kijkt, dus ze kosten je Mac bijna niets. Je hebt geen wachtwoord of toestemming nodig. Je kunt ook een rij ‘Temperatuur’ toevoegen aan het paneel in de menubalk. De versie uit de Mac App Store toont alleen het algemene niveau.
 
+De pagina **Achtergrondtaken** toont alles wat vanzelf start op je Mac: apps die openen bij het inloggen, achtergronddiensten, hulpjes die in apps verstopt zitten en resten van apps die je al hebt verwijderd. Bij elke taak zie je welke app hem heeft toegevoegd, of hij nu draait en waar het bestand staat, en één klik toont dat bestand in de Finder. Je eigen taken zet je met één knop uit en net zo makkelijk weer aan, en er wordt niets verwijderd. Taken voor alle gebruikers en voor de hele Mac horen bij macOS, dus hun knop opent Inlogonderdelen in Systeeminstellingen. In de versie uit de Mac App Store laat de pagina de taken alleen zien: je geeft één keer in het gewone Open-venster toegang tot je thuismap, en de knoppen openen Inlogonderdelen.
+
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
 Het symbool in de menubalk laat in één oogopslag de status zien: het pikapik-teken als de tools werken, hetzelfde teken maar bleek als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
@@ -355,6 +361,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Dock**: minimaliseren of verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.
 - **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
 - **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
+- **Achtergrondtaken**: alles wat op de achtergrond draait, welke app het heeft toegevoegd en een knop om je eigen taken uit en weer aan te zetten.
 - **Games**: je lijst met games en de opties van de Gamemodus.
 - **Huisdiertje**: zet het aan of uit, laat het kletsen, op jouw ritme leven en met de bal spelen, kleed het aan en bekijk je onderscheidingen.
 - **Toestemmingen**: alle toestemmingen die pikapik gebruikt, elk met zijn status en één knop om ze toe te staan of uit te zetten. Een functie waarvoor een toestemming ontbreekt, ziet er half grijs uit; een klik erop opent deze pagina bij de juiste regel.

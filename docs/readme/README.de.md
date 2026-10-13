@@ -219,7 +219,11 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br><b>Temperatur</b>
 <br>Sieh, wie warm dein Mac innen ist, vom Prozessor bis zum Akku.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Hintergrundaufgaben</b>
+<br>Sieh, was im Hintergrund läuft und woher es kommt.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Doch anders überlegt? Klicke auf **Zurücklegen**, dann ist alles wieder da, wo
 
 **Temperatur.** Öffne Einstellungen › Temperatur, um zu sehen, wie warm dein Mac innen ist. Oben fasst ein Wort alles zusammen, von „Normal“ bis „Sehr heiß“, und eine Zeile darunter sagt, ob dein Mac mit voller Geschwindigkeit läuft oder langsamer wird, um abzukühlen. Darunter hat jedes Bauteil eine eigene Zeile mit einem verständlichen Namen statt eines Sensorcodes: Prozessor, Grafik, Arbeitsspeicher, SSD, WLAN und Akku, je nachdem, wofür dein Mac Sensoren hat. Jede Zeile zeigt die Grad und einen kurzen Balken, der grün, gelb oder orange wird, gemessen am normalen Bereich für dieses Bauteil. Die Werte werden alle zwei Sekunden aktualisiert und nur, solange du hinsiehst, deshalb belasten sie deinen Mac kaum. Du brauchst weder ein Passwort noch eine Berechtigung. Du kannst auch eine Zeile „Temperatur“ zum Fenster der Menüleiste hinzufügen. Die Version aus dem Mac App Store zeigt nur, wie warm der Mac insgesamt ist.
 
+Unter **Hintergrundaufgaben** siehst du alles, was auf deinem Mac von selbst startet: Apps, die sich beim Anmelden öffnen, Hintergrunddienste, Helfer, die in Apps stecken, und Reste von Apps, die du schon entfernt hast. Bei jeder Aufgabe steht, welche App sie hinzugefügt hat, ob sie gerade läuft und wo ihre Datei liegt; ein Klick zeigt die Datei im Finder. Deine eigenen Aufgaben schaltest du per Knopfdruck aus und genauso leicht wieder ein, gelöscht wird dabei nichts. Aufgaben für alle Benutzer und für den ganzen Mac gehören zu macOS, deshalb öffnet die Taste bei ihnen die Anmeldeobjekte in den Systemeinstellungen. In der Version aus dem Mac App Store zeigt die Seite die Aufgaben nur an: Du gibst ihr einmal im gewohnten Öffnen-Fenster Zugriff auf deinen Home-Ordner, und die Tasten öffnen die Anmeldeobjekte.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
@@ -355,6 +361,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Dock**: Mit einem Klick im Dock ablegen oder ausblenden, Dock auf einem Display halten und Dock zurückholen.
 - **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
 - **Apps entfernen**: eine App samt Dateien entfernen, alles später zurücklegen und aufräumen, was entfernte Apps hinterlassen haben.
+- **Hintergrundaufgaben**: alles, was im Hintergrund läuft, welche App es hinzugefügt hat, und eine Taste, mit der du deine eigenen Aufgaben aus- und wieder einschaltest.
 - **Spiele**: deine Spiele und die Einstellungen des Spielmodus.
 - **Haustier**: an- und ausschalten, Plaudern, Leben in deinem Rhythmus und Ball, Kleiderschrank und Auszeichnungen.
 - **Berechtigungen**: alle Berechtigungen, die pikapik nutzt, jeweils mit Status und einer Taste zum Erlauben oder Ausschalten. Ein Tool, dem eine Berechtigung fehlt, wirkt halb ausgegraut; ein Klick darauf öffnet diese Seite bei der passenden Zeile.

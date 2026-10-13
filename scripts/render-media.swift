@@ -43,6 +43,7 @@ enum RenderMedia {
         ("animations", 6.2, AnyView(AnimationsArt(values: AnimationSpeed.preset(0.5)))),
         ("leftover-permissions", 3.8, AnyView(LeftoversArt())),
         ("uninstaller", 6.0, AnyView(TrashWatchArt(on: true))),
+        ("background", BackgroundCard.length, AnyView(BackgroundCard())),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
         ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleFrame(rule: .commandQ, story: .still(on: false), height: 32)), 64), (AnyView(GameRuleFrame(rule: .spotlight, story: .still(on: false), height: 32)), 52), (AnyView(GameRuleFrame(rule: .missionControl, story: .still(on: false), height: 32)), 72)], height: 36))),
         ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),
@@ -1175,5 +1176,69 @@ private struct ArchivePasswordScene: View {
             .overlay(Capsule().fill(Color.accentColor).opacity(ready))
             .overlay(Capsule().fill(Color.primary.opacity(0.22)).overlay(Capsule().fill(.white).opacity(ready)).frame(width: 28, height: 4))
             .frame(maxWidth: .infinity, minHeight: 20, maxHeight: 20)
+    }
+}
+
+private struct BackgroundCard: View {
+    static let durations = [1.2, 1.1, 0.15, 1.6, 0.15, 1.6]
+    static var length: Double { durations.reduce(0, +) }
+    private static let rows: [(symbol: String, color: Color, name: CGFloat, byline: CGFloat)] = [
+        ("cloud.fill", .blue, 58, 84),
+        ("arrow.triangle.2.circlepath", .orange, 72, 62),
+        ("music.note", .pink, 46, 76),
+    ]
+    private static let button = CGPoint(x: 236, y: 64)
+
+    var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = tick % Self.durations.count
+            let panel = RoundedRectangle(cornerRadius: 12, style: .continuous)
+            Stage {
+                VStack(spacing: 0) {
+                    ForEach(Self.rows.indices, id: \.self) { index in
+                        if index > 0 { Divider().padding(.leading, 31) }
+                        row(index, off: index == 1 && (3...4).contains(step))
+                    }
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .frame(width: 236)
+                .background(panel.fill(Color(nsColor: .windowBackgroundColor)).shadow(color: .black.opacity(0.15), radius: 5, y: 2))
+                .overlay(panel.hairline(Color.primary.opacity(0.12)))
+                if step >= 2 {
+                    ArtRipple()
+                        .id(step < 4)
+                        .position(Self.button)
+                }
+                ArtCursor(pressed: step == 2 || step == 4)
+                    .cursor(at: step == 0 ? CGPoint(x: 282, y: 92) : Self.button)
+            }
+            .animation(.smooth(duration: 0.55), value: step)
+        }
+    }
+
+    private func row(_ index: Int, off: Bool) -> some View {
+        let row = Self.rows[index]
+        return HStack(spacing: 9) {
+            HStack(spacing: 9) {
+                SectionIcon(symbol: row.symbol, color: row.color, size: 22)
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack(spacing: 5) {
+                        Capsule().fill(Color.primary.opacity(0.28)).frame(width: row.name, height: 5)
+                        Circle().fill(Art.green).frame(width: 6, height: 6)
+                            .scaleEffect(off ? 0.2 : 1)
+                            .opacity(off ? 0 : 1)
+                    }
+                    Capsule().fill(Color.primary.opacity(0.14)).frame(width: row.byline, height: 3.5)
+                }
+            }
+            .opacity(off ? 0.45 : 1)
+            Spacer(minLength: 0)
+            Capsule().fill(Color.primary.opacity(0.08))
+                .overlay(Capsule().fill(Color.accentColor).opacity(off ? 1 : 0))
+                .overlay(Capsule().fill(Color.primary.opacity(0.22)).overlay(Capsule().fill(.white).opacity(off ? 1 : 0)).frame(width: off ? 30 : 20, height: 3.5))
+                .frame(width: off ? 50 : 38, height: 17)
+        }
+        .frame(height: 30)
     }
 }

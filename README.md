@@ -219,7 +219,11 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br><b>Temperature</b>
 <br>See how warm your Mac is inside, from the processor to the battery.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/background-dark.png"><img src="docs/media/background-light.png" width="340" alt=""></picture>
+<br><b>Background Tasks</b>
+<br>See what runs in the background and where it came from.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Changed your mind? Click **Put Back**, and everything returns to where it was an
 
 **Temperature.** Open Settings › Temperature to see how warm your Mac is inside. At the top, one word sums it up, from Normal to Very hot, with a line that says whether your Mac is running at full speed or slowing down to cool off. Below, each part has its own row with a plain name instead of a sensor code: processor, graphics, memory, storage, Wi-Fi and battery, whichever your Mac has sensors for. Each row shows the degrees and a short bar that turns green, yellow or orange, judged against the normal range for that part. The numbers refresh every two seconds, and only while you are looking at them, so they cost your Mac next to nothing. No password or permission is needed. You can also add a Temperature row to the menu bar panel. The Mac App Store version shows only the overall level.
 
+**Background Tasks** shows everything on your Mac that starts by itself: apps that open at login, background services, helpers tucked inside apps, and leftovers of apps you already deleted. Each task shows which app added it, whether it is running right now, and where its file is; one click shows the file in Finder. Your own tasks turn off with one button and come back just as easily, and nothing gets deleted. Tasks for all users and for the whole Mac belong to macOS, so their button opens Login Items in System Settings. In the Mac App Store version the page only shows the tasks: you give it access to your home folder once in the usual Open window, and the buttons open Login Items.
+
 Each tool has its own switch in the menu and in Settings.
 
 The menu bar icon shows the state at a glance: the pikapik mark when the tools are working, the same mark turned pale when everything is off, and a warning triangle when a tool is on but permissions are missing.
@@ -355,6 +361,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
+- **Background Tasks**: everything that runs in the background, which app added it, and a button to turn your own tasks off and back on.
 - **Games**: your list of games and the Game Mode options.
 - **Pet**: turn the little friend on or off, let it chat, follow your rhythm and play with a ball, dress it up and see your awards.
 - **Permissions**: every permission pikapik uses, each with its status and one button to allow it or turn it off. A tool that is missing a permission looks half-grey, and clicking it opens this page at the right row.

@@ -219,7 +219,11 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br><b>Temperatur</b>
 <br>Se hur varm din Mac är inuti, från processorn till batteriet.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Bakgrundsuppgifter</b>
+<br>Se vad som körs i bakgrunden och var det kommer ifrån.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ För att veta när en utmärkelse är på väg räknar pikapik bara det du och d
 
 **Temperatur.** Öppna Inställningar › Temperatur för att se hur varm din Mac är inuti. Överst sammanfattar ett ord allt, från ”Normal” till ”Mycket het”, med en rad som säger om din Mac går för full fart eller går långsammare för att svalna. Under det har varje del en egen rad med ett begripligt namn i stället för en sensorkod: processor, grafik, minne, lagring, Wi-Fi och batteri, beroende på vilka sensorer din Mac har. Varje rad visar graderna och en kort stapel som blir grön, gul eller orange utifrån det normala intervallet för den delen. Siffrorna uppdateras varannan sekund och bara medan du tittar, så de kostar din Mac nästan ingenting. Inget lösenord eller tillstånd behövs. Du kan också lägga till en rad ”Temperatur” i panelen i menyraden. Versionen från Mac App Store visar bara den övergripande nivån.
 
+Sidan **Bakgrundsuppgifter** visar allt som startar av sig självt på din Mac: appar som öppnas vid inloggning, bakgrundstjänster, hjälpare som gömmer sig inuti appar och rester av appar som du redan har tagit bort. Vid varje uppgift ser du vilken app som lade till den, om den körs just nu och var dess fil ligger, och med ett klick visas filen i Finder. Dina egna uppgifter stängs av med en knapp och slås på igen lika enkelt, och ingenting raderas. Uppgifter för alla användare och för hela Macen hör till macOS, så deras knapp öppnar Startobjekt i Systeminställningar. I versionen från Mac App Store visar sidan bara uppgifterna: du ger den åtkomst till din hemmapp en gång i det vanliga Öppna-fönstret, och knapparna öppnar Startobjekt.
+
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
@@ -355,6 +361,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
+- **Bakgrundsuppgifter**: allt som körs i bakgrunden, vilken app som lade till det och en knapp för att stänga av dina egna uppgifter och slå på dem igen.
 - **Spel**: din lista med spel och alternativen för Spelläge.
 - **Husdjur**: slå på eller av husdjuret, låt det prata, följa din rytm och leka med bollen, klä på det och se dina utmärkelser.
 - **Behörigheter**: alla behörigheter som pikapik använder, var och en med sin status och en knapp för att tillåta eller stänga av den. Ett verktyg som saknar en behörighet ser halvgrått ut, och ett klick på det öppnar den här sidan vid rätt rad.

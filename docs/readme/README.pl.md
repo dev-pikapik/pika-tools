@@ -219,7 +219,11 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br><b>Temperatura</b>
 <br>Zobacz, jak bardzo Mac nagrzał się w środku, od procesora po baterię.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Zadania w tle</b>
+<br>Zobacz, co działa w tle i skąd się wzięło.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Jeśli zmienisz zdanie, kliknij **Przywróć**: wszystko wróci na swoje miejsce
 
 **Temperatura.** Otwórz Ustawienia › Temperatura, aby zobaczyć, jak bardzo Mac nagrzał się w środku. Na górze jedno słowo podsumowuje wszystko, od „W normie” po „Bardzo gorąco”, a wiersz pod nim mówi, czy Mac działa z pełną prędkością, czy zwalnia, aby ostygnąć. Niżej każda część ma własny wiersz ze zrozumiałą nazwą zamiast kodu czujnika: procesor, grafika, pamięć, dysk, Wi-Fi i bateria, zależnie od tego, jakie czujniki ma twój Mac. Każdy wiersz pokazuje stopnie i krótki pasek, który robi się zielony, żółty lub pomarańczowy w zależności od normalnego zakresu dla tej części. Wartości odświeżają się co dwie sekundy i tylko wtedy, gdy na nie patrzysz, więc prawie nie obciążają Maca. Nie trzeba hasła ani pozwoleń. Wiersz „Temperatura” możesz też dodać do panelu na pasku menu. Wersja z Mac App Store pokazuje tylko ogólny poziom.
 
+Strona **Zadania w tle** pokazuje wszystko, co samo uruchamia się na twoim Macu: aplikacje otwierane po zalogowaniu, usługi w tle, pomocników ukrytych w aplikacjach i pozostałości po już usuniętych aplikacjach. Przy każdym zadaniu widać, która aplikacja je dodała, czy działa w tej chwili i gdzie leży jego plik, a jedno kliknięcie pokazuje ten plik w Finderze. Własne zadania wyłączasz jednym przyciskiem i równie łatwo włączasz z powrotem. Nic przy tym nie jest usuwane. Zadania dla wszystkich użytkowników i dla całego Maca należą do macOS, więc ich przycisk otwiera Rzeczy otwierane podczas logowania w Ustawieniach systemowych. W wersji z Mac App Store strona tylko pokazuje zadania: dostęp do folderu domowego dajesz jej raz w zwykłym oknie otwierania, a przyciski otwierają Rzeczy otwierane podczas logowania.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
@@ -355,6 +361,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
+- **Zadania w tle**: wszystko, co działa w tle, która aplikacja to dodała, i przycisk, by wyłączyć własne zadanie i włączyć je z powrotem.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.
 - **Zwierzak**: włączanie i wyłączanie, rozmowy, życie w twoim rytmie i piłka, garderoba i nagrody.
 - **Uprawnienia**: wszystkie uprawnienia, których używa pikapik, każde z własnym stanem i przyciskiem do zezwolenia lub wyłączenia. Narzędzie, któremu brakuje uprawnienia, wygląda na wyszarzone, a kliknięcie go otwiera tę stronę przy właściwym wierszu.
