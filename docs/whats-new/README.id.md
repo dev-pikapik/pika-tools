@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Lihat apa yang berjalan di latar belakang
+
+<sub>1.43.0 · 13 Oktober 2026</sub>
+
+pikapik kini menampilkan semua yang mulai berjalan sendiri beserta app yang menambahkannya, dan mematikan tugas milik Anda tanpa menghapus apa pun.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Halaman Tugas Latar Belakang yang baru di Pengaturan menampilkan app yang terbuka saat masuk, layanan latar belakang, pembantu di dalam app, dan sisa app yang sudah dihapus. Setiap tugas menunjukkan app mana yang menambahkannya, apakah sedang berjalan sekarang, dan di mana file-nya berada. Sekali klik, file-nya tampil di Finder.
+
+Tugas milik Anda sendiri bisa dimatikan dan dinyalakan lagi dengan satu tombol. Tidak ada yang dihapus. Untuk tugas bagi semua pengguna dan untuk seluruh Mac, tombolnya membuka Item Login di Pengaturan Sistem.
+
+Di versi Mac App Store, halaman ini menampilkan tugas, dan tombol-tombolnya membuka Item Login.
+
+---
+
 ## <a id="v1.42.0"></a>Lihat seberapa hangat bagian dalam Mac Anda
 
 <sub>1.42.0 · 13 Oktober 2026</sub>

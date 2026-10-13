@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Vezi ce rulează în fundal
+
+<sub>1.43.0 · 13 octombrie 2026</sub>
+
+pikapik îți arată acum tot ce pornește singur și ce aplicație l-a adăugat, iar sarcinile tale le oprește fără să șteargă nimic.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+În Setări, noua pagină Sarcini în fundal arată aplicațiile care se deschid la autentificare, serviciile din fundal, ajutoarele din interiorul aplicațiilor și resturile aplicațiilor șterse. La fiecare sarcină vezi ce aplicație a adăugat-o, dacă rulează acum și unde se află fișierul ei. Un clic arată fișierul în Finder.
+
+Sarcinile tale se opresc și pornesc din nou dintr-un singur buton. Nu se șterge nimic. La sarcinile pentru toți utilizatorii și pentru tot Mac-ul, butonul deschide Articole de autentificare în Configurări sistem.
+
+În versiunea din Mac App Store, pagina arată sarcinile, iar butoanele ei deschid Articole de autentificare.
+
+---
+
 ## <a id="v1.42.0"></a>Vezi cât de cald este Mac-ul în interior
 
 <sub>1.42.0 · 13 octombrie 2026</sub>

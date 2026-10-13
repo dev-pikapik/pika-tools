@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>查看背景在執行什麼
+
+<sub>1.43.0 · 2026年10月13日</sub>
+
+pikapik 現在會顯示所有自行啟動的項目和加入它們的 App，還能關閉你自己的工作，不刪除任何東西。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+「設定」裡新增的「背景工作」頁面會列出登入時打開的 App、背景服務、藏在 App 裡的輔助程式，以及已移除 App 的殘留檔案。每個工作都會顯示是哪個 App 加入的、現在是否正在執行、檔案在哪裡。按一下就能在 Finder 中顯示這個檔案。
+
+你自己的工作用一個按鈕就能關閉，也能重新打開。任何東西都不會被刪除。對於所有使用者和整台 Mac 的工作，按鈕會打開「系統設定」中的「登入項目」。
+
+在 Mac App Store 版本中，這個頁面會顯示工作，按鈕則會打開「登入項目」。
+
+---
+
 ## <a id="v1.42.0"></a>查看 Mac 內部有多熱
 
 <sub>1.42.0 · 2026年10月13日</sub>

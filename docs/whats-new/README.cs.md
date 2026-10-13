@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Podívejte se, co běží na pozadí
+
+<sub>1.43.0 · 13. října 2026</sub>
+
+pikapik teď ukazuje vše, co se spouští samo, i to, která aplikace to přidala, a vaše vlastní úlohy vypne, aniž by cokoli smazal.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Nová stránka Úlohy na pozadí v Nastavení ukazuje aplikace otevírané po přihlášení, služby na pozadí, pomocníky uvnitř aplikací a zbytky po smazaných aplikacích. U každé úlohy vidíte, která aplikace ji přidala, jestli právě běží a kde leží její soubor. Jedním kliknutím soubor zobrazíte ve Finderu.
+
+Vlastní úlohy vypnete a znovu zapnete jedním tlačítkem. Nic se nemaže. U úloh pro všechny uživatele a pro celý Mac otevře tlačítko Položky po přihlášení v Nastavení systému.
+
+Ve verzi z Mac App Store stránka úlohy ukazuje a její tlačítka otevírají Položky po přihlášení.
+
+---
+
 ## <a id="v1.42.0"></a>Podívejte se, jak moc je Mac uvnitř zahřátý
 
 <sub>1.42.0 · 13. října 2026</sub>

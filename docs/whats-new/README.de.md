@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Sieh, was im Hintergrund läuft
+
+<sub>1.43.0 · 13. Oktober 2026</sub>
+
+pikapik zeigt jetzt alles, was von selbst startet, samt der App, die es hinzugefügt hat, und schaltet deine eigenen Aufgaben aus, ohne etwas zu löschen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Die neue Seite „Hintergrundaufgaben“ in den Einstellungen zeigt Apps, die sich beim Anmelden öffnen, Hintergrunddienste, Helfer in Apps und Reste gelöschter Apps. Bei jeder Aufgabe siehst du, welche App sie hinzugefügt hat, ob sie gerade läuft und wo ihre Datei liegt. Ein Klick zeigt die Datei im Finder.
+
+Deine eigenen Aufgaben schaltest du mit einer Taste aus und wieder ein. Gelöscht wird nichts. Bei Aufgaben für alle Benutzer und für den ganzen Mac öffnet die Taste die Anmeldeobjekte in den Systemeinstellungen.
+
+In der Version aus dem Mac App Store zeigt die Seite die Aufgaben, und ihre Tasten öffnen die Anmeldeobjekte.
+
+---
+
 ## <a id="v1.42.0"></a>Sieh, wie warm dein Mac innen ist
 
 <sub>1.42.0 · 13. Oktober 2026</sub>

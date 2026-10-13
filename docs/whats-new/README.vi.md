@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Xem những gì đang chạy nền
+
+<sub>1.43.0 · 13 tháng 10 năm 2026</sub>
+
+pikapik giờ cho thấy mọi thứ tự khởi động và ứng dụng nào đã thêm chúng, đồng thời tắt các tác vụ của riêng bạn mà không xóa gì.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Trang Tác vụ nền mới trong Cài đặt liệt kê ứng dụng mở khi đăng nhập, dịch vụ nền, trình trợ giúp bên trong ứng dụng và tệp còn sót của ứng dụng đã gỡ. Mỗi tác vụ cho biết ứng dụng nào đã thêm nó, nó có đang chạy không và tệp của nó nằm ở đâu. Chỉ cần nhấp một lần là tệp hiện ra trong Finder.
+
+Tác vụ của riêng bạn tắt và bật lại được bằng một nút. Không có gì bị xóa. Với tác vụ cho mọi người dùng và cho cả máy Mac, nút sẽ mở Mục đăng nhập trong Cài đặt hệ thống.
+
+Trong phiên bản Mac App Store, trang này hiển thị các tác vụ, còn các nút sẽ mở Mục đăng nhập.
+
+---
+
 ## <a id="v1.42.0"></a>Xem bên trong máy Mac nóng đến mức nào
 
 <sub>1.42.0 · 13 tháng 10 năm 2026</sub>

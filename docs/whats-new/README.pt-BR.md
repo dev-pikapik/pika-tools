@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Veja o que roda em segundo plano
+
+<sub>1.43.0 · 13 de outubro de 2026</sub>
+
+O pikapik agora mostra tudo o que começa sozinho e qual app adicionou cada coisa, e desliga suas próprias tarefas sem apagar nada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Nos Ajustes, a nova página Tarefas em Segundo Plano lista os apps que abrem ao iniciar sessão, os serviços em segundo plano, os ajudantes guardados dentro de apps e as sobras de apps removidos. Em cada tarefa você vê qual app a adicionou, se ela está rodando agora e onde fica o arquivo dela. Um clique mostra o arquivo no Finder.
+
+Suas próprias tarefas desligam e religam com um botão. Nada é apagado. Nas tarefas para todos os usuários e para o Mac inteiro, o botão abre Itens de Início em Ajustes do Sistema.
+
+Na versão da Mac App Store, a página mostra as tarefas, e os botões dela abrem Itens de Início.
+
+---
+
 ## <a id="v1.42.0"></a>Veja o quanto o Mac está quente por dentro
 
 <sub>1.42.0 · 13 de outubro de 2026</sub>

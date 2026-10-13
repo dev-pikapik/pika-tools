@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Voyez ce qui tourne en arrière-plan
+
+<sub>1.43.0 · 13 octobre 2026</sub>
+
+pikapik montre désormais tout ce qui se lance tout seul et quelle app l’a ajouté, et éteint vos propres tâches sans rien supprimer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Dans les Réglages, la nouvelle page Tâches en arrière-plan liste les apps qui s’ouvrent à la connexion, les services en arrière-plan, les assistants cachés dans les apps et les restes d’apps supprimées. Pour chaque tâche, vous voyez quelle app l’a ajoutée, si elle tourne en ce moment et où se trouve son fichier. Un clic affiche le fichier dans le Finder.
+
+Vos propres tâches s’éteignent et se rallument d’un seul bouton. Rien n’est supprimé. Pour les tâches de tous les utilisateurs et de tout le Mac, le bouton ouvre la section Ouverture de Réglages Système.
+
+Dans la version du Mac App Store, la page affiche les tâches, et ses boutons ouvrent la section Ouverture.
+
+---
+
 ## <a id="v1.42.0"></a>Voyez à quel point votre Mac chauffe à l’intérieur
 
 <sub>1.42.0 · 13 octobre 2026</sub>
