@@ -124,6 +124,18 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Ocultar ícones da Mesa</b>
+<br>Um clique e a Mesa fica limpa para uma chamada ou captura de tela.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Mostrar arquivos ocultos</b>
+<br>Veja os arquivos e pastas que o macOS esconde.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modo Jogo</b>
 <br>Enquanto você joga, nada abre por cima do jogo nem o fecha.
@@ -320,6 +332,10 @@ O pikapik também abre o que o macOS não abre: RAR, até dividido em partes, 7Z
 
 Uma janela pede a senha, **Parar** cancela qualquer tarefa e, de um arquivo compactado danificado ou incompleto, o pikapik tira o que ainda dá para ler. Se um arquivo compactado crescesse até um tamanho enorme, o pikapik pergunta antes de extrair, e para a tempo quando o disco está prestes a encher. Arquivos compactados que tentam gravar fora da própria pasta são bloqueados. Selecione um arquivo compactado no Finder e aperte Espaço para ver o que há dentro.
 
+**Ocultar ícones da Mesa.** Ative antes de uma chamada, uma gravação ou uma captura de tela, e os arquivos e pastas da Mesa somem. Desative e eles voltam para os mesmos lugares. Nada é movido: os arquivos continuam na pasta Mesa do Finder. É o ajuste **Mostrar itens › Na Mesa** de Ajustes do Sistema › Mesa e Dock, só que mais à mão, então os dois sempre combinam. Na versão da Mac App Store, esta linha abre essa página dos Ajustes do Sistema.
+
+**Mostrar arquivos ocultos.** Arquivos e pastas que o macOS oculta, como a Biblioteca na sua pasta pessoal ou arquivos cujo nome começa com um ponto, aparecem esmaecidos no Finder e na Mesa. É o mesmo que pressionar ⇧⌘. no Finder, só que você vê de relance se está ativado. Os dois ficam em Ajustes › Finder. Para tê-los no painel da barra de menus, clique no botão de lápis na parte de baixo e marque-os. Na versão da Mac App Store, Ajustes › Finder mostra no lugar as teclas ⇧⌘. do Finder.
+
 **Modo Jogo.** Adicione seus jogos e, enquanto você joga, o Mac não tira você do jogo. Spotlight, Siri, ⌘Tab, Mission Control e os gestos entre mesas não abrem por cima do jogo, ⌘Q e ⌘W não o fecham sem querer, o ponteiro não escapa para o Dock, a barra de menus ou outra tela, e a tela continua ligada. Cada uma dessas opções tem a própria chave na página Jogos, e o pikapik sugere os jogos que encontra no seu Mac. No jogo, Control-clique continua sendo um clique, e Control com as setas não troca de mesa. O Minecraft também é reconhecido: adicione o Minecraft Launcher ou o CurseForge, e o modo liga dentro do próprio Minecraft. Para sair de um jogo, pressione ⇧⌘Q; para fechar a janela dele, ⇧⌘W. ⌥⌘Esc sempre funciona. Assim que você sai do jogo, tudo funciona como sempre. Desativado por padrão.
 
 Ligue o Modo Jogo e jogue. Mais ajustes do jogo tem o catálogo publicado pelo Mac, com teclas atuais e uma prévia animada para cada ação.
@@ -391,7 +407,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais, um botão que oculta o app atual.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
-- **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
+- **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X, apagar com ⌫, ocultar ícones da Mesa e mostrar arquivos ocultos.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Tarefas em Segundo Plano**: tudo o que roda em segundo plano, qual app adicionou e um botão para desligar suas próprias tarefas e religá-las.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.

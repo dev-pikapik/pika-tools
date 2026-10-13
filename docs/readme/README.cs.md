@@ -124,6 +124,18 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Skrýt ikony na ploše</b>
+<br>Jedním kliknutím uklidíte plochu před hovorem nebo snímkem obrazovky.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Zobrazit skryté soubory</b>
+<br>Uvidíte soubory a složky, které macOS skrývá.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Herní režim</b>
 <br>Zatímco hrajete, nic nevyskočí přes hru a nic ji nezavře.
@@ -320,6 +332,10 @@ pikapik otevře i to, co macOS neotevře: RAR, třeba rozdělený na části, 7Z
 
 Okno se zeptá na heslo, **Zastavit** zruší jakoukoli úlohu a z poškozeného nebo neúplného archivu pikapik vytáhne, co se ještě dá přečíst. Před rozbalením archivu, který by nabobtnal do obrovské velikosti, se zeptá, včas se zastaví, kdyby se měl zaplnit disk, a archivy, které se pokoušejí zapisovat mimo vlastní složku, zablokuje. Vyberte archiv ve Finderu a stiskněte mezerník, abyste viděli, co obsahuje.
 
+**Skrýt ikony na ploše.** Zapněte to před hovorem, nahráváním obrazovky nebo snímkem obrazovky a soubory a složky z plochy zmizí. Vypněte to a vrátí se na stejná místa. Nic se nepřesouvá: soubory zůstávají ve složce Plocha ve Finderu. Je to volba **Zobrazit položky › Na ploše** z Nastavení systému › Plocha a Dock, jen víc po ruce, takže obě vždy souhlasí. Ve verzi z Mac App Store tento řádek místo toho otevře tuto stránku Nastavení systému.
+
+**Zobrazit skryté soubory.** Soubory a složky, které macOS skrývá, třeba Knihovna ve vaší domovské složce nebo soubory, jejichž název začíná tečkou, se ve Finderu a na ploše zobrazí poloprůhledně. Je to totéž jako stisknout ⇧⌘. ve Finderu, jen hned vidíte, jestli je to zapnuté. Obojí najdete v Nastavení › Finder. Chcete-li je mít v panelu v řádku nabídek, klikněte na tlačítko s tužkou dole v panelu a zaškrtněte je. Ve verzi z Mac App Store místo toho Nastavení › Finder ukazuje klávesy ⇧⌘. pro Finder.
+
 **Herní režim.** Přidejte své hry a během hraní vás Mac ze hry nevytrhne. Spotlight, Siri, ⌘Tab, Mission Control a přejetí mezi plochami se neotevřou přes hru, ⌘Q a ⌘W ji omylem nezavřou, ukazatel nesklouzne do Docku, na řádek nabídek ani na jiný displej a obrazovka zůstane zapnutá. Každá z těchto voleb má vlastní přepínač na stránce Hry a pikapik vám nabídne hry, které na vašem Macu najde. Ve hře zůstane Control-kliknutí obyčejným kliknutím a Control se šipkami nepřepne plochu. Pozná i Minecraft: přidejte Minecraft Launcher nebo CurseForge a režim se zapne přímo v Minecraftu. Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. Jakmile hru opustíte, vše funguje jako obvykle. Ve výchozím stavu vypnuto.
 
 Zapněte herní režim a hrajte. Další nastavení hry obsahuje katalog Macu s aktuálními klávesami a animovaným náhledem každé akce.
@@ -391,7 +407,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka, tlačítko pro skrytí aktuální aplikace.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: minimalizace nebo skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
-- **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
+- **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X, mazání klávesou ⌫, skrytí ikon na ploše a zobrazení skrytých souborů.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Úlohy na pozadí**: vše, co běží na pozadí, která aplikace to přidala, a tlačítko, kterým vlastní úlohy vypnete a znovu zapnete.
 - **Hry**: seznam vašich her a volby Herního režimu.

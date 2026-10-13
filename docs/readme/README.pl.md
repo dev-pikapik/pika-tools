@@ -124,6 +124,18 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Ukryj ikony na biurku</b>
+<br>Jedno kliknięcie i biurko jest puste przed rozmową lub zrzutem ekranu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Pokaż ukryte pliki</b>
+<br>Zobacz pliki i foldery, które macOS ukrywa.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Tryb gry</b>
 <br>Gdy grasz, nic nie wyskoczy nad grą ani jej nie zamknie.
@@ -320,6 +332,10 @@ pikapik otwiera też to, czego nie otworzy macOS: RAR, nawet podzielony na czę�
 
 Okno pyta o hasło, **Zatrzymaj** przerywa każde zadanie, a z uszkodzonego lub niekompletnego archiwum pikapik wyciąga to, co da się jeszcze odczytać. Pyta, zanim wypakuje archiwum, które rozrosłoby się do ogromnego rozmiaru, zatrzymuje się na czas, gdy dysk miałby się zapełnić, i blokuje archiwa próbujące zapisywać poza własnym folderem. Zaznacz archiwum w Finderze i naciśnij spację, aby podejrzeć, co jest w środku.
 
+**Ukryj ikony na biurku.** Włącz to przed rozmową, nagrywaniem ekranu albo zrzutem ekranu, a pliki i foldery z biurka znikną. Wyłącz, a wrócą na swoje miejsca. Nic się nie przenosi: pliki zostają w folderze Biurko w Finderze. To ustawienie **Pokaż rzeczy › Na Biurku** w Ustawieniach systemowych › Biurko i Dock, tylko bardziej pod ręką, więc oba zawsze się zgadzają. W wersji z Mac App Store ten wiersz otwiera zamiast tego tę stronę Ustawień systemowych.
+
+**Pokaż ukryte pliki.** Pliki i foldery, które macOS ukrywa, na przykład folder Biblioteki w twoim folderze domowym albo pliki, których nazwa zaczyna się od kropki, pojawią się w Finderze i na biurku jako przygaszone. To to samo co naciśnięcie ⇧⌘. w Finderze, tylko od razu widać, czy jest włączone. Oba są w Ustawieniach › Finder. Żeby mieć je w panelu na pasku menu, kliknij przycisk z ołówkiem na dole panelu i zaznacz je. W wersji z Mac App Store Ustawienia › Finder pokazują zamiast tego klawisze ⇧⌘. dla Findera.
+
 **Tryb gry.** Dodaj swoje gry, a gdy grasz, Mac nie wyrywa Cię z gry. Spotlight, Siri, ⌘Tab, Mission Control i przesunięcia między biurkami nie otwierają się nad grą, ⌘Q i ⌘W nie zamykają jej przypadkiem, wskaźnik nie ucieka na Dock, pasek menu ani inny ekran, a ekran nie gaśnie. Każda z tych opcji ma własny przełącznik na stronie Gry, a pikapik podpowiada gry, które znajdzie na Twoim Macu. W grze Control-kliknięcie pozostaje zwykłym kliknięciem, a Control ze strzałkami nie zmienia biurka. Rozpoznaje też Minecrafta: dodaj Minecraft Launcher lub CurseForge, a tryb włączy się w samym Minecrafcie. Aby wyjść z gry, naciśnij ⇧⌘Q, a żeby zamknąć jej okno – ⇧⌘W. ⌥⌘Esc działa zawsze. Gdy tylko wyjdziesz z gry, wszystko działa jak zwykle. Domyślnie wyłączone.
 
 Włącz tryb gry i graj. Więcej ustawień gry zawiera katalog publikowany przez Maca, bieżące klawisze i animowany podgląd każdej akcji.
@@ -391,7 +407,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski, przycisk ukrywający bieżącą aplikację.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
-- **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
+- **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X, usuwanie klawiszem ⌫, ukrywanie ikon na biurku i pokazywanie ukrytych plików.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Zadania w tle**: wszystko, co działa w tle, która aplikacja to dodała, i przycisk, by wyłączyć własne zadanie i włączyć je z powrotem.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.

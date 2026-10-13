@@ -124,6 +124,18 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Göm skrivbordssymboler</b>
+<br>Ett klick, och skrivbordet är tomt inför ett samtal eller en skärmbild.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Visa gömda filer</b>
+<br>Se filerna och mapparna som macOS håller undan.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Spelläge</b>
 <br>Medan du spelar dyker inget upp över spelet och inget stänger det.
@@ -320,6 +332,10 @@ pikapik öppnar också sådant som macOS inte kan: RAR, även uppdelat i delar, 
 
 Ett fönster frågar efter lösenordet, **Stoppa** avbryter vilket jobb som helst, och ur ett skadat eller ofullständigt arkiv plockar pikapik ut det som fortfarande går att läsa. Det frågar innan ett arkiv packas upp som skulle svälla till en enorm storlek, stoppar i tid om disken skulle bli full och blockerar arkiv som försöker skriva utanför sin egen mapp. Markera ett arkiv i Finder och tryck på mellanslag för att se vad som finns i det.
 
+**Göm skrivbordssymboler.** Slå på det före ett samtal, en skärminspelning eller en skärmbild, så försvinner filerna och mapparna från skrivbordet. Slå av det, så kommer de tillbaka till samma platser. Inget flyttas: filerna ligger kvar i mappen Skrivbord i Finder. Det är inställningen **Visa objekt › På skrivbordet** i Systeminställningar › Skrivbord och Dock, fast närmare till hands, så de två stämmer alltid överens. I versionen från Mac App Store öppnar den här raden i stället den sidan i Systeminställningar.
+
+**Visa gömda filer.** Filer och mappar som macOS gömmer, som Bibliotek i din hemmapp eller filer vars namn börjar med en punkt, visas nedtonade i Finder och på skrivbordet. Det är samma sak som att trycka på ⇧⌘. i Finder, fast du ser direkt om det är på. Båda finns i Inställningar › Finder. Vill du ha dem i panelen i menyraden klickar du på pennknappen längst ned i panelen och markerar dem. I versionen från Mac App Store visar Inställningar › Finder i stället tangenterna ⇧⌘. för Finder.
+
 **Spelläge.** Lägg till dina spel, så drar din Mac inte ut dig ur spelet medan du spelar. Spotlight, Siri, ⌘Tab, Mission Control och svep mellan skrivbord öppnas inte ovanpå spelet, ⌘Q och ⌘W stänger det inte av misstag, pekaren glider inte till Dock, menyraden eller en annan skärm, och skärmen förblir på. Var och en av dessa har ett eget reglage på sidan Spel, och pikapik föreslår spel som det hittar på din Mac. I ett spel förblir kontroll-klick ett vanligt klick, och kontroll med pilar byter inte skrivbord. Minecraft känns också igen: lägg till Minecraft Launcher eller CurseForge, så slås läget på i själva Minecraft. Tryck på ⇧⌘Q för att lämna ett spel och på ⇧⌘W för att stänga dess fönster. ⌥⌘Esc fungerar alltid. Så fort du lämnar spelet fungerar allt som vanligt. Av som standard.
 
 Slå på Spelläge och spela. Fler spelinställningar innehåller Macens katalog med aktuella tangenter och en animerad förhandsvisning för varje åtgärd.
@@ -391,7 +407,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar, en knapp som gömmer den aktuella appen.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
-- **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
+- **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X, radera med ⌫, göm skrivbordssymboler och visa gömda filer.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Bakgrundsuppgifter**: allt som körs i bakgrunden, vilken app som lade till det och en knapp för att stänga av dina egna uppgifter och slå på dem igen.
 - **Spel**: din lista med spel och alternativen för Spelläge.

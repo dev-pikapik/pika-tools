@@ -124,6 +124,18 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Masquer les icônes du bureau</b>
+<br>Un clic, et le bureau est vide pour un appel ou une capture d’écran.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Afficher les fichiers masqués</b>
+<br>Voyez les fichiers et dossiers que macOS garde hors de vue.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Mode Jeu</b>
 <br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
@@ -320,6 +332,10 @@ pikapik ouvre aussi ce que macOS ne sait pas ouvrir : les RAR, même répartis e
 
 Une fenêtre demande le mot de passe, **Arrêter** interrompt n’importe quelle tâche, et d’une archive endommagée ou incomplète, pikapik récupère ce qui est encore lisible. Si une archive gonflait jusqu’à une taille énorme, pikapik vous demande confirmation avant de l’extraire, et il s’arrête à temps quand le disque est sur le point d’être plein. Les archives qui tentent d’écrire en dehors de leur propre dossier sont bloquées. Sélectionnez une archive dans le Finder et appuyez sur Espace pour voir ce qu’elle contient.
 
+**Masquer les icônes du bureau.** Activez-le avant un appel, un enregistrement de l’écran ou une capture d’écran, et les fichiers et dossiers du bureau disparaissent. Désactivez-le, et ils reviennent à leur place. Rien n’est déplacé : les fichiers restent dans le dossier Bureau du Finder. C’est le réglage **Afficher les éléments › Sur le bureau** de Réglages Système › Bureau et Dock, en plus accessible, donc les deux sont toujours d’accord. Dans la version du Mac App Store, cette ligne ouvre plutôt cette page des Réglages Système.
+
+**Afficher les fichiers masqués.** Les fichiers et dossiers que macOS masque, comme Bibliothèque dans votre dossier de départ ou les fichiers dont le nom commence par un point, apparaissent en grisé dans le Finder et sur le bureau. C’est comme appuyer sur ⇧⌘. dans le Finder, sauf que vous voyez d’un coup d’œil si c’est activé. Les deux se trouvent dans Réglages › Finder. Pour les avoir dans le panneau de la barre des menus, cliquez sur le bouton en forme de crayon en bas du panneau et cochez-les. Dans la version du Mac App Store, Réglages › Finder indique plutôt les touches ⇧⌘. du Finder.
+
 **Mode Jeu.** Ajoutez vos jeux, et pendant que vous jouez, votre Mac ne vous fait pas sortir du jeu. Spotlight, Siri, ⌘Tab, Mission Control et les balayages entre bureaux ne s’ouvrent pas par-dessus le jeu, ⌘Q et ⌘W ne le ferment pas par accident, le pointeur ne glisse pas vers le Dock, la barre des menus ou un autre écran, et l’écran reste allumé. Chacun de ces réglages a son propre interrupteur sur la page Jeux, et pikapik vous propose les jeux qu’il trouve sur votre Mac. Dans un jeu, Contrôle-clic reste un simple clic, et Contrôle avec les flèches ne change pas de bureau. Minecraft est reconnu aussi : ajoutez Minecraft Launcher ou CurseForge, et le mode s’active dans Minecraft lui-même. Pour quitter un jeu, appuyez sur ⇧⌘Q ; pour fermer sa fenêtre, sur ⇧⌘W. ⌥⌘Esc fonctionne toujours. Dès que vous quittez le jeu, tout fonctionne comme d’habitude. Désactivé par défaut.
 
 Activez le mode Jeu et jouez. Autres réglages de jeu contient le catalogue publié par votre Mac, avec les touches actuelles et un aperçu animé pour chaque action.
@@ -391,7 +407,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux, un bouton qui masque l’app active.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
-- **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
+- **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X, supprimer avec ⌫, masquer les icônes du bureau et afficher les fichiers masqués.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Tâches en arrière-plan** : tout ce qui tourne en arrière-plan, l’app qui l’a ajouté et un bouton pour éteindre vos propres tâches et les rallumer.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.

@@ -124,6 +124,18 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>隱藏桌面圖像</b>
+<br>通話或截圖前，按一下就讓桌面乾乾淨淨。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>顯示隱藏檔案</b>
+<br>看見 macOS 藏起來的檔案和檔案夾。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>遊戲模式</b>
 <br>玩遊戲時，不會有東西跳到遊戲上面，也不會把遊戲關掉。
@@ -320,6 +332,10 @@ pikapik 還能打開 macOS 打不開的檔案：RAR（包括分成多個部分�
 
 會彈出視窗詢問密碼，**停止** 可以取消任何工作，對於損壞或不完整的壓縮檔，pikapik 會取出仍然可以讀取的部分。如果壓縮檔解壓縮後會膨脹到巨大體積，pikapik 會先詢問你；磁碟快要寫滿時它會及時停下；試圖寫到自己檔案夾之外的壓縮檔會被攔下。在 Finder 中選取壓縮檔後按空白鍵，即可預覽裡面有什麼。
 
+**隱藏桌面圖像。** 在通話、螢幕錄影或截圖前開啟，桌面上的檔案和檔案夾就會消失。關閉後，它們會回到原來的位置。不會移動任何東西：檔案仍在 Finder 的「桌面」檔案夾中。它就是「系統設定」›「桌面與Dock」中的 **「顯示項目」›「在桌面上」**，只是放在手邊，所以兩者總是一致。在 Mac App Store 版本中，這一列會改為打開系統設定的這個頁面。
+
+**顯示隱藏檔案。** macOS 隱藏的檔案和檔案夾，例如個人專屬檔案夾中的「資源庫」或名稱以句點開頭的檔案，會以半透明的樣子出現在 Finder 和桌面上。這和在 Finder 中按 ⇧⌘. 一樣，只是一眼就能看出是否已開啟。兩者都在「設定 › Finder」裡。想放進選單列面板，請按一下面板底部的鉛筆按鈕並勾選它們。在 Mac App Store 版本中，「設定 › Finder」會改為顯示 ⇧⌘. 這組按鍵。
+
 **遊戲模式。** 加入你的遊戲後，玩遊戲時 Mac 不會把你拉出遊戲。Spotlight、Siri、⌘Tab、指揮中心和在桌面之間滑動都不會在遊戲上方打開，⌘Q 和 ⌘W 不會意外關閉遊戲，指標不會滑到 Dock、選單列或另一個螢幕上，螢幕也保持開啟。每一項都可以在「遊戲」頁面單獨開關，pikapik 也會推薦它在你的 Mac 上找到的遊戲。遊戲中 Control 點按仍是一般點按，Control+方向鍵也不會切換桌面。也能辨識 Minecraft：加入 Minecraft Launcher 或 CurseForge，在 Minecraft 裡就會開啟這個模式。要結束遊戲，請按 ⇧⌘Q；要關閉其視窗，請按 ⇧⌘W。⌥⌘Esc 永遠有效。一離開遊戲，一切照常運作。預設關閉。
 
 開啟遊戲模式就能玩。更多遊戲設定中有Mac公開的完整目錄、目前按鍵設定，以及每項操作的動畫預覽。
@@ -391,7 +407,7 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 - **滑鼠**：指標加速和軌跡速度、按行捲動、捲動方向、側邊按鈕、隱藏目前 App 的按鈕。
 - **視窗**：用綠色按鈕放大視窗（附例外列表）、⌘Q 和 ⌘W 保護，以及關閉最後一個視窗時結束（附例外列表）。
 - **Dock**：在 Dock 中點按以縮到最小或隱藏、讓 Dock 固定在一台顯示器上，以及讓 Dock 回到原處。
-- **Finder**：新增檔案、較小拷貝、轉換和壓縮檔、用 Return 打開、用 ⌘X 剪下、用 ⌫ 刪除。
+- **Finder**：新增檔案、較小拷貝、轉換和壓縮檔、用 Return 打開、用 ⌘X 剪下、用 ⌫ 刪除、隱藏桌面圖像、顯示隱藏檔案。
 - **解除安裝 App**：移除 App 及其全部檔案，之後還能全部放回，並清理已移除 App 留下的殘留檔案。
 - **背景工作**：所有在背景執行的項目、是哪個 App 加入的，以及一個用來關閉和重新打開你自己的工作的按鈕。
 - **遊戲**：你的遊戲清單和遊戲模式的選項。

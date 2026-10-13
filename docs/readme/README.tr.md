@@ -124,6 +124,18 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Masaüstü simgelerini gizle</b>
+<br>Tek tıkla masaüstünüz bir görüşme ya da ekran görüntüsü için tertemiz olsun.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Gizli dosyaları göster</b>
+<br>macOS’un sakladığı dosya ve klasörleri görün.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Oyun Modu</b>
 <br>Siz oynarken oyunun üstünde hiçbir şey açılmaz, oyunu hiçbir şey kapatmaz.
@@ -320,6 +332,10 @@ pikapik, macOS’un açamadıklarını da açar: birkaç parçaya bölünmüş o
 
 Bir pencere parolayı sorar, **Durdur** her işi iptal eder ve hasarlı ya da eksik bir arşivden pikapik hâlâ okunabilen her şeyi çıkarır. Devasa bir boyuta şişecek bir arşivi çıkarmadan önce sorar, disk dolacaksa zamanında durur ve kendi klasörünün dışına yazmaya çalışan arşivleri engeller. Finder’da bir arşivi seçip Boşluk tuşuna basarak içindekileri önizleyebilirsiniz.
 
+**Masaüstü simgelerini gizle.** Bir görüşmeden, ekran kaydından ya da ekran görüntüsünden önce açın, masaüstündeki dosya ve klasörler kaybolsun. Kapatın, aynı yerlerine geri dönsünler. Hiçbir şey taşınmaz: dosyalar Finder’da Masaüstü klasöründe kalır. Bu, Sistem Ayarları › Masaüstü ve Dock’taki **Öğeleri göster › Masaüstünde** ayarının ta kendisi, sadece daha el altında, bu yüzden ikisi her zaman aynıdır. Mac App Store sürümünde bu satır onun yerine Sistem Ayarları’nın o sayfasını açar.
+
+**Gizli dosyaları göster.** macOS’un gizlediği dosya ve klasörler, örneğin ev klasörünüzdeki Kitaplık ya da adı noktayla başlayan dosyalar, Finder’da ve masaüstünde soluk görünür. Finder’da ⇧⌘. tuşlarına basmakla aynıdır, sadece açık olup olmadığını bir bakışta görürsünüz. İkisi de Ayarlar › Finder’da. Onları menü çubuğu panelinde görmek için panelin altındaki kalem düğmesine tıklayın ve işaretleyin. Mac App Store sürümünde Ayarlar › Finder bunun yerine ⇧⌘. tuşlarını gösterir.
+
 **Oyun Modu.** Oyunlarınızı ekleyin; siz oynarken Mac sizi oyundan koparmaz. Spotlight, Siri, ⌘Tab, Mission Control ve masaüstleri arasında kaydırma oyunun üstünde açılmaz, ⌘Q ve ⌘W oyunu yanlışlıkla kapatmaz, imleç Dock’a, menü çubuğuna ya da başka bir ekrana kaymaz ve ekran açık kalır. Bunların her birinin Oyunlar sayfasında kendi anahtarı vardır; pikapik ayrıca Mac’inizde bulduğu oyunları önerir. Oyunda Control-tıklama normal bir tıklama olarak kalır, Control ile ok tuşları masaüstünü değiştirmez. Minecraft da tanınır: Minecraft Launcher’ı ya da CurseForge’u ekleyin, mod Minecraft’ın içinde açılır. Oyundan çıkmak için ⇧⌘Q’ya, penceresini kapatmak için ⇧⌘W’ye basın. ⌥⌘Esc her zaman çalışır. Oyundan çıktığınız anda her şey her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
 Oyun Modu’nu aç ve oyna. Diğer oyun ayarları, Mac’in yayımladığı kataloğu, güncel tuşları ve her eylem için animasyonlu önizlemeyi içerir.
@@ -391,7 +407,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler, geçerli uygulamayı gizleyen bir düğme.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
-- **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
+- **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme, ⌫ ile silme, masaüstü simgelerini gizleme ve gizli dosyaları gösterme.
 - **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
 - **Arka Plan Görevleri**: arka planda çalışan her şey, onu hangi uygulamanın eklediği ve kendi görevlerinizi kapatıp yeniden açmak için bir düğme.
 - **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.

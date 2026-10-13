@@ -124,6 +124,18 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Ascunde pictogramele de pe desktop</b>
+<br>Un clic și desktopul e curat pentru un apel sau o captură de ecran.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Afișează fișierele ascunse</b>
+<br>Vezi fișierele și folderele pe care macOS le ascunde.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modul Joc</b>
 <br>Cât timp te joci, nimic nu apare peste joc și nimic nu-l închide.
@@ -320,6 +332,10 @@ pikapik deschide și ce nu poate deschide macOS: RAR, chiar împărțit în păr
 
 O fereastră cere parola, **Oprește** anulează orice lucrare, iar dintr-o arhivă deteriorată sau neterminată pikapik scoate ce se mai poate citi. Te întreabă înainte să extragă o arhivă care ar ajunge la o dimensiune uriașă, se oprește la timp dacă discul s-ar umple și blochează arhivele care încearcă să scrie în afara propriului folder. Apasă Spațiu pe o arhivă în Finder ca să vezi ce conține.
 
+**Ascunde pictogramele de pe desktop.** Pornește-l înainte de un apel, o înregistrare a ecranului sau o captură de ecran, iar fișierele și folderele de pe desktop dispar. Oprește-l, iar ele revin la aceleași locuri. Nu se mută nimic: fișierele rămân în folderul Desktop din Finder. E configurarea **Afișare articole › Pe desktop** din Configurări sistem › Desktop și Dock, doar mai la îndemână, așa că cele două se potrivesc mereu. În versiunea din Mac App Store, acest rând deschide în schimb acea pagină din Configurări sistem.
+
+**Afișează fișierele ascunse.** Fișierele și folderele pe care macOS le ascunde, cum ar fi Bibliotecă din folderul tău principal sau fișierele al căror nume începe cu un punct, apar estompate în Finder și pe desktop. E la fel ca apăsarea ⇧⌘. în Finder, doar că vezi dintr-o privire dacă e pornit. Ambele sunt în Setări › Finder. Ca să le ai în panoul din bara de meniu, apasă butonul cu creion din partea de jos și bifează-le. În versiunea din Mac App Store, Setări › Finder arată în schimb tastele ⇧⌘. pentru Finder.
+
 **Modul Joc.** Adaugă-ți jocurile și, cât timp joci, Mac-ul nu te scoate din joc. Spotlight, Siri, ⌘Tab, Mission Control și glisările între birouri nu se deschid peste joc, ⌘Q și ⌘W nu îl închid din greșeală, cursorul nu alunecă spre Dock, bara de meniu sau alt ecran, iar ecranul rămâne aprins. Fiecare dintre acestea are propriul comutator pe pagina Jocuri, iar pikapik îți sugerează jocurile pe care le găsește pe Mac. În joc, Control-clic rămâne un clic obișnuit, iar Control cu săgețile nu schimbă desktopul. Recunoaște și Minecraft: adaugă Minecraft Launcher sau CurseForge, iar modul pornește chiar în Minecraft. Ca să ieși dintr-un joc, apasă ⇧⌘Q, iar ca să-i închizi fereastra, ⇧⌘W. ⌥⌘Esc merge mereu. Imediat ce ieși din joc, totul merge ca de obicei. Implicit dezactivat.
 
 Activează modul Joc și joacă. Configurările suplimentare au catalogul publicat de Mac, tastele actuale și o previzualizare animată pentru fiecare acțiune.
@@ -391,7 +407,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale, un buton care ascunde aplicația curentă.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
-- **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
+- **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X, ștergere cu ⌫, ascunderea pictogramelor de pe desktop și afișarea fișierelor ascunse.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Sarcini în fundal**: tot ce rulează în fundal, ce aplicație l-a adăugat și un buton ca să oprești sarcinile tale și să le pornești din nou.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.

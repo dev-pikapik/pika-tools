@@ -124,6 +124,18 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Sembunyikan ikon desktop</b>
+<br>Satu klik, dan desktop bersih untuk panggilan atau jepretan layar.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Tampilkan file tersembunyi</b>
+<br>Lihat file dan folder yang disembunyikan macOS.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Mode Game</b>
 <br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
@@ -320,6 +332,10 @@ pikapik juga membuka apa yang tidak bisa dibuka macOS: RAR, bahkan yang terpecah
 
 Sebuah jendela menanyakan kata sandi, **Berhenti** membatalkan pekerjaan apa pun, dan dari arsip yang rusak atau tidak lengkap pikapik mengambil apa yang masih bisa dibaca. pikapik bertanya dulu sebelum mengekstrak arsip yang akan membengkak menjadi ukuran sangat besar, berhenti tepat waktu jika disk akan penuh, dan memblokir arsip yang mencoba menulis di luar foldernya sendiri. Pilih sebuah arsip di Finder lalu tekan Spasi untuk melihat isinya.
 
+**Sembunyikan ikon desktop.** Nyalakan sebelum panggilan, rekaman layar, atau jepretan layar, dan file serta folder di desktop menghilang. Matikan, dan semuanya kembali ke tempat yang sama. Tidak ada yang dipindahkan: file tetap ada di folder Desktop di Finder. Ini adalah pengaturan **Tampilkan item › Di Desktop** di Pengaturan Sistem › Desktop & Dock, hanya lebih dekat di tangan, jadi keduanya selalu sama. Di versi Mac App Store, baris ini membuka halaman tersebut di Pengaturan Sistem.
+
+**Tampilkan file tersembunyi.** File dan folder yang disembunyikan macOS, seperti Perpustakaan di folder pengguna Anda atau file yang namanya diawali titik, muncul redup di Finder dan di desktop. Sama seperti menekan ⇧⌘. di Finder, hanya saja Anda bisa melihat sekilas apakah sedang menyala. Keduanya ada di Pengaturan › Finder. Agar keduanya ada di panel bar menu, klik tombol pensil di bagian bawah panel lalu centang. Di versi Mac App Store, Pengaturan › Finder menampilkan tombol ⇧⌘. sebagai gantinya.
+
 **Mode Game.** Tambahkan game Anda, dan selama Anda bermain, Mac tidak menarik Anda keluar dari game. Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game, ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tidak meluncur ke Dock, bar menu, atau layar lain, dan layar tetap menyala. Masing-masing punya saklarnya sendiri di halaman Game, dan pikapik menyarankan game yang ditemukannya di Mac Anda. Di dalam game, Control-klik tetap klik biasa, dan Control dengan panah tidak mengganti desktop. Minecraft juga dikenali: tambahkan Minecraft Launcher atau CurseForge, dan mode ini menyala di dalam Minecraft itu sendiri. Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, ⇧⌘W. ⌥⌘Esc selalu berfungsi. Begitu Anda keluar dari game, semuanya berfungsi seperti biasa. Mati secara bawaan.
 
 Nyalakan Mode Game dan bermain. Pengaturan game lainnya memuat katalog Mac, tombol saat ini dan pratinjau animasi untuk setiap tindakan.
@@ -391,7 +407,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping, tombol yang menyembunyikan app saat ini.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
-- **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
+- **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, hapus dengan ⌫, sembunyikan ikon desktop, dan tampilkan file tersembunyi.
 - **Hapus App**: hapus app beserta filenya, kembalikan semuanya nanti, dan bersihkan sisa dari app yang sudah dihapus.
 - **Tugas Latar Belakang**: semua yang berjalan di latar belakang, app mana yang menambahkannya, dan tombol untuk mematikan tugas Anda sendiri lalu menyalakannya lagi.
 - **Game**: daftar game Anda dan opsi Mode Game.

@@ -124,6 +124,18 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Bureaubladsymbolen verbergen</b>
+<br>Met één klik is je bureaublad leeg voor een gesprek of een schermafbeelding.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Verborgen bestanden tonen</b>
+<br>Zie de bestanden en mappen die macOS verborgen houdt.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Gamemodus</b>
 <br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
@@ -320,6 +332,10 @@ pikapik opent ook wat macOS niet kan openen: RAR, zelfs verdeeld over delen, 7Z 
 
 Een venster vraagt om het wachtwoord, **Stop** breekt elke taak af, en uit een beschadigd of onvolledig archief haalt pikapik wat nog te lezen is. Het vraagt eerst om bevestiging voordat het een archief uitpakt dat tot een enorme omvang zou opzwellen, stopt op tijd als de schijf vol dreigt te raken en blokkeert archieven die buiten hun eigen map proberen te schrijven. Selecteer een archief in de Finder en druk op de spatiebalk om te zien wat erin zit.
 
+**Bureaubladsymbolen verbergen.** Zet het aan voor een gesprek, een schermopname of een schermafbeelding, en de bestanden en mappen op het bureaublad verdwijnen. Zet het uit, en ze staan weer op hun plek. Er wordt niets verplaatst: de bestanden blijven in de map ‘Bureaublad’ in de Finder. Het is de instelling **Toon onderdelen › Op bureaublad** uit Systeeminstellingen › Bureaublad en Dock, alleen dichter bij de hand, dus de twee komen altijd overeen. In de versie uit de Mac App Store opent deze rij in plaats daarvan die pagina van Systeeminstellingen.
+
+**Verborgen bestanden tonen.** Bestanden en mappen die macOS verbergt, zoals Bibliotheek in je thuismap of bestanden waarvan de naam met een punt begint, verschijnen gedimd in de Finder en op het bureaublad. Het is hetzelfde als ⇧⌘. indrukken in de Finder, alleen zie je in één oogopslag of het aanstaat. Beide staan in Instellingen › Finder. Wil je ze in het paneel in de menubalk, klik dan onderaan op de potloodknop en vink ze aan. In de versie uit de Mac App Store toont Instellingen › Finder in plaats daarvan de toetsen ⇧⌘. voor de Finder.
+
 **Gamemodus.** Voeg je games toe, en zolang je speelt, haalt je Mac je niet uit de game. Spotlight, Siri, ⌘Tab, Mission Control en vegen tussen bureaubladen openen niet boven de game, ⌘Q en ⌘W sluiten hem niet per ongeluk, de aanwijzer glipt niet naar het Dock, de menubalk of een ander scherm, en het scherm blijft aan. Elk hiervan heeft een eigen schakelaar op de pagina Games, en pikapik stelt games voor die het op je Mac vindt. In een game blijft Control-klik een klik, en Control met pijltjes wisselt niet van bureaublad. Ook Minecraft wordt herkend: voeg Minecraft Launcher of CurseForge toe, en de modus gaat aan in Minecraft zelf. Druk op ⇧⌘Q om een game te verlaten en op ⇧⌘W om het venster te sluiten. ⌥⌘Esc werkt altijd. Zodra je de game verlaat, werkt alles weer zoals gewoonlijk. Standaard uit.
 
 Zet Spelmodus aan en speel. Meer spelinstellingen bevat de catalogus van je Mac, actuele toetsen en een bewegende preview voor elke actie.
@@ -391,7 +407,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen, een knop die de huidige app verbergt.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: minimaliseren of verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.
-- **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
+- **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X, verwijderen met ⌫, bureaubladsymbolen verbergen en verborgen bestanden tonen.
 - **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
 - **Achtergrondtaken**: alles wat op de achtergrond draait, welke app het heeft toegevoegd en een knop om je eigen taken uit en weer aan te zetten.
 - **Games**: je lijst met games en de opties van de Gamemodus.

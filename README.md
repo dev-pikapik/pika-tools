@@ -124,6 +124,18 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/desktop-icons-dark.png"><img src="docs/media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Hide desktop icons</b>
+<br>Clear the desktop for a call or a screenshot in one click.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/hidden-files-dark.png"><img src="docs/media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Show hidden files</b>
+<br>See the files and folders that macOS keeps out of sight.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Game Mode</b>
 <br>While you play, nothing pops up over the game or closes it.
@@ -320,6 +332,10 @@ pikapik also opens what macOS can’t: RAR, even split into parts, 7Z locked wit
 
 A window asks for the password, **Stop** cancels any job, and from a damaged or unfinished archive pikapik takes out what can still be read. It asks before unpacking an archive that would swell to a huge size, stops in time if the disk would fill up, and blocks archives that try to write outside their own folder. Press Space on an archive in Finder to preview what is inside.
 
+**Hide desktop icons.** Turn it on before a call, a screen recording or a screenshot, and the files and folders on the desktop disappear. Turn it off, and they come back to the same places. Nothing moves: the files stay in the Desktop folder in Finder. It’s the **Show items › On Desktop** setting from System Settings › Desktop & Dock, only closer at hand, so the two always agree. In the Mac App Store version, this row opens that page of System Settings instead.
+
+**Show hidden files.** Files and folders that macOS hides, like Library in your home folder or files whose names start with a dot, appear dimmed in Finder and on the desktop. It’s the same as pressing ⇧⌘. in Finder, only you can see at a glance whether it’s on. Both are in Settings › Finder. To keep them in the menu bar panel, click the pencil button at the bottom of the panel and tick them. In the Mac App Store version, Settings › Finder shows the ⇧⌘. keys instead.
+
 **Game Mode.** Add your games, and while you play one, your Mac doesn’t pull you out of it. Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over the game, ⌘Q and ⌘W don’t close it by accident, the pointer doesn’t slip onto the Dock, the menu bar or another screen, and the screen stays on. Each of these has its own switch on the Games page, and pikapik suggests games it finds on your Mac. In a game, Ctrl-click stays a click, and Ctrl+arrows don’t switch the desktop. Minecraft is recognized too: add the Minecraft Launcher or CurseForge, and Game Mode turns on inside Minecraft itself. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. As soon as you leave the game, everything works as usual. Off by default.
 
 Turn on Game Mode and play. More game settings holds the catalogue published by your Mac, with current key assignments and an animated preview for every action.
@@ -391,7 +407,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
-- **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
+- **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash, hiding desktop icons and showing hidden files.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Background Tasks**: everything that runs in the background, which app added it, and a button to turn your own tasks off and back on.
 - **Games**: your list of games and the Game Mode options.
