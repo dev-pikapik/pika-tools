@@ -56,7 +56,7 @@ enum RenderMedia {
         ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
         ("whats-new/1.39.0/archive-password", ArchivePasswordCard.length, AnyView(ArchivePasswordCard())),
         ("whats-new/1.39.3/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
-        ("whats-new/next/dock-minimize", DockMinimizeCard.length, AnyView(DockMinimizeCard())),
+        ("whats-new/1.40.1/dock-minimize", DockMinimizeCard.length, AnyView(DockMinimizeCard())),
     ]
 
     static func main() {
