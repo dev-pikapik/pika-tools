@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "tự động, auto, Dấu cách, Return, bố cục";
 "shortcut, undo, convert, selection, layout" = "phím tắt, hoàn tác, chuyển đổi, vùng chọn, bố cục";
 "exceptions, exclude, list, layout" = "ngoại lệ, loại trừ, danh sách, bố cục";
+"Sound" = "Âm thanh";
+"App Volume" = "Âm lượng ứng dụng";
+"Works with any app that plays sound" = "Hoạt động với mọi ứng dụng có phát âm thanh";
+"Lower or mute any app without touching the others." = "Giảm hoặc tắt tiếng bất kỳ ứng dụng nào mà không ảnh hưởng đến các ứng dụng khác.";
+"Each app gets its own volume." = "Mỗi ứng dụng có âm lượng riêng.";
+"No apps are playing sound" = "Không có ứng dụng nào đang phát âm thanh";
+"Mute" = "Tắt tiếng";
+"Unmute" = "Bật tiếng";
+"Volume of %@" = "Âm lượng của %@";
+"System Audio Recording" = "Ghi âm thanh hệ thống";
+"To change each app’s volume" = "Để đổi âm lượng của từng ứng dụng";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik cho âm thanh của từng ứng dụng đi qua chính nó để đổi âm lượng. Không có gì được ghi lại hoặc lưu.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "bộ trộn, tắt tiếng ứng dụng, âm lượng từng ứng dụng, âm lượng, âm thanh, audio, nhỏ, to";

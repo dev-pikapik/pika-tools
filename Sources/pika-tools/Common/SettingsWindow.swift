@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, fans, temperatures, speedTest, ports, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
+    case general, battery, keepAwake, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -15,6 +15,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .temperatures: String(localized: "Temperature")
         case .speedTest: String(localized: "Speed Test")
         case .ports: String(localized: "Ports")
+        case .sound: String(localized: "Sound")
         case .keyboard: String(localized: "Keyboard")
         case .mouse: String(localized: "Mouse")
         case .windows: String(localized: "Windows")
@@ -39,6 +40,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .temperatures: "thermometer.medium"
         case .speedTest: "speedometer"
         case .ports: "network"
+        case .sound: "speaker.wave.2.fill"
         case .keyboard: "keyboard.fill"
         case .mouse: "computermouse.fill"
         case .windows: "macwindow.on.rectangle"
@@ -61,7 +63,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .windows: .indigo
         case .finder: .cyan
         case .games: .purple
-        case .animations: .pink
+        case .animations, .sound: .pink
         case .uninstaller: .brown
         case .background: .mint
         case .keepAwake: .orange
@@ -74,6 +76,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 
     var isAvailable: Bool {
         if self == .battery { return Battery.isPresent }
+        if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
         return ![.animations, .fans, .uninstaller].contains(self)
         #else
@@ -156,6 +159,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .speedTest, title: String(localized: "Check Speed"), synonyms: "internet, Wi-Fi, network, bandwidth, ping, Mbps, speedtest"),
             SettingsItem(tab: .speedTest, title: String(localized: "What it’s good for"), synonyms: "4K, video, calls, games, downloads"),
             SettingsItem(tab: .ports, title: String(localized: "Free a port"), synonyms: "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay"),
+            SettingsItem(tab: .sound, title: String(localized: "App Volume"), synonyms: "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
@@ -253,7 +257,9 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .about, title: String(localized: "License (MIT)"), synonyms: "open source, legal"),
             SettingsItem(tab: .about, title: String(localized: "Buy me a coffee"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
             SettingsItem(tab: .about, title: "GitHub", synonyms: "open source, legal"),
-        ] + GameShortcutGroup.allCases.map { SettingsItem(tab: .games, title: $0.title, synonyms: $0.detail) }
+        ] + (SettingsTab.sound.isAvailable ? [
+            SettingsItem(tab: .permissions, title: String(localized: "System Audio Recording"), synonyms: "privacy, security, access"),
+        ] : []) + GameShortcutGroup.allCases.map { SettingsItem(tab: .games, title: $0.title, synonyms: $0.detail) }
     }
 
     func matches(_ query: String) -> Bool {
@@ -389,9 +395,9 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .keyboard, .mouse, .windows, .dock, .finder, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .ports, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -501,6 +507,7 @@ private struct SettingsView: View {
         case .temperatures: TemperatureSettings()
         case .speedTest: SpeedTestSettings()
         case .ports: PortsPage()
+        case .sound: ToolsSettings(tab: .sound, text: String(localized: "Each app gets its own volume."))
         case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
         case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
         case .windows:

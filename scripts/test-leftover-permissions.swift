@@ -113,6 +113,8 @@ enum TestLeftoverPermissions {
 
         precondition(LeftoverPermissions.kind("kTCCServiceListenEvent").pane == "Privacy_ListenEvent")
         precondition(LeftoverPermissions.kind("kTCCServicePostEvent") == LeftoverPermissions.kind("kTCCServiceAccessibility"))
+        precondition(LeftoverPermissions.kind("kTCCServiceScreenCapture").pane == "Privacy_ScreenCapture" && LeftoverPermissions.kind("kTCCServiceScreenCapture").name == "Screen Recording")
+        precondition(LeftoverPermissions.kind("kTCCServiceAudioCapture").pane == "Privacy_AudioCapture" && LeftoverPermissions.kind("kTCCServiceAudioCapture").name == "System Audio Recording")
         print("leftover-permissions: ok")
     }
 }

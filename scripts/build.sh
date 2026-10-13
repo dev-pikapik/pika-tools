@@ -116,11 +116,15 @@ done
 RES="$APP/Contents/Resources"
 mkdir -p "$RES"
 cp -R Resources/*.lproj "$RES/"
+CAPTURE_TEXT='pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved.'
+for LPROJ in Resources/*.lproj; do
+    grep -F "\"$CAPTURE_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAudioCaptureUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+done
 if [ -z "${APPSTORE:-}" ]; then
     FINDER_TEXT='pikapik asks Finder to move apps to the Trash when macOS doesn’t let it do that itself.'
     /usr/libexec/PlistBuddy -c "Add :NSAppleEventsUsageDescription string $FINDER_TEXT" "$APP/Contents/Info.plist"
     for LPROJ in Resources/*.lproj; do
-        grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+        grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
         grep '^"Archive" = ' "$LPROJ/Localizable.strings" >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"

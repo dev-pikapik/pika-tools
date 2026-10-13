@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automatic, auto, Space, Return, layout";
 "shortcut, undo, convert, selection, layout" = "shortcut, undo, convert, selection, layout";
 "exceptions, exclude, list, layout" = "exceptions, exclude, list, layout";
+"Sound" = "Sound";
+"App Volume" = "App Volume";
+"Works with any app that plays sound" = "Works with any app that plays sound";
+"Lower or mute any app without touching the others." = "Lower or mute any app without touching the others.";
+"Each app gets its own volume." = "Each app gets its own volume.";
+"No apps are playing sound" = "No apps are playing sound";
+"Mute" = "Mute";
+"Unmute" = "Unmute";
+"Volume of %@" = "Volume of %@";
+"System Audio Recording" = "System Audio Recording";
+"To change each app’s volume" = "To change each app’s volume";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud";

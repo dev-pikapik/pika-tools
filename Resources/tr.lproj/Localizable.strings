@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "otomatik, oto, Boşluk, Return, düzen";
 "shortcut, undo, convert, selection, layout" = "kestirme, kısayol, geri al, dönüştür, seçim, düzen";
 "exceptions, exclude, list, layout" = "istisnalar, hariç tut, liste, düzen";
+"Sound" = "Ses";
+"App Volume" = "Uygulama Sesi";
+"Works with any app that plays sound" = "Ses çalan her uygulamayla çalışır";
+"Lower or mute any app without touching the others." = "Diğerlerine dokunmadan herhangi bir uygulamanın sesini kısın veya kapatın.";
+"Each app gets its own volume." = "Her uygulamanın kendi ses düzeyi vardır.";
+"No apps are playing sound" = "Şu anda ses çalan uygulama yok";
+"Mute" = "Sessize Al";
+"Unmute" = "Sesi Aç";
+"Volume of %@" = "%@ ses düzeyi";
+"System Audio Recording" = "Sistem Sesi Kaydı";
+"To change each app’s volume" = "Her uygulamanın ses düzeyini değiştirmek için";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik, ses düzeyini değiştirmek için her uygulamanın sesini kendi içinden geçirir. Hiçbir şey kaydedilmez veya saklanmaz.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mikser, uygulamayı sessize al, uygulama başına ses, ses düzeyi, ses, ses kaydı, kısık, yüksek";

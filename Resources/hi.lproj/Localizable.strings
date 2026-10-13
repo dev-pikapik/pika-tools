@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "अपने आप, ऑटो, स्पेस, Return, लेआउट";
 "shortcut, undo, convert, selection, layout" = "शॉर्टकट, पूर्ववत, कन्वर्ट, चयन, लेआउट";
 "exceptions, exclude, list, layout" = "अपवाद, बाहर रखें, सूची, लेआउट";
+"Sound" = "ध्वनि";
+"App Volume" = "ऐप की आवाज़";
+"Works with any app that plays sound" = "ध्वनि चलाने वाले हर ऐप के साथ काम करता है";
+"Lower or mute any app without touching the others." = "दूसरे ऐप को छुए बिना किसी भी ऐप की आवाज़ घटाएँ या उसे म्यूट करें।";
+"Each app gets its own volume." = "हर ऐप की अपनी आवाज़ होती है।";
+"No apps are playing sound" = "कोई ऐप ध्वनि नहीं चला रहा";
+"Mute" = "म्यूट करें";
+"Unmute" = "अनम्यूट करें";
+"Volume of %@" = "%@ की आवाज़";
+"System Audio Recording" = "सिस्टम ऑडियो रिकॉर्डिंग";
+"To change each app’s volume" = "हर ऐप की आवाज़ बदलने के लिए";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik हर ऐप की ध्वनि को अपने से होकर गुज़ारता है, ताकि उसकी आवाज़ बदल सके। कुछ भी रिकॉर्ड या सेव नहीं किया जाता।";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "मिक्सर, ऐप म्यूट, ऐप की आवाज़, आवाज़, ध्वनि, ऑडियो, धीमा, तेज़";

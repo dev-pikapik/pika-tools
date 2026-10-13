@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "автоматически, авто, Пробел, Return, раскладка";
 "shortcut, undo, convert, selection, layout" = "сочетание клавиш, отменить, конвертировать, выделение, раскладка";
 "exceptions, exclude, list, layout" = "исключения, исключить, список, раскладка";
+"Sound" = "Звук";
+"App Volume" = "Громкость приложений";
+"Works with any app that plays sound" = "Работает с любым приложением, которое воспроизводит звук";
+"Lower or mute any app without touching the others." = "Уменьшайте громкость или выключайте звук любого приложения, не затрагивая остальные.";
+"Each app gets its own volume." = "У каждого приложения своя громкость.";
+"No apps are playing sound" = "Ни одно приложение сейчас не воспроизводит звук";
+"Mute" = "Выключить звук";
+"Unmute" = "Включить звук";
+"Volume of %@" = "Громкость: %@";
+"System Audio Recording" = "Запись системного звука";
+"To change each app’s volume" = "Чтобы менять громкость каждого приложения";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik пропускает звук каждого приложения через себя, чтобы изменить его громкость. Ничего не записывается и не сохраняется.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "микшер, выключить звук приложения, громкость приложения, громкость, звук, аудио, тише, громче";

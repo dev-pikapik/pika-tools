@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "อัตโนมัติ, ออโต้, เว้นวรรค, Return, รูปแบบแป้นพิมพ์";
 "shortcut, undo, convert, selection, layout" = "คำสั่งลัด, ปุ่มลัด, เลิกทำ, แปลง, ข้อความที่เลือก, รูปแบบแป้นพิมพ์";
 "exceptions, exclude, list, layout" = "ข้อยกเว้น, ยกเว้น, รายการ, รูปแบบแป้นพิมพ์";
+"Sound" = "เสียง";
+"App Volume" = "ระดับเสียงแอป";
+"Works with any app that plays sound" = "ใช้ได้กับทุกแอปที่เล่นเสียง";
+"Lower or mute any app without touching the others." = "ลดเสียงหรือปิดเสียงแอปใดก็ได้ โดยไม่กระทบแอปอื่น";
+"Each app gets its own volume." = "แต่ละแอปมีระดับเสียงของตัวเอง";
+"No apps are playing sound" = "ไม่มีแอปที่กำลังเล่นเสียง";
+"Mute" = "ปิดเสียง";
+"Unmute" = "เปิดเสียง";
+"Volume of %@" = "ระดับเสียงของ %@";
+"System Audio Recording" = "การบันทึกเสียงของระบบ";
+"To change each app’s volume" = "เพื่อเปลี่ยนระดับเสียงของแต่ละแอป";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik ส่งเสียงของแต่ละแอปผ่านตัวเองเพื่อเปลี่ยนระดับเสียง ไม่มีการบันทึกหรือเก็บอะไรไว้";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "มิกเซอร์, ปิดเสียงแอป, ระดับเสียงต่อแอป, ระดับเสียง, เสียง, ออดิโอ, เบา, ดัง";

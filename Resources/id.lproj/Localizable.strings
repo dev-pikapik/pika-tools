@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "otomatis, auto, Spasi, Return, tata letak";
 "shortcut, undo, convert, selection, layout" = "pintasan, batalkan, konversi, pilihan, tata letak";
 "exceptions, exclude, list, layout" = "pengecualian, kecualikan, daftar, tata letak";
+"Sound" = "Suara";
+"App Volume" = "Volume App";
+"Works with any app that plays sound" = "Berfungsi dengan app apa pun yang memutar suara";
+"Lower or mute any app without touching the others." = "Kecilkan atau bisukan app mana pun tanpa memengaruhi yang lain.";
+"Each app gets its own volume." = "Setiap app punya volumenya sendiri.";
+"No apps are playing sound" = "Tidak ada app yang memutar suara";
+"Mute" = "Bisukan";
+"Unmute" = "Bunyikan";
+"Volume of %@" = "Volume %@";
+"System Audio Recording" = "Perekaman Audio Sistem";
+"To change each app’s volume" = "Untuk mengubah volume tiap app";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik meneruskan suara tiap app melalui dirinya sendiri untuk mengubah volumenya. Tidak ada yang direkam atau disimpan.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, bisukan app, volume per app, volume, suara, audio, pelan, keras";

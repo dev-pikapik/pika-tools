@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "تلقائي، آلي، مسافة، Return، تخطيط";
 "shortcut, undo, convert, selection, layout" = "اختصار، تراجع، تحويل، تحديد، تخطيط";
 "exceptions, exclude, list, layout" = "استثناءات، استبعاد، قائمة، تخطيط";
+"Sound" = "الصوت";
+"App Volume" = "مستوى صوت التطبيقات";
+"Works with any app that plays sound" = "يعمل مع أي تطبيق يشغّل الصوت";
+"Lower or mute any app without touching the others." = "اخفض صوت أي تطبيق أو اكتمه دون المساس بالتطبيقات الأخرى.";
+"Each app gets its own volume." = "لكل تطبيق مستوى صوته الخاص.";
+"No apps are playing sound" = "لا توجد تطبيقات تشغّل الصوت";
+"Mute" = "كتم الصوت";
+"Unmute" = "إلغاء كتم الصوت";
+"Volume of %@" = "مستوى صوت %@";
+"System Audio Recording" = "تسجيل صوت النظام";
+"To change each app’s volume" = "لتغيير مستوى صوت كل تطبيق";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "يمرّر pikapik صوت كل تطبيق عبر نفسه لتغيير مستوى صوته. لا يتم تسجيل أي شيء ولا حفظه.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "خلاط, كتم تطبيق, مستوى صوت كل تطبيق, مستوى الصوت, الصوت, الصوتيات, هادئ, عالٍ";

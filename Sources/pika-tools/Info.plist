@@ -112,6 +112,8 @@
 	<string>14.0</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAudioCaptureUsageDescription</key>
+	<string>pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2026 pikapik</string>
 	<key>NSPrincipalClass</key>

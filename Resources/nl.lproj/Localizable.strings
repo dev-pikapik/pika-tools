@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "automatisch, auto, Spatie, Return, indeling";
 "shortcut, undo, convert, selection, layout" = "toetscombinatie, sneltoets, ongedaan maken, omzetten, selectie, indeling";
 "exceptions, exclude, list, layout" = "uitzonderingen, uitsluiten, lijst, indeling";
+"Sound" = "Geluid";
+"App Volume" = "App-volume";
+"Works with any app that plays sound" = "Werkt met elke app die geluid afspeelt";
+"Lower or mute any app without touching the others." = "Zet een app zachter of demp hem, zonder de andere aan te raken.";
+"Each app gets its own volume." = "Elke app heeft zijn eigen volume.";
+"No apps are playing sound" = "Geen enkele app speelt geluid af";
+"Mute" = "Dempen";
+"Unmute" = "Geluid aanzetten";
+"Volume of %@" = "Volume van %@";
+"System Audio Recording" = "Opname van systeemaudio";
+"To change each app’s volume" = "Om het volume van elke app te wijzigen";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik leidt het geluid van elke app door zichzelf heen om het volume te wijzigen. Er wordt niets opgenomen of bewaard.";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, app dempen, volume per app, volume, geluid, audio, zacht, luid";

@@ -81,6 +81,12 @@ Permissions left by deleted apps are read from the system TCC database (`/Librar
 swiftc -parse-as-library Sources/pika-tools/Common/LeftoverPermissions.swift scripts/test-leftover-permissions.swift -o build/test-leftover-permissions && build/test-leftover-permissions
 ```
 
+App Volume (macOS 14.2 and later) changes one app’s volume without a driver. For every app whose slider is below 100% or that is muted, pikapik creates a Core Audio process tap (`CATapDescription`) that mutes the app’s own output, read through a private aggregate device that holds only the tap. A HAL output unit with its input off, set to the output the app plays to (the current output if it uses several), takes the sound from a ring buffer, multiplies it by the app’s gain and plays it there, so the microphone is never opened; an app at 100% gets no tap and is never touched. Helper processes, such as a browser’s audio service, are listed under the app that contains or started them; system daemons are left out. The gain follows the slider squared and moves through a 30 ms ramp so nothing clicks. macOS has no call that says whether System Audio Recording is allowed, so pikapik plays a tone too quiet to hear through a tap on itself and takes any sound that comes back as “allowed”; it asks again when a running tap delivers only silence. The gain, the ramp, the mixing, the ring buffer and the grouping live in `AppVolumeMath`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/AppVolume/AppVolumeMath.swift scripts/test-app-volume.swift -o build/test-app-volume && build/test-app-volume
+```
+
 The app used to be called pika-tools. A copy named `pika-tools.app` that wasn't installed with Homebrew renames itself to `pikapik.app` on launch and opens again; the updater does the same when it installs a new version. Homebrew copies stay where they are until `brew upgrade` moves them. If a `pikapik.app` that isn't this app already sits next to it (the App Store version, whose bundle id is `com.pikapik.tools`, or anything without a readable `Info.plist`), the copy keeps its old name and updates in place. Every release also carries `pika-tools.zip` with the app under its old name, because older versions download that file. The path logic lives in `Updater`:
 
 ```bash

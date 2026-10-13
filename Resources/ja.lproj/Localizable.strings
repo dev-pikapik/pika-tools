@@ -1100,3 +1100,16 @@
 "automatic, auto, Space, Return, layout" = "自動, オート, スペース, Return, レイアウト";
 "shortcut, undo, convert, selection, layout" = "ショートカット, 取り消し, 元に戻す, 変換, 選択, レイアウト";
 "exceptions, exclude, list, layout" = "例外, 除外, リスト, レイアウト";
+"Sound" = "サウンド";
+"App Volume" = "アプリの音量";
+"Works with any app that plays sound" = "音を出すどのアプリでも使えます";
+"Lower or mute any app without touching the others." = "ほかのアプリはそのままで、好きなアプリの音量を下げたりミュートしたりできます。";
+"Each app gets its own volume." = "アプリごとに音量を設定できます。";
+"No apps are playing sound" = "音を出しているアプリはありません";
+"Mute" = "ミュート";
+"Unmute" = "ミュート解除";
+"Volume of %@" = "%@の音量";
+"System Audio Recording" = "システムオーディオの録音";
+"To change each app’s volume" = "アプリごとの音量を変えるため";
+"pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapikは、音量を変えるために各アプリの音をいったん通します。録音も保存もされません。";
+"mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "ミキサー, アプリをミュート, アプリごとの音量, 音量, サウンド, オーディオ, 静か, 大きい";
