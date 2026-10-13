@@ -174,12 +174,12 @@ final class DockHideTool: Tool {
         report(pid, nil)
         let windows = (tracked.removeValue(forKey: pid) ?? []).filter(Self.isMinimized)
         guard let front = windows.first else { return Self.replay(click) }
-        Self.activate(app)
         for window in windows.reversed() {
             AXUIElementSetAttributeValue(window, kAXMinimizedAttribute as CFString, kCFBooleanFalse)
         }
         AXUIElementPerformAction(front, kAXRaiseAction as CFString)
         AXUIElementSetAttributeValue(front, kAXMainAttribute as CFString, kCFBooleanTrue)
+        Self.activate(app)
     }
 
     private func report(_ pid: pid_t, _ date: Date?) {
