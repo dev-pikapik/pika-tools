@@ -52,154 +52,161 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Baterie</b>
+<br>Vezi starea bateriei, capacitatea și numărul de cicluri, cât curent intră în ea și cum o poți face să țină mai mult.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Protejarea ⌘Q și ⌘W</b>
 <br>Nimic nu se închide din greșeală. Adaugă ⇧ când chiar vrei.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Copie mai mică</b>
 <br>Clic dreapta pe o poză, un PDF sau un video, și alături apare o copie mai ușoară.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Conversie</b>
 <br>Salvează o imagine, un video sau o melodie în alt format din meniul de clic dreapta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Schimbă limba</b>
 <br>Ține apăsat ⌥ și apasă ⇧ ca să schimbi limba tastaturii.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Ieșire cu ultima fereastră</b>
 <br>Închide ultima fereastră a unei aplicații, și se închide și aplicația.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Butonul verde mărește</b>
 <br>Fereastra umple ecranul fără să treacă pe ecran complet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimizare cu un clic în Dock</b>
 <br>Dă clic pe aplicația în care ești, și se dă la o parte.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Fișier nou</b>
 <br>Clic dreapta în Finder, un nume, și fișierul gol e gata.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X mută fișiere</b>
 <br>Decupează fișiere în Finder și lipește-le unde vrei.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter deschide fișiere</b>
 <br>Selectează fișiere în Finder și apasă Enter ca să le deschizi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete în Coș</b>
 <br>Apasă ⌫ în Finder, și fișierele selectate ajung în Coș.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modul Joc</b>
 <br>Cât timp te joci, nimic nu apare peste joc și nimic nu-l închide.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Viteza internetului</b>
 <br>Cât de rapid e internetul tău și la ce îți ajunge.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Butoanele laterale</b>
 <br>Butoanele 4 și 5 merg înapoi și înainte, ca un gest pe trackpad.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Derulare pe rânduri</b>
 <br>Fiecare clic al rotiței derulează la fel, oricât de repede o învârți.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direcția de derulare</b>
 <br>O direcție pentru trackpad, alta pentru maus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Fără accelerarea cursorului</b>
 <br>Cursorul merge exact cât mâna ta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetă tasta ținută apăsată</b>
 <br>Ține o tastă apăsată ca s-o repeți, fără meniul de accente.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home și End</b>
 <br>Sari la începutul sau la sfârșitul rândului în timp ce scrii.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animații</b>
 <br>Grăbește Dock-ul, ferestrele și Privirea rapidă, până la instantaneu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permisiunile aplicațiilor șterse</b>
 <br>Elimină permisiunile pe care macOS le păstrează pentru aplicațiile deja șterse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animăluț pe birou</b>
 <br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună. Se înviorează cât timp tastezi și ațipește când te îndepărtezi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Eliminare aplicații</b>
 <br>Elimină o aplicație și fișierele ei. Poți pune totul la loc.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Afișează FPS</b>
 <br>Un mic contor arată cât de fluid rulează jocul, în colțul pe care îl alegi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arhive</b>
 <br>Extrage RAR și alte arhive sau împachetează fișiere într-un ZIP, cu un clic dreapta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Ține Dock-ul pe un singur ecran</b>
@@ -327,6 +334,7 @@ Arată cât de rapid e internetul tău acum. Apasă **Verifică viteza** în Set
 Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește din nou pikapik din Finder, Launchpad sau Spotlight. Cât timp fereastra este deschisă, aplicația apare în Dock și în ⌘Tab.
 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
+- **Baterie**: nivel de încărcare, timp până la încărcarea completă sau timp rămas, stare, capacitate maximă, număr de cicluri, adaptor alimentare și putere în wați, plus sfaturi ca bateria să țină mai mult. Pagina doar arată informații: limita de încărcare rămâne în **Configurări sistem › Baterie**. Apare doar pe un Mac cu baterie.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
 - **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală, după ce Controlul ventilatoarelor este permis.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.

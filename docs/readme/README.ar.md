@@ -86,154 +86,161 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>البطارية</b>
+<br>شاهد حالة بطاريتك والحد الأقصى لقدرتها وعدد دوراتها، وكم من الطاقة تدخل إليها، وكيف تجعلها تدوم أطول.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>حماية ⌘Q و⌘W</b>
 <br>لا يُغلق شيء بالخطأ. أضف ⇧ عندما تقصد ذلك.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>نسخة أصغر</b>
 <br>انقر بزر الماوس الأيمن على صورة أو PDF أو فيديو لتظهر بجانبه نسخة أخف.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>التحويل</b>
 <br>احفظ صورة أو فيديو أو أغنية بتنسيق آخر من قائمة الزر الأيمن.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>تبديل اللغة</b>
 <br>اضغط مع الاستمرار على ⌥ ثم انقر ⇧ لتغيير لغة لوحة المفاتيح.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>الإنهاء مع آخر نافذة</b>
 <br>أغلق آخر نافذة لتطبيق، فيُنهى التطبيق أيضًا.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>الزر الأخضر يكبّر النافذة</b>
 <br>تملأ النافذة الشاشة دون الدخول في وضع ملء الشاشة.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>التصغير بنقرة في Dock</b>
 <br>انقر التطبيق الذي تستخدمه فيتنحّى جانبًا.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>ملف جديد</b>
 <br>انقر بالزر الأيمن في Finder واكتب اسمًا، فيظهر ملف فارغ.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X ينقل الملفات</b>
 <br>قصّ الملفات في Finder والصقها حيث تريد.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter يفتح الملفات</b>
 <br>حدّد الملفات في Finder واضغط Enter لفتحها.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete إلى المهملات</b>
 <br>اضغط ⌫ في Finder فتذهب الملفات المحددة إلى المهملات.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>وضع الألعاب</b>
 <br>أثناء اللعب لا يظهر شيء فوق اللعبة ولا يغلقها شيء.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>اختبار السرعة</b>
 <br>ما مدى سرعة الإنترنت لديك، وما الذي يكفي له.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>الأزرار الجانبية</b>
 <br>الزران 4 و5 للرجوع والتقدم، مثل السحب على لوحة التعقب.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>التمرير بالأسطر</b>
 <br>كل نقرة من العجلة تمرّر المسافة نفسها مهما كانت سرعة الدوران.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>اتجاه التمرير</b>
 <br>اتجاه للوحة التعقب وآخر للماوس.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>إيقاف تسارع المؤشر</b>
 <br>يتحرك المؤشر بقدر حركة يدك تمامًا.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>تكرار المفتاح عند الضغط المستمر</b>
 <br>اضغط مع الاستمرار على مفتاح ليتكرر، بدلًا من قائمة الحركات.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home وEnd</b>
 <br>انتقل إلى بداية السطر أو نهايته أثناء الكتابة.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>الرسوم المتحركة</b>
 <br>سرّع Dock والنوافذ والنظرة السريعة، حتى تصبح فورية.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>أذونات التطبيقات المحذوفة</b>
 <br>أزل الأذونات التي يحتفظ بها macOS لتطبيقات حذفتها بالفعل.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>رفيق على سطح المكتب</b>
 <br>صديق صغير يتمشى خلف نوافذك. التقطه وارمه، أو اضغط مفتاح المسافة فيقفز. ألبِسه من خزانة الملابس واربح الجوائز وأنتما تلعبان معًا. ينشط وأنت تكتب ويغفو حين تبتعد.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>إزالة التطبيقات</b>
 <br>أزل تطبيقًا مع ملفاته، ويمكنك إرجاع كل شيء.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>إظهار FPS</b>
 <br>عدّاد صغير يعرض مدى سلاسة لعبتك في الزاوية التي تختارها.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>الملفات المضغوطة</b>
 <br>افتح RAR وغيره من الملفات المضغوطة، أو اجمع الملفات في ZIP، بنقرة بالزر الأيمن.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>إبقاء Dock على شاشة واحدة</b>
@@ -385,6 +392,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 افتح الإعدادات من القائمة عبر **الإعدادات…** أو ⌘، أو شغّل pikapik مرة أخرى من Finder أو Launchpad أو Spotlight. ما دامت النافذة مفتوحة، يظهر التطبيق في Dock وفي ⌘Tab.
 
 - **عام**: الفتح عند تسجيل الدخول، والمظهر (النظام أو فاتح أو داكن)، واللغة والتحديثات، والنسخ الاحتياطي: تصدير الإعدادات واستيرادها كملف، أو مزامنتها عبر iCloud Drive.
+- **البطارية**: نسبة الشحن، والوقت حتى اكتمال الشحن أو الوقت المتبقي، والحالة، والحد الأقصى للقدرة، وعدد الدورات، ومحوّل الطاقة والقدرة بالواط، ونصائح لتدوم البطارية أطول. تعرض الصفحة المعلومات فقط، ويبقى حد الشحن في **إعدادات النظام › البطارية**. تظهر فقط على Mac المزوّد ببطارية.
 - **منع السكون**: المدة وخيارات الشاشة والغطاء.
 - **المراوح**: سرعة كل مروحة، الوضع التلقائي أو سرعة يدوية بعد السماح بالتحكم بالمراوح.
 - **اختبار السرعة**: فحص سرعة الإنترنت ومعرفة ما الذي يناسبه.

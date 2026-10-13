@@ -147,6 +147,12 @@ The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR
 swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive
 ```
 
+`Battery.swift` turns the readings from IOKit and `system_profiler` into a `BatteryState` and a `BatteryHealth`, and `BatterySettings.swift` shows them on the read-only Battery page. The test feeds them made-up readings, so it runs on a Mac without a battery:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Battery.swift scripts/test-battery.swift -o build/test-battery && build/test-battery
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.

@@ -52,154 +52,161 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Baterie</b>
+<br>Podívejte se na stav baterie, její kapacitu a počet cyklů, kolik energie do ní teče a jak prodloužit její výdrž.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Ochrana ⌘Q a ⌘W</b>
 <br>Nic se nezavře omylem. Když to myslíte vážně, přidejte ⇧.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Menší kopie</b>
 <br>Klikněte pravým tlačítkem na fotku, PDF nebo video a vedle se objeví lehčí kopie.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Převod</b>
 <br>Uložte obrázek, video nebo skladbu v jiném formátu z nabídky pravého tlačítka.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Přepnutí jazyka</b>
 <br>Podržte ⌥ a ťukněte na ⇧, jazyk klávesnice se přepne.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Ukončení s posledním oknem</b>
 <br>Zavřete poslední okno aplikace a ukončí se i aplikace.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Zelené tlačítko zvětšuje</b>
 <br>Okno vyplní obrazovku bez přechodu na celou obrazovku.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimalizace kliknutím v Docku</b>
 <br>Klikněte na aplikaci, ve které právě jste, a uhne z cesty.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Nový soubor</b>
 <br>Pravé tlačítko ve Finderu, jméno a prázdný soubor je hotový.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X přesouvá soubory</b>
 <br>Vyjměte soubory ve Finderu a vložte je, kam potřebujete.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Enter otevírá soubory</b>
 <br>Vyberte soubory ve Finderu a stiskněte Enter, otevřou se.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete do koše</b>
 <br>Stiskněte ⌫ ve Finderu a vybrané soubory půjdou do koše.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Herní režim</b>
 <br>Zatímco hrajete, nic nevyskočí přes hru a nic ji nezavře.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test rychlosti</b>
 <br>Jak rychlý je váš internet a na co stačí.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boční tlačítka</b>
 <br>Tlačítka 4 a 5 jdou zpět a vpřed, jako přejetí prsty.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Posouvání po řádcích</b>
 <br>Každé cvaknutí kolečka posune stejně, ať točíte jakkoli rychle.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Směr posouvání</b>
 <br>Jeden směr pro trackpad, jiný pro myš.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez zrychlení ukazatele</b>
 <br>Ukazatel ujede přesně tolik co vaše ruka.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Opakovat drženou klávesu</b>
 <br>Podržte klávesu a píše se znovu a znovu, bez nabídky diakritiky.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home a End</b>
 <br>Při psaní skok na začátek nebo konec řádku.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animace</b>
 <br>Zrychlete Dock, okna a Rychlý náhled, klidně až na okamžité.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Oprávnění smazaných aplikací</b>
 <br>Odstraňte oprávnění, která si macOS nechává pro už smazané aplikace.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mazlíček na ploše</b>
 <br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete. Když píšete, ožije, a když odejdete, podřimuje.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Odinstalace aplikací</b>
 <br>Odeberte aplikaci s jejími soubory. Vše lze vrátit.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Zobrazit FPS</b>
 <br>Malé počítadlo v rohu, který si zvolíte, ukazuje, jak plynule hra běží.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archivy</b>
 <br>Pravým kliknutím rozbalíte RAR a další archivy nebo sbalíte soubory do archivu ZIP.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Držet Dock na jednom displeji</b>
@@ -327,6 +334,7 @@ Ukáže, jak rychlý je váš internet právě teď. Klikněte na **Změřit ryc
 Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, případně pikapik znovu spusťte z Finderu, Launchpadu nebo Spotlightu. Dokud je okno otevřené, aplikace se zobrazuje v Docku a v ⌘Tab.
 
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
+- **Baterie**: nabití, doba do plného nabití nebo zbývající doba, stav, maximální kapacita, počet cyklů, napájecí adaptér a výkon ve wattech a tipy, jak prodloužit výdrž baterie. Stránka jen zobrazuje informace: nabíjecí limit zůstává v **Nastavení systému › Baterie**. Zobrazí se jen na Macu s baterií.
 - **Bez spánku**: délka, volby pro displej a víko.
 - **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost, jakmile je povolené Ovládání ventilátorů.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.

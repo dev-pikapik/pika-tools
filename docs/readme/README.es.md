@@ -52,154 +52,161 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Batería</b>
+<br>Mira el estado de tu batería, su capacidad y su número de ciclos, cuánta energía le entra y cómo hacer que dure más.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Proteger ⌘Q y ⌘W</b>
 <br>Nada se cierra por accidente. Añade ⇧ cuando quieras hacerlo.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Copia más ligera</b>
 <br>Clic derecho en una foto, un PDF o un vídeo, y aparece una copia más ligera.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Conversión</b>
 <br>Guarda una imagen, un vídeo o una canción en otro formato con un clic derecho.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Cambiar de idioma</b>
 <br>Mantén ⌥ y pulsa ⇧ para cambiar el idioma del teclado.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Salir con la última ventana</b>
 <br>Cierra la última ventana de una app y la app también se cierra.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>El botón verde amplía</b>
 <br>La ventana llena la pantalla sin pasar a pantalla completa.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Minimizar con un clic en el Dock</b>
 <br>Haz clic en la app que estás usando y se aparta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Archivo nuevo</b>
 <br>Clic derecho en el Finder, escribe un nombre y listo: un archivo vacío.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X mueve archivos</b>
 <br>Corta archivos en el Finder y pégalos donde quieras.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Intro abre archivos</b>
 <br>Selecciona archivos en el Finder y pulsa Intro para abrirlos.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Borrar a la Papelera</b>
 <br>Pulsa ⌫ en el Finder y los archivos seleccionados van a la Papelera.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modo de juego</b>
 <br>Mientras juegas, nada se abre encima del juego ni lo cierra.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Velocidad de internet</b>
 <br>Lo rápida que es tu conexión y para qué te alcanza.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Botones laterales</b>
 <br>Los botones 4 y 5 van atrás y adelante, como un deslizamiento.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Desplazarse por líneas</b>
 <br>Cada clic de la rueda desplaza lo mismo, la gires tan rápido como la gires.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Dirección de desplazamiento</b>
 <br>Una dirección para el trackpad y otra para el ratón.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sin aceleración del puntero</b>
 <br>El puntero recorre exactamente lo mismo que tu mano.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetir una tecla mantenida</b>
 <br>Mantén una tecla para repetirla, sin el menú de acentos.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home y End</b>
 <br>Ve al inicio o al final de la línea mientras escribes.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animaciones</b>
 <br>Acelera el Dock, las ventanas y Vista Rápida, hasta que sean instantáneos.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permisos de apps eliminadas</b>
 <br>Quita los permisos que macOS guarda para las apps que ya eliminaste.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mascota en el escritorio</b>
 <br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos. Se anima mientras escribes y dormita cuando te alejas.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Eliminar apps</b>
 <br>Elimina una app y sus archivos. Puedes devolver todo.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Mostrar FPS</b>
 <br>Un pequeño contador muestra lo fluido que va tu juego, en la esquina que elijas.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archivos comprimidos</b>
 <br>Abre RAR y otros archivos comprimidos, o reúne archivos en un ZIP, con un clic derecho.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Mantener el Dock en una sola pantalla</b>
@@ -327,6 +334,7 @@ Muestra lo rápido que va tu internet ahora mismo. Haz clic en **Comprobar veloc
 Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikapik desde el Finder, Launchpad o Spotlight. Mientras la ventana está abierta, la app aparece en el Dock y en ⌘Tab.
 
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
+- **Batería**: carga, tiempo hasta la carga completa o tiempo restante, estado, capacidad máxima, número de ciclos, adaptador de corriente y potencia en vatios, y consejos para que dure más. Solo muestra información: el límite de carga sigue en **Ajustes del Sistema › Batería**. Solo aparece en un Mac con batería.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
 - **Ventiladores**: velocidad de cada ventilador, modo Auto o velocidad manual cuando el control de ventiladores está permitido.
 - **Velocidad de internet**: comprueba la velocidad y para qué te sirve.

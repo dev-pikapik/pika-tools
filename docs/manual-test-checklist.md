@@ -34,6 +34,10 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 ## Keep Awake
 - Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed or display-off rows.
 
+## Battery
+- On a Mac with a battery, open Settings > Battery. Expected: charge, status and cycle count match `pmset -g batt` and System Settings > Battery; Condition and Maximum Capacity match `system_profiler SPPowerDataType` a moment later. Plugged in: Power Adapter shows its name and watts, and Charging Power shows watts while charging. Unplugged: Power Use shows watts and the adapter row is gone.
+- Click Battery Settings…. Expected: System Settings opens on Battery. Nothing on the page changes how the Mac charges. On a Mac without a battery the sidebar has no Battery row.
+
 ## Pet
 - Turn on, switch an app to fullscreen on each display. Expected: pet hides on that display only and returns when fullscreen ends; works across Spaces and after sleep/wake.
 - Open Settings > Pet. Expected: Wardrobe shows 38 things in seven groups with six unlocked, Looks shows 10 looks, Awards shows 24 awards and no "Open Source" award. Click an unlocked thing: the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing: its award opens and nothing is worn. Click a look with missing pieces: nothing is worn.

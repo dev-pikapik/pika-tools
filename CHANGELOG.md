@@ -4,6 +4,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ## [1.41.0] - Unreleased
 
+### Added
+- Battery: a new Battery page in Settings, only on a Mac with a battery. It shows the charge with a drawn battery, how long until it is full or how long it will last, or that charging is on hold; the battery’s condition (Normal or Service Recommended, with a link to get service); its maximum capacity compared with when it was new; the cycle count, out of the 1,000 it is designed for; the power adapter and its watts; and the watts going into the battery while it charges, or what your Mac uses on battery. It also gives tips to make the battery last: Charge Limit on macOS 26.4 or newer with Apple silicon, or Optimized Battery Charging, each with a button that opens macOS Battery settings; keep the Mac between 10 and 35 °C; and store it at about 50% and shut it down. The page only shows information and never changes how your Mac charges. The charge limit stays in macOS Battery settings.
+
 ### Fixed
 - Uninstall: `brew uninstall --cask pikapik` now also turns off launch at login and puts back the system settings pikapik changed, such as animations, key repeat and hot corners. Before, Homebrew ran this step in a sandbox that blocked it. Homebrew keeps the steps from the version it installed last, so if pikapik has been updating itself, run `brew upgrade --cask pikapik` once first.
 

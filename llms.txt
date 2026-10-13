@@ -7,6 +7,7 @@ It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip too
 ## What it does
 - Game Mode: while you play, Spotlight, Siri, ⌘Tab and Mission Control don't pop up over the game, ⌘Q and ⌘W don't close it, and the display stays on.
 - Keep Awake: stop the Mac from sleeping for a chosen time, with display and lid options.
+- Battery: see the charge, time until full or time left, the battery's condition, maximum capacity and cycle count, the power adapter and the watts going in or being used, and tips to make it last. It only shows information and never changes how the Mac charges. Only on a Mac with a battery.
 - Keyboard: input language switch, key repeat, Home and End keys.
 - Mouse: turn off pointer acceleration, tracking speed, scrolling by lines, scroll direction, side buttons.
 - Windows: enlarge with the green button, ⌘Q and ⌘W protection, quit an app when its last window closes.

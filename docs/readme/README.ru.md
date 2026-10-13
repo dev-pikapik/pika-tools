@@ -52,154 +52,161 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+<br><b>Аккумулятор</b>
+<br>Смотрите состояние аккумулятора, его ёмкость и количество циклов, сколько энергии в него поступает и как продлить его срок службы.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Защита ⌘Q и ⌘W</b>
 <br>Ничего не закроется случайно. Когда нужно, добавьте ⇧.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/compress-dark.png"><img src="../media/compress-light.png" width="340" alt=""></picture>
 <br><b>Копия поменьше</b>
 <br>Правый клик по фото, PDF или видео — и рядом появится лёгкая копия.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/convert-dark.png"><img src="../media/convert-light.png" width="340" alt=""></picture>
 <br><b>Конвертация</b>
 <br>Сохраните картинку, видео или песню в другом формате прямо из меню правого клика.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/input-switch-dark.png"><img src="../media/input-switch-light.png" width="340" alt=""></picture>
 <br><b>Смена языка</b>
 <br>Держите ⌥ и нажмите ⇧ — язык клавиатуры сменится.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/quit-on-close-dark.png"><img src="../media/quit-on-close-light.png" width="340" alt=""></picture>
 <br><b>Выход с последним окном</b>
 <br>Закрыли последнее окно — приложение тоже закрылось.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/window-zoom-dark.png"><img src="../media/window-zoom-light.png" width="340" alt=""></picture>
 <br><b>Зелёная кнопка увеличивает</b>
 <br>Окно растягивается на весь экран без полноэкранного режима.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
 <br><b>Свернуть кликом в Dock</b>
 <br>Кликните по значку приложения, в котором вы сейчас, и оно уйдёт с глаз.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/new-file-dark.png"><img src="../media/new-file-light.png" width="340" alt=""></picture>
 <br><b>Новый файл</b>
 <br>Правый клик в Finder, имя — и пустой файл готов.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-cut-dark.png"><img src="../media/finder-cut-light.png" width="340" alt=""></picture>
 <br><b>⌘X переносит файлы</b>
 <br>Вырежьте файлы в Finder и вставьте туда, куда нужно.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-open-dark.png"><img src="../media/finder-open-light.png" width="340" alt=""></picture>
 <br><b>Return открывает файлы</b>
 <br>Выберите файлы в Finder и нажмите Return, чтобы открыть.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/finder-delete-dark.png"><img src="../media/finder-delete-light.png" width="340" alt=""></picture>
 <br><b>Delete — в Корзину</b>
 <br>Нажмите ⌫ в Finder, и выбранные файлы уйдут в Корзину.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Игровой режим</b>
 <br>Пока вы играете, ничто не всплывёт поверх игры и не закроет её.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Скорость интернета</b>
 <br>Насколько быстрый у вас интернет и на что его хватит.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Боковые кнопки мыши</b>
 <br>Кнопки 4 и 5 листают назад и вперёд, как свайп.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Прокрутка по строкам</b>
 <br>Каждый щелчок колёсика прокручивает одинаково, как быстро ни крутите.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Направление прокрутки</b>
 <br>Одно направление для трекпада, другое для мыши.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Без ускорения курсора</b>
 <br>Курсор проходит ровно столько, сколько ваша рука.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Повтор клавиши</b>
 <br>Удерживайте клавишу — буква повторяется, без меню с акцентами.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home и End</b>
 <br>Переход в начало или конец строки, пока вы печатаете.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Анимации</b>
 <br>Dock, окна и Быстрый просмотр станут быстрее — вплоть до мгновенных.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Разрешения удалённых приложений</b>
 <br>Уберите разрешения, которые macOS хранит для уже удалённых приложений.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Питомец на рабочем столе</b>
 <br>Маленький друг гуляет за окнами внизу экрана. Возьмите его и подбросьте или нажмите пробел — он подпрыгнет. Подбирайте ему наряды в гардеробе и получайте награды, пока играете вместе. Он бодрится, пока вы печатаете, и дремлет, когда вы отходите.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Удаление программ</b>
 <br>Удаление программы и её файлов. Всё можно вернуть.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Показывать FPS</b>
 <br>Маленький счётчик в выбранном вами углу показывает, насколько плавно идёт игра.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Архивы</b>
 <br>Распаковка RAR и других архивов и упаковка файлов в ZIP по правому клику.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock на одном экране</b>
@@ -327,6 +334,7 @@ pikapik открывает и то, что macOS не умеет: RAR, в том
 Откройте настройки из меню кнопкой **Настройки…** или сочетанием ⌘, — либо просто запустите pikapik ещё раз из Finder, Launchpad или Spotlight. Пока окно открыто, приложение видно в Dock и в ⌘Tab.
 
 - **Основные**: открытие при входе, оформление (как в системе, светлое или тёмное), язык, обновления и резервная копия: экспорт и импорт настроек файлом или синхронизация через iCloud Drive.
+- **Аккумулятор**: заряд, время до полной зарядки или остаток времени работы, состояние, максимальная ёмкость, количество циклов перезарядки, сетевой адаптер и мощность в ваттах, а также советы, как беречь аккумулятор. Страница только показывает данные: лимит зарядки остаётся в «**Системные настройки › Аккумулятор**». Она есть только на Mac с аккумулятором.
 - **Не засыпать**: длительность, экран и крышка.
 - **Вентиляторы**: скорость каждого вентилятора, режим «Авто» или ручная скорость, когда разрешено «Управление вентиляторами».
 - **Скорость интернета**: проверка скорости и для чего её хватит.
