@@ -30,6 +30,7 @@ import IOKit
     @ObservationIgnored private let link = MonitorLink()
     @ObservationIgnored private var controlled: Set<CGDirectDisplayID> = []
     @ObservationIgnored private var silent: Set<String> = []
+    @ObservationIgnored private var misses: [String: Int] = [:]
     @ObservationIgnored private var touched: [CGDirectDisplayID: Date] = [:]
     @ObservationIgnored private var wrote: [String: Date] = [:]
     @ObservationIgnored private var polled = Date.distantPast
@@ -112,6 +113,10 @@ import IOKit
     private func refresh() {
         generation += 1
         let current = generation
+        #if !APPSTORE
+        silent = []
+        misses = [:]
+        #endif
         connect(current, rewrite: false)
         for delay in [2.0, 6.0] {
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) { self.connect(current, rewrite: true) }
@@ -240,13 +245,18 @@ import IOKit
             silent.insert(monitors[i].key)
             monitors[i].reports = false
         case .value(let current, let maximum):
+            misses[monitors[i].key] = 0
             let level = Double(current) / Double(maximum)
             guard Date().timeIntervalSince(touched[id] ?? .distantPast) > 2, abs(level - monitors[i].level) > 0.005 else { return }
             monitors[i].level = level
             let key = Self.levelKey(monitors[i].key)
             if UserDefaults.standard.object(forKey: key) != nil { UserDefaults.standard.set(level, forKey: key) }
         case nil:
-            break
+            let key = monitors[i].key
+            misses[key, default: 0] += 1
+            guard misses[key, default: 0] >= 3 else { return }
+            silent.insert(key)
+            monitors[i].reports = false
         }
     }
     #endif
