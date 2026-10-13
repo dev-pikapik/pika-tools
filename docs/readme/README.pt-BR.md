@@ -219,7 +219,11 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br><b>Temperatura</b>
 <br>Veja o quanto o Mac está quente por dentro, do processador à bateria.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Tarefas em Segundo Plano</b>
+<br>Veja o que roda em segundo plano e de onde veio.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Mudou de ideia? Clique em **Devolver** e tudo volta para onde estava, e os ajuda
 
 **Temperatura.** Abra Ajustes › Temperatura para ver o quanto o Mac está quente por dentro. No topo, uma só palavra resume tudo, de “Normal” a “Muito quente”, com uma linha que diz se o Mac está funcionando na velocidade máxima ou ficando mais lento para esfriar. Abaixo, cada peça tem sua própria linha com um nome simples em vez de um código de sensor: processador, gráficos, memória, armazenamento, Wi-Fi e bateria, conforme os sensores do seu Mac. Cada linha mostra os graus e uma barra curta que fica verde, amarela ou laranja de acordo com a faixa normal daquela peça. Os números são atualizados a cada dois segundos e só enquanto você está olhando, então quase não pesam no Mac. Não é preciso senha nem permissão. Você também pode adicionar uma linha “Temperatura” ao painel da barra de menus. A versão da Mac App Store mostra só o nível geral.
 
+A página **Tarefas em Segundo Plano** mostra tudo o que começa sozinho no seu Mac: apps que abrem ao iniciar sessão, serviços em segundo plano, ajudantes guardados dentro de apps e sobras de apps que você já removeu. Em cada tarefa você vê qual app a adicionou, se ela está rodando agora mesmo e onde fica o arquivo dela; um clique mostra o arquivo no Finder. Suas próprias tarefas desligam com um botão e religam com a mesma facilidade, e nada é apagado. As tarefas para todos os usuários e para o Mac inteiro são do macOS, então o botão delas abre Itens de Início em Ajustes do Sistema. Na versão da Mac App Store, a página só mostra as tarefas: você dá acesso à sua pasta pessoal uma vez na janela Abrir de sempre, e os botões abrem Itens de Início.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
@@ -355,6 +361,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
+- **Tarefas em Segundo Plano**: tudo o que roda em segundo plano, qual app adicionou e um botão para desligar suas próprias tarefas e religá-las.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.
 - **Bichinho**: ligar ou desligar o bichinho, conversas e bola, seguir o seu ritmo, guarda-roupa e prêmios.
 - **Permissões**: todas as permissões que o pikapik usa, cada uma com seu estado e um botão para permitir ou desligar. Uma ferramenta sem a permissão de que precisa aparece em cinza; clicar nela abre esta página na linha certa.

@@ -219,7 +219,11 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br><b>Sıcaklık</b>
 <br>İşlemciden pile kadar, Mac’inizin içinin ne kadar ısındığını görün.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Arka Plan Görevleri</b>
+<br>Arka planda neyin çalıştığını ve nereden geldiğini görün.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Fikrinizi mi değiştirdiniz? **Geri koy** düğmesine tıklayın; her şey eski
 
 **Sıcaklık.** Mac’inizin içinin ne kadar ısındığını görmek için Ayarlar › Sıcaklık sayfasını açın. En üstte tek bir kelime durumu özetler: “Normal”, “Ilık”, “Sıcak” ya da “Çok sıcak”. Altındaki satır, Mac’inizin tam hızda mı çalıştığını yoksa soğumak için mi yavaşladığını söyler. Aşağıda her parçanın, sensör kodu yerine anlaşılır bir adla kendi satırı vardır: işlemci, grafik, bellek, depolama, Wi-Fi ve pil. Yalnızca Mac’inizde sensörü olan parçalar görünür. Her satır dereceyi ve o parçanın normal aralığına göre yeşil, sarı ya da turuncu olan kısa bir çubuğu gösterir. Değerler iki saniyede bir ve yalnızca siz bakarken yenilenir, bu yüzden Mac’inizi neredeyse hiç yormaz. Parola ya da izin gerekmez. Menü çubuğu paneline bir “Sıcaklık” satırı da ekleyebilirsiniz. Mac App Store sürümü yalnızca genel seviyeyi gösterir.
 
+**Arka Plan Görevleri** sayfası, Mac’inizde kendiliğinden başlayan her şeyi gösterir: girişte açılan uygulamalar, arka plan hizmetleri, uygulamaların içine yerleşmiş yardımcılar ve daha önce kaldırdığınız uygulamaların kalıntıları. Her görevde onu hangi uygulamanın eklediği, şu anda çalışıp çalışmadığı ve dosyasının nerede olduğu görünür; tek tıklamayla dosya Finder’da gösterilir. Kendi görevlerinizi tek düğmeyle kapatır, aynı kolaylıkla yeniden açarsınız; hiçbir şey silinmez. Tüm kullanıcılar ve tüm Mac için olan görevleri macOS yönetir, bu yüzden bunların düğmesi Sistem Ayarları’nda Giriş Öğeleri’ni açar. Mac App Store sürümünde sayfa görevleri yalnızca gösterir: ana klasörünüze erişimi bir kez alışık olduğunuz Aç penceresinde verirsiniz, düğmeler de Giriş Öğeleri’ni açar.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
@@ -355,6 +361,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
 - **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
 - **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
+- **Arka Plan Görevleri**: arka planda çalışan her şey, onu hangi uygulamanın eklediği ve kendi görevlerinizi kapatıp yeniden açmak için bir düğme.
 - **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.
 - **Evcil Dost**: açıp kapatma, sohbet, ritminize uyma ve top, gardırop ve ödüller.
 - **İzinler**: pikapik’in kullandığı tüm izinler; her birinin durumu ve izin vermek ya da kapatmak için bir düğmesi. Bir izni eksik olan araç yarı soluk gri görünür; üzerine tıklamak bu sayfayı doğru satırda açar.

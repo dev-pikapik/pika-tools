@@ -219,7 +219,11 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br><b>Température</b>
 <br>Voyez à quel point votre Mac chauffe à l’intérieur, du processeur à la batterie.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Tâches en arrière-plan</b>
+<br>Découvrez ce qui tourne en arrière-plan et d’où cela vient.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Vous avez changé d’avis ? Cliquez sur **Remettre en place** : tout revient o�
 
 **Température.** Ouvrez Réglages › Température pour voir à quel point votre Mac chauffe à l’intérieur. En haut, un seul mot résume tout, de « Normal » à « Très chaud », avec une ligne qui indique si votre Mac fonctionne à pleine vitesse ou ralentit pour refroidir. En dessous, chaque composant a sa propre ligne avec un nom simple au lieu d’un code de capteur : processeur, processeur graphique, mémoire, stockage, Wi-Fi et batterie, selon les capteurs de votre Mac. Chaque ligne affiche les degrés et une courte barre qui devient verte, jaune ou orange selon la plage normale de ce composant. Les valeurs se mettent à jour toutes les deux secondes, et seulement quand vous les regardez, si bien qu’elles ne coûtent presque rien à votre Mac. Aucun mot de passe ni aucune autorisation ne sont nécessaires. Vous pouvez aussi ajouter une ligne « Température » au panneau de la barre des menus. La version du Mac App Store affiche seulement le niveau général.
 
+La page **Tâches en arrière-plan** affiche tout ce qui se lance tout seul sur votre Mac : les apps qui s’ouvrent à la connexion, les services en arrière-plan, les assistants cachés dans les apps et les restes d’apps que vous avez déjà supprimées. Pour chaque tâche, vous voyez quelle app l’a ajoutée, si elle tourne en ce moment et où se trouve son fichier, et un clic affiche ce fichier dans le Finder. Vos propres tâches s’éteignent d’un bouton et se rallument tout aussi facilement, et rien n’est supprimé. Les tâches pour tous les utilisateurs et pour tout le Mac appartiennent à macOS : leur bouton ouvre donc la section Ouverture de Réglages Système. Dans la version du Mac App Store, la page se contente d’afficher les tâches : vous lui donnez une fois l’accès à votre dossier personnel dans la fenêtre Ouvrir habituelle, et les boutons ouvrent la section Ouverture.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
@@ -355,6 +361,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
+- **Tâches en arrière-plan** : tout ce qui tourne en arrière-plan, l’app qui l’a ajouté et un bouton pour éteindre vos propres tâches et les rallumer.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
 - **Compagnon** : l’activer ou le désactiver, le laisser bavarder, vivre à votre rythme et jouer au ballon, l’habiller et voir vos récompenses.
 - **Autorisations** : toutes les autorisations utilisées par pikapik, chacune avec son état et un bouton pour l’autoriser ou l’éteindre. Un outil auquel il manque une autorisation apparaît à moitié grisé ; un clic dessus ouvre cette page sur la bonne ligne.

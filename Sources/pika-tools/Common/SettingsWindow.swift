@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, fans, temperatures, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
+    case general, battery, keepAwake, fans, temperatures, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -21,6 +21,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: String(localized: "Finder")
         case .animations: String(localized: "Animations")
         case .uninstaller: String(localized: "Uninstaller")
+        case .background: String(localized: "Background Tasks")
         case .games: String(localized: "Games")
         case .pet: String(localized: "Pet")
         case .permissions: String(localized: "Permissions")
@@ -43,6 +44,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .finder: "folder.fill"
         case .animations: "hare.fill"
         case .uninstaller: "xmark.bin.fill"
+        case .background: "gearshape.2.fill"
         case .games: "gamecontroller.fill"
         case .pet: "pawprint.fill"
         case .permissions: "hand.raised.fill"
@@ -59,6 +61,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .games: .purple
         case .animations: .pink
         case .uninstaller: .brown
+        case .background: .mint
         case .keepAwake: .orange
         case .fans: .teal
         case .pet, .temperatures: .red
@@ -182,6 +185,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),
+            SettingsItem(tab: .background, title: String(localized: "What runs in the background"), synonyms: "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off"),
             SettingsItem(tab: .animations, title: String(localized: "Animation speed"), synonyms: "animations, motion, fast, faster, instant, speed up"),
             SettingsItem(tab: .animations, title: String(localized: "Delay before the Dock appears"), synonyms: "autohide, hide Dock, delay, wait"),
             SettingsItem(tab: .animations, title: String(localized: "How fast the Dock slides out"), synonyms: "autohide, hide Dock, speed"),
@@ -376,9 +380,9 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -513,6 +517,7 @@ private struct SettingsView: View {
             #else
             UninstallerPage()
             #endif
+        case .background: BackgroundPage()
         case .games: GameModePage()
         case .pet: PetPage()
         case .permissions: PermissionsView()

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Arka planda neyin çalıştığını görün
+
+<sub>1.43.0 · 13 Ekim 2026</sub>
+
+pikapik artık kendiliğinden başlayan her şeyi ve onu hangi uygulamanın eklediğini gösteriyor, kendi görevlerinizi de hiçbir şeyi silmeden kapatıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Ayarlar’daki yeni Arka Plan Görevleri sayfası girişte açılan uygulamaları, arka plan hizmetlerini, uygulamaların içindeki yardımcıları ve silinmiş uygulamaların kalıntılarını listeler. Her görevde onu hangi uygulamanın eklediği, şu anda çalışıp çalışmadığı ve dosyasının nerede olduğu görünür. Tek tıklamayla dosya Finder’da gösterilir.
+
+Kendi görevlerinizi tek düğmeyle kapatıp yeniden açarsınız. Hiçbir şey silinmez. Tüm kullanıcılar ve tüm Mac için olan görevlerde düğme, Sistem Ayarları’nda Giriş Öğeleri’ni açar.
+
+Mac App Store sürümünde sayfa görevleri gösterir, düğmeleri de Giriş Öğeleri’ni açar.
+
+---
+
 ## <a id="v1.42.0"></a>Mac’inizin içinin ne kadar ısındığını görün
 
 <sub>1.42.0 · 13 Ekim 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>查看后台在运行什么
+
+<sub>1.43.0 · 2026年10月13日</sub>
+
+pikapik 现在会显示所有自行启动的内容和添加它们的 App，还能关闭你自己的任务，不删除任何东西。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+设置里新增的“后台任务”页面会列出登录时打开的 App、后台服务、藏在 App 里的辅助程序，以及已移除 App 的残留文件。每个任务都会显示是哪个 App 添加的、现在是否正在运行、文件在哪里。点按一下就能在访达中显示这个文件。
+
+你自己的任务用一个按钮就能关闭，也能重新打开。任何东西都不会被删除。对于所有用户和整台 Mac 的任务，按钮会打开“系统设置”中的“登录项”。
+
+在 Mac App Store 版本中，这个页面会显示任务，按钮则会打开“登录项”。
+
+---
+
 ## <a id="v1.42.0"></a>查看 Mac 内部有多热
 
 <sub>1.42.0 · 2026年10月13日</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Se vad som körs i bakgrunden
+
+<sub>1.43.0 · 13 oktober 2026</sub>
+
+pikapik visar nu allt som startar av sig självt och vilken app som lade till det, och stänger av dina egna uppgifter utan att radera något.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Den nya sidan Bakgrundsuppgifter i Inställningar visar appar som öppnas vid inloggning, bakgrundstjänster, hjälpare inuti appar och rester av borttagna appar. Vid varje uppgift ser du vilken app som lade till den, om den körs just nu och var dess fil ligger. Med ett klick visas filen i Finder.
+
+Dina egna uppgifter stänger du av och slår på igen med en knapp. Ingenting raderas. Vid uppgifter för alla användare och för hela Macen öppnar knappen Startobjekt i Systeminställningar.
+
+I versionen från Mac App Store visar sidan uppgifterna, och knapparna öppnar Startobjekt.
+
+---
+
 ## <a id="v1.42.0"></a>Se hur varm din Mac är inuti
 
 <sub>1.42.0 · 13 oktober 2026</sub>

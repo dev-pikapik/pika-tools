@@ -219,7 +219,11 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br><b>Temperatura</b>
 <br>Guarda quanto è caldo il Mac all’interno, dal processore alla batteria.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Attività in background</b>
+<br>Scopri cosa gira in background e da dove arriva.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Hai cambiato idea? Fai clic su **Rimetti a posto** e tutto torna dov’era, ment
 
 **Temperatura.** Apri Impostazioni › Temperatura per vedere quanto è caldo il Mac all’interno. In alto una sola parola riassume tutto, da «Normale» a «Molto caldo», con una riga che dice se il Mac funziona alla massima velocità o sta rallentando per raffreddarsi. Sotto, ogni componente ha la sua riga con un nome semplice al posto di un codice del sensore: processore, grafica, memoria, archiviazione, Wi-Fi e batteria, a seconda dei sensori del tuo Mac. Ogni riga mostra i gradi e una breve barra che diventa verde, gialla o arancione in base all’intervallo normale per quel componente. I valori si aggiornano ogni due secondi e solo mentre li guardi, quindi al Mac non costano quasi nulla. Non servono password né permessi. Puoi anche aggiungere una riga «Temperatura» al pannello della barra dei menu. La versione del Mac App Store mostra solo il livello generale.
 
+La pagina **Attività in background** mostra tutto ciò che parte da solo sul tuo Mac: le app che si aprono al login, i servizi in background, gli aiutanti nascosti dentro le app e i resti delle app che hai già rimosso. Per ogni attività vedi quale app l’ha aggiunta, se è in funzione proprio ora e dove si trova il suo file, e con un clic il file compare nel Finder. Le tue attività si spengono con un pulsante e si riaccendono con la stessa facilità, e non viene eliminato nulla. Le attività per tutti gli utenti e per tutto il Mac appartengono a macOS, quindi il loro pulsante apre Elementi login in Impostazioni di Sistema. Nella versione del Mac App Store la pagina mostra soltanto le attività: le dai accesso alla tua cartella Home una volta nella solita finestra Apri, e i pulsanti aprono Elementi login.
+
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: il simbolo pikapik quando gli strumenti funzionano, lo stesso simbolo più chiaro quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
@@ -355,6 +361,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Dock**: ridurre o nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
+- **Attività in background**: tutto ciò che gira in background, quale app l’ha aggiunto e un pulsante per spegnere le tue attività e riaccenderle.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.
 - **Animaletto**: accensione, chiacchiere, sintonia con il tuo ritmo e palla, guardaroba e premi.
 - **Permessi**: tutti i permessi usati da pikapik, ciascuno con il suo stato e un pulsante per consentirlo o spegnerlo. Uno strumento a cui manca un permesso appare in grigio; un clic su di esso apre questa pagina sulla riga giusta.

@@ -219,7 +219,11 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br><b>Teplota</b>
 <br>Podívejte se, jak moc je Mac uvnitř zahřátý, od procesoru po baterii.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Úlohy na pozadí</b>
+<br>Podívejte se, co běží na pozadí a odkud se to vzalo.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Rozmysleli jste si to? Klikněte na **Vrátit zpět** a všechno se vrátí na p
 
 **Teplota.** Otevřete Nastavení › Teplota a uvidíte, jak moc je Mac uvnitř zahřátý. Nahoře vše shrne jedno slovo, od „V normě“ po „Velké horko“, a řádek pod ním řekne, jestli Mac běží na plný výkon, nebo zpomaluje, aby vychladl. Níže má každá součást vlastní řádek se srozumitelným názvem místo kódu čidla: procesor, grafika, paměť, disk, Wi-Fi a baterie, podle toho, jaká čidla váš Mac má. Každý řádek ukazuje stupně a krátký pruh, který je zelený, žlutý nebo oranžový podle běžného rozsahu pro danou součást. Hodnoty se obnovují každé dvě sekundy a jen tehdy, když se na ně díváte, takže Mac skoro nezatěžují. Není potřeba heslo ani oprávnění. Řádek „Teplota“ můžete přidat i do panelu v řádku nabídek. Verze z Mac App Store ukazuje jen celkovou úroveň.
 
+Stránka **Úlohy na pozadí** ukazuje vše, co se na vašem Macu spouští samo: aplikace otevírané po přihlášení, služby na pozadí, pomocníky schované uvnitř aplikací a zbytky po už odebraných aplikacích. U každé úlohy vidíte, která aplikace ji přidala, jestli právě běží a kde leží její soubor, a jedním kliknutím soubor zobrazíte ve Finderu. Vlastní úlohy vypnete jedním tlačítkem a stejně snadno je zase zapnete, nic se přitom nemaže. Úlohy pro všechny uživatele a pro celý Mac patří macOS, proto jejich tlačítko otevře Položky po přihlášení v Nastavení systému. Ve verzi z Mac App Store stránka úlohy jen ukazuje: přístup k domovské složce jí dáte jednou v obvyklém okně Otevřít a tlačítka otevírají Položky po přihlášení.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
@@ -355,6 +361,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Dock**: minimalizace nebo skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
+- **Úlohy na pozadí**: vše, co běží na pozadí, která aplikace to přidala, a tlačítko, kterým vlastní úlohy vypnete a znovu zapnete.
 - **Hry**: seznam vašich her a volby Herního režimu.
 - **Mazlíček**: zapnutí a vypnutí, povídání, život ve vašem rytmu a míč, šatník a ocenění.
 - **Oprávnění**: všechna oprávnění, která pikapik používá, každé se svým stavem a tlačítkem pro povolení nebo vypnutí. Nástroj, kterému chybí oprávnění, vypadá napůl šedě a kliknutí na něj otevře tuto stránku u správného řádku.

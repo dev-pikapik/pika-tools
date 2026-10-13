@@ -35,7 +35,7 @@ enum Permission: CaseIterable {
              String(localized: "Finder Extensions"), String(localized: "Lets the app add items to the right-click menu in Finder"))
         #if APPSTORE
         case .folders:
-            ("", "folder.fill", String(localized: "Folders"), String(localized: "Lets the app save new files next to yours"))
+            ("", "folder.fill", String(localized: "Folders"), String(localized: "Lets the app save new files next to yours and see your background tasks"))
         #else
         case .iCloud:
             ("", "icloud.fill",
@@ -306,6 +306,7 @@ extension View {
 
 struct PermissionBar: View {
     let permissions: [Permission]
+    var text: LocalizedStringKey = "Grey tools need a permission. Click one to allow it."
 
     var body: some View {
         let missing = Permission.allCases.filter { permissions.contains($0) && !$0.isGranted }
@@ -313,7 +314,7 @@ struct PermissionBar: View {
             HStack(spacing: 12) {
                 Image(systemName: "lock")
                     .accessibilityHidden(true)
-                Text("Grey tools need a permission. Click one to allow it.")
+                Text(text)
                 Spacer(minLength: 0)
                 Button("Allow") { Permissions.shared.ask(missing) }
             }

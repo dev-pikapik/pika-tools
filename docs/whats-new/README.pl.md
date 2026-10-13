@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Zobacz, co działa w tle
+
+<sub>1.43.0 · 13 października 2026</sub>
+
+pikapik pokazuje teraz wszystko, co uruchamia się samo, i która aplikacja to dodała, a twoje własne zadania wyłącza, niczego nie usuwając.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Nowa strona Zadania w tle w Ustawieniach pokazuje aplikacje otwierane po zalogowaniu, usługi w tle, pomocników ukrytych w aplikacjach i pozostałości po usuniętych aplikacjach. Przy każdym zadaniu widać, która aplikacja je dodała, czy działa w tej chwili i gdzie leży jego plik. Jedno kliknięcie pokazuje plik w Finderze.
+
+Własne zadania wyłączasz i włączasz z powrotem jednym przyciskiem. Nic nie jest usuwane. Przy zadaniach dla wszystkich użytkowników i dla całego Maca przycisk otwiera Rzeczy otwierane podczas logowania w Ustawieniach systemowych.
+
+W wersji z Mac App Store strona pokazuje zadania, a jej przyciski otwierają Rzeczy otwierane podczas logowania.
+
+---
+
 ## <a id="v1.42.0"></a>Zobacz, jak bardzo Mac nagrzał się w środku
 
 <sub>1.42.0 · 13 października 2026</sub>

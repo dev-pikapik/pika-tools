@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>See what runs in the background
+
+<sub>1.43.0 · October 13, 2026</sub>
+
+pikapik now shows everything that starts on its own, which app added it, and turns your own tasks off without deleting anything.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Background Tasks in Settings lists apps that open at login, background services, helpers inside apps and leftovers of deleted apps. Each task shows which app added it, whether it is running now and where its file is. One click shows the file in Finder.
+
+Turn your own tasks off and back on with one button. Nothing gets deleted. Tasks for all users and for the whole Mac open Login Items in System Settings.
+
+In the Mac App Store version the page shows the tasks, and its buttons open Login Items.
+
+---
+
 ## <a id="v1.42.0"></a>See how warm your Mac is inside
 
 <sub>1.42.0 · October 13, 2026</sub>

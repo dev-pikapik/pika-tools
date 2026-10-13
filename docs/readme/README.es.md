@@ -219,7 +219,11 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br><b>Temperatura</b>
 <br>Mira lo caliente que está tu Mac por dentro, del procesador a la batería.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Tareas en segundo plano</b>
+<br>Mira qué se ejecuta en segundo plano y de dónde viene.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Para saber cuándo toca un premio, pikapik solo cuenta lo que hacéis tú y tu m
 
 **Temperatura.** Abre Ajustes › Temperatura para ver lo caliente que está tu Mac por dentro. Arriba, una sola palabra lo resume, de «Normal» a «Muy caliente», con una línea que dice si tu Mac funciona a toda velocidad o va más lento para enfriarse. Debajo, cada pieza tiene su propia fila con un nombre sencillo en lugar de un código de sensor: procesador, gráficos, memoria, almacenamiento, Wi-Fi y batería, según los sensores que tenga tu Mac. Cada fila muestra los grados y una barra corta que se pone verde, amarilla o naranja según el rango normal de esa pieza. Los números se actualizan cada dos segundos y solo mientras los miras, así que a tu Mac casi no le cuestan nada. No hace falta contraseña ni permisos. También puedes añadir una fila «Temperatura» al panel de la barra de menús. La versión de la Mac App Store muestra solo el nivel general.
 
+La página **Tareas en segundo plano** muestra todo lo que arranca solo en tu Mac: apps que se abren al iniciar sesión, servicios en segundo plano, ayudantes metidos dentro de las apps y restos de apps que ya eliminaste. Cada tarea indica qué app la añadió, si está en marcha ahora mismo y dónde está su archivo, y con un clic ves ese archivo en el Finder. Tus propias tareas se apagan con un botón y vuelven a encenderse igual de fácil, y no se borra nada. Las tareas para todos los usuarios y para todo el Mac son cosa de macOS, así que su botón abre Ítems de inicio en Ajustes del Sistema. En la versión de la Mac App Store, la página solo muestra las tareas: le das acceso a tu carpeta de inicio una vez en la ventana Abrir de siempre, y los botones abren Ítems de inicio.
+
 Cada herramienta tiene su propio interruptor en el menú y en los ajustes.
 
 El icono de la barra de menús muestra el estado de un vistazo: la marca de pikapik cuando las herramientas funcionan, la misma marca más pálida cuando todo está desactivado y un triángulo de aviso cuando una herramienta está activada pero faltan permisos.
@@ -355,6 +361,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Dock**: minimizar u ocultar con un clic en el Dock, mantener el Dock en una sola pantalla y devolverlo a su sitio.
 - **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X y borrar con ⌫.
 - **Eliminar apps**: eliminar una app con sus archivos, devolverlo todo a su sitio más tarde y limpiar lo que dejaron las apps eliminadas.
+- **Tareas en segundo plano**: todo lo que se ejecuta en segundo plano, qué app lo añadió y un botón para apagar tus propias tareas y volver a encenderlas.
 - **Juegos**: tu lista de juegos y las opciones del Modo de juego.
 - **Mascota**: actívala o desactívala, deja que charle, siga tu ritmo y juegue con la pelota, vístela y mira tus premios.
 - **Permisos**: todos los permisos que usa pikapik, cada uno con su estado y un botón para permitirlo o apagarlo. Una herramienta a la que le falta un permiso aparece en gris; al hacer clic en ella se abre esta página en la fila correcta.

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Zie wat er op de achtergrond draait
+
+<sub>1.43.0 · 13 oktober 2026</sub>
+
+pikapik laat nu alles zien wat vanzelf start en welke app het heeft toegevoegd, en zet je eigen taken uit zonder iets te verwijderen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+De nieuwe pagina Achtergrondtaken in Instellingen toont apps die openen bij het inloggen, achtergronddiensten, hulpjes in apps en resten van verwijderde apps. Bij elke taak zie je welke app hem heeft toegevoegd, of hij nu draait en waar het bestand staat. Eén klik toont het bestand in de Finder.
+
+Je eigen taken zet je met één knop uit en weer aan. Er wordt niets verwijderd. Bij taken voor alle gebruikers en voor de hele Mac opent de knop Inlogonderdelen in Systeeminstellingen.
+
+In de versie uit de Mac App Store toont de pagina de taken, en openen de knoppen Inlogonderdelen.
+
+---
+
 ## <a id="v1.42.0"></a>Zie hoe warm je Mac vanbinnen is
 
 <sub>1.42.0 · 13 oktober 2026</sub>

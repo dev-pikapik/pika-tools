@@ -261,7 +261,7 @@ struct AppIdentity: Equatable, Identifiable {
         return (Array(bundles.prefix(128)), labels)
     }
 
-    private static func signature(of url: URL) -> (team: String, groups: [String], organization: String)? {
+    static func signature(of url: URL) -> (team: String, groups: [String], organization: String)? {
         var code: SecStaticCode?
         guard SecStaticCodeCreateWithPath(url as CFURL, [], &code) == errSecSuccess, let code else { return nil }
         var info: CFDictionary?
@@ -347,9 +347,11 @@ struct AppRoots {
         return urls.contains { !AppInventory.isInTrash($0) && FileManager.default.fileExists(atPath: $0.path) }
     }
 
-    static func runPkgutil(_ arguments: [String]) -> String? {
+    static func runPkgutil(_ arguments: [String]) -> String? { run("/usr/sbin/pkgutil", arguments) }
+
+    static func run(_ tool: String, _ arguments: [String]) -> String? {
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/sbin/pkgutil")
+        process.executableURL = URL(fileURLWithPath: tool)
         process.arguments = arguments
         let pipe = Pipe()
         process.standardOutput = pipe
@@ -1357,5 +1359,24 @@ enum AppSearch {
         return scored.sorted {
             $0.points != $1.points ? $0.points > $1.points : $0.app.displayName.localizedCaseInsensitiveCompare($1.app.displayName) == .orderedAscending
         }.map(\.app)
+    }
+}
+
+struct LaunchTask {
+    var url: URL
+    var label: String
+    var program: String?
+    var isDaemon: Bool
+    var owner: AppIdentity?
+}
+
+extension AppFootprint {
+    func launchTasks() -> [LaunchTask] {
+        jobs.filter { !AppNames.isApple([$0.label.lowercased()]) }.map { job in
+            var claims = index.jobClaims(job)
+            for (app, claim) in index.claims(job.url.lastPathComponent, mode: .id) where (claims[app]?.rank ?? 0) < claim.rank { claims[app] = claim }
+            let best = claims.max { ($0.value.loose ? 0 : 1, $0.value.rank, -$0.key) < ($1.value.loose ? 0 : 1, $1.value.rank, -$1.key) }
+            return LaunchTask(url: job.url, label: job.label, program: job.program, isDaemon: job.isDaemon, owner: best.map { index.apps[$0.key] })
+        }
     }
 }

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Guarda cosa gira in background
+
+<sub>1.43.0 · 13 ottobre 2026</sub>
+
+pikapik ora mostra tutto ciò che parte da solo e quale app l’ha aggiunto, e spegne le tue attività senza eliminare nulla.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+Nelle Impostazioni, la nuova pagina Attività in background elenca le app che si aprono al login, i servizi in background, gli aiutanti nascosti dentro le app e i resti delle app eliminate. Per ogni attività vedi quale app l’ha aggiunta, se è in funzione adesso e dove si trova il suo file. Con un clic il file compare nel Finder.
+
+Le tue attività si spengono e si riaccendono con un pulsante. Non viene eliminato nulla. Per le attività di tutti gli utenti e di tutto il Mac, il pulsante apre Elementi login in Impostazioni di Sistema.
+
+Nella versione del Mac App Store la pagina mostra le attività, e i suoi pulsanti aprono Elementi login.
+
+---
+
 ## <a id="v1.42.0"></a>Guarda quanto è caldo il Mac all’interno
 
 <sub>1.42.0 · 13 ottobre 2026</sub>

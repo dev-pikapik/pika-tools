@@ -219,7 +219,11 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br><b>Nhiệt độ</b>
 <br>Xem bên trong máy Mac nóng đến mức nào, từ bộ xử lý đến pin.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+<br><b>Tác vụ nền</b>
+<br>Xem những gì đang chạy nền và chúng từ đâu ra.
+</td>
 </tr></tbody>
 </table>
 
@@ -310,6 +314,8 @@ Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơ
 
 **Nhiệt độ.** Mở Cài đặt › Nhiệt độ để xem bên trong máy Mac nóng đến mức nào. Ở trên cùng, một từ tóm tắt tất cả, từ “Bình thường” đến “Rất nóng”, kèm một dòng cho biết máy Mac đang chạy hết tốc độ hay đang chậm lại để hạ nhiệt. Bên dưới, mỗi bộ phận có một dòng riêng với tên dễ hiểu thay cho mã cảm biến: bộ xử lý, đồ họa, bộ nhớ, ổ lưu trữ, Wi-Fi và pin, tùy theo cảm biến mà máy Mac của bạn có. Mỗi dòng hiện số độ và một thanh ngắn chuyển sang xanh lá, vàng hoặc cam theo mức bình thường của bộ phận đó. Các con số cập nhật mỗi hai giây và chỉ khi bạn đang xem, nên gần như không làm nặng máy Mac. Không cần mật khẩu hay quyền nào. Bạn cũng có thể thêm dòng “Nhiệt độ” vào bảng điều khiển trên thanh menu. Phiên bản Mac App Store chỉ hiện mức chung.
 
+Trang **Tác vụ nền** cho thấy mọi thứ tự khởi động trên Mac của bạn: ứng dụng mở khi đăng nhập, dịch vụ nền, trình trợ giúp nằm bên trong ứng dụng và tệp còn sót của những ứng dụng bạn đã gỡ. Mỗi tác vụ cho biết ứng dụng nào đã thêm nó, nó có đang chạy ngay lúc này không và tệp của nó nằm ở đâu; chỉ cần nhấp một lần là tệp hiện ra trong Finder. Tác vụ của riêng bạn tắt được bằng một nút và bật lại cũng dễ như vậy, không có gì bị xóa. Tác vụ cho mọi người dùng và cho cả máy Mac thuộc về macOS, nên nút của chúng mở Mục đăng nhập trong Cài đặt hệ thống. Trong phiên bản Mac App Store, trang này chỉ hiển thị các tác vụ: bạn cấp quyền truy cập thư mục chính một lần trong cửa sổ Mở quen thuộc, còn các nút sẽ mở Mục đăng nhập.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
@@ -355,6 +361,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Dock**: thu nhỏ hoặc ẩn bằng một lần bấm trong Dock, giữ Dock trên một màn hình và đưa Dock trở lại.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
 - **Gỡ ứng dụng**: gỡ một ứng dụng cùng các tệp của nó, đặt lại tất cả sau này và dọn những gì ứng dụng đã gỡ để lại.
+- **Tác vụ nền**: mọi thứ chạy nền, ứng dụng nào đã thêm chúng, và một nút để tắt tác vụ của riêng bạn rồi bật lại.
 - **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.
 - **Thú cưng**: bật hoặc tắt thú cưng, cho nó trò chuyện, sống theo nhịp của bạn và chơi bóng, chọn quần áo cho nó và xem giải thưởng của bạn.
 - **Quyền**: mọi quyền pikapik dùng, mỗi quyền có trạng thái và một nút để cho phép hoặc tắt. Công cụ thiếu quyền sẽ hiện mờ màu xám, bấm vào đó sẽ mở trang này đúng dòng cần.

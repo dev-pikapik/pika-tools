@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.43.0"></a>Mira qué se ejecuta en segundo plano
+
+<sub>1.43.0 · 13 de octubre de 2026</sub>
+
+pikapik ahora muestra todo lo que arranca solo y qué app lo añadió, y apaga tus propias tareas sin borrar nada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.43.0/background-dark.png"><img src="../media/whats-new/1.43.0/background-light.png" width="340" alt=""></picture>
+
+En Ajustes, la nueva página Tareas en segundo plano muestra las apps que se abren al iniciar sesión, los servicios en segundo plano, los ayudantes metidos dentro de las apps y los restos de apps eliminadas. Cada tarea indica qué app la añadió, si está en marcha ahora y dónde está su archivo. Con un clic ves el archivo en el Finder.
+
+Tus propias tareas se apagan y vuelven a encenderse con un botón. No se borra nada. En las tareas para todos los usuarios y para todo el Mac, el botón abre Ítems de inicio en Ajustes del Sistema.
+
+En la versión de la Mac App Store, la página muestra las tareas, y sus botones abren Ítems de inicio.
+
+---
+
 ## <a id="v1.42.0"></a>Mira lo caliente que está tu Mac por dentro
 
 <sub>1.42.0 · 13 de octubre de 2026</sub>
