@@ -1246,81 +1246,92 @@ private struct BackgroundCard: View {
 }
 
 private struct PortsCard: View {
-    static let durations = [1.0, 0.14, 0.14, 0.14, 0.75, 1.15, 0.15, 1.25, 0.15, 0.45, 1.8, 0.6]
+    static let durations = [1.0, 0.14, 0.14, 0.14, 0.75, 1.15, 0.15, 0.4, 1.1, 0.15, 0.45, 1.8, 0.12, 0.12, 0.12, 0.4, 0.6]
     static var length: Double { durations.reduce(0, +) }
+    private static let typing = ["", "3", "30", "300", "3000", "3000", "3000", "3000", "3000", "3000", "3000", "3000", "300", "30", "3", "", ""]
     private static let rest = CGPoint(x: 286, y: 100)
     private static let freeUp = CGPoint(x: 225, y: 65)
-    private static let quit = CGPoint(x: 177, y: 72)
-    private static let programs: [(name: CGFloat, folder: CGFloat, port: String)] = [(30, 54, "3000"), (42, 44, "8000"), (50, 62, "5432")]
+    private static let quit = CGPoint(x: 174, y: 95.5)
+    private static let programs: [(name: CGFloat, folder: CGFloat, port: String)] = [(22, 54, "3000"), (42, 44, "8000"), (50, 62, "5432")]
     private static let icon = NSWorkspace.shared.icon(for: .unixExecutable)
+    @Environment(\.colorScheme) private var scheme
 
     var body: some View {
         IllustrationRow(loop: Self.durations) { tick in
             let step = tick % Self.durations.count
-            let typed = (1...10).contains(step) ? min(step, 4) : 0
-            let asking = (7...8).contains(step)
+            let query = Self.typing[step]
+            let asking = (7...9).contains(step)
             Stage {
                 ArtWindow(size: CGSize(width: 236, height: 108)) { Color.clear }
                     .position(x: 150, y: 64)
-                search(typed: typed, free: step == 10)
+                search(query, caret: !asking, free: (11...14).contains(step))
                     .frame(width: 220, height: 40, alignment: .top)
-                    .position(x: 150, y: 50)
-                list(all: typed == 0, pressed: step == 6)
-                    .opacity((9...10).contains(step) ? 0 : 1)
+                    .position(x: 150, y: 51)
+                list(all: query.isEmpty, pressed: step == 6)
+                    .opacity((10...15).contains(step) ? 0 : 1)
                     .frame(width: 220, height: 60, alignment: .top)
-                    .position(x: 150, y: 85)
-                alert(pressed: step == 8)
+                    .position(x: 150, y: 86)
+                if (6...7).contains(step) { ArtRipple().position(Self.freeUp) }
+                alert(pressed: step == 9)
                     .scaleEffect(asking ? 1 : 0.94, anchor: .top)
                     .opacity(asking ? 1 : 0)
-                    .position(x: 150, y: 57)
-                if (6...7).contains(step) { ArtRipple().position(Self.freeUp) }
-                if (8...9).contains(step) { ArtRipple().position(Self.quit) }
-                ArtCursor(pressed: step == 6 || step == 8)
-                    .cursor(at: (5...6).contains(step) ? Self.freeUp : (7...9).contains(step) ? Self.quit : Self.rest)
+                    .position(x: 150, y: 71)
+                if (9...10).contains(step) { ArtRipple().position(Self.quit) }
+                ArtCursor(pressed: step == 6 || step == 9)
+                    .cursor(at: (5...7).contains(step) ? Self.freeUp : (8...10).contains(step) ? Self.quit : Self.rest)
             }
             .animation(.smooth(duration: 0.35), value: step)
         }
     }
 
-    private func search(typed: Int, free: Bool) -> some View {
+    private func search(_ query: String, caret: Bool, free: Bool) -> some View {
         VStack(spacing: 0) {
             HStack(spacing: 4) {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 8, weight: .medium))
                     .foregroundStyle(.secondary)
                 HStack(spacing: 1) {
-                    if typed > 0 {
-                        Text(verbatim: String("3000".prefix(typed)))
+                    if !query.isEmpty {
+                        Text(verbatim: query)
                             .font(.system(size: 9, weight: .medium))
                             .monospacedDigit()
                     }
-                    Rectangle().fill(Color.primary.opacity(0.8)).frame(width: 1, height: 10)
-                    if typed == 0 {
+                    Rectangle().fill(Color.primary.opacity(caret ? 0.8 : 0)).frame(width: 1, height: 10)
+                    if query.isEmpty {
                         Capsule().fill(Color.primary.opacity(0.14)).frame(width: 64, height: 3.5).padding(.leading, 2)
                     }
                 }
+                .transaction { $0.animation = nil }
                 Spacer(minLength: 0)
+                if !query.isEmpty {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 8))
+                        .foregroundStyle(.tertiary)
+                        .transaction { $0.animation = nil }
+                }
             }
             .padding(.horizontal, 8)
             .frame(height: 20)
             if free {
-                divider(inset: 8)
                 HStack(spacing: 4) {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 9))
                         .foregroundStyle(.white, Art.green)
                     Capsule().fill(Color.primary.opacity(0.4)).frame(width: 18, height: 3.5)
-                    Text(verbatim: "3000")
+                    Text(verbatim: query)
                         .font(.system(size: 9, weight: .semibold))
                         .monospacedDigit()
                     Capsule().fill(Color.primary.opacity(0.4)).frame(width: 30, height: 3.5)
                     Spacer(minLength: 0)
                 }
+                .transaction { $0.animation = nil }
                 .padding(.horizontal, 8)
                 .frame(height: 20)
+                .overlay(alignment: .top) { divider(inset: 8) }
                 .transition(.opacity)
             }
         }
+        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         .background(Self.box)
     }
 
@@ -1328,11 +1339,14 @@ private struct PortsCard: View {
         VStack(spacing: 0) {
             ForEach(Self.programs.indices, id: \.self) { index in
                 if index == 0 || all {
-                    if index > 0 { divider(inset: 29) }
                     row(Self.programs[index], pressed: index == 0 && pressed)
+                        .overlay(alignment: .top) {
+                            if index > 0 { divider(inset: 29) }
+                        }
                 }
             }
         }
+        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         .background(Self.box)
     }
 
@@ -1360,34 +1374,40 @@ private struct PortsCard: View {
             }
         }
         .padding(.horizontal, 8)
-        .frame(height: 20)
+        .frame(height: 18)
     }
 
     private func alert(pressed: Bool) -> some View {
-        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: 7, style: .continuous)
+        let dark = scheme == .dark
         return VStack(spacing: 0) {
-            Capsule().fill(Color.primary.opacity(0.55)).frame(width: 54, height: 4.5)
-            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 92, height: 3).padding(.top, 7)
-            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 70, height: 3).padding(.top, 4)
+            Image(nsImage: NSApp.applicationIconImage)
+                .resizable()
+                .frame(width: 14, height: 14)
+            Capsule().fill(Color.primary.opacity(0.55)).frame(width: 52, height: 4.5).padding(.top, 6)
+            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 80, height: 3).padding(.top, 6)
+            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 60, height: 3).padding(.top, 4)
             HStack(spacing: 6) {
-                Capsule().fill(Color.primary.opacity(0.1))
-                    .overlay(Capsule().fill(Color.primary.opacity(0.4)).frame(width: 20, height: 3))
+                Capsule().fill(Color.primary.opacity(dark ? 0.16 : 0.1))
+                    .overlay(Capsule().fill(Color.primary.opacity(0.4)).frame(width: 18, height: 3))
                 Capsule().fill(Color.accentColor)
-                    .overlay(Capsule().fill(.white).frame(width: 16, height: 3))
-                    .brightness(pressed ? -0.12 : 0)
+                    .overlay(Capsule().fill(.white).frame(width: 14, height: 3))
+                    .brightness(pressed ? -0.2 : 0)
             }
-            .frame(height: 14)
-            .padding(.top, 9)
+            .frame(height: 13)
+            .padding(.top, 8.5)
         }
-        .padding(10)
-        .frame(width: 124, height: 64)
-        .background(Color(nsColor: .windowBackgroundColor), in: shape)
-        .overlay(shape.hairline(Color.primary.opacity(0.14)))
-        .shadow(color: .black.opacity(0.22), radius: 8, y: 4)
+        .padding(9)
+        .frame(width: 107, height: 80)
+        .background(Color(nsColor: .windowBackgroundColor).overlay(Color.white.opacity(dark ? 0.08 : 0)))
+        .clipShape(shape)
+        .overlay(shape.hairline(Color.primary.opacity(dark ? 0.22 : 0.14)))
+        .compositingGroup()
+        .shadow(color: .black.opacity(dark ? 0.4 : 0.2), radius: 5, y: 3)
     }
 
     private func divider(inset: CGFloat) -> some View {
-        Rectangle().fill(Color.primary.opacity(0.08)).frame(height: 0.5).padding(.leading, inset)
+        Rectangle().fill(Color.primary.opacity(0.08)).frame(height: 0.5).padding(.leading, inset).padding(.trailing, 8)
     }
 
     private static var box: some View {
