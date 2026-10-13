@@ -110,7 +110,7 @@ final class ScrollTap {
 
     func refresh() {
         stop()
-        if step != nil || direction != nil { start() }
+        if step != nil || direction != nil, AXIsProcessTrusted() { start() }
     }
 
     private func start() {
@@ -246,7 +246,7 @@ private struct ScrollStepScene: View {
         let step = min(distance * Self.scale, 112)
         Stage {
             ArtMouse(wheel: clicking)
-                .scaleEffect(2.3)
+                .artScale(2.3)
                 .position(x: 62, y: 64)
             ArtWindow(size: CGSize(width: 140, height: 108)) {
                 VStack(spacing: 0) {

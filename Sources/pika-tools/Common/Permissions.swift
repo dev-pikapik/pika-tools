@@ -17,8 +17,13 @@ enum Permission: CaseIterable {
     private var info: (icon: String, symbol: String, title: String, subtitle: String) {
         switch self {
         case .accessibility:
+            #if APPSTORE
             ("com.apple.graphic-icon.accessibility", "accessibility",
-             String(localized: "Accessibility"), String(localized: "Lets the app change clicks and keys and manage windows"))
+             Self.accessibilityTitle, String(localized: "Lets the app change clicks and keys"))
+            #else
+            ("com.apple.graphic-icon.accessibility", "accessibility",
+             Self.accessibilityTitle, String(localized: "Lets the app change clicks and keys and manage windows"))
+            #endif
         case .inputMonitoring:
             ("com.apple.graphic-icon.input-monitoring", "keyboard.badge.eye",
              String(localized: "Input Monitoring"), String(localized: "Lets the app see clicks and keys"))
@@ -47,6 +52,11 @@ enum Permission: CaseIterable {
              String(localized: "Full Disk Access"), String(localized: "Lets the app find permissions left by deleted apps"))
         #endif
         }
+    }
+
+    static var accessibilityTitle: String {
+        ProcessInfo.processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 27, minorVersion: 0, patchVersion: 0))
+            ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
     }
 
     var icon: String { info.icon }
@@ -313,6 +323,24 @@ final class Permissions {
         let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?\(pane)")!
         NSWorkspace.shared.open(url)
     }
+
+    #if APPSTORE
+    static var privacyLists: [(title: String, icon: String, symbol: String, pane: String)] {
+        [
+            (Permission.accessibilityTitle, "com.apple.graphic-icon.accessibility", "accessibility", "Privacy_Accessibility"),
+            (String(localized: "Screen Recording"), "com.apple.graphic-icon.screen-recording", "rectangle.dashed.badge.record", "Privacy_ScreenCapture"),
+            (String(localized: "Input Monitoring"), "com.apple.graphic-icon.input-monitoring", "keyboard.badge.eye", "Privacy_ListenEvent"),
+            (String(localized: "Full Disk Access"), "com.apple.graphic-icon.privacy", "hand.raised.fill", "Privacy_AllFiles"),
+            (String(localized: "Automation"), "com.apple.graphic-icon.automation", "gearshape.2", "Privacy_Automation"),
+            (String(localized: "App Management"), "", "app.badge.checkmark", "Privacy_AppBundles"),
+            (String(localized: "Files and Folders"), "", "folder.fill", "Privacy_FilesAndFolders"),
+            (String(localized: "Camera"), "com.apple.graphic-icon.video-camera", "camera", "Privacy_Camera"),
+            (String(localized: "Microphone"), "com.apple.graphic-icon.microphone", "mic", "Privacy_Microphone"),
+            (String(localized: "Developer Tools"), "com.apple.graphic-icon.developer-tools", "hammer", "Privacy_DevTools"),
+            (String(localized: "Bluetooth"), "com.apple.graphic-icon.bluetooth", "dot.radiowaves.left.and.right", "Privacy_Bluetooth"),
+        ]
+    }
+    #endif
 }
 
 private struct NeedsPermission: ViewModifier {
@@ -404,7 +432,30 @@ struct PermissionsView: View {
                     }
                 }
             }
-            #if !APPSTORE
+            #if APPSTORE
+            Section {
+                ForEach(Permissions.privacyLists, id: \.pane) { list in
+                    LabeledContent {
+                        Button("Open", systemImage: "arrow.up.forward.app") { permissions.openSettings(list.pane) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            PermissionIcon(type: list.icon, symbol: list.symbol)
+                            Text(list.title)
+                        }
+                    }
+                    .settingAnchor(list.pane)
+                }
+            } header: {
+                Text("Left by deleted apps")
+            } footer: {
+                Text("When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .settingAnchor(String(localized: "Left by deleted apps"))
+            #else
             LeftoverPermissionsSection()
             #endif
         }

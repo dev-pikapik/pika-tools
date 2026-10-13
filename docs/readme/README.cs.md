@@ -141,72 +141,77 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br>Tlačítka 4 a 5 jdou zpět a vpřed, jako přejetí prsty.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Skrytí tlačítkem myši</b>
+<br>Jedno stisknutí skryje aplikaci v popředí, jako ⌘H. Aplikace dál běží.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Posouvání po řádcích</b>
 <br>Každé cvaknutí kolečka posune stejně, ať točíte jakkoli rychle.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Směr posouvání</b>
 <br>Jeden směr pro trackpad, jiný pro myš.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez zrychlení ukazatele</b>
 <br>Ukazatel ujede přesně tolik co vaše ruka.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Opakovat drženou klávesu</b>
 <br>Podržte klávesu a píše se znovu a znovu, bez nabídky diakritiky.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home a End</b>
 <br>Při psaní skok na začátek nebo konec řádku.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animace</b>
 <br>Zrychlete Dock, okna a Rychlý náhled, klidně až na okamžité.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Oprávnění smazaných aplikací</b>
 <br>Odstraňte oprávnění, která si macOS nechává pro už smazané aplikace.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mazlíček na ploše</b>
 <br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete. Když píšete, ožije, a když odejdete, podřimuje.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Odinstalace aplikací</b>
 <br>Odeberte aplikaci s jejími soubory. Vše lze vrátit.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Zobrazit FPS</b>
 <br>Malé počítadlo v rohu, který si zvolíte, ukazuje, jak plynule hra běží.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archivy</b>
 <br>Pravým kliknutím rozbalíte RAR a další archivy nebo sbalíte soubory do archivu ZIP.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Držet Dock na jednom displeji</b>
@@ -252,7 +257,7 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 pikapik potřebuje dvě oprávnění. Při prvním spuštění otevře nastavení na stránce Oprávnění, která vás provede krok za krokem, a macOS zobrazí vlastní dotazy. Přejděte do **Nastavení systému › Soukromí a zabezpečení** a zapněte pikapik v seznamech:
 
 - **Zpřístupnění**, aby aplikace mohla změnit stisk klávesy nebo kliknutí dřív, než se dostane k jiným aplikacím.
-- **Sledování vstupu**, aby aplikace vůbec viděla stisky kláves a kliknutí.
+- **Sledování vstupu**, aby aplikace viděla stisky kláves a kliknutí, aniž by je měnila. Tak funguje přepínání jazyka.
 
 Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
@@ -287,6 +292,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed ve Finderu, v Safari a dalších aplikacích Apple i v mnoha dalších aplikacích, stejně jako přejetí po trackpadu. Aplikace, které tato tlačítka zpracovávají samy, je dostanou beze změny. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 
+**Tlačítko myši skryje aktuální aplikaci.** Zapněte **Tlačítko myši skryje aktuální aplikaci** v Nastavení › Myš a stiskněte tlačítko, které chcete používat, třeba prostřední nebo boční. Potom jedno stisknutí skryje aplikaci v popředí, úplně stejně jako ⌘H: aplikace dál běží a kliknutím na její ikonu v Docku ji vrátíte zpět. Když hrajete a je zapnutý Herní režim, tlačítko ve hře funguje jako obvykle. Ve výchozím stavu vypnuto.
+
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
 **Minimalizovat nebo skrýt kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a všechna její okna sjedou do Docku. Dalším kliknutím je všechna vrátíte. Kliknutí můžete nastavit i tak, aby skrylo celou aplikaci, jako ⌘H. Ve výchozím stavu vypnuto.
@@ -299,7 +306,7 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Enter otevírá soubory ve Finderu.** Vyberte soubory v okně Finderu nebo na ploše a stiskněte Return nebo Enter, soubory se otevřou. F2 nebo fn F2 přejmenuje vybraný soubor. V textových polích, například když píšete název, klávesy fungují jako obvykle. Ve výchozím stavu vypnuto.
 
-**⌘X vyjímá soubory ve Finderu.** Vyberte soubory a stiskněte ⌘X, otevřete cílovou složku a stiskněte ⌘V: soubory se tam přesunou místo zkopírování. ⌘C vyjmutí zruší. Ve výchozím stavu vypnuto.
+**⌘X vyjímá soubory ve Finderu.** Vyberte soubory a stiskněte ⌘X, otevřete cílovou složku a stiskněte ⌘V: soubory se tam přesunou místo zkopírování. ⌘C vyjmutí zruší. Ve verzi z Mac App Store ⌘V dál vkládá kopii: soubory přesunete tak, že kliknete na ikonu pikapik v řádku nabídek a vyberete **Přesunout položky sem**, nebo stisknete ⌥⌘V. Ve výchozím stavu vypnuto.
 
 **Delete maže soubory ve Finderu.** Vyberte soubory a stiskněte ⌫ nebo ⌦ (fn ⌫ na notebooku) – přesunou se do Koše, stejně jako s ⌘⌫. Když přejmenováváte soubor, hledáte nebo píšete do jiného pole, klávesy mažou písmena jako obvykle. Ve výchozím stavu vypnuto.
 
@@ -381,7 +388,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Porty**: který program zabral který port, jeho adresy a podrobnosti a tlačítko, které port uvolní.
 - **Zvuk**: hlasitost aplikací, posuvník a tlačítko ztlumení pro každou aplikaci, která přehrává zvuk.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End, oprava špatného rozložení.
-- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
+- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka, tlačítko pro skrytí aktuální aplikace.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: minimalizace nebo skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
@@ -428,7 +435,7 @@ Oba způsoby aplikaci ukončí, odeberou ji z položek po přihlášení a smaž
 <summary>Časté dotazy</summary>
 
 **Proč potřebuje dvě oprávnění?**
-macOS dělí přístup ke klávesnici a myši na dvě části. Sledování vstupu aplikaci dovolí události vidět, Zpřístupnění jí dovolí je měnit. K zablokování zkratky jsou potřeba obě.
+macOS dělí přístup ke klávesnici a myši na dvě části. Zpřístupnění aplikaci dovolí změnit stisk klávesy nebo kliknutí a většině funkcí stačí jen to. Sledování vstupu jí dovolí se jen dívat, a to na přepínání jazyka stačí.
 
 **macOS hlásí, že aplikace je od neidentifikovaného vývojáře.**
 pikapik je podepsaná vývojářem a prošla kontrolou společnosti Apple na škodlivý software, takže by se tato zpráva neměla zobrazovat. Pokud se přesto zobrazí, otevřete **Nastavení systému › Soukromí a zabezpečení** a klikněte na **Přesto otevřít**.

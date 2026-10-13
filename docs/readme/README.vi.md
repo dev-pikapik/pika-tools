@@ -141,72 +141,77 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br>Nút 4 và 5 để quay lại và tiếp, như vuốt trên bàn di chuột.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Ẩn bằng nút chuột</b>
+<br>Nhấn một lần là ẩn ứng dụng ở phía trước, như ⌘H. Ứng dụng vẫn chạy.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Cuộn theo dòng</b>
 <br>Mỗi nấc bánh xe cuộn như nhau, dù bạn xoay nhanh đến đâu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Hướng cuộn</b>
 <br>Một hướng cho bàn di chuột, hướng khác cho chuột.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Không tăng tốc con trỏ</b>
 <br>Con trỏ đi đúng bằng quãng tay bạn di.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Lặp lại phím khi giữ</b>
 <br>Giữ một phím để gõ lặp lại, không hiện menu dấu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home và End</b>
 <br>Nhảy về đầu hoặc cuối dòng khi đang gõ.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Hoạt ảnh</b>
 <br>Tăng tốc Dock, cửa sổ và Xem nhanh, cho đến tức thì.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Quyền của ứng dụng đã xóa</b>
 <br>Gỡ các quyền mà macOS vẫn giữ cho những ứng dụng bạn đã xóa.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Thú cưng trên màn hình nền</b>
 <br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy. Chọn đồ cho nó trong tủ quần áo riêng và nhận giải thưởng khi cùng chơi. Nó hăng hái khi bạn gõ phím và ngủ gà ngủ gật khi bạn rời đi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Gỡ ứng dụng</b>
 <br>Gỡ ứng dụng cùng các tệp của nó. Có thể hoàn lại tất cả.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Hiện FPS</b>
 <br>Một bộ đếm nhỏ ở góc bạn chọn cho biết trò chơi chạy mượt đến đâu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Tệp lưu trữ</b>
 <br>Giải nén RAR và các tệp lưu trữ khác, hoặc gói tệp thành ZIP, chỉ bằng một cú bấm chuột phải.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Giữ Dock trên một màn hình</b>
@@ -252,7 +257,7 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 pikapik cần hai quyền. Lần đầu mở, ứng dụng hiện phần cài đặt ở trang Quyền để hướng dẫn bạn từng bước, và macOS hiện các yêu cầu của riêng nó. Vào **Cài đặt hệ thống › Quyền riêng tư & Bảo mật** và bật pikapik trong:
 
 - **Trợ năng**, để ứng dụng có thể thay đổi một lần nhấn phím hoặc lần bấm trước khi nó đến các ứng dụng khác.
-- **Theo dõi đầu vào**, để ứng dụng có thể thấy các lần nhấn phím và lần bấm.
+- **Theo dõi đầu vào**, để ứng dụng có thể thấy các lần nhấn phím và lần bấm mà không thay đổi chúng. Tính năng chuyển ngôn ngữ hoạt động theo cách này.
 
 Ứng dụng nhận ra thay đổi trong vài giây, không cần khởi động lại.
 
@@ -287,6 +292,8 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Nút bên để quay lại và tiếp.** Nút chuột 4 và 5 giúp lùi và tiến trong Finder, Safari và các ứng dụng khác của Apple cũng như trong nhiều ứng dụng khác, giống như vuốt trên bàn di chuột. Các ứng dụng tự xử lý hai nút này sẽ nhận chúng nguyên trạng. Nếu chuột của bạn có hai nút này ngược nhau, hãy bật **Đổi chỗ nút bên**. Tắt theo mặc định.
 
+**Nút chuột ẩn ứng dụng hiện tại.** Bật **Ẩn ứng dụng hiện tại bằng nút chuột** trong Cài đặt › Chuột rồi nhấn nút bạn muốn dùng, chẳng hạn nút giữa hoặc một nút bên. Từ đó, nhấn một lần là ẩn ứng dụng ở phía trước, giống hệt ⌘H: ứng dụng vẫn chạy, và bấm vào biểu tượng của nó trong Dock sẽ đưa nó trở lại. Khi bạn chơi game với Chế độ trò chơi đang bật, nút vẫn hoạt động trong game như thường. Tắt theo mặc định.
+
 **Thoát khi đóng cửa sổ cuối cùng.** Đóng cửa sổ cuối cùng của một ứng dụng và ứng dụng sẽ thoát. Finder vẫn mở, các ứng dụng có cửa sổ ở màn hình nền khác hoặc trong Dock cũng vậy. Bạn có thể lập danh sách những ứng dụng không bao giờ thoát theo cách này. Tắt theo mặc định.
 
 **Thu nhỏ hoặc ẩn bằng một lần bấm trong Dock.** Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, mọi cửa sổ của ứng dụng sẽ thu xuống Dock. Bấm lần nữa để hiện lại tất cả. Bạn cũng có thể chọn để lần bấm ẩn cả ứng dụng, giống như ⌘H. Tắt theo mặc định.
@@ -299,7 +306,7 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Enter mở tệp trong Finder.** Chọn tệp trong cửa sổ Finder hoặc trên màn hình nền rồi nhấn Return hoặc Enter, tệp sẽ mở ra. F2 hoặc fn F2 đổi tên tệp đã chọn. Trong ô nhập văn bản, chẳng hạn khi gõ tên, các phím vẫn hoạt động như bình thường. Mặc định tắt.
 
-**⌘X cắt tệp trong Finder.** Chọn tệp rồi nhấn ⌘X, mở thư mục muốn đến rồi nhấn ⌘V, tệp sẽ được chuyển đến đó thay vì sao chép. ⌘C hủy thao tác cắt. Mặc định tắt.
+**⌘X cắt tệp trong Finder.** Chọn tệp rồi nhấn ⌘X, mở thư mục muốn đến rồi nhấn ⌘V, tệp sẽ được chuyển đến đó thay vì sao chép. ⌘C hủy thao tác cắt. Trong phiên bản Mac App Store, ⌘V vẫn dán một bản sao: để di chuyển tệp, hãy bấm biểu tượng pikapik trên thanh menu rồi chọn **Di chuyển mục tới đây**, hoặc nhấn ⌥⌘V. Mặc định tắt.
 
 **Delete xóa tệp trong Finder.** Chọn tệp rồi nhấn ⌫ hoặc ⌦ (fn ⌫ trên máy tính xách tay), tệp sẽ vào Thùng rác, giống như ⌘⌫. Khi bạn đang đổi tên tệp, tìm kiếm hoặc gõ trong ô khác, các phím xóa chữ như bình thường. Mặc định tắt.
 
@@ -381,7 +388,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cổng**: chương trình nào đang chiếm cổng nào, địa chỉ và chi tiết, cùng một nút để giải phóng cổng.
 - **Âm thanh**: âm lượng ứng dụng, thanh trượt và nút tắt tiếng cho mỗi ứng dụng phát âm thanh.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End, sửa từ gõ nhầm bố cục.
-- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
+- **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên, nút ẩn ứng dụng hiện tại.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: thu nhỏ hoặc ẩn bằng một lần bấm trong Dock, giữ Dock trên một màn hình và đưa Dock trở lại.
 - **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
@@ -428,7 +435,7 @@ Cả hai cách đều thoát ứng dụng, gỡ nó khỏi các mục đăng nh�
 <summary>Câu hỏi thường gặp</summary>
 
 **Vì sao cần hai quyền?**
-macOS chia quyền truy cập bàn phím và chuột làm hai. Theo dõi đầu vào cho phép ứng dụng thấy các sự kiện, còn Trợ năng cho phép thay đổi chúng. Muốn chặn một phím tắt thì cần cả hai.
+macOS chia quyền truy cập bàn phím và chuột làm hai. Trợ năng cho phép ứng dụng thay đổi một lần nhấn phím hoặc lần bấm, và hầu hết tính năng chỉ cần quyền này. Theo dõi đầu vào chỉ cho phép quan sát, và như vậy là đủ để chuyển ngôn ngữ.
 
 **macOS báo ứng dụng đến từ nhà phát triển không xác định.**
 pikapik được nhà phát triển ký và vượt qua bước kiểm tra phần mềm độc hại của Apple, nên thông báo này bình thường sẽ không xuất hiện. Nếu nó vẫn xuất hiện, hãy mở **Cài đặt hệ thống › Quyền riêng tư & Bảo mật** và bấm **Vẫn mở**.

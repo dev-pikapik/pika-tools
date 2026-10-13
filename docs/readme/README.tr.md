@@ -141,72 +141,77 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br>4 ve 5 numaralı tuşlar, kaydırma hareketi gibi geri ve ileri gider.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Fare düğmesiyle gizleme</b>
+<br>Tek basış öndeki uygulamayı ⌘H gibi gizler. Uygulama çalışmaya devam eder.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Satır satır kaydır</b>
 <br>Tekerleğin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı miktarda kaydırır.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Kaydırma yönü</b>
 <br>İzleme dörtgeni için bir yön, fare için başka bir yön.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>İmleç hızlandırma yok</b>
 <br>İmleç tam olarak elinizin gittiği kadar gider.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Basılı tutulan tuşu tekrarla</b>
 <br>Bir tuşu basılı tutun, aksan menüsü çıkmadan tekrar tekrar yazsın.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home ve End</b>
 <br>Yazarken satırın başına ya da sonuna atlayın.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasyonlar</b>
 <br>Dock’u, pencereleri ve Hızlı Bakış’ı hızlandırın, anında olacak kadar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Silinen uygulamaların izinleri</b>
 <br>macOS’in silinmiş uygulamalar için sakladığı izinleri kaldırın.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Masaüstünde evcil dost</b>
 <br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın. Onu gardırobundaki kıyafetlerle giydirin ve birlikte oynarken ödüller kazanın. Siz yazarken canlanır, uzaklaştığınızda uyuklar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Uygulamaları Kaldır</b>
 <br>Uygulamayı dosyalarıyla kaldırın. Hepsi geri konabilir.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPS’yi göster</b>
 <br>Küçük bir sayaç, seçtiğiniz köşede oyunun ne kadar akıcı çalıştığını gösterir.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arşivler</b>
 <br>RAR ve diğer arşivleri açın ya da dosyaları sağ tıklamayla bir ZIP’e toplayın.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock’u tek ekranda tut</b>
@@ -252,7 +257,7 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 pikapik’in iki izne ihtiyacı vardır. İlk açılışta ayarlar, sizi adım adım yönlendiren İzinler sayfasında açılır ve macOS kendi uyarılarını gösterir. **Sistem Ayarları › Gizlilik ve Güvenlik** bölümüne gidin ve şu listelerde pikapik’i açın:
 
 - **Erişilebilirlik**: Uygulama bir tuş basışını veya tıklamayı diğer uygulamalara ulaşmadan önce değiştirebilsin diye.
-- **Girdi İzleme**: Uygulama tuş basışlarını ve tıklamaları görebilsin diye.
+- **Girdi İzleme**: Uygulama tuş basışlarını ve tıklamaları değiştirmeden görebilsin diye. Dil değiştirme böyle çalışır.
 
 Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya gerek yoktur.
 
@@ -287,6 +292,8 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Yan tuşlarla geri ve ileri.** Farenin 4. ve 5. düğmeleri Finder’da, Safari’de ve diğer Apple uygulamalarında, ayrıca birçok başka uygulamada geri ve ileri gider, tıpkı izleme dörtgeninde kaydırma hareketi gibi. Bu düğmeleri kendisi işleyen uygulamalar onları olduğu gibi alır. Farenizde ters yerdeyseler **Yan tuşların yerini değiştir** seçeneğini açın. Varsayılan olarak kapalıdır.
 
+**Fare düğmesi geçerli uygulamayı gizler.** Ayarlar › Fare sayfasında **Fare düğmesiyle geçerli uygulamayı gizle** seçeneğini açın ve kullanmak istediğiniz düğmeye basın, örneğin orta düğmeye ya da bir yan düğmeye. Bundan sonra tek basış öndeki uygulamayı tıpkı ⌘H gibi gizler: uygulama çalışmaya devam eder, Dock’taki simgesine tıklayınca geri gelir. Oyun Modu açıkken oyun oynadığınız sürece düğme oyunda her zamanki gibi çalışır. Varsayılan olarak kapalıdır.
+
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
 **Dock’ta tıklayarak küçült veya gizle.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulamanın tüm pencereleri Dock’a iner. Hepsini geri getirmek için yeniden tıklayın. Tıklamanın ⌘H gibi uygulamanın tamamını gizlemesini de sağlayabilirsiniz. Varsayılan olarak kapalıdır.
@@ -299,7 +306,7 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Enter, Finder’da dosyaları açar.** Bir Finder penceresinde ya da masaüstünde dosyaları seçip Return veya Enter’a basın; dosyalar açılır. F2 veya fn F2 seçili dosyanın adını değiştirir. Metin alanlarında, örneğin bir ad yazarken, tuşlar her zamanki gibi çalışır. Varsayılan olarak kapalı.
 
-**⌘X, Finder’da dosyaları keser.** Dosyaları seçip ⌘X’e basın, hedef klasörü açıp ⌘V’ye basın; dosyalar kopyalanmak yerine oraya taşınır. ⌘C kesmeyi iptal eder. Varsayılan olarak kapalı.
+**⌘X, Finder’da dosyaları keser.** Dosyaları seçip ⌘X’e basın, hedef klasörü açıp ⌘V’ye basın; dosyalar kopyalanmak yerine oraya taşınır. ⌘C kesmeyi iptal eder. Mac App Store sürümünde ⌘V hâlâ bir kopya yapıştırır: dosyaları taşımak için menü çubuğundaki pikapik simgesine tıklayıp **Öğeleri Buraya Taşı**’yı seçin ya da ⌥⌘V’ye basın. Varsayılan olarak kapalı.
 
 **Delete, Finder’da dosyaları siler.** Dosyaları seçip ⌫ veya ⌦ tuşuna (dizüstünde fn ⌫) basın; dosyalar ⌘⌫’taki gibi Çöp Sepeti’ne gider. Bir dosyayı yeniden adlandırırken, arama yaparken veya başka bir alana yazarken tuşlar her zamanki gibi harf siler. Varsayılan olarak kapalı.
 
@@ -381,7 +388,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Portlar**: hangi programın hangi portu tuttuğu, adresleri ve ayrıntıları, portu serbest bırakan bir düğme.
 - **Ses**: uygulama sesi, ses çalan her uygulama için bir sürgü ve bir sessize alma düğmesi.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End, yanlış klavye düzenini düzeltme.
-- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
+- **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler, geçerli uygulamayı gizleyen bir düğme.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
 - **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
 - **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
@@ -428,7 +435,7 @@ Homebrew ile kurduysanız: `brew uninstall --cask --zap pikapik`.
 <summary>Sık sorulan sorular</summary>
 
 **Neden iki izin gerekiyor?**
-macOS klavye ve fare erişimini ikiye ayırır. Girdi İzleme uygulamanın olayları görmesini, Erişilebilirlik ise onları değiştirmesini sağlar. Bir kestirmeyi engellemek için ikisi de gerekir.
+macOS klavye ve fare erişimini ikiye ayırır. Erişilebilirlik uygulamanın bir tuş basışını veya tıklamayı değiştirmesini sağlar ve çoğu özellik için yalnızca bu gerekir. Girdi İzleme ise yalnızca izlemesini sağlar ve dil değiştirmek için bu yeterlidir.
 
 **macOS uygulamanın tanımlanmamış bir geliştiriciden geldiğini söylüyor.**
 pikapik, geliştiricisi tarafından imzalanmıştır ve Apple’ın kötü amaçlı yazılım denetiminden geçer, bu yüzden bu uyarının görünmemesi gerekir. Yine de görünürse **Sistem Ayarları › Gizlilik ve Güvenlik** bölümünü açıp **Yine de Aç** düğmesine tıklayın.

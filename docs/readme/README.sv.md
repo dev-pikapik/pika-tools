@@ -141,72 +141,77 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br>Knapp 4 och 5 går bakåt och framåt, som ett svep.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Göm med en musknapp</b>
+<br>Ett tryck gömmer appen i förgrunden, som ⌘H. Den fortsätter att köras.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Rulla per rad</b>
 <br>Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Rullningsriktning</b>
 <br>En riktning för styrplattan, en annan för musen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ingen pekaracceleration</b>
 <br>Pekaren rör sig exakt lika långt som din hand.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Upprepa en nedhållen tangent</b>
 <br>Håll ned en tangent för att skriva den om och om igen, utan accentmeny.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home och End</b>
 <br>Hoppa till början eller slutet av raden medan du skriver.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationer</b>
 <br>Snabba upp Dock, fönster och Snabbtitt, ända till direkt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Behörigheter för raderade appar</b>
 <br>Ta bort behörigheterna som macOS sparar för appar du redan har raderat.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Husdjur på skrivbordet</b>
 <br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Ta bort appar</b>
 <br>Ta bort en app med filer. Allt kan läggas tillbaka.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Visa FPS</b>
 <br>En liten räknare visar hur smidigt spelet går, i det hörn du väljer.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arkiv</b>
 <br>Packa upp RAR och andra arkiv, eller packa ihop filer till en ZIP, med ett högerklick.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Håll Dock på en skärm</b>
@@ -252,7 +257,7 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 pikapik behöver två behörigheter. Första gången öppnas inställningarna på sidan Behörigheter, som guidar dig steg för steg, och macOS visar sina egna frågor. Gå till **Systeminställningar › Integritet och säkerhet** och slå på pikapik under:
 
 - **Hjälpmedel**, så att appen kan ändra en tangenttryckning eller ett klick innan det når andra appar.
-- **Indataövervakning**, så att appen över huvud taget kan se tangenttryckningar och klick.
+- **Indataövervakning**, så att appen kan se tangenttryckningar och klick utan att ändra dem. Så fungerar språkbytet.
 
 Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 
@@ -287,6 +292,8 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Finder, Safari och andra Apple-appar och i många andra appar, som en svepning på styrplattan. Appar som själva hanterar de här knapparna får dem som de är. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 
+**En musknapp gömmer den aktuella appen.** Slå på **Göm den aktuella appen med en musknapp** i Inställningar › Mus och tryck på knappen du vill använda, till exempel mittknappen eller en sidoknapp. Sedan gömmer ett tryck appen i förgrunden, precis som ⌘H: appen fortsätter att köras, och ett klick på dess symbol i Dock tar tillbaka den. När du spelar med Spelläge på fungerar knappen som vanligt i spelet. Av som standard.
+
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 
 **Minimera eller göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så hamnar alla dess fönster i Dock. Klicka igen för att ta fram dem alla. Du kan också låta klicket gömma hela appen, som ⌘H. Av som standard.
@@ -299,7 +306,7 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Enter öppnar filer i Finder.** Markera filer i ett Finder-fönster eller på skrivbordet och tryck på Return eller Enter, så öppnas de. F2 eller fn F2 byter namn på den markerade filen. I textfält, till exempel när du skriver ett namn, fungerar tangenterna som vanligt. Av som standard.
 
-**⌘X klipper ut filer i Finder.** Markera filer och tryck på ⌘X, öppna mappen du vill ha dem i och tryck på ⌘V, så flyttas filerna dit i stället för att kopieras. ⌘C avbryter utklippningen. Av som standard.
+**⌘X klipper ut filer i Finder.** Markera filer och tryck på ⌘X, öppna mappen du vill ha dem i och tryck på ⌘V, så flyttas filerna dit i stället för att kopieras. ⌘C avbryter utklippningen. I versionen från Mac App Store klistrar ⌘V fortfarande in en kopia: för att flytta filerna klickar du på pikapik-symbolen i menyraden och väljer **Flytta objekt hit**, eller trycker på ⌥⌘V. Av som standard.
 
 **Delete raderar filer i Finder.** Markera filer och tryck på ⌫ eller ⌦ (fn ⌫ på en bärbar dator), så hamnar de i papperskorgen, precis som med ⌘⌫. Medan du byter namn på en fil, söker eller skriver i något annat fält raderar tangenterna bokstäver som vanligt. Av som standard.
 
@@ -381,7 +388,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Portar**: vilket program som har tagit vilken port, dess adresser och detaljer och en knapp som frigör porten.
 - **Ljud**: appvolym, ett reglage och en knapp för att stänga av ljudet för varje app som spelar upp ljud.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End, rättning av fel layout.
-- **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
+- **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar, en knapp som gömmer den aktuella appen.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
@@ -428,7 +435,7 @@ Båda avslutar appen, tar bort den från inloggningsobjekten och raderar den. Sk
 <summary>Vanliga frågor</summary>
 
 **Varför behövs två behörigheter?**
-macOS delar upp åtkomsten till tangentbord och mus i två delar. Indataövervakning låter appen se händelser och Hjälpmedel låter den ändra dem. För att blockera ett kortkommando behövs båda.
+macOS delar upp åtkomsten till tangentbord och mus i två delar. Hjälpmedel låter appen ändra en tangenttryckning eller ett klick, och de flesta funktioner behöver bara det. Indataövervakning låter den bara titta, och det räcker för att byta språk.
 
 **macOS säger att appen kommer från en oidentifierad utvecklare.**
 pikapik är signerad av utvecklaren och klarar Apples kontroll av skadlig programvara, så det här meddelandet bör inte visas. Om det ändå visas öppnar du **Systeminställningar › Integritet och säkerhet** och klickar på **Öppna ändå**.

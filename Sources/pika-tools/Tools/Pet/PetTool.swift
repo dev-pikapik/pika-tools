@@ -76,7 +76,7 @@ final class PetTool: Tool {
     }
 
     private func startTap() {
-        guard let tap = CGEvent.tapCreate(
+        guard Permissions.shared.inputMonitoring, let tap = CGEvent.tapCreate(
             tap: .cgSessionEventTap,
             place: .tailAppendEventTap,
             options: .listenOnly,

@@ -47,7 +47,7 @@ final class SideButtonsTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled { start() }
+        if isEnabled, AXIsProcessTrusted() { start() }
     }
 
     private func start() {
@@ -84,6 +84,7 @@ final class SideButtonsTool: Tool {
         isActive = false
     }
 
+    static let tag: Int64 = 0x70696B61
     private static let swipeApps = ["com.apple.", "com.binarynights.ForkLift", "org.mozilla.firefox", "com.operasoftware.Opera"]
 
     fileprivate func handle(_ event: CGEvent, down: Bool) -> Bool {
@@ -93,7 +94,10 @@ final class SideButtonsTool: Tool {
         let id = app?.bundleIdentifier ?? ""
         let swaps = swapsButtons
         guard !GameModeTool.shared.isPlaying, Self.swipeApps.contains(where: id.hasPrefix) else {
-            if swaps { event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3) }
+            if swaps {
+                event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3)
+                event.setIntegerValueField(.eventSourceUserData, value: Self.tag)
+            }
             return false
         }
         if down { Self.swipe(forward: (button == 4) != swaps) }
@@ -125,7 +129,7 @@ private func sideButtonsCallback(
         DispatchQueue.main.async { tool.refresh() }
     case .otherMouseDown, .otherMouseUp:
         let button = event.getIntegerValueField(.mouseEventButtonNumber)
-        guard button == 3 || button == 4 else { break }
+        guard button == 3 || button == 4, button != HideAppTool.taken, !HideAppTool.isRecording else { break }
         if tool.handle(event, down: type == .otherMouseDown) { return nil }
     default:
         break
@@ -153,7 +157,7 @@ struct SideButtonsArt: View {
             let backPressed = action == 1 && !swapped || action == 2 && swapped
             Stage {
                 ArtMouse(sideButtons: true, back: backPressed, forward: forwardPressed)
-                    .scaleEffect(2.1)
+                    .artScale(2.1)
                     .position(x: 62, y: 66)
                 number("5", pressed: forwardPressed).position(x: 22, y: 61)
                 number("4", pressed: backPressed).position(x: 22, y: 81)

@@ -62,7 +62,7 @@ final class HomeEndTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled { start() }
+        if isEnabled, AXIsProcessTrusted() { start() }
     }
 
     static func target(_ key: Int, _ flags: CGEventFlags, app: String?, excluded: [String]) -> (key: Int, flags: CGEventFlags)? {

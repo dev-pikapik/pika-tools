@@ -90,6 +90,12 @@ final class SettingsSync {
     }
 
     static let shared = SettingsSync()
+    #if APPSTORE
+    static let isAvailable = NSUbiquitousKeyValueStore.default.synchronize()
+    private static let storeKey = "settings"
+    #else
+    static let isAvailable = true
+    #endif
     static let drive = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Mobile Documents/com~apple~CloudDocs")
     private static let suffix = Bundle.main.bundleIdentifier?.hasSuffix(".dev") == true ? "-dev" : ""
     static let folder = drive.appendingPathComponent("pikapik" + suffix)
@@ -130,11 +136,7 @@ final class SettingsSync {
             device = UUID().uuidString
             defaults.set(device, forKey: Self.deviceKey)
         }
-        #if APPSTORE
-        isEnabled = false // the sandbox has no iCloud Drive access, so sync stays off
-        #else
-        isEnabled = defaults.bool(forKey: Self.enabledKey)
-        #endif
+        isEnabled = Self.isAvailable && defaults.bool(forKey: Self.enabledKey)
         last = SettingsBackup.snapshot
         let center = NotificationCenter.default
         center.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
@@ -147,6 +149,14 @@ final class SettingsSync {
             default: break
             }
         }
+        #if APPSTORE
+        center.addObserver(forName: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: NSUbiquitousKeyValueStore.default, queue: .main) { note in
+            let sync = SettingsSync.shared
+            let reason = note.userInfo?[NSUbiquitousKeyValueStoreChangeReasonKey] as? Int
+            if reason == NSUbiquitousKeyValueStoreInitialSyncChange || reason == NSUbiquitousKeyValueStoreAccountChange { sync.modified = .distantPast }
+            sync.sync()
+        }
+        #endif
     }
 
     func confirmImport(_ item: Import) {
@@ -159,6 +169,7 @@ final class SettingsSync {
         stopWatching()
         last = SettingsBackup.snapshot
         guard isEnabled else { return state = .off }
+        #if !APPSTORE
         let manager = FileManager.default
         guard manager.fileExists(atPath: Self.drive.path) else { return state = .noDrive }
         SettingsFile.moveFolder(from: Self.drive.appendingPathComponent("pika-tools" + Self.suffix), to: Self.folder)
@@ -169,6 +180,7 @@ final class SettingsSync {
             return state = Self.isDenied(error) ? .noAccess : .failed(error.localizedDescription)
         }
         watch()
+        #endif
         sync()
     }
 
@@ -211,6 +223,9 @@ final class SettingsSync {
     }
 
     private func read() -> SettingsFile? {
+        #if APPSTORE
+        NSUbiquitousKeyValueStore.default.data(forKey: Self.storeKey).flatMap(SettingsFile.init(data:))
+        #else
         var result: SettingsFile?
         var error: NSError?
         NSFileCoordinator().coordinate(readingItemAt: Self.file, options: [], error: &error) { url in
@@ -221,9 +236,18 @@ final class SettingsSync {
             result = SettingsFile(data: data)
         }
         return result
+        #endif
     }
 
     private func write(_ file: SettingsFile) {
+        #if APPSTORE
+        do {
+            NSUbiquitousKeyValueStore.default.set(try file.data(), forKey: Self.storeKey)
+            state = .synced(.now)
+        } catch {
+            state = .failed(error.localizedDescription)
+        }
+        #else
         var failure: Error?
         var error: NSError?
         NSFileCoordinator().coordinate(writingItemAt: Self.file, options: .forReplacing, error: &error) { url in
@@ -238,6 +262,7 @@ final class SettingsSync {
         } else {
             state = .synced(.now)
         }
+        #endif
     }
 
     private func watch() {

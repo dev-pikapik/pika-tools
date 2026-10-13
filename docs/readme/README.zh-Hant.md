@@ -141,72 +141,77 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>按鈕 4 和 5 用於返回和前進，就像在觸控式軌跡板上滑動。
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>用滑鼠按鈕隱藏</b>
+<br>按一下就能隱藏最前面的 App，就像按 ⌘H 一樣。它會繼續執行。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>按行捲動</b>
 <br>無論滾輪轉多快，每一格都捲動相同的距離。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>捲動方向</b>
 <br>觸控式軌跡板一個方向，滑鼠另一個方向。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>關閉指標加速</b>
 <br>手移動多少，指標就移動多少。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>按住按鍵連續輸入</b>
 <br>按住按鍵會重複輸入字母，而不是跳出重音符號選單。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home 和 End</b>
 <br>輸入時跳到行首或行尾。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>動畫</b>
 <br>讓 Dock、視窗和快速查看更快，甚至瞬間完成。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>已刪除 App 的權限</b>
 <br>清除 macOS 為已刪除的 App 保留的權限。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>桌面寵物</b>
 <br>一個小夥伴在視窗後面散步。把它拎起來丟出去，或按空白鍵讓它跳一下。用衣櫃幫它換裝，一起玩的時候還能贏得獎章。你打字時它精神抖擻，你走開時它打起瞌睡。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>解除安裝 App</b>
 <br>移除 App 及其檔案。一切都能放回。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>顯示 FPS</b>
 <br>一個小計數器會在你選的角落顯示遊戲執行得有多流暢。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>壓縮檔</b>
 <br>按右鍵，就能解壓縮 RAR 等壓縮檔，或把檔案打包成 ZIP。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>讓 Dock 固定在一台顯示器上</b>
@@ -252,7 +257,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 pikapik 需要兩項權限。第一次啟動時，它會打開設定中的「權限」頁面，一步步引導你完成，macOS 也會顯示自己的提示。前往 **系統設定 › 隱私權與安全性**，在以下兩項中開啟 pikapik：
 
 - **輔助使用**：讓 App 能在按鍵或按一下傳到其他 App 之前加以修改。
-- **輸入監控**：讓 App 能夠看到按鍵和按一下的動作。
+- **輸入監控**：讓 App 能看到按鍵和按一下的動作但不修改它們，切換語言就是這樣運作的。
 
 App 會在一兩秒內偵測到變更，不需要重新啟動。
 
@@ -287,6 +292,8 @@ pikapik 不會記錄、儲存或傳送你輸入或點按的任何內容。事件
 
 **側邊按鈕用於返回和前進。** 滑鼠按鈕 4 和 5 可以在 Finder、Safari 等 Apple App 以及許多其他 App 中返回和前進，就像在觸控式軌跡板上輕掃一樣。自行處理這兩個按鈕的 App 會原樣收到它們。如果你的滑鼠側邊按鈕方向相反，請開啟 **交換側邊按鈕**。預設為關閉。
 
+**用滑鼠按鈕隱藏目前的 App。** 在「設定 › 滑鼠」中開啟 **用滑鼠按鈕隱藏目前的 App**，然後按下你想用的按鈕，例如中間按鈕或側邊按鈕。之後按一下就能隱藏最前面的 App，和按 ⌘H 完全一樣：App 會繼續執行，在 Dock 中按一下它的圖像就能讓它回來。開啟遊戲模式玩遊戲時，這個按鈕在遊戲裡照常運作。預設為關閉。
+
 **關閉最後一個視窗時結束。** 關閉 App 的最後一個視窗後，App 就會結束。Finder 會保持開啟，在其他桌面上有視窗或有視窗縮到 Dock 的 App 也不會結束。你可以列出永遠不要以這種方式結束的 App。預設為關閉。
 
 **在 Dock 中點按以縮到最小或隱藏。** 在 Dock 中按一下目前正在使用的 App 圖像，它的所有視窗都會收進 Dock。再按一下即可全部恢復。你也可以讓按一下改成隱藏整個 App，就像按 ⌘H 一樣。預設為關閉。
@@ -299,7 +306,7 @@ pikapik 不會記錄、儲存或傳送你輸入或點按的任何內容。事件
 
 **在 Finder 中用 Enter 打開檔案。** 在 Finder 視窗或桌面上選取檔案，按 Return 或 Enter 就會打開。按 F2 或 fn F2 可重新命名所選檔案。在文字欄位中，例如輸入名稱時，這些按鍵照常運作。預設關閉。
 
-**在 Finder 中用 ⌘X 剪下檔案。** 選取檔案並按 ⌘X，打開目的地檔案夾後按 ⌘V，檔案會移到那裡而不是被拷貝。按 ⌘C 可取消剪下。預設關閉。
+**在 Finder 中用 ⌘X 剪下檔案。** 選取檔案並按 ⌘X，打開目的地檔案夾後按 ⌘V，檔案會移到那裡而不是被拷貝。按 ⌘C 可取消剪下。在 Mac App Store 版本中，⌘V 仍會貼上一份拷貝：若要搬移檔案，請按一下選單列中的 pikapik 圖像並選擇 **搬移項目至此**，或按下 ⌥⌘V。預設關閉。
 
 **在 Finder 中用 Delete 刪除檔案。** 選取檔案後按 ⌫ 或 ⌦（筆電上為 fn ⌫），檔案就會移到垃圾桶，和 ⌘⌫ 一樣。重新命名檔案、搜尋或在其他欄位中輸入時，這兩個鍵照常刪除文字。預設關閉。
 
@@ -381,7 +388,7 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 - **連接埠**：哪個程式佔用了哪個連接埠、它的位址和詳細資訊，以及釋放連接埠的按鈕。
 - **聲音**：App 音量，為每個播放聲音的 App 提供滑桿和靜音按鈕。
 - **鍵盤**：語言切換、按鍵重複、Home 和 End、修正用錯的鍵盤配置。
-- **滑鼠**：指標加速和軌跡速度、按行捲動、捲動方向、側邊按鈕。
+- **滑鼠**：指標加速和軌跡速度、按行捲動、捲動方向、側邊按鈕、隱藏目前 App 的按鈕。
 - **視窗**：用綠色按鈕放大視窗（附例外列表）、⌘Q 和 ⌘W 保護，以及關閉最後一個視窗時結束（附例外列表）。
 - **Dock**：在 Dock 中點按以縮到最小或隱藏、讓 Dock 固定在一台顯示器上，以及讓 Dock 回到原處。
 - **Finder**：新增檔案、較小拷貝、轉換和壓縮檔、用 Return 打開、用 ⌘X 剪下、用 ⌫ 刪除。
@@ -428,7 +435,7 @@ pikapik 會在啟動時以及每隔 6 小時檢查新版本。你可以在「設
 <summary>常見問題</summary>
 
 **為什麼需要兩項權限？**
-macOS 把對鍵盤和滑鼠的存取分成兩部分。「輸入監控」讓 App 能看到事件，「輔助使用」讓 App 能修改事件。阻擋快速鍵兩者都需要。
+macOS 把對鍵盤和滑鼠的存取分成兩部分。「輔助使用」讓 App 能修改按鍵或按一下的動作，大多數功能只需要這一項。「輸入監控」只讓 App 看到事件而不修改，切換語言用它就夠了。
 
 **macOS 提示 App 來自未識別的開發者。**
 pikapik 由開發者簽署，並通過 Apple 的惡意軟體檢查，因此不應該出現這個提示。如果仍然出現，請打開 **系統設定 › 隱私權與安全性** 並按一下 **強制打開**。

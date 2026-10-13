@@ -141,72 +141,77 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br>Butoanele 4 și 5 merg înapoi și înainte, ca un gest pe trackpad.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Ascundere cu un buton al mausului</b>
+<br>O apăsare ascunde aplicația din prim-plan, ca ⌘H. Aplicația rulează în continuare.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Derulare pe rânduri</b>
 <br>Fiecare clic al rotiței derulează la fel, oricât de repede o învârți.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direcția de derulare</b>
 <br>O direcție pentru trackpad, alta pentru maus.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Fără accelerarea cursorului</b>
 <br>Cursorul merge exact cât mâna ta.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetă tasta ținută apăsată</b>
 <br>Ține o tastă apăsată ca s-o repeți, fără meniul de accente.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home și End</b>
 <br>Sari la începutul sau la sfârșitul rândului în timp ce scrii.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animații</b>
 <br>Grăbește Dock-ul, ferestrele și Privirea rapidă, până la instantaneu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permisiunile aplicațiilor șterse</b>
 <br>Elimină permisiunile pe care macOS le păstrează pentru aplicațiile deja șterse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animăluț pe birou</b>
 <br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună. Se înviorează cât timp tastezi și ațipește când te îndepărtezi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Eliminare aplicații</b>
 <br>Elimină o aplicație și fișierele ei. Poți pune totul la loc.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Afișează FPS</b>
 <br>Un mic contor arată cât de fluid rulează jocul, în colțul pe care îl alegi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arhive</b>
 <br>Extrage RAR și alte arhive sau împachetează fișiere într-un ZIP, cu un clic dreapta.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Ține Dock-ul pe un singur ecran</b>
@@ -252,7 +257,7 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 pikapik are nevoie de două permisiuni. La prima pornire, deschide configurările pe pagina Permisiuni, care te ghidează pas cu pas, iar macOS afișează propriile solicitări. Mergi la **Configurări sistem › Confidențialitate și securitate** și activează pikapik în:
 
 - **Accesibilitate**, ca aplicația să poată modifica o apăsare de tastă sau un clic înainte să ajungă la alte aplicații.
-- **Monitorizare intrare**, ca aplicația să poată vedea apăsările de taste și clicurile.
+- **Monitorizare intrare**, ca aplicația să poată vedea apăsările de taste și clicurile fără să le modifice. Așa funcționează schimbarea limbii.
 
 Aplicația observă schimbarea în câteva secunde, fără repornire.
 
@@ -287,6 +292,8 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului merg înapoi și înainte în Finder, Safari și alte aplicații Apple, precum și în multe alte aplicații, la fel ca o glisare pe trackpad. Aplicațiile care tratează singure aceste butoane le primesc așa cum sunt. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
 
+**Un buton al mausului ascunde aplicația curentă.** Activează **Un buton al mausului ascunde aplicația curentă** din Setări › Maus și apasă butonul pe care vrei să-l folosești, de exemplu butonul din mijloc sau un buton lateral. Apoi o singură apăsare ascunde aplicația din prim-plan, exact ca ⌘H: aplicația rulează în continuare, iar un clic pe pictograma ei din Dock o aduce înapoi. Cât timp joci cu Modul Joc pornit, butonul funcționează în joc ca de obicei. Dezactivat implicit.
+
 **Ieșire la închiderea ultimei ferestre.** Închide ultima fereastră a unei aplicații, iar aplicația se închide. Finder rămâne deschis, la fel ca aplicațiile cu ferestre pe alte spații de lucru sau în Dock. Poți face o listă de aplicații care nu trebuie să se închidă niciodată așa. Dezactivat implicit.
 
 **Minimizează sau ascunde cu un clic în Dock.** Dă clic pe pictograma din Dock a aplicației în care lucrezi și toate ferestrele ei coboară în Dock. Dă clic din nou ca să le readuci pe toate. Poți alege și ca un clic să ascundă toată aplicația, ca ⌘H. Dezactivat implicit.
@@ -299,7 +306,7 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Enter deschide fișierele în Finder.** Selectează fișiere într-o fereastră Finder sau pe birou și apasă Return sau Enter: se deschid. F2 sau fn F2 redenumește fișierul selectat. În câmpurile de text, de exemplu când scrii un nume, tastele funcționează ca de obicei. Implicit dezactivat.
 
-**⌘X decupează fișierele în Finder.** Selectează fișiere și apasă ⌘X, deschide folderul dorit și apasă ⌘V: fișierele sunt mutate acolo în loc să fie copiate. ⌘C anulează decuparea. Implicit dezactivat.
+**⌘X decupează fișierele în Finder.** Selectează fișiere și apasă ⌘X, deschide folderul dorit și apasă ⌘V: fișierele sunt mutate acolo în loc să fie copiate. ⌘C anulează decuparea. În versiunea din Mac App Store, ⌘V lipește în continuare o copie: ca să muți fișierele, fă clic pe pictograma pikapik din bara de meniu și alege **Mutați articolele aici** sau apasă ⌥⌘V. Implicit dezactivat.
 
 **Delete șterge fișierele în Finder.** Selectează fișierele și apasă ⌫ sau ⌦ (fn ⌫ pe laptop): ajung în Coș, la fel ca la ⌘⌫. Cât timp redenumești un fișier, cauți sau scrii în alt câmp, tastele șterg literele ca de obicei. Implicit dezactivat.
 
@@ -381,7 +388,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Porturi**: ce program a ocupat fiecare port, adresele și detaliile lui și un buton care eliberează portul.
 - **Sunet**: volumul aplicațiilor, cu un cursor și un buton de oprire a sunetului pentru fiecare aplicație care redă sunet.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End, corectarea aranjamentului greșit.
-- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
+- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale, un buton care ascunde aplicația curentă.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
@@ -428,7 +435,7 @@ Ambele închid aplicația, o scot din articolele de autentificare și o șterg. 
 <summary>Întrebări frecvente</summary>
 
 **De ce are nevoie de două permisiuni?**
-macOS împarte accesul la tastatură și mouse în două. Monitorizarea intrării îi permite aplicației să vadă evenimentele, iar Accesibilitatea îi permite să le modifice. Pentru a bloca o scurtătură e nevoie de amândouă.
+macOS împarte accesul la tastatură și mouse în două. Accesibilitatea îi permite aplicației să modifice o apăsare de tastă sau un clic, iar majorității funcțiilor doar asta le trebuie. Monitorizarea intrării îi permite doar să urmărească, iar pentru schimbarea limbii e de ajuns.
 
 **macOS spune că aplicația provine de la un dezvoltator neidentificat.**
 pikapik este semnată de dezvoltator și trece de verificarea Apple pentru software rău intenționat, așa că acest mesaj nu ar trebui să apară. Dacă apare totuși, deschide **Configurări sistem › Confidențialitate și securitate** și dă clic pe **Deschide oricum**.

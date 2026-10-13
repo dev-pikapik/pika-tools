@@ -36,6 +36,9 @@ sign() { codesign --force --options runtime --timestamp --sign "$APP_IDENTITY" "
 for EXT in $EXTENSIONS; do
     sign --entitlements "build/$EXT.entitlements" "$APP/Contents/PlugIns/$EXT.appex"
 done
+if [[ "$(security cms -D -i "$APP_PROFILE")" == *ubiquity-kvstore-identifier* ]]; then
+    /usr/libexec/PlistBuddy -c "Add :com.apple.developer.ubiquity-kvstore-identifier string $TEAM_ID.com.pikapik.tools" build/app.entitlements
+fi
 sign --entitlements build/app.entitlements "$APP"
 
 codesign --verify --deep --strict "$APP"

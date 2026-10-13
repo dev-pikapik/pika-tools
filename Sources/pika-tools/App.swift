@@ -86,6 +86,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let path = Bundle.main.bundlePath
         #if APPSTORE
         let moved = false
+        let firstLaunch = !defaults.bool(forKey: "launchedBefore")
         #else
         let moved = Updater.isNewPlace(path, last: defaults.string(forKey: "app-path"), launchedBefore: defaults.bool(forKey: "launchedBefore"))
         #endif
@@ -96,7 +97,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         FinderExtension.refreshFinderRecord()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["app-volume", "archive", "convert", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["app-volume", "archive", "convert", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "hide-app", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -112,6 +113,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Permissions.shared.checkSystemAudio()
             FinderExtension.refreshWaiting()
         }
+        Log.launch()
         ToolRegistry.shared.refresh()
         permissions.checkSystemAudio()
         SettingsSync.shared.refresh()
@@ -138,6 +140,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Background.shared.quitting = true
         }
 
+        #if APPSTORE
+        if CommandLine.arguments.contains("--permissions") {
+            SettingsWindow.show(.permissions)
+        } else if firstLaunch || CommandLine.arguments.contains("--settings") {
+            SettingsWindow.show()
+        }
+        #else
         if CommandLine.arguments.contains("--permissions") {
             SettingsWindow.show(.permissions)
         } else if !permissions.allGranted {
@@ -146,6 +155,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         } else if CommandLine.arguments.contains("--settings") {
             SettingsWindow.show()
         }
+        #endif
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

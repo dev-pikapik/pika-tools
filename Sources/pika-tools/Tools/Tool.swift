@@ -19,7 +19,7 @@ protocol Tool: AnyObject {
 extension Tool {
     var tab: SettingsTab { .keyboard }
     var isDefault: Bool { !isEnabled }
-    var needs: [Permission] { [.accessibility, .inputMonitoring] }
+    var needs: [Permission] { [.accessibility] }
     func reset() { isEnabled = false }
     func load() { isEnabled = UserDefaults.standard.bool(forKey: id) }
 }
@@ -78,6 +78,7 @@ final class ToolRegistry {
         list.append(WheelTool())
         list.append(ScrollDirectionTool())
         list.append(SideButtonsTool())
+        list.append(HideAppTool())
         #if !APPSTORE
         list.append(WindowZoomTool())
         #endif
@@ -95,7 +96,9 @@ final class ToolRegistry {
         #endif
         #if !APPSTORE
         list.append(FinderOpenTool())
+        #endif
         list.append(FinderCutTool())
+        #if !APPSTORE
         list.append(FinderDeleteTool())
         #endif
         #if !APPSTORE

@@ -36,6 +36,7 @@ enum RenderMedia {
         ("speed-test", 5.4, AnyView(SpeedTestArt())),
         ("ports", PortsCard.length, AnyView(PortsCard())),
         ("side-buttons", 5.1, AnyView(SideButtonsArt(on: true, swapped: false))),
+        ("hide-app", 3.2, AnyView(HideAppArt(on: true, button: 2))),
         ("wheel-lines", 3.2, AnyView(ScrollStepArt(on: true, distance: 30))),
         ("wheel-direction", 3.0, AnyView(ScrollDirectionArt(trackpadNatural: true, mouseNatural: false))),
         ("linear-pointer", 4.0, AnyView(PointerArt(on: true))),

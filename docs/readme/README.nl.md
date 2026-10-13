@@ -141,72 +141,77 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br>Knop 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Verbergen met een muisknop</b>
+<br>Eén druk verbergt de app op de voorgrond, net als ⌘H. De app blijft draaien.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Per regel scrollen</b>
 <br>Elke klik van het scrollwiel scrolt even ver, hoe snel je ook draait.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichting</b>
 <br>Eén richting voor het trackpad, een andere voor de muis.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Zonder aanwijzerversnelling</b>
 <br>De aanwijzer gaat precies zo ver als je hand.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ingedrukte toets herhalen</b>
 <br>Houd een toets ingedrukt om hem te herhalen, zonder accentmenu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home en End</b>
 <br>Spring tijdens het typen naar het begin of einde van de regel.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animaties</b>
 <br>Maak het Dock, vensters en Snel bekijken sneller, tot direct aan toe.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Toestemmingen van verwijderde apps</b>
 <br>Haal de toestemmingen weg die macOS bewaart voor apps die je al hebt verwijderd.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Huisdiertje op het bureaublad</b>
 <br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Apps verwijderen</b>
 <br>Verwijder een app met alle bestanden. Alles kan terug.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPS tonen</b>
 <br>Een kleine teller laat in de hoek van je keuze zien hoe soepel je game loopt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archieven</b>
 <br>Pak RAR en andere archieven uit, of verpak bestanden in een ZIP, met een rechtsklik.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Houd het Dock op één scherm</b>
@@ -252,7 +257,7 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 pikapik heeft twee toestemmingen nodig. De eerste keer opent de app de instellingen op de pagina Toestemmingen, die je stap voor stap helpt, en macOS toont zijn eigen meldingen. Ga naar **Systeeminstellingen › Privacy en beveiliging** en zet pikapik aan bij:
 
 - **Toegankelijkheid**, zodat de app een toetsaanslag of klik kan aanpassen voordat die bij andere apps aankomt.
-- **Invoerbewaking**, zodat de app toetsaanslagen en klikken überhaupt kan zien.
+- **Invoerbewaking**, zodat de app toetsaanslagen en klikken kan zien zonder ze aan te passen. Zo werkt het wisselen van taal.
 
 De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet nodig.
 
@@ -287,6 +292,8 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Zijknoppen voor terug en vooruit.** Muisknoppen 4 en 5 gaan terug en vooruit in de Finder, Safari en andere Apple-apps en in veel andere apps, net als een veeg op het trackpad. Apps die deze knoppen zelf afhandelen, krijgen ze ongewijzigd. Zitten ze op je muis andersom, zet dan **Zijknoppen omwisselen** aan. Standaard uit.
 
+**Een muisknop verbergt de huidige app.** Zet **Verberg de huidige app met een muisknop** aan in Instellingen › Muis en druk op de knop die je wilt gebruiken, bijvoorbeeld de middelste knop of een zijknop. Daarna verbergt één druk de app op de voorgrond, precies zoals ⌘H: de app blijft draaien, en een klik op zijn symbool in het Dock haalt hem terug. Terwijl je met de Gamemodus aan speelt, werkt de knop in de game zoals altijd. Standaard uit.
+
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
 
 **Minimaliseer of verberg met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en al zijn vensters gaan naar het Dock. Klik nog eens om ze allemaal terug te halen. Je kunt de klik ook de hele app laten verbergen, zoals ⌘H. Standaard uit.
@@ -299,7 +306,7 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Enter opent bestanden in de Finder.** Selecteer bestanden in een Finder-venster of op het bureaublad en druk op Return of Enter: ze worden geopend. F2 of fn F2 wijzigt de naam van het geselecteerde bestand. In tekstvelden, bijvoorbeeld terwijl je een naam typt, werken de toetsen zoals altijd. Standaard uit.
 
-**⌘X knipt bestanden in de Finder.** Selecteer bestanden en druk op ⌘X, open de map waar je ze wilt hebben en druk op ⌘V: de bestanden worden daarheen verplaatst in plaats van gekopieerd. ⌘C annuleert het knippen. Standaard uit.
+**⌘X knipt bestanden in de Finder.** Selecteer bestanden en druk op ⌘X, open de map waar je ze wilt hebben en druk op ⌘V: de bestanden worden daarheen verplaatst in plaats van gekopieerd. ⌘C annuleert het knippen. In de versie uit de Mac App Store plakt ⌘V nog steeds een kopie: om de bestanden te verplaatsen, klik je op het pikapik-symbool in de menubalk en kies je **Verplaats onderdelen hierheen**, of druk je op ⌥⌘V. Standaard uit.
 
 **Delete verwijdert bestanden in de Finder.** Selecteer bestanden en druk op ⌫ of ⌦ (fn ⌫ op een laptop): ze gaan naar de Prullenmand, net als met ⌘⌫. Terwijl je een bestand een nieuwe naam geeft, zoekt of in een ander veld typt, wissen de toetsen gewoon letters. Standaard uit.
 
@@ -381,7 +388,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Poorten**: welk programma welke poort bezet houdt, de adressen en details, en een knop om de poort vrij te maken.
 - **Geluid**: app-volume, een schuifregelaar en een dempknop voor elke app die geluid afspeelt.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End, verkeerde indeling corrigeren.
-- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
+- **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen, een knop die de huidige app verbergt.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
 - **Dock**: minimaliseren of verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.
 - **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
@@ -428,7 +435,7 @@ Beide stoppen de app, halen hem uit de inlogonderdelen en verwijderen hem. Het s
 <summary>Veelgestelde vragen</summary>
 
 **Waarom zijn er twee toestemmingen nodig?**
-macOS splitst de toegang tot toetsenbord en muis in tweeën. Met Invoerbewaking kan de app gebeurtenissen zien, met Toegankelijkheid kan hij ze aanpassen. Om een toetscombinatie te blokkeren zijn ze allebei nodig.
+macOS splitst de toegang tot toetsenbord en muis in tweeën. Met Toegankelijkheid kan de app een toetsaanslag of klik aanpassen, en de meeste functies hebben alleen dat nodig. Met Invoerbewaking kan hij alleen meekijken, en dat is genoeg om van taal te wisselen.
 
 **macOS zegt dat de app van een onbekende ontwikkelaar komt.**
 pikapik is ondertekend door de ontwikkelaar en doorstaat de controle van Apple op schadelijke software, dus deze melding hoort niet te verschijnen. Verschijnt de melding toch, open dan **Systeeminstellingen › Privacy en beveiliging** en klik op **Toch openen**.

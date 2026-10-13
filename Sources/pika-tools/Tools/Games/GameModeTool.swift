@@ -165,7 +165,7 @@ final class GameModeTool: Tool {
     func refresh() {
         leave()
         stopTap()
-        if isEnabled { startTap() }
+        if isEnabled, AXIsProcessTrusted() { startTap() }
         update()
     }
 
@@ -534,7 +534,7 @@ private final class CursorFence {
         self.corners = corners
         let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
         let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
-        guard mask != 0 else { return }
+        guard mask != 0, AXIsProcessTrusted() else { return }
         let ready = DispatchSemaphore(value: 0)
         let thread = Thread { [self] in
             if let tap = CGEvent.tapCreate(

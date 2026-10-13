@@ -141,72 +141,77 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>4번, 5번 버튼으로 뒤로, 앞으로. 트랙패드에서 쓸어넘기듯이요.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>마우스 버튼으로 가리기</b>
+<br>한 번 누르면 맨 앞의 앱이 ⌘H처럼 가려져요. 앱은 계속 실행돼요.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>줄 단위로 스크롤</b>
 <br>휠을 얼마나 빨리 돌려도 한 칸에 같은 만큼 스크롤됩니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>스크롤 방향</b>
 <br>트랙패드와 마우스에 각각 다른 방향을 고를 수 있습니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>포인터 가속 끄기</b>
 <br>손을 움직인 만큼 포인터가 정확히 움직입니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>키를 누르고 있으면 반복 입력</b>
 <br>키를 누르고 있으면 악센트 메뉴 대신 글자가 반복됩니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home과 End</b>
 <br>입력하는 중에 줄의 처음이나 끝으로 이동합니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>애니메이션</b>
 <br>Dock, 윈도우, 훑어보기를 더 빠르게, 원하면 즉시 움직이게 합니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>삭제한 앱의 권한</b>
 <br>삭제한 앱을 위해 macOS가 남겨 둔 권한을 지웁니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>데스크탑 펫</b>
 <br>작은 친구가 윈도우 뒤를 산책해요. 집어서 던지거나 스페이스를 눌러 점프시켜 보세요. 옷장에서 옷을 골라 입히고, 함께 놀면서 상을 받아 보세요. 타이핑하는 동안엔 기운이 나고, 자리를 비우면 꾸벅꾸벅 졸아요.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>앱 제거</b>
 <br>앱과 앱의 파일을 제거합니다. 모두 되돌릴 수 있습니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPS 표시</b>
 <br>작은 카운터가 고른 모서리에서 게임이 얼마나 부드럽게 실행되는지 보여 줍니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>압축 파일</b>
 <br>오른쪽 클릭으로 RAR 등의 압축 파일을 풀거나 파일을 ZIP으로 묶습니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock을 한 디스플레이에 고정</b>
@@ -252,7 +257,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 pikapik에는 두 가지 권한이 필요합니다. 처음 실행하면 설정의 ‘권한’ 페이지가 열려 단계별로 안내하고, macOS도 자체 요청을 표시합니다. **시스템 설정 › 개인정보 보호 및 보안**으로 이동하여 다음 항목에서 pikapik을 켜십시오:
 
 - **손쉬운 사용**: 키 입력이나 클릭이 다른 앱에 전달되기 전에 앱이 이를 바꿀 수 있도록 합니다.
-- **입력 모니터링**: 앱이 키 입력과 클릭을 볼 수 있도록 합니다.
+- **입력 모니터링**: 앱이 키 입력과 클릭을 바꾸지 않고 볼 수 있도록 합니다. 언어 전환이 이 방식으로 동작합니다.
 
 변경 사항은 몇 초 안에 반영되며, 다시 시작할 필요가 없습니다.
 
@@ -287,6 +292,8 @@ pikapik은 입력하거나 클릭한 내용을 기록하거나 저장하거나 �
 
 **측면 버튼으로 뒤로 및 앞으로 이동.** 마우스 버튼 4와 5로 Finder, Safari 같은 Apple 앱과 그 밖의 많은 앱에서 뒤로/앞으로 이동합니다. 트랙패드에서 쓸어 넘기는 것과 똑같아요. 이 버튼을 직접 처리하는 앱에는 버튼이 그대로 전달됩니다. 마우스의 버튼이 반대로 되어 있다면 **측면 버튼 서로 바꾸기** 옵션을 켜세요. 기본값은 꺼짐입니다.
 
+**마우스 버튼으로 현재 앱 가리기.** 설정 › 마우스에서 **마우스 버튼으로 현재 앱 가리기** 옵션을 켜고, 가운데 버튼이나 측면 버튼처럼 사용하고 싶은 버튼을 누르세요. 그러면 버튼을 한 번 누르기만 해도 맨 앞의 앱이 ⌘H와 똑같이 가려집니다. 앱은 계속 실행되고, Dock에서 앱 아이콘을 클릭하면 다시 나타납니다. 게임 모드를 켜고 게임을 하는 동안에는 버튼이 게임에서 평소처럼 작동합니다. 기본값은 꺼짐입니다.
+
 **마지막 윈도우를 닫으면 종료.** 앱의 마지막 윈도우를 닫으면 앱이 종료됩니다. Finder는 계속 열려 있고, 다른 데스크탑이나 Dock에 윈도우가 있는 앱도 종료되지 않습니다. 이 방식으로 절대 종료되지 않아야 할 앱 목록을 만들 수 있습니다. 기본값은 꺼짐입니다.
 
 **Dock 클릭으로 최소화하거나 가리기.** 사용 중인 앱의 Dock 아이콘을 클릭하면 앱의 모든 윈도우가 Dock으로 내려갑니다. 다시 클릭하면 모두 돌아옵니다. ⌘H처럼 클릭하면 앱 전체가 가려지도록 설정할 수도 있습니다. 기본값은 꺼짐입니다.
@@ -299,7 +306,7 @@ pikapik은 입력하거나 클릭한 내용을 기록하거나 저장하거나 �
 
 **Finder에서 Enter로 파일 열기.** Finder 윈도우나 데스크탑에서 파일을 선택하고 Return이나 Enter를 누르면 파일이 열립니다. F2 또는 fn F2는 선택한 파일의 이름을 바꿉니다. 이름을 입력할 때처럼 텍스트 입력란에서는 키가 평소처럼 동작합니다. 기본적으로 꺼져 있습니다.
 
-**Finder에서 ⌘X로 파일 잘라내기.** 파일을 선택하고 ⌘X를 누른 다음, 원하는 폴더를 열고 ⌘V를 누르면 파일이 복사되지 않고 그 폴더로 이동합니다. ⌘C를 누르면 잘라내기가 취소됩니다. 기본적으로 꺼져 있습니다.
+**Finder에서 ⌘X로 파일 잘라내기.** 파일을 선택하고 ⌘X를 누른 다음, 원하는 폴더를 열고 ⌘V를 누르면 파일이 복사되지 않고 그 폴더로 이동합니다. ⌘C를 누르면 잘라내기가 취소됩니다. Mac App Store 버전에서는 ⌘V가 여전히 사본을 붙여넣으므로, 파일을 옮기려면 메뉴 막대의 pikapik 아이콘을 클릭한 다음 **여기로 항목 이동**을 선택하거나 ⌥⌘V를 누르세요. 기본적으로 꺼져 있습니다.
 
 **Finder에서 Delete로 파일 삭제.** 파일을 선택하고 ⌫나 ⌦(노트북에서는 fn ⌫)를 누르면 ⌘⌫처럼 휴지통으로 이동합니다. 파일 이름을 바꾸거나 검색하거나 다른 입력란에 입력하는 동안에는 평소대로 글자를 지웁니다. 기본적으로 꺼져 있습니다.
 
@@ -381,7 +388,7 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 - **포트**: 어떤 프로그램이 어떤 포트를 차지했는지, 주소와 세부 정보, 포트를 비우는 버튼.
 - **사운드**: 앱 음량, 소리를 내는 앱마다 슬라이더와 음소거 버튼.
 - **키보드**: 언어 전환, 키 반복, Home과 End, 잘못된 레이아웃 바로잡기.
-- **마우스**: 포인터 가속과 이동 속도, 줄 단위 스크롤, 스크롤 방향, 측면 버튼.
+- **마우스**: 포인터 가속과 이동 속도, 줄 단위 스크롤, 스크롤 방향, 측면 버튼, 현재 앱을 가리는 버튼.
 - **윈도우**: 녹색 버튼으로 윈도우 확대(예외 목록 포함), ⌘Q와 ⌘W 보호, 마지막 윈도우를 닫으면 종료(예외 목록 포함).
 - **Dock**: Dock 클릭으로 최소화하거나 가리기, Dock을 한 디스플레이에 고정, Dock 되돌리기.
 - **Finder**: 새 파일, 작은 사본, 변환, 압축 파일, Return으로 열기, ⌘X로 오려두기, ⌫로 휴지통에 버리기.
@@ -428,7 +435,7 @@ Homebrew로 설치했다면: `brew uninstall --cask --zap pikapik`.
 <summary>자주 묻는 질문</summary>
 
 **왜 권한이 두 개나 필요한가요?**
-macOS는 키보드와 마우스에 대한 접근을 둘로 나눕니다. 입력 모니터링은 앱이 이벤트를 볼 수 있게 하고, 손쉬운 사용은 이벤트를 바꿀 수 있게 합니다. 단축키를 차단하려면 둘 다 필요합니다.
+macOS는 키보드와 마우스에 대한 접근을 둘로 나눕니다. 손쉬운 사용은 앱이 키 입력이나 클릭을 바꿀 수 있게 하며, 대부분의 기능에는 이것만 있으면 됩니다. 입력 모니터링은 앱이 보기만 할 수 있게 하며, 언어 전환에는 이것으로 충분합니다.
 
 **macOS에서 확인되지 않은 개발자의 앱이라고 표시됩니다.**
 pikapik은 개발자가 서명했고 Apple의 악성 소프트웨어 검사를 통과하므로 이 메시지가 나타나지 않아야 합니다. 나타난다면 **시스템 설정 › 개인정보 보호 및 보안**을 열고 **그래도 열기**를 클릭하십시오.
