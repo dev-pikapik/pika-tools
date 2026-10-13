@@ -18,6 +18,7 @@
 "All set" = "Totul e gata";
 "pikapik needs two permissions" = "pikapik are nevoie de două permisiuni";
 "Both permissions are on and every tool is working." = "Ambele permisiuni sunt activate și toate instrumentele funcționează.";
+"Both permissions are on. Some tools also need a permission from the list below." = "Ambele permisiuni sunt activate. Unele instrumente au nevoie și de o permisiune din lista de mai jos.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Fără ele, macOS nu permite aplicației să vadă sau să modifice clicurile și tastele. Deschide Configurări sistem › Confidențialitate și securitate și activează pikapik în aceste două liste:";
 "Permissions for some tools" = "Permisiuni pentru unele instrumente";
 "Only some tools need these permissions. Everything else works without them." = "Doar unele instrumente au nevoie de aceste permisiuni. Restul funcționează și fără ele.";

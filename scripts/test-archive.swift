@@ -33,7 +33,7 @@ enum TestArchive {
         useBundledTool()
         try! manager.createDirectory(at: root, withIntermediateDirectories: true)
         defer { try? manager.removeItem(at: root) }
-        let leftovers = itemFolders()
+        let leftovers = ownItems()
         naming()
         limits()
         space()
@@ -56,7 +56,8 @@ enum TestArchive {
         appleDouble()
         cancelling()
         rar()
-        precondition(itemFolders() <= leftovers, "temporary folders left behind: \(itemFolders() - leftovers)")
+        let left = ownItems().subtracting(leftovers)
+        precondition(left.isEmpty, "temporary folders left behind: \(left.sorted())")
         print("archive: all ok")
     }
 
@@ -158,7 +159,7 @@ enum TestArchive {
         guard case .noSpace(let needed, let free)? = known else { preconditionFailure("known size: \(String(describing: known))") }
         precondition(needed == 48 << 20 && free > 0 && free < 16 << 20, "known size: \(needed) \(free)")
         guard case .noSpace(0, let left)? = unknown else { preconditionFailure("unknown size: \(String(describing: unknown))") }
-        precondition(left > 0)
+        precondition(before - left < 256 << 10, "unknown size: \(left) free, \(before) before")
         guard case .noSpace(let wanted, _)? = full else { preconditionFailure("create: \(String(describing: full))") }
         precondition(wanted == 9 << 20)
         guard case .noSpace(0, _)? = lied else { preconditionFailure("a zip that claims 10 bytes: \(String(describing: lied))") }
@@ -1057,8 +1058,8 @@ enum TestArchive {
         return probe.deletingLastPathComponent()
     }
 
-    static func itemFolders() -> Int {
-        var info = stat()
-        return lstat(itemRoot().path, &info) == 0 ? Int(info.st_nlink) - 2 : 0
+    static func ownItems() -> Set<String> {
+        let prefix = "NSIRD_\(ProcessInfo.processInfo.processName)_"
+        return Set(Archive.entries(of: itemRoot().path).filter { $0.hasPrefix(prefix) })
     }
 }

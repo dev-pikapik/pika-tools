@@ -18,6 +18,7 @@
 "All set" = "Her şey hazır";
 "pikapik needs two permissions" = "pikapik’in iki izne ihtiyacı var";
 "Both permissions are on and every tool is working." = "İki izin de açık ve tüm araçlar çalışıyor.";
+"Both permissions are on. Some tools also need a permission from the list below." = "İki izin de açık. Bazı araçlar aşağıdaki listeden bir izne de ihtiyaç duyar.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bunlar olmadan macOS, uygulamanın tıklamaları ve tuşları görmesine veya değiştirmesine izin vermez. Sistem Ayarları › Gizlilik ve Güvenlik’i açın ve bu iki listede pikapik’i etkinleştirin:";
 "Permissions for some tools" = "Bazı araçlar için izinler";
 "Only some tools need these permissions. Everything else works without them." = "Bu izinlere yalnızca bazı araçlar ihtiyaç duyar. Geri kalan her şey izinsiz de çalışır.";

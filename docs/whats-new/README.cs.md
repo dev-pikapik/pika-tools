@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.46.1"></a>Stránka „Oprávnění“ říká všechno
+
+<sub>1.46.1 · 13. října 2026</sub>
+
+Když nástroj ještě potřebuje oprávnění ze seznamu níže, stránka to teď řekne.
+
+Dřív stránka slibovala, že všechny nástroje fungují, jakmile byla obě oprávnění nahoře zapnutá, i když nástroj v části „Pro některé funkce“ ještě čekal na své oprávnění. Teď píše, že některé nástroje potřebují ještě oprávnění ze seznamu níže, a slibuje, že všechno funguje, až když to tak opravdu je.
+
+**Vyzkoušejte:** Nastavení › Oprávnění
+
+**Opraveno**
+
+- Ve verzi z Mac App Store se „Poděkovat“ na stránce „O aplikaci“ zobrazí, až když je spropitné připravené k výběru. Dřív se během načítání točilo kolečko, a když App Store neodpověděl, část zmizela.
+- Když se disk zaplní během rozbalování archivu, hláška „Není dost místa“ teď ukazuje, kolik místa je opravdu volné po smazání napůl rozbalených souborů. Dřív mohla tvrdit, že volné není skoro nic.
+
+---
+
 ## <a id="v1.46.0"></a>Skryjte aplikaci v popředí tlačítkem myši
 
 <sub>1.46.0 · 13. října 2026</sub>

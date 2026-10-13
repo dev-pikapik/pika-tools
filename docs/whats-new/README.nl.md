@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.46.1"></a>De pagina ‘Toestemmingen’ vertelt het hele verhaal
+
+<sub>1.46.1 · 13 oktober 2026</sub>
+
+Als een functie nog een toestemming uit de lijst hieronder nodig heeft, zegt de pagina dat nu.
+
+Eerder beloofde de pagina, zodra beide toestemmingen bovenaan aan stonden, dat alles werkte, ook als een functie onder ‘Voor sommige functies’ nog op zijn toestemming wachtte. Nu staat er dat sommige functies ook een toestemming uit de lijst hieronder nodig hebben, en staat er pas dat alles werkt als dat echt zo is.
+
+**Probeer het:** Instellingen › Toestemmingen
+
+**Opgelost**
+
+- In de versie uit de Mac App Store verschijnt ‘Bedankje geven’ op de pagina ‘Over’ pas als de fooien klaarstaan om te kiezen. Eerder draaide er een wieltje tijdens het laden, en verdween het onderdeel als de App Store niet antwoordde.
+- Als de schijf volloopt terwijl een archief wordt uitgepakt, toont ‘Onvoldoende ruimte’ nu hoeveel ruimte echt vrij is nadat de half uitgepakte bestanden zijn verwijderd. Eerder kon er staan dat er bijna niets vrij was.
+
+---
+
 ## <a id="v1.46.0"></a>Verberg de app op de voorgrond met een muisknop
 
 <sub>1.46.0 · 13 oktober 2026</sub>

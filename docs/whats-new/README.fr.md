@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.46.1"></a>La page « Autorisations » dit tout
+
+<sub>1.46.1 · 13 octobre 2026</sub>
+
+Quand un outil a encore besoin d’une autorisation de la liste ci-dessous, la page le dit maintenant.
+
+Avant, dès que les deux autorisations du haut étaient actives, la page promettait que tous les outils fonctionnaient, même si un outil de « Pour certaines fonctions » attendait encore son autorisation. Maintenant, elle indique que certains outils ont aussi besoin d’une autorisation de la liste ci-dessous, et ne dit plus que tout fonctionne avant que ce soit vraiment le cas.
+
+**Pour essayer :** Réglages › Autorisations
+
+**Corrigé**
+
+- Dans la version du Mac App Store, « Dire merci » sur la page « À propos » n’apparaît que lorsque les pourboires sont prêts à être choisis. Avant, une roue tournait pendant le chargement, et la section disparaissait si l’App Store ne répondait pas.
+- Si le disque se remplit pendant l’extraction d’une archive, « Pas assez de place » indique désormais l’espace vraiment libre, une fois les fichiers à moitié extraits supprimés. Avant, il pouvait annoncer qu’il ne restait presque rien.
+
+---
+
 ## <a id="v1.46.0"></a>Masquez l’app au premier plan d’un bouton de la souris
 
 <sub>1.46.0 · 13 octobre 2026</sub>

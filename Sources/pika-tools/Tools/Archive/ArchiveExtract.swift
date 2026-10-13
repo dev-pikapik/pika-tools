@@ -23,10 +23,19 @@ extension Archive {
         try checkSpace(info.expandedSize, in: destination)
         let meter = Meter(progress)
         let watch = watcher(over: temporary, in: destination, info: info, allowHuge: allowHuge)
-        let diagnosis = try unpack(first, listing: listing, password: secret, into: temporary, job: job, meter: meter, watch: watch)
+        let diagnosis: Diagnosis
+        do {
+            diagnosis = try unpack(first, listing: listing, password: secret, into: temporary, job: job, meter: meter, watch: watch)
+        } catch ArchiveError.noSpace(let needed, _) {
+            clear(temporary)
+            throw ArchiveError.noSpace(needed: needed, free: freeSpace(of: destination) ?? 0)
+        }
         if diagnosis.password { throw secret == nil ? ArchiveError.needsPassword : ArchiveError.wrongPassword }
         if let missing = diagnosis.missing { throw ArchiveError.missingPart(missing) }
-        if diagnosis.space { throw ArchiveError.noSpace(needed: info.expandedSize, free: freeSpace(of: destination) ?? 0) }
+        if diagnosis.space {
+            clear(temporary)
+            throw ArchiveError.noSpace(needed: info.expandedSize, free: freeSpace(of: destination) ?? 0)
+        }
         if diagnosis.truncated, !allowPartial { throw ArchiveError.truncated }
         let unwanted = diagnosis.bad + diagnosis.ignored
         if !unwanted.isEmpty { unlock(temporary.path) }

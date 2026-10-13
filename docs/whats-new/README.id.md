@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.46.1"></a>Halaman “Izin” kini memberi tahu apa adanya
+
+<sub>1.46.1 · 13 Oktober 2026</sub>
+
+Jika suatu alat masih memerlukan izin dari daftar di bawah, halaman ini kini memberitahukannya.
+
+Sebelumnya, begitu kedua izin di atas aktif, halaman ini menjanjikan bahwa semua alat berfungsi, meskipun ada alat di “Untuk beberapa fitur” yang masih menunggu izinnya. Kini halaman ini menyebutkan bahwa beberapa alat juga memerlukan izin dari daftar di bawah, dan baru menjanjikan semuanya berfungsi jika memang benar begitu.
+
+**Coba:** Pengaturan › Izin
+
+**Diperbaiki**
+
+- Di versi Mac App Store, “Ucapkan terima kasih” di halaman “Tentang” baru muncul saat tip siap dipilih. Sebelumnya ada roda berputar selama tip dimuat, dan bagian itu menghilang jika App Store tidak menjawab.
+- Jika disk penuh saat arsip sedang dibuka, “Ruang tidak cukup” kini menampilkan ruang yang benar-benar kosong setelah file yang baru setengah dibuka dihapus. Sebelumnya pesan ini bisa menyebut hampir tidak ada ruang kosong.
+
+---
+
 ## <a id="v1.46.0"></a>Sembunyikan app di depan dengan tombol tetikus
 
 <sub>1.46.0 · 13 Oktober 2026</sub>

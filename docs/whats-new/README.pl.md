@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.46.1"></a>Strona „Uprawnienia” mówi wszystko
+
+<sub>1.46.1 · 13 października 2026</sub>
+
+Gdy narzędzie wciąż potrzebuje uprawnienia z listy poniżej, strona teraz o tym mówi.
+
+Wcześniej, gdy oba uprawnienia na górze były włączone, strona obiecywała, że wszystkie narzędzia działają, nawet jeśli narzędzie z sekcji „Dla niektórych funkcji” wciąż czekało na swoje uprawnienie. Teraz mówi, że niektóre narzędzia potrzebują też uprawnienia z listy poniżej, a obiecuje, że wszystko działa, dopiero gdy naprawdę tak jest.
+
+**Wypróbuj:** Ustawienia › Uprawnienia
+
+**Poprawki**
+
+- W wersji z Mac App Store sekcja „Podziękuj” na stronie „Informacje” pojawia się dopiero wtedy, gdy napiwki są gotowe do wyboru. Wcześniej podczas ładowania kręciło się kółko, a gdy App Store nie odpowiadał, sekcja znikała.
+- Jeśli dysk zapełni się podczas rozpakowywania archiwum, komunikat „Za mało miejsca” pokazuje teraz, ile miejsca jest naprawdę wolne po usunięciu częściowo rozpakowanych plików. Wcześniej mógł podawać, że wolnego miejsca prawie nie ma.
+
+---
+
 ## <a id="v1.46.0"></a>Ukryj aplikację na pierwszym planie przyciskiem myszy
 
 <sub>1.46.0 · 13 października 2026</sub>
