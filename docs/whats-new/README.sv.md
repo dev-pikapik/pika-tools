@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Se hur varm din Mac är inuti
+
+<sub>1.42.0 · 13 oktober 2026</sub>
+
+En ny sida i Inställningar, Temperatur, visar hur varma processorn, grafiken, minnet, lagringen, batteriet och Wi-Fi är, och berättar med enkla ord om allt är som det ska.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Temperatur. Överst sammanfattar ett enda ord läget: ”Normal”, ”Varm”, ”Het” eller ”Mycket het”, och en kort rad under ordet berättar om din Mac går för full fart eller går långsammare för att svalna. Längre ner har varje del som din Mac kan mäta en egen rad med temperaturen och en färgad stapel: grönt betyder att allt är bra, gult att det är varmt och orange att det är hett, utifrån vad som är normalt för just den delen.
+
+Vill du hålla koll på temperaturen? Klicka på pennan längst ner i pikapik-menyn och markera ”Temperatur”. Menyn visar då samma ord och processorns temperatur, och ett klick på raden öppnar sidan.
+
+Temperaturerna uppdateras varannan sekund, men bara medan sidan eller menyn är öppen, så ingenting kontrolleras i bakgrunden. pikapik läser bara av temperaturerna: det behövs inget lösenord och ingenting ändras.
+
+**Åtgärdat**
+
+- Om du har valt vilka rader pikapik-menyn visar dyker raden ”Håll Dock på en skärm” inte längre upp där av sig själv. Vill du visa den klickar du på pennan och markerar den.
+- När du stänger Inställningar slutar pikapik nu direkt att kontrollera fläktarna och batteriet i stället för att fortsätta i bakgrunden.
+
+---
+
 ## <a id="v1.41.1"></a>Fläktstyrningen frågar inte längre efter ditt lösenord
 
 <sub>1.41.1 · 13 oktober 2026</sub>

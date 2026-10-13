@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Guarda quanto è caldo il Mac all’interno
+
+<sub>1.42.0 · 13 ottobre 2026</sub>
+
+Una nuova pagina Temperatura nelle Impostazioni mostra quanto sono caldi processore, grafica, memoria, archiviazione, batteria e Wi-Fi, e ti dice in parole semplici se va tutto bene.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Temperatura. In alto una sola parola riassume tutto: «Normale», «Un po’ caldo», «Caldo» o «Molto caldo», e una breve riga sotto ti dice se il Mac funziona alla massima velocità o sta rallentando per raffreddarsi. Più in basso, ogni componente che il Mac riesce a misurare ha la sua riga con la temperatura e una barra colorata: verde se va tutto bene, gialla se è un po’ caldo e arancione se è caldo, in base a ciò che è normale per quel componente.
+
+Vuoi tenerla sempre d’occhio? Fai clic sulla matita in fondo al menu di pikapik e spunta «Temperatura». Il menu mostra poi la stessa parola e la temperatura del processore, e un clic sulla riga apre la pagina.
+
+Le temperature si aggiornano ogni due secondi, ma solo mentre la pagina o il menu sono aperti, quindi in background non viene controllato nulla. pikapik legge soltanto le temperature: non serve nessuna password e non cambia nulla.
+
+**Corretto**
+
+- Se hai scelto quali righe mostra il menu di pikapik, la riga «Tieni il Dock su un solo schermo» non compare più da sola. Per mostrarla, fai clic sulla matita e spuntala.
+- Quando chiudi Impostazioni, pikapik ora smette subito di controllare le ventole e la batteria invece di continuare in background.
+
+---
+
 ## <a id="v1.41.1"></a>Il controllo ventole non chiede più la password
 
 <sub>1.41.1 · 13 ottobre 2026</sub>

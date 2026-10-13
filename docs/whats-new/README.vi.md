@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Xem bên trong máy Mac nóng đến mức nào
+
+<sub>1.42.0 · 13 tháng 10 năm 2026</sub>
+
+Trang Nhiệt độ mới trong Cài đặt cho biết bộ xử lý, đồ họa, bộ nhớ, ổ lưu trữ, pin và Wi-Fi đang nóng đến mức nào, và nói bằng lời dễ hiểu xem mọi thứ có ổn không.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Nhiệt độ. Trên cùng, một từ duy nhất tóm tắt tất cả: “Bình thường”, “Hơi ấm”, “Nóng” hoặc “Rất nóng”, và một dòng ngắn bên dưới cho biết máy Mac đang chạy hết tốc độ hay đang chậm lại để hạ nhiệt. Xuống dưới nữa, mỗi bộ phận mà máy Mac đo được có một dòng riêng với nhiệt độ và một thanh màu: xanh lá là ổn, vàng là hơi ấm, cam là nóng, dựa trên mức bình thường của từng bộ phận.
+
+Muốn luôn để mắt tới nhiệt độ? Bấm vào cây bút chì ở cuối menu pikapik và đánh dấu “Nhiệt độ”. Khi đó menu sẽ hiện cùng từ đó và nhiệt độ bộ xử lý, còn bấm vào dòng này sẽ mở trang.
+
+Nhiệt độ được cập nhật hai giây một lần, nhưng chỉ khi trang hoặc menu đang mở, nên không có gì được kiểm tra ở chế độ nền. pikapik chỉ đọc nhiệt độ: không cần mật khẩu và không thay đổi gì cả.
+
+**Đã sửa**
+
+- Nếu bạn đã chọn những dòng mà menu pikapik hiển thị, dòng “Giữ Dock trên một màn hình” sẽ không tự xuất hiện ở đó nữa. Để hiện nó, bấm vào cây bút chì và đánh dấu nó.
+- Khi bạn đóng Cài đặt, pikapik giờ ngừng kiểm tra quạt và pin ngay lập tức thay vì tiếp tục chạy ngầm.
+
+---
+
 ## <a id="v1.41.1"></a>Điều khiển quạt không còn hỏi mật khẩu
 
 <sub>1.41.1 · 13 tháng 10 năm 2026</sub>

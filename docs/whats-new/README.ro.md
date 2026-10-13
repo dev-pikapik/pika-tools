@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Vezi cât de cald este Mac-ul în interior
+
+<sub>1.42.0 · 13 octombrie 2026</sub>
+
+Pagina nouă Temperatură din Setări arată temperatura procesorului, a graficii, a memoriei, a stocării, a bateriei și a Wi-Fi-ului și îți spune pe înțeles dacă totul e în regulă.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Temperatură. Sus, un singur cuvânt rezumă totul: „Normal”, „Cald”, „Fierbinte” sau „Foarte fierbinte”, iar un rând scurt de dedesubt îți spune dacă Mac-ul funcționează la viteză maximă sau încetinește ca să se răcească. Mai jos, fiecare componentă pe care Mac-ul o poate măsura are un rând al ei cu temperatura și o bară colorată: verde când totul e bine, galbenă când e cald și portocalie când e fierbinte, după ce e normal pentru acea componentă.
+
+Vrei să ai temperatura mereu sub ochi? Fă clic pe creionul din partea de jos a meniului pikapik și bifează „Temperatură”. Meniul arată apoi același cuvânt și temperatura procesorului, iar un clic pe rând deschide pagina.
+
+Temperaturile se actualizează la fiecare două secunde, dar numai cât timp pagina sau meniul sunt deschise, așa că nimic nu se verifică în fundal. pikapik doar citește temperaturile: nu are nevoie de parolă și nu schimbă nimic.
+
+**Reparat**
+
+- Dacă ai ales ce rânduri arată meniul pikapik, rândul „Ține Dock-ul pe un singur ecran” nu mai apare singur în el. Ca să-l afișezi, fă clic pe creion și bifează-l.
+- Când închizi Setările, pikapik se oprește acum imediat din verificarea ventilatoarelor și a bateriei, în loc să continue în fundal.
+
+---
+
 ## <a id="v1.41.1"></a>Controlul ventilatoarelor nu îți mai cere parola
 
 <sub>1.41.1 · 13 octombrie 2026</sub>

@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Mac’inizin içinin ne kadar ısındığını görün
+
+<sub>1.42.0 · 13 Ekim 2026</sub>
+
+Ayarlar’daki yeni Sıcaklık sayfası işlemcinin, grafiğin, belleğin, depolamanın, pilin ve Wi-Fi’ın ne kadar ısındığını gösterir ve her şeyin yolunda olup olmadığını sade bir dille söyler.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Ayarlar › Sıcaklık sayfasını açın. En üstte tek bir kelime durumu özetler: “Normal”, “Ilık”, “Sıcak” ya da “Çok sıcak”. Altındaki kısa satır, Mac’inizin tam hızda mı çalıştığını yoksa soğumak için mi yavaşladığını söyler. Aşağıda, Mac’inizin ölçebildiği her parça için sıcaklık ve renkli bir çubuk görünür: yeşil her şey yolunda, sarı ılık, turuncu sıcak demektir. Renkler her parçanın normal aralığına göre belirlenir.
+
+Sıcaklığı hep göz önünde tutmak mı istiyorsunuz? pikapik menüsünün altındaki kaleme tıklayın ve “Sıcaklık” seçeneğini işaretleyin. Menü bundan sonra aynı kelimeyi ve işlemcinin sıcaklığını gösterir, satıra tıklamak da sayfayı açar.
+
+Sıcaklıklar iki saniyede bir güncellenir, ama yalnızca sayfa ya da menü açıkken; yani arka planda hiçbir şey denetlenmez. pikapik sıcaklıkları yalnızca okur: parola istemez ve hiçbir şeyi değiştirmez.
+
+**Düzeltilenler**
+
+- pikapik menüsünde hangi satırların görüneceğini seçtiyseniz “Dock’u tek ekranda tut” satırı artık orada kendiliğinden belirmiyor. Göstermek için kaleme tıklayın ve onu işaretleyin.
+- Ayarlar’ı kapattığınızda pikapik artık fanları ve pili kontrol etmeyi hemen bırakıyor, arka planda devam etmiyor.
+
+---
+
 ## <a id="v1.41.1"></a>Fan kontrolü artık parolanızı sormuyor
 
 <sub>1.41.1 · 13 Ekim 2026</sub>

@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Lihat seberapa hangat bagian dalam Mac Anda
+
+<sub>1.42.0 · 13 Oktober 2026</sub>
+
+Halaman Suhu yang baru di Pengaturan menunjukkan seberapa panas prosesor, grafis, memori, penyimpanan, baterai, dan Wi-Fi, serta memberi tahu dengan kata-kata sederhana apakah semuanya baik-baik saja.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Suhu. Di bagian atas, satu kata merangkum semuanya: “Normal”, “Hangat”, “Panas”, atau “Sangat panas”, dan satu baris pendek di bawahnya memberi tahu apakah Mac Anda berjalan dengan kecepatan penuh atau melambat agar dingin. Lebih ke bawah, setiap komponen yang bisa diukur Mac Anda punya baris sendiri berisi suhunya dan bilah berwarna: hijau berarti aman, kuning berarti hangat, dan oranye berarti panas, sesuai dengan suhu yang normal untuk komponen itu.
+
+Ingin selalu memantau suhu? Klik pensil di bagian bawah menu pikapik dan centang “Suhu”. Setelah itu, menu menampilkan kata yang sama dan suhu prosesor, dan klik pada barisnya membuka halaman ini.
+
+Suhu diperbarui setiap dua detik, tetapi hanya selama halaman atau menu terbuka, jadi tidak ada yang diperiksa di latar belakang. pikapik hanya membaca suhu: tidak perlu kata sandi dan tidak ada yang diubah.
+
+**Diperbaiki**
+
+- Jika Anda sudah memilih baris yang ditampilkan menu pikapik, baris “Pertahankan Dock di satu layar” tidak lagi muncul sendiri di sana. Untuk menampilkannya, klik pensil dan centang baris itu.
+- Saat Anda menutup Pengaturan, pikapik kini langsung berhenti memeriksa kipas dan baterai, tidak lagi terus berjalan di latar belakang.
+
+---
+
 ## <a id="v1.41.1"></a>Kontrol kipas tidak lagi meminta kata sandi
 
 <sub>1.41.1 · 13 Oktober 2026</sub>

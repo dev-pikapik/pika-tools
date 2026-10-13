@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Zobacz, jak bardzo Mac nagrzał się w środku
+
+<sub>1.42.0 · 13 października 2026</sub>
+
+Nowa strona Temperatura w Ustawieniach pokazuje, jak bardzo nagrzały się procesor, grafika, pamięć, dysk, bateria i Wi-Fi, i prostymi słowami mówi, czy wszystko jest w porządku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Temperatura. Na górze jedno słowo podsumowuje wszystko: „W normie”, „Ciepło”, „Gorąco” albo „Bardzo gorąco”, a krótki wiersz pod nim mówi, czy Mac działa z pełną prędkością, czy zwalnia, aby ostygnąć. Niżej każda część, którą Mac potrafi zmierzyć, ma swój wiersz z temperaturą i kolorowym paskiem: zielony oznacza, że wszystko gra, żółty, że jest ciepło, a pomarańczowy, że gorąco, zależnie od tego, co jest normalne dla danej części.
+
+Chcesz mieć temperaturę zawsze na oku? Kliknij ołówek na dole menu pikapik i zaznacz pole „Temperatura”. Menu pokaże wtedy to samo słowo i temperaturę procesora, a kliknięcie wiersza otworzy stronę.
+
+Temperatury odświeżają się co dwie sekundy, ale tylko wtedy, gdy strona albo menu są otwarte, więc w tle nic nie jest sprawdzane. pikapik tylko odczytuje temperatury: nie potrzebuje hasła i niczego nie zmienia.
+
+**Poprawki**
+
+- Jeśli menu pikapik pokazuje wybrane przez ciebie wiersze, wiersz „Trzymaj Dock na jednym ekranie” nie pojawia się już w nim sam. Aby go pokazać, kliknij ołówek i zaznacz go.
+- Gdy zamykasz Ustawienia, pikapik od razu przestaje sprawdzać wentylatory i baterię, zamiast robić to dalej w tle.
+
+---
+
 ## <a id="v1.41.1"></a>Sterowanie wentylatorami nie prosi już o hasło
 
 <sub>1.41.1 · 13 października 2026</sub>
