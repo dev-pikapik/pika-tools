@@ -18,6 +18,7 @@
 "All set" = "Всё готово";
 "pikapik needs two permissions" = "Дайте pikapik два разрешения";
 "Both permissions are on and every tool is working." = "Доступы есть, все инструменты работают.";
+"Both permissions are on. Some tools also need a permission from the list below." = "Доступы есть. Некоторым инструментам нужен ещё доступ из списка ниже.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Без них macOS не пустит приложение к кликам и клавишам. Откройте Системные настройки › Конфиденциальность и безопасность и включите pikapik в двух списках:";
 "Permissions for some tools" = "Разрешения для некоторых инструментов";
 "Only some tools need these permissions. Everything else works without them." = "Эти разрешения нужны только некоторым инструментам. Всё остальное работает и без них.";

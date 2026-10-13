@@ -18,6 +18,7 @@
 "All set" = "Alles klaar";
 "pikapik needs two permissions" = "pikapik heeft twee toestemmingen nodig";
 "Both permissions are on and every tool is working." = "Beide toestemmingen staan aan en alle functies werken.";
+"Both permissions are on. Some tools also need a permission from the list below." = "Beide toestemmingen staan aan. Sommige functies hebben ook een toestemming uit de lijst hieronder nodig.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Zonder deze toestemmingen laat macOS de app geen klikken en toetsen zien of wijzigen. Open Systeeminstellingen › Privacy en beveiliging en zet pikapik aan in deze twee lijsten:";
 "Permissions for some tools" = "Toestemmingen voor sommige functies";
 "Only some tools need these permissions. Everything else works without them." = "Alleen sommige functies hebben deze toestemmingen nodig. Al het andere werkt ook zonder.";

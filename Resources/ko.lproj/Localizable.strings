@@ -18,6 +18,7 @@
 "All set" = "모두 준비됨";
 "pikapik needs two permissions" = "pikapik에 두 가지 권한이 필요합니다";
 "Both permissions are on and every tool is working." = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다.";
+"Both permissions are on. Some tools also need a permission from the list below." = "두 권한이 모두 켜져 있습니다. 일부 도구는 아래 목록의 권한도 필요합니다.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "권한이 없으면 macOS가 앱이 클릭과 키 입력을 확인하거나 변경하지 못하게 합니다. 시스템 설정 › 개인정보 보호 및 보안을 열고 다음 두 목록에서 pikapik을 켜세요:";
 "Permissions for some tools" = "일부 도구에 필요한 권한";
 "Only some tools need these permissions. Everything else works without them." = "이 권한은 일부 도구에만 필요합니다. 나머지는 모두 권한 없이도 작동합니다.";

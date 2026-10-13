@@ -395,13 +395,16 @@ struct PermissionsView: View {
 
     var body: some View {
         let others = Permission.allCases.filter { $0.isShown && $0 != .accessibility && $0 != .inputMonitoring }
+        let allSet = others.allSatisfy(\.isGranted)
+            ? String(localized: "Both permissions are on and every tool is working.")
+            : String(localized: "Both permissions are on. Some tools also need a permission from the list below.")
         Form {
             #if APPSTORE
             SettingsHeader(
                 tab: .permissions,
                 title: permissions.allGranted ? String(localized: "All set") : String(localized: "Permissions for some tools"),
                 text: permissions.allGranted
-                    ? String(localized: "Both permissions are on and every tool is working.")
+                    ? allSet
                     : String(localized: "Only some tools need these permissions. Everything else works without them.")
             )
             #else
@@ -409,7 +412,7 @@ struct PermissionsView: View {
                 tab: .permissions,
                 title: permissions.allGranted ? String(localized: "All set") : String(localized: "pikapik needs two permissions"),
                 text: permissions.allGranted
-                    ? String(localized: "Both permissions are on and every tool is working.")
+                    ? allSet
                     : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:")
             )
             #endif
