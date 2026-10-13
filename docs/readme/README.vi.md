@@ -225,6 +225,14 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br>Xem những gì đang chạy nền và chúng từ đâu ra.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Cổng</b>
+<br>Xem chương trình nào đang chiếm cổng và giải phóng cổng đó.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Chi tiết
@@ -316,6 +324,8 @@ Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơ
 
 Trang **Tác vụ nền** cho thấy mọi thứ tự khởi động trên Mac của bạn: ứng dụng mở khi đăng nhập, dịch vụ nền, trình trợ giúp nằm bên trong ứng dụng và tệp còn sót của những ứng dụng bạn đã gỡ. Mỗi tác vụ cho biết ứng dụng nào đã thêm nó, nó có đang chạy ngay lúc này không và tệp của nó nằm ở đâu; chỉ cần nhấp một lần là tệp hiện ra trong Finder. Tác vụ của riêng bạn tắt được bằng một nút và bật lại cũng dễ như vậy, không có gì bị xóa. Tác vụ cho mọi người dùng và cho cả máy Mac thuộc về macOS, nên nút của chúng mở Mục đăng nhập trong Cài đặt hệ thống. Trong phiên bản Mac App Store, trang này chỉ hiển thị các tác vụ: bạn cấp quyền truy cập thư mục chính một lần trong cửa sổ Mở quen thuộc, còn các nút sẽ mở Mục đăng nhập.
 
+**Cổng.** Khi một chương trình báo cổng của nó đã được dùng, hãy mở Cài đặt › Cổng. Bạn sẽ thấy mọi chương trình đang chiếm cổng trên Mac của bạn, kèm biểu tượng, số cổng và cho biết các thiết bị khác trong mạng của bạn có thể kết nối hay không. Nhập một số để tìm xem chương trình nào đang giữ cổng đó, hoặc để chắc chắn rằng cổng đang trống. Nhấp vào một hàng để xem các địa chỉ có thể mở trong trình duyệt, tệp của chương trình, lệnh đã khởi chạy nó, thư mục và mã tiến trình. **Giải phóng** sẽ đề nghị chương trình thoát để nó kịp lưu công việc, và nếu nó không đóng, sẽ đề xuất buộc thoát. Cả hai bước đều hỏi bạn trước. pikapik không bao giờ thoát các thành phần của macOS hay chương trình của người dùng khác: với Bộ thu AirPlay, Chia sẻ Tệp, Chia sẻ Màn hình và Đăng nhập Từ xa, bạn sẽ được cho biết công tắc nào trong Cài đặt hệ thống giải phóng cổng. Trong phiên bản Mac App Store, **Giải phóng** hiển thị chương trình, sao chép một lệnh để thoát nó trong Terminal hoặc mở Giám sát hoạt động.
+
 Mỗi công cụ có công tắc riêng trong menu và trong cài đặt.
 
 Biểu tượng trên thanh menu cho biết trạng thái chỉ trong nháy mắt: dấu pikapik khi các công cụ đang chạy, cùng dấu đó nhưng nhạt đi khi mọi thứ đều tắt, và tam giác cảnh báo khi một công cụ đang bật nhưng thiếu quyền.
@@ -355,6 +365,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Quạt**: tốc độ từng quạt, chọn Tự động hoặc tốc độ thủ công sau khi cho phép Điều khiển quạt.
 - **Nhiệt độ**: máy Mac nóng đến mức nào, tổng thể và từng bộ phận, như bộ xử lý, bộ nhớ và pin.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.
+- **Cổng**: chương trình nào đang chiếm cổng nào, địa chỉ và chi tiết, cùng một nút để giải phóng cổng.
 - **Bàn phím**: chuyển ngôn ngữ, lặp phím, Home và End.
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).

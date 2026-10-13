@@ -225,6 +225,14 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br>See what runs in the background and where it came from.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/ports-dark.png"><img src="docs/media/ports-light.png" width="340" alt=""></picture>
+<br><b>Ports</b>
+<br>See which program took a port, and free it.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Details
@@ -316,6 +324,8 @@ Changed your mind? Click **Put Back**, and everything returns to where it was an
 
 **Background Tasks** shows everything on your Mac that starts by itself: apps that open at login, background services, helpers tucked inside apps, and leftovers of apps you already deleted. Each task shows which app added it, whether it is running right now, and where its file is; one click shows the file in Finder. Your own tasks turn off with one button and come back just as easily, and nothing gets deleted. Tasks for all users and for the whole Mac belong to macOS, so their button opens Login Items in System Settings. In the Mac App Store version the page only shows the tasks: you give it access to your home folder once in the usual Open window, and the buttons open Login Items.
 
+**Ports.** When a program says its port is already in use, open Settings › Ports. You see every program that has taken a port on your Mac, with its icon, the port numbers and whether other devices on your network can connect. Type a number to find who holds that port, or to make sure it's free. Click a row for the addresses to open in a browser, the program's file, the command that started it, its folder and its process ID. **Free Up** asks the program to quit, so it can save its work, and if it doesn't close, offers to force quit it. Both steps ask you first. pikapik never quits parts of macOS or programs of other users: for AirPlay Receiver, File Sharing, Screen Sharing and Remote Login it tells you which switch in System Settings frees the port. In the Mac App Store version, **Free Up** shows the program, copies a command that quits it in Terminal, or opens Activity Monitor.
+
 Each tool has its own switch in the menu and in Settings.
 
 The menu bar icon shows the state at a glance: the pikapik mark when the tools are working, the same mark turned pale when everything is off, and a warning triangle when a tool is on but permissions are missing.
@@ -355,6 +365,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Fans**: see each fan’s speed, choose Auto or a manual speed once Fan control is allowed.
 - **Temperature**: how warm your Mac is, overall and for each part, such as the processor, memory and battery.
 - **Speed Test**: check the internet speed and see what it's good for.
+- **Ports**: which program took which port, its addresses and details, and a button to free the port.
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).

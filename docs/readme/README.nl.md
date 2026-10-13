@@ -225,6 +225,14 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br>Bekijk wat er op de achtergrond draait en waar het vandaan komt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Poorten</b>
+<br>Zie welk programma een poort bezet houdt, en maak hem vrij.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Meer weten
@@ -316,6 +324,8 @@ Bedacht je je? Klik op **Zet terug** en alles staat weer waar het stond, terwijl
 
 De pagina **Achtergrondtaken** toont alles wat vanzelf start op je Mac: apps die openen bij het inloggen, achtergronddiensten, hulpjes die in apps verstopt zitten en resten van apps die je al hebt verwijderd. Bij elke taak zie je welke app hem heeft toegevoegd, of hij nu draait en waar het bestand staat, en één klik toont dat bestand in de Finder. Je eigen taken zet je met één knop uit en net zo makkelijk weer aan, en er wordt niets verwijderd. Taken voor alle gebruikers en voor de hele Mac horen bij macOS, dus hun knop opent Inlogonderdelen in Systeeminstellingen. In de versie uit de Mac App Store laat de pagina de taken alleen zien: je geeft één keer in het gewone Open-venster toegang tot je thuismap, en de knoppen openen Inlogonderdelen.
 
+**Poorten.** Zegt een programma dat zijn poort al in gebruik is, open dan Instellingen › Poorten. Je ziet elk programma dat op je Mac een poort bezet houdt, met zijn symbool, de poortnummers en of andere apparaten in je netwerk verbinding kunnen maken. Typ een nummer om te zien wie die poort bezet houdt, of om zeker te weten dat hij vrij is. Klik op een rij voor de adressen die je in een browser kunt openen, het bestand van het programma, het commando waarmee het is gestart, de map en het procesnummer. **Maak vrij** vraagt het programma om te stoppen, zodat het zijn werk kan bewaren. Sluit het niet, dan kun je het geforceerd laten stoppen. Bij beide stappen vraagt pikapik het je eerst. Onderdelen van macOS en programma’s van andere gebruikers stopt pikapik nooit: bij AirPlay-ontvanger, Bestandsdeling, Schermdeling en Extern inloggen vertelt het je welke schakelaar in Systeeminstellingen de poort vrijmaakt. In de versie uit de Mac App Store toont **Maak vrij** het programma, kopieert een commando om het in Terminal te stoppen, of opent Activiteitenweergave.
+
 Elke tool heeft een eigen schakelaar in het menu en in de instellingen.
 
 Het symbool in de menubalk laat in één oogopslag de status zien: het pikapik-teken als de tools werken, hetzelfde teken maar bleek als alles uit staat en een waarschuwingsdriehoek als een tool aan staat maar er toestemmingen ontbreken.
@@ -355,6 +365,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Ventilatoren**: de snelheid van elke ventilator, Auto of een handmatige snelheid zodra Ventilatorbeheer is toegestaan.
 - **Temperatuur**: hoe warm je Mac is, in het algemeen en per onderdeel, zoals de processor, het geheugen en de batterij.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.
+- **Poorten**: welk programma welke poort bezet houdt, de adressen en details, en een knop om de poort vrij te maken.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).

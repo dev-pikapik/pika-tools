@@ -225,6 +225,14 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br>Découvrez ce qui tourne en arrière-plan et d’où cela vient.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Ports</b>
+<br>Voyez quel programme occupe un port, et libérez-le.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## En savoir plus
@@ -316,6 +324,8 @@ Vous avez changé d’avis ? Cliquez sur **Remettre en place** : tout revient o�
 
 La page **Tâches en arrière-plan** affiche tout ce qui se lance tout seul sur votre Mac : les apps qui s’ouvrent à la connexion, les services en arrière-plan, les assistants cachés dans les apps et les restes d’apps que vous avez déjà supprimées. Pour chaque tâche, vous voyez quelle app l’a ajoutée, si elle tourne en ce moment et où se trouve son fichier, et un clic affiche ce fichier dans le Finder. Vos propres tâches s’éteignent d’un bouton et se rallument tout aussi facilement, et rien n’est supprimé. Les tâches pour tous les utilisateurs et pour tout le Mac appartiennent à macOS : leur bouton ouvre donc la section Ouverture de Réglages Système. Dans la version du Mac App Store, la page se contente d’afficher les tâches : vous lui donnez une fois l’accès à votre dossier personnel dans la fenêtre Ouvrir habituelle, et les boutons ouvrent la section Ouverture.
 
+**Ports.** Quand un programme vous dit que son port est déjà utilisé, ouvrez Réglages › Ports. Vous y voyez chaque programme qui occupe un port sur votre Mac, avec son icône, les numéros de port et si d’autres appareils de votre réseau peuvent s’y connecter. Tapez un numéro pour savoir qui occupe ce port, ou pour vérifier qu’il est libre. Cliquez sur une ligne pour voir les adresses à ouvrir dans un navigateur, le fichier du programme, la commande qui l’a lancé, son dossier et son numéro de processus. **Libérer** demande au programme de quitter, pour qu’il puisse enregistrer son travail, et s’il ne se ferme pas, propose de le forcer à quitter. pikapik vous demande votre accord avant chaque étape. Il ne quitte jamais les éléments de macOS ni les programmes d’autres utilisateurs : pour Récepteur AirPlay, Partage de fichiers, Partage d’écran et Session à distance, il vous indique quel interrupteur de Réglages Système libère le port. Dans la version du Mac App Store, **Libérer** affiche le programme, copie une commande à coller dans Terminal pour le quitter, ou ouvre Moniteur d’activité.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
@@ -355,6 +365,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Ventilateurs** : vitesse de chaque ventilateur, mode Auto ou vitesse manuelle une fois le contrôle des ventilateurs autorisé.
 - **Température** : la chaleur de votre Mac, au global et pour chaque composant, comme le processeur, la mémoire et la batterie.
 - **Test de débit** : mesurer la connexion et voir ce qu’elle permet.
+- **Ports** : quel programme occupe quel port, ses adresses et ses détails, et un bouton pour libérer le port.
 - **Clavier** : changement de langue, répétition des touches, Home et End.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).

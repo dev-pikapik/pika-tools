@@ -225,6 +225,14 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br>Se vad som körs i bakgrunden och var det kommer ifrån.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Portar</b>
+<br>Se vilket program som har tagit en port, och frigör den.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mer information
@@ -316,6 +324,8 @@ För att veta när en utmärkelse är på väg räknar pikapik bara det du och d
 
 Sidan **Bakgrundsuppgifter** visar allt som startar av sig självt på din Mac: appar som öppnas vid inloggning, bakgrundstjänster, hjälpare som gömmer sig inuti appar och rester av appar som du redan har tagit bort. Vid varje uppgift ser du vilken app som lade till den, om den körs just nu och var dess fil ligger, och med ett klick visas filen i Finder. Dina egna uppgifter stängs av med en knapp och slås på igen lika enkelt, och ingenting raderas. Uppgifter för alla användare och för hela Macen hör till macOS, så deras knapp öppnar Startobjekt i Systeminställningar. I versionen från Mac App Store visar sidan bara uppgifterna: du ger den åtkomst till din hemmapp en gång i det vanliga Öppna-fönstret, och knapparna öppnar Startobjekt.
 
+**Portar.** När ett program säger att porten redan används öppnar du Inställningar › Portar. Där ser du varje program som har tagit en port på din Mac, med dess symbol, portnumren och om andra enheter i ditt nätverk kan ansluta. Skriv ett nummer för att se vem som håller den porten, eller för att försäkra dig om att den är ledig. Klicka på en rad för att se adresserna som öppnas i en webbläsare, programmets fil, kommandot som startade det, dess mapp och dess processnummer. **Frigör** ber programmet att avsluta, så att det hinner spara sitt arbete, och om det inte stängs kan du tvångsavsluta det. Du får frågan före varje steg. Delar av macOS och program som tillhör andra användare avslutar pikapik aldrig: för AirPlay-mottagare, Fildelning, Skärmdelning och Fjärrinloggning får du i stället veta vilket reglage i Systeminställningar som frigör porten. I versionen från Mac App Store visar **Frigör** programmet, kopierar ett kommando som avslutar det i Terminal eller öppnar Aktivitetskontroll.
+
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
@@ -355,6 +365,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Fläktar**: hastigheten för varje fläkt, Auto eller en egen hastighet när Fläktstyrning är tillåten.
 - **Temperatur**: hur varm din Mac är, totalt och för varje del, som processorn, minnet och batteriet.
 - **Hastighetstest**: mät internet och se vad det räcker till.
+- **Portar**: vilket program som har tagit vilken port, dess adresser och detaljer och en knapp som frigör porten.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
