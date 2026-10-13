@@ -1,45 +1,6 @@
 import AppKit
 import SwiftUI
 
-struct AppRowLabel<Trailing: View>: View {
-    let icon: NSImage
-    let name: String
-    var running = false
-    let byline: String
-    @ViewBuilder var trailing: Trailing
-
-    var body: some View {
-        HStack(spacing: 10) {
-            Image(nsImage: icon)
-                .resizable()
-                .frame(width: 28, height: 28)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 1) {
-                HStack(spacing: 6) {
-                    Text(name)
-                        .lineLimit(1)
-                    if running {
-                        Circle()
-                            .fill(.green)
-                            .frame(width: 6, height: 6)
-                            .help(Text("Open now"))
-                            .accessibilityLabel(Text("Open now"))
-                    }
-                }
-                if !byline.isEmpty {
-                    Text(byline)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                }
-            }
-            Spacer(minLength: 8)
-            trailing
-        }
-        .contentShape(Rectangle())
-    }
-}
-
 struct SizeColumn: View {
     let size: Int64?
     let caption: String
@@ -58,15 +19,6 @@ struct SizeColumn: View {
                 .frame(height: 14, alignment: .trailing)
         }
         .frame(width: width, alignment: .trailing)
-    }
-}
-
-struct RowChevron: View {
-    var body: some View {
-        Image(systemName: "chevron.forward")
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(.tertiary)
-            .accessibilityHidden(true)
     }
 }
 

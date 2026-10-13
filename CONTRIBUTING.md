@@ -165,6 +165,12 @@ swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Arc
 swiftc -parse-as-library Sources/pika-tools/Common/Battery.swift scripts/test-battery.swift -o build/test-battery && build/test-battery
 ```
 
+The **Ports** page learns which programs listen on which ports from the same kernel list `netstat` reads (`net.inet.tcp.pcblist_n` and `net.inet.udp.pcblist_n`), so it needs no extra tools and works in the App Store version too. macOS 27 shares that list only with programs signed with an identifier, so the command signs the test before running it. The test opens a few sockets of its own on ports the system picks, checks that the list finds each one with the right program, address and protocol and that a plain connection is not counted as listening, then groups made-up processes the way the page does. It only reads the list and never touches other programs:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Ports/PortScanner.swift scripts/test-ports.swift -o build/test-ports && codesign -s - -f -i com.pesotchi.pika-tools.test-ports build/test-ports && build/test-ports
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.

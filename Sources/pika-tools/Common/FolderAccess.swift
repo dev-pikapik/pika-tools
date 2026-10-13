@@ -1,11 +1,11 @@
 import AppKit
 
 enum FolderAccess {
+    static let home = URL(fileURLWithPath: String(cString: getpwuid(getuid())?.pointee.pw_dir ?? strdup("/")), isDirectory: true).resolvingSymlinksInPath()
+
     #if APPSTORE
     private static let key = "folder-access"
     private static var open: [URL] = []
-
-    static let home = URL(fileURLWithPath: String(cString: getpwuid(getuid())?.pointee.pw_dir ?? strdup("/")), isDirectory: true).resolvingSymlinksInPath()
 
     static var isGranted: Bool {
         !(UserDefaults.standard.dictionary(forKey: key) ?? [:]).isEmpty
