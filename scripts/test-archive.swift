@@ -158,7 +158,7 @@ enum TestArchive {
         guard case .noSpace(let needed, let free)? = known else { preconditionFailure("known size: \(String(describing: known))") }
         precondition(needed == 48 << 20 && free > 0 && free < 16 << 20, "known size: \(needed) \(free)")
         guard case .noSpace(0, let left)? = unknown else { preconditionFailure("unknown size: \(String(describing: unknown))") }
-        precondition(left > 0)
+        precondition(before - left < 256 << 10, "unknown size: \(left) free, \(before) before")
         guard case .noSpace(let wanted, _)? = full else { preconditionFailure("create: \(String(describing: full))") }
         precondition(wanted == 9 << 20)
         guard case .noSpace(0, _)? = lied else { preconditionFailure("a zip that claims 10 bytes: \(String(describing: lied))") }

@@ -18,6 +18,7 @@ Trước đây, chỉ cần hai quyền ở trên cùng được bật, trang đ
 **Đã sửa**
 
 - Trong phiên bản Mac App Store, mục “Gửi lời cảm ơn” trên trang “Giới thiệu” chỉ hiện ra khi các mức tiền tip đã sẵn sàng để chọn. Trước đây có một vòng xoay trong lúc tải, và mục này biến mất nếu App Store không phản hồi.
+- Nếu ổ đĩa đầy khi đang giải nén một tệp lưu trữ, “Không đủ dung lượng” giờ cho biết dung lượng thực sự còn trống sau khi xóa các tệp giải nén dở. Trước đây thông báo có thể nói gần như không còn chỗ trống.
 
 ---
 

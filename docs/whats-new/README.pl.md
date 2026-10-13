@@ -18,6 +18,7 @@ Wcześniej, gdy oba uprawnienia na górze były włączone, strona obiecywała, 
 **Poprawki**
 
 - W wersji z Mac App Store sekcja „Podziękuj” na stronie „Informacje” pojawia się dopiero wtedy, gdy napiwki są gotowe do wyboru. Wcześniej podczas ładowania kręciło się kółko, a gdy App Store nie odpowiadał, sekcja znikała.
+- Jeśli dysk zapełni się podczas rozpakowywania archiwum, komunikat „Za mało miejsca” pokazuje teraz, ile miejsca jest naprawdę wolne po usunięciu częściowo rozpakowanych plików. Wcześniej mógł podawać, że wolnego miejsca prawie nie ma.
 
 ---
 

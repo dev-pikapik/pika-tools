@@ -18,6 +18,7 @@ Before, once both permissions at the top were on, the page said every tool was w
 **Fixed**
 
 - In the Mac App Store version, Say thanks on the About page appears only once the tips are ready to choose. Before, a spinning wheel showed while they loaded, and the section vanished if the App Store didn’t answer.
+- If the disk fills up while an archive is being unpacked, Not enough space now shows how much space is really free once the half-unpacked files are removed. Before, it could say that almost nothing was free.
 
 ---
 

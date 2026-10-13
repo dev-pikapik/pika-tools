@@ -18,6 +18,7 @@ Bir aracın aşağıdaki listeden hâlâ bir izne ihtiyacı varsa sayfa artık b
 **Düzeltilenler**
 
 - Mac App Store sürümünde, “Hakkında” sayfasındaki “Teşekkür et” bölümü yalnızca bahşişler seçilmeye hazır olduğunda görünüyor. Önceden yüklenirken dönen bir simge çıkıyor, App Store yanıt vermezse bölüm kayboluyordu.
+- Bir arşiv açılırken disk dolarsa, “Yeterli yer yok” artık yarım açılmış dosyalar silindikten sonra gerçekten ne kadar boş yer kaldığını gösteriyor. Önceden neredeyse hiç boş yer olmadığını söyleyebiliyordu.
 
 ---
 

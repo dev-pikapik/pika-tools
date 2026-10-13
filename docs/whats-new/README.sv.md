@@ -18,6 +18,7 @@ Tidigare lovade sidan att alla verktyg fungerade så fort båda behörigheterna 
 **Åtgärdat**
 
 - I versionen från Mac App Store visas ”Säg tack” på sidan ”Om” först när det går att välja dricks. Tidigare snurrade ett hjul under laddningen, och avsnittet försvann om App Store inte svarade.
+- Om disken blir full medan ett arkiv packas upp visar ”Inte tillräckligt med utrymme” nu hur mycket utrymme som verkligen är ledigt när de halvt uppackade filerna har tagits bort. Tidigare kunde det stå att nästan inget var ledigt.
 
 ---
 

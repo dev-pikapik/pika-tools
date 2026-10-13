@@ -18,6 +18,7 @@ Prima, appena i due permessi in alto erano attivi, la pagina prometteva che tutt
 **Corretto**
 
 - Nella versione del Mac App Store, «Dì grazie» nella pagina «Info» appare solo quando le mance sono pronte da scegliere. Prima, durante il caricamento girava una rotellina, e la sezione spariva se l’App Store non rispondeva.
+- Se il disco si riempie mentre un archivio viene estratto, «Spazio insufficiente» ora mostra lo spazio davvero libero, dopo aver rimosso i file estratti a metà. Prima poteva dire che non restava quasi nulla.
 
 ---
 

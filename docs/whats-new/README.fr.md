@@ -18,6 +18,7 @@ Avant, dès que les deux autorisations du haut étaient actives, la page promett
 **Corrigé**
 
 - Dans la version du Mac App Store, « Dire merci » sur la page « À propos » n’apparaît que lorsque les pourboires sont prêts à être choisis. Avant, une roue tournait pendant le chargement, et la section disparaissait si l’App Store ne répondait pas.
+- Si le disque se remplit pendant l’extraction d’une archive, « Pas assez de place » indique désormais l’espace vraiment libre, une fois les fichiers à moitié extraits supprimés. Avant, il pouvait annoncer qu’il ne restait presque rien.
 
 ---
 

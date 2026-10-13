@@ -18,6 +18,7 @@ Antes, assim que as duas permissões do topo estavam ativas, a página prometia 
 **Corrigido**
 
 - Na versão da Mac App Store, “Agradecer” na página “Sobre” só aparece quando as gorjetas estão prontas para escolher. Antes, uma roda girava enquanto elas carregavam, e a seção sumia se a App Store não respondesse.
+- Se o disco encher enquanto um arquivo compactado é extraído, “Espaço insuficiente” agora mostra o espaço realmente livre, depois que os arquivos extraídos pela metade são apagados. Antes, podia dizer que quase nada estava livre.
 
 ---
 

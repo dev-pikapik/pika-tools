@@ -18,6 +18,7 @@ Eerder beloofde de pagina, zodra beide toestemmingen bovenaan aan stonden, dat a
 **Opgelost**
 
 - In de versie uit de Mac App Store verschijnt ‘Bedankje geven’ op de pagina ‘Over’ pas als de fooien klaarstaan om te kiezen. Eerder draaide er een wieltje tijdens het laden, en verdween het onderdeel als de App Store niet antwoordde.
+- Als de schijf volloopt terwijl een archief wordt uitgepakt, toont ‘Onvoldoende ruimte’ nu hoeveel ruimte echt vrij is nadat de half uitgepakte bestanden zijn verwijderd. Eerder kon er staan dat er bijna niets vrij was.
 
 ---
 

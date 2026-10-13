@@ -18,6 +18,7 @@ Când un instrument mai are nevoie de o permisiune din lista de mai jos, pagina 
 **Reparat**
 
 - În versiunea din Mac App Store, „Mulțumește” de pe pagina „Despre” apare doar când bacșișurile sunt gata de ales. Înainte, cât timp se încărcau, se învârtea o rotiță, iar secțiunea dispărea dacă App Store nu răspundea.
+- Dacă discul se umple în timpul dezarhivării, „Spațiu insuficient” arată acum cât spațiu e liber cu adevărat, după ștergerea fișierelor dezarhivate pe jumătate. Înainte putea spune că nu mai e aproape nimic liber.
 
 ---
 

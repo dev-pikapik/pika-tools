@@ -7,6 +7,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Fixed
 - Permissions: once both permissions at the top are on, the header no longer says every tool is working while a tool under For some features still needs its permission. It now says that some tools also need a permission from the list below.
 - Mac App Store version: Say thanks on the About page appears only once the App Store has sent the tips. It no longer shows a spinning wheel while they load, and it no longer appears and then vanishes when the App Store doesn’t answer.
+- Archives: if the disk fills up while an archive is being unpacked, Not enough space now shows how much space is really free once the half-unpacked files are removed. Before, it could say that almost nothing was free.
 
 ## [1.46.0] - 2026-10-13
 

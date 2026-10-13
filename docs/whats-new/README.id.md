@@ -18,6 +18,7 @@ Sebelumnya, begitu kedua izin di atas aktif, halaman ini menjanjikan bahwa semua
 **Diperbaiki**
 
 - Di versi Mac App Store, “Ucapkan terima kasih” di halaman “Tentang” baru muncul saat tip siap dipilih. Sebelumnya ada roda berputar selama tip dimuat, dan bagian itu menghilang jika App Store tidak menjawab.
+- Jika disk penuh saat arsip sedang dibuka, “Ruang tidak cukup” kini menampilkan ruang yang benar-benar kosong setelah file yang baru setengah dibuka dihapus. Sebelumnya pesan ini bisa menyebut hampir tidak ada ruang kosong.
 
 ---
 

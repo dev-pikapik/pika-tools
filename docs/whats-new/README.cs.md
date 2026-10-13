@@ -18,6 +18,7 @@ Dřív stránka slibovala, že všechny nástroje fungují, jakmile byla obě op
 **Opraveno**
 
 - Ve verzi z Mac App Store se „Poděkovat“ na stránce „O aplikaci“ zobrazí, až když je spropitné připravené k výběru. Dřív se během načítání točilo kolečko, a když App Store neodpověděl, část zmizela.
+- Když se disk zaplní během rozbalování archivu, hláška „Není dost místa“ teď ukazuje, kolik místa je opravdu volné po smazání napůl rozbalených souborů. Dřív mohla tvrdit, že volné není skoro nic.
 
 ---
 

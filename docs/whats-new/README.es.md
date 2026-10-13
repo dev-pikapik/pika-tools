@@ -18,6 +18,7 @@ Antes, en cuanto los dos permisos de arriba estaban activos, la página prometí
 **Corregido**
 
 - En la versión de la Mac App Store, «Dar las gracias» en la página «Acerca de» aparece solo cuando las propinas están listas para elegir. Antes giraba una rueda mientras se cargaban, y la sección desaparecía si la App Store no respondía.
+- Si el disco se llena mientras se descomprime un archivo, «No hay espacio suficiente» ahora muestra el espacio que de verdad queda libre, una vez borrados los archivos a medio extraer. Antes podía decir que no quedaba casi nada.
 
 ---
 

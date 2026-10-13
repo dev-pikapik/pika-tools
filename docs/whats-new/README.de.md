@@ -18,6 +18,7 @@ Waren beide Berechtigungen oben aktiv, versprach die Seite bisher, dass jedes To
 **Behoben**
 
 - In der Version aus dem Mac App Store erscheint „Danke sagen“ auf der Seite „Über“ erst, wenn die Trinkgelder zur Auswahl bereitstehen. Vorher drehte sich beim Laden ein Rad, und der Bereich verschwand, wenn der App Store nicht antwortete.
+- Wird der Speicher beim Entpacken eines Archivs voll, zeigt „Nicht genug Platz“ jetzt, wie viel Platz wirklich frei ist, sobald die halb entpackten Dateien entfernt sind. Vorher konnte dort stehen, dass fast nichts frei ist.
 
 ---
 
