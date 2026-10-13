@@ -33,7 +33,7 @@ enum TestArchive {
         useBundledTool()
         try! manager.createDirectory(at: root, withIntermediateDirectories: true)
         defer { try? manager.removeItem(at: root) }
-        let leftovers = itemFolders()
+        let leftovers = ownItems()
         naming()
         limits()
         space()
@@ -56,7 +56,8 @@ enum TestArchive {
         appleDouble()
         cancelling()
         rar()
-        precondition(itemFolders() <= leftovers, "temporary folders left behind: \(itemFolders() - leftovers)")
+        let left = ownItems().subtracting(leftovers)
+        precondition(left.isEmpty, "temporary folders left behind: \(left.sorted())")
         print("archive: all ok")
     }
 
@@ -1057,8 +1058,8 @@ enum TestArchive {
         return probe.deletingLastPathComponent()
     }
 
-    static func itemFolders() -> Int {
-        var info = stat()
-        return lstat(itemRoot().path, &info) == 0 ? Int(info.st_nlink) - 2 : 0
+    static func ownItems() -> Set<String> {
+        let prefix = "NSIRD_\(ProcessInfo.processInfo.processName)_"
+        return Set(Archive.entries(of: itemRoot().path).filter { $0.hasPrefix(prefix) })
     }
 }
