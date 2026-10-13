@@ -89,7 +89,7 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Ocultar com um clique no Dock</b>
+<br><b>Minimizar com um clique no Dock</b>
 <br>Clique no app que você está usando, e ele sai da frente.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Encerrar ao fechar a última janela.** Feche a última janela de um app e o app é encerrado. O Finder continua aberto, assim como os apps com janelas em outras mesas ou no Dock. Você pode listar os apps que nunca devem ser encerrados assim. Desativado por padrão.
 
-**Ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e ele é ocultado. Clique de novo para trazê-lo de volta. Desativado por padrão.
+**Minimizar ou ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e todas as janelas dele descem para o Dock. Clique de novo para trazer todas de volta. Você também pode fazer o clique ocultar o app inteiro, como ⌘H. Desativado por padrão.
 
 **Manter o Dock em uma só tela.** Com várias telas, o macOS move o Dock para outra tela assim que o ponteiro empurra a borda inferior dela, ou a borda esquerda ou direita, se o Dock estiver na lateral. Com a chave ligada, o Dock fica onde está e os cantos ativos continuam funcionando. Para movê-lo de propósito, mantenha ⌥ pressionada e empurre o ponteiro contra a borda da outra tela. Não é preciso nenhuma permissão. **Trazer o Dock de volta** devolve o Dock à tela dele depois do repouso ou quando as telas mudam. Essa chave precisa da permissão **Acessibilidade** e não está na versão da Mac App Store. As duas chaves vêm desativadas por padrão.
 
@@ -333,7 +333,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Teclado**: troca de idioma, repetição de teclas, Home e End.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
-- **Dock**: ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
+- **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.

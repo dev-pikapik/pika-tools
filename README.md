@@ -89,7 +89,7 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-hide-dark.png"><img src="docs/media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Hide with a Dock click</b>
+<br><b>Minimize with a Dock click</b>
 <br>Click the app you’re in, and it steps out of the way.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
-**Hide with a click in the Dock.** Click the Dock icon of the app you're in, and it hides. Click again to bring it back. Off by default.
+**Minimize or hide with a click in the Dock.** Click the Dock icon of the app you're in, and all its windows go down to the Dock. Click again to bring them all back. You can also make the click hide the whole app, like ⌘H. Off by default.
 
 **Keep the Dock on one display.** With several displays, macOS moves the Dock to another display as soon as the pointer pushes against that display’s bottom edge, or its left or right edge if the Dock is at the side. With this on, the Dock stays where it is, and hot corners keep working. To move it on purpose, hold ⌥ and push the pointer against the edge of the other display. No permission is needed. **Bring the Dock back** returns the Dock to its display after sleep or when displays change. It needs **Accessibility** and is not in the Mac App Store version. Both switches are off by default.
 
@@ -333,7 +333,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Keyboard**: language switch, key repeat, Home and End.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
-- **Dock**: hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
+- **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Games**: your list of games and the Game Mode options.

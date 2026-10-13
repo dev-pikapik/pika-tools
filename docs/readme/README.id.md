@@ -89,7 +89,7 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Sembunyikan dengan klik di Dock</b>
+<br><b>Minimalkan dengan klik di Dock</b>
 <br>Klik app yang sedang Anda pakai, dan app itu menyingkir.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Keluar saat jendela terakhir ditutup.** Tutup jendela terakhir sebuah app, dan app akan keluar. Finder tetap terbuka, begitu juga app yang punya jendela di desktop lain atau di Dock. Anda bisa membuat daftar app yang tidak boleh keluar dengan cara ini. Mati secara default.
 
-**Sembunyikan dengan klik di Dock.** Klik ikon Dock dari app yang sedang Anda gunakan, dan app itu tersembunyi. Klik lagi untuk memunculkannya kembali. Mati secara default.
+**Minimalkan atau sembunyikan dengan klik di Dock.** Klik ikon Dock dari app yang sedang Anda gunakan, dan semua jendelanya turun ke Dock. Klik lagi untuk memunculkan semuanya kembali. Anda juga bisa membuat klik itu menyembunyikan seluruh app, seperti ⌘H. Mati secara default.
 
 **Pertahankan Dock di satu layar.** Dengan beberapa layar, macOS memindahkan Dock ke layar lain begitu penunjuk menekan tepi bawah layar itu, atau tepi kiri atau kanannya jika Dock ada di samping. Saat dinyalakan, Dock tetap di tempatnya dan sudut aktif tetap berfungsi. Untuk memindahkannya dengan sengaja, tahan ⌥ dan dorong penunjuk ke tepi layar yang lain. Tidak perlu izin apa pun. Sakelar **Kembalikan Dock** membawa Dock kembali ke layarnya setelah tidur atau saat layar berubah. Sakelar ini memerlukan izin **Aksesibilitas** dan tidak ada di versi Mac App Store. Kedua sakelar mati secara default.
 
@@ -333,7 +333,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
-- **Dock**: menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
+- **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
 - **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
 - **Hapus App**: hapus app beserta filenya, kembalikan semuanya nanti, dan bersihkan sisa dari app yang sudah dihapus.
 - **Game**: daftar game Anda dan opsi Mode Game.

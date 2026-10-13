@@ -89,7 +89,7 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Ukrywanie kliknięciem w Docku</b>
+<br><b>Minimalizowanie kliknięciem w Docku</b>
 <br>Kliknij aplikację, w której jesteś, a zejdzie z drogi.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
-**Ukrywanie kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a zostanie ukryta. Kliknij ponownie, aby ją przywrócić. Domyślnie wyłączone.
+**Minimalizuj lub ukrywaj kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a wszystkie jej okna trafią do Docka. Kliknij ponownie, aby przywrócić je wszystkie. Możesz też sprawić, by kliknięcie ukrywało całą aplikację, jak ⌘H. Domyślnie wyłączone.
 
 **Trzymaj Dock na jednym ekranie.** Przy kilku ekranach macOS przenosi Dock na inny ekran, gdy tylko wskaźnik zacznie napierać na dolną krawędź tego ekranu, albo na lewą lub prawą, jeśli Dock jest z boku. Gdy przełącznik jest włączony, Dock zostaje tam, gdzie jest, a aktywne rogi dalej działają. Aby przenieść go celowo, przytrzymaj ⌥ i dociśnij wskaźnik do krawędzi drugiego ekranu. Nie są potrzebne żadne uprawnienia. Przełącznik **Przywracaj Dock** odsyła Dock na jego ekran po uśpieniu lub zmianie ekranów. Wymaga uprawnienia **Dostępność** i nie ma go w wersji z Mac App Store. Oba przełączniki są domyślnie wyłączone.
 
@@ -333,7 +333,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
-- **Dock**: ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
+- **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.

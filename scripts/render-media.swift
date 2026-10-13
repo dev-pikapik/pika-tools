@@ -56,6 +56,7 @@ enum RenderMedia {
         ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
         ("whats-new/1.39.0/archive-password", ArchivePasswordCard.length, AnyView(ArchivePasswordCard())),
         ("whats-new/1.39.3/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
+        ("whats-new/next/dock-minimize", DockMinimizeCard.length, AnyView(DockMinimizeCard())),
     ]
 
     static func main() {
@@ -1043,6 +1044,46 @@ enum APNG {
             b = (b + a) % 65521
         }
         return [0x78, 0x9C] + deflated + withUnsafeBytes(of: (b << 16 | a).bigEndian) { Array($0) }
+    }
+}
+
+private struct DockMinimizeCard: View {
+    static let durations = [1.2, 1.1, 0.15, 1.5, 0.15, 1.5]
+    static var length: Double { durations.reduce(0, +) }
+    private static let windows = [CGPoint(x: 118, y: 36), CGPoint(x: 180, y: 48)]
+
+    var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = tick % Self.durations.count
+            let down = (3...4).contains(step)
+            Stage {
+                ForEach(Self.windows.indices, id: \.self) { index in
+                    let spot = Self.windows[index]
+                    ArtWindow(size: CGSize(width: 96, height: 56), active: index == 1) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            ForEach([46, 32, 40], id: \.self) { Capsule().fill(Color.primary.opacity(0.12)).frame(width: CGFloat($0), height: 4) }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .padding(9)
+                    }
+                    .scaleEffect(down ? 0.12 : 1, anchor: .bottom)
+                    .offset(x: down ? 150 - spot.x : 0, y: down ? 112 - spot.y - 28 : 0)
+                    .opacity(down ? 0 : 1)
+                    .animation(.smooth(duration: 0.55).delay(down == (index == 1) ? 0 : 0.14), value: down)
+                    .position(spot)
+                }
+                ArtDock()
+                    .position(x: 150, y: 102)
+                if step >= 2 {
+                    ArtRipple()
+                        .id(step < 4)
+                        .position(x: 150, y: 100)
+                }
+                ArtCursor(pressed: step == 2 || step == 4)
+                    .cursor(at: step == 0 ? CGPoint(x: 246, y: 76) : CGPoint(x: 152, y: 98))
+            }
+            .animation(.smooth(duration: 0.55), value: step)
+        }
     }
 }
 

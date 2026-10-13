@@ -89,7 +89,7 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Verbergen met een klik in het Dock</b>
+<br><b>Minimaliseren met een klik in het Dock</b>
 <br>Klik op de app waarin je zit, en hij gaat opzij.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Stoppen als het laatste venster sluit.** Sluit het laatste venster van een app en de app stopt. De Finder blijft open, net als apps met vensters op andere bureaubladen of in het Dock. Je kunt apps opgeven die nooit op deze manier mogen stoppen. Standaard uit.
 
-**Verbergen met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en de app wordt verborgen. Klik nog eens om hem terug te halen. Standaard uit.
+**Minimaliseer of verberg met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en al zijn vensters gaan naar het Dock. Klik nog eens om ze allemaal terug te halen. Je kunt de klik ook de hele app laten verbergen, zoals ⌘H. Standaard uit.
 
 **Houd het Dock op één scherm.** Bij meerdere schermen verplaatst macOS het Dock naar een ander scherm zodra de aanwijzer tegen de onderrand van dat scherm duwt, of tegen de linker- of rechterrand als het Dock aan de zijkant staat. Staat de schakelaar aan, dan blijft het Dock waar het is en blijven actieve hoeken gewoon werken. Wil je het bewust verplaatsen, houd dan ⌥ ingedrukt en duw de aanwijzer tegen de rand van het andere scherm. Daarvoor is geen toestemming nodig. **Haal het Dock terug** zet het Dock na de sluimerstand of als schermen veranderen terug op zijn eigen scherm. Die schakelaar heeft de toestemming **Toegankelijkheid** nodig en zit niet in de versie uit de Mac App Store. Beide schakelaars staan standaard uit.
 
@@ -333,7 +333,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).
-- **Dock**: verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.
+- **Dock**: minimaliseren of verbergen met een klik in het Dock, het Dock op één scherm houden en het Dock terughalen.
 - **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
 - **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
 - **Games**: je lijst met games en de opties van de Gamemodus.

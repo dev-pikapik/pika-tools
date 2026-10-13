@@ -135,7 +135,6 @@
 "Add" = "Thêm";
 "close button, red button, terminate, exit" = "nút đóng, nút đỏ, kết thúc, thoát, exit";
 "exceptions, exclude, list" = "ngoại lệ, loại trừ, danh sách";
-"Hide with a click in the Dock" = "Ẩn bằng một lần bấm trong Dock";
 "Keep the Dock on one display" = "Giữ Dock trên một màn hình";
 "Hold ⌥ to move it on purpose" = "Giữ ⌥ để chủ động di chuyển";
 "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Dock ở lại trên màn hình hiện tại, kể cả khi con trỏ chạm tới cạnh của màn hình khác. Để di chuyển Dock, giữ ⌥ và đẩy con trỏ vào cạnh của màn hình kia.";
@@ -146,6 +145,15 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Bấm vào biểu tượng của ứng dụng đang dùng để ẩn ứng dụng. Bấm lần nữa để hiện lại.";
 "Click again to bring it back" = "Bấm lần nữa để hiện lại";
 "Dock, minimize, hide, taskbar" = "Dock, thu nhỏ, ẩn, thanh tác vụ, taskbar";
+"Minimize or hide with a click in the Dock" = "Thu nhỏ hoặc ẩn bằng một lần bấm trong Dock";
+"Click the icon of the open app to minimize its windows" = "Bấm biểu tượng của ứng dụng đang mở để thu nhỏ các cửa sổ của nó";
+"Click again to bring them back" = "Bấm lần nữa để các cửa sổ hiện lại";
+"Click the icon of the app you’re in, and all its windows go down to the Dock. Click again to bring them all back." = "Bấm vào biểu tượng của ứng dụng đang dùng, mọi cửa sổ của nó sẽ thu xuống Dock. Bấm lần nữa để tất cả hiện lại.";
+"A click on the icon" = "Khi bấm biểu tượng";
+"Minimizes the windows" = "Thu nhỏ các cửa sổ";
+"Hides the app" = "Ẩn ứng dụng";
+"The windows go down to the Dock, like with the yellow button" = "Các cửa sổ thu xuống Dock, giống như bấm nút vàng";
+"The app hides with all its windows, like with ⌘H" = "Ứng dụng ẩn đi cùng mọi cửa sổ, giống ⌘H";
 "Green button enlarges the window" = "Nút xanh lá phóng to cửa sổ";
 "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Bấm vào nút xanh lá để cửa sổ lấp đầy màn hình. Bấm lần nữa để trở lại kích thước cũ. Chế độ toàn màn hình vẫn có trong menu của nút và ở ⌃⌘F.";
 "Green button works as usual in these apps" = "Nút xanh lá hoạt động như bình thường trong các ứng dụng này";

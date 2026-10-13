@@ -135,7 +135,6 @@
 "Add" = "Voeg toe";
 "close button, red button, terminate, exit" = "sluitknop, rode knop, beëindigen, afsluiten";
 "exceptions, exclude, list" = "uitzonderingen, uitsluiten, lijst";
-"Hide with a click in the Dock" = "Verberg met een klik in het Dock";
 "Keep the Dock on one display" = "Houd het Dock op één scherm";
 "Hold ⌥ to move it on purpose" = "Houd ⌥ ingedrukt om het bewust te verplaatsen";
 "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Het Dock blijft op het scherm waar het nu staat, ook als de aanwijzer de rand van een ander scherm bereikt. Om het te verplaatsen, houd je ⌥ ingedrukt en duw je de aanwijzer tegen de rand van het andere scherm.";
@@ -146,6 +145,15 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik op het symbool van de app waarin je werkt om deze te verbergen. Klik nogmaals om hem terug te halen.";
 "Click again to bring it back" = "Nog een klik haalt hem terug";
 "Dock, minimize, hide, taskbar" = "Dock, minimaliseren, verbergen, taakbalk, taskbar";
+"Minimize or hide with a click in the Dock" = "Minimaliseer of verberg met een klik in het Dock";
+"Click the icon of the open app to minimize its windows" = "Klik op het symbool van de open app om zijn vensters te minimaliseren";
+"Click again to bring them back" = "Nog een klik haalt ze terug";
+"Click the icon of the app you’re in, and all its windows go down to the Dock. Click again to bring them all back." = "Klik op het symbool van de app waarin je werkt en al zijn vensters gaan naar het Dock. Klik nogmaals om ze allemaal terug te halen.";
+"A click on the icon" = "Een klik op het symbool";
+"Minimizes the windows" = "Minimaliseert de vensters";
+"Hides the app" = "Verbergt de app";
+"The windows go down to the Dock, like with the yellow button" = "De vensters gaan naar het Dock, zoals met de gele knop";
+"The app hides with all its windows, like with ⌘H" = "De app verbergt zich met al zijn vensters, zoals met ⌘H";
 "Green button enlarges the window" = "Groene knop vergroot het venster";
 "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Klik op de groene knop om het venster het scherm te laten vullen, klik nogmaals om terug te gaan. Volledig scherm blijft beschikbaar in het menu van de knop en met ⌃⌘F.";
 "Green button works as usual in these apps" = "Groene knop werkt zoals altijd in deze apps";

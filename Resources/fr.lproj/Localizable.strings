@@ -135,7 +135,6 @@
 "Add" = "Ajouter";
 "close button, red button, terminate, exit" = "bouton fermer, bouton rouge, terminer, sortir";
 "exceptions, exclude, list" = "exceptions, exclure, liste";
-"Hide with a click in the Dock" = "Masquer d’un clic dans le Dock";
 "Keep the Dock on one display" = "Garder le Dock sur un seul écran";
 "Hold ⌥ to move it on purpose" = "Maintenez ⌥ pour le déplacer volontairement";
 "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Le Dock reste sur l’écran où il se trouve, même quand le pointeur atteint le bord d’un autre écran. Pour le déplacer, maintenez ⌥ et poussez le pointeur contre le bord de l’autre écran.";
@@ -146,6 +145,15 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Cliquez sur l’icône de l’app active pour la masquer. Un autre clic la fait revenir.";
 "Click again to bring it back" = "Un autre clic la fait revenir";
 "Dock, minimize, hide, taskbar" = "Dock, réduire, masquer, barre des tâches";
+"Minimize or hide with a click in the Dock" = "Réduire ou masquer d’un clic dans le Dock";
+"Click the icon of the open app to minimize its windows" = "Cliquer sur l’icône de l’app ouverte réduit ses fenêtres";
+"Click again to bring them back" = "Un autre clic les fait revenir";
+"Click the icon of the app you’re in, and all its windows go down to the Dock. Click again to bring them all back." = "Cliquez sur l’icône de l’app active et toutes ses fenêtres rejoignent le Dock. Un autre clic les fait toutes revenir.";
+"A click on the icon" = "Un clic sur l’icône";
+"Minimizes the windows" = "Réduit les fenêtres";
+"Hides the app" = "Masque l’app";
+"The windows go down to the Dock, like with the yellow button" = "Les fenêtres rejoignent le Dock, comme avec le bouton jaune";
+"The app hides with all its windows, like with ⌘H" = "L’app disparaît avec toutes ses fenêtres, comme avec ⌘H";
 "Green button enlarges the window" = "Le bouton vert agrandit la fenêtre";
 "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Cliquez sur le bouton vert pour que la fenêtre remplisse l’écran. Un autre clic la remet à sa taille d’avant. Le plein écran reste dans le menu du bouton et sur ⌃⌘F.";
 "Green button works as usual in these apps" = "Le bouton vert fonctionne comme d’habitude dans ces apps";

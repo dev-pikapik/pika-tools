@@ -89,7 +89,7 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Masquer d’un clic dans le Dock</b>
+<br><b>Réduire d’un clic dans le Dock</b>
 <br>Cliquez sur l’app que vous utilisez, et elle s’efface.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
 
-**Masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et elle se masque. Cliquez de nouveau pour la faire revenir. Désactivé par défaut.
+**Réduire ou masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et toutes ses fenêtres rejoignent le Dock. Cliquez de nouveau pour les faire toutes revenir. Vous pouvez aussi faire en sorte que le clic masque l’app entière, comme ⌘H. Désactivé par défaut.
 
 **Garder le Dock sur un seul écran.** Avec plusieurs écrans, macOS déplace le Dock sur un autre écran dès que le pointeur pousse contre son bord inférieur, ou contre son bord gauche ou droit si le Dock est sur le côté. Avec l’interrupteur activé, le Dock reste où il est et les coins actifs continuent de fonctionner. Pour le déplacer volontairement, maintenez ⌥ et poussez le pointeur contre le bord de l’autre écran. Aucune autorisation n’est nécessaire. **Ramener le Dock** remet le Dock sur son écran après la veille ou un changement d’écrans. Cet interrupteur nécessite l’autorisation **Accessibilité** et n’existe pas dans la version du Mac App Store. Les deux interrupteurs sont désactivés par défaut.
 
@@ -333,7 +333,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Clavier** : changement de langue, répétition des touches, Home et End.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
-- **Dock** : masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
+- **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
