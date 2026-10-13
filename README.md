@@ -406,7 +406,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
 - **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
-- **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
+- **Dock**: minimize or hide with a click in the Dock and keep the Dock on one display.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash, hiding desktop icons and showing hidden files.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Background Tasks**: everything that runs in the background, which app added it, and a button to turn your own tasks off and back on.

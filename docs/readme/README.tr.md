@@ -406,7 +406,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End, yanlış klavye düzenini düzeltme.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler, geçerli uygulamayı gizleyen bir düğme.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
-- **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
+- **Dock**: Dock’ta tıklayarak küçültme veya gizleme ve Dock’u tek ekranda tutma.
 - **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme, ⌫ ile silme, masaüstü simgelerini gizleme ve gizli dosyaları gösterme.
 - **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
 - **Arka Plan Görevleri**: arka planda çalışan her şey, onu hangi uygulamanın eklediği ve kendi görevlerinizi kapatıp yeniden açmak için bir düğme.

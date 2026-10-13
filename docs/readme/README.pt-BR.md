@@ -406,7 +406,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Teclado**: troca de idioma, repetição de teclas, Home e End, correção do layout errado.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais, um botão que oculta o app atual.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
-- **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
+- **Dock**: minimizar ou ocultar com um clique no Dock e manter o Dock em uma só tela.
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X, apagar com ⌫, ocultar ícones da Mesa e mostrar arquivos ocultos.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Tarefas em Segundo Plano**: tudo o que roda em segundo plano, qual app adicionou e um botão para desligar suas próprias tarefas e religá-las.
