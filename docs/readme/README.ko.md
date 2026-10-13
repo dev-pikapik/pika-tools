@@ -229,11 +229,6 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br><b>Dock을 한 디스플레이에 고정</b>
 <br>Dock이 다른 디스플레이로 건너가지 않습니다. 옮기려면 다른 디스플레이를 메인 디스플레이로 지정하세요.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>잘못된 레이아웃 바로잡기</b>
-<br>привет 대신 ghbdtn이 입력됐나요? 스페이스를 누르면 바로잡힙니다.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>앱 음량</b>
 <br>다른 앱은 그대로 두고 원하는 앱의 음량을 낮추거나 음소거하세요.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>모니터 밝기</b>
+<br>macOS가 스스로 조절하지 못하는 모니터를 슬라이더나 밝기 키로 어둡게 하거나 밝게 하세요.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>잘못된 레이아웃 바로잡기</b>
+<br>привет 대신 ghbdtn이 입력됐나요? 스페이스를 누르면 바로잡힙니다.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik은 입력하거나 클릭한 내용을 기록하거나 저장하거나 �
 <summary>모든 기능 자세히 보기</summary>
 
 **앱 음량.** 설정 › 사운드에서 **앱 음량**을 켭니다. 소리를 내는 앱마다 자기만의 슬라이더와 음소거 버튼이 생기며, 설정에서도 메뉴에서도 쓸 수 있습니다. 시끄러운 화상 통화는 낮추고, 소란스러운 게임은 음소거하고, 음악은 그대로 둘 수 있습니다. Mac의 음량과 다른 앱의 음량은 그대로입니다. pikapik은 앱마다 음량을 기억하고, 최대로 둔 앱은 건드리지 않습니다. 앱의 음량을 바꾸려고 pikapik은 그 앱의 소리를 자신을 거쳐 보내므로 **시스템 오디오 녹음** 권한이 필요하며, ‘권한’ 페이지에서 허용합니다. 소리는 전달될 뿐, 녹음되거나 저장되거나 어디로도 전송되지 않으며 마이크도 사용하지 않습니다. macOS 14.2 이상이 필요하고 macOS 14.0과 14.1에서는 숨겨집니다. 기본값은 꺼짐입니다.
+
+**모니터 밝기.** macOS는 내장 디스플레이와 Apple 디스플레이의 밝기는 바꾸지만, 다른 모니터는 대부분 바꾸지 못합니다. 설정 › 밝기를 열면 macOS가 스스로 조절하지 못하는 모니터마다 자기만의 슬라이더가 생기며, 메뉴 막대 패널에 ‘밝기’ 행을 추가할 수도 있습니다. pikapik은 모니터의 버튼과 똑같이 모니터 자체의 밝기를 바꿉니다. 모니터가 반응하지 않으면 **대신 화면 어둡게 하기**를 켭니다. 화면이 어두워지지만 완전히 검게 되지는 않습니다. **밝기 키**를 켜면 키보드의 밝기 키로 포인터가 있는 모니터의 밝기를 바꿀 수 있고, 화면에 작은 표시기가 나타납니다. ⌥⇧를 누른 상태로 밝기 키를 누르면 더 세밀하게 조절됩니다. 밝기 키를 쓰려면 **손쉬운 사용** 권한이 필요하며, ‘권한’ 페이지에서 허용합니다. 슬라이더는 권한 없이도 작동합니다. pikapik은 모니터마다 밝기를 기억하고 잠자기 후에 다시 맞춥니다. Mac App Store 버전에서는 화면을 어둡게 하기만 합니다. 밝기 키의 기본값은 꺼짐입니다.
 
 **⌘Q와 ⌘W 보호.** ⌘Q와 ⌘W만 눌러서는 아무 일도 일어나지 않으므로 실수로 앱을 종료하거나 윈도우를 닫지 않습니다. 의도적으로 하려면 Shift를 함께 누르십시오. ⇧⌘Q는 종료, ⇧⌘W는 닫기입니다. 모든 앱에서 작동합니다. 키마다 별도의 스위치가 있습니다. 기본값은 꺼짐입니다.
 
@@ -398,6 +407,7 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 - **일반**: 로그인 시 열기, 모양(시스템, 라이트, 다크), 언어, 업데이트, 백업(설정을 파일로 내보내고 가져오기, 또는 iCloud Drive로 동기화).
 - **배터리**: 충전량, 완충까지 남은 시간 또는 사용 가능한 시간, 상태, 성능 최대치, 사이클 수, 전원 어댑터와 전력(와트), 배터리를 오래 쓰는 팁. 정보만 보여 주며, 충전 한도는 **시스템 설정 › 배터리**에 그대로 남습니다. 배터리가 있는 Mac에서만 나타납니다.
 - **잠자기 방지**: 기간, 디스플레이 및 덮개 옵션.
+- **밝기**: macOS가 스스로 조절하지 못하는 모니터별 슬라이더, 밝기 키 및 대신 화면 어둡게 하기 옵션.
 - **팬**: 각 팬의 속도 확인, 팬 제어를 허용하면 자동 또는 수동 속도 선택.
 - **온도**: Mac이 얼마나 뜨거운지 전체와 부품별로 확인, 예를 들어 프로세서, 메모리, 배터리.
 - **속도 테스트**: 인터넷 속도와 그 속도로 할 수 있는 일.

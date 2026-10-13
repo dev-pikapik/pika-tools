@@ -229,11 +229,6 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br><b>Dock auf einem Display halten</b>
 <br>Das Dock springt nicht mehr auf ein anderes Display. Um es zu verschieben, mach ein anderes Display zum Hauptbildschirm.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Falsches Layout korrigieren</b>
-<br>ghbdtn statt привет getippt? Drück die Leertaste, und schon ist es korrigiert.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>App-Lautstärke</b>
 <br>Jede App leiser stellen oder stummschalten, ohne die anderen zu verändern.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Monitorhelligkeit</b>
+<br>Einen Monitor, den macOS nicht selbst regeln kann, dunkler oder heller stellen, mit einem Regler oder den Helligkeitstasten.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Falsches Layout korrigieren</b>
+<br>ghbdtn statt привет getippt? Drück die Leertaste, und schon ist es korrigiert.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du 
 <summary>Alle Werkzeuge im Detail</summary>
 
 **App-Lautstärke.** Öffne Einstellungen › Ton und schalte **App-Lautstärke** ein. Jede App, die Ton abspielt, bekommt einen eigenen Regler und eine Taste zum Stummschalten, in den Einstellungen und im Menü. Mach einen zu lauten Videoanruf leiser, schalte ein lärmendes Spiel stumm und lass deine Musik, wie sie ist: Die Lautstärke deines Macs und der anderen Apps bleibt gleich. pikapik merkt sich die Lautstärke jeder App, und eine App, die du auf voller Lautstärke lässt, bleibt unangetastet. Um die Lautstärke einer App zu ändern, leitet pikapik ihren Ton durch sich selbst. Dafür braucht es die Berechtigung **Systemaudio-Aufnahme**, die du auf der Seite „Berechtigungen“ erlaubst. Der Ton wird nur weitergeleitet: Er wird nicht aufgenommen, gespeichert oder irgendwohin gesendet, und das Mikrofon wird nicht benutzt. Erfordert macOS 14.2 oder neuer und ist unter macOS 14.0 und 14.1 ausgeblendet. Standardmäßig aus.
+
+**Monitorhelligkeit.** macOS ändert die Helligkeit des eingebauten Bildschirms und von Apple-Displays, aber nicht die der meisten anderen Monitore. Öffne Einstellungen › Helligkeit: Jeder Monitor, den macOS nicht selbst regeln kann, bekommt einen eigenen Regler, und du kannst auch eine Zeile „Helligkeit“ zum Fenster der Menüleiste hinzufügen. pikapik ändert die Helligkeit des Monitors selbst, also dieselbe Einstellung wie die Tasten am Monitor. Reagiert ein Monitor nicht, schalte **Stattdessen das Bild abdunkeln** ein: Das Bild wird dunkler, aber nie schwarz. Schalte **Helligkeitstasten** ein, dann regeln die Helligkeitstasten den Monitor, auf dem der Zeiger steht, und blenden eine kleine Anzeige ein; halte ⌥⇧ für feinere Schritte. Die Tasten brauchen die Berechtigung **Bedienungshilfen**, die du auf der Seite „Berechtigungen“ erlaubst; die Regler funktionieren auch ohne sie. pikapik merkt sich die Helligkeit jedes Monitors und stellt sie nach dem Ruhezustand wieder ein. Die Version aus dem Mac App Store dunkelt nur das Bild ab. Helligkeitstasten sind standardmäßig aus.
 
 **⌘Q und ⌘W schützen.** ⌘Q und ⌘W allein bewirken nichts, damit du nicht aus Versehen eine App beendest oder ein Fenster schließt. Nimm Shift dazu, um es bewusst zu tun: ⇧⌘Q beendet, ⇧⌘W schließt. Funktioniert in jeder App. Jede Taste hat einen eigenen Schalter. Standardmäßig aus.
 
@@ -398,6 +407,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Allgemein**: Beim Anmelden öffnen, Erscheinungsbild (System, Hell oder Dunkel), Sprache, Updates und Sicherung: Einstellungen als Datei exportieren und importieren oder über iCloud Drive synchronisieren.
 - **Batterie**: Ladestand, Zeit bis zur vollen Ladung oder verbleibende Zeit, Zustand, maximale Kapazität, Anzahl der Zyklen, Netzteil und Leistung in Watt sowie Tipps, damit die Batterie lange durchhält. Die Seite zeigt nur Informationen an: Das Ladelimit bleibt in **Systemeinstellungen › Batterie**. Sie erscheint nur auf einem Mac mit Batterie.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
+- **Helligkeit**: ein Regler für jeden Monitor, den macOS nicht selbst regeln kann, die Helligkeitstasten und die Option, stattdessen das Bild abzudunkeln.
 - **Lüfter**: Geschwindigkeit jedes Lüfters sehen, Automatisch oder eine eigene Geschwindigkeit wählen, sobald die Lüftersteuerung erlaubt ist.
 - **Temperatur**: wie warm dein Mac ist, insgesamt und für jedes Bauteil, etwa Prozessor, Arbeitsspeicher und Akku.
 - **Speedtest**: Internetgeschwindigkeit messen und sehen, wofür sie reicht.

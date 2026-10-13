@@ -229,11 +229,6 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br><b>Tieni il Dock su un solo schermo</b>
 <br>Il Dock non salta più su un altro schermo. Per spostarlo, rendi principale un altro schermo.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Correggi il layout sbagliato</b>
-<br>Hai scritto ghbdtn invece di привет? Premi Spazio e la parola si corregge.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Volume delle app</b>
 <br>Abbassa il volume di qualsiasi app o silenziala senza toccare le altre.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Luminosità dei monitor</b>
+<br>Scurisci o schiarisci un monitor che macOS non sa regolare da solo, con un cursore o i tasti della luminosità.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Correggi il layout sbagliato</b>
+<br>Hai scritto ghbdtn invece di привет? Premi Spazio e la parola si corregge.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicch
 <summary>Ogni strumento nel dettaglio</summary>
 
 **Volume delle app.** Apri Impostazioni › Suono e attiva **Volume delle app**. Ogni app che riproduce suoni ha il suo cursore e un pulsante per silenziarla, nelle Impostazioni e nel menu. Abbassa il volume di una videochiamata troppo forte, silenzia un gioco rumoroso e lascia la tua musica com’è: il volume del Mac e delle altre app non cambia. pikapik ricorda il livello di ogni app, e un’app che lasci a volume pieno non viene mai toccata. Per cambiare il volume di un’app, pikapik fa passare il suo suono attraverso se stesso, quindi serve il permesso **Registrazione dell’audio di sistema**, che consenti nella pagina Permessi. Il suono viene solo fatto passare: non viene registrato, salvato né inviato da nessuna parte, e il microfono non viene usato. Richiede macOS 14.2 o successivo ed è nascosto su macOS 14.0 e 14.1. Disattivato di default.
+
+**Luminosità dei monitor.** macOS cambia la luminosità dello schermo integrato e dei monitor Apple, ma non quella della maggior parte degli altri monitor. Apri Impostazioni › Luminosità: ogni monitor che macOS non sa regolare da solo ha il suo cursore, e puoi anche aggiungere una riga «Luminosità» al pannello della barra dei menu. pikapik cambia la luminosità del monitor stesso, la stessa impostazione dei suoi pulsanti. Se un monitor non risponde, attiva **Scurisci invece l’immagine**: l’immagine diventa più scura, ma mai nera. Attiva **Tasti della luminosità** e i tasti della luminosità regolano il monitor sotto il puntatore e mostrano un piccolo indicatore; tieni premuti ⌥⇧ per passi più fini. I tasti hanno bisogno del permesso **Accessibilità**, che consenti nella pagina Permessi, mentre i cursori funzionano anche senza. pikapik ricorda il livello di ogni monitor e lo reimposta dopo lo stop. La versione del Mac App Store si limita a scurire l’immagine. I tasti della luminosità sono disattivati di default.
 
 **Proteggi ⌘Q e ⌘W.** ⌘Q e ⌘W da soli non fanno nulla, così non chiudi un’app o una finestra per sbaglio. Aggiungi Maiuscole per farlo apposta: ⇧⌘Q esce, ⇧⌘W chiude. Funziona in tutte le app. Ogni tasto ha il suo interruttore. Disattivato di default.
 
@@ -398,6 +407,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Generali**: apertura al login, aspetto (Sistema, Chiaro o Scuro), lingua, aggiornamenti e backup: esporta e importa le impostazioni come file, oppure sincronizzale con iCloud Drive.
 - **Batteria**: carica, tempo alla carica completa o tempo rimasto, stato, capacità massima, conteggio cicli, alimentatore di corrente e potenza in watt, e consigli per far durare di più la batteria. Mostra solo informazioni: il limite di caricamento resta in **Impostazioni di Sistema › Batteria**. Compare solo su un Mac con batteria.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
+- **Luminosità**: un cursore per ogni monitor che macOS non sa regolare da solo, i tasti della luminosità e l’opzione per scurire invece l’immagine.
 - **Ventole**: velocità di ogni ventola, modalità Auto o velocità manuale quando il controllo ventole è consentito.
 - **Temperatura**: quanto è caldo il Mac, nel complesso e per ogni componente, come processore, memoria e batteria.
 - **Velocità internet**: misura la connessione e mostra a cosa basta.

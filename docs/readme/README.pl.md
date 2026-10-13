@@ -229,11 +229,6 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br><b>Trzymaj Dock na jednym ekranie</b>
 <br>Dock nie skacze już na inny ekran. Aby go przenieść, ustaw inny ekran jako główny.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Popraw zły układ</b>
-<br>Wyszło ghbdtn zamiast привет? Naciśnij spację, a słowo się poprawi.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Głośność aplikacji</b>
 <br>Ścisz lub wycisz dowolną aplikację, nie ruszając pozostałych.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Jasność monitorów</b>
+<br>Przyciemnij lub rozjaśnij monitor, którego macOS nie umie ustawić sam, suwakiem albo klawiszami jasności.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Popraw zły układ</b>
+<br>Wyszło ghbdtn zamiast привет? Naciśnij spację, a słowo się poprawi.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klika
 <summary>Każde narzędzie dokładnie</summary>
 
 **Głośność aplikacji.** Otwórz Ustawienia › Dźwięk i włącz **Głośność aplikacji**. Każda aplikacja, która odtwarza dźwięk, dostaje własny suwak i przycisk wyciszenia, w Ustawieniach i w menu. Ścisz zbyt głośną rozmowę wideo, wycisz hałaśliwą grę i zostaw muzykę, jak jest: głośność Maca i pozostałych aplikacji się nie zmienia. pikapik zapamiętuje poziom każdej aplikacji, a aplikacji, którą zostawisz na pełnej głośności, nigdy nie rusza. Aby zmienić głośność aplikacji, pikapik przepuszcza jej dźwięk przez siebie, dlatego potrzebuje uprawnienia **Nagrywanie dźwięku systemowego**, które włączasz na stronie Uprawnienia. Dźwięk jest tylko przekazywany dalej: nie jest nagrywany, zapisywany ani nigdzie wysyłany, a mikrofon nie jest używany. Wymaga macOS 14.2 lub nowszego, a w macOS 14.0 i 14.1 funkcja jest ukryta. Domyślnie wyłączone.
+
+**Jasność monitorów.** macOS zmienia jasność wbudowanego ekranu i monitorów Apple, ale nie większości innych monitorów. Otwórz Ustawienia › Jasność: każdy monitor, którego macOS nie umie ustawić sam, dostaje własny suwak, a wiersz „Jasność” możesz też dodać do panelu na pasku menu. pikapik zmienia jasność samego monitora, to samo ustawienie co jego przyciski. Jeśli monitor nie reaguje, włącz **Zamiast tego przyciemniaj obraz**: obraz robi się ciemniejszy, ale nigdy czarny. Włącz **Klawisze jasności**, a klawisze jasności będą zmieniać jasność monitora, na którym jest wskaźnik, i pokazywać mały pasek jasności; przytrzymaj ⌥⇧, aby zmieniać ją drobniejszymi krokami. Klawisze potrzebują uprawnienia **Dostępność**, które włączasz na stronie Uprawnienia, a suwaki działają i bez niego. pikapik zapamiętuje jasność każdego monitora i ustawia ją ponownie po uśpieniu. Wersja z Mac App Store tylko przyciemnia obraz. Klawisze jasności są domyślnie wyłączone.
 
 **Ochrona ⌘Q i ⌘W.** Same ⌘Q i ⌘W nic nie robią, więc nie zamkniesz przypadkiem aplikacji ani okna. Dodaj Shift, aby zrobić to celowo: ⇧⌘Q kończy aplikację, ⇧⌘W zamyka okno. Działa we wszystkich aplikacjach. Każdy klawisz ma własny przełącznik. Domyślnie wyłączone.
 
@@ -398,6 +407,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Ogólne**: otwieranie po zalogowaniu, wygląd (Systemowy, Jasny lub Ciemny), język, uaktualnienia i kopia zapasowa: eksport i import ustawień jako pliku albo synchronizacja przez iCloud Drive.
 - **Bateria**: poziom naładowania, czas do pełnego naładowania lub pozostały czas, stan, maksymalna pojemność, liczba cykli, zasilacz i moc w watach oraz wskazówki, jak dbać o baterię. Strona tylko pokazuje informacje: limit ładowania nadal znajdziesz w **Ustawienia systemowe › Bateria**. Widać ją tylko na Macu z baterią.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
+- **Jasność**: suwak dla każdego monitora, którego macOS nie umie ustawić sam, klawisze jasności i przyciemnianie obrazu zamiast monitora.
 - **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie, gdy zezwolono na Sterowanie wentylatorami.
 - **Temperatura**: jak bardzo nagrzał się Mac, ogólnie i dla każdej części, na przykład procesora, pamięci i baterii.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.

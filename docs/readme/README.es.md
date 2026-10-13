@@ -229,11 +229,6 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br><b>Mantener el Dock en una sola pantalla</b>
 <br>El Dock ya no salta a otra pantalla. Para moverlo, haz que otra pantalla sea la principal.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Corregir la distribución equivocada</b>
-<br>¿Escribiste ghbdtn en vez de привет? Pulsa Espacio y se corrige.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Volumen de las apps</b>
 <br>Baja el volumen de cualquier app o silénciala sin tocar las demás.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Brillo de los monitores</b>
+<br>Baja o sube el brillo de un monitor que macOS no puede ajustar por sí solo, con un control deslizante o las teclas de brillo.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corregir la distribución equivocada</b>
+<br>¿Escribiste ghbdtn en vez de привет? Pulsa Espacio y se corrige.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik no graba, no guarda ni envía nada de lo que escribes o pulsas. Los even
 <summary>Cada herramienta en detalle</summary>
 
 **Volumen de las apps.** Abre Ajustes › Sonido y activa **Volumen de las apps**. Cada app que reproduce sonido tiene su propio control deslizante y un botón para silenciarla, en Ajustes y en el menú. Baja el volumen de una videollamada que suena demasiado fuerte, silencia un juego ruidoso y deja tu música como está: el volumen de tu Mac y el de las demás apps no cambia. pikapik recuerda el volumen de cada app, y una app que dejas a todo volumen no se toca nunca. Para cambiar el volumen de una app, pikapik hace pasar su sonido por sí mismo, así que necesita el permiso **Grabación de audio del sistema**, que concedes en la página Permisos. El sonido solo se hace pasar: no se graba, no se guarda ni se envía a ningún sitio, y no se usa el micrófono. Requiere macOS 14.2 o posterior y está oculto en macOS 14.0 y 14.1. Desactivado por omisión.
+
+**Brillo de los monitores.** macOS cambia el brillo de la pantalla integrada y de las pantallas de Apple, pero no el de la mayoría de los demás monitores. Abre Ajustes › Brillo: cada monitor que macOS no puede ajustar por sí solo tiene su propio control deslizante, y también puedes añadir una fila «Brillo» al panel de la barra de menús. pikapik cambia el brillo del propio monitor, el mismo ajuste que sus botones. Si un monitor no responde, activa **Oscurecer la imagen en su lugar**: la imagen se oscurece, pero nunca llega al negro. Activa **Teclas de brillo** y las teclas de brillo ajustarán el monitor donde está el puntero y mostrarán un pequeño indicador; mantén pulsadas ⌥⇧ para pasos más finos. Las teclas necesitan el permiso **Accesibilidad**, que concedes en la página Permisos, y los controles deslizantes funcionan sin él. pikapik recuerda el brillo de cada monitor y lo vuelve a poner tras el reposo. La versión de la Mac App Store solo oscurece la imagen. Las teclas de brillo están desactivadas por omisión.
 
 **Proteger ⌘Q y ⌘W.** ⌘Q y ⌘W por sí solos no hacen nada, así que no cerrarás una app ni una ventana por accidente. Añade Mayúsculas para hacerlo a propósito: ⇧⌘Q sale de la app y ⇧⌘W cierra la ventana. Funciona en todas las apps. Cada tecla tiene su propio interruptor. Desactivado por omisión.
 
@@ -398,6 +407,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **General**: abrir al iniciar sesión, aspecto (Sistema, Claro u Oscuro), idioma, actualizaciones y copia de seguridad: exportar e importar los ajustes como archivo, o sincronizarlos con iCloud Drive.
 - **Batería**: carga, tiempo hasta la carga completa o tiempo restante, estado, capacidad máxima, número de ciclos, adaptador de corriente y potencia en vatios, y consejos para que dure más. Solo muestra información: el límite de carga sigue en **Ajustes del Sistema › Batería**. Solo aparece en un Mac con batería.
 - **Mantener activo**: duración y opciones de pantalla y de tapa.
+- **Brillo**: un control deslizante para cada monitor que macOS no puede ajustar por sí solo, las teclas de brillo y la opción de oscurecer la imagen en su lugar.
 - **Ventiladores**: velocidad de cada ventilador, modo Auto o velocidad manual cuando el control de ventiladores está permitido.
 - **Temperatura**: lo caliente que está tu Mac, en general y por piezas, como el procesador, la memoria y la batería.
 - **Velocidad de internet**: comprueba la velocidad y para qué te sirve.

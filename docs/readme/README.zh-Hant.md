@@ -229,11 +229,6 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br><b>讓 Dock 固定在一台顯示器上</b>
 <br>Dock 不會再跳到另一台顯示器。若要移動，請將另一台顯示器設為主要顯示器。
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>修正用錯的鍵盤配置</b>
-<br>想打 привет，卻打成了 ghbdtn？按一下空白鍵就改好了。
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>App 音量</b>
 <br>調低或靜音任何 App，不影響其他 App。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>顯示器亮度</b>
+<br>用滑桿或亮度鍵，調暗或調亮 macOS 無法自行調整的顯示器。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>修正用錯的鍵盤配置</b>
+<br>想打 привет，卻打成了 ghbdtn？按一下空白鍵就改好了。
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik 不會記錄、儲存或傳送你輸入或點按的任何內容。事件
 <summary>每項功能的詳細說明</summary>
 
 **App 音量。** 打開「設定 › 聲音」，開啟 **App 音量**。每個播放聲音的 App 都有自己的滑桿和靜音按鈕，在設定和選單裡都能用。把太吵的視訊通話調低，把嘈雜的遊戲靜音，音樂維持原樣：你 Mac 的音量和其他 App 的音量都不會變。pikapik 會記住每個 App 的音量，維持最大音量的 App 絕不會被更動。要改變某個 App 的音量，pikapik 會讓它的聲音先經過自己，所以需要 **系統音訊錄製** 權限，你可以在「權限」頁面允許。聲音只是被轉交，不會被錄製、儲存或傳送到任何地方，也不使用麥克風。需要 macOS 14.2 或更新版本，在 macOS 14.0 和 14.1 上會隱藏。預設為關閉。
+
+**顯示器亮度。** macOS 能調整內建顯示器和 Apple 顯示器的亮度，但調整不了大多數其他顯示器。打開「設定 › 亮度」，每台 macOS 無法自行調整的顯示器都有自己的滑桿；你也可以在選單列面板中加入「亮度」一列。pikapik 調整的是顯示器本身的亮度，和顯示器上的按鈕調的是同一個設定。如果某台顯示器沒有反應，就開啟 **改為調暗畫面**：畫面會變暗，但絕不會變成全黑。開啟 **亮度鍵** 後，亮度鍵會調整指標所在顯示器的亮度，並在螢幕上顯示一個小指示條；按住 ⌥⇧ 可以調得更細。亮度鍵需要 **輔助使用** 權限，你可以在「權限」頁面允許；滑桿不需要這個權限也能用。pikapik 會記住每台顯示器的亮度，並在睡眠後重新設定。Mac App Store 版本只會調暗畫面。亮度鍵預設為關閉。
 
 **保護 ⌘Q 和 ⌘W。** 單獨按 ⌘Q 和 ⌘W 不會有任何作用，因此不會誤結束 App 或誤關視窗。想要結束或關閉時，加按 Shift：⇧⌘Q 結束，⇧⌘W 關閉。適用於所有 App。每個按鍵都有各自的開關。預設為關閉。
 
@@ -398,6 +407,7 @@ App 會跟隨系統語言，或使用你在設定中選擇的語言。支援本�
 - **一般**：登入時打開、外觀（跟隨系統、淺色或深色）、語言、更新和備份：把設定輸出為檔案或從檔案輸入，也可以透過 iCloud 雲碟同步。
 - **電池**：電量、充飽還需多久或還能用多久、狀態、最大容量、循環使用次數、電源轉接器和功率（瓦）、讓電池更耐用的建議。它只顯示資訊，充電上限仍在**系統設定 › 電池**中設定。只有配備電池的 Mac 才會顯示。
 - **保持喚醒**：時間長度、顯示器和螢幕闔上選項。
+- **亮度**：macOS 無法自行調整的每台顯示器的滑桿、亮度鍵，以及改為調暗畫面的選項。
 - **風扇**：查看每個風扇的轉速，允許風扇控制後可選擇自動或手動轉速。
 - **溫度**：Mac 有多熱，包括整體情況和各個元件，例如處理器、記憶體和電池。
 - **網速測試**：測網速，看看它適合做什麼。

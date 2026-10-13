@@ -172,10 +172,68 @@ private struct BrightnessHUDView: View {
     }
 }
 
-private struct BrightnessKeysSettings: View {
-    @Bindable var tool: BrightnessKeysTool
+struct BrightnessArt: View {
+    let on: Bool
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let durations = [1.4, 0.3, 0.7, 0.3, 1.1, 1.2, 0.3, 0.7, 0.3, 1.1]
+    private static let levels = [1, 0.6, 0.6, 0.25, 0.25, 0.25, 0.6, 0.6, 1, 1]
 
     var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 4 : tick % Self.durations.count
+            let level = on ? Self.levels[step] : 1
+            let shown = on && step != 0 && step != 5
+            Stage {
+                ArtMonitor(glow: level, dock: false) {
+                    ZStack(alignment: .bottom) {
+                        GeometryReader { ArtLandscape(size: $0.size) }
+                        Color.black.opacity((1 - level) * 0.7)
+                        hud(level)
+                            .scaleEffect(shown ? 1 : 0.9, anchor: .bottom)
+                            .opacity(shown ? 1 : 0)
+                            .padding(.bottom, 7)
+                    }
+                }
+                .position(x: 88, y: 64)
+                HStack(spacing: 10) {
+                    ArtKey(down: step == 1 || step == 3, width: 44, height: 30) { Image(systemName: "sun.min") }
+                    ArtKey(down: step == 6 || step == 8, width: 44, height: 30) { Image(systemName: "sun.max") }
+                }
+                .animation(reduceMotion ? nil : .smooth(duration: 0.15), value: step)
+                .position(x: 222, y: 58)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
+        }
+    }
+
+    private func hud(_ level: Double) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 9, style: .continuous)
+        return HStack(spacing: 4) {
+            Image(systemName: "sun.max.fill")
+                .font(.system(size: 8, weight: .semibold))
+                .foregroundStyle(Color.primary)
+            Capsule()
+                .fill(Color.primary.opacity(0.18))
+                .frame(width: 36, height: 3)
+                .overlay(alignment: .leading) {
+                    Capsule().fill(Color.primary).frame(width: 36 * level)
+                }
+        }
+        .padding(.horizontal, 6)
+        .padding(.vertical, 4.5)
+        .background(Color(nsColor: .windowBackgroundColor).opacity(0.9), in: shape)
+        .overlay(shape.hairline(Color.primary.opacity(0.14)))
+        .shadow(color: .black.opacity(0.22), radius: 4.5, y: 2)
+    }
+}
+
+private struct BrightnessKeysSettings: View {
+    @Bindable var tool: BrightnessKeysTool
+    @Environment(\.inSettings) private var inSettings
+
+    var body: some View {
+        if inSettings { BrightnessArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
             title: tool.title,

@@ -50,6 +50,7 @@ enum RenderMedia {
         ("uninstaller", 6.0, AnyView(TrashWatchArt(on: true))),
         ("background", BackgroundCard.length, AnyView(BackgroundCard())),
         ("app-volume", 4.8, AnyView(AppVolumeArt(on: true))),
+        ("brightness", 7.4, AnyView(BrightnessArt(on: true))),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
         ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleFrame(rule: .commandQ, story: .still(on: false), height: 32)), 64), (AnyView(GameRuleFrame(rule: .spotlight, story: .still(on: false), height: 32)), 52), (AnyView(GameRuleFrame(rule: .missionControl, story: .still(on: false), height: 32)), 72)], height: 36))),
         ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),

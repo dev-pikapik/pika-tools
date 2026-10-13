@@ -229,11 +229,6 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br><b>Ține Dock-ul pe un singur ecran</b>
 <br>Dock-ul nu mai sare pe alt ecran. Ca să-l muți, setează alt ecran ca principal.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Corectează aranjamentul greșit</b>
-<br>Ai scris ghbdtn în loc de привет? Apasă Spațiu și cuvântul se corectează.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Volumul aplicațiilor</b>
 <br>Redu volumul sau oprește sunetul oricărei aplicații, fără să le afectezi pe celelalte.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Luminozitatea monitoarelor</b>
+<br>Întunecă sau luminează un monitor pe care macOS nu îl poate regla singur, cu un glisor sau cu tastele de luminozitate.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corectează aranjamentul greșit</b>
+<br>Ai scris ghbdtn în loc de привет? Apasă Spațiu și cuvântul se corectează.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi s
 <summary>Fiecare unealtă în detaliu</summary>
 
 **Volumul aplicațiilor.** Deschide Setări › Sunet și pornește **Volumul aplicațiilor**. Fiecare aplicație care redă sunet primește propriul cursor și un buton pentru oprirea sunetului, în Setări și în meniu. Redu volumul unui apel video prea tare, oprește sunetul unui joc zgomotos și lasă muzica așa cum este: volumul Mac-ului și al celorlalte aplicații rămâne neschimbat. pikapik reține nivelul fiecărei aplicații, iar o aplicație pe care o lași la volum maxim nu este atinsă niciodată. Ca să schimbe volumul unei aplicații, pikapik trece sunetul ei prin el însuși, de aceea are nevoie de permisiunea **Înregistrarea audio a sistemului**, pe care o permiți în pagina Permisiuni. Sunetul este doar trecut mai departe: nu este înregistrat, salvat sau trimis nicăieri, iar microfonul nu este folosit. Necesită macOS 14.2 sau mai nou și este ascuns pe macOS 14.0 și 14.1. Dezactivat implicit.
+
+**Luminozitatea monitoarelor.** macOS schimbă luminozitatea ecranului integrat și a monitoarelor Apple, dar nu și pe a majorității celorlalte monitoare. Deschide Setări › Luminozitate: fiecare monitor pe care macOS nu îl poate regla singur primește propriul glisor, iar în panoul din bara de meniu poți adăuga un rând „Luminozitate”. pikapik schimbă luminozitatea monitorului însuși, aceeași setare pe care o schimbă butoanele lui. Dacă un monitor nu răspunde, pornește **Întunecă imaginea în schimb**: imaginea devine mai întunecată, dar niciodată neagră. Pornește **Tastele de luminozitate** și tastele de luminozitate vor regla monitorul pe care se află cursorul și vor afișa un mic indicator; ține apăsate ⌥⇧ pentru pași mai fini. Tastele au nevoie de permisiunea **Accesibilitate**, pe care o permiți în pagina Permisiuni, iar glisoarele funcționează și fără ea. pikapik reține nivelul fiecărui monitor și îl setează din nou după repaus. Versiunea din Mac App Store doar întunecă imaginea. Tastele de luminozitate sunt dezactivate implicit.
 
 **Protejarea ⌘Q și ⌘W.** ⌘Q și ⌘W singure nu fac nimic, așa că nu închizi din greșeală o aplicație sau o fereastră. Adaugă Shift ca să o faci intenționat: ⇧⌘Q închide aplicația, ⇧⌘W închide fereastra. Funcționează în toate aplicațiile. Fiecare tastă are propriul comutator. Dezactivat implicit.
 
@@ -398,6 +407,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **General**: deschidere la autentificare, aspect (Sistem, Luminos sau Întunecat), limbă, actualizări și copie de siguranță: exportă și importă configurările ca fișier sau sincronizează-le prin iCloud Drive.
 - **Baterie**: nivel de încărcare, timp până la încărcarea completă sau timp rămas, stare, capacitate maximă, număr de cicluri, adaptor alimentare și putere în wați, plus sfaturi ca bateria să țină mai mult. Pagina doar arată informații: limita de încărcare rămâne în **Configurări sistem › Baterie**. Apare doar pe un Mac cu baterie.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
+- **Luminozitate**: un glisor pentru fiecare monitor pe care macOS nu îl poate regla singur, tastele de luminozitate și opțiunea de a întuneca imaginea în schimb.
 - **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală, după ce Controlul ventilatoarelor este permis.
 - **Temperatură**: cât de cald este Mac-ul, per total și pentru fiecare componentă, cum ar fi procesorul, memoria și bateria.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
