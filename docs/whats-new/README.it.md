@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>La pagina «Permessi» dice tutto
+
+<sub>1.46.1 · 13 ottobre 2026</sub>
+
+Quando a uno strumento serve ancora un permesso dall’elenco qui sotto, ora la pagina lo dice.
+
+Prima, appena i due permessi in alto erano attivi, la pagina prometteva che tutti gli strumenti funzionavano, anche se uno strumento in «Per alcune funzioni» aspettava ancora il suo permesso. Ora dice che alcuni strumenti hanno bisogno anche di un permesso dall’elenco qui sotto, e promette che tutto funziona solo quando è davvero così.
+
+**Provalo:** Impostazioni › Permessi
+
+**Corretto**
+
+- Nella versione del Mac App Store, «Dì grazie» nella pagina «Info» appare solo quando le mance sono pronte da scegliere. Prima, durante il caricamento girava una rotellina, e la sezione spariva se l’App Store non rispondeva.
+
+---
+
 ## <a id="v1.46.0"></a>Nascondi l’app in primo piano con un tasto del mouse
 
 <sub>1.46.0 · 13 ottobre 2026</sub>

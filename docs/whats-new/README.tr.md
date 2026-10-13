@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>“İzinler” sayfası durumu olduğu gibi söylüyor
+
+<sub>1.46.1 · 13 Ekim 2026</sub>
+
+Bir aracın aşağıdaki listeden hâlâ bir izne ihtiyacı varsa sayfa artık bunu söylüyor.
+
+Önceden, üstteki iki izin de açıldığında, “Bazı özellikler için” bölümündeki bir araç hâlâ iznini bekliyor olsa bile sayfa tüm araçların çalıştığını söylüyordu. Artık bazı araçların aşağıdaki listeden bir izne de ihtiyaç duyduğunu söylüyor ve her şeyin çalıştığını yalnızca gerçekten öyle olduğunda söylüyor.
+
+**Deneyin:** Ayarlar › İzinler
+
+**Düzeltilenler**
+
+- Mac App Store sürümünde, “Hakkında” sayfasındaki “Teşekkür et” bölümü yalnızca bahşişler seçilmeye hazır olduğunda görünüyor. Önceden yüklenirken dönen bir simge çıkıyor, App Store yanıt vermezse bölüm kayboluyordu.
+
+---
+
 ## <a id="v1.46.0"></a>Öndeki uygulamayı bir fare düğmesiyle gizleyin
 
 <sub>1.46.0 · 13 Ekim 2026</sub>

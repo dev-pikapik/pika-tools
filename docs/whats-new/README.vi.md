@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>Trang “Quyền” nói đúng sự thật
+
+<sub>1.46.1 · 13 tháng 10 năm 2026</sub>
+
+Khi một công cụ vẫn cần một quyền trong danh sách bên dưới, giờ trang sẽ nói rõ điều đó.
+
+Trước đây, chỉ cần hai quyền ở trên cùng được bật, trang đã hứa rằng mọi công cụ đều hoạt động, kể cả khi một công cụ trong “Cho một số tính năng” vẫn đang chờ quyền của nó. Giờ trang cho biết một số công cụ còn cần thêm một quyền trong danh sách bên dưới, và chỉ nói mọi thứ đều hoạt động khi điều đó thật sự đúng.
+
+**Thử ngay:** Cài đặt › Quyền
+
+**Đã sửa**
+
+- Trong phiên bản Mac App Store, mục “Gửi lời cảm ơn” trên trang “Giới thiệu” chỉ hiện ra khi các mức tiền tip đã sẵn sàng để chọn. Trước đây có một vòng xoay trong lúc tải, và mục này biến mất nếu App Store không phản hồi.
+
+---
+
 ## <a id="v1.46.0"></a>Ẩn ứng dụng phía trước bằng một nút chuột
 
 <sub>1.46.0 · 13 tháng 10 năm 2026</sub>

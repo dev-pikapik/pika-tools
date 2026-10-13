@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>A página “Permissões” conta tudo
+
+<sub>1.46.1 · 13 de outubro de 2026</sub>
+
+Quando uma ferramenta ainda precisa de uma permissão da lista abaixo, a página agora avisa.
+
+Antes, assim que as duas permissões do topo estavam ativas, a página prometia que todas as ferramentas funcionavam, mesmo que uma ferramenta em “Para alguns recursos” ainda esperasse a permissão dela. Agora ela diz que algumas ferramentas também precisam de uma permissão da lista abaixo, e só promete que tudo funciona quando isso é verdade.
+
+**Experimente:** Ajustes › Permissões
+
+**Corrigido**
+
+- Na versão da Mac App Store, “Agradecer” na página “Sobre” só aparece quando as gorjetas estão prontas para escolher. Antes, uma roda girava enquanto elas carregavam, e a seção sumia se a App Store não respondesse.
+
+---
+
 ## <a id="v1.46.0"></a>Oculte o app da frente com um botão do mouse
 
 <sub>1.46.0 · 13 de outubro de 2026</sub>

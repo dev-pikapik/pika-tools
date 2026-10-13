@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>Pagina „Permisiuni” spune totul
+
+<sub>1.46.1 · 13 octombrie 2026</sub>
+
+Când un instrument mai are nevoie de o permisiune din lista de mai jos, pagina spune acum asta.
+
+Înainte, de îndată ce ambele permisiuni de sus erau activate, pagina promitea că toate instrumentele funcționează, chiar dacă un instrument din „Pentru unele funcții” încă își aștepta permisiunea. Acum spune că unele instrumente au nevoie și de o permisiune din lista de mai jos și promite că totul funcționează doar când chiar așa este.
+
+**Încearcă:** Setări › Permisiuni
+
+**Reparat**
+
+- În versiunea din Mac App Store, „Mulțumește” de pe pagina „Despre” apare doar când bacșișurile sunt gata de ales. Înainte, cât timp se încărcau, se învârtea o rotiță, iar secțiunea dispărea dacă App Store nu răspundea.
+
+---
+
 ## <a id="v1.46.0"></a>Ascunde aplicația din față cu un buton al mausului
 
 <sub>1.46.0 · 13 octombrie 2026</sub>

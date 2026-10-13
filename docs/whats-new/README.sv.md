@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>Sidan ”Behörigheter” berättar allt
+
+<sub>1.46.1 · 13 oktober 2026</sub>
+
+När ett verktyg fortfarande behöver en behörighet från listan nedan säger sidan det nu.
+
+Tidigare lovade sidan att alla verktyg fungerade så fort båda behörigheterna överst var på, även om ett verktyg under ”För vissa funktioner” fortfarande väntade på sin behörighet. Nu står det att vissa verktyg också behöver en behörighet från listan nedan, och sidan lovar att allt fungerar först när det verkligen gör det.
+
+**Prova:** Inställningar › Behörigheter
+
+**Åtgärdat**
+
+- I versionen från Mac App Store visas ”Säg tack” på sidan ”Om” först när det går att välja dricks. Tidigare snurrade ett hjul under laddningen, och avsnittet försvann om App Store inte svarade.
+
+---
+
 ## <a id="v1.46.0"></a>Göm appen längst fram med en musknapp
 
 <sub>1.46.0 · 13 oktober 2026</sub>

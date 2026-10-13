@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>La página «Permisos» lo cuenta todo
+
+<sub>1.46.1 · 13 de octubre de 2026</sub>
+
+Cuando una herramienta aún necesita un permiso de la lista de abajo, la página ahora lo dice.
+
+Antes, en cuanto los dos permisos de arriba estaban activos, la página prometía que todas las herramientas funcionaban, aunque una herramienta de «Para algunas funciones» aún esperara su permiso. Ahora dice que algunas herramientas también necesitan un permiso de la lista de abajo, y solo promete que todo funciona cuando de verdad es así.
+
+**Pruébalo:** Ajustes › Permisos
+
+**Corregido**
+
+- En la versión de la Mac App Store, «Dar las gracias» en la página «Acerca de» aparece solo cuando las propinas están listas para elegir. Antes giraba una rueda mientras se cargaban, y la sección desaparecía si la App Store no respondía.
+
+---
+
 ## <a id="v1.46.0"></a>Oculta la app que tienes delante con un botón del ratón
 
 <sub>1.46.0 · 13 de octubre de 2026</sub>

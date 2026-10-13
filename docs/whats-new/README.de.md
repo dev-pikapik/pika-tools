@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>Die Seite „Berechtigungen“ sagt jetzt alles
+
+<sub>1.46.1 · 13. Oktober 2026</sub>
+
+Wenn ein Tool noch eine Berechtigung aus der Liste unten braucht, sagt die Seite das jetzt.
+
+Waren beide Berechtigungen oben aktiv, versprach die Seite bisher, dass jedes Tool funktioniert, auch wenn ein Tool unter „Für einige Funktionen“ noch auf seine Berechtigung wartete. Jetzt sagt sie, dass manche Tools zusätzlich eine Berechtigung aus der Liste unten brauchen, und verspricht erst dann, dass alles funktioniert, wenn es wirklich so ist.
+
+**Ausprobieren:** Einstellungen › Berechtigungen
+
+**Behoben**
+
+- In der Version aus dem Mac App Store erscheint „Danke sagen“ auf der Seite „Über“ erst, wenn die Trinkgelder zur Auswahl bereitstehen. Vorher drehte sich beim Laden ein Rad, und der Bereich verschwand, wenn der App Store nicht antwortete.
+
+---
+
 ## <a id="v1.46.0"></a>Die App im Vordergrund per Maustaste ausblenden
 
 <sub>1.46.0 · 13. Oktober 2026</sub>

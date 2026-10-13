@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.46.1"></a>The Permissions page tells the whole story
+
+<sub>1.46.1 · October 13, 2026</sub>
+
+When a tool still needs a permission from the list below, the page now says so.
+
+Before, once both permissions at the top were on, the page said every tool was working, even if a tool under For some features was still waiting for its permission. Now it says that some tools also need a permission from the list below, and it promises that everything works only when it really does.
+
+**Try it:** Settings › Permissions
+
+**Fixed**
+
+- In the Mac App Store version, Say thanks on the About page appears only once the tips are ready to choose. Before, a spinning wheel showed while they loaded, and the section vanished if the App Store didn’t answer.
+
+---
+
 ## <a id="v1.46.0"></a>Hide the app in front with a mouse button
 
 <sub>1.46.0 · October 13, 2026</sub>
