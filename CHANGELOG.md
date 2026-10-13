@@ -372,14 +372,14 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Added
 - A way to say thanks. At the bottom of About there is now a quiet line, “Made with care · Buy me a coffee”. It opens buymeacoffee.com/pikapik in your browser, and everything goes into developing and supporting the app. Nothing pops up or reminds you, ever. The README has the same link, and GitHub shows a Sponsor button.
-- Clean up permissions left by deleted apps. When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now Permissions has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. Remove clears one app, Remove All clears them all, and an app you install again will simply ask again. To see the list, give pika-tools Full Disk Access; it only looks until you press Remove.
+- Clean up permissions left by deleted apps. When you delete an app, macOS keeps the permissions you gave it, and System Settings has no way to remove them. Now Permissions has a list called “Left by deleted apps”: each app with its icon, what it was allowed to do and when. Remove clears one app, Remove All clears them all, and an app you install again will simply ask again. To see the list, give pikapik Full Disk Access; it only looks until you press Remove.
 
 ### Changed
 - A new app icon: the pikapik mark in blue, violet and coral on a dark tile. The menu bar shows the same shape and follows a light or dark menu bar. When every tool is off, the shape turns pale.
 - The pictures on the Animations and Games pages are drawn anew for their size, so they look sharp. A window shrinks into the Dock with round corners, like on a real Mac. The pointer clicks first, and only then a menu or a window opens. Spotlight, the app switcher and the emoji panel are see-through glass, as in macOS Tahoe.
 
 ### Fixed
-- Clicking a system shortcut now takes you straight to its own list in System Settings, like Mission Control or Screenshots, not just to Keyboard. If pika-tools can’t pick the list for you, Keyboard Shortcuts still opens, and a short tip next to the keys says which list to click. The tip no longer disappears the moment System Settings opens.
+- Clicking a system shortcut now takes you straight to its own list in System Settings, like Mission Control or Screenshots, not just to Keyboard. If pikapik can’t pick the list for you, Keyboard Shortcuts still opens, and a short tip next to the keys says which list to click. The tip no longer disappears the moment System Settings opens.
 
 ## [1.25.2] - 2026-10-08
 
@@ -403,7 +403,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Games: adding a game is easier. Press Add a Game… and pick it from the apps that are open right now, with big icons like in the Dock. One click adds it, or drag the icon into the list. You can also drop a game straight from Finder or the Dock, and the list lights up to show where it goes. Other… still lets you pick any app from a folder.
 - Any app can be a game now, including Minecraft that runs on Java. Game Mode remembers the game itself, so other Java apps don’t turn it on. Games you added before carry over.
 - Every Game Mode switch has a small picture of what it stops.
-- Your own keys for quitting and closing. In Settings → Windows, click the keys next to Quit app or Close window and press new ones. Esc cancels, and ⌫ brings back ⇧⌘Q and ⇧⌘W. If your Mac or the other row already uses those keys, pika-tools tells you and asks first. Game Mode uses your keys too.
+- Your own keys for quitting and closing. In Settings → Windows, click the keys next to Quit app or Close window and press new ones. Esc cancels, and ⌫ brings back ⇧⌘Q and ⇧⌘W. If your Mac or the other row already uses those keys, pikapik tells you and asks first. Game Mode uses your keys too.
 
 ### Changed
 - Game Mode switches are named in simple words, like “The game doesn’t close” or “Search doesn’t pop up”. The system name, such as Spotlight or Mission Control, sits next to them in gray.
@@ -415,14 +415,14 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Fixed
 - Animations: the Faster preset never makes anything slower than what you already had. If parts of your Mac were already faster, for example after commands in Terminal, they stay as they are.
-- Animations: Restore Defaults and uninstalling pika-tools bring back the values you had before, instead of erasing them.
+- Animations: Restore Defaults and uninstalling pikapik bring back the values you had before, instead of erasing them.
 - Animations: when the Dock doesn’t hide, the switch to hide it automatically sits right under the speed slider, because the Dock speeds up only when it hides. The Dock no longer restarts for nothing while it stays in place.
 - Animations: after a change, a line at the bottom of the page says that apps show it once you open them again, with one Restart Finder button. Quick Look and columns now offer the button too, since Finder shows them only after a restart.
 
 ## [1.24.0] - 2026-10-08
 
 ### Added
-- Animations: a new page in Settings for how fast things move on your Mac. One slider speeds up the hidden Dock, new windows, Save dialogs, Quick Look and columns in Finder at once, from as in macOS to instant. Each effect can also be tuned on its own, along with the minimize effect, bouncing icons in the Dock and Finder animations. Every setting has a small live picture that moves at exactly the chosen speed. Restore Defaults and uninstalling pika-tools remove only what pika-tools changed, and values you set yourself in Terminal are shown as they are.
+- Animations: a new page in Settings for how fast things move on your Mac. One slider speeds up the hidden Dock, new windows, Save dialogs, Quick Look and columns in Finder at once, from as in macOS to instant. Each effect can also be tuned on its own, along with the minimize effect, bouncing icons in the Dock and Finder animations. Every setting has a small live picture that moves at exactly the chosen speed. Restore Defaults and uninstalling pikapik remove only what pikapik changed, and values you set yourself in Terminal are shown as they are.
 
 ## [1.23.2] - 2026-10-08
 
@@ -445,7 +445,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.23.0] - 2026-10-07
 
 ### Added
-- Game Mode keeps your Mac from pulling you out of a game. Add your games, and while you play one, Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over it, ⌘Q and ⌘W don’t close it by accident, the pointer stays on the game’s screen, the keyboard language doesn’t change and the screen stays on. Each of these has its own switch, and pika-tools suggests games it finds on your Mac. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. Off by default, on the Games page.
+- Game Mode keeps your Mac from pulling you out of a game. Add your games, and while you play one, Spotlight, Siri, ⌘Tab, Mission Control and swipes between desktops don’t open over it, ⌘Q and ⌘W don’t close it by accident, the pointer stays on the game’s screen, the keyboard language doesn’t change and the screen stays on. Each of these has its own switch, and pikapik suggests games it finds on your Mac. To leave a game, press ⇧⌘Q; to close its window, press ⇧⌘W. ⌥⌘Esc always works. Off by default, on the Games page.
 - Keep Awake has a "Turn off the screen now" button on its page and in the menu bar panel. The Mac keeps working, and the screen comes back when you move the mouse or press a key.
 
 ### Changed
@@ -495,7 +495,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - On macOS 26 and later the speed and scroll sliders are the standard system ones, with the Liquid Glass knob. The fill starts at the usual value, so you can see how far you moved from it.
 
 ### Fixed
-- Keep Awake stays on through updates and restarts of pika-tools. A timer keeps counting from where it was, and with the lid closed you are not asked for the password again. Quitting pika-tools from its menu still turns Keep Awake off.
+- Keep Awake stays on through updates and restarts of pikapik. A timer keeps counting from where it was, and with the lid closed you are not asked for the password again. Quitting pikapik from its menu still turns Keep Awake off.
 - The settings window has a sidebar button at the top again, so a sidebar you dragged shut can be opened back.
 - Settings no longer spill over the window edge when the window is narrow and the sidebar is wide.
 - The Appearance choice on the General page no longer breaks its labels into single letters in a narrow window.
@@ -564,8 +564,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.15.2] - 2026-10-06
 
 ### Fixed
-- The menu bar panel no longer turns grey when pika-tools was already the active app as you opened it.
-- Finder no longer shows “New File” twice when a test build of pika-tools was also installed.
+- The menu bar panel no longer turns grey when pikapik was already the active app as you opened it.
+- Finder no longer shows “New File” twice when a test build of pikapik was also installed.
 
 ## [1.15.1] - 2026-10-06
 
@@ -612,7 +612,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Added
 - **New File** in the Finder right-click menu, on the Desktop too: pick it, type a name and get an empty file. Plain text by default. Turn it on in Windows & Apps.
-- Right-click the pika-tools icon in the menu bar for a quick menu: Keep Awake, Settings, updates, About, Open at Login and Quit.
+- Right-click the pikapik icon in the menu bar for a quick menu: Keep Awake, Settings, updates, About, Open at Login and Quit.
 
 ### Fixed
 - Quit when the last window closes now also reacts to the close button and ⌘W, and checks twice before quitting.
