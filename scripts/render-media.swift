@@ -54,6 +54,7 @@ enum RenderMedia {
         ("whats-new/1.34.0/pointer-shortcuts", 5.4, AnyView(PointerShortcutsCard())),
         ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
         ("whats-new/1.39.0/archive-password", ArchivePasswordCard.length, AnyView(ArchivePasswordCard())),
+        ("whats-new/next/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
     ]
 
     static func main() {
@@ -444,7 +445,6 @@ private struct ArtSwitch: View {
 
 private struct PetBallArt: View {
     static let length = 7.2
-    @Environment(\.colorScheme) private var scheme
 
     private static let ground: CGFloat = 100
     private static let scale: CGFloat = 1.2
@@ -517,36 +517,12 @@ private struct PetBallArt: View {
     }
 
     var body: some View {
-        let night = scheme == .dark
-        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
         IllustrationRow {
             ArtTimeline { time in
                 let t = time.map { GameStory.mod($0, Self.length) } ?? 0.5
                 let pet = Self.pet(t), ball = Self.ball(t)
                 Stage {
-                    ZStack {
-                        LinearGradient(
-                            colors: night ? [Color(red: 0.10, green: 0.11, blue: 0.27), Color(red: 0.29, green: 0.20, blue: 0.42)]
-                                : [Color(red: 0.60, green: 0.79, blue: 0.98), Color(red: 0.99, green: 0.86, blue: 0.80)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                        .overlay {
-                            Ellipse()
-                                .fill(night ? Color(red: 0.36, green: 0.25, blue: 0.50) : Color(red: 1, green: 0.78, blue: 0.70))
-                                .frame(width: 300, height: 90)
-                                .offset(x: 40, y: 70)
-                        }
-                        ArtWindow(size: CGSize(width: 84, height: 52)) {
-                            VStack(alignment: .leading, spacing: 5) {
-                                ForEach([46.0, 60, 34], id: \.self) {
-                                    Capsule().fill(Color.primary.opacity(0.12)).frame(width: $0, height: 4)
-                                }
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 9)
-                        }
-                        .position(x: 54, y: 36)
+                    PetScreen { night in
                         Canvas { context, _ in
                             var figure = context
                             figure.translateBy(x: pet.x, y: Self.ground)
@@ -559,13 +535,143 @@ private struct PetBallArt: View {
                             BallFigure.draw(ball.pose, night: night) { toy.fill($0, with: .color($1)) }
                         }
                     }
-                    .frame(width: 196, height: 108)
-                    .clipShape(shape)
-                    .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
-                    .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
-                    .position(x: 150, y: 64)
                     ArtCursor()
                         .cursor(at: Self.cursor(t))
+                }
+            }
+        }
+    }
+}
+
+private struct PetScreen<Content: View>: View {
+    @ViewBuilder var content: (Bool) -> Content
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        let night = scheme == .dark
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        ZStack {
+            LinearGradient(
+                colors: night ? [Color(red: 0.10, green: 0.11, blue: 0.27), Color(red: 0.29, green: 0.20, blue: 0.42)]
+                    : [Color(red: 0.60, green: 0.79, blue: 0.98), Color(red: 0.99, green: 0.86, blue: 0.80)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .overlay {
+                Ellipse()
+                    .fill(night ? Color(red: 0.36, green: 0.25, blue: 0.50) : Color(red: 1, green: 0.78, blue: 0.70))
+                    .frame(width: 300, height: 90)
+                    .offset(x: 40, y: 70)
+            }
+            ArtWindow(size: CGSize(width: 84, height: 52)) {
+                VStack(alignment: .leading, spacing: 5) {
+                    ForEach([46.0, 60, 34], id: \.self) {
+                        Capsule().fill(Color.primary.opacity(0.12)).frame(width: $0, height: 4)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 9)
+            }
+            .position(x: 54, y: 36)
+            content(night)
+        }
+        .frame(width: 196, height: 108)
+        .clipShape(shape)
+        .overlay(shape.strokeBorder(Color.primary.opacity(0.14), lineWidth: 0.5))
+        .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
+        .position(x: 150, y: 64)
+    }
+}
+
+private struct PetRhythmArt: View {
+    static let length = 10.1
+    private static let still = 7.2
+    private static let ground: CGFloat = 100
+    private static let scale: CGFloat = 1.2
+
+    private static func pet(_ t: Double) -> (x: CGFloat, pose: PetPose) {
+        var pose = PetPose()
+        pose.blink = t.truncatingRemainder(dividingBy: 3.1) < 0.13
+        func walk(_ from: CGFloat, _ to: CGFloat, _ p: Double) -> CGFloat {
+            pose.facing = to > from ? 1 : -1
+            pose.step = p * Double(max(1, (abs(to - from) / scale * 5 / 56).rounded())) * 2 * .pi
+            return from + (to - from) * CGFloat(p)
+        }
+        func doze(_ clock: Double) {
+            pose.facing = -1
+            pose.sit = PetPose.ease(clock / 0.5)
+            pose.squash = 0.04 * sin(clock * 2 * .pi / 3.6)
+            pose.lid = 1
+            pose.nap = clock
+        }
+        switch t {
+        case ..<1.6:
+            pose.bounce = 1
+            return (walk(46, 126, t / 1.6), pose)
+        case ..<2.3:
+            pose.facing = t < 1.95 ? 1 : -1
+            return (126, pose)
+        case ..<2.8:
+            pose.bounce = 1
+            return (walk(126, 102, (t - 2.3) / 0.5), pose)
+        case ..<4.8:
+            let p = (t - 2.8) / 2
+            pose.bounce = 1 - PetPose.ease(p / 0.4)
+            pose.lid = 0.55 * PetPose.ease((p - 0.2) / 0.8)
+            return (walk(102, 46, (10 * p - 3 * p * p) / 7), pose)
+        case ..<8.4:
+            doze(t - 4.8)
+            return (46, pose)
+        case ..<9.4:
+            let p = t - 8.4
+            pose.facing = -1
+            pose.sit = 1 - PetPose.ease(p / 0.45)
+            pose.squash = -0.12 * sin(.pi * min(1, p / 0.75))
+            pose.lid = 1 - PetPose.ease((p - 0.3) / 0.4)
+            pose.nap = 3.6 + p
+            pose.dream = 1 - PetPose.ease(p / 0.35)
+            return (46, pose)
+        default:
+            pose.facing = t < 9.75 ? -1 : 1
+            return (46, pose)
+        }
+    }
+
+    private static func key(_ t: Double) -> Int? {
+        let beat = GameStory.mod(t - 8.4, length) / 0.19, n = Int(beat)
+        guard beat < 22, beat.truncatingRemainder(dividingBy: 1) < 0.55, n % 9 != 8 else { return nil }
+        return [0, 3, 1, 2, 3, 0, 2][n % 7]
+    }
+
+    var body: some View {
+        IllustrationRow {
+            ArtTimeline { time in
+                let t = time.map { GameStory.mod($0, Self.length) } ?? Self.still
+                let pet = Self.pet(t), down = time == nil ? nil : Self.key(t)
+                Stage {
+                    VStack(spacing: 3) {
+                        ForEach(0..<2) { row in
+                            HStack(spacing: 3) {
+                                ForEach(0..<2) { column in
+                                    ArtKey(down: down == row * 2 + column, width: 20, height: 18) {
+                                        Text(["Q", "W", "A", "S"][row * 2 + column])
+                                    }
+                                }
+                            }
+                            .offset(x: row == 0 ? -2 : 2)
+                        }
+                    }
+                    .position(x: 45, y: 64)
+                    PetScreen { night in
+                        Canvas { context, _ in
+                            var figure = context
+                            figure.translateBy(x: pet.x, y: Self.ground)
+                            figure.scaleBy(x: Self.scale, y: Self.scale)
+                            PetFigure.shadow(pet.pose) { figure.fill($0, with: .color($1)) }
+                            PetFigure.draw(pet.pose, night: night) { figure.fill($0, with: .color($1)) }
+                        }
+                    }
+                    .offset(x: 30)
                 }
             }
         }

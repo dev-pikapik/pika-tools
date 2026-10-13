@@ -23,6 +23,10 @@ final class PetTool: Tool {
         didSet { UserDefaults.standard.set(talks, forKey: "pet-talks") }
     }
 
+    var rhythm: Bool {
+        didSet { UserDefaults.standard.set(rhythm, forKey: "pet-rhythm") }
+    }
+
     var ball: Bool {
         didSet {
             UserDefaults.standard.set(ball, forKey: "pet-ball")
@@ -36,20 +40,23 @@ final class PetTool: Tool {
     private init() {
         isEnabled = UserDefaults.standard.object(forKey: "pet") as? Bool ?? true
         talks = UserDefaults.standard.object(forKey: "pet-talks") as? Bool ?? true
+        rhythm = UserDefaults.standard.object(forKey: "pet-rhythm") as? Bool ?? true
         ball = UserDefaults.standard.object(forKey: "pet-ball") as? Bool ?? true
     }
 
-    var isDefault: Bool { isEnabled && talks && ball }
+    var isDefault: Bool { isEnabled && talks && rhythm && ball }
 
     func reset() {
         isEnabled = true
         talks = true
+        rhythm = true
         ball = true
     }
 
     func load() {
         isEnabled = UserDefaults.standard.object(forKey: "pet") as? Bool ?? true
         talks = UserDefaults.standard.object(forKey: "pet-talks") as? Bool ?? true
+        rhythm = UserDefaults.standard.object(forKey: "pet-rhythm") as? Bool ?? true
         ball = UserDefaults.standard.object(forKey: "pet-ball") as? Bool ?? true
     }
 
@@ -155,6 +162,13 @@ private struct PetSettings: View {
                 title: String(localized: "Talks sometimes"),
                 subtitle: Text("Every now and then it sits down for a chat and tells you when an update is out"),
                 isOn: $tool.talks
+            )
+            .disabled(!tool.isEnabled)
+            ToggleRow(
+                icon: "zzz",
+                title: String(localized: "Follows your rhythm"),
+                subtitle: Text("Perks up while you type and dozes off when you step away"),
+                isOn: $tool.rhythm
             )
             .disabled(!tool.isEnabled)
             ToggleRow(

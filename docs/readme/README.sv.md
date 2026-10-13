@@ -179,7 +179,7 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Husdjur på skrivbordet</b>
-<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans.
+<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Spel**: din lista med spel och alternativen för Spelläge.
-- **Husdjur**: slå på eller av husdjuret, låt det prata och leka med bollen, klä på det och se dina utmärkelser.
+- **Husdjur**: slå på eller av husdjuret, låt det prata, följa din rytm och leka med bollen, klä på det och se dina utmärkelser.
 - **Behörigheter**: alla behörigheter som pikapik använder, var och en med sin status och en knapp för att tillåta eller stänga av den. Ett verktyg som saknar en behörighet ser halvgrått ut, och ett klick på det öppnar den här sidan vid rätt rad.
 - **Om**: version, länkar till ändringsloggen och för att rapportera ett problem.
 

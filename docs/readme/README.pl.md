@@ -179,7 +179,7 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Zwierzak na biurku</b>
-<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem.
+<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem. Ożywia się, gdy piszesz, i drzemie, gdy odchodzisz.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
 - **Usuwanie aplikacji**: usuń aplikację razem z plikami, później przywróć wszystko na miejsce i posprzątaj to, co zostało po usuniętych aplikacjach.
 - **Gry**: lista twoich gier i ustawienia Trybu gry.
-- **Zwierzak**: włączanie i wyłączanie, rozmowy i piłka, garderoba i nagrody.
+- **Zwierzak**: włączanie i wyłączanie, rozmowy, życie w twoim rytmie i piłka, garderoba i nagrody.
 - **Uprawnienia**: wszystkie uprawnienia, których używa pikapik, każde z własnym stanem i przyciskiem do zezwolenia lub wyłączenia. Narzędzie, któremu brakuje uprawnienia, wygląda na wyszarzone, a kliknięcie go otwiera tę stronę przy właściwym wierszu.
 - **Informacje**: wersja, łącza do listy zmian i do zgłaszania problemów.
 

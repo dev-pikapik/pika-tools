@@ -179,7 +179,7 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Compagnon sur le bureau</b>
-<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble.
+<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
 - **Supprimer des apps** : supprimer une app avec ses fichiers, tout remettre en place plus tard et nettoyer ce que les apps supprimées ont laissé derrière elles.
 - **Jeux** : votre liste de jeux et les réglages du Mode Jeu.
-- **Compagnon** : l’activer ou le désactiver, le laisser bavarder et jouer au ballon, l’habiller et voir vos récompenses.
+- **Compagnon** : l’activer ou le désactiver, le laisser bavarder, vivre à votre rythme et jouer au ballon, l’habiller et voir vos récompenses.
 - **Autorisations** : toutes les autorisations utilisées par pikapik, chacune avec son état et un bouton pour l’autoriser ou l’éteindre. Un outil auquel il manque une autorisation apparaît à moitié grisé ; un clic dessus ouvre cette page sur la bonne ligne.
 - **À propos** : version, liens vers l’historique des changements et pour signaler un problème.
 

@@ -179,7 +179,7 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animăluț pe birou</b>
-<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună.
+<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună. Se înviorează cât timp tastezi și ațipește când te îndepărtezi.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.
-- **Animăluț**: pornit sau oprit, vorbit și minge, garderoba și premiile.
+- **Animăluț**: pornit sau oprit, vorbit, viață în ritmul tău și minge, garderoba și premiile.
 - **Permisiuni**: toate permisiunile pe care le folosește pikapik, fiecare cu starea ei și cu un buton pentru a o permite sau a o stinge. Un instrument căruia îi lipsește o permisiune apare în gri, iar un clic pe el deschide această pagină la rândul potrivit.
 - **Despre**: versiune, linkuri către lista de modificări și pentru raportarea unei probleme.
 

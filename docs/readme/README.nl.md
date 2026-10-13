@@ -179,7 +179,7 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Huisdiertje op het bureaublad</b>
-<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen.
+<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Finder**: nieuw bestand, kleinere kopie, omzetten en archieven, openen met Return, knippen met ⌘X en verwijderen met ⌫.
 - **Apps verwijderen**: verwijder een app met al zijn bestanden, zet later alles terug en ruim op wat verwijderde apps hebben achtergelaten.
 - **Games**: je lijst met games en de opties van de Gamemodus.
-- **Huisdiertje**: zet het aan of uit, laat het kletsen en met de bal spelen, kleed het aan en bekijk je onderscheidingen.
+- **Huisdiertje**: zet het aan of uit, laat het kletsen, op jouw ritme leven en met de bal spelen, kleed het aan en bekijk je onderscheidingen.
 - **Toestemmingen**: alle toestemmingen die pikapik gebruikt, elk met zijn status en één knop om ze toe te staan of uit te zetten. Een functie waarvoor een toestemming ontbreekt, ziet er half grijs uit; een klik erop opent deze pagina bij de juiste regel.
 - **Over**: versie, links naar het wijzigingslogboek en om een probleem te melden.
 
