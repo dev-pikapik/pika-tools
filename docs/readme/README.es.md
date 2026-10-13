@@ -179,7 +179,7 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mascota en el escritorio</b>
-<br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos.
+<br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos. Se anima mientras escribes y dormita cuando te alejas.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X y borrar con ⌫.
 - **Eliminar apps**: eliminar una app con sus archivos, devolverlo todo a su sitio más tarde y limpiar lo que dejaron las apps eliminadas.
 - **Juegos**: tu lista de juegos y las opciones del Modo de juego.
-- **Mascota**: actívala o desactívala, deja que charle y juegue con la pelota, vístela y mira tus premios.
+- **Mascota**: actívala o desactívala, deja que charle, siga tu ritmo y juegue con la pelota, vístela y mira tus premios.
 - **Permisos**: todos los permisos que usa pikapik, cada uno con su estado y un botón para permitirlo o apagarlo. Una herramienta a la que le falta un permiso aparece en gris; al hacer clic en ella se abre esta página en la fila correcta.
 - **Acerca de**: versión, enlaces al historial de cambios y para informar de un problema.
 

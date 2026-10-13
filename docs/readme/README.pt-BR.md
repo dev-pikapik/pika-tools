@@ -179,7 +179,7 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Bichinho na mesa</b>
-<br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos.
+<br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos. Ele fica animado enquanto você digita e cochila quando você se afasta.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
 - **Remover apps**: remova um app com seus arquivos, devolva tudo depois e limpe o que os apps removidos deixaram para trás.
 - **Jogos**: a lista dos seus jogos e as opções do Modo Jogo.
-- **Bichinho**: ligar ou desligar o bichinho, conversas e bola, guarda-roupa e prêmios.
+- **Bichinho**: ligar ou desligar o bichinho, conversas e bola, seguir o seu ritmo, guarda-roupa e prêmios.
 - **Permissões**: todas as permissões que o pikapik usa, cada uma com seu estado e um botão para permitir ou desligar. Uma ferramenta sem a permissão de que precisa aparece em cinza; clicar nela abre esta página na linha certa.
 - **Sobre**: versão, links para o histórico de mudanças e para relatar um problema.
 

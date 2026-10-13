@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Animăluțul trăiește în ritmul tău
+
+<sub>1.39.3 · 13 octombrie 2026</sub>
+
+Cât timp tastezi, animăluțul se înviorează și merge vesel, cu pas săltăreț. Când te îndepărtezi de Mac, i se face somn, se așază și ațipește.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Dacă nu atingi tastatura sau mouse-ul vreo 40 de secunde, i se îngreunează pleoapele, iar după un minut și jumătate doarme dus, cu mici litere z care plutesc în sus. Apasă o tastă sau mișcă mouse-ul, și se trezește, se ridică și merge mai departe. Cât timp moțăie, tace și consumă mai puțină energie.
+
+pikapik nu se uită niciodată la ce tastezi. Verifică doar cât timp a trecut de la ultima apăsare de tastă sau mișcare a mouse-ului, exact cum face macOS înainte să reducă luminozitatea ecranului, așa că nu are nevoie de nicio permisiune. Preferi ca animăluțul să rămână mereu vioi? Dezactivează „Trăiește în ritmul dumneavoastră” în configurările animăluțului.
+
+**Încearcă:** Configurări › Animăluț › Trăiește în ritmul dumneavoastră
+
+---
+
 ## <a id="v1.39.2"></a>Configurările sincronizate stau acum într-un dosar pikapik
 
 <sub>1.39.2 · 13 octombrie 2026</sub>

@@ -179,7 +179,7 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
 <br><b>Pet on the desktop</b>
-<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together.
+<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
 - **Uninstaller**: remove an app with its files, put it all back later, and clean up what removed apps left behind.
 - **Games**: your list of games and the Game Mode options.
-- **Pet**: turn the little friend on or off, let it chat and play with a ball, dress it up and see your awards.
+- **Pet**: turn the little friend on or off, let it chat, follow your rhythm and play with a ball, dress it up and see your awards.
 - **Permissions**: every permission pikapik uses, each with its status and one button to allow it or turn it off. A tool that is missing a permission looks half-grey, and clicking it opens this page at the right row.
 - **About**: version, links to the changelog and to report a problem.
 

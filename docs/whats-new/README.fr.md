@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Votre compagnon vit à votre rythme
+
+<sub>1.39.3 · 13 octobre 2026</sub>
+
+Quand vous tapez, votre compagnon s’anime et trottine d’un pas guilleret. Éloignez-vous de votre Mac, et il commence à avoir sommeil, s’assoit et s’assoupit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Si vous ne touchez ni au clavier ni à la souris pendant environ 40 secondes, ses paupières s’alourdissent, et au bout d’une minute et demie, il dort à poings fermés, tandis que de petits z s’envolent au-dessus de lui. Appuyez sur une touche ou bougez la souris, et il se réveille, se relève et repart. Pendant sa sieste, il reste silencieux et consomme moins d’énergie.
+
+pikapik ne regarde jamais ce que vous tapez : il vérifie seulement combien de temps s’est écoulé depuis la dernière touche pressée ou le dernier mouvement de la souris, comme le fait macOS avant d’assombrir l’écran. Aucune autorisation n’est donc nécessaire. Vous préférez que votre compagnon reste toujours plein d’entrain ? Désactivez « Vit à votre rythme » dans les réglages du compagnon.
+
+**Pour essayer :** Réglages › Compagnon › Vit à votre rythme
+
+---
+
 ## <a id="v1.39.2"></a>Les réglages synchronisés sont désormais dans un dossier pikapik
 
 <sub>1.39.2 · 13 octobre 2026</sub>

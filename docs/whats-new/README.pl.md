@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Zwierzak żyje w twoim rytmie
+
+<sub>1.39.3 · 13 października 2026</sub>
+
+Kiedy piszesz, zwierzak się ożywia i drepcze sprężystym krokiem. Gdy odejdziesz od Maca, zrobi się senny, usiądzie i zapadnie w drzemkę.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Gdy przez mniej więcej 40 sekund nie dotykasz klawiatury ani myszy, powieki mu ciężeją, a po półtorej minucie śpi już jak suseł i unoszą się nad nim małe literki z. Naciśnij dowolny klawisz albo rusz myszą, a obudzi się, wstanie i pójdzie dalej. Kiedy drzemie, siedzi cicho i zużywa mniej energii.
+
+pikapik nigdy nie podgląda, co piszesz. Sprawdza tylko, ile czasu minęło od ostatniego naciśnięcia klawisza lub ruchu myszy, tak samo jak macOS przed przyciemnieniem ekranu, więc nie potrzebuje żadnych uprawnień. Wolisz, żeby zwierzak zawsze był żwawy? Wyłącz „Żyje w twoim rytmie” w ustawieniach zwierzaka.
+
+**Wypróbuj:** Ustawienia › Zwierzak › Żyje w twoim rytmie
+
+---
+
 ## <a id="v1.39.2"></a>Synchronizowane ustawienia są teraz w folderze pikapik
 
 <sub>1.39.2 · 13 października 2026</sub>

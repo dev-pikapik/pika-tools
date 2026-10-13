@@ -51,6 +51,7 @@ enum TestPet {
             }
             if next() < 0.03 { pet.jump() }
             if next() < 0.005 { pet.sit(next() * 3) }
+            if next() < 0.01 { pet.sense(idle: next() * 150, typed: next() * 2, next()) }
             if next() < 0.003 { pet.calm.toggle() }
             if next() < 0.002 {
                 pet.resize(CGRect(x: next() * 100, y: next() * 40, width: 200 + next() * 800, height: 120 + next() * 100))
@@ -757,5 +758,43 @@ enum TestPet {
             precondition(flew && landed && ballAt == level[1] && ball.resting, "throw across screens: pet on \(at), ball on \(ballAt)")
         }
         print("pet and ball walk, fall, fly and roll from screen to screen: ok")
+
+        var lively = PetPhysics(bounds: screen, x: 300)
+        let slow = lively.pace
+        for _ in 0..<120 { lively.sense(idle: 0.2, typed: 0.2, 0.25) }
+        precondition(lively.zest > 0.9 && lively.pace > slow * 1.4 && lively.state == .walk, "typing does not perk the pet up: \(lively.zest)")
+        var away = 0.0
+        while away < PetPhysics.slumber + 30 {
+            away += 0.25
+            lively.sense(idle: away, typed: away, 0.25)
+            lively.step(0.25, cursor: nil)
+            precondition(away >= PetPhysics.slumber || lively.state != .doze, "dozed after \(away) s")
+        }
+        precondition(lively.state == .doze && lively.zest < -0.9 && lively.pace < slow, "an idle pet does not doze: \(lively.state) \(lively.zest)")
+        _ = lively.drain()
+        let spot = lively.origin
+        let sweep = { (t: Double) in CGPoint(x: spot.x - 60 + 6 * t, y: 24) }
+        var control = PetPhysics(bounds: screen, x: spot.x)
+        control.sit(30)
+        precondition(trace(&control, 20, cursor: sweep).contains(.tumble), "the sweep no longer reaches the pet, update this check")
+        trace(&lively, 20, cursor: sweep)
+        precondition(lively.state == .doze && lively.origin == spot && lively.drain().isEmpty, "a dozing pet moved or was bumped")
+        precondition(!lively.jump() && !lively.sit(2) && lively.state == .doze, "a dozing pet jumped or sat up")
+        lively.sense(idle: 0.1, typed: 50, 0.25)
+        precondition(lively.state == .wake, "input does not wake the pet")
+        states = trace(&lively, 2)
+        precondition(Array(states.prefix(2)) == [.wake, .walk] && lively.origin != spot, "a woken pet does not walk on: \(states)")
+        lively.calm = true
+        for _ in 0..<480 {
+            lively.sense(idle: 200, typed: 200, 0.25)
+            lively.step(0.25, cursor: nil)
+        }
+        precondition(lively.state == .doze)
+        for _ in 0..<120 {
+            lively.sense(idle: 0, typed: .infinity, 0.25)
+            lively.step(0.25, cursor: nil)
+        }
+        precondition([.walk, .turn].contains(lively.state) && abs(lively.zest) < 0.01, "with the rhythm off the pet stays sleepy: \(lively.state) \(lively.zest)")
+        print("typing perks the pet up, an idle pet dozes through the pointer, any input wakes it: ok")
     }
 }

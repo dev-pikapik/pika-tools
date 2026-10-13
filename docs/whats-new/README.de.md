@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Dein Haustier lebt in deinem Rhythmus
+
+<sub>1.39.3 · 13. Oktober 2026</sub>
+
+Während du tippst, wird dein Haustier munter und trabt mit federnden Schritten dahin. Gehst du von deinem Mac weg, wird es müde, setzt sich und döst ein.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Rührst du etwa 40 Sekunden lang weder Tastatur noch Maus an, werden ihm die Augen schwer, und nach anderthalb Minuten schläft es tief und fest, während kleine z über ihm nach oben schweben. Drück eine Taste oder beweg die Maus, dann wird es wach, steht auf und läuft weiter. Solange es ein Nickerchen macht, ist es still und verbraucht weniger Energie.
+
+pikapik schaut sich nie an, was du tippst, sondern achtet nur darauf, wie lange der letzte Tastendruck oder die letzte Mausbewegung her ist, genau wie macOS, bevor der Bildschirm dunkler wird. Darum sind keine Berechtigungen nötig. Soll dein Haustier lieber immer munter bleiben? Schalte „Lebt in deinem Rhythmus“ in den Haustier-Einstellungen aus.
+
+**Ausprobieren:** Einstellungen › Haustier › Lebt in deinem Rhythmus
+
+---
+
 ## <a id="v1.39.2"></a>Synchronisierte Einstellungen liegen jetzt im Ordner pikapik
 
 <sub>1.39.2 · 13. Oktober 2026</sub>

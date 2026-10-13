@@ -1,7 +1,7 @@
 import CoreGraphics
 
 struct PetPhysics {
-    enum State { case walk, turn, jump, tumble, lie, getUp, sit, kick, held, thrown }
+    enum State { case walk, turn, jump, tumble, lie, getUp, sit, kick, held, thrown, doze, wake }
     enum Event { case jump, leap, climb, tumble, fling }
 
     static let size = CGSize(width: 30, height: 32)
@@ -17,6 +17,8 @@ struct PetPhysics {
     static let shyness = 1.0
     static let runUp: CGFloat = 24
     static let tick = 1.0 / 120
+    static let drowsy = 40.0
+    static let slumber = 90.0
 
     private(set) var bounds: CGRect
     private(set) var origin: CGPoint
@@ -25,12 +27,14 @@ struct PetPhysics {
     private(set) var state = State.walk
     private(set) var clock = 0.0
     private(set) var hold = 0.0
+    private(set) var napped = 0.0
     private(set) var landed = Double.infinity
     private(set) var walked: CGFloat = 0
     private(set) var vx: CGFloat = 0
     private(set) var vy: CGFloat = 0
     private(set) var shy = 0.0
     private(set) var events: [Event] = []
+    private(set) var zest: CGFloat = 0
     var calm = false
     var roof = CGFloat.infinity
     var dock: CGRect?
@@ -41,6 +45,7 @@ struct PetPhysics {
     private var mark = CGRect.null
     private var age = 0.0
     private var trail = Trail()
+    private var beat: CGFloat = 0
 
     init(bounds: CGRect, x: CGFloat? = nil, facing: CGFloat = 1) {
         self.bounds = bounds
@@ -54,7 +59,7 @@ struct PetPhysics {
         CGRect(x: origin.x - Self.size.width / 2, y: origin.y, width: Self.size.width, height: Self.size.height)
     }
 
-    var pace: CGFloat { calm ? 22 : 36 }
+    var pace: CGFloat { (calm ? 22 : 36) * (1 + 0.45 * zest) }
 
     var grounded: Bool { state != .jump && state != .tumble && state != .held && state != .thrown }
 
@@ -135,6 +140,30 @@ struct PetPhysics {
         if state == .turn { facing = heading }
         enter(.sit, seconds)
         return true
+    }
+
+    @discardableResult
+    mutating func doze() -> Bool {
+        guard state == .walk || state == .turn else { return false }
+        if state == .turn { facing = heading }
+        enter(.doze)
+        return true
+    }
+
+    @discardableResult
+    mutating func wake() -> Bool {
+        guard state == .doze else { return false }
+        napped = clock
+        enter(.wake, calm ? 0.6 : 1)
+        return true
+    }
+
+    mutating func sense(idle: Double, typed: Double, _ dt: Double) {
+        let h = CGFloat(min(max(dt, 0), 1))
+        beat += ((typed < 0.5 ? 1 : 0) - beat) * (1 - exp(-h / 6))
+        let goal = idle < Self.drowsy ? beat : -CGFloat(min(1, (idle - Self.drowsy) / (Self.slumber - Self.drowsy)))
+        zest += (goal - zest) * (1 - exp(-h / (goal > zest ? 2 : 5)))
+        if idle >= Self.slumber { doze() } else if idle < Self.drowsy { wake() }
     }
 
     func touches(_ point: CGPoint) -> Bool {
@@ -263,8 +292,10 @@ struct PetPhysics {
                 facing = heading
                 enter(.getUp, calm ? 0.3 : 0.5)
             }
-        case .getUp, .sit, .kick:
+        case .getUp, .sit, .kick, .wake:
             if clock >= hold { enter(.walk) }
+        case .doze:
+            break
         case .held:
             if let b1 { hang(CGPoint(x: b1.minX, y: b1.maxY)) }
             follow()

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Je huisdiertje leeft op jouw ritme
+
+<sub>1.39.3 · 13 oktober 2026</sub>
+
+Terwijl je typt, wordt je huisdiertje levendig en huppelt het vrolijk rond. Loop je weg van je Mac, dan wordt het slaperig, gaat het zitten en dommelt het in.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Raak je zo’n 40 seconden toetsenbord en muis niet aan, dan worden zijn ogen zwaar, en na anderhalve minuut slaapt het als een roos, terwijl er kleine z’tjes omhoog zweven. Druk op een toets of beweeg de muis, en het wordt wakker, staat op en loopt verder. Zolang het een dutje doet, is het stil en verbruikt het minder energie.
+
+pikapik kijkt nooit mee met wat je typt, maar let alleen op hoe lang geleden je een toets hebt ingedrukt of de muis hebt bewogen, net zoals macOS doet voordat het scherm donkerder wordt. Daarom zijn er geen toestemmingen nodig. Wil je liever dat je huisdiertje altijd levendig blijft? Zet ‘Leeft op jouw ritme’ uit in de instellingen van het huisdiertje.
+
+**Probeer het:** Instellingen › Huisdiertje › Leeft op jouw ritme
+
+---
+
 ## <a id="v1.39.2"></a>Gesynchroniseerde instellingen staan nu in een map pikapik
 
 <sub>1.39.2 · 13 oktober 2026</sub>

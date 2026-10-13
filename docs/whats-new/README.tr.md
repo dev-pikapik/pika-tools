@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Evcil dostunuz ritminize uyuyor
+
+<sub>1.39.3 · 13 Ekim 2026</sub>
+
+Siz yazarken evcil dostunuz canlanır ve kıvrak adımlarla tıpış tıpış yürür. Mac’inizden uzaklaştığınızda uykusu gelir, oturur ve uyuklar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Klavyeye de fareye de yaklaşık 40 saniye dokunmadığınızda göz kapakları ağırlaşır, bir buçuk dakika sonra da mışıl mışıl uyur ve üstünden küçük z harfleri süzülerek yükselir. Bir tuşa basın ya da fareyi oynatın; uyanır, kalkar ve yoluna devam eder. Kestirirken sessiz kalır ve daha az enerji harcar.
+
+pikapik ne yazdığınıza asla bakmaz. Yalnızca bir tuşa en son basıldığından ya da farenin en son kıpırdadığından bu yana ne kadar zaman geçtiğini kontrol eder, tıpkı macOS’un ekranı karartmadan önce yaptığı gibi. Bu yüzden hiçbir izin gerekmez. Evcil dostunuz hep canlı kalsın mı istiyorsunuz? Evcil dost ayarlarında “Ritminize uyar” anahtarını kapatın.
+
+**Deneyin:** Ayarlar › Evcil Dost › Ritminize uyar
+
+---
+
 ## <a id="v1.39.2"></a>Eşzamanlanan ayarlar artık pikapik klasöründe
 
 <sub>1.39.2 · 13 Ekim 2026</sub>

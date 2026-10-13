@@ -179,7 +179,7 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animaletto sulla scrivania</b>
-<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme.
+<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.
-- **Animaletto**: accensione, chiacchiere e palla, guardaroba e premi.
+- **Animaletto**: accensione, chiacchiere, sintonia con il tuo ritmo e palla, guardaroba e premi.
 - **Permessi**: tutti i permessi usati da pikapik, ciascuno con il suo stato e un pulsante per consentirlo o spegnerlo. Uno strumento a cui manca un permesso appare in grigio; un clic su di esso apre questa pagina sulla riga giusta.
 - **Info**: versione, link alle novità e per segnalare un problema.
 

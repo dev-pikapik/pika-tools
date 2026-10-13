@@ -12,6 +12,10 @@ struct PetPose: Equatable {
     var hang = false
     var dizzy = false
     var blink = false
+    var lid: CGFloat = 0
+    var bounce: CGFloat = 0
+    var nap = 0.0
+    var dream: CGFloat = 1
     var outfit: [PetSlot: PetItem] = [:]
 }
 
@@ -30,7 +34,7 @@ enum PetFigure {
         let feet = night ? Color(red: 0.86, green: 0.36, blue: 0.36) : Color(red: 0.80, green: 0.30, blue: 0.29)
         let air = pose.air, hang = pose.hang, sit = pose.sit
         let rise: CGFloat = pose.outfit[.feet] == .skates ? 1.2 : 0
-        let bob = air ? 0 : 0.8 * abs(sin(pose.step)) * (1 - sit)
+        let bob = air ? 0 : 0.8 * (1 + 0.7 * pose.bounce) * abs(sin(pose.step)) * (1 - sit)
         let squash = pose.squash + 0.06 * sit
         let width = 12 * (1 + squash), height = 11 * (1 - squash)
         let raise = 1.8 - 1.4 * sit + rise * (1 - sit)
@@ -74,12 +78,24 @@ enum PetFigure {
             }
             fill(cross.applying(place), Self.eye)
         } else {
-            let tall: CGFloat = pose.blink ? 0.5 : 2.5
+            let tall: CGFloat = pose.blink ? 0.5 : 2.5 - 2 * pose.lid
             fill(Path(ellipseIn: CGRect(x: eye.x - 1.25, y: eye.y - tall / 2, width: 2.5, height: tall)).applying(place), Self.eye)
         }
         wear.draw(.face, fill)
         wear.draw(.head, fill)
         wear.draw(.glass, fill)
+
+        for k in 0..<3 {
+            let age = pose.nap - 0.8 - Double(k) * 0.9
+            guard age >= 0 else { break }
+            let t = (age / 2.7).truncatingRemainder(dividingBy: 1)
+            let size = 2.2 + 1.4 * t
+            let spot = CGPoint(x: pose.facing * (4.5 + 6.5 * t), y: centre - height / 2 + 1 - 15 * t)
+            var z = Path()
+            z.addLines([CGPoint(x: -size / 2, y: -size / 2), CGPoint(x: size / 2, y: -size / 2), CGPoint(x: -size / 2, y: size / 2), CGPoint(x: size / 2, y: size / 2)])
+            let stroke = z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
+            fill(stroke.applying(CGAffineTransform(translationX: spot.x, y: spot.y)), (night ? body : feet).opacity(pose.dream * min(1, 4 * t) * (1 - t * t)))
+        }
     }
 }
 
@@ -89,6 +105,7 @@ extension PetPose {
             step: Double(pet.walked / scale) * .pi * 5 / 28, lift: (pet.origin.y - pet.floor) / scale, floor: (pet.floor - pet.bounds.minY) / scale, facing: pet.facing
         )
         let fall = pet.calm ? 0 : .pi / 2 * pet.heading * pet.facing
+        let sleepy = min(0.75, max(0, -pet.zest))
         switch pet.state {
         case .jump:
             air = true
@@ -119,8 +136,22 @@ extension PetPose {
             tilt = -0.14 * swing
         case .walk:
             squash = pet.landed < 0.15 ? 0.14 * (1 - pet.landed / 0.15) : 0
+            lid = sleepy
+            bounce = max(0, pet.zest)
         case .turn:
-            break
+            lid = sleepy
+        case .doze:
+            sit = Self.ease(pet.clock / 0.5)
+            squash = 0.04 * sin(pet.clock * 2 * .pi / 3.6)
+            lid = 1
+            nap = pet.calm ? (pet.clock > 1 ? 2.4 : 0) : pet.clock
+        case .wake:
+            let t = pet.clock / pet.hold
+            sit = 1 - Self.ease(t / 0.45)
+            squash = -0.12 * sin(.pi * min(1, t / 0.75))
+            lid = sleepy + (1 - sleepy) * (1 - Self.ease((t - 0.3) / 0.4))
+            nap = pet.calm ? (pet.napped > 1 ? 2.4 : 0) : pet.napped + pet.clock
+            dream = 1 - Self.ease(t / 0.35)
         }
         blink = !dizzy && time.truncatingRemainder(dividingBy: 3.8) < 0.13
     }

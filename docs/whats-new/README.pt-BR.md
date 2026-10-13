@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Seu bichinho segue o seu ritmo
+
+<sub>1.39.3 · 13 de outubro de 2026</sub>
+
+Enquanto você digita, o bichinho fica animado e anda todo saltitante. Quando você se afasta do Mac, ele fica com sono, se senta e cochila.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Depois de uns 40 segundos sem você tocar no teclado nem no mouse, os olhinhos dele começam a pesar, e passado um minuto e meio, ele já está dormindo pesado, com letrinhas z subindo no ar. Aperte uma tecla ou mexa o mouse, e ele acorda, se levanta e volta a andar. Enquanto cochila, ele fica quietinho e gasta menos energia.
+
+O pikapik nunca olha o que você digita. Ele só verifica quanto tempo passou desde a última tecla pressionada ou o último movimento do mouse, do mesmo jeito que o macOS faz antes de escurecer a tela, então não precisa de nenhuma permissão. Prefere que seu bichinho esteja sempre animado? Desligue “Segue o seu ritmo” nos ajustes do bichinho.
+
+**Experimente:** Ajustes › Bichinho › Segue o seu ritmo
+
+---
+
 ## <a id="v1.39.2"></a>Os ajustes sincronizados agora ficam numa pasta pikapik
 
 <sub>1.39.2 · 13 de outubro de 2026</sub>

@@ -45,6 +45,9 @@ final class PetStage: NSObject {
     private var phrase: PetPhrase?
     private var nudging = false
     private var ticked = 0.0
+    private var felt = 0.0
+    private var resting = false
+    private static let anyInput = CGEventType(rawValue: ~0)!
 
     private override init() {
         nextTalk = launched + .random(in: 600...840)
@@ -458,8 +461,21 @@ final class PetStage: NSObject {
         if NSEvent.pressedMouseButtons & 1 == 0 { press = nil }
         physics.ledge = demo == "platform" ? demoLedge : selection(pet)
         ball.ledge = demo == "platform" ? demoLedge : selection(pitch)
+        let now = ProcessInfo.processInfo.systemUptime
+        if demo == nil, now >= felt + 0.25 {
+            let on = PetTool.shared.rhythm
+            let idle = on ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: Self.anyInput) : 0
+            let typed = on ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) : .infinity
+            physics.sense(idle: idle, typed: typed, now - felt)
+            felt = now
+        }
         physics.step(dt, cursor: point)
-        let toy = field?.isVisible == true, together = Self.id(pet) == Self.id(pitch), now = ProcessInfo.processInfo.systemUptime
+        let rest = physics.state == .doze && physics.clock > 1
+        if rest != resting, let link {
+            resting = rest
+            link.preferredFrameRateRange = rest ? CAFrameRateRange(minimum: 8, maximum: 15, preferred: 12) : CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30)
+        }
+        let toy = field?.isVisible == true, together = Self.id(pet) == Self.id(pitch)
         if toy {
             if together, physics.kick(&ball) { progress?.add(.kicks) }
             ball.step(dt, cursor: physics.state == .held ? nil : reach, body: physics.aloft || !together ? nil : (physics.previous, physics.frame))
@@ -585,6 +601,12 @@ final class PetStage: NSObject {
         switch demo {
         case "jump" where physics.state == .walk && physics.clock > 0.8:
             physics.jump()
+        case "doze" where physics.state == .walk && physics.clock > 1.5:
+            physics.doze()
+        case "doze" where physics.state == .doze && physics.clock > 8:
+            physics.wake()
+        case "typing":
+            physics.sense(idle: 0, typed: 0, 1.0 / 30)
         case "tumble" where physics.state == .walk && physics.clock > 1.2:
             physics.bump(physics.frame.offsetBy(dx: physics.facing * 20, dy: 0))
         case "sit" where phrase == nil, "update" where phrase == nil:
@@ -628,7 +650,7 @@ final class PetStage: NSObject {
         guard now >= nextTalk, physics.state == .walk, demo == nil else { return }
         guard PetTool.shared.talks else { return nextTalk = now + .random(in: 1200...1800) }
         let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
-        if typing || GameModeTool.shared.isPlaying || Self.microphoneInUse { return nextTalk = now + 45 }
+        if typing || physics.zest < -0.2 || GameModeTool.shared.isPlaying || Self.microphoneInUse { return nextTalk = now + 45 }
         guard !behindDock else { return }
         say(nextPhrase(), for: 4.4)
         nextTalk = now + .random(in: 1200...1800)

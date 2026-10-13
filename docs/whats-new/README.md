@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Your pet keeps your rhythm
+
+<sub>1.39.3 · October 13, 2026</sub>
+
+While you type, your pet perks up and trots along with a spring in its step. Step away from your Mac, and it gets sleepy, sits down and dozes off.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+After about 40 seconds without the keyboard or mouse, its eyes grow heavy, and after a minute and a half it’s fast asleep, with little z’s floating up. Press a key or move the mouse, and it wakes up, stands and walks on. While it naps, it keeps quiet and uses less energy.
+
+pikapik never looks at what you type. It only checks how long ago a key was pressed or the mouse moved, just as macOS does before it dims the screen, so it needs no permissions. Rather have your pet stay lively? Turn off Follows your rhythm in the pet settings.
+
+**Try it:** Settings › Pet › Follows your rhythm
+
+---
+
 ## <a id="v1.39.2"></a>Synced settings now live in a pikapik folder
 
 <sub>1.39.2 · October 13, 2026</sub>

@@ -179,7 +179,7 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mazlíček na ploše</b>
-<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete.
+<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete. Když píšete, ožije, a když odejdete, podřimuje.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -331,7 +331,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Hry**: seznam vašich her a volby Herního režimu.
-- **Mazlíček**: zapnutí a vypnutí, povídání a míč, šatník a ocenění.
+- **Mazlíček**: zapnutí a vypnutí, povídání, život ve vašem rytmu a míč, šatník a ocenění.
 - **Oprávnění**: všechna oprávnění, která pikapik používá, každé se svým stavem a tlačítkem pro povolení nebo vypnutí. Nástroj, kterému chybí oprávnění, vypadá napůl šedě a kliknutí na něj otevře tuto stránku u správného řádku.
 - **O aplikaci**: verze, odkazy na seznam změn a na nahlášení problému.
 
