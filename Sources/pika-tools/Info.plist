@@ -91,7 +91,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.44.2</string>
+	<string>1.44.3</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -105,7 +105,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>106</string>
+	<string>107</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
@@ -130,11 +130,11 @@
 			<string>pika-tools</string>
 			<key>NSRequiredContext</key>
 			<dict/>
-			<key>NSSendTypes</key>
+			<key>NSReturnTypes</key>
 			<array>
 				<string>public.utf8-plain-text</string>
 			</array>
-			<key>NSReturnTypes</key>
+			<key>NSSendTypes</key>
 			<array>
 				<string>public.utf8-plain-text</string>
 			</array>
