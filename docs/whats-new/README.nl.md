@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Updates met Homebrew starten het Dock niet meer opnieuw
+
+<sub>1.40.2 · 13 oktober 2026</sub>
+
+Als je pikapik met Homebrew bijwerkt, verdwijnt het Dock niet meer even.
+
+De update naar deze versie kan het Dock nog één laatste keer opnieuw starten, omdat die stap nog wordt gedaan door de versie die je eerst had. Latere updates laten het met rust.
+
+---
+
 ## <a id="v1.40.1"></a>Eén klik in het Dock ruimt de vensters op
 
 <sub>1.40.1 · 13 oktober 2026</sub>

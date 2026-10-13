@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Cập nhật bằng Homebrew không còn khởi động lại Dock
+
+<sub>1.40.2 · 13 tháng 10 năm 2026</sub>
+
+Khi bạn cập nhật pikapik bằng Homebrew, Dock không còn biến mất trong chốc lát nữa.
+
+Lần cập nhật lên phiên bản này vẫn có thể khởi động lại Dock lần cuối, vì bước đó vẫn do phiên bản bạn dùng trước đó thực hiện. Các lần cập nhật sau sẽ không đụng đến Dock nữa.
+
+---
+
 ## <a id="v1.40.1"></a>Một lần bấm trong Dock cất gọn cửa sổ
 
 <sub>1.40.1 · 13 tháng 10 năm 2026</sub>

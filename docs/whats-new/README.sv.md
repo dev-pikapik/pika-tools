@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Uppdateringar med Homebrew startar inte längre om Dock
+
+<sub>1.40.2 · 13 oktober 2026</sub>
+
+När du uppdaterar pikapik med Homebrew försvinner Dock inte längre en kort stund.
+
+Uppdateringen till den här versionen kan fortfarande starta om Dock en sista gång, eftersom det steget fortfarande görs av versionen du hade innan. Senare uppdateringar lämnar Dock i fred.
+
+---
+
 ## <a id="v1.40.1"></a>Ett klick i Dock lägger undan fönstren
 
 <sub>1.40.1 · 13 oktober 2026</sub>

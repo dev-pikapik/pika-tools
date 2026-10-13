@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Updates mit Homebrew starten das Dock nicht mehr neu
+
+<sub>1.40.2 · 13. Oktober 2026</sub>
+
+Wenn du pikapik mit Homebrew aktualisierst, verschwindet das Dock nicht mehr für einen Moment.
+
+Das Update auf diese Version kann das Dock noch ein letztes Mal neu starten, weil diesen Schritt noch die Version übernimmt, die du vorher hattest. Spätere Updates lassen es in Ruhe.
+
+---
+
 ## <a id="v1.40.1"></a>Ein Klick im Dock räumt die Fenster weg
 
 <sub>1.40.1 · 13. Oktober 2026</sub>

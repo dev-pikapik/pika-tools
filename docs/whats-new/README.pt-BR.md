@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Atualizar com o Homebrew não reinicia mais o Dock
+
+<sub>1.40.2 · 13 de outubro de 2026</sub>
+
+Quando você atualiza o pikapik com o Homebrew, o Dock não some mais por um instante.
+
+A atualização para esta versão ainda pode reiniciar o Dock uma última vez, porque essa etapa ainda é feita pela versão que você tinha antes. As próximas atualizações não mexem mais nele.
+
+---
+
 ## <a id="v1.40.1"></a>Um clique no Dock guarda as janelas
 
 <sub>1.40.1 · 13 de outubro de 2026</sub>

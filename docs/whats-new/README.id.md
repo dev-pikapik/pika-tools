@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.40.2"></a>Pembaruan lewat Homebrew tidak lagi memulai ulang Dock
+
+<sub>1.40.2 · 13 Oktober 2026</sub>
+
+Saat Anda memperbarui pikapik lewat Homebrew, Dock tidak lagi menghilang sesaat.
+
+Pembaruan ke versi ini masih bisa memulai ulang Dock untuk terakhir kalinya, karena langkah itu masih dijalankan oleh versi yang Anda pakai sebelumnya. Pembaruan berikutnya tidak akan mengusik Dock lagi.
+
+---
+
 ## <a id="v1.40.1"></a>Satu klik di Dock menyingkirkan jendela
 
 <sub>1.40.1 · 13 Oktober 2026</sub>
