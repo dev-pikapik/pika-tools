@@ -2,7 +2,7 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.46.0] - Unreleased
+## [1.46.0] - 2026-10-13
 
 ### Added
 - Mouse: Mouse button hides the current app, in Settings › Mouse. Turn it on and press the mouse button you want to use, such as the middle button or a side button; Change… picks another one later. From then on one press hides the app in front, like ⌘H. The app keeps running, and a click on its icon in the Dock brings it back. While you play with Game Mode on, the button does what it always did in the game. If Side buttons go back and forward is also on, the side button you picked hides apps instead. It needs Accessibility and is off by default.
@@ -874,6 +874,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.46.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.46.0
 [1.45.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.45.0
 [1.44.3]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.44.3
 [1.44.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.44.2
