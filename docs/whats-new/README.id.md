@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Tombol merah tidak lagi menghentikan arsip
+
+<sub>1.39.4 · 13 Oktober 2026</sub>
+
+Sebelumnya, jika jendela kata sandi ditutup dengan tombol merah, pikapik berhenti membuka dan membuat arsip sampai dimulai ulang. Masalah ini sudah diperbaiki.
+
+Kini tombol merah di jendela kata sandi dan di jendela arsip baru bekerja persis seperti “Batalkan”, dan arsip berikutnya langsung terbuka. VoiceOver kini membacakan tombol pembaruan di Pengaturan › Tentang dengan namanya sendiri.
+
+---
+
 ## <a id="v1.39.3"></a>Peliharaan mengikuti ritme Anda
 
 <sub>1.39.3 · 13 Oktober 2026</sub>

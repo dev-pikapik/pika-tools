@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Červené tlačítko už nezastavuje archivy
+
+<sub>1.39.4 · 13. října 2026</sub>
+
+Dříve po zavření okna hesla červeným tlačítkem pikapik až do restartu přestal otevírat a vytvářet archivy. To je opraveno.
+
+Červené tlačítko v okně hesla a v okně nového archivu teď funguje přesně jako „Zrušit“ a další archiv se otevře hned. VoiceOver teď tlačítko aktualizace v Nastavení › O aplikaci čte jeho vlastním názvem.
+
+---
+
 ## <a id="v1.39.3"></a>Mazlíček žije ve vašem rytmu
 
 <sub>1.39.3 · 13. října 2026</sub>

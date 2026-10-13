@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Il pulsante rosso non blocca più gli archivi
+
+<sub>1.39.4 · 13 ottobre 2026</sub>
+
+Prima, se chiudevi la finestra della password con il pulsante rosso, pikapik smetteva di aprire e creare archivi finché non lo riavviavi. Ora è risolto.
+
+Il pulsante rosso nella finestra della password e in quella per un nuovo archivio ora funziona esattamente come “Annulla”, e l’archivio successivo si apre subito. VoiceOver ora legge il pulsante di aggiornamento in Impostazioni › Info con il suo nome.
+
+---
+
 ## <a id="v1.39.3"></a>Il tuo animaletto segue il tuo ritmo
 
 <sub>1.39.3 · 13 ottobre 2026</sub>

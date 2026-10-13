@@ -934,9 +934,11 @@ private struct AboutView: View {
                     if case .available(let version) = updater.state {
                         Button("Update to \(version)", systemImage: "arrow.down.circle") { Task { await updater.install() } }
                             .buttonStyle(.borderedProminent)
+                            .accessibilityElement(children: .contain)
                     } else {
                         Button("Check Now", systemImage: "arrow.triangle.2.circlepath") { Task { await updater.check() } }
                             .disabled(updater.state == .checking || updater.state == .installing)
+                            .accessibilityElement(children: .contain)
                     }
                 } label: {
                     RowLabel(Text("Version \(version)"), updater.state.title.map { Text($0) })

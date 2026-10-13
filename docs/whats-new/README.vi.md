@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Nút đỏ không còn làm dừng việc mở và tạo bản lưu trữ
+
+<sub>1.39.4 · 13 tháng 10 năm 2026</sub>
+
+Trước đây, nếu đóng cửa sổ mật khẩu bằng nút đỏ, pikapik sẽ không mở hay tạo được bản lưu trữ nào nữa cho đến khi khởi động lại. Lỗi này đã được sửa.
+
+Giờ đây, nút đỏ trong cửa sổ mật khẩu và cửa sổ tạo bản lưu trữ mới hoạt động y như “Hủy”, và bản lưu trữ tiếp theo mở ra ngay. VoiceOver giờ đọc nút cập nhật trong Cài đặt › Giới thiệu bằng chính tên của nút.
+
+---
+
 ## <a id="v1.39.3"></a>Thú cưng sống theo nhịp của bạn
 
 <sub>1.39.3 · 13 tháng 10 năm 2026</sub>

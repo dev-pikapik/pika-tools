@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>The red button no longer stops archives
+
+<sub>1.39.4 · October 13, 2026</sub>
+
+Before, if you closed the password window with the red button, pikapik stopped opening and creating archives until you restarted it. That’s fixed.
+
+Now the red button in the password window and in the window for a new archive works just like Cancel, and the next archive opens right away. VoiceOver now reads the update button in Settings › About by its own name.
+
+---
+
 ## <a id="v1.39.3"></a>Your pet keeps your rhythm
 
 <sub>1.39.3 · October 13, 2026</sub>

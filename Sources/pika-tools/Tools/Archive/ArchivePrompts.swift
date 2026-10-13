@@ -3,7 +3,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 final class ArchivePanel: NSPanel {
-    private let onClose: (() -> Void)?
+    private var onClose: (() -> Void)?
+    private var closed = false
 
     init<Content: View>(_ controller: NSHostingController<Content>, activating: Bool, onClose: (() -> Void)? = nil) {
         self.onClose = onClose
@@ -19,8 +20,19 @@ final class ArchivePanel: NSPanel {
         if onClose == nil { standardWindowButton(.closeButton)?.isEnabled = false }
     }
 
-    // The close button answers the prompt the way Cancel does, so whoever waits for it always gets a reply.
-    override func performClose(_ sender: Any?) { onClose?() }
+    // The red button calls close() itself, not performClose(_:). However the panel closes, it answers its prompt once, the way Cancel does, so whoever waits for it always gets a reply.
+    override func close() {
+        guard !closed else { return }
+        closed = true
+        super.close()
+        onClose?()
+    }
+
+    /// Closes the panel for a prompt that already has its answer.
+    func dismiss() {
+        onClose = nil
+        close()
+    }
 }
 
 extension View {
@@ -407,7 +419,7 @@ final class ArchiveCreatePrompt {
             defaults.set(request.format.fileExtension, forKey: "archive-format")
             defaults.set(Int(request.split ?? 0), forKey: "archive-split")
         }
-        panel?.close()
+        panel?.dismiss()
         panel = nil
         answer?.resume(returning: request)
         answer = nil
@@ -519,7 +531,7 @@ final class ArchivePasswordPrompt {
     func close() {
         model.password = ""
         model.checking = false
-        panel?.close()
+        panel?.dismiss()
         panel = nil
         answer?.resume(returning: nil)
         answer = nil

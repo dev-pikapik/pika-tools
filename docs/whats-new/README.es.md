@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>El botón rojo ya no detiene los archivos comprimidos
+
+<sub>1.39.4 · 13 de octubre de 2026</sub>
+
+Antes, si cerrabas la ventana de la contraseña con el botón rojo, pikapik dejaba de abrir y crear archivos comprimidos hasta que lo reiniciabas. Ya está corregido.
+
+Ahora el botón rojo de la ventana de la contraseña y de la de un archivo comprimido nuevo funciona igual que “Cancelar”, y el siguiente archivo se abre enseguida. VoiceOver ahora lee el botón de actualización de Ajustes › Acerca de por su propio nombre.
+
+---
+
 ## <a id="v1.39.3"></a>Tu mascota sigue tu ritmo
 
 <sub>1.39.3 · 13 de octubre de 2026</sub>

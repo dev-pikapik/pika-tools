@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Kırmızı düğme artık arşivleri durdurmuyor
+
+<sub>1.39.4 · 13 Ekim 2026</sub>
+
+Önceden parola penceresi kırmızı düğmeyle kapatıldığında pikapik, yeniden başlatılana kadar arşiv açmıyor ve oluşturmuyordu. Bu sorun giderildi.
+
+Parola penceresindeki ve yeni arşiv penceresindeki kırmızı düğme artık tam olarak “Vazgeç” gibi çalışıyor ve sonraki arşiv hemen açılıyor. VoiceOver artık Ayarlar › Hakkında bölümündeki güncelleme düğmesini kendi adıyla okuyor.
+
+---
+
 ## <a id="v1.39.3"></a>Evcil dostunuz ritminize uyuyor
 
 <sub>1.39.3 · 13 Ekim 2026</sub>

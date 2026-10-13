@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Czerwony przycisk już nie zatrzymuje archiwów
+
+<sub>1.39.4 · 13 października 2026</sub>
+
+Wcześniej po zamknięciu okna hasła czerwonym przyciskiem pikapik aż do ponownego uruchomienia nie otwierał ani nie tworzył archiwów. To już naprawione.
+
+Czerwony przycisk w oknie hasła i w oknie nowego archiwum działa teraz dokładnie tak jak „Anuluj”, a kolejne archiwum otwiera się od razu. VoiceOver odczytuje teraz przycisk aktualizacji na karcie „Informacje” w Ustawieniach jego własną nazwą.
+
+---
+
 ## <a id="v1.39.3"></a>Zwierzak żyje w twoim rytmie
 
 <sub>1.39.3 · 13 października 2026</sub>

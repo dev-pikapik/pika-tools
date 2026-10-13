@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Die rote Taste hält Archive nicht mehr an
+
+<sub>1.39.4 · 13. Oktober 2026</sub>
+
+Wurde das Passwortfenster mit der roten Taste geschlossen, hat pikapik bis zum nächsten Neustart keine Archive mehr geöffnet oder erstellt. Das ist behoben.
+
+Die rote Taste im Passwortfenster und im Fenster für ein neues Archiv wirkt jetzt genau wie „Abbrechen“, und das nächste Archiv öffnet sich sofort. VoiceOver liest die Taste zum Aktualisieren unter „Einstellungen“ › „Über“ jetzt mit ihrem eigenen Namen vor.
+
+---
+
 ## <a id="v1.39.3"></a>Dein Haustier lebt in deinem Rhythmus
 
 <sub>1.39.3 · 13. Oktober 2026</sub>
