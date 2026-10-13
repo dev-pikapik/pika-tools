@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Satu klik di Dock menyingkirkan jendela
+
+<sub>1.40.1 · 13 Oktober 2026</sub>
+
+Klik ikon Dock dari app yang sedang Anda pakai, dan semua jendelanya akan diminimalkan ke Dock. Klik lagi, dan semuanya kembali.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Dock dan nyalakan “Minimalkan atau sembunyikan dengan klik di Dock”. Jendela kembali dengan urutan yang sama, dan jendela yang tadi Anda pakai ada di paling atas. Klik pada app lain, menahan ikon untuk membuka menunya, dan menyeret ikon tetap bekerja seperti biasa.
+
+Lebih suka menyembunyikan seluruh app, seperti dengan ⌘H? Di bawah sakelar, ubah “Saat ikon diklik” menjadi “Menyembunyikan app”. Jika Anda sudah menyembunyikan app dengan klik di Dock, tidak ada yang berubah untuk Anda. Sakelar ini memerlukan izin “Aksesibilitas”, tidak ada di versi Mac App Store, dan mati secara default.
+
+---
+
 ## <a id="v1.40.0"></a>Dock tetap di satu layar
 
 <sub>1.40.0 · 13 Oktober 2026</sub>

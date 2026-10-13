@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Un clic în Dock strânge ferestrele
+
+<sub>1.40.1 · 13 octombrie 2026</sub>
+
+Fă clic în Dock pe pictograma aplicației în care lucrezi și toate ferestrele ei se minimizează în Dock. Fă clic din nou și revin toate.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Dock și pornește „Minimizează sau ascunde cu un clic în Dock”. Ferestrele revin în aceeași ordine, iar cea în care lucrai ajunge deasupra. Un clic pe altă aplicație, apăsarea lungă pe o pictogramă pentru meniul ei și tragerea pictogramelor funcționează ca înainte.
+
+Preferi să ascunzi toată aplicația, ca prin ⌘H? Sub comutator, setează „Un clic pe pictogramă” la „Ascunde aplicația”. Dacă ascundeai deja aplicații cu un clic în Dock, pentru tine nu se schimbă nimic. Comutatorul are nevoie de permisiunea „Accesibilitate”, nu există în versiunea din Mac App Store și este dezactivat implicit.
+
+---
+
 ## <a id="v1.40.0"></a>Dock-ul rămâne pe un singur ecran
 
 <sub>1.40.0 · 13 octombrie 2026</sub>

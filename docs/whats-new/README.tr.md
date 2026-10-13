@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Dock’ta tek tıklama pencereleri kaldırır
+
+<sub>1.40.1 · 13 Ekim 2026</sub>
+
+Çalıştığınız uygulamanın Dock’taki simgesine tıklayın, tüm pencereleri Dock’a küçülsün. Bir kez daha tıklayın, hepsi geri gelsin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Ayarlar › Dock sayfasını açın ve “Dock’ta tıklayarak küçült veya gizle” anahtarını açın. Pencereler aynı sırayla geri gelir, üzerinde çalıştığınız pencere en üstte olur. Başka bir uygulamaya tıklamak, menüsünü açmak için bir simgeyi basılı tutmak ve simgeleri sürüklemek eskisi gibi çalışır.
+
+Uygulamanın tamamını ⌘H’deki gibi gizlemeyi mi tercih edersiniz? Anahtarın altında “Simgeye tıklayınca” seçeneğini “Uygulamayı gizler” yapın. Uygulamaları zaten Dock’ta tıklayarak gizliyorsanız sizin için hiçbir şey değişmez. Anahtar “Erişilebilirlik” izni gerektirir, Mac App Store sürümünde yoktur ve varsayılan olarak kapalıdır.
+
+---
+
 ## <a id="v1.40.0"></a>Dock tek ekranda kalıyor
 
 <sub>1.40.0 · 13 Ekim 2026</sub>

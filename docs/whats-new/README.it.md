@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Un clic nel Dock mette via le finestre
+
+<sub>1.40.1 · 13 ottobre 2026</sub>
+
+Fai clic sull’icona nel Dock dell’app in cui stai lavorando, e tutte le sue finestre vengono ridotte nel Dock. Fai di nuovo clic, e tornano tutte.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Dock e attiva «Riduci o nascondi con un clic nel Dock». Le finestre tornano nello stesso ordine, con quella in cui stavi lavorando in primo piano. Un clic su un’altra app, la pressione prolungata su un’icona per aprire il suo menu e il trascinamento delle icone funzionano come prima.
+
+Preferisci nascondere l’intera app, come con ⌘H? Sotto l’interruttore, imposta «Un clic sull’icona» su «Nasconde l’app». Se nascondevi già le app con un clic nel Dock, per te non cambia nulla. L’interruttore richiede il permesso «Accessibilità», non è nella versione del Mac App Store ed è disattivato di default.
+
+---
+
 ## <a id="v1.40.0"></a>Il Dock resta su un solo schermo
 
 <sub>1.40.0 · 13 ottobre 2026</sub>

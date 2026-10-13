@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Dock에서 한 번 클릭하면 윈도우가 정리됩니다
+
+<sub>1.40.1 · 2026년 10월 13일</sub>
+
+사용 중인 앱의 Dock 아이콘을 클릭하면 그 앱의 모든 윈도우가 Dock으로 최소화됩니다. 다시 클릭하면 모두 돌아옵니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+설정 › Dock을 열고 ‘Dock 클릭으로 최소화하거나 가리기’를 켜세요. 윈도우는 원래 순서대로 돌아오고, 작업하던 윈도우가 맨 위에 옵니다. 다른 앱 클릭, 아이콘을 길게 눌러 메뉴 열기, 아이콘 드래그는 예전과 똑같이 작동합니다.
+
+⌘H처럼 앱 전체를 가리고 싶다면 스위치 아래의 ‘아이콘 클릭’을 ‘앱 가리기’로 바꾸세요. 이미 Dock 클릭으로 앱을 가리고 있었다면 달라지는 것은 없습니다. 이 스위치에는 ‘손쉬운 사용’ 권한이 필요하며 Mac App Store 버전에는 없습니다. 기본적으로 꺼져 있습니다.
+
+---
+
 ## <a id="v1.40.0"></a>Dock을 한 디스플레이에 고정
 
 <sub>1.40.0 · 2026년 10월 13일</sub>

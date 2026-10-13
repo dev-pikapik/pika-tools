@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>One click in the Dock puts the windows away
+
+<sub>1.40.1 · October 13, 2026</sub>
+
+Click the Dock icon of the app you’re working in, and all its windows go down into the Dock. Click it again, and they all come back.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Open Settings › Dock and turn on Minimize or hide with a click in the Dock. The windows come back in the same order, with the one you were working in on top. A click on another app, holding an icon for its menu and dragging icons work just as before.
+
+Would you rather hide the whole app, as with ⌘H? Under the switch, choose Hides the app. If you already hid apps with a click in the Dock, nothing changes for you. The switch needs Accessibility, is not in the Mac App Store version and is off by default.
+
+---
+
 ## <a id="v1.40.0"></a>The Dock stays on one display
 
 <sub>1.40.0 · October 13, 2026</sub>

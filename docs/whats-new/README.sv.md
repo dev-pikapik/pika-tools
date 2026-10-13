@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Ett klick i Dock lägger undan fönstren
+
+<sub>1.40.1 · 13 oktober 2026</sub>
+
+Klicka i Dock på symbolen för appen du arbetar i, så minimeras alla dess fönster till Dock. Klicka igen, så kommer alla tillbaka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Dock och slå på ”Minimera eller göm med ett klick i Dock”. Fönstren kommer tillbaka i samma ordning, med det du arbetade i överst. Ett klick på en annan app, att hålla ned en symbol för dess meny och att dra symboler fungerar som förut.
+
+Vill du hellre gömma hela appen, som med ⌘H? Ställ in ”Ett klick på symbolen” under reglaget på ”Gömmer appen”. Om du redan gömde appar med ett klick i Dock ändras ingenting för dig. Reglaget kräver behörigheten ”Hjälpmedel”, finns inte i versionen från Mac App Store och är av som standard.
+
+---
+
 ## <a id="v1.40.0"></a>Dock stannar på en skärm
 
 <sub>1.40.0 · 13 oktober 2026</sub>
