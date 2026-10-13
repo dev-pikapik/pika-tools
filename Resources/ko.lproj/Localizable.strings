@@ -1012,6 +1012,6 @@
 "Memory" = "메모리";
 "Storage" = "저장 공간";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "색상은 부품마다 다른 정상 범위를 기준으로 합니다";
+"Bars and colors follow the normal range for each part" = "막대와 색상은 부품마다 다른 정상 범위를 기준으로 합니다";
 "%@ · Processor %@" = "%@ · 프로세서 %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "열, 뜨거움, 따뜻함, 온도, 발열, 센서, CPU, GPU, 프로세서, 그래픽, 메모리, RAM, SSD, 저장 공간, 디스크, 배터리, Wi-Fi, 도, 섭씨, 화씨, 과열";

@@ -1012,6 +1012,6 @@
 "Memory" = "Memoria";
 "Storage" = "Almacenamiento";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Los colores tienen en cuenta el rango normal de cada componente";
+"Bars and colors follow the normal range for each part" = "Las barras y los colores tienen en cuenta el rango normal de cada componente";
 "%@ · Processor %@" = "%@ · Procesador %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "calor, caliente, templado, térmico, sensores, CPU, GPU, procesador, gráficos, memoria, RAM, SSD, almacenamiento, disco, batería, Wi-Fi, grados, Celsius, Fahrenheit, sobrecalentamiento";

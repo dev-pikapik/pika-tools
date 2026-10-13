@@ -1012,6 +1012,6 @@
 "Memory" = "หน่วยความจำ";
 "Storage" = "พื้นที่จัดเก็บข้อมูล";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "สีจะอิงตามช่วงอุณหภูมิปกติของแต่ละชิ้นส่วน";
+"Bars and colors follow the normal range for each part" = "แถบและสีจะอิงตามช่วงอุณหภูมิปกติของแต่ละชิ้นส่วน";
 "%@ · Processor %@" = "%@ · โปรเซสเซอร์ %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "ความร้อน, ร้อน, อุ่น, อุณหภูมิ, เซ็นเซอร์, CPU, GPU, โปรเซสเซอร์, กราฟิก, หน่วยความจำ, RAM, SSD, พื้นที่จัดเก็บ, ดิสก์, แบตเตอรี่, Wi-Fi, องศา, เซลเซียส, ฟาเรนไฮต์, ร้อนเกิน";

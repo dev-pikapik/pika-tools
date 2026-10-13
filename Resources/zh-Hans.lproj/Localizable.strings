@@ -1012,6 +1012,6 @@
 "Memory" = "内存";
 "Storage" = "存储";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "颜色会根据各部件的正常温度范围显示";
+"Bars and colors follow the normal range for each part" = "横条和颜色会根据各部件的正常温度范围显示";
 "%@ · Processor %@" = "%@ · 处理器 %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "热, 发热, 发烫, 温度, 散热, 传感器, CPU, GPU, 处理器, 图形处理器, 显卡, 内存, RAM, SSD, 存储, 硬盘, 电池, Wi-Fi, 度, 摄氏, 华氏, 过热";

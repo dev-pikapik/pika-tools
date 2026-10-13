@@ -1012,6 +1012,6 @@
 "Memory" = "Geheugen";
 "Storage" = "Opslag";
 "Wi-Fi" = "Wifi";
-"Colors are based on the normal range for each part" = "De kleuren houden rekening met het normale bereik van elk onderdeel";
+"Bars and colors follow the normal range for each part" = "De balken en kleuren houden rekening met het normale bereik van elk onderdeel";
 "%@ · Processor %@" = "%@ · Processor %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "warmte, heet, warm, thermisch, sensoren, CPU, GPU, processor, grafische chip, geheugen, RAM, SSD, opslag, schijf, batterij, accu, wifi, Wi-Fi, graden, Celsius, Fahrenheit, oververhitting";

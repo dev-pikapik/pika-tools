@@ -43,8 +43,12 @@ enum TestTemps {
         precondition(ThermalSensors.average(of: [0, -3, 200]) == nil)
         precondition(ThermalSensors.average(of: []) == nil)
 
-        precondition(ThermalPart.processor.level(79.9) == 0 && ThermalPart.processor.level(80) == 1 && ThermalPart.processor.level(95) == 2)
-        precondition(ThermalPart.battery.level(41) == 1 && ThermalPart.storage.level(45) == 0)
+        let processor = ThermalPart.processor
+        precondition(processor.level(79.4, in: .celsius) == 0 && processor.level(79.5, in: .celsius) == 1 && processor.level(79.6, in: .celsius) == 1)
+        precondition(processor.level(94.5, in: .celsius) == 1 && processor.level(94.6, in: .celsius) == 2 && processor.level(95, in: .celsius) == 2)
+        precondition(processor.level(79.6, in: .fahrenheit) == 0 && processor.level(79.75, in: .fahrenheit) == 1)
+        precondition(processor.level(94.7, in: .fahrenheit) == 1 && processor.level(94.75, in: .fahrenheit) == 2)
+        precondition(ThermalPart.battery.level(41, in: .celsius) == 1 && ThermalPart.storage.level(45, in: .celsius) == 0)
         precondition(ThermalPart.processor.fraction(10) == 0 && ThermalPart.processor.fraction(120) == 1)
         precondition(ThermalPart.allCases.allSatisfy { $0.limits.warm < $0.limits.hot })
 

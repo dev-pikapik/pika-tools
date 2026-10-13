@@ -1012,6 +1012,6 @@
 "Memory" = "Bellek";
 "Storage" = "Depolama";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Renkler her parçanın normal aralığına göre belirlenir";
+"Bars and colors follow the normal range for each part" = "Çubuklar ve renkler her parçanın normal aralığına göre belirlenir";
 "%@ · Processor %@" = "%@ · İşlemci %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "ısı, sıcak, ılık, termal, sensörler, CPU, GPU, işlemci, grafik, bellek, RAM, SSD, depolama, disk, pil, batarya, Wi-Fi, derece, Celsius, Fahrenheit, aşırı ısınma";

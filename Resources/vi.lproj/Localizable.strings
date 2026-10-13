@@ -1012,6 +1012,6 @@
 "Memory" = "Bộ nhớ";
 "Storage" = "Ổ lưu trữ";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Màu sắc dựa trên khoảng nhiệt độ bình thường của từng bộ phận";
+"Bars and colors follow the normal range for each part" = "Thanh và màu sắc dựa trên khoảng nhiệt độ bình thường của từng bộ phận";
 "%@ · Processor %@" = "%@ · Bộ xử lý %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "nhiệt, nóng, ấm, nhiệt độ, cảm biến, CPU, GPU, bộ xử lý, đồ họa, bộ nhớ, RAM, SSD, ổ lưu trữ, ổ đĩa, pin, Wi-Fi, độ, độ C, độ F, quá nhiệt";

@@ -1012,6 +1012,6 @@
 "Memory" = "Minne";
 "Storage" = "Lagring";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Färgerna utgår från det normala intervallet för varje del";
+"Bars and colors follow the normal range for each part" = "Staplarna och färgerna utgår från det normala intervallet för varje del";
 "%@ · Processor %@" = "%@ · Processor %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "värme, varm, het, termisk, sensorer, CPU, GPU, processor, grafik, minne, RAM, SSD, lagring, disk, batteri, wifi, Wi-Fi, grader, Celsius, Fahrenheit, överhettning";

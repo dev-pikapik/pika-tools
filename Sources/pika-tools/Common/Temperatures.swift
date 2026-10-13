@@ -119,8 +119,12 @@ enum ThermalPart: CaseIterable, Identifiable {
         }
     }
 
-    func level(_ celsius: Double) -> Int {
-        celsius >= limits.hot ? 2 : celsius >= limits.warm ? 1 : 0
+    func level(_ celsius: Double, in unit: UnitTemperature) -> Int {
+        func shown(_ value: Double) -> Double {
+            Measurement(value: value, unit: UnitTemperature.celsius).converted(to: unit).value.rounded(.toNearestOrEven)
+        }
+        let value = shown(celsius)
+        return value >= shown(limits.hot) ? 2 : value >= shown(limits.warm) ? 1 : 0
     }
 
     func fraction(_ celsius: Double) -> Double {

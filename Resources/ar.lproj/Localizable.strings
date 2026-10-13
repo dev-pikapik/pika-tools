@@ -1012,6 +1012,6 @@
 "Memory" = "الذاكرة";
 "Storage" = "التخزين";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "تعتمد الألوان على النطاق الطبيعي لكل جزء";
+"Bars and colors follow the normal range for each part" = "تعتمد الأشرطة والألوان على النطاق الطبيعي لكل جزء";
 "%@ · Processor %@" = "%@ · المعالج %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "حرارة, حار, دافئ, حراري, مستشعرات, حساسات, CPU, GPU, معالج, رسومات, ذاكرة, RAM, SSD, تخزين, قرص, بطارية, Wi-Fi, درجات, مئوية, فهرنهايت, ارتفاع الحرارة";

@@ -1010,8 +1010,8 @@
 "Processor" = "Prozessor";
 "Graphics" = "Grafik";
 "Memory" = "Arbeitsspeicher";
-"Storage" = "Speicher";
+"Storage" = "SSD";
 "Wi-Fi" = "WLAN";
-"Colors are based on the normal range for each part" = "Die Farben richten sich nach dem normalen Bereich jedes Bauteils";
+"Bars and colors follow the normal range for each part" = "Balken und Farben richten sich nach dem normalen Bereich jedes Bauteils";
 "%@ · Processor %@" = "%@ · Prozessor %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "Wärme, heiß, warm, thermisch, Sensoren, CPU, GPU, Prozessor, Grafik, Grafikchip, Speicher, Arbeitsspeicher, RAM, SSD, Festplatte, Akku, Batterie, WLAN, Wi-Fi, Grad, Celsius, Fahrenheit, Überhitzung";

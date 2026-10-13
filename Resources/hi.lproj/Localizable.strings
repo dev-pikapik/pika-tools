@@ -1012,6 +1012,6 @@
 "Memory" = "मेमोरी";
 "Storage" = "स्टोरेज";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "रंग हर हिस्से की सामान्य सीमा के आधार पर तय होते हैं";
+"Bars and colors follow the normal range for each part" = "पट्टियाँ और रंग हर हिस्से की सामान्य सीमा के आधार पर तय होते हैं";
 "%@ · Processor %@" = "%@ · प्रोसेसर %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "गर्मी, गर्म, तापमान, थर्मल, सेंसर, CPU, GPU, प्रोसेसर, ग्राफ़िक्स, मेमोरी, RAM, SSD, स्टोरेज, डिस्क, बैटरी, Wi-Fi, डिग्री, सेल्सियस, फ़ारेनहाइट, ओवरहीटिंग, ज़्यादा गर्म";

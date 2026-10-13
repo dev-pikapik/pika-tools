@@ -1012,6 +1012,6 @@
 "Memory" = "Memorie";
 "Storage" = "Stocare";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Culorile țin cont de intervalul normal al fiecărei componente";
+"Bars and colors follow the normal range for each part" = "Barele și culorile țin cont de intervalul normal al fiecărei componente";
 "%@ · Processor %@" = "%@ · Procesor %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "căldură, fierbinte, cald, termic, senzori, CPU, GPU, procesor, grafică, memorie, RAM, SSD, stocare, disc, baterie, Wi-Fi, grade, Celsius, Fahrenheit, supraîncălzire";

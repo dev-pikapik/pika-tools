@@ -1012,6 +1012,6 @@
 "Memory" = "メモリ";
 "Storage" = "ストレージ";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "色は各部品の通常の温度範囲に基づいています";
+"Bars and colors follow the normal range for each part" = "バーと色は各部品の通常の温度範囲に基づいています";
 "%@ · Processor %@" = "%@ · プロセッサ %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "熱, 熱い, 暖かい, 温度, 発熱, センサー, CPU, GPU, プロセッサ, グラフィックス, メモリ, RAM, SSD, ストレージ, ディスク, バッテリー, Wi-Fi, 度, 摂氏, 華氏, オーバーヒート, 過熱";

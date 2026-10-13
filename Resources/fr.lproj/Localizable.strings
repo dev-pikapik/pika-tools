@@ -1008,10 +1008,10 @@
 "Your Mac may slow down a little to cool off" = "Votre Mac peut ralentir un peu pour refroidir";
 "Your Mac is slowing down to cool off. Closing heavy apps will help" = "Votre Mac ralentit pour refroidir. Fermer les apps gourmandes aidera";
 "Processor" = "Processeur";
-"Graphics" = "Graphisme";
+"Graphics" = "Processeur graphique";
 "Memory" = "Mémoire";
 "Storage" = "Stockage";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Les couleurs tiennent compte de la plage normale de chaque composant";
+"Bars and colors follow the normal range for each part" = "Les barres et les couleurs tiennent compte de la plage normale de chaque composant";
 "%@ · Processor %@" = "%@ · Processeur %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "chaleur, chaud, tiède, thermique, capteurs, CPU, GPU, processeur, graphisme, carte graphique, mémoire, RAM, SSD, stockage, disque, batterie, Wi-Fi, degrés, Celsius, Fahrenheit, surchauffe";

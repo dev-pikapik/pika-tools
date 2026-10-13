@@ -1012,6 +1012,6 @@
 "Memory" = "Memori";
 "Storage" = "Penyimpanan";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Warna disesuaikan dengan rentang normal setiap komponen";
+"Bars and colors follow the normal range for each part" = "Bilah dan warna disesuaikan dengan rentang normal setiap komponen";
 "%@ · Processor %@" = "%@ · Prosesor %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "panas, hangat, termal, suhu, sensor, CPU, GPU, prosesor, grafis, memori, RAM, SSD, penyimpanan, disk, baterai, Wi-Fi, derajat, Celsius, Fahrenheit, kepanasan, terlalu panas";

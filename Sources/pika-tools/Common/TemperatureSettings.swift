@@ -33,7 +33,7 @@ struct TemperatureSettings: View {
                         PartRow(part: part, celsius: model.readings[part] ?? 0)
                     }
                 } footer: {
-                    Text("Colors are based on the normal range for each part")
+                    Text("Bars and colors follow the normal range for each part")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                 }
@@ -58,19 +58,19 @@ private struct PartRow: View {
     let celsius: Double
 
     var body: some View {
-        let level = part.level(celsius)
+        let level = part.level(celsius, in: UnitTemperature(forLocale: .autoupdatingCurrent, usage: .weather))
         LabeledContent {
             HStack(spacing: 10) {
                 Gauge(value: part.fraction(celsius)) {}
                     .gaugeStyle(.linearCapacity)
-                    .tint([Art.green, Art.yellow, Art.red][level])
+                    .tint(ThermalScene.tint(level))
                     .frame(width: 80)
                 Text(degrees(celsius))
                     .monospacedDigit()
                     .frame(minWidth: 40, alignment: .trailing)
             }
         } label: {
-            Label(part.title, systemImage: part.symbol)
+            Label { Text(part.title) } icon: { Image(systemName: part.symbol).frame(width: 24) }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(part.title)

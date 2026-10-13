@@ -1012,6 +1012,6 @@
 "Memory" = "Пам’ять";
 "Storage" = "Диск";
 "Wi-Fi" = "Wi-Fi";
-"Colors are based on the normal range for each part" = "Колір враховує, яка температура нормальна для кожної деталі";
+"Bars and colors follow the normal range for each part" = "Смужки й колір враховують, яка температура нормальна для кожної деталі";
 "%@ · Processor %@" = "%@ · Процесор %@";
 "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating" = "температура, нагрів, гаряче, тепло, перегрів, датчики, сенсори, процесор, CPU, відеочип, відеокарта, GPU, графіка, пам’ять, оперативна пам’ять, RAM, SSD, диск, накопичувач, акумулятор, батарея, Wi-Fi, градуси, Цельсій, Фаренгейт";
