@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Im falschen Layout getippte Wörter korrigieren sich von selbst
+
+<sub>1.44.3 · 13. Oktober 2026</sub>
+
+Tippe ein Wort im falschen Tastaturlayout, drücke die Leertaste, und pikapik tippt es im richtigen neu und wechselt das Layout für dich.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Schalte die Funktion unter Einstellungen › Tastatur ein. Kommt ein Wort als Kauderwelsch heraus, etwa ghbdtn statt привет, tippt pikapik es neu, sobald du die Leertaste oder Return drückst, und wechselt das Layout, damit das nächste Wort gleich stimmt. Das klappt mit jedem Tastaturlayout, das du auf deinem Mac hinzugefügt hast, in all deinen Sprachen.
+
+Normaler Text bleibt genau so, wie du ihn getippt hast. pikapik ändert ein Wort nur, wenn es in keiner deiner Sprachen ein Wort ist und dieselben Tasten in einem anderen Layout ein gängiges Wort ergeben. Namen, Tippfehler und seltene Wörter bleiben, wie sie sind, ebenso Passwortfelder, Terminal und die Apps, die du auswählst.
+
+Ist ein Wort durchgerutscht oder willst du eins zurückhaben? Drücke ⌃⇧Leertaste, um das letzte Wort oder den ausgewählten Text zu korrigieren, und drücke noch einmal, um deine anderen Layouts auszuprobieren. Direkt nach einer Korrektur machen dieselben Tasten sie rückgängig, und pikapik korrigiert dieses Wort danach nicht mehr von selbst. In der Version aus dem Mac App Store markierst du den Text und wählst „Tastaturlayout korrigieren“ im Menü „Dienste“.
+
+**Ausprobieren:** Einstellungen › Tastatur › Im falschen Layout getippte Wörter korrigieren
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver öffnet das pikapik-Menü wieder
 
 <sub>1.44.2 · 13. Oktober 2026</sub>

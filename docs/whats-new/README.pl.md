@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Słowa wpisane w złym układzie poprawiają się same
+
+<sub>1.44.3 · 13 października 2026</sub>
+
+Wpisz słowo w złym układzie klawiatury, naciśnij klawisz Spacja, a pikapik przepisze je we właściwym i sam przełączy układ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Włącz tę funkcję w Ustawieniach › Klawiatura. Gdy słowo wychodzi jako bełkot, na przykład ghbdtn zamiast привет, pikapik przepisuje je, gdy tylko naciśniesz klawisz Spacja lub Return, i przełącza układ, żeby kolejne słowo wyszło dobrze. Działa to z każdym układem klawiatury dodanym na twoim Macu, w każdym z twoich języków.
+
+Zwykły tekst zostaje dokładnie taki, jak został wpisany. pikapik zmienia słowo tylko wtedy, gdy nie istnieje ono w żadnym z twoich języków, a te same klawisze w innym układzie dają popularne słowo. Imiona, literówki i rzadkie słowa zostają bez zmian, tak samo jak pola haseł, Terminal i wybrane przez ciebie aplikacje.
+
+Jakieś słowo zostało bez poprawki albo chcesz cofnąć poprawkę? Naciśnij ⌃⇧Spacja, aby poprawić ostatnie słowo lub zaznaczony tekst, i naciśnij jeszcze raz, aby wypróbować inne układy. Zaraz po poprawce te same klawisze ją cofają, a pikapik nie będzie już sam poprawiał tego słowa. W wersji z Mac App Store zaznacz tekst i wybierz „Popraw układ klawiatury” z menu Usługi.
+
+**Wypróbuj:** Ustawienia › Klawiatura › Poprawiaj słowa wpisane w złym układzie
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver znowu otwiera menu pikapik
 
 <sub>1.44.2 · 13 października 2026</sub>

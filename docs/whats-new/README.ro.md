@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Cuvintele scrise în aranjamentul greșit se corectează singure
+
+<sub>1.44.3 · 13 octombrie 2026</sub>
+
+Scrie un cuvânt în aranjamentul de tastatură greșit, apasă Spațiu, iar pikapik îl rescrie în cel corect și schimbă aranjamentul în locul tău.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Pornește funcția în Setări › Tastatură. Când un cuvânt iese fără niciun sens, de exemplu ghbdtn în loc de привет, pikapik îl rescrie imediat ce apeși Spațiu sau Return și schimbă aranjamentul, ca următorul cuvânt să iasă corect. Merge cu toate aranjamentele de tastatură pe care le-ai adăugat pe Mac-ul tău, în oricare dintre limbile tale.
+
+Textul obișnuit rămâne exact cum l-ai scris. pikapik schimbă un cuvânt doar când nu există în niciuna dintre limbile tale, iar aceleași taste dau un cuvânt uzual în alt aranjament. Numele, greșelile de tastare și cuvintele rare rămân cum sunt, la fel și câmpurile de parolă, Terminal și aplicațiile pe care le alegi.
+
+A rămas un cuvânt necorectat sau vrei unul înapoi așa cum l-ai scris? Apasă ⌃⇧Spațiu ca să corectezi ultimul cuvânt sau textul selectat și apasă din nou ca să încerci celelalte aranjamente. Imediat după o corectare, aceleași taste o anulează, iar pikapik nu va mai corecta singur acel cuvânt. În versiunea din Mac App Store, selectează textul și alege „Corectează aranjamentul tastaturii” din meniul Servicii.
+
+**Încearcă:** Setări › Tastatură › Corectează cuvintele scrise în aranjamentul greșit
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver deschide din nou meniul pikapik
 
 <sub>1.44.2 · 13 octombrie 2026</sub>

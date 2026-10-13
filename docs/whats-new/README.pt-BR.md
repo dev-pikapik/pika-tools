@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Palavras digitadas no layout errado se corrigem sozinhas
+
+<sub>1.44.3 · 13 de outubro de 2026</sub>
+
+Digite uma palavra no layout de teclado errado, pressione Espaço e o pikapik a digita de novo no layout certo e troca o layout para você.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Ative o recurso em Ajustes › Teclado. Quando uma palavra vira uma sopa de letrinhas, como ghbdtn em vez de привет, o pikapik a digita de novo assim que você pressiona Espaço ou Return, e troca o layout para que a próxima palavra saia certa. Funciona com todos os layouts de teclado que você adicionou no seu Mac, em qualquer um dos seus idiomas.
+
+O texto normal fica exatamente como você digitou. O pikapik só troca uma palavra quando ela não existe em nenhum dos seus idiomas e as mesmas teclas em outro layout formam uma palavra comum. Nomes, erros de digitação e palavras raras ficam como estão, assim como campos de senha, o Terminal e os apps que você escolher.
+
+Alguma palavra passou sem correção ou você quer uma de volta como era? Pressione ⌃⇧Espaço para corrigir a última palavra ou o texto selecionado, e pressione de novo para testar seus outros layouts. Logo após uma correção, as mesmas teclas a desfazem, e o pikapik não vai mais corrigir essa palavra sozinho. Na versão da Mac App Store, selecione o texto e escolha “Corrigir layout do teclado” no menu Serviços.
+
+**Experimente:** Ajustes › Teclado › Corrigir palavras digitadas no layout errado
+
+---
+
 ## <a id="v1.44.2"></a>O VoiceOver volta a abrir o menu do pikapik
 
 <sub>1.44.2 · 13 de outubro de 2026</sub>

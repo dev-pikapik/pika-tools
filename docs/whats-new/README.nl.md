@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Woorden die je in de verkeerde indeling typt, corrigeren zichzelf
+
+<sub>1.44.3 · 13 oktober 2026</sub>
+
+Typ een woord in de verkeerde toetsenbordindeling, druk op Spatie, en pikapik typt het opnieuw in de juiste en wisselt de indeling voor je.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Zet deze functie aan in Instellingen › Toetsenbord. Komt er een onleesbaar woord uit, zoals ghbdtn in plaats van привет, dan typt pikapik het opnieuw zodra je op Spatie of Return drukt, en wisselt de indeling zodat het volgende woord meteen goed is. Het werkt met elke toetsenbordindeling die je op je Mac hebt toegevoegd, in al je talen.
+
+Gewone tekst blijft precies zoals je hem typte. pikapik verandert een woord alleen als het in geen van je talen een woord is en dezelfde toetsen in een andere indeling een gangbaar woord geven. Namen, typfouten en zeldzame woorden blijven zoals ze zijn, net als wachtwoordvelden, Terminal en de apps die je kiest.
+
+Is er een woord doorgeglipt, of wil je er een terug zoals je het typte? Druk op ⌃⇧Spatie om het laatste woord of de geselecteerde tekst te corrigeren, en druk nog eens om je andere indelingen te proberen. Direct na een correctie maken dezelfde toetsen die ongedaan, en daarna corrigeert pikapik dat woord niet meer vanzelf. In de versie uit de Mac App Store selecteer je de tekst en kies je ‘Corrigeer toetsenbordindeling’ in het menu Voorzieningen.
+
+**Probeer het:** Instellingen › Toetsenbord › Corrigeer woorden die je in de verkeerde indeling typt
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver opent het pikapik-menu weer
 
 <sub>1.44.2 · 13 oktober 2026</sub>

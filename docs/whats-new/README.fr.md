@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Les mots tapés avec la mauvaise disposition se corrigent tout seuls
+
+<sub>1.44.3 · 13 octobre 2026</sub>
+
+Tapez un mot avec la mauvaise disposition de clavier, appuyez sur Espace, et pikapik le retape avec la bonne et change de disposition pour vous.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Activez la fonction dans Réglages › Clavier. Quand un mot donne du charabia, comme ghbdtn au lieu de привет, pikapik le retape dès que vous appuyez sur Espace ou Retour, et change de disposition pour que le mot suivant s’écrive correctement. Cela marche avec toutes les dispositions de clavier ajoutées sur votre Mac, dans toutes vos langues.
+
+Le texte normal reste exactement tel que vous l’avez tapé. pikapik ne change un mot que s’il n’existe dans aucune de vos langues et que les mêmes touches donnent un mot courant dans une autre disposition. Les noms, les fautes de frappe et les mots rares restent tels quels, tout comme les champs de mot de passe, Terminal et les apps que vous choisissez.
+
+Un mot n’a pas été corrigé, ou vous voulez retrouver celui que vous aviez tapé ? Appuyez sur ⌃⇧Espace pour corriger le dernier mot ou le texte sélectionné, et appuyez de nouveau pour essayer vos autres dispositions. Juste après une correction, les mêmes touches l’annulent, et pikapik ne corrigera plus ce mot de lui-même. Dans la version du Mac App Store, sélectionnez le texte et choisissez « Corriger la disposition du clavier » dans le menu Services.
+
+**Pour essayer :** Réglages › Clavier › Corriger les mots tapés avec la mauvaise disposition
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver ouvre à nouveau le menu pikapik
 
 <sub>1.44.2 · 13 octobre 2026</sub>
