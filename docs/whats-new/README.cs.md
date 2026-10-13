@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock zůstává na jednom displeji
+
+<sub>1.40.0 · 13. října 2026</sub>
+
+Dock už neskáče na jiný displej, když ukazatel zatlačí na jeho okraj, a zůstává tam, kam jste ho dali.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Dock a zapněte „Držet Dock na jednom displeji“. Dock pak zůstane na svém displeji, dole nebo na boku, a aktivní rohy dál fungují. Žádné oprávnění není potřeba, ani ve verzi z Mac App Store.
+
+Chcete-li Dock přesunout záměrně, podržte ⌥ a zatlačte ukazatelem na okraj druhého displeje. Dock se přesune na tento displej a zůstane na něm.
+
+Druhý přepínač, „Vracet Dock zpět“, vrací Dock sám na jeho displej po spánku nebo při změně displejů. Vyžaduje oprávnění „Zpřístupnění“ a ve verzi z Mac App Store není. Oba přepínače jsou ve výchozím stavu vypnuté.
+
+---
+
 ## <a id="v1.39.4"></a>Červené tlačítko už nezastavuje archivy
 
 <sub>1.39.4 · 13. října 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>El Dock se queda en una sola pantalla
+
+<sub>1.40.0 · 13 de octubre de 2026</sub>
+
+El Dock ya no salta a otra pantalla cuando el puntero empuja contra el borde de esa pantalla: se queda donde lo has puesto.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Dock y activa «Mantener el Dock en una sola pantalla». Después el Dock se queda en su pantalla, abajo o en un lateral, y las esquinas activas siguen funcionando. No hace falta ningún permiso, tampoco en la versión de la Mac App Store.
+
+Para mover el Dock a propósito, mantén pulsada ⌥ y empuja el puntero contra el borde de la otra pantalla. El Dock se pasa a esa pantalla y desde entonces se queda en ella.
+
+Un segundo interruptor, «Devolver el Dock a su sitio», lleva el Dock de vuelta a su pantalla automáticamente tras el reposo o cuando cambian las pantallas. Necesita el permiso «Accesibilidad» y no está en la versión de la Mac App Store. Los dos interruptores están desactivados por omisión.
+
+---
+
 ## <a id="v1.39.4"></a>El botón rojo ya no detiene los archivos comprimidos
 
 <sub>1.39.4 · 13 de octubre de 2026</sub>

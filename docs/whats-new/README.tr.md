@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock tek ekranda kalıyor
+
+<sub>1.40.0 · 13 Ekim 2026</sub>
+
+İmleç başka bir ekranın kenarına dayandığında Dock artık o ekrana atlamıyor, bıraktığınız yerde kalıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ayarlar › Dock sayfasını açın ve “Dock’u tek ekranda tut” anahtarını açın. Dock artık altta da olsa yanda da olsa kendi ekranında kalır ve etkin köşeler çalışmaya devam eder. Hiçbir izin gerekmez, Mac App Store sürümünde de.
+
+Dock’u bilerek taşımak için ⌥ tuşunu basılı tutun ve imleci diğer ekranın kenarına doğru itin. Dock o ekrana geçer ve bundan sonra orada kalır.
+
+İkinci anahtar olan “Dock’u geri getir”, uykudan sonra veya ekranlar değişince Dock’u kendiliğinden kendi ekranına geri götürür. “Erişilebilirlik” izni gerektirir ve Mac App Store sürümünde yoktur. İki anahtar da varsayılan olarak kapalıdır.
+
+---
+
 ## <a id="v1.39.4"></a>Kırmızı düğme artık arşivleri durdurmuyor
 
 <sub>1.39.4 · 13 Ekim 2026</sub>

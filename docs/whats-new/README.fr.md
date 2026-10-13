@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Le Dock reste sur un seul écran
+
+<sub>1.40.0 · 13 octobre 2026</sub>
+
+Le Dock ne saute plus sur un autre écran quand le pointeur pousse contre le bord de cet écran : il reste là où vous l’avez mis.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Dock et activez « Garder le Dock sur un seul écran ». Le Dock reste alors sur son écran, en bas ou sur le côté, et les coins actifs continuent de fonctionner. Aucune autorisation n’est nécessaire, y compris dans la version du Mac App Store.
+
+Pour déplacer le Dock volontairement, maintenez ⌥ et poussez le pointeur contre le bord de l’autre écran. Le Dock passe sur cet écran et y reste ensuite.
+
+Un second interrupteur, « Ramener le Dock », remet automatiquement le Dock sur son écran après la veille ou un changement d’écrans. Il nécessite l’autorisation « Accessibilité » et n’existe pas dans la version du Mac App Store. Les deux interrupteurs sont désactivés par défaut.
+
+---
+
 ## <a id="v1.39.4"></a>Le bouton rouge n’arrête plus les archives
 
 <sub>1.39.4 · 13 octobre 2026</sub>

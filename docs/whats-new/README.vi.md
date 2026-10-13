@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock ở lại trên một màn hình
+
+<sub>1.40.0 · 13 tháng 10 năm 2026</sub>
+
+Dock không còn nhảy sang màn hình khác khi con trỏ đẩy vào cạnh màn hình đó, mà ở lại đúng chỗ bạn đặt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Dock và bật “Giữ Dock trên một màn hình”. Sau đó Dock ở lại trên màn hình của nó, dù ở phía dưới hay bên cạnh, và các góc nóng vẫn hoạt động. Không cần cấp quyền nào, kể cả trong phiên bản Mac App Store.
+
+Để chủ động di chuyển Dock, hãy giữ ⌥ và đẩy con trỏ vào cạnh của màn hình kia. Dock sẽ chuyển sang màn hình đó và ở lại đấy từ lúc ấy.
+
+Công tắc thứ hai, “Đưa Dock trở lại”, tự động đưa Dock về màn hình của nó sau khi ngủ hoặc khi màn hình thay đổi. Công tắc này cần quyền “Trợ năng” và không có trong phiên bản Mac App Store. Cả hai công tắc đều tắt theo mặc định.
+
+---
+
 ## <a id="v1.39.4"></a>Nút đỏ không còn làm dừng việc mở và tạo bản lưu trữ
 
 <sub>1.39.4 · 13 tháng 10 năm 2026</sub>

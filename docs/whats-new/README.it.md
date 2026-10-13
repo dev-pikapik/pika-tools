@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Il Dock resta su un solo schermo
+
+<sub>1.40.0 · 13 ottobre 2026</sub>
+
+Il Dock non salta più su un altro schermo quando il puntatore spinge contro il bordo di quello schermo: resta dove lo hai messo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Dock e attiva «Tieni il Dock su un solo schermo». Il Dock resta così sul suo schermo, in basso o di lato, e gli angoli attivi continuano a funzionare. Non serve alcun permesso, nemmeno nella versione del Mac App Store.
+
+Per spostare il Dock apposta, tieni premuto ⌥ e spingi il puntatore contro il bordo dell’altro schermo. Il Dock passa su quello schermo e da quel momento resta lì.
+
+Un secondo interruttore, «Riporta il Dock al suo posto», rimette automaticamente il Dock sul suo schermo dopo lo stop o quando cambiano gli schermi. Richiede il permesso «Accessibilità» e non è nella versione del Mac App Store. I due interruttori sono disattivati di default.
+
+---
+
 ## <a id="v1.39.4"></a>Il pulsante rosso non blocca più gli archivi
 
 <sub>1.39.4 · 13 ottobre 2026</sub>

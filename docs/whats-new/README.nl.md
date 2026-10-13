@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Het Dock blijft op één scherm
+
+<sub>1.40.0 · 13 oktober 2026</sub>
+
+Het Dock springt niet meer naar een ander scherm als de aanwijzer tegen de rand van dat scherm duwt, maar blijft staan waar je het hebt gezet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Dock en zet ‘Houd het Dock op één scherm’ aan. Daarna blijft het Dock op zijn eigen scherm, onderaan of aan de zijkant, en blijven actieve hoeken gewoon werken. Daarvoor is geen toestemming nodig, ook niet in de versie uit de Mac App Store.
+
+Wil je het Dock bewust verplaatsen, houd dan ⌥ ingedrukt en duw de aanwijzer tegen de rand van het andere scherm. Het Dock gaat dan naar dat scherm en blijft daar vanaf dan staan.
+
+Een tweede schakelaar, ‘Haal het Dock terug’, zet het Dock na de sluimerstand of als schermen veranderen vanzelf terug op zijn eigen scherm. Die schakelaar heeft de toestemming ‘Toegankelijkheid’ nodig en zit niet in de versie uit de Mac App Store. Beide schakelaars staan standaard uit.
+
+---
+
 ## <a id="v1.39.4"></a>De rode knop houdt archieven niet meer tegen
 
 <sub>1.39.4 · 13 oktober 2026</sub>
