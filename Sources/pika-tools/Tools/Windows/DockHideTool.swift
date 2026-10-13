@@ -134,9 +134,10 @@ final class DockHideTool: Tool {
     fileprivate func hold(_ press: Press) {
         self.press = press
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
-            guard let self, self.press?.down === press.down else { return }
+            guard let self, self.press?.down === press.down,
+                  CGEventSource.buttonState(.hidSystemState, button: .left)
+            else { return }
             self.press = nil
-            guard CGEventSource.buttonState(.hidSystemState, button: .left) else { return }
             press.down.location = CGEvent(source: nil)?.location ?? press.down.location
             Self.replay([press.down])
         }
