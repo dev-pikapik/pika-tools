@@ -177,8 +177,8 @@ final class AppVolumeChain {
         running = true
     }
 
-    func mute() throws {
-        description.muteBehavior = .muted
+    func mute(_ on: Bool) throws {
+        description.muteBehavior = on ? .muted : .unmuted
         var address = AppVolumeHAL.address(kAudioTapPropertyDescription)
         let status = withUnsafePointer(to: description) {
             AudioObjectSetPropertyData(tap, &address, 0, nil, UInt32(MemoryLayout<CATapDescription>.size), $0)
@@ -246,6 +246,7 @@ final class AppVolumeEngine: @unchecked Sendable {
     private var timer: DispatchSourceTimer?
     private var expiry: DispatchWorkItem?
     private var retry: DispatchWorkItem?
+    private var release: DispatchWorkItem?
 
     private init() {}
 
@@ -294,6 +295,7 @@ final class AppVolumeEngine: @unchecked Sendable {
         wakeObserver = nil
         expiry?.cancel()
         retry?.cancel()
+        release?.cancel()
         clients.values.forEach(drop)
         clients = [:]
         ignored = []
@@ -411,6 +413,25 @@ final class AppVolumeEngine: @unchecked Sendable {
             }
             if client.running { startIO(client) }
         }
+        release?.cancel()
+        if clients.values.contains(where: { $0.live != nil && !isAdjusted($0.owner) }) {
+            let work = DispatchWorkItem { [self] in releaseUnadjusted() }
+            release = work
+            queue.asyncAfter(deadline: .now() + 1, execute: work)
+        }
+        updateTimer()
+    }
+
+    private func releaseUnadjusted() {
+        for client in clients.values where !isAdjusted(client.owner) {
+            guard let live = client.live else { continue }
+            client.live = nil
+            client.silentTicks = 0
+            try? live.mute(false)
+            live.gain.target = 0
+            queue.asyncAfter(deadline: .now() + 0.3) { live.destroy() }
+            log.debug("chain released pid=\(client.pid)")
+        }
         updateTimer()
     }
 
@@ -439,7 +460,7 @@ final class AppVolumeEngine: @unchecked Sendable {
             throw error
         }
         do {
-            try chain.mute()
+            try chain.mute(true)
         } catch {
             log.debug("mute failed pid=\(client.pid) status=\((error as? AppVolumeError)?.status ?? 0)")
             chain.destroy()
