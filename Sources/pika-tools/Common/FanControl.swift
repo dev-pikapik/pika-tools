@@ -15,6 +15,7 @@ final class FanControl {
     @ObservationIgnored private var watchers = 0
     @ObservationIgnored private var connection: NSXPCConnection?
     @ObservationIgnored private var requested: [Int: Date] = [:]
+    @ObservationIgnored private var updated = false
 
     private(set) var fans: [SMCFan] = []
     private(set) var wanted: [Int: Double] = [:]
@@ -104,7 +105,8 @@ final class FanControl {
         let steps = [
             "(/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1 || true)",
             "/bin/mkdir -p /Library/PrivilegedHelperTools",
-            "/bin/cp -f \(q(Self.bundled.path)) \(q(Self.binary))",
+            "/bin/rm -f \(q(Self.binary))",
+            "/bin/cp \(q(Self.bundled.path)) \(q(Self.binary))",
             "/usr/sbin/chown root:wheel \(q(Self.binary))",
             "/bin/chmod 755 \(q(Self.binary))",
             "/usr/bin/codesign --verify \(q("-R=" + requirement)) \(q(Self.binary)) || { /bin/rm -f \(q(Self.binary)); exit 1; }",
@@ -130,7 +132,7 @@ final class FanControl {
         wanted = [:]
         connection?.invalidate()
         let q = Self.quoted
-        let command = "/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1; /bin/rm -f \(q(Self.binary)) \(q(Self.plist))"
+        let command = "/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1; /bin/rm -f \(q(Self.binary)) \(q(Self.binary + ".new")) \(q(Self.plist))"
         let prompt = String(localized: "pikapik wants to remove fan control.")
         DispatchQueue.global().async {
             let ok = KeepAwake.runAsAdmin(command, prompt: prompt)
@@ -162,12 +164,17 @@ final class FanControl {
     }
 
     func probe() {
-        guard FileManager.default.contentsEqual(atPath: Self.binary, andPath: Self.bundled.path), let helper = helper() else {
+        guard FileManager.default.fileExists(atPath: Self.binary), let helper = helper() else {
             ready = false
             return
         }
         helper.version { version in
-            DispatchQueue.main.async { self.ready = version == FanHelperInfo.version }
+            DispatchQueue.main.async {
+                self.ready = version == FanHelperInfo.version
+                guard self.ready, !self.updated, !FileManager.default.contentsEqual(atPath: Self.binary, andPath: Self.bundled.path) else { return }
+                self.updated = true
+                helper.update(from: Self.bundled.path) { _ in }
+            }
         }
     }
 

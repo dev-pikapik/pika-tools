@@ -14,13 +14,16 @@ if CommandLine.arguments.contains("--read") {
 
 final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
     private let lock = NSLock()
+    private let updates = NSLock()
     private let smc: SMC
     private let requirement: String?
+    private let candidate: String?
     private var clients = 0
 
-    init(smc: SMC, requirement: String?) {
+    init(smc: SMC, requirement: String?, candidate: String?) {
         self.smc = smc
         self.requirement = requirement
+        self.candidate = candidate
     }
 
     func resetAll() {
@@ -84,11 +87,17 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
         smc.setAuto(fan: fan)
         reply(true)
     }
+
+    func update(from path: String, reply: @escaping (Bool) -> Void) {
+        updates.lock()
+        defer { updates.unlock() }
+        reply(candidate.map { FanHelperInfo.replace(CommandLine.arguments[0], with: path, requirement: $0) } ?? false)
+    }
 }
 
 let label = URL(fileURLWithPath: CommandLine.arguments[0]).lastPathComponent
 let appIdentifier = label.hasSuffix(FanHelperInfo.suffix) ? String(label.dropLast(FanHelperInfo.suffix.count)) : label
-let service = Service(smc: device, requirement: FanHelperInfo.requirement(identifier: appIdentifier))
+let service = Service(smc: device, requirement: FanHelperInfo.requirement(identifier: appIdentifier), candidate: FanHelperInfo.requirement(identifier: label))
 service.resetAll()
 
 let listener = NSXPCListener(machServiceName: label)
