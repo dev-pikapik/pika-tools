@@ -157,6 +157,7 @@ private struct PortRow: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .menuStyle(.button)
+            .buttonStyle(.bordered)
             .menuIndicator(.hidden)
             .fixedSize()
             #else
@@ -233,6 +234,7 @@ private struct PortChips: View {
                 Text(verbatim: "+\(listeners.count - 3)").font(.callout).foregroundStyle(.secondary)
             }
         }
+        .fixedSize()
         .accessibilityElement(children: .combine)
     }
 }
