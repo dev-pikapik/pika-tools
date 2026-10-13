@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Her monitör için parlaklık
+
+<sub>1.49.0 · 13 Ekim 2026</sub>
+
+macOS’in ayarlayamadığı bir monitörü doğrudan pikapik’ten karartın ya da aydınlatın.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS yerleşik ekranı ve Apple ekranlarını ayarlar, ancak diğer monitörlerin çoğu yalnızca kendi düğmelerini dinler. Artık her biri Ayarlar › Parlaklık sayfasında bir sürgü alıyor ve menü çubuğu paneline bir “Parlaklık” satırı ekleyebilirsiniz.
+
+pikapik monitörün kendi parlaklığını, tıpkı düğmeleri gibi değiştirir. Bir monitör tepki vermiyorsa “Bunun yerine görüntüyü karart” anahtarını açın: görüntü kararır ama asla siyah olmaz. pikapik her monitörün düzeyini hatırlar ve uykudan sonra yeniden ayarlar.
+
+“Parlaklık tuşları” anahtarını açın; klavyenizdeki parlaklık tuşları işaretçinin bulunduğu monitörü ayarlar ve ekranda küçük bir gösterge belirir. Daha ince adımlar için ⌥⇧ tuşlarını basılı tutun. Tuşlar, “İzinler” sayfasından vereceğiniz “Erişilebilirlik” iznine ihtiyaç duyar.
+
+**Deneyin:** Ayarlar › Parlaklık
+
+**Düzeltilenler**
+
+- VoiceOver ile Ayarlar’daki anahtarlar artık açılıp kapanıyor. Önceden VoiceOver her anahtarın adını iki kez okuyordu ve basınca hiçbir şey olmuyordu.
+
+---
+
 ## <a id="v1.48.0"></a>Fareyi ne kadar hızlı hareket ettirirseniz ettirin, Dock kendi ekranında kalıyor
 
 <sub>1.48.0 · 13 Ekim 2026</sub>

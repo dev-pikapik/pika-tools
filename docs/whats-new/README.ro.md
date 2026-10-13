@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Luminozitate pentru fiecare monitor
+
+<sub>1.49.0 · 13 octombrie 2026</sub>
+
+Întunecă sau luminează un monitor pe care macOS nu îl poate regla, direct din pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS reglează ecranul integrat și monitoarele Apple, dar majoritatea celorlalte monitoare ascultă doar de propriile butoane. Acum fiecare dintre ele primește un glisor în Setări › Luminozitate, iar în panoul din bara de meniu poți adăuga un rând „Luminozitate”.
+
+pikapik schimbă luminozitatea monitorului însuși, exact ca butoanele lui. Dacă un monitor nu răspunde, pornește „Întunecă imaginea în schimb”: imaginea devine mai întunecată, dar niciodată neagră. pikapik reține nivelul fiecărui monitor și îl setează din nou după repaus.
+
+Pornește „Tastele de luminozitate”, iar tastele de luminozitate de pe tastatură vor regla monitorul pe care se află cursorul, cu un mic indicator pe ecran. Ține apăsate ⌥⇧ pentru pași mai fini. Tastele au nevoie de permisiunea „Accesibilitate”, pe care o dai în pagina „Permisiuni”.
+
+**Încearcă:** Setări › Luminozitate
+
+**Reparat**
+
+- Cu VoiceOver, comutatoarele din Setări se pot acum activa și dezactiva. Înainte, VoiceOver citea de două ori numele fiecărui comutator, iar apăsarea lui nu făcea nimic.
+
+---
+
 ## <a id="v1.48.0"></a>Dock-ul rămâne pe ecranul lui, oricât de repede miști mausul
 
 <sub>1.48.0 · 13 octombrie 2026</sub>

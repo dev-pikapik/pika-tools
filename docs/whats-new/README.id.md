@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Kecerahan untuk setiap monitor
+
+<sub>1.49.0 · 13 Oktober 2026</sub>
+
+Redupkan atau terangkan monitor yang tidak bisa diatur macOS, langsung dari pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS mengatur layar bawaan dan monitor Apple, tetapi sebagian besar monitor lain hanya menurut pada tombolnya sendiri. Sekarang setiap monitor itu mendapat slider di Pengaturan › Kecerahan, dan Anda bisa menambahkan baris “Kecerahan” ke panel bar menu.
+
+pikapik mengubah kecerahan monitor itu sendiri, sama seperti tombolnya. Jika monitor tidak merespons, aktifkan “Redupkan gambar sebagai gantinya”: gambar menjadi lebih gelap, tetapi tidak pernah hitam. pikapik mengingat level tiap monitor dan mengaturnya lagi setelah tidur.
+
+Aktifkan “Tombol kecerahan”, maka tombol kecerahan di keyboard mengatur monitor tempat penunjuk berada, dengan indikator kecil di layar. Tahan ⌥⇧ untuk langkah yang lebih halus. Tombol ini memerlukan izin “Aksesibilitas”, yang Anda berikan di halaman “Izin”.
+
+**Coba:** Pengaturan › Kecerahan
+
+**Diperbaiki**
+
+- Dengan VoiceOver, sakelar di Pengaturan kini bisa dinyalakan dan dimatikan. Sebelumnya VoiceOver membaca nama setiap sakelar dua kali, dan menekannya tidak berpengaruh apa-apa.
+
+---
+
 ## <a id="v1.48.0"></a>Dock tetap di layarnya, secepat apa pun Anda menggerakkan mouse
 
 <sub>1.48.0 · 13 Oktober 2026</sub>

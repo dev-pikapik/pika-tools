@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Helligkeit für jeden Monitor
+
+<sub>1.49.0 · 13. Oktober 2026</sub>
+
+Mach einen Monitor, den macOS nicht regeln kann, direkt in pikapik dunkler oder heller.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS regelt den eingebauten Bildschirm und Apple-Displays, aber die meisten anderen Monitore hören nur auf ihre eigenen Tasten. Jetzt bekommt jeder von ihnen einen Regler unter Einstellungen › Helligkeit, und du kannst eine Zeile „Helligkeit“ zum Fenster der Menüleiste hinzufügen.
+
+pikapik ändert die Helligkeit des Monitors selbst, genau wie seine Tasten. Reagiert ein Monitor nicht, schalte „Stattdessen das Bild abdunkeln“ ein: Das Bild wird dunkler, aber nie schwarz. pikapik merkt sich die Helligkeit jedes Monitors und stellt sie nach dem Ruhezustand wieder ein.
+
+Schalte „Helligkeitstasten“ ein, dann regeln die Helligkeitstasten deiner Tastatur den Monitor, auf dem der Zeiger steht, und eine kleine Anzeige erscheint auf dem Bildschirm. Halte ⌥⇧ für feinere Schritte. Die Tasten brauchen die Erlaubnis „Bedienungshilfen“, die du auf der Seite „Berechtigungen“ gibst.
+
+**Ausprobieren:** Einstellungen › Helligkeit
+
+**Behoben**
+
+- Mit VoiceOver lassen sich die Schalter in den Einstellungen jetzt ein- und ausschalten. Vorher las VoiceOver den Namen jedes Schalters zweimal vor, und Drücken bewirkte nichts.
+
+---
+
 ## <a id="v1.48.0"></a>Das Dock bleibt auf seinem Display, egal wie schnell du die Maus bewegst
 
 <sub>1.48.0 · 13. Oktober 2026</sub>

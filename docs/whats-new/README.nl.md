@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Helderheid voor elke monitor
+
+<sub>1.49.0 · 13 oktober 2026</sub>
+
+Maak een monitor die macOS niet kan regelen donkerder of lichter, gewoon vanuit pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS regelt het ingebouwde scherm en Apple-schermen, maar de meeste andere monitors luisteren alleen naar hun eigen knoppen. Nu krijgt elk van die monitors een schuifregelaar in Instellingen › Helderheid, en je kunt een rij ‘Helderheid’ toevoegen aan het paneel in de menubalk.
+
+pikapik wijzigt de helderheid van de monitor zelf, net als de knoppen erop. Reageert een monitor niet, zet dan ‘In plaats daarvan het beeld dimmen’ aan: het beeld wordt donkerder, maar nooit zwart. pikapik onthoudt de helderheid van elke monitor en stelt die na de sluimerstand opnieuw in.
+
+Zet ‘Helderheidstoetsen’ aan, dan regelen de helderheidstoetsen op je toetsenbord de monitor waar de aanwijzer staat, met een kleine indicator op het scherm. Houd ⌥⇧ ingedrukt voor fijnere stappen. De toetsen hebben de toestemming ‘Toegankelijkheid’ nodig, die je geeft op de pagina ‘Toestemmingen’.
+
+**Probeer het:** Instellingen › Helderheid
+
+**Opgelost**
+
+- Met VoiceOver kun je de schakelaars in Instellingen nu aan- en uitzetten. Eerder las VoiceOver de naam van elke schakelaar twee keer voor, en erop drukken deed niets.
+
+---
+
 ## <a id="v1.48.0"></a>Het Dock blijft op zijn scherm, hoe snel je de muis ook beweegt
 
 <sub>1.48.0 · 13 oktober 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Brightness for every monitor
+
+<sub>1.49.0 · October 13, 2026</sub>
+
+Dim or brighten a monitor that macOS can’t adjust, right from pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS adjusts the built-in screen and Apple displays, but most other monitors only listen to their own buttons. Now each of them gets a slider in Settings › Brightness, and you can add a Brightness row to the menu bar panel.
+
+pikapik changes the monitor’s own brightness, just like its buttons. If a monitor doesn’t respond, switch on Dim the picture instead: the picture gets darker, but never black. pikapik remembers each monitor’s level and sets it again after sleep.
+
+Switch on Brightness keys, and the brightness keys on your keyboard adjust the monitor under the pointer, with a small indicator on screen. Hold ⌥⇧ for finer steps. The keys need the Accessibility permission from the Permissions page.
+
+**Try it:** Settings › Brightness
+
+**Fixed**
+
+- With VoiceOver, the switches in Settings now turn on and off. Before, VoiceOver read each switch’s name twice, and pressing a switch did nothing.
+
+---
+
 ## <a id="v1.48.0"></a>The Dock stays on its display, however fast you move
 
 <sub>1.48.0 · October 13, 2026</sub>

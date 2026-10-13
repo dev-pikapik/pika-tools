@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Brillo para cada monitor
+
+<sub>1.49.0 · 13 de octubre de 2026</sub>
+
+Oscurece o ilumina un monitor que macOS no puede ajustar, directamente desde pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS ajusta la pantalla integrada y las pantallas de Apple, pero la mayoría de los demás monitores solo obedecen a sus propios botones. Ahora cada uno tiene un control deslizante en Ajustes › Brillo, y puedes añadir una fila «Brillo» al panel de la barra de menús.
+
+pikapik cambia el brillo del propio monitor, igual que sus botones. Si un monitor no responde, activa «Oscurecer la imagen en su lugar»: la imagen se oscurece, pero nunca llega al negro. pikapik recuerda el nivel de cada monitor y lo vuelve a poner tras el reposo.
+
+Activa «Teclas de brillo» y las teclas de brillo de tu teclado ajustarán el monitor donde está el puntero, con un pequeño indicador en pantalla. Mantén pulsadas ⌥⇧ para pasos más finos. Las teclas necesitan el permiso «Accesibilidad», que concedes en la página «Permisos».
+
+**Pruébalo:** Ajustes › Brillo
+
+**Corregido**
+
+- Con VoiceOver, los interruptores de Ajustes ahora se activan y se desactivan. Antes, VoiceOver leía dos veces el nombre de cada interruptor, y pulsarlo no hacía nada.
+
+---
+
 ## <a id="v1.48.0"></a>El Dock se queda en su pantalla, por muy rápido que muevas el ratón
 
 <sub>1.48.0 · 13 de octubre de 2026</sub>

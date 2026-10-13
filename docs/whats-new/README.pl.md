@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Jasność dla każdego monitora
+
+<sub>1.49.0 · 13 października 2026</sub>
+
+Przyciemniaj i rozjaśniaj monitor, którego macOS nie umie ustawić, prosto z pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS ustawia jasność wbudowanego ekranu i monitorów Apple, ale większość innych monitorów słucha tylko własnych przycisków. Teraz każdy z nich ma własny suwak na stronie Ustawienia › Jasność, a wiersz „Jasność” możesz dodać do panelu na pasku menu.
+
+pikapik zmienia jasność samego monitora, tak jak jego przyciski. Jeśli monitor nie reaguje, włącz „Zamiast tego przyciemniaj obraz”: obraz robi się ciemniejszy, ale nigdy czarny. pikapik zapamiętuje jasność każdego monitora i ustawia ją ponownie po uśpieniu.
+
+Włącz „Klawisze jasności”, a klawisze jasności na klawiaturze będą zmieniać jasność monitora, na którym jest wskaźnik, i pokazywać na ekranie mały pasek jasności. Przytrzymaj ⌥⇧, aby zmieniać ją drobniejszymi krokami. Klawisze potrzebują uprawnienia „Dostępność”, które włączasz na stronie „Uprawnienia”.
+
+**Wypróbuj:** Ustawienia › Jasność
+
+**Poprawki**
+
+- Z VoiceOver przełączniki w Ustawieniach można teraz włączać i wyłączać. Wcześniej VoiceOver czytał nazwę każdego przełącznika dwa razy, a naciśnięcie go nic nie dawało.
+
+---
+
 ## <a id="v1.48.0"></a>Dock zostaje na swoim ekranie, nieważne, jak szybko ruszasz myszą
 
 <sub>1.48.0 · 13 października 2026</sub>

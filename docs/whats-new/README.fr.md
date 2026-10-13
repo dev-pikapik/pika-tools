@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Une luminosité réglable pour chaque écran
+
+<sub>1.49.0 · 13 octobre 2026</sub>
+
+Assombrissez ou éclaircissez un écran que macOS ne sait pas régler, directement depuis pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS règle l’écran intégré et les écrans Apple, mais la plupart des autres écrans n’obéissent qu’à leurs propres boutons. Désormais, chacun d’eux a un curseur dans Réglages › Luminosité, et vous pouvez ajouter une ligne « Luminosité » au panneau de la barre des menus.
+
+pikapik change la luminosité de l’écran lui-même, exactement comme ses boutons. Si un écran ne réagit pas, activez « Assombrir plutôt l’image » : l’image devient plus sombre, mais jamais noire. pikapik retient le niveau de chaque écran et le rétablit après la veille.
+
+Activez « Touches de luminosité », et les touches de luminosité de votre clavier règlent l’écran sous le pointeur, avec un petit indicateur à l’écran. Maintenez ⌥⇧ pour un réglage plus fin. Les touches ont besoin de l’autorisation « Accessibilité », que vous accordez sur la page « Autorisations ».
+
+**Pour essayer :** Réglages › Luminosité
+
+**Corrigé**
+
+- Avec VoiceOver, les commutateurs des Réglages s’activent et se désactivent désormais. Avant, VoiceOver lisait deux fois le nom de chaque commutateur, et appuyer dessus ne faisait rien.
+
+---
+
 ## <a id="v1.48.0"></a>Le Dock reste sur son écran, aussi vite que vous bougiez la souris
 
 <sub>1.48.0 · 13 octobre 2026</sub>

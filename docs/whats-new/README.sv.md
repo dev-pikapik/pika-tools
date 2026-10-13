@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Ljusstyrka för varje bildskärm
+
+<sub>1.49.0 · 13 oktober 2026</sub>
+
+Gör en bildskärm som macOS inte kan justera mörkare eller ljusare, direkt i pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS justerar den inbyggda skärmen och Apple-skärmar, men de flesta andra bildskärmar lyssnar bara på sina egna knappar. Nu får var och en av dem ett reglage i Inställningar › Ljusstyrka, och du kan lägga till en rad ”Ljusstyrka” i panelen i menyraden.
+
+pikapik ändrar bildskärmens egen ljusstyrka, precis som knapparna på den. Om en bildskärm inte reagerar slår du på ”Dämpa bilden i stället”: bilden blir mörkare, men aldrig svart. pikapik kommer ihåg ljusstyrkan för varje bildskärm och ställer in den igen efter vila.
+
+Slå på ”Ljusstyrketangenter”, så justerar ljusstyrketangenterna på tangentbordet bildskärmen där pekaren är, och en liten indikator visas på skärmen. Håll ned ⌥⇧ för finare steg. Tangenterna behöver behörigheten ”Hjälpmedel”, som du ger på sidan ”Behörigheter”.
+
+**Prova:** Inställningar › Ljusstyrka
+
+**Åtgärdat**
+
+- Med VoiceOver går reglagen i Inställningar nu att slå på och av. Tidigare läste VoiceOver upp varje reglages namn två gånger, och att trycka på det gjorde ingenting.
+
+---
+
 ## <a id="v1.48.0"></a>Dock stannar på sin skärm, hur snabbt du än rör musen
 
 <sub>1.48.0 · 13 oktober 2026</sub>
