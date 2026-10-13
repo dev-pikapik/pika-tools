@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Veja o quanto o Mac está quente por dentro
+
+<sub>1.42.0 · 13 de outubro de 2026</sub>
+
+Uma nova página Temperatura nos Ajustes mostra a temperatura do processador, dos gráficos, da memória, do armazenamento, da bateria e do Wi-Fi, e diz em palavras simples se está tudo bem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Temperatura. No alto, uma só palavra resume tudo: “Normal”, “Um pouco quente”, “Quente” ou “Muito quente”, e uma linha curta logo abaixo diz se o Mac está funcionando na velocidade máxima ou ficando mais lento para esfriar. Mais abaixo, cada componente que o Mac consegue medir tem sua própria linha com a temperatura e uma barra colorida: verde se está tudo bem, amarela se está um pouco quente e laranja se está quente, de acordo com o que é normal para aquele componente.
+
+Quer ficar de olho nela? Clique no lápis na parte de baixo do menu do pikapik e marque “Temperatura”. O menu passa a mostrar a mesma palavra e a temperatura do processador, e um clique na linha abre a página.
+
+As temperaturas são atualizadas a cada dois segundos, mas só enquanto a página ou o menu estão abertos, então nada é verificado em segundo plano. O pikapik só lê as temperaturas: não precisa de senha e não muda nada.
+
+**Corrigido**
+
+- Se você escolheu quais linhas o menu do pikapik mostra, a linha “Manter o Dock em uma só tela” não aparece mais sozinha nele. Para mostrá-la, clique no lápis e marque-a.
+- Quando você fecha os Ajustes, o pikapik agora para na hora de verificar as ventoinhas e a bateria, em vez de continuar em segundo plano.
+
+---
+
 ## <a id="v1.41.1"></a>O controle das ventoinhas não pede mais sua senha
 
 <sub>1.41.1 · 13 de outubro de 2026</sub>

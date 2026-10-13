@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Sieh, wie warm dein Mac innen ist
+
+<sub>1.42.0 · 13. Oktober 2026</sub>
+
+Eine neue Seite „Temperatur“ in den Einstellungen zeigt, wie warm Prozessor, Grafik, Arbeitsspeicher, SSD, Akku und WLAN sind, und sagt dir in einfachen Worten, ob alles in Ordnung ist.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Temperatur. Oben fasst ein Wort alles zusammen: „Normal“, „Warm“, „Heiß“ oder „Sehr heiß“, und eine kurze Zeile darunter sagt dir, ob dein Mac mit voller Geschwindigkeit läuft oder langsamer wird, um abzukühlen. Weiter unten hat jedes Bauteil, das dein Mac messen kann, eine eigene Zeile mit der Temperatur und einem farbigen Balken: Grün heißt alles gut, Gelb warm und Orange heiß, gemessen daran, was für dieses Bauteil normal ist.
+
+Willst du die Temperatur im Blick behalten? Klick unten im pikapik-Menü auf den Stift und setz ein Häkchen bei „Temperatur“. Das Menü zeigt dann dasselbe Wort und die Temperatur des Prozessors, und ein Klick auf die Zeile öffnet die Seite.
+
+Die Temperaturen werden alle zwei Sekunden aktualisiert, aber nur, solange die Seite oder das Menü offen ist, im Hintergrund wird also nichts geprüft. pikapik liest die Temperaturen nur ab, braucht dafür kein Passwort und ändert nichts.
+
+**Behoben**
+
+- Wenn du ausgewählt hast, welche Zeilen das pikapik-Menü zeigt, taucht „Dock auf einem Display halten“ dort nicht mehr von selbst auf. Um die Zeile zu zeigen, klick auf den Stift und setz ein Häkchen bei ihr.
+- Wenn du die Einstellungen schließt, hört pikapik jetzt sofort auf, Lüfter und Batterie abzufragen, statt im Hintergrund weiterzumachen.
+
+---
+
 ## <a id="v1.41.1"></a>Die Lüftersteuerung fragt nicht mehr nach deinem Passwort
 
 <sub>1.41.1 · 13. Oktober 2026</sub>

@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Podívejte se, jak moc je Mac uvnitř zahřátý
+
+<sub>1.42.0 · 13. října 2026</sub>
+
+Nová stránka Teplota v Nastavení ukazuje, jak moc se zahřály procesor, grafika, paměť, disk, baterie a Wi-Fi, a jednoduchými slovy řekne, jestli je všechno v pořádku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Teplota. Nahoře všechno shrne jedno slovo: „V normě“, „Teplo“, „Horko“ nebo „Velké horko“, a krátký řádek pod ním řekne, jestli Mac běží na plný výkon, nebo zpomaluje, aby vychladl. Níž má každá část, kterou Mac umí změřit, vlastní řádek s teplotou a barevným pruhem: zelená znamená, že je vše v pořádku, žlutá teplo a oranžová horko, podle toho, co je pro danou část normální.
+
+Chcete mít teplotu pořád na očích? Klikněte na tužku dole v nabídce pikapik a zaškrtněte „Teplota“. Nabídka pak ukáže stejné slovo a teplotu procesoru a kliknutím na řádek se otevře stránka.
+
+Teploty se obnovují každé dvě sekundy, ale jen když je otevřená stránka nebo nabídka, takže na pozadí se nic nekontroluje. pikapik teploty jen čte: nepotřebuje heslo a nic nemění.
+
+**Opraveno**
+
+- Pokud jste si vybrali, které řádky nabídka pikapik ukazuje, řádek „Držet Dock na jednom displeji“ se v ní už sám neobjeví. Chcete-li ho zobrazit, klikněte na tužku a zaškrtněte ho.
+- Když zavřete Nastavení, pikapik teď hned přestane kontrolovat ventilátory a baterii, místo aby v tom pokračoval na pozadí.
+
+---
+
 ## <a id="v1.41.1"></a>Ovládání ventilátorů už nežádá heslo
 
 <sub>1.41.1 · 13. října 2026</sub>

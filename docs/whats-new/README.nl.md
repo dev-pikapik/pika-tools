@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Zie hoe warm je Mac vanbinnen is
+
+<sub>1.42.0 · 13 oktober 2026</sub>
+
+Een nieuwe pagina Temperatuur in Instellingen laat zien hoe warm de processor, de grafische chip, het geheugen, de opslag, de batterij en de wifi zijn, en vertelt je in gewone woorden of alles goed gaat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Temperatuur. Bovenaan vat één woord alles samen: ‘Normaal’, ‘Warm’, ‘Heet’ of ‘Erg heet’, en een korte regel eronder vertelt of je Mac op volle snelheid werkt of trager wordt om af te koelen. Verderop heeft elk onderdeel dat je Mac kan meten een eigen rij met de temperatuur en een gekleurde balk: groen is prima, geel is warm en oranje is heet, afgemeten aan wat normaal is voor dat onderdeel.
+
+Wil je de temperatuur in de gaten houden? Klik onderaan het pikapik-menu op het potlood en vink ‘Temperatuur’ aan. Het menu toont dan hetzelfde woord en de temperatuur van de processor, en een klik op de rij opent de pagina.
+
+De temperaturen worden elke twee seconden bijgewerkt, maar alleen zolang de pagina of het menu open is, dus op de achtergrond wordt niets gecontroleerd. pikapik leest de temperaturen alleen af: er is geen wachtwoord nodig en er verandert niets.
+
+**Opgelost**
+
+- Als je hebt gekozen welke rijen het pikapik-menu toont, verschijnt de rij ‘Houd het Dock op één scherm’ daar niet meer vanzelf. Wil je hem zien, klik dan op het potlood en vink hem aan.
+- Als je Instellingen sluit, stopt pikapik nu meteen met het controleren van de ventilatoren en de batterij, in plaats van op de achtergrond door te gaan.
+
+---
+
 ## <a id="v1.41.1"></a>Ventilatorbeheer vraagt niet meer om je wachtwoord
 
 <sub>1.41.1 · 13 oktober 2026</sub>

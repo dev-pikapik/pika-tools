@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>See how warm your Mac is inside
+
+<sub>1.42.0 · October 13, 2026</sub>
+
+A new Temperature page in Settings shows how warm the processor, graphics, memory, storage, battery and Wi-Fi are, and says in plain words whether all is well.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Open Settings › Temperature. At the top, one word sums it up: Normal, Warm, Hot or Very hot, and a short line below says whether your Mac is running at full speed or slowing down to cool off. Further down, each part your Mac can measure has its own row with the temperature and a colored bar: green is fine, yellow is warm and orange is hot, judged by what is normal for that part.
+
+Want to keep an eye on the temperature? Click the pencil at the bottom of the pikapik menu and select Temperature. The menu then shows the same word and the processor temperature, and a click on the row opens the page.
+
+Temperatures update every two seconds, but only while the page or the menu is open, so nothing is checked in the background. pikapik only reads them: it needs no password and changes nothing.
+
+**Fixed**
+
+- If you picked which rows the pikapik menu shows, Keep the Dock on one display no longer turns up there on its own. To show it, click the pencil and select it.
+- When you close Settings, pikapik now stops checking the fans and the battery right away instead of carrying on in the background.
+
+---
+
 ## <a id="v1.41.1"></a>Fan control no longer asks for your password
 
 <sub>1.41.1 · October 13, 2026</sub>

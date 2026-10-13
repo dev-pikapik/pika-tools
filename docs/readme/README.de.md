@@ -213,6 +213,14 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br>Das Dock springt nicht mehr auf ein anderes Display. Mit gedrückter ⌥-Taste verschiebst du es gezielt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatur</b>
+<br>Sieh, wie warm dein Mac innen ist, vom Prozessor bis zum Akku.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren
@@ -300,6 +308,8 @@ Damit pikapik weiß, wann eine Auszeichnung fällig ist, zählt es nur, was du u
 
 Doch anders überlegt? Klicke auf **Zurücklegen**, dann ist alles wieder da, wo es war, und die Hintergrundhelfer starten wieder. Die letzten zehn Entfernungen warten unter „Zuletzt entfernt“, solange ihre Dateien im Papierkorb liegen. **App zurücksetzen** behält die App und entfernt nur ihre gespeicherten Daten, Einstellungen und temporären Dateien, was helfen kann, wenn eine App spinnt. Apps, die du selbst in den Papierkorb gelegt hast, erscheinen unter „Im Papierkorb“ samt den Dateien, die sie hinterlassen haben, und „Reste entfernter Apps“ findet Dateien von Apps, die schon weg sind. Der Schalter „Aufräumen anbieten, wenn eine App in den Papierkorb kommt“ ist standardmäßig aus, und nichts wird entfernt, bevor du wählst. Damit die Seite alles sehen kann, was eine App aufbewahrt, braucht sie den **Festplattenvollzugriff**. Dieses Werkzeug gibt es nicht in der Version aus dem Mac App Store.
 
+**Temperatur.** Öffne Einstellungen › Temperatur, um zu sehen, wie warm dein Mac innen ist. Oben fasst ein Wort alles zusammen, von „Normal“ bis „Sehr heiß“, und eine Zeile darunter sagt, ob dein Mac mit voller Geschwindigkeit läuft oder langsamer wird, um abzukühlen. Darunter hat jedes Bauteil eine eigene Zeile mit einem verständlichen Namen statt eines Sensorcodes: Prozessor, Grafik, Arbeitsspeicher, SSD, WLAN und Akku, je nachdem, wofür dein Mac Sensoren hat. Jede Zeile zeigt die Grad und einen kurzen Balken, der grün, gelb oder orange wird, gemessen am normalen Bereich für dieses Bauteil. Die Werte werden alle zwei Sekunden aktualisiert und nur, solange du hinsiehst, deshalb belasten sie deinen Mac kaum. Du brauchst weder ein Passwort noch eine Berechtigung. Du kannst auch eine Zeile „Temperatur“ zum Fenster der Menüleiste hinzufügen. Die Version aus dem Mac App Store zeigt nur, wie warm der Mac insgesamt ist.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
@@ -337,6 +347,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Batterie**: Ladestand, Zeit bis zur vollen Ladung oder verbleibende Zeit, Zustand, maximale Kapazität, Anzahl der Zyklen, Netzteil und Leistung in Watt sowie Tipps, damit die Batterie lange durchhält. Die Seite zeigt nur Informationen an: Das Ladelimit bleibt in **Systemeinstellungen › Batterie**. Sie erscheint nur auf einem Mac mit Batterie.
 - **Wach bleiben**: Dauer, Display- und Deckeloptionen.
 - **Lüfter**: Geschwindigkeit jedes Lüfters sehen, Automatisch oder eine eigene Geschwindigkeit wählen, sobald die Lüftersteuerung erlaubt ist.
+- **Temperatur**: wie warm dein Mac ist, insgesamt und für jedes Bauteil, etwa Prozessor, Arbeitsspeicher und Akku.
 - **Speedtest**: Internetgeschwindigkeit messen und sehen, wofür sie reicht.
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.

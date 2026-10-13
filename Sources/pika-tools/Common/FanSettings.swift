@@ -29,8 +29,7 @@ struct FanSettings: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PermissionBar(permissions: control.hasFans ? [.fans] : [])
         }
-        .onAppear { control.watch() }
-        .onDisappear { control.unwatch() }
+        .whileShown { if $0 { control.watch() } else { control.unwatch() } }
     }
 }
 
@@ -110,13 +109,6 @@ private struct FanCard: View {
 struct FanRow: View {
     private let control = FanControl.shared
     @State private var hovering = false
-    @State private var watching = false
-
-    private func watch(_ on: Bool) {
-        guard on != watching else { return }
-        watching = on
-        if on { control.watch() } else { control.unwatch() }
-    }
 
     var body: some View {
         Button { SettingsWindow.show(.fans) } label: {
@@ -151,12 +143,7 @@ struct FanRow: View {
         }
         .needs([.fans])
         .onHover { hovering = $0 }
-        .onAppear { watch(true) }
-        .onDisappear { watch(false) }
-        .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
-            guard let window = note.object as? NSWindow, NSStringFromClass(type(of: window)).contains("MenuBarExtraWindow") else { return }
-            watch(window.occlusionState.contains(.visible))
-        }
+        .whileShown(in: StatusMenu.isPanel) { if $0 { control.watch() } else { control.unwatch() } }
     }
 }
 

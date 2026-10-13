@@ -5,6 +5,27 @@
 
 ---
 
+## <a id="v1.42.0"></a>Mira lo caliente que está tu Mac por dentro
+
+<sub>1.42.0 · 13 de octubre de 2026</sub>
+
+Una nueva página Temperatura en Ajustes muestra la temperatura del procesador, de los gráficos, de la memoria, del almacenamiento, de la batería y del Wi-Fi, y te dice con palabras sencillas si todo va bien.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Temperatura. Arriba, una sola palabra lo resume: «Normal», «Algo caliente», «Caliente» o «Muy caliente», y una línea corta debajo te dice si tu Mac funciona a toda velocidad o va más lento para enfriarse. Más abajo, cada componente que tu Mac puede medir tiene su propia fila con la temperatura y una barra de color: verde si todo va bien, amarilla si está algo caliente y naranja si está caliente, según lo que es normal para ese componente.
+
+¿Quieres tenerla siempre a la vista? Haz clic en el lápiz de la parte inferior del menú de pikapik y marca «Temperatura». El menú muestra entonces la misma palabra y la temperatura del procesador, y un clic en la fila abre la página.
+
+Las temperaturas se actualizan cada dos segundos, pero solo mientras la página o el menú están abiertos, así que no se comprueba nada en segundo plano. pikapik solo lee las temperaturas: no necesita contraseña y no cambia nada.
+
+**Corregido**
+
+- Si elegiste qué filas muestra el menú de pikapik, la fila «Mantener el Dock en una sola pantalla» ya no aparece sola en él. Para mostrarla, haz clic en el lápiz y márcala.
+- Cuando cierras Ajustes, pikapik ahora deja de revisar los ventiladores y la batería al instante, en vez de seguir haciéndolo en segundo plano.
+
+---
+
 ## <a id="v1.41.1"></a>El control de ventiladores ya no te pide la contraseña
 
 <sub>1.41.1 · 13 de octubre de 2026</sub>

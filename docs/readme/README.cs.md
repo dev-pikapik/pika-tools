@@ -213,6 +213,14 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br>Dock už neskáče na jiný displej. Podržením ⌥ ho přesunete záměrně.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Teplota</b>
+<br>Podívejte se, jak moc je Mac uvnitř zahřátý, od procesoru po baterii.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti
@@ -300,6 +308,8 @@ Aby pikapik věděl, kdy je čas na ocenění, počítá jen to, co děláte vy 
 
 Rozmysleli jste si to? Klikněte na **Vrátit zpět** a všechno se vrátí na původní místo a pomocníci na pozadí se znovu spustí. Posledních deset odebrání čeká v části „Nedávno odebrané“, dokud jsou jejich soubory v Koši. **Resetovat aplikaci** ponechá aplikaci a odebere jen její uložená data, nastavení a dočasné soubory, což může pomoci, když se aplikace chová divně. Aplikace, které jste do Koše přesunuli sami, se objeví v části „V Koši“ spolu se soubory, které po sobě nechaly, a část „Zbytky po odebraných aplikacích“ najde soubory aplikací, které už neexistují. Přepínač „Nabídnout úklid, když aplikace skončí v Koši“ je ve výchozím stavu vypnutý a nic se neodebere, dokud nevyberete. Aby stránka viděla všechno, co aplikace uchovává, potřebuje **Úplný přístup k disku**. Tento nástroj není ve verzi z Mac App Store.
 
+**Teplota.** Otevřete Nastavení › Teplota a uvidíte, jak moc je Mac uvnitř zahřátý. Nahoře vše shrne jedno slovo, od „V normě“ po „Velké horko“, a řádek pod ním řekne, jestli Mac běží na plný výkon, nebo zpomaluje, aby vychladl. Níže má každá součást vlastní řádek se srozumitelným názvem místo kódu čidla: procesor, grafika, paměť, disk, Wi-Fi a baterie, podle toho, jaká čidla váš Mac má. Každý řádek ukazuje stupně a krátký pruh, který je zelený, žlutý nebo oranžový podle běžného rozsahu pro danou součást. Hodnoty se obnovují každé dvě sekundy a jen tehdy, když se na ně díváte, takže Mac skoro nezatěžují. Není potřeba heslo ani oprávnění. Řádek „Teplota“ můžete přidat i do panelu v řádku nabídek. Verze z Mac App Store ukazuje jen celkovou úroveň.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
@@ -337,6 +347,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Baterie**: nabití, doba do plného nabití nebo zbývající doba, stav, maximální kapacita, počet cyklů, napájecí adaptér a výkon ve wattech a tipy, jak prodloužit výdrž baterie. Stránka jen zobrazuje informace: nabíjecí limit zůstává v **Nastavení systému › Baterie**. Zobrazí se jen na Macu s baterií.
 - **Bez spánku**: délka, volby pro displej a víko.
 - **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost, jakmile je povolené Ovládání ventilátorů.
+- **Teplota**: jak moc je Mac zahřátý, celkově i po jednotlivých součástech, například procesor, paměť a baterie.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.

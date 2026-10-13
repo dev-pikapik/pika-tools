@@ -213,6 +213,14 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br>Il Dock non salta più su un altro schermo. Tieni premuto ⌥ per spostarlo apposta.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatura</b>
+<br>Guarda quanto è caldo il Mac all’interno, dal processore alla batteria.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Più dettagli
@@ -300,6 +308,8 @@ Per sapere quando spetta un premio, pikapik conta solo quello che fate tu e il t
 
 Hai cambiato idea? Fai clic su **Rimetti a posto** e tutto torna dov’era, mentre gli aiutanti in background ripartono. Le ultime dieci rimozioni restano in «Rimossi di recente» finché i loro file sono nel Cestino. **Reimposta app** tiene l’app e toglie solo i suoi dati salvati, le impostazioni e i file temporanei, e può servire quando un’app fa i capricci. Le app che hai spostato tu nel Cestino compaiono in «Nel Cestino», insieme ai file che hanno lasciato, e «Resti di app rimosse» trova i file di app ormai sparite. L’interruttore «Proponi di fare pulizia quando un’app va nel Cestino» è spento di default, e non viene rimosso nulla finché non scegli. Per vedere tutto ciò che un’app conserva, la pagina ha bisogno dell’**Accesso completo al disco**. Questo strumento non è nella versione del Mac App Store.
 
+**Temperatura.** Apri Impostazioni › Temperatura per vedere quanto è caldo il Mac all’interno. In alto una sola parola riassume tutto, da «Normale» a «Molto caldo», con una riga che dice se il Mac funziona alla massima velocità o sta rallentando per raffreddarsi. Sotto, ogni componente ha la sua riga con un nome semplice al posto di un codice del sensore: processore, grafica, memoria, archiviazione, Wi-Fi e batteria, a seconda dei sensori del tuo Mac. Ogni riga mostra i gradi e una breve barra che diventa verde, gialla o arancione in base all’intervallo normale per quel componente. I valori si aggiornano ogni due secondi e solo mentre li guardi, quindi al Mac non costano quasi nulla. Non servono password né permessi. Puoi anche aggiungere una riga «Temperatura» al pannello della barra dei menu. La versione del Mac App Store mostra solo il livello generale.
+
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: il simbolo pikapik quando gli strumenti funzionano, lo stesso simbolo più chiaro quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
@@ -337,6 +347,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Batteria**: carica, tempo alla carica completa o tempo rimasto, stato, capacità massima, conteggio cicli, alimentatore di corrente e potenza in watt, e consigli per far durare di più la batteria. Mostra solo informazioni: il limite di caricamento resta in **Impostazioni di Sistema › Batteria**. Compare solo su un Mac con batteria.
 - **Resta sveglio**: durata, opzioni per schermo e coperchio.
 - **Ventole**: velocità di ogni ventola, modalità Auto o velocità manuale quando il controllo ventole è consentito.
+- **Temperatura**: quanto è caldo il Mac, nel complesso e per ogni componente, come processore, memoria e batteria.
 - **Velocità internet**: misura la connessione e mostra a cosa basta.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.

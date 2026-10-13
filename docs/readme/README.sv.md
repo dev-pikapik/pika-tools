@@ -213,6 +213,14 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br>Dock hoppar inte längre till en annan skärm. Håll ned ⌥ för att flytta den med flit.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatur</b>
+<br>Se hur varm din Mac är inuti, från processorn till batteriet.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mer information
@@ -300,6 +308,8 @@ För att veta när en utmärkelse är på väg räknar pikapik bara det du och d
 
 Ångrade du dig? Klicka på **Lägg tillbaka** så hamnar allt där det låg och bakgrundshjälparna startar igen. De tio senaste borttagningarna väntar under ”Nyligen borttagna” så länge deras filer ligger kvar i papperskorgen. **Återställ appen** behåller appen och tar bara bort dess sparade data, inställningar och tillfälliga filer, vilket kan hjälpa när en app krånglar. Appar som du själv flyttat till papperskorgen visas under ”I papperskorgen”, tillsammans med filerna de lämnade kvar, och ”Rester av borttagna appar” hittar filer från appar som redan är borta. Reglaget ”Erbjud städning när en app hamnar i papperskorgen” är avstängt från början, och inget tas bort förrän du väljer. För att se allt som en app sparar behöver sidan **Full skivåtkomst**. Det här verktyget finns inte i versionen från Mac App Store.
 
+**Temperatur.** Öppna Inställningar › Temperatur för att se hur varm din Mac är inuti. Överst sammanfattar ett ord allt, från ”Normal” till ”Mycket het”, med en rad som säger om din Mac går för full fart eller går långsammare för att svalna. Under det har varje del en egen rad med ett begripligt namn i stället för en sensorkod: processor, grafik, minne, lagring, Wi-Fi och batteri, beroende på vilka sensorer din Mac har. Varje rad visar graderna och en kort stapel som blir grön, gul eller orange utifrån det normala intervallet för den delen. Siffrorna uppdateras varannan sekund och bara medan du tittar, så de kostar din Mac nästan ingenting. Inget lösenord eller tillstånd behövs. Du kan också lägga till en rad ”Temperatur” i panelen i menyraden. Versionen från Mac App Store visar bara den övergripande nivån.
+
 Varje verktyg har ett eget reglage i menyn och i inställningarna.
 
 Symbolen i menyraden visar läget med en blick: pikapik-märket när verktygen arbetar, samma märke fast blekt när allt är avstängt och en varningstriangel när ett verktyg är på men behörigheter saknas.
@@ -337,6 +347,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Batteri**: laddning, tid till fulladdat eller återstående tid, skick, maximal kapacitet, cykelantal, strömadapter och effekt i watt samt tips för att batteriet ska räcka längre. Sidan visar bara information: laddningsbegränsningen finns kvar i **Systeminställningar › Batteri**. Visas bara på en Mac med batteri.
 - **Håll vaken**: tid, alternativ för skärm och lock.
 - **Fläktar**: hastigheten för varje fläkt, Auto eller en egen hastighet när Fläktstyrning är tillåten.
+- **Temperatur**: hur varm din Mac är, totalt och för varje del, som processorn, minnet och batteriet.
 - **Hastighetstest**: mät internet och se vad det räcker till.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.

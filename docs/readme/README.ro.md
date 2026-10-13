@@ -213,6 +213,14 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br>Dock-ul nu mai sare pe alt ecran. Ține apăsat ⌥ ca să-l muți intenționat.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatură</b>
+<br>Vezi cât de cald este Mac-ul în interior, de la procesor la baterie.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii
@@ -300,6 +308,8 @@ Ca să știe când se cuvine un premiu, pikapik numără doar ce faceți tu și 
 
 Te-ai răzgândit? Apasă **Pune la loc** și totul revine unde a fost, iar ajutoarele din fundal pornesc din nou. Ultimele zece eliminări așteaptă la „Eliminate recent” cât timp fișierele lor sunt în Coș. **Resetează aplicația** păstrează aplicația și elimină doar datele ei salvate, setările și fișierele temporare, ceea ce poate ajuta când o aplicație se poartă ciudat. Aplicațiile pe care le-ai mutat tu în Coș apar la „În Coș”, împreună cu fișierele rămase, iar „Resturi de la aplicații eliminate” găsește fișierele unor aplicații care nu mai există. Comutatorul „Oferă curățarea când o aplicație ajunge în Coș” este oprit implicit și nu se elimină nimic până nu alegi tu. Ca să vadă tot ce păstrează o aplicație, pagina are nevoie de **Acces complet la disc**. Acest instrument nu există în versiunea din Mac App Store.
 
+**Temperatură.** Deschide Configurări › Temperatură ca să vezi cât de cald este Mac-ul în interior. Sus, un singur cuvânt spune totul, de la „Normal” la „Foarte fierbinte”, iar un rând dedesubt arată dacă Mac-ul funcționează la viteză maximă sau încetinește ca să se răcească. Mai jos, fiecare componentă are rândul ei, cu un nume simplu în loc de un cod de senzor: procesor, grafică, memorie, stocare, Wi-Fi și baterie, după senzorii pe care îi are Mac-ul tău. Fiecare rând arată gradele și o bară scurtă care devine verde, galbenă sau portocalie, după intervalul normal pentru acea componentă. Valorile se actualizează la fiecare două secunde și doar cât timp te uiți la ele, așa că aproape nu încarcă Mac-ul. Nu e nevoie de parolă sau de permisiuni. Poți adăuga și un rând „Temperatură” în panoul din bara de meniu. Versiunea din Mac App Store arată doar nivelul general.
+
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
@@ -337,6 +347,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Baterie**: nivel de încărcare, timp până la încărcarea completă sau timp rămas, stare, capacitate maximă, număr de cicluri, adaptor alimentare și putere în wați, plus sfaturi ca bateria să țină mai mult. Pagina doar arată informații: limita de încărcare rămâne în **Configurări sistem › Baterie**. Apare doar pe un Mac cu baterie.
 - **Menține activ**: durată, opțiuni pentru ecran și capac.
 - **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală, după ce Controlul ventilatoarelor este permis.
+- **Temperatură**: cât de cald este Mac-ul, per total și pentru fiecare componentă, cum ar fi procesorul, memoria și bateria.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.

@@ -213,6 +213,14 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br>Le Dock ne saute plus sur un autre écran. Maintenez ⌥ pour le déplacer volontairement.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Température</b>
+<br>Voyez à quel point votre Mac chauffe à l’intérieur, du processeur à la batterie.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## En savoir plus
@@ -300,6 +308,8 @@ Pour savoir quand une récompense est due, pikapik compte uniquement ce que vous
 
 Vous avez changé d’avis ? Cliquez sur **Remettre en place** : tout revient où c’était et les assistants en arrière-plan redémarrent. Les dix dernières suppressions restent sous « Supprimés récemment » tant que leurs fichiers sont dans la Corbeille. **Réinitialiser l’app** garde l’app et ne supprime que ses données enregistrées, ses réglages et ses fichiers temporaires, ce qui peut aider quand une app se comporte mal. Les apps que vous avez mises à la Corbeille vous-même apparaissent sous « Dans la Corbeille », avec les fichiers qu’elles ont laissés, et « Restes d’apps supprimées » retrouve les fichiers d’apps déjà disparues. L’interrupteur « Proposer de nettoyer quand une app va à la Corbeille » est désactivé par défaut, et rien n’est supprimé tant que vous n’avez pas choisi. Pour tout voir, la page a besoin de l’**Accès complet au disque**. Cet outil n’existe pas dans la version du Mac App Store.
 
+**Température.** Ouvrez Réglages › Température pour voir à quel point votre Mac chauffe à l’intérieur. En haut, un seul mot résume tout, de « Normal » à « Très chaud », avec une ligne qui indique si votre Mac fonctionne à pleine vitesse ou ralentit pour refroidir. En dessous, chaque composant a sa propre ligne avec un nom simple au lieu d’un code de capteur : processeur, processeur graphique, mémoire, stockage, Wi-Fi et batterie, selon les capteurs de votre Mac. Chaque ligne affiche les degrés et une courte barre qui devient verte, jaune ou orange selon la plage normale de ce composant. Les valeurs se mettent à jour toutes les deux secondes, et seulement quand vous les regardez, si bien qu’elles ne coûtent presque rien à votre Mac. Aucun mot de passe ni aucune autorisation ne sont nécessaires. Vous pouvez aussi ajouter une ligne « Température » au panneau de la barre des menus. La version du Mac App Store affiche seulement le niveau général.
+
 Chaque outil a son propre interrupteur dans le menu et dans les réglages.
 
 L’icône dans la barre des menus montre l’état d’un coup d’œil : le symbole pikapik quand les outils fonctionnent, le même symbole plus pâle quand tout est désactivé et un triangle d’avertissement quand un outil est activé mais que des autorisations manquent.
@@ -337,6 +347,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Batterie** : niveau de charge, temps avant la charge complète ou temps restant, état, capacité maximum, nombre de cycles, adaptateur secteur et puissance en watts, et conseils pour faire durer la batterie. La page se contente d’afficher des informations : la limite de recharge reste dans **Réglages Système › Batterie**. Elle n’apparaît que sur un Mac avec batterie.
 - **Rester éveillé** : durée, options d’écran et de capot.
 - **Ventilateurs** : vitesse de chaque ventilateur, mode Auto ou vitesse manuelle une fois le contrôle des ventilateurs autorisé.
+- **Température** : la chaleur de votre Mac, au global et pour chaque composant, comme le processeur, la mémoire et la batterie.
 - **Test de débit** : mesurer la connexion et voir ce qu’elle permet.
 - **Clavier** : changement de langue, répétition des touches, Home et End.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.

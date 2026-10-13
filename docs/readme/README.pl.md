@@ -213,6 +213,14 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br>Dock nie skacze już na inny ekran. Przytrzymaj ⌥, aby celowo go przenieść.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/temperatures-dark.png"><img src="../media/temperatures-light.png" width="340" alt=""></picture>
+<br><b>Temperatura</b>
+<br>Zobacz, jak bardzo Mac nagrzał się w środku, od procesora po baterię.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów
@@ -300,6 +308,8 @@ Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzy
 
 Jeśli zmienisz zdanie, kliknij **Przywróć**: wszystko wróci na swoje miejsce, a pomocnicy w tle znów ruszą. Ostatnie dziesięć usunięć czeka w sekcji „Ostatnio usunięte”, dopóki ich pliki są w Koszu. **Zresetuj aplikację** zostawia aplikację i usuwa tylko jej zapisane dane, ustawienia i pliki tymczasowe, co może pomóc, gdy aplikacja szwankuje. Aplikacje przeniesione przez ciebie do Kosza pojawiają się w sekcji „W Koszu” razem z plikami, które po sobie zostawiły, a sekcja „Pozostałości po usuniętych aplikacjach” znajduje pliki aplikacji, których już nie ma. Przełącznik „Proponuj sprzątanie, gdy aplikacja trafi do Kosza” jest domyślnie wyłączony i nic nie jest usuwane, dopóki nie wybierzesz. Żeby zobaczyć wszystko, co trzyma aplikacja, strona potrzebuje uprawnienia **Pełny dostęp do dysku**. Tego narzędzia nie ma w wersji z Mac App Store.
 
+**Temperatura.** Otwórz Ustawienia › Temperatura, aby zobaczyć, jak bardzo Mac nagrzał się w środku. Na górze jedno słowo podsumowuje wszystko, od „W normie” po „Bardzo gorąco”, a wiersz pod nim mówi, czy Mac działa z pełną prędkością, czy zwalnia, aby ostygnąć. Niżej każda część ma własny wiersz ze zrozumiałą nazwą zamiast kodu czujnika: procesor, grafika, pamięć, dysk, Wi-Fi i bateria, zależnie od tego, jakie czujniki ma twój Mac. Każdy wiersz pokazuje stopnie i krótki pasek, który robi się zielony, żółty lub pomarańczowy w zależności od normalnego zakresu dla tej części. Wartości odświeżają się co dwie sekundy i tylko wtedy, gdy na nie patrzysz, więc prawie nie obciążają Maca. Nie trzeba hasła ani pozwoleń. Wiersz „Temperatura” możesz też dodać do panelu na pasku menu. Wersja z Mac App Store pokazuje tylko ogólny poziom.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
@@ -337,6 +347,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Bateria**: poziom naładowania, czas do pełnego naładowania lub pozostały czas, stan, maksymalna pojemność, liczba cykli, zasilacz i moc w watach oraz wskazówki, jak dbać o baterię. Strona tylko pokazuje informacje: limit ładowania nadal znajdziesz w **Ustawienia systemowe › Bateria**. Widać ją tylko na Macu z baterią.
 - **Bez usypiania**: czas trwania, opcje ekranu i pokrywy.
 - **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie, gdy zezwolono na Sterowanie wentylatorami.
+- **Temperatura**: jak bardzo nagrzał się Mac, ogólnie i dla każdej części, na przykład procesora, pamięci i baterii.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.

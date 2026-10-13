@@ -28,7 +28,7 @@ import AppKit
         }
     }
 
-    private nonisolated static func isPanel(_ window: NSWindow?) -> Bool {
+    nonisolated static func isPanel(_ window: NSWindow?) -> Bool {
         window.map { NSStringFromClass(type(of: $0)).contains("MenuBarExtraWindow") } ?? false
     }
 
