@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Zobacz, jak się miewa bateria
+
+<sub>1.41.0 · 13 października 2026</sub>
+
+Nowa strona Bateria w Ustawieniach pokazuje, jak zużyta jest bateria, czym się ładuje i jak sprawić, by działała dłużej.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Bateria. Zobaczysz poziom naładowania i to, co się teraz dzieje z baterią, jej stan, maksymalną pojemność w porównaniu z nową baterią oraz liczbę cykli, czyli ile z 1000, na jakie ją zaprojektowano, już zużyła.
+
+Gdy Mac jest podłączony do prądu, strona pokazuje zasilacz i jego moc, a podczas ładowania także moc ładowania, czyli to, co teraz trafia do baterii. Gdy Mac działa na baterii, strona pokazuje, ile energii zużywa w tej chwili.
+
+Wskazówki na dole pomagają baterii działać dłużej, a „Ustawienia baterii…” otwiera sekcję Bateria w Ustawieniach systemowych, gdzie wybierasz, jak macOS ją ładuje. Strona niczego nie zmienia i nie wymaga żadnych uprawnień, także w wersji z Mac App Store. Pojawia się tylko na komputerach Mac z baterią.
+
+**Poprawki**
+
+- Usunięcie pikapik przez Homebrew wyłącza teraz także „Otwórz przy logowaniu” i przywraca ustawienia systemowe zmienione przez aplikację, takie jak animacje, powtarzanie klawiszy i aktywne rogi. Jeśli pikapik aktualizował się sam, przed usunięciem uruchom raz brew upgrade --cask pikapik.
+
+---
+
 ## <a id="v1.40.2"></a>Aktualizacje przez Homebrew już nie restartują Docka
 
 <sub>1.40.2 · 13 października 2026</sub>

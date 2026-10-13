@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Lihat kondisi baterai Anda
+
+<sub>1.41.0 · 13 Oktober 2026</sub>
+
+Halaman Baterai yang baru di Pengaturan menunjukkan seberapa aus baterai, apa yang mengisinya, dan cara membuatnya lebih awet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Baterai. Anda melihat tingkat pengisian dan apa yang sedang terjadi pada baterai saat ini, kondisinya, kapasitas maksimum dibandingkan saat masih baru, dan jumlah siklus yang sudah terpakai dari 1.000 siklus yang dirancang.
+
+Saat Mac Anda tersambung ke listrik, halaman ini menampilkan adaptor daya dan wattnya, dan saat mengisi daya juga daya pengisian, yaitu seberapa banyak daya yang masuk ke baterai saat ini. Saat Mac Anda berjalan dengan baterai, halaman ini menampilkan berapa banyak daya yang sedang dipakainya.
+
+Tips di bagian bawah membantu baterai bertahan lebih lama, dan “Pengaturan Baterai…” membuka Baterai di Pengaturan Sistem, tempat Anda memilih cara macOS mengisinya. Halaman ini tidak mengubah apa pun dan tidak memerlukan izin apa pun, termasuk di versi Mac App Store. Halaman ini hanya muncul di Mac yang memiliki baterai.
+
+**Diperbaiki**
+
+- Menghapus pikapik dengan Homebrew kini juga mematikan “Buka saat Login” dan mengembalikan pengaturan sistem yang diubah aplikasi, seperti animasi, pengulangan tombol, dan sudut aktif. Jika pikapik selama ini memperbarui dirinya sendiri, jalankan brew upgrade --cask pikapik sekali sebelum menghapusnya.
+
+---
+
 ## <a id="v1.40.2"></a>Pembaruan lewat Homebrew tidak lagi memulai ulang Dock
 
 <sub>1.40.2 · 13 Oktober 2026</sub>

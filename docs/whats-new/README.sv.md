@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Se hur batteriet mår
+
+<sub>1.41.0 · 13 oktober 2026</sub>
+
+En ny sida i Inställningar, Batteri, visar hur slitet batteriet är, vad det laddas med och hur du får det att räcka längre.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Batteri. Där ser du laddningen och vad som händer med batteriet just nu, dess skick, den maximala kapaciteten jämfört med när det var nytt och cykelantalet, alltså hur många cykler det redan har gått igenom av de 1000 det är utformat för.
+
+När din Mac är ansluten visar sidan strömadaptern och dess effekt, och medan den laddar också laddeffekten, alltså hur mycket som går in i batteriet just nu. När din Mac går på batteri visar sidan hur mycket ström den använder just nu.
+
+Tipsen längst ner hjälper batteriet att räcka längre, och ”Batteriinställningar…” öppnar Batteri i Systeminställningar, där du väljer hur macOS laddar det. Sidan ändrar ingenting och behöver ingen behörighet, inte heller i versionen från Mac App Store. Den finns bara på Mac-datorer med batteri.
+
+**Åtgärdat**
+
+- När du tar bort pikapik med Homebrew stängs nu även ”Öppna vid inloggning” av, och systeminställningarna som appen ändrat återställs, till exempel animationer, tangentupprepning och aktiva hörn. Om pikapik har uppdaterat sig själv kör du brew upgrade --cask pikapik en gång innan du tar bort den.
+
+---
+
 ## <a id="v1.40.2"></a>Uppdateringar med Homebrew startar inte längre om Dock
 
 <sub>1.40.2 · 13 oktober 2026</sub>

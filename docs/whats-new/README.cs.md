@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Podívejte se, jak je na tom baterie
+
+<sub>1.41.0 · 13. října 2026</sub>
+
+Nová stránka Baterie v Nastavení ukazuje, jak je baterie opotřebovaná, čím se nabíjí a jak prodloužit její výdrž.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Baterie. Uvidíte nabití a to, co se s baterií právě děje, její stav, maximální kapacitu ve srovnání s novou baterií a počet cyklů, tedy kolik z 1000, na které je navržená, už má za sebou.
+
+Když je Mac připojený k síti, stránka ukazuje napájecí adaptér a jeho výkon, a při nabíjení také nabíjecí výkon, tedy kolik právě proudí do baterie. Když Mac běží na baterii, stránka ukazuje, kolik energie právě spotřebovává.
+
+Tipy dole pomáhají baterii vydržet déle a „Nastavení baterie…“ otevře v Nastavení systému část Baterie, kde si vyberete, jak ji macOS nabíjí. Stránka nic nemění a nepotřebuje žádné oprávnění, ani ve verzi z Mac App Store. Zobrazuje se jen na Macích s baterií.
+
+**Opraveno**
+
+- Při odinstalování pikapik přes Homebrew se teď také vypne „Otevřít při přihlášení“ a obnoví se systémová nastavení, která aplikace změnila, například animace, opakování kláves a aktivní rohy. Pokud se pikapik aktualizoval sám, před odinstalováním jednou spusťte brew upgrade --cask pikapik.
+
+---
+
 ## <a id="v1.40.2"></a>Aktualizace přes Homebrew už nerestartují Dock
 
 <sub>1.40.2 · 13. října 2026</sub>

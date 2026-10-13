@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Pilinizin durumunu görün
+
+<sub>1.41.0 · 13 Ekim 2026</sub>
+
+Ayarlar’daki yeni Pil sayfası, pilin ne kadar yıprandığını, neyle şarj olduğunu ve ömrünün nasıl uzatılacağını gösterir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Ayarlar › Pil sayfasını açın. Şarj düzeyini ve pilin şu anda ne yaptığını, durumunu, yeni haline göre maksimum kapasitesini ve devir sayısını, yani tasarlandığı 1.000 devirden kaçını kullandığını görürsünüz.
+
+Mac’iniz prize takılıyken sayfa güç adaptörünü ve gücünü gösterir; şarj olurken ayrıca şarj gücünü, yani şu anda pile giren gücü de gösterir. Mac’iniz pille çalışırken ise sayfa şu anda ne kadar güç kullandığını gösterir.
+
+Sayfanın altındaki ipuçları pilin daha uzun dayanmasına yardım eder; “Pil Ayarları…” ise Sistem Ayarları’nda Pil bölümünü açar, macOS’un pili nasıl şarj edeceğini orada seçersiniz. Sayfa hiçbir şeyi değiştirmez ve hiçbir izin gerektirmez, Mac App Store sürümünde de. Yalnızca pili olan Mac’lerde görünür.
+
+**Düzeltilenler**
+
+- pikapik’i Homebrew ile kaldırdığınızda artık “Girişte Aç” da kapanıyor ve uygulamanın değiştirdiği animasyonlar, tuş tekrarı ve etkin köşeler gibi sistem ayarları eski hâline dönüyor. pikapik kendini güncellediyse, kaldırmadan önce bir kez brew upgrade --cask pikapik komutunu çalıştırın.
+
+---
+
 ## <a id="v1.40.2"></a>Homebrew ile güncelleme artık Dock’u yeniden başlatmıyor
 
 <sub>1.40.2 · 13 Ekim 2026</sub>

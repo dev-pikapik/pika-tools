@@ -5,6 +5,26 @@
 
 ---
 
+## <a id="v1.41.0"></a>Bekijk hoe het met je batterij gaat
+
+<sub>1.41.0 · 13 oktober 2026</sub>
+
+Een nieuwe pagina Batterij in Instellingen laat zien hoe versleten de batterij is, waarmee hij wordt opgeladen en hoe je hem langer laat meegaan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Batterij. Je ziet de lading en wat er nu met de batterij gebeurt, de conditie, de maximumcapaciteit vergeleken met een nieuwe batterij en het aantal cycli dat hij al heeft gehad van de 1.000 waarvoor hij is ontworpen.
+
+Als je Mac is aangesloten, laat de pagina de lichtnetadapter en het vermogen ervan zien, en tijdens het opladen ook het oplaadvermogen, dus hoeveel stroom er nu de batterij in gaat. Als je Mac op de batterij draait, laat de pagina zien hoeveel hij nu verbruikt.
+
+Tips onderaan helpen de batterij langer mee te gaan, en ‘Batterij-instellingen…’ opent Batterij in Systeeminstellingen, waar je kiest hoe macOS hem oplaadt. De pagina verandert niets en heeft geen toestemming nodig, ook niet in de versie uit de Mac App Store. Ze verschijnt alleen op Macs met een batterij.
+
+**Opgelost**
+
+- Als je pikapik met Homebrew verwijdert, wordt nu ook ‘Open bij inloggen’ uitgeschakeld en worden de systeeminstellingen die de app had gewijzigd hersteld, zoals animaties, toetsherhaling en actieve hoeken. Heeft pikapik zichzelf steeds bijgewerkt, voer dan vóór het verwijderen één keer brew upgrade --cask pikapik uit.
+
+---
+
 ## <a id="v1.40.2"></a>Updates met Homebrew starten het Dock niet meer opnieuw
 
 <sub>1.40.2 · 13 oktober 2026</sub>
