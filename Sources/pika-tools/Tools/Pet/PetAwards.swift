@@ -22,7 +22,7 @@ enum PetAward: String, CaseIterable, Identifiable {
 
     static var all: [PetAward] { allCases.filter { $0 != .github || !appStore } }
 
-    static var pages: [SettingsTab] { SettingsTab.allCases.filter { !appStore || ($0 != .fans && $0 != .animations) } }
+    static var pages: [SettingsTab] { SettingsTab.allCases.filter(\.isAvailable) }
 
     var id: Self { self }
 
