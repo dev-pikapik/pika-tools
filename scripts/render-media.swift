@@ -34,6 +34,7 @@ enum RenderMedia {
         ("game-fps", 4.0, AnyView(FrameRatePicture(corner: .topRight, on: true, select: { _ in }))),
         ("pet", 16.65, AnyView(PetArt(on: true))),
         ("speed-test", 5.4, AnyView(SpeedTestArt())),
+        ("ports", PortsCard.length, AnyView(PortsCard())),
         ("side-buttons", 5.1, AnyView(SideButtonsArt(on: true, swapped: false))),
         ("wheel-lines", 3.2, AnyView(ScrollStepArt(on: true, distance: 30))),
         ("wheel-direction", 3.0, AnyView(ScrollDirectionArt(trackpadNatural: true, mouseNatural: false))),
@@ -1241,5 +1242,156 @@ private struct BackgroundCard: View {
                 .frame(width: off ? 50 : 38, height: 17)
         }
         .frame(height: 30)
+    }
+}
+
+private struct PortsCard: View {
+    static let durations = [1.0, 0.14, 0.14, 0.14, 0.75, 1.15, 0.15, 1.25, 0.15, 0.45, 1.8, 0.6]
+    static var length: Double { durations.reduce(0, +) }
+    private static let rest = CGPoint(x: 286, y: 100)
+    private static let freeUp = CGPoint(x: 225, y: 65)
+    private static let quit = CGPoint(x: 177, y: 72)
+    private static let programs: [(name: CGFloat, folder: CGFloat, port: String)] = [(30, 54, "3000"), (42, 44, "8000"), (50, 62, "5432")]
+    private static let icon = NSWorkspace.shared.icon(for: .unixExecutable)
+
+    var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = tick % Self.durations.count
+            let typed = (1...10).contains(step) ? min(step, 4) : 0
+            let asking = (7...8).contains(step)
+            Stage {
+                ArtWindow(size: CGSize(width: 236, height: 108)) { Color.clear }
+                    .position(x: 150, y: 64)
+                search(typed: typed, free: step == 10)
+                    .frame(width: 220, height: 40, alignment: .top)
+                    .position(x: 150, y: 50)
+                list(all: typed == 0, pressed: step == 6)
+                    .opacity((9...10).contains(step) ? 0 : 1)
+                    .frame(width: 220, height: 60, alignment: .top)
+                    .position(x: 150, y: 85)
+                alert(pressed: step == 8)
+                    .scaleEffect(asking ? 1 : 0.94, anchor: .top)
+                    .opacity(asking ? 1 : 0)
+                    .position(x: 150, y: 57)
+                if (6...7).contains(step) { ArtRipple().position(Self.freeUp) }
+                if (8...9).contains(step) { ArtRipple().position(Self.quit) }
+                ArtCursor(pressed: step == 6 || step == 8)
+                    .cursor(at: (5...6).contains(step) ? Self.freeUp : (7...9).contains(step) ? Self.quit : Self.rest)
+            }
+            .animation(.smooth(duration: 0.35), value: step)
+        }
+    }
+
+    private func search(typed: Int, free: Bool) -> some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 4) {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 8, weight: .medium))
+                    .foregroundStyle(.secondary)
+                HStack(spacing: 1) {
+                    if typed > 0 {
+                        Text(verbatim: String("3000".prefix(typed)))
+                            .font(.system(size: 9, weight: .medium))
+                            .monospacedDigit()
+                    }
+                    Rectangle().fill(Color.primary.opacity(0.8)).frame(width: 1, height: 10)
+                    if typed == 0 {
+                        Capsule().fill(Color.primary.opacity(0.14)).frame(width: 64, height: 3.5).padding(.leading, 2)
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 8)
+            .frame(height: 20)
+            if free {
+                divider(inset: 8)
+                HStack(spacing: 4) {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 9))
+                        .foregroundStyle(.white, Art.green)
+                    Capsule().fill(Color.primary.opacity(0.4)).frame(width: 18, height: 3.5)
+                    Text(verbatim: "3000")
+                        .font(.system(size: 9, weight: .semibold))
+                        .monospacedDigit()
+                    Capsule().fill(Color.primary.opacity(0.4)).frame(width: 30, height: 3.5)
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 8)
+                .frame(height: 20)
+                .transition(.opacity)
+            }
+        }
+        .background(Self.box)
+    }
+
+    private func list(all: Bool, pressed: Bool) -> some View {
+        VStack(spacing: 0) {
+            ForEach(Self.programs.indices, id: \.self) { index in
+                if index == 0 || all {
+                    if index > 0 { divider(inset: 29) }
+                    row(Self.programs[index], pressed: index == 0 && pressed)
+                }
+            }
+        }
+        .background(Self.box)
+    }
+
+    private func row(_ program: (name: CGFloat, folder: CGFloat, port: String), pressed: Bool) -> some View {
+        HStack(spacing: 6) {
+            Image(nsImage: Self.icon).resizable().frame(width: 15, height: 15)
+            VStack(alignment: .leading, spacing: 3) {
+                Capsule().fill(Color.primary.opacity(0.5)).frame(width: program.name, height: 4)
+                Capsule().fill(Color.primary.opacity(0.16)).frame(width: program.folder, height: 3)
+            }
+            Spacer(minLength: 0)
+            HStack(spacing: 5) {
+                Text(verbatim: program.port)
+                    .font(.system(size: 8.5, weight: .medium))
+                    .monospacedDigit()
+                    .frame(width: 28, height: 12)
+                    .background(Color.primary.opacity(0.08), in: Capsule())
+                Capsule().fill(Color.primary.opacity(pressed ? 0.22 : 0.1))
+                    .overlay(Capsule().fill(Color.primary.opacity(0.45)).frame(width: 18, height: 3))
+                    .frame(width: 34, height: 13)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 6.5, weight: .semibold))
+                    .foregroundStyle(.tertiary)
+                    .frame(width: 5)
+            }
+        }
+        .padding(.horizontal, 8)
+        .frame(height: 20)
+    }
+
+    private func alert(pressed: Bool) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
+        return VStack(spacing: 0) {
+            Capsule().fill(Color.primary.opacity(0.55)).frame(width: 54, height: 4.5)
+            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 92, height: 3).padding(.top, 7)
+            Capsule().fill(Color.primary.opacity(0.2)).frame(width: 70, height: 3).padding(.top, 4)
+            HStack(spacing: 6) {
+                Capsule().fill(Color.primary.opacity(0.1))
+                    .overlay(Capsule().fill(Color.primary.opacity(0.4)).frame(width: 20, height: 3))
+                Capsule().fill(Color.accentColor)
+                    .overlay(Capsule().fill(.white).frame(width: 16, height: 3))
+                    .brightness(pressed ? -0.12 : 0)
+            }
+            .frame(height: 14)
+            .padding(.top, 9)
+        }
+        .padding(10)
+        .frame(width: 124, height: 64)
+        .background(Color(nsColor: .windowBackgroundColor), in: shape)
+        .overlay(shape.hairline(Color.primary.opacity(0.14)))
+        .shadow(color: .black.opacity(0.22), radius: 8, y: 4)
+    }
+
+    private func divider(inset: CGFloat) -> some View {
+        Rectangle().fill(Color.primary.opacity(0.08)).frame(height: 0.5).padding(.leading, inset)
+    }
+
+    private static var box: some View {
+        let shape = RoundedRectangle(cornerRadius: 6, style: .continuous)
+        return shape.fill(Color.primary.opacity(0.04)).overlay(shape.hairline(Color.primary.opacity(0.08)))
     }
 }
