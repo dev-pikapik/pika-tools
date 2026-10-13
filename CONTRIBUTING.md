@@ -111,6 +111,12 @@ Before Homebrew removes the app, it runs `pika-tools --uninstall`, which turns o
 swiftc -parse-as-library Sources/pika-tools/Common/Brew.swift scripts/test-brew.swift -o build/test-brew && build/test-brew
 ```
 
+Fan control talks to a small helper that runs as root. You install it once, with the administrator password, from Settings › Permissions. On every connection the app and the helper check each other’s signature: the same developer, and the helper’s name is the app’s name plus `.fans`. The helper carries the app’s build number inside its signature. When pikapik updates, it hands the new helper from its own bundle to the one already installed, and the helper updates itself without a password: it copies the file into its own folder, which only root can write to, and checks that copy’s signature and that its build number isn’t lower than its own. It swaps the files in one step only when it quits, after the last app disconnects, and checks the copy once more first: macOS compares a running program with its file on disk, so a helper swapped while running would fail every signature check until it restarts. If anything fails, the copy is deleted, the old helper stays and the fans keep working. The new code starts the next time the helper is launched. The test signs tiny programs with the local `pikapik Dev` certificate, or the one named in `SIGN_IDENTITY`, and stages and swaps them in a temporary folder:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/FanHelperProtocol.swift scripts/test-fan-helper.swift -o build/test-fan-helper && codesign -f -s "${SIGN_IDENTITY:-pikapik Dev}" build/test-fan-helper && build/test-fan-helper
+```
+
 iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pikapik-dev for local builds. Earlier versions used a pika-tools folder. When sync starts, that folder is renamed. If both folders exist, the file with the later time saved inside it ends up in pikapik, and the old folder is deleted once nothing else is left in it. The move lives in `SettingsFile.moveFolder`, and the test works on temporary folders:
 
 ```bash
@@ -178,12 +184,12 @@ Before running the script, add the version to `CHANGELOG.md` under `## [1.3.0] -
 
 ### Signing
 
-Releases are signed with a permanent self-issued certificate, so macOS keeps the Accessibility and Input Monitoring permissions across updates. The certificate lives in two repository secrets:
+Every release is signed with the same certificate, so macOS keeps the Accessibility and Input Monitoring permissions across updates and the fan helper accepts the next version without a password. The certificate lives in repository secrets:
 
-- `SIGN_P12`: the certificate and private key exported as `.p12`, base64-encoded.
-- `SIGN_P12_PASSWORD`: the password for that `.p12`.
+- `DEVID_P12` and `DEVID_P12_PASSWORD`: the Developer ID Application certificate and private key exported as `.p12`, base64-encoded, and its password. When they are set, the release is signed with Developer ID and sent to Apple for notarization.
+- `SIGN_P12` and `SIGN_P12_PASSWORD`: a permanent self-issued certificate, used only when there is no Developer ID. Its common name must be `pikapik`.
 
-The certificate's common name must be `pikapik`. Without these secrets the release job fails on purpose: an ad-hoc signed release would reset everyone's permissions.
+Without any of these secrets the release job fails on purpose: an ad-hoc signed release would reset everyone's permissions.
 
 ## Icon
 

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Sterowanie wentylatorami nie prosi już o hasło
+
+<sub>1.41.1 · 13 października 2026</sub>
+
+Pomocnik, który ustawia prędkość wentylatorów, aktualizuje się teraz razem z pikapik, więc nowe wersje nie proszą już o hasło administratora.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Ta aktualizacja poprosi o hasło po raz ostatni. Jeśli używasz sterowania wentylatorami, otwórz Ustawienia › Uprawnienia, kliknij „Zezwól” obok „Sterowanie wentylatorami” i wpisz hasło. Od tej pory pikapik sam aktualizuje pomocnika i przyjmuje tylko pomocnika, który naprawdę pochodzi od pikapik.
+
+**Poprawki**
+
+- W Ustawieniach systemowych › Ogólne › Rzeczy otwierane podczas logowania pomocnik wentylatorów wyświetla się teraz jako pikapik, z ikoną aplikacji.
+
+---
+
 ## <a id="v1.41.0"></a>Zobacz, jak się miewa bateria
 
 <sub>1.41.0 · 13 października 2026</sub>

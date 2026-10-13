@@ -19,6 +19,7 @@ rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
 [ -n "${APPSTORE:-}" ] || ./scripts/fetch-7zip.sh
+[ -n "${APPSTORE:-}" ] || /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" Sources/pika-tools/Info.plist)" build/fan-helper.plist >/dev/null
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
@@ -57,6 +58,7 @@ for ARCH in arm64 x86_64; do
     [ -n "${APPSTORE:-}" ] || swiftc -O -whole-module-optimization \
         -module-name FanHelper \
         -target "$ARCH-apple-macos$MIN_OS" \
+        -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __info_plist -Xlinker build/fan-helper.plist \
         Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
         -o "build/fan-helper-$ARCH"
     for EXT in $EXTENSIONS; do

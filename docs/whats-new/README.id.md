@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Kontrol kipas tidak lagi meminta kata sandi
+
+<sub>1.41.1 · 13 Oktober 2026</sub>
+
+Pembantu yang mengatur kecepatan kipas kini diperbarui bersama pikapik, jadi versi baru tidak lagi meminta kata sandi administrator.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Pembaruan ini memintanya untuk terakhir kali. Jika Anda memakai kontrol kipas, buka Pengaturan › Izin, klik “Izinkan” di samping “Kontrol kipas”, lalu masukkan kata sandi. Setelah itu pikapik memperbarui pembantunya sendiri dan hanya menerima pembantu yang benar-benar berasal dari pikapik.
+
+**Diperbaiki**
+
+- Di Pengaturan Sistem › Umum › Item Login, pembantu kipas kini tampil sebagai pikapik, lengkap dengan ikon app.
+
+---
+
 ## <a id="v1.41.0"></a>Lihat kondisi baterai Anda
 
 <sub>1.41.0 · 13 Oktober 2026</sub>

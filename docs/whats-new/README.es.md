@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>El control de ventiladores ya no te pide la contraseña
+
+<sub>1.41.1 · 13 de octubre de 2026</sub>
+
+El ayudante que ajusta la velocidad de los ventiladores ahora se actualiza junto con pikapik, así que las nuevas versiones ya no piden la contraseña de administrador.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Esta actualización la pide por última vez. Si usas el control de ventiladores, abre Ajustes › Permisos, haz clic en «Permitir» junto a «Control de ventiladores» e introduce la contraseña. A partir de ahí, pikapik actualiza el ayudante por sí solo y solo acepta un ayudante que de verdad venga de pikapik.
+
+**Corregido**
+
+- En Ajustes del Sistema › General › Ítems de inicio, el ayudante de los ventiladores ahora aparece como pikapik, con el icono de la app.
+
+---
+
 ## <a id="v1.41.0"></a>Mira cómo está tu batería
 
 <sub>1.41.0 · 13 de octubre de 2026</sub>

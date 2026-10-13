@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Fan control no longer asks for your password
+
+<sub>1.41.1 · October 13, 2026</sub>
+
+The helper that sets your fan speed now updates itself together with pikapik, so new versions no longer ask for the administrator password.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+This update asks for it one last time. If you use fan control, open Settings › Permissions, click Allow next to Fan control and enter the password. From then on, pikapik updates the helper by itself and accepts only a helper that really comes from pikapik.
+
+**Fixed**
+
+- In System Settings › General › Login Items, the fan helper now shows up as pikapik, with the app’s icon.
+
+---
+
 ## <a id="v1.41.0"></a>See how your battery is doing
 
 <sub>1.41.0 · October 13, 2026</sub>

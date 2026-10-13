@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Controlul ventilatoarelor nu îți mai cere parola
+
+<sub>1.41.1 · 13 octombrie 2026</sub>
+
+Ajutorul care setează viteza ventilatoarelor se actualizează acum împreună cu pikapik, așa că versiunile noi nu mai cer parola de administrator.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Această actualizare o cere pentru ultima dată. Dacă folosești controlul ventilatoarelor, deschide Setări › Permisiuni, apasă „Permite” lângă „Controlul ventilatoarelor” și introdu parola. De acum înainte, pikapik actualizează singur ajutorul și acceptă doar un ajutor care vine cu adevărat de la pikapik.
+
+**Reparat**
+
+- În Configurări sistem › General › Articole de autentificare, ajutorul ventilatoarelor apare acum ca pikapik, cu pictograma aplicației.
+
+---
+
 ## <a id="v1.41.0"></a>Vezi cum stă bateria
 
 <sub>1.41.0 · 13 octombrie 2026</sub>
