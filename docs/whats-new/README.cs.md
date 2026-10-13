@@ -11,7 +11,7 @@
 
 Dříve po zavření okna hesla červeným tlačítkem pikapik až do restartu přestal otevírat a vytvářet archivy. To je opraveno.
 
-Červené tlačítko v okně hesla a v okně nového archivu teď funguje přesně jako „Zrušit“ a další archiv se otevře hned. Po zapnutí volby „Heslo“ u nového archivu se kurzor rovnou objeví v poli pro heslo. VoiceOver teď tlačítko aktualizace v Nastavení › O aplikaci čte jeho vlastním názvem.
+Červené tlačítko v okně hesla a v okně nového archivu teď funguje přesně jako „Zrušit“ a další archiv se otevře hned. VoiceOver teď tlačítko aktualizace v Nastavení › O aplikaci čte jeho vlastním názvem.
 
 ---
 

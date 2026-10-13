@@ -11,7 +11,7 @@
 
 Trước đây, nếu đóng cửa sổ mật khẩu bằng nút đỏ, pikapik sẽ không mở hay tạo được bản lưu trữ nào nữa cho đến khi khởi động lại. Lỗi này đã được sửa.
 
-Giờ đây, nút đỏ trong cửa sổ mật khẩu và cửa sổ tạo bản lưu trữ mới hoạt động y như “Hủy”, và bản lưu trữ tiếp theo mở ra ngay. Khi bật “Mật khẩu” cho bản lưu trữ mới, con trỏ sẽ nằm sẵn trong ô mật khẩu. VoiceOver giờ đọc nút cập nhật trong Cài đặt › Giới thiệu bằng chính tên của nút.
+Giờ đây, nút đỏ trong cửa sổ mật khẩu và cửa sổ tạo bản lưu trữ mới hoạt động y như “Hủy”, và bản lưu trữ tiếp theo mở ra ngay. VoiceOver giờ đọc nút cập nhật trong Cài đặt › Giới thiệu bằng chính tên của nút.
 
 ---
 

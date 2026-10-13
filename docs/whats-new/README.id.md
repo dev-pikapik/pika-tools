@@ -11,7 +11,7 @@
 
 Sebelumnya, jika jendela kata sandi ditutup dengan tombol merah, pikapik berhenti membuka dan membuat arsip sampai dimulai ulang. Masalah ini sudah diperbaiki.
 
-Kini tombol merah di jendela kata sandi dan di jendela arsip baru bekerja persis seperti “Batalkan”, dan arsip berikutnya langsung terbuka. Saat “Kata sandi” dinyalakan untuk arsip baru, kursor langsung berada di kolom kata sandi. VoiceOver kini membacakan tombol pembaruan di Pengaturan › Tentang dengan namanya sendiri.
+Kini tombol merah di jendela kata sandi dan di jendela arsip baru bekerja persis seperti “Batalkan”, dan arsip berikutnya langsung terbuka. VoiceOver kini membacakan tombol pembaruan di Pengaturan › Tentang dengan namanya sendiri.
 
 ---
 

@@ -11,7 +11,7 @@
 
 Önceden parola penceresi kırmızı düğmeyle kapatıldığında pikapik, yeniden başlatılana kadar arşiv açmıyor ve oluşturmuyordu. Bu sorun giderildi.
 
-Parola penceresindeki ve yeni arşiv penceresindeki kırmızı düğme artık tam olarak “Vazgeç” gibi çalışıyor ve sonraki arşiv hemen açılıyor. Yeni bir arşiv için “Parola” açıldığında imleç doğrudan parola alanına geçiyor. VoiceOver artık Ayarlar › Hakkında bölümündeki güncelleme düğmesini kendi adıyla okuyor.
+Parola penceresindeki ve yeni arşiv penceresindeki kırmızı düğme artık tam olarak “Vazgeç” gibi çalışıyor ve sonraki arşiv hemen açılıyor. VoiceOver artık Ayarlar › Hakkında bölümündeki güncelleme düğmesini kendi adıyla okuyor.
 
 ---
 

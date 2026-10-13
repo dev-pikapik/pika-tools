@@ -11,7 +11,7 @@
 
 Înainte, după ce fereastra pentru parolă era închisă cu butonul roșu, pikapik nu mai deschidea și nu mai crea arhive până la repornire. Acum problema e rezolvată.
 
-Butonul roșu din fereastra pentru parolă și din cea pentru o arhivă nouă funcționează acum exact ca „Anulează”, iar următoarea arhivă se deschide imediat. Când activați „Parolă” pentru o arhivă nouă, cursorul ajunge direct în câmpul pentru parolă. VoiceOver citește acum butonul de actualizare din Setări › Despre după propriul nume.
+Butonul roșu din fereastra pentru parolă și din cea pentru o arhivă nouă funcționează acum exact ca „Anulează”, iar următoarea arhivă se deschide imediat. VoiceOver citește acum butonul de actualizare din Setări › Despre după propriul nume.
 
 ---
 

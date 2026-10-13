@@ -11,7 +11,7 @@
 
 Wcześniej po zamknięciu okna hasła czerwonym przyciskiem pikapik aż do ponownego uruchomienia nie otwierał ani nie tworzył archiwów. To już naprawione.
 
-Czerwony przycisk w oknie hasła i w oknie nowego archiwum działa teraz dokładnie tak jak „Anuluj”, a kolejne archiwum otwiera się od razu. Po włączeniu opcji „Hasło” dla nowego archiwum kursor od razu trafia do pola hasła. VoiceOver odczytuje teraz przycisk aktualizacji na karcie „Informacje” w Ustawieniach jego własną nazwą.
+Czerwony przycisk w oknie hasła i w oknie nowego archiwum działa teraz dokładnie tak jak „Anuluj”, a kolejne archiwum otwiera się od razu. VoiceOver odczytuje teraz przycisk aktualizacji na karcie „Informacje” w Ustawieniach jego własną nazwą.
 
 ---
 

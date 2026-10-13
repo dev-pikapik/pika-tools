@@ -11,7 +11,7 @@
 
 Antes, si cerrabas la ventana de la contraseña con el botón rojo, pikapik dejaba de abrir y crear archivos comprimidos hasta que lo reiniciabas. Ya está corregido.
 
-Ahora el botón rojo de la ventana de la contraseña y de la de un archivo comprimido nuevo funciona igual que “Cancelar”, y el siguiente archivo se abre enseguida. Al activar “Contraseña” para un archivo comprimido nuevo, el cursor va directo al campo de la contraseña. VoiceOver ahora lee el botón de actualización de Ajustes › Acerca de por su propio nombre.
+Ahora el botón rojo de la ventana de la contraseña y de la de un archivo comprimido nuevo funciona igual que “Cancelar”, y el siguiente archivo se abre enseguida. VoiceOver ahora lee el botón de actualización de Ajustes › Acerca de por su propio nombre.
 
 ---
 

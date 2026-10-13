@@ -11,7 +11,7 @@
 
 Before, if you closed the password window with the red button, pikapik stopped opening and creating archives until you restarted it. That’s fixed.
 
-Now the red button in the password window and in the window for a new archive works just like Cancel, and the next archive opens right away. When you turn on Password for a new archive, the cursor goes straight into the password field. VoiceOver now reads the update button in Settings › About by its own name.
+Now the red button in the password window and in the window for a new archive works just like Cancel, and the next archive opens right away. VoiceOver now reads the update button in Settings › About by its own name.
 
 ---
 

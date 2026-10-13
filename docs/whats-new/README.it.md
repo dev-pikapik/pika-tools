@@ -11,7 +11,7 @@
 
 Prima, se chiudevi la finestra della password con il pulsante rosso, pikapik smetteva di aprire e creare archivi finché non lo riavviavi. Ora è risolto.
 
-Il pulsante rosso nella finestra della password e in quella per un nuovo archivio ora funziona esattamente come “Annulla”, e l’archivio successivo si apre subito. Quando attivi “Password” per un nuovo archivio, il cursore va subito nel campo della password. VoiceOver ora legge il pulsante di aggiornamento in Impostazioni › Info con il suo nome.
+Il pulsante rosso nella finestra della password e in quella per un nuovo archivio ora funziona esattamente come “Annulla”, e l’archivio successivo si apre subito. VoiceOver ora legge il pulsante di aggiornamento in Impostazioni › Info con il suo nome.
 
 ---
 

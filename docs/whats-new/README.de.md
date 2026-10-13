@@ -11,7 +11,7 @@
 
 Wurde das Passwortfenster mit der roten Taste geschlossen, hat pikapik bis zum nächsten Neustart keine Archive mehr geöffnet oder erstellt. Das ist behoben.
 
-Die rote Taste im Passwortfenster und im Fenster für ein neues Archiv wirkt jetzt genau wie „Abbrechen“, und das nächste Archiv öffnet sich sofort. Schaltet man „Passwort“ für ein neues Archiv ein, steht der Cursor gleich im Passwortfeld. VoiceOver liest die Taste zum Aktualisieren unter „Einstellungen“ › „Über“ jetzt mit ihrem eigenen Namen vor.
+Die rote Taste im Passwortfenster und im Fenster für ein neues Archiv wirkt jetzt genau wie „Abbrechen“, und das nächste Archiv öffnet sich sofort. VoiceOver liest die Taste zum Aktualisieren unter „Einstellungen“ › „Über“ jetzt mit ihrem eigenen Namen vor.
 
 ---
 

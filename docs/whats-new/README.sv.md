@@ -11,7 +11,7 @@
 
 Om du stängde lösenordsfönstret med den röda knappen slutade pikapik att öppna och skapa arkiv tills du startade om appen. Det är åtgärdat.
 
-Den röda knappen i lösenordsfönstret och i fönstret för ett nytt arkiv fungerar nu precis som ”Avbryt”, och nästa arkiv öppnas direkt. När du slår på ”Lösenord” för ett nytt arkiv hamnar markören direkt i lösenordsfältet. VoiceOver läser nu upp uppdateringsknappen i Inställningar › Om med dess eget namn.
+Den röda knappen i lösenordsfönstret och i fönstret för ett nytt arkiv fungerar nu precis som ”Avbryt”, och nästa arkiv öppnas direkt. VoiceOver läser nu upp uppdateringsknappen i Inställningar › Om med dess eget namn.
 
 ---
 

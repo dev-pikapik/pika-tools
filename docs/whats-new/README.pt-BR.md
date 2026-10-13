@@ -11,7 +11,7 @@
 
 Antes, se você fechasse a janela da senha pelo botão vermelho, o pikapik parava de abrir e criar arquivos compactados até ser reiniciado. Isso foi corrigido.
 
-Agora o botão vermelho na janela da senha e na janela de um novo arquivo compactado funciona exatamente como “Cancelar”, e o próximo arquivo abre na hora. Ao ativar “Senha” para um novo arquivo compactado, o cursor já vai para o campo da senha. O VoiceOver agora lê o botão de atualização em Ajustes › Sobre pelo próprio nome.
+Agora o botão vermelho na janela da senha e na janela de um novo arquivo compactado funciona exatamente como “Cancelar”, e o próximo arquivo abre na hora. O VoiceOver agora lê o botão de atualização em Ajustes › Sobre pelo próprio nome.
 
 ---
 
