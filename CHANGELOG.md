@@ -7,6 +7,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Added
 - Temperature: a new page in Settings shows how warm the processor, graphics, memory, storage, battery and Wi‑Fi are. At the top, one word sums it up (Normal, Warm, Hot or Very hot) with a short tip, and each part has its own row with the temperature and a colored bar judged by what is normal for that part. To keep an eye on it, click the pencil at the bottom of the menu and select Temperature: the menu then shows the same word and the processor temperature. pikapik reads the sensors itself, so it needs no password and changes nothing, and it checks them every two seconds only while the page or the menu is open. The Mac App Store version shows the overall heat level that macOS reports.
 
+### Fixed
+- Menu: if you picked which rows the pikapik menu shows, Keep the Dock on one display no longer turns up there on its own. It starts hidden like every new row; to show it, click the pencil at the bottom of the menu and select it.
+
 ## [1.41.1] - 2026-10-13
 
 ### Changed
