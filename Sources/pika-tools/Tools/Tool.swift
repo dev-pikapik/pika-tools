@@ -71,6 +71,7 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(HomeEndTool())
         #endif
+        list.append(LayoutFixTool())
         #if !APPSTORE
         list.append(PointerTool())
         #endif

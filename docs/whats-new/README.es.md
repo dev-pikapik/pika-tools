@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Las palabras escritas con la distribución equivocada se corrigen solas
+
+<sub>1.44.3 · 13 de octubre de 2026</sub>
+
+Escribe una palabra con la distribución de teclado equivocada, pulsa Espacio y pikapik la reescribe con la correcta y cambia la distribución por ti.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Activa la función en Ajustes › Teclado. Cuando una palabra sale como un galimatías, por ejemplo ghbdtn en vez de привет, pikapik la reescribe en cuanto pulsas Espacio o Retorno, y cambia la distribución para que la siguiente palabra salga bien. Funciona con todas las distribuciones de teclado que hayas añadido en tu Mac, en cualquiera de tus idiomas.
+
+El texto normal se queda tal como lo escribiste. pikapik solo cambia una palabra cuando no existe en ninguno de tus idiomas y las mismas teclas en otra distribución dan una palabra común. Los nombres, las erratas y las palabras raras se quedan como están, igual que los campos de contraseña, Terminal y las apps que elijas.
+
+¿Se escapó alguna palabra o quieres recuperar una tal como la escribiste? Pulsa ⌃⇧Espacio para corregir la última palabra o el texto seleccionado, y vuelve a pulsarlo para probar tus otras distribuciones. Justo después de una corrección, las mismas teclas la deshacen, y pikapik ya no corregirá esa palabra por su cuenta. En la versión de la Mac App Store, selecciona el texto y elige «Corregir distribución de teclado» en el menú Servicios.
+
+**Pruébalo:** Ajustes › Teclado › Corregir palabras escritas con la distribución equivocada
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver vuelve a abrir el menú de pikapik
 
 <sub>1.44.2 · 13 de octubre de 2026</sub>

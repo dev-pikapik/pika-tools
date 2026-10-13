@@ -1,7 +1,7 @@
 import ApplicationServices
 
 enum TextFocus {
-    case none, unknown, typing, other(AXUIElement)
+    case none, unknown, typing(AXUIElement), other(AXUIElement)
 
     init(_ pid: pid_t) {
         let (focused, error) = Self.value(AXUIElementCreateApplication(pid), kAXFocusedUIElementAttribute)
@@ -22,7 +22,7 @@ enum TextFocus {
         }
         let subrole = Self.value(element, kAXSubroleAttribute).0 as? String
         let typing = [kAXTextFieldRole, kAXTextAreaRole, kAXComboBoxRole].contains(role) || subrole == kAXSearchFieldSubrole
-        self = typing ? .typing : .other(element)
+        self = typing ? .typing(element) : .other(element)
     }
 
     static func value(_ element: AXUIElement, _ attribute: String) -> (CFTypeRef?, AXError) {

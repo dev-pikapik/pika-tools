@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Slova napsaná ve špatném rozložení se opraví sama
+
+<sub>1.44.3 · 13. října 2026</sub>
+
+Napište slovo ve špatném rozložení klávesnice, stiskněte Mezerník a pikapik ho přepíše ve správném a rozložení přepne za vás.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Zapněte tuto funkci v Nastavení › Klávesnice. Když slovo vyjde jako hatmatilka, třeba ghbdtn místo привет, pikapik ho přepíše, jakmile stisknete Mezerník nebo Return, a přepne rozložení, aby další slovo vyšlo správně. Funguje to se všemi rozloženími klávesnice, která jste na Macu přidali, ve všech vašich jazycích.
+
+Obyčejný text zůstane přesně tak, jak jste ho napsali. pikapik změní slovo, jen když neexistuje v žádném z vašich jazyků a stejné klávesy v jiném rozložení dají běžné slovo. Jména, překlepy a vzácná slova zůstanou, jak jsou, stejně jako pole pro hesla, Terminál a aplikace, které vyberete.
+
+Nějaké slovo proklouzlo, nebo chcete nějaké vrátit, jak bylo? Stiskněte ⌃⇧Mezerník a opraví se poslední slovo nebo vybraný text. Dalším stisknutím vyzkoušíte jiná rozložení. Hned po opravě ji stejné klávesy vrátí zpět a pikapik už to slovo sám opravovat nebude. Ve verzi z Mac App Store vyberte text a v nabídce Služby zvolte „Opravit rozložení klávesnice“.
+
+**Vyzkoušejte:** Nastavení › Klávesnice › Opravovat slova napsaná ve špatném rozložení
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver znovu otevírá nabídku pikapik
 
 <sub>1.44.2 · 13. října 2026</sub>

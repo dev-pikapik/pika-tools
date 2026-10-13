@@ -212,6 +212,11 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br><b>Trzymaj Dock na jednym ekranie</b>
 <br>Dock nie skacze już na inny ekran. Przytrzymaj ⌥, aby celowo go przenieść.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Popraw zły układ</b>
+<br>Wyszło ghbdtn zamiast привет? Naciśnij spację, a słowo się poprawi.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
 Niektóre funkcje proszą o więcej, kiedy z nich korzystasz: **Sterowanie wentylatorami**, **Rozszerzenia Findera**, **iCloud Drive**, **Pełny dostęp do dysku** i **Nagrywanie ekranu**. Wszystko jest na stronie Uprawnienia w ustawieniach: każde uprawnienie ma wiersz z opisem, do czego służy, zielony ptaszek albo pomarańczowy krzyżyk i jeden przycisk: **Zezwól**, gdy go brakuje, **Wyłącz**, gdy jest włączone. Dzięki temu każde uprawnienie cofniesz od razu na miejscu.
 
-pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. pikapik łączy się z internetem tylko po uaktualnienia (pyta GitHub o najnowsze wydanie i pobiera je tylko wtedy, gdy zdecydujesz się uaktualnić) oraz do testu prędkości, gdy go uruchomisz (korzysta z serwerów Apple). Wersję z Mac App Store uaktualnia App Store, a jej test prędkości korzysta z Cloudflare. Postępy zwierzaka (kroki, rzuty, nagrody i tym podobne) są liczone tylko na tym Macu i nigdy nigdzie nie są wysyłane. Możesz je wymazać w Ustawieniach › Zwierzak.
+pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Aby poprawiać słowa wpisane w złym układzie, pikapik trzyma w pamięci tylko kilka ostatnich wpisanych słów i zapomina o nich, gdy tylko klikniesz lub przełączysz się na inną aplikację. Zapisuje tylko słowa, które na twoją prośbę ma zostawiać bez zmian, i to wyłącznie na tym Macu, dopóki nie wyczyścisz ich w Ustawieniach › Klawiatura. pikapik łączy się z internetem tylko po uaktualnienia (pyta GitHub o najnowsze wydanie i pobiera je tylko wtedy, gdy zdecydujesz się uaktualnić) oraz do testu prędkości, gdy go uruchomisz (korzysta z serwerów Apple). Wersję z Mac App Store uaktualnia App Store, a jej test prędkości korzysta z Cloudflare. Postępy zwierzaka (kroki, rzuty, nagrody i tym podobne) są liczone tylko na tym Macu i nigdy nigdzie nie są wysyłane. Możesz je wymazać w Ustawieniach › Zwierzak.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klika
 **Powtarzaj przytrzymany klawisz.** Przytrzymaj klawisz, a litera będzie się pisać raz za razem, zamiast pokazywać menu akcentów. Przydaje się w grach i przy pisaniu. Już otwarte aplikacje przejmą to po ponownym uruchomieniu. Gdy to wyłączysz, macOS znowu działa po swojemu. Domyślnie wyłączone.
 
 **Home i End na początek i koniec wiersza.** Gdy piszesz, Home przenosi kursor na początek wiersza, a End na jego koniec, zamiast przewijać stronę. Z ⇧ zaznaczają tekst do tego miejsca, z ⌘ przechodzą na początek lub koniec całego tekstu. Poza polami tekstowymi oraz w terminalach, maszynach wirtualnych i aplikacjach pulpitu zdalnego klawisze działają jak dotąd. Możesz dodać inne aplikacje, w których mają działać jak zwykle. Domyślnie wyłączone.
+
+**Poprawianie słów wpisanych w złym układzie.** Jeśli słowo wyjdzie jako bełkot, na przykład ghbdtn zamiast привет, pikapik przepisze je we właściwym układzie, gdy tylko naciśniesz spację lub Return, i przełączy układ, żeby następne słowo wyszło dobrze. Działa ze wszystkimi układami klawiatury dodanymi na twoim Macu. Słowo zmienia się tylko wtedy, gdy nie ma go w żadnym z twoich języków, a te same klawisze w innym układzie dają popularne słowo, więc imiona, literówki i rzadkie słowa zostają takie, jak je wpisano, podobnie jak tekst w polach haseł, w Terminalu i w wybranych przez ciebie aplikacjach. Naciśnij ⌃⇧Spacja, aby poprawić ostatnie słowo lub zaznaczony tekst, i naciśnij jeszcze raz, aby wypróbować inne układy. Zaraz po poprawce te same klawisze ją cofają, a pikapik nie będzie już sam poprawiać tego słowa. Skrót możesz zmienić w Ustawieniach › Klawiatura. W wersji z Mac App Store zaznacz tekst i wybierz „Popraw układ klawiatury” w menu „Usługi”. Domyślnie wyłączone.
 
 **Wyłącz przyspieszenie wskaźnika.** Wskaźnik przesuwa się dokładnie o tyle, o ile mysz, niezależnie od tego, jak szybko nią ruszasz. Suwak **Szybkość ruchu** ustala, jak szybko się porusza. Działa tylko z myszami, gładzik zostaje bez zmian. Wyłącz tę funkcję lub zakończ pikapik, a macOS odzyska własne ustawienia. Domyślnie wyłączone.
 
@@ -366,7 +373,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Temperatura**: jak bardzo nagrzał się Mac, ogólnie i dla każdej części, na przykład procesora, pamięci i baterii.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
 - **Porty**: który program zajął który port, jego adresy i szczegóły oraz przycisk, który zwalnia port.
-- **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
+- **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End, poprawianie złego układu.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.

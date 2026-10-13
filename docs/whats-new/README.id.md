@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Kata yang diketik dengan tata letak yang salah diperbaiki otomatis
+
+<sub>1.44.3 · 13 Oktober 2026</sub>
+
+Ketik kata dengan tata letak papan ketik yang salah, tekan Spasi, lalu pikapik mengetik ulang kata itu dengan tata letak yang benar dan mengganti tata letaknya untuk Anda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Nyalakan fitur ini di Pengaturan › Papan Ketik. Saat sebuah kata jadi huruf acak tanpa arti, seperti ghbdtn alih-alih привет, pikapik mengetik ulang kata itu begitu Anda menekan Spasi atau Return, lalu mengganti tata letak agar kata berikutnya langsung benar. Fitur ini berfungsi dengan semua tata letak papan ketik yang Anda tambahkan di Mac Anda, dalam bahasa apa pun yang Anda pakai.
+
+Teks biasa tetap persis seperti yang Anda ketik. pikapik hanya mengubah kata jika kata itu tidak ada dalam satu pun bahasa Anda dan tombol yang sama di tata letak lain menghasilkan kata yang umum. Nama, salah ketik, dan kata yang jarang dipakai tetap apa adanya, begitu juga kolom kata sandi, Terminal, dan app yang Anda pilih.
+
+Ada kata yang terlewat, atau ingin mengembalikan kata seperti semula? Tekan ⌃⇧Spasi untuk memperbaiki kata terakhir atau teks yang dipilih, lalu tekan lagi untuk mencoba tata letak lain. Tepat setelah perbaikan, tombol yang sama membatalkannya, dan pikapik tidak akan lagi memperbaiki kata itu secara otomatis. Di versi Mac App Store, pilih teksnya, lalu pilih “Perbaiki Tata Letak Papan Ketik” di menu Layanan.
+
+**Coba:** Pengaturan › Papan Ketik › Perbaiki kata yang diketik dengan tata letak yang salah
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver kembali bisa membuka menu pikapik
 
 <sub>1.44.2 · 13 Oktober 2026</sub>

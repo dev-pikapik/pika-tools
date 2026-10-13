@@ -12,6 +12,7 @@ struct SettingsFile {
         "appearance", "AppleLanguages", "open-at-login", "keep-running", "check-updates",
         "command-keys-quit", "command-keys-close", "command-keys-quit-shortcut", "command-keys-close-shortcut",
         "input-switch", "key-repeat", "home-end", "home-end-excluded",
+        "layout-fix", "layout-fix-auto", "layout-fix-shortcut", "layout-fix-excluded",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
         "side-buttons", "side-buttons-swap",

@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Le parole scritte con il layout sbagliato si correggono da sole
+
+<sub>1.44.3 · 13 ottobre 2026</sub>
+
+Scrivi una parola con il layout di tastiera sbagliato, premi Spazio e pikapik la riscrive con quello giusto e cambia layout al posto tuo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Attiva la funzione in Impostazioni › Tastiera. Quando una parola esce senza senso, come ghbdtn invece di привет, pikapik la riscrive appena premi Spazio o Invio, e cambia layout perché la parola successiva venga giusta. Funziona con tutti i layout di tastiera che hai aggiunto sul tuo Mac, in tutte le tue lingue.
+
+Il testo normale resta esattamente come l’hai scritto. pikapik cambia una parola solo se non esiste in nessuna delle tue lingue e gli stessi tasti in un altro layout danno una parola comune. Nomi, refusi e parole rare restano come sono, e lo stesso vale per i campi password, Terminale e le app che scegli.
+
+Una parola non è stata corretta, o ne vuoi riavere una com’era? Premi ⌃⇧Spazio per correggere l’ultima parola o il testo selezionato, e premi di nuovo per provare gli altri layout. Subito dopo una correzione, gli stessi tasti la annullano, e pikapik non correggerà più da solo quella parola. Nella versione del Mac App Store, seleziona il testo e scegli «Correggi layout tastiera» nel menu Servizi.
+
+**Provalo:** Impostazioni › Tastiera › Correggi le parole scritte con il layout sbagliato
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver apre di nuovo il menu di pikapik
 
 <sub>1.44.2 · 13 ottobre 2026</sub>

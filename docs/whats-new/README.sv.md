@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Ord som skrivs med fel layout rättar sig själva
+
+<sub>1.44.3 · 13 oktober 2026</sub>
+
+Skriv ett ord med fel tangentbordslayout, tryck på Mellanslag, så skriver pikapik om det med rätt layout och byter layout åt dig.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Slå på funktionen under Inställningar › Tangentbord. När ett ord blir ren rappakalja, som ghbdtn i stället för привет, skriver pikapik om det så fort du trycker på Mellanslag eller Return, och byter layout så att nästa ord blir rätt. Det fungerar med alla tangentbordslayouter du har lagt till på din Mac, på alla dina språk.
+
+Vanlig text lämnas precis som du skrev den. pikapik ändrar bara ett ord när det inte finns på något av dina språk och samma tangenter i en annan layout ger ett ord som används ofta. Namn, stavfel och ovanliga ord lämnas som de är, och detsamma gäller lösenordsfält, Terminal och de appar du väljer.
+
+Slank ett ord igenom eller vill du ha tillbaka ett ord som det var? Tryck på ⌃⇧Mellanslag för att rätta det senaste ordet eller markerad text, och tryck igen för att prova dina andra layouter. Direkt efter en rättning ångrar samma tangenter den, och pikapik rättar inte det ordet av sig självt igen. I versionen från Mac App Store markerar du texten och väljer ”Rätta tangentbordslayout” i menyn Tjänster.
+
+**Prova:** Inställningar › Tangentbord › Rätta ord skrivna med fel layout
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver öppnar pikapik-menyn igen
 
 <sub>1.44.2 · 13 oktober 2026</sub>

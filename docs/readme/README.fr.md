@@ -212,6 +212,11 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br><b>Garder le Dock sur un seul écran</b>
 <br>Le Dock ne saute plus sur un autre écran. Maintenez ⌥ pour le déplacer volontairement.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corriger la mauvaise disposition</b>
+<br>Vous avez tapé ghbdtn au lieu de привет ? Appuyez sur Espace, et c’est corrigé.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ L’app détecte le changement en une ou deux secondes, sans redémarrage.
 
 Certaines fonctions demandent davantage : **Contrôle des ventilateurs**, **Extensions du Finder**, **iCloud Drive**, **Accès complet au disque** et **Enregistrement de l’écran**. Tout se trouve sur la page Autorisations des réglages : chaque autorisation a une ligne qui dit à quoi elle sert, une coche verte ou une croix orange, et un seul bouton : **Autoriser** quand elle manque, **Éteindre** quand elle est active. Vous pouvez ainsi reprendre n’importe quelle autorisation sur place.
 
-pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. pikapik ne se connecte à internet que pour les mises à jour (il demande à GitHub la dernière version et ne la télécharge que si vous choisissez de mettre à jour) et pour le test de débit, quand vous le lancez (avec les serveurs d’Apple). La version du Mac App Store est mise à jour par l’App Store, et son test de débit utilise Cloudflare. La progression de votre compagnon (pas, lancers, récompenses et le reste) est comptée uniquement sur ce Mac et n’est jamais envoyée nulle part. Vous pouvez l’effacer dans Réglages › Compagnon.
+pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou cliquez. Les évènements sont traités en mémoire et transmis immédiatement. Pour corriger les mots tapés avec la mauvaise disposition, pikapik ne garde en mémoire que vos tout derniers mots et les oublie dès que vous cliquez ou changez d’app. Les seuls mots qu’il enregistre sont ceux que vous lui avez demandé de laisser tels quels, sur ce Mac uniquement, jusqu’à ce que vous les effaciez dans Réglages › Clavier. pikapik ne se connecte à internet que pour les mises à jour (il demande à GitHub la dernière version et ne la télécharge que si vous choisissez de mettre à jour) et pour le test de débit, quand vous le lancez (avec les serveurs d’Apple). La version du Mac App Store est mise à jour par l’App Store, et son test de débit utilise Cloudflare. La progression de votre compagnon (pas, lancers, récompenses et le reste) est comptée uniquement sur ce Mac et n’est jamais envoyée nulle part. Vous pouvez l’effacer dans Réglages › Compagnon.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik n’enregistre, ne conserve et n’envoie rien de ce que vous tapez ou c
 **Répéter une touche maintenue.** Maintenez une touche et la lettre se tape encore et encore au lieu d’afficher le menu des accents. Pratique dans les jeux et pour écrire. Les apps déjà ouvertes en tiennent compte après un redémarrage. Désactivez-le et macOS retrouve son comportement habituel. Désactivé par défaut.
 
 **Home et End vont au début et à la fin de la ligne.** Pendant la saisie, Home place le curseur au début de la ligne et End à la fin, au lieu de faire défiler la page. Avec ⇧, elles sélectionnent jusque-là, avec ⌘, elles vont au début ou à la fin du texte entier. Hors des champs de texte, ainsi que dans les terminaux, les machines virtuelles et les apps de bureau à distance, les touches fonctionnent comme avant. Vous pouvez ajouter d’autres apps où elles doivent fonctionner comme d’habitude. Désactivé par défaut.
+
+**Corriger les mots tapés avec la mauvaise disposition.** Si un mot s’affiche en charabia, comme ghbdtn au lieu de привет, pikapik le retape dans la bonne disposition dès que vous appuyez sur Espace ou Retour, et change de disposition pour que le mot suivant s’écrive correctement. Fonctionne avec toutes les dispositions de clavier ajoutées sur votre Mac. Un mot n’est modifié que s’il n’existe dans aucune de vos langues et que les mêmes touches donnent un mot courant dans une autre disposition : les noms, les fautes de frappe et les mots rares restent donc tels que vous les avez tapés, tout comme le texte des champs de mot de passe, de Terminal et des apps que vous choisissez. Appuyez sur ⌃⇧Espace pour corriger le dernier mot ou le texte sélectionné, et appuyez encore pour essayer vos autres dispositions. Juste après une correction, les mêmes touches l’annulent, et pikapik ne corrigera plus ce mot de lui-même. Vous pouvez changer le raccourci dans Réglages › Clavier. Dans la version du Mac App Store, sélectionnez le texte et choisissez « Corriger la disposition du clavier » dans le menu « Services ». Désactivé par défaut.
 
 **Désactiver l’accélération du pointeur.** Le pointeur se déplace exactement autant que la souris, quelle que soit la vitesse de votre geste. Un curseur **Vitesse de déplacement** règle sa rapidité. Fonctionne uniquement avec les souris, le trackpad reste tel quel. Désactivez l’option ou quittez pikapik, et macOS retrouve ses propres réglages. Désactivé par défaut.
 
@@ -366,7 +373,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Température** : la chaleur de votre Mac, au global et pour chaque composant, comme le processeur, la mémoire et la batterie.
 - **Test de débit** : mesurer la connexion et voir ce qu’elle permet.
 - **Ports** : quel programme occupe quel port, ses adresses et ses détails, et un bouton pour libérer le port.
-- **Clavier** : changement de langue, répétition des touches, Home et End.
+- **Clavier** : changement de langue, répétition des touches, Home et End, correction de la mauvaise disposition.
 - **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.

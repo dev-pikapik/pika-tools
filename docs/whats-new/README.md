@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Words typed in the wrong layout fix themselves
+
+<sub>1.44.3 · October 13, 2026</sub>
+
+Type a word in the wrong keyboard layout, press Space, and pikapik retypes it in the right one and switches the layout for you.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Turn it on in Settings › Keyboard. When a word comes out as gibberish, like ghbdtn instead of привет, pikapik retypes it as soon as you press Space or Return, and switches the layout so the next word comes out right. It works with every keyboard layout you’ve added on your Mac, in any of your languages.
+
+Ordinary text stays exactly as you typed it. pikapik changes a word only when it isn’t a word in any of your languages and the same keys in another layout give a common one. Names, typos and rare words stay as they are, and so do password fields, Terminal and the apps you choose.
+
+Missed a word, or want one back? Press ⌃⇧Space to fix the last word or the selected text, and press it again to try your other layouts. Right after a fix, the same keys undo it, and pikapik won’t fix that word on its own again. In the Mac App Store version, select the text and choose Fix Wrong Keyboard Layout in the Services menu.
+
+**Try it:** Settings › Keyboard › Fix words typed in the wrong layout
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver opens the pikapik menu again
 
 <sub>1.44.2 · October 13, 2026</sub>

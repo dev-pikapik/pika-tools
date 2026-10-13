@@ -8,12 +8,14 @@ final class HomeEndTool: Tool {
     let icon = "arrow.left.to.line"
     var title: String { String(localized: "Home and End go to the start and end of a line") }
 
-    static let alwaysExcluded = [
+    static let consoles = [
         "com.apple.Terminal", "com.googlecode.iterm2", "com.mitchellh.ghostty", "dev.warp.", "net.kovidgoyal.kitty",
         "org.alacritty", "com.github.wez.wezterm", "co.zeit.hyper", "org.tabby", "com.raphaelamorim.rio",
         "com.parallels.", "com.vmware.fusion", "com.utmapp.", "org.virtualbox.",
         "com.microsoft.rdc.", "com.apple.ScreenSharing", "com.edovia.screens", "com.p5sys.jump.", "com.teamviewer.",
         "com.philandro.anydesk", "com.carriez.rustdesk", "tv.parsec.", "com.realvnc.", "com.citrix.",
+    ]
+    static let alwaysExcluded = consoles + [
         "com.microsoft.Word", "com.microsoft.Excel", "com.microsoft.Powerpoint", "org.libreoffice.",
         "com.jetbrains.", "com.google.android.studio",
     ]

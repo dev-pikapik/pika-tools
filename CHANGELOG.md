@@ -2,6 +2,11 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.44.3] - Unreleased
+
+### Added
+- Wrong keyboard layout: a word typed in the wrong layout, like ghbdtn instead of привет, is retyped in the right one as soon as you press Space or Return, and the layout switches so the next word comes out right. It works with every keyboard layout added on your Mac. A word changes only when it isn’t a word in any of your languages and the same keys in another layout give a common one, so names, typos, rare words, password fields, Terminal and the apps you choose stay as they are. ⌃⇧Space fixes the last word or the selected text, pressing it again tries your other layouts, and right after a fix the same keys undo it, after which pikapik leaves that word alone. Turn it on in Settings › Keyboard; it needs Accessibility and Input Monitoring, which the Permissions tab asks for. In the Mac App Store version, select the text and choose Fix Wrong Keyboard Layout in the Services menu.
+
 ## [1.44.2] - 2026-10-13
 
 ### Fixed

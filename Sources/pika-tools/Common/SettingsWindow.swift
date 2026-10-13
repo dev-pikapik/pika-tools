@@ -119,6 +119,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
             String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
+            String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
         ]
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
@@ -159,6 +160,10 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End work as usual in these apps"), synonyms: "exceptions, exclude, list, terminal, virtual machine, remote desktop"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Fix words typed in the wrong layout"), synonyms: "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Fix words as you type"), synonyms: "automatic, auto, Space, Return, layout"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Fix the last word or selected text"), synonyms: "shortcut, undo, convert, selection, layout"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Don’t fix text in these apps"), synonyms: "exceptions, exclude, list, layout"),
             SettingsItem(tab: .mouse, title: String(localized: "Turn off pointer acceleration"), synonyms: "linear, mouse acceleration, sensitivity"),
             SettingsItem(tab: .mouse, title: String(localized: "Tracking speed"), synonyms: "pointer speed, sensitivity, fast, slow"),
             SettingsItem(tab: .mouse, title: String(localized: "Scroll by lines"), synonyms: "wheel, scrolling speed, acceleration"),

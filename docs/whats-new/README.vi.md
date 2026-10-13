@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Từ gõ nhầm bố cục bàn phím được tự động sửa lại
+
+<sub>1.44.3 · 13 tháng 10 năm 2026</sub>
+
+Gõ một từ bằng bố cục bàn phím sai, nhấn Dấu cách, và pikapik sẽ gõ lại từ đó bằng bố cục đúng rồi chuyển bố cục giúp bạn.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Bật tính năng này trong Cài đặt › Bàn phím. Khi một từ hiện ra thành chuỗi ký tự vô nghĩa, như ghbdtn thay vì привет, pikapik sẽ gõ lại từ đó ngay khi bạn nhấn Dấu cách hoặc Return, rồi chuyển bố cục để từ tiếp theo được gõ đúng. Tính năng này hoạt động với mọi bố cục bàn phím bạn đã thêm trên Mac, ở bất kỳ ngôn ngữ nào bạn dùng.
+
+Văn bản bình thường vẫn giữ nguyên như bạn đã gõ. pikapik chỉ đổi một từ khi nó không có trong bất kỳ ngôn ngữ nào của bạn và cùng các phím đó ở bố cục khác lại ra một từ thông dụng. Tên riêng, lỗi đánh máy và từ hiếm vẫn giữ nguyên, ô mật khẩu, Terminal và các ứng dụng bạn chọn cũng vậy.
+
+Có từ bị bỏ sót, hay bạn muốn lấy lại một từ như lúc gõ? Nhấn ⌃⇧Dấu cách để sửa từ cuối cùng hoặc văn bản đã chọn, và nhấn lần nữa để thử các bố cục khác. Ngay sau khi sửa, chính các phím đó sẽ hoàn tác, và pikapik sẽ không tự sửa từ đó nữa. Trong phiên bản Mac App Store, hãy chọn văn bản rồi chọn “Sửa bố cục bàn phím” trong menu Dịch vụ.
+
+**Thử ngay:** Cài đặt › Bàn phím › Sửa từ gõ nhầm bố cục bàn phím
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver lại mở được menu pikapik
 
 <sub>1.44.2 · 13 tháng 10 năm 2026</sub>

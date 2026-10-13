@@ -5,6 +5,24 @@
 
 ---
 
+## <a id="v1.44.3"></a>Yanlış klavye düzeninde yazılan sözcükler kendiliğinden düzelir
+
+<sub>1.44.3 · 13 Ekim 2026</sub>
+
+Bir sözcüğü yanlış klavye düzeninde yazıp Boşluk tuşuna bastığınızda pikapik onu doğru düzende yeniden yazar ve düzeni sizin yerinize değiştirir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Bu özelliği Ayarlar › Klavye bölümünden açın. Bir sözcük anlamsız harflere dönüştüğünde, örneğin привет yerine ghbdtn çıktığında, Boşluk veya Return tuşuna bastığınız anda pikapik onu yeniden yazar ve sonraki sözcük doğru çıksın diye düzeni değiştirir. Mac’inize eklediğiniz tüm klavye düzenleriyle, tüm dillerinizde çalışır.
+
+Normal metin tam yazdığınız gibi kalır. pikapik bir sözcüğü yalnızca dillerinizin hiçbirinde böyle bir sözcük yoksa ve aynı tuşlar başka bir düzende sık kullanılan bir sözcük veriyorsa değiştirir. Adlar, yazım hataları ve nadir sözcükler olduğu gibi kalır. Parola alanlarına, Terminal’e ve seçtiğiniz uygulamalara da dokunulmaz.
+
+Bir sözcük gözden mi kaçtı, yoksa birini eski hâline mi döndürmek istiyorsunuz? Son sözcüğü ya da seçili metni düzeltmek için ⌃⇧Boşluk tuşlarına basın, diğer düzenlerinizi denemek için yeniden basın. Bir düzeltmenin hemen ardından aynı tuşlar onu geri alır ve pikapik o sözcüğü bir daha kendiliğinden düzeltmez. Mac App Store sürümünde metni seçin ve Servisler menüsünden “Klavye Düzenini Düzelt” öğesini seçin.
+
+**Deneyin:** Ayarlar › Klavye › Yanlış klavye düzeninde yazılan sözcükleri düzelt
+
+---
+
 ## <a id="v1.44.2"></a>VoiceOver pikapik menüsünü yeniden açıyor
 
 <sub>1.44.2 · 13 Ekim 2026</sub>

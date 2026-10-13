@@ -212,6 +212,11 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br><b>Manter o Dock em uma só tela</b>
 <br>O Dock não pula mais para outra tela. Mantenha ⌥ pressionada para movê-lo de propósito.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corrigir o layout errado</b>
+<br>Digitou ghbdtn em vez de привет? Aperte Espaço e a palavra se corrige.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ O app percebe a mudança em um ou dois segundos, sem precisar reiniciar.
 
 Alguns recursos pedem algo a mais quando você os usa: **Controle das ventoinhas**, **Extensões do Finder**, **iCloud Drive**, **Acesso Total ao Disco** e **Gravação de Tela**. Tudo fica na página Permissões dos ajustes: cada permissão tem uma linha dizendo para que serve, uma marca de seleção verde ou uma cruz laranja e um só botão: **Permitir** quando falta, **Desligar** quando está ativa. Assim você retira qualquer permissão ali mesmo.
 
-O pikapik não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. O pikapik só acessa a internet para atualizações (pergunta ao GitHub qual é a versão mais recente e só a baixa se você escolher atualizar) e para o teste de velocidade, quando você o inicia (usa os servidores da Apple). A versão da Mac App Store é atualizada pela App Store, e o teste de velocidade dela usa a Cloudflare. O progresso do bichinho (passos, arremessos, prêmios e coisas assim) é contado só neste Mac e nunca é enviado para lugar nenhum. Você pode apagá-lo em Ajustes › Bichinho.
+O pikapik não grava, não guarda e não envia nada do que você digita ou clica. Os eventos são tratados na memória e repassados na hora. Para corrigir palavras digitadas no layout errado, o pikapik mantém na memória só as últimas palavras que você digitou e as esquece quando você clica ou muda de app. As únicas palavras que ele salva são as que você pediu para deixar como estão, só neste Mac, até você limpá-las em Ajustes › Teclado. O pikapik só acessa a internet para atualizações (pergunta ao GitHub qual é a versão mais recente e só a baixa se você escolher atualizar) e para o teste de velocidade, quando você o inicia (usa os servidores da Apple). A versão da Mac App Store é atualizada pela App Store, e o teste de velocidade dela usa a Cloudflare. O progresso do bichinho (passos, arremessos, prêmios e coisas assim) é contado só neste Mac e nunca é enviado para lugar nenhum. Você pode apagá-lo em Ajustes › Bichinho.
 
 </details>
 
@@ -263,6 +268,8 @@ O pikapik não grava, não guarda e não envia nada do que você digita ou clica
 **Repetir tecla segurada.** Segure uma tecla e a letra é digitada várias e várias vezes, em vez de aparecer o menu de acentos. Ótimo em jogos e na hora de digitar. Os apps que já estão abertos aplicam isso depois de reiniciados. Desative e o macOS volta ao comportamento de sempre. Desativado por padrão.
 
 **Home e End vão ao início e ao fim da linha.** Enquanto você digita, Home leva o cursor ao início da linha e End ao fim, em vez de rolar a página. Com ⇧ selecionam até ali, com ⌘ vão ao início ou ao fim do texto inteiro. Fora dos campos de texto, e em terminais, máquinas virtuais e apps de área de trabalho remota, as teclas funcionam como antes. Você pode adicionar outros apps em que elas devem funcionar como sempre. Desativado por padrão.
+
+**Corrigir palavras digitadas no layout errado.** Se uma palavra sai sem sentido, como ghbdtn em vez de привет, o pikapik a digita de novo no layout certo assim que você aperta Espaço ou Return, e troca o layout para que a próxima palavra já saia certa. Funciona com todos os layouts de teclado que você adicionou no Mac. Uma palavra só muda quando não existe em nenhum dos seus idiomas e as mesmas teclas em outro layout formam uma palavra comum, então nomes, erros de digitação e palavras raras ficam como você digitou, assim como o texto em campos de senha, no Terminal e nos apps que você escolher. Aperte ⌃⇧Espaço para corrigir a última palavra ou o texto selecionado, e aperte de novo para tentar seus outros layouts. Logo após uma correção, as mesmas teclas a desfazem, e o pikapik não corrige mais essa palavra sozinho. Você pode mudar o atalho em Ajustes › Teclado. Na versão da Mac App Store, selecione o texto e escolha “Corrigir layout do teclado” no menu “Serviços”. Desativado por padrão.
 
 **Desativar a aceleração do cursor.** O ponteiro se move exatamente o quanto o mouse se move, não importa a velocidade. Um controle **Velocidade do rastreamento** define a rapidez dele. Funciona só com mouses; o trackpad fica como está. Desative a opção ou encerre o pikapik e o macOS volta aos próprios ajustes. Desativado por padrão.
 
@@ -366,7 +373,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Temperatura**: o quanto o Mac está quente, no geral e por peça, como o processador, a memória e a bateria.
 - **Teste de velocidade**: mede a internet e mostra para que ela serve.
 - **Portas**: qual programa ocupou qual porta, os endereços e detalhes dele e um botão para liberar a porta.
-- **Teclado**: troca de idioma, repetição de teclas, Home e End.
+- **Teclado**: troca de idioma, repetição de teclas, Home e End, correção do layout errado.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.

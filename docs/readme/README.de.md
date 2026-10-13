@@ -212,6 +212,11 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br><b>Dock auf einem Display halten</b>
 <br>Das Dock springt nicht mehr auf ein anderes Display. Mit gedrückter ⌥-Taste verschiebst du es gezielt.
 </td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Falsches Layout korrigieren</b>
+<br>ghbdtn statt привет getippt? Drück die Leertaste, und schon ist es korrigiert.
+</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -249,7 +254,7 @@ Die App erkennt die Änderung innerhalb von ein, zwei Sekunden, ein Neustart ist
 
 Manche Funktionen brauchen zusätzliche Berechtigungen: **Lüftersteuerung**, **Finder-Erweiterungen**, **iCloud Drive**, **Festplattenvollzugriff** und **Bildschirmaufnahme**. Alle stehen auf der Seite „Berechtigungen“ in den Einstellungen. Jede hat eine Zeile dazu, wofür sie da ist, einen grünen Haken oder ein orangefarbenes Kreuz und eine Taste: **Erlauben**, wenn sie fehlt, **Ausschalten**, wenn sie an ist. So kannst du jede Berechtigung gleich dort zurücknehmen.
 
-pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. pikapik geht nur für Updates ins Netz (es fragt GitHub nach der neuesten Version und lädt sie nur herunter, wenn du dich fürs Aktualisieren entscheidest) und für den Speedtest, wenn du ihn startest (dabei werden die Server von Apple genutzt). Die Version aus dem Mac App Store wird vom App Store aktualisiert, und ihr Speedtest nutzt Cloudflare. Der Fortschritt deines Haustiers (Schritte, Würfe, Auszeichnungen und Ähnliches) wird nur auf diesem Mac gezählt und nie irgendwohin gesendet. Du kannst ihn in Einstellungen › Haustier löschen.
+pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du tippst oder klickst. Ereignisse werden im Arbeitsspeicher verarbeitet und sofort weitergegeben. Um im falschen Layout getippte Wörter zu korrigieren, behält pikapik nur deine letzten paar Wörter im Arbeitsspeicher und vergisst sie, sobald du klickst oder die App wechselst. Gespeichert werden nur die Wörter, die pikapik auf deinen Wunsch in Ruhe lassen soll, und zwar nur auf diesem Mac, bis du sie in Einstellungen › Tastatur löschst. pikapik geht nur für Updates ins Netz (es fragt GitHub nach der neuesten Version und lädt sie nur herunter, wenn du dich fürs Aktualisieren entscheidest) und für den Speedtest, wenn du ihn startest (dabei werden die Server von Apple genutzt). Die Version aus dem Mac App Store wird vom App Store aktualisiert, und ihr Speedtest nutzt Cloudflare. Der Fortschritt deines Haustiers (Schritte, Würfe, Auszeichnungen und Ähnliches) wird nur auf diesem Mac gezählt und nie irgendwohin gesendet. Du kannst ihn in Einstellungen › Haustier löschen.
 
 </details>
 
@@ -263,6 +268,8 @@ pikapik zeichnet nichts auf, speichert nichts und sendet nichts von dem, was du 
 **Gehaltene Taste wiederholen.** Halte eine Taste gedrückt, und der Buchstabe wird immer wieder getippt, statt dass das Akzentmenü erscheint. Praktisch in Spielen und beim Schreiben. Bereits geöffnete Apps übernehmen das nach einem Neustart. Schaltest du es aus, verhält sich macOS wieder wie gewohnt. Standardmäßig aus.
 
 **Home und End springen an Zeilenanfang und -ende.** Beim Tippen setzt Home den Cursor an den Anfang der Zeile und End an ihr Ende, statt die Seite zu scrollen. Mit ⇧ wählst du bis dorthin aus, mit ⌘ springst du an den Anfang oder das Ende des ganzen Textes. Außerhalb von Textfeldern und in Terminals, virtuellen Maschinen und Apps für entfernte Schreibtische funktionieren die Tasten wie bisher. Du kannst weitere Apps eintragen, in denen sie wie gewohnt funktionieren sollen. Standardmäßig aus.
+
+**Im falschen Layout getippte Wörter korrigieren.** Wird aus einem Wort Kauderwelsch, etwa ghbdtn statt привет, tippt pikapik es im richtigen Layout neu, sobald du die Leertaste oder Return drückst, und wechselt das Layout, damit das nächste Wort gleich richtig herauskommt. Das funktioniert mit allen Tastaturlayouts, die du auf deinem Mac hinzugefügt hast. Ein Wort wird nur geändert, wenn es in keiner deiner Sprachen vorkommt und dieselben Tasten in einem anderen Layout ein gängiges Wort ergeben. Namen, Tippfehler und seltene Wörter bleiben deshalb so, wie du sie getippt hast, und auch in Passwortfeldern, im Terminal und in den Apps, die du auswählst, ändert sich nichts. Drück ⌃⇧Leertaste, um das letzte Wort oder den ausgewählten Text zu korrigieren, und drück noch einmal, um deine anderen Layouts auszuprobieren. Direkt nach einer Korrektur machen dieselben Tasten sie rückgängig, und pikapik korrigiert dieses Wort danach nicht mehr von selbst. Den Kurzbefehl kannst du in Einstellungen › Tastatur ändern. In der Version aus dem Mac App Store wählst du den Text aus und klickst im Menü „Dienste“ auf „Tastaturlayout korrigieren“. Standardmäßig aus.
 
 **Zeigerbeschleunigung ausschalten.** Der Zeiger bewegt sich genau so weit wie die Maus, egal wie schnell du sie bewegst. Ein Regler **Zeigerbewegung** legt fest, wie schnell er sich bewegt. Funktioniert nur mit Mäusen, das Trackpad bleibt, wie es ist. Schalte es aus oder beende pikapik, und macOS bekommt seine eigenen Einstellungen zurück. Standardmäßig aus.
 
@@ -366,7 +373,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Temperatur**: wie warm dein Mac ist, insgesamt und für jedes Bauteil, etwa Prozessor, Arbeitsspeicher und Akku.
 - **Speedtest**: Internetgeschwindigkeit messen und sehen, wofür sie reicht.
 - **Ports**: welches Programm welchen Port belegt, seine Adressen und Details sowie eine Taste, die den Port freimacht.
-- **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
+- **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End, Korrektur des falschen Layouts.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Mit einem Klick im Dock ablegen oder ausblenden, Dock auf einem Display halten und Dock zurückholen.

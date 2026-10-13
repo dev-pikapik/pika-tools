@@ -96,7 +96,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         FinderExtension.refreshFinderRecord()
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval"].forEach(defaults.removeObject)
-        for id in ["archive", "convert", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["archive", "convert", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -104,6 +104,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         Appearance.saved.apply()
+        LayoutFixService.register()
         let permissions = Permissions.shared
         permissions.onChange = { ToolRegistry.shared.refresh() }
         NotificationCenter.default.addObserver(forName: NSApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
