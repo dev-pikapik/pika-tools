@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Chaque app a son propre volume
+
+<sub>1.45.0 · 13 octobre 2026</sub>
+
+Baissez un appel trop fort, coupez le son d’un jeu bruyant et laissez votre musique telle quelle.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Son et activez « Volume des apps ». Chaque app qui joue du son a son propre curseur et un bouton pour couper le son, dans les Réglages et dans le menu. Le volume de votre Mac et celui des autres apps ne change pas, et pikapik retient le niveau de chaque app. Une app que vous laissez à fond n’est jamais touchée.
+
+Pour changer le volume d’une app, pikapik fait passer son son par lui-même ; il a donc besoin de l’autorisation « Enregistrement de l’audio système », que vous accordez sur la page « Autorisations ». Le son est seulement transmis : il n’est ni enregistré, ni conservé, ni envoyé nulle part, et le micro n’est pas utilisé. Il faut macOS 14.2 ou plus récent (sous macOS 14.0 et 14.1, la fonction reste masquée), et c’est désactivé par défaut.
+
+**Pour essayer :** Réglages › Son › Volume des apps
+
+---
+
 ## <a id="v1.44.3"></a>Les mots tapés avec la mauvaise disposition se corrigent tout seuls
 
 <sub>1.44.3 · 13 octobre 2026</sub>

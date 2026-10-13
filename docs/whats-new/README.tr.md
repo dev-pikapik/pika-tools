@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Her uygulamanın kendi ses düzeyi var
+
+<sub>1.45.0 · 13 Ekim 2026</sub>
+
+Yüksek sesli görüşmeyi kısın, gürültülü oyunu sessize alın, müziğe dokunmayın.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Ayarlar › Ses sayfasına gidin ve “Uygulama Sesi” anahtarını açın. Ses çalan her uygulama kendi sürgüsünü ve bir sessize alma düğmesini alır, hem Ayarlar’da hem menüde. Mac’inizin ve diğer uygulamaların ses düzeyi değişmez, pikapik de her uygulamanın düzeyini hatırlar. Tam sesle bıraktığınız uygulamaya hiç dokunulmaz.
+
+Bir uygulamanın ses düzeyini değiştirmek için pikapik onun sesini kendi içinden geçirir, bu yüzden “İzinler” sayfasında verdiğiniz “Sistem Sesi Kaydı” iznine ihtiyaç duyar. Ses yalnızca aktarılır: kaydedilmez, saklanmaz, hiçbir yere gönderilmez ve mikrofon kullanılmaz. macOS 14.2 veya sonrasını gerektirir (macOS 14.0 ve 14.1’de gizlidir) ve varsayılan olarak kapalıdır.
+
+**Deneyin:** Ayarlar › Ses › Uygulama Sesi
+
+---
+
 ## <a id="v1.44.3"></a>Yanlış klavye düzeninde yazılan sözcükler kendiliğinden düzelir
 
 <sub>1.44.3 · 13 Ekim 2026</sub>

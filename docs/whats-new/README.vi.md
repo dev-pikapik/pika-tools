@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Mỗi ứng dụng có âm lượng riêng
+
+<sub>1.45.0 · 13 tháng 10 năm 2026</sub>
+
+Giảm cuộc gọi quá to, tắt tiếng trò chơi ồn ào và để nhạc của bạn như cũ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Âm thanh và bật “Âm lượng ứng dụng”. Mỗi ứng dụng phát âm thanh có thanh trượt riêng và nút tắt tiếng, trong Cài đặt lẫn trong menu. Âm lượng của Mac và của các ứng dụng khác không thay đổi, và pikapik nhớ mức âm lượng của từng ứng dụng. Ứng dụng nào bạn để ở âm lượng tối đa thì không bao giờ bị đụng đến.
+
+Để đổi âm lượng của một ứng dụng, pikapik cho âm thanh của ứng dụng đó đi qua chính nó, nên cần quyền “Ghi âm thanh hệ thống”, mà bạn cho phép ở trang “Quyền”. Âm thanh chỉ được chuyển tiếp: không được ghi lại, lưu hay gửi đi đâu, và micro không được dùng. Cần macOS 14.2 trở lên (trên macOS 14.0 và 14.1 tính năng bị ẩn) và mặc định tắt.
+
+**Thử ngay:** Cài đặt › Âm thanh › Âm lượng ứng dụng
+
+---
+
 ## <a id="v1.44.3"></a>Từ gõ nhầm bố cục bàn phím được tự động sửa lại
 
 <sub>1.44.3 · 13 tháng 10 năm 2026</sub>

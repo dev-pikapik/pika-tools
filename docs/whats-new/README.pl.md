@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Każda aplikacja ma własną głośność
+
+<sub>1.45.0 · 13 października 2026</sub>
+
+Ścisz głośną rozmowę, wycisz hałaśliwą grę i zostaw muzykę, jak jest.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Dźwięk i włącz „Głośność aplikacji”. Każda aplikacja, która odtwarza dźwięk, dostaje własny suwak i przycisk wyciszenia, w Ustawieniach i w menu. Głośność Maca i pozostałych aplikacji się nie zmienia, a pikapik zapamiętuje poziom każdej aplikacji. Aplikacji, którą zostawisz na pełnej głośności, nigdy nie rusza.
+
+Aby zmienić głośność aplikacji, pikapik przepuszcza jej dźwięk przez siebie, dlatego potrzebuje uprawnienia „Nagrywanie dźwięku systemowego”, które włączasz na stronie „Uprawnienia”. Dźwięk jest tylko przekazywany dalej: nie jest nagrywany, zapisywany ani nigdzie wysyłany, a mikrofon nie jest używany. Wymaga macOS 14.2 lub nowszego (w macOS 14.0 i 14.1 funkcja jest ukryta) i jest domyślnie wyłączone.
+
+**Wypróbuj:** Ustawienia › Dźwięk › Głośność aplikacji
+
+---
+
 ## <a id="v1.44.3"></a>Słowa wpisane w złym układzie poprawiają się same
 
 <sub>1.44.3 · 13 października 2026</sub>

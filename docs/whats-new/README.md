@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Every app gets its own volume
+
+<sub>1.45.0 · October 13, 2026</sub>
+
+Quiet a loud call, mute a noisy game and leave your music as it is.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Open Settings › Sound and turn on App Volume. Every app that plays sound gets its own slider and a mute button, in Settings and in the menu. The volume of your Mac and of the other apps does not change, and pikapik remembers each app’s level. An app you leave at full volume is never touched.
+
+To change an app’s volume, pikapik passes its sound through itself, so it needs System Audio Recording, which you allow on the Permissions page. The sound is only passed on: it is not recorded, saved or sent anywhere, and the microphone is not used. It needs macOS 14.2 or later (on 14.0 and 14.1 it stays hidden) and is off by default.
+
+**Try it:** Settings › Sound › App Volume
+
+---
+
 ## <a id="v1.44.3"></a>Words typed in the wrong layout fix themselves
 
 <sub>1.44.3 · October 13, 2026</sub>

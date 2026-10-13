@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Jede App hat ihre eigene Lautstärke
+
+<sub>1.45.0 · 13. Oktober 2026</sub>
+
+Einen lauten Anruf leiser stellen, ein lautes Spiel stummschalten und die Musik lassen, wie sie ist.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Ton und schalte „App-Lautstärke“ ein. Jede App, die Ton abspielt, bekommt einen eigenen Regler und eine Taste zum Stummschalten, in den Einstellungen und im Menü. Die Lautstärke deines Macs und der anderen Apps ändert sich nicht, und pikapik merkt sich die Lautstärke jeder App. Eine App, die du auf voller Lautstärke lässt, bleibt unangetastet.
+
+Um die Lautstärke einer App zu ändern, leitet pikapik ihren Ton durch sich selbst. Dafür braucht es die Berechtigung „Systemaudio-Aufnahme“, die du auf der Seite „Berechtigungen“ erlaubst. Der Ton wird nur weitergeleitet: Er wird nicht aufgenommen, gespeichert oder irgendwohin gesendet, und das Mikrofon wird nicht benutzt. Erfordert macOS 14.2 oder neuer (unter macOS 14.0 und 14.1 bleibt die Funktion ausgeblendet) und ist standardmäßig aus.
+
+**Ausprobieren:** Einstellungen › Ton › App-Lautstärke
+
+---
+
 ## <a id="v1.44.3"></a>Im falschen Layout getippte Wörter korrigieren sich von selbst
 
 <sub>1.44.3 · 13. Oktober 2026</sub>

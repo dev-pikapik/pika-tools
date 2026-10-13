@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.45.0"></a>Ogni app ha il suo volume
+
+<sub>1.45.0 · 13 ottobre 2026</sub>
+
+Abbassa una chiamata troppo forte, silenzia un gioco rumoroso e lascia la tua musica com’è.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.45.0/app-volume-dark.png"><img src="../media/whats-new/1.45.0/app-volume-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Suono e attiva «Volume delle app». Ogni app che riproduce suoni ha il suo cursore e un pulsante per silenziarla, nelle Impostazioni e nel menu. Il volume del Mac e delle altre app non cambia, e pikapik ricorda il livello di ogni app. Un’app che lasci a volume pieno non viene mai toccata.
+
+Per cambiare il volume di un’app, pikapik fa passare il suo suono attraverso se stesso, quindi serve il permesso «Registrazione dell’audio di sistema», che consenti nella pagina «Permessi». Il suono viene solo fatto passare: non viene registrato, salvato né inviato da nessuna parte, e il microfono non viene usato. Richiede macOS 14.2 o successivo (su macOS 14.0 e 14.1 resta nascosto) ed è disattivato di default.
+
+**Provalo:** Impostazioni › Suono › Volume delle app
+
+---
+
 ## <a id="v1.44.3"></a>Le parole scritte con il layout sbagliato si correggono da sole
 
 <sub>1.44.3 · 13 ottobre 2026</sub>
