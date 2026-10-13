@@ -143,6 +143,10 @@ enum AppVolumeMath {
         return muted ? 0 : Float(level * level)
     }
 
+    static func level(slider: Double) -> Double? {
+        slider < 0.95 ? max(slider, 0) : nil
+    }
+
     static func smoothing(sampleRate: Double) -> Float {
         Float(1 - exp(-1 / (0.03 * max(sampleRate, 1))))
     }

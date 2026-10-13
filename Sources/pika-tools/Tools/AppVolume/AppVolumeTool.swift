@@ -36,7 +36,7 @@ final class AppVolumeTool: Tool {
     func level(_ key: String) -> Double { levels[key] ?? 1 }
 
     func setLevel(_ level: Double, for key: String) {
-        levels[key] = level < 1 ? max(level, 0) : nil
+        levels[key] = AppVolumeMath.level(slider: level)
         persist()
         refresh()
     }

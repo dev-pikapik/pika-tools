@@ -101,6 +101,8 @@ enum TestAppVolume {
         precondition(AppVolumeMath.gain(slider: 0, muted: false) == 0)
         precondition(AppVolumeMath.gain(slider: 0.8, muted: true) == 0)
         precondition(AppVolumeMath.gain(slider: 3, muted: false) == 1 && AppVolumeMath.gain(slider: -1, muted: false) == 0)
+        precondition(AppVolumeMath.level(slider: 0.5) == 0.5 && AppVolumeMath.level(slider: -1) == 0)
+        precondition(AppVolumeMath.level(slider: 0.96) == nil && AppVolumeMath.level(slider: 1) == nil)
 
         let rate = AppVolumeMath.smoothing(sampleRate: 48000)
         precondition(rate > 0.00069 && rate < 0.00070, "\(rate)")
