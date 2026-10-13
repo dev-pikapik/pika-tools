@@ -127,13 +127,13 @@ if [ -z "${APPSTORE:-}" ]; then
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
-if xcrun --find actool >/dev/null 2>&1 && xcrun actool Resources/AppIcon.icon \
-        --compile "$RES" \
+if xcrun --find actool >/dev/null 2>&1 && xcrun actool "$PWD/Resources/AppIcon.icon" \
+        --compile "$PWD/$RES" \
         --app-icon AppIcon \
         --platform macosx \
         --target-device mac \
         --minimum-deployment-target "$MIN_OS" \
-        --output-partial-info-plist build/icon-info.plist >build/actool.log 2>&1 \
+        --output-partial-info-plist "$PWD/build/icon-info.plist" >build/actool.log 2>&1 \
         && [ -f "$RES/Assets.car" ]; then
     [ -f "$RES/AppIcon.icns" ] || cp Resources/AppIcon.icns "$RES/AppIcon.icns"
     /usr/libexec/PlistBuddy -c "Add :CFBundleIconName string AppIcon" "$APP/Contents/Info.plist"
