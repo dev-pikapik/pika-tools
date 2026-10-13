@@ -44,6 +44,9 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 ## Quit on close
 - Turn on, close the last window of an app, then repeat with the app's windows on another Space and with a minimized window. Expected: app quits only when no windows remain anywhere.
 
+## Keep the Dock on one display
+- Needs two displays and "Displays have separate Spaces" on (System Settings > Desktop & Dock). Turn on Settings > Dock > Keep the Dock on one display, then push the pointer against the bottom edge of the other display. Expected: no permission prompt, the Dock stays on its display and hot corners still work. Hold ⌥ and push again: the Dock moves to that display and stays there. Settings > Dock has no "Bring the Dock back" row in this build.
+
 ## Tip jar (after products exist in App Store Connect)
 - Settings > About shows three buttons with local prices. Buy one with a sandbox account. Expected: "Thank you!" appears and nothing unlocks. Cancel the purchase: no error. Offline: "Tips are not available right now" with Try Again that recovers. Search "tip" finds "Say thanks".
 
@@ -54,3 +57,4 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Pet awards: Settings > Pet shows 25 awards. Click the GitHub link in Settings > About. Expected: the "Open Source" award is earned. With iCloud sync on, a second Mac does not receive the awards or the outfit.
 - Uninstaller: in Settings > Uninstaller drop a small test app on the picture and click Move to Trash. Expected: the app and its files are in the Trash, the removal is listed under Recently removed, and Put Back returns everything. An app that is open is asked to quit first, and an item that needs an administrator asks for the password once. Turn on "Offer to clean up when an app goes to the Trash" and drag an app to the Trash in Finder. Expected: Settings opens on this page with that app and the files it left behind, and nothing is removed until you choose.
 - Archives: turn on Settings > Archives in Finder. In a new test folder, right-click a folder of more than 20 MB > Create Archive…, choose 7Z, set a Password and Split into parts of 15 MB. Expected: numbered parts appear next to the folder, and right-click the first part > Extract asks for the password and unpacks a copy of the folder. Space on a ZIP shows the files inside. Turning the switch off removes the menu and the preview.
+- Bring the Dock back: with Keep the Dock on one display on, turn on Settings > Dock > Bring the Dock back and allow Accessibility. Put the Mac to sleep and wake it, or unplug and replug a display, so that the Dock ends up on another display. Expected: within a few seconds the Dock is back on its display and the pointer is where it was.

@@ -246,7 +246,7 @@ struct DockDisplayArt: View {
                 }
                 .position(x: 216, y: 64)
                 ArtCursor()
-                    .cursor(at: step == 0 ? CGPoint(x: 104, y: 46) : CGPoint(x: 222, y: bounced ? 72 : 86))
+                    .cursor(at: step == 0 ? CGPoint(x: 104, y: 46) : CGPoint(x: 222, y: bounced ? 55 : 67))
             }
             .animation(reduceMotion ? nil : .smooth(duration: 0.5), value: step)
         }
