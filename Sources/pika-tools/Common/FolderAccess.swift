@@ -21,6 +21,10 @@ enum FolderAccess {
         UserDefaults.standard.removeObject(forKey: key)
     }
 
+    static func reopen() -> Bool {
+        open.contains { covers($0.resolvingSymlinksInPath().path, home.path) } || restore(home)
+    }
+
     static func ensure(_ folders: [URL]) -> Bool {
         folders.allSatisfy { folder in
             let folder = folder.resolvingSymlinksInPath()
@@ -64,7 +68,7 @@ enum FolderAccess {
         panel.allowsMultipleSelection = false
         panel.directoryURL = inHome ? home : folder
         panel.message = inHome
-            ? String(localized: "Choose your home folder once so pikapik can save files next to yours.")
+            ? String(localized: "Choose your home folder once so pikapik can save files next to yours and see your background tasks.")
             : String(localized: "Choose this folder so pikapik can save files next to yours.")
         panel.prompt = String(localized: "Allow Access")
         NSApp.bringForward()

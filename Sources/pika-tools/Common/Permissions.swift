@@ -35,7 +35,7 @@ enum Permission: CaseIterable {
              String(localized: "Finder Extensions"), String(localized: "Lets the app add items to the right-click menu in Finder"))
         #if APPSTORE
         case .folders:
-            ("", "folder.fill", String(localized: "Folders"), String(localized: "Lets the app save new files next to yours"))
+            ("", "folder.fill", String(localized: "Folders"), String(localized: "Lets the app save new files next to yours and see your background tasks"))
         #else
         case .iCloud:
             ("", "icloud.fill",
