@@ -2,6 +2,11 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.44.0] - Unreleased
+
+### Added
+- Ports: a new Ports page in Settings shows every program that has taken a port on the Mac, with its icon, the TCP and UDP ports and whether other devices on the network can connect. Type a port number to find who holds it or to see that it is free. A row opens the addresses (web addresses open in the browser), the program's file with Show in Finder, the command, the folder, the process ID and when it started. Free Up asks before it quits the program politely and, if the port is still taken after a few seconds, asks again before force quitting it. Programs of macOS and of other users are never quit: for AirPlay Receiver, File Sharing, Screen Sharing, Remote Management and Remote Login the button says which switch in System Settings frees the port. The Mac App Store version lists the same ports; its Free Up menu shows the program, copies a command that quits it in Terminal, or opens Activity Monitor.
+
 ## [1.43.0] - 2026-10-13
 
 ### Added

@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 struct RowLabel: View {
@@ -142,5 +143,55 @@ extension View {
             .padding(.vertical, 10)
             .background(.bar)
             .overlay(alignment: .top) { Divider() }
+    }
+}
+
+struct AppRowLabel<Trailing: View>: View {
+    let icon: NSImage
+    let name: String
+    var running = false
+    let byline: String
+    var minNameWidth: CGFloat?
+    @ViewBuilder var trailing: Trailing
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(nsImage: icon)
+                .resizable()
+                .frame(width: 28, height: 28)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 1) {
+                HStack(spacing: 6) {
+                    Text(name)
+                        .lineLimit(1)
+                    if running {
+                        Circle()
+                            .fill(.green)
+                            .frame(width: 6, height: 6)
+                            .help(Text("Open now"))
+                            .accessibilityLabel(Text("Open now"))
+                    }
+                }
+                if !byline.isEmpty {
+                    Text(byline)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+            }
+            .frame(minWidth: minNameWidth, alignment: .leading)
+            Spacer(minLength: 8)
+            trailing
+        }
+        .contentShape(Rectangle())
+    }
+}
+
+struct RowChevron: View {
+    var body: some View {
+        Image(systemName: "chevron.forward")
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(.tertiary)
+            .accessibilityHidden(true)
     }
 }

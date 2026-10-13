@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Voyez quel programme occupe un port
+
+<sub>1.44.0 · 13 octobre 2026</sub>
+
+Une nouvelle page Ports dans les Réglages montre quel programme occupe chaque port de votre Mac, et libère le port quand vous en avez besoin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Quand un programme vous dit que son port est déjà utilisé, ouvrez Réglages › Ports. Chaque programme qui occupe un port y figure, avec son icône, les ports qu’il occupe et si d’autres appareils de votre réseau peuvent s’y connecter. Tapez un numéro de port pour savoir qui l’occupe, ou pour vérifier qu’il est libre.
+
+Cliquez sur une ligne pour voir les adresses à ouvrir dans un navigateur, le fichier du programme, la commande qui l’a lancé, son dossier et son numéro de processus. « Libérer » demande au programme de quitter, pour qu’il puisse enregistrer son travail. S’il ne se ferme pas, pikapik propose de le forcer à quitter. Chaque étape vous demande d’abord votre accord.
+
+Les éléments de macOS et les programmes d’autres utilisateurs restent intacts. Pour Récepteur AirPlay, Partage de fichiers, Partage d’écran et Session à distance, pikapik vous indique quel interrupteur de Réglages Système libère le port. Dans la version du Mac App Store, « Libérer » affiche le programme, copie une commande à coller dans Terminal pour le quitter, ou ouvre Moniteur d’activité.
+
+---
+
 ## <a id="v1.43.0"></a>Voyez ce qui tourne en arrière-plan
 
 <sub>1.43.0 · 13 octobre 2026</sub>

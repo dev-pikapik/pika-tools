@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Zobacz, kto zajął port
+
+<sub>1.44.0 · 13 października 2026</sub>
+
+Nowa strona Porty w Ustawieniach pokazuje, który program zajmuje każdy port na twoim Macu, i zwalnia port, gdy go potrzebujesz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Gdy program pisze, że jego port jest już zajęty, otwórz Ustawienia › Porty. Znajdziesz tam każdy program, który zajął port, z jego ikoną, portami, które trzyma, i informacją, czy mogą się z nim łączyć inne urządzenia w twojej sieci. Wpisz numer portu, aby sprawdzić, kto go trzyma, albo upewnić się, że jest wolny.
+
+Kliknij wiersz, aby zobaczyć adresy, które otworzysz w przeglądarce, plik programu, polecenie, które go uruchomiło, jego folder i numer procesu. „Zwolnij port” prosi program o zakończenie, żeby zdążył zapisać swoją pracę. Jeśli się nie zamknie, pikapik proponuje wymuszenie zakończenia. Przed każdym krokiem pikapik pyta cię o zgodę.
+
+Części macOS i programy innych użytkowników pozostają nietknięte. Przy usługach „Odbiornik AirPlay”, „Udostępnianie plików”, „Udostępnianie ekranu” i „Zdalne logowanie” pikapik podpowiada, który przełącznik w Ustawieniach systemowych zwalnia port. W wersji z Mac App Store przycisk „Zwolnij port” pokazuje program, kopiuje polecenie, które zakończy go w Terminalu, albo otwiera Monitor aktywności.
+
+---
+
 ## <a id="v1.43.0"></a>Zobacz, co działa w tle
 
 <sub>1.43.0 · 13 października 2026</sub>

@@ -225,6 +225,14 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br>Veja o que roda em segundo plano e de onde veio.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Portas</b>
+<br>Veja qual programa está usando uma porta e libere-a.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes
@@ -316,6 +324,8 @@ Mudou de ideia? Clique em **Devolver** e tudo volta para onde estava, e os ajuda
 
 A página **Tarefas em Segundo Plano** mostra tudo o que começa sozinho no seu Mac: apps que abrem ao iniciar sessão, serviços em segundo plano, ajudantes guardados dentro de apps e sobras de apps que você já removeu. Em cada tarefa você vê qual app a adicionou, se ela está rodando agora mesmo e onde fica o arquivo dela; um clique mostra o arquivo no Finder. Suas próprias tarefas desligam com um botão e religam com a mesma facilidade, e nada é apagado. As tarefas para todos os usuários e para o Mac inteiro são do macOS, então o botão delas abre Itens de Início em Ajustes do Sistema. Na versão da Mac App Store, a página só mostra as tarefas: você dá acesso à sua pasta pessoal uma vez na janela Abrir de sempre, e os botões abrem Itens de Início.
 
+**Portas.** Quando um programa diz que a porta dele já está em uso, abra Ajustes › Portas. Você vê cada programa que ocupou uma porta no seu Mac, com o ícone, os números das portas e se outros dispositivos da sua rede podem se conectar. Digite um número para descobrir quem está usando essa porta ou para ter certeza de que ela está livre. Clique em uma linha para ver os endereços que abrem no navegador, o arquivo do programa, o comando que o iniciou, a pasta dele e o número do processo. **Liberar** pede ao programa que se feche, para que ele possa salvar o trabalho, e, se ele não fechar, oferece forçar o encerramento. Cada passo pede sua confirmação antes. O pikapik nunca encerra partes do macOS nem programas de outros usuários: para Receptor de AirPlay, Compartilhar Arquivos, Compartilhar Tela e Acesso Remoto, ele mostra qual chave nos Ajustes do Sistema libera a porta. Na versão da Mac App Store, **Liberar** mostra o programa, copia um comando que o encerra no Terminal ou abre o Monitor de Atividade.
+
 Cada ferramenta tem a própria chave no menu e nos ajustes.
 
 O ícone na barra de menus mostra o estado num relance: a marca do pikapik quando as ferramentas estão funcionando, a mesma marca mais clara quando tudo está desativado e um triângulo de aviso quando uma ferramenta está ativada, mas faltam permissões.
@@ -355,6 +365,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Ventoinhas**: velocidade de cada ventoinha, modo Auto ou velocidade manual quando o controle das ventoinhas está permitido.
 - **Temperatura**: o quanto o Mac está quente, no geral e por peça, como o processador, a memória e a bateria.
 - **Teste de velocidade**: mede a internet e mostra para que ela serve.
+- **Portas**: qual programa ocupou qual porta, os endereços e detalhes dele e um botão para liberar a porta.
 - **Teclado**: troca de idioma, repetição de teclas, Home e End.
 - **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).

@@ -225,6 +225,14 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br>Sieh, was im Hintergrund läuft und woher es kommt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Ports</b>
+<br>Sieh, welches Programm einen Port belegt, und mach ihn frei.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren
@@ -316,6 +324,8 @@ Doch anders überlegt? Klicke auf **Zurücklegen**, dann ist alles wieder da, wo
 
 Unter **Hintergrundaufgaben** siehst du alles, was auf deinem Mac von selbst startet: Apps, die sich beim Anmelden öffnen, Hintergrunddienste, Helfer, die in Apps stecken, und Reste von Apps, die du schon entfernt hast. Bei jeder Aufgabe steht, welche App sie hinzugefügt hat, ob sie gerade läuft und wo ihre Datei liegt; ein Klick zeigt die Datei im Finder. Deine eigenen Aufgaben schaltest du per Knopfdruck aus und genauso leicht wieder ein, gelöscht wird dabei nichts. Aufgaben für alle Benutzer und für den ganzen Mac gehören zu macOS, deshalb öffnet die Taste bei ihnen die Anmeldeobjekte in den Systemeinstellungen. In der Version aus dem Mac App Store zeigt die Seite die Aufgaben nur an: Du gibst ihr einmal im gewohnten Öffnen-Fenster Zugriff auf deinen Home-Ordner, und die Tasten öffnen die Anmeldeobjekte.
 
+**Ports.** Meldet ein Programm, dass sein Port schon belegt ist, öffne Einstellungen › Ports. Dort siehst du jedes Programm, das auf deinem Mac einen Port belegt, mit seinem Symbol, den Portnummern und der Angabe, ob sich andere Geräte in deinem Netzwerk verbinden können. Gib eine Nummer ein, um herauszufinden, wer diesen Port belegt, oder um sicherzugehen, dass er frei ist. Klicke auf eine Zeile, um die Adressen zu sehen, die sich im Browser öffnen lassen, die Datei des Programms, den Befehl, mit dem es gestartet wurde, seinen Ordner und seine Prozessnummer. **Freimachen** bittet das Programm, sich zu beenden, damit es seine Arbeit sichern kann, und bietet an, es sofort zu beenden, falls es sich nicht schließt. Vor jedem Schritt fragt pikapik dich zuerst. Teile von macOS und Programme anderer Benutzer beendet pikapik nie: Bei „AirPlay-Empfänger“, „Dateifreigabe“, „Bildschirmfreigabe“ und „Entfernte Anmeldung“ sagt es dir, welcher Schalter in den Systemeinstellungen den Port freigibt. In der Version aus dem Mac App Store zeigt **Freimachen** das Programm, kopiert einen Befehl, der es im Terminal beendet, oder öffnet die Aktivitätsanzeige.
+
 Jedes Werkzeug hat einen eigenen Schalter im Menü und in den Einstellungen.
 
 Das Symbol in der Menüleiste zeigt den Status auf einen Blick: das pikapik-Zeichen, wenn die Werkzeuge arbeiten, dasselbe Zeichen blass, wenn alles aus ist, und ein Warndreieck, wenn ein Werkzeug an ist, aber Berechtigungen fehlen.
@@ -355,6 +365,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Lüfter**: Geschwindigkeit jedes Lüfters sehen, Automatisch oder eine eigene Geschwindigkeit wählen, sobald die Lüftersteuerung erlaubt ist.
 - **Temperatur**: wie warm dein Mac ist, insgesamt und für jedes Bauteil, etwa Prozessor, Arbeitsspeicher und Akku.
 - **Speedtest**: Internetgeschwindigkeit messen und sehen, wofür sie reicht.
+- **Ports**: welches Programm welchen Port belegt, seine Adressen und Details sowie eine Taste, die den Port freimacht.
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).

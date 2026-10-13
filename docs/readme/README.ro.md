@@ -225,6 +225,14 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br>Vezi ce rulează în fundal și de unde a venit.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Porturi</b>
+<br>Vezi ce program a ocupat un port și eliberează-l.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii
@@ -316,6 +324,8 @@ Te-ai răzgândit? Apasă **Pune la loc** și totul revine unde a fost, iar ajut
 
 Pagina **Sarcini în fundal** arată tot ce pornește singur pe Mac-ul tău: aplicații care se deschid la autentificare, servicii din fundal, ajutoare ascunse în aplicații și resturi de la aplicații pe care le-ai eliminat deja. La fiecare sarcină vezi ce aplicație a adăugat-o, dacă rulează chiar acum și unde se află fișierul ei, iar un clic arată fișierul în Finder. Sarcinile tale se opresc dintr-un buton și pornesc din nou la fel de ușor, fără să se șteargă nimic. Sarcinile pentru toți utilizatorii și pentru tot Mac-ul țin de macOS, așa că butonul lor deschide Articole de autentificare în Configurări sistem. În versiunea din Mac App Store, pagina doar arată sarcinile: îi dai o singură dată acces la folderul tău principal în fereastra obișnuită Deschide, iar butoanele deschid Articole de autentificare.
 
+**Porturi.** Când un program spune că portul lui e deja folosit, deschide Setări › Porturi. Vezi fiecare program care a ocupat un port pe Mac-ul tău, cu pictograma lui, numerele porturilor și dacă alte dispozitive din rețeaua ta se pot conecta. Scrie un număr ca să afli cine ține acel port sau ca să te asiguri că e liber. Apasă pe un rând ca să vezi adresele pe care le poți deschide în browser, fișierul programului, comanda care l-a pornit, dosarul lui și numărul procesului. **Eliberează** îi cere programului să se închidă, ca să-și poată salva munca, iar dacă nu se închide, îți propune închiderea forțată. Pentru fiecare pas îți cere mai întâi acordul. pikapik nu închide niciodată părți din macOS sau programe ale altor utilizatori: pentru Receptor AirPlay, Partajare fișiere, Partajare ecran și Login de la distanță îți spune ce comutator din Configurări sistem eliberează portul. În versiunea din Mac App Store, **Eliberează** arată programul, copiază o comandă care îl închide în Terminal sau deschide Monitor activitate.
+
 Fiecare instrument are propriul comutator în meniu și în configurări.
 
 Pictograma din bara de meniu arată starea dintr-o privire: semnul pikapik când instrumentele funcționează, același semn, dar palid, când totul este dezactivat și un triunghi de avertizare când un instrument este activat, dar lipsesc permisiuni.
@@ -355,6 +365,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Ventilatoare**: viteza fiecărui ventilator, modul Auto sau o viteză manuală, după ce Controlul ventilatoarelor este permis.
 - **Temperatură**: cât de cald este Mac-ul, per total și pentru fiecare componentă, cum ar fi procesorul, memoria și bateria.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
+- **Porturi**: ce program a ocupat fiecare port, adresele și detaliile lui și un buton care eliberează portul.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).

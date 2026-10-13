@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Vezi ce program ocupă un port
+
+<sub>1.44.0 · 13 octombrie 2026</sub>
+
+Pagina nouă Porturi din Setări arată ce program ține fiecare port de pe Mac-ul tău și eliberează portul când ai nevoie de el.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Când un program spune că portul lui e deja folosit, deschide Setări › Porturi. Acolo apare fiecare program care a ocupat un port, cu pictograma lui, porturile pe care le ține și dacă alte dispozitive din rețeaua ta se pot conecta. Scrie numărul unui port ca să afli cine îl ține sau ca să vezi că e liber.
+
+Apasă pe un rând ca să vezi adresele pe care le poți deschide în browser, fișierul programului, comanda care l-a pornit, dosarul lui și numărul procesului. „Eliberează” îi cere programului să se închidă, ca să-și poată salva munca. Dacă nu se închide, pikapik îți propune închiderea forțată. Pentru fiecare pas îți cere mai întâi acordul.
+
+Părțile din macOS și programele altor utilizatori rămân neatinse. Pentru Receptor AirPlay, Partajare fișiere, Partajare ecran și Login de la distanță, pikapik îți spune ce comutator din Configurări sistem eliberează portul. În versiunea din Mac App Store, „Eliberează” arată programul, copiază o comandă care îl închide în Terminal sau deschide Monitor activitate.
+
+---
+
 ## <a id="v1.43.0"></a>Vezi ce rulează în fundal
 
 <sub>1.43.0 · 13 octombrie 2026</sub>

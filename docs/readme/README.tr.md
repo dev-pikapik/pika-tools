@@ -225,6 +225,14 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br>Arka planda neyin çalıştığını ve nereden geldiğini görün.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Portlar</b>
+<br>Bir portu hangi programın tuttuğunu görün ve serbest bırakın.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Ayrıntılar
@@ -316,6 +324,8 @@ Fikrinizi mi değiştirdiniz? **Geri koy** düğmesine tıklayın; her şey eski
 
 **Arka Plan Görevleri** sayfası, Mac’inizde kendiliğinden başlayan her şeyi gösterir: girişte açılan uygulamalar, arka plan hizmetleri, uygulamaların içine yerleşmiş yardımcılar ve daha önce kaldırdığınız uygulamaların kalıntıları. Her görevde onu hangi uygulamanın eklediği, şu anda çalışıp çalışmadığı ve dosyasının nerede olduğu görünür; tek tıklamayla dosya Finder’da gösterilir. Kendi görevlerinizi tek düğmeyle kapatır, aynı kolaylıkla yeniden açarsınız; hiçbir şey silinmez. Tüm kullanıcılar ve tüm Mac için olan görevleri macOS yönetir, bu yüzden bunların düğmesi Sistem Ayarları’nda Giriş Öğeleri’ni açar. Mac App Store sürümünde sayfa görevleri yalnızca gösterir: ana klasörünüze erişimi bir kez alışık olduğunuz Aç penceresinde verirsiniz, düğmeler de Giriş Öğeleri’ni açar.
 
+**Portlar.** Bir program portunun zaten kullanımda olduğunu söylediğinde Ayarlar › Portlar sayfasını açın. Mac’inizde port tutan her programı simgesi, port numaraları ve ağınızdaki diğer aygıtların ona bağlanıp bağlanamayacağıyla birlikte görürsünüz. Bir numara yazarak o portu kimin tuttuğunu bulun ya da portun boş olduğundan emin olun. Bir satıra tıkladığınızda tarayıcıda açabileceğiniz adresler, programın dosyası, onu başlatan komut, klasörü ve işlem numarası görünür. **Serbest Bırak** önce programdan kapanmasını ister, böylece program işini kaydedebilir; kapanmazsa onu çıkmaya zorlamayı önerir. Her adımdan önce size sorulur. pikapik, macOS’un parçalarını ya da başka kullanıcıların programlarını asla kapatmaz: AirPlay Alıcı, Dosya Paylaşma, Ekran Paylaşma ve Uzaktan Oturum Açma için portu Sistem Ayarları’ndaki hangi anahtarın serbest bıraktığını söyler. Mac App Store sürümünde **Serbest Bırak** programı gösterir, onu Terminal’de kapatan bir komutu kopyalar ya da Etkinlik Monitörü’nü açar.
+
 Her aracın menüde ve ayarlarda kendi anahtarı vardır.
 
 Menü çubuğu simgesi durumu bir bakışta gösterir: araçlar çalışırken pikapik işareti, her şey kapalıyken aynı işaretin soluk hâli, bir araç açık ama izinler eksikken bir uyarı üçgeni.
@@ -355,6 +365,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Fanlar**: her fanın hızı, Fan kontrolüne izin verildiğinde Otomatik veya elle seçilen hız.
 - **Sıcaklık**: Mac’inizin ne kadar ısındığı, genel olarak ve işlemci, bellek, pil gibi her parça için.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
+- **Portlar**: hangi programın hangi portu tuttuğu, adresleri ve ayrıntıları, portu serbest bırakan bir düğme.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).

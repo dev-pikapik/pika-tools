@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Bir portu hangi programın tuttuğunu görün
+
+<sub>1.44.0 · 13 Ekim 2026</sub>
+
+Ayarlar’daki yeni Portlar sayfası, Mac’inizdeki her portu hangi programın tuttuğunu gösterir ve gerektiğinde portu serbest bırakır.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Bir program portunun zaten kullanımda olduğunu söylediğinde Ayarlar › Portlar sayfasını açın. Port tutan her program burada simgesi, tuttuğu portlar ve ağınızdaki diğer aygıtların ona bağlanıp bağlanamayacağı bilgisiyle birlikte görünür. Bir port numarası yazarak o portu kimin tuttuğunu bulun ya da portun boş olduğunu görün.
+
+Bir satıra tıkladığınızda tarayıcıda açabileceğiniz adresler, programın dosyası, onu başlatan komut, klasörü ve işlem numarası görünür. “Serbest Bırak” önce programdan kapanmasını ister, böylece program işini kaydedebilir. Kapanmazsa pikapik onu çıkmaya zorlamayı önerir. Her adımdan önce size sorulur.
+
+macOS’un parçalarına ve başka kullanıcıların programlarına dokunulmaz. AirPlay Alıcı, Dosya Paylaşma, Ekran Paylaşma ve Uzaktan Oturum Açma için pikapik, portu Sistem Ayarları’ndaki hangi anahtarın serbest bıraktığını söyler. Mac App Store sürümünde “Serbest Bırak” programı gösterir, onu Terminal’de kapatan bir komutu kopyalar ya da Etkinlik Monitörü’nü açar.
+
+---
+
 ## <a id="v1.43.0"></a>Arka planda neyin çalıştığını görün
 
 <sub>1.43.0 · 13 Ekim 2026</sub>

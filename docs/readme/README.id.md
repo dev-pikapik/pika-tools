@@ -225,6 +225,14 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br>Lihat apa yang berjalan di latar belakang dan dari mana asalnya.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Port</b>
+<br>Lihat program mana yang memakai port, lalu bebaskan.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya
@@ -316,6 +324,8 @@ Berubah pikiran? Klik **Kembalikan**, dan semuanya kembali ke tempat semula, sem
 
 Halaman **Tugas Latar Belakang** menampilkan semua yang mulai berjalan sendiri di Mac Anda: app yang terbuka saat masuk, layanan latar belakang, pembantu yang terselip di dalam app, dan sisa app yang sudah Anda hapus. Setiap tugas menunjukkan app mana yang menambahkannya, apakah tugas itu sedang berjalan sekarang, dan di mana file-nya berada; sekali klik, file-nya tampil di Finder. Tugas milik Anda sendiri bisa dimatikan dengan satu tombol dan dinyalakan lagi sama mudahnya, tanpa ada yang dihapus. Tugas untuk semua pengguna dan untuk seluruh Mac adalah milik macOS, jadi tombolnya membuka Item Login di Pengaturan Sistem. Di versi Mac App Store, halaman ini hanya menampilkan tugas: Anda memberi akses ke folder utama Anda sekali saja di jendela Buka yang biasa, dan tombol-tombolnya membuka Item Login.
 
+**Port.** Saat sebuah program bilang port-nya sudah dipakai, buka Pengaturan › Port. Anda melihat setiap program yang memakai port di Mac Anda, lengkap dengan ikonnya, nomor port, dan apakah perangkat lain di jaringan Anda bisa terhubung. Ketik nomor untuk mencari siapa yang memakai port itu, atau untuk memastikan port itu bebas. Klik sebuah baris untuk melihat alamat yang bisa dibuka di browser, file program, perintah yang menjalankannya, folder-nya, dan nomor prosesnya. **Bebaskan** meminta program keluar agar sempat menyimpan pekerjaannya, dan jika program tidak tertutup, menawarkan untuk memaksanya keluar. Kedua langkah itu meminta persetujuan Anda dulu. pikapik tidak pernah menutup bagian dari macOS atau program milik pengguna lain: untuk Penerima AirPlay, Berbagi File, Berbagi Layar, dan Masuk Jarak Jauh, Anda diberi tahu saklar mana di Pengaturan Sistem yang membebaskan port. Di versi Mac App Store, **Bebaskan** menampilkan program, menyalin perintah untuk menutupnya di Terminal, atau membuka Monitor Aktivitas.
+
 Setiap alat punya saklarnya sendiri di menu dan di pengaturan.
 
 Ikon di bar menu menunjukkan status sekilas: tanda pikapik saat alat bekerja, tanda yang sama tetapi pucat saat semuanya mati, dan segitiga peringatan saat sebuah alat menyala tetapi izinnya belum lengkap.
@@ -355,6 +365,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual setelah Kontrol kipas diizinkan.
 - **Suhu**: seberapa hangat Mac Anda, secara keseluruhan dan per komponen, seperti prosesor, memori, dan baterai.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.
+- **Port**: program mana yang memakai port mana, alamat dan detailnya, serta tombol untuk membebaskan port.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).

@@ -225,6 +225,14 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br>Zobacz, co działa w tle i skąd się wzięło.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Porty</b>
+<br>Zobacz, który program zajął port, i zwolnij go.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów
@@ -316,6 +324,8 @@ Jeśli zmienisz zdanie, kliknij **Przywróć**: wszystko wróci na swoje miejsce
 
 Strona **Zadania w tle** pokazuje wszystko, co samo uruchamia się na twoim Macu: aplikacje otwierane po zalogowaniu, usługi w tle, pomocników ukrytych w aplikacjach i pozostałości po już usuniętych aplikacjach. Przy każdym zadaniu widać, która aplikacja je dodała, czy działa w tej chwili i gdzie leży jego plik, a jedno kliknięcie pokazuje ten plik w Finderze. Własne zadania wyłączasz jednym przyciskiem i równie łatwo włączasz z powrotem. Nic przy tym nie jest usuwane. Zadania dla wszystkich użytkowników i dla całego Maca należą do macOS, więc ich przycisk otwiera Rzeczy otwierane podczas logowania w Ustawieniach systemowych. W wersji z Mac App Store strona tylko pokazuje zadania: dostęp do folderu domowego dajesz jej raz w zwykłym oknie otwierania, a przyciski otwierają Rzeczy otwierane podczas logowania.
 
+**Porty.** Gdy program pisze, że jego port jest już zajęty, otwórz Ustawienia › Porty. Zobaczysz każdy program, który zajął port na twoim Macu, z jego ikoną, numerami portów i informacją, czy mogą się z nim łączyć inne urządzenia w twojej sieci. Wpisz numer, aby sprawdzić, kto trzyma ten port, albo upewnić się, że jest wolny. Kliknij wiersz, aby zobaczyć adresy, które otworzysz w przeglądarce, plik programu, polecenie, które go uruchomiło, jego folder i numer procesu. **Zwolnij port** prosi program o zakończenie, żeby zdążył zapisać swoją pracę, a jeśli się nie zamknie, proponuje wymuszenie zakończenia. Przed każdym krokiem pikapik pyta cię o zgodę. Części macOS ani programów innych użytkowników pikapik nigdy nie zamyka: przy usługach „Odbiornik AirPlay”, „Udostępnianie plików”, „Udostępnianie ekranu” i „Zdalne logowanie” podpowiada, który przełącznik w Ustawieniach systemowych zwalnia port. W wersji z Mac App Store przycisk **Zwolnij port** pokazuje program, kopiuje polecenie, które zakończy go w Terminalu, albo otwiera Monitor aktywności.
+
 Każde narzędzie ma własny przełącznik w menu i w ustawieniach.
 
 Ikona na pasku menu od razu pokazuje stan: znak pikapik, gdy narzędzia działają, ten sam znak, ale blady, gdy wszystko jest wyłączone, i trójkąt ostrzegawczy, gdy narzędzie jest włączone, ale brakuje uprawnień.
@@ -355,6 +365,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Wentylatory**: prędkość każdego wentylatora, tryb Auto lub prędkość ustawiana ręcznie, gdy zezwolono na Sterowanie wentylatorami.
 - **Temperatura**: jak bardzo nagrzał się Mac, ogólnie i dla każdej części, na przykład procesora, pamięci i baterii.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
+- **Porty**: który program zajął który port, jego adresy i szczegóły oraz przycisk, który zwalnia port.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).

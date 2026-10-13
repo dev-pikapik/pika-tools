@@ -225,6 +225,14 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br>Podívejte se, co běží na pozadí a odkud se to vzalo.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Porty</b>
+<br>Zjistěte, který program zabral port, a uvolněte ho.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti
@@ -316,6 +324,8 @@ Rozmysleli jste si to? Klikněte na **Vrátit zpět** a všechno se vrátí na p
 
 Stránka **Úlohy na pozadí** ukazuje vše, co se na vašem Macu spouští samo: aplikace otevírané po přihlášení, služby na pozadí, pomocníky schované uvnitř aplikací a zbytky po už odebraných aplikacích. U každé úlohy vidíte, která aplikace ji přidala, jestli právě běží a kde leží její soubor, a jedním kliknutím soubor zobrazíte ve Finderu. Vlastní úlohy vypnete jedním tlačítkem a stejně snadno je zase zapnete, nic se přitom nemaže. Úlohy pro všechny uživatele a pro celý Mac patří macOS, proto jejich tlačítko otevře Položky po přihlášení v Nastavení systému. Ve verzi z Mac App Store stránka úlohy jen ukazuje: přístup k domovské složce jí dáte jednou v obvyklém okně Otevřít a tlačítka otevírají Položky po přihlášení.
 
+**Porty.** Když program hlásí, že jeho port je už obsazený, otevřete Nastavení › Porty. Uvidíte každý program, který na vašem Macu zabral port, s jeho ikonou, čísly portů a informací, jestli se k němu mohou připojit další zařízení ve vaší síti. Zadejte číslo a zjistíte, kdo ten port drží, nebo si ověříte, že je volný. Klikněte na řádek a uvidíte adresy, které otevřete v prohlížeči, soubor programu, příkaz, kterým byl spuštěn, jeho složku a číslo procesu. **Uvolnit** požádá program o ukončení, aby si stihl uložit práci, a pokud se nezavře, nabídne jeho vynucené ukončení. Před každým krokem se vás pikapik nejdřív zeptá. Části macOS ani programy jiných uživatelů pikapik nikdy neukončuje: u služeb Přijímač AirPlay, Sdílení souborů, Sdílení obrazovky a Vzdálené přihlášení vám poradí, který přepínač v Nastavení systému port uvolní. Ve verzi z Mac App Store tlačítko **Uvolnit** ukáže program, zkopíruje příkaz, který ho ukončí v Terminálu, nebo otevře Monitor aktivity.
+
 Každý nástroj má vlastní přepínač v nabídce i v nastavení.
 
 Ikona v řádku nabídek ukazuje stav na první pohled: značka pikapik, když nástroje fungují, stejná značka, jen bledá, když je vše vypnuté, a výstražný trojúhelník, když je nástroj zapnutý, ale chybí oprávnění.
@@ -355,6 +365,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost, jakmile je povolené Ovládání ventilátorů.
 - **Teplota**: jak moc je Mac zahřátý, celkově i po jednotlivých součástech, například procesor, paměť a baterie.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.
+- **Porty**: který program zabral který port, jeho adresy a podrobnosti a tlačítko, které port uvolní.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).

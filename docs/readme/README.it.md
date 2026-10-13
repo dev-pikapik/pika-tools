@@ -225,6 +225,14 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br>Scopri cosa gira in background e da dove arriva.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+<br><b>Porte</b>
+<br>Scopri quale programma occupa una porta e liberala.
+</td>
+<td width="50%" valign="top"></td>
+</tr></tbody>
 </table>
 
 ## Più dettagli
@@ -316,6 +324,8 @@ Hai cambiato idea? Fai clic su **Rimetti a posto** e tutto torna dov’era, ment
 
 La pagina **Attività in background** mostra tutto ciò che parte da solo sul tuo Mac: le app che si aprono al login, i servizi in background, gli aiutanti nascosti dentro le app e i resti delle app che hai già rimosso. Per ogni attività vedi quale app l’ha aggiunta, se è in funzione proprio ora e dove si trova il suo file, e con un clic il file compare nel Finder. Le tue attività si spengono con un pulsante e si riaccendono con la stessa facilità, e non viene eliminato nulla. Le attività per tutti gli utenti e per tutto il Mac appartengono a macOS, quindi il loro pulsante apre Elementi login in Impostazioni di Sistema. Nella versione del Mac App Store la pagina mostra soltanto le attività: le dai accesso alla tua cartella Home una volta nella solita finestra Apri, e i pulsanti aprono Elementi login.
 
+**Porte.** Quando un programma dice che la sua porta è già in uso, apri Impostazioni › Porte. Vedi ogni programma che occupa una porta sul tuo Mac, con la sua icona, i numeri di porta e se altri dispositivi della tua rete possono connettersi. Digita un numero per scoprire chi occupa quella porta o per assicurarti che sia libera. Fai clic su una riga per vedere gli indirizzi da aprire nel browser, il file del programma, il comando che l’ha avviato, la sua cartella e il suo numero di processo. **Libera la porta** chiede al programma di chiudersi, così può salvare il suo lavoro, e se non si chiude ti propone l’uscita forzata. Prima di ogni passaggio ti chiede conferma. pikapik non chiude mai parti di macOS né programmi di altri utenti: per Ricevitore AirPlay, Condivisione file, Condivisione schermo e Login remoto ti dice quale interruttore in Impostazioni di Sistema libera la porta. Nella versione del Mac App Store, **Libera la porta** mostra il programma, copia un comando che lo chiude da Terminale o apre Monitoraggio Attività.
+
 Ogni strumento ha il suo interruttore nel menu e nelle impostazioni.
 
 L’icona nella barra dei menu mostra lo stato a colpo d’occhio: il simbolo pikapik quando gli strumenti funzionano, lo stesso simbolo più chiaro quando è tutto spento e un triangolo di avviso quando uno strumento è attivo ma mancano i permessi.
@@ -355,6 +365,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Ventole**: velocità di ogni ventola, modalità Auto o velocità manuale quando il controllo ventole è consentito.
 - **Temperatura**: quanto è caldo il Mac, nel complesso e per ogni componente, come processore, memoria e batteria.
 - **Velocità internet**: misura la connessione e mostra a cosa basta.
+- **Porte**: quale programma occupa quale porta, i suoi indirizzi e i dettagli, e un pulsante per liberare la porta.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).

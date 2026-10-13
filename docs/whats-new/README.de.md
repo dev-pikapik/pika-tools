@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Sieh, welches Programm einen Port belegt
+
+<sub>1.44.0 · 13. Oktober 2026</sub>
+
+Eine neue Seite „Ports“ in den Einstellungen zeigt, welches Programm welchen Port auf deinem Mac belegt, und macht den Port frei, wenn du ihn brauchst.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Meldet ein Programm, dass sein Port schon belegt ist, öffne Einstellungen › Ports. Dort steht jedes Programm, das einen Port belegt, mit seinem Symbol, den Ports, die es belegt, und der Angabe, ob sich andere Geräte in deinem Netzwerk verbinden können. Gib eine Portnummer ein, um herauszufinden, wer den Port belegt, oder um zu sehen, dass er frei ist.
+
+Klicke auf eine Zeile, um die Adressen zu sehen, die sich im Browser öffnen lassen, die Datei des Programms, den Befehl, mit dem es gestartet wurde, seinen Ordner und seine Prozessnummer. „Freimachen“ bittet das Programm, sich zu beenden, damit es seine Arbeit sichern kann. Schließt es sich nicht, bietet pikapik an, es sofort zu beenden. Vor beiden Schritten fragt pikapik dich zuerst.
+
+Teile von macOS und Programme anderer Benutzer bleiben unberührt. Bei „AirPlay-Empfänger“, „Dateifreigabe“, „Bildschirmfreigabe“ und „Entfernte Anmeldung“ sagt dir pikapik, welcher Schalter in den Systemeinstellungen den Port freigibt. In der Version aus dem Mac App Store zeigt „Freimachen“ das Programm, kopiert einen Befehl, der es im Terminal beendet, oder öffnet die Aktivitätsanzeige.
+
+---
+
 ## <a id="v1.43.0"></a>Sieh, was im Hintergrund läuft
 
 <sub>1.43.0 · 13. Oktober 2026</sub>
