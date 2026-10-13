@@ -264,7 +264,6 @@ struct ItemTile: View {
         }
         .buttonStyle(TileStyle())
         .help(unlocked ? "" : award?.hint ?? "")
-        .accessibilityElement(children: .ignore)
         .accessibilityLabel(item.title)
         .accessibilityValue([unlocked ? nil : String(localized: "Locked"), fresh ? String(localized: "New") : nil, item.rank.title].compactMap { $0 }.joined(separator: ", "))
         .accessibilityHint(unlocked ? "" : award?.hint ?? "")
@@ -313,7 +312,6 @@ private struct LookCard: View {
         .buttonStyle(TileStyle())
         .disabled(!ready)
         .help(ready ? "" : ([progressText] + look.items.filter { !progress.unlocked($0) }.compactMap { item in item.award.map { "\(item.title): \($0.hint)" } }).joined(separator: "\n"))
-        .accessibilityElement(children: .ignore)
         .accessibilityLabel(look.title)
         .accessibilityValue(ready ? look.rank.title : progressText)
         .accessibilityAddTraits(on ? .isSelected : [])

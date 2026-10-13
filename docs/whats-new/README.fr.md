@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Masquez l’app au premier plan d’un bouton de la souris
+
+<sub>1.46.0 · 13 octobre 2026</sub>
+
+Appuyez sur le bouton du milieu ou sur un bouton latéral, et l’app dans laquelle vous êtes s’efface, comme avec ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Souris, activez « Masquer l’app active avec un bouton de la souris » et appuyez sur le bouton que vous voulez utiliser. « Modifier… » permet d’en choisir un autre plus tard. L’app continue de tourner, et un clic sur son icône dans le Dock la fait revenir. Quand vous jouez avec le Mode Jeu activé, le bouton fait dans le jeu ce qu’il a toujours fait. Si « Boutons latéraux pour Précédent et Suivant » est aussi activé, le bouton latéral choisi masque plutôt les apps. La fonction nécessite l’autorisation « Accessibilité » et est désactivée par défaut.
+
+Dans la version du Mac App Store, ⌘X coupe les fichiers dans le Finder : sélectionnez des fichiers, appuyez sur ⌘X, ouvrez un autre dossier, puis choisissez « Déplacer les éléments ici » dans le menu pikapik ou appuyez sur ⌥⌘V. « Animations » et « Désactiver l’accélération du pointeur » sont de retour, et la page « Autorisations » a une nouvelle section, « Laissées par des apps supprimées ». Cette version ne peut pas modifier ces réglages elle-même : chaque ligne explique donc quoi changer et ouvre le bon endroit dans Réglages Système. Le compagnon se promène désormais sur toute la largeur de l’écran, au-dessus du Dock.
+
+**Pour essayer :** Réglages › Souris › Masquer l’app active avec un bouton de la souris
+
+**Corrigé**
+
+- Les dessins de la page « Souris » sont de nouveau nets.
+- Les fonctions du clavier et de la souris ne demandent plus que l’autorisation dont elles se servent vraiment. La plupart n’ont besoin que de l’autorisation « Accessibilité » ; avant, elles demandaient aussi « Surveillance de l’entrée » et restaient grisées sans elle.
+- « Changer de langue » signale quand il a besoin de « Surveillance de l’entrée », et un clic dessus ouvre la page « Autorisations ». Avant, il restait activé sans fonctionner.
+- « Quitter à la fermeture de la dernière fenêtre » attend que vous accordiez « Surveillance de l’entrée », au lieu de pousser macOS à la demander au lancement de pikapik.
+- Sur macOS 27, « Accessibilité » apparaît sous son nouveau nom, « Contrôle de l’appareil et accès aux données », comme dans Réglages Système.
+- Avec VoiceOver, vous pouvez maintenant choisir les vêtements et les tenues de votre compagnon dans « Garde-robe » et « Tenues », et ouvrir ses récompenses dans « Récompenses ». Avant, ces vignettes ne réagissaient pas.
+
+---
+
 ## <a id="v1.45.0"></a>Chaque app a son propre volume
 
 <sub>1.45.0 · 13 octobre 2026</sub>

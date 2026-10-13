@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik’in iki izne ihtiyacı var";
 "Both permissions are on and every tool is working." = "İki izin de açık ve tüm araçlar çalışıyor.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bunlar olmadan macOS, uygulamanın tıklamaları ve tuşları görmesine veya değiştirmesine izin vermez. Sistem Ayarları › Gizlilik ve Güvenlik’i açın ve bu iki listede pikapik’i etkinleştirin:";
+"Permissions for some tools" = "Bazı araçlar için izinler";
+"Only some tools need these permissions. Everything else works without them." = "Bu izinlere yalnızca bazı araçlar ihtiyaç duyar. Geri kalan her şey izinsiz de çalışır.";
 "Accessibility" = "Erişilebilirlik";
 "Input Monitoring" = "Giriş İzleme";
 "Lets the app see clicks and keys" = "Uygulamanın tıklamaları ve tuşları görmesini sağlar";
@@ -360,6 +362,7 @@
 "Upload" = "Yükleme";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "Yaklaşık yarım dakika sürer. Ölçüm Apple sunucularıyla yapılır.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Yaklaşık 15 saniye sürer. Ölçüm speed.cloudflare.com ile yapılır.";
 "Checked %@" = "Ölçüldü: %@";
 "Responsiveness" = "Tepki hızı";
 "How quickly things react while the internet is busy" = "İnternet meşgulken her şeyin ne kadar çabuk tepki verdiği";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Program başka bir kullanıcıya ya da sisteme ait, bu yüzden pikapik ona dokunmuyor. Programı Etkinlik Monitörü’nden kapatabilirsiniz.";
 "Open Activity Monitor" = "Etkinlik Monitörü’nü Aç";
 "Show “%@”" = "“%@” Uygulamasını Göster";
-"Copy Command" = "Komutu Kopyala";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Uygulama kapandığında port serbest kalır. Kaydedilmemiş işi varsa ne yapılacağını size soracak.";
 "The program gets a moment to finish its work, then the port is free." = "Programa işini bitirmesi için kısa bir süre tanınır, ardından port serbest kalır.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Program kapanmadı. Çıkmaya zorlamak onu hemen durdurur ve kaydedilmemiş her şey kaybolur.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Bir portu serbest bırakmak için onu tutan programı kapatın: programa geçip oradan kapatın ya da komutu Terminal’e yapıştırın.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Bir portu serbest bırakmak için onu tutan programı kapatın: programın kendisinden ya da Etkinlik Monitörü’nden.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "port, bağlantı noktası, sunucu, localhost, dinleme, sonlandır, öldür, lsof, adres kullanımda, EADDRINUSE, işlem, süreç, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Uzaktan Oturum Açma";
 "File Sharing" = "Dosya Paylaşma";

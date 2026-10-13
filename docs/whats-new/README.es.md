@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Oculta la app que tienes delante con un botón del ratón
+
+<sub>1.46.0 · 13 de octubre de 2026</sub>
+
+Pulsa el botón central o uno lateral, y la app en la que estás se aparta, igual que con ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Ratón, activa «Ocultar la app actual con un botón del ratón» y pulsa el botón que quieras usar. Con «Cambiar…» eliges otro más adelante. La app sigue abierta, y un clic en su icono del Dock la trae de vuelta. Mientras juegas con el Modo de juego activado, el botón hace en el juego lo de siempre. Si «Botones laterales para atrás y adelante» también está activado, el botón lateral que elegiste oculta apps en su lugar. Necesita el permiso «Accesibilidad» y viene desactivado por omisión.
+
+En la versión de la Mac App Store, ⌘X corta archivos en el Finder: selecciona los archivos, pulsa ⌘X, abre otra carpeta y elige «Trasladar ítems aquí» en el menú de pikapik o pulsa ⌥⌘V. Vuelven «Animaciones» y «Desactivar la aceleración del puntero», y la página «Permisos» tiene una sección nueva, «Restos de apps eliminadas». Esta versión no puede cambiar esos ajustes por sí misma, así que cada fila explica qué cambiar y abre el sitio justo en Ajustes del Sistema. Tu mascota ahora pasea por todo el ancho de la pantalla, por encima del Dock.
+
+**Pruébalo:** Ajustes › Ratón › Ocultar la app actual con un botón del ratón
+
+**Corregido**
+
+- Los dibujos de la página «Ratón» vuelven a verse nítidos.
+- Las funciones de teclado y ratón piden solo el permiso que de verdad usan. La mayoría solo necesita «Accesibilidad»; antes también pedían «Monitorización de los dispositivos de entrada» y se quedaban en gris sin él.
+- «Cambiar de idioma» avisa cuando necesita «Monitorización de los dispositivos de entrada», y un clic en él abre la página «Permisos». Antes se quedaba activado sin funcionar.
+- «Salir al cerrar la última ventana» espera a que permitas «Monitorización de los dispositivos de entrada», en vez de hacer que macOS lo pida al abrir pikapik.
+- En macOS 27, «Accesibilidad» aparece con su nuevo nombre, «Control de dispositivos y acceso a datos», igual que en Ajustes del Sistema.
+- Con VoiceOver, ahora puedes elegir la ropa y los disfraces de tu mascota en «Armario» y «Disfraces», y abrir sus premios en «Premios». Antes, esos recuadros no respondían.
+
+---
+
 ## <a id="v1.45.0"></a>Cada app tiene su propio volumen
 
 <sub>1.45.0 · 13 de octubre de 2026</sub>

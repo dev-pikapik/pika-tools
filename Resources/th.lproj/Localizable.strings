@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik ต้องการการอนุญาตสองรายการ";
 "Both permissions are on and every tool is working." = "เปิดการอนุญาตทั้งสองแล้ว และเครื่องมือทุกตัวทำงานได้";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "หากไม่มีการอนุญาตเหล่านี้ macOS จะไม่ให้แอปดูหรือเปลี่ยนการคลิกและการกดปุ่ม เปิดการตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย แล้วเปิด pikapik ในสองรายการนี้:";
+"Permissions for some tools" = "การอนุญาตสำหรับเครื่องมือบางตัว";
+"Only some tools need these permissions. Everything else works without them." = "มีเพียงเครื่องมือบางตัวที่ต้องใช้การอนุญาตเหล่านี้ ส่วนอื่นทั้งหมดใช้งานได้โดยไม่ต้องอนุญาต";
 "Accessibility" = "การช่วยการเข้าถึง";
 "Input Monitoring" = "การตรวจสอบสัญญาณเข้า";
 "Lets the app see clicks and keys" = "ให้แอปดูการคลิกและการกดปุ่ม";
@@ -360,6 +362,7 @@
 "Upload" = "อัปโหลด";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "ใช้เวลาราวครึ่งนาที การตรวจใช้เซิร์ฟเวอร์ของ Apple";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "ใช้เวลาราว 15 วินาที การตรวจใช้ speed.cloudflare.com";
 "Checked %@" = "ตรวจเมื่อ %@";
 "Responsiveness" = "การตอบสนอง";
 "How quickly things react while the internet is busy" = "ทุกอย่างตอบสนองเร็วแค่ไหนขณะที่อินเทอร์เน็ตกำลังใช้งานหนัก";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "โปรแกรมนี้เป็นของผู้ใช้อื่นหรือของระบบ pikapik จึงไม่แตะต้อง คุณออกจากโปรแกรมนี้ได้ในตัวตรวจสอบกิจกรรม";
 "Open Activity Monitor" = "เปิดตัวตรวจสอบกิจกรรม";
 "Show “%@”" = "แสดง “%@”";
-"Copy Command" = "คัดลอกคำสั่ง";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "พอร์ตจะว่างเมื่อแอปปิด หากมีงานที่ยังไม่ได้บันทึก แอปจะถามว่าจะให้ทำอย่างไร";
 "The program gets a moment to finish its work, then the port is free." = "โปรแกรมจะมีเวลาสักครู่เพื่อทำงานให้เสร็จ แล้วพอร์ตจะว่าง";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "โปรแกรมไม่ได้ปิด การบังคับออกจะหยุดโปรแกรมทันที และสิ่งที่ยังไม่ได้บันทึกจะหายไป";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "หากต้องการทำให้พอร์ตว่าง ให้ออกจากโปรแกรมที่ใช้พอร์ตนั้นอยู่ โดยสลับไปที่โปรแกรมแล้วออกจากตรงนั้น หรือวางคำสั่งในเทอร์มินัล";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "หากต้องการทำให้พอร์ตว่าง ให้ออกจากโปรแกรมที่ใช้พอร์ตนั้นอยู่ จะออกจากในตัวโปรแกรมเองหรือในตัวตรวจสอบกิจกรรมก็ได้";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "พอร์ต, เซิร์ฟเวอร์, localhost, รอรับการเชื่อมต่อ, ปิด, ฆ่า, lsof, ที่อยู่ถูกใช้อยู่, EADDRINUSE, โปรเซส, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "การเข้าสู่ระบบระยะไกล";
 "File Sharing" = "การแชร์ไฟล์";

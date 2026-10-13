@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik are nevoie de două permisiuni";
 "Both permissions are on and every tool is working." = "Ambele permisiuni sunt activate și toate instrumentele funcționează.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Fără ele, macOS nu permite aplicației să vadă sau să modifice clicurile și tastele. Deschide Configurări sistem › Confidențialitate și securitate și activează pikapik în aceste două liste:";
+"Permissions for some tools" = "Permisiuni pentru unele instrumente";
+"Only some tools need these permissions. Everything else works without them." = "Doar unele instrumente au nevoie de aceste permisiuni. Restul funcționează și fără ele.";
 "Accessibility" = "Accesibilitate";
 "Input Monitoring" = "Monitorizare intrare";
 "Lets the app see clicks and keys" = "Permite aplicației să vadă clicurile și tastele";
@@ -360,6 +362,7 @@
 "Upload" = "Încărcare";
 "Mbit/s" = "Mbit/s";
 "Takes about half a minute. The check runs on Apple’s servers." = "Durează cam jumătate de minut. Testul folosește serverele Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Durează cam 15 secunde. Testul folosește speed.cloudflare.com.";
 "Checked %@" = "Verificat %@";
 "Responsiveness" = "Reactivitate";
 "How quickly things react while the internet is busy" = "Cât de repede răspunde totul când internetul e ocupat";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Programul aparține altui utilizator sau sistemului, așa că pikapik nu se atinge de el. Îl poți închide din Monitor activitate.";
 "Open Activity Monitor" = "Deschide Monitor activitate";
 "Show “%@”" = "Arată „%@”";
-"Copy Command" = "Copiază comanda";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Portul se eliberează după ce aplicația se închide. Dacă are lucru nesalvat, te va întreba ce să faci.";
 "The program gets a moment to finish its work, then the port is free." = "Programul are un moment să-și termine treaba, apoi portul e liber.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Programul nu s-a închis. Închiderea forțată îl oprește imediat, iar ce nu e salvat se pierde.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Ca să eliberezi un port, închide programul care îl ocupă: mergi la program și închide-l de acolo sau lipește comanda în Terminal.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Ca să eliberezi un port, închide programul care îl ocupă: chiar din program sau din Monitor activitate.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "port, server, localhost, ascultă, închide, oprește, lsof, adresă folosită, EADDRINUSE, proces, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Login de la distanță";
 "File Sharing" = "Partajare fișiere";

@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Göm appen längst fram med en musknapp
+
+<sub>1.46.0 · 13 oktober 2026</sub>
+
+Tryck på mittknappen eller en sidoknapp, så kliver appen du är i åt sidan, precis som med ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Mus, slå på ”Göm den aktuella appen med en musknapp” och tryck på knappen du vill använda. Med ”Ändra…” väljer du en annan senare. Appen fortsätter att köra, och ett klick på dess symbol i Dock tar tillbaka den. När du spelar med Spelläge på gör knappen det den alltid har gjort i spelet. Om ”Sidoknapparna går bakåt och framåt” också är på gömmer den sidoknapp du valt appar i stället. Det kräver behörigheten ”Hjälpmedel” och är av som standard.
+
+I versionen från Mac App Store klipper ⌘X ut filer i Finder: markera filer, tryck på ⌘X, öppna en annan mapp och välj sedan ”Flytta objekt hit” i pikapik-menyn eller tryck på ⌥⌘V. ”Animationer” och ”Stäng av pekaracceleration” är tillbaka, och sidan ”Behörigheter” har en ny sektion, ”Kvar efter raderade appar”. Den här versionen kan inte ändra de inställningarna själv, så varje rad förklarar vad du ska ändra och öppnar rätt ställe i Systeminställningar. Husdjuret går nu över hela skärmens bredd ovanför Dock.
+
+**Prova:** Inställningar › Mus › Göm den aktuella appen med en musknapp
+
+**Åtgärdat**
+
+- Teckningarna på sidan ”Mus” är skarpa igen.
+- Tangentbords- och musfunktioner ber bara om den behörighet de faktiskt använder. De flesta behöver bara ”Hjälpmedel”; tidigare bad de även om ”Övervakning av inmatning” och förblev grå utan den.
+- ”Byt språk” visar när det behöver ”Övervakning av inmatning”, och ett klick på det öppnar sidan ”Behörigheter”. Tidigare förblev det på utan att fungera.
+- ”Avsluta när sista fönstret stängs” väntar tills du tillåter ”Övervakning av inmatning”, i stället för att låta macOS fråga efter den när pikapik startar.
+- I macOS 27 visas ”Hjälpmedel” under sitt nya namn, ”Enhetskontroll och dataåtkomst”, precis som i Systeminställningar.
+- Med VoiceOver kan du nu välja kläder och outfits åt husdjuret i ”Garderob” och ”Outfits” och öppna dess utmärkelser i ”Utmärkelser”. Tidigare reagerade rutorna inte.
+
+---
+
 ## <a id="v1.45.0"></a>Varje app har sin egen volym
 
 <sub>1.45.0 · 13 oktober 2026</sub>

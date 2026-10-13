@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik には 2 つのアクセス権が必要です";
 "Both permissions are on and every tool is working." = "両方のアクセス権があり、すべてのツールが動作しています。";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "これがないと、macOS はアプリにクリックやキー入力の確認・変更を許可しません。「システム設定」›「プライバシーとセキュリティ」を開き、次の 2 つのリストで pikapik をオンにしてください：";
+"Permissions for some tools" = "一部のツールで使うアクセス権";
+"Only some tools need these permissions. Everything else works without them." = "これらのアクセス権が必要なのは一部のツールだけです。ほかの機能はアクセス権がなくても使えます。";
 "Accessibility" = "アクセシビリティ";
 "Input Monitoring" = "入力監視";
 "Lets the app see clicks and keys" = "クリックやキー入力を確認するため";
@@ -360,6 +362,7 @@
 "Upload" = "アップロード";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "30秒ほどかかります。測定にはAppleのサーバを使います。";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "15秒ほどかかります。測定にはspeed.cloudflare.comを使います。";
 "Checked %@" = "%@に測定";
 "Responsiveness" = "応答性";
 "How quickly things react while the internet is busy" = "インターネットが混んでいるときの反応の速さ";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "このプログラムはほかのユーザまたはシステムのものなので、pikapikは操作しません。アクティビティモニタで終了できます。";
 "Open Activity Monitor" = "アクティビティモニタを開く";
 "Show “%@”" = "「%@」を表示";
-"Copy Command" = "コマンドをコピー";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "アプリが閉じるとポートが空きます。保存していない作業がある場合は、どうするかアプリが確認します。";
 "The program gets a moment to finish its work, then the port is free." = "プログラムが作業を終えるのを少し待ってから、ポートが空きます。";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "プログラムが閉じませんでした。強制終了すると今すぐ停止し、保存していない内容は失われます。";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "ポートを空けるには、そのポートを使っているプログラムを終了します。プログラムに切り替えてそこで終了するか、コマンドをターミナルにペーストしてください。";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "ポートを空けるには、そのポートを使っているプログラムを終了します。プログラムで直接終了するか、アクティビティモニタで終了してください。";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "ポート, サーバ, localhost, 待ち受け, リッスン, 終了, キル, lsof, 使用中, アドレス使用中, EADDRINUSE, プロセス, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "リモートログイン";
 "File Sharing" = "ファイル共有";

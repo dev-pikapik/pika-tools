@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Nascondi l’app in primo piano con un tasto del mouse
+
+<sub>1.46.0 · 13 ottobre 2026</sub>
+
+Premi il tasto centrale o un tasto laterale, e l’app in cui ti trovi si fa da parte, proprio come con ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Apri Impostazioni › Mouse, attiva «Nascondi l’app corrente con un tasto del mouse» e premi il tasto che vuoi usare. Con «Cambia…» ne scegli un altro in seguito. L’app resta aperta, e un clic sulla sua icona nel Dock la fa tornare. Mentre giochi con la Modalità gioco attiva, il tasto fa nel gioco quello che ha sempre fatto. Se è attivo anche «Tasti laterali per indietro e avanti», il tasto laterale scelto nasconde invece le app. Richiede il permesso «Accessibilità» ed è disattivato di default.
+
+Nella versione del Mac App Store, ⌘X taglia i file nel Finder: seleziona i file, premi ⌘X, apri un’altra cartella e scegli «Sposta elementi qui» nel menu di pikapik oppure premi ⌥⌘V. Tornano «Animazioni» e «Disattiva l’accelerazione del puntatore», e la pagina «Permessi» ha una nuova sezione, «Lasciati dalle app eliminate». Questa versione non può cambiare da sola queste impostazioni, quindi ogni riga spiega cosa cambiare e apre il punto giusto in Impostazioni di Sistema. L’animaletto ora passeggia per tutta la larghezza dello schermo, sopra il Dock.
+
+**Provalo:** Impostazioni › Mouse › Nascondi l’app corrente con un tasto del mouse
+
+**Corretto**
+
+- I disegni nella pagina «Mouse» sono di nuovo nitidi.
+- Le funzioni di tastiera e mouse chiedono solo il permesso che usano davvero. Alla maggior parte basta «Accessibilità»; prima chiedevano anche «Monitoraggio input» e senza restavano grigie.
+- «Cambia lingua» mostra quando le serve «Monitoraggio input», e un clic apre la pagina «Permessi». Prima restava attiva senza funzionare.
+- «Esci alla chiusura dell’ultima finestra» aspetta che tu consenta «Monitoraggio input», invece di far chiedere il permesso a macOS all’avvio di pikapik.
+- Su macOS 27, «Accessibilità» compare con il suo nuovo nome, «Controllo del dispositivo e accesso ai dati», come in Impostazioni di Sistema.
+- Con VoiceOver ora puoi scegliere i vestiti e i look del tuo animaletto in «Guardaroba» e «Look» e aprire i suoi premi in «Premi». Prima quei riquadri non rispondevano.
+
+---
+
 ## <a id="v1.45.0"></a>Ogni app ha il suo volume
 
 <sub>1.45.0 · 13 ottobre 2026</sub>

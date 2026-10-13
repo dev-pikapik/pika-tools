@@ -12,6 +12,10 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Changed
 - Mac App Store version: the pet walks across the whole width of the screen above the Dock and no longer stops short of the Dock’s ends.
+- Mac App Store version: the Battery page reads the battery’s maximum capacity and condition straight from macOS and no longer starts another program to do it.
+- Mac App Store version: Background Tasks no longer has the Open at Login group. These apps are listed in System Settings › General › Login Items.
+- Mac App Store version: Free Up in Ports no longer copies a Terminal command. It shows the app that holds the port or opens Activity Monitor, where you can quit the program.
+- Mac App Store version: the top of the Permissions page now says that only some tools need these permissions and everything else works without them.
 
 ### Fixed
 - Mouse: the drawings on the Mouse page are sharp again.
@@ -19,6 +23,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Switch language: it now shows when it needs Input Monitoring, and a click on the row opens the Permissions page. Before, it stayed on without working.
 - Permissions: keyboard and mouse features now ask only for the permission they really use. Most need only Accessibility; before, they also asked for Input Monitoring and stayed grey without it.
 - Quit when the last window closes: it now waits until you allow Input Monitoring, instead of making macOS ask for it when pikapik starts.
+- Speed Test: in the Mac App Store version, the caption says the check takes about 15 seconds and uses speed.cloudflare.com. Before, it said the check runs on Apple’s servers.
+- Pet: with VoiceOver, you can pick the pet’s clothes and looks in Wardrobe and Looks and open its Awards. Before, those tiles didn’t respond.
 
 ## [1.45.0] - 2026-10-13
 

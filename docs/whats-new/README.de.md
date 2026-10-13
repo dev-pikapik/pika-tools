@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Die App im Vordergrund per Maustaste ausblenden
+
+<sub>1.46.0 · 13. Oktober 2026</sub>
+
+Drück die mittlere Taste oder eine Seitentaste, und die App, in der du gerade bist, tritt zur Seite, genau wie mit ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Maus, schalte „Maustaste blendet die aktuelle App aus“ ein und drück die Taste, die du benutzen möchtest. Mit „Ändern …“ wählst du später eine andere. Die App läuft weiter, und ein Klick auf ihr Symbol im Dock holt sie zurück. Solange du mit eingeschaltetem Spielmodus spielst, macht die Taste im Spiel das, was sie immer gemacht hat. Ist auch „Seitentasten für Zurück und Vorwärts“ an, blendet die gewählte Seitentaste stattdessen Apps aus. Die Funktion braucht die Erlaubnis „Bedienungshilfen“ und ist standardmäßig aus.
+
+In der Version aus dem Mac App Store schneidet ⌘X Dateien im Finder aus: Wähle Dateien aus, drück ⌘X, öffne einen anderen Ordner und wähle dann „Objekte hierherbewegen“ im pikapik-Menü oder drück ⌥⌘V. „Animationen“ und „Zeigerbeschleunigung ausschalten“ sind zurück, und die Seite „Berechtigungen“ hat einen neuen Abschnitt: „Von gelöschten Apps übrig“. Diese Version kann solche Einstellungen nicht selbst ändern. Deshalb sagt dir jede Zeile, was du ändern musst, und öffnet die richtige Stelle in den Systemeinstellungen. Dein Haustier läuft jetzt über die ganze Breite des Bildschirms oberhalb des Docks.
+
+**Ausprobieren:** Einstellungen › Maus › Maustaste blendet die aktuelle App aus
+
+**Behoben**
+
+- Die Zeichnungen auf der Seite „Maus“ sind wieder scharf.
+- Tastatur- und Mausfunktionen fragen nur noch nach der Berechtigung, die sie wirklich nutzen. Die meisten brauchen nur „Bedienungshilfen“; vorher wollten sie auch „Eingabeüberwachung“ und blieben ohne sie grau.
+- „Sprache wechseln“ zeigt an, wenn es „Eingabeüberwachung“ braucht, und ein Klick darauf öffnet die Seite „Berechtigungen“. Vorher blieb es eingeschaltet, ohne zu funktionieren.
+- „Beenden, wenn das letzte Fenster schließt“ wartet, bis du „Eingabeüberwachung“ erlaubst, statt macOS beim Start von pikapik danach fragen zu lassen.
+- Unter macOS 27 erscheint „Bedienungshilfen“ unter seinem neuen Namen „Gerätesteuerung und Datenzugriff“, genau wie in den Systemeinstellungen.
+- Mit VoiceOver kannst du jetzt unter „Kleiderschrank“ und „Outfits“ Kleidung und Outfits für dein Haustier aussuchen und unter „Auszeichnungen“ seine Auszeichnungen öffnen. Vorher haben diese Kacheln nicht reagiert.
+
+---
+
 ## <a id="v1.45.0"></a>Jede App hat ihre eigene Lautstärke
 
 <sub>1.45.0 · 13. Oktober 2026</sub>

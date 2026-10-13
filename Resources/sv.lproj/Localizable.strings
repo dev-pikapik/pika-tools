@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik behöver två behörigheter";
 "Both permissions are on and every tool is working." = "Båda behörigheterna är på och alla verktyg fungerar.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Utan dem låter macOS inte appen se eller ändra klick och tangenttryckningar. Öppna Systeminställningar › Integritet och säkerhet och slå på pikapik i de här två listorna:";
+"Permissions for some tools" = "Behörigheter för vissa verktyg";
+"Only some tools need these permissions. Everything else works without them." = "Bara vissa verktyg behöver de här behörigheterna. Allt annat fungerar utan dem.";
 "Accessibility" = "Hjälpmedel";
 "Input Monitoring" = "Övervakning av inmatning";
 "Lets the app see clicks and keys" = "Låter appen se klick och tangenttryckningar";
@@ -360,6 +362,7 @@
 "Upload" = "Uppladdning";
 "Mbit/s" = "Mbit/s";
 "Takes about half a minute. The check runs on Apple’s servers." = "Tar ungefär en halv minut. Testet går via Apples servrar.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Tar ungefär 15 sekunder. Testet går via speed.cloudflare.com.";
 "Checked %@" = "Testat %@";
 "Responsiveness" = "Responsivitet";
 "How quickly things react while the internet is busy" = "Hur snabbt allt svarar medan internet är upptaget";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Programmet tillhör en annan användare eller systemet, så pikapik rör det inte. Du kan avsluta det i Aktivitetskontroll.";
 "Open Activity Monitor" = "Öppna Aktivitetskontroll";
 "Show “%@”" = "Visa ”%@”";
-"Copy Command" = "Kopiera kommando";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Porten blir ledig när appen stängs. Om den har osparat arbete frågar den vad du vill göra.";
 "The program gets a moment to finish its work, then the port is free." = "Programmet får en stund på sig att avsluta sitt arbete, sedan är porten ledig.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Programmet stängdes inte. Tvångsavslut stoppar det direkt, och allt osparat går förlorat.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "För att frigöra en port avslutar du programmet som håller den: gå till programmet och avsluta det där, eller klistra in kommandot i Terminal.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "För att frigöra en port avslutar du programmet som håller den: i själva programmet eller i Aktivitetskontroll.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "port, server, localhost, lyssnar, avsluta, döda, lsof, adressen används redan, EADDRINUSE, process, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Fjärrinloggning";
 "File Sharing" = "Fildelning";

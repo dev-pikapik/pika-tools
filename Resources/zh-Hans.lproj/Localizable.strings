@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik 需要两项权限";
 "Both permissions are on and every tool is working." = "两项权限均已开启，所有工具正常工作。";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "没有这些权限，macOS 不允许应用查看或更改点按和按键。请打开“系统设置” › “隐私与安全性”，在以下两个列表中开启 pikapik：";
+"Permissions for some tools" = "部分工具所需的权限";
+"Only some tools need these permissions. Everything else works without them." = "只有部分工具需要这些权限，其他功能不授权也能正常使用。";
 "Accessibility" = "辅助功能";
 "Input Monitoring" = "输入监控";
 "Lets the app see clicks and keys" = "用于查看点按和按键";
@@ -360,6 +362,7 @@
 "Upload" = "上传";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "大约半分钟。测速使用 Apple 的服务器。";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "大约 15 秒。测速使用 speed.cloudflare.com。";
 "Checked %@" = "测于%@";
 "Responsiveness" = "响应能力";
 "How quickly things react while the internet is busy" = "网络繁忙时一切反应有多快";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "这个程序属于其他用户或系统，所以 pikapik 不会动它。你可以在“活动监视器”中退出它。";
 "Open Activity Monitor" = "打开“活动监视器”";
 "Show “%@”" = "显示“%@”";
-"Copy Command" = "拷贝命令";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "App 关闭后端口就会释放。如果有未存储的内容，它会询问你该怎么做。";
 "The program gets a moment to finish its work, then the port is free." = "程序会有片刻时间完成手头的工作，之后端口就会释放。";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "此程序没有关闭。强制退出会立即停止它，未存储的内容将会丢失。";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "要释放端口，请退出占用它的程序：切换到该程序并在那里退出，或者将命令粘贴到“终端”中。";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "要释放端口，请退出占用它的程序：直接在该程序中退出，或在“活动监视器”中退出。";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "端口, 服务器, localhost, 监听, 结束, 杀死, lsof, 地址已被占用, 端口被占用, EADDRINUSE, 进程, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "远程登录";
 "File Sharing" = "文件共享";

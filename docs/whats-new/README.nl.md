@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Verberg de app op de voorgrond met een muisknop
+
+<sub>1.46.0 · 13 oktober 2026</sub>
+
+Druk op de middelste knop of een zijknop, en de app waarin je bezig bent gaat opzij, net als met ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Muis, zet ‘Verberg de huidige app met een muisknop’ aan en druk op de knop die je wilt gebruiken. Met ‘Wijzig…’ kies je later een andere. De app blijft gewoon draaien, en een klik op het symbool in het Dock haalt hem terug. Speel je met de Gamemodus aan, dan doet de knop in de game wat hij altijd deed. Staat ‘Zijknoppen voor terug en vooruit’ ook aan, dan verbergt de gekozen zijknop in plaats daarvan apps. Het heeft de toestemming ‘Toegankelijkheid’ nodig en staat standaard uit.
+
+In de versie uit de Mac App Store knipt ⌘X bestanden in de Finder: selecteer bestanden, druk op ⌘X, open een andere map en kies dan ‘Verplaats onderdelen hierheen’ in het pikapik-menu of druk op ⌥⌘V. ‘Animaties’ en ‘Aanwijzerversnelling uitschakelen’ zijn terug, en de pagina ‘Toestemmingen’ heeft een nieuwe sectie: ‘Achtergelaten door verwijderde apps’. Deze versie kan die instellingen niet zelf wijzigen, dus elke rij legt uit wat je moet veranderen en opent de juiste plek in Systeeminstellingen. Je huisdiertje loopt nu over de hele breedte van het scherm, boven het Dock.
+
+**Probeer het:** Instellingen › Muis › Verberg de huidige app met een muisknop
+
+**Opgelost**
+
+- De tekeningen op de pagina ‘Muis’ zijn weer scherp.
+- Toetsenbord- en muisfuncties vragen alleen nog om de toestemming die ze echt gebruiken. De meeste hebben alleen ‘Toegankelijkheid’ nodig; eerder vroegen ze ook om ‘Invoer vastleggen’ en bleven ze zonder die toestemming grijs.
+- ‘Van taal wisselen’ laat zien wanneer het ‘Invoer vastleggen’ nodig heeft, en een klik erop opent de pagina ‘Toestemmingen’. Eerder bleef het aan zonder te werken.
+- ‘Stop als het laatste venster sluit’ wacht tot je ‘Invoer vastleggen’ toestaat, in plaats van macOS er bij het starten van pikapik om te laten vragen.
+- In macOS 27 verschijnt ‘Toegankelijkheid’ onder zijn nieuwe naam, ‘Apparaatbeheer en gegevenstoegang’, net als in Systeeminstellingen.
+- Met VoiceOver kies je nu kleren en outfits voor je huisdiertje in ‘Kledingkast’ en ‘Outfits’, en open je de onderscheidingen in ‘Onderscheidingen’. Eerder reageerden die tegels niet.
+
+---
+
 ## <a id="v1.45.0"></a>Elke app heeft zijn eigen volume
 
 <sub>1.45.0 · 13 oktober 2026</sub>

@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik cần hai quyền";
 "Both permissions are on and every tool is working." = "Cả hai quyền đã được bật và mọi công cụ đều hoạt động.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Nếu không có các quyền này, macOS sẽ không cho ứng dụng xem hoặc thay đổi thao tác bấm và phím. Hãy mở Cài đặt hệ thống › Quyền riêng tư & bảo mật và bật pikapik trong hai danh sách sau:";
+"Permissions for some tools" = "Quyền cho một số công cụ";
+"Only some tools need these permissions. Everything else works without them." = "Chỉ một số công cụ cần các quyền này. Mọi thứ khác vẫn hoạt động mà không cần chúng.";
 "Accessibility" = "Trợ năng";
 "Input Monitoring" = "Giám sát đầu vào";
 "Lets the app see clicks and keys" = "Cho phép ứng dụng xem thao tác bấm và phím";
@@ -360,6 +362,7 @@
 "Upload" = "Tải lên";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "Mất khoảng nửa phút. Việc đo dùng máy chủ của Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Mất khoảng 15 giây. Việc đo dùng speed.cloudflare.com.";
 "Checked %@" = "Đã đo %@";
 "Responsiveness" = "Độ phản hồi";
 "How quickly things react while the internet is busy" = "Mọi thứ phản hồi nhanh thế nào khi internet đang bận";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Chương trình này thuộc về người dùng khác hoặc hệ thống nên pikapik không động đến. Bạn có thể thoát chương trình trong Giám sát hoạt động.";
 "Open Activity Monitor" = "Mở Giám sát hoạt động";
 "Show “%@”" = "Hiển thị “%@”";
-"Copy Command" = "Sao chép lệnh";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Cổng sẽ trống khi ứng dụng đóng. Nếu còn công việc chưa lưu, ứng dụng sẽ hỏi bạn muốn làm gì.";
 "The program gets a moment to finish its work, then the port is free." = "Chương trình có chút thời gian để làm xong việc, sau đó cổng sẽ trống.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Chương trình chưa đóng. Buộc thoát sẽ dừng ngay, và mọi thứ chưa lưu sẽ mất.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Để giải phóng cổng, hãy thoát chương trình đang giữ cổng: chuyển sang chương trình đó và thoát tại đó, hoặc dán lệnh vào Terminal.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Để giải phóng cổng, hãy thoát chương trình đang giữ cổng: ngay trong chương trình đó hoặc trong Giám sát hoạt động.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "cổng, máy chủ, localhost, lắng nghe, tắt, dừng, lsof, địa chỉ đang được dùng, EADDRINUSE, tiến trình, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Đăng nhập Từ xa";
 "File Sharing" = "Chia sẻ Tệp";

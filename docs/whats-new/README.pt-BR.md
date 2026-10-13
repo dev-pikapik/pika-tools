@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Oculte o app da frente com um botão do mouse
+
+<sub>1.46.0 · 13 de outubro de 2026</sub>
+
+Pressione o botão do meio ou um botão lateral, e o app em que você está sai da frente, do mesmo jeito que com ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Mouse, ative “Ocultar o app atual com um botão do mouse” e pressione o botão que você quer usar. Com “Alterar…” você escolhe outro depois. O app continua aberto, e um clique no ícone dele no Dock o traz de volta. Enquanto você joga com o Modo Jogo ligado, o botão faz no jogo o que sempre fez. Se “Botões laterais para voltar e avançar” também estiver ativado, o botão lateral escolhido passa a ocultar apps. Precisa da permissão “Acessibilidade” e vem desativado por padrão.
+
+Na versão da Mac App Store, ⌘X recorta arquivos no Finder: selecione os arquivos, pressione ⌘X, abra outra pasta e escolha “Mover Itens para Cá” no menu do pikapik ou pressione ⌥⌘V. “Animações” e “Desativar a aceleração do cursor” estão de volta, e a página “Permissões” ganhou uma seção nova, “Restos de apps apagados”. Esta versão não consegue mudar esses ajustes sozinha, então cada linha explica o que mudar e abre o lugar certo nos Ajustes do Sistema. O bichinho agora passeia por toda a largura da tela, acima do Dock.
+
+**Experimente:** Ajustes › Mouse › Ocultar o app atual com um botão do mouse
+
+**Corrigido**
+
+- Os desenhos da página “Mouse” estão nítidos de novo.
+- Os recursos de teclado e mouse pedem só a permissão que realmente usam. A maioria só precisa de “Acessibilidade”; antes, também pediam “Monitoração de Entrada” e ficavam cinza sem ela.
+- “Trocar de idioma” avisa quando precisa de “Monitoração de Entrada”, e um clique nele abre a página “Permissões”. Antes, ficava ligado sem funcionar.
+- “Encerrar ao fechar a última janela” espera você permitir “Monitoração de Entrada”, em vez de fazer o macOS pedir isso quando o pikapik abre.
+- No macOS 27, “Acessibilidade” aparece com o novo nome, “Controle do Dispositivo e Acesso a Dados”, como nos Ajustes do Sistema.
+- Com o VoiceOver, agora você pode escolher as roupas e os looks do bichinho em “Guarda-roupa” e “Looks” e abrir os prêmios dele em “Prêmios”. Antes, esses quadradinhos não respondiam.
+
+---
+
 ## <a id="v1.45.0"></a>Cada app tem seu próprio volume
 
 <sub>1.45.0 · 13 de outubro de 2026</sub>

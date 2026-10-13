@@ -12,7 +12,6 @@ struct PortLook {
     let name: String
     let file: String?
     let icon: NSImage
-    let isApp: Bool
     let window: NSRunningApplication?
 }
 
@@ -44,9 +43,7 @@ struct PortQuestion {
     private(set) var freeing: Set<pid_t> = []
     var query = ""
     var expanded: Set<pid_t> = []
-    #if APPSTORE
-    private(set) var copied: pid_t?
-    #else
+    #if !APPSTORE
     var question: PortQuestion?
     #endif
     @ObservationIgnored private var looks: [String: PortLook] = [:]
@@ -119,7 +116,7 @@ struct PortQuestion {
         let name = app?.localizedName ?? file.map { FileManager.default.displayName(atPath: $0).replacingOccurrences(of: ".app", with: "", options: [.anchored, .backwards]) } ?? owner.name
         let icon = file.map { NSWorkspace.shared.icon(forFile: $0) } ?? NSWorkspace.shared.icon(for: .unixExecutable)
         let window = ([app].compactMap { $0 } + chain.compactMap { pid in apps.first { $0.processIdentifier == pid } }).first { $0.activationPolicy == .regular }
-        let look = PortLook(name: name, file: file, icon: icon, isApp: app != nil, window: window)
+        let look = PortLook(name: name, file: file, icon: icon, window: window)
         looks[key] = look
         return look
     }
@@ -174,17 +171,7 @@ struct PortQuestion {
         NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
     }
 
-    #if APPSTORE
-    func copyCommand(_ program: PortProgram) {
-        NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString("kill \(program.owner.pid)", forType: .string)
-        copied = program.id
-        Task {
-            try? await Task.sleep(for: .seconds(1))
-            if copied == program.id { copied = nil }
-        }
-    }
-    #else
+    #if !APPSTORE
     func free(_ program: PortProgram) {
         question = ask(program, force: false)
     }

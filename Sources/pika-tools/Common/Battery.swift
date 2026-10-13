@@ -44,6 +44,27 @@ struct BatteryHealth: Equatable {
     var capacity: Int?
     var normal: Bool?
 
+    #if APPSTORE
+    init?(source: [String: Any], registry: [String: Any]) {
+        if let pack = (source["BatteryPacks"] as? [[String: Any]])?.first?["BatteryHealth"] as? [String: Any] {
+            let state = pack["Battery Service State"] as? Int
+            if let percent = pack["Maximum Capacity Percent"] as? Int, percent >= 0, state != 8 { capacity = min(100, percent) }
+            normal = state.map { $0 == 0 }
+        } else {
+            if let full = registry["NominalChargeCapacity"] as? Int ?? registry["AppleRawMaxCapacity"] as? Int,
+               let design = registry[kIOPMPSDesignCapacityKey] as? Int, full > 0, design > 0 {
+                capacity = min(100, Int((Double(full) * 100 / Double(design)).rounded(.up)))
+            }
+            switch source[kIOPSBatteryHealthKey] as? String {
+            case "Good": normal = true
+            case "Fair", "Poor": normal = false
+            default: normal = nil
+            }
+            if source[kIOPSBatteryHealthConditionKey] != nil || registry["PermanentFailureStatus"] as? Int ?? 0 != 0 { normal = false }
+        }
+        if capacity == nil && normal == nil { return nil }
+    }
+    #else
     init?(profile data: Data) {
         guard let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let items = root["SPPowerDataType"] as? [[String: Any]],
@@ -57,6 +78,7 @@ struct BatteryHealth: Equatable {
         }
         if capacity == nil && normal == nil { return nil }
     }
+    #endif
 }
 
 @Observable
@@ -91,6 +113,11 @@ final class Battery {
     }
 
     private func checkHealth() {
+        #if APPSTORE
+        guard let source = Self.source(),
+              let health = BatteryHealth(source: source, registry: Self.registry([kIOPMPSDesignCapacityKey, "NominalChargeCapacity", "AppleRawMaxCapacity", "PermanentFailureStatus"])) else { return }
+        if health != self.health { self.health = health }
+        #else
         DispatchQueue.global(qos: .utility).async {
             let process = Process()
             process.executableURL = URL(fileURLWithPath: "/usr/sbin/system_profiler")
@@ -104,25 +131,30 @@ final class Battery {
             guard let health = BatteryHealth(profile: data) else { return }
             DispatchQueue.main.async { if health != self.health { self.health = health } }
         }
+        #endif
     }
 
     static func read() -> BatteryState? {
+        source().flatMap { BatteryState(source: $0, registry: registry(), adapter: IOPSCopyExternalPowerAdapterDetails()?.takeRetainedValue() as? [String: Any]) }
+    }
+
+    private static func source() -> [String: Any]? {
         guard let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
               let list = IOPSCopyPowerSourcesList(info)?.takeRetainedValue() as? [CFTypeRef] else { return nil }
         for item in list {
             guard let source = IOPSGetPowerSourceDescription(info, item)?.takeUnretainedValue() as? [String: Any],
                   source[kIOPSTypeKey] as? String == kIOPSInternalBatteryType else { continue }
-            return BatteryState(source: source, registry: registry(), adapter: IOPSCopyExternalPowerAdapterDetails()?.takeRetainedValue() as? [String: Any])
+            return source
         }
         return nil
     }
 
-    private static func registry() -> [String: Any] {
+    private static func registry(_ keys: [String] = [kIOPMPSCycleCountKey, kIOPMPSVoltageKey, kIOPMPSAmperageKey]) -> [String: Any] {
         let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("AppleSmartBattery"))
         guard service != 0 else { return [:] }
         defer { IOObjectRelease(service) }
         var values: [String: Any] = [:]
-        for key in [kIOPMPSCycleCountKey, kIOPMPSVoltageKey, kIOPMPSAmperageKey] {
+        for key in keys {
             values[key] = IORegistryEntryCreateCFProperty(service, key as CFString, kCFAllocatorDefault, 0)?.takeRetainedValue()
         }
         return values

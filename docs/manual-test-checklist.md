@@ -44,7 +44,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed or display-off rows.
 
 ## Battery
-- On a Mac with a battery, open Settings > Battery. Expected: charge, status and cycle count match `pmset -g batt` and System Settings > Battery; Condition and Maximum Capacity match `system_profiler SPPowerDataType` a moment later. Plugged in: Power Adapter shows its name and watts, and Charging Power shows watts while charging. Unplugged: Power Use shows watts and the adapter row is gone.
+- On a Mac with a battery, open Settings > Battery. Expected: charge, status and cycle count match `pmset -g batt` and System Settings > Battery; Maximum Capacity is within two points of System Settings > Battery > Battery Health, and the Condition row appears only when the battery needs service; Activity Monitor shows no system_profiler started by pikapik. Plugged in: Power Adapter shows its name and watts, and Charging Power shows watts while charging. Unplugged: Power Use shows watts and the adapter row is gone.
 - Click Battery Settings…. Expected: System Settings opens on Battery. Nothing on the page changes how the Mac charges. On a Mac without a battery the sidebar has no Battery row.
 
 ## Background Tasks
@@ -55,7 +55,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - In Terminal run `python3 -m http.server 47123 --bind 127.0.0.1`, then open Settings > Ports. Expected: Python with port 47123 under Your programs, its folder under the name; `lsof -nP -iTCP:47123 -sTCP:LISTEN` shows the same process ID as the row.
 - Type 47123 in the search field. Expected: only that row. Type 47199. Expected: "Port 47199 is free".
 - Click the row. Expected: localhost:47123 opens the page in the browser, "Only this Mac can connect.", Protocol TCP, the path of Python, the command, the folder, the process ID and when it started.
-- Free Up > Copy Command, paste it in a second Terminal window and run it. Expected: the server stops and the row disappears within two seconds.
+- Click Free Up. Expected: only Open Activity Monitor (and Show for an app), no Copy Command. Quit Python in Activity Monitor. Expected: the row disappears within two seconds.
 - Turn on AirPlay Receiver in System Settings > General > AirDrop & Handoff. Expected: Control Center appears under macOS and other users with 5000 and 7000; Free Up explains which switch frees the port, and Change in System Settings opens AirDrop & Handoff.
 
 ## Pet

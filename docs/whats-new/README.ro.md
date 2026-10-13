@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Ascunde aplicația din față cu un buton al mausului
+
+<sub>1.46.0 · 13 octombrie 2026</sub>
+
+Apasă butonul din mijloc sau un buton lateral, iar aplicația în care ești se dă la o parte, exact ca prin ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Maus, pornește „Un buton al mausului ascunde aplicația curentă” și apasă butonul pe care vrei să-l folosești. Cu „Modifică…” alegi altul mai târziu. Aplicația rămâne deschisă, iar un clic pe pictograma ei din Dock o aduce înapoi. Cât timp joci cu Modul Joc pornit, butonul face în joc ce a făcut mereu. Dacă este pornit și „Butoanele laterale merg înapoi și înainte”, butonul lateral ales ascunde în schimb aplicații. Are nevoie de permisiunea „Accesibilitate” și este dezactivat implicit.
+
+În versiunea din Mac App Store, ⌘X decupează fișiere în Finder: selectează fișierele, apasă ⌘X, deschide alt dosar, apoi alege „Mutați articolele aici” din meniul pikapik sau apasă ⌥⌘V. „Animații” și „Dezactivează accelerarea cursorului” s-au întors, iar pagina „Permisiuni” are o secțiune nouă, „Rămase de la aplicații șterse”. Această versiune nu poate schimba singură aceste setări, așa că fiecare rând explică ce trebuie schimbat și deschide locul potrivit din Configurări sistem. Animăluțul se plimbă acum pe toată lățimea ecranului, deasupra Dock-ului.
+
+**Încearcă:** Setări › Maus › Un buton al mausului ascunde aplicația curentă
+
+**Reparat**
+
+- Desenele din pagina „Maus” sunt din nou clare.
+- Funcțiile pentru tastatură și maus cer doar permisiunea pe care o folosesc cu adevărat. Majorității le ajunge „Accesibilitate”; înainte cereau și „Monitorizare intrare” și rămâneau gri fără ea.
+- „Schimbă limba” arată când are nevoie de „Monitorizare intrare”, iar un clic pe ea deschide pagina „Permisiuni”. Înainte rămânea pornită fără să funcționeze.
+- „Ieși când se închide ultima fereastră” așteaptă până permiți „Monitorizare intrare”, în loc să facă macOS să o ceară la pornirea pikapik.
+- Pe macOS 27, „Accesibilitate” apare cu noul nume, „Control al dispozitivului și acces la date”, la fel ca în Configurări sistem.
+- Cu VoiceOver poți alege acum hainele și ținutele animăluțului în „Garderobă” și „Ținute” și îi poți deschide premiile în „Premii”. Înainte, aceste pătrățele nu răspundeau.
+
+---
+
 ## <a id="v1.45.0"></a>Fiecare aplicație are propriul volum
 
 <sub>1.45.0 · 13 octombrie 2026</sub>

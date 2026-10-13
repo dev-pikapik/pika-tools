@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik braucht zwei Berechtigungen";
 "Both permissions are on and every tool is working." = "Beide Berechtigungen sind aktiv, alle Tools funktionieren.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Ohne sie lässt macOS die App keine Klicks und Tasten sehen oder ändern. Öffne Systemeinstellungen › Datenschutz & Sicherheit und aktiviere pikapik in diesen zwei Listen:";
+"Permissions for some tools" = "Berechtigungen für einige Tools";
+"Only some tools need these permissions. Everything else works without them." = "Nur einige Tools brauchen diese Berechtigungen. Alles andere funktioniert auch ohne sie.";
 "Accessibility" = "Bedienungshilfen";
 "Input Monitoring" = "Eingabeüberwachung";
 "Lets the app see clicks and keys" = "Damit die App Klicks und Tasten sehen kann";
@@ -360,6 +362,7 @@
 "Upload" = "Upload";
 "Mbit/s" = "Mbit/s";
 "Takes about half a minute. The check runs on Apple’s servers." = "Dauert etwa eine halbe Minute. Die Messung läuft über Server von Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Dauert etwa 15 Sekunden. Die Messung läuft über speed.cloudflare.com.";
 "Checked %@" = "Geprüft %@";
 "Responsiveness" = "Reaktionsfähigkeit";
 "How quickly things react while the internet is busy" = "Wie schnell alles reagiert, während das Internet ausgelastet ist";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Das Programm gehört einem anderen Benutzer oder dem System, deshalb lässt pikapik es in Ruhe. Du kannst es in der Aktivitätsanzeige beenden.";
 "Open Activity Monitor" = "Aktivitätsanzeige öffnen";
 "Show “%@”" = "„%@“ anzeigen";
-"Copy Command" = "Befehl kopieren";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Der Port wird frei, sobald die App geschlossen ist. Falls noch etwas nicht gesichert ist, fragt sie dich, was passieren soll.";
 "The program gets a moment to finish its work, then the port is free." = "Das Programm hat kurz Zeit, seine Arbeit zu beenden, danach ist der Port frei.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Das Programm hat sich nicht geschlossen. „Sofort beenden“ stoppt es auf der Stelle, und alles Ungesicherte geht verloren.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Um einen Port freizumachen, beende das Programm, das ihn belegt: Wechsle zum Programm und beende es dort oder füge den Befehl im Terminal ein.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Um einen Port freizumachen, beende das Programm, das ihn belegt: im Programm selbst oder in der Aktivitätsanzeige.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "Port, Server, localhost, lauschen, beenden, lsof, Adresse bereits verwendet, Port belegt, freigeben, EADDRINUSE, Prozess, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Entfernte Anmeldung";
 "File Sharing" = "Dateifreigabe";

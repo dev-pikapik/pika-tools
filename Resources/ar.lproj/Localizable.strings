@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "يحتاج pikapik إلى إذنين";
 "Both permissions are on and every tool is working." = "الإذنان مفعّلان وكل الأدوات تعمل.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "بدونهما، لن يسمح macOS للتطبيق برؤية النقرات والمفاتيح أو تغييرها. افتح إعدادات النظام › الخصوصية والأمن وشغّل pikapik في هاتين القائمتين:";
+"Permissions for some tools" = "أذونات لبعض الأدوات";
+"Only some tools need these permissions. Everything else works without them." = "تحتاج بعض الأدوات فقط إلى هذه الأذونات. أما كل شيء آخر فيعمل من دونها.";
 "Accessibility" = "تسهيلات الاستخدام";
 "Input Monitoring" = "مراقبة الإدخال";
 "Lets the app see clicks and keys" = "يسمح للتطبيق برؤية النقرات والمفاتيح";
@@ -360,6 +362,7 @@
 "Upload" = "الرفع";
 "Mbit/s" = "ميغابت/ث";
 "Takes about half a minute. The check runs on Apple’s servers." = "يستغرق نحو نصف دقيقة. يتم الفحص عبر خوادم Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "يستغرق نحو 15 ثانية. يتم الفحص عبر speed.cloudflare.com.";
 "Checked %@" = "آخر فحص: %@";
 "Responsiveness" = "الاستجابة";
 "How quickly things react while the internet is busy" = "مدى سرعة استجابة كل شيء أثناء انشغال الإنترنت";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "هذا البرنامج يخص مستخدمًا آخر أو النظام، لذا لا يلمسه pikapik. يمكنك إنهاؤه من مراقب النشاط.";
 "Open Activity Monitor" = "فتح مراقب النشاط";
 "Show “%@”" = "إظهار «%@»";
-"Copy Command" = "نسخ الأمر";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "سيصبح المنفذ متاحًا بعد إغلاق التطبيق. إذا كان لديه عمل غير محفوظ، فسيسألك عمّا تريد فعله.";
 "The program gets a moment to finish its work, then the port is free." = "يحصل البرنامج على لحظة لإنهاء عمله، ثم يصبح المنفذ متاحًا.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "لم يُغلق البرنامج. فرض الإنهاء يوقفه فورًا، وأي شيء غير محفوظ سيضيع.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "لتحرير منفذ، أنهِ البرنامج الذي يحجزه: انتقل إلى البرنامج وأنهِه من هناك، أو الصق الأمر في الوحدة الطرفية.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "لتحرير منفذ، أنهِ البرنامج الذي يحجزه: من البرنامج نفسه أو من مراقب النشاط.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "منفذ, منافذ, خادم, localhost, استماع, إنهاء, قتل, lsof, العنوان مستخدم, EADDRINUSE, عملية, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "الدخول عن بُعد";
 "File Sharing" = "مشاركة الملفات";

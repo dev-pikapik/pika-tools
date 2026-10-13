@@ -165,10 +165,11 @@ The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR
 swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive
 ```
 
-`Battery.swift` turns the readings from IOKit and `system_profiler` into a `BatteryState` and a `BatteryHealth`, and `BatterySettings.swift` shows them on the read-only Battery page. The test feeds them made-up readings, so it runs on a Mac without a battery:
+`Battery.swift` turns the readings from IOKit into a `BatteryState` and a `BatteryHealth`, and `BatterySettings.swift` shows them on the read-only Battery page. The battery condition comes from `system_profiler` in the direct version and straight from IOKit in the App Store version, which starts no other program. The test feeds them made-up readings, so it runs on a Mac without a battery; the second line checks the App Store version:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/Battery.swift scripts/test-battery.swift -o build/test-battery && build/test-battery
+swiftc -parse-as-library -D APPSTORE Sources/pika-tools/Common/Battery.swift scripts/test-battery.swift -o build/test-battery-appstore && build/test-battery-appstore
 ```
 
 The **Ports** page learns which programs listen on which ports from the same kernel list `netstat` reads (`net.inet.tcp.pcblist_n` and `net.inet.udp.pcblist_n`), so it needs no extra tools and works in the App Store version too. macOS 27 shares that list only with programs signed with an identifier, so the command signs the test before running it. The test opens a few sockets of its own on ports the system picks, checks that the list finds each one with the right program, address and protocol and that a plain connection is not counted as listening, then groups made-up processes the way the page does. It only reads the list and never touches other programs:

@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik 需要兩項權限";
 "Both permissions are on and every tool is working." = "兩項權限皆已開啟，所有工具都正常運作。";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "沒有這些權限，macOS 不會讓 App 讀取或更改點按和按鍵。請打開「系統設定」›「隱私權與安全性」，在下列兩個列表中開啟 pikapik：";
+"Permissions for some tools" = "部分工具所需的權限";
+"Only some tools need these permissions. Everything else works without them." = "只有部分工具需要這些權限，其他功能不授權也能正常使用。";
 "Accessibility" = "輔助使用";
 "Input Monitoring" = "輸入監控";
 "Lets the app see clicks and keys" = "讓 App 讀取點按和按鍵";
@@ -360,6 +362,7 @@
 "Upload" = "上傳";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "大約半分鐘。測速使用 Apple 的伺服器。";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "大約 15 秒。測速使用 speed.cloudflare.com。";
 "Checked %@" = "測於%@";
 "Responsiveness" = "回應能力";
 "How quickly things react while the internet is busy" = "網路忙碌時一切反應有多快";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "這個程式屬於其他使用者或系統，所以 pikapik 不會動它。你可以在「活動監視器」中結束它。";
 "Open Activity Monitor" = "打開「活動監視器」";
 "Show “%@”" = "顯示「%@」";
-"Copy Command" = "拷貝指令";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "App 關閉後連接埠就會釋放。如果有未儲存的內容，它會詢問你該怎麼做。";
 "The program gets a moment to finish its work, then the port is free." = "程式會有片刻時間完成手邊的工作，之後連接埠就會釋放。";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "此程式沒有關閉。強制結束會立即停止它，未儲存的內容將會遺失。";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "若要釋放連接埠，請結束佔用它的程式：切換到該程式並在那裡結束，或將指令貼到「終端機」中。";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "若要釋放連接埠，請結束佔用它的程式：直接在該程式中結束，或在「活動監視器」中結束。";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "連接埠, 埠, 伺服器, localhost, 監聽, 結束, 終止, lsof, 位址已被使用, EADDRINUSE, 程序, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "遠端登入";
 "File Sharing" = "檔案共享";

@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik को दो अनुमतियाँ चाहिए";
 "Both permissions are on and every tool is working." = "दोनों अनुमतियाँ चालू हैं और हर टूल काम कर रहा है।";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "इनके बिना macOS ऐप को क्लिक और कुंजियाँ देखने या बदलने नहीं देगा। सिस्टम सेटिंग › गोपनीयता और सुरक्षा खोलें और इन दो सूचियों में pikapik चालू करें:";
+"Permissions for some tools" = "कुछ टूल के लिए अनुमतियाँ";
+"Only some tools need these permissions. Everything else works without them." = "ये अनुमतियाँ सिर्फ़ कुछ टूल को चाहिए। बाकी सब इनके बिना भी काम करता है।";
 "Accessibility" = "ऐक्सेसिबिलिटी";
 "Input Monitoring" = "इनपुट मॉनिटरिंग";
 "Lets the app see clicks and keys" = "ऐप को क्लिक और कुंजियाँ देखने देता है";
@@ -360,6 +362,7 @@
 "Upload" = "अपलोड";
 "Mbit/s" = "Mbps";
 "Takes about half a minute. The check runs on Apple’s servers." = "लगभग आधा मिनट लगता है। जाँच Apple के सर्वर से होती है।";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "लगभग 15 सेकंड लगते हैं। जाँच speed.cloudflare.com से होती है।";
 "Checked %@" = "आखिरी जाँच: %@";
 "Responsiveness" = "प्रतिक्रिया";
 "How quickly things react while the internet is busy" = "इंटरनेट व्यस्त होने पर चीज़ें कितनी जल्दी प्रतिक्रिया देती हैं";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "यह प्रोग्राम किसी दूसरे उपयोगकर्ता या सिस्टम का है, इसलिए pikapik इसे नहीं छूता। आप इसे ऐक्टिविटी मॉनिटर में बंद कर सकते हैं।";
 "Open Activity Monitor" = "ऐक्टिविटी मॉनिटर खोलें";
 "Show “%@”" = "“%@” दिखाएँ";
-"Copy Command" = "कमांड कॉपी करें";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "ऐप बंद होते ही पोर्ट खाली हो जाएगा। अगर उसमें बिना सहेजा काम है, तो वह आपसे पूछेगा कि क्या करना है।";
 "The program gets a moment to finish its work, then the port is free." = "प्रोग्राम को अपना काम पूरा करने के लिए थोड़ा समय मिलता है, फिर पोर्ट खाली हो जाता है।";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "प्रोग्राम बंद नहीं हुआ। बलपूर्वक बंद करने से वह तुरंत रुक जाता है, और बिना सहेजा सब कुछ खो जाता है।";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "पोर्ट खाली करने के लिए उसे इस्तेमाल कर रहा प्रोग्राम बंद करें: प्रोग्राम पर जाकर उसे वहीं बंद करें, या कमांड को टर्मिनल में पेस्ट करें।";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "पोर्ट खाली करने के लिए उसे इस्तेमाल कर रहा प्रोग्राम बंद करें: प्रोग्राम में ही या ऐक्टिविटी मॉनिटर में।";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "पोर्ट, सर्वर, localhost, लिसन, बंद करें, किल, lsof, पता इस्तेमाल में है, EADDRINUSE, प्रोसेस, प्रक्रिया, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "रिमोट लॉगइन";
 "File Sharing" = "फ़ाइल शेयरिंग";

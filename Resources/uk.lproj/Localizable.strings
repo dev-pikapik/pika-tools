@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "Дай pikapik два дозволи";
 "Both permissions are on and every tool is working." = "Доступи є, усі інструменти працюють.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Без них macOS не пустить програму до кліків і клавіш. Відкрий Системні параметри › Приватність і безпека та увімкни pikapik у двох списках:";
+"Permissions for some tools" = "Дозволи для деяких інструментів";
+"Only some tools need these permissions. Everything else works without them." = "Ці дозволи потрібні лише деяким інструментам. Усе інше працює й без них.";
 "Accessibility" = "Доступність";
 "Input Monitoring" = "Контроль вводу";
 "Lets the app see clicks and keys" = "Щоб бачити кліки й клавіші";
@@ -360,6 +362,7 @@
 "Upload" = "Вивантаження";
 "Mbit/s" = "Мбіт/с";
 "Takes about half a minute. The check runs on Apple’s servers." = "Близько пів хвилини. Перевірка йде через сервери Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Близько 15 секунд. Перевірка йде через speed.cloudflare.com.";
 "Checked %@" = "Перевірено %@";
 "Responsiveness" = "Чуйність";
 "How quickly things react while the internet is busy" = "Як швидко все відгукується, поки інтернет зайнятий";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Програма належить іншому користувачеві або системі, тому pikapik її не чіпає. Її можна завершити в «Моніторі активності».";
 "Open Activity Monitor" = "Відкрити «Монітор активності»";
 "Show “%@”" = "Показати «%@»";
-"Copy Command" = "Скопіювати команду";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Порт звільниться, коли програма закриється. Якщо в ній є незбережена робота, вона запитає, що робити.";
 "The program gets a moment to finish its work, then the port is free." = "Програма встигне завершити роботу, і порт звільниться.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Програма не закрилася. Примусове завершення зупиняє її одразу, а все незбережене буде втрачено.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Щоб звільнити порт, завершіть програму, яка його тримає: перейдіть у неї й закрийте або вставте команду в «Термінал».";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Щоб звільнити порт, завершіть програму, яка його тримає: у самій програмі або в «Моніторі активності».";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "порт, сервер, localhost, слухає, завершити, вбити, lsof, адреса зайнята, EADDRINUSE, процес, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Віддалений вхід";
 "File Sharing" = "Файл-сервер";

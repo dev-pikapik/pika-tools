@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik heeft twee toestemmingen nodig";
 "Both permissions are on and every tool is working." = "Beide toestemmingen staan aan en alle functies werken.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Zonder deze toestemmingen laat macOS de app geen klikken en toetsen zien of wijzigen. Open Systeeminstellingen › Privacy en beveiliging en zet pikapik aan in deze twee lijsten:";
+"Permissions for some tools" = "Toestemmingen voor sommige functies";
+"Only some tools need these permissions. Everything else works without them." = "Alleen sommige functies hebben deze toestemmingen nodig. Al het andere werkt ook zonder.";
 "Accessibility" = "Toegankelijkheid";
 "Input Monitoring" = "Invoer vastleggen";
 "Lets the app see clicks and keys" = "Laat de app klikken en toetsen zien";
@@ -360,6 +362,7 @@
 "Upload" = "Upload";
 "Mbit/s" = "Mbit/s";
 "Takes about half a minute. The check runs on Apple’s servers." = "Duurt ongeveer een halve minuut. De test loopt via servers van Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Duurt ongeveer 15 seconden. De test loopt via speed.cloudflare.com.";
 "Checked %@" = "Getest %@";
 "Responsiveness" = "Reactiesnelheid";
 "How quickly things react while the internet is busy" = "Hoe snel alles reageert terwijl het internet bezig is";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Het programma is van een andere gebruiker of van het systeem, dus pikapik laat het met rust. Je kunt het stoppen in Activiteitenweergave.";
 "Open Activity Monitor" = "Open Activiteitenweergave";
 "Show “%@”" = "Toon ‘%@’";
-"Copy Command" = "Kopieer commando";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "De poort is vrij zodra de app is gesloten. Als er nog niet-bewaard werk is, vraagt de app wat je wilt doen.";
 "The program gets a moment to finish its work, then the port is free." = "Het programma krijgt even de tijd om zijn werk af te maken, daarna is de poort vrij.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Het programma is niet gesloten. Geforceerd stoppen beëindigt het programma meteen en alles wat niet is bewaard, gaat verloren.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Om een poort vrij te maken, stop je het programma dat hem bezet houdt: ga naar het programma en stop het daar, of plak het commando in Terminal.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Om een poort vrij te maken, stop je het programma dat hem bezet houdt: in het programma zelf of in Activiteitenweergave.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "poort, server, localhost, luisteren, stoppen, beëindigen, lsof, adres in gebruik, EADDRINUSE, proces, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Extern inloggen";
 "File Sharing" = "Bestandsdeling";

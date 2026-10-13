@@ -35,6 +35,32 @@ enum TestBattery {
 
         precondition(BatteryState(source: ["Type": "UPS", "Current Capacity": 50], registry: [:], adapter: nil) == nil)
 
+        #if APPSTORE
+        func health(_ pack: [String: Any]? = nil, _ top: [String: Any] = [:], _ registry: [String: Any] = [:]) -> BatteryHealth? {
+            var source = top
+            if let pack { source["BatteryPacks"] = [["BatteryHealth": pack]] }
+            return BatteryHealth(source: source, registry: registry)
+        }
+        let good = health(["Maximum Capacity Percent": 87, "Battery Service State": 0])
+        precondition(good?.capacity == 87 && good?.normal == true)
+        let service = health(["Maximum Capacity Percent": 104, "Battery Service State": 1])
+        precondition(service?.capacity == 100 && service?.normal == false)
+        let hidden = health(["Maximum Capacity Percent": 90, "Battery Service State": 8], [:], ["NominalChargeCapacity": 4093, "DesignCapacity": 4382])
+        precondition(hidden?.capacity == nil && hidden?.normal == false)
+        let noState = health(["Maximum Capacity Percent": 87])
+        precondition(noState?.capacity == 87 && noState?.normal == nil)
+        let nominal = health(nil, [:], ["NominalChargeCapacity": 4093, "AppleRawMaxCapacity": 4046, "DesignCapacity": 4382, "PermanentFailureStatus": 0])
+        precondition(nominal?.capacity == 94 && nominal?.normal == nil)
+        precondition(health(nil, [:], ["AppleRawMaxCapacity": 4046, "DesignCapacity": 4382])?.capacity == 93)
+        let failed = health(nil, [:], ["NominalChargeCapacity": 5000, "DesignCapacity": 4382, "PermanentFailureStatus": 1])
+        precondition(failed?.capacity == 100 && failed?.normal == false)
+        precondition(health(nil, ["BatteryHealth": "Good"])?.normal == true)
+        precondition(health(nil, ["BatteryHealth": "Poor"])?.normal == false)
+        precondition(health(nil, ["BatteryHealth": "Good", "BatteryHealthCondition": "Check Battery"])?.normal == false)
+        precondition(health(nil, ["BatteryHealth": "Unknown"]) == nil)
+        precondition(health(nil, [:], ["NominalChargeCapacity": 0, "DesignCapacity": 4382]) == nil)
+        precondition(health() == nil)
+        #else
         func health(_ condition: String, _ capacity: String = "100%") -> BatteryHealth? {
             let json = #"{"SPPowerDataType":[{"_name":"spbattery_information","sppower_battery_health_info":{"sppower_battery_cycle_count":68,"# +
                 #""sppower_battery_health":"\#(condition)","sppower_battery_health_maximum_capacity":"\#(capacity)"}}]}"#
@@ -46,6 +72,7 @@ enum TestBattery {
         precondition(health("Something New", "٨٧٪")?.capacity == 87 && health("Something New")?.normal == nil)
         precondition(health("", "") == nil)
         precondition(BatteryHealth(profile: Data(#"{"SPPowerDataType":[]}"#.utf8)) == nil)
+        #endif
 
         print("battery checks passed")
     }

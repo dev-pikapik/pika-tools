@@ -19,6 +19,8 @@
 "pikapik needs two permissions" = "pikapik potřebuje dvě oprávnění";
 "Both permissions are on and every tool is working." = "Obě oprávnění jsou zapnutá a všechny nástroje fungují.";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bez nich macOS nedovolí aplikaci vidět ani měnit kliknutí a stisky kláves. Otevřete Nastavení systému › Soukromí a zabezpečení a zapněte pikapik v těchto dvou seznamech:";
+"Permissions for some tools" = "Oprávnění pro některé nástroje";
+"Only some tools need these permissions. Everything else works without them." = "Tato oprávnění potřebují jen některé nástroje. Všechno ostatní funguje i bez nich.";
 "Accessibility" = "Zpřístupnění";
 "Input Monitoring" = "Monitorování vstupu";
 "Lets the app see clicks and keys" = "Umožňuje aplikaci vidět kliknutí a stisky kláves";
@@ -360,6 +362,7 @@
 "Upload" = "Odesílání";
 "Mbit/s" = "Mb/s";
 "Takes about half a minute. The check runs on Apple’s servers." = "Trvá asi půl minuty. Měření probíhá přes servery Apple.";
+"Takes about 15 seconds. The check uses speed.cloudflare.com." = "Trvá asi 15 sekund. Měření probíhá přes speed.cloudflare.com.";
 "Checked %@" = "Změřeno %@";
 "Responsiveness" = "Odezva";
 "How quickly things react while the internet is busy" = "Jak rychle vše reaguje, když je internet vytížený";
@@ -1071,11 +1074,10 @@
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Program patří jinému uživateli nebo systému, takže na něj pikapik nesahá. Ukončit ho můžete v aplikaci Monitor aktivity.";
 "Open Activity Monitor" = "Otevřít Monitor aktivity";
 "Show “%@”" = "Zobrazit „%@“";
-"Copy Command" = "Kopírovat příkaz";
 "The port is free once the app closes. If it has unsaved work, it will ask you what to do." = "Port se uvolní, jakmile se aplikace zavře. Pokud má neuložené změny, zeptá se, co s nimi dělat.";
 "The program gets a moment to finish its work, then the port is free." = "Program dostane chvilku na dokončení práce a pak bude port volný.";
 "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost." = "Program se nezavřel. Vynucené ukončení ho zastaví okamžitě a vše neuložené se ztratí.";
-"To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal." = "Port uvolníte ukončením programu, který ho drží: přepněte se do programu a ukončete ho tam, nebo vložte příkaz do Terminálu.";
+"To free a port, quit the program that holds it: in the program itself or in Activity Monitor." = "Port uvolníte ukončením programu, který ho drží: přímo v programu nebo v Monitoru aktivity.";
 "port, server, localhost, listen, kill, lsof, address in use, EADDRINUSE, process, 3000, 8080, 5000, AirPlay" = "port, server, localhost, naslouchá, ukončit, zabít, lsof, adresa se už používá, EADDRINUSE, proces, 3000, 8080, 5000, AirPlay";
 "Remote Login" = "Vzdálené přihlášení";
 "File Sharing" = "Sdílení souborů";
