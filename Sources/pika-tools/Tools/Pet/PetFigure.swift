@@ -90,10 +90,10 @@ enum PetFigure {
             guard age >= 0 else { break }
             let t = (age / 2.7).truncatingRemainder(dividingBy: 1)
             let size = 2.2 + 1.4 * t
-            let spot = CGPoint(x: pose.facing * (4.5 + 5 * t), y: centre - height / 2 + 1 - 10 * t)
+            let spot = CGPoint(x: pose.facing * (4.5 + 6.5 * t), y: centre - height / 2 + 1 - 15 * t)
             var z = Path()
             z.addLines([CGPoint(x: -size / 2, y: -size / 2), CGPoint(x: size / 2, y: -size / 2), CGPoint(x: -size / 2, y: size / 2), CGPoint(x: size / 2, y: size / 2)])
-            let stroke = z.strokedPath(StrokeStyle(lineWidth: 0.6, lineCap: .round, lineJoin: .round))
+            let stroke = z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
             fill(stroke.applying(CGAffineTransform(translationX: spot.x, y: spot.y)), (night ? body : feet).opacity(pose.dream * min(1, 4 * t) * (1 - t * t)))
         }
     }
@@ -105,7 +105,7 @@ extension PetPose {
             step: Double(pet.walked / scale) * .pi * 5 / 28, lift: (pet.origin.y - pet.floor) / scale, floor: (pet.floor - pet.bounds.minY) / scale, facing: pet.facing
         )
         let fall = pet.calm ? 0 : .pi / 2 * pet.heading * pet.facing
-        let sleepy = max(0, -pet.zest) * 0.55
+        let sleepy = min(0.75, max(0, -pet.zest))
         switch pet.state {
         case .jump:
             air = true

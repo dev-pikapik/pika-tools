@@ -617,7 +617,7 @@ private struct PetRhythmArt: View {
         case ..<4.8:
             let p = (t - 2.8) / 2
             pose.bounce = 1 - PetPose.ease(p / 0.4)
-            pose.lid = 0.55 * PetPose.ease((p - 0.2) / 0.8)
+            pose.lid = 0.75 * PetPose.ease((p - 0.2) / 0.8)
             return (walk(102, 46, (10 * p - 3 * p * p) / 7), pose)
         case ..<8.4:
             doze(t - 4.8)
