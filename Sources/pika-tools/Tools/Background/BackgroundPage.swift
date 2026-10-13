@@ -10,7 +10,11 @@ actor BackgroundScanner {
         roots.home = home
         if rescan || apps == nil { apps = (AppInventory.installed(roots), AppInventory.system(roots)) }
         let footprint = AppFootprint(roots: roots, installed: apps?.installed ?? [], system: apps?.system ?? [])
+        #if APPSTORE
+        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: [], running: running)
+        #else
         return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: BackgroundTasks.loginItems(), running: running)
+        #endif
     }
 
     #if !APPSTORE
@@ -108,7 +112,9 @@ struct BackgroundPage: View {
                         .padding(.vertical, 8)
                 }
             } else {
+                #if !APPSTORE
                 group(.login, "Open at Login")
+                #endif
                 group(.background, "In the Background")
                 group(.leftover, "Left by deleted apps")
             }

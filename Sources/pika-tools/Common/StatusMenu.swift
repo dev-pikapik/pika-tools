@@ -4,8 +4,35 @@ import AppKit
     static let shared = StatusMenu()
 
     private var monitor: Any?
+    #if DEBUG
+    private var testMenu: DispatchSourceSignal?
+    private var testMove: DispatchSourceSignal?
+    #endif
 
     func start() {
+        #if DEBUG
+        if UserDefaults.standard.bool(forKey: "test-menu") {
+            signal(SIGUSR1, SIG_IGN)
+            testMenu = DispatchSource.makeSignalSource(signal: SIGUSR1, queue: .main)
+            testMenu?.setEventHandler {
+                MainActor.assumeIsolated {
+                    @MainActor func button(_ view: NSView?) -> NSButton? {
+                        if let button = view as? NSButton { return button }
+                        return view?.subviews.lazy.compactMap(button).first
+                    }
+                    let window = NSApp.windows.first { NSStringFromClass(type(of: $0)).contains("StatusBarWindow") }
+                    button(window?.contentView)?.performClick(nil)
+                }
+            }
+            testMenu?.resume()
+            #if APPSTORE
+            signal(SIGUSR2, SIG_IGN)
+            testMove = DispatchSource.makeSignalSource(signal: SIGUSR2, queue: .main)
+            testMove?.setEventHandler { MainActor.assumeIsolated { FinderKeys.shared.moveHere() } }
+            testMove?.resume()
+            #endif
+        }
+        #endif
         monitor = NSEvent.addLocalMonitorForEvents(matching: [.rightMouseDown, .leftMouseDown]) { [weak self] event in
             guard let self, let window = event.window,
                   NSStringFromClass(type(of: window)).contains("StatusBarWindow")

@@ -141,72 +141,77 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>ボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>マウスボタンで隠す</b>
+<br>1回押すと、⌘Hのように最前面のアプリが隠れます。アプリは動いたままです。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>行単位でスクロール</b>
 <br>ホイールをどれだけ速く回しても、1クリックで同じだけスクロールします。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>スクロール方向</b>
 <br>トラックパッドとマウスで、別々の方向を選べます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>ポインタの加速をオフ</b>
 <br>手を動かしたぶんだけ、ポインタが正確に動きます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>キーを押し続けて連続入力</b>
 <br>キーを押し続けると、アクセントメニューの代わりに文字が繰り返されます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>HomeとEnd</b>
 <br>入力中に行頭や行末へジャンプします。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>アニメーション</b>
 <br>Dock、ウインドウ、クイックルックを速く。瞬時にもできます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>削除したアプリの許可</b>
 <br>削除したアプリのために macOS が残している許可を取り除けます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>デスクトップのペット</b>
 <br>小さな友だちがウインドウの後ろをお散歩します。つかんで投げたり、スペースを押してジャンプさせたりできます。クローゼットで着せ替えをして、いっしょに遊びながらアワードを集められます。入力中は元気になり、席を離れるとうとうとします。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>アプリの削除</b>
 <br>アプリとそのファイルを削除します。すべて元に戻せます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPSを表示</b>
 <br>小さなカウンターが、選んだ角にゲームのなめらかさを表示します。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>アーカイブ</b>
 <br>右クリックで、RARなどのアーカイブを開いたり、ファイルをZIPにまとめたりします。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dockを1台のディスプレイに固定</b>
@@ -252,7 +257,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 pikapik には 2 つの許可が必要です。初回起動時に設定の「許可」ページが開いて手順を案内し、macOS も独自の確認を表示します。**システム設定 › プライバシーとセキュリティ** を開き、次の項目で pikapik をオンにします:
 
 - **アクセシビリティ**: キー入力やクリックがほかのアプリに届く前に、アプリがそれを変更できるようにします。
-- **入力監視**: そもそもアプリがキー入力やクリックを読み取れるようにします。
+- **入力監視**: キー入力やクリックを変更せずに読み取れるようにします。言語の切り替えはこの仕組みで動きます。
 
 変更は数秒以内に反映されます。再起動は不要です。
 
@@ -287,6 +292,8 @@ pikapik は、入力やクリックの内容を記録、保存、送信しませ
 
 **サイドボタンで戻る/進む。** マウスのボタン 4 と 5 で、Finder、Safari などの Apple のアプリや、ほかの多くのアプリで戻る／進むができます。トラックパッドでのスワイプと同じ操作です。これらのボタンを自分で扱うアプリには、ボタンがそのまま渡されます。マウスのボタンが逆の場合は、**サイドボタンを入れ替える** をオンにしてください。初期設定はオフです。
 
+**マウスボタンで現在のアプリを隠す。** 設定 › マウスで **マウスボタンで現在のアプリを隠す** をオンにして、中央ボタンやサイドボタンなど、使いたいボタンを押してください。あとはボタンを 1 回押すだけで、最前面のアプリが ⌘H とまったく同じように隠れます。アプリは動いたままで、Dock のアイコンをクリックすると戻ってきます。ゲームモードをオンにして遊んでいる間は、ボタンはゲームの中でいつもどおりに動作します。初期設定はオフです。
+
 **最後のウインドウを閉じたら終了。** アプリの最後のウインドウを閉じると、アプリが終了します。Finder は開いたままで、ほかのデスクトップや Dock にウインドウがあるアプリも終了しません。この方法で終了させたくないアプリをリストに登録できます。初期設定はオフです。
 
 **Dockのクリックでしまう・隠す。** 使用中のアプリの Dock アイコンをクリックすると、そのアプリのウインドウがすべて Dock にしまわれます。もう一度クリックすると、すべて戻ります。⌘H のように、クリックでアプリ全体を隠す設定にもできます。初期設定はオフです。
@@ -299,7 +306,7 @@ pikapik は、入力やクリックの内容を記録、保存、送信しませ
 
 **FinderでEnterキーを押して開く。** Finderのウインドウやデスクトップでファイルを選び、ReturnキーまたはEnterキーを押すと開きます。F2またはfn F2で、選んだファイルの名前を変更できます。名前の入力中など、文字を入力する場所では、キーはいつもどおり使えます。初期設定はオフ。
 
-**Finderで⌘Xを押して切り取る。** ファイルを選んで⌘Xを押し、移動先のフォルダを開いて⌘Vを押すと、ファイルはコピーされずに移動します。⌘Cで切り取りを取り消せます。初期設定はオフ。
+**Finderで⌘Xを押して切り取る。** ファイルを選んで⌘Xを押し、移動先のフォルダを開いて⌘Vを押すと、ファイルはコピーされずに移動します。⌘Cで切り取りを取り消せます。Mac App Store版では、⌘Vは今までどおりコピーをペーストします。ファイルを移動するには、メニューバーのpikapikアイコンをクリックして **項目をここに移動** を選ぶか、⌥⌘Vを押します。初期設定はオフ。
 
 **FinderでDeleteキーで削除。** ファイルを選んで⌫または⌦（ノートパソコンではfn ⌫）を押すと、⌘⌫と同じようにゴミ箱に入ります。名前の変更中や検索中、そのほかの入力欄に入力しているときは、通常どおり文字を消します。初期設定はオフ。
 
@@ -381,7 +388,7 @@ MacBook では **蓋を閉じても動作** をオンにすることもできま
 - **ポート**: どのプログラムがどのポートを使っているか、アドレスと詳細、ポートを空けるボタン。
 - **サウンド**: アプリの音量。音を出すアプリごとのスライダーとミュートボタン。
 - **キーボード**: 言語の切り替え、キーのリピート、Home と End、間違ったレイアウトの修正。
-- **マウス**: ポインタの加速と軌跡の速さ、行単位のスクロール、スクロール方向、サイドボタン。
+- **マウス**: ポインタの加速と軌跡の速さ、行単位のスクロール、スクロール方向、サイドボタン、現在のアプリを隠すボタン。
 - **ウインドウ**: 緑のボタンでウインドウを拡大(例外リスト付き)、⌘Q と ⌘W の保護、最後のウインドウで終了(例外リスト付き)。
 - **Dock**: Dockのクリックでしまう・隠す、Dock を 1 台のディスプレイに固定、Dock を元に戻す。
 - **Finder**: 新規ファイル、小さいコピー、変換、アーカイブ、Return で開く、⌘X でカット、⌫ でゴミ箱へ。
@@ -428,7 +435,7 @@ Homebrew でインストールした場合: `brew uninstall --cask --zap pikapik
 <summary>よくある質問</summary>
 
 **なぜ 2 つの許可が必要なのですか?**
-macOS はキーボードとマウスへのアクセスを 2 つに分けています。入力監視ではイベントを読み取ることができ、アクセシビリティではそれを変更できます。ショートカットをブロックするには両方が必要です。
+macOS はキーボードとマウスへのアクセスを 2 つに分けています。アクセシビリティではキー入力やクリックを変更でき、ほとんどの機能はこれだけで動きます。入力監視では読み取ることだけができ、言語の切り替えにはこれで十分です。
 
 **「開発元が未確認」と表示されます。**
 pikapik は開発元の署名があり、Apple の悪質なソフトウェアのチェックにも合格しているため、このメッセージは表示されないはずです。表示された場合は、**システム設定 › プライバシーとセキュリティ** を開いて **このまま開く** をクリックします。

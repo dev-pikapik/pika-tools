@@ -175,72 +175,77 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <br>الزران 4 و5 للرجوع والتقدم، مثل السحب على لوحة التعقب.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>الإخفاء بزر الماوس</b>
+<br>ضغطة واحدة تُخفي التطبيق الظاهر في المقدمة، مثل ⌘H. ويبقى التطبيق قيد التشغيل.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>التمرير بالأسطر</b>
 <br>كل نقرة من العجلة تمرّر المسافة نفسها مهما كانت سرعة الدوران.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>اتجاه التمرير</b>
 <br>اتجاه للوحة التعقب وآخر للماوس.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>إيقاف تسارع المؤشر</b>
 <br>يتحرك المؤشر بقدر حركة يدك تمامًا.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>تكرار المفتاح عند الضغط المستمر</b>
 <br>اضغط مع الاستمرار على مفتاح ليتكرر، بدلًا من قائمة الحركات.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home وEnd</b>
 <br>انتقل إلى بداية السطر أو نهايته أثناء الكتابة.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>الرسوم المتحركة</b>
 <br>سرّع Dock والنوافذ والنظرة السريعة، حتى تصبح فورية.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>أذونات التطبيقات المحذوفة</b>
 <br>أزل الأذونات التي يحتفظ بها macOS لتطبيقات حذفتها بالفعل.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>رفيق على سطح المكتب</b>
 <br>صديق صغير يتمشى خلف نوافذك. التقطه وارمه، أو اضغط مفتاح المسافة فيقفز. ألبِسه من خزانة الملابس واربح الجوائز وأنتما تلعبان معًا. ينشط وأنت تكتب ويغفو حين تبتعد.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>إزالة التطبيقات</b>
 <br>أزل تطبيقًا مع ملفاته، ويمكنك إرجاع كل شيء.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>إظهار FPS</b>
 <br>عدّاد صغير يعرض مدى سلاسة لعبتك في الزاوية التي تختارها.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>الملفات المضغوطة</b>
 <br>افتح RAR وغيره من الملفات المضغوطة، أو اجمع الملفات في ZIP، بنقرة بالزر الأيمن.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>إبقاء Dock على شاشة واحدة</b>
@@ -294,7 +299,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 يحتاج pikapik إلى إذنين. عند التشغيل الأول يفتح الإعدادات على صفحة «الأذونات» التي ترشدك خطوة بخطوة، ويعرض macOS طلباته الخاصة. انتقل إلى **إعدادات النظام › الخصوصية والأمن** وفعّل pikapik في:
 
 - **تسهيلات الاستخدام**، ليتمكن التطبيق من تغيير ضغطة المفتاح أو النقرة قبل أن تصل إلى التطبيقات الأخرى.
-- **مراقبة الإدخال**، ليتمكن التطبيق من رؤية ضغطات المفاتيح والنقرات أصلًا.
+- **مراقبة الإدخال**، ليتمكن التطبيق من رؤية ضغطات المفاتيح والنقرات دون تغييرها. هكذا يعمل تبديل اللغة.
 
 يلاحظ التطبيق التغيير خلال ثانية أو ثانيتين، ولا حاجة لإعادة التشغيل.
 
@@ -333,6 +338,8 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 
 **الأزرار الجانبية للرجوع والتقدم.** يعمل الزرّان 4 و5 في الماوس للرجوع والتقدّم في Finder وSafari وغيرهما من تطبيقات Apple وفي كثير من التطبيقات الأخرى، تمامًا مثل السحب على لوحة التتبع. أما التطبيقات التي تتعامل مع هذين الزرّين بنفسها، فتستلمهما كما هما. وإذا كانا معكوسين في الماوس لديك، فشغّل **تبديل الأزرار الجانبية**. متوقف افتراضيًا.
 
+**زر في الماوس يُخفي التطبيق الحالي.** شغّل **إخفاء التطبيق الحالي بزر الماوس** في الإعدادات › الماوس، ثم اضغط الزر الذي تريد استخدامه، مثل الزر الأوسط أو زر جانبي. بعدها تُخفي ضغطة واحدة التطبيق الظاهر في المقدمة، تمامًا مثل ⌘H: يبقى التطبيق قيد التشغيل، ونقرة على أيقونته في Dock تُعيده. وأثناء اللعب ووضع الألعاب قيد التشغيل، يعمل الزر في اللعبة كالمعتاد. متوقف افتراضيًا.
+
 **الإنهاء عند إغلاق آخر نافذة.** أغلق آخر نافذة لتطبيق فيُنهى التطبيق. يبقى Finder مفتوحًا، وكذلك التطبيقات التي لها نوافذ على أسطح مكتب أخرى أو في Dock. يمكنك إعداد قائمة بالتطبيقات التي يجب ألا تُنهى بهذه الطريقة أبدًا. متوقف افتراضيًا.
 
 **التصغير أو الإخفاء بنقرة في Dock.** انقر على أيقونة التطبيق الذي تستخدمه في Dock فتنزل كل نوافذه إلى Dock. انقر مرة أخرى لإعادتها كلها. ويمكنك أيضًا أن تجعل النقرة تُخفي التطبيق كله، مثل ⌘H. متوقف افتراضيًا.
@@ -345,7 +352,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 
 **Enter يفتح الملفات في Finder.** حدّد ملفات في نافذة Finder أو على سطح المكتب واضغط Return أو Enter فتُفتح. ويعيد F2 أو fn F2 تسمية الملف المحدد. وفي حقول النص، مثل أثناء كتابة اسم، تعمل المفاتيح كالمعتاد. متوقف افتراضيًا.
 
-**⌘X يقصّ الملفات في Finder.** حدّد ملفات واضغط ⌘X، ثم افتح المجلد المطلوب واضغط ⌘V، فتنتقل الملفات إليه بدل أن تُنسخ. ويلغي ⌘C القص. متوقف افتراضيًا.
+**⌘X يقصّ الملفات في Finder.** حدّد ملفات واضغط ⌘X، ثم افتح المجلد المطلوب واضغط ⌘V، فتنتقل الملفات إليه بدل أن تُنسخ. ويلغي ⌘C القص. في إصدار Mac App Store لا يزال ⌘V يلصق نسخة: لنقل الملفات، انقر على أيقونة pikapik في شريط القوائم واختر **نقل العناصر إلى هنا**، أو اضغط ⌥⌘V. متوقف افتراضيًا.
 
 **Delete يحذف الملفات في Finder.** حدّد الملفات واضغط ⌫ أو ⌦ (fn ⌫ في الحاسوب المحمول)، فتنتقل إلى سلة المهملات، تمامًا كما مع ⌘⌫. أثناء إعادة تسمية ملف أو البحث أو الكتابة في أي حقل آخر، يمحو المفتاحان الحروف كالمعتاد. متوقف افتراضيًا.
 
@@ -439,7 +446,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 - **المنافذ**: أي برنامج يحجز أي منفذ، وعناوينه وتفاصيله، وزر لتحرير المنفذ.
 - **الصوت**: مستوى صوت التطبيقات، مع منزلق وزر كتم لكل تطبيق يشغّل الصوت.
 - **لوحة المفاتيح**: تبديل اللغة، وتكرار المفتاح، وHome وEnd، وتصحيح التخطيط الخاطئ.
-- **الماوس**: تسارع المؤشر وسرعة التعقب، والتمرير بالأسطر، واتجاه التمرير، والزرّان الجانبيان.
+- **الماوس**: تسارع المؤشر وسرعة التعقب، والتمرير بالأسطر، واتجاه التمرير، والزرّان الجانبيان، وزر يُخفي التطبيق الحالي.
 - **النوافذ**: تكبير النافذة بالزر الأخضر (مع قائمة استثناءات)، والحماية من ⌘Q و⌘W، والإنهاء عند آخر نافذة (مع قائمة استثناءات).
 - **Dock**: التصغير أو الإخفاء بنقرة في Dock، وإبقاء Dock على شاشة واحدة، وإعادة Dock إلى مكانه.
 - **Finder**: ملف جديد، ونسخة أصغر وتحويل وملفات مضغوطة، والفتح بمفتاح Return، والقص بـ ⌘X، والحذف بـ ⌫.
@@ -498,7 +505,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <div dir="rtl">
 
 **لماذا يحتاج إلى إذنين؟**
-يقسم macOS الوصول إلى لوحة المفاتيح والماوس إلى قسمين. تتيح مراقبة الإدخال للتطبيق رؤية الأحداث، وتتيح له تسهيلات الاستخدام تغييرها. يتطلب حظر اختصار كليهما.
+يقسم macOS الوصول إلى لوحة المفاتيح والماوس إلى قسمين. تتيح تسهيلات الاستخدام للتطبيق تغيير ضغطة المفتاح أو النقرة، ولا تحتاج معظم الميزات إلى غيرها. أما مراقبة الإدخال فتتيح له المشاهدة فقط، وهذا يكفي لتبديل اللغة.
 
 **يقول macOS إن التطبيق من مطوّر غير معروف.**
 pikapik موقّع من مطوّره ويجتاز فحص Apple للبرامج الضارة، لذلك لا يُفترض أن تظهر هذه الرسالة. إذا ظهرت، فافتح **إعدادات النظام › الخصوصية والأمن** وانقر على **الفتح على أي حال**.

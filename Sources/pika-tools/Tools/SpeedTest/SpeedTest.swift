@@ -214,10 +214,17 @@ struct SpeedTestSettings: View {
                 .frame(maxWidth: .infinity)
                 .settingAnchor(String(localized: "Check Speed"))
             } footer: {
+                #if APPSTORE
+                Text("Takes about 15 seconds. The check uses speed.cloudflare.com.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                #else
                 Text("Takes about half a minute. The check runs on Apple’s servers.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                #endif
             }
             if let result = test.result {
                 Group {

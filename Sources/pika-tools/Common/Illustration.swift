@@ -34,6 +34,21 @@ extension InsettableShape {
     }
 }
 
+private struct ArtScale: ViewModifier {
+    let factor: CGFloat
+    @Environment(\.displayScale) private var scale
+
+    func body(content: Content) -> some View {
+        content.environment(\.displayScale, scale * factor).scaleEffect(factor)
+    }
+}
+
+extension View {
+    func artScale(_ factor: CGFloat) -> some View {
+        modifier(ArtScale(factor: factor))
+    }
+}
+
 struct IllustrationRow<Content: View>: View {
     @ViewBuilder var content: Content
 
@@ -767,6 +782,7 @@ struct ArtMouse: View {
         Capsule()
             .fill(pressed ? Color.accentColor : Color.primary.opacity(0.35))
             .frame(width: 3.5, height: 7)
+            .background(Art.metal(scheme), in: Capsule())
     }
 }
 

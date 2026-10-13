@@ -78,7 +78,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         if self == .battery { return Battery.isPresent }
         if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
-        return ![.animations, .fans, .uninstaller].contains(self)
+        return ![.fans, .uninstaller].contains(self)
         #else
         return true
         #endif
@@ -116,18 +116,27 @@ struct SettingsItem: Identifiable {
     static var all: [SettingsItem] {
         #if APPSTORE
         let hidden = [
-            String(localized: "Keep running after Quit"), String(localized: "Sync settings with iCloud"), String(localized: "Repeat a held key"),
-            String(localized: "Turn off pointer acceleration"), String(localized: "Tracking speed"), String(localized: "Left by deleted apps"), String(localized: "iCloud Drive"),
+            String(localized: "Keep running after Quit"), String(localized: "Repeat a held key"),
+            String(localized: "Tracking speed"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
             String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
+            String(localized: "Home and End go to the start and end of a line"), String(localized: "Home and End work as usual in these apps"),
+            String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
             String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
-        ]
+            String(localized: "Enter opens files in Finder"), String(localized: "Delete removes files in Finder"),
+            String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
+            String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
+            String(localized: "Columns in Finder"), String(localized: "Finder animations"),
+        ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
+            SettingsItem(tab: .animations, title: String(localized: "Hide the Dock automatically"), synonyms: "autohide, hide Dock, delay, wait"),
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
-        ]
+        ] + Permissions.privacyLists.map {
+            SettingsItem(tab: .permissions, title: $0.title, target: $0.pane, detail: String(localized: "Left by deleted apps"))
+        }
         #else
         return allItems.filter { $0.tab.isAvailable }
         #endif
@@ -178,6 +187,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .mouse, title: String(localized: "Mouse wheel direction"), synonyms: "natural, classic, reverse, invert, wheel, up, down"),
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
+            SettingsItem(tab: .mouse, title: String(localized: "Mouse button hides the current app"), synonyms: "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button"),
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, option click"),
             SettingsItem(tab: .windows, title: String(localized: "Green button works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "Protect quitting and closing"), synonyms: "quit, close, command, accidental, shortcut"),
@@ -244,7 +254,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .pet, title: String(localized: "Looks"), synonyms: "outfit, costume, wizard, pirate, astronaut, superhero, cowboy, fairy, king, gentleman, scientist, detective"),
             SettingsItem(tab: .pet, title: String(localized: "Awards"), synonyms: "medals, achievements, trophies, badges, rewards, progress, unlock, earned"),
             SettingsItem(tab: .pet, title: String(localized: "Erase Progress…"), synonyms: "reset, delete, clear, start over, privacy"),
-            SettingsItem(tab: .permissions, title: String(localized: "Accessibility"), synonyms: "privacy, security, access"),
+            SettingsItem(tab: .permissions, title: Permission.accessibilityTitle, synonyms: "privacy, security, access, accessibility, device control, data access"),
             SettingsItem(tab: .permissions, title: String(localized: "Input Monitoring"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "Screen Recording"), synonyms: "privacy, security, access"),
             SettingsItem(tab: .permissions, title: String(localized: "iCloud Drive"), synonyms: "privacy, security, access"),
@@ -395,7 +405,7 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .background, .games, .pet]) }
                     #else
                     Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif
@@ -524,7 +534,7 @@ private struct SettingsView: View {
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
         case .animations:
             #if APPSTORE
-            EmptyView()
+            AnimationLinksPage()
             #else
             AnimationsPage()
             #endif
@@ -797,11 +807,13 @@ private struct GeneralSettings: View {
                 }
                 .padding(.vertical, 2)
                 .settingAnchor(String(localized: "Settings file"))
-                #if !APPSTORE
-                Toggle(isOn: $sync.isEnabled) {
-                    RowLabel(Text("Sync settings with iCloud"), Text(syncStatus))
+                if SettingsSync.isAvailable {
+                    Toggle(isOn: $sync.isEnabled) {
+                        RowLabel(Text("Sync settings with iCloud"), Text(syncStatus))
+                    }
+                    .settingAnchor(String(localized: "Sync settings with iCloud"))
                 }
-                .settingAnchor(String(localized: "Sync settings with iCloud"))
+                #if !APPSTORE
                 if sync.state == .noDrive {
                     LabeledContent("Turn on iCloud Drive in System Settings") {
                         Button("Open", systemImage: "arrow.up.forward.app") { sync.openSettings() }
@@ -816,7 +828,7 @@ private struct GeneralSettings: View {
                 #endif
             }
             RestoreDefaultsSection(
-                message: String(localized: "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are."),
+                message: resetMessage,
                 isDefault: appearance == .system && language.selected.isEmpty && !sync.isEnabled
             ) {
                 sync.isEnabled = false
@@ -839,6 +851,16 @@ private struct GeneralSettings: View {
         } message: { item in
             Text("All pikapik settings will be replaced with the ones from “\(item.name)”.")
         }
+    }
+
+    private var resetMessage: String {
+        #if APPSTORE
+        SettingsSync.isAvailable
+            ? String(localized: "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are.")
+            : String(localized: "Appearance and Language will follow the system again. Open at Login stays as it is.")
+        #else
+        String(localized: "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud Drive stay as they are.")
+        #endif
     }
 
     private var syncStatus: String {
@@ -939,6 +961,23 @@ private struct ToolsSettings: View {
     var body: some View {
         Form {
             SettingsHeader(tab: tab, text: text)
+            #if APPSTORE
+            if tab == .mouse {
+                Section {
+                    SystemSettingsRow(
+                        title: String(localized: "Turn off pointer acceleration"),
+                        subtitle: Text("Same distance as your hand, at any speed"),
+                        url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!
+                    )
+                } footer: {
+                    Text("In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider.")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            #endif
             ForEach(tools, id: \.id) { tool in
                 if let heading = headings[tool.id] {
                     Section(heading) { tool.settingsView.needs(tool.needs) }
@@ -965,8 +1004,53 @@ private struct ToolsSettings: View {
     }
 }
 
+#if APPSTORE
+private struct SystemSettingsRow: View {
+    let title: String
+    let subtitle: Text
+    let url: URL
+
+    var body: some View {
+        LabeledContent {
+            Button("Open", systemImage: "arrow.up.forward.app") { NSWorkspace.shared.open(url) }
+        } label: {
+            RowLabel(Text(title), subtitle)
+        }
+        .settingAnchor(title)
+    }
+}
+
+private struct AnimationLinksPage: View {
+    private static let desktop = URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!
+    private static let motion = URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?Seeing_Display")!
+
+    var body: some View {
+        Form {
+            SettingsHeader(tab: .animations, text: String(localized: "Change animations in System Settings. Each button opens the right place."))
+            Section {
+                SystemSettingsRow(title: String(localized: "Minimize effect"), subtitle: Text("Choose “Scale Effect” for a quicker animation"), url: Self.desktop)
+                SystemSettingsRow(title: String(localized: "Bouncing icons"), subtitle: Text("Turn off “Animate opening applications”"), url: Self.desktop)
+                SystemSettingsRow(title: String(localized: "Hide the Dock automatically"), subtitle: Text("Turn on “Automatically hide and show the Dock”"), url: Self.desktop)
+            }
+            Section {
+                Button(String(localized: "Even calmer: Reduce Motion in Accessibility")) { NSWorkspace.shared.open(Self.motion) }
+                    .buttonStyle(.link)
+                    .settingAnchor(String(localized: "Even calmer: Reduce Motion in Accessibility"))
+            }
+        }
+        .formStyle(.grouped)
+        .settingsPage()
+    }
+}
+#endif
+
 private struct AboutView: View {
     private static let github = Bundle.main.url(forResource: "github", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
+    #if APPSTORE
+    private static let source = "https://github.com/dev-pikapik/pika-tools/tree/main/Sources/pika-tools"
+    #else
+    private static let source = "https://github.com/dev-pikapik/pika-tools"
+    #endif
 
     private static var whatsNew: String {
         let code = Bundle.main.preferredLocalizations.first ?? "en"
@@ -1018,7 +1102,7 @@ private struct AboutView: View {
             #endif
 
             Section {
-                link("GitHub", "https://github.com/dev-pikapik/pika-tools", symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
+                link("GitHub", Self.source, symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
                 link(String(localized: "What’s New"), Self.whatsNew, symbol: "newspaper.fill", color: .blue)
                 link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
                 link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)

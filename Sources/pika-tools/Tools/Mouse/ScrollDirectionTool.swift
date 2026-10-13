@@ -181,7 +181,7 @@ struct ScrollDirectionArt: View {
                 page(natural: trackpadNatural, rolls: rolls, rolling: rolling, step: step)
                     .position(x: 114, y: 64)
                 ArtMouse(wheel: rolling)
-                    .scaleEffect(1.6)
+                    .artScale(1.6)
                     .position(x: 189, y: 64)
                 Image(systemName: "chevron.down")
                     .font(.system(size: 10, weight: .bold))

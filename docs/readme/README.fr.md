@@ -141,72 +141,77 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <br>Les boutons 4 et 5 reculent et avancent, comme un balayage.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Masquer avec un bouton de la souris</b>
+<br>Un appui masque l’app au premier plan, comme ⌘H. Elle continue de tourner.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Défiler par lignes</b>
 <br>Chaque cran de la molette fait défiler d’autant, quelle que soit la vitesse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Sens de défilement</b>
 <br>Un sens pour le trackpad, un autre pour la souris.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sans accélération du pointeur</b>
 <br>Le pointeur parcourt exactement la distance de votre main.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Répéter une touche maintenue</b>
 <br>Maintenez une touche pour la répéter, sans menu des accents.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home et End</b>
 <br>Allez au début ou à la fin de la ligne pendant la saisie.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Accélérez le Dock, les fenêtres et Coup d’œil, jusqu’à l’instantané.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Autorisations des apps supprimées</b>
 <br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Compagnon sur le bureau</b>
 <br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Supprimer des apps</b>
 <br>Supprimez une app et ses fichiers. Tout est récupérable.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Afficher les FPS</b>
 <br>Un petit compteur indique la fluidité de votre jeu, dans le coin que vous choisissez.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archives</b>
 <br>Ouvrez les RAR et d’autres archives, ou regroupez des fichiers dans un ZIP, d’un clic droit.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Garder le Dock sur un seul écran</b>
@@ -252,7 +257,7 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 pikapik a besoin de deux autorisations. Au premier lancement, elle ouvre les réglages sur la page Autorisations, qui vous guide pas à pas, et macOS affiche ses propres demandes. Allez dans **Réglages Système › Confidentialité et sécurité** et activez pikapik dans :
 
 - **Accessibilité**, pour que l’app puisse modifier une frappe ou un clic avant qu’il n’atteigne les autres apps.
-- **Surveillance de l’entrée**, pour que l’app puisse tout simplement voir les frappes et les clics.
+- **Surveillance de l’entrée**, pour que l’app puisse voir les frappes et les clics sans les modifier. C’est ainsi que fonctionne le changement de langue.
 
 L’app détecte le changement en une ou deux secondes, sans redémarrage.
 
@@ -287,6 +292,8 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Boutons latéraux pour Précédent et Suivant.** Les boutons 4 et 5 de la souris font précédent et suivant dans le Finder, Safari et les autres apps Apple, ainsi que dans de nombreuses autres apps, comme un balayage sur le trackpad. Les apps qui gèrent elles-mêmes ces boutons les reçoivent tels quels. Si votre souris les a dans l’autre sens, activez **Inverser les boutons latéraux**. Désactivé par défaut.
 
+**Un bouton de la souris masque l’app active.** Activez **Masquer l’app active avec un bouton de la souris** dans Réglages › Souris et appuyez sur le bouton que vous voulez utiliser, par exemple le bouton du milieu ou un bouton latéral. Ensuite, un appui masque l’app au premier plan, exactement comme ⌘H : l’app continue de tourner, et un clic sur son icône dans le Dock la fait revenir. Quand vous jouez avec le Mode Jeu activé, le bouton fonctionne normalement dans le jeu. Désactivé par défaut.
+
 **Quitter à la fermeture de la dernière fenêtre.** Fermez la dernière fenêtre d’une app et l’app se ferme. Le Finder reste ouvert, tout comme les apps qui ont des fenêtres sur d’autres bureaux ou dans le Dock. Vous pouvez dresser la liste des apps qui ne doivent jamais se fermer ainsi. Désactivé par défaut.
 
 **Réduire ou masquer d’un clic dans le Dock.** Cliquez sur l’icône de l’app que vous utilisez dans le Dock, et toutes ses fenêtres rejoignent le Dock. Cliquez de nouveau pour les faire toutes revenir. Vous pouvez aussi faire en sorte que le clic masque l’app entière, comme ⌘H. Désactivé par défaut.
@@ -299,7 +306,7 @@ Certaines apps et certains jeux comptent le défilement en pixels exacts : pour 
 
 **Entrée ouvre les fichiers dans le Finder.** Sélectionnez des fichiers dans une fenêtre du Finder ou sur le bureau et appuyez sur Retour ou Entrée : ils s’ouvrent. F2 ou fn F2 renomme le fichier sélectionné. Dans les champs de texte, par exemple quand vous saisissez un nom, les touches fonctionnent comme d’habitude. Désactivé par défaut.
 
-**⌘X coupe les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌘X, ouvrez le dossier voulu et appuyez sur ⌘V : les fichiers y sont déplacés au lieu d’être copiés. ⌘C annule la coupe. Désactivé par défaut.
+**⌘X coupe les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌘X, ouvrez le dossier voulu et appuyez sur ⌘V : les fichiers y sont déplacés au lieu d’être copiés. ⌘C annule la coupe. Dans la version du Mac App Store, ⌘V colle toujours une copie : pour déplacer les fichiers, cliquez sur l’icône pikapik dans la barre des menus et choisissez **Déplacer les éléments ici**, ou appuyez sur ⌥⌘V. Désactivé par défaut.
 
 **Supprimer efface les fichiers dans le Finder.** Sélectionnez des fichiers et appuyez sur ⌫ ou ⌦ (fn ⌫ sur un portable) : ils vont à la Corbeille, comme avec ⌘⌫. Quand vous renommez un fichier, faites une recherche ou tapez dans un autre champ, les touches effacent les lettres comme d’habitude. Désactivé par défaut.
 
@@ -381,7 +388,7 @@ Ouvrez les réglages depuis le menu avec **Réglages…** ou ⌘, ou relancez si
 - **Ports** : quel programme occupe quel port, ses adresses et ses détails, et un bouton pour libérer le port.
 - **Son** : volume des apps, avec un curseur et un bouton pour couper le son de chaque app qui joue du son.
 - **Clavier** : changement de langue, répétition des touches, Home et End, correction de la mauvaise disposition.
-- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux.
+- **Souris ** : accélération du pointeur et vitesse de déplacement, défilement par lignes, sens de défilement, boutons latéraux, un bouton qui masque l’app active.
 - **Fenêtres** : agrandir avec le bouton vert (avec une liste d’exceptions), protection de ⌘Q et ⌘W, et quitter à la dernière fenêtre (avec une liste d’exceptions).
 - **Dock** : réduire ou masquer d’un clic dans le Dock, garder le Dock sur un seul écran et ramener le Dock.
 - **Finder** : nouveau fichier, copie allégée, conversion et archives, ouvrir avec Entrée, couper avec ⌘X et supprimer avec ⌫.
@@ -428,7 +435,7 @@ Les deux quittent l’app, la retirent des éléments d’ouverture et la suppri
 <summary>Questions fréquentes</summary>
 
 **Pourquoi faut-il deux autorisations ?**
-macOS sépare l’accès au clavier et à la souris en deux. La surveillance de l’entrée permet à l’app de voir les évènements, l’accessibilité lui permet de les modifier. Pour bloquer un raccourci, il faut les deux.
+macOS sépare l’accès au clavier et à la souris en deux. L’accessibilité permet à l’app de modifier une frappe ou un clic, et la plupart des fonctions n’ont besoin que de cela. La surveillance de l’entrée lui permet seulement d’observer, et cela suffit pour changer de langue.
 
 **macOS indique que l’app provient d’un développeur non identifié.**
 pikapik est signée par son développeur et réussit la vérification d’Apple contre les logiciels malveillants, ce message ne devrait donc pas apparaître. S’il apparaît quand même, ouvrez **Réglages Système › Confidentialité et sécurité** et cliquez sur **Ouvrir quand même**.

@@ -141,72 +141,77 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br>Przyciski 4 i 5 cofają i przechodzą dalej, jak przesunięcie palcami.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Ukrywanie przyciskiem myszy</b>
+<br>Jedno naciśnięcie ukrywa aplikację na pierwszym planie, jak ⌘H. Aplikacja działa dalej.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Przewijanie o wiersze</b>
 <br>Każdy ząbek kółka przewija tyle samo, niezależnie od tempa.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Kierunek przewijania</b>
 <br>Jeden kierunek dla gładzika, drugi dla myszy.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez przyspieszenia wskaźnika</b>
 <br>Wskaźnik przesuwa się dokładnie tyle, co Twoja ręka.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Powtarzaj przytrzymany klawisz</b>
 <br>Przytrzymaj klawisz, by pisał raz za razem, bez menu akcentów.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home i End</b>
 <br>Skacz na początek lub koniec wiersza podczas pisania.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animacje</b>
 <br>Przyspiesz Dock, okna i Szybki przegląd, nawet do natychmiastowych.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Uprawnienia usuniętych aplikacji</b>
 <br>Usuń uprawnienia, które macOS zachowuje dla już usuniętych aplikacji.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Zwierzak na biurku</b>
 <br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem. Ożywia się, gdy piszesz, i drzemie, gdy odchodzisz.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Usuwanie aplikacji</b>
 <br>Usuń aplikację z plikami. Wszystko można przywrócić.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Pokaż FPS</b>
 <br>Mały licznik w wybranym rogu pokazuje, jak płynnie działa gra.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archiwa</b>
 <br>Wypakuj RAR i inne archiwa albo spakuj pliki do archiwum ZIP, klikając prawym przyciskiem.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Trzymaj Dock na jednym ekranie</b>
@@ -252,7 +257,7 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 pikapik potrzebuje dwóch uprawnień. Przy pierwszym uruchomieniu otwiera ustawienia na stronie Uprawnienia, która prowadzi krok po kroku, a macOS pokazuje własne prośby. Przejdź do **Ustawienia systemowe › Prywatność i ochrona** i włącz pikapik w sekcjach:
 
 - **Dostępność**, aby aplikacja mogła zmienić naciśnięcie klawisza lub kliknięcie, zanim dotrze ono do innych aplikacji.
-- **Monitorowanie wprowadzania**, aby aplikacja w ogóle widziała naciśnięcia klawiszy i kliknięcia.
+- **Monitorowanie wprowadzania**, aby aplikacja widziała naciśnięcia klawiszy i kliknięcia, nie zmieniając ich. Tak działa zmiana języka.
 
 Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
@@ -287,6 +292,8 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Finderze, Safari i innych aplikacjach Apple oraz w wielu innych programach, tak jak machnięcie na gładziku. Aplikacje, które same obsługują te przyciski, dostają je bez zmian. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 
+**Przycisk myszy ukrywa bieżącą aplikację.** Włącz **Przycisk myszy ukrywa bieżącą aplikację** w Ustawieniach › Mysz i naciśnij przycisk, którego chcesz używać, na przykład środkowy albo boczny. Odtąd jedno naciśnięcie ukrywa aplikację na pierwszym planie, tak jak ⌘H: aplikacja działa dalej, a kliknięcie jej ikony w Docku ją przywraca. Gdy grasz z włączonym trybem gry, przycisk działa w grze jak zwykle. Domyślnie wyłączone.
+
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
 **Minimalizuj lub ukrywaj kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a wszystkie jej okna trafią do Docka. Kliknij ponownie, aby przywrócić je wszystkie. Możesz też sprawić, by kliknięcie ukrywało całą aplikację, jak ⌘H. Domyślnie wyłączone.
@@ -299,7 +306,7 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Enter otwiera pliki w Finderze.** Zaznacz pliki w oknie Findera lub na biurku i naciśnij Return albo Enter – pliki się otworzą. F2 lub fn F2 zmienia nazwę zaznaczonego pliku. W polach tekstowych, na przykład podczas wpisywania nazwy, klawisze działają jak zwykle. Domyślnie wyłączone.
 
-**⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane. ⌘C anuluje wycinanie. Domyślnie wyłączone.
+**⌘X wycina pliki w Finderze.** Zaznacz pliki i naciśnij ⌘X, otwórz folder docelowy i naciśnij ⌘V – pliki zostaną tam przeniesione zamiast skopiowane. ⌘C anuluje wycinanie. W wersji z Mac App Store ⌘V nadal wkleja kopię: aby przenieść pliki, kliknij ikonę pikapik na pasku menu i wybierz **Przenieś rzeczy tutaj** albo naciśnij ⌥⌘V. Domyślnie wyłączone.
 
 **Delete usuwa pliki w Finderze.** Zaznacz pliki i naciśnij ⌫ lub ⌦ (fn ⌫ na laptopie) – trafią do Kosza, tak jak po ⌘⌫. Gdy zmieniasz nazwę pliku, szukasz lub piszesz w innym polu, klawisze kasują litery jak zwykle. Domyślnie wyłączone.
 
@@ -381,7 +388,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Porty**: który program zajął który port, jego adresy i szczegóły oraz przycisk, który zwalnia port.
 - **Dźwięk**: głośność aplikacji, suwak i przycisk wyciszenia dla każdej aplikacji, która odtwarza dźwięk.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End, poprawianie złego układu.
-- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
+- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski, przycisk ukrywający bieżącą aplikację.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku, trzymanie Docka na jednym ekranie i przywracanie Docka.
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X i usuwanie klawiszem ⌫.
@@ -428,7 +435,7 @@ Oba sposoby kończą aplikację, usuwają ją z rzeczy otwieranych podczas logow
 <summary>Najczęstsze pytania</summary>
 
 **Dlaczego potrzebne są dwa uprawnienia?**
-macOS dzieli dostęp do klawiatury i myszy na dwie części. Monitorowanie wprowadzania pozwala aplikacji widzieć zdarzenia, a Dostępność pozwala je zmieniać. Do zablokowania skrótu potrzebne są oba.
+macOS dzieli dostęp do klawiatury i myszy na dwie części. Dostępność pozwala aplikacji zmienić naciśnięcie klawisza lub kliknięcie i większości funkcji wystarcza tylko ona. Monitorowanie wprowadzania pozwala jej tylko patrzeć i to wystarcza do zmiany języka.
 
 **macOS informuje, że aplikacja pochodzi od niezidentyfikowanego dewelopera.**
 pikapik jest podpisana przez dewelopera i przechodzi kontrolę Apple pod kątem złośliwego oprogramowania, więc ten komunikat nie powinien się pojawiać. Jeśli jednak się pojawi, otwórz **Ustawienia systemowe › Prywatność i ochrona** i kliknij **Otwórz mimo to**.

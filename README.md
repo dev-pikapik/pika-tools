@@ -141,72 +141,77 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br>Buttons 4 and 5 go back and forward, like a swipe.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/hide-app-dark.png"><img src="docs/media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Hide with a mouse button</b>
+<br>One press hides the app in front, like ⌘H. It keeps running.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-lines-dark.png"><img src="docs/media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scroll by lines</b>
 <br>Every click of the wheel scrolls the same, however fast you spin it.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-direction-dark.png"><img src="docs/media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scroll direction</b>
 <br>One direction for the trackpad, another for the mouse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/linear-pointer-dark.png"><img src="docs/media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>No pointer acceleration</b>
 <br>The pointer moves exactly as far as your hand.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/key-repeat-dark.png"><img src="docs/media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repeat a held key</b>
 <br>Hold a key to type it again and again, without the accent menu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/home-end-dark.png"><img src="docs/media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home and End</b>
 <br>Jump to the start or end of a line while you type.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/animations-dark.png"><img src="docs/media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Speed up the Dock, windows and Quick Look, all the way to instant.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/leftover-permissions-dark.png"><img src="docs/media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissions of deleted apps</b>
 <br>Remove the permissions macOS still keeps for apps you deleted.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
 <br><b>Pet on the desktop</b>
 <br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/uninstaller-dark.png"><img src="docs/media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Uninstaller</b>
 <br>Remove an app and its files. You can put it all back.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-fps-dark.png"><img src="docs/media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Show FPS</b>
 <br>A small counter shows how smoothly your game runs, in the corner you choose.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/archive-dark.png"><img src="docs/media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archives</b>
 <br>Unpack RAR and other archives, or pack files into a ZIP, with a right-click.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/dock-display-dark.png"><img src="docs/media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Keep the Dock on one display</b>
@@ -252,7 +257,7 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 pikapik needs two permissions. On first launch it opens Settings on the Permissions page, which walks you through them, and macOS shows its own prompts. Go to **System Settings › Privacy & Security** and turn on pikapik in:
 
 - **Accessibility**, so the app can change a key press or click before it reaches other apps.
-- **Input Monitoring**, so the app can see key presses and clicks in the first place.
+- **Input Monitoring**, so the app can watch key presses and clicks without changing them, as Switch language does.
 
 The app picks up the change within a couple of seconds, no restart needed.
 
@@ -287,6 +292,8 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Finder, Safari and other Apple apps and in many other apps, just like a swipe on the trackpad. Apps that handle these buttons themselves get them as they are. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
+**A mouse button hides the current app.** Turn on **Mouse button hides the current app** in Settings › Mouse and press the button you want to use, such as the middle button or a side button. One press then hides the app in front, just like ⌘H: the app keeps running, and a click on its icon in the Dock brings it back. While you play with Game Mode on, the button works in the game as usual. Off by default.
+
 **Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
 **Minimize or hide with a click in the Dock.** Click the Dock icon of the app you're in, and all its windows go down to the Dock. Click again to bring them all back. You can also make the click hide the whole app, like ⌘H. Off by default.
@@ -299,7 +306,7 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 
 **Enter opens files in Finder.** Select files in a Finder window or on the Desktop and press Return or Enter, and they open. F2 or fn F2 renames the selected file. In text fields, for example while you type a name, the keys work as usual. Off by default.
 
-**⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied. ⌘C cancels the cut. Off by default.
+**⌘X cuts files in Finder.** Select files and press ⌘X, open the folder you want and press ⌘V, and the files move there instead of being copied. ⌘C cancels the cut. In the Mac App Store version ⌘V still pastes a copy: to move the files, click the pikapik icon in the menu bar and choose **Move Items Here**, or press ⌥⌘V. Off by default.
 
 **Delete removes files in Finder.** Select files and press ⌫ or ⌦ (fn ⌫ on a laptop), and they go to the Trash, just like with ⌘⌫. While you rename a file, search or type in any other field, the keys erase letters as usual. Off by default.
 
@@ -381,7 +388,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Ports**: which program took which port, its addresses and details, and a button to free the port.
 - **Sound**: App Volume, a slider and a mute button for every app that plays sound.
 - **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
-- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons.
+- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: minimize or hide with a click in the Dock, keep the Dock on one display, bring the Dock back.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash.
@@ -428,7 +435,7 @@ Both quit the app, remove it from login items and delete it. The script also res
 <summary>FAQ</summary>
 
 **Why does it need two permissions?**
-macOS splits keyboard and mouse access in two. Input Monitoring lets the app see events, Accessibility lets it change them. Blocking a shortcut needs both.
+macOS splits keyboard and mouse access in two. Accessibility lets the app change a key press or click, and most features need only that. Input Monitoring lets it just watch, and that is all Switch language needs.
 
 **macOS says the app is from an unidentified developer.**
 pikapik is signed by its developer and passes Apple's malware check, so this message shouldn't appear. If it does, open **System Settings › Privacy & Security** and click **Open Anyway**.

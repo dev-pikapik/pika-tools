@@ -15,7 +15,7 @@ struct SettingsFile {
         "layout-fix", "layout-fix-auto", "layout-fix-shortcut", "layout-fix-excluded",
         "linear-pointer", "linear-pointer-speed", "wheel-lines", "wheel-lines-count", "wheel-lines-mode", "wheel-lines-pixels",
         "wheel-direction", "wheel-direction-natural", "wheel-direction-trackpad-natural",
-        "side-buttons", "side-buttons-swap",
+        "side-buttons", "side-buttons-swap", "hide-app", "hide-app-button",
         "quit-on-close", "quit-on-close-excluded", "dock-hide", "dock-hide-action", "dock-display", "dock-display-return", "window-zoom", "window-zoom-excluded", "new-file", "compress", "convert",
         "archive", "archive-format", "archive-split",
         "finder-open", "finder-cut", "finder-delete",

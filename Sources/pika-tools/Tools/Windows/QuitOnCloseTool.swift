@@ -8,6 +8,7 @@ final class QuitOnCloseTool: Tool {
     let id = "quit-on-close"
     let icon = "xmark.app"
     var title: String { String(localized: "Quit when the last window closes") }
+    var needs: [Permission] { [.accessibility, .inputMonitoring] }
     let tab = SettingsTab.windows
 
     private static let excludedKey = "quit-on-close-excluded"
@@ -54,7 +55,7 @@ final class QuitOnCloseTool: Tool {
 
     func refresh() {
         stop()
-        guard isEnabled, AXIsProcessTrusted() else { return }
+        guard isEnabled, AXIsProcessTrusted(), Permissions.shared.inputMonitoring else { return }
         let center = NSWorkspace.shared.notificationCenter
         tokens = [
             center.addObserver(forName: NSWorkspace.didLaunchApplicationNotification, object: nil, queue: .main) { [weak self] note in

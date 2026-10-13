@@ -141,72 +141,77 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br>Tombol 4 dan 5 untuk kembali dan maju, seperti usapan di trackpad.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Sembunyikan dengan tombol tetikus</b>
+<br>Sekali tekan menyembunyikan app di depan, seperti ⌘H. App tetap berjalan.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Gulir per baris</b>
 <br>Setiap klik roda menggulir sama jauh, secepat apa pun diputar.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Arah gulir</b>
 <br>Satu arah untuk trackpad, arah lain untuk tetikus.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Tanpa akselerasi penunjuk</b>
 <br>Penunjuk bergerak persis sejauh tangan Anda.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ulangi tombol yang ditahan</b>
 <br>Tahan tombol untuk mengetiknya berulang kali, tanpa menu aksen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home dan End</b>
 <br>Lompat ke awal atau akhir baris saat mengetik.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasi</b>
 <br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Izin app yang sudah dihapus</b>
 <br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Peliharaan di desktop</b>
 <br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Hapus App</b>
 <br>Hapus app beserta filenya. Semua bisa dikembalikan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Tampilkan FPS</b>
 <br>Penghitung kecil di sudut pilihan Anda menunjukkan seberapa mulus game berjalan.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arsip</b>
 <br>Ekstrak RAR dan arsip lain, atau kemas file jadi ZIP, dengan klik kanan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Pertahankan Dock di satu layar</b>
@@ -252,7 +257,7 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 pikapik memerlukan dua izin. Saat pertama kali dibuka, app menampilkan pengaturan di halaman Izin yang memandu Anda langkah demi langkah, dan macOS menampilkan permintaannya sendiri. Buka **Pengaturan Sistem › Privasi & Keamanan** dan nyalakan pikapik di:
 
 - **Aksesibilitas**, agar app bisa mengubah tekanan tombol atau klik sebelum sampai ke app lain.
-- **Pemantauan Input**, agar app bisa melihat tekanan tombol dan klik.
+- **Pemantauan Input**, agar app bisa melihat tekanan tombol dan klik tanpa mengubahnya. Begitulah cara kerja penggantian bahasa.
 
 App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 
@@ -287,6 +292,8 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 berfungsi untuk mundur dan maju di Finder, Safari, dan app Apple lainnya, juga di banyak app lain, sama seperti usapan di trackpad. App yang menangani tombol ini sendiri menerimanya apa adanya. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
 
+**Tombol tetikus menyembunyikan app saat ini.** Nyalakan **Sembunyikan app saat ini dengan tombol tetikus** di Pengaturan › Tetikus, lalu tekan tombol yang ingin Anda gunakan, misalnya tombol tengah atau tombol samping. Setelah itu, sekali tekan menyembunyikan app yang ada di depan, persis seperti ⌘H: app tetap berjalan, dan klik ikonnya di Dock akan memunculkannya kembali. Selama Anda bermain dengan Mode Game aktif, tombol itu bekerja di dalam game seperti biasa. Mati secara default.
+
 **Keluar saat jendela terakhir ditutup.** Tutup jendela terakhir sebuah app, dan app akan keluar. Finder tetap terbuka, begitu juga app yang punya jendela di desktop lain atau di Dock. Anda bisa membuat daftar app yang tidak boleh keluar dengan cara ini. Mati secara default.
 
 **Minimalkan atau sembunyikan dengan klik di Dock.** Klik ikon Dock dari app yang sedang Anda gunakan, dan semua jendelanya turun ke Dock. Klik lagi untuk memunculkan semuanya kembali. Anda juga bisa membuat klik itu menyembunyikan seluruh app, seperti ⌘H. Mati secara default.
@@ -299,7 +306,7 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 
 **Enter Membuka File di Finder.** Pilih file di jendela Finder atau di desktop, lalu tekan Return atau Enter, dan file langsung terbuka. F2 atau fn F2 mengganti nama file yang dipilih. Di kolom teks, misalnya saat mengetik nama, tombol-tombol ini bekerja seperti biasa. Mati secara bawaan.
 
-**⌘X Memotong File di Finder.** Pilih file lalu tekan ⌘X, buka folder tujuan dan tekan ⌘V, dan file dipindahkan ke sana, bukan disalin. ⌘C membatalkan pemotongan. Mati secara bawaan.
+**⌘X Memotong File di Finder.** Pilih file lalu tekan ⌘X, buka folder tujuan dan tekan ⌘V, dan file dipindahkan ke sana, bukan disalin. ⌘C membatalkan pemotongan. Di versi Mac App Store, ⌘V tetap menempelkan salinan: untuk memindahkan file, klik ikon pikapik di bar menu lalu pilih **Pindahkan Item Ke Sini**, atau tekan ⌥⌘V. Mati secara bawaan.
 
 **Delete menghapus file di Finder.** Pilih file lalu tekan ⌫ atau ⌦ (fn ⌫ di laptop), dan file masuk ke Tong Sampah, sama seperti dengan ⌘⌫. Saat Anda mengganti nama file, mencari, atau mengetik di kolom lain, tombolnya menghapus huruf seperti biasa. Mati secara bawaan.
 
@@ -381,7 +388,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Port**: program mana yang memakai port mana, alamat dan detailnya, serta tombol untuk membebaskan port.
 - **Suara**: volume app, slider dan tombol bisu untuk setiap app yang memutar suara.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End, perbaikan tata letak yang salah.
-- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
+- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping, tombol yang menyembunyikan app saat ini.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock, mempertahankan Dock di satu layar, dan mengembalikan Dock.
 - **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, dan hapus dengan ⌫.
@@ -428,7 +435,7 @@ Keduanya keluar dari app, menghapusnya dari item masuk, dan menghapus app. Skrip
 <summary>Pertanyaan umum</summary>
 
 **Mengapa perlu dua izin?**
-macOS membagi akses ke papan ketik dan mouse menjadi dua. Pemantauan Input membuat app bisa melihat peristiwa, sedangkan Aksesibilitas membuatnya bisa mengubah peristiwa itu. Untuk memblokir pintasan, keduanya diperlukan.
+macOS membagi akses ke papan ketik dan mouse menjadi dua. Aksesibilitas membuat app bisa mengubah tekanan tombol atau klik, dan sebagian besar fitur hanya membutuhkan itu. Pemantauan Input hanya membuatnya bisa melihat, dan itu cukup untuk mengganti bahasa.
 
 **macOS mengatakan app berasal dari pengembang yang tidak dikenal.**
 pikapik ditandatangani oleh pengembangnya dan lolos pemeriksaan Apple terhadap perangkat lunak berbahaya, jadi pesan ini seharusnya tidak muncul. Jika tetap muncul, buka **Pengaturan Sistem › Privasi & Keamanan** dan klik **Tetap Buka**.

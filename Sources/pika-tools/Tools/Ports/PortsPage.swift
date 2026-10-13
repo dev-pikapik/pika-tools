@@ -46,7 +46,7 @@ struct PortsPage: View {
                     Text("Your programs")
                 } footer: {
                     #if APPSTORE
-                    Text("To free a port, quit the program that holds it: show the program and quit it there, or paste the command into Terminal.")
+                    Text("To free a port, quit the program that holds it: in the program itself or in Activity Monitor.")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                     #endif
@@ -133,28 +133,11 @@ private struct PortRow: View {
         } else if model.isOurs(program) {
             #if APPSTORE
             Form {
-                Menu {
+                Menu("Free Up") {
                     if let window = look.window, let name = window.localizedName {
                         Button("Show “\(name)”") { window.activate() }
                     }
-                    if !look.isApp {
-                        Button("Copy Command") { model.copyCommand(program) }
-                    }
                     Button("Open Activity Monitor") { NSWorkspace.shared.open(PortsModel.activityMonitor) }
-                } label: {
-                    ZStack {
-                        if model.copied == program.id {
-                            Label("Copied", systemImage: "checkmark")
-                        } else {
-                            Text("Free Up")
-                        }
-                        Group {
-                            Text("Free Up")
-                            Label("Copied", systemImage: "checkmark")
-                        }
-                        .hidden()
-                        .accessibilityHidden(true)
-                    }
                 }
                 .menuStyle(.button)
                 .buttonStyle(.bordered)

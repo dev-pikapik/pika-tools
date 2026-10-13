@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Ẩn ứng dụng phía trước bằng một nút chuột
+
+<sub>1.46.0 · 13 tháng 10 năm 2026</sub>
+
+Nhấn nút giữa hoặc một nút bên, và ứng dụng bạn đang dùng sẽ lui sang một bên, giống hệt khi nhấn ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Chuột, bật “Ẩn ứng dụng hiện tại bằng nút chuột” rồi nhấn nút bạn muốn dùng. Sau này bạn có thể chọn nút khác bằng “Thay đổi…”. Ứng dụng vẫn tiếp tục chạy, và bấm vào biểu tượng của nó trong Dock sẽ đưa nó trở lại. Khi bạn chơi với Chế độ trò chơi đang bật, nút vẫn làm đúng việc quen thuộc của nó trong trò chơi. Nếu “Nút bên để quay lại và tiếp” cũng đang bật, nút bên bạn chọn sẽ chuyển sang ẩn ứng dụng. Tính năng này cần quyền “Trợ năng” và tắt theo mặc định.
+
+Trong phiên bản Mac App Store, ⌘X cắt tệp trong Finder: chọn tệp, nhấn ⌘X, mở một thư mục khác, rồi chọn “Di chuyển mục tới đây” trong menu pikapik hoặc nhấn ⌥⌘V. “Hoạt ảnh” và “Tắt tăng tốc con trỏ” đã trở lại, và trang “Quyền” có thêm mục mới “Còn lại từ ứng dụng đã xóa”. Phiên bản này không tự thay đổi được các cài đặt đó, nên mỗi dòng sẽ giải thích cần đổi gì và mở đúng chỗ trong Cài đặt hệ thống. Thú cưng giờ đi khắp chiều ngang màn hình, ngay phía trên Dock.
+
+**Thử ngay:** Cài đặt › Chuột › Ẩn ứng dụng hiện tại bằng nút chuột
+
+**Đã sửa**
+
+- Hình vẽ trên trang “Chuột” đã sắc nét trở lại.
+- Các tính năng bàn phím và chuột chỉ xin đúng quyền mà chúng thật sự dùng. Hầu hết chỉ cần “Trợ năng”; trước đây chúng còn xin cả “Giám sát đầu vào” và bị xám nếu thiếu quyền đó.
+- “Chuyển ngôn ngữ” cho biết khi nào nó cần “Giám sát đầu vào”, và bấm vào nó sẽ mở trang “Quyền”. Trước đây nó vẫn bật mà không hoạt động.
+- “Thoát khi đóng cửa sổ cuối cùng” chờ đến khi bạn cho phép “Giám sát đầu vào”, thay vì khiến macOS hỏi quyền này khi pikapik khởi động.
+- Trên macOS 27, “Trợ năng” hiện với tên mới là “Điều khiển thiết bị và truy cập dữ liệu”, giống như trong Cài đặt hệ thống.
+- Với VoiceOver, giờ bạn có thể chọn quần áo và trang phục cho thú cưng trong “Tủ quần áo” và “Trang phục”, và mở các giải thưởng của nó trong “Giải thưởng”. Trước đây, các ô này không phản hồi.
+
+---
+
 ## <a id="v1.45.0"></a>Mỗi ứng dụng có âm lượng riêng
 
 <sub>1.45.0 · 13 tháng 10 năm 2026</sub>

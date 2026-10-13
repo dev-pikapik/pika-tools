@@ -1,88 +1,125 @@
-# App Review notes
+pikapik - Mac Tools: information for App Review (Guideline 2.1)
 
-## What the app is
-pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its own; everything lives in the menu bar and one Settings window. Every feature is off by default and is switched on by the user, one by one.
+1. Screen recording
+Attached in App Review Information; made on a physical Mac with the latest macOS and this build, it shows each main tool and permission prompt.
 
-## Features in this build
-- Sound: App Volume (a volume slider and a mute button for each app that plays sound; macOS 14.2 and later, hidden on 14.0 and 14.1).
-- Keyboard: Switch language (input source shortcut), Command key shortcuts, Fix Wrong Keyboard Layout (Services menu).
-- Mouse: Scroll by lines (mouse wheel), Scroll direction for trackpad and mouse, Side buttons go back and forward.
-- Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions).
-- Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
+2. Purpose and audience
+pikapik is a free menu-bar app that fixes small everyday Mac annoyances. It is for Mac users, especially those who use a mouse, type in two languages, play games or want quick Finder actions. It solves: switching the keyboard language and fixing text typed in the wrong one; a separate volume for each app; mouse scrolling, scroll directions and side buttons; accidental ⌘Q and ⌘W; cutting files and right-click actions in Finder; keeping the Mac awake; checking internet speed, battery, ports and background tasks; system shortcuts pulling players out of games. A small pet walks on the desktop to make it friendly.
 
-## Not in the App Store version
-These features need to look inside other apps, which the App Sandbox does not allow. They are only in the version we distribute outside the App Store.
+3. Setup and main features
+No account or sample files are needed; any photo or video works for Finder tools. Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch. Only the Pet is on by default; Fix Wrong Keyboard Layout has no switch.
+- Keep Awake, Speed Test, Temperature (thermal state), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Keep the Dock on one display (two displays).
+- Ports: which app holds which port; pikapik quits nothing. Background Tasks: what starts in the background; view only.
+- Animations, pointer acceleration, Left by deleted apps: buttons only open System Settings.
+- Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (meant as "привет"), then Services > Fix Wrong Keyboard Layout.
+- Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app (like ⌘H).
+- Protect quitting and closing (Windows): ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
+- Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; the first time, it asks which folder to save into. Cut files: select files, press ⌘X, open another folder, choose Move Items Here in the menu-bar menu.
+- Game Mode (Games): turn it on, press Add a Game… (for example Chess) and open the game. While it is in front, system shortcuts and swipes don't pull the player out.
+Permissions: a tool that needs one looks grey; a click shows the macOS prompt (for App Volume, via Allow) and opens Settings > Permissions. Input Monitoring: Switch language, only to see its shortcut. Accessibility (on macOS 27: Device Control and Data Access): the Mouse tools, Protect quitting and closing, Cut files in Finder and Game Mode, to change or hold back a scroll, click, shortcut or swipe. System Audio Recording: App Volume, to change an app's volume. Fix Wrong Keyboard Layout needs none (macOS Services). Optional: Screen Recording for Show FPS in Games; Folders (the user picks the home folder) for Background Tasks there; Input Monitoring for the Pet to jump on Space. Events and sound are handled in memory, never stored or sent. The app never types or pastes text into other apps; it sends only ⌘Q or ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, and a back or forward swipe.
+
+4. External services
+Only one: Speed Test connects to speed.cloudflare.com, only when the user starts a check, and sends no personal data. No accounts, analytics, ads, tracking, payment processors or AI services.
+
+5. Regions
+pikapik works the same in every region; it is localized into 23 languages.
+
+6. Regulated industry or third-party material
+Not applicable.
+
+Other: free, no in-app purchases; the tip section in About stays hidden while no tip products exist. Open at Login is off by default. No data is collected; see the privacy manifest. Pet clothes unlock with awards; nothing is sold.
+
+— конец текста для App Store Connect —
+
+Everything above the line goes into the Notes field of App Review Information in App Store Connect as is; it must stay within 4000 characters. The details below are for answering App Review questions.
+
+### Cut files in Finder
+- Select files, press ⌘X, open another folder, click the menu-bar icon and press Move Items Here: the files move. ⌘V still pastes a copy and ⌘C cancels. The app only checks whether the clipboard holds files and never reads it.
+- In Finder ⌘X becomes ⌘C, so Finder copies the files as usual. Move Items Here is in the app's menu only while Finder is in front and files wait; it sends ⌥⌘V, Finder's own Move Item Here.
+- When the copied thing is text, for example while a file is being renamed, the app sends ⌘X again, so the text is cut as usual.
+- ⌘V is never changed in the App Store version: it pastes as usual, a copy of files or text while a name is being edited.
+
+### Permissions page
+Until Accessibility and Input Monitoring are both on, Settings > Permissions is headed "Permissions for some tools" and says that only some tools need these permissions and everything else works without them. It lists Accessibility (on macOS 27 under its new name, Device Control and Data Access), Input Monitoring, Screen Recording (only while Show FPS is on and the permission is missing), System Audio Recording (once App Volume is turned on), Finder Extensions (while New File, Smaller Copy or Convert is on) and Folders, each with its state and one button, Allow or Turn Off. The app asks for a permission only here or from a grey tool that leads here, never at launch and never during a game. A grey tool that needs Accessibility, Input Monitoring or Screen Recording shows the macOS prompt when clicked; for System Audio Recording the prompt comes from Allow on this page. Turn Off opens the matching list in System Settings, where the user switches pikapik off: a Privacy & Security list, or the Finder extensions list for Finder Extensions; for Folders the app forgets the saved access right away. Below them, Left by deleted apps has one Open button for each Privacy & Security list.
+
+### Buttons to System Settings
+In the App Store version the app changes no system setting itself; these buttons only open a System Settings page:
+- Turn off pointer acceleration (Settings > Mouse): Open goes to System Settings > Mouse, where the user clicks Advanced… and turns off Pointer acceleration. System Settings shows the Mouse page only while a mouse is connected.
+- Animations (Settings > Animations): each Open button goes to System Settings > Desktop & Dock for one setting (minimize effect, bouncing icons, hiding the Dock); the link at the bottom opens Accessibility > Display for Reduce Motion.
+- Left by deleted apps (Settings > Permissions): each Open button opens one list in System Settings > Privacy & Security, where the user removes an app that was deleted.
+- Battery Settings… (Settings > Battery) opens System Settings > Battery.
+- Turn On… and Turn Off… (Settings > Background Tasks) open Login Items in System Settings.
+- Change in System Settings (Settings > Ports) opens the Sharing or AirDrop & Handoff page for a port held by a macOS service, such as AirPlay Receiver.
+- Set a Shortcut… (Fix Wrong Keyboard Layout, Settings > Keyboard) opens Keyboard Shortcuts in System Settings, where the user can give the Services command a key.
+
+### Ports
+Settings > Ports lists the network ports open on this Mac and the program holding each one. It reads the kernel's list of sockets and processes with the sysctl and libproc calls from the macOS SDK that work in the App Sandbox; it opens no connection and changes nothing.
+- pikapik never quits or signals another process in the App Store version. For the user's own program the page says to quit it in the program itself or in Activity Monitor to free the port; Free Up offers Show "name" for an app (brings it to the front, where the user quits it) and Open Activity Monitor.
+- A program of another user or of the system shows that pikapik doesn't touch it, with Open Activity Monitor; for an Apple program the page says macOS needs the port, so it stays taken.
+- Show in Finder reveals the program's file.
+
+### Background Tasks
+Settings > Background Tasks lists what starts in the background and which app added it: launch agents and daemons in /Library and in the user's Library, and helpers inside apps (Contents/Library/LaunchAgents, LaunchDaemons and LoginItems). It reads these property lists and SMAppService.statusForLegacyPlist, and runs /bin/launchctl print for the gui/<uid>, user/<uid> and system domains, read-only, to tell which tasks are loaded or running now.
+- Tasks in the home folder appear only after the user allows it. The page says "To see the tasks in your home folder, allow access to it."; Allow shows the standard Open panel at the home folder with the button Allow Access. Turn Off on the Folders row of Settings > Permissions forgets that access.
+- View only: in the App Store version pikapik loads, unloads, edits or deletes nothing. Turn On… and Turn Off… open Login Items in System Settings, where the user changes it; Show in Finder reveals the file.
+- Left by deleted apps groups tasks whose app is gone, so the user can find them.
+
+### Battery
+Shown only on Macs with a battery. It reads the battery's condition, maximum capacity and cycle count, the power adapter, charging power and power use from IOKit: the power-source keys and the AppleSmartBattery entry in the I/O Registry. It launches no other program (no system_profiler) and changes nothing: Battery Settings… opens System Settings > Battery, and the row about Charge Limit and Optimized Battery Charging only explains the macOS setting. No permission.
+
+### Temperature
+In the App Store version Temperature shows only the macOS thermal state (ProcessInfo.thermalState) and what it means for speed; it reads no sensors.
+
+### Speed Test
+Settings > Speed Test measures download and upload speed with https://speed.cloudflare.com through an ephemeral URLSession, so no cookies or cache are kept. The caption says "Takes about 15 seconds. The check uses speed.cloudflare.com." A check starts only from Check Speed, from Check on the Speed Test card in the menu-bar menu (hidden until the user adds it) or from a pikapik://speed-test link the user opens. Only the last result is kept, in the app's preferences on this Mac.
+
+### App Volume
+Settings > Sound, macOS 14.2 and later (hidden on 14.0 and 14.1), off by default: a volume slider and a mute button for each app that plays sound. It needs System Audio Recording to change the volume of one app without touching the others. For an app whose slider is below 100% or that is muted, the app creates a private Core Audio process tap on that app only (AudioHardwareCreateProcessTap) and plays the same sound, scaled by the slider, to the output device the app was using; an app left at 100% gets no tap. The sound is processed on the fly in memory and is never recorded, stored, logged or sent anywhere. The entitlement com.apple.security.device.audio-input is there only so the sandboxed app can read other apps' sound through these system process taps. The microphone is never opened, and the app has no microphone usage description. The system prompt shows NSAudioCaptureUsageDescription: "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved."
+- To try it: turn on App Volume. The row looks half-grey until System Audio Recording is allowed; clicking it opens the Permissions page on the System Audio Recording row, and Allow shows the system prompt (after a refusal it opens System Settings > Privacy & Security instead). Once it is allowed, play sound in any app: the app appears in the list with a slider and a mute button. Nothing is asked while App Volume is off.
+- To learn whether the permission is given, the app briefly plays an inaudible test signal and taps only its own process.
+
+### Fix Wrong Keyboard Layout
+Settings > Keyboard; it has no switch and needs no permission. Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu. The standard macOS Services mechanism (NSServices in Info.plist) passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. pikapik does not type, paste or watch typing.
+
+### Keep the Dock on one display
+Settings > Dock; it matters only with two or more displays. macOS moves the Dock to another display when the pointer pushes against that display's bottom edge. While the tool is on, the app follows only the pointer position with an NSEvent mouse monitor, which needs no permission, and at that edge moves the pointer back a few points with CGWarpMouseCursorPosition, so the Dock stays. With ⌥ held the Dock moves as usual. Apart from checking whether ⌥ is held (NSEvent.modifierFlags), no key or click is read or sent.
+
+### Mouse button hides the current app
+Settings > Mouse. Turn it on, then press a mouse button over the Settings window to choose it, for example the middle one. That button then hides the front app with NSRunningApplication.hide(), the same as ⌘H; no keystroke is sent. Accessibility is needed because the chosen button's click is held back, so the app under the pointer doesn't get it too.
+
+### Pet
+The pet needs no permission. It walks along the bottom of the screen; in the App Store version it doesn't look up where the Dock icons are. Settings > Pet shows "To make it jump when you press Space, allow Input Monitoring"; clicking it leads to the Permissions page. With that permission a listen-only event tap checks only whether Space was pressed.
+
+### Pet wardrobe and awards
+Settings > Pet has 38 things the pet can wear, 10 ready-made looks and 24 awards. Six things are free; the rest are unlocked by awards, which are earned only by using the pet. Network access unlocks nothing.
+
+The app keeps plain totals of what the user and the pet do (steps, pick-ups, high throws, jumps, leaps, climbs, tumbles, catches, kicks, ball pushes, phrases, days together, whether the pet was out late at night, early in the morning or on a weekend, Settings pages opened, things tried on, visits to the Pet page), the date of each award and the worn outfit. They are stored only in the app's preferences under five keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit), are never sent anywhere and are not part of exported settings. The totals never record which keys were pressed or what was clicked. Erase Progress… in the Awards section of Settings > Pet deletes all five keys after a confirmation.
+
+### Settings file
+Settings > General has Import Settings… and Export Settings…; the user picks the file in the standard Open or Save panel. The file holds the app's settings only, not pet progress.
+
+### Show FPS
+Settings > Games: turn on Game Mode, then Show FPS. The line "Needs a permission. Click to allow it." appears under the switch. Its Allow button opens the Permissions page on the Screen Recording row, and the system Screen Recording prompt appears. Show FPS counts frames from a tiny low-resolution ScreenCaptureKit view of the game's display. Only the number of changed frames is kept; no picture is ever stored, logged or sent.
+
+### Diagnostics
+One line in the macOS system log at launch: the macOS version, whether Accessibility and Input Monitoring are allowed, and how many system shortcuts macOS reports. App Volume adds debug-level lines about its audio connections (process numbers, output device, sound levels), which macOS does not keep unless debug logging is turned on. No key, click, scroll or sound is ever logged, and nothing leaves the Mac.
+
+### iCloud settings sync
+The switch appears only in a build signed with a provisioning profile that includes iCloud key-value storage, and it is off by default. When such a build goes to review, replace the text under "4. External services" above with: "Speed Test connects to speed.cloudflare.com only when the user starts a check and sends no personal data. Sync settings with iCloud (General, off by default) uses the user's own iCloud. No accounts, analytics, ads, tracking, payment processors or AI services." The notes then stay within 4000 characters.
+
+### Not in the App Store version
+These features need to look inside other apps' windows, type into or control other apps, change system files or run with administrator rights, which the App Sandbox does not allow. They are only in the version distributed outside the App Store:
 - Home and End go to the start and end of a line.
 - Green button enlarges the window.
-- Quit when the last window closes (also Protect quitting and closing).
+- Quit when the last window closes.
 - Minimize or hide with a click in the Dock.
-- Enter opens files, Cut files and Delete removes files in Finder.
-- Key repeat, pointer shortcuts, Archives in Finder, Animations, Trash watcher, fan control and the built-in updater.
-
-## How to try it
-No account or demo login is needed. Open pikapik from the menu bar, then Settings.
-
-Tools that work with no permission:
-- Keep Awake: Settings > Keep Awake, turn it on; the Mac will not sleep until it is turned off or the chosen duration ends.
-- Speed Test: Settings > Speed Test, press Check Speed; download and upload speed appear in a few seconds.
-- Settings file: Settings > General, press Export Settings…, then Import Settings… to load the file back.
-- Finder extensions: see below.
-
-Tools that need a permission (the prompt appears when the tool is switched on):
-- Switch language (Input Monitoring): Settings > Keyboard, turn on, pick a shortcut, press it in any text field.
-- Command key shortcuts (Input Monitoring): Settings > Keyboard, turn on, use the Command key shortcuts in any text field.
-- Scroll by lines, Scroll direction, Side buttons (Input Monitoring): Settings > Mouse, turn on, then scroll or press a side button.
-- Pet (Accessibility): Settings > Pet, turn on; the pet appears on the desktop.
-- Game Mode > Show FPS (Screen Recording): Settings > Games, turn on Game Mode, then Show FPS.
-- App Volume (System Audio Recording, macOS 14.2 and later): Settings > Sound, turn on App Volume, allow System Audio Recording on the Permissions page, then play sound in any app; it appears in the list with a slider and a mute button.
-
-## Finder extensions
-They need no permission prompt, only a switch in System Settings > General > Login Items & Extensions > Finder. Settings > Permissions > Finder Extensions opens it.
-- New File in Finder: right-click the empty space in a Finder window, choose New File, pick a type; the file is created in that folder.
-- Smaller Copy in Finder: right-click an image, video or PDF, choose Make a Smaller Copy; a smaller copy is saved next to the original.
-- Convert in Finder: right-click an image, audio or video file, choose Convert To and a format; the converted copy is saved next to the original.
-The first time, the app asks the user to choose the folder it may save into (Settings > Permissions > Folders).
-
-## Fix Wrong Keyboard Layout
-Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu. The standard macOS Services mechanism passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. pikapik does not type, paste or watch typing and needs no permission.
-
-## Keep Awake and Speed Test
-- Keep Awake only asks macOS not to sleep while it is on. It reads and sends nothing.
-- Speed Test runs only when the user presses Check Speed. The only server contacted is speed.cloudflare.com, and no personal data is sent.
-
-## Open at Login
-Open at Login is off by default. It is a switch in Settings > General that the user turns on.
-
-## Permissions
-The app asks for up to four permissions, only when a feature that needs them is switched on. Nothing is requested at first launch.
-
-- Accessibility: Pet uses it to read where the Dock is, so the pet can walk along it.
-- Input Monitoring: Switch language, Command keys, Scroll by lines, Scroll direction and Side buttons use it to see the key or mouse event the user configured so the app can act on it.
-- Screen Recording: Show FPS (Settings > Games, optional) uses it to count how many frames a game draws each second, from a tiny low-resolution ScreenCaptureKit view of the game's display. Only the number of changed frames is kept; no picture is ever stored, logged or sent anywhere.
-- System Audio Recording: App Volume (Settings > Sound, optional, macOS 14.2 and later) uses it to change the volume of one app without touching the others. For an app whose slider is below 100% or that is muted, the app creates a Core Audio process tap on that app only (AudioHardwareCreateProcessTap) and plays the same sound, scaled by the slider, to the output device the app was using; an app left at 100% gets no tap. The sound is processed on the fly in memory and is never recorded, stored, logged or sent anywhere. The entitlement com.apple.security.device.audio-input is there only so the sandboxed app can read other apps' sound through these system process taps. The microphone is never opened, and the app has no microphone usage description. The system prompt shows the text of NSAudioCaptureUsageDescription.
-
-To reproduce each prompt:
-1. Open pikapik from the menu bar, then Settings.
-2. Turn on any feature from the Keyboard or Mouse tab. The system Accessibility prompt appears first; the Input Monitoring prompt follows if the feature needs it.
-3. In Settings > Games turn on Game Mode, then Show FPS. The line "Needs a permission. Click to allow it." appears under the switch; its Allow button opens the Permissions page on the Screen Recording row and the system Screen Recording prompt appears. Nothing is ever asked while a game is running.
-4. The Permissions page in Settings lists Accessibility, Input Monitoring, Screen Recording (only while Show FPS is on and the permission is missing), System Audio Recording (only while App Volume is on), Finder Extensions and Folders with their state and one button, Allow or Turn Off. Turn Off opens the matching list in System Settings > Privacy & Security; for Folders the app forgets the saved access right away. Tools that need a missing permission look half-grey and open this page when clicked.
-5. In Settings > Sound turn on App Volume. The row looks half-grey until System Audio Recording is allowed; clicking it opens the Permissions page on the System Audio Recording row, and Allow shows the system prompt (after a refusal it opens System Settings > Privacy & Security instead). Once it is allowed, play sound in any app: the app appears in the list with a slider and a mute button. Nothing is asked while App Volume is off.
-
-Events are processed in memory to trigger the feature. They are never stored, logged or sent anywhere. App Volume treats sound the same way: it is passed on while it plays and never stored or sent.
-
-## Pet wardrobe and awards
-Settings > Pet has a wardrobe of 38 things the pet can wear, 10 ready-made looks and 24 awards. Six things are free and the rest are unlocked by awards, which are earned only by using the pet. Nothing is sold, and network access unlocks nothing.
-
-The app keeps plain totals of what the user and the pet do (steps, pick-ups, high throws, jumps, leaps, climbs, tumbles, catches, kicks, ball pushes, phrases, days together, Settings pages opened, things tried on, visits to the Pet page), the date of each award and the worn outfit. They are stored only in the app's preferences under five keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit), are never sent anywhere and are not part of exported settings. The totals never record which keys were pressed or what was clicked. Erase Progress… in the Awards section of Settings > Pet deletes all five keys after a confirmation.
-
-## In-app purchases
-This version has no in-app purchases. The tip jar in Settings > About stays hidden while no tip products exist in App Store Connect.
-
-## Privacy
-- No login, no account.
-- No data collection, no analytics, no advertising, no tracking. See the privacy manifest in the bundle.
-- Pet progress (plain totals, award dates and the worn outfit) stays in the app's preferences on this Mac, is never sent anywhere and can be erased in Settings > Pet.
-- The only network use is the Speed Test the user starts.
-
-## Not in this build
-Features that need private APIs or root rights are absent: key repeat tuning, pointer acceleration, Animations tweaks, Fan control, the automatic updater, the leftover-permissions cleaner and the Uninstaller. The sandbox is on.
+- Enter opens files and Delete removes files in Finder.
+- Fixing words as you type. The App Store version has only the Services command Fix Wrong Keyboard Layout.
+- Key repeat, pointer shortcuts, Archives in Finder, the Trash watcher, the Uninstaller, fan control and the built-in updater.
+- Changing pointer acceleration, animations and leftover permissions directly. The App Store version has the buttons to System Settings instead.
+- Quitting the program that holds a port, from Ports.
+- Turning background tasks off and on directly, from Background Tasks.
+- Bring the Dock back, in Keep the Dock on one display.
+- Temperature sensor readings.
+- Keep Awake with the lid closed, and Turn off the display now.
+- The pet finding the Dock icons through Accessibility.

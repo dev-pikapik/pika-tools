@@ -141,72 +141,77 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br>Os botões 4 e 5 voltam e avançam, como um gesto no trackpad.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Ocultar com um botão do mouse</b>
+<br>Basta pressionar uma vez para ocultar o app em primeiro plano, como ⌘H. Ele continua rodando.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Rolar por linhas</b>
 <br>Cada clique da roda rola o mesmo tanto, não importa a velocidade.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direção de rolagem</b>
 <br>Uma direção para o trackpad e outra para o mouse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sem aceleração do cursor</b>
 <br>O cursor anda exatamente o quanto a sua mão anda.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetir tecla segurada</b>
 <br>Segure uma tecla para repeti-la, sem o menu de acentos.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home e End</b>
 <br>Vá ao início ou ao fim da linha enquanto digita.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animações</b>
 <br>Acelere o Dock, as janelas e a Visualização Rápida, até ficarem instantâneos.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissões de apps apagados</b>
 <br>Remova as permissões que o macOS guarda para apps que você já apagou.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Bichinho na mesa</b>
 <br>Um amiguinho passeia atrás das suas janelas. Pegue e jogue ele para o alto, ou aperte Espaço para ele pular. Escolha as roupas dele no guarda-roupa e ganhe prêmios enquanto vocês brincam juntos. Ele fica animado enquanto você digita e cochila quando você se afasta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Remover apps</b>
 <br>Remova um app e seus arquivos. Dá para devolver tudo.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Mostrar FPS</b>
 <br>Um pequeno contador mostra a fluidez do seu jogo, no canto que você escolher.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Arquivos compactados</b>
 <br>Abra RAR e outros arquivos compactados, ou junte arquivos em um ZIP, com o botão direito.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Manter o Dock em uma só tela</b>
@@ -252,7 +257,7 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 O pikapik precisa de duas permissões. Na primeira vez, ele abre os ajustes na página Permissões, que guia você passo a passo, e o macOS mostra os próprios avisos. Vá em **Ajustes do Sistema › Privacidade e Segurança** e ative o pikapik em:
 
 - **Acessibilidade**, para que o app possa alterar um toque de tecla ou um clique antes que ele chegue a outros apps.
-- **Monitoração de Entrada**, para que o app possa ver os toques de tecla e os cliques.
+- **Monitoração de Entrada**, para que o app possa ver os toques de tecla e os cliques sem alterá-los. É assim que funciona a troca de idioma.
 
 O app percebe a mudança em um ou dois segundos, sem precisar reiniciar.
 
@@ -287,6 +292,8 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse voltam e avançam no Finder, no Safari e em outros apps da Apple, além de muitos outros apps, como um gesto de deslizar no trackpad. Os apps que tratam esses botões por conta própria os recebem do jeito que são. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
 
+**Um botão do mouse oculta o app atual.** Ative **Ocultar o app atual com um botão do mouse** em Ajustes › Mouse e pressione o botão que você quer usar, como o botão do meio ou um botão lateral. Depois disso, basta pressioná-lo uma vez para ocultar o app em primeiro plano, igual a ⌘H: o app continua rodando, e um clique no ícone dele no Dock traz o app de volta. Enquanto você joga com o Modo Jogo ligado, o botão funciona normalmente no jogo. Desativado por padrão.
+
 **Encerrar ao fechar a última janela.** Feche a última janela de um app e o app é encerrado. O Finder continua aberto, assim como os apps com janelas em outras mesas ou no Dock. Você pode listar os apps que nunca devem ser encerrados assim. Desativado por padrão.
 
 **Minimizar ou ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e todas as janelas dele descem para o Dock. Clique de novo para trazer todas de volta. Você também pode fazer o clique ocultar o app inteiro, como ⌘H. Desativado por padrão.
@@ -299,7 +306,7 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Enter abre arquivos no Finder.** Selecione arquivos numa janela do Finder ou na mesa e pressione Return ou Enter: eles abrem. F2 ou fn F2 renomeia o arquivo selecionado. Em campos de texto, por exemplo enquanto você digita um nome, as teclas funcionam como sempre. Desativado por padrão.
 
-**⌘X corta arquivos no Finder.** Selecione arquivos e pressione ⌘X, abra a pasta de destino e pressione ⌘V: os arquivos são movidos para lá em vez de copiados. ⌘C cancela o corte. Desativado por padrão.
+**⌘X corta arquivos no Finder.** Selecione arquivos e pressione ⌘X, abra a pasta de destino e pressione ⌘V: os arquivos são movidos para lá em vez de copiados. ⌘C cancela o corte. Na versão da Mac App Store, ⌘V continua colando uma cópia: para mover os arquivos, clique no ícone do pikapik na barra de menus e escolha **Mover Itens para Cá**, ou pressione ⌥⌘V. Desativado por padrão.
 
 **Delete apaga arquivos no Finder.** Selecione arquivos e pressione ⌫ ou ⌦ (fn ⌫ no notebook): eles vão para o Lixo, como com ⌘⌫. Enquanto você renomeia um arquivo, pesquisa ou digita em qualquer outro campo, as teclas apagam letras como sempre. Desativado por padrão.
 
@@ -381,7 +388,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Portas**: qual programa ocupou qual porta, os endereços e detalhes dele e um botão para liberar a porta.
 - **Som**: volume dos apps, com controle deslizante e botão de silenciar para cada app que toca som.
 - **Teclado**: troca de idioma, repetição de teclas, Home e End, correção do layout errado.
-- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais.
+- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais, um botão que oculta o app atual.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: minimizar ou ocultar com um clique no Dock, manter o Dock em uma só tela e trazê-lo de volta.
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X e apagar com ⌫.
@@ -428,7 +435,7 @@ Os dois encerram o app, removem o app dos itens de início e o apagam. O script 
 <summary>Perguntas frequentes</summary>
 
 **Por que são necessárias duas permissões?**
-O macOS divide o acesso ao teclado e ao mouse em dois. A Monitoração de Entrada permite que o app veja os eventos, e a Acessibilidade permite que ele os altere. Para bloquear um atalho são necessárias as duas.
+O macOS divide o acesso ao teclado e ao mouse em dois. A Acessibilidade permite que o app altere um toque de tecla ou um clique, e a maioria dos recursos só precisa disso. A Monitoração de Entrada permite apenas observar, e isso basta para trocar de idioma.
 
 **O macOS diz que o app é de um desenvolvedor não identificado.**
 O pikapik é assinado pelo desenvolvedor e passa pela verificação da Apple contra software malicioso, então esta mensagem não deveria aparecer. Se ela aparecer, abra **Ajustes do Sistema › Privacidade e Segurança** e clique em **Abrir Mesmo Assim**.

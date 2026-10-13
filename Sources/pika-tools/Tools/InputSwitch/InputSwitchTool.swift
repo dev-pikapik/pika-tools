@@ -6,6 +6,7 @@ final class InputSwitchTool: Tool {
     let id = "input-switch"
     let icon = "globe"
     var title: String { String(localized: "Switch language") }
+    var needs: [Permission] { [.inputMonitoring] }
 
     private(set) var isActive = false
 
@@ -30,7 +31,7 @@ final class InputSwitchTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled { start() }
+        if isEnabled, CGPreflightListenEventAccess() { start() }
     }
 
     private func start() {

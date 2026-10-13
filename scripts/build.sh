@@ -29,6 +29,7 @@ SOURCES+=(Extensions/Convert/ConvertFormats.swift)
 [ -n "${APPSTORE:-}" ] || SOURCES+=(Extensions/Preview/ZipNames.swift)
 
 FLAGS=()
+[ -z "${DEBUG:-}" ] || FLAGS+=(-D DEBUG)
 if [ -n "${APPSTORE:-}" ]; then
     FLAGS+=(-D APPSTORE)
     KEPT=()

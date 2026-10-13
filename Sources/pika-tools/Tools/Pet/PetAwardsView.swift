@@ -164,7 +164,6 @@ private struct AwardCell: View {
         .onHover { hover = $0 }
         .animation(.smooth(duration: 0.18), value: hover)
         .help(award.hint)
-        .accessibilityElement(children: .ignore)
         .accessibilityLabel(award.title)
         .accessibilityValue(earned ? (fresh ? String(localized: "New") : "") : "\(String(localized: "Locked")), \(petCount(status.current, status.goal))")
         .accessibilityHint(award.hint)

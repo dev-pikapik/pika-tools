@@ -2,6 +2,30 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.46.0] - Unreleased
+
+### Added
+- Mouse: Mouse button hides the current app, in Settings › Mouse. Turn it on and press the mouse button you want to use, such as the middle button or a side button; Change… picks another one later. From then on one press hides the app in front, like ⌘H. The app keeps running, and a click on its icon in the Dock brings it back. While you play with Game Mode on, the button does what it always did in the game. If Side buttons go back and forward is also on, the side button you picked hides apps instead. It needs Accessibility and is off by default.
+- Mac App Store version: ⌘X cuts files in Finder. Select files and press ⌘X, open the folder you want them in, then click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. The button appears only while Finder is in front and files are waiting to be moved. ⌘V is not changed in this version: it still pastes a copy. ⌘C cancels the cut, and while you rename a file, ⌘X and ⌘V work on its name as usual.
+- Mac App Store version: Settings › Permissions has a new section, Left by deleted apps. When you delete an app, macOS keeps the permissions you gave it. The section has a button for each list where that can happen, such as Accessibility, Screen Recording, Camera and Microphone, and each button opens that list in System Settings.
+- Mac App Store version: Settings › Animations and the Turn off pointer acceleration row in Settings › Mouse are back. This version can't change these settings itself, so each row explains what to change and its Open button takes you to the right place in System Settings.
+
+### Changed
+- Mac App Store version: the pet walks across the whole width of the screen above the Dock and no longer stops short of the Dock’s ends.
+- Mac App Store version: the Battery page reads the battery’s maximum capacity and condition straight from macOS and no longer starts another program to do it.
+- Mac App Store version: Background Tasks no longer has the Open at Login group. These apps are listed in System Settings › General › Login Items.
+- Mac App Store version: Free Up in Ports no longer copies a Terminal command. It shows the app that holds the port or opens Activity Monitor, where you can quit the program.
+- Mac App Store version: the top of the Permissions page now says that only some tools need these permissions and everything else works without them.
+
+### Fixed
+- Mouse: the drawings on the Mouse page are sharp again.
+- Permissions: on macOS 27, Accessibility appears under its new name, Device Control and Data Access, the same as in System Settings.
+- Switch language: it now shows when it needs Input Monitoring, and a click on the row opens the Permissions page. Before, it stayed on without working.
+- Permissions: keyboard and mouse features now ask only for the permission they really use. Most need only Accessibility; before, they also asked for Input Monitoring and stayed grey without it.
+- Quit when the last window closes: it now waits until you allow Input Monitoring, instead of making macOS ask for it when pikapik starts.
+- Speed Test: in the Mac App Store version, the caption says the check takes about 15 seconds and uses speed.cloudflare.com. Before, it said the check runs on Apple’s servers.
+- Pet: with VoiceOver, you can pick the pet’s clothes and looks in Wardrobe and Looks and open its Awards. Before, those tiles didn’t respond.
+
 ## [1.45.0] - 2026-10-13
 
 ### Added

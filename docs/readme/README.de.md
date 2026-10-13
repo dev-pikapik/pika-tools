@@ -141,72 +141,77 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br>Die Tasten 4 und 5 gehen zurück und vor, wie ein Wischen.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Per Maustaste ausblenden</b>
+<br>Ein Druck blendet die App im Vordergrund aus, wie ⌘H. Sie läuft weiter.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Zeilenweise scrollen</b>
 <br>Jeder Klick am Mausrad scrollt gleich weit, egal wie schnell du drehst.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichtung</b>
 <br>Eine Richtung fürs Trackpad, eine andere für die Maus.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ohne Zeigerbeschleunigung</b>
 <br>Der Zeiger bewegt sich genau so weit wie deine Hand.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Gehaltene Taste wiederholen</b>
 <br>Halte eine Taste, und sie tippt immer wieder, ohne Akzentmenü.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home und End</b>
 <br>Beim Tippen an den Anfang oder das Ende der Zeile springen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationen</b>
 <br>Dock, Fenster und Übersicht werden schneller, auf Wunsch sofort.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Berechtigungen gelöschter Apps</b>
 <br>Entferne die Berechtigungen, die macOS für gelöschte Apps behält.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Haustier auf dem Schreibtisch</b>
 <br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt. Er wird munter, während du tippst, und döst ein, wenn du weggehst.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Apps entfernen</b>
 <br>App samt Dateien entfernen. Alles lässt sich zurücklegen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>FPS anzeigen</b>
 <br>Ein kleiner Zähler zeigt in der Ecke deiner Wahl, wie flüssig dein Spiel läuft.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archive</b>
 <br>RAR und andere Archive entpacken oder Dateien per Rechtsklick in ein ZIP packen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock auf einem Display halten</b>
@@ -252,7 +257,7 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 pikapik braucht zwei Berechtigungen. Beim ersten Start öffnen sich die Einstellungen auf der Seite „Berechtigungen“, die dich Schritt für Schritt durchführt, und macOS zeigt eigene Abfragen an. Öffne **Systemeinstellungen › Datenschutz & Sicherheit** und aktiviere pikapik unter:
 
 - **Bedienungshilfen**, damit die App einen Tastendruck oder Klick ändern kann, bevor er bei anderen Apps ankommt.
-- **Eingabeüberwachung**, damit die App Tastendrücke und Klicks überhaupt sehen kann.
+- **Eingabeüberwachung**, damit die App Tastendrücke und Klicks sehen kann, ohne sie zu ändern. So funktioniert das Wechseln der Sprache.
 
 Die App erkennt die Änderung innerhalb von ein, zwei Sekunden, ein Neustart ist nicht nötig.
 
@@ -287,6 +292,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Seitentasten für Zurück und Vorwärts.** Die Maustasten 4 und 5 gehen im Finder, in Safari und in anderen Apple-Apps sowie in vielen anderen Programmen zurück und vorwärts, genau wie eine Wischgeste auf dem Trackpad. Apps, die diese Tasten selbst verarbeiten, bekommen sie unverändert. Sind sie bei deiner Maus vertauscht, schalte **Seitentasten tauschen** ein. Standardmäßig aus.
 
+**Eine Maustaste blendet die aktuelle App aus.** Schalte unter Einstellungen › Maus **Maustaste blendet die aktuelle App aus** ein und drücke die Taste, die du dafür nutzen willst, etwa die mittlere Taste oder eine Seitentaste. Danach blendet ein Druck die App im Vordergrund aus, genau wie ⌘H: Die App läuft weiter, und ein Klick auf ihr Symbol im Dock holt sie zurück. Während du mit eingeschaltetem Spielmodus spielst, funktioniert die Taste im Spiel wie gewohnt. Standardmäßig aus.
+
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
 
 **Mit einem Klick im Dock ablegen oder ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und alle ihre Fenster wandern ins Dock. Ein weiterer Klick holt sie alle zurück. Du kannst auch einstellen, dass der Klick die ganze App ausblendet, wie ⌘H. Standardmäßig aus.
@@ -299,7 +306,7 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Eingabetaste öffnet Dateien im Finder.** Wähle Dateien in einem Finder-Fenster oder auf dem Schreibtisch aus und drücke Return oder Enter, dann öffnen sie sich. F2 oder fn F2 benennt die ausgewählte Datei um. In Textfeldern, zum Beispiel beim Eingeben eines Namens, funktionieren die Tasten wie gewohnt. Standardmäßig aus.
 
-**⌘X schneidet Dateien im Finder aus.** Wähle Dateien aus und drücke ⌘X, öffne den gewünschten Ordner und drücke ⌘V: Die Dateien werden dorthin verschoben statt kopiert. ⌘C bricht das Ausschneiden ab. Standardmäßig aus.
+**⌘X schneidet Dateien im Finder aus.** Wähle Dateien aus und drücke ⌘X, öffne den gewünschten Ordner und drücke ⌘V: Die Dateien werden dorthin verschoben statt kopiert. ⌘C bricht das Ausschneiden ab. In der Version aus dem Mac App Store setzt ⌘V weiterhin eine Kopie ein: Um die Dateien zu verschieben, klicke auf das pikapik-Symbol in der Menüleiste und wähle **Objekte hierherbewegen** oder drücke ⌥⌘V. Standardmäßig aus.
 
 **Löschtaste löscht Dateien im Finder.** Wähle Dateien aus und drücke ⌫ oder ⌦ (fn ⌫ am Laptop), dann kommen sie in den Papierkorb, genau wie mit ⌘⌫. Während du eine Datei umbenennst, suchst oder in einem anderen Feld tippst, löschen die Tasten wie gewohnt Buchstaben. Standardmäßig aus.
 
@@ -381,7 +388,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Ports**: welches Programm welchen Port belegt, seine Adressen und Details sowie eine Taste, die den Port freimacht.
 - **Ton**: App-Lautstärke, ein Regler und eine Taste zum Stummschalten für jede App, die Ton abspielt.
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End, Korrektur des falschen Layouts.
-- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
+- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten, eine Taste zum Ausblenden der aktuellen App.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Mit einem Klick im Dock ablegen oder ausblenden, Dock auf einem Display halten und Dock zurückholen.
 - **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
@@ -428,7 +435,7 @@ Beide beenden die App, entfernen sie aus den Anmeldeobjekten und löschen sie. D
 <summary>Häufige Fragen</summary>
 
 **Warum braucht die App zwei Berechtigungen?**
-macOS teilt den Zugriff auf Tastatur und Maus in zwei Teile. Die Eingabeüberwachung erlaubt der App, Ereignisse zu sehen, die Bedienungshilfen erlauben ihr, sie zu ändern. Um einen Kurzbefehl zu blockieren, braucht sie beides.
+macOS teilt den Zugriff auf Tastatur und Maus in zwei Teile. Die Bedienungshilfen erlauben der App, einen Tastendruck oder Klick zu ändern, und die meisten Funktionen brauchen nur das. Die Eingabeüberwachung erlaubt ihr nur zuzusehen, und zum Wechseln der Sprache reicht das.
 
 **macOS meldet, dass die App von einem nicht verifizierten Entwickler stammt.**
 pikapik ist vom Entwickler signiert und besteht die Prüfung von Apple auf Schadsoftware, deshalb sollte diese Meldung nicht erscheinen. Falls doch, öffne **Systemeinstellungen › Datenschutz & Sicherheit** und klicke auf **Dennoch öffnen**.

@@ -253,7 +253,7 @@ enum ShortcutRecorder {
         self.handler = handler
         trace.disable(SystemShortcuts.shared.pausable)
         let mask = CGEventMask(1 << CGEventType.keyDown.rawValue | 1 << CGEventType.keyUp.rawValue)
-        if let tap = CGEvent.tapCreate(
+        if AXIsProcessTrusted(), let tap = CGEvent.tapCreate(
             tap: .cgSessionEventTap, place: .headInsertEventTap, options: .defaultTap, eventsOfInterest: mask,
             callback: { _, type, event, _ in
                 guard type == .keyDown || type == .keyUp else {

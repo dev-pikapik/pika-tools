@@ -242,11 +242,11 @@ enum BackgroundTasks {
         }
     }
 
+    #if !APPSTORE
     static func loginItems() -> [URL] {
         (SessionLoginItems() as LoginItemsList).urls()
     }
 
-    #if !APPSTORE
     static func turnOff(_ task: BackgroundTask) -> Bool {
         guard !task.domain.isEmpty, AppRoots.run("/bin/launchctl", ["disable", "\(task.domain)/\(task.label)"]) != nil else { return false }
         _ = AppRoots.run("/bin/launchctl", ["bootout", "\(task.domain)/\(task.label)"])
@@ -265,6 +265,7 @@ enum BackgroundTasks {
     }
 }
 
+#if !APPSTORE
 private protocol LoginItemsList {
     func urls() -> [URL]
 }
@@ -279,3 +280,4 @@ private struct SessionLoginItems: LoginItemsList {
         return items.compactMap { LSSharedFileListItemCopyResolvedURL($0, flags, nil)?.takeRetainedValue() as URL? }
     }
 }
+#endif

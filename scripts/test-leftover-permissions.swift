@@ -1,6 +1,10 @@
 import Foundation
 import SQLite3
 
+enum Permission {
+    static let accessibilityTitle = "Accessibility"
+}
+
 @main
 enum TestLeftoverPermissions {
     static let schema = """

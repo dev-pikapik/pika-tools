@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Hide the app in front with a mouse button
+
+<sub>1.46.0 · October 13, 2026</sub>
+
+Press the middle button or a side button, and the app you’re in steps aside, just like with ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Open Settings › Mouse, turn on Mouse button hides the current app and press the button you want to use. Change… picks another one later. The app keeps running, and a click on its icon in the Dock brings it back. While you play with Game Mode on, the button does what it always did in the game. If Side buttons go back and forward is also on, the side button you picked hides apps instead. It needs Accessibility and is off by default.
+
+In the Mac App Store version, ⌘X cuts files in Finder: select files, press ⌘X, open another folder, then choose Move Items Here in the pikapik menu or press ⌥⌘V. Animations and Turn off pointer acceleration are back, and the Permissions page has a new section, Left by deleted apps. This version can’t change these settings itself, so each row explains what to change and opens the right place in System Settings. The pet now walks the whole width of the screen above the Dock.
+
+**Try it:** Settings › Mouse › Mouse button hides the current app
+
+**Fixed**
+
+- The drawings on the Mouse page are sharp again.
+- Keyboard and mouse features ask only for the permission they really use. Most need only Accessibility; before, they also asked for Input Monitoring and stayed grey without it.
+- Switch language shows when it needs Input Monitoring, and a click on it opens the Permissions page. Before, it stayed on without working.
+- Quit when the last window closes waits until you allow Input Monitoring, instead of making macOS ask for it when pikapik starts.
+- On macOS 27, Accessibility appears under its new name, Device Control and Data Access, the same as in System Settings.
+- With VoiceOver, you can pick the pet’s clothes and looks in Wardrobe and Looks and open its Awards. Before, those tiles didn’t respond.
+
+---
+
 ## <a id="v1.45.0"></a>Every app gets its own volume
 
 <sub>1.45.0 · October 13, 2026</sub>

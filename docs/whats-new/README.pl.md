@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Ukryj aplikację na pierwszym planie przyciskiem myszy
+
+<sub>1.46.0 · 13 października 2026</sub>
+
+Naciśnij środkowy albo boczny przycisk, a aplikacja, w której jesteś, usunie się na bok, tak jak skrótem ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Mysz, włącz „Przycisk myszy ukrywa bieżącą aplikację” i naciśnij przycisk, którego chcesz używać. Przyciskiem „Zmień…” wybierzesz później inny. Aplikacja dalej działa, a kliknięcie jej ikony w Docku przywraca ją na ekran. Gdy grasz, a Tryb gry jest włączony, przycisk robi w grze to, co zawsze. Jeśli włączone jest też „Boczne przyciski: wstecz i dalej”, wybrany boczny przycisk zamiast tego ukrywa aplikacje. Funkcja wymaga uprawnienia „Dostępność” i domyślnie jest wyłączona.
+
+W wersji z Mac App Store ⌘X wycina pliki w Finderze: zaznacz pliki, naciśnij ⌘X, otwórz inny folder i wybierz „Przenieś rzeczy tutaj” z menu pikapik albo naciśnij ⌥⌘V. Wracają „Animacje” i „Wyłącz przyspieszenie wskaźnika”, a na stronie „Uprawnienia” jest nowa sekcja „Pozostałości po usuniętych aplikacjach”. Ta wersja nie może sama zmieniać tych ustawień, więc każdy wiersz wyjaśnia, co zmienić, i otwiera właściwe miejsce w Ustawieniach systemowych. Zwierzak chodzi teraz po całej szerokości ekranu nad Dockiem.
+
+**Wypróbuj:** Ustawienia › Mysz › Przycisk myszy ukrywa bieżącą aplikację
+
+**Poprawki**
+
+- Rysunki na stronie „Mysz” znów są ostre.
+- Funkcje klawiatury i myszy proszą tylko o uprawnienie, którego naprawdę używają. Większości wystarcza „Dostępność”; wcześniej prosiły też o „Monitorowanie wprowadzania” i bez niego zostawały szare.
+- „Zmiana języka” pokazuje, kiedy potrzebuje uprawnienia „Monitorowanie wprowadzania”, a kliknięcie otwiera stronę „Uprawnienia”. Wcześniej zostawała włączona, ale nie działała.
+- „Zakończ po zamknięciu ostatniego okna” czeka, aż pozwolisz na „Monitorowanie wprowadzania”, zamiast kazać macOS pytać o nie przy uruchamianiu pikapik.
+- W macOS 27 „Dostępność” ma nową nazwę, „Sterowanie urządzeniami i dostęp do danych”, tak samo jak w Ustawieniach systemowych.
+- Za pomocą VoiceOver możesz teraz wybierać ubrania i przebrania zwierzaka w sekcjach „Garderoba” i „Przebrania” oraz otwierać jego nagrody w sekcji „Nagrody”. Wcześniej te kafelki nie reagowały.
+
+---
+
 ## <a id="v1.45.0"></a>Każda aplikacja ma własną głośność
 
 <sub>1.45.0 · 13 października 2026</sub>

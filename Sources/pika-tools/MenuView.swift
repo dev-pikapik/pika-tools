@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "app-volume,archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "app-volume,archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,hide-app,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -60,6 +60,14 @@ struct MenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            #if APPSTORE
+            if FinderKeys.shared.canMove && !customizing {
+                Button { FinderKeys.shared.moveHere() } label: {
+                    Label("Move Items Here", systemImage: "scissors").frame(maxWidth: .infinity)
+                }
+                .glassProminentButtons()
+            }
+            #endif
             if customizing {
                 Text("Choose what this menu shows")
                     .font(.caption)
@@ -207,6 +215,12 @@ struct MenuView: View {
         .padding(.bottom, 12)
         .frame(width: 330)
         .onAppear { permissions.refresh() }
+        #if APPSTORE
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
+            guard let window = note.object as? NSWindow, NSStringFromClass(type(of: window)).contains("MenuBarExtraWindow"), window.occlusionState.contains(.visible) else { return }
+            FinderKeys.shared.checkCut()
+        }
+        #endif
     }
 
     private var keepAwakeOptions: some View {

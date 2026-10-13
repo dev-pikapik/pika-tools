@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Skryjte aplikaci v popředí tlačítkem myši
+
+<sub>1.46.0 · 13. října 2026</sub>
+
+Stiskněte prostřední nebo boční tlačítko a aplikace, ve které právě jste, ustoupí stranou, stejně jako zkratkou ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Myš, zapněte „Tlačítko myši skryje aktuální aplikaci“ a stiskněte tlačítko, které chcete používat. Jiné později vyberete tlačítkem „Změnit…“. Aplikace dál běží a kliknutím na její ikonu v Docku ji vrátíte. Když hrajete a je zapnutý Herní režim, tlačítko dělá ve hře to, co vždycky. Pokud je zapnuté i „Boční tlačítka pro zpět a vpřed“, vybrané boční tlačítko místo toho skrývá aplikace. Funkce vyžaduje oprávnění „Zpřístupnění“ a ve výchozím stavu je vypnutá.
+
+Ve verzi z Mac App Store vyjímá ⌘X soubory ve Finderu: vyberte soubory, stiskněte ⌘X, otevřete jinou složku a pak v nabídce pikapik zvolte „Přesunout položky sem“ nebo stiskněte ⌥⌘V. Vrátily se „Animace“ a „Vypnout zrychlení ukazatele“ a stránka „Oprávnění“ má novou sekci „Zbylo po smazaných aplikacích“. Tato verze nemůže tato nastavení měnit sama, a tak každý řádek vysvětlí, co změnit, a otevře správné místo v Nastavení systému. Mazlíček teď chodí po celé šířce obrazovky nad Dockem.
+
+**Vyzkoušejte:** Nastavení › Myš › Tlačítko myši skryje aktuální aplikaci
+
+**Opraveno**
+
+- Obrázky na stránce „Myš“ jsou zase ostré.
+- Funkce klávesnice a myši žádají jen o oprávnění, které opravdu používají. Většině stačí „Zpřístupnění“; dřív žádaly i o „Monitorování vstupu“ a bez něj zůstávaly šedé.
+- „Přepnutí jazyka“ ukáže, když potřebuje „Monitorování vstupu“, a kliknutím na něj se otevře stránka „Oprávnění“. Dřív zůstávalo zapnuté, ale nefungovalo.
+- „Ukončit po zavření posledního okna“ počká, až povolíte „Monitorování vstupu“, místo aby o něj macOS žádal při spuštění pikapik.
+- V macOS 27 se „Zpřístupnění“ zobrazuje pod novým názvem „Ovládání zařízení a přístup k datům“, stejně jako v Nastavení systému.
+- Pomocí VoiceOveru teď můžete vybírat oblečení a kostýmy mazlíčka v sekcích „Šatník“ a „Kostýmy“ a otevírat jeho ocenění v sekci „Ocenění“. Dřív tyto dlaždice nereagovaly.
+
+---
+
 ## <a id="v1.45.0"></a>Každá aplikace má vlastní hlasitost
 
 <sub>1.45.0 · 13. října 2026</sub>

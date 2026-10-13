@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Sembunyikan app di depan dengan tombol tetikus
+
+<sub>1.46.0 · 13 Oktober 2026</sub>
+
+Tekan tombol tengah atau tombol samping, dan app yang sedang Anda pakai langsung menyingkir, sama seperti dengan ⌘H.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Tetikus, nyalakan “Sembunyikan app saat ini dengan tombol tetikus”, lalu tekan tombol yang ingin Anda pakai. Nanti Anda bisa memilih tombol lain lewat “Ubah…”. App tetap berjalan, dan klik ikonnya di Dock akan memunculkannya kembali. Saat Anda bermain dengan Mode Game aktif, tombol itu tetap bekerja seperti biasa di dalam game. Jika “Tombol samping untuk kembali dan maju” juga menyala, tombol samping yang Anda pilih justru menyembunyikan app. Fitur ini memerlukan izin “Aksesibilitas” dan mati secara default.
+
+Di versi Mac App Store, ⌘X memotong file di Finder: pilih file, tekan ⌘X, buka folder lain, lalu pilih “Pindahkan Item Ke Sini” di menu pikapik atau tekan ⌥⌘V. “Animasi” dan “Matikan akselerasi penunjuk” kembali hadir, dan halaman “Izin” punya bagian baru, “Sisa dari app yang dihapus”. Versi ini tidak bisa mengubah pengaturan tersebut sendiri, jadi setiap baris menjelaskan apa yang perlu diubah dan membuka tempat yang tepat di Pengaturan Sistem. Peliharaan Anda kini berjalan di sepanjang lebar layar, di atas Dock.
+
+**Coba:** Pengaturan › Tetikus › Sembunyikan app saat ini dengan tombol tetikus
+
+**Diperbaiki**
+
+- Gambar di halaman “Tetikus” kembali tajam.
+- Fitur papan ketik dan tetikus hanya meminta izin yang benar-benar dipakai. Sebagian besar hanya perlu “Aksesibilitas”; sebelumnya fitur-fitur itu juga meminta “Pengawasan Input” dan tetap abu-abu tanpanya.
+- “Ganti bahasa” memberi tahu saat memerlukan “Pengawasan Input”, dan klik padanya membuka halaman “Izin”. Sebelumnya fitur ini tetap menyala tetapi tidak berfungsi.
+- “Keluar saat jendela terakhir ditutup” menunggu sampai Anda mengizinkan “Pengawasan Input”, alih-alih membuat macOS memintanya saat pikapik dibuka.
+- Di macOS 27, “Aksesibilitas” muncul dengan nama barunya, “Kontrol Perangkat dan Akses Data”, sama seperti di Pengaturan Sistem.
+- Dengan VoiceOver, kini Anda bisa memilih pakaian dan gaya peliharaan Anda di “Lemari pakaian” dan “Gaya”, serta membuka penghargaannya di “Penghargaan”. Sebelumnya, kotak-kotak itu tidak merespons.
+
+---
+
 ## <a id="v1.45.0"></a>Setiap app punya volumenya sendiri
 
 <sub>1.45.0 · 13 Oktober 2026</sub>

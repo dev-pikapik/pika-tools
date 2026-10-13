@@ -335,10 +335,15 @@ final class PetStage: NSObject {
     private static func dock(_ screen: NSScreen, _ known: CGRect?) -> CGRect? {
         let top = screen.visibleFrame.minY - screen.frame.minY
         guard top > ground + PetPhysics.size.height else { return nil }
+        #if APPSTORE
+        return CGRect(x: 0, y: 0, width: screen.frame.width, height: top)
+        #else
         guard let tiles = tiles() else { return known ?? CGRect(x: 0, y: 0, width: screen.frame.width, height: top) }
         return CGRect(x: tiles.minX - screen.frame.minX - 8, y: 0, width: tiles.width + 16, height: top)
+        #endif
     }
 
+    #if !APPSTORE
     private static func tiles() -> CGRect? {
         guard let app = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.dock").first else { return nil }
         let dock = AXUIElementCreateApplication(app.processIdentifier)
@@ -357,6 +362,7 @@ final class PetStage: NSObject {
         }
         return nil
     }
+    #endif
 
     func update() {
         guard let window, let field, let link else { return }

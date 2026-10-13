@@ -141,72 +141,77 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br>I tasti 4 e 5 vanno indietro e avanti, come uno swipe.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Nascondi con un tasto del mouse</b>
+<br>Una pressione nasconde l’app in primo piano, come ⌘H. Resta in esecuzione.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scorri per righe</b>
 <br>Ogni scatto della rotella scorre allo stesso modo, a qualsiasi velocità.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direzione di scorrimento</b>
 <br>Una direzione per il trackpad, un’altra per il mouse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Senza accelerazione del puntatore</b>
 <br>Il puntatore si muove esattamente quanto la tua mano.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ripeti un tasto tenuto premuto</b>
 <br>Tieni premuto un tasto per ripeterlo, senza il menu degli accenti.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home ed End</b>
 <br>Vai a inizio o fine riga mentre scrivi.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animazioni</b>
 <br>Velocizza il Dock, le finestre e Visualizzazione rapida, fino a renderli istantanei.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permessi delle app eliminate</b>
 <br>Togli i permessi che macOS conserva per le app già eliminate.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Animaletto sulla scrivania</b>
 <br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Rimuovi app</b>
 <br>Rimuovi un’app e i suoi file. Puoi rimettere tutto.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Mostra FPS</b>
 <br>Un piccolo contatore mostra quanto scorre bene il gioco, nell’angolo che scegli.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archivi</b>
 <br>Apri RAR e altri archivi, o riunisci i file in uno ZIP, con un clic destro.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Tieni il Dock su un solo schermo</b>
@@ -252,7 +257,7 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 pikapik ha bisogno di due permessi. Al primo avvio apre le impostazioni sulla pagina Permessi, che ti guida passo passo, e macOS mostra le sue richieste. Vai in **Impostazioni di Sistema › Privacy e sicurezza** e attiva pikapik in:
 
 - **Accessibilità**, così l’app può modificare la pressione di un tasto o un clic prima che arrivi alle altre app.
-- **Monitoraggio input**, così l’app può vedere pressioni dei tasti e clic.
+- **Monitoraggio input**, così l’app può vedere pressioni dei tasti e clic senza modificarli. È così che funziona il cambio di lingua.
 
 L’app si accorge della modifica in un paio di secondi, senza bisogno di riavviare.
 
@@ -287,6 +292,8 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Tasti laterali per indietro e avanti.** I tasti 4 e 5 del mouse vanno indietro e avanti nel Finder, in Safari e in altre app Apple e in molte altre app, proprio come uno swipe sul trackpad. Le app che gestiscono questi tasti da sole li ricevono così come sono. Se il tuo mouse li ha invertiti, attiva **Inverti i tasti laterali**. Disattivato di default.
 
+**Un tasto del mouse nasconde l’app corrente.** Attiva **Nascondi l’app corrente con un tasto del mouse** in Impostazioni › Mouse e premi il tasto che vuoi usare, per esempio il tasto centrale o uno laterale. Da quel momento basta premerlo una volta per nascondere l’app in primo piano, proprio come ⌘H: l’app resta in esecuzione, e un clic sulla sua icona nel Dock la fa ricomparire. Mentre giochi con la Modalità gioco attiva, il tasto funziona nel gioco come sempre. Disattivato di default.
+
 **Esci quando si chiude l’ultima finestra.** Chiudi l’ultima finestra di un’app e l’app si chiude. Il Finder resta aperto, così come le app con finestre su altre scrivanie o nel Dock. Puoi indicare le app che non devono mai chiudersi in questo modo. Disattivato di default.
 
 **Riduci o nascondi con un clic nel Dock.** Fai clic sull’icona nel Dock dell’app che stai usando e tutte le sue finestre scendono nel Dock. Fai di nuovo clic per riaverle tutte. Puoi anche fare in modo che il clic nasconda l’intera app, come ⌘H. Disattivato di default.
@@ -299,7 +306,7 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 
 **Invio apre i file nel Finder.** Seleziona dei file in una finestra del Finder o sulla scrivania e premi Invio o Enter: si aprono. F2 o fn F2 rinomina il file selezionato. Nei campi di testo, per esempio mentre scrivi un nome, i tasti funzionano come sempre. Disattivato di default.
 
-**⌘X taglia i file nel Finder.** Seleziona dei file e premi ⌘X, apri la cartella di destinazione e premi ⌘V: i file vengono spostati lì invece di essere copiati. ⌘C annulla il taglio. Disattivato di default.
+**⌘X taglia i file nel Finder.** Seleziona dei file e premi ⌘X, apri la cartella di destinazione e premi ⌘V: i file vengono spostati lì invece di essere copiati. ⌘C annulla il taglio. Nella versione del Mac App Store ⌘V incolla ancora una copia: per spostare i file, fai clic sull’icona di pikapik nella barra dei menu e scegli **Sposta elementi qui**, oppure premi ⌥⌘V. Disattivato di default.
 
 **Elimina cancella i file nel Finder.** Seleziona i file e premi ⌫ o ⌦ (fn ⌫ su un portatile): finiscono nel Cestino, proprio come con ⌘⌫. Mentre rinomini un file, cerchi o scrivi in un altro campo, i tasti cancellano le lettere come al solito. Disattivato di default.
 
@@ -381,7 +388,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Porte**: quale programma occupa quale porta, i suoi indirizzi e i dettagli, e un pulsante per liberare la porta.
 - **Suono**: volume delle app, con un cursore e un pulsante per silenziare ogni app che riproduce suoni.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End, correzione del layout sbagliato.
-- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
+- **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali, un tasto che nasconde l’app corrente.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: ridurre o nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
@@ -428,7 +435,7 @@ Entrambi chiudono l’app, la tolgono dagli elementi login e la eliminano. Lo sc
 <summary>Domande frequenti</summary>
 
 **Perché servono due permessi?**
-macOS divide l’accesso a tastiera e mouse in due. Monitoraggio input permette all’app di vedere gli eventi, Accessibilità le permette di modificarli. Per bloccare un’abbreviazione servono entrambi.
+macOS divide l’accesso a tastiera e mouse in due. Accessibilità permette all’app di modificare la pressione di un tasto o un clic, e alla maggior parte delle funzioni basta questo. Monitoraggio input le permette solo di osservare, e per cambiare lingua è sufficiente.
 
 **macOS dice che l’app proviene da uno sviluppatore non identificato.**
 pikapik è firmata dal suo sviluppatore e supera il controllo di Apple per rilevare software dannoso, quindi questo messaggio non dovrebbe comparire. Se compare, apri **Impostazioni di Sistema › Privacy e sicurezza** e fai clic su **Apri comunque**.

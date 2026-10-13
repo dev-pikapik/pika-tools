@@ -141,72 +141,77 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br>Los botones 4 y 5 van atrás y adelante, como un deslizamiento.
 </td>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+<br><b>Ocultar con un botón del ratón</b>
+<br>Una pulsación oculta la app en primer plano, como ⌘H. Sigue en marcha.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Desplazarse por líneas</b>
 <br>Cada clic de la rueda desplaza lo mismo, la gires tan rápido como la gires.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Dirección de desplazamiento</b>
 <br>Una dirección para el trackpad y otra para el ratón.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sin aceleración del puntero</b>
 <br>El puntero recorre exactamente lo mismo que tu mano.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetir una tecla mantenida</b>
 <br>Mantén una tecla para repetirla, sin el menú de acentos.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home y End</b>
 <br>Ve al inicio o al final de la línea mientras escribes.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animaciones</b>
 <br>Acelera el Dock, las ventanas y Vista Rápida, hasta que sean instantáneos.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permisos de apps eliminadas</b>
 <br>Quita los permisos que macOS guarda para las apps que ya eliminaste.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>Mascota en el escritorio</b>
 <br>Un amiguito pasea detrás de tus ventanas. Agárralo y lánzalo, o pulsa Espacio para que salte. Vístelo con ropa de su armario y consigue premios mientras jugáis juntos. Se anima mientras escribes y dormita cuando te alejas.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/uninstaller-dark.png"><img src="../media/uninstaller-light.png" width="340" alt=""></picture>
 <br><b>Eliminar apps</b>
 <br>Elimina una app y sus archivos. Puedes devolver todo.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-fps-dark.png"><img src="../media/game-fps-light.png" width="340" alt=""></picture>
 <br><b>Mostrar FPS</b>
 <br>Un pequeño contador muestra lo fluido que va tu juego, en la esquina que elijas.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/archive-dark.png"><img src="../media/archive-light.png" width="340" alt=""></picture>
 <br><b>Archivos comprimidos</b>
 <br>Abre RAR y otros archivos comprimidos, o reúne archivos en un ZIP, con un clic derecho.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Mantener el Dock en una sola pantalla</b>
@@ -252,7 +257,7 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 pikapik necesita dos permisos. La primera vez que se abre, muestra los ajustes en la página Permisos, que te guía paso a paso, y macOS muestra sus propios avisos. Ve a **Ajustes del Sistema › Privacidad y seguridad** y activa pikapik en:
 
 - **Accesibilidad**, para que la app pueda cambiar una pulsación o un clic antes de que llegue a otras apps.
-- **Monitorización de entrada**, para que la app pueda ver las pulsaciones y los clics.
+- **Monitorización de entrada**, para que la app pueda ver las pulsaciones y los clics sin cambiarlos. Así funciona el cambio de idioma.
 
 La app detecta el cambio en un par de segundos, sin necesidad de reiniciar.
 
@@ -287,6 +292,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en el Finder, Safari y otras apps de Apple y en muchas otras apps, igual que deslizar el dedo en el trackpad. Las apps que gestionan estos botones por su cuenta los reciben tal cual. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
+**Un botón del ratón oculta la app actual.** Activa **Ocultar la app actual con un botón del ratón** en Ajustes › Ratón y pulsa el botón que quieras usar, por ejemplo el botón central o uno lateral. A partir de ahí, una pulsación oculta la app en primer plano, igual que ⌘H: la app sigue en marcha, y un clic en su icono del Dock la trae de vuelta. Mientras juegas con el Modo de juego activado, el botón funciona en el juego como siempre. Desactivado por omisión.
+
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
 **Minimizar u ocultar con un clic en el Dock.** Haz clic en el icono del Dock de la app que estás usando y todas sus ventanas bajarán al Dock. Vuelve a hacer clic para que reaparezcan todas. También puedes hacer que el clic oculte toda la app, como ⌘H. Desactivado por omisión.
@@ -299,7 +306,7 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 
 **Intro abre los archivos en el Finder.** Selecciona archivos en una ventana del Finder o en el escritorio y pulsa Retorno o Intro: se abren. F2 o fn F2 renombra el archivo seleccionado. En los campos de texto, por ejemplo mientras escribes un nombre, las teclas funcionan como siempre. Desactivado por omisión.
 
-**⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse. ⌘C cancela el corte. Desactivado por omisión.
+**⌘X corta archivos en el Finder.** Selecciona archivos y pulsa ⌘X, abre la carpeta de destino y pulsa ⌘V: los archivos se mueven allí en lugar de copiarse. ⌘C cancela el corte. En la versión de la Mac App Store, ⌘V sigue pegando una copia: para mover los archivos, haz clic en el icono de pikapik en la barra de menús y elige **Trasladar ítems aquí**, o pulsa ⌥⌘V. Desactivado por omisión.
 
 **Borrar elimina archivos en el Finder.** Selecciona archivos y pulsa ⌫ o ⌦ (fn ⌫ en un portátil): van a la Papelera, igual que con ⌘⌫. Mientras renombras un archivo, buscas o escribes en cualquier otro campo, las teclas borran letras como siempre. Desactivado por omisión.
 
@@ -381,7 +388,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Puertos**: qué programa ocupa cada puerto, sus direcciones y detalles, y un botón para liberar el puerto.
 - **Sonido**: volumen de las apps, con un control deslizante y un botón de silencio para cada app que reproduce sonido.
 - **Teclado**: cambio de idioma, repetición de teclas, Home y End, corrección de la distribución equivocada.
-- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales.
+- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales, un botón que oculta la app actual.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: minimizar u ocultar con un clic en el Dock, mantener el Dock en una sola pantalla y devolverlo a su sitio.
 - **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X y borrar con ⌫.
@@ -428,7 +435,7 @@ Ambos cierran la app, la quitan de los ítems de inicio y la eliminan. El script
 <summary>Preguntas frecuentes</summary>
 
 **¿Por qué necesita dos permisos?**
-macOS divide el acceso al teclado y al ratón en dos. La monitorización de entrada permite a la app ver los eventos, y la accesibilidad le permite cambiarlos. Para bloquear un atajo hacen falta los dos.
+macOS divide el acceso al teclado y al ratón en dos. La accesibilidad permite a la app cambiar una pulsación o un clic, y la mayoría de las funciones solo necesitan eso. La monitorización de entrada solo le permite observar, y eso basta para cambiar de idioma.
 
 **macOS dice que la app es de un desarrollador no identificado.**
 pikapik está firmada por su desarrollador y supera la revisión de Apple en busca de software malicioso, así que este mensaje no debería aparecer. Si aparece, abre **Ajustes del Sistema › Privacidad y seguridad** y haz clic en **Abrir igualmente**.

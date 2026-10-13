@@ -5,6 +5,31 @@
 
 ---
 
+## <a id="v1.46.0"></a>Öndeki uygulamayı bir fare düğmesiyle gizleyin
+
+<sub>1.46.0 · 13 Ekim 2026</sub>
+
+Orta düğmeye ya da bir yan tuşa basın, içinde olduğunuz uygulama tıpkı ⌘H’deki gibi kenara çekilsin.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
+
+Ayarlar › Fare sayfasına gidin, “Fare düğmesiyle geçerli uygulamayı gizle” anahtarını açın ve kullanmak istediğiniz düğmeye basın. Sonradan “Değiştir…” ile başka bir düğme seçebilirsiniz. Uygulama çalışmaya devam eder, Dock’taki simgesine tıklamak onu geri getirir. Oyun Modu açıkken oynadığınızda düğme oyunda her zamanki işini yapar. “Yan tuşlarla geri ve ileri” de açıksa seçtiğiniz yan tuş bunun yerine uygulamaları gizler. “Erişilebilirlik” izni gerektirir ve varsayılan olarak kapalıdır.
+
+Mac App Store sürümünde ⌘X, Finder’da dosyaları keser: dosyaları seçin, ⌘X’e basın, başka bir klasör açın, ardından pikapik menüsünden “Öğeleri Buraya Taşı” öğesini seçin ya da ⌥⌘V’ye basın. “Animasyonlar” ve “İmleç hızlandırmayı kapat” geri döndü, “İzinler” sayfasında da yeni bir bölüm var: “Silinen uygulamalardan kalanlar”. Bu sürüm bu ayarları kendisi değiştiremez; bu yüzden her satır neyi değiştirmeniz gerektiğini açıklar ve Sistem Ayarları’nda doğru yeri açar. Evcil dostunuz artık Dock’un üstünde ekranın bir ucundan öbür ucuna yürüyor.
+
+**Deneyin:** Ayarlar › Fare › Fare düğmesiyle geçerli uygulamayı gizle
+
+**Düzeltilenler**
+
+- “Fare” sayfasındaki çizimler yeniden net.
+- Klavye ve fare özellikleri yalnızca gerçekten kullandıkları izni istiyor. Çoğuna yalnızca “Erişilebilirlik” yetiyor; önceden “Giriş İzleme” iznini de istiyor ve o olmadan gri kalıyorlardı.
+- “Dili değiştir”, “Giriş İzleme” iznine ihtiyaç duyduğunda bunu gösteriyor ve ona tıklamak “İzinler” sayfasını açıyor. Önceden açık kalıyor ama çalışmıyordu.
+- “Son pencere kapanınca çık”, pikapik açılırken macOS’un bu izni istemesine yol açmak yerine siz “Giriş İzleme” iznini verene kadar bekliyor.
+- macOS 27’de “Erişilebilirlik”, Sistem Ayarları’ndaki gibi yeni adıyla, “Aygıt Denetimi ve Veri Erişimi” olarak görünüyor.
+- VoiceOver ile artık “Gardırop” ve “Kombinler” bölümlerinde evcil dostunuzun kıyafetlerini ve kombinlerini seçebilir, “Ödüller” bölümünde ödüllerini açabilirsiniz. Önceden bu kutucuklar tepki vermiyordu.
+
+---
+
 ## <a id="v1.45.0"></a>Her uygulamanın kendi ses düzeyi var
 
 <sub>1.45.0 · 13 Ekim 2026</sub>
