@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Mesa limpa com um clique
+
+<sub>1.47.0 · 13 de outubro de 2026</sub>
+
+Duas novas opções no pikapik ocultam os ícones da Mesa e mostram os arquivos que o macOS esconde.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Ocultar ícones da Mesa.** Ative antes de uma chamada, uma gravação ou uma captura de tela, e os arquivos e pastas da Mesa somem. Desative e eles voltam para os mesmos lugares. Nada é movido: os arquivos continuam na pasta Mesa do Finder. É o ajuste **Mostrar itens › Na Mesa** de Ajustes do Sistema › Mesa e Dock, só que mais à mão, então os dois sempre combinam. Na versão da Mac App Store, esta linha abre essa página dos Ajustes do Sistema.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Mostrar arquivos ocultos.** Arquivos e pastas que o macOS oculta, como a Biblioteca na sua pasta pessoal ou arquivos cujo nome começa com um ponto, aparecem esmaecidos no Finder e na Mesa. É o mesmo que pressionar ⇧⌘. no Finder, só que você vê de relance se está ativado. Para aplicar a mudança, o Finder reinicia por um instante e abre as janelas e abas de novo. Se o Finder estiver copiando ou movendo arquivos, ele só reinicia quando terminar. Os dois ficam em Ajustes › Finder. Para tê-los no painel da barra de menus, clique no botão de lápis na parte de baixo e marque-os. Na versão da Mac App Store, Ajustes › Finder mostra no lugar as teclas ⇧⌘. do Finder.
+
+---
+
 ## <a id="v1.46.1"></a>A página “Permissões” conta tudo
 
 <sub>1.46.1 · 13 de outubro de 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Màn hình nền gọn gàng chỉ với một cú nhấp
+
+<sub>1.47.0 · 13 tháng 10 năm 2026</sub>
+
+Hai công tắc mới trong pikapik ẩn biểu tượng trên màn hình nền và hiện những tệp mà macOS giấu đi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Ẩn biểu tượng trên màn hình nền.** Bật trước cuộc gọi, khi quay màn hình hoặc chụp màn hình, các tệp và thư mục trên màn hình nền sẽ biến mất. Tắt đi, chúng trở lại đúng chỗ cũ. Không có gì bị di chuyển: tệp vẫn nằm trong thư mục Màn hình nền trong Finder. Đây chính là cài đặt **Hiển thị các mục › Trên màn hình nền** trong Cài đặt hệ thống › Màn hình nền & Dock, chỉ là đặt gần tay hơn, nên hai bên luôn khớp nhau. Trong phiên bản Mac App Store, hàng này sẽ mở trang đó của Cài đặt hệ thống thay vào đó.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Hiện tệp ẩn.** Các tệp và thư mục mà macOS ẩn, như Thư viện trong thư mục người dùng của bạn hoặc các tệp có tên bắt đầu bằng dấu chấm, sẽ hiện mờ trong Finder và trên màn hình nền. Giống như nhấn ⇧⌘. trong Finder, chỉ khác là bạn nhìn qua là biết nó đang bật hay không. Để áp dụng thay đổi, Finder sẽ khởi động lại nhanh rồi mở lại các cửa sổ và tab. Nếu Finder đang sao chép hoặc di chuyển tệp, Finder sẽ đợi xong rồi mới khởi động lại. Cả hai đều nằm trong Cài đặt › Finder. Để đặt chúng vào bảng điều khiển trên thanh menu, hãy nhấp nút hình bút chì ở phía dưới bảng và chọn chúng. Trong phiên bản Mac App Store, Cài đặt › Finder sẽ hiện phím ⇧⌘. thay vào đó.
+
+---
+
 ## <a id="v1.46.1"></a>Trang “Quyền” nói đúng sự thật
 
 <sub>1.46.1 · 13 tháng 10 năm 2026</sub>

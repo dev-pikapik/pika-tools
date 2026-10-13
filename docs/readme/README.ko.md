@@ -124,6 +124,18 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>데스크탑 아이콘 숨기기</b>
+<br>통화나 스크린샷 전에 클릭 한 번으로 데스크탑을 깨끗하게.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>숨김 파일 보기</b>
+<br>macOS가 숨겨 둔 파일과 폴더를 보여 줍니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>게임 모드</b>
 <br>게임하는 동안 그 위로 아무것도 뜨지 않고, 게임이 닫히지도 않습니다.
@@ -320,6 +332,10 @@ pikapik은 macOS가 열지 못하는 것도 엽니다. 여러 부분으로 나�
 
 암호는 창에서 물어보고, **중단**을 누르면 어떤 작업이든 취소되며, 손상되었거나 불완전한 압축 파일에서도 아직 읽을 수 있는 부분을 꺼내 옵니다. 풀면 엄청난 크기로 부풀어 오르는 압축 파일은 풀기 전에 먼저 묻고, 디스크가 가득 찰 것 같으면 제때 멈추며, 자기 폴더 밖에 쓰려는 압축 파일은 막습니다. Finder에서 압축 파일을 선택하고 스페이스 바를 누르면 안에 무엇이 들어 있는지 미리 볼 수 있습니다.
 
+**데스크탑 아이콘 숨기기.** 통화, 화면 기록, 스크린샷 전에 켜면 데스크탑의 파일과 폴더가 사라집니다. 끄면 원래 자리로 돌아옵니다. 아무것도 옮겨지지 않으며, 파일은 Finder의 ‘데스크탑’ 폴더에 그대로 있습니다. 시스템 설정 › 데스크탑 및 Dock의 **항목 보기 › 데스크탑에서** 설정을 가까이 둔 것이라 둘은 항상 일치합니다. Mac App Store 버전에서는 이 행이 대신 시스템 설정의 해당 페이지를 엽니다.
+
+**숨김 파일 보기.** 홈 폴더의 ‘라이브러리’나 이름이 점으로 시작하는 파일처럼 macOS가 숨기는 파일과 폴더가 Finder와 데스크탑에 흐리게 나타납니다. Finder에서 ⇧⌘. 키를 누르는 것과 같지만, 켜져 있는지 한눈에 알 수 있습니다. 변경 사항을 적용하기 위해 Finder가 잠시 재시작된 뒤 윈도우와 탭을 다시 엽니다. Finder가 파일을 복사하거나 이동하는 중이면 끝날 때까지 기다렸다가 재시작됩니다. 둘 다 설정 › Finder에 있습니다. 메뉴 막대 패널에 두려면 패널 아래의 연필 버튼을 클릭하고 체크하세요. Mac App Store 버전에서는 대신 설정 › Finder에 ⇧⌘. 키가 표시됩니다.
+
 **게임 모드.** 게임을 추가해 두면, 플레이하는 동안 Mac이 게임에서 끌어내지 않습니다. Spotlight, Siri, ⌘Tab, Mission Control, 데스크탑 간 쓸어넘기기가 게임 위에 열리지 않고, ⌘Q와 ⌘W로 게임이 실수로 닫히지 않으며, 포인터가 Dock, 메뉴 막대, 다른 화면으로 빠져나가지 않으며, 화면이 꺼지지 않습니다. 각 항목은 게임 페이지에서 따로 켜고 끌 수 있고, pikapik이 Mac에서 찾은 게임을 추천합니다. 게임 중에는 Control-클릭이 그냥 클릭으로 남고 Control+화살표로 데스크탑이 바뀌지 않습니다. Minecraft도 알아봅니다. Minecraft Launcher나 CurseForge를 추가하면 Minecraft 안에서 모드가 켜집니다. 게임을 끝내려면 ⇧⌘Q를, 창을 닫으려면 ⇧⌘W를 누르세요. ⌥⌘Esc는 항상 작동합니다. 게임에서 나오면 모든 것이 평소처럼 작동합니다. 기본적으로 꺼져 있습니다.
 
 게임 모드를 켜고 플레이하세요. 추가 게임 설정에는 Mac이 공개하는 목록, 현재 키 지정, 동작별 애니메이션 미리보기가 있어요.
@@ -391,7 +407,7 @@ MacBook에서는 **덮개를 닫아도 작동**을 켤 수도 있습니다. macO
 - **마우스**: 포인터 가속과 이동 속도, 줄 단위 스크롤, 스크롤 방향, 측면 버튼, 현재 앱을 가리는 버튼.
 - **윈도우**: 녹색 버튼으로 윈도우 확대(예외 목록 포함), ⌘Q와 ⌘W 보호, 마지막 윈도우를 닫으면 종료(예외 목록 포함).
 - **Dock**: Dock 클릭으로 최소화하거나 가리기, Dock을 한 디스플레이에 고정, Dock 되돌리기.
-- **Finder**: 새 파일, 작은 사본, 변환, 압축 파일, Return으로 열기, ⌘X로 오려두기, ⌫로 휴지통에 버리기.
+- **Finder**: 새 파일, 작은 사본, 변환, 압축 파일, Return으로 열기, ⌘X로 오려두기, ⌫로 휴지통에 버리기, 데스크탑 아이콘 숨기기, 숨김 파일 보기.
 - **앱 제거**: 앱을 파일째 제거하고, 나중에 모두 되돌리고, 이미 제거한 앱이 남긴 파일을 정리합니다.
 - **백그라운드 작업**: 백그라운드에서 실행되는 모든 것과 그것을 추가한 앱, 그리고 내 작업을 끄고 다시 켜는 버튼.
 - **게임**: 내 게임 목록과 게임 모드 옵션.

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Una scrivania in ordine con un clic
+
+<sub>1.47.0 · 13 ottobre 2026</sub>
+
+Due nuovi interruttori in pikapik nascondono le icone sulla scrivania e mostrano i file che macOS tiene nascosti.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Nascondi le icone della scrivania.** Attivalo prima di una chiamata, di una registrazione dello schermo o di un’istantanea, e i file e le cartelle sulla scrivania spariscono. Disattivalo e tornano al loro posto. Non si sposta nulla: i file restano nella cartella Scrivania del Finder. È l’impostazione **Mostra elementi › Sulla scrivania** di Impostazioni di Sistema › Scrivania e Dock, solo più a portata di mano, quindi le due vanno sempre d’accordo. Nella versione del Mac App Store, questa riga apre invece quella pagina di Impostazioni di Sistema.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Mostra i file nascosti.** I file e le cartelle che macOS nasconde, come Libreria nella tua cartella Inizio o i file il cui nome inizia con un punto, appaiono attenuati nel Finder e sulla scrivania. È come premere ⇧⌘. nel Finder, solo che vedi a colpo d’occhio se è attivo. Per applicare la modifica, il Finder si riavvia per un attimo e riapre le sue finestre e le sue schede. Se il Finder sta copiando o spostando dei file, si riavvia solo quando ha finito. Entrambi si trovano in Impostazioni › Finder. Per averli nel pannello della barra dei menu, fai clic sul pulsante con la matita in basso e selezionali. Nella versione del Mac App Store, Impostazioni › Finder mostra invece i tasti ⇧⌘. del Finder.
+
+---
+
 ## <a id="v1.46.1"></a>La pagina «Permessi» dice tutto
 
 <sub>1.46.1 · 13 ottobre 2026</sub>

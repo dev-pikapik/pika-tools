@@ -206,6 +206,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Enter opens files in Finder"), synonyms: "return, enter, open, rename, F2, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Cut files in Finder"), synonyms: "cut, paste, move, files, folders, command X"),
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
+            SettingsItem(tab: .finder, title: String(localized: "Hide desktop icons"), synonyms: "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager"),
+            SettingsItem(tab: .finder, title: String(localized: "Show hidden files"), synonyms: "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),
             SettingsItem(tab: .background, title: String(localized: "What runs in the background"), synonyms: "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off"),
@@ -985,8 +987,11 @@ private struct ToolsSettings: View {
                     Section { tool.settingsView.needs(tool.needs) }
                 }
             }
+            #if APPSTORE
+            if tab == .finder { Section { HiddenFilesHint() } }
+            #endif
             RestoreDefaultsSection(
-                message: String(localized: "These will turn off and go back to their default options: \(tools.map(\.title).formatted(.list(type: .and)))"),
+                message: String(localized: "These will turn off and go back to their default options: \(tools.filter { !$0.isDefault }.map(\.title).formatted(.list(type: .and)))"),
                 isDefault: tools.allSatisfy(\.isDefault)
             ) {
                 tools.forEach { $0.reset() }

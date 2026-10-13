@@ -124,6 +124,18 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Ẩn biểu tượng trên màn hình nền</b>
+<br>Một cú nhấp là màn hình nền gọn gàng trước cuộc gọi hay ảnh chụp màn hình.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Hiện tệp ẩn</b>
+<br>Xem các tệp và thư mục mà macOS giấu đi.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Chế độ trò chơi</b>
 <br>Khi bạn chơi, không gì bật lên che trò chơi hay đóng nó lại.
@@ -320,6 +332,10 @@ pikapik cũng mở được những gì macOS không mở được: RAR, kể c�
 
 Một cửa sổ sẽ hỏi mật khẩu, **Dừng** hủy bất kỳ tác vụ nào, và từ tệp lưu trữ bị hỏng hoặc chưa đầy đủ, pikapik lấy ra những gì vẫn còn đọc được. pikapik hỏi trước khi giải nén một tệp lưu trữ sẽ phình ra kích thước khổng lồ, dừng đúng lúc nếu ổ đĩa sắp đầy, và chặn những tệp lưu trữ cố ghi ra ngoài thư mục của chính chúng. Chọn một tệp lưu trữ trong Finder rồi nhấn phím cách để xem bên trong có gì.
 
+**Ẩn biểu tượng trên màn hình nền.** Bật trước cuộc gọi, khi quay màn hình hoặc chụp màn hình, các tệp và thư mục trên màn hình nền sẽ biến mất. Tắt đi, chúng trở lại đúng chỗ cũ. Không có gì bị di chuyển: tệp vẫn nằm trong thư mục Màn hình nền trong Finder. Đây chính là cài đặt **Hiển thị các mục › Trên màn hình nền** trong Cài đặt hệ thống › Màn hình nền & Dock, chỉ là đặt gần tay hơn, nên hai bên luôn khớp nhau. Trong phiên bản Mac App Store, hàng này sẽ mở trang đó của Cài đặt hệ thống thay vào đó.
+
+**Hiện tệp ẩn.** Các tệp và thư mục mà macOS ẩn, như Thư viện trong thư mục người dùng của bạn hoặc các tệp có tên bắt đầu bằng dấu chấm, sẽ hiện mờ trong Finder và trên màn hình nền. Giống như nhấn ⇧⌘. trong Finder, chỉ khác là bạn nhìn qua là biết nó đang bật hay không. Để áp dụng thay đổi, Finder sẽ khởi động lại nhanh rồi mở lại các cửa sổ và tab. Nếu Finder đang sao chép hoặc di chuyển tệp, Finder sẽ đợi xong rồi mới khởi động lại. Cả hai đều nằm trong Cài đặt › Finder. Để đặt chúng vào bảng điều khiển trên thanh menu, hãy nhấp nút hình bút chì ở phía dưới bảng và chọn chúng. Trong phiên bản Mac App Store, Cài đặt › Finder sẽ hiện phím ⇧⌘. thay vào đó.
+
 **Chế độ trò chơi.** Thêm trò chơi của bạn, và trong lúc bạn chơi, máy Mac không kéo bạn ra khỏi trò chơi. Spotlight, Siri, ⌘Tab, Mission Control và thao tác vuốt giữa các màn hình nền không mở đè lên trò chơi, ⌘Q và ⌘W không vô tình đóng trò chơi, con trỏ không trượt sang Dock, thanh menu hay màn hình khác, và màn hình luôn sáng. Mỗi mục có công tắc riêng trên trang Trò chơi, và pikapik gợi ý những trò chơi tìm thấy trên máy Mac của bạn. Trong trò chơi, Control-bấm vẫn là một cú bấm bình thường, còn Control với phím mũi tên không đổi màn hình nền. Minecraft cũng được nhận ra: thêm Minecraft Launcher hoặc CurseForge, và chế độ sẽ bật ngay trong Minecraft. Để thoát trò chơi, hãy nhấn ⇧⌘Q; để đóng cửa sổ của nó, nhấn ⇧⌘W. ⌥⌘Esc luôn hoạt động. Ngay khi bạn rời trò chơi, mọi thứ hoạt động như bình thường. Mặc định tắt.
 
 Bật Chế độ trò chơi và chơi. Thêm cài đặt trò chơi chứa danh mục Mac, các phím hiện tại và xem trước động cho mỗi tác vụ.
@@ -391,7 +407,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Chuột**: gia tốc con trỏ và tốc độ di chuyển, cuộn theo dòng, hướng cuộn, các nút bên, nút ẩn ứng dụng hiện tại.
 - **Cửa sổ**: phóng to cửa sổ bằng nút xanh lá (có danh sách ngoại lệ), bảo vệ ⌘Q và ⌘W, và thoát khi đóng cửa sổ cuối cùng (có danh sách ngoại lệ).
 - **Dock**: thu nhỏ hoặc ẩn bằng một lần bấm trong Dock, giữ Dock trên một màn hình và đưa Dock trở lại.
-- **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X và xóa bằng ⌫.
+- **Finder**: tạo tệp mới, bản sao nhỏ hơn, chuyển định dạng và tệp lưu trữ, mở bằng Return, cắt bằng ⌘X, xóa bằng ⌫, ẩn biểu tượng trên màn hình nền và hiện tệp ẩn.
 - **Gỡ ứng dụng**: gỡ một ứng dụng cùng các tệp của nó, đặt lại tất cả sau này và dọn những gì ứng dụng đã gỡ để lại.
 - **Tác vụ nền**: mọi thứ chạy nền, ứng dụng nào đã thêm chúng, và một nút để tắt tác vụ của riêng bạn rồi bật lại.
 - **Trò chơi**: danh sách trò chơi của bạn và các tùy chọn của Chế độ trò chơi.

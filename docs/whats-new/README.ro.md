@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Un desktop curat dintr-un clic
+
+<sub>1.47.0 · 13 octombrie 2026</sub>
+
+Două comutatoare noi din pikapik ascund pictogramele de pe desktop și arată fișierele pe care macOS le ține ascunse.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Ascunde pictogramele de pe desktop.** Pornește-l înainte de un apel, o înregistrare a ecranului sau o captură de ecran, iar fișierele și folderele de pe desktop dispar. Oprește-l, iar ele revin la aceleași locuri. Nu se mută nimic: fișierele rămân în folderul Desktop din Finder. E configurarea **Afișare articole › Pe desktop** din Configurări sistem › Desktop și Dock, doar mai la îndemână, așa că cele două se potrivesc mereu. În versiunea din Mac App Store, acest rând deschide în schimb acea pagină din Configurări sistem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Afișează fișierele ascunse.** Fișierele și folderele pe care macOS le ascunde, cum ar fi Bibliotecă din folderul tău principal sau fișierele al căror nume începe cu un punct, apar estompate în Finder și pe desktop. E la fel ca apăsarea ⇧⌘. în Finder, doar că vezi dintr-o privire dacă e pornit. Pentru a aplica modificarea, Finder repornește pentru o clipă și își redeschide ferestrele și filele. Dacă Finder copiază sau mută fișiere, repornește abia după ce termină. Ambele sunt în Setări › Finder. Ca să le ai în panoul din bara de meniu, apasă butonul cu creion din partea de jos și bifează-le. În versiunea din Mac App Store, Setări › Finder arată în schimb tastele ⇧⌘. pentru Finder.
+
+---
+
 ## <a id="v1.46.1"></a>Pagina „Permisiuni” spune totul
 
 <sub>1.46.1 · 13 octombrie 2026</sub>

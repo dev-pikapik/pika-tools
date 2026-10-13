@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>클릭 한 번으로 깔끔한 데스크탑
+
+<sub>1.47.0 · 2026년 10월 13일</sub>
+
+pikapik의 새 스위치 두 개로 데스크탑 아이콘을 숨기고 macOS가 숨겨 둔 파일을 볼 수 있습니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**데스크탑 아이콘 숨기기.** 통화, 화면 기록, 스크린샷 전에 켜면 데스크탑의 파일과 폴더가 사라집니다. 끄면 원래 자리로 돌아옵니다. 아무것도 옮겨지지 않으며, 파일은 Finder의 ‘데스크탑’ 폴더에 그대로 있습니다. 시스템 설정 › 데스크탑 및 Dock의 **항목 보기 › 데스크탑에서** 설정을 가까이 둔 것이라 둘은 항상 일치합니다. Mac App Store 버전에서는 이 행이 대신 시스템 설정의 해당 페이지를 엽니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**숨김 파일 보기.** 홈 폴더의 ‘라이브러리’나 이름이 점으로 시작하는 파일처럼 macOS가 숨기는 파일과 폴더가 Finder와 데스크탑에 흐리게 나타납니다. Finder에서 ⇧⌘. 키를 누르는 것과 같지만, 켜져 있는지 한눈에 알 수 있습니다. 변경 사항을 적용하기 위해 Finder가 잠시 재시작된 뒤 윈도우와 탭을 다시 엽니다. Finder가 파일을 복사하거나 이동하는 중이면 끝날 때까지 기다렸다가 재시작됩니다. 둘 다 설정 › Finder에 있습니다. 메뉴 막대 패널에 두려면 패널 아래의 연필 버튼을 클릭하고 체크하세요. Mac App Store 버전에서는 대신 설정 › Finder에 ⇧⌘. 키가 표시됩니다.
+
+---
+
 ## <a id="v1.46.1"></a>‘권한’ 페이지가 있는 그대로 알려 줘요
 
 <sub>1.46.1 · 2026년 10월 13일</sub>

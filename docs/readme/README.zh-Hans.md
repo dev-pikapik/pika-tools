@@ -124,6 +124,18 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>隐藏桌面图标</b>
+<br>通话或截屏前，点一下就能让桌面干干净净。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>显示隐藏文件</b>
+<br>看到 macOS 隐藏起来的文件和文件夹。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>游戏模式</b>
 <br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
@@ -320,6 +332,10 @@ pikapik 还能打开 macOS 打不开的文件：RAR（包括分成多个部分�
 
 会弹出窗口询问密码，**停止** 可以取消任何任务，对于损坏或不完整的压缩文件，pikapik 会取出仍然可以读取的部分。如果压缩文件解压后会膨胀到巨大体积，pikapik 会先询问你；磁盘快要写满时它会及时停下；试图写到自己文件夹之外的压缩文件会被拦下。在访达中选中压缩文件后按空格键，即可预览里面有什么。
 
+**隐藏桌面图标。** 在通话、录屏或截屏前打开它，桌面上的文件和文件夹就会消失。关掉它，它们会回到原来的位置。什么都不会被移动：文件仍在访达的“桌面”文件夹里。它就是“系统设置 › 桌面与程序坞”中的 **“显示项目” › “桌面上”**，只是放在了手边，所以两者始终一致。在 Mac App Store 版本中，这一行会改为打开系统设置的这个页面。
+
+**显示隐藏文件。** macOS 隐藏的文件和文件夹，例如个人文件夹中的“资源库”或名称以点开头的文件，会以半透明的样子出现在访达和桌面上。这和在访达中按 ⇧⌘. 一样，只是一眼就能看出是否已打开。为了应用更改，访达会短暂重新启动，并再次打开其窗口和标签页。如果访达正在拷贝或移动文件，会等到完成后再重新启动。两者都在“设置 › 访达”中。想把它们放进菜单栏面板，请点按面板底部的铅笔按钮并勾选它们。在 Mac App Store 版本中，“设置 › 访达”会改为显示 ⇧⌘. 这组按键。
+
 **游戏模式。** 添加你的游戏后，玩游戏时 Mac 不会把你拉出游戏。聚焦、Siri、⌘Tab、调度中心和在桌面之间轻扫都不会在游戏上方打开，⌘Q 和 ⌘W 不会意外关闭游戏，指针不会滑到程序坞、菜单栏或另一块屏幕上，屏幕也保持常亮。每一项都可以在“游戏”页面单独开关，pikapik 还会推荐它在你的 Mac 上找到的游戏。游戏中 Control-点按仍是普通点按，Control+箭头也不会切换桌面。也能识别 Minecraft：添加 Minecraft Launcher 或 CurseForge，在 Minecraft 里就会打开这个模式。要退出游戏，请按 ⇧⌘Q；要关闭其窗口，请按 ⇧⌘W。⌥⌘Esc 始终有效。一离开游戏，一切照常工作。默认关闭。
 
 开启游戏模式就能玩。更多游戏设置中有Mac公开的完整目录、当前按键设置，以及每项操作的动画预览。
@@ -391,7 +407,7 @@ App 跟随系统语言，或使用你在设置中选择的语言。支持本页�
 - **鼠标**：指针加速和追踪速度、按行滚动、滚动方向、侧键、隐藏当前 App 的按钮。
 - **窗口**：用绿色按钮放大窗口（附例外列表）、⌘Q 和 ⌘W 保护，以及关闭最后一个窗口时退出（附例外列表）。
 - **程序坞**：点按程序坞最小化或隐藏、让程序坞固定在一台显示器上，以及让程序坞回到原处。
-- **访达**：新建文件、较小副本、转换和压缩文件、用 Return 打开、用 ⌘X 剪切、用 ⌫ 删除。
+- **访达**：新建文件、较小副本、转换和压缩文件、用 Return 打开、用 ⌘X 剪切、用 ⌫ 删除、隐藏桌面图标、显示隐藏文件。
 - **卸载 App**：移除 App 及其全部文件，之后还能全部放回，并清理已移除 App 留下的残留文件。
 - **后台任务**：所有在后台运行的内容、是哪个 App 添加的，以及一个用来关闭和重新打开你自己的任务的按钮。
 - **游戏**：你的游戏列表和游戏模式的选项。

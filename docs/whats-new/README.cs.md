@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Čistá plocha jedním kliknutím
+
+<sub>1.47.0 · 13. října 2026</sub>
+
+Dva nové přepínače v pikapik skryjí ikony na ploše a ukážou soubory, které macOS schovává.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Skrýt ikony na ploše.** Zapněte to před hovorem, nahráváním obrazovky nebo snímkem obrazovky a soubory a složky z plochy zmizí. Vypněte to a vrátí se na stejná místa. Nic se nepřesouvá: soubory zůstávají ve složce Plocha ve Finderu. Je to volba **Zobrazit položky › Na ploše** z Nastavení systému › Plocha a Dock, jen víc po ruce, takže obě vždy souhlasí. Ve verzi z Mac App Store tento řádek místo toho otevře tuto stránku Nastavení systému.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Zobrazit skryté soubory.** Soubory a složky, které macOS skrývá, třeba Knihovna ve vaší domovské složce nebo soubory, jejichž název začíná tečkou, se ve Finderu a na ploše zobrazí poloprůhledně. Je to totéž jako stisknout ⇧⌘. ve Finderu, jen hned vidíte, jestli je to zapnuté. Aby se změna projevila, Finder se na chvilku restartuje a znovu otevře svá okna a karty. Pokud Finder právě kopíruje nebo přesouvá soubory, restartuje se, až s tím skončí. Obojí najdete v Nastavení › Finder. Chcete-li je mít v panelu v řádku nabídek, klikněte na tlačítko s tužkou dole v panelu a zaškrtněte je. Ve verzi z Mac App Store místo toho Nastavení › Finder ukazuje klávesy ⇧⌘. pro Finder.
+
+---
+
 ## <a id="v1.46.1"></a>Stránka „Oprávnění“ říká všechno
 
 <sub>1.46.1 · 13. října 2026</sub>

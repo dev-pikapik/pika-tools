@@ -124,6 +124,18 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Nascondi le icone della scrivania</b>
+<br>Un clic e la scrivania è sgombra per una chiamata o un’istantanea dello schermo.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Mostra i file nascosti</b>
+<br>Vedi i file e le cartelle che macOS tiene nascosti.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modalità gioco</b>
 <br>Mentre giochi, niente si apre sopra il gioco né lo chiude.
@@ -320,6 +332,10 @@ pikapik apre anche ciò che macOS non sa aprire: RAR, anche diviso in parti, 7Z 
 
 Una finestra chiede la password, **Interrompi** ferma qualsiasi operazione, e da un archivio danneggiato o incompleto pikapik recupera ciò che si può ancora leggere. Se un archivio si gonfiasse fino a una dimensione enorme, pikapik chiede conferma prima di estrarlo, e si ferma in tempo quando il disco sta per riempirsi. Gli archivi che cercano di scrivere fuori dalla propria cartella vengono bloccati. Seleziona un archivio nel Finder e premi Spazio per vedere cosa contiene.
 
+**Nascondi le icone della scrivania.** Attivalo prima di una chiamata, di una registrazione dello schermo o di un’istantanea, e i file e le cartelle sulla scrivania spariscono. Disattivalo e tornano al loro posto. Non si sposta nulla: i file restano nella cartella Scrivania del Finder. È l’impostazione **Mostra elementi › Sulla scrivania** di Impostazioni di Sistema › Scrivania e Dock, solo più a portata di mano, quindi le due vanno sempre d’accordo. Nella versione del Mac App Store, questa riga apre invece quella pagina di Impostazioni di Sistema.
+
+**Mostra i file nascosti.** I file e le cartelle che macOS nasconde, come Libreria nella tua cartella Inizio o i file il cui nome inizia con un punto, appaiono attenuati nel Finder e sulla scrivania. È come premere ⇧⌘. nel Finder, solo che vedi a colpo d’occhio se è attivo. Per applicare la modifica, il Finder si riavvia per un attimo e riapre le sue finestre e le sue schede. Se il Finder sta copiando o spostando dei file, si riavvia solo quando ha finito. Entrambi si trovano in Impostazioni › Finder. Per averli nel pannello della barra dei menu, fai clic sul pulsante con la matita in basso e selezionali. Nella versione del Mac App Store, Impostazioni › Finder mostra invece i tasti ⇧⌘. del Finder.
+
 **Modalità gioco.** Aggiungi i tuoi giochi e, mentre giochi, il Mac non ti tira fuori dal gioco. Spotlight, Siri, ⌘Tab, Mission Control e gli scorrimenti tra le scrivanie non si aprono sopra il gioco, ⌘Q e ⌘W non lo chiudono per sbaglio, il puntatore non scivola sul Dock, sulla barra dei menu o su un altro schermo e lo schermo resta acceso. Ognuna di queste opzioni ha il suo interruttore nella pagina Giochi, e pikapik ti suggerisce i giochi che trova sul tuo Mac. Nel gioco, Control-clic resta un semplice clic, e Control con le frecce non cambia scrivania. Riconosce anche Minecraft: aggiungi Minecraft Launcher o CurseForge, e la modalità si attiva dentro Minecraft stesso. Per uscire da un gioco, premi ⇧⌘Q; per chiuderne la finestra, ⇧⌘W. ⌥⌘Esc funziona sempre. Appena esci dal gioco, tutto funziona come al solito. Disattivato di default.
 
 Attiva la modalità Gioco e gioca. Altre impostazioni di gioco contiene il catalogo del Mac con i tasti attuali e un’anteprima animata per ogni azione.
@@ -391,7 +407,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali, un tasto che nasconde l’app corrente.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
 - **Dock**: ridurre o nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.
-- **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
+- **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X, eliminazione con ⌫, occultamento delle icone della scrivania e visualizzazione dei file nascosti.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Attività in background**: tutto ciò che gira in background, quale app l’ha aggiunto e un pulsante per spegnere le tue attività e riaccenderle.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Czyste biurko jednym kliknięciem
+
+<sub>1.47.0 · 13 października 2026</sub>
+
+Dwa nowe przełączniki w pikapik ukrywają ikony na biurku i pokazują pliki, które macOS chowa.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Ukryj ikony na biurku.** Włącz to przed rozmową, nagrywaniem ekranu albo zrzutem ekranu, a pliki i foldery z biurka znikną. Wyłącz, a wrócą na swoje miejsca. Nic się nie przenosi: pliki zostają w folderze Biurko w Finderze. To ustawienie **Pokaż rzeczy › Na Biurku** w Ustawieniach systemowych › Biurko i Dock, tylko bardziej pod ręką, więc oba zawsze się zgadzają. W wersji z Mac App Store ten wiersz otwiera zamiast tego tę stronę Ustawień systemowych.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Pokaż ukryte pliki.** Pliki i foldery, które macOS ukrywa, na przykład folder Biblioteki w twoim folderze domowym albo pliki, których nazwa zaczyna się od kropki, pojawią się w Finderze i na biurku jako przygaszone. To to samo co naciśnięcie ⇧⌘. w Finderze, tylko od razu widać, czy jest włączone. Aby zastosować zmianę, Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna i karty. Jeśli Finder właśnie kopiuje lub przenosi pliki, uruchomi się ponownie dopiero, gdy skończy. Oba są w Ustawieniach › Finder. Żeby mieć je w panelu na pasku menu, kliknij przycisk z ołówkiem na dole panelu i zaznacz je. W wersji z Mac App Store Ustawienia › Finder pokazują zamiast tego klawisze ⇧⌘. dla Findera.
+
+---
+
 ## <a id="v1.46.1"></a>Strona „Uprawnienia” mówi wszystko
 
 <sub>1.46.1 · 13 października 2026</sub>

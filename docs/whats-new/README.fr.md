@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Un bureau dégagé en un clic
+
+<sub>1.47.0 · 13 octobre 2026</sub>
+
+Deux nouveaux interrupteurs dans pikapik masquent les icônes du bureau et affichent les fichiers que macOS cache.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Masquer les icônes du bureau.** Activez-le avant un appel, un enregistrement de l’écran ou une capture d’écran, et les fichiers et dossiers du bureau disparaissent. Désactivez-le, et ils reviennent à leur place. Rien n’est déplacé : les fichiers restent dans le dossier Bureau du Finder. C’est le réglage **Afficher les éléments › Sur le bureau** de Réglages Système › Bureau et Dock, en plus accessible, donc les deux sont toujours d’accord. Dans la version du Mac App Store, cette ligne ouvre plutôt cette page des Réglages Système.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Afficher les fichiers masqués.** Les fichiers et dossiers que macOS masque, comme Bibliothèque dans votre dossier de départ ou les fichiers dont le nom commence par un point, apparaissent en grisé dans le Finder et sur le bureau. C’est comme appuyer sur ⇧⌘. dans le Finder, sauf que vous voyez d’un coup d’œil si c’est activé. Pour appliquer le changement, le Finder redémarre un instant et rouvre ses fenêtres et ses onglets. Si le Finder copie ou déplace des fichiers, il redémarre une fois qu’il a terminé. Les deux se trouvent dans Réglages › Finder. Pour les avoir dans le panneau de la barre des menus, cliquez sur le bouton en forme de crayon en bas du panneau et cochez-les. Dans la version du Mac App Store, Réglages › Finder indique plutôt les touches ⇧⌘. du Finder.
+
+---
+
 ## <a id="v1.46.1"></a>La page « Autorisations » dit tout
 
 <sub>1.46.1 · 13 octobre 2026</sub>

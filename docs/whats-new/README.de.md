@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Ein aufgeräumter Schreibtisch mit einem Klick
+
+<sub>1.47.0 · 13. Oktober 2026</sub>
+
+Zwei neue Schalter in pikapik blenden die Symbole auf dem Schreibtisch aus und zeigen die Dateien, die macOS versteckt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Schreibtischsymbole ausblenden.** Schalte es vor einem Anruf, einer Bildschirmaufnahme oder einem Bildschirmfoto ein, und die Dateien und Ordner auf dem Schreibtisch verschwinden. Schalte es aus, und sie sind wieder an ihrem Platz. Nichts wird verschoben: Die Dateien bleiben im Ordner „Schreibtisch“ im Finder. Es ist die Einstellung **Objekte einblenden › Auf dem Schreibtisch** aus Systemeinstellungen › Schreibtisch & Dock, nur griffbereit, deshalb stimmen beide immer überein. In der Version aus dem Mac App Store öffnet diese Zeile stattdessen genau diese Seite der Systemeinstellungen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Versteckte Dateien einblenden.** Dateien und Ordner, die macOS versteckt, etwa die Library in deinem Benutzerordner oder Dateien, deren Name mit einem Punkt beginnt, erscheinen abgeblendet im Finder und auf dem Schreibtisch. Es ist dasselbe wie ⇧⌘. im Finder, nur siehst du auf einen Blick, ob es an ist. Damit die Änderung greift, startet der Finder kurz neu und öffnet seine Fenster und Tabs wieder. Kopiert oder verschiebt der Finder gerade Dateien, startet er erst neu, wenn er damit fertig ist. Beide findest du unter Einstellungen › Finder. Um sie im Fenster der Menüleiste zu haben, klicke unten auf den Stift und setze bei ihnen einen Haken. In der Version aus dem Mac App Store zeigt Einstellungen › Finder stattdessen die Tasten ⇧⌘. für den Finder.
+
+---
+
 ## <a id="v1.46.1"></a>Die Seite „Berechtigungen“ sagt jetzt alles
 
 <sub>1.46.1 · 13. Oktober 2026</sub>

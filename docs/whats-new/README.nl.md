@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Een opgeruimd bureaublad met één klik
+
+<sub>1.47.0 · 13 oktober 2026</sub>
+
+Twee nieuwe schakelaars in pikapik verbergen de symbolen op je bureaublad en tonen de bestanden die macOS verborgen houdt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Bureaubladsymbolen verbergen.** Zet het aan voor een gesprek, een schermopname of een schermafbeelding, en de bestanden en mappen op het bureaublad verdwijnen. Zet het uit, en ze staan weer op hun plek. Er wordt niets verplaatst: de bestanden blijven in de map ‘Bureaublad’ in de Finder. Het is de instelling **Toon onderdelen › Op bureaublad** uit Systeeminstellingen › Bureaublad en Dock, alleen dichter bij de hand, dus de twee komen altijd overeen. In de versie uit de Mac App Store opent deze rij in plaats daarvan die pagina van Systeeminstellingen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Verborgen bestanden tonen.** Bestanden en mappen die macOS verbergt, zoals Bibliotheek in je thuismap of bestanden waarvan de naam met een punt begint, verschijnen gedimd in de Finder en op het bureaublad. Het is hetzelfde als ⇧⌘. indrukken in de Finder, alleen zie je in één oogopslag of het aanstaat. Om de wijziging toe te passen, herstart de Finder even en opent hij zijn vensters en tabbladen weer. Is de Finder bestanden aan het kopiëren of verplaatsen, dan herstart hij pas als hij klaar is. Beide staan in Instellingen › Finder. Wil je ze in het paneel in de menubalk, klik dan onderaan op de potloodknop en vink ze aan. In de versie uit de Mac App Store toont Instellingen › Finder in plaats daarvan de toetsen ⇧⌘. voor de Finder.
+
+---
+
 ## <a id="v1.46.1"></a>De pagina ‘Toestemmingen’ vertelt het hele verhaal
 
 <sub>1.46.1 · 13 oktober 2026</sub>

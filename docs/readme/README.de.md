@@ -124,6 +124,18 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Schreibtischsymbole ausblenden</b>
+<br>Mit einem Klick ist der Schreibtisch leer, bereit für einen Anruf oder ein Bildschirmfoto.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Versteckte Dateien einblenden</b>
+<br>Sieh dir die Dateien und Ordner an, die macOS sonst versteckt.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Spielmodus</b>
 <br>Während du spielst, springt nichts über das Spiel und nichts schließt es.
@@ -320,6 +332,10 @@ pikapik öffnet auch, was macOS nicht kann: RAR, auch auf mehrere Dateien vertei
 
 Ein Fenster fragt nach dem Passwort, **Stopp** bricht jede Aufgabe ab, und aus einem beschädigten oder unvollständigen Archiv holt pikapik heraus, was sich noch lesen lässt. Würde ein Archiv beim Entpacken riesig anschwellen, fragt pikapik vorher nach, und wird der Platz auf dem Datenträger knapp, hält es rechtzeitig an. Archive, die außerhalb ihres eigenen Ordners schreiben wollen, werden blockiert. Wähle ein Archiv im Finder aus und drücke die Leertaste, um zu sehen, was darin ist.
 
+**Schreibtischsymbole ausblenden.** Schalte es vor einem Anruf, einer Bildschirmaufnahme oder einem Bildschirmfoto ein, und die Dateien und Ordner auf dem Schreibtisch verschwinden. Schalte es aus, und sie sind wieder an ihrem Platz. Nichts wird verschoben: Die Dateien bleiben im Ordner „Schreibtisch“ im Finder. Es ist die Einstellung **Objekte einblenden › Auf dem Schreibtisch** aus Systemeinstellungen › Schreibtisch & Dock, nur griffbereit, deshalb stimmen beide immer überein. In der Version aus dem Mac App Store öffnet diese Zeile stattdessen genau diese Seite der Systemeinstellungen.
+
+**Versteckte Dateien einblenden.** Dateien und Ordner, die macOS versteckt, etwa die Library in deinem Benutzerordner oder Dateien, deren Name mit einem Punkt beginnt, erscheinen abgeblendet im Finder und auf dem Schreibtisch. Es ist dasselbe wie ⇧⌘. im Finder, nur siehst du auf einen Blick, ob es an ist. Damit die Änderung greift, startet der Finder kurz neu und öffnet seine Fenster und Tabs wieder. Kopiert oder verschiebt der Finder gerade Dateien, startet er erst neu, wenn er damit fertig ist. Beide findest du unter Einstellungen › Finder. Um sie im Fenster der Menüleiste zu haben, klicke unten auf den Stift und setze bei ihnen einen Haken. In der Version aus dem Mac App Store zeigt Einstellungen › Finder stattdessen die Tasten ⇧⌘. für den Finder.
+
 **Spielmodus.** Füg deine Spiele hinzu, und solange du spielst, reißt dich dein Mac nicht aus dem Spiel. Spotlight, Siri, ⌘Tab, Mission Control und Wischen zwischen Schreibtischen öffnen sich nicht über dem Spiel, ⌘Q und ⌘W schließen es nicht aus Versehen, der Zeiger rutscht nicht ins Dock, in die Menüleiste oder auf einen anderen Bildschirm, und der Bildschirm bleibt an. Jeder dieser Punkte hat einen eigenen Schalter auf der Seite „Spiele“, und pikapik schlägt Spiele vor, die es auf deinem Mac findet. Im Spiel bleibt Ctrl-Klick ein Klick, und Ctrl mit Pfeiltasten wechselt den Schreibtisch nicht. Auch Minecraft wird erkannt: Füge den Minecraft Launcher oder CurseForge hinzu, dann schaltet sich der Modus in Minecraft selbst ein. Um ein Spiel zu beenden, drück ⇧⌘Q, um sein Fenster zu schließen, ⇧⌘W. ⌥⌘Esc funktioniert immer. Sobald du das Spiel verlässt, funktioniert alles wie gewohnt. Standardmäßig aus.
 
 Schalte den Spielmodus ein und spiele. Weitere Spieleinstellungen enthält den Katalog deines Macs mit aktuellen Tasten und einer animierten Vorschau für jede Aktion.
@@ -391,7 +407,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten, eine Taste zum Ausblenden der aktuellen App.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Mit einem Klick im Dock ablegen oder ausblenden, Dock auf einem Display halten und Dock zurückholen.
-- **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
+- **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X, Löschen mit ⌫, Ausblenden der Schreibtischsymbole und Einblenden versteckter Dateien.
 - **Apps entfernen**: eine App samt Dateien entfernen, alles später zurücklegen und aufräumen, was entfernte Apps hinterlassen haben.
 - **Hintergrundaufgaben**: alles, was im Hintergrund läuft, welche App es hinzugefügt hat, und eine Taste, mit der du deine eigenen Aufgaben aus- und wieder einschaltest.
 - **Spiele**: deine Spiele und die Einstellungen des Spielmodus.

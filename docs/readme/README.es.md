@@ -124,6 +124,18 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+<br><b>Ocultar iconos del escritorio</b>
+<br>Un clic y el escritorio queda limpio para una llamada o una captura de pantalla.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+<br><b>Mostrar archivos ocultos</b>
+<br>Mira los archivos y carpetas que macOS esconde.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Modo de juego</b>
 <br>Mientras juegas, nada se abre encima del juego ni lo cierra.
@@ -320,6 +332,10 @@ pikapik también abre lo que macOS no puede: RAR, incluso dividido en partes, 7Z
 
 Una ventana pide la contraseña, **Detener** cancela cualquier tarea, y de un archivo comprimido dañado o incompleto pikapik saca lo que aún se puede leer. Si un archivo comprimido se hinchara hasta un tamaño enorme, pikapik pregunta antes de extraerlo, y si el disco está a punto de llenarse, se detiene a tiempo. Los archivos comprimidos que intentan escribir fuera de su propia carpeta quedan bloqueados. Selecciona un archivo comprimido en el Finder y pulsa Espacio para ver lo que contiene.
 
+**Ocultar iconos del escritorio.** Actívalo antes de una llamada, una grabación de pantalla o una captura, y los archivos y carpetas del escritorio desaparecen. Desactívalo y vuelven a su sitio. No se mueve nada: los archivos siguen en la carpeta Escritorio del Finder. Es el ajuste **Mostrar ítems › En el escritorio** de Ajustes del Sistema › Escritorio y Dock, pero más a mano, así que los dos siempre coinciden. En la versión de la Mac App Store, esta fila abre esa página de Ajustes del Sistema.
+
+**Mostrar archivos ocultos.** Los archivos y carpetas que macOS oculta, como Biblioteca en tu carpeta de inicio o los archivos cuyo nombre empieza por un punto, aparecen atenuados en el Finder y en el escritorio. Es lo mismo que pulsar ⇧⌘. en el Finder, solo que ves de un vistazo si está activado. Para aplicar el cambio, el Finder se reinicia un momento y vuelve a abrir sus ventanas y pestañas. Si el Finder está copiando o moviendo archivos, se reiniciará cuando termine. Los dos están en Ajustes › Finder. Para tenerlos en el panel de la barra de menús, haz clic en el botón del lápiz de abajo y márcalos. En la versión de la Mac App Store, Ajustes › Finder muestra en su lugar las teclas ⇧⌘. del Finder.
+
 **Modo de juego.** Añade tus juegos y, mientras juegas, tu Mac no te saca del juego. Spotlight, Siri, ⌘Tab, Mission Control y los deslizamientos entre escritorios no se abren encima del juego, ⌘Q y ⌘W no lo cierran por accidente, el puntero no se escapa al Dock, a la barra de menús ni a otra pantalla, y la pantalla se mantiene encendida. Cada una de estas opciones tiene su propio interruptor en la página Juegos, y pikapik te sugiere los juegos que encuentra en tu Mac. En el juego, Control-clic sigue siendo un clic, y Control con flechas no cambia de escritorio. También reconoce Minecraft: añade Minecraft Launcher o CurseForge, y el modo se activa dentro del propio Minecraft. Para salir de un juego, pulsa ⇧⌘Q; para cerrar su ventana, ⇧⌘W. ⌥⌘Esc siempre funciona. En cuanto sales del juego, todo funciona como siempre. Desactivado por omisión.
 
 Activa el modo Juego y juega. Más ajustes del juego contiene el catálogo de tu Mac con las teclas actuales y una vista animada de cada acción.
@@ -391,7 +407,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales, un botón que oculta la app actual.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: minimizar u ocultar con un clic en el Dock, mantener el Dock en una sola pantalla y devolverlo a su sitio.
-- **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X y borrar con ⌫.
+- **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X, borrar con ⌫, ocultar iconos del escritorio y mostrar archivos ocultos.
 - **Eliminar apps**: eliminar una app con sus archivos, devolverlo todo a su sitio más tarde y limpiar lo que dejaron las apps eliminadas.
 - **Tareas en segundo plano**: todo lo que se ejecuta en segundo plano, qué app lo añadió y un botón para apagar tus propias tareas y volver a encenderlas.
 - **Juegos**: tu lista de juegos y las opciones del Modo de juego.

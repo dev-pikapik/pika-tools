@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>ワンクリックでデスクトップをすっきり
+
+<sub>1.47.0 · 2026年10月13日</sub>
+
+pikapik の2つの新しいスイッチで、デスクトップのアイコンを隠したり、macOS が隠しているファイルを表示したりできます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**デスクトップのアイコンを隠す。** 通話、画面収録、スクリーンショットの前にオンにすると、デスクトップのファイルとフォルダが消えます。オフにすると、元の場所に戻ります。何も移動しません。ファイルは Finder の「デスクトップ」フォルダにそのまま残ります。システム設定 › デスクトップとDock の **項目を表示 › デスクトップに** と同じ設定を手元に置いたものなので、両者は常に一致します。Mac App Store 版では、この行は代わりにシステム設定のそのページを開きます。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**隠しファイルを表示。** ホームフォルダの「ライブラリ」や、名前がドットで始まるファイルなど、macOS が隠しているファイルとフォルダが、Finder とデスクトップに薄く表示されます。Finder で ⇧⌘. を押すのと同じですが、オンかどうかがひと目でわかります。変更を反映するため、Finder がいったん再起動して、ウインドウとタブを開き直します。Finder がファイルをコピー中または移動中のときは、終わるまで待ってから再起動します。どちらも 設定 › Finder にあります。メニューバーのパネルに置くには、パネル下の鉛筆ボタンをクリックしてチェックを付けてください。Mac App Store 版では、代わりに 設定 › Finder に ⇧⌘. キーが表示されます。
+
+---
+
 ## <a id="v1.46.1"></a>「許可」ページが状況を正しく伝えるように
 
 <sub>1.46.1 · 2026年10月13日</sub>
