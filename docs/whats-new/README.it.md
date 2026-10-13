@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Scopri chi occupa una porta
+
+<sub>1.44.0 · 13 ottobre 2026</sub>
+
+Una nuova pagina Porte nelle Impostazioni mostra quale programma occupa ogni porta del tuo Mac e libera la porta quando ti serve.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Quando un programma dice che la sua porta è già in uso, apri Impostazioni › Porte. Lì trovi ogni programma che occupa una porta, con la sua icona, le porte che tiene e se altri dispositivi della tua rete possono connettersi. Digita un numero di porta per scoprire chi la occupa o per vedere che è libera.
+
+Fai clic su una riga per vedere gli indirizzi da aprire nel browser, il file del programma, il comando che l’ha avviato, la sua cartella e il suo numero di processo. «Libera la porta» chiede al programma di chiudersi, così può salvare il suo lavoro. Se non si chiude, pikapik ti propone l’uscita forzata. Prima di ogni passaggio ti chiede conferma.
+
+Le parti di macOS e i programmi di altri utenti restano intatti. Per Ricevitore AirPlay, Condivisione file, Condivisione schermo e Login remoto, pikapik ti dice quale interruttore in Impostazioni di Sistema libera la porta. Nella versione del Mac App Store, «Libera la porta» mostra il programma, copia un comando che lo chiude da Terminale o apre Monitoraggio Attività.
+
+---
+
 ## <a id="v1.43.0"></a>Guarda cosa gira in background
 
 <sub>1.43.0 · 13 ottobre 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Xem chương trình nào đang chiếm cổng
+
+<sub>1.44.0 · 13 tháng 10 năm 2026</sub>
+
+Trang Cổng mới trong Cài đặt cho biết chương trình nào đang chiếm từng cổng trên Mac của bạn và giải phóng cổng khi bạn cần.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Khi một chương trình báo cổng của nó đã được dùng, hãy mở Cài đặt › Cổng. Mọi chương trình đang chiếm cổng đều có ở đó, kèm biểu tượng, các cổng nó đang giữ và cho biết các thiết bị khác trong mạng của bạn có thể kết nối hay không. Nhập số cổng để tìm xem ai đang giữ cổng đó, hoặc để thấy rằng cổng đang trống.
+
+Nhấp vào một hàng để xem các địa chỉ có thể mở trong trình duyệt, tệp của chương trình, lệnh đã khởi chạy nó, thư mục và mã tiến trình. “Giải phóng” sẽ đề nghị chương trình thoát để nó kịp lưu công việc. Nếu chương trình không đóng, pikapik sẽ đề xuất buộc thoát. Cả hai bước đều hỏi bạn trước.
+
+Các thành phần của macOS và chương trình của người dùng khác được giữ nguyên. Với Bộ thu AirPlay, Chia sẻ Tệp, Chia sẻ Màn hình và Đăng nhập Từ xa, pikapik cho bạn biết công tắc nào trong Cài đặt hệ thống giải phóng cổng. Trong phiên bản Mac App Store, “Giải phóng” hiển thị chương trình, sao chép một lệnh để thoát nó trong Terminal hoặc mở Giám sát hoạt động.
+
+---
+
 ## <a id="v1.43.0"></a>Xem những gì đang chạy nền
 
 <sub>1.43.0 · 13 tháng 10 năm 2026</sub>

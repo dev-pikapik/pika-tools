@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>See which program took a port
+
+<sub>1.44.0 · October 13, 2026</sub>
+
+A new Ports page in Settings shows which program holds each port on your Mac and frees the port when you need it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+When a program says its port is already in use, open Settings › Ports. Every program that has taken a port is there with its icon, the ports it holds and whether other devices on your network can connect. Type a port number to find who holds it, or to see that it’s free.
+
+Click a row for the addresses to open in a browser, the program’s file, the command that started it, its folder and its process ID. Free Up asks the program to quit, so it can save its work. If it doesn’t close, pikapik offers to force quit it. Both steps ask you first.
+
+Parts of macOS and programs of other users stay untouched. For AirPlay Receiver, File Sharing, Screen Sharing and Remote Login, pikapik tells you which switch in System Settings frees the port. In the Mac App Store version, Free Up shows the program, copies a command that quits it in Terminal or opens Activity Monitor.
+
+---
+
 ## <a id="v1.43.0"></a>See what runs in the background
 
 <sub>1.43.0 · October 13, 2026</sub>

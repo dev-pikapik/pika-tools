@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Se vilket program som tagit en port
+
+<sub>1.44.0 · 13 oktober 2026</sub>
+
+En ny sida i Inställningar, Portar, visar vilket program som håller varje port på din Mac och frigör porten när du behöver den.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+När ett program säger att porten redan används öppnar du Inställningar › Portar. Där finns varje program som har tagit en port, med dess symbol, portarna det håller och om andra enheter i ditt nätverk kan ansluta. Skriv ett portnummer för att se vem som håller porten, eller för att se att den är ledig.
+
+Klicka på en rad för att se adresserna som öppnas i en webbläsare, programmets fil, kommandot som startade det, dess mapp och dess processnummer. ”Frigör” ber programmet att avsluta, så att det hinner spara sitt arbete. Om det inte stängs erbjuder pikapik att tvångsavsluta det. Du får frågan före varje steg.
+
+Delar av macOS och program som tillhör andra användare lämnas orörda. För AirPlay-mottagare, Fildelning, Skärmdelning och Fjärrinloggning berättar pikapik vilket reglage i Systeminställningar som frigör porten. I versionen från Mac App Store visar ”Frigör” programmet, kopierar ett kommando som avslutar det i Terminal eller öppnar Aktivitetskontroll.
+
+---
+
 ## <a id="v1.43.0"></a>Se vad som körs i bakgrunden
 
 <sub>1.43.0 · 13 oktober 2026</sub>

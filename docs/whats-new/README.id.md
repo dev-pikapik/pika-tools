@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Lihat program mana yang memakai port
+
+<sub>1.44.0 · 13 Oktober 2026</sub>
+
+Halaman Port yang baru di Pengaturan menunjukkan program mana yang memakai setiap port di Mac Anda, dan membebaskan port saat Anda membutuhkannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Saat sebuah program bilang port-nya sudah dipakai, buka Pengaturan › Port. Setiap program yang memakai port ada di sana, lengkap dengan ikonnya, port yang dipakainya, dan apakah perangkat lain di jaringan Anda bisa terhubung. Ketik nomor port untuk mencari siapa yang memakainya, atau untuk melihat bahwa port itu bebas.
+
+Klik sebuah baris untuk melihat alamat yang bisa dibuka di browser, file program, perintah yang menjalankannya, folder-nya, dan nomor prosesnya. “Bebaskan” meminta program keluar agar sempat menyimpan pekerjaannya. Jika program tidak tertutup, pikapik menawarkan untuk memaksanya keluar. Kedua langkah itu meminta persetujuan Anda dulu.
+
+Bagian dari macOS dan program milik pengguna lain tidak disentuh. Untuk Penerima AirPlay, Berbagi File, Berbagi Layar, dan Masuk Jarak Jauh, pikapik memberi tahu saklar mana di Pengaturan Sistem yang membebaskan port. Di versi Mac App Store, “Bebaskan” menampilkan program, menyalin perintah untuk menutupnya di Terminal, atau membuka Monitor Aktivitas.
+
+---
+
 ## <a id="v1.43.0"></a>Lihat apa yang berjalan di latar belakang
 
 <sub>1.43.0 · 13 Oktober 2026</sub>

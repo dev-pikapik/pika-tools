@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Zie welk programma een poort bezet houdt
+
+<sub>1.44.0 · 13 oktober 2026</sub>
+
+Een nieuwe pagina Poorten in Instellingen laat zien welk programma elke poort op je Mac bezet houdt, en maakt de poort vrij wanneer je hem nodig hebt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Zegt een programma dat zijn poort al in gebruik is, open dan Instellingen › Poorten. Daar staat elk programma dat een poort bezet houdt, met zijn symbool, de poorten die het gebruikt en of andere apparaten in je netwerk verbinding kunnen maken. Typ een poortnummer om te zien wie die poort bezet houdt, of dat hij vrij is.
+
+Klik op een rij voor de adressen die je in een browser kunt openen, het bestand van het programma, het commando waarmee het is gestart, de map en het procesnummer. ‘Maak vrij’ vraagt het programma om te stoppen, zodat het zijn werk kan bewaren. Sluit het niet, dan biedt pikapik aan het geforceerd te laten stoppen. Bij beide stappen vraagt pikapik het je eerst.
+
+Onderdelen van macOS en programma’s van andere gebruikers blijven ongemoeid. Bij AirPlay-ontvanger, Bestandsdeling, Schermdeling en Extern inloggen vertelt pikapik je welke schakelaar in Systeeminstellingen de poort vrijmaakt. In de versie uit de Mac App Store toont ‘Maak vrij’ het programma, kopieert een commando om het in Terminal te stoppen, of opent Activiteitenweergave.
+
+---
+
 ## <a id="v1.43.0"></a>Zie wat er op de achtergrond draait
 
 <sub>1.43.0 · 13 oktober 2026</sub>

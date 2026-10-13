@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Mira qué programa ocupa un puerto
+
+<sub>1.44.0 · 13 de octubre de 2026</sub>
+
+Una nueva página Puertos en Ajustes muestra qué programa ocupa cada puerto de tu Mac y libera el puerto cuando lo necesitas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Cuando un programa dice que su puerto ya está en uso, abre Ajustes › Puertos. Ahí aparece cada programa que ocupa un puerto, con su icono, los puertos que usa y si otros dispositivos de tu red pueden conectarse. Escribe un número de puerto para saber quién lo ocupa o para comprobar que está libre.
+
+Haz clic en una fila para ver las direcciones que se abren en el navegador, el archivo del programa, el comando que lo inició, su carpeta y su número de proceso. «Liberar» le pide al programa que se cierre, para que pueda guardar su trabajo. Si no se cierra, pikapik te ofrece forzar la salida. Antes de cada paso, te lo pregunta.
+
+Las partes de macOS y los programas de otros usuarios quedan intactos. Con Receptor AirPlay, Compartir archivos, Compartir pantalla y Sesión remota, pikapik te indica qué interruptor de Ajustes del Sistema libera el puerto. En la versión de la Mac App Store, «Liberar» muestra el programa, copia un comando para cerrarlo desde Terminal o abre Monitor de Actividad.
+
+---
+
 ## <a id="v1.43.0"></a>Mira qué se ejecuta en segundo plano
 
 <sub>1.43.0 · 13 de octubre de 2026</sub>

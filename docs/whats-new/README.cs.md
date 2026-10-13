@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.44.0"></a>Podívejte se, kdo zabral port
+
+<sub>1.44.0 · 13. října 2026</sub>
+
+Nová stránka Porty v Nastavení ukazuje, který program drží který port na vašem Macu, a uvolní port, když ho potřebujete.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/ports-dark.png"><img src="../media/ports-light.png" width="340" alt=""></picture>
+
+Když program hlásí, že jeho port je už obsazený, otevřete Nastavení › Porty. Najdete tam každý program, který zabral port, s jeho ikonou, porty, které drží, a informací, jestli se k němu mohou připojit další zařízení ve vaší síti. Zadejte číslo portu a zjistíte, kdo ho drží, nebo uvidíte, že je volný.
+
+Klikněte na řádek a uvidíte adresy, které otevřete v prohlížeči, soubor programu, příkaz, kterým byl spuštěn, jeho složku a číslo procesu. „Uvolnit“ požádá program o ukončení, aby si stihl uložit práci. Pokud se nezavře, pikapik nabídne jeho vynucené ukončení. Před každým krokem se vás pikapik nejdřív zeptá.
+
+Části macOS a programy jiných uživatelů zůstávají nedotčené. U služeb Přijímač AirPlay, Sdílení souborů, Sdílení obrazovky a Vzdálené přihlášení vám pikapik poradí, který přepínač v Nastavení systému port uvolní. Ve verzi z Mac App Store tlačítko „Uvolnit“ ukáže program, zkopíruje příkaz, který ho ukončí v Terminálu, nebo otevře Monitor aktivity.
+
+---
+
 ## <a id="v1.43.0"></a>Podívejte se, co běží na pozadí
 
 <sub>1.43.0 · 13. října 2026</sub>
