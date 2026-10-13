@@ -23,7 +23,16 @@ struct PortOwner: Equatable {
     let folder: String?
 
     var isMine: Bool { uid == getuid() }
-    var isApple: Bool { pid == 1 || path.map { path in PortScanner.applePaths.contains { path.hasPrefix($0) } } ?? false }
+    var isApple: Bool { pid <= 1 || path.map { path in PortScanner.applePaths.contains { path.hasPrefix($0) } } ?? false }
+}
+
+struct PortProgram: Identifiable, Equatable {
+    let owner: PortOwner
+    var listeners: [PortListener]
+    var helpers: [pid_t] = []
+
+    var id: pid_t { owner.pid }
+    var ports: [UInt16] { listeners.map(\.port) }
 }
 
 enum PortScanner {
@@ -38,61 +47,89 @@ enum PortScanner {
             entry.hosts.insert(host)
             found[entry.id] = entry
         }
-        for pid in pids() {
+        let all = pids()
+        for pid in all {
             for socket in sockets(of: pid) { add(socket.port, pid, tcp: socket.tcp, host: socket.host) }
         }
-        if netstatWorks {
-            var extra = 0
-            for (tcp, proto) in [(true, "tcp"), (false, "udp")] {
-                let rows = parse(netstat(proto), tcp: tcp)
-                extra += rows.count
-                for row in rows { add(row.port, row.pid, tcp: tcp, host: row.host) }
-            }
-            if !found.isEmpty, extra == 0 { netstatWorks = false }
+        for tcp in [true, false] {
+            for row in kernel(tcp: tcp) where all.isEmpty || row.uid != getuid() { add(row.port, row.pid, tcp: tcp, host: row.host) }
         }
         return found.values.sorted { ($0.port, $0.pid) < ($1.port, $1.pid) }
+    }
+
+    static func programs(_ listeners: [PortListener], owners: [pid_t: PortOwner]) -> [PortProgram] {
+        let held = Dictionary(grouping: listeners, by: \.pid).mapValues { Set($0.map(\.port)) }
+        func root(_ pid: pid_t) -> pid_t {
+            var pid = pid
+            for _ in 0..<32 {
+                guard let parent = owners[pid]?.parent, parent != pid, owners[parent] != nil,
+                      !(held[pid] ?? []).isDisjoint(with: held[parent] ?? []) else { break }
+                pid = parent
+            }
+            return pid
+        }
+        var result: [pid_t: PortProgram] = [:]
+        for pid in held.keys.sorted() {
+            let top = root(pid)
+            guard let owner = owners[top] else { continue }
+            var program = result[top] ?? PortProgram(owner: owner, listeners: [])
+            if top != pid { program.helpers.append(pid) }
+            for listener in listeners where listener.pid == pid {
+                if let index = program.listeners.firstIndex(where: { $0.port == listener.port }) {
+                    program.listeners[index].tcp = program.listeners[index].tcp || listener.tcp
+                    program.listeners[index].udp = program.listeners[index].udp || listener.udp
+                    program.listeners[index].hosts.formUnion(listener.hosts)
+                } else {
+                    program.listeners.append(PortListener(port: listener.port, pid: top, tcp: listener.tcp, udp: listener.udp, hosts: listener.hosts))
+                }
+            }
+            program.listeners.sort { $0.port < $1.port }
+            result[top] = program
+        }
+        return result.values.sorted { ($0.ports.first ?? 0, $0.id) < ($1.ports.first ?? 0, $1.id) }
     }
 
     static func ports(of pid: pid_t) -> Set<UInt16> {
         Set(sockets(of: pid).map(\.port))
     }
 
-    static func isBusy(_ port: UInt16) -> Bool? {
-        var results: [Int32] = []
-        for tcp in [true, false] {
-            for host in ["0.0.0.0", "127.0.0.1", "::", "::1"] { results.append(bindResult(port, host: host, tcp: tcp)) }
+    static func kernel(tcp: Bool) -> [(port: UInt16, pid: pid_t, uid: uid_t, host: String)] {
+        let name = tcp ? "net.inet.tcp.pcblist_n" : "net.inet.udp.pcblist_n"
+        var size = 0
+        guard sysctlbyname(name, nil, &size, nil, 0) == 0, size > 0 else { return [] }
+        var bytes = [UInt8](repeating: 0, count: size + size / 4)
+        size = bytes.count
+        guard sysctlbyname(name, &bytes, &size, nil, 0) == 0, size >= 24 else { return [] }
+        return bytes.withUnsafeBytes { raw in
+            func u32(_ at: Int) -> UInt32 { raw.loadUnaligned(fromByteOffset: at, as: UInt32.self) }
+            func u16(_ at: Int) -> UInt16 { UInt16(raw[at]) << 8 | UInt16(raw[at + 1]) }
+            var rows: [(port: UInt16, pid: pid_t, uid: uid_t, host: String)] = []
+            var inpcb: Int?
+            var socket: Int?
+            var offset = (Int(u32(0)) + 7) & ~7
+            while offset + 8 <= size {
+                let length = Int(u32(offset))
+                guard length > 24, offset + length <= size else { break }
+                switch u32(offset + 4) {
+                case 0x1 where length >= 76: socket = offset
+                case 0x10 where length >= 80: inpcb = offset
+                default: break
+                }
+                if let i = inpcb, let s = socket {
+                    inpcb = nil
+                    socket = nil
+                    let port = u16(i + 18)
+                    let listening = tcp ? u32(s + 20) & UInt32(SO_ACCEPTCONN) != 0 : u16(i + 16) == 0 && port < ephemeral
+                    if port != 0, listening {
+                        let v6 = raw[i + 44] & 0x2 != 0
+                        let address = Array(raw[(i + (v6 ? 64 : 76))..<(i + 80)])
+                        rows.append((port, pid_t(bitPattern: u32(s + 68)), u32(s + 64), host(address)))
+                    }
+                }
+                offset += (length + 7) & ~7
+            }
+            return rows
         }
-        if results.contains(EADDRINUSE) { return true }
-        return results.allSatisfy { $0 == 0 } ? false : nil
-    }
-
-    private static var netstatWorks = true
-
-    private static func bindResult(_ port: UInt16, host: String, tcp: Bool) -> Int32 {
-        let v6 = host.contains(":")
-        let fd = socket(v6 ? AF_INET6 : AF_INET, tcp ? SOCK_STREAM : SOCK_DGRAM, 0)
-        guard fd >= 0 else { return errno }
-        defer { close(fd) }
-        var on: Int32 = 1
-        setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, socklen_t(MemoryLayout<Int32>.size))
-        let result: Int32
-        if v6 {
-            setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, &on, socklen_t(MemoryLayout<Int32>.size))
-            var address = sockaddr_in6()
-            address.sin6_len = UInt8(MemoryLayout<sockaddr_in6>.size)
-            address.sin6_family = sa_family_t(AF_INET6)
-            address.sin6_port = port.bigEndian
-            inet_pton(AF_INET6, host, &address.sin6_addr)
-            result = withUnsafePointer(to: &address) { $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { bind(fd, $0, socklen_t(MemoryLayout<sockaddr_in6>.size)) } }
-        } else {
-            var address = sockaddr_in()
-            address.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
-            address.sin_family = sa_family_t(AF_INET)
-            address.sin_port = port.bigEndian
-            inet_pton(AF_INET, host, &address.sin_addr)
-            result = withUnsafePointer(to: &address) { $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { bind(fd, $0, socklen_t(MemoryLayout<sockaddr_in>.size)) } }
-        }
-        return result == 0 ? 0 : errno
     }
 
     static func owner(_ pid: pid_t) -> PortOwner? {
@@ -139,21 +176,19 @@ enum PortScanner {
         return found.sorted { ($0.name.hasPrefix("en") ? 0 : 1, $0.name) < ($1.name.hasPrefix("en") ? 0 : 1, $1.name) }.map(\.address)
     }
 
-    static func parse(_ text: String, tcp: Bool) -> [(port: UInt16, pid: pid_t, host: String)] {
-        text.split(separator: "\n").compactMap { line in
-            let fields = line.split(separator: " ", omittingEmptySubsequences: true)
-            guard fields.count > 6, fields[0].hasPrefix(tcp ? "tcp" : "udp") else { return nil }
-            if tcp ? fields[5] != "LISTEN" : fields[4] != "*.*" { return nil }
-            guard let dot = fields[3].lastIndex(of: "."), let port = UInt16(fields[3][fields[3].index(after: dot)...]), port != 0,
-                  tcp || port < ephemeral else { return nil }
-            for field in fields.dropFirst(5) {
-                guard let colon = field.lastIndex(of: ":") else { continue }
-                let digits = field[field.index(after: colon)...]
-                guard let pid = pid_t(digits), pid > 0 else { continue }
-                return (port, pid, String(fields[3][..<dot]))
-            }
-            return nil
+    private static func host(_ address: [UInt8]) -> String {
+        var address = address
+        guard address.contains(where: { $0 != 0 }) else { return "*" }
+        var scope = ""
+        if address.count == 16, address[0] == 0xfe, address[1] & 0xc0 == 0x80, address[2] | address[3] != 0 {
+            var name = [CChar](repeating: 0, count: Int(IF_NAMESIZE))
+            if if_indextoname(UInt32(address[2]) << 8 | UInt32(address[3]), &name) != nil { scope = "%" + String(cString: name) }
+            address[2] = 0
+            address[3] = 0
         }
+        var buffer = [CChar](repeating: 0, count: Int(INET6_ADDRSTRLEN))
+        guard inet_ntop(address.count == 16 ? AF_INET6 : AF_INET, address, &buffer, socklen_t(buffer.count)) != nil else { return "*" }
+        return String(cString: buffer) + scope
     }
 
     private static func pids() -> [pid_t] {
@@ -187,36 +222,12 @@ enum PortScanner {
             let address = tcp ? socket.soi_proto.pri_tcp.tcpsi_ini : socket.soi_proto.pri_in
             let port = UInt16(bigEndian: UInt16(truncatingIfNeeded: address.insi_lport))
             guard port != 0, tcp || (address.insi_fport == 0 && port < ephemeral) else { continue }
-            result.append((port, tcp, host(address)))
+            let bytes = address.insi_vflag & UInt8(INI_IPV6) != 0
+                ? withUnsafeBytes(of: address.insi_laddr.ina_6) { Array($0) }
+                : withUnsafeBytes(of: address.insi_laddr.ina_46.i46a_addr4) { Array($0) }
+            result.append((port, tcp, host(bytes)))
         }
         return result
-    }
-
-    private static func host(_ info: in_sockinfo) -> String {
-        var buffer = [CChar](repeating: 0, count: Int(INET6_ADDRSTRLEN))
-        if info.insi_vflag & UInt8(INI_IPV6) != 0 {
-            var address = info.insi_laddr.ina_6
-            if withUnsafeBytes(of: &address, { $0.allSatisfy { $0 == 0 } }) { return "*" }
-            inet_ntop(AF_INET6, &address, &buffer, socklen_t(buffer.count))
-        } else {
-            var address = info.insi_laddr.ina_46.i46a_addr4
-            if address.s_addr == 0 { return "*" }
-            inet_ntop(AF_INET, &address, &buffer, socklen_t(buffer.count))
-        }
-        return String(cString: buffer)
-    }
-
-    private static func netstat(_ proto: String) -> String {
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/sbin/netstat")
-        process.arguments = ["-anv", "-p", proto]
-        let pipe = Pipe()
-        process.standardOutput = pipe
-        process.standardError = FileHandle.nullDevice
-        guard (try? process.run()) != nil else { return "" }
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        process.waitUntilExit()
-        return String(decoding: data, as: UTF8.self)
     }
 
     private static func path(_ pid: pid_t) -> String? {
