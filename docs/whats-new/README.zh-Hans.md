@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>在程序坞中点按一下，就能收起窗口
+
+<sub>1.40.1 · 2026年10月13日</sub>
+
+在程序坞中点按你正在使用的 App 的图标，它的所有窗口都会最小化到程序坞。再点按一次，它们就会全部回来。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+打开“设置”›“程序坞”，再开启“点按程序坞最小化或隐藏”。窗口会按原来的顺序回来，你刚才使用的窗口在最上面。点按其他 App、按住图标打开菜单以及拖移图标，都和以前一样。
+
+想像按 ⌘H 那样隐藏整个 App？在开关下方，把“点按图标时”设为“隐藏 App”。如果你之前已经通过点按程序坞来隐藏 App，一切保持不变。这个开关需要“辅助功能”权限，Mac App Store 版本中没有此功能，默认是关闭的。
+
+---
+
 ## <a id="v1.40.0"></a>程序坞固定在一台显示器上
 
 <sub>1.40.0 · 2026年10月13日</sub>

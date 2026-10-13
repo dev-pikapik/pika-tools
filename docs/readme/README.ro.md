@@ -89,7 +89,7 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Ascundere cu un clic în Dock</b>
+<br><b>Minimizare cu un clic în Dock</b>
 <br>Dă clic pe aplicația în care ești, și se dă la o parte.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 
 **Ieșire la închiderea ultimei ferestre.** Închide ultima fereastră a unei aplicații, iar aplicația se închide. Finder rămâne deschis, la fel ca aplicațiile cu ferestre pe alte spații de lucru sau în Dock. Poți face o listă de aplicații care nu trebuie să se închidă niciodată așa. Dezactivat implicit.
 
-**Ascundere cu un clic în Dock.** Dă clic pe pictograma din Dock a aplicației în care lucrezi și aceasta se ascunde. Dă clic din nou ca s-o readuci. Dezactivat implicit.
+**Minimizează sau ascunde cu un clic în Dock.** Dă clic pe pictograma din Dock a aplicației în care lucrezi și toate ferestrele ei coboară în Dock. Dă clic din nou ca să le readuci pe toate. Poți alege și ca un clic să ascundă toată aplicația, ca ⌘H. Dezactivat implicit.
 
 **Ține Dock-ul pe un singur ecran.** Cu mai multe ecrane, macOS mută Dock-ul pe alt ecran de îndată ce indicatorul apasă pe marginea de jos a acelui ecran, sau pe cea din stânga ori din dreapta dacă Dock-ul se află pe lateral. Cu comutatorul pornit, Dock-ul rămâne unde este, iar colțurile active continuă să funcționeze. Ca să-l muți intenționat, ține apăsat ⌥ și împinge indicatorul spre marginea celuilalt ecran. Nu este nevoie de nicio permisiune. Comutatorul **Readu Dock-ul** îl pune la loc pe ecranul lui după repaus sau când se schimbă ecranele. Are nevoie de permisiunea **Accesibilitate** și nu există în versiunea din Mac App Store. Ambele comutatoare sunt dezactivate implicit.
 
@@ -333,7 +333,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
-- **Dock**: ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
+- **Dock**: minimizare sau ascundere cu un clic în Dock, ținerea Dock-ului pe un singur ecran și readucerea Dock-ului.
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X și ștergere cu ⌫.
 - **Eliminare aplicații**: elimină o aplicație împreună cu fișierele ei, pune totul la loc mai târziu și curăță ce au lăsat în urmă aplicațiile eliminate.
 - **Jocuri**: lista jocurilor tale și opțiunile Modulului Joc.

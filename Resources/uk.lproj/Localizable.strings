@@ -135,7 +135,6 @@
 "Add" = "Додати";
 "close button, red button, terminate, exit" = "кнопка закриття, червона кнопка, завершити, вихід";
 "exceptions, exclude, list" = "винятки, виключити, список";
-"Hide with a click in the Dock" = "Приховування клацанням у Dock";
 "Keep the Dock on one display" = "Dock на одному екрані";
 "Hold ⌥ to move it on purpose" = "Щоб перенести його, утримуйте ⌥";
 "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Dock залишається на тому екрані, де він зараз, навіть коли вказівник доходить до краю іншого екрана. Щоб перенести його, утримуйте ⌥ і впріться вказівником у край іншого екрана.";
@@ -146,6 +145,15 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Клацніть значок програми, у якій працюєте, — вона сховається. Ще клацання — повернеться.";
 "Click again to bring it back" = "Ще клацання — програма повернеться";
 "Dock, minimize, hide, taskbar" = "Dock, згорнути, сховати, панель завдань";
+"Minimize or hide with a click in the Dock" = "Згорнути або сховати клацанням у Dock";
+"Click the icon of the open app to minimize its windows" = "Клік по значку відкритої програми згорне її вікна";
+"Click again to bring them back" = "Ще клацання — вікна повернуться";
+"Click the icon of the app you’re in, and all its windows go down to the Dock. Click again to bring them all back." = "Клацніть значок програми, у якій працюєте, — усі її вікна згорнуться в Dock. Ще клацання — усі повернуться.";
+"A click on the icon" = "Клік по значку";
+"Minimizes the windows" = "Згортає вікна";
+"Hides the app" = "Ховає програму";
+"The windows go down to the Dock, like with the yellow button" = "Вікна йдуть у Dock, як від жовтої кнопки";
+"The app hides with all its windows, like with ⌘H" = "Програма ховається з усіма вікнами, як за ⌘H";
 "Green button enlarges the window" = "Зелена кнопка збільшує вікно";
 "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "Клацніть зелену кнопку — вікно заповнить екран. Ще клацання — повернеться попередній розмір. Повноекранний режим залишається в меню кнопки та на ⌃⌘F.";
 "Green button works as usual in these apps" = "Зелена кнопка працює як зазвичай у цих програмах";

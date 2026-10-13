@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Jedno kliknutí v Docku uklidí okna
+
+<sub>1.40.1 · 13. října 2026</sub>
+
+Klikněte v Docku na ikonu aplikace, ve které pracujete, a všechna její okna se minimalizují do Docku. Klikněte znovu a všechna se vrátí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Otevřete Nastavení › Dock a zapněte „Minimalizovat nebo skrýt kliknutím v Docku“. Okna se vrátí ve stejném pořadí a to, ve kterém jste pracovali, bude nahoře. Kliknutí na jinou aplikaci, podržení ikony kvůli její nabídce a přetahování ikon fungují jako dřív.
+
+Chcete raději skrýt celou aplikaci, jako zkratkou ⌘H? Pod přepínačem nastavte „Kliknutí na ikonu“ na „Skryje aplikaci“. Pokud jste už skrývali aplikace kliknutím v Docku, nic se pro vás nemění. Přepínač vyžaduje oprávnění „Zpřístupnění“, ve verzi z Mac App Store není a ve výchozím stavu je vypnutý.
+
+---
+
 ## <a id="v1.40.0"></a>Dock zůstává na jednom displeji
 
 <sub>1.40.0 · 13. října 2026</sub>

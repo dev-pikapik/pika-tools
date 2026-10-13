@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Một lần bấm trong Dock cất gọn cửa sổ
+
+<sub>1.40.1 · 13 tháng 10 năm 2026</sub>
+
+Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, và mọi cửa sổ của nó sẽ thu nhỏ xuống Dock. Bấm lần nữa, và tất cả quay lại.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Mở Cài đặt › Dock và bật “Thu nhỏ hoặc ẩn bằng một lần bấm trong Dock”. Các cửa sổ quay lại theo đúng thứ tự cũ, và cửa sổ bạn đang làm việc nằm trên cùng. Bấm vào ứng dụng khác, giữ biểu tượng để mở menu và kéo biểu tượng vẫn hoạt động như trước.
+
+Bạn muốn ẩn cả ứng dụng, như khi nhấn ⌘H? Bên dưới công tắc, đặt “Khi bấm biểu tượng” thành “Ẩn ứng dụng”. Nếu bạn đã ẩn ứng dụng bằng một lần bấm trong Dock từ trước, mọi thứ vẫn giữ nguyên. Công tắc này cần quyền “Trợ năng”, không có trong phiên bản Mac App Store và tắt theo mặc định.
+
+---
+
 ## <a id="v1.40.0"></a>Dock ở lại trên một màn hình
 
 <sub>1.40.0 · 13 tháng 10 năm 2026</sub>

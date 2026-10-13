@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Ein Klick im Dock räumt die Fenster weg
+
+<sub>1.40.1 · 13. Oktober 2026</sub>
+
+Klick im Dock auf das Symbol der App, in der du gerade arbeitest, und alle ihre Fenster werden im Dock abgelegt. Klick noch einmal, und sie kommen alle zurück.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Dock und schalte „Mit einem Klick im Dock ablegen oder ausblenden“ ein. Die Fenster kommen in derselben Reihenfolge zurück, und das Fenster, in dem du gearbeitet hast, liegt oben. Ein Klick auf eine andere App, langes Drücken auf ein Symbol für sein Menü und das Ziehen von Symbolen funktionieren wie bisher.
+
+Möchtest du lieber die ganze App ausblenden, wie mit ⌘H? Stell unter dem Schalter „Ein Klick aufs Symbol“ auf „Blendet die App aus“. Wenn du Apps schon mit einem Klick im Dock ausgeblendet hast, ändert sich für dich nichts. Der Schalter braucht die Erlaubnis „Bedienungshilfen“, fehlt in der Version aus dem Mac App Store und ist standardmäßig aus.
+
+---
+
 ## <a id="v1.40.0"></a>Das Dock bleibt auf einem Display
 
 <sub>1.40.0 · 13. Oktober 2026</sub>

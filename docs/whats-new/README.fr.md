@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Un clic dans le Dock range les fenêtres
+
+<sub>1.40.1 · 13 octobre 2026</sub>
+
+Cliquez dans le Dock sur l’icône de l’app que vous utilisez, et toutes ses fenêtres sont réduites dans le Dock. Cliquez à nouveau, et elles reviennent toutes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Ouvrez Réglages › Dock et activez « Réduire ou masquer d’un clic dans le Dock ». Les fenêtres reviennent dans le même ordre, avec celle où vous travailliez au premier plan. Un clic sur une autre app, l’appui prolongé sur une icône pour ouvrir son menu et le déplacement des icônes fonctionnent comme avant.
+
+Vous préférez masquer toute l’app, comme avec ⌘H ? Sous l’interrupteur, réglez « Un clic sur l’icône » sur « Masque l’app ». Si vous masquiez déjà des apps d’un clic dans le Dock, rien ne change pour vous. L’interrupteur nécessite l’autorisation « Accessibilité », n’existe pas dans la version du Mac App Store et est désactivé par défaut.
+
+---
+
 ## <a id="v1.40.0"></a>Le Dock reste sur un seul écran
 
 <sub>1.40.0 · 13 octobre 2026</sub>

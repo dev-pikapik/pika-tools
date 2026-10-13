@@ -135,7 +135,6 @@
 "Add" = "加入";
 "close button, red button, terminate, exit" = "關閉按鈕, 紅色按鈕, 終止, 離開";
 "exceptions, exclude, list" = "例外, 排除, 列表";
-"Hide with a click in the Dock" = "在 Dock 中點按以隱藏";
 "Keep the Dock on one display" = "讓 Dock 固定在一台顯示器上";
 "Hold ⌥ to move it on purpose" = "按住 ⌥ 才能移動它";
 "The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "即使指標到達另一台顯示器的邊緣，Dock 也會留在目前的顯示器上。若要移動它，請按住 ⌥，並將指標推向另一台顯示器的邊緣。";
@@ -146,6 +145,15 @@
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "點按目前使用中 App 的圖像即可隱藏，再點按一次即可顯示。";
 "Click again to bring it back" = "再點按一次即可顯示";
 "Dock, minimize, hide, taskbar" = "Dock, 最小化, 縮到最小, 隱藏, 工作列";
+"Minimize or hide with a click in the Dock" = "在 Dock 中點按以縮到最小或隱藏";
+"Click the icon of the open app to minimize its windows" = "點按已開啟 App 的圖像即可將其視窗縮到最小";
+"Click again to bring them back" = "再點按一次即可顯示視窗";
+"Click the icon of the app you’re in, and all its windows go down to the Dock. Click again to bring them all back." = "點按目前使用中 App 的圖像，它的所有視窗都會收進 Dock；再點按一次即可全部顯示。";
+"A click on the icon" = "點按圖像時";
+"Minimizes the windows" = "將視窗縮到最小";
+"Hides the app" = "隱藏 App";
+"The windows go down to the Dock, like with the yellow button" = "視窗會收進 Dock，和黃色按鈕一樣";
+"The app hides with all its windows, like with ⌘H" = "App 會連同所有視窗一起隱藏，和 ⌘H 一樣";
 "Green button enlarges the window" = "綠色按鈕放大視窗";
 "Click the green button to fill the screen, click again to go back. Full screen stays in the button’s menu and on ⌃⌘F." = "點按綠色按鈕，視窗會填滿螢幕；再點按一次，恢復原本大小。全螢幕仍可在按鈕的選單中或按 ⌃⌘F 使用。";
 "Green button works as usual in these apps" = "在這些 App 中，綠色按鈕照常運作";

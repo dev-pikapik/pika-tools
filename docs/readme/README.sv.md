@@ -89,7 +89,7 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Göm med ett klick i Dock</b>
+<br><b>Minimera med ett klick i Dock</b>
 <br>Klicka på appen du använder, så kliver den åt sidan.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 
-**Göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så göms den. Klicka igen för att ta fram den. Av som standard.
+**Minimera eller göm med ett klick i Dock.** Klicka på Dock-symbolen för appen du använder så hamnar alla dess fönster i Dock. Klicka igen för att ta fram dem alla. Du kan också låta klicket gömma hela appen, som ⌘H. Av som standard.
 
 **Håll Dock på en skärm.** Med flera skärmar flyttar macOS Dock till en annan skärm så fort pekaren trycker mot dess nederkant, eller mot vänster eller höger kant om Dock ligger på sidan. När reglaget är på stannar Dock där den är, och aktiva hörn fortsätter att fungera. Vill du flytta den med flit, håll ned ⌥ och tryck pekaren mot kanten av den andra skärmen. Ingen behörighet behövs. Reglaget **Ta tillbaka Dock** för tillbaka Dock till sin skärm efter vila eller när skärmar ändras. Det kräver behörigheten **Hjälpmedel** och finns inte i versionen från Mac App Store. Båda reglagen är av som standard.
 
@@ -333,7 +333,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
-- **Dock**: göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
+- **Dock**: minimera eller göm med ett klick i Dock, håll Dock på en skärm och ta tillbaka Dock.
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X och radera med ⌫.
 - **Ta bort appar**: ta bort en app med dess filer, lägg tillbaka allt senare och städa upp efter borttagna appar.
 - **Spel**: din lista med spel och alternativen för Spelläge.

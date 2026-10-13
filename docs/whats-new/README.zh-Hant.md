@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>在 Dock 中點按一下，就能收起視窗
+
+<sub>1.40.1 · 2026年10月13日</sub>
+
+在 Dock 中點按你正在使用的 App 的圖像，它的所有視窗都會縮到最小並收進 Dock。再點按一次，它們就會全部回來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+打開「設定 › Dock」，開啟「在 Dock 中點按以縮到最小或隱藏」。視窗會依原本的順序回來，你剛才使用的視窗在最上面。點按其他 App、按住圖像打開選單以及拖移圖像，都和以前一樣。
+
+想像按 ⌘H 那樣隱藏整個 App？在開關下方，把「點按圖像時」設為「隱藏 App」。如果你之前已經透過點按 Dock 來隱藏 App，一切保持不變。這個開關需要「輔助使用」權限，Mac App Store 版本中沒有此功能，預設是關閉的。
+
+---
+
 ## <a id="v1.40.0"></a>Dock 固定在一台顯示器上
 
 <sub>1.40.0 · 2026年10月13日</sub>

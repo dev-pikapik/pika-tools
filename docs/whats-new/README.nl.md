@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Eén klik in het Dock ruimt de vensters op
+
+<sub>1.40.1 · 13 oktober 2026</sub>
+
+Klik in het Dock op het symbool van de app waarin je werkt, en alle vensters van die app worden in het Dock geminimaliseerd. Klik nog een keer, en ze komen allemaal terug.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Open Instellingen › Dock en zet ‘Minimaliseer of verberg met een klik in het Dock’ aan. De vensters komen in dezelfde volgorde terug, met het venster waarin je werkte bovenaan. Een klik op een andere app, een symbool ingedrukt houden voor het menu en symbolen slepen werken net als eerst.
+
+Wil je liever de hele app verbergen, zoals met ⌘H? Zet onder de schakelaar ‘Een klik op het symbool’ op ‘Verbergt de app’. Verborg je al apps met een klik in het Dock, dan verandert er voor jou niets. De schakelaar heeft de toestemming ‘Toegankelijkheid’ nodig, zit niet in de versie uit de Mac App Store en staat standaard uit.
+
+---
+
 ## <a id="v1.40.0"></a>Het Dock blijft op één scherm
 
 <sub>1.40.0 · 13 oktober 2026</sub>

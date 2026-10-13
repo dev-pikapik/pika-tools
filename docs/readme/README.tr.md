@@ -89,7 +89,7 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Dock’ta tıklayarak gizleme</b>
+<br><b>Dock’ta tıklayarak küçültme</b>
 <br>Kullandığınız uygulamaya tıklayın, kenara çekilsin.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Son pencere kapanınca çıkma.** Bir uygulamanın son penceresini kapatın, uygulama kapanır. Finder açık kalır; başka masaüstlerinde veya Dock’ta penceresi olan uygulamalar da açık kalır. Bu şekilde asla kapanmaması gereken uygulamaların listesini oluşturabilirsiniz. Varsayılan olarak kapalıdır.
 
-**Dock’ta tıklayarak gizleme.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulama gizlenir. Geri getirmek için yeniden tıklayın. Varsayılan olarak kapalıdır.
+**Dock’ta tıklayarak küçült veya gizle.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulamanın tüm pencereleri Dock’a iner. Hepsini geri getirmek için yeniden tıklayın. Tıklamanın ⌘H gibi uygulamanın tamamını gizlemesini de sağlayabilirsiniz. Varsayılan olarak kapalıdır.
 
 **Dock’u tek ekranda tut.** Birden fazla ekran varken imleç başka bir ekranın alt kenarına (Dock yandaysa sol ya da sağ kenarına) dayandığı anda macOS Dock’u o ekrana taşır. Anahtar açıkken Dock olduğu yerde kalır ve etkin köşeler çalışmaya devam eder. Dock’u bilerek taşımak için ⌥ tuşunu basılı tutun ve imleci diğer ekranın kenarına doğru itin. İzin gerekmez. **Dock’u geri getir** anahtarı, uykudan sonra veya ekranlar değişince Dock’u kendi ekranına geri götürür. Bu anahtar **Erişilebilirlik** izni gerektirir ve Mac App Store sürümünde yoktur. İki anahtar da varsayılan olarak kapalıdır.
 
@@ -333,7 +333,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).
-- **Dock**: Dock’ta tıklayarak gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
+- **Dock**: Dock’ta tıklayarak küçültme veya gizleme, Dock’u tek ekranda tutma ve Dock’u geri getirme.
 - **Finder**: yeni dosya, küçük kopya, dönüştürme ve arşivler, Return ile açma, ⌘X ile kesme ve ⌫ ile silme.
 - **Uygulamaları Kaldır**: bir uygulamayı dosyalarıyla kaldırın, sonra hepsini geri koyun ve kaldırılan uygulamaların geride bıraktıklarını temizleyin.
 - **Oyunlar**: oyun listeniz ve Oyun Modu seçenekleri.

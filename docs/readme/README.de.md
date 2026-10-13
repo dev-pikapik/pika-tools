@@ -89,7 +89,7 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Per Klick im Dock ausblenden</b>
+<br><b>Per Klick im Dock ablegen</b>
 <br>Klicke auf die App, in der du gerade bist, und sie macht Platz.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
 
-**Mit einem Klick im Dock ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und sie wird ausgeblendet. Ein weiterer Klick holt sie zurück. Standardmäßig aus.
+**Mit einem Klick im Dock ablegen oder ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und alle ihre Fenster wandern ins Dock. Ein weiterer Klick holt sie alle zurück. Du kannst auch einstellen, dass der Klick die ganze App ausblendet, wie ⌘H. Standardmäßig aus.
 
 **Dock auf einem Display halten.** Bei mehreren Displays verschiebt macOS das Dock auf ein anderes Display, sobald der Zeiger gegen dessen unteren Rand drückt, oder gegen den linken oder rechten Rand, wenn das Dock seitlich liegt. Ist die Funktion an, bleibt das Dock, wo es ist, und die aktiven Ecken funktionieren weiter. Um es gezielt zu verschieben, halte ⌥ gedrückt und drücke den Zeiger gegen den Rand des anderen Displays. Dafür ist keine Erlaubnis nötig. **Dock zurückholen** bringt das Dock nach dem Ruhezustand oder wenn sich Displays ändern auf sein Display zurück. Das braucht die Erlaubnis **Bedienungshilfen** und fehlt in der Version aus dem Mac App Store. Beide Schalter sind standardmäßig aus.
 
@@ -333,7 +333,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End.
 - **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
-- **Dock**: Ausblenden per Klick im Dock, Dock auf einem Display halten und Dock zurückholen.
+- **Dock**: Mit einem Klick im Dock ablegen oder ausblenden, Dock auf einem Display halten und Dock zurückholen.
 - **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X und Löschen mit ⌫.
 - **Apps entfernen**: eine App samt Dateien entfernen, alles später zurücklegen und aufräumen, was entfernte Apps hinterlassen haben.
 - **Spiele**: deine Spiele und die Einstellungen des Spielmodus.

@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Un clic en el Dock guarda las ventanas
+
+<sub>1.40.1 · 13 de octubre de 2026</sub>
+
+Haz clic en el icono del Dock de la app con la que trabajas, y todas sus ventanas se minimizan en el Dock. Haz clic otra vez, y vuelven todas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Abre Ajustes › Dock y activa «Minimizar u ocultar con un clic en el Dock». Las ventanas vuelven en el mismo orden, con la que estabas usando encima. Un clic en otra app, mantener pulsado un icono para ver su menú y arrastrar iconos funcionan igual que antes.
+
+¿Prefieres ocultar toda la app, como con ⌘H? Debajo del interruptor, cambia «Un clic en el icono» a «Oculta la app». Si ya ocultabas apps con un clic en el Dock, para ti no cambia nada. El interruptor necesita el permiso «Accesibilidad», no está en la versión de la Mac App Store y viene desactivado por omisión.
+
+---
+
 ## <a id="v1.40.0"></a>El Dock se queda en una sola pantalla
 
 <sub>1.40.0 · 13 de octubre de 2026</sub>

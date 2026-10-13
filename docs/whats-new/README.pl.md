@@ -5,6 +5,20 @@
 
 ---
 
+## <a id="v1.40.1"></a>Jedno kliknięcie w Docku chowa okna
+
+<sub>1.40.1 · 13 października 2026</sub>
+
+Kliknij w Docku ikonę aplikacji, w której pracujesz, a wszystkie jej okna zminimalizują się do Docka. Kliknij ponownie, a wszystkie wrócą.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.40.1/dock-minimize-dark.png"><img src="../media/whats-new/1.40.1/dock-minimize-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Dock i włącz „Minimalizuj lub ukrywaj kliknięciem w Docku”. Okna wracają w tej samej kolejności, a ostatnio używane okno ląduje na wierzchu. Kliknięcie innej aplikacji, przytrzymanie ikony, by otworzyć jej menu, i przeciąganie ikon działają tak jak wcześniej.
+
+Wolisz ukryć całą aplikację, jak skrótem ⌘H? Pod przełącznikiem ustaw „Kliknięcie ikony” na „Ukrywa aplikację”. Jeśli już ukrywasz aplikacje kliknięciem w Docku, nic się dla ciebie nie zmienia. Przełącznik wymaga uprawnienia „Dostępność”, nie ma go w wersji z Mac App Store i domyślnie jest wyłączony.
+
+---
+
 ## <a id="v1.40.0"></a>Dock zostaje na jednym ekranie
 
 <sub>1.40.0 · 13 października 2026</sub>

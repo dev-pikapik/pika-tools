@@ -14,7 +14,7 @@ These features need to look inside other apps, which the App Sandbox does not al
 - Home and End go to the start and end of a line.
 - Green button enlarges the window.
 - Quit when the last window closes (also Protect quitting and closing).
-- Hide with a click in the Dock.
+- Minimize or hide with a click in the Dock.
 - Enter opens files, Cut files and Delete removes files in Finder.
 - Key repeat, pointer shortcuts, Archives in Finder, Animations, Trash watcher, fan control and the built-in updater.
 

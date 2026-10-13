@@ -89,7 +89,7 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-hide-dark.png"><img src="../media/dock-hide-light.png" width="340" alt=""></picture>
-<br><b>Skrytí kliknutím v Docku</b>
+<br><b>Minimalizace kliknutím v Docku</b>
 <br>Klikněte na aplikaci, ve které právě jste, a uhne z cesty.
 </td>
 <td width="50%" valign="top">
@@ -249,7 +249,7 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
-**Skrytí kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a skryje se. Dalším kliknutím ji vrátíte. Ve výchozím stavu vypnuto.
+**Minimalizovat nebo skrýt kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a všechna její okna sjedou do Docku. Dalším kliknutím je všechna vrátíte. Kliknutí můžete nastavit i tak, aby skrylo celou aplikaci, jako ⌘H. Ve výchozím stavu vypnuto.
 
 **Držet Dock na jednom displeji.** Když máte víc displejů, macOS přesune Dock na jiný displej, jakmile ukazatel zatlačí na jeho spodní okraj, případně na levý či pravý okraj, je-li Dock na boku. Po zapnutí zůstane Dock tam, kde je, a aktivní rohy dál fungují. Chcete-li ho přesunout záměrně, podržte ⌥ a zatlačte ukazatelem na okraj druhého displeje. Žádné oprávnění není potřeba. Přepínač **Vracet Dock zpět** vrací Dock po spánku nebo při změně displejů na jeho displej. Vyžaduje oprávnění **Zpřístupnění** a ve verzi z Mac App Store není. Oba přepínače jsou ve výchozím stavu vypnuté.
 
@@ -333,7 +333,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
-- **Dock**: skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
+- **Dock**: minimalizace nebo skrytí kliknutím v Docku, držení Docku na jednom displeji a vracení Docku zpět.
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X a mazání klávesou ⌫.
 - **Odinstalace aplikací**: odebrání aplikace i s jejími soubory, pozdější návrat všeho zpět a úklid zbytků po odebraných aplikacích.
 - **Hry**: seznam vašich her a volby Herního režimu.
