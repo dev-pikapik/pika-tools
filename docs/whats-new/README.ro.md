@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Butonul roșu nu mai oprește arhivele
+
+<sub>1.39.4 · 13 octombrie 2026</sub>
+
+Înainte, după ce fereastra pentru parolă era închisă cu butonul roșu, pikapik nu mai deschidea și nu mai crea arhive până la repornire. Acum problema e rezolvată.
+
+Butonul roșu din fereastra pentru parolă și din cea pentru o arhivă nouă funcționează acum exact ca „Anulează”, iar următoarea arhivă se deschide imediat. Când activați „Parolă” pentru o arhivă nouă, cursorul ajunge direct în câmpul pentru parolă. VoiceOver citește acum butonul de actualizare din Setări › Despre după propriul nume.
+
+---
+
 ## <a id="v1.39.3"></a>Animăluțul trăiește în ritmul tău
 
 <sub>1.39.3 · 13 octombrie 2026</sub>

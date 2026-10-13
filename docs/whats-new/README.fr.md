@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>Le bouton rouge n’arrête plus les archives
+
+<sub>1.39.4 · 13 octobre 2026</sub>
+
+Auparavant, si vous fermiez la fenêtre du mot de passe avec le bouton rouge, pikapik n’ouvrait et ne créait plus d’archives jusqu’à son redémarrage. C’est corrigé.
+
+Le bouton rouge de la fenêtre du mot de passe et de celle d’une nouvelle archive fonctionne désormais exactement comme « Annuler », et l’archive suivante s’ouvre aussitôt. Quand vous activez « Mot de passe » pour une nouvelle archive, le curseur se place directement dans le champ du mot de passe. VoiceOver lit maintenant le bouton de mise à jour dans Réglages › À propos sous son propre nom.
+
+---
+
 ## <a id="v1.39.3"></a>Votre compagnon vit à votre rythme
 
 <sub>1.39.3 · 13 octobre 2026</sub>

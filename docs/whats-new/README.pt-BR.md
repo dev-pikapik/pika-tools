@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>O botão vermelho não trava mais os arquivos compactados
+
+<sub>1.39.4 · 13 de outubro de 2026</sub>
+
+Antes, se você fechasse a janela da senha pelo botão vermelho, o pikapik parava de abrir e criar arquivos compactados até ser reiniciado. Isso foi corrigido.
+
+Agora o botão vermelho na janela da senha e na janela de um novo arquivo compactado funciona exatamente como “Cancelar”, e o próximo arquivo abre na hora. Ao ativar “Senha” para um novo arquivo compactado, o cursor já vai para o campo da senha. O VoiceOver agora lê o botão de atualização em Ajustes › Sobre pelo próprio nome.
+
+---
+
 ## <a id="v1.39.3"></a>Seu bichinho segue o seu ritmo
 
 <sub>1.39.3 · 13 de outubro de 2026</sub>

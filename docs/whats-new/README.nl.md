@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.39.4"></a>De rode knop houdt archieven niet meer tegen
+
+<sub>1.39.4 · 13 oktober 2026</sub>
+
+Als je het wachtwoordvenster met de rode knop sloot, opende en maakte pikapik tot een herstart geen archieven meer. Dat is opgelost.
+
+De rode knop in het wachtwoordvenster en in het venster voor een nieuw archief werkt nu precies zoals ‘Annuleer’, en het volgende archief gaat meteen open. Zet je ‘Wachtwoord’ aan voor een nieuw archief, dan staat de cursor meteen in het wachtwoordveld. VoiceOver leest de updateknop in Instellingen › Over nu voor met zijn eigen naam.
+
+---
+
 ## <a id="v1.39.3"></a>Je huisdiertje leeft op jouw ritme
 
 <sub>1.39.3 · 13 oktober 2026</sub>
