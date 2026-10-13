@@ -2,7 +2,7 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.41.0] - Unreleased
+## [1.41.0] - 2026-10-13
 
 ### Added
 - Battery: a new Battery page in Settings, only on a Mac with a battery. It shows the charge with a drawn battery, how long until it is full or how long it will last, or that charging is on hold; the battery’s condition (Normal or Service Recommended, with a link to get service); its maximum capacity compared with when it was new; the cycle count, out of the 1,000 it is designed for; the power adapter and its watts; and the watts going into the battery while it charges, or what your Mac uses on battery. It also gives tips to make the battery last: Charge Limit on macOS 26.4 or newer with Apple silicon, or Optimized Battery Charging, each with a button that opens macOS Battery settings; keep the Mac between 10 and 35 °C; and store it at about 50% and shut it down. The page only shows information and never changes how your Mac charges. The charge limit stays in macOS Battery settings.
@@ -808,6 +808,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.41.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.41.0
 [1.40.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.40.2
 [1.40.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.40.1
 [1.40.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.40.0
