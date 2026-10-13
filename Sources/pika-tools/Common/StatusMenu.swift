@@ -51,12 +51,16 @@ import AppKit
 
     @available(macOS 27, *)
     private static func togglePanel(from button: NSStatusBarButton) -> Bool {
-        let request = NSSelectorFromString("_requestExpandedInterfaceSession")
+        let request = NSSelectorFromString("_requestExpandedInterfaceSession"), cancel = NSSelectorFromString("cancel")
         guard button.action == nil, let window = button.window, window.responds(to: NSSelectorFromString("statusItem")),
-              let item = window.value(forKey: "statusItem") as? NSStatusItem, item.button === button,
-              item.expandedInterfaceDelegate != nil, item.responds(to: request)
+              let item = window.value(forKey: "statusItem") as? NSStatusItem, item.button === button, item.responds(to: request),
+              ["expandedInterfaceDelegate", "expandedInterfaceSession"].allSatisfy({ item.responds(to: NSSelectorFromString($0)) }),
+              item.value(forKey: "expandedInterfaceDelegate") != nil
         else { return false }
-        if let session = item.expandedInterfaceSession { session.cancel() } else { item.perform(request) }
+        if let session = item.value(forKey: "expandedInterfaceSession") as? NSObject {
+            guard session.responds(to: cancel) else { return false }
+            session.perform(cancel)
+        } else { item.perform(request) }
         return true
     }
     #endif
