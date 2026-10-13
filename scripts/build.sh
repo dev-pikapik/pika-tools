@@ -36,7 +36,7 @@ if [ -n "${APPSTORE:-}" ]; then
     for f in "${SOURCES[@]}"; do
         case $f in
             */Tools/Uninstaller/AppFootprint.swift) KEPT+=("$f") ;;
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Uninstaller/*|*/Tools/Archive/*) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Windows/DockDisplay*|*/Tools/Uninstaller/*|*/Tools/Archive/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done

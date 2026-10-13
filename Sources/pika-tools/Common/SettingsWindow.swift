@@ -78,7 +78,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         if self == .battery { return Battery.isPresent }
         if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
-        return ![.fans, .uninstaller].contains(self)
+        return ![.fans, .uninstaller, .dock].contains(self)
         #else
         return true
         #endif
@@ -198,6 +198,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .dock, title: String(localized: "Minimize or hide with a click in the Dock"), synonyms: "Dock, minimize, hide, taskbar"),
             SettingsItem(tab: .dock, title: String(localized: "A click on the icon"), synonyms: "Dock, minimize, hide, taskbar"),
             SettingsItem(tab: .dock, title: String(localized: "Keep the Dock on one display"), synonyms: "Dock, display, monitor, screen, jump, move"),
+            SettingsItem(tab: .dock, title: String(localized: "Main display"), synonyms: "primary, main screen, Displays settings"),
             SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop"),
             SettingsItem(tab: .finder, title: String(localized: "Smaller Copy in Finder"), synonyms: "compress, shrink, smaller, reduce size, optimize, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF, TinyPNG"),
             SettingsItem(tab: .finder, title: String(localized: "Convert in Finder"), synonyms: "convert, format, export, save as, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF"),
@@ -407,7 +408,7 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
                     #else
                     Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif
@@ -528,11 +529,7 @@ private struct SettingsView: View {
                 text: String(localized: "Fixes for windows and quitting apps"),
                 headings: ["window-zoom": "Size", "quit-on-close": "Closing and Quitting"]
             )
-        #if APPSTORE
-        case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
-        #else
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "Fixes for the Dock"))
-        #endif
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
         case .animations:
             #if APPSTORE
@@ -1009,8 +1006,7 @@ private struct ToolsSettings: View {
     }
 }
 
-#if APPSTORE
-private struct SystemSettingsRow: View {
+struct SystemSettingsRow: View {
     let title: String
     let subtitle: Text
     let url: URL
@@ -1025,6 +1021,7 @@ private struct SystemSettingsRow: View {
     }
 }
 
+#if APPSTORE
 private struct AnimationLinksPage: View {
     private static let desktop = URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!
     private static let motion = URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?Seeing_Display")!

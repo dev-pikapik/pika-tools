@@ -227,7 +227,7 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Giữ Dock trên một màn hình</b>
-<br>Dock không còn nhảy sang màn hình khác. Giữ ⌥ để chủ động di chuyển.
+<br>Dock không còn nhảy sang màn hình khác. Để di chuyển, hãy đặt màn hình khác làm màn hình chính.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Một số ứng dụng và trò chơi đếm thao tác cuộn bằng pixel chí
 
 **Thu nhỏ hoặc ẩn bằng một lần bấm trong Dock.** Bấm vào biểu tượng trong Dock của ứng dụng bạn đang dùng, mọi cửa sổ của ứng dụng sẽ thu xuống Dock. Bấm lần nữa để hiện lại tất cả. Bạn cũng có thể chọn để lần bấm ẩn cả ứng dụng, giống như ⌘H. Tắt theo mặc định.
 
-**Giữ Dock trên một màn hình.** Khi có nhiều màn hình, macOS chuyển Dock sang màn hình khác ngay khi con trỏ đẩy vào cạnh dưới của màn hình đó, hoặc cạnh trái hay cạnh phải nếu Dock nằm ở bên cạnh. Khi bật công tắc này, Dock ở nguyên chỗ cũ và các góc nóng vẫn hoạt động bình thường. Để chủ động di chuyển Dock, hãy giữ ⌥ và đẩy con trỏ vào cạnh của màn hình kia. Không cần cấp quyền nào. Công tắc **Đưa Dock trở lại** đưa Dock về màn hình của nó sau khi ngủ hoặc khi màn hình thay đổi. Công tắc này cần quyền **Trợ năng** và không có trong phiên bản Mac App Store. Cả hai công tắc đều tắt theo mặc định.
+**Giữ Dock trên một màn hình.** Khi có nhiều màn hình, macOS chuyển Dock sang màn hình khác ngay khi con trỏ đẩy vào cạnh dưới của màn hình đó. Khi bật công tắc này, điều đó không còn xảy ra nữa, dù bạn di chuyển con trỏ nhanh đến đâu: pikapik tắt việc chuyển này bằng chính cài đặt của Dock và không bao giờ đụng đến con trỏ. Để chủ động di chuyển Dock, hãy đặt màn hình khác làm màn hình chính: trong **Cài đặt hệ thống › Màn hình**, bấm vào màn hình đó rồi chọn **Màn hình chính** trong **Dùng làm**, và Dock sẽ chuyển theo. Hàng **Màn hình chính** bên dưới công tắc mở trang này. Dock chỉ đọc cài đặt của nó khi khởi động, nên khi bật hoặc tắt công tắc, Dock sẽ khởi động lại một lần. Không cần cấp quyền nào. Công tắc này tắt theo mặc định và không có trong phiên bản Mac App Store.
 
 **Nút xanh lá phóng to cửa sổ.** Bấm vào nút xanh lá của cửa sổ, cửa sổ sẽ lấp đầy màn hình mà không vào chế độ toàn màn hình. Bấm lần nữa để trở lại kích thước cũ. Giữ ⌥ thì nút hoạt động như bình thường. Chế độ toàn màn hình vẫn có trong menu của nút và ở ⌃⌘F. Bạn có thể lập danh sách các ứng dụng mà nút xanh lá cần hoạt động như bình thường. Tắt theo mặc định.
 

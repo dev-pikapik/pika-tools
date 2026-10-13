@@ -119,7 +119,6 @@
 "Finder" = "Finder";
 "Size" = "Velikost";
 "Closing and Quitting" = "Zavírání a ukončení";
-"A fix for the Dock." = "Oprava pro Dock.";
 "Protect quitting and closing" = "Chránit ukončení a zavření";
 "Quit and close need one more key" = "Ukončení a zavření chtějí ještě jednu klávesu";
 "Quit app" = "Ukončit aplikaci";
@@ -138,10 +137,11 @@
 "close button, red button, terminate, exit" = "zavírací tlačítko, červené tlačítko, ukončení, terminate, exit";
 "exceptions, exclude, list" = "výjimky, vyloučit, seznam";
 "Keep the Dock on one display" = "Držet Dock na jednom displeji";
-"Hold ⌥ to move it on purpose" = "Chcete-li ho přesunout, podržte ⌥";
-"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "Dock zůstane na displeji, na kterém je teď, i když ukazatel dojede k okraji jiného displeje. Chcete-li ho přesunout, podržte ⌥ a zatlačte ukazatelem na okraj druhého displeje.";
-"Bring the Dock back" = "Vracet Dock zpět";
-"After sleep or when displays change" = "Po spánku nebo změně displejů";
+"To move it, make another display the main one" = "Chcete-li ho přesunout, nastavte jako hlavní jiný displej";
+"The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock už nepřeskakuje na jiný displej, když ukazatel dojede k jeho spodnímu okraji, ať s ním pohybujete jakkoli rychle. Chcete-li Dock přesunout, nastavte jako hlavní jiný displej. Zapnutím nebo vypnutím se Dock restartuje.";
+"Main display" = "Hlavní monitor";
+"Click the display you want, then choose “Main display” in “Use as”" = "Klikněte na požadovaný displej a v nabídce „Používat jako“ vyberte „Hlavní monitor“";
+"primary, main screen, Displays settings" = "primární, hlavní obrazovka, nastavení Monitory";
 "Fixes for the Dock" = "Opravy pro Dock";
 "Dock, display, monitor, screen, jump, move" = "Dock, displej, monitor, obrazovka, skáče, přeskakuje, přesunout";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klikněte na ikonu aplikace, kterou právě používáte, a skryje se. Dalším kliknutím ji vrátíte.";

@@ -227,7 +227,7 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock’u tek ekranda tut</b>
-<br>Dock artık başka bir ekrana atlamaz. Bilerek taşımak için ⌥ tuşunu basılı tutun.
+<br>Dock artık başka bir ekrana atlamaz. Taşımak için başka bir ekranı ana ekran yapın.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Bazı uygulama ve oyunlar kaydırmayı tam piksel olarak sayar: onlar için ayn�
 
 **Dock’ta tıklayarak küçült veya gizle.** Kullandığınız uygulamanın Dock simgesine tıklayın, uygulamanın tüm pencereleri Dock’a iner. Hepsini geri getirmek için yeniden tıklayın. Tıklamanın ⌘H gibi uygulamanın tamamını gizlemesini de sağlayabilirsiniz. Varsayılan olarak kapalıdır.
 
-**Dock’u tek ekranda tut.** Birden fazla ekran varken imleç başka bir ekranın alt kenarına (Dock yandaysa sol ya da sağ kenarına) dayandığı anda macOS Dock’u o ekrana taşır. Anahtar açıkken Dock olduğu yerde kalır ve etkin köşeler çalışmaya devam eder. Dock’u bilerek taşımak için ⌥ tuşunu basılı tutun ve imleci diğer ekranın kenarına doğru itin. İzin gerekmez. **Dock’u geri getir** anahtarı, uykudan sonra veya ekranlar değişince Dock’u kendi ekranına geri götürür. Bu anahtar **Erişilebilirlik** izni gerektirir ve Mac App Store sürümünde yoktur. İki anahtar da varsayılan olarak kapalıdır.
+**Dock’u tek ekranda tut.** Birden fazla ekran varken imleç başka bir ekranın alt kenarına dayandığı anda macOS Dock’u o ekrana taşır. Anahtar açıkken imleci ne kadar hızlı hareket ettirirseniz ettirin bu artık olmaz: pikapik bu taşımayı Dock’un kendi ayarıyla kapatır ve imlece asla dokunmaz. Dock’u bilerek taşımak için başka bir ekranı ana ekran yapın: **Sistem Ayarları › Ekranlar** bölümünde o ekranı tıklayın ve **Şöyle Kullan** menüsünden **Ana ekran** seçeneğini seçin, Dock da onunla birlikte gider. Anahtarın altındaki **Ana ekran** satırı bu sayfayı açar. Dock ayarını yalnızca başlarken okur, bu yüzden anahtarı açmak ya da kapatmak Dock’u bir kez yeniden başlatır. İzin gerekmez. Bu anahtar varsayılan olarak kapalıdır ve Mac App Store sürümünde yoktur.
 
 **Yeşil düğme pencereyi büyütür.** Bir pencerenin yeşil düğmesine tıklayın; pencere tam ekrana geçmeden ekranı doldurur. Önceki boyuta dönmek için yeniden tıklayın. ⌥ tuşunu basılı tutarsanız düğme her zamanki gibi çalışır. Tam ekran, düğmenin menüsünde ve ⌃⌘F ile kullanılabilir kalır. Yeşil düğmenin her zamanki gibi çalışacağı uygulamaları listeleyebilirsiniz. Varsayılan olarak kapalıdır.
 

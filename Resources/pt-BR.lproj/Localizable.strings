@@ -119,7 +119,6 @@
 "Finder" = "Finder";
 "Size" = "Tamanho";
 "Closing and Quitting" = "Fechar e sair";
-"A fix for the Dock." = "Um ajuste para o Dock.";
 "Protect quitting and closing" = "Proteger sair e fechar";
 "Quit and close need one more key" = "Sair e fechar pedem mais uma tecla";
 "Quit app" = "Encerrar app";
@@ -138,10 +137,11 @@
 "close button, red button, terminate, exit" = "botão fechar, botão vermelho, terminar, sair";
 "exceptions, exclude, list" = "exceções, excluir, lista";
 "Keep the Dock on one display" = "Manter o Dock em uma só tela";
-"Hold ⌥ to move it on purpose" = "Mantenha ⌥ pressionada para movê-lo de propósito";
-"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "O Dock fica na tela em que está agora, mesmo quando o ponteiro chega à borda de outra tela. Para movê-lo, mantenha ⌥ pressionada e empurre o ponteiro contra a borda da outra tela.";
-"Bring the Dock back" = "Trazer o Dock de volta";
-"After sleep or when displays change" = "Após o repouso ou quando as telas mudam";
+"To move it, make another display the main one" = "Para movê-lo, torne outra tela a principal";
+"The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "O Dock não pula mais para outra tela quando o ponteiro chega à borda inferior dela, por mais rápido que você o mova. Para mover o Dock, torne outra tela a principal. Ativar ou desativar esta opção reinicia o Dock.";
+"Main display" = "Tela principal";
+"Click the display you want, then choose “Main display” in “Use as”" = "Clique na tela desejada e escolha “Tela principal” em “Usar como”";
+"primary, main screen, Displays settings" = "primária, monitor principal, ajustes de Telas";
 "Fixes for the Dock" = "Ajustes para o Dock";
 "Dock, display, monitor, screen, jump, move" = "Dock, tela, monitor, pular, pula, mover";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Clique no ícone do app em uso para ocultá-lo. Outro clique o traz de volta.";

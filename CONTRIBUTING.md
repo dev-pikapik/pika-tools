@@ -63,6 +63,12 @@ Quit on last window uses an `AXObserver` per regular app: it tracks standard win
 
 Hide with a Dock click is a `CGEventTap` on the left mouse button. On a plain click it asks the Dock for the element under the pointer with `AXUIElementCopyElementAtPosition`. If that is the icon of the frontmost app and the app has a visible window, the click is dropped and the app hides. Otherwise the click goes to the Dock as usual.
 
+Keep the Dock on one display sets the Dock’s own `allow-display-switching` key in `com.apple.dock` to false, so the Dock stops following the pointer to another display. A missing key counts as true. The Dock reads the key only when it starts, so pikapik restarts the Dock, and only when the value really changes. pikapik remembers what the key was, so turning the switch off and `--uninstall` put back exactly that, or delete the key if there was none, and at launch the key is brought in line with the switch. The Mac App Store version can’t change the Dock’s settings and doesn’t have this switch. What to write and whether to restart is decided in `DockDisplaySwitch`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockDisplaySwitch.swift scripts/test-dock-display.swift -o build/test-dock-display && build/test-dock-display
+```
+
 The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
 
 ```bash

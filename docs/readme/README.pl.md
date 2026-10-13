@@ -227,7 +227,7 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Trzymaj Dock na jednym ekranie</b>
-<br>Dock nie skacze już na inny ekran. Przytrzymaj ⌥, aby celowo go przenieść.
+<br>Dock nie skacze już na inny ekran. Aby go przenieść, ustaw inny ekran jako główny.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 
 **Minimalizuj lub ukrywaj kliknięciem w Docku.** Kliknij ikonę w Docku aplikacji, której używasz, a wszystkie jej okna trafią do Docka. Kliknij ponownie, aby przywrócić je wszystkie. Możesz też sprawić, by kliknięcie ukrywało całą aplikację, jak ⌘H. Domyślnie wyłączone.
 
-**Trzymaj Dock na jednym ekranie.** Przy kilku ekranach macOS przenosi Dock na inny ekran, gdy tylko wskaźnik zacznie napierać na dolną krawędź tego ekranu, albo na lewą lub prawą, jeśli Dock jest z boku. Gdy przełącznik jest włączony, Dock zostaje tam, gdzie jest, a aktywne rogi dalej działają. Aby przenieść go celowo, przytrzymaj ⌥ i dociśnij wskaźnik do krawędzi drugiego ekranu. Nie są potrzebne żadne uprawnienia. Przełącznik **Przywracaj Dock** odsyła Dock na jego ekran po uśpieniu lub zmianie ekranów. Wymaga uprawnienia **Dostępność** i nie ma go w wersji z Mac App Store. Oba przełączniki są domyślnie wyłączone.
+**Trzymaj Dock na jednym ekranie.** Przy kilku ekranach macOS przenosi Dock na inny ekran, gdy tylko wskaźnik zacznie napierać na dolną krawędź tego ekranu. Gdy przełącznik jest włączony, to się już nie dzieje, niezależnie od tego, jak szybko przesuwasz wskaźnik: pikapik wyłącza przenoszenie własnym ustawieniem Docka i nigdy nie dotyka wskaźnika. Aby celowo przenieść Dock, ustaw inny ekran jako główny: w **Ustawieniach systemowych › Wyświetlacze** kliknij ten ekran i w menu **Używaj jako** wybierz **Wyświetlacz główny**, a Dock przeniesie się razem z nim. Wiersz **Wyświetlacz główny** pod przełącznikiem otwiera tę stronę. Dock odczytuje swoje ustawienie tylko przy uruchomieniu, więc po włączeniu lub wyłączeniu przełącznika raz uruchamia się ponownie. Nie są potrzebne żadne uprawnienia. Przełącznik jest domyślnie wyłączony i nie ma go w wersji z Mac App Store.
 
 **Zielony przycisk powiększa okno.** Kliknij zielony przycisk okna, a okno wypełni ekran, nie przechodząc w pełny ekran. Kliknij ponownie, aby wrócić do poprzedniego rozmiaru. Przytrzymaj ⌥, a przycisk zadziała jak zawsze. Pełny ekran nadal jest w menu przycisku i pod ⌃⌘F. Możesz wypisać aplikacje, w których zielony przycisk ma działać jak zwykle. Domyślnie wyłączone.
 

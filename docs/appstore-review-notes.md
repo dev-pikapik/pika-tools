@@ -8,7 +8,7 @@ pikapik is a free menu-bar app that fixes small everyday Mac annoyances. It is f
 
 3. Setup and main features
 No account or sample files are needed; any photo or video works for Finder tools. Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch. Only the Pet is on by default; Fix Wrong Keyboard Layout has no switch.
-- Keep Awake, Speed Test, Temperature (thermal state), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Keep the Dock on one display (two displays).
+- Keep Awake, Speed Test, Temperature (thermal state), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app).
 - Ports: which app holds which port; pikapik quits nothing. Background Tasks: what starts in the background; view only.
 - Animations, pointer acceleration, Left by deleted apps: buttons only open System Settings.
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (meant as "привет"), then Services > Fix Wrong Keyboard Layout.
@@ -81,9 +81,6 @@ Settings > Sound, macOS 14.2 and later (hidden on 14.0 and 14.1), off by default
 ### Fix Wrong Keyboard Layout
 Settings > Keyboard; it has no switch and needs no permission. Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu. The standard macOS Services mechanism (NSServices in Info.plist) passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. pikapik does not type, paste or watch typing.
 
-### Keep the Dock on one display
-Settings > Dock; it matters only with two or more displays. macOS moves the Dock to another display when the pointer pushes against that display's bottom edge. While the tool is on, the app follows only the pointer position with an NSEvent mouse monitor, which needs no permission, and at that edge moves the pointer back a few points with CGWarpMouseCursorPosition, so the Dock stays. With ⌥ held the Dock moves as usual. Apart from checking whether ⌥ is held (NSEvent.modifierFlags), no key or click is read or sent.
-
 ### Mouse button hides the current app
 Settings > Mouse. Turn it on, then press a mouse button over the Settings window to choose it, for example the middle one. That button then hides the front app with NSRunningApplication.hide(), the same as ⌘H; no keystroke is sent. Accessibility is needed because the chosen button's click is held back, so the app under the pointer doesn't get it too.
 
@@ -119,7 +116,7 @@ These features need to look inside other apps' windows, type into or control oth
 - Changing pointer acceleration, animations and leftover permissions directly. The App Store version has the buttons to System Settings instead.
 - Quitting the program that holds a port, from Ports.
 - Turning background tasks off and on directly, from Background Tasks.
-- Bring the Dock back, in Keep the Dock on one display.
+- Keep the Dock on one display.
 - Temperature sensor readings.
 - Keep Awake with the lid closed, and Turn off the display now.
 - The pet finding the Dock icons through Accessibility.

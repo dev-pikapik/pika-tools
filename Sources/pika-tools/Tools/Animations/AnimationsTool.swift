@@ -142,7 +142,7 @@ final class AnimationsTool: Tool {
         if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
     }
 
-    private func restartDock() {
+    func restartDock() {
         dockRestart?.cancel()
         let work = DispatchWorkItem { Self.killall("Dock") }
         dockRestart = work
@@ -164,7 +164,7 @@ final class AnimationsTool: Tool {
         return Dictionary(uniqueKeysWithValues: saved.compactMap { key, value in AnimationSetting(rawValue: key).map { ($0, value) } })
     }
 
-    private static func killall(_ name: String, wait: Bool = false) {
+    static func killall(_ name: String, wait: Bool = false) {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/killall")
         process.arguments = [name]

@@ -227,7 +227,7 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Manter o Dock em uma só tela</b>
-<br>O Dock não pula mais para outra tela. Mantenha ⌥ pressionada para movê-lo de propósito.
+<br>O Dock não pula mais para outra tela. Para movê-lo, torne outra tela a principal.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 
 **Minimizar ou ocultar com um clique no Dock.** Clique no ícone do Dock do app que você está usando e todas as janelas dele descem para o Dock. Clique de novo para trazer todas de volta. Você também pode fazer o clique ocultar o app inteiro, como ⌘H. Desativado por padrão.
 
-**Manter o Dock em uma só tela.** Com várias telas, o macOS move o Dock para outra tela assim que o ponteiro empurra a borda inferior dela, ou a borda esquerda ou direita, se o Dock estiver na lateral. Com a chave ligada, o Dock fica onde está e os cantos ativos continuam funcionando. Para movê-lo de propósito, mantenha ⌥ pressionada e empurre o ponteiro contra a borda da outra tela. Não é preciso nenhuma permissão. **Trazer o Dock de volta** devolve o Dock à tela dele depois do repouso ou quando as telas mudam. Essa chave precisa da permissão **Acessibilidade** e não está na versão da Mac App Store. As duas chaves vêm desativadas por padrão.
+**Manter o Dock em uma só tela.** Com várias telas, o macOS move o Dock para outra tela assim que o ponteiro empurra a borda inferior dela. Com a chave ligada, isso não acontece mais, por mais rápido que você mova o ponteiro: o pikapik desativa essa mudança com um ajuste do próprio Dock e nunca mexe no ponteiro. Para mover o Dock de propósito, torne outra tela a principal: em **Ajustes do Sistema › Telas**, clique nessa tela e escolha **Tela principal** em **Usar como**, e o Dock vai junto. A linha **Tela principal** abaixo da chave abre essa página. O Dock só lê o ajuste dele ao iniciar, por isso ligar ou desligar a chave reinicia o Dock uma vez. Não é preciso nenhuma permissão. A chave vem desativada por padrão e não está na versão da Mac App Store.
 
 **O botão verde amplia a janela.** Clique no botão verde de uma janela e ela cresce até ocupar a tela, sem entrar em tela inteira. Clique de novo para voltar ao tamanho anterior. Segure ⌥ e o botão funciona como sempre. A tela inteira continua no menu do botão e em ⌃⌘F. Você pode listar os apps em que o botão verde deve funcionar como sempre. Desativado por padrão.
 

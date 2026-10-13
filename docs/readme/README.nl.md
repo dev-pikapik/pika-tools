@@ -227,7 +227,7 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Houd het Dock op één scherm</b>
-<br>Het Dock springt niet meer naar een ander scherm. Houd ⌥ ingedrukt om het bewust te verplaatsen.
+<br>Het Dock springt niet meer naar een ander scherm. Maak een ander scherm het hoofdbeeldscherm om het te verplaatsen.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Sommige apps en games tellen scrollen in exacte pixels: zet daarvoor dezelfde in
 
 **Minimaliseer of verberg met een klik in het Dock.** Klik in het Dock op het symbool van de app waarin je werkt, en al zijn vensters gaan naar het Dock. Klik nog eens om ze allemaal terug te halen. Je kunt de klik ook de hele app laten verbergen, zoals ⌘H. Standaard uit.
 
-**Houd het Dock op één scherm.** Bij meerdere schermen verplaatst macOS het Dock naar een ander scherm zodra de aanwijzer tegen de onderrand van dat scherm duwt, of tegen de linker- of rechterrand als het Dock aan de zijkant staat. Staat de schakelaar aan, dan blijft het Dock waar het is en blijven actieve hoeken gewoon werken. Wil je het bewust verplaatsen, houd dan ⌥ ingedrukt en duw de aanwijzer tegen de rand van het andere scherm. Daarvoor is geen toestemming nodig. **Haal het Dock terug** zet het Dock na de sluimerstand of als schermen veranderen terug op zijn eigen scherm. Die schakelaar heeft de toestemming **Toegankelijkheid** nodig en zit niet in de versie uit de Mac App Store. Beide schakelaars staan standaard uit.
+**Houd het Dock op één scherm.** Bij meerdere schermen verplaatst macOS het Dock naar een ander scherm zodra de aanwijzer tegen de onderrand van dat scherm duwt. Staat de schakelaar aan, dan gebeurt dat niet meer, hoe snel je de aanwijzer ook beweegt: pikapik zet het verplaatsen uit met de eigen instelling van het Dock en komt nooit aan de aanwijzer. Wil je het Dock bewust verplaatsen, maak dan een ander scherm het hoofdbeeldscherm: klik in **Systeeminstellingen › Beeldschermen** op dat scherm en kies **Hoofdbeeldscherm** bij **Gebruik als**, en het Dock gaat mee. De regel **Hoofdbeeldscherm** onder de schakelaar opent die pagina. Het Dock leest zijn instelling alleen bij het opstarten, dus als je de schakelaar aan- of uitzet, start het Dock één keer opnieuw. Er is geen toestemming nodig. De schakelaar staat standaard uit en zit niet in de versie uit de Mac App Store.
 
 **Groene knop vergroot het venster.** Klik op de groene knop van een venster en het vult het scherm, zonder naar volledig scherm te gaan. Klik nogmaals om de vorige grootte terug te krijgen. Houd ⌥ ingedrukt en de knop werkt zoals altijd. Volledig scherm blijft beschikbaar in het menu van de knop en met ⌃⌘F. Je kunt apps opgeven waarin de groene knop gewoon moet blijven werken. Standaard uit.
 

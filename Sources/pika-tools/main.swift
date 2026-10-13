@@ -6,6 +6,7 @@ if CommandLine.arguments.contains("--uninstall") {
     #if !APPSTORE
     AnimationsTool.uninstall()
     KeyRepeatTool.uninstall()
+    DockDisplayTool.uninstall()
     #endif
     DockEdges.restore()
     HotKeyTrace().restore()

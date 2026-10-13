@@ -227,7 +227,7 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Dock auf einem Display halten</b>
-<br>Das Dock springt nicht mehr auf ein anderes Display. Mit gedrückter ⌥-Taste verschiebst du es gezielt.
+<br>Das Dock springt nicht mehr auf ein anderes Display. Um es zu verschieben, mach ein anderes Display zum Hauptbildschirm.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 
 **Mit einem Klick im Dock ablegen oder ausblenden.** Klicke im Dock auf das Symbol der App, in der du gerade arbeitest, und alle ihre Fenster wandern ins Dock. Ein weiterer Klick holt sie alle zurück. Du kannst auch einstellen, dass der Klick die ganze App ausblendet, wie ⌘H. Standardmäßig aus.
 
-**Dock auf einem Display halten.** Bei mehreren Displays verschiebt macOS das Dock auf ein anderes Display, sobald der Zeiger gegen dessen unteren Rand drückt, oder gegen den linken oder rechten Rand, wenn das Dock seitlich liegt. Ist die Funktion an, bleibt das Dock, wo es ist, und die aktiven Ecken funktionieren weiter. Um es gezielt zu verschieben, halte ⌥ gedrückt und drücke den Zeiger gegen den Rand des anderen Displays. Dafür ist keine Erlaubnis nötig. **Dock zurückholen** bringt das Dock nach dem Ruhezustand oder wenn sich Displays ändern auf sein Display zurück. Das braucht die Erlaubnis **Bedienungshilfen** und fehlt in der Version aus dem Mac App Store. Beide Schalter sind standardmäßig aus.
+**Dock auf einem Display halten.** Bei mehreren Displays verschiebt macOS das Dock auf ein anderes Display, sobald der Zeiger gegen dessen unteren Rand drückt. Ist die Funktion an, passiert das nicht mehr, egal wie schnell du den Zeiger bewegst: pikapik schaltet das Verschieben mit der eigenen Einstellung des Docks ab und rührt den Zeiger nie an. Um das Dock gezielt zu verschieben, mach ein anderes Display zum Hauptbildschirm: Klicke unter **Systemeinstellungen › Displays** auf dieses Display und wähle bei **Verwenden als** die Option **Hauptbildschirm**, dann zieht das Dock mit. Die Zeile **Hauptbildschirm** unter dem Schalter öffnet diese Seite. Das Dock liest seine Einstellung nur beim Start, deshalb startet es einmal neu, wenn du den Schalter ein- oder ausschaltest. Eine Erlaubnis ist nicht nötig. Der Schalter ist standardmäßig aus und fehlt in der Version aus dem Mac App Store.
 
 **Grüner Knopf vergrößert das Fenster.** Klicke auf den grünen Knopf eines Fensters, und es füllt den Bildschirm, ohne in den Vollbildmodus zu wechseln. Noch ein Klick bringt die vorherige Größe zurück. Halte ⌥ gedrückt, dann funktioniert der Knopf wie immer. Vollbild bleibt im Menü des Knopfs und auf ⌃⌘F. Du kannst Apps auflisten, in denen der grüne Knopf wie gewohnt funktionieren soll. Standardmäßig aus.
 

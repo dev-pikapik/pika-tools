@@ -227,7 +227,7 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
 <br><b>Držet Dock na jednom displeji</b>
-<br>Dock už neskáče na jiný displej. Podržením ⌥ ho přesunete záměrně.
+<br>Dock už neskáče na jiný displej. Chcete-li ho přesunout, nastavte jako hlavní jiný displej.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
@@ -310,7 +310,7 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 
 **Minimalizovat nebo skrýt kliknutím v Docku.** Klikněte v Docku na ikonu aplikace, se kterou právě pracujete, a všechna její okna sjedou do Docku. Dalším kliknutím je všechna vrátíte. Kliknutí můžete nastavit i tak, aby skrylo celou aplikaci, jako ⌘H. Ve výchozím stavu vypnuto.
 
-**Držet Dock na jednom displeji.** Když máte víc displejů, macOS přesune Dock na jiný displej, jakmile ukazatel zatlačí na jeho spodní okraj, případně na levý či pravý okraj, je-li Dock na boku. Po zapnutí zůstane Dock tam, kde je, a aktivní rohy dál fungují. Chcete-li ho přesunout záměrně, podržte ⌥ a zatlačte ukazatelem na okraj druhého displeje. Žádné oprávnění není potřeba. Přepínač **Vracet Dock zpět** vrací Dock po spánku nebo při změně displejů na jeho displej. Vyžaduje oprávnění **Zpřístupnění** a ve verzi z Mac App Store není. Oba přepínače jsou ve výchozím stavu vypnuté.
+**Držet Dock na jednom displeji.** Když máte víc displejů, macOS přesune Dock na jiný displej, jakmile ukazatel zatlačí na jeho spodní okraj. Po zapnutí se to už neděje, ať ukazatelem pohybujete jakkoli rychle: pikapik přesouvání vypíná vlastním nastavením Docku a ukazatele se nikdy nedotýká. Chcete-li Dock přesunout záměrně, nastavte jako hlavní jiný displej: v **Nastavení systému › Monitory** klikněte na ten displej a v nabídce **Používat jako** vyberte **Hlavní monitor**. Dock se pak přesune s ním. Řádek **Hlavní monitor** pod přepínačem otevře tuto stránku. Dock své nastavení načítá jen při spuštění, takže se při zapnutí nebo vypnutí přepínače jednou restartuje. Žádné oprávnění není potřeba. Přepínač je ve výchozím stavu vypnutý a ve verzi z Mac App Store není.
 
 **Zelené tlačítko zvětší okno.** Klikněte na zelené tlačítko okna a okno se zvětší tak, aby vyplnilo obrazovku, aniž by přešlo do režimu celé obrazovky. Dalším kliknutím se vrátí původní velikost. S podrženým ⌥ tlačítko funguje jako vždy. Celá obrazovka zůstává v nabídce tlačítka a na ⌃⌘F. Můžete sestavit seznam aplikací, ve kterých má zelené tlačítko fungovat jako obvykle. Ve výchozím stavu vypnuto.
 

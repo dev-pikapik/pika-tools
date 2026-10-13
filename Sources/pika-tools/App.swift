@@ -96,7 +96,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         FinderRestart.shared.check()
         FinderExtension.refreshFinderRecord()
         defaults.set(true, forKey: "launchedBefore")
-        ["double-space", "double-space-interval"].forEach(defaults.removeObject)
+        ["double-space", "double-space-interval", "dock-display-anchor", "dock-display-return"].forEach(defaults.removeObject)
         for id in ["app-volume", "archive", "convert", "desktop-icons", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "hidden-files", "hide-app", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
