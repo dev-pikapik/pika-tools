@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver lại mở được menu pikapik
+## <a id="v1.44.2"></a>VoiceOver lại mở được menu pikapik
 
-<sub>1.44.1 · 13 tháng 10 năm 2026</sub>
+<sub>1.44.2 · 13 tháng 10 năm 2026</sub>
 
 Trên macOS 27, bạn lại có thể mở menu pikapik trên thanh menu bằng VoiceOver.
 

@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver opens the pikapik menu again
+## <a id="v1.44.2"></a>VoiceOver opens the pikapik menu again
 
-<sub>1.44.1 · October 13, 2026</sub>
+<sub>1.44.2 · October 13, 2026</sub>
 
 On macOS 27, you can open the pikapik menu in the menu bar with VoiceOver again.
 

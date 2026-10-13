@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver снова открывает меню pikapik
+## <a id="v1.44.2"></a>VoiceOver снова открывает меню pikapik
 
-<sub>1.44.1 · 13 октября 2026</sub>
+<sub>1.44.2 · 13 октября 2026</sub>
 
 В macOS 27 меню pikapik в строке меню снова открывается с VoiceOver.
 

@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver で pikapik メニューがまた開けるように
+## <a id="v1.44.2"></a>VoiceOver で pikapik メニューがまた開けるように
 
-<sub>1.44.1 · 2026年10月13日</sub>
+<sub>1.44.2 · 2026年10月13日</sub>
 
 macOS 27 で、メニューバーの pikapik メニューを VoiceOver でまた開けるようになりました。
 
