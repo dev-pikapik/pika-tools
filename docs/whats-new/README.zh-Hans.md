@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>一键让桌面清清爽爽
+
+<sub>1.47.0 · 2026年10月13日</sub>
+
+pikapik 新增两个开关：隐藏桌面上的图标，以及显示 macOS 隐藏的文件。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**隐藏桌面图标。** 在通话、录屏或截屏前打开它，桌面上的文件和文件夹就会消失。关掉它，它们会回到原来的位置。什么都不会被移动：文件仍在访达的“桌面”文件夹里。它就是“系统设置 › 桌面与程序坞”中的 **“显示项目” › “桌面上”**，只是放在了手边，所以两者始终一致。在 Mac App Store 版本中，这一行会改为打开系统设置的这个页面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**显示隐藏文件。** macOS 隐藏的文件和文件夹，例如个人文件夹中的“资源库”或名称以点开头的文件，会以半透明的样子出现在访达和桌面上。这和在访达中按 ⇧⌘. 一样，只是一眼就能看出是否已打开。为了应用更改，访达会短暂重新启动，并再次打开其窗口和标签页。如果访达正在拷贝或移动文件，会等到完成后再重新启动。两者都在“设置 › 访达”中。想把它们放进菜单栏面板，请点按面板底部的铅笔按钮并勾选它们。在 Mac App Store 版本中，“设置 › 访达”会改为显示 ⇧⌘. 这组按键。
+
+---
+
 ## <a id="v1.46.1"></a>“权限”页面如实说明
 
 <sub>1.46.1 · 2026年10月13日</sub>

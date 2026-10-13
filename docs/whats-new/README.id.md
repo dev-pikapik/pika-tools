@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Desktop rapi dengan sekali klik
+
+<sub>1.47.0 · 13 Oktober 2026</sub>
+
+Dua sakelar baru di pikapik menyembunyikan ikon di desktop dan menampilkan file yang disembunyikan macOS.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Sembunyikan ikon desktop.** Nyalakan sebelum panggilan, rekaman layar, atau jepretan layar, dan file serta folder di desktop menghilang. Matikan, dan semuanya kembali ke tempat yang sama. Tidak ada yang dipindahkan: file tetap ada di folder Desktop di Finder. Ini adalah pengaturan **Tampilkan item › Di Desktop** di Pengaturan Sistem › Desktop & Dock, hanya lebih dekat di tangan, jadi keduanya selalu sama. Di versi Mac App Store, baris ini membuka halaman tersebut di Pengaturan Sistem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Tampilkan file tersembunyi.** File dan folder yang disembunyikan macOS, seperti Perpustakaan di folder pengguna Anda atau file yang namanya diawali titik, muncul redup di Finder dan di desktop. Sama seperti menekan ⇧⌘. di Finder, hanya saja Anda bisa melihat sekilas apakah sedang menyala. Untuk menerapkan perubahan, Finder dimulai ulang sebentar dan membuka lagi jendela serta tabnya. Jika Finder sedang menyalin atau memindahkan file, Finder baru dimulai ulang setelah selesai. Keduanya ada di Pengaturan › Finder. Agar keduanya ada di panel bar menu, klik tombol pensil di bagian bawah panel lalu centang. Di versi Mac App Store, Pengaturan › Finder menampilkan tombol ⇧⌘. sebagai gantinya.
+
+---
+
 ## <a id="v1.46.1"></a>Halaman “Izin” kini memberi tahu apa adanya
 
 <sub>1.46.1 · 13 Oktober 2026</sub>

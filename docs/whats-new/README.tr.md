@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Tek tıkla tertemiz masaüstü
+
+<sub>1.47.0 · 13 Ekim 2026</sub>
+
+pikapik’teki iki yeni anahtar, masaüstündeki simgeleri gizler ve macOS’un sakladığı dosyaları gösterir.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Masaüstü simgelerini gizle.** Bir görüşmeden, ekran kaydından ya da ekran görüntüsünden önce açın, masaüstündeki dosya ve klasörler kaybolsun. Kapatın, aynı yerlerine geri dönsünler. Hiçbir şey taşınmaz: dosyalar Finder’da Masaüstü klasöründe kalır. Bu, Sistem Ayarları › Masaüstü ve Dock’taki **Öğeleri göster › Masaüstünde** ayarının ta kendisi, sadece daha el altında, bu yüzden ikisi her zaman aynıdır. Mac App Store sürümünde bu satır onun yerine Sistem Ayarları’nın o sayfasını açar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Gizli dosyaları göster.** macOS’un gizlediği dosya ve klasörler, örneğin ev klasörünüzdeki Kitaplık ya da adı noktayla başlayan dosyalar, Finder’da ve masaüstünde soluk görünür. Finder’da ⇧⌘. tuşlarına basmakla aynıdır, sadece açık olup olmadığını bir bakışta görürsünüz. Değişikliğin uygulanması için Finder kısa bir süreliğine yeniden başlatılır ve pencerelerini ve sekmelerini tekrar açar. Finder dosya kopyalıyor veya taşıyorsa, bu iş bitince yeniden başlatılır. İkisi de Ayarlar › Finder’da. Onları menü çubuğu panelinde görmek için panelin altındaki kalem düğmesine tıklayın ve işaretleyin. Mac App Store sürümünde Ayarlar › Finder bunun yerine ⇧⌘. tuşlarını gösterir.
+
+---
+
 ## <a id="v1.46.1"></a>“İzinler” sayfası durumu olduğu gibi söylüyor
 
 <sub>1.46.1 · 13 Ekim 2026</sub>

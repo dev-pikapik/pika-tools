@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>A clean desktop in one click
+
+<sub>1.47.0 · October 13, 2026</sub>
+
+Two new switches in pikapik hide the icons on your desktop and show the files that macOS hides.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Hide desktop icons.** Turn it on before a call, a screen recording or a screenshot, and the files and folders on the desktop disappear. Turn it off, and they come back to the same places. Nothing moves: the files stay in the Desktop folder in Finder. It’s the **Show items › On Desktop** setting from System Settings › Desktop & Dock, only closer at hand, so the two always agree. In the Mac App Store version, this row opens that page of System Settings instead.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Show hidden files.** Files and folders that macOS hides, like Library in your home folder or files whose names start with a dot, appear dimmed in Finder and on the desktop. It’s the same as pressing ⇧⌘. in Finder, only you can see at a glance whether it’s on. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done. Both are in Settings › Finder. To keep them in the menu bar panel, click the pencil button at the bottom of the panel and tick them. In the Mac App Store version, Settings › Finder shows the ⇧⌘. keys instead.
+
+---
+
 ## <a id="v1.46.1"></a>The Permissions page tells the whole story
 
 <sub>1.46.1 · October 13, 2026</sub>

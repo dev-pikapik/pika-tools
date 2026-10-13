@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>一鍵讓桌面清清爽爽
+
+<sub>1.47.0 · 2026年10月13日</sub>
+
+pikapik 新增兩個開關：隱藏桌面上的圖像，以及顯示 macOS 隱藏的檔案。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**隱藏桌面圖像。** 在通話、螢幕錄影或截圖前開啟，桌面上的檔案和檔案夾就會消失。關閉後，它們會回到原來的位置。不會移動任何東西：檔案仍在 Finder 的「桌面」檔案夾中。它就是「系統設定」›「桌面與Dock」中的 **「顯示項目」›「在桌面上」**，只是放在手邊，所以兩者總是一致。在 Mac App Store 版本中，這一列會改為打開系統設定的這個頁面。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**顯示隱藏檔案。** macOS 隱藏的檔案和檔案夾，例如個人專屬檔案夾中的「資源庫」或名稱以句點開頭的檔案，會以半透明的樣子出現在 Finder 和桌面上。這和在 Finder 中按 ⇧⌘. 一樣，只是一眼就能看出是否已開啟。為了套用變更，Finder 會短暫重新啟動，並再次打開其視窗和標籤頁。如果 Finder 正在拷貝或移動檔案，會等到完成後再重新啟動。兩者都在「設定 › Finder」裡。想放進選單列面板，請按一下面板底部的鉛筆按鈕並勾選它們。在 Mac App Store 版本中，「設定 › Finder」會改為顯示 ⇧⌘. 這組按鍵。
+
+---
+
 ## <a id="v1.46.1"></a>「權限」頁面如實說明
 
 <sub>1.46.1 · 2026年10月13日</sub>

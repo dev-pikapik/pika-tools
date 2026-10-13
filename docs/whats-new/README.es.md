@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Un escritorio despejado con un clic
+
+<sub>1.47.0 · 13 de octubre de 2026</sub>
+
+Dos nuevos interruptores en pikapik ocultan los iconos del escritorio y muestran los archivos que macOS mantiene escondidos.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Ocultar iconos del escritorio.** Actívalo antes de una llamada, una grabación de pantalla o una captura, y los archivos y carpetas del escritorio desaparecen. Desactívalo y vuelven a su sitio. No se mueve nada: los archivos siguen en la carpeta Escritorio del Finder. Es el ajuste **Mostrar ítems › En el escritorio** de Ajustes del Sistema › Escritorio y Dock, pero más a mano, así que los dos siempre coinciden. En la versión de la Mac App Store, esta fila abre esa página de Ajustes del Sistema.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Mostrar archivos ocultos.** Los archivos y carpetas que macOS oculta, como Biblioteca en tu carpeta de inicio o los archivos cuyo nombre empieza por un punto, aparecen atenuados en el Finder y en el escritorio. Es lo mismo que pulsar ⇧⌘. en el Finder, solo que ves de un vistazo si está activado. Para aplicar el cambio, el Finder se reinicia un momento y vuelve a abrir sus ventanas y pestañas. Si el Finder está copiando o moviendo archivos, se reiniciará cuando termine. Los dos están en Ajustes › Finder. Para tenerlos en el panel de la barra de menús, haz clic en el botón del lápiz de abajo y márcalos. En la versión de la Mac App Store, Ajustes › Finder muestra en su lugar las teclas ⇧⌘. del Finder.
+
+---
+
 ## <a id="v1.46.1"></a>La página «Permisos» lo cuenta todo
 
 <sub>1.46.1 · 13 de octubre de 2026</sub>

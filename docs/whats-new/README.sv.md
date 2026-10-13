@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.47.0"></a>Ett rent skrivbord med ett klick
+
+<sub>1.47.0 · 13 oktober 2026</sub>
+
+Två nya reglage i pikapik gömmer symbolerna på skrivbordet och visar filerna som macOS håller gömda.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/desktop-icons-dark.png"><img src="../media/desktop-icons-light.png" width="340" alt=""></picture>
+
+**Göm skrivbordssymboler.** Slå på det före ett samtal, en skärminspelning eller en skärmbild, så försvinner filerna och mapparna från skrivbordet. Slå av det, så kommer de tillbaka till samma platser. Inget flyttas: filerna ligger kvar i mappen Skrivbord i Finder. Det är inställningen **Visa objekt › På skrivbordet** i Systeminställningar › Skrivbord och Dock, fast närmare till hands, så de två stämmer alltid överens. I versionen från Mac App Store öppnar den här raden i stället den sidan i Systeminställningar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/hidden-files-dark.png"><img src="../media/hidden-files-light.png" width="340" alt=""></picture>
+
+**Visa gömda filer.** Filer och mappar som macOS gömmer, som Bibliotek i din hemmapp eller filer vars namn börjar med en punkt, visas nedtonade i Finder och på skrivbordet. Det är samma sak som att trycka på ⇧⌘. i Finder, fast du ser direkt om det är på. För att ändringen ska gälla startar Finder om snabbt och öppnar sina fönster och flikar igen. Om Finder kopierar eller flyttar filer startar den om först när den är klar. Båda finns i Inställningar › Finder. Vill du ha dem i panelen i menyraden klickar du på pennknappen längst ned i panelen och markerar dem. I versionen från Mac App Store visar Inställningar › Finder i stället tangenterna ⇧⌘. för Finder.
+
+---
+
 ## <a id="v1.46.1"></a>Sidan ”Behörigheter” berättar allt
 
 <sub>1.46.1 · 13 oktober 2026</sub>
