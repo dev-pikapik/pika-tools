@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Pliki zostają na swoim miejscu";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ukrywa pliki i foldery na biurku, tak jak opcja „Pokaż rzeczy” w Ustawieniach systemowych › Biurko i Dock. Zostają w folderze Biurko w Finderze.";
 "Show hidden files" = "Pokaż ukryte pliki";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Pliki ukrywane przez macOS są wyszarzone, jak po ⇧⌘. w Finderze";
-"They appear dimmed in Finder" = "W Finderze są wyszarzone";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Ukryte pliki i foldery, na przykład Biblioteki, są wyszarzone w Finderze i na biurku, tak jak po naciśnięciu ⇧⌘. w Finderze.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Ukryte pliki są wyszarzone. Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna";
+"Finder restarts for a moment" = "Finder na chwilę uruchomi się ponownie";
+"Waiting for Finder to finish copying" = "Oczekiwanie na zakończenie kopiowania w Finderze";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Ukryte pliki i foldery, na przykład Biblioteki, są wyszarzone w Finderze i na biurku, tak jak po naciśnięciu ⇧⌘. w Finderze. Aby zastosować zmianę, Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna i karty. Jeśli Finder właśnie kopiuje lub przenosi pliki, uruchomi się ponownie dopiero, gdy skończy.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Ustawienia systemowe › Biurko i Dock › Pokaż rzeczy › Na Biurku";
 "Opens Desktop & Dock in System Settings" = "Otwiera Biurko i Dock w Ustawieniach systemowych";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otwiera Biurko i Dock w Ustawieniach systemowych. Aby ukryć ikony, wyłącz „Na Biurku” obok „Pokaż rzeczy”, a aby je przywrócić, włącz z powrotem. Pliki zostają w folderze Biurko.";

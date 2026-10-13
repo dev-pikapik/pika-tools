@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Die Dateien bleiben, wo sie sind";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Blendet die Dateien und Ordner auf dem Schreibtisch aus, genau wie die Option „Objekte einblenden“ in Systemeinstellungen › Schreibtisch & Dock. Sie bleiben im Ordner „Schreibtisch“ im Finder.";
 "Show hidden files" = "Versteckte Dateien einblenden";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Dateien, die macOS versteckt, erscheinen abgeblendet, wie mit ⇧⌘. im Finder";
-"They appear dimmed in Finder" = "Sie erscheinen im Finder abgeblendet";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Versteckte Dateien und Ordner wie „Library“ erscheinen im Finder und auf dem Schreibtisch abgeblendet, genau wie nach ⇧⌘. im Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Versteckte Dateien erscheinen abgeblendet. Der Finder startet kurz neu und öffnet seine Fenster wieder";
+"Finder restarts for a moment" = "Der Finder startet kurz neu";
+"Waiting for Finder to finish copying" = "Warten, bis der Finder fertig kopiert hat";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Versteckte Dateien und Ordner wie „Library“ erscheinen im Finder und auf dem Schreibtisch abgeblendet, genau wie nach ⇧⌘. im Finder. Damit die Änderung greift, startet der Finder kurz neu und öffnet seine Fenster und Tabs wieder. Kopiert oder verschiebt der Finder gerade Dateien, startet er erst neu, wenn er damit fertig ist.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Systemeinstellungen › Schreibtisch & Dock › Objekte einblenden › Auf dem Schreibtisch";
 "Opens Desktop & Dock in System Settings" = "Öffnet Schreibtisch & Dock in den Systemeinstellungen";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Öffnet Schreibtisch & Dock in den Systemeinstellungen. Zum Ausblenden der Symbole „Auf dem Schreibtisch“ neben „Objekte einblenden“ ausschalten, zum Zurückholen wieder einschalten. Die Dateien bleiben im Ordner „Schreibtisch“.";

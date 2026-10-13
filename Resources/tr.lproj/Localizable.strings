@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Dosyalar yerinde kalır";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Masaüstündeki dosyaları ve klasörleri gizler; Sistem Ayarları › Masaüstü ve Dock’taki “Öğeleri göster” ayarıyla aynıdır. Finder’da Masaüstü klasöründe kalırlar.";
 "Show hidden files" = "Gizli dosyaları göster";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS’in gizlediği dosyalar, Finder’da ⇧⌘. tuşlarına basınca olduğu gibi soluk görünür";
-"They appear dimmed in Finder" = "Finder’da soluk görünürler";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Kitaplık gibi gizli dosya ve klasörler Finder’da ve masaüstünde soluk görünür; Finder’da ⇧⌘. tuşlarına basmakla aynıdır.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Gizli dosyalar soluk görünür. Finder kısa bir süreliğine yeniden başlatılır ve pencerelerini tekrar açar";
+"Finder restarts for a moment" = "Finder kısa bir süreliğine yeniden başlatılır";
+"Waiting for Finder to finish copying" = "Finder’ın kopyalamayı bitirmesi bekleniyor";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Kitaplık gibi gizli dosya ve klasörler Finder’da ve masaüstünde soluk görünür; Finder’da ⇧⌘. tuşlarına basmakla aynıdır. Değişikliğin uygulanması için Finder kısa bir süreliğine yeniden başlatılır ve pencerelerini ve sekmelerini tekrar açar. Finder dosya kopyalıyor veya taşıyorsa, bu iş bitince yeniden başlatılır.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Sistem Ayarları › Masaüstü ve Dock › Öğeleri göster › Masaüstünde";
 "Opens Desktop & Dock in System Settings" = "Sistem Ayarları’nda Masaüstü ve Dock’u açar";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Sistem Ayarları’nda Masaüstü ve Dock’u açar. Simgeleri gizlemek için “Öğeleri göster”in yanındaki “Masaüstünde” seçeneğini kapatın, geri getirmek için yeniden açın. Dosyalar Masaüstü klasöründe kalır.";

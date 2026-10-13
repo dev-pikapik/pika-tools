@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Les fichiers restent à leur place";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Masque les fichiers et dossiers du bureau, comme l’option « Afficher les éléments » dans Réglages Système › Bureau et Dock. Ils restent dans le dossier Bureau du Finder.";
 "Show hidden files" = "Afficher les fichiers masqués";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Les fichiers que macOS masque apparaissent estompés, comme avec ⇧⌘. dans le Finder";
-"They appear dimmed in Finder" = "Ils apparaissent estompés dans le Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Les fichiers et dossiers masqués, comme Bibliothèque, apparaissent estompés dans le Finder et sur le bureau, comme après ⇧⌘. dans le Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Les fichiers masqués apparaissent estompés. Le Finder redémarre un instant et rouvre ses fenêtres";
+"Finder restarts for a moment" = "Le Finder redémarre un instant";
+"Waiting for Finder to finish copying" = "En attente de la fin des copies dans le Finder";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Les fichiers et dossiers masqués, comme Bibliothèque, apparaissent estompés dans le Finder et sur le bureau, comme après ⇧⌘. dans le Finder. Pour appliquer le changement, le Finder redémarre un instant et rouvre ses fenêtres et ses onglets. Si le Finder copie ou déplace des fichiers, il redémarre une fois qu’il a terminé.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Réglages Système › Bureau et Dock › Afficher les éléments › Sur le bureau";
 "Opens Desktop & Dock in System Settings" = "Ouvre Bureau et Dock dans Réglages Système";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Ouvre Bureau et Dock dans Réglages Système. Désactivez « Sur le bureau » à côté de « Afficher les éléments » pour masquer les icônes, puis réactivez-le pour les faire revenir. Les fichiers restent dans le dossier Bureau.";

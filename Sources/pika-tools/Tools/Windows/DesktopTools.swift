@@ -1,8 +1,5 @@
 import AppKit
 import SwiftUI
-#if !APPSTORE
-import notify
-#endif
 
 #if APPSTORE
 final class DesktopIconsTool: Tool {
@@ -21,6 +18,10 @@ final class DesktopIconsTool: Tool {
     }
 }
 #else
+private func relaunch(_ bundleID: String) {
+    for app in NSRunningApplication.runningApplications(withBundleIdentifier: bundleID) { kill(app.processIdentifier, SIGTERM) }
+}
+
 @Observable
 final class DesktopIconsTool: Tool {
     let id = "desktop-icons"
@@ -37,7 +38,7 @@ final class DesktopIconsTool: Tool {
         set {
             CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
             CFPreferencesAppSynchronize(Self.domain)
-            notify_post("com.apple.ec.WindowManager.preferences")
+            relaunch("com.apple.WindowManager")
             hidden = newValue
         }
     }
@@ -67,18 +68,58 @@ final class HiddenFilesTool: Tool {
     let isActive = false
     var isEnabled: Bool { get { false } set {} }
     private(set) var shown = HiddenFilesTool.read()
+    private var finderBusy = false
+    private var finderShows: Bool?
+
+    var waitingForFinder: Bool { finderBusy && finderShows != shown }
 
     var isOn: Bool {
         get { shown }
         set {
             CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
             CFPreferencesAppSynchronize(Self.domain)
+            let idle = finderShows == nil
+            if idle { finderShows = shown }
             shown = newValue
+            if idle { restartFinder() }
         }
     }
 
     var settingsView: AnyView { AnyView(HiddenFilesSettings(tool: self)) }
     func refresh() { shown = Self.read() }
+
+    private func restartFinder() {
+        guard let pid = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.processIdentifier,
+              let before = Self.activity(pid) else { return finish() }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+            guard let after = Self.activity(pid) else { return finish() }
+            let busy = after.cpu - before.cpu > 0.005 || after.io != before.io
+            if busy != finderBusy { finderBusy = busy }
+            if busy { return restartFinder() }
+            if shown != finderShows { kill(pid, SIGTERM) }
+            finish()
+        }
+    }
+
+    private func finish() {
+        finderShows = nil
+        if finderBusy { finderBusy = false }
+    }
+
+    private static func activity(_ pid: pid_t) -> (cpu: Double, io: UInt64)? {
+        var info = rusage_info_v4()
+        let result = withUnsafeMutablePointer(to: &info) {
+            $0.withMemoryRebound(to: rusage_info_t?.self, capacity: 1) { proc_pid_rusage(pid, RUSAGE_INFO_V4, $0) }
+        }
+        guard result == 0 else { return nil }
+        return (Double(info.ri_user_time + info.ri_system_time) * seconds, info.ri_diskio_bytesread + info.ri_diskio_byteswritten + info.ri_logical_writes)
+    }
+
+    private static let seconds: Double = {
+        var base = mach_timebase_info_data_t()
+        mach_timebase_info(&base)
+        return Double(base.numer) / Double(base.denom) / 1e9
+    }()
 
     private static let domain = "com.apple.finder" as CFString
     private static let key = "AppleShowAllFiles" as CFString
@@ -116,9 +157,9 @@ private struct HiddenFilesSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("Files that macOS hides appear dimmed, like with ⇧⌘. in Finder"),
-            hint: Text("They appear dimmed in Finder"),
-            help: Text("Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder."),
+            subtitle: tool.waitingForFinder ? Text("Waiting for Finder to finish copying") : Text("Hidden files appear dimmed. Finder restarts for a moment and reopens its windows"),
+            hint: tool.waitingForFinder ? Text("Waiting for Finder to finish copying") : Text("Finder restarts for a moment"),
+            help: Text("Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done."),
             isOn: $tool.isOn
         )
         .whileShown(in: { inSettings ? $0 === SettingsWindow.window : StatusMenu.isPanel($0) }) { if $0 { tool.refresh() } }

@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "File tetap di tempatnya";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Menyembunyikan file dan folder di desktop, sama seperti pilihan “Tampilkan item” di Pengaturan Sistem › Desktop & Dock. File dan folder itu tetap ada di folder Desktop di Finder.";
 "Show hidden files" = "Tampilkan file tersembunyi";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "File yang disembunyikan macOS tampil redup, seperti dengan ⇧⌘. di Finder";
-"They appear dimmed in Finder" = "File tampil redup di Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "File dan folder tersembunyi, seperti Perpustakaan, tampil redup di Finder dan di desktop, sama seperti menekan ⇧⌘. di Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "File tersembunyi tampil redup. Finder dimulai ulang sebentar dan membuka lagi jendelanya";
+"Finder restarts for a moment" = "Finder dimulai ulang sebentar";
+"Waiting for Finder to finish copying" = "Menunggu Finder selesai menyalin";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "File dan folder tersembunyi, seperti Perpustakaan, tampil redup di Finder dan di desktop, sama seperti menekan ⇧⌘. di Finder. Untuk menerapkan perubahan, Finder dimulai ulang sebentar dan membuka lagi jendela serta tabnya. Jika Finder sedang menyalin atau memindahkan file, Finder baru dimulai ulang setelah selesai.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Pengaturan Sistem › Desktop & Dock › Tampilkan item › Di Desktop";
 "Opens Desktop & Dock in System Settings" = "Membuka Desktop & Dock di Pengaturan Sistem";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Membuka Desktop & Dock di Pengaturan Sistem. Matikan “Di Desktop” di samping “Tampilkan item” untuk menyembunyikan ikon, lalu nyalakan lagi untuk memunculkannya kembali. File tetap ada di folder Desktop.";

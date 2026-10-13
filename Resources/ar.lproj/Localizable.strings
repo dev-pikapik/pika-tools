@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "تبقى الملفات في مكانها";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "يخفي الملفات والمجلدات على سطح المكتب، مثل إعداد «إظهار العناصر» في إعدادات النظام › سطح المكتب وشريط الأيقونات. تبقى في مجلد سطح المكتب في Finder.";
 "Show hidden files" = "إظهار الملفات المخفية";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "تظهر الملفات التي يخفيها macOS باهتة، كما مع ⇧⌘. في Finder";
-"They appear dimmed in Finder" = "تظهر باهتة في Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "تظهر الملفات والمجلدات المخفية، مثل المكتبة، باهتة في Finder وعلى سطح المكتب، كما عند الضغط على ⇧⌘. في Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "تظهر الملفات المخفية باهتة. سيُعاد تشغيل Finder للحظة ثم يعيد فتح نوافذه";
+"Finder restarts for a moment" = "سيُعاد تشغيل Finder للحظة";
+"Waiting for Finder to finish copying" = "بانتظار أن ينتهي Finder من النسخ";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "تظهر الملفات والمجلدات المخفية، مثل المكتبة، باهتة في Finder وعلى سطح المكتب، كما عند الضغط على ⇧⌘. في Finder. لتطبيق التغيير، سيُعاد تشغيل Finder للحظة ثم يعيد فتح نوافذه وعلامات التبويب. وإذا كان Finder ينسخ ملفات أو ينقلها، فسيُعاد تشغيله بعد أن ينتهي.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "إعدادات النظام › سطح المكتب وشريط الأيقونات › إظهار العناصر › على سطح المكتب";
 "Opens Desktop & Dock in System Settings" = "يفتح سطح المكتب وشريط الأيقونات في إعدادات النظام";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "يفتح سطح المكتب وشريط الأيقونات في إعدادات النظام. أوقف «على سطح المكتب» بجانب «إظهار العناصر» لإخفاء الأيقونات، وشغّله مجددًا لإعادتها. تبقى الملفات في مجلد سطح المكتب.";

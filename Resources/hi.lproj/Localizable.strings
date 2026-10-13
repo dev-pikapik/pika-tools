@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "फ़ाइलें अपनी जगह पर रहती हैं";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "डेस्कटॉप की फ़ाइलें और फ़ोल्डर छिपाता है, ठीक सिस्टम सेटिंग › डेस्कटॉप और Dock में “आइटम दिखाएँ” सेटिंग की तरह। वे Finder में डेस्कटॉप फ़ोल्डर में ही रहते हैं।";
 "Show hidden files" = "छिपी फ़ाइलें दिखाएँ";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS जिन फ़ाइलों को छिपाता है, वे धुंधली दिखती हैं, जैसे Finder में ⇧⌘. दबाने पर";
-"They appear dimmed in Finder" = "वे Finder में धुंधली दिखती हैं";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "छिपी फ़ाइलें और फ़ोल्डर, जैसे लाइब्रेरी, Finder में और डेस्कटॉप पर धुंधले दिखते हैं, ठीक Finder में ⇧⌘. दबाने की तरह।";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "छिपी फ़ाइलें धुंधली दिखती हैं। Finder एक पल के लिए रीस्टार्ट होकर अपनी विंडो फिर से खोलेगा";
+"Finder restarts for a moment" = "Finder एक पल के लिए रीस्टार्ट होगा";
+"Waiting for Finder to finish copying" = "Finder में कॉपी पूरी होने का इंतज़ार है";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "छिपी फ़ाइलें और फ़ोल्डर, जैसे लाइब्रेरी, Finder में और डेस्कटॉप पर धुंधले दिखते हैं, ठीक Finder में ⇧⌘. दबाने की तरह। बदलाव लागू करने के लिए Finder एक पल के लिए रीस्टार्ट होकर अपनी विंडो और टैब फिर से खोलेगा। अगर Finder फ़ाइलें कॉपी या मूव कर रहा है, तो वह काम पूरा होने के बाद ही रीस्टार्ट होगा।";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "सिस्टम सेटिंग › डेस्कटॉप और Dock › आइटम दिखाएँ › डेस्कटॉप पर";
 "Opens Desktop & Dock in System Settings" = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है। आइकॉन छिपाने के लिए “आइटम दिखाएँ” के पास “डेस्कटॉप पर” बंद करें, और उन्हें वापस लाने के लिए फिर से चालू करें। फ़ाइलें डेस्कटॉप फ़ोल्डर में ही रहती हैं।";

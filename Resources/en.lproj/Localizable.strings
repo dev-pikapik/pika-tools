@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "The files stay where they are";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder.";
 "Show hidden files" = "Show hidden files";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Files that macOS hides appear dimmed, like with ⇧⌘. in Finder";
-"They appear dimmed in Finder" = "They appear dimmed in Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows";
+"Finder restarts for a moment" = "Finder restarts for a moment";
+"Waiting for Finder to finish copying" = "Waiting for Finder to finish copying";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "System Settings › Desktop & Dock › Show items › On Desktop";
 "Opens Desktop & Dock in System Settings" = "Opens Desktop & Dock in System Settings";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder.";

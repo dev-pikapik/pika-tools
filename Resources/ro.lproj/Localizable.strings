@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Fișierele rămân unde sunt";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ascunde fișierele și folderele de pe desktop, la fel ca opțiunea „Afișare articole” din Configurări sistem › Desktop și Dock. Ele rămân în folderul Desktop din Finder.";
 "Show hidden files" = "Afișează fișierele ascunse";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Fișierele pe care macOS le ascunde apar estompate, ca la ⇧⌘. în Finder";
-"They appear dimmed in Finder" = "Apar estompate în Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Fișierele și folderele ascunse, cum ar fi Bibliotecă, apar estompate în Finder și pe desktop, la fel ca la apăsarea ⇧⌘. în Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Fișierele ascunse apar estompate. Finder repornește pentru o clipă și își redeschide ferestrele";
+"Finder restarts for a moment" = "Finder repornește pentru o clipă";
+"Waiting for Finder to finish copying" = "Se așteaptă ca Finder să termine copierea";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Fișierele și folderele ascunse, cum ar fi Bibliotecă, apar estompate în Finder și pe desktop, la fel ca la apăsarea ⇧⌘. în Finder. Pentru a aplica modificarea, Finder repornește pentru o clipă și își redeschide ferestrele și filele. Dacă Finder copiază sau mută fișiere, repornește abia după ce termină.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Configurări sistem › Desktop și Dock › Afișare articole › Pe desktop";
 "Opens Desktop & Dock in System Settings" = "Deschide Desktop și Dock în Configurări sistem";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Deschide Desktop și Dock în Configurări sistem. Dezactivează „Pe desktop” lângă „Afișare articole” ca să ascunzi pictogramele și activează-l din nou ca să le readuci. Fișierele rămân în folderul Desktop.";

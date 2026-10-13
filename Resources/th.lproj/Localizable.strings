@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "ไฟล์ยังคงอยู่ที่เดิม";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "ซ่อนไฟล์และโฟลเดอร์บนเดสก์ท็อป เหมือนตัวเลือก “แสดงรายการ” ในการตั้งค่าระบบ › เดสก์ท็อปและ Dock ไฟล์และโฟลเดอร์ยังอยู่ในโฟลเดอร์เดสก์ท็อปใน Finder";
 "Show hidden files" = "แสดงไฟล์ที่ซ่อนอยู่";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "ไฟล์ที่ macOS ซ่อนไว้จะแสดงแบบจางๆ เหมือนกด ⇧⌘. ใน Finder";
-"They appear dimmed in Finder" = "จะแสดงแบบจางๆ ใน Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "ไฟล์และโฟลเดอร์ที่ซ่อนอยู่ เช่น คลัง จะแสดงแบบจางๆ ใน Finder และบนเดสก์ท็อป เหมือนกด ⇧⌘. ใน Finder";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "ไฟล์ที่ซ่อนอยู่จะแสดงแบบจางๆ Finder จะเริ่มใหม่ชั่วครู่ แล้วเปิดหน้าต่างขึ้นมาอีกครั้ง";
+"Finder restarts for a moment" = "Finder จะเริ่มใหม่ชั่วครู่";
+"Waiting for Finder to finish copying" = "กำลังรอให้ Finder คัดลอกเสร็จ";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "ไฟล์และโฟลเดอร์ที่ซ่อนอยู่ เช่น คลัง จะแสดงแบบจางๆ ใน Finder และบนเดสก์ท็อป เหมือนกด ⇧⌘. ใน Finder เพื่อให้การเปลี่ยนแปลงมีผล Finder จะเริ่มใหม่ชั่วครู่ แล้วเปิดหน้าต่างและแท็บขึ้นมาอีกครั้ง ถ้า Finder กำลังคัดลอกหรือย้ายไฟล์อยู่ จะรอให้เสร็จก่อนแล้วจึงเริ่มใหม่";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "การตั้งค่าระบบ › เดสก์ท็อปและ Dock › แสดงรายการ › บนเดสก์ท็อป";
 "Opens Desktop & Dock in System Settings" = "เปิดเดสก์ท็อปและ Dock ในการตั้งค่าระบบ";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "เปิดเดสก์ท็อปและ Dock ในการตั้งค่าระบบ ปิด “บนเดสก์ท็อป” ข้าง “แสดงรายการ” เพื่อซ่อนไอคอน และเปิดอีกครั้งเพื่อให้กลับมา ไฟล์ยังอยู่ในโฟลเดอร์เดสก์ท็อป";

@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Os arquivos ficam onde estão";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Oculta os arquivos e pastas da Mesa, igual à opção “Mostrar itens” em Ajustes do Sistema › Mesa e Dock. Eles continuam na pasta Mesa no Finder.";
 "Show hidden files" = "Mostrar arquivos ocultos";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Os arquivos que o macOS oculta aparecem esmaecidos, como com ⇧⌘. no Finder";
-"They appear dimmed in Finder" = "Eles aparecem esmaecidos no Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Arquivos e pastas ocultos, como Biblioteca, aparecem esmaecidos no Finder e na Mesa, igual a pressionar ⇧⌘. no Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Os arquivos ocultos aparecem esmaecidos. O Finder reinicia por um instante e abre as janelas de novo";
+"Finder restarts for a moment" = "O Finder reinicia por um instante";
+"Waiting for Finder to finish copying" = "Esperando o Finder terminar de copiar";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Arquivos e pastas ocultos, como Biblioteca, aparecem esmaecidos no Finder e na Mesa, igual a pressionar ⇧⌘. no Finder. Para aplicar a mudança, o Finder reinicia por um instante e abre as janelas e abas de novo. Se o Finder estiver copiando ou movendo arquivos, ele só reinicia quando terminar.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Ajustes do Sistema › Mesa e Dock › Mostrar itens › Na Mesa";
 "Opens Desktop & Dock in System Settings" = "Abre Mesa e Dock em Ajustes do Sistema";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Abre Mesa e Dock em Ajustes do Sistema. Desative “Na Mesa” ao lado de “Mostrar itens” para ocultar os ícones e ative de novo para trazê-los de volta. Os arquivos continuam na pasta Mesa.";

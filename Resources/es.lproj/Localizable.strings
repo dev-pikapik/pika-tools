@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Los archivos se quedan donde están";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Oculta los archivos y carpetas del escritorio, igual que la opción «Mostrar ítems» en Ajustes del Sistema › Escritorio y Dock. Se quedan en la carpeta Escritorio del Finder.";
 "Show hidden files" = "Mostrar archivos ocultos";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Los archivos que macOS oculta aparecen atenuados, como con ⇧⌘. en el Finder";
-"They appear dimmed in Finder" = "Aparecen atenuados en el Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Los archivos y carpetas ocultos, como Biblioteca, aparecen atenuados en el Finder y en el escritorio, igual que al pulsar ⇧⌘. en el Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Los archivos ocultos aparecen atenuados. El Finder se reinicia un momento y vuelve a abrir sus ventanas";
+"Finder restarts for a moment" = "El Finder se reinicia un momento";
+"Waiting for Finder to finish copying" = "Esperando a que el Finder termine de copiar";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Los archivos y carpetas ocultos, como Biblioteca, aparecen atenuados en el Finder y en el escritorio, igual que al pulsar ⇧⌘. en el Finder. Para aplicar el cambio, el Finder se reinicia un momento y vuelve a abrir sus ventanas y pestañas. Si el Finder está copiando o moviendo archivos, se reiniciará cuando termine.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Ajustes del Sistema › Escritorio y Dock › Mostrar ítems › En el escritorio";
 "Opens Desktop & Dock in System Settings" = "Abre Escritorio y Dock en Ajustes del Sistema";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Abre Escritorio y Dock en Ajustes del Sistema. Desactiva «En el escritorio» junto a «Mostrar ítems» para ocultar los iconos y vuelve a activarlo para recuperarlos. Los archivos se quedan en la carpeta Escritorio.";

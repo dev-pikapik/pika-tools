@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "De bestanden blijven waar ze zijn";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Verbergt de bestanden en mappen op het bureaublad, net als de optie ‘Toon onderdelen’ in Systeeminstellingen › Bureaublad en Dock. Ze blijven in de map Bureaublad in de Finder.";
 "Show hidden files" = "Verborgen bestanden tonen";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Bestanden die macOS verbergt, worden gedimd getoond, zoals met ⇧⌘. in de Finder";
-"They appear dimmed in Finder" = "Ze worden gedimd getoond in de Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Verborgen bestanden en mappen, zoals Bibliotheek, worden gedimd getoond in de Finder en op het bureaublad, net als na ⇧⌘. in de Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Verborgen bestanden worden gedimd getoond. De Finder herstart even en opent zijn vensters weer";
+"Finder restarts for a moment" = "De Finder herstart even";
+"Waiting for Finder to finish copying" = "Wachten tot de Finder klaar is met kopiëren";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Verborgen bestanden en mappen, zoals Bibliotheek, worden gedimd getoond in de Finder en op het bureaublad, net als na ⇧⌘. in de Finder. Om de wijziging toe te passen, herstart de Finder even en opent hij zijn vensters en tabbladen weer. Is de Finder bestanden aan het kopiëren of verplaatsen, dan herstart hij pas als hij klaar is.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Systeeminstellingen › Bureaublad en Dock › Toon onderdelen › Op bureaublad";
 "Opens Desktop & Dock in System Settings" = "Opent Bureaublad en Dock in Systeeminstellingen";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opent Bureaublad en Dock in Systeeminstellingen. Zet ‘Op bureaublad’ naast ‘Toon onderdelen’ uit om de symbolen te verbergen en weer aan om ze terug te halen. De bestanden blijven in de map Bureaublad.";

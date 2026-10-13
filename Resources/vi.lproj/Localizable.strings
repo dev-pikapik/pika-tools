@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Tệp vẫn ở nguyên chỗ cũ";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ẩn các tệp và thư mục trên màn hình nền, giống tùy chọn “Hiển thị các mục” trong Cài đặt hệ thống › Màn hình nền & Dock. Chúng vẫn nằm trong thư mục Màn hình nền trong Finder.";
 "Show hidden files" = "Hiện tệp ẩn";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Các tệp macOS ẩn đi sẽ hiện mờ, giống ⇧⌘. trong Finder";
-"They appear dimmed in Finder" = "Chúng hiện mờ trong Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Các tệp và thư mục ẩn, như Thư viện, hiện mờ trong Finder và trên màn hình nền, giống như khi nhấn ⇧⌘. trong Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Các tệp ẩn sẽ hiện mờ. Finder sẽ khởi động lại nhanh rồi mở lại các cửa sổ";
+"Finder restarts for a moment" = "Finder sẽ khởi động lại nhanh";
+"Waiting for Finder to finish copying" = "Đang đợi Finder sao chép xong";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Các tệp và thư mục ẩn, như Thư viện, hiện mờ trong Finder và trên màn hình nền, giống như khi nhấn ⇧⌘. trong Finder. Để áp dụng thay đổi, Finder sẽ khởi động lại nhanh rồi mở lại các cửa sổ và tab. Nếu Finder đang sao chép hoặc di chuyển tệp, Finder sẽ đợi xong rồi mới khởi động lại.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Cài đặt hệ thống › Màn hình nền & Dock › Hiển thị các mục › Trên màn hình nền";
 "Opens Desktop & Dock in System Settings" = "Mở Màn hình nền & Dock trong Cài đặt hệ thống";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Mở Màn hình nền & Dock trong Cài đặt hệ thống. Tắt “Trên màn hình nền” cạnh “Hiển thị các mục” để ẩn biểu tượng và bật lại để chúng hiện trở lại. Tệp vẫn nằm trong thư mục Màn hình nền.";

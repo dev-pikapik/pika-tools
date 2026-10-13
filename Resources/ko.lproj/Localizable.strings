@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "파일은 그대로 남아 있습니다";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "데스크탑의 파일과 폴더를 숨깁니다. 시스템 설정 › 데스크탑 및 Dock의 ‘항목 보기’ 설정과 같습니다. 파일과 폴더는 Finder의 데스크탑 폴더에 그대로 있습니다.";
 "Show hidden files" = "숨김 파일 보기";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS가 숨기는 파일이 흐리게 표시됩니다. Finder에서 ⇧⌘.을 누른 것과 같습니다";
-"They appear dimmed in Finder" = "Finder에서 흐리게 표시됩니다";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "라이브러리 같은 숨김 파일과 폴더가 Finder와 데스크탑에 흐리게 표시됩니다. Finder에서 ⇧⌘.을 누른 것과 같습니다.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "숨김 파일이 흐리게 표시됩니다. Finder가 잠시 재시작된 뒤 윈도우를 다시 엽니다";
+"Finder restarts for a moment" = "Finder가 잠시 재시작됩니다";
+"Waiting for Finder to finish copying" = "Finder가 복사를 마칠 때까지 기다리는 중";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "라이브러리 같은 숨김 파일과 폴더가 Finder와 데스크탑에 흐리게 표시됩니다. Finder에서 ⇧⌘.을 누른 것과 같습니다. 변경 사항을 적용하기 위해 Finder가 잠시 재시작된 뒤 윈도우와 탭을 다시 엽니다. Finder가 파일을 복사하거나 이동하는 중이면 끝날 때까지 기다렸다가 재시작됩니다.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "시스템 설정 › 데스크탑 및 Dock › 항목 보기 › 데스크탑에서";
 "Opens Desktop & Dock in System Settings" = "시스템 설정에서 데스크탑 및 Dock을 엽니다";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "시스템 설정에서 데스크탑 및 Dock을 엽니다. 아이콘을 숨기려면 ‘항목 보기’ 옆의 ‘데스크탑에서’를 끄고, 다시 보이게 하려면 켜세요. 파일은 데스크탑 폴더에 그대로 있습니다.";

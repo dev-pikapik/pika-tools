@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Filerna stannar där de är";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Gömmer filerna och mapparna på skrivbordet, precis som inställningen ”Visa objekt” i Systeminställningar › Skrivbord och Dock. De ligger kvar i mappen Skrivbord i Finder.";
 "Show hidden files" = "Visa gömda filer";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Filer som macOS gömmer visas nedtonade, som med ⇧⌘. i Finder";
-"They appear dimmed in Finder" = "De visas nedtonade i Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Gömda filer och mappar, som Bibliotek, visas nedtonade i Finder och på skrivbordet, precis som när du trycker på ⇧⌘. i Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Gömda filer visas nedtonade. Finder startar om snabbt och öppnar sina fönster igen";
+"Finder restarts for a moment" = "Finder startar om snabbt";
+"Waiting for Finder to finish copying" = "Väntar på att Finder ska kopiera klart";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Gömda filer och mappar, som Bibliotek, visas nedtonade i Finder och på skrivbordet, precis som när du trycker på ⇧⌘. i Finder. För att ändringen ska gälla startar Finder om snabbt och öppnar sina fönster och flikar igen. Om Finder kopierar eller flyttar filer startar den om först när den är klar.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Systeminställningar › Skrivbord och Dock › Visa objekt › På skrivbordet";
 "Opens Desktop & Dock in System Settings" = "Öppnar Skrivbord och Dock i Systeminställningar";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Öppnar Skrivbord och Dock i Systeminställningar. Stäng av ”På skrivbordet” bredvid ”Visa objekt” för att gömma symbolerna och slå på det igen för att få tillbaka dem. Filerna ligger kvar i mappen Skrivbord.";

@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Soubory zůstanou na svém místě";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Skryje soubory a složky na ploše, stejně jako volba „Zobrazit položky“ v Nastavení systému › Plocha a Dock. Zůstanou ve složce Plocha ve Finderu.";
 "Show hidden files" = "Zobrazit skryté soubory";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Soubory, které macOS skrývá, se zobrazí zašedle, jako s ⇧⌘. ve Finderu";
-"They appear dimmed in Finder" = "Ve Finderu se zobrazí zašedle";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Skryté soubory a složky, například Knihovna, se zobrazí zašedle ve Finderu i na ploše, stejně jako po stisknutí ⇧⌘. ve Finderu.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Skryté soubory se zobrazí zašedle. Finder se na chvilku restartuje a znovu otevře svá okna";
+"Finder restarts for a moment" = "Finder se na chvilku restartuje";
+"Waiting for Finder to finish copying" = "Čeká se, až Finder dokončí kopírování";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Skryté soubory a složky, například Knihovna, se zobrazí zašedle ve Finderu i na ploše, stejně jako po stisknutí ⇧⌘. ve Finderu. Aby se změna projevila, Finder se na chvilku restartuje a znovu otevře svá okna a karty. Pokud Finder právě kopíruje nebo přesouvá soubory, restartuje se, až s tím skončí.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Nastavení systému › Plocha a Dock › Zobrazit položky › Na ploše";
 "Opens Desktop & Dock in System Settings" = "Otevře v Nastavení systému sekci Plocha a Dock";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otevře v Nastavení systému sekci Plocha a Dock. Ikony skryjete vypnutím volby „Na ploše“ vedle „Zobrazit položky“, opětovným zapnutím je vrátíte. Soubory zůstanou ve složce Plocha.";

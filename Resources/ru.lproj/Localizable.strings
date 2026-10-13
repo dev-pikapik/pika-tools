@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "Файлы остаются на месте";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Скрывает файлы и папки на рабочем столе, как параметр «Показывать объекты» в Системных настройках › Рабочий стол и Dock. Они остаются в папке «Рабочий стол» в Finder.";
 "Show hidden files" = "Показать скрытые файлы";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Файлы, которые macOS скрывает, видны полупрозрачными, как после ⇧⌘. в Finder";
-"They appear dimmed in Finder" = "В Finder они видны полупрозрачными";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Скрытые файлы и папки, например «Библиотека», видны полупрозрачными в Finder и на рабочем столе, как после нажатия ⇧⌘. в Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Скрытые файлы видны полупрозрачными. Finder ненадолго перезапустится и снова откроет свои окна";
+"Finder restarts for a moment" = "Finder ненадолго перезапустится";
+"Waiting for Finder to finish copying" = "Жду, пока Finder закончит копирование";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Скрытые файлы и папки, например «Библиотека», видны полупрозрачными в Finder и на рабочем столе, как после нажатия ⇧⌘. в Finder. Чтобы применить изменение, Finder ненадолго перезапустится и снова откроет свои окна и вкладки. Если Finder копирует или перемещает файлы, он перезапустится, когда закончит.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Системные настройки › Рабочий стол и Dock › Показывать объекты › На Рабочем столе";
 "Opens Desktop & Dock in System Settings" = "Открывает «Рабочий стол и Dock» в Системных настройках";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Открывает «Рабочий стол и Dock» в Системных настройках. Чтобы скрыть значки, выключите «На Рабочем столе» рядом с «Показывать объекты», а чтобы вернуть, включите снова. Файлы остаются в папке «Рабочий стол».";

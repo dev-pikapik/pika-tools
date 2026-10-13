@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "I file restano dove sono";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Nasconde i file e le cartelle sulla scrivania, come l’opzione «Mostra elementi» in Impostazioni di Sistema › Scrivania e Dock. Restano nella cartella Scrivania del Finder.";
 "Show hidden files" = "Mostra i file nascosti";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "I file che macOS nasconde appaiono attenuati, come con ⇧⌘. nel Finder";
-"They appear dimmed in Finder" = "Appaiono attenuati nel Finder";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "I file e le cartelle nascosti, come Libreria, appaiono attenuati nel Finder e sulla scrivania, come premendo ⇧⌘. nel Finder.";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "I file nascosti appaiono attenuati. Il Finder si riavvia per un attimo e riapre le sue finestre";
+"Finder restarts for a moment" = "Il Finder si riavvia per un attimo";
+"Waiting for Finder to finish copying" = "Aspetto che il Finder finisca di copiare";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "I file e le cartelle nascosti, come Libreria, appaiono attenuati nel Finder e sulla scrivania, come premendo ⇧⌘. nel Finder. Per applicare la modifica, il Finder si riavvia per un attimo e riapre le sue finestre e le sue schede. Se il Finder sta copiando o spostando dei file, si riavvia solo quando ha finito.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Impostazioni di Sistema › Scrivania e Dock › Mostra elementi › Sulla scrivania";
 "Opens Desktop & Dock in System Settings" = "Apre Scrivania e Dock in Impostazioni di Sistema";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Apre Scrivania e Dock in Impostazioni di Sistema. Disattiva «Sulla scrivania» accanto a «Mostra elementi» per nascondere le icone, e riattivalo per farle tornare. I file restano nella cartella Scrivania.";

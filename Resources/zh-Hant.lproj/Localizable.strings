@@ -1143,9 +1143,10 @@
 "The files stay where they are" = "檔案仍在原處";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "隱藏桌面上的檔案和檔案夾，和「系統設定」›「桌面與Dock」中的「顯示項目」選項一樣。它們仍在 Finder 的「桌面」檔案夾中。";
 "Show hidden files" = "顯示隱藏檔案";
-"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS 隱藏的檔案會以淡色顯示，和在 Finder 中按 ⇧⌘. 一樣";
-"They appear dimmed in Finder" = "在 Finder 中以淡色顯示";
-"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "隱藏的檔案和檔案夾（例如「資源庫」）會在 Finder 和桌面上以淡色顯示，和在 Finder 中按 ⇧⌘. 一樣。";
+"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "隱藏的檔案會以淡色顯示。Finder 會短暫重新啟動，並再次打開其視窗";
+"Finder restarts for a moment" = "Finder 會短暫重新啟動";
+"Waiting for Finder to finish copying" = "正在等待 Finder 完成拷貝";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "隱藏的檔案和檔案夾（例如「資源庫」）會在 Finder 和桌面上以淡色顯示，和在 Finder 中按 ⇧⌘. 一樣。為了套用變更，Finder 會短暫重新啟動，並再次打開其視窗和標籤頁。如果 Finder 正在拷貝或移動檔案，會等到完成後再重新啟動。";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "「系統設定」›「桌面與Dock」›「顯示項目」›「在桌面上」";
 "Opens Desktop & Dock in System Settings" = "打開「系統設定」中的「桌面與Dock」";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "打開「系統設定」中的「桌面與Dock」。關閉「顯示項目」旁的「在桌面上」即可隱藏圖像，再次開啟即可復原。檔案仍在「桌面」檔案夾中。";
