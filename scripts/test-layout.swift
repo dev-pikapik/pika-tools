@@ -58,16 +58,18 @@ enum TestLayout {
 
     static func main() {
         setbuf(stdout, nil)
+        let suggests = !(NSSpellChecker.shared.completions(forPartialWordRange: NSRange(location: 0, length: 1), in: "я", language: "ru", inSpellDocumentWithTag: 0) ?? []).isEmpty
+        if !suggests { print("layout: macOS gives no word suggestions here, skipping the cases that need them") }
         KeyboardLayouts.extraLanguages = ["en"]
         guard let us = layout("US"), let ru = layout("Russian"), let uk = layout("Ukrainian"), let de = layout("German"), let fr = layout("French"), let el = layout("Greek") else { fatalError("missing layouts") }
 
         KeyboardLayouts.all = [us, ru]
         expect(fix("ghbdtn", us)?.text, "привет")
         expect(fix("ghbdtn", us)?.original, "ghbdtn")
-        expect(fix("z nt,z k.,k.", us)?.text, "я тебя люблю")
+        if suggests { expect(fix("z nt,z k.,k.", us)?.text, "я тебя люблю") }
         expect(fix("I said ghbdtn", us)?.original, "ghbdtn")
         expect(fix("I said ghbdtn", us)?.text, "привет")
-        expect(fix("z 2 rjnf", us)?.text, "я 2 кота")
+        if suggests { expect(fix("z 2 rjnf", us)?.text, "я 2 кота") }
         expect(fix("руддщ цщкдв", ru)?.text, "hello world")
         expect(fix("GHBDTN", us)?.text, "ПРИВЕТ")
         expect(fix("ghbdtn", us, ignored: ["ghbdtn"])?.text, nil)
@@ -109,7 +111,7 @@ enum TestLayout {
         expect(fix("ghbdtn", us)?.text, "привет")
 
         KeyboardLayouts.all = [us, el]
-        expect(fix(us.translate(strokes("ευχαριστώ", el)!).text, us)?.text, "ευχαριστώ")
+        if suggests { expect(fix(us.translate(strokes("ευχαριστώ", el)!).text, us)?.text, "ευχαριστώ") }
 
         if let arabic = layout("Arabic") {
             KeyboardLayouts.all = [us, arabic]
