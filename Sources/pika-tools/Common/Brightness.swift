@@ -31,6 +31,7 @@ import IOKit
     @ObservationIgnored private var controlled: Set<CGDirectDisplayID> = []
     @ObservationIgnored private var silent: Set<String> = []
     @ObservationIgnored private var touched: [CGDirectDisplayID: Date] = [:]
+    @ObservationIgnored private var wrote: [String: Date] = [:]
     @ObservationIgnored private var polled = Date.distantPast
     @ObservationIgnored private var timer: Timer?
     @ObservationIgnored private var watchers = 0
@@ -148,6 +149,11 @@ import IOKit
             #endif
             return Monitor(id: id, key: key, name: screen.localizedName, level: saved ?? old.first { $0.id == id }?.level ?? 1, hasControl: control, dimsPicture: picture, reports: reports)
         }
+        #if !APPSTORE
+        for key in BrightnessMath.restarted(old.map(\.key), monitors.map(\.key), wrote: wrote) {
+            UserDefaults.standard.set(true, forKey: Self.pictureKey(key))
+        }
+        #endif
     }
 
     #if APPSTORE
@@ -175,6 +181,7 @@ import IOKit
             }
         } else {
             #if !APPSTORE
+            wrote[monitor.key] = Date()
             link.write(monitor.level, to: monitor.id)
             #endif
         }
@@ -183,6 +190,7 @@ import IOKit
     private func resend() {
         #if !APPSTORE
         for monitor in monitors where !monitor.usesPicture && UserDefaults.standard.object(forKey: Self.levelKey(monitor.key)) != nil {
+            wrote[monitor.key] = Date()
             link.write(monitor.level, to: monitor.id)
         }
         #endif

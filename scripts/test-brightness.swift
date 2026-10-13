@@ -35,5 +35,10 @@ enum TestBrightness {
         precondition(close(BrightnessMath.step(0.5, up: true, fine: false), 0.5625) && close(BrightnessMath.step(0.5, up: false, fine: true), 0.5 - 1.0 / 64))
         precondition(close(BrightnessMath.step(0.53, up: true, fine: false), 0.5625) && close(BrightnessMath.step(1, up: true, fine: false), 1) && close(BrightnessMath.step(0, up: false, fine: true), 0))
         print("picture dimming and brightness steps: ok")
+
+        let now = Date()
+        let wrote = ["a": now.addingTimeInterval(-3), "b": now.addingTimeInterval(-3), "c": now.addingTimeInterval(-30)]
+        precondition(BrightnessMath.restarted(["a", "b", "c", "d"], ["b"], wrote: wrote, now: now) == ["a"])
+        print("monitor gone right after a brightness command: ok")
     }
 }

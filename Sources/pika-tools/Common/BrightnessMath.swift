@@ -11,6 +11,10 @@ enum BrightnessMath {
     }
 
     #if !APPSTORE
+    static func restarted(_ before: [String], _ after: [String], wrote: [String: Date], now: Date = Date()) -> [String] {
+        before.filter { !after.contains($0) && now.timeIntervalSince(wrote[$0] ?? .distantPast) < 10 }
+    }
+
     enum Reply: Equatable {
         case value(current: Int, maximum: Int)
         case unsupported
