@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.44.1"></a>VoiceOver pikapik menüsünü yeniden açıyor
+
+<sub>1.44.1 · 13 Ekim 2026</sub>
+
+macOS 27’de menü çubuğundaki pikapik menüsünü VoiceOver ile yeniden açabilirsiniz.
+
+Önceden pikapik simgesini VoiceOver veya başka bir erişilebilirlik özelliğiyle etkinleştirdiğinizde hiçbir şey olmuyordu. Artık menü açılıyor ve simgeyi yeniden etkinleştirdiğinizde, tıklamada olduğu gibi kapanıyor.
+
+---
+
 ## <a id="v1.44.0"></a>Bir portu hangi programın tuttuğunu görün
 
 <sub>1.44.0 · 13 Ekim 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.44.1"></a>VoiceOver vuelve a abrir el menú de pikapik
+
+<sub>1.44.1 · 13 de octubre de 2026</sub>
+
+En macOS 27, puedes volver a abrir el menú de pikapik de la barra de menús con VoiceOver.
+
+Antes, al activar el icono de pikapik con VoiceOver u otra herramienta de accesibilidad, no pasaba nada. Ahora el menú se abre, y si vuelves a activar el icono, se cierra, igual que con un clic.
+
+---
+
 ## <a id="v1.44.0"></a>Mira qué programa ocupa un puerto
 
 <sub>1.44.0 · 13 de octubre de 2026</sub>

@@ -5,6 +5,16 @@
 
 ---
 
+## <a id="v1.44.1"></a>VoiceOver znovu otevírá nabídku pikapik
+
+<sub>1.44.1 · 13. října 2026</sub>
+
+V macOS 27 můžete nabídku pikapik na řádku nabídek znovu otevřít pomocí VoiceOveru.
+
+Dříve se nic nestalo, když jste ikonu pikapik aktivovali pomocí VoiceOveru nebo jiné funkce zpřístupnění. Teď se nabídka otevře a dalším aktivováním ikony se zase zavře, stejně jako kliknutím.
+
+---
+
 ## <a id="v1.44.0"></a>Podívejte se, kdo zabral port
 
 <sub>1.44.0 · 13. října 2026</sub>
