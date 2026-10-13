@@ -198,7 +198,7 @@ private struct AppVolumeIcon: View {
     }
 }
 
-private struct AppVolumeArt: View {
+struct AppVolumeArt: View {
     let on: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 

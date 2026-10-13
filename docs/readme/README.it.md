@@ -236,7 +236,11 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br><b>Porte</b>
 <br>Scopri quale programma occupa una porta e liberala.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Volume delle app</b>
+<br>Abbassa il volume di qualsiasi app o silenziala senza toccare le altre.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik ha bisogno di due permessi. Al primo avvio apre le impostazioni sulla pa
 
 L’app si accorge della modifica in un paio di secondi, senza bisogno di riavviare.
 
-Alcune funzioni chiedono qualcosa in più quando le usi: **Controllo ventole**, **Estensioni del Finder**, **iCloud Drive**, **Accesso completo al disco** e **Registrazione schermo**. Sono tutte nella pagina Permessi delle impostazioni: ogni permesso ha una riga che dice a cosa serve, una spunta verde o una croce arancione e un solo pulsante: **Consenti** quando manca, **Spegni** quando è attivo. Così puoi revocare qualsiasi permesso proprio lì.
+Alcune funzioni chiedono qualcosa in più quando le usi: **Controllo ventole**, **Estensioni del Finder**, **iCloud Drive**, **Accesso completo al disco**, **Registrazione schermo** e **Registrazione dell’audio di sistema**. Sono tutte nella pagina Permessi delle impostazioni: ogni permesso ha una riga che dice a cosa serve, una spunta verde o una croce arancione e un solo pulsante: **Consenti** quando manca, **Spegni** quando è attivo. Così puoi revocare qualsiasi permesso proprio lì.
 
 pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicchi. Gli eventi vengono gestiti in memoria e inoltrati subito. Per correggere le parole scritte con il layout sbagliato, pikapik tiene in memoria solo le ultime parole che hai scritto e le dimentica appena fai clic o passi a un’altra app. Le uniche parole che salva sono quelle che gli hai chiesto di lasciare stare, solo su questo Mac, finché non le cancelli in Impostazioni › Tastiera. pikapik va online solo per gli aggiornamenti (chiede a GitHub qual è l’ultima versione e la scarica solo se scegli di aggiornare) e per la misura della velocità quando la avvii tu (usa i server di Apple). La versione del Mac App Store viene aggiornata dall’App Store, e la sua misura della velocità usa Cloudflare. I progressi del tuo animaletto (passi, lanci, premi e simili) vengono contati solo su questo Mac e non sono mai inviati da nessuna parte. Puoi cancellarli in Impostazioni › Animaletto.
 
@@ -260,6 +264,8 @@ pikapik non registra, non conserva e non invia nulla di ciò che digiti o clicch
 
 <details>
 <summary>Ogni strumento nel dettaglio</summary>
+
+**Volume delle app.** Apri Impostazioni › Suono e attiva **Volume delle app**. Ogni app che riproduce suoni ha il suo cursore e un pulsante per silenziarla, nelle Impostazioni e nel menu. Abbassa il volume di una videochiamata troppo forte, silenzia un gioco rumoroso e lascia la tua musica com’è: il volume del Mac e delle altre app non cambia. pikapik ricorda il livello di ogni app, e un’app che lasci a volume pieno non viene mai toccata. Per cambiare il volume di un’app, pikapik fa passare il suo suono attraverso se stesso, quindi serve il permesso **Registrazione dell’audio di sistema**, che consenti nella pagina Permessi. Il suono viene solo fatto passare: non viene registrato, salvato né inviato da nessuna parte, e il microfono non viene usato. Richiede macOS 14.2 o successivo ed è nascosto su macOS 14.0 e 14.1. Disattivato di default.
 
 **Proteggi ⌘Q e ⌘W.** ⌘Q e ⌘W da soli non fanno nulla, così non chiudi un’app o una finestra per sbaglio. Aggiungi Maiuscole per farlo apposta: ⇧⌘Q esce, ⇧⌘W chiude. Funziona in tutte le app. Ogni tasto ha il suo interruttore. Disattivato di default.
 
@@ -373,6 +379,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Temperatura**: quanto è caldo il Mac, nel complesso e per ogni componente, come processore, memoria e batteria.
 - **Velocità internet**: misura la connessione e mostra a cosa basta.
 - **Porte**: quale programma occupa quale porta, i suoi indirizzi e i dettagli, e un pulsante per liberare la porta.
+- **Suono**: volume delle app, con un cursore e un pulsante per silenziare ogni app che riproduce suoni.
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End, correzione del layout sbagliato.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).

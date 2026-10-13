@@ -236,7 +236,11 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br><b>Poorten</b>
 <br>Zie welk programma een poort bezet houdt, en maak hem vrij.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>App-volume</b>
+<br>Zet een app zachter of demp hem, zonder de andere aan te raken.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik heeft twee toestemmingen nodig. De eerste keer opent de app de instellin
 
 De app merkt de wijziging binnen een paar seconden op, opnieuw opstarten is niet nodig.
 
-Sommige functies vragen om meer als je ze gebruikt: **Ventilatorbeheer**, **Finder-extensies**, **iCloud Drive**, **Volledige schijftoegang** en **Schermopname**. Alles staat op de pagina Toestemmingen in de instellingen: elke toestemming heeft een regel over waarvoor ze dient, een groen vinkje of een oranje kruisje en één knop: **Toestaan** als ze ontbreekt, **Zet uit** als ze aan staat. Zo trek je elke toestemming meteen terug.
+Sommige functies vragen om meer als je ze gebruikt: **Ventilatorbeheer**, **Finder-extensies**, **iCloud Drive**, **Volledige schijftoegang**, **Schermopname** en **Opname van systeemaudio**. Alles staat op de pagina Toestemmingen in de instellingen: elke toestemming heeft een regel over waarvoor ze dient, een groen vinkje of een oranje kruisje en één knop: **Toestaan** als ze ontbreekt, **Zet uit** als ze aan staat. Zo trek je elke toestemming meteen terug.
 
 pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aanklikt. Gebeurtenissen worden in het geheugen verwerkt en meteen doorgegeven. Om woorden te corrigeren die je in de verkeerde indeling typt, houdt pikapik alleen je laatste paar woorden in het geheugen en vergeet het die zodra je klikt of naar een andere app gaat. Het bewaart alleen de woorden die het op jouw verzoek met rust moet laten, en alleen op deze Mac, tot je ze wist in Instellingen › Toetsenbord. pikapik gaat alleen online voor updates (het vraagt GitHub om de nieuwste versie en downloadt die alleen als je ervoor kiest om bij te werken) en voor de snelheidstest als je die start (daarbij worden servers van Apple gebruikt). De versie uit de Mac App Store wordt door de App Store bijgewerkt, en de snelheidstest daarvan gebruikt Cloudflare. De voortgang van je huisdiertje (stappen, worpen, onderscheidingen en dergelijke) wordt alleen op deze Mac geteld en nooit ergens naartoe verstuurd. Je kunt die wissen in Instellingen › Huisdiertje.
 
@@ -260,6 +264,8 @@ pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aan
 
 <details>
 <summary>Elk hulpmiddel in detail</summary>
+
+**App-volume.** Open Instellingen › Geluid en zet **App-volume** aan. Elke app die geluid afspeelt krijgt een eigen schuifregelaar en een dempknop, in Instellingen en in het menu. Zet een te luid videogesprek zachter, demp een lawaaierige game en laat je muziek zoals die is: het volume van je Mac en van de andere apps verandert niet. pikapik onthoudt het niveau van elke app, en een app die je op vol volume laat staan, wordt nooit aangeraakt. Om het volume van een app te wijzigen, leidt pikapik het geluid ervan door zichzelf heen. Daarvoor heeft het de toestemming **Opname van systeemaudio** nodig, die je toestaat op de pagina Toestemmingen. Het geluid wordt alleen doorgegeven: het wordt niet opgenomen, bewaard of ergens naartoe gestuurd, en de microfoon wordt niet gebruikt. Vereist macOS 14.2 of nieuwer en is verborgen op macOS 14.0 en 14.1. Standaard uit.
 
 **⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
 
@@ -373,6 +379,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Temperatuur**: hoe warm je Mac is, in het algemeen en per onderdeel, zoals de processor, het geheugen en de batterij.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.
 - **Poorten**: welk programma welke poort bezet houdt, de adressen en details, en een knop om de poort vrij te maken.
+- **Geluid**: app-volume, een schuifregelaar en een dempknop voor elke app die geluid afspeelt.
 - **Toetsenbord**: van taal wisselen, toetsherhaling, Home en End, verkeerde indeling corrigeren.
 - **Muis**: aanwijzerversnelling en snelheid aanwijzer, scrollen per regel, scrollrichting, zijknoppen.
 - **Vensters**: vergroten met de groene knop (met een lijst met uitzonderingen), bescherming van ⌘Q en ⌘W, en stoppen bij het laatste venster (met een lijst met uitzonderingen).

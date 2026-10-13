@@ -236,7 +236,11 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br><b>Porty</b>
 <br>Zjistěte, který program zabral port, a uvolněte ho.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Hlasitost aplikací</b>
+<br>Ztište nebo ztlumte libovolnou aplikaci, aniž byste ovlivnili ostatní.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik potřebuje dvě oprávnění. Při prvním spuštění otevře nastaven�
 
 Aplikace změnu zaznamená během pár sekund, restart není potřeba.
 
-Některé funkce žádají při použití o něco víc: **Ovládání ventilátorů**, **Rozšíření Finderu**, **iCloud Drive**, **Úplný přístup k disku** a **Záznam obrazovky**. Všechno je na stránce Oprávnění v nastavení: každé oprávnění má řádek o tom, k čemu slouží, zelenou fajfku nebo oranžový křížek a jedno tlačítko: **Povolit**, když chybí, **Vypnout**, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam.
+Některé funkce žádají při použití o něco víc: **Ovládání ventilátorů**, **Rozšíření Finderu**, **iCloud Drive**, **Úplný přístup k disku**, **Záznam obrazovky** a **Nahrávání zvuku systému**. Všechno je na stránce Oprávnění v nastavení: každé oprávnění má řádek o tom, k čemu slouží, zelenou fajfku nebo oranžový křížek a jedno tlačítko: **Povolit**, když chybí, **Vypnout**, když je zapnuté. Libovolné oprávnění tak můžete vzít zpět rovnou tam.
 
 pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na co klikáte. Události se zpracovávají v paměti a hned se předávají dál. Aby mohl opravovat slova napsaná ve špatném rozložení, drží pikapik v paměti jen několik posledních napsaných slov a zapomene je, jakmile kliknete nebo přejdete do jiné aplikace. Ukládá jen slova, která podle vás nemá opravovat, a to jen v tomto Macu, dokud je nevymažete v Nastavení › Klávesnice. pikapik se připojuje k internetu jen kvůli aktualizacím (ptá se GitHubu na nejnovější verzi a stáhne ji, jen když se rozhodnete aktualizovat) a kvůli testu rychlosti, když ho spustíte (používá servery Apple). Verzi z Mac App Store aktualizuje App Store a její test rychlosti používá Cloudflare. Postup mazlíčka (kroky, hody, ocenění a podobně) se počítá jen v tomto Macu a nikam se neposílá. Smazat ho můžete v Nastavení › Mazlíček.
 
@@ -260,6 +264,8 @@ pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na 
 
 <details>
 <summary>Každý nástroj podrobně</summary>
+
+**Hlasitost aplikací.** Otevřete Nastavení › Zvuk a zapněte **Hlasitost aplikací**. Každá aplikace, která přehrává zvuk, dostane vlastní posuvník a tlačítko pro ztlumení, v Nastavení i v nabídce. Hlasitý videohovor ztišíte, hlučnou hru ztlumíte a hudbu necháte, jak je: hlasitost Macu ani ostatních aplikací se nezmění. pikapik si pamatuje hlasitost každé aplikace a aplikace, kterou necháte na plnou hlasitost, se nikdy nedotkne. Aby mohl hlasitost aplikace měnit, pouští pikapik její zvuk přes sebe, a proto potřebuje oprávnění **Nahrávání zvuku systému**, které povolíte na stránce Oprávnění. Zvuk se jen předává dál: nenahrává se, neukládá ani nikam neposílá a mikrofon se nepoužívá. Vyžaduje macOS 14.2 nebo novější a v macOS 14.0 a 14.1 je skrytý. Ve výchozím stavu vypnuto.
 
 **Ochrana ⌘Q a ⌘W.** Samotné ⌘Q a ⌘W nic nedělají, takže omylem neukončíte aplikaci ani nezavřete okno. Přidejte Shift, když to chcete udělat záměrně: ⇧⌘Q ukončí, ⇧⌘W zavře. Funguje ve všech aplikacích. Každá klávesa má vlastní přepínač. Ve výchozím stavu vypnuto.
 
@@ -373,6 +379,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Teplota**: jak moc je Mac zahřátý, celkově i po jednotlivých součástech, například procesor, paměť a baterie.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.
 - **Porty**: který program zabral který port, jeho adresy a podrobnosti a tlačítko, které port uvolní.
+- **Zvuk**: hlasitost aplikací, posuvník a tlačítko ztlumení pro každou aplikaci, která přehrává zvuk.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End, oprava špatného rozložení.
 - **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).

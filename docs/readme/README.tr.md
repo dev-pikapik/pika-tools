@@ -236,7 +236,11 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br><b>Portlar</b>
 <br>Bir portu hangi programın tuttuğunu görün ve serbest bırakın.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Uygulama Sesi</b>
+<br>Diğerlerine dokunmadan herhangi bir uygulamanın sesini kısın veya kapatın.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik’in iki izne ihtiyacı vardır. İlk açılışta ayarlar, sizi adım a
 
 Uygulama değişikliği birkaç saniye içinde fark eder, yeniden başlatmaya gerek yoktur.
 
-Bazı özellikler kullandığınızda ek izin ister: **Fan kontrolü**, **Finder Eklentileri**, **iCloud Drive**, **Tam Disk Erişimi** ve **Ekran Kaydı**. Hepsi ayarlardaki İzinler sayfasında toplanır: her iznin ne işe yaradığını anlatan bir satırı, yeşil bir onay işareti ya da turuncu bir çarpısı ve tek bir düğmesi vardır: izin eksikse **İzin Ver**, açıksa **Kapat**. Böylece herhangi bir izni hemen oradan geri alabilirsiniz.
+Bazı özellikler kullandığınızda ek izin ister: **Fan kontrolü**, **Finder Eklentileri**, **iCloud Drive**, **Tam Disk Erişimi**, **Ekran Kaydı** ve **Sistem Sesi Kaydı**. Hepsi ayarlardaki İzinler sayfasında toplanır: her iznin ne işe yaradığını anlatan bir satırı, yeşil bir onay işareti ya da turuncu bir çarpısı ve tek bir düğmesi vardır: izin eksikse **İzin Ver**, açıksa **Kapat**. Böylece herhangi bir izni hemen oradan geri alabilirsiniz.
 
 pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz ya da göndermez. Olaylar bellekte işlenir ve hemen iletilir. Yanlış klavye düzeninde yazılan sözcükleri düzeltebilmek için pikapik yalnızca son yazdığınız birkaç sözcüğü bellekte tutar ve tıkladığınız ya da başka bir uygulamaya geçtiğiniz anda bunları unutur. Kaydettiği sözcükler yalnızca olduğu gibi bırakmasını istedikleriniz olur; bunlar da yalnızca bu Mac’te, siz Ayarlar › Klavye sayfasından temizleyene kadar saklanır. pikapik internete yalnızca güncellemeler için (GitHub’a en son sürümü sorar, güncellemeyi seçerseniz de indirir) ve siz başlattığınızda hız testi için (Apple sunucularını kullanır) bağlanır. Mac App Store sürümünü App Store günceller, hız testi ise Cloudflare kullanır. Evcil dostunuzun ilerlemesi (adımlar, fırlatmalar, ödüller ve benzerleri) yalnızca bu Mac’te sayılır ve hiçbir yere gönderilmez. Ayarlar › Evcil Dost sayfasından silebilirsiniz.
 
@@ -260,6 +264,8 @@ pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz 
 
 <details>
 <summary>Her araç ayrıntılı olarak</summary>
+
+**Uygulama Sesi.** Ayarlar › Ses sayfasına gidin ve **Uygulama Sesi** anahtarını açın. Ses çalan her uygulama kendi sürgüsünü ve bir sessize alma düğmesini alır, hem Ayarlar’da hem menüde. Yüksek sesli bir görüntülü görüşmenin sesini kısın, gürültülü bir oyunu sessize alın, müziğinize dokunmayın: Mac’inizin ve diğer uygulamaların ses düzeyi aynı kalır. pikapik her uygulamanın düzeyini hatırlar ve tam sesle bıraktığınız uygulamaya hiç dokunmaz. Bir uygulamanın ses düzeyini değiştirmek için pikapik onun sesini kendi içinden geçirir, bu yüzden İzinler sayfasında verdiğiniz **Sistem Sesi Kaydı** iznine ihtiyaç duyar. Ses yalnızca aktarılır: kaydedilmez, saklanmaz, hiçbir yere gönderilmez ve mikrofon kullanılmaz. macOS 14.2 veya sonrasını gerektirir ve macOS 14.0 ile 14.1’de gizlidir. Varsayılan olarak kapalıdır.
 
 **⌘Q ve ⌘W’yi koruma.** ⌘Q ve ⌘W tek başına hiçbir şey yapmaz, böylece bir uygulamadan yanlışlıkla çıkmaz ya da bir pencereyi yanlışlıkla kapatmazsınız. Bilerek yapmak için Shift ekleyin: ⇧⌘Q çıkar, ⇧⌘W kapatır. Tüm uygulamalarda çalışır. Her tuşun kendi anahtarı vardır. Varsayılan olarak kapalıdır.
 
@@ -373,6 +379,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Sıcaklık**: Mac’inizin ne kadar ısındığı, genel olarak ve işlemci, bellek, pil gibi her parça için.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.
 - **Portlar**: hangi programın hangi portu tuttuğu, adresleri ve ayrıntıları, portu serbest bırakan bir düğme.
+- **Ses**: uygulama sesi, ses çalan her uygulama için bir sürgü ve bir sessize alma düğmesi.
 - **Klavye**: dil değiştirme, tuş tekrarı, Home ve End, yanlış klavye düzenini düzeltme.
 - **Fare**: imleç ivmesi ve izleme hızı, satır satır kaydırma, kaydırma yönü, yan düğmeler.
 - **Pencereler**: yeşil düğmeyle pencereyi büyütme (istisna listesiyle), ⌘Q ve ⌘W koruması ve son pencerede çıkma (istisna listesiyle).

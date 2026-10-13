@@ -236,7 +236,11 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br><b>Port</b>
 <br>Lihat program mana yang memakai port, lalu bebaskan.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Volume App</b>
+<br>Kecilkan atau bisukan app mana pun tanpa memengaruhi yang lain.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik memerlukan dua izin. Saat pertama kali dibuka, app menampilkan pengatura
 
 App mendeteksi perubahan dalam satu atau dua detik, tanpa perlu memulai ulang.
 
-Beberapa fitur meminta lebih saat Anda menggunakannya: **Kontrol kipas**, **Ekstensi Finder**, **iCloud Drive**, **Akses Disk Penuh**, dan **Perekaman Layar**. Semuanya ada di halaman Izin dalam pengaturan: setiap izin punya satu baris tentang kegunaannya, tanda centang hijau atau tanda silang oranye, dan satu tombol: **Izinkan** saat belum ada, **Matikan** saat sudah aktif. Jadi Anda bisa mencabut izin apa pun langsung di sana.
+Beberapa fitur meminta lebih saat Anda menggunakannya: **Kontrol kipas**, **Ekstensi Finder**, **iCloud Drive**, **Akses Disk Penuh**, **Perekaman Layar**, dan **Perekaman Audio Sistem**. Semuanya ada di halaman Izin dalam pengaturan: setiap izin punya satu baris tentang kegunaannya, tanda centang hijau atau tanda silang oranye, dan satu tombol: **Izinkan** saat belum ada, **Matikan** saat sudah aktif. Jadi Anda bisa mencabut izin apa pun langsung di sana.
 
 pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau klik. Peristiwa diproses di memori dan langsung diteruskan. Untuk memperbaiki kata yang diketik dengan tata letak yang salah, pikapik hanya mengingat beberapa kata terakhir yang Anda ketik, di memori saja, dan melupakannya begitu Anda mengeklik atau berpindah app. Satu-satunya kata yang disimpannya adalah kata yang Anda minta untuk dibiarkan apa adanya, hanya di Mac ini, sampai Anda menghapusnya di Pengaturan › Papan Ketik. pikapik hanya terhubung ke internet untuk pembaruan (menanyakan rilis terbaru ke GitHub dan mengunduhnya hanya jika Anda memilih memperbarui) serta untuk Tes Kecepatan saat Anda memulainya (memakai server Apple). Versi Mac App Store diperbarui oleh App Store, dan Tes Kecepatannya memakai Cloudflare. Kemajuan peliharaan (langkah, lemparan, penghargaan, dan sejenisnya) dihitung hanya di Mac ini dan tidak pernah dikirim ke mana pun. Anda bisa menghapusnya di Pengaturan › Peliharaan.
 
@@ -260,6 +264,8 @@ pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau kli
 
 <details>
 <summary>Setiap alat secara detail</summary>
+
+**Volume App.** Buka Pengaturan › Suara, lalu aktifkan **Volume App**. Setiap app yang memutar suara mendapat slider dan tombol bisu sendiri, di Pengaturan maupun di menu. Kecilkan suara panggilan video yang terlalu keras, bisukan game yang berisik, dan biarkan musik Anda apa adanya: volume Mac Anda dan app lain tidak berubah. pikapik mengingat level tiap app, dan app yang Anda biarkan di volume penuh tidak pernah disentuh. Untuk mengubah volume sebuah app, pikapik meneruskan suaranya melalui dirinya sendiri, jadi ia membutuhkan izin **Perekaman Audio Sistem**, yang Anda izinkan di halaman Izin. Suara hanya diteruskan: tidak direkam, disimpan, atau dikirim ke mana pun, dan mikrofon tidak digunakan. Memerlukan macOS 14.2 atau lebih baru dan disembunyikan di macOS 14.0 dan 14.1. Mati secara default.
 
 **Lindungi ⌘Q dan ⌘W.** ⌘Q dan ⌘W saja tidak melakukan apa pun, jadi Anda tidak akan keluar dari app atau menutup jendela secara tidak sengaja. Tambahkan Shift untuk melakukannya dengan sengaja: ⇧⌘Q keluar, ⇧⌘W menutup. Berfungsi di semua app. Setiap tombol punya saklarnya sendiri. Mati secara default.
 
@@ -373,6 +379,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Suhu**: seberapa hangat Mac Anda, secara keseluruhan dan per komponen, seperti prosesor, memori, dan baterai.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.
 - **Port**: program mana yang memakai port mana, alamat dan detailnya, serta tombol untuk membebaskan port.
+- **Suara**: volume app, slider dan tombol bisu untuk setiap app yang memutar suara.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End, perbaikan tata letak yang salah.
 - **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).

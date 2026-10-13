@@ -236,7 +236,11 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br><b>Porty</b>
 <br>Zobacz, który program zajął port, i zwolnij go.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Głośność aplikacji</b>
+<br>Ścisz lub wycisz dowolną aplikację, nie ruszając pozostałych.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik potrzebuje dwóch uprawnień. Przy pierwszym uruchomieniu otwiera ustawi
 
 Aplikacja zauważy zmianę w ciągu kilku sekund, bez ponownego uruchamiania.
 
-Niektóre funkcje proszą o więcej, kiedy z nich korzystasz: **Sterowanie wentylatorami**, **Rozszerzenia Findera**, **iCloud Drive**, **Pełny dostęp do dysku** i **Nagrywanie ekranu**. Wszystko jest na stronie Uprawnienia w ustawieniach: każde uprawnienie ma wiersz z opisem, do czego służy, zielony ptaszek albo pomarańczowy krzyżyk i jeden przycisk: **Zezwól**, gdy go brakuje, **Wyłącz**, gdy jest włączone. Dzięki temu każde uprawnienie cofniesz od razu na miejscu.
+Niektóre funkcje proszą o więcej, kiedy z nich korzystasz: **Sterowanie wentylatorami**, **Rozszerzenia Findera**, **iCloud Drive**, **Pełny dostęp do dysku**, **Nagrywanie ekranu** i **Nagrywanie dźwięku systemowego**. Wszystko jest na stronie Uprawnienia w ustawieniach: każde uprawnienie ma wiersz z opisem, do czego służy, zielony ptaszek albo pomarańczowy krzyżyk i jeden przycisk: **Zezwól**, gdy go brakuje, **Wyłącz**, gdy jest włączone. Dzięki temu każde uprawnienie cofniesz od razu na miejscu.
 
 pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klikasz. Zdarzenia są obsługiwane w pamięci i od razu przekazywane dalej. Aby poprawiać słowa wpisane w złym układzie, pikapik trzyma w pamięci tylko kilka ostatnich wpisanych słów i zapomina o nich, gdy tylko klikniesz lub przełączysz się na inną aplikację. Zapisuje tylko słowa, które na twoją prośbę ma zostawiać bez zmian, i to wyłącznie na tym Macu, dopóki nie wyczyścisz ich w Ustawieniach › Klawiatura. pikapik łączy się z internetem tylko po uaktualnienia (pyta GitHub o najnowsze wydanie i pobiera je tylko wtedy, gdy zdecydujesz się uaktualnić) oraz do testu prędkości, gdy go uruchomisz (korzysta z serwerów Apple). Wersję z Mac App Store uaktualnia App Store, a jej test prędkości korzysta z Cloudflare. Postępy zwierzaka (kroki, rzuty, nagrody i tym podobne) są liczone tylko na tym Macu i nigdy nigdzie nie są wysyłane. Możesz je wymazać w Ustawieniach › Zwierzak.
 
@@ -260,6 +264,8 @@ pikapik nie nagrywa, nie przechowuje i nie wysyła niczego, co piszesz lub klika
 
 <details>
 <summary>Każde narzędzie dokładnie</summary>
+
+**Głośność aplikacji.** Otwórz Ustawienia › Dźwięk i włącz **Głośność aplikacji**. Każda aplikacja, która odtwarza dźwięk, dostaje własny suwak i przycisk wyciszenia, w Ustawieniach i w menu. Ścisz zbyt głośną rozmowę wideo, wycisz hałaśliwą grę i zostaw muzykę, jak jest: głośność Maca i pozostałych aplikacji się nie zmienia. pikapik zapamiętuje poziom każdej aplikacji, a aplikacji, którą zostawisz na pełnej głośności, nigdy nie rusza. Aby zmienić głośność aplikacji, pikapik przepuszcza jej dźwięk przez siebie, dlatego potrzebuje uprawnienia **Nagrywanie dźwięku systemowego**, które włączasz na stronie Uprawnienia. Dźwięk jest tylko przekazywany dalej: nie jest nagrywany, zapisywany ani nigdzie wysyłany, a mikrofon nie jest używany. Wymaga macOS 14.2 lub nowszego, a w macOS 14.0 i 14.1 funkcja jest ukryta. Domyślnie wyłączone.
 
 **Ochrona ⌘Q i ⌘W.** Same ⌘Q i ⌘W nic nie robią, więc nie zamkniesz przypadkiem aplikacji ani okna. Dodaj Shift, aby zrobić to celowo: ⇧⌘Q kończy aplikację, ⇧⌘W zamyka okno. Działa we wszystkich aplikacjach. Każdy klawisz ma własny przełącznik. Domyślnie wyłączone.
 
@@ -373,6 +379,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Temperatura**: jak bardzo nagrzał się Mac, ogólnie i dla każdej części, na przykład procesora, pamięci i baterii.
 - **Test prędkości**: sprawdzenie internetu i tego, do czego wystarczy.
 - **Porty**: który program zajął który port, jego adresy i szczegóły oraz przycisk, który zwalnia port.
+- **Dźwięk**: głośność aplikacji, suwak i przycisk wyciszenia dla każdej aplikacji, która odtwarza dźwięk.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End, poprawianie złego układu.
 - **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).

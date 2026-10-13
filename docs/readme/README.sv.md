@@ -236,7 +236,11 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br><b>Portar</b>
 <br>Se vilket program som har tagit en port, och frigör den.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Appvolym</b>
+<br>Sänk volymen eller stäng av ljudet för valfri app utan att påverka de andra.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik behöver två behörigheter. Första gången öppnas inställningarna p�
 
 Appen märker ändringen inom ett par sekunder, ingen omstart behövs.
 
-Vissa funktioner ber om mer när du använder dem: **Fläktstyrning**, **Finder-tillägg**, **iCloud Drive**, **Full skivåtkomst** och **Skärminspelning**. Allt finns på sidan Behörigheter i inställningarna: varje behörighet har en rad om vad den är till för, en grön bock eller ett orange kryss och en enda knapp: **Tillåt** när den saknas, **Stäng av** när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där.
+Vissa funktioner ber om mer när du använder dem: **Fläktstyrning**, **Finder-tillägg**, **iCloud Drive**, **Full skivåtkomst**, **Skärminspelning** och **Inspelning av systemljud**. Allt finns på sidan Behörigheter i inställningarna: varje behörighet har en rad om vad den är till för, en grön bock eller ett orange kryss och en enda knapp: **Tillåt** när den saknas, **Stäng av** när den är på. Så du kan ta tillbaka vilken behörighet som helst direkt där.
 
 pikapik spelar inte in, sparar inte och skickar inte något av det du skriver eller klickar på. Händelser hanteras i minnet och skickas vidare direkt. För att kunna rätta ord som skrivits med fel layout håller pikapik bara de senaste orden du har skrivit i minnet och glömmer dem så fort du klickar eller byter app. De enda ord som sparas är de som du har bett pikapik att låta vara, och bara på den här Mac-datorn, tills du rensar dem i Inställningar › Tangentbord. pikapik går bara online för uppdateringar (den frågar GitHub efter den senaste versionen och laddar bara ner den om du väljer att uppdatera) och för hastighetstestet när du startar det (då används Apples servrar). Versionen från Mac App Store uppdateras av App Store, och dess hastighetstest använder Cloudflare. Husdjurets framsteg (steg, kast, utmärkelser och liknande) räknas bara på den här Mac-datorn och skickas aldrig någonstans. Du kan radera dem i Inställningar › Husdjur.
 
@@ -260,6 +264,8 @@ pikapik spelar inte in, sparar inte och skickar inte något av det du skriver el
 
 <details>
 <summary>Varje verktyg i detalj</summary>
+
+**Appvolym.** Öppna Inställningar › Ljud och slå på **Appvolym**. Varje app som spelar upp ljud får ett eget reglage och en knapp för att stänga av ljudet, i Inställningar och i menyn. Sänk volymen på ett högljutt videosamtal, stäng av ljudet för ett bullrigt spel och låt musiken vara som den är: volymen på din Mac och på de andra apparna ändras inte. pikapik kommer ihåg nivån för varje app, och en app som du lämnar på full volym rörs aldrig. För att ändra en apps volym leder pikapik dess ljud genom sig själv, så det behöver behörigheten **Inspelning av systemljud**, som du tillåter på sidan Behörigheter. Ljudet leds bara vidare: det spelas inte in, sparas inte och skickas ingenstans, och mikrofonen används inte. Kräver macOS 14.2 eller senare och är dold i macOS 14.0 och 14.1. Av som standard.
 
 **Skydda ⌘Q och ⌘W.** ⌘Q och ⌘W ensamma gör ingenting, så du avslutar inte en app eller stänger ett fönster av misstag. Lägg till skift för att göra det med flit: ⇧⌘Q avslutar, ⇧⌘W stänger. Fungerar i alla appar. Varje tangent har en egen reglage. Av som standard.
 
@@ -373,6 +379,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Temperatur**: hur varm din Mac är, totalt och för varje del, som processorn, minnet och batteriet.
 - **Hastighetstest**: mät internet och se vad det räcker till.
 - **Portar**: vilket program som har tagit vilken port, dess adresser och detaljer och en knapp som frigör porten.
+- **Ljud**: appvolym, ett reglage och en knapp för att stänga av ljudet för varje app som spelar upp ljud.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End, rättning av fel layout.
 - **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).

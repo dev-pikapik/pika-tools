@@ -236,7 +236,11 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br><b>Porturi</b>
 <br>Vezi ce program a ocupat un port și eliberează-l.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
+<br><b>Volumul aplicațiilor</b>
+<br>Redu volumul sau oprește sunetul oricărei aplicații, fără să le afectezi pe celelalte.
+</td>
 </tr></tbody>
 </table>
 
@@ -252,7 +256,7 @@ pikapik are nevoie de două permisiuni. La prima pornire, deschide configurăril
 
 Aplicația observă schimbarea în câteva secunde, fără repornire.
 
-Unele funcții cer mai mult atunci când le folosești: **Controlul ventilatoarelor**, **Extensii Finder**, **iCloud Drive**, **Acces complet la disc** și **Înregistrare ecran**. Toate sunt pe pagina Permisiuni din configurări: fiecare permisiune are un rând care spune la ce servește, o bifă verde sau o cruce portocalie și un singur buton: **Permite** când lipsește, **Stinge** când e activă. Așa poți retrage orice permisiune chiar acolo.
+Unele funcții cer mai mult atunci când le folosești: **Controlul ventilatoarelor**, **Extensii Finder**, **iCloud Drive**, **Acces complet la disc**, **Înregistrare ecran** și **Înregistrarea audio a sistemului**. Toate sunt pe pagina Permisiuni din configurări: fiecare permisiune are un rând care spune la ce servește, o bifă verde sau o cruce portocalie și un singur buton: **Permite** când lipsește, **Stinge** când e activă. Așa poți retrage orice permisiune chiar acolo.
 
 pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi sau pe ce dai clic. Evenimentele sunt procesate în memorie și transmise imediat mai departe. Ca să corecteze cuvintele scrise în aranjamentul greșit, pikapik ține în memorie doar ultimele câteva cuvinte tastate și le uită imediat ce dai clic sau treci în altă aplicație. Singurele cuvinte pe care le salvează sunt cele pe care i-ai cerut să le lase neschimbate, doar pe acest Mac, până când le ștergi din Configurări › Tastatură. pikapik se conectează la internet doar pentru actualizări (întreabă GitHub care este cea mai nouă versiune și o descarcă numai dacă alegi să actualizezi) și pentru testul de viteză, când îl pornești (folosește serverele Apple). Versiunea din Mac App Store este actualizată de App Store, iar testul ei de viteză folosește Cloudflare. Progresul animăluțului (pași, aruncări, premii și altele asemenea) este numărat doar pe acest Mac și nu este trimis nicăieri. Îl poți șterge din Configurări › Animăluț.
 
@@ -260,6 +264,8 @@ pikapik nu înregistrează, nu păstrează și nu trimite nimic din ce tastezi s
 
 <details>
 <summary>Fiecare unealtă în detaliu</summary>
+
+**Volumul aplicațiilor.** Deschide Setări › Sunet și pornește **Volumul aplicațiilor**. Fiecare aplicație care redă sunet primește propriul cursor și un buton pentru oprirea sunetului, în Setări și în meniu. Redu volumul unui apel video prea tare, oprește sunetul unui joc zgomotos și lasă muzica așa cum este: volumul Mac-ului și al celorlalte aplicații rămâne neschimbat. pikapik reține nivelul fiecărei aplicații, iar o aplicație pe care o lași la volum maxim nu este atinsă niciodată. Ca să schimbe volumul unei aplicații, pikapik trece sunetul ei prin el însuși, de aceea are nevoie de permisiunea **Înregistrarea audio a sistemului**, pe care o permiți în pagina Permisiuni. Sunetul este doar trecut mai departe: nu este înregistrat, salvat sau trimis nicăieri, iar microfonul nu este folosit. Necesită macOS 14.2 sau mai nou și este ascuns pe macOS 14.0 și 14.1. Dezactivat implicit.
 
 **Protejarea ⌘Q și ⌘W.** ⌘Q și ⌘W singure nu fac nimic, așa că nu închizi din greșeală o aplicație sau o fereastră. Adaugă Shift ca să o faci intenționat: ⇧⌘Q închide aplicația, ⇧⌘W închide fereastra. Funcționează în toate aplicațiile. Fiecare tastă are propriul comutator. Dezactivat implicit.
 
@@ -373,6 +379,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Temperatură**: cât de cald este Mac-ul, per total și pentru fiecare componentă, cum ar fi procesorul, memoria și bateria.
 - **Viteza internetului**: măsoară conexiunea și arată la ce e bună.
 - **Porturi**: ce program a ocupat fiecare port, adresele și detaliile lui și un buton care eliberează portul.
+- **Sunet**: volumul aplicațiilor, cu un cursor și un buton de oprire a sunetului pentru fiecare aplicație care redă sunet.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End, corectarea aranjamentului greșit.
 - **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
