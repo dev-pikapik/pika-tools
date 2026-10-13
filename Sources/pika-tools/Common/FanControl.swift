@@ -4,7 +4,8 @@ import SwiftUI
 final class FanControl {
     static let shared = FanControl()
     private static let rpmKey = "fans-rpm"
-    private static let label = (Bundle.main.bundleIdentifier ?? FanHelperInfo.appIdentifier) + FanHelperInfo.suffix
+    private static let app = Bundle.main.bundleIdentifier ?? FanHelperInfo.appIdentifier
+    private static let label = app + FanHelperInfo.suffix
     private static let binary = "/Library/PrivilegedHelperTools/" + label
     private static let plist = "/Library/LaunchDaemons/" + label + ".plist"
     private static let bundled = Bundle.main.bundleURL.appendingPathComponent("Contents/Library/LaunchServices/fan-helper")
@@ -94,6 +95,7 @@ final class FanControl {
             "Label": Self.label,
             "ProgramArguments": [Self.binary],
             "MachServices": [Self.label: true],
+            "AssociatedBundleIdentifiers": [Self.app],
         ]
         guard let xml = try? PropertyListSerialization.data(fromPropertyList: contents, format: .xml, options: 0),
               let requirement = FanHelperInfo.requirement(identifier: Self.label)
