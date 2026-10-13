@@ -229,11 +229,6 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br><b>Pertahankan Dock di satu layar</b>
 <br>Dock tidak lagi melompat ke layar lain. Untuk memindahkannya, jadikan layar lain sebagai layar utama.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Perbaiki tata letak yang salah</b>
-<br>Mengetik ghbdtn alih-alih привет? Tekan Spasi dan langsung diperbaiki.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Volume App</b>
 <br>Kecilkan atau bisukan app mana pun tanpa memengaruhi yang lain.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Kecerahan Monitor</b>
+<br>Redupkan atau terangkan monitor yang tidak bisa diatur macOS sendiri, dengan slider atau tombol kecerahan.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Perbaiki tata letak yang salah</b>
+<br>Mengetik ghbdtn alih-alih привет? Tekan Spasi dan langsung diperbaiki.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik tidak merekam, menyimpan, atau mengirim apa pun yang Anda ketik atau kli
 <summary>Setiap alat secara detail</summary>
 
 **Volume App.** Buka Pengaturan › Suara, lalu aktifkan **Volume App**. Setiap app yang memutar suara mendapat slider dan tombol bisu sendiri, di Pengaturan maupun di menu. Kecilkan suara panggilan video yang terlalu keras, bisukan game yang berisik, dan biarkan musik Anda apa adanya: volume Mac Anda dan app lain tidak berubah. pikapik mengingat level tiap app, dan app yang Anda biarkan di volume penuh tidak pernah disentuh. Untuk mengubah volume sebuah app, pikapik meneruskan suaranya melalui dirinya sendiri, jadi ia membutuhkan izin **Perekaman Audio Sistem**, yang Anda izinkan di halaman Izin. Suara hanya diteruskan: tidak direkam, disimpan, atau dikirim ke mana pun, dan mikrofon tidak digunakan. Memerlukan macOS 14.2 atau lebih baru dan disembunyikan di macOS 14.0 dan 14.1. Mati secara default.
+
+**Kecerahan monitor.** macOS mengubah kecerahan layar bawaan dan monitor Apple, tetapi tidak untuk sebagian besar monitor lain. Buka Pengaturan › Kecerahan: setiap monitor yang tidak bisa diatur macOS sendiri mendapat slider sendiri, dan Anda juga bisa menambahkan baris “Kecerahan” ke panel bar menu. pikapik mengubah kecerahan monitor itu sendiri, pengaturan yang sama dengan tombol di monitor. Jika monitor tidak merespons, aktifkan **Redupkan gambar sebagai gantinya**: gambar menjadi lebih gelap, tetapi tidak pernah hitam. Aktifkan **Tombol kecerahan**, maka tombol kecerahan mengatur monitor tempat penunjuk berada dan menampilkan indikator kecil; tahan ⌥⇧ untuk langkah yang lebih halus. Tombol ini memerlukan izin **Aksesibilitas**, yang Anda izinkan di halaman Izin, sedangkan slider tetap berfungsi tanpanya. pikapik mengingat level tiap monitor dan mengaturnya lagi setelah tidur. Versi Mac App Store hanya meredupkan gambar. Tombol kecerahan mati secara default.
 
 **Lindungi ⌘Q dan ⌘W.** ⌘Q dan ⌘W saja tidak melakukan apa pun, jadi Anda tidak akan keluar dari app atau menutup jendela secara tidak sengaja. Tambahkan Shift untuk melakukannya dengan sengaja: ⇧⌘Q keluar, ⇧⌘W menutup. Berfungsi di semua app. Setiap tombol punya saklarnya sendiri. Mati secara default.
 
@@ -398,6 +407,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Umum**: buka saat masuk, tampilan (Sistem, Terang, atau Gelap), bahasa, pembaruan, dan pencadangan: ekspor dan impor pengaturan sebagai file, atau selaraskan lewat iCloud Drive.
 - **Baterai**: tingkat daya, waktu hingga penuh atau sisa waktu, kondisi, kapasitas maksimum, jumlah siklus, adaptor daya dan daya dalam watt, serta tips agar baterai lebih awet. Halaman ini hanya menampilkan informasi: batas pengisian daya tetap ada di **Pengaturan Sistem › Baterai**. Hanya muncul di Mac yang punya baterai.
 - **Tetap Terjaga**: durasi, opsi layar dan penutup.
+- **Kecerahan**: slider untuk setiap monitor yang tidak bisa diatur macOS sendiri, tombol kecerahan, dan opsi untuk meredupkan gambar sebagai gantinya.
 - **Kipas**: kecepatan setiap kipas, pilih Otomatis atau kecepatan manual setelah Kontrol kipas diizinkan.
 - **Suhu**: seberapa hangat Mac Anda, secara keseluruhan dan per komponen, seperti prosesor, memori, dan baterai.
 - **Tes Kecepatan**: cek kecepatan internet dan lihat cocok untuk apa.

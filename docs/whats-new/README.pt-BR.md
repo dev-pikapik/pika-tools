@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Brilho para cada monitor
+
+<sub>1.49.0 · 13 de outubro de 2026</sub>
+
+Escureça ou clareie um monitor que o macOS não consegue ajustar, direto do pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+O macOS ajusta a tela integrada e os monitores da Apple, mas a maioria dos outros monitores só obedece aos próprios botões. Agora cada um deles ganha um controle deslizante em Ajustes › Brilho, e você pode adicionar uma linha “Brilho” ao painel da barra de menus.
+
+O pikapik muda o brilho do próprio monitor, igual aos botões dele. Se um monitor não responder, ative “Escurecer a imagem em vez disso”: a imagem fica mais escura, mas nunca preta. O pikapik lembra o nível de cada monitor e volta a aplicá-lo depois do repouso.
+
+Ative “Teclas de brilho”, e as teclas de brilho do teclado ajustam o monitor onde está o cursor, com um pequeno indicador na tela. Segure ⌥⇧ para passos menores. As teclas precisam da permissão “Acessibilidade”, que você concede na página “Permissões”.
+
+**Experimente:** Ajustes › Brilho
+
+**Corrigido**
+
+- Com o VoiceOver, agora dá para ativar e desativar as opções em Ajustes. Antes, o VoiceOver lia duas vezes o nome de cada opção, e pressioná-la não fazia nada.
+
+---
+
 ## <a id="v1.48.0"></a>O Dock fica na tela dele, por mais rápido que você mova o mouse
 
 <sub>1.48.0 · 13 de outubro de 2026</sub>

@@ -229,11 +229,6 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <br><b>Dock’u tek ekranda tut</b>
 <br>Dock artık başka bir ekrana atlamaz. Taşımak için başka bir ekranı ana ekran yapın.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Yanlış klavye düzenini düzelt</b>
-<br>привет yerine ghbdtn mi yazdınız? Boşluk tuşuna basın, hemen düzelsin.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Uygulama Sesi</b>
 <br>Diğerlerine dokunmadan herhangi bir uygulamanın sesini kısın veya kapatın.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Monitör Parlaklığı</b>
+<br>macOS’in kendi ayarlayamadığı bir monitörü sürgüyle veya parlaklık tuşlarıyla karartın ya da aydınlatın.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Yanlış klavye düzenini düzelt</b>
+<br>привет yerine ghbdtn mi yazdınız? Boşluk tuşuna basın, hemen düzelsin.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik yazdığınız veya tıkladığınız hiçbir şeyi kaydetmez, saklamaz 
 <summary>Her araç ayrıntılı olarak</summary>
 
 **Uygulama Sesi.** Ayarlar › Ses sayfasına gidin ve **Uygulama Sesi** anahtarını açın. Ses çalan her uygulama kendi sürgüsünü ve bir sessize alma düğmesini alır, hem Ayarlar’da hem menüde. Yüksek sesli bir görüntülü görüşmenin sesini kısın, gürültülü bir oyunu sessize alın, müziğinize dokunmayın: Mac’inizin ve diğer uygulamaların ses düzeyi aynı kalır. pikapik her uygulamanın düzeyini hatırlar ve tam sesle bıraktığınız uygulamaya hiç dokunmaz. Bir uygulamanın ses düzeyini değiştirmek için pikapik onun sesini kendi içinden geçirir, bu yüzden İzinler sayfasında verdiğiniz **Sistem Sesi Kaydı** iznine ihtiyaç duyar. Ses yalnızca aktarılır: kaydedilmez, saklanmaz, hiçbir yere gönderilmez ve mikrofon kullanılmaz. macOS 14.2 veya sonrasını gerektirir ve macOS 14.0 ile 14.1’de gizlidir. Varsayılan olarak kapalıdır.
+
+**Monitör parlaklığı.** macOS yerleşik ekranın ve Apple ekranlarının parlaklığını değiştirir, ancak diğer monitörlerin çoğunda bunu yapamaz. Ayarlar › Parlaklık sayfasını açın: macOS’in kendi ayarlayamadığı her monitör kendi sürgüsünü alır ve menü çubuğu paneline bir “Parlaklık” satırı da ekleyebilirsiniz. pikapik monitörün kendi parlaklığını değiştirir, yani monitörün düğmeleriyle aynı ayarı. Bir monitör tepki vermiyorsa **Bunun yerine görüntüyü karart** anahtarını açın: görüntü kararır ama asla siyah olmaz. **Parlaklık tuşları** anahtarını açın; parlaklık tuşları işaretçinin bulunduğu monitörü ayarlar ve ekranda küçük bir gösterge belirir. Daha ince adımlar için ⌥⇧ tuşlarını basılı tutun. Tuşlar, İzinler sayfasında verdiğiniz **Erişilebilirlik** iznine ihtiyaç duyar; sürgüler bu izin olmadan da çalışır. pikapik her monitörün düzeyini hatırlar ve uykudan sonra yeniden ayarlar. Mac App Store sürümü yalnızca görüntüyü karartır. Parlaklık tuşları varsayılan olarak kapalıdır.
 
 **⌘Q ve ⌘W’yi koruma.** ⌘Q ve ⌘W tek başına hiçbir şey yapmaz, böylece bir uygulamadan yanlışlıkla çıkmaz ya da bir pencereyi yanlışlıkla kapatmazsınız. Bilerek yapmak için Shift ekleyin: ⇧⌘Q çıkar, ⇧⌘W kapatır. Tüm uygulamalarda çalışır. Her tuşun kendi anahtarı vardır. Varsayılan olarak kapalıdır.
 
@@ -398,6 +407,7 @@ Ayarları menüden **Ayarlar…** ile ya da ⌘, ile açın veya pikapik’i Fin
 - **Genel**: girişte açma, görünüm (Sistem, Açık veya Koyu), dil, güncellemeler ve yedekleme: ayarları dosya olarak dışa ve içe aktarma ya da iCloud Drive ile eşzamanlama.
 - **Pil**: şarj düzeyi, dolmasına kalan süre veya kalan kullanım süresi, durum, maksimum kapasite, devir sayısı, güç adaptörü ve vat cinsinden güç, bir de pilin ömrünü uzatmak için ipuçları. Yalnızca bilgi gösterir: şarj sınırı **Sistem Ayarları › Pil** içinde kalır. Yalnızca pili olan Mac’lerde görünür.
 - **Uyanık Tut**: süre, ekran ve kapak seçenekleri.
+- **Parlaklık**: macOS’in kendi ayarlayamadığı her monitör için bir sürgü, parlaklık tuşları ve bunun yerine görüntüyü karartma seçeneği.
 - **Fanlar**: her fanın hızı, Fan kontrolüne izin verildiğinde Otomatik veya elle seçilen hız.
 - **Sıcaklık**: Mac’inizin ne kadar ısındığı, genel olarak ve işlemci, bellek, pil gibi her parça için.
 - **Hız Testi**: internet hızını ölçer ve neye yettiğini gösterir.

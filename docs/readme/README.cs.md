@@ -229,11 +229,6 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br><b>Držet Dock na jednom displeji</b>
 <br>Dock už neskáče na jiný displej. Chcete-li ho přesunout, nastavte jako hlavní jiný displej.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Opravit špatné rozložení</b>
-<br>Napsali jste ghbdtn místo привет? Stiskněte mezerník a slovo se opraví.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Hlasitost aplikací</b>
 <br>Ztište nebo ztlumte libovolnou aplikaci, aniž byste ovlivnili ostatní.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Jas monitorů</b>
+<br>Ztmavte nebo zesvětlete monitor, který macOS sám neumí nastavit, posuvníkem nebo klávesami jasu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Opravit špatné rozložení</b>
+<br>Napsali jste ghbdtn místo привет? Stiskněte mezerník a slovo se opraví.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik nenahrává, neukládá ani neodesílá nic z toho, co píšete nebo na 
 <summary>Každý nástroj podrobně</summary>
 
 **Hlasitost aplikací.** Otevřete Nastavení › Zvuk a zapněte **Hlasitost aplikací**. Každá aplikace, která přehrává zvuk, dostane vlastní posuvník a tlačítko pro ztlumení, v Nastavení i v nabídce. Hlasitý videohovor ztišíte, hlučnou hru ztlumíte a hudbu necháte, jak je: hlasitost Macu ani ostatních aplikací se nezmění. pikapik si pamatuje hlasitost každé aplikace a aplikace, kterou necháte na plnou hlasitost, se nikdy nedotkne. Aby mohl hlasitost aplikace měnit, pouští pikapik její zvuk přes sebe, a proto potřebuje oprávnění **Nahrávání zvuku systému**, které povolíte na stránce Oprávnění. Zvuk se jen předává dál: nenahrává se, neukládá ani nikam neposílá a mikrofon se nepoužívá. Vyžaduje macOS 14.2 nebo novější a v macOS 14.0 a 14.1 je skrytý. Ve výchozím stavu vypnuto.
+
+**Jas monitorů.** macOS mění jas vestavěného displeje a monitorů Apple, ale u většiny ostatních monitorů ne. Otevřete Nastavení › Jas: každý monitor, který macOS sám neumí nastavit, dostane vlastní posuvník. Řádek „Jas“ můžete přidat i do panelu v řádku nabídek. pikapik mění jas samotného monitoru, stejné nastavení jako tlačítka na monitoru. Pokud monitor nereaguje, zapněte **Místo toho ztmavovat obraz**: obraz ztmavne, ale nikdy nezčerná. Zapněte **Klávesy jasu** a klávesy jasu budou měnit jas monitoru, na kterém je ukazatel, a zobrazí malý indikátor; podržte ⌥⇧ pro jemnější kroky. Klávesy potřebují oprávnění **Zpřístupnění**, které povolíte na stránce Oprávnění, a posuvníky fungují i bez něj. pikapik si pamatuje jas každého monitoru a po spánku ho nastaví znovu. Verze z Mac App Store obraz jen ztmavuje. Klávesy jasu jsou ve výchozím stavu vypnuté.
 
 **Ochrana ⌘Q a ⌘W.** Samotné ⌘Q a ⌘W nic nedělají, takže omylem neukončíte aplikaci ani nezavřete okno. Přidejte Shift, když to chcete udělat záměrně: ⇧⌘Q ukončí, ⇧⌘W zavře. Funguje ve všech aplikacích. Každá klávesa má vlastní přepínač. Ve výchozím stavu vypnuto.
 
@@ -398,6 +407,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Obecné**: otevírání po přihlášení, vzhled (Systém, Světlý nebo Tmavý), jazyk, aktualizace a zálohování: export a import nastavení jako souboru nebo synchronizace přes iCloud Drive.
 - **Baterie**: nabití, doba do plného nabití nebo zbývající doba, stav, maximální kapacita, počet cyklů, napájecí adaptér a výkon ve wattech a tipy, jak prodloužit výdrž baterie. Stránka jen zobrazuje informace: nabíjecí limit zůstává v **Nastavení systému › Baterie**. Zobrazí se jen na Macu s baterií.
 - **Bez spánku**: délka, volby pro displej a víko.
+- **Jas**: posuvník pro každý monitor, který macOS sám neumí nastavit, klávesy jasu a ztmavení obrazu místo monitoru.
 - **Ventilátory**: rychlost každého ventilátoru, režim Auto nebo ruční rychlost, jakmile je povolené Ovládání ventilátorů.
 - **Teplota**: jak moc je Mac zahřátý, celkově i po jednotlivých součástech, například procesor, paměť a baterie.
 - **Test rychlosti**: změří internet a ukáže, na co stačí.

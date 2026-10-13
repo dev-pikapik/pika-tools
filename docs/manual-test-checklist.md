@@ -42,6 +42,18 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Quit the stub. Expected: its row dims and goes after about 30 seconds, unless the stub is muted or below 100%, then it stays dimmed.
 - Quit pikapik with Cmd+Q while the stub is below 100%, then repeat and force quit it. Expected: the stub is back at full volume at once both times, and neither while it ran nor after that does Audio MIDI Setup or System Settings > Sound show an extra device (the helper aggregate is private and is gone with the app).
 
+## Monitor brightness
+- Connect an external monitor that isn't made by Apple, then open Settings > Brightness. Expected: the monitor is listed with its name and a slider; the built-in screen and Apple displays are not listed, because macOS adjusts them itself.
+- Disconnect every such monitor. Expected: the list is replaced by "No monitor needs pikapik right now. macOS adjusts the built-in screen and Apple displays itself, with the brightness keys and in Control Center. Connect another monitor and it will appear here."
+- GitHub build: move the slider of a monitor that supports it. Expected: the monitor's own brightness changes, the same as with its buttons (its on-screen menu shows the new value), and the colors on screen stay the same.
+- GitHub build: on a monitor that doesn't respond to the slider, turn on Dim the picture instead and drag the slider to the left end. Expected: the picture gets darker but never black, and text stays readable. Turn the switch off. Expected: the colors are back to normal at once.
+- Set a level, put the Mac to sleep and wake it, then unplug the monitor and plug it back in. Expected: both times the monitor comes back at the level you set.
+- Open the menu bar panel. Expected: no Brightness row. Press Customize…, turn on Brightness and press Done. Expected: a Brightness row with a slider for each listed monitor. Unplug the monitor. Expected: the row disappears from the panel and from Customize…, and comes back when the monitor is plugged in again.
+- Look at Brightness keys in Settings > Brightness. Expected: off by default.
+- Turn on Brightness keys, allow Accessibility, put the pointer on the external monitor and press the brightness keys. Expected: only that monitor changes, in 16 steps, and a small indicator with a sun and a level bar shows on it. Hold ⌥⇧ while pressing. Expected: finer steps (64 instead of 16). With the pointer on the built-in screen the keys work as usual.
+- Without Accessibility (never allowed, or turned off for pikapik in System Settings). Expected: Brightness keys asks for the permission like the other tools and does nothing until it is allowed; the sliders, Dim the picture instead and the menu row keep working.
+- App Store build. Expected: each slider only dims the picture and its subtitle reads "Dims the picture."; there is no Dim the picture instead switch, and the monitor's own brightness never changes.
+
 ## Keep Awake
 - Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed or display-off rows.
 

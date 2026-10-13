@@ -2,6 +2,15 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.49.0] - Unreleased
+
+### Added
+- Brightness: a new page, Settings › Brightness, for monitors that macOS can’t adjust on its own. Each of them gets a slider, and the same sliders can be added to the menu bar panel as a Brightness row. pikapik changes the monitor’s own brightness, like its buttons do. If a monitor doesn’t respond, turn on Dim the picture instead: the picture gets darker, but never black. Some monitors restart when they get a brightness command: if a monitor disappears right after one, pikapik turns on Dim the picture instead for it by itself. pikapik remembers each monitor’s level and sets it again after sleep and when the monitor is connected again. In the Mac App Store version the slider dims the picture.
+- Brightness keys: turn them on in Settings › Brightness, and the brightness keys on your keyboard adjust the monitor under the pointer, with a small indicator on that screen. Hold ⌥⇧ for finer steps. The keys need Accessibility from Settings › Permissions; the sliders work without it.
+
+### Fixed
+- Settings: VoiceOver can now turn the switches in Settings on and off. Before, it read each switch’s name twice, and pressing a switch did nothing.
+
 ## [1.48.0] - 2026-10-13
 
 ### Changed

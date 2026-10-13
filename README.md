@@ -229,11 +229,6 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br><b>Keep the Dock on one display</b>
 <br>The Dock no longer jumps to another display. To move it, make another display the main one.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/layout-fix-dark.png"><img src="docs/media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Fix the wrong layout</b>
-<br>Typed ghbdtn instead of привет? Press Space and it’s fixed.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/app-volume-dark.png"><img src="docs/media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>App Volume</b>
 <br>Lower or mute any app without touching the others.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/brightness-dark.png"><img src="docs/media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Monitor Brightness</b>
+<br>Dim or brighten a monitor that macOS can’t adjust, with a slider or the brightness keys.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/layout-fix-dark.png"><img src="docs/media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Fix the wrong layout</b>
+<br>Typed ghbdtn instead of привет? Press Space and it’s fixed.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik doesn't record, store or send anything you type or click. Events are han
 <summary>Every tool in detail</summary>
 
 **App Volume.** Open Settings › Sound and switch on **App Volume**. Every app that plays sound gets its own slider and a mute button, in Settings and in the menu bar panel. Lower a loud video call, mute a noisy game and leave your music as it is: the volume of your Mac and of the other apps stays the same. pikapik remembers the level of each app, and an app you leave at full volume is never touched. To change an app's volume, pikapik passes its sound through itself, so it needs the **System Audio Recording** permission, which you allow on the Permissions page. The sound is only passed on: it isn't recorded, saved or sent anywhere, and the microphone isn't used. It needs macOS 14.2 or later and is hidden on macOS 14.0 and 14.1. Off by default.
+
+**Monitor brightness.** macOS changes the brightness of the built-in screen and of Apple displays, but not of most other monitors. Open Settings › Brightness: every monitor that macOS can’t adjust gets its own slider, and you can add a Brightness row to the menu bar panel. pikapik changes the monitor’s own brightness, the same setting as the buttons on the monitor. If a monitor doesn’t respond, switch on **Dim the picture instead**: the picture gets darker, but never black. Switch on **Brightness keys**, and the brightness keys adjust the monitor under the pointer and show a small indicator; hold ⌥⇧ for finer steps. The keys need the **Accessibility** permission from the Permissions page, and the sliders work without it. pikapik remembers the level of each monitor and sets it again after sleep. The Mac App Store version dims the picture. Brightness keys are off by default.
 
 **Protect ⌘Q and ⌘W.** ⌘Q and ⌘W alone do nothing, so you don't quit an app or close a window by accident. Add Shift to do it on purpose: ⇧⌘Q quits, ⇧⌘W closes. Works in every app. Each key has its own switch. Off by default.
 
@@ -398,6 +407,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **General**: open at login, appearance (System, Light or Dark), language, updates, and backup: export and import settings as a file, or sync them through iCloud Drive.
 - **Battery**: charge, time until full or time left, condition, maximum capacity, cycle count, power adapter and watts, and tips to make it last. It only shows information: the charge limit stays in **System Settings › Battery**. Only on a Mac with a battery.
 - **Keep Awake**: duration, display and lid options.
+- **Brightness**: a slider for each monitor that macOS can’t adjust, the brightness keys, and dimming the picture instead.
 - **Fans**: see each fan’s speed, choose Auto or a manual speed once Fan control is allowed.
 - **Temperature**: how warm your Mac is, overall and for each part, such as the processor, memory and battery.
 - **Speed Test**: check the internet speed and see what it's good for.

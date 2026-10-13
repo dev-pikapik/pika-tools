@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Độ sáng cho mọi màn hình
+
+<sub>1.49.0 · 13 tháng 10 năm 2026</sub>
+
+Làm tối hoặc sáng màn hình mà macOS không chỉnh được, ngay trong pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS chỉnh được màn hình tích hợp và màn hình Apple, nhưng hầu hết các màn hình khác chỉ nghe theo nút của chính chúng. Giờ đây mỗi màn hình như vậy đều có thanh trượt trong Cài đặt › Độ sáng, và bạn có thể thêm dòng “Độ sáng” vào bảng điều khiển trên thanh menu.
+
+pikapik thay đổi độ sáng của chính màn hình, giống hệt các nút trên màn hình. Nếu màn hình không phản hồi, hãy bật “Làm tối hình ảnh thay vào đó”: hình ảnh tối đi nhưng không bao giờ đen hẳn. pikapik nhớ mức độ sáng của từng màn hình và đặt lại sau khi ngủ.
+
+Bật “Phím độ sáng” thì các phím độ sáng trên bàn phím sẽ chỉnh màn hình đang có con trỏ, kèm một chỉ báo nhỏ trên màn hình. Giữ ⌥⇧ để chỉnh từng bước nhỏ hơn. Các phím cần quyền “Trợ năng”, mà bạn cho phép ở trang “Quyền”.
+
+**Thử ngay:** Cài đặt › Độ sáng
+
+**Đã sửa**
+
+- Với VoiceOver, giờ đây bạn có thể bật và tắt các công tắc trong Cài đặt. Trước đây VoiceOver đọc tên mỗi công tắc hai lần, và nhấn vào thì không có tác dụng gì.
+
+---
+
 ## <a id="v1.48.0"></a>Dock ở lại trên màn hình của nó, dù bạn di chuyển chuột nhanh đến đâu
 
 <sub>1.48.0 · 13 tháng 10 năm 2026</sub>

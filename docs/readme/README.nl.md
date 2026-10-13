@@ -229,11 +229,6 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <br><b>Houd het Dock op één scherm</b>
 <br>Het Dock springt niet meer naar een ander scherm. Maak een ander scherm het hoofdbeeldscherm om het te verplaatsen.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Corrigeer de verkeerde indeling</b>
-<br>ghbdtn getypt in plaats van привет? Druk op de spatiebalk en het woord staat goed.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>App-volume</b>
 <br>Zet een app zachter of demp hem, zonder de andere aan te raken.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Monitorhelderheid</b>
+<br>Maak een monitor die macOS niet zelf kan regelen donkerder of lichter, met een schuifregelaar of de helderheidstoetsen.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Corrigeer de verkeerde indeling</b>
+<br>ghbdtn getypt in plaats van привет? Druk op de spatiebalk en het woord staat goed.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik legt niets vast, bewaart niets en verstuurt niets van wat je typt of aan
 <summary>Elk hulpmiddel in detail</summary>
 
 **App-volume.** Open Instellingen › Geluid en zet **App-volume** aan. Elke app die geluid afspeelt krijgt een eigen schuifregelaar en een dempknop, in Instellingen en in het menu. Zet een te luid videogesprek zachter, demp een lawaaierige game en laat je muziek zoals die is: het volume van je Mac en van de andere apps verandert niet. pikapik onthoudt het niveau van elke app, en een app die je op vol volume laat staan, wordt nooit aangeraakt. Om het volume van een app te wijzigen, leidt pikapik het geluid ervan door zichzelf heen. Daarvoor heeft het de toestemming **Opname van systeemaudio** nodig, die je toestaat op de pagina Toestemmingen. Het geluid wordt alleen doorgegeven: het wordt niet opgenomen, bewaard of ergens naartoe gestuurd, en de microfoon wordt niet gebruikt. Vereist macOS 14.2 of nieuwer en is verborgen op macOS 14.0 en 14.1. Standaard uit.
+
+**Monitorhelderheid.** macOS wijzigt de helderheid van het ingebouwde scherm en van Apple-schermen, maar niet van de meeste andere monitors. Open Instellingen › Helderheid: elke monitor die macOS niet zelf kan regelen krijgt een eigen schuifregelaar, en je kunt ook een rij ‘Helderheid’ toevoegen aan het paneel in de menubalk. pikapik wijzigt de helderheid van de monitor zelf, dezelfde instelling als de knoppen op de monitor. Reageert een monitor niet, zet dan **In plaats daarvan het beeld dimmen** aan: het beeld wordt donkerder, maar nooit zwart. Zet **Helderheidstoetsen** aan, dan regelen de helderheidstoetsen de monitor waar de aanwijzer staat en tonen ze een kleine indicator; houd ⌥⇧ ingedrukt voor fijnere stappen. De toetsen hebben de toestemming **Toegankelijkheid** nodig, die je toestaat op de pagina Toestemmingen; de schuifregelaars werken ook zonder. pikapik onthoudt de helderheid van elke monitor en stelt die na de sluimerstand opnieuw in. De versie uit de Mac App Store dimt alleen het beeld. Helderheidstoetsen staan standaard uit.
 
 **⌘Q en ⌘W beschermen.** ⌘Q en ⌘W alleen doen niets, zodat je niet per ongeluk een app stopt of een venster sluit. Voeg Shift toe om het bewust te doen: ⇧⌘Q stopt, ⇧⌘W sluit. Werkt in elke app. Elke toets heeft een eigen schakelaar. Standaard uit.
 
@@ -398,6 +407,7 @@ Open de instellingen vanuit het menu met **Instellingen…** of ⌘, of open pik
 - **Algemeen**: open bij inloggen, weergave (Systeem, Licht of Donker), taal, updates en reservekopie: exporteer en importeer instellingen als bestand, of synchroniseer ze via iCloud Drive.
 - **Batterij**: oplaadniveau, tijd tot vol of resterende tijd, conditie, maximumcapaciteit, aantal cycli, lichtnetadapter en vermogen in watt, plus tips om je batterij langer mee te laten gaan. De pagina toont alleen informatie: de oplaadlimiet blijft in **Systeeminstellingen › Batterij**. Alleen te zien op een Mac met een batterij.
 - **Wakker houden**: duur, opties voor het scherm en de klep.
+- **Helderheid**: een schuifregelaar voor elke monitor die macOS niet zelf kan regelen, de helderheidstoetsen en de optie om in plaats daarvan het beeld te dimmen.
 - **Ventilatoren**: de snelheid van elke ventilator, Auto of een handmatige snelheid zodra Ventilatorbeheer is toegestaan.
 - **Temperatuur**: hoe warm je Mac is, in het algemeen en per onderdeel, zoals de processor, het geheugen en de batterij.
 - **Snelheidstest**: meet je internet en zie waar het geschikt voor is.

@@ -184,6 +184,12 @@ The **Ports** page learns which programs listen on which ports from the same ker
 swiftc -parse-as-library Sources/pika-tools/Tools/Ports/PortScanner.swift scripts/test-ports.swift -o build/test-ports && codesign -s - -f -i com.pesotchi.pika-tools.test-ports build/test-ports && build/test-ports
 ```
 
+The **Brightness** page changes the brightness of monitors macOS can’t adjust on its own: it asks the monitor itself through its cable or, if the monitor doesn’t listen, dims the picture. `BrightnessMath.swift` holds the parts that need no monitor: the messages that set and read the brightness with their checksums, reading the monitor’s answer even when HDMI repeats a byte or two, the maker, model and serial number from the monitor’s EDID, how dark the picture gets and the steps of the brightness keys. The test feeds it made-up bytes and never talks to a monitor:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/test-brightness.swift -o build/test-brightness && build/test-brightness
+```
+
 `KeyboardLayouts` is the engine behind **Fix words typed in the wrong layout**. It turns the keys that were pressed into text for every keyboard layout you have, and fixes a word only when what came out is not a word in any of your languages while another layout gives a common one, so names, slang and typos stay as typed. The test uses Apple's own layouts and the system spelling dictionaries: it checks pairs such as ghbdtn → привет, then runs every word of the app's texts in 18 languages and about 25,000 English dictionary words and names through the engine and fails on a single wrong fix.
 
 ```bash

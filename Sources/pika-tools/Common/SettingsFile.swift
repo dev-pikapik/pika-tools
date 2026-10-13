@@ -22,7 +22,7 @@ struct SettingsFile {
         "game-mode", "game-mode-games", "game-mode-not-games", "game-mode-system-shortcuts", "game-mode-fps", "game-mode-fps-corner",
         "keep-awake-mode", "keep-awake-duration",
         "keep-awake-display", "keep-awake-lid", "keep-awake-battery",
-        "fans-rpm",
+        "fans-rpm", "brightness-keys",
         "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",
         "animations-window-open", "animations-resize", "animations-quick-look", "animations-finder-columns", "animations-finder",
         "pet", "pet-talks", "pet-rhythm", "pet-ball", "uninstaller-trash-watch",

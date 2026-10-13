@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Luminosità per ogni monitor
+
+<sub>1.49.0 · 13 ottobre 2026</sub>
+
+Scurisci o schiarisci un monitor che macOS non sa regolare, direttamente da pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS regola lo schermo integrato e i monitor Apple, ma la maggior parte degli altri monitor obbedisce solo ai propri pulsanti. Ora ognuno di loro ha un cursore in Impostazioni › Luminosità, e puoi aggiungere una riga «Luminosità» al pannello della barra dei menu.
+
+pikapik cambia la luminosità del monitor stesso, proprio come i suoi pulsanti. Se un monitor non risponde, attiva «Scurisci invece l’immagine»: l’immagine diventa più scura, ma mai nera. pikapik ricorda il livello di ogni monitor e lo reimposta dopo lo stop.
+
+Attiva «Tasti della luminosità» e i tasti della luminosità della tastiera regolano il monitor sotto il puntatore, con un piccolo indicatore sullo schermo. Tieni premuti ⌥⇧ per passi più fini. I tasti richiedono il permesso «Accessibilità», che concedi nella pagina «Permessi».
+
+**Provalo:** Impostazioni › Luminosità
+
+**Corretto**
+
+- Con VoiceOver, gli interruttori in Impostazioni ora si attivano e si disattivano. Prima VoiceOver leggeva due volte il nome di ogni interruttore, e premerlo non faceva nulla.
+
+---
+
 ## <a id="v1.48.0"></a>Il Dock resta sul suo schermo, per quanto velocemente tu muova il mouse
 
 <sub>1.48.0 · 13 ottobre 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.49.0"></a>Jas pro každý monitor
+
+<sub>1.49.0 · 13. října 2026</sub>
+
+Ztmavte nebo zesvětlete monitor, který macOS neumí nastavit, přímo v aplikaci pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+
+macOS nastavuje vestavěný displej a monitory Apple, ale většina ostatních monitorů poslouchá jen svá vlastní tlačítka. Teď má každý z nich posuvník v Nastavení › Jas a do panelu v řádku nabídek můžete přidat řádek „Jas“.
+
+pikapik mění jas samotného monitoru, stejně jako jeho tlačítka. Pokud monitor nereaguje, zapněte „Místo toho ztmavovat obraz“: obraz ztmavne, ale nikdy nezčerná. pikapik si pamatuje jas každého monitoru a po spánku ho nastaví znovu.
+
+Zapněte „Klávesy jasu“ a klávesy jasu na klávesnici budou měnit jas monitoru, na kterém je ukazatel, a na obrazovce se zobrazí malý indikátor. Podržte ⌥⇧ pro jemnější kroky. Klávesy potřebují oprávnění „Zpřístupnění“, které povolíte na stránce „Oprávnění“.
+
+**Vyzkoušejte:** Nastavení › Jas
+
+**Opraveno**
+
+- S VoiceOverem se přepínače v Nastavení teď dají zapnout a vypnout. Dřív VoiceOver četl název každého přepínače dvakrát a jeho stisknutí nic neudělalo.
+
+---
+
 ## <a id="v1.48.0"></a>Dock zůstává na svém displeji, ať myší pohybujete jakkoli rychle
 
 <sub>1.48.0 · 13. října 2026</sub>

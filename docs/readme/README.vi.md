@@ -229,11 +229,6 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <br><b>Giữ Dock trên một màn hình</b>
 <br>Dock không còn nhảy sang màn hình khác. Để di chuyển, hãy đặt màn hình khác làm màn hình chính.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Sửa gõ nhầm bố cục</b>
-<br>Lỡ gõ ghbdtn thay vì привет? Nhấn phím cách là sửa xong.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Âm lượng ứng dụng</b>
 <br>Giảm hoặc tắt tiếng bất kỳ ứng dụng nào mà không ảnh hưởng đến các ứng dụng khác.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Độ sáng màn hình</b>
+<br>Làm tối hoặc sáng hơn những màn hình mà macOS không tự chỉnh được, bằng thanh trượt hoặc các phím độ sáng.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Sửa gõ nhầm bố cục</b>
+<br>Lỡ gõ ghbdtn thay vì привет? Nhấn phím cách là sửa xong.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik không ghi lại, không lưu và không gửi bất cứ thứ gì bạ
 <summary>Từng công cụ chi tiết</summary>
 
 **Âm lượng ứng dụng.** Mở Cài đặt › Âm thanh rồi bật **Âm lượng ứng dụng**. Mỗi ứng dụng phát âm thanh có thanh trượt riêng và nút tắt tiếng, trong Cài đặt lẫn trong menu. Hãy giảm âm lượng cuộc gọi video quá to, tắt tiếng một trò chơi ồn ào và để nhạc của bạn như cũ: âm lượng của Mac và của các ứng dụng khác không thay đổi. pikapik nhớ mức âm lượng của từng ứng dụng, và ứng dụng nào bạn để ở âm lượng tối đa thì không bao giờ bị đụng đến. Để đổi âm lượng của một ứng dụng, pikapik cho âm thanh của ứng dụng đó đi qua chính nó, nên cần quyền **Ghi âm thanh hệ thống**, mà bạn cho phép ở trang Quyền. Âm thanh chỉ được chuyển tiếp: không được ghi lại, lưu hay gửi đi đâu, và micro không được dùng. Cần macOS 14.2 trở lên và bị ẩn trên macOS 14.0 và 14.1. Tắt theo mặc định.
+
+**Độ sáng màn hình.** macOS chỉnh được độ sáng của màn hình tích hợp và màn hình Apple, nhưng không chỉnh được hầu hết các màn hình khác. Mở Cài đặt › Độ sáng: mỗi màn hình mà macOS không tự chỉnh được đều có thanh trượt riêng, và bạn cũng có thể thêm dòng “Độ sáng” vào bảng điều khiển trên thanh menu. pikapik thay đổi độ sáng của chính màn hình, giống như các nút trên màn hình. Nếu màn hình không phản hồi, hãy bật **Làm tối hình ảnh thay vào đó**: hình ảnh tối đi nhưng không bao giờ đen hẳn. Bật **Phím độ sáng** thì các phím độ sáng sẽ chỉnh màn hình đang có con trỏ và hiện một chỉ báo nhỏ; giữ ⌥⇧ để chỉnh từng bước nhỏ hơn. Các phím cần quyền **Trợ năng**, mà bạn cho phép ở trang Quyền, còn thanh trượt vẫn hoạt động khi không có quyền này. pikapik nhớ mức độ sáng của từng màn hình và đặt lại sau khi ngủ. Phiên bản Mac App Store chỉ làm tối hình ảnh. Phím độ sáng tắt theo mặc định.
 
 **Bảo vệ ⌘Q và ⌘W.** Chỉ nhấn ⌘Q hoặc ⌘W thì không có gì xảy ra, nên bạn sẽ không vô tình thoát ứng dụng hay đóng cửa sổ. Thêm Shift khi bạn thật sự muốn: ⇧⌘Q để thoát, ⇧⌘W để đóng. Hoạt động trong mọi ứng dụng. Mỗi phím có công tắc riêng. Tắt theo mặc định.
 
@@ -398,6 +407,7 @@ Mở cài đặt từ menu bằng **Cài đặt…** hoặc ⌘, hoặc mở l�
 - **Cài đặt chung**: mở khi đăng nhập, giao diện (Hệ thống, Sáng hoặc Tối), ngôn ngữ, cập nhật và sao lưu: xuất và nhập cài đặt thành tệp, hoặc đồng bộ qua iCloud Drive.
 - **Pin**: mức pin, thời gian đến khi đầy hoặc thời gian còn lại, tình trạng, dung lượng tối đa, số lượng chu kỳ, bộ tiếp hợp nguồn và công suất tính bằng watt, cùng mẹo giúp pin dùng được lâu hơn. Trang chỉ hiển thị thông tin: giới hạn sạc vẫn nằm trong **Cài đặt hệ thống › Pin**. Chỉ xuất hiện trên Mac có pin.
 - **Giữ máy thức**: thời lượng, tùy chọn màn hình và nắp.
+- **Độ sáng**: thanh trượt cho từng màn hình mà macOS không tự chỉnh được, các phím độ sáng và tùy chọn làm tối hình ảnh thay vào đó.
 - **Quạt**: tốc độ từng quạt, chọn Tự động hoặc tốc độ thủ công sau khi cho phép Điều khiển quạt.
 - **Nhiệt độ**: máy Mac nóng đến mức nào, tổng thể và từng bộ phận, như bộ xử lý, bộ nhớ và pin.
 - **Kiểm tra tốc độ**: đo internet và xem nó phù hợp cho gì.

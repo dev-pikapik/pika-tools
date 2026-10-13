@@ -229,11 +229,6 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br><b>Håll Dock på en skärm</b>
 <br>Dock hoppar inte längre till en annan skärm. Gör en annan skärm till huvudbildskärm för att flytta den.
 </td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
-<br><b>Rätta fel layout</b>
-<br>Skrev du ghbdtn i stället för привет? Tryck på mellanslag så blir det rätt.
-</td>
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
@@ -257,6 +252,18 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/app-volume-dark.png"><img src="../media/app-volume-light.png" width="340" alt=""></picture>
 <br><b>Appvolym</b>
 <br>Sänk volymen eller stäng av ljudet för valfri app utan att påverka de andra.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/brightness-dark.png"><img src="../media/brightness-light.png" width="340" alt=""></picture>
+<br><b>Ljusstyrka för bildskärmar</b>
+<br>Gör en bildskärm som macOS inte kan justera själv mörkare eller ljusare, med ett reglage eller ljusstyrketangenterna.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+<br><b>Rätta fel layout</b>
+<br>Skrev du ghbdtn i stället för привет? Tryck på mellanslag så blir det rätt.
 </td>
 </tr></tbody>
 </table>
@@ -283,6 +290,8 @@ pikapik spelar inte in, sparar inte och skickar inte något av det du skriver el
 <summary>Varje verktyg i detalj</summary>
 
 **Appvolym.** Öppna Inställningar › Ljud och slå på **Appvolym**. Varje app som spelar upp ljud får ett eget reglage och en knapp för att stänga av ljudet, i Inställningar och i menyn. Sänk volymen på ett högljutt videosamtal, stäng av ljudet för ett bullrigt spel och låt musiken vara som den är: volymen på din Mac och på de andra apparna ändras inte. pikapik kommer ihåg nivån för varje app, och en app som du lämnar på full volym rörs aldrig. För att ändra en apps volym leder pikapik dess ljud genom sig själv, så det behöver behörigheten **Inspelning av systemljud**, som du tillåter på sidan Behörigheter. Ljudet leds bara vidare: det spelas inte in, sparas inte och skickas ingenstans, och mikrofonen används inte. Kräver macOS 14.2 eller senare och är dold i macOS 14.0 och 14.1. Av som standard.
+
+**Ljusstyrka för bildskärmar.** macOS ändrar ljusstyrkan på den inbyggda skärmen och på Apple-skärmar, men inte på de flesta andra bildskärmar. Öppna Inställningar › Ljusstyrka: varje bildskärm som macOS inte kan justera själv får ett eget reglage, och du kan också lägga till en rad ”Ljusstyrka” i panelen i menyraden. pikapik ändrar bildskärmens egen ljusstyrka, samma inställning som knapparna på bildskärmen. Om en bildskärm inte reagerar slår du på **Dämpa bilden i stället**: bilden blir mörkare, men aldrig svart. Slå på **Ljusstyrketangenter**, så justerar ljusstyrketangenterna bildskärmen där pekaren är och visar en liten indikator; håll ned ⌥⇧ för finare steg. Tangenterna behöver behörigheten **Hjälpmedel**, som du tillåter på sidan Behörigheter, och reglagen fungerar utan den. pikapik kommer ihåg ljusstyrkan för varje bildskärm och ställer in den igen efter vila. Versionen från Mac App Store dämpar bara bilden. Ljusstyrketangenter är av som standard.
 
 **Skydda ⌘Q och ⌘W.** ⌘Q och ⌘W ensamma gör ingenting, så du avslutar inte en app eller stänger ett fönster av misstag. Lägg till skift för att göra det med flit: ⇧⌘Q avslutar, ⇧⌘W stänger. Fungerar i alla appar. Varje tangent har en egen reglage. Av som standard.
 
@@ -398,6 +407,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Allmänt**: öppna vid inloggning, utseende (System, Ljust eller Mörkt), språk, uppdateringar och säkerhetskopia: exportera och importera inställningar som en fil, eller synkronisera dem via iCloud Drive.
 - **Batteri**: laddning, tid till fulladdat eller återstående tid, skick, maximal kapacitet, cykelantal, strömadapter och effekt i watt samt tips för att batteriet ska räcka längre. Sidan visar bara information: laddningsbegränsningen finns kvar i **Systeminställningar › Batteri**. Visas bara på en Mac med batteri.
 - **Håll vaken**: tid, alternativ för skärm och lock.
+- **Ljusstyrka**: ett reglage för varje bildskärm som macOS inte kan justera själv, ljusstyrketangenterna och att dämpa bilden i stället.
 - **Fläktar**: hastigheten för varje fläkt, Auto eller en egen hastighet när Fläktstyrning är tillåten.
 - **Temperatur**: hur varm din Mac är, totalt och för varje del, som processorn, minnet och batteriet.
 - **Hastighetstest**: mät internet och se vad det räcker till.
