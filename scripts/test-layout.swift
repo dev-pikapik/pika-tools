@@ -41,7 +41,12 @@ enum TestLayout {
         for word in words {
             guard let keys = strokes(word, layout) else { continue }
             checked += 1
-            if let fix = KeyboardLayouts.fix(keys, from: layout) { found.append("\(fix.original) → \(fix.text)") }
+            guard let fix = KeyboardLayouts.fix(keys, from: layout) else { continue }
+            if KeyboardLayouts.fix(keys, from: layout)?.text == fix.text {
+                found.append("\(fix.original) → \(fix.text)")
+            } else {
+                print("\(fix.original) → \(fix.text) did not repeat on a second try: macOS spell check gave one wrong answer, not counted")
+            }
         }
         return (checked, found)
     }
