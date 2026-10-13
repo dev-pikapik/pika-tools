@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver znovu otevírá nabídku pikapik
+## <a id="v1.44.2"></a>VoiceOver znovu otevírá nabídku pikapik
 
-<sub>1.44.1 · 13. října 2026</sub>
+<sub>1.44.2 · 13. října 2026</sub>
 
 V macOS 27 můžete nabídku pikapik na řádku nabídek znovu otevřít pomocí VoiceOveru.
 

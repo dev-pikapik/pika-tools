@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver로 pikapik 메뉴를 다시 열 수 있습니다
+## <a id="v1.44.2"></a>VoiceOver로 pikapik 메뉴를 다시 열 수 있습니다
 
-<sub>1.44.1 · 2026년 10월 13일</sub>
+<sub>1.44.2 · 2026년 10월 13일</sub>
 
 macOS 27에서 메뉴 막대의 pikapik 메뉴를 VoiceOver로 다시 열 수 있습니다.
 

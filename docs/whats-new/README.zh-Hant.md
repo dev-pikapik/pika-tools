@@ -5,9 +5,9 @@
 
 ---
 
-## <a id="v1.44.1"></a>VoiceOver 又能打開 pikapik 選單了
+## <a id="v1.44.2"></a>VoiceOver 又能打開 pikapik 選單了
 
-<sub>1.44.1 · 2026年10月13日</sub>
+<sub>1.44.2 · 2026年10月13日</sub>
 
 在 macOS 27 上，你又可以用 VoiceOver 打開選單列中的 pikapik 選單了。
 
