@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock-ul rămâne pe un singur ecran
+
+<sub>1.40.0 · 13 octombrie 2026</sub>
+
+Dock-ul nu mai sare pe alt ecran când indicatorul apasă pe marginea acelui ecran și rămâne unde l-ai pus.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Deschide Setări › Dock și pornește „Ține Dock-ul pe un singur ecran”. Apoi Dock-ul rămâne pe ecranul lui, jos sau pe lateral, iar colțurile active continuă să funcționeze. Nu e nevoie de nicio permisiune, nici în versiunea din Mac App Store.
+
+Ca să muți Dock-ul intenționat, ține apăsat ⌥ și împinge indicatorul spre marginea celuilalt ecran. Dock-ul trece pe acel ecran și rămâne acolo de atunci încolo.
+
+Un al doilea comutator, „Readu Dock-ul”, readuce automat Dock-ul pe ecranul lui după repaus sau când se schimbă ecranele. Are nevoie de permisiunea „Accesibilitate” și nu există în versiunea din Mac App Store. Ambele comutatoare sunt dezactivate implicit.
+
+---
+
 ## <a id="v1.39.4"></a>Butonul roșu nu mai oprește arhivele
 
 <sub>1.39.4 · 13 octombrie 2026</sub>

@@ -325,6 +325,7 @@ struct ChoiceTile<Content: View>: View {
 struct ArtScreen<Content: View>: View {
     let glow: Double
     var radius: CGFloat = 4
+    var dock = true
     @ViewBuilder var content: Content
 
     var body: some View {
@@ -340,7 +341,7 @@ struct ArtScreen<Content: View>: View {
                 VStack(spacing: 0) {
                     Rectangle().fill(.black.opacity(0.22)).frame(height: 4)
                     Spacer(minLength: 0)
-                    Capsule().fill(.white.opacity(0.35)).frame(width: 30, height: 3).padding(.bottom, 3)
+                    if dock { Capsule().fill(.white.opacity(0.35)).frame(width: 30, height: 3).padding(.bottom, 3) }
                 }
             }
             .opacity(glow)
@@ -395,6 +396,7 @@ struct ArtLaptop<Face: View>: View {
 
 struct ArtMonitor<Face: View>: View {
     let glow: Double
+    var dock = true
     @ViewBuilder var face: Face
     @Environment(\.colorScheme) private var scheme
 
@@ -407,7 +409,7 @@ struct ArtMonitor<Face: View>: View {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                     .fill(Color(white: 0.04))
                     .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous).strokeBorder(metal, lineWidth: 1.5))
-                ArtScreen(glow: glow) { face }
+                ArtScreen(glow: glow, dock: dock) { face }
                     .padding(3.5)
             }
             .frame(width: width, height: width * 0.6)

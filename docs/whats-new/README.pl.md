@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock zostaje na jednym ekranie
+
+<sub>1.40.0 · 13 października 2026</sub>
+
+Dock nie przeskakuje już na inny ekran, gdy wskaźnik zacznie napierać na krawędź tego ekranu, i zostaje tam, gdzie go ustawisz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Otwórz Ustawienia › Dock i włącz „Trzymaj Dock na jednym ekranie”. Dock zostaje wtedy na swoim ekranie, na dole lub z boku, a aktywne rogi dalej działają. Nie są potrzebne żadne uprawnienia, także w wersji z Mac App Store.
+
+Aby celowo przenieść Dock, przytrzymaj ⌥ i dociśnij wskaźnik do krawędzi drugiego ekranu. Dock przejdzie na ten ekran i od tej pory zostanie na nim.
+
+Drugi przełącznik, „Przywracaj Dock”, sam odsyła Dock na jego ekran po uśpieniu lub zmianie ekranów. Wymaga uprawnienia „Dostępność” i nie ma go w wersji z Mac App Store. Oba przełączniki są domyślnie wyłączone.
+
+---
+
 ## <a id="v1.39.4"></a>Czerwony przycisk już nie zatrzymuje archiwów
 
 <sub>1.39.4 · 13 października 2026</sub>

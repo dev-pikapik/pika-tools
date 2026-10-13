@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Das Dock bleibt auf einem Display
+
+<sub>1.40.0 · 13. Oktober 2026</sub>
+
+Das Dock springt nicht mehr auf ein anderes Display, wenn der Zeiger gegen dessen Rand drückt, sondern bleibt dort, wo du es haben willst.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Öffne Einstellungen › Dock und schalte „Dock auf einem Display halten“ ein. Dann bleibt das Dock auf seinem Display, unten oder seitlich, und die aktiven Ecken funktionieren weiter. Dafür ist keine Erlaubnis nötig, auch nicht in der Version aus dem Mac App Store.
+
+Um das Dock gezielt zu verschieben, halte ⌥ gedrückt und drücke den Zeiger gegen den Rand des anderen Displays. Das Dock wechselt dorthin und bleibt von da an auf diesem Display.
+
+Ein zweiter Schalter, „Dock zurückholen“, bringt das Dock nach dem Ruhezustand oder wenn sich Displays ändern von selbst auf sein Display zurück. Er braucht die Erlaubnis „Bedienungshilfen“ und fehlt in der Version aus dem Mac App Store. Beide Schalter sind standardmäßig aus.
+
+---
+
 ## <a id="v1.39.4"></a>Die rote Taste hält Archive nicht mehr an
 
 <sub>1.39.4 · 13. Oktober 2026</sub>

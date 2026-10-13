@@ -136,6 +136,13 @@
 "close button, red button, terminate, exit" = "botón cerrar, botón rojo, terminar, salir";
 "exceptions, exclude, list" = "excepciones, excluir, lista";
 "Hide with a click in the Dock" = "Ocultar con un clic en el Dock";
+"Keep the Dock on one display" = "Mantener el Dock en una sola pantalla";
+"Hold ⌥ to move it on purpose" = "Mantén pulsada ⌥ para moverlo a propósito";
+"The Dock stays on the display it’s on now, even when the pointer reaches the edge of another one. To move it, hold ⌥ and push the pointer against the edge of the other display." = "El Dock se queda en la pantalla en la que está ahora, aunque el puntero llegue al borde de otra. Para moverlo, mantén pulsada ⌥ y empuja el puntero contra el borde de la otra pantalla.";
+"Bring the Dock back" = "Devolver el Dock a su sitio";
+"After sleep or when displays change" = "Tras el reposo o al cambiar las pantallas";
+"Fixes for the Dock" = "Arreglos para el Dock";
+"Dock, display, monitor, screen, jump, move" = "Dock, pantalla, monitor, saltar, salta, mover";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Haz clic en el icono de la app que usas para ocultarla. Otro clic la trae de vuelta.";
 "Click again to bring it back" = "Otro clic la trae de vuelta";
 "Dock, minimize, hide, taskbar" = "Dock, minimizar, ocultar, barra de tareas";

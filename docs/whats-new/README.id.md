@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock tetap di satu layar
+
+<sub>1.40.0 · 13 Oktober 2026</sub>
+
+Dock tidak lagi melompat ke layar lain saat penunjuk menekan tepi layar itu, dan tetap di tempat Anda meletakkannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Buka Pengaturan › Dock dan nyalakan “Pertahankan Dock di satu layar”. Setelah itu Dock tetap di layarnya, di bawah atau di samping, dan sudut aktif tetap berfungsi. Tidak perlu izin apa pun, termasuk di versi Mac App Store.
+
+Untuk memindahkan Dock dengan sengaja, tahan ⌥ dan dorong penunjuk ke tepi layar yang lain. Dock pindah ke layar itu dan tetap di sana sesudahnya.
+
+Sakelar kedua, “Kembalikan Dock”, membawa Dock kembali ke layarnya secara otomatis setelah tidur atau saat layar berubah. Sakelar ini memerlukan izin “Aksesibilitas” dan tidak ada di versi Mac App Store. Kedua sakelar mati secara default.
+
+---
+
 ## <a id="v1.39.4"></a>Tombol merah tidak lagi menghentikan arsip
 
 <sub>1.39.4 · 13 Oktober 2026</sub>

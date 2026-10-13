@@ -200,7 +200,11 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <br><b>Archivi</b>
 <br>Apri RAR e altri archivi, o riunisci i file in uno ZIP, con un clic destro.
 </td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+<br><b>Tieni il Dock su un solo schermo</b>
+<br>Il Dock non salta più su un altro schermo. Tieni premuto ⌥ per spostarlo apposta.
+</td>
 </tr></tbody>
 </table>
 
@@ -246,6 +250,8 @@ Alcune app e alcuni giochi contano lo scorrimento in pixel esatti: per loro, pas
 **Esci quando si chiude l’ultima finestra.** Chiudi l’ultima finestra di un’app e l’app si chiude. Il Finder resta aperto, così come le app con finestre su altre scrivanie o nel Dock. Puoi indicare le app che non devono mai chiudersi in questo modo. Disattivato di default.
 
 **Nascondi con un clic nel Dock.** Fai clic sull’icona nel Dock dell’app che stai usando e si nasconde. Fai di nuovo clic per riaverla. Disattivato di default.
+
+**Tieni il Dock su un solo schermo.** Con più schermi, macOS sposta il Dock su un altro schermo non appena il puntatore spinge contro il suo bordo inferiore, o contro quello sinistro o destro se il Dock è di lato. Con l’interruttore attivo, il Dock resta dov’è e gli angoli attivi continuano a funzionare. Per spostarlo apposta, tieni premuto ⌥ e spingi il puntatore contro il bordo dell’altro schermo. Non serve alcun permesso. **Riporta il Dock al suo posto** rimette il Dock sul suo schermo dopo lo stop o quando cambiano gli schermi. Richiede il permesso **Accessibilità** e non è nella versione del Mac App Store. I due interruttori sono disattivati di default.
 
 **Il pulsante verde ingrandisce la finestra.** Fai clic sul pulsante verde di una finestra e questa si allarga fino a riempire lo schermo, senza passare a schermo intero. Un altro clic riporta la misura precedente. Tieni premuto ⌥ e il pulsante funziona come sempre. Lo schermo intero resta nel menu del pulsante e con ⌃⌘F. Puoi elencare le app in cui il pulsante verde deve funzionare come sempre. Disattivato di default.
 
@@ -327,7 +333,7 @@ Apri le impostazioni dal menu con **Impostazioni…** o ⌘, oppure avvia di nuo
 - **Tastiera**: cambio lingua, ripetizione dei tasti, Home ed End.
 - **Mouse**: accelerazione del puntatore e velocità puntatore, scorrimento per righe, direzione di scorrimento, tasti laterali.
 - **Finestre**: ingrandimento con il pulsante verde (con un elenco di eccezioni), protezione di ⌘Q e ⌘W, e uscita con l’ultima finestra (con un elenco di eccezioni).
-- **Dock**: nascondere con un clic nel Dock.
+- **Dock**: nascondere con un clic nel Dock, tenere il Dock su un solo schermo e riportarlo al suo posto.
 - **Finder**: nuovo file, copia più leggera, conversione e archivi, apertura con Invio, taglio con ⌘X ed eliminazione con ⌫.
 - **Rimuovi app**: rimuovi un’app con i suoi file, rimetti tutto a posto in seguito e fai pulizia di ciò che le app rimosse hanno lasciato.
 - **Giochi**: l’elenco dei tuoi giochi e le opzioni della Modalità gioco.

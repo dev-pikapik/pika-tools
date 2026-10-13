@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock stannar på en skärm
+
+<sub>1.40.0 · 13 oktober 2026</sub>
+
+Dock hoppar inte längre över till en annan skärm när pekaren trycker mot den skärmens kant, utan stannar där du har den.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Öppna Inställningar › Dock och slå på ”Håll Dock på en skärm”. Sedan stannar Dock på sin skärm, nere eller på sidan, och aktiva hörn fortsätter att fungera. Ingen behörighet behövs, inte heller i versionen från Mac App Store.
+
+Vill du flytta Dock med flit, håll ned ⌥ och tryck pekaren mot kanten av den andra skärmen. Dock flyttar då dit och blir kvar på den skärmen.
+
+Ett andra reglage, ”Ta tillbaka Dock”, för automatiskt tillbaka Dock till sin skärm efter vila eller när skärmar ändras. Det kräver behörigheten ”Hjälpmedel” och finns inte i versionen från Mac App Store. Båda reglagen är av som standard.
+
+---
+
 ## <a id="v1.39.4"></a>Den röda knappen stoppar inte längre arkiven
 
 <sub>1.39.4 · 13 oktober 2026</sub>

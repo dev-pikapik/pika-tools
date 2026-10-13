@@ -107,6 +107,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
             String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
+            String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Hide with a click in the Dock"),
         ]
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
@@ -160,6 +161,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .windows, title: String(localized: "Quit when the last window closes"), synonyms: "close button, red button, terminate, exit"),
             SettingsItem(tab: .windows, title: String(localized: "Never quit these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .dock, title: String(localized: "Hide with a click in the Dock"), synonyms: "Dock, minimize, hide, taskbar"),
+            SettingsItem(tab: .dock, title: String(localized: "Keep the Dock on one display"), synonyms: "Dock, display, monitor, screen, jump, move"),
             SettingsItem(tab: .finder, title: String(localized: "New File in Finder"), synonyms: "create, text file, txt, right-click, context menu, Desktop"),
             SettingsItem(tab: .finder, title: String(localized: "Smaller Copy in Finder"), synonyms: "compress, shrink, smaller, reduce size, optimize, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF, TinyPNG"),
             SettingsItem(tab: .finder, title: String(localized: "Convert in Finder"), synonyms: "convert, format, export, save as, image, photo, picture, video, audio, music, PNG, JPEG, JPG, HEIC, TIFF, PDF, GIF, MP4, MOV, M4A, WAV, AIFF"),
@@ -481,7 +483,11 @@ private struct SettingsView: View {
                 text: String(localized: "Fixes for windows and quitting apps"),
                 headings: ["window-zoom": "Size", "quit-on-close": "Closing and Quitting"]
             )
+        #if APPSTORE
         case .dock: ToolsSettings(tab: .dock, text: String(localized: "A fix for the Dock."))
+        #else
+        case .dock: ToolsSettings(tab: .dock, text: String(localized: "Fixes for the Dock"))
+        #endif
         case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
         case .animations:
             #if APPSTORE

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>O Dock fica em uma só tela
+
+<sub>1.40.0 · 13 de outubro de 2026</sub>
+
+O Dock não pula mais para outra tela quando o ponteiro empurra a borda dessa tela: ele fica onde você o colocou.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Abra Ajustes › Dock e ative “Manter o Dock em uma só tela”. O Dock passa a ficar na tela dele, embaixo ou na lateral, e os cantos ativos continuam funcionando. Não é preciso nenhuma permissão, nem na versão da Mac App Store.
+
+Para mover o Dock de propósito, mantenha ⌥ pressionada e empurre o ponteiro contra a borda da outra tela. O Dock passa para essa tela e, dali em diante, fica nela.
+
+Uma segunda chave, “Trazer o Dock de volta”, devolve o Dock à tela dele automaticamente depois do repouso ou quando as telas mudam. Ela precisa da permissão “Acessibilidade” e não está na versão da Mac App Store. As duas chaves vêm desativadas por padrão.
+
+---
+
 ## <a id="v1.39.4"></a>O botão vermelho não trava mais os arquivos compactados
 
 <sub>1.39.4 · 13 de outubro de 2026</sub>

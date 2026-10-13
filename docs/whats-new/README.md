@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>The Dock stays on one display
+
+<sub>1.40.0 · October 13, 2026</sub>
+
+The Dock no longer jumps to another display when the pointer pushes against that display’s edge, so it stays where you put it.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Open Settings › Dock and turn on Keep the Dock on one display. The Dock then stays on its display, at the bottom or at the side, and hot corners keep working. No permission is needed, also in the Mac App Store version.
+
+To move the Dock on purpose, hold ⌥ and push the pointer against the edge of the other display. The Dock moves there and stays on that display from then on.
+
+A second switch, Bring the Dock back, returns the Dock to its display by itself after sleep or when displays change. It needs Accessibility and is not in the Mac App Store version. Both switches are off by default.
+
+---
+
 ## <a id="v1.39.4"></a>The red button no longer stops archives
 
 <sub>1.39.4 · October 13, 2026</sub>

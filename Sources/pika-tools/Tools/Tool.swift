@@ -85,6 +85,7 @@ final class ToolRegistry {
         list.append(QuitOnCloseTool())
         list.append(DockHideTool())
         #endif
+        list.append(DockDisplayTool())
         list.append(NewFileTool())
         list.append(CompressTool())
         list.append(ConvertTool())

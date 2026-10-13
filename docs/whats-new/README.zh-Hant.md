@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.40.0"></a>Dock 固定在一台顯示器上
+
+<sub>1.40.0 · 2026年10月13日</sub>
+
+指標推向另一台顯示器的邊緣時，Dock 不再跳過去，而是留在你放的地方。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+打開「設定 › Dock」，開啟「讓 Dock 固定在一台顯示器上」。之後 Dock 會留在原本的顯示器上，不論在下方還是側邊，熱角也照常運作。不需要任何權限，Mac App Store 版本也不例外。
+
+若要刻意移動 Dock，請按住 ⌥，並將指標推向另一台顯示器的邊緣。Dock 會移到那台顯示器上，此後就留在那裡。
+
+第二個開關「讓 Dock 回到原處」會在睡眠後或顯示器變更時，自動把 Dock 送回它原本的顯示器。它需要「輔助使用」權限，Mac App Store 版本中沒有此功能。兩個開關預設都是關閉的。
+
+---
+
 ## <a id="v1.39.4"></a>紅色按鈕不會再讓壓縮檔停擺
 
 <sub>1.39.4 · 2026年10月13日</sub>
