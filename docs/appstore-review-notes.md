@@ -125,3 +125,4 @@ These features need to look inside other apps' windows, type into or control oth
 - Temperature sensor readings.
 - Keep Awake with the lid closed, and Turn off the display now.
 - The pet finding the Dock icons through Accessibility.
+- Keeping the pointer on the game's display, in Game Mode.

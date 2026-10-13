@@ -90,9 +90,10 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var combos: Set<UInt64> = []
     @ObservationIgnored private var hinted = false
-    @ObservationIgnored private var fence: CursorFence?
-    @ObservationIgnored private var fenceTimer: Timer?
-    @ObservationIgnored private var swipes: (blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) = (false, [], [])
+    @ObservationIgnored private var fence: SwipeFence?
+    @ObservationIgnored private var cursorTimer: Timer?
+    @ObservationIgnored private var cursorScreen: CGRect?
+    @ObservationIgnored private var cursorCorners: Set<Int> = []
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
     @ObservationIgnored fileprivate var languageBindings: [UInt64: (direction: InputSwitchGesture.Direction, automatic: Bool)] = [:]
@@ -244,11 +245,12 @@ final class GameModeTool: Tool {
         )
         hinted = false
         let paused = PointerShortcuts.paused(catalog, rules: rules, values: systemShortcuts)
-        swipes = (paused.blocksAll, paused.except, Set(PointerShortcuts.sides.indices).subtracting(paused.corners))
-        if rules.contains(.cursor) || paused.blocksAll || !paused.except.isEmpty { moveFence() }
+        cursorCorners = Set(PointerShortcuts.sides.indices).subtracting(paused.corners)
+        if paused.blocksAll || !paused.except.isEmpty { fence = SwipeFence(blocksAll: paused.blocksAll, except: paused.except) }
         DockEdges.calm(corners: paused.corners, hidesDock: rules.contains(.cursor))
-        if rules.contains(.cursor) {
-            fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
+        if rules.contains(.cursor), CursorLock.available {
+            holdCursor()
+            cursorTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.holdCursor() }
         }
         if rules.contains(.display) {
             var id = IOPMAssertionID(0)
@@ -262,11 +264,13 @@ final class GameModeTool: Tool {
     }
 
     func leave() {
-        fenceTimer?.invalidate()
-        fenceTimer = nil
+        cursorTimer?.invalidate()
+        cursorTimer = nil
+        if cursorScreen != nil { _ = CursorLock.hold(nil) }
+        cursorScreen = nil
         fence?.stop()
         fence = nil
-        swipes = (false, [], [])
+        cursorCorners = []
         DockEdges.restoreSoon()
         combos = []
         languageBindings = [:]
@@ -306,12 +310,15 @@ final class GameModeTool: Tool {
         }
     }
 
-    private func moveFence() {
+    private func holdCursor() {
         guard let game else { return }
-        let frame = rules.contains(.cursor) ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
-        guard fence == nil || fence?.frame != frame else { return }
-        fence?.stop()
-        fence = CursorFence(frame: frame, blocksAll: swipes.blocksAll, except: swipes.except, corners: swipes.corners)
+        let screen = Self.screen(of: game.processIdentifier) ?? cursorScreen
+        let rects = screen.map { GameRules.fence($0, corners: cursorCorners) } ?? []
+        if let cursor = CGEvent(source: nil)?.location, rects.contains(where: { $0.contains(cursor) }) {
+            if CursorLock.hold(rects) { cursorScreen = screen }
+        } else if cursorScreen != nil, CursorLock.hold(nil) {
+            cursorScreen = nil
+        }
     }
 
     private func refreshCommandKeys() {
@@ -518,31 +525,53 @@ enum DockEdges {
 }
 #endif
 
-private final class CursorFence {
-    let frame: CGRect?
+#if APPSTORE
+private enum CursorLock {
+    static let available = false
+
+    static func hold(_ rects: [CGRect]?) -> Bool { false }
+}
+#else
+private enum CursorLock {
+    private typealias Lock = @convention(c) (Int32, UnsafeRawPointer?) -> Int32
+    private typealias Connection = @convention(c) () -> Int32
+    private typealias Region = @convention(c) (UnsafePointer<CGRect>, Int) -> Unmanaged<AnyObject>?
+
+    private static let library = dlopen("/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight", RTLD_LAZY)
+    private static let lock = dlsym(library, "SLSSetCursorRegionLock").map { unsafeBitCast($0, to: Lock.self) }
+    private static let connection = dlsym(library, "SLSMainConnectionID").map { unsafeBitCast($0, to: Connection.self) }
+    private static let region = dlsym(UnsafeMutableRawPointer(bitPattern: -2), "CGRegionCreateWithRects").map { unsafeBitCast($0, to: Region.self) }
+
+    static var available: Bool { lock != nil && connection != nil && region != nil }
+
+    static func hold(_ rects: [CGRect]?) -> Bool {
+        guard let lock, let connection, let region else { return false }
+        let shape = rects.flatMap { region($0, $0.count) }
+        defer { shape?.release() }
+        return (rects == nil || shape != nil) && lock(connection(), shape?.toOpaque()) == 0
+    }
+}
+#endif
+
+private final class SwipeFence {
     let blocksAll: Bool
     let except: Set<Int64>
-    let corners: Set<Int>
     fileprivate var holding: Bool?
     fileprivate private(set) var tap: CFMachPort?
     private var loop: CFRunLoop?
 
-    init(frame: CGRect?, blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) {
-        self.frame = frame
+    init(blocksAll: Bool, except: Set<Int64>) {
         self.blocksAll = blocksAll
         self.except = except
-        self.corners = corners
-        let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
-        let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
-        guard mask != 0, AXIsProcessTrusted() else { return }
+        guard AXIsProcessTrusted() else { return }
         let ready = DispatchSemaphore(value: 0)
         let thread = Thread { [self] in
             if let tap = CGEvent.tapCreate(
                 tap: .cgSessionEventTap,
                 place: .headInsertEventTap,
                 options: .defaultTap,
-                eventsOfInterest: mask,
-                callback: cursorFenceCallback,
+                eventsOfInterest: 1 << 30,
+                callback: swipeFenceCallback,
                 userInfo: Unmanaged.passUnretained(self).toOpaque()
             ) {
                 CFRunLoopAddSource(CFRunLoopGetCurrent(), CFMachPortCreateRunLoopSource(nil, tap, 0), .commonModes)
@@ -652,23 +681,17 @@ private func gameModeCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private func cursorFenceCallback(
+private func swipeFenceCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
     refcon: UnsafeMutableRawPointer?
 ) -> Unmanaged<CGEvent>? {
     guard let refcon else { return Unmanaged.passUnretained(event) }
-    let fence = Unmanaged<CursorFence>.fromOpaque(refcon).takeUnretainedValue()
+    let fence = Unmanaged<SwipeFence>.fromOpaque(refcon).takeUnretainedValue()
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
-    case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
-        if let frame = fence.frame, let point = GameRules.fence(event.location, in: frame, corners: fence.corners) {
-            event.location = point
-            CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
-            CGWarpMouseCursorPosition(point)
-        }
     default:
         if type.rawValue == 30, event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23 {
             let gate = GameRules.dropsSwipe(
@@ -801,7 +824,7 @@ struct GameModePage: View {
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
         #if APPSTORE
-        let rows = rows.filter { $0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil } }
+        let rows = rows.filter { $0.rule != .cursor && ($0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil }) }
         #endif
         return Section {
             ForEach(rows, id: \.rule) { row in
