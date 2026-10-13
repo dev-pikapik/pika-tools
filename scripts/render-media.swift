@@ -54,7 +54,7 @@ enum RenderMedia {
         ("whats-new/1.34.0/pointer-shortcuts", 5.4, AnyView(PointerShortcutsCard())),
         ("whats-new/1.35.0/wardrobe", WardrobeCard.length, AnyView(WardrobeCard())),
         ("whats-new/1.39.0/archive-password", ArchivePasswordCard.length, AnyView(ArchivePasswordCard())),
-        ("whats-new/next/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
+        ("whats-new/1.39.3/pet-rhythm", PetRhythmArt.length, AnyView(PetRhythmArt())),
     ]
 
     static func main() {

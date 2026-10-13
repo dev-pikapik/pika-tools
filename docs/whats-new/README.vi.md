@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Thú cưng sống theo nhịp của bạn
+
+<sub>1.39.3 · 13 tháng 10 năm 2026</sub>
+
+Khi bạn gõ phím, thú cưng hăng hái hẳn lên và lon ton bước đi tung tăng. Còn khi bạn rời máy Mac, nó bắt đầu buồn ngủ, ngồi xuống rồi ngủ gà ngủ gật.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Sau khoảng 40 giây không đụng đến bàn phím hay chuột, mí mắt nó nặng dần, đến phút rưỡi thì nó đã ngủ say, với những chữ z nhỏ bay lơ lửng lên trên. Nhấn một phím bất kỳ hoặc di chuột, nó sẽ thức dậy, đứng lên và đi tiếp. Trong lúc chợp mắt, nó giữ im lặng và tốn ít năng lượng hơn.
+
+pikapik không bao giờ xem bạn gõ gì, mà chỉ kiểm tra đã bao lâu kể từ lần cuối bạn nhấn phím hoặc di chuột, giống như macOS vẫn làm trước khi giảm độ sáng màn hình, nên không cần quyền nào cả. Muốn thú cưng lúc nào cũng hoạt bát? Tắt “Sống theo nhịp của bạn” trong cài đặt thú cưng.
+
+**Thử ngay:** Cài đặt › Thú cưng › Sống theo nhịp của bạn
+
+---
+
 ## <a id="v1.39.2"></a>Cài đặt đồng bộ giờ nằm trong thư mục pikapik
 
 <sub>1.39.2 · 13 tháng 10 năm 2026</sub>

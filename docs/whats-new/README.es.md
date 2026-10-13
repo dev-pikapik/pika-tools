@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Tu mascota sigue tu ritmo
+
+<sub>1.39.3 · 13 de octubre de 2026</sub>
+
+Mientras escribes, tu mascota se anima y trota con paso alegre. Si te alejas de tu Mac, le entra sueño, se sienta y se adormece.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Tras unos 40 segundos sin tocar el teclado ni el ratón, le empiezan a pesar los párpados, y al minuto y medio ya duerme como un tronco, con pequeñas zetas que suben flotando. Pulsa una tecla o mueve el ratón y se despertará, se levantará y seguirá su camino. Mientras dormita, está callada y gasta menos energía.
+
+pikapik nunca mira lo que escribes. Solo comprueba cuánto tiempo ha pasado desde la última vez que pulsaste una tecla o moviste el ratón, igual que hace macOS antes de atenuar la pantalla, así que no necesita ningún permiso. ¿Prefieres que tu mascota esté siempre animada? Desactiva «Sigue tu ritmo» en los ajustes de la mascota.
+
+**Pruébalo:** Ajustes › Mascota › Sigue tu ritmo
+
+---
+
 ## <a id="v1.39.2"></a>Los ajustes sincronizados ahora están en una carpeta pikapik
 
 <sub>1.39.2 · 13 de octubre de 2026</sub>

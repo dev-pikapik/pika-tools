@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Mazlíček žije ve vašem rytmu
+
+<sub>1.39.3 · 13. října 2026</sub>
+
+Když píšete, mazlíček ožije a vesele cupitá pružným krokem. Jakmile od Macu odejdete, je z něj ospalec, sedne si a začne podřimovat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Když se asi 40 sekund nedotknete klávesnice ani myši, ztěžknou mu víčka, po minutě a půl už spí jako dudek a nad ním stoupají malá písmenka z. Stiskněte klávesu nebo pohněte myší a mazlíček se probudí, vstane a vykročí dál. Zatímco dřímá, je zticha a spotřebovává méně energie.
+
+pikapik se nikdy nedívá, co píšete. Zjišťuje jen, kolik času uplynulo od posledního stisku klávesy nebo pohybu myši, stejně jako to dělá macOS, než ztlumí displej, a proto nepotřebuje žádná oprávnění. Chcete, aby byl mazlíček pořád čilý? Vypněte „Žije ve vašem rytmu“ v nastavení mazlíčka.
+
+**Vyzkoušejte:** Nastavení › Mazlíček › Žije ve vašem rytmu
+
+---
+
 ## <a id="v1.39.2"></a>Synchronizovaná nastavení jsou teď ve složce pikapik
 
 <sub>1.39.2 · 13. října 2026</sub>

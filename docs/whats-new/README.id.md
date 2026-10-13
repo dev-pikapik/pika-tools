@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Peliharaan mengikuti ritme Anda
+
+<sub>1.39.3 · 13 Oktober 2026</sub>
+
+Saat Anda mengetik, peliharaan jadi bersemangat dan berjalan riang dengan langkah ringan. Begitu Anda meninggalkan Mac, ia mulai mengantuk, duduk, lalu terkantuk-kantuk.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Jika keyboard dan mouse tidak disentuh sekitar 40 detik, matanya mulai berat, dan setelah satu setengah menit ia sudah tidur nyenyak, dengan huruf-huruf z kecil yang melayang naik. Tekan tombol apa saja atau gerakkan mouse, dan ia akan bangun, berdiri, lalu berjalan lagi. Selama tidur, ia tetap diam dan lebih hemat energi.
+
+pikapik tidak pernah melihat apa yang Anda ketik. Ia hanya memeriksa sudah berapa lama sejak tombol terakhir ditekan atau mouse terakhir digerakkan, sama seperti yang dilakukan macOS sebelum meredupkan layar, jadi tidak perlu izin apa pun. Lebih suka peliharaan Anda selalu lincah? Matikan “Mengikuti ritme Anda” di pengaturan peliharaan.
+
+**Coba:** Pengaturan › Peliharaan › Mengikuti ritme Anda
+
+---
+
 ## <a id="v1.39.2"></a>Pengaturan yang diselaraskan kini ada di folder pikapik
 
 <sub>1.39.2 · 13 Oktober 2026</sub>

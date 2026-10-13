@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Ditt husdjur följer din rytm
+
+<sub>1.39.3 · 13 oktober 2026</sub>
+
+Medan du skriver piggnar husdjuret till och travar runt med fjädrande steg. Går du ifrån din Mac blir det sömnigt, sätter sig och slumrar till.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Efter ungefär 40 sekunder utan att du rör tangentbordet eller musen blir ögonlocken tunga, och efter en och en halv minut sover det som en stock medan små z svävar uppåt. Tryck på en tangent eller flytta musen, så vaknar det, reser sig och går vidare. Medan det tar en tupplur är det tyst och drar mindre energi.
+
+pikapik tittar aldrig på vad du skriver, utan kollar bara hur lång tid som har gått sedan du senast tryckte på en tangent eller rörde musen, precis som macOS gör innan skärmen dimmas. Därför behövs inga behörigheter. Vill du hellre att husdjuret alltid är pigg? Stäng av ”Följer din rytm” i husdjurets inställningar.
+
+**Prova:** Inställningar › Husdjur › Följer din rytm
+
+---
+
 ## <a id="v1.39.2"></a>Synkade inställningar ligger nu i en mapp som heter pikapik
 
 <sub>1.39.2 · 13 oktober 2026</sub>

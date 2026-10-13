@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.39.3"></a>Il tuo animaletto segue il tuo ritmo
+
+<sub>1.39.3 · 13 ottobre 2026</sub>
+
+Mentre scrivi, l’animaletto si anima e trotterella tutto pimpante. Se ti allontani dal Mac, gli viene sonno, si siede e si appisola.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/whats-new/1.39.3/pet-rhythm-dark.png"><img src="../media/whats-new/1.39.3/pet-rhythm-light.png" width="340" alt=""></picture>
+
+Dopo circa 40 secondi senza toccare né tastiera né mouse, gli si appesantiscono le palpebre, e dopo un minuto e mezzo dorme come un ghiro, con piccole z che salgono fluttuando. Premi un tasto o muovi il mouse e si sveglia, si alza e riprende a camminare. Mentre fa il pisolino, resta in silenzio e consuma meno energia.
+
+pikapik non guarda mai cosa scrivi. Controlla soltanto quanto tempo è passato dall’ultimo tasto premuto o dall’ultimo movimento del mouse, proprio come fa macOS prima di abbassare la luminosità dello schermo, quindi non ha bisogno di alcun permesso. Preferisci che l’animaletto resti sempre vivace? Disattiva «Segue il tuo ritmo» nelle impostazioni dell’animaletto.
+
+**Provalo:** Impostazioni › Animaletto › Segue il tuo ritmo
+
+---
+
 ## <a id="v1.39.2"></a>Le impostazioni sincronizzate ora sono in una cartella pikapik
 
 <sub>1.39.2 · 13 ottobre 2026</sub>
