@@ -50,12 +50,21 @@ struct PortQuestion {
     var question: PortQuestion?
     #endif
     @ObservationIgnored private var looks: [String: PortLook] = [:]
+    @ObservationIgnored private var watching: Task<Void, Never>?
 
-    func watch() async {
-        while !Task.isCancelled {
-            await refresh()
-            try? await Task.sleep(for: .seconds(2))
+    func watch() {
+        guard watching == nil else { return }
+        watching = Task {
+            while !Task.isCancelled {
+                await refresh()
+                try? await Task.sleep(for: .seconds(2))
+            }
         }
+    }
+
+    func unwatch() {
+        watching?.cancel()
+        watching = nil
     }
 
     func refresh() async {

@@ -62,7 +62,7 @@ struct PortsPage: View {
         }
         .formStyle(.grouped)
         .settingsPage()
-        .task { await model.watch() }
+        .whileShown { if $0 { model.watch() } else { model.unwatch() } }
         #if !APPSTORE
         .alert(
             model.question.map { $0.force ? String(localized: "Force quit “\($0.name)”?") : String(localized: "Quit “\($0.name)”?") } ?? "",
