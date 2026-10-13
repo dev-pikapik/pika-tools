@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "隱藏, ⌘H, cmd H, 中間按鈕, 按鈕 4, 按鈕 5, 滑鼠按鈕";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "「外觀」和「語言」會重新跟隨系統，iCloud 同步會關閉。「登入時打開」和儲存在 iCloud 中的設定維持不變。";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "「外觀」和「語言」會重新跟隨系統。「登入時打開」維持不變。";
+"Hide desktop icons" = "隱藏桌面圖像";
+"For calls, recordings and screenshots. The files stay where they are" = "適合通話、錄影和截圖。檔案仍在原處";
+"The files stay where they are" = "檔案仍在原處";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "隱藏桌面上的檔案和檔案夾，和「系統設定」›「桌面與Dock」中的「顯示項目」選項一樣。它們仍在 Finder 的「桌面」檔案夾中。";
+"Show hidden files" = "顯示隱藏檔案";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS 隱藏的檔案會以淡色顯示，和在 Finder 中按 ⇧⌘. 一樣";
+"They appear dimmed in Finder" = "在 Finder 中以淡色顯示";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "隱藏的檔案和檔案夾（例如「資源庫」）會在 Finder 和桌面上以淡色顯示，和在 Finder 中按 ⇧⌘. 一樣。";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "「系統設定」›「桌面與Dock」›「顯示項目」›「在桌面上」";
+"Opens Desktop & Dock in System Settings" = "打開「系統設定」中的「桌面與Dock」";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "打開「系統設定」中的「桌面與Dock」。關閉「顯示項目」旁的「在桌面上」即可隱藏圖像，再次開啟即可復原。檔案仍在「桌面」檔案夾中。";
+"Press these keys in Finder, and again to hide them" = "在 Finder 中按下這些鍵即可顯示，再按一次即可隱藏";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "桌面, 圖像, 檔案, 檔案夾, 整理, 隱藏, 簡報, 螢幕共享, 錄影, 截圖, 幕前調度";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隱藏, 不可見, 點檔案, 系統檔案, 資源庫, 顯示所有檔案, Command Shift 句號";

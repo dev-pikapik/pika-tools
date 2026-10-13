@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "隠す, 非表示, ⌘H, cmd H, 中央ボタン, ボタン4, ボタン5, マウスボタン";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "外観と言語は再びシステムに従い、iCloudでの同期はオフになります。「ログイン時に開く」とiCloudに保存された設定はそのままです。";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "外観モードと言語は再びシステムに従います。「ログイン時に開く」はそのままです。";
+"Hide desktop icons" = "デスクトップのアイコンを隠す";
+"For calls, recordings and screenshots. The files stay where they are" = "通話や録画、スクリーンショットのときに。ファイルはそのまま残ります";
+"The files stay where they are" = "ファイルはそのまま残ります";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "デスクトップ上のファイルとフォルダを隠します。システム設定 › デスクトップとDockの「項目を表示」と同じです。ファイルとフォルダはFinderの「デスクトップ」フォルダに残ります。";
+"Show hidden files" = "隠しファイルを表示";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS が隠しているファイルが薄く表示されます。Finderで⇧⌘. を押したときと同じです";
+"They appear dimmed in Finder" = "Finderで薄く表示されます";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "「ライブラリ」などの隠しファイルやフォルダが、Finderとデスクトップに薄く表示されます。Finderで⇧⌘. を押したときと同じです。";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "システム設定 › デスクトップとDock › 項目を表示 › デスクトップに";
+"Opens Desktop & Dock in System Settings" = "システム設定の「デスクトップとDock」を開きます";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "システム設定の「デスクトップとDock」を開きます。アイコンを隠すには「項目を表示」の横の「デスクトップに」をオフにし、元に戻すにはもう一度オンにします。ファイルは「デスクトップ」フォルダに残ります。";
+"Press these keys in Finder, and again to hide them" = "Finderでこのキーを押すと表示され、もう一度押すと隠れます";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "デスクトップ, アイコン, ファイル, フォルダ, 片付け, 隠す, プレゼンテーション, 画面共有, 録画, スクリーンショット, ステージマネージャ";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隠し, 非表示, ドットファイル, システムファイル, ライブラリ, すべてのファイルを表示, Command Shift ピリオド";

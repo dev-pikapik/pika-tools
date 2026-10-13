@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "ocultar, esconder, ⌘H, cmd H, botão do meio, botão 4, botão 5, botão do mouse";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "Aparência e Idioma voltarão a seguir o sistema, e a sincronização com o iCloud será desativada. “Abrir ao Iniciar Sessão” e os ajustes salvos no iCloud continuam como estão.";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "Aparência e Idioma voltarão a seguir o sistema. “Abrir ao Iniciar Sessão” continua como está.";
+"Hide desktop icons" = "Ocultar ícones da Mesa";
+"For calls, recordings and screenshots. The files stay where they are" = "Para chamadas, gravações e capturas de tela. Os arquivos ficam onde estão";
+"The files stay where they are" = "Os arquivos ficam onde estão";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Oculta os arquivos e pastas da Mesa, igual à opção “Mostrar itens” em Ajustes do Sistema › Mesa e Dock. Eles continuam na pasta Mesa no Finder.";
+"Show hidden files" = "Mostrar arquivos ocultos";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Os arquivos que o macOS oculta aparecem esmaecidos, como com ⇧⌘. no Finder";
+"They appear dimmed in Finder" = "Eles aparecem esmaecidos no Finder";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Arquivos e pastas ocultos, como Biblioteca, aparecem esmaecidos no Finder e na Mesa, igual a pressionar ⇧⌘. no Finder.";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "Ajustes do Sistema › Mesa e Dock › Mostrar itens › Na Mesa";
+"Opens Desktop & Dock in System Settings" = "Abre Mesa e Dock em Ajustes do Sistema";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Abre Mesa e Dock em Ajustes do Sistema. Desative “Na Mesa” ao lado de “Mostrar itens” para ocultar os ícones e ative de novo para trazê-los de volta. Os arquivos continuam na pasta Mesa.";
+"Press these keys in Finder, and again to hide them" = "Pressione estas teclas no Finder, e de novo para ocultá-los";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "mesa, ícones, arquivos, pastas, limpar, ocultar, apresentação, compartilhamento de tela, gravação, captura de tela, Organizador Visual";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ocultos, invisíveis, arquivos com ponto, arquivos do sistema, Biblioteca, mostrar todos os arquivos, Command Shift ponto";

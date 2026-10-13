@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "छिपाएँ, ⌘H, cmd H, बीच वाला बटन, बटन 4, बटन 5, माउस बटन";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "दिखावट और भाषा फिर से सिस्टम के अनुसार होंगी, और iCloud सिंक बंद हो जाएगा। “लॉगइन पर खोलें” और iCloud में सहेजी गई सेटिंग्ज़ जैसी हैं वैसी रहेंगी।";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "प्रकटन और भाषा फिर से सिस्टम के अनुसार होंगे। “लॉगइन पर खोलें” जैसा है वैसा रहेगा।";
+"Hide desktop icons" = "डेस्कटॉप आइकॉन छिपाएँ";
+"For calls, recordings and screenshots. The files stay where they are" = "कॉल, रिकॉर्डिंग और स्क्रीनशॉट के लिए। फ़ाइलें अपनी जगह पर रहती हैं";
+"The files stay where they are" = "फ़ाइलें अपनी जगह पर रहती हैं";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "डेस्कटॉप की फ़ाइलें और फ़ोल्डर छिपाता है, ठीक सिस्टम सेटिंग › डेस्कटॉप और Dock में “आइटम दिखाएँ” सेटिंग की तरह। वे Finder में डेस्कटॉप फ़ोल्डर में ही रहते हैं।";
+"Show hidden files" = "छिपी फ़ाइलें दिखाएँ";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "macOS जिन फ़ाइलों को छिपाता है, वे धुंधली दिखती हैं, जैसे Finder में ⇧⌘. दबाने पर";
+"They appear dimmed in Finder" = "वे Finder में धुंधली दिखती हैं";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "छिपी फ़ाइलें और फ़ोल्डर, जैसे लाइब्रेरी, Finder में और डेस्कटॉप पर धुंधले दिखते हैं, ठीक Finder में ⇧⌘. दबाने की तरह।";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "सिस्टम सेटिंग › डेस्कटॉप और Dock › आइटम दिखाएँ › डेस्कटॉप पर";
+"Opens Desktop & Dock in System Settings" = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है। आइकॉन छिपाने के लिए “आइटम दिखाएँ” के पास “डेस्कटॉप पर” बंद करें, और उन्हें वापस लाने के लिए फिर से चालू करें। फ़ाइलें डेस्कटॉप फ़ोल्डर में ही रहती हैं।";
+"Press these keys in Finder, and again to hide them" = "Finder में ये कुंजियाँ दबाएँ, और छिपाने के लिए फिर से दबाएँ";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "डेस्कटॉप, आइकॉन, फ़ाइलें, फ़ोल्डर, साफ़, छिपाएँ, प्रेज़ेंटेशन, स्क्रीन शेयरिंग, रिकॉर्डिंग, स्क्रीनशॉट, स्टेज मैनेजर";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "छिपी, अदृश्य, डॉट फ़ाइलें, सिस्टम फ़ाइलें, लाइब्रेरी, सभी फ़ाइलें दिखाएँ, Command Shift पीरियड";

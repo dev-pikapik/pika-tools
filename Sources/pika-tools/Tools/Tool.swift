@@ -101,7 +101,9 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(FinderDeleteTool())
         #endif
+        list.append(DesktopIconsTool())
         #if !APPSTORE
+        list.append(HiddenFilesTool())
         list.append(AnimationsTool.shared)
         #endif
         list.append(GameModeTool.shared)

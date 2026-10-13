@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "ukryj, schowaj, ⌘H, cmd H, środkowy przycisk, przycisk 4, przycisk 5, przycisk myszy";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "Wygląd i Język znów będą zgodne z systemem, a synchronizacja przez iCloud zostanie wyłączona. „Otwórz przy logowaniu” i ustawienia zapisane w iCloud pozostaną bez zmian.";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "Wygląd i Język znów będą zgodne z systemem. „Otwórz przy logowaniu” pozostanie bez zmian.";
+"Hide desktop icons" = "Ukryj ikony na biurku";
+"For calls, recordings and screenshots. The files stay where they are" = "Do rozmów, nagrań i zrzutów ekranu. Pliki zostają na swoim miejscu";
+"The files stay where they are" = "Pliki zostają na swoim miejscu";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ukrywa pliki i foldery na biurku, tak jak opcja „Pokaż rzeczy” w Ustawieniach systemowych › Biurko i Dock. Zostają w folderze Biurko w Finderze.";
+"Show hidden files" = "Pokaż ukryte pliki";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Pliki ukrywane przez macOS są wyszarzone, jak po ⇧⌘. w Finderze";
+"They appear dimmed in Finder" = "W Finderze są wyszarzone";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Ukryte pliki i foldery, na przykład Biblioteki, są wyszarzone w Finderze i na biurku, tak jak po naciśnięciu ⇧⌘. w Finderze.";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "Ustawienia systemowe › Biurko i Dock › Pokaż rzeczy › Na Biurku";
+"Opens Desktop & Dock in System Settings" = "Otwiera Biurko i Dock w Ustawieniach systemowych";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otwiera Biurko i Dock w Ustawieniach systemowych. Aby ukryć ikony, wyłącz „Na Biurku” obok „Pokaż rzeczy”, a aby je przywrócić, włącz z powrotem. Pliki zostają w folderze Biurko.";
+"Press these keys in Finder, and again to hide them" = "Naciśnij te klawisze w Finderze, a ponownie, aby je ukryć";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "biurko, ikony, pliki, foldery, porządek, ukryj, prezentacja, udostępnianie ekranu, nagrywanie, zrzut ekranu, Stage Manager";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ukryte, niewidoczne, pliki z kropką, pliki systemowe, Biblioteki, pokaż wszystkie pliki, Command Shift kropka";

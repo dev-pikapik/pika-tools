@@ -1138,3 +1138,17 @@
 "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button" = "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button";
 "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are." = "Appearance and Language will follow the system again, and iCloud sync will turn off. Open at Login and the settings saved in iCloud stay as they are.";
 "Appearance and Language will follow the system again. Open at Login stays as it is." = "Appearance and Language will follow the system again. Open at Login stays as it is.";
+"Hide desktop icons" = "Hide desktop icons";
+"For calls, recordings and screenshots. The files stay where they are" = "For calls, recordings and screenshots. The files stay where they are";
+"The files stay where they are" = "The files stay where they are";
+"Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder.";
+"Show hidden files" = "Show hidden files";
+"Files that macOS hides appear dimmed, like with ⇧⌘. in Finder" = "Files that macOS hides appear dimmed, like with ⇧⌘. in Finder";
+"They appear dimmed in Finder" = "They appear dimmed in Finder";
+"Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder." = "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder.";
+"System Settings › Desktop & Dock › Show items › On Desktop" = "System Settings › Desktop & Dock › Show items › On Desktop";
+"Opens Desktop & Dock in System Settings" = "Opens Desktop & Dock in System Settings";
+"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder.";
+"Press these keys in Finder, and again to hide them" = "Press these keys in Finder, and again to hide them";
+"desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager";
+"hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period";
