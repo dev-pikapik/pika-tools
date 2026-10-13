@@ -10,7 +10,7 @@ enum TestLayout {
     static func strokes(_ text: String, _ layout: KeyboardLayout) -> [Stroke]? {
         var result: [Stroke] = []
         for character in text {
-            guard let strokes = layout.strokes(character) else { return nil }
+            guard let strokes = layout.strokes(character, option: true) else { return nil }
             result += strokes
         }
         return result
@@ -82,6 +82,14 @@ enum TestLayout {
         expect(KeyboardLayouts.variants("ghbdtn").first?.text, "привет")
         expect(KeyboardLayouts.variants("руддщ цщкдв").first?.text, "hello world")
         expect(fr.translate(strokes("être", fr)!).text, "être")
+        if let windows = layout("RussianWin") {
+            for order in [[windows, us], [us, windows]] {
+                KeyboardLayouts.all = order
+                expect(KeyboardLayouts.variants("ghbdtn vbh").map(\.text).joined(separator: "|"), "привет мир")
+                expect(KeyboardLayouts.variants("привет мир").map(\.text).joined(separator: "|"), "ghbdtn vbh")
+            }
+            KeyboardLayouts.all = [us, ru]
+        }
 
         KeyboardLayouts.all = [us, de]
         expect(fix("yeit", us)?.text, nil)

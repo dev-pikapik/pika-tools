@@ -225,6 +225,12 @@ final class LayoutFixTool: Tool {
         if Stroke.keys.contains(code) {
             last = nil
             cycle = nil
+            if typed.isEmpty {
+                let pid = pid
+                DispatchQueue.global(qos: .userInitiated).async {
+                    if case .typing(let element) = TextFocus(pid) { _ = TextFocus.value(element, kAXSelectedTextRangeAttribute) }
+                }
+            }
             typed.append(Stroke(key: code, flags: flags))
             if typed.count > 100 {
                 if let space = typed.firstIndex(of: .space) { typed.removeSubrange(...space) } else { clear() }

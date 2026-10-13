@@ -60,12 +60,12 @@ final class KeyboardLayout {
                     text += String(utf16CodeUnits: chars, count: length)
                 }
             }
-            return (text, dead != 0)
+            return (text, dead & 0xFFFF != 0)
         }
     }
 
-    func strokes(_ character: Character) -> [Stroke]? {
-        map[character]
+    func strokes(_ character: Character, option: Bool = false) -> [Stroke]? {
+        map[character].flatMap { option || !$0.contains { $0.modifiers & 8 != 0 } ? $0 : nil }
     }
 
     func canType(_ text: String) -> Bool {
@@ -74,25 +74,27 @@ final class KeyboardLayout {
 
     private func makeMap() -> [Character: [Stroke]] {
         var map: [Character: [Stroke]] = [" ": [.space]]
-        var deadKeys: [Stroke] = []
-        for modifiers: UInt32 in [0, 2, 8, 10] {
-            for key in Stroke.keys {
-                let stroke = Stroke(key: key, modifiers: modifiers)
-                let typed = translate([stroke])
-                if typed.pending {
-                    deadKeys.append(stroke)
-                } else if typed.text.count == 1, let character = typed.text.first, map[character] == nil {
-                    map[character] = [stroke]
+        for layer: [UInt32] in [[0, 2], [8, 10]] {
+            var deadKeys: [Stroke] = []
+            for modifiers in layer {
+                for key in Stroke.keys {
+                    let stroke = Stroke(key: key, modifiers: modifiers)
+                    let typed = translate([stroke])
+                    if typed.pending {
+                        deadKeys.append(stroke)
+                    } else if typed.text.count == 1, let character = typed.text.first, map[character] == nil {
+                        map[character] = [stroke]
+                    }
                 }
             }
-        }
-        for dead in deadKeys {
-            for modifiers: UInt32 in [0, 2] {
-                for key in Stroke.keys + [49] {
-                    let strokes = [dead, Stroke(key: key, modifiers: modifiers)]
-                    let typed = translate(strokes)
-                    if !typed.pending, typed.text.count == 1, let character = typed.text.first, map[character] == nil {
-                        map[character] = strokes
+            for dead in deadKeys {
+                for modifiers: UInt32 in [0, 2] {
+                    for key in Stroke.keys + [49] {
+                        let strokes = [dead, Stroke(key: key, modifiers: modifiers)]
+                        let typed = translate(strokes)
+                        if !typed.pending, typed.text.count == 1, let character = typed.text.first, map[character] == nil {
+                            map[character] = strokes
+                        }
                     }
                 }
             }
