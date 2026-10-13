@@ -65,8 +65,8 @@ enum TestLayout {
         expect(fix("ghbdtn", us)?.text, "привет")
         expect(fix("ghbdtn", us)?.original, "ghbdtn")
         expect(fix("z nt,z k.,k.", us)?.text, "я тебя люблю")
-        expect(fix("I am a ntcn", us)?.original, "ntcn")
-        expect(fix("I am a ntcn", us)?.text, "тест")
+        expect(fix("I said ghbdtn", us)?.original, "ghbdtn")
+        expect(fix("I said ghbdtn", us)?.text, "привет")
         expect(fix("z 2 rjnf", us)?.text, "я 2 кота")
         expect(fix("руддщ цщкдв", ru)?.text, "hello world")
         expect(fix("GHBDTN", us)?.text, "ПРИВЕТ")
@@ -86,12 +86,26 @@ enum TestLayout {
         expect(fix("yeit", us)?.text, nil)
         expect(fix("yeit", us, forced: true)?.text, "zeit")
 
+        KeyboardLayouts.all = [us, ru]
+        expect(fix("frnt", us)?.text, nil)
+        expect(fix("игпы", ru)?.text, nil)
+        expect(fix("ghbDtn", us)?.text, nil)
+        if let german = layout("German") {
+            KeyboardLayouts.all = [german, ru]
+            expect(fix("pder", german)?.text, nil)
+        }
+
         KeyboardLayouts.all = [us, ru, uk]
         expect(fix(us.translate(strokes("привіт", uk)!).text, us)?.text, "привіт")
         expect(fix("ghbdtn", us)?.text, "привет")
 
         KeyboardLayouts.all = [us, el]
-        expect(fix(us.translate(strokes("καλημέρα", el)!).text, us)?.text, "καλημέρα")
+        expect(fix(us.translate(strokes("ευχαριστώ", el)!).text, us)?.text, "ευχαριστώ")
+
+        if let arabic = layout("Arabic") {
+            KeyboardLayouts.all = [us, arabic]
+            expect(fix("dont", us)?.text, nil)
+        }
 
         var failures: [String] = []
         let corpus = [("ar", "Arabic"), ("cs", "Czech"), ("de", "German"), ("en", "US"), ("es", "Spanish-ISO"), ("fr", "French"), ("hi", "Devanagari"), ("id", "US"), ("it", "Italian"), ("nl", "Dutch"), ("pl", "Polish"), ("pt-BR", "Brazilian"), ("ro", "Romanian"), ("ru", "Russian"), ("sv", "Swedish"), ("tr", "Turkish-QWERTY"), ("uk", "Ukrainian"), ("vi", "Vietnamese")]
@@ -120,7 +134,7 @@ enum TestLayout {
             print("\(language) typed in US, fixed: \(rate(words(language), typed: native, in: us)); en typed in \(id): \(rate(words("en"), typed: us, in: native))")
         }
 
-        for failure in failures.prefix(40) { print(failure) }
+        for failure in failures { print(failure) }
         precondition(failures.isEmpty, "\(failures.count) false fixes")
         print("layout: ok")
     }

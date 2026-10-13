@@ -161,8 +161,7 @@ enum KeyboardLayouts {
     static func isWord(_ word: String, _ dictionary: String) -> Bool {
         let lower = word.lowercased()
         if word.count == 1 || lenient.contains(dictionary) {
-            let range = NSRange(location: 0, length: (lower as NSString).length)
-            return (NSSpellChecker.shared.completions(forPartialWordRange: range, in: lower, language: dictionary, inSpellDocumentWithTag: 0) ?? []).contains { $0.lowercased() == lower }
+            return lower.split(separator: "-").allSatisfy { completions(String($0), dictionary).contains(String($0)) }
         }
         return [lower, lower.capitalized].contains { spelled($0, dictionary) }
     }
@@ -183,17 +182,72 @@ enum KeyboardLayouts {
     static func isKnown(_ text: String) -> Bool {
         guard let word = core(text) else { return true }
         guard isPlain(word) else { return false }
+        guard let names = dictionaries(word) else { return true }
+        return names.contains { isWord(word, $0) }
+    }
+
+    private static func isLikely(_ typed: String, _ converted: String, in target: KeyboardLayout) -> Bool {
+        guard let word = core(converted), let name = target.dictionary else { return false }
+        let common = isCommon(word, name)
+        if word.contains(where: { "'’".contains($0) }), !common { return false }
+        let score = typo(typed)
+        guard lenient.contains(name) else { return score == 0 || (score == 1 && common) }
+        let unusual = !startsWords(typed, 3)
+        return (score == 0 && (common || unusual)) || (score == 1 && common && unusual)
+    }
+
+    private static func typo(_ text: String) -> Int {
+        guard let word = core(text), let names = dictionaries(word) else { return 0 }
+        let range = NSRange(location: 0, length: (word as NSString).length)
+        var found = 0
+        for name in names {
+            for guess in NSSpellChecker.shared.guesses(forWordRange: range, in: word, language: name, inSpellDocumentWithTag: 0) ?? [] where !guess.contains(" ") && isNear(guess.lowercased(), word.lowercased()) {
+                if isCommon(guess, name) { return 2 }
+                found = 1
+            }
+        }
+        return found
+    }
+
+    private static func isCommon(_ word: String, _ dictionary: String) -> Bool {
+        let lower = word.lowercased()
+        return completions(String(lower.prefix(2)), dictionary).contains(lower)
+    }
+
+    private static func startsWords(_ text: String, _ length: Int) -> Bool {
+        guard let word = core(text), let names = dictionaries(word) else { return true }
+        let prefix = String(word.lowercased().prefix(length))
+        return names.contains { !completions(prefix, $0).isEmpty }
+    }
+
+    private static func completions(_ prefix: String, _ dictionary: String) -> [String] {
+        let range = NSRange(location: 0, length: (prefix as NSString).length)
+        return (NSSpellChecker.shared.completions(forPartialWordRange: range, in: prefix, language: dictionary, inSpellDocumentWithTag: 0) ?? []).map { $0.lowercased() }
+    }
+
+    private static func dictionaries(_ word: String) -> [String]? {
         var seen = Set<String>()
+        var names: [String] = []
         for layout in all where layout.canType(word) && seen.insert(layout.language).inserted {
-            guard let name = layout.dictionary else { return true }
-            if isWord(word, name) { return true }
+            guard let name = layout.dictionary else { return nil }
+            names.append(name)
         }
         for language in extraLanguages where !seen.contains(language) {
             guard let name = dictionary(for: language), (layout(language: language) ?? layout(language: "en"))?.canType(word) == true else { continue }
             seen.insert(language)
-            if isWord(word, name) { return true }
+            names.append(name)
         }
-        return false
+        return names
+    }
+
+    private static func isNear(_ a: String, _ b: String) -> Bool {
+        let a = Array(a), b = Array(b)
+        guard abs(a.count - b.count) <= 1 else { return false }
+        var i = 0
+        while i < min(a.count, b.count), a[i] == b[i] { i += 1 }
+        guard i < a.count, i < b.count else { return true }
+        if a.count == b.count, i + 1 < a.count, a[i] == b[i + 1], a[i + 1] == b[i], a[(i + 2)...] == b[(i + 2)...] { return true }
+        return a[(i + 1)...] == b[(i + 1)...] || a[(i + 1)...] == b[i...] || a[i...] == b[(i + 1)...]
     }
 
     static func targets(after source: KeyboardLayout) -> [KeyboardLayout] {
@@ -223,7 +277,7 @@ enum KeyboardLayouts {
             guard !converted.pending, converted.text != typed.text else { continue }
             if fallback == nil { fallback = (target, converted.text) }
             guard forced || (target.language != source.language && (core(converted.text)?.count ?? 0) >= 4) else { continue }
-            if replaces(typed.text, converted.text, in: target, forced: forced) {
+            if replaces(typed.text, converted.text, in: target, forced: forced), forced || isLikely(typed.text, converted.text, in: target) {
                 found = (target, converted.text)
                 break
             }
@@ -294,7 +348,13 @@ enum KeyboardLayouts {
 
     private static func replaces(_ typed: String, _ converted: String, in target: KeyboardLayout, forced: Bool) -> Bool {
         guard let word = core(converted), isPlain(word), let name = target.dictionary, isWord(word, name) else { return false }
-        return forced || letters(typed).isDisjoint(with: letters(converted))
+        return forced || (letters(typed).isDisjoint(with: letters(converted)) && isShaped(typed, converted))
+    }
+
+    private static func isShaped(_ typed: String, _ converted: String) -> Bool {
+        guard let word = core(converted)?.filter(\.isLetter), !(typed.first?.isLetter == true && converted.first?.isLetter == false) else { return false }
+        let rest = String(word.dropFirst())
+        return word == word.uppercased() || rest == rest.lowercased()
     }
 
     private static func letters(_ text: String) -> Set<Character> {
