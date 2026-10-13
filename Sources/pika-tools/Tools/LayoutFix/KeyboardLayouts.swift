@@ -287,7 +287,7 @@ enum KeyboardLayouts {
         for word in words.reversed() {
             let t = source.translate(word), c = choice.target.translate(word)
             guard !t.pending, !c.pending, isSimple(t.text) else { break }
-            guard t.text == c.text || (!isKnown(t.text) && replaces(t.text, c.text, in: choice.target, forced: forced)) else { break }
+            guard t.text == c.text || (!isKnown(t.text) && !ignored.contains(core(t.text)?.lowercased() ?? "") && replaces(t.text, c.text, in: choice.target, forced: forced)) else { break }
             pairs.insert((t.text, c.text), at: 0)
         }
         while pairs.count > 1, pairs[0].0 == pairs[0].1 { pairs.removeFirst() }

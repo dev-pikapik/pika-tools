@@ -71,6 +71,7 @@ enum TestLayout {
         expect(fix("руддщ цщкдв", ru)?.text, "hello world")
         expect(fix("GHBDTN", us)?.text, "ПРИВЕТ")
         expect(fix("ghbdtn", us, ignored: ["ghbdtn"])?.text, nil)
+        expect(fix("z nt,z k.,k.", us, ignored: ["nt,z"])?.text, "люблю")
         expect(fix("lf", us)?.text, nil)
         expect(fix("lf", us, forced: true)?.text, "да")
         expect(fix("ghbdtn ", us, forced: true)?.text, "привет ")

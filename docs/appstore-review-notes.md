@@ -4,7 +4,7 @@
 pikapik is a menu-bar utility suite for macOS. It has no Dock icon window of its own; everything lives in the menu bar and one Settings window. Every feature is off by default and is switched on by the user, one by one.
 
 ## Features in this build
-- Keyboard: Switch language (input source shortcut), Command key shortcuts.
+- Keyboard: Switch language (input source shortcut), Command key shortcuts, Fix Wrong Keyboard Layout (Services menu).
 - Mouse: Scroll by lines (mouse wheel), Scroll direction for trackpad and mouse, Side buttons go back and forward.
 - Finder: New File in Finder, Smaller Copy in Finder, Convert in Finder (Finder Sync and Action extensions).
 - Extras: Game Mode, Pet (a small animated companion on the desktop that can wear clothes and earn awards), Keep Awake, Speed Test.
@@ -40,6 +40,9 @@ They need no permission prompt, only a switch in System Settings > General > Log
 - Smaller Copy in Finder: right-click an image, video or PDF, choose Make a Smaller Copy; a smaller copy is saved next to the original.
 - Convert in Finder: right-click an image, audio or video file, choose Convert To and a format; the converted copy is saved next to the original.
 The first time, the app asks the user to choose the folder it may save into (Settings > Permissions > Folders).
+
+## Fix Wrong Keyboard Layout
+Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu. The standard macOS Services mechanism passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. pikapik does not type, paste or watch typing and needs no permission.
 
 ## Keep Awake and Speed Test
 - Keep Awake only asks macOS not to sleep while it is on. It reads and sends nothing.

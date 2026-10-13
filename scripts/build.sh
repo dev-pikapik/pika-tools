@@ -180,6 +180,7 @@ elif [ -n "$DEV" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-dev" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-dev" "$APP/Contents/Info.plist"
+    /usr/libexec/PlistBuddy -c "Set :NSServices:0:NSPortName pika-tools-dev" -c "Set :NSServices:0:NSMenuItem:default Fix Wrong Keyboard Layout (Dev)" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
