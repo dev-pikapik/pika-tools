@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Le contrôle des ventilateurs ne demande plus votre mot de passe
+
+<sub>1.41.1 · 13 octobre 2026</sub>
+
+L’assistant qui règle la vitesse des ventilateurs se met désormais à jour avec pikapik, et les nouvelles versions ne demandent plus le mot de passe administrateur.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Cette mise à jour le demande une dernière fois. Si vous utilisez le contrôle des ventilateurs, ouvrez Réglages › Autorisations, cliquez sur « Autoriser » à côté de « Contrôle des ventilateurs » et saisissez le mot de passe. Ensuite, pikapik met l’assistant à jour tout seul et n’accepte qu’un assistant qui vient vraiment de pikapik.
+
+**Corrigé**
+
+- Dans Réglages Système › Général › Ouverture, l’assistant des ventilateurs apparaît désormais sous le nom pikapik, avec l’icône de l’app.
+
+---
+
 ## <a id="v1.41.0"></a>Voyez l’état de votre batterie
 
 <sub>1.41.0 · 13 octobre 2026</sub>

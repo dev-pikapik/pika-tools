@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>风扇控制不再要求输入密码
+
+<sub>1.41.1 · 2026年10月13日</sub>
+
+设置风扇转速的辅助程序现在会随 pikapik 一起更新，新版本不再要求输入管理员密码。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+这次更新会最后一次要求输入密码。如果你在使用风扇控制，请打开“设置”›“权限”，点按“风扇控制”旁边的“允许”，然后输入密码。之后 pikapik 会自行更新辅助程序，而且只接受真正来自 pikapik 的辅助程序。
+
+**修复**
+
+- 在“系统设置”›“通用”›“登录项”中，风扇辅助程序现在显示为 pikapik，并带有 App 图标。
+
+---
+
 ## <a id="v1.41.0"></a>查看电池的状况
 
 <sub>1.41.0 · 2026年10月13日</sub>

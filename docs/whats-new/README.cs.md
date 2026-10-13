@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Ovládání ventilátorů už nežádá heslo
+
+<sub>1.41.1 · 13. října 2026</sub>
+
+Pomocník, který nastavuje rychlost ventilátorů, se teď aktualizuje spolu s pikapik, takže nové verze už nežádají heslo správce.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Tato aktualizace o něj požádá naposledy. Pokud ovládání ventilátorů používáte, otevřete Nastavení › Oprávnění, klikněte na „Povolit“ vedle položky „Ovládání ventilátorů“ a zadejte heslo. Potom pikapik aktualizuje pomocníka sám a přijme jen pomocníka, který opravdu pochází od pikapik.
+
+**Opraveno**
+
+- V Nastavení systému › Obecné › Položky po přihlášení se teď pomocník ventilátorů zobrazuje jako pikapik, s ikonou aplikace.
+
+---
+
 ## <a id="v1.41.0"></a>Podívejte se, jak je na tom baterie
 
 <sub>1.41.0 · 13. října 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Fan kontrolü artık parolanızı sormuyor
+
+<sub>1.41.1 · 13 Ekim 2026</sub>
+
+Fan hızını ayarlayan yardımcı artık pikapik ile birlikte güncelleniyor, bu yüzden yeni sürümler yönetici parolasını sormuyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Bu güncelleme parolayı son bir kez soracak. Fan kontrolünü kullanıyorsanız Ayarlar › İzinler sayfasını açın, “Fan kontrolü” öğesinin yanındaki “İzin Ver” düğmesine tıklayın ve parolayı girin. Bundan sonra pikapik yardımcıyı kendisi günceller ve yalnızca gerçekten pikapik’ten gelen bir yardımcıyı kabul eder.
+
+**Düzeltilenler**
+
+- Sistem Ayarları › Genel › Giriş Öğeleri’nde fan yardımcısı artık uygulamanın simgesiyle birlikte pikapik olarak görünüyor.
+
+---
+
 ## <a id="v1.41.0"></a>Pilinizin durumunu görün
 
 <sub>1.41.0 · 13 Ekim 2026</sub>

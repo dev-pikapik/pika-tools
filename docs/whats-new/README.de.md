@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Die Lüftersteuerung fragt nicht mehr nach deinem Passwort
+
+<sub>1.41.1 · 13. Oktober 2026</sub>
+
+Der Helfer, der die Lüftergeschwindigkeit einstellt, aktualisiert sich jetzt zusammen mit pikapik, deshalb fragen neue Versionen nicht mehr nach dem Administratorpasswort.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Dieses Update fragt ein letztes Mal danach. Wenn du die Lüftersteuerung nutzt, öffne Einstellungen › Berechtigungen, klicke neben „Lüftersteuerung“ auf „Erlauben“ und gib das Passwort ein. Danach aktualisiert pikapik den Helfer selbst und akzeptiert nur einen Helfer, der wirklich von pikapik stammt.
+
+**Behoben**
+
+- In Systemeinstellungen › Allgemein › Anmeldeobjekte erscheint der Lüfter-Helfer jetzt als pikapik, mit dem Symbol der App.
+
+---
+
 ## <a id="v1.41.0"></a>Sieh, wie es deiner Batterie geht
 
 <sub>1.41.0 · 13. Oktober 2026</sub>

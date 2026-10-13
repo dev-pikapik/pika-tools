@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Điều khiển quạt không còn hỏi mật khẩu
+
+<sub>1.41.1 · 13 tháng 10 năm 2026</sub>
+
+Trình trợ giúp đặt tốc độ quạt giờ được cập nhật cùng pikapik, nên các phiên bản mới không còn hỏi mật khẩu quản trị viên.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Bản cập nhật này hỏi mật khẩu lần cuối. Nếu bạn dùng điều khiển quạt, hãy mở Cài đặt › Quyền, bấm “Cho phép” cạnh “Điều khiển quạt” rồi nhập mật khẩu. Từ đó trở đi, pikapik tự cập nhật trình trợ giúp và chỉ chấp nhận trình trợ giúp thật sự đến từ pikapik.
+
+**Đã sửa**
+
+- Trong Cài đặt hệ thống › Cài đặt chung › Mục đăng nhập, trình trợ giúp quạt giờ hiển thị là pikapik, kèm biểu tượng của ứng dụng.
+
+---
+
 ## <a id="v1.41.0"></a>Xem pin của bạn đang thế nào
 
 <sub>1.41.0 · 13 tháng 10 năm 2026</sub>

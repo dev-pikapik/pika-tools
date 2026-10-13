@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Ventilatorbeheer vraagt niet meer om je wachtwoord
+
+<sub>1.41.1 · 13 oktober 2026</sub>
+
+Het hulpje dat de snelheid van je ventilatoren instelt, werkt zichzelf nu samen met pikapik bij, dus nieuwe versies vragen niet meer om het beheerderswachtwoord.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Deze update vraagt er nog één laatste keer om. Gebruik je ventilatorbeheer, open dan Instellingen › Toestemmingen, klik op ‘Toestaan’ naast ‘Ventilatorbeheer’ en voer het wachtwoord in. Daarna werkt pikapik het hulpje zelf bij en accepteert het alleen een hulpje dat echt van pikapik komt.
+
+**Opgelost**
+
+- In Systeeminstellingen › Algemeen › Inlogonderdelen staat het ventilatorhulpje nu als pikapik, met het symbool van de app.
+
+---
+
 ## <a id="v1.41.0"></a>Bekijk hoe het met je batterij gaat
 
 <sub>1.41.0 · 13 oktober 2026</sub>

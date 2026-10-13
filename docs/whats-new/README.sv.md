@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Fläktstyrningen frågar inte längre efter ditt lösenord
+
+<sub>1.41.1 · 13 oktober 2026</sub>
+
+Hjälparen som ställer in fläkthastigheten uppdateras nu tillsammans med pikapik, så nya versioner frågar inte längre efter administratörslösenordet.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Den här uppdateringen frågar efter det en sista gång. Om du använder fläktstyrning öppnar du Inställningar › Behörigheter, klickar på ”Tillåt” bredvid ”Fläktstyrning” och anger lösenordet. Därefter uppdaterar pikapik hjälparen själv och godtar bara en hjälpare som verkligen kommer från pikapik.
+
+**Åtgärdat**
+
+- I Systeminställningar › Allmänt › Startobjekt visas fläktarnas hjälpare nu som pikapik, med appens symbol.
+
+---
+
 ## <a id="v1.41.0"></a>Se hur batteriet mår
 
 <sub>1.41.0 · 13 oktober 2026</sub>

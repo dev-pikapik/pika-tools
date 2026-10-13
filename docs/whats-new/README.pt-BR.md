@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>O controle das ventoinhas não pede mais sua senha
+
+<sub>1.41.1 · 13 de outubro de 2026</sub>
+
+O ajudante que define a velocidade das ventoinhas agora se atualiza junto com o pikapik, então as novas versões não pedem mais a senha de administrador.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Esta atualização pede a senha uma última vez. Se você usa o controle das ventoinhas, abra Ajustes › Permissões, clique em “Permitir” ao lado de “Controle das ventoinhas” e digite a senha. Daí em diante, o pikapik atualiza o ajudante sozinho e só aceita um ajudante que realmente venha do pikapik.
+
+**Corrigido**
+
+- Em Ajustes do Sistema › Geral › Itens de Início, o ajudante das ventoinhas agora aparece como pikapik, com o ícone do app.
+
+---
+
 ## <a id="v1.41.0"></a>Veja como está a sua bateria
 
 <sub>1.41.0 · 13 de outubro de 2026</sub>

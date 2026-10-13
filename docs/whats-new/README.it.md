@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.41.1"></a>Il controllo ventole non chiede più la password
+
+<sub>1.41.1 · 13 ottobre 2026</sub>
+
+L’aiutante che regola la velocità delle ventole ora si aggiorna insieme a pikapik, quindi le nuove versioni non chiedono più la password di amministratore.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
+
+Questo aggiornamento la chiede un’ultima volta. Se usi il controllo ventole, apri Impostazioni › Permessi, fai clic su «Consenti» accanto a «Controllo ventole» e inserisci la password. Da quel momento pikapik aggiorna l’aiutante da solo e accetta solo un aiutante che arriva davvero da pikapik.
+
+**Corretto**
+
+- In Impostazioni di Sistema › Generali › Elementi login, l’aiutante delle ventole ora appare come pikapik, con l’icona dell’app.
+
+---
+
 ## <a id="v1.41.0"></a>Scopri come sta la batteria
 
 <sub>1.41.0 · 13 ottobre 2026</sub>
