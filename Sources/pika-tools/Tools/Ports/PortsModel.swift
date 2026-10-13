@@ -86,7 +86,14 @@ struct PortQuestion {
     var shown: [PortProgram] {
         let text = query.trimmingCharacters(in: .whitespacesAndNewlines)
         if text.isEmpty { return programs }
-        if let digits = Self.digits(text) { return programs.filter { $0.ports.contains { String($0).hasPrefix(digits) } } }
+        if let digits = Self.digits(text) {
+            let hit = { (listener: PortListener) in String(listener.port).hasPrefix(digits) }
+            return programs.filter { $0.listeners.contains(where: hit) }.map { program in
+                var program = program
+                program.listeners = program.listeners.filter(hit) + program.listeners.filter { !hit($0) }
+                return program
+            }
+        }
         return programs.filter { program in
             ([look(program).name, program.owner.name, program.owner.folder ?? "", program.owner.command.joined(separator: " ")] + hints(program).map(\.service))
                 .contains { $0.localizedStandardContains(text) }

@@ -151,6 +151,7 @@ struct AppRowLabel<Trailing: View>: View {
     let name: String
     var running = false
     let byline: String
+    var minNameWidth: CGFloat?
     @ViewBuilder var trailing: Trailing
 
     var body: some View {
@@ -178,6 +179,7 @@ struct AppRowLabel<Trailing: View>: View {
                         .lineLimit(1)
                 }
             }
+            .frame(minWidth: minNameWidth, alignment: .leading)
             Spacer(minLength: 8)
             trailing
         }

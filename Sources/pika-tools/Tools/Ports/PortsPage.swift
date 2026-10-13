@@ -97,7 +97,7 @@ private struct PortRow: View {
         let look = model.look(program)
         let open = model.expanded.contains(program.id)
         VStack(alignment: .leading, spacing: 0) {
-            AppRowLabel(icon: look.icon, name: look.name, byline: model.byline(program)) {
+            AppRowLabel(icon: look.icon, name: look.name, byline: model.byline(program), minNameWidth: 100) {
                 PortChips(listeners: program.listeners)
                 control(look)
                 Button(action: toggle) {
@@ -132,13 +132,7 @@ private struct PortRow: View {
             ProgressView().controlSize(.small)
         } else if model.isOurs(program) {
             #if APPSTORE
-            ZStack(alignment: .trailing) {
-                Group {
-                    Menu {} label: { Text("Free Up") }
-                    Menu {} label: { Label("Copied", systemImage: "checkmark") }
-                }
-                .hidden()
-                .accessibilityHidden(true)
+            Form {
                 Menu {
                     if let window = look.window, let name = window.localizedName {
                         Button("Show “\(name)”") { window.activate() }
@@ -148,17 +142,25 @@ private struct PortRow: View {
                     }
                     Button("Open Activity Monitor") { NSWorkspace.shared.open(PortsModel.activityMonitor) }
                 } label: {
-                    if model.copied == program.id {
-                        Label("Copied", systemImage: "checkmark")
-                    } else {
-                        Text("Free Up")
+                    ZStack {
+                        if model.copied == program.id {
+                            Label("Copied", systemImage: "checkmark")
+                        } else {
+                            Text("Free Up")
+                        }
+                        Group {
+                            Text("Free Up")
+                            Label("Copied", systemImage: "checkmark")
+                        }
+                        .hidden()
+                        .accessibilityHidden(true)
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .menuStyle(.button)
+                .buttonStyle(.bordered)
+                .menuIndicator(.hidden)
             }
-            .menuStyle(.button)
-            .buttonStyle(.bordered)
-            .menuIndicator(.hidden)
+            .formStyle(.columns)
             .fixedSize()
             #else
             Button("Free Up") { model.free(program) }
@@ -213,28 +215,33 @@ private struct PortChips: View {
     let listeners: [PortListener]
 
     var body: some View {
-        HStack(spacing: 4) {
-            ForEach(listeners.prefix(3)) { listener in
-                HStack(spacing: 3) {
-                    Text(verbatim: String(listener.port)).monospacedDigit()
-                    if listener.udp, !listener.tcp {
-                        Text(verbatim: "UDP").font(.caption2)
+        ViewThatFits(in: .horizontal) {
+            ForEach([3, 2, 1].filter { $0 <= listeners.count }, id: \.self) { shown in
+                HStack(spacing: 4) {
+                    ForEach(listeners.prefix(shown)) { listener in
+                        HStack(spacing: 3) {
+                            Text(verbatim: String(listener.port)).monospacedDigit()
+                            if listener.udp, !listener.tcp {
+                                Text(verbatim: "UDP").font(.caption2)
+                            }
+                            if !listener.onlyThisMac {
+                                Image(systemName: "globe").font(.caption2)
+                            }
+                        }
+                        .font(.callout)
+                        .padding(.horizontal, 7)
+                        .padding(.vertical, 2)
+                        .background(.quaternary, in: Capsule())
+                        .help(listener.onlyThisMac ? Text("Only this Mac can connect.") : Text("Other devices on your network can connect."))
                     }
-                    if !listener.onlyThisMac {
-                        Image(systemName: "globe").font(.caption2)
+                    if listeners.count > shown {
+                        Text(verbatim: "+\(listeners.count - shown)").font(.callout).foregroundStyle(.secondary)
                     }
                 }
-                .font(.callout)
-                .padding(.horizontal, 7)
-                .padding(.vertical, 2)
-                .background(.quaternary, in: Capsule())
-                .help(listener.onlyThisMac ? Text("Only this Mac can connect.") : Text("Other devices on your network can connect."))
-            }
-            if listeners.count > 3 {
-                Text(verbatim: "+\(listeners.count - 3)").font(.callout).foregroundStyle(.secondary)
+                .fixedSize()
             }
         }
-        .fixedSize()
+        .layoutPriority(1)
         .accessibilityElement(children: .combine)
     }
 }
