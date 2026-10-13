@@ -1,5 +1,6 @@
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 actor BackgroundScanner {
     private var apps: (installed: [AppIdentity], system: [AppIdentity])?
@@ -56,7 +57,8 @@ final class BackgroundModel {
 
     func icon(_ url: URL) -> NSImage {
         if let icon = icons[url.path] { return icon }
-        let icon = NSWorkspace.shared.icon(forFile: url.path)
+        let file = url.resolvingSymlinksInPath()
+        let icon = FileManager.default.isReadableFile(atPath: file.path) ? NSWorkspace.shared.icon(forFile: file.path) : NSWorkspace.shared.icon(for: .unixExecutable)
         icons[url.path] = icon
         return icon
     }
@@ -115,7 +117,7 @@ struct BackgroundPage: View {
         .settingsPage()
         #if APPSTORE
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            PermissionBar(permissions: [.folders])
+            PermissionBar(permissions: [.folders], text: "To see the tasks in your home folder, allow access to it.")
         }
         #endif
         .environment(\.inSettings, true)
@@ -152,10 +154,12 @@ private struct TaskRow: View {
             Image(nsImage: model.icon(task.icon))
                 .resizable()
                 .frame(width: 28, height: 28)
+                .opacity(task.state == .on ? 1 : 0.45)
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 1) {
                 HStack(spacing: 6) {
                     Text(task.title)
+                        .foregroundStyle(task.state == .on ? .primary : .secondary)
                         .lineLimit(1)
                     if task.running {
                         Circle()

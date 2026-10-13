@@ -108,7 +108,7 @@ enum BackgroundTasks {
     static func title(label: String, owner: AppIdentity?, target: String) -> String {
         if let owner { return owner.displayName }
         if let app = enclosingApp(target) { return app.deletingPathExtension().lastPathComponent }
-        for prefix in ["homebrew.mxcl.", "sh.brew."] where label.hasPrefix(prefix) { return String(label.dropFirst(prefix.count)) }
+        for prefix in ["homebrew.mxcl.", "sh.brew."] where label.hasPrefix(prefix) { return label.dropFirst(prefix.count).prefix(1).uppercased() + label.dropFirst(prefix.count + 1) }
         return AppNames.orphanTitle(label)
     }
 
@@ -162,7 +162,7 @@ enum BackgroundTasks {
             let map = daemon ? launchd.system : domain.hasPrefix("user/") ? launchd.user : launchd.gui
             var task = BackgroundTask(file: file, label: label, title: mine ? "pikapik" : title(label: label, owner: owner, target: target), icon: own)
             if !mine {
-                task.icon = owner?.url ?? existing(enclosingApp(target)) ?? existing(URL(fileURLWithPath: target)) ?? file
+                task.icon = owner?.url ?? existing(enclosingApp(target)) ?? (target.hasPrefix("/") && !isMissing(target) ? URL(fileURLWithPath: target) : file)
                 task.developer = developer(owner: owner, label: label, target: target)
             }
             task.isOwn = mine

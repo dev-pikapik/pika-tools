@@ -1017,6 +1017,7 @@
 "What runs in the background" = "สิ่งที่ทำงานอยู่เบื้องหลัง";
 "In the Background" = "ทำงานเบื้องหลัง";
 "Tasks in your home folder" = "งานในโฟลเดอร์โฮมของคุณ";
+"To see the tasks in your home folder, allow access to it." = "หากต้องการดูงานในโฟลเดอร์โฮมของคุณ ให้อนุญาตการเข้าถึงโฟลเดอร์นั้น";
 "Nothing runs in the background" = "ไม่มีอะไรทำงานอยู่เบื้องหลัง";
 "See everything that runs in the background and which app added it." = "ดูทุกอย่างที่ทำงานอยู่เบื้องหลัง และแอปที่เพิ่มเข้ามา";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "ดูทุกอย่างที่ทำงานอยู่เบื้องหลัง และแอปที่เพิ่มเข้ามา ปิดสิ่งที่ไม่ต้องการ แล้วเปิดกลับได้ทุกเมื่อ";

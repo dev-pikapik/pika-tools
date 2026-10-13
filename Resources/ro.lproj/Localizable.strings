@@ -1017,6 +1017,7 @@
 "What runs in the background" = "Ce rulează în fundal";
 "In the Background" = "În fundal";
 "Tasks in your home folder" = "Sarcini din folderul tău principal";
+"To see the tasks in your home folder, allow access to it." = "Ca să vezi sarcinile din folderul tău principal, permite accesul la el.";
 "Nothing runs in the background" = "Nimic nu rulează în fundal";
 "See everything that runs in the background and which app added it." = "Tot ce rulează în fundal și ce aplicație l-a adăugat.";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Tot ce rulează în fundal și ce aplicație l-a adăugat. Oprește ce nu-ți trebuie și pornește-l din nou oricând.";

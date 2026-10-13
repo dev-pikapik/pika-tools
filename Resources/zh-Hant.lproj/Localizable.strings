@@ -1017,6 +1017,7 @@
 "What runs in the background" = "在背景執行的項目";
 "In the Background" = "在背景";
 "Tasks in your home folder" = "個人檔案夾中的工作";
+"To see the tasks in your home folder, allow access to it." = "若要查看個人檔案夾中的工作，請允許取用個人檔案夾。";
 "Nothing runs in the background" = "背景沒有執行任何項目";
 "See everything that runs in the background and which app added it." = "查看在背景執行的所有項目，以及是哪個 App 加入的。";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "查看在背景執行的所有項目，以及是哪個 App 加入的。關閉不需要的，隨時都能重新打開。";

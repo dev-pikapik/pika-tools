@@ -1017,6 +1017,7 @@
 "What runs in the background" = "백그라운드에서 실행 중인 항목";
 "In the Background" = "백그라운드";
 "Tasks in your home folder" = "홈 폴더의 작업";
+"To see the tasks in your home folder, allow access to it." = "홈 폴더의 작업을 보려면 홈 폴더에 대한 접근을 허용하세요.";
 "Nothing runs in the background" = "백그라운드에서 실행 중인 항목 없음";
 "See everything that runs in the background and which app added it." = "백그라운드에서 실행되는 모든 항목과 그 항목을 추가한 앱을 확인하세요.";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "백그라운드에서 실행되는 모든 항목과 그 항목을 추가한 앱을 확인하세요. 필요 없는 항목은 끄고 언제든지 다시 켤 수 있습니다.";

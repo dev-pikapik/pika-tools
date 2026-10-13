@@ -1017,6 +1017,7 @@
 "What runs in the background" = "बैकग्राउंड में क्या चल रहा है";
 "In the Background" = "बैकग्राउंड में";
 "Tasks in your home folder" = "आपके होम फ़ोल्डर के टास्क";
+"To see the tasks in your home folder, allow access to it." = "अपने होम फ़ोल्डर के टास्क देखने के लिए उसकी एक्सेस की अनुमति दें।";
 "Nothing runs in the background" = "बैकग्राउंड में कुछ नहीं चल रहा";
 "See everything that runs in the background and which app added it." = "बैकग्राउंड में चलने वाली हर चीज़, और उसे किस ऐप ने जोड़ा।";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "बैकग्राउंड में चलने वाली हर चीज़, और उसे किस ऐप ने जोड़ा। जो ज़रूरी नहीं, उसे बंद करें और जब चाहें फिर से चालू करें।";

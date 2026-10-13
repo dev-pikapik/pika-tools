@@ -1017,6 +1017,7 @@
 "What runs in the background" = "O que roda em segundo plano";
 "In the Background" = "Em Segundo Plano";
 "Tasks in your home folder" = "Tarefas na sua pasta pessoal";
+"To see the tasks in your home folder, allow access to it." = "Para ver as tarefas da sua pasta pessoal, permita o acesso a ela.";
 "Nothing runs in the background" = "Nada roda em segundo plano";
 "See everything that runs in the background and which app added it." = "Tudo o que roda em segundo plano e qual app adicionou.";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Tudo o que roda em segundo plano e qual app adicionou. Desligue o que você não precisa e religue quando quiser.";

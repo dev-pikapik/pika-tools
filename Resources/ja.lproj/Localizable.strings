@@ -1017,6 +1017,7 @@
 "What runs in the background" = "バックグラウンドで動いているもの";
 "In the Background" = "バックグラウンド";
 "Tasks in your home folder" = "ホームフォルダ内のタスク";
+"To see the tasks in your home folder, allow access to it." = "ホームフォルダ内のタスクを表示するには、ホームフォルダへのアクセスを許可してください。";
 "Nothing runs in the background" = "バックグラウンドで動いているものはありません";
 "See everything that runs in the background and which app added it." = "バックグラウンドで動いているすべてのものと、それを追加したアプリを確認できます。";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "バックグラウンドで動いているすべてのものと、それを追加したアプリを確認できます。不要なものはオフにして、いつでもオンに戻せます。";

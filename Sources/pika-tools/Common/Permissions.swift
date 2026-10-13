@@ -306,6 +306,7 @@ extension View {
 
 struct PermissionBar: View {
     let permissions: [Permission]
+    var text: LocalizedStringKey = "Grey tools need a permission. Click one to allow it."
 
     var body: some View {
         let missing = Permission.allCases.filter { permissions.contains($0) && !$0.isGranted }
@@ -313,7 +314,7 @@ struct PermissionBar: View {
             HStack(spacing: 12) {
                 Image(systemName: "lock")
                     .accessibilityHidden(true)
-                Text("Grey tools need a permission. Click one to allow it.")
+                Text(text)
                 Spacer(minLength: 0)
                 Button("Allow") { Permissions.shared.ask(missing) }
             }

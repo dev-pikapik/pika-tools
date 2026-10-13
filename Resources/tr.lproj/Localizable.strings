@@ -1017,6 +1017,7 @@
 "What runs in the background" = "Arka planda çalışanlar";
 "In the Background" = "Arka Planda";
 "Tasks in your home folder" = "Ana klasörünüzdeki görevler";
+"To see the tasks in your home folder, allow access to it." = "Ana klasörünüzdeki görevleri görmek için ona erişim izni verin.";
 "Nothing runs in the background" = "Arka planda hiçbir şey çalışmıyor";
 "See everything that runs in the background and which app added it." = "Arka planda çalışan her şey ve onu hangi uygulamanın eklediği.";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Arka planda çalışan her şey ve onu hangi uygulamanın eklediği. İhtiyacınız olmayanı kapatın, istediğiniz zaman yeniden açın.";

@@ -1017,6 +1017,7 @@
 "What runs in the background" = "在后台运行的内容";
 "In the Background" = "在后台";
 "Tasks in your home folder" = "个人文件夹中的任务";
+"To see the tasks in your home folder, allow access to it." = "要查看个人文件夹中的任务，请允许访问个人文件夹。";
 "Nothing runs in the background" = "后台没有运行任何内容";
 "See everything that runs in the background and which app added it." = "查看在后台运行的所有内容，以及是哪个 App 添加的。";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "查看在后台运行的所有内容，以及是哪个 App 添加的。关闭不需要的，随时可以重新打开。";

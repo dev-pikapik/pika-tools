@@ -1017,6 +1017,7 @@
 "What runs in the background" = "Что работает в фоне";
 "In the Background" = "В фоне";
 "Tasks in your home folder" = "Задачи в домашней папке";
+"To see the tasks in your home folder, allow access to it." = "Чтобы увидеть задачи в домашней папке, разрешите доступ к ней.";
 "Nothing runs in the background" = "В фоне ничего не работает";
 "See everything that runs in the background and which app added it." = "Всё, что работает в фоне, и какая программа это добавила.";
 "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Всё, что работает в фоне, и какая программа это добавила. Выключайте лишнее и возвращайте, когда нужно.";
