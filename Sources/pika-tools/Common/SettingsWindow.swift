@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
+    case general, battery, keepAwake, brightness, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -11,6 +11,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .general: String(localized: "General")
         case .battery: String(localized: "Battery")
         case .keepAwake: String(localized: "Keep Awake")
+        case .brightness: String(localized: "Brightness")
         case .fans: String(localized: "Fans")
         case .temperatures: String(localized: "Temperature")
         case .speedTest: String(localized: "Speed Test")
@@ -36,6 +37,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .general: "gearshape.fill"
         case .battery: "battery.100percent"
         case .keepAwake: "cup.and.saucer.fill"
+        case .brightness: "sun.max.fill"
         case .fans: "fan"
         case .temperatures: "thermometer.medium"
         case .speedTest: "speedometer"
@@ -67,6 +69,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .uninstaller: .brown
         case .background: .mint
         case .keepAwake: .orange
+        case .brightness: .yellow
         case .fans: .teal
         case .pet, .temperatures: .red
         case .speedTest, .battery: .green
@@ -129,6 +132,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
             String(localized: "Columns in Finder"), String(localized: "Finder animations"),
+            String(localized: "Dim the picture instead"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .animations, title: String(localized: "Hide the Dock automatically"), synonyms: "autohide, hide Dock, delay, wait"),
@@ -159,6 +163,9 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keepAwake, title: String(localized: "Work with the lid closed"), synonyms: "clamshell, laptop, MacBook, external display"),
             SettingsItem(tab: .keepAwake, title: String(localized: "Stop when battery is below \(0.2.formatted(.percent))"), synonyms: "battery, power, charge"),
         ] : []) + [
+            SettingsItem(tab: .brightness, title: String(localized: "Brightness"), synonyms: "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight"),
+            SettingsItem(tab: .brightness, title: String(localized: "Brightness keys"), synonyms: "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display"),
+            SettingsItem(tab: .brightness, title: String(localized: "Dim the picture instead"), synonyms: "gamma, dim, darker, software dimming, monitor, display, screen"),
             SettingsItem(tab: .battery, title: String(localized: "Battery Health"), synonyms: "battery, condition, maximum capacity, cycle count, cycles, wear, service, replace"),
             SettingsItem(tab: .battery, title: String(localized: "Power Adapter"), synonyms: "charger, charging, watts, power use, adapter, plug"),
             SettingsItem(tab: .battery, title: String(localized: "Keep It Healthy"), synonyms: "charge limit, 80%, optimized battery charging, charging on hold, heat, temperature, storage, tips"),
@@ -408,9 +415,9 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -510,6 +517,7 @@ private struct SettingsView: View {
         switch tab {
         case .general: GeneralSettings()
         case .keepAwake: KeepAwakeSettings()
+        case .brightness: BrightnessSettings()
         case .fans:
             #if APPSTORE
             EmptyView()

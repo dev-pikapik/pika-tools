@@ -106,6 +106,7 @@ final class ToolRegistry {
         list.append(HiddenFilesTool())
         list.append(AnimationsTool.shared)
         #endif
+        list.append(BrightnessKeysTool.shared)
         list.append(GameModeTool.shared)
         list.append(PetTool.shared)
         if #available(macOS 14.2, *) {

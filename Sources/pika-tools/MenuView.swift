@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "app-volume,archive,command-keys,compress,convert,desktop-icons,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,hidden-files,hide-app,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "app-volume,archive,brightness,command-keys,compress,convert,desktop-icons,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,hidden-files,hide-app,home-end,key-repeat,layout-fix,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -27,6 +27,8 @@ struct MenuView: View {
     #else
     private var showsFans: Bool { FanControl.shared.hasFans && isShown("fans") }
     #endif
+
+    private var showsBrightness: Bool { isShown("brightness") && !Brightness.shared.monitors.isEmpty }
 
     private var visibleTabs: [SettingsTab] {
         [.sound, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
@@ -77,7 +79,7 @@ struct MenuView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    if !visibleTabs.isEmpty || isShown("keep-awake") || isShown("speed-test") || showsFans || isShown("temperatures") {
+                    if !visibleTabs.isEmpty || isShown("keep-awake") || showsBrightness || isShown("speed-test") || showsFans || isShown("temperatures") {
                         VStack(spacing: 0) {
                             if isShown("keep-awake") {
                                 if customizing {
@@ -104,6 +106,14 @@ struct MenuView: View {
                                         .accessibilityLabel(Text("Display"))
                                     }
                                     if keepAwakeOpen { keepAwakeOptions }
+                                }
+                            }
+
+                            if showsBrightness {
+                                if customizing {
+                                    customizeRow(icon: "sun.max", title: String(localized: "Brightness"), id: "brightness")
+                                } else {
+                                    BrightnessRow()
                                 }
                             }
 
@@ -134,7 +144,7 @@ struct MenuView: View {
                             }
 
                             ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
-                                if index > 0 || isShown("keep-awake") || isShown("speed-test") || showsFans || isShown("temperatures") { groupDivider }
+                                if index > 0 || isShown("keep-awake") || showsBrightness || isShown("speed-test") || showsFans || isShown("temperatures") { groupDivider }
                                 ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
                                     if customizing {
                                         customizeRow(icon: tool.icon, title: tool.title, id: tool.id)
