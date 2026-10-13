@@ -21,6 +21,10 @@ enum SMCCodec {
             return Double(bytes[0])
         case "ui16" where bytes.count >= 2:
             return Double(UInt16(bytes[0]) << 8 | UInt16(bytes[1]))
+        case "ui32" where bytes.count >= 4:
+            return Double(bytes[0..<4].reduce(UInt32(0)) { $0 << 8 | UInt32($1) })
+        case "sp78" where bytes.count >= 2:
+            return Double(Int16(bitPattern: UInt16(bytes[0]) << 8 | UInt16(bytes[1]))) / 256
         default:
             return nil
         }
@@ -89,7 +93,7 @@ final class SMC {
     static let callSize = MemoryLayout<Call>.size
 
     private enum Command {
-        static let write: UInt8 = 6, read: UInt8 = 5, info: UInt8 = 9
+        static let write: UInt8 = 6, read: UInt8 = 5, key: UInt8 = 8, info: UInt8 = 9
     }
 
     private var connection: io_connect_t = 0
@@ -130,6 +134,16 @@ final class SMC {
 
     func value(_ key: String) -> Double? {
         read(key).flatMap { SMCCodec.decode(type: $0.type, bytes: $0.bytes) }
+    }
+
+    func keys() -> [String] {
+        guard let count = value("#KEY") else { return [] }
+        return (0..<Int(count)).compactMap { index in
+            var input = Call()
+            input.command = Command.key
+            input.data = UInt32(index)
+            return call(input).map { SMCCodec.string($0.key) }
+        }
     }
 
     @discardableResult

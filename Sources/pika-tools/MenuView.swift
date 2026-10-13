@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    static let defaultHidden = "archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,new-file,quit-on-close,side-buttons,speed-test,wheel-direction,wheel-lines,window-zoom"
+    static let defaultHidden = "archive,command-keys,compress,convert,dock-display,dock-hide,fans,finder-cut,finder-delete,finder-open,game-mode,home-end,key-repeat,new-file,quit-on-close,side-buttons,speed-test,temperatures,wheel-direction,wheel-lines,window-zoom"
 
     let registry: ToolRegistry
     private let permissions = Permissions.shared
@@ -69,7 +69,7 @@ struct MenuView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    if !visibleTabs.isEmpty || isShown("keep-awake") || isShown("speed-test") || showsFans {
+                    if !visibleTabs.isEmpty || isShown("keep-awake") || isShown("speed-test") || showsFans || isShown("temperatures") {
                         VStack(spacing: 0) {
                             if isShown("keep-awake") {
                                 if customizing {
@@ -117,8 +117,16 @@ struct MenuView: View {
                             }
                             #endif
 
+                            if isShown("temperatures") {
+                                if customizing {
+                                    customizeRow(icon: "thermometer.medium", title: String(localized: "Temperature"), id: "temperatures")
+                                } else {
+                                    TemperatureRow()
+                                }
+                            }
+
                             ForEach(Array(visibleTabs.enumerated()), id: \.element) { index, tab in
-                                if index > 0 || isShown("keep-awake") || isShown("speed-test") || showsFans { groupDivider }
+                                if index > 0 || isShown("keep-awake") || isShown("speed-test") || showsFans || isShown("temperatures") { groupDivider }
                                 ForEach(registry.tools.filter { $0.tab == tab && isShown($0.id) }, id: \.id) { tool in
                                     if customizing {
                                         customizeRow(icon: tool.icon, title: tool.title, id: tool.id)

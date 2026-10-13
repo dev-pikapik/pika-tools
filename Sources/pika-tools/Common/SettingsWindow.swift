@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, fans, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
+    case general, battery, keepAwake, fans, temperatures, speedTest, keyboard, mouse, windows, dock, finder, animations, uninstaller, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -12,6 +12,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .battery: String(localized: "Battery")
         case .keepAwake: String(localized: "Keep Awake")
         case .fans: String(localized: "Fans")
+        case .temperatures: String(localized: "Temperature")
         case .speedTest: String(localized: "Speed Test")
         case .keyboard: String(localized: "Keyboard")
         case .mouse: String(localized: "Mouse")
@@ -33,6 +34,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .battery: "battery.100percent"
         case .keepAwake: "cup.and.saucer.fill"
         case .fans: "fan"
+        case .temperatures: "thermometer.medium"
         case .speedTest: "speedometer"
         case .keyboard: "keyboard.fill"
         case .mouse: "computermouse.fill"
@@ -59,7 +61,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .uninstaller: .brown
         case .keepAwake: .orange
         case .fans: .teal
-        case .pet: .red
+        case .pet, .temperatures: .red
         case .speedTest, .battery: .green
         }
     }
@@ -143,6 +145,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .battery, title: String(localized: "Keep It Healthy"), synonyms: "charge limit, 80%, optimized battery charging, charging on hold, heat, temperature, storage, tips"),
             SettingsItem(tab: .fans, title: String(localized: "Fan speed"), synonyms: "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal"),
             SettingsItem(tab: .permissions, title: String(localized: "Fan control"), synonyms: "allow, helper, password, administrator, install, remove"),
+            SettingsItem(tab: .temperatures, title: String(localized: "Temperature"), synonyms: "heat, hot, warm, thermal, sensors, CPU, GPU, processor, graphics, memory, RAM, SSD, storage, battery, Wi-Fi, degrees, Celsius, Fahrenheit, overheating"),
             SettingsItem(tab: .speedTest, title: String(localized: "Check Speed"), synonyms: "internet, Wi-Fi, network, bandwidth, ping, Mbps, speedtest"),
             SettingsItem(tab: .speedTest, title: String(localized: "What it’s good for"), synonyms: "4K, video, calls, games, downloads"),
             SettingsItem(tab: .keyboard, title: String(localized: "Switch language"), synonyms: "keyboard layout, input source, option, shift, alt"),
@@ -373,9 +376,9 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .fans, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .fans, .temperatures, .speedTest, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -482,6 +485,7 @@ private struct SettingsView: View {
             FanSettings()
             #endif
         case .battery: BatterySettings()
+        case .temperatures: TemperatureSettings()
         case .speedTest: SpeedTestSettings()
         case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
         case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
