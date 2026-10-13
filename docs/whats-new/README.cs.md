@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Synchronizovaná nastavení jsou teď ve složce pikapik
+
+<sub>1.39.2 · 13. října 2026</sub>
+
+Pokud synchronizujete nastavení přes iCloud, jsou teď na iCloud Drive ve složce pikapik místo pika-tools a pikapik je tam přesune sám.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Nemusíte nic dělat: nastavení zůstávají stejná a stará složka zmizí, jakmile se přesunou. Pokud jsou v ní vaše vlastní soubory, zůstane na místě. Pokud synchronizujete více Maců, aktualizujte pikapik na každém z nich, aby si nastavení dál sdílely.
+
+**Opraveno**
+
+- Úplné odstranění pikapik přes Homebrew (brew uninstall --zap) teď smaže i seznam nedávno odebraných aplikací.
+- Starší příspěvky na této stránce teď aplikaci říkají pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Obvyklé záhlaví v oknech archivů
 
 <sub>1.39.1 · 13. října 2026</sub>
@@ -812,11 +829,11 @@ pika-tools se teď jmenuje pikapik. Oprávnění, nastavení i odkazy ve Zkratk�
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Otevřete Nastavení › O aplikaci a klikněte na „Co je nového“. Dostanete se přímo sem, na stránku s obrázkem ke každé aktualizaci, v jazyce, kterým mluví pika-tools.
+Otevřete Nastavení › O aplikaci a klikněte na „Co je nového“. Dostanete se přímo sem, na stránku s obrázkem ke každé aktualizaci, v jazyce, kterým mluví pikapik.
 
 Úplný seznam změn je také přehlednější. U každé verze je den, kdy vyšla, a každé číslo verze otevírá její stránku ke stažení.
 
-Na tom, jak pika-tools funguje, se nic nemění. Aktualizace přicházejí jako dřív, samy nebo přes Homebrew.
+Na tom, jak pikapik funguje, se nic nemění. Aktualizace přicházejí jako dřív, samy nebo přes Homebrew.
 
 **Vyzkoušejte:** Nastavení › O aplikaci › Co je nového
 
@@ -853,7 +870,7 @@ Na všech obrázcích v aplikaci se ukazatel teď pohybuje jako ruka: na delší
 
 <sub>1.26.0 · 8. října 2026</sub>
 
-pika-tools má novou tvář a teď umí smazat oprávnění, která po sobě nechaly smazané aplikace.
+pikapik má novou tvář a teď umí smazat oprávnění, která po sobě nechaly smazané aplikace.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +878,7 @@ Nová ikona je značka pikapik v modré, fialové a korálové barvě na tmavé 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Když smažete aplikaci, macOS si nechá oprávnění, která jste jí dali, a v Nastavení systému je odstranit nejde. Teď má stránka „Oprávnění“ seznam „Zbylo po smazaných aplikacích“: každá aplikace se svou ikonou, co směla dělat a kdy. „Odstranit“ vyčistí jednu aplikaci, „Odstranit vše“ všechny najednou a aplikace, kterou nainstalujete znovu, se prostě zeptá ještě jednou. Abyste seznam viděli, dejte pika-tools úplný přístup k disku: jen se dívá a nic nemění, dokud nekliknete na „Odstranit“.
+Když smažete aplikaci, macOS si nechá oprávnění, která jste jí dali, a v Nastavení systému je odstranit nejde. Teď má stránka „Oprávnění“ seznam „Zbylo po smazaných aplikacích“: každá aplikace se svou ikonou, co směla dělat a kdy. „Odstranit“ vyčistí jednu aplikaci, „Odstranit vše“ všechny najednou a aplikace, kterou nainstalujete znovu, se prostě zeptá ještě jednou. Abyste seznam viděli, dejte pikapik úplný přístup k disku: jen se dívá a nic nemění, dokud nekliknete na „Odstranit“.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +949,7 @@ Klikněte na „Přidat hru…“ a právě otevřené aplikace se ukážou s ve
 
 Přepínače Herního režimu teď mluví srozumitelně, třeba „Hra se nezavře“ nebo „Hledání nevyskočí“, a každý má malý obrázek toho, co zastaví. Systémový název, třeba Spotlight, je vedle šedě.
 
-V Nastavení › Okna klikněte na klávesy vedle „Ukončit aplikaci“ nebo „Zavřít okno“ a stiskněte nové. ⌫ vrátí ⇧⌘Q a ⇧⌘W, a pokud už klávesy něco používá, pika-tools se nejdřív zeptá. Herní režim používá vaše klávesy také. A každá zkratka v Nastavení teď ukazuje, jak je na vašem Macu doopravdy nastavená: vaše klávesy, nebo Vypnuto.
+V Nastavení › Okna klikněte na klávesy vedle „Ukončit aplikaci“ nebo „Zavřít okno“ a stiskněte nové. ⌫ vrátí ⇧⌘Q a ⇧⌘W, a pokud už klávesy něco používá, pikapik se nejdřív zeptá. Herní režim používá vaše klávesy také. A každá zkratka v Nastavení teď ukazuje, jak je na vašem Macu doopravdy nastavená: vaše klávesy, nebo Vypnuto.
 
 **Vyzkoušejte:** Nastavení › Hry, pak „Přidat hru…“
 
@@ -955,7 +972,7 @@ Dock se může vysouvat rychleji, jen když se skrývá. Pokud ten váš zůstá
 
 Po změně se dole na stránce objeví řádek, že ji aplikace převezmou, až je znovu otevřete. Novou rychlost Rychlého náhledu a sloupců Finder ukáže až po restartu, proto má ten řádek tlačítko „Restartovat Finder“.
 
-Posuvník nikdy nezpomalí nic, co už bylo zrychlené, třeba vašimi příkazy v Terminálu. A „Obnovit výchozí“ i odinstalování pika-tools vrátí hodnoty, které jste měli předtím, místo aby je smazaly.
+Posuvník nikdy nezpomalí nic, co už bylo zrychlené, třeba vašimi příkazy v Terminálu. A „Obnovit výchozí“ i odinstalování pikapik vrátí hodnoty, které jste měli předtím, místo aby je smazaly.
 
 **Vyzkoušejte:** Nastavení › Animace
 
@@ -977,7 +994,7 @@ Stačí jeden posuvník. Posuňte ho a skrytý Dock, nová okna, dialogy uklád�
 
 Chcete doladit jen jednu věc? Každý efekt má vlastní nastavení, stejně jako efekt minimalizace, poskakující ikony v Docku a animace Finderu. Vedle každého nastavení se malý obrázek pohybuje přesně rychlostí, kterou jste zvolili.
 
-„Obnovit výchozí“ vrátí jen to, co změnil pika-tools, a odinstalování udělá totéž. Pokud jste kdysi některou z těchto hodnot nastavili sami v Terminálu, pika-tools ji ukáže tak, jak je.
+„Obnovit výchozí“ vrátí jen to, co změnil pikapik, a odinstalování udělá totéž. Pokud jste kdysi některou z těchto hodnot nastavili sami v Terminálu, pikapik ji ukáže tak, jak je.
 
 **Vyzkoušejte:** Nastavení › Animace
 
@@ -1015,7 +1032,7 @@ Test rychlosti prověří vaše připojení a jednoduše řekne, na co stačí.
 
 Klikněte na „Změřit rychlost“ a asi za půl minuty uvidíte stahování, odesílání, ping a odezvu. Pod čísly jednoduchými slovy stojí, jestli to stačí na filmy ve 4K, videohovory, online hry a velká stahování.
 
-Měření probíhá na serverech Apple a poslední výsledek zůstane až do dalšího. Test rychlosti má vlastní stránku v Nastavení, řádek v panelu na řádku nabídek a odkaz pro aplikaci Zkratky: `pika-tools://speed-test`.
+Měření probíhá na serverech Apple a poslední výsledek zůstane až do dalšího. Test rychlosti má vlastní stránku v Nastavení, řádek v panelu na řádku nabídek a odkaz pro aplikaci Zkratky: `pikapik://speed-test`.
 
 Herní režim se naučil dvě věci. Blokování zkratek s Control je teď jeho součástí: ve hře zůstane ⌃-kliknutí obyčejným kliknutím a zkratky s ⌃ nic nespustí; všude jinde funguje ⌃ jako obvykle. A pozná Minecraft: přidejte do her Minecraft Launcher nebo CurseForge a Herní režim se zapne, když je vepředu samotný Minecraft.
 
@@ -1023,7 +1040,7 @@ Herní režim se naučil dvě věci. Blokování zkratek s Control je teď jeho 
 
 **Opraveno**
 
-- Testovací verze pika-tools, které si lidé sestaví sami, ukládají nastavení na iCloud Drive odděleně a vašich se už nedotknou.
+- Testovací verze pikapik, které si lidé sestaví sami, ukládají nastavení na iCloud Drive odděleně a vašich se už nedotknou.
 
 ---
 
@@ -1037,7 +1054,7 @@ Přidejte své hry a Mac vás z nich přestane vytrhávat.
 
 Během hraní se Spotlight, Siri, ⌘Tab, Mission Control ani přejetí mezi plochami neotevřou přes hru. ⌘Q a ⌘W ji omylem nezavřou, ukazatel zůstane na obrazovce hry a obrazovka zůstane zapnutá.
 
-Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. pika-tools vám nabídne hry, které na vašem Macu najde. Herní režim je vypnutý, dokud ho nezapnete.
+Hru ukončíte stiskem ⇧⌘Q, její okno zavřete stiskem ⇧⌘W. ⌥⌘Esc funguje vždy. pikapik vám nabídne hry, které na vašem Macu najde. Herní režim je vypnutý, dokud ho nezapnete.
 
 V nástroji Bez spánku si teď vyberete, co dělá obrazovka: zůstane zapnutá, bez spořiče a zamčené obrazovky, nebo zhasne jako obvykle, zatímco Mac dál pracuje. Nové tlačítko „Vypnout displej hned“ ji hned ztmaví; pohněte myší nebo stiskněte klávesu a je zpátky.
 

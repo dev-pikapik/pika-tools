@@ -339,7 +339,7 @@ Many settings come with a small picture of what they do, such as a Mac staying a
 
 Every page has a **Restore Defaults…** button at the bottom. It asks first, then turns off the tools on that page and puts their options back, as if pikapik never touched them.
 
-**Sync settings with iCloud** keeps pikapik the same on all your Macs. The settings live in the pika-tools folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.
+**Sync settings with iCloud** keeps pikapik the same on all your Macs. The settings live in the pikapik folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.
 
 </details>
 

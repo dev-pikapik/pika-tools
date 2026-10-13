@@ -339,7 +339,7 @@ Muitos ajustes vêm com uma imagem pequena que mostra o que eles fazem, como um 
 
 Cada página tem um botão **Restaurar Padrões…** na parte de baixo. Ele pergunta antes, depois desativa as ferramentas da página e devolve as opções ao que eram, como se o pikapik nunca tivesse mexido nelas.
 
-**Sincronizar ajustes com o iCloud** mantém o pikapik igual em todos os seus Macs. Os ajustes ficam na pasta pika-tools do iCloud Drive, e vale a alteração mais recente. Vem desativado por padrão e precisa do iCloud Drive ligado. As permissões não são sincronizadas: cada Mac pede as suas.
+**Sincronizar ajustes com o iCloud** mantém o pikapik igual em todos os seus Macs. Os ajustes ficam na pasta pikapik do iCloud Drive, e vale a alteração mais recente. Vem desativado por padrão e precisa do iCloud Drive ligado. As permissões não são sincronizadas: cada Mac pede as suas.
 
 </details>
 

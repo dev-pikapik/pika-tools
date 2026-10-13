@@ -339,7 +339,7 @@ Viele Einstellungen haben ein kleines Bild, das zeigt, was sie tun, etwa einen M
 
 Jede Seite hat unten eine Taste **Standard wiederherstellen…**. Sie fragt zuerst nach, schaltet dann die Werkzeuge auf dieser Seite aus und setzt ihre Optionen zurück, als hätte pikapik sie nie angefasst.
 
-**Einstellungen mit iCloud synchronisieren** hält pikapik auf all deinen Macs gleich. Die Einstellungen liegen im Ordner pika-tools in iCloud Drive, und die jüngste Änderung gewinnt. Standardmäßig aus, und iCloud Drive muss eingeschaltet sein. Berechtigungen werden nicht synchronisiert: Jeder Mac fragt selbst danach.
+**Einstellungen mit iCloud synchronisieren** hält pikapik auf all deinen Macs gleich. Die Einstellungen liegen im Ordner pikapik in iCloud Drive, und die jüngste Änderung gewinnt. Standardmäßig aus, und iCloud Drive muss eingeschaltet sein. Berechtigungen werden nicht synchronisiert: Jeder Mac fragt selbst danach.
 
 </details>
 

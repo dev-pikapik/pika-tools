@@ -5,6 +5,23 @@
 
 ---
 
+## <a id="v1.39.2"></a>Pengaturan yang diselaraskan kini ada di folder pikapik
+
+<sub>1.39.2 · 13 Oktober 2026</sub>
+
+Jika Anda menyelaraskan pengaturan dengan iCloud, pengaturan kini disimpan di iCloud Drive dalam folder bernama pikapik, bukan pika-tools, dan pikapik memindahkannya ke sana sendiri.
+
+<img src="../media/icon.png" width="128" height="128" alt="">
+
+Anda tidak perlu melakukan apa pun: pengaturan Anda tetap sama, dan folder lama hilang setelah pengaturannya dipindahkan. Jika Anda menaruh file sendiri di dalamnya, folder itu tetap di tempatnya. Jika Anda menyelaraskan beberapa Mac, perbarui pikapik di setiap Mac agar tetap berbagi pengaturan.
+
+**Diperbaiki**
+
+- Menghapus pikapik sepenuhnya dengan Homebrew (brew uninstall --zap) kini juga menghapus daftar app yang baru dihapus.
+- Postingan lama di halaman ini kini menyebut app ini pikapik.
+
+---
+
 ## <a id="v1.39.1"></a>Bilah judul yang biasa di jendela arsip
 
 <sub>1.39.1 · 13 Oktober 2026</sub>
@@ -812,11 +829,11 @@ pika-tools sekarang bernama pikapik. Izin, pengaturan, dan tautan di Pintasan te
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
-Buka Pengaturan › Tentang lalu klik “Yang Baru”. Anda langsung tiba di sini, di halaman dengan gambar untuk setiap pembaruan, dalam bahasa yang digunakan pika-tools.
+Buka Pengaturan › Tentang lalu klik “Yang Baru”. Anda langsung tiba di sini, di halaman dengan gambar untuk setiap pembaruan, dalam bahasa yang digunakan pikapik.
 
 Daftar lengkap perubahan juga lebih rapi. Setiap versi menampilkan hari rilisnya, dan setiap nomor versi membuka halaman unduhannya.
 
-Tidak ada yang berubah dalam cara kerja pika-tools. Pembaruan datang seperti biasa, dengan sendirinya atau lewat Homebrew.
+Tidak ada yang berubah dalam cara kerja pikapik. Pembaruan datang seperti biasa, dengan sendirinya atau lewat Homebrew.
 
 **Coba:** Pengaturan › Tentang › Yang Baru
 
@@ -853,7 +870,7 @@ Di semua gambar dalam app, penunjuk kini bergerak seperti tangan: untuk jarak ja
 
 <sub>1.26.0 · 8 Oktober 2026</sub>
 
-pika-tools punya wajah baru, dan kini bisa menghapus izin yang ditinggalkan app yang sudah dihapus.
+pikapik punya wajah baru, dan kini bisa menghapus izin yang ditinggalkan app yang sudah dihapus.
 
 <img src="../media/icon.png" width="128" height="128" alt="">
 
@@ -861,7 +878,7 @@ Ikon barunya adalah tanda pikapik berwarna biru, ungu, dan koral di atas ubin ge
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 
-Saat Anda menghapus app, macOS tetap menyimpan izin yang pernah Anda berikan, dan Pengaturan Sistem tidak punya cara untuk menghapusnya. Kini halaman “Izin” punya daftar bernama “Sisa dari app yang dihapus”: setiap app dengan ikonnya, apa yang dulu diizinkan, dan kapan. “Hapus” membersihkan satu app, “Hapus Semua” membersihkan semuanya, dan app yang Anda pasang lagi hanya akan meminta izin lagi. Untuk melihat daftarnya, beri pika-tools Akses Disk Penuh: ia hanya melihat dan tidak mengubah apa pun sampai Anda menekan “Hapus”.
+Saat Anda menghapus app, macOS tetap menyimpan izin yang pernah Anda berikan, dan Pengaturan Sistem tidak punya cara untuk menghapusnya. Kini halaman “Izin” punya daftar bernama “Sisa dari app yang dihapus”: setiap app dengan ikonnya, apa yang dulu diizinkan, dan kapan. “Hapus” membersihkan satu app, “Hapus Semua” membersihkan semuanya, dan app yang Anda pasang lagi hanya akan meminta izin lagi. Untuk melihat daftarnya, beri pikapik Akses Disk Penuh: ia hanya melihat dan tidak mengubah apa pun sampai Anda menekan “Hapus”.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 
@@ -932,7 +949,7 @@ Tekan “Tambah Game…”, dan app yang sedang terbuka muncul dengan ikon besar
 
 Saklar Mode Game kini memakai kata-kata sederhana, seperti “Game tidak tertutup” atau “Pencarian tidak muncul”, dan masing-masing punya gambar kecil tentang apa yang dihentikannya. Nama di sistem, seperti Spotlight, ada di sampingnya dengan warna abu-abu.
 
-Di Pengaturan › Jendela, klik tombol di samping “Keluar dari app” atau “Tutup jendela” lalu tekan yang baru. ⌫ mengembalikan ⇧⌘Q dan ⇧⌘W, dan jika tombolnya sudah dipakai, pika-tools bertanya dulu. Mode Game juga memakai tombol Anda. Dan setiap pintasan di Pengaturan kini menunjukkan bagaimana pintasan itu benar-benar diatur di Mac Anda: tombol Anda, atau Mati.
+Di Pengaturan › Jendela, klik tombol di samping “Keluar dari app” atau “Tutup jendela” lalu tekan yang baru. ⌫ mengembalikan ⇧⌘Q dan ⇧⌘W, dan jika tombolnya sudah dipakai, pikapik bertanya dulu. Mode Game juga memakai tombol Anda. Dan setiap pintasan di Pengaturan kini menunjukkan bagaimana pintasan itu benar-benar diatur di Mac Anda: tombol Anda, atau Mati.
 
 **Coba:** Pengaturan › Game, lalu “Tambah Game…”
 
@@ -955,7 +972,7 @@ Dock hanya bisa meluncur lebih cepat jika ia bersembunyi. Jika Dock Anda selalu 
 
 Setelah ada perubahan, satu baris di bagian bawah halaman memberi tahu bahwa app menerapkannya setelah Anda membukanya lagi. Finder baru menampilkan kecepatan baru Lihat Cepat dan kolom setelah dimulai ulang, jadi baris itu punya tombol “Mulai Ulang Finder”.
 
-Penggeser tidak pernah memperlambat apa yang sudah Anda percepat, misalnya dengan perintah di Terminal. Dan “Pulihkan Default” atau menghapus pika-tools mengembalikan nilai yang Anda punya sebelumnya, bukan menghapusnya.
+Penggeser tidak pernah memperlambat apa yang sudah Anda percepat, misalnya dengan perintah di Terminal. Dan “Pulihkan Default” atau menghapus pikapik mengembalikan nilai yang Anda punya sebelumnya, bukan menghapusnya.
 
 **Coba:** Pengaturan › Animasi
 
@@ -977,7 +994,7 @@ Satu penggeser sudah cukup. Geser, maka Dock yang tersembunyi, jendela baru, dia
 
 Ingin menyetel satu hal saja? Setiap efek punya pengaturannya sendiri, begitu juga efek minimalkan, ikon memantul di Dock, dan animasi Finder. Di samping setiap pengaturan, gambar kecil bergerak tepat dengan kecepatan yang Anda pilih.
 
-“Pulihkan Default” hanya mengembalikan apa yang diubah pika-tools, dan menghapus app ini juga begitu. Jika Anda pernah mengatur salah satu nilai ini sendiri di Terminal, pika-tools menampilkannya apa adanya.
+“Pulihkan Default” hanya mengembalikan apa yang diubah pikapik, dan menghapus app ini juga begitu. Jika Anda pernah mengatur salah satu nilai ini sendiri di Terminal, pikapik menampilkannya apa adanya.
 
 **Coba:** Pengaturan › Animasi
 
@@ -1015,7 +1032,7 @@ Tes Kecepatan memeriksa koneksi Anda dan memberi tahu dengan sederhana untuk apa
 
 Tekan “Cek Kecepatan”, dan dalam sekitar setengah menit Anda akan melihat unduh, unggah, ping, dan responsivitas. Di bawah angka-angka itu, kata-kata sederhana menjelaskan apakah cukup untuk film 4K, panggilan video, game online, dan unduhan besar.
 
-Pemeriksaan berjalan di server Apple, dan hasil terakhir tetap ada sampai pemeriksaan berikutnya. Tes Kecepatan punya halaman sendiri di Pengaturan, satu baris di panel bar menu, dan tautan untuk app Pintasan: `pika-tools://speed-test`.
+Pemeriksaan berjalan di server Apple, dan hasil terakhir tetap ada sampai pemeriksaan berikutnya. Tes Kecepatan punya halaman sendiri di Pengaturan, satu baris di panel bar menu, dan tautan untuk app Pintasan: `pikapik://speed-test`.
 
 Mode Game belajar dua hal. Memblokir pintasan Control kini menjadi bagiannya: di dalam game, ⌃-klik tetap klik biasa dan pintasan dengan ⌃ tidak berjalan; di tempat lain, ⌃ berfungsi seperti biasa. Dan ia mengenali Minecraft: tambahkan Minecraft Launcher atau CurseForge ke game Anda, dan Mode Game menyala saat Minecraft sendiri ada di depan.
 
@@ -1023,7 +1040,7 @@ Mode Game belajar dua hal. Memblokir pintasan Control kini menjadi bagiannya: di
 
 **Diperbaiki**
 
-- Versi uji pika-tools yang dibuat sendiri oleh orang-orang kini menyimpan pengaturannya terpisah di iCloud Drive dan tidak lagi menyentuh pengaturan Anda.
+- Versi uji pikapik yang dibuat sendiri oleh orang-orang kini menyimpan pengaturannya terpisah di iCloud Drive dan tidak lagi menyentuh pengaturan Anda.
 
 ---
 
@@ -1037,7 +1054,7 @@ Tambahkan game Anda, dan Mac berhenti menarik Anda keluar darinya.
 
 Selama Anda bermain, Spotlight, Siri, ⌘Tab, Mission Control, dan gesekan antar-desktop tidak terbuka di atas game. ⌘Q dan ⌘W tidak menutupnya tanpa sengaja, penunjuk tetap di layar game, dan layar tetap menyala.
 
-Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, tekan ⇧⌘W. ⌥⌘Esc selalu berfungsi. pika-tools menyarankan game yang ditemukannya di Mac Anda. Mode Game mati sampai Anda menyalakannya.
+Untuk keluar dari game, tekan ⇧⌘Q; untuk menutup jendelanya, tekan ⇧⌘W. ⌥⌘Esc selalu berfungsi. pikapik menyarankan game yang ditemukannya di Mac Anda. Mode Game mati sampai Anda menyalakannya.
 
 Tetap Terjaga kini membiarkan Anda memilih apa yang dilakukan layar: tetap menyala, tanpa penghemat layar atau layar kunci, atau mati seperti biasa sementara Mac tetap bekerja. Tombol baru “Matikan layar sekarang” langsung menggelapkannya; gerakkan mouse atau tekan tombol untuk menyalakannya lagi.
 

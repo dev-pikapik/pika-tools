@@ -4,7 +4,7 @@ Bug reports and ideas are welcome in [Issues](https://github.com/dev-pikapik/pik
 
 ## Building from source
 
-All you need is the Xcode Command Line Tools. Xcode itself isn't required: the app is built with plain `swiftc`.
+You need Xcode 26 or newer, the Command Line Tools alone are not enough. There is no Xcode project: `build.sh` calls `swiftc` directly. If `xcode-select -p` points to the Command Line Tools, run the scripts with `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`.
 
 ```bash
 git clone https://github.com/dev-pikapik/pika-tools.git
@@ -103,6 +103,12 @@ The app and the pet tell you about an update only when the latest release is new
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
+```
+
+iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pikapik-dev for local builds. Earlier versions used a pika-tools folder. When sync starts, that folder is renamed. If both folders exist, the file with the later time saved inside it ends up in pikapik, and the old folder is deleted once nothing else is left in it. The move lives in `SettingsFile.moveFolder`, and the test works on temporary folders:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-folder.swift -o build/test-settings-folder && build/test-settings-folder
 ```
 
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. It is not part of the App Store build. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
