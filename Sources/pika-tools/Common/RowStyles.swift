@@ -48,6 +48,10 @@ struct CenteredSwitchStyle: ToggleStyle {
                 .labelsHidden()
                 .toggleStyle(.switch)
         }
+        .accessibilityRepresentation {
+            Toggle(isOn: configuration.$isOn) { configuration.label }
+                .toggleStyle(.switch)
+        }
     }
 }
 
