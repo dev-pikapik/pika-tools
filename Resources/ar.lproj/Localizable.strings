@@ -1043,6 +1043,9 @@
 "Port or program" = "منفذ أو برنامج";
 "Free a port" = "تحرير منفذ";
 "Port %@ is free" = "المنفذ %@ متاح";
+"Port %@" = "المنفذ %@";
+"Ports %@" = "المنافذ %@";
+"Clear" = "مسح";
 "No programs found" = "لم يتم العثور على برامج";
 "None of your programs has taken a port" = "لا يحجز أي برنامج من برامجك منفذًا";
 "Your programs" = "برامجك";

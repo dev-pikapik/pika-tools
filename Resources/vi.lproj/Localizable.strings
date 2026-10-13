@@ -1043,6 +1043,9 @@
 "Port or program" = "Cổng hoặc chương trình";
 "Free a port" = "Giải phóng cổng";
 "Port %@ is free" = "Cổng %@ đang trống";
+"Port %@" = "Cổng %@";
+"Ports %@" = "Cổng %@";
+"Clear" = "Xóa";
 "No programs found" = "Không tìm thấy chương trình nào";
 "None of your programs has taken a port" = "Không chương trình nào của bạn đang chiếm cổng";
 "Your programs" = "Chương trình của bạn";

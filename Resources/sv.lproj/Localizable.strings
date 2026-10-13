@@ -1043,6 +1043,9 @@
 "Port or program" = "Port eller program";
 "Free a port" = "Frigör en port";
 "Port %@ is free" = "Port %@ är ledig";
+"Port %@" = "Port %@";
+"Ports %@" = "Portar %@";
+"Clear" = "Rensa";
 "No programs found" = "Inga program hittades";
 "None of your programs has taken a port" = "Inget av dina program upptar någon port";
 "Your programs" = "Dina program";

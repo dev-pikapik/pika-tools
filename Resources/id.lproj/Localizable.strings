@@ -1043,6 +1043,9 @@
 "Port or program" = "Port atau program";
 "Free a port" = "Bebaskan port";
 "Port %@ is free" = "Port %@ bebas";
+"Port %@" = "Port %@";
+"Ports %@" = "Port %@";
+"Clear" = "Hapus";
 "No programs found" = "Program tidak ditemukan";
 "None of your programs has taken a port" = "Tidak ada program Anda yang memakai port";
 "Your programs" = "Program Anda";

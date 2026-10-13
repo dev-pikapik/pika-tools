@@ -17,6 +17,13 @@ struct PortsPage: View {
                     TextField(text: $model.query, prompt: Text("Port or program")) { Text("Port or program") }
                         .textFieldStyle(.plain)
                         .labelsHidden()
+                    if !model.query.isEmpty {
+                        Button { model.query = "" } label: {
+                            Image(systemName: "xmark.circle.fill").foregroundStyle(.tertiary)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(Text("Clear"))
+                    }
                 }
                 .settingAnchor(String(localized: "Free a port"))
                 if shown.isEmpty, let port = model.freePort {
@@ -69,12 +76,13 @@ struct PortsPage: View {
             }
             Button("Cancel", role: .cancel) { model.question = nil }
         } message: { question in
-            switch (question.force, question.isApp) {
-            case (false, true): Text("The port is free once the app closes. If it has unsaved work, it will ask you what to do.")
-            case (false, false): Text("The program gets a moment to finish its work, then the port is free.")
-            case (true, true): Text("The app didn’t close. Force quitting ends it right away, and anything unsaved is lost.")
-            case (true, false): Text("The program didn’t close. Force quitting ends it right away, and anything unsaved is lost.")
+            let note = switch (question.force, question.isApp) {
+            case (false, true): String(localized: "The port is free once the app closes. If it has unsaved work, it will ask you what to do.")
+            case (false, false): String(localized: "The program gets a moment to finish its work, then the port is free.")
+            case (true, true): String(localized: "The app didn’t close. Force quitting ends it right away, and anything unsaved is lost.")
+            case (true, false): String(localized: "The program didn’t close. Force quitting ends it right away, and anything unsaved is lost.")
             }
+            Text(verbatim: "\(question.detail)\n\(note)")
         }
         #endif
     }
@@ -99,6 +107,7 @@ private struct PortRow: View {
                 .accessibilityLabel(Text(verbatim: look.name))
                 .accessibilityValue(open ? Text("Expanded") : Text("Collapsed"))
             }
+            .truncationMode(.middle)
             .frame(height: 40)
             .onTapGesture(perform: toggle)
             if open {
@@ -123,21 +132,32 @@ private struct PortRow: View {
             ProgressView().controlSize(.small)
         } else if model.isOurs(program) {
             #if APPSTORE
-            Menu {
-                if let window = look.window, let name = window.localizedName {
-                    Button("Show “\(name)”") { window.activate() }
+            ZStack(alignment: .trailing) {
+                Group {
+                    Menu {} label: { Text("Free Up") }
+                    Menu {} label: { Label("Copied", systemImage: "checkmark") }
                 }
-                if !look.isApp {
-                    Button("Copy Command") { model.copyCommand(program) }
+                .hidden()
+                .accessibilityHidden(true)
+                Menu {
+                    if let window = look.window, let name = window.localizedName {
+                        Button("Show “\(name)”") { window.activate() }
+                    }
+                    if !look.isApp {
+                        Button("Copy Command") { model.copyCommand(program) }
+                    }
+                    Button("Open Activity Monitor") { NSWorkspace.shared.open(PortsModel.activityMonitor) }
+                } label: {
+                    if model.copied == program.id {
+                        Label("Copied", systemImage: "checkmark")
+                    } else {
+                        Text("Free Up")
+                    }
                 }
-                Button("Open Activity Monitor") { NSWorkspace.shared.open(PortsModel.activityMonitor) }
-            } label: {
-                if model.copied == program.id {
-                    Label("Copied", systemImage: "checkmark")
-                } else {
-                    Text("Free Up")
-                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
+            .menuStyle(.button)
+            .menuIndicator(.hidden)
             .fixedSize()
             #else
             Button("Free Up") { model.free(program) }
@@ -153,7 +173,7 @@ private struct PortRow: View {
                             .buttonStyle(.link)
                     }
                     .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: 320, alignment: .leading)
+                    .frame(maxWidth: 260, alignment: .leading)
                     .padding(12)
                 }
         } else {
@@ -175,7 +195,7 @@ private struct PortRow: View {
                     }
                 }
                 .fixedSize(horizontal: false, vertical: true)
-                .frame(maxWidth: 320, alignment: .leading)
+                .frame(maxWidth: 260, alignment: .leading)
                 .padding(12)
             }
         }
@@ -280,6 +300,7 @@ private struct PortDetails: View {
                 }
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
         .font(.callout)
     }
 

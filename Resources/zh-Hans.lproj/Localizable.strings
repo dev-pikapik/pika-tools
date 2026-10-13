@@ -1043,6 +1043,9 @@
 "Port or program" = "端口或程序";
 "Free a port" = "释放端口";
 "Port %@ is free" = "端口 %@ 未被占用";
+"Port %@" = "端口 %@";
+"Ports %@" = "端口 %@";
+"Clear" = "清除";
 "No programs found" = "未找到程序";
 "None of your programs has taken a port" = "你的程序都没有占用端口";
 "Your programs" = "你的程序";

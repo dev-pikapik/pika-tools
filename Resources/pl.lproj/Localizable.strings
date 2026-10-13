@@ -1043,6 +1043,9 @@
 "Port or program" = "Port lub program";
 "Free a port" = "Zwolnij port";
 "Port %@ is free" = "Port %@ jest wolny";
+"Port %@" = "Port %@";
+"Ports %@" = "Porty %@";
+"Clear" = "Wyczyść";
 "No programs found" = "Nie znaleziono programów";
 "None of your programs has taken a port" = "Żaden z twoich programów nie zajmuje portu";
 "Your programs" = "Twoje programy";

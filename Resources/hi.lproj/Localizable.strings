@@ -1043,6 +1043,9 @@
 "Port or program" = "पोर्ट या प्रोग्राम";
 "Free a port" = "पोर्ट खाली करें";
 "Port %@ is free" = "पोर्ट %@ खाली है";
+"Port %@" = "पोर्ट %@";
+"Ports %@" = "पोर्ट %@";
+"Clear" = "साफ़ करें";
 "No programs found" = "कोई प्रोग्राम नहीं मिला";
 "None of your programs has taken a port" = "आपका कोई भी प्रोग्राम पोर्ट इस्तेमाल नहीं कर रहा है";
 "Your programs" = "आपके प्रोग्राम";

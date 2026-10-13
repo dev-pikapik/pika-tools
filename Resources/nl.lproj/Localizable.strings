@@ -1043,6 +1043,9 @@
 "Port or program" = "Poort of programma";
 "Free a port" = "Maak een poort vrij";
 "Port %@ is free" = "Poort %@ is vrij";
+"Port %@" = "Poort %@";
+"Ports %@" = "Poorten %@";
+"Clear" = "Wis";
 "No programs found" = "Geen programma’s gevonden";
 "None of your programs has taken a port" = "Geen van je programma’s bezet een poort";
 "Your programs" = "Je programma’s";

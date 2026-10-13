@@ -25,6 +25,7 @@ struct PortAddress {
 struct PortQuestion {
     let program: PortProgram
     let name: String
+    let detail: String
     let force: Bool
     let isApp: Bool
 }
@@ -100,7 +101,7 @@ struct PortQuestion {
         let app = Self.app(for: owner, chain: chain, apps: apps)
         let file = app?.bundleURL?.path ?? Self.bundle(owner.path)
         let name = app?.localizedName ?? file.map { FileManager.default.displayName(atPath: $0).replacingOccurrences(of: ".app", with: "", options: [.anchored, .backwards]) } ?? owner.name
-        let icon = (file ?? owner.path).map { NSWorkspace.shared.icon(forFile: $0) } ?? NSWorkspace.shared.icon(for: .unixExecutable)
+        let icon = file.map { NSWorkspace.shared.icon(forFile: $0) } ?? NSWorkspace.shared.icon(for: .unixExecutable)
         let window = ([app].compactMap { $0 } + chain.compactMap { pid in apps.first { $0.processIdentifier == pid } }).first { $0.activationPolicy == .regular }
         let look = PortLook(name: name, file: file, icon: icon, isApp: app != nil, window: window)
         looks[key] = look
@@ -169,7 +170,7 @@ struct PortQuestion {
     }
     #else
     func free(_ program: PortProgram) {
-        question = PortQuestion(program: program, name: look(program).name, force: false, isApp: runningApp(program.owner) != nil)
+        question = ask(program, force: false)
     }
 
     func confirm(_ question: PortQuestion) {
@@ -189,7 +190,7 @@ struct PortQuestion {
         }
         freeing.remove(program.id)
         if held, question == nil {
-            question = PortQuestion(program: program, name: look(program).name, force: true, isApp: runningApp(program.owner) != nil)
+            question = ask(program, force: true)
         }
         await refresh()
     }
@@ -214,6 +215,13 @@ struct PortQuestion {
 
     private func holding(_ program: PortProgram) -> Bool {
         ([program.owner.pid] + program.helpers).contains { !PortScanner.ports(of: $0).isDisjoint(with: program.ports) }
+    }
+
+    private func ask(_ program: PortProgram, force: Bool) -> PortQuestion {
+        let list = program.ports.map(String.init).formatted(.list(type: .and))
+        let ports = program.ports.count == 1 ? String(localized: "Port \(list)") : String(localized: "Ports \(list)")
+        let detail = [ports, byline(program)].filter { !$0.isEmpty }.joined(separator: " · ")
+        return PortQuestion(program: program, name: look(program).name, detail: detail, force: force, isApp: runningApp(program.owner) != nil)
     }
 
     private func runningApp(_ owner: PortOwner) -> NSRunningApplication? {

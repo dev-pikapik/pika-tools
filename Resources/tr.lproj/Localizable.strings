@@ -1043,6 +1043,9 @@
 "Port or program" = "Port veya program";
 "Free a port" = "Bir portu serbest bırak";
 "Port %@ is free" = "%@ portu boş";
+"Port %@" = "%@ portu";
+"Ports %@" = "%@ portları";
+"Clear" = "Temizle";
 "No programs found" = "Program bulunamadı";
 "None of your programs has taken a port" = "Programlarınızın hiçbiri port kullanmıyor";
 "Your programs" = "Programlarınız";

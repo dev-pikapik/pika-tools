@@ -1043,6 +1043,9 @@
 "Port or program" = "ポートまたはプログラム";
 "Free a port" = "ポートを空ける";
 "Port %@ is free" = "ポート%@は空いています";
+"Port %@" = "ポート%@";
+"Ports %@" = "ポート%@";
+"Clear" = "消去";
 "No programs found" = "プログラムが見つかりません";
 "None of your programs has taken a port" = "あなたのプログラムはポートを使っていません";
 "Your programs" = "あなたのプログラム";

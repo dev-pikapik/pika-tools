@@ -1043,6 +1043,9 @@
 "Port or program" = "포트 또는 프로그램";
 "Free a port" = "포트 비우기";
 "Port %@ is free" = "포트 %@ 비어 있음";
+"Port %@" = "포트 %@";
+"Ports %@" = "포트 %@";
+"Clear" = "지우기";
 "No programs found" = "프로그램을 찾을 수 없음";
 "None of your programs has taken a port" = "포트를 사용 중인 내 프로그램이 없음";
 "Your programs" = "내 프로그램";

@@ -1043,6 +1043,9 @@
 "Port or program" = "Port sau program";
 "Free a port" = "Eliberează un port";
 "Port %@ is free" = "Portul %@ e liber";
+"Port %@" = "Portul %@";
+"Ports %@" = "Porturile %@";
+"Clear" = "Șterge";
 "No programs found" = "Niciun program găsit";
 "None of your programs has taken a port" = "Niciunul dintre programele tale nu ocupă vreun port";
 "Your programs" = "Programele tale";
