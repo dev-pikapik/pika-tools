@@ -26,11 +26,40 @@ import AppKit
             guard let panel = note.object as? NSWindow, Self.isPanel(panel), Date().timeIntervalSince(keyedAt) < 0.5 else { return }
             DispatchQueue.main.async { if panel.isVisible { panel.makeKey() } }
         }
+
+        #if !APPSTORE
+        if #available(macOS 27, *) { Self.openPanelOnPress() }
+        #endif
     }
 
     nonisolated static func isPanel(_ window: NSWindow?) -> Bool {
         window.map { NSStringFromClass(type(of: $0)).contains("MenuBarExtraWindow") } ?? false
     }
+
+    #if !APPSTORE
+    @available(macOS 27, *)
+    private static func openPanelOnPress() {
+        let press = #selector(NSStatusBarButton.accessibilityPerformPress)
+        guard let method = class_getInstanceMethod(NSStatusBarButton.self, press) else { return }
+        typealias Press = @convention(c) (NSStatusBarButton, Selector) -> Bool
+        let original = unsafeBitCast(method_getImplementation(method), to: Press.self)
+        let block: @convention(block) (NSStatusBarButton) -> Bool = { button in
+            (Thread.isMainThread && MainActor.assumeIsolated { togglePanel(from: button) }) || original(button, press)
+        }
+        class_replaceMethod(NSStatusBarButton.self, press, imp_implementationWithBlock(block), method_getTypeEncoding(method))
+    }
+
+    @available(macOS 27, *)
+    private static func togglePanel(from button: NSStatusBarButton) -> Bool {
+        let request = NSSelectorFromString("_requestExpandedInterfaceSession")
+        guard button.action == nil, let window = button.window, window.responds(to: NSSelectorFromString("statusItem")),
+              let item = window.value(forKey: "statusItem") as? NSStatusItem, item.button === button,
+              item.expandedInterfaceDelegate != nil, item.responds(to: request)
+        else { return false }
+        if let session = item.expandedInterfaceSession { session.cancel() } else { item.perform(request) }
+        return true
+    }
+    #endif
 
     private func menu() -> NSMenu {
         let menu = NSMenu()
