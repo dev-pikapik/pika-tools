@@ -57,6 +57,25 @@ enum PortScanner {
         return found.values.sorted { ($0.port, $0.pid) < ($1.port, $1.pid) }
     }
 
+    /// macOS 27 hides the sockets of macOS and other users from a signed app, so a port missing from
+    /// `listeners()` may still be taken: only a test bind tells.
+    /// ponytail: checks 127.0.0.1, which also hits wildcard listeners; one bound to a single LAN or IPv6 address slips through.
+    static func isFree(_ port: UInt16) -> Bool {
+        [SOCK_STREAM, SOCK_DGRAM].allSatisfy { type in
+            let fd = socket(AF_INET, type, 0)
+            guard fd >= 0 else { return false }
+            defer { close(fd) }
+            var address = sockaddr_in()
+            address.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+            address.sin_family = sa_family_t(AF_INET)
+            address.sin_port = port.bigEndian
+            address.sin_addr.s_addr = inet_addr("127.0.0.1")
+            return withUnsafePointer(to: address) {
+                $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { bind(fd, $0, socklen_t(MemoryLayout<sockaddr_in>.size)) == 0 }
+            }
+        }
+    }
+
     static func programs(_ listeners: [PortListener], owners: [pid_t: PortOwner]) -> [PortProgram] {
         let held = Dictionary(grouping: listeners, by: \.pid).mapValues { Set($0.map(\.port)) }
         func root(_ pid: pid_t) -> pid_t {

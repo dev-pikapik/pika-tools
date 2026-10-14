@@ -81,7 +81,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         if self == .battery { return Battery.isPresent }
         if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
-        return ![.fans, .uninstaller, .dock].contains(self)
+        return ![.fans, .uninstaller, .dock, .ports].contains(self)
         #else
         return true
         #endif
@@ -415,7 +415,7 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
                     #else
                     Section { rows([.general, .battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
                     #endif

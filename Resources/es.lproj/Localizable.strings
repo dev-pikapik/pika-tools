@@ -1047,6 +1047,7 @@
 "Port or program" = "Puerto o programa";
 "Free a port" = "Liberar un puerto";
 "Port %@ is free" = "El puerto %@ está libre";
+"Port %@ is taken by macOS or another user" = "El puerto %@ está ocupado por macOS u otro usuario";
 "Port %@" = "Puerto %@";
 "Ports %@" = "Puertos %@";
 "Clear" = "Borrar";

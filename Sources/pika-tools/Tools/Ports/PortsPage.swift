@@ -27,10 +27,18 @@ struct PortsPage: View {
                 }
                 .settingAnchor(String(localized: "Free a port"))
                 if shown.isEmpty, let port = model.freePort {
-                    Label {
-                        Text("Port \(String(port)) is free")
-                    } icon: {
-                        Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                    if PortScanner.isFree(port) {
+                        Label {
+                            Text("Port \(String(port)) is free")
+                        } icon: {
+                            Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                        }
+                    } else {
+                        Label {
+                            Text("Port \(String(port)) is taken by macOS or another user")
+                        } icon: {
+                            Image(systemName: "lock.circle.fill").foregroundStyle(.secondary)
+                        }
                     }
                 } else if model.loaded, shown.isEmpty, searching {
                     Text("No programs found").foregroundStyle(.secondary).frame(maxWidth: .infinity).padding(.vertical, 8)
