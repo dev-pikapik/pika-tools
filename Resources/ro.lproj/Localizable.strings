@@ -1145,6 +1145,8 @@
 "Hide desktop icons" = "Ascunde pictogramele de pe desktop";
 "For calls, recordings and screenshots. The files stay where they are" = "Pentru apeluri, înregistrări și capturi de ecran. Fișierele rămân unde sunt";
 "The files stay where they are" = "Fișierele rămân unde sunt";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Acoperă pictogramele cu imaginea ta de fundal. Pentru apeluri, înregistrări și capturi de ecran";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Acoperă fișierele și folderele de pe desktop cu imaginea ta de fundal, pe fiecare ecran. Clicurile ajung în continuare pe desktop. Dacă imaginea de fundal este animată, în locul ei le acoperă o culoare simplă. Fișierele rămân în folderul Desktop din Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ascunde fișierele și folderele de pe desktop, la fel ca opțiunea „Afișare articole” din Configurări sistem › Desktop și Dock. Ele rămân în folderul Desktop din Finder.";
 "Show hidden files" = "Afișează fișierele ascunse";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Fișierele ascunse apar estompate. Finder repornește pentru o clipă și își redeschide ferestrele";
@@ -1152,7 +1154,7 @@
 "Waiting for Finder to finish copying" = "Se așteaptă ca Finder să termine copierea";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Fișierele și folderele ascunse, cum ar fi Bibliotecă, apar estompate în Finder și pe desktop, la fel ca la apăsarea ⇧⌘. în Finder. Pentru a aplica modificarea, Finder repornește pentru o clipă și își redeschide ferestrele și filele. Dacă Finder copiază sau mută fișiere, repornește abia după ce termină.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Configurări sistem › Desktop și Dock › Afișare articole › Pe desktop";
-"Opens Desktop & Dock in System Settings" = "Deschide Desktop și Dock în Configurări sistem";
+"Or hide them in System Settings" = "Sau ascunde-le din Configurări sistem";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Deschide Desktop și Dock în Configurări sistem. Dezactivează „Pe desktop” lângă „Afișare articole” ca să ascunzi pictogramele și activează-l din nou ca să le readuci. Fișierele rămân în folderul Desktop.";
 "Press these keys in Finder, and again to hide them" = "Apasă aceste taste în Finder, și din nou ca să le ascunzi";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, pictograme, fișiere, foldere, curățare, ascundere, prezentare, partajarea ecranului, înregistrare, captură de ecran, Manager de scenă";

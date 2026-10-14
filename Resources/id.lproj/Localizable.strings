@@ -1145,6 +1145,8 @@
 "Hide desktop icons" = "Sembunyikan ikon desktop";
 "For calls, recordings and screenshots. The files stay where they are" = "Untuk panggilan, rekaman, dan jepretan layar. File tetap di tempatnya";
 "The files stay where they are" = "File tetap di tempatnya";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Menutupi ikon dengan wallpaper. Untuk panggilan, rekaman, dan jepretan layar";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Menutupi file dan folder di desktop dengan wallpaper, di setiap layar. Klik tetap sampai ke desktop. Jika wallpaper bergerak, warna polos yang menutupinya. File tetap ada di folder Desktop di Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Menyembunyikan file dan folder di desktop, sama seperti pilihan “Tampilkan item” di Pengaturan Sistem › Desktop & Dock. File dan folder itu tetap ada di folder Desktop di Finder.";
 "Show hidden files" = "Tampilkan file tersembunyi";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "File tersembunyi tampil redup. Finder dimulai ulang sebentar dan membuka lagi jendelanya";
@@ -1152,7 +1154,7 @@
 "Waiting for Finder to finish copying" = "Menunggu Finder selesai menyalin";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "File dan folder tersembunyi, seperti Perpustakaan, tampil redup di Finder dan di desktop, sama seperti menekan ⇧⌘. di Finder. Untuk menerapkan perubahan, Finder dimulai ulang sebentar dan membuka lagi jendela serta tabnya. Jika Finder sedang menyalin atau memindahkan file, Finder baru dimulai ulang setelah selesai.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Pengaturan Sistem › Desktop & Dock › Tampilkan item › Di Desktop";
-"Opens Desktop & Dock in System Settings" = "Membuka Desktop & Dock di Pengaturan Sistem";
+"Or hide them in System Settings" = "Atau sembunyikan di Pengaturan Sistem";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Membuka Desktop & Dock di Pengaturan Sistem. Matikan “Di Desktop” di samping “Tampilkan item” untuk menyembunyikan ikon, lalu nyalakan lagi untuk memunculkannya kembali. File tetap ada di folder Desktop.";
 "Press these keys in Finder, and again to hide them" = "Tekan tombol ini di Finder, lalu tekan lagi untuk menyembunyikannya";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, ikon, file, folder, rapikan, sembunyikan, presentasi, berbagi layar, rekaman, jepretan layar, Pengelola Sorotan";

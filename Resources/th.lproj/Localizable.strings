@@ -1145,6 +1145,8 @@
 "Hide desktop icons" = "ซ่อนไอคอนบนเดสก์ท็อป";
 "For calls, recordings and screenshots. The files stay where they are" = "สำหรับการโทร การบันทึกหน้าจอ และภาพหน้าจอ ไฟล์ยังคงอยู่ที่เดิม";
 "The files stay where they are" = "ไฟล์ยังคงอยู่ที่เดิม";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "ปิดทับไอคอนด้วยวอลเปเปอร์ สำหรับการโทร การบันทึกหน้าจอ และภาพหน้าจอ";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "ปิดทับไฟล์และโฟลเดอร์บนเดสก์ท็อปด้วยวอลเปเปอร์ของคุณในทุกหน้าจอ การคลิกยังส่งถึงเดสก์ท็อปตามปกติ หากวอลเปเปอร์เคลื่อนไหว จะใช้สีพื้นเรียบปิดทับแทน ไฟล์ยังอยู่ในโฟลเดอร์เดสก์ท็อปใน Finder";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "ซ่อนไฟล์และโฟลเดอร์บนเดสก์ท็อป เหมือนตัวเลือก “แสดงรายการ” ในการตั้งค่าระบบ › เดสก์ท็อปและ Dock ไฟล์และโฟลเดอร์ยังอยู่ในโฟลเดอร์เดสก์ท็อปใน Finder";
 "Show hidden files" = "แสดงไฟล์ที่ซ่อนอยู่";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "ไฟล์ที่ซ่อนอยู่จะแสดงแบบจางๆ Finder จะเริ่มใหม่ชั่วครู่ แล้วเปิดหน้าต่างขึ้นมาอีกครั้ง";
@@ -1152,7 +1154,7 @@
 "Waiting for Finder to finish copying" = "กำลังรอให้ Finder คัดลอกเสร็จ";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "ไฟล์และโฟลเดอร์ที่ซ่อนอยู่ เช่น คลัง จะแสดงแบบจางๆ ใน Finder และบนเดสก์ท็อป เหมือนกด ⇧⌘. ใน Finder เพื่อให้การเปลี่ยนแปลงมีผล Finder จะเริ่มใหม่ชั่วครู่ แล้วเปิดหน้าต่างและแท็บขึ้นมาอีกครั้ง ถ้า Finder กำลังคัดลอกหรือย้ายไฟล์อยู่ จะรอให้เสร็จก่อนแล้วจึงเริ่มใหม่";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "การตั้งค่าระบบ › เดสก์ท็อปและ Dock › แสดงรายการ › บนเดสก์ท็อป";
-"Opens Desktop & Dock in System Settings" = "เปิดเดสก์ท็อปและ Dock ในการตั้งค่าระบบ";
+"Or hide them in System Settings" = "หรือซ่อนในการตั้งค่าระบบ";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "เปิดเดสก์ท็อปและ Dock ในการตั้งค่าระบบ ปิด “บนเดสก์ท็อป” ข้าง “แสดงรายการ” เพื่อซ่อนไอคอน และเปิดอีกครั้งเพื่อให้กลับมา ไฟล์ยังอยู่ในโฟลเดอร์เดสก์ท็อป";
 "Press these keys in Finder, and again to hide them" = "กดปุ่มเหล่านี้ใน Finder และกดอีกครั้งเพื่อซ่อน";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "เดสก์ท็อป, ไอคอน, ไฟล์, โฟลเดอร์, จัดระเบียบ, ซ่อน, การนำเสนอ, แชร์หน้าจอ, บันทึกหน้าจอ, ภาพหน้าจอ, ตัวจัดการให้อยู่ตรงกลาง";

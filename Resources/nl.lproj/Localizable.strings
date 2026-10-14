@@ -1145,6 +1145,8 @@
 "Hide desktop icons" = "Bureaubladsymbolen verbergen";
 "For calls, recordings and screenshots. The files stay where they are" = "Voor gesprekken, opnamen en schermafbeeldingen. De bestanden blijven waar ze zijn";
 "The files stay where they are" = "De bestanden blijven waar ze zijn";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Bedekt de symbolen met de bureaubladachtergrond. Voor gesprekken, opnamen en schermafbeeldingen";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Bedekt de bestanden en mappen op het bureaublad met de bureaubladachtergrond, op elk scherm. Klikken komen nog steeds op het bureaublad aan. Beweegt de achtergrond, dan bedekt een effen kleur ze in plaats daarvan. De bestanden blijven in de map Bureaublad in de Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Verbergt de bestanden en mappen op het bureaublad, net als de optie ‘Toon onderdelen’ in Systeeminstellingen › Bureaublad en Dock. Ze blijven in de map Bureaublad in de Finder.";
 "Show hidden files" = "Verborgen bestanden tonen";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Verborgen bestanden worden gedimd getoond. De Finder herstart even en opent zijn vensters weer";
@@ -1152,7 +1154,7 @@
 "Waiting for Finder to finish copying" = "Wachten tot de Finder klaar is met kopiëren";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Verborgen bestanden en mappen, zoals Bibliotheek, worden gedimd getoond in de Finder en op het bureaublad, net als na ⇧⌘. in de Finder. Om de wijziging toe te passen, herstart de Finder even en opent hij zijn vensters en tabbladen weer. Is de Finder bestanden aan het kopiëren of verplaatsen, dan herstart hij pas als hij klaar is.";
 "System Settings › Desktop & Dock › Show items › On Desktop" = "Systeeminstellingen › Bureaublad en Dock › Toon onderdelen › Op bureaublad";
-"Opens Desktop & Dock in System Settings" = "Opent Bureaublad en Dock in Systeeminstellingen";
+"Or hide them in System Settings" = "Of verberg ze in Systeeminstellingen";
 "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opent Bureaublad en Dock in Systeeminstellingen. Zet ‘Op bureaublad’ naast ‘Toon onderdelen’ uit om de symbolen te verbergen en weer aan om ze terug te halen. De bestanden blijven in de map Bureaublad.";
 "Press these keys in Finder, and again to hide them" = "Druk op deze toetsen in de Finder, en nogmaals om ze te verbergen";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "bureaublad, symbolen, bestanden, mappen, opruimen, verbergen, presentatie, scherm delen, opname, schermafbeelding, Stage Manager";

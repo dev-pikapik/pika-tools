@@ -2,16 +2,30 @@ import AppKit
 import SwiftUI
 
 #if APPSTORE
+@Observable
 final class DesktopIconsTool: Tool {
     let id = "desktop-icons"
     let icon = "menubar.dock.rectangle"
     var title: String { String(localized: "Hide desktop icons") }
     let tab = SettingsTab.finder
     let needs: [Permission] = []
-    let isActive = false
-    var isEnabled: Bool { get { false } set {} }
-    var settingsView: AnyView { AnyView(DesktopIconsLink(tool: self)) }
-    func refresh() {}
+    var isActive: Bool { isEnabled }
+
+    var isEnabled: Bool {
+        didSet {
+            UserDefaults.standard.set(isEnabled, forKey: id)
+            refresh()
+        }
+    }
+
+    @ObservationIgnored private let curtain = DesktopCurtain()
+
+    init() {
+        isEnabled = UserDefaults.standard.bool(forKey: id)
+    }
+
+    var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
+    func refresh() { curtain.isOn = isEnabled }
 
     static func openSettings() {
         NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!)
@@ -168,61 +182,28 @@ private struct HiddenFilesSettings: View {
 #endif
 
 #if APPSTORE
-private struct DesktopIconsLink: View {
-    let tool: DesktopIconsTool
+private struct DesktopIconsSettings: View {
+    @Bindable var tool: DesktopIconsTool
     @Environment(\.inSettings) private var inSettings
-    @State private var hovering = false
-
-    private var help: Text {
-        Text("Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder.")
-    }
 
     var body: some View {
+        if inSettings { DesktopIconsArt() }
+        ToggleRow(
+            icon: tool.icon,
+            title: tool.title,
+            subtitle: Text("Covers the icons with your wallpaper. For calls, recordings and screenshots"),
+            hint: Text("The files stay where they are"),
+            help: Text("Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder."),
+            isOn: $tool.isEnabled
+        )
         if inSettings {
             SettingsGuide(pane: .desktop, steps: [.checkbox("Show items", option: "On Desktop", on: false)])
             LabeledContent {
                 Button("Open") { DesktopIconsTool.openSettings() }
             } label: {
-                RowLabel(Text(tool.title), Text("System Settings › Desktop & Dock › Show items › On Desktop"))
+                RowLabel(Text("Or hide them in System Settings"), Text("System Settings › Desktop & Dock › Show items › On Desktop"))
             }
-            .settingAnchor(tool.title)
-            .help(help)
-        } else {
-            Button {
-                NSApp.keyWindow?.close()
-                DesktopIconsTool.openSettings()
-            } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: tool.icon)
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                        .frame(width: 28, height: 28)
-                        .background(Color.secondary.opacity(0.15), in: Circle())
-                        .accessibilityHidden(true)
-                    VStack(alignment: .leading, spacing: 1) {
-                        Text(tool.title)
-                            .font(.body)
-                            .lineLimit(2)
-                        Text("Opens Desktop & Dock in System Settings")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                    }
-                    Spacer(minLength: 0)
-                }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 5)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background {
-                    if hovering {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous).fill(.fill.quaternary)
-                    }
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .onHover { hovering = $0 }
-            .help(help)
+            .help(Text("Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder."))
         }
     }
 }
