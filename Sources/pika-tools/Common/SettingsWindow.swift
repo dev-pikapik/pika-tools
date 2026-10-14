@@ -139,7 +139,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
         ] + Permissions.privacyLists.map {
-            SettingsItem(tab: .permissions, title: $0.title, target: $0.pane, detail: String(localized: "Left by deleted apps"))
+            SettingsItem(tab: .permissions, title: $0.title, target: $0.pane, detail: String(localized: "Other apps’ permissions"))
         }
         #else
         return allItems.filter { $0.tab.isAvailable }

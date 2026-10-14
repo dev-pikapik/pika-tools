@@ -6,6 +6,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Added
 - Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
+- Mac App Store version, Permissions: Settings › Permissions now shows which installed apps can ask for Camera, Microphone, Automation, Files and Folders and Bluetooth, each with its icon. Who is allowed is still shown only in System Settings, because macOS hides it from this version.
 
 ### Fixed
 - Mac App Store version, Finder: after ⌘X, ⌘V now moves the files, as in the version from the website. Before, ⌘V pasted a copy and the files stayed where they were, so cutting worked like copying. The Move Items Here button in the pikapik menu is gone, ⌘V does its job.

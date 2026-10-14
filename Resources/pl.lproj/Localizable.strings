@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "Wybierz „Efekt skalowania”, aby animacja była szybsza";
 "Turn off “Animate opening applications”" = "Wyłącz „Animuj otwieranie aplikacji”";
 "Turn on “Automatically hide and show the Dock”" = "Włącz „Automatycznie ukrywaj i pokazuj Dock”";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "Gdy usuwasz aplikację, macOS zachowuje nadane jej uprawnienia. Otwórz listę, zaznacz usuniętą aplikację i kliknij −. Jeśli nie ma przycisku −, wyłącz jej przełącznik.";
+"Other apps’ permissions" = "Uprawnienia innych aplikacji";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "Usunięte aplikacje zachowują uprawnienia: zaznacz taką na liście i kliknij − albo ją wyłącz.";
+"Only System Settings shows who has it" = "Kto je ma, widać tylko w Ustawieniach systemowych";
+"No app can ask for it" = "Żadna aplikacja nie może o nie poprosić";
+"Can ask for it: %lld" = "Mogą o nie poprosić: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "Te aplikacje mogą o nie poprosić. Kto je ma, widać tylko w Ustawieniach systemowych.";
 "Mouse button hides the current app" = "Przycisk myszy ukrywa bieżącą aplikację";
 "Like ⌘H, the app stays open" = "Jak ⌘H – aplikacja zostaje otwarta";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "Naciśnij wybrany przycisk myszy, aby ukryć aplikację na pierwszym planie, jak skrótem ⌘H.";

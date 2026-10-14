@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "Alegeți „Efect de redimensionare” pentru o animație mai rapidă";
 "Turn off “Animate opening applications”" = "Dezactivați „Animare aplicații la deschidere”";
 "Turn on “Automatically hide and show the Dock”" = "Activați „Ascundere și afișare automată Dock”";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "Când ștergeți o aplicație, macOS păstrează permisiunile pe care i le-ați dat. Deschideți o listă, selectați aplicația ștearsă și apăsați −. Dacă nu există butonul −, dezactivați comutatorul ei.";
+"Other apps’ permissions" = "Permisiunile altor aplicații";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "Aplicațiile șterse își păstrează permisiunile: selectați una în listă și apăsați − sau dezactivați-o.";
+"Only System Settings shows who has it" = "Cine o are se vede doar în Configurări sistem";
+"No app can ask for it" = "Nicio aplicație nu o poate cere";
+"Can ask for it: %lld" = "Pot cere: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "Aceste aplicații o pot cere. Cine o are se vede doar în Configurări sistem.";
 "Mouse button hides the current app" = "Un buton al mausului ascunde aplicația curentă";
 "Like ⌘H, the app stays open" = "Ca ⌘H, aplicația rămâne deschisă";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "Apasă butonul ales al mausului ca să ascunzi aplicația din prim-plan, ca cu ⌘H.";
