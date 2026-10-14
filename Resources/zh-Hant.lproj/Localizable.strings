@@ -77,6 +77,7 @@
 "Seconds" = "秒";
 "Keep the display on" = "讓顯示器保持開啟";
 "Display" = "顯示器";
+"Display settings" = "顯示器設定";
 "Always on" = "永遠開啟";
 "Turns off as usual" = "照常關閉";
 "No dimming, screen saver or lock screen" = "不變暗，不出現螢幕保護程式和鎖定畫面";

@@ -77,6 +77,7 @@
 "Seconds" = "秒";
 "Keep the display on" = "保持显示器开启";
 "Display" = "显示器";
+"Display settings" = "显示器设置";
 "Always on" = "始终开启";
 "Turns off as usual" = "照常关闭";
 "No dimming, screen saver or lock screen" = "不变暗，不出现屏幕保护程序和锁定屏幕";

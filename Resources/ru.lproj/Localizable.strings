@@ -77,6 +77,7 @@
 "Seconds" = "Секунды";
 "Keep the display on" = "Не гасить экран";
 "Display" = "Экран";
+"Display settings" = "Настройки экрана";
 "Always on" = "Всегда включён";
 "Turns off as usual" = "Гаснет как обычно";
 "No dimming, screen saver or lock screen" = "Без затемнения, заставки и экрана блокировки";

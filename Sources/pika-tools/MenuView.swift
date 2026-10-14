@@ -94,8 +94,9 @@ struct MenuView: View {
                                         }
                                         .buttonStyle(.plain)
                                         .foregroundStyle(.secondary)
-                                        .help(Text("Display"))
-                                        .accessibilityLabel(Text("Display"))
+                                        .help(Text("Display settings"))
+                                        .accessibilityLabel(Text("Display settings"))
+                                        .accessibilityValue(keepAwakeOpen ? Text("Expanded") : Text("Collapsed"))
                                     }
                                     if keepAwakeOpen { keepAwakeOptions }
                                 }
@@ -187,6 +188,9 @@ struct MenuView: View {
             .frame(height: min(contentHeight, maxRowsHeight))
             .scrollClipDisabled(contentHeight <= maxRowsHeight)
             .scrollBounceBehavior(.basedOnSize)
+            // While a row grows or shrinks the rows and the frame are a moment out of step; .hidden would still show
+            // a permanent scroller, so only a real overflow gets one.
+            .scrollIndicators(contentHeight > maxRowsHeight ? .automatic : .never)
 
             HStack(spacing: 8) {
                 if customizing {
