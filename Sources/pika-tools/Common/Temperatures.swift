@@ -6,8 +6,8 @@ final class Temperatures {
     static let shared = Temperatures()
 
     private(set) var state = ProcessInfo.processInfo.thermalState
-    #if !APPSTORE
     private(set) var readings: [ThermalPart: Double] = [:]
+    #if !APPSTORE
     @ObservationIgnored private let queue = DispatchQueue(label: "temperatures", qos: .utility)
     @ObservationIgnored private var smc: SMC?
     @ObservationIgnored private var sensors: [ThermalPart: [String]]?
@@ -57,7 +57,9 @@ final class Temperatures {
     private func refresh() {
         let current = ProcessInfo.processInfo.thermalState
         if state != current { state = current }
-        #if !APPSTORE
+        #if APPSTORE
+        if let celsius = Battery.temperature(), readings[.battery] != celsius { readings[.battery] = celsius }
+        #else
         queue.async { [self] in
             let values = read()
             DispatchQueue.main.async { self.readings.merge(values) { $1 } }
@@ -81,7 +83,6 @@ final class Temperatures {
     #endif
 }
 
-#if !APPSTORE
 enum ThermalPart: CaseIterable, Identifiable {
     case processor, graphics, memory, storage, battery, wifi
 
@@ -132,6 +133,7 @@ enum ThermalPart: CaseIterable, Identifiable {
     }
 }
 
+#if !APPSTORE
 enum ThermalSensors {
     static let valid = 1.0...125.0
 

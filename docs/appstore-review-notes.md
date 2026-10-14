@@ -8,7 +8,7 @@ pikapik is a free menu-bar app that fixes small everyday Mac annoyances. It is f
 
 3. Setup and main features
 No account or sample files are needed; any photo or video works for Finder tools. Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch. Only the Pet is on by default.
-- Keep Awake, Speed Test, Temperature (thermal state), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Brightness (an external monitor's slider dims its picture).
+- Keep Awake, Speed Test, Temperature (thermal state and battery temperature), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Brightness (an external monitor's slider dims its picture).
 - Background Tasks: what starts in the background; view only.
 - Animations, pointer acceleration, Left by deleted apps: buttons only open System Settings.
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (meant as "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space.
@@ -60,7 +60,7 @@ Settings > Background Tasks lists what starts in the background and which app ad
 Shown only on Macs with a battery. It reads the battery's condition, maximum capacity and cycle count, the power adapter, charging power and power use from IOKit: the power-source keys and the AppleSmartBattery entry in the I/O Registry. It launches no other program (no system_profiler) and changes nothing: Battery Settings… opens System Settings > Battery, and the row about Charge Limit and Optimized Battery Charging only explains the macOS setting. No permission.
 
 ### Temperature
-In the App Store version Temperature shows only the macOS thermal state (ProcessInfo.thermalState) and what it means for speed; it reads no sensors.
+In the App Store version Temperature shows the macOS thermal state (ProcessInfo.thermalState) and what it means for speed. On a Mac with a battery it also shows the battery temperature, read from the AppleSmartBattery entries in the I/O Registry, like the Battery page. It reads no other sensors.
 
 ### Speed Test
 Settings > Speed Test measures download and upload speed with https://speed.cloudflare.com through an ephemeral URLSession, so no cookies or cache are kept. The caption says "Takes about 15 seconds. The check uses speed.cloudflare.com." A check starts only from Check Speed, from Check on the Speed Test card in the menu-bar menu (hidden until the user adds it) or from a pikapik://speed-test link the user opens. Only the last result is kept, in the app's preferences on this Mac.
@@ -115,6 +115,6 @@ These features need to look inside other apps' windows, type into or control oth
 - Ports, the list of which program holds which port: the App Sandbox doesn't show it.
 - Turning background tasks off and on directly, from Background Tasks.
 - Keep the Dock on one display.
-- Temperature sensor readings.
+- Temperature readings of the processor, graphics, memory, storage and Wi-Fi.
 - Keep Awake with the lid closed, and Turn off the display now.
 - The pet finding the Dock icons through Accessibility.
