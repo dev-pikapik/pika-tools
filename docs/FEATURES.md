@@ -1517,7 +1517,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Both; App Store differs: Turn Off opens System Settings.
 
 **Test:**
-1. Launch after `tccutil reset All <bundle id>` → no permission prompt at launch except what this tab asks; the menu bar icon appears.
+1. Launch after `tccutil reset All <bundle id>` → no system prompt at launch, in both editions; the first launch opens General Settings, later launches open no window, and the tools that need a permission are grey. The menu bar icon appears. Already-granted permissions stay on.
 2. Turn on any Keyboard, Mouse or Windows tool (for example Scroll by lines) → the Accessibility prompt, then Input Monitoring if needed. The status shows “Needs Access” until granted, then “Active”.
 3. Revoke a permission in System Settings while the app runs → status returns to “Needs Access” without a crash; granting again restores the tool without relaunch.
 4. Click a grey tool → this tab opens on the row to allow.
@@ -1834,14 +1834,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Permissions needed
 
-**Does:** A button that appears when something needs a permission and opens the Permissions tab.
+**Does:** A button that appears only while a tool you switched on lacks a permission, and opens the Permissions tab. With nothing switched on it stays hidden, so a new install shows no warning.
 
-**How it works:** `MenuView.swift:153-165`.
+**How it works:** `MenuView.swift:153-165`; the same condition (`ToolRegistry.needsPermission`) decides whether the right-click menu on the menu bar icon has a Permissions needed item (`StatusMenu.swift:101`).
 
 **Edition:** Both.
 
 **Test:**
-1. With a tool on and its permission missing → the button shows; click it → Settings opens on Permissions.
+1. With a tool on and its permission missing (switch it on, then turn pikapik off in System Settings › Privacy & Security) → the button shows in the panel and in the right-click menu; click it → Settings opens on Permissions.
+2. With every tool off, or every switched-on tool allowed → no button and no menu item, also in the App Store build.
 
 ### Restart Finder
 
