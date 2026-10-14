@@ -269,9 +269,6 @@
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Finder에서 Return과 Enter는 선택한 파일을 열고, F2 또는 fn F2는 이름을 바꿉니다.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, 열기, 이름 변경, F2, 키보드";
 "In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Finder에서 %@는 선택한 파일을 잘라내고, ⌘V는 붙여넣는 폴더로 옮깁니다. ⌘C를 누르면 잘라내기가 취소됩니다.";
-"Move Items Here" = "여기로 항목 이동";
-"Then move them from the pikapik menu" = "그다음 pikapik 메뉴에서 이동";
-"In Finder, %@ cuts the selected files. Open the folder you want them in, click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. ⌘V pastes a copy, and ⌘C cancels the cut." = "Finder에서 %@는 선택한 파일을 잘라냅니다. 옮길 폴더를 열고 메뉴 막대의 pikapik 아이콘을 클릭한 다음 ‘여기로 항목 이동’을 선택하거나 ⌥⌘V를 누르세요. ⌘V는 사본을 붙여넣고, ⌘C를 누르면 잘라내기가 취소됩니다.";
 "cut, paste, move, files, folders, command X" = "잘라내기, 붙여넣기, 이동, 파일, 폴더, command X";
 "Check for Updates" = "업데이트 확인";
 "Shortcuts" = "단축어";

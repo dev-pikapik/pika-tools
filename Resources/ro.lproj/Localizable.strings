@@ -269,9 +269,6 @@
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "În Finder, Return și Enter deschid fișierele selectate, iar F2 sau fn F2 le redenumește.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, deschide, redenumește, F2, tastatură";
 "In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "În Finder, %@ decupează fișierele selectate, iar ⌘V le mută în folderul în care lipești. ⌘C anulează decuparea.";
-"Move Items Here" = "Mutați articolele aici";
-"Then move them from the pikapik menu" = "Apoi mută-le din meniul pikapik";
-"In Finder, %@ cuts the selected files. Open the folder you want them in, click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. ⌘V pastes a copy, and ⌘C cancels the cut." = "În Finder, %@ decupează fișierele selectate. Deschide folderul în care le vrei, fă clic pe pictograma pikapik din bara de meniu și alege „Mutați articolele aici” sau apasă ⌥⌘V. ⌘V lipește o copie, iar ⌘C anulează decuparea.";
 "cut, paste, move, files, folders, command X" = "decupare, lipire, mutare, fișiere, foldere, command X";
 "Check for Updates" = "Caută actualizări";
 "Shortcuts" = "Comenzi rapide";

@@ -269,9 +269,6 @@
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Im Finder öffnen Return und Enter die ausgewählten Dateien, und F2 oder fn F2 benennt sie um.";
 "return, enter, open, rename, F2, keyboard" = "Return, Enter, Eingabetaste, öffnen, umbenennen, F2, Tastatur";
 "In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Im Finder schneidet %@ die ausgewählten Dateien aus, und ⌘V verschiebt sie in den Ordner, in dem du einfügst. ⌘C bricht das Ausschneiden ab.";
-"Move Items Here" = "Objekte hierherbewegen";
-"Then move them from the pikapik menu" = "Dann im pikapik-Menü verschieben";
-"In Finder, %@ cuts the selected files. Open the folder you want them in, click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. ⌘V pastes a copy, and ⌘C cancels the cut." = "Im Finder schneidet %@ die ausgewählten Dateien aus. Öffne den Ordner, in den sie sollen, klicke auf das pikapik-Symbol in der Menüleiste und wähle „Objekte hierherbewegen“ oder drücke ⌥⌘V. ⌘V setzt eine Kopie ein, und ⌘C bricht das Ausschneiden ab.";
 "cut, paste, move, files, folders, command X" = "ausschneiden, einfügen, verschieben, Dateien, Ordner, Befehlstaste X";
 "Check for Updates" = "Nach Updates suchen";
 "Shortcuts" = "Kurzbefehle";
