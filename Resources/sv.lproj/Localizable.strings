@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "Välj ”Skalningseffekt” för en snabbare animering";
 "Turn off “Animate opening applications”" = "Stäng av ”Animera appar som startar”";
 "Turn on “Automatically hide and show the Dock”" = "Slå på ”Göm och visa Dock automatiskt”";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "När du raderar en app behåller macOS behörigheterna du gav den. Öppna en lista, markera den raderade appen och tryck på −. Finns det ingen knapp −, stäng av appens reglage.";
+"Other apps’ permissions" = "Andra appars behörigheter";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "Raderade appar behåller sina behörigheter: markera en i listan och tryck på − eller stäng av den.";
+"Only System Settings shows who has it" = "Bara Systeminställningar visar vem som har den";
+"No app can ask for it" = "Ingen app kan be om den";
+"Can ask for it: %lld" = "Kan be om den: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "De här apparna kan be om den. Bara Systeminställningar visar vem som har den.";
 "Mouse button hides the current app" = "Göm den aktuella appen med en musknapp";
 "Like ⌘H, the app stays open" = "Som ⌘H, appen förblir öppen";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "Tryck på den valda musknappen för att gömma appen i förgrunden, som med ⌘H.";

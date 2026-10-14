@@ -10,7 +10,7 @@ pikapik is a free menu-bar app that fixes small everyday Mac annoyances. It is f
 No account or sample files are needed; any photo or video works for Finder tools. Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch. Only the Pet is on by default.
 - Keep Awake, Speed Test, Temperature (thermal state and battery temperature), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Brightness (an external monitor's slider dims its picture).
 - Background Tasks: what starts in the background; view only.
-- Animations, pointer acceleration, Left by deleted apps: buttons only open System Settings.
+- Animations, pointer acceleration, Other apps’ permissions: buttons only open System Settings.
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (meant as "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space.
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app (like ⌘H).
 - Protect quitting and closing (Windows): ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
@@ -46,7 +46,7 @@ Until Accessibility and Input Monitoring are both on, Settings > Permissions is 
 In the App Store version the app changes no system setting itself; these buttons only open a System Settings page:
 - Turn off pointer acceleration (Settings > Mouse): Open goes to System Settings > Mouse, where the user clicks Advanced… and turns off Pointer acceleration. System Settings shows the Mouse page only while a mouse is connected.
 - Animations (Settings > Animations): each Open button goes to System Settings > Desktop & Dock for one setting (minimize effect, bouncing icons, hiding the Dock); the link at the bottom opens Accessibility > Display for Reduce Motion.
-- Left by deleted apps (Settings > Permissions): each Open button opens one list in System Settings > Privacy & Security, where the user removes an app that was deleted.
+- Other apps’ permissions (Settings > Permissions): each Open button opens one list in System Settings > Privacy & Security, where the user removes an app that was deleted. Next to it, the icons of apps in /Applications whose Info.plist has a usage description for that list (camera, microphone, Apple Events, folders, Bluetooth): the app reads those files only, says the apps can ask, and never claims they were allowed. Nothing leaves the Mac.
 - Battery Settings… (Settings > Battery) opens System Settings > Battery.
 - Turn On… and Turn Off… (Settings > Background Tasks) open Login Items in System Settings.
 

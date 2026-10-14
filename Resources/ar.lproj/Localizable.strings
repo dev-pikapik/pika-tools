@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "اختر «تأثير التحجيم» لحركة أسرع";
 "Turn off “Animate opening applications”" = "أوقف «تحريك التطبيقات التي يتم فتحها»";
 "Turn on “Automatically hide and show the Dock”" = "شغّل «إخفاء وإظهار شريط الأيقونات تلقائيًا»";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "عندما تحذف تطبيقًا، يحتفظ macOS بالأذونات التي منحتها له. افتح قائمة، وحدد التطبيق المحذوف واضغط على −. إذا لم يكن هناك زر −، فأوقف مفتاحه.";
+"Other apps’ permissions" = "أذونات التطبيقات الأخرى";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "التطبيقات المحذوفة تحتفظ بأذوناتها: حدد أحدها في القائمة واضغط على − أو أوقفه.";
+"Only System Settings shows who has it" = "إعدادات النظام وحدها تعرض من لديه الإذن";
+"No app can ask for it" = "لا يمكن لأي تطبيق طلبه";
+"Can ask for it: %lld" = "يمكن للتطبيقات طلبه: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "يمكن لهذه التطبيقات طلبه. إعدادات النظام وحدها تعرض من لديه الإذن.";
 "Mouse button hides the current app" = "إخفاء التطبيق الحالي بزر الماوس";
 "Like ⌘H, the app stays open" = "مثل ⌘H، يبقى التطبيق مفتوحًا";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "اضغط زر الماوس الذي اخترته لإخفاء التطبيق الظاهر في المقدمة، مثل ⌘H.";

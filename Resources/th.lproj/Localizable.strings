@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "เลือก “เอฟเฟ็กต์รูปแบบขนาด” เพื่อให้ภาพเคลื่อนไหวเร็วขึ้น";
 "Turn off “Animate opening applications”" = "ปิด “ทำให้แอปพลิเคชันที่เปิดใช้งานเคลื่อนไหว”";
 "Turn on “Automatically hide and show the Dock”" = "เปิด “ซ่อนและแสดง Dock โดยอัตโนมัติ”";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "เมื่อคุณลบแอป macOS จะเก็บสิทธิ์ที่คุณให้ไว้ เปิดรายการ เลือกแอปที่ลบไปแล้ว แล้วกด − ถ้าไม่มีปุ่ม − ให้ปิดสวิตช์ของแอปนั้น";
+"Other apps’ permissions" = "สิทธิ์ของแอปอื่น";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "แอปที่ลบแล้วยังเก็บสิทธิ์ไว้ เลือกแอปนั้นในรายการแล้วกด − หรือปิดสวิตช์";
+"Only System Settings shows who has it" = "ดูได้เฉพาะในการตั้งค่าระบบว่าใครมีสิทธิ์";
+"No app can ask for it" = "ไม่มีแอปที่ขอได้";
+"Can ask for it: %lld" = "แอปที่ขอได้: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "แอปเหล่านี้ขอสิทธิ์ได้ ดูได้เฉพาะในการตั้งค่าระบบว่าใครมีสิทธิ์";
 "Mouse button hides the current app" = "ซ่อนแอปปัจจุบันด้วยปุ่มเมาส์";
 "Like ⌘H, the app stays open" = "เหมือน ⌘H แอปยังเปิดอยู่";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "กดปุ่มเมาส์ที่เลือกไว้เพื่อซ่อนแอปที่อยู่ด้านหน้า เหมือนกด ⌘H";

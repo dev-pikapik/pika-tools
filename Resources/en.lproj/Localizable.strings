@@ -1126,7 +1126,12 @@
 "Choose “Scale Effect” for a quicker animation" = "Choose “Scale Effect” for a quicker animation";
 "Turn off “Animate opening applications”" = "Turn off “Animate opening applications”";
 "Turn on “Automatically hide and show the Dock”" = "Turn on “Automatically hide and show the Dock”";
-"When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off." = "When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off.";
+"Other apps’ permissions" = "Other apps’ permissions";
+"Deleted apps keep their permissions: select one in the list and press − or turn it off." = "Deleted apps keep their permissions: select one in the list and press − or turn it off.";
+"Only System Settings shows who has it" = "Only System Settings shows who has it";
+"No app can ask for it" = "No app can ask for it";
+"Can ask for it: %lld" = "Can ask for it: %lld";
+"These apps can ask for it. Only System Settings shows who has it." = "These apps can ask for it. Only System Settings shows who has it.";
 "Mouse button hides the current app" = "Mouse button hides the current app";
 "Like ⌘H, the app stays open" = "Like ⌘H, the app stays open";
 "Press the chosen mouse button to hide the app in front, like ⌘H." = "Press the chosen mouse button to hide the app in front, like ⌘H.";
