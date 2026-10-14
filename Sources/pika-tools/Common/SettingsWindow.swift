@@ -1077,8 +1077,10 @@ private struct AboutView: View {
     private static let github = Bundle.main.url(forResource: "github", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
     #if APPSTORE
     private static let source = "https://github.com/dev-pikapik/pika-tools/tree/main/Sources/pika-tools"
+    private static let edition = "Mac%20App%20Store"
     #else
     private static let source = "https://github.com/dev-pikapik/pika-tools"
+    private static let edition = "Website%20%2F%20GitHub%20%2F%20Homebrew"
     #endif
 
     private static var whatsNew: String {
@@ -1133,7 +1135,7 @@ private struct AboutView: View {
             Section {
                 link("GitHub", Self.source, symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
                 link(String(localized: "What’s New"), Self.whatsNew, symbol: "newspaper.fill", color: .blue)
-                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
+                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new?template=bug_report.yml&edition=\(Self.edition)&version=\(version)", symbol: "ladybug.fill", color: .red)
                 link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)
             } footer: {
                 VStack(spacing: 4) {
