@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Aygıt Denetimi ve Veri Erişimi";
 "Lets the app change clicks and keys" = "Uygulamanın tıklamaları ve tuşları değiştirmesini sağlar";
 "privacy, security, access, accessibility, device control, data access" = "gizlilik, güvenlik, erişim, erişilebilirlik, aygıt denetimi ve veri erişimi";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "Sistem Ayarları’nda “İleri Düzey…” düğmesini tıklayın ve “İmleç hızlandırma” seçeneğini kapatın. İmleç sonra yavaş gelirse “İzleme hızı” sürgüsünü kaydırın.";
 "Change animations in System Settings. Each button opens the right place." = "Animasyonlar Sistem Ayarları’nda değiştirilir. Her düğme doğru yeri açar.";
 "Choose “Scale Effect” for a quicker animation" = "Daha hızlı bir animasyon için “Ölçekleme Efektiyle” seçeneğini seçin";
 "Turn off “Animate opening applications”" = "“Uygulamaların açılışını canlandırmayla göster” seçeneğini kapatın";

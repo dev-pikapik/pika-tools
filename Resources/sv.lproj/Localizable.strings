@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Enhetskontroll och dataåtkomst";
 "Lets the app change clicks and keys" = "Låter appen ändra klick och tangenttryckningar";
 "privacy, security, access, accessibility, device control, data access" = "integritet, säkerhet, åtkomst, hjälpmedel, enhetskontroll och dataåtkomst";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "Klicka på ”Avancerat…” i Systeminställningar och stäng av ”Pekaracceleration”. Känns pekaren sedan långsam drar du i reglaget ”Acceleration”.";
 "Change animations in System Settings. Each button opens the right place." = "Animationer ändrar du i Systeminställningar. Varje knapp öppnar rätt ställe.";
 "Choose “Scale Effect” for a quicker animation" = "Välj ”Skalningseffekt” för en snabbare animering";
 "Turn off “Animate opening applications”" = "Stäng av ”Animera appar som startar”";

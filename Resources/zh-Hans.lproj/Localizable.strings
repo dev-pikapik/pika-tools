@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "设备控制和数据访问";
 "Lets the app change clicks and keys" = "用于更改点按和按键";
 "privacy, security, access, accessibility, device control, data access" = "隐私, 安全性, 访问, 辅助功能, 设备控制和数据访问";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "在“系统设置”中，点按“高级…”，然后关闭“指针加速”。如果之后指针变慢，请拖移“追踪速度”滑块。";
 "Change animations in System Settings. Each button opens the right place." = "动画在“系统设置”中更改。每个按钮都会打开对应的位置。";
 "Choose “Scale Effect” for a quicker animation" = "选择“缩放效果”，动画会更快";
 "Turn off “Animate opening applications”" = "关闭“弹跳打开应用程序”";

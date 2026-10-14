@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Управление устройством и доступ к данным";
 "Lets the app change clicks and keys" = "Чтобы менять клики и клавиши";
 "privacy, security, access, accessibility, device control, data access" = "конфиденциальность, безопасность, доступ, универсальный доступ, управление устройством и доступ к данным";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "В Системных настройках нажмите «Дополнительно…» и выключите «Ускорение указателя». Если потом указатель покажется медленным, передвиньте бегунок «Скорость перемещения».";
 "Change animations in System Settings. Each button opens the right place." = "Анимации меняются в Системных настройках. Каждая кнопка открывает нужное место.";
 "Choose “Scale Effect” for a quicker animation" = "Выберите «Простое уменьшение», чтобы анимация была быстрее";
 "Turn off “Animate opening applications”" = "Выключите «Анимировать открывающиеся программы»";

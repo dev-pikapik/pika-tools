@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Керування пристроями й доступ до даних";
 "Lets the app change clicks and keys" = "Щоб змінювати кліки й клавіші";
 "privacy, security, access, accessibility, device control, data access" = "конфіденційність, безпека, доступ, доступність, керування пристроями й доступ до даних";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "У Системних параметрах натисніть «Експертні…» і вимкніть «Прискорення вказівника». Якщо потім вказівник здасться повільним, пересуньте повзунок «Швидкість пересування».";
 "Change animations in System Settings. Each button opens the right place." = "Анімації змінюються в Системних параметрах. Кожна кнопка відкриває потрібне місце.";
 "Choose “Scale Effect” for a quicker animation" = "Виберіть «пропорційне зменшення», щоб анімація була швидшою";
 "Turn off “Animate opening applications”" = "Вимкніть «Анімувати програми, що запускаються»";

@@ -271,9 +271,7 @@ struct AnimationsPage: View {
                 FlagRow(tool: tool, setting: .finder)
             }
             Section {
-                Button(String(localized: "Even calmer: Reduce Motion in Accessibility")) { NSWorkspace.shared.open(Self.motion) }
-                    .buttonStyle(.link)
-                    .settingAnchor(String(localized: "Even calmer: Reduce Motion in Accessibility"))
+                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: Self.motion, guide: .reduceMotion)
             }
             RestoreDefaultsSection(
                 message: tool.own.isEmpty

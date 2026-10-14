@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Apparaatbeheer en gegevenstoegang";
 "Lets the app change clicks and keys" = "Laat de app klikken en toetsen wijzigen";
 "privacy, security, access, accessibility, device control, data access" = "privacy, beveiliging, toegang, toegankelijkheid, apparaatbeheer en gegevenstoegang";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "Klik in Systeeminstellingen op ‘Geavanceerd…’ en zet ‘Aanwijzerversnelling’ uit. Voelt de aanwijzer daarna traag, versleep dan de schuifknop ‘Snelheid aanwijzer’.";
 "Change animations in System Settings. Each button opens the right place." = "Animaties wijzig je in Systeeminstellingen. Elke knop opent de juiste plek.";
 "Choose “Scale Effect” for a quicker animation" = "Kies ‘Glijdende schaal’ voor een snellere animatie";
 "Turn off “Animate opening applications”" = "Zet ‘Bewegend symbool bij openen apps’ uit";

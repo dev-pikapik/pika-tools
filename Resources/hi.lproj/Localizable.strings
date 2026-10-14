@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "डिवाइस नियंत्रण और डेटा ऐक्सेस";
 "Lets the app change clicks and keys" = "ऐप को क्लिक और कुंजियाँ बदलने देता है";
 "privacy, security, access, accessibility, device control, data access" = "गोपनीयता, सुरक्षा, ऐक्सेस, अनुमति, ऐक्सेसिबिलिटी, डिवाइस नियंत्रण और डेटा ऐक्सेस";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "सिस्टम सेटिंग्ज़ में “एडवांस…” पर क्लिक करें और “पॉइंटर ऐक्सलरेशन” बंद करें। अगर इसके बाद पॉइंटर धीमा लगे, तो “ट्रैकिंग गति” स्लाइडर खिसकाएँ।";
 "Change animations in System Settings. Each button opens the right place." = "एनिमेशन सिस्टम सेटिंग्ज़ में बदले जाते हैं। हर बटन सही जगह खोलता है।";
 "Choose “Scale Effect” for a quicker animation" = "तेज़ एनिमेशन के लिए “स्केल प्रभाव” चुनें";
 "Turn off “Animate opening applications”" = "“ऐप्लिकेशन खोलते समय ऐनिमेट करें” बंद करें";

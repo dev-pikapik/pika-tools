@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Control al dispozitivului și acces la date";
 "Lets the app change clicks and keys" = "Permite aplicației să modifice clicurile și tastele";
 "privacy, security, access, accessibility, device control, data access" = "confidențialitate, securitate, acces, accesibilitate, control al dispozitivului și acces la date";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "În Configurări sistem, apăsați pe „Avansat…” și dezactivați „Accelerare cursor”. Dacă apoi cursorul pare lent, mutați glisorul „Viteză urmărire”.";
 "Change animations in System Settings. Each button opens the right place." = "Animațiile se schimbă în Configurări sistem. Fiecare buton deschide locul potrivit.";
 "Choose “Scale Effect” for a quicker animation" = "Alegeți „Efect de redimensionare” pentru o animație mai rapidă";
 "Turn off “Animate opening applications”" = "Dezactivați „Animare aplicații la deschidere”";
