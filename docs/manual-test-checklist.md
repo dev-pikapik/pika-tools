@@ -7,7 +7,7 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - Turn on Window zoom (or any Keyboard/Mouse/Windows tool). Expected: Accessibility prompt, then Input Monitoring if needed. Status shows "Needs Access" until granted, then "Active".
 - Revoke a permission in System Settings while the app runs. Expected: status returns to "Needs Access" without a crash; granting it again restores the tool without relaunch.
 - A tool that needs a missing permission is half-grey and does nothing when toggled; clicking it opens the Permissions page on the row to allow. Turn Off on Accessibility and Input Monitoring opens the right System Settings list (this build cannot revoke them itself). The Folders row: Allow shows the home folder panel; Turn Off forgets the saved folders and the next file action asks again.
-- Settings has no Fans, Animations, Uninstaller, Key repeat, Pointer, Updates, iCloud sync, "Keep running after Quit" or "Turn off the display now" rows. Search for "fan", "pointer" and "uninstall" finds nothing.
+- Settings has no Fans, Animations, Uninstaller, Key repeat, Pointer, Updates, iCloud sync or "Keep running after Quit" rows. Search for "fan", "pointer" and "uninstall" finds nothing.
 
 ## Settings
 - Change Appearance and Language, press Restart in Settings. Expected: app relaunches with Settings open, choices kept.
@@ -55,7 +55,8 @@ Build: `APPSTORE=1 ./scripts/build.sh`, then run `build/pikapik.app`. Test on a 
 - App Store build. Expected: each slider only dims the picture and its subtitle reads "Dims the picture."; there is no Dim the picture instead switch, and the monitor's own brightness never changes.
 
 ## Keep Awake
-- Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed or display-off rows.
+- Start with a duration, check `pmset -g assertions`. Expected: assertion present, gone after stop or quit. No lid-closed rows.
+- With Keep Awake on, click Turn off the display now in the menu, then Turn Off in Settings › Keep Awake, once with Display set to Turns off as usual and once with Always on. Expected: within a second every display goes dark, no prompt appears, and `pmset -g assertions` still lists "pikapik Keep Awake"; moving the mouse brings the displays back.
 
 ## Battery
 - On a Mac with a battery, open Settings > Battery. Expected: charge, status and cycle count match `pmset -g batt` and System Settings > Battery; Maximum Capacity is within two points of System Settings > Battery > Battery Health, and the Condition row appears only when the battery needs service; Activity Monitor shows no system_profiler started by pikapik. Plugged in: Power Adapter shows its name and watts, and Charging Power shows watts while charging. Unplugged: Power Use shows watts and the adapter row is gone.

@@ -227,7 +227,6 @@ struct MenuView: View {
             }
             .pickerStyle(.radioGroup)
             .labelsHidden()
-            #if !APPSTORE
             Button {
                 NSApp.keyWindow?.close()
                 KeepAwake.turnOffDisplay()
@@ -240,7 +239,6 @@ struct MenuView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            #endif
         }
         .padding(.leading, 46)
         .padding(.trailing, 8)

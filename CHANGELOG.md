@@ -5,6 +5,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.49.1] - Unreleased
 
 ### Added
+- Mac App Store version, Keep Awake: **Turn off the display now** is here too, in the menu and in Settings › Keep Awake. The display goes dark at once while the Mac keeps working; move the mouse or press a key to bring it back.
 - Mac App Store version: where macOS doesn’t let the app change a setting itself, a short animation now shows where to click in System Settings: Animations, Hide desktop icons, pointer acceleration, Permissions and Open at Login. The labels in the animation are taken from your Mac, in its language. Reduce Motion in both versions also gets the animation, and when Reduce Motion is on you see one still frame with the click marked.
 - The animation that shows where to click in System Settings now also covers keyboard shortcuts you change in System Settings › Keyboard and turning on the Finder extensions in Login Items & Extensions. The Reduce Motion button now opens the Motion page itself, not Display.
 - Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
