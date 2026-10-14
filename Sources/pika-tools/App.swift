@@ -138,22 +138,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Background.shared.quitting = true
         }
 
-        #if APPSTORE
         if CommandLine.arguments.contains("--permissions") {
             SettingsWindow.show(.permissions)
         } else if firstLaunch || CommandLine.arguments.contains("--settings") {
             SettingsWindow.show()
         }
-        #else
-        if CommandLine.arguments.contains("--permissions") {
-            SettingsWindow.show(.permissions)
-        } else if !permissions.allGranted {
-            permissions.request()
-            SettingsWindow.show(.permissions)
-        } else if CommandLine.arguments.contains("--settings") {
-            SettingsWindow.show()
-        }
-        #endif
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

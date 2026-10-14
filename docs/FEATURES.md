@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -178,7 +178,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - About › Restore Defaults… — Website only: turns “Check for updates automatically” back on (`SettingsWindow.swift:1153`).
 
-**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are. On About (Website) it only turns “Check for updates automatically” back on.
+**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are; in the App Store version it turns the Hide desktop icons curtain off. On About (Website) it only turns “Check for updates automatically” back on.
 
 **Edition:** Both; App Store differs: the text of the alert and the About button (Website only).
 
@@ -1002,20 +1002,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Clears the desktop of files and folders before a call or a screen recording, and brings them back to the same places.
 
-**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:139`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: an animated guide (`SettingsGuide`: Show items › On Desktop turned off) above an Open button to System Settings › Desktop & Dock (`DesktopIconsLink`, `DesktopTools.swift:170`, guide at :182).
+**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:61`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: the sandbox can’t change that setting, so the switch puts a curtain over the icons: one borderless window per screen one level above the desktop icons (`CGWindowLevelForKey(.desktopIconWindow)+1`, ordered back so the pet stays on top), `ignoresMouseEvents` so clicks reach the desktop, showing the wallpaper from `NSWorkspace.desktopImageURL` decoded at screen size with the Fill/Fit/Stretch/Center option (`Sources/pika-tools/Tools/Windows/DesktopCurtain.swift`). A moving (Aerial) wallpaper reports `DefaultDesktop.heic`, so it gets the wallpaper’s fill color or the window background instead; no Screen Recording. Rebuilt on screen and Space changes, when another app becomes active (a new wallpaper) and on wake; gone when turned off or on quit. Below it in Settings: the animated guide (Show items › On Desktop turned off) and an Open button to System Settings › Desktop & Dock, subtitled Turn off “On Desktop” (`DesktopIconsSettings`, `DesktopTools.swift:181`, `SystemSettingsRow`).
 
-**Edition:** Both; App Store differs: guide and Open button to System Settings instead of the switch.
+**Edition:** Both; App Store differs: the switch covers the icons with the wallpaper instead of hiding them, and a guide with an Open button to System Settings sits below it.
 
 **Test:**
 1. (Website) Write down `defaults read com.apple.WindowManager StandardHideDesktopIcons`. Turn on Hide desktop icons → the icons leave the desktop without Finder restarting, the files stay in the Desktop folder, and System Settings › Desktop & Dock › Show items › On Desktop turns off. Turn it off → the icons come back to the same places.
 2. Change On Desktop in System Settings and open the menu → the switch follows. Repeat with Stage Manager on.
-3. (App Store) Settings › Finder › Hide desktop icons shows the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock. In the menu the same row closes the menu and opens the same page (no animation there).
+3. (App Store) Turn on Hide desktop icons with a picture wallpaper → the icons are covered by the same picture on every display, the pet stays on top; click, double-click and right-click where an icon was → the desktop gets them. Switch to a Space with another wallpaper, pick a new wallpaper, connect or remove a display → the curtain follows. Pick a moving wallpaper → a plain color covers the icons. Turn it off or quit pikapik → the icons are back and no window is left.
+4. (App Store) Below the switch in Settings: the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock.
 
 ### Show hidden files
 
 **Does:** Shows the files and folders macOS hides, dimmed, in Finder and on the desktop.
 
-**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:157`, `HiddenFilesTool` :63-168). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:230-237`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
+**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:135`, `HiddenFilesTool` :72-141). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:206-212`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
 
 **Edition:** Both; App Store differs: a hint with the keys instead of the switch.
 
@@ -1512,7 +1513,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Both; App Store differs: Turn Off opens System Settings.
 
 **Test:**
-1. Launch after `tccutil reset All <bundle id>` → no permission prompt at launch except what this tab asks; the menu bar icon appears.
+1. Launch after `tccutil reset All <bundle id>` → no system prompt at launch, in both editions; the first launch opens General Settings, later launches open no window, and the tools that need a permission are grey. The menu bar icon appears. Already-granted permissions stay on.
 2. Turn on any Keyboard, Mouse or Windows tool (for example Scroll by lines) → the Accessibility prompt, then Input Monitoring if needed. The status shows “Needs Access” until granted, then “Active”.
 3. Revoke a permission in System Settings while the app runs → status returns to “Needs Access” without a crash; granting again restores the tool without relaunch.
 4. Click a grey tool → this tab opens on the row to allow.
