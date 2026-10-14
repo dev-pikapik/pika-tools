@@ -4,13 +4,20 @@ extension Archive {
     enum Route: Equatable {
         case sevenZip, ditto
         case bsdtar(String)
+        #if APPSTORE
+        case stream(URL)
+        #endif
     }
 
     struct Listing {
         var info = Info()
         var files = 0
         var inner: String?
+        #if APPSTORE
+        var route = Route.bsdtar("")
+        #else
         var route = Route.sevenZip
+        #endif
     }
 
     struct Diagnosis {
@@ -135,11 +142,18 @@ extension Archive {
         if let missing = found.missing { throw ArchiveError.missingPart(missing) }
         let first = firstPart(url)
         guard FileManager.default.fileExists(atPath: first.path) else { throw ArchiveError.failed("not found") }
+        #if APPSTORE
+        guard found.urls.count == 1 else { throw ArchiveError.unsupported }
+        #endif
         var listing: Listing
         if let zip = zipListing(first) {
             listing = zip
         } else {
+            #if APPSTORE
+            listing = try streamListing(first) ?? bsdtarListing(first, password: password, job: job)
+            #else
             listing = try sevenZipListing(first, password: password, job: job, deep: deep)
+            #endif
         }
         listing.info.packedSize = found.urls.reduce(0) { $0 + Int64((try? $1.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0) }
         // gzip keeps the size modulo 2^32 and deflate cannot beat 1032:1, so anything above that is garbage
@@ -167,9 +181,13 @@ extension Archive {
         } else if simple, directory.entries.contains(where: { $0.name.hasPrefix("__MACOSX/") }) {
             tally.listing.route = .ditto
         }
+        #if APPSTORE
+        if tally.listing.route == .bsdtar(""), let page = directory.codePage { tally.listing.route = .bsdtar(page) }
+        #endif
         return tally.listing
     }
 
+    #if !APPSTORE
     private static func sevenZipListing(_ first: URL, password: String?, job: Job, deep: Bool) throws -> Listing {
         let tool = try sevenZip()
         let secret = credentials(password)
@@ -207,4 +225,111 @@ extension Archive {
         }
         return listing
     }
+    #endif
+
+    #if APPSTORE
+    // bsdtar prints "x name" for each file and "Enter passphrase:" for each password it asks for, and keeps asking after a wrong one
+    static func toolLines(_ messages: Messages, _ prompts: Messages, tick: @escaping () -> Void) -> (String) -> Void {
+        { line in
+            let prompt = line.hasSuffix("passphrase:")
+            if prompt { prompts.add(line) }
+            if ["x ", "a ", "copying file "].contains(where: line.hasPrefix), !line.contains(": ") {
+                tick()
+            } else if !prompt, !line.hasPrefix("tar: Error exit delayed") {
+                messages.add(line)
+            }
+        }
+    }
+
+    static func stopAtWrongPassword(_ prompts: Messages, password: String?, then watch: (() -> ArchiveError?)? = nil) -> () -> ArchiveError? {
+        { prompts.lines.count > (password == nil ? 0 : 1) ? (password == nil ? .needsPassword : .wrongPassword) : watch?() }
+    }
+
+    final class Rows: @unchecked Sendable {
+        private(set) var tally = Tally()
+
+        func feed(_ line: String) {
+            guard let mode = line.first, let date = line.range(of: #"\s\d+\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d+\s+(?:\d\d:\d\d|\d{4})\s"#, options: .regularExpression) else { return }
+            var name = String(line[date.upperBound...])
+            if mode == "l" || mode == "h", let cut = name.range(of: mode == "l" ? " -> " : " link to ") { name = String(name[..<cut.lowerBound]) }
+            tally.add(name, folder: mode == "d", size: line[date].split(separator: " ").first.flatMap { Int64($0) } ?? 0, encrypted: false)
+        }
+    }
+
+    private static func bsdtarListing(_ first: URL, password: String?, job: Job) throws -> Listing {
+        let rows = Rows()
+        let messages = Messages()
+        let prompts = Messages()
+        let stage = Stage(bsdtar, ["-t", "-v", "-f", first.path], input: credentials(password).input)
+        let statuses = try run([stage], job: job, listing: true, output: rows.feed, errors: toolLines(messages, prompts) {}, watch: stopAtWrongPassword(prompts, password: password))
+        var listing = rows.tally.listing
+        let diagnosis = Diagnosis(tool: messages.lines)
+        if diagnosis.truncated || (listing.info.entries > 0 && statuses != [0]) { listing.info.isTruncated = true }
+        let empty = (try? first.resourceValues(forKeys: [.fileSizeKey]).fileSize) == 0
+        if listing.info.entries == 0, statuses != [0] || empty {
+            if isCutSevenZip(first) {
+                listing.info.isTruncated = true
+                return listing
+            }
+            throw diagnosis.notArchive || empty ? ArchiveError.unsupported : ArchiveError.failed(messages.lines.last ?? "listing failed")
+        }
+        return listing
+    }
+
+    // the 7z start header says where the file list ends: a shorter file was cut off
+    private static func isCutSevenZip(_ url: URL) -> Bool {
+        guard let file = try? FileHandle(forReadingFrom: url), let head = try? file.read(upToCount: 32), head.count == 32,
+              head.starts(with: [0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C]), let end = try? file.seekToEnd() else { return false }
+        func number(_ at: Int) -> UInt64 { head[at..<(at + 8)].enumerated().reduce(0) { $0 | UInt64($1.element) << UInt64(8 * $1.offset) } }
+        return end < 32 &+ number(12) &+ number(20)
+    }
+
+    // a single file squeezed by gzip or bzip2 is not a tar: bsdtar would take its text for a list of files
+    private static func streamListing(_ first: URL) throws -> Listing? {
+        let name = streamName(first)
+        guard !name.lowercased().hasSuffix(".tar"), !name.lowercased().hasSuffix(".cpio"), let file = try? FileHandle(forReadingFrom: first), let magic = try? file.read(upToCount: 3) else { return nil }
+        var size: Int64 = 0
+        let tool: String
+        switch streamExtension(first) {
+        case "gz" where magic.starts(with: [0x1F, 0x8B]):
+            tool = "/usr/bin/gzip"
+            // gzip ends with the size of the original, modulo 2^32
+            if let end = try? file.seekToEnd(), end > 4, (try? file.seek(toOffset: end - 4)) != nil, let tail = try? file.read(upToCount: 4), tail.count == 4 {
+                size = tail.enumerated().reduce(Int64(0)) { $0 | Int64($1.element) << Int64(8 * $1.offset) }
+            }
+        case "bz2" where magic.starts(with: Array("BZh".utf8)):
+            tool = "/usr/bin/bzip2"
+        case "xz", "lzma", "zst", "z":
+            throw ArchiveError.unsupported
+        default:
+            return nil
+        }
+        var tally = Tally()
+        tally.add(name, folder: false, size: size, encrypted: false)
+        tally.listing.route = .stream(URL(fileURLWithPath: tool))
+        return tally.listing
+    }
+    #endif
 }
+
+#if APPSTORE
+extension Archive.Diagnosis {
+    init(tool messages: [String]) {
+        for (original, line) in messages.map({ ($0, $0.lowercased()) }) {
+            if original.hasPrefix("x "), let colon = original.range(of: ": "),
+               ["bad crc", "decompression failed", "truncated", "truncating", "library error", "unknown error", "undefined error"].contains(where: line.contains) {
+                bad.append(String(original[original.index(original.startIndex, offsetBy: 2)..<colon.lowerBound]))
+            }
+            if line.contains("incorrect passphrase") {
+                password = true
+            } else if ["truncated", "unexpected end of file", "ends unexpectedly"].contains(where: line.contains) {
+                truncated = true
+            } else if line.contains("no space left") || line.hasSuffix("write error") {
+                space = true
+            } else if ["unrecognized archive format", "unsupported", "not supported", "not in gzip format"].contains(where: line.contains) {
+                notArchive = true
+            }
+        }
+    }
+}
+#endif
