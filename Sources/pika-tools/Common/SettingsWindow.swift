@@ -415,9 +415,15 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
+                    Section { rows([.background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
+                    Section { rows([.uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {

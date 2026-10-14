@@ -41,13 +41,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Switches between tabs, shows or hides the sidebar, moves back and forward through visited tabs.
 
-**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :417-422, detail routing :516-562). The sidebar has two sections: tools, then Permissions and About.
+**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :417-429, detail routing :516-562). The sidebar has five groups with a gap between them and no titles: General; the Mac (Battery to Ports); fixes (Sound to Animations); apps (Uninstaller to Pet); then Permissions and About.
 
 **Options:**
 - Sidebar — button that hides or shows the sidebar.
 - Back / Forward — buttons, keys `[` and `]`.
 
-**Nuances:** The Battery row appears only on Macs with a battery. The Sound row appears only on macOS 14.2 or later. The Pet row shows a badge with the number of new awards. Website sidebar: General, Battery, Keep Awake, Brightness, Fans, Temperature, Speed Test, Ports, Sound, Keyboard, Mouse, Windows, Dock, Finder, Animations, Uninstaller, Background Tasks, Games, Pet, then Permissions, About. App Store: the same without Fans, Ports, Dock and Uninstaller.
+**Nuances:** The Battery row appears only on Macs with a battery. The Sound row appears only on macOS 14.2 or later. The Pet row shows a badge with the number of new awards. Website sidebar: General | Battery, Keep Awake, Brightness, Fans, Temperature, Speed Test, Ports | Sound, Keyboard, Mouse, Windows, Dock, Finder, Animations | Uninstaller, Background Tasks, Games, Pet | Permissions, About. App Store: the same without Fans, Ports, Dock and Uninstaller.
 
 **Edition:** Both; App Store differs: Fans, Ports, Dock and Uninstaller tabs are hidden.
 

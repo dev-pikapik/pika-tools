@@ -37,6 +37,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - The top of Sound, Keyboard, Mouse, Dock, Finder and About now says what you get there, for example “Scrolling, side buttons and pointer speed” instead of “Fixes for the mouse”.
 - “Keep running after Quit” is now “Stay in the background after Quit”, with the line “Shortcuts and Keep Awake keep working. Hold Option to quit completely” under it.
 - Keyboard: the wrong-layout row is called “Retype words you typed in the wrong language”. Mouse: the hint under the speed graph says “The dot marks your Mac’s normal speed”. Games: “Not a Game” is now a quiet “Ignore” button. Speed Test: before the first test the page says “Press Check Speed to find out”.
+- The sidebar in Settings now has gaps between its groups: General, then the Mac (Battery to Ports), then fixes (Sound to Animations), then apps (Uninstaller to Pet), then Permissions and About. The order of the tabs is the same as before.
 
 ## [1.49.0] - 2026-10-13
 
