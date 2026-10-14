@@ -122,7 +122,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Keep running after Quit"), String(localized: "Repeat a held key"),
             String(localized: "Tracking speed"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
-            String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
+            String(localized: "Fan control"), String(localized: "Full Disk Access"),
             String(localized: "Open archives with this app"),
             String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
