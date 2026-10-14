@@ -10,6 +10,7 @@ MISSING=$(grep -LF "id=\"v$VERSION\"" docs/whats-new/README*.md || true)
 grep -qxF "## [$VERSION] - Unreleased" CHANGELOG.md || { echo "Add “## [$VERSION] - Unreleased” to CHANGELOG.md first." >&2; exit 1; }
 FORM=".github/ISSUE_TEMPLATE/bug_report.yml"
 grep -qxF "        - Latest version" "$FORM" || { echo "“- Latest version” is missing in $FORM." >&2; exit 1; }
+./scripts/feature-form.sh --check
 
 PLIST="Sources/pika-tools/Info.plist"
 BUILD=$(( $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST") + 1 ))

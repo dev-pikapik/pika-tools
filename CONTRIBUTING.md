@@ -206,6 +206,7 @@ swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swif
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
 2. Add one line to `ToolRegistry.tools` in `Tools/Tool.swift`.
+3. Describe it in [`docs/FEATURES.md`](docs/FEATURES.md) under its Settings tab: what it does, how it works, its limits, which edition has it and how to test it by hand. Then run `./scripts/feature-form.sh` so the bug and feature forms list it. CI and `release.sh` fail while the forms and the catalog disagree. A changed tool gets the same update.
 
 ### Strings
 
