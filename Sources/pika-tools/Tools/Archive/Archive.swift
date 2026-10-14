@@ -38,7 +38,11 @@ enum Archive {
             }
         }
 
+        #if APPSTORE
+        var supportsPassword: Bool { self == .zip }
+        #else
         var supportsPassword: Bool { self == .zip || self == .sevenZip }
+        #endif
     }
 
     final class Job: @unchecked Sendable {

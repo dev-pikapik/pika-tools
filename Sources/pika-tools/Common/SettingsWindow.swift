@@ -123,7 +123,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Tracking speed"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Fan control"), String(localized: "Full Disk Access"),
-            String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
+            String(localized: "Open archives with this app"),
             String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
             String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
@@ -133,6 +133,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Columns in Finder"), String(localized: "Finder animations"),
             String(localized: "Dim the picture instead"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
+            + (ToolRegistry.shared.tools.contains { $0 is ArchiveTool } ? [] : [String(localized: "Archives in Finder")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .animations, title: String(localized: "Hide the Dock automatically"), synonyms: "autohide, hide Dock, delay, wait"),
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
