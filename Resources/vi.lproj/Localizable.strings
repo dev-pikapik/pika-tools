@@ -269,9 +269,6 @@
 "In Finder, Return and Enter open the selected files, and F2 or fn F2 renames them." = "Trong Finder, Return và Enter mở các tệp đã chọn, còn F2 hoặc fn F2 đổi tên chúng.";
 "return, enter, open, rename, F2, keyboard" = "return, enter, mở, đổi tên, F2, bàn phím";
 "In Finder, %@ cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut." = "Trong Finder, %@ cắt các tệp đã chọn và ⌘V chuyển chúng vào thư mục bạn dán. ⌘C hủy thao tác cắt.";
-"Move Items Here" = "Di chuyển mục tới đây";
-"Then move them from the pikapik menu" = "Sau đó di chuyển từ menu pikapik";
-"In Finder, %@ cuts the selected files. Open the folder you want them in, click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. ⌘V pastes a copy, and ⌘C cancels the cut." = "Trong Finder, %@ cắt các tệp đã chọn. Mở thư mục bạn muốn chuyển tới, bấm biểu tượng pikapik trên thanh menu rồi chọn “Di chuyển mục tới đây”, hoặc nhấn ⌥⌘V. ⌘V dán một bản sao, còn ⌘C hủy thao tác cắt.";
 "cut, paste, move, files, folders, command X" = "cắt, dán, di chuyển, tệp, thư mục, command X";
 "Check for Updates" = "Kiểm tra cập nhật";
 "Shortcuts" = "Phím tắt";

@@ -3,18 +3,11 @@ import ApplicationServices
 import Carbon.HIToolbox
 import SwiftUI
 
-#if APPSTORE
-private let appStore = true
-#else
-private let appStore = false
-#endif
-
 @Observable
 final class FinderKeys {
     static let shared = FinderKeys()
 
     private(set) var isActive = false
-    private(set) var canMove = false
 
     @ObservationIgnored var opens = false
     @ObservationIgnored var cuts = false
@@ -27,53 +20,13 @@ final class FinderKeys {
 
     private static let tag: Int64 = 0x70696B61
 
-    #if APPSTORE
-    @ObservationIgnored private var lastApp = NSWorkspace.shared.frontmostApplication?.bundleIdentifier
-
-    private init() {
-        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification, object: nil, queue: .main) { note in
-            guard let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication, app.processIdentifier != getpid() else { return }
-            FinderKeys.shared.lastApp = app.bundleIdentifier
-        }
-    }
-    #else
     private init() {}
-    #endif
 
     func refresh() {
         stop()
         if !cuts { cancelCut() }
         if opens || cuts || deletes, AXIsProcessTrusted() { start() }
     }
-
-    #if APPSTORE
-    func checkCut() {
-        if let cutCount, cutCount != NSPasteboard.general.changeCount || !AXIsProcessTrusted() { cancelCut() }
-        let front = NSWorkspace.shared.frontmostApplication
-        canMove = cutCount != nil && (front?.processIdentifier == getpid() ? lastApp : front?.bundleIdentifier) == "com.apple.finder"
-    }
-
-    func moveHere() {
-        checkCut()
-        guard canMove else { return }
-        NSApp.keyWindow?.close()
-        NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.activate()
-        paste(attempts: 10)
-    }
-
-    private func paste(attempts: Int) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [self] in
-            guard NSApp.keyWindow == nil, cutCount != nil else { return }
-            guard NSWorkspace.shared.frontmostApplication?.bundleIdentifier == "com.apple.finder" else {
-                if attempts > 1 { paste(attempts: attempts - 1) }
-                return
-            }
-            cancelCut()
-            Self.send(kVK_ANSI_V, [.maskCommand, .maskAlternate], down: true, nil)
-            Self.send(kVK_ANSI_V, [.maskCommand, .maskAlternate], down: false, nil)
-        }
-    }
-    #endif
 
     private func start() {
         guard let tap = CGEvent.tapCreate(
@@ -128,11 +81,7 @@ final class FinderKeys {
 
         let opening = opens && flags.isEmpty && [kVK_Return, kVK_ANSI_KeypadEnter, kVK_F2].contains(key)
         let cutting = cuts && SystemShortcuts.shared.finderCut == Shortcut(key: UInt16(key), modifiers: event.flags.rawValue)
-        #if APPSTORE
-        let moving = false
-        #else
         let moving = cuts && flags == .maskCommand && key == kVK_ANSI_V && cutCount != nil
-        #endif
         let deleting = deletes && flags.isEmpty && [kVK_Delete, kVK_ForwardDelete].contains(key)
         guard opening || cutting || moving || deleting,
               let finder = NSWorkspace.shared.frontmostApplication,
@@ -176,7 +125,6 @@ final class FinderKeys {
     private func cancelCut() {
         cutCount = nil
         generation += 1
-        canMove = false
     }
 
     private func watchCopy(since count: Int, attempts: Int) {
@@ -187,9 +135,6 @@ final class FinderKeys {
             if now != count {
                 if NSPasteboard.general.types?.contains(.fileURL) == true {
                     cutCount = now
-                    #if APPSTORE
-                    checkCut()
-                    #endif
                 } else {
                     Self.send(kVK_ANSI_X, .maskCommand, down: true, nil)
                     Self.send(kVK_ANSI_X, .maskCommand, down: false, nil)
@@ -381,48 +326,6 @@ struct FinderCutArt: View {
     private var cut: String { SystemShortcuts.shared.finderCutText }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    #if APPSTORE
-    private static let durations = [0.9, 0.6, 0.5, 0.6, 1.6]
-    private static let row = CGPoint(x: 196, y: 52)
-
-    var body: some View {
-        IllustrationRow(loop: Self.durations) { tick in
-            let step = reduceMotion ? 3 : tick % Self.durations.count
-            let moved = on && step == 4
-            Stage {
-                ArtFinder {
-                    if !moved { ArtFile(selected: true).opacity(on && (1...3).contains(step) ? 0.4 : 1) }
-                    ArtFile()
-                }
-                .position(x: 70, y: 48)
-                ArtFinder {
-                    ArtFile()
-                    if moved { ArtFile(selected: true).transition(.scale(scale: 0.6).combined(with: .opacity)) }
-                }
-                .position(x: 230, y: 48)
-                if (2...3).contains(step) {
-                    ArtMenu(width: 160) {
-                        ArtMenuRow(width: 48)
-                        if on {
-                            ArtMenuRow(title: Text("Move Items Here"), active: step == 3)
-                        } else {
-                            ArtMenuRow(width: 72)
-                        }
-                        ArtMenuRow(width: 36)
-                    }
-                    .position(x: 212, y: 52)
-                    .transition(.scale(scale: 0.85, anchor: .top).combined(with: .opacity))
-                }
-                ArtKey(down: step == 1) { cut.isEmpty ? Text("Off") : Text(verbatim: cut) }
-                    .position(x: 150, y: 106)
-                if step == 3 && !reduceMotion { ArtRipple().position(Self.row) }
-                ArtCursor(pressed: step == 3)
-                    .cursor(at: step < 2 ? CGPoint(x: 262, y: 110) : Self.row)
-            }
-            .animation(reduceMotion ? nil : .smooth(duration: 0.35), value: step)
-        }
-    }
-    #else
     private static let durations = [0.9, 0.6, 0.6, 1.6]
 
     var body: some View {
@@ -448,7 +351,6 @@ struct FinderCutArt: View {
             .animation(reduceMotion ? nil : .smooth(duration: 0.4), value: step)
         }
     }
-    #endif
 }
 
 struct FinderDeleteArt: View {
@@ -513,10 +415,8 @@ private struct FinderCutSettings: View {
     @Environment(\.inSettings) private var inSettings
 
     var body: some View {
-        let then = appStore ? Text("Then move them from the pikapik menu") : Text("Then paste to move them")
-        let help = appStore
-            ? Text("In Finder, \(SystemShortcuts.shared.finderCutText) cuts the selected files. Open the folder you want them in, click the pikapik icon in the menu bar and choose Move Items Here, or press ⌥⌘V. ⌘V pastes a copy, and ⌘C cancels the cut.")
-            : Text("In Finder, \(SystemShortcuts.shared.finderCutText) cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut.")
+        let then = Text("Then paste to move them")
+        let help = Text("In Finder, \(SystemShortcuts.shared.finderCutText) cuts the selected files and ⌘V moves them into the folder you paste in. ⌘C cancels the cut.")
         if inSettings { FinderCutArt(on: tool.isEnabled) }
         ToggleRow(
             icon: tool.icon,
