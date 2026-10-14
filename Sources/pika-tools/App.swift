@@ -84,9 +84,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let path = Bundle.main.bundlePath
+        let firstLaunch = !defaults.bool(forKey: "launchedBefore")
         #if APPSTORE
         let moved = false
-        let firstLaunch = !defaults.bool(forKey: "launchedBefore")
         #else
         let moved = Updater.isNewPlace(path, last: defaults.string(forKey: "app-path"), launchedBefore: defaults.bool(forKey: "launchedBefore"))
         #endif
@@ -141,22 +141,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Background.shared.quitting = true
         }
 
-        #if APPSTORE
         if CommandLine.arguments.contains("--permissions") {
             SettingsWindow.show(.permissions)
         } else if firstLaunch || CommandLine.arguments.contains("--settings") {
             SettingsWindow.show()
         }
-        #else
-        if CommandLine.arguments.contains("--permissions") {
-            SettingsWindow.show(.permissions)
-        } else if !permissions.allGranted {
-            permissions.request()
-            SettingsWindow.show(.permissions)
-        } else if CommandLine.arguments.contains("--settings") {
-            SettingsWindow.show()
-        }
-        #endif
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
