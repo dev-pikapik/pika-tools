@@ -5,7 +5,7 @@ struct NewDot: View {
     var body: some View {
         Circle()
             .fill(Color.accentColor)
-            .frame(width: 7, height: 7)
+            .frame(width: 8, height: 8)
             .accessibilityLabel(Text("New"))
     }
 }

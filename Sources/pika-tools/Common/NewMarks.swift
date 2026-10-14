@@ -58,11 +58,12 @@ final class NewMarks {
     }
 
     /// Call once per launch, before the app records that it has run. A fresh install has nothing to point at.
+    /// The stored version is the highest this copy has run, so a downgrade and the update back to it start nothing new.
     func begin(version: String, fresh: Bool) {
         current = version
-        let last = defaults.string(forKey: Self.versionKey)
-        if last != version {
-            defaults.set(last ?? (fresh ? version : Self.lastWithout), forKey: Self.fromKey)
+        let top = defaults.string(forKey: Self.versionKey)
+        if top.map({ Version.isNewer(version, than: $0) }) ?? true {
+            defaults.set(top ?? (fresh ? version : Self.lastWithout), forKey: Self.fromKey)
             defaults.set(now().timeIntervalSince1970, forKey: Self.sinceKey)
             defaults.removeObject(forKey: Self.seenKey)
             defaults.set(version, forKey: Self.versionKey)
@@ -87,8 +88,12 @@ final class NewMarks {
 
     func isNew(row: String) -> Bool { fresh.contains { $0.row == row } && !seen.contains("row:\(row)") }
 
+    /// The gear in the menu panel points at Settings; once Settings has been opened it has done its job.
+    var settingsOpened: Bool { seen.contains("settings") }
+
     /// Opening a tab clears its dot.
     func open(_ tab: String) {
+        remember("settings")
         remember("tab:\(tab)")
     }
 
@@ -97,8 +102,10 @@ final class NewMarks {
         fresh.filter { $0.tab == tab }.compactMap(\.row).forEach { remember("row:\($0)") }
     }
 
+    /// Merges with what is stored, so a second running copy of the app cannot take back what this one saw.
     private func remember(_ key: String) {
         guard !seen.contains(key) else { return }
+        seen.formUnion(defaults.stringArray(forKey: Self.seenKey) ?? [])
         seen.insert(key)
         defaults.set(seen.sorted(), forKey: Self.seenKey)
     }

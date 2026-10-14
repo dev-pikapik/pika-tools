@@ -26,7 +26,7 @@ enum TestNewMarks {
     static func tabs(_ marks: NewMarks) -> [String] { marks.unseenTabs.sorted() }
 
     static func main() {
-        for name in ["fresh", "update", "direct", "seen", "expiry", "next", "old"] {
+        for name in ["fresh", "update", "direct", "seen", "expiry", "next", "old", "down", "website", "store", "gear"] {
             UserDefaults.standard.removePersistentDomain(forName: "pika-test-new-marks-\(name)")
         }
 
@@ -94,10 +94,54 @@ enum TestNewMarks {
         skipped.begin(version: "1.49.0", fresh: false)
         skipped.begin(version: "1.51.0", fresh: false)
         precondition(tabs(skipped) == ["keepAwake", "keyboard", "sound"], "skipping a version keeps both: \(tabs(skipped))")
-        let down = marks("old")
-        down.begin(version: "1.50.0", fresh: false)
-        precondition(tabs(down).isEmpty, "a downgrade shows nothing")
+        let older = marks("old")
+        older.begin(version: "1.50.0", fresh: false)
+        precondition(tabs(older) == ["keepAwake", "keyboard"], "an older version shows only what it has: \(tabs(older))")
         print("next update: ok")
+
+        let clock2 = Clock()
+        let one = marks("down", clock: clock2)
+        one.begin(version: "1.50.0", fresh: false)
+        one.open("keyboard")
+        one.leave("keyboard")
+        clock2.date += 5 * day
+        let back = marks("down", clock: clock2)
+        back.begin(version: "1.49.1", fresh: false)
+        precondition(tabs(back).isEmpty && !back.isNew(row: "display-off"), "a downgrade shows nothing")
+        let again2 = marks("down", clock: clock2)
+        again2.begin(version: "1.50.0", fresh: false)
+        precondition(tabs(again2) == ["keepAwake"] && !again2.isNew(row: "home-end") && again2.isNew(row: "display-off"), "what was seen does not come back: \(tabs(again2))")
+        clock2.date += 17 * day
+        precondition(tabs(again2).isEmpty, "the 21 days run from the first update, not from the downgrade")
+        print("downgrade: ok")
+
+        let site = marks("website", appStore: false), shop = marks("store", appStore: true)
+        site.begin(version: "1.50.0", fresh: false)
+        shop.begin(version: "1.50.0", fresh: false)
+        site.open("keyboard")
+        site.leave("keyboard")
+        precondition(shop.isNew(tab: "keyboard") && shop.isNew(row: "home-end"), "two copies keep their own marks")
+        let both1 = marks("seen"), both2 = marks("seen")
+        both1.begin(version: "1.50.0", fresh: false)
+        both2.begin(version: "1.50.0", fresh: false)
+        both1.open("keepAwake")
+        both2.open("keyboard")
+        let third = marks("seen")
+        third.begin(version: "1.50.0", fresh: false)
+        precondition(tabs(third).isEmpty, "two running instances of one copy do not undo each other: \(tabs(third))")
+        print("two copies: ok")
+
+        let gear = marks("gear")
+        gear.begin(version: "1.50.0", fresh: false)
+        precondition(!gear.settingsOpened, "the gear dot shows until Settings is opened")
+        gear.open("general")
+        precondition(gear.settingsOpened && tabs(gear) == ["keepAwake", "keyboard"], "opening Settings clears the gear, not the tab dots")
+        let gearLater = marks("gear")
+        gearLater.begin(version: "1.50.0", fresh: false)
+        precondition(gearLater.settingsOpened, "and it stays cleared")
+        gearLater.begin(version: "1.51.0", fresh: false)
+        precondition(!gearLater.settingsOpened, "the next update brings it back")
+        print("gear: ok")
 
         let table = NewMarks.items
         precondition(!table.isEmpty && table.allSatisfy { !Version.parts($0.version).isEmpty })

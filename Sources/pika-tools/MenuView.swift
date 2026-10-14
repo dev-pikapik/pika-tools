@@ -31,7 +31,7 @@ struct MenuView: View {
     private var showsBrightness: Bool { isShown("brightness") && !Brightness.shared.monitors.isEmpty }
 
     private var hasNew: Bool {
-        NewMarks.shared.unseenTabs.contains { SettingsTab(rawValue: $0)?.isAvailable == true }
+        !NewMarks.shared.settingsOpened && NewMarks.shared.unseenTabs.contains { SettingsTab(rawValue: $0)?.isAvailable == true }
     }
 
     private var visibleTabs: [SettingsTab] {
