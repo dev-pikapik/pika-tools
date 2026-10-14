@@ -2,12 +2,13 @@ import AppKit
 import SwiftUI
 
 enum GuidePane {
-    case desktop, mouse, displays, accessibility, privacy, general
+    case desktop, mouse, keyboard, displays, accessibility, privacy, general
 
     fileprivate var bundles: [String] {
         switch self {
         case .desktop: ["DesktopSettings"]
         case .mouse: ["MouseExtension"]
+        case .keyboard: ["KeyboardSettings"]
         case .displays: ["DisplaysExt"]
         case .accessibility: ["AccessibilitySettingsExtension", "AccessibilitySettingsWidgetExtension"]
         case .privacy: ["SecurityPrivacyExtension"]
@@ -19,6 +20,7 @@ enum GuidePane {
         switch self {
         case .desktop: "dock.rectangle"
         case .mouse: "computermouse.fill"
+        case .keyboard: "keyboard.fill"
         case .displays: "sun.max.fill"
         case .accessibility: "accessibility"
         case .privacy: "hand.raised.fill"
@@ -29,7 +31,7 @@ enum GuidePane {
     fileprivate var tint: Color {
         switch self {
         case .desktop: Color(white: 0.2)
-        case .mouse, .general: Color(white: 0.55)
+        case .mouse, .keyboard, .general: Color(white: 0.55)
         case .displays, .accessibility, .privacy: Color(red: 0.1, green: 0.45, blue: 0.98)
         }
     }
@@ -39,7 +41,7 @@ enum GuidePane {
         case .general: 0
         case .displays: 1
         case .accessibility: 2
-        case .desktop, .mouse: 3
+        case .desktop, .mouse, .keyboard: 3
         case .privacy: 4
         }
     }
@@ -53,20 +55,22 @@ enum GuideStep {
     case page(String)
     case info(String)
     case app(on: Bool)
+    case appInfo
+    case select(String)
     case display
 
     fileprivate var label: String? {
         switch self {
-        case .toggle(let text, _), .checkbox(let text, _, _), .page(let text), .info(let text): text
+        case .toggle(let text, _), .checkbox(let text, _, _), .page(let text), .info(let text), .select(let text): text
         case .popup(let text, _, _): text
-        case .button, .app, .display: nil
+        case .button, .app, .appInfo, .display: nil
         }
     }
 
     fileprivate var opens: GuideLayer.Kind? {
         switch self {
         case .page: .page
-        case .button, .info: .sheet
+        case .button, .info, .appInfo: .sheet
         default: nil
         }
     }
@@ -84,12 +88,22 @@ struct SettingsGuide: View {
 }
 
 extension SettingsGuide {
+    static let reduceMotionLink: URL = {
+        let terms = Bundle(path: "/System/Library/ExtensionKit/Extensions/AccessibilitySettingsExtension.appex")?
+            .url(forResource: "UniversalAccess", withExtension: "searchTerms").flatMap { NSDictionary(contentsOf: $0) }
+        return URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?" + (terms?["AX_REDUCE_MOTION"] == nil ? "Seeing_Display" : "AX_REDUCE_MOTION"))!
+    }()
+
     static var reduceMotion: SettingsGuide {
         SettingsGuide(pane: .accessibility, steps: [.page("Motion"), .toggle("Reduce motion", on: true)])
     }
 
     static var loginItems: SettingsGuide {
         SettingsGuide(pane: .general, steps: [.page("Login Items & Extensions"), .app(on: true)])
+    }
+
+    static var finderExtensions: SettingsGuide {
+        SettingsGuide(pane: .general, steps: [.page("Login Items & Extensions"), .appInfo, .app(on: true)])
     }
 }
 
@@ -266,9 +280,10 @@ struct SettingsGuideScene: View {
     }
 
     private func row(_ step: GuideStep, applied: Bool, pressed: Bool) -> some View {
-        HStack(spacing: 4) {
+        let selected = if case .select = step { applied } else { false }
+        return HStack(spacing: 4) {
             switch step {
-            case .app:
+            case .app, .appInfo:
                 Image(nsImage: GuideText.icon).resizable().frame(width: 11, height: 11)
                 Text(verbatim: "pikapik").font(.system(size: 7))
             default:
@@ -279,6 +294,8 @@ struct SettingsGuideScene: View {
         }
         .padding(.horizontal, 6)
         .frame(height: Self.rowHeight)
+        .foregroundStyle(selected ? Color.white : Color.primary)
+        .background { if selected { RoundedRectangle(cornerRadius: 3, style: .continuous).fill(Color.accentColor).padding(1) } }
     }
 
     @ViewBuilder
@@ -333,9 +350,9 @@ struct SettingsGuideScene: View {
             .overlay(RoundedRectangle(cornerRadius: 3, style: .continuous).hairline(Color.primary.opacity(0.2)))
         case .page:
             Image(systemName: "chevron.right").font(.system(size: 6, weight: .bold)).foregroundStyle(.secondary)
-        case .info:
+        case .info, .appInfo:
             Image(systemName: "info.circle").font(.system(size: 9)).foregroundStyle(Color.accentColor)
-        case .display:
+        case .display, .select:
             EmptyView()
         }
     }
@@ -439,7 +456,8 @@ struct GuideLayout {
         case .checkbox: return CGPoint(x: right - 72, y: y + 3.5)
         case .popup: return CGPoint(x: right - 12, y: y - 1)
         case .button: return CGPoint(x: right - 28, y: y)
-        case .page, .info: return CGPoint(x: right - 3, y: y)
+        case .page, .info, .appInfo: return CGPoint(x: right - 3, y: y)
+        case .select: return CGPoint(x: right - 16, y: y)
         case .display: return CGPoint(x: right, y: y)
         }
     }

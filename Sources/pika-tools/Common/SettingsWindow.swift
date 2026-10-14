@@ -1036,7 +1036,6 @@ struct SystemSettingsRow: View {
 #if APPSTORE
 private struct AnimationLinksPage: View {
     private static let desktop = URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!
-    private static let motion = URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?Seeing_Display")!
 
     var body: some View {
         Form {
@@ -1066,7 +1065,7 @@ private struct AnimationLinksPage: View {
                 )
             }
             Section {
-                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: Self.motion, guide: .reduceMotion)
+                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: SettingsGuide.reduceMotionLink, guide: .reduceMotion)
             }
         }
         .formStyle(.grouped)
