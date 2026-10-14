@@ -132,10 +132,12 @@ final class ArchiveCreateModel {
     }
 
     var passwordNote: String? {
-        #if APPSTORE
-        if format == .sevenZip { return nil }
-        #endif
-        guard format.supportsPassword else { return String(localized: "TAR archives can’t have a password") }
+        guard format.supportsPassword else {
+            #if APPSTORE
+            if format == .sevenZip { return String(localized: "Only ZIP can have a password") }
+            #endif
+            return String(localized: "TAR archives can’t have a password")
+        }
         return format == .zip ? String(localized: "File names stay visible") : String(localized: "File names are hidden too")
     }
 

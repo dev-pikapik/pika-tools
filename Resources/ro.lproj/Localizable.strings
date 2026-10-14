@@ -926,6 +926,8 @@
 "File names are hidden too" = "Și numele fișierelor sunt ascunse";
 "Use English letters, numbers and symbols only" = "Folosește doar litere englezești, cifre și simboluri";
 "TAR archives can’t have a password" = "Arhivele TAR nu pot avea parolă";
+"Only ZIP can have a password" = "Doar ZIP poate avea parolă";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Fișierul poate fi deteriorat sau de un tip pe care această versiune de pikapik nu îl poate deschide: arhive împărțite în mai multe părți, fișiere XZ, LZMA sau ZST singure și 7Z sau RAR cu parolă.";
 "Don’t split" = "Nu împărți";
 "15 MB, for email" = "15 MB, pentru e-mail";
 "100 MB" = "100 MB";
