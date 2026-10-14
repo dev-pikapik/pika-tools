@@ -40,6 +40,7 @@ enum PointerShortcuts {
 
     static func buttons(_ configured: [String: Any]) -> Set<Int32> {
         #if APPSTORE
+        // Game Mode's tap never sees otherMouseDown, so this build can't pause mouse button shortcuts; listing them would show pauses that do nothing
         return []
         #else
         Set(configured.compactMap { key, item in
