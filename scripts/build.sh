@@ -3,8 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 APP="build/pikapik.app"
-EXTENSIONS="NewFile Compress Convert"
-[ -n "${APPSTORE:-}" ] || EXTENSIONS="$EXTENSIONS Archive Preview"
+EXTENSIONS="NewFile Compress Convert Archive Preview"
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -26,7 +25,7 @@ EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path
 SOURCES=()
 while IFS= read -r -d '' f; do SOURCES+=("$f"); done < <(find Sources -name '*.swift' -print0)
 SOURCES+=(Extensions/Convert/ConvertFormats.swift)
-[ -n "${APPSTORE:-}" ] || SOURCES+=(Extensions/Preview/ZipNames.swift)
+SOURCES+=(Extensions/Preview/ZipNames.swift)
 
 FLAGS=()
 [ -z "${DEBUG:-}" ] || FLAGS+=(-D DEBUG)
@@ -36,7 +35,7 @@ if [ -n "${APPSTORE:-}" ]; then
     for f in "${SOURCES[@]}"; do
         case $f in
             */Tools/Uninstaller/AppFootprint.swift) KEPT+=("$f") ;;
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Windows/DockDisplay*|*/Tools/Uninstaller/*|*/Tools/Archive/*) ;;
+            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Windows/DockDisplay*|*/Tools/Uninstaller/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -66,13 +65,15 @@ for ARCH in arm64 x86_64; do
     for EXT in $EXTENSIONS; do
         SHARED=(Extensions/Shared/*.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
-        [ "$EXT" != Preview ] || SHARED=()
+        LINK=()
+        [ "$EXT" != Preview ] || { SHARED=(); LINK=(-import-objc-header Extensions/Preview/libarchive.h -larchive); }
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
             -target "$ARCH-apple-macos$MIN_OS" \
             -application-extension \
             "${EMIT[@]}" \
             -Xlinker -e -Xlinker _NSExtensionMain \
+            ${LINK[@]+"${LINK[@]}"} \
             Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} \
             -o "build/$EXT-$ARCH"
     done
@@ -120,13 +121,13 @@ cp -R Resources/*.lproj "$RES/"
 CAPTURE_TEXT='pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved.'
 for LPROJ in Resources/*.lproj; do
     grep -F "\"$CAPTURE_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAudioCaptureUsageDescription"/' > "$RES/$(basename "$LPROJ")/InfoPlist.strings"
+    grep '^"Archive" = ' "$LPROJ/Localizable.strings" >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
 done
 if [ -z "${APPSTORE:-}" ]; then
     FINDER_TEXT='pikapik asks Finder to move apps to the Trash when macOS doesn’t let it do that itself.'
     /usr/libexec/PlistBuddy -c "Add :NSAppleEventsUsageDescription string $FINDER_TEXT" "$APP/Contents/Info.plist"
     for LPROJ in Resources/*.lproj; do
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
-        grep '^"Archive" = ' "$LPROJ/Localizable.strings" >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
 fi
@@ -165,21 +166,20 @@ group_entitlements() {
     local OUT="build/$2.entitlements"
     cp "$1" "$OUT"
     local BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$3/Contents/Info.plist")"
-    /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups array" -c "Add :com.apple.security.application-groups:0 string $TEAM_ID.com.pesotchi.pika-tools" \
-        -c "Add :com.apple.application-identifier string $TEAM_ID.$BUNDLE_ID" -c "Add :com.apple.developer.team-identifier string $TEAM_ID" "$OUT"
+    [ "$2" = Preview ] || /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups array" -c "Add :com.apple.security.application-groups:0 string $TEAM_ID.com.pesotchi.pika-tools" "$OUT"
+    /usr/libexec/PlistBuddy -c "Add :com.apple.application-identifier string $TEAM_ID.$BUNDLE_ID" -c "Add :com.apple.developer.team-identifier string $TEAM_ID" "$OUT"
     echo "$OUT"
 }
 
 if [ -n "${APPSTORE:-}" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $APPSTORE_ID" -c "Add :ITSAppUsesNonExemptEncryption bool false" "$APP/Contents/Info.plist"
-    /usr/libexec/PlistBuddy -c "Delete :CFBundleDocumentTypes" -c "Delete :UTImportedTypeDeclarations" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLName $APPSTORE_ID" "$APP/Contents/Info.plist"
     /usr/libexec/PlistBuddy -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 pikapik-store" -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:1 pika-tools-store" "$APP/Contents/Info.plist"
     for EXT in $EXTENSIONS; do
         PLIST="$APP/Contents/PlugIns/$EXT.appex/Contents/Info.plist"
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
         /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/com.pesotchi.pika-tools./$APPSTORE_ID.}" "$PLIST"
-        /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pikapik-store" "$PLIST"
+        [ "$EXT" = Preview ] || /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pikapik-store" "$PLIST"
     done
 elif [ -n "$DEV" ]; then
     /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev" "$APP/Contents/Info.plist"
