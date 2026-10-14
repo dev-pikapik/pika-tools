@@ -199,13 +199,17 @@ final class KeepAwake {
         #endif
     }
 
-    #if !APPSTORE
     static func turnOffDisplay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            #if APPSTORE
+            let wrangler = IORegistryEntryFromPath(kIOMainPortDefault, "IOService:/IOResources/IODisplayWrangler")
+            defer { IOObjectRelease(wrangler) }
+            IORegistryEntrySetCFProperty(wrangler, "IORequestIdle" as CFString, kCFBooleanTrue)
+            #else
             _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/pmset"), arguments: ["displaysleepnow"])
+            #endif
         }
     }
-    #endif
 
     private static func stopBridge() {
         #if APPSTORE
@@ -396,14 +400,12 @@ struct KeepAwakeSettings: View {
                 }
                 .padding(.vertical, 4)
                 .settingAnchor(String(localized: "Display"))
-                #if !APPSTORE
                 LabeledContent {
                     Button("Turn Off") { KeepAwake.turnOffDisplay() }
                 } label: {
                     RowLabel(Text("Turn off the display now"), Text("Your Mac keeps working. To bring the display back, move the mouse or press a key."))
                 }
                 .settingAnchor(String(localized: "Turn off the display now"))
-                #endif
             }
 
             if keepAwake.hasLid {

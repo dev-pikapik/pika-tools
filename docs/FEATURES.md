@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -55,7 +55,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Click through every tab → each opens; the list matches the edition (count: Website 19 + 2, App Store 15 + 2, minus Battery on a desktop Mac, minus Sound before macOS 14.2).
 2. Press Sidebar → the sidebar hides; press again → it returns.
 3. Open General, then Mouse, then press Back (or `[`) → General; Forward (`]`) → Mouse.
-4. (App Store) Confirm there is no Fans, Ports, Dock or Uninstaller row and no “Keep running after Quit”, Updates, iCloud sync or “Turn off the display now” row anywhere.
+4. (App Store) Confirm there is no Fans, Ports, Dock or Uninstaller row and no “Keep running after Quit”, Updates or iCloud sync row anywhere.
 
 ### Open at Login
 
@@ -269,13 +269,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Switches the screen off right away without sleeping the Mac.
 
-**How it works:** `/usr/bin/pmset displaysleepnow` (`KeepAwake.turnOffDisplay` :202; row `KeepAwake.swift:399-406`). Also in the menu bar panel under Keep Awake.
+**How it works:** Website: `/usr/bin/pmset displaysleepnow`. App Store: sets `IORequestIdle` to true on `IOService:/IOResources/IODisplayWrangler`, which the app sandbox allows (`KeepAwake.turnOffDisplay` :202; row `KeepAwake.swift:403-408`). Also in the menu bar panel under Keep Awake (`MenuView.swift:234`).
 
-**Edition:** Website only (App Store: cut — runs an outside program).
+**Nuances:** macOS 27’s own `pmset` no longer goes through `IORequestIdle`, so the App Store path has not yet been seen to darken an Apple Silicon display; check it on a TestFlight or App Store install.
+
+**Edition:** Both; App Store differs: IODisplayWrangler instead of `pmset`.
 
 **Test:**
-1. (Website) Press Turn Off → the display goes dark; moving the mouse wakes it; Keep Awake keeps running.
-2. (App Store) There is no such row, in Settings or in the menu.
+1. Press Turn Off in Settings, then Turn off the display now in the menu, once with Display = Always on and once with Turns off as usual → every display goes dark within a second with no prompt; moving the mouse wakes it; `pmset -g assertions` still lists pikapik’s assertion.
 
 ### Work with the lid closed
 
@@ -288,7 +289,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Nuances:** `hasLid` is false in the App Store build, so the row never shows there (`KeepAwake.swift:20,253`).
 
-**Edition:** Website only (App Store: cut — needs administrator rights).
+**Edition:** Website only (App Store: cut — needs administrator rights; the sandbox-reachable IOPMrootDomain clamshell switch has no App Store precedent and stays on if the app crashes).
 
 **Test:**
 1. (Website, MacBook) Turn it on → one administrator prompt; close the lid with an external display connected → the Mac keeps running; open the lid, turn it off → `pmset -g | grep SleepDisabled` shows 0.
@@ -1262,7 +1263,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.49.1). The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.49.1). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1383,7 +1384,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; stub in the App Store build, `GameModeTool.swift:443`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
+**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; a stub in the App Store build, where `GameRules.fenceCorners` keeps the pointer 16 points (x + y) from every corner pixel so a push can't reach it, `GameModeTool.swift:454`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
 
 **Nuances:** The App Store version leaves the option out after the change because it relies on a private macOS call. Needs two displays to test.
 
@@ -1498,7 +1499,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. Click a grey tool → this tab opens on the row to allow.
 5. (App Store) Turn Off on Accessibility and Input Monitoring → the right System Settings list opens. (Website) Turn Off → the restart alert.
 6. A missing permission shows the animated guide; it points at the right list and the pikapik switch, and goes away once every permission in it is granted.
-7. (App Store) Settings has no Fans, Animations (full page), Uninstaller, Key repeat, Pointer, Updates, iCloud sync, “Keep running after Quit” or “Turn off the display now” rows.
+7. (App Store) Settings has no Fans, Animations (full page), Uninstaller, Key repeat, Pointer, Updates, iCloud sync or “Keep running after Quit” rows.
 
 ### Accessibility
 
@@ -1734,12 +1735,12 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Display — Always on / Turns off as usual (`MenuView.swift:222-228`).
-- Turn off the display now — button, Website only (`MenuView.swift:230`).
+- Turn off the display now — button (`MenuView.swift:234`).
 
-**Edition:** Both; App Store differs: no Turn off the display now.
+**Edition:** Both.
 
 **Test:**
-1. Turn it on, expand it, choose a Display option → `pmset -g assertions` follows. (Website) press Turn off the display now → the screen sleeps.
+1. Turn it on, expand it, choose a Display option → `pmset -g assertions` follows. Press Turn off the display now → the screen goes dark.
 
 ### Brightness
 
