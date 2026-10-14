@@ -138,6 +138,15 @@ final class Battery {
         source().flatMap { BatteryState(source: $0, registry: registry(), adapter: IOPSCopyExternalPowerAdapterDetails()?.takeRetainedValue() as? [String: Any]) }
     }
 
+    static func temperature() -> Double? {
+        celsius(root: registry([kIOPMPSBatteryTemperatureKey]), pack: registry(["BatteryData"], of: "AppleSmartBatteryPack"))
+    }
+
+    static func celsius(root: [String: Any], pack: [String: Any]) -> Double? {
+        let hundredths = root[kIOPMPSBatteryTemperatureKey] as? Int ?? (pack["BatteryData"] as? [String: Any])?[kIOPMPSBatteryTemperatureKey] as? Int
+        return hundredths.map { Double($0) / 100 }.flatMap { (1.0...125.0).contains($0) ? $0 : nil }
+    }
+
     private static func source() -> [String: Any]? {
         guard let info = IOPSCopyPowerSourcesInfo()?.takeRetainedValue(),
               let list = IOPSCopyPowerSourcesList(info)?.takeRetainedValue() as? [CFTypeRef] else { return nil }
@@ -149,8 +158,8 @@ final class Battery {
         return nil
     }
 
-    private static func registry(_ keys: [String] = [kIOPMPSCycleCountKey, kIOPMPSVoltageKey, kIOPMPSAmperageKey]) -> [String: Any] {
-        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("AppleSmartBattery"))
+    private static func registry(_ keys: [String] = [kIOPMPSCycleCountKey, kIOPMPSVoltageKey, kIOPMPSAmperageKey], of name: String = "AppleSmartBattery") -> [String: Any] {
+        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching(name))
         guard service != 0 else { return [:] }
         defer { IOObjectRelease(service) }
         var values: [String: Any] = [:]

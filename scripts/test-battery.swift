@@ -74,6 +74,15 @@ enum TestBattery {
         precondition(BatteryHealth(profile: Data(#"{"SPPowerDataType":[]}"#.utf8)) == nil)
         #endif
 
+        let pack: [String: Any] = ["BatteryData": ["Temperature": 3289, "VirtualTemperature": 3289]]
+        precondition(Battery.celsius(root: [:], pack: pack) == 32.89)
+        precondition(Battery.celsius(root: ["Temperature": 3050], pack: [:]) == 30.5)
+        precondition(Battery.celsius(root: ["Temperature": 3050], pack: pack) == 30.5)
+        precondition(Battery.celsius(root: ["Temperature": 0], pack: [:]) == nil)
+        precondition(Battery.celsius(root: ["Temperature": 65535], pack: [:]) == nil)
+        precondition(Battery.celsius(root: [:], pack: ["BatteryData": ["Voltage": 12466]]) == nil)
+        precondition(Battery.celsius(root: [:], pack: [:]) == nil)
+
         print("battery checks passed")
     }
 }
