@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "在这些 App 中不修正文本";
 "Services" = "服务";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "选择文本，然后在 App 菜单或右键菜单的“服务”中选取“%@”。";
-"Set a Shortcut…" = "设置快捷键…";
+"Fix the selected text" = "修正所选文本";
+"Select the text, then press these keys" = "选择文本，然后按下这些键";
 "In the Services menu" = "在“服务”菜单中";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "错误布局, 键盘布局, 输入法, 输入源, 语言, 切换, 转换, 打错字, 乱码, 服务";
 "automatic, auto, Space, Return, layout" = "自动, 自动修正, 空格, Return, 布局";

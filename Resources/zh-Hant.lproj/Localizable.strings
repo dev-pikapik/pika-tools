@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "在這些 App 中不修正文字";
 "Services" = "服務";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "選取文字，然後在 App 選單或右鍵選單的「服務」中選擇「%@」。";
-"Set a Shortcut…" = "設定快速鍵…";
+"Fix the selected text" = "修正所選文字";
+"Select the text, then press these keys" = "選取文字，然後按下這些按鍵";
 "In the Services menu" = "在「服務」選單中";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "錯誤配置, 鍵盤配置, 輸入方式, 輸入法, 語言, 切換, 轉換, 打錯字, 亂碼, 服務";
 "automatic, auto, Space, Return, layout" = "自動, 自動修正, 空白鍵, Return, 配置";

@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "これらのアプリではテキストを修正しない";
 "Services" = "サービス";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "テキストを選択し、アプリのメニューまたは右クリックメニューにある「サービス」から「%@」を選択します。";
-"Set a Shortcut…" = "ショートカットを設定…";
+"Fix the selected text" = "選択したテキストを修正";
+"Select the text, then press these keys" = "テキストを選択して、これらのキーを押します";
 "In the Services menu" = "「サービス」メニューにあります";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "間違ったレイアウト, キーボードレイアウト, 入力ソース, 言語, 切り替え, 変換, タイプミス, 誤入力, 文字化け, サービス";
 "automatic, auto, Space, Return, layout" = "自動, オート, スペース, Return, レイアウト";

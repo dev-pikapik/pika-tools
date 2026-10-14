@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "عدم تصحيح النص في هذه التطبيقات";
 "Services" = "خدمات";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "حدد النص، ثم اختر «%@» من قائمة الخدمات: في قائمة التطبيق أو في قائمة النقر بزر الماوس الأيمن على النص.";
-"Set a Shortcut…" = "تعيين اختصار…";
+"Fix the selected text" = "تصحيح النص المحدد";
+"Select the text, then press these keys" = "حدد النص، ثم اضغط على هذه المفاتيح";
 "In the Services menu" = "في قائمة الخدمات";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "تخطيط خاطئ، تخطيط لوحة المفاتيح، مصدر الإدخال، لغة، تبديل، تحويل، خطأ مطبعي، كلام غير مفهوم، الخدمات";
 "automatic, auto, Space, Return, layout" = "تلقائي، آلي، مسافة، Return، تخطيط";

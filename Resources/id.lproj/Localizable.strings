@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Jangan perbaiki teks di app ini";
 "Services" = "Layanan";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Pilih teksnya, lalu pilih “%@” di menu Layanan: di menu app atau di menu klik kanan pada teks.";
-"Set a Shortcut…" = "Atur Pintasan…";
+"Fix the selected text" = "Perbaiki teks yang dipilih";
+"Select the text, then press these keys" = "Pilih teksnya, lalu tekan tombol-tombol ini";
 "In the Services menu" = "Di menu Layanan";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "tata letak salah, tata letak papan ketik, keyboard, sumber input, bahasa, ganti, konversi, salah ketik, teks acak, Layanan";
 "automatic, auto, Space, Return, layout" = "otomatis, auto, Spasi, Return, tata letak";

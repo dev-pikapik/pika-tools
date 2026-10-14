@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "ไม่แก้ไขข้อความในแอปเหล่านี้";
 "Services" = "บริการ";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "เลือกข้อความ แล้วเลือก “%@” ในเมนูบริการ ซึ่งอยู่ในเมนูแอปและเมนูคลิกขวาที่ข้อความ";
-"Set a Shortcut…" = "ตั้งคำสั่งลัด…";
+"Fix the selected text" = "แก้ข้อความที่เลือก";
+"Select the text, then press these keys" = "เลือกข้อความ แล้วกดปุ่มเหล่านี้";
 "In the Services menu" = "ในเมนูบริการ";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "รูปแบบแป้นพิมพ์ผิด, พิมพ์ผิดภาษา, ลืมเปลี่ยนภาษา, รูปแบบแป้นพิมพ์, แหล่งป้อนข้อมูล, ภาษา, สลับ, แปลง, พิมพ์ผิด, บริการ";
 "automatic, auto, Space, Return, layout" = "อัตโนมัติ, ออโต้, เว้นวรรค, Return, รูปแบบแป้นพิมพ์";

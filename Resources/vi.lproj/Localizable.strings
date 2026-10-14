@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Không sửa văn bản trong các ứng dụng này";
 "Services" = "Dịch vụ";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Chọn văn bản, rồi chọn “%@” trong menu Dịch vụ: trong menu ứng dụng hoặc menu bấm chuột phải vào văn bản.";
-"Set a Shortcut…" = "Đặt phím tắt…";
+"Fix the selected text" = "Sửa văn bản đã chọn";
+"Select the text, then press these keys" = "Chọn văn bản, rồi nhấn các phím này";
 "In the Services menu" = "Trong menu Dịch vụ";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "sai bố cục, bố cục bàn phím, bộ gõ, nguồn đầu vào, ngôn ngữ, chuyển, chuyển đổi, gõ nhầm, chữ vô nghĩa, Dịch vụ";
 "automatic, auto, Space, Return, layout" = "tự động, auto, Dấu cách, Return, bố cục";

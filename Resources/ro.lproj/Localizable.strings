@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Nu corecta textul în aceste aplicații";
 "Services" = "Servicii";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Selectează textul, apoi alege „%@” din meniul Servicii: în meniul aplicației sau în meniul de clic dreapta pe text.";
-"Set a Shortcut…" = "Setează o scurtătură…";
+"Fix the selected text" = "Corectează textul selectat";
+"Select the text, then press these keys" = "Selectează textul, apoi apasă aceste taste";
 "In the Services menu" = "În meniul Servicii";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "aranjament greșit, aranjament tastatură, sursă de introducere, limbă, schimbă, convertește, greșeală de tastare, text fără sens, Servicii";
 "automatic, auto, Space, Return, layout" = "automat, auto, Spațiu, Return, aranjament";

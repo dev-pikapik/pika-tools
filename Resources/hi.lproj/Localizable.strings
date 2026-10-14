@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "इन ऐप्स में टेक्स्ट ठीक न करें";
 "Services" = "सेवाएँ";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "टेक्स्ट चुनें, फिर सेवाएँ मेनू में “%@” चुनें: ऐप मेनू में या टेक्स्ट के राइट-क्लिक मेनू में।";
-"Set a Shortcut…" = "शॉर्टकट सेट करें…";
+"Fix the selected text" = "चुना हुआ टेक्स्ट ठीक करें";
+"Select the text, then press these keys" = "टेक्स्ट चुनें, फिर ये कुंजियाँ दबाएँ";
 "In the Services menu" = "सेवाएँ मेनू में";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "गलत लेआउट, कीबोर्ड लेआउट, इनपुट स्रोत, भाषा, बदलें, कन्वर्ट, टाइपो, बेमतलब टेक्स्ट, सेवाएँ";
 "automatic, auto, Space, Return, layout" = "अपने आप, ऑटो, स्पेस, Return, लेआउट";
