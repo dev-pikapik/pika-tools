@@ -45,7 +45,9 @@ struct BatteryHealth: Equatable {
     var normal: Bool?
 
     #if APPSTORE
-    init?(source: [String: Any], registry: [String: Any]) {
+    init?(source: [String: Any], registry root: [String: Any], pack: [String: Any] = [:]) {
+        // macOS 27 keeps capacity and failure keys only in AppleSmartBatteryPack → BatteryData.
+        let registry = root.merging(pack["BatteryData"] as? [String: Any] ?? [:]) { top, _ in top }
         if let pack = (source["BatteryPacks"] as? [[String: Any]])?.first?["BatteryHealth"] as? [String: Any] {
             let state = pack["Battery Service State"] as? Int
             if let percent = pack["Maximum Capacity Percent"] as? Int, percent >= 0, state != 8 { capacity = min(100, percent) }
@@ -115,7 +117,8 @@ final class Battery {
     private func checkHealth() {
         #if APPSTORE
         guard let source = Self.source(),
-              let health = BatteryHealth(source: source, registry: Self.registry([kIOPMPSDesignCapacityKey, "NominalChargeCapacity", "AppleRawMaxCapacity", "PermanentFailureStatus"])) else { return }
+              let health = BatteryHealth(source: source, registry: Self.registry([kIOPMPSDesignCapacityKey, "NominalChargeCapacity", "AppleRawMaxCapacity", "PermanentFailureStatus"]),
+                                         pack: Self.registry(["BatteryData"], of: "AppleSmartBatteryPack")) else { return }
         if health != self.health { self.health = health }
         #else
         DispatchQueue.global(qos: .utility).async {
