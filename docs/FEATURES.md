@@ -1259,7 +1259,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:643`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1312,7 +1312,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Lists every macOS shortcut with a choice of what happens to it while you play.
 
-**How it works:** `SystemShortcutList.swift`, about 235 shortcuts from `SystemShortcutCatalog` read from this Mac (`AppleSymbolicHotKeys`, `NSUserKeyEquivalents`), each with a “While playing” picker.
+**How it works:** `SystemShortcutList.swift`, about 235 shortcuts from `SystemShortcutCatalog` read from this Mac (`AppleSymbolicHotKeys`, `NSUserKeyEquivalents`; in the App Store build `CopySymbolicHotKeys`, only ⌘ shortcuts), each with a “While playing” picker.
 
 **Options:**
 - While playing: Follow Game Mode rules — the safeguards decide.
