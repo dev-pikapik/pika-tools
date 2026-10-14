@@ -1259,7 +1259,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.49.1). The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.49.1). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1380,7 +1380,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; stub in the App Store build, `GameModeTool.swift:443`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
+**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; a stub in the App Store build, where `GameRules.fenceCorners` keeps the pointer 16 points (x + y) from every corner pixel so a push can't reach it, `GameModeTool.swift:454`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
 
 **Nuances:** The App Store version leaves the option out after the change because it relies on a private macOS call. Needs two displays to test.
 
