@@ -256,7 +256,7 @@ final class Permissions {
         #endif
     }
 
-    func request(_ wanted: [Permission] = [.accessibility, .inputMonitoring]) {
+    func request(_ wanted: [Permission]) {
         let ax = !accessibility && wanted.contains(.accessibility)
         let input = !inputMonitoring && wanted.contains(.inputMonitoring)
         #if !APPSTORE

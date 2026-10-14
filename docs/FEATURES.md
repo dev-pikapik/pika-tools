@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -160,7 +160,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - About › Restore Defaults… — Website only: turns “Check for updates automatically” back on (`SettingsWindow.swift:1153`).
 
-**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are. On About (Website) it only turns “Check for updates automatically” back on.
+**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are; in the App Store version it turns the Hide desktop icons curtain off. On About (Website) it only turns “Check for updates automatically” back on.
 
 **Edition:** Both; App Store differs: the text of the alert and the About button (Website only).
 
@@ -881,22 +881,22 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Archives in Finder
 
-**Does:** Adds Extract and Create Archive… to Finder, a preview of archives on Space, and the option to open ZIP and 7Z with pikapik.
+**Does:** Adds Extract and Create Archive… to Finder, a preview of archives on Space, and (Website) the option to open ZIP and 7Z with pikapik.
 
-**How it works:** Switch `Sources/pika-tools/Tools/Archive/ArchiveTool.swift:40-45`; one `archive` key turns both the Finder extension and the preview on or off (off runs `pluginkit -e ignore`). Bundled 7-Zip 26.04 `7zz` (LGPL; the license file and source ship with releases). Engine routing: `ditto` for zips with `__MACOSX`, `bsdtar` for legacy code-page zips, `7zz` for the rest.
+**How it works:** Switch `Sources/pika-tools/Tools/Archive/ArchiveTool.swift:40-45`; one `archive` key turns both the Finder extension and the preview on or off (off runs `pluginkit -e ignore`). Bundled 7-Zip 26.04 `7zz` (LGPL; the license file and source ship with releases). Website engine routing: `ditto` for zips with `__MACOSX`, `bsdtar` for legacy code-page zips, `7zz` for the rest. App Store: no `7zz`; `ditto`, `bsdtar`, `gzip` and `bzip2` from macOS do the work (`ArchiveProbe.swift`, `ArchiveCreate.swift`, `ArchiveExtract.swift` under `#if APPSTORE`), and the preview reads headers with the system libarchive.
 
 **Options:**
-- Open archives with this app — toggle labelled “ZIP · 7Z”; sets the default app for `public.zip-archive` and `org.7-zip.7-zip-archive` (`ArchiveTool.swift:48-51`). Changes the Mac’s default apps; do not flip it in tests you do not want to keep.
+- Open archives with this app — toggle labelled “ZIP · 7Z”; sets the default app for `public.zip-archive` and `org.7-zip.7-zip-archive` (`ArchiveTool.swift:48-51`). Changes the Mac’s default apps; do not flip it in tests you do not want to keep. Website only: the App Store row is not shown.
 
-**Nuances:** Never create RAR (license). Zips with legacy names and a password may come out garbled. Create Archive… is hidden when the selection spans several folders. Dev builds register the preview only after `pluginkit -a <appex>`.
+**Nuances:** Never create RAR (license). Zips with legacy names and a password may come out garbled. Create Archive… is hidden when the selection spans several folders. Dev builds register the preview only after `pluginkit -a <appex>`. App Store limits: a password only for ZIP (not 7Z); no splitting into parts, and multi-part archives (.001, .part1.rar, .z01 …) cannot be opened; single .xz, .lzma and .zst files cannot be opened (single .gz and .bz2 can); password-protected 7Z and RAR cannot be opened. The first use asks for access to the home folder (the same folder access New File and Smaller Copy use), and the Finder items need the extension turned on in System Settings › General › Login Items & Extensions (the animated guide in Permissions shows where). The App Store package carries the Archive and Preview extensions only when their provisioning profiles are set (`scripts/appstore.sh`); without them the Archives row is absent.
 
-**Edition:** Website only (App Store: cut — no extension, no 7-Zip, sandbox).
+**Edition:** Both; App Store differs: built-in macOS tools instead of 7-Zip, the limits above, no Open archives with this app, needs the extension enabled and asks for folder access.
 
 **Test:**
 1. (Website) Turn on Archives in Finder. In a new test folder right-click a folder of more than 20 MB › Create Archive…, choose 7Z, set a Password and Split into parts of 15 MB → numbered parts appear next to the folder; right-click the first part › Extract asks for the password and unpacks a copy of the folder.
 2. Select a ZIP and press Space → the files inside show.
 3. Turn the switch off → the menu items and the preview are gone.
-4. (App Store) There is no Archives row.
+4. (App Store) Turn on Archives in Finder and enable the extension in System Settings › General › Login Items & Extensions → right-click a folder › Create Archive… → a folder prompt the first time, then the dialog; ZIP can have a Password, with 7Z the Password switch is disabled, and there is no Split archive row. Right-click the archive › Extract → the files appear next to it. Select it and press Space → the files inside show. A password-protected 7Z or a .part1.rar › Extract → the message “… can’t be opened”. There is no Open archives with this app switch.
 
 ### Extract
 
@@ -904,10 +904,11 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Finder item in `Extensions/Archive/ArchiveExtension.swift:16`, bundled `7zz`, a progress window (`ArchiveQueue.swift`, `ArchiveRun.swift`). Asks for a password with Extract and Cancel when the archive is protected.
 
-**Edition:** Website only (App Store: cut — the extension is not built).
+**Edition:** Both; App Store differs: unpacks with the tools built into macOS, so password-protected 7Z and RAR, multi-part archives and single .xz, .lzma and .zst files are refused with a message; asks for folder access the first time.
 
 **Test:**
 1. (Website) Right-click an archive › Extract → a progress window, then the unpacked files next to it. With a password-protected archive → a password prompt (Extract / Cancel); a wrong password fails clearly, the right one works.
+2. (App Store) The same with a ZIP, a password-protected ZIP and a .tar.gz → they unpack. A password-protected 7Z or a .xz → the message “… can’t be opened”.
 
 ### Create Archive…
 
@@ -919,14 +920,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Name — archive name.
 - Format — ZIP, 7Z, TAR.GZ, TAR.XZ.
 - Password — toggle; typed twice, Create waits for a match; one eye button shows both.
-- Split archive — Don’t split, 15 MB (for email), 100 MB, 1 GB, 4 GB (for USB drives).
+- Split archive — Don’t split, 15 MB (for email), 100 MB, 1 GB, 4 GB (for USB drives). Website only.
 - Cancel / Create.
 
-**Edition:** Website only (App Store: cut).
+**Edition:** Both; App Store differs: built-in macOS tools, a password only for ZIP (not 7Z), no splitting; asks for folder access the first time.
 
 **Test:**
 1. (Website) Right-click a test folder › Create Archive… → the dialog shows Name, Format, Password, Split archive. Choose ZIP with no password → Create makes a .zip next to the folder.
 2. Turn on Password and type two different passwords → Create stays disabled until they match.
+3. (App Store) The dialog has no Split archive row; with 7Z the Password switch is disabled.
 
 ### Archive preview
 
@@ -936,10 +938,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Nuances:** Check with Space in Finder, not `qlmanage -p` (it crashes for extension previews). A preview of a RAR with encrypted headers is unverified.
 
-**Edition:** Website only (App Store: cut — the extension is not built).
+**Edition:** Both; App Store differs: needs the extension enabled in System Settings.
 
 **Test:**
-1. (Website) Select a ZIP and 7Z in Finder and press Space → a list of files and sizes. A password-protected one shows “Protected with a password”.
+1. Select a ZIP and 7Z in Finder and press Space → a list of files and sizes. A password-protected one shows “Protected with a password”.
 
 ### Enter opens files in Finder
 
@@ -982,20 +984,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Clears the desktop of files and folders before a call or a screen recording, and brings them back to the same places.
 
-**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:139`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: an animated guide (`SettingsGuide`: Show items › On Desktop turned off) above an Open button to System Settings › Desktop & Dock (`DesktopIconsLink`, `DesktopTools.swift:170`, guide at :182).
+**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:61`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: the sandbox can’t change that setting, so the switch puts a curtain over the icons: one borderless window per screen one level above the desktop icons (`CGWindowLevelForKey(.desktopIconWindow)+1`, ordered back so the pet stays on top), `ignoresMouseEvents` so clicks reach the desktop, showing the wallpaper from `NSWorkspace.desktopImageURL` decoded at screen size with the Fill/Fit/Stretch/Center option (`Sources/pika-tools/Tools/Windows/DesktopCurtain.swift`). A moving (Aerial) wallpaper reports `DefaultDesktop.heic`, so it gets the wallpaper’s fill color or the window background instead; no Screen Recording. Rebuilt on screen and Space changes, when another app becomes active (a new wallpaper) and on wake; gone when turned off or on quit. Below it in Settings: the animated guide (Show items › On Desktop turned off) and an Open button to System Settings › Desktop & Dock, subtitled Turn off “On Desktop” (`DesktopIconsSettings`, `DesktopTools.swift:181`, `SystemSettingsRow`).
 
-**Edition:** Both; App Store differs: guide and Open button to System Settings instead of the switch.
+**Edition:** Both; App Store differs: the switch covers the icons with the wallpaper instead of hiding them, and a guide with an Open button to System Settings sits below it.
 
 **Test:**
 1. (Website) Write down `defaults read com.apple.WindowManager StandardHideDesktopIcons`. Turn on Hide desktop icons → the icons leave the desktop without Finder restarting, the files stay in the Desktop folder, and System Settings › Desktop & Dock › Show items › On Desktop turns off. Turn it off → the icons come back to the same places.
 2. Change On Desktop in System Settings and open the menu → the switch follows. Repeat with Stage Manager on.
-3. (App Store) Settings › Finder › Hide desktop icons shows the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock. In the menu the same row closes the menu and opens the same page (no animation there).
+3. (App Store) Turn on Hide desktop icons with a picture wallpaper → the icons are covered by the same picture on every display, the pet stays on top; click, double-click and right-click where an icon was → the desktop gets them. Switch to a Space with another wallpaper, pick a new wallpaper, connect or remove a display → the curtain follows. Pick a moving wallpaper → a plain color covers the icons. Turn it off or quit pikapik → the icons are back and no window is left.
+4. (App Store) Below the switch in Settings: the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock.
 
 ### Show hidden files
 
 **Does:** Shows the files and folders macOS hides, dimmed, in Finder and on the desktop.
 
-**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:157`, `HiddenFilesTool` :63-168). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:230-237`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
+**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:135`, `HiddenFilesTool` :72-141). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:206-212`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
 
 **Edition:** Both; App Store differs: a hint with the keys instead of the switch.
 
@@ -1492,7 +1495,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Both; App Store differs: Turn Off opens System Settings.
 
 **Test:**
-1. Launch after `tccutil reset All <bundle id>` → no permission prompt at launch except what this tab asks; the menu bar icon appears.
+1. Launch after `tccutil reset All <bundle id>` → no system prompt at launch, in both editions; the first launch opens General Settings, later launches open no window, and the tools that need a permission are grey. The menu bar icon appears. Already-granted permissions stay on.
 2. Turn on any Keyboard, Mouse or Windows tool (for example Scroll by lines) → the Accessibility prompt, then Input Monitoring if needed. The status shows “Needs Access” until granted, then “Active”.
 3. Revoke a permission in System Settings while the app runs → status returns to “Needs Access” without a crash; granting again restores the tool without relaunch.
 4. Click a grey tool → this tab opens on the row to allow.
