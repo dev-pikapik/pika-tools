@@ -18,8 +18,6 @@ final class FinderKeys {
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
-    private static let tag: Int64 = 0x70696B61
-
     private init() {}
 
     func refresh() {
@@ -64,7 +62,7 @@ final class FinderKeys {
     }
 
     fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
-        guard event.getIntegerValueField(.eventSourceUserData) != Self.tag else { return false }
+        guard !event.isPikapik else { return false }
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         if up {
             guard let held, held.key == key else { return false }
@@ -118,7 +116,7 @@ final class FinderKeys {
     private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
         guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
         event.flags = flags
-        event.setIntegerValueField(.eventSourceUserData, value: tag)
+        event.markPikapik()
         if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 

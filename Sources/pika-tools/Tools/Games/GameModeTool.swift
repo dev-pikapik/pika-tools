@@ -627,7 +627,8 @@ private func gameModeCallback(
         guard tool.isPlaying else { break }
         if type == .keyDown, event.getIntegerValueField(.keyboardEventAutorepeat) == 0 {
             let combo = GameRules.combo(key: Int64(key), flags: flags.rawValue)
-            if let binding = tool.languageBindings[combo], !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+            if let binding = tool.languageBindings[combo], !event.isPikapik, !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+                event.markPikapik()
                 let pid = tool.game?.processIdentifier
                 DispatchQueue.main.async {
                     guard tool.game?.processIdentifier == pid, NSWorkspace.shared.frontmostApplication?.processIdentifier == pid, tool.languageBindings[combo] != nil else { return }
