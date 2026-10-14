@@ -36,7 +36,10 @@ enum Compressor {
         case "wav", "aiff", "aif", "aifc", "caf", "flac": try await Converter.convert(source, to: "m4a", output: output, progress: progress)
         default:
             guard let type = videoTypes[ext] else { throw CompressorError() }
-            try await export(source, to: output, type: type, preset: AVAssetExportPresetHEVCHighestQuality, progress: progress)
+            // The HEVC preset alone aims at a fixed bitrate, above most screen recordings, so its copy came out bigger.
+            // A length limit makes the encoder fit the whole video into half the size instead.
+            let size = try source.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            try await export(source, to: output, type: type, preset: AVAssetExportPresetHEVCHighestQuality, limit: Int64(size / 2), progress: progress)
         }
     }
 
@@ -112,11 +115,12 @@ enum Compressor {
         else { throw CompressorError() }
     }
 
-    static func export(_ source: URL, to output: URL, type: AVFileType, preset: String, progress: @escaping @Sendable (Double) -> Void) async throws {
+    static func export(_ source: URL, to output: URL, type: AVFileType, preset: String, limit: Int64 = 0, progress: @escaping @Sendable (Double) -> Void) async throws {
         guard let session = AVAssetExportSession(asset: AVURLAsset(url: source), presetName: preset)
         else { throw CompressorError() }
         session.outputURL = output
         session.outputFileType = type
+        session.fileLengthLimit = limit
         session.exportAsynchronously {}
         while [.waiting, .exporting].contains(session.status) {
             if Task.isCancelled {
