@@ -926,6 +926,8 @@
 "File names are hidden too" = "Tên tệp cũng được ẩn";
 "Use English letters, numbers and symbols only" = "Chỉ dùng chữ cái tiếng Anh, chữ số và ký hiệu";
 "TAR archives can’t have a password" = "Tệp TAR không thể có mật khẩu";
+"Only ZIP can have a password" = "Chỉ ZIP mới có thể có mật khẩu";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Tệp có thể bị hỏng, hoặc thuộc loại mà phiên bản pikapik này không mở được: các phần của tệp nén chia nhỏ, tệp XZ, LZMA hoặc ZST đơn lẻ, và 7Z hoặc RAR có mật khẩu.";
 "Don’t split" = "Không chia";
 "15 MB, for email" = "15 MB, để gửi email";
 "100 MB" = "100 MB";
