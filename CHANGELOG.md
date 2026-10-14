@@ -14,6 +14,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Mac App Store version: Settings › Ports is gone. There macOS doesn’t let an app see which program holds a port, so the page stayed empty.
 - Games: with two copies of pikapik open at once, for example the Mac App Store version and the version from the website, ⇧⌘Q and ⇧⌘W in a game did nothing. One copy turned them into ⌘Q and ⌘W, and the other copy stopped those as an accidental quit, so the game neither quit nor closed its window. Now the copies let each other’s ⌘Q and ⌘W through.
 - Mac App Store version, Temperature: on a Mac with a battery, the page now shows the battery’s temperature in degrees, with a bar that turns green, yellow or orange, under the overall word. Before, the page showed only that word and a tip and no numbers, so it looked empty. A Mac without a battery still shows the overall level.
+- Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 
 ## [1.49.0] - 2026-10-13
 

@@ -36,10 +36,10 @@ enum TestBattery {
         precondition(BatteryState(source: ["Type": "UPS", "Current Capacity": 50], registry: [:], adapter: nil) == nil)
 
         #if APPSTORE
-        func health(_ pack: [String: Any]? = nil, _ top: [String: Any] = [:], _ registry: [String: Any] = [:]) -> BatteryHealth? {
+        func health(_ pack: [String: Any]? = nil, _ top: [String: Any] = [:], _ registry: [String: Any] = [:], data: [String: Any] = [:]) -> BatteryHealth? {
             var source = top
             if let pack { source["BatteryPacks"] = [["BatteryHealth": pack]] }
-            return BatteryHealth(source: source, registry: registry)
+            return BatteryHealth(source: source, registry: registry, pack: ["BatteryData": data])
         }
         let good = health(["Maximum Capacity Percent": 87, "Battery Service State": 0])
         precondition(good?.capacity == 87 && good?.normal == true)
@@ -60,6 +60,12 @@ enum TestBattery {
         precondition(health(nil, ["BatteryHealth": "Unknown"]) == nil)
         precondition(health(nil, [:], ["NominalChargeCapacity": 0, "DesignCapacity": 4382]) == nil)
         precondition(health() == nil)
+        let macOS27: [String: Any] = ["NominalChargeCapacity": 6131, "AppleRawMaxCapacity": 5979, "DesignCapacity": 6249, "PermanentFailureStatus": 0]
+        let packOnly = health(nil, [:], [:], data: macOS27)
+        precondition(packOnly?.capacity == 99 && packOnly?.normal == nil)
+        precondition(health(nil, [:], ["NominalChargeCapacity": 4093, "DesignCapacity": 4382], data: macOS27)?.capacity == 94)
+        precondition(health(nil, [:], [:], data: ["NominalChargeCapacity": 6131, "DesignCapacity": 6249, "PermanentFailureStatus": 1])?.normal == false)
+        precondition(health(["Maximum Capacity Percent": 87, "Battery Service State": 0], [:], [:], data: macOS27)?.capacity == 87)
         #else
         func health(_ condition: String, _ capacity: String = "100%") -> BatteryHealth? {
             let json = #"{"SPPowerDataType":[{"_name":"spbattery_information","sppower_battery_health_info":{"sppower_battery_cycle_count":68,"# +
