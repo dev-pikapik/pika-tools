@@ -1088,14 +1088,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Even calmer: Reduce Motion in Accessibility
 
-**Does:** Opens System Settings › Accessibility › Display so you can turn on Reduce Motion, and shows where to click.
+**Does:** Opens System Settings › Accessibility › Motion so you can turn on Reduce Motion, and shows where to click.
 
-**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:274`; App Store `SettingsWindow.swift:1069`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions.
+**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:274`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
 
 **Edition:** Both.
 
 **Test:**
-1. The row shows the animation of the clicks. Press Open → System Settings opens on Accessibility › Display.
+1. The row shows the animation of the clicks. Press Open → System Settings opens on Accessibility › Motion (on a macOS without the Motion anchor: Display).
 2. With Reduce Motion on → the animation is one still frame with the click marked.
 
 ## Uninstaller
@@ -1320,12 +1320,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Switch language on every press — only for the input-language shortcut.
 - Allow in games — the shortcut works as usual.
 
-**Nuances:** Settings search finds each shortcut. The shortcuts are read again when pikapik becomes active.
+**Nuances:** Settings search finds each shortcut. The shortcuts are read again when pikapik becomes active. A shortcut without keys shows “No key assigned”: clicking it opens System Settings › Keyboard › Keyboard Shortcuts… on its section; when pikapik cannot click there itself, a popover shows the animated guide (Keyboard Shortcuts… → the section) (`ShortcutAssignmentLink`, `SystemShortcutList.swift:235`; `SystemShortcuts.open`, `ShortcutField.swift:98`).
 
 **Edition:** Both.
 
 **Test:**
 1. Search Settings for “Mission Control” → the shortcut row opens. Set it to Allow in games, start a game, press it → Mission Control opens; set Disable in games → nothing happens.
+2. Click “No key assigned” on a shortcut without keys → System Settings opens on Keyboard Shortcuts… at its section; without Accessibility a popover over the link shows the animation of those clicks.
 
 ### Other apps watching keys
 
@@ -1555,7 +1556,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows whether New File, Smaller Copy, Convert (and Archives) are enabled in System Settings.
 
-**How it works:** Row shown when an extension is active or waiting. Allow opens System Settings › Login Items & Extensions › Finder; Turn Off opens the same list (App Store).
+**How it works:** Row shown when an extension is active or waiting. Allow opens System Settings › Login Items & Extensions › Finder; Turn Off opens the same list (App Store). While the Finder permission is missing, an animated guide above the row shows Login Items & Extensions → pikapik’s info button → the switch on (`SettingsGuide.finderExtensions`, `Permissions.swift:458`).
 
 **Edition:** Both.
 
