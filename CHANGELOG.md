@@ -19,6 +19,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - With two copies of pikapik open at once, a setting turned on in both no longer undoes itself. Before, both copies did the same job one after the other: Swap the side buttons swapped them twice, so they stayed as they were; the scroll direction flipped twice; and the language switch and the language keys in games switched twice, back to the language you started from when you have two. Wrong keyboard layout could also fix the text the other copy had just retyped. Now one copy does the job and the other lets it through.
 - Mac App Store version, Temperature: on a Mac with a battery, the page now shows the battery’s temperature in degrees, with a bar that turns green, yellow or orange, under the overall word. Before, the page showed only that word and a tip and no numbers, so it looked empty. A Mac without a battery still shows the overall level.
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
+- Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
 
 ## [1.49.0] - 2026-10-13
 
