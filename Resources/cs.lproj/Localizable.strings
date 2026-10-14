@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder se na chvilku restartuje";
 "Waiting for Finder to finish copying" = "Čeká se, až Finder dokončí kopírování";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Skryté soubory a složky, například Knihovna, se zobrazí zašedle ve Finderu i na ploše, stejně jako po stisknutí ⇧⌘. ve Finderu. Aby se změna projevila, Finder se na chvilku restartuje a znovu otevře svá okna a karty. Pokud Finder právě kopíruje nebo přesouvá soubory, restartuje se, až s tím skončí.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Nastavení systému › Plocha a Dock › Zobrazit položky › Na ploše";
+"Turn off “On Desktop”" = "Vypněte „Na ploše“";
 "Or hide them in System Settings" = "Nebo je skryjte v Nastavení systému";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otevře v Nastavení systému sekci Plocha a Dock. Ikony skryjete vypnutím volby „Na ploše“ vedle „Zobrazit položky“, opětovným zapnutím je vrátíte. Soubory zůstanou ve složce Plocha.";
 "Press these keys in Finder, and again to hide them" = "Stiskněte tyto klávesy ve Finderu, dalším stisknutím soubory znovu skryjete";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "plocha, ikony, soubory, složky, úklid, skrýt, prezentace, sdílení obrazovky, nahrávání, snímek obrazovky, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "skryté, neviditelné, soubory s tečkou, systémové soubory, Knihovna, zobrazit všechny soubory, Command Shift tečka";

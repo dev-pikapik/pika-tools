@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder ненадовго перезапуститься";
 "Waiting for Finder to finish copying" = "Чекаю, поки Finder завершить копіювання";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Приховані файли й папки, наприклад «Бібліотека», видно напівпрозорими у Finder і на робочому столі, як після натискання ⇧⌘. у Finder. Щоб застосувати зміну, Finder ненадовго перезапуститься й знову відкриє свої вікна та вкладки. Якщо Finder копіює або переміщує файли, він перезапуститься, коли закінчить.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Системні параметри › Робочий стіл і Dock › Показувати елементи › На робочому столі";
+"Turn off “On Desktop”" = "Вимкніть «На робочому столі»";
 "Or hide them in System Settings" = "Або сховати їх у Системних параметрах";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Відкриває «Робочий стіл і Dock» у Системних параметрах. Щоб сховати значки, вимкни «На робочому столі» поруч із «Показувати елементи», а щоб повернути, увімкни знову. Файли залишаються в папці «Робочий стіл».";
 "Press these keys in Finder, and again to hide them" = "Натисни ці клавіші у Finder, а щоб знову сховати, натисни ще раз";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "робочий стіл, значки, іконки, файли, папки, чистий, сховати, презентація, демонстрація екрана, запис, знімок екрана, Постановник";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "приховані, невидимі, файли з крапкою, системні файли, Бібліотека, показати всі файли, Command Shift крапка";

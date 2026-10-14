@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder repornește pentru o clipă";
 "Waiting for Finder to finish copying" = "Se așteaptă ca Finder să termine copierea";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Fișierele și folderele ascunse, cum ar fi Bibliotecă, apar estompate în Finder și pe desktop, la fel ca la apăsarea ⇧⌘. în Finder. Pentru a aplica modificarea, Finder repornește pentru o clipă și își redeschide ferestrele și filele. Dacă Finder copiază sau mută fișiere, repornește abia după ce termină.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Configurări sistem › Desktop și Dock › Afișare articole › Pe desktop";
+"Turn off “On Desktop”" = "Dezactivați „Pe desktop”";
 "Or hide them in System Settings" = "Sau ascunde-le din Configurări sistem";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Deschide Desktop și Dock în Configurări sistem. Dezactivează „Pe desktop” lângă „Afișare articole” ca să ascunzi pictogramele și activează-l din nou ca să le readuci. Fișierele rămân în folderul Desktop.";
 "Press these keys in Finder, and again to hide them" = "Apasă aceste taste în Finder, și din nou ca să le ascunzi";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, pictograme, fișiere, foldere, curățare, ascundere, prezentare, partajarea ecranului, înregistrare, captură de ecran, Manager de scenă";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ascunse, invizibile, fișiere cu punct, fișiere de sistem, Bibliotecă, afișează toate fișierele, Command Shift punct";

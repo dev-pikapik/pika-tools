@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder एक पल के लिए रीस्टार्ट होगा";
 "Waiting for Finder to finish copying" = "Finder में कॉपी पूरी होने का इंतज़ार है";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "छिपी फ़ाइलें और फ़ोल्डर, जैसे लाइब्रेरी, Finder में और डेस्कटॉप पर धुंधले दिखते हैं, ठीक Finder में ⇧⌘. दबाने की तरह। बदलाव लागू करने के लिए Finder एक पल के लिए रीस्टार्ट होकर अपनी विंडो और टैब फिर से खोलेगा। अगर Finder फ़ाइलें कॉपी या मूव कर रहा है, तो वह काम पूरा होने के बाद ही रीस्टार्ट होगा।";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "सिस्टम सेटिंग › डेस्कटॉप और Dock › आइटम दिखाएँ › डेस्कटॉप पर";
+"Turn off “On Desktop”" = "“डेस्कटॉप पर” बंद करें";
 "Or hide them in System Settings" = "या उन्हें सिस्टम सेटिंग में छिपाएँ";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है। आइकॉन छिपाने के लिए “आइटम दिखाएँ” के पास “डेस्कटॉप पर” बंद करें, और उन्हें वापस लाने के लिए फिर से चालू करें। फ़ाइलें डेस्कटॉप फ़ोल्डर में ही रहती हैं।";
 "Press these keys in Finder, and again to hide them" = "Finder में ये कुंजियाँ दबाएँ, और छिपाने के लिए फिर से दबाएँ";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "डेस्कटॉप, आइकॉन, फ़ाइलें, फ़ोल्डर, साफ़, छिपाएँ, प्रेज़ेंटेशन, स्क्रीन शेयरिंग, रिकॉर्डिंग, स्क्रीनशॉट, स्टेज मैनेजर";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "छिपी, अदृश्य, डॉट फ़ाइलें, सिस्टम फ़ाइलें, लाइब्रेरी, सभी फ़ाइलें दिखाएँ, Command Shift पीरियड";

@@ -26,10 +26,6 @@ final class DesktopIconsTool: Tool {
 
     var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
     func refresh() { curtain.isOn = isEnabled }
-
-    static func openSettings() {
-        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!)
-    }
 }
 #else
 private func relaunch(_ bundleID: String) {
@@ -197,13 +193,12 @@ private struct DesktopIconsSettings: View {
             isOn: $tool.isEnabled
         )
         if inSettings {
-            SettingsGuide(pane: .desktop, steps: [.checkbox("Show items", option: "On Desktop", on: false)])
-            LabeledContent {
-                Button("Open") { DesktopIconsTool.openSettings() }
-            } label: {
-                RowLabel(Text("Or hide them in System Settings"), Text("System Settings › Desktop & Dock › Show items › On Desktop"))
-            }
-            .help(Text("Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder."))
+            SystemSettingsRow(
+                title: String(localized: "Or hide them in System Settings"),
+                subtitle: Text("Turn off “On Desktop”"),
+                url: URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!,
+                guide: SettingsGuide(pane: .desktop, steps: [.checkbox("Show items", option: "On Desktop", on: false)])
+            )
         }
     }
 }

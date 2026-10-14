@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder startar om snabbt";
 "Waiting for Finder to finish copying" = "Väntar på att Finder ska kopiera klart";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Gömda filer och mappar, som Bibliotek, visas nedtonade i Finder och på skrivbordet, precis som när du trycker på ⇧⌘. i Finder. För att ändringen ska gälla startar Finder om snabbt och öppnar sina fönster och flikar igen. Om Finder kopierar eller flyttar filer startar den om först när den är klar.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Systeminställningar › Skrivbord och Dock › Visa objekt › På skrivbordet";
+"Turn off “On Desktop”" = "Stäng av ”På skrivbordet”";
 "Or hide them in System Settings" = "Eller göm dem i Systeminställningar";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Öppnar Skrivbord och Dock i Systeminställningar. Stäng av ”På skrivbordet” bredvid ”Visa objekt” för att gömma symbolerna och slå på det igen för att få tillbaka dem. Filerna ligger kvar i mappen Skrivbord.";
 "Press these keys in Finder, and again to hide them" = "Tryck på de här tangenterna i Finder, och igen för att gömma dem";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "skrivbord, symboler, filer, mappar, städa, gömma, presentation, skärmdelning, inspelning, skärmbild, Blickfång";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "gömda, osynliga, punktfiler, systemfiler, Bibliotek, visa alla filer, Kommando Skift punkt";

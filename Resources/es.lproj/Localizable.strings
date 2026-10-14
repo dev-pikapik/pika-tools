@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "El Finder se reinicia un momento";
 "Waiting for Finder to finish copying" = "Esperando a que el Finder termine de copiar";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Los archivos y carpetas ocultos, como Biblioteca, aparecen atenuados en el Finder y en el escritorio, igual que al pulsar ⇧⌘. en el Finder. Para aplicar el cambio, el Finder se reinicia un momento y vuelve a abrir sus ventanas y pestañas. Si el Finder está copiando o moviendo archivos, se reiniciará cuando termine.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Ajustes del Sistema › Escritorio y Dock › Mostrar ítems › En el escritorio";
+"Turn off “On Desktop”" = "Desactiva «En el escritorio»";
 "Or hide them in System Settings" = "O ocúltalos en Ajustes del Sistema";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Abre Escritorio y Dock en Ajustes del Sistema. Desactiva «En el escritorio» junto a «Mostrar ítems» para ocultar los iconos y vuelve a activarlo para recuperarlos. Los archivos se quedan en la carpeta Escritorio.";
 "Press these keys in Finder, and again to hide them" = "Pulsa estas teclas en el Finder, y otra vez para ocultarlos";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "escritorio, iconos, archivos, carpetas, limpiar, ocultar, presentación, compartir pantalla, grabación, captura de pantalla, organizador visual";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ocultos, invisibles, archivos de punto, archivos del sistema, Biblioteca, mostrar todos los archivos, Comando Mayúsculas punto";

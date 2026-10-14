@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder restarts for a moment";
 "Waiting for Finder to finish copying" = "Waiting for Finder to finish copying";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "System Settings › Desktop & Dock › Show items › On Desktop";
+"Turn off “On Desktop”" = "Turn off “On Desktop”";
 "Or hide them in System Settings" = "Or hide them in System Settings";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder.";
 "Press these keys in Finder, and again to hide them" = "Press these keys in Finder, and again to hide them";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period";

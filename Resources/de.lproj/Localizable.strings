@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Der Finder startet kurz neu";
 "Waiting for Finder to finish copying" = "Warten, bis der Finder fertig kopiert hat";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Versteckte Dateien und Ordner wie „Library“ erscheinen im Finder und auf dem Schreibtisch abgeblendet, genau wie nach ⇧⌘. im Finder. Damit die Änderung greift, startet der Finder kurz neu und öffnet seine Fenster und Tabs wieder. Kopiert oder verschiebt der Finder gerade Dateien, startet er erst neu, wenn er damit fertig ist.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Systemeinstellungen › Schreibtisch & Dock › Objekte einblenden › Auf dem Schreibtisch";
+"Turn off “On Desktop”" = "Schalte „Auf dem Schreibtisch“ aus";
 "Or hide them in System Settings" = "Oder in den Systemeinstellungen ausblenden";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Öffnet Schreibtisch & Dock in den Systemeinstellungen. Zum Ausblenden der Symbole „Auf dem Schreibtisch“ neben „Objekte einblenden“ ausschalten, zum Zurückholen wieder einschalten. Die Dateien bleiben im Ordner „Schreibtisch“.";
 "Press these keys in Finder, and again to hide them" = "Diese Tasten im Finder drücken, zum Ausblenden erneut drücken";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "Schreibtisch, Symbole, Dateien, Ordner, aufräumen, ausblenden, Präsentation, Bildschirmfreigabe, Aufnahme, Bildschirmfoto, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "versteckt, unsichtbar, Punktdateien, Systemdateien, Library, alle Dateien anzeigen, Befehlstaste Umschalttaste Punkt";

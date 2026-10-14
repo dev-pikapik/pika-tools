@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder na chwilę uruchomi się ponownie";
 "Waiting for Finder to finish copying" = "Oczekiwanie na zakończenie kopiowania w Finderze";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Ukryte pliki i foldery, na przykład Biblioteki, są wyszarzone w Finderze i na biurku, tak jak po naciśnięciu ⇧⌘. w Finderze. Aby zastosować zmianę, Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna i karty. Jeśli Finder właśnie kopiuje lub przenosi pliki, uruchomi się ponownie dopiero, gdy skończy.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Ustawienia systemowe › Biurko i Dock › Pokaż rzeczy › Na Biurku";
+"Turn off “On Desktop”" = "Wyłącz „Na Biurku”";
 "Or hide them in System Settings" = "Albo ukryj je w Ustawieniach systemowych";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otwiera Biurko i Dock w Ustawieniach systemowych. Aby ukryć ikony, wyłącz „Na Biurku” obok „Pokaż rzeczy”, a aby je przywrócić, włącz z powrotem. Pliki zostają w folderze Biurko.";
 "Press these keys in Finder, and again to hide them" = "Naciśnij te klawisze w Finderze, a ponownie, aby je ukryć";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "biurko, ikony, pliki, foldery, porządek, ukryj, prezentacja, udostępnianie ekranu, nagrywanie, zrzut ekranu, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ukryte, niewidoczne, pliki z kropką, pliki systemowe, Biblioteki, pokaż wszystkie pliki, Command Shift kropka";

@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Il Finder si riavvia per un attimo";
 "Waiting for Finder to finish copying" = "Aspetto che il Finder finisca di copiare";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "I file e le cartelle nascosti, come Libreria, appaiono attenuati nel Finder e sulla scrivania, come premendo ⇧⌘. nel Finder. Per applicare la modifica, il Finder si riavvia per un attimo e riapre le sue finestre e le sue schede. Se il Finder sta copiando o spostando dei file, si riavvia solo quando ha finito.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Impostazioni di Sistema › Scrivania e Dock › Mostra elementi › Sulla scrivania";
+"Turn off “On Desktop”" = "Disattiva «Sulla scrivania»";
 "Or hide them in System Settings" = "Oppure nascondile in Impostazioni di Sistema";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Apre Scrivania e Dock in Impostazioni di Sistema. Disattiva «Sulla scrivania» accanto a «Mostra elementi» per nascondere le icone, e riattivalo per farle tornare. I file restano nella cartella Scrivania.";
 "Press these keys in Finder, and again to hide them" = "Premi questi tasti nel Finder, e di nuovo per nasconderli";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "scrivania, icone, file, cartelle, ordinare, nascondere, presentazione, condivisione schermo, registrazione, istantanea, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "nascosti, invisibili, file con punto, file di sistema, Libreria, mostra tutti i file, Comando Maiuscole punto";

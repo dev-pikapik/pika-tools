@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finderがいったん再起動します";
 "Waiting for Finder to finish copying" = "Finderのコピーが終わるのを待っています";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "「ライブラリ」などの隠しファイルやフォルダが、Finderとデスクトップに薄く表示されます。Finderで⇧⌘. を押したときと同じです。変更を反映するため、Finderがいったん再起動して、ウインドウとタブを開き直します。Finderがファイルをコピー中または移動中のときは、終わるまで待ってから再起動します。";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "システム設定 › デスクトップとDock › 項目を表示 › デスクトップに";
+"Turn off “On Desktop”" = "「デスクトップに」をオフにします";
 "Or hide them in System Settings" = "またはシステム設定で隠す";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "システム設定の「デスクトップとDock」を開きます。アイコンを隠すには「項目を表示」の横の「デスクトップに」をオフにし、元に戻すにはもう一度オンにします。ファイルは「デスクトップ」フォルダに残ります。";
 "Press these keys in Finder, and again to hide them" = "Finderでこのキーを押すと表示され、もう一度押すと隠れます";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "デスクトップ, アイコン, ファイル, フォルダ, 片付け, 隠す, プレゼンテーション, 画面共有, 録画, スクリーンショット, ステージマネージャ";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隠し, 非表示, ドットファイル, システムファイル, ライブラリ, すべてのファイルを表示, Command Shift ピリオド";

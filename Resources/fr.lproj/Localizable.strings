@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Le Finder redémarre un instant";
 "Waiting for Finder to finish copying" = "En attente de la fin des copies dans le Finder";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Les fichiers et dossiers masqués, comme Bibliothèque, apparaissent estompés dans le Finder et sur le bureau, comme après ⇧⌘. dans le Finder. Pour appliquer le changement, le Finder redémarre un instant et rouvre ses fenêtres et ses onglets. Si le Finder copie ou déplace des fichiers, il redémarre une fois qu’il a terminé.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Réglages Système › Bureau et Dock › Afficher les éléments › Sur le bureau";
+"Turn off “On Desktop”" = "Désactivez « Sur le bureau »";
 "Or hide them in System Settings" = "Ou masquez-les dans Réglages Système";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Ouvre Bureau et Dock dans Réglages Système. Désactivez « Sur le bureau » à côté de « Afficher les éléments » pour masquer les icônes, puis réactivez-le pour les faire revenir. Les fichiers restent dans le dossier Bureau.";
 "Press these keys in Finder, and again to hide them" = "Appuyez sur ces touches dans le Finder, puis à nouveau pour les masquer";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "bureau, icônes, fichiers, dossiers, ranger, masquer, présentation, partage d’écran, enregistrement, capture d’écran, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "masqués, invisibles, fichiers point, fichiers système, Bibliothèque, afficher tous les fichiers, Commande Maj point";

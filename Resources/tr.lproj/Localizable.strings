@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder kısa bir süreliğine yeniden başlatılır";
 "Waiting for Finder to finish copying" = "Finder’ın kopyalamayı bitirmesi bekleniyor";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Kitaplık gibi gizli dosya ve klasörler Finder’da ve masaüstünde soluk görünür; Finder’da ⇧⌘. tuşlarına basmakla aynıdır. Değişikliğin uygulanması için Finder kısa bir süreliğine yeniden başlatılır ve pencerelerini ve sekmelerini tekrar açar. Finder dosya kopyalıyor veya taşıyorsa, bu iş bitince yeniden başlatılır.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Sistem Ayarları › Masaüstü ve Dock › Öğeleri göster › Masaüstünde";
+"Turn off “On Desktop”" = "“Masaüstünde” seçeneğini kapatın";
 "Or hide them in System Settings" = "Ya da Sistem Ayarları’nda gizleyin";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Sistem Ayarları’nda Masaüstü ve Dock’u açar. Simgeleri gizlemek için “Öğeleri göster”in yanındaki “Masaüstünde” seçeneğini kapatın, geri getirmek için yeniden açın. Dosyalar Masaüstü klasöründe kalır.";
 "Press these keys in Finder, and again to hide them" = "Bu tuşlara Finder’da basın, gizlemek için yeniden basın";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "masaüstü, simgeler, dosyalar, klasörler, temizle, gizle, sunum, ekran paylaşımı, kayıt, ekran görüntüsü, Sahne Yöneticisi";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "gizli, görünmez, noktalı dosyalar, sistem dosyaları, Kitaplık, tüm dosyaları göster, Command Shift nokta";

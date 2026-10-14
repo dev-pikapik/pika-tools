@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder ненадолго перезапустится";
 "Waiting for Finder to finish copying" = "Жду, пока Finder закончит копирование";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Скрытые файлы и папки, например «Библиотека», видны полупрозрачными в Finder и на рабочем столе, как после нажатия ⇧⌘. в Finder. Чтобы применить изменение, Finder ненадолго перезапустится и снова откроет свои окна и вкладки. Если Finder копирует или перемещает файлы, он перезапустится, когда закончит.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Системные настройки › Рабочий стол и Dock › Показывать объекты › На Рабочем столе";
+"Turn off “On Desktop”" = "Выключите «На Рабочем столе»";
 "Or hide them in System Settings" = "Или скройте их в Системных настройках";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Открывает «Рабочий стол и Dock» в Системных настройках. Чтобы скрыть значки, выключите «На Рабочем столе» рядом с «Показывать объекты», а чтобы вернуть, включите снова. Файлы остаются в папке «Рабочий стол».";
 "Press these keys in Finder, and again to hide them" = "Нажмите эти клавиши в Finder, а чтобы снова скрыть, нажмите ещё раз";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "рабочий стол, значки, иконки, файлы, папки, чистый, скрыть, презентация, демонстрация экрана, запись, снимок экрана, Постановщик";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "скрытые, невидимые, файлы с точкой, системные файлы, Библиотека, показать все файлы, Command Shift точка";

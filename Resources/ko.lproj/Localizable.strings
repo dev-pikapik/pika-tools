@@ -1153,9 +1153,8 @@
 "Finder restarts for a moment" = "Finder가 잠시 재시작됩니다";
 "Waiting for Finder to finish copying" = "Finder가 복사를 마칠 때까지 기다리는 중";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "라이브러리 같은 숨김 파일과 폴더가 Finder와 데스크탑에 흐리게 표시됩니다. Finder에서 ⇧⌘.을 누른 것과 같습니다. 변경 사항을 적용하기 위해 Finder가 잠시 재시작된 뒤 윈도우와 탭을 다시 엽니다. Finder가 파일을 복사하거나 이동하는 중이면 끝날 때까지 기다렸다가 재시작됩니다.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "시스템 설정 › 데스크탑 및 Dock › 항목 보기 › 데스크탑에서";
+"Turn off “On Desktop”" = "‘데스크탑에서’를 끄세요";
 "Or hide them in System Settings" = "또는 시스템 설정에서 숨기기";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "시스템 설정에서 데스크탑 및 Dock을 엽니다. 아이콘을 숨기려면 ‘항목 보기’ 옆의 ‘데스크탑에서’를 끄고, 다시 보이게 하려면 켜세요. 파일은 데스크탑 폴더에 그대로 있습니다.";
 "Press these keys in Finder, and again to hide them" = "Finder에서 이 키를 누르면 보이고, 한 번 더 누르면 다시 숨겨집니다";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "데스크탑, 아이콘, 파일, 폴더, 정리, 숨기기, 프레젠테이션, 화면 공유, 녹화, 스크린샷, 스테이지 매니저";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "숨김, 보이지 않는, 점 파일, 시스템 파일, 라이브러리, 모든 파일 보기, Command Shift 마침표";
