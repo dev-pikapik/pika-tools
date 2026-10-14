@@ -86,10 +86,14 @@ struct KeyCaps: View {
                 .accessibilityLabel(Text(verbatim: shown.map { $0.isEmpty ? String(localized: "Off") : $0 }.joined(separator: ", ")))
                 .accessibilityHint(system.hint.map { Text($0) } ?? Text("Change in System Settings"))
                 .popover(isPresented: $showsHint, arrowEdge: .bottom) {
-                    Text(system.hint ?? "")
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: 320, alignment: .leading)
-                        .padding(12)
+                    if let guide = system.guide {
+                        guide.frame(width: 340).padding(12)
+                    } else {
+                        Text(system.hint ?? "")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: 320, alignment: .leading)
+                            .padding(12)
+                    }
                 }
         } else {
             caps.accessibilityHidden(true)

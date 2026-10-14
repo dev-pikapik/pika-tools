@@ -240,8 +240,12 @@ private struct ShortcutAssignmentLink: View {
         Button("No key assigned") { SystemShortcuts.open(place) { showsHint = true } }
             .buttonStyle(.link).help(Text("Change in System Settings"))
             .popover(isPresented: $showsHint) {
-                Text(place.hint ?? String(localized: "Change in System Settings"))
-                    .fixedSize(horizontal: false, vertical: true).frame(maxWidth: 320).padding(12)
+                if let guide = place.guide {
+                    guide.frame(width: 340).padding(12)
+                } else {
+                    Text(place.hint ?? String(localized: "Change in System Settings"))
+                        .fixedSize(horizontal: false, vertical: true).frame(maxWidth: 320).padding(12)
+                }
             }
     }
 }

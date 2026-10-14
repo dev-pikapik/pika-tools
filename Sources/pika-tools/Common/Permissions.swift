@@ -455,6 +455,7 @@ struct PermissionsView: View {
             }
             Section("For some features") {
                 ForEach(others, id: \.self) { permission in
+                    if permission == .finder, !permission.isGranted { SettingsGuide.finderExtensions }
                     PermissionRow(permission: permission)
                     if let error = permission.error {
                         Label(error, systemImage: "exclamationmark.triangle.fill")

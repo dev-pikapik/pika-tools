@@ -238,8 +238,6 @@ struct AnimationsPage: View {
     @Bindable private var tool = AnimationsTool.shared
     @State private var offersAutohide = false
 
-    private static let motion = URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?Seeing_Display")!
-
     var body: some View {
         Form {
             SettingsHeader(tab: .animations, text: String(localized: "How fast things move on your Mac"))
@@ -271,7 +269,7 @@ struct AnimationsPage: View {
                 FlagRow(tool: tool, setting: .finder)
             }
             Section {
-                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: Self.motion, guide: .reduceMotion)
+                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: SettingsGuide.reduceMotionLink, guide: .reduceMotion)
             }
             RestoreDefaultsSection(
                 message: tool.own.isEmpty

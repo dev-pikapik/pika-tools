@@ -6,6 +6,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Added
 - Mac App Store version: where macOS doesn’t let the app change a setting itself, a short animation now shows where to click in System Settings: Animations, Hide desktop icons, pointer acceleration, Permissions and Open at Login. The labels in the animation are taken from your Mac, in its language. Reduce Motion in both versions also gets the animation, and when Reduce Motion is on you see one still frame with the click marked.
+- The animation that shows where to click in System Settings now also covers keyboard shortcuts you change in System Settings › Keyboard and turning on the Finder extensions in Login Items & Extensions. The Reduce Motion button now opens the Motion page itself, not Display.
 - Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
 - Mac App Store version, Permissions: Settings › Permissions now shows which installed apps can ask for Camera, Microphone, Automation, Files and Folders and Bluetooth, each with its icon. Who is allowed is still shown only in System Settings, because macOS hides it from this version.
 
