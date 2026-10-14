@@ -206,7 +206,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Maximum Capacity — percent of the design capacity (`:68`).
 - Cycle Count — compared with the rated count (`:79`).
 
-**Nuances:** The Condition row appears only when the battery needs service. On macOS 27 the capacity values live inside AppleSmartBatteryPack, so the App Store page may miss the capacity there (known, not fixed).
+**Nuances:** The Condition row appears only when the battery needs service. On macOS 27 the capacity values live only in the BatteryData of AppleSmartBatteryPack; the App Store build reads it there after the AppleSmartBattery root (`Battery.swift`, test `scripts/test-battery.swift`). The percent may differ by 1% from System Settings, which smooths it over weeks.
 
 **Edition:** Both; App Store differs: reads the registry instead of running system_profiler.
 
