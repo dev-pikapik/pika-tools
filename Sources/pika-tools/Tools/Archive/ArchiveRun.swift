@@ -185,7 +185,8 @@ extension Archive {
             let lines = Lines(progress: progress) { handler?($0) }
             readers.enter()
             DispatchQueue.global().async {
-                while let data = try? pipe.fileHandleForReading.read(upToCount: 1 << 16), !data.isEmpty { lines.feed(data) }
+                // read(upToCount:) waits for the whole block or the end, so progress and a wrong password would show up late; availableData returns what has arrived
+                while case let data = pipe.fileHandleForReading.availableData, !data.isEmpty { lines.feed(data) }
                 lines.finish()
                 readers.leave()
             }

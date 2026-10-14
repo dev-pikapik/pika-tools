@@ -927,6 +927,8 @@
 "File names are hidden too" = "Filnamnen döljs också";
 "Use English letters, numbers and symbols only" = "Använd bara engelska bokstäver, siffror och symboler";
 "TAR archives can’t have a password" = "TAR-arkiv kan inte ha lösenord";
+"Only ZIP can have a password" = "Bara ZIP kan ha lösenord";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Filen kan vara skadad, eller av en sort som den här versionen av pikapik inte kan öppna: arkiv i flera delar, enstaka XZ-, LZMA- eller ZST-filer samt 7Z eller RAR med lösenord.";
 "Don’t split" = "Dela inte upp";
 "15 MB, for email" = "15 MB, för e-post";
 "100 MB" = "100 MB";

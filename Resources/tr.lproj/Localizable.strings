@@ -927,6 +927,8 @@
 "File names are hidden too" = "Dosya adları da gizlenir";
 "Use English letters, numbers and symbols only" = "Yalnızca İngilizce harf, rakam ve simge kullanın";
 "TAR archives can’t have a password" = "TAR arşivlerine parola konamaz";
+"Only ZIP can have a password" = "Yalnızca ZIP’e parola konabilir";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Dosya hasarlı olabilir ya da pikapik’in bu sürümünün açamadığı türden olabilir: parçalara bölünmüş arşivler, tek başına XZ, LZMA veya ZST dosyaları ve parolalı 7Z ya da RAR.";
 "Don’t split" = "Bölme";
 "15 MB, for email" = "15 MB, e-posta için";
 "100 MB" = "100 MB";
