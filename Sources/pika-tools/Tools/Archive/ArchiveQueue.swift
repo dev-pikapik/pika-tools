@@ -57,8 +57,18 @@ final class ArchiveQueue {
         waiting.append((work, row))
         guard !running else { return }
         running = true
-        awake = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: "pikapik is working with archives")
+        keepAwake(true)
         Task { await drain() }
+    }
+
+    // Idle sleep stays off while archives are being worked on, but not while a prompt waits for someone who may have walked away
+    private func keepAwake(_ on: Bool) {
+        if on, awake == nil {
+            awake = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: "pikapik is working with archives")
+        } else if !on, let awake {
+            ProcessInfo.processInfo.endActivity(awake)
+            self.awake = nil
+        }
     }
 
     private func stop(_ row: ArchiveRow) {
@@ -78,8 +88,7 @@ final class ArchiveQueue {
             board.rows.removeAll { $0 === row }
         }
         running = false
-        if let awake { ProcessInfo.processInfo.endActivity(awake) }
-        awake = nil
+        keepAwake(false)
         panel?.close()
         panel = nil
         let made = results
@@ -102,7 +111,10 @@ final class ArchiveQueue {
                 results.append(result)
                 return
             } catch ArchiveError.needsPassword, ArchiveError.wrongPassword {
-                guard let answer = await password.ask(for: url, wrong: typed != nil) else { return }
+                keepAwake(false)
+                let answer = await password.ask(for: url, wrong: typed != nil)
+                keepAwake(true)
+                guard let answer else { return }
                 secret = answer
             } catch ArchiveError.truncated {
                 password.close()
@@ -195,7 +207,9 @@ final class ArchiveQueue {
     }
 
     private func ask(_ alert: NSAlert) async -> NSApplication.ModalResponse {
-        await withCheckedContinuation { continuation in
+        keepAwake(false)
+        defer { keepAwake(running) }
+        return await withCheckedContinuation { continuation in
             RunLoop.main.perform {
                 MainActor.assumeIsolated {
                     NSApp.bringForward()
