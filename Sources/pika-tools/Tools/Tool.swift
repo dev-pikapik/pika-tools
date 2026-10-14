@@ -68,9 +68,7 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(KeyRepeatTool())
         #endif
-        #if !APPSTORE
         list.append(HomeEndTool())
-        #endif
         list.append(LayoutFixTool())
         #if !APPSTORE
         list.append(PointerTool())
@@ -94,6 +92,7 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(ArchiveTool())
         #endif
+        // Without Accessibility the App Store build can't tell renaming from browsing: a click or a menu can start a rename.
         #if !APPSTORE
         list.append(FinderOpenTool())
         #endif
