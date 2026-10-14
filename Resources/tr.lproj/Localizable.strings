@@ -315,6 +315,7 @@
 "With ⇧ they select, with ⌘ they go to the start or end of the text" = "⇧ ile seçer, ⌘ ile metnin başına veya sonuna gider";
 "In text, instead of scrolling the page" = "Metinde, sayfayı kaydırmak yerine";
 "In text, Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In terminals, virtual machines and remote desktop apps they work as before." = "Metinde Home imleci satırın başına, End ise sonuna taşır. ⇧ ile oraya kadar seçer, ⌘ ile tüm metnin başına veya sonuna gider. Terminallerde, sanal makinelerde ve uzak masaüstü uygulamalarında eskisi gibi çalışır.";
+"Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In browsers, Finder, Music, terminals, virtual machines and remote desktop apps they work as before." = "Home imleci satırın başına, End ise sonuna taşır. ⇧ ile oraya kadar seçer, ⌘ ile tüm metnin başına veya sonuna gider. Tarayıcılarda, Finder’da, Müzik’te, terminallerde, sanal makinelerde ve uzak masaüstü uygulamalarında eskisi gibi çalışır.";
 "Home and End work as usual in these apps" = "Home ve End bu uygulamalarda her zamanki gibi çalışır";
 "home, end, line, cursor, beginning, select, text, typing" = "home, end, satır, imleç, baş, son, seç, metin, yazma";
 "exceptions, exclude, list, terminal, virtual machine, remote desktop" = "istisnalar, hariç tut, liste, terminal, sanal makine, uzak masaüstü";

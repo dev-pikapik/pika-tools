@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Home and End, Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -567,18 +567,20 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes Home and End move to the start and end of the line in every app, like on Windows.
 
-**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:215`), needs Accessibility.
+**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:97`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :145). App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
 
 **Options:**
 - Home and End work as usual in these apps — list of apps to leave alone: Add App… / Done, app shelf of open apps, Remove (`HomeEndTool.swift:224`).
 
 **Nuances:** The Home and End it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not handle them again.
 
-**Edition:** Website only (App Store: cut — needs to control other apps).
+**Edition:** Both; App Store differs: no text-focus check, so it also works outside text fields, except in browsers, Finder and Music.
 
 **Test:**
-1. (Website) Turn it on, type a long line in TextEdit and press Home and End → the caret goes to the start and end of the line.
+1. Turn it on, type a long line in TextEdit and press Home and End → the caret goes to the start and end of the line.
 2. Add TextEdit under “Home and End work as usual in these apps” → Home and End behave as macOS does by default there.
+3. (Website) With no text field focused, for example on the desktop, press Home → it does what macOS does by default.
+4. (App Store) Press Home and End in Safari and Music and in a Finder window → they behave as macOS does by default there. In another app, for example Notes → the caret jumps to the start and end of the line.
 
 ### Fix words typed in the wrong layout
 
@@ -944,7 +946,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Windows/FinderKeysTool.swift:399`), keys ↩, ⌤ and F2; while you type a name or search, the keys act as usual.
 
-**Edition:** Website only (App Store: cut — needs to read Finder’s window).
+**Edition:** Website only (App Store: cut — without Accessibility it cannot tell renaming a file from browsing, because a click or a menu can start a rename).
 
 **Test:**
 1. (Website) Turn it on. Select a test file in Finder and press Return → it opens; press F2 → the name becomes editable. While renaming, press Return → it only confirms the name and does not open the file.
@@ -1259,7 +1261,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:643`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.49.1). The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:668`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:829`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.49.1). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1380,7 +1382,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; stub in the App Store build, `GameModeTool.swift:443`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
+**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; a stub in the App Store build, where `GameRules.fenceCorners` keeps the pointer 16 points (x + y) from every corner pixel so a push can't reach it, `GameModeTool.swift:454`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
 
 **Nuances:** The App Store version leaves the option out after the change because it relies on a private macOS call. Needs two displays to test.
 

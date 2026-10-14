@@ -18,7 +18,20 @@ final class HomeEndTool: Tool {
     static let alwaysExcluded = consoles + [
         "com.microsoft.Word", "com.microsoft.Excel", "com.microsoft.Powerpoint", "org.libreoffice.",
         "com.jetbrains.", "com.google.android.studio",
+    ] + storeExcluded
+
+    #if APPSTORE
+    // The sandbox hides which field has focus, so the keys switch outside text too.
+    // Skip apps where that hurts: ⌘← is Back in browsers, ⌘↓ opens files in Finder, ⌘← ⌘→ change tracks in Music.
+    private static let storeExcluded = [
+        "com.apple.Safari", "com.google.Chrome", "org.mozilla.", "com.microsoft.edgemac", "company.thebrowser.",
+        "com.brave.Browser", "com.operasoftware.", "com.vivaldi.", "app.zen-browser.", "com.kagi.kagimacOS",
+        "org.chromium.", "com.duckduckgo.", "ru.yandex.desktop.yandex-browser",
+        "com.apple.finder", "com.apple.Music",
     ]
+    #else
+    private static let storeExcluded: [String] = []
+    #endif
 
     private static let excludedKey = "home-end-excluded"
 
@@ -126,9 +139,11 @@ final class HomeEndTool: Tool {
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
 
         guard !GameModeTool.shared.isPlaying, let app = NSWorkspace.shared.frontmostApplication,
-              let target = Self.target(key, event.flags, app: app.bundleIdentifier, excluded: excluded),
-              case .typing = TextFocus(app.processIdentifier)
+              let target = Self.target(key, event.flags, app: app.bundleIdentifier, excluded: excluded)
         else { return false }
+        #if !APPSTORE
+        guard case .typing = TextFocus(app.processIdentifier) else { return false }
+        #endif
         held = (key, target.key, target.flags)
         Self.send(target.key, target.flags, down: true, proxy)
         return true
@@ -217,7 +232,7 @@ private struct HomeEndSettings: View {
             title: tool.title,
             subtitle: Text("With ⇧ they select, with ⌘ they go to the start or end of the text"),
             hint: Text("In text, instead of scrolling the page"),
-            help: Text("In text, Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In terminals, virtual machines and remote desktop apps they work as before."),
+            help: help,
             keys: ["↖", "↘"],
             isOn: $tool.isEnabled
         )
@@ -227,5 +242,13 @@ private struct HomeEndSettings: View {
             apps: $tool.excluded,
             isEnabled: tool.isEnabled
         )
+    }
+
+    private var help: Text {
+        #if APPSTORE
+        Text("Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In browsers, Finder, Music, terminals, virtual machines and remote desktop apps they work as before.")
+        #else
+        Text("In text, Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In terminals, virtual machines and remote desktop apps they work as before.")
+        #endif
     }
 }

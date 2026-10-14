@@ -9,6 +9,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - The animation that shows where to click in System Settings now also covers keyboard shortcuts you change in System Settings › Keyboard and turning on the Finder extensions in Login Items & Extensions. The Reduce Motion button now opens the Motion page itself, not Display.
 - Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
 - Mac App Store version, Permissions: Settings › Permissions now shows which installed apps can ask for Camera, Microphone, Automation, Files and Folders and Bluetooth, each with its icon. Who is allowed is still shown only in System Settings, because macOS hides it from this version.
+- Mac App Store version, Home and End: the keys go to the start and end of a line again. They work everywhere except browsers, Finder, Music and TV, because this version can’t see which field has focus.
 
 ### Fixed
 - Mac App Store version, Finder: after ⌘X, ⌘V now moves the files, as in the version from the website. Before, ⌘V pasted a copy and the files stayed where they were, so cutting worked like copying. The Move Items Here button in the pikapik menu is gone, ⌘V does its job.
@@ -20,6 +21,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Mac App Store version, Temperature: on a Mac with a battery, the page now shows the battery’s temperature in degrees, with a bar that turns green, yellow or orange, under the overall word. Before, the page showed only that word and a tip and no numbers, so it looked empty. A Mac without a battery still shows the overall level.
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 - Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
+- Games: in the Mac App Store version, Game Mode now keeps the pointer a few points away from the screen corners while you play, so hot corners don’t go off. That version can’t switch hot corners off, so before, a brush against a corner could still set one off. Game Mode also turns back on by itself after the Mac wakes up or you switch back to your user account. Before, it came back only after you switched to another app.
 
 ## [1.49.0] - 2026-10-13
 
