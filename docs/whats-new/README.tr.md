@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mac App Store sürümünde pikapik’ten daha fazlası
+
+<sub>1.50.0 · 15 Ekim 2026</sub>
+
+Arşivleri açın, masaüstünüzü temizleyin, Home ve End tuşlarını kullanın ve daha fazlası, artık Mac App Store sürümünde de.
+
+**Mac App Store sürümünde yeni**
+
+- **Finder’da arşivleri açın ve oluşturun.** Bir arşive sağ tıklayın ve “Arşivden Çıkar” komutunu seçin. Arşiv oluşturmak için dosyalara sağ tıklayıp “Arşiv Oluştur…” komutunu seçin. İçine bakmak için arşivin üzerinde Boşluk tuşuna basın. Bu sürümde yalnızca ZIP’e parola konabilir.
+- **Masaüstünüz tertemiz olsun.** “Masaüstü simgelerini gizle” seçeneğini açın, pikapik simgelerin üzerini duvar kâğıdınızla kaplasın. Tıklamalar yine masaüstüne ulaşır ve hiçbir izin gerekmez.
+- **Home ve End yeniden çalışıyor.** Satırın başına ve sonuna gider; tarayıcılar, Finder, Müzik ve TV dışında her yerde çalışır.
+- **Yanlış düzende yazılan metni kısayolla düzeltin.** Metni seçin ve ⌃⇧Boşluk tuşlarına basın. “Seçili metni düzelt” seçeneğini Ayarlar › Klavye’de açın; tuşları da orada değiştirebilirsiniz.
+- **Ekranı tek tıkla kapatın.** “Ekranı şimdi kapat” ekranı hemen karartır, Mac’iniz çalışmaya devam eder. Geri getirmek için fareyi oynatın.
+- **Oyunlar kesintiye uğramaz.** “Oyun Modu”nda, bir oyun öndeyken Spotlight gibi Mac kısayolları duraklar ve işaretçi ekran köşelerinden uzak durur; böylece etkin köşeler tetiklenmez.
+- **Pil değerleri geri geldi.** “Pil”, macOS 27’de yine “Maksimum Kapasite” değerini gösteriyor; “Sıcaklık” da pilin sıcaklığını gösteriyor.
+- **Hangi uygulamaların izin isteyebileceğini görün.** Ayarlar › İzinler’deki “Diğer uygulamaların izinleri” bunları simgeleriyle listeler.
+- **Nereye tıklayacağınızı bilin.** macOS, pikapik’in bir ayarı değiştirmesine izin vermediğinde kısa bir animasyon Sistem Ayarları’nda nereye tıklayacağınızı gösterir.
+
+**Her iki sürümde**
+
+- **Videolardan daha küçük kopyalar.** “Küçük Kopya Oluştur” artık bir videoyu yaklaşık yarı boyuta indiriyor. Önceden çoğu video “Zaten küçük” yanıtını alıyordu.
+- **İki kopya birbiriyle geçiniyor.** App Store ve web sitesi sürümlerini birlikte kullanırsanız artık birbirinin yaptığını bozmuyorlar. ⇧⌘Q ve ⇧⌘W oyunlarda yine çalışıyor.
+- **Oyunlar uykudan sonra geri dönüyor.** Mac’iniz uyandığında “Oyun Modu” kendiliğinden yeniden açılıyor.
+- **“Portlar” doğruyu söylüyor.** macOS 27’de macOS’in ya da başka bir kullanıcının kullandığı bir port artık boş diye gösterilmiyor.
+- **Sorun bildirmek daha hızlı.** Ayarlar › Hakkında’daki “Sorun Bildir”, formu sürümünüz önceden seçilmiş olarak açar.
+
+**Mac App Store sürümünde düzeltilenler**
+
+- Finder’da ⌘X’ten sonra ⌘V artık dosyalarınızı web sitesi sürümündeki gibi taşıyor. Önceden yalnızca kopyalıyordu.
+- “Finder’da Yeni Dosya”, “Finder’da Küçük Kopya” ve “Finder’da Dönüştürme” artık her biri kendi durumunu gösteriyor. Önceden birini açınca üçü de açık görünüyordu.
+- Boş “Portlar” sayfası kalktı. macOS bu sürüme bir portu hangi programın tuttuğunu göstermiyor; bu yüzden Ayarlar › Portlar’da gösterecek bir şey yoktu.
+
+---
+
 ## <a id="v1.49.0"></a>Her monitör için parlaklık
 
 <sub>1.49.0 · 13 Ekim 2026</sub>

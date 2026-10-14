@@ -397,7 +397,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** `ProcessInfo.thermalState` (`Sources/pika-tools/Common/TemperatureSettings.swift`, `Temperatures.swift`); `ThermalScene` picture. Website adds the processor degrees to the summary (`TemperatureSettings.swift:134`). App Store: the page also shows a Battery row on Macs with a battery (see Processor, Graphics, Memory, Storage, Battery and Wi-Fi).
 
-**Nuances:** The App Store sandbox refuses the SMC (`IOServiceOpen` on AppleSMC is not permitted), so the other part temperatures are not available there. A desktop Mac in the App Store build shows only the thermal state. Not yet live-checked in the installed App Store app. New in 1.49.1.
+**Nuances:** The App Store sandbox refuses the SMC (`IOServiceOpen` on AppleSMC is not permitted), so the other part temperatures are not available there. A desktop Mac in the App Store build shows only the thermal state. Not yet live-checked in the installed App Store app. New in 1.50.0.
 
 **Edition:** Both; App Store differs: thermal state plus the battery temperature only.
 
@@ -616,7 +616,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - Fix the selected text — shortcut recorder, “Select the text, then press these keys”.
 
-**Nuances:** If you reassign the Services shortcut in System Settings the in-app shortcut stops working (it presses the original hidden key). The app in front needs a Services menu (every normal Cocoa app has one). Not live-checked in the real App Store build. New in 1.49.1.
+**Nuances:** If you reassign the Services shortcut in System Settings the in-app shortcut stops working (it presses the original hidden key). The app in front needs a Services menu (every normal Cocoa app has one). Not live-checked in the real App Store build. New in 1.50.0.
 
 **Edition:** App Store only.
 
@@ -765,7 +765,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Quit app — toggle with a shortcut recorder, default ⇧⌘Q (key `command-keys-quit-shortcut`).
 - Close window — toggle with a shortcut recorder, default ⇧⌘W (key `command-keys-close-shortcut`).
 
-**Nuances:** The Games tab footer lists these keys under “To leave a game, press …”; ⌥⌘Esc always works. With two copies of pikapik running (App Store and Website) quitting a game with these keys used to fail; fixed in 1.49.1.
+**Nuances:** The Games tab footer lists these keys under “To leave a game, press …”; ⌥⌘Esc always works. With two copies of pikapik running (App Store and Website) quitting a game with these keys used to fail; fixed in 1.50.0.
 
 **Edition:** Both.
 
@@ -841,7 +841,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Finder Sync extension `Extensions/NewFile/NewFileExtension.swift:13`, switch at `Sources/pika-tools/Tools/NewFile/NewFileTool.swift:20-25` through `FinderExtension.swift:257`. Website: `pluginkit -a`, `-e use`, `-e ignore`, `-m` (`FinderExtension.swift:60-66,103-120`). App Store: stores the wanted state in UserDefaults and opens `FIFinderSyncController.showExtensionManagementInterface()` so you turn the extension on in System Settings; the switch checks that this extension’s own process is running (PR #72). Needs the Finder Extensions permission item. Saving into a folder asks once for access to the home folder (App Store: `FolderAccess`, security-scoped bookmark).
 
-**Nuances:** Before 1.49.1 the App Store New File switch looked on while only another extension was enabled, so the menu item could be missing; now each switch shows its own extension’s state. Known gap (App Store): turning a Finder tool off in pikapik does not hide its menu item; disable the extension in System Settings. Not yet live-checked in the App Store branch.
+**Nuances:** Before 1.50.0 the App Store New File switch looked on while only another extension was enabled, so the menu item could be missing; now each switch shows its own extension’s state. Known gap (App Store): turning a Finder tool off in pikapik does not hide its menu item; disable the extension in System Settings. Not yet live-checked in the App Store branch.
 
 **Edition:** Both; App Store differs: the switch turns grey until you enable the extension in System Settings (Login Items & Extensions › Finder) and the first file asks for the home folder.
 
@@ -856,7 +856,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Extension `Extensions/Compress/CompressExtension.swift:17`, switch `Sources/pika-tools/Tools/Compress/CompressTool.swift:20-25`, engine `Sources/pika-tools/Tools/Windows/Compressor.swift`. Videos are exported with a file-length limit of half the source (about 47–52 percent, same frames, audio kept); photos are re-encoded. If the result would not be smaller than 95 percent the message “Already compact” shows and no copy is made. `FolderAccess.ensure` asks for folder access in the App Store build (`Extensions/Shared/Folders.swift`, `FolderAccess.swift:6`).
 
-**Nuances:** AVFoundation will not go below about 1.5 Mbit/s at 1080p30, so a very small video still reports “Already compact”. Before 1.49.1 most videos ended with “Already compact”.
+**Nuances:** AVFoundation will not go below about 1.5 Mbit/s at 1080p30, so a very small video still reports “Already compact”. Before 1.50.0 most videos ended with “Already compact”.
 
 **Edition:** Both; App Store differs: needs the extension enabled in System Settings and asks for folder access.
 
@@ -871,7 +871,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Extension `Extensions/Convert/ConvertExtension.swift:22`, formats in `ConvertFormats.swift`, switch `Sources/pika-tools/Tools/Convert/ConvertTool.swift:26-31`. Same enabling flow and folder access as Smaller Copy. For a PNG the targets are JPEG, HEIC, GIF, TIFF, PDF. There is no size check.
 
-**Nuances:** Like New File, it showed on while only another extension was enabled before 1.49.1; now it asks for permission until its own extension runs.
+**Nuances:** Like New File, it showed on while only another extension was enabled before 1.50.0; now it asks for permission until its own extension runs.
 
 **Edition:** Both; App Store differs: needs the extension enabled in System Settings and asks for folder access.
 
@@ -958,7 +958,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Accessibility event tap (`FinderKeysTool.swift:419`). ⌘X becomes ⌘C so Finder copies the files; ⌘V in a Finder window becomes Finder’s own ⌥⌘V (Move Item Here) while cut files wait; the app only checks whether the clipboard holds files, never reads it. ⌘C cancels. When the copied thing is text (for example a name being edited) it sends ⌘X again. Shortcut text from `SystemShortcuts.finderCutText`.
 
-**Nuances:** The App Store build cannot tell rename mode (`FinderKeysTool.swift:147`, `isBrowsing` is always true), so with cut files waiting ⌘V in a name field sends ⌥⌘V; press ⌘C first to cancel. Before 1.49.1 the App Store build only copied. The keys it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not turn them again.
+**Nuances:** The App Store build cannot tell rename mode (`FinderKeysTool.swift:147`, `isBrowsing` is always true), so with cut files waiting ⌘V in a name field sends ⌥⌘V; press ⌘C first to cancel. Before 1.50.0 the App Store build only copied. The keys it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not turn them again.
 
 **Edition:** Both; App Store differs: no text-focus check.
 
@@ -1262,7 +1262,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.49.1). The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:668`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:829`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.49.1). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.50.0). The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:668`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:829`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.50.0). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.50.0. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1270,7 +1270,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Turn on Game Mode, press Add a Game… and add a stub game (or Chess), open it → ⌘Space and ⌘` are swallowed while playing; in the App Store build the rules list shows only shortcuts that exist on this Mac.
 2. Quit the game, or lock the screen mid-game → shortcuts work again at once; (App Store) Dock corners and hiding are untouched.
 3. With Protect quitting and closing on, in the game press ⇧⌘Q → the game quits; ⇧⌘W → its window closes. Press ⌥⌘Esc → Force Quit opens.
-4. (two copies installed) Quit one copy and repeat step 3 → it works; with both running it works too since 1.49.1.
+4. (two copies installed) Quit one copy and repeat step 3 → it works; with both running it works too since 1.50.0.
 5. Open Settings › Games › More game settings → the three parts show.
 
 ### Your games

@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Lebih banyak pikapik di versi Mac App Store
+
+<sub>1.50.0 · 15 Oktober 2026</sub>
+
+Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di versi Mac App Store.
+
+**Baru di versi Mac App Store**
+
+- **Buka dan buat arsip di Finder.** Klik kanan arsip, lalu pilih “Ekstrak”. Untuk membuatnya, klik kanan file lalu pilih “Buat Arsip…”. Tekan Spasi pada arsip untuk melihat isinya. Di versi ini, hanya ZIP yang bisa diberi kata sandi.
+- **Desktop yang bersih.** Nyalakan “Sembunyikan ikon desktop”, dan pikapik menutupi ikon dengan wallpaper Anda. Klik Anda tetap sampai ke desktop, dan tidak perlu izin apa pun.
+- **Home dan End berfungsi lagi.** Keduanya menuju awal dan akhir baris di mana saja, kecuali di browser, Finder, Musik, dan TV.
+- **Perbaiki teks yang salah tata letak dengan pintasan.** Pilih teksnya, lalu tekan ⌃⇧Spasi. Nyalakan “Perbaiki teks yang dipilih” di Pengaturan › Papan Ketik, tempat Anda juga bisa mengganti tombolnya.
+- **Matikan layar dengan satu klik.** “Matikan layar sekarang” membuat layar langsung gelap, sementara Mac Anda tetap bekerja. Gerakkan tetikus untuk menyalakannya kembali.
+- **Game tidak terganggu.** Di “Mode Game”, pintasan Mac seperti Spotlight dijeda selama game ada di depan. Penunjuk menjauh dari sudut layar, sehingga sudut aktif tidak terpicu.
+- **Angka baterai kembali.** “Baterai” kembali menampilkan “Kapasitas Maksimum” di macOS 27, dan “Suhu” menampilkan suhu baterai.
+- **Lihat app mana yang bisa meminta izin.** “Izin app lain” di Pengaturan › Izin menampilkannya beserta ikonnya.
+- **Tahu ke mana harus mengklik.** Saat macOS tidak mengizinkan pikapik mengubah sebuah pengaturan, animasi singkat menunjukkan ke mana harus mengklik di Pengaturan Sistem.
+
+**Di kedua versi**
+
+- **Salinan video yang lebih kecil.** “Buat Salinan Lebih Kecil” kini membuat video sekitar separuh ukurannya. Sebelumnya, sebagian besar video mendapat “Sudah ringkas”.
+- **Dua salinan akur.** Jika Anda memakai versi App Store dan versi situs web bersamaan, keduanya tidak lagi saling membatalkan. ⇧⌘Q dan ⇧⌘W berfungsi lagi di game.
+- **Game kembali setelah tidur.** “Mode Game” menyala lagi dengan sendirinya saat Mac Anda bangun.
+- **“Port” berkata jujur.** Di macOS 27, port yang dipakai macOS atau pengguna lain tidak lagi disebut bebas.
+- **Melaporkan masalah jadi lebih cepat.** “Laporkan Masalah” di Pengaturan › Tentang membuka formulir dengan versi Anda sudah terpilih.
+
+**Diperbaiki di versi Mac App Store**
+
+- Setelah ⌘X, ⌘V di Finder kini memindahkan file Anda, seperti di versi situs web. Sebelumnya hanya menyalin.
+- “File Baru di Finder”, “Salinan Lebih Kecil di Finder”, dan “Konversi di Finder” masing-masing menampilkan statusnya sendiri. Sebelumnya, menyalakan satu membuat ketiganya tampak menyala.
+- Halaman “Port” yang kosong sudah hilang. macOS tidak menunjukkan kepada versi ini program mana yang memakai sebuah port, jadi Pengaturan › Port tidak punya apa-apa untuk ditampilkan.
+
+---
+
 ## <a id="v1.49.0"></a>Kecerahan untuk setiap monitor
 
 <sub>1.49.0 · 13 Oktober 2026</sub>

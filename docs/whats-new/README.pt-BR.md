@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mais pikapik na versão da Mac App Store
+
+<sub>1.50.0 · 15 de outubro de 2026</sub>
+
+Abra arquivos compactados, limpe a mesa, use Home e End e muito mais, agora também na versão da Mac App Store.
+
+**Novidades na versão da Mac App Store**
+
+- **Abra e crie arquivos compactados no Finder.** Clique com o botão direito em um arquivo compactado e escolha “Extrair”. Para criar um, clique com o botão direito em arquivos e escolha “Criar arquivo compactado…”. Pressione Espaço em um arquivo compactado para ver o que há dentro. Aqui, só o ZIP pode ter senha.
+- **Uma mesa limpa.** Ative “Ocultar ícones da Mesa”, e o pikapik cobre os ícones com o seu papel de parede. Os cliques continuam chegando à mesa, e nenhuma permissão é necessária.
+- **Home e End voltaram a funcionar.** Eles vão ao início e ao fim da linha, em todo lugar, exceto em navegadores, no Finder, em Música e em TV.
+- **Corrija com um atalho o texto digitado no layout errado.** Selecione o texto e pressione ⌃⇧Espaço. Ative “Corrigir o texto selecionado” em Ajustes › Teclado, onde você também pode mudar as teclas.
+- **Desligue a tela com um clique.** “Desligar a tela agora” escurece a tela na hora, enquanto o Mac continua trabalhando. Mova o mouse para trazê-la de volta.
+- **Seus jogos sem interrupções.** No “Modo Jogo”, atalhos do Mac como o Spotlight ficam em pausa enquanto um jogo está em primeiro plano. O ponteiro fica longe dos cantos da tela, então os cantos ativos não disparam.
+- **Os números da bateria voltaram.** “Bateria” mostra de novo a “Capacidade Máxima” no macOS 27, e “Temperatura” mostra a temperatura da bateria.
+- **Veja quais apps podem pedir uma permissão.** “Permissões de outros apps”, em Ajustes › Permissões, mostra todos com seus ícones.
+- **Saiba onde clicar.** Quando o macOS não deixa o pikapik mudar um ajuste, uma animação curta mostra onde clicar em Ajustes do Sistema.
+
+**Nas duas versões**
+
+- **Cópias menores de vídeos.** “Criar cópia menor” agora deixa um vídeo com cerca de metade do tamanho. Antes, a maioria dos vídeos recebia “Já está compacto”.
+- **Duas cópias se entendem.** Se você usa juntas a versão da App Store e a do site, elas não desfazem mais o trabalho uma da outra. ⇧⌘Q e ⇧⌘W voltam a funcionar nos jogos.
+- **Os jogos voltam depois do repouso.** O “Modo Jogo” se ativa de novo sozinho quando o Mac acorda.
+- **“Portas” diz a verdade.** No macOS 27, uma porta usada pelo macOS ou por outro usuário não é mais chamada de livre.
+- **Relatar um problema ficou mais rápido.** “Relatar um Problema”, em Ajustes › Sobre, abre o formulário com a sua versão já escolhida.
+
+**Corrigido na versão da Mac App Store**
+
+- Depois do ⌘X, o ⌘V no Finder agora move seus arquivos, como na versão do site. Antes, ele só copiava.
+- “Novo arquivo no Finder”, “Cópia menor no Finder” e “Conversão no Finder” mostram cada um o seu próprio estado. Antes, ao ativar um, os três pareciam ativados.
+- A página “Portas” vazia acabou. O macOS não mostra a esta versão qual programa ocupa uma porta, então Ajustes › Portas não tinha nada para mostrar.
+
+---
+
 ## <a id="v1.49.0"></a>Brilho para cada monitor
 
 <sub>1.49.0 · 13 de outubro de 2026</sub>

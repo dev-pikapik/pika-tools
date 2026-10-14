@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mai mult pikapik în versiunea din Mac App Store
+
+<sub>1.50.0 · 15 octombrie 2026</sub>
+
+Deschide arhive, curăță desktopul, folosește Home și End și multe altele, acum și în versiunea din Mac App Store.
+
+**Nou în versiunea din Mac App Store**
+
+- **Deschide și creează arhive în Finder.** Dă clic dreapta pe o arhivă și alege „Extrage”. Ca să creezi una, dă clic dreapta pe fișiere și alege „Creează arhivă…”. Apasă Spațiu pe o arhivă ca să vezi ce conține. Aici, doar ZIP poate avea parolă.
+- **Un desktop curat.** Pornește „Ascunde pictogramele de pe desktop”, iar pikapik acoperă pictogramele cu fundalul tău. Clicurile ajung în continuare pe desktop și nu e nevoie de nicio permisiune.
+- **Home și End funcționează din nou.** Merg la începutul și la sfârșitul rândului, peste tot, în afară de browsere, Finder, Muzică și TV.
+- **Corectează cu o scurtătură textul scris cu aranjamentul greșit.** Selectează textul și apasă ⌃⇧Spațiu. Pornește „Corectează textul selectat” în Setări › Tastatură, unde poți schimba și tastele.
+- **Stinge ecranul dintr-un clic.** „Stinge ecranul acum” întunecă ecranul imediat, în timp ce Mac-ul tău continuă să lucreze. Mișcă mausul ca să-l readuci.
+- **Jocurile nu sunt deranjate.** În „Modul Joc”, scurtăturile Mac-ului, ca Spotlight, sunt puse pe pauză cât timp un joc e în prim-plan. Cursorul rămâne departe de colțurile ecranului, așa că colțurile active nu se declanșează.
+- **Cifrele bateriei au revenit.** „Baterie” arată din nou „Capacitate maximă” pe macOS 27, iar „Temperatură” arată temperatura bateriei.
+- **Vezi ce aplicații pot cere o permisiune.** „Permisiunile altor aplicații”, în Setări › Permisiuni, le arată cu pictogramele lor.
+- **Știi unde să dai clic.** Când macOS nu lasă pikapik să schimbe o setare, o animație scurtă arată unde să dai clic în Configurări sistem.
+
+**În ambele versiuni**
+
+- **Copii mai mici ale videoclipurilor.** „Creează o copie mai mică” face acum un videoclip cam pe jumătate de mărime. Înainte, majoritatea videoclipurilor primeau „Deja compact”.
+- **Două copii se înțeleg.** Dacă folosești împreună versiunea din App Store și cea de pe site, nu se mai anulează una pe alta. ⇧⌘Q și ⇧⌘W funcționează din nou în jocuri.
+- **Jocurile revin după repaus.** „Modul Joc” se pornește iar singur când Mac-ul se trezește.
+- **„Porturi” spune adevărul.** Pe macOS 27, un port folosit de macOS sau de alt utilizator nu mai e numit liber.
+- **Raportarea unei probleme e mai rapidă.** „Raportează o problemă”, în Setări › Despre, deschide formularul cu versiunea ta deja aleasă.
+
+**Reparat în versiunea din Mac App Store**
+
+- După ⌘X, ⌘V în Finder mută acum fișierele, ca în versiunea de pe site. Înainte, doar le copia.
+- „Fișier nou în Finder”, „Copie mai mică în Finder” și „Conversie în Finder” arată fiecare propria stare. Înainte, după ce porneai unul, păreau pornite toate trei.
+- Pagina „Porturi” goală a dispărut. macOS nu arată acestei versiuni ce program ține un port, așa că în Setări › Porturi nu era nimic de arătat.
+
+---
+
 ## <a id="v1.49.0"></a>Luminozitate pentru fiecare monitor
 
 <sub>1.49.0 · 13 octombrie 2026</sub>

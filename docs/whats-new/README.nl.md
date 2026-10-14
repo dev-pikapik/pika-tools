@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Meer pikapik in de Mac App Store-versie
+
+<sub>1.50.0 · 15 oktober 2026</sub>
+
+Open archieven, ruim je bureaublad op, gebruik Home en End en meer, nu ook in de Mac App Store-versie.
+
+**Nieuw in de Mac App Store-versie**
+
+- **Open en maak archieven in de Finder.** Klik met de rechtermuisknop op een archief en kies ‘Uitpakken’. Om er een te maken, klik je met de rechtermuisknop op bestanden en kies je ‘Maak archief…’. Druk op de spatiebalk bij een archief om erin te kijken. Alleen zip kan hier een wachtwoord hebben.
+- **Een opgeruimd bureaublad.** Zet ‘Bureaubladsymbolen verbergen’ aan, en pikapik bedekt de symbolen met je achtergrond. Klikken komen nog steeds op het bureaublad aan en je hebt geen toestemming nodig.
+- **Home en End werken weer.** Ze gaan naar het begin en het einde van een regel, overal behalve in browsers, de Finder, Muziek en TV.
+- **Corrigeer tekst die in de verkeerde indeling is getypt met een sneltoets.** Selecteer de tekst en druk op ⌃⇧Spatie. Zet ‘Corrigeer de geselecteerde tekst’ aan in Instellingen › Toetsenbord, waar je ook de toetsen kunt wijzigen.
+- **Zet het scherm met één klik uit.** ‘Zet het scherm nu uit’ maakt het scherm meteen donker, terwijl je Mac blijft werken. Beweeg de muis om het terug te halen.
+- **Games blijven ongestoord.** In ‘Gamemodus’ pauzeren Mac-sneltoetsen zoals Spotlight zolang een game vooraan staat. De aanwijzer blijft uit de buurt van de schermhoeken, zodat actieve hoeken niet afgaan.
+- **De batterijcijfers zijn terug.** ‘Batterij’ toont op macOS 27 weer ‘Maximumcapaciteit’, en ‘Temperatuur’ toont de temperatuur van de batterij.
+- **Zie welke apps om toestemming kunnen vragen.** ‘Toestemmingen van andere apps’ in Instellingen › Toestemmingen toont ze met hun symbolen.
+- **Weet waar je moet klikken.** Als macOS niet toestaat dat pikapik een instelling wijzigt, laat een korte animatie zien waar je in Systeeminstellingen moet klikken.
+
+**In beide versies**
+
+- **Kleinere kopieën van video’s.** ‘Maak kleinere kopie’ maakt een video nu ongeveer half zo groot. Eerder kregen de meeste video’s ‘Al compact’ te zien.
+- **Twee exemplaren, geen gedoe.** Gebruik je de App Store-versie en de versie van de website samen, dan maken ze elkaars werk niet meer ongedaan. ⇧⌘Q en ⇧⌘W werken weer in games.
+- **Games komen terug na de sluimerstand.** ‘Gamemodus’ gaat vanzelf weer aan als je Mac wakker wordt.
+- **‘Poorten’ vertelt de waarheid.** Op macOS 27 wordt een poort die macOS of een andere gebruiker gebruikt niet meer vrij genoemd.
+- **Een probleem melden gaat sneller.** ‘Meld een probleem’ in Instellingen › Over opent het formulier met je versie al gekozen.
+
+**Opgelost in de Mac App Store-versie**
+
+- Na ⌘X verplaatst ⌘V in de Finder je bestanden nu, net als in de versie van de website. Eerder kopieerde het ze alleen.
+- ‘Nieuw bestand in de Finder’, ‘Kleinere kopie in de Finder’ en ‘Omzetten in de Finder’ tonen elk hun eigen status. Eerder leken alle drie aan te staan zodra je er één aanzette.
+- De lege pagina ‘Poorten’ is weg. macOS laat deze versie niet zien welk programma een poort bezet houdt, dus Instellingen › Poorten had niets te tonen.
+
+---
+
 ## <a id="v1.49.0"></a>Helderheid voor elke monitor
 
 <sub>1.49.0 · 13 oktober 2026</sub>

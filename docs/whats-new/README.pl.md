@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Więcej pikapik w wersji z Mac App Store
+
+<sub>1.50.0 · 15 października 2026</sub>
+
+Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz także w wersji z Mac App Store.
+
+**Nowości w wersji z Mac App Store**
+
+- **Otwieraj i twórz archiwa w Finderze.** Kliknij archiwum prawym przyciskiem i wybierz „Wypakuj”. Aby je utworzyć, kliknij pliki prawym przyciskiem i wybierz „Utwórz archiwum…”. Naciśnij spację na archiwum, aby zajrzeć do środka. Hasło można tu ustawić tylko dla ZIP.
+- **Czyste biurko.** Włącz „Ukryj ikony na biurku”, a pikapik zakryje ikony Twoją tapetą. Kliknięcia nadal trafiają na biurko, a uprawnienia nie są potrzebne.
+- **Home i End znowu działają.** Przenoszą na początek i na koniec wiersza wszędzie poza przeglądarkami, Finderem, Muzyką i TV.
+- **Popraw skrótem tekst wpisany w złym układzie.** Zaznacz tekst i naciśnij ⌃⇧Spacja. Włącz „Popraw zaznaczony tekst” w Ustawienia › Klawiatura, gdzie możesz też zmienić klawisze.
+- **Wyłącz ekran jednym kliknięciem.** „Wyłącz ekran teraz” ściemnia ekran od razu, a Mac pracuje dalej. Poruszaj myszą, aby go przywrócić.
+- **Nic nie przeszkadza w grze.** W „Tryb gry” skróty Maca, takie jak Spotlight, są wstrzymane, gdy gra jest na wierzchu. Wskaźnik trzyma się z dala od rogów ekranu, więc aktywne rogi nie zadziałają.
+- **Dane baterii wróciły.** „Bateria” znów pokazuje „Maksymalna pojemność” w macOS 27, a „Temperatura” pokazuje temperaturę baterii.
+- **Zobacz, które aplikacje mogą poprosić o uprawnienie.** „Uprawnienia innych aplikacji” w Ustawienia › Uprawnienia pokazuje je z ikonami.
+- **Wiesz, gdzie kliknąć.** Gdy macOS nie pozwala aplikacji pikapik zmienić ustawienia, krótka animacja pokazuje, gdzie kliknąć w Ustawieniach systemowych.
+
+**W obu wersjach**
+
+- **Mniejsze kopie filmów.** „Utwórz mniejszą kopię” robi teraz z filmu plik mniej więcej o połowę mniejszy. Wcześniej większość filmów dostawała odpowiedź „Już jest mały”.
+- **Dwie kopie nie przeszkadzają sobie.** Jeśli używasz razem wersji z App Store i wersji ze strony, nie cofają już nawzajem swojej pracy. ⇧⌘Q i ⇧⌘W znów działają w grach.
+- **Gry wracają po uśpieniu.** „Tryb gry” sam włącza się ponownie, gdy Mac się budzi.
+- **„Porty” mówią prawdę.** W macOS 27 port zajęty przez macOS lub innego użytkownika nie jest już uznawany za wolny.
+- **Zgłoszenie problemu jest szybsze.** „Zgłoś problem” w Ustawienia › Informacje otwiera formularz z już wybraną wersją.
+
+**Poprawione w wersji z Mac App Store**
+
+- Po ⌘X skrót ⌘V w Finderze przenosi teraz pliki, tak jak w wersji ze strony. Wcześniej tylko je kopiował.
+- „Nowy plik w Finderze”, „Mniejsza kopia w Finderze” i „Konwersja w Finderze” pokazują teraz każdy swój stan. Wcześniej po włączeniu jednego wszystkie trzy wyglądały na włączone.
+- Pustej strony „Porty” już nie ma. macOS nie pokazuje tej wersji, który program zajmuje port, więc w Ustawienia › Porty nie było czego pokazać.
+
+---
+
 ## <a id="v1.49.0"></a>Jasność dla każdego monitora
 
 <sub>1.49.0 · 13 października 2026</sub>

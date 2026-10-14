@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mer pikapik i Mac App Store-versionen
+
+<sub>1.50.0 · 15 oktober 2026</sub>
+
+Öppna arkiv, städa skrivbordet, använd Home och End och mer, nu också i Mac App Store-versionen.
+
+**Nytt i Mac App Store-versionen**
+
+- **Öppna och skapa arkiv i Finder.** Högerklicka på ett arkiv och välj ”Packa upp”. Om du vill skapa ett arkiv högerklickar du på filer och väljer ”Skapa arkiv…”. Tryck på mellanslag på ett arkiv för att titta in i det. Här kan bara ZIP få lösenord.
+- **Ett skrivbord utan stök.** Slå på ”Göm skrivbordssymboler” så täcker pikapik symbolerna med din bakgrundsbild. Klick når fortfarande skrivbordet, och du behöver ingen behörighet.
+- **Home och End fungerar igen.** De går till början och slutet av raden, överallt utom i webbläsare, Finder, Musik och TV.
+- **Rätta text som skrivits med fel tangentbordslayout med en genväg.** Markera texten och tryck på ⌃⇧Mellanslag. Slå på ”Rätta markerad text” i Inställningar › Tangentbord, där du också kan ändra tangenterna.
+- **Stäng av skärmen med ett klick.** ”Stäng av skärmen nu” gör skärmen mörk direkt medan din Mac fortsätter arbeta. Flytta musen för att få tillbaka den.
+- **Spel får vara ifred.** I ”Spelläge” pausas Mac-genvägar som Spotlight medan ett spel ligger överst. Pekaren håller sig borta från skärmhörnen, så aktiva hörn utlöses inte.
+- **Batterisiffrorna är tillbaka.** ”Batteri” visar ”Maximal kapacitet” igen på macOS 27, och ”Temperatur” visar batteriets temperatur.
+- **Se vilka appar som kan be om en behörighet.** ”Andra appars behörigheter” i Inställningar › Behörigheter listar dem med deras symboler.
+- **Du vet var du ska klicka.** När macOS inte låter pikapik ändra en inställning visar en kort animation var du ska klicka i Systeminställningar.
+
+**I båda versionerna**
+
+- **Mindre kopior av videor.** ”Skapa mindre kopia” gör nu en video ungefär hälften så stor. Tidigare fick de flesta videor beskedet ”Redan kompakt”.
+- **Två kopior kommer överens.** Om du använder App Store-versionen och webbplatsversionen tillsammans ångrar de inte längre varandras arbete. ⇧⌘Q och ⇧⌘W fungerar i spel igen.
+- **Spelläget finns kvar efter viloläget.** ”Spelläge” slås på igen av sig självt när din Mac vaknar.
+- **”Portar” talar sanning.** På macOS 27 kallas en port som används av macOS eller en annan användare inte längre ledig.
+- **Det går snabbare att rapportera ett problem.** ”Rapportera ett problem” i Inställningar › Om öppnar formuläret med din version redan vald.
+
+**Åtgärdat i Mac App Store-versionen**
+
+- Efter ⌘X flyttar ⌘V nu dina filer i Finder, precis som i webbplatsversionen. Tidigare kopierade det dem bara.
+- ”Ny fil i Finder”, ”Mindre kopia i Finder” och ”Konvertering i Finder” visar var och en sitt eget läge. Tidigare såg alla tre ut att vara på så fort du slog på en.
+- Den tomma sidan ”Portar” är borta. macOS visar inte för den här versionen vilket program som använder en port, så Inställningar › Portar hade inget att visa.
+
+---
+
 ## <a id="v1.49.0"></a>Ljusstyrka för varje bildskärm
 
 <sub>1.49.0 · 13 oktober 2026</sub>

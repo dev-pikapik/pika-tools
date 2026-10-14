@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mehr pikapik in der Version aus dem Mac App Store
+
+<sub>1.50.0 · 15. Oktober 2026</sub>
+
+Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetzt auch in der Version aus dem Mac App Store.
+
+**Neu in der Version aus dem Mac App Store**
+
+- **Archive im Finder öffnen und erstellen.** Klicke mit der rechten Maustaste auf ein Archiv und wähle „Entpacken“. Zum Erstellen klickst du mit der rechten Maustaste auf Dateien und wählst „Archiv erstellen …“. Drücke die Leertaste auf einem Archiv, um hineinzuschauen. Nur ZIP kann hier ein Passwort haben.
+- **Ein aufgeräumter Schreibtisch.** Schalte „Schreibtischsymbole ausblenden“ ein, und pikapik deckt die Symbole mit deinem Hintergrundbild ab. Klicks kommen weiterhin auf dem Schreibtisch an, und du brauchst keine Berechtigung.
+- **Home und End funktionieren wieder.** Sie springen an Zeilenanfang und -ende, überall außer in Browsern, im Finder, in Musik und in TV.
+- **Falsch getippten Text per Tastenkombination korrigieren.** Wähle den Text aus und drücke ⌃⇧Leertaste. Schalte „Ausgewählten Text korrigieren“ unter Einstellungen › Tastatur ein, dort kannst du die Tasten auch ändern.
+- **Display mit einem Klick ausschalten.** „Display jetzt ausschalten“ macht das Display sofort dunkel, während dein Mac weiterarbeitet. Bewege die Maus, um es zurückzuholen.
+- **Spiele werden nicht gestört.** Im „Spielmodus“ pausieren Mac-Tastenkombinationen wie Spotlight, solange ein Spiel im Vordergrund ist. Der Zeiger bleibt von den Bildschirmecken fern, damit keine Aktive Ecke auslöst.
+- **Die Batteriewerte sind zurück.** „Batterie“ zeigt unter macOS 27 wieder die „Maximale Kapazität“, und „Temperatur“ zeigt die Temperatur der Batterie.
+- **Sehen, welche Apps nach einer Berechtigung fragen können.** „Berechtigungen anderer Apps“ unter Einstellungen › Berechtigungen listet sie mit ihren Symbolen auf.
+- **Wissen, wo du klicken musst.** Wenn macOS pikapik keine Einstellung ändern lässt, zeigt eine kurze Animation, wo du in den Systemeinstellungen klicken musst.
+
+**In beiden Versionen**
+
+- **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.
+- **Zwei Kopien vertragen sich.** Wenn du die App-Store-Version und die Version von der Website zusammen nutzt, machen sie ihre Arbeit nicht mehr gegenseitig rückgängig. ⇧⌘Q und ⇧⌘W funktionieren in Spielen wieder.
+- **Spiele kehren nach dem Ruhezustand zurück.** Der „Spielmodus“ schaltet sich von selbst wieder ein, wenn dein Mac aufwacht.
+- **„Ports“ sagt die Wahrheit.** Unter macOS 27 wird ein Port, den macOS oder ein anderer Benutzer belegt, nicht mehr als frei bezeichnet.
+- **Ein Problem zu melden geht schneller.** „Problem melden“ unter Einstellungen › Über öffnet das Formular mit bereits gewählter Version.
+
+**Behoben in der Version aus dem Mac App Store**
+
+- Nach ⌘X verschiebt ⌘V im Finder jetzt deine Dateien, wie in der Version von der Website. Vorher hat es sie nur kopiert.
+- „Neue Datei im Finder“, „Kleinere Kopie im Finder“ und „Umwandeln im Finder“ zeigen jeweils ihren eigenen Zustand. Vorher sahen nach dem Einschalten eines Schalters alle drei eingeschaltet aus.
+- Die leere Seite „Ports“ ist weg. macOS zeigt dieser Version nicht, welches Programm einen Port belegt, deshalb gab es unter Einstellungen › Ports nichts anzuzeigen.
+
+---
+
 ## <a id="v1.49.0"></a>Helligkeit für jeden Monitor
 
 <sub>1.49.0 · 13. Oktober 2026</sub>

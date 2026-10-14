@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Plus de pikapik dans la version du Mac App Store
+
+<sub>1.50.0 · 15 octobre 2026</sub>
+
+Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, désormais aussi dans la version du Mac App Store.
+
+**Nouveau dans la version du Mac App Store**
+
+- **Ouvrez et créez des archives dans le Finder.** Faites un clic droit sur une archive et choisissez « Extraire ». Pour en créer une, faites un clic droit sur des fichiers et choisissez « Créer une archive… ». Appuyez sur Espace sur une archive pour voir ce qu’elle contient. Ici, seul le ZIP peut avoir un mot de passe.
+- **Un bureau dégagé.** Activez « Masquer les icônes du bureau », et pikapik recouvre les icônes avec votre fond d’écran. Les clics atteignent toujours le bureau, et aucune autorisation n’est nécessaire.
+- **Home et End refonctionnent.** Elles vont au début et à la fin de la ligne, partout sauf dans les navigateurs, le Finder, Musique et TV.
+- **Corrigez un texte tapé avec la mauvaise disposition grâce à un raccourci.** Sélectionnez le texte et appuyez sur ⌃⇧Espace. Activez « Corriger le texte sélectionné » dans Réglages › Clavier, où vous pouvez aussi changer les touches.
+- **Éteignez l’écran en un clic.** « Éteindre l’écran maintenant » assombrit l’écran aussitôt, pendant que votre Mac continue de travailler. Bougez la souris pour le rallumer.
+- **Vos jeux ne sont pas dérangés.** Dans « Mode Jeu », les raccourcis du Mac comme Spotlight sont suspendus tant qu’un jeu est au premier plan. Le pointeur reste à l’écart des coins de l’écran, pour que les coins actifs ne se déclenchent pas.
+- **Les chiffres de la batterie sont de retour.** « Batterie » affiche de nouveau « Capacité maximum » sous macOS 27, et « Température » affiche la température de la batterie.
+- **Voyez quelles apps peuvent demander une autorisation.** « Autorisations des autres apps », dans Réglages › Autorisations, les liste avec leurs icônes.
+- **Sachez où cliquer.** Quand macOS ne laisse pas pikapik modifier un réglage, une courte animation montre où cliquer dans Réglages Système.
+
+**Dans les deux versions**
+
+- **Des copies de vidéos plus légères.** « Créer une copie allégée » réduit désormais une vidéo à environ la moitié. Avant, la plupart des vidéos recevaient « Déjà compact ».
+- **Deux copies font bon ménage.** Si vous utilisez ensemble la version de l’App Store et celle du site, elles ne s’annulent plus l’une l’autre. ⇧⌘Q et ⇧⌘W fonctionnent de nouveau dans les jeux.
+- **Les jeux reprennent après la veille.** Le « Mode Jeu » se réactive tout seul quand votre Mac se réveille.
+- **« Ports » dit la vérité.** Sous macOS 27, un port utilisé par macOS ou par un autre utilisateur n’est plus déclaré libre.
+- **Signaler un problème est plus rapide.** « Signaler un problème », dans Réglages › À propos, ouvre le formulaire avec votre version déjà choisie.
+
+**Corrigé dans la version du Mac App Store**
+
+- Après ⌘X, ⌘V dans le Finder déplace désormais vos fichiers, comme dans la version du site. Avant, il ne faisait que les copier.
+- « Nouveau fichier dans le Finder », « Copie allégée dans le Finder » et « Conversion dans le Finder » indiquent chacun leur propre état. Avant, activer l’un faisait paraître les trois activés.
+- La page « Ports » vide a disparu. macOS ne montre pas à cette version quel programme occupe un port, donc Réglages › Ports n’avait rien à afficher.
+
+---
+
 ## <a id="v1.49.0"></a>Une luminosité réglable pour chaque écran
 
 <sub>1.49.0 · 13 octobre 2026</sub>

@@ -5,6 +5,40 @@
 
 ---
 
+## <a id="v1.50.0"></a>Più pikapik nella versione del Mac App Store
+
+<sub>1.50.0 · 15 ottobre 2026</sub>
+
+Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche nella versione del Mac App Store.
+
+**Novità nella versione del Mac App Store**
+
+- **Apri e crea archivi nel Finder.** Fai clic con il tasto destro su un archivio e scegli «Estrai». Per crearne uno, fai clic con il tasto destro sui file e scegli «Crea archivio…». Premi Spazio su un archivio per vedere cosa contiene. Qui solo lo ZIP può avere una password.
+- **Una scrivania sgombra.** Attiva «Nascondi le icone della scrivania» e pikapik copre le icone con il tuo sfondo. I clic arrivano comunque alla scrivania e non serve alcun permesso.
+- **Home ed End funzionano di nuovo.** Vanno a inizio e fine riga, ovunque tranne che nei browser, nel Finder, in Musica e in TV.
+- **Correggi con una scorciatoia il testo scritto con il layout sbagliato.** Seleziona il testo e premi ⌃⇧Spazio. Attiva «Correggi il testo selezionato» in Impostazioni › Tastiera, dove puoi anche cambiare i tasti.
+- **Spegni lo schermo con un clic.** «Spegni lo schermo ora» oscura subito lo schermo, mentre il Mac continua a lavorare. Muovi il mouse per riaccenderlo.
+- **I giochi non vengono disturbati.** In «Modalità gioco», le scorciatoie del Mac come Spotlight restano in pausa finché un gioco è in primo piano. Il puntatore sta lontano dagli angoli dello schermo, così gli angoli attivi non scattano.
+- **I dati della batteria sono tornati.** «Batteria» mostra di nuovo la «Capacità massima» su macOS 27, e «Temperatura» mostra la temperatura della batteria.
+- **Vedi quali app possono chiedere un permesso.** «Permessi di altre app», in Impostazioni › Permessi, le elenca con le loro icone.
+- **Sai dove fare clic.** Quando macOS non permette a pikapik di cambiare un’impostazione, una breve animazione mostra dove fare clic in Impostazioni di Sistema.
+
+**In entrambe le versioni**
+
+- **Copie più leggere dei video.** «Crea copia più leggera» ora riduce un video a circa la metà. Prima quasi tutti i video ricevevano «Già compatto».
+- **Due copie vanno d’accordo.** Se usi insieme la versione dell’App Store e quella del sito, non si annullano più a vicenda. ⇧⌘Q e ⇧⌘W funzionano di nuovo nei giochi.
+- **I giochi tornano dopo la sospensione.** La «Modalità gioco» si riattiva da sola quando il Mac si risveglia.
+- **«Porte» dice la verità.** Su macOS 27, una porta usata da macOS o da un altro utente non viene più indicata come libera.
+- **Segnalare un problema è più semplice.** «Segnala un problema», in Impostazioni › Info, apre il modulo con la tua versione già scelta.
+
+**Corretto nella versione del Mac App Store**
+
+- Dopo ⌘X, ⌘V nel Finder ora sposta i file, come nella versione del sito. Prima si limitava a copiarli.
+- «Nuovo file nel Finder», «Copia più leggera nel Finder» e «Conversione nel Finder» mostrano ognuno il proprio stato. Prima, attivandone uno, sembravano attivi tutti e tre.
+- La pagina «Porte» vuota non c’è più. macOS non mostra a questa versione quale programma occupa una porta, quindi in Impostazioni › Porte non c’era nulla da mostrare.
+
+---
+
 ## <a id="v1.49.0"></a>Luminosità per ogni monitor
 
 <sub>1.49.0 · 13 ottobre 2026</sub>
