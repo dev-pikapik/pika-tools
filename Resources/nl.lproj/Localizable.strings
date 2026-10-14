@@ -903,7 +903,8 @@
 "Archives in Finder" = "Archieven in de Finder";
 "Right-click › Extract or Create Archive" = "Rechtsklik › Uitpakken of Maak archief";
 "Right-click a file or folder" = "Rechtsklik op een bestand of map";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken, desgewenst met een wachtwoord.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken. ZIP en 7Z kunnen een wachtwoord hebben.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken. Alleen ZIP kan een wachtwoord hebben.";
 "Open archives with this app" = "Open archieven met deze app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archief, uitpakken, unzip, openen, zip, rar, 7z, tar, wachtwoord, splitsen, rechtsklik, contextmenu";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archief, standaardapp, open met, dubbelklik, unzip, zip, 7z";

@@ -903,7 +903,8 @@
 "Archives in Finder" = "Tệp lưu trữ trong Finder";
 "Right-click › Extract or Create Archive" = "Bấm chuột phải › Giải nén hoặc Tạo tệp lưu trữ";
 "Right-click a file or folder" = "Bấm chuột phải vào tệp hoặc thư mục";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Bấm chuột phải vào tệp lưu trữ trong Finder và chọn “Giải nén”. Bấm chuột phải vào tệp hoặc thư mục khác và chọn “Tạo tệp lưu trữ…” để tạo ZIP, 7Z hoặc TAR, kèm mật khẩu nếu muốn.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Bấm chuột phải vào tệp lưu trữ trong Finder và chọn “Giải nén”. Bấm chuột phải vào tệp hoặc thư mục khác và chọn “Tạo tệp lưu trữ…” để tạo ZIP, 7Z hoặc TAR. ZIP và 7Z có thể có mật khẩu.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Bấm chuột phải vào tệp lưu trữ trong Finder và chọn “Giải nén”. Bấm chuột phải vào tệp hoặc thư mục khác và chọn “Tạo tệp lưu trữ…” để tạo ZIP, 7Z hoặc TAR. Chỉ ZIP mới có thể có mật khẩu.";
 "Open archives with this app" = "Mở tệp lưu trữ bằng ứng dụng này";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "tệp lưu trữ, giải nén, trích xuất, nén, zip, rar, 7z, tar, mật khẩu, chia nhỏ, bấm chuột phải, menu ngữ cảnh";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "tệp lưu trữ, ứng dụng mặc định, mở bằng, nhấp đúp, giải nén, zip, 7z";

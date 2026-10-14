@@ -903,7 +903,8 @@
 "Archives in Finder" = "Archive im Finder";
 "Right-click › Extract or Create Archive" = "Rechtsklick › Entpacken oder Archiv erstellen";
 "Right-click a file or folder" = "Rechtsklick auf eine Datei oder einen Ordner";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen, auf Wunsch mit Passwort.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen. ZIP und 7Z können ein Passwort haben.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen. Nur ZIP kann ein Passwort haben.";
 "Open archives with this app" = "Archive in dieser App öffnen";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "Archiv, entpacken, auspacken, extrahieren, zip, rar, 7z, tar, Passwort, teilen, aufteilen, Rechtsklick, Kontextmenü";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "Archiv, Standard-App, Öffnen mit, Doppelklick, entpacken, zip, 7z";
