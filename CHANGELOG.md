@@ -24,6 +24,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 - Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
 - Games: in the Mac App Store version, Game Mode now keeps the pointer a few points away from the screen corners while you play, so hot corners don’t go off. That version can’t switch hot corners off, so before, a brush against a corner could still set one off. Game Mode also turns back on by itself after the Mac wakes up or you switch back to your user account. Before, it came back only after you switched to another app.
+- First launch no longer asks for permissions before you switch anything on. Before, the version from the website showed the Accessibility and Input Monitoring prompts at once and opened Permissions. Now it opens General Settings the first time and asks only when you click a grey tool that needs one. Permissions you already gave stay on.
 
 ## [1.49.0] - 2026-10-13
 
