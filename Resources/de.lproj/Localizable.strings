@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Text in diesen Apps nicht korrigieren";
 "Services" = "Dienste";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Markiere den Text und wähle dann „%@“ im Menü „Dienste“: im App-Menü oder per Rechtsklick auf den Text.";
-"Set a Shortcut…" = "Kurzbefehl festlegen …";
+"Fix the selected text" = "Ausgewählten Text korrigieren";
+"Select the text, then press these keys" = "Markiere den Text und drücke dann diese Tasten";
 "In the Services menu" = "Im Menü „Dienste“";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "falsches Layout, Tastaturlayout, Eingabequelle, Sprache, wechseln, umwandeln, Tippfehler, Kauderwelsch, Dienste";
 "automatic, auto, Space, Return, layout" = "automatisch, auto, Leertaste, Return, Layout";

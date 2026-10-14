@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Не исправлять текст в этих приложениях";
 "Services" = "Службы";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Выделите текст и выберите «%@» в меню «Службы»: оно есть в меню приложения и в меню правого клика по тексту.";
-"Set a Shortcut…" = "Задать сочетание клавиш…";
+"Fix the selected text" = "Исправить выделенный текст";
+"Select the text, then press these keys" = "Выделите текст и нажмите эти клавиши";
 "In the Services menu" = "В меню «Службы»";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "не та раскладка, неправильная раскладка, раскладка клавиатуры, язык, переключение, конвертировать, опечатка, абракадабра, Службы";
 "automatic, auto, Space, Return, layout" = "автоматически, авто, Пробел, Return, раскладка";

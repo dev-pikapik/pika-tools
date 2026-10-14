@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Don’t fix text in these apps";
 "Services" = "Services";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text.";
-"Set a Shortcut…" = "Set a Shortcut…";
+"Fix the selected text" = "Fix the selected text";
+"Select the text, then press these keys" = "Select the text, then press these keys";
 "In the Services menu" = "In the Services menu";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services";
 "automatic, auto, Space, Return, layout" = "automatic, auto, Space, Return, layout";

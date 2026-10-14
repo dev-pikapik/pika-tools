@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "Bu uygulamalarda metni düzeltme";
 "Services" = "Servisler";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Metni seçin, ardından Servisler menüsünde “%@” öğesini seçin: uygulama menüsünde veya metnin sağ tık menüsünde.";
-"Set a Shortcut…" = "Kestirme Ayarla…";
+"Fix the selected text" = "Seçili metni düzelt";
+"Select the text, then press these keys" = "Metni seçin, ardından bu tuşlara basın";
 "In the Services menu" = "Servisler menüsünde";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "yanlış düzen, klavye düzeni, girdi kaynağı, dil, değiştir, dönüştür, yazım hatası, anlamsız metin, Servisler";
 "automatic, auto, Space, Return, layout" = "otomatik, oto, Boşluk, Return, düzen";

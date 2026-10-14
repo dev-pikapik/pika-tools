@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "이 앱에서는 텍스트를 바로잡지 않음";
 "Services" = "서비스";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "텍스트를 선택한 다음, 앱 메뉴나 우클릭 메뉴의 서비스 메뉴에서 ‘%@’을(를) 선택하세요.";
-"Set a Shortcut…" = "단축키 설정…";
+"Fix the selected text" = "선택한 텍스트 바로잡기";
+"Select the text, then press these keys" = "텍스트를 선택한 다음 이 키를 누르세요";
 "In the Services menu" = "서비스 메뉴에 있음";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "잘못된 레이아웃, 키보드 레이아웃, 입력 소스, 언어, 전환, 변환, 오타, 한영 전환, 한영 오타, 서비스";
 "automatic, auto, Space, Return, layout" = "자동, 오토, 스페이스, Return, 레이아웃";

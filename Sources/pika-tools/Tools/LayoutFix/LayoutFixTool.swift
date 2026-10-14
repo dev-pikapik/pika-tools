@@ -3,48 +3,186 @@ import Carbon.HIToolbox
 import SwiftUI
 
 #if APPSTORE
+// The sandbox can't read or replace the selected text in other apps, so the shortcut presses the hidden
+// keys of the Services command (NSKeyEquivalent in Info.plist), and the app in front runs it on the selection.
+@Observable
 final class LayoutFixTool: Tool {
     let id = "layout-fix"
     let icon = "character.cursor.ibeam"
-    let isActive = false
     var title: String { String(localized: "Fix words typed in the wrong layout") }
-    var isEnabled: Bool { get { false } set {} }
-    var isDefault: Bool { true }
+
+    static let standard = Shortcut(key: 49, modifiers: 0x60000)
+    private static let shortcutKey = "layout-fix-shortcut"
+
+    private(set) var isActive = false
+
+    var isEnabled: Bool {
+        didSet {
+            UserDefaults.standard.set(isEnabled, forKey: id)
+            refresh()
+        }
+    }
+
+    var shortcut: Shortcut {
+        didSet {
+            if shortcut == Self.standard {
+                UserDefaults.standard.removeObject(forKey: Self.shortcutKey)
+            } else {
+                UserDefaults.standard.set(shortcut.stored, forKey: Self.shortcutKey)
+            }
+        }
+    }
+
+    // The Services menu works without a permission; the shortcut row asks for Accessibility itself.
     var needs: [Permission] { [] }
+    var isDefault: Bool { !isEnabled && shortcut == Self.standard }
+
+    @ObservationIgnored private var tap: CFMachPort?
+    @ObservationIgnored private var source: CFRunLoopSource?
+    @ObservationIgnored fileprivate var held: Int64?
+
+    init() {
+        isEnabled = UserDefaults.standard.bool(forKey: id)
+        shortcut = Shortcut(stored: UserDefaults.standard.object(forKey: Self.shortcutKey)) ?? Self.standard
+    }
+
+    func load() {
+        shortcut = Shortcut(stored: UserDefaults.standard.object(forKey: Self.shortcutKey)) ?? Self.standard
+        isEnabled = UserDefaults.standard.bool(forKey: id)
+    }
+
+    func reset() {
+        isEnabled = false
+        shortcut = Self.standard
+    }
+
     var settingsView: AnyView { AnyView(LayoutFixServiceSettings(tool: self)) }
-    func refresh() {}
-    func reset() {}
-    func load() {}
+
+    func refresh() {
+        stop()
+        if isEnabled, AXIsProcessTrusted() { start() }
+    }
+
+    private func start() {
+        let types: [CGEventType] = [.keyDown, .keyUp]
+        let mask = types.reduce(CGEventMask(0)) { $0 | (1 << $1.rawValue) }
+        guard let tap = CGEvent.tapCreate(
+            tap: .cgSessionEventTap,
+            place: .headInsertEventTap,
+            options: .defaultTap,
+            eventsOfInterest: mask,
+            callback: layoutFixCallback,
+            userInfo: Unmanaged.passUnretained(self).toOpaque()
+        ) else { return }
+        let source = CFMachPortCreateRunLoopSource(nil, tap, 0)
+        CFRunLoopAddSource(CFRunLoopGetMain(), source, .commonModes)
+        CGEvent.tapEnable(tap: tap, enable: true)
+        self.tap = tap
+        self.source = source
+        isActive = true
+    }
+
+    private func stop() {
+        if held != nil {
+            held = nil
+            pressService(down: false, nil)
+        }
+        if let tap {
+            CGEvent.tapEnable(tap: tap, enable: false)
+            CFMachPortInvalidate(tap)
+        }
+        if let source {
+            CFRunLoopRemoveSource(CFRunLoopGetMain(), source, .commonModes)
+        }
+        tap = nil
+        source = nil
+        isActive = false
+    }
+}
+
+private func layoutFixCallback(
+    proxy: CGEventTapProxy,
+    type: CGEventType,
+    event: CGEvent,
+    refcon: UnsafeMutableRawPointer?
+) -> Unmanaged<CGEvent>? {
+    guard let refcon else { return Unmanaged.passUnretained(event) }
+    let tool = Unmanaged<LayoutFixTool>.fromOpaque(refcon).takeUnretainedValue()
+    switch type {
+    case .tapDisabledByTimeout, .tapDisabledByUserInput:
+        DispatchQueue.main.async { tool.refresh() }
+    case .keyDown, .keyUp:
+        let code = event.getIntegerValueField(.keyboardEventKeycode)
+        if type == .keyUp, tool.held == code {
+            tool.held = nil
+            pressService(down: false, proxy)
+            return nil
+        }
+        if type == .keyDown, !GameModeTool.shared.isPlaying,
+           Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: event.flags.rawValue) == tool.shortcut {
+            guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else { return nil }
+            tool.held = code
+            pressService(down: true, proxy)
+            return nil
+        }
+    default:
+        break
+    }
+    return Unmanaged.passUnretained(event)
+}
+
+/// ⌃⌥⇧⌘F19, the NSKeyEquivalent of the Services command in Info.plist.
+private func pressService(down: Bool, _ proxy: CGEventTapProxy?) {
+    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(kVK_F19), keyDown: down) else { return }
+    key.flags = [.maskControl, .maskAlternate, .maskShift, .maskCommand]
+    if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
 private struct LayoutFixServiceSettings: View {
-    let tool: LayoutFixTool
+    @Bindable var tool: LayoutFixTool
     @Environment(\.inSettings) private var inSettings
     @State private var hovering = false
 
     var body: some View {
         if inSettings {
             LayoutFixArt(on: true, service: LayoutFixService.title)
-            LabeledContent {
-                Button("Set a Shortcut…") { SystemShortcuts.open(SystemShortcuts.place(section: "services")) {} }
-            } label: {
-                RowLabel(Text(tool.title), Text(LayoutFixService.hint))
+            RowLabel(Text(tool.title), Text(LayoutFixService.hint))
+                .settingAnchor(tool.title)
+            Toggle(isOn: $tool.isEnabled) {
+                Group {
+                    if tool.isEnabled {
+                        ShortcutLabel(
+                            shortcut: $tool.shortcut,
+                            standard: LayoutFixTool.standard,
+                            title: Text("Fix the selected text"),
+                            subtitle: Text("Select the text, then press these keys"),
+                            others: []
+                        )
+                    } else {
+                        KeyLabel(keys: [tool.shortcut.text], title: Text("Fix the selected text"), subtitle: Text("Select the text, then press these keys"))
+                    }
+                }
+                .settingAnchor(String(localized: "Fix the selected text"))
             }
-            .settingAnchor(tool.title)
+            .needs([.accessibility])
         } else {
             Button { SettingsWindow.show(.keyboard) } label: {
                 HStack(spacing: 10) {
                     Image(systemName: tool.icon)
                         .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(Color.secondary)
+                        .foregroundStyle(tool.isActive ? Color.white : Color.secondary)
                         .frame(width: 28, height: 28)
-                        .background(Color.secondary.opacity(0.15), in: Circle())
+                        .background(tool.isActive ? Color.accentColor : Color.secondary.opacity(0.15), in: Circle())
                         .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 1) {
                         Text(tool.title).font(.body).lineLimit(2)
-                        Text("In the Services menu").font(.caption).foregroundStyle(.secondary).lineLimit(2)
+                        Group {
+                            if tool.isActive { Text("Press \(tool.shortcut.text) to fix") } else { Text("In the Services menu") }
+                        }
+                        .font(.caption).foregroundStyle(.secondary).lineLimit(2)
                     }
                     Spacer(minLength: 0)
+                    if tool.isActive { KeyCaps(keys: [tool.shortcut.text]) }
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 5)

@@ -1098,7 +1098,8 @@
 "Don’t fix text in these apps" = "V těchto aplikacích text neopravovat";
 "Services" = "Služby";
 "Select the text, then choose “%@” in the Services menu: in the app menu or when you right-click the text." = "Vyberte text a pak v nabídce Služby zvolte „%@“: v nabídce aplikace nebo v nabídce pravého kliku na text.";
-"Set a Shortcut…" = "Nastavit zkratku…";
+"Fix the selected text" = "Opravit vybraný text";
+"Select the text, then press these keys" = "Vyberte text a pak stiskněte tyto klávesy";
 "In the Services menu" = "V nabídce Služby";
 "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services" = "špatné rozložení, rozložení klávesnice, vstupní zdroj, jazyk, přepnout, převést, překlep, nesmysl, Služby";
 "automatic, auto, Space, Return, layout" = "automaticky, auto, Mezerník, Return, rozložení";
