@@ -902,7 +902,8 @@
 "Archives in Finder" = "Finder में आर्काइव";
 "Right-click › Extract or Create Archive" = "राइट-क्लिक › एक्सट्रैक्ट करें या आर्काइव बनाएँ";
 "Right-click a file or folder" = "किसी फ़ाइल या फ़ोल्डर पर राइट-क्लिक करें";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ, चाहें तो पासवर्ड के साथ।";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ। ZIP और 7Z पर पासवर्ड लग सकता है।";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ। पासवर्ड सिर्फ़ ZIP पर लग सकता है।";
 "Open archives with this app" = "आर्काइव इस ऐप से खोलें";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "आर्काइव, एक्सट्रैक्ट, अनज़िप, खोलना, zip, rar, 7z, tar, पासवर्ड, बाँटना, राइट-क्लिक, संदर्भ मेनू";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "आर्काइव, डिफ़ॉल्ट ऐप, इससे खोलें, डबल-क्लिक, अनज़िप, zip, 7z";

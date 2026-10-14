@@ -902,7 +902,8 @@
 "Archives in Finder" = "Archives in Finder";
 "Right-click › Extract or Create Archive" = "Right-click › Extract or Create Archive";
 "Right-click a file or folder" = "Right-click a file or folder";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password.";
 "Open archives with this app" = "Open archives with this app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archive, default app, open with, double-click, unzip, zip, 7z";

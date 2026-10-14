@@ -902,7 +902,8 @@
 "Archives in Finder" = "Archives dans le Finder";
 "Right-click › Extract or Create Archive" = "Clic droit › Extraire ou Créer une archive";
 "Right-click a file or folder" = "Clic droit sur un fichier ou un dossier";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Faites un clic droit sur une archive dans le Finder et choisissez « Extraire ». Faites un clic droit sur tout autre fichier ou dossier et choisissez « Créer une archive… » pour obtenir un ZIP, un 7Z ou un TAR, avec un mot de passe si vous le souhaitez.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Faites un clic droit sur une archive dans le Finder et choisissez « Extraire ». Faites un clic droit sur tout autre fichier ou dossier et choisissez « Créer une archive… » pour obtenir un ZIP, un 7Z ou un TAR. Les formats ZIP et 7Z peuvent avoir un mot de passe.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Faites un clic droit sur une archive dans le Finder et choisissez « Extraire ». Faites un clic droit sur tout autre fichier ou dossier et choisissez « Créer une archive… » pour obtenir un ZIP, un 7Z ou un TAR. Seul le format ZIP peut avoir un mot de passe.";
 "Open archives with this app" = "Ouvrir les archives avec cette app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archive, extraire, décompresser, dézipper, zip, rar, 7z, tar, mot de passe, diviser, clic droit, menu contextuel";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archive, app par défaut, ouvrir avec, double-clic, décompresser, zip, 7z";

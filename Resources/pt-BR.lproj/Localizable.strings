@@ -902,7 +902,8 @@
 "Archives in Finder" = "Arquivos compactados no Finder";
 "Right-click › Extract or Create Archive" = "Clique direito › Extrair ou Criar arquivo compactado";
 "Right-click a file or folder" = "Clique direito em um arquivo ou pasta";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Clique com o botão direito em um arquivo compactado no Finder e escolha “Extrair”. Clique com o botão direito em qualquer outro arquivo ou pasta e escolha “Criar arquivo compactado…” para gerar um ZIP, 7Z ou TAR, com senha se quiser.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Clique com o botão direito em um arquivo compactado no Finder e escolha “Extrair”. Clique com o botão direito em qualquer outro arquivo ou pasta e escolha “Criar arquivo compactado…” para gerar um ZIP, 7Z ou TAR. ZIP e 7Z podem ter senha.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Clique com o botão direito em um arquivo compactado no Finder e escolha “Extrair”. Clique com o botão direito em qualquer outro arquivo ou pasta e escolha “Criar arquivo compactado…” para gerar um ZIP, 7Z ou TAR. Só o ZIP pode ter senha.";
 "Open archives with this app" = "Abrir arquivos compactados com este app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "arquivo compactado, extrair, descompactar, unzip, zip, rar, 7z, tar, senha, dividir, clique direito, menu de contexto";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "arquivo compactado, app padrão, abrir com, clique duplo, descompactar, zip, 7z";

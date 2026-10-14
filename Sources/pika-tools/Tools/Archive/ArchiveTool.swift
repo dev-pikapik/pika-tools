@@ -36,13 +36,21 @@ private struct ArchiveSettings: View {
     @Bindable var defaultApp: ArchiveDefaultApp
     @Environment(\.inSettings) private var inSettings
 
+    private var help: Text {
+        #if APPSTORE
+        Text("Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password.")
+        #else
+        Text("Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password.")
+        #endif
+    }
+
     var body: some View {
         FinderExtensionSettings(
             tool: tool,
             finder: finder,
             subtitle: Text("Right-click › Extract or Create Archive"),
             hint: Text("Right-click a file or folder"),
-            help: Text("Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like.")
+            help: help
         ) { AnyView(ArchiveArt(on: $0)) }
         #if !APPSTORE
         if inSettings {

@@ -902,7 +902,8 @@
 "Archives in Finder" = "Arhive în Finder";
 "Right-click › Extract or Create Archive" = "Clic dreapta › Extrage sau Creează arhivă";
 "Right-click a file or folder" = "Clic dreapta pe un fișier sau folder";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Fă clic dreapta pe o arhivă în Finder și alege „Extrage”. Fă clic dreapta pe orice alt fișier sau folder și alege „Creează arhivă…” ca să obții un ZIP, 7Z sau TAR, cu parolă dacă vrei.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Fă clic dreapta pe o arhivă în Finder și alege „Extrage”. Fă clic dreapta pe orice alt fișier sau folder și alege „Creează arhivă…” ca să obții un ZIP, 7Z sau TAR. ZIP și 7Z pot avea parolă.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Fă clic dreapta pe o arhivă în Finder și alege „Extrage”. Fă clic dreapta pe orice alt fișier sau folder și alege „Creează arhivă…” ca să obții un ZIP, 7Z sau TAR. Doar ZIP poate avea parolă.";
 "Open archives with this app" = "Deschide arhivele cu această aplicație";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "arhivă, extrage, dezarhivează, zip, rar, 7z, tar, parolă, împarte, clic dreapta, meniu contextual";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "arhivă, aplicație implicită, deschide cu, dublu clic, dezarhivează, zip, 7z";

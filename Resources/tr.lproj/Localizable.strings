@@ -902,7 +902,8 @@
 "Archives in Finder" = "Finder’da Arşivler";
 "Right-click › Extract or Create Archive" = "Sağ tık › Arşivden Çıkar veya Arşiv Oluştur";
 "Right-click a file or folder" = "Bir dosyaya veya klasöre sağ tıklayın";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Finder’da bir arşive sağ tıklayıp “Arşivden Çıkar” komutunu seçin. Başka bir dosyaya veya klasöre sağ tıklayıp “Arşiv Oluştur…” komutunu seçerek ZIP, 7Z veya TAR yapın; isterseniz parolayla.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Finder’da bir arşive sağ tıklayıp “Arşivden Çıkar” komutunu seçin. Başka bir dosyaya veya klasöre sağ tıklayıp “Arşiv Oluştur…” komutunu seçerek ZIP, 7Z veya TAR yapın. Parola, ZIP ve 7Z arşivlerine konabilir.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Finder’da bir arşive sağ tıklayıp “Arşivden Çıkar” komutunu seçin. Başka bir dosyaya veya klasöre sağ tıklayıp “Arşiv Oluştur…” komutunu seçerek ZIP, 7Z veya TAR yapın. Yalnızca ZIP’e parola konabilir.";
 "Open archives with this app" = "Arşivleri bu uygulamayla aç";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "arşiv, arşivden çıkar, aç, zip, rar, 7z, tar, parola, böl, sağ tık, içerik menüsü";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "arşiv, varsayılan uygulama, birlikte aç, çift tıklama, arşivden çıkar, zip, 7z";

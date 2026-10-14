@@ -902,7 +902,8 @@
 "Archives in Finder" = "Archivy ve Finderu";
 "Right-click › Extract or Create Archive" = "Pravý klik › Rozbalit nebo Vytvořit archiv";
 "Right-click a file or folder" = "Pravý klik na soubor nebo složku";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Klikněte pravým na archiv ve Finderu a vyberte „Rozbalit“. Klikněte pravým na jiný soubor nebo složku a vyberte „Vytvořit archiv…“, vznikne ZIP, 7Z nebo TAR, podle přání s heslem.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Klikněte pravým na archiv ve Finderu a vyberte „Rozbalit“. Klikněte pravým na jiný soubor nebo složku a vyberte „Vytvořit archiv…“, vznikne ZIP, 7Z nebo TAR. Heslo mohou mít ZIP a 7Z.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Klikněte pravým na archiv ve Finderu a vyberte „Rozbalit“. Klikněte pravým na jiný soubor nebo složku a vyberte „Vytvořit archiv…“, vznikne ZIP, 7Z nebo TAR. Heslo může mít jen ZIP.";
 "Open archives with this app" = "Otevírat archivy v této aplikaci";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archiv, rozbalit, extrahovat, zip, rar, 7z, tar, heslo, rozdělit, pravý klik, kontextová nabídka";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archiv, výchozí aplikace, otevřít v, dvojklik, rozbalit, zip, 7z";

@@ -902,7 +902,8 @@
 "Archives in Finder" = "Архивы в Finder";
 "Right-click › Extract or Create Archive" = "Правый клик › Распаковать или Создать архив";
 "Right-click a file or folder" = "Правый клик по файлу или папке";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Правый клик по архиву в Finder › «Распаковать». Правый клик по любому другому файлу или папке › «Создать архив…»: получится ZIP, 7Z или TAR, при желании с паролем.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Правый клик по архиву в Finder › «Распаковать». Правый клик по любому другому файлу или папке › «Создать архив…»: получится ZIP, 7Z или TAR. Паролем можно защитить ZIP и 7Z.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Правый клик по архиву в Finder › «Распаковать». Правый клик по любому другому файлу или папке › «Создать архив…»: получится ZIP, 7Z или TAR. Паролем можно защитить только ZIP.";
 "Open archives with this app" = "Открывать архивы в этом приложении";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "архив, распаковать, разархивировать, извлечь, zip, зип, rar, 7z, tar, пароль, разделить, правый клик, контекстное меню";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "архив, приложение по умолчанию, открыть в приложении, двойной щелчок, разархивировать, zip, 7z";

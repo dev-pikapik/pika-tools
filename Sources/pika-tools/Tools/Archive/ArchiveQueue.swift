@@ -34,6 +34,7 @@ final class ArchiveQueue {
     private let password = ArchivePasswordPrompt()
     private var waiting: [(work: Work, row: ArchiveRow)] = []
     private var running = false
+    private var awake: NSObjectProtocol?
     private var panel: NSPanel?
     private var results: [URL] = []
 
@@ -56,6 +57,7 @@ final class ArchiveQueue {
         waiting.append((work, row))
         guard !running else { return }
         running = true
+        awake = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: "pikapik is working with archives")
         Task { await drain() }
     }
 
@@ -76,6 +78,8 @@ final class ArchiveQueue {
             board.rows.removeAll { $0 === row }
         }
         running = false
+        if let awake { ProcessInfo.processInfo.endActivity(awake) }
+        awake = nil
         panel?.close()
         panel = nil
         let made = results

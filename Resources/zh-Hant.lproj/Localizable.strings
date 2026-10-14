@@ -902,7 +902,8 @@
 "Archives in Finder" = "Finder 中的壓縮檔";
 "Right-click › Extract or Create Archive" = "按右鍵點按 › 解壓縮或建立壓縮檔";
 "Right-click a file or folder" = "在檔案或檔案夾上按右鍵";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "在 Finder 中按右鍵點按壓縮檔，然後選擇「解壓縮」。按右鍵點按其他任何檔案或檔案夾，然後選擇「建立壓縮檔…」，即可產生 ZIP、7Z 或 TAR，也可以加上密碼。";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "在 Finder 中按右鍵點按壓縮檔，然後選擇「解壓縮」。按右鍵點按其他任何檔案或檔案夾，然後選擇「建立壓縮檔…」，即可產生 ZIP、7Z 或 TAR。ZIP 和 7Z 可以設定密碼。";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "在 Finder 中按右鍵點按壓縮檔，然後選擇「解壓縮」。按右鍵點按其他任何檔案或檔案夾，然後選擇「建立壓縮檔…」，即可產生 ZIP、7Z 或 TAR。只有 ZIP 可以設定密碼。";
 "Open archives with this app" = "用此 App 打開壓縮檔";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "壓縮檔, 解壓縮, 解壓, zip, rar, 7z, tar, 密碼, 分割, 按右鍵, 快速選單";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "壓縮檔, 預設 App, 打開方式, 按兩下, 解壓, zip, 7z";

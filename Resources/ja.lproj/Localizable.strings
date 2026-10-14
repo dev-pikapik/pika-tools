@@ -902,7 +902,8 @@
 "Archives in Finder" = "Finderでアーカイブ";
 "Right-click › Extract or Create Archive" = "右クリック › 展開 または アーカイブを作成";
 "Right-click a file or folder" = "ファイルまたはフォルダを右クリック";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Finderでアーカイブを右クリックして「展開」を選びます。ほかのファイルやフォルダを右クリックして「アーカイブを作成…」を選ぶと、ZIP、7Z、TARを作成できます。パスワードも設定できます。";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Finderでアーカイブを右クリックして「展開」を選びます。ほかのファイルやフォルダを右クリックして「アーカイブを作成…」を選ぶと、ZIP、7Z、TARを作成できます。パスワードを設定できるのはZIPと7Zです。";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Finderでアーカイブを右クリックして「展開」を選びます。ほかのファイルやフォルダを右クリックして「アーカイブを作成…」を選ぶと、ZIP、7Z、TARを作成できます。パスワードを設定できるのはZIPだけです。";
 "Open archives with this app" = "アーカイブをこのアプリで開く";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "アーカイブ, 展開, 解凍, 圧縮, zip, rar, 7z, tar, パスワード, 分割, 右クリック, コンテキストメニュー";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "アーカイブ, デフォルトのアプリ, このアプリで開く, ダブルクリック, 解凍, zip, 7z";
