@@ -126,7 +126,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
             String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
-            String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
+            String(localized: "Fix the last word or selected text"),
             String(localized: "Enter opens files in Finder"), String(localized: "Delete removes files in Finder"),
             String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
@@ -135,6 +135,7 @@ struct SettingsItem: Identifiable {
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .animations, title: String(localized: "Hide the Dock automatically"), synonyms: "autohide, hide Dock, delay, wait"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Fix the selected text"), synonyms: "shortcut, undo, convert, selection, layout"),
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
         ] + Permissions.privacyLists.map {
