@@ -23,6 +23,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 - Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
 - Games: in the Mac App Store version, Game Mode now keeps the pointer a few points away from the screen corners while you play, so hot corners don’t go off. That version can’t switch hot corners off, so before, a brush against a corner could still set one off. Game Mode also turns back on by itself after the Mac wakes up or you switch back to your user account. Before, it came back only after you switched to another app.
+- Menu bar panel: opening or closing a row, such as the display options under Keep Awake, no longer makes a scrollbar flash for a moment. The scrollbar now shows only when the rows really don’t fit on your screen. The arrow next to Keep Awake now says what it opens, Display settings, and VoiceOver tells whether it is open.
 
 ## [1.49.0] - 2026-10-13
 

@@ -77,6 +77,7 @@
 "Seconds" = "วินาที";
 "Keep the display on" = "เปิดหน้าจอค้างไว้";
 "Display" = "หน้าจอ";
+"Display settings" = "การตั้งค่าหน้าจอ";
 "Always on" = "เปิดตลอด";
 "Turns off as usual" = "ปิดตามปกติ";
 "No dimming, screen saver or lock screen" = "ไม่หรี่ ไม่มีภาพพักหน้าจอ และไม่ล็อกหน้าจอ";
