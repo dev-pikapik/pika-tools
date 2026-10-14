@@ -9,7 +9,7 @@ pikapik is a free menu-bar app that fixes small everyday Mac annoyances. It is f
 3. Setup and main features
 No account or sample files are needed; any photo or video works for Finder tools. Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch. Only the Pet is on by default; Fix Wrong Keyboard Layout has no switch.
 - Keep Awake, Speed Test, Temperature (thermal state), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute button per app), Brightness (an external monitor's slider dims its picture).
-- Ports: which app holds which port; pikapik quits nothing. Background Tasks: what starts in the background; view only.
+- Background Tasks: what starts in the background; view only.
 - Animations, pointer acceleration, Left by deleted apps: buttons only open System Settings.
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (meant as "привет"), then Services > Fix Wrong Keyboard Layout.
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app (like ⌘H).
@@ -49,14 +49,7 @@ In the App Store version the app changes no system setting itself; these buttons
 - Left by deleted apps (Settings > Permissions): each Open button opens one list in System Settings > Privacy & Security, where the user removes an app that was deleted.
 - Battery Settings… (Settings > Battery) opens System Settings > Battery.
 - Turn On… and Turn Off… (Settings > Background Tasks) open Login Items in System Settings.
-- Change in System Settings (Settings > Ports) opens the Sharing or AirDrop & Handoff page for a port held by a macOS service, such as AirPlay Receiver.
 - Set a Shortcut… (Fix Wrong Keyboard Layout, Settings > Keyboard) opens Keyboard Shortcuts in System Settings, where the user can give the Services command a key.
-
-### Ports
-Settings > Ports lists the network ports open on this Mac and the program holding each one. It reads the kernel's list of sockets and processes with the sysctl and libproc calls from the macOS SDK that work in the App Sandbox; it opens no connection and changes nothing.
-- pikapik never quits or signals another process in the App Store version. For the user's own program the page says to quit it in the program itself or in Activity Monitor to free the port; Free Up offers Show "name" for an app (brings it to the front, where the user quits it) and Open Activity Monitor.
-- A program of another user or of the system shows that pikapik doesn't touch it, with Open Activity Monitor; for an Apple program the page says macOS needs the port, so it stays taken.
-- Show in Finder reveals the program's file.
 
 ### Background Tasks
 Settings > Background Tasks lists what starts in the background and which app added it: launch agents and daemons in /Library and in the user's Library, and helpers inside apps (Contents/Library/LaunchAgents, LaunchDaemons and LoginItems). It reads these property lists and SMAppService.statusForLegacyPlist, and runs /bin/launchctl print for the gui/<uid>, user/<uid> and system domains, read-only, to tell which tasks are loaded or running now.
@@ -119,7 +112,7 @@ These features need to look inside other apps' windows, type into or control oth
 - Fixing words as you type. The App Store version has only the Services command Fix Wrong Keyboard Layout.
 - Key repeat, pointer shortcuts, Archives in Finder, the Trash watcher, the Uninstaller, fan control and the built-in updater.
 - Changing pointer acceleration, animations and leftover permissions directly. The App Store version has the buttons to System Settings instead.
-- Quitting the program that holds a port, from Ports.
+- Ports, the list of which program holds which port: the App Sandbox doesn't show it.
 - Turning background tasks off and on directly, from Background Tasks.
 - Keep the Dock on one display.
 - Temperature sensor readings.

@@ -7,6 +7,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Fixed
 - Mac App Store version, Finder: after ⌘X, ⌘V now moves the files, as in the version from the website. Before, ⌘V pasted a copy and the files stayed where they were, so cutting worked like copying. The Move Items Here button in the pikapik menu is gone, ⌘V does its job.
 - Mac App Store version, Finder: the New File, Smaller Copy and Convert switches now each show whether their own item is turned on in System Settings. Before, turning on one of them made all three look on, so New File could stay missing from the right-click menu with its switch on, and Settings › Permissions didn’t ask to turn it on.
+- Ports: on macOS 27 the page could call a port free while a part of macOS or another user held it, because macOS no longer shows their programs to apps. Now pikapik checks the port itself and says it’s taken by macOS or another user.
+- Mac App Store version: Settings › Ports is gone. There macOS doesn’t let an app see which program holds a port, so the page stayed empty.
 
 ## [1.49.0] - 2026-10-13
 

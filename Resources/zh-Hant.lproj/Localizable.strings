@@ -1047,6 +1047,7 @@
 "Port or program" = "連接埠或程式";
 "Free a port" = "釋放連接埠";
 "Port %@ is free" = "連接埠 %@ 未被佔用";
+"Port %@ is taken by macOS or another user" = "連接埠 %@ 已被 macOS 或其他使用者佔用";
 "Port %@" = "連接埠 %@";
 "Ports %@" = "連接埠 %@";
 "Clear" = "清除";

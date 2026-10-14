@@ -1047,6 +1047,7 @@
 "Port or program" = "포트 또는 프로그램";
 "Free a port" = "포트 비우기";
 "Port %@ is free" = "포트 %@ 비어 있음";
+"Port %@ is taken by macOS or another user" = "포트 %@은(는) macOS 또는 다른 사용자가 사용 중입니다";
 "Port %@" = "포트 %@";
 "Ports %@" = "포트 %@";
 "Clear" = "지우기";
