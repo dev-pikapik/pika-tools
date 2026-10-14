@@ -57,6 +57,24 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. Open General, then Mouse, then press Back (or `[`) → General; Forward (`]`) → Mouse.
 4. (App Store) Confirm there is no Fans, Ports, Dock or Uninstaller row and no “Keep running after Quit”, Updates or iCloud sync row anywhere.
 
+### New marks after an update
+
+**Does:** After an update, a small dot after a tab’s name in the sidebar shows that the tab got something new, and a “New” tag beside the title shows what. The dot goes when you open the tab, the tag when you leave it, and all of them go 21 days after the update. A fresh install shows none.
+
+**How it works:** `Common/NewMarks.swift` holds one table, `NewMarks.items` (version, tab, optional row, edition), and the launch logic. `App.swift` calls `begin` once per launch, before `launchedBefore` is set; it stores the version that ran (`new-marks-version`), the one before it (`new-marks-from`), the date of the change (`new-marks-since`) and what you have seen (`new-marks-seen`). An item is new when its version is above the previous one and not above the running one. A copy that has run before but stored no version counts as coming from 1.49.0. The dot is `NewDot` (`NewMarksView.swift`) in the sidebar rows (`SettingsWindow.swift`) and on the gear button of the menu bar panel (`MenuView.swift`) while a tab is still unopened; the tag is the Pet page’s `NewTag`, shown by `NewRowTag` in a tool’s section title (`ToolsSettings`), in `RowLabel(row:)` and in the Permissions section title. Nothing animates. Each copy keeps its own settings, so the App Store and Website copies each show their own marks.
+
+**Nuances:** Marks in 1.50.0, App Store: Keep Awake › Turn off the display now, Keyboard › Home and End and Fix words typed in the wrong layout, Finder › Archives in Finder and Hide desktop icons, Permissions › Other apps’ permissions. Website: none. A future release adds one line to the table.
+
+**Edition:** Both; the table says which marks each edition gets.
+
+**Test:** build with `CFBundleShortVersionString` set to 1.50.0 (bundle id: `com.pikapik.tools` App Store, `com.pesotchi.pika-tools.dev` for a local build).
+1. `defaults delete <bundle id>`, open the app → no dots anywhere (fresh install).
+2. Quit, `defaults write <bundle id> launchedBefore -bool true` and `defaults delete <bundle id> new-marks-version`, open the app (App Store) → dots after Keep Awake, Keyboard, Finder and Permissions, and a dot on the gear button in the menu bar panel.
+3. Click Keyboard → its dot goes; “New” tags stand beside Home and End and Fix words typed in the wrong layout. Click General, then Keyboard again → no tags.
+4. Open the other three tabs → all dots go, and so does the dot on the gear button. Quit and open again → nothing returns.
+5. Repeat step 2, then `defaults write <bundle id> new-marks-since -float $(( $(date +%s) - 22*86400 ))` and relaunch → no marks.
+6. (Website) Repeat step 2 → no marks; the Website has nothing new in 1.50.0.
+
 ### Open at Login
 
 **Does:** Starts pikapik when you log in.

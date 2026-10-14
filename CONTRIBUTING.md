@@ -141,6 +141,12 @@ The app and the pet tell you about an update only when the latest release is new
 swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
 ```
 
+After an update the app points at what is new: a dot after the tab’s name until the tab is opened, a New tag beside the row until the tab is left, nothing on a fresh install and nothing 21 days after the update. `NewMarks` holds the table of what is new and the version logic, and the test checks fresh installs, upgrades from 1.49.x, seen items, expiry and that every tab in the table exists:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Version.swift Sources/pika-tools/Common/NewMarks.swift scripts/test-new-marks.swift -o build/test-new-marks && build/test-new-marks
+```
+
 Before Homebrew removes the app, it runs `pika-tools --uninstall`, which turns off launch at login and puts back the system settings the app changed, such as the Dock and key repeat. Homebrew runs the same step when it upgrades or reinstalls the app, so the app first looks for the `brew` command that started it and does nothing for `upgrade`, `reinstall` and `install`. The check lives in `Brew`:
 
 ```bash
@@ -225,6 +231,7 @@ swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swif
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
 2. Add one line to `ToolRegistry.tools` in `Tools/Tool.swift`.
 3. Describe it in [`docs/FEATURES.md`](docs/FEATURES.md) under its Settings tab: what it does, how it works, its limits, which edition has it and how to test it by hand. Then run `./scripts/feature-form.sh` so the bug and feature forms list it. CI and `release.sh` fail while the forms and the catalog disagree. A changed tool gets the same update.
+4. If users should notice it after the update, add one line to `NewMarks.items` in `Common/NewMarks.swift`: the version that ships it, the tab, the tool’s `id` as the row, and the edition. The tab gets a dot until it is opened and the row a New tag until the tab is left.
 
 ### Strings
 

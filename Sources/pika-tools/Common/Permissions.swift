@@ -471,7 +471,7 @@ struct PermissionsView: View {
                         .settingAnchor(list.pane)
                 }
             } header: {
-                Text("Other apps’ permissions")
+                NewTitle(title: "Other apps’ permissions", row: "apps-can-ask")
             } footer: {
                 Text("Deleted apps keep their permissions: select one in the list and press − or turn it off.")
                     .font(.callout)

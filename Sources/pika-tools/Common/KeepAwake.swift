@@ -403,7 +403,7 @@ struct KeepAwakeSettings: View {
                 LabeledContent {
                     Button("Turn Off") { KeepAwake.turnOffDisplay() }
                 } label: {
-                    RowLabel(Text("Turn off the display now"), Text("Your Mac keeps working. To bring the display back, move the mouse or press a key."))
+                    RowLabel(Text("Turn off the display now"), Text("Your Mac keeps working. To bring the display back, move the mouse or press a key."), row: "display-off")
                 }
                 .settingAnchor(String(localized: "Turn off the display now"))
             }

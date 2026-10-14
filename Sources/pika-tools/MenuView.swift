@@ -30,6 +30,10 @@ struct MenuView: View {
 
     private var showsBrightness: Bool { isShown("brightness") && !Brightness.shared.monitors.isEmpty }
 
+    private var hasNew: Bool {
+        NewMarks.shared.unseenTabs.contains { SettingsTab(rawValue: $0)?.isAvailable == true }
+    }
+
     private var visibleTabs: [SettingsTab] {
         [.sound, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
@@ -197,6 +201,7 @@ struct MenuView: View {
                     Button { SettingsWindow.show() } label: { Label("Settings…", systemImage: "gearshape") }
                         .keyboardShortcut(",")
                         .help("Settings…")
+                        .overlay(alignment: .topTrailing) { if hasNew { NewDot().padding(1) } }
                     Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
                         .help("Customize…")
                     Spacer(minLength: 8)

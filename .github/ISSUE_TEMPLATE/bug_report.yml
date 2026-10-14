@@ -11,6 +11,7 @@ body:
         # features:start (filled from docs/FEATURES.md by scripts/feature-form.sh, do not edit by hand)
         - "General › Settings search"
         - "General › Sidebar and navigation"
+        - "General › New marks after an update"
         - "General › Open at Login"
         - "General › Keep running after Quit"
         - "General › Appearance"
