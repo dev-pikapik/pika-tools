@@ -137,6 +137,7 @@ final class HomeEndTool: Tool {
     private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
         guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
         event.flags = flags
+        event.markPikapik()
         if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 }

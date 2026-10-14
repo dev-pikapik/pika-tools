@@ -54,9 +54,21 @@ enum Permission: CaseIterable {
         }
     }
 
-    static var accessibilityTitle: String {
+    private static var hasDeviceControl: Bool {
         ProcessInfo.processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 27, minorVersion: 0, patchVersion: 0))
-            ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    static var accessibilityTitle: String {
+        hasDeviceControl ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    var guidePage: String? {
+        switch self {
+        case .accessibility: Self.hasDeviceControl ? "Device Control and Data Access" : "Accessibility"
+        case .inputMonitoring: "Input Monitoring"
+        case .screenRecording, .systemAudio: "Screen & System Audio Recording"
+        default: nil
+        }
     }
 
     var icon: String { info.icon }
@@ -392,6 +404,9 @@ struct PermissionBar: View {
 struct PermissionsView: View {
     private let permissions = Permissions.shared
     private let sync = SettingsSync.shared
+    #if APPSTORE
+    @State private var asks = PrivacyAsksModel()
+    #endif
 
     var body: some View {
         let others = Permission.allCases.filter { $0.isShown && $0 != .accessibility && $0 != .inputMonitoring }
@@ -417,6 +432,9 @@ struct PermissionsView: View {
             )
             #endif
             Section {
+                if let page = Permission.allCases.first(where: { $0.guidePage != nil && $0.isShown && !$0.isGranted })?.guidePage {
+                    SettingsGuide(pane: .privacy, steps: [.page(page), .app(on: true)])
+                }
                 PermissionRow(permission: .accessibility)
                 PermissionRow(permission: .inputMonitoring)
             } footer: {
@@ -448,26 +466,21 @@ struct PermissionsView: View {
             #if APPSTORE
             Section {
                 ForEach(Permissions.privacyLists, id: \.pane) { list in
-                    LabeledContent {
-                        Button("Open", systemImage: "arrow.up.forward.app") { permissions.openSettings(list.pane) }
-                    } label: {
-                        HStack(spacing: 10) {
-                            PermissionIcon(type: list.icon, symbol: list.symbol)
-                            Text(list.title)
-                        }
-                    }
-                    .settingAnchor(list.pane)
+                    PrivacyListRow(title: list.title, icon: list.icon, symbol: list.symbol, pane: list.pane, apps: asks.apps)
+                        .settingAnchor(list.pane)
                 }
             } header: {
-                Text("Left by deleted apps")
+                Text("Other apps’ permissions")
             } footer: {
-                Text("When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off.")
+                Text("Deleted apps keep their permissions: select one in the list and press − or turn it off.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .settingAnchor(String(localized: "Left by deleted apps"))
+            .onAppear { asks.refresh() }
+            .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in asks.refresh() }
             #else
             LeftoverPermissionsSection()
             #endif
@@ -553,7 +566,7 @@ private struct PermissionButton: View {
     }
 }
 
-private struct PermissionIcon: View {
+struct PermissionIcon: View {
     let type: String
     let symbol: String
 

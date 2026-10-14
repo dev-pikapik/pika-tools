@@ -1,7 +1,13 @@
 import Carbon
 
 enum InputSources {
-    static func select(_ direction: InputSwitchGesture.Direction) {
+    static var currentID: String? {
+        TISCopyCurrentKeyboardInputSource().flatMap { string($0.takeRetainedValue(), kTISPropertyInputSourceID) }
+    }
+
+    /// Steps from `currentID`, not from the source selected now: every running copy of pikapik
+    /// sees the same gesture, and stepping from the same source makes them all pick the same one.
+    static func select(_ direction: InputSwitchGesture.Direction, from currentID: String? = InputSources.currentID) {
         let filter = [
             kTISPropertyInputSourceCategory: kTISCategoryKeyboardInputSource as Any,
             kTISPropertyInputSourceIsSelectCapable: true,
@@ -14,8 +20,6 @@ enum InputSources {
         let sources = all.filter { types.contains(string($0, kTISPropertyInputSourceType) ?? "") }
         guard sources.count > 1 else { return }
 
-        let current = TISCopyCurrentKeyboardInputSource()?.takeRetainedValue()
-        let currentID = current.flatMap { string($0, kTISPropertyInputSourceID) }
         let target: Int
         if let index = sources.firstIndex(where: { string($0, kTISPropertyInputSourceID) == currentID }) {
             let step = direction == .next ? 1 : sources.count - 1

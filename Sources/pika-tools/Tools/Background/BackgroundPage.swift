@@ -112,6 +112,9 @@ struct BackgroundPage: View {
                         .padding(.vertical, 8)
                 }
             } else {
+                if model.tasks.contains(where: \.opensLoginItems) {
+                    Section { SettingsGuide.loginItems }
+                }
                 #if !APPSTORE
                 group(.login, "Open at Login")
                 #endif
@@ -228,21 +231,13 @@ private struct TaskRow: View {
         }
     }
 
-    private var canToggle: Bool {
-        #if APPSTORE
-        false
-        #else
-        !task.domain.isEmpty
-        #endif
-    }
-
     @ViewBuilder private var action: some View {
         if task.isOwn {
             EmptyView()
         } else if task.state == .offInSettings {
             Button("Turn On…", action: BackgroundTasks.openLoginItems)
                 .help(Text("Opens Login Items in System Settings"))
-        } else if canToggle {
+        } else if task.canToggle {
             #if !APPSTORE
             Button(task.state == .off ? "Turn Back On" : "Turn Off") { model.toggle(task) }
                 .disabled(model.busy.contains(task.id))

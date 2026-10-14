@@ -20,6 +20,7 @@ final class InputSwitchTool: Tool {
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var gesture = InputSwitchGesture()
+    @ObservationIgnored fileprivate var origin: String?
 
     init() {
         isEnabled = UserDefaults.standard.object(forKey: id) as? Bool ?? false
@@ -69,15 +70,15 @@ final class InputSwitchTool: Tool {
         isActive = false
     }
 
-    fileprivate static func select(_ direction: InputSwitchGesture.Direction) {
+    fileprivate static func select(_ direction: InputSwitchGesture.Direction, from origin: String?) {
         guard !GameModeTool.shared.isPlaying else { return }
-        InputSources.select(direction)
+        InputSources.select(direction, from: origin)
     }
 
-    static func selectInGame(_ direction: InputSwitchGesture.Direction) {
+    static func selectInGame(_ direction: InputSwitchGesture.Direction, from origin: String? = InputSources.currentID) {
         guard let game = GameModeTool.shared.game,
               NSWorkspace.shared.frontmostApplication?.processIdentifier == game.processIdentifier else { return }
-        InputSources.select(direction)
+        InputSources.select(direction, from: origin)
     }
 
     static func string(_ source: TISInputSource, _ key: CFString) -> String? {
@@ -98,11 +99,14 @@ private func inputSwitchCallback(
         DispatchQueue.main.async { tool.refresh() }
     case .flagsChanged:
         if let direction = tool.gesture.flagsChanged(event.flags) {
+            let origin = tool.origin
             if GameModeTool.shared.isPlaying {
-                if GameModeTool.shared.allowsLanguageGesture(flags: event.flags, at: event.timestamp) { DispatchQueue.main.async { InputSwitchTool.selectInGame(direction) } }
+                if GameModeTool.shared.allowsLanguageGesture(flags: event.flags, at: event.timestamp) { DispatchQueue.main.async { InputSwitchTool.selectInGame(direction, from: origin) } }
             } else {
-                DispatchQueue.main.async { InputSwitchTool.select(direction) }
+                DispatchQueue.main.async { InputSwitchTool.select(direction, from: origin) }
             }
+        } else {
+            tool.origin = InputSources.currentID
         }
     default:
         tool.gesture.interrupt()

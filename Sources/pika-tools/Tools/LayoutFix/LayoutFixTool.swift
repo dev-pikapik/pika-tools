@@ -135,6 +135,7 @@ private func layoutFixCallback(
 private func pressService(down: Bool, _ proxy: CGEventTapProxy?) {
     guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(kVK_F19), keyDown: down) else { return }
     key.flags = [.maskControl, .maskAlternate, .maskShift, .maskCommand]
+    key.markPikapik()
     if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
@@ -410,7 +411,9 @@ final class LayoutFixTool: Tool {
         guard let fix = KeyboardLayouts.fix(typed, from: current, ignored: Set(ignored)), let element = field(),
               Self.matches(element, fix.original, boundary: true) == true else { return false }
         Self.replace(fix.original, with: fix.text, proxy)
-        event.copy()?.tapPostEvent(proxy)
+        let key = event.copy()
+        key?.markPikapik()
+        key?.tapPostEvent(proxy)
         select(fix.target)
         clear()
         if space { last = (fix, current) }
@@ -527,6 +530,7 @@ final class LayoutFixTool: Tool {
             for down in [true, false] {
                 guard let event = CGEvent(keyboardEventSource: source, virtualKey: CGKeyCode(key), keyDown: down) else { continue }
                 event.flags = []
+                event.markPikapik()
                 if let text {
                     let units = Array(text.utf16)
                     event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
@@ -545,7 +549,7 @@ private func layoutFixCallback(proxy: CGEventTapProxy, type: CGEventType, event:
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
-    case .keyDown:
+    case .keyDown where !event.isPikapik:
         if tool.handle(event, proxy) { return nil }
     default:
         tool.clear()

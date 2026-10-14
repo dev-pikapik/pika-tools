@@ -9,7 +9,6 @@ final class CommandKeysTool: Tool {
     let tab = SettingsTab.windows
 
     private(set) var isActive = false
-    fileprivate static let tag: Int64 = 0x70696B61
 
     var protectsQuit: Bool {
         didSet {
@@ -155,7 +154,7 @@ private func commandKeysCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp:
-        guard event.getIntegerValueField(.eventSourceUserData) != CommandKeysTool.tag else { break }
+        guard !event.isPikapik else { break }
         let flags = event.flags
         let code = event.getIntegerValueField(.keyboardEventKeycode)
         if type == .keyUp, let held = tool.held, held.key == code {
@@ -185,7 +184,7 @@ private func commandKeysCallback(
 private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy?) {
     guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
     key.flags = .maskCommand
-    key.setIntegerValueField(.eventSourceUserData, value: CommandKeysTool.tag)
+    key.markPikapik()
     if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 

@@ -2,8 +2,6 @@ import AppKit
 import ApplicationServices
 import SwiftUI
 
-private let replayMark: Int64 = 0x7069_6B61
-
 @Observable
 final class DockHideTool: Tool {
     enum Action: String { case minimize, hide }
@@ -273,7 +271,7 @@ final class DockHideTool: Tool {
 
     private static func replay(_ events: [CGEvent]) {
         for event in events {
-            event.setIntegerValueField(.eventSourceUserData, value: replayMark)
+            event.markPikapik()
             event.post(tap: .cgSessionEventTap)
         }
     }
@@ -285,7 +283,7 @@ private func dockHideCallback(
     event: CGEvent,
     refcon: UnsafeMutableRawPointer?
 ) -> Unmanaged<CGEvent>? {
-    guard let refcon, event.getIntegerValueField(.eventSourceUserData) != replayMark else { return Unmanaged.passUnretained(event) }
+    guard let refcon, !event.isPikapik else { return Unmanaged.passUnretained(event) }
     let tool = Unmanaged<DockHideTool>.fromOpaque(refcon).takeUnretainedValue()
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
@@ -309,7 +307,7 @@ private func dockHideCallback(
         let from = press.down.location, to = event.location
         guard hypot(to.x - from.x, to.y - from.y) >= 5 else { return nil }
         tool.press = nil
-        press.down.setIntegerValueField(.eventSourceUserData, value: replayMark)
+        press.down.markPikapik()
         press.down.tapPostEvent(proxy)
     case .leftMouseUp:
         if tool.swallowsUp {

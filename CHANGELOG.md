@@ -5,7 +5,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.49.1] - Unreleased
 
 ### Added
+- Mac App Store version: where macOS doesn’t let the app change a setting itself, a short animation now shows where to click in System Settings: Animations, Hide desktop icons, pointer acceleration, Permissions and Open at Login. The labels in the animation are taken from your Mac, in its language. Reduce Motion in both versions also gets the animation, and when Reduce Motion is on you see one still frame with the click marked.
 - Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
+- Mac App Store version, Permissions: Settings › Permissions now shows which installed apps can ask for Camera, Microphone, Automation, Files and Folders and Bluetooth, each with its icon. Who is allowed is still shown only in System Settings, because macOS hides it from this version.
 
 ### Fixed
 - Mac App Store version, Finder: after ⌘X, ⌘V now moves the files, as in the version from the website. Before, ⌘V pasted a copy and the files stayed where they were, so cutting worked like copying. The Move Items Here button in the pikapik menu is gone, ⌘V does its job.
@@ -13,6 +15,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Ports: on macOS 27 the page could call a port free while a part of macOS or another user held it, because macOS no longer shows their programs to apps. Now pikapik checks the port itself and says it’s taken by macOS or another user.
 - Mac App Store version: Settings › Ports is gone. There macOS doesn’t let an app see which program holds a port, so the page stayed empty.
 - Games: with two copies of pikapik open at once, for example the Mac App Store version and the version from the website, ⇧⌘Q and ⇧⌘W in a game did nothing. One copy turned them into ⌘Q and ⌘W, and the other copy stopped those as an accidental quit, so the game neither quit nor closed its window. Now the copies let each other’s ⌘Q and ⌘W through.
+- With two copies of pikapik open at once, a setting turned on in both no longer undoes itself. Before, both copies did the same job one after the other: Swap the side buttons swapped them twice, so they stayed as they were; the scroll direction flipped twice; and the language switch and the language keys in games switched twice, back to the language you started from when you have two. Wrong keyboard layout could also fix the text the other copy had just retyped. Now one copy does the job and the other lets it through.
 - Mac App Store version, Temperature: on a Mac with a battery, the page now shows the battery’s temperature in degrees, with a bar that turns green, yellow or orange, under the overall word. Before, the page showed only that word and a tip and no numbers, so it looked empty. A Mac without a battery still shows the overall level.
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 
