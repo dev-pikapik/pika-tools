@@ -121,6 +121,28 @@ extension Archive {
         }
     }
 
+    #if APPSTORE
+    private static func unpack(_ first: URL, listing: Listing, password: String?, into root: URL, job: Job, meter: Meter, watch: @escaping () -> ArchiveError?) throws -> Diagnosis {
+        let files = listing.files
+        let stage: Stage
+        switch listing.route {
+        case .ditto: stage = Stage(ditto, ["-x", "-k", "-V", "--noqtn", "--noacl", first.path, root.path])
+        case .stream(let tool): stage = Stage(tool, ["-dc", first.path], file: root.appending(path: streamName(first)))
+        case .bsdtar(let page): stage = Stage(bsdtar, ["-x", "-v", "-f", first.path, "-C", root.path] + (page.isEmpty ? [] : ["--options", "zip:hdrcharset=" + page]) + ["--no-mac-metadata", "--no-same-owner", "--no-same-permissions", "--exclude", "._*", "--exclude", "*/._*"], input: credentials(password).input)
+        case .sevenZip: throw ArchiveError.unsupported
+        }
+        let messages = Messages()
+        let prompts = Messages()
+        let statuses = try run([stage], job: job, errors: toolLines(messages, prompts) { meter.tick(of: files) }, watch: stopAtWrongPassword(prompts, password: password, then: watch))
+        // libarchive reads no encrypted 7z or RAR content, and keeping the empty folders it made would look like a result
+        if messages.lines.contains(where: { $0.lowercased().contains("encrypted") && ["not supported", "unsupported", "unavailable"].contains(where: $0.lowercased().contains) }) {
+            throw ArchiveError.unsupported
+        }
+        var diagnosis = Diagnosis(tool: messages.lines)
+        if statuses != [0] { diagnosis.other = messages.lines.last ?? "stopped" }
+        return diagnosis
+    }
+    #else
     private static func unpack(_ first: URL, listing: Listing, password: String?, into root: URL, job: Job, meter: Meter, watch: @escaping () -> ArchiveError?) throws -> Diagnosis {
         let files = listing.files
         let native: Stage? = switch listing.route {
@@ -156,6 +178,7 @@ extension Archive {
         if statuses.contains(where: { $0 > 2 }) { diagnosis.other = diagnosis.other ?? "stopped" }
         return diagnosis
     }
+    #endif
 
     private static func place(_ root: URL, archive: URL, in destination: URL, marking value: Data?) throws -> URL {
         let names = entries(of: root.path).filter { !isJunk(path: $0) }.sorted()

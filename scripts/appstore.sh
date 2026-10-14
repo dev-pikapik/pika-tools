@@ -24,6 +24,18 @@ done
 
 APPSTORE=1 TEAM_ID="$TEAM_ID" ./scripts/build.sh
 
+# Archives in Finder and the archive Quick Look preview ship only when their profiles are set; without them the package builds as before.
+for EXT in Archive Preview; do
+    NAME="$(echo "$EXT" | tr a-z A-Z)_PROFILE"
+    if [ -f "${!NAME:-}" ]; then
+        EXTENSIONS="$EXTENSIONS $EXT"
+        cp "${!NAME}" "$APP/Contents/PlugIns/$EXT.appex/Contents/embedded.provisionprofile"
+    else
+        echo "$NAME is not set: leaving $EXT.appex out of the package." >&2
+        rm -rf "$APP/Contents/PlugIns/$EXT.appex"
+    fi
+done
+
 cp "$APP_PROFILE" "$APP/Contents/embedded.provisionprofile"
 cp "$NEWFILE_PROFILE" "$APP/Contents/PlugIns/NewFile.appex/Contents/embedded.provisionprofile"
 cp "$COMPRESS_PROFILE" "$APP/Contents/PlugIns/Compress.appex/Contents/embedded.provisionprofile"

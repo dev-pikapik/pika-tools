@@ -68,18 +68,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         else { return }
         NewFile.handle(url)
         Compress.handle(url)
-        #if !APPSTORE
         ArchiveHandoff.handle(url)
-        #endif
         KeepAwake.shared.handle(url)
         SpeedTest.shared.handle(url)
     }
 
-    #if !APPSTORE
     func application(_ application: NSApplication, open urls: [URL]) {
         ArchiveHandoff.open(urls)
     }
-    #endif
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
