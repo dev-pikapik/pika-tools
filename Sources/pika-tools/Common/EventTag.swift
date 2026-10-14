@@ -1,0 +1,11 @@
+import CoreGraphics
+
+/// Marks the events pikapik sends or has already changed. Every pikapik tap lets them through,
+/// so when the App Store and website copies run together, neither handles the other's keys again.
+extension CGEvent {
+    private static let pikapikTag: Int64 = 0x70696B61
+
+    var isPikapik: Bool { getIntegerValueField(.eventSourceUserData) == Self.pikapikTag }
+
+    func markPikapik() { setIntegerValueField(.eventSourceUserData, value: Self.pikapikTag) }
+}

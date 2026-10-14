@@ -75,7 +75,7 @@ struct ScrollDirection {
     }
 
     func rewrite(_ event: CGEvent) {
-        guard event.getIntegerValueField(.eventSourceUnixProcessID) == 0 else { return }
+        guard event.getIntegerValueField(.eventSourceUnixProcessID) == 0, !event.isPikapik else { return }
         let natural = natural(
             continuous: event.getIntegerValueField(.scrollWheelEventIsContinuous),
             phase: event.getIntegerValueField(.scrollWheelEventScrollPhase),
@@ -91,5 +91,6 @@ struct ScrollDirection {
         if let field = Self.invertedField {
             event.setIntegerValueField(field, value: natural ? 1 : 0)
         }
+        event.markPikapik()
     }
 }
