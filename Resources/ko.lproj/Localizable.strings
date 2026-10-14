@@ -1172,3 +1172,4 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "모니터, 디스플레이, 화면, 외장 디스플레이, 어둡게, 더 어둡게, 더 밝게, 백라이트";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "키보드, F1, F2, 밝기 올리기, 밝기 내리기, 키, 모니터, 디스플레이";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "감마, 어둡게, 더 어둡게, 소프트웨어 밝기 조절, 모니터, 디스플레이, 화면";
+"Forget This App" = "이 앱 잊기";

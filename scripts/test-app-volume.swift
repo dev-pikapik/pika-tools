@@ -300,6 +300,64 @@ enum TestAppVolume {
         precondition(owner("/usr/sbin/coreaudiod", nil, "coreaudiod") == nil)
         precondition(owner(nil, nil, "Safari Graphics and Media", [terminal])?.name == "Safari")
         precondition(owner(helper, nil, nil, [terminal]) == chrome)
+
+        let files = FileManager.default
+        let folder = files.temporaryDirectory.appendingPathComponent("pika-app-volume-\(getpid())")
+        defer { try? files.removeItem(at: folder) }
+        func bundle(_ name: String, _ id: String, in parent: String = "Apps") -> AppVolumeOwner {
+            let path = folder.appendingPathComponent(parent).appendingPathComponent("\(name).app")
+            try! files.createDirectory(at: path.appendingPathComponent("Contents"), withIntermediateDirectories: true)
+            let info: NSDictionary = ["CFBundleIdentifier": id, "CFBundleName": name, "CFBundlePackageType": "APPL"]
+            precondition(info.write(to: path.appendingPathComponent("Contents/Info.plist"), atomically: true))
+            return AppVolumeOwner(key: id, name: name, bundlePath: path.path)
+        }
+        let player = bundle("Player", "com.example.player")
+        let twin = bundle("Player", "com.example.player.beta", in: "Downloads")
+        let agent = bundle("Agent", "com.example.agent")
+        precondition(AppVolumeMath.canonical(player.bundlePath!) == "com.example.player")
+        precondition(AppVolumeMath.canonical("/Applications/Missing.app") == "/Applications/Missing.app")
+        precondition(AppVolumeMath.canonical("com.example.player") == "com.example.player")
+        precondition(owner(player.bundlePath! + "/Contents/MacOS/x", nil, "x") == AppVolumeOwner(key: "com.example.player", name: "Player", bundlePath: player.bundlePath))
+
+        let suite = "pikapik.test.app-volume"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        defer { defaults.removePersistentDomain(forName: suite) }
+        var memory = AppVolumeMemory(defaults)
+        precondition(memory.keys.isEmpty && memory.level(player.key) == 1)
+        memory.setLevel(0.4, for: player)
+        memory.toggleMute(agent)
+        memory.remember(twin)
+        memory.save(to: defaults)
+        var again = AppVolumeMemory(defaults)
+        precondition(again == memory && again.level(player.key) == 0.4 && again.muted == [agent.key])
+        precondition(again.keys == [player.key, agent.key, twin.key] && again.names[twin.key] == "Player")
+        again.setLevel(0.97, for: player)
+        precondition(again.levels[player.key] == nil && again.keys.contains(player.key))
+        again.toggleMute(agent)
+        precondition(again.muted.isEmpty)
+        again.forget(player.key)
+        again.forget(twin.key)
+        again.save(to: defaults)
+        again = AppVolumeMemory(defaults)
+        precondition(again.keys == [agent.key] && again.level(player.key) == 1 && again.level(agent.key) == 1)
+        again.forget(agent.key)
+        again.save(to: defaults)
+        precondition(AppVolumeMemory(defaults).keys.isEmpty)
+
+        defaults.set([player.bundlePath!: 0.3, "/Applications/Missing.app": 0.5, "com.example.agent": 2.0, "com.example.up": 1.0], forKey: "app-volume-levels")
+        defaults.set([agent.bundlePath!], forKey: "app-volume-muted")
+        let old = AppVolumeMemory(defaults)
+        precondition(old.levels == [player.key: 0.3, "/Applications/Missing.app": 0.5] && old.muted == [agent.key], "\(old)")
+        precondition(old.keys == [player.key, agent.key, "/Applications/Missing.app"])
+
+        let live = [AppVolumeRow(owner: player, playing: true), AppVolumeRow(owner: AppVolumeOwner(key: "z", name: "Zed", bundlePath: nil), playing: false)]
+        let shown = AppVolumeMath.rows(live: live, remembered: [agent, player, AppVolumeOwner(key: "gone", name: "Bonus", bundlePath: nil)])
+        precondition(shown.map(\.owner.key) == ["com.example.agent", "gone", "com.example.player", "z"], "\(shown)")
+        precondition(shown.map(\.playing) == [false, false, true, false] && shown.allSatisfy { $0.place == nil })
+        let pair = AppVolumeMath.rows(live: live, remembered: [twin, AppVolumeOwner(key: "gone", name: "Player", bundlePath: nil)])
+        precondition(pair.map(\.title) == ["Player (Apps)", "Player (Downloads)", "Player (gone)", "Zed"], "\(pair)")
+        precondition(pair.filter { $0.owner.name == "Player" }.count == 3)
         print("app-volume: ok")
     }
 }

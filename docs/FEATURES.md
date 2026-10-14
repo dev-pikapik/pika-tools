@@ -516,13 +516,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Gives every app that plays sound its own volume slider and mute button.
 
-**How it works:** `Sources/pika-tools/Tools/AppVolume/AppVolumeTool.swift:111`. A Core Audio process tap (`CATapDescription`, `AudioHardwareCreateProcessTap`) feeds a private tap-only aggregate device, played back through an output-only HAL unit on the app’s output device. Only apps whose slider is below 100% or that are muted get a tap. Sound is processed in memory, never recorded or saved. Needs the System Audio Recording permission. The microphone is never opened.
+**How it works:** `Sources/pika-tools/Tools/AppVolume/AppVolumeTool.swift:131`; levels, mutes and names are kept by `AppVolumeMemory` (`AppVolumeMath.swift:19`) under the bundle ID of the app. A Core Audio process tap (`CATapDescription`, `AudioHardwareCreateProcessTap`) feeds a private tap-only aggregate device, played back through an output-only HAL unit on the app’s output device. Only apps whose slider is below 100% or that are muted get a tap. Sound is processed in memory, never recorded or saved. Needs the System Audio Recording permission. The microphone is never opened.
 
 **Options:**
-- Slider and Mute — one row per playing app with its icon, a slider (`AppVolumeTool.swift:166`) and a Mute / Unmute button; it changes or silences one app without touching the others, the Mac’s volume or the output device. Gain = slider squared with 30 ms smoothing so there are no clicks. Level and mute are remembered by app and kept after relaunch. A row of an app that stopped dims and goes after about 30 seconds, unless the app is muted or below 100%, then it stays dimmed.
-- No apps are playing sound — what the list says when nothing plays and App Volume is on and allowed (`AppVolumeTool.swift:131`).
+- Slider and Mute — one row per app with its icon, a slider (`AppVolumeTool.swift:222`) and a Mute / Unmute button; it changes or silences one app without touching the others, the Mac’s volume or the output device. Gain = slider squared with 30 ms smoothing so there are no clicks. Level and mute are remembered by app and applied again when the app plays sound after a relaunch of the app or a restart of the Mac. The menu bar panel lists the apps that play sound now. Settings › Sound also keeps every remembered app, dimmed while it is closed; a closed app at 100% that was never added goes after about 30 seconds.
+- Add App… — below the list in Settings › Sound (`AppVolumeTool.swift:175`): a shelf of running and Dock apps to tick, and Other… for any app on the disk; an app can also be dragged onto the page from Finder. The app joins the list at 100%, so its level can be set before it ever plays. Done closes the shelf.
+- ✕ Forget This App — next to a remembered app in Settings (`AppVolumeTool.swift:239`): the level and the mute are dropped, the app is back at 100% and its row goes if the app is closed. Restore Defaults on the Sound page forgets all of them.
+- No apps are playing sound — what the list says when nothing plays, no app is remembered and App Volume is on and allowed (`AppVolumeTool.swift:164`).
 
-**Nuances:** Off by default. Hidden on macOS 14.0 and 14.1 (no Sound page and no App Volume row in the menu). Without the permission the row is half-grey and clicking it opens Permissions on the System Audio Recording row; nothing is asked while App Volume is off. The tap aggregate is private, so Audio MIDI Setup and System Settings › Sound show no extra device. Never test with a program you use: start a stub app that plays a quiet tone and keep another app playing sound.
+**Nuances:** Off by default. Two apps with the same name show their folder in brackets, “Player (Downloads)”. An app removed from disk keeps its saved name and a generic icon, and ✕ forgets it. The saved names sync with the other settings (`app-volume-names`). A copy of pikapik keeps its own list. Hidden on macOS 14.0 and 14.1 (no Sound page and no App Volume row in the menu). Without the permission the row is half-grey and clicking it opens Permissions on the System Audio Recording row; nothing is asked while App Volume is off. The tap aggregate is private, so Audio MIDI Setup and System Settings › Sound show no extra device. Never test with a program you use: start a stub app that plays a quiet tone and keep another app playing sound.
 
 **Edition:** Both.
 
@@ -533,8 +535,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. Start a stub app that plays a quiet tone and keep another app playing sound → both appear with their icon, a slider at 100% and a mute button.
 5. Drag the stub’s slider down → only the stub gets quieter, smoothly and without clicks, silent at the left end; the other app, the Mac’s volume and the output device do not change. Back at 100% the stub plays as before.
 6. Press the stub’s mute button → it falls silent at once, its slider greys out and the button shows a crossed speaker with the tip “Unmute”; press again → the sound returns at the old level. Relaunch pikapik → the level and the mute are kept.
-7. Quit the stub → its row dims and goes after about 30 seconds (stays dimmed if muted or below 100%).
-8. With App Volume on and allowed and nothing playing → “No apps are playing sound”.
+7. Quit the stub → in the menu bar panel its row dims and goes after about 30 seconds; in Settings › Sound it stays, dimmed, with its slider and ✕ (an added app at 100% too).
+8. Start the stub again → its row is bright again with the same level, and it is quieter or silent within a moment, without touching the slider. Restart the Mac → the same.
+9. Click Add App…, tick an app that is not running, then Done → it appears dimmed at 100%; drag its slider to 30%, start it → it plays at 30% from the first second. Drag an app from Finder onto the page → it is added too.
+10. Click ✕ next to the stub → its row goes (or turns into a normal playing row if it still plays) and it plays at full volume; relaunch pikapik → it does not come back.
+11. Put two copies of one stub in different folders and set both → the rows read “Name (folder)”. Move the stub to the Trash while it is set → its row stays with its name and a generic icon; ✕ removes it.
+12. Switch to German → the buttons and the row of a long app name stay in one line each, and the list does not jump when ✕ appears. Check light and dark.
+13. With App Volume on and allowed, nothing playing and no app remembered → “No apps are playing sound”.
 
 ## Keyboard
 
