@@ -17,6 +17,16 @@ defaults:
     shell: bash
 
 jobs:
+  feature-form:
+    name: Feature form
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Issue forms list every feature in docs/FEATURES.md
+        run: ./scripts/feature-form.sh --check
+
   direct:
     name: Direct
     runs-on: macos-26
