@@ -18,7 +18,8 @@
 "All set" = "모두 준비됨";
 "pikapik needs two permissions" = "pikapik에 두 가지 권한이 필요합니다";
 "Both permissions are on and every tool is working." = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다.";
-"Both permissions are on. Some tools also need a permission from the list below." = "두 권한이 모두 켜져 있습니다. 일부 도구는 아래 목록의 권한도 필요합니다.";
+"Some tools also need a permission from the list below." = "일부 도구는 아래 목록의 권한도 필요합니다.";
+"Both permissions are on" = "두 권한이 모두 켜져 있습니다";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "권한이 없으면 macOS가 앱이 클릭과 키 입력을 확인하거나 변경하지 못하게 합니다. 시스템 설정 › 개인정보 보호 및 보안을 열고 다음 두 목록에서 pikapik을 켜세요:";
 "Permissions for some tools" = "일부 도구에 필요한 권한";
 "Only some tools need these permissions. Everything else works without them." = "이 권한은 일부 도구에만 필요합니다. 나머지는 모두 권한 없이도 작동합니다.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "삭제한 앱이 남긴 권한을 찾는 데 필요";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS에서는 시스템 설정에서만 끌 수 있습니다. 버튼을 누르면 알맞은 목록이 열리며, 거기서 pikapik을 끄세요.";
 "Needs a permission. Click to allow it." = "권한이 필요합니다. 클릭하여 허용하세요.";
-"Grey tools need a permission. Click one to allow it." = "회색 도구에는 권한이 필요합니다. 하나를 클릭해 허용하세요.";
 "Turn off %@?" = "%@ 끌까요?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik이 다시 시작되고, 이 권한이 필요한 도구는 다시 허용할 때까지 회색으로 표시됩니다.";
 "Open" = "열기";
@@ -57,7 +57,7 @@
 "Updates" = "업데이트";
 "Check for updates automatically" = "자동으로 업데이트 확인";
 "Check Now" = "지금 확인";
-"Small fixes for the keyboard, mouse and sleep" = "키보드, 마우스, 잠자기를 위한 작은 개선";
+"Small tools that make your Mac nicer to use" = "Mac을 더 즐겁게 쓰게 해 주는 작은 도구";
 "What’s New" = "새로운 기능";
 "Report a Problem" = "문제 보고";
 "License (MIT)" = "라이선스(MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "무기한";
 "Keep your Mac awake" = "Mac 잠자기 방지";
 "Duration" = "지속 시간";
-"Until %@" = "%@까지";
+"If turned on now, ends %@" = "지금 켜면 종료: %@";
 "Days" = "일";
 "Hours" = "시간";
 "Minutes" = "분";
@@ -142,7 +142,7 @@
 "Main display" = "메인 디스플레이";
 "Click the display you want, then choose “Main display” in “Use as”" = "원하는 디스플레이를 클릭한 다음 ‘다음으로 사용’에서 ‘메인 디스플레이’를 선택하세요";
 "primary, main screen, Displays settings" = "기본, 주 모니터, 디스플레이 설정";
-"Fixes for the Dock" = "Dock을 위한 개선";
+"Hide apps with a click and keep the Dock on one display" = "클릭 한 번으로 앱 숨기기, Dock을 한 디스플레이에 유지";
 "Dock, display, monitor, screen, jump, move" = "Dock, 디스플레이, 모니터, 화면, 이동, 점프";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "사용 중인 앱의 아이콘을 클릭하면 가려집니다. 다시 클릭하면 돌아옵니다.";
 "Click again to bring it back" = "다시 클릭하면 돌아옵니다";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "모든 Mac에서 같은 설정";
 "Slower" = "더 느리게";
 "Switch language" = "언어 전환";
-"The dot is your Mac’s own speed" = "점은 Mac 기본 속도";
+"The dot marks your Mac’s normal speed" = "점은 Mac의 기본 속도를 나타냅니다";
 "The dot marks the default" = "점은 기본값 위치";
 "Then paste to move them" = "그다음 붙여넣기로 이동";
-"Your Mac stays awake until you quit pikapik" = "pikapik을 종료할 때까지 Mac이 잠자지 않아요";
+"Keep your Mac from falling asleep" = "Mac이 잠들지 않게 합니다";
 "macOS will ask for your administrator password." = "macOS가 관리자 암호를 요청합니다.";
 "Lines for apps, pixels for games" = "앱에는 줄, 게임에는 픽셀";
 "Add the Open URLs action in Shortcuts, with a link." = "단축어 앱에서 링크가 있는 ‘URL 열기’ 동작을 추가하세요.";
-"Fixes for Finder" = "Finder를 위한 개선";
-"Fixes for the keyboard" = "키보드를 위한 개선";
-"Fixes for the mouse" = "마우스를 위한 개선";
+"Create, convert and compress files right in Finder" = "Finder에서 바로 파일 만들기, 변환, 압축";
+"Switch language, fix wrong layout, Home and End" = "언어 전환, 잘못된 레이아웃 고치기, Home과 End";
+"Scrolling, side buttons and pointer speed" = "스크롤, 측면 버튼, 포인터 속도";
 "Fixes for windows and quitting apps" = "윈도우와 앱 종료를 위한 개선";
 "Lets the Mac sleep before the battery runs out" = "배터리가 다 닳기 전에 다시 잠자기에 들어갑니다";
 "Home and End go to the start and end of a line" = "Home과 End로 줄의 처음과 끝으로 이동";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "게임을 열면 여기에 나타납니다";
 "Here’s what’s in your Dock. Click your game to add it" = "Dock에 있는 앱이 모두 여기 있어요. 게임을 클릭해 추가하세요";
 "You can also drag a game here from Finder" = "Finder에서 게임을 여기로 드래그해도 됩니다";
-"Not a Game" = "게임 아님";
+"Ignore" = "무시";
 "Looks like a game" = "게임인 것 같습니다";
 "game, games, gaming, play, Steam, full screen" = "game, 게임, 게이밍, 플레이, Steam, 전체 화면";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "마우스, 포인터, 커서, Dock, 메뉴 막대, 핫 코너, 가장자리, 두 번째 디스플레이";
@@ -353,6 +353,7 @@
 "Speed Test" = "속도 테스트";
 "How fast your internet is right now" = "지금 인터넷 속도";
 "Check Speed" = "속도 측정";
+"Press Check Speed to find out" = "‘속도 측정’을 눌러 확인하세요";
 "Check" = "측정";
 "Getting ready…" = "준비 중…";
 "Checking download…" = "다운로드 측정 중…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "쉿, 버전 %@이(가) 나왔어요! 저를 클릭하세요.";
 "Restart Finder once to bring back the right-click items" = "Finder를 한 번 재시작하면 우클릭 항목이 다시 나타납니다";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Dock에 있는 앱과 지금 열려 있는 앱이에요. 앱을 클릭해 추가하거나 Finder에서 여기로 끌어 오세요";
-"Keep running after Quit" = "종료 후에도 백그라운드에서 실행";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "‘종료’를 누르면 창은 닫히지만 단축키, ‘잠자기 방지’, 펫은 계속 작동합니다. 완전히 종료하려면 Option(⌥) 키를 누른 채로 선택하세요";
+"Stay in the background after Quit" = "종료 후에도 백그라운드에서 실행";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "단축키와 ‘잠자기 방지’는 계속 작동합니다. 완전히 종료하려면 Option(⌥) 키를 누른 채로 선택하세요";
 "Quit Completely" = "완전히 종료";
 "pikapik keeps working in the background" = "pikapik이 백그라운드에서 계속 작동합니다";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "단축키, ‘잠자기 방지’, 펫은 그대로 켜져 있습니다. 메뉴 막대 아이콘을 다시 보려면 pikapik을 한 번 더 여세요. 완전히 종료하려면 Option(⌥) 키를 누른 채 ‘종료’를 선택하세요.";
@@ -972,6 +973,8 @@
 "Running on battery" = "배터리로 사용 중";
 "Your Mac paused charging to protect the battery" = "배터리를 보호하려고 Mac이 충전을 잠시 멈췄습니다";
 "The power adapter can’t keep up, so the battery is helping" = "전원 어댑터의 출력이 부족해서 배터리가 도와주고 있습니다";
+"This Mac has no battery" = "이 Mac에는 배터리가 없습니다";
+"It runs on power from the wall, so there is nothing to show" = "전원에 연결해 쓰는 Mac이라 보여 드릴 내용이 없습니다";
 "Battery Health" = "배터리 성능 상태";
 "Condition" = "상태";
 "Normal" = "정상";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik이 내 파일 옆에 파일을 저장하고 백그라운드 작업을 볼 수 있도록 홈 폴더를 한 번만 선택해 주세요.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "로그인 항목, 로그인 시 열기, 에이전트, 서비스, 데몬, 시동, 자동 시작, 도우미, 실행 중, 백그라운드, 남은 파일, 끄기";
 "Ports" = "포트";
-"Which programs have taken ports on this Mac" = "이 Mac에서 포트를 사용 중인 프로그램";
+"Numbered doors that programs use to talk to the network" = "프로그램이 네트워크와 통신할 때 쓰는 번호 문";
+"Only one program fits at a door" = "문 하나에는 프로그램 하나만 들어갑니다";
 "Port or program" = "포트 또는 프로그램";
+"Type a number, like 3000" = "3000 같은 번호를 입력하세요";
 "Free a port" = "포트 비우기";
 "Port %@ is free" = "포트 %@ 비어 있음";
 "Port %@ is taken by macOS or another user" = "포트 %@은(는) macOS 또는 다른 사용자가 사용 중입니다";
@@ -1054,9 +1059,11 @@
 "Clear" = "지우기";
 "No programs found" = "프로그램을 찾을 수 없음";
 "None of your programs has taken a port" = "포트를 사용 중인 내 프로그램이 없음";
-"Your programs" = "내 프로그램";
-"macOS and other users" = "macOS 및 다른 사용자";
+"Nothing is using a door right now. That is normal." = "지금 문을 쓰는 프로그램이 없습니다. 정상입니다.";
+"Programs you started" = "내가 실행한 프로그램";
+"Not yours: leave these alone" = "내 것이 아님: 건드리지 마세요";
 "Free Up" = "포트 비우기";
+"How to Free It" = "비우는 방법";
 "Part of macOS" = "macOS의 일부";
 "System service" = "시스템 서비스";
 "Started by another user" = "다른 사용자가 실행함";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "화면 공유";
 "Remote Management" = "원격 관리";
 "AirPlay Receiver" = "AirPlay 수신 모드";
-"Fix words typed in the wrong layout" = "잘못된 레이아웃으로 입력한 단어 바로잡기";
+"Retype words you typed in the wrong language" = "잘못된 언어로 입력한 단어 다시 입력하기";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "잘못된 레이아웃으로 입력한 단어를 올바른 레이아웃으로 다시 입력하고 레이아웃도 전환합니다.";
 "Fixed when you press Space" = "스페이스를 누르면 바로잡습니다";
 "Press %@ to fix" = "바로잡으려면 %@ 키를 누르세요";
@@ -1110,7 +1117,7 @@
 "App Volume" = "앱 음량";
 "Works with any app that plays sound" = "소리를 내는 모든 앱에서 작동합니다";
 "Lower or mute any app without touching the others." = "다른 앱은 그대로 두고 원하는 앱의 음량을 낮추거나 음소거하세요.";
-"Each app gets its own volume." = "앱마다 음량이 따로 있습니다.";
+"Each app gets its own volume" = "앱마다 음량이 따로 있습니다";
 "No apps are playing sound" = "소리를 내는 앱이 없습니다";
 "Mute" = "음소거";
 "Unmute" = "음소거 해제";

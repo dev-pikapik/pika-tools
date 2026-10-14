@@ -18,7 +18,8 @@
 "All set" = "All set";
 "pikapik needs two permissions" = "pikapik needs two permissions";
 "Both permissions are on and every tool is working." = "Both permissions are on and every tool is working.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Both permissions are on. Some tools also need a permission from the list below.";
+"Some tools also need a permission from the list below." = "Some tools also need a permission from the list below.";
+"Both permissions are on" = "Both permissions are on";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:";
 "Permissions for some tools" = "Permissions for some tools";
 "Only some tools need these permissions. Everything else works without them." = "Only some tools need these permissions. Everything else works without them.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Lets the app find permissions left by deleted apps";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off.";
 "Needs a permission. Click to allow it." = "Needs a permission. Click to allow it.";
-"Grey tools need a permission. Click one to allow it." = "Grey tools need a permission. Click one to allow it.";
 "Turn off %@?" = "Turn off %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik will restart, and the tools that need it will turn grey until you allow it again.";
 "Open" = "Open";
@@ -57,7 +57,7 @@
 "Updates" = "Updates";
 "Check for updates automatically" = "Check for updates automatically";
 "Check Now" = "Check Now";
-"Small fixes for the keyboard, mouse and sleep" = "Small fixes for the keyboard, mouse and sleep";
+"Small tools that make your Mac nicer to use" = "Small tools that make your Mac nicer to use";
 "What’s New" = "What’s New";
 "Report a Problem" = "Report a Problem";
 "License (MIT)" = "License (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Indefinitely";
 "Keep your Mac awake" = "Keep your Mac awake";
 "Duration" = "Duration";
-"Until %@" = "Until %@";
+"If turned on now, ends %@" = "If turned on now, ends %@";
 "Days" = "Days";
 "Hours" = "Hours";
 "Minutes" = "Minutes";
@@ -142,7 +142,7 @@
 "Main display" = "Main display";
 "Click the display you want, then choose “Main display” in “Use as”" = "Click the display you want, then choose “Main display” in “Use as”";
 "primary, main screen, Displays settings" = "primary, main screen, Displays settings";
-"Fixes for the Dock" = "Fixes for the Dock";
+"Hide apps with a click and keep the Dock on one display" = "Hide apps with a click and keep the Dock on one display";
 "Dock, display, monitor, screen, jump, move" = "Dock, display, monitor, screen, jump, move";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Click the icon of the app you’re in to hide it. Click again to bring it back.";
 "Click again to bring it back" = "Click again to bring it back";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "Same settings on all your Macs";
 "Slower" = "Slower";
 "Switch language" = "Switch language";
-"The dot is your Mac’s own speed" = "The dot is your Mac’s own speed";
+"The dot marks your Mac’s normal speed" = "The dot marks your Mac’s normal speed";
 "The dot marks the default" = "The dot marks the default";
 "Then paste to move them" = "Then paste to move them";
-"Your Mac stays awake until you quit pikapik" = "Your Mac stays awake until you quit pikapik";
+"Keep your Mac from falling asleep" = "Keep your Mac from falling asleep";
 "macOS will ask for your administrator password." = "macOS will ask for your administrator password.";
 "Lines for apps, pixels for games" = "Lines for apps, pixels for games";
 "Add the Open URLs action in Shortcuts, with a link." = "Add the Open URLs action in Shortcuts, with a link.";
-"Fixes for Finder" = "Fixes for Finder";
-"Fixes for the keyboard" = "Fixes for the keyboard";
-"Fixes for the mouse" = "Fixes for the mouse";
+"Create, convert and compress files right in Finder" = "Create, convert and compress files right in Finder";
+"Switch language, fix wrong layout, Home and End" = "Switch language, fix wrong layout, Home and End";
+"Scrolling, side buttons and pointer speed" = "Scrolling, side buttons and pointer speed";
 "Fixes for windows and quitting apps" = "Fixes for windows and quitting apps";
 "Lets the Mac sleep before the battery runs out" = "Lets the Mac sleep before the battery runs out";
 "Home and End go to the start and end of a line" = "Home and End go to the start and end of a line";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "Open your game, and it shows up here";
 "Here’s what’s in your Dock. Click your game to add it" = "Here’s what’s in your Dock. Click your game to add it";
 "You can also drag a game here from Finder" = "You can also drag a game here from Finder";
-"Not a Game" = "Not a Game";
+"Ignore" = "Ignore";
 "Looks like a game" = "Looks like a game";
 "game, games, gaming, play, Steam, full screen" = "game, games, gaming, play, Steam, full screen";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mouse, cursor, Dock, menu bar, hot corners, edges, second display";
@@ -353,6 +353,7 @@
 "Speed Test" = "Speed Test";
 "How fast your internet is right now" = "How fast your internet is right now";
 "Check Speed" = "Check Speed";
+"Press Check Speed to find out" = "Press Check Speed to find out";
 "Check" = "Check";
 "Getting ready…" = "Getting ready…";
 "Checking download…" = "Checking download…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "Psst, version %@ is out! Click me.";
 "Restart Finder once to bring back the right-click items" = "Restart Finder once to bring back the right-click items";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder";
-"Keep running after Quit" = "Keep running after Quit";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely";
+"Stay in the background after Quit" = "Stay in the background after Quit";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Shortcuts and Keep Awake keep working. Hold Option to quit completely";
 "Quit Completely" = "Quit Completely";
 "pikapik keeps working in the background" = "pikapik keeps working in the background";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit.";
@@ -972,6 +973,8 @@
 "Running on battery" = "Running on battery";
 "Your Mac paused charging to protect the battery" = "Your Mac paused charging to protect the battery";
 "The power adapter can’t keep up, so the battery is helping" = "The power adapter can’t keep up, so the battery is helping";
+"This Mac has no battery" = "This Mac has no battery";
+"It runs on power from the wall, so there is nothing to show" = "It runs on power from the wall, so there is nothing to show";
 "Battery Health" = "Battery Health";
 "Condition" = "Condition";
 "Normal" = "Normal";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choose your home folder once so pikapik can save files next to yours and see your background tasks.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off";
 "Ports" = "Ports";
-"Which programs have taken ports on this Mac" = "Which programs have taken ports on this Mac";
+"Numbered doors that programs use to talk to the network" = "Numbered doors that programs use to talk to the network";
+"Only one program fits at a door" = "Only one program fits at a door";
 "Port or program" = "Port or program";
+"Type a number, like 3000" = "Type a number, like 3000";
 "Free a port" = "Free a port";
 "Port %@ is free" = "Port %@ is free";
 "Port %@ is taken by macOS or another user" = "Port %@ is taken by macOS or another user";
@@ -1054,9 +1059,11 @@
 "Clear" = "Clear";
 "No programs found" = "No programs found";
 "None of your programs has taken a port" = "None of your programs has taken a port";
-"Your programs" = "Your programs";
-"macOS and other users" = "macOS and other users";
+"Nothing is using a door right now. That is normal." = "Nothing is using a door right now. That is normal.";
+"Programs you started" = "Programs you started";
+"Not yours: leave these alone" = "Not yours: leave these alone";
 "Free Up" = "Free Up";
+"How to Free It" = "How to Free It";
 "Part of macOS" = "Part of macOS";
 "System service" = "System service";
 "Started by another user" = "Started by another user";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "Screen Sharing";
 "Remote Management" = "Remote Management";
 "AirPlay Receiver" = "AirPlay Receiver";
-"Fix words typed in the wrong layout" = "Fix words typed in the wrong layout";
+"Retype words you typed in the wrong language" = "Retype words you typed in the wrong language";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "A word typed in the wrong layout is retyped in the right one, and the layout switches.";
 "Fixed when you press Space" = "Fixed when you press Space";
 "Press %@ to fix" = "Press %@ to fix";
@@ -1110,7 +1117,7 @@
 "App Volume" = "App Volume";
 "Works with any app that plays sound" = "Works with any app that plays sound";
 "Lower or mute any app without touching the others." = "Lower or mute any app without touching the others.";
-"Each app gets its own volume." = "Each app gets its own volume.";
+"Each app gets its own volume" = "Each app gets its own volume";
 "No apps are playing sound" = "No apps are playing sound";
 "Mute" = "Mute";
 "Unmute" = "Unmute";

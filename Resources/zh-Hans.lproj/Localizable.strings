@@ -18,7 +18,8 @@
 "All set" = "一切就绪";
 "pikapik needs two permissions" = "pikapik 需要两项权限";
 "Both permissions are on and every tool is working." = "两项权限均已开启，所有工具正常工作。";
-"Both permissions are on. Some tools also need a permission from the list below." = "两项权限均已开启。部分工具还需要下方列表中的权限。";
+"Some tools also need a permission from the list below." = "部分工具还需要下方列表中的权限。";
+"Both permissions are on" = "两项权限均已开启";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "没有这些权限，macOS 不允许应用查看或更改点按和按键。请打开“系统设置” › “隐私与安全性”，在以下两个列表中开启 pikapik：";
 "Permissions for some tools" = "部分工具所需的权限";
 "Only some tools need these permissions. Everything else works without them." = "只有部分工具需要这些权限，其他功能不授权也能正常使用。";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "用于查找已删除 App 留下的权限";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS 只允许你在“系统设置”中关闭这些权限。按钮会打开对应的列表，在那里关闭 pikapik 即可。";
 "Needs a permission. Click to allow it." = "需要权限。点按即可允许。";
-"Grey tools need a permission. Click one to allow it." = "灰色的工具需要权限。点按其中任意一个即可允许。";
 "Turn off %@?" = "要关闭“%@”吗？";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik 会重新启动，需要该权限的工具会变灰，直到你再次允许。";
 "Open" = "打开";
@@ -57,7 +57,7 @@
 "Updates" = "更新";
 "Check for updates automatically" = "自动检查更新";
 "Check Now" = "立即检查";
-"Small fixes for the keyboard, mouse and sleep" = "键盘、鼠标和睡眠的小改进";
+"Small tools that make your Mac nicer to use" = "让 Mac 用起来更舒心的小工具";
 "What’s New" = "新功能";
 "Report a Problem" = "报告问题";
 "License (MIT)" = "许可证(MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "无限期";
 "Keep your Mac awake" = "让 Mac 保持唤醒";
 "Duration" = "时长";
-"Until %@" = "直到 %@";
+"If turned on now, ends %@" = "现在开启的话，结束时间：%@";
 "Days" = "天";
 "Hours" = "小时";
 "Minutes" = "分钟";
@@ -142,7 +142,7 @@
 "Main display" = "主显示器";
 "Click the display you want, then choose “Main display” in “Use as”" = "点按想要的显示器，然后在“用途”中选择“主显示器”";
 "primary, main screen, Displays settings" = "主屏幕, 首选显示器, 显示器设置";
-"Fixes for the Dock" = "针对程序坞的改进";
+"Hide apps with a click and keep the Dock on one display" = "一点即可隐藏 App，让 Dock 只在一块显示器上";
 "Dock, display, monitor, screen, jump, move" = "程序坞, Dock, 显示器, 屏幕, 跳动, 移动";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "点按当前应用的图标即可隐藏，再点按一次即可恢复。";
 "Click again to bring it back" = "再点按一次即可恢复";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "所有 Mac 使用相同设置";
 "Slower" = "更慢";
 "Switch language" = "切换语言";
-"The dot is your Mac’s own speed" = "圆点是 Mac 自带的速度";
+"The dot marks your Mac’s normal speed" = "圆点表示 Mac 的正常速度";
 "The dot marks the default" = "圆点标出默认值";
 "Then paste to move them" = "再粘贴即可移动";
-"Your Mac stays awake until you quit pikapik" = "在你退出 pikapik 之前，Mac 不会睡眠";
+"Keep your Mac from falling asleep" = "防止 Mac 进入睡眠";
 "macOS will ask for your administrator password." = "macOS 会要求输入管理员密码。";
 "Lines for apps, pixels for games" = "App 用行，游戏用像素";
 "Add the Open URLs action in Shortcuts, with a link." = "在“快捷指令”中添加带链接的“打开URL”操作。";
-"Fixes for Finder" = "针对访达的改进";
-"Fixes for the keyboard" = "针对键盘的改进";
-"Fixes for the mouse" = "针对鼠标的改进";
+"Create, convert and compress files right in Finder" = "直接在 Finder 中创建、转换和压缩文件";
+"Switch language, fix wrong layout, Home and End" = "切换语言、修正键盘布局、Home 和 End";
+"Scrolling, side buttons and pointer speed" = "滚动、侧键和指针速度";
 "Fixes for windows and quitting apps" = "针对窗口和退出应用的改进";
 "Lets the Mac sleep before the battery runs out" = "在电池耗尽前让 Mac 重新睡眠";
 "Home and End go to the start and end of a line" = "Home 和 End 跳到行首和行尾";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "打开你的游戏，它就会出现在这里";
 "Here’s what’s in your Dock. Click your game to add it" = "这里是程序坞里的所有 App。点按你的游戏来添加";
 "You can also drag a game here from Finder" = "也可以从访达把游戏拖到这里";
-"Not a Game" = "不是游戏";
+"Ignore" = "忽略";
 "Looks like a game" = "看起来像游戏";
 "game, games, gaming, play, Steam, full screen" = "game, 游戏, 玩, 电竞, Steam, 全屏";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "鼠标, 指针, 光标, 程序坞, Dock, 菜单栏, 触发角, 边缘, 第二块显示器";
@@ -353,6 +353,7 @@
 "Speed Test" = "网速测试";
 "How fast your internet is right now" = "你的网络现在有多快";
 "Check Speed" = "测速";
+"Press Check Speed to find out" = "点按“测速”即可知道";
 "Check" = "测速";
 "Getting ready…" = "正在准备…";
 "Checking download…" = "正在测下载…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "嘘，%@ 版本出来啦！点我看看。";
 "Restart Finder once to bring back the right-click items" = "重新启动访达一次，即可找回右键菜单中的项目";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "这里是程序坞里和正在打开的 App。点按一个 App 来添加，或从访达把它拖到这里";
-"Keep running after Quit" = "退出后继续在后台运行";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“退出”会关闭窗口，但快捷键、“保持唤醒”和宠物会继续工作。按住 Option（⌥）键可完全退出";
+"Stay in the background after Quit" = "退出后继续在后台运行";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "快捷键和“保持唤醒”会继续工作。按住 Option（⌥）键可完全退出";
 "Quit Completely" = "完全退出";
 "pikapik keeps working in the background" = "pikapik 仍在后台运行";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "快捷键、“保持唤醒”和宠物都会继续工作。再次打开 pikapik 即可让菜单栏图标回来。要完全退出，请在选择“退出”时按住 Option（⌥）键。";
@@ -972,6 +973,8 @@
 "Running on battery" = "正在使用电池供电";
 "Your Mac paused charging to protect the battery" = "为了保护电池，Mac 已暂停充电";
 "The power adapter can’t keep up, so the battery is helping" = "电源适配器供电跟不上，所以电池在帮忙";
+"This Mac has no battery" = "这台 Mac 没有电池";
+"It runs on power from the wall, so there is nothing to show" = "它直接使用电源供电，所以没有可显示的内容";
 "Battery Health" = "电池健康";
 "Condition" = "状态";
 "Normal" = "正常";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "请选择一次你的个人文件夹，这样 pikapik 就能把文件保存在你的文件旁边，并查看你的后台任务。";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "登录项, 登录时打开, 代理, 服务, 守护进程, 启动, 开机启动, 自动启动, 辅助程序, 正在运行, 后台, 残留, 关闭";
 "Ports" = "端口";
-"Which programs have taken ports on this Mac" = "这台 Mac 上有哪些程序占用了端口";
+"Numbered doors that programs use to talk to the network" = "带编号的门，程序通过它们与网络通信";
+"Only one program fits at a door" = "每扇门只容得下一个程序";
 "Port or program" = "端口或程序";
+"Type a number, like 3000" = "输入数字，例如 3000";
 "Free a port" = "释放端口";
 "Port %@ is free" = "端口 %@ 未被占用";
 "Port %@ is taken by macOS or another user" = "端口 %@ 已被 macOS 或其他用户占用";
@@ -1054,9 +1059,11 @@
 "Clear" = "清除";
 "No programs found" = "未找到程序";
 "None of your programs has taken a port" = "你的程序都没有占用端口";
-"Your programs" = "你的程序";
-"macOS and other users" = "macOS 和其他用户";
+"Nothing is using a door right now. That is normal." = "现在没有程序占用任何门。这很正常。";
+"Programs you started" = "你启动的程序";
+"Not yours: leave these alone" = "不是你的：请不要动";
 "Free Up" = "释放";
+"How to Free It" = "如何释放";
 "Part of macOS" = "macOS 的一部分";
 "System service" = "系统服务";
 "Started by another user" = "由其他用户启动";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "屏幕共享";
 "Remote Management" = "远程管理";
 "AirPlay Receiver" = "隔空播放接收器";
-"Fix words typed in the wrong layout" = "修正用错键盘布局输入的文字";
+"Retype words you typed in the wrong language" = "重新输入用错语言打出的文字";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "用错键盘布局输入的文字会以正确的布局重新输入，并自动切换布局。";
 "Fixed when you press Space" = "按下空格时修正";
 "Press %@ to fix" = "按 %@ 修正";
@@ -1110,7 +1117,7 @@
 "App Volume" = "App 音量";
 "Works with any app that plays sound" = "适用于任何播放声音的 App";
 "Lower or mute any app without touching the others." = "调低或静音任意 App，不影响其他 App。";
-"Each app gets its own volume." = "每个 App 都有自己的音量。";
+"Each app gets its own volume" = "每个 App 都有自己的音量";
 "No apps are playing sound" = "没有 App 正在播放声音";
 "Mute" = "静音";
 "Unmute" = "取消静音";

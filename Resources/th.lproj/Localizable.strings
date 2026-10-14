@@ -18,7 +18,8 @@
 "All set" = "พร้อมแล้ว";
 "pikapik needs two permissions" = "pikapik ต้องการการอนุญาตสองรายการ";
 "Both permissions are on and every tool is working." = "เปิดการอนุญาตทั้งสองแล้ว และเครื่องมือทุกตัวทำงานได้";
-"Both permissions are on. Some tools also need a permission from the list below." = "เปิดการอนุญาตทั้งสองแล้ว เครื่องมือบางตัวต้องใช้การอนุญาตจากรายการด้านล่างด้วย";
+"Some tools also need a permission from the list below." = "เครื่องมือบางตัวต้องใช้การอนุญาตจากรายการด้านล่างด้วย";
+"Both permissions are on" = "เปิดการอนุญาตทั้งสองแล้ว";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "หากไม่มีการอนุญาตเหล่านี้ macOS จะไม่ให้แอปดูหรือเปลี่ยนการคลิกและการกดปุ่ม เปิดการตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย แล้วเปิด pikapik ในสองรายการนี้:";
 "Permissions for some tools" = "การอนุญาตสำหรับเครื่องมือบางตัว";
 "Only some tools need these permissions. Everything else works without them." = "มีเพียงเครื่องมือบางตัวที่ต้องใช้การอนุญาตเหล่านี้ ส่วนอื่นทั้งหมดใช้งานได้โดยไม่ต้องอนุญาต";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "ให้แอปค้นหาการอนุญาตที่เหลือจากแอปที่ลบไปแล้ว";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS ให้ปิดสิ่งเหล่านี้ได้เฉพาะในการตั้งค่าระบบ ปุ่มนี้จะเปิดรายการที่ถูกต้อง แล้วคุณปิด pikapik ได้ที่นั่น";
 "Needs a permission. Click to allow it." = "ต้องมีการอนุญาต คลิกเพื่ออนุญาต";
-"Grey tools need a permission. Click one to allow it." = "เครื่องมือที่เป็นสีเทาต้องมีการอนุญาต คลิกที่ตัวใดก็ได้เพื่ออนุญาต";
 "Turn off %@?" = "ปิด %@ หรือไม่";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik จะเริ่มใหม่ และเครื่องมือที่ต้องใช้สิ่งนี้จะเป็นสีเทาจนกว่าคุณจะอนุญาตอีกครั้ง";
 "Open" = "เปิด";
@@ -57,7 +57,7 @@
 "Updates" = "อัปเดต";
 "Check for updates automatically" = "ตรวจสอบอัปเดตโดยอัตโนมัติ";
 "Check Now" = "ตรวจสอบเดี๋ยวนี้";
-"Small fixes for the keyboard, mouse and sleep" = "การแก้ไขเล็กๆ สำหรับแป้นพิมพ์ เมาส์ และการพักเครื่อง";
+"Small tools that make your Mac nicer to use" = "เครื่องมือเล็กๆ ที่ทำให้ Mac ใช้สนุกขึ้น";
 "What’s New" = "มีอะไรใหม่";
 "Report a Problem" = "รายงานปัญหา";
 "License (MIT)" = "สัญญาอนุญาต (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "ไม่มีกำหนด";
 "Keep your Mac awake" = "ไม่ให้ Mac หลับ";
 "Duration" = "ระยะเวลา";
-"Until %@" = "จนถึง %@";
+"If turned on now, ends %@" = "ถ้าเปิดตอนนี้ จะสิ้นสุด: %@";
 "Days" = "วัน";
 "Hours" = "ชั่วโมง";
 "Minutes" = "นาที";
@@ -142,7 +142,7 @@
 "Main display" = "จอภาพหลัก";
 "Click the display you want, then choose “Main display” in “Use as”" = "คลิกจอที่ต้องการ แล้วเลือก “จอภาพหลัก” ใน “ใช้เป็น”";
 "primary, main screen, Displays settings" = "หลัก, จอหลัก, การตั้งค่าจอภาพ";
-"Fixes for the Dock" = "การแก้ไขสำหรับ Dock";
+"Hide apps with a click and keep the Dock on one display" = "ซ่อนแอปด้วยการคลิก และให้ Dock อยู่บนจอเดียว";
 "Dock, display, monitor, screen, jump, move" = "Dock, จอ, หน้าจอ, จอภาพ, มอนิเตอร์, กระโดด, ย้าย";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "คลิกไอคอนของแอปที่ใช้อยู่เพื่อซ่อน คลิกอีกครั้งเพื่อแสดงกลับมา";
 "Click again to bring it back" = "คลิกอีกครั้งเพื่อแสดงกลับมา";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "การตั้งค่าเดียวกันบน Mac ทุกเครื่อง";
 "Slower" = "ช้าลง";
 "Switch language" = "สลับภาษา";
-"The dot is your Mac’s own speed" = "จุดคือความเร็วเดิมของ Mac";
+"The dot marks your Mac’s normal speed" = "จุดแสดงความเร็วปกติของ Mac";
 "The dot marks the default" = "จุดบอกค่าเริ่มต้น";
 "Then paste to move them" = "จากนั้นวางเพื่อย้าย";
-"Your Mac stays awake until you quit pikapik" = "Mac จะไม่หลับจนกว่าคุณจะปิด pikapik";
+"Keep your Mac from falling asleep" = "ป้องกัน Mac ไม่ให้หลับ";
 "macOS will ask for your administrator password." = "macOS จะขอรหัสผ่านผู้ดูแลระบบ";
 "Lines for apps, pixels for games" = "บรรทัดสำหรับแอป พิกเซลสำหรับเกม";
 "Add the Open URLs action in Shortcuts, with a link." = "ในคำสั่งลัด ให้เพิ่มการทำงาน “เปิด URL” พร้อมลิงก์";
-"Fixes for Finder" = "การแก้ไขสำหรับ Finder";
-"Fixes for the keyboard" = "การแก้ไขสำหรับแป้นพิมพ์";
-"Fixes for the mouse" = "การแก้ไขสำหรับเมาส์";
+"Create, convert and compress files right in Finder" = "สร้าง แปลง และบีบอัดไฟล์ได้ใน Finder เลย";
+"Switch language, fix wrong layout, Home and End" = "สลับภาษา แก้เลย์เอาต์ที่ผิด Home และ End";
+"Scrolling, side buttons and pointer speed" = "การเลื่อน ปุ่มด้านข้าง และความเร็วตัวชี้";
 "Fixes for windows and quitting apps" = "การแก้ไขสำหรับหน้าต่างและการปิดแอป";
 "Lets the Mac sleep before the battery runs out" = "ให้ Mac พักเครื่องอีกครั้งก่อนแบตเตอรี่หมด";
 "Home and End go to the start and end of a line" = "Home และ End ไปต้นและท้ายบรรทัด";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "เปิดเกมของคุณ แล้วเกมจะปรากฏที่นี่";
 "Here’s what’s in your Dock. Click your game to add it" = "นี่คือทุกอย่างใน Dock ของคุณ คลิกเกมของคุณเพื่อเพิ่ม";
 "You can also drag a game here from Finder" = "คุณลากเกมมาที่นี่จาก Finder ได้ด้วย";
-"Not a Game" = "ไม่ใช่เกม";
+"Ignore" = "ละเว้น";
 "Looks like a game" = "ดูเหมือนเกม";
 "game, games, gaming, play, Steam, full screen" = "game, เกม, เล่นเกม, เล่น, Steam, เต็มหน้าจอ";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "เมาส์, ตัวชี้, เคอร์เซอร์, Dock, แถบเมนู, มุมลัด, ขอบ, หน้าจอที่สอง";
@@ -353,6 +353,7 @@
 "Speed Test" = "ทดสอบความเร็ว";
 "How fast your internet is right now" = "ตอนนี้อินเทอร์เน็ตของคุณเร็วแค่ไหน";
 "Check Speed" = "ตรวจความเร็ว";
+"Press Check Speed to find out" = "กด “ตรวจความเร็ว” เพื่อดูผล";
 "Check" = "ตรวจ";
 "Getting ready…" = "กำลังเตรียม…";
 "Checking download…" = "กำลังตรวจการดาวน์โหลด…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "ชู่ว เวอร์ชัน %@ ออกแล้ว! คลิกที่เราสิ";
 "Restart Finder once to bring back the right-click items" = "เริ่ม Finder ใหม่หนึ่งครั้งเพื่อให้รายการคลิกขวากลับมา";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "นี่คือสิ่งที่อยู่ใน Dock และที่เปิดอยู่ตอนนี้ คลิกแอปเพื่อเพิ่ม หรือลากแอปมาที่นี่จาก Finder";
-"Keep running after Quit" = "ทำงานต่อเบื้องหลังหลังจากออก";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“ออก” จะปิดหน้าต่าง แต่ปุ่มลัด “ไม่ให้หลับ” และเพื่อนตัวน้อยยังทำงานต่อ กด Option (⌥) ค้างไว้เพื่อออกจริงๆ";
+"Stay in the background after Quit" = "ทำงานต่อเบื้องหลังหลังจากออก";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "ปุ่มลัดและ “ไม่ให้หลับ” ยังทำงานต่อ กด Option (⌥) ค้างไว้เพื่อออกจริงๆ";
 "Quit Completely" = "ออกจริงๆ";
 "pikapik keeps working in the background" = "pikapik ยังทำงานอยู่เบื้องหลัง";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "ปุ่มลัด “ไม่ให้หลับ” และเพื่อนตัวน้อยยังเปิดอยู่ เปิด pikapik อีกครั้งเพื่อให้ไอคอนกลับมาที่แถบเมนู หากต้องการออกจริงๆ ให้กด Option (⌥) ค้างไว้ตอนเลือก “ออก”";
@@ -972,6 +973,8 @@
 "Running on battery" = "ใช้พลังงานจากแบตเตอรี่";
 "Your Mac paused charging to protect the battery" = "Mac หยุดชาร์จชั่วคราวเพื่อถนอมแบตเตอรี่";
 "The power adapter can’t keep up, so the battery is helping" = "อะแดปเตอร์แปลงไฟจ่ายไฟไม่พอ แบตเตอรี่จึงช่วยจ่ายไฟอยู่";
+"This Mac has no battery" = "Mac เครื่องนี้ไม่มีแบตเตอรี่";
+"It runs on power from the wall, so there is nothing to show" = "ใช้ไฟจากปลั๊กโดยตรง จึงไม่มีอะไรให้แสดง";
 "Battery Health" = "สุขภาพแบตเตอรี่";
 "Condition" = "สภาพ";
 "Normal" = "ปกติ";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "เลือกโฟลเดอร์โฮมของคุณหนึ่งครั้ง เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณ และดูงานเบื้องหลังของคุณได้";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "รายการเข้าสู่ระบบ, เปิดเมื่อเข้าสู่ระบบ, เอเจนต์, บริการ, เดมอน, เริ่มต้น, เริ่มอัตโนมัติ, ตัวช่วย, กำลังทำงาน, เบื้องหลัง, ไฟล์ที่เหลือ, ปิด";
 "Ports" = "พอร์ต";
-"Which programs have taken ports on this Mac" = "โปรแกรมไหนกำลังใช้พอร์ตบน Mac เครื่องนี้";
+"Numbered doors that programs use to talk to the network" = "ประตูที่มีหมายเลข ที่โปรแกรมใช้คุยกับเครือข่าย";
+"Only one program fits at a door" = "แต่ละประตูใช้ได้เพียงโปรแกรมเดียว";
 "Port or program" = "พอร์ตหรือโปรแกรม";
+"Type a number, like 3000" = "พิมพ์ตัวเลข เช่น 3000";
 "Free a port" = "ทำให้พอร์ตว่าง";
 "Port %@ is free" = "พอร์ต %@ ว่างอยู่";
 "Port %@ is taken by macOS or another user" = "พอร์ต %@ ถูกใช้โดย macOS หรือผู้ใช้อื่น";
@@ -1054,9 +1059,11 @@
 "Clear" = "ล้าง";
 "No programs found" = "ไม่พบโปรแกรม";
 "None of your programs has taken a port" = "ไม่มีโปรแกรมของคุณที่ใช้พอร์ตอยู่";
-"Your programs" = "โปรแกรมของคุณ";
-"macOS and other users" = "macOS และผู้ใช้อื่น";
+"Nothing is using a door right now. That is normal." = "ตอนนี้ไม่มีโปรแกรมใดใช้ประตู ซึ่งเป็นเรื่องปกติ";
+"Programs you started" = "โปรแกรมที่คุณเปิดเอง";
+"Not yours: leave these alone" = "ไม่ใช่ของคุณ: อย่าไปยุ่ง";
 "Free Up" = "ทำให้ว่าง";
+"How to Free It" = "วิธีทำให้ว่าง";
 "Part of macOS" = "ส่วนหนึ่งของ macOS";
 "System service" = "บริการของระบบ";
 "Started by another user" = "เปิดโดยผู้ใช้อื่น";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "การแชร์หน้าจอ";
 "Remote Management" = "การจัดการระยะไกล";
 "AirPlay Receiver" = "ตัวรับสัญญาณ AirPlay";
-"Fix words typed in the wrong layout" = "แก้คำที่พิมพ์ผิดรูปแบบแป้นพิมพ์";
+"Retype words you typed in the wrong language" = "พิมพ์ใหม่สำหรับคำที่พิมพ์ผิดภาษา";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "คำที่พิมพ์ด้วยรูปแบบแป้นพิมพ์ผิดจะถูกพิมพ์ใหม่ด้วยรูปแบบที่ถูกต้อง และรูปแบบแป้นพิมพ์จะสลับให้";
 "Fixed when you press Space" = "แก้ไขเมื่อกดเว้นวรรค";
 "Press %@ to fix" = "กด %@ เพื่อแก้ไข";
@@ -1110,7 +1117,7 @@
 "App Volume" = "ระดับเสียงแอป";
 "Works with any app that plays sound" = "ใช้ได้กับทุกแอปที่เล่นเสียง";
 "Lower or mute any app without touching the others." = "ลดเสียงหรือปิดเสียงแอปใดก็ได้ โดยไม่กระทบแอปอื่น";
-"Each app gets its own volume." = "แต่ละแอปมีระดับเสียงของตัวเอง";
+"Each app gets its own volume" = "แต่ละแอปมีระดับเสียงของตัวเอง";
 "No apps are playing sound" = "ไม่มีแอปที่กำลังเล่นเสียง";
 "Mute" = "ปิดเสียง";
 "Unmute" = "เปิดเสียง";

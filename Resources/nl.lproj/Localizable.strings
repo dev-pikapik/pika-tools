@@ -18,7 +18,8 @@
 "All set" = "Alles klaar";
 "pikapik needs two permissions" = "pikapik heeft twee toestemmingen nodig";
 "Both permissions are on and every tool is working." = "Beide toestemmingen staan aan en alle functies werken.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Beide toestemmingen staan aan. Sommige functies hebben ook een toestemming uit de lijst hieronder nodig.";
+"Some tools also need a permission from the list below." = "Sommige functies hebben ook een toestemming uit de lijst hieronder nodig.";
+"Both permissions are on" = "Beide toestemmingen staan aan";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Zonder deze toestemmingen laat macOS de app geen klikken en toetsen zien of wijzigen. Open Systeeminstellingen › Privacy en beveiliging en zet pikapik aan in deze twee lijsten:";
 "Permissions for some tools" = "Toestemmingen voor sommige functies";
 "Only some tools need these permissions. Everything else works without them." = "Alleen sommige functies hebben deze toestemmingen nodig. Al het andere werkt ook zonder.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Laat de app toestemmingen vinden die verwijderde apps hebben achtergelaten";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS laat je deze alleen uitzetten in Systeeminstellingen. De knop opent de juiste lijst, waar je pikapik uitzet.";
 "Needs a permission. Click to allow it." = "Heeft toestemming nodig. Klik om die te geven.";
-"Grey tools need a permission. Click one to allow it." = "Grijze functies hebben toestemming nodig. Klik op een functie om die te geven.";
 "Turn off %@?" = "%@ uitzetten?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik start opnieuw op en de functies die dit nodig hebben worden grijs totdat je het weer toestaat.";
 "Open" = "Open";
@@ -57,7 +57,7 @@
 "Updates" = "Updates";
 "Check for updates automatically" = "Automatisch op updates controleren";
 "Check Now" = "Controleer nu";
-"Small fixes for the keyboard, mouse and sleep" = "Kleine verbeteringen voor toetsenbord, muis en sluimerstand";
+"Small tools that make your Mac nicer to use" = "Kleine tools die je Mac fijner maken";
 "What’s New" = "Wat is er nieuw";
 "Report a Problem" = "Meld een probleem";
 "License (MIT)" = "Licentie (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Onbeperkt";
 "Keep your Mac awake" = "Houd je Mac wakker";
 "Duration" = "Duur";
-"Until %@" = "Tot %@";
+"If turned on now, ends %@" = "Nu aangezet, eindigt het: %@";
 "Days" = "Dagen";
 "Hours" = "Uren";
 "Minutes" = "Minuten";
@@ -142,7 +142,7 @@
 "Main display" = "Hoofdbeeldscherm";
 "Click the display you want, then choose “Main display” in “Use as”" = "Klik op het gewenste scherm en kies ‘Hoofdbeeldscherm’ bij ‘Gebruik als’";
 "primary, main screen, Displays settings" = "primair, hoofdscherm, instellingen Beeldschermen";
-"Fixes for the Dock" = "Verbeteringen voor het Dock";
+"Hide apps with a click and keep the Dock on one display" = "Apps met één klik verbergen en het Dock op één scherm houden";
 "Dock, display, monitor, screen, jump, move" = "Dock, scherm, beeldscherm, monitor, springen, springt, verplaatsen";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klik op het symbool van de app waarin je werkt om deze te verbergen. Klik nogmaals om hem terug te halen.";
 "Click again to bring it back" = "Nog een klik haalt hem terug";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "Dezelfde instellingen op al je Macs";
 "Slower" = "Trager";
 "Switch language" = "Van taal wisselen";
-"The dot is your Mac’s own speed" = "De stip is de eigen snelheid van je Mac";
+"The dot marks your Mac’s normal speed" = "De stip toont de normale snelheid van je Mac";
 "The dot marks the default" = "De stip markeert de standaardwaarde";
 "Then paste to move them" = "Daarna verplaatst plakken ze";
-"Your Mac stays awake until you quit pikapik" = "Je Mac blijft wakker tot je pikapik stopt";
+"Keep your Mac from falling asleep" = "Voorkomt dat je Mac in slaap valt";
 "macOS will ask for your administrator password." = "macOS vraagt om je beheerderswachtwoord.";
 "Lines for apps, pixels for games" = "Regels voor apps, pixels voor games";
 "Add the Open URLs action in Shortcuts, with a link." = "Voeg in Opdrachten de actie ‘Open URL’s’ met een link toe.";
-"Fixes for Finder" = "Verbeteringen voor de Finder";
-"Fixes for the keyboard" = "Verbeteringen voor het toetsenbord";
-"Fixes for the mouse" = "Verbeteringen voor de muis";
+"Create, convert and compress files right in Finder" = "Bestanden direct in Finder maken, omzetten en comprimeren";
+"Switch language, fix wrong layout, Home and End" = "Taal wisselen, verkeerde indeling herstellen, Home en End";
+"Scrolling, side buttons and pointer speed" = "Scrollen, zijknoppen en aanwijzersnelheid";
 "Fixes for windows and quitting apps" = "Verbeteringen voor vensters en het afsluiten van apps";
 "Lets the Mac sleep before the battery runs out" = "Laat de Mac weer sluimeren voordat de batterij leeg is";
 "Home and End go to the start and end of a line" = "Home en End naar begin en einde van de regel";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "Open je game, dan verschijnt hij hier";
 "Here’s what’s in your Dock. Click your game to add it" = "Hier staat alles uit je Dock. Klik op je game om hem toe te voegen";
 "You can also drag a game here from Finder" = "Je kunt een game ook vanuit de Finder hierheen slepen";
-"Not a Game" = "Geen game";
+"Ignore" = "Negeren";
 "Looks like a game" = "Lijkt op een game";
 "game, games, gaming, play, Steam, full screen" = "game, games, gaming, spelen, spel, Steam, schermvullend";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "muis, aanwijzer, cursor, Dock, menubalk, actieve hoeken, randen, tweede scherm";
@@ -353,6 +353,7 @@
 "Speed Test" = "Snelheidstest";
 "How fast your internet is right now" = "Hoe snel je internet nu is";
 "Check Speed" = "Test snelheid";
+"Press Check Speed to find out" = "Druk op ‘Test snelheid’ om het te weten";
 "Check" = "Test";
 "Getting ready…" = "Voorbereiden…";
 "Checking download…" = "Download testen…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "Psst, versie %@ is uit! Klik op mij.";
 "Restart Finder once to bring back the right-click items" = "Herstart de Finder één keer om de rechtsklik-opties terug te krijgen";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Hier staat wat in je Dock zit en wat nu open is. Klik op een app om hem toe te voegen, of sleep hem hierheen vanuit de Finder";
-"Keep running after Quit" = "Op de achtergrond blijven na Stop";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "‘Stop’ sluit de vensters, maar sneltoetsen, ‘Wakker houden’ en het huisdiertje blijven werken. Houd Option (⌥) ingedrukt om helemaal te stoppen";
+"Stay in the background after Quit" = "Op de achtergrond blijven na Stop";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Sneltoetsen en ‘Wakker houden’ blijven werken. Houd Option (⌥) ingedrukt om helemaal te stoppen";
 "Quit Completely" = "Helemaal stoppen";
 "pikapik keeps working in the background" = "pikapik blijft op de achtergrond werken";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Sneltoetsen, ‘Wakker houden’ en het huisdiertje blijven aan. Open pikapik opnieuw om het symbool in de menubalk terug te halen. Houd Option (⌥) ingedrukt als je ‘Stop’ kiest om helemaal te stoppen.";
@@ -972,6 +973,8 @@
 "Running on battery" = "Draait op de batterij";
 "Your Mac paused charging to protect the battery" = "Je Mac heeft het opladen gepauzeerd om de batterij te beschermen";
 "The power adapter can’t keep up, so the battery is helping" = "De lichtnetadapter kan het niet bijbenen, dus de batterij helpt mee";
+"This Mac has no battery" = "Deze Mac heeft geen accu";
+"It runs on power from the wall, so there is nothing to show" = "Hij werkt op stroom uit het stopcontact, dus er valt niets te tonen";
 "Battery Health" = "Batterijconditie";
 "Condition" = "Conditie";
 "Normal" = "Normaal";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Kies één keer je thuismap, zodat pikapik bestanden naast de jouwe kan bewaren en je achtergrondtaken kan zien.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "inlogonderdelen, open bij inloggen, agents, diensten, daemons, opstarten, automatisch starten, helpers, actief, achtergrond, restanten, uitzetten";
 "Ports" = "Poorten";
-"Which programs have taken ports on this Mac" = "Welke programma’s op deze Mac poorten bezetten";
+"Numbered doors that programs use to talk to the network" = "Genummerde deuren waarmee programma’s met het netwerk praten";
+"Only one program fits at a door" = "Door één deur past maar één programma";
 "Port or program" = "Poort of programma";
+"Type a number, like 3000" = "Typ een nummer, zoals 3000";
 "Free a port" = "Maak een poort vrij";
 "Port %@ is free" = "Poort %@ is vrij";
 "Port %@ is taken by macOS or another user" = "Poort %@ is in gebruik door macOS of een andere gebruiker";
@@ -1054,9 +1059,11 @@
 "Clear" = "Wis";
 "No programs found" = "Geen programma’s gevonden";
 "None of your programs has taken a port" = "Geen van je programma’s bezet een poort";
-"Your programs" = "Je programma’s";
-"macOS and other users" = "macOS en andere gebruikers";
+"Nothing is using a door right now. That is normal." = "Er gebruikt nu geen enkel programma een deur. Dat is normaal.";
+"Programs you started" = "Programma’s die je zelf hebt gestart";
+"Not yours: leave these alone" = "Niet van jou: laat deze met rust";
 "Free Up" = "Maak vrij";
+"How to Free It" = "Zo maak je het vrij";
 "Part of macOS" = "Onderdeel van macOS";
 "System service" = "Systeemdienst";
 "Started by another user" = "Gestart door een andere gebruiker";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "Schermdeling";
 "Remote Management" = "Extern beheer";
 "AirPlay Receiver" = "AirPlay-ontvanger";
-"Fix words typed in the wrong layout" = "Corrigeer woorden die je in de verkeerde indeling typt";
+"Retype words you typed in the wrong language" = "Woorden in de verkeerde taal opnieuw typen";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Een woord dat in de verkeerde indeling is getypt, wordt opnieuw getypt in de juiste, en de indeling wisselt mee.";
 "Fixed when you press Space" = "Gecorrigeerd als je op Spatie drukt";
 "Press %@ to fix" = "Druk op %@ om te corrigeren";
@@ -1110,7 +1117,7 @@
 "App Volume" = "App-volume";
 "Works with any app that plays sound" = "Werkt met elke app die geluid afspeelt";
 "Lower or mute any app without touching the others." = "Zet een app zachter of demp hem, zonder de andere aan te raken.";
-"Each app gets its own volume." = "Elke app heeft zijn eigen volume.";
+"Each app gets its own volume" = "Elke app heeft zijn eigen volume";
 "No apps are playing sound" = "Geen enkele app speelt geluid af";
 "Mute" = "Dempen";
 "Unmute" = "Geluid aanzetten";

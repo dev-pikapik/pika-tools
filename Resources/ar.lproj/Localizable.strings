@@ -18,7 +18,8 @@
 "All set" = "كل شيء جاهز";
 "pikapik needs two permissions" = "يحتاج pikapik إلى إذنين";
 "Both permissions are on and every tool is working." = "الإذنان مفعّلان وكل الأدوات تعمل.";
-"Both permissions are on. Some tools also need a permission from the list below." = "الإذنان مفعّلان. بعض الأدوات تحتاج أيضًا إلى إذن من القائمة أدناه.";
+"Some tools also need a permission from the list below." = "تحتاج بعض الأدوات أيضًا إلى إذن من القائمة أدناه.";
+"Both permissions are on" = "الإذنان مفعّلان";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "بدونهما، لن يسمح macOS للتطبيق برؤية النقرات والمفاتيح أو تغييرها. افتح إعدادات النظام › الخصوصية والأمن وشغّل pikapik في هاتين القائمتين:";
 "Permissions for some tools" = "أذونات لبعض الأدوات";
 "Only some tools need these permissions. Everything else works without them." = "تحتاج بعض الأدوات فقط إلى هذه الأذونات. أما كل شيء آخر فيعمل من دونها.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "يسمح للتطبيق بالعثور على الأذونات التي تركتها التطبيقات المحذوفة";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "يتيح لك macOS إيقاف هذه الأذونات من إعدادات النظام فقط. يفتح الزر القائمة الصحيحة، وهناك توقف تشغيل pikapik.";
 "Needs a permission. Click to allow it." = "يحتاج إلى إذن. انقر للسماح به.";
-"Grey tools need a permission. Click one to allow it." = "الأدوات الرمادية تحتاج إلى إذن. انقر على أي منها للسماح به.";
 "Turn off %@?" = "هل تريد إيقاف %@؟";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "سيُعاد تشغيل pikapik، وستظهر الأدوات التي تحتاج إليه باللون الرمادي إلى أن تسمح به مرة أخرى.";
 "Open" = "فتح";
@@ -57,7 +57,7 @@
 "Updates" = "التحديثات";
 "Check for updates automatically" = "التحقق من وجود تحديثات تلقائيًا";
 "Check Now" = "التحقق الآن";
-"Small fixes for the keyboard, mouse and sleep" = "إصلاحات صغيرة للوحة المفاتيح والماوس والسكون";
+"Small tools that make your Mac nicer to use" = "أدوات صغيرة تجعل استخدام Mac أكثر متعة";
 "What’s New" = "الجديد";
 "Report a Problem" = "الإبلاغ عن مشكلة";
 "License (MIT)" = "الترخيص (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "إلى أجل غير مسمى";
 "Keep your Mac awake" = "إبقاء جهاز Mac مستيقظًا";
 "Duration" = "المدة";
-"Until %@" = "حتى %@";
+"If turned on now, ends %@" = "لو شغّلته الآن، ينتهي: %@";
 "Days" = "أيام";
 "Hours" = "ساعات";
 "Minutes" = "دقائق";
@@ -142,7 +142,7 @@
 "Main display" = "شاشة العرض الرئيسية";
 "Click the display you want, then choose “Main display” in “Use as”" = "انقر على الشاشة التي تريدها، ثم اختر «شاشة العرض الرئيسية» في «استخدام كـ»";
 "primary, main screen, Displays settings" = "أساسية، الشاشة الرئيسية، إعدادات شاشات العرض";
-"Fixes for the Dock" = "إصلاحات لـ Dock";
+"Hide apps with a click and keep the Dock on one display" = "إخفاء التطبيقات بنقرة وإبقاء Dock على شاشة واحدة";
 "Dock, display, monitor, screen, jump, move" = "Dock، شاشة، شاشة عرض، قفز، نقل، تحريك";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "انقر على أيقونة التطبيق الذي تستخدمه لإخفائه. انقر مرة أخرى لإعادته.";
 "Click again to bring it back" = "انقر مرة أخرى لإعادته";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "الإعدادات نفسها على كل أجهزة Mac لديك";
 "Slower" = "أبطأ";
 "Switch language" = "تبديل اللغة";
-"The dot is your Mac’s own speed" = "النقطة هي سرعة Mac الأصلية";
+"The dot marks your Mac’s normal speed" = "تشير النقطة إلى السرعة العادية لجهاز Mac";
 "The dot marks the default" = "النقطة تحدّد القيمة الافتراضية";
 "Then paste to move them" = "ثم يؤدي اللصق إلى نقلها";
-"Your Mac stays awake until you quit pikapik" = "يبقى Mac مستيقظًا حتى تُنهي pikapik";
+"Keep your Mac from falling asleep" = "امنع جهاز Mac من النوم";
 "macOS will ask for your administrator password." = "سيطلب macOS كلمة سر المسؤول.";
 "Lines for apps, pixels for games" = "الأسطر للتطبيقات، والبكسلات للألعاب";
 "Add the Open URLs action in Shortcuts, with a link." = "في الاختصارات، أضف إجراء «فتح عناوين URL» مع رابط.";
-"Fixes for Finder" = "إصلاحات لـ Finder";
-"Fixes for the keyboard" = "إصلاحات للوحة المفاتيح";
-"Fixes for the mouse" = "إصلاحات للماوس";
+"Create, convert and compress files right in Finder" = "إنشاء الملفات وتحويلها وضغطها مباشرة في Finder";
+"Switch language, fix wrong layout, Home and End" = "تبديل اللغة وتصحيح التخطيط الخاطئ ومفتاحا Home وEnd";
+"Scrolling, side buttons and pointer speed" = "التمرير وأزرار الجانب وسرعة المؤشر";
 "Fixes for windows and quitting apps" = "إصلاحات للنوافذ وإنهاء التطبيقات";
 "Lets the Mac sleep before the battery runs out" = "يسمح لجهاز Mac بالسكون مجددًا قبل نفاد البطارية";
 "Home and End go to the start and end of a line" = "Home وEnd إلى بداية السطر ونهايته";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "افتح لعبتك وستظهر هنا";
 "Here’s what’s in your Dock. Click your game to add it" = "هنا كل ما في Dock. انقر على لعبتك لإضافتها";
 "You can also drag a game here from Finder" = "يمكنك أيضًا سحب لعبة إلى هنا من Finder";
-"Not a Game" = "ليست لعبة";
+"Ignore" = "تجاهل";
 "Looks like a game" = "يبدو كلعبة";
 "game, games, gaming, play, Steam, full screen" = "game, لعبة, ألعاب, لعب, Steam, ملء الشاشة";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "ماوس, مؤشر, Dock, شريط القائمة, الزوايا النشطة, الحواف, شاشة ثانية";
@@ -353,6 +353,7 @@
 "Speed Test" = "اختبار السرعة";
 "How fast your internet is right now" = "مدى سرعة الإنترنت لديك الآن";
 "Check Speed" = "فحص السرعة";
+"Press Check Speed to find out" = "اضغط «فحص السرعة» لتعرف";
 "Check" = "فحص";
 "Getting ready…" = "جارٍ التحضير…";
 "Checking download…" = "جارٍ فحص التنزيل…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "بسس، صدر الإصدار %@! انقر عليّ.";
 "Restart Finder once to bring back the right-click items" = "أعد تشغيل Finder مرة واحدة لتعود عناصر قائمة النقر بزر الماوس الأيمن";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "هنا ما في Dock وما هو مفتوح الآن. انقر على تطبيق لإضافته، أو اسحبه إلى هنا من Finder";
-"Keep running after Quit" = "الاستمرار في الخلفية بعد الإنهاء";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "«إنهاء» يغلق النوافذ، لكن الاختصارات و«منع السكون» والرفيق تواصل العمل. اضغط مطولًا على Option (⌥) للإنهاء تمامًا";
+"Stay in the background after Quit" = "الاستمرار في الخلفية بعد الإنهاء";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "تواصل الاختصارات و«منع السكون» العمل. اضغط مطولًا على Option (⌥) للإنهاء تمامًا";
 "Quit Completely" = "إنهاء تمامًا";
 "pikapik keeps working in the background" = "يواصل pikapik العمل في الخلفية";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "تبقى الاختصارات و«منع السكون» والرفيق قيد التشغيل. افتح pikapik مرة أخرى لإعادة أيقونته إلى شريط القوائم. للإنهاء تمامًا، اضغط مطولًا على Option (⌥) عند اختيار «إنهاء».";
@@ -972,6 +973,8 @@
 "Running on battery" = "يعمل على البطارية";
 "Your Mac paused charging to protect the battery" = "أوقف جهاز Mac الشحن مؤقتًا لحماية البطارية";
 "The power adapter can’t keep up, so the battery is helping" = "لا يستطيع محوّل الطاقة مجاراة الاستهلاك، لذا تساعده البطارية";
+"This Mac has no battery" = "لا يحتوي هذا الـ Mac على بطارية";
+"It runs on power from the wall, so there is nothing to show" = "يعمل بالكهرباء مباشرة من المقبس، لذا لا يوجد ما نعرضه";
 "Battery Health" = "حالة البطارية";
 "Condition" = "الحالة";
 "Normal" = "عادية";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "اختر مجلد المنزل مرة واحدة ليتمكن pikapik من حفظ الملفات بجانب ملفاتك ورؤية مهام الخلفية.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "عناصر تسجيل الدخول، الفتح عند تسجيل الدخول، وكلاء، خدمات، برامج خفية، بدء التشغيل، تشغيل تلقائي، مساعدات، قيد التشغيل، الخلفية، بقايا، إطفاء";
 "Ports" = "المنافذ";
-"Which programs have taken ports on this Mac" = "البرامج التي تحجز منافذ على هذا الـ Mac";
+"Numbered doors that programs use to talk to the network" = "أبواب مرقّمة تستخدمها البرامج للتواصل مع الشبكة";
+"Only one program fits at a door" = "الباب الواحد يتّسع لبرنامج واحد فقط";
 "Port or program" = "منفذ أو برنامج";
+"Type a number, like 3000" = "اكتب رقمًا، مثل 3000";
 "Free a port" = "تحرير منفذ";
 "Port %@ is free" = "المنفذ %@ متاح";
 "Port %@ is taken by macOS or another user" = "المنفذ %@ يشغله macOS أو مستخدم آخر";
@@ -1054,9 +1059,11 @@
 "Clear" = "مسح";
 "No programs found" = "لم يتم العثور على برامج";
 "None of your programs has taken a port" = "لا يحجز أي برنامج من برامجك منفذًا";
-"Your programs" = "برامجك";
-"macOS and other users" = "macOS والمستخدمون الآخرون";
+"Nothing is using a door right now. That is normal." = "لا يستخدم أي برنامج أي باب الآن. وهذا طبيعي.";
+"Programs you started" = "برامج شغّلتها أنت";
+"Not yours: leave these alone" = "ليست لك: اتركها كما هي";
 "Free Up" = "تحرير المنفذ";
+"How to Free It" = "كيف أحرّره";
 "Part of macOS" = "جزء من macOS";
 "System service" = "خدمة نظام";
 "Started by another user" = "شغّله مستخدم آخر";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "مشاركة الشاشة";
 "Remote Management" = "الإدارة عن بُعد";
 "AirPlay Receiver" = "مستقبِل البث السريع";
-"Fix words typed in the wrong layout" = "تصحيح الكلمات المكتوبة بتخطيط خاطئ";
+"Retype words you typed in the wrong language" = "إعادة كتابة الكلمات التي كُتبت بلغة خاطئة";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "تُعاد كتابة الكلمة المكتوبة بتخطيط خاطئ بالتخطيط الصحيح، ويتبدّل التخطيط.";
 "Fixed when you press Space" = "يتم التصحيح عند الضغط على مسافة";
 "Press %@ to fix" = "اضغط على %@ للتصحيح";
@@ -1110,7 +1117,7 @@
 "App Volume" = "مستوى صوت التطبيقات";
 "Works with any app that plays sound" = "يعمل مع أي تطبيق يشغّل الصوت";
 "Lower or mute any app without touching the others." = "اخفض صوت أي تطبيق أو اكتمه دون المساس بالتطبيقات الأخرى.";
-"Each app gets its own volume." = "لكل تطبيق مستوى صوته الخاص.";
+"Each app gets its own volume" = "لكل تطبيق مستوى صوته الخاص";
 "No apps are playing sound" = "لا توجد تطبيقات تشغّل الصوت";
 "Mute" = "كتم الصوت";
 "Unmute" = "إلغاء كتم الصوت";

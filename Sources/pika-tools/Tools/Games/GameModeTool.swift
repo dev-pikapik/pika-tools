@@ -731,7 +731,9 @@ struct GameModePage: View {
                     ForEach(tool.suggestions, id: \.self) { key in
                         LabeledContent {
                             HStack {
-                                Button("Not a Game") { tool.dismiss(key) }
+                                Button("Ignore") { tool.dismiss(key) }
+                                    .buttonStyle(.borderless)
+                                    .foregroundStyle(.secondary)
                                 Button("Add") { tool.confirm(key) }
                             }
                             .fixedSize()

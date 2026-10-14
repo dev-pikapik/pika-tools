@@ -24,6 +24,16 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
 - Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
 - Games: in the Mac App Store version, Game Mode now keeps the pointer a few points away from the screen corners while you play, so hot corners don’t go off. That version can’t switch hot corners off, so before, a brush against a corner could still set one off. Game Mode also turns back on by itself after the Mac wakes up or you switch back to your user account. Before, it came back only after you switched to another app.
+- Battery: the icons in the list now line up in one column. If the page is opened on a Mac without a battery, it says “This Mac has no battery” instead of staying empty.
+- Keep Awake: the top of the page said “Your Mac stays awake until you quit pikapik” even when Keep Awake was off, and the time row said “Until …” as if it were running. The top now says what Keep Awake is for, and the row says “If turned on now, ends …”.
+- Permissions: the top of the page said “All set” while some tools still lacked a permission. It now says “Both permissions are on” until every tool has what it needs. The bar over the grey tools now names the missing permission and what it is for, instead of “Grey tools need a permission”.
+- Ports: in German and other long languages the Free Up button was cut off in a narrow window. It now keeps its full width, and the button that shows how to free a port is called “How to Free It”, so the two no longer look alike.
+
+### Changed
+- Ports now explains itself: a line under the title says what a port is, a small animation shows that only one program fits at a door, the search box says “Type a number, like 3000”, and a note under the list says that the globe means other devices on your network can connect. The sections are called “Programs you started” and “Not yours: leave these alone”. Programs without an icon, such as console tools, get a plain terminal tile. Only programs that wait for connections are listed, so programs that merely send or receive UDP no longer appear. Its tile in the sidebar is blue.
+- The top of Sound, Keyboard, Mouse, Dock, Finder and About now says what you get there, for example “Scrolling, side buttons and pointer speed” instead of “Fixes for the mouse”.
+- “Keep running after Quit” is now “Stay in the background after Quit”, with the line “Shortcuts and Keep Awake keep working. Hold Option to quit completely” under it.
+- Keyboard: the wrong-layout row is called “Retype words you typed in the wrong language”. Mouse: the hint under the speed graph says “The dot marks your Mac’s normal speed”. Games: “Not a Game” is now a quiet “Ignore” button. Speed Test: before the first test the page says “Press Check Speed to find out”.
 
 ## [1.49.0] - 2026-10-13
 

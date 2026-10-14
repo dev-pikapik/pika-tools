@@ -18,7 +18,8 @@
 "All set" = "Tout est prêt";
 "pikapik needs two permissions" = "pikapik a besoin de deux autorisations";
 "Both permissions are on and every tool is working." = "Les deux autorisations sont actives, tous les outils fonctionnent.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Les deux autorisations sont actives. Certains outils ont aussi besoin d’une autorisation de la liste ci-dessous.";
+"Some tools also need a permission from the list below." = "Certains outils ont aussi besoin d’une autorisation de la liste ci-dessous.";
+"Both permissions are on" = "Les deux autorisations sont actives";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Sans elles, macOS empêche l’app de voir ou de modifier les clics et les touches. Ouvrez Réglages Système › Confidentialité et sécurité et activez pikapik dans ces deux listes :";
 "Permissions for some tools" = "Autorisations pour certains outils";
 "Only some tools need these permissions. Everything else works without them." = "Seuls certains outils ont besoin de ces autorisations. Tout le reste fonctionne sans elles.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Pour retrouver les autorisations laissées par des apps supprimées";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS ne permet de les désactiver que dans Réglages Système. Le bouton ouvre la bonne liste, où vous désactivez pikapik.";
 "Needs a permission. Click to allow it." = "Nécessite une autorisation. Cliquez pour l’accorder.";
-"Grey tools need a permission. Click one to allow it." = "Les outils grisés nécessitent une autorisation. Cliquez sur l’un d’eux pour l’accorder.";
 "Turn off %@?" = "Éteindre %@ ?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik va redémarrer, et les outils qui en ont besoin seront grisés jusqu’à ce que vous l’autorisiez de nouveau.";
 "Open" = "Ouvrir";
@@ -57,7 +57,7 @@
 "Updates" = "Mises à jour";
 "Check for updates automatically" = "Rechercher automatiquement les mises à jour";
 "Check Now" = "Rechercher";
-"Small fixes for the keyboard, mouse and sleep" = "Petits correctifs pour le clavier, la souris et la veille";
+"Small tools that make your Mac nicer to use" = "De petits outils qui rendent votre Mac plus agréable à utiliser";
 "What’s New" = "Nouveautés";
 "Report a Problem" = "Signaler un problème";
 "License (MIT)" = "Licence (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Indéfiniment";
 "Keep your Mac awake" = "Garder le Mac éveillé";
 "Duration" = "Durée";
-"Until %@" = "Jusqu’à %@";
+"If turned on now, ends %@" = "Si activé maintenant, se termine : %@";
 "Days" = "Jours";
 "Hours" = "Heures";
 "Minutes" = "Minutes";
@@ -142,7 +142,7 @@
 "Main display" = "Écran principal";
 "Click the display you want, then choose “Main display” in “Use as”" = "Cliquez sur l’écran voulu, puis choisissez « Écran principal » dans « Utiliser comme »";
 "primary, main screen, Displays settings" = "primaire, moniteur principal, réglages Moniteurs";
-"Fixes for the Dock" = "Correctifs pour le Dock";
+"Hide apps with a click and keep the Dock on one display" = "Masquer des apps d’un clic et garder le Dock sur un seul écran";
 "Dock, display, monitor, screen, jump, move" = "Dock, écran, moniteur, sauter, saute, déplacer";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Cliquez sur l’icône de l’app active pour la masquer. Un autre clic la fait revenir.";
 "Click again to bring it back" = "Un autre clic la fait revenir";
@@ -299,16 +299,16 @@
 "Same settings on all your Macs" = "Mêmes réglages sur tous vos Mac";
 "Slower" = "Plus lent";
 "Switch language" = "Changer de langue";
-"The dot is your Mac’s own speed" = "Le point est la vitesse de votre Mac";
+"The dot marks your Mac’s normal speed" = "Le point marque la vitesse normale de votre Mac";
 "The dot marks the default" = "Le point marque la valeur par défaut";
 "Then paste to move them" = "Puis le collage les déplace";
-"Your Mac stays awake until you quit pikapik" = "Votre Mac reste éveillé tant que pikapik est ouvert";
+"Keep your Mac from falling asleep" = "Empêche votre Mac de s’endormir";
 "macOS will ask for your administrator password." = "macOS demandera le mot de passe administrateur.";
 "Lines for apps, pixels for games" = "Lignes pour les apps, pixels pour les jeux";
 "Add the Open URLs action in Shortcuts, with a link." = "Dans Raccourcis, ajoutez l’action « Ouvrir les URL » avec un lien.";
-"Fixes for Finder" = "Correctifs pour le Finder";
-"Fixes for the keyboard" = "Correctifs pour le clavier";
-"Fixes for the mouse" = "Correctifs pour la souris";
+"Create, convert and compress files right in Finder" = "Créer, convertir et compresser des fichiers directement dans le Finder";
+"Switch language, fix wrong layout, Home and End" = "Changer de langue, corriger la mauvaise disposition, Home et End";
+"Scrolling, side buttons and pointer speed" = "Défilement, boutons latéraux et vitesse du pointeur";
 "Fixes for windows and quitting apps" = "Correctifs pour les fenêtres et pour quitter les apps";
 "Lets the Mac sleep before the battery runs out" = "Le Mac se remet en veille avant que la batterie ne soit vide";
 "Home and End go to the start and end of a line" = "Home et End vont au début et à la fin de la ligne";
@@ -337,7 +337,7 @@
 "Open your game, and it shows up here" = "Ouvrez votre jeu, et il apparaîtra ici";
 "Here’s what’s in your Dock. Click your game to add it" = "Voici tout ce qui se trouve dans votre Dock. Cliquez sur votre jeu pour l’ajouter";
 "You can also drag a game here from Finder" = "Vous pouvez aussi faire glisser un jeu ici depuis le Finder";
-"Not a Game" = "Pas un jeu";
+"Ignore" = "Ignorer";
 "Looks like a game" = "Ressemble à un jeu";
 "game, games, gaming, play, Steam, full screen" = "jeu, jeux, gaming, jouer, Steam, plein écran";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "souris, pointeur, curseur, Dock, barre des menus, coins actifs, bords, deuxième écran";
@@ -353,6 +353,7 @@
 "Speed Test" = "Test de débit";
 "How fast your internet is right now" = "La vitesse de votre connexion en ce moment";
 "Check Speed" = "Tester le débit";
+"Press Check Speed to find out" = "Cliquez sur « Tester le débit » pour le savoir";
 "Check" = "Tester";
 "Getting ready…" = "Préparation…";
 "Checking download…" = "Mesure du téléchargement…";
@@ -554,8 +555,8 @@
 "Psst, version %@ is out! Click me." = "Psst, la version %@ est sortie ! Cliquez sur moi.";
 "Restart Finder once to bring back the right-click items" = "Redémarrez le Finder une fois pour retrouver les options du clic droit";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Voici ce qui se trouve dans votre Dock et ce qui est ouvert. Cliquez sur une app pour l’ajouter, ou faites-la glisser ici depuis le Finder";
-"Keep running after Quit" = "Continuer en arrière-plan après Quitter";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "« Quitter » ferme les fenêtres, mais les raccourcis, « Rester éveillé » et le compagnon continuent de fonctionner. Maintenez Option (⌥) pour quitter complètement";
+"Stay in the background after Quit" = "Continuer en arrière-plan après Quitter";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Les raccourcis et « Rester éveillé » continuent de fonctionner. Maintenez Option (⌥) pour quitter complètement";
 "Quit Completely" = "Quitter complètement";
 "pikapik keeps working in the background" = "pikapik continue de fonctionner en arrière-plan";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Les raccourcis, « Rester éveillé » et le compagnon restent actifs. Rouvrez pikapik pour retrouver son icône dans la barre des menus. Pour quitter complètement, maintenez Option (⌥) en choisissant « Quitter ».";
@@ -972,6 +973,8 @@
 "Running on battery" = "Fonctionne sur batterie";
 "Your Mac paused charging to protect the battery" = "Votre Mac a mis la recharge en pause pour protéger la batterie";
 "The power adapter can’t keep up, so the battery is helping" = "L’adaptateur secteur n’arrive pas à suivre, alors la batterie l’aide";
+"This Mac has no battery" = "Ce Mac n’a pas de batterie";
+"It runs on power from the wall, so there is nothing to show" = "Il fonctionne sur secteur, il n’y a donc rien à afficher";
 "Battery Health" = "État de santé de la batterie";
 "Condition" = "État";
 "Normal" = "Normal";
@@ -1044,8 +1047,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choisissez une fois votre dossier personnel pour que pikapik puisse enregistrer des fichiers à côté des vôtres et voir vos tâches en arrière-plan.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "ouverture, ouvrir à la connexion, agents, services, démons, démarrage, lancement automatique, assistants, en cours, arrière-plan, restes, éteindre, désactiver";
 "Ports" = "Ports";
-"Which programs have taken ports on this Mac" = "Les programmes qui occupent des ports sur ce Mac";
+"Numbered doors that programs use to talk to the network" = "Des portes numérotées que les programmes utilisent pour parler au réseau";
+"Only one program fits at a door" = "Une porte ne laisse passer qu’un seul programme";
 "Port or program" = "Port ou programme";
+"Type a number, like 3000" = "Saisissez un numéro, comme 3000";
 "Free a port" = "Libérer un port";
 "Port %@ is free" = "Le port %@ est libre";
 "Port %@ is taken by macOS or another user" = "Le port %@ est occupé par macOS ou un autre utilisateur";
@@ -1054,9 +1059,11 @@
 "Clear" = "Effacer";
 "No programs found" = "Aucun programme trouvé";
 "None of your programs has taken a port" = "Aucun de vos programmes n’occupe de port";
-"Your programs" = "Vos programmes";
-"macOS and other users" = "macOS et autres utilisateurs";
+"Nothing is using a door right now. That is normal." = "Aucun programme n’utilise de porte pour le moment. C’est normal.";
+"Programs you started" = "Programmes que vous avez lancés";
+"Not yours: leave these alone" = "Pas les vôtres : n’y touchez pas";
 "Free Up" = "Libérer";
+"How to Free It" = "Comment le libérer";
 "Part of macOS" = "Fait partie de macOS";
 "System service" = "Service système";
 "Started by another user" = "Lancé par un autre utilisateur";
@@ -1084,7 +1091,7 @@
 "Screen Sharing" = "Partage d’écran";
 "Remote Management" = "Gestion à distance";
 "AirPlay Receiver" = "Récepteur AirPlay";
-"Fix words typed in the wrong layout" = "Corriger les mots tapés avec la mauvaise disposition";
+"Retype words you typed in the wrong language" = "Retaper les mots saisis dans la mauvaise langue";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Un mot tapé avec la mauvaise disposition est retapé avec la bonne, et la disposition change.";
 "Fixed when you press Space" = "Corrigé quand vous appuyez sur Espace";
 "Press %@ to fix" = "Appuyez sur %@ pour corriger";
@@ -1110,7 +1117,7 @@
 "App Volume" = "Volume des apps";
 "Works with any app that plays sound" = "Fonctionne avec n’importe quelle app qui joue du son";
 "Lower or mute any app without touching the others." = "Baissez le volume de n’importe quelle app ou coupez-en le son, sans toucher aux autres.";
-"Each app gets its own volume." = "Chaque app a son propre volume.";
+"Each app gets its own volume" = "Chaque app a son propre volume";
 "No apps are playing sound" = "Aucune app ne joue de son";
 "Mute" = "Couper le son";
 "Unmute" = "Réactiver le son";

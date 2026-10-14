@@ -351,12 +351,12 @@ struct KeepAwakeSettings: View {
     }
 
     private func until(_ now: Date) -> Text {
-        Text("Until \(KeepAwake.until(now.addingTimeInterval(TimeInterval(keepAwake.duration))))")
+        Text("If turned on now, ends \(KeepAwake.until(now.addingTimeInterval(TimeInterval(keepAwake.duration))))")
     }
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .keepAwake, text: String(localized: "Your Mac stays awake until you quit pikapik"))
+            SettingsHeader(tab: .keepAwake, text: String(localized: "Keep your Mac from falling asleep"))
             Section {
                 KeepAwakeArt()
                 LabeledContent {
