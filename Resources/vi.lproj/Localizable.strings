@@ -315,6 +315,7 @@
 "With ⇧ they select, with ⌘ they go to the start or end of the text" = "Kèm ⇧ để chọn, kèm ⌘ để đến đầu hoặc cuối văn bản";
 "In text, instead of scrolling the page" = "Trong văn bản, thay vì cuộn trang";
 "In text, Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In terminals, virtual machines and remote desktop apps they work as before." = "Trong văn bản, Home đưa con trỏ về đầu dòng và End đến cuối dòng. Kèm ⇧ sẽ chọn đến đó, kèm ⌘ sẽ đến đầu hoặc cuối toàn bộ văn bản. Trong terminal, máy ảo và ứng dụng màn hình từ xa, các phím vẫn hoạt động như trước.";
+"Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In browsers, Finder, Music, terminals, virtual machines and remote desktop apps they work as before." = "Home đưa con trỏ về đầu dòng và End đến cuối dòng. Kèm ⇧ sẽ chọn đến đó, kèm ⌘ sẽ đến đầu hoặc cuối toàn bộ văn bản. Trong trình duyệt, Finder, Nhạc, terminal, máy ảo và ứng dụng màn hình từ xa, các phím vẫn hoạt động như trước.";
 "Home and End work as usual in these apps" = "Home và End hoạt động như bình thường trong các ứng dụng này";
 "home, end, line, cursor, beginning, select, text, typing" = "home, end, dòng, con trỏ, đầu dòng, chọn, văn bản, gõ";
 "exceptions, exclude, list, terminal, virtual machine, remote desktop" = "ngoại lệ, loại trừ, danh sách, terminal, máy ảo, màn hình từ xa";

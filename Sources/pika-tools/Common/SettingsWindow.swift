@@ -124,7 +124,6 @@ struct SettingsItem: Identifiable {
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Fan control"), String(localized: "Full Disk Access"),
             String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
-            String(localized: "Home and End go to the start and end of a line"), String(localized: "Home and End work as usual in these apps"),
             String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
             String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
