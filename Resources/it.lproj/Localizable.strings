@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Controllo del dispositivo e accesso ai dati";
 "Lets the app change clicks and keys" = "Per modificare clic e tasti";
 "privacy, security, access, accessibility, device control, data access" = "privacy, sicurezza, accesso, accessibilità, controllo del dispositivo e accesso ai dati";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "In Impostazioni di Sistema, fai clic su «Avanzate…» e disattiva «Accelerazione puntatore». Se poi il puntatore ti sembra lento, sposta il cursore «Velocità puntatore».";
 "Change animations in System Settings. Each button opens the right place." = "Le animazioni si cambiano in Impostazioni di Sistema. Ogni pulsante apre il punto giusto.";
 "Choose “Scale Effect” for a quicker animation" = "Scegli «Effetto scala» per un’animazione più rapida";
 "Turn off “Animate opening applications”" = "Disattiva «Animazione all’apertura delle applicazioni»";

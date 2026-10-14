@@ -54,9 +54,21 @@ enum Permission: CaseIterable {
         }
     }
 
-    static var accessibilityTitle: String {
+    private static var hasDeviceControl: Bool {
         ProcessInfo.processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 27, minorVersion: 0, patchVersion: 0))
-            ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    static var accessibilityTitle: String {
+        hasDeviceControl ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    var guidePage: String? {
+        switch self {
+        case .accessibility: Self.hasDeviceControl ? "Device Control and Data Access" : "Accessibility"
+        case .inputMonitoring: "Input Monitoring"
+        case .screenRecording, .systemAudio: "Screen & System Audio Recording"
+        default: nil
+        }
     }
 
     var icon: String { info.icon }
@@ -420,6 +432,9 @@ struct PermissionsView: View {
             )
             #endif
             Section {
+                if let page = Permission.allCases.first(where: { $0.guidePage != nil && $0.isShown && !$0.isGranted })?.guidePage {
+                    SettingsGuide(pane: .privacy, steps: [.page(page), .app(on: true)])
+                }
                 PermissionRow(permission: .accessibility)
                 PermissionRow(permission: .inputMonitoring)
             } footer: {

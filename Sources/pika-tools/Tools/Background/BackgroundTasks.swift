@@ -74,6 +74,18 @@ struct BackgroundTask: Identifiable, Equatable {
     var isOwn = false
 
     var id: String { file.path }
+
+    var canToggle: Bool {
+        #if APPSTORE
+        false
+        #else
+        !domain.isEmpty
+        #endif
+    }
+
+    var opensLoginItems: Bool {
+        !isOwn && (state == .offInSettings || state == .on && !canToggle)
+    }
 }
 
 enum BackgroundTasks {

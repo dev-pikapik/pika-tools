@@ -774,10 +774,17 @@ private struct GeneralSettings: View {
         Form {
             SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks."))
             Section {
+                if loginItem.needsApproval { SettingsGuide.loginItems }
                 Toggle(isOn: $loginItem.isOn) {
-                    RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
-                         ? String(localized: "Allow it in System Settings › General › Login Items")
-                         : String(localized: "Starts on its own when you log in")))
+                    HStack {
+                        RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
+                             ? String(localized: "Allow it in System Settings › General › Login Items")
+                             : String(localized: "Starts on its own when you log in")))
+                        if loginItem.needsApproval {
+                            Spacer()
+                            Button("Open", systemImage: "arrow.up.forward.app") { BackgroundTasks.openLoginItems() }
+                        }
+                    }
                 }
                 .settingAnchor(String(localized: "Open at Login"))
                 #if !APPSTORE
@@ -974,14 +981,9 @@ private struct ToolsSettings: View {
                     SystemSettingsRow(
                         title: String(localized: "Turn off pointer acceleration"),
                         subtitle: Text("Same distance as your hand, at any speed"),
-                        url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!
+                        url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!,
+                        guide: SettingsGuide(pane: .mouse, steps: [.button("Advanced…"), .toggle("Pointer acceleration", on: false)])
                     )
-                } footer: {
-                    Text("In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider.")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             #endif
@@ -1016,10 +1018,12 @@ private struct ToolsSettings: View {
 
 struct SystemSettingsRow: View {
     let title: String
-    let subtitle: Text
+    var subtitle: Text?
     let url: URL
+    var guide: SettingsGuide?
 
     var body: some View {
+        if let guide { guide }
         LabeledContent {
             Button("Open", systemImage: "arrow.up.forward.app") { NSWorkspace.shared.open(url) }
         } label: {
@@ -1038,14 +1042,31 @@ private struct AnimationLinksPage: View {
         Form {
             SettingsHeader(tab: .animations, text: String(localized: "Change animations in System Settings. Each button opens the right place."))
             Section {
-                SystemSettingsRow(title: String(localized: "Minimize effect"), subtitle: Text("Choose “Scale Effect” for a quicker animation"), url: Self.desktop)
-                SystemSettingsRow(title: String(localized: "Bouncing icons"), subtitle: Text("Turn off “Animate opening applications”"), url: Self.desktop)
-                SystemSettingsRow(title: String(localized: "Hide the Dock automatically"), subtitle: Text("Turn on “Automatically hide and show the Dock”"), url: Self.desktop)
+                SystemSettingsRow(
+                    title: String(localized: "Minimize effect"),
+                    subtitle: Text("Choose “Scale Effect” for a quicker animation"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.popup(nil, from: "Genie Effect", to: "Scale Effect")])
+                )
             }
             Section {
-                Button(String(localized: "Even calmer: Reduce Motion in Accessibility")) { NSWorkspace.shared.open(Self.motion) }
-                    .buttonStyle(.link)
-                    .settingAnchor(String(localized: "Even calmer: Reduce Motion in Accessibility"))
+                SystemSettingsRow(
+                    title: String(localized: "Bouncing icons"),
+                    subtitle: Text("Turn off “Animate opening applications”"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.toggle("Animate opening applications", on: false)])
+                )
+            }
+            Section {
+                SystemSettingsRow(
+                    title: String(localized: "Hide the Dock automatically"),
+                    subtitle: Text("Turn on “Automatically hide and show the Dock”"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.toggle("Automatically hide and show the Dock", on: true)])
+                )
+            }
+            Section {
+                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: Self.motion, guide: .reduceMotion)
             }
         }
         .formStyle(.grouped)

@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "裝置控制和資料取用";
 "Lets the app change clicks and keys" = "讓 App 更改點按和按鍵";
 "privacy, security, access, accessibility, device control, data access" = "隱私權, 安全性, 存取權, 輔助使用, 裝置控制和資料取用";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "在「系統設定」中，按一下「進階⋯」，然後關閉「指標加速」。如果之後指標變慢，請拖移「軌跡速度」滑桿。";
 "Change animations in System Settings. Each button opens the right place." = "動畫在「系統設定」中更改。每個按鈕都會打開對應的位置。";
 "Choose “Scale Effect” for a quicker animation" = "選擇「縮放效果」，動畫會更快";
 "Turn off “Animate opening applications”" = "關閉「使用動畫效果來打開應用程式」";

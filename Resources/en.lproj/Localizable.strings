@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Device Control and Data Access";
 "Lets the app change clicks and keys" = "Lets the app change clicks and keys";
 "privacy, security, access, accessibility, device control, data access" = "privacy, security, access, accessibility, device control and data access";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider.";
 "Change animations in System Settings. Each button opens the right place." = "Change animations in System Settings. Each button opens the right place.";
 "Choose “Scale Effect” for a quicker animation" = "Choose “Scale Effect” for a quicker animation";
 "Turn off “Animate opening applications”" = "Turn off “Animate opening applications”";

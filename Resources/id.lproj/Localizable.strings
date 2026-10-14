@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Kontrol Perangkat dan Akses Data";
 "Lets the app change clicks and keys" = "Memungkinkan app mengubah klik dan tombol";
 "privacy, security, access, accessibility, device control, data access" = "privasi, keamanan, akses, aksesibilitas, kontrol perangkat dan akses data";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "Di Pengaturan Sistem, klik “Lanjutan…” lalu matikan “Akselerasi penunjuk”. Jika setelah itu penunjuk terasa lambat, geser penggeser “Kecepatan melacak”.";
 "Change animations in System Settings. Each button opens the right place." = "Animasi diubah di Pengaturan Sistem. Setiap tombol membuka tempat yang tepat.";
 "Choose “Scale Effect” for a quicker animation" = "Pilih “Efek Skala” agar animasinya lebih cepat";
 "Turn off “Animate opening applications”" = "Matikan “Animasikan saat membuka aplikasi”";

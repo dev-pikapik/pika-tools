@@ -179,7 +179,7 @@ private struct DesktopIconsLink: View {
 
     var body: some View {
         if inSettings {
-            DesktopIconsArt()
+            SettingsGuide(pane: .desktop, steps: [.checkbox("Show items", option: "On Desktop", on: false)])
             LabeledContent {
                 Button("Open") { DesktopIconsTool.openSettings() }
             } label: {

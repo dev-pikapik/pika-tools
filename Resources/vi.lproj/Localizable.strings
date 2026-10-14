@@ -1121,7 +1121,6 @@
 "Device Control and Data Access" = "Điều khiển thiết bị và truy cập dữ liệu";
 "Lets the app change clicks and keys" = "Cho phép ứng dụng thay đổi thao tác bấm và phím";
 "privacy, security, access, accessibility, device control, data access" = "quyền riêng tư, bảo mật, truy cập, trợ năng, điều khiển thiết bị và truy cập dữ liệu";
-"In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider." = "Trong Cài đặt hệ thống, bấm vào “Nâng cao…” rồi tắt “Tăng tốc con trỏ”. Nếu sau đó con trỏ có vẻ chậm, hãy kéo thanh trượt “Tốc độ di chuyển”.";
 "Change animations in System Settings. Each button opens the right place." = "Hoạt ảnh được thay đổi trong Cài đặt hệ thống. Mỗi nút sẽ mở đúng chỗ.";
 "Choose “Scale Effect” for a quicker animation" = "Chọn “Hiệu ứng tỷ lệ” để hoạt ảnh nhanh hơn";
 "Turn off “Animate opening applications”" = "Tắt “Tạo hiệu ứng khi mở ứng dụng”";
