@@ -315,6 +315,7 @@
 "With ⇧ they select, with ⌘ they go to the start or end of the text" = "กดพร้อม ⇧ เพื่อเลือก กดพร้อม ⌘ เพื่อไปต้นหรือท้ายข้อความ";
 "In text, instead of scrolling the page" = "ในข้อความ แทนการเลื่อนหน้า";
 "In text, Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In terminals, virtual machines and remote desktop apps they work as before." = "ในข้อความ Home จะย้ายเคอร์เซอร์ไปต้นบรรทัด และ End ไปท้ายบรรทัด กดพร้อม ⇧ จะเลือกข้อความถึงตรงนั้น กดพร้อม ⌘ จะไปต้นหรือท้ายของข้อความทั้งหมด ในเทอร์มินัล เครื่องเสมือน และแอปเดสก์ท็อประยะไกล ปุ่มจะทำงานเหมือนเดิม";
+"Home moves the cursor to the start of the line and End to its end. With ⇧ they select up to there, with ⌘ they go to the start or end of the whole text. In browsers, Finder, Music, terminals, virtual machines and remote desktop apps they work as before." = "Home จะย้ายเคอร์เซอร์ไปต้นบรรทัด และ End ไปท้ายบรรทัด กดพร้อม ⇧ จะเลือกข้อความถึงตรงนั้น กดพร้อม ⌘ จะไปต้นหรือท้ายของข้อความทั้งหมด ในเบราว์เซอร์ Finder แอปเพลง เทอร์มินัล เครื่องเสมือน และแอปเดสก์ท็อประยะไกล ปุ่มจะทำงานเหมือนเดิม";
 "Home and End work as usual in these apps" = "Home และ End ทำงานตามปกติในแอปเหล่านี้";
 "home, end, line, cursor, beginning, select, text, typing" = "home, end, บรรทัด, เคอร์เซอร์, ต้นบรรทัด, เลือก, ข้อความ, พิมพ์";
 "exceptions, exclude, list, terminal, virtual machine, remote desktop" = "ข้อยกเว้น, ยกเว้น, รายการ, เทอร์มินัล, เครื่องเสมือน, เดสก์ท็อประยะไกล";

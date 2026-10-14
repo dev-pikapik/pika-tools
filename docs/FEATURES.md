@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Home and End, Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -567,18 +567,20 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes Home and End move to the start and end of the line in every app, like on Windows.
 
-**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:215`), needs Accessibility.
+**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:97`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :145). App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
 
 **Options:**
 - Home and End work as usual in these apps — list of apps to leave alone: Add App… / Done, app shelf of open apps, Remove (`HomeEndTool.swift:224`).
 
 **Nuances:** The Home and End it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not handle them again.
 
-**Edition:** Website only (App Store: cut — needs to control other apps).
+**Edition:** Both; App Store differs: no text-focus check, so it also works outside text fields, except in browsers, Finder and Music.
 
 **Test:**
-1. (Website) Turn it on, type a long line in TextEdit and press Home and End → the caret goes to the start and end of the line.
+1. Turn it on, type a long line in TextEdit and press Home and End → the caret goes to the start and end of the line.
 2. Add TextEdit under “Home and End work as usual in these apps” → Home and End behave as macOS does by default there.
+3. (Website) With no text field focused, for example on the desktop, press Home → it does what macOS does by default.
+4. (App Store) Press Home and End in Safari and Music and in a Finder window → they behave as macOS does by default there. In another app, for example Notes → the caret jumps to the start and end of the line.
 
 ### Fix words typed in the wrong layout
 
@@ -944,7 +946,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Windows/FinderKeysTool.swift:399`), keys ↩, ⌤ and F2; while you type a name or search, the keys act as usual.
 
-**Edition:** Website only (App Store: cut — needs to read Finder’s window).
+**Edition:** Website only (App Store: cut — without Accessibility it cannot tell renaming a file from browsing, because a click or a menu can start a rename).
 
 **Test:**
 1. (Website) Turn it on. Select a test file in Finder and press Return → it opens; press F2 → the name becomes editable. While renaming, press Return → it only confirms the name and does not open the file.
