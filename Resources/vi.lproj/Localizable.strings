@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Chương tiếp theo";
 "Previous Chapter" = "Chương trước";
 "No Chapters" = "Không có chương";
+"Play Sound Through" = "Phát âm thanh qua";
+"System Output" = "Đầu ra hệ thống";
 "Chapter %lld" = "Chương %lld";
 "Set Loop Start" = "Đặt điểm bắt đầu lặp";
 "Set Loop End" = "Đặt điểm kết thúc lặp";

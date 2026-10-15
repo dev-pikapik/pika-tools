@@ -12,7 +12,7 @@ final class PictureInPicture: NSObject, AVPictureInPictureControllerDelegate, AV
     }
 
     private let host: Host
-    private var controller: AVPictureInPictureController!
+    private var controller: AVPictureInPictureController?
     private var observation: NSKeyValueObservation?
     private var wasPlaying = false
 
@@ -21,30 +21,33 @@ final class PictureInPicture: NSObject, AVPictureInPictureControllerDelegate, AV
         self.host = host
         wasPlaying = host.isPlaying()
         super.init()
-        controller = AVPictureInPictureController(contentSource: AVPictureInPictureController.ContentSource(sampleBufferDisplayLayer: layer, playbackDelegate: self))
+        let controller = AVPictureInPictureController(contentSource: AVPictureInPictureController.ContentSource(sampleBufferDisplayLayer: layer, playbackDelegate: self))
         controller.delegate = self
         observation = controller.observe(\.isPictureInPicturePossible) { _, _ in DispatchQueue.main.async { host.changed() } }
+        self.controller = controller
     }
 
-    var isPossible: Bool { controller.isPictureInPicturePossible }
+    var isPossible: Bool { controller?.isPictureInPicturePossible ?? false }
 
-    var isActive: Bool { controller.isPictureInPictureActive }
+    var isActive: Bool { controller?.isPictureInPictureActive ?? false }
 
     func toggle() {
-        if isActive { controller.stopPictureInPicture() } else if isPossible { controller.startPictureInPicture() }
+        if isActive { controller?.stopPictureInPicture() } else if isPossible { controller?.startPictureInPicture() }
     }
 
     func refresh() {
         let playing = host.isPlaying()
         guard playing != wasPlaying else { return }
         wasPlaying = playing
-        controller.invalidatePlaybackState()
+        controller?.invalidatePlaybackState()
     }
 
     func close() {
         observation = nil
-        controller.delegate = nil
-        if isActive { controller.stopPictureInPicture() }
+        controller?.delegate = nil
+        if isActive { controller?.stopPictureInPicture() }
+        controller?.contentSource = nil
+        controller = nil
     }
 
     func pictureInPictureControllerDidStartPictureInPicture(_ controller: AVPictureInPictureController) {

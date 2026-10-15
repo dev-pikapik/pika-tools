@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Next Chapter";
 "Previous Chapter" = "Previous Chapter";
 "No Chapters" = "No Chapters";
+"Play Sound Through" = "Play Sound Through";
+"System Output" = "System Output";
 "Chapter %lld" = "Chapter %lld";
 "Set Loop Start" = "Set Loop Start";
 "Set Loop End" = "Set Loop End";

@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Następny rozdział";
 "Previous Chapter" = "Poprzedni rozdział";
 "No Chapters" = "Brak rozdziałów";
+"Play Sound Through" = "Odtwarzaj dźwięk przez";
+"System Output" = "Wyjście systemowe";
 "Chapter %lld" = "Rozdział %lld";
 "Set Loop Start" = "Ustaw początek pętli";
 "Set Loop End" = "Ustaw koniec pętli";

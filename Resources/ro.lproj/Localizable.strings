@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Capitolul următor";
 "Previous Chapter" = "Capitolul anterior";
 "No Chapters" = "Fără capitole";
+"Play Sound Through" = "Redă sunetul prin";
+"System Output" = "Ieșirea sistemului";
 "Chapter %lld" = "Capitolul %lld";
 "Set Loop Start" = "Setează începutul buclei";
 "Set Loop End" = "Setează sfârșitul buclei";

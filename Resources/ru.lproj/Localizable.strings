@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Следующая глава";
 "Previous Chapter" = "Предыдущая глава";
 "No Chapters" = "Нет глав";
+"Play Sound Through" = "Звук через";
+"System Output" = "Системный выход";
 "Chapter %lld" = "Глава %lld";
 "Set Loop Start" = "Задать начало повтора";
 "Set Loop End" = "Задать конец повтора";

@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Nästa kapitel";
 "Previous Chapter" = "Föregående kapitel";
 "No Chapters" = "Inga kapitel";
+"Play Sound Through" = "Spela ljud via";
+"System Output" = "Systemets utgång";
 "Chapter %lld" = "Kapitel %lld";
 "Set Loop Start" = "Ange slingans början";
 "Set Loop End" = "Ange slingans slut";

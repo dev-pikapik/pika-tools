@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Sonraki Bölüm";
 "Previous Chapter" = "Önceki Bölüm";
 "No Chapters" = "Bölüm Yok";
+"Play Sound Through" = "Sesi Şuradan Çal";
+"System Output" = "Sistem Çıkışı";
 "Chapter %lld" = "Bölüm %lld";
 "Set Loop Start" = "Döngü Başlangıcını Ayarla";
 "Set Loop End" = "Döngü Bitişini Ayarla";

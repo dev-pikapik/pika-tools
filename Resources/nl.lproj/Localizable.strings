@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Volgend hoofdstuk";
 "Previous Chapter" = "Vorig hoofdstuk";
 "No Chapters" = "Geen hoofdstukken";
+"Play Sound Through" = "Geluid afspelen via";
+"System Output" = "Systeemuitvoer";
 "Chapter %lld" = "Hoofdstuk %lld";
 "Set Loop Start" = "Begin van lus instellen";
 "Set Loop End" = "Einde van lus instellen";

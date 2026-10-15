@@ -1254,6 +1254,8 @@
 "Next Chapter" = "الفصل التالي";
 "Previous Chapter" = "الفصل السابق";
 "No Chapters" = "لا توجد فصول";
+"Play Sound Through" = "تشغيل الصوت عبر";
+"System Output" = "مخرج النظام";
 "Chapter %lld" = "الفصل %lld";
 "Set Loop Start" = "تعيين بداية التكرار";
 "Set Loop End" = "تعيين نهاية التكرار";

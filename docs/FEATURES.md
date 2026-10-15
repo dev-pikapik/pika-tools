@@ -1404,6 +1404,23 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. (Website) Press A, jump back 10 seconds with J, press A → the loop is between the two spots, the earlier one first.
 5. (Website) Open the Playback menu → the item reads **Set Loop Start**, then **Set Loop End**, then **Clear Loop** as you press A.
 
+### Play Sound Through
+
+**Does:** Sends the sound of the player, and only of the player, to another speaker, headphones or other sound output, without changing the output of your Mac.
+
+**How it works:** The list is the Mac’s sound outputs that are not hidden (`Sources/pika-tools/Tools/Player/PlayerOutput.swift:8`), read each time the Playback menu opens (`Helper/Player/main.swift:44`). Choosing one gives its identifier to the sound renderer of every open player (`Helper/Player/PlayerWindow.swift:147`, `Helper/Player/Engine.swift:143`); videos opened later use it too. **System Output** gives the player back to whatever the Mac uses, and follows it when you change it in System Settings. When the chosen output is unplugged or switched off, the player goes back to the system output by itself (`Helper/Player/main.swift:31`, `PlayerOutput.swift:33`). The choice is not kept after the player quits.
+
+**Nuances:** The item is hidden while the Mac has only one sound output. AirPlay for video is not offered: the system AirPlay button works only with Apple’s own player, which cannot play MKV, WebM and the other formats this player is for. The sound of a video can still go to an AirPlay speaker when the Mac itself uses it as its output.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Connect headphones or a second sound output, play a video → **Playback › Play Sound Through** lists the outputs, with **System Output** checked.
+2. (Website) Choose the headphones → the sound of the player moves to them; the sound of other apps stays where it was, and the output in System Settings is the same as before.
+3. (Website) Choose **System Output** → the sound comes back to the Mac’s own output.
+4. (Website) Choose the headphones, then unplug them → the sound continues on the Mac’s output, and the menu shows **System Output** checked.
+5. (Website) With only one sound output the item is not in the Playback menu.
+
 ### FFmpeg and dav1d Licenses
 
 **Does:** Shows the licenses of the two open-source libraries the player uses, and links to their source code.

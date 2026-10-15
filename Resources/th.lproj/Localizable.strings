@@ -1254,6 +1254,8 @@
 "Next Chapter" = "บทถัดไป";
 "Previous Chapter" = "บทก่อนหน้า";
 "No Chapters" = "ไม่มีบท";
+"Play Sound Through" = "เล่นเสียงผ่าน";
+"System Output" = "เอาต์พุตของระบบ";
 "Chapter %lld" = "บทที่ %lld";
 "Set Loop Start" = "ตั้งจุดเริ่มต้นการวนซ้ำ";
 "Set Loop End" = "ตั้งจุดสิ้นสุดการวนซ้ำ";

@@ -1254,6 +1254,8 @@
 "Next Chapter" = "下一個章節";
 "Previous Chapter" = "上一個章節";
 "No Chapters" = "沒有章節";
+"Play Sound Through" = "聲音輸出至";
+"System Output" = "系統輸出";
 "Chapter %lld" = "章節 %lld";
 "Set Loop Start" = "設定循環起點";
 "Set Loop End" = "設定循環終點";

@@ -1,4 +1,5 @@
 import AppKit
+import AVFoundation
 import Foundation
 import UniformTypeIdentifiers
 
@@ -336,6 +337,25 @@ enum TestPlayer {
         loop.press(at: 1)
         precondition(loop.start == 1 && loop.end == nil, "a new loop starts again")
         print("loop A-B: set, jump, clear, B before A: ok")
+
+        let speakers = PlayerOutput(uid: "speakers", name: "Speakers"), headphones = PlayerOutput(uid: "headphones", name: "Headphones")
+        precondition(PlayerOutput.choice(nil, among: [speakers, headphones]) == nil)
+        precondition(PlayerOutput.choice("headphones", among: [speakers, headphones]) == "headphones")
+        precondition(PlayerOutput.choice("headphones", among: [speakers]) == nil, "an unplugged output must fall back to the system output")
+        precondition(PlayerOutput.choice("headphones", among: []) == nil)
+        let real = PlayerOutput.all()
+        precondition(Set(real.map(\.uid)).count == real.count && real.allSatisfy { !$0.uid.isEmpty && !$0.name.isEmpty })
+        let renderer = AVSampleBufferAudioRenderer()
+        precondition(renderer.audioOutputDeviceUniqueID == nil, "a new renderer follows the system output")
+        for output in real {
+            renderer.audioOutputDeviceUniqueID = output.uid
+            precondition(renderer.audioOutputDeviceUniqueID == output.uid, "\(output.name) was not accepted")
+        }
+        if let system = PlayerOutput.system() {
+            renderer.audioOutputDeviceUniqueID = system
+            precondition(renderer.audioOutputDeviceUniqueID == system, "the system output was not accepted")
+        }
+        print("sound outputs: \(real.count) found, each accepted by the player, an unplugged one falls back to the system, the system one is known: ok")
     }
 }
 

@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Bab Berikutnya";
 "Previous Chapter" = "Bab Sebelumnya";
 "No Chapters" = "Tidak Ada Bab";
+"Play Sound Through" = "Putar Suara Melalui";
+"System Output" = "Output Sistem";
 "Chapter %lld" = "Bab %lld";
 "Set Loop Start" = "Setel Awal Pengulangan";
 "Set Loop End" = "Setel Akhir Pengulangan";

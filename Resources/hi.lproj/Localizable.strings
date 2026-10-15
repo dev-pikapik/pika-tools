@@ -1254,6 +1254,8 @@
 "Next Chapter" = "अगला अध्याय";
 "Previous Chapter" = "पिछला अध्याय";
 "No Chapters" = "कोई अध्याय नहीं";
+"Play Sound Through" = "आवाज़ इसके ज़रिए चलाएँ";
+"System Output" = "सिस्टम आउटपुट";
 "Chapter %lld" = "अध्याय %lld";
 "Set Loop Start" = "लूप की शुरुआत सेट करें";
 "Set Loop End" = "लूप का अंत सेट करें";

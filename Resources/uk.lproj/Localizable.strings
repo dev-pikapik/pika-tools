@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Наступний розділ";
 "Previous Chapter" = "Попередній розділ";
 "No Chapters" = "Немає розділів";
+"Play Sound Through" = "Звук через";
+"System Output" = "Системний вихід";
 "Chapter %lld" = "Розділ %lld";
 "Set Loop Start" = "Задати початок повтору";
 "Set Loop End" = "Задати кінець повтору";

@@ -266,7 +266,13 @@ swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swif
 The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until a format button, or **Open All in pikapik**, turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app and assigns the helper with `NSWorkspace.setDefaultApplication`, one type at a time, waiting for each answer (macOS reports “Keep” as a cancel error, which only moves on to the next type; no answer for 60 s stops the run). On the way back it restores that app, or the next one that can open the type, never the helper. What the buttons show is read from `urlForApplication(toOpen:)`, not from our own settings. Time, seeking, keys and the format list live in `PlayerLogic.swift`, and the chapter jumps, the chapter marks and the A–B loop in `PlayerMarks.swift`:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/PlayerMarks.swift scripts/test-player.swift -o build/test-player && build/test-player
+swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/PlayerMarks.swift Sources/pika-tools/Tools/Player/PlayerOutput.swift scripts/test-player.swift -o build/test-player && build/test-player
+```
+
+The Picture in Picture window (`Helper/Player/PictureInPicture.swift`) has a check too: after it is closed it must not keep the video it showed alive, which AVKit does for as long as its content source holds the delegate. It does nothing on a Mac that cannot show Picture in Picture.
+
+```bash
+swiftc -parse-as-library Helper/Player/PictureInPicture.swift scripts/test-pip.swift -o build/test-pip && build/test-pip
 ```
 
 The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, that the chapters of an MKV and an MP4 are read with their titles and times, and that closing the window frees everything. It needs the bundled FFmpeg, so CI skips it; build FFmpeg first with `./scripts/build.sh`:

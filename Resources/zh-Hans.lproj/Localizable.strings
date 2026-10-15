@@ -1254,6 +1254,8 @@
 "Next Chapter" = "下一章节";
 "Previous Chapter" = "上一章节";
 "No Chapters" = "无章节";
+"Play Sound Through" = "声音输出到";
+"System Output" = "系统输出";
 "Chapter %lld" = "章节 %lld";
 "Set Loop Start" = "设置循环起点";
 "Set Loop End" = "设置循环终点";

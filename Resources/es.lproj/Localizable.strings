@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Capítulo siguiente";
 "Previous Chapter" = "Capítulo anterior";
 "No Chapters" = "Sin capítulos";
+"Play Sound Through" = "Reproducir sonido por";
+"System Output" = "Salida del sistema";
 "Chapter %lld" = "Capítulo %lld";
 "Set Loop Start" = "Fijar inicio del bucle";
 "Set Loop End" = "Fijar fin del bucle";

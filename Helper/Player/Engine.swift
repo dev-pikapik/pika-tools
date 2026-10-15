@@ -138,6 +138,12 @@ final class Engine {
         set { audio.isMuted = newValue }
     }
 
+    var output: String? { audio.audioOutputDeviceUniqueID }
+
+    func route(to uid: String) {
+        audio.audioOutputDeviceUniqueID = uid
+    }
+
     var hasAudio: Bool { feeds.contains { $0.renderer === audio } }
 
     var hasVideo: Bool { !size.equalTo(.zero) }

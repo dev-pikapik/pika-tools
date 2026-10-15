@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Další kapitola";
 "Previous Chapter" = "Předchozí kapitola";
 "No Chapters" = "Žádné kapitoly";
+"Play Sound Through" = "Přehrát zvuk přes";
+"System Output" = "Výstup systému";
 "Chapter %lld" = "Kapitola %lld";
 "Set Loop Start" = "Nastavit začátek smyčky";
 "Set Loop End" = "Nastavit konec smyčky";

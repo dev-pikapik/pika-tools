@@ -1254,6 +1254,8 @@
 "Next Chapter" = "次のチャプター";
 "Previous Chapter" = "前のチャプター";
 "No Chapters" = "チャプターなし";
+"Play Sound Through" = "サウンドの出力先";
+"System Output" = "システムの出力";
 "Chapter %lld" = "チャプター %lld";
 "Set Loop Start" = "ループの開始位置を設定";
 "Set Loop End" = "ループの終了位置を設定";

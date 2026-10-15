@@ -1254,6 +1254,8 @@
 "Next Chapter" = "Nächstes Kapitel";
 "Previous Chapter" = "Vorheriges Kapitel";
 "No Chapters" = "Keine Kapitel";
+"Play Sound Through" = "Ton ausgeben über";
+"System Output" = "Systemausgabe";
 "Chapter %lld" = "Kapitel %lld";
 "Set Loop Start" = "Schleifenanfang setzen";
 "Set Loop End" = "Schleifenende setzen";

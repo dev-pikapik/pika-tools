@@ -140,7 +140,14 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var lastSaved = Date.distantPast
     var onClose: ((PlayerController) -> Void)?
 
+    static var output: String?
+
     var isEmpty: Bool { engine == nil }
+
+    func setOutput(_ uid: String?) {
+        guard let engine, let target = uid ?? (engine.output == nil ? nil : PlayerOutput.system()), target != engine.output else { return }
+        engine.route(to: target)
+    }
 
     var isMusic: Bool { engine.map { !$0.hasVideo } ?? false }
 
@@ -280,6 +287,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             message.isHidden = true
             engine.volume = volume.floatValue
             engine.muted = muted
+            if let output = Self.output { engine.route(to: output) }
             engine.layer.frame = video.bounds
             engine.layer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
             video.layer?.insertSublayer(engine.layer, at: 0)
@@ -358,6 +366,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         refreshMarks()
         pip?.close()
         pip = nil
+        returnFromPictureInPicture()
         refreshPictureInPicture()
         resumeKey = nil
         if let observer { engine.synchronizer.removeTimeObserver(observer) }
@@ -599,7 +608,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private func setUpPictureInPicture(_ engine: Engine) {
         guard engine.hasVideo else { return }
         pip = PictureInPicture(layer: engine.layer, host: PictureInPicture.Host(
-            duration: { engine.duration },
+            duration: { [weak self] in self?.engine?.duration ?? .zero },
             isPlaying: { [weak self] in self?.playing ?? false },
             setPlaying: { [weak self] in if self?.playing != $0 { self?.playPause(nil) } },
             skip: { [weak self] in self?.skip($0) },
@@ -849,6 +858,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     func windowWillClose(_ notification: Notification) {
         hideTimer?.invalidate()
+        hiddenForPip = false
         stop()
         scrubber.onHover = nil
         onClose?(self)
