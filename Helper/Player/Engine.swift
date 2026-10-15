@@ -140,7 +140,7 @@ final class Engine {
         guard file >= 0 else { throw MediaError.invalidParameter }
         let fd = file
         do {
-            demuxer = try Demuxer(name: url.lastPathComponent, size: lseek(fd, 0, SEEK_END)) { buffer, count, offset in
+            demuxer = try Demuxer(name: url.lastPathComponent, size: lseek(fd, 0, SEEK_END), memoryLimit: 32 << 20) { buffer, count, offset in
                 let read = pread(fd, buffer, Int(count), offset)
                 return read < 0 ? -EIO : read == 0 ? PikaErrorEOF : Int32(read)
             }
@@ -167,6 +167,7 @@ final class Engine {
         }
         self.feeds = feeds
         self.size = size
+        demuxer.discard(except: feeds.map(\.track))
         duration = demuxer.duration.isValid ? demuxer.duration : feeds.compactMap { feed in
             ((try? demuxer.last(feed.track)) ?? nil).map { feed.track.time($0.pts + $0.duration) }
         }.max() ?? .zero
@@ -251,6 +252,7 @@ final class Engine {
                 return
             }
             feed.next = (try? demuxer.next(packet, feed.track)) ?? nil
+            demuxer.forget(before: packet, feed.track)
             end = max(end, feed.track.time(packet.pts + packet.duration))
             if let decoder = feed.decoder {
                 guard let data = try? demuxer.data(packet, feed.track) else { continue }

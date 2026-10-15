@@ -139,9 +139,9 @@ private let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -
 }
 
 final class Demuxer {
-    static let memoryLimit = 96 << 20
     let streams: [Track]
     let duration: CMTime
+    private let memoryLimit: Int
     private let lock = NSRecursiveLock()
     private let reader: ByteReader
     private var context: UnsafeMutablePointer<AVFormatContext>?
@@ -152,8 +152,9 @@ final class Demuxer {
     private var heldBytes = 0
     private var stamp = 0
 
-    init(name: String, size: Int64, read: @escaping (UnsafeMutablePointer<UInt8>, Int32, Int64) -> Int32) throws {
+    init(name: String, size: Int64, memoryLimit: Int = 96 << 20, read: @escaping (UnsafeMutablePointer<UInt8>, Int32, Int64) -> Int32) throws {
         reader = ByteReader(size: size, read: read)
+        self.memoryLimit = memoryLimit
         av_log_set_level(AV_LOG_QUIET)
         let bufferSize: Int32 = 1 << 16
         guard let buffer = av_malloc(Int(bufferSize)),
@@ -217,6 +218,35 @@ final class Demuxer {
 
     var tracks: [Track] {
         streams.filter { byIndex[$0.index] != nil }
+    }
+
+    func discard(except used: [Track]) {
+        lock.withLock {
+            for stream in tracks where !used.contains(where: { $0 === stream }) {
+                context?.pointee.streams[Int(stream.index)]?.pointee.discard = AVDISCARD_ALL
+                byIndex[stream.index] = nil
+            }
+        }
+    }
+
+    func forget(before packet: Packet, _ stream: Track) {
+        lock.withLock {
+            let run = packet.run
+            guard packet.index >= 4096 || stream.runs.count > 1 else { return }
+            for old in stream.runs.filter({ $0 !== run }).flatMap(\.packets) + run.packets[..<packet.index] {
+                if let data = old.data { heldBytes -= data.count }
+                old.data = nil
+                old.index = -1
+            }
+            if packet.index > 0 {
+                run.packets.removeFirst(packet.index)
+                for (index, kept) in run.packets.enumerated() { kept.index = index }
+                run.atStart = false
+            }
+            stream.runs = [run]
+            stream.known = stream.known.filter { $0.value.index >= 0 }
+            if let head = stream.head, head.index < 0 { stream.head = nil }
+        }
     }
 
     func first(_ stream: Track) -> Packet? {
@@ -463,7 +493,7 @@ final class Demuxer {
         packet.stamp = stamp
         held.append((packet, stamp))
         heldBytes += data.count
-        while heldBytes > Self.memoryLimit, heldStart < held.count {
+        while heldStart < held.count, heldBytes > memoryLimit || held[heldStart].0.data == nil || held[heldStart].0.stamp != held[heldStart].1 {
             let (old, oldStamp) = held[heldStart]
             heldStart += 1
             if old.stamp == oldStamp, let data = old.data {
