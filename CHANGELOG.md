@@ -10,6 +10,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Player, website version: point at the time bar and a small picture of the video at that spot appears above it, with the time. The pictures are made in the background without interrupting the video and kept only while the window is open. For a sound-only file, or when a picture can’t be made, you see only the time.
 - Player, website version: a video with chapters shows them as marks on the time bar and in a new **Chapters** menu, with the one you are in checked. Page Down and Page Up jump to the next chapter and back to the start of this one or the one before it, and pointing at the time bar shows the chapter’s name under the small picture. A file without chapters shows nothing new.
 - Player, website version: press A to repeat a part of the video. The first press marks where it starts, the second marks where it ends and the video then jumps back to the start each time it reaches the end; the third press clears the loop. Two yellow marks and a strip show the part on the time bar, and the Playback menu has the same item.
+- Player, website version: **Window › Picture in Picture** (⌘⌥P, or the new button on the control panel) shows the video in a small floating window above your other windows, with play, pause and skip buttons. The player window comes back when you close the small one. The button and the menu item are there only when macOS can show the video that way.
 
 ## [1.52.0] - 2026-10-15
 

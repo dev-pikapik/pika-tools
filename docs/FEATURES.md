@@ -1306,6 +1306,22 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Open a music file → the card shows only the time.
 3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
 
+### Picture in Picture
+
+**Does:** Shows the video in a small floating window above your other windows, with play, pause and skip buttons, while you work in other apps.
+
+**How it works:** The player gives the video layer to `AVPictureInPictureController` (`Helper/Player/PictureInPicture.swift:3`). While the small window is open macOS asks the player for the length of the video and whether it is paused, and tells it when you press play, pause or skip; the player answers from its own state (`PictureInPicture.swift:60`). The button on the control panel, **Window › Picture in Picture** and ⌘⌥P start and stop it (`Helper/Player/PlayerWindow.swift:508`). While it runs the player window is hidden, and it comes back when the small window is closed or restored (`PlayerWindow.swift:496`). The button is shown, and the menu item turned on, only while macOS says this video can be shown that way (`PlayerWindow.swift:489`).
+
+**Nuances:** In full screen the player window stays where it is. A file with no picture, such as music, has no button.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open a video and play it → a button with two small windows appears at the right of the control panel; for a music file it is missing.
+2. (Website) Click the button, or press ⌘⌥P → the video moves to a small floating window and keeps playing; the player window is hidden.
+3. (Website) In the small window press pause, then skip → the video pauses and jumps; close the small window or click its restore button → the player window is back at the same time.
+4. (Website) Open **Window** → the item **Picture in Picture** is there, with ⌘⌥P next to it; it is dimmed when no video is open.
+
 ### Chapters
 
 **Does:** Shows the chapters of a video on the time bar and in a **Chapters** menu, names the chapter under the preview, and lets you jump from chapter to chapter.
