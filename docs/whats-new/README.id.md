@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik mengerjakannya sendiri, tanpa pergi ke Pengaturan Sistem
+
+<sub>1.50.2 · 15 Oktober 2026</sub>
+
+Di versi dari situs web, mematikan tugas latar belakang, menambah tata letak papan ketik, mengubah sudut aktif, dan memilih layar utama kini dilakukan langsung di pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Tugas Latar Belakang, matikan sebuah tugas dan barisnya langsung berubah. Tidak perlu kata sandi, dan pilihan Anda tetap ada setelah restart. Nyalakan Lagi mengembalikan tugasnya. Tugas untuk seluruh Mac dan pembantu yang ditambahkan sebuah app sendiri tetap membuka Pengaturan Sistem, dan satu baris di bawahnya menjelaskan alasannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Memperbaiki teks yang diketik dengan tata letak yang salah berfungsi jika Anda punya dua tata letak papan ketik atau lebih. Jika hanya punya satu, catatan di Pengaturan › Papan Ketik kini menawarkan tata letak untuk bahasa Anda. Pilih satu di Tambah Tata Letak dan langsung siap, tanpa kata sandi. Jika tidak ada yang cocok, Pengaturan Papan Ketik… masih ada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Game, menu Ubah… pada baris sudut aktif memilih aksi lain untuk sudut itu. Di Pertahankan Dock di satu layar, menu Layar utama menjadikan layar yang Anda pilih sebagai layar utama, dengan Dock di atasnya. pikapik mengingat keadaan sebelumnya: Kembalikan, atau mematikan sakelar, mengembalikan semuanya persis seperti semula.
+
+**Coba:** Pengaturan › Tugas Latar Belakang
+
+**Diperbaiki**
+
+- Minimalkan atau sembunyikan dengan klik di Dock: jika Anda menyalakannya saat klik meminimalkan jendela, setelah restart ia tidak lagi berubah sendiri menjadi menyembunyikan app.
+- Saat Anda membuka pikapik, kini ia memeriksa pengaturan yang berubah di Mac Anda yang lain, sehingga Mac yang melewatkan perubahan langsung menyusul.
+- Tetap Terjaga kini menyebut bahwa ia tetap menyala sampai Anda mematikannya, dan Mode Game tidak lagi menyarankan game yang sudah Anda tambahkan.
+
+---
+
 ## <a id="v1.50.0"></a>Lebih banyak pikapik di versi Mac App Store
 
 <sub>1.50.0 · 15 Oktober 2026</sub>

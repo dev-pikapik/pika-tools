@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik doet het zelf, zonder naar Systeeminstellingen te gaan
+
+<sub>1.50.2 · 15 oktober 2026</sub>
+
+In de versie van de website gebeuren een achtergrondtaak uitzetten, een toetsenbordindeling toevoegen, een actieve hoek veranderen en het hoofdbeeldscherm kiezen nu rechtstreeks in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Zet in Instellingen › Achtergrondtaken een taak uit en de rij verandert meteen. Een wachtwoord is niet nodig en je keuze blijft na een herstart staan. Zet weer aan brengt de taak terug. Taken voor de hele Mac en hulpjes die een app zelf heeft toegevoegd openen nog steeds Systeeminstellingen, en een regel onder de rij zegt waarom.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Tekst corrigeren die in de verkeerde indeling is getypt werkt als je twee of meer toetsenbordindelingen hebt. Heb je er maar één, dan biedt de melding in Instellingen › Toetsenbord nu indelingen voor je talen aan. Kies er een onder Indeling toevoegen en hij is direct klaar, zonder wachtwoord. Past er geen, dan is Instellingen toetsenbord… er nog steeds.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Instellingen › Games kiest het menu Wijzig… in de rij van een actieve hoek een andere actie voor die hoek. Onder Houd het Dock op één scherm maakt het menu Hoofdbeeldscherm het gekozen scherm tot het hoofdscherm, met het Dock erop. pikapik onthoudt hoe het was: Zet terug, of de schakelaar uitzetten, brengt alles precies terug.
+
+**Probeer het:** Instellingen › Achtergrondtaken
+
+**Opgelost**
+
+- Minimaliseer of verberg met een klik in het Dock: als je dit aanzette terwijl de klik vensters minimaliseerde, schakelt het na een herstart niet meer vanzelf over op de app verbergen.
+- Als je pikapik opent, controleert het nu of instellingen op je andere Mac zijn gewijzigd, zodat een Mac die de wijziging miste meteen bijkomt.
+- Wakker houden zegt nu dat het aan blijft tot je het uitzet, en de Gamemodus stelt geen game meer voor die je al hebt toegevoegd.
+
+---
+
 ## <a id="v1.50.0"></a>Meer pikapik in de Mac App Store-versie
 
 <sub>1.50.0 · 15 oktober 2026</sub>

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik fa da solo, senza passare da Impostazioni di Sistema
+
+<sub>1.50.2 · 15 ottobre 2026</sub>
+
+Nella versione del sito, spegnere un’attività in background, aggiungere un layout di tastiera, cambiare un angolo attivo e scegliere lo schermo principale ora si fa direttamente in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Attività in background, spegni un’attività e la sua riga cambia subito. Non serve la password e la tua scelta resta dopo un riavvio. Riaccendi rimette in funzione l’attività. Le attività per tutto il Mac e gli assistenti aggiunti da un’app da sola aprono ancora Impostazioni di Sistema, e una riga sotto spiega il perché.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+La correzione del testo scritto con il layout sbagliato funziona se hai due o più layout di tastiera. Se ne hai uno solo, la nota in Impostazioni › Tastiera ora propone layout per le tue lingue. Sceglilo in Aggiungi layout ed è subito pronto, senza password. Se nessuno va bene, Impostazioni tastiera… è sempre lì.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Giochi, il menu Cambia… nella riga di un angolo attivo sceglie un’altra azione per quell’angolo. In Tieni il Dock su un solo schermo, il menu Schermo principale rende principale lo schermo scelto, con il Dock sopra. pikapik ricorda com’era: Rimetti a posto, o spegnere l’interruttore, riporta tutto esattamente com’era.
+
+**Provalo:** Impostazioni › Attività in background
+
+**Corretto**
+
+- Riduci o nascondi con un clic nel Dock: se l’avevi attivato mentre il clic riduceva le finestre, dopo un riavvio non passa più da solo a nascondere l’app.
+- Quando apri pikapik, ora controlla le impostazioni cambiate sull’altro tuo Mac, così un Mac che si è perso la modifica si aggiorna subito.
+- Resta sveglio ora dice che resta attivo finché non lo spegni, e la Modalità gioco non suggerisce più un gioco che hai già aggiunto.
+
+---
+
 ## <a id="v1.50.0"></a>Più pikapik nella versione del Mac App Store
 
 <sub>1.50.0 · 15 ottobre 2026</sub>

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik tự làm, không cần vào Cài đặt hệ thống
+
+<sub>1.50.2 · 15 tháng 10 năm 2026</sub>
+
+Ở bản tải từ trang web, việc tắt một tác vụ nền, thêm bố cục bàn phím, đổi góc nóng và chọn màn hình chính giờ diễn ra ngay trong pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Trong Cài đặt › Tác vụ nền, hãy tắt một tác vụ và dòng của nó đổi ngay. Không cần mật khẩu, và lựa chọn của bạn vẫn còn sau khi khởi động lại. Bật lại sẽ đưa tác vụ trở về. Tác vụ cho cả máy Mac và trình hỗ trợ do một ứng dụng tự thêm vẫn mở Cài đặt hệ thống, và một dòng dưới đó nói lý do.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Sửa chữ gõ nhầm bố cục hoạt động khi bạn có từ hai bố cục bàn phím trở lên. Nếu chỉ có một, ghi chú trong Cài đặt › Bàn phím giờ gợi ý các bố cục cho ngôn ngữ của bạn. Chọn một cái trong Thêm bố cục là dùng được ngay, không cần mật khẩu. Nếu không cái nào hợp, Cài đặt bàn phím… vẫn còn đó.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Trong Cài đặt › Trò chơi, menu Thay đổi… ở dòng góc nóng chọn một hành động khác cho góc đó. Trong Giữ Dock trên một màn hình, menu Màn hình chính biến màn hình bạn chọn thành màn hình chính, và Dock chuyển sang đó. pikapik nhớ lại mọi thứ từng thế nào: Đặt lại chỗ cũ, hoặc tắt công tắc, trả mọi thứ về đúng như trước.
+
+**Thử ngay:** Cài đặt › Tác vụ nền
+
+**Đã sửa**
+
+- Thu nhỏ hoặc ẩn bằng một lần bấm trong Dock: nếu bạn bật nó khi cú bấm thu nhỏ cửa sổ, sau khi khởi động lại nó không còn tự đổi sang ẩn ứng dụng nữa.
+- Khi bạn mở pikapik, giờ nó kiểm tra các cài đặt đã đổi trên máy Mac kia của bạn, nên máy Mac bỏ lỡ thay đổi sẽ bắt kịp ngay.
+- Giữ máy thức giờ cho biết nó sẽ bật cho đến khi bạn tắt, và Chế độ trò chơi không còn gợi ý trò bạn đã thêm.
+
+---
+
 ## <a id="v1.50.0"></a>pikapik có thêm nhiều thứ trong bản Mac App Store
 
 <sub>1.50.0 · 15 tháng 10 năm 2026</sub>
