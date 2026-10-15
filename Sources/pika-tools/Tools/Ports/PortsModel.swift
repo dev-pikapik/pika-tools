@@ -6,6 +6,7 @@ struct PortHint {
     let port: UInt16
     let service: String
     let pane: URL
+    var label: String?
 }
 
 struct PortLook {
@@ -143,10 +144,10 @@ struct PortQuestion {
         return program.ports.compactMap { port -> PortHint? in
             switch port {
             case 5000, 7000: airPlay ? PortHint(port: port, service: String(localized: "AirPlay Receiver"), pane: Self.airPlay) : nil
-            case 22: PortHint(port: port, service: String(localized: "Remote Login"), pane: Self.sharing)
+            case 22: PortHint(port: port, service: String(localized: "Remote Login"), pane: Self.sharing, label: "com.openssh.sshd")
             case 139, 445: PortHint(port: port, service: String(localized: "File Sharing"), pane: Self.sharing)
             case 3283: PortHint(port: port, service: String(localized: "Remote Management"), pane: Self.sharing)
-            case 5900: PortHint(port: port, service: remote ? String(localized: "Remote Management") : String(localized: "Screen Sharing"), pane: Self.sharing)
+            case 5900: PortHint(port: port, service: remote ? String(localized: "Remote Management") : String(localized: "Screen Sharing"), pane: Self.sharing, label: remote ? nil : "com.apple.screensharing")
             default: nil
             }
         }
