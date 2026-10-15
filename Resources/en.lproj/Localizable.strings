@@ -1047,6 +1047,10 @@
 "Turn On…" = "Turn On…";
 "Turn Off…" = "Turn Off…";
 "Opens Login Items in System Settings" = "Opens Login Items in System Settings";
+"Couldn’t turn this off. Try again or use System Settings." = "Couldn’t turn this off. Try again or use System Settings.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Couldn’t turn this back on. Try again or use System Settings.";
+"Needs administrator rights, so turn it off in System Settings" = "Needs administrator rights, so turn it off in System Settings";
+"The app added it itself, so turn it off in System Settings" = "The app added it itself, so turn it off in System Settings";
 "Lets the app save new files next to yours and see your background tasks" = "Lets the app save new files next to yours and see your background tasks";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choose your home folder once so pikapik can save files next to yours and see your background tasks.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off";

@@ -1047,6 +1047,10 @@
 "Turn On…" = "Bật…";
 "Turn Off…" = "Tắt…";
 "Opens Login Items in System Settings" = "Mở Mục đăng nhập trong Cài đặt hệ thống";
+"Couldn’t turn this off. Try again or use System Settings." = "Không thể tắt mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Không thể bật lại mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
+"Needs administrator rights, so turn it off in System Settings" = "Cần quyền quản trị, nên hãy tắt trong Cài đặt hệ thống";
+"The app added it itself, so turn it off in System Settings" = "Ứng dụng tự thêm mục này, nên hãy tắt trong Cài đặt hệ thống";
 "Lets the app save new files next to yours and see your background tasks" = "Cho phép ứng dụng lưu tệp mới cạnh tệp của bạn và xem các tác vụ nền";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Hãy chọn thư mục chính của bạn một lần để pikapik có thể lưu tệp cạnh tệp của bạn và xem các tác vụ nền của bạn.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "mục đăng nhập, mở khi đăng nhập, tác nhân, dịch vụ, daemon, khởi động, tự khởi động, trình trợ giúp, đang chạy, chạy nền, nền, phần còn sót, tắt";

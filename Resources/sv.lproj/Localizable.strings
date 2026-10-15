@@ -1047,6 +1047,10 @@
 "Turn On…" = "Slå på…";
 "Turn Off…" = "Stäng av…";
 "Opens Login Items in System Settings" = "Öppnar Startobjekt i Systeminställningar";
+"Couldn’t turn this off. Try again or use System Settings." = "Det gick inte att stänga av. Försök igen eller använd Systeminställningar.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Det gick inte att slå på igen. Försök igen eller använd Systeminställningar.";
+"Needs administrator rights, so turn it off in System Settings" = "Kräver administratörsbehörighet, så stäng av det i Systeminställningar";
+"The app added it itself, so turn it off in System Settings" = "Appen lade till det själv, så stäng av det i Systeminställningar";
 "Lets the app save new files next to yours and see your background tasks" = "Låter appen spara nya filer bredvid dina och se dina bakgrundsuppgifter";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Välj din hemmapp en gång så att pikapik kan spara filer bredvid dina och se dina bakgrundsuppgifter.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "startobjekt, öppna vid inloggning, agenter, tjänster, demoner, start, autostart, hjälpare, körs, bakgrund, rester, stäng av";

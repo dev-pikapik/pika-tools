@@ -1250,14 +1250,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Open at Login
 
-**Does:** Lists the login items (apps that start when you log in).
+**Does:** Lists the login items (apps that start when you log in). The website version can take one out of the list and put it back.
 
-**How it works:** `LoginItemsList` (`Sources/pika-tools/Tools/Background/BackgroundTasks.swift:257,280`), group at `BackgroundPage.swift:119`.
+**How it works:** `LoginItemsList` and `SessionLoginItems` (`Sources/pika-tools/Tools/Background/BackgroundTasks.swift`), group at `BackgroundPage.swift`. Turn Off calls `LSSharedFileListItemRemove` and remembers the path in the `background-turned-off-logins` key, so the row stays, dimmed, with Turn Back On; Turn Back On calls `LSSharedFileListInsertItemURL` through `dlsym` (the `kLSSharedFileListItemLast` guard value cannot be passed from Swift) and forgets the path. A remembered path whose app is gone, or that is back in the list, is dropped. The old “hide at login” flag is not kept: macOS 27 neither reads nor writes it.
 
 **Edition:** Website only (App Store: the group is not shown).
 
 **Test:**
 1. (Website) Open Settings › Background Tasks → the Open at Login group lists your login items, including pikapik if Open at Login is on.
+2. (Website) Add a stub app such as PikaE2E-Login.app to Login Items, click Turn Off on its row → the row dims and says Turned off, and it is gone from System Settings › General › Login Items & Extensions. Click Turn Back On → it is in the list again.
 
 ### In the Background
 
@@ -1266,8 +1267,8 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **How it works:** Reads property lists in `/Library` and `~/Library`, `SMAppService.statusForLegacyPlist`, and runs `/bin/launchctl print` for the gui/<uid>, user/<uid> and system domains, read-only (`BackgroundPage.swift:121`, `BackgroundTasks.swift`). Each row shows the app, a green dot when running and the file path; clicking the path shows the file in Finder. Empty state: “Nothing runs in the background”.
 
 **Options:**
-- Turn Off / Turn Back On — button on each launch agent or daemon (Website): switches the task off and on again without deleting it, with `launchctl disable|enable` plus bootout and bootstrap (`BackgroundPage.swift:20,70,241-242`). Nothing on disk is deleted. App Store: view only, no button.
-- Turn Off… / Turn On… — button on login-item tasks, shown instead of the switch where pikapik cannot change a task (`BackgroundPage.swift:237-247`): it opens System Settings › Login Items so you can change the item yourself; nothing on disk changes. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
+- Turn Off / Turn Back On — button on each launch agent in `~/Library/LaunchAgents` or `/Library/LaunchAgents`, and on each old login item (Website): an agent is switched off and on again without deleting it, with `launchctl disable|enable` plus bootout and bootstrap; a login item is taken out of the list and put back (see Open at Login). The row shows the new state at once; if it fails, a red line under the row says so. Nothing on disk is deleted. Needs no password; it survives a restart. App Store: view only, no button.
+- Turn Off… / Turn On… — button on the tasks pikapik cannot change, shown instead of the switch: daemons (need administrator rights) and agents and helpers an app registered itself (macOS has no way to switch another app’s off). It opens System Settings › Login Items so you can change the item yourself; nothing on disk changes, and a line under the row says why. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there, with no line under the row. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
 - Show in Finder — on every task in every group: clicking the file path, the Show in Finder context-menu item (`BackgroundPage.swift:201`) or the path’s help (`:195`) reveals the task’s file in Finder.
 
 **Edition:** Both; App Store differs: view only, shorter header text, home-folder tasks only after Folders access.
@@ -1275,10 +1276,11 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. Open Settings › Background Tasks → a list with apps, green dots for running tasks and file paths; clicking a path shows the file in Finder.
 2. (Website) Make a test agent `~/Library/LaunchAgents/org.example.background-test.plist` that runs `/bin/sleep 3600` with RunAtLoad and load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/org.example.background-test.plist`. Open Settings › Background Tasks → it is listed with a green dot.
-3. Click Turn Off → the row dims, `launchctl print-disabled gui/$(id -u)` shows it as disabled, the sleep process is gone and the file is still there. Click Turn Back On → it runs again.
+3. Click Turn Off → the row dims at once, `launchctl print-disabled gui/$(id -u)` shows it as disabled, the sleep process is gone and the file is still there. Click Turn Back On → it runs again.
 4. Remove the test agent afterwards with `launchctl bootout gui/$(id -u)/org.example.background-test` and delete the file.
-5. (App Store) Click Turn Off… on any task → System Settings opens on Login Items; nothing on disk changes.
-6. Click Show in Finder on a task → Finder opens with the file selected.
+5. (Website) A daemon in `/Library/LaunchDaemons` has Turn Off… and the line “Needs administrator rights, so turn it off in System Settings”; click it → System Settings opens on Login Items; nothing on disk changes.
+6. (App Store) Click Turn Off… on any task → System Settings opens on Login Items; nothing on disk changes.
+7. Click Show in Finder on a task → Finder opens with the file selected.
 
 ### Left by deleted apps
 

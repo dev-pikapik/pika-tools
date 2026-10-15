@@ -1047,6 +1047,10 @@
 "Turn On…" = "Nyalakan…";
 "Turn Off…" = "Matikan…";
 "Opens Login Items in System Settings" = "Membuka Item Login di Pengaturan Sistem";
+"Couldn’t turn this off. Try again or use System Settings." = "Tidak dapat mematikannya. Coba lagi atau gunakan Pengaturan Sistem.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Tidak dapat menyalakannya lagi. Coba lagi atau gunakan Pengaturan Sistem.";
+"Needs administrator rights, so turn it off in System Settings" = "Perlu hak administrator, jadi matikan di Pengaturan Sistem";
+"The app added it itself, so turn it off in System Settings" = "App menambahkannya sendiri, jadi matikan di Pengaturan Sistem";
 "Lets the app save new files next to yours and see your background tasks" = "Memungkinkan app menyimpan file baru di samping file Anda dan melihat tugas latar belakang";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Pilih folder utama Anda sekali saja agar pikapik dapat menyimpan file di samping file Anda dan melihat tugas latar belakang Anda.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "item login, buka saat login, agen, layanan, daemon, mulai, mulai otomatis, pembantu, berjalan, latar belakang, sisa, matikan";

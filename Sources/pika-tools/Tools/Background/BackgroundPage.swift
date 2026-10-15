@@ -13,7 +13,9 @@ actor BackgroundScanner {
         #if APPSTORE
         return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: [], running: running)
         #else
-        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: BackgroundTasks.loginItems(), running: running)
+        let logins = BackgroundTasks.loginItems()
+        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: logins,
+                                       turnedOff: BackgroundTasks.turnedOffLogins(live: logins), running: running)
         #endif
     }
 
@@ -31,6 +33,9 @@ final class BackgroundModel {
     private(set) var tasks: [BackgroundTask] = []
     private(set) var loaded = false
     private(set) var busy: Set<String> = []
+    #if !APPSTORE
+    private(set) var failed: Set<String> = []
+    #endif
     #if APPSTORE
     let home = FolderAccess.home
     #else
@@ -70,9 +75,13 @@ final class BackgroundModel {
     #if !APPSTORE
     func toggle(_ task: BackgroundTask) {
         busy.insert(task.id)
+        failed.remove(task.id)
         Task {
-            let done = await scanner.toggle(task)
-            if !done { NSSound.beep() }
+            if await scanner.toggle(task) {
+                if let index = tasks.firstIndex(where: { $0.id == task.id }) { tasks[index].state = task.state == .on ? .off : .on }
+            } else {
+                failed.insert(task.id)
+            }
             busy.remove(task.id)
             refresh()
         }
@@ -185,6 +194,14 @@ private struct TaskRow: View {
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
+                #if !APPSTORE
+                if let note {
+                    Text(note)
+                        .font(.caption)
+                        .foregroundStyle(model.failed.contains(task.id) ? Color.red : Color.secondary)
+                        .lineLimit(2)
+                }
+                #endif
                 Button(action: reveal) {
                     Text(path)
                         .font(.caption)
@@ -222,6 +239,18 @@ private struct TaskRow: View {
         let version: String? = showsVersion && !task.version.isEmpty ? String(localized: "Version \(task.version)") : nil
         return [version, state, scope, task.developer].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · ")
     }
+
+    #if !APPSTORE
+    private var note: String? {
+        if model.failed.contains(task.id) {
+            return task.state == .on ? String(localized: "Couldn’t turn this off. Try again or use System Settings.")
+                : String(localized: "Couldn’t turn this back on. Try again or use System Settings.")
+        }
+        guard task.opensLoginItems, task.state == .on else { return nil }
+        return task.scope == .wholeMac ? String(localized: "Needs administrator rights, so turn it off in System Settings")
+            : String(localized: "The app added it itself, so turn it off in System Settings")
+    }
+    #endif
 
     private static func text(_ timing: BackgroundTask.Timing) -> String {
         switch timing {

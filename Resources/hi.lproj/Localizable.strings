@@ -1047,6 +1047,10 @@
 "Turn On…" = "चालू करें…";
 "Turn Off…" = "बंद करें…";
 "Opens Login Items in System Settings" = "सिस्टम सेटिंग में लॉगइन आइटम खोलता है";
+"Couldn’t turn this off. Try again or use System Settings." = "इसे बंद नहीं किया जा सका। फिर से कोशिश करें या सिस्टम सेटिंग का उपयोग करें।";
+"Couldn’t turn this back on. Try again or use System Settings." = "इसे फिर से चालू नहीं किया जा सका। फिर से कोशिश करें या सिस्टम सेटिंग का उपयोग करें।";
+"Needs administrator rights, so turn it off in System Settings" = "इसके लिए एडमिन अधिकार चाहिए, इसलिए इसे सिस्टम सेटिंग में बंद करें";
+"The app added it itself, so turn it off in System Settings" = "ऐप ने इसे खुद जोड़ा है, इसलिए इसे सिस्टम सेटिंग में बंद करें";
 "Lets the app save new files next to yours and see your background tasks" = "ऐप को नई फ़ाइलें आपकी फ़ाइलों के बगल में सहेजने और बैकग्राउंड टास्क देखने देता है";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "अपना होम फ़ोल्डर एक बार चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके और आपके बैकग्राउंड टास्क देख सके।";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "लॉगइन आइटम, लॉगइन पर खोलें, एजेंट, सर्विस, डेमन, स्टार्टअप, ऑटोस्टार्ट, हेल्पर, चल रहा है, बैकग्राउंड, बचा हुआ, बंद करें";

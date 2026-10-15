@@ -1047,6 +1047,10 @@
 "Turn On…" = "オンにする…";
 "Turn Off…" = "オフにする…";
 "Opens Login Items in System Settings" = "システム設定の「ログイン項目」を開きます";
+"Couldn’t turn this off. Try again or use System Settings." = "オフにできませんでした。もう一度試すか、システム設定を使ってください。";
+"Couldn’t turn this back on. Try again or use System Settings." = "オンに戻せませんでした。もう一度試すか、システム設定を使ってください。";
+"Needs administrator rights, so turn it off in System Settings" = "管理者権限が必要なため、システム設定でオフにしてください";
+"The app added it itself, so turn it off in System Settings" = "アプリ自身が追加したため、システム設定でオフにしてください";
 "Lets the app save new files next to yours and see your background tasks" = "新しいファイルをあなたのファイルの隣に保存し、バックグラウンドタスクを表示するため";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik がファイルをあなたのファイルの隣に保存し、バックグラウンドタスクを表示できるよう、ホームフォルダを一度選んでください。";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "ログイン項目, ログイン時に開く, エージェント, サービス, デーモン, 起動, 自動起動, ヘルパー, 実行中, バックグラウンド, 残りファイル, オフ";

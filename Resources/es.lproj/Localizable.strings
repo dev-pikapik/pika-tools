@@ -1047,6 +1047,10 @@
 "Turn On…" = "Encender…";
 "Turn Off…" = "Apagar…";
 "Opens Login Items in System Settings" = "Abre Ítems de inicio en Ajustes del Sistema";
+"Couldn’t turn this off. Try again or use System Settings." = "No se pudo apagar. Inténtalo de nuevo o usa Ajustes del Sistema.";
+"Couldn’t turn this back on. Try again or use System Settings." = "No se pudo volver a encender. Inténtalo de nuevo o usa Ajustes del Sistema.";
+"Needs administrator rights, so turn it off in System Settings" = "Requiere permisos de administrador, así que apágalo en Ajustes del Sistema";
+"The app added it itself, so turn it off in System Settings" = "La app lo añadió por sí misma, así que apágalo en Ajustes del Sistema";
 "Lets the app save new files next to yours and see your background tasks" = "Para guardar archivos nuevos junto a los tuyos y ver tus tareas en segundo plano";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Elige tu carpeta de inicio una vez para que pikapik pueda guardar archivos junto a los tuyos y ver tus tareas en segundo plano.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "ítems de inicio, abrir al iniciar sesión, agentes, servicios, daemons, arranque, inicio automático, ayudantes, en marcha, segundo plano, restos, apagar, desactivar";

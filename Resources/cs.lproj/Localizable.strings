@@ -1047,6 +1047,10 @@
 "Turn On…" = "Zapnout…";
 "Turn Off…" = "Vypnout…";
 "Opens Login Items in System Settings" = "Otevře Položky po přihlášení v Nastavení systému";
+"Couldn’t turn this off. Try again or use System Settings." = "Nepodařilo se to vypnout. Zkuste to znovu nebo použijte Nastavení systému.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Nepodařilo se to znovu zapnout. Zkuste to znovu nebo použijte Nastavení systému.";
+"Needs administrator rights, so turn it off in System Settings" = "Vyžaduje práva správce, proto to vypněte v Nastavení systému";
+"The app added it itself, so turn it off in System Settings" = "Aplikace to přidala sama, proto to vypněte v Nastavení systému";
 "Lets the app save new files next to yours and see your background tasks" = "Umožňuje aplikaci ukládat nové soubory vedle vašich a vidět úlohy na pozadí";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Vyberte jednou svou domovskou složku, aby pikapik mohl ukládat soubory vedle vašich a vidět vaše úlohy na pozadí.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "položky po přihlášení, otevřít po přihlášení, agenti, služby, démoni, spouštění, automatické spouštění, pomocníci, běží, pozadí, zbytky, vypnout";

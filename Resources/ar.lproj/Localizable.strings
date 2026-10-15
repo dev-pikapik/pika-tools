@@ -1047,6 +1047,10 @@
 "Turn On…" = "تشغيل…";
 "Turn Off…" = "إطفاء…";
 "Opens Login Items in System Settings" = "يفتح عناصر تسجيل الدخول في إعدادات النظام";
+"Couldn’t turn this off. Try again or use System Settings." = "تعذّر إطفاؤه. حاول مرة أخرى أو استخدم إعدادات النظام.";
+"Couldn’t turn this back on. Try again or use System Settings." = "تعذّرت إعادة تشغيله. حاول مرة أخرى أو استخدم إعدادات النظام.";
+"Needs administrator rights, so turn it off in System Settings" = "يحتاج إلى صلاحيات المسؤول، لذا أطفئه من إعدادات النظام";
+"The app added it itself, so turn it off in System Settings" = "أضافه التطبيق بنفسه، لذا أطفئه من إعدادات النظام";
 "Lets the app save new files next to yours and see your background tasks" = "يسمح للتطبيق بحفظ الملفات الجديدة بجانب ملفاتك ورؤية مهام الخلفية";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "اختر مجلد المنزل مرة واحدة ليتمكن pikapik من حفظ الملفات بجانب ملفاتك ورؤية مهام الخلفية.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "عناصر تسجيل الدخول، الفتح عند تسجيل الدخول، وكلاء، خدمات، برامج خفية، بدء التشغيل، تشغيل تلقائي، مساعدات، قيد التشغيل، الخلفية، بقايا، إطفاء";

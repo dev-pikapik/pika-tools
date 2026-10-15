@@ -1047,6 +1047,10 @@
 "Turn On…" = "Включить…";
 "Turn Off…" = "Выключить…";
 "Opens Login Items in System Settings" = "Открывает «Объекты входа» в Системных настройках";
+"Couldn’t turn this off. Try again or use System Settings." = "Не удалось выключить. Попробуйте ещё раз или воспользуйтесь Системными настройками.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Не удалось вернуть. Попробуйте ещё раз или воспользуйтесь Системными настройками.";
+"Needs administrator rights, so turn it off in System Settings" = "Нужны права администратора, поэтому выключите это в Системных настройках";
+"The app added it itself, so turn it off in System Settings" = "Приложение добавило это само, поэтому выключите это в Системных настройках";
 "Lets the app save new files next to yours and see your background tasks" = "Чтобы сохранять новые файлы рядом с вашими и видеть фоновые задачи";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Выберите домашнюю папку один раз, чтобы pikapik мог сохранять файлы рядом с вашими и видеть ваши фоновые задачи.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "объекты входа, открывать при входе, агенты, службы, демоны, автозапуск, автозагрузка, помощники, работает, фон, фоновые, остатки, выключить";

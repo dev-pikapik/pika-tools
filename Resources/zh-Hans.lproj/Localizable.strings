@@ -1047,6 +1047,10 @@
 "Turn On…" = "打开…";
 "Turn Off…" = "关闭…";
 "Opens Login Items in System Settings" = "打开“系统设置”中的“登录项”";
+"Couldn’t turn this off. Try again or use System Settings." = "无法关闭。请重试，或使用“系统设置”。";
+"Couldn’t turn this back on. Try again or use System Settings." = "无法重新打开。请重试，或使用“系统设置”。";
+"Needs administrator rights, so turn it off in System Settings" = "需要管理员权限，请在“系统设置”中关闭";
+"The app added it itself, so turn it off in System Settings" = "这是应用自己添加的，请在“系统设置”中关闭";
 "Lets the app save new files next to yours and see your background tasks" = "用于把新文件保存在你的文件旁边，并查看后台任务";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "请选择一次你的个人文件夹，这样 pikapik 就能把文件保存在你的文件旁边，并查看你的后台任务。";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "登录项, 登录时打开, 代理, 服务, 守护进程, 启动, 开机启动, 自动启动, 辅助程序, 正在运行, 后台, 残留, 关闭";
