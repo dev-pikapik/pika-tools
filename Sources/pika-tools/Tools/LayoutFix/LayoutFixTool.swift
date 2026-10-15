@@ -313,9 +313,7 @@ private func layoutFixCallback(
 
 /// ⌃⌥⇧⌘F19, the NSKeyEquivalent of the Services command in Info.plist.
 private func pressService(down: Bool, _ proxy: CGEventTapProxy?) {
-    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(kVK_F19), keyDown: down) else { return }
-    key.flags = [.maskControl, .maskAlternate, .maskShift, .maskCommand]
-    key.markPikapik()
+    guard let key = CGEvent.pikapikKey(kVK_F19, down: down, flags: [.maskControl, .maskAlternate, .maskShift, .maskCommand]) else { return }
     if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 

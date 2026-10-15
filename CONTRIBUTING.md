@@ -59,6 +59,12 @@ swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -na
 
 The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. During Game Mode, shortcuts with Control or without Command pass through as game input, even if they were assigned to quitting or closing elsewhere.
 
+Every key pikapik sends for you (Home and End, the ⌘ keys, Finder keys, Back and Forward, the App Store layout-fix shortcut) is built by `CGEvent.pikapikKey` in `Common/EventTag.swift`. Its key-down carries the modifiers the replacement needs, and its key-up carries the modifiers the user really holds (`CGEventSource.flagsState(.hidSystemState)`). A key-up with the key-down's flags leaves ⌘ held in every other app until the next real keyboard or mouse event. The test posts nothing and needs no Accessibility.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/EventTag.swift scripts/test-key-up-flags.swift -o build/test-key-up-flags && build/test-key-up-flags
+```
+
 Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pikapik becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
 
 ```bash

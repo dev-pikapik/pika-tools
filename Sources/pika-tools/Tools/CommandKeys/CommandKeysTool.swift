@@ -182,9 +182,7 @@ private func commandKeysCallback(
 }
 
 private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy?) {
-    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
-    key.flags = .maskCommand
-    key.markPikapik()
+    guard let key = CGEvent.pikapikKey(Int(code), down: down, flags: .maskCommand) else { return }
     if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
