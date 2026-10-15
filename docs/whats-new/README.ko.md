@@ -13,15 +13,23 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-웹사이트 버전에서 다른 언어로 잘못 친 단어 고치기가 이제 Chrome, Slack, VS Code, Discord 등 Chromium 기반 앱에서도 작동합니다. 입력하는 동안에도, 다시 입력 단축키로도 됩니다. “ghbdtn”이 거기서도 “привет”이 됩니다. 이 기능을 끄거나 pikapik을 종료하면 그 앱들은 원래대로 돌아갑니다.
+웹사이트 버전에서 다른 언어로 잘못 친 단어가 이제 Chrome, Slack, VS Code, Discord 같은 앱에서도 고쳐집니다. “ghbdtn”이 거기서도 “привет”이 됩니다. 이 기능을 끄거나 pikapik을 종료하면 그 앱들은 원래대로 돌아갑니다.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-마우스 버튼 4와 5가 이제 거의 모든 앱에서 뒤로·앞으로 이동하고, pikapik 자체 설정에서도 다시 작동합니다. pikapik이 앱의 메뉴나 도구 막대에 있는 ‘뒤로’ 또는 ‘앞으로’ 항목을 대신 눌러 주며, 언어는 상관없습니다. 이미 이 버튼을 이해하는 앱은 스스로 처리합니다. Mac App Store 버전에서는 pikapik 자체 윈도우와 Apple 앱에서 작동합니다.
+마우스 옆 버튼이 이제 거의 모든 앱에서 뒤로·앞으로 이동하고, pikapik 자체 설정에서도 다시 작동합니다. pikapik이 그 앱의 ‘뒤로’ 또는 ‘앞으로’ 버튼을 대신 눌러 줍니다. Mac App Store 버전에서는 pikapik과 Apple 앱에서 작동합니다.
 
-pikapik을 두 개, 예를 들어 웹사이트 버전과 App Store 버전을 열어 두면 마지막에 연 쪽만 Mac을 바꾸므로, 설정에는 늘 실제 상태가 표시됩니다. 종료하면 바꾼 것이 모두 원래대로 돌아갑니다. 그 밖의 새 기능(주로 웹사이트 버전): 트랙패드 세 손가락 가운데 클릭, ‘앱 종료’와 ‘윈도우 닫기’가 하는 일을 보여 주는 그림, ‘숨김 파일 보기’ 줄 안의 ⇧⌘., 사이드바 그룹 이름, 그리고 플레이어의 QuickTime 단축키, 휠로 음량 조절, 재생 속도, 이어 보기.
+pikapik을 두 개, 예를 들어 웹사이트 버전과 App Store 버전을 열어 두면 마지막에 연 쪽만 Mac을 바꾸므로, 설정에는 늘 실제 상태가 표시됩니다. 종료하면 바꾼 것이 모두 원래대로 돌아갑니다.
 
-**사용해 보기:** 설정 › 키보드
+**그 밖의 새 기능**
+
+- ‘트랙패드에서 가운데 클릭’: 웹사이트 버전에서 세 손가락으로 탭합니다.
+- ‘앱 종료’와 ‘윈도우 닫기’는 키가 하는 일을 그림으로 보여 줍니다.
+- ⇧⌘.가 이제 ‘숨김 파일 보기’ 줄 안에 바로 있습니다.
+- 설정 사이드바에 그룹 이름이 생겼습니다.
+- 플레이어(웹사이트 버전): QuickTime Player와 같은 단축키, 휠로 음량 조절, 재생 속도, 이어 보기.
+
+**사용해 보기:** 설정 › 키보드, 설정 › 마우스
 
 **수정 사항**
 

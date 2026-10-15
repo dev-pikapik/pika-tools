@@ -126,7 +126,8 @@
 "Quit app" = "アプリを終了";
 "Close window" = "ウインドウを閉じる";
 "Only with all three keys" = "3つのキーをすべて押したときだけ";
-"Works as usual" = "通常どおり";
+"Turn on to avoid quitting by accident" = "誤って終了しないようにするには、オンにしてください";
+"Turn on to avoid closing by accident" = "誤ってウインドウを閉じないようにするには、オンにしてください";
 "quit, close, command, accidental, shortcut" = "終了, 閉じる, コマンド, 誤操作, ショートカット";
 "Quit when the last window closes" = "最後のウインドウを閉じたら終了";
 "Closing an app’s last window quits the app. Finder stays open." = "アプリの最後のウインドウを閉じるとアプリも終了します。Finderは終了しません。";
@@ -170,8 +171,8 @@
 "Tracking speed" = "軌跡の速さ";
 "Side buttons go back and forward" = "サイドボタンで戻る/進む";
 "Swap the side buttons" = "サイドボタンを入れ替える";
-"Button 4 goes back, button 5 goes forward" = "ボタン4で戻る、ボタン5で進む";
-"Button 4 goes forward, button 5 goes back" = "ボタン4で進む、ボタン5で戻る";
+"Rear button goes back, front button goes forward" = "後ろのボタンで戻る、前のボタンで進む";
+"Rear button goes forward, front button goes back" = "後ろのボタンで進む、前のボタンで戻る";
 "linear, mouse acceleration, sensitivity" = "リニア, マウスの加速, 感度";
 "pointer speed, sensitivity, fast, slow" = "ポインタの速度, 感度, 速い, 遅い";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "ボタン4と5, ブラウザ, ナビゲーション, 親指ボタン";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "このファイルは読み込めません";
 "It isn’t a pikapik settings file, or it’s damaged." = "pikapikの設定ファイルではないか、ファイルが壊れています。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "同期のために設定をiCloud Driveに保存できるようにします";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "マウスのボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "マウスの2つのサイドボタンで戻る/進む。トラックパッドのスワイプと同じです。";
 "Like a trackpad swipe" = "トラックパッドのスワイプと同じ";
 "Repeat a held key" = "キーを押し続けて連続入力";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "キーを押し続けると、アクセントメニューを開かずに文字が繰り返されます。開いているアプリは再起動すると反映されます。";
@@ -1101,7 +1102,7 @@
 "Remote Management" = "リモートマネージメント";
 "AirPlay Receiver" = "AirPlayレシーバー";
 "Retype words you typed in the wrong language" = "間違った言語で入力した単語を入力し直す";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "間違ったレイアウトで入力した単語を正しいレイアウトで入力し直し、レイアウトも切り替えます。";
+"And the keyboard switches to the right language" = "キーボードも正しい言語に切り替わります";
 "Fixed when you press Space" = "スペースを押すと修正";
 "Press %@ to fix" = "%@を押すと修正";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "修正の直後に%@を押すと元に戻ります。その単語は以後修正されません。";
@@ -1171,7 +1172,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "「ライブラリ」などの隠しファイルやフォルダが、Finderとデスクトップに薄く表示されます。Finderで⇧⌘. を押したときと同じです。変更を反映するため、Finderがいったん再起動して、ウインドウとタブを開き直します。Finderがファイルをコピー中または移動中のときは、終わるまで待ってから再起動します。";
 "Turn off “On Desktop”" = "「デスクトップに」をオフにします";
 "Or hide them in System Settings" = "またはシステム設定で隠す";
-"Press these keys in Finder, and again to hide them" = "Finderでこのキーを押すと表示され、もう一度押すと隠れます";
+"Press in Finder to show or hide" = "Finderで押すと表示/非表示を切り替えます";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "デスクトップ, アイコン, ファイル, フォルダ, 片付け, 隠す, プレゼンテーション, 画面共有, 録画, スクリーンショット, ステージマネージャ";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隠し, 非表示, ドットファイル, システムファイル, ライブラリ, すべてのファイルを表示, Command Shift ピリオド";
 "Brightness" = "明るさ";
@@ -1269,6 +1270,8 @@
 "Info" = "情報";
 "Another copy of pikapik is in charge" = "別のpikapikのコピーが管理しています";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "このコピーはMacを変更しません。もう一方のコピーが終了すると、このコピーが引き継ぎます。";
+"Mac App Store version %@" = "Mac App Store版 %@";
+"Website version %@" = "Webサイト版 %@";
 "Make This Copy the Main One" = "このコピーをメインにする";
 "Audio" = "音声";
 "Subtitles" = "字幕";

@@ -126,7 +126,8 @@
 "Quit app" = "Quit app";
 "Close window" = "Close window";
 "Only with all three keys" = "Only with all three keys";
-"Works as usual" = "Works as usual";
+"Turn on to avoid quitting by accident" = "Turn on to avoid quitting by accident";
+"Turn on to avoid closing by accident" = "Turn on to avoid closing by accident";
 "quit, close, command, accidental, shortcut" = "quit, close, command, accidental, shortcut";
 "Quit when the last window closes" = "Quit when the last window closes";
 "Closing an app’s last window quits the app. Finder stays open." = "Closing an app’s last window quits the app. Finder stays open.";
@@ -170,8 +171,8 @@
 "Tracking speed" = "Tracking speed";
 "Side buttons go back and forward" = "Side buttons go back and forward";
 "Swap the side buttons" = "Swap the side buttons";
-"Button 4 goes back, button 5 goes forward" = "Button 4 goes back, button 5 goes forward";
-"Button 4 goes forward, button 5 goes back" = "Button 4 goes forward, button 5 goes back";
+"Rear button goes back, front button goes forward" = "Rear button goes back, front button goes forward";
+"Rear button goes forward, front button goes back" = "Rear button goes forward, front button goes back";
 "linear, mouse acceleration, sensitivity" = "linear, mouse acceleration, sensitivity";
 "pointer speed, sensitivity, fast, slow" = "pointer speed, sensitivity, fast, slow";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "buttons 4 and 5, browser, navigation, thumb buttons";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "This file can’t be imported";
 "It isn’t a pikapik settings file, or it’s damaged." = "It isn’t a pikapik settings file, or it’s damaged.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Lets the app keep your settings in iCloud Drive to sync them";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Mouse buttons 4 and 5 go back and forward, like a trackpad swipe.";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "The two side buttons of the mouse go back and forward, like a trackpad swipe.";
 "Like a trackpad swipe" = "Like a trackpad swipe";
 "Repeat a held key" = "Repeat a held key";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply.";
@@ -1101,7 +1102,7 @@
 "Remote Management" = "Remote Management";
 "AirPlay Receiver" = "AirPlay Receiver";
 "Retype words you typed in the wrong language" = "Retype words you typed in the wrong language";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "A word typed in the wrong layout is retyped in the right one, and the layout switches.";
+"And the keyboard switches to the right language" = "And the keyboard switches to the right language";
 "Fixed when you press Space" = "Fixed when you press Space";
 "Press %@ to fix" = "Press %@ to fix";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "Press %@ right after a fix to undo it. That word won’t be fixed again.";
@@ -1171,7 +1172,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done.";
 "Turn off “On Desktop”" = "Turn off “On Desktop”";
 "Or hide them in System Settings" = "Or hide them in System Settings";
-"Press these keys in Finder, and again to hide them" = "Press these keys in Finder, and again to hide them";
+"Press in Finder to show or hide" = "Press in Finder to show or hide";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period";
 "Brightness" = "Brightness";
@@ -1269,6 +1270,8 @@
 "Info" = "Info";
 "Another copy of pikapik is in charge" = "Another copy of pikapik is in charge";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "This copy changes nothing on your Mac and takes over when the other copy quits.";
+"Mac App Store version %@" = "Mac App Store version %@";
+"Website version %@" = "Website version %@";
 "Make This Copy the Main One" = "Make This Copy the Main One";
 "Audio" = "Audio";
 "Subtitles" = "Subtitles";
