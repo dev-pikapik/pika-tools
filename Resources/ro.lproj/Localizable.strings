@@ -18,7 +18,8 @@
 "All set" = "Totul e gata";
 "pikapik needs two permissions" = "pikapik are nevoie de două permisiuni";
 "Both permissions are on and every tool is working." = "Ambele permisiuni sunt activate și toate instrumentele funcționează.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Ambele permisiuni sunt activate. Unele instrumente au nevoie și de o permisiune din lista de mai jos.";
+"Some tools also need a permission from the list below." = "Unele instrumente au nevoie și de o permisiune din lista de mai jos.";
+"Both permissions are on" = "Ambele permisiuni sunt activate";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Fără ele, macOS nu permite aplicației să vadă sau să modifice clicurile și tastele. Deschide Configurări sistem › Confidențialitate și securitate și activează pikapik în aceste două liste:";
 "Permissions for some tools" = "Permisiuni pentru unele instrumente";
 "Only some tools need these permissions. Everything else works without them." = "Doar unele instrumente au nevoie de aceste permisiuni. Restul funcționează și fără ele.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Permite aplicației să găsească permisiunile rămase de la aplicații șterse";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS îți permite să le oprești doar din Configurări sistem. Butonul deschide lista potrivită, unde oprești pikapik.";
 "Needs a permission. Click to allow it." = "Are nevoie de o permisiune. Dă clic pentru a o permite.";
-"Grey tools need a permission. Click one to allow it." = "Instrumentele gri au nevoie de o permisiune. Dă clic pe unul pentru a o permite.";
 "Turn off %@?" = "Stingi %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik va reporni, iar instrumentele care au nevoie de ea vor deveni gri până o permiți din nou.";
 "Open" = "Deschide";
@@ -57,7 +57,7 @@
 "Updates" = "Actualizări";
 "Check for updates automatically" = "Caută automat actualizări";
 "Check Now" = "Verifică acum";
-"Small fixes for the keyboard, mouse and sleep" = "Mici remedieri pentru tastatură, mouse și repaus";
+"Small tools that make your Mac nicer to use" = "Instrumente mici care fac Mac-ul mai plăcut de folosit";
 "What’s New" = "Noutăți";
 "Report a Problem" = "Raportează o problemă";
 "License (MIT)" = "Licență (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Nelimitat";
 "Keep your Mac awake" = "Menține Mac-ul activ";
 "Duration" = "Durată";
-"Until %@" = "Până la %@";
+"If turned on now, ends %@" = "Dacă îl pornești acum, se termină: %@";
 "Days" = "Zile";
 "Hours" = "Ore";
 "Minutes" = "Minute";
@@ -143,7 +143,7 @@
 "Main display" = "Afișaj principal";
 "Click the display you want, then choose “Main display” in “Use as”" = "Faceți clic pe ecranul dorit, apoi alegeți „Afișaj principal” la „Utilizați ca”";
 "primary, main screen, Displays settings" = "primar, monitor principal, configurări Afișaje";
-"Fixes for the Dock" = "Remedieri pentru Dock";
+"Hide apps with a click and keep the Dock on one display" = "Ascunde aplicații cu un clic și ține Dock-ul pe un singur ecran";
 "Dock, display, monitor, screen, jump, move" = "Dock, ecran, monitor, afișaj, sare, mută";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Fă clic pe pictograma aplicației în care ești ca s-o ascunzi. Fă clic din nou ca s-o readuci.";
 "Click again to bring it back" = "Fă clic din nou ca s-o readuci";
@@ -300,16 +300,16 @@
 "Same settings on all your Macs" = "Aceleași setări pe toate Mac-urile tale";
 "Slower" = "Mai lent";
 "Switch language" = "Schimbă limba";
-"The dot is your Mac’s own speed" = "Punctul e viteza proprie a Mac-ului";
+"The dot marks your Mac’s normal speed" = "Punctul arată viteza normală a Mac-ului";
 "The dot marks the default" = "Punctul marchează valoarea implicită";
 "Then paste to move them" = "Apoi lipirea le mută";
-"Your Mac stays awake until you quit pikapik" = "Mac-ul rămâne activ până închizi pikapik";
+"Keep your Mac from falling asleep" = "Împiedică adormirea Mac-ului";
 "macOS will ask for your administrator password." = "macOS va cere parola de administrator.";
 "Lines for apps, pixels for games" = "Rânduri pentru aplicații, pixeli pentru jocuri";
 "Add the Open URLs action in Shortcuts, with a link." = "În Comenzi rapide, adaugă acțiunea Deschide URL-uri cu un link.";
-"Fixes for Finder" = "Remedieri pentru Finder";
-"Fixes for the keyboard" = "Remedieri pentru tastatură";
-"Fixes for the mouse" = "Remedieri pentru maus";
+"Create, convert and compress files right in Finder" = "Creează, convertește și comprimă fișiere direct în Finder";
+"Switch language, fix wrong layout, Home and End" = "Schimbă limba, corectează aranjamentul greșit, Home și End";
+"Scrolling, side buttons and pointer speed" = "Derulare, butoane laterale și viteza cursorului";
 "Fixes for windows and quitting apps" = "Remedieri pentru ferestre și închiderea aplicațiilor";
 "Lets the Mac sleep before the battery runs out" = "Permite Mac-ului să intre din nou în repaus înainte să se descarce bateria";
 "Home and End go to the start and end of a line" = "Home și End la începutul și sfârșitul rândului";
@@ -338,7 +338,7 @@
 "Open your game, and it shows up here" = "Deschide jocul și va apărea aici";
 "Here’s what’s in your Dock. Click your game to add it" = "Aici e tot ce ai în Dock. Fă clic pe joc ca să-l adaugi";
 "You can also drag a game here from Finder" = "Poți trage un joc aici și din Finder";
-"Not a Game" = "Nu e joc";
+"Ignore" = "Ignoră";
 "Looks like a game" = "Pare un joc";
 "game, games, gaming, play, Steam, full screen" = "joc, jocuri, gaming, a juca, Steam, ecran complet";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mouse, cursor, Dock, bara de meniu, colțuri active, margini, al doilea ecran";
@@ -354,6 +354,7 @@
 "Speed Test" = "Viteza internetului";
 "How fast your internet is right now" = "Cât de rapid e internetul tău acum";
 "Check Speed" = "Verifică viteza";
+"Press Check Speed to find out" = "Apasă „Verifică viteza” ca să afli";
 "Check" = "Verifică";
 "Getting ready…" = "Mă pregătesc…";
 "Checking download…" = "Verific descărcarea…";
@@ -555,8 +556,8 @@
 "Psst, version %@ is out! Click me." = "Pst, a apărut versiunea %@! Faceți clic pe mine.";
 "Restart Finder once to bring back the right-click items" = "Repornește Finder o dată ca să revină opțiunile de la clic dreapta";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Aici e ce ai în Dock și ce e deschis acum. Fă clic pe o aplicație ca s-o adaugi sau trage-o aici din Finder";
-"Keep running after Quit" = "Rămâne activ în fundal după Ieși";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "„Ieși” închide ferestrele, dar scurtăturile, „Menține activ” și animăluțul continuă să funcționeze. Ține apăsat Option (⌥) ca să ieși complet";
+"Stay in the background after Quit" = "Rămâne activ în fundal după Ieși";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Scurtăturile și „Menține activ” continuă să funcționeze. Ține apăsat Option (⌥) ca să ieși complet";
 "Quit Completely" = "Ieși complet";
 "pikapik keeps working in the background" = "pikapik continuă să funcționeze în fundal";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Scurtăturile, „Menține activ” și animăluțul rămân pornite. Deschide din nou pikapik ca să-i readuci pictograma în bara de meniu. Ca să ieși complet, ține apăsat Option (⌥) când alegi „Ieși”.";
@@ -976,6 +977,8 @@
 "Running on battery" = "Rulează pe baterie";
 "Your Mac paused charging to protect the battery" = "Mac-ul a întrerupt încărcarea ca să protejeze bateria";
 "The power adapter can’t keep up, so the battery is helping" = "Adaptorul nu face față, așa că bateria ajută";
+"This Mac has no battery" = "Acest Mac nu are baterie";
+"It runs on power from the wall, so there is nothing to show" = "Funcționează direct de la priză, așa că nu e nimic de arătat";
 "Battery Health" = "Stare sănătate baterie";
 "Condition" = "Stare";
 "Normal" = "Normală";
@@ -1048,8 +1051,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Alege o singură dată folderul tău principal, ca pikapik să poată salva fișiere lângă ale tale și să vadă sarcinile tale din fundal.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "articole de autentificare, deschide la autentificare, agenți, servicii, daemoni, pornire, pornire automată, ajutoare, rulează, fundal, resturi, oprește, dezactivează";
 "Ports" = "Porturi";
-"Which programs have taken ports on this Mac" = "Ce programe ocupă porturi pe acest Mac";
+"Numbered doors that programs use to talk to the network" = "Uși numerotate prin care programele vorbesc cu rețeaua";
+"Only one program fits at a door" = "Pe o ușă încape un singur program";
 "Port or program" = "Port sau program";
+"Type a number, like 3000" = "Scrie un număr, de exemplu 3000";
 "Free a port" = "Eliberează un port";
 "Port %@ is free" = "Portul %@ e liber";
 "Port %@ is taken by macOS or another user" = "Portul %@ e ocupat de macOS sau de alt utilizator";
@@ -1058,9 +1063,11 @@
 "Clear" = "Șterge";
 "No programs found" = "Niciun program găsit";
 "None of your programs has taken a port" = "Niciunul dintre programele tale nu ocupă vreun port";
-"Your programs" = "Programele tale";
-"macOS and other users" = "macOS și alți utilizatori";
+"Nothing is using a door right now. That is normal." = "Niciun program nu folosește o ușă acum. E normal.";
+"Programs you started" = "Programe pornite de tine";
+"Not yours: leave these alone" = "Nu sunt ale tale: lasă-le în pace";
 "Free Up" = "Eliberează";
+"How to Free It" = "Cum îl eliberezi";
 "Part of macOS" = "Parte din macOS";
 "System service" = "Serviciu de sistem";
 "Started by another user" = "Pornit de alt utilizator";
@@ -1088,7 +1095,7 @@
 "Screen Sharing" = "Partajare ecran";
 "Remote Management" = "Administrare la distanță";
 "AirPlay Receiver" = "Receptor AirPlay";
-"Fix words typed in the wrong layout" = "Corectează cuvintele scrise în aranjamentul greșit";
+"Retype words you typed in the wrong language" = "Retastează cuvintele scrise în limba greșită";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Un cuvânt scris în aranjamentul greșit e rescris în cel corect, iar aranjamentul se schimbă.";
 "Fixed when you press Space" = "Corectat când apeși Spațiu";
 "Press %@ to fix" = "Apasă %@ ca să corectezi";
@@ -1114,7 +1121,7 @@
 "App Volume" = "Volumul aplicațiilor";
 "Works with any app that plays sound" = "Funcționează cu orice aplicație care redă sunet";
 "Lower or mute any app without touching the others." = "Redu volumul sau oprește sunetul oricărei aplicații, fără să le afectezi pe celelalte.";
-"Each app gets its own volume." = "Fiecare aplicație are propriul volum.";
+"Each app gets its own volume" = "Fiecare aplicație are propriul volum";
 "No apps are playing sound" = "Nicio aplicație nu redă sunet";
 "Mute" = "Fără sunet";
 "Unmute" = "Cu sunet";

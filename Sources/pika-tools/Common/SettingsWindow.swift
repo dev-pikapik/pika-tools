@@ -73,7 +73,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .fans: .teal
         case .pet, .temperatures: .red
         case .speedTest, .battery: .green
-        case .ports: .mint
+        case .ports: .blue
         }
     }
 
@@ -119,7 +119,7 @@ struct SettingsItem: Identifiable {
     static var all: [SettingsItem] {
         #if APPSTORE
         let hidden = [
-            String(localized: "Keep running after Quit"), String(localized: "Repeat a held key"),
+            String(localized: "Stay in the background after Quit"), String(localized: "Repeat a held key"),
             String(localized: "Tracking speed"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
             String(localized: "Fan control"), String(localized: "Full Disk Access"),
@@ -149,7 +149,7 @@ struct SettingsItem: Identifiable {
     private static var allItems: [SettingsItem] {
         [
             SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
-            SettingsItem(tab: .general, title: String(localized: "Keep running after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
+            SettingsItem(tab: .general, title: String(localized: "Stay in the background after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
             SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
             SettingsItem(tab: .general, title: String(localized: "Settings file"), synonyms: "backup, export, import, restore, JSON"),
@@ -180,7 +180,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End work as usual in these apps"), synonyms: "exceptions, exclude, list, terminal, virtual machine, remote desktop"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Fix words typed in the wrong layout"), synonyms: "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Retype words you typed in the wrong language"), synonyms: "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services"),
             SettingsItem(tab: .keyboard, title: String(localized: "Fix words as you type"), synonyms: "automatic, auto, Space, Return, layout"),
             SettingsItem(tab: .keyboard, title: String(localized: "Fix the last word or selected text"), synonyms: "shortcut, undo, convert, selection, layout"),
             SettingsItem(tab: .keyboard, title: String(localized: "Don’t fix text in these apps"), synonyms: "exceptions, exclude, list, layout"),
@@ -416,9 +416,15 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
+                    Section { rows([.background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
+                    Section { rows([.uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -536,17 +542,17 @@ private struct SettingsView: View {
         case .temperatures: TemperatureSettings()
         case .speedTest: SpeedTestSettings()
         case .ports: PortsPage()
-        case .sound: ToolsSettings(tab: .sound, text: String(localized: "Each app gets its own volume."))
-        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
-        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
+        case .sound: ToolsSettings(tab: .sound, text: String(localized: "Each app gets its own volume"))
+        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Switch language, fix wrong layout, Home and End"))
+        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Scrolling, side buttons and pointer speed"))
         case .windows:
             ToolsSettings(
                 tab: .windows,
                 text: String(localized: "Fixes for windows and quitting apps"),
                 headings: ["window-zoom": "Size", "quit-on-close": "Closing and Quitting"]
             )
-        case .dock: ToolsSettings(tab: .dock, text: String(localized: "Fixes for the Dock"))
-        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
+        case .dock: ToolsSettings(tab: .dock, text: String(localized: "Hide apps with a click and keep the Dock on one display"))
+        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Create, convert and compress files right in Finder"))
         case .animations:
             #if APPSTORE
             AnimationLinksPage()
@@ -797,9 +803,9 @@ private struct GeneralSettings: View {
                 .settingAnchor(String(localized: "Open at Login"))
                 #if !APPSTORE
                 Toggle(isOn: $keepRunning) {
-                    RowLabel(Text("Keep running after Quit"), Text("Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely"))
+                    RowLabel(Text("Stay in the background after Quit"), Text("Shortcuts and Keep Awake keep working. Hold Option to quit completely"))
                 }
-                .settingAnchor(String(localized: "Keep running after Quit"))
+                .settingAnchor(String(localized: "Stay in the background after Quit"))
                 #endif
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
@@ -1112,7 +1118,7 @@ private struct AboutView: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
+            SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small tools that make your Mac nicer to use"), appIcon: icon)
 
             #if APPSTORE
             Section { LabeledContent { EmptyView() } label: { RowLabel(Text("Version \(version)")) } }

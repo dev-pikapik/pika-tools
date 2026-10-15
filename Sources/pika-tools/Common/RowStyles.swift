@@ -164,7 +164,7 @@ extension View {
 }
 
 struct AppRowLabel<Trailing: View>: View {
-    let icon: NSImage
+    let icon: NSImage?
     let name: String
     var running = false
     let byline: String
@@ -173,10 +173,14 @@ struct AppRowLabel<Trailing: View>: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            Image(nsImage: icon)
-                .resizable()
-                .frame(width: 28, height: 28)
-                .accessibilityHidden(true)
+            if let icon {
+                Image(nsImage: icon)
+                    .resizable()
+                    .frame(width: 28, height: 28)
+                    .accessibilityHidden(true)
+            } else {
+                SectionIcon(symbol: "terminal", color: .gray, size: 28)
+            }
             VStack(alignment: .leading, spacing: 1) {
                 HStack(spacing: 6) {
                     Text(name)

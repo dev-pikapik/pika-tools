@@ -18,7 +18,8 @@
 "All set" = "Her şey hazır";
 "pikapik needs two permissions" = "pikapik’in iki izne ihtiyacı var";
 "Both permissions are on and every tool is working." = "İki izin de açık ve tüm araçlar çalışıyor.";
-"Both permissions are on. Some tools also need a permission from the list below." = "İki izin de açık. Bazı araçlar aşağıdaki listeden bir izne de ihtiyaç duyar.";
+"Some tools also need a permission from the list below." = "Bazı araçlar aşağıdaki listeden bir izne de ihtiyaç duyar.";
+"Both permissions are on" = "İki izin de açık";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bunlar olmadan macOS, uygulamanın tıklamaları ve tuşları görmesine veya değiştirmesine izin vermez. Sistem Ayarları › Gizlilik ve Güvenlik’i açın ve bu iki listede pikapik’i etkinleştirin:";
 "Permissions for some tools" = "Bazı araçlar için izinler";
 "Only some tools need these permissions. Everything else works without them." = "Bu izinlere yalnızca bazı araçlar ihtiyaç duyar. Geri kalan her şey izinsiz de çalışır.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Uygulamanın silinen uygulamalardan kalan izinleri bulmasını sağlar";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS bunları yalnızca Sistem Ayarları’nda kapatmanıza izin verir. Düğme doğru listeyi açar; pikapik’i orada kapatırsınız.";
 "Needs a permission. Click to allow it." = "İzin gerekiyor. İzin vermek için tıklayın.";
-"Grey tools need a permission. Click one to allow it." = "Gri araçlar için izin gerekir. İzin vermek için birine tıklayın.";
 "Turn off %@?" = "%@ kapatılsın mı?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik yeniden başlayacak ve buna ihtiyaç duyan araçlar, yeniden izin verene kadar gri olacak.";
 "Open" = "Aç";
@@ -57,7 +57,7 @@
 "Updates" = "Güncellemeler";
 "Check for updates automatically" = "Güncellemeleri otomatik olarak denetle";
 "Check Now" = "Şimdi Denetle";
-"Small fixes for the keyboard, mouse and sleep" = "Klavye, fare ve uyku için küçük düzeltmeler";
+"Small tools that make your Mac nicer to use" = "Mac’i kullanmayı daha hoş yapan küçük araçlar";
 "What’s New" = "Yenilikler";
 "Report a Problem" = "Sorun Bildir";
 "License (MIT)" = "Lisans (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Süresiz";
 "Keep your Mac awake" = "Mac’i uyanık tut";
 "Duration" = "Süre";
-"Until %@" = "Bitiş: %@";
+"If turned on now, ends %@" = "Şimdi açılırsa şu zaman biter: %@";
 "Days" = "Gün";
 "Hours" = "Saat";
 "Minutes" = "Dakika";
@@ -143,7 +143,7 @@
 "Main display" = "Ana ekran";
 "Click the display you want, then choose “Main display” in “Use as”" = "İstediğiniz ekranı tıklayın, sonra “Şöyle Kullan” menüsünden “Ana ekran” seçeneğini seçin";
 "primary, main screen, Displays settings" = "birincil, ana monitör, Ekranlar ayarları";
-"Fixes for the Dock" = "Dock için düzeltmeler";
+"Hide apps with a click and keep the Dock on one display" = "Uygulamaları tek tıkla gizleyin, Dock’u tek ekranda tutun";
 "Dock, display, monitor, screen, jump, move" = "Dock, ekran, monitör, görüntü, zıplıyor, taşı";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Kullandığınız uygulamanın simgesini tıklayarak onu gizleyin. Geri getirmek için yeniden tıklayın.";
 "Click again to bring it back" = "Geri getirmek için yeniden tıklayın";
@@ -300,16 +300,16 @@
 "Same settings on all your Macs" = "Tüm Mac’lerinizde aynı ayarlar";
 "Slower" = "Daha yavaş";
 "Switch language" = "Dili değiştir";
-"The dot is your Mac’s own speed" = "Nokta, Mac’inizin kendi hızıdır";
+"The dot marks your Mac’s normal speed" = "Nokta, Mac’inizin normal hızını gösterir";
 "The dot marks the default" = "Nokta, varsayılan değeri gösterir";
 "Then paste to move them" = "Sonra yapıştırmak onları taşır";
-"Your Mac stays awake until you quit pikapik" = "pikapik’ten çıkana kadar Mac’iniz uyanık kalır";
+"Keep your Mac from falling asleep" = "Mac’inizin uykuya dalmasını engelleyin";
 "macOS will ask for your administrator password." = "macOS yönetici parolanızı isteyecek.";
 "Lines for apps, pixels for games" = "Uygulamalar için satır, oyunlar için piksel";
 "Add the Open URLs action in Shortcuts, with a link." = "Kestirmeler’de bir bağlantıyla “URL’leri Aç” eylemini ekleyin.";
-"Fixes for Finder" = "Finder için düzeltmeler";
-"Fixes for the keyboard" = "Klavye için düzeltmeler";
-"Fixes for the mouse" = "Fare için düzeltmeler";
+"Create, convert and compress files right in Finder" = "Dosyaları doğrudan Finder’da oluşturun, dönüştürün ve sıkıştırın";
+"Switch language, fix wrong layout, Home and End" = "Dil değiştirme, yanlış düzeni düzeltme, Home ve End";
+"Scrolling, side buttons and pointer speed" = "Kaydırma, yan düğmeler ve işaretçi hızı";
 "Fixes for windows and quitting apps" = "Pencereler ve uygulamalardan çıkış için düzeltmeler";
 "Lets the Mac sleep before the battery runs out" = "Pil bitmeden Mac’in yeniden uyumasına izin verir";
 "Home and End go to the start and end of a line" = "Home ve End satır başına ve sonuna gider";
@@ -338,7 +338,7 @@
 "Open your game, and it shows up here" = "Oyununuzu açın, burada görünecek";
 "Here’s what’s in your Dock. Click your game to add it" = "Dock’unuzdaki her şey burada. Eklemek için oyununuza tıklayın";
 "You can also drag a game here from Finder" = "Bir oyunu buraya Finder’dan da sürükleyebilirsiniz";
-"Not a Game" = "Oyun Değil";
+"Ignore" = "Yoksay";
 "Looks like a game" = "Oyuna benziyor";
 "game, games, gaming, play, Steam, full screen" = "oyun, oyunlar, gaming, oynamak, Steam, tam ekran";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "fare, imleç, Dock, menü çubuğu, etkin köşeler, kenarlar, ikinci ekran";
@@ -354,6 +354,7 @@
 "Speed Test" = "Hız Testi";
 "How fast your internet is right now" = "İnternetiniz şu anda ne kadar hızlı";
 "Check Speed" = "Hızı Ölç";
+"Press Check Speed to find out" = "Öğrenmek için “Hızı Ölç”e basın";
 "Check" = "Ölç";
 "Getting ready…" = "Hazırlanıyor…";
 "Checking download…" = "İndirme ölçülüyor…";
@@ -555,8 +556,8 @@
 "Psst, version %@ is out! Click me." = "Pişt, %@ sürümü çıktı! Bana tıklayın.";
 "Restart Finder once to bring back the right-click items" = "Sağ tık öğelerinin geri gelmesi için Finder’ı bir kez yeniden başlatın";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Dock’unuzdakiler ve şu an açık olanlar burada. Eklemek için bir uygulamaya tıklayın ya da Finder’dan buraya sürükleyin";
-"Keep running after Quit" = "Çıktıktan sonra arka planda çalış";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "“Çık” pencereleri kapatır, ama kısayollar, “Uyanık Tut” ve evcil dost çalışmaya devam eder. Tamamen çıkmak için Option (⌥) tuşunu basılı tut";
+"Stay in the background after Quit" = "Çıktıktan sonra arka planda çalış";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Kısayollar ve “Uyanık Tut” çalışmaya devam eder. Tamamen çıkmak için Option (⌥) tuşunu basılı tutun";
 "Quit Completely" = "Tamamen Çık";
 "pikapik keeps working in the background" = "pikapik arka planda çalışmaya devam ediyor";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Kısayollar, “Uyanık Tut” ve evcil dost açık kalır. Menü çubuğundaki simgeyi geri getirmek için pikapik’i yeniden aç. Tamamen çıkmak için “Çık”ı seçerken Option (⌥) tuşunu basılı tut.";
@@ -976,6 +977,8 @@
 "Running on battery" = "Pille çalışıyor";
 "Your Mac paused charging to protect the battery" = "Mac’iniz pili korumak için şarj etmeyi duraklattı";
 "The power adapter can’t keep up, so the battery is helping" = "Güç adaptörü yetmiyor, bu yüzden pil de destek veriyor";
+"This Mac has no battery" = "Bu Mac’te pil yok";
+"It runs on power from the wall, so there is nothing to show" = "Doğrudan prizden çalışır, bu yüzden gösterilecek bir şey yok";
 "Battery Health" = "Pil Sağlığı";
 "Condition" = "Durum";
 "Normal" = "Normal";
@@ -1048,8 +1051,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik’in dosyaları seninkilerin yanına kaydedebilmesi ve arka plan görevlerini görebilmesi için ana klasörünü bir kez seç.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "giriş öğeleri, girişte aç, aracılar, servisler, arka plan hizmetleri, başlangıç, otomatik başlatma, yardımcılar, çalışıyor, arka plan, artıklar, kapat";
 "Ports" = "Portlar";
-"Which programs have taken ports on this Mac" = "Bu Mac’te hangi programlar port kullanıyor";
+"Numbered doors that programs use to talk to the network" = "Programların ağla konuşmak için kullandığı numaralı kapılar";
+"Only one program fits at a door" = "Her kapıdan yalnızca tek program geçer";
 "Port or program" = "Port veya program";
+"Type a number, like 3000" = "Bir numara yazın, örneğin 3000";
 "Free a port" = "Bir portu serbest bırak";
 "Port %@ is free" = "%@ portu boş";
 "Port %@ is taken by macOS or another user" = "%@ portu macOS veya başka bir kullanıcı tarafından kullanılıyor";
@@ -1058,9 +1063,11 @@
 "Clear" = "Temizle";
 "No programs found" = "Program bulunamadı";
 "None of your programs has taken a port" = "Programlarınızın hiçbiri port kullanmıyor";
-"Your programs" = "Programlarınız";
-"macOS and other users" = "macOS ve diğer kullanıcılar";
+"Nothing is using a door right now. That is normal." = "Şu anda hiçbir program bir kapıyı kullanmıyor. Bu normal.";
+"Programs you started" = "Sizin başlattığınız programlar";
+"Not yours: leave these alone" = "Sizin değil: dokunmayın";
 "Free Up" = "Serbest Bırak";
+"How to Free It" = "Nasıl serbest bırakılır";
 "Part of macOS" = "macOS’in bir parçası";
 "System service" = "Sistem hizmeti";
 "Started by another user" = "Başka bir kullanıcı başlattı";
@@ -1088,7 +1095,7 @@
 "Screen Sharing" = "Ekran Paylaşma";
 "Remote Management" = "Uzaktan Yönetim";
 "AirPlay Receiver" = "AirPlay Alıcı";
-"Fix words typed in the wrong layout" = "Yanlış klavye düzeninde yazılan sözcükleri düzelt";
+"Retype words you typed in the wrong language" = "Yanlış dilde yazılan sözcükleri yeniden yaz";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Yanlış klavye düzeninde yazılan sözcük doğru düzende yeniden yazılır ve düzen değişir.";
 "Fixed when you press Space" = "Boşluk tuşuna basınca düzeltilir";
 "Press %@ to fix" = "Düzeltmek için %@ tuşlarına basın";
@@ -1114,7 +1121,7 @@
 "App Volume" = "Uygulama Sesi";
 "Works with any app that plays sound" = "Ses çalan her uygulamayla çalışır";
 "Lower or mute any app without touching the others." = "Diğerlerine dokunmadan herhangi bir uygulamanın sesini kısın veya kapatın.";
-"Each app gets its own volume." = "Her uygulamanın kendi ses düzeyi vardır.";
+"Each app gets its own volume" = "Her uygulamanın kendi ses düzeyi vardır";
 "No apps are playing sound" = "Şu anda ses çalan uygulama yok";
 "Mute" = "Sessize Al";
 "Unmute" = "Sesi Aç";

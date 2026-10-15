@@ -233,7 +233,7 @@ private struct PointerSettings: View {
                     mark: PointerTool.systemSpeed
                 )
             } label: {
-                RowLabel(Text("Tracking speed"), Text("The dot is your Mac’s own speed"))
+                RowLabel(Text("Tracking speed"), Text("The dot marks your Mac’s normal speed"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Tracking speed"))

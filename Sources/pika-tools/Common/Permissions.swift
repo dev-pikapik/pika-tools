@@ -384,7 +384,7 @@ extension View {
 
 struct PermissionBar: View {
     let permissions: [Permission]
-    var text: LocalizedStringKey = "Grey tools need a permission. Click one to allow it."
+    var text: LocalizedStringKey?
 
     var body: some View {
         let missing = Permission.allCases.filter { permissions.contains($0) && !$0.isGranted }
@@ -392,7 +392,11 @@ struct PermissionBar: View {
             HStack(spacing: 12) {
                 Image(systemName: "lock")
                     .accessibilityHidden(true)
-                Text(text)
+                if let text {
+                    Text(text)
+                } else {
+                    Text(verbatim: missing.map { "\($0.title): \($0.subtitle)" }.joined(separator: "\n"))
+                }
                 Spacer(minLength: 0)
                 Button("Allow") { Permissions.shared.ask(missing) }
             }
@@ -410,14 +414,16 @@ struct PermissionsView: View {
 
     var body: some View {
         let others = Permission.allCases.filter { $0.isShown && $0 != .accessibility && $0 != .inputMonitoring }
-        let allSet = others.allSatisfy(\.isGranted)
+        let othersGranted = others.allSatisfy(\.isGranted)
+        let allSet = othersGranted
             ? String(localized: "Both permissions are on and every tool is working.")
-            : String(localized: "Both permissions are on. Some tools also need a permission from the list below.")
+            : String(localized: "Some tools also need a permission from the list below.")
+        let done = othersGranted ? String(localized: "All set") : String(localized: "Both permissions are on")
         Form {
             #if APPSTORE
             SettingsHeader(
                 tab: .permissions,
-                title: permissions.allGranted ? String(localized: "All set") : String(localized: "Permissions for some tools"),
+                title: permissions.allGranted ? done : String(localized: "Permissions for some tools"),
                 text: permissions.allGranted
                     ? allSet
                     : String(localized: "Only some tools need these permissions. Everything else works without them.")
@@ -425,7 +431,7 @@ struct PermissionsView: View {
             #else
             SettingsHeader(
                 tab: .permissions,
-                title: permissions.allGranted ? String(localized: "All set") : String(localized: "pikapik needs two permissions"),
+                title: permissions.allGranted ? done : String(localized: "pikapik needs two permissions"),
                 text: permissions.allGranted
                     ? allSet
                     : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:")

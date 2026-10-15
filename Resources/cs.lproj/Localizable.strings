@@ -18,7 +18,8 @@
 "All set" = "Vše připraveno";
 "pikapik needs two permissions" = "pikapik potřebuje dvě oprávnění";
 "Both permissions are on and every tool is working." = "Obě oprávnění jsou zapnutá a všechny nástroje fungují.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Obě oprávnění jsou zapnutá. Některé nástroje potřebují ještě oprávnění ze seznamu níže.";
+"Some tools also need a permission from the list below." = "Některé nástroje potřebují ještě oprávnění ze seznamu níže.";
+"Both permissions are on" = "Obě oprávnění jsou zapnutá";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bez nich macOS nedovolí aplikaci vidět ani měnit kliknutí a stisky kláves. Otevřete Nastavení systému › Soukromí a zabezpečení a zapněte pikapik v těchto dvou seznamech:";
 "Permissions for some tools" = "Oprávnění pro některé nástroje";
 "Only some tools need these permissions. Everything else works without them." = "Tato oprávnění potřebují jen některé nástroje. Všechno ostatní funguje i bez nich.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Umožňuje aplikaci najít oprávnění, která zbyla po smazaných aplikacích";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS umožňuje tato oprávnění vypnout jen v Nastavení systému. Tlačítko otevře správný seznam, kde pikapik vypnete.";
 "Needs a permission. Click to allow it." = "Potřebuje oprávnění. Kliknutím ho povolíte.";
-"Grey tools need a permission. Click one to allow it." = "Šedé nástroje potřebují oprávnění. Kliknutím na některý ho povolíte.";
 "Turn off %@?" = "Vypnout %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik se restartuje a nástroje, které to potřebují, zešednou, dokud to znovu nepovolíte.";
 "Open" = "Otevřít";
@@ -57,7 +57,7 @@
 "Updates" = "Aktualizace";
 "Check for updates automatically" = "Automaticky vyhledávat aktualizace";
 "Check Now" = "Zkontrolovat nyní";
-"Small fixes for the keyboard, mouse and sleep" = "Drobná vylepšení klávesnice, myši a spánku";
+"Small tools that make your Mac nicer to use" = "Malé nástroje, díky kterým se Mac používá příjemněji";
 "What’s New" = "Co je nového";
 "Report a Problem" = "Nahlásit problém";
 "License (MIT)" = "Licence (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Neomezeně";
 "Keep your Mac awake" = "Nenechat Mac usnout";
 "Duration" = "Doba trvání";
-"Until %@" = "Do %@";
+"If turned on now, ends %@" = "Při zapnutí teď skončí: %@";
 "Days" = "Dny";
 "Hours" = "Hodiny";
 "Minutes" = "Minuty";
@@ -143,7 +143,7 @@
 "Main display" = "Hlavní monitor";
 "Click the display you want, then choose “Main display” in “Use as”" = "Klikněte na požadovaný displej a v nabídce „Používat jako“ vyberte „Hlavní monitor“";
 "primary, main screen, Displays settings" = "primární, hlavní obrazovka, nastavení Monitory";
-"Fixes for the Dock" = "Opravy pro Dock";
+"Hide apps with a click and keep the Dock on one display" = "Skrývejte aplikace kliknutím a mějte Dock na jednom displeji";
 "Dock, display, monitor, screen, jump, move" = "Dock, displej, monitor, obrazovka, skáče, přeskakuje, přesunout";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klikněte na ikonu aplikace, kterou právě používáte, a skryje se. Dalším kliknutím ji vrátíte.";
 "Click again to bring it back" = "Dalším kliknutím ji vrátíte";
@@ -300,16 +300,16 @@
 "Same settings on all your Macs" = "Stejné nastavení na všech vašich Macích";
 "Slower" = "Pomaleji";
 "Switch language" = "Přepnutí jazyka";
-"The dot is your Mac’s own speed" = "Tečka je vlastní rychlost vašeho Macu";
+"The dot marks your Mac’s normal speed" = "Tečka značí běžnou rychlost vašeho Macu";
 "The dot marks the default" = "Tečka označuje výchozí hodnotu";
 "Then paste to move them" = "Pak je vložení přesune";
-"Your Mac stays awake until you quit pikapik" = "Mac zůstane vzhůru, dokud pikapik neukončíte";
+"Keep your Mac from falling asleep" = "Nedovolí Macu usnout";
 "macOS will ask for your administrator password." = "macOS vás požádá o heslo správce.";
 "Lines for apps, pixels for games" = "Řádky pro aplikace, pixely pro hry";
 "Add the Open URLs action in Shortcuts, with a link." = "V aplikaci Zkratky přidejte akci Otevřít adresy URL s odkazem.";
-"Fixes for Finder" = "Opravy pro Finder";
-"Fixes for the keyboard" = "Opravy pro klávesnici";
-"Fixes for the mouse" = "Opravy pro myš";
+"Create, convert and compress files right in Finder" = "Vytvářejte, převádějte a komprimujte soubory přímo ve Finderu";
+"Switch language, fix wrong layout, Home and End" = "Přepínání jazyka, oprava špatného rozložení, Home a End";
+"Scrolling, side buttons and pointer speed" = "Rolování, boční tlačítka a rychlost ukazatele";
 "Fixes for windows and quitting apps" = "Opravy pro okna a ukončování aplikací";
 "Lets the Mac sleep before the battery runs out" = "Umožní Macu znovu usnout dřív, než se baterie vybije";
 "Home and End go to the start and end of a line" = "Home a End na začátek a konec řádku";
@@ -338,7 +338,7 @@
 "Open your game, and it shows up here" = "Otevřete hru a objeví se tady";
 "Here’s what’s in your Dock. Click your game to add it" = "Tady je všechno, co máte v Docku. Klikněte na hru, abyste ji přidali";
 "You can also drag a game here from Finder" = "Hru sem můžete přetáhnout i z Finderu";
-"Not a Game" = "Není hra";
+"Ignore" = "Ignorovat";
 "Looks like a game" = "Vypadá jako hra";
 "game, games, gaming, play, Steam, full screen" = "hra, hry, hraní, hrát, gaming, Steam, celá obrazovka";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "myš, ukazatel, kurzor, Dock, řádek nabídek, aktivní rohy, okraje, druhý monitor";
@@ -354,6 +354,7 @@
 "Speed Test" = "Test rychlosti";
 "How fast your internet is right now" = "Jak rychlý je váš internet právě teď";
 "Check Speed" = "Změřit rychlost";
+"Press Check Speed to find out" = "Zjistíte to tlačítkem „Změřit rychlost“";
 "Check" = "Změřit";
 "Getting ready…" = "Připravuji…";
 "Checking download…" = "Měřím stahování…";
@@ -555,8 +556,8 @@
 "Psst, version %@ is out! Click me." = "Pst, vyšla verze %@! Klikněte na mě.";
 "Restart Finder once to bring back the right-click items" = "Restartujte Finder jednou a položky z nabídky pravého kliku se vrátí";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Tady je, co máte v Docku a co je právě otevřené. Klikněte na aplikaci, abyste ji přidali, nebo ji sem přetáhněte z Finderu";
-"Keep running after Quit" = "Po ukončení běžet na pozadí";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "„Ukončit“ zavře okna, ale zkratky, „Bez spánku“ a mazlíček dál fungují. Pro úplné ukončení podržte Option (⌥)";
+"Stay in the background after Quit" = "Po ukončení běžet na pozadí";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Zkratky a „Bez spánku“ dál fungují. Pro úplné ukončení podržte Option (⌥)";
 "Quit Completely" = "Úplně ukončit";
 "pikapik keeps working in the background" = "pikapik dál běží na pozadí";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Zkratky, „Bez spánku“ a mazlíček zůstávají zapnuté. Ikonu v řádku nabídek vrátíte tím, že pikapik znovu otevřete. Pro úplné ukončení podržte Option (⌥), když vybíráte „Ukončit“.";
@@ -976,6 +977,8 @@
 "Running on battery" = "Běží na baterii";
 "Your Mac paused charging to protect the battery" = "Mac pozastavil nabíjení, aby ochránil baterii";
 "The power adapter can’t keep up, so the battery is helping" = "Adaptér nestíhá, proto mu baterie pomáhá";
+"This Mac has no battery" = "Tento Mac nemá baterii";
+"It runs on power from the wall, so there is nothing to show" = "Běží ze zásuvky, takže tu není co zobrazit";
 "Battery Health" = "Kondice baterie";
 "Condition" = "Stav";
 "Normal" = "Normální";
@@ -1048,8 +1051,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Vyberte jednou svou domovskou složku, aby pikapik mohl ukládat soubory vedle vašich a vidět vaše úlohy na pozadí.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "položky po přihlášení, otevřít po přihlášení, agenti, služby, démoni, spouštění, automatické spouštění, pomocníci, běží, pozadí, zbytky, vypnout";
 "Ports" = "Porty";
-"Which programs have taken ports on this Mac" = "Které programy na tomto Macu zabírají porty";
+"Numbered doors that programs use to talk to the network" = "Očíslované dveře, kterými programy komunikují se sítí";
+"Only one program fits at a door" = "Do jedněch dveří se vejde jen jeden program";
 "Port or program" = "Port nebo program";
+"Type a number, like 3000" = "Zadejte číslo, třeba 3000";
 "Free a port" = "Uvolnit port";
 "Port %@ is free" = "Port %@ je volný";
 "Port %@ is taken by macOS or another user" = "Port %@ obsadil macOS nebo jiný uživatel";
@@ -1058,9 +1063,11 @@
 "Clear" = "Vymazat";
 "No programs found" = "Žádné programy nenalezeny";
 "None of your programs has taken a port" = "Žádný z vašich programů nezabírá port";
-"Your programs" = "Vaše programy";
-"macOS and other users" = "macOS a ostatní uživatelé";
+"Nothing is using a door right now. That is normal." = "Žádný program teď nepoužívá žádné dveře. To je v pořádku.";
+"Programs you started" = "Programy, které jste spustili vy";
+"Not yours: leave these alone" = "Nejsou vaše: nechte je být";
 "Free Up" = "Uvolnit";
+"How to Free It" = "Jak ho uvolnit";
 "Part of macOS" = "Součást macOS";
 "System service" = "Systémová služba";
 "Started by another user" = "Spustil jiný uživatel";
@@ -1088,7 +1095,7 @@
 "Screen Sharing" = "Sdílení obrazovky";
 "Remote Management" = "Vzdálená správa";
 "AirPlay Receiver" = "Přijímač AirPlay";
-"Fix words typed in the wrong layout" = "Opravovat slova napsaná ve špatném rozložení";
+"Retype words you typed in the wrong language" = "Přepsat slova napsaná ve špatném jazyce";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Slovo napsané ve špatném rozložení se přepíše ve správném a rozložení se přepne.";
 "Fixed when you press Space" = "Opraví se, když stisknete Mezerník";
 "Press %@ to fix" = "Opravíte stisknutím %@";
@@ -1114,7 +1121,7 @@
 "App Volume" = "Hlasitost aplikací";
 "Works with any app that plays sound" = "Funguje s každou aplikací, která přehrává zvuk";
 "Lower or mute any app without touching the others." = "Ztište nebo ztlumte libovolnou aplikaci, aniž byste ovlivnili ostatní.";
-"Each app gets its own volume." = "Každá aplikace má vlastní hlasitost.";
+"Each app gets its own volume" = "Každá aplikace má vlastní hlasitost";
 "No apps are playing sound" = "Žádná aplikace nepřehrává zvuk";
 "Mute" = "Ztlumit";
 "Unmute" = "Zrušit ztlumení";

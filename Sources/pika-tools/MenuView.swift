@@ -155,7 +155,7 @@ struct MenuView: View {
                         .glassCard()
                     }
 
-                    if !permissions.allGranted {
+                    if registry.needsPermission {
                         Button {
                             SettingsWindow.show(.permissions)
                         } label: {
