@@ -5,6 +5,8 @@ cd "$(dirname "$0")/.."
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert Archive Preview"
 MEDIA_EXTENSIONS="MediaReader MediaDecoder"
+PLAYER="$APP/Contents/Helpers/pikapik Player.app"
+PLAYER_SOURCES=(Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift)
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -28,10 +30,11 @@ rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
 [ -n "${APPSTORE:-}" ] || ./scripts/fetch-7zip.sh
-[ -z "$MEDIA_EXTENSIONS" ] || ./scripts/fetch-ffmpeg.sh
+[ -n "${APPSTORE:-}" ] || ./scripts/fetch-ffmpeg.sh
 [ -n "${APPSTORE:-}" ] || /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" Sources/pika-tools/Info.plist)" build/fan-helper.plist >/dev/null
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
 for EXT in $MEDIA_EXTENSIONS; do mkdir -p "$APP/Contents/Extensions/$EXT.appex/Contents/MacOS"; done
+[ -n "${APPSTORE:-}" ] || mkdir -p "$PLAYER/Contents/MacOS" "$PLAYER/Contents/Resources"
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
 SOURCES=()
@@ -47,7 +50,7 @@ if [ -n "${APPSTORE:-}" ]; then
     for f in "${SOURCES[@]}"; do
         case $f in
             */Tools/Uninstaller/AppFootprint.swift) KEPT+=("$f") ;;
-            */Common/Updater.swift|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Windows/DockDisplay*|*/Tools/Uninstaller/*) ;;
+            */Common/Updater.swift|*/Tools/Player/*|*/Common/LeftoverPermissions*.swift|*/Common/SMC.swift|*/Common/FanHelperProtocol.swift|*/Common/FanControl.swift|*/Common/FanSettings.swift|*/Tools/Animations/*|*/Tools/KeyRepeat/*|*/Tools/Mouse/PointerTool.swift|*/Tools/Windows/DockDisplay*|*/Tools/Uninstaller/*) ;;
             *) KEPT+=("$f") ;;
         esac
     done
@@ -74,6 +77,15 @@ for ARCH in arm64 x86_64; do
         -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __info_plist -Xlinker build/fan-helper.plist \
         Helper/FanHelper/main.swift Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/FanHelperProtocol.swift \
         -o "build/fan-helper-$ARCH"
+    [ -n "${APPSTORE:-}" ] || swiftc -O -whole-module-optimization \
+        -module-name Player \
+        -target "$ARCH-apple-macos$MIN_OS" \
+        "${EMIT[@]}" \
+        -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
+        Vendor/ffmpeg/lib/*.dylib -Xlinker -dead_strip_dylibs \
+        -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks \
+        "${PLAYER_SOURCES[@]}" \
+        -o "build/player-$ARCH"
     for EXT in $EXTENSIONS; do
         SHARED=(Extensions/Shared/*.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
@@ -116,6 +128,10 @@ if [ -z "${APPSTORE:-}" ]; then
     lipo -create build/fan-helper-arm64 build/fan-helper-x86_64 -output "$APP/Contents/Library/LaunchServices/fan-helper"
     rm build/fan-helper-arm64 build/fan-helper-x86_64
     cp Vendor/7zip/7zz "$APP/Contents/MacOS/7zz"
+    lipo -create build/player-arm64 build/player-x86_64 -output "$PLAYER/Contents/MacOS/pikapik Player"
+    rm build/player-arm64 build/player-x86_64
+    cp Helper/Player/Info.plist "$PLAYER/Contents/Info.plist"
+    cp -R Resources/*.lproj "$PLAYER/Contents/Resources/"
 fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
@@ -169,8 +185,6 @@ if [ -z "${APPSTORE:-}" ]; then
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
-fi
-if [ -n "$MEDIA_EXTENSIONS" ]; then
     mkdir -p "$APP/Contents/Frameworks"
     cp Vendor/ffmpeg/lib/*.dylib "$APP/Contents/Frameworks/"
     cp Vendor/ffmpeg/License.txt "$RES/FFmpeg License.txt"
@@ -195,6 +209,12 @@ else
     echo "Icon: prebuilt AppIcon.icns"
 fi
 rm -f build/icon-info.plist build/actool.log
+if [ -z "${APPSTORE:-}" ]; then
+    cp "$RES/AppIcon.icns" "$PLAYER/Contents/Resources/"
+    for KEY in CFBundleShortVersionString CFBundleVersion; do
+        /usr/libexec/PlistBuddy -c "Set :$KEY $(/usr/libexec/PlistBuddy -c "Print :$KEY" "$APP/Contents/Info.plist")" "$PLAYER/Contents/Info.plist"
+    done
+fi
 
 sign() {
     if [ "$SIGN_IDENTITY" = "-" ]; then
@@ -241,6 +261,7 @@ elif [ -n "$DEV" ]; then
         ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
         /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.dev.}" -c "Set :EXAppExtensionAttributes:ClassImplementationID ${ID/pika-tools./pika-tools.dev.}" "$PLIST"
     done
+    /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.pesotchi.pika-tools.dev.player" "$PLAYER/Contents/Info.plist"
 fi
 APP_ENTITLEMENTS=()
 for EXT in $EXTENSIONS; do
@@ -248,9 +269,12 @@ for EXT in $EXTENSIONS; do
     [ -n "${APPSTORE:-}" ] && [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" "$EXT" "$APP/Contents/PlugIns/$EXT.appex")"
     sign --entitlements "$ENTITLEMENTS" "$APP/Contents/PlugIns/$EXT.appex"
 done
-if [ -n "$MEDIA_EXTENSIONS" ]; then
+if [ -z "${APPSTORE:-}" ]; then
     sign "$APP"/Contents/Frameworks/*.dylib
     for EXT in $MEDIA_EXTENSIONS; do sign --entitlements "Extensions/$EXT/$EXT.entitlements" "$APP/Contents/Extensions/$EXT.appex"; done
+    cp Helper/Player/Player.entitlements build/player.entitlements
+    [[ "$SIGN_IDENTITY" == "Developer ID"* ]] || /usr/libexec/PlistBuddy -c "Add :com.apple.security.cs.disable-library-validation bool true" build/player.entitlements
+    sign --entitlements build/player.entitlements "$PLAYER"
 fi
 if [ -n "${APPSTORE:-}" ]; then
     ENTITLEMENTS=Resources/AppStore.entitlements
