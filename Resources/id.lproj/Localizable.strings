@@ -1193,11 +1193,15 @@
 "Player" = "Pemutar";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV, dan video lain di jendelanya sendiri";
 "Open Video…" = "Buka video…";
-"Doesn’t change which app opens your videos" = "Tidak mengubah app yang membuka video Anda";
+"Open All in pikapik" = "Buka Semua di pikapik";
+"Restore Previous Apps" = "Pulihkan App Sebelumnya";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS akan bertanya untuk setiap format. Klik “Gunakan pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS akan bertanya untuk setiap format. Klik “Gunakan” setiap kali.";
 "Formats" = "Format";
 "FFmpeg and dav1d Licenses" = "Lisensi FFmpeg dan dav1d";
 "Source Code" = "Kode sumber";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, tonton, putar, pemutar, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "app default, buka dengan, klik dua kali, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Seret video ke sini";
 "Playing, %@ of %@" = "Memutar, %@ dari %@";

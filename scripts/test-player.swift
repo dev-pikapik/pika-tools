@@ -1,9 +1,10 @@
 import AppKit
 import Foundation
+import UniformTypeIdentifiers
 
 @main
 enum TestPlayer {
-    static func main() {
+    static func main() async {
         let cases: [(Double, String)] = [(0, "0:00"), (3.9, "0:03"), (59.99, "0:59"), (60, "1:00"), (605, "10:05"), (3600, "1:00:00"), (3725.5, "1:02:05"), (-4, "0:00"), (.nan, "0:00"), (.infinity, "0:00")]
         for (seconds, text) in cases {
             precondition(PlayerTime.text(seconds) == text, "\(seconds) → \(PlayerTime.text(seconds)), wanted \(text)")
@@ -169,6 +170,115 @@ enum TestPlayer {
             precondition(claimed.contains(ext) || system[ext].map(types.contains) == true, ".\(ext) is in the Settings list but the player does not open it")
         }
         precondition(plist["LSMinimumSystemVersion"] as? String == "14.0")
-        print("every listed format opens in the player, which never takes over as the default app and may only write where you choose: ok")
+        print("every listed format opens in the player, which asks to be only an alternate app and may only write where you choose: ok")
+
+        let videoTypes = PlayerFormats.types
+        precondition(videoTypes.count >= 10 && Set(videoTypes).count == videoTypes.count, "the video types are missing or repeated: \(videoTypes.count)")
+        precondition(videoTypes.contains(.mpeg4Movie) && videoTypes.contains(.quickTimeMovie) && videoTypes.contains(.avi), "the usual video types are not in the list")
+        await checkDefaultApps()
+    }
+
+    static func checkDefaultApps() async {
+        let folder = FileManager.default.temporaryDirectory.appending(path: "pika-default-apps-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: folder) }
+        func app(_ name: String) -> URL {
+            let url = folder.appending(path: "\(name).app")
+            try? FileManager.default.createDirectory(at: url.appending(path: "Contents"), withIntermediateDirectories: true)
+            NSDictionary(dictionary: ["CFBundleIdentifier": "test.\(name)", "CFBundleName": name]).write(to: url.appending(path: "Contents/Info.plist"), atomically: true)
+            return url
+        }
+        let (ours, old, gone, next, fallback) = (app("Ours"), app("Old"), app("Gone"), app("Next"), app("Fallback"))
+        let (a, b, c, d) = (UTType.avi, UTType.mpeg4Movie, UTType.quickTimeMovie, UTType.mpeg2TransportStream)
+
+        let system = FakeSystem(installed: [ours, old, gone, next, fallback])
+        system.candidates = [a.identifier: [old, ours], b.identifier: [gone, next, ours], c.identifier: [ours, next]]
+        let defaults = UserDefaults(suiteName: "pika-default-apps-\(UUID().uuidString)")!
+        let videos = DefaultApps(types: [a, b, c, d], target: ours, previousKey: "previous", system: system, defaults: defaults)
+        precondition(!videos.isOn)
+
+        await videos.set(true).value
+        precondition(videos.isOn && [a, b, c, d].allSatisfy { system.handler(of: $0) == ours }, "every type should go to the player")
+        precondition(defaults.dictionary(forKey: "previous") as? [String: String] == [a.identifier: "test.Old", b.identifier: "test.Gone"], "the old apps are not remembered, or the player itself was")
+        print("turning on remembers each type's old app and gives every type to the player: ok")
+
+        try? FileManager.default.removeItem(at: gone)
+        system.installed.removeAll { $0 == gone }
+        system.candidates[b.identifier]?.removeAll { $0 == gone }
+        await videos.set(false).value
+        precondition(system.handler(of: a) == old, "the remembered app is not back")
+        precondition(system.handler(of: b) == next, "an app that is gone should give way to the next one that opens the type, not to the player")
+        precondition(system.handler(of: c) == ours && system.handler(of: d) == ours, "a type the player already had, or nobody had, must stay as it was")
+        precondition(!videos.isOn && defaults.object(forKey: "previous") == nil)
+        print("turning off returns the old apps, the next one if an app is gone, and leaves types that had no other app: ok")
+
+        system.candidates = [a.identifier: [old, ours]]
+        system.failAfter = 0
+        await videos.set(true).value
+        precondition(system.handler(of: a) == old && !videos.isOn, "a refused change should stop quietly and show the real state")
+        system.failAfter = nil
+        await videos.set(true).value
+        await videos.set(true).value
+        await videos.set(false).value
+        precondition(system.handler(of: a) == old, "turning on twice must not forget the old app")
+        print("a refused change stops quietly, and turning on again keeps the old apps: ok")
+
+        let plain = DefaultApps(types: [a, d], target: ours, previousKey: "plain", fallback: "test.Fallback", system: system, defaults: defaults)
+        await plain.set(true).value
+        await plain.set(false).value
+        precondition(system.handler(of: a) == old && system.handler(of: d) == fallback, "a system app should take a type that had none")
+        print("a system fallback takes the types that had no other app: ok")
+
+        system.candidates = [a.identifier: [old, ours], b.identifier: [next, ours], c.identifier: [next, ours]]
+        let formats = DefaultApps(types: [a, b, c], target: ours, previousKey: "formats", system: system, defaults: defaults)
+        await formats.set(true, for: [a]).value
+        precondition(formats.isOn([a]) && !formats.isOn([b]) && !formats.isOn && formats.app(of: [a]) == ours && formats.app(of: [b]) == next, "one format should change alone")
+        precondition(system.handler(of: b) == next && system.handler(of: c) == next, "the other formats must stay as they were")
+        await formats.set(false, for: [a]).value
+        precondition(system.handler(of: a) == old && defaults.object(forKey: "formats") == nil && formats.app(of: [a]) == old)
+        print("one format changes and returns alone: ok")
+
+        system.keep = [b.identifier]
+        await formats.set(true).value
+        precondition(system.handler(of: a) == ours && system.handler(of: b) == next && system.handler(of: c) == ours && !formats.busy, "Keep on one format must not stop the next ones")
+        system.keep = [a.identifier]
+        await formats.set(false).value
+        precondition(system.handler(of: a) == ours && system.handler(of: c) == next, "Keep on turning off must not stop the next ones")
+        precondition((defaults.dictionary(forKey: "formats") as? [String: String])?[a.identifier] == "test.Old", "a format that stayed with the player must keep its old app")
+        system.keep = []
+        await formats.set(false).value
+        precondition(system.handler(of: a) == old && defaults.object(forKey: "formats") == nil)
+        print("Keep moves on to the next format and keeps the old app for later: ok")
+
+        system.silent = true
+        await formats.set(true, for: [a, b]).value
+        precondition(formats.isOn([a, b]), "a system that never answers but changes the app must not stall")
+        print("no answer from the system, but the app changed: ok")
+    }
+}
+
+final class FakeSystem: DefaultAppSystem {
+    var installed: [URL]
+    var candidates: [String: [URL]] = [:]
+    var failAfter: Int?
+    var keep: Set<String> = []
+    var silent = false
+    var assigns = 0
+
+    init(installed: [URL]) {
+        self.installed = installed
+    }
+
+    struct Refused: Error {}
+
+    func handler(of type: UTType) -> URL? { candidates[type.identifier]?.first }
+    func handlers(of type: UTType) -> [URL] { candidates[type.identifier] ?? [] }
+    func app(withID id: String) -> URL? { installed.first { Bundle(url: $0)?.bundleIdentifier == id } }
+
+    @MainActor func assign(_ app: URL, to type: UTType) async throws {
+        assigns += 1
+        if let failAfter, assigns > failAfter { throw Refused() }
+        if keep.contains(type.identifier) { throw NSError(domain: NSCocoaErrorDomain, code: 256, userInfo: [NSUnderlyingErrorKey: NSError(domain: NSOSStatusErrorDomain, code: Int(userCanceledErr))]) }
+        candidates[type.identifier] = [app] + (candidates[type.identifier] ?? []).filter { $0 != app }
+        if silent { try await Task.sleep(for: .seconds(3600)) }
     }
 }
