@@ -89,6 +89,11 @@ final class AppVolumeGain: @unchecked Sendable {
 
     var smoothing: Float { cells[4] }
 
+    func release() {
+        cells[0] = 0
+        cells[4] = 1 - powf(1 - cells[4], 10)
+    }
+
     func note(input: Float, output: Float) {
         cells[2] = max(cells[2], input)
         cells[3] = max(cells[3], output)
