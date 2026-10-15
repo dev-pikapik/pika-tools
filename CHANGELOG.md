@@ -19,6 +19,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Side buttons: the mouse Forward button no longer presses a menu item called Forward that has a letter shortcut, such as forwarding an email in Outlook or Mail. It also no longer goes back twice when an app is busy and answers late.
 - Second copy of pikapik: Make This Copy the Main One now works once per press, so a fast double click can’t open two new copies. The note names the main copy as the website or Mac App Store version instead of a file path, and the window title is pikapik instead of the last page you looked at.
 - Pet, App Store version: the line under Talks sometimes no longer promises news about updates. The App Store brings updates by itself, so the pet never said anything about them there; the line now just says it sits down for a chat.
+- Retype words you typed in the wrong language and Home/End, website version: if pikapik stopped unexpectedly, Chrome, Slack, VS Code and other apps built on Chromium stayed in the mode pikapik had switched on to see their text fields. pikapik now remembers each app it switched, and the next launch of the main copy puts it back in the apps that are still open.
 
 ## [1.52.0] - 2026-10-15
 
