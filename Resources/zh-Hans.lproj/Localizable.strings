@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "要移动它，请将另一台显示器设为主显示器";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "指针移到另一台显示器的底部边缘时，无论移动多快，程序坞都不会再跳到那台显示器上。要移动程序坞，请将另一台显示器设为主显示器。打开或关闭此选项会重新启动程序坞。";
 "Main display" = "主显示器";
-"Click the display you want, then choose “Main display” in “Use as”" = "点按想要的显示器，然后在“用途”中选择“主显示器”";
 "primary, main screen, Displays settings" = "主屏幕, 首选显示器, 显示器设置";
 "Hide apps with a click and keep the Dock on one display" = "一点即可隐藏 App，让 Dock 只在一块显示器上";
 "Dock, display, monitor, screen, jump, move" = "程序坞, Dock, 显示器, 屏幕, 跳动, 移动";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "忘记此应用";
 "Add a Layout" = "添加布局";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "无法添加布局。请改用键盘设置。";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "程序坞会随之移动。关闭开关后，显示器会恢复原样";

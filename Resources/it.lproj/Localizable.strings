@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Per spostarlo, rendi principale un altro schermo";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Il Dock non salta più su un altro schermo quando il puntatore ne raggiunge il bordo inferiore, per quanto velocemente tu lo muova. Per spostare il Dock, rendi principale un altro schermo. Attivando o disattivando questa opzione, il Dock si riavvia.";
 "Main display" = "Schermo principale";
-"Click the display you want, then choose “Main display” in “Use as”" = "Fai clic sullo schermo che vuoi, poi scegli «Schermo principale» in «Utilizza come»";
 "primary, main screen, Displays settings" = "primario, monitor principale, impostazioni Monitor";
 "Hide apps with a click and keep the Dock on one display" = "Nascondi le app con un clic e tieni il Dock su un solo schermo";
 "Dock, display, monitor, screen, jump, move" = "Dock, schermo, monitor, display, saltare, salta, spostare";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "Dimentica questa app";
 "Add a Layout" = "Aggiungi layout";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Impossibile aggiungere il layout. Usa le Impostazioni tastiera.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Il Dock la segue. Spegnendo l’interruttore, gli schermi tornano come prima";

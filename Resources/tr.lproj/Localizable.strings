@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Taşımak için başka bir ekranı ana ekran yapın";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "İmleç başka bir ekranın alt kenarına ulaştığında, ne kadar hızlı hareket ettirirseniz ettirin Dock artık o ekrana atlamaz. Dock’u taşımak için başka bir ekranı ana ekran yapın. Bunu açıp kapatmak Dock’u yeniden başlatır.";
 "Main display" = "Ana ekran";
-"Click the display you want, then choose “Main display” in “Use as”" = "İstediğiniz ekranı tıklayın, sonra “Şöyle Kullan” menüsünden “Ana ekran” seçeneğini seçin";
 "primary, main screen, Displays settings" = "birincil, ana monitör, Ekranlar ayarları";
 "Hide apps with a click and keep the Dock on one display" = "Uygulamaları tek tıkla gizleyin, Dock’u tek ekranda tutun";
 "Dock, display, monitor, screen, jump, move" = "Dock, ekran, monitör, görüntü, zıplıyor, taşı";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "Bu Uygulamayı Unut";
 "Add a Layout" = "Düzen Ekle";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Düzen eklenemedi. Bunun yerine Klavye Ayarları’nı kullanın.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock da onunla taşınır. Anahtarı kapatmak ekranları eski düzenine döndürür";

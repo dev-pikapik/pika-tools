@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "หากต้องการย้าย ให้ตั้งจออื่นเป็นจอภาพหลัก";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock จะไม่กระโดดไปยังจออื่นอีกเมื่อตัวชี้ไปถึงขอบล่างของจอนั้น ไม่ว่าจะขยับเร็วแค่ไหน หากต้องการย้าย Dock ให้ตั้งจออื่นเป็นจอภาพหลัก การเปิดหรือปิดตัวเลือกนี้จะเริ่ม Dock ใหม่";
 "Main display" = "จอภาพหลัก";
-"Click the display you want, then choose “Main display” in “Use as”" = "คลิกจอที่ต้องการ แล้วเลือก “จอภาพหลัก” ใน “ใช้เป็น”";
 "primary, main screen, Displays settings" = "หลัก, จอหลัก, การตั้งค่าจอภาพ";
 "Hide apps with a click and keep the Dock on one display" = "ซ่อนแอปด้วยการคลิก และให้ Dock อยู่บนจอเดียว";
 "Dock, display, monitor, screen, jump, move" = "Dock, จอ, หน้าจอ, จอภาพ, มอนิเตอร์, กระโดด, ย้าย";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "ลืมแอปนี้";
 "Add a Layout" = "เพิ่มรูปแบบแป้นพิมพ์";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "เพิ่มรูปแบบแป้นพิมพ์ไม่ได้ ใช้การตั้งค่าแป้นพิมพ์แทน";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock จะย้ายตามไปด้วย การปิดสวิตช์จะคืนการจัดวางจอภาพกลับเหมือนเดิม";

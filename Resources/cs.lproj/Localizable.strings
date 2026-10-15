@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Chcete-li ho přesunout, nastavte jako hlavní jiný displej";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock už nepřeskakuje na jiný displej, když ukazatel dojede k jeho spodnímu okraji, ať s ním pohybujete jakkoli rychle. Chcete-li Dock přesunout, nastavte jako hlavní jiný displej. Zapnutím nebo vypnutím se Dock restartuje.";
 "Main display" = "Hlavní monitor";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klikněte na požadovaný displej a v nabídce „Používat jako“ vyberte „Hlavní monitor“";
 "primary, main screen, Displays settings" = "primární, hlavní obrazovka, nastavení Monitory";
 "Hide apps with a click and keep the Dock on one display" = "Skrývejte aplikace kliknutím a mějte Dock na jednom displeji";
 "Dock, display, monitor, screen, jump, move" = "Dock, displej, monitor, obrazovka, skáče, přeskakuje, přesunout";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "Zapomenout tuto aplikaci";
 "Add a Layout" = "Přidat rozložení";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Rozložení se nepodařilo přidat. Použijte místo toho Nastavení klávesnice.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock se přesune s ním. Vypnutím přepínače se monitory vrátí, jak byly";

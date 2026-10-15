@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "इसे ले जाने के लिए किसी दूसरे डिस्प्ले को मुख्य बनाएँ";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "पॉइंटर किसी दूसरे डिस्प्ले के निचले किनारे तक पहुँचे, तब भी Dock अब उस पर नहीं जाता, चाहे आप कितनी भी तेज़ी से हिलाएँ। Dock को ले जाने के लिए किसी दूसरे डिस्प्ले को मुख्य बनाएँ। इसे चालू या बंद करने पर Dock फिर से शुरू होता है।";
 "Main display" = "मुख्य डिस्प्ले";
-"Click the display you want, then choose “Main display” in “Use as”" = "जिस डिस्प्ले को चाहते हैं उस पर क्लिक करें, फिर “ऐसे उपयोग करें” में “मुख्य डिस्प्ले” चुनें";
 "primary, main screen, Displays settings" = "प्राथमिक, मुख्य स्क्रीन, डिस्प्ले सेटिंग्ज़";
 "Hide apps with a click and keep the Dock on one display" = "एक क्लिक से ऐप छिपाएँ और Dock को एक डिस्प्ले पर रखें";
 "Dock, display, monitor, screen, jump, move" = "Dock, डिस्प्ले, मॉनिटर, स्क्रीन, कूदना, हिलाना";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "इस ऐप को भूल जाएँ";
 "Add a Layout" = "लेआउट जोड़ें";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "लेआउट जोड़ा नहीं जा सका। इसके बजाय कीबोर्ड सेटिंग का उपयोग करें।";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock भी उसी के साथ जाता है। स्विच बंद करने पर डिस्प्ले पहले जैसे हो जाते हैं";

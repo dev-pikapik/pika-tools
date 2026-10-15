@@ -863,10 +863,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the Dock on its display, however fast you move the mouse to the bottom of the other one.
 
-**How it works:** Writes the hidden key `com.apple.dock allow-display-switching` = false and restarts the Dock once (`Sources/pika-tools/Tools/Windows/DockDisplayTool.swift:95`, `DockDisplaySwitch.swift`). No permission. The Dock reads it only at start. Turning off (and `--uninstall`) puts back the previous value.
+**How it works:** Writes the hidden key `com.apple.dock allow-display-switching` = false and restarts the Dock once (`Sources/pika-tools/Tools/Windows/DockDisplayTool.swift:96`, `DockDisplaySwitch.swift`). No permission. The Dock reads it only at start. Turning off (and `--uninstall`) puts back the previous value.
 
 **Options:**
-- Main display — row with an Open button to System Settings › Displays; make another display the main one to move the Dock on purpose (`DockDisplayTool.swift:103`).
+- Main display — menu under the switch (two or more displays, enabled only while the switch is on); pick a display and pikapik makes it the main one with `CGConfigureDisplayOrigin`, shifting every display by the same amount so the arrangement keeps its shape, and the Dock goes with it (`DockDisplayTool.swift:108`, `MainDisplayControl` at `:140`, `MainDisplay` in `DockDisplaySwitch.swift`). The first arrangement is remembered by display ID; turning the switch off, `--uninstall` or the next launch with the switch off puts it back.
 
 **Nuances:** Needs two displays and “Displays have separate Spaces” on (System Settings › Desktop & Dock).
 
@@ -877,7 +877,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. Quit and reopen pikapik → the Dock does not restart.
 3. Turn the switch off → the Dock restarts once, moves between displays again, and the command prints what it printed before (or says the key does not exist).
 4. Turn it on again and run `build/pikapik.app/Contents/MacOS/pika-tools --uninstall` → same result as turning it off.
-5. Press Open next to Main display → System Settings › Displays opens.
+5. Before it, run `Private/tools/vdisplay` (`vd hold 120`) for a second display and note both positions with `vd probe`. With the switch on, open Main display and pick the other display → no prompt, it moves to 0,0, the other display keeps its place next to it, and the Dock appears there. Pick the first display again → the arrangement is the original. Pick the other one, then turn the switch off → the arrangement is exactly the one in `vd probe` before the test.
 
 ## Finder
 

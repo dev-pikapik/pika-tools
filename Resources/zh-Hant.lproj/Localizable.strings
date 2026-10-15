@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "若要移動，請將另一台顯示器設為主要顯示器";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "指標移到另一台顯示器的底部邊緣時，無論移動多快，Dock 都不會再跳到那台顯示器上。若要移動 Dock，請將另一台顯示器設為主要顯示器。開啟或關閉此選項會重新啟動 Dock。";
 "Main display" = "主要顯示器";
-"Click the display you want, then choose “Main display” in “Use as”" = "按一下想要的顯示器，然後在「做為」中選擇「主要顯示器」";
 "primary, main screen, Displays settings" = "主螢幕, 主顯示器, 顯示器設定";
 "Hide apps with a click and keep the Dock on one display" = "一按即可隱藏 App，讓 Dock 只在一個顯示器上";
 "Dock, display, monitor, screen, jump, move" = "Dock, 顯示器, 螢幕, 跳動, 移動";
@@ -1192,3 +1191,4 @@
 "Forget This App" = "忘記此 App";
 "Add a Layout" = "加入配置";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "無法加入配置。請改用鍵盤設定。";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock 會跟著移動。關閉開關後，顯示器會恢復原樣";
