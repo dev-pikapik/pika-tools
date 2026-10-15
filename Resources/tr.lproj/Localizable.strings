@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Kareyi Kaydet…";
 "Float on Top" = "Üstte Tut";
 "Move to Display" = "Ekrana Taşı";
+"Picture in Picture" = "Pencere İçinde Pencere";
+"Exit Picture in Picture" = "Pencere İçinde Pencereden Çık";
+"Chapters" = "Bölümler";
+"Next Chapter" = "Sonraki Bölüm";
+"Previous Chapter" = "Önceki Bölüm";
+"No Chapters" = "Bölüm Yok";
+"Chapter %lld" = "Bölüm %lld";
+"Set Loop Start" = "Döngü Başlangıcını Ayarla";
+"Set Loop End" = "Döngü Bitişini Ayarla";
+"Clear Loop" = "Döngüyü Temizle";
 "Couldn’t save the frame." = "Kare kaydedilemedi.";
 "Add a Layout" = "Düzen Ekle";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Düzen eklenemedi. Bunun yerine Klavye Ayarları’nı kullanın.";

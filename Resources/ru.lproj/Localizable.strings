@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Сохранить кадр…";
 "Float on Top" = "Поверх всех окон";
 "Move to Display" = "Переместить на экран";
+"Picture in Picture" = "Картинка в картинке";
+"Exit Picture in Picture" = "Выйти из режима «Картинка в картинке»";
+"Chapters" = "Главы";
+"Next Chapter" = "Следующая глава";
+"Previous Chapter" = "Предыдущая глава";
+"No Chapters" = "Нет глав";
+"Chapter %lld" = "Глава %lld";
+"Set Loop Start" = "Задать начало повтора";
+"Set Loop End" = "Задать конец повтора";
+"Clear Loop" = "Снять повтор";
 "Couldn’t save the frame." = "Не удалось сохранить кадр.";
 "Add a Layout" = "Добавить раскладку";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Не удалось добавить раскладку. Воспользуйтесь настройками клавиатуры.";

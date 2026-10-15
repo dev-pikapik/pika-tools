@@ -115,6 +115,7 @@ final class Engine {
     let layer = AVSampleBufferDisplayLayer()
     let size: CGSize
     let duration: CMTime
+    let chapters: [Chapter]
     private let audio = AVSampleBufferAudioRenderer()
     private let demuxer: Demuxer
     private let file: Int32
@@ -183,6 +184,7 @@ final class Engine {
         duration = demuxer.duration.isValid ? demuxer.duration : feeds.compactMap { feed in
             ((try? demuxer.last(feed.track)) ?? nil).map { feed.track.time($0.pts + $0.duration) }
         }.max() ?? .zero
+        chapters = demuxer.chapters()
         guard !feeds.isEmpty else {
             close(fd)
             throw MediaError.unsupportedFeature

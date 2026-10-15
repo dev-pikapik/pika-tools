@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Spara bildruta…";
 "Float on Top" = "Alltid överst";
 "Move to Display" = "Flytta till skärm";
+"Picture in Picture" = "Bild i bild";
+"Exit Picture in Picture" = "Avsluta bild i bild";
+"Chapters" = "Kapitel";
+"Next Chapter" = "Nästa kapitel";
+"Previous Chapter" = "Föregående kapitel";
+"No Chapters" = "Inga kapitel";
+"Chapter %lld" = "Kapitel %lld";
+"Set Loop Start" = "Ange slingans början";
+"Set Loop End" = "Ange slingans slut";
+"Clear Loop" = "Ta bort slinga";
 "Couldn’t save the frame." = "Bildrutan kunde inte sparas.";
 "Add a Layout" = "Lägg till layout";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Det gick inte att lägga till layouten. Använd Tangentbordsinställningar i stället.";

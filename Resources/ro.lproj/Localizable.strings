@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Salvează cadrul…";
 "Float on Top" = "Mereu deasupra";
 "Move to Display" = "Mută pe ecran";
+"Picture in Picture" = "Imagine în imagine";
+"Exit Picture in Picture" = "Ieșire din imagine în imagine";
+"Chapters" = "Capitole";
+"Next Chapter" = "Capitolul următor";
+"Previous Chapter" = "Capitolul anterior";
+"No Chapters" = "Fără capitole";
+"Chapter %lld" = "Capitolul %lld";
+"Set Loop Start" = "Setează începutul buclei";
+"Set Loop End" = "Setează sfârșitul buclei";
+"Clear Loop" = "Elimină bucla";
 "Couldn’t save the frame." = "Cadrul nu a putut fi salvat.";
 "Add a Layout" = "Adaugă un aranjament";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Nu s-a putut adăuga aranjamentul. Folosește Configurări tastatură.";

@@ -5,6 +5,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var players: [PlayerController] = []
     private let displays = NSMenu()
     private let displaysItem = NSMenuItem()
+    private var chapters = NSMenu()
+    private let chapterItems = 2
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
@@ -22,6 +24,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func menuNeedsUpdate(_ menu: NSMenu) {
+        if menu === chapters {
+            while chapters.numberOfItems > chapterItems { chapters.removeItem(at: chapterItems) }
+            chapters.addItem(.separator())
+            let names = (NSApp.keyWindow?.windowController as? PlayerController)?.chapterNames ?? []
+            if names.isEmpty { chapters.addItem(NSMenuItem(title: String(localized: "No Chapters"), action: nil, keyEquivalent: "")) }
+            for (index, name) in names.enumerated() {
+                let item = NSMenuItem(title: name, action: #selector(PlayerController.chooseChapter(_:)), keyEquivalent: "")
+                item.tag = index
+                chapters.addItem(item)
+            }
+            return
+        }
         displaysItem.isHidden = NSScreen.screens.count < 2
         displays.removeAllItems()
         for screen in NSScreen.screens {
@@ -119,10 +133,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             command(String(localized: "Go to End"), .end),
             command(String(localized: "Start Over"), .startOver),
             .separator(),
+            command(String(localized: "Set Loop Start"), .loop),
+            .separator(),
             command(String(localized: "Volume Up"), .louder),
             command(String(localized: "Volume Down"), .quieter),
             command(String(localized: "Mute"), .mute),
         ])
+        let chaptersMenu = submenu(String(localized: "Chapters"), [
+            command(String(localized: "Next Chapter"), .nextChapter),
+            command(String(localized: "Previous Chapter"), .previousChapter),
+        ])
+        chaptersMenu.delegate = self
+        chapters = chaptersMenu
         let speeds = PlayerSpeed.all.map { speed in
             let entry = item("\(speed.formatted())×", #selector(PlayerController.chooseSpeed(_:)))
             entry.representedObject = speed
@@ -141,6 +163,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             item(String(localized: "Zoom"), #selector(NSWindow.performZoom)),
             .separator(),
             command(String(localized: "Float on Top"), .floatOnTop),
+            command(String(localized: "Picture in Picture"), .pictureInPicture),
             displaysItem,
         ])
         windowMenu.delegate = self

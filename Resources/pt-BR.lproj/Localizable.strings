@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Salvar quadro…";
 "Float on Top" = "Manter na frente";
 "Move to Display" = "Mover para a tela";
+"Picture in Picture" = "Picture in Picture";
+"Exit Picture in Picture" = "Sair do Picture in Picture";
+"Chapters" = "Capítulos";
+"Next Chapter" = "Próximo capítulo";
+"Previous Chapter" = "Capítulo anterior";
+"No Chapters" = "Sem capítulos";
+"Chapter %lld" = "Capítulo %lld";
+"Set Loop Start" = "Definir início do loop";
+"Set Loop End" = "Definir fim do loop";
+"Clear Loop" = "Remover loop";
 "Couldn’t save the frame." = "Não foi possível salvar o quadro.";
 "Add a Layout" = "Adicionar layout";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Não foi possível adicionar o layout. Use os Ajustes de Teclado.";

@@ -1242,6 +1242,16 @@
 "Save Frame…" = "フレームを保存…";
 "Float on Top" = "最前面に表示";
 "Move to Display" = "ディスプレイに移動";
+"Picture in Picture" = "ピクチャインピクチャ";
+"Exit Picture in Picture" = "ピクチャインピクチャを終了";
+"Chapters" = "チャプター";
+"Next Chapter" = "次のチャプター";
+"Previous Chapter" = "前のチャプター";
+"No Chapters" = "チャプターなし";
+"Chapter %lld" = "チャプター %lld";
+"Set Loop Start" = "ループの開始位置を設定";
+"Set Loop End" = "ループの終了位置を設定";
+"Clear Loop" = "ループを解除";
 "Couldn’t save the frame." = "フレームを保存できませんでした。";
 "Add a Layout" = "レイアウトを追加";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "レイアウトを追加できませんでした。代わりにキーボード設定を使ってください。";

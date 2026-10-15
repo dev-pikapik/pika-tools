@@ -197,6 +197,11 @@ private let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -
     return reader.position
 }
 
+struct Chapter {
+    let start: Double
+    let title: String
+}
+
 final class Demuxer {
     let streams: [Track]
     let duration: CMTime
@@ -277,6 +282,22 @@ final class Demuxer {
 
     var tracks: [Track] {
         streams.filter { byIndex[$0.index] != nil }
+    }
+
+    func chapters() -> [Chapter] {
+        lock.withLock {
+            guard let context else { return [] }
+            let offset = context.pointee.start_time == PikaNoTimestamp ? 0 : Double(context.pointee.start_time) / Double(AV_TIME_BASE)
+            var found: [Chapter] = []
+            for index in 0..<Int(context.pointee.nb_chapters) {
+                guard let chapter = context.pointee.chapters[index]?.pointee, chapter.time_base.den > 0 else { continue }
+                let start = Double(chapter.start) * Double(chapter.time_base.num) / Double(chapter.time_base.den) - offset
+                guard start.isFinite else { continue }
+                let title = av_dict_get(chapter.metadata, "title", nil, 0).map { String(cString: $0.pointee.value) } ?? ""
+                found.append(Chapter(start: max(0, start), title: title))
+            }
+            return found.sorted { $0.start < $1.start }
+        }
     }
 
     func discard(except used: [Track]) {

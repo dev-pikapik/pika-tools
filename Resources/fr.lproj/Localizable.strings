@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Enregistrer l’image…";
 "Float on Top" = "Toujours au premier plan";
 "Move to Display" = "Déplacer vers l’écran";
+"Picture in Picture" = "Image dans l’image";
+"Exit Picture in Picture" = "Quitter l’image dans l’image";
+"Chapters" = "Chapitres";
+"Next Chapter" = "Chapitre suivant";
+"Previous Chapter" = "Chapitre précédent";
+"No Chapters" = "Aucun chapitre";
+"Chapter %lld" = "Chapitre %lld";
+"Set Loop Start" = "Définir le début de la boucle";
+"Set Loop End" = "Définir la fin de la boucle";
+"Clear Loop" = "Supprimer la boucle";
 "Couldn’t save the frame." = "Impossible d’enregistrer l’image.";
 "Add a Layout" = "Ajouter une disposition";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Impossible d’ajouter la disposition. Utilisez plutôt les Réglages Clavier.";

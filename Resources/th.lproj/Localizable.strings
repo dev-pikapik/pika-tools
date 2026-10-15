@@ -1242,6 +1242,16 @@
 "Save Frame…" = "บันทึกเฟรม…";
 "Float on Top" = "แสดงไว้ด้านบนสุด";
 "Move to Display" = "ย้ายไปที่จอภาพ";
+"Picture in Picture" = "ภาพซ้อนภาพ";
+"Exit Picture in Picture" = "ออกจากภาพซ้อนภาพ";
+"Chapters" = "บท";
+"Next Chapter" = "บทถัดไป";
+"Previous Chapter" = "บทก่อนหน้า";
+"No Chapters" = "ไม่มีบท";
+"Chapter %lld" = "บทที่ %lld";
+"Set Loop Start" = "ตั้งจุดเริ่มต้นการวนซ้ำ";
+"Set Loop End" = "ตั้งจุดสิ้นสุดการวนซ้ำ";
+"Clear Loop" = "ล้างการวนซ้ำ";
 "Couldn’t save the frame." = "ไม่สามารถบันทึกเฟรมได้";
 "Add a Layout" = "เพิ่มรูปแบบแป้นพิมพ์";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "เพิ่มรูปแบบแป้นพิมพ์ไม่ได้ ใช้การตั้งค่าแป้นพิมพ์แทน";

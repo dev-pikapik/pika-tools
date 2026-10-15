@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Зберегти кадр…";
 "Float on Top" = "Поверх усіх вікон";
 "Move to Display" = "Перемістити на екран";
+"Picture in Picture" = "Картинка в картинці";
+"Exit Picture in Picture" = "Вийти з режиму «Картинка в картинці»";
+"Chapters" = "Розділи";
+"Next Chapter" = "Наступний розділ";
+"Previous Chapter" = "Попередній розділ";
+"No Chapters" = "Немає розділів";
+"Chapter %lld" = "Розділ %lld";
+"Set Loop Start" = "Задати початок повтору";
+"Set Loop End" = "Задати кінець повтору";
+"Clear Loop" = "Зняти повтор";
 "Couldn’t save the frame." = "Не вдалося зберегти кадр.";
 "Add a Layout" = "Додати розкладку";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Не вдалося додати розкладку. Скористайтеся параметрами клавіатури.";

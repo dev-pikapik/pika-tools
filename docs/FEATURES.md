@@ -1306,6 +1306,41 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Open a music file → the card shows only the time.
 3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
 
+### Chapters
+
+**Does:** Shows the chapters of a video on the time bar and in a **Chapters** menu, names the chapter under the preview, and lets you jump from chapter to chapter.
+
+**How it works:** The reader lists the file’s chapters with their titles and moves them onto the same clock as the picture (`Extensions/MediaReader/Demuxer.swift:287`). The window turns them into marks on the time bar (`Helper/Player/TimeMarks.swift:3`, `PlayerWindow.swift:527`) and into the **Chapters** menu, where the chapter you are in has a check mark (`Helper/Player/main.swift:26`). Page Down goes to the start of the next chapter and stays put in the last one; Page Up goes to the start of the chapter you are in, or to the one before it when you are within 3 seconds of its start (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:3`, `PlayerWindow.swift:512`). The chapter name is shown under the small picture when you point at the time bar (`Helper/Player/Thumbnails.swift:157`). A chapter without a title is called “Chapter” and its number.
+
+**Nuances:** A video without chapters has no marks, and the menu says “No Chapters”. Marks at the very start or end of the bar are not drawn.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open an MKV or MP4 with chapters → thin dark marks sit on the time bar at the chapter starts, and the **Chapters** menu lists every chapter with the current one checked.
+2. (Website) Press Page Down → the time jumps to the start of the next chapter; press it in the last chapter → nothing changes.
+3. (Website) Press Page Up in the middle of a chapter → it goes back to the start of that chapter; press Page Up again at once → the chapter before.
+4. (Website) Point at the time bar → the card shows the picture, the time and the chapter name under the picture; a long name is cut with “…”.
+5. (Website) Choose a chapter in the **Chapters** menu → the video jumps to its start.
+6. (Website) Open a video without chapters → no marks, and the menu shows “No Chapters”.
+
+### Repeat A–B
+
+**Does:** Repeats a part of the video again and again, from a spot you mark to another.
+
+**How it works:** The A key is pressed three times: the first press marks the start (A) at the current time, the second marks the end (B), the third clears both (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:34`, `Helper/Player/PlayerWindow.swift:520`). Two yellow marks and a yellow strip between them show the part on the time bar. Every tick of the player checks the time, and when it reaches B the video seeks back to A and goes on playing at the same speed (`PlayerWindow.swift:341`, `PlayerMarks.swift:46`). The Playback menu item changes its name between **Set Loop Start**, **Set Loop End** and **Clear Loop**.
+
+**Nuances:** If the second mark comes before the first, they swap places. A second mark less than half a second from the first is ignored. Opening another video clears the loop.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a video, press A at about 5 seconds, then A again at about 12 → two yellow marks and a strip show on the time bar.
+2. (Website) Keep playing → when the time reaches the second mark it jumps back to the first and plays on; this repeats.
+3. (Website) Press A a third time → the marks disappear and the video plays past the end of the old loop.
+4. (Website) Press A, jump back 10 seconds with J, press A → the loop is between the two spots, the earlier one first.
+5. (Website) Open the Playback menu → the item reads **Set Loop Start**, then **Set Loop End**, then **Clear Loop** as you press A.
+
 ### FFmpeg and dav1d Licenses
 
 **Does:** Shows the licenses of the two open-source libraries the player uses, and links to their source code.

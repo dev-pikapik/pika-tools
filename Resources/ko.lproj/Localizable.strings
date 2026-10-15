@@ -1242,6 +1242,16 @@
 "Save Frame…" = "프레임 저장…";
 "Float on Top" = "항상 위에 표시";
 "Move to Display" = "디스플레이로 이동";
+"Picture in Picture" = "화면 속 화면";
+"Exit Picture in Picture" = "화면 속 화면 종료";
+"Chapters" = "챕터";
+"Next Chapter" = "다음 챕터";
+"Previous Chapter" = "이전 챕터";
+"No Chapters" = "챕터 없음";
+"Chapter %lld" = "챕터 %lld";
+"Set Loop Start" = "반복 시작 지점 설정";
+"Set Loop End" = "반복 끝 지점 설정";
+"Clear Loop" = "반복 해제";
 "Couldn’t save the frame." = "프레임을 저장할 수 없습니다.";
 "Add a Layout" = "레이아웃 추가";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "레이아웃을 추가할 수 없습니다. 대신 키보드 설정을 사용하세요.";

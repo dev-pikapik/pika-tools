@@ -33,7 +33,8 @@ enum TestPlayer {
             (left, .command, .slower), (right, .command, .faster), ("[", [], .slower), ("]", [], .faster), ("\u{7F}", [], .normalSpeed),
             (up, [], .louder), (down, [], .quieter), ("m", [], .mute), ("f", [], .fullScreen), ("F", [], .fullScreen), ("f", .command, .fullScreen), ("f", [.command, .control], .fullScreen),
             ("\u{1B}", [], .leaveFullScreen), ("s", [], .snapshot), ("t", [], .floatOnTop),
-            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("a", [], nil), ("", [], nil),
+            ("\u{F72D}", [], .nextChapter), ("\u{F72C}", [], .previousChapter), ("a", [], .loop), ("A", [], .loop), ("p", [.command, .option], .pictureInPicture),
+            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("z", [], nil), ("p", [], nil), ("p", .command, nil), ("", [], nil),
         ]
         for (key, modifiers, action) in keys {
             precondition(PlayerAction(key: key, modifiers: modifiers) == action, "key \(key.unicodeScalars.map { String($0.value, radix: 16) }) \(modifiers.rawValue)")
@@ -253,6 +254,43 @@ enum TestPlayer {
         await formats.set(true, for: [a, b]).value
         precondition(formats.isOn([a, b]), "a system that never answers but changes the app must not stall")
         print("no answer from the system, but the app changed: ok")
+
+        let starts = [0.0, 60, 150, 300]
+        precondition(PlayerChapters.current(starts, at: 0) == 0 && PlayerChapters.current(starts, at: 59.9) == 0)
+        precondition(PlayerChapters.current(starts, at: 60) == 1 && PlayerChapters.current(starts, at: 59.97) == 1, "a seek that lands a hair early still counts")
+        precondition(PlayerChapters.current(starts, at: 1000) == 3 && PlayerChapters.current([], at: 5) == nil && PlayerChapters.current([10], at: 2) == nil)
+        precondition(PlayerChapters.next(starts, after: 0) == 60 && PlayerChapters.next(starts, after: 59.99) == 150 && PlayerChapters.next(starts, after: 60) == 150)
+        precondition(PlayerChapters.next(starts, after: 299.99) == nil && PlayerChapters.next(starts, after: 300) == nil && PlayerChapters.next(starts, after: 1000) == nil, "no next chapter after the last one")
+        precondition(PlayerChapters.next([10, 20], after: 2) == 10 && PlayerChapters.next([], after: 2) == nil)
+        precondition(PlayerChapters.previous(starts, before: 100) == 60, "past the first seconds the chapter starts over")
+        precondition(PlayerChapters.previous(starts, before: 61) == 0 && PlayerChapters.previous(starts, before: 63) == 0, "right after a start it goes to the chapter before")
+        precondition(PlayerChapters.previous(starts, before: 63.5) == 60 && PlayerChapters.previous(starts, before: 60) == 0)
+        precondition(PlayerChapters.previous(starts, before: 0) == 0 && PlayerChapters.previous(starts, before: 2) == 0 && PlayerChapters.previous(starts, before: 1000) == 300)
+        precondition(PlayerChapters.previous([10, 20], before: 5) == 0 && PlayerChapters.previous([], before: 5) == 0)
+        precondition(PlayerChapters.fractions(starts, duration: 600) == [0.1, 0.25, 0.5], "\(PlayerChapters.fractions(starts, duration: 600))")
+        precondition(PlayerChapters.fractions([0, 600, 700], duration: 600).isEmpty && PlayerChapters.fractions(starts, duration: 0).isEmpty && PlayerChapters.fractions(starts, duration: .nan).isEmpty)
+        print("chapters: current, next and previous at the edges, marks as fractions of the bar: ok")
+
+        var loop = PlayerLoop()
+        precondition(loop.wrap(at: 100) == nil && !loop.isSet)
+        loop.press(at: 10)
+        precondition(loop.start == 10 && loop.end == nil && !loop.isSet && loop.wrap(at: 100) == nil, "only A: nothing to jump")
+        loop.press(at: 10.2)
+        precondition(loop.end == nil, "B too close to A is ignored")
+        loop.press(at: 20)
+        precondition(loop.start == 10 && loop.end == 20 && loop.isSet)
+        precondition(loop.wrap(at: 5) == nil && loop.wrap(at: 19.9) == nil && loop.wrap(at: 20) == 10 && loop.wrap(at: 25) == 10 && loop.wrap(at: .infinity) == 10)
+        loop.press(at: 15)
+        precondition(loop == PlayerLoop() && loop.wrap(at: 25) == nil, "third press clears")
+        loop.press(at: 50)
+        loop.press(at: 30)
+        precondition(loop.start == 30 && loop.end == 50, "B before A swaps them")
+        precondition(loop.wrap(at: 50) == 30)
+        loop.press(at: 0)
+        precondition(loop == PlayerLoop())
+        loop.press(at: 1)
+        precondition(loop.start == 1 && loop.end == nil, "a new loop starts again")
+        print("loop A-B: set, jump, clear, B before A: ok")
     }
 }
 

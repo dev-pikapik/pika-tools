@@ -1242,6 +1242,16 @@
 "Save Frame…" = "Lưu khung hình…";
 "Float on Top" = "Luôn ở trên cùng";
 "Move to Display" = "Chuyển sang màn hình";
+"Picture in Picture" = "Hình trong hình";
+"Exit Picture in Picture" = "Thoát Hình trong hình";
+"Chapters" = "Chương";
+"Next Chapter" = "Chương tiếp theo";
+"Previous Chapter" = "Chương trước";
+"No Chapters" = "Không có chương";
+"Chapter %lld" = "Chương %lld";
+"Set Loop Start" = "Đặt điểm bắt đầu lặp";
+"Set Loop End" = "Đặt điểm kết thúc lặp";
+"Clear Loop" = "Xóa vòng lặp";
 "Couldn’t save the frame." = "Không thể lưu khung hình.";
 "Add a Layout" = "Thêm bố cục";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Không thể thêm bố cục. Hãy dùng Cài đặt bàn phím.";

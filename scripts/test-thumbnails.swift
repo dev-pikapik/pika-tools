@@ -109,6 +109,15 @@ enum TestThumbnails {
         check(count == PlayerThumbnail.buckets, "one hover fills all \(PlayerThumbnail.buckets) pictures in the background (\(count))")
         check(released, "closing frees the thumbnails")
 
+        let chapterList = folder.appendingPathComponent("chapters.txt")
+        try! Data(";FFMETADATA1\n[CHAPTER]\nTIMEBASE=1/1000\nSTART=0\nEND=4000\ntitle=One\n[CHAPTER]\nTIMEBASE=1/1000\nSTART=4000\nEND=7000\ntitle=Two\n[CHAPTER]\nTIMEBASE=1/1000\nSTART=7000\nEND=10000\n".utf8).write(to: chapterList)
+        for container in ["mkv", "mp4"] {
+            let url = make(ffmpeg, "chapters.\(container)", in: folder, picture + ["-i", chapterList.path, "-map_metadata", "1", "-map_chapters", "1", "-map", "0:v", "-c:v", "libx264", "-pix_fmt", "yuv420p"])
+            let found = (try? Engine(url))?.chapters ?? []
+            check(found.map(\.start) == [0, 4, 7] && found.map(\.title) == ["One", "Two", ""], "\(container): chapters are read with their times and names: \(found.map { "\($0.start) \($0.title)" })")
+        }
+        check((try? Engine(clips[0].1))?.chapters.isEmpty == true, "a file without chapters has none")
+
         let audio = make(ffmpeg, "sound.mka", in: folder, ["-f", "lavfi", "-i", "sine=duration=4", "-c:a", "aac"])
         let broken = folder.appendingPathComponent("broken.mkv")
         try! Data("not a video".utf8).write(to: broken)

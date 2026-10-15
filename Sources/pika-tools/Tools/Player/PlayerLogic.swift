@@ -26,12 +26,14 @@ enum PlayerFormats {
 enum PlayerAction: Equatable {
     case playPause, back, forward, skipBack, skipForward, longBack, longForward, frameBack, frameForward, start, end, startOver
     case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop
+    case nextChapter, previousChapter, loop, pictureInPicture
 
     static let skip = 5.0
     static let longSkip = 10.0
     static let volumeStep: Float = 0.1
 
     private static let (left, right, up, down) = ("\u{F702}", "\u{F703}", "\u{F700}", "\u{F701}")
+    private static let (pageUp, pageDown) = ("\u{F72C}", "\u{F72D}")
 
     static let bindings: [(action: PlayerAction, key: String, modifiers: NSEvent.ModifierFlags)] = [
         (.playPause, " ", []), (.playPause, "k", []),
@@ -45,6 +47,7 @@ enum PlayerAction: Equatable {
         (.louder, up, []), (.quieter, down, []), (.mute, "m", []),
         (.fullScreen, "f", []), (.fullScreen, "f", .command), (.fullScreen, "f", [.command, .control]), (.leaveFullScreen, "\u{1B}", []),
         (.snapshot, "s", []), (.floatOnTop, "t", []),
+        (.nextChapter, pageDown, []), (.previousChapter, pageUp, []), (.loop, "a", []), (.pictureInPicture, "p", [.command, .option]),
     ]
 
     init?(key: String, modifiers: NSEvent.ModifierFlags = []) {

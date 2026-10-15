@@ -103,16 +103,22 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let preview = ThumbnailPreview()
     private let playButton = NSButton()
     private let fullScreenButton = NSButton()
+    private let pipButton = NSButton()
     private let speaker = NSImageView()
     private let speedLabel = NSTextField(labelWithString: "")
     private let elapsed = NSTextField(labelWithString: "0:00")
     private let remaining = NSTextField(labelWithString: "-0:00")
     private let scrubber = Scrubber(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
+    private let marks = TimeMarks()
     private let volume = NSSlider(value: 1, minValue: 0, maxValue: 1, target: nil, action: nil)
     private var engine: Engine?
     private var observer: Any?
     private var hideTimer: Timer?
     private var thumbnails: Thumbnails?
+    private var pip: PictureInPicture?
+    private var hiddenForPip = false
+    private var chapters: [Chapter] = []
+    private var loop = PlayerLoop()
     private var hovered: Double?
     private var cursorHidden = false
     private var playing = false
@@ -164,6 +170,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
         configure(playButton, "play.fill", String(localized: "Play"), #selector(playPause))
         configure(fullScreenButton, "arrow.up.left.and.arrow.down.right", String(localized: "Full Screen"), #selector(fullScreen))
+        configure(pipButton, "pip.enter", String(localized: "Picture in Picture"), #selector(togglePictureInPicture))
+        pipButton.isHidden = true
         for label in [elapsed, remaining, speedLabel] {
             label.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
             label.textColor = .labelColor
@@ -176,6 +184,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         scrubber.refusesFirstResponder = true
         scrubber.setAccessibilityLabel(String(localized: "Position"))
         scrubber.onHover = { [weak self] in self?.hover($0) }
+        marks.translatesAutoresizingMaskIntoConstraints = false
+        scrubber.addSubview(marks)
         speaker.image = NSImage(systemSymbolName: "speaker.wave.2.fill", accessibilityDescription: nil)
         speaker.contentTintColor = .labelColor
         speedLabel.isHidden = true
@@ -186,7 +196,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         volume.setAccessibilityLabel(String(localized: "Volume"))
         volume.floatValue = UserDefaults.standard.object(forKey: Self.volumeKey) as? Float ?? 1
 
-        let row = NSStackView(views: [playButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, fullScreenButton])
+        let row = NSStackView(views: [playButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, pipButton, fullScreenButton])
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
@@ -208,6 +218,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             wide,
             volume.widthAnchor.constraint(equalToConstant: 70),
             scrubber.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            marks.leadingAnchor.constraint(equalTo: scrubber.leadingAnchor),
+            marks.trailingAnchor.constraint(equalTo: scrubber.trailingAnchor),
+            marks.topAnchor.constraint(equalTo: scrubber.topAnchor),
+            marks.bottomAnchor.constraint(equalTo: scrubber.bottomAnchor),
         ])
         if #available(macOS 26.0, *), let glass = controls as? NSGlassEffectView {
             glass.contentView = row
@@ -251,6 +265,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             fit(engine.size)
             observer = engine.synchronizer.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 10), queue: .main) { [weak self] _ in self?.tick() }
             playing = true
+            chapters = engine.chapters
+            refreshMarks()
+            setUpPictureInPicture(engine)
             if engine.hasVideo, engine.duration.seconds > 0 {
                 let thumbnails = Thumbnails(url: url, size: engine.size, duration: engine.duration.seconds)
                 thumbnails.onReady = { [weak self] _ in self?.hover(self?.hovered) }
@@ -276,6 +293,12 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         thumbnails?.close()
         thumbnails = nil
         preview.isHidden = true
+        chapters = []
+        loop = PlayerLoop()
+        refreshMarks()
+        pip?.close()
+        pip = nil
+        refreshPictureInPicture()
         resumeKey = nil
         if let observer { engine.synchronizer.removeTimeObserver(observer) }
         observer = nil
@@ -313,6 +336,12 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
         if engine.layer.sampleBufferRenderer.requiresFlushToResumeDecoding {
             engine.seek(to: engine.synchronizer.currentTime(), rate: rate)
+        }
+        let ended = engine.finished.map { engine.synchronizer.currentTime() >= $0 } ?? false
+        if playing, let start = loop.wrap(at: ended ? .infinity : engine.position.seconds) {
+            engine.seek(to: CMTime(seconds: start, preferredTimescale: 90000), rate: rate)
+            update()
+            return
         }
         if playing, Date().timeIntervalSince(lastSaved) >= 10 { remember() }
         if playing, let finished = engine.finished, engine.synchronizer.currentTime() >= finished {
@@ -367,6 +396,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             fullScreen(nil)
         case .snapshot: saveFrame()
         case .floatOnTop: window?.level = window?.level == .floating ? .normal : .floating
+        case .nextChapter: jumpChapter(1)
+        case .previousChapter: jumpChapter(-1)
+        case .loop: markLoop()
+        case .pictureInPicture: togglePictureInPicture(nil)
         case .back, .forward: break
         }
         return true
@@ -379,6 +412,12 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     @objc func chooseSpeed(_ sender: NSMenuItem) {
         setSpeed(sender.representedObject as? Float ?? 1)
+    }
+
+    @objc func chooseChapter(_ sender: NSMenuItem) {
+        guard chapters.indices.contains(sender.tag) else { return }
+        seek(chapters[sender.tag].start)
+        showControls()
     }
 
     @objc func moveToScreen(_ sender: NSMenuItem) {
@@ -431,6 +470,72 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         engine.step(direction)
         update()
         showControls()
+    }
+
+    private func setUpPictureInPicture(_ engine: Engine) {
+        guard engine.hasVideo else { return }
+        pip = PictureInPicture(layer: engine.layer, host: PictureInPicture.Host(
+            duration: { engine.duration },
+            isPlaying: { [weak self] in self?.playing ?? false },
+            setPlaying: { [weak self] in if self?.playing != $0 { self?.playPause(nil) } },
+            skip: { [weak self] in self?.skip($0) },
+            changed: { [weak self] in self?.refreshPictureInPicture() },
+            started: { [weak self] in self?.hideForPictureInPicture() },
+            stopped: { [weak self] in self?.returnFromPictureInPicture() }
+        ))
+        refreshPictureInPicture()
+    }
+
+    private func refreshPictureInPicture() {
+        pipButton.isHidden = pip?.isPossible != true
+        let label = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")
+        pipButton.image = NSImage(systemSymbolName: pip?.isActive == true ? "pip.exit" : "pip.enter", accessibilityDescription: label)
+        pipButton.setAccessibilityLabel(label)
+    }
+
+    private func hideForPictureInPicture() {
+        guard let window, !window.styleMask.contains(.fullScreen), window.isVisible else { return }
+        hiddenForPip = true
+        window.orderOut(nil)
+    }
+
+    private func returnFromPictureInPicture() {
+        guard hiddenForPip else { return }
+        hiddenForPip = false
+        window?.makeKeyAndOrderFront(nil)
+    }
+
+    @objc private func togglePictureInPicture(_ sender: Any?) {
+        pip?.toggle()
+    }
+
+    private func jumpChapter(_ direction: Int) {
+        guard let engine, !chapters.isEmpty else { return }
+        let starts = chapters.map(\.start), now = engine.position.seconds
+        guard let target = direction > 0 ? PlayerChapters.next(starts, after: now) : PlayerChapters.previous(starts, before: now) else { return }
+        seek(target)
+        showControls()
+    }
+
+    private func markLoop() {
+        guard let engine else { return }
+        loop.press(at: engine.position.seconds)
+        refreshMarks()
+        showControls()
+    }
+
+    private func refreshMarks() {
+        let total = engine?.duration.seconds ?? 0
+        marks.chapters = PlayerChapters.fractions(chapters.map(\.start), duration: total)
+        marks.loop = [loop.start, loop.end].compactMap { $0 }.map { total > 0 ? $0 / total : 0 }
+    }
+
+    var chapterNames: [String] {
+        chapters.enumerated().map { $0.element.title.isEmpty ? String(localized: "Chapter \($0.offset + 1)") : $0.element.title }
+    }
+
+    private var currentChapter: Int? {
+        engine.flatMap { PlayerChapters.current(chapters.map(\.start), at: $0.position.seconds) }
     }
 
     private func startOver() {
@@ -572,7 +677,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             return
         }
         let total = engine.duration.seconds, seconds = fraction * total
-        preview.show(time: PlayerTime.text(seconds), image: thumbnails?.image(for: PlayerThumbnail.bucket(seconds, duration: total)))
+        let chapter = PlayerChapters.current(chapters.map(\.start), at: seconds).map { chapterNames[$0] }
+        preview.show(time: PlayerTime.text(seconds), image: thumbnails?.image(for: PlayerThumbnail.bucket(seconds, duration: total)), chapter: chapter)
         preview.setFrameSize(preview.fittingSize)
         let point = video.convert(NSPoint(x: scrubber.bounds.minX + CGFloat(fraction) * scrubber.bounds.width, y: 0), from: scrubber)
         preview.setFrameOrigin(NSPoint(x: max(8, min(video.bounds.width - preview.frame.width - 8, point.x - preview.frame.width / 2)), y: controls.frame.maxY + 8))
@@ -584,6 +690,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         switch item.action {
         case #selector(chooseSpeed):
             item.state = item.representedObject as? Float == speed ? .on : .off
+            return true
+        case #selector(chooseChapter):
+            item.state = item.tag == currentChapter ? .on : .off
             return true
         case #selector(moveToScreen):
             item.state = item.representedObject as? NSScreen == window?.screen ? .on : .off
@@ -599,6 +708,11 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
                 item.state = window?.level == .floating ? .on : .off
                 return true
             case .snapshot: return engine?.hasVideo == true
+            case .nextChapter, .previousChapter: return !chapters.isEmpty
+            case .pictureInPicture:
+                item.title = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")
+                return pip?.isPossible == true
+            case .loop: item.title = loop.isSet ? String(localized: "Clear Loop") : loop.start == nil ? String(localized: "Set Loop Start") : String(localized: "Set Loop End")
             default: break
             }
             return engine != nil
