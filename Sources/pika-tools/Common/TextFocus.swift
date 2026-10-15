@@ -18,8 +18,8 @@ enum TextFocus {
         let attribute: String
         let before: Bool
 
-        static func putBack(_ entries: [Switched], bundleID: (pid_t) -> String?, isOn: (pid_t, String) -> Bool) -> [Switched] {
-            entries.filter { bundleID($0.pid) == $0.bundleID && isOn($0.pid, $0.attribute) }
+        static func putBack(_ entries: [Switched], bundleID: (pid_t) -> String?) -> [Switched] {
+            entries.filter { bundleID($0.pid) == $0.bundleID }
         }
 
         static func load(_ key: String) -> [Switched] {
@@ -33,7 +33,7 @@ enum TextFocus {
 
     static func putBackAfterCrash() {
         let saved = Switched.load(journalKey)
-        let stale = Switched.putBack(saved, bundleID: { NSRunningApplication(processIdentifier: $0)?.bundleIdentifier }, isOn: isOn)
+        let stale = Switched.putBack(saved, bundleID: { NSRunningApplication(processIdentifier: $0)?.bundleIdentifier })
         for entry in stale { setAccessibility(entry.attribute, entry.before, entry.pid) }
         lock.lock()
         Switched.save(enabled, journalKey)
