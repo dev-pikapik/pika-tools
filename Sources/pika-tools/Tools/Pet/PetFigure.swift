@@ -69,6 +69,7 @@ enum PetFigure {
         wear.draw(.outer, fill)
         if sit >= 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
         wear.draw(.neck, fill)
+        wear.draw(.prop, fill)
 
         if pose.dizzy {
             var cross = Path()
@@ -81,6 +82,7 @@ enum PetFigure {
             let tall: CGFloat = pose.blink ? 0.5 : 2.5 - 2 * pose.lid
             fill(Path(ellipseIn: CGRect(x: eye.x - 1.25, y: eye.y - tall / 2, width: 2.5, height: tall)).applying(place), Self.eye)
         }
+        wear.draw(.whiskers, fill)
         wear.draw(.face, fill)
         wear.draw(.head, fill)
         wear.draw(.glass, fill)

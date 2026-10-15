@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PetClothes {
-    enum Layer { case back, feet, base, legs, outer, neck, face, head, glass }
+    enum Layer { case back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
 
     let pose: PetPose, night: Bool, body: Path, width: CGFloat, height: CGFloat, eye: CGPoint, paws: [CGRect], ground: CGFloat, place: CGAffineTransform
 
@@ -64,6 +64,7 @@ struct PetClothes {
             let fit = CGAffineTransform(scaleX: width / 12, y: height / 11).concatenating(CGAffineTransform(translationX: 0, y: -height / 2))
             return hat(item).map { ($0.0.applying(fit), $0.1) }
         case .glass: return o[.head] == .helmet ? glass : []
+        case .prop, .whiskers: return []
         }
     }
 
