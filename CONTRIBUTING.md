@@ -94,6 +94,12 @@ Only one copy of pikapik acts on the Mac. Copies of the same family (the website
 swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
 ```
 
+In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and puts back every app that still runs with the same pid and bundle id. It does not read the attribute first: Electron answers `false` even while the switch is on.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/TextFocus.swift scripts/test-chromium-ax-journal.swift -o build/test-chromium-ax-journal && build/test-chromium-ax-journal
+```
+
 Changing a hot corner from the Games page remembers the first action and puts it back on request, and a change to the same action writes nothing, so the Dock restarts only on a real change.
 
 ```bash
