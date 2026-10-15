@@ -46,9 +46,8 @@ final class DesktopIconsTool: Tool {
     var isOn: Bool {
         get { hidden }
         set {
-            CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
-            CFPreferencesAppSynchronize(Self.domain)
-            relaunch("com.apple.WindowManager")
+            OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
+            Self.write(newValue)
             hidden = newValue
         }
     }
@@ -56,6 +55,19 @@ final class DesktopIconsTool: Tool {
     var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
     func refresh() { hidden = Self.read() }
 
+    static func putBack() {
+        let entry = OriginalValue.load(journal)
+        OriginalValue.save(nil, journal)
+        if let value = OriginalValue.putBack(entry, current: read()) { write(value) }
+    }
+
+    private static func write(_ value: Bool) {
+        CFPreferencesSetAppValue(key, value as CFBoolean, domain)
+        CFPreferencesAppSynchronize(domain)
+        relaunch("com.apple.WindowManager")
+    }
+
+    private static let journal = "desktop-icons-original"
     private static let domain = "com.apple.WindowManager" as CFString
     private static var stageManager: Bool { CFPreferencesGetAppBooleanValue("GloballyEnabled" as CFString, domain, nil) }
     private static var key: CFString { (stageManager ? "HideDesktop" : "StandardHideDesktopIcons") as CFString }
@@ -86,6 +98,7 @@ final class HiddenFilesTool: Tool {
     var isOn: Bool {
         get { shown }
         set {
+            OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
             CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
             CFPreferencesAppSynchronize(Self.domain)
             let idle = finderShows == nil
@@ -98,12 +111,29 @@ final class HiddenFilesTool: Tool {
     var settingsView: AnyView { AnyView(HiddenFilesSettings(tool: self)) }
     func refresh() { shown = Self.read() }
 
+    static func putBack() {
+        let entry = OriginalValue.load(journal)
+        OriginalValue.save(nil, journal)
+        guard let value = OriginalValue.putBack(entry, current: read()) else { return }
+        CFPreferencesSetAppValue(key, value as CFBoolean, domain)
+        CFPreferencesAppSynchronize(domain)
+        guard let pid = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.processIdentifier,
+              let before = activity(pid)
+        else { return }
+        Thread.sleep(forTimeInterval: 0.5)
+        if let after = activity(pid), !busy(before, after) { kill(pid, SIGTERM) }
+    }
+
+    private static func busy(_ before: (cpu: Double, io: UInt64), _ after: (cpu: Double, io: UInt64)) -> Bool {
+        after.cpu - before.cpu > 0.005 || after.io != before.io
+    }
+
     private func restartFinder() {
         guard let pid = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.processIdentifier,
               let before = Self.activity(pid) else { return finish() }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
             guard let after = Self.activity(pid) else { return finish() }
-            let busy = after.cpu - before.cpu > 0.005 || after.io != before.io
+            let busy = Self.busy(before, after)
             if busy != finderBusy { finderBusy = busy }
             if busy { return restartFinder() }
             if shown != finderShows { kill(pid, SIGTERM) }
@@ -131,6 +161,7 @@ final class HiddenFilesTool: Tool {
         return Double(base.numer) / Double(base.denom) / 1e9
     }()
 
+    private static let journal = "hidden-files-original"
     private static let domain = "com.apple.finder" as CFString
     private static let key = "AppleShowAllFiles" as CFString
 

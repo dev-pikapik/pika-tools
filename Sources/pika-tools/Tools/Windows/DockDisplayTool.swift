@@ -31,8 +31,9 @@ final class DockDisplayTool: Tool {
     }
 
     func refresh() {
-        if Self.apply(isEnabled) { AnimationsTool.shared.restartDock() }
-        if !isEnabled { MainDisplayControl.restore() }
+        let on = isEnabled && MainCopy.canAct
+        if Self.apply(on) { AnimationsTool.shared.restartDock() }
+        if !on { MainDisplayControl.restore() }
     }
 
     static func uninstall() {

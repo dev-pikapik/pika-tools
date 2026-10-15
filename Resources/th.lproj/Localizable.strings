@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "การปรับปรุง";
 "Info" = "ข้อมูล";
+"Another copy of pikapik is in charge" = "pikapik อีกสำเนาหนึ่งกำลังควบคุมอยู่";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "สำเนานี้ไม่เปลี่ยนแปลงอะไรบน Mac และจะรับช่วงต่อเมื่อสำเนาอีกชุดปิดลง";
+"Make This Copy the Main One" = "ตั้งสำเนานี้เป็นสำเนาหลัก";

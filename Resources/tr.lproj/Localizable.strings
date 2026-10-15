@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "İyileştirmeler";
 "Info" = "Bilgi";
+"Another copy of pikapik is in charge" = "pikapik’in başka bir kopyası yönetiyor";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Bu kopya Mac’te hiçbir şeyi değiştirmez; diğer kopya kapandığında yönetimi devralır.";
+"Make This Copy the Main One" = "Bu kopyayı ana kopya yap";

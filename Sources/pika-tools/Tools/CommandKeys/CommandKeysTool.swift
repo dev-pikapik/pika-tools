@@ -100,7 +100,7 @@ final class CommandKeysTool: Tool {
         let targets = [(quitKeys, Int64(kVK_ANSI_Q)), (closeKeys, Int64(kVK_ANSI_W))].filter { keys.contains($0.1) }
         triggers = Dictionary(targets) { first, _ in first }
         held = nil
-        if !keys.isEmpty, AXIsProcessTrusted() { start() }
+        if !keys.isEmpty, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     private func start() {

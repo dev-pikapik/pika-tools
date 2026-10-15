@@ -110,7 +110,7 @@ final class ScrollTap {
 
     func refresh() {
         stop()
-        if step != nil || direction != nil, AXIsProcessTrusted() { start() }
+        if step != nil || direction != nil, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     private func start() {

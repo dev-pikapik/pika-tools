@@ -185,6 +185,11 @@ final class KeepAwake {
         update()
     }
 
+    func suspend() {
+        mode = .off
+        update()
+    }
+
     func handOff() {
         #if APPSTORE
         return
@@ -475,6 +480,7 @@ struct KeepAwakeSettings: View {
 
 extension KeepAwake {
     func handle(_ url: URL) {
+        guard MainCopy.canAct else { return }
         let value = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first?.name
         func flag(_ current: Bool) -> Bool { value == "on" ? true : value == "off" ? false : !current }
         switch url.host {

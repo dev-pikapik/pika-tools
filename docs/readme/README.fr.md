@@ -436,6 +436,8 @@ Chaque page comporte en bas un bouton **Rétablir les réglages par défaut…**
 
 **Synchroniser les réglages avec iCloud** garde pikapik identique sur tous vos Mac. Les réglages se trouvent dans le dossier pikapik d’iCloud Drive, et la modification la plus récente l’emporte. Désactivé par défaut, et iCloud Drive doit être activé. Les autorisations ne sont pas synchronisées : chaque Mac les demande lui-même.
 
+**Une seule copie principale.** Si deux copies de pikapik sont ouvertes en même temps, par exemple celle du site web et celle de l’App Store, seule la dernière ouverte modifie quelque chose sur votre Mac. L’autre affiche une courte note avec un bouton **Faire de cette copie la copie principale** et reprend la main quand la copie principale se ferme. Une copie qui cesse d’être la principale remet en place ce qu’elle avait modifié.
+
 </details>
 
 <details>

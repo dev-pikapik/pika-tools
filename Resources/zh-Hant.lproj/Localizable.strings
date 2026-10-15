@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "增強功能";
 "Info" = "資訊";
+"Another copy of pikapik is in charge" = "目前由另一個 pikapik 副本負責";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "此副本不會變更你的 Mac 設定，另一個副本結束後會自動接手。";
+"Make This Copy the Main One" = "將此副本設為主副本";

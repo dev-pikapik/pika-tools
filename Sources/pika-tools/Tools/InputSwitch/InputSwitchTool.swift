@@ -32,7 +32,7 @@ final class InputSwitchTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled, CGPreflightListenEventAccess() { start() }
+        if isEnabled, MainCopy.canAct, CGPreflightListenEventAccess() { start() }
     }
 
     private func start() {

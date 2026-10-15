@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Îmbunătățiri";
 "Info" = "Informații";
+"Another copy of pikapik is in charge" = "O altă copie a pikapik are controlul";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Această copie nu schimbă nimic pe Mac și preia controlul când cealaltă copie se închide.";
+"Make This Copy the Main One" = "Fă din această copie copia principală";

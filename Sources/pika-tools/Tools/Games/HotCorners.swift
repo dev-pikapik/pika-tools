@@ -25,6 +25,23 @@ enum HotCorners {
 
     static func putBack(side: String) { apply(side) { putBack(current: $0, saved: before, side: side) } }
 
+    static func putBackAll() {
+        CFPreferencesAppSynchronize(dock)
+        var saved = before, wrote = false
+        for side in saved.keys {
+            let name = key(side) as CFString
+            let plan = putBack(current: (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0, saved: saved, side: side)
+            saved = plan.saved
+            guard let value = plan.write else { continue }
+            CFPreferencesSetAppValue(name, value as CFNumber, dock)
+            wrote = true
+        }
+        UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: journalKey)
+        guard wrote else { return }
+        CFPreferencesAppSynchronize(dock)
+        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+    }
+
     private static func apply(_ side: String, _ plan: (Int) -> (saved: [String: Int], write: Int?)) {
         CFPreferencesAppSynchronize(dock)
         let name = key(side) as CFString

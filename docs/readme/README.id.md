@@ -436,6 +436,8 @@ Setiap halaman memiliki tombol **Pulihkan Default…** di bagian bawah. Tombol i
 
 **Selaraskan pengaturan dengan iCloud** menjaga pikapik tetap sama di semua Mac Anda. Pengaturan disimpan di folder pikapik di iCloud Drive, dan perubahan terbaru yang berlaku. Mati secara default dan memerlukan iCloud Drive yang menyala. Izin tidak ikut disinkronkan: setiap Mac memintanya sendiri.
 
+**Satu salinan utama.** Jika dua salinan pikapik terbuka bersamaan, misalnya dari situs web dan dari App Store, hanya salinan yang dibuka terakhir yang mengubah sesuatu di Mac Anda. Salinan lainnya menampilkan catatan singkat dengan tombol **Jadikan salinan ini yang utama** dan mengambil alih saat salinan utama ditutup. Salinan yang tidak lagi menjadi yang utama mengembalikan apa yang diubahnya.
+
 </details>
 
 <details>

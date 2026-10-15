@@ -8,7 +8,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 - **Build the Website edition:** `./scripts/build.sh` (Xcode 26 or newer; set `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer` if `xcode-select -p` points to the Command Line Tools). The app is `build/pikapik.app`. Local builds are signed ad hoc, so after every rebuild remove pikapik from Accessibility and Input Monitoring with the − button and add it again.
 - **Build the App Store edition:** `APPSTORE=1 ./scripts/build.sh`, then open `build/pikapik.app`. If it does not launch locally (the sandbox needs a provisioning profile), test the TestFlight build instead.
-- **One edition at a time.** The two editions can be installed together. Their synthetic keys and clicks are tagged (`Sources/pika-tools/Common/EventTag.swift`), so the copies no longer undo each other, but test one copy at a time, and quit it before starting the other, unless a step names two copies.
+- **One edition at a time.** The two editions can be installed together. Their synthetic keys and clicks are tagged (`Sources/pika-tools/Common/EventTag.swift`), so the copies no longer undo each other. Only the copy opened last is the main one and changes the Mac (see Another copy of pikapik is in charge); test one copy at a time, and quit it before starting the other, unless a step names two copies.
 - **Reset permissions before a permission test:** Website `tccutil reset All com.pesotchi.pika-tools`, App Store `tccutil reset All com.pikapik.tools`. Reset settings with `defaults delete <bundle id>`. Both need a relaunch of pikapik afterwards.
 - **Full Disk Access checks (Uninstaller Trash watcher, Left by deleted apps, Ports on other users) need the released Website app** in `/Applications` (the notarized one). A local development build does not hold Full Disk Access.
 - **Test only on dummy apps.** Whenever a step says “stub app”, use a throwaway app whose name starts with `PikaE2E` (an empty app bundle with its own bundle id such as `org.example.pikae2e.test`, or a tiny app that plays a quiet tone). Never select, quit, uninstall, remove permissions of or change one of your real programs. Create test files only in a new test folder.
@@ -186,6 +186,24 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Change a switch on a tab, scroll down, press Restore Defaults…, press Cancel → nothing changes. Press it again and Restore Defaults → the tab’s switches return to defaults.
 2. On Finder, with Hide desktop icons and Show hidden files on (Website), restore → both stay on.
 3. (Website) Turn the update switch off, press Restore Defaults… and confirm → it is on again.
+
+### Another copy of pikapik is in charge
+
+**Does:** Keeps one copy of pikapik in charge of the Mac when several are open (website and App Store edition, or two builds), and puts everything back when that copy stops being in charge.
+
+**How it works:** The copy started last is the main one (`MainCopyChoice.leader`, `Sources/pika-tools/Common/MainCopyChoice.swift`), found from the running apps by `MainCopy` (`Sources/pika-tools/Common/MainCopy.swift`). A new copy asks the others to step back through a distributed notification and waits up to 3 seconds for the answer. A copy that is not in charge restores what it changed, stops its key and mouse watchers, Keep Awake, the brightness and fan helpers, and shows `PassiveCopyView` in Settings instead of the pages. Its menu bar icon is removed. The tools check `MainCopy.canAct` in their `refresh()`. Features that change a system switch keep the original once (`OriginalValue`, or the journal of the tool) and write it back only while the switch still holds our value.
+
+**Options:**
+- Make This Copy the Main One: starts a fresh copy that opens Settings and takes the lead.
+
+**Nuances:** Copies with the same bundle id that start later replace the older one. Older versions without this feature do not step back. A copy that crashes leaves its changes until the next copy starts. The Dock, DDC monitor brightness and the default apps for archives are not part of the handover.
+
+**Edition:** Both; the website and App Store copies count as the same family.
+
+**Test:**
+1. Open one copy and turn on a switch that changes a system value (for example Bouncing icons in Animations, Website), then read it (`defaults read com.apple.dock no-bouncing`) → it is on.
+2. Open a second copy (`open -n` on another build) → the first one shows “Another copy of pikapik is in charge” with Make This Copy the Main One and no menu bar icon, and the value is back to what it was; the second copy is the main one.
+3. Quit the second copy → the first one takes over within a second: its Settings show the pages again, the icon returns and the value is on again. Quit it → the value is back to the original.
 
 ## Battery
 

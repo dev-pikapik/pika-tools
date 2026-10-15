@@ -436,6 +436,8 @@ Varje sida har knappen **Återställ förval…** längst ned. Den frågar förs
 
 **Synkronisera inställningar med iCloud** håller pikapik likadant på alla dina Mac-datorer. Inställningarna ligger i mappen pikapik i iCloud Drive, och den senaste ändringen gäller. Av som standard, och iCloud Drive måste vara på. Behörigheter synkroniseras inte: varje Mac frågar efter dem själv.
 
+**En huvudkopia.** Om två kopior av pikapik är öppna samtidigt, till exempel den från webbplatsen och den från App Store, ändrar bara den som du öppnade sist något på din Mac. Den andra visar en kort notis med knappen **Gör den här kopian till huvudkopia** och tar över när huvudkopian avslutas. En kopia som slutar vara huvudkopia sätter tillbaka det den ändrat.
+
 </details>
 
 <details>

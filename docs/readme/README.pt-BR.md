@@ -436,6 +436,8 @@ Cada página tem um botão **Restaurar Padrões…** na parte de baixo. Ele perg
 
 **Sincronizar ajustes com o iCloud** mantém o pikapik igual em todos os seus Macs. Os ajustes ficam na pasta pikapik do iCloud Drive, e vale a alteração mais recente. Vem desativado por padrão e precisa do iCloud Drive ligado. As permissões não são sincronizadas: cada Mac pede as suas.
 
+**Uma única cópia principal.** Se duas cópias do pikapik estiverem abertas ao mesmo tempo, como a do site e a da App Store, só a que foi aberta por último altera algo no seu Mac. A outra mostra um aviso curto com o botão **Tornar esta cópia a principal** e assume o controle quando a cópia principal for encerrada. Uma cópia que deixa de ser a principal devolve o que tinha alterado.
+
 </details>
 
 <details>

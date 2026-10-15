@@ -19,6 +19,7 @@ body:
         - "General › Settings file"
         - "General › Sync settings with iCloud"
         - "General › Restore Defaults…"
+        - "General › Another copy of pikapik is in charge"
         - "Battery › Battery"
         - "Battery › Battery Health"
         - "Battery › Power Adapter"

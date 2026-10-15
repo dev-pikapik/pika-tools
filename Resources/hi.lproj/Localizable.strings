@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "सुधार";
 "Info" = "जानकारी";
+"Another copy of pikapik is in charge" = "pikapik की दूसरी कॉपी अभी मुख्य है";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "यह कॉपी आपके Mac पर कुछ नहीं बदलती और दूसरी कॉपी बंद होने पर कमान संभाल लेती है।";
+"Make This Copy the Main One" = "इस कॉपी को मुख्य बनाएँ";

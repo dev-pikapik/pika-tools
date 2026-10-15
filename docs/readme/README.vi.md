@@ -436,6 +436,8 @@ Mỗi trang đều có nút **Khôi phục mặc định…** ở cuối. Nút n
 
 **Đồng bộ hóa cài đặt với iCloud** giữ pikapik giống nhau trên mọi máy Mac của bạn. Cài đặt nằm trong thư mục pikapik ở iCloud Drive, và thay đổi mới nhất sẽ được áp dụng. Tính năng này tắt theo mặc định và cần bật iCloud Drive. Quyền không được đồng bộ: mỗi máy Mac tự hỏi quyền của mình.
 
+**Chỉ một bản sao chính.** Nếu hai bản sao pikapik đang mở cùng lúc, chẳng hạn bản từ trang web và bản từ App Store, chỉ bản mở sau cùng mới thay đổi điều gì đó trên máy Mac của bạn. Bản còn lại hiện một ghi chú ngắn cùng nút **Đặt bản sao này làm bản chính** và tiếp quản khi bản chính đóng. Bản sao không còn là bản chính sẽ khôi phục mọi thứ nó đã thay đổi.
+
 </details>
 
 <details>

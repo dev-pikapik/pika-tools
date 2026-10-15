@@ -436,6 +436,8 @@ Ogni pagina ha in basso un pulsante **Ripristina default…**. Prima chiede conf
 
 **Sincronizza le impostazioni con iCloud** mantiene pikapik uguale su tutti i tuoi Mac. Le impostazioni stanno nella cartella pikapik di iCloud Drive e vince la modifica più recente. È disattivato di default e richiede iCloud Drive attivo. I permessi non vengono sincronizzati: ogni Mac li chiede per conto suo.
 
+**Una sola copia principale.** Se due copie di pikapik sono aperte insieme, per esempio quella del sito web e quella dell’App Store, solo l’ultima aperta cambia qualcosa sul tuo Mac. L’altra mostra una breve nota con il pulsante **Rendi questa copia quella principale** e subentra quando la copia principale si chiude. Una copia che smette di essere quella principale rimette a posto ciò che aveva cambiato.
+
 </details>
 
 <details>

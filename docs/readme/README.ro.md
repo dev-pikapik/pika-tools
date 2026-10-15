@@ -436,6 +436,8 @@ Fiecare pagină are jos un buton **Restaurează valorile implicite…**. Întrea
 
 **Sincronizează configurările cu iCloud** ține pikapik la fel pe toate Mac-urile tale. Configurările stau în folderul pikapik din iCloud Drive, iar cea mai recentă modificare câștigă. Este dezactivat implicit și are nevoie de iCloud Drive pornit. Permisiunile nu se sincronizează: fiecare Mac le cere separat.
 
+**O singură copie principală.** Dacă sunt deschise în același timp două copii pikapik, de exemplu cea de pe site și cea din App Store, doar cea deschisă ultima schimbă ceva pe Mac. Cealaltă arată o notă scurtă cu butonul **Fă din această copie copia principală** și preia controlul când copia principală se închide. O copie care nu mai este principală pune la loc ce a schimbat.
+
 </details>
 
 <details>

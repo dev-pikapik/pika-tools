@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Cải tiến";
 "Info" = "Thông tin";
+"Another copy of pikapik is in charge" = "Một bản sao pikapik khác đang phụ trách";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Bản sao này không thay đổi gì trên Mac và sẽ tiếp quản khi bản sao kia đóng.";
+"Make This Copy the Main One" = "Đặt bản sao này làm bản chính";

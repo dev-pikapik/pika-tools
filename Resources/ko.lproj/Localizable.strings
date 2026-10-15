@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "개선 사항";
 "Info" = "정보";
+"Another copy of pikapik is in charge" = "다른 pikapik 사본이 관리 중입니다";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "이 사본은 Mac에서 아무것도 변경하지 않으며, 다른 사본이 종료되면 이어받습니다.";
+"Make This Copy the Main One" = "이 사본을 메인으로 설정";

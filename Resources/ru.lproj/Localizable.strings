@@ -1233,3 +1233,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Улучшения";
 "Info" = "Информация";
+"Another copy of pikapik is in charge" = "Сейчас главная другая копия pikapik";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Эта копия ничего не меняет на вашем Mac и берёт управление на себя, когда другая копия закроется.";
+"Make This Copy the Main One" = "Сделать эту копию главной";
