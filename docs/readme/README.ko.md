@@ -42,7 +42,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>⌘Q와 ⌘W 보호</b>
-<br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르세요.
+<br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르면 됩니다.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
@@ -54,7 +54,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
 <br><b>데스크탑 펫</b>
-<br>작은 친구가 윈도우 뒤를 산책합니다. 집어서 던지거나 스페이스를 눌러 점프시켜 보세요. 옷장에서 옷을 골라 입히고, 함께 놀면서 상을 받아 보세요. 타이핑하는 동안엔 기운이 나고, 자리를 비우면 꾸벅꾸벅 좁니다.
+<br>작은 친구가 윈도우 뒤를 산책합니다. 집어서 던지거나 스페이스를 눌러 점프시킬 수 있습니다. 옷장에서 옷을 골라 입히고, 함께 놀면서 상을 받을 수도 있습니다. 타이핑하는 동안엔 기운이 나고, 자리를 비우면 꾸벅꾸벅 좁니다.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>

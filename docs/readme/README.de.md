@@ -42,12 +42,12 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>⌘Q und ⌘W schützen</b>
-<br>Nichts wird aus Versehen beendet oder geschlossen. Mit ⇧ klappt es gewollt.
+<br>Nichts wird aus Versehen beendet oder geschlossen. Nimm ⇧ dazu, wenn du es wirklich willst.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Spielmodus</b>
-<br>Während du spielst, springt nichts über das Spiel und nichts schließt es.
+<br>Während du spielst, drängt sich nichts vor das Spiel und nichts schließt es.
 </td>
 </tr></tbody>
 <tbody><tr>

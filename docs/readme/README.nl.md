@@ -47,7 +47,7 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Gamemodus</b>
-<br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
+<br>Terwijl je speelt, verschijnt er niets bovenop het spel en sluit niets het af.
 </td>
 </tr></tbody>
 <tbody><tr>

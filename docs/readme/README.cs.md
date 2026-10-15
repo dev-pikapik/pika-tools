@@ -47,7 +47,7 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Herní režim</b>
-<br>Zatímco hrajete, nic nevyskočí přes hru a nic ji nezavře.
+<br>Zatímco hrajete, nic se nezobrazí přes hru a nic ji nezavře.
 </td>
 </tr></tbody>
 <tbody><tr>

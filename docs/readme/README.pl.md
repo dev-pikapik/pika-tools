@@ -47,7 +47,7 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
 <br><b>Tryb gry</b>
-<br>Gdy grasz, nic nie wyskoczy nad grą ani jej nie zamknie.
+<br>Gdy grasz, nic nie przesłoni gry ani jej nie zamknie.
 </td>
 </tr></tbody>
 <tbody><tr>

@@ -42,7 +42,7 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
 <br><b>Lindungi ⌘Q dan ⌘W</b>
-<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
+<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ saat Anda memang bermaksud.
 </td>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
