@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Ihr Mac versteht, was Sie meinen.</b><br>Kleine Verbesserungen für Tastatur, Maus, Fenster und Finder, direkt in der Menüleiste deines Mac.</p>
+<p align="center"><b>Dein Mac weiß, was du meinst.</b><br>Kleine Verbesserungen für Tastatur, Maus, Fenster und Finder, direkt in der Menüleiste deines Mac.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <b>Deutsch</b> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q und ⌘W schützen</b>
+<br>Nichts wird aus Versehen beendet oder geschlossen. Mit ⇧ klappt es gewollt.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Spielmodus</b>
+<br>Während du spielst, springt nichts über das Spiel und nichts schließt es.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Haustier auf dem Schreibtisch</b>
+<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt. Er wird munter, während du tippst, und döst ein, wenn du weggehst.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Wach bleiben</b>
 <br>Dein Mac bleibt wach, so lange du willst, auch mit zugeklapptem Deckel.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Lüfter</b>
 <br>Sieh, wie schnell deine Lüfter drehen, und wähle ihre Geschwindigkeit.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterie</b>
 <br>Sieh den Zustand deiner Batterie, ihre Kapazität und Anzahl der Zyklen, wie viel Strom hineinfließt und wie sie länger durchhält.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q und ⌘W schützen</b>
-<br>Nichts wird aus Versehen beendet oder geschlossen. Mit ⇧ klappt es gewollt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Spielmodus</b>
-<br>Während du spielst, springt nichts über das Spiel und nichts schließt es.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Speedtest</b>
 <br>Wie schnell dein Internet ist und wofür es reicht.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Seitentasten der Maus</b>
 <br>Die Tasten 4 und 5 gehen zurück und vor, wie ein Wischen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Per Maustaste ausblenden</b>
 <br>Ein Druck blendet die App im Vordergrund aus, wie ⌘H. Sie läuft weiter.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Zeilenweise scrollen</b>
 <br>Jeder Klick am Mausrad scrollt gleich weit, egal wie schnell du drehst.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichtung</b>
 <br>Eine Richtung fürs Trackpad, eine andere für die Maus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ohne Zeigerbeschleunigung</b>
 <br>Der Zeiger bewegt sich genau so weit wie deine Hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Gehaltene Taste wiederholen</b>
 <br>Halte eine Taste, und sie tippt immer wieder, ohne Akzentmenü.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home und End</b>
 <br>Beim Tippen an den Anfang oder das Ende der Zeile springen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationen</b>
 <br>Dock, Fenster und Übersicht werden schneller, auf Wunsch sofort.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Berechtigungen gelöschter Apps</b>
 <br>Entferne die Berechtigungen, die macOS für gelöschte Apps behält.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Haustier auf dem Schreibtisch</b>
-<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt. Er wird munter, während du tippst, und döst ein, wenn du weggehst.
 </td>
 </tr></tbody>
 <tbody><tr>

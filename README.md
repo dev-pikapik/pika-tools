@@ -40,26 +40,38 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/command-keys-dark.png"><img src="docs/media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protect ⌘Q and ⌘W</b>
+<br>Nothing quits or closes by accident. Add ⇧ when you mean it.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Game Mode</b>
+<br>While you play, nothing pops up over the game or closes it.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
+<br><b>Pet on the desktop</b>
+<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/keep-awake-dark.png"><img src="docs/media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Keep Awake</b>
 <br>Your Mac stays awake for as long as you need, even with the lid closed.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/fans-dark.png"><img src="docs/media/fans-light.png" width="340" alt=""></picture>
 <br><b>Fans</b>
 <br>See how fast your fans spin, and choose their speed.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/battery-dark.png"><img src="docs/media/battery-light.png" width="340" alt=""></picture>
 <br><b>Battery</b>
 <br>See your battery’s condition, capacity and cycle count, how much power goes in, and how to make it last.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/command-keys-dark.png"><img src="docs/media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Protect ⌘Q and ⌘W</b>
-<br>Nothing quits or closes by accident. Add ⇧ when you mean it.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Game Mode</b>
-<br>While you play, nothing pops up over the game or closes it.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/speed-test-dark.png"><img src="docs/media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Speed Test</b>
 <br>How fast your internet is, and what it’s good for.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/side-buttons-dark.png"><img src="docs/media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Side mouse buttons</b>
 <br>Buttons 4 and 5 go back and forward, like a swipe.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/hide-app-dark.png"><img src="docs/media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Hide with a mouse button</b>
 <br>One press hides the app in front, like ⌘H. It keeps running.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-lines-dark.png"><img src="docs/media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scroll by lines</b>
 <br>Every click of the wheel scrolls the same, however fast you spin it.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-direction-dark.png"><img src="docs/media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scroll direction</b>
 <br>One direction for the trackpad, another for the mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/linear-pointer-dark.png"><img src="docs/media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>No pointer acceleration</b>
 <br>The pointer moves exactly as far as your hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/key-repeat-dark.png"><img src="docs/media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repeat a held key</b>
 <br>Hold a key to type it again and again, without the accent menu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/home-end-dark.png"><img src="docs/media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home and End</b>
 <br>Jump to the start or end of a line while you type.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/animations-dark.png"><img src="docs/media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Speed up the Dock, windows and Quick Look, all the way to instant.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/leftover-permissions-dark.png"><img src="docs/media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissions of deleted apps</b>
 <br>Remove the permissions macOS still keeps for apps you deleted.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
-<br><b>Pet on the desktop</b>
-<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
 </td>
 </tr></tbody>
 <tbody><tr>

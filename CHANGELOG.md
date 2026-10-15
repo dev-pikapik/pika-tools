@@ -11,6 +11,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Fixed
 - One main copy: if pikapik stopped unexpectedly while one of its settings was on, the next launch no longer takes pikapik’s value for yours. Animations, Hide the Dock automatically, hot corners, Repeat a held key, Keep the Dock on one display, Hide desktop icons and Show hidden files remember your own value before they change anything and put it back later. Hide the Dock automatically now also goes back as it was when pikapik quits. Only the main copy changes the brightness of external displays, the app that opens archives, Finder extensions and settings from your other Macs, and only the main copy checks for updates and offers them; a copy that is not the main one quits without turning off Keep Awake.
+- Pet, App Store version: the line under Talks sometimes no longer promises news about updates. The App Store brings updates by itself, so the pet never said anything about them there; the line now just says it sits down for a chat.
 
 ## [1.52.0] - 2026-10-15
 

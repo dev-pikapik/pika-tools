@@ -40,26 +40,38 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q en ⌘W beschermen</b>
+<br>Niets stopt of sluit per ongeluk. Voeg ⇧ toe als je het echt wilt.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Gamemodus</b>
+<br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Huisdiertje op het bureaublad</b>
+<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Wakker houden</b>
 <br>Je Mac blijft wakker zolang je wilt, zelfs met de klep dicht.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilatoren</b>
 <br>Zie hoe snel je ventilatoren draaien en kies hun snelheid.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterij</b>
 <br>Zie de conditie, capaciteit en het aantal cycli van je batterij, hoeveel stroom erin gaat en hoe je hem langer laat meegaan.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q en ⌘W beschermen</b>
-<br>Niets stopt of sluit per ongeluk. Voeg ⇧ toe als je het echt wilt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Gamemodus</b>
-<br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Snelheidstest</b>
 <br>Hoe snel je internet is, en waar het goed voor is.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Zijknoppen</b>
 <br>Knop 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Verbergen met een muisknop</b>
 <br>Eén druk verbergt de app op de voorgrond, net als ⌘H. De app blijft draaien.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Per regel scrollen</b>
 <br>Elke klik van het scrollwiel scrolt even ver, hoe snel je ook draait.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichting</b>
 <br>Eén richting voor het trackpad, een andere voor de muis.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Zonder aanwijzerversnelling</b>
 <br>De aanwijzer gaat precies zo ver als je hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ingedrukte toets herhalen</b>
 <br>Houd een toets ingedrukt om hem te herhalen, zonder accentmenu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home en End</b>
 <br>Spring tijdens het typen naar het begin of einde van de regel.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animaties</b>
 <br>Maak het Dock, vensters en Snel bekijken sneller, tot direct aan toe.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Toestemmingen van verwijderde apps</b>
 <br>Haal de toestemmingen weg die macOS bewaart voor apps die je al hebt verwijderd.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Huisdiertje op het bureaublad</b>
-<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
 </td>
 </tr></tbody>
 <tbody><tr>

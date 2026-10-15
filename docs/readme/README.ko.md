@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q와 ⌘W 보호</b>
+<br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르세요.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>게임 모드</b>
+<br>게임하는 동안 그 위로 아무것도 뜨지 않고, 게임이 닫히지도 않습니다.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>데스크탑 펫</b>
+<br>작은 친구가 윈도우 뒤를 산책해요. 집어서 던지거나 스페이스를 눌러 점프시켜 보세요. 옷장에서 옷을 골라 입히고, 함께 놀면서 상을 받아 보세요. 타이핑하는 동안엔 기운이 나고, 자리를 비우면 꾸벅꾸벅 졸아요.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>잠자기 방지</b>
 <br>필요한 만큼 Mac이 깨어 있습니다. 덮개를 닫아도요.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>팬</b>
 <br>팬이 얼마나 빠르게 도는지 보고 속도를 선택하세요.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>배터리</b>
 <br>배터리 상태, 성능 최대치, 사이클 수와 들어오는 전력을 확인하고, 더 오래 쓰는 방법을 알아보세요.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q와 ⌘W 보호</b>
-<br>실수로 종료하거나 닫는 일이 없습니다. 원할 때는 ⇧를 함께 누르세요.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>게임 모드</b>
-<br>게임하는 동안 그 위로 아무것도 뜨지 않고, 게임이 닫히지도 않습니다.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>속도 테스트</b>
 <br>인터넷이 얼마나 빠른지, 무엇을 하기에 충분한지 알려 줍니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>측면 버튼</b>
 <br>4번, 5번 버튼으로 뒤로, 앞으로. 트랙패드에서 쓸어넘기듯이요.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>마우스 버튼으로 가리기</b>
 <br>한 번 누르면 맨 앞의 앱이 ⌘H처럼 가려져요. 앱은 계속 실행돼요.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>줄 단위로 스크롤</b>
 <br>휠을 얼마나 빨리 돌려도 한 칸에 같은 만큼 스크롤됩니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>스크롤 방향</b>
 <br>트랙패드와 마우스에 각각 다른 방향을 고를 수 있습니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>포인터 가속 끄기</b>
 <br>손을 움직인 만큼 포인터가 정확히 움직입니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>키를 누르고 있으면 반복 입력</b>
 <br>키를 누르고 있으면 악센트 메뉴 대신 글자가 반복됩니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home과 End</b>
 <br>입력하는 중에 줄의 처음이나 끝으로 이동합니다.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>애니메이션</b>
 <br>Dock, 윈도우, 훑어보기를 더 빠르게, 원하면 즉시 움직이게 합니다.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>삭제한 앱의 권한</b>
 <br>삭제한 앱을 위해 macOS가 남겨 둔 권한을 지웁니다.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>데스크탑 펫</b>
-<br>작은 친구가 윈도우 뒤를 산책해요. 집어서 던지거나 스페이스를 눌러 점프시켜 보세요. 옷장에서 옷을 골라 입히고, 함께 놀면서 상을 받아 보세요. 타이핑하는 동안엔 기운이 나고, 자리를 비우면 꾸벅꾸벅 졸아요.
 </td>
 </tr></tbody>
 <tbody><tr>

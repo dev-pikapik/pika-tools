@@ -40,26 +40,38 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protéger ⌘Q et ⌘W</b>
+<br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Jeu</b>
+<br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Compagnon sur le bureau</b>
+<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Rester éveillé</b>
 <br>Votre Mac reste éveillé aussi longtemps qu’il le faut, même écran rabattu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilateurs</b>
 <br>Voyez la vitesse de vos ventilateurs et choisissez-la.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterie</b>
 <br>Voyez l’état de votre batterie, sa capacité et son nombre de cycles, la puissance qui y entre et comment la faire durer.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Protéger ⌘Q et ⌘W</b>
-<br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Mode Jeu</b>
-<br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test de débit</b>
 <br>La vitesse de votre connexion, et ce qu’elle permet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boutons latéraux</b>
 <br>Les boutons 4 et 5 reculent et avancent, comme un balayage.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Masquer avec un bouton de la souris</b>
 <br>Un appui masque l’app au premier plan, comme ⌘H. Elle continue de tourner.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Défiler par lignes</b>
 <br>Chaque cran de la molette fait défiler d’autant, quelle que soit la vitesse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Sens de défilement</b>
 <br>Un sens pour le trackpad, un autre pour la souris.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sans accélération du pointeur</b>
 <br>Le pointeur parcourt exactement la distance de votre main.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Répéter une touche maintenue</b>
 <br>Maintenez une touche pour la répéter, sans menu des accents.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home et End</b>
 <br>Allez au début ou à la fin de la ligne pendant la saisie.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Accélérez le Dock, les fenêtres et Coup d’œil, jusqu’à l’instantané.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Autorisations des apps supprimées</b>
 <br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Compagnon sur le bureau</b>
-<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
 </td>
 </tr></tbody>
 <tbody><tr>

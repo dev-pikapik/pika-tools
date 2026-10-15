@@ -40,26 +40,38 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Lindungi ⌘Q dan ⌘W</b>
+<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Game</b>
+<br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Peliharaan di desktop</b>
+<br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Tetap Terjaga</b>
 <br>Mac tetap terjaga selama yang Anda perlukan, bahkan saat penutupnya ditutup.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Kipas</b>
 <br>Lihat seberapa cepat kipas berputar dan pilih kecepatannya.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Baterai</b>
 <br>Lihat kondisi, kapasitas, dan jumlah siklus baterai, berapa banyak daya yang masuk, serta cara membuatnya lebih awet.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Lindungi ⌘Q dan ⌘W</b>
-<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Mode Game</b>
-<br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Tes Kecepatan</b>
 <br>Seberapa cepat internet Anda dan cukup untuk apa saja.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Tombol samping</b>
 <br>Tombol 4 dan 5 untuk kembali dan maju, seperti usapan di trackpad.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Sembunyikan dengan tombol tetikus</b>
 <br>Sekali tekan menyembunyikan app di depan, seperti ⌘H. App tetap berjalan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Gulir per baris</b>
 <br>Setiap klik roda menggulir sama jauh, secepat apa pun diputar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Arah gulir</b>
 <br>Satu arah untuk trackpad, arah lain untuk tetikus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Tanpa akselerasi penunjuk</b>
 <br>Penunjuk bergerak persis sejauh tangan Anda.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ulangi tombol yang ditahan</b>
 <br>Tahan tombol untuk mengetiknya berulang kali, tanpa menu aksen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home dan End</b>
 <br>Lompat ke awal atau akhir baris saat mengetik.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasi</b>
 <br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Izin app yang sudah dihapus</b>
 <br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Peliharaan di desktop</b>
-<br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
 </td>
 </tr></tbody>
 <tbody><tr>

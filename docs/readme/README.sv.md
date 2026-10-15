@@ -40,26 +40,38 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Skydda ⌘Q och ⌘W</b>
+<br>Inget avslutas eller stängs av misstag. Lägg till ⇧ när du menar det.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Spelläge</b>
+<br>Medan du spelar dyker inget upp över spelet och inget stänger det.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Husdjur på skrivbordet</b>
+<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Håll vaken</b>
 <br>Din Mac håller sig vaken så länge du vill, även med locket stängt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Fläktar</b>
 <br>Se hur snabbt fläktarna snurrar och välj deras hastighet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batteri</b>
 <br>Se batteriets skick, kapacitet och cykelantal, hur mycket ström som går in och hur du får det att räcka längre.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Skydda ⌘Q och ⌘W</b>
-<br>Inget avslutas eller stängs av misstag. Lägg till ⇧ när du menar det.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Spelläge</b>
-<br>Medan du spelar dyker inget upp över spelet och inget stänger det.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Hastighetstest</b>
 <br>Hur snabbt ditt internet är och vad det räcker till.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Sidoknappar</b>
 <br>Knapp 4 och 5 går bakåt och framåt, som ett svep.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Göm med en musknapp</b>
 <br>Ett tryck gömmer appen i förgrunden, som ⌘H. Den fortsätter att köras.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Rulla per rad</b>
 <br>Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Rullningsriktning</b>
 <br>En riktning för styrplattan, en annan för musen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ingen pekaracceleration</b>
 <br>Pekaren rör sig exakt lika långt som din hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Upprepa en nedhållen tangent</b>
 <br>Håll ned en tangent för att skriva den om och om igen, utan accentmeny.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home och End</b>
 <br>Hoppa till början eller slutet av raden medan du skriver.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationer</b>
 <br>Snabba upp Dock, fönster och Snabbtitt, ända till direkt.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Behörigheter för raderade appar</b>
 <br>Ta bort behörigheterna som macOS sparar för appar du redan har raderat.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Husdjur på skrivbordet</b>
-<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
 </td>
 </tr></tbody>
 <tbody><tr>

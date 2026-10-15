@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>आपका Mac समझता है कि आप क्या चाहते हैं।</b><br>कीबोर्ड, माउस, विंडो और Finder के लिए छोटे-छोटे सुधार, सीधे आपके Mac के मेन्यू बार में।</p>
+<p align="center"><b>आपका Mac आपका मतलब समझता है।</b><br>कीबोर्ड, माउस, विंडो और Finder के लिए छोटे-छोटे सुधार, सीधे आपके Mac के मेन्यू बार में।</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <b>हिन्दी</b> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q और ⌘W सुरक्षित</b>
+<br>गलती से कुछ बंद नहीं होगा। जानबूझकर करना हो तो ⇧ जोड़ें।
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>गेम मोड</b>
+<br>खेलते समय गेम के ऊपर कुछ नहीं खुलता और गेम बंद नहीं होता।
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>डेस्कटॉप पर नन्हा दोस्त</b>
+<br>एक नन्हा दोस्त आपकी विंडो के पीछे टहलता है। उसे उठाकर उछालें, या स्पेस दबाएँ और वह कूदेगा। अलमारी से उसे सजाएँ और साथ खेलते हुए पुरस्कार जीतें। आप टाइप करते हैं तो वह फुर्तीला हो जाता है और आपके जाते ही ऊँघने लगता है।
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>जगाए रखें</b>
 <br>जितनी देर चाहिए, Mac जागा रहता है, ढक्कन बंद होने पर भी।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>पंखे</b>
 <br>देखें कि आपके पंखे कितनी तेज़ घूम रहे हैं और उनकी गति चुनें।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>बैटरी</b>
 <br>देखें कि आपकी बैटरी की स्थिति, क्षमता और चक्र गणना क्या है, उसमें कितनी पावर जा रही है, और उसे ज़्यादा समय तक कैसे चलाएँ।
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q और ⌘W सुरक्षित</b>
-<br>गलती से कुछ बंद नहीं होगा। जानबूझकर करना हो तो ⇧ जोड़ें।
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>गेम मोड</b>
-<br>खेलते समय गेम के ऊपर कुछ नहीं खुलता और गेम बंद नहीं होता।
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>स्पीड टेस्ट</b>
 <br>इंटरनेट कितना तेज़ है और किन कामों के लिए काफ़ी है।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>माउस के साइड बटन</b>
 <br>बटन 4 और 5 पीछे और आगे ले जाते हैं, ट्रैकपैड पर स्वाइप की तरह।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>माउस बटन से छिपाएँ</b>
 <br>एक बार दबाते ही सामने वाली ऐप छिप जाती है, जैसे ⌘H से। वह चलती रहती है।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>पंक्तियों के हिसाब से स्क्रोल</b>
 <br>व्हील कितनी भी तेज़ घुमाएँ, हर क्लिक बराबर स्क्रोल करता है।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>स्क्रॉल दिशा</b>
 <br>ट्रैकपैड के लिए एक दिशा, माउस के लिए दूसरी।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>पॉइंटर ऐक्सलरेशन बंद</b>
 <br>पॉइंटर ठीक उतना ही चलता है जितना आपका हाथ।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>दबाए रखने पर कुंजी दोहराएं</b>
 <br>कुंजी दबाए रखें, वह बार-बार टाइप होगी, ऐक्सेंट मेन्यू के बिना।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home और End</b>
 <br>टाइप करते हुए लाइन की शुरुआत या अंत पर जाएँ।
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>एनिमेशन</b>
 <br>Dock, विंडो और क्विक लुक को तेज़ करें, चाहें तो तुरंत।
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>डिलीट किए गए ऐप्स की अनुमतियाँ</b>
 <br>जिन ऐप्स को आप डिलीट कर चुके हैं, उनके लिए macOS जो अनुमतियाँ रखे रहता है, उन्हें हटाएँ।
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>डेस्कटॉप पर नन्हा दोस्त</b>
-<br>एक नन्हा दोस्त आपकी विंडो के पीछे टहलता है। उसे उठाकर उछालें, या स्पेस दबाएँ और वह कूदेगा। अलमारी से उसे सजाएँ और साथ खेलते हुए पुरस्कार जीतें। आप टाइप करते हैं तो वह फुर्तीला हो जाता है और आपके जाते ही ऊँघने लगता है।
 </td>
 </tr></tbody>
 <tbody><tr>

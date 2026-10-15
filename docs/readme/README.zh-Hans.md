@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>保护 ⌘Q 和 ⌘W</b>
+<br>不会误退出或误关闭。真想这么做时，加上 ⇧。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>游戏模式</b>
+<br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>桌面宠物</b>
+<br>一个小伙伴在窗口后面散步。把它拎起来扔出去，或者按空格键让它跳一下。用衣橱给它换装，一起玩的时候还能赢得奖章。你打字时它精神抖擞，你走开时它打起瞌睡。
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>保持唤醒</b>
 <br>Mac 想醒多久就醒多久，合上盖子也行。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>风扇</b>
 <br>查看风扇转得有多快，并选择它的转速。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>电池</b>
 <br>查看电池的状态、最大容量和循环次数，有多少电力正在充入，以及怎样让它更耐用。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>保护 ⌘Q 和 ⌘W</b>
-<br>不会误退出或误关闭。真想这么做时，加上 ⇧。
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>游戏模式</b>
-<br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>网速测试</b>
 <br>网速有多快、够做什么，一看便知。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>鼠标侧键</b>
 <br>按键 4 和 5 用于返回和前进，就像在触控板上轻扫。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>用鼠标按钮隐藏</b>
 <br>按一下即可隐藏最前面的 App，就像按 ⌘H 一样。它会继续运行。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>按行滚动</b>
 <br>无论滚轮转得多快，每一格都滚动相同的距离。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>滚动方向</b>
 <br>触控板一个方向，鼠标另一个方向。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>关闭指针加速</b>
 <br>手移动多少，指针就移动多少。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>按住按键连续输入</b>
 <br>按住按键会重复输入字母，而不是弹出重音符号菜单。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home 和 End</b>
 <br>输入时跳到行首或行尾。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>动画</b>
 <br>让程序坞、窗口和快速查看更快，甚至瞬间完成。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>已删除 App 的权限</b>
 <br>清除 macOS 为已删除的 App 保留的权限。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>桌面宠物</b>
-<br>一个小伙伴在窗口后面散步。把它拎起来扔出去，或者按空格键让它跳一下。用衣橱给它换装，一起玩的时候还能赢得奖章。你打字时它精神抖擞，你走开时它打起瞌睡。
 </td>
 </tr></tbody>
 <tbody><tr>
