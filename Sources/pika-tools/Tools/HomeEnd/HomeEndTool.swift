@@ -76,6 +76,9 @@ final class HomeEndTool: Tool {
     func refresh() {
         stop()
         if isEnabled, MainCopy.canAct, AXIsProcessTrusted() { start() }
+        #if !APPSTORE
+        if !isActive { TextFocus.unwatch(self) }
+        #endif
     }
 
     static func target(_ key: Int, _ flags: CGEventFlags, app: String?, excluded: [String]) -> (key: Int, flags: CGEventFlags)? {
@@ -109,6 +112,9 @@ final class HomeEndTool: Tool {
         self.tap = tap
         self.source = source
         isActive = true
+        #if !APPSTORE
+        TextFocus.watch(self)
+        #endif
     }
 
     private func stop() {

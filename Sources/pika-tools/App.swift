@@ -190,6 +190,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         DesktopIconsTool.putBack()
         HiddenFilesTool.putBack()
         HotCorners.putBackAll()
+        TextFocus.unwatch()
         #endif
         GameModeTool.shared.leave()
         DockEdges.restore()
