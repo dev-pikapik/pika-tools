@@ -88,7 +88,7 @@ final class ScrollDirectionTool: Tool {
     private func update() {
         CFPreferencesAppSynchronize(kCFPreferencesAnyApplication)
         systemNatural = CFPreferencesCopyAppValue("com.apple.swipescrolldirection" as CFString, kCFPreferencesAnyApplication) as? Bool ?? true
-        ScrollTap.shared.direction = isEnabled ? ScrollDirection(trackpadNatural: trackpadNatural, mouseNatural: mouseNatural, systemNatural: systemNatural) : nil
+        ScrollTap.shared.direction = isEnabled && MainCopy.canAct ? ScrollDirection(trackpadNatural: trackpadNatural, mouseNatural: mouseNatural, systemNatural: systemNatural) : nil
     }
 }
 

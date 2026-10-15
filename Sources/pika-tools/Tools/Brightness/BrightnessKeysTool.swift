@@ -34,7 +34,7 @@ final class BrightnessKeysTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled, AXIsProcessTrusted() { start() }
+        if isEnabled, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     private func start() {

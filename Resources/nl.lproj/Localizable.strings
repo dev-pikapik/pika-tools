@@ -1226,6 +1226,19 @@
 "Window" = "Venster";
 "Minimize" = "Zet in Dock";
 "Zoom" = "Zoom";
+"Speed" = "Snelheid";
+"Normal Speed" = "Normale snelheid";
+"Back 10 Seconds" = "10 seconden terug";
+"Forward 10 Seconds" = "10 seconden vooruit";
+"Previous Frame" = "Vorig beeld";
+"Next Frame" = "Volgend beeld";
+"Go to Beginning" = "Ga naar begin";
+"Go to End" = "Ga naar einde";
+"Start Over" = "Begin opnieuw";
+"Save Frame…" = "Bewaar beeld…";
+"Float on Top" = "Houd op voorgrond";
+"Move to Display" = "Verplaats naar scherm";
+"Couldn’t save the frame." = "Het beeld kan niet worden bewaard.";
 "Add a Layout" = "Indeling toevoegen";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "De indeling kon niet worden toegevoegd. Gebruik in plaats daarvan Instellingen toetsenbord.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Het Dock gaat mee. Zet je de schakelaar uit, dan staan de beeldschermen weer zoals ze waren";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Verbeteringen";
 "Info" = "Info";
+"Another copy of pikapik is in charge" = "Een andere kopie van pikapik heeft de leiding";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Deze kopie verandert niets op je Mac en neemt het over zodra de andere kopie stopt.";
+"Make This Copy the Main One" = "Maak deze kopie de hoofdkopie";

@@ -7,6 +7,9 @@ if CommandLine.arguments.contains("--uninstall") {
     AnimationsTool.uninstall()
     KeyRepeatTool.uninstall()
     DockDisplayTool.uninstall()
+    DesktopIconsTool.putBack()
+    HiddenFilesTool.putBack()
+    HotCorners.putBackAll()
     #endif
     DockEdges.restore()
     HotKeyTrace().restore()

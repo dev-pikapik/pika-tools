@@ -1226,6 +1226,19 @@
 "Window" = "विंडो";
 "Minimize" = "छोटा करें";
 "Zoom" = "ज़ूम करें";
+"Speed" = "गति";
+"Normal Speed" = "सामान्य गति";
+"Back 10 Seconds" = "10 सेकंड पीछे";
+"Forward 10 Seconds" = "10 सेकंड आगे";
+"Previous Frame" = "पिछला फ़्रेम";
+"Next Frame" = "अगला फ़्रेम";
+"Go to Beginning" = "शुरुआत पर जाएँ";
+"Go to End" = "अंत पर जाएँ";
+"Start Over" = "फिर से शुरू करें";
+"Save Frame…" = "फ़्रेम सेव करें…";
+"Float on Top" = "सबसे ऊपर रखें";
+"Move to Display" = "डिस्प्ले पर ले जाएँ";
+"Couldn’t save the frame." = "फ़्रेम सेव नहीं हो सका।";
 "Add a Layout" = "लेआउट जोड़ें";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "लेआउट जोड़ा नहीं जा सका। इसके बजाय कीबोर्ड सेटिंग का उपयोग करें।";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock भी उसी के साथ जाता है। स्विच बंद करने पर डिस्प्ले पहले जैसे हो जाते हैं";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "सुधार";
 "Info" = "जानकारी";
+"Another copy of pikapik is in charge" = "pikapik की दूसरी कॉपी अभी मुख्य है";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "यह कॉपी आपके Mac पर कुछ नहीं बदलती और दूसरी कॉपी बंद होने पर कमान संभाल लेती है।";
+"Make This Copy the Main One" = "इस कॉपी को मुख्य बनाएँ";

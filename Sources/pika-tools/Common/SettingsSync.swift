@@ -169,6 +169,7 @@ final class SettingsSync {
         stopWatching()
         last = SettingsBackup.snapshot
         guard isEnabled else { return state = .off }
+        guard MainCopy.canAct else { return }
         #if !APPSTORE
         let manager = FileManager.default
         guard manager.fileExists(atPath: Self.drive.path) else { return state = .noDrive }

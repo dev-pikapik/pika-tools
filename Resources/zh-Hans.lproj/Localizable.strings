@@ -1226,6 +1226,19 @@
 "Window" = "窗口";
 "Minimize" = "最小化";
 "Zoom" = "缩放";
+"Speed" = "速度";
+"Normal Speed" = "正常速度";
+"Back 10 Seconds" = "后退 10 秒";
+"Forward 10 Seconds" = "前进 10 秒";
+"Previous Frame" = "上一帧";
+"Next Frame" = "下一帧";
+"Go to Beginning" = "跳到开头";
+"Go to End" = "跳到结尾";
+"Start Over" = "从头开始";
+"Save Frame…" = "存储帧…";
+"Float on Top" = "置于最前";
+"Move to Display" = "移到显示器";
+"Couldn’t save the frame." = "无法存储此帧。";
 "Add a Layout" = "添加布局";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "无法添加布局。请改用键盘设置。";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "程序坞会随之移动。关闭开关后，显示器会恢复原样";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "增强功能";
 "Info" = "信息";
+"Another copy of pikapik is in charge" = "当前由另一个 pikapik 副本负责";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "此副本不会更改你的 Mac 设置，另一个副本退出后会自动接手。";
+"Make This Copy the Main One" = "将此副本设为主副本";

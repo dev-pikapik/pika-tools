@@ -77,7 +77,7 @@ final class AppVolumeTool: Tool {
     }
 
     func refresh() {
-        AppVolumeEngine.shared.configure(active: isActive, levels: levels, muted: muted)
+        AppVolumeEngine.shared.configure(active: isActive && MainCopy.canAct, levels: levels, muted: muted)
     }
 
     func reset() {

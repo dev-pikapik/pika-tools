@@ -1226,6 +1226,19 @@
 "Window" = "Okno";
 "Minimize" = "Zminimalizuj";
 "Zoom" = "Powiększ";
+"Speed" = "Prędkość";
+"Normal Speed" = "Normalna prędkość";
+"Back 10 Seconds" = "Przewiń do tyłu o 10 sekund";
+"Forward 10 Seconds" = "Przewiń do przodu o 10 sekund";
+"Previous Frame" = "Poprzednia klatka";
+"Next Frame" = "Następna klatka";
+"Go to Beginning" = "Przejdź na początek";
+"Go to End" = "Przejdź na koniec";
+"Start Over" = "Zacznij od początku";
+"Save Frame…" = "Zapisz klatkę…";
+"Float on Top" = "Zawsze na wierzchu";
+"Move to Display" = "Przenieś na ekran";
+"Couldn’t save the frame." = "Nie udało się zapisać klatki.";
 "Add a Layout" = "Dodaj układ";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Nie udało się dodać układu. Użyj zamiast tego Ustawień klawiatury.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock przenosi się razem z nim. Wyłączenie przełącznika przywraca poprzedni układ wyświetlaczy";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Ulepszenia";
 "Info" = "Informacje";
+"Another copy of pikapik is in charge" = "Inna kopia pikapik ma teraz kontrolę";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Ta kopia niczego nie zmienia w Macu i przejmie kontrolę, gdy druga kopia zostanie zamknięta.";
+"Make This Copy the Main One" = "Ustaw tę kopię jako główną";

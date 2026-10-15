@@ -296,7 +296,7 @@ pikapik doesn't record, store or send anything you type or click. Events are han
 <details>
 <summary>Every tool in detail</summary>
 
-**Player.** Videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, play in their own window. Open Settings › Player and click **Open Video…**, or right-click a video and choose **Open With › pikapik Player**. Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, and F goes full screen. A video that is already open comes to the front instead of opening twice. The player has no network access and asks for no permissions, and it doesn’t change which app opens your videos. The FFmpeg and dav1d licenses and their source code are linked on the same page. Subtitles aren’t supported yet. It isn’t in the Mac App Store version.
+**Player.** Videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, play in their own window. Open Settings › Player and click **Open Video…**, or right-click a video and choose **Open With › pikapik Player**. Space plays and pauses, ← and → step one frame on pause and jump 5 seconds while playing, J and L jump 10, ↑ and ↓ change the volume, and F goes full screen. The **Speed** menu goes from 0.5× to 2×, **Save Frame…** saves a PNG, and the player continues where you stopped. A video that is already open comes to the front instead of opening twice. The player has no network access and asks for no permissions, and it doesn’t change which app opens your videos. The FFmpeg and dav1d licenses and their source code are linked on the same page. Subtitles aren’t supported yet. It isn’t in the Mac App Store version.
 
 **App Volume.** Open Settings › Sound and switch on **App Volume**. Every app that plays sound gets its own slider and a mute button, in Settings and in the menu bar panel. Lower a loud video call, mute a noisy game and leave your music as it is: the volume of your Mac and of the other apps stays the same. pikapik remembers the level of each app, and an app you leave at full volume is never touched. An app you have set stays in the list, also after a restart, dimmed while it is closed, so you can set a level before the app starts: click **Add App…** or drag an app in from Finder. The ✕ next to an app forgets it and returns it to full volume. To change an app's volume, pikapik passes its sound through itself, so it needs the **System Audio Recording** permission, which you allow on the Permissions page. The sound is only passed on: it isn't recorded, saved or sent anywhere, and the microphone isn't used. It needs macOS 14.2 or later and is hidden on macOS 14.0 and 14.1. Off by default.
 
@@ -444,6 +444,8 @@ Many settings come with a small picture of what they do, such as a Mac staying a
 Every page has a **Restore Defaults…** button at the bottom. It asks first, then turns off the tools on that page and puts their options back, as if pikapik never touched them.
 
 **Sync settings with iCloud** keeps pikapik the same on all your Macs. The settings live in the pikapik folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.
+
+**One main copy.** If two copies of pikapik are open at once, such as the website one and the App Store one, only the one you opened last changes anything on your Mac. The other one shows a short note with a **Make This Copy the Main One** button and takes over when the main copy quits. A copy that stops being the main one puts back what it changed.
 
 </details>
 

@@ -66,7 +66,7 @@ final class PetTool: Tool {
 
     func refresh() {
         stopTap()
-        guard isEnabled else { return PetStage.shared.stop() }
+        guard isEnabled, MainCopy.canAct else { return PetStage.shared.stop() }
         PetStage.shared.start()
         startTap()
     }

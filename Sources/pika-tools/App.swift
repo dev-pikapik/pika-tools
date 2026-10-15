@@ -4,6 +4,7 @@ struct PikaToolsApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     private let registry = ToolRegistry.shared
     private let background = Background.shared
+    private let mainCopy = MainCopy.shared
     @AppStorage(Background.key) private var keepRunning = true
     private static let logo = menuBarLogo(opacity: 1)
     private static let logoOff = menuBarLogo(opacity: 0.45)
@@ -19,7 +20,7 @@ struct PikaToolsApp: App {
     }
 
     var body: some Scene {
-        MenuBarExtra(isInserted: Binding(get: { background.iconShown }, set: { background.iconShown = $0 })) {
+        MenuBarExtra(isInserted: Binding(get: { background.iconShown && mainCopy.role != .passive }, set: { background.iconShown = $0 })) {
             MenuView(registry: registry)
         } label: {
             Group {
@@ -111,9 +112,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             FinderExtension.refreshWaiting()
         }
         Log.launch()
-        ToolRegistry.shared.refresh()
-        permissions.checkSystemAudio()
-        SettingsSync.shared.refresh()
         #if APPSTORE
         TipJar.shared.start()
         #else
@@ -121,8 +119,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         #endif
         StatusMenu.shared.start()
         Brightness.shared.start()
-        KeepAwake.shared.resume()
-        KeepAwake.shared.restoreLidSleepIfNeeded()
         #if !APPSTORE
         FanControl.shared.start()
         if FileManager.default.fileExists(atPath: PlayerPage.helper.path) { LSRegisterURL(PlayerPage.helper as CFURL, false) }
@@ -138,6 +134,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { _ in
             Background.shared.quitting = true
         }
+
+        MainCopy.shared.begin(
+            activate: { [self] in MainActor.assumeIsolated { startFeatures() } },
+            deactivate: { [self] quitting in MainActor.assumeIsolated { stopFeatures(quitting: quitting) } }
+        )
 
         if CommandLine.arguments.contains("--permissions") {
             SettingsWindow.show(.permissions)
@@ -155,7 +156,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         let background = Background.shared
         if background.quitting || Background.isOutsideQuit { return .terminateNow }
-        guard Background.isOn, !NSEvent.modifierFlags.contains(.option) else {
+        guard Background.isOn, MainCopy.shared.role != .passive, !NSEvent.modifierFlags.contains(.option) else {
             KeepAwake.shared.set(.off)
             return .terminateNow
         }
@@ -165,16 +166,33 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
+        SpeedTest.shared.cancel()
+        MainCopy.shared.retire()
+        if #available(macOS 14.2, *) { AppVolumeEngine.shared.shutdown() }
+    }
+
+    @MainActor private func startFeatures() {
+        ToolRegistry.shared.refresh()
+        Permissions.shared.checkSystemAudio()
+        SettingsSync.shared.refresh()
+        Brightness.shared.refresh()
+        KeepAwake.shared.resume()
+        KeepAwake.shared.restoreLidSleepIfNeeded()
+    }
+
+    @MainActor private func stopFeatures(quitting: Bool) {
+        ToolRegistry.shared.refresh()
+        SettingsSync.shared.refresh()
+        Brightness.shared.release()
+        if !quitting { KeepAwake.shared.suspend() }
         #if !APPSTORE
         FanControl.shared.handOff()
-        #endif
-        SpeedTest.shared.cancel()
-        #if !APPSTORE
-        ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
+        DesktopIconsTool.putBack()
+        HiddenFilesTool.putBack()
+        HotCorners.putBackAll()
         TextFocus.unwatch()
         #endif
         GameModeTool.shared.leave()
         DockEdges.restore()
-        if #available(macOS 14.2, *) { AppVolumeEngine.shared.shutdown() }
     }
 }

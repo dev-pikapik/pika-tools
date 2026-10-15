@@ -113,7 +113,7 @@ final class LayoutFixTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled || fixesAsYouType, AXIsProcessTrusted() { start() }
+        if isEnabled || fixesAsYouType, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     private func start() {
@@ -478,7 +478,7 @@ final class LayoutFixTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled { start() }
+        if isEnabled, MainCopy.canAct { start() }
         if !isActive { TextFocus.unwatch(self) }
     }
 

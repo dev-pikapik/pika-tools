@@ -75,7 +75,7 @@ final class HomeEndTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled, AXIsProcessTrusted() { start() }
+        if isEnabled, MainCopy.canAct, AXIsProcessTrusted() { start() }
         #if !APPSTORE
         if !isActive { TextFocus.unwatch(self) }
         #endif

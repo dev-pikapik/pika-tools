@@ -1226,6 +1226,19 @@
 "Window" = "Ventana";
 "Minimize" = "Minimizar";
 "Zoom" = "Zoom";
+"Speed" = "Velocidad";
+"Normal Speed" = "Velocidad normal";
+"Back 10 Seconds" = "Retroceder 10 segundos";
+"Forward 10 Seconds" = "Avanzar 10 segundos";
+"Previous Frame" = "Fotograma anterior";
+"Next Frame" = "Fotograma siguiente";
+"Go to Beginning" = "Ir al principio";
+"Go to End" = "Ir al final";
+"Start Over" = "Empezar de nuevo";
+"Save Frame…" = "Guardar fotograma…";
+"Float on Top" = "Mantener en primer plano";
+"Move to Display" = "Mover a la pantalla";
+"Couldn’t save the frame." = "No se ha podido guardar el fotograma.";
 "Add a Layout" = "Añadir distribución";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "No se pudo añadir la distribución. Usa los Ajustes del teclado.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "El Dock se va con ella. Al apagar el interruptor, las pantallas vuelven a como estaban";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Mejoras";
 "Info" = "Información";
+"Another copy of pikapik is in charge" = "Otra copia de pikapik está al mando";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Esta copia no cambia nada en tu Mac y toma el relevo cuando la otra copia se cierra.";
+"Make This Copy the Main One" = "Convertir esta copia en la principal";

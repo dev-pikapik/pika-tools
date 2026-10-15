@@ -1226,6 +1226,19 @@
 "Window" = "Jendela";
 "Minimize" = "Minimalkan";
 "Zoom" = "Zum";
+"Speed" = "Kecepatan";
+"Normal Speed" = "Kecepatan normal";
+"Back 10 Seconds" = "Mundur 10 detik";
+"Forward 10 Seconds" = "Maju 10 detik";
+"Previous Frame" = "Bingkai sebelumnya";
+"Next Frame" = "Bingkai berikutnya";
+"Go to Beginning" = "Ke awal";
+"Go to End" = "Ke akhir";
+"Start Over" = "Mulai dari awal";
+"Save Frame…" = "Simpan bingkai…";
+"Float on Top" = "Selalu di atas";
+"Move to Display" = "Pindahkan ke layar";
+"Couldn’t save the frame." = "Bingkai tidak dapat disimpan.";
 "Add a Layout" = "Tambah Tata Letak";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Tidak dapat menambahkan tata letak. Gunakan Pengaturan Papan Ketik.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock ikut berpindah. Mematikan sakelar mengembalikan layar seperti semula";
@@ -1245,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Peningkatan";
 "Info" = "Info";
+"Another copy of pikapik is in charge" = "Salinan pikapik lain sedang bertugas";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Salinan ini tidak mengubah apa pun di Mac dan mengambil alih saat salinan lainnya ditutup.";
+"Make This Copy the Main One" = "Jadikan salinan ini yang utama";
