@@ -46,6 +46,7 @@ struct TestMainCopy {
         precondition(OriginalValue.putBack(first, current: true) == false)
         precondition(OriginalValue.putBack(first, current: false) == nil)
         precondition(OriginalValue.putBack(nil, current: true) == nil)
+        precondition(OriginalValue.putBack(OriginalValue.Entry(before: true, ours: false), current: true) == nil)
         print("the original goes back only while the switch still holds our value: ok")
 
         let key = "test-main-copy-original"

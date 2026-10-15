@@ -15,5 +15,11 @@ struct TestHotCorners {
         precondition(plan.write == nil && plan.saved.isEmpty)
         precondition(HotCorners.putBack(current: 4, saved: ["tl": 5], side: "br").write == nil)
         print("put back writes the remembered action, or nothing when it is already there: ok")
+
+        plan = HotCorners.putBack(current: 4, saved: ["br": 2, "tl": 5], ours: 4, side: "br")
+        precondition(plan.write == 2 && plan.saved == ["tl": 5])
+        plan = HotCorners.putBack(current: 9, saved: ["br": 2, "tl": 5], ours: 4, side: "br")
+        precondition(plan.write == nil && plan.saved == ["tl": 5])
+        print("a corner changed by hand keeps the user's action and only the journal entry goes: ok")
     }
 }

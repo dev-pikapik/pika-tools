@@ -107,7 +107,8 @@ final class AnimationsTool: Tool {
     }
 
     private func putBack() {
-        let changes = AnimationSetting.changes(from: owned, to: [:], system: system, own: own)
+        let ours = owned.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
+        let changes = AnimationSetting.changes(from: ours, to: [:], system: system, own: own)
         guard !changes.isEmpty else { return }
         changes.forEach { $0.0.write($0.1) }
         reload()

@@ -2,7 +2,7 @@ import Foundation
 
 #if !APPSTORE
 enum HotCorners {
-    private static let journalKey = "hot-corners-before", dock = "com.apple.dock" as CFString
+    private static let journalKey = "hot-corners-before", oursKey = "hot-corners-ours", dock = "com.apple.dock" as CFString
 
     static func key(_ side: String) -> String { "wvous-\(side)-corner" }
 
@@ -15,9 +15,12 @@ enum HotCorners {
         return (saved, action)
     }
 
-    static func putBack(current: Int, saved: [String: Int], side: String) -> (saved: [String: Int], write: Int?) {
+    static var ours: [String: Int] { UserDefaults.standard.dictionary(forKey: oursKey) as? [String: Int] ?? [:] }
+
+    static func putBack(current: Int, saved: [String: Int], ours: Int? = nil, side: String) -> (saved: [String: Int], write: Int?) {
         var saved = saved
         guard let original = saved.removeValue(forKey: side) else { return (saved, nil) }
+        guard ours.map({ $0 == current }) ?? true else { return (saved, nil) }
         return (saved, original == current ? nil : original)
     }
 
@@ -28,15 +31,17 @@ enum HotCorners {
     static func putBackAll() {
         CFPreferencesAppSynchronize(dock)
         var saved = before, wrote = false
+        let ours = ours
         for side in saved.keys {
             let name = key(side) as CFString
-            let plan = putBack(current: (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0, saved: saved, side: side)
+            let plan = putBack(current: (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0, saved: saved, ours: ours[side], side: side)
             saved = plan.saved
             guard let value = plan.write else { continue }
             CFPreferencesSetAppValue(name, value as CFNumber, dock)
             wrote = true
         }
         UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: journalKey)
+        UserDefaults.standard.set(nil, forKey: oursKey)
         guard wrote else { return }
         CFPreferencesAppSynchronize(dock)
         _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
@@ -48,6 +53,9 @@ enum HotCorners {
         let current = (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0
         let result = plan(current)
         UserDefaults.standard.set(result.saved.isEmpty ? nil : result.saved, forKey: journalKey)
+        var written = ours
+        written[side] = result.saved[side] == nil ? nil : (result.write ?? written[side])
+        UserDefaults.standard.set(written.isEmpty ? nil : written, forKey: oursKey)
         guard let value = result.write else { return }
         CFPreferencesSetAppValue(name, value as CFNumber, dock)
         CFPreferencesAppSynchronize(dock)
