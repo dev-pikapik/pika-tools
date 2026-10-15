@@ -54,13 +54,11 @@ final class ImageCanvas: NSView {
         } else if controller?.canPan == true {
             grabbing = true
             NSCursor.closedHand.push()
-        } else {
-            window?.performDrag(with: event)
         }
     }
 
     override func mouseDragged(with event: NSEvent) {
-        controller?.pan(by: CGSize(width: event.deltaX, height: -event.deltaY))
+        if grabbing { controller?.pan(by: CGSize(width: event.deltaX, height: -event.deltaY)) } else { window?.performDrag(with: event) }
     }
 
     override func mouseUp(with event: NSEvent) {
@@ -585,7 +583,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
         caption.animator().alphaValue = alpha
-        window.standardWindowButton(.closeButton)?.superview?.animator().alphaValue = alpha
+        window.standardWindowButton(.closeButton)?.superview?.animator().alphaValue = fullScreen ? 1 : alpha
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
