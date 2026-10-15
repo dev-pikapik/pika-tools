@@ -33,7 +33,7 @@ struct PetClothes {
         static let indigo: Ink = (0.29, 0.33, 0.66), indigoDeep: Ink = (0.20, 0.23, 0.50)
         static let glass: Ink = (0.80, 0.90, 1.0), string: Ink = (0.36, 0.40, 0.48), feather: Ink = (0.87, 0.88, 0.95)
         static let shade: Ink = (0.10, 0.08, 0.20)
-        static let chestnut: Ink = (0.58, 0.33, 0.19), chestnutDeep: Ink = (0.40, 0.21, 0.12), espresso: Ink = (0.19, 0.09, 0.06)
+        static let chestnut: Ink = (0.58, 0.33, 0.19), chestnutDeep: Ink = (0.40, 0.21, 0.12)
         static let pine: Ink = (0.16, 0.45, 0.43), pineDeep: Ink = (0.10, 0.31, 0.31)
     }
 
@@ -332,17 +332,17 @@ struct PetClothes {
             let sheen = ribbon(trace([q(-2.6, -1.35), q(-0.6, -1.75), q(1.6, -1.6)]), { 0.2 + 0.4 * sin(.pi * $0) })
             return [(mask, c(Dye.midnight)), (sheen, c(Dye.white, 0.22))]
         case .monocle:
-            let o = P(e.x + 0.1, e.y)
+            let o = P(e.x - 0.2, e.y - 0.2)
             let drop = pose.air ? sin(pose.lift * 0.8) : sin(CGFloat(pose.step) + 0.5) * walk
             let end = pose.air ? P(o.x - 4.6 + 0.5 * drop, o.y + 4.2) : P(o.x - 3.8 + 0.5 * drop, o.y + 5.2)
             let chain = trace([P(o.x - 1.5, o.y + 1.5), P(o.x - 3.4, o.y + 2.0), end])
-            let rim = ring(o, 2.15, 1.6)
+            let rim = ring(o, 2.0, 1.5)
             var gold = rim
             gold.addPath(ribbon(chain, { _ in 0.32 }))
             gold.addPath(oval(end.x, end.y, 0.42, 0.42))
             let crescent = rim.subtracting(rim.applying(CGAffineTransform(translationX: -0.45, y: -0.45)))
             let glint = ribbon((0...6).map { k in let a = 3.5 + CGFloat(k) / 6 * 0.9; return P(o.x + 1.1 * cos(a), o.y + 1.1 * sin(a)) }, { _ in 0.4 })
-            return [(oval(o.x, o.y, 1.6, 1.6), c(Dye.glass, 0.22)), (gold, c(Dye.gold)), (crescent, c(Dye.goldDeep)), (glint, c(Dye.white, 0.8))]
+            return [(oval(o.x, o.y, 1.5, 1.5), c(Dye.glass, 0.22)), (gold, c(Dye.gold)), (crescent, c(Dye.goldDeep)), (glint, c(Dye.white, 0.8))]
         default:
             return []
         }
@@ -379,7 +379,7 @@ struct PetClothes {
             var shine = Path()
             for d in [-1.0, 1.0] as [CGFloat] {
                 let g = f * (d > 0 ? 1 : -0.8)
-                let line = trace([P(x, y + 0.3), P(x + 0.8 * d, y + 0.5), P(x + 1.5 * d, y + 0.4), P(x + 1.95 * d, y + 0.3 * g), P(x + 1.85 * d, y - 0.5 + 0.3 * g), P(x + 1.45 * d, y - 0.65 + 0.3 * g)], 4)
+                let line = trace([P(x, y + 0.3), P(x + 0.8 * d, y + 0.5), P(x + 1.5 * d, y + 0.4), P(x + 1.95 * d, y + 0.2 + 0.2 * g), P(x + 1.85 * d, y - 0.2 + 0.2 * g), P(x + 1.45 * d, y - 0.3 + 0.2 * g)], 4)
                 hair.addPath(ribbon(line, { 0.4 + 1.1 * pow(1 - $0, 1.3) }))
                 shine.addPath(ribbon(Array(line.prefix(9)), { 0.25 * (1 - $0) }).offsetBy(dx: 0, dy: -0.25))
             }
@@ -391,12 +391,13 @@ struct PetClothes {
             streaks.addPath(ribbon(trace([P(x - 1.2, y + 0.3), P(x - 0.3, y + 0.15)]), { _ in 0.18 }))
             return [(hair, c(Dye.chestnutDeep)), (streaks, c(Dye.chestnut))]
         case .pencil:
+            let y = y + 0.3
             var hair = Path()
             for d in [-1.0, 1.0] as [CGFloat] {
-                let line = trace([P(x - 0.4 + 0.3 * d, y), P(x - 0.4 + 1.1 * d, y + 0.05), P(x - 0.4 + 1.9 * d, y - 0.2 + 0.3 * f * d), P(x - 0.4 + 2.4 * d, y - 0.6 + 0.3 * f * d)], 4)
-                hair.addPath(ribbon(line, { 1.1 - 0.7 * $0 }))
+                let line = trace([P(x, y), P(x + 0.7 * d, y), P(x + 1.4 * d, y + 0.05 + 0.2 * f * d), P(x + 2.0 * d, y + 0.1 + 0.2 * f * d)], 4)
+                hair.addPath(ribbon(line, { 1.1 - 0.3 * $0 }))
             }
-            return [(hair, c(Dye.espresso))]
+            return [(hair, c(Dye.chestnutDeep))]
         default:
             return []
         }
