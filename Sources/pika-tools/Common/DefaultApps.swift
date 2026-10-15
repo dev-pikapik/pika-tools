@@ -112,7 +112,8 @@ final class DefaultApps {
 
     private func restoring(_ type: UTType, _ previous: [String: String]) -> URL? {
         let id = previous[type.identifier]
-        if let app = id.flatMap(system.app(withID:)) ?? fallback.flatMap(system.app(withID:)) { return app }
+        let capable = fallback.flatMap(system.app(withID:)).flatMap { app in system.handlers(of: type).contains { same($0, app) } ? app : nil }
+        if let app = id.flatMap(system.app(withID:)) ?? capable { return app }
         return id == nil ? nil : system.handlers(of: type).first { !isTarget($0) }
     }
 }
