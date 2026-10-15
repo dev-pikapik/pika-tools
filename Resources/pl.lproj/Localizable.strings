@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klawiatura, F1, F2, zwiększ jasność, zmniejsz jasność, klawisze, monitor, wyświetlacz";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, przygaszanie, ciemniej, programowe przyciemnianie, monitor, wyświetlacz, ekran";
 "Forget This App" = "Zapomnij tę aplikację";
+"Add a Layout" = "Dodaj układ";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Nie udało się dodać układu. Użyj zamiast tego Ustawień klawiatury.";

@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "clavier, F1, F2, augmenter la luminosité, baisser la luminosité, touches, moniteur, écran";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, assombrir, plus sombre, assombrissement logiciel, moniteur, écran";
 "Forget This App" = "Oublier cette app";
+"Add a Layout" = "Ajouter une disposition";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Impossible d’ajouter la disposition. Utilisez plutôt les Réglages Clavier.";

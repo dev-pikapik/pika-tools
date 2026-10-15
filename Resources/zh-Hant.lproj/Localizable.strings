@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "鍵盤, F1, F2, 調高亮度, 調低亮度, 按鍵, 顯示器, 螢幕";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "伽瑪, 調暗, 更暗, 軟體調暗, 顯示器, 螢幕";
 "Forget This App" = "忘記此 App";
+"Add a Layout" = "加入配置";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "無法加入配置。請改用鍵盤設定。";

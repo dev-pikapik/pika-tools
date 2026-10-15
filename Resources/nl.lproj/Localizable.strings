@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "toetsenbord, F1, F2, helderheid omhoog, helderheid omlaag, toetsen, monitor, scherm";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dimmen, donkerder, softwarematig dimmen, monitor, beeldscherm, scherm";
 "Forget This App" = "Vergeet deze app";
+"Add a Layout" = "Indeling toevoegen";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "De indeling kon niet worden toegevoegd. Gebruik in plaats daarvan Instellingen toetsenbord.";

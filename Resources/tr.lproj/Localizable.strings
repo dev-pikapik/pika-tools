@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klavye, F1, F2, parlaklığı artır, parlaklığı azalt, tuşlar, monitör, ekran";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, karartma, daha koyu, yazılımla karartma, monitör, ekran";
 "Forget This App" = "Bu Uygulamayı Unut";
+"Add a Layout" = "Düzen Ekle";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Düzen eklenemedi. Bunun yerine Klavye Ayarları’nı kullanın.";

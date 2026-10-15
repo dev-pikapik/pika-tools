@@ -641,7 +641,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:576`). Website only.
 - Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:580`). Website only.
 - Words left as you typed them — list with a Clear button, shown only when not empty (`:587-590`). Website only.
-- Keyboard Settings… — button with a note, shown when fewer than two layouts exist (`:595-597`). Website only.
+- Add a Layout — menu in the note shown when fewer than two layouts exist: the installed layouts for your preferred languages that you don’t have yet; picking one turns it on with `TISEnableInputSource`, no password (`LayoutFixTool.swift` `AddLayoutNotice`, `KeyboardLayouts.addable`). If none is left to offer, or adding fails, the Keyboard Settings… button opens System Settings. Website only; the App Store build shows only Keyboard Settings….
 - Don’t fix text in these apps — app exclusion list (`:602`). Website only.
 
 **Nuances:** Needs at least two input sources. Website App Exclusions: Add App… / Done, app shelf, Remove. The retyped text and the keys it sends are tagged (`EventTag.swift`), so with two copies of pikapik one copy does not fix the text the other has just retyped.
@@ -652,7 +652,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
 2. Select a mistyped word and press ⌃⇧Space → it is fixed.
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
-4. With only one input source → Keyboard Settings… with its note shows.
+4. With only one input source (and a second language in System Settings › General › Language & Region) → the note shows Add a Layout; pick a layout → it turns on at once, the note goes away, no password asked. Remove it again in System Settings › Keyboard › Input Sources. With no other language → the note shows Keyboard Settings… instead.
 5. Add TextEdit to Don’t fix text in these apps → no fixing there.
 
 ### Fix the selected text

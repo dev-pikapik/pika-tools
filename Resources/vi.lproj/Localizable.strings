@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "bàn phím, F1, F2, tăng độ sáng, giảm độ sáng, phím, màn hình";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, làm tối, tối hơn, làm tối bằng phần mềm, màn hình";
 "Forget This App" = "Quên ứng dụng này";
+"Add a Layout" = "Thêm bố cục";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Không thể thêm bố cục. Hãy dùng Cài đặt bàn phím.";

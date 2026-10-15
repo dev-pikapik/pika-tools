@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dim, darker, software dimming, monitor, display, screen";
 "Forget This App" = "Forget This App";
+"Add a Layout" = "Add a Layout";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Couldn’t add the layout. Use Keyboard Settings instead.";

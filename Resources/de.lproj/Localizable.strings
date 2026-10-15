@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "Tastatur, F1, F2, heller, dunkler, Tasten, Monitor, Display";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "Gamma, abdunkeln, dunkler, Software-Abdunkelung, Monitor, Display, Bildschirm";
 "Forget This App" = "Diese App vergessen";
+"Add a Layout" = "Layout hinzufügen";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Das Layout konnte nicht hinzugefügt werden. Nutze stattdessen die Tastatureinstellungen.";

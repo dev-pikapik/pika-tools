@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "키보드, F1, F2, 밝기 올리기, 밝기 내리기, 키, 모니터, 디스플레이";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "감마, 어둡게, 더 어둡게, 소프트웨어 밝기 조절, 모니터, 디스플레이, 화면";
 "Forget This App" = "이 앱 잊기";
+"Add a Layout" = "레이아웃 추가";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "레이아웃을 추가할 수 없습니다. 대신 키보드 설정을 사용하세요.";

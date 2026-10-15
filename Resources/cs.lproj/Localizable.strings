@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "klávesnice, F1, F2, zvýšit jas, snížit jas, klávesy, monitor, displej";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, ztlumení, tmavší, softwarové ztmavení, monitor, displej, obrazovka";
 "Forget This App" = "Zapomenout tuto aplikaci";
+"Add a Layout" = "Přidat rozložení";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Rozložení se nepodařilo přidat. Použijte místo toho Nastavení klávesnice.";

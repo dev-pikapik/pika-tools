@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "клавіатура, F1, F2, яскравіше, темніше, клавіші, монітор, дисплей";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "гамма, затемнення, темніше, програмне затемнення, монітор, дисплей, екран";
 "Forget This App" = "Забути цю програму";
+"Add a Layout" = "Додати розкладку";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Не вдалося додати розкладку. Скористайтеся параметрами клавіатури.";

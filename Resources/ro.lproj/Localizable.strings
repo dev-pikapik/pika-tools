@@ -1190,3 +1190,5 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tastatură, F1, F2, mărește luminozitatea, micșorează luminozitatea, taste, monitor, afișaj";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, estompare, mai întunecat, estompare software, monitor, afișaj, ecran";
 "Forget This App" = "Uită această aplicație";
+"Add a Layout" = "Adaugă un aranjament";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Nu s-a putut adăuga aranjamentul. Folosește Configurări tastatură.";
