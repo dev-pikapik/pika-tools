@@ -1454,12 +1454,16 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** DockSwipe events (`CGEventType` 30, field 110 = 23; field 123 motion, 132 phase) are dropped at the “began” phase (`PointerShortcuts.swift`, `GameRules.dropsSwipe`). Hot corners: `DockEdges` zeroes only the paused corners. The motion codes came from event logging, not from Apple documents.
 
+**Options:**
+- Change… on a hot-corner row — menu of the actions macOS offers for a corner; picking one writes `com.apple.dock wvous-<corner>-corner` and restarts the Dock once (`HotCorners.swift`, `HotCornerMenu` in `SystemShortcutList.swift`). The first value is remembered, and Put Back in the same menu writes it back. Off while a game is in front. Website only; other rows and the App Store build still show Change in System Settings.
+
 **Nuances:** Not covered: shake to locate the pointer, zoom with a modifier key and scrolling, clicking the wallpaper to show the desktop. Never verified by hand with real gestures. App Store: `PointerShortcuts.buttons` is empty (`PointerShortcuts.swift:42`) and hot-corner reading is Website only (`:145`).
 
 **Edition:** Both; App Store differs: no mouse buttons and no hot-corner reading.
 
 **Test:**
-1. (trackpad) In a stub game do a three-finger swipe up (Mission Control) and a four-finger swipe sideways → nothing happens with the rule on; set a row to Allow in games → that swipe works.
+1. (website) On a hot-corner row press Change… and pick another action → the Dock restarts once, the row shows the new action and `defaults read com.apple.dock wvous-<tl|tr|bl|br>-corner` prints its number; Put Back → the old action and number. Write the number down first and set it back when you are done.
+2. (trackpad) In a stub game do a three-finger swipe up (Mission Control) and a four-finger swipe sideways → nothing happens with the rule on; set a row to Allow in games → that swipe works.
 
 ## Pet
 

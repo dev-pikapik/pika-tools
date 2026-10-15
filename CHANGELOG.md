@@ -7,6 +7,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Changed
 - Background, website version: tasks now turn off right in pikapik, with no trip to System Settings. This works for agents from the shared Library folder (for all users) and for old login items; the row changes at once, no password is needed, and the choice stays after a restart. Turn Back On puts the task back. If it doesn’t work, the row says so in plain words. Tasks for the whole Mac and helpers an app added itself still open System Settings, and a line under the row now says why. The Mac App Store version is unchanged.
 - Keyboard layouts, website version: with only one layout, Fix Wrong Keyboard Layout now offers the layouts for your languages right in its note. Pick one under Add a Layout and it is ready at once, with no trip to System Settings and no password. If none fits, Keyboard Settings… is still there. The Mac App Store version is unchanged.
+- Hot corners, website version: in Settings › Games, the Change… menu on a hot-corner row picks another action for that corner right there, with no trip to System Settings. The Dock restarts once for each change, the first action is remembered, and Put Back returns it. The Mac App Store version is unchanged.
 
 ### Fixed
 - Keep Awake: with “Always on” saved and Keep Awake off, the menu said it would end on a date. It now says it stays on until you turn it off.

@@ -102,7 +102,15 @@ struct SystemShortcutRow: View {
     @ViewBuilder private var shortcut: some View {
         if let pointer = entry.pointer {
             if pointer.modifiers.isEmpty {
+                #if APPSTORE
                 Button("Change in System Settings") { NSWorkspace.shared.open(pointer.settings) }.buttonStyle(.link)
+                #else
+                if let corner = pointer.corner {
+                    HotCornerMenu(side: PointerShortcuts.sides[corner], current: pointer.action ?? 0)
+                } else {
+                    Button("Change in System Settings") { NSWorkspace.shared.open(pointer.settings) }.buttonStyle(.link)
+                }
+                #endif
             } else {
                 KeyCaps(keys: [pointer.modifiers], system: SystemShortcuts.Place(url: pointer.settings, hint: nil))
             }
@@ -249,3 +257,37 @@ private struct ShortcutAssignmentLink: View {
             }
     }
 }
+
+#if !APPSTORE
+private struct HotCornerMenu: View {
+    let side: String
+    let current: Int
+
+    private var original: Int? { HotCorners.before[side].flatMap { $0 == current ? nil : $0 } }
+
+    private func name(_ code: Int) -> String {
+        guard let action = PointerShortcuts.actions[code] else { return "" }
+        return PointerShortcuts.appleNames("desk", action.name) ?? action.name
+    }
+
+    var body: some View {
+        Menu("Change…") {
+            ForEach(PointerShortcuts.actions.keys.sorted(), id: \.self) { code in
+                Toggle(name(code), isOn: Binding(get: { code == current }, set: { _ in change { HotCorners.choose(code, side: side) } }))
+            }
+            if let original {
+                Divider()
+                Button("Put Back") { change { HotCorners.putBack(side: side) } }
+                    .help(name(original))
+            }
+        }
+        .fixedSize()
+        .disabled(!DockEdges.journal.isEmpty)
+    }
+
+    private func change(_ action: () -> Void) {
+        action()
+        SettingsWindow.model.refreshShortcuts()
+    }
+}
+#endif
