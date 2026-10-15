@@ -613,7 +613,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
         caption.animator().alphaValue = alpha
-        chrome?.setVisible(visible.controls)
+        chrome?.setVisible(visible.controls, video: true)
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
