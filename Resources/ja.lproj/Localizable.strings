@@ -1194,11 +1194,14 @@
 "Player" = "プレーヤー";
 "MKV, AVI, WMV and other videos in their own window" = "MKV、AVI、WMVなどのビデオを専用のウインドウで再生";
 "Open Video…" = "ビデオを開く…";
-"Doesn’t change which app opens your videos" = "ビデオを開くアプリは変わりません";
+"Open videos in pikapik" = "ビデオを pikapik で開く";
+"All the formats below" = "下のすべてのフォーマット";
+"Turning off returns them to %@" = "オフにすると %@ に戻ります";
 "Formats" = "フォーマット";
 "FFmpeg and dav1d Licenses" = "FFmpegとdav1dのライセンス";
 "Source Code" = "ソースコード";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "ビデオ, 動画, ムービー, 映画, 見る, 再生, プレーヤー, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "デフォルトのアプリ, このアプリで開く, ダブルクリック, ビデオ, 動画, ムービー, 映画, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "ビデオ";
 "Drop a video here" = "ここにビデオをドラッグ";
 "Playing, %@ of %@" = "再生中、%@ / %@";

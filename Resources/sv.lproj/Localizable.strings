@@ -1194,11 +1194,14 @@
 "Player" = "Spelare";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV och andra videor i ett eget fönster";
 "Open Video…" = "Öppna video…";
-"Doesn’t change which app opens your videos" = "Ändrar inte vilken app som öppnar dina videor";
+"Open videos in pikapik" = "Öppna videor i pikapik";
+"All the formats below" = "Alla format nedan";
+"Turning off returns them to %@" = "När det stängs av går de tillbaka till %@";
 "Formats" = "Format";
 "FFmpeg and dav1d Licenses" = "Licenser för FFmpeg och dav1d";
 "Source Code" = "Källkod";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, titta, spela upp, spelare, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "standardapp, öppna med, dubbelklick, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Släpp en video här";
 "Playing, %@ of %@" = "Spelar upp, %@ av %@";

@@ -1194,11 +1194,14 @@
 "Player" = "Trình phát";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV và các video khác trong cửa sổ riêng";
 "Open Video…" = "Mở video…";
-"Doesn’t change which app opens your videos" = "Không thay đổi ứng dụng mở video của bạn";
+"Open videos in pikapik" = "Mở video trong pikapik";
+"All the formats below" = "Tất cả định dạng bên dưới";
+"Turning off returns them to %@" = "Khi tắt, chúng quay về %@";
 "Formats" = "Định dạng";
 "FFmpeg and dav1d Licenses" = "Giấy phép FFmpeg và dav1d";
 "Source Code" = "Mã nguồn";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, phim, xem, phát, trình phát, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "ứng dụng mặc định, mở bằng, nhấp đúp, video, phim, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Thả video vào đây";
 "Playing, %@ of %@" = "Đang phát, %@ trên %@";

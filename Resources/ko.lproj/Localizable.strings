@@ -1194,11 +1194,14 @@
 "Player" = "플레이어";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV 등의 비디오를 별도의 윈도우에서 재생";
 "Open Video…" = "비디오 열기…";
-"Doesn’t change which app opens your videos" = "비디오를 여는 앱은 바뀌지 않습니다";
+"Open videos in pikapik" = "비디오를 pikapik으로 열기";
+"All the formats below" = "아래의 모든 포맷";
+"Turning off returns them to %@" = "끄면 %@(으)로 돌아갑니다";
 "Formats" = "포맷";
 "FFmpeg and dav1d Licenses" = "FFmpeg 및 dav1d 라이선스";
 "Source Code" = "소스 코드";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "비디오, 동영상, 영화, 보기, 재생, 플레이어, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "기본 앱, 다음으로 열기, 더블 클릭, 비디오, 동영상, 영화, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "비디오";
 "Drop a video here" = "여기에 비디오를 끌어다 놓으세요";
 "Playing, %@ of %@" = "재생 중, %@ / %@";

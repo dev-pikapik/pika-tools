@@ -1194,11 +1194,14 @@
 "Player" = "प्लेयर";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV और अन्य वीडियो अपनी अलग विंडो में";
 "Open Video…" = "वीडियो खोलें…";
-"Doesn’t change which app opens your videos" = "यह नहीं बदलता कि आपके वीडियो किस ऐप में खुलते हैं";
+"Open videos in pikapik" = "वीडियो pikapik में खोलें";
+"All the formats below" = "नीचे दिए सभी फ़ॉर्मैट";
+"Turning off returns them to %@" = "बंद करने पर ये फिर %@ में खुलेंगे";
 "Formats" = "फ़ॉर्मैट";
 "FFmpeg and dav1d Licenses" = "FFmpeg और dav1d के लाइसेंस";
 "Source Code" = "सोर्स कोड";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "वीडियो, फ़िल्म, देखना, चलाना, प्लेयर, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "डिफ़ॉल्ट ऐप, इससे खोलें, डबल-क्लिक, वीडियो, फ़िल्म, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "वीडियो";
 "Drop a video here" = "वीडियो यहाँ खींचकर छोड़ें";
 "Playing, %@ of %@" = "चल रहा है, %@ / %@";

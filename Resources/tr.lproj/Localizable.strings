@@ -1194,11 +1194,14 @@
 "Player" = "Oynatıcı";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV ve diğer videolar kendi penceresinde";
 "Open Video…" = "Video Aç…";
-"Doesn’t change which app opens your videos" = "Videolarınızı hangi uygulamanın açtığını değiştirmez";
+"Open videos in pikapik" = "Videoları pikapik’te aç";
+"All the formats below" = "Aşağıdaki tüm biçimler";
+"Turning off returns them to %@" = "Kapatınca şuna geri döner: %@";
 "Formats" = "Biçimler";
 "FFmpeg and dav1d Licenses" = "FFmpeg ve dav1d Lisansları";
 "Source Code" = "Kaynak Kodu";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, izle, oynat, oynatıcı, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "varsayılan uygulama, birlikte aç, çift tıklama, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Videoyu buraya bırakın";
 "Playing, %@ of %@" = "Oynatılıyor, %@ / %@";

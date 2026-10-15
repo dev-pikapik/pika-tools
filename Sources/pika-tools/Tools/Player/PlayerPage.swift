@@ -6,6 +6,7 @@ struct PlayerPage: View {
     static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
     private static let license = Bundle.main.url(forResource: "FFmpeg License", withExtension: "txt")
     private static let source = URL(string: "https://github.com/dev-pikapik/pika-tools/releases/latest")!
+    private static let videos = DefaultApps(types: PlayerFormats.types, target: helper, previousKey: "player-video-previous-apps")
 
     var body: some View {
         Form {
@@ -17,11 +18,13 @@ struct PlayerPage: View {
                     .padding(.vertical, 12)
                     .frame(maxWidth: .infinity)
                     .settingAnchor(String(localized: "Open Video…"))
-            } footer: {
-                Text("Doesn’t change which app opens your videos")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            Section {
+                Toggle(isOn: Binding(get: { Self.videos.isOn }, set: { Self.videos.set($0) })) {
+                    RowLabel(Text("Open videos in pikapik"), videosSubtitle)
+                }
+                .settingAnchor(String(localized: "Open videos in pikapik"))
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in Self.videos.refresh() }
             }
             Section("Formats") {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 76), spacing: 8)], spacing: 8) {
@@ -44,6 +47,11 @@ struct PlayerPage: View {
             }
         }
         .formStyle(.grouped)
+    }
+
+    private var videosSubtitle: Text {
+        let names = Self.videos.returnsTo
+        return names.isEmpty ? Text("All the formats below") : Text("Turning off returns them to \(names.formatted(.list(type: .and)))")
     }
 
     private func row(_ title: String, symbol: String, color: Color, action: @escaping () -> Void) -> some View {

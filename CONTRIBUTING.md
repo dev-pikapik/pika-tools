@@ -257,10 +257,10 @@ swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/
 swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swift scripts/test-layout.swift -o build/test-layout && build/test-layout
 ```
 
-The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It opens files as an alternate app only, so it never becomes the default for any type. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
+The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until the **Open videos in pikapik** switch turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app, assigns the helper with `NSWorkspace.setDefaultApplication`, and on the way back restores that app, or the next one that can open the type, never the helper. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
+swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
 ```
 
 ### Adding a tool

@@ -1194,11 +1194,14 @@
 "Player" = "Lettore";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV e altri video nella loro finestra";
 "Open Video…" = "Apri video…";
-"Doesn’t change which app opens your videos" = "Non cambia l’app che apre i tuoi video";
+"Open videos in pikapik" = "Apri i video in pikapik";
+"All the formats below" = "Tutti i formati qui sotto";
+"Turning off returns them to %@" = "Disattivando, tornano a %@";
 "Formats" = "Formati";
 "FFmpeg and dav1d Licenses" = "Licenze di FFmpeg e dav1d";
 "Source Code" = "Codice sorgente";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, guardare, riprodurre, lettore, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "app predefinita, apri con, doppio clic, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Trascina qui un video";
 "Playing, %@ of %@" = "In riproduzione, %@ di %@";

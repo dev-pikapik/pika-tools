@@ -1194,11 +1194,14 @@
 "Player" = "Player";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV și alte fișiere video într-o fereastră separată";
 "Open Video…" = "Deschide video…";
-"Doesn’t change which app opens your videos" = "Nu schimbă aplicația care deschide fișierele tale video";
+"Open videos in pikapik" = "Deschide fișierele video în pikapik";
+"All the formats below" = "Toate formatele de mai jos";
+"Turning off returns them to %@" = "La dezactivare revin la %@";
 "Formats" = "Formate";
 "FFmpeg and dav1d Licenses" = "Licențele FFmpeg și dav1d";
 "Source Code" = "Cod sursă";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, vizionare, redare, player, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "aplicație implicită, deschide cu, dublu clic, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Trage aici un video";
 "Playing, %@ of %@" = "Se redă, %@ din %@";
