@@ -13,7 +13,8 @@ final class WindowChrome {
         self.window = window
         Self.style(window)
         let gradient = CAGradientLayer()
-        gradient.colors = [NSColor.black.withAlphaComponent(0.55).cgColor, NSColor.clear.cgColor]
+        gradient.colors = [0.5, 0.3, 0.1, 0].map { NSColor.black.withAlphaComponent($0).cgColor }
+        gradient.locations = [0, 0.4, 0.75, 1]
         gradient.startPoint = CGPoint(x: 0.5, y: 1)
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         shade.layer = gradient
