@@ -32,6 +32,13 @@ final class Packet {
     }
 }
 
+struct MediaTags {
+    var title: String?
+    var artist: String?
+    var album: String?
+    var cover: Data?
+}
+
 final class Run {
     var packets: [Packet] = []
     var atStart = false
@@ -277,6 +284,27 @@ final class Demuxer {
 
     var tracks: [Track] {
         streams.filter { byIndex[$0.index] != nil }
+    }
+
+    func tags() -> MediaTags {
+        lock.withLock {
+            guard let context else { return MediaTags() }
+            let streams = (0..<Int(context.pointee.nb_streams)).compactMap { context.pointee.streams[$0] }
+            let dictionaries = [context.pointee.metadata] + streams.map { $0.pointee.metadata }
+            func tag(_ keys: String...) -> String? {
+                for key in keys {
+                    for dictionary in dictionaries {
+                        guard let value = av_dict_get(dictionary, key, nil, 0)?.pointee.value else { continue }
+                        let text = String(cString: value).trimmingCharacters(in: .whitespacesAndNewlines)
+                        if !text.isEmpty { return text }
+                    }
+                }
+                return nil
+            }
+            let picture = streams.first { $0.pointee.disposition & AV_DISPOSITION_ATTACHED_PIC != 0 && $0.pointee.attached_pic.size > 0 }?.pointee.attached_pic
+            return MediaTags(title: tag("title"), artist: tag("artist", "album_artist", "author", "performer"), album: tag("album"),
+                             cover: picture.flatMap { picture in picture.data.map { Data(bytes: $0, count: Int(picture.size)) } })
+        }
     }
 
     func discard(except used: [Track]) {
