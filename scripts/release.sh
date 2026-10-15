@@ -14,8 +14,7 @@ grep -qxF "        - Latest version" "$FORM" || { echo "“- Latest version” i
 
 PLIST="Sources/pika-tools/Info.plist"
 BUILD=$(( $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST") + 1 ))
-/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD" "$PLIST"
+sed -i '' -e "/<key>CFBundleShortVersionString<\/key>/{n;s|<string>.*</string>|<string>$VERSION</string>|;}" -e "/<key>CFBundleVersion<\/key>/{n;s|<string>.*</string>|<string>$BUILD</string>|;}" "$PLIST"
 
 sed -i '' "s/^## \[${VERSION//./\\.}\] - Unreleased$/## [$VERSION] - $(date +%F)/" CHANGELOG.md
 REF="[$VERSION]: https://github.com/dev-pikapik/pika-tools/releases/tag/v$VERSION"
