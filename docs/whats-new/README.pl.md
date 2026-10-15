@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Poprawianie słów i boczne przyciski myszy działają teraz w prawie każdej aplikacji
+
+<sub>1.52.0 · 15 października 2026</sub>
+
+Słowa wpisane w złym języku są teraz poprawiane także w Chrome, Slacku i VS Code, a boczne przyciski myszy cofają i przechodzą dalej prawie wszędzie.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+W wersji ze strony poprawianie słowa wpisanego w złym języku działa teraz także w Chrome, Slacku, VS Code, Discordzie i innych aplikacjach opartych na Chromium, podczas pisania i skrótem do przepisania, więc „ghbdtn” też tam zamienia się w „привет”. Wyłącz funkcję albo zamknij pikapik, a te aplikacje wrócą do poprzedniego stanu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Przyciski myszy 4 i 5 cofają i przechodzą dalej w prawie każdej aplikacji i znów działają w ustawieniach samego pikapika. pikapik sam naciska pozycję Wstecz lub Dalej w menu albo na pasku narzędzi aplikacji, w dowolnym języku, a aplikacje, które już rozumieją te przyciski, obsługują je dalej same. W wersji z Mac App Store dotyczy to okien pikapika i aplikacji Apple.
+
+Gdy otwarte są dwie kopie pikapika, na przykład ze strony i z App Store, cokolwiek na Macu zmienia tylko ta uruchomiona jako ostatnia, więc ustawienia zawsze pokazują, co naprawdę obowiązuje. Przy zamknięciu wszystko, co zmieniła, wraca na miejsce. Nowe są też, głównie w wersji ze strony: kliknięcie środkowym przyciskiem trzema palcami na gładziku, obrazki pokazujące, co robią Zakończ aplikację i Zamknij okno, ⇧⌘. w wierszu Pokaż ukryte pliki, nazwy grup na pasku bocznym, a w odtwarzaczu klawisze jak w QuickTime, głośność kółkiem, prędkość i wznawianie od miejsca zatrzymania.
+
+**Wypróbuj:** Ustawienia › Klawiatura
+
+**Poprawki**
+
+- Otwórz w programie pokazuje pikapik Player zaraz po aktualizacji, nawet jeśli odtwarzacz nigdy nie był otwierany.
+- Głośność aplikacji: po przywróceniu suwaka aplikacji na 100% dźwięk nie kończy się już cichym kliknięciem.
+- Gry (wersja ze strony): szybki ruch myszą nie ucieka już na inny ekran, a wskaźnik nie odskakuje z powrotem.
+
+---
+
 ## <a id="v1.51.0"></a>Filmy, których QuickTime nie otwiera, teraz się odtwarzają
 
 <sub>1.51.0 · 15 października 2026</sub>

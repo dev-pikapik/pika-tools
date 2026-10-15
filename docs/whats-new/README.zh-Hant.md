@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>打字修正和滑鼠側鍵，現在幾乎在所有 App 裡都能用
+
+<sub>1.52.0 · 2026年10月15日</sub>
+
+用錯語言輸入的字詞，現在在 Chrome、Slack 和 VS Code 裡也能改正；滑鼠側鍵也幾乎在所有地方都能返回和前進。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+在網站版中，修正用錯語言輸入的字詞，現在在 Chrome、Slack、VS Code、Discord 等以 Chromium 為基礎的 App 裡也能用了，邊打邊改和用重打快速鍵都行，「ghbdtn」在那裡也會變成「привет」。關閉這個功能或結束 pikapik，這些 App 就會恢復原樣。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+滑鼠按鍵 4 和 5 現在幾乎在所有 App 裡都能返回和前進，在 pikapik 自己的設定裡也恢復了。pikapik 會替你點按 App 選單或工具列裡的「返回」或「前進」，不限語言；本來就支援這兩個鍵的 App 仍由它們自己處理。在 Mac App Store 版中，pikapik 自己的視窗和 Apple 的 App 可用。
+
+同時開啟兩個 pikapik，例如網站版和 App Store 版，只有最後開啟的那個會更動你的 Mac，所以設定裡顯示的永遠是真實狀況。結束時，它改過的一切都會還原。另外還有新功能（主要在網站版）：觸控式軌跡板三指中鍵點按、顯示「結束 App」和「關閉視窗」作用的圖示、直接放在「顯示隱藏檔案」那一列的 ⇧⌘.、側邊欄的群組名稱，以及播放器裡和 QuickTime 一樣的按鍵、滾輪調音量、倍速和從上次位置繼續播放。
+
+**試試看：** 設定 › 鍵盤
+
+**修正**
+
+- 更新後，即使還沒開過播放器，「打開方式」裡也會立刻列出 pikapik Player。
+- App 音量：把某個 App 的滑桿拉回 100% 時，聲音結尾不再有輕微的「喀」聲。
+- 遊戲（網站版）：快速甩動滑鼠不再滑到另一個顯示器上，游標也不會再彈回來。
+
+---
+
 ## <a id="v1.51.0"></a>QuickTime 打不開的影片，現在能播放了
 
 <sub>1.51.0 · 2026年10月15日</sub>

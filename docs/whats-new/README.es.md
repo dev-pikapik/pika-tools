@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>La corrección de palabras y los botones laterales del ratón ya funcionan en casi cualquier app
+
+<sub>1.52.0 · 15 de octubre de 2026</sub>
+
+Las palabras escritas en el idioma equivocado ya se corrigen también en Chrome, Slack y VS Code, y los botones laterales del ratón van atrás y adelante casi en todas partes.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+En la versión de la web, corregir una palabra escrita en el idioma equivocado ya funciona en Chrome, Slack, VS Code, Discord y otras apps basadas en Chromium, mientras escribes y con el atajo para reescribir, así que “ghbdtn” también se convierte en “привет” allí. Desactiva la función o cierra pikapik y esas apps vuelven a como estaban.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Los botones 4 y 5 del ratón ya van atrás y adelante en casi cualquier app, y de nuevo en los Ajustes del propio pikapik. pikapik pulsa por ti el elemento Atrás o Adelante del menú o de la barra de herramientas de la app, en cualquier idioma, y las apps que ya entienden los botones siguen encargándose ellas mismas. En la versión de la Mac App Store esto vale para las ventanas de pikapik y las apps de Apple.
+
+Si hay dos copias de pikapik abiertas, por ejemplo la de la web y la de la App Store, solo la que abriste última cambia algo en tu Mac, así que los Ajustes siempre muestran lo que de verdad está pasando. Al salir, todo lo que cambió se devuelve a su sitio. También es nuevo, sobre todo en la versión de la web: clic central con tres dedos en el trackpad, imágenes que muestran qué hacen Salir de la app y Cerrar ventana, ⇧⌘. dentro de la fila Mostrar archivos ocultos, nombres para los grupos de la barra lateral y, en el reproductor, las teclas de QuickTime, el volumen con la rueda, la velocidad y seguir donde lo dejaste.
+
+**Pruébalo:** Ajustes › Teclado
+
+**Corregido**
+
+- Abrir con muestra pikapik Player justo después de una actualización, aunque el reproductor no se haya abierto nunca.
+- Volumen de las apps: al devolver el control de una app al 100 %, el sonido ya no termina con un pequeño clic.
+- Juegos (versión de la web): un movimiento rápido del ratón ya no se escapa a otra pantalla, y el puntero ya no salta hacia atrás.
+
+---
+
 ## <a id="v1.51.0"></a>Los vídeos que QuickTime no abre ya se reproducen
 
 <sub>1.51.0 · 15 de octubre de 2026</sub>

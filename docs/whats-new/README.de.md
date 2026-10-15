@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Falsch getippte Wörter und Maus-Seitentasten funktionieren jetzt in fast jeder App
+
+<sub>1.52.0 · 15. Oktober 2026</sub>
+
+Wörter in der falschen Sprache werden jetzt auch in Chrome, Slack und VS Code korrigiert, und die Seitentasten der Maus gehen fast überall zurück und vor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+In der Version von der Website funktioniert das Korrigieren eines in der falschen Sprache getippten Wortes jetzt auch in Chrome, Slack, VS Code, Discord und anderen Apps auf Chromium-Basis, beim Tippen und mit dem Kurzbefehl zum Neutippen. Aus „ghbdtn“ wird dort ebenfalls „привет“. Schalten Sie die Funktion aus oder beenden Sie pikapik, dann kehren diese Apps in ihren früheren Zustand zurück.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Die Maustasten 4 und 5 gehen jetzt in fast jeder App zurück und vor, und auch in den Einstellungen von pikapik selbst wieder. pikapik drückt für Sie den Eintrag „Zurück“ oder „Vor“ im Menü oder in der Symbolleiste der App, in jeder Sprache; Apps, die die Tasten schon verstehen, behandeln sie weiter selbst. In der Mac-App-Store-Version gilt das für die Fenster von pikapik und die Apps von Apple.
+
+Sind zwei Kopien von pikapik offen, etwa die von der Website und die aus dem App Store, ändert nur die zuletzt geöffnete etwas an Ihrem Mac, sodass die Einstellungen immer zeigen, was wirklich gilt. Beim Beenden wird alles Geänderte zurückgesetzt. Außerdem neu, vor allem in der Version von der Website: ein Mittelklick mit drei Fingern auf dem Trackpad, Bilder, die zeigen, was App beenden und Fenster schließen tun, ⇧⌘. direkt in der Zeile Versteckte Dateien einblenden, Namen für die Gruppen in der Seitenleiste und im Player die Tasten von QuickTime, Lautstärke per Mausrad, Tempo und Fortsetzen an der letzten Stelle.
+
+**Ausprobieren:** Einstellungen › Tastatur
+
+**Behoben**
+
+- Öffnen mit zeigt pikapik Player gleich nach einem Update, auch wenn der Player noch nie geöffnet wurde.
+- App-Lautstärke: Wenn Sie den Regler einer App wieder auf 100 % stellen, endet der Ton nicht mehr mit einem leisen Klick.
+- Spiele (Version von der Website): Eine schnelle Mausbewegung rutscht nicht mehr auf ein anderes Display, und der Zeiger springt nicht mehr zurück.
+
+---
+
 ## <a id="v1.51.0"></a>Videos, die QuickTime nicht öffnen kann, laufen jetzt
 
 <sub>1.51.0 · 15. Oktober 2026</sub>

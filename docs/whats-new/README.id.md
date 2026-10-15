@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Perbaikan kata dan tombol samping mouse kini berfungsi di hampir semua app
+
+<sub>1.52.0 · 15 Oktober 2026</sub>
+
+Kata yang salah bahasa kini diperbaiki juga di Chrome, Slack, dan VS Code, dan tombol samping mouse berfungsi sebagai kembali dan maju di hampir semua tempat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Di versi situs web, memperbaiki kata yang diketik dengan bahasa yang salah kini berfungsi di Chrome, Slack, VS Code, Discord, dan app lain berbasis Chromium, saat mengetik maupun lewat pintasan ketik ulang, sehingga “ghbdtn” di sana juga menjadi “привет”. Matikan fitur ini atau keluar dari pikapik, lalu app-app itu kembali seperti semula.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Tombol mouse 4 dan 5 kini berfungsi sebagai kembali dan maju di hampir semua app, dan berfungsi lagi di Pengaturan pikapik sendiri. pikapik menekan item Kembali atau Maju di menu atau bilah alat app, dalam bahasa apa pun, sementara app yang sudah memahami tombol itu tetap menanganinya sendiri. Di versi Mac App Store, ini berlaku untuk jendela pikapik dan app Apple.
+
+Jika dua salinan pikapik terbuka, misalnya dari situs web dan dari App Store, hanya yang dibuka paling akhir yang mengubah sesuatu di Mac, jadi Pengaturan selalu menunjukkan keadaan yang sebenarnya. Saat keluar, semua yang diubahnya dikembalikan. Yang baru juga, sebagian besar di versi situs web: klik tengah tiga jari di trackpad, gambar yang menunjukkan apa yang dilakukan Keluar dari app dan Tutup jendela, ⇧⌘. langsung di baris Tampilkan file tersembunyi, nama untuk grup di bar samping, dan di pemutar tombol seperti QuickTime, volume dengan roda gulir, kecepatan, dan lanjut dari tempat terakhir.
+
+**Coba:** Pengaturan › Papan Ketik
+
+**Diperbaiki**
+
+- Buka dengan menampilkan pikapik Player tepat setelah pembaruan, meski pemutar belum pernah dibuka.
+- Volume App: saat penggeser sebuah app dikembalikan ke 100%, suara tidak lagi berakhir dengan bunyi klik kecil.
+- Game (versi situs web): gerakan mouse yang cepat tidak lagi melompat ke layar lain, dan penunjuk tidak lagi melompat balik.
+
+---
+
 ## <a id="v1.51.0"></a>Video yang tidak bisa dibuka QuickTime kini bisa diputar
 
 <sub>1.51.0 · 15 Oktober 2026</sub>

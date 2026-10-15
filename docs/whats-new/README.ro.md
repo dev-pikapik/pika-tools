@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Corectarea cuvintelor și butoanele laterale ale mouse-ului merg acum în aproape orice aplicație
+
+<sub>1.52.0 · 15 octombrie 2026</sub>
+
+Cuvintele scrise în limba greșită sunt acum corectate și în Chrome, Slack și VS Code, iar butoanele laterale ale mouse-ului merg înapoi și înainte aproape peste tot.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+În versiunea de pe site, corectarea unui cuvânt scris în limba greșită funcționează acum și în Chrome, Slack, VS Code, Discord și alte aplicații bazate pe Chromium, în timp ce scrii și cu scurtătura de rescriere, așa că „ghbdtn” devine acolo „привет”. Oprește funcția sau închide pikapik și acele aplicații revin cum erau.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Butoanele 4 și 5 ale mouse-ului merg acum înapoi și înainte în aproape orice aplicație și din nou în setările pikapik însuși. pikapik apasă el pentru tine elementul Înapoi sau Înainte din meniul sau bara de instrumente a aplicației, în orice limbă, iar aplicațiile care înțeleg deja butoanele le gestionează în continuare singure. În versiunea din Mac App Store, asta se aplică ferestrelor pikapik și aplicațiilor Apple.
+
+Dacă sunt deschise două copii ale pikapik, de exemplu cea de pe site și cea din App Store, doar cea deschisă ultima schimbă ceva pe Mac, așa că Setările arată mereu ce se întâmplă cu adevărat. La ieșire, tot ce a schimbat este pus la loc. Nou este și, mai ales în versiunea de pe site: clic de mijloc cu trei degete pe trackpad, imagini care arată ce fac Ieși din aplicație și Închide fereastra, ⇧⌘. chiar în rândul Afișează fișierele ascunse, nume pentru grupurile din bara laterală și, în player, tastele din QuickTime, volumul din rotiță, viteza și reluarea de unde ai rămas.
+
+**Încearcă:** Setări › Tastatură
+
+**Reparat**
+
+- Deschide cu arată pikapik Player imediat după o actualizare, chiar dacă playerul nu a fost deschis niciodată.
+- Volumul aplicațiilor: când pui cursorul unei aplicații înapoi la 100%, sunetul nu se mai termină cu un mic clic.
+- Jocuri (versiunea de pe site): o mișcare rapidă a mouse-ului nu mai alunecă pe alt ecran, iar cursorul nu mai sare înapoi.
+
+---
+
 ## <a id="v1.51.0"></a>Fișierele video pe care QuickTime nu le deschide se redau acum
 
 <sub>1.51.0 · 15 octombrie 2026</sub>

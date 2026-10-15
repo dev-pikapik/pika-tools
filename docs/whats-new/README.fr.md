@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>La correction des mots et les boutons latéraux de la souris marchent presque partout
+
+<sub>1.52.0 · 15 octobre 2026</sub>
+
+Les mots tapés dans la mauvaise langue sont maintenant corrigés aussi dans Chrome, Slack et VS Code, et les boutons latéraux de la souris font précédent et suivant presque partout.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Dans la version du site, la correction d’un mot tapé dans la mauvaise langue marche maintenant dans Chrome, Slack, VS Code, Discord et d’autres apps basées sur Chromium, pendant la frappe comme avec le raccourci de retape : « ghbdtn » y devient aussi « привет ». Désactivez la fonction ou quittez pikapik, et ces apps retrouvent leur état d’avant.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Les boutons 4 et 5 de la souris font maintenant précédent et suivant dans presque toutes les apps, et de nouveau dans les réglages de pikapik lui-même. pikapik appuie pour vous sur l’élément Précédent ou Suivant du menu ou de la barre d’outils de l’app, quelle que soit la langue ; les apps qui comprennent déjà ces boutons continuent de s’en occuper elles-mêmes. Dans la version Mac App Store, cela concerne les fenêtres de pikapik et les apps Apple.
+
+Quand deux copies de pikapik sont ouvertes, par exemple celle du site et celle de l’App Store, seule la dernière ouverte modifie quelque chose sur votre Mac ; les réglages montrent donc toujours ce qui s’applique vraiment. Quand vous quittez, tout ce qu’elle a changé est remis en place. Aussi nouveau, surtout dans la version du site : le clic central à trois doigts sur le trackpad, des images qui montrent ce que font Quitter l’app et Fermer la fenêtre, ⇧⌘. directement dans la ligne Afficher les fichiers masqués, des noms pour les groupes de la barre latérale et, dans le lecteur, les touches de QuickTime, le volume à la molette, la vitesse et la reprise là où vous vous étiez arrêté.
+
+**Pour essayer :** Réglages › Clavier
+
+**Corrigé**
+
+- Ouvrir avec propose pikapik Player juste après une mise à jour, même si le lecteur n’a jamais été ouvert.
+- Volume des apps : quand vous remettez le curseur d’une app à 100 %, le son ne se termine plus par un petit clic.
+- Jeux (version du site) : un geste rapide de la souris ne glisse plus vers un autre écran, et le pointeur ne revient plus d’un bond.
+
+---
+
 ## <a id="v1.51.0"></a>Les vidéos que QuickTime n’ouvre pas se lisent maintenant
 
 <sub>1.51.0 · 15 octobre 2026</sub>
