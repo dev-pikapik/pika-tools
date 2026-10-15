@@ -293,6 +293,15 @@ The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dar
 swift scripts/make-icns.swift
 ```
 
+## Icons in Settings
+
+Settings use three kinds of icons, the same way System Settings does:
+- a colored tile (`SectionIcon` in `Common/IconStyle.swift`) marks a place: the sidebar and page headers;
+- an app's own icon means the row is that program: Ports, Background, Games, Uninstaller;
+- a plain symbol in a 24 pt column marks a fact: Battery, Temperature.
+
+A program without its own icon, such as a command-line tool, gets a gray tile with the `terminal` symbol.
+
 ## Third-party software
 
 The direct build includes the 7-Zip command line tool (`7zz`) from [www.7-zip.org](https://www.7-zip.org), licensed under the GNU LGPL 2.1 with the unRAR restriction. It runs as a separate program, its license is in the app as `Contents/Resources/7-Zip License.txt`, and its source code is attached to every release as `7-Zip-26.04-source.tar.xz`.
