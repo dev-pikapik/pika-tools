@@ -8,6 +8,7 @@ final class WindowChrome {
     static let shadeHeight: CGFloat = 72
     let shade = WindowShade()
     private weak var window: NSWindow?
+    private var shown = true
 
     init(_ window: NSWindow, over content: NSView) {
         self.window = window
@@ -49,9 +50,20 @@ final class WindowChrome {
         return true
     }
 
-    func setVisible(_ visible: Bool) {
+    static func dragsWindow(at point: NSPoint, panel: NSView?) -> Bool {
+        panel.map { $0.isHidden || !$0.frame.contains(point) } ?? true
+    }
+
+    func setVisible(_ visible: Bool, video: Bool) {
+        guard let bar = window?.standardWindowButton(.closeButton)?.superview else { return }
         let system = window?.styleMask.contains(.fullScreen) == true
-        window?.standardWindowButton(.closeButton)?.superview?.animator().alphaValue = visible || system ? 1 : 0
-        shade.animator().alphaValue = visible && !system ? 1 : 0
+        shown = visible || system
+        if shown { bar.isHidden = false }
+        NSAnimationContext.runAnimationGroup({ _ in
+            bar.animator().alphaValue = shown ? 1 : 0
+            shade.animator().alphaValue = visible && video && !system ? 1 : 0
+        }, completionHandler: { [weak self] in
+            if self?.shown == false { bar.isHidden = true }
+        })
     }
 }
