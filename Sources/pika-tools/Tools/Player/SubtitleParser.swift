@@ -4,12 +4,43 @@ struct SubtitleCue: Equatable {
     var start: Double
     var end: Double
     var text: String
+    var block: SubtitleBlock?
 }
 
 struct SubtitleSpan: Equatable {
     var text: String
     var italic: Bool
     var bold: Bool
+    var underline = false
+    var strike = false
+    var color: UInt32?
+    var outline: UInt32?
+    var font: String?
+    var size: Double?
+}
+
+struct SubtitleBlock: Equatable {
+    var spans: [SubtitleSpan]
+    var alignment = 2
+    var height = 288.0
+    var outline = 2.0
+    var marginL = 0.0
+    var marginR = 0.0
+    var marginV = 0.0
+
+    var text: String { spans.map(\.text).joined() }
+
+    init(spans: [SubtitleSpan], alignment: Int = 2, height: Double = 288, outline: Double = 2, margins: (l: Double, r: Double, v: Double) = (0, 0, 0)) {
+        self.spans = spans
+        self.alignment = alignment
+        self.height = height
+        self.outline = outline
+        (marginL, marginR, marginV) = margins
+    }
+
+    init(plain text: String) {
+        self.init(spans: SubtitleText.spans(text), height: 0, outline: 0)
+    }
 }
 
 struct SubtitleCues {
@@ -24,19 +55,24 @@ struct SubtitleCues {
     var isEmpty: Bool { cues.isEmpty }
 
     func text(at time: Double, delay: Double = 0) -> String? {
+        let active = active(at: time, delay: delay)
+        return active.isEmpty ? nil : active.map(\.text).joined(separator: "\n")
+    }
+
+    func active(at time: Double, delay: Double = 0) -> [SubtitleCue] {
         let moment = time - delay
         var low = 0, high = cues.count
         while low < high {
             let middle = (low + high) / 2
             if cues[middle].start <= moment { low = middle + 1 } else { high = middle }
         }
-        var active: [String] = []
+        var active: [SubtitleCue] = []
         var index = low - 1
         while index >= 0, cues[index].start >= moment - longest {
-            if cues[index].end > moment { active.append(cues[index].text) }
+            if cues[index].end > moment { active.append(cues[index]) }
             index -= 1
         }
-        return active.isEmpty ? nil : active.reversed().joined(separator: "\n")
+        return active.reversed()
     }
 }
 
@@ -191,7 +227,7 @@ enum SubtitleParser {
         let text = text.hasPrefix("\u{FEFF}") ? String(text.dropFirst()) : text
         let lines = text.replacingOccurrences(of: "\r\n", with: "\n").replacingOccurrences(of: "\r", with: "\n").split(separator: "\n", omittingEmptySubsequences: false)
         let isASS = lines.contains { $0.hasPrefix("[Script Info]") || $0.hasPrefix("[Events]") || $0.hasPrefix("Dialogue:") }
-        return isASS ? assCues(lines) : timedCues(lines)
+        return isASS ? assCues(lines, styles: AssScript.styles(text)) : timedCues(lines)
     }
 
     static func time(_ token: String) -> Double? {
@@ -242,10 +278,16 @@ enum SubtitleParser {
     }
 
     static func ass(packet text: String) -> String? {
+        assEvent(packet: text, styles: AssStyles())?.text
+    }
+
+    static func assEvent(packet text: String, styles: AssStyles) -> (text: String, block: SubtitleBlock?)? {
         let fields = text.split(separator: ",", maxSplits: 8, omittingEmptySubsequences: false)
         guard fields.count == 9 else { return nil }
         let cleaned = SubtitleText.clean(String(fields[8]), ass: true)
-        return cleaned.isEmpty ? nil : cleaned
+        guard !cleaned.isEmpty else { return nil }
+        let margins = (Double(fields[4]) ?? 0, Double(fields[5]) ?? 0, Double(fields[6]) ?? 0)
+        return (cleaned, AssScript.block(String(fields[8]), style: String(fields[2]), margins: margins, styles: styles))
     }
 
     private static func timedCues(_ lines: [Substring]) -> [SubtitleCue] {
@@ -278,7 +320,7 @@ enum SubtitleParser {
         return cues
     }
 
-    private static func assCues(_ lines: [Substring]) -> [SubtitleCue] {
+    private static func assCues(_ lines: [Substring], styles: AssStyles) -> [SubtitleCue] {
         var fields = ["layer", "start", "end", "style", "name", "marginl", "marginr", "marginv", "effect", "text"]
         var inEvents = false
         var cues: [SubtitleCue] = []
@@ -293,10 +335,184 @@ enum SubtitleParser {
                 let values = trimmed.dropFirst(9).split(separator: ",", maxSplits: fields.count - 1, omittingEmptySubsequences: false)
                 guard values.count == fields.count, let from = time(String(values[start])), let to = time(String(values[end])), to > from else { continue }
                 let cleaned = SubtitleText.clean(String(values[text]), ass: true)
-                if !cleaned.isEmpty { cues.append(SubtitleCue(start: from, end: to, text: cleaned)) }
+                guard !cleaned.isEmpty else { continue }
+                func margin(_ name: String) -> Double { fields.firstIndex(of: name).flatMap { Double(values[$0].trimmingCharacters(in: .whitespaces)) } ?? 0 }
+                let block = AssScript.block(String(values[text]), style: fields.firstIndex(of: "style").map { values[$0].trimmingCharacters(in: .whitespaces) } ?? "Default", margins: (margin("marginl"), margin("marginr"), margin("marginv")), styles: styles)
+                cues.append(SubtitleCue(start: from, end: to, text: cleaned, block: block))
             }
         }
         return cues
+    }
+}
+
+struct AssStyle {
+    var font: String?
+    var size = 0.0
+    var bold = false
+    var italic = false
+    var underline = false
+    var strike = false
+    var color: UInt32 = 0xFFFFFF
+    var outline: UInt32 = 0
+    var outlineWidth = 2.0
+    var alignment = 2
+    var margins = (l: 0.0, r: 0.0, v: 0.0)
+}
+
+struct AssStyles {
+    var styles: [String: AssStyle] = [:]
+    var first = AssStyle()
+    var height = 288.0
+
+    func style(named name: String) -> AssStyle {
+        let name = name.hasPrefix("*") ? String(name.dropFirst()) : name
+        return styles[name.lowercased()] ?? styles["default"] ?? first
+    }
+}
+
+enum AssScript {
+    static func color(_ token: String) -> UInt32? {
+        var text = token.trimmingCharacters(in: .whitespaces)
+        var hex = false
+        if text.hasPrefix("&") { text.removeFirst(); hex = true }
+        if text.hasPrefix("H") || text.hasPrefix("h") { text.removeFirst(); hex = true }
+        if text.hasSuffix("&") { text.removeLast() }
+        guard !text.isEmpty, text.count <= 10, let value = hex ? UInt32(text, radix: 16) : UInt32(text) else { return nil }
+        return (value & 0xFF) << 16 | value & 0xFF00 | (value >> 16) & 0xFF
+    }
+
+    static func alignment(legacy value: Int) -> Int {
+        switch value {
+        case 1...3: return value
+        case 5...7: return value + 2
+        case 9...11: return value - 5
+        default: return 2
+        }
+    }
+
+    static func styles(_ text: String) -> AssStyles {
+        var result = AssStyles()
+        var section = ""
+        var format: [String] = []
+        for raw in text.replacingOccurrences(of: "\r\n", with: "\n").replacingOccurrences(of: "\r", with: "\n").split(separator: "\n", omittingEmptySubsequences: true) {
+            let line = raw.trimmingCharacters(in: .whitespaces)
+            if line.hasPrefix("[") {
+                section = line.lowercased()
+                format = []
+            } else if section == "[script info]", line.lowercased().hasPrefix("playresy:") {
+                if let value = Double(line.dropFirst(9).trimmingCharacters(in: .whitespaces)), value >= 1, value <= 20000 { result.height = value }
+            } else if section.hasPrefix("[v4"), line.hasPrefix("Format:") {
+                format = line.dropFirst(7).split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces).lowercased() }
+            } else if section.hasPrefix("[v4"), line.hasPrefix("Style:"), !format.isEmpty {
+                let values = line.dropFirst(6).split(separator: ",", maxSplits: format.count - 1, omittingEmptySubsequences: false).map { $0.trimmingCharacters(in: .whitespaces) }
+                var fields: [String: String] = [:]
+                for (key, value) in zip(format, values) { fields[key] = value }
+                guard let name = fields["name"], !name.isEmpty else { continue }
+                var style = AssStyle()
+                if let font = fields["fontname"], !font.isEmpty { style.font = font.hasPrefix("@") ? String(font.dropFirst()) : font }
+                style.size = fields["fontsize"].flatMap(Double.init).map { min(max($0, 0), 2000) } ?? 0
+                style.color = fields["primarycolour"].flatMap(color) ?? 0xFFFFFF
+                style.outline = (fields["outlinecolour"] ?? fields["tertiarycolour"]).flatMap(color) ?? 0
+                style.bold = fields["bold"].flatMap { Int($0) }.map { $0 != 0 } ?? false
+                style.italic = fields["italic"].flatMap { Int($0) }.map { $0 != 0 } ?? false
+                style.underline = fields["underline"].flatMap { Int($0) }.map { $0 != 0 } ?? false
+                style.strike = fields["strikeout"].flatMap { Int($0) }.map { $0 != 0 } ?? false
+                style.outlineWidth = fields["outline"].flatMap(Double.init).map { min(max($0, 0), 50) } ?? 2
+                let aligned = fields["alignment"].flatMap { Int($0) } ?? 2
+                style.alignment = section == "[v4 styles]" ? alignment(legacy: aligned) : (1...9).contains(aligned) ? aligned : 2
+                style.margins = (fields["marginl"].flatMap(Double.init) ?? 0, fields["marginr"].flatMap(Double.init) ?? 0, fields["marginv"].flatMap(Double.init) ?? 0)
+                if result.styles.isEmpty { result.first = style }
+                result.styles[name.lowercased()] = style
+            }
+        }
+        return result
+    }
+
+    static func block(_ raw: String, style name: String, margins: (l: Double, r: Double, v: Double), styles: AssStyles) -> SubtitleBlock? {
+        let base = styles.style(named: name)
+        var current = base
+        var alignment = base.alignment
+        var outlineWidth = base.outlineWidth
+        var spans: [SubtitleSpan] = []
+        var text = ""
+        var drawing = false
+        func flush() {
+            guard !text.isEmpty else { return }
+            let span = SubtitleSpan(text: text, italic: current.italic, bold: current.bold, underline: current.underline, strike: current.strike, color: current.color, outline: current.outline, font: current.font, size: current.size > 0 ? current.size : nil)
+            if let last = spans.last, last.italic == span.italic, last.bold == span.bold, last.underline == span.underline, last.strike == span.strike, last.color == span.color, last.outline == span.outline, last.font == span.font, last.size == span.size {
+                spans[spans.count - 1].text += text
+            } else {
+                spans.append(span)
+            }
+            text = ""
+        }
+        func number(_ value: Substring) -> Int? { value.isEmpty || !value.allSatisfy(\.isNumber) ? nil : Int(value) }
+        func apply(_ tag: Substring) {
+            func rest(_ prefix: String) -> Substring? { tag.hasPrefix(prefix) ? tag.dropFirst(prefix.count) : nil }
+            if rest("fscx") != nil || rest("fscy") != nil || rest("fsp") != nil { return }
+            if let value = rest("fs") {
+                current.size = Double(value).map { min(max($0, 0), 2000) } ?? base.size
+            } else if let value = rest("fn") {
+                current.font = value.isEmpty ? base.font : String(value)
+            } else if let value = rest("bord") {
+                outlineWidth = Double(value).map { min(max($0, 0), 50) } ?? base.outlineWidth
+            } else if let value = rest("an") {
+                if let place = number(value), (1...9).contains(place) { alignment = place }
+            } else if let value = rest("a"), let place = number(value) {
+                alignment = Self.alignment(legacy: place)
+            } else if let value = rest("b"), value.isEmpty || number(value) != nil {
+                current.bold = number(value).map { $0 == 1 || $0 >= 600 } ?? base.bold
+            } else if let value = rest("i"), value.isEmpty || number(value) != nil {
+                current.italic = number(value).map { $0 != 0 } ?? base.italic
+            } else if let value = rest("u"), value.isEmpty || number(value) != nil {
+                current.underline = number(value).map { $0 != 0 } ?? base.underline
+            } else if let value = rest("s"), value.isEmpty || number(value) != nil {
+                current.strike = number(value).map { $0 != 0 } ?? base.strike
+            } else if let value = rest("1c") ?? rest("c") {
+                current.color = value.isEmpty ? base.color : color(String(value)) ?? current.color
+            } else if let value = rest("3c") {
+                current.outline = value.isEmpty ? base.outline : color(String(value)) ?? current.outline
+            } else if let value = rest("r") {
+                current = value.isEmpty ? base : styles.style(named: String(value))
+            } else if let value = rest("p"), let level = number(value) {
+                drawing = level > 0
+            }
+        }
+        let source = Array(raw)
+        var index = 0
+        while index < source.count {
+            let char = source[index]
+            if char == "{", let close = source[index...].firstIndex(of: "}") {
+                flush()
+                let body = source[(index + 1)..<close]
+                var position = body.startIndex
+                while position < body.endIndex {
+                    guard body[position] == "\\" else {
+                        position += 1
+                        continue
+                    }
+                    var end = position + 1
+                    var depth = 0
+                    while end < body.endIndex, depth > 0 || body[end] != "\\" {
+                        if body[end] == "(" { depth += 1 } else if body[end] == ")" { depth -= 1 }
+                        end += 1
+                    }
+                    apply(Substring(String(body[(position + 1)..<end])).trimmingCharacters(in: .whitespaces)[...])
+                    position = end
+                }
+                index = close + 1
+            } else if char == "\\", index + 1 < source.count, "Nnh".contains(source[index + 1]) {
+                if !drawing { text += source[index + 1] == "N" ? "\n" : source[index + 1] == "n" ? " " : "\u{A0}" }
+                index += 2
+            } else {
+                if !drawing { text.append(char) }
+                index += 1
+            }
+        }
+        flush()
+        guard spans.contains(where: { !$0.text.allSatisfy(\.isWhitespace) }) else { return nil }
+        return SubtitleBlock(spans: spans, alignment: alignment, height: styles.height, outline: outlineWidth,
+                             margins: (margins.l > 0 ? margins.l : base.margins.l, margins.r > 0 ? margins.r : base.margins.r, margins.v > 0 ? margins.v : base.margins.v))
     }
 }
 

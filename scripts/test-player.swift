@@ -34,7 +34,7 @@ enum TestPlayer {
             (up, [], .louder), (down, [], .quieter), ("m", [], .mute), ("f", [], .fullScreen), ("F", [], .fullScreen), ("f", .command, .fullScreen), ("f", [.command, .control], .fullScreen),
             ("\u{1B}", [], .leaveFullScreen), ("s", [], .snapshot), ("t", [], .floatOnTop),
             ("n", [], .next), ("N", [], .next), (">", .shift, .next), ("p", [], .previous), ("<", .shift, .previous), ("n", .command, nil), ("p", .option, nil),
-            ("v", [], .nextSubtitle), ("V", [], .nextSubtitle), ("#", .shift, .nextAudio), ("z", [], .subtitleEarlier), ("x", [], .subtitleLater),
+            ("v", [], .nextSubtitle), ("V", [], .nextSubtitle), ("3", .shift, .nextAudio), ("#", .shift, nil), ("z", [], .subtitleEarlier), ("x", [], .subtitleLater),
             ("F", .shift, .subtitleLarger), ("G", .shift, .subtitleSmaller), ("v", .command, nil), ("z", .shift, nil), ("g", [], nil),
             (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("a", [], nil), ("", [], nil),
         ]
@@ -42,6 +42,17 @@ enum TestPlayer {
             precondition(PlayerAction(key: key, modifiers: modifiers) == action, "key \(key.unicodeScalars.map { String($0.value, radix: 16) }) \(modifiers.rawValue)")
         }
         precondition(PlayerAction(key: left, modifiers: [.shift, .function, .numericPad]) == .skipBack, "arrow keys always carry the function flag")
+        let layouts: [(String, String)] = [("US", "#"), ("German", "§"), ("British", "£"), ("Russian", "№"), ("Spanish", "·"), ("French", "3"), ("Swedish", "#"), ("Arabic", "٣"), ("Hebrew", "#")]
+        for (layout, typed) in layouts {
+            precondition(PlayerAction(key: typed, modifiers: .shift, keyCode: 20) == .nextAudio, "⇧3 on the \(layout) layout types \(typed) and must still switch audio")
+            precondition(PlayerAction(key: typed, modifiers: [], keyCode: 20) == nil && PlayerAction(key: typed, modifiers: [.shift, .command], keyCode: 20) == nil, "3 without Shift or with Command does nothing on the \(layout) layout")
+            precondition(PlayerAction(key: "$", modifiers: .shift, keyCode: 21) == nil, "⇧4 is not bound")
+        }
+        let russian: [(String, UInt16, PlayerAction)] = [("м", 9, .nextSubtitle), ("я", 6, .subtitleEarlier), ("ч", 7, .subtitleLater), ("ь", 46, .mute), ("а", 3, .fullScreen), ("ы", 1, .snapshot), ("е", 17, .floatOnTop), ("т", 45, .next), ("з", 35, .previous), ("л", 40, .playPause), ("о", 38, .longBack), ("д", 37, .longForward), ("х", 33, .slower), ("ъ", 30, .faster), ("б", 43, .frameBack), ("ю", 47, .frameForward)]
+        for (typed, code, action) in russian { precondition(PlayerAction(key: typed, modifiers: [], keyCode: code) == action, "\(typed) on the Russian layout is the key \(code)") }
+        precondition(PlayerAction(key: "а", modifiers: [], keyCode: 0) == nil && PlayerAction(key: "м", modifiers: .command, keyCode: 9) == nil, "a Russian letter on an unbound key or with Command does nothing")
+        precondition(PlayerAction(key: "z", modifiers: [], keyCode: 16) == .subtitleEarlier, "a typed letter still wins over the key position (QWERTZ Z)")
+        print("audio switch and letter keys work on other layouts by key position: ok")
         let bound = Set(PlayerAction.bindings.map(\.action))
         for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop, .nextSubtitle, .nextAudio, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller] {
             precondition(bound.contains(action), "\(action) has no key")

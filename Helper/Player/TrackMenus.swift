@@ -18,6 +18,7 @@ extension PlayerController {
         let audio = engine.audioTracks.first { Self.id($0) == saved.first }
         if let audio { engine.selectAudio(audio) }
         subtitles.position = { [weak self] in self?.engine?.position.seconds ?? 0 }
+        subtitles.view.videoSize = engine.hasVideo ? engine.size : .zero
         subtitles.open(url, resume: resume, saved: saved.count > 1 ? saved[1] : "", delay: PlayerChoices.delay(saved), audioLanguage: (audio ?? engine.audioTrack)?.language, neighbours: siblings)
     }
 

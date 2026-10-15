@@ -33,15 +33,73 @@ enum TestTracks {
         }
 
         func dark() -> Int { stride(from: 0, to: data.count, by: 4).filter { data[$0] < 200 }.count }
+
+        func box(_ match: (Int, Int, Int) -> Bool) -> (count: Int, left: Int, right: Int, low: Int, high: Int) {
+            var found = (count: 0, left: width, right: -1, low: height, high: -1)
+            for row in 0..<height {
+                for column in 0..<width {
+                    let at = (row * width + column) * 4
+                    guard match(Int(data[at]), Int(data[at + 1]), Int(data[at + 2])) else { continue }
+                    found = (found.count + 1, min(found.left, column), max(found.right, column), min(found.low, height - 1 - row), max(found.high, height - 1 - row))
+                }
+            }
+            return found
+        }
     }
 
-    static func picture(of host: NSView, background: CGFloat) -> Picture {
+    static let red = { (r: Int, g: Int, b: Int) in r > 170 && g < 90 && b < 90 }
+    static let green = { (r: Int, g: Int, b: Int) in g > 170 && r < 90 && b < 90 }
+
+    struct Shape {
+        let x, y, width, height: Int
+        let ycrcb: [UInt8]
+    }
+
+    static func pgs(_ events: [(time: Double, shape: Shape?)], width: Int, height: Int) -> Data {
+        var out = [UInt8]()
+        func big(_ value: Int, _ count: Int) -> [UInt8] {
+            var bytes = [UInt8]()
+            for place in 0..<count { bytes.append(UInt8((value >> (8 * (count - 1 - place))) & 0xFF)) }
+            return bytes
+        }
+        func segment(_ time: Double, _ kind: UInt8, _ body: [UInt8]) {
+            out += [0x50, 0x47]
+            out += big(Int(time * 90000), 4)
+            out += big(0, 4)
+            out += [kind]
+            out += big(body.count, 2)
+            out += body
+        }
+        for (number, event) in events.enumerated() {
+            let shape = event.shape
+            var composition: [UInt8] = big(width, 2) + big(height, 2)
+            composition += [0x10] + big(number + 1, 2)
+            composition += [shape == nil ? 0 : 0x80, 0, 0, shape == nil ? 0 : 1]
+            var window: [UInt8] = [0]
+            if let shape {
+                composition += big(0, 2) + [0, 0] + big(shape.x, 2) + big(shape.y, 2)
+                window = [1, 0] + big(shape.x, 2) + big(shape.y, 2) + big(shape.width, 2) + big(shape.height, 2)
+            }
+            segment(event.time, 0x16, composition)
+            segment(event.time, 0x17, window)
+            if let shape {
+                segment(event.time, 0x14, [0, 0, 1] + shape.ycrcb + [255])
+                let rows = (0..<shape.height).flatMap { _ in [UInt8](repeating: 1, count: shape.width) + [0, 0] }
+                let data = big(shape.width, 2) + big(shape.height, 2) + rows
+                segment(event.time, 0x15, big(0, 2) + [0, 0xC0] + big(data.count, 3) + data)
+            }
+            segment(event.time, 0x80, [])
+        }
+        return Data(out)
+    }
+
+    static func picture(of host: NSView, background: CGFloat, width: Int = 800, height: Int = 450) -> Picture {
         host.window?.displayIfNeeded()
-        var picture = Picture(data: [UInt8](repeating: 0, count: 800 * 450 * 4))
+        var picture = Picture(width: width, height: height, data: [UInt8](repeating: 0, count: width * height * 4))
         picture.data.withUnsafeMutableBytes { raw in
-            let context = CGContext(data: raw.baseAddress, width: 800, height: 450, bitsPerComponent: 8, bytesPerRow: 800 * 4, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+            let context = CGContext(data: raw.baseAddress, width: width, height: height, bitsPerComponent: 8, bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
             context.setFillColor(gray: background, alpha: 1)
-            context.fill(CGRect(x: 0, y: 0, width: 800, height: 450))
+            context.fill(CGRect(x: 0, y: 0, width: width, height: height))
             host.layer?.render(in: context)
         }
         return picture
@@ -81,6 +139,83 @@ enum TestTracks {
         check(picture(of: host, background: 0).white().count == 0, "the text goes away when the subtitle ends")
     }
 
+    static var windows: [NSWindow] = []
+
+    static func makeHost(width: Int = 800, height: Int = 450) -> (NSView, SubtitleView) {
+        let host = NSView(frame: NSRect(x: 0, y: 0, width: width, height: height))
+        host.wantsLayer = true
+        let window = NSWindow(contentRect: host.frame, styleMask: .borderless, backing: .buffered, defer: false)
+        window.contentView = host
+        windows.append(window)
+        let view = SubtitleView(frame: host.bounds)
+        host.addSubview(view)
+        host.layoutSubtreeIfNeeded()
+        return (host, view)
+    }
+
+    static func assBlock(_ text: String, style: String = "Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,10,10,10,1") -> SubtitleBlock? {
+        let script = "[Script Info]\nPlayResY: 288\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n\(style)\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\nDialogue: 0,0:00:01.00,0:00:03.00,Default,,0,0,0,,\(text)\n"
+        return SubtitleParser.parse(script).first?.block
+    }
+
+    static func styledDrawing() {
+        let (host, view) = makeHost()
+        func shot(_ text: String, style: String? = nil) -> Picture {
+            view.show(SubtitleScene(blocks: [style.flatMap { assBlock(text, style: $0) } ?? assBlock(text)].compactMap { $0 }))
+            return picture(of: host, background: 0.35)
+        }
+        let plain = shot("Hello world")
+        let white = plain.box { $0 > 240 && $1 > 240 && $2 > 240 }
+        check(white.count > 200 && white.low < 90 && abs((white.left + white.right) / 2 - 400) < 40, "ASS: the default style is white text at the bottom centre")
+        check(plain.box { $0 < 20 && $1 < 20 && $2 < 20 }.count > 200, "ASS: the style outline draws a dark edge around the letters")
+        let tinted = shot("{\\c&H0000FF&}Hello world")
+        check(tinted.box(red).count > 200 && tinted.box { $0 > 240 && $1 > 240 && $2 > 240 }.count == 0, "ASS: \\c colours the letters red (BGR order)")
+        let edged = shot("{\\3c&H00FF00&\\bord4}Hello world")
+        check(edged.box(green).count > 300, "ASS: \\3c and \\bord paint a green outline")
+        let wide = shot("{\\bord0}Hello world").box { $0 < 20 && $1 < 20 && $2 < 20 }.count
+        check(wide == 0, "ASS: \\bord0 removes the outline")
+        let regular = shot("{\\bord0}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
+        let bold = shot("{\\bord0\\b1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
+        let underlined = shot("{\\bord0\\u1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
+        let italic = shot("{\\bord0\\i1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
+        check(bold.count > regular.count && underlined.count > regular.count && italic.count != regular.count, "ASS: \\b, \\u and \\i change how the letters look: \(regular.count) / \(bold.count) / \(underlined.count) / \(italic.count)")
+        let places = [1: shot("{\\an1}Hello world"), 3: shot("{\\an3}Hello world"), 5: shot("{\\an5}Hello world"), 7: shot("{\\an7}Hello world"), 9: shot("{\\an9}Hello world")].mapValues { $0.box { $0 > 240 && $1 > 240 && $2 > 240 } }
+        check(places[1]!.left < 80 && places[1]!.low < 90 && places[3]!.right > 720 && places[3]!.low < 90, "ASS: \\an1 and \\an3 sit in the bottom corners")
+        check(places[7]!.left < 80 && places[7]!.high > 360 && places[9]!.right > 720 && places[9]!.high > 360, "ASS: \\an7 and \\an9 sit in the top corners")
+        check(abs((places[5]!.low + places[5]!.high) / 2 - 225) < 30 && abs((places[5]!.left + places[5]!.right) / 2 - 400) < 40, "ASS: \\an5 sits in the middle")
+        let (taller, tallView) = makeHost(width: 1600, height: 900)
+        tallView.show(SubtitleScene(blocks: [assBlock("{\\bord0}Hello world")].compactMap { $0 }))
+        let big = picture(of: taller, background: 0.35, width: 1600, height: 900).box { $0 > 240 && $1 > 240 && $2 > 240 }
+        check(regular.count > 0 && big.high - big.low > (regular.high - regular.low) * 3 / 2, "ASS: the letters grow with the height of the picture (font 20 of 288)")
+        let mixed = shot("{\\c&H0000FF&}Red {\\c&HFF0000&}Blue")
+        check(mixed.box(red).count > 100 && mixed.box { $2 > 170 && $0 < 90 && $1 < 90 }.count > 100, "ASS: two colours in one line are both drawn")
+        let animated = shot("{\\fad(300,300)\\move(0,0,100,100)\\k30}Read me")
+        check(animated.box { $0 > 240 && $1 > 240 && $2 > 240 }.count > 100, "ASS: fades, moves and karaoke leave readable plain text")
+        view.show(SubtitleScene(blocks: [assBlock("{\\an8}Top"), assBlock("Bottom")].compactMap { $0 }))
+        let both = picture(of: host, background: 0.35).box { $0 > 240 && $1 > 240 && $2 > 240 }
+        check(both.low < 90 && both.high > 360, "ASS: two lines with different places both show")
+    }
+
+    static func pictureDrawing(_ cue: PictureCue, _ later: PictureCue) {
+        let (host, view) = makeHost()
+        view.videoSize = CGSize(width: 320, height: 180)
+        view.show(SubtitleScene(pictures: [cue]))
+        let shown = picture(of: host, background: 0.3).box(red)
+        check(shown.count > 7000 && abs(shown.left - 250) < 8 && abs(shown.right - 549) < 8 && abs(shown.low - 75) < 8 && abs(shown.high - 149) < 8, "picture subtitle: red box at its place and scale (\(shown))")
+        view.videoSize = CGSize(width: 320, height: 240)
+        let boxed = picture(of: host, background: 0.3).box(red)
+        check(boxed.count > 5000 && abs(boxed.left - 288) < 8 && abs(boxed.right - 512) < 8 && abs(boxed.high - 149) < 8, "picture subtitle: 4:3 video leaves the bars empty and shifts the box in (\(boxed))")
+        view.videoSize = CGSize(width: 320, height: 180)
+        view.lift(200)
+        check(picture(of: host, background: 0.3).box(red).low >= 195, "picture subtitle: rises above the control panel")
+        view.lift(0)
+        view.show(SubtitleScene(pictures: [later]))
+        let next = picture(of: host, background: 0.3)
+        check(next.box(red).count == 0 && next.box(green).count > 3000, "picture subtitle: the next line replaces the first")
+        view.show(SubtitleScene())
+        check(picture(of: host, background: 0.3).box { red($0, $1, $2) || green($0, $1, $2) }.count == 0, "picture subtitle: nothing is left when the line ends")
+    }
+
     static func ffmpeg() -> String? {
         ((ProcessInfo.processInfo.environment["FFMPEG"].map { [$0] } ?? []) + ["/opt/homebrew/bin/ffmpeg", "/usr/local/bin/ffmpeg"]).first { FileManager.default.isExecutableFile(atPath: $0) }
     }
@@ -106,20 +241,21 @@ enum TestTracks {
     final class Found {
         var streams: [SubtitleStream]?
         var cues: [Int32: [SubtitleCue]] = [:]
+        var pictures: [Int32: [PictureCue]] = [:]
     }
 
     static func scan(_ url: URL, start: Double = 0, expecting: Int, for seconds: Double = 8) async -> Found {
         let found = Found()
-        let scanner = SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 })
+        let scanner = SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }, onPictures: { found.pictures[$0] = $1 })
         let deadline = Date().addingTimeInterval(seconds)
-        while Date() < deadline, found.streams == nil || found.cues.values.reduce(0, { $0 + $1.count }) < expecting { try? await Task.sleep(for: .milliseconds(50)) }
+        while Date() < deadline, found.streams == nil || found.cues.values.reduce(0, { $0 + $1.count }) + found.pictures.values.reduce(0, { $0 + $1.count }) < expecting { try? await Task.sleep(for: .milliseconds(50)) }
         scanner.cancel()
         return found
     }
 
     static func watch(_ url: URL, start: Double = 0) -> (Found, SubtitleScanner) {
         let found = Found()
-        return (found, SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }))
+        return (found, SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }, onPictures: { found.pictures[$0] = $1 }))
     }
 
     static func starts(_ found: Found) -> [Double] { (found.cues.values.first ?? []).map(\.start).sorted() }
@@ -192,7 +328,44 @@ enum TestTracks {
         await waitFor { starts(ahead) == [10, 700, 1400] }
         check(starts(ahead) == [10, 700, 1400], "a jump to the end of the film reads there: \(starts(ahead))")
         aheadScanner.cancel()
-        check(SubtitleFormat(AV_CODEC_ID_HDMV_PGS_SUBTITLE) == nil && SubtitleFormat(AV_CODEC_ID_DVD_SUBTITLE) == nil && SubtitleFormat(AV_CODEC_ID_DVB_SUBTITLE) == nil, "picture subtitles (PGS, VobSub, DVB) are recognised as not supported")
+        check([AV_CODEC_ID_HDMV_PGS_SUBTITLE, AV_CODEC_ID_DVD_SUBTITLE, AV_CODEC_ID_DVB_SUBTITLE].allSatisfy { SubtitleFormat($0) == .picture } && SubtitleFormat(AV_CODEC_ID_DVD_SUBTITLE) != nil && SubtitleFormat(AV_CODEC_ID_DVB_SUBTITLE) != nil, "picture subtitles (PGS, VobSub, DVB) are recognised and can be decoded")
+        check(SubtitleFormat(AV_CODEC_ID_DVB_TELETEXT) == nil && SubtitleFormat(AV_CODEC_ID_EIA_608) == nil, "other subtitle kinds (teletext, closed captions) stay marked as not shown")
+
+        let shapes: [(time: Double, shape: Shape?)] = [(0, Shape(x: 100, y: 120, width: 120, height: 30, ycrcb: [63, 240, 102])), (2, nil), (3, Shape(x: 30, y: 20, width: 80, height: 24, ycrcb: [173, 26, 42])), (4.5, nil)]
+        let sup = folder.appendingPathComponent("lines.sup")
+        try! pgs(shapes, width: 320, height: 180).write(to: sup)
+        let encode = ["-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p"]
+        let pgsFile = make(ffmpeg, "pgs.mkv", in: folder, video + ["-i", sup.path, "-map", "0:v", "-map", "1:s"] + encode + ["-c:s", "copy"])
+        let vobFile = make(ffmpeg, "vob.mkv", in: folder, video + ["-i", sup.path, "-map", "0:v", "-map", "1:s"] + encode + ["-c:s", "dvdsub"])
+        let dvbFile = make(ffmpeg, "dvb.ts", in: folder, video + ["-i", sup.path, "-map", "0:v", "-map", "1:s"] + encode + ["-c:s", "dvbsub", "-f", "mpegts"])
+        var pictureCues: [PictureCue] = []
+        for (name, url, expecting) in [("PGS in MKV", pgsFile, 2), ("VobSub in MKV", vobFile, 2), ("DVB in MPEG-TS", dvbFile, 1)] {
+            found = await scan(url, expecting: expecting)
+            let cues = (found.pictures.values.first ?? []).sorted { $0.start < $1.start }
+            check(found.streams?.count == 1 && found.streams?.first?.format == .picture && found.cues.isEmpty, "\(name): one picture track, no text cues")
+            check(cues.count >= expecting && abs(cues[0].start) < 0.05 && cues[0].end > cues[0].start + 0.5, "\(name): the first line starts at 0 s and lasts: \(cues.map { "\($0.start)-\($0.end)" })")
+            let bitmap = cues.first?.bitmaps.first
+            let middle = bitmap.map { $0.palette[Int($0.indices[($0.height / 2) * $0.width + $0.width / 2])] } ?? 0
+            check(bitmap.map { abs($0.x - 100) <= 4 && abs($0.y - 120) <= 4 && abs($0.width - 120) <= 6 && abs($0.height - 30) <= 4 } == true && cues.first?.canvas == CGSize(width: 320, height: 180), "\(name): the box keeps its place and size: \(bitmap.map { "\($0.x),\($0.y) \($0.width)x\($0.height)" } ?? "none") on \(cues.first?.canvas ?? .zero)")
+            check(middle >> 24 > 200 && red(Int(middle >> 16 & 0xFF), Int(middle >> 8 & 0xFF), Int(middle & 0xFF)), "\(name): the box is red and opaque (\(String(middle, radix: 16)))")
+            check(cues.first?.images.count == 1 && cues.first?.images.first?.image.width == bitmap?.width, "\(name): the bitmap turns into one picture")
+            if name.hasPrefix("PGS") {
+                check(abs(cues[0].end - 2) < 0.05 && abs(cues[1].start - 3) < 0.05 && abs(cues[1].end - 4.5) < 0.05, "\(name): the empty set after a line ends it on time")
+                pictureCues = cues
+            }
+        }
+        pictureDrawing(pictureCues[0], pictureCues[1])
+
+        let crowd = (0..<60).map { (time: Double($0) / 2, shape: Shape(x: 0, y: 0, width: 320, height: 180, ycrcb: [63, 240, 102])) as (time: Double, shape: Shape?) }
+        let crowdFile = folder.appendingPathComponent("crowd.sup")
+        try! pgs(crowd, width: 320, height: 180).write(to: crowdFile)
+        let heavy = make(ffmpeg, "heavy.mkv", in: folder, video + ["-i", crowdFile.path, "-map", "0:v", "-map", "1:s"] + encode + ["-c:s", "copy"])
+        let kept = Found()
+        let limited = SubtitleScanner(url: heavy, start: 0, onStreams: { kept.streams = $0 }, onCues: { _, _ in }, onPictures: { kept.pictures[$0] = $1 }, pictureBudget: 1 << 20)
+        await waitFor { (kept.pictures.values.first?.last?.start ?? 0) > 29 }
+        limited.cancel()
+        let held = kept.pictures.values.first ?? []
+        check(held.count > 5 && held.count < 30 && held.reduce(0, { $0 + $1.byteSize }) <= (1 << 20) + 60_000 && (held.last?.start ?? 0) > 29, "many big pictures stay under the memory limit: \(held.count) kept of 60, \(held.reduce(0) { $0 + $1.byteSize } / 1000) KB")
 
         var damaged = 0
         for url in [tracks, movText, ass, long] {
@@ -358,7 +531,39 @@ enum TestTracks {
         check(refused && subtitles.tracks.isEmpty, "a file that is not subtitles is refused and not listed")
         subtitles.close()
 
+        subtitles.open(pgsFile, resume: 0, saved: "", delay: 0, audioLanguage: nil, neighbours: nil)
+        await settle { subtitles.tracks.count == 1 }
+        let pictureTrack = subtitles.tracks.first
+        check(pictureTrack?.available == true && pictureTrack?.title.contains("can’t") == false, "a picture track is in the list and can be chosen: \(pictureTrack?.title ?? "none")")
+        subtitles.choose(pictureTrack?.id)
+        now = 1
+        await settle { !subtitles.view.scene.pictures.isEmpty }
+        check(subtitles.view.scene.pictures.count == 1 && subtitles.view.scene.blocks.isEmpty, "a picture track shows its picture at 1 s")
+        now = 2.5
+        subtitles.refresh()
+        check(subtitles.view.scene.pictures.isEmpty, "between two pictures nothing shows")
+        now = 3.5
+        subtitles.refresh()
+        check(subtitles.view.scene.pictures.count == 1 && subtitles.view.scene.pictures[0].start == 3, "the second picture shows at 3.5 s")
+        check(subtitles.ticking, "while the video plays the subtitle clock runs")
+        subtitles.playing = { false }
+        subtitles.refresh()
+        check(!subtitles.ticking, "on pause the subtitle clock stops")
+        now = 1
+        subtitles.refresh()
+        check(subtitles.view.scene.pictures.count == 1 && subtitles.view.scene.pictures[0].start == 0 && !subtitles.ticking, "on pause a seek changes the picture once, and the clock stays off")
+        subtitles.announce("Subtitles: test")
+        check(subtitles.ticking && subtitles.view.shown == "Subtitles: test", "on pause a message still shows")
+        await settle { subtitles.view.shown == nil && !subtitles.ticking }
+        check(!subtitles.ticking && subtitles.view.shown == nil && subtitles.view.scene.pictures.count == 1, "after the message the clock stops again and the picture is back")
+        subtitles.playing = { true }
+        subtitles.refresh()
+        check(subtitles.ticking, "on play the clock runs again")
+        subtitles.close()
+        check(!subtitles.ticking, "closing the video stops the clock")
+
         drawing()
+        styledDrawing()
 
         print(failures == 0 ? "all track checks passed" : "\(failures) track checks FAILED")
         exit(failures == 0 ? 0 : 1)

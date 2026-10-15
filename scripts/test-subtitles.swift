@@ -37,6 +37,34 @@ enum TestSubtitles {
         precondition(SubtitleParser.ass(packet: "12,0,Default") == nil && SubtitleParser.ass(packet: "1,0,Default,,0,0,0,,{\\p1}m 0 0{\\p0}") == nil)
         print("ASS: format line, commas in text, overrides, drawings, Matroska packets: ok")
 
+        let header = "[Script Info]\nPlayResY: 480\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Default,Arial,40,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,3,0,2,10,10,20,1\nStyle: Top,Georgia,30,&H0000FF00,&H000000FF,&H00FF0000,&H00000000,0,-1,-1,0,100,100,0,0,1,1,0,8,15,15,25,1\n"
+        let look = AssScript.styles(header)
+        let normal = look.style(named: "Default")
+        precondition(look.height == 480 && normal.size == 40 && normal.bold && normal.color == 0xFFFFFF && normal.outline == 0 && normal.outlineWidth == 3 && normal.alignment == 2 && normal.margins.v == 20 && normal.font == "Arial")
+        let top = look.style(named: "top")
+        precondition(top.italic && top.underline && !top.bold && top.color == 0x00FF00 && top.outline == 0x0000FF && top.alignment == 8 && top.font == "Georgia" && look.style(named: "Missing").size == 40 && look.style(named: "*Default").size == 40)
+        precondition(AssScript.color("&H00FFFFFF") == 0xFFFFFF && AssScript.color("&HFF&") == 0xFF0000 && AssScript.color("&H0000FF&") == 0xFF0000 && AssScript.color("16711680") == 0x0000FF && AssScript.color("&Hzz&") == nil && AssScript.color("") == nil)
+        let mixed = AssScript.block("{\\i1}slanted{\\i0} plain {\\c&H0000FF&\\u1}red{\\r}reset\\Nline two", style: "Default", margins: (0, 0, 0), styles: look)!
+        precondition(mixed.spans.map(\.text) == ["slanted", " plain ", "red", "reset\nline two"], "\(mixed.spans.map(\.text))")
+        precondition(mixed.spans[0].italic && !mixed.spans[1].italic && mixed.spans[2].color == 0xFF0000 && mixed.spans[2].underline && !mixed.spans[3].underline && mixed.spans[3].color == 0xFFFFFF && mixed.spans[1].bold && mixed.spans[0].size == 40)
+        let moved = AssScript.block("{\\an7\\b0\\fs20\\3c&H00FF00&\\bord5\\fn@Helvetica}x", style: "Default", margins: (0, 0, 0), styles: look)!
+        precondition(moved.alignment == 7 && !moved.spans[0].bold && moved.spans[0].size == 20 && moved.spans[0].outline == 0x00FF00 && moved.outline == 5 && moved.spans[0].font == "@Helvetica" && moved.height == 480 && moved.marginV == 20)
+        let animated = AssScript.block("{\\t(0,500,\\fs80\\c&HFF&)\\k20\\pos(100,100)\\fad(200,200)\\blur2\\shad3\\fscx150\\alpha&H80&\\clip(0,0,10,10)}ab{\\p1}m 0 0 l 9 9{\\p0}cd", style: "Default", margins: (4, 5, 6), styles: look)!
+        precondition(animated.text == "abcd" && animated.spans.count == 1 && animated.spans[0].size == 40 && animated.spans[0].color == 0xFFFFFF && animated.marginL == 4 && animated.marginR == 5 && animated.marginV == 6, "\(animated)")
+        precondition(AssScript.block("{\\p1}m 0 0 l 1 1{\\p0}", style: "Default", margins: (0, 0, 0), styles: look) == nil && AssScript.block("   ", style: "Default", margins: (0, 0, 0), styles: look) == nil)
+        precondition(AssScript.block("{\\rTop}back", style: "Default", margins: (0, 0, 0), styles: look)!.spans[0].font == "Georgia" && AssScript.block("{no closing", style: "Default", margins: (0, 0, 0), styles: look)!.text == "{no closing")
+        let legacy = AssScript.styles("[V4 Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, TertiaryColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, AlphaLevel, Encoding\nStyle: A,Arial,20,16777215,0,255,0,0,0,1,2,0,6,0,0,10,0,0\nStyle: B,Arial,20,16777215,0,0,0,0,0,1,2,0,10,0,0,10,0,0\nStyle: C,Arial,20,16777215,0,0,0,0,0,1,2,0,3,0,0,10,0,0\n")
+        precondition(legacy.style(named: "A").alignment == 8 && legacy.style(named: "B").alignment == 5 && legacy.style(named: "C").alignment == 3 && legacy.style(named: "A").outline == 0xFF0000 && legacy.height == 288)
+        precondition(AssScript.block("{\\a1}x", style: "A", margins: (0, 0, 0), styles: legacy)!.alignment == 1)
+        let event = SubtitleParser.assEvent(packet: "5,0,Top,,0,0,0,,Hello", styles: look)!
+        precondition(event.text == "Hello" && event.block?.alignment == 8 && event.block?.spans[0].font == "Georgia" && SubtitleParser.assEvent(packet: "5,0,Top", styles: look) == nil)
+        let file = SubtitleParser.parse(header + "\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\nDialogue: 0,0:00:01.00,0:00:02.00,Top,,0,0,0,,{\\i0}Up there\n")
+        precondition(file.count == 1 && file[0].block?.alignment == 8 && file[0].block?.spans[0].italic == false && file[0].block?.spans[0].underline == true && file[0].block?.marginL == 15, "\(file)")
+        precondition(SubtitleParser.parse("1\n00:00:01,000 --> 00:00:02,000\nplain\n")[0].block == nil)
+        let blocks = SubtitleCues([SubtitleCue(start: 0, end: 5, text: "a", block: moved), SubtitleCue(start: 1, end: 5, text: "b")]).active(at: 2)
+        precondition(blocks.map(\.text) == ["a", "b"] && SubtitleBlock(plain: "\u{E000}x\u{E001}y").spans.map(\.text) == ["x", "y"] && SubtitleBlock(plain: "x").height == 0)
+        print("ASS styles: bold, italic, underline, colours, outline, alignment, size, resets, animations ignored, old SSA numbers: ok")
+
         let moov = Data([0, 5]) + Data("Hello".utf8) + Data([0, 0, 0, 8]) + Data("styl".utf8)
         precondition(SubtitleParser.movText(moov) == "Hello" && SubtitleParser.movText(Data([0, 0])) == nil && SubtitleParser.movText(Data([0])) == nil)
         precondition(SubtitleParser.movText(Data([0, 99]) + Data("short".utf8)) == "short")
@@ -88,6 +116,11 @@ enum TestSubtitles {
             let texty = String(decoding: (0..<size).map { _ in Array(" -->:,.\n\r{}<>\\&;0123456789aN".utf8).randomElement()! }, as: UTF8.self)
             _ = SubtitleParser.parse(texty)
             _ = SubtitleParser.parse("[Events]\nDialogue:" + texty)
+            let tags = ["{", "}", "\\", "(", ")", "an", "fs", "c&H", "1c", "3c", "r", "b", "i", "u", "t(", "p1", "fn", "bord", "a", "9", "99999999999", "-", ",", "&", "H", "ab", "\\N", "*"]
+            let tagged = (0..<min(size / 4, 400)).map { _ in tags.randomElement()! }.joined()
+            _ = AssScript.block(tagged, style: tagged.prefix(3).description, margins: (1, 2, 3), styles: look)
+            _ = AssScript.styles("[Script Info]\nPlayResY:" + tagged + "\n[V4+ Styles]\nFormat:" + tagged + "\nStyle:" + tagged)
+            _ = SubtitleParser.assEvent(packet: tagged + ",,,,,,,," + tagged, styles: look)
         }
         precondition(Date().timeIntervalSince(started) < 60, "random input is too slow")
         precondition(SubtitleParser.parse(Data(count: SubtitleParser.sizeLimit + 1)).isEmpty)

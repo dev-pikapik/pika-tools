@@ -10,7 +10,7 @@ final class VideoView: NSView {
 
     override func keyDown(with event: NSEvent) {
         controller?.showControls()
-        guard let action = PlayerAction(key: event.charactersIgnoringModifiers ?? "", modifiers: event.modifierFlags), controller?.perform(action) == true else { return super.keyDown(with: event) }
+        guard let action = PlayerAction(key: event.charactersIgnoringModifiers ?? "", modifiers: event.modifierFlags, keyCode: event.keyCode), controller?.perform(action) == true else { return super.keyDown(with: event) }
     }
 
     override func scrollWheel(with event: NSEvent) {
@@ -223,6 +223,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         video.addSubview(controls)
         video.addSubview(preview)
         subtitles.install(in: video, below: controls)
+        subtitles.playing = { [weak self] in self?.playing == true }
         preview.isHidden = true
         let wide = controls.widthAnchor.constraint(equalToConstant: 560)
         wide.priority = .defaultHigh
@@ -503,6 +504,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
         if !playing { remember() }
         update()
+        subtitles.refresh()
         showControls()
     }
 
@@ -574,6 +576,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
         engine.step(direction)
         update()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in self?.subtitles.refresh() }
         showControls()
     }
 

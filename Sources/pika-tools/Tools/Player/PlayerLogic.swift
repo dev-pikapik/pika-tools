@@ -105,14 +105,17 @@ enum PlayerAction: Equatable {
         (.fullScreen, "f", []), (.fullScreen, "f", .command), (.fullScreen, "f", [.command, .control]), (.leaveFullScreen, "\u{1B}", []),
         (.snapshot, "s", []), (.floatOnTop, "t", []),
         (.next, "n", []), (.next, ">", .shift), (.previous, "p", []), (.previous, "<", .shift),
-        (.nextSubtitle, "v", []), (.nextAudio, "#", .shift), (.subtitleEarlier, "z", []), (.subtitleLater, "x", []),
+        (.nextSubtitle, "v", []), (.nextAudio, "3", .shift), (.subtitleEarlier, "z", []), (.subtitleLater, "x", []),
         (.subtitleLarger, "f", .shift), (.subtitleSmaller, "g", .shift),
     ]
 
-    init?(key: String, modifiers: NSEvent.ModifierFlags = []) {
+    private static let positions: [UInt16: String] = [1: "s", 3: "f", 5: "g", 6: "z", 7: "x", 9: "v", 17: "t", 20: "3", 30: "]", 33: "[", 35: "p", 37: "l", 38: "j", 40: "k", 43: ",", 45: "n", 46: "m", 47: "."]
+
+    init?(key: String, modifiers: NSEvent.ModifierFlags = [], keyCode: UInt16? = nil) {
         let held = modifiers.intersection([.command, .control, .option, .shift])
-        guard let found = Self.bindings.first(where: { $0.key == key.lowercased() && $0.modifiers == held }) else { return nil }
-        self = found.action
+        func action(_ key: String) -> PlayerAction? { Self.bindings.first { $0.key == key && $0.modifiers == held }?.action }
+        guard let found = action(key.lowercased()) ?? keyCode.flatMap({ Self.positions[$0] }).flatMap(action) else { return nil }
+        self = found
     }
 
     func resolved(playing: Bool) -> PlayerAction {
