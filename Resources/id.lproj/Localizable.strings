@@ -77,6 +77,7 @@
 "Seconds" = "Detik";
 "Keep the display on" = "Biarkan layar tetap menyala";
 "Display" = "Layar";
+"Display settings" = "Pengaturan layar";
 "Always on" = "Selalu menyala";
 "Turns off as usual" = "Mati seperti biasa";
 "No dimming, screen saver or lock screen" = "Tanpa peredupan, penghemat layar, atau layar kunci";
@@ -902,7 +903,8 @@
 "Archives in Finder" = "Arsip di Finder";
 "Right-click › Extract or Create Archive" = "Klik kanan › Ekstrak atau Buat Arsip";
 "Right-click a file or folder" = "Klik kanan file atau folder";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Klik kanan arsip di Finder dan pilih “Ekstrak”. Klik kanan file atau folder lain dan pilih “Buat Arsip…” untuk membuat ZIP, 7Z, atau TAR, dengan kata sandi jika mau.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Klik kanan arsip di Finder dan pilih “Ekstrak”. Klik kanan file atau folder lain dan pilih “Buat Arsip…” untuk membuat ZIP, 7Z, atau TAR. ZIP dan 7Z bisa diberi kata sandi.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Klik kanan arsip di Finder dan pilih “Ekstrak”. Klik kanan file atau folder lain dan pilih “Buat Arsip…” untuk membuat ZIP, 7Z, atau TAR. Hanya ZIP yang bisa diberi kata sandi.";
 "Open archives with this app" = "Buka arsip dengan app ini";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "arsip, ekstrak, unzip, buka, zip, rar, 7z, tar, kata sandi, pisah, klik kanan, menu konteks";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "arsip, app default, buka dengan, klik dua kali, unzip, zip, 7z";
@@ -926,6 +928,8 @@
 "File names are hidden too" = "Nama file juga disembunyikan";
 "Use English letters, numbers and symbols only" = "Gunakan hanya huruf Inggris, angka, dan simbol";
 "TAR archives can’t have a password" = "Arsip TAR tidak bisa diberi kata sandi";
+"Only ZIP can have a password" = "Hanya ZIP yang bisa diberi kata sandi";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "File mungkin rusak, atau jenisnya tidak bisa dibuka pikapik versi ini: arsip terpisah per bagian, file XZ, LZMA, atau ZST tunggal, serta 7Z atau RAR yang memakai kata sandi.";
 "Don’t split" = "Jangan pisah";
 "15 MB, for email" = "15 MB, untuk email";
 "100 MB" = "100 MB";
@@ -1145,15 +1149,16 @@
 "Hide desktop icons" = "Sembunyikan ikon desktop";
 "For calls, recordings and screenshots. The files stay where they are" = "Untuk panggilan, rekaman, dan jepretan layar. File tetap di tempatnya";
 "The files stay where they are" = "File tetap di tempatnya";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Menutupi ikon dengan wallpaper. Untuk panggilan, rekaman, dan jepretan layar";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Menutupi file dan folder di desktop dengan wallpaper, di setiap layar. Klik tetap sampai ke desktop. Jika wallpaper bergerak, warna polos yang menutupinya. File tetap ada di folder Desktop di Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Menyembunyikan file dan folder di desktop, sama seperti pilihan “Tampilkan item” di Pengaturan Sistem › Desktop & Dock. File dan folder itu tetap ada di folder Desktop di Finder.";
 "Show hidden files" = "Tampilkan file tersembunyi";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "File tersembunyi tampil redup. Finder dimulai ulang sebentar dan membuka lagi jendelanya";
 "Finder restarts for a moment" = "Finder dimulai ulang sebentar";
 "Waiting for Finder to finish copying" = "Menunggu Finder selesai menyalin";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "File dan folder tersembunyi, seperti Perpustakaan, tampil redup di Finder dan di desktop, sama seperti menekan ⇧⌘. di Finder. Untuk menerapkan perubahan, Finder dimulai ulang sebentar dan membuka lagi jendela serta tabnya. Jika Finder sedang menyalin atau memindahkan file, Finder baru dimulai ulang setelah selesai.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Pengaturan Sistem › Desktop & Dock › Tampilkan item › Di Desktop";
-"Opens Desktop & Dock in System Settings" = "Membuka Desktop & Dock di Pengaturan Sistem";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Membuka Desktop & Dock di Pengaturan Sistem. Matikan “Di Desktop” di samping “Tampilkan item” untuk menyembunyikan ikon, lalu nyalakan lagi untuk memunculkannya kembali. File tetap ada di folder Desktop.";
+"Turn off “On Desktop”" = "Matikan “Di Desktop”";
+"Or hide them in System Settings" = "Atau sembunyikan di Pengaturan Sistem";
 "Press these keys in Finder, and again to hide them" = "Tekan tombol ini di Finder, lalu tekan lagi untuk menyembunyikannya";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, ikon, file, folder, rapikan, sembunyikan, presentasi, berbagi layar, rekaman, jepretan layar, Pengelola Sorotan";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "tersembunyi, tak terlihat, file titik, file sistem, Perpustakaan, tampilkan semua file, Command Shift titik";

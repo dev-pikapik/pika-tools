@@ -25,11 +25,14 @@ Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, d
 
 **Dans les deux versions**
 
+- **Un premier lancement tout en douceur.** La version du site ne demande plus d’autorisations à la première ouverture. Elle ne demande que lorsque vous activez un outil qui en a besoin.
 - **Des copies de vidéos plus légères.** « Créer une copie allégée » réduit désormais une vidéo à environ la moitié. Avant, la plupart des vidéos recevaient « Déjà compact ».
 - **Deux copies font bon ménage.** Si vous utilisez ensemble la version de l’App Store et celle du site, elles ne s’annulent plus l’une l’autre. ⇧⌘Q et ⇧⌘W fonctionnent de nouveau dans les jeux.
 - **Les jeux reprennent après la veille.** Le « Mode Jeu » se réactive tout seul quand votre Mac se réveille.
 - **« Ports » dit la vérité.** Sous macOS 27, un port utilisé par macOS ou par un autre utilisateur n’est plus déclaré libre.
 - **Signaler un problème est plus rapide.** « Signaler un problème », dans Réglages › À propos, ouvre le formulaire avec votre version déjà choisie.
+- **Des archives plus fluides.** La barre de progression avance pendant qu’une archive se décompresse, un mauvais mot de passe est signalé tout de suite, et votre Mac ne s’endort plus au milieu d’une décompression ou d’une création.
+- **Un panneau de la barre des menus plus stable.** Ouvrir une ligne du panneau, par exemple les options d’affichage sous « Rester éveillé », ne fait plus clignoter une barre de défilement. La flèche à côté de « Rester éveillé » indique maintenant « Réglages de l’écran ».
 
 **Corrigé dans la version du Mac App Store**
 

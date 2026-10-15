@@ -30,7 +30,9 @@ enum TestArchive {
 
     static func main() {
         setvbuf(stdout, nil, _IOLBF, 0)
+        #if !APPSTORE
         useBundledTool()
+        #endif
         try! manager.createDirectory(at: root, withIntermediateDirectories: true)
         defer { try? manager.removeItem(at: root) }
         let leftovers = ownItems()
@@ -42,7 +44,9 @@ enum TestArchive {
         oddNames()
         links()
         passwords()
+        #if !APPSTORE
         splitting()
+        #endif
         placing()
         damage()
         hostile()
@@ -56,6 +60,9 @@ enum TestArchive {
         appleDouble()
         cancelling()
         rar()
+        #if APPSTORE
+        appStore()
+        #endif
         let left = ownItems().subtracting(leftovers)
         precondition(left.isEmpty, "temporary folders left behind: \(left.sorted())")
         print("archive: all ok")
@@ -162,7 +169,11 @@ enum TestArchive {
         precondition(before - left < 256 << 10, "unknown size: \(left) free, \(before) before")
         guard case .noSpace(let wanted, _)? = full else { preconditionFailure("create: \(String(describing: full))") }
         precondition(wanted == 9 << 20)
+        #if APPSTORE
+        guard case .failed? = lied else { preconditionFailure("a zip that claims 10 bytes is cut off at 10 and nothing is kept: \(String(describing: lied))") }
+        #else
         guard case .noSpace(0, _)? = lied else { preconditionFailure("a zip that claims 10 bytes: \(String(describing: lied))") }
+        #endif
         precondition(snug == nil, "the reserve was counted twice: \(String(describing: snug))")
         guard case .noSpace? = tight else { preconditionFailure("no reserve was kept: \(String(describing: tight))") }
         precondition(names == ["big.zip", "lying.zip", "small.zip", "zeros.bin.bz2"], "left on the volume: \(names)")
@@ -235,7 +246,9 @@ enum TestArchive {
         precondition(Set(entries.map(\.name)) == ["Caf\u{E9}/r\u{E9}sum\u{E9}.txt", "Caf\u{E9}/dossier/\u{D55C}.txt"], "\(entries.map(\.name))")
         let result = try! Archive.extract(made[0])
         precondition(result.lastPathComponent == "Caf\u{E9} 2", "\(result.lastPathComponent)")
+        #if !APPSTORE
         for name in manager.enumerator(atPath: result.path)!.allObjects as! [String] { precondition(isComposed(name), "not NFC: \(name)") }
+        #endif
         print("composition ok")
     }
 
@@ -287,6 +300,9 @@ enum TestArchive {
         expect(.wrongPassword, "zip with a wrong password") { _ = try Archive.extract(zip, password: "nope") }
         let opened = try! Archive.extract(zip, password: "s3cret")
         precondition(try! Data(contentsOf: path(opened, "a.txt")) == Data("hello".utf8))
+        #if APPSTORE
+        expect(.unsupportedPassword, "7z with a password") { _ = try Archive.create(items: [box], name: "x", format: .sevenZip, password: "p") }
+        #else
         let hidden = try! Archive.create(items: [box], name: "Hidden", format: .sevenZip, password: "p\u{E4}ss w\u{F6}rd")[0]
         expect(.needsPassword, "7z headers without a password") { _ = try Archive.probe(hidden) }
         expect(.wrongPassword, "7z headers with a wrong password") { _ = try Archive.probe(hidden, password: "nope") }
@@ -294,6 +310,7 @@ enum TestArchive {
         precondition(try! Archive.probe(hidden, password: "p\u{E4}ss w\u{F6}rd").names == ["box"])
         let unlocked = try! Archive.extract(hidden, password: "p\u{E4}ss w\u{F6}rd")
         precondition(tree(unlocked) == ["a.txt"])
+        #endif
         expect(.unsupportedPassword, "tar with a password") { _ = try Archive.create(items: [box], name: "x", format: .tarGz, password: "p") }
         expect(.unsupportedPassword, "zip with a non-ASCII password") { _ = try Archive.create(items: [box], name: "x", format: .zip, password: "p\u{E4}ss") }
         expect(.unsupportedPassword, "password with a line break") { _ = try Archive.create(items: [box], name: "x", format: .sevenZip, password: "a\nb") }
@@ -349,6 +366,61 @@ enum TestArchive {
         precondition(Archive.parts(of: path(neighbours, "c.rar")).missing == nil)
         print("split ok")
     }
+
+    #if APPSTORE
+    static func appStore() {
+        let folder = fresh("store")
+        let box = path(folder, "My box")
+        put(box, "a b.txt", random(300_000))
+        put(box, "\u{DC}n\u{EF}/\u{E7}.txt", Data("umlaut".utf8))
+        put(box, "deep/er/c.txt", Data("deep".utf8))
+        put(box, "empty/")
+        let rounds: [(Archive.Format, String?)] = [(.zip, nil), (.zip, "s3cret"), (.sevenZip, nil), (.tarGz, nil), (.tarXz, nil)]
+        for (format, password) in rounds {
+            let made = try! Archive.create(items: [box], name: "Round", format: format, password: password)[0]
+            let info = try! Archive.probe(made, password: password)
+            precondition(info.names == ["My box"] && info.isEncrypted == (password != nil), "\(format): \(info)")
+            let result = try! Archive.extract(move([made], into: fresh("store-out"))[0], password: password)
+            precondition(tree(result) == tree(box), "\(format): \(tree(result))")
+            for name in files(box) { precondition(try! Data(contentsOf: path(result, name)) == Data(contentsOf: path(box, name)), "\(format): \(name)") }
+        }
+        let locked = try! Archive.create(items: [box], name: "Locked", format: .zip, password: "s3cret")[0]
+        let beside = fresh("store-locked")
+        let archive = move([locked], into: beside)[0]
+        expect(.needsPassword, "zip without a password") { _ = try Archive.extract(archive) }
+        expect(.wrongPassword, "zip with a wrong password") { _ = try Archive.extract(archive, password: "nope") }
+        precondition(tree(beside) == ["Locked.zip"], "left beside the archive: \(tree(beside))")
+        if let seven = ProcessInfo.processInfo.environment["PIKA_7ZZ"] {
+            for (name, flags) in [("Data.7z", ["-p123"]), ("Header.7z", ["-p123", "-mhe=on"])] {
+                precondition(tool(seven, ["a"] + flags + [path(beside, name).path, box.path]) == 0, name)
+                expect(.unsupported, "encrypted \(name)") { _ = try Archive.extract(path(beside, name), password: "123") }
+            }
+            precondition(tree(beside) == ["Data.7z", "Header.7z", "Locked.zip"], "left beside 7z: \(tree(beside))")
+        }
+        for (executable, ending) in [("/usr/bin/gzip", "gz"), ("/usr/bin/bzip2", "bz2")] {
+            let single = fresh("store-single")
+            put(single, "plain.txt", Data("plain\n".utf8))
+            precondition(tool(executable, ["-k", "plain.txt"], in: single) == 0)
+            try! manager.removeItem(at: path(single, "plain.txt"))
+            precondition(try! Archive.probe(path(single, "plain.txt." + ending)).entries == 1, ending)
+            let result = try! Archive.extract(path(single, "plain.txt." + ending))
+            precondition(result.lastPathComponent == "plain.txt" && (try! Data(contentsOf: result)) == Data("plain\n".utf8), ending)
+        }
+        let xz = fresh("store-xz")
+        let hex = "fd377a585a000004e6d6b4460200210116000000742fe5a301000568656c6c6f0a000000a56097f194f6fde000011e06c12fa41d1fb6f37d010000000004595a"
+        precondition(manager.createFile(atPath: path(xz, "plain.txt.xz").path, contents: Data(stride(from: 0, to: hex.count, by: 2).map { UInt8(hex.dropFirst($0).prefix(2), radix: 16)! })))
+        expect(.unsupported, "single xz") { _ = try Archive.extract(path(xz, "plain.txt.xz")) }
+        precondition(tree(xz) == ["plain.txt.xz"], "left beside xz: \(tree(xz))")
+        let parts = fresh("store-parts")
+        let zip = try! Data(contentsOf: try! Archive.create(items: [box], name: "Whole", format: .zip)[0])
+        try! zip.prefix(zip.count / 2).write(to: path(parts, "S.zip.001"))
+        try! zip.suffix(zip.count - zip.count / 2).write(to: path(parts, "S.zip.002"))
+        expect(.unsupported, "multi-part probe") { _ = try Archive.probe(path(parts, "S.zip.001")) }
+        expect(.unsupported, "multi-part extract") { _ = try Archive.extract(path(parts, "S.zip.001")) }
+        expect(.unsupported, "split create") { _ = try Archive.create(items: [box], name: "S", format: .zip, splitBytes: 100_000) }
+        print("app store ok")
+    }
+    #endif
 
     static func placing() {
         let source = fresh("placing-source")
@@ -487,8 +559,13 @@ enum TestArchive {
         let marker = "pika-escape-\(UUID().uuidString.prefix(8))"
         func entry(_ name: String) -> (name: [UInt8], data: [UInt8]) { (Array(name.utf8), Array("x".utf8)) }
         let russian = (name: try! legacyBytes("\u{41F}\u{440}\u{438}\u{432}\u{435}\u{442} \u{43C}\u{438}\u{440}.txt", encoding: dosRussian), data: Array("ok".utf8))
+        #if APPSTORE
+        let fallback = "bsdtar"
+        #else
+        let fallback = "sevenZip"
+        #endif
         let archives: [(file: String, route: String, entries: [(name: [UInt8], data: [UInt8])])] = [
-            ("seven.zip", "sevenZip", [entry("../\(marker)-a.txt"), entry("/\(marker)-b.txt"), entry("ok.txt")]),
+            ("seven.zip", fallback, [entry("../\(marker)-a.txt"), entry("/\(marker)-b.txt"), entry("ok.txt")]),
             ("ditto.zip", "ditto", [entry("__MACOSX/._ok.txt"), entry("../\(marker)-c.txt"), entry("/\(marker)-d.txt"), entry("ok.txt")]),
             ("legacy.zip", "bsdtar", [entry("../\(marker)-e.txt"), entry("/\(marker)-f.txt"), russian]),
         ]
@@ -505,7 +582,13 @@ enum TestArchive {
                     precondition(!manager.fileExists(atPath: escaped), "\(archive.file) wrote \(escaped)")
                 }
             }
+            #if APPSTORE
+            var refused = false
+            if case .damaged? = outcome { refused = true }
+            precondition(outcome == nil || refused, "\(archive.file): \(String(describing: outcome))")
+            #else
             precondition(outcome == nil, "\(archive.file): \(String(describing: outcome))")
+            #endif
             precondition(Set(try! manager.contentsOfDirectory(atPath: folder.path)) == [archive.file, String(archive.file.dropLast(4))], "\(tree(folder))")
         }
         print("traversal ok")
@@ -703,7 +786,14 @@ enum TestArchive {
         precondition(tool("/usr/bin/zip", ["-qry", "pack.zip", "pack"], in: source) == 0)
         precondition(setxattr(path(source, "pack/a.txt").path, "user.pika", Array("hi".utf8), 2, 0, 0) == 0)
         precondition(tool("/usr/bin/ditto", ["-c", "-k", "--sequesterRsrc", "--keepParent", "pack", "finder.zip"], in: source) == 0)
-        for (made, name, route, expected) in [("pack.tar", "pack.tar", Archive.Route.sevenZip, Array(inside.dropLast())), ("pack.zip", "pack.zip", .sevenZip, Array(inside.dropLast())), ("finder.zip", "pack.zip", .ditto, inside)] {
+        #if APPSTORE
+        let plain = Archive.Route.bsdtar("")
+        let kept = inside
+        #else
+        let plain = Archive.Route.sevenZip
+        let kept = Array(inside.dropLast())
+        #endif
+        for (made, name, route, expected) in [("pack.tar", "pack.tar", plain, kept), ("pack.zip", "pack.zip", plain, kept), ("finder.zip", "pack.zip", .ditto, inside)] {
             let folder = fresh("placed-links")
             let archive = path(folder, name)
             try! manager.copyItem(at: path(source, made), to: archive)

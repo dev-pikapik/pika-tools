@@ -77,6 +77,7 @@
 "Seconds" = "Sekundy";
 "Keep the display on" = "Nie wyłączaj ekranu";
 "Display" = "Ekran";
+"Display settings" = "Ustawienia ekranu";
 "Always on" = "Zawsze włączony";
 "Turns off as usual" = "Gaśnie jak zwykle";
 "No dimming, screen saver or lock screen" = "Bez przygaszania, wygaszacza i ekranu blokady";
@@ -902,7 +903,8 @@
 "Archives in Finder" = "Archiwa w Finderze";
 "Right-click › Extract or Create Archive" = "Prawy klik › Wypakuj lub Utwórz archiwum";
 "Right-click a file or folder" = "Prawy klik na pliku lub folderze";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Kliknij archiwum w Finderze prawym przyciskiem myszy i wybierz „Wypakuj”. Kliknij tak dowolny inny plik lub folder i wybierz „Utwórz archiwum…”, aby powstał ZIP, 7Z lub TAR, w razie potrzeby z hasłem.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Kliknij archiwum w Finderze prawym przyciskiem myszy i wybierz „Wypakuj”. Kliknij tak dowolny inny plik lub folder i wybierz „Utwórz archiwum…”, aby powstał ZIP, 7Z lub TAR. Hasło mogą mieć ZIP i 7Z.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Kliknij archiwum w Finderze prawym przyciskiem myszy i wybierz „Wypakuj”. Kliknij tak dowolny inny plik lub folder i wybierz „Utwórz archiwum…”, aby powstał ZIP, 7Z lub TAR. Hasło może mieć tylko ZIP.";
 "Open archives with this app" = "Otwieraj archiwa w tej aplikacji";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archiwum, wypakuj, rozpakuj, zip, rar, 7z, tar, hasło, podziel, prawy klik, menu kontekstowe";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archiwum, aplikacja domyślna, otwórz w, dwuklik, rozpakuj, zip, 7z";
@@ -926,6 +928,8 @@
 "File names are hidden too" = "Nazwy plików też są ukryte";
 "Use English letters, numbers and symbols only" = "Użyj tylko angielskich liter, cyfr i symboli";
 "TAR archives can’t have a password" = "Archiwa TAR nie mogą mieć hasła";
+"Only ZIP can have a password" = "Hasło może mieć tylko ZIP";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Plik może być uszkodzony albo należeć do rodzaju, którego ta wersja pikapik nie otworzy: podzielone części, pojedyncze pliki XZ, LZMA lub ZST oraz 7Z lub RAR z hasłem.";
 "Don’t split" = "Nie dziel";
 "15 MB, for email" = "15 MB, do e-maila";
 "100 MB" = "100 MB";
@@ -1145,15 +1149,16 @@
 "Hide desktop icons" = "Ukryj ikony na biurku";
 "For calls, recordings and screenshots. The files stay where they are" = "Do rozmów, nagrań i zrzutów ekranu. Pliki zostają na swoim miejscu";
 "The files stay where they are" = "Pliki zostają na swoim miejscu";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Zakrywa ikony tapetą. Do rozmów, nagrań i zrzutów ekranu";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Zakrywa pliki i foldery na biurku tapetą, na każdym ekranie. Kliknięcia nadal trafiają na biurko. Jeśli tapeta jest ruchoma, zamiast tego zakrywa je jednolity kolor. Pliki zostają w folderze Biurko w Finderze.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Ukrywa pliki i foldery na biurku, tak jak opcja „Pokaż rzeczy” w Ustawieniach systemowych › Biurko i Dock. Zostają w folderze Biurko w Finderze.";
 "Show hidden files" = "Pokaż ukryte pliki";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Ukryte pliki są wyszarzone. Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna";
 "Finder restarts for a moment" = "Finder na chwilę uruchomi się ponownie";
 "Waiting for Finder to finish copying" = "Oczekiwanie na zakończenie kopiowania w Finderze";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Ukryte pliki i foldery, na przykład Biblioteki, są wyszarzone w Finderze i na biurku, tak jak po naciśnięciu ⇧⌘. w Finderze. Aby zastosować zmianę, Finder na chwilę uruchomi się ponownie i znów otworzy swoje okna i karty. Jeśli Finder właśnie kopiuje lub przenosi pliki, uruchomi się ponownie dopiero, gdy skończy.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Ustawienia systemowe › Biurko i Dock › Pokaż rzeczy › Na Biurku";
-"Opens Desktop & Dock in System Settings" = "Otwiera Biurko i Dock w Ustawieniach systemowych";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Otwiera Biurko i Dock w Ustawieniach systemowych. Aby ukryć ikony, wyłącz „Na Biurku” obok „Pokaż rzeczy”, a aby je przywrócić, włącz z powrotem. Pliki zostają w folderze Biurko.";
+"Turn off “On Desktop”" = "Wyłącz „Na Biurku”";
+"Or hide them in System Settings" = "Albo ukryj je w Ustawieniach systemowych";
 "Press these keys in Finder, and again to hide them" = "Naciśnij te klawisze w Finderze, a ponownie, aby je ukryć";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "biurko, ikony, pliki, foldery, porządek, ukryj, prezentacja, udostępnianie ekranu, nagrywanie, zrzut ekranu, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ukryte, niewidoczne, pliki z kropką, pliki systemowe, Biblioteki, pokaż wszystkie pliki, Command Shift kropka";

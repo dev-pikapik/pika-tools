@@ -6,12 +6,14 @@ extension Archive {
         var arguments: [String]
         var input: Data?
         var directory: URL?
+        var file: URL?
 
-        init(_ executable: URL, _ arguments: [String], input: Data? = nil, directory: URL? = nil) {
+        init(_ executable: URL, _ arguments: [String], input: Data? = nil, directory: URL? = nil, file: URL? = nil) {
             self.executable = executable
             self.arguments = arguments
             self.input = input
             self.directory = directory
+            self.file = file
         }
     }
 
@@ -32,6 +34,13 @@ extension Archive {
                     buffer.removeAll(keepingCapacity: true)
                 } else {
                     buffer.append(byte)
+                    #if APPSTORE
+                    // bsdtar asks for a password without a line break, so each prompt is cut off as a line of its own
+                    if byte == 58, buffer.suffix(17).elementsEqual("Enter passphrase:".utf8) {
+                        handler(String(decoding: buffer, as: UTF8.self))
+                        buffer.removeAll(keepingCapacity: true)
+                    }
+                    #endif
                 }
             }
         }
@@ -94,11 +103,13 @@ extension Archive {
 
     private static let ignoreBrokenPipes: Void = { _ = signal(SIGPIPE, SIG_IGN) }()
 
+    #if !APPSTORE
     static func sevenZip() throws -> URL {
         if let url = Bundle.main.url(forAuxiliaryExecutable: "7zz") { return url }
         if let path = ProcessInfo.processInfo.environment["PIKA_7ZZ"] { return URL(fileURLWithPath: path) }
         throw ArchiveError.failed("7zz is missing")
     }
+    #endif
 
     static func percent(_ line: String) -> Int? {
         let text = line.drop { $0 == " " }
@@ -129,8 +140,16 @@ extension Archive {
             } else {
                 process.standardInput = FileHandle.nullDevice
             }
+            var sink: FileHandle?
             if index < links.count {
                 process.standardOutput = links[index]
+            } else if let file = stage.file {
+                guard FileManager.default.createFile(atPath: file.path, contents: nil), let handle = try? FileHandle(forWritingTo: file) else {
+                    processes.forEach { $0.terminate() }
+                    throw ArchiveError.failed("cannot write \(file.lastPathComponent)")
+                }
+                sink = handle
+                process.standardOutput = handle
             } else if output != nil {
                 process.standardOutput = outputPipe
             } else {
@@ -146,11 +165,13 @@ extension Archive {
                 try process.run()
             } catch {
                 try? errorEnd.close()
+                try? sink?.close()
                 try? errorPipe.fileHandleForWriting.close()
                 processes.forEach { $0.terminate() }
                 throw ArchiveError.failed("cannot start \(stage.executable.lastPathComponent)")
             }
             try? errorEnd.close()
+            try? sink?.close()
             processes.append(process)
             if !job.attach(process) { process.terminate() }
             if let data = stage.input, let input {
@@ -164,7 +185,8 @@ extension Archive {
             let lines = Lines(progress: progress) { handler?($0) }
             readers.enter()
             DispatchQueue.global().async {
-                while let data = try? pipe.fileHandleForReading.read(upToCount: 1 << 16), !data.isEmpty { lines.feed(data) }
+                // read(upToCount:) waits for the whole block or the end, so progress and a wrong password would show up late; availableData returns what has arrived
+                while case let data = pipe.fileHandleForReading.availableData, !data.isEmpty { lines.feed(data) }
                 lines.finish()
                 readers.leave()
             }

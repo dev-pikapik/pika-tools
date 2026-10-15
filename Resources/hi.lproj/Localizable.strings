@@ -77,6 +77,7 @@
 "Seconds" = "सेकंड";
 "Keep the display on" = "डिस्प्ले चालू रखें";
 "Display" = "डिस्प्ले";
+"Display settings" = "डिस्प्ले सेटिंग्ज़";
 "Always on" = "हमेशा चालू";
 "Turns off as usual" = "हमेशा की तरह बंद होता है";
 "No dimming, screen saver or lock screen" = "न धुंधलापन, न स्क्रीन सेवर, न लॉक स्क्रीन";
@@ -902,7 +903,8 @@
 "Archives in Finder" = "Finder में आर्काइव";
 "Right-click › Extract or Create Archive" = "राइट-क्लिक › एक्सट्रैक्ट करें या आर्काइव बनाएँ";
 "Right-click a file or folder" = "किसी फ़ाइल या फ़ोल्डर पर राइट-क्लिक करें";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ, चाहें तो पासवर्ड के साथ।";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ। ZIP और 7Z पर पासवर्ड लग सकता है।";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Finder में किसी आर्काइव पर राइट-क्लिक करें और “एक्सट्रैक्ट करें” चुनें। किसी और फ़ाइल या फ़ोल्डर पर राइट-क्लिक करके “आर्काइव बनाएँ…” चुनें और ZIP, 7Z या TAR बनाएँ। पासवर्ड सिर्फ़ ZIP पर लग सकता है।";
 "Open archives with this app" = "आर्काइव इस ऐप से खोलें";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "आर्काइव, एक्सट्रैक्ट, अनज़िप, खोलना, zip, rar, 7z, tar, पासवर्ड, बाँटना, राइट-क्लिक, संदर्भ मेनू";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "आर्काइव, डिफ़ॉल्ट ऐप, इससे खोलें, डबल-क्लिक, अनज़िप, zip, 7z";
@@ -926,6 +928,8 @@
 "File names are hidden too" = "फ़ाइलों के नाम भी छिप जाते हैं";
 "Use English letters, numbers and symbols only" = "सिर्फ़ अंग्रेज़ी अक्षर, अंक और चिह्न इस्तेमाल करें";
 "TAR archives can’t have a password" = "TAR आर्काइव पर पासवर्ड नहीं लग सकता";
+"Only ZIP can have a password" = "पासवर्ड सिर्फ़ ZIP पर लग सकता है";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "फ़ाइल ख़राब हो सकती है, या ऐसी हो सकती है जिसे pikapik का यह संस्करण नहीं खोल सकता: बँटे हुए हिस्से, अकेली XZ, LZMA या ZST फ़ाइलें, और पासवर्ड वाली 7Z या RAR।";
 "Don’t split" = "न बाँटें";
 "15 MB, for email" = "15 MB, ईमेल के लिए";
 "100 MB" = "100 MB";
@@ -1145,15 +1149,16 @@
 "Hide desktop icons" = "डेस्कटॉप आइकॉन छिपाएँ";
 "For calls, recordings and screenshots. The files stay where they are" = "कॉल, रिकॉर्डिंग और स्क्रीनशॉट के लिए। फ़ाइलें अपनी जगह पर रहती हैं";
 "The files stay where they are" = "फ़ाइलें अपनी जगह पर रहती हैं";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "आइकॉन को आपके वॉलपेपर से ढकता है। कॉल, रिकॉर्डिंग और स्क्रीनशॉट के लिए";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "हर डिस्प्ले पर डेस्कटॉप की फ़ाइलें और फ़ोल्डर आपके वॉलपेपर से ढक देता है। क्लिक फिर भी डेस्कटॉप तक पहुँचते हैं। अगर वॉलपेपर एनिमेटेड है, तो उसकी जगह एक सादा रंग उन्हें ढक लेता है। फ़ाइलें Finder में डेस्कटॉप फ़ोल्डर में ही रहती हैं।";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "डेस्कटॉप की फ़ाइलें और फ़ोल्डर छिपाता है, ठीक सिस्टम सेटिंग › डेस्कटॉप और Dock में “आइटम दिखाएँ” सेटिंग की तरह। वे Finder में डेस्कटॉप फ़ोल्डर में ही रहते हैं।";
 "Show hidden files" = "छिपी फ़ाइलें दिखाएँ";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "छिपी फ़ाइलें धुंधली दिखती हैं। Finder एक पल के लिए रीस्टार्ट होकर अपनी विंडो फिर से खोलेगा";
 "Finder restarts for a moment" = "Finder एक पल के लिए रीस्टार्ट होगा";
 "Waiting for Finder to finish copying" = "Finder में कॉपी पूरी होने का इंतज़ार है";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "छिपी फ़ाइलें और फ़ोल्डर, जैसे लाइब्रेरी, Finder में और डेस्कटॉप पर धुंधले दिखते हैं, ठीक Finder में ⇧⌘. दबाने की तरह। बदलाव लागू करने के लिए Finder एक पल के लिए रीस्टार्ट होकर अपनी विंडो और टैब फिर से खोलेगा। अगर Finder फ़ाइलें कॉपी या मूव कर रहा है, तो वह काम पूरा होने के बाद ही रीस्टार्ट होगा।";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "सिस्टम सेटिंग › डेस्कटॉप और Dock › आइटम दिखाएँ › डेस्कटॉप पर";
-"Opens Desktop & Dock in System Settings" = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "सिस्टम सेटिंग में डेस्कटॉप और Dock खोलता है। आइकॉन छिपाने के लिए “आइटम दिखाएँ” के पास “डेस्कटॉप पर” बंद करें, और उन्हें वापस लाने के लिए फिर से चालू करें। फ़ाइलें डेस्कटॉप फ़ोल्डर में ही रहती हैं।";
+"Turn off “On Desktop”" = "“डेस्कटॉप पर” बंद करें";
+"Or hide them in System Settings" = "या उन्हें सिस्टम सेटिंग में छिपाएँ";
 "Press these keys in Finder, and again to hide them" = "Finder में ये कुंजियाँ दबाएँ, और छिपाने के लिए फिर से दबाएँ";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "डेस्कटॉप, आइकॉन, फ़ाइलें, फ़ोल्डर, साफ़, छिपाएँ, प्रेज़ेंटेशन, स्क्रीन शेयरिंग, रिकॉर्डिंग, स्क्रीनशॉट, स्टेज मैनेजर";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "छिपी, अदृश्य, डॉट फ़ाइलें, सिस्टम फ़ाइलें, लाइब्रेरी, सभी फ़ाइलें दिखाएँ, Command Shift पीरियड";

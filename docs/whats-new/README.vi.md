@@ -25,11 +25,14 @@ Mở tệp lưu trữ, dọn màn hình nền, dùng Home và End và nhiều h�
 
 **Có trong cả hai bản**
 
+- **Lần mở đầu tiên êm ái.** Bản tải từ trang web không còn xin quyền ngay lần mở đầu tiên. Nó chỉ hỏi khi bạn bật một công cụ cần quyền.
 - **Bản sao video nhỏ hơn.** “Tạo bản sao nhỏ hơn” giờ làm video nhỏ đi còn khoảng một nửa. Trước đây, hầu hết video đều nhận “Đã gọn sẵn”.
 - **Hai bản dùng chung êm ấm.** Nếu bạn dùng cùng lúc bản App Store và bản trên trang web, chúng không còn hoàn tác công việc của nhau. ⇧⌘Q và ⇧⌘W lại dùng được trong game.
 - **Trò chơi quay lại sau khi máy ngủ.** “Chế độ trò chơi” tự bật lại khi Mac thức dậy.
 - **“Cổng” nói đúng sự thật.** Trên macOS 27, cổng do macOS hoặc người dùng khác sử dụng không còn bị gọi là trống.
 - **Báo cáo sự cố nhanh hơn.** “Báo cáo sự cố” trong Cài đặt › Giới thiệu mở biểu mẫu với phiên bản của bạn đã được chọn sẵn.
+- **Kho lưu trữ mượt hơn.** Thanh tiến trình chạy trong lúc giải nén, mật khẩu sai được báo ngay, và Mac không còn ngủ giữa chừng khi đang giải nén hay tạo tệp lưu trữ.
+- **Bảng điều khiển trên thanh menu ổn định hơn.** Mở một hàng trong bảng, chẳng hạn các tùy chọn màn hình dưới “Giữ máy thức”, không còn làm thanh cuộn nháy lên nữa. Mũi tên cạnh “Giữ máy thức” giờ ghi “Cài đặt màn hình”.
 
 **Đã sửa trong bản Mac App Store**
 

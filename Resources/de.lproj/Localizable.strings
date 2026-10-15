@@ -77,6 +77,7 @@
 "Seconds" = "Sekunden";
 "Keep the display on" = "Display eingeschaltet lassen";
 "Display" = "Display";
+"Display settings" = "Anzeigeeinstellungen";
 "Always on" = "Immer an";
 "Turns off as usual" = "Geht wie gewohnt aus";
 "No dimming, screen saver or lock screen" = "Kein Abdunkeln, kein Bildschirmschoner, kein Sperrbildschirm";
@@ -902,7 +903,8 @@
 "Archives in Finder" = "Archive im Finder";
 "Right-click › Extract or Create Archive" = "Rechtsklick › Entpacken oder Archiv erstellen";
 "Right-click a file or folder" = "Rechtsklick auf eine Datei oder einen Ordner";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen, auf Wunsch mit Passwort.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen. ZIP und 7Z können ein Passwort haben.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Rechtsklick auf ein Archiv im Finder und „Entpacken“ wählen. Rechtsklick auf eine andere Datei oder einen Ordner und „Archiv erstellen …“ wählen, um ein ZIP-, 7Z- oder TAR-Archiv anzulegen. Nur ZIP kann ein Passwort haben.";
 "Open archives with this app" = "Archive in dieser App öffnen";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "Archiv, entpacken, auspacken, extrahieren, zip, rar, 7z, tar, Passwort, teilen, aufteilen, Rechtsklick, Kontextmenü";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "Archiv, Standard-App, Öffnen mit, Doppelklick, entpacken, zip, 7z";
@@ -926,6 +928,8 @@
 "File names are hidden too" = "Auch die Dateinamen sind verborgen";
 "Use English letters, numbers and symbols only" = "Nur englische Buchstaben, Zahlen und Symbole verwenden";
 "TAR archives can’t have a password" = "TAR-Archive können kein Passwort haben";
+"Only ZIP can have a password" = "Nur ZIP kann ein Passwort haben";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Die Datei ist möglicherweise beschädigt oder von einer Art, die diese Version von pikapik nicht öffnen kann: mehrteilige Archive, einzelne XZ-, LZMA- oder ZST-Dateien sowie 7Z oder RAR mit Passwort.";
 "Don’t split" = "Nicht aufteilen";
 "15 MB, for email" = "15 MB, für E-Mail";
 "100 MB" = "100 MB";
@@ -1145,15 +1149,16 @@
 "Hide desktop icons" = "Schreibtischsymbole ausblenden";
 "For calls, recordings and screenshots. The files stay where they are" = "Für Anrufe, Aufnahmen und Bildschirmfotos. Die Dateien bleiben, wo sie sind";
 "The files stay where they are" = "Die Dateien bleiben, wo sie sind";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Verdeckt die Symbole mit dem Hintergrundbild. Für Anrufe, Aufnahmen und Bildschirmfotos";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Verdeckt die Dateien und Ordner auf dem Schreibtisch mit dem Hintergrundbild, auf jedem Display. Klicks erreichen weiterhin den Schreibtisch. Bewegt sich das Hintergrundbild, verdeckt stattdessen eine einfarbige Fläche sie. Die Dateien bleiben im Ordner „Schreibtisch“ im Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Blendet die Dateien und Ordner auf dem Schreibtisch aus, genau wie die Option „Objekte einblenden“ in Systemeinstellungen › Schreibtisch & Dock. Sie bleiben im Ordner „Schreibtisch“ im Finder.";
 "Show hidden files" = "Versteckte Dateien einblenden";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Versteckte Dateien erscheinen abgeblendet. Der Finder startet kurz neu und öffnet seine Fenster wieder";
 "Finder restarts for a moment" = "Der Finder startet kurz neu";
 "Waiting for Finder to finish copying" = "Warten, bis der Finder fertig kopiert hat";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Versteckte Dateien und Ordner wie „Library“ erscheinen im Finder und auf dem Schreibtisch abgeblendet, genau wie nach ⇧⌘. im Finder. Damit die Änderung greift, startet der Finder kurz neu und öffnet seine Fenster und Tabs wieder. Kopiert oder verschiebt der Finder gerade Dateien, startet er erst neu, wenn er damit fertig ist.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Systemeinstellungen › Schreibtisch & Dock › Objekte einblenden › Auf dem Schreibtisch";
-"Opens Desktop & Dock in System Settings" = "Öffnet Schreibtisch & Dock in den Systemeinstellungen";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Öffnet Schreibtisch & Dock in den Systemeinstellungen. Zum Ausblenden der Symbole „Auf dem Schreibtisch“ neben „Objekte einblenden“ ausschalten, zum Zurückholen wieder einschalten. Die Dateien bleiben im Ordner „Schreibtisch“.";
+"Turn off “On Desktop”" = "Schalte „Auf dem Schreibtisch“ aus";
+"Or hide them in System Settings" = "Oder in den Systemeinstellungen ausblenden";
 "Press these keys in Finder, and again to hide them" = "Diese Tasten im Finder drücken, zum Ausblenden erneut drücken";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "Schreibtisch, Symbole, Dateien, Ordner, aufräumen, ausblenden, Präsentation, Bildschirmfreigabe, Aufnahme, Bildschirmfoto, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "versteckt, unsichtbar, Punktdateien, Systemdateien, Library, alle Dateien anzeigen, Befehlstaste Umschalttaste Punkt";

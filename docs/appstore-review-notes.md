@@ -1,20 +1,20 @@
 pikapik - Mac Tools: information for App Review (Guideline 2.1)
 
 1. Screen recording
-Attached in App Review Information; made on a Mac with the latest macOS and this build, it shows each main tool and permission prompt.
+Attached in App Review Information; made on the latest macOS with this build, it shows each main tool and permission prompt.
 
 2. Purpose and audience
 pikapik is a free menu-bar app that fixes small everyday Mac annoyances, for Mac users who use a mouse, type in two languages, play games or want quick Finder actions. A small pet walks on the desktop to make it friendly.
 
 3. Setup and main features
 No account or sample files are needed (any photo or video works). Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch; only the Pet is on.
-- Keep Awake (Turn off the display now: IORequestIdle on IODisplayWrangler, allowed by the sandbox profile), Speed Test, Temperature (thermal state, battery temperature), Battery (Macs with a battery), App Volume (Sound, macOS 14.2+: a slider and mute per app), Brightness (dims an external monitor's picture).
+- Keep Awake (Turn off the display now: IORequestIdle on IODisplayWrangler, allowed by the sandbox profile), Speed Test, Temperature (thermal state, battery temperature), Battery (Macs with a battery), App Volume (macOS 14.2+: a slider and mute per app), Brightness (dims an external monitor's picture).
 - Background Tasks: what starts in the background; view only. Animations, pointer acceleration, Other apps’ permissions: buttons only open System Settings.
-- Hide desktop icons: a click-through window above the icon layer shows the wallpaper (NSWorkspace.desktopImageURL); no Screen Recording.
+- Hide desktop icons: a click-through window above the icons shows the wallpaper (NSWorkspace.desktopImageURL); no Screen Recording.
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (for "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space. Home and End: an event tap sees only those keys and posts ⌘←/⌘→ (CGEvent); nothing is kept.
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app.
 - Protect quitting and closing: ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
-- Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move. Archives: right-click an archive, Extract; right-click files, Create Archive…; Space previews. The extensions use only folders the user picked and built-in tar and ditto.
+- Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move. Archives: right-click an archive, Extract; right-click files, Create Archive…; Space previews. The extensions use only user-picked folders and built-in tar and ditto; jobs keep the Mac awake until done.
 - Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's read-only DefaultShortcutsTable.xml; an event tap keeps the pointer in the game's display, a few points from screen corners.
 No private API or new entitlement.
 Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, the Fix Wrong Keyboard Layout shortcut and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never types or pastes text into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key) and a back or forward swipe.
@@ -99,7 +99,7 @@ Settings > Keyboard, off by default. When the user turns this on, the app uses a
 Settings > Games. It reads the user's system keyboard shortcuts with the public Carbon API CopySymbolicHotKeys and Apple's read-only DefaultShortcutsTable.xml in /System. It needs no new entitlement and calls no private API. It keeps the pointer inside the game's display through a Quartz event tap that the user enables in Accessibility. In the App Store version it doesn't touch Dock preferences; it keeps the pointer a few points away from the screen corners so that hot corners aren't triggered. After the Mac wakes from sleep or the user switches back to their account, Game Mode checks the front app again and turns itself back on.
 
 ### Archives in Finder
-Settings > Finder. The Archive and Quick Look extensions only read and write files in folders the user picked; they use macOS's built-in /usr/bin/tar and ditto inside the app sandbox and download or run no other code. Only ZIP can have a password; it is passed on stdin, never on the command line.
+Settings > Finder. The Archive and Quick Look extensions only read and write files in folders the user picked; they use macOS's built-in /usr/bin/tar and ditto inside the app sandbox and download or run no other code. Only ZIP can have a password; it is passed on stdin, never on the command line. While a job runs, the app holds one ProcessInfo activity (idle system sleep disabled; the display may still sleep) and lets it go when the queue is empty or a prompt waits.
 - To try it: right-click an archive in Finder and choose Extract; right-click files and choose Create Archive…; select an archive and press Space to look inside.
 
 ### Pet

@@ -25,11 +25,14 @@ Deschide arhive, curăță desktopul, folosește Home și End și multe altele, 
 
 **În ambele versiuni**
 
+- **O primă pornire liniștită.** Versiunea de pe site nu mai cere permisiuni la prima deschidere. Întreabă doar când pornești un instrument care are nevoie de una.
 - **Copii mai mici ale videoclipurilor.** „Creează o copie mai mică” face acum un videoclip cam pe jumătate de mărime. Înainte, majoritatea videoclipurilor primeau „Deja compact”.
 - **Două copii se înțeleg.** Dacă folosești împreună versiunea din App Store și cea de pe site, nu se mai anulează una pe alta. ⇧⌘Q și ⇧⌘W funcționează din nou în jocuri.
 - **Jocurile revin după repaus.** „Modul Joc” se pornește iar singur când Mac-ul se trezește.
 - **„Porturi” spune adevărul.** Pe macOS 27, un port folosit de macOS sau de alt utilizator nu mai e numit liber.
 - **Raportarea unei probleme e mai rapidă.** „Raportează o problemă”, în Setări › Despre, deschide formularul cu versiunea ta deja aleasă.
+- **Arhive fără sacadări.** Bara de progres se mișcă în timp ce o arhivă se dezarhivează, o parolă greșită este anunțată pe loc, iar Mac-ul nu mai adoarme în mijlocul dezarhivării sau al creării.
+- **Un panou mai stabil în bara de meniu.** Când deschizi un rând din panou, de exemplu opțiunile ecranului de sub „Menține activ”, bara de derulare nu mai clipește. Săgeata de lângă „Menține activ” spune acum „Setări ecran”.
 
 **Reparat în versiunea din Mac App Store**
 

@@ -16,6 +16,9 @@ extension Archive {
             throw ArchiveError.failed("items must share one folder")
         }
         guard !name.isEmpty, !name.contains("/"), (splitBytes ?? 65_536) >= 65_536 else { throw ArchiveError.failed("bad name or split size") }
+        #if APPSTORE
+        guard splitBytes == nil else { throw ArchiveError.unsupported }
+        #endif
         let secret = password.flatMap { $0.isEmpty ? nil : $0 }
         if let secret, !format.supportsPassword || secret.contains(where: \.isNewline) || (format == .zip && !secret.allSatisfy(\.isASCII)) {
             throw ArchiveError.unsupportedPassword
@@ -27,6 +30,27 @@ extension Archive {
         for item in items { try gather(item.lastPathComponent, in: parent.path, into: &found, job: job) }
         guard !found.listed.isEmpty || !found.extras.isEmpty else { throw ArchiveError.failed("nothing to add") }
 
+        #if APPSTORE
+        let list = temporary.appending(path: "list.txt")
+        let added = found.listed + found.extras
+        guard FileManager.default.createFile(atPath: list.path, contents: Data(added.joined(separator: "\0").utf8)) else {
+            throw ArchiveError.failed("cannot write the file list")
+        }
+        let base = name + "." + format.fileExtension
+        let output = temporary.appending(path: base).path
+        var arguments = ["-c", "-v", "--no-mac-metadata", "-f", output, "-C", parent.path, "--null", "-T", list.path]
+        switch format {
+        case .zip: arguments += ["--format", "zip"] + (secret == nil ? [] : ["--options", "zip:encryption=aes256"])
+        case .sevenZip: arguments += ["--format", "7zip"]
+        case .tarGz: arguments.append("-z")
+        case .tarXz: arguments.append("-J")
+        }
+        let stages = [Stage(bsdtar, arguments, input: secret.map { Data(($0 + "\n").utf8) })]
+        let meter = Meter(progress)
+        let messages = Messages()
+        let statuses = try run(stages, job: job, errors: toolLines(messages, Messages()) { meter.tick(of: added.count) })
+        let diagnosis = Diagnosis(tool: messages.lines)
+        #else
         var targets: [String] = []
         if !found.listed.isEmpty {
             let list = temporary.appending(path: "list.txt")
@@ -65,6 +89,7 @@ extension Archive {
         }
         let statuses = try run(stages, job: job, output: report, errors: report)
         let diagnosis = Diagnosis(messages.lines)
+        #endif
         if diagnosis.space { throw ArchiveError.noSpace(needed: found.bytes, free: freeSpace(of: destination) ?? 0) }
         guard statuses.allSatisfy({ $0 == 0 }) else { throw ArchiveError.failed(diagnosis.other ?? messages.lines.last ?? "stopped") }
 

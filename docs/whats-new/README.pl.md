@@ -25,11 +25,14 @@ Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz takż
 
 **W obu wersjach**
 
+- **Spokojne pierwsze uruchomienie.** Wersja ze strony nie prosi już o uprawnienia przy pierwszym otwarciu. Pyta tylko wtedy, gdy włączasz narzędzie, które ich potrzebuje.
 - **Mniejsze kopie filmów.** „Utwórz mniejszą kopię” robi teraz z filmu plik mniej więcej o połowę mniejszy. Wcześniej większość filmów dostawała odpowiedź „Już jest mały”.
 - **Dwie kopie nie przeszkadzają sobie.** Jeśli używasz razem wersji z App Store i wersji ze strony, nie cofają już nawzajem swojej pracy. ⇧⌘Q i ⇧⌘W znów działają w grach.
 - **Gry wracają po uśpieniu.** „Tryb gry” sam włącza się ponownie, gdy Mac się budzi.
 - **„Porty” mówią prawdę.** W macOS 27 port zajęty przez macOS lub innego użytkownika nie jest już uznawany za wolny.
 - **Zgłoszenie problemu jest szybsze.** „Zgłoś problem” w Ustawienia › Informacje otwiera formularz z już wybraną wersją.
+- **Archiwa bez zacinania.** Pasek postępu rusza się podczas rozpakowywania archiwum, błędne hasło jest zgłaszane od razu, a Mac nie zasypia już w połowie rozpakowywania ani tworzenia archiwum.
+- **Spokojniejszy panel na pasku menu.** Rozwinięcie wiersza w panelu, na przykład opcji ekranu pod „Bez usypiania”, nie powoduje już mignięcia paska przewijania. Strzałka obok „Bez usypiania” podpowiada teraz „Ustawienia ekranu”.
 
 **Poprawione w wersji z Mac App Store**
 

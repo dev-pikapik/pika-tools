@@ -25,11 +25,14 @@ Open archieven, ruim je bureaublad op, gebruik Home en End en meer, nu ook in de
 
 **In beide versies**
 
+- **Een rustige eerste start.** De versie van de website vraagt bij het eerste openen niet meer om toestemmingen. Hij vraagt alleen iets als je een onderdeel aanzet dat het nodig heeft.
 - **Kleinere kopieën van video’s.** ‘Maak kleinere kopie’ maakt een video nu ongeveer half zo groot. Eerder kregen de meeste video’s ‘Al compact’ te zien.
 - **Twee exemplaren, geen gedoe.** Gebruik je de App Store-versie en de versie van de website samen, dan maken ze elkaars werk niet meer ongedaan. ⇧⌘Q en ⇧⌘W werken weer in games.
 - **Games komen terug na de sluimerstand.** ‘Gamemodus’ gaat vanzelf weer aan als je Mac wakker wordt.
 - **‘Poorten’ vertelt de waarheid.** Op macOS 27 wordt een poort die macOS of een andere gebruiker gebruikt niet meer vrij genoemd.
 - **Een probleem melden gaat sneller.** ‘Meld een probleem’ in Instellingen › Over opent het formulier met je versie al gekozen.
+- **Archieven zonder haperen.** De voortgangsbalk beweegt terwijl een archief wordt uitgepakt, een fout wachtwoord wordt meteen gemeld en je Mac valt niet meer in slaap midden in het uitpakken of maken.
+- **Een rustiger paneel in de menubalk.** Als je een rij in het paneel openklapt, zoals de schermopties onder “Wakker houden”, flitst er geen schuifbalk meer op. De pijl naast “Wakker houden” zegt nu “Scherminstellingen”.
 
 **Opgelost in de Mac App Store-versie**
 

@@ -25,11 +25,14 @@ Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci,
 
 **V obou verzích**
 
+- **Klidné první spuštění.** Verze z webu se už při prvním otevření neptá na oprávnění. Zeptá se, až když zapneš nástroj, který je potřebuje.
 - **Menší kopie videí.** „Vytvořit menší kopii“ teď udělá z videa soubor zhruba poloviční velikosti. Dřív většina videí dostala odpověď „Už je malý“.
 - **Dvě kopie spolu vycházejí.** Pokud používáte verzi z App Store a verzi z webu společně, už se navzájem neruší. ⇧⌘Q a ⇧⌘W ve hrách zase fungují.
 - **Hry se vracejí po uspání.** „Herní režim“ se po probuzení Macu zapne znovu sám.
 - **„Porty“ říkají pravdu.** V macOS 27 se port, který používá macOS nebo jiný uživatel, už nepovažuje za volný.
 - **Nahlásit problém je rychlejší.** „Nahlásit problém“ v Nastavení › O aplikaci otevře formulář s už vybranou verzí.
+- **Archivy bez zadrhávání.** Ukazatel průběhu se hýbe, zatímco se archiv rozbaluje, špatné heslo se ohlásí hned a Mac už neusne uprostřed rozbalování nebo vytváření archivu.
+- **Klidnější panel v liště nabídek.** Když rozbalíš řádek v panelu, například volby displeje pod „Bez spánku“, už nebliká posuvník. Šipka vedle „Bez spánku“ teď říká „Nastavení displeje“.
 
 **Opraveno ve verzi z Mac App Store**
 

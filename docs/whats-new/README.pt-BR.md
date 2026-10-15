@@ -25,11 +25,14 @@ Abra arquivos compactados, limpe a mesa, use Home e End e muito mais, agora tamb
 
 **Nas duas versões**
 
+- **Uma primeira abertura tranquila.** A versão do site não pede mais permissões na primeira vez que você a abre. Ela só pergunta quando você ativa uma ferramenta que precisa de uma.
 - **Cópias menores de vídeos.** “Criar cópia menor” agora deixa um vídeo com cerca de metade do tamanho. Antes, a maioria dos vídeos recebia “Já está compacto”.
 - **Duas cópias se entendem.** Se você usa juntas a versão da App Store e a do site, elas não desfazem mais o trabalho uma da outra. ⇧⌘Q e ⇧⌘W voltam a funcionar nos jogos.
 - **Os jogos voltam depois do repouso.** O “Modo Jogo” se ativa de novo sozinho quando o Mac acorda.
 - **“Portas” diz a verdade.** No macOS 27, uma porta usada pelo macOS ou por outro usuário não é mais chamada de livre.
 - **Relatar um problema ficou mais rápido.** “Relatar um Problema”, em Ajustes › Sobre, abre o formulário com a sua versão já escolhida.
+- **Arquivos compactados mais fluidos.** A barra de progresso avança enquanto um arquivo é extraído, uma senha errada é avisada na hora e o Mac não entra mais em repouso no meio de uma extração ou criação.
+- **Um painel da barra de menus mais estável.** Abrir uma linha do painel, como as opções de tela em “Manter Ativo”, não faz mais uma barra de rolagem piscar. A seta ao lado de “Manter Ativo” agora diz “Ajustes da tela”.
 
 **Corrigido na versão da Mac App Store**
 

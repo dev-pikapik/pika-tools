@@ -25,11 +25,14 @@ Arşivleri açın, masaüstünüzü temizleyin, Home ve End tuşlarını kullan�
 
 **Her iki sürümde**
 
+- **Sakin bir ilk açılış.** Web sitesindeki sürüm, ilk açıldığında artık izin istemez. Yalnızca izin gerektiren bir aracı açtığınızda sorar.
 - **Videolardan daha küçük kopyalar.** “Küçük Kopya Oluştur” artık bir videoyu yaklaşık yarı boyuta indiriyor. Önceden çoğu video “Zaten küçük” yanıtını alıyordu.
 - **İki kopya birbiriyle geçiniyor.** App Store ve web sitesi sürümlerini birlikte kullanırsanız artık birbirinin yaptığını bozmuyorlar. ⇧⌘Q ve ⇧⌘W oyunlarda yine çalışıyor.
 - **Oyunlar uykudan sonra geri dönüyor.** Mac’iniz uyandığında “Oyun Modu” kendiliğinden yeniden açılıyor.
 - **“Portlar” doğruyu söylüyor.** macOS 27’de macOS’in ya da başka bir kullanıcının kullandığı bir port artık boş diye gösterilmiyor.
 - **Sorun bildirmek daha hızlı.** Ayarlar › Hakkında’daki “Sorun Bildir”, formu sürümünüz önceden seçilmiş olarak açar.
+- **Daha akıcı arşivler.** Bir arşiv açılırken ilerleme çubuğu hareket eder, yanlış parola hemen bildirilir ve Mac’iniz arşivi açarken ya da oluştururken artık uykuya dalmaz.
+- **Daha sakin bir menü çubuğu paneli.** Panelde bir satırı, örneğin “Uyanık Tut” altındaki ekran seçeneklerini açınca artık bir kaydırma çubuğu belirip kaybolmaz. “Uyanık Tut” yanındaki ok artık “Ekran ayarları” diyor.
 
 **Mac App Store sürümünde düzeltilenler**
 

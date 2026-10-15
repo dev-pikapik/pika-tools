@@ -25,11 +25,14 @@ Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di ver
 
 **Di kedua versi**
 
+- **Peluncuran pertama yang tenang.** Versi dari situs web tidak lagi meminta izin saat pertama kali dibuka. Ia hanya bertanya saat Anda menyalakan alat yang membutuhkannya.
 - **Salinan video yang lebih kecil.** “Buat Salinan Lebih Kecil” kini membuat video sekitar separuh ukurannya. Sebelumnya, sebagian besar video mendapat “Sudah ringkas”.
 - **Dua salinan akur.** Jika Anda memakai versi App Store dan versi situs web bersamaan, keduanya tidak lagi saling membatalkan. ⇧⌘Q dan ⇧⌘W berfungsi lagi di game.
 - **Game kembali setelah tidur.** “Mode Game” menyala lagi dengan sendirinya saat Mac Anda bangun.
 - **“Port” berkata jujur.** Di macOS 27, port yang dipakai macOS atau pengguna lain tidak lagi disebut bebas.
 - **Melaporkan masalah jadi lebih cepat.** “Laporkan Masalah” di Pengaturan › Tentang membuka formulir dengan versi Anda sudah terpilih.
+- **Arsip yang lebih mulus.** Bilah kemajuan bergerak saat arsip diekstrak, kata sandi yang salah langsung dilaporkan, dan Mac tidak lagi tertidur di tengah mengekstrak atau membuat arsip.
+- **Panel bilah menu yang lebih tenang.** Membuka satu baris di panel, misalnya opsi layar di bawah “Tetap Terjaga”, tidak lagi membuat bilah gulir berkedip. Panah di samping “Tetap Terjaga” kini bertuliskan “Pengaturan layar”.
 
 **Diperbaiki di versi Mac App Store**
 

@@ -25,11 +25,14 @@ Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetz
 
 **In beiden Versionen**
 
+- **Ein ruhiger erster Start.** Die Version von der Website fragt beim ersten Öffnen nicht mehr nach Berechtigungen. Sie fragt nur, wenn du ein Werkzeug einschaltest, das eine braucht.
 - **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.
 - **Zwei Kopien vertragen sich.** Wenn du die App-Store-Version und die Version von der Website zusammen nutzt, machen sie ihre Arbeit nicht mehr gegenseitig rückgängig. ⇧⌘Q und ⇧⌘W funktionieren in Spielen wieder.
 - **Spiele kehren nach dem Ruhezustand zurück.** Der „Spielmodus“ schaltet sich von selbst wieder ein, wenn dein Mac aufwacht.
 - **„Ports“ sagt die Wahrheit.** Unter macOS 27 wird ein Port, den macOS oder ein anderer Benutzer belegt, nicht mehr als frei bezeichnet.
 - **Ein Problem zu melden geht schneller.** „Problem melden“ unter Einstellungen › Über öffnet das Formular mit bereits gewählter Version.
+- **Archive ohne Wartezeit.** Der Fortschrittsbalken bewegt sich, während ein Archiv entpackt wird, ein falsches Passwort wird sofort gemeldet, und dein Mac schläft nicht mehr mitten im Entpacken oder Erstellen ein.
+- **Ein ruhigeres Menüleisten-Fenster.** Wenn du eine Zeile im Fenster der Menüleiste aufklappst, zum Beispiel die Anzeigeoptionen unter „Wach bleiben“, blitzt keine Bildlaufleiste mehr auf. Der Pfeil neben „Wach bleiben“ sagt jetzt „Anzeigeeinstellungen“.
 
 **Behoben in der Version aus dem Mac App Store**
 

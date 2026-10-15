@@ -25,11 +25,14 @@ Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche 
 
 **In entrambe le versioni**
 
+- **Un primo avvio tranquillo.** La versione dal sito non chiede più autorizzazioni alla prima apertura. Le chiede solo quando attivi uno strumento che ne ha bisogno.
 - **Copie più leggere dei video.** «Crea copia più leggera» ora riduce un video a circa la metà. Prima quasi tutti i video ricevevano «Già compatto».
 - **Due copie vanno d’accordo.** Se usi insieme la versione dell’App Store e quella del sito, non si annullano più a vicenda. ⇧⌘Q e ⇧⌘W funzionano di nuovo nei giochi.
 - **I giochi tornano dopo la sospensione.** La «Modalità gioco» si riattiva da sola quando il Mac si risveglia.
 - **«Porte» dice la verità.** Su macOS 27, una porta usata da macOS o da un altro utente non viene più indicata come libera.
 - **Segnalare un problema è più semplice.** «Segnala un problema», in Impostazioni › Info, apre il modulo con la tua versione già scelta.
+- **Archivi più scorrevoli.** La barra di avanzamento si muove mentre un archivio viene estratto, una password sbagliata viene segnalata subito e il Mac non va più in stop nel bel mezzo di un’estrazione o di una creazione.
+- **Un pannello della barra dei menu più stabile.** Aprendo una riga del pannello, per esempio le opzioni dello schermo sotto «Resta sveglio», non compare più un lampo di barra di scorrimento. La freccia accanto a «Resta sveglio» ora dice «Impostazioni dello schermo».
 
 **Corretto nella versione del Mac App Store**
 

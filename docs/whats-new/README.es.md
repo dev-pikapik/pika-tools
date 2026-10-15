@@ -25,11 +25,14 @@ Abre archivos comprimidos, despeja tu escritorio, usa Home y End y mucho más, a
 
 **En las dos versiones**
 
+- **Un primer arranque tranquilo.** La versión de la web ya no pide permisos la primera vez que la abres. Solo los pide cuando activas una herramienta que los necesita.
 - **Copias de vídeos más ligeras.** «Crear copia más ligera» ahora deja un vídeo en más o menos la mitad. Antes, a la mayoría de los vídeos les decía «Ya es compacto».
 - **Dos copias se llevan bien.** Si usas a la vez la versión de la App Store y la de la web, ya no se deshacen el trabajo una a otra. ⇧⌘Q y ⇧⌘W vuelven a funcionar en los juegos.
 - **Los juegos vuelven tras el reposo.** El «Modo de juego» se activa de nuevo solo cuando el Mac se despierta.
 - **«Puertos» dice la verdad.** En macOS 27, un puerto que usa macOS u otro usuario ya no aparece como libre.
 - **Informar de un problema es más rápido.** «Informar de un problema», en Ajustes › Acerca de, abre el formulario con tu versión ya elegida.
+- **Archivos comprimidos más fluidos.** La barra de progreso avanza mientras se descomprime un archivo, una contraseña incorrecta se avisa al instante, y el Mac ya no se duerme a mitad de descomprimir o de crear uno.
+- **Un panel de la barra de menús más estable.** Al abrir una fila del panel, como las opciones de pantalla bajo «Mantener activo», ya no parpadea una barra de desplazamiento. La flecha junto a «Mantener activo» ahora dice «Ajustes de pantalla».
 
 **Corregido en la versión de la Mac App Store**
 

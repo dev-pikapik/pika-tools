@@ -77,6 +77,7 @@
 "Seconds" = "Seconden";
 "Keep the display on" = "Houd het scherm aan";
 "Display" = "Scherm";
+"Display settings" = "Scherminstellingen";
 "Always on" = "Altijd aan";
 "Turns off as usual" = "Gaat uit zoals gewoonlijk";
 "No dimming, screen saver or lock screen" = "Geen dimmen, schermbeveiliging of toegangsscherm";
@@ -902,7 +903,8 @@
 "Archives in Finder" = "Archieven in de Finder";
 "Right-click › Extract or Create Archive" = "Rechtsklik › Uitpakken of Maak archief";
 "Right-click a file or folder" = "Rechtsklik op een bestand of map";
-"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR, with a password if you like." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken, desgewenst met een wachtwoord.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. ZIP and 7Z can have a password." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken. ZIP en 7Z kunnen een wachtwoord hebben.";
+"Right-click an archive in Finder and choose Extract. Right-click any other file or folder and choose Create Archive… to make a ZIP, 7Z or TAR. Only ZIP can have a password." = "Klik met rechts op een archief in de Finder en kies ‘Uitpakken’. Klik met rechts op een ander bestand of een map en kies ‘Maak archief…’ om een ZIP, 7Z of TAR te maken. Alleen ZIP kan een wachtwoord hebben.";
 "Open archives with this app" = "Open archieven met deze app";
 "archive, extract, unzip, unpack, zip, rar, 7z, tar, password, split, right-click, context menu" = "archief, uitpakken, unzip, openen, zip, rar, 7z, tar, wachtwoord, splitsen, rechtsklik, contextmenu";
 "archive, default app, open with, double-click, unzip, zip, 7z" = "archief, standaardapp, open met, dubbelklik, unzip, zip, 7z";
@@ -926,6 +928,8 @@
 "File names are hidden too" = "Ook de bestandsnamen zijn verborgen";
 "Use English letters, numbers and symbols only" = "Gebruik alleen Engelse letters, cijfers en symbolen";
 "TAR archives can’t have a password" = "TAR-archieven kunnen geen wachtwoord hebben";
+"Only ZIP can have a password" = "Alleen ZIP kan een wachtwoord hebben";
+"The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password." = "Het bestand is mogelijk beschadigd, of van een soort die deze versie van pikapik niet kan openen: gesplitste delen, losse XZ-, LZMA- of ZST-bestanden en 7Z of RAR met wachtwoord.";
 "Don’t split" = "Niet opsplitsen";
 "15 MB, for email" = "15 MB, voor e-mail";
 "100 MB" = "100 MB";
@@ -1145,15 +1149,16 @@
 "Hide desktop icons" = "Bureaubladsymbolen verbergen";
 "For calls, recordings and screenshots. The files stay where they are" = "Voor gesprekken, opnamen en schermafbeeldingen. De bestanden blijven waar ze zijn";
 "The files stay where they are" = "De bestanden blijven waar ze zijn";
+"Covers the icons with your wallpaper. For calls, recordings and screenshots" = "Bedekt de symbolen met de bureaubladachtergrond. Voor gesprekken, opnamen en schermafbeeldingen";
+"Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "Bedekt de bestanden en mappen op het bureaublad met de bureaubladachtergrond, op elk scherm. Klikken komen nog steeds op het bureaublad aan. Beweegt de achtergrond, dan bedekt een effen kleur ze in plaats daarvan. De bestanden blijven in de map Bureaublad in de Finder.";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "Verbergt de bestanden en mappen op het bureaublad, net als de optie ‘Toon onderdelen’ in Systeeminstellingen › Bureaublad en Dock. Ze blijven in de map Bureaublad in de Finder.";
 "Show hidden files" = "Verborgen bestanden tonen";
 "Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "Verborgen bestanden worden gedimd getoond. De Finder herstart even en opent zijn vensters weer";
 "Finder restarts for a moment" = "De Finder herstart even";
 "Waiting for Finder to finish copying" = "Wachten tot de Finder klaar is met kopiëren";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Verborgen bestanden en mappen, zoals Bibliotheek, worden gedimd getoond in de Finder en op het bureaublad, net als na ⇧⌘. in de Finder. Om de wijziging toe te passen, herstart de Finder even en opent hij zijn vensters en tabbladen weer. Is de Finder bestanden aan het kopiëren of verplaatsen, dan herstart hij pas als hij klaar is.";
-"System Settings › Desktop & Dock › Show items › On Desktop" = "Systeeminstellingen › Bureaublad en Dock › Toon onderdelen › Op bureaublad";
-"Opens Desktop & Dock in System Settings" = "Opent Bureaublad en Dock in Systeeminstellingen";
-"Opens Desktop & Dock in System Settings. Turn off On Desktop next to Show items to hide the icons, and turn it back on to bring them back. The files stay in the Desktop folder." = "Opent Bureaublad en Dock in Systeeminstellingen. Zet ‘Op bureaublad’ naast ‘Toon onderdelen’ uit om de symbolen te verbergen en weer aan om ze terug te halen. De bestanden blijven in de map Bureaublad.";
+"Turn off “On Desktop”" = "Zet ‘Op bureaublad’ uit";
+"Or hide them in System Settings" = "Of verberg ze in Systeeminstellingen";
 "Press these keys in Finder, and again to hide them" = "Druk op deze toetsen in de Finder, en nogmaals om ze te verbergen";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "bureaublad, symbolen, bestanden, mappen, opruimen, verbergen, presentatie, scherm delen, opname, schermafbeelding, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "verborgen, onzichtbaar, puntbestanden, systeembestanden, Bibliotheek, alle bestanden tonen, Command Shift punt";

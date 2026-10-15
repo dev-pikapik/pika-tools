@@ -25,11 +25,14 @@
 
 **I båda versionerna**
 
+- **En lugn första start.** Versionen från webbplatsen ber inte längre om behörigheter första gången du öppnar den. Den frågar bara när du slår på ett verktyg som behöver en.
 - **Mindre kopior av videor.** ”Skapa mindre kopia” gör nu en video ungefär hälften så stor. Tidigare fick de flesta videor beskedet ”Redan kompakt”.
 - **Två kopior kommer överens.** Om du använder App Store-versionen och webbplatsversionen tillsammans ångrar de inte längre varandras arbete. ⇧⌘Q och ⇧⌘W fungerar i spel igen.
 - **Spelläget finns kvar efter viloläget.** ”Spelläge” slås på igen av sig självt när din Mac vaknar.
 - **”Portar” talar sanning.** På macOS 27 kallas en port som används av macOS eller en annan användare inte längre ledig.
 - **Det går snabbare att rapportera ett problem.** ”Rapportera ett problem” i Inställningar › Om öppnar formuläret med din version redan vald.
+- **Arkiv utan ryck.** Förloppsfältet rör sig medan ett arkiv packas upp, ett fel lösenord meddelas direkt, och din Mac somnar inte längre mitt i uppackningen eller skapandet.
+- **En stadigare panel i menyraden.** När du fäller ut en rad i panelen, till exempel skärmalternativen under ”Håll vaken”, blinkar inte längre något rullningsfält till. Pilen bredvid ”Håll vaken” säger nu ”Skärminställningar”.
 
 **Åtgärdat i Mac App Store-versionen**
 

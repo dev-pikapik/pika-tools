@@ -34,6 +34,7 @@ final class ArchiveQueue {
     private let password = ArchivePasswordPrompt()
     private var waiting: [(work: Work, row: ArchiveRow)] = []
     private var running = false
+    private var awake: NSObjectProtocol?
     private var panel: NSPanel?
     private var results: [URL] = []
 
@@ -56,7 +57,18 @@ final class ArchiveQueue {
         waiting.append((work, row))
         guard !running else { return }
         running = true
+        keepAwake(true)
         Task { await drain() }
+    }
+
+    // Idle sleep stays off while archives are being worked on, but not while a prompt waits for someone who may have walked away
+    private func keepAwake(_ on: Bool) {
+        if on, awake == nil {
+            awake = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: "pikapik is working with archives")
+        } else if !on, let awake {
+            ProcessInfo.processInfo.endActivity(awake)
+            self.awake = nil
+        }
     }
 
     private func stop(_ row: ArchiveRow) {
@@ -76,6 +88,7 @@ final class ArchiveQueue {
             board.rows.removeAll { $0 === row }
         }
         running = false
+        keepAwake(false)
         panel?.close()
         panel = nil
         let made = results
@@ -98,7 +111,10 @@ final class ArchiveQueue {
                 results.append(result)
                 return
             } catch ArchiveError.needsPassword, ArchiveError.wrongPassword {
-                guard let answer = await password.ask(for: url, wrong: typed != nil) else { return }
+                keepAwake(false)
+                let answer = await password.ask(for: url, wrong: typed != nil)
+                keepAwake(true)
+                guard let answer else { return }
                 secret = answer
             } catch ArchiveError.truncated {
                 password.close()
@@ -174,6 +190,9 @@ final class ArchiveQueue {
             alert.informativeText = String(localized: "Files extracted: \(extracted) of \(total)")
         case .unsupported:
             alert.messageText = String(localized: "“\(name)” can’t be opened")
+            #if APPSTORE
+            alert.informativeText = String(localized: "The file may be damaged, or it may be a kind that this version of pikapik can’t open: split parts, single XZ, LZMA or ZST files, and 7Z or RAR with a password.")
+            #endif
         default:
             NSLog("pikapik archive: %@ failed: %@", name, String(describing: error))
             if creating {
@@ -188,7 +207,9 @@ final class ArchiveQueue {
     }
 
     private func ask(_ alert: NSAlert) async -> NSApplication.ModalResponse {
-        await withCheckedContinuation { continuation in
+        keepAwake(false)
+        defer { keepAwake(running) }
+        return await withCheckedContinuation { continuation in
             RunLoop.main.perform {
                 MainActor.assumeIsolated {
                     NSApp.bringForward()
