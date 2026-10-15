@@ -1,6 +1,6 @@
 import CoreGraphics
 
-enum PetMark { case none, heart, sparkles, ask, bang, drop, puff }
+enum PetMark { case none, heart, sparkles, ask, bang, drop, puff, zzz }
 
 struct PetFace: Equatable {
     var open: CGFloat = 1
@@ -93,7 +93,7 @@ enum PetMood: String, CaseIterable {
         case .surprised: PetFace(open: 1.35, lift: 1, brows: 1, gape: 0.7, mouth: 1, mark: .bang, glow: 1)
         case .shy: PetFace(smile: 0.8, brow: -0.6, brows: 1, curve: 0.4, mouth: 1, blush: 1, look: CGVector(dx: -0.3, dy: 0.5), mark: .drop, glow: 1)
         case .bored: PetFace(open: 0.55, lift: -0.3, brows: 1, curve: -0.15, mouth: 1, look: CGVector(dx: 0, dy: 0.5))
-        case .sleepy: PetFace(open: 0.3, gape: CGFloat(sin(Double.pi * min(1, progress))), mouth: 1)
+        case .sleepy: PetFace(open: 0.3, gape: CGFloat(sin(Double.pi * min(1, progress))), mouth: 1, mark: .zzz, glow: 1)
         case .grumpy: PetFace(open: 0.8, brow: 1, lift: -0.3, brows: 1, curve: -0.8, mouth: 1, mark: .puff, glow: 1)
         }
     }

@@ -75,6 +75,8 @@ final class PetStage: NSObject {
         self.window = window
         self.field = field
         hello = true
+        dressed = nil
+        told = PetProgress.shared.news.count
 
         let link = view.displayLink(target: self, selector: #selector(tick))
         link.preferredFrameRateRange = CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30)
@@ -496,7 +498,7 @@ final class PetStage: NSObject {
             let idle = on ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: Self.anyInput) : 0
             let typed = on ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) : .infinity
             physics.sense(idle: idle, typed: typed, now - felt)
-            if idle < 1 { dull = .random(in: 20...40) } else if idle >= dull { feel(.bored, now) }
+            if idle < 1 { dull = .random(in: 20...40) } else if idle >= dull || (typed >= 5 && now - touched >= 600) { feel(.bored, now) }
             felt = now
         }
         physics.step(dt, cursor: point)
@@ -545,14 +547,15 @@ final class PetStage: NSObject {
 
     @discardableResult
     private func feel(_ mood: PetMood, _ now: TimeInterval) -> Bool {
-        guard demo == nil, physics.state != .doze, mind.feel(mood, at: now) else { return false }
+        let state = physics.state, sits = mood == .bored || mood == .sleepy
+        guard demo == nil, blind == nil, state != .doze, !sits || [.walk, .turn, .wake].contains(state), mind.feel(mood, at: now) else { return false }
         progress?.mark("mood:\(mood.rawValue)")
         switch mood {
         case .happy: progress?.add(.smiles)
         case .shy: progress?.add(.blushes)
         case .bored, .sleepy: physics.sit(mood.length)
-        case .excited, .surprised:
-            if mood == .excited { progress?.add(.smiles) }
+        case .excited:
+            progress?.add(.smiles)
             if physics.grounded, !physics.calm { physics.jump() }
         default: break
         }
@@ -606,20 +609,22 @@ final class PetStage: NSObject {
             still = point
             stillAt = now
         }
-        if now - touched >= 600 { feel(.bored, now) }
         if physics.zest > 0.8 { eager = eager ?? now } else { eager = nil }
         if let eager, now - eager >= 60, now >= nextCheer, feel(.happy, now) { nextCheer = now + 600 }
         if now >= nextLook {
             nextLook = now + 60
-            if !(5..<23).contains(Calendar.current.component(.hour, from: Date())) || Battery.read().map({ $0.phase == .onBattery && $0.charge <= 10 }) == true { feel(.sleepy, now) }
+            let idle = PetTool.shared.rhythm ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: Self.anyInput) : 0
+            if idle >= dull, !(5..<23).contains(Calendar.current.component(.hour, from: Date())) || Battery.read().map({ $0.phase == .onBattery && $0.charge <= 10 }) == true { feel(.sleepy, now) }
         }
         if let line = owed {
             if now > line.by {
                 owed = nil
             } else if state == .walk {
-                owed = nil
                 let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
-                if PetTool.shared.talks, !typing, !Self.microphoneInUse, !behindDock { say(line.phrase, for: 3.4) }
+                if PetTool.shared.talks, !typing, !Self.microphoneInUse, !behindDock {
+                    owed = nil
+                    say(line.phrase, for: 3.4)
+                }
             }
         }
     }
