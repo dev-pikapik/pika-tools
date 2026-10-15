@@ -4,15 +4,24 @@ import SwiftUI
 struct RowLabel: View {
     let title: Text
     var subtitle: Text?
+    var row: String?
 
-    init(_ title: Text, _ subtitle: Text? = nil) {
+    init(_ title: Text, _ subtitle: Text? = nil, row: String? = nil) {
         self.title = title
         self.subtitle = subtitle
+        self.row = row
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            title
+            if let row {
+                HStack(spacing: 6) {
+                    title
+                    NewRowTag(row: row)
+                }
+            } else {
+                title
+            }
             if let subtitle {
                 subtitle
                     .font(.subheadline)

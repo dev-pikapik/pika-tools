@@ -380,6 +380,7 @@ enum SettingsWindow {
         let saved = window.contentRect(forFrameRect: window.frame).size
         window.setContentSize(NSSize(width: max(saved.width, minSize.width), height: max(saved.height, minSize.height)))
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
+            NewMarks.shared.leave((model.selection ?? .general).rawValue)
             NSApp.setActivationPolicy(.accessory)
         }
         self.window = window
@@ -452,7 +453,9 @@ private struct SettingsView: View {
         }
         .searchable(text: $model.search, placement: .sidebar)
         .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
-        .onChange(of: tab, initial: true) {
+        .onChange(of: tab, initial: true) { old, tab in
+            if old != tab { NewMarks.shared.leave(old.rawValue) }
+            NewMarks.shared.open(tab.rawValue)
             SettingsWindow.window?.title = tab.title
             PetProgress.shared.mark("page:\(tab.rawValue)")
             if tab == .pet { PetProgress.shared.add(.visits) }
@@ -469,7 +472,12 @@ private struct SettingsView: View {
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
         ForEach(tabs.filter(\.isAvailable)) { tab in
-            Label { Text(tab.title) } icon: { tab.icon() }
+            Label {
+                HStack(spacing: 6) {
+                    Text(tab.title)
+                    if NewMarks.shared.isNew(tab: tab.rawValue) { NewDot() }
+                }
+            } icon: { tab.icon() }
                 .tag(tab)
                 .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
         }
@@ -988,8 +996,8 @@ private struct ToolsSettings: View {
             }
             #endif
             ForEach(tools, id: \.id) { tool in
-                if let heading = headings[tool.id] {
-                    Section(heading) { tool.settingsView.needs(tool.needs) }
+                if headings[tool.id] != nil || NewMarks.shared.isNew(row: tool.id) {
+                    Section { tool.settingsView.needs(tool.needs) } header: { NewTitle(title: headings[tool.id], row: tool.id) }
                 } else {
                     Section { tool.settingsView.needs(tool.needs) }
                 }
