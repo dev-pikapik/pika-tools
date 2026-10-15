@@ -76,6 +76,7 @@ final class DefaultApps {
         }
     }
 
+    @MainActor
     private func assign(_ app: URL, to type: UTType) async -> Bool {
         var answer: Bool?
         Task { @MainActor in

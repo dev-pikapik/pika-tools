@@ -240,7 +240,7 @@ final class FakeSystem: DefaultAppSystem {
     func handlers(of type: UTType) -> [URL] { candidates[type.identifier] ?? [] }
     func app(withID id: String) -> URL? { installed.first { Bundle(url: $0)?.bundleIdentifier == id } }
 
-    func assign(_ app: URL, to type: UTType) async throws {
+    @MainActor func assign(_ app: URL, to type: UTType) async throws {
         assigns += 1
         if let failAfter, assigns > failAfter { throw Refused() }
         if keep.contains(type.identifier) { throw NSError(domain: NSCocoaErrorDomain, code: 256, userInfo: [NSUnderlyingErrorKey: NSError(domain: NSOSStatusErrorDomain, code: Int(userCanceledErr))]) }
