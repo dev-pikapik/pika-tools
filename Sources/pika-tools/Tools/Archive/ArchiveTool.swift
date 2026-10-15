@@ -8,7 +8,12 @@ final class ArchiveTool: Tool {
     var title: String { String(localized: "Archives in Finder") }
     let tab = SettingsTab.finder
     private let finder = FinderExtension(bundle: "Archive", key: "archive", preview: true)
-    private let defaultApp = ArchiveDefaultApp()
+    private let defaultApp = DefaultApps(
+        types: ["public.zip-archive", "org.7-zip.7-zip-archive"].compactMap { UTType($0) },
+        target: Bundle.main.bundleURL,
+        previousKey: "archive-previous-apps",
+        fallback: "com.apple.archiveutility"
+    )
 
     var isActive: Bool { finder.isActive }
     var needs: [Permission] { finder.needsSettings ? [.finder] : [] }
@@ -33,7 +38,7 @@ final class ArchiveTool: Tool {
 private struct ArchiveSettings: View {
     let tool: ArchiveTool
     let finder: FinderExtension
-    @Bindable var defaultApp: ArchiveDefaultApp
+    @Bindable var defaultApp: DefaultApps
     @Environment(\.inSettings) private var inSettings
 
     private var help: Text {
@@ -61,48 +66,6 @@ private struct ArchiveSettings: View {
             .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in defaultApp.refresh() }
         }
         #endif
-    }
-}
-
-@Observable
-final class ArchiveDefaultApp {
-    private static let system = "com.apple.archiveutility"
-    private static let previousKey = "archive-previous-apps"
-    private static let types = ["public.zip-archive", "org.7-zip.7-zip-archive"].compactMap { UTType($0) }
-
-    private(set) var isOn = false
-
-    init() { refresh() }
-
-    func refresh() {
-        let here = Bundle.main.bundleURL.resolvingSymlinksInPath()
-        isOn = Self.types.allSatisfy { NSWorkspace.shared.urlForApplication(toOpen: $0)?.resolvingSymlinksInPath() == here }
-    }
-
-    func set(_ on: Bool) {
-        let workspace = NSWorkspace.shared
-        var previous = UserDefaults.standard.dictionary(forKey: Self.previousKey) as? [String: String] ?? [:]
-        if on {
-            for type in Self.types {
-                guard let id = workspace.urlForApplication(toOpen: type).flatMap({ Bundle(url: $0)?.bundleIdentifier }), id != Bundle.main.bundleIdentifier else { continue }
-                previous[type.identifier] = id
-            }
-            UserDefaults.standard.set(previous, forKey: Self.previousKey)
-        } else {
-            UserDefaults.standard.removeObject(forKey: Self.previousKey)
-        }
-        // Turning it off gives each type back to the app that had it before, or to Archive Utility if that app is gone.
-        let apps: [URL?] = Self.types.map { type in
-            on ? Bundle.main.bundleURL : previous[type.identifier].flatMap(workspace.urlForApplication(withBundleIdentifier:)) ?? workspace.urlForApplication(withBundleIdentifier: Self.system)
-        }
-        isOn = on
-        Task { @MainActor in
-            for (type, app) in zip(Self.types, apps) {
-                guard let app else { continue }
-                do { try await workspace.setDefaultApplication(at: app, toOpen: type) } catch { break }
-            }
-            refresh()
-        }
     }
 }
 

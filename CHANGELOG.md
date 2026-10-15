@@ -2,6 +2,11 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.52.1] - Unreleased
+
+### Added
+- Player, website version: every format on the Player page is now a button that shows the app opening it. Click it to give that format to pikapik Player, click again to give it back to the app it had. **Open All in pikapik** does all formats one after another and becomes **Restore Previous Apps** once they are all the player’s. macOS asks about each format, both ways, and the next one is asked only after you answer; “Keep …” moves on to the next. What each button shows is read from the system, so an answer of Keep shows correctly, and no answer for 60 seconds stops the run. This replaces the single switch. The Archives switch shares the same code. The line under Open Video… saying it never changes your apps is gone, because the buttons can.
+
 ## [1.52.0] - 2026-10-15
 
 ### Added

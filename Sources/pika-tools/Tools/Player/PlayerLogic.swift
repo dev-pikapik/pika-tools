@@ -1,6 +1,7 @@
 import AppKit
 import CryptoKit
 import Foundation
+import UniformTypeIdentifiers
 
 enum PlayerFormats {
     static let all: [(name: String, extensions: [String])] = [
@@ -9,6 +10,13 @@ enum PlayerFormats {
     ]
 
     static var extensions: [String] { all.flatMap(\.extensions) }
+
+    static var types: [UTType] { types(of: extensions) }
+
+    static func types(of extensions: [String]) -> [UTType] {
+        var seen = Set<UTType>()
+        return extensions.compactMap { UTType(filenameExtension: $0) }.filter { seen.insert($0).inserted }
+    }
 
     static func plays(_ url: URL) -> Bool {
         extensions.contains(url.pathExtension.lowercased())

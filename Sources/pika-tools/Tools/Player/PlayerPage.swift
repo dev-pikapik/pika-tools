@@ -6,6 +6,7 @@ struct PlayerPage: View {
     static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
     private static let license = Bundle.main.url(forResource: "FFmpeg License", withExtension: "txt")
     private static let source = URL(string: "https://github.com/dev-pikapik/pika-tools/releases/latest")!
+    private static let videos = DefaultApps(types: PlayerFormats.types, target: helper, previousKey: "player-video-previous-apps")
 
     var body: some View {
         Form {
@@ -17,21 +18,44 @@ struct PlayerPage: View {
                     .padding(.vertical, 12)
                     .frame(maxWidth: .infinity)
                     .settingAnchor(String(localized: "Open Video…"))
-            } footer: {
-                Text("Doesn’t change which app opens your videos")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             Section("Formats") {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 76), spacing: 8)], spacing: 8) {
+                VStack(spacing: 6) {
+                    Button(action: { Self.videos.set(!Self.videos.isOn) }) {
+                        (Self.videos.isOn ? Text("Restore Previous Apps") : Text("Open All in pikapik")).frame(minWidth: 140)
+                    }
+                    .controlSize(.large)
+                    .settingAnchor(String(localized: "Open All in pikapik"))
+                    (Self.videos.isOn ? Text("macOS will ask about each format. Click “Use” each time.") : Text("macOS will ask about each format. Click “Use pikapik Player”."))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+                .disabled(Self.videos.busy)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 4)
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in Self.videos.refresh() }
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 8)], spacing: 8) {
                     ForEach(PlayerFormats.all, id: \.name) { format in
-                        Text(verbatim: format.name)
-                            .font(.callout.weight(.medium))
+                        let types = PlayerFormats.types(of: format.extensions)
+                        let isOn = Self.videos.isOn(types)
+                        Button(action: { Self.videos.set(!isOn, for: types) }) {
+                            HStack(spacing: 5) {
+                                Text(verbatim: format.name)
+                                    .font(.callout.weight(.medium))
+                                if let app = Self.videos.app(of: types) {
+                                    Image(nsImage: NSWorkspace.shared.icon(forFile: app.path)).resizable().frame(width: 16, height: 16)
+                                }
+                            }
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 5)
-                            .background(.quaternary, in: Capsule())
-                            .help(format.extensions.map { "." + $0 }.joined(separator: " "))
+                            .padding(.vertical, 4)
+                            .background(isOn ? AnyShapeStyle(.tint.opacity(0.25)) : AnyShapeStyle(.quaternary), in: Capsule())
+                            .contentShape(Capsule())
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(Self.videos.busy)
+                        .help(format.extensions.map { "." + $0 }.joined(separator: " "))
                     }
                 }
                 .padding(.vertical, 4)

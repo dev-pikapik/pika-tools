@@ -1193,11 +1193,15 @@
 "Player" = "Lettore";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV e altri video nella loro finestra";
 "Open Video…" = "Apri video…";
-"Doesn’t change which app opens your videos" = "Non cambia l’app che apre i tuoi video";
+"Open All in pikapik" = "Apri tutto in pikapik";
+"Restore Previous Apps" = "Ripristina le app precedenti";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS chiederà per ogni formato. Fai clic su “Usa pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS chiederà per ogni formato. Ogni volta fai clic su “Usa”.";
 "Formats" = "Formati";
 "FFmpeg and dav1d Licenses" = "Licenze di FFmpeg e dav1d";
 "Source Code" = "Codice sorgente";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, guardare, riprodurre, lettore, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "app predefinita, apri con, doppio clic, video, film, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Trascina qui un video";
 "Playing, %@ of %@" = "In riproduzione, %@ di %@";

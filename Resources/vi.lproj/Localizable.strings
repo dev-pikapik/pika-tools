@@ -1193,11 +1193,15 @@
 "Player" = "Trình phát";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV và các video khác trong cửa sổ riêng";
 "Open Video…" = "Mở video…";
-"Doesn’t change which app opens your videos" = "Không thay đổi ứng dụng mở video của bạn";
+"Open All in pikapik" = "Mở tất cả trong pikapik";
+"Restore Previous Apps" = "Khôi phục ứng dụng trước đó";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS sẽ hỏi từng định dạng. Bấm “Dùng pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS sẽ hỏi từng định dạng. Mỗi lần bấm “Dùng”.";
 "Formats" = "Định dạng";
 "FFmpeg and dav1d Licenses" = "Giấy phép FFmpeg và dav1d";
 "Source Code" = "Mã nguồn";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, phim, xem, phát, trình phát, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "ứng dụng mặc định, mở bằng, nhấp đúp, video, phim, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "Video";
 "Drop a video here" = "Thả video vào đây";
 "Playing, %@ of %@" = "Đang phát, %@ trên %@";

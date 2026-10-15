@@ -1193,11 +1193,15 @@
 "Player" = "播放器";
 "MKV, AVI, WMV and other videos in their own window" = "MKV、AVI、WMV 等影片，在獨立視窗中播放";
 "Open Video…" = "打開影片…";
-"Doesn’t change which app opens your videos" = "不會更改開啟影片的 App";
+"Open All in pikapik" = "全部用 pikapik 打開";
+"Restore Previous Apps" = "還原原本的 App";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS 會逐個格式詢問，請點按「使用 pikapik Player」。";
+"macOS will ask about each format. Click “Use” each time." = "macOS 會逐個格式詢問，每次請點按「使用」。";
 "Formats" = "格式";
 "FFmpeg and dav1d Licenses" = "FFmpeg 與 dav1d 授權";
 "Source Code" = "原始碼";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "影片, 視訊, 電影, 觀看, 播放, 播放器, mkv, avi, wmv, webm, flv";
+"default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "預設 App, 打開方式, 按兩下, 影片, 視訊, 電影, mkv, avi, webm, mp4, mov, QuickTime";
 "Video" = "影片";
 "Drop a video here" = "將影片拖到此處";
 "Playing, %@ of %@" = "正在播放，%@ / %@";
