@@ -107,7 +107,7 @@ body:
         - "Permissions › Input Monitoring"
         - "Permissions › Screen Recording"
         - "Permissions › System Audio Recording"
-        - "Permissions › Fan control"
+        - "Permissions › Administrator access"
         - "Permissions › Finder Extensions"
         - "Permissions › Folders"
         - "Permissions › iCloud Drive"

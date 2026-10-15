@@ -33,7 +33,7 @@
 "For some features" = "För vissa funktioner";
 "Finder Extensions" = "Finder-tillägg";
 "Folders" = "Mappar";
-"Lets the app choose how fast your fans spin" = "Låter appen välja hur snabbt fläktarna snurrar";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Låter appen ändra fläkthastigheten och stänga av tjänster för hela Macen";
 "Lets the app add items to the right-click menu in Finder" = "Låter appen lägga till val i högerklicksmenyn i Finder";
 "Lets the app find permissions left by deleted apps" = "Låter appen hitta behörigheter som raderade appar lämnat kvar";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS låter dig stänga av dem bara i Systeminställningar. Knappen öppnar rätt lista, där du stänger av pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Tillåt åtkomst";
 "Fans" = "Fläktar";
 "Fan speed" = "Fläkthastighet";
-"Fan control" = "Fläktstyrning";
+"Administrator access" = "Administratörsåtkomst";
 "Fan %lld" = "Fläkt %lld";
 "See how fast your fans spin and choose their speed" = "Se hur snabbt fläktarna snurrar och välj deras hastighet";
 "This Mac has no fans" = "Den här Macen har inga fläktar";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Långsammare fläktar kan göra din Mac varmare";
 "Auto · %lld rpm" = "Auto · %lld varv/min";
 "Manual · %lld rpm" = "Manuell · %lld varv/min";
-"pikapik wants to allow changing the fan speed." = "pikapik vill tillåta ändring av fläkthastigheten.";
-"pikapik wants to remove fan control." = "pikapik vill ta bort fläktstyrningen.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik vill ändra fläkthastigheten och stänga av och slå på tjänster.";
+"pikapik wants to remove administrator access." = "pikapik vill ta bort administratörsåtkomsten.";
 "Not allowed: no administrator password" = "Inte tillåtet: inget administratörslösenord";
 "Not removed: no administrator password" = "Inte borttaget: inget administratörslösenord";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Det gick inte att ändra fläkthastigheten. Försök tillåta fläktstyrningen igen.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Det gick inte att ändra fläkthastigheten. Försök tillåta administratörsåtkomst igen.";
 "Fans went back to Auto to keep your Mac safe" = "Fläktarna gick tillbaka till Auto för att skydda din Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fläkt, varv, kylning, svalare, varm, värme, ljud, tyst, högljudd, temperatur, termisk";
 "allow, helper, password, administrator, install, remove" = "tillåt, hjälpprogram, lösenord, administratör, installera, ta bort";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Det gick inte att stänga av. Försök igen eller använd Systeminställningar.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Det gick inte att slå på igen. Försök igen eller använd Systeminställningar.";
 "Needs administrator rights, so turn it off in System Settings" = "Kräver administratörsbehörighet, så stäng av det i Systeminställningar";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Om du vill stänga av uppgifter som körs för hela Macen tillåter du administratörsåtkomst.";
 "The app added it itself, so turn it off in System Settings" = "Appen lade till det själv, så stäng av det i Systeminställningar";
 "Lets the app save new files next to yours and see your background tasks" = "Låter appen spara nya filer bredvid dina och se dina bakgrundsuppgifter";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Välj din hemmapp en gång så att pikapik kan spara filer bredvid dina och se dina bakgrundsuppgifter.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Bara den här Mac-datorn kan ansluta.";
 "Other devices on your network can connect." = "Även andra enheter i ditt nätverk kan ansluta.";
 "To free port %@, turn off “%@” in System Settings." = "Om du vill frigöra port %1$@ stänger du av ”%2$@” i Systeminställningar.";
+"To free port %@, turn off “%@”." = "Om du vill frigöra port %1$@ stänger du av ”%2$@”.";
 "macOS needs this port, so it stays taken." = "macOS behöver den här porten, så den förblir upptagen.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Programmet tillhör en annan användare eller systemet, så pikapik rör det inte. Du kan avsluta det i Aktivitetskontroll.";
 "Open Activity Monitor" = "Öppna Aktivitetskontroll";

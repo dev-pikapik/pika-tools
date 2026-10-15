@@ -7,6 +7,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Added
 - Player, website version: a new page, Settings › Player, for videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV. Click Open Video…, or right-click a video and choose Open With › pikapik Player, and it plays in its own window: Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, F goes full screen, and a video that is already open comes to the front instead of opening twice. The player is a small separate app with no network access that asks for no permissions, and it doesn’t change which app opens your videos. It uses FFmpeg and dav1d; their licenses and source code are linked on the same page. Subtitles aren’t supported yet. The Mac App Store version doesn’t have it.
 
+### Changed
+- Background and Ports, website version: tasks that run for the whole Mac now turn off right in pikapik too, with no trip to System Settings. Background daemons from the shared Library folder get the same Turn Off and Turn Back On buttons as agents, and Remote Login and Screen Sharing can be turned off and back on there. In Ports, “How to free it” for ports 22 and 5900 has a Turn Off button. pikapik remembers what it turned off and Turn Back On restores exactly that. This needs administrator access, which you allow once in Settings › Permissions; the row there was called Fan control and now also covers services. If it isn’t allowed yet, the page says so and points to Permissions. pikapik’s own helper, Apple’s system services and everything outside the shared Library folder stay out of reach. The Mac App Store version is unchanged.
+
 ## [1.50.3] - 2026-10-15
 
 ### Fixed
