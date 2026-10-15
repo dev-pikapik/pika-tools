@@ -24,13 +24,17 @@ enum TestPlayerWindow {
         let buttons = window.standardWindowButton(.closeButton)?.superview
         precondition(buttons != nil && content.subviews.contains(chrome.shade) && chrome.shade.hitTest(.zero) == nil, "the gradient is over the picture and lets clicks through")
         NSAnimationContext.current.duration = 0
-        func settled(_ visible: Bool) -> Bool {
-            chrome.setVisible(visible)
+        func settled(_ visible: Bool, video: Bool = true) -> Bool {
+            chrome.setVisible(visible, video: video)
+            RunLoop.current.run(until: Date().addingTimeInterval(0.2))
             let alpha: CGFloat = visible ? 1 : 0
-            return buttons?.alphaValue == alpha && chrome.shade.alphaValue == alpha
+            return buttons?.alphaValue == alpha && chrome.shade.alphaValue == (video ? alpha : 0) && buttons?.isHidden == !visible
         }
-        precondition(settled(false), "the three buttons and their gradient hide together")
+        precondition(settled(false), "the three buttons and their gradient hide together, and hidden buttons ignore the mouse")
         precondition(settled(true), "the three buttons and their gradient come back together")
+        precondition(settled(true, video: false), "a song gets the buttons but no dark shade")
+        precondition(settled(false, video: false), "the buttons of a song hide too")
+        precondition(settled(true), "and come back")
         precondition(WindowChrome.stripAction(nil) == #selector(NSWindow.performZoom(_:)) && WindowChrome.stripAction("Maximize") == #selector(NSWindow.performZoom(_:)), "an unset or Maximize setting zooms")
         precondition(WindowChrome.stripAction("Minimize") == #selector(NSWindow.performMiniaturize(_:)) && WindowChrome.stripAction("None") == nil, "Minimize minimizes and None does nothing")
         print("the window buttons and the dark gradient under them follow the panel: ok")
@@ -43,5 +47,12 @@ enum TestPlayerWindow {
         precondition(!WindowChrome.stripDoubleClick(click(top, 1), in: window, setting: "None"), "one click in the strip does nothing special")
         precondition(!WindowChrome.stripDoubleClick(click(100, 2), in: window, setting: "None"), "a double-click on the picture is still full screen")
         print("the top strip double-click follows the system setting: ok")
+
+        let panel = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
+        precondition(!WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel), "a drag that starts on the panel does not move the window")
+        precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 200), panel: panel), "a drag that starts on the picture moves the window")
+        panel.isHidden = true
+        precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel) && WindowChrome.dragsWindow(at: .zero, panel: nil), "a hidden or missing panel never blocks the drag")
+        print("the window moves only when the drag starts on the picture: ok")
     }
 }
