@@ -66,7 +66,7 @@ enum ImageAction: Equatable {
     static let bindings: [(action: ImageAction, key: String, modifiers: NSEvent.ModifierFlags)] = [
         (.previous, left, []), (.next, right, []),
         (.slideshow, "f", [.command, .shift]), (.slideshow, " ", []),
-        (.zoomIn, "+", .command), (.zoomIn, "=", .command), (.zoomOut, "-", .command),
+        (.zoomIn, "+", .command), (.zoomIn, "=", .command), (.zoomIn, "+", [.command, .shift]), (.zoomIn, "=", [.command, .shift]), (.zoomOut, "-", .command),
         (.fit, "0", .command), (.actualSize, "9", .command),
         (.rotateLeft, "l", .command), (.rotateRight, "r", .command),
         (.leaveFullScreen, "\u{1B}", []),
@@ -85,17 +85,25 @@ enum ImageSlideshow {
 
 enum ImageDetail {
     static let limit = 16384
+    static let maxArea = 128_000_000
     static let vectorLimit = 8192
 
-    static func pixels(longSide: CGFloat, backing: CGFloat, screen: Int, full: Int, vector: Bool = false) -> Int {
+    static func pixels(longSide: CGFloat, backing: CGFloat, screen: Int, image: CGSize, vector: Bool = false) -> Int {
         let needed = Int((longSide * backing).rounded(.up))
         if vector {
             var size = 512
             while size < needed, size < vectorLimit { size *= 2 }
             return size
         }
-        let full = min(full, limit)
+        let full = fullSide(of: image)
         return needed <= screen ? min(screen, full) : full
+    }
+
+    static func fullSide(of image: CGSize) -> Int {
+        let side = max(image.width, image.height)
+        guard side >= 1 else { return 1 }
+        let scale = min(1, CGFloat(limit) / side, (CGFloat(maxArea) / (image.width * image.height)).squareRoot())
+        return max(1, Int(side * scale + 0.000001))
     }
 
     static func oriented(width: Int, height: Int, orientation: Int) -> CGSize {

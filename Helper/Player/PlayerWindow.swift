@@ -97,23 +97,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let video = VideoView()
     private let music = MusicView()
     private let message = NSTextField(labelWithString: String(localized: "Drop a video or a song here"))
-    private let controls: NSView = {
-        if #available(macOS 26.0, *) {
-            let glass = NSGlassEffectView()
-            glass.style = .regular
-            glass.tintColor = NSColor.black.withAlphaComponent(0.5)
-            glass.cornerRadius = 12
-            return glass
-        }
-        let blur = NSVisualEffectView()
-        blur.material = .hudWindow
-        blur.blendingMode = .withinWindow
-        blur.state = .active
-        blur.wantsLayer = true
-        blur.layer?.cornerRadius = 12
-        blur.layer?.masksToBounds = true
-        return blur
-    }()
+    private let controls = ControlPanel.make()
     private let preview = ThumbnailPreview()
     private let playButton = NSButton()
     private let previousButton = NSButton()
@@ -241,16 +225,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             volume.widthAnchor.constraint(equalToConstant: 70),
             scrubber.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
         ])
-        if #available(macOS 26.0, *), let glass = controls as? NSGlassEffectView {
-            glass.contentView = row
-        } else {
-            controls.addSubview(row)
-            NSLayoutConstraint.activate([
-                row.leadingAnchor.constraint(equalTo: controls.leadingAnchor),
-                row.trailingAnchor.constraint(equalTo: controls.trailingAnchor),
-                row.centerYAnchor.constraint(equalTo: controls.centerYAnchor),
-            ])
-        }
+        ControlPanel.fill(controls, with: row)
         controls.isHidden = true
         chrome = WindowChrome(window, over: video)
     }

@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, karartma, daha koyu, yazılımla karartma, monitör, ekran";
 "Forget This App" = "Bu Uygulamayı Unut";
 "Player" = "Oynatıcı";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC ve diğer videolar ile şarkılar kendi penceresinde";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW ve diğer videolar, şarkılar ile resimler kendi penceresinde";
 "Open Video…" = "Video Aç…";
 "Open All in pikapik" = "Tümünü pikapik’te Aç";
 "Restore Previous Apps" = "Önceki Uygulamaları Geri Getir";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Bu resim açılamıyor. Hasarlı olabilir veya macOS’un desteklemediği bir biçimde olabilir.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "fotoğraf, resim, görsel, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, varsayılan uygulama, birlikte aç, çift tıklama, Önizleme";
 "To show the next picture, allow access to this folder." = "Sonraki resmi göstermek için bu klasöre erişime izin verin.";
+"There are no pictures in this folder." = "Bu klasörde resim yok.";

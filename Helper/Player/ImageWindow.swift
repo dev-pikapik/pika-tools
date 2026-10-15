@@ -3,8 +3,10 @@ import os
 
 final class ImageCanvas: NSView {
     weak var controller: ImageController?
+    weak var panel: NSView?
     let picture = CALayer()
     private var grabbing = false
+    private var ignoresDrag = false
 
     override var acceptsFirstResponder: Bool { true }
 
@@ -51,6 +53,10 @@ final class ImageCanvas: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
+        let point = convert(event.locationInWindow, from: nil)
+        ignoresDrag = panel.map { !$0.isHidden && $0.frame.contains(point) } ?? false
+        if let window, WindowChrome.stripDoubleClick(event, in: window) { ignoresDrag = true }
+        guard !ignoresDrag else { return }
         if event.clickCount == 2 {
             controller?.toggleActual(at: anchor(of: event))
         } else if controller?.canPan == true {
@@ -60,7 +66,12 @@ final class ImageCanvas: NSView {
     }
 
     override func mouseDragged(with event: NSEvent) {
-        if grabbing { controller?.pan(by: CGSize(width: event.deltaX, height: -event.deltaY)) } else { window?.performDrag(with: event) }
+        guard !ignoresDrag else { return }
+        if grabbing {
+            controller?.pan(by: CGSize(width: event.deltaX, height: -event.deltaY))
+        } else if window?.styleMask.contains(.fullScreen) == false {
+            window?.performDrag(with: event)
+        }
     }
 
     override func mouseUp(with event: NSEvent) {
@@ -109,46 +120,13 @@ final class ImageCanvas: NSView {
     }
 }
 
-enum ImagePanel {
-    static func make() -> NSView {
-        if #available(macOS 26.0, *) {
-            let glass = NSGlassEffectView()
-            glass.style = .regular
-            glass.tintColor = NSColor.black.withAlphaComponent(0.5)
-            glass.cornerRadius = 12
-            return glass
-        }
-        let blur = NSVisualEffectView()
-        blur.material = .hudWindow
-        blur.blendingMode = .withinWindow
-        blur.state = .active
-        blur.wantsLayer = true
-        blur.layer?.cornerRadius = 12
-        blur.layer?.masksToBounds = true
-        return blur
-    }
-
-    static func fill(_ panel: NSView, with row: NSView) {
-        if #available(macOS 26.0, *), let glass = panel as? NSGlassEffectView {
-            glass.contentView = row
-            return
-        }
-        panel.addSubview(row)
-        NSLayoutConstraint.activate([
-            row.leadingAnchor.constraint(equalTo: panel.leadingAnchor),
-            row.trailingAnchor.constraint(equalTo: panel.trailingAnchor),
-            row.centerYAnchor.constraint(equalTo: panel.centerYAnchor),
-        ])
-    }
-}
-
 final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemValidation {
     private static let background = NSColor(white: 0.11, alpha: 1)
     private let canvas = ImageCanvas()
     private let message = NSTextField(labelWithString: "")
     private let caption = NSTextField(labelWithString: "")
     private let loading = NSProgressIndicator()
-    private let controls = ImagePanel.make()
+    private let controls = ControlPanel.make()
     private let previousButton = NSButton()
     private let nextButton = NSButton()
     private let rotateButton = NSButton()
@@ -174,6 +152,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     private var loadingTimer: Timer?
     private var cursorHidden = false
     private var folderChecked = false
+    private var chrome: WindowChrome?
     private(set) var urls: [URL] = []
     var onOpen: (([URL]) -> Void)?
     var onClose: ((ImageController) -> Void)?
@@ -184,9 +163,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     }
 
     init() {
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 480), styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView], backing: .buffered, defer: false)
-        window.titlebarAppearsTransparent = true
-        window.titleVisibility = .hidden
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 480), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
         window.collectionBehavior = .fullScreenPrimary
         window.minSize = NSSize(width: 400, height: 200)
         window.backgroundColor = Self.background
@@ -203,8 +180,10 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         canvas.controller = self
         canvas.wantsLayer = true
         canvas.layer?.backgroundColor = Self.background.cgColor
+        canvas.panel = controls
         window.contentView = canvas
         window.makeFirstResponder(canvas)
+        chrome = WindowChrome(window, over: canvas)
 
         message.textColor = .white.withAlphaComponent(0.8)
         message.font = .systemFont(ofSize: 15, weight: .medium)
@@ -263,7 +242,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
             controls.widthAnchor.constraint(equalToConstant: 360),
             controls.widthAnchor.constraint(lessThanOrEqualTo: canvas.widthAnchor, constant: -32),
         ])
-        ImagePanel.fill(controls, with: row)
+        ControlPanel.fill(controls, with: row)
         controls.isHidden = true
     }
 
@@ -285,6 +264,14 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         open(start)
     }
 
+    func showEmpty(_ folder: URL) {
+        let name = folder.lastPathComponent
+        window?.title = name
+        caption.stringValue = name
+        message.stringValue = String(localized: "There are no pictures in this folder.")
+        message.isHidden = false
+    }
+
     func focus(_ url: URL) -> Bool {
         guard let found = urls.firstIndex(where: { $0.standardizedFileURL == url.standardizedFileURL }) else { return false }
         window?.deminiaturize(nil)
@@ -293,7 +280,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         return true
     }
 
-    private func open(_ newIndex: Int) {
+    private func open(_ newIndex: Int, keeping kept: ImageViewport? = nil) {
         guard urls.indices.contains(newIndex) else { return }
         index = newIndex
         invalidate()
@@ -301,7 +288,6 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         animation = nil
         labelWindow()
         window?.representedURL = url
-        NSDocumentController.shared.noteNewRecentDocumentURL(url)
         controls.isHidden = false
         updateButtons()
         showControls()
@@ -312,7 +298,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
             let probe = ImageDecoder.probe(url)
             DispatchQueue.main.async { [weak self] in
                 guard let self, generation == self.generation else { return }
-                self.begin(probe, url, generation)
+                self.begin(probe, url, generation, kept)
             }
         }
     }
@@ -355,9 +341,9 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         latest.withLock { $0 = current }
     }
 
-    private func begin(_ probe: ImageProbe?, _ url: URL, _ generation: Int) {
+    private func begin(_ probe: ImageProbe?, _ url: URL, _ generation: Int, _ kept: ImageViewport?) {
         guard let probe else { return fail() }
-        let fresh = ImageViewport()
+        let fresh = kept ?? ImageViewport()
         if !sized {
             sized = true
             size(window: probe.size)
@@ -434,7 +420,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
 
     private func detail(of probe: ImageProbe, _ viewport: ImageViewport) -> Int {
         let scale = viewport.layout(probe.size, in: canvas.bounds.size).scale
-        return ImageDetail.pixels(longSide: max(probe.size.width, probe.size.height) * scale, backing: window?.backingScaleFactor ?? 2, screen: screenPixels, full: probe.longSide, vector: probe.vector)
+        return ImageDetail.pixels(longSide: max(probe.size.width, probe.size.height) * scale, backing: window?.backingScaleFactor ?? 2, screen: screenPixels, image: probe.size, vector: probe.vector)
     }
 
     func canvasResized() {
@@ -490,7 +476,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     @objc private func occlusionChanged(_ notification: Notification) {
         guard let window, let probe, probe.animated else { return }
         if window.occlusionState.contains(.visible) {
-            if animation == nil { open(index) }
+            if animation == nil { open(index, keeping: viewport) }
         } else {
             animation = nil
             invalidate()
@@ -627,7 +613,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
         caption.animator().alphaValue = alpha
-        window.standardWindowButton(.closeButton)?.superview?.animator().alphaValue = fullScreen ? 1 : alpha
+        chrome?.setVisible(visible.controls)
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
@@ -645,6 +631,14 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         case .zoomIn, .zoomOut, .fit, .actualSize, .rotateLeft, .rotateRight: return probe != nil
         case .leaveFullScreen: return false
         }
+    }
+
+    func windowDidEnterFullScreen(_ notification: Notification) {
+        showControls()
+    }
+
+    func windowDidExitFullScreen(_ notification: Notification) {
+        showControls()
     }
 
     func windowWillClose(_ notification: Notification) {

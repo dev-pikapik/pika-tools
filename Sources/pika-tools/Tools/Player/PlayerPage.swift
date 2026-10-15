@@ -12,7 +12,7 @@ struct PlayerPage: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .player, text: String(localized: "MKV, FLAC and other videos and songs in their own window"))
+            SettingsHeader(tab: .player, text: String(localized: "MKV, FLAC, RAW and other videos, songs and pictures in their own window"))
             Section {
                 Button(action: open) { Text("Open Video…").frame(minWidth: 140) }
                     .buttonStyle(.borderedProminent)

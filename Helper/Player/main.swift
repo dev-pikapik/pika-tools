@@ -49,8 +49,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func open(_ urls: [URL]) {
         let (images, rest) = ImageList.split(urls)
-        if !images.isEmpty { showPictures(images) }
+        urls.filter { ImageFormats.opens($0) && !FolderAccess.isFolder($0) }.forEach(NSDocumentController.shared.noteNewRecentDocumentURL)
+        if !images.isEmpty { showPictures(images) } else if rest.isEmpty, let folder = urls.first(where: FolderAccess.isFolder) { showEmptyFolder(folder) }
         for url in rest { show(url) }
+    }
+
+    private func showEmptyFolder(_ folder: URL) {
+        let viewer = ImageController()
+        viewer.onClose = { [weak self] closed in self?.pictures.removeAll { $0 === closed } }
+        pictures.append(viewer)
+        viewer.showEmpty(folder)
+        viewer.showWindow(nil)
     }
 
     private func showPictures(_ urls: [URL]) {

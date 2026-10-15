@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, ztlumení, tmavší, softwarové ztmavení, monitor, displej, obrazovka";
 "Forget This App" = "Zapomenout tuto aplikaci";
 "Player" = "Přehrávač";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC a další videa a skladby ve vlastním okně";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW a další videa, skladby a obrázky ve vlastním okně";
 "Open Video…" = "Otevřít video…";
 "Open All in pikapik" = "Otevřít vše v aplikaci pikapik";
 "Restore Previous Apps" = "Vrátit původní aplikace";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Tento obrázek nelze otevřít. Možná je poškozený nebo je ve formátu, který macOS nepodporuje.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "fotka, obrázek, snímek, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, výchozí aplikace, otevřít v aplikaci, dvojklik, Náhled";
 "To show the next picture, allow access to this folder." = "Chcete-li zobrazit další obrázek, povolte přístup k této složce.";
+"There are no pictures in this folder." = "V této složce nejsou žádné obrázky.";

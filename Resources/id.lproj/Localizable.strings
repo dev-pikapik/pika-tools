@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, redup, lebih gelap, peredupan perangkat lunak, monitor, layar";
 "Forget This App" = "Lupakan app ini";
 "Player" = "Pemutar";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC, dan video serta lagu lainnya di jendelanya sendiri";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW, dan video, lagu, serta gambar lainnya di jendelanya sendiri";
 "Open Video…" = "Buka video…";
 "Open All in pikapik" = "Buka Semua di pikapik";
 "Restore Previous Apps" = "Pulihkan App Sebelumnya";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Gambar ini tidak dapat dibuka. File mungkin rusak atau dalam format yang tidak didukung macOS.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "foto, gambar, citra, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, aplikasi default, buka dengan, klik dua kali, Pratinjau";
 "To show the next picture, allow access to this folder." = "Untuk menampilkan gambar berikutnya, izinkan akses ke folder ini.";
+"There are no pictures in this folder." = "Tidak ada gambar di folder ini.";

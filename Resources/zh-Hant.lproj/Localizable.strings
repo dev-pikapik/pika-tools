@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "伽瑪, 調暗, 更暗, 軟體調暗, 顯示器, 螢幕";
 "Forget This App" = "忘記此 App";
 "Player" = "播放器";
-"MKV, FLAC and other videos and songs in their own window" = "MKV、FLAC 等影片和歌曲在專屬視窗中播放";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV、FLAC、RAW 等影片、歌曲和圖片在專屬視窗中開啟";
 "Open Video…" = "打開影片…";
 "Open All in pikapik" = "全部用 pikapik 打開";
 "Restore Previous Apps" = "還原原本的 App";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "無法打開此圖片。檔案可能已損毀，或格式不受 macOS 支援。";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "照片, 影像, 圖片, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, 預設 App, 打開方式, 點兩下, 預覽";
 "To show the next picture, allow access to this folder." = "若要顯示下一張圖片，請允許存取此資料夾。";
+"There are no pictures in this folder." = "此資料夾中沒有圖片。";

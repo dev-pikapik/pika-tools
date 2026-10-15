@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "감마, 어둡게, 더 어둡게, 소프트웨어 밝기 조절, 모니터, 디스플레이, 화면";
 "Forget This App" = "이 앱 잊기";
 "Player" = "플레이어";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC 등의 비디오와 노래를 전용 윈도우에서 재생";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW 등의 비디오, 노래, 이미지를 전용 윈도우에서 열기";
 "Open Video…" = "비디오 열기…";
 "Open All in pikapik" = "모두 pikapik으로 열기";
 "Restore Previous Apps" = "이전 앱으로 되돌리기";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "이 이미지를 열 수 없습니다. 파일이 손상되었거나 macOS에서 지원하지 않는 형식일 수 있습니다.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "사진, 이미지, 그림, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, 기본 앱, 다음으로 열기, 더블 클릭, 미리 보기";
 "To show the next picture, allow access to this folder." = "다음 사진을 보려면 이 폴더에 대한 접근을 허용하세요.";
+"There are no pictures in this folder." = "이 폴더에 이미지가 없습니다.";

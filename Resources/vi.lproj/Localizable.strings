@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, làm tối, tối hơn, làm tối bằng phần mềm, màn hình";
 "Forget This App" = "Quên ứng dụng này";
 "Player" = "Trình phát";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC và các video, bài hát khác trong cửa sổ riêng";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW và các video, bài hát, hình ảnh khác trong cửa sổ riêng";
 "Open Video…" = "Mở video…";
 "Open All in pikapik" = "Mở tất cả trong pikapik";
 "Restore Previous Apps" = "Khôi phục ứng dụng trước đó";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Không thể mở hình ảnh này. Tệp có thể bị hỏng hoặc ở định dạng mà macOS không hỗ trợ.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "ảnh, hình ảnh, tranh, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, ứng dụng mặc định, mở bằng, nhấp đúp, Xem trước";
 "To show the next picture, allow access to this folder." = "Để hiển thị ảnh tiếp theo, hãy cho phép truy cập thư mục này.";
+"There are no pictures in this folder." = "Không có hình ảnh nào trong thư mục này.";

@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "гамма, затемнення, темніше, програмне затемнення, монітор, дисплей, екран";
 "Forget This App" = "Забути цю програму";
 "Player" = "Програвач";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC та інші відео й пісні в окремому вікні";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW та інші відео, пісні й зображення в окремому вікні";
 "Open Video…" = "Відкрити відео…";
 "Open All in pikapik" = "Відкривати все в pikapik";
 "Restore Previous Apps" = "Повернути попередні програми";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Не вдається відкрити це зображення. Можливо, файл пошкоджено або macOS не підтримує його формат.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "фото, зображення, картинка, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, програма за умовчанням, відкрити в програмі, подвійне клацання, Перегляд";
 "To show the next picture, allow access to this folder." = "Щоб показати наступне зображення, дозвольте доступ до цієї папки.";
+"There are no pictures in this folder." = "У цій папці немає зображень.";

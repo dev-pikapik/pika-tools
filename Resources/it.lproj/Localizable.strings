@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, oscurare, più scuro, oscuramento software, monitor, schermo, display";
 "Forget This App" = "Dimentica questa app";
 "Player" = "Lettore";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC e altri video e brani in una finestra tutta loro";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW e altri video, brani e immagini in una finestra tutta loro";
 "Open Video…" = "Apri video…";
 "Open All in pikapik" = "Apri tutto in pikapik";
 "Restore Previous Apps" = "Ripristina le app precedenti";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Impossibile aprire questa immagine. Potrebbe essere danneggiata o in un formato non supportato da macOS.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "foto, immagine, figura, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, app predefinita, apri con, doppio clic, Anteprima";
 "To show the next picture, allow access to this folder." = "Per mostrare l’immagine successiva, consenti l’accesso a questa cartella.";
+"There are no pictures in this folder." = "Non ci sono immagini in questa cartella.";

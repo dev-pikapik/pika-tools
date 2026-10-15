@@ -84,21 +84,42 @@ enum TestImages {
             precondition(seen.insert("\(binding.key)\(binding.modifiers.rawValue)").inserted, "duplicate \(binding)")
             precondition(ImageAction(key: binding.key, modifiers: binding.modifiers) == binding.action)
         }
-        precondition(ImageAction(key: "=", modifiers: .command) == .zoomIn && ImageAction(key: "r", modifiers: [.command, .capsLock]) == .rotateRight)
+        precondition(["=", "+"].allSatisfy { ImageAction(key: $0, modifiers: .command) == .zoomIn && ImageAction(key: $0, modifiers: [.command, .shift]) == .zoomIn } && ImageAction(key: "-", modifiers: .command) == .zoomOut)
+        precondition(ImageAction(key: "r", modifiers: [.command, .capsLock]) == .rotateRight)
         precondition(ImageAction(key: "r") == nil && ImageAction(key: "f") == nil && ImageAction(key: "q", modifiers: .command) == nil)
         print("keys never clash and only pictures’ own keys are claimed: ok")
 
-        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, full: 12000) == 3456)
-        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, full: 2000) == 2000)
-        precondition(ImageDetail.pixels(longSide: 8000, backing: 2, screen: 3456, full: 12000) == 12000)
-        precondition(ImageDetail.pixels(longSide: 8000, backing: 2, screen: 3456, full: 30000) == ImageDetail.limit)
-        precondition(ImageDetail.pixels(longSide: 100, backing: 2, screen: 3456, full: 100, vector: true) == 512)
-        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, full: 100, vector: true) == 2048)
-        precondition(ImageDetail.pixels(longSide: 90000, backing: 2, screen: 3456, full: 100, vector: true) == ImageDetail.vectorLimit)
+        let (huge, wide, small) = (CGSize(width: 12000, height: 9000), CGSize(width: 30000, height: 1000), CGSize(width: 2000, height: 1500))
+        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, image: huge) == 3456)
+        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, image: small) == 2000)
+        precondition(ImageDetail.pixels(longSide: 8000, backing: 2, screen: 3456, image: huge) == 12000)
+        precondition(ImageDetail.pixels(longSide: 8000, backing: 2, screen: 3456, image: wide) == ImageDetail.limit)
+        precondition(ImageDetail.pixels(longSide: 100, backing: 2, screen: 3456, image: small, vector: true) == 512)
+        precondition(ImageDetail.pixels(longSide: 1000, backing: 2, screen: 3456, image: small, vector: true) == 2048)
+        precondition(ImageDetail.pixels(longSide: 90000, backing: 2, screen: 3456, image: small, vector: true) == ImageDetail.vectorLimit)
         precondition(ImageDetail.oriented(width: 400, height: 300, orientation: 6) == CGSize(width: 300, height: 400))
         precondition(ImageDetail.oriented(width: 400, height: 300, orientation: 3) == CGSize(width: 400, height: 300))
         precondition(ImageDetail.oriented(width: 400, height: 300, orientation: 0) == CGSize(width: 400, height: 300))
         print("a large picture is first decoded to screen size, full size only when zoomed: ok")
+
+        for image in [CGSize(width: 16384, height: 16384), CGSize(width: 60000, height: 60000), CGSize(width: 100000, height: 30000), CGSize(width: 1_000_000, height: 1_000_000)] {
+            let side = ImageDetail.pixels(longSide: image.width, backing: 2, screen: 3456, image: image)
+            let (w, h) = (side, Int((image.height * CGFloat(side) / image.width).rounded(.up)))
+            precondition(side >= 3456 && w * h <= ImageDetail.maxArea + side, "\(image) would decode at \(w)x\(h)")
+        }
+        precondition(ImageDetail.pixels(longSide: 90000, backing: 2, screen: 3456, image: CGSize(width: 100, height: 1_000_000)) == ImageDetail.limit)
+        precondition(ImageDetail.fullSide(of: CGSize(width: 100, height: 1)) == 100 && ImageDetail.fullSide(of: .zero) == 1)
+        let bomb = dir.appending(path: "bomb.png")
+        try writeBomb(side: 36000, to: bomb)
+        let onDisk = try Data(contentsOf: bomb).count
+        precondition(onDisk < 1_000_000, "bomb is \(onDisk) bytes")
+        let started = Date()
+        let bombProbe = try unwrap(ImageDecoder.probe(bomb), "bomb probe")
+        precondition(bombProbe.size == CGSize(width: 36000, height: 36000) && !bombProbe.animated)
+        let shown = try unwrap(ImageDecoder.decode(bomb, bombProbe, maxPixel: ImageDetail.pixels(longSide: 100, backing: 2, screen: 512, image: bombProbe.size)), "bomb at screen size")
+        precondition(max(shown.width, shown.height) == 512 && Date().timeIntervalSince(started) < 30, "bomb \(shown.width)x\(shown.height) in \(Date().timeIntervalSince(started)) s")
+        try FileManager.default.removeItem(at: bomb)
+        print("a \(onDisk / 1000) KB file of \(36000 * 36000 / 1_000_000) megapixels opens at screen size and full size never passes \(ImageDetail.maxArea / 1_000_000) megapixels: ok")
 
         let source = try sample(width: 64, height: 32)
         var written = 0
@@ -150,6 +171,27 @@ enum TestImages {
             precondition(ImageDecoder.probe(url) == nil, "\(url.lastPathComponent) should not open")
         }
         print("damaged, empty and missing files are refused without a crash: ok")
+    }
+
+    static let crcTable: [UInt32] = (0..<256).map { n in (0..<8).reduce(UInt32(n)) { c, _ in c & 1 == 1 ? 0xEDB88320 ^ (c >> 1) : c >> 1 } }
+
+    static func chunk(_ type: String, _ body: Data) -> Data {
+        let name = Data(type.utf8) + body
+        let crc = ~name.reduce(UInt32.max) { crcTable[Int(($0 ^ UInt32($1)) & 0xFF)] ^ ($0 >> 8) }
+        func big(_ value: UInt32) -> Data { Data([24, 16, 8, 0].map { UInt8(truncatingIfNeeded: value >> $0) }) }
+        return big(UInt32(body.count)) + name + big(crc)
+    }
+
+    /// A 1-bit grey PNG of all zeros: a few hundred KB on disk, side × side pixels once decoded.
+    static func writeBomb(side: Int, to url: URL) throws {
+        func big(_ value: Int) -> [UInt8] { [24, 16, 8, 0].map { UInt8(truncatingIfNeeded: value >> $0) } }
+        let rows = (side + 7) / 8 + 1
+        let raw = Data(count: rows * side)
+        let adler = (UInt32(raw.count % 65521) << 16) | 1
+        let packed = try (raw as NSData).compressed(using: .zlib) as Data
+        let stream = Data([0x78, 0x01]) + packed + Data(big(Int(adler)))
+        let header = Data(big(side) + big(side) + [1, 0, 0, 0, 0])
+        try (Data([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]) + chunk("IHDR", header) + chunk("IDAT", stream) + chunk("IEND", Data())).write(to: url)
     }
 
     static func unwrap<T>(_ value: T?, _ name: String) throws -> T {

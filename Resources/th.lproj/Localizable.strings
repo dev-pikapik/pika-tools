@@ -1192,7 +1192,7 @@
 "gamma, dim, darker, software dimming, monitor, display, screen" = "แกมมา, หรี่, มืดลง, หรี่ด้วยซอฟต์แวร์, จอภาพ, หน้าจอ";
 "Forget This App" = "ลืมแอปนี้";
 "Player" = "เครื่องเล่น";
-"MKV, FLAC and other videos and songs in their own window" = "MKV, FLAC และวิดีโอหรือเพลงอื่น ๆ ในหน้าต่างของตัวเอง";
+"MKV, FLAC, RAW and other videos, songs and pictures in their own window" = "MKV, FLAC, RAW และวิดีโอ เพลง หรือรูปภาพอื่น ๆ ในหน้าต่างของตัวเอง";
 "Open Video…" = "เปิดวิดีโอ…";
 "Open All in pikapik" = "เปิดทั้งหมดใน pikapik";
 "Restore Previous Apps" = "คืนค่าแอปก่อนหน้า";
@@ -1289,3 +1289,4 @@
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "ไม่สามารถเปิดรูปภาพนี้ได้ ไฟล์อาจเสียหายหรืออยู่ในรูปแบบที่ macOS ไม่รองรับ";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "ภาพถ่าย, รูปภาพ, ภาพ, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, แอปเริ่มต้น, เปิดด้วย, ดับเบิลคลิก, พรีวิว";
 "To show the next picture, allow access to this folder." = "หากต้องการแสดงรูปภาพถัดไป โปรดอนุญาตการเข้าถึงโฟลเดอร์นี้";
+"There are no pictures in this folder." = "ไม่มีรูปภาพในโฟลเดอร์นี้";
