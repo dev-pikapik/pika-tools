@@ -1230,3 +1230,6 @@
 "Add a Layout" = "เพิ่มรูปแบบแป้นพิมพ์";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "เพิ่มรูปแบบแป้นพิมพ์ไม่ได้ ใช้การตั้งค่าแป้นพิมพ์แทน";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock จะย้ายตามไปด้วย การปิดสวิตช์จะคืนการจัดวางจอภาพกลับเหมือนเดิม";
+"Mac" = "Mac";
+"Enhancements" = "การปรับปรุง";
+"Info" = "ข้อมูล";

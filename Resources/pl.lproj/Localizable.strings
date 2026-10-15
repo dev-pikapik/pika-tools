@@ -1230,3 +1230,6 @@
 "Add a Layout" = "Dodaj układ";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Nie udało się dodać układu. Użyj zamiast tego Ustawień klawiatury.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock przenosi się razem z nim. Wyłączenie przełącznika przywraca poprzedni układ wyświetlaczy";
+"Mac" = "Mac";
+"Enhancements" = "Ulepszenia";
+"Info" = "Informacje";

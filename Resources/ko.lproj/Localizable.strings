@@ -1230,3 +1230,6 @@
 "Add a Layout" = "레이아웃 추가";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "레이아웃을 추가할 수 없습니다. 대신 키보드 설정을 사용하세요.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock도 함께 이동합니다. 스위치를 끄면 디스플레이 배치가 원래대로 돌아갑니다";
+"Mac" = "Mac";
+"Enhancements" = "개선 사항";
+"Info" = "정보";

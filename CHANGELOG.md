@@ -6,6 +6,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Changed
 - Background and Ports, website version: tasks that run for the whole Mac now turn off right in pikapik too, with no trip to System Settings. Background daemons from the shared Library folder get the same Turn Off and Turn Back On buttons as agents, and Remote Login and Screen Sharing can be turned off and back on there. In Ports, “How to free it” for ports 22 and 5900 has a Turn Off button. pikapik remembers what it turned off and Turn Back On restores exactly that. This needs administrator access, which you allow once in Settings › Permissions; the row there was called Fan control and now also covers services. If it isn’t allowed yet, the page says so and points to Permissions. pikapik’s own helper, Apple’s system services and everything outside the shared Library folder stay out of reach. The Mac App Store version is unchanged.
+- Settings: the groups in the sidebar now have names, like in System Settings: Mac, Enhancements, Apps and Info. General stays at the top without a name. The pages are the same and in the same order; the names only show what belongs together. Search still lists pages without group names.
 
 ## [1.51.0] - 2026-10-15
 
