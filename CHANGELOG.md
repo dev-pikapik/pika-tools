@@ -9,6 +9,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Player, website version: the control panel is now frosted glass, Liquid Glass on macOS 26 and later and a blurred panel on macOS 14 and 15, and its buttons and times stay readable on a bright picture. While a video plays, the panel hides after 2.5 seconds without mouse movement, and in full screen the pointer hides with it. Any key or a move of the mouse brings them back, and the panel stays on screen while the video is paused or the pointer is over it.
 - Player, website version: point at the time bar and a small picture of the video at that spot appears above it, with the time. The pictures are made in the background without interrupting the video and kept only while the window is open. For a sound-only file, or when a picture can’t be made, you see only the time.
 
+### Changed
+- Player, website version: the window no longer has the usual grey title bar. The video fills the whole window, and the three round buttons sit on top of it. They show and hide together with the control panel: they fade out after 2.5 seconds without mouse movement while a video plays, stay while it is paused, and a thin dark shade under them keeps them readable on a bright picture. Drag the window by any spot of the video; a double-click on the video still goes full screen, and in full screen the Mac handles the menu bar and the buttons as before.
+
 ## [1.52.0] - 2026-10-15
 
 ### Added

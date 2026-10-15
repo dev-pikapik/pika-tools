@@ -4,6 +4,8 @@ import UniformTypeIdentifiers
 
 final class VideoView: NSView {
     weak var controller: PlayerController?
+    weak var panel: NSView?
+    private var dragsWindow = false
 
     override var acceptsFirstResponder: Bool { true }
 
@@ -29,7 +31,14 @@ final class VideoView: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
+        let point = convert(event.locationInWindow, from: nil)
+        dragsWindow = panel.map { $0.isHidden || !$0.frame.contains(point) } ?? true
         if event.clickCount == 2 { _ = controller?.perform(.fullScreen) }
+    }
+
+    override func mouseDragged(with event: NSEvent) {
+        guard dragsWindow, window?.styleMask.contains(.fullScreen) == false else { return }
+        window?.performDrag(with: event)
     }
 
     override func updateTrackingAreas() {
@@ -110,6 +119,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let scrubber = Scrubber(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
     private let volume = NSSlider(value: 1, minValue: 0, maxValue: 1, target: nil, action: nil)
     private var engine: Engine?
+    private var chrome: WindowChrome?
     private var observer: Any?
     private var hideTimer: Timer?
     private var thumbnails: Thumbnails?
@@ -149,6 +159,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func build(_ window: NSWindow) {
         video.controller = self
+        video.panel = controls
         video.wantsLayer = true
         video.layer?.backgroundColor = NSColor.black.cgColor
         video.registerForDraggedTypes([.fileURL])
@@ -220,6 +231,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             ])
         }
         controls.isHidden = true
+        chrome = WindowChrome(window, over: video)
     }
 
     private func configure(_ button: NSButton, _ symbol: String, _ label: String, _ action: Selector) {
@@ -542,7 +554,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     func showControls() {
-        guard engine != nil else { return }
+        guard engine != nil else {
+            chrome?.setVisible(true)
+            return
+        }
         refreshControls(idle: 0)
         hideTimer?.invalidate()
         hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
@@ -558,6 +573,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let fullScreen = window.styleMask.contains(.fullScreen)
         let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle)
         controls.animator().alphaValue = visible.controls ? 1 : 0
+        chrome?.setVisible(visible.controls)
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
@@ -605,6 +621,14 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         default:
             return engine != nil
         }
+    }
+
+    func windowDidEnterFullScreen(_ notification: Notification) {
+        showControls()
+    }
+
+    func windowDidExitFullScreen(_ notification: Notification) {
+        showControls()
     }
 
     func windowWillClose(_ notification: Notification) {
