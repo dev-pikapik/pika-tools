@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>pikapik</string>
+	<key>CFBundleExecutable</key>
+	<string>MediaDecoder</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.pesotchi.pika-tools.mediadecoder</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MediaDecoder</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<key>EXAppExtensionAttributes</key>
+	<dict>
+		<key>ClassImplementationID</key>
+		<string>com.pesotchi.pika-tools.mediadecoder</string>
+		<key>EXExtensionPointIdentifier</key>
+		<string>com.apple.mediaextension.videodecoder</string>
+		<key>EXPrincipalClass</key>
+		<string>PikaMediaDecoderFactory</string>
+		<key>ObjectName</key>
+		<string>pikapik</string>
+		<key>CodecInfo</key>
+		<array>
+			<dict>
+				<key>CodecType</key>
+				<string>Pvp8</string>
+				<key>CodecName</key>
+				<string>VP8</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pvp9</string>
+				<key>CodecName</key>
+				<string>VP9</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pav1</string>
+				<key>CodecName</key>
+				<string>AV1</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pmp1</string>
+				<key>CodecName</key>
+				<string>MPEG-1 Video</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pmp2</string>
+				<key>CodecName</key>
+				<string>MPEG-2 Video</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pmp4</string>
+				<key>CodecName</key>
+				<string>MPEG-4 Visual</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pms1</string>
+				<key>CodecName</key>
+				<string>Microsoft MPEG-4 v1</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pms2</string>
+				<key>CodecName</key>
+				<string>Microsoft MPEG-4 v2</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pms3</string>
+				<key>CodecName</key>
+				<string>Microsoft MPEG-4 v3</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pwm1</string>
+				<key>CodecName</key>
+				<string>Windows Media Video 7</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pwm2</string>
+				<key>CodecName</key>
+				<string>Windows Media Video 8</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pwm3</string>
+				<key>CodecName</key>
+				<string>Windows Media Video 9</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pvc1</string>
+				<key>CodecName</key>
+				<string>VC-1</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pthe</string>
+				<key>CodecName</key>
+				<string>Theora</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>Pflv</string>
+				<key>CodecName</key>
+				<string>Sorenson Spark</string>
+			</dict>
+			<dict>
+				<key>CodecType</key>
+				<string>P263</string>
+				<key>CodecName</key>
+				<string>H.263</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
