@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Menyerna för aktiva hörn och huvudbildskärm fungerar nu
+
+<sub>1.50.3 · 15 oktober 2026</sub>
+
+I webbversionen gör menyn Ändra… på raden för ett aktivt hörn och menyn Huvudbildskärm nu det de lovar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+I version 1.50.2 stod varje val i de här två menyerna tre gånger och att välja ett ändrade ingenting. Nu står varje val en gång, det nuvarande har en bock och ditt val gäller direkt. Aktiva hörn finns i Inställningar › Spel och Huvudbildskärm under Håll Dock på en skärm. Lägg tillbaka, eller att stänga av reglaget, ställer fortfarande tillbaka allt precis som det var.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik gör det själv, utan en tur till Systeminställningar
 
 <sub>1.50.2 · 15 oktober 2026</sub>

@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Menu aktywnych narożników i wyświetlacza głównego znów działają
+
+<sub>1.50.3 · 15 października 2026</sub>
+
+W wersji ze strony menu Zmień… w wierszu aktywnego narożnika i menu Wyświetlacz główny robią teraz to, co obiecują.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+W wersji 1.50.2 każda opcja w tych dwóch menu pojawiała się trzy razy, a wybranie jednej nic nie zmieniało. Teraz każda opcja pojawia się raz, bieżąca ma znacznik wyboru, a Twój wybór działa od razu. Aktywne narożniki są w Ustawienia › Gry, a Wyświetlacz główny w Trzymaj Dock na jednym ekranie. Przywróć albo wyłączenie przełącznika nadal przywraca wszystko dokładnie tak, jak było.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik robi to sam, bez wchodzenia do Ustawień systemowych
 
 <sub>1.50.2 · 15 października 2026</sub>

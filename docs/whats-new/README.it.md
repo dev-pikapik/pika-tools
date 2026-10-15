@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>I menu degli angoli attivi e dello schermo principale ora funzionano
+
+<sub>1.50.3 · 15 ottobre 2026</sub>
+
+Nella versione dal sito, il menu Cambia… nella riga di un angolo attivo e il menu Schermo principale ora fanno quello che promettono.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Nella versione 1.50.2 ogni scelta di questi due menu compariva tre volte e sceglierne una non cambiava nulla. Ora ogni scelta compare una sola volta, quella attuale ha il segno di spunta e la tua scelta ha effetto subito. Gli angoli attivi sono in Impostazioni › Giochi, lo Schermo principale sotto Tieni il Dock su un solo schermo. Rimetti a posto, o spegnere l’interruttore, riporta ancora tutto esattamente com’era.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik fa da solo, senza passare da Impostazioni di Sistema
 
 <sub>1.50.2 · 15 ottobre 2026</sub>
