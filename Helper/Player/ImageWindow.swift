@@ -54,7 +54,7 @@ final class ImageCanvas: NSView {
 
     override func mouseDown(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
-        ignoresDrag = panel.map { !$0.isHidden && $0.frame.contains(point) } ?? false
+        ignoresDrag = !WindowChrome.dragsWindow(at: point, panel: panel)
         if let window, WindowChrome.stripDoubleClick(event, in: window) { ignoresDrag = true }
         guard !ignoresDrag else { return }
         if event.clickCount == 2 {
@@ -613,7 +613,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
         caption.animator().alphaValue = alpha
-        chrome?.setVisible(visible.controls, video: true)
+        chrome?.setVisible(visible.controls, video: false)
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
