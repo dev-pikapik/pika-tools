@@ -1304,7 +1304,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. (Website) Open a video → no grey bar at the top: the picture reaches the top edge. Keep the mouse still while it plays → after about 2.5 seconds the three buttons and the panel fade out together; move the mouse → they come back with a dark shade under the buttons.
 2. (Website) Pause → the buttons stay however long you wait. Open a mostly white video → the buttons are still easy to see.
-3. (Website) Drag the video with the mouse → the window moves; drag the control panel’s edge → it doesn’t. Double-click the video → full screen; double-click again → back to the window. ⌘W or the red button closes it.
+3. (Website) Drag the video with the mouse → the window moves; drag the control panel’s edge → it doesn’t. Double-click the video → full screen; double-click again → back to the window. Double-click the thin strip at the very top → what System Settings › Desktop & Dock › “Double-click a window’s title bar to” says (Zoom, Minimize or nothing). ⌘W or the red button closes it.
 4. (Website) Do it in the light and in the dark appearance → both look the same, only the buttons’ own colours differ.
 5. (Website) `scripts/test-player-window.swift` prints ok twice.
 

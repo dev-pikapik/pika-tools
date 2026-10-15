@@ -33,6 +33,7 @@ final class VideoView: NSView {
     override func mouseDown(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
         dragsWindow = panel.map { $0.isHidden || !$0.frame.contains(point) } ?? true
+        if let window, WindowChrome.stripDoubleClick(event, in: window) { return }
         if event.clickCount == 2 { _ = controller?.perform(.fullScreen) }
     }
 
