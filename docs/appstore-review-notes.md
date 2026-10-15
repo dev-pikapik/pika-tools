@@ -1,23 +1,23 @@
 pikapik - Mac Tools: information for App Review (Guideline 2.1)
 
 1. Screen recording
-Attached in App Review Information; made on the latest macOS with this build, it shows each main tool and permission prompt.
+Attached in App Review Information; it shows each main tool and permission prompt.
 
 2. Purpose and audience
-pikapik is a free menu-bar app that fixes small everyday Mac annoyances, for Mac users who use a mouse, type in two languages, play games or want quick Finder actions. A small pet walks on the desktop to make it friendly.
+pikapik is a free menu-bar app that fixes small everyday Mac annoyances, for Mac users who use a mouse, type in two languages, play games or want quick Finder actions. A small pet walks on the desktop.
 
 3. Setup and main features
 No account or sample files are needed (any photo or video works). Settings opens on first launch, later from the menu-bar icon; nothing is asked at launch; only the Pet is on.
-- Keep Awake (Turn off the display now: IORequestIdle on IODisplayWrangler, allowed by the sandbox profile), Speed Test, Temperature (thermal state, battery temperature), Battery (Macs with a battery), App Volume (macOS 14.2+: a slider and mute per app), Brightness (dims an external monitor's picture).
+- Keep Awake (Turn off the display now: IORequestIdle on IODisplayWrangler, allowed by the sandbox profile), Speed Test, Temperature (thermal state, battery), Battery (Macs with a battery), App Volume (macOS 14.2+: a slider and mute per app), Brightness (dims an external monitor's picture).
 - Background Tasks: what starts in the background; view only. Animations, pointer acceleration, Other apps’ permissions: buttons only open System Settings.
 - Hide desktop icons: a click-through window above the icons shows the wallpaper (NSWorkspace.desktopImageURL); no Screen Recording.
-- Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (for "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space. Home and End: an event tap sees only those keys and posts ⌘←/⌘→ (CGEvent); nothing is kept.
+- Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (for "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space; or turn on Fix words as you type, type ghbdtn, Space. Home and End: an event tap sees only those keys and posts ⌘←/⌘→ (CGEvent); nothing is kept.
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app.
 - Protect quitting and closing: ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
 - Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move. Archives: right-click an archive, Extract; right-click files, Create Archive…; Space previews. The extensions use only user-picked folders and built-in tar and ditto; jobs keep the Mac awake until done.
 - Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's read-only DefaultShortcutsTable.xml; an event tap keeps the pointer in the game's display, a few points from screen corners.
 No private API or new entitlement.
-Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, the Fix Wrong Keyboard Layout shortcut and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never types or pastes text into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key) and a back or forward swipe.
+Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, Fix Wrong Keyboard Layout and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never pastes into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key), a back or forward swipe and Backspace plus the fixed word as you type.
 
 4. External services
 Only Speed Test: speed.cloudflare.com, when the user starts a check; no personal data. No accounts, analytics, ads, tracking, payment processors or AI services.
@@ -78,8 +78,9 @@ Settings > Brightness: a slider for each external monitor that macOS can't adjus
 - Brightness keys (Settings > Brightness, optional) need Accessibility: they catch the brightness keys and change the monitor under the pointer.
 
 ### Fix Wrong Keyboard Layout
-Settings > Keyboard. Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu; this needs no permission. The standard macOS Services mechanism (NSServices in Info.plist) passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. pikapik does not type, paste or watch typing.
-Optional shortcut, off by default: turn on Fix the selected text below it, then select the text and press ⌃⇧Space (the user can record other keys there). It needs Accessibility, asked for in Settings > Permissions. An event tap holds back only that key combination and sends ⌃⌥⇧⌘F19 instead, the Services command's own key (NSKeyEquivalent in Info.plist), so the app in front runs the same command on its selection. Every other key passes untouched; nothing is read, logged or stored.
+Settings > Keyboard. Add two input sources, for example ABC and Russian. In any app, select text typed in the wrong one (such as "ghbdtn" instead of "привет") and choose Services > Fix Wrong Keyboard Layout in the app menu or the right-click menu; this needs no permission. The standard macOS Services mechanism (NSServices in Info.plist) passes only the selected text to pikapik, only on that command, and the app the user is in puts the fixed text in place of the selection. This command does not type, paste or watch typing.
+Optional shortcut, off by default: turn on Fix the selected text below it, then select the text and press ⌃⇧Space (the user can record other keys there). It needs Accessibility, asked for in Settings > Permissions. An event tap holds back only that key combination and sends ⌃⌥⇧⌘F19 instead, the Services command's own key (NSKeyEquivalent in Info.plist), so the app in front runs the same command on its selection. With Fix words as you type off, every other key passes untouched; nothing is read, logged or stored.
+Fix words as you type, off by default: turn it on under the shortcut, type "ghbdtn" and press Space; it becomes "привет" and the input source switches. It needs Accessibility. The event tap keeps only the letters of the current word in memory and clears them on every click, arrow, ⌘ or ⌃ combination, app switch and input source switch; nothing is logged, stored or sent. On Space or Return after a word typed in the wrong layout (4 or more letters, unknown in the current language and likely in the other one) it posts one Backspace per letter, then the fixed word as Unicode key events (CGEvent). It never runs in password fields (Secure Event Input), in apps the user excludes, in terminals or while Game Mode is playing. Pressing the shortcut right after a fix undoes it, and that word is not fixed again.
 
 ### Mouse button hides the current app
 Settings > Mouse. Turn it on, then press a mouse button over the Settings window to choose it, for example the middle one. That button then hides the front app with NSRunningApplication.hide(), the same as ⌘H; no keystroke is sent. Accessibility is needed because the chosen button's click is held back, so the app under the pointer doesn't get it too.
@@ -132,7 +133,6 @@ These features need to look inside other apps' windows, type into or control oth
 - Quit when the last window closes.
 - Minimize or hide with a click in the Dock.
 - Enter opens files and Delete removes files in Finder.
-- Fixing words as you type. The App Store version fixes only selected text, through the Services command Fix Wrong Keyboard Layout or its shortcut.
 - Key repeat, pointer shortcuts, the Trash watcher, the Uninstaller, fan control and the built-in updater.
 - Changing pointer acceleration, animations and leftover permissions directly. The App Store version has the buttons to System Settings instead.
 - Ports, the list of which program holds which port: the App Sandbox doesn't show it.
