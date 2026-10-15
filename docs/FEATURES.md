@@ -1296,7 +1296,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 5. (Website) Press ⇧F → the text grows; resize the window → the text follows its height. Show the panel (move the mouse) → the text rises above it.
 6. (Website) Choose the second sound track, close, open the video again → the same track is chosen.
 7. (Website) A file that is not a subtitle renamed to .srt, dropped on the window → a note “Couldn’t read this subtitle file.” appears; nothing crashes.
-8. Without pressing anything: `scripts/test-subtitles.swift` checks the readers for SubRip, ASS, WebVTT, mov_text and the encodings, including broken and random input; `scripts/test-tracks.swift` plays the samples made with ffmpeg, switches the sound track and checks that the time does not jump, then checks the subtitles of each sample, the delay and the size. Both print passed.
+8. Without pressing anything: `scripts/test-subtitles.swift` checks the readers for SubRip, ASS, WebVTT, mov_text and the encodings, including broken and random input; `scripts/test-tracks.swift` plays the samples made with ffmpeg, switches the sound track and checks that the time does not jump, then checks the subtitles of each sample, the delay and the size, and draws the subtitle view into a picture to check that the text is white, at the bottom in the middle, the same in the dark and the light theme, raised above the panel, larger on request and readable on a white picture thanks to the shadow. Both print passed.
 
 ### Speed
 
