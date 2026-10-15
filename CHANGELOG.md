@@ -4,6 +4,13 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ## [1.51.1] - Unreleased
 
+### Added
+- Player, website version: it now behaves like QuickTime Player. On pause, ← and → step one frame; while playing they jump 5 seconds (⇧← and ⇧→ always do), J and L jump 10, K plays and pauses, , and . step a frame, ⌥← and ⌥→ go to the start and the end, M mutes, ↑ and ↓ change the volume. Scroll up or down for volume and sideways (or hold Shift and scroll) to skip; a light touch does nothing. Every key has the same menu item.
+- Player, website version: a new Speed menu with 0.5×, 0.75×, 1×, 1.25×, 1.5× and 2×, with the pitch unchanged. ⌘← and ⌘→ (or [ and ]) change the speed, ⌫ goes back to 1×. The speed stays when you skip.
+- Player, website version: Save Frame… (S) saves the picture on the screen as a PNG named after the video and the time. The player can write a file only where you choose in the Save panel.
+- Player, website version: the Window menu has Float on Top (T) and, with more than one screen, Move to Display. The player remembers where you stopped in the last 200 videos and continues from there; Start Over begins again.
+- Player, website version: the player now declares the MKV, WebM and Ogg video types itself, so Open With finds it even on a Mac with no other video app.
+
 ### Changed
 - Background and Ports, website version: tasks that run for the whole Mac now turn off right in pikapik too, with no trip to System Settings. Background daemons from the shared Library folder get the same Turn Off and Turn Back On buttons as agents, and Remote Login and Screen Sharing can be turned off and back on there. In Ports, “How to free it” for ports 22 and 5900 has a Turn Off button. pikapik remembers what it turned off and Turn Back On restores exactly that. This needs administrator access, which you allow once in Settings › Permissions; the row there was called Fan control and now also covers services. If it isn’t allowed yet, the page says so and points to Permissions. pikapik’s own helper, Apple’s system services and everything outside the shared Library folder stay out of reach. The Mac App Store version is unchanged.
 - Settings: the groups in the sidebar now have names, like in System Settings: Mac, Enhancements, Apps and Info. General stays at the top without a name. The pages are the same and in the same order; the names only show what belongs together. Search still lists pages without group names.

@@ -1,5 +1,6 @@
 import AVFoundation
 import CoreMedia
+import VideoToolbox
 
 final class FrameDecoder {
     private var context: UnsafeMutablePointer<AVCodecContext>?
@@ -121,6 +122,8 @@ final class Engine {
     private let lock = NSLock()
     private var feeds: [Feed] = []
     private var wanted: (CMTime, Float)?
+    private var requested: CMTime?
+    private var steps = 0
     private var end = CMTime.zero
     private(set) var finished: CMTime?
 
@@ -129,7 +132,16 @@ final class Engine {
         set { audio.volume = newValue }
     }
 
+    var muted: Bool {
+        get { audio.isMuted }
+        set { audio.isMuted = newValue }
+    }
+
     var hasAudio: Bool { feeds.contains { $0.renderer === audio } }
+
+    var hasVideo: Bool { !size.equalTo(.zero) }
+
+    var position: CMTime { lock.withLock { requested } ?? synchronizer.currentTime() }
 
     var failed: Bool {
         layer.sampleBufferRenderer.status == .failed && !hasAudio || audio.status == .failed && !feeds.contains { $0.renderer !== audio }
@@ -176,6 +188,7 @@ final class Engine {
             throw MediaError.unsupportedFeature
         }
         layer.videoGravity = .resizeAspect
+        audio.audioTimePitchAlgorithm = .spectral
         if !size.equalTo(.zero) { synchronizer.addRenderer(layer.sampleBufferRenderer) }
         if hasAudio { synchronizer.addRenderer(audio) }
     }
@@ -200,7 +213,7 @@ final class Engine {
     }
 
     func stop() {
-        lock.withLock { wanted = nil }
+        lock.withLock { (wanted, requested) = (nil, nil) }
         synchronizer.rate = 0
         queue.sync {
             for feed in feeds {
@@ -211,9 +224,51 @@ final class Engine {
     }
 
     func seek(to time: CMTime, rate: Float) {
-        lock.withLock { wanted = (time, rate) }
+        lock.withLock { (wanted, requested) = ((time, rate), time) }
         finished = nil
         queue.async { [weak self] in self?.restart() }
+    }
+
+    func step(_ direction: Int) {
+        lock.withLock { steps += direction }
+        finished = nil
+        queue.async { [weak self] in self?.restartOnFrame() }
+    }
+
+    func frameImage() -> CGImage? {
+        guard #available(macOS 14.4, *), let buffer = layer.sampleBufferRenderer.displayedPixelBuffer() else { return nil }
+        var image: CGImage?
+        VTCreateCGImageFromCVPixelBuffer(buffer, options: nil, imageOut: &image)
+        return image
+    }
+
+    private func restartOnFrame() {
+        let count = lock.withLock { defer { steps = 0 }; return steps }
+        guard count != 0, let track = feeds.first(where: { $0.renderer === layer.sampleBufferRenderer })?.track else { return }
+        let start = position
+        var time = start
+        for _ in 0..<abs(count) {
+            guard let next = frame(count > 0 ? 1 : -1, from: time, track) else { break }
+            time = next
+        }
+        guard time != start else { return }
+        lock.withLock { (wanted, requested) = ((time, 0), time) }
+        restart()
+    }
+
+    private func frame(_ direction: Int, from time: CMTime, _ track: Track) -> CMTime? {
+        guard let current = (try? demuxer.locate(track, track.ticks(time))) ?? nil else { return nil }
+        var times: [Int64] = []
+        for move in [demuxer.next, demuxer.previous] {
+            var neighbour = current
+            for _ in 0..<16 {
+                guard let following = (try? move(neighbour, track)) ?? nil else { break }
+                neighbour = following
+                times.append(following.pts)
+            }
+        }
+        let found = direction > 0 ? times.filter { $0 > current.pts }.min() : times.filter { $0 < current.pts }.max()
+        return found.map(track.time)
     }
 
     private func restart() {
@@ -232,6 +287,7 @@ final class Engine {
             pump(feed)
         }
         synchronizer.setRate(rate, time: time)
+        lock.withLock { if wanted == nil { requested = nil } }
         for feed in feeds {
             feed.renderer.requestMediaDataWhenReady(on: queue) { [weak self, weak feed] in
                 if let self, let feed { self.pump(feed) }

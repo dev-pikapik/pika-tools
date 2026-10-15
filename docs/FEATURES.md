@@ -1161,7 +1161,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Plays videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, in their own window. It never changes which app opens your videos.
 
-**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:23`). You can also drop a video on the player window. Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, F and Esc enter and leave full screen (`PlayerLogic.swift:17`). Subtitles are not supported yet.
+**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
 
 **Options:**
 - Formats — the list of formats on the same page; hover a format to see its file extensions (`PlayerPage.swift:25`).
@@ -1170,11 +1170,78 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Test:**
 1. (Website) Settings › Player › Open Video… and pick a short MKV file → a window opens and the video plays with sound.
-2. (Website) Press Space → it pauses and the position stops; press Space again → it plays. Press → → it jumps 5 seconds ahead; press ← → it jumps back. Press ↑ → the volume goes up; press ↓ → it goes down.
+2. (Website) Press Space → it pauses and the position stops; press Space again → it plays. Press ↑ → the volume goes up; press ↓ → it goes down.
 3. (Website) Press F → full screen; press Esc → back to the window. Drag the position slider → the picture follows.
 4. (Website) Open the same file again from Settings › Player → the same window comes to the front, with no second window. Minimize the window and open the file again → it comes back.
 5. (Website) Right-click the file in Finder › Open With → pikapik Player is in the list and opens it. Right-click an MP4 › Open With → the app that opens it by default is unchanged.
 6. (Website) Open a text file renamed to .mkv → the window says it can’t play this file; nothing crashes.
+
+### Keys, wheel and Playback menu
+
+**Does:** Controls the player the way QuickTime Player does. Every key also has a menu item with the same shortcut.
+
+**How it works:** One table maps keys to actions (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:28`); the window and the menu both read it (`Helper/Player/PlayerWindow.swift:293`, `Helper/Player/main.swift`). On pause ← and → step one frame, while playing they jump 5 seconds; ⇧← and ⇧→ always jump 5, J and L jump 10, K plays and pauses, , and . step a frame, ⌥← and ⌥→ go to the start and the end, M mutes, ↑ and ↓ change the volume. A frame step looks for the nearest picture time in the file, so it also works on videos with B-frames (`Helper/Player/Engine.swift:232`). Scrolling up and down changes the volume, scrolling sideways or Shift and the wheel skips; a light touch under a small threshold does nothing (`PlayerLogic.swift:65`, `PlayerWindow.swift:410`).
+
+**Nuances:** Holding a key keeps skipping from where the last jump is going, not from where the picture still is.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play an MKV, press → → it jumps about 5 seconds; press ⇧← → it jumps back 5; press J → back 10; press L → ahead 10.
+2. (Website) Press Space → paused. Press → → the picture and the time move one frame ahead; press ← → one frame back; press . and , → the same.
+3. (Website) Press ⌥→ → the end; press ⌥← → the start. Press M → the sound is off and the panel shows it; press M again → it is back. Press ↑ while muted → the sound is back on.
+4. (Website) Scroll up with the mouse wheel over the video → the volume goes up; scroll sideways (or hold Shift and scroll) → the video skips. Touch the trackpad lightly → nothing changes.
+5. (Website) Open the Playback menu → every key above is shown next to its item, and each item does the same as its key.
+
+### Speed
+
+**Does:** Plays faster or slower, from 0.5× to 2×, with the voice at the same pitch.
+
+**How it works:** The Speed menu has 0.5×, 0.75×, 1×, 1.25×, 1.5× and 2× (`Helper/Player/main.swift`); Slower and Faster step along the same list (`PlayerLogic.swift:57`). The audio is set to keep its pitch (`Helper/Player/Engine.swift:191`). The speed stays after a skip, a frame step and when the video is opened again; the panel shows it when it is not 1×.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Playback › Speed › 2× → the time in the panel runs twice as fast and the voice is not higher; the panel shows 2×.
+2. (Website) Press → to skip → the speed is still 2×. Press ⌫ → it is back to 1× and the label is gone.
+3. (Website) Press ⌘→ twice and ⌘← once → the checkmark in the Speed menu moves along the list.
+
+### Save Frame…
+
+**Does:** Saves the picture on the screen as a PNG, named after the video and the time, for example `Holiday 1.23.png`.
+
+**How it works:** File › Save Frame… (S) pauses, takes the picture the player is showing (`Helper/Player/Engine.swift:238`) and writes it where you choose in the Save panel (`Helper/Player/PlayerWindow.swift:424`). Needs no Screen Recording permission; the player may write only in the place you picked. Needs macOS 14.4 or later; on an older macOS it says it could not save the frame.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play an MKV, press S → the video pauses and a Save panel opens with the name `<video> <time>.png`.
+2. (Website) Save to the Desktop → a PNG with the picture of that moment appears. Cancel the panel on the next try → nothing is written.
+
+### Float on Top and Move to Display
+
+**Does:** Keeps the player above other windows, and moves it to another screen.
+
+**How it works:** Window › Float on Top (T) switches the window level (`Helper/Player/PlayerWindow.swift:316`). Window › Move to Display lists the screens and appears only when there are two or more (`Helper/Player/main.swift:23`).
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Window › Float on Top → a checkmark appears and another app’s window never covers the player; choose it again → the checkmark is gone.
+2. (Website) With one screen → Move to Display is not in the Window menu. With two → it lists them, and choosing one moves the window there.
+
+### Continue where you stopped
+
+**Does:** When you open a video again, it continues from the place where you stopped, with no question.
+
+**How it works:** The player saves the position every 10 seconds, on pause, on close and on quit, under a key made from the path, the size and the date of the file (`Helper/Player/PlayerWindow.swift:471`). It saves only after more than 60 seconds were watched, forgets the video within the last 30 seconds, and keeps the last 200 videos (`PlayerLogic.swift:88`). Playback › Start Over begins from the start.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a video for over a minute, close the window, open the same video → it continues from where you stopped.
+2. (Website) Playback › Start Over → it starts at 0:00 and the next open starts there too.
+3. (Website) Watch a video to the last 30 seconds, close, open again → it starts from the beginning.
 
 ### FFmpeg and dav1d Licenses
 
