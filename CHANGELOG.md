@@ -4,6 +4,13 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ## [1.51.1] - Unreleased
 
+### Added
+- Player, website version: it now behaves like QuickTime Player. On pause, ← and → step one frame; while playing they jump 5 seconds (⇧← and ⇧→ always do), J and L jump 10, K plays and pauses, , and . step a frame, ⌥← and ⌥→ go to the start and the end, M mutes, ↑ and ↓ change the volume. Scroll up or down for volume and sideways (or hold Shift and scroll) to skip; a light touch does nothing. Every key has the same menu item.
+- Player, website version: a new Speed menu with 0.5×, 0.75×, 1×, 1.25×, 1.5× and 2×, with the pitch unchanged. ⌘← and ⌘→ (or [ and ]) change the speed, ⌫ goes back to 1×. The speed stays when you skip.
+- Player, website version: Save Frame… (S) saves the picture on the screen as a PNG named after the video and the time. The player can write a file only where you choose in the Save panel.
+- Player, website version: the Window menu has Float on Top (T) and, with more than one screen, Move to Display. The player remembers where you stopped in the last 200 videos and continues from there; Start Over begins again.
+- Player, website version: the player now declares the MKV, WebM and Ogg video types itself, so Open With finds it even on a Mac with no other video app.
+
 ### Changed
 - Quit app and Close window: each row now has a picture that shows what the keys do. With the switch on, ⌘Q or ⌘W alone is locked and the windows only shake; then the extra key appears, and the app or window goes only with all three keys, ⇧⌘Q or ⇧⌘W, or the keys you chose. With the switch off, the picture shows the usual ⌘Q or ⌘W closing right away
 - Show hidden files, website version: the keys ⇧⌘. now sit in the row itself, in front of the title, like on the other rows with a shortcut, and the line under the title is shorter so it stays on one line
