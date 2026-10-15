@@ -797,10 +797,8 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Edition:** Website only (App Store: cut — needs to read gestures).
 
-**Status:** Pending — PR #70: new switch Middle click on the trackpad with the Fingers row; not merged yet.
-
 **Test:**
-1. (once PR #70 is merged, Website) Turn it on; on a link in Safari tap with three fingers → opens in a new tab; on a tab tap with three fingers → closes it. Pick Four fingers and repeat.
+1. (Website) Turn it on; on a link in Safari tap with three fingers → opens in a new tab; on a tab tap with three fingers → closes it. Pick Four fingers and repeat.
 2. Open the Fingers row with three-finger drag on, with Look up on a three-finger tap on, and with Tap to click off → the row says what works.
 3. Scrolling, pinch, swipes between pages and Mission Control work as before.
 4. With Input Monitoring off → no system dialog by itself; the rows look half-grey and a click asks for the permission and opens Permissions.
@@ -1491,16 +1489,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; a stub in the App Store build, where `GameRules.fenceCorners` keeps the pointer 16 points (x + y) from every corner pixel so a push can't reach it, `GameModeTool.swift:454`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
+**How it works:** Website: `CursorLock` (`GameModeTool.swift`) asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use. The lock covers the game’s display inset by one point plus the hot corners Game Mode keeps (`GameRules.fenceRects`), is set only while the pointer is already inside, so setting it never moves the pointer, is checked again every second, and is released when the game is left or pikapik quits. Nothing in the website version moves the pointer. App Store: the private call is not allowed, so `CursorFence` still pushes the pointer back when it crosses the edge (`GameRules.fence`), and `GameRules.fenceCorners` keeps it 16 points (x + y) from every corner pixel because the sandbox can’t switch hot corners off. Both editions calm Dock and hot corners with `DockEdges` (a stub in the App Store build), which restarts the Dock once when a game is entered or left.
 
-**Nuances:** The App Store version leaves the option out after the change because it relies on a private macOS call. Needs two displays to test.
+**Nuances:** The App Store version still moves the pointer back, so a very fast mouse can briefly cross before it returns. Needs two displays to test.
 
-**Edition:** Both now; after PR #71 Website only.
-
-**Status:** Pending — PR #71: the pointer is confined by macOS itself instead of being moved back; the option leaves the App Store build. Not merged until the owner’s hand check (a fast mouse at every edge, the pointer free after leaving the game, and free right after pikapik is killed).
+**Edition:** Both; the website version holds the pointer with macOS itself, the App Store version moves it back.
 
 **Test:**
-1. (two displays) Turn it on, play a stub game and push a fast mouse against every edge toward the other display → the pointer never crosses (before the change it briefly jumped over and back).
+1. (two displays) Turn it on, play a stub game and push a fast mouse against every edge toward the other display → website: the pointer stops at the edge and never crosses; App Store: it may cross for an instant and is moved back.
 2. Leave the game → the pointer is free; kill pikapik during a game → the pointer is free at once.
 
 ### Gestures don’t leave the game

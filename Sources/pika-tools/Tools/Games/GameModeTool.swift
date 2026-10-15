@@ -93,6 +93,9 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var fence: CursorFence?
     @ObservationIgnored private var fenceTimer: Timer?
     @ObservationIgnored private var swipes: (blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) = (false, [], [])
+    #if !APPSTORE
+    @ObservationIgnored private var cursorHeld = false
+    #endif
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
     @ObservationIgnored fileprivate var languageBindings: [UInt64: (direction: InputSwitchGesture.Direction, automatic: Bool)] = [:]
@@ -267,6 +270,10 @@ final class GameModeTool: Tool {
     func leave() {
         fenceTimer?.invalidate()
         fenceTimer = nil
+        #if !APPSTORE
+        if cursorHeld { _ = CursorLock.hold(nil) }
+        cursorHeld = false
+        #endif
         fence?.stop()
         fence = nil
         swipes = (false, [], [])
@@ -312,10 +319,24 @@ final class GameModeTool: Tool {
     private func moveFence() {
         guard let game else { return }
         let frame = rules.contains(.cursor) ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
+        #if !APPSTORE
+        holdCursor(frame)
+        #endif
         guard fence == nil || fence?.frame != frame else { return }
         fence?.stop()
         fence = CursorFence(frame: frame, blocksAll: swipes.blocksAll, except: swipes.except, corners: swipes.corners)
     }
+
+    #if !APPSTORE
+    private func holdCursor(_ screen: CGRect?) {
+        let rects = screen.map { GameRules.fenceRects($0, corners: swipes.corners) } ?? []
+        if let cursor = CGEvent(source: nil)?.location, rects.contains(where: { $0.contains(cursor) }) {
+            if CursorLock.hold(rects) { cursorHeld = true }
+        } else if cursorHeld, CursorLock.hold(nil) {
+            cursorHeld = false
+        }
+    }
+    #endif
 
     private func refreshCommandKeys() {
         ToolRegistry.shared.tools.forEach { ($0 as? CommandKeysTool)?.refresh() }
@@ -543,6 +564,26 @@ enum DockEdges {
 }
 #endif
 
+#if !APPSTORE
+private enum CursorLock {
+    private typealias Lock = @convention(c) (Int32, UnsafeRawPointer?) -> Int32
+    private typealias Connection = @convention(c) () -> Int32
+    private typealias Region = @convention(c) (UnsafePointer<CGRect>, Int) -> Unmanaged<AnyObject>?
+
+    private static let library = dlopen("/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight", RTLD_LAZY)
+    private static let lock = dlsym(library, "SLSSetCursorRegionLock").map { unsafeBitCast($0, to: Lock.self) }
+    private static let connection = dlsym(library, "SLSMainConnectionID").map { unsafeBitCast($0, to: Connection.self) }
+    private static let region = dlsym(UnsafeMutableRawPointer(bitPattern: -2), "CGRegionCreateWithRects").map { unsafeBitCast($0, to: Region.self) }
+
+    static func hold(_ rects: [CGRect]?) -> Bool {
+        guard let lock, let connection, let region else { return false }
+        let shape = rects.flatMap { region($0, $0.count) }
+        defer { shape?.release() }
+        return (rects == nil || shape != nil) && lock(connection(), shape?.toOpaque()) == 0
+    }
+}
+#endif
+
 private final class CursorFence {
     let frame: CGRect?
     let blocksAll: Bool
@@ -557,7 +598,11 @@ private final class CursorFence {
         self.blocksAll = blocksAll
         self.except = except
         self.corners = corners
+        #if APPSTORE
         let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
+        #else
+        let moves: [CGEventType] = []
+        #endif
         let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
         guard mask != 0, AXIsProcessTrusted() else { return }
         let ready = DispatchSemaphore(value: 0)
@@ -689,12 +734,14 @@ private func cursorFenceCallback(
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
+    #if APPSTORE
     case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
         if let frame = fence.frame, let point = GameRules.fenceCorners(event.location, in: frame, corners: fence.corners) {
             event.location = point
             CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
             CGWarpMouseCursorPosition(point)
         }
+    #endif
     default:
         if type.rawValue == 30, event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23 {
             let gate = GameRules.dropsSwipe(

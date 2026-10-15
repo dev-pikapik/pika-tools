@@ -266,6 +266,13 @@ Tanto o comando acima quanto o Homebrew colocam o app em `/Applications`, abrem 
 <br>Digitou ghbdtn em vez de привет? Aperte Espaço e a palavra se corrige.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Clique do meio no trackpad</b>
+<br>Toque com três dedos para abrir um link em uma nova aba, como com o botão do meio do mouse.
+</td>
+</tr></tbody>
 </table>
 
 ## Mais detalhes
@@ -316,6 +323,8 @@ Alguns apps e jogos contam a rolagem em pixels exatos: para eles, mude a mesma o
 **Botões laterais para voltar e avançar.** Os botões 4 e 5 do mouse voltam e avançam no Finder, no Safari e em outros apps da Apple, além de muitos outros apps, como um gesto de deslizar no trackpad. Os apps que tratam esses botões por conta própria os recebem do jeito que são. Se o seu mouse tem esses botões ao contrário, ative **Inverter os botões laterais**. Desativado por padrão.
 
 **Um botão do mouse oculta o app atual.** Ative **Ocultar o app atual com um botão do mouse** em Ajustes › Mouse e pressione o botão que você quer usar, como o botão do meio ou um botão lateral. Depois disso, basta pressioná-lo uma vez para ocultar o app em primeiro plano, igual a ⌘H: o app continua rodando, e um clique no ícone dele no Dock traz o app de volta. Enquanto você joga com o Modo Jogo ligado, o botão funciona normalmente no jogo. Desativado por padrão.
+
+**Clique do meio no trackpad.** Toque ou clique com três dedos, e o trackpad funciona como o botão do meio do mouse: na maioria dos navegadores, isso abre um link em uma nova aba ou fecha uma aba. Se preferir, escolha quatro dedos. Para tocar, ative **Tocar para clicar** em Ajustes do Sistema › Trackpad. Se lá a opção “Pesquisa e detectores de dados” estiver definida como toque com três dedos, três dedos só podem clicar, e se Arrastar com três dedos estiver ativado, escolha quatro dedos. A linha **Dedos** em Ajustes mostra o que funciona no seu Mac. O mouse continua como está. Precisa das permissões **Acessibilidade** e **Monitoração de Entrada** e não está na versão da Mac App Store. Desativado por padrão.
 
 **Encerrar ao fechar a última janela.** Feche a última janela de um app e o app é encerrado. O Finder continua aberto, assim como os apps com janelas em outras mesas ou no Dock. Você pode listar os apps que nunca devem ser encerrados assim. Desativado por padrão.
 
@@ -418,7 +427,7 @@ Abra os ajustes pelo menu com **Ajustes…** ou ⌘, ou abra o pikapik de novo p
 - **Portas**: qual programa ocupou qual porta, os endereços e detalhes dele e um botão para liberar a porta.
 - **Som**: volume dos apps, com controle deslizante e botão de silenciar para cada app que toca som.
 - **Teclado**: troca de idioma, repetição de teclas, Home e End, correção do layout errado.
-- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais, um botão que oculta o app atual.
+- **Mouse**: aceleração do ponteiro e velocidade do rastreamento, rolagem por linhas, direção de rolagem, botões laterais, um botão que oculta o app atual, clique do meio no trackpad.
 - **Janelas**: ampliar com o botão verde (com uma lista de exceções), proteção de ⌘Q e ⌘W, e encerrar ao fechar a última janela (com uma lista de exceções).
 - **Dock**: minimizar ou ocultar com um clique no Dock e manter o Dock em uma só tela.
 - **Finder**: novo arquivo, cópia menor, conversão e arquivos compactados, abrir com Return, recortar com ⌘X, apagar com ⌫, ocultar ícones da Mesa e mostrar arquivos ocultos.

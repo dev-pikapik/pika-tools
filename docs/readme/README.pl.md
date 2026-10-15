@@ -266,6 +266,13 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <br>Wyszło ghbdtn zamiast привет? Naciśnij spację, a słowo się poprawi.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Środkowe kliknięcie na gładziku</b>
+<br>Stuknij trzema palcami, aby otworzyć link w nowej karcie, jak środkowym przyciskiem myszy.
+</td>
+</tr></tbody>
 </table>
 
 ## Więcej szczegółów
@@ -316,6 +323,8 @@ Niektóre aplikacje i gry liczą przewijanie w dokładnych pikselach: dla nich p
 **Boczne przyciski: wstecz i dalej.** Przyciski myszy 4 i 5 cofają i przechodzą dalej w Finderze, Safari i innych aplikacjach Apple oraz w wielu innych programach, tak jak machnięcie na gładziku. Aplikacje, które same obsługują te przyciski, dostają je bez zmian. Jeśli twoja mysz ma je odwrotnie, włącz **Zamień boczne przyciski**. Domyślnie wyłączone.
 
 **Przycisk myszy ukrywa bieżącą aplikację.** Włącz **Przycisk myszy ukrywa bieżącą aplikację** w Ustawieniach › Mysz i naciśnij przycisk, którego chcesz używać, na przykład środkowy albo boczny. Odtąd jedno naciśnięcie ukrywa aplikację na pierwszym planie, tak jak ⌘H: aplikacja działa dalej, a kliknięcie jej ikony w Docku ją przywraca. Gdy grasz z włączonym trybem gry, przycisk działa w grze jak zwykle. Domyślnie wyłączone.
+
+**Środkowe kliknięcie na gładziku.** Stuknij lub kliknij trzema palcami, a gładzik zadziała jak środkowy przycisk myszy: w większości przeglądarek otwiera to link w nowej karcie albo zamyka kartę. Zamiast trzech palców możesz wybrać cztery. Aby działało stuknięcie, włącz **Klikanie stuknięciem** w Ustawieniach systemowych › Gładzik. Jeśli „Sprawdzanie i detektory danych” jest tam ustawione na stuknięcie trzema palcami, trzema palcami można tylko klikać, a jeśli włączone jest przeciąganie trzema palcami, wybierz cztery palce. Wiersz **Palce** w ustawieniach pokazuje, co działa na twoim Macu. Mysz działa tak jak dotąd. Wymaga uprawnień **Dostępność** i **Monitorowanie wprowadzania** i nie ma go w wersji z Mac App Store. Domyślnie wyłączone.
 
 **Zakończenie po zamknięciu ostatniego okna.** Zamknij ostatnie okno aplikacji, a aplikacja się zakończy. Finder pozostaje otwarty, podobnie jak aplikacje z oknami na innych biurkach lub w Docku. Możesz utworzyć listę aplikacji, które nigdy nie mają się tak kończyć. Domyślnie wyłączone.
 
@@ -418,7 +427,7 @@ Otwórz ustawienia z menu poleceniem **Ustawienia…** lub skrótem ⌘, albo po
 - **Porty**: który program zajął który port, jego adresy i szczegóły oraz przycisk, który zwalnia port.
 - **Dźwięk**: głośność aplikacji, suwak i przycisk wyciszenia dla każdej aplikacji, która odtwarza dźwięk.
 - **Klawiatura**: zmiana języka, powtarzanie klawisza, Home i End, poprawianie złego układu.
-- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski, przycisk ukrywający bieżącą aplikację.
+- **Mysz**: przyspieszenie wskaźnika i szybkość ruchu, przewijanie o wiersze, kierunek przewijania, boczne przyciski, przycisk ukrywający bieżącą aplikację, środkowe kliknięcie na gładziku.
 - **Okna**: powiększanie zielonym przyciskiem (z listą wyjątków), ochrona ⌘Q i ⌘W oraz zakończenie po ostatnim oknie (z listą wyjątków).
 - **Dock**: minimalizowanie lub ukrywanie kliknięciem w Docku i trzymanie Docka na jednym ekranie.
 - **Finder**: nowy plik, mniejsza kopia, konwersja i archiwa, otwieranie klawiszem Return, wycinanie przez ⌘X, usuwanie klawiszem ⌫, ukrywanie ikon na biurku i pokazywanie ukrytych plików.
