@@ -13,6 +13,7 @@ final class PointerTool: Tool {
     static let speedRange = 0.2...3.0
     private static let speedKey = "linear-pointer-speed"
     private static let savedKey = "linear-pointer-saved"
+    private static let oursKey = "linear-pointer-ours"
     private static let linearKey = "HIDUseLinearScalingMouseAcceleration"
     private static let resolutionKey = "HIDPointerResolution"
 
@@ -39,6 +40,7 @@ final class PointerTool: Tool {
 
     @ObservationIgnored private let client = PointerTool.makeClient()
     @ObservationIgnored private var saved: [String: [String: Int]]
+    @ObservationIgnored private var ours: [String: [String: [Int]]]
     @ObservationIgnored private var port: IONotificationPortRef?
 
     init() {
@@ -46,6 +48,7 @@ final class PointerTool: Tool {
         isEnabled = defaults.bool(forKey: id)
         speed = Self.savedSpeed
         saved = defaults.dictionary(forKey: Self.savedKey) as? [String: [String: Int]] ?? [:]
+        ours = defaults.dictionary(forKey: Self.oursKey) as? [String: [String: [Int]]] ?? [:]
     }
 
     private static var savedSpeed: Double {
@@ -82,32 +85,39 @@ final class PointerTool: Tool {
     }
 
     func restore() {
+        var left: [String: [String: Int]] = [:]
         for service in mice() {
-            guard let id = Self.registryID(service), let values = saved[id] else { continue }
-            let ours = Dictionary(uniqueKeysWithValues: written(service).map { ($0.0, $0.1.intValue) })
-            for (key, value) in values where (Self.property(service, key) as? NSNumber)?.intValue == ours[key] {
+            guard let id = Self.registryID(service), let before = saved[id] else { continue }
+            let mine = ours[id] ?? Self.numbers(written(service)).mapValues { [$0] }
+            for (key, value) in OriginalValue.putBack(before, ours: mine, current: Self.read(service, before.keys)) {
                 IOHIDServiceClientSetProperty(service, key as CFString, value as CFNumber)
             }
+            if !OriginalValue.isBack(before, ours: mine, current: Self.read(service, before.keys)) { left[id] = before }
         }
-        saved = [:]
-        UserDefaults.standard.removeObject(forKey: Self.savedKey)
+        saved = left
+        ours = ours.filter { left[$0.key] != nil }
+        save()
     }
 
     private func apply() {
         for service in mice() {
             guard let id = Self.registryID(service) else { continue }
-            if saved[id] == nil {
-                var values: [String: Int] = [:]
-                for key in [Self.linearKey, Self.accelerationKey(service), Self.resolutionKey] {
-                    values[key] = (Self.property(service, key) as? NSNumber)?.intValue
-                }
-                saved[id] = values
-                UserDefaults.standard.set(saved, forKey: Self.savedKey)
-            }
-            for (key, value) in written(service) {
+            let values = written(service)
+            let new = Self.numbers(values)
+            if saved[id] == nil { saved[id] = Self.read(service, [Self.linearKey, Self.accelerationKey(service), Self.resolutionKey]) }
+            ours[id] = (ours[id] ?? [:]).merging(new.mapValues { [$0] }) { $1 + $0 }
+            save()
+            for (key, value) in values {
                 IOHIDServiceClientSetProperty(service, key as CFString, value)
             }
+            ours[id] = new.mapValues { [$0] }
+            save()
         }
+    }
+
+    private func save() {
+        UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: Self.savedKey)
+        UserDefaults.standard.set(ours.isEmpty ? nil : ours, forKey: Self.oursKey)
     }
 
     private func written(_ service: IOHIDServiceClient) -> [(String, NSNumber)] {
@@ -154,6 +164,14 @@ final class PointerTool: Tool {
 
     private static func property(_ service: IOHIDServiceClient, _ key: String) -> Any? {
         IOHIDServiceClientCopyProperty(service, key as CFString)
+    }
+
+    private static func read(_ service: IOHIDServiceClient, _ keys: some Sequence<String>) -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: keys.compactMap { key in (property(service, key) as? NSNumber).map { (key, $0.intValue) } })
+    }
+
+    private static func numbers(_ values: [(String, NSNumber)]) -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: values.map { ($0.0, $0.1.intValue) })
     }
 
     private static func registryID(_ service: IOHIDServiceClient) -> String? {

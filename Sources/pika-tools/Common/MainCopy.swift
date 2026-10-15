@@ -7,6 +7,14 @@ final class MainCopy {
 
     static let shared = MainCopy()
     static var canAct: Bool { shared.role == .main }
+    static var takesOver: Bool { MainCopyChoice.takesOver(shared.peers()) }
+
+    static var journal: UserDefaults {
+        let own = Bundle.main.bundleIdentifier ?? ""
+        let domain = MainCopyChoice.journal(own)
+        CFPreferencesAppSynchronize(domain as CFString)
+        return domain == own ? .standard : UserDefaults(suiteName: domain) ?? .standard
+    }
 
     private static let claim = Notification.Name("org.pikapik.main-copy.claim")
     private static let released = Notification.Name("org.pikapik.main-copy.released")

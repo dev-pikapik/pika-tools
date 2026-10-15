@@ -138,6 +138,10 @@ enum AnimationSetting: String, CaseIterable {
         }
     }
 
+    static func restartsDock(_ changes: [(Self, Double?)], autohide: Bool) -> Bool {
+        changes.contains { $0.0.apply == .dock && (autohide || !$0.0.isSpeed) }
+    }
+
     static func originals(_ own: [Self: Double], owned: [Self: Double], new: [Self: Double], system: [Self: Double]) -> [Self: Double] {
         new.keys.reduce(into: [:]) { result, setting in
             result[setting] = own[setting] ?? (owned[setting] == nil ? system[setting] : nil)

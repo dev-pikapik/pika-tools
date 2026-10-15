@@ -6,13 +6,12 @@ final class ConvertTool: Tool {
     let icon = "arrow.triangle.2.circlepath"
     var title: String { String(localized: "Convert in Finder") }
     let tab = SettingsTab.finder
-    private let finder: FinderExtension
+    private let finder = FinderExtension(bundle: "Convert", key: "convert")
     private static let migrateKey = "convert-from-compress"
 
-    init() {
+    static func takeOverCompress() {
         let defaults = UserDefaults.standard
-        if defaults.object(forKey: "convert") == nil, defaults.bool(forKey: "compress") { defaults.set(true, forKey: Self.migrateKey) }
-        finder = FinderExtension(bundle: "Convert", key: "convert")
+        if defaults.object(forKey: "convert") == nil, defaults.bool(forKey: "compress") { defaults.set(true, forKey: migrateKey) }
     }
 
     var isActive: Bool { finder.isActive }
