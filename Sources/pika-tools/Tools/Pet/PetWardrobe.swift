@@ -73,9 +73,9 @@ enum PetItem: String, CaseIterable, Identifiable {
     var rank: PetRank {
         switch self {
         case .cap, .beanie, .party, .shades, .bowtie, .scarf, .tee, .jeans, .sneakers, .boots: .common
-        case .flowers, .bunny, .cowboy, .round, .hearts, .bandana, .stripes, .hoodie, .overalls, .tutu, .quiff, .curls, .bun: .uncommon
-        case .tophat, .detective, .pirate, .propeller, .mask, .labcoat, .cape, .balloon, .bowler, .chevron, .pencil, .cravat, .tweed, .spats, .cane: .rare
-        case .wizard, .viking, .helmet, .tux, .hero, .suit, .skates, .wings, .monocle, .handlebar, .tailcoat, .waistcoat, .umbrella: .epic
+        case .flowers, .bunny, .cowboy, .round, .hearts, .bandana, .stripes, .hoodie, .overalls, .tutu, .quiff, .curls, .bun, .cane: .uncommon
+        case .tophat, .detective, .pirate, .propeller, .mask, .labcoat, .cape, .balloon, .bowler, .chevron, .pencil, .cravat, .tweed, .spats, .tailcoat: .rare
+        case .wizard, .viking, .helmet, .tux, .hero, .suit, .skates, .wings, .monocle, .handlebar, .waistcoat, .umbrella: .epic
         case .crown, .angel: .legendary
         }
     }

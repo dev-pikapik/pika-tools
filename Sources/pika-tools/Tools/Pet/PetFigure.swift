@@ -111,8 +111,7 @@ enum PetFigure {
             lip.addCurve(to: right, control1: CGPoint(x: left.x + inset, y: top), control2: CGPoint(x: right.x - inset, y: top))
             var gap = lip
             gap.addCurve(to: left, control1: CGPoint(x: right.x - low, y: bottom), control2: CGPoint(x: left.x + low, y: bottom))
-            put(gap, Self.eye.opacity(face.mouth))
-            put(lip.strokedPath(StrokeStyle(lineWidth: 0.5, lineCap: .round)), Self.eye.opacity(face.mouth))
+            put(gap.union(gap.strokedPath(StrokeStyle(lineWidth: 0.5, lineCap: .round, lineJoin: .round))), Self.eye.opacity(face.mouth))
         }
         wear.draw(.whiskers, fill)
         wear.draw(.face, fill)
@@ -130,12 +129,22 @@ enum PetFigure {
 
         if face.glow > 0 {
             var crown: CGFloat = switch pose.outfit[.head] {
-            case .tophat, .party, .wizard, .bunny: 6
-            case .quiff, .bowler, .cowboy, .beanie, .pirate, .propeller: 2.5
+            case .flowers: 1
+            case .cap: 3.5
+            case .detective: 4
+            case .helmet: 4.5
+            case .cowboy, .pirate, .crown: 5
+            case .propeller, .bowler: 5.5
+            case .viking, .curls: 6
+            case .beanie, .bun: 6.5
+            case .tophat: 7.5
+            case .quiff: 8.5
+            case .bunny: 8
+            case .wizard, .party: 8.5
             default: 0
             }
-            if pose.outfit[.back] == .umbrella { crown = max(crown, 6) }
-            mark(face, top: centre - max(width, height) / 2 - crown, facing: pose.facing, time: pose.twinkle, fill: fill)
+            if pose.outfit[.back] == .umbrella { crown = max(crown, 9.5) }
+            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, fill: fill)
         }
     }
 
@@ -145,9 +154,9 @@ enum PetFigure {
         return z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
     }
 
-    private static func mark(_ face: PetFace, top: CGFloat, facing: CGFloat, time: Double, fill: (Path, Color) -> Void) {
+    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, fill: (Path, Color) -> Void) {
         let a = face.glow, float = 0.6 * sin(time * 3)
-        let c = CGPoint(x: facing * 2.2, y: top - 5.5 - float), back = -facing
+        let c = CGPoint(x: facing * 2.2, y: top - crown - 5.5 - float), back = -facing
         func shift(_ path: Path, _ x: CGFloat, _ y: CGFloat) -> Path { path.applying(CGAffineTransform(translationX: x, y: y)) }
         switch face.mark {
         case .none:
@@ -190,14 +199,14 @@ enum PetFigure {
             drop.addCurve(to: CGPoint(x: 1.1, y: 0.5), control1: CGPoint(x: 0.3, y: -0.9), control2: CGPoint(x: 1.1, y: -0.2))
             drop.addCurve(to: CGPoint(x: -1.1, y: 0.5), control1: CGPoint(x: 1.1, y: 1.8), control2: CGPoint(x: -1.1, y: 1.8))
             drop.addCurve(to: CGPoint(x: 0, y: -1.8), control1: CGPoint(x: -1.1, y: -0.2), control2: CGPoint(x: -0.3, y: -0.9))
-            fill(shift(drop, back * 5.4, top - 0.2), Color(red: 0.5, green: 0.78, blue: 1).opacity(a))
+            fill(shift(drop, back * 4.4, top - crown - 3.4 - float), Color(red: 0.5, green: 0.78, blue: 1).opacity(a))
         case .zzz:
             for (x, y, size) in [(-1.8, 1.6, 2.2), (1.4, -1.4, 3.2)] as [(CGFloat, CGFloat, CGFloat)] {
                 fill(shift(zed(size), c.x + x, c.y + y), Color(red: 0.45, green: 0.5, blue: 0.95).opacity(a))
             }
         case .puff:
             for (x, y, r) in [(4.2, 1.6, 1.2), (5.9, 0.6, 1.7), (7.6, 1.6, 1.2)] {
-                fill(Path(ellipseIn: CGRect(x: back * x - r, y: top - y - float - r, width: 2 * r, height: 2 * r)), Color(white: 0.7).opacity(a))
+                fill(Path(ellipseIn: CGRect(x: -back * x - r, y: top - crown - y - 0.8 - float - r, width: 2 * r, height: 2 * r)), Color(white: 0.7).opacity(a))
             }
         }
     }

@@ -172,6 +172,12 @@ The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head)
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
 ```
 
+Each mark stays 0.4 units clear of the pet and of every hat and back item, in every pose and both facings, so the crown heights in `PetFigure.mark` can’t drift out of date:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
+```
+
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
 
 ```bash
