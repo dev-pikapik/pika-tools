@@ -10,6 +10,8 @@ final class VideoView: NSView {
 
     override var acceptsFirstResponder: Bool { true }
 
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
+
     override func keyDown(with event: NSEvent) {
         controller?.showControls()
         guard let action = PlayerAction(key: event.charactersIgnoringModifiers ?? "", modifiers: event.modifierFlags), controller?.perform(action) == true else { return super.keyDown(with: event) }
@@ -33,7 +35,7 @@ final class VideoView: NSView {
 
     override func mouseDown(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
-        dragsWindow = panel.map { $0.isHidden || !$0.frame.contains(point) } ?? true
+        dragsWindow = WindowChrome.dragsWindow(at: point, panel: panel)
         if let window, WindowChrome.stripDoubleClick(event, in: window) { return }
         if event.clickCount == 2 { _ = controller?.perform(.fullScreen) }
     }
@@ -329,6 +331,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         message.isHidden = false
         music.isHidden = true
         controls.isHidden = true
+        chrome?.setVisible(true, video: false)
     }
 
     private static func trackInfo(_ tags: MediaTags, cover: NSImage?, file: URL, hasVideo: Bool, duration: Double) -> [String: Any] {
@@ -679,7 +682,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     func showControls() {
         guard engine != nil else {
-            chrome?.setVisible(true)
+            chrome?.setVisible(true, video: false)
             return
         }
         refreshControls(idle: 0)
@@ -697,7 +700,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let fullScreen = window.styleMask.contains(.fullScreen)
         let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
-        chrome?.setVisible(visible.controls)
+        chrome?.setVisible(visible.controls, video: engine?.hasVideo == true)
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
