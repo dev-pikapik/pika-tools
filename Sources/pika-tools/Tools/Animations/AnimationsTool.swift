@@ -30,6 +30,7 @@ final class AnimationsTool: Tool {
     private static let dock = "com.apple.dock" as CFString
     private static let speedKey = "animations-speed"
     private static let ownKey = "animations-own"
+    private static let autohideKey = "animations-autohide-original"
 
     private init() {
         owned = Self.saved()
@@ -64,8 +65,7 @@ final class AnimationsTool: Tool {
 
     func reload() {
         system = Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in setting.read().map { (setting, $0) } })
-        CFPreferencesAppSynchronize(Self.dock)
-        autohide = CFPreferencesCopyAppValue("autohide" as CFString, Self.dock) as? Bool ?? false
+        autohide = Self.readAutohide()
     }
 
     func set(_ setting: AnimationSetting, _ value: Double) {
@@ -85,8 +85,9 @@ final class AnimationsTool: Tool {
     }
 
     func setAutohide(_ on: Bool) {
-        CFPreferencesSetAppValue("autohide" as CFString, on as CFBoolean, Self.dock)
-        CFPreferencesAppSynchronize(Self.dock)
+        guard MainCopy.canAct else { return }
+        OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.autohideKey), current: Self.readAutohide(), to: on), Self.autohideKey)
+        Self.writeAutohide(on)
         autohide = on
         restartDock()
     }
@@ -109,10 +110,11 @@ final class AnimationsTool: Tool {
     private func putBack() {
         let ours = owned.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
         let changes = AnimationSetting.changes(from: ours, to: [:], system: system, own: own)
-        guard !changes.isEmpty else { return }
+        let dock = Self.putBackAutohide()
+        guard !changes.isEmpty || dock else { return }
         changes.forEach { $0.0.write($0.1) }
         reload()
-        if changes.contains(where: { $0.0.apply == .dock }) { Self.killall("Dock", wait: true) }
+        if dock || changes.contains(where: { $0.0.apply == .dock }) { Self.killall("Dock", wait: true) }
     }
 
     func load() {
@@ -123,32 +125,55 @@ final class AnimationsTool: Tool {
 
     static func uninstall() {
         let own = originals()
-        let settings = saved().keys
+        let settings = saved().filter { setting, value in setting.read().map { abs($0 - value) < 0.0005 } ?? false }.keys
         settings.forEach { $0.write(own[$0]) }
-        if settings.contains(where: { $0.apply == .dock }) { killall("Dock", wait: true) }
+        if putBackAutohide() || settings.contains(where: { $0.apply == .dock }) { killall("Dock", wait: true) }
+    }
+
+    private static func putBackAutohide() -> Bool {
+        let value = OriginalValue.putBack(OriginalValue.load(autohideKey), current: readAutohide())
+        if let value { writeAutohide(value) }
+        OriginalValue.save(nil, autohideKey)
+        return value != nil
+    }
+
+    private static func readAutohide() -> Bool {
+        CFPreferencesAppSynchronize(dock)
+        return CFPreferencesCopyAppValue("autohide" as CFString, dock) as? Bool ?? false
+    }
+
+    private static func writeAutohide(_ on: Bool) {
+        CFPreferencesSetAppValue("autohide" as CFString, on as CFBoolean, dock)
+        CFPreferencesAppSynchronize(dock)
     }
 
     private func apply(_ new: [AnimationSetting: Double]) {
         let changes = AnimationSetting.changes(from: owned, to: new, system: system, own: own)
-        own = AnimationSetting.originals(own, owned: owned, new: new, system: system)
+        let originals = AnimationSetting.originals(own, owned: owned, new: new, system: system)
+        remember(own: own.merging(originals) { $1 }, owned: owned.merging(new) { $1 })
+        own = originals
         owned = new
+        changes.forEach { $0.0.write($0.1) }
+        remember(own: own, owned: owned)
+        guard !changes.isEmpty else { return }
+        reload()
+        if changes.contains(where: { $0.0.apply == .dock && (autohide || !$0.0.isSpeed) }) { restartDock() }
+        if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
+        if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
+    }
+
+    private func remember(own: [AnimationSetting: Double], owned: [AnimationSetting: Double]) {
         let defaults = UserDefaults.standard
         let originals = own.isEmpty ? nil : Dictionary(uniqueKeysWithValues: own.map { ($0.key.rawValue, $0.value) })
         if defaults.dictionary(forKey: Self.ownKey) as? [String: Double] != originals {
             defaults.set(originals, forKey: Self.ownKey)
         }
-        for setting in AnimationSetting.allCases where defaults.object(forKey: Self.key(setting)) as? Double != new[setting] {
-            defaults.set(new[setting], forKey: Self.key(setting))
+        for setting in AnimationSetting.allCases where defaults.object(forKey: Self.key(setting)) as? Double != owned[setting] {
+            defaults.set(owned[setting], forKey: Self.key(setting))
         }
         if defaults.object(forKey: Self.speedKey) as? Double != storedSpeed {
             defaults.set(storedSpeed, forKey: Self.speedKey)
         }
-        guard !changes.isEmpty else { return }
-        changes.forEach { $0.0.write($0.1) }
-        reload()
-        if changes.contains(where: { $0.0.apply == .dock && (autohide || !$0.0.isSpeed) }) { restartDock() }
-        if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
-        if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
     }
 
     func restartDock() {

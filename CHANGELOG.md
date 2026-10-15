@@ -7,6 +7,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Added
 - Player, website version: every format on the Player page is now a button that shows the app opening it. Click it to give that format to pikapik Player, click again to give it back to the app it had. **Open All in pikapik** does all formats one after another and becomes **Restore Previous Apps** once they are all the player’s. macOS asks about each format, both ways, and the next one is asked only after you answer; “Keep …” moves on to the next. What each button shows is read from the system, so an answer of Keep shows correctly, and no answer for 60 seconds stops the run. This replaces the single switch. The Archives switch shares the same code. The line under Open Video… saying it never changes your apps is gone, because the buttons can.
 
+### Fixed
+- One main copy: if pikapik stopped unexpectedly while one of its settings was on, the next launch no longer takes pikapik’s value for yours. Animations, Hide the Dock automatically, hot corners, Repeat a held key, Keep the Dock on one display, Hide desktop icons and Show hidden files remember your own value before they change anything and put it back later. Hide the Dock automatically now also goes back as it was when pikapik quits. Only the main copy changes the brightness of external displays, the app that opens archives, Finder extensions and settings from your other Macs, and only the main copy checks for updates and offers them; a copy that is not the main one quits without turning off Keep Awake.
+
 ## [1.52.0] - 2026-10-15
 
 ### Added
