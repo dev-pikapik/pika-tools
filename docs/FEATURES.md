@@ -397,7 +397,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Fan speed (slider) — shown for Manual; from the fan’s minimum to its maximum in steps of 50 rpm.
 - This Mac has no fans — what the page says on a Mac without fans (fanless MacBook Air; empty state, `FanSettings.swift:22`).
 
-**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:182`). The helper is installed and removed through the Fan control permission row. Needs a Mac with fans.
+**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:182`). The helper is installed and removed through the Administrator access permission row. Needs a Mac with fans.
 
 **Edition:** Website only (App Store: hidden — needs administrator rights and SMC access).
 
@@ -508,12 +508,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Lists the programs of your user that hold ports, with expandable rows. A program without an app icon, such as a console tool, shows a grey terminal tile. Only programs that wait for connections (TCP) are listed.
 
-**How it works:** Section at `PortsPage.swift:56`; each row expands to addresses (links) and the Process ID. Context menu: Show in Finder. For AirPlay and sharing ports the row has a “How to Free It” button; its hint offers “Change in System Settings”.
+**How it works:** Section at `PortsPage.swift:56`; each row expands to addresses (links) and the Process ID. Context menu: Show in Finder. For AirPlay and sharing ports the row has a “How to Free It” button; its hint offers “Change in System Settings”. For port 22 (Remote Login) and port 5900 (Screen Sharing, not Remote Management) the hint says “To free port N, turn off “Remote Login”.” and has a Turn Off button that asks the helper to disable that service (`PortsPage.swift:224`, `PortsModel.swift` `PortHint.label`); it needs Administrator access, a failure shows a red line, and Turn Back On is in Background › In the Background.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
 1. (Website) With the Python server from above running, expand its row → address 127.0.0.1:47123 and the Process ID show; right-click › Show in Finder reveals Python.
+2. (Website, test Mac with Remote Login on and a build that can list root programs, Administrator access allowed) Open How to Free It on sshd → “To free port 22, turn off “Remote Login”.” and Turn Off; click it → Remote Login is off in System Settings › General › Sharing; in Background › In the Background the Remote Login row is dimmed with Turn Back On, which turns it on again. Without Administrator access, Turn Off sends you to Settings › Permissions.
 
 ### Not yours: leave these alone
 
@@ -1303,7 +1304,8 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Turn Off / Turn Back On — button on each launch agent in `~/Library/LaunchAgents` or `/Library/LaunchAgents`, and on each old login item (Website): an agent is switched off and on again without deleting it, with `launchctl disable|enable` plus bootout and bootstrap; a login item is taken out of the list and put back (see Open at Login). The row shows the new state at once; if it fails, a red line under the row says so. Nothing on disk is deleted. Needs no password; it survives a restart. App Store: view only, no button.
-- Turn Off… / Turn On… — button on the tasks pikapik cannot change, shown instead of the switch: daemons (need administrator rights) and agents and helpers an app registered itself (macOS has no way to switch another app’s off). It opens System Settings › Login Items so you can change the item yourself; nothing on disk changes, and a line under the row says why. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there, with no line under the row. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
+- Turn Off / Turn Back On on daemons (Website): a daemon whose property list sits directly in `/Library/LaunchDaemons`, and Remote Login (`com.openssh.sshd`) and Screen Sharing (`com.apple.screensharing`), switch with `launchctl disable` plus `bootout` and `enable` plus `bootstrap` for `system/<label>`, run by the root helper (`HelperServices` in `FanHelperProtocol.swift:13`, `setService` in `Helper/FanHelper/main.swift:96`, `FanControl.setService`). The helper accepts only labels of 1 to 128 letters, digits, dot, underscore and hyphen, never `com.apple.*` or pikapik’s own helpers, and finds the file itself by its Label; nothing else is run. Without Administrator access the button asks for it in Permissions, and a bar at the bottom says so (`BackgroundPage.swift:153`). pikapik remembers a sharing service it turned off in the `background-turned-off-services` key (`BackgroundTasks.swift:304-321`), so its row stays, dimmed, with Turn Back On; the key is pruned when macOS no longer lists the service as disabled. Turning back on restores exactly what pikapik turned off, nothing else. File Sharing is not offered: on macOS 27 launchd has no disabled entry for it (`com.apple.smbd`), so there is no switch pikapik could check.
+- Turn Off… / Turn On… — button on the tasks pikapik cannot change, shown instead of the switch: daemons outside the shared Library folder and agents and helpers an app registered itself (macOS has no way to switch another app’s off). It opens System Settings › Login Items so you can change the item yourself; nothing on disk changes, and a line under the row says why. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there, with no line under the row. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
 - Show in Finder — on every task in every group: clicking the file path, the Show in Finder context-menu item (`BackgroundPage.swift:201`) or the path’s help (`:195`) reveals the task’s file in Finder.
 
 **Edition:** Both; App Store differs: view only, shorter header text, home-folder tasks only after Folders access.
@@ -1313,7 +1315,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Make a test agent `~/Library/LaunchAgents/org.example.background-test.plist` that runs `/bin/sleep 3600` with RunAtLoad and load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/org.example.background-test.plist`. Open Settings › Background Tasks → it is listed with a green dot.
 3. Click Turn Off → the row dims at once, `launchctl print-disabled gui/$(id -u)` shows it as disabled, the sleep process is gone and the file is still there. Click Turn Back On → it runs again.
 4. Remove the test agent afterwards with `launchctl bootout gui/$(id -u)/org.example.background-test` and delete the file.
-5. (Website) A daemon in `/Library/LaunchDaemons` has Turn Off… and the line “Needs administrator rights, so turn it off in System Settings”; click it → System Settings opens on Login Items; nothing on disk changes.
+5. (Website, Administrator access allowed) A daemon in `/Library/LaunchDaemons` that is not Apple’s has Turn Off, not Turn Off…; click it → the row dims, `launchctl print-disabled system` lists it as disabled and its process is gone; Turn Back On → it runs again and the file is unchanged. Without Administrator access the bar “To turn off tasks that run for the whole Mac, allow administrator access.” shows and the button sends you to Permissions.
 6. (App Store) Click Turn Off… on any task → System Settings opens on Login Items; nothing on disk changes.
 7. Click Show in Finder on a task → Finder opens with the file selected.
 
@@ -1634,16 +1636,16 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. Turn on App Volume → the row appears; Allow shows the prompt (after a refusal it opens System Settings › Privacy & Security).
 
-### Fan control
+### Administrator access
 
-**Does:** Installs or removes the fan helper.
+**Does:** Installs or removes the helper that changes the fan speed and turns services off and on for the whole Mac (Background daemons, Remote Login, Screen Sharing). Before 1.51.0 the row was called Fan control.
 
-**How it works:** `Permissions.swift:36,175,206`; the administrator password installs a helper in `/Library/PrivilegedHelperTools` and a LaunchDaemon. Shown only when the Mac has fans.
+**How it works:** `Permissions.swift:37,115,179,210`; the administrator password installs a helper in `/Library/PrivilegedHelperTools` and a LaunchDaemon. The row is always shown in the Website build. The helper checks the caller’s code signature. An older helper from version 2 on updates itself without a new password (`FanControl.probe`); version 1 asks once more.
 
 **Edition:** Website only (App Store: cut — no helper).
 
 **Test:**
-1. (Website, Mac with fans) Allow → one administrator prompt; Turn Off removes the helper.
+1. (Website) Allow → one administrator prompt; Turn Off removes the helper.
 
 ### Finder Extensions
 

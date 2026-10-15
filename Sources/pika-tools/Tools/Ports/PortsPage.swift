@@ -182,6 +182,10 @@ private struct PortRow: View {
     let program: PortProgram
     let model: PortsModel
     @State private var tip = false
+    #if !APPSTORE
+    @State private var working = false
+    @State private var failed = false
+    #endif
 
     var body: some View {
         let look = model.look(program)
@@ -216,6 +220,21 @@ private struct PortRow: View {
         }
     }
 
+    #if !APPSTORE
+    private func turnOff(_ label: String) {
+        working = true
+        failed = false
+        BackgroundModel.shared.setService(label, on: false) { ok in
+            working = false
+            failed = !ok
+            if ok {
+                tip = false
+                Task { await model.refresh() }
+            }
+        }
+    }
+    #endif
+
     @ViewBuilder private func control(_ look: PortLook) -> some View {
         let hints = model.hints(program)
         if model.freeing.contains(program.id) {
@@ -243,8 +262,25 @@ private struct PortRow: View {
                 .popover(isPresented: $tip) {
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(hints, id: \.port) { hint in
+                            #if !APPSTORE
+                            if let label = hint.label {
+                                Text("To free port \(String(hint.port)), turn off “\(hint.service)”.")
+                                Button("Turn Off") { turnOff(label) }
+                                    .disabled(working)
+                                    .needs([.fans])
+                            } else {
+                                Text("To free port \(String(hint.port)), turn off “\(hint.service)” in System Settings.")
+                            }
+                            #else
                             Text("To free port \(String(hint.port)), turn off “\(hint.service)” in System Settings.")
+                            #endif
                         }
+                        #if !APPSTORE
+                        if failed {
+                            Text("Couldn’t turn this off. Try again or use System Settings.")
+                                .foregroundStyle(.red)
+                        }
+                        #endif
                         Button("Change in System Settings") { NSWorkspace.shared.open(hints[0].pane) }
                             .buttonStyle(.link)
                     }

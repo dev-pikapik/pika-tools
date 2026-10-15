@@ -18,12 +18,14 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
     private let smc: SMC
     private let requirement: String?
     private let candidate: String?
+    private let own: String
     private var clients = 0
 
-    init(smc: SMC, requirement: String?, candidate: String?) {
+    init(smc: SMC, requirement: String?, candidate: String?, own: String) {
         self.smc = smc
         self.requirement = requirement
         self.candidate = candidate
+        self.own = own
     }
 
     func resetAll() {
@@ -91,6 +93,28 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
         reply(candidate.map { FanHelperInfo.stage(CommandLine.arguments[0], from: path, requirement: $0) } ?? false)
     }
 
+    func setService(label: String, on: Bool, reply: @escaping (Bool) -> Void) {
+        guard label != own, let file = HelperServices.plist(for: label) else { return reply(false) }
+        let target = "system/" + label
+        guard Self.launchctl([on ? "enable" : "disable", target]) else { return reply(false) }
+        guard on else {
+            _ = Self.launchctl(["bootout", target])
+            return reply(true)
+        }
+        reply(Self.launchctl(["bootstrap", "system", file]) || Self.launchctl(["print", target]))
+    }
+
+    private static func launchctl(_ arguments: [String]) -> Bool {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/bin/launchctl")
+        process.arguments = arguments
+        process.standardOutput = FileHandle.nullDevice
+        process.standardError = FileHandle.nullDevice
+        guard (try? process.run()) != nil else { return false }
+        process.waitUntilExit()
+        return process.terminationStatus == 0
+    }
+
     func finish() -> Never {
         resetAll()
         updates.lock()
@@ -101,7 +125,7 @@ final class Service: NSObject, FanHelperProtocol, NSXPCListenerDelegate {
 
 let label = URL(fileURLWithPath: CommandLine.arguments[0]).lastPathComponent
 let appIdentifier = label.hasSuffix(FanHelperInfo.suffix) ? String(label.dropLast(FanHelperInfo.suffix.count)) : label
-let service = Service(smc: device, requirement: FanHelperInfo.requirement(identifier: appIdentifier), candidate: FanHelperInfo.requirement(identifier: label))
+let service = Service(smc: device, requirement: FanHelperInfo.requirement(identifier: appIdentifier), candidate: FanHelperInfo.requirement(identifier: label), own: label)
 service.resetAll()
 
 let listener = NSXPCListener(machServiceName: label)
