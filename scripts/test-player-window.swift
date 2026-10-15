@@ -21,12 +21,15 @@ enum TestPlayerWindow {
         precondition(window.contentView?.frame.maxY == window.frame.height, "the video starts at the top edge, under that band")
         print("the window has no title bar strip, the picture covers it all: ok")
 
+        precondition(chrome.shade.alphaValue == 0, "a fresh window has no dark shade, so a first song never fades one out over its cover")
         let buttons = window.standardWindowButton(.closeButton)?.superview
         precondition(buttons != nil && content.subviews.contains(chrome.shade) && chrome.shade.hitTest(.zero) == nil, "the gradient is over the picture and lets clicks through")
         NSAnimationContext.current.duration = 0
         func settled(_ visible: Bool, video: Bool = true) -> Bool {
-            chrome.setVisible(visible, video: video)
-            RunLoop.current.run(until: Date().addingTimeInterval(0.2))
+            chrome.setVisible(visible, video: video, voiceOver: false)
+            let end = Date().addingTimeInterval(2)
+            while buttons?.isHidden != !visible && Date() < end { RunLoop.current.run(until: Date().addingTimeInterval(0.02)) }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
             let alpha: CGFloat = visible ? 1 : 0
             return buttons?.alphaValue == alpha && chrome.shade.alphaValue == (video ? alpha : 0) && buttons?.isHidden == !visible
         }
@@ -35,8 +38,25 @@ enum TestPlayerWindow {
         precondition(settled(true, video: false), "a song gets the buttons but no dark shade")
         precondition(settled(false, video: false), "the buttons of a song hide too")
         precondition(settled(true), "and come back")
+        precondition(!chrome.setVisible(true, video: true, voiceOver: false), "the same state again starts no animation, a mouse move does not restart the fade")
+        precondition(chrome.setVisible(false, video: true, voiceOver: false) && !chrome.setVisible(false, video: true, voiceOver: false), "only a change animates")
+        precondition(settled(false), "the buttons are hidden")
+        precondition(settled(true), "the buttons are back")
+        RunLoop.current.run(until: Date().addingTimeInterval(1))
+        precondition(chrome.setVisible(false, video: true, voiceOver: true), "hiding with VoiceOver still animates")
+        RunLoop.current.run(until: Date().addingTimeInterval(1))
+        precondition(buttons?.alphaValue == 0 && buttons?.isHidden == false, "with VoiceOver the hidden buttons stay in the accessibility tree")
+        precondition(settled(true), "and come back")
         precondition(WindowChrome.stripAction(nil) == #selector(NSWindow.performZoom(_:)) && WindowChrome.stripAction("Maximize") == #selector(NSWindow.performZoom(_:)), "an unset or Maximize setting zooms")
         precondition(WindowChrome.stripAction("Minimize") == #selector(NSWindow.performMiniaturize(_:)) && WindowChrome.stripAction("None") == nil, "Minimize minimizes and None does nothing")
+        precondition(WindowChrome.trackingOptions.contains(.activeAlways) && !WindowChrome.trackingOptions.contains(.activeInKeyWindow) && WindowChrome.trackingOptions.contains(.mouseMoved), "pointing at a window that is not the active one is seen too")
+        func centre(_ type: NSWindow.ButtonType) -> NSPoint {
+            let button = window.standardWindowButton(type)!
+            let frame = button.convert(button.bounds, to: nil)
+            return NSPoint(x: frame.midX, y: frame.midY)
+        }
+        precondition([NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton].allSatisfy { WindowChrome.overButtons(centre($0), in: window) }, "a pointer on any of the three buttons counts as over the controls")
+        precondition(!WindowChrome.overButtons(NSPoint(x: 300, y: 180), in: window) && !WindowChrome.overButtons(NSPoint(x: 300, y: centre(.closeButton).y), in: window), "a pointer on the picture does not")
         print("the window buttons and the dark gradient under them follow the panel: ok")
 
         func click(_ y: CGFloat, _ count: Int) -> NSEvent {
