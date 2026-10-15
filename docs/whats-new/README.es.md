@@ -13,15 +13,23 @@ Las palabras escritas en el idioma equivocado ya se corrigen también en Chrome,
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-En la versión de la web, corregir una palabra escrita en el idioma equivocado ya funciona en Chrome, Slack, VS Code, Discord y otras apps basadas en Chromium, mientras escribes y con el atajo para reescribir, así que “ghbdtn” también se convierte en “привет” allí. Desactiva la función o cierra pikapik y esas apps vuelven a como estaban.
+En la versión de la web, las palabras escritas en el idioma equivocado ya se corrigen también en Chrome, Slack, VS Code, Discord y apps parecidas, así que “ghbdtn” se convierte en “привет” allí también. Cuando desactivas la función o cierras pikapik, esas apps vuelven a como estaban.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Los botones 4 y 5 del ratón ya van atrás y adelante en casi cualquier app, y de nuevo en los Ajustes del propio pikapik. pikapik pulsa por ti el elemento Atrás o Adelante del menú o de la barra de herramientas de la app, en cualquier idioma, y las apps que ya entienden los botones siguen encargándose ellas mismas. En la versión de la Mac App Store esto vale para las ventanas de pikapik y las apps de Apple.
+Los botones laterales del ratón ya van atrás y adelante en casi cualquier app, y de nuevo en los Ajustes del propio pikapik: pikapik pulsa por ti el botón Atrás o Adelante de la propia app. En la versión de la Mac App Store esto funciona en pikapik y en las apps de Apple.
 
-Si hay dos copias de pikapik abiertas, por ejemplo la de la web y la de la App Store, solo la que abriste última cambia algo en tu Mac, así que los Ajustes siempre muestran lo que de verdad está pasando. Al salir, todo lo que cambió se devuelve a su sitio. También es nuevo, sobre todo en la versión de la web: clic central con tres dedos en el trackpad, imágenes que muestran qué hacen Salir de la app y Cerrar ventana, ⇧⌘. dentro de la fila Mostrar archivos ocultos, nombres para los grupos de la barra lateral y, en el reproductor, las teclas de QuickTime, el volumen con la rueda, la velocidad y seguir donde lo dejaste.
+Si hay dos copias de pikapik abiertas, por ejemplo la de la web y la de la App Store, solo la última que abriste cambia algo en tu Mac, así que los Ajustes siempre muestran lo que de verdad hay. Al salir, todo lo que cambió se devuelve a su sitio.
 
-**Pruébalo:** Ajustes › Teclado
+**También nuevo**
+
+- Clic central en el trackpad: toca con tres dedos, en la versión de la web.
+- Salir de la app y Cerrar ventana muestran en una imagen lo que hacen las teclas.
+- ⇧⌘. ahora está justo en la fila Mostrar archivos ocultos.
+- La barra lateral de los Ajustes tiene nombres de grupos.
+- Reproductor, en la versión de la web: las mismas teclas que en QuickTime Player, volumen con la rueda del ratón, velocidad, y sigue donde lo dejaste.
+
+**Pruébalo:** Ajustes › Teclado, Ajustes › Ratón
 
 **Corregido**
 

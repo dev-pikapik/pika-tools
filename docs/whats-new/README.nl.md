@@ -13,15 +13,23 @@ Woorden die je in de verkeerde taal typte, worden nu ook in Chrome, Slack en VS 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-In de versie van de website werkt het verbeteren van een woord dat je in de verkeerde taal typte nu ook in Chrome, Slack, VS Code, Discord en andere apps op basis van Chromium, tijdens het typen en met de sneltoets om opnieuw te typen, dus “ghbdtn” wordt daar ook “привет”. Zet de functie uit of stop pikapik, en die apps worden teruggezet zoals ze waren.
+In de versie van de website worden woorden die je in de verkeerde taal typte nu ook verbeterd in Chrome, Slack, VS Code, Discord en vergelijkbare apps, dus “ghbdtn” wordt daar ook “привет”. Als je de functie uitzet of pikapik stopt, worden die apps teruggezet zoals ze waren.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Muisknoppen 4 en 5 gaan nu in bijna elke app terug en vooruit, en weer in de instellingen van pikapik zelf. pikapik drukt voor je op het onderdeel Terug of Vooruit in het menu of de werkbalk van de app, in elke taal, en apps die de knoppen al begrijpen, handelen ze zelf af. In de Mac App Store-versie geldt dit voor de vensters van pikapik en de apps van Apple.
+De zijknoppen van je muis gaan nu in bijna elke app terug en vooruit, en weer in de instellingen van pikapik zelf: pikapik drukt voor je op de knop Terug of Vooruit van de app zelf. In de Mac App Store-versie werkt dit in pikapik en in de apps van Apple.
 
-Zijn er twee exemplaren van pikapik open, bijvoorbeeld dat van de website en dat uit de App Store, dan verandert alleen het laatst geopende iets op je Mac, zodat de instellingen altijd tonen wat er echt is. Bij het stoppen wordt alles wat het veranderde teruggezet. Ook nieuw, vooral in de versie van de website: een middelklik met drie vingers op de trackpad, plaatjes die laten zien wat Stop app en Sluit venster doen, ⇧⌘. direct in de rij Verborgen bestanden tonen, namen voor de groepen in de navigatiekolom en in de speler de toetsen van QuickTime, volume met het scrollwiel, snelheid en verdergaan waar je was gebleven.
+Zijn er twee exemplaren van pikapik open, bijvoorbeeld dat van de website en dat uit de App Store, dan verandert alleen het laatst geopende iets op je Mac, zodat de instellingen altijd tonen wat er echt is. Bij het stoppen wordt alles wat het veranderde teruggezet.
 
-**Probeer het:** Instellingen › Toetsenbord
+**Ook nieuw**
+
+- Middelklik op het trackpad: tik met drie vingers, in de versie van de website.
+- Stop app en Sluit venster laten in een plaatje zien wat de toetsen doen.
+- ⇧⌘. staat nu direct in de rij Verborgen bestanden tonen.
+- De navigatiekolom van de instellingen heeft namen voor de groepen.
+- Speler, in de versie van de website: dezelfde toetsen als in QuickTime Player, volume met het scrollwiel, snelheid, en hij gaat verder waar je was gebleven.
+
+**Probeer het:** Instellingen › Toetsenbord, Instellingen › Muis
 
 **Opgelost**
 

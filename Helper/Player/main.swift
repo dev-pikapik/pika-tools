@@ -56,6 +56,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     @objc func openDocument(_ sender: Any?) {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = true
+        panel.canChooseDirectories = true
         panel.allowedContentTypes = PlayerFormats.extensions.compactMap { UTType(filenameExtension: $0) }
         guard panel.runModal() == .OK else { return }
         for url in panel.urls { show(url) }
@@ -104,6 +105,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         ])
         _ = submenu(String(localized: "Playback"), [
             command(String(localized: "Play"), .playPause),
+            command(String(localized: "Next in Folder"), .next),
+            command(String(localized: "Previous in Folder"), .previous),
             .separator(),
             command(String(localized: "Back 5 Seconds"), .back),
             command(String(localized: "Forward 5 Seconds"), .forward),

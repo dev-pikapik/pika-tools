@@ -143,8 +143,8 @@ struct SideButtonsArt: View {
                 ArtMouse(sideButtons: true, back: backPressed, forward: forwardPressed)
                     .artScale(2.1)
                     .position(x: 62, y: 66)
-                number("5", pressed: forwardPressed).position(x: 22, y: 61)
-                number("4", pressed: backPressed).position(x: 22, y: 81)
+                arrow(swapped ? "chevron.left" : "chevron.right", pressed: forwardPressed).position(x: 22, y: 61)
+                arrow(swapped ? "chevron.right" : "chevron.left", pressed: backPressed).position(x: 22, y: 81)
                 ArtWindow(size: CGSize(width: Self.pageWidth, height: 98)) {
                     VStack(spacing: 0) {
                         HStack(spacing: 10) {
@@ -169,9 +169,9 @@ struct SideButtonsArt: View {
         }
     }
 
-    private func number(_ text: String, pressed: Bool) -> some View {
-        Text(verbatim: text)
-            .font(.system(size: 11, weight: .bold, design: .rounded))
+    private func arrow(_ symbol: String, pressed: Bool) -> some View {
+        Image(systemName: symbol)
+            .font(.system(size: 9, weight: .bold))
             .foregroundStyle(pressed ? Color.accentColor : Color.secondary)
     }
 
@@ -198,12 +198,12 @@ private struct SideButtonsSettings: View {
             title: tool.title,
             subtitle: Text("Like a trackpad swipe"),
             hint: Text("Like a trackpad swipe"),
-            help: Text("Mouse buttons 4 and 5 go back and forward, like a trackpad swipe."),
+            help: Text("The two side buttons of the mouse go back and forward, like a trackpad swipe."),
             isOn: $tool.isEnabled
         )
         if inSettings {
             Toggle(isOn: $tool.swapsButtons) {
-                RowLabel(Text("Swap the side buttons"), Text(tool.swapsButtons ? "Button 4 goes forward, button 5 goes back" : "Button 4 goes back, button 5 goes forward"))
+                RowLabel(Text("Swap the side buttons"), Text(tool.swapsButtons ? "Rear button goes forward, front button goes back" : "Rear button goes back, front button goes forward"))
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Swap the side buttons"))

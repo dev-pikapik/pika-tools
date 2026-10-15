@@ -65,7 +65,7 @@ import IOKit
     }
 
     func set(_ level: Double, for id: CGDirectDisplayID) {
-        guard let i = monitors.firstIndex(where: { $0.id == id }) else { return }
+        guard MainCopy.canAct, let i = monitors.firstIndex(where: { $0.id == id }) else { return }
         monitors[i].level = min(max(level, 0), 1)
         UserDefaults.standard.set(monitors[i].level, forKey: Self.levelKey(monitors[i].key))
         #if !APPSTORE
@@ -75,13 +75,13 @@ import IOKit
     }
 
     func step(_ id: CGDirectDisplayID, up: Bool, fine: Bool) -> Double? {
-        guard let monitor = monitor(for: id) else { return nil }
+        guard MainCopy.canAct, let monitor = monitor(for: id) else { return nil }
         set(BrightnessMath.step(monitor.level, up: up, fine: fine), for: id)
         return self.monitor(for: id)?.level
     }
 
     func setDimsPicture(_ on: Bool, for id: CGDirectDisplayID) {
-        guard let i = monitors.firstIndex(where: { $0.id == id }) else { return }
+        guard MainCopy.canAct, let i = monitors.firstIndex(where: { $0.id == id }) else { return }
         monitors[i].dimsPicture = on
         UserDefaults.standard.set(on, forKey: Self.pictureKey(monitors[i].key))
         let monitor = monitors[i]
