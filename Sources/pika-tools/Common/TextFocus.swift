@@ -9,7 +9,36 @@ enum TextFocus {
     private static var owners: Set<ObjectIdentifier> = []
     private static var observer: NSObjectProtocol?
     private static var woken: Set<pid_t> = []
-    private static var enabled: [(pid: pid_t, attribute: String)] = []
+    private static var enabled: [Switched] = [] { didSet { Switched.save(enabled, journalKey) } }
+    private static let journalKey = "chromium-accessibility-original"
+
+    struct Switched: Codable, Equatable {
+        let bundleID: String
+        let pid: pid_t
+        let attribute: String
+        let before: Bool
+
+        static func putBack(_ entries: [Switched], bundleID: (pid_t) -> String?) -> [Switched] {
+            entries.filter { bundleID($0.pid) == $0.bundleID }
+        }
+
+        static func load(_ key: String) -> [Switched] {
+            UserDefaults.standard.data(forKey: key).flatMap { try? JSONDecoder().decode([Switched].self, from: $0) } ?? []
+        }
+
+        static func save(_ entries: [Switched], _ key: String) {
+            UserDefaults.standard.set(entries.isEmpty ? nil : try? JSONEncoder().encode(entries), forKey: key)
+        }
+    }
+
+    static func putBackAfterCrash() {
+        let saved = Switched.load(journalKey)
+        let stale = Switched.putBack(saved, bundleID: { NSRunningApplication(processIdentifier: $0)?.bundleIdentifier })
+        for entry in stale { setAccessibility(entry.attribute, entry.before, entry.pid) }
+        lock.lock()
+        Switched.save(enabled, journalKey)
+        lock.unlock()
+    }
 
     static func watch(_ owner: AnyObject) {
         lock.lock()
@@ -29,13 +58,15 @@ enum TextFocus {
         guard owners.isEmpty, let token = observer else { return lock.unlock() }
         observer = nil
         let restore = enabled
-        enabled = []
         woken = []
         lock.unlock()
         NSWorkspace.shared.notificationCenter.removeObserver(token)
-        for (pid, attribute) in restore where NSRunningApplication(processIdentifier: pid)?.isTerminated == false {
-            setAccessibility(attribute, false, pid)
+        for entry in restore where NSRunningApplication(processIdentifier: entry.pid)?.isTerminated == false {
+            setAccessibility(entry.attribute, entry.before, entry.pid)
         }
+        lock.lock()
+        enabled.removeAll { restore.contains($0) }
+        lock.unlock()
     }
 
     private static func wake(_ pid: pid_t) {
@@ -57,18 +88,26 @@ enum TextFocus {
     }
 
     private static func enable(_ attribute: String, _ pid: pid_t) -> AXError {
-        let app = AXUIElementCreateApplication(pid)
-        AXUIElementSetMessagingTimeout(app, 0.15)
-        var current: CFTypeRef?
-        if AXUIElementCopyAttributeValue(app, attribute as CFString, &current) == .success, current as? Bool == true { return .success }
-        let error = setAccessibility(attribute, true, pid)
-        guard error == .success else { return error }
+        if isOn(pid, attribute) { return .success }
+        guard let bundleID = NSRunningApplication(processIdentifier: pid)?.bundleIdentifier else { return .failure }
+        let entry = Switched(bundleID: bundleID, pid: pid, attribute: attribute, before: false)
         lock.lock()
         let watching = observer != nil
-        if watching { enabled.append((pid, attribute)) }
+        if watching { enabled.append(entry) }
         lock.unlock()
-        if !watching { setAccessibility(attribute, false, pid) }
+        guard watching else { return .success }
+        let error = setAccessibility(attribute, true, pid)
+        lock.lock()
+        if error != .success { enabled.removeAll { $0 == entry } }
+        let dropped = error == .success && !enabled.contains(entry)
+        lock.unlock()
+        if dropped { setAccessibility(attribute, false, pid) }
         return error
+    }
+
+    private static func isOn(_ pid: pid_t, _ attribute: String) -> Bool {
+        let (value, error) = Self.value(AXUIElementCreateApplication(pid), attribute)
+        return error == .success && value as? Bool == true
     }
 
     @discardableResult
