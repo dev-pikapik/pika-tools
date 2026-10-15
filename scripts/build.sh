@@ -91,13 +91,14 @@ for ARCH in arm64 x86_64; do
     done
     for EXT in $MEDIA_EXTENSIONS; do
         MEDIA_SOURCES=(Extensions/MediaReader/*.swift)
-        [ "$EXT" = MediaReader ] || MEDIA_SOURCES=(Extensions/MediaDecoder/*.swift Extensions/MediaReader/Codecs.swift)
+        HEADER=MediaReader
+        [ "$EXT" = MediaReader ] || { MEDIA_SOURCES=(Extensions/MediaDecoder/*.swift Extensions/MediaReader/Codecs.swift); HEADER=FFmpeg; }
         swiftc -O -whole-module-optimization \
             -module-name "$EXT" \
             -target "$ARCH-apple-macos15.0" \
             -application-extension \
             -parse-as-library \
-            -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
+            -import-objc-header "Extensions/MediaReader/$HEADER.h" -I Vendor/ffmpeg/include \
             -Xlinker -e -Xlinker _EXExtensionMain -framework ExtensionFoundation \
             Vendor/ffmpeg/lib/*.dylib -Xlinker -dead_strip_dylibs \
             -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks \

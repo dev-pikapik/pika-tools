@@ -35,33 +35,10 @@ final class MediaDecoder: NSObject, MEVideoDecoder {
     init(_ codecType: CMVideoCodecType, _ description: CMVideoFormatDescription, _ manager: MEVideoDecoderPixelBufferManager) throws {
         self.manager = manager
         av_log_set_level(AV_LOG_QUIET)
-        let atoms = CMFormatDescriptionGetExtension(description, extensionKey: kCMFormatDescriptionExtension_SampleDescriptionExtensionAtoms) as? [String: Data]
-        guard let atom = atoms?[PikaCodec.atom], atom.count >= 5,
-              let id = PikaCodec.video.first(where: { PikaCodec.fourCC($0.1) == codecType })?.0,
-              let codec = id == AV_CODEC_ID_AV1 ? avcodec_find_decoder_by_name("libdav1d") : avcodec_find_decoder(id),
-              let context = avcodec_alloc_context3(codec) else { throw MEError(.unsupportedFeature) }
-        let bytes = [UInt8](atom)
-        presentationOrder = bytes[4] != 0
-        let dimensions = CMVideoFormatDescriptionGetDimensions(description)
-        context.pointee.codec_tag = bytes[0..<4].reduce(0) { $0 << 8 | UInt32($1) }
-        context.pointee.width = dimensions.width
-        context.pointee.height = dimensions.height
-        context.pointee.thread_count = 0
-        context.pointee.thread_type = FF_THREAD_SLICE
-        if !presentationOrder { context.pointee.flags |= AV_CODEC_FLAG_LOW_DELAY }
-        let extradata = bytes[5...]
-        if !extradata.isEmpty, let buffer = av_mallocz(extradata.count + Int(AV_INPUT_BUFFER_PADDING_SIZE))?.assumingMemoryBound(to: UInt8.self) {
-            buffer.update(from: Array(extradata), count: extradata.count)
-            context.pointee.extradata = buffer
-            context.pointee.extradata_size = Int32(extradata.count)
-        }
-        var options: OpaquePointer?
-        av_dict_set(&options, "max_frame_delay", "1", 0)
-        let opened = avcodec_open2(context, codec, &options)
-        av_dict_free(&options)
-        self.context = context
+        let (opened, order) = try openVideoCodec(codecType, description, lowDelay: true)
+        context = opened
+        presentationOrder = order
         super.init()
-        guard opened >= 0 else { throw MEError(.unsupportedFeature) }
     }
 
     deinit {
@@ -78,7 +55,7 @@ final class MediaDecoder: NSObject, MEVideoDecoder {
         queue.sync {
             drain?.cancel()
             drain = nil
-            guard let data = Self.bytes(sampleBuffer) else { return completionHandler(nil, [], MEError(.invalidParameter)) }
+            guard let data = Self.bytes(sampleBuffer) else { return completionHandler(nil, [], MediaError.invalidParameter) }
             let attachments = CMSampleBufferGetSampleAttachmentsArray(sampleBuffer, createIfNecessary: false) as? [[CFString: Any]]
             let sync = attachments?.first?[kCMSampleAttachmentKey_NotSync] as? Bool != true
             if sync { sinceSync = [] }
@@ -157,72 +134,17 @@ final class MediaDecoder: NSObject, MEVideoDecoder {
     }
 
     private func image(_ frame: UnsafeMutablePointer<AVFrame>) throws -> CVPixelBuffer {
-        let format = AVPixelFormat(frame.pointee.format)
-        guard let descriptor = av_pix_fmt_desc_get(format)?.pointee, descriptor.nb_components >= 3,
-              descriptor.flags & UInt64(AV_PIX_FMT_FLAG_RGB | AV_PIX_FMT_FLAG_PAL) == 0, descriptor.flags & UInt64(AV_PIX_FMT_FLAG_PLANAR) != 0 else {
-            throw MEError(.unsupportedFeature)
-        }
-        let depth = Int(descriptor.comp.0.depth)
-        let full = frame.pointee.color_range == AVCOL_RANGE_JPEG || [AV_PIX_FMT_YUVJ420P, AV_PIX_FMT_YUVJ422P, AV_PIX_FMT_YUVJ444P].contains(format)
-        let type: OSType
-        switch (descriptor.log2_chroma_w, descriptor.log2_chroma_h, depth > 8) {
-        case (1, 1, false): type = full ? kCVPixelFormatType_420YpCbCr8BiPlanarFullRange : kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange
-        case (1, 1, true): type = full ? kCVPixelFormatType_420YpCbCr10BiPlanarFullRange : kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange
-        case (1, 0, false): type = full ? kCVPixelFormatType_422YpCbCr8BiPlanarFullRange : kCVPixelFormatType_422YpCbCr8BiPlanarVideoRange
-        case (1, 0, true): type = full ? kCVPixelFormatType_422YpCbCr10BiPlanarFullRange : kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange
-        case (0, 0, false): type = full ? kCVPixelFormatType_444YpCbCr8BiPlanarFullRange : kCVPixelFormatType_444YpCbCr8BiPlanarVideoRange
-        case (0, 0, true): type = full ? kCVPixelFormatType_444YpCbCr10BiPlanarFullRange : kCVPixelFormatType_444YpCbCr10BiPlanarVideoRange
-        default: throw MEError(.unsupportedFeature)
-        }
-        let width = frame.pointee.width, height = frame.pointee.height
-        if layout.map({ $0 != (type, width, height) }) ?? true {
-            manager.pixelBufferAttributes = [
-                kCVPixelBufferPixelFormatTypeKey as String: type,
-                kCVPixelBufferWidthKey as String: width,
-                kCVPixelBufferHeightKey as String: height,
-                kCVPixelBufferIOSurfacePropertiesKey as String: [String: String](),
-            ]
-            layout = (type, width, height)
-        }
-        let buffer = try manager.makePixelBuffer()
-        CVPixelBufferLockBaseAddress(buffer, [])
-        defer { CVPixelBufferUnlockBaseAddress(buffer, []) }
-        let chromaWidth = (Int(width) + (1 << descriptor.log2_chroma_w) - 1) >> descriptor.log2_chroma_w
-        let chromaHeight = (Int(height) + (1 << descriptor.log2_chroma_h) - 1) >> descriptor.log2_chroma_h
-        let source = (frame.pointee.data.0!, frame.pointee.data.1!, frame.pointee.data.2!)
-        let stride = (Int(frame.pointee.linesize.0), Int(frame.pointee.linesize.1), Int(frame.pointee.linesize.2))
-        let luma = CVPixelBufferGetBaseAddressOfPlane(buffer, 0)!.assumingMemoryBound(to: UInt8.self)
-        let chroma = CVPixelBufferGetBaseAddressOfPlane(buffer, 1)!.assumingMemoryBound(to: UInt8.self)
-        let lumaStride = CVPixelBufferGetBytesPerRowOfPlane(buffer, 0)
-        let chromaStride = CVPixelBufferGetBytesPerRowOfPlane(buffer, 1)
-        if depth == 8 {
-            for y in 0..<Int(height) { (luma + y * lumaStride).update(from: source.0 + y * stride.0, count: Int(width)) }
-            for y in 0..<chromaHeight {
-                let u = source.1 + y * stride.1, v = source.2 + y * stride.2, out = chroma + y * chromaStride
-                for x in 0..<chromaWidth {
-                    out[2 * x] = u[x]
-                    out[2 * x + 1] = v[x]
-                }
+        try makePixelBuffer(frame) { type, width, height in
+            if layout.map({ $0 != (type, width, height) }) ?? true {
+                manager.pixelBufferAttributes = [
+                    kCVPixelBufferPixelFormatTypeKey as String: type,
+                    kCVPixelBufferWidthKey as String: width,
+                    kCVPixelBufferHeightKey as String: height,
+                    kCVPixelBufferIOSurfacePropertiesKey as String: [String: String](),
+                ]
+                layout = (type, width, height)
             }
-        } else {
-            let shift = UInt16(16 - depth)
-            for y in 0..<Int(height) {
-                let row = UnsafeRawPointer(source.0 + y * stride.0).assumingMemoryBound(to: UInt16.self)
-                let out = UnsafeMutableRawPointer(luma + y * lumaStride).assumingMemoryBound(to: UInt16.self)
-                for x in 0..<Int(width) { out[x] = row[x] << shift }
-            }
-            for y in 0..<chromaHeight {
-                let u = UnsafeRawPointer(source.1 + y * stride.1).assumingMemoryBound(to: UInt16.self)
-                let v = UnsafeRawPointer(source.2 + y * stride.2).assumingMemoryBound(to: UInt16.self)
-                let out = UnsafeMutableRawPointer(chroma + y * chromaStride).assumingMemoryBound(to: UInt16.self)
-                for x in 0..<chromaWidth {
-                    out[2 * x] = u[x] << shift
-                    out[2 * x + 1] = v[x] << shift
-                }
-            }
+            return try manager.makePixelBuffer()
         }
-        let colors = colorAttachments(primaries: frame.pointee.color_primaries, transfer: frame.pointee.color_trc, matrix: frame.pointee.colorspace, height: height)
-        CVBufferSetAttachments(buffer, colors as CFDictionary, .shouldPropagate)
-        return buffer
     }
 }

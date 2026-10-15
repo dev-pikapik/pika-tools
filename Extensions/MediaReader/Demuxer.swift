@@ -1,6 +1,5 @@
 import CoreMedia
 import Foundation
-import MediaExtension
 
 struct PacketKey: Hashable {
     let position: Int64
@@ -159,19 +158,19 @@ final class Demuxer {
         let bufferSize: Int32 = 1 << 16
         guard let buffer = av_malloc(Int(bufferSize)),
               let io = avio_alloc_context(buffer.assumingMemoryBound(to: UInt8.self), bufferSize, 0, Unmanaged.passUnretained(reader).toOpaque(), readBytes, nil, seekBytes) else {
-            throw MEError(.allocationFailure)
+            throw MediaError.allocationFailure
         }
         var context = avformat_alloc_context()
         context?.pointee.pb = io
         guard avformat_open_input(&context, name, nil, nil) == 0, let context else {
             Self.free(io)
-            throw MEError(.unsupportedFeature)
+            throw MediaError.unsupportedFeature
         }
         guard avformat_find_stream_info(context, nil) >= 0 else {
             var failed: UnsafeMutablePointer<AVFormatContext>? = context
             avformat_close_input(&failed)
             Self.free(io)
-            throw MEError(.parsingFailure)
+            throw MediaError.parsingFailure
         }
         self.context = context
         let container = String(cString: context.pointee.iformat.pointee.name)
@@ -200,7 +199,7 @@ final class Demuxer {
             let preferred = ofType.first { context.pointee.streams[Int($0.index)]!.pointee.disposition & AV_DISPOSITION_DEFAULT != 0 } ?? ofType.first
             preferred?.enabled = true
         }
-        guard !found.isEmpty else { throw MEError(.unsupportedFeature) }
+        guard !found.isEmpty else { throw MediaError.unsupportedFeature }
     }
 
     deinit {
@@ -307,9 +306,56 @@ final class Demuxer {
             if let data = packet.data { return data }
             stream.head = nil
             try reach(packet, stream)
-            guard let data = packet.data else { throw MEError(.parsingFailure) }
+            guard let data = packet.data else { throw MediaError.parsingFailure }
             return data
         }
+    }
+
+    func sampleBuffer(_ packets: [Packet], _ stream: Track) throws -> CMSampleBuffer {
+        let parts = try packets.map { try data($0, stream) }
+        let total = parts.reduce(0) { $0 + $1.count }
+        var block: CMBlockBuffer?
+        guard total > 0, CMBlockBufferCreateWithMemoryBlock(allocator: nil, memoryBlock: nil, blockLength: total, blockAllocator: nil, customBlockSource: nil,
+                                                            offsetToData: 0, dataLength: total, flags: kCMBlockBufferAssureMemoryNowFlag, blockBufferOut: &block) == noErr,
+              let block else { throw MediaError.allocationFailure }
+        var offset = 0
+        for part in parts {
+            _ = part.withUnsafeBytes { CMBlockBufferReplaceDataBytes(with: $0.baseAddress!, blockBuffer: block, offsetIntoDestination: offset, dataLength: part.count) }
+            offset += part.count
+        }
+        let description = stream.format.description
+        var buffer: CMSampleBuffer?
+        var status: OSStatus
+        if stream.format.mediaType == kCMMediaType_Video {
+            var timing = packets.map { CMSampleTimingInfo(duration: stream.time($0.duration), presentationTimeStamp: stream.time($0.pts), decodeTimeStamp: stream.time($0.dts)) }
+            var sizes = parts.map(\.count)
+            status = CMSampleBufferCreateReady(allocator: nil, dataBuffer: block, formatDescription: description, sampleCount: packets.count,
+                                               sampleTimingEntryCount: timing.count, sampleTimingArray: &timing, sampleSizeEntryCount: sizes.count, sampleSizeArray: &sizes, sampleBufferOut: &buffer)
+            if let buffer, let attachments = CMSampleBufferGetSampleAttachmentsArray(buffer, createIfNecessary: true) as? [NSMutableDictionary] {
+                for (packet, attachment) in zip(packets, attachments) where !packet.sync || packet.open {
+                    attachment[kCMSampleAttachmentKey_NotSync] = true
+                    if packet.sync { attachment[kCMSampleAttachmentKey_PartialSync] = true }
+                }
+            }
+        } else {
+            guard let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(description)?.pointee else { throw MediaError.internalFailure }
+            if asbd.mFormatID == kAudioFormatLinearPCM {
+                status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(allocator: nil, dataBuffer: block, formatDescription: description,
+                                                                              sampleCount: total / Int(asbd.mBytesPerFrame), presentationTimeStamp: stream.time(packets[0].pts), packetDescriptions: nil, sampleBufferOut: &buffer)
+            } else {
+                var start: Int64 = 0
+                var descriptions: [AudioStreamPacketDescription] = []
+                for (packet, part) in zip(packets, parts) {
+                    let frames = asbd.mFramesPerPacket == 0 ? UInt32(max(0, av_rescale_q(packet.duration, stream.timeBase, AVRational(num: 1, den: Int32(asbd.mSampleRate))))) : 0
+                    descriptions.append(AudioStreamPacketDescription(mStartOffset: start, mVariableFramesInPacket: frames, mDataByteSize: UInt32(part.count)))
+                    start += Int64(part.count)
+                }
+                status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(allocator: nil, dataBuffer: block, formatDescription: description,
+                                                                              sampleCount: packets.count, presentationTimeStamp: stream.time(packets[0].pts), packetDescriptions: &descriptions, sampleBufferOut: &buffer)
+            }
+        }
+        guard status == noErr, let buffer else { throw MediaError.internalFailure }
+        return buffer
     }
 
     private func microseconds(_ ticks: Int64, _ stream: Track) -> Int64 {
@@ -324,12 +370,12 @@ final class Demuxer {
             try read(stream) { $0 === packet || $0.dts > packet.dts }
             back = back == 0 ? Int64(AV_TIME_BASE) : back * 8
         }
-        if stream.head !== packet { throw MEError(.parsingFailure) }
+        if stream.head !== packet { throw MediaError.parsingFailure }
     }
 
     private func seek(to time: Int64) throws {
-        guard let context else { throw MEError(.internalFailure) }
-        guard av_seek_frame(context, -1, time, AVSEEK_FLAG_BACKWARD | AVSEEK_FLAG_ANY) >= 0 || av_seek_frame(context, -1, time, AVSEEK_FLAG_ANY) >= 0 else { throw MEError(.parsingFailure) }
+        guard let context else { throw MediaError.internalFailure }
+        guard av_seek_frame(context, -1, time, AVSEEK_FLAG_BACKWARD | AVSEEK_FLAG_ANY) >= 0 || av_seek_frame(context, -1, time, AVSEEK_FLAG_ANY) >= 0 else { throw MediaError.parsingFailure }
         context.pointee.pb.pointee.error = 0
         for stream in streams {
             stream.head = nil
@@ -346,7 +392,7 @@ final class Demuxer {
     }
 
     private func readPacket() throws -> Int32? {
-        guard let context, let packet else { throw MEError(.internalFailure) }
+        guard let context, let packet else { throw MediaError.internalFailure }
         for _ in 0..<64 {
             let result = av_read_frame(context, packet)
             if result == PikaErrorEOF {
@@ -356,14 +402,14 @@ final class Demuxer {
                 return nil
             }
             if result < 0 {
-                if context.pointee.pb.pointee.error < 0 { throw MEError(.parsingFailure) }
+                if context.pointee.pb.pointee.error < 0 { throw MediaError.parsingFailure }
                 continue
             }
             defer { av_packet_unref(packet) }
             route(packet.pointee)
             return packet.pointee.stream_index
         }
-        throw MEError(.parsingFailure)
+        throw MediaError.parsingFailure
     }
 
     private func route(_ packet: AVPacket) {

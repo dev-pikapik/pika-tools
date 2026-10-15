@@ -76,7 +76,7 @@ final class TrackReader: NSObject, METrackReader {
 
     private func cursor(_ completionHandler: @Sendable ((any MESampleCursor)?, (any Error)?) -> Void, _ find: () throws -> Packet?) {
         do {
-            guard let packet = try find() else { throw MEError(.noSamples) }
+            guard let packet = try find() else { throw MediaError.noSamples }
             completionHandler(SampleCursor(demuxer, stream, packet), nil)
         } catch {
             completionHandler(nil, error)
@@ -146,7 +146,7 @@ final class SampleCursor: NSObject, MESampleCursor {
     func stepByPresentationTime(_ deltaPresentationTime: CMTime, completionHandler: @escaping @Sendable (CMTime, Bool, (any Error)?) -> Void) {
         do {
             let target = packet.pts + stream.ticks(deltaPresentationTime)
-            guard let found = try demuxer.locate(stream, target) else { throw MEError(.noSamples) }
+            guard let found = try demuxer.locate(stream, target) else { throw MediaError.noSamples }
             packet = found
             let pinned = try target < packet.pts || (target >= packet.pts + packet.duration && demuxer.next(packet, stream) == nil)
             completionHandler(presentationTimeStamp, pinned, nil)
@@ -159,7 +159,7 @@ final class SampleCursor: NSObject, MESampleCursor {
         do {
             var packets = [packet]
             if let end = (endSampleCursor as? SampleCursor)?.packet, end !== packet {
-                guard end.dts > packet.dts else { throw MEError(.noSamples) }
+                guard end.dts > packet.dts else { throw MediaError.noSamples }
                 while packets.count < 4096, let last = packets.last, last !== end, let next = try demuxer.next(last, stream) { packets.append(next) }
             }
             completionHandler(try makeSampleBuffer(packets), nil)
@@ -190,49 +190,6 @@ final class SampleCursor: NSObject, MESampleCursor {
     }
 
     func makeSampleBuffer(_ packets: [Packet]) throws -> CMSampleBuffer {
-        let parts = try packets.map { try demuxer.data($0, stream) }
-        let total = parts.reduce(0) { $0 + $1.count }
-        var block: CMBlockBuffer?
-        guard total > 0, CMBlockBufferCreateWithMemoryBlock(allocator: nil, memoryBlock: nil, blockLength: total, blockAllocator: nil, customBlockSource: nil,
-                                                            offsetToData: 0, dataLength: total, flags: kCMBlockBufferAssureMemoryNowFlag, blockBufferOut: &block) == noErr,
-              let block else { throw MEError(.allocationFailure) }
-        var offset = 0
-        for part in parts {
-            _ = part.withUnsafeBytes { CMBlockBufferReplaceDataBytes(with: $0.baseAddress!, blockBuffer: block, offsetIntoDestination: offset, dataLength: part.count) }
-            offset += part.count
-        }
-        let description = stream.format.description
-        var buffer: CMSampleBuffer?
-        var status: OSStatus
-        if stream.format.mediaType == kCMMediaType_Video {
-            var timing = packets.map { CMSampleTimingInfo(duration: stream.time($0.duration), presentationTimeStamp: stream.time($0.pts), decodeTimeStamp: stream.time($0.dts)) }
-            var sizes = parts.map(\.count)
-            status = CMSampleBufferCreateReady(allocator: nil, dataBuffer: block, formatDescription: description, sampleCount: packets.count,
-                                               sampleTimingEntryCount: timing.count, sampleTimingArray: &timing, sampleSizeEntryCount: sizes.count, sampleSizeArray: &sizes, sampleBufferOut: &buffer)
-            if let buffer, let attachments = CMSampleBufferGetSampleAttachmentsArray(buffer, createIfNecessary: true) as? [NSMutableDictionary] {
-                for (packet, attachment) in zip(packets, attachments) where !packet.sync || packet.open {
-                    attachment[kCMSampleAttachmentKey_NotSync] = true
-                    if packet.sync { attachment[kCMSampleAttachmentKey_PartialSync] = true }
-                }
-            }
-        } else {
-            guard let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(description)?.pointee else { throw MEError(.internalFailure) }
-            if asbd.mFormatID == kAudioFormatLinearPCM {
-                status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(allocator: nil, dataBuffer: block, formatDescription: description,
-                                                                              sampleCount: total / Int(asbd.mBytesPerFrame), presentationTimeStamp: presentationTimeStamp, packetDescriptions: nil, sampleBufferOut: &buffer)
-            } else {
-                var start: Int64 = 0
-                var descriptions: [AudioStreamPacketDescription] = []
-                for (packet, part) in zip(packets, parts) {
-                    let frames = asbd.mFramesPerPacket == 0 ? UInt32(max(0, av_rescale_q(packet.duration, stream.timeBase, AVRational(num: 1, den: Int32(asbd.mSampleRate))))) : 0
-                    descriptions.append(AudioStreamPacketDescription(mStartOffset: start, mVariableFramesInPacket: frames, mDataByteSize: UInt32(part.count)))
-                    start += Int64(part.count)
-                }
-                status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(allocator: nil, dataBuffer: block, formatDescription: description,
-                                                                              sampleCount: packets.count, presentationTimeStamp: presentationTimeStamp, packetDescriptions: &descriptions, sampleBufferOut: &buffer)
-            }
-        }
-        guard status == noErr, let buffer else { throw MEError(.internalFailure) }
-        return buffer
+        try demuxer.sampleBuffer(packets, stream)
     }
 }
