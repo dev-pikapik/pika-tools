@@ -196,6 +196,16 @@ private struct PetSettings: View {
     }
 }
 
+extension PetTool {
+    static var talksSynonyms: String {
+        #if APPSTORE
+        "phrases, speech bubble, talk, say, messages"
+        #else
+        "phrases, speech bubble, talk, say, messages, updates"
+        #endif
+    }
+}
+
 struct PetArt: View {
     let on: Bool
     @Environment(\.colorScheme) private var scheme
