@@ -160,6 +160,12 @@ Awards and wardrobe unlocks live in `PetProgress`. `PetPhysics` reports what the
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetWardrobe.swift Sources/pika-tools/Tools/Pet/PetAwards.swift scripts/test-awards.swift -o build/test-awards && build/test-awards
 ```
 
+The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head) that `PetMind` fades between. `PetStage` cues a mood from what the pet already knows (being picked up, a kick, an award, a late hour) and the rules are plain numbers: a higher mood interrupts a lower one, the same cue extends a mood instead of restarting it, every mood rests before it can come back, and the pet starts at most one mood of its own every three minutes. The rules run without the app too:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
+```
+
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
 
 ```bash

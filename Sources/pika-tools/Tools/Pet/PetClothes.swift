@@ -33,6 +33,8 @@ struct PetClothes {
         static let indigo: Ink = (0.29, 0.33, 0.66), indigoDeep: Ink = (0.20, 0.23, 0.50)
         static let glass: Ink = (0.80, 0.90, 1.0), string: Ink = (0.36, 0.40, 0.48), feather: Ink = (0.87, 0.88, 0.95)
         static let shade: Ink = (0.10, 0.08, 0.20)
+        static let chestnut: Ink = (0.58, 0.33, 0.19), chestnutDeep: Ink = (0.40, 0.21, 0.12), espresso: Ink = (0.19, 0.09, 0.06)
+        static let pine: Ink = (0.16, 0.45, 0.43), pineDeep: Ink = (0.10, 0.31, 0.31)
     }
 
     private func c(_ k: Ink, _ a: Double = 1) -> Color {
@@ -53,10 +55,12 @@ struct PetClothes {
         case .back: return o[.back].map { inside(back($0)) } ?? []
         case .feet: return o[.feet].map(shoes) ?? []
         case .base, .outer:
-            guard let item = o[.body], [.hoodie, .labcoat, .tux].contains(item) == (layer == .outer) else { return [] }
+            guard let item = o[.body], [.hoodie, .labcoat, .tux, .tailcoat, .tweed].contains(item) == (layer == .outer) else { return [] }
             return top(item)
         case .legs: return o[.legs].map(legs) ?? []
         case .neck: return (o[.back] == .cape ? collar : []) + (o[.neck].map(scarf) ?? [])
+        case .prop: return o[.back] == .cane ? cane : []
+        case .whiskers: return o[.whiskers].map(moustache) ?? []
         case .face: return o[.face].map(face) ?? []
         case .head:
             guard let item = o[.head] else { return [] }
@@ -64,7 +68,6 @@ struct PetClothes {
             let fit = CGAffineTransform(scaleX: width / 12, y: height / 11).concatenating(CGAffineTransform(translationX: 0, y: -height / 2))
             return hat(item).map { ($0.0.applying(fit), $0.1) }
         case .glass: return o[.head] == .helmet ? glass : []
-        case .prop, .whiskers: return []
         }
     }
 
@@ -211,6 +214,47 @@ struct PetClothes {
             shine.addPath(poly([P(-3.55, -0.4), P(-2.95, -0.4), P(-3.05, 0.75), P(-3.55, 0.7)]))
             shine.addPath(poly([P(-0.35, -1.0), P(0, -3.3), P(0.15, -3.0), P(-0.05, -1.0)]))
             return [(back.applying(lean), c(Dye.goldDeep)), (gold.applying(lean), c(Dye.gold)), (oval(0, 0.32, 0.8, 0.62).applying(lean), c(Dye.turquoise)), (pinks.applying(lean), c(Dye.pink)), (shine.applying(lean), c(Dye.white, 0.6))]
+        case .bowler:
+            let lean = CGAffineTransform(translationX: 0, y: -1.0).concatenating(CGAffineTransform(rotationAngle: -0.07)).concatenating(CGAffineTransform(translationX: 0, y: 1.0))
+            let dome = blob([P(-4.1, 1.0), P(-4.4, -1.0), P(-3.6, -3.3), P(-1.6, -4.7), P(1.6, -4.7), P(3.6, -3.3), P(4.4, -1.0), P(4.1, 1.0), P(0, 1.1)])
+            var ink = dome
+            ink.addPath(blob([P(-6.7, -0.4), P(-4.6, 0.4), P(0, 0.8), P(4.6, 0.4), P(6.7, -0.4), P(6.3, 0.7), P(3.6, 1.7), P(0, 1.9), P(-3.6, 1.7), P(-6.3, 0.7)]))
+            let band = poly([P(-4.6, -0.7), P(4.6, -0.7), P(4.6, 0.9), P(-4.6, 0.9)]).intersection(dome)
+            let shine = blob([P(-3.4, -1.4), P(-2.6, -3.0), P(-1.2, -3.9), P(-0.9, -3.5), P(-2.1, -2.6), P(-2.7, -1.1)])
+            return [(ink.applying(lean), c(Dye.ink)), (band.applying(lean), c(Dye.satin)), (shine.applying(lean), c(Dye.white, 0.2))]
+        case .quiff:
+            let sway = (pose.air ? 0.7 : 0.25 * sin(s * 2)) * (1 - pose.sit)
+            let hair = blob([P(-6.1, 3.4), P(-6.4, 1.0), P(-5.2, -1.0), P(-2.9, -2.0), P(-0.6, -3.5), P(1.8, -5.6 - sway * 0.3), P(4.4 + sway * 0.5, -6.9), P(6.6 + sway, -6.4), P(7.6 + sway, -4.6), P(5.9 + sway * 0.4, -4.1), P(5.0, -2.4), P(5.2, 0.2), P(4.4, 1.2), P(2.0, 1.0), P(-1.0, 0.9), P(-3.6, 1.6)], sharp: [8])
+            var deep = ribbon(trace([P(-5.4, 0.6), P(-2.6, -0.8), P(0.2, -2.6), P(2.8, -4.6), P(5.2 + sway * 0.5, -5.8)]), { 0.5 - 0.3 * $0 })
+            deep.addPath(ribbon(trace([P(-3.4, 1.0), P(-0.6, -0.4), P(2.0, -2.2), P(4.4, -3.8), P(6.6 + sway * 0.6, -4.6)]), { 0.5 - 0.3 * $0 }))
+            deep.addPath(ribbon(trace([P(0.4, 0.9), P(2.8, -0.2), P(5.0, -1.8)]), { 0.45 - 0.2 * $0 }))
+            let shine = ribbon(trace([P(-2.2, -1.9), P(0.4, -3.6), P(2.6, -5.5), P(4.8 + sway * 0.5, -6.2)]), { 0.2 + 0.7 * sin(.pi * $0) })
+            return [(hair, c(Dye.chestnut)), (deep, c(Dye.chestnutDeep)), (shine, c(Dye.white, 0.25))]
+        case .curls:
+            let spots: [(CGFloat, CGFloat, CGFloat)] = [(-5.2, 1.5, 1.3), (-5.5, -0.7, 1.5), (-3.9, -2.3, 1.7), (-1.1, -3.2, 1.8), (1.8, -2.9, 1.7), (4.2, -1.8, 1.6), (5.5, 0.1, 1.35), (-2.9, -0.3, 1.5), (0.4, -0.9, 1.6), (3.1, 0.1, 1.4)]
+            var edge = Path(), fill = Path(), spirals = Path(), shine = Path()
+            for (k, d) in spots.enumerated() {
+                let bob = pose.air ? -0.25 : 0.2 * sin(2 * s + CGFloat(k) * 1.3) * walk
+                let o = P(d.0, d.1 + bob), r = d.2
+                edge.addPath(oval(o.x + 0.1, o.y + 0.15, r + 0.3, r + 0.3))
+                fill.addPath(oval(o.x, o.y, r, r))
+                let turn = CGFloat(k) * 1.9
+                spirals.addPath(ribbon((0...10).map { j in let t = CGFloat(j) / 10, a = turn + t * 4.4, q = r * 0.66 * (1 - 0.65 * t); return P(o.x + q * cos(a), o.y + q * sin(a)) }, { _ in 0.34 }))
+                shine.addPath(oval(o.x - r * 0.45, o.y - r * 0.5, r * 0.25, r * 0.18).turned(-0.6, P(o.x - r * 0.45, o.y - r * 0.5)))
+            }
+            return [(edge, c(Dye.chestnutDeep)), (fill, c(Dye.chestnut)), (spirals, c(Dye.chestnutDeep)), (shine, c(Dye.white, 0.3))]
+        case .bun:
+            let sway = (pose.air ? 0.4 : 0.15 * sin(s * 2)) * (1 - pose.sit)
+            let cap = blob([P(-6.3, 3.6), P(-6.1, 2.0), P(-5.3, 0.4), P(-3.8, -0.6), P(-1.8, -1.1), P(0.4, -1.1), P(2.8, -0.9), P(4.6, -0.2), P(5.5, 0.9), P(5.5, 1.8), P(4.2, 1.3), P(2, 1.0), P(-0.5, 0.9), P(-3.0, 1.4), P(-4.6, 2.4), P(-5.3, 3.5)])
+            let o = P(-0.8 - sway, -3.5)
+            var knot = oval(o.x, o.y, 2.6, 2.5)
+            knot.addPath(oval(o.x, o.y + 2.0, 1.6, 0.9))
+            var deep = ribbon(trace([P(o.x - 1.9, o.y + 0.2), P(o.x - 1.2, o.y - 1.7), P(o.x + 0.4, o.y - 2.2), P(o.x + 1.8, o.y - 1.2)]), { _ in 0.35 })
+            deep.addPath(ribbon(trace([P(o.x - 1.3, o.y + 1.0), P(o.x - 0.4, o.y - 0.5), P(o.x + 0.7, o.y - 1.2)]), { _ in 0.35 }))
+            deep.addPath(ribbon(trace([P(o.x + 0.2, o.y + 1.4), P(o.x + 1.2, o.y + 0.2), P(o.x + 1.9, o.y - 0.5)]), { _ in 0.35 }))
+            let band = oval(o.x, o.y + 2.0, 1.55, 0.55)
+            let shine = oval(o.x - 0.9, o.y - 1.1, 0.7, 0.45).turned(-0.6, P(o.x - 0.9, o.y - 1.1))
+            return [(cap, c(Dye.chestnut)), (knot, c(Dye.chestnut)), (deep, c(Dye.chestnutDeep)), (band, c(Dye.turquoise)), (oval(o.x - 0.3, o.y + 2.0, 0.6, 0.2), c(Dye.white, 0.35)), (shine, c(Dye.white, 0.28))]
         default:
             return []
         }
@@ -287,6 +331,18 @@ struct PetClothes {
             mask.addPath(ribbon(trace([k, P(k.x - 1.5, k.y + 0.8 - 0.3 * f + droop * 0.4), P(k.x - (sealed ? 2.0 : 2.8), k.y + 1.8 + droop - 0.5 * f)]), { 1.15 - 0.4 * $0 }))
             let sheen = ribbon(trace([q(-2.6, -1.35), q(-0.6, -1.75), q(1.6, -1.6)]), { 0.2 + 0.4 * sin(.pi * $0) })
             return [(mask, c(Dye.midnight)), (sheen, c(Dye.white, 0.22))]
+        case .monocle:
+            let o = P(e.x + 0.1, e.y)
+            let drop = pose.air ? sin(pose.lift * 0.8) : sin(CGFloat(pose.step) + 0.5) * walk
+            let end = pose.air ? P(o.x - 4.6 + 0.5 * drop, o.y + 4.2) : P(o.x - 3.8 + 0.5 * drop, o.y + 5.2)
+            let chain = trace([P(o.x - 1.5, o.y + 1.5), P(o.x - 3.4, o.y + 2.0), end])
+            let rim = ring(o, 2.15, 1.6)
+            var gold = rim
+            gold.addPath(ribbon(chain, { _ in 0.32 }))
+            gold.addPath(oval(end.x, end.y, 0.42, 0.42))
+            let crescent = rim.subtracting(rim.applying(CGAffineTransform(translationX: -0.45, y: -0.45)))
+            let glint = ribbon((0...6).map { k in let a = 3.5 + CGFloat(k) / 6 * 0.9; return P(o.x + 1.1 * cos(a), o.y + 1.1 * sin(a)) }, { _ in 0.4 })
+            return [(oval(o.x, o.y, 1.6, 1.6), c(Dye.glass, 0.22)), (gold, c(Dye.gold)), (crescent, c(Dye.goldDeep)), (glint, c(Dye.white, 0.8))]
         default:
             return []
         }
@@ -297,11 +353,60 @@ struct PetClothes {
         return [(ribbon(trace([P(-half + 0.2, n - 0.5), P(0, n + 0.25), P(3.6, n + 0.55), P(half - 0.2, n + 0.2)]), { _ in 0.75 }), c(Dye.violet)), (oval(3.6, n + 0.55, 0.62, 0.62), c(Dye.gold))]
     }
 
+    private var cane: Layers {
+        let w = half, s = CGFloat(pose.step), air = pose.air
+        let bob = air ? 0 : 0.8 * (1 + 0.7 * pose.bounce) * abs(sin(s)) * (1 - pose.sit)
+        let floor = height / 2 + 1.8 - 1.4 * pose.sit + (pose.outfit[.feet] == .skates ? 1.2 * (1 - pose.sit) : 0) + bob
+        let grip = P(w + 1.0, waist + 1.4)
+        let tip = air ? P(grip.x + 5.0 * sin(0.3 + 0.3 * sin(pose.lift * 0.8)), grip.y + 4.8) : P(grip.x + 0.8 + 1.4 * sin(s) * walk, floor - 0.9 * max(0, cos(s)) * walk)
+        let shaft = trace([grip, P((grip.x + tip.x) / 2, (grip.y + tip.y) / 2), tip], 4)
+        let crook = trace([grip, P(grip.x, grip.y - 1.0), P(grip.x + 0.5, grip.y - 1.8), P(grip.x + 1.3, grip.y - 2.0), P(grip.x + 2.0, grip.y - 1.4)])
+        var gold = ribbon(crook, { 1.05 - 0.15 * $0 })
+        gold.addPath(ribbon(Array(shaft.prefix(3)), { _ in 1.1 }))
+        gold.addPath(oval(crook[crook.count - 1].x, crook[crook.count - 1].y, 0.55, 0.55))
+        let ferrule = ribbon(Array(shaft.suffix(3)), { _ in 1.05 })
+        let gleam = ribbon(Array(shaft.dropFirst(3)), { _ in 0.22 }).offsetBy(dx: -0.26, dy: 0)
+        let glint = ribbon(trace([P(grip.x - 0.1, grip.y - 1.7), P(grip.x + 0.6, grip.y - 1.35)]), { _ in 0.28 })
+        return [(ribbon(shaft, { _ in 0.95 }), c(Dye.satin)), (gleam, c(Dye.mist, 0.55)), (gold, c(Dye.gold)), (ferrule, c(Dye.steel)), (glint, c(Dye.white, 0.7))]
+    }
+
+    private func moustache(_ item: PetItem) -> Layers {
+        let e = eye, s = CGFloat(pose.step), y = e.y + 2.5, x: CGFloat = 4.9
+        let f = pose.air ? sin(pose.lift * 0.9) : sin(2 * s) * walk
+        switch item {
+        case .handlebar:
+            var hair = oval(x, y + 0.35, 0.9, 0.6)
+            var shine = Path()
+            for d in [-1.0, 1.0] as [CGFloat] {
+                let g = f * (d > 0 ? 1 : -0.8)
+                let line = trace([P(x, y + 0.3), P(x + 0.8 * d, y + 0.5), P(x + 1.5 * d, y + 0.4), P(x + 1.95 * d, y + 0.3 * g), P(x + 1.85 * d, y - 0.5 + 0.3 * g), P(x + 1.45 * d, y - 0.65 + 0.3 * g)], 4)
+                hair.addPath(ribbon(line, { 0.4 + 1.1 * pow(1 - $0, 1.3) }))
+                shine.addPath(ribbon(Array(line.prefix(9)), { 0.25 * (1 - $0) }).offsetBy(dx: 0, dy: -0.25))
+            }
+            return [(hair, c(Dye.chestnutDeep)), (shine, c(Dye.white, 0.3))]
+        case .chevron:
+            let g = 0.2 * f
+            let hair = blob([P(x - 2.0, y - 0.05), P(x - 1.0, y - 0.35), P(x, y - 0.4), P(x + 1.2, y - 0.35), P(x + 2.1, y + 0.05 + g), P(x + 1.7, y + 0.7 + g), P(x + 0.9, y + 0.85), P(x, y + 0.55), P(x - 0.9, y + 0.85), P(x - 1.7, y + 0.6 - g)], sharp: [3])
+            var streaks = ribbon(trace([P(x - 1.6, y - 0.05), P(x - 0.4, y - 0.2), P(x + 0.8, y - 0.2), P(x + 1.7, y)]), { _ in 0.22 })
+            streaks.addPath(ribbon(trace([P(x - 1.2, y + 0.3), P(x - 0.3, y + 0.15)]), { _ in 0.18 }))
+            return [(hair, c(Dye.chestnutDeep)), (streaks, c(Dye.chestnut))]
+        case .pencil:
+            var hair = Path()
+            for d in [-1.0, 1.0] as [CGFloat] {
+                let line = trace([P(x - 0.4 + 0.3 * d, y), P(x - 0.4 + 1.1 * d, y + 0.05), P(x - 0.4 + 1.9 * d, y - 0.2 + 0.3 * f * d), P(x - 0.4 + 2.4 * d, y - 0.6 + 0.3 * f * d)], 4)
+                hair.addPath(ribbon(line, { 1.1 - 0.7 * $0 }))
+            }
+            return [(hair, c(Dye.espresso))]
+        default:
+            return []
+        }
+    }
+
     private func scarf(_ item: PetItem) -> Layers {
-        let n = neck, w = half, s = CGFloat(pose.step)
+        let n = neck + (item == .cravat && pose.outfit[.whiskers] != nil ? 0.9 : 0), w = half, s = CGFloat(pose.step)
         switch item {
         case .bowtie:
-            let o = P(3.5, n + 1.05)
+            let o = P(3.5, n + (pose.outfit[.whiskers] == nil ? 1.05 : 1.85))
             var ink = blob([P(o.x - 0.3, o.y - 0.4), P(o.x - 2.2, o.y - 1.25), P(o.x - 2.5, o.y), P(o.x - 2.2, o.y + 1.25), P(o.x - 0.3, o.y + 0.4)])
             ink.addPath(blob([P(o.x + 0.3, o.y - 0.4), P(o.x + 1.8, o.y - 1.15), P(o.x + 2.05, o.y), P(o.x + 1.8, o.y + 1.15), P(o.x + 0.3, o.y + 0.4)]))
             var folds = poly([P(o.x - 0.5, o.y - 0.35), P(o.x - 2.0, o.y - 1.0), P(o.x - 2.2, o.y - 0.2)])
@@ -337,6 +442,15 @@ struct PetClothes {
             teal.addPath(fringe)
             let shadow = ribbon(trace([P(-w + 0.5, n + 1.7), P(0, n + 2.0), P(w - 0.5, n + 1.75)]), { _ in 0.9 })
             return [(shadow, c(Dye.shade, 0.14)), (teal, c(Dye.turquoise)), (cream, c(Dye.cream))]
+        case .cravat:
+            let flick = pose.air ? 0.6 * sin(pose.lift * 0.8) : 0.3 * sin(s + 0.8) * walk
+            let left = blob([P(1.0, n + 0.1), P(2.5, n - 0.5), P(4.1, n - 0.2), P(4.2, n + 1.0), P(3.9, n + 3.4), P(2.7, n + 3.0), P(1.6, n + 1.4)], sharp: [5])
+            let right = blob([P(3.9, n - 0.2), P(5.4, n - 0.6), P(6.4, n + 0.2), P(6.0, n + 1.5), P(5.6 + flick, n + 3.1), P(4.5 + flick, n + 3.6), P(4.0, n + 1.1)], sharp: [5])
+            var trim = ribbon(trace([P(2.8, n + 3.1), P(3.9, n + 3.45)]), { _ in 0.38 })
+            trim.addPath(ribbon(trace([P(4.6 + flick, n + 3.4), P(5.7 + flick, n + 3.0)]), { _ in 0.38 }))
+            let knot = oval(4.0, n + 0.55, 1.05, 0.85)
+            let pin = P(4.0, n + 0.6)
+            return [(left, c(Dye.lavender)), (right, c(Dye.lavender)), (trim, c(Dye.cream)), (knot, c(Dye.lavenderDeep)), (oval(2.7, n + 0.2, 0.9, 0.4), c(Dye.white, 0.4)), (oval(5.2, n + 0.1, 0.8, 0.35), c(Dye.white, 0.3)), (oval(pin.x, pin.y, 0.5, 0.5), c(Dye.goldDeep)), (oval(pin.x, pin.y, 0.36, 0.36), c(Dye.gold)), (oval(pin.x - 0.12, pin.y - 0.12, 0.1, 0.1), c(Dye.white, 0.85))]
         case .bandana:
             let f = pose.air ? sin(pose.lift * 0.9) : sin(2 * s) * walk
             var deep = ribbon(trace([P(-w + 0.1, n + 0.25), P(0, n + 0.55), P(w - 0.1, n + 0.3)]), { _ in 1.1 })
@@ -455,6 +569,55 @@ struct PetClothes {
             var pen = Path(roundedRect: CGRect(x: 0.2, y: n + 0.7, width: 0.6, height: 1.6), cornerRadius: 0.3)
             pen.addPath(Path(CGRect(x: 0.65, y: n + 0.9, width: 0.35, height: 0.9)))
             return [(white, c(Dye.white)), (v, c(Dye.white)), (mist, c(Dye.mist)), (pen, c(Dye.blue))]
+        case .tailcoat:
+            let flap = (pose.air ? 0.5 + 0.1 * sin(pose.lift * 0.6) : 0.1 * sin(2 * CGFloat(pose.step)) * walk) - (pose.hang ? pose.tilt * 0.5 : 0)
+            let hem = b + 0.4, pivot = P(-w + 1.0, waist - 0.6)
+            var coat = torso(-0.1, to: b + 1).intersection(poly([P(-w - 1, n - 1), P(w + 1, n - 1), P(w + 1, waist - 0.2), P(1.6, waist + 0.1), P(-1.0, waist + 1.3), P(-3.2, b), P(-w - 1, b + 1)]))
+            coat.addPath(sleeves)
+            let tails = poly([P(-w - 0.4, waist - 0.9), P(-1.8, waist - 0.9), P(-2.4, hem), P(-3.3, hem - 1.3), P(-4.1, hem), P(-w - 1.1, hem - 0.3)]).turned(flap, pivot)
+            let pleat = ribbon(trace([P(-3.3, hem - 1.3), P(-3.3, waist - 0.5)]), { _ in 0.35 }).turned(flap, pivot)
+            let n = n + (pose.outfit[.whiskers] == nil ? 0 : 0.5)
+            let shirt = poly([P(2.4, n + 0.25), P(5.8, n + 0.2), P(4.1, n + 3.7)])
+            var lapel = poly([P(1.7, n + 0.3), P(2.7, n + 0.2), P(4.1, n + 3.7), P(3.4, n + 3.4), P(3.0, n + 2.0)])
+            lapel.addPath(poly([P(5.6, n + 0.15), P(w - 0.1, n + 0.45), P(5.4, n + 1.9), P(4.9, n + 2.8), P(4.1, n + 3.7)]))
+            var rose = oval(5.1, n + 1.3, 0.55, 0.55)
+            rose.addPath(oval(4.8, n + 1.05, 0.3, 0.3))
+            return [(coat, c(Dye.midnight)), (tails, c(Dye.midnight)), (pleat, c(Dye.shade, 0.35)), (shirt, c(Dye.white)), (lapel, c(Dye.indigo)), (rose, c(Dye.pink))]
+        case .tweed:
+            var jacket = torso(-0.1, to: b + 1)
+            jacket.addPath(sleeves)
+            var weave = Path(), check = Path()
+            for r in 0..<6 {
+                for k in 0..<12 {
+                    let x = -w - 0.6 + CGFloat(k) * 1.15, y = n - 0.2 + CGFloat(r) * 1.0, up = k % 2 == 0
+                    weave.addPath(poly([P(x, y + (up ? 0.8 : 0)), P(x + 0.4, y + (up ? 0.8 : 0)), P(x + 1.55, y + (up ? 0 : 0.8)), P(x + 1.15, y + (up ? 0 : 0.8))]))
+                }
+            }
+            for k in 0..<5 { check.addRect(CGRect(x: -w - 0.2 + CGFloat(k) * 3.2, y: n - 1, width: 0.5, height: 12)) }
+            for k in 0..<3 { check.addRect(CGRect(x: -w - 2, y: n + 0.8 + CGFloat(k) * 2.5, width: 2 * w + 4, height: 0.5)) }
+            let shirt = poly([P(2.1, n + 0.4), P(w - 0.2, n + 0.3), P(3.9, n + 3.1)])
+            var lapel = ribbon([P(1.9, n + 0.5), P(3.8, n + 3.2)], { 1.1 - 0.5 * $0 })
+            lapel.addPath(ribbon([P(w - 0.3, n + 1.0), P(4.0, n + 3.2)], { 0.9 - 0.4 * $0 }))
+            var buttons = oval(4.0, n + 3.9, 0.32, 0.32)
+            buttons.addPath(oval(4.0, n + 4.9, 0.32, 0.32))
+            var patch = oval(w + 0.15, n + 1.3, 0.42, 0.58)
+            patch.addPath(oval(-w - 0.1, n + 1.3, 0.42, 0.58))
+            let welt = ribbon([P(0.2, n + 1.7), P(1.9, n + 1.5)], { _ in 0.35 })
+            let square = poly([P(0.5, n + 1.6), P(0.6, n + 0.7), P(1.0, n + 1.1), P(1.4, n + 0.6), P(1.7, n + 1.5)])
+            return [(jacket, c(Dye.oat)), (weave.intersection(jacket), c(Dye.tan, 0.9)), (check.intersection(jacket), c(Dye.chestnut, 0.85)), (shirt, c(Dye.cream)), (lapel, c(Dye.tanDeep)), (patch, c(Dye.brown)), (welt, c(Dye.brown)), (square, c(Dye.pink)), (buttons, c(Dye.brown))]
+        case .waistcoat:
+            let vest = torso(0, to: b + 0.4)
+            let shirt = poly([P(2.2, n + 0.4), P(w - 0.2, n + 0.3), P(3.9, n + 2.4)])
+            var trim = ribbon([P(2.0, n + 0.45), P(3.9, n + 2.5)], { 0.6 - 0.2 * $0 })
+            trim.addPath(ribbon([P(w - 0.3, n + 0.95), P(4.0, n + 2.5)], { 0.55 - 0.2 * $0 }))
+            trim.addPath(ribbon([P(-0.4, n + 2.6), P(1.4, n + 2.5)], { _ in 0.35 }))
+            var buttons = Path()
+            for k in 0..<3 { buttons.addPath(oval(4.0, n + 2.9 + CGFloat(k) * 1.1, 0.3, 0.3)) }
+            let watch = P(2.0, n + 2.3)
+            var gold = ribbon(trace([P(4.0, n + 1.5), P(3.6, n + 2.2), P(2.8, n + 2.0), P(2.0, n + 1.1)]), { _ in 0.26 })
+            gold.addPath(ring(watch, 0.9, 0.62))
+            gold.addPath(oval(watch.x, watch.y - 1.05, 0.25, 0.3))
+            return [(vest, c(Dye.pine)), (shirt, c(Dye.cream)), (trim, c(Dye.pineDeep)), (buttons, c(Dye.gold)), (oval(watch.x, watch.y, 0.65, 0.65), c(Dye.ivory)), (gold, c(Dye.gold)), (oval(watch.x - 0.18, watch.y - 0.18, 0.12, 0.12), c(Dye.white, 0.8))]
         case .tux:
             var ink = torso(-0.1, to: b + 1)
             ink.addPath(blob([P(-w + 0.3, waist - 1.6), P(-w + 2.6, waist + 0.2), P(-w + 2.0, b + 0.7), P(-w + 0.4, b + 1.0), P(-w - 0.5, waist + 0.3)]))
@@ -533,6 +696,12 @@ struct PetClothes {
                 b.addPath(Path(CGRect(x: p.minX - 0.1, y: p.minY - 1.7, width: 2.8, height: 0.45)))
                 d.addPath(oval(p.maxX - 0.4, p.minY + 1.1, 0.55, 0.3))
                 d.addPath(Path(roundedRect: CGRect(x: p.minX + 0.4, y: p.minY - 1.0, width: 0.45, height: 1.7), cornerRadius: 0.22))
+            case .spats:
+                a.addPath(Path(roundedRect: CGRect(x: p.minX - 0.2, y: p.minY - 0.15, width: p.width + 0.6, height: p.height + 0.15), cornerRadius: 1.3))
+                d.addPath(Path(roundedRect: CGRect(x: p.minX - 0.25, y: p.maxY - 0.6, width: p.width + 0.65, height: 0.65), cornerRadius: 0.3))
+                b.addPath(Path(roundedRect: CGRect(x: p.minX - 0.1, y: p.minY - 1.3, width: p.width * 0.68, height: 1.3 + p.height * 0.62), cornerRadius: 0.55))
+                for k in 0..<3 { e.addPath(oval(p.minX + p.width * 0.68 - 0.5, p.minY - 0.7 + CGFloat(k) * 0.55, 0.15, 0.15)) }
+                f.addPath(Path(roundedRect: CGRect(x: p.minX + 0.2, y: p.minY - 1.0, width: 0.4, height: 1.5), cornerRadius: 0.2))
             case .skates:
                 for x in [p.minX + 0.9, p.maxX - 0.7] {
                     let o = P(x, p.maxY + 0.35)
@@ -554,6 +723,7 @@ struct PetClothes {
         switch item {
         case .sneakers: return [(a, c(Dye.white)), (b, c(Dye.blue))]
         case .boots: return [(a, c(Dye.yellow)), (b, c(Dye.yellowDeep)), (d, c(Dye.white, 0.55))]
+        case .spats: return [(a, c(Dye.ink)), (d, c(Dye.satin)), (b, c(Dye.cream)), (e, c(Dye.ink)), (f, c(Dye.white, 0.6))]
         case .skates: return [(a, c(Dye.turquoise)), (b, c(Dye.white)), (d, c(Dye.steelDeep)), (e, c(Dye.white)), (f, c(Dye.pink))]
         default: return []
         }
@@ -610,6 +780,32 @@ struct PetClothes {
             }
             let far = CGAffineTransform(translationX: 0.9, y: -0.7)
             return [(pair.turned(flap - 0.3, root).applying(far), c(Dye.lavender, 0.38)), (pair.turned(flap, root), c(Dye.glass, 0.6)), (rims.turned(flap, root), c(Dye.lavender, 0.85))]
+        case .umbrella:
+            let up = pose.air ? 1.1 + 0.5 * sin(pose.lift * 0.8) : 0
+            let handle = P(-w - 0.6, waist + 0.1), top = P(-1.6, -height / 2 - (pose.outfit[.head] == nil ? 4.1 : 6.0) - up)
+            let len = hypot(top.x - handle.x, top.y - handle.y)
+            let u = P((top.x - handle.x) / len, (top.y - handle.y) / len)
+            let at = CGAffineTransform(a: -u.y, b: u.x, c: u.x, d: u.y, tx: top.x, ty: top.y)
+            let sway = 0.05 * sin(2 * s) * walk - (pose.air ? 0.1 : 0) - (pose.hang ? pose.tilt * 0.6 : 0)
+            func rib(_ x: CGFloat, _ from: CGFloat, _ to: CGFloat) -> [CGPoint] {
+                (0...6).map { k in let a = from + (to - from) * CGFloat(k) / 6; return P(x * cos(a), 4.4 * sin(a)) }
+            }
+            var even = Path(), odd = Path()
+            for k in 0..<5 {
+                let x0 = -7.2 + 2.88 * CGFloat(k), x1 = x0 + 2.88
+                let scallop = (0...4).map { j in let t = CGFloat(j) / 4; return P(x1 + (x0 - x1) * t, 0.6 * sin(.pi * t)) }
+                let panel = poly(rib(x0, .pi / 2, 0) + scallop.reversed() + rib(x1, 0, .pi / 2))
+                if k % 2 == 0 { even.addPath(panel) } else { odd.addPath(panel) }
+            }
+            let wood = ribbon(trace([P(0, 0.5), P(0, -len / 2), P(0, -len)]), { _ in 0.6 })
+            var crook = ribbon(trace([P(0, -len), P(0, -len - 1.4), P(-0.4, -len - 2.3), P(-1.3, -len - 2.6), P(-2.0, -len - 2.0)]), { _ in 0.95 })
+            crook.addPath(oval(-2.0, -len - 2.0, 0.48, 0.48))
+            var gold = ribbon([P(0, 4.0), P(0, 5.5)], { 0.5 - 0.3 * $0 })
+            gold.addPath(oval(0, 0.4, 0.5, 0.5))
+            gold.addPath(ribbon([P(0, -len - 0.1), P(0, -len - 0.8)], { _ in 1.15 }))
+            let shine = ribbon(trace([P(-5.6, 1.6), P(-4.4, 2.9), P(-2.8, 3.7)]), { _ in 0.4 })
+            func fit(_ path: Path) -> Path { path.applying(at).turned(sway, handle) }
+            return [(fit(wood), c(Dye.chestnutDeep)), (fit(crook), c(Dye.chestnut)), (fit(odd), c(Dye.cream)), (fit(even), c(Dye.indigo)), (fit(gold), c(Dye.gold)), (fit(shine), c(Dye.white, 0.3))]
         case .angel:
             let root = P(-w + 2.4, n - 1.4)
             let flap = (pose.air ? 0.25 * sin(pose.lift * 1.1) : 0.08 * sin(2 * s) * walk) - (pose.hang ? 0.15 : 0)

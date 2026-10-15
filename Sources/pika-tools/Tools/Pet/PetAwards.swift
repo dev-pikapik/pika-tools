@@ -9,6 +9,7 @@ private let appStore = false
 enum PetCounter: String {
     case visits, steps, lifts, flights, jumps, leaps, climbs, tumbles, catches, kicks, plays, phrases
     case pages, github, tried, dawn, night, weekend, days, awards
+    case smiles, blushes, cuddles, mornings, feelings, dressed
 }
 
 enum PetAward: String, CaseIterable, Identifiable {
@@ -16,6 +17,7 @@ enum PetAward: String, CaseIterable, Identifiable {
     case lift, flyer, cosmonaut, jumper, hurdler, climber, tumbler, rescuer, striker, playmaker
     case chatter, explorer, github, stylist
     case lark, owl, weekend, week, month, hundred
+    case sunny, charmer, feelings, gentle, morning, dapper
     case collector
 
     enum Kind { case walk, play, friend, time, legend }
@@ -29,9 +31,9 @@ enum PetAward: String, CaseIterable, Identifiable {
     var kind: Kind {
         switch self {
         case .stroll, .traveller, .marathon: .walk
-        case .lift, .flyer, .cosmonaut, .jumper, .hurdler, .climber, .tumbler, .rescuer, .striker, .playmaker: .play
-        case .hello, .chatter, .explorer, .github, .stylist: .friend
-        case .lark, .owl, .weekend, .week, .month, .hundred: .time
+        case .lift, .flyer, .cosmonaut, .jumper, .hurdler, .climber, .tumbler, .rescuer, .striker, .playmaker, .gentle: .play
+        case .hello, .chatter, .explorer, .github, .stylist, .sunny, .charmer, .feelings, .dapper: .friend
+        case .lark, .owl, .weekend, .week, .month, .hundred, .morning: .time
         case .collector: .legend
         }
     }
@@ -53,6 +55,12 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .explorer: .pages
         case .github: .github
         case .stylist: .tried
+        case .sunny: .smiles
+        case .charmer: .blushes
+        case .feelings: .feelings
+        case .gentle: .cuddles
+        case .morning: .mornings
+        case .dapper: .dressed
         case .lark: .dawn
         case .owl: .night
         case .weekend: .weekend
@@ -63,17 +71,18 @@ enum PetAward: String, CaseIterable, Identifiable {
 
     var goal: Int {
         switch self {
-        case .hello, .github, .lark, .owl: 1
+        case .hello, .github, .lark, .owl, .dapper: 1
         case .stroll: 10_000
         case .traveller: 100_000
         case .marathon: 1_000_000
-        case .lift, .flyer, .climber, .stylist: 10
+        case .lift, .flyer, .climber, .stylist, .charmer: 10
         case .cosmonaut, .jumper, .striker: 100
-        case .hurdler, .tumbler, .playmaker, .chatter: 25
+        case .hurdler, .tumbler, .playmaker, .chatter, .gentle: 25
         case .rescuer: 5
         case .weekend: 2
-        case .week: 7
-        case .month: 30
+        case .week, .morning: 7
+        case .month, .sunny: 30
+        case .feelings: 9
         case .hundred: 100
         case .explorer: Self.pages.count
         case .collector: Self.all.count - 1
@@ -100,6 +109,12 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .explorer: appStore ? [.detective, .labcoat] : [.detective]
         case .github: [.labcoat]
         case .stylist: [.round, .tutu]
+        case .sunny: [.quiff, .curls, .bun]
+        case .charmer: [.pencil, .cravat]
+        case .feelings: [.monocle, .handlebar, .chevron]
+        case .gentle: [.waistcoat, .spats]
+        case .morning: [.bowler, .umbrella, .tweed]
+        case .dapper: [.tailcoat, .cane]
         case .lark: [.flowers, .wings]
         case .owl: [.wizard]
         case .weekend: [.overalls]
@@ -130,6 +145,12 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .explorer: "binoculars.fill"
         case .github: "chevron.left.forwardslash.chevron.right"
         case .stylist: "tshirt.fill"
+        case .sunny: "face.smiling.fill"
+        case .charmer: "heart.circle.fill"
+        case .feelings: "theatermasks.fill"
+        case .gentle: "hand.raised.fill"
+        case .morning: "cup.and.saucer.fill"
+        case .dapper: "sparkles"
         case .lark: "sunrise.fill"
         case .owl: "moon.zzz.fill"
         case .weekend: "sun.max.fill"
@@ -160,6 +181,12 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .explorer: String(localized: "Explorer")
         case .github: String(localized: "Open Source")
         case .stylist: String(localized: "Stylist")
+        case .sunny: String(localized: "Sunshine")
+        case .charmer: String(localized: "Charmer")
+        case .feelings: String(localized: "All the Feels")
+        case .gentle: String(localized: "Gentle Hands")
+        case .morning: String(localized: "Good Morning")
+        case .dapper: String(localized: "Dapper")
         case .lark: String(localized: "Early Bird")
         case .owl: String(localized: "Night Owl")
         case .weekend: String(localized: "Weekend Buddy")
@@ -190,6 +217,12 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .explorer: String(localized: "Open every page in Settings.")
         case .github: String(localized: "Visit pikapik on GitHub.")
         case .stylist: String(localized: "Try on 10 different things.")
+        case .sunny: String(localized: "Make the pet happy 30 times.")
+        case .charmer: String(localized: "Rest the pointer on the pet until it blushes, 10 times.")
+        case .feelings: String(localized: "See all 9 of the pet’s feelings.")
+        case .gentle: String(localized: "Pick the pet up and set it down gently 25 times.")
+        case .morning: String(localized: "Say good morning on 7 different days.")
+        case .dapper: String(localized: "Wear 5 things at once.")
         case .lark: String(localized: "Keep your pet company between 5 and 7 in the morning.")
         case .owl: String(localized: "Keep your pet company after midnight.")
         case .weekend: String(localized: "Spend a Saturday and a Sunday together.")
@@ -242,6 +275,8 @@ final class PetProgress {
         switch counter {
         case .pages: PetAward.pages.filter { seen.contains("page:\($0.rawValue)") }.count
         case .tried: seen.filter { $0.hasPrefix("item:") }.count
+        case .feelings: seen.filter { $0.hasPrefix("mood:") }.count
+        case .dressed: seen.contains("dressed") ? 1 : 0
         case .weekend: seen.filter { $0.hasPrefix("weekday:") }.count
         case .awards: PetAward.all.filter { $0 != .collector && earned($0) }.count
         default: counts[counter.rawValue] ?? 0
@@ -287,12 +322,22 @@ final class PetProgress {
         guard unlocked(item) else { return }
         outfit[item.slot] = outfit[item.slot] == item ? nil : item
         mark("item:\(item.rawValue)")
+        if outfit.count >= 5 { mark("dressed") }
     }
 
     func wear(_ look: PetLook) {
         guard look.items.allSatisfy(unlocked) else { return }
         outfit = Dictionary(look.items.map { ($0.slot, $0) }, uniquingKeysWith: { $1 })
         look.items.forEach { mark("item:\($0.rawValue)") }
+        if outfit.count >= 5 { mark("dressed") }
+    }
+
+    func greet(_ now: Date) -> Bool {
+        let day = Calendar.current.ordinality(of: .day, in: .era, for: now) ?? 0
+        guard day != counts["greeted"] else { return false }
+        counts["greeted"] = day
+        add(.mornings)
+        return true
     }
 
     func tick(now: Date) {
