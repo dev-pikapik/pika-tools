@@ -362,6 +362,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let label = playing ? String(localized: "Pause") : String(localized: "Play")
         playButton.image = NSImage(systemSymbolName: playing ? "pause.fill" : "play.fill", accessibilityDescription: label)
         playButton.setAccessibilityLabel(label)
+        pip?.refresh()
         speedLabel.isHidden = speed == 1
         speedLabel.stringValue = "\(speed.formatted())×"
         speedLabel.setAccessibilityLabel(String(localized: "Speed"))
