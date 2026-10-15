@@ -44,6 +44,11 @@ enum GameRules {
         return games.contains(where: minecraftLaunchers.contains) && (minecraft(path) != nil || name?.hasPrefix("Minecraft") == true)
     }
 
+    static func isAdded(_ key: String, in games: [String]) -> Bool {
+        let isMinecraft = { (key: String) in minecraftLaunchers.contains(key) || minecraft(key) != nil }
+        return games.contains(key) || isMinecraft(key) && games.contains(where: isMinecraft)
+    }
+
     static func isRuntime(_ id: String?) -> Bool {
         guard let id = id?.lowercased() else { return true }
         return ["java", "python"].contains(where: id.contains)
@@ -127,7 +132,20 @@ enum GameRules {
             || id == nil && ["wine", "crossover", "whisky", "game porting toolkit"].contains(where: path.contains)
     }
 
-    static func fence(_ frame: CGRect, corners: Set<Int> = []) -> [CGRect] {
+    static func fence(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
+        let reaches = corners.contains { corner in
+            abs(point.x - (corner % 2 == 0 ? frame.minX : frame.maxX - 1)) <= 3
+                && abs(point.y - (corner < 2 ? frame.minY : frame.maxY - 1)) <= 3
+        }
+        let inset: CGFloat = reaches ? 0 : 1
+        let fenced = CGPoint(
+            x: min(max(point.x, frame.minX + inset), frame.maxX - 1 - inset),
+            y: min(max(point.y, frame.minY + inset), frame.maxY - 1 - inset)
+        )
+        return fenced == point ? nil : fenced
+    }
+
+    static func fenceRects(_ frame: CGRect, corners: Set<Int> = []) -> [CGRect] {
         [frame.insetBy(dx: 1, dy: 1)] + corners.sorted().map {
             CGRect(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 4, y: $0 < 2 ? frame.minY : frame.maxY - 4, width: 4, height: 4)
         }
@@ -213,6 +231,52 @@ struct HotKeyTrace {
 }
 
 enum SymbolicHotKeys {
+    typealias Entry = (enabled: Bool, character: UInt16, key: UInt16, modifiers: UInt64)
+    typealias Default = (character: UInt16, key: UInt16, modifiers: UInt64)
+
+    // IDs WindowServer reports on macOS 27, in CopySymbolicHotKeys order
+    static let ids: [Int32] = ([0...2, 4...4, 6...37, 50...65, 70...70, 73...73, 75...86, 95...182, 184...264] as [ClosedRange<Int32>]).flatMap { $0 }
+
+    // CopySymbolicHotKeys works in the sandbox but names no IDs: on a Mac with the same ID list the records are matched by position, on any other the Apple defaults supply the IDs
+    static func table(native: [[String: Any]], defaults: [Int32: Default], ids: [Int32] = ids) -> [Int32: Entry] {
+        let carbon: [(UInt64, UInt64)] = [(0x100, 0x100000), (0x200, 0x20000), (0x800, 0x80000), (0x1000, 0x40000), (0x20000, 0x800000)]
+        let live = native.map { record -> (enabled: Bool, key: UInt16, modifiers: UInt64) in
+            let mask = UInt64(record[kHISymbolicHotKeyModifiers as String] as? Int ?? 0)
+            return (
+                record[kHISymbolicHotKeyEnabled as String] as? Bool ?? false,
+                UInt16(truncatingIfNeeded: record[kHISymbolicHotKeyCode as String] as? Int ?? 0xFFFF),
+                carbon.reduce(0) { mask & $1.0 != 0 ? $0 | $1.1 : $0 }
+            )
+        }
+        if live.count == ids.count {
+            return Dictionary(uniqueKeysWithValues: zip(ids, live).map { id, entry in
+                (id, (entry.enabled, defaults[id]?.key == entry.key ? defaults[id]!.character : 0xFFFF, entry.key, entry.modifiers))
+            })
+        }
+        return defaults.compactMapValues { known in
+            let same = live.filter { $0.key == known.key && $0.modifiers == known.modifiers }
+            return same.isEmpty ? nil : (same.contains { $0.enabled }, known.character, known.key, known.modifiers)
+        }
+    }
+
+    static func appleDefaults() -> [Int32: Default] {
+        let items = Bundle(path: "/System/Library/ExtensionKit/Extensions/KeyboardSettings.appex")?
+            .url(forResource: "DefaultShortcutsTable", withExtension: "xml").flatMap { NSArray(contentsOf: $0) as? [[String: Any]] } ?? []
+        var result: [Int32: Default] = [:]
+        func walk(_ item: [String: Any]) {
+            if let id = item["sybmolichotkey"] as? Int32 {
+                result[id] = (
+                    UInt16(truncatingIfNeeded: item["charKey"] as? Int ?? 0xFFFF),
+                    UInt16(truncatingIfNeeded: item["key"] as? Int ?? 0xFFFF),
+                    UInt64(truncatingIfNeeded: item["modifier"] as? Int ?? 0)
+                )
+            }
+            (item["elements"] as? [[String: Any]] ?? []).forEach(walk)
+        }
+        items.forEach(walk)
+        return result
+    }
+
     static var gameInputs: [Int32] {
         let configured = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any] ?? [:]
         let ids = Set((0..<300).map(Int32.init) + configured.keys.compactMap(Int32.init))
@@ -224,15 +288,19 @@ enum SymbolicHotKeys {
 
     #if APPSTORE
     private static var swallowed: [Int32: UInt64] = [:]
+    private static let defaults = appleDefaults()
+    // ponytail: callers loop over up to 65_536 IDs, so the list is read once a second; a shortcut changed within that second shows on the next read
+    private static var snapshot: (time: TimeInterval, table: [Int32: Entry]) = (-.infinity, [:])
 
-    private static func configured(_ id: Int32) -> (enabled: Bool, character: UInt16, key: UInt16, modifiers: UInt64)? {
-        let all = CFPreferencesCopyAppValue("AppleSymbolicHotKeys" as CFString, "com.apple.symbolichotkeys" as CFString) as? [String: Any]
-        guard let entry = all?[String(id)] as? [String: Any],
-              let parameters = (entry["value"] as? [String: Any])?["parameters"] as? [Int], parameters.count == 3,
-              parameters[1] != Int(UInt16.max), parameters[2] & 0x100000 != 0, parameters[2] & 0x800000 == 0
-        else { return nil }
-        let enabled = (entry["enabled"] as? NSNumber)?.boolValue ?? true
-        return (enabled, UInt16(truncatingIfNeeded: parameters[0]), UInt16(truncatingIfNeeded: parameters[1]), UInt64(parameters[2]))
+    private static func configured(_ id: Int32) -> Entry? {
+        let now = ProcessInfo.processInfo.systemUptime
+        if now - snapshot.time > 1 {
+            var array: Unmanaged<CFArray>?
+            _ = CopySymbolicHotKeys(&array)
+            snapshot = (now, table(native: array?.takeRetainedValue() as? [[String: Any]] ?? [], defaults: defaults))
+        }
+        guard let entry = snapshot.table[id], entry.key != UInt16.max, entry.modifiers & 0x100000 != 0, entry.modifiers & 0x800000 == 0 else { return nil }
+        return entry
     }
 
     static var available: Bool { true }

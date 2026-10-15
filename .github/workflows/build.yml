@@ -17,16 +17,33 @@ defaults:
     shell: bash
 
 jobs:
+  feature-form:
+    name: Feature form
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Issue forms list every feature in docs/FEATURES.md
+        run: ./scripts/feature-form.sh --check
+
   direct:
     name: Direct
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
+
+      - name: Restore FFmpeg
+        uses: actions/cache@v4
+        with:
+          path: Vendor/ffmpeg
+          key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
 
       - name: Build
         run: |
           xcodebuild -version
+          brew install meson ninja nasm pkg-config
           ./scripts/build.sh
 
   appstore:

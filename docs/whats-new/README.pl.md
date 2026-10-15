@@ -5,6 +5,103 @@
 
 ---
 
+## <a id="v1.51.0"></a>Filmy, których QuickTime nie otwiera, teraz się odtwarzają
+
+<sub>1.51.0 · 15 października 2026</sub>
+
+W wersji ze strony pliki wideo MKV, WebM, AVI, WMV, FLV i inne, których QuickTime nie otwiera, odtwarzają się teraz w pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Kliknij prawym przyciskiem plik wideo i wybierz Otwórz w programie › pikapik Player albo kliknij Otwórz wideo… w Ustawienia › Odtwarzacz. Film odtwarza się we własnym oknie: spacja włącza i wstrzymuje odtwarzanie, ← i → przewijają o 5 sekund, ↑ i ↓ zmieniają głośność, a F włącza pełny ekran.
+
+Odtwarzacz to mała, osobna aplikacja. Widzi tylko pliki wideo, które otworzysz, nie może łączyć się z internetem i nie prosi o żadne uprawnienia. Aplikacja, która domyślnie otwiera Twoje filmy, pozostaje ta sama. Napisy nie są jeszcze obsługiwane.
+
+**Wypróbuj:** Ustawienia › Odtwarzacz
+
+---
+
+## <a id="v1.50.3"></a>Menu aktywnych narożników i wyświetlacza głównego znów działają
+
+<sub>1.50.3 · 15 października 2026</sub>
+
+W wersji ze strony menu Zmień… w wierszu aktywnego narożnika i menu Wyświetlacz główny robią teraz to, co obiecują.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+W wersji 1.50.2 każda opcja w tych dwóch menu pojawiała się trzy razy, a wybranie jednej nic nie zmieniało. Teraz każda opcja pojawia się raz, bieżąca ma znacznik wyboru, a Twój wybór działa od razu. Aktywne narożniki są w Ustawienia › Gry, a Wyświetlacz główny w Trzymaj Dock na jednym ekranie. Przywróć albo wyłączenie przełącznika nadal przywraca wszystko dokładnie tak, jak było.
+
+---
+
+## <a id="v1.50.2"></a>pikapik robi to sam, bez wchodzenia do Ustawień systemowych
+
+<sub>1.50.2 · 15 października 2026</sub>
+
+W wersji ze strony wyłączenie zadania w tle, dodanie układu klawiatury, zmiana aktywnego narożnika i wybór wyświetlacza głównego odbywają się teraz wprost w pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+W Ustawienia › Zadania w tle wyłącz zadanie, a jego wiersz zmieni się od razu. Hasło nie jest potrzebne, a twój wybór zostaje po ponownym uruchomieniu. Włącz ponownie przywraca zadanie. Zadania dla całego Maca i pomocniki dodane przez aplikację we własnym zakresie nadal otwierają Ustawienia systemowe, a linijka pod wierszem mówi dlaczego.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Poprawianie tekstu wpisanego w złym układzie działa, gdy masz co najmniej dwa układy klawiatury. Jeśli masz tylko jeden, notatka w Ustawienia › Klawiatura proponuje teraz układy dla twoich języków. Wybierz jeden w Dodaj układ, a będzie gotowy od razu, bez hasła. Jeśli żaden nie pasuje, Ustawienia klawiatury… nadal tam są.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+W Ustawienia › Gry menu Zmień… w wierszu aktywnego narożnika wybiera inną akcję dla tego narożnika. W Trzymaj Dock na jednym ekranie menu Wyświetlacz główny robi z wybranego wyświetlacza główny, a Dock przechodzi na niego. pikapik pamięta, jak było: Przywróć albo wyłączenie przełącznika przywraca wszystko dokładnie tak jak wcześniej.
+
+**Wypróbuj:** Ustawienia › Zadania w tle
+
+**Poprawki**
+
+- Minimalizuj lub ukrywaj kliknięciem w Docku: jeśli włączyłeś to, gdy kliknięcie minimalizowało okna, po ponownym uruchomieniu nie zmienia się już samo na ukrywanie aplikacji.
+- Po otwarciu pikapik sprawdza teraz ustawienia zmienione na twoim drugim Macu, więc Mac, który ominął zmianę, od razu ją nadrabia.
+- Bez usypiania mówi teraz, że zostaje włączone, dopóki go nie wyłączysz, a Tryb gry nie podpowiada już gry, którą dodałeś.
+
+---
+
+## <a id="v1.50.0"></a>Więcej pikapik w wersji z Mac App Store
+
+<sub>1.50.0 · 15 października 2026</sub>
+
+Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz także w wersji z Mac App Store.
+
+**Nowości w wersji z Mac App Store**
+
+- **Otwieraj i twórz archiwa w Finderze.** Kliknij archiwum prawym przyciskiem i wybierz „Wypakuj”. Aby je utworzyć, kliknij pliki prawym przyciskiem i wybierz „Utwórz archiwum…”. Naciśnij spację na archiwum, aby zajrzeć do środka. Hasło można tu ustawić tylko dla ZIP.
+- **Czyste biurko.** Włącz „Ukryj ikony na biurku”, a pikapik zakryje ikony Twoją tapetą. Kliknięcia nadal trafiają na biurko, a uprawnienia nie są potrzebne.
+- **Home i End znowu działają.** Przenoszą na początek i na koniec wiersza wszędzie poza przeglądarkami, Finderem, Muzyką i TV.
+- **Popraw skrótem tekst wpisany w złym układzie.** Zaznacz tekst i naciśnij ⌃⇧Spacja. Włącz „Popraw zaznaczony tekst” w Ustawienia › Klawiatura, gdzie możesz też zmienić klawisze.
+- **Wyłącz ekran jednym kliknięciem.** „Wyłącz ekran teraz” ściemnia ekran od razu, a Mac pracuje dalej. Poruszaj myszą, aby go przywrócić.
+- **Nic nie przeszkadza w grze.** W „Tryb gry” skróty Maca, takie jak Spotlight, są wstrzymane, gdy gra jest na wierzchu. Wskaźnik trzyma się z dala od rogów ekranu, więc aktywne rogi nie zadziałają.
+- **Dane baterii wróciły.** „Bateria” znów pokazuje „Maksymalna pojemność” w macOS 27, a „Temperatura” pokazuje temperaturę baterii.
+- **Zobacz, które aplikacje mogą poprosić o uprawnienie.** „Uprawnienia innych aplikacji” w Ustawienia › Uprawnienia pokazuje je z ikonami.
+- **Wiesz, gdzie kliknąć.** Gdy macOS nie pozwala aplikacji pikapik zmienić ustawienia, krótka animacja pokazuje, gdzie kliknąć w Ustawieniach systemowych.
+
+**W obu wersjach**
+
+- **Ustaw głośność, zanim aplikacja się włączy.** Aplikacja z ustawioną głośnością zostaje w Ustawienia › Dźwięk ze swoim suwakiem, nawet gdy jest zamknięta, i odzyskuje swój poziom, gdy znów odtwarza dźwięk, także po ponownym uruchomieniu. Kliknij „Dodaj aplikację…” albo przeciągnij aplikację z Findera, żeby ustawić ją z wyprzedzeniem, a ✕ usuwa ją z listy i przywraca pełną głośność.
+- **Zobacz, co dodała aktualizacja.** Po aktualizacji mała niebieska kropka oznacza każdą kartę Ustawień z nowością, a etykieta „Nowe” oznacza sekcję. Znikają, gdy już zerkniesz, a same po 21 dniach.
+- **Spokojne pierwsze uruchomienie.** Wersja ze strony nie prosi już o uprawnienia przy pierwszym otwarciu. Pyta tylko wtedy, gdy włączasz narzędzie, które ich potrzebuje.
+- **Mniejsze kopie filmów.** „Utwórz mniejszą kopię” robi teraz z filmu plik mniej więcej o połowę mniejszy. Wcześniej większość filmów dostawała odpowiedź „Już jest mały”.
+- **Dwie kopie nie przeszkadzają sobie.** Jeśli używasz razem wersji z App Store i wersji ze strony, nie cofają już nawzajem swojej pracy. ⇧⌘Q i ⇧⌘W znów działają w grach.
+- **Gry wracają po uśpieniu.** „Tryb gry” sam włącza się ponownie, gdy Mac się budzi.
+- **„Porty” mówią prawdę.** W macOS 27 port zajęty przez macOS lub innego użytkownika nie jest już uznawany za wolny.
+- **Zgłoszenie problemu jest szybsze.** „Zgłoś problem” w Ustawienia › Informacje otwiera formularz z już wybraną wersją.
+- **Archiwa bez zacinania.** Pasek postępu rusza się podczas rozpakowywania archiwum, błędne hasło jest zgłaszane od razu, a Mac nie zasypia już w połowie rozpakowywania ani tworzenia archiwum.
+- **Spokojniejszy panel na pasku menu.** Rozwinięcie wiersza w panelu, na przykład opcji ekranu pod „Bez usypiania”, nie powoduje już mignięcia paska przewijania. Strzałka obok „Bez usypiania” podpowiada teraz „Ustawienia ekranu”.
+- **Porty tłumaczą się same.** Wiersz pod tytułem mówi, czym jest port, a mała animacja pokazuje, że przez jedne drzwi przechodzi tylko jeden program. Twoje programy i te, które lepiej zostawić w spokoju, mają teraz zrozumiałe nazwy.
+- **Ustawienia mówią jasno.** Każda karta zaczyna się wierszem o tym, co tam dostajesz, pasek boczny ma odstępy między grupami, a „Bez usypiania”, „Uprawnienia” i „Bateria” mówią dokładnie, co się dzieje. Przycisk „Potrzebne uprawnienia” pojawia się tylko wtedy, gdy włączonemu przez ciebie narzędziu brakuje uprawnienia.
+
+**Poprawione w wersji z Mac App Store**
+
+- Po ⌘X skrót ⌘V w Finderze przenosi teraz pliki, tak jak w wersji ze strony. Wcześniej tylko je kopiował.
+- „Nowy plik w Finderze”, „Mniejsza kopia w Finderze” i „Konwersja w Finderze” pokazują teraz każdy swój stan. Wcześniej po włączeniu jednego wszystkie trzy wyglądały na włączone.
+- Pustej strony „Porty” już nie ma. macOS nie pokazuje tej wersji, który program zajmuje port, więc w Ustawienia › Porty nie było czego pokazać.
+
+---
+
 ## <a id="v1.49.0"></a>Jasność dla każdego monitora
 
 <sub>1.49.0 · 13 października 2026</sub>

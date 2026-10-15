@@ -96,7 +96,7 @@ final class HideAppTool: Tool {
 
     fileprivate func handle(_ event: CGEvent, down: Bool) -> Bool {
         guard Int(event.getIntegerValueField(.mouseEventButtonNumber)) == button,
-              event.getIntegerValueField(.eventSourceUserData) != SideButtonsTool.tag
+              !event.isPikapik
         else { return false }
         guard down else {
             defer { held = false }

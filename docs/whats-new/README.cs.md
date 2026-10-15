@@ -5,6 +5,103 @@
 
 ---
 
+## <a id="v1.51.0"></a>Videa, která QuickTime neotevře, se teď přehrají
+
+<sub>1.51.0 · 15. října 2026</sub>
+
+Ve verzi z webu se MKV, WebM, AVI, WMV, FLV a další videa, která QuickTime neotevře, teď přehrají v pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klikněte pravým tlačítkem na video a vyberte Otevřít v aplikaci › pikapik Player, nebo klikněte na Otevřít video… v Nastavení › Přehrávač. Video se přehraje ve vlastním okně: mezerník spouští a pozastavuje, ← a → posunou o 5 sekund, ↑ a ↓ mění hlasitost a F přepne na celou obrazovku.
+
+Přehrávač je malá samostatná aplikace. Vidí jen videa, která otevřete, nemůže na internet a nežádá o žádná oprávnění. Aplikace, ve které se vaše videa standardně otevírají, zůstává stejná. Titulky zatím nejsou podporované.
+
+**Vyzkoušejte:** Nastavení › Přehrávač
+
+---
+
+## <a id="v1.50.3"></a>Nabídky aktivních rohů a hlavního monitoru teď fungují
+
+<sub>1.50.3 · 15. října 2026</sub>
+
+Ve verzi z webu nabídka Změnit… na řádku aktivního rohu a nabídka Hlavní monitor teď dělají to, co slibují.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ve verzi 1.50.2 se každá volba v těchto dvou nabídkách objevila třikrát a výběr žádné z nich nic nezměnil. Teď se každá volba objeví jednou, ta aktuální má zaškrtnutí a váš výběr se projeví hned. Aktivní rohy najdete v Nastavení › Hry a Hlavní monitor v Držet Dock na jednom displeji. Vrátit zpět nebo vypnutí přepínače stále vrátí všechno přesně tak, jak to bylo.
+
+---
+
+## <a id="v1.50.2"></a>pikapik to zvládne sám, bez cesty do Nastavení systému
+
+<sub>1.50.2 · 15. října 2026</sub>
+
+Ve verzi z webu se vypnutí úlohy na pozadí, přidání rozložení klávesnice, změna aktivního rohu a výběr hlavního monitoru teď dělají přímo v pikapiku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+V Nastavení › Úlohy na pozadí vypněte úlohu a její řádek se hned změní. Heslo není potřeba a vaše volba zůstane i po restartu. Znovu zapnout úlohu vrátí. Úlohy pro celý Mac a pomocníci, které aplikace přidala sama, stále otevřou Nastavení systému a řádek pod nimi říká proč.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Oprava textu napsaného v nesprávném rozložení funguje, když máte dvě nebo více rozložení klávesnice. Pokud máte jen jedno, poznámka v Nastavení › Klávesnice teď nabízí rozložení pro vaše jazyky. Vyberte jedno v Přidat rozložení a je hned připravené, bez hesla. Pokud žádné nesedí, Nastavení klávesnice… tam pořád je.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+V Nastavení › Hry vybere nabídka Změnit… na řádku aktivního rohu pro tento roh jinou akci. V Držet Dock na jednom displeji nabídka Hlavní monitor udělá z vybraného monitoru hlavní a Dock se přesune na něj. pikapik si pamatuje, jak to bylo: Vrátit zpět nebo vypnutí přepínače vrátí všechno přesně tak, jak to bylo.
+
+**Vyzkoušejte:** Nastavení › Úlohy na pozadí
+
+**Opraveno**
+
+- Minimalizovat nebo skrýt kliknutím v Docku: pokud jste to zapnuli, když klik minimalizoval okna, po restartu už se samo nepřepne na skrývání aplikace.
+- Při otevření pikapik teď zkontroluje nastavení změněná na vašem druhém Macu, takže Mac, který změnu zmeškal, ji hned dožene.
+- Bez spánku teď říká, že zůstává zapnuté, dokud ho nevypnete, a Herní režim už nenabízí hru, kterou jste přidali.
+
+---
+
+## <a id="v1.50.0"></a>Další funkce pikapik ve verzi z Mac App Store
+
+<sub>1.50.0 · 15. října 2026</sub>
+
+Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci, teď i ve verzi z Mac App Store.
+
+**Novinky ve verzi z Mac App Store**
+
+- **Otevírejte a vytvářejte archivy ve Finderu.** Klikněte na archiv pravým tlačítkem a zvolte „Rozbalit“. Chcete-li archiv vytvořit, klikněte pravým tlačítkem na soubory a zvolte „Vytvořit archiv…“. Stisknutím mezerníku na archivu se do něj podíváte. Heslo tu může mít jen ZIP.
+- **Čistá plocha.** Zapněte „Skrýt ikony na ploše“ a pikapik zakryje ikony vaší tapetou. Kliknutí dál procházejí na plochu a nepotřebujete žádné oprávnění.
+- **Home a End zase fungují.** Přesouvají na začátek a na konec řádku všude kromě prohlížečů, Finderu, Hudby a TV.
+- **Opravte text psaný v nesprávném rozložení zkratkou.** Vyberte text a stiskněte ⌃⇧Mezerník. Zapněte „Opravit vybraný text“ v Nastavení › Klávesnice, kde můžete změnit i klávesy.
+- **Vypněte displej jedním kliknutím.** „Vypnout displej hned“ displej okamžitě zhasne, zatímco Mac dál pracuje. Pohybem myši ho vrátíte.
+- **Hry nikdo neruší.** V „Herním režimu“ se zkratky Macu, třeba Spotlight, pozastaví, dokud je hra v popředí. Ukazatel se drží dál od rohů obrazovky, takže se nespustí aktivní rohy.
+- **Údaje o baterii jsou zpět.** „Baterie“ v macOS 27 znovu zobrazuje údaj „Maximální kapacita“ a „Teplota“ zobrazuje teplotu baterie.
+- **Uvidíte, které aplikace mohou žádat o oprávnění.** „Oprávnění ostatních aplikací“ v Nastavení › Oprávnění je vypisuje i s ikonami.
+- **Víte, kam kliknout.** Když macOS nedovolí aplikaci pikapik změnit nastavení, krátká animace ukáže, kam v Nastavení systému kliknout.
+
+**V obou verzích**
+
+- **Nastav hlasitost dřív, než aplikace začne hrát.** Aplikace s nastavenou hlasitostí zůstane v Nastavení › Zvuk se svým posuvníkem, i když je zavřená, a dostane svou úroveň zpět, jakmile zase přehrává zvuk, i po restartu. Klikni na „Přidat aplikaci…“ nebo přetáhni aplikaci z Finderu a nastav ji předem, a ✕ ji zapomene a vrátí jí plnou hlasitost.
+- **Uvidíš, co aktualizace přidala.** Po aktualizaci malá modrá tečka označí každou kartu v Nastavení, kde je něco nového, a štítek „Nové“ označí sekci. Zmizí, jakmile se podíváš, a samy po 21 dnech.
+- **Klidné první spuštění.** Verze z webu se už při prvním otevření neptá na oprávnění. Zeptá se, až když zapneš nástroj, který je potřebuje.
+- **Menší kopie videí.** „Vytvořit menší kopii“ teď udělá z videa soubor zhruba poloviční velikosti. Dřív většina videí dostala odpověď „Už je malý“.
+- **Dvě kopie spolu vycházejí.** Pokud používáte verzi z App Store a verzi z webu společně, už se navzájem neruší. ⇧⌘Q a ⇧⌘W ve hrách zase fungují.
+- **Hry se vracejí po uspání.** „Herní režim“ se po probuzení Macu zapne znovu sám.
+- **„Porty“ říkají pravdu.** V macOS 27 se port, který používá macOS nebo jiný uživatel, už nepovažuje za volný.
+- **Nahlásit problém je rychlejší.** „Nahlásit problém“ v Nastavení › O aplikaci otevře formulář s už vybranou verzí.
+- **Archivy bez zadrhávání.** Ukazatel průběhu se hýbe, zatímco se archiv rozbaluje, špatné heslo se ohlásí hned a Mac už neusne uprostřed rozbalování nebo vytváření archivu.
+- **Klidnější panel v liště nabídek.** Když rozbalíš řádek v panelu, například volby displeje pod „Bez spánku“, už nebliká posuvník. Šipka vedle „Bez spánku“ teď říká „Nastavení displeje“.
+- **Porty se vysvětlují samy.** Řádek pod nadpisem říká, co je port, a malá animace ukazuje, že jedněmi dveřmi projde jen jeden program. Tvé vlastní programy a ty, které je lepší nechat na pokoji, mají teď srozumitelné názvy.
+- **Nastavení mluví srozumitelně.** Každá karta začíná řádkem o tom, co tam získáš, postranní panel má mezery mezi skupinami a „Bez spánku“, „Oprávnění“ a „Baterie“ říkají přesně, co se děje. Tlačítko „Je potřeba oprávnění“ se objeví, jen když zapnutému nástroji nějaké chybí.
+
+**Opraveno ve verzi z Mac App Store**
+
+- Po ⌘X teď ⌘V ve Finderu soubory přesouvá, stejně jako ve verzi z webu. Dřív je jen kopírovalo.
+- „Nový soubor ve Finderu“, „Menší kopie ve Finderu“ a „Převod ve Finderu“ teď každý ukazuje svůj vlastní stav. Dřív po zapnutí jednoho vypadaly zapnuté všechny tři.
+- Prázdná stránka „Porty“ zmizela. macOS této verzi neukáže, který program drží port, takže v Nastavení › Porty nebylo co zobrazit.
+
+---
+
 ## <a id="v1.49.0"></a>Jas pro každý monitor
 
 <sub>1.49.0 · 13. října 2026</sub>

@@ -32,10 +32,12 @@ final class DockDisplayTool: Tool {
 
     func refresh() {
         if Self.apply(isEnabled) { AnimationsTool.shared.restartDock() }
+        if !isEnabled { MainDisplayControl.restore() }
     }
 
     static func uninstall() {
         if apply(false) { AnimationsTool.killall("Dock", wait: true) }
+        MainDisplayControl.restore()
     }
 
     private static func apply(_ on: Bool) -> Bool {
@@ -88,7 +90,6 @@ struct DockDisplayArt: View {
 private struct DockDisplaySettings: View {
     @Bindable var tool: DockDisplayTool
     @Environment(\.inSettings) private var inSettings
-    private static let displays = URL(string: "x-apple.systempreferences:com.apple.Displays-Settings.extension")!
 
     var body: some View {
         if inSettings { DockDisplayArt(on: tool.isEnabled) }
@@ -100,6 +101,91 @@ private struct DockDisplaySettings: View {
             help: Text("The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock."),
             isOn: $tool.isEnabled
         )
-        if inSettings { SystemSettingsRow(title: String(localized: "Main display"), subtitle: Text("Click the display you want, then choose “Main display” in “Use as”"), url: Self.displays) }
+        if inSettings { MainDisplayRow(enabled: tool.isEnabled) }
+    }
+}
+
+private struct MainDisplayRow: View {
+    let enabled: Bool
+    @State private var screens = MainDisplayControl.screens
+
+    var body: some View {
+        Group {
+            if screens.count > 1 {
+                LabeledContent {
+                    Picker(selection: Binding(get: { screens.first { $0.origin == .zero }?.id }, set: { id in screens.first { $0.id == id }.map(change) })) {
+                        ForEach(screens) { Text(verbatim: $0.name).tag(Optional($0.id)) }
+                    } label: { Text("Main display") }
+                    .labelsHidden()
+                    .fixedSize()
+                    .disabled(!enabled)
+                } label: {
+                    RowLabel(Text("Main display"), Text("The Dock goes with it. Turning the switch off puts the displays back as they were"))
+                }
+                .settingAnchor(String(localized: "Main display"))
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didChangeScreenParametersNotification)) { _ in screens = MainDisplayControl.screens }
+    }
+
+    private func change(to screen: MainDisplayControl.Screen) {
+        MainDisplayControl.makeMain(screen)
+        screens = MainDisplayControl.screens
+    }
+}
+
+enum MainDisplayControl {
+    struct Screen: Identifiable {
+        let id: CGDirectDisplayID
+        let uuid: String
+        let name: String
+        let origin: CGPoint
+    }
+
+    private static let key = "dock-display-origins"
+
+    static var screens: [Screen] {
+        NSScreen.screens.compactMap { screen in
+            guard let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber else { return nil }
+            let id = CGDirectDisplayID(number.uint32Value)
+            guard let uuid = CGDisplayCreateUUIDFromDisplayID(id)?.takeRetainedValue(), let text = CFUUIDCreateString(nil, uuid) as String? else { return nil }
+            return Screen(id: id, uuid: text, name: screen.localizedName, origin: CGDisplayBounds(id).origin)
+        }
+    }
+
+    static func makeMain(_ target: Screen) {
+        let now = screens
+        let origins = Dictionary(uniqueKeysWithValues: now.map { ($0.uuid, $0.origin) })
+        guard let moved = MainDisplay.moved(origins, to: target.uuid), apply(moved, to: now) else { return }
+        let saved = MainDisplay.remembered(journal, now: origins)
+        UserDefaults.standard.set(saved.mapValues { [Double($0.x), Double($0.y)] }, forKey: key)
+    }
+
+    static func restore() {
+        let saved = journal
+        guard !saved.isEmpty else { return }
+        let now = screens
+        let origins = Dictionary(uniqueKeysWithValues: now.map { ($0.uuid, $0.origin) })
+        guard let target = MainDisplay.restored(saved, now: origins) else {
+            UserDefaults.standard.removeObject(forKey: key)
+            return
+        }
+        if apply(target, to: now) { UserDefaults.standard.removeObject(forKey: key) }
+    }
+
+    private static var journal: [String: CGPoint] {
+        (UserDefaults.standard.dictionary(forKey: key) as? [String: [Double]] ?? [:]).compactMapValues { $0.count == 2 ? CGPoint(x: $0[0], y: $0[1]) : nil }
+    }
+
+    private static func apply(_ origins: [String: CGPoint], to screens: [Screen]) -> Bool {
+        var config: CGDisplayConfigRef?
+        guard CGBeginDisplayConfiguration(&config) == .success else { return false }
+        for screen in screens {
+            guard let point = origins[screen.uuid], CGConfigureDisplayOrigin(config, screen.id, Int32(point.x), Int32(point.y)) == .success else {
+                CGCancelDisplayConfiguration(config)
+                return false
+            }
+        }
+        return CGCompleteDisplayConfiguration(config, .permanently) == .success
     }
 }

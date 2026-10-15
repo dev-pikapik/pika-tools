@@ -5,6 +5,103 @@
 
 ---
 
+## <a id="v1.51.0"></a>I video che QuickTime non apre ora si riproducono
+
+<sub>1.51.0 · 15 ottobre 2026</sub>
+
+Nella versione dal sito, i video MKV, WebM, AVI, WMV, FLV e altri che QuickTime non apre ora si riproducono in pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Fai clic destro su un video e scegli Apri con › pikapik Player, oppure fai clic su Apri video… in Impostazioni › Lettore. Il video si riproduce in una finestra tutta sua: la barra spaziatrice avvia e mette in pausa, ← e → saltano di 5 secondi, ↑ e ↓ cambiano il volume e F passa a schermo intero.
+
+Il lettore è una piccola app a parte. Vede solo i video che apri, non può andare su internet e non chiede nessun permesso. L’app che apre i tuoi video di solito resta la stessa. I sottotitoli non sono ancora supportati.
+
+**Provalo:** Impostazioni › Lettore
+
+---
+
+## <a id="v1.50.3"></a>I menu degli angoli attivi e dello schermo principale ora funzionano
+
+<sub>1.50.3 · 15 ottobre 2026</sub>
+
+Nella versione dal sito, il menu Cambia… nella riga di un angolo attivo e il menu Schermo principale ora fanno quello che promettono.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Nella versione 1.50.2 ogni scelta di questi due menu compariva tre volte e sceglierne una non cambiava nulla. Ora ogni scelta compare una sola volta, quella attuale ha il segno di spunta e la tua scelta ha effetto subito. Gli angoli attivi sono in Impostazioni › Giochi, lo Schermo principale sotto Tieni il Dock su un solo schermo. Rimetti a posto, o spegnere l’interruttore, riporta ancora tutto esattamente com’era.
+
+---
+
+## <a id="v1.50.2"></a>pikapik fa da solo, senza passare da Impostazioni di Sistema
+
+<sub>1.50.2 · 15 ottobre 2026</sub>
+
+Nella versione del sito, spegnere un’attività in background, aggiungere un layout di tastiera, cambiare un angolo attivo e scegliere lo schermo principale ora si fa direttamente in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Attività in background, spegni un’attività e la sua riga cambia subito. Non serve la password e la tua scelta resta dopo un riavvio. Riaccendi rimette in funzione l’attività. Le attività per tutto il Mac e gli assistenti aggiunti da un’app da sola aprono ancora Impostazioni di Sistema, e una riga sotto spiega il perché.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+La correzione del testo scritto con il layout sbagliato funziona se hai due o più layout di tastiera. Se ne hai uno solo, la nota in Impostazioni › Tastiera ora propone layout per le tue lingue. Sceglilo in Aggiungi layout ed è subito pronto, senza password. Se nessuno va bene, Impostazioni tastiera… è sempre lì.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Impostazioni › Giochi, il menu Cambia… nella riga di un angolo attivo sceglie un’altra azione per quell’angolo. In Tieni il Dock su un solo schermo, il menu Schermo principale rende principale lo schermo scelto, con il Dock sopra. pikapik ricorda com’era: Rimetti a posto, o spegnere l’interruttore, riporta tutto esattamente com’era.
+
+**Provalo:** Impostazioni › Attività in background
+
+**Corretto**
+
+- Riduci o nascondi con un clic nel Dock: se l’avevi attivato mentre il clic riduceva le finestre, dopo un riavvio non passa più da solo a nascondere l’app.
+- Quando apri pikapik, ora controlla le impostazioni cambiate sull’altro tuo Mac, così un Mac che si è perso la modifica si aggiorna subito.
+- Resta sveglio ora dice che resta attivo finché non lo spegni, e la Modalità gioco non suggerisce più un gioco che hai già aggiunto.
+
+---
+
+## <a id="v1.50.0"></a>Più pikapik nella versione del Mac App Store
+
+<sub>1.50.0 · 15 ottobre 2026</sub>
+
+Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche nella versione del Mac App Store.
+
+**Novità nella versione del Mac App Store**
+
+- **Apri e crea archivi nel Finder.** Fai clic con il tasto destro su un archivio e scegli «Estrai». Per crearne uno, fai clic con il tasto destro sui file e scegli «Crea archivio…». Premi Spazio su un archivio per vedere cosa contiene. Qui solo lo ZIP può avere una password.
+- **Una scrivania sgombra.** Attiva «Nascondi le icone della scrivania» e pikapik copre le icone con il tuo sfondo. I clic arrivano comunque alla scrivania e non serve alcun permesso.
+- **Home ed End funzionano di nuovo.** Vanno a inizio e fine riga, ovunque tranne che nei browser, nel Finder, in Musica e in TV.
+- **Correggi con una scorciatoia il testo scritto con il layout sbagliato.** Seleziona il testo e premi ⌃⇧Spazio. Attiva «Correggi il testo selezionato» in Impostazioni › Tastiera, dove puoi anche cambiare i tasti.
+- **Spegni lo schermo con un clic.** «Spegni lo schermo ora» oscura subito lo schermo, mentre il Mac continua a lavorare. Muovi il mouse per riaccenderlo.
+- **I giochi non vengono disturbati.** In «Modalità gioco», le scorciatoie del Mac come Spotlight restano in pausa finché un gioco è in primo piano. Il puntatore sta lontano dagli angoli dello schermo, così gli angoli attivi non scattano.
+- **I dati della batteria sono tornati.** «Batteria» mostra di nuovo la «Capacità massima» su macOS 27, e «Temperatura» mostra la temperatura della batteria.
+- **Vedi quali app possono chiedere un permesso.** «Permessi di altre app», in Impostazioni › Permessi, le elenca con le loro icone.
+- **Sai dove fare clic.** Quando macOS non permette a pikapik di cambiare un’impostazione, una breve animazione mostra dove fare clic in Impostazioni di Sistema.
+
+**In entrambe le versioni**
+
+- **Imposta il volume prima che l’app parta.** Un’app che hai impostato resta in Impostazioni › Suono con il suo cursore, anche da chiusa, e riprende il suo livello quando torna a riprodurre audio, anche dopo un riavvio. Fai clic su «Aggiungi app…» o trascina un’app dal Finder per impostarla in anticipo, e la ✕ la dimentica e le restituisce il volume pieno.
+- **Scopri cosa ha aggiunto un aggiornamento.** Dopo un aggiornamento, un puntino blu segna ogni scheda delle Impostazioni con qualcosa di nuovo e un’etichetta «Nuovo» segna la sezione. Spariscono quando hai guardato e da sole dopo 21 giorni.
+- **Un primo avvio tranquillo.** La versione dal sito non chiede più autorizzazioni alla prima apertura. Le chiede solo quando attivi uno strumento che ne ha bisogno.
+- **Copie più leggere dei video.** «Crea copia più leggera» ora riduce un video a circa la metà. Prima quasi tutti i video ricevevano «Già compatto».
+- **Due copie vanno d’accordo.** Se usi insieme la versione dell’App Store e quella del sito, non si annullano più a vicenda. ⇧⌘Q e ⇧⌘W funzionano di nuovo nei giochi.
+- **I giochi tornano dopo la sospensione.** La «Modalità gioco» si riattiva da sola quando il Mac si risveglia.
+- **«Porte» dice la verità.** Su macOS 27, una porta usata da macOS o da un altro utente non viene più indicata come libera.
+- **Segnalare un problema è più semplice.** «Segnala un problema», in Impostazioni › Info, apre il modulo con la tua versione già scelta.
+- **Archivi più scorrevoli.** La barra di avanzamento si muove mentre un archivio viene estratto, una password sbagliata viene segnalata subito e il Mac non va più in stop nel bel mezzo di un’estrazione o di una creazione.
+- **Un pannello della barra dei menu più stabile.** Aprendo una riga del pannello, per esempio le opzioni dello schermo sotto «Resta sveglio», non compare più un lampo di barra di scorrimento. La freccia accanto a «Resta sveglio» ora dice «Impostazioni dello schermo».
+- **Porte si spiega da sola.** Una riga sotto il titolo dice cos’è una porta di rete, e una piccola animazione mostra che da una porta passa un solo programma. I tuoi programmi e quelli da lasciare in pace ora hanno nomi chiari.
+- **Le Impostazioni parlano chiaro.** Ogni scheda inizia con una riga su cosa trovi lì, la barra laterale ha spazi tra i suoi gruppi e «Resta sveglio», «Permessi» e «Batteria» dicono con precisione cosa succede. Il pulsante «Servono i permessi» compare solo se a uno strumento che hai attivato ne manca uno.
+
+**Corretto nella versione del Mac App Store**
+
+- Dopo ⌘X, ⌘V nel Finder ora sposta i file, come nella versione del sito. Prima si limitava a copiarli.
+- «Nuovo file nel Finder», «Copia più leggera nel Finder» e «Conversione nel Finder» mostrano ognuno il proprio stato. Prima, attivandone uno, sembravano attivi tutti e tre.
+- La pagina «Porte» vuota non c’è più. macOS non mostra a questa versione quale programma occupa una porta, quindi in Impostazioni › Porte non c’era nulla da mostrare.
+
+---
+
 ## <a id="v1.49.0"></a>Luminosità per ogni monitor
 
 <sub>1.49.0 · 13 ottobre 2026</sub>

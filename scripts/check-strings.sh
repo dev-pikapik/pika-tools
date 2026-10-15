@@ -24,11 +24,15 @@ if [ -z "$DIR" ]; then
     for EXT in NewFile Compress Convert Archive Preview; do
         SHARED=(Extensions/Shared/*.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
-        [ "$EXT" != Preview ] || SHARED=()
+        [ "$EXT" != Preview ] || SHARED=(-import-objc-header Extensions/Preview/libarchive.h)
         swiftc -wmo -c -module-name "$EXT" -target arm64-apple-macos14.0 -application-extension \
             -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
             Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} -o "$DIR/$EXT.o"
     done
+    [ ! -d Vendor/ffmpeg/include ] || swiftc -wmo -c -module-name Player -target arm64-apple-macos14.0 \
+        -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
+        -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
+        Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift -o "$DIR/Player.o"
 fi
 
 python3 - "$DIR" <<'PY'
@@ -75,7 +79,7 @@ if not code:
     fail(f'no strings found in {sys.argv[1]}')
 
 swift = {}
-for root in ('Sources', 'Extensions', 'Private/Sources'):
+for root in ('Sources', 'Extensions', 'Helper', 'Private/Sources'):
     for path in glob.glob(root + '/**/*.swift', recursive=True):
         swift[path] = open(path, encoding='utf-8').read()
 

@@ -84,7 +84,6 @@ final class SideButtonsTool: Tool {
         isActive = false
     }
 
-    static let tag: Int64 = 0x70696B61
     private static let swipeApps = ["com.apple.", "com.binarynights.ForkLift", "org.mozilla.firefox", "com.operasoftware.Opera"]
 
     fileprivate func handle(_ event: CGEvent, down: Bool) -> Bool {
@@ -96,7 +95,7 @@ final class SideButtonsTool: Tool {
         guard !GameModeTool.shared.isPlaying, Self.swipeApps.contains(where: id.hasPrefix) else {
             if swaps {
                 event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3)
-                event.setIntegerValueField(.eventSourceUserData, value: Self.tag)
+                event.markPikapik()
             }
             return false
         }
@@ -129,7 +128,7 @@ private func sideButtonsCallback(
         DispatchQueue.main.async { tool.refresh() }
     case .otherMouseDown, .otherMouseUp:
         let button = event.getIntegerValueField(.mouseEventButtonNumber)
-        guard button == 3 || button == 4, button != HideAppTool.taken, !HideAppTool.isRecording else { break }
+        guard button == 3 || button == 4, button != HideAppTool.taken, !HideAppTool.isRecording, !event.isPikapik else { break }
         if tool.handle(event, down: type == .otherMouseDown) { return nil }
     default:
         break

@@ -5,6 +5,103 @@
 
 ---
 
+## <a id="v1.51.0"></a>Videos, die QuickTime nicht öffnen kann, laufen jetzt
+
+<sub>1.51.0 · 15. Oktober 2026</sub>
+
+In der Version von der Website laufen MKV, WebM, AVI, WMV, FLV und andere Videos, die QuickTime nicht öffnen kann, jetzt in pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klicken Sie unter Einstellungen › Player auf Video öffnen … oder klicken Sie mit der rechten Maustaste auf ein Video und wählen Sie Öffnen mit › pikapik Player. Das Video läuft in einem eigenen Fenster: Die Leertaste startet und pausiert, ← und → springen 5 Sekunden, ↑ und ↓ ändern die Lautstärke, und F schaltet auf Vollbild.
+
+Der Player ist eine kleine eigene App. Er sieht nur die Videos, die Sie öffnen, kann nicht ins Internet und fragt nach keinen Berechtigungen. Mit welcher App sich Ihre Videos standardmäßig öffnen, bleibt unverändert. Untertitel werden noch nicht unterstützt.
+
+**Ausprobieren:** Einstellungen › Player
+
+---
+
+## <a id="v1.50.3"></a>Die Menüs für aktive Ecken und Hauptbildschirm funktionieren wieder
+
+<sub>1.50.3 · 15. Oktober 2026</sub>
+
+In der Version von der Website tun das Menü Ändern … in der Zeile einer aktiven Ecke und das Menü Hauptbildschirm jetzt, was sie versprechen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Version 1.50.2 stand jede Auswahl in diesen beiden Menüs dreimal da, und ein Klick änderte nichts. Jetzt steht jede Auswahl einmal da, die aktuelle trägt ein Häkchen, und Ihre Wahl wirkt sofort. Aktive Ecken finden Sie unter Einstellungen › Spiele, Hauptbildschirm unter Dock auf einem Display halten. Zurücklegen oder das Ausschalten des Schalters stellt weiterhin alles genau wieder her.
+
+---
+
+## <a id="v1.50.2"></a>pikapik macht es selbst, ohne Umweg über die Systemeinstellungen
+
+<sub>1.50.2 · 15. Oktober 2026</sub>
+
+In der Version von der Website passieren das Ausschalten einer Hintergrundaufgabe, das Hinzufügen eines Tastaturlayouts, das Ändern einer aktiven Ecke und die Wahl des Hauptbildschirms jetzt direkt in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Schalte unter Einstellungen › Hintergrundaufgaben eine Aufgabe aus, und ihre Zeile ändert sich sofort. Ein Passwort brauchst du nicht, und deine Wahl bleibt nach einem Neustart erhalten. Mit Wieder einschalten kommt die Aufgabe zurück. Aufgaben für den ganzen Mac und Helfer, die ein Programm selbst hinzugefügt hat, öffnen weiterhin die Systemeinstellungen, und ein Satz unter der Zeile sagt dir, warum.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Das Korrigieren von Text im falschen Layout funktioniert, wenn du zwei oder mehr Tastaturlayouts hast. Hast du nur eins, bietet der Hinweis unter Einstellungen › Tastatur jetzt Layouts für deine Sprachen an. Wähle eins unter Layout hinzufügen, und es ist sofort bereit, ohne Passwort. Passt keins, gibt es weiterhin Tastatureinstellungen ….
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Unter Einstellungen › Spiele wählt das Menü Ändern … in der Zeile einer aktiven Ecke eine andere Aktion für diese Ecke. Unter Dock auf einem Display halten macht das Menü Hauptbildschirm den gewählten Bildschirm zum Hauptbildschirm, und das Dock zieht mit um. pikapik merkt sich, wie es vorher war: Zurücklegen oder das Ausschalten des Schalters stellt alles genau wieder her.
+
+**Ausprobieren:** Einstellungen › Hintergrundaufgaben
+
+**Behoben**
+
+- Mit einem Klick im Dock ablegen oder ausblenden: Wenn du es eingeschaltet hast, während der Klick Fenster ablegte, wechselt es nach einem Neustart nicht mehr von selbst zum Ausblenden des Programms.
+- Beim Öffnen prüft pikapik jetzt, ob sich Einstellungen auf deinem anderen Mac geändert haben, sodass ein Mac, der die Änderung verpasst hat, sofort nachzieht.
+- Wach bleiben sagt jetzt, dass es an bleibt, bis du es ausschaltest, und der Spielmodus schlägt kein Spiel mehr vor, das du schon hinzugefügt hast.
+
+---
+
+## <a id="v1.50.0"></a>Mehr pikapik in der Version aus dem Mac App Store
+
+<sub>1.50.0 · 15. Oktober 2026</sub>
+
+Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetzt auch in der Version aus dem Mac App Store.
+
+**Neu in der Version aus dem Mac App Store**
+
+- **Archive im Finder öffnen und erstellen.** Klicke mit der rechten Maustaste auf ein Archiv und wähle „Entpacken“. Zum Erstellen klickst du mit der rechten Maustaste auf Dateien und wählst „Archiv erstellen …“. Drücke die Leertaste auf einem Archiv, um hineinzuschauen. Nur ZIP kann hier ein Passwort haben.
+- **Ein aufgeräumter Schreibtisch.** Schalte „Schreibtischsymbole ausblenden“ ein, und pikapik deckt die Symbole mit deinem Hintergrundbild ab. Klicks kommen weiterhin auf dem Schreibtisch an, und du brauchst keine Berechtigung.
+- **Home und End funktionieren wieder.** Sie springen an Zeilenanfang und -ende, überall außer in Browsern, im Finder, in Musik und in TV.
+- **Falsch getippten Text per Tastenkombination korrigieren.** Wähle den Text aus und drücke ⌃⇧Leertaste. Schalte „Ausgewählten Text korrigieren“ unter Einstellungen › Tastatur ein, dort kannst du die Tasten auch ändern.
+- **Display mit einem Klick ausschalten.** „Display jetzt ausschalten“ macht das Display sofort dunkel, während dein Mac weiterarbeitet. Bewege die Maus, um es zurückzuholen.
+- **Spiele werden nicht gestört.** Im „Spielmodus“ pausieren Mac-Tastenkombinationen wie Spotlight, solange ein Spiel im Vordergrund ist. Der Zeiger bleibt von den Bildschirmecken fern, damit keine Aktive Ecke auslöst.
+- **Die Batteriewerte sind zurück.** „Batterie“ zeigt unter macOS 27 wieder die „Maximale Kapazität“, und „Temperatur“ zeigt die Temperatur der Batterie.
+- **Sehen, welche Apps nach einer Berechtigung fragen können.** „Berechtigungen anderer Apps“ unter Einstellungen › Berechtigungen listet sie mit ihren Symbolen auf.
+- **Wissen, wo du klicken musst.** Wenn macOS pikapik keine Einstellung ändern lässt, zeigt eine kurze Animation, wo du in den Systemeinstellungen klicken musst.
+
+**In beiden Versionen**
+
+- **Lautstärke einstellen, bevor die App startet.** Eine App, die du eingestellt hast, bleibt mit ihrem Regler in Einstellungen › Ton, auch wenn sie geschlossen ist, und bekommt ihre Lautstärke zurück, sobald sie wieder Ton abspielt, auch nach einem Neustart. Mit „App hinzufügen …“ oder per Ziehen aus dem Finder stellst du eine App im Voraus ein, und das ✕ entfernt sie wieder und stellt volle Lautstärke her.
+- **Sieh, was ein Update gebracht hat.** Nach einem Update markiert ein kleiner blauer Punkt jeden Tab in den Einstellungen, der etwas Neues hat, und ein „Neu“-Schild den Abschnitt. Beides verschwindet, sobald du hingeschaut hast, und von selbst nach 21 Tagen.
+- **Ein ruhiger erster Start.** Die Version von der Website fragt beim ersten Öffnen nicht mehr nach Berechtigungen. Sie fragt nur, wenn du ein Werkzeug einschaltest, das eine braucht.
+- **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.
+- **Zwei Kopien vertragen sich.** Wenn du die App-Store-Version und die Version von der Website zusammen nutzt, machen sie ihre Arbeit nicht mehr gegenseitig rückgängig. ⇧⌘Q und ⇧⌘W funktionieren in Spielen wieder.
+- **Spiele kehren nach dem Ruhezustand zurück.** Der „Spielmodus“ schaltet sich von selbst wieder ein, wenn dein Mac aufwacht.
+- **„Ports“ sagt die Wahrheit.** Unter macOS 27 wird ein Port, den macOS oder ein anderer Benutzer belegt, nicht mehr als frei bezeichnet.
+- **Ein Problem zu melden geht schneller.** „Problem melden“ unter Einstellungen › Über öffnet das Formular mit bereits gewählter Version.
+- **Archive ohne Wartezeit.** Der Fortschrittsbalken bewegt sich, während ein Archiv entpackt wird, ein falsches Passwort wird sofort gemeldet, und dein Mac schläft nicht mehr mitten im Entpacken oder Erstellen ein.
+- **Ein ruhigeres Menüleisten-Fenster.** Wenn du eine Zeile im Fenster der Menüleiste aufklappst, zum Beispiel die Anzeigeoptionen unter „Wach bleiben“, blitzt keine Bildlaufleiste mehr auf. Der Pfeil neben „Wach bleiben“ sagt jetzt „Anzeigeeinstellungen“.
+- **Ports erklärt sich selbst.** Eine Zeile unter dem Titel sagt, was ein Port ist, und eine kleine Animation zeigt, dass durch eine Tür nur ein Programm passt. Deine eigenen Programme und die, die du in Ruhe lassen solltest, haben jetzt verständliche Namen.
+- **Die Einstellungen sagen es klar.** Jeder Tab beginnt mit einer Zeile dazu, was du dort bekommst, die Seitenleiste hat Abstände zwischen ihren Gruppen, und „Wach bleiben“, „Berechtigungen“ und „Batterie“ sagen genau, was gerade los ist. Die Schaltfläche „Berechtigungen nötig“ erscheint nur, wenn einem eingeschalteten Werkzeug eine fehlt.
+
+**Behoben in der Version aus dem Mac App Store**
+
+- Nach ⌘X verschiebt ⌘V im Finder jetzt deine Dateien, wie in der Version von der Website. Vorher hat es sie nur kopiert.
+- „Neue Datei im Finder“, „Kleinere Kopie im Finder“ und „Umwandeln im Finder“ zeigen jeweils ihren eigenen Zustand. Vorher sahen nach dem Einschalten eines Schalters alle drei eingeschaltet aus.
+- Die leere Seite „Ports“ ist weg. macOS zeigt dieser Version nicht, welches Programm einen Port belegt, deshalb gab es unter Einstellungen › Ports nichts anzuzeigen.
+
+---
+
 ## <a id="v1.49.0"></a>Helligkeit für jeden Monitor
 
 <sub>1.49.0 · 13. Oktober 2026</sub>

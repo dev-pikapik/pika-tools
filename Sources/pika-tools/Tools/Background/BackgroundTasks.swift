@@ -65,15 +65,29 @@ struct BackgroundTask: Identifiable, Equatable {
     var title: String
     var icon: URL
     var developer = ""
+    var version = ""
     var timing: Timing?
     var scope = Scope.mine
     var kind = Kind.background
     var running = false
     var state = State.on
     var domain = ""
+    var inLoginList = false
     var isOwn = false
 
     var id: String { file.path }
+
+    var canToggle: Bool {
+        #if APPSTORE
+        false
+        #else
+        !domain.isEmpty || inLoginList
+        #endif
+    }
+
+    var opensLoginItems: Bool {
+        !isOwn && (state == .offInSettings || state == .on && !canToggle)
+    }
 }
 
 enum BackgroundTasks {
@@ -143,7 +157,7 @@ enum BackgroundTasks {
         return stat(path, &info) != 0 && errno == ENOENT
     }
 
-    static func collect(_ footprint: AppFootprint, launchd: Launchd, own: URL, loginItems: [URL], running: [(id: String?, url: URL?)],
+    static func collect(_ footprint: AppFootprint, launchd: Launchd, own: URL, loginItems: [URL], turnedOff: [URL] = [], running: [(id: String?, url: URL?)],
                         status: (URL) -> Int = { SMAppService.statusForLegacyPlist(at: $0).rawValue }) -> [BackgroundTask] {
         let fm = FileManager.default
         let home = footprint.roots.home.appendingPathComponent("Library/LaunchAgents").path + "/"
@@ -164,6 +178,7 @@ enum BackgroundTasks {
             if !mine {
                 task.icon = owner?.url ?? existing(enclosingApp(target)) ?? (target.hasPrefix("/") && !isMissing(target) ? URL(fileURLWithPath: target) : file)
                 task.developer = developer(owner: owner, label: label, target: target)
+                task.version = owner?.version ?? ""
             }
             task.isOwn = mine
             task.timing = timing(info, daemon: daemon)
@@ -177,7 +192,7 @@ enum BackgroundTasks {
             } else if info["Disabled"] as? Bool == true {
                 task.state = .off
             }
-            if !daemon, !mine, file.path.hasPrefix(home) { task.domain = domain }
+            if !daemon, !mine, file.path.hasPrefix(home) || file.path.hasPrefix(shared) { task.domain = domain }
             labels.insert(label.lowercased())
             paths.insert(file.standardizedFileURL.path)
             tasks.append(task)
@@ -210,6 +225,7 @@ enum BackgroundTasks {
                       launchd.gui.pids[id] != nil || runningIDs.contains(id) || launchd.gui.disabled[id] == false else { continue }
                 var task = BackgroundTask(file: helper, label: id, title: isOwn(id) ? "pikapik" : app.displayName, icon: app.url)
                 task.developer = app.organization
+                task.version = app.version
                 task.timing = .atLogin
                 task.running = (launchd.gui.pids[id] ?? 0) > 0 || runningIDs.contains(id)
                 task.isOwn = isOwn(id)
@@ -219,10 +235,11 @@ enum BackgroundTasks {
             }
         }
 
-        for url in loginItems {
+        for (url, off) in loginItems.map({ ($0, false) }) + turnedOff.map({ ($0, true) }) {
             let path = url.standardizedFileURL.path
             guard paths.insert(path).inserted else { continue }
-            let id = plist(url.appendingPathComponent("Contents/Info.plist"))["CFBundleIdentifier"] as? String ?? ""
+            let info = plist(url.appendingPathComponent("Contents/Info.plist"))
+            let id = info["CFBundleIdentifier"] as? String ?? ""
             let mine = isOwn(id)
             let name = url.pathExtension.lowercased() == "app" ? url.deletingPathExtension().lastPathComponent : url.lastPathComponent
             var task = BackgroundTask(file: url, label: id, title: mine ? "pikapik" : name, icon: mine ? own : url)
@@ -230,7 +247,10 @@ enum BackgroundTasks {
                 task.developer = footprint.installed.first { $0.url.standardizedFileURL.path == path }?.organization
                     ?? AppIdentity.signature(of: url)?.organization ?? ""
             }
+            task.version = info["CFBundleShortVersionString"] as? String ?? ""
             task.isOwn = mine
+            task.inLoginList = !mine
+            task.state = off ? .off : .on
             task.kind = AppInventory.isInTrash(url) ? .leftover : .login
             task.running = runningPaths.contains(path)
             tasks.append(task)
@@ -243,19 +263,50 @@ enum BackgroundTasks {
     }
 
     #if !APPSTORE
+    private static let turnedOffKey = "background-turned-off-logins"
+
     static func loginItems() -> [URL] {
         (SessionLoginItems() as LoginItemsList).urls()
     }
 
-    static func turnOff(_ task: BackgroundTask) -> Bool {
-        guard !task.domain.isEmpty, AppRoots.run("/bin/launchctl", ["disable", "\(task.domain)/\(task.label)"]) != nil else { return false }
-        _ = AppRoots.run("/bin/launchctl", ["bootout", "\(task.domain)/\(task.label)"])
+    static func turnedOffLogins(live: [URL], defaults: UserDefaults = .standard) -> [URL] {
+        let present = Set(live.map { $0.standardizedFileURL.path })
+        let all = defaults.stringArray(forKey: turnedOffKey) ?? []
+        let kept = all.filter { !present.contains($0) && FileManager.default.fileExists(atPath: $0) }
+        if kept.count != all.count { defaults.set(kept, forKey: turnedOffKey) }
+        return kept.map { URL(fileURLWithPath: $0) }
+    }
+
+    private static func remember(_ file: URL, off: Bool, in defaults: UserDefaults) {
+        let path = file.standardizedFileURL.path
+        var paths = (defaults.stringArray(forKey: turnedOffKey) ?? []).filter { $0 != path }
+        if off { paths.append(path) }
+        defaults.set(paths, forKey: turnedOffKey)
+    }
+
+    private static func launchctl(_ arguments: [String]) -> String? { AppRoots.run("/bin/launchctl", arguments) }
+
+    static func turnOff(_ task: BackgroundTask, launchctl: ([String]) -> String? = BackgroundTasks.launchctl,
+                        list: LoginItemsList = SessionLoginItems(), defaults: UserDefaults = .standard) -> Bool {
+        if task.inLoginList {
+            guard list.remove(task.file) else { return false }
+            remember(task.file, off: true, in: defaults)
+            return true
+        }
+        guard !task.domain.isEmpty, launchctl(["disable", "\(task.domain)/\(task.label)"]) != nil else { return false }
+        _ = launchctl(["bootout", "\(task.domain)/\(task.label)"])
         return true
     }
 
-    static func turnOn(_ task: BackgroundTask) -> Bool {
-        guard !task.domain.isEmpty, AppRoots.run("/bin/launchctl", ["enable", "\(task.domain)/\(task.label)"]) != nil else { return false }
-        _ = AppRoots.run("/bin/launchctl", ["bootstrap", task.domain, task.file.path])
+    static func turnOn(_ task: BackgroundTask, launchctl: ([String]) -> String? = BackgroundTasks.launchctl,
+                       list: LoginItemsList = SessionLoginItems(), defaults: UserDefaults = .standard) -> Bool {
+        if task.inLoginList {
+            guard list.insert(task.file) else { return false }
+            remember(task.file, off: false, in: defaults)
+            return true
+        }
+        guard !task.domain.isEmpty, launchctl(["enable", "\(task.domain)/\(task.label)"]) != nil else { return false }
+        _ = launchctl(["bootstrap", task.domain, task.file.path])
         return true
     }
     #endif
@@ -266,18 +317,53 @@ enum BackgroundTasks {
 }
 
 #if !APPSTORE
-private protocol LoginItemsList {
+protocol LoginItemsList {
     func urls() -> [URL]
+    func remove(_ url: URL) -> Bool
+    func insert(_ url: URL) -> Bool
 }
 
-private struct SessionLoginItems: LoginItemsList {
+struct SessionLoginItems: LoginItemsList {
     @available(macOS, deprecated: 10.11)
-    func urls() -> [URL] {
-        guard let list = LSSharedFileListCreate(nil, kLSSharedFileListSessionLoginItems.takeUnretainedValue(), nil)?.takeRetainedValue() else { return [] }
+    private func list() -> LSSharedFileList? {
+        LSSharedFileListCreate(nil, kLSSharedFileListSessionLoginItems.takeUnretainedValue(), nil)?.takeRetainedValue()
+    }
+
+    @available(macOS, deprecated: 10.11)
+    private func entries(_ list: LSSharedFileList) -> [(item: LSSharedFileListItem, url: URL)] {
         var seed: UInt32 = 0
         let items = LSSharedFileListCopySnapshot(list, &seed)?.takeRetainedValue() as? [LSSharedFileListItem] ?? []
         let flags = UInt32(kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes)
-        return items.compactMap { LSSharedFileListItemCopyResolvedURL($0, flags, nil)?.takeRetainedValue() as URL? }
+        return items.compactMap { item in
+            (LSSharedFileListItemCopyResolvedURL(item, flags, nil)?.takeRetainedValue() as URL?).map { (item, $0) }
+        }
+    }
+
+    @available(macOS, deprecated: 10.11)
+    private func item(_ url: URL, in list: LSSharedFileList) -> LSSharedFileListItem? {
+        let path = url.standardizedFileURL.path
+        return entries(list).first { $0.url.standardizedFileURL.path == path }?.item
+    }
+
+    @available(macOS, deprecated: 10.11)
+    func urls() -> [URL] {
+        list().map { entries($0).map(\.url) } ?? []
+    }
+
+    @available(macOS, deprecated: 10.11)
+    func remove(_ url: URL) -> Bool {
+        guard let list = list(), let item = item(url, in: list) else { return false }
+        return LSSharedFileListItemRemove(list, item) == noErr
+    }
+
+    @available(macOS, deprecated: 10.11)
+    func insert(_ url: URL) -> Bool {
+        typealias Insert = @convention(c) (LSSharedFileList, UnsafeRawPointer?, CFString?, UnsafeRawPointer?, CFURL, CFDictionary?, CFArray?) -> UnsafeRawPointer?
+        let symbols = UnsafeMutableRawPointer(bitPattern: -2)
+        guard let list = list(), let function = dlsym(symbols, "LSSharedFileListInsertItemURL"),
+              let last = dlsym(symbols, "kLSSharedFileListItemLast") else { return false }
+        let insert = unsafeBitCast(function, to: Insert.self)
+        return insert(list, last.load(as: UnsafeRawPointer?.self), nil, nil, url as CFURL, nil, nil) != nil
     }
 }
 #endif

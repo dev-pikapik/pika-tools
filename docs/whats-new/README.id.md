@@ -5,6 +5,103 @@
 
 ---
 
+## <a id="v1.51.0"></a>Video yang tidak bisa dibuka QuickTime kini bisa diputar
+
+<sub>1.51.0 · 15 Oktober 2026</sub>
+
+Di versi situs web, MKV, WebM, AVI, WMV, FLV, dan video lain yang tidak bisa dibuka QuickTime kini diputar di pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klik kanan sebuah video dan pilih Buka dengan › pikapik Player, atau klik Buka video… di Pengaturan › Pemutar. Video diputar di jendelanya sendiri: Spasi memutar dan menjeda, ← dan → melompat 5 detik, ↑ dan ↓ mengubah volume, dan F beralih ke layar penuh.
+
+Pemutar adalah app kecil yang terpisah. Ia hanya melihat video yang Anda buka, tidak bisa terhubung ke internet, dan tidak meminta izin apa pun. App yang membuka video Anda secara default tetap sama. Subtitel belum didukung.
+
+**Coba:** Pengaturan › Pemutar
+
+---
+
+## <a id="v1.50.3"></a>Menu sudut aktif dan layar utama kini berfungsi
+
+<sub>1.50.3 · 15 Oktober 2026</sub>
+
+Di versi situs web, menu Ubah… pada baris sudut aktif dan menu Layar utama kini melakukan apa yang dijanjikan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Di versi 1.50.2, setiap pilihan di kedua menu ini muncul tiga kali dan memilih salah satunya tidak mengubah apa pun. Sekarang setiap pilihan muncul sekali, pilihan saat ini diberi tanda centang, dan pilihan Anda langsung berlaku. Sudut aktif ada di Pengaturan › Game, dan Layar utama ada di bawah Pertahankan Dock di satu layar. Kembalikan, atau mematikan sakelar, tetap mengembalikan semuanya persis seperti semula.
+
+---
+
+## <a id="v1.50.2"></a>pikapik mengerjakannya sendiri, tanpa pergi ke Pengaturan Sistem
+
+<sub>1.50.2 · 15 Oktober 2026</sub>
+
+Di versi dari situs web, mematikan tugas latar belakang, menambah tata letak papan ketik, mengubah sudut aktif, dan memilih layar utama kini dilakukan langsung di pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Tugas Latar Belakang, matikan sebuah tugas dan barisnya langsung berubah. Tidak perlu kata sandi, dan pilihan Anda tetap ada setelah restart. Nyalakan Lagi mengembalikan tugasnya. Tugas untuk seluruh Mac dan pembantu yang ditambahkan sebuah app sendiri tetap membuka Pengaturan Sistem, dan satu baris di bawahnya menjelaskan alasannya.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Memperbaiki teks yang diketik dengan tata letak yang salah berfungsi jika Anda punya dua tata letak papan ketik atau lebih. Jika hanya punya satu, catatan di Pengaturan › Papan Ketik kini menawarkan tata letak untuk bahasa Anda. Pilih satu di Tambah Tata Letak dan langsung siap, tanpa kata sandi. Jika tidak ada yang cocok, Pengaturan Papan Ketik… masih ada.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Di Pengaturan › Game, menu Ubah… pada baris sudut aktif memilih aksi lain untuk sudut itu. Di Pertahankan Dock di satu layar, menu Layar utama menjadikan layar yang Anda pilih sebagai layar utama, dengan Dock di atasnya. pikapik mengingat keadaan sebelumnya: Kembalikan, atau mematikan sakelar, mengembalikan semuanya persis seperti semula.
+
+**Coba:** Pengaturan › Tugas Latar Belakang
+
+**Diperbaiki**
+
+- Minimalkan atau sembunyikan dengan klik di Dock: jika Anda menyalakannya saat klik meminimalkan jendela, setelah restart ia tidak lagi berubah sendiri menjadi menyembunyikan app.
+- Saat Anda membuka pikapik, kini ia memeriksa pengaturan yang berubah di Mac Anda yang lain, sehingga Mac yang melewatkan perubahan langsung menyusul.
+- Tetap Terjaga kini menyebut bahwa ia tetap menyala sampai Anda mematikannya, dan Mode Game tidak lagi menyarankan game yang sudah Anda tambahkan.
+
+---
+
+## <a id="v1.50.0"></a>Lebih banyak pikapik di versi Mac App Store
+
+<sub>1.50.0 · 15 Oktober 2026</sub>
+
+Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di versi Mac App Store.
+
+**Baru di versi Mac App Store**
+
+- **Buka dan buat arsip di Finder.** Klik kanan arsip, lalu pilih “Ekstrak”. Untuk membuatnya, klik kanan file lalu pilih “Buat Arsip…”. Tekan Spasi pada arsip untuk melihat isinya. Di versi ini, hanya ZIP yang bisa diberi kata sandi.
+- **Desktop yang bersih.** Nyalakan “Sembunyikan ikon desktop”, dan pikapik menutupi ikon dengan wallpaper Anda. Klik Anda tetap sampai ke desktop, dan tidak perlu izin apa pun.
+- **Home dan End berfungsi lagi.** Keduanya menuju awal dan akhir baris di mana saja, kecuali di browser, Finder, Musik, dan TV.
+- **Perbaiki teks yang salah tata letak dengan pintasan.** Pilih teksnya, lalu tekan ⌃⇧Spasi. Nyalakan “Perbaiki teks yang dipilih” di Pengaturan › Papan Ketik, tempat Anda juga bisa mengganti tombolnya.
+- **Matikan layar dengan satu klik.** “Matikan layar sekarang” membuat layar langsung gelap, sementara Mac Anda tetap bekerja. Gerakkan tetikus untuk menyalakannya kembali.
+- **Game tidak terganggu.** Di “Mode Game”, pintasan Mac seperti Spotlight dijeda selama game ada di depan. Penunjuk menjauh dari sudut layar, sehingga sudut aktif tidak terpicu.
+- **Angka baterai kembali.** “Baterai” kembali menampilkan “Kapasitas Maksimum” di macOS 27, dan “Suhu” menampilkan suhu baterai.
+- **Lihat app mana yang bisa meminta izin.** “Izin app lain” di Pengaturan › Izin menampilkannya beserta ikonnya.
+- **Tahu ke mana harus mengklik.** Saat macOS tidak mengizinkan pikapik mengubah sebuah pengaturan, animasi singkat menunjukkan ke mana harus mengklik di Pengaturan Sistem.
+
+**Di kedua versi**
+
+- **Atur volume sebelum app dibuka.** App yang sudah Anda atur tetap ada di Pengaturan › Suara dengan penggesernya, bahkan saat tertutup, dan levelnya kembali saat app memutar suara lagi, juga setelah mulai ulang. Klik “Tambah App…” atau seret app dari Finder untuk mengaturnya lebih dulu, dan ✕ melupakannya serta mengembalikannya ke volume penuh.
+- **Lihat apa yang ditambahkan pembaruan.** Setelah pembaruan, titik biru kecil menandai setiap tab Pengaturan yang punya hal baru, dan label “Baru” menandai bagiannya. Keduanya hilang setelah Anda melihatnya, dan hilang sendiri setelah 21 hari.
+- **Peluncuran pertama yang tenang.** Versi dari situs web tidak lagi meminta izin saat pertama kali dibuka. Ia hanya bertanya saat Anda menyalakan alat yang membutuhkannya.
+- **Salinan video yang lebih kecil.** “Buat Salinan Lebih Kecil” kini membuat video sekitar separuh ukurannya. Sebelumnya, sebagian besar video mendapat “Sudah ringkas”.
+- **Dua salinan akur.** Jika Anda memakai versi App Store dan versi situs web bersamaan, keduanya tidak lagi saling membatalkan. ⇧⌘Q dan ⇧⌘W berfungsi lagi di game.
+- **Game kembali setelah tidur.** “Mode Game” menyala lagi dengan sendirinya saat Mac Anda bangun.
+- **“Port” berkata jujur.** Di macOS 27, port yang dipakai macOS atau pengguna lain tidak lagi disebut bebas.
+- **Melaporkan masalah jadi lebih cepat.** “Laporkan Masalah” di Pengaturan › Tentang membuka formulir dengan versi Anda sudah terpilih.
+- **Arsip yang lebih mulus.** Bilah kemajuan bergerak saat arsip diekstrak, kata sandi yang salah langsung dilaporkan, dan Mac tidak lagi tertidur di tengah mengekstrak atau membuat arsip.
+- **Panel bilah menu yang lebih tenang.** Membuka satu baris di panel, misalnya opsi layar di bawah “Tetap Terjaga”, tidak lagi membuat bilah gulir berkedip. Panah di samping “Tetap Terjaga” kini bertuliskan “Pengaturan layar”.
+- **Port menjelaskan dirinya sendiri.** Satu baris di bawah judul menjelaskan apa itu port, dan animasi kecil menunjukkan bahwa satu pintu hanya muat satu program. Program Anda sendiri dan program yang sebaiknya dibiarkan kini punya nama yang jelas.
+- **Pengaturan bicara dengan jelas.** Setiap tab dimulai dengan satu baris tentang apa yang Anda dapat di sana, bilah samping punya jarak antar kelompok, dan “Tetap Terjaga”, “Izin” dan “Baterai” menyebutkan persis apa yang terjadi. Tombol “Perlu izin” hanya muncul saat alat yang Anda nyalakan kekurangan izin.
+
+**Diperbaiki di versi Mac App Store**
+
+- Setelah ⌘X, ⌘V di Finder kini memindahkan file Anda, seperti di versi situs web. Sebelumnya hanya menyalin.
+- “File Baru di Finder”, “Salinan Lebih Kecil di Finder”, dan “Konversi di Finder” masing-masing menampilkan statusnya sendiri. Sebelumnya, menyalakan satu membuat ketiganya tampak menyala.
+- Halaman “Port” yang kosong sudah hilang. macOS tidak menunjukkan kepada versi ini program mana yang memakai sebuah port, jadi Pengaturan › Port tidak punya apa-apa untuk ditampilkan.
+
+---
+
 ## <a id="v1.49.0"></a>Kecerahan untuk setiap monitor
 
 <sub>1.49.0 · 13 Oktober 2026</sub>

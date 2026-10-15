@@ -11,7 +11,7 @@ struct PortHint {
 struct PortLook {
     let name: String
     let file: String?
-    let icon: NSImage
+    let icon: NSImage?
     let window: NSRunningApplication?
 }
 
@@ -81,17 +81,22 @@ struct PortQuestion {
     }
 
     var shown: [PortProgram] {
+        let listed = programs.compactMap { program -> PortProgram? in
+            var program = program
+            program.listeners = program.listeners.filter(\.tcp)
+            return program.listeners.isEmpty ? nil : program
+        }
         let text = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        if text.isEmpty { return programs }
+        if text.isEmpty { return listed }
         if let digits = Self.digits(text) {
             let hit = { (listener: PortListener) in String(listener.port).hasPrefix(digits) }
-            return programs.filter { $0.listeners.contains(where: hit) }.map { program in
+            return listed.filter { $0.listeners.contains(where: hit) }.map { program in
                 var program = program
                 program.listeners = program.listeners.filter(hit) + program.listeners.filter { !hit($0) }
                 return program
             }
         }
-        return programs.filter { program in
+        return listed.filter { program in
             ([look(program).name, program.owner.name, program.owner.folder ?? "", program.owner.command.joined(separator: " ")] + hints(program).map(\.service))
                 .contains { $0.localizedStandardContains(text) }
         }
@@ -114,7 +119,7 @@ struct PortQuestion {
         let app = Self.app(for: owner, chain: chain, apps: apps)
         let file = app?.bundleURL?.path ?? Self.bundle(owner.path)
         let name = app?.localizedName ?? file.map { FileManager.default.displayName(atPath: $0).replacingOccurrences(of: ".app", with: "", options: [.anchored, .backwards]) } ?? owner.name
-        let icon = file.map { NSWorkspace.shared.icon(forFile: $0) } ?? NSWorkspace.shared.icon(for: .unixExecutable)
+        let icon = file.map { NSWorkspace.shared.icon(forFile: $0) }
         let window = ([app].compactMap { $0 } + chain.compactMap { pid in apps.first { $0.processIdentifier == pid } }).first { $0.activationPolicy == .regular }
         let look = PortLook(name: name, file: file, icon: icon, window: window)
         looks[key] = look

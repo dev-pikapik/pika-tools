@@ -15,7 +15,7 @@ cd pika-tools
 
 `install.sh` can also build from source: add `-- --source` after the install command from the README.
 
-The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks the download and the copy in `Vendor/` against pinned SHA-256 values and fetches it again when they differ), so the first build needs a network connection. The App Store build leaves it out.
+The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks the download and the copy in `Vendor/` against pinned SHA-256 values and fetches it again when they differ), so the first build needs a network connection. The App Store build leaves it out. In the same way it builds LGPL FFmpeg and dav1d from source for the video player (`scripts/fetch-ffmpeg.sh`, needs `brew install meson ninja nasm pkg-config`).
 
 Local builds are signed ad-hoc, which is fine for your own Mac. macOS treats every ad-hoc build as a new app, so after a rebuild you may need to remove pikapik from Accessibility and Input Monitoring with the − button and add it again.
 
@@ -45,6 +45,18 @@ scripts/                             build, package, release, icon, tests
 
 Game Mode reads the complete symbolic shortcut catalogue on the current Mac, including Command combinations and user assignments. Automatic pauses actions that would interrupt the game. A short deliberate input-source shortcut selects the language directly without the system menu, while held game keys have priority. Per-action choices and previews are in More game settings. Keyboard events retain their keys and modifier flags. The separate Ctrl-click rule removes Control only from left mouse events so macOS does not turn them into context menu clicks. The catalogue, coverage limits and validation are described in [Game input and shortcut catalogue](docs/game-input-catalog.md).
 
+Which apps count as games, which keys and clicks reach the game, and how the pointer is kept on the game's screen live in `GameRules`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-game-mode.swift -o build/test-game-mode && build/test-game-mode
+```
+
+Which macOS shortcuts, gestures and hot corners Game Mode pauses for each rule is decided in `SystemShortcutCatalog` and `PointerShortcuts`:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-system-shortcuts.swift -o build/test-system-shortcuts && build/test-system-shortcuts
+```
+
 The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. During Game Mode, shortcuts with Control or without Command pass through as game input, even if they were assigned to quitting or closing elsewhere.
 
 Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pikapik becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
@@ -59,6 +71,12 @@ The FPS counter over a game (Settings > Games > Show FPS) is `Games/FrameRate.sw
 swiftc -parse-as-library Sources/pika-tools/Tools/Games/FrameRate.swift scripts/test-frame-rate.swift -o build/test-frame-rate && build/test-frame-rate
 ```
 
+The Mac App Store copy can't switch hot corners off, so the cursor fence of Game Mode (`GameRules.fenceCorners`) keeps the pointer 16 points from every corner instead, except corners you allow. There the screen lock is also tracked from the `com.apple.screenIsLocked` and `screenIsUnlocked` notifications (`GameModeTool.received`), and the game is left at once. The test compiles the App Store source set, so its exclusions repeat the list in `scripts/build.sh`.
+
+```bash
+swiftc -parse-as-library -D APPSTORE $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift ! -name Updater.swift ! -name 'LeftoverPermissions*.swift' ! -name SMC.swift ! -name FanHelperProtocol.swift ! -name FanControl.swift ! -name FanSettings.swift ! -name PointerTool.swift ! -name 'DockDisplay*' ! -path '*/Tools/Animations/*' ! -path '*/Tools/KeyRepeat/*' ! -path '*/Tools/Uninstaller/*') Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-game-appstore.swift -o build/test-game-appstore && build/test-game-appstore
+```
+
 Quit on last window uses an `AXObserver` per regular app: it tracks standard windows and, half a second after one is destroyed, quits the app if it has no windows left, including minimized ones and ones on other desktops (checked with `CGWindowListCopyWindowInfo`). Finder, pikapik and the apps in the exceptions list are skipped.
 
 Hide with a Dock click is a `CGEventTap` on the left mouse button. On a plain click it asks the Dock for the element under the pointer with `AXUIElementCopyElementAtPosition`. If that is the icon of the frontmost app and the app has a visible window, the click is dropped and the app hides. Otherwise the click goes to the Dock as usual.
@@ -67,6 +85,19 @@ Keep the Dock on one display sets the Dock’s own `allow-display-switching` key
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockDisplaySwitch.swift scripts/test-dock-display.swift -o build/test-dock-display && build/test-dock-display
+swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockHideMigration.swift scripts/test-dock-hide-migration.swift -o build/test-dock-hide-migration && build/test-dock-hide-migration
+```
+
+Changing a hot corner from the Games page remembers the first action and puts it back on request, and a change to the same action writes nothing, so the Dock restarts only on a real change.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Games/HotCorners.swift scripts/test-hot-corners.swift -o build/test-hot-corners && build/test-hot-corners
+```
+
+A `Toggle` inside a `Menu` needs `.toggleStyle(.automatic)`: the switch style that Settings pages apply makes each item draw three rows that do nothing when chosen. The test reads every Swift file in `Sources` and fails on a `Toggle` in a `Menu` without it.
+
+```bash
+swiftc -parse-as-library scripts/test-menu-items.swift -o build/test-menu-items && build/test-menu-items
 ```
 
 The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
@@ -87,7 +118,13 @@ Permissions left by deleted apps are read from the system TCC database (`/Librar
 swiftc -parse-as-library Sources/pika-tools/Common/LeftoverPermissions.swift scripts/test-leftover-permissions.swift -o build/test-leftover-permissions && build/test-leftover-permissions
 ```
 
-App Volume (macOS 14.2 and later) changes one app’s volume without a driver. For every app whose slider is below 100% or that is muted, pikapik creates a Core Audio process tap (`CATapDescription`) that mutes the app’s own output, read through a private aggregate device that holds only the tap. A HAL output unit with its input off, set to the output the app plays to (the current output if it uses several), takes the sound from a ring buffer, multiplies it by the app’s gain and plays it there, so the microphone is never opened; an app at 100% gets no tap and is never touched. Helper processes, such as a browser’s audio service, are listed under the app that contains or started them; system daemons are left out. The gain follows the slider squared and moves through a 30 ms ramp so nothing clicks. macOS has no call that says whether System Audio Recording is allowed, so pikapik plays a tone too quiet to hear through a tap on itself and takes any sound that comes back as “allowed”; it asks again when a running tap delivers only silence. The gain, the ramp, the mixing, the ring buffer and the grouping live in `AppVolumeMath`, which you can test without the app:
+In the App Store version the sandbox and macOS hide who was allowed, so Settings › Permissions reads the usage keys in the `Info.plist` of the apps in `/Applications` (and one folder level below it) and says “can ask”, never “has”: Camera (`NSCameraUsageDescription`), Microphone, Automation (`NSAppleEventsUsageDescription`), Files and Folders (the folder and volume keys) and Bluetooth. Accessibility, Screen Recording, Input Monitoring, Full Disk Access, App Management and Developer Tools have no such key, so those rows only open System Settings. The scan lives in `PrivacyAsks`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/PrivacyAsks.swift scripts/test-privacy-asks.swift -o build/test-privacy-asks && build/test-privacy-asks
+```
+
+App Volume (macOS 14.2 and later) changes one app’s volume without a driver. For every app whose slider is below 100% or that is muted, pikapik creates a Core Audio process tap (`CATapDescription`) that mutes the app’s own output, read through a private aggregate device that holds only the tap. A HAL output unit with its input off, set to the output the app plays to (the current output if it uses several), takes the sound from a ring buffer, multiplies it by the app’s gain and plays it there, so the microphone is never opened; an app at 100% gets no tap and is never touched. Helper processes, such as a browser’s audio service, are listed under the app that contains or started them; system daemons are left out. The gain follows the slider squared and moves through a 30 ms ramp so nothing clicks. macOS has no call that says whether System Audio Recording is allowed, so pikapik plays a tone too quiet to hear through a tap on itself and takes any sound that comes back as “allowed”; it asks again when a running tap delivers only silence. The gain, the ramp, the mixing, the ring buffer, the grouping, the saved levels (`AppVolumeMemory`, kept under the app’s bundle ID) and the merge of running and remembered apps into the list live in `AppVolumeMath`, which you can test without the app:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/AppVolume/AppVolumeMath.swift scripts/test-app-volume.swift -o build/test-app-volume && build/test-app-volume
@@ -117,6 +154,12 @@ The app and the pet tell you about an update only when the latest release is new
 swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
 ```
 
+After an update the app points at what is new: a dot after the tab’s name until the tab is opened, a New tag beside the row until the tab is left, nothing on a fresh install and nothing 21 days after the update. `NewMarks` holds the table of what is new and the version logic, and the test checks fresh installs, upgrades from 1.49.x, seen items that stay seen after a relaunch, a downgrade or a second running copy, expiry and that every tab in the table exists:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Version.swift Sources/pika-tools/Common/NewMarks.swift scripts/test-new-marks.swift -o build/test-new-marks && build/test-new-marks
+```
+
 Before Homebrew removes the app, it runs `pika-tools --uninstall`, which turns off launch at login and puts back the system settings the app changed, such as the Dock and key repeat. Homebrew runs the same step when it upgrades or reinstalls the app, so the app first looks for the `brew` command that started it and does nothing for `upgrade`, `reinstall` and `install`. The check lives in `Brew`:
 
 ```bash
@@ -133,6 +176,12 @@ iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pika
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-folder.swift -o build/test-settings-folder && build/test-settings-folder
+```
+
+The app also reads the file whenever it comes to the front, so a change that arrived while it sat in the background is picked up. This check writes newer settings from "another Mac" into the local build's folder and waits for them to be applied. It needs `./scripts/build.sh` first and switches between apps, so it refuses to run unless the keyboard and mouse have been idle for two minutes:
+
+```bash
+./scripts/check-settings-sync.sh
 ```
 
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. The App Store build uses it only to list background tasks. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
@@ -178,7 +227,7 @@ swiftc -parse-as-library Sources/pika-tools/Common/Battery.swift scripts/test-ba
 swiftc -parse-as-library -D APPSTORE Sources/pika-tools/Common/Battery.swift scripts/test-battery.swift -o build/test-battery-appstore && build/test-battery-appstore
 ```
 
-The **Ports** page learns which programs listen on which ports from the same kernel list `netstat` reads (`net.inet.tcp.pcblist_n` and `net.inet.udp.pcblist_n`), so it needs no extra tools and works in the App Store version too. macOS 27 shares that list only with programs signed with an identifier, so the command signs the test before running it. The test opens a few sockets of its own on ports the system picks, checks that the list finds each one with the right program, address and protocol and that a plain connection is not counted as listening, then groups made-up processes the way the page does. It only reads the list and never touches other programs:
+The **Ports** page learns which programs listen on which ports from the same kernel list `netstat` reads (`net.inet.tcp.pcblist_n` and `net.inet.udp.pcblist_n`), so it needs no extra tools. macOS 27 gives the whole list only to programs signed without a team, like local builds and this test, so the command signs the test before running it. A signed release sees only its own sockets: it finds the user's programs through libproc, and a port it can't see is checked with a test bind, so the page never calls a taken port free. In the App Store version the sandbox blocks libproc too, so the page is hidden there. The test opens a few sockets of its own on ports the system picks, checks that the list finds each one with the right program, address and protocol and that a plain connection is not counted as listening, that a taken port is never called free, then groups made-up processes the way the page does. It only reads the list and never touches other programs:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Ports/PortScanner.swift scripts/test-ports.swift -o build/test-ports && codesign -s - -f -i com.pesotchi.pika-tools.test-ports build/test-ports && build/test-ports
@@ -196,10 +245,18 @@ swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/
 swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swift scripts/test-layout.swift -o build/test-layout && build/test-layout
 ```
 
+The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It opens files as an alternate app only, so it never becomes the default for any type. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
 2. Add one line to `ToolRegistry.tools` in `Tools/Tool.swift`.
+3. Describe it in [`docs/FEATURES.md`](docs/FEATURES.md) under its Settings tab: what it does, how it works, its limits, which edition has it and how to test it by hand. Then run `./scripts/feature-form.sh` so the bug and feature forms list it. CI and `release.sh` fail while the forms and the catalog disagree. A changed tool gets the same update.
+4. If users should notice it after the update, add one line to `NewMarks.items` in `Common/NewMarks.swift`: the version that ships it, the tab, the tool’s `id` as the row, and the edition. The tab gets a dot until it is opened and the row a New tag until the tab is left.
 
 ### Strings
 
@@ -236,6 +293,17 @@ The icon is `Resources/AppIcon.icon` in Icon Composer format, with light and dar
 swift scripts/make-icns.swift
 ```
 
+## Icons in Settings
+
+Settings use three kinds of icons, the same way System Settings does:
+- a colored tile (`SectionIcon` in `Common/IconStyle.swift`) marks a place: the sidebar and page headers;
+- an app's own icon means the row is that program: Ports, Background, Games, Uninstaller;
+- a plain symbol in a 24 pt column marks a fact: Battery, Temperature.
+
+A program without its own icon, such as a command-line tool, gets a gray tile with the `terminal` symbol.
+
 ## Third-party software
 
 The direct build includes the 7-Zip command line tool (`7zz`) from [www.7-zip.org](https://www.7-zip.org), licensed under the GNU LGPL 2.1 with the unRAR restriction. It runs as a separate program, its license is in the app as `Contents/Resources/7-Zip License.txt`, and its source code is attached to every release as `7-Zip-26.04-source.tar.xz`.
+
+The video player uses [FFmpeg](https://ffmpeg.org) under the GNU LGPL 2.1 or later and [dav1d](https://code.videolan.org/videolan/dav1d) under the BSD 2-Clause license, built as shared libraries in `Contents/Frameworks/` with only LGPL parts enabled. Both licenses are in the app as `Contents/Resources/FFmpeg License.txt`, the Player page opens them, and the exact sources are attached to every release.

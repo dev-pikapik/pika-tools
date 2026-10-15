@@ -91,7 +91,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.49.0</string>
+	<string>1.51.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -105,7 +105,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>113</string>
+	<string>119</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
@@ -121,6 +121,11 @@
 	<key>NSServices</key>
 	<array>
 		<dict>
+			<key>NSKeyEquivalent</key>
+			<dict>
+				<key>default</key>
+				<string>@~^$&#xF716;</string>
+			</dict>
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>

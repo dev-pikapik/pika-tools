@@ -130,6 +130,23 @@ enum KeyboardLayouts {
         return all.first { $0.id == id } ?? KeyboardLayout(source)
     }
 
+    static func wanted(_ preferred: [String], covered: Set<String>) -> [String] {
+        var seen = covered
+        return preferred.map { String($0.prefix { $0 != "-" }) }.filter { seen.insert($0).inserted }
+    }
+
+    static func addable() -> [TISInputSource] {
+        let wanted = wanted(Locale.preferredLanguages, covered: Set(all.map(\.language)))
+        let found = sources([kTISPropertyInputSourceType: kTISTypeKeyboardLayout as Any, kTISPropertyInputSourceIsSelectCapable: true, kTISPropertyInputSourceIsEnabled: false], installed: true)
+        return wanted.flatMap { code in found.filter { languages($0).first == code } }
+    }
+
+    static func enable(_ source: TISInputSource) -> Bool {
+        guard TISEnableInputSource(source) == noErr else { return false }
+        enabled = nil
+        return true
+    }
+
     static func layout(id: String) -> KeyboardLayout? {
         sources([kTISPropertyInputSourceID: id], installed: true).lazy.compactMap { KeyboardLayout($0) }.first
     }

@@ -43,7 +43,7 @@ final class GameModeTool: Tool {
     var games: [String] {
         didSet {
             UserDefaults.standard.set(games, forKey: Self.gamesKey)
-            suggestions.removeAll(where: games.contains)
+            suggestions.removeAll { GameRules.isAdded($0, in: games) }
             update()
         }
     }
@@ -90,10 +90,12 @@ final class GameModeTool: Tool {
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var combos: Set<UInt64> = []
     @ObservationIgnored private var hinted = false
-    @ObservationIgnored private var fence: SwipeFence?
-    @ObservationIgnored private var cursorTimer: Timer?
-    @ObservationIgnored private var cursorScreen: CGRect?
-    @ObservationIgnored private var cursorCorners: Set<Int> = []
+    @ObservationIgnored private var fence: CursorFence?
+    @ObservationIgnored private var fenceTimer: Timer?
+    @ObservationIgnored private var swipes: (blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) = (false, [], [])
+    #if !APPSTORE
+    @ObservationIgnored private var cursorHeld = false
+    #endif
     @ObservationIgnored private var assertion: IOPMAssertionID?
     @ObservationIgnored private let trace = HotKeyTrace()
     @ObservationIgnored fileprivate var languageBindings: [UInt64: (direction: InputSwitchGesture.Direction, automatic: Bool)] = [:]
@@ -118,7 +120,10 @@ final class GameModeTool: Tool {
         needsRecording = defaults.bool(forKey: Self.frameRateRecordingKey)
 
         let center = NSWorkspace.shared.notificationCenter
-        for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
+        for name in [
+            NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification,
+            NSWorkspace.didWakeNotification, NSWorkspace.sessionDidBecomeActiveNotification,
+        ] {
             center.addObserver(forName: name, object: nil, queue: .main) { _ in GameModeTool.shared.update() }
         }
         for name in [NSWorkspace.willSleepNotification, NSWorkspace.sessionDidResignActiveNotification] {
@@ -214,8 +219,8 @@ final class GameModeTool: Tool {
             .filter { Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL)
                 || GameRules.minecraft($0.executableURL?.path ?? "") != nil }
             .map(Self.key)
-        var seen = Set(games + notGames + [""])
-        suggestions = (running + installed).filter { seen.insert($0).inserted }
+        var seen = Set(notGames + [""])
+        suggestions = (running + installed).filter { !GameRules.isAdded($0, in: games) && seen.insert($0).inserted }
     }
 
     fileprivate func update() {
@@ -245,12 +250,11 @@ final class GameModeTool: Tool {
         )
         hinted = false
         let paused = PointerShortcuts.paused(catalog, rules: rules, values: systemShortcuts)
-        cursorCorners = Set(PointerShortcuts.sides.indices).subtracting(paused.corners)
-        if paused.blocksAll || !paused.except.isEmpty { fence = SwipeFence(blocksAll: paused.blocksAll, except: paused.except) }
+        swipes = (paused.blocksAll, paused.except, Set(PointerShortcuts.sides.indices).subtracting(paused.corners))
+        if rules.contains(.cursor) || paused.blocksAll || !paused.except.isEmpty { moveFence() }
         DockEdges.calm(corners: paused.corners, hidesDock: rules.contains(.cursor))
-        if rules.contains(.cursor), CursorLock.available {
-            holdCursor()
-            cursorTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.holdCursor() }
+        if rules.contains(.cursor) {
+            fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
         }
         if rules.contains(.display) {
             var id = IOPMAssertionID(0)
@@ -264,13 +268,15 @@ final class GameModeTool: Tool {
     }
 
     func leave() {
-        cursorTimer?.invalidate()
-        cursorTimer = nil
-        if cursorScreen != nil { _ = CursorLock.hold(nil) }
-        cursorScreen = nil
+        fenceTimer?.invalidate()
+        fenceTimer = nil
+        #if !APPSTORE
+        if cursorHeld { _ = CursorLock.hold(nil) }
+        cursorHeld = false
+        #endif
         fence?.stop()
         fence = nil
-        cursorCorners = []
+        swipes = (false, [], [])
         DockEdges.restoreSoon()
         combos = []
         languageBindings = [:]
@@ -299,7 +305,7 @@ final class GameModeTool: Tool {
         DispatchQueue.main.async { GameHint.show() }
     }
 
-    fileprivate func received(_ name: String) {
+    func received(_ name: String) {
         #if APPSTORE
         Self.locked = name == "com.apple.screenIsLocked"
         #endif
@@ -310,16 +316,27 @@ final class GameModeTool: Tool {
         }
     }
 
-    private func holdCursor() {
+    private func moveFence() {
         guard let game else { return }
-        let screen = Self.screen(of: game.processIdentifier) ?? cursorScreen
-        let rects = screen.map { GameRules.fence($0, corners: cursorCorners) } ?? []
+        let frame = rules.contains(.cursor) ? Self.screen(of: game.processIdentifier) ?? fence?.frame : nil
+        #if !APPSTORE
+        holdCursor(frame)
+        #endif
+        guard fence == nil || fence?.frame != frame else { return }
+        fence?.stop()
+        fence = CursorFence(frame: frame, blocksAll: swipes.blocksAll, except: swipes.except, corners: swipes.corners)
+    }
+
+    #if !APPSTORE
+    private func holdCursor(_ screen: CGRect?) {
+        let rects = screen.map { GameRules.fenceRects($0, corners: swipes.corners) } ?? []
         if let cursor = CGEvent(source: nil)?.location, rects.contains(where: { $0.contains(cursor) }) {
-            if CursorLock.hold(rects) { cursorScreen = screen }
-        } else if cursorScreen != nil, CursorLock.hold(nil) {
-            cursorScreen = nil
+            if CursorLock.hold(rects) { cursorHeld = true }
+        } else if cursorHeld, CursorLock.hold(nil) {
+            cursorHeld = false
         }
     }
+    #endif
 
     private func refreshCommandKeys() {
         ToolRegistry.shared.tools.forEach { ($0 as? CommandKeysTool)?.refresh() }
@@ -447,7 +464,29 @@ final class GameModeTool: Tool {
     }
 }
 
+extension GameRules {
+    #if APPSTORE
+    // The App Store copy can't switch hot corners off, so the fence keeps the pointer this far (x + y) from every corner pixel.
+    static let cornerGap: CGFloat = 16
+    #else
+    static let cornerGap: CGFloat = 0
+    #endif
+
+    static func fenceCorners(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
+        var fenced = fence(point, in: frame, corners: corners) ?? point
+        for corner in 0..<4 where !corners.contains(corner) {
+            let sx: CGFloat = corner % 2 == 0 ? 1 : -1, sy: CGFloat = corner < 2 ? 1 : -1
+            let gap = (fenced.x - (sx > 0 ? frame.minX : frame.maxX - 1)) * sx + (fenced.y - (sy > 0 ? frame.minY : frame.maxY - 1)) * sy
+            guard gap < cornerGap else { continue }
+            fenced.x += (cornerGap - gap) / 2 * sx
+            fenced.y += (cornerGap - gap) / 2 * sy
+        }
+        return fenced == point ? nil : fenced
+    }
+}
+
 #if APPSTORE
+// Dock preferences are out of reach in the sandbox; GameRules.fenceCorners keeps hot corners quiet instead.
 enum DockEdges {
     static var journal: [String: Any] { [:] }
     static func calm(corners: Set<Int>, hidesDock: Bool) {}
@@ -525,13 +564,7 @@ enum DockEdges {
 }
 #endif
 
-#if APPSTORE
-private enum CursorLock {
-    static let available = false
-
-    static func hold(_ rects: [CGRect]?) -> Bool { false }
-}
-#else
+#if !APPSTORE
 private enum CursorLock {
     private typealias Lock = @convention(c) (Int32, UnsafeRawPointer?) -> Int32
     private typealias Connection = @convention(c) () -> Int32
@@ -542,8 +575,6 @@ private enum CursorLock {
     private static let connection = dlsym(library, "SLSMainConnectionID").map { unsafeBitCast($0, to: Connection.self) }
     private static let region = dlsym(UnsafeMutableRawPointer(bitPattern: -2), "CGRegionCreateWithRects").map { unsafeBitCast($0, to: Region.self) }
 
-    static var available: Bool { lock != nil && connection != nil && region != nil }
-
     static func hold(_ rects: [CGRect]?) -> Bool {
         guard let lock, let connection, let region else { return false }
         let shape = rects.flatMap { region($0, $0.count) }
@@ -553,25 +584,35 @@ private enum CursorLock {
 }
 #endif
 
-private final class SwipeFence {
+private final class CursorFence {
+    let frame: CGRect?
     let blocksAll: Bool
     let except: Set<Int64>
+    let corners: Set<Int>
     fileprivate var holding: Bool?
     fileprivate private(set) var tap: CFMachPort?
     private var loop: CFRunLoop?
 
-    init(blocksAll: Bool, except: Set<Int64>) {
+    init(frame: CGRect?, blocksAll: Bool, except: Set<Int64>, corners: Set<Int>) {
+        self.frame = frame
         self.blocksAll = blocksAll
         self.except = except
-        guard AXIsProcessTrusted() else { return }
+        self.corners = corners
+        #if APPSTORE
+        let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
+        #else
+        let moves: [CGEventType] = []
+        #endif
+        let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
+        guard mask != 0, AXIsProcessTrusted() else { return }
         let ready = DispatchSemaphore(value: 0)
         let thread = Thread { [self] in
             if let tap = CGEvent.tapCreate(
                 tap: .cgSessionEventTap,
                 place: .headInsertEventTap,
                 options: .defaultTap,
-                eventsOfInterest: 1 << 30,
-                callback: swipeFenceCallback,
+                eventsOfInterest: mask,
+                callback: cursorFenceCallback,
                 userInfo: Unmanaged.passUnretained(self).toOpaque()
             ) {
                 CFRunLoopAddSource(CFRunLoopGetCurrent(), CFMachPortCreateRunLoopSource(nil, tap, 0), .commonModes)
@@ -656,7 +697,8 @@ private func gameModeCallback(
         guard tool.isPlaying else { break }
         if type == .keyDown, event.getIntegerValueField(.keyboardEventAutorepeat) == 0 {
             let combo = GameRules.combo(key: Int64(key), flags: flags.rawValue)
-            if let binding = tool.languageBindings[combo], !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+            if let binding = tool.languageBindings[combo], !event.isPikapik, !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+                event.markPikapik()
                 let pid = tool.game?.processIdentifier
                 DispatchQueue.main.async {
                     guard tool.game?.processIdentifier == pid, NSWorkspace.shared.frontmostApplication?.processIdentifier == pid, tool.languageBindings[combo] != nil else { return }
@@ -681,17 +723,25 @@ private func gameModeCallback(
     return Unmanaged.passUnretained(event)
 }
 
-private func swipeFenceCallback(
+private func cursorFenceCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
     refcon: UnsafeMutableRawPointer?
 ) -> Unmanaged<CGEvent>? {
     guard let refcon else { return Unmanaged.passUnretained(event) }
-    let fence = Unmanaged<SwipeFence>.fromOpaque(refcon).takeUnretainedValue()
+    let fence = Unmanaged<CursorFence>.fromOpaque(refcon).takeUnretainedValue()
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
+    #if APPSTORE
+    case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
+        if let frame = fence.frame, let point = GameRules.fenceCorners(event.location, in: frame, corners: fence.corners) {
+            event.location = point
+            CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
+            CGWarpMouseCursorPosition(point)
+        }
+    #endif
     default:
         if type.rawValue == 30, event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23 {
             let gate = GameRules.dropsSwipe(
@@ -728,7 +778,9 @@ struct GameModePage: View {
                     ForEach(tool.suggestions, id: \.self) { key in
                         LabeledContent {
                             HStack {
-                                Button("Not a Game") { tool.dismiss(key) }
+                                Button("Ignore") { tool.dismiss(key) }
+                                    .buttonStyle(.borderless)
+                                    .foregroundStyle(.secondary)
                                 Button("Add") { tool.confirm(key) }
                             }
                             .fixedSize()
@@ -824,7 +876,7 @@ struct GameModePage: View {
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
         #if APPSTORE
-        let rows = rows.filter { $0.rule != .cursor && ($0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil }) }
+        let rows = rows.filter { $0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil } }
         #endif
         return Section {
             ForEach(rows, id: \.rule) { row in

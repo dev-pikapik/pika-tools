@@ -13,7 +13,9 @@ actor BackgroundScanner {
         #if APPSTORE
         return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: [], running: running)
         #else
-        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: BackgroundTasks.loginItems(), running: running)
+        let logins = BackgroundTasks.loginItems()
+        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: logins,
+                                       turnedOff: BackgroundTasks.turnedOffLogins(live: logins), running: running)
         #endif
     }
 
@@ -31,6 +33,9 @@ final class BackgroundModel {
     private(set) var tasks: [BackgroundTask] = []
     private(set) var loaded = false
     private(set) var busy: Set<String> = []
+    #if !APPSTORE
+    private(set) var failed: Set<String> = []
+    #endif
     #if APPSTORE
     let home = FolderAccess.home
     #else
@@ -70,9 +75,13 @@ final class BackgroundModel {
     #if !APPSTORE
     func toggle(_ task: BackgroundTask) {
         busy.insert(task.id)
+        failed.remove(task.id)
         Task {
-            let done = await scanner.toggle(task)
-            if !done { NSSound.beep() }
+            if await scanner.toggle(task) {
+                if let index = tasks.firstIndex(where: { $0.id == task.id }) { tasks[index].state = task.state == .on ? .off : .on }
+            } else {
+                failed.insert(task.id)
+            }
             busy.remove(task.id)
             refresh()
         }
@@ -86,8 +95,8 @@ struct BackgroundPage: View {
 
     var body: some View {
         Form {
+            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it"))
             #if APPSTORE
-            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it."))
             if !permissions.fileAccess {
                 Section {
                     Text("Tasks in your home folder")
@@ -95,8 +104,6 @@ struct BackgroundPage: View {
                         .needs([.folders])
                 }
             }
-            #else
-            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime."))
             #endif
             if !model.loaded {
                 Section {
@@ -112,6 +119,9 @@ struct BackgroundPage: View {
                         .padding(.vertical, 8)
                 }
             } else {
+                if model.tasks.contains(where: \.opensLoginItems) {
+                    Section { SettingsGuide.loginItems }
+                }
                 #if !APPSTORE
                 group(.login, "Open at Login")
                 #endif
@@ -145,7 +155,9 @@ struct BackgroundPage: View {
         let tasks = model.tasks.filter { $0.kind == kind }
         if !tasks.isEmpty {
             Section(title) {
-                ForEach(tasks) { TaskRow(task: $0) }
+                ForEach(tasks) { task in
+                    TaskRow(task: task, showsVersion: Set(tasks.filter { $0.title == task.title }.map(\.version)).count > 1)
+                }
             }
         }
     }
@@ -153,6 +165,7 @@ struct BackgroundPage: View {
 
 private struct TaskRow: View {
     let task: BackgroundTask
+    let showsVersion: Bool
     private let model = BackgroundModel.shared
 
     var body: some View {
@@ -181,6 +194,14 @@ private struct TaskRow: View {
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
+                #if !APPSTORE
+                if let note {
+                    Text(note)
+                        .font(.caption)
+                        .foregroundStyle(model.failed.contains(task.id) ? Color.red : Color.secondary)
+                        .lineLimit(2)
+                }
+                #endif
                 Button(action: reveal) {
                     Text(path)
                         .font(.caption)
@@ -215,8 +236,21 @@ private struct TaskRow: View {
         case .allUsers: String(localized: "For all users")
         case .wholeMac: String(localized: "For the whole Mac")
         }
-        return [state, scope, task.developer].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · ")
+        let version: String? = showsVersion && !task.version.isEmpty ? String(localized: "Version \(task.version)") : nil
+        return [version, state, scope, task.developer].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · ")
     }
+
+    #if !APPSTORE
+    private var note: String? {
+        if model.failed.contains(task.id) {
+            return task.state == .on ? String(localized: "Couldn’t turn this off. Try again or use System Settings.")
+                : String(localized: "Couldn’t turn this back on. Try again or use System Settings.")
+        }
+        guard task.opensLoginItems, task.state == .on else { return nil }
+        return task.scope == .wholeMac ? String(localized: "Needs administrator rights, so turn it off in System Settings")
+            : String(localized: "The app added it itself, so turn it off in System Settings")
+    }
+    #endif
 
     private static func text(_ timing: BackgroundTask.Timing) -> String {
         switch timing {
@@ -228,21 +262,13 @@ private struct TaskRow: View {
         }
     }
 
-    private var canToggle: Bool {
-        #if APPSTORE
-        false
-        #else
-        !task.domain.isEmpty
-        #endif
-    }
-
     @ViewBuilder private var action: some View {
         if task.isOwn {
             EmptyView()
         } else if task.state == .offInSettings {
             Button("Turn On…", action: BackgroundTasks.openLoginItems)
                 .help(Text("Opens Login Items in System Settings"))
-        } else if canToggle {
+        } else if task.canToggle {
             #if !APPSTORE
             Button(task.state == .off ? "Turn Back On" : "Turn Off") { model.toggle(task) }
                 .disabled(model.busy.contains(task.id))

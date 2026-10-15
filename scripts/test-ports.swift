@@ -94,6 +94,11 @@ enum TestPorts {
         precondition(programs[1].helpers == [101, 102] && programs[1].ports == [8000] && programs[1].listeners[0].hosts == ["*", "::1"])
         precondition(programs[2].helpers.isEmpty && programs[2].ports == [9000])
 
+        precondition(!PortScanner.isFree(v4.port) && !PortScanner.isFree(udp.port), "a taken port reads as free")
+        guard let spare = open("127.0.0.1", tcp: false) else { fatalError("could not open a spare socket") }
+        close(spare.fd)
+        precondition(PortScanner.isFree(spare.port), "a free port reads as taken")
+
         [v4.fd, v6.fd, udp.fd, client].forEach { close($0) }
         print("ports: kernel list, own sockets, owners and grouping ok")
     }

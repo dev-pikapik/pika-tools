@@ -85,6 +85,11 @@ enum TestGameMode {
         precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "", in: ["Wine Game"]))
         precondition(!GameRules.isGame(id: "com.a.game", name: "Game", path: java, in: ["com.b.game"]))
         print("minecraft: ok")
+        let launcher = "com.mojang.minecraftlauncher", cursePath = "/Users/me/Documents/curseforge/minecraft/Install/runtime/"
+        precondition(GameRules.isAdded(launcher, in: [launcher]) && GameRules.isAdded(launcher, in: [cursePath]) && GameRules.isAdded(cursePath, in: [launcher]))
+        precondition(GameRules.isAdded(cursePath, in: ["com.a.game", launcher]) && GameRules.isAdded("com.a.game", in: ["com.a.game"]))
+        precondition(!GameRules.isAdded(launcher, in: ["com.a.game"]) && !GameRules.isAdded("com.b.game", in: [cursePath, launcher]) && !GameRules.isAdded(launcher, in: []))
+        print("added: ok")
 
         let prism = "/Users/me/Library/Application Support/PrismLauncher/java/java-runtime-delta/bin/java"
         let system = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin/java"
@@ -235,8 +240,44 @@ enum TestGameMode {
 
         let screen = CGRect(x: 0, y: 0, width: 1440, height: 900)
         let second = CGRect(x: 1440, y: -200, width: 1920, height: 1080)
+        precondition(GameRules.fence(CGPoint(x: 700, y: 400), in: screen) == nil)
+        precondition(GameRules.fence(CGPoint(x: 1, y: 1), in: screen) == nil)
+        precondition(GameRules.fence(CGPoint(x: 0, y: 400), in: screen) == CGPoint(x: 1, y: 400))
+        precondition(GameRules.fence(CGPoint(x: 700, y: 899.5), in: screen) == CGPoint(x: 700, y: 898))
+        precondition(GameRules.fence(CGPoint(x: 1439, y: 0), in: screen) == CGPoint(x: 1438, y: 1))
+        precondition(GameRules.fence(CGPoint(x: 2000, y: 100), in: screen) == CGPoint(x: 1438, y: 100))
+        precondition(GameRules.fence(CGPoint(x: 1440, y: -200), in: second) == CGPoint(x: 1441, y: -199))
+        precondition(GameRules.fence(CGPoint(x: 1000, y: 500), in: second) == CGPoint(x: 1441, y: 500))
+        precondition(GameRules.fence(CGPoint(x: 1439.5, y: 899.5), in: screen, corners: [3]) == CGPoint(x: 1439, y: 899))
+        precondition(GameRules.fence(CGPoint(x: 1439, y: 899), in: screen, corners: [3]) == nil)
+        precondition(GameRules.fence(CGPoint(x: 0, y: 0), in: screen, corners: [0]) == nil)
+        precondition(GameRules.fence(CGPoint(x: 1439.5, y: 899.5), in: screen, corners: [0, 1, 2]) == CGPoint(x: 1438, y: 898))
+        precondition(GameRules.fence(CGPoint(x: 1439, y: 700), in: screen, corners: [3]) == CGPoint(x: 1438, y: 700))
+        precondition(GameRules.fence(CGPoint(x: 1442, y: 899), in: screen, corners: [3]) == CGPoint(x: 1439, y: 899))
+        precondition(GameRules.fence(CGPoint(x: 1443, y: 899), in: screen, corners: [3]) == CGPoint(x: 1438, y: 898))
+        precondition(GameRules.fence(CGPoint(x: 1438, y: -200), in: second, corners: [0]) == CGPoint(x: 1440, y: -200))
+        precondition(GameRules.fence(CGPoint(x: 1438, y: 100), in: second, corners: [0]) == CGPoint(x: 1441, y: 100))
+        for frame in [screen, second] {
+            let pixels = (0..<4).map { CGPoint(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 1, y: $0 < 2 ? frame.minY : frame.maxY - 1) }
+            for corner in 0..<4 {
+                let pushed = CGPoint(x: pixels[corner].x + (corner % 2 == 0 ? -2 : 2), y: pixels[corner].y + (corner < 2 ? -2 : 2))
+                precondition((GameRules.fence(pushed, in: frame, corners: [corner]) ?? pushed) == pixels[corner])
+                precondition(GameRules.fence(pushed, in: frame) != pixels[corner])
+                for other in (0..<4) where other != corner {
+                    precondition(GameRules.fence(pixels[other], in: frame, corners: [corner]) != nil)
+                }
+                for dx in stride(from: -8.0, through: 8.0, by: 0.5) {
+                    for dy in stride(from: -8.0, through: 8.0, by: 0.5) {
+                        let point = CGPoint(x: pixels[corner].x + dx, y: pixels[corner].y + dy)
+                        precondition(frame.contains(GameRules.fence(point, in: frame, corners: [corner]) ?? point))
+                    }
+                }
+            }
+        }
+        print("cursor fence: ok")
+
         func reaches(_ x: CGFloat, _ y: CGFloat, _ frame: CGRect, _ corners: Set<Int> = []) -> Bool {
-            GameRules.fence(frame, corners: corners).contains { $0.contains(CGPoint(x: x + 0.5, y: y + 0.5)) }
+            GameRules.fenceRects(frame, corners: corners).contains { $0.contains(CGPoint(x: x + 0.5, y: y + 0.5)) }
         }
         precondition(reaches(700, 400, screen))
         precondition(reaches(1, 1, screen))
@@ -258,14 +299,14 @@ enum TestGameMode {
         for frame in [screen, second] {
             let pixels = (0..<4).map { CGPoint(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 1, y: $0 < 2 ? frame.minY : frame.maxY - 1) }
             for corner in 0..<4 {
-                precondition(GameRules.fence(frame, corners: [corner]).allSatisfy { frame.contains($0) })
+                precondition(GameRules.fenceRects(frame, corners: [corner]).allSatisfy { frame.contains($0) })
                 precondition(!reaches(pixels[corner].x, pixels[corner].y, frame))
                 for other in 0..<4 {
                     precondition(reaches(pixels[other].x, pixels[other].y, frame, [corner]) == (other == corner))
                 }
             }
         }
-        print("cursor fence: ok")
+        print("cursor lock: ok")
 
         let calmed: [String: Any] = ["wvous-tl-corner": 2, "wvous-br-corner": 14, "autohide-delay": ""]
         var now: [String: Any] = ["wvous-tl-corner": 0, "wvous-br-corner": 4, "autohide-delay": 1000.0]

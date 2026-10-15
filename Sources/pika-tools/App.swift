@@ -68,25 +68,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         else { return }
         NewFile.handle(url)
         Compress.handle(url)
-        #if !APPSTORE
         ArchiveHandoff.handle(url)
-        #endif
         KeepAwake.shared.handle(url)
         SpeedTest.shared.handle(url)
     }
 
-    #if !APPSTORE
     func application(_ application: NSApplication, open urls: [URL]) {
         ArchiveHandoff.open(urls)
     }
-    #endif
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let path = Bundle.main.bundlePath
+        let firstLaunch = !defaults.bool(forKey: "launchedBefore")
         #if APPSTORE
         let moved = false
-        let firstLaunch = !defaults.bool(forKey: "launchedBefore")
         #else
         let moved = Updater.isNewPlace(path, last: defaults.string(forKey: "app-path"), launchedBefore: defaults.bool(forKey: "launchedBefore"))
         #endif
@@ -95,6 +91,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if moved { FinderExtension.register() }
         FinderRestart.shared.check()
         FinderExtension.refreshFinderRecord()
+        NewMarks.shared.begin(version: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "", fresh: firstLaunch)
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval", "dock-display-anchor", "dock-display-return"].forEach(defaults.removeObject)
         for id in ["app-volume", "archive", "brightness", "convert", "desktop-icons", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "hidden-files", "hide-app", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
@@ -141,22 +138,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Background.shared.quitting = true
         }
 
-        #if APPSTORE
         if CommandLine.arguments.contains("--permissions") {
             SettingsWindow.show(.permissions)
         } else if firstLaunch || CommandLine.arguments.contains("--settings") {
             SettingsWindow.show()
         }
-        #else
-        if CommandLine.arguments.contains("--permissions") {
-            SettingsWindow.show(.permissions)
-        } else if !permissions.allGranted {
-            permissions.request()
-            SettingsWindow.show(.permissions)
-        } else if CommandLine.arguments.contains("--settings") {
-            SettingsWindow.show()
-        }
-        #endif
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
