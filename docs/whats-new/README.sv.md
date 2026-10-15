@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik gör det själv, utan en tur till Systeminställningar
+
+<sub>1.50.2 · 15 oktober 2026</sub>
+
+I versionen från webbplatsen sker nu det här direkt i pikapik: stänga av en bakgrundsuppgift, lägga till en tangentbordslayout, ändra ett aktivt hörn och välja huvudbildskärm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Stäng av en uppgift i Inställningar › Bakgrundsuppgifter, så ändras raden direkt. Inget lösenord behövs, och ditt val finns kvar efter en omstart. Slå på igen tar tillbaka uppgiften. Uppgifter för hela datorn och hjälpprogram som en app lagt till själv öppnar fortfarande Systeminställningar, och en rad under förklarar varför.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Att rätta text som skrivits i fel layout fungerar när du har två eller fler tangentbordslayouter. Har du bara en erbjuder anteckningen i Inställningar › Tangentbord nu layouter för dina språk. Välj en under Lägg till layout, så är den klar direkt, utan lösenord. Passar ingen finns Tangentbordsinställningar… kvar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+I Inställningar › Spel väljer menyn Ändra… på raden för ett aktivt hörn en annan åtgärd för det hörnet. Under Håll Dock på en skärm gör menyn Huvudbildskärm den skärm du väljer till huvudbildskärm, med Dock på. pikapik kommer ihåg hur det var: Lägg tillbaka, eller att stänga av reglaget, ställer allt tillbaka exakt som förut.
+
+**Prova:** Inställningar › Bakgrundsuppgifter
+
+**Åtgärdat**
+
+- Minimera eller göm med ett klick i Dock: om du slog på det medan klicket minimerade fönster växlar det inte längre av sig självt till att gömma appen efter en omstart.
+- När du öppnar pikapik kontrollerar det nu om inställningar ändrats på din andra dator, så en dator som missade ändringen hämtar in den direkt.
+- Håll vaken säger nu att det förblir på tills du stänger av det, och Spelläge föreslår inte längre ett spel du redan lagt till.
+
+---
+
 ## <a id="v1.50.0"></a>Mer pikapik i Mac App Store-versionen
 
 <sub>1.50.0 · 15 oktober 2026</sub>

@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik macht es selbst, ohne Umweg über die Systemeinstellungen
+
+<sub>1.50.2 · 15. Oktober 2026</sub>
+
+In der Version von der Website passieren das Ausschalten einer Hintergrundaufgabe, das Hinzufügen eines Tastaturlayouts, das Ändern einer aktiven Ecke und die Wahl des Hauptbildschirms jetzt direkt in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Schalte unter Einstellungen › Hintergrundaufgaben eine Aufgabe aus, und ihre Zeile ändert sich sofort. Ein Passwort brauchst du nicht, und deine Wahl bleibt nach einem Neustart erhalten. Mit Wieder einschalten kommt die Aufgabe zurück. Aufgaben für den ganzen Mac und Helfer, die ein Programm selbst hinzugefügt hat, öffnen weiterhin die Systemeinstellungen, und ein Satz unter der Zeile sagt dir, warum.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Das Korrigieren von Text im falschen Layout funktioniert, wenn du zwei oder mehr Tastaturlayouts hast. Hast du nur eins, bietet der Hinweis unter Einstellungen › Tastatur jetzt Layouts für deine Sprachen an. Wähle eins unter Layout hinzufügen, und es ist sofort bereit, ohne Passwort. Passt keins, gibt es weiterhin Tastatureinstellungen ….
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Unter Einstellungen › Spiele wählt das Menü Ändern … in der Zeile einer aktiven Ecke eine andere Aktion für diese Ecke. Unter Dock auf einem Display halten macht das Menü Hauptbildschirm den gewählten Bildschirm zum Hauptbildschirm, und das Dock zieht mit um. pikapik merkt sich, wie es vorher war: Zurücklegen oder das Ausschalten des Schalters stellt alles genau wieder her.
+
+**Ausprobieren:** Einstellungen › Hintergrundaufgaben
+
+**Behoben**
+
+- Mit einem Klick im Dock ablegen oder ausblenden: Wenn du es eingeschaltet hast, während der Klick Fenster ablegte, wechselt es nach einem Neustart nicht mehr von selbst zum Ausblenden des Programms.
+- Beim Öffnen prüft pikapik jetzt, ob sich Einstellungen auf deinem anderen Mac geändert haben, sodass ein Mac, der die Änderung verpasst hat, sofort nachzieht.
+- Wach bleiben sagt jetzt, dass es an bleibt, bis du es ausschaltest, und der Spielmodus schlägt kein Spiel mehr vor, das du schon hinzugefügt hast.
+
+---
+
 ## <a id="v1.50.0"></a>Mehr pikapik in der Version aus dem Mac App Store
 
 <sub>1.50.0 · 15. Oktober 2026</sub>

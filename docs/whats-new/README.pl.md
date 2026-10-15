@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik robi to sam, bez wchodzenia do Ustawień systemowych
+
+<sub>1.50.2 · 15 października 2026</sub>
+
+W wersji ze strony wyłączenie zadania w tle, dodanie układu klawiatury, zmiana aktywnego narożnika i wybór wyświetlacza głównego odbywają się teraz wprost w pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+W Ustawienia › Zadania w tle wyłącz zadanie, a jego wiersz zmieni się od razu. Hasło nie jest potrzebne, a twój wybór zostaje po ponownym uruchomieniu. Włącz ponownie przywraca zadanie. Zadania dla całego Maca i pomocniki dodane przez aplikację we własnym zakresie nadal otwierają Ustawienia systemowe, a linijka pod wierszem mówi dlaczego.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Poprawianie tekstu wpisanego w złym układzie działa, gdy masz co najmniej dwa układy klawiatury. Jeśli masz tylko jeden, notatka w Ustawienia › Klawiatura proponuje teraz układy dla twoich języków. Wybierz jeden w Dodaj układ, a będzie gotowy od razu, bez hasła. Jeśli żaden nie pasuje, Ustawienia klawiatury… nadal tam są.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+W Ustawienia › Gry menu Zmień… w wierszu aktywnego narożnika wybiera inną akcję dla tego narożnika. W Trzymaj Dock na jednym ekranie menu Wyświetlacz główny robi z wybranego wyświetlacza główny, a Dock przechodzi na niego. pikapik pamięta, jak było: Przywróć albo wyłączenie przełącznika przywraca wszystko dokładnie tak jak wcześniej.
+
+**Wypróbuj:** Ustawienia › Zadania w tle
+
+**Poprawki**
+
+- Minimalizuj lub ukrywaj kliknięciem w Docku: jeśli włączyłeś to, gdy kliknięcie minimalizowało okna, po ponownym uruchomieniu nie zmienia się już samo na ukrywanie aplikacji.
+- Po otwarciu pikapik sprawdza teraz ustawienia zmienione na twoim drugim Macu, więc Mac, który ominął zmianę, od razu ją nadrabia.
+- Bez usypiania mówi teraz, że zostaje włączone, dopóki go nie wyłączysz, a Tryb gry nie podpowiada już gry, którą dodałeś.
+
+---
+
 ## <a id="v1.50.0"></a>Więcej pikapik w wersji z Mac App Store
 
 <sub>1.50.0 · 15 października 2026</sub>

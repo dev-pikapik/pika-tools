@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>O pikapik faz sozinho, sem ir aos Ajustes do Sistema
+
+<sub>1.50.2 · 15 de outubro de 2026</sub>
+
+Na versão do site, desligar uma tarefa em segundo plano, adicionar um layout de teclado, trocar um canto ativo e escolher a tela principal agora acontecem direto no pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Em Ajustes › Tarefas em Segundo Plano, desligue uma tarefa e a linha dela muda na hora. Não precisa de senha, e a sua escolha continua depois de reiniciar. Religar traz a tarefa de volta. Tarefas do Mac inteiro e ajudantes que um app adicionou por conta própria ainda abrem os Ajustes do Sistema, e uma linha abaixo explica o motivo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Corrigir o texto digitado no layout errado funciona quando você tem dois ou mais layouts de teclado. Se tiver só um, a nota em Ajustes › Teclado agora oferece layouts para os seus idiomas. Escolha um em Adicionar layout e ele já fica pronto, sem senha. Se nenhum servir, Ajustes de Teclado… continua lá.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Em Ajustes › Jogos, o menu Alterar… na linha de um canto ativo escolhe outra ação para esse canto. Em Manter o Dock em uma só tela, o menu Tela principal faz da tela escolhida a principal, com o Dock nela. O pikapik lembra como estava: Devolver, ou desligar a chave, deixa tudo exatamente como antes.
+
+**Experimente:** Ajustes › Tarefas em Segundo Plano
+
+**Corrigido**
+
+- Minimizar ou ocultar com um clique no Dock: se você ativou enquanto o clique minimizava as janelas, ele não muda mais sozinho para ocultar o app depois de reiniciar.
+- Ao abrir o pikapik, ele agora confere os ajustes alterados no seu outro Mac, e um Mac que perdeu a mudança se atualiza na hora.
+- Manter Ativo agora diz que continua ligado até você desligar, e o Modo Jogo não sugere mais um jogo que você já adicionou.
+
+---
+
 ## <a id="v1.50.0"></a>Mais pikapik na versão da Mac App Store
 
 <sub>1.50.0 · 15 de outubro de 2026</sub>
