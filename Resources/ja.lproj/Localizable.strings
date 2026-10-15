@@ -1193,9 +1193,10 @@
 "Player" = "プレーヤー";
 "MKV, AVI, WMV and other videos in their own window" = "MKV、AVI、WMVなどのビデオを専用のウインドウで再生";
 "Open Video…" = "ビデオを開く…";
-"Open videos in pikapik" = "ビデオを pikapik で開く";
-"All the formats below" = "下のすべてのフォーマット";
-"Turning off returns them to %@" = "オフにすると %@ に戻ります";
+"Open All in pikapik" = "すべてを pikapik で開く";
+"Restore Previous Apps" = "元のアプリに戻す";
+"macOS will ask about each format. Click “Use pikapik Player”." = "フォーマットごとに macOS が確認します。「pikapik Player を使用」をクリックしてください。";
+"macOS will ask about each format. Click “Use” each time." = "フォーマットごとに macOS が確認します。毎回「使用」をクリックしてください。";
 "Formats" = "フォーマット";
 "FFmpeg and dav1d Licenses" = "FFmpegとdav1dのライセンス";
 "Source Code" = "ソースコード";

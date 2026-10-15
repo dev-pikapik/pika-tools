@@ -223,7 +223,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Hide desktop icons"), synonyms: "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager"),
             SettingsItem(tab: .finder, title: String(localized: "Show hidden files"), synonyms: "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period"),
             SettingsItem(tab: .player, title: String(localized: "Open Video…"), synonyms: "video, movie, film, watch, play, mkv, avi, wmv, webm, flv"),
-            SettingsItem(tab: .player, title: String(localized: "Open videos in pikapik"), synonyms: "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime"),
+            SettingsItem(tab: .player, title: String(localized: "Open All in pikapik"), synonyms: "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime"),
             SettingsItem(tab: .player, title: String(localized: "FFmpeg and dav1d Licenses"), synonyms: "open source, legal"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),

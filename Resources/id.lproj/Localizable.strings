@@ -1193,9 +1193,10 @@
 "Player" = "Pemutar";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV, dan video lain di jendelanya sendiri";
 "Open Video…" = "Buka video…";
-"Open videos in pikapik" = "Buka video di pikapik";
-"All the formats below" = "Semua format di bawah";
-"Turning off returns them to %@" = "Saat dimatikan, kembali ke %@";
+"Open All in pikapik" = "Buka Semua di pikapik";
+"Restore Previous Apps" = "Pulihkan App Sebelumnya";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS akan bertanya untuk setiap format. Klik “Gunakan pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS akan bertanya untuk setiap format. Klik “Gunakan” setiap kali.";
 "Formats" = "Format";
 "FFmpeg and dav1d Licenses" = "Lisensi FFmpeg dan dav1d";
 "Source Code" = "Kode sumber";

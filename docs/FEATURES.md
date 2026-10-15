@@ -14,7 +14,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - **Test only on dummy apps.** Whenever a step says “stub app”, use a throwaway app whose name starts with `PikaE2E` (an empty app bundle with its own bundle id such as `org.example.pikae2e.test`, or a tiny app that plays a quiet tone). Never select, quit, uninstall, remove permissions of or change one of your real programs. Create test files only in a new test folder.
 - **Write down system state before you change it:** `defaults read com.apple.dock`, `defaults read com.apple.WindowManager StandardHideDesktopIcons`, `defaults read com.apple.finder AppleShowAllFiles`. Put them back after the test.
 - **Hardware some steps need:** a second display (Dock, Game Mode pointer, Show FPS), an external monitor not made by Apple (Brightness), a Mac with a battery (Battery) and one with fans (Fans), a trackpad and a mouse with side buttons and a wheel (Mouse), two input sources such as ABC and Russian (Keyboard), macOS 14.2 or later (Sound), a game or Chess (Games), Wi-Fi you can switch off (Speed Test).
-- **Do not flip these casually:** Open archives with this app (changes the Mac’s default app for ZIP and 7Z), Open videos in pikapik (changes it for 14 video types), Fan speed Manual, Keep the Dock on one display (restarts the Dock).
+- **Do not flip these casually:** Open archives with this app (changes the Mac’s default app for ZIP and 7Z), Open All in pikapik and the format buttons (change it for 14 video types), Fan speed Manual, Keep the Dock on one display (restarts the Dock).
 - **Run synthetic-input tools yourself:** all clicks and keys in the steps are meant to be done by you at the Mac with the test app in front.
 
 ## General
@@ -1172,24 +1172,26 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Press Space → it pauses and the position stops; press Space again → it plays. Press ↑ → the volume goes up; press ↓ → it goes down.
 3. (Website) Press F → full screen; press Esc → back to the window. Drag the position slider → the picture follows.
 4. (Website) Open the same file again from Settings › Player → the same window comes to the front, with no second window. Minimize the window and open the file again → it comes back.
-5. (Website) Right-click the file in Finder › Open With → pikapik Player is in the list and opens it. Right-click an MP4 › Open With → with Open videos in pikapik off, the app that opens it by default is unchanged.
+5. (Website) Right-click the file in Finder › Open With → pikapik Player is in the list and opens it. Right-click an MP4 › Open With → with no format given to pikapik, the app that opens it by default is unchanged.
 6. (Website) Open a text file renamed to .mkv → the window says it can’t play this file; nothing crashes.
 
-### Open videos in pikapik
+### Open All in pikapik and the format buttons
 
-**Does:** Makes pikapik Player the app that opens double-clicked videos of the formats on the page. Turning it off gives every format back to the app that had it before.
+**Does:** Each format on Settings › Player is a button that shows the app opening that format now. Click it and pikapik Player becomes that format’s app (one macOS question per type); click again and the app it had before comes back. **Open All in pikapik** does every format one after another and, when all of them are the player’s, becomes **Restore Previous Apps**.
 
-**How it works:** The switch is on Settings › Player (`PlayerPage.swift:23`). On, it remembers each type’s current app and assigns `pikapik Player` (`Contents/Helpers/pikapik Player.app`) to the types of the Formats list with the system call for default apps (`Sources/pika-tools/Common/DefaultApps.swift:46`); the list is `PlayerFormats.types` (`PlayerLogic.swift:14`). macOS asks about every type (up to 14 questions in a row) with the buttons “Use pikapik Player” and “Keep …”, and waits for each answer. Off, each type goes back to its remembered app; if that app is gone, to the next app that can open it, never pikapik. Types that were not remembered are left alone. The subtitle names the apps that will get the formats back, and the switch is read again whenever the window comes forward, so a change made in Finder shows up. The archives switch uses the same class (`ArchiveTool.swift:11`).
+**How it works:** The buttons and Open All are on Settings › Player (`PlayerPage.swift:24`, `PlayerPage.swift:43`). A click calls `DefaultApps.set` (`Sources/pika-tools/Common/DefaultApps.swift:55`) for the types of that format (`PlayerFormats.types(of:)`, `PlayerLogic.swift:16`; the whole list is `PlayerFormats.types`, `PlayerLogic.swift:14`). Turning on remembers each type’s current app, then assigns `pikapik Player` (`Contents/Helpers/pikapik Player.app`) with the system call for default apps, one type at a time: the next type is asked only after the answer to the previous one (`DefaultApps.swift:79`). macOS asks about every type with the buttons “Use pikapik Player” and “Keep …”. No answer for 60 seconds, or a refusal, stops the run. Turning off sends each type back to its remembered app; if that app is gone, to the next app that can open it, never pikapik; types that were not remembered are left alone, and a type that stayed with the player keeps its remembered app for next time. What a button shows is read from the system (`urlForApplication(toOpen:)`) after every answer and whenever the window comes forward, so a “Keep …” or a change made in Finder shows correctly; buttons are disabled while questions are open. The archives switch uses the same class (`ArchiveTool.swift:11`).
 
-**Nuances:** macOS asks again when turning off, with “Use …” for the old app and “Keep pikapik Player”. If you answer “Keep …” for a type, that type stays as it is and the next types are still asked; the switch shows on only when every type is given to the player. A type that already opens in the player is not asked again. The apps are matched by their identifier, so a second copy of pikapik elsewhere on the Mac counts as the same player.
+**Nuances:** macOS asks again when turning off, with “Use …” for the old app and “Keep pikapik Player”. The system reports “Keep …” as a cancel error; that leaves the type as it is and the next types are still asked. A format with several types (WMV and ASF, MPEG-TS, MP4 and M4V) asks once for each type. A type that already opens in the player is not asked again. Apps are matched by their identifier, so a second copy of pikapik elsewhere on the Mac counts as the same player. Resetting or removing pikapik does not change default apps by itself, as with archives; press Restore Previous Apps first.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
-1. (Website, with a test type and a stub app only, never your own videos) Note the app that opens the test type, assign the player to it the way the switch does → macOS asks “Use pikapik Player” or “Keep …”; answer Use → the type opens in the player, and the switch with only that type would show on with the old app in its subtitle.
-2. (Website) Turn it off the same way → macOS asks again; answer “Use …” for the old app → the type opens in it again. Answer Keep instead → nothing changes and nothing breaks.
-3. (Website) Search “double-click” in Settings → the row Open videos in pikapik is found.
-4. (Website) The logic on a fake store: `scripts/test-player.swift` prints ok for remember, assign, restore and a refused change.
+1. (Website, with test types and stub apps only, never your own videos) Note the app that opens a test type, assign the player to it the way a format button does → macOS asks “Use pikapik Player” or “Keep …”; answer Use → the type opens in the player; do it again and answer Keep → nothing changes and nothing breaks.
+2. (Website) Give the type back the same way → macOS asks again; answer “Use …” for the old app → the type opens in it again.
+3. (Website) Give three test types in a row, as Open All does → one question at a time; answer Keep to the second → the third is still asked.
+4. (Website) Leave a question unanswered for 60 seconds → the run stops and the buttons work again.
+5. (Website) Search “double-click” in Settings → the row Open All in pikapik is found.
+6. (Website) The logic on a fake store: `scripts/test-player.swift` prints ok for remember, assign, restore, one format alone, Keep, a refused change and a system that never answers.
 
 ### Keys, wheel and Playback menu
 

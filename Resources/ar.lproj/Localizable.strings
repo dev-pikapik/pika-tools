@@ -1193,9 +1193,10 @@
 "Player" = "المشغّل";
 "MKV, AVI, WMV and other videos in their own window" = "MKV وAVI وWMV وغيرها من الفيديوهات في نافذة خاصة بها";
 "Open Video…" = "فتح فيديو…";
-"Open videos in pikapik" = "فتح الفيديوهات في pikapik";
-"All the formats below" = "كل الصيغ أدناه";
-"Turning off returns them to %@" = "عند الإيقاف تعود إلى %@";
+"Open All in pikapik" = "فتح الكل في pikapik";
+"Restore Previous Apps" = "استعادة التطبيقات السابقة";
+"macOS will ask about each format. Click “Use pikapik Player”." = "سيسأل macOS عن كل صيغة. انقر «استخدام pikapik Player».";
+"macOS will ask about each format. Click “Use” each time." = "سيسأل macOS عن كل صيغة. انقر «استخدام» في كل مرة.";
 "Formats" = "الصيغ";
 "FFmpeg and dav1d Licenses" = "تراخيص FFmpeg وdav1d";
 "Source Code" = "الشيفرة المصدرية";

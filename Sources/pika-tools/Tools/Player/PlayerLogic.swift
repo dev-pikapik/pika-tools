@@ -11,7 +11,9 @@ enum PlayerFormats {
 
     static var extensions: [String] { all.flatMap(\.extensions) }
 
-    static var types: [UTType] {
+    static var types: [UTType] { types(of: extensions) }
+
+    static func types(of extensions: [String]) -> [UTType] {
         var seen = Set<UTType>()
         return extensions.compactMap { UTType(filenameExtension: $0) }.filter { seen.insert($0).inserted }
     }

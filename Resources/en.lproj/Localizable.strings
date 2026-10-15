@@ -1193,9 +1193,10 @@
 "Player" = "Player";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV and other videos in their own window";
 "Open Video…" = "Open Video…";
-"Open videos in pikapik" = "Open videos in pikapik";
-"All the formats below" = "All the formats below";
-"Turning off returns them to %@" = "Turning off returns them to %@";
+"Open All in pikapik" = "Open All in pikapik";
+"Restore Previous Apps" = "Restore Previous Apps";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS will ask about each format. Click “Use pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS will ask about each format. Click “Use” each time.";
 "Formats" = "Formats";
 "FFmpeg and dav1d Licenses" = "FFmpeg and dav1d Licenses";
 "Source Code" = "Source Code";

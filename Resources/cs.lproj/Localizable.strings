@@ -1193,9 +1193,10 @@
 "Player" = "Přehrávač";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV a další videa ve vlastním okně";
 "Open Video…" = "Otevřít video…";
-"Open videos in pikapik" = "Otevírat videa v aplikaci pikapik";
-"All the formats below" = "Všechny formáty níže";
-"Turning off returns them to %@" = "Po vypnutí se vrátí k aplikacím: %@";
+"Open All in pikapik" = "Otevřít vše v aplikaci pikapik";
+"Restore Previous Apps" = "Vrátit původní aplikace";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS se zeptá na každý formát. Klikněte na „Použít pikapik Player“.";
+"macOS will ask about each format. Click “Use” each time." = "macOS se zeptá na každý formát. Pokaždé klikněte na „Použít“.";
 "Formats" = "Formáty";
 "FFmpeg and dav1d Licenses" = "Licence FFmpeg a dav1d";
 "Source Code" = "Zdrojový kód";

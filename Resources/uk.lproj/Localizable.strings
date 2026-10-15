@@ -1193,9 +1193,10 @@
 "Player" = "Програвач";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV та інші відео в окремому вікні";
 "Open Video…" = "Відкрити відео…";
-"Open videos in pikapik" = "Відкривати відео в pikapik";
-"All the formats below" = "Усі формати нижче";
-"Turning off returns them to %@" = "Після вимкнення знову відкриватимуться в %@";
+"Open All in pikapik" = "Відкривати все в pikapik";
+"Restore Previous Apps" = "Повернути попередні програми";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS запитає про кожен формат — натисніть «Використовувати pikapik Player»";
+"macOS will ask about each format. Click “Use” each time." = "macOS запитає про кожен формат — щоразу натискайте «Використовувати»";
 "Formats" = "Формати";
 "FFmpeg and dav1d Licenses" = "Ліцензії FFmpeg і dav1d";
 "Source Code" = "Вихідний код";

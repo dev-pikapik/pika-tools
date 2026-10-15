@@ -1193,9 +1193,10 @@
 "Player" = "Spelare";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV och andra videor i ett eget fönster";
 "Open Video…" = "Öppna video…";
-"Open videos in pikapik" = "Öppna videor i pikapik";
-"All the formats below" = "Alla format nedan";
-"Turning off returns them to %@" = "När det stängs av går de tillbaka till %@";
+"Open All in pikapik" = "Öppna alla i pikapik";
+"Restore Previous Apps" = "Återställ tidigare appar";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS frågar om varje format. Klicka på ”Använd pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS frågar om varje format. Klicka på ”Använd” varje gång.";
 "Formats" = "Format";
 "FFmpeg and dav1d Licenses" = "Licenser för FFmpeg och dav1d";
 "Source Code" = "Källkod";

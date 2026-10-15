@@ -1193,9 +1193,10 @@
 "Player" = "Player";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV și alte fișiere video într-o fereastră separată";
 "Open Video…" = "Deschide video…";
-"Open videos in pikapik" = "Deschide fișierele video în pikapik";
-"All the formats below" = "Toate formatele de mai jos";
-"Turning off returns them to %@" = "La dezactivare revin la %@";
+"Open All in pikapik" = "Deschide tot în pikapik";
+"Restore Previous Apps" = "Restabilește aplicațiile anterioare";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS va întreba pentru fiecare format. Fă clic pe „Utilizează pikapik Player”.";
+"macOS will ask about each format. Click “Use” each time." = "macOS va întreba pentru fiecare format. Fă clic de fiecare dată pe „Utilizează”.";
 "Formats" = "Formate";
 "FFmpeg and dav1d Licenses" = "Licențele FFmpeg și dav1d";
 "Source Code" = "Cod sursă";

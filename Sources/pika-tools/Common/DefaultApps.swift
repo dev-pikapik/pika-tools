@@ -24,8 +24,8 @@ final class DefaultApps {
     private let system: DefaultAppSystem
     private let defaults: UserDefaults
 
-    private(set) var isOn = false
-    private(set) var returnsTo: [String] = []
+    private var current: [String: URL] = [:]
+    private(set) var busy = false
 
     init(types: [UTType], target: URL, previousKey: String, fallback: String? = nil, system: DefaultAppSystem = NSWorkspace.shared, defaults: UserDefaults = .standard) {
         self.types = types
@@ -37,13 +37,23 @@ final class DefaultApps {
         refresh()
     }
 
+    var isOn: Bool { isOn(types) }
+
+    func isOn(_ types: [UTType]) -> Bool {
+        types.allSatisfy { current[$0.identifier].map(isTarget) == true }
+    }
+
+    func app(of types: [UTType]) -> URL? {
+        types.compactMap { current[$0.identifier] }.first { !isTarget($0) } ?? (isOn(types) ? target : nil)
+    }
+
     func refresh() {
-        isOn = types.allSatisfy { system.handler(of: $0).map(isTarget) == true }
-        returnsTo = isOn ? names(of: remembered) : []
+        current = Dictionary(types.compactMap { type in system.handler(of: type).map { (type.identifier, $0) } }, uniquingKeysWith: { first, _ in first })
     }
 
     @discardableResult
-    func set(_ on: Bool) -> Task<Void, Never> {
+    func set(_ on: Bool, for subset: [UTType]? = nil) -> Task<Void, Never> {
+        let types = subset ?? self.types
         var previous = remembered
         if on {
             for type in types {
@@ -51,19 +61,38 @@ final class DefaultApps {
                 previous[type.identifier] = id
             }
             defaults.set(previous, forKey: previousKey)
-        } else {
-            defaults.removeObject(forKey: previousKey)
         }
         let apps = types.map { on ? target : restoring($0, previous) }
-        isOn = on
-        returnsTo = on ? names(of: previous) : []
         return Task { @MainActor in
+            busy = true
             for (type, app) in zip(types, apps) {
-                guard let app, system.handler(of: type).map({ same($0, app) }) != true else { continue }
-                do { try await system.assign(app, to: type) } catch { break }
+                guard let app, !handles(type, app) else { continue }
+                guard await assign(app, to: type) else { break }
+                refresh()
             }
+            if !on { forget(types.filter { !handles($0, target) }) }
+            busy = false
             refresh()
         }
+    }
+
+    private func assign(_ app: URL, to type: UTType) async -> Bool {
+        var answer: Bool?
+        Task { @MainActor in
+            do { try await system.assign(app, to: type); answer = true } catch { answer = ((error as NSError).userInfo[NSUnderlyingErrorKey] as? NSError)?.code == Int(userCanceledErr) }
+        }
+        await Task.yield()
+        let deadline = Date.now.addingTimeInterval(60)
+        while answer == nil, !handles(type, app), Date.now < deadline {
+            try? await Task.sleep(for: .milliseconds(200))
+        }
+        return answer ?? handles(type, app)
+    }
+
+    private func forget(_ types: [UTType]) {
+        var previous = remembered
+        types.forEach { previous[$0.identifier] = nil }
+        defaults.set(previous.isEmpty ? nil : previous, forKey: previousKey)
     }
 
     private var remembered: [String: String] {
@@ -74,6 +103,8 @@ final class DefaultApps {
 
     private func isTarget(_ url: URL) -> Bool { same(url, target) }
 
+    private func handles(_ type: UTType, _ app: URL) -> Bool { system.handler(of: type).map { same($0, app) } == true }
+
     private func same(_ a: URL, _ b: URL) -> Bool {
         a.resolvingSymlinksInPath() == b.resolvingSymlinksInPath() || Bundle(url: a)?.bundleIdentifier.map { $0 == Bundle(url: b)?.bundleIdentifier } == true
     }
@@ -82,12 +113,5 @@ final class DefaultApps {
         let id = previous[type.identifier]
         if let app = id.flatMap(system.app(withID:)) ?? fallback.flatMap(system.app(withID:)) { return app }
         return id == nil ? nil : system.handlers(of: type).first { !isTarget($0) }
-    }
-
-    private func names(of previous: [String: String]) -> [String] {
-        var seen = Set<String>()
-        return types.compactMap { previous[$0.identifier] }
-            .compactMap { system.app(withID: $0)?.deletingPathExtension().lastPathComponent }
-            .filter { seen.insert($0).inserted }
     }
 }

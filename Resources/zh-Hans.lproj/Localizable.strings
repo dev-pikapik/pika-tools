@@ -1193,9 +1193,10 @@
 "Player" = "播放器";
 "MKV, AVI, WMV and other videos in their own window" = "MKV、AVI、WMV 等视频，在独立窗口中播放";
 "Open Video…" = "打开视频…";
-"Open videos in pikapik" = "用 pikapik 打开视频";
-"All the formats below" = "下方所有格式";
-"Turning off returns them to %@" = "关闭后将恢复为 %@";
+"Open All in pikapik" = "全部用 pikapik 打开";
+"Restore Previous Apps" = "恢复原来的 App";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS 会逐个格式询问，请点按“使用 pikapik Player”。";
+"macOS will ask about each format. Click “Use” each time." = "macOS 会逐个格式询问，每次请点按“使用”。";
 "Formats" = "格式";
 "FFmpeg and dav1d Licenses" = "FFmpeg 和 dav1d 许可证";
 "Source Code" = "源代码";

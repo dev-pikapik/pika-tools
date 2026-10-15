@@ -1193,9 +1193,10 @@
 "Player" = "เครื่องเล่น";
 "MKV, AVI, WMV and other videos in their own window" = "MKV, AVI, WMV และวิดีโออื่นๆ ในหน้าต่างของตัวเอง";
 "Open Video…" = "เปิดวิดีโอ…";
-"Open videos in pikapik" = "เปิดวิดีโอใน pikapik";
-"All the formats below" = "ทุกรูปแบบด้านล่าง";
-"Turning off returns them to %@" = "เมื่อปิด จะกลับไปที่ %@";
+"Open All in pikapik" = "เปิดทั้งหมดใน pikapik";
+"Restore Previous Apps" = "คืนค่าแอปก่อนหน้า";
+"macOS will ask about each format. Click “Use pikapik Player”." = "macOS จะถามทีละรูปแบบ คลิก “ใช้ pikapik Player”";
+"macOS will ask about each format. Click “Use” each time." = "macOS จะถามทีละรูปแบบ คลิก “ใช้” ทุกครั้ง";
 "Formats" = "รูปแบบ";
 "FFmpeg and dav1d Licenses" = "สัญญาอนุญาตของ FFmpeg และ dav1d";
 "Source Code" = "ซอร์สโค้ด";
