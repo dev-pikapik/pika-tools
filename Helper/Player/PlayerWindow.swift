@@ -77,7 +77,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     var state: String {
         if failed { return message.stringValue }
         guard let engine else { return message.stringValue }
-        let now = PlayerTime.text(engine.synchronizer.currentTime().seconds), total = PlayerTime.text(engine.duration.seconds)
+        let now = PlayerTime.text(PlayerTime.clamp(engine.synchronizer.currentTime().seconds, duration: engine.duration.seconds)), total = PlayerTime.text(engine.duration.seconds)
         return playing ? String(localized: "Playing, \(now) of \(total)") : String(localized: "Paused, \(now) of \(total)")
     }
 
@@ -255,11 +255,11 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func update() {
         guard let engine else { return }
-        let now = engine.synchronizer.currentTime().seconds, total = engine.duration.seconds
+        let total = engine.duration.seconds, now = PlayerTime.clamp(engine.synchronizer.currentTime().seconds, duration: total)
         elapsed.stringValue = PlayerTime.text(now)
         remaining.stringValue = "-" + PlayerTime.text(total - now)
         scrubber.maxValue = max(total, 0.001)
-        scrubber.doubleValue = PlayerTime.clamp(now, duration: total)
+        scrubber.doubleValue = now
         let label = playing ? String(localized: "Pause") : String(localized: "Play")
         playButton.image = NSImage(systemSymbolName: playing ? "pause.fill" : "play.fill", accessibilityDescription: label)
         playButton.setAccessibilityLabel(label)
