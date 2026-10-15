@@ -1166,7 +1166,6 @@
 "Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "すべてのディスプレイで、デスクトップ上のファイルとフォルダを壁紙で覆います。クリックはそのままデスクトップに届きます。壁紙が動くときは、代わりに無地の色で覆います。ファイルはFinderの「デスクトップ」フォルダに残ります。";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "デスクトップ上のファイルとフォルダを隠します。システム設定 › デスクトップとDockの「項目を表示」と同じです。ファイルとフォルダはFinderの「デスクトップ」フォルダに残ります。";
 "Show hidden files" = "隠しファイルを表示";
-"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "隠しファイルが薄く表示されます。Finderがいったん再起動して、ウインドウを開き直します";
 "Finder restarts for a moment" = "Finderがいったん再起動します";
 "Waiting for Finder to finish copying" = "Finderのコピーが終わるのを待っています";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "「ライブラリ」などの隠しファイルやフォルダが、Finderとデスクトップに薄く表示されます。Finderで⇧⌘. を押したときと同じです。変更を反映するため、Finderがいったん再起動して、ウインドウとタブを開き直します。Finderがファイルをコピー中または移動中のときは、終わるまで待ってから再起動します。";

@@ -167,9 +167,10 @@ private struct HiddenFilesSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: tool.waitingForFinder ? Text("Waiting for Finder to finish copying") : Text("Hidden files appear dimmed. Finder restarts for a moment and reopens its windows"),
+            subtitle: tool.waitingForFinder ? Text("Waiting for Finder to finish copying") : Text("Finder restarts for a moment"),
             hint: tool.waitingForFinder ? Text("Waiting for Finder to finish copying") : Text("Finder restarts for a moment"),
             help: Text("Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done."),
+            keys: ["⇧⌘."],
             isOn: $tool.isOn
         )
         .whileShown(in: { inSettings ? $0 === SettingsWindow.window : StatusMenu.isPanel($0) }) { if $0 { tool.refresh() } }
