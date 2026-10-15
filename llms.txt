@@ -2,7 +2,7 @@
 
 > pikapik (formerly pika-tools) is a free, open-source (MIT) menu bar app for macOS 14 and newer. It collects small conveniences for the keyboard, mouse, windows and Finder in one place. Everything is off until you turn it on.
 
-It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip tool bundled for archives, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
+It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip tool bundled for archives and FFmpeg and dav1d bundled for the player, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
 
 ## What it does
 - Game Mode: while you play, Spotlight, Siri, ⌘Tab and Mission Control don't pop up over the game, ⌘Q and ⌘W don't close it, and the display stays on.
@@ -14,6 +14,7 @@ It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip too
 - Dock: click an app's icon in the Dock to hide the app. Keep the Dock on one display: the Dock no longer moves to another display when the pointer pushes against that display's bottom edge, because pikapik turns the move off with the Dock's own setting; to move the Dock on purpose, make another display the main one (not in the Mac App Store version).
 - Finder: new file, smaller copy and conversion, Enter to open, ⌘X to cut, Delete to move to the Trash. Hide desktop icons clears the desktop before a call, a recording or a screenshot without moving the files, and Show hidden files shows what macOS hides, the same as ⇧⌘. in Finder; Finder restarts for a moment to apply it, after any copying or moving finishes. In the Mac App Store version Hide desktop icons opens Desktop & Dock in System Settings, and the Finder page shows the ⇧⌘. keys.
 - Archives: right-click an archive to extract it, or any file or folder to make a ZIP, 7Z, TAR.GZ or TAR.XZ, with a password or split into parts. It also opens RAR and other archives that macOS can't, and Space shows what is inside. Not in the Mac App Store version.
+- Player: videos that QuickTime can't open, such as MKV, WebM, AVI, WMV and FLV, play in their own window, in a small separate app that has no network access and asks for no permissions. It doesn't change which app opens your videos. Subtitles aren't supported yet. Not in the Mac App Store version.
 - Uninstaller: remove an app together with the files it keeps on the Mac, put it all back later, and clean up what removed apps left behind. Everything goes to the Trash, nothing is deleted for good. Not in the Mac App Store version.
 - Background Tasks: see everything that starts by itself (apps that open at login, background services, helpers inside apps and leftovers of deleted apps), which app added each one, whether it is running and where its file is. Your own background services turn off and back on without deleting anything; tasks for all users or the whole Mac open Login Items in System Settings. In the Mac App Store version the page only shows the tasks.
 - Speed Test: check the internet speed and see what it is good for.
