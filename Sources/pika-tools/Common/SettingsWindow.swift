@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, brightness, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
+    case general, battery, keepAwake, brightness, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, player, uninstaller, background, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -23,6 +23,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: String(localized: "Dock")
         case .finder: String(localized: "Finder")
         case .animations: String(localized: "Animations")
+        case .player: String(localized: "Player")
         case .uninstaller: String(localized: "Uninstaller")
         case .background: String(localized: "Background Tasks")
         case .games: String(localized: "Games")
@@ -49,6 +50,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: "dock.rectangle"
         case .finder: "folder.fill"
         case .animations: "hare.fill"
+        case .player: "play.rectangle.fill"
         case .uninstaller: "xmark.bin.fill"
         case .background: "gearshape.2.fill"
         case .games: "gamecontroller.fill"
@@ -68,7 +70,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .animations, .sound: .pink
         case .uninstaller: .brown
         case .background: .mint
-        case .keepAwake: .orange
+        case .keepAwake, .player: .orange
         case .brightness: .yellow
         case .fans: .teal
         case .pet, .temperatures: .red
@@ -81,7 +83,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         if self == .battery { return Battery.isPresent }
         if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
-        return ![.fans, .uninstaller, .dock, .ports].contains(self)
+        return ![.fans, .uninstaller, .dock, .ports, .player].contains(self)
         #else
         return true
         #endif
@@ -217,6 +219,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Hide desktop icons"), synonyms: "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager"),
             SettingsItem(tab: .finder, title: String(localized: "Show hidden files"), synonyms: "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period"),
+            SettingsItem(tab: .player, title: String(localized: "Open Video…"), synonyms: "video, movie, film, watch, play, mkv, avi, wmv, webm, flv"),
+            SettingsItem(tab: .player, title: String(localized: "FFmpeg and dav1d Licenses"), synonyms: "open source, legal"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),
             SettingsItem(tab: .background, title: String(localized: "What runs in the background"), synonyms: "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off"),
@@ -425,7 +429,7 @@ private struct SettingsView: View {
                     Section { rows([.general]) }
                     Section { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
                     Section { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
-                    Section { rows([.uninstaller, .background, .games, .pet]) }
+                    Section { rows([.player, .uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -559,6 +563,12 @@ private struct SettingsView: View {
             AnimationLinksPage()
             #else
             AnimationsPage()
+            #endif
+        case .player:
+            #if APPSTORE
+            EmptyView()
+            #else
+            PlayerPage()
             #endif
         case .uninstaller:
             #if APPSTORE
