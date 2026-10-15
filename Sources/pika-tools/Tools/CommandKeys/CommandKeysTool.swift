@@ -194,8 +194,10 @@ private struct CommandKeysSettings: View {
 
     var body: some View {
         if inSettings {
+            QuitCloseArt(action: .quit, keys: tool.quitKeys, on: tool.protectsQuit)
             row("Q", String(localized: "Quit app"), isOn: $tool.protectsQuit, keys: $tool.quitKeys, standard: .quit, other: (String(localized: "Close window"), tool.closeKeys))
                 .settingAnchor(String(localized: "Protect quitting and closing"))
+            QuitCloseArt(action: .close, keys: tool.closeKeys, on: tool.protectsClose)
             row("W", String(localized: "Close window"), isOn: $tool.protectsClose, keys: $tool.closeKeys, standard: .close, other: (String(localized: "Quit app"), tool.quitKeys))
         } else {
             ToggleRow(

@@ -66,6 +66,7 @@ final class SideButtonsTool: Tool {
         let source = CFMachPortCreateRunLoopSource(nil, tap, 0)
         CFRunLoopAddSource(CFRunLoopGetMain(), source, .commonModes)
         CGEvent.tapEnable(tap: tap, enable: true)
+        BackForward.prepare()
         self.tap = tap
         self.source = source
         isActive = true
@@ -84,34 +85,18 @@ final class SideButtonsTool: Tool {
         isActive = false
     }
 
-    private static let swipeApps = ["com.apple.", "com.binarynights.ForkLift", "org.mozilla.firefox", "com.operasoftware.Opera"]
-
     fileprivate func handle(_ event: CGEvent, down: Bool) -> Bool {
         let button = event.getIntegerValueField(.mouseEventButtonNumber)
-        let pid = pid_t(event.getIntegerValueField(.eventTargetUnixProcessID))
-        let app = pid > 0 ? NSRunningApplication(processIdentifier: pid) : NSWorkspace.shared.frontmostApplication
-        let id = app?.bundleIdentifier ?? ""
         let swaps = swapsButtons
-        guard !GameModeTool.shared.isPlaying, Self.swipeApps.contains(where: id.hasPrefix) else {
-            if swaps {
-                event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3)
-                event.markPikapik()
-            }
-            return false
+        if !GameModeTool.shared.isPlaying, let app = BackForward.target(at: event.location), BackForward.takes(app) {
+            if down { BackForward.go(forward: (button == 4) != swaps, at: event.location, in: app) }
+            return true
         }
-        if down { Self.swipe(forward: (button == 4) != swaps) }
-        return true
-    }
-
-    private static func swipe(forward: Bool) {
-        for phase: Int64 in [1, 4] {
-            guard let event = CGEvent(source: nil), let type = CGEventType(rawValue: UInt32(NSEvent.EventType.gesture.rawValue)) else { return }
-            event.type = type
-            event.setIntegerValueField(CGEventField(rawValue: 110)!, value: 16)
-            event.setIntegerValueField(CGEventField(rawValue: 132)!, value: phase)
-            event.setIntegerValueField(CGEventField(rawValue: 115)!, value: forward ? 8 : 4)
-            event.post(tap: .cgSessionEventTap)
+        if swaps {
+            event.setIntegerValueField(.mouseEventButtonNumber, value: button == 3 ? 4 : 3)
+            event.markPikapik()
         }
+        return false
     }
 }
 

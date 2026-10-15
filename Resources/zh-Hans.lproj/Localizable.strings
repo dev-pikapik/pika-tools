@@ -1166,7 +1166,6 @@
 "Covers the files and folders on the desktop with your wallpaper, on every display. Clicks still reach the desktop. If your wallpaper moves, a plain color covers them instead. The files stay in the Desktop folder in Finder." = "在每台显示器上，用壁纸盖住桌面上的文件和文件夹。点按操作仍会传到桌面。如果壁纸会动，则改用纯色盖住。文件仍在访达的“桌面”文件夹中。";
 "Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder." = "隐藏桌面上的文件和文件夹，和“系统设置” › “桌面与程序坞”中的“显示项目”选项一样。它们仍在访达的“桌面”文件夹中。";
 "Show hidden files" = "显示隐藏文件";
-"Hidden files appear dimmed. Finder restarts for a moment and reopens its windows" = "隐藏的文件会以浅色显示。访达会短暂重新启动，并再次打开其窗口";
 "Finder restarts for a moment" = "访达会短暂重新启动";
 "Waiting for Finder to finish copying" = "正在等待访达完成拷贝";
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "隐藏的文件和文件夹（如“资源库”）会在访达和桌面上以浅色显示，和在访达中按 ⇧⌘. 一样。为了应用更改，访达会短暂重新启动，并再次打开其窗口和标签页。如果访达正在拷贝或移动文件，会等到完成后再重新启动。";
