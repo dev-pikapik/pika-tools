@@ -13,15 +13,23 @@ Le parole scritte nella lingua sbagliata ora vengono corrette anche in Chrome, S
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-Nella versione dal sito, correggere una parola scritta nella lingua sbagliata ora funziona in Chrome, Slack, VS Code, Discord e altre app basate su Chromium, mentre scrivi e con la scorciatoia per riscrivere, così anche lì “ghbdtn” diventa “привет”. Disattiva la funzione o chiudi pikapik e quelle app tornano come prima.
+Nella versione dal sito, le parole scritte nella lingua sbagliata ora vengono corrette anche in Chrome, Slack, VS Code, Discord e app simili, così anche lì “ghbdtn” diventa “привет”. Quando disattivi la funzione o chiudi pikapik, quelle app tornano come prima.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-I pulsanti 4 e 5 del mouse ora vanno indietro e avanti in quasi ogni app, e di nuovo nelle Impostazioni di pikapik stesso. pikapik preme per te la voce Indietro o Avanti nel menu o nella barra degli strumenti dell’app, in qualsiasi lingua, e le app che già capiscono i pulsanti continuano a gestirli da sole. Nella versione Mac App Store questo vale per le finestre di pikapik e le app Apple.
+I pulsanti laterali del mouse ora vanno indietro e avanti in quasi ogni app, e di nuovo nelle Impostazioni di pikapik stesso: pikapik preme per te il pulsante Indietro o Avanti dell’app. Nella versione Mac App Store questo vale in pikapik e nelle app Apple.
 
-Con due copie di pikapik aperte, per esempio quella del sito e quella dell’App Store, solo l’ultima aperta cambia qualcosa sul tuo Mac, così le Impostazioni mostrano sempre ciò che c’è davvero. Quando esci, tutto ciò che ha cambiato viene rimesso a posto. Altre novità, soprattutto nella versione dal sito: il clic centrale con tre dita sul trackpad, immagini che mostrano cosa fanno Esci dall’app e Chiudi finestra, ⇧⌘. dentro la riga Mostra i file nascosti, nomi per i gruppi della barra laterale e, nel lettore, i tasti di QuickTime, il volume con la rotella, la velocità e la ripresa da dove ti eri fermato.
+Con due copie di pikapik aperte, per esempio quella del sito e quella dell’App Store, solo l’ultima aperta cambia qualcosa sul tuo Mac, così le Impostazioni mostrano sempre ciò che c’è davvero. Quando esci, tutto ciò che ha cambiato viene rimesso a posto.
 
-**Provalo:** Impostazioni › Tastiera
+**Altre novità**
+
+- Clic centrale sul trackpad: tocca con tre dita, nella versione dal sito.
+- Esci dall’app e Chiudi finestra mostrano in un’immagine cosa fanno i tasti.
+- ⇧⌘. ora si trova direttamente nella riga Mostra i file nascosti.
+- La barra laterale delle Impostazioni ha i nomi dei gruppi.
+- Lettore, nella versione dal sito: gli stessi tasti di QuickTime Player, volume con la rotella, velocità e ripresa da dove ti eri fermato.
+
+**Provalo:** Impostazioni › Tastiera, Impostazioni › Mouse
 
 **Corretto**
 

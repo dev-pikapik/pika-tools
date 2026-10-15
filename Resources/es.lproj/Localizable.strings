@@ -126,7 +126,8 @@
 "Quit app" = "Salir de la app";
 "Close window" = "Cerrar ventana";
 "Only with all three keys" = "Solo con las tres teclas";
-"Works as usual" = "Como siempre";
+"Turn on to avoid quitting by accident" = "Actívalo para no salir por error";
+"Turn on to avoid closing by accident" = "Actívalo para no cerrar por error";
 "quit, close, command, accidental, shortcut" = "salir, cerrar, comando, accidental, atajo";
 "Quit when the last window closes" = "Salir al cerrar la última ventana";
 "Closing an app’s last window quits the app. Finder stays open." = "Al cerrar la última ventana, la app se cierra. Finder sigue abierto.";
@@ -170,8 +171,8 @@
 "Tracking speed" = "Velocidad del cursor";
 "Side buttons go back and forward" = "Botones laterales para atrás y adelante";
 "Swap the side buttons" = "Intercambiar los botones laterales";
-"Button 4 goes back, button 5 goes forward" = "Botón 4 atrás, botón 5 adelante";
-"Button 4 goes forward, button 5 goes back" = "Botón 4 adelante, botón 5 atrás";
+"Rear button goes back, front button goes forward" = "El botón trasero va atrás, el delantero va adelante";
+"Rear button goes forward, front button goes back" = "El botón trasero va adelante, el delantero va atrás";
 "linear, mouse acceleration, sensitivity" = "lineal, aceleración del ratón, sensibilidad";
 "pointer speed, sensitivity, fast, slow" = "velocidad del puntero, sensibilidad, rápido, lento";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "botones 4 y 5, navegador, navegación, botones laterales";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "Este archivo no se puede importar";
 "It isn’t a pikapik settings file, or it’s damaged." = "No es un archivo de ajustes de pikapik o está dañado.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Permite que la app guarde tus ajustes en iCloud Drive para sincronizarlos";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Los botones 4 y 5 del ratón van atrás y adelante, como deslizar en el trackpad.";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "Los dos botones laterales del ratón van atrás y adelante, como deslizar en el trackpad.";
 "Like a trackpad swipe" = "Como deslizar en el trackpad";
 "Repeat a held key" = "Repetir una tecla mantenida";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Mantener una tecla la repite en lugar de abrir el menú de acentos. Reinicia las apps abiertas para aplicarlo.";
@@ -1102,7 +1103,7 @@
 "Remote Management" = "Gestión remota";
 "AirPlay Receiver" = "Receptor AirPlay";
 "Retype words you typed in the wrong language" = "Reescribir las palabras escritas en el idioma equivocado";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Una palabra escrita con la distribución equivocada se reescribe con la correcta y la distribución cambia.";
+"And the keyboard switches to the right language" = "Y el teclado cambia al idioma correcto";
 "Fixed when you press Space" = "Se corrige al pulsar Espacio";
 "Press %@ to fix" = "Pulsa %@ para corregir";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "Pulsa %@ justo después de una corrección para deshacerla. Esa palabra ya no se volverá a corregir.";
@@ -1172,7 +1173,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Los archivos y carpetas ocultos, como Biblioteca, aparecen atenuados en el Finder y en el escritorio, igual que al pulsar ⇧⌘. en el Finder. Para aplicar el cambio, el Finder se reinicia un momento y vuelve a abrir sus ventanas y pestañas. Si el Finder está copiando o moviendo archivos, se reiniciará cuando termine.";
 "Turn off “On Desktop”" = "Desactiva «En el escritorio»";
 "Or hide them in System Settings" = "O ocúltalos en Ajustes del Sistema";
-"Press these keys in Finder, and again to hide them" = "Pulsa estas teclas en el Finder, y otra vez para ocultarlos";
+"Press in Finder to show or hide" = "Pulsa en el Finder para mostrar u ocultar";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "escritorio, iconos, archivos, carpetas, limpiar, ocultar, presentación, compartir pantalla, grabación, captura de pantalla, organizador visual";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ocultos, invisibles, archivos de punto, archivos del sistema, Biblioteca, mostrar todos los archivos, Comando Mayúsculas punto";
 "Brightness" = "Brillo";
@@ -1265,4 +1266,6 @@
 "Info" = "Información";
 "Another copy of pikapik is in charge" = "Otra copia de pikapik está al mando";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "Esta copia no cambia nada en tu Mac y toma el relevo cuando la otra copia se cierra.";
+"Mac App Store version %@" = "Versión de la Mac App Store %@";
+"Website version %@" = "Versión del sitio web %@";
 "Make This Copy the Main One" = "Convertir esta copia en la principal";

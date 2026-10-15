@@ -126,7 +126,8 @@
 "Quit app" = "Ukončit aplikaci";
 "Close window" = "Zavřít okno";
 "Only with all three keys" = "Jen se všemi třemi klávesami";
-"Works as usual" = "Funguje jako obvykle";
+"Turn on to avoid quitting by accident" = "Zapněte, abyste aplikaci neukončili omylem";
+"Turn on to avoid closing by accident" = "Zapněte, abyste omylem nezavřeli okno";
 "quit, close, command, accidental, shortcut" = "ukončit, zavřít, command, cmd, omylem, nechtěně, zkratka";
 "Quit when the last window closes" = "Ukončit po zavření posledního okna";
 "Closing an app’s last window quits the app. Finder stays open." = "Zavřením posledního okna se aplikace ukončí. Finder zůstane otevřený.";
@@ -170,8 +171,8 @@
 "Tracking speed" = "Rychlost ukazatele";
 "Side buttons go back and forward" = "Boční tlačítka pro zpět a vpřed";
 "Swap the side buttons" = "Prohodit boční tlačítka";
-"Button 4 goes back, button 5 goes forward" = "Tlačítko 4 zpět, tlačítko 5 vpřed";
-"Button 4 goes forward, button 5 goes back" = "Tlačítko 4 vpřed, tlačítko 5 zpět";
+"Rear button goes back, front button goes forward" = "Zadní tlačítko jde zpět, přední tlačítko vpřed";
+"Rear button goes forward, front button goes back" = "Zadní tlačítko jde vpřed, přední tlačítko zpět";
 "linear, mouse acceleration, sensitivity" = "lineární, zrychlení myši, citlivost";
 "pointer speed, sensitivity, fast, slow" = "rychlost ukazatele, citlivost, rychle, pomalu";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "tlačítka 4 a 5, prohlížeč, navigace, boční tlačítka";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "Tento soubor nelze importovat";
 "It isn’t a pikapik settings file, or it’s damaged." = "Není to soubor nastavení pikapik, nebo je poškozený.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Umožňuje aplikaci ukládat nastavení na iCloud Drive kvůli synchronizaci";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Tlačítka myši 4 a 5 jdou zpět a vpřed, jako přejetí po trackpadu.";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "Dvě boční tlačítka myši jdou zpět a vpřed, jako přejetí po trackpadu.";
 "Like a trackpad swipe" = "Jako přejetí po trackpadu";
 "Repeat a held key" = "Opakovat drženou klávesu";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "Podržení klávesy ji opakuje místo nabídky akcentů. Otevřené aplikace restartujte, aby se změna projevila.";
@@ -1102,7 +1103,7 @@
 "Remote Management" = "Vzdálená správa";
 "AirPlay Receiver" = "Přijímač AirPlay";
 "Retype words you typed in the wrong language" = "Přepsat slova napsaná ve špatném jazyce";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Slovo napsané ve špatném rozložení se přepíše ve správném a rozložení se přepne.";
+"And the keyboard switches to the right language" = "A klávesnice se přepne na správný jazyk";
 "Fixed when you press Space" = "Opraví se, když stisknete Mezerník";
 "Press %@ to fix" = "Opravíte stisknutím %@";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "Stisknutím %@ hned po opravě ji vrátíte zpět. Toto slovo se už opravovat nebude.";
@@ -1172,7 +1173,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Skryté soubory a složky, například Knihovna, se zobrazí zašedle ve Finderu i na ploše, stejně jako po stisknutí ⇧⌘. ve Finderu. Aby se změna projevila, Finder se na chvilku restartuje a znovu otevře svá okna a karty. Pokud Finder právě kopíruje nebo přesouvá soubory, restartuje se, až s tím skončí.";
 "Turn off “On Desktop”" = "Vypněte „Na ploše“";
 "Or hide them in System Settings" = "Nebo je skryjte v Nastavení systému";
-"Press these keys in Finder, and again to hide them" = "Stiskněte tyto klávesy ve Finderu, dalším stisknutím soubory znovu skryjete";
+"Press in Finder to show or hide" = "Stiskněte ve Finderu pro zobrazení nebo skrytí";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "plocha, ikony, soubory, složky, úklid, skrýt, prezentace, sdílení obrazovky, nahrávání, snímek obrazovky, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "skryté, neviditelné, soubory s tečkou, systémové soubory, Knihovna, zobrazit všechny soubory, Command Shift tečka";
 "Brightness" = "Jas";
@@ -1265,4 +1266,6 @@
 "Info" = "Informace";
 "Another copy of pikapik is in charge" = "Řízení má teď jiná kopie pikapik";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "Tato kopie na Macu nic nemění a převezme řízení, až se druhá kopie zavře.";
+"Mac App Store version %@" = "Verze z Mac App Store %@";
+"Website version %@" = "Verze z webu %@";
 "Make This Copy the Main One" = "Udělat z této kopie hlavní";

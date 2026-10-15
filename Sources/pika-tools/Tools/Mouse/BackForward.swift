@@ -119,7 +119,8 @@ private enum AXSearch {
     static func press(pid: pid_t, forward: Bool) -> Bool {
         guard let item = known(pid, forward) ?? search(AXUIElementCreateApplication(pid), pid, forward) else { return false }
         if value(item, kAXEnabledAttribute) as? Bool == false { return true }
-        return AXUIElementPerformAction(item, kAXPressAction as CFString) == .success
+        let result = AXUIElementPerformAction(item, kAXPressAction as CFString)
+        return result == .success || result == .cannotComplete
     }
 
     private static func known(_ pid: pid_t, _ forward: Bool) -> AXUIElement? {
@@ -137,7 +138,8 @@ private enum AXSearch {
                 for menu in children(top) {
                     for item in children(menu).prefix(80) {
                         if Date() > deadline { return nil }
-                        if let title = value(item, kAXTitleAttribute) as? String, titles.contains(fold(title)) {
+                        if let title = value(item, kAXTitleAttribute) as? String, titles.contains(fold(title)),
+                           (value(item, kAXMenuItemCmdCharAttribute) as? String)?.first?.isLetter != true {
                             found[pid, default: [:]][forward] = item
                             return item
                         }

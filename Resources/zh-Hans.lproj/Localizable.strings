@@ -126,7 +126,8 @@
 "Quit app" = "退出应用";
 "Close window" = "关闭窗口";
 "Only with all three keys" = "仅在三个键一起按时";
-"Works as usual" = "照常工作";
+"Turn on to avoid quitting by accident" = "打开后可避免误退出";
+"Turn on to avoid closing by accident" = "打开后可避免误关闭";
 "quit, close, command, accidental, shortcut" = "退出, 关闭, 命令, 误按, 快捷键";
 "Quit when the last window closes" = "关闭最后一个窗口时退出";
 "Closing an app’s last window quits the app. Finder stays open." = "关闭应用的最后一个窗口时，应用会退出。访达保持打开。";
@@ -170,8 +171,8 @@
 "Tracking speed" = "追踪速度";
 "Side buttons go back and forward" = "侧键用于返回和前进";
 "Swap the side buttons" = "交换侧键";
-"Button 4 goes back, button 5 goes forward" = "按键 4 返回，按键 5 前进";
-"Button 4 goes forward, button 5 goes back" = "按键 4 前进，按键 5 返回";
+"Rear button goes back, front button goes forward" = "后侧按键返回，前侧按键前进";
+"Rear button goes forward, front button goes back" = "后侧按键前进，前侧按键返回";
 "linear, mouse acceleration, sensitivity" = "线性, 鼠标加速, 灵敏度";
 "pointer speed, sensitivity, fast, slow" = "指针速度, 灵敏度, 快, 慢";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "按键 4 和 5, 浏览器, 导航, 侧键";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "无法导入此文件";
 "It isn’t a pikapik settings file, or it’s damaged." = "这不是 pikapik 设置文件，或者文件已损坏。";
 "Lets the app keep your settings in iCloud Drive to sync them" = "允许 App 将设置保存在 iCloud 云盘中以便同步";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "鼠标按钮 4 和 5 用于后退和前进，就像在触控板上轻扫。";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "鼠标的两个侧键用于后退和前进，就像在触控板上轻扫。";
 "Like a trackpad swipe" = "就像在触控板上轻扫";
 "Repeat a held key" = "按住按键连续输入";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "按住按键会重复输入，而不是弹出重音菜单。已打开的 App 需重新启动后生效。";
@@ -1102,7 +1103,7 @@
 "Remote Management" = "远程管理";
 "AirPlay Receiver" = "隔空播放接收器";
 "Retype words you typed in the wrong language" = "重新输入用错语言打出的文字";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "用错键盘布局输入的文字会以正确的布局重新输入，并自动切换布局。";
+"And the keyboard switches to the right language" = "键盘也会切换到正确的语言";
 "Fixed when you press Space" = "按下空格时修正";
 "Press %@ to fix" = "按 %@ 修正";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "修正后立即按 %@ 可撤销修正。这个词以后不会再被修正。";
@@ -1172,7 +1173,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "隐藏的文件和文件夹（如“资源库”）会在访达和桌面上以浅色显示，和在访达中按 ⇧⌘. 一样。为了应用更改，访达会短暂重新启动，并再次打开其窗口和标签页。如果访达正在拷贝或移动文件，会等到完成后再重新启动。";
 "Turn off “On Desktop”" = "关闭“桌面上”";
 "Or hide them in System Settings" = "或在“系统设置”中隐藏";
-"Press these keys in Finder, and again to hide them" = "在访达中按下这些键即可显示，再按一次即可隐藏";
+"Press in Finder to show or hide" = "在访达中按下即可显示或隐藏";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "桌面, 图标, 文件, 文件夹, 整理, 隐藏, 演示, 屏幕共享, 录屏, 截屏, 台前调度";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隐藏, 不可见, 点文件, 系统文件, 资源库, 显示所有文件, Command Shift 句点";
 "Brightness" = "亮度";
@@ -1265,4 +1266,6 @@
 "Info" = "信息";
 "Another copy of pikapik is in charge" = "当前由另一个 pikapik 副本负责";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "此副本不会更改你的 Mac 设置，另一个副本退出后会自动接手。";
+"Mac App Store version %@" = "Mac App Store 版本 %@";
+"Website version %@" = "网站版本 %@";
 "Make This Copy the Main One" = "将此副本设为主副本";

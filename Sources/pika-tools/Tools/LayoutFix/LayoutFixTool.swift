@@ -745,7 +745,7 @@ private struct LayoutFixSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("A word typed in the wrong layout is retyped in the right one, and the layout switches."),
+            subtitle: Text("And the keyboard switches to the right language"),
             hint: tool.fixesAsYouType ? Text("Fixed when you press Space") : Text("Press \(tool.shortcut.text) to fix"),
             help: Text("Press \(tool.shortcut.text) right after a fix to undo it. That word won’t be fixed again."),
             keys: [tool.shortcut.text],

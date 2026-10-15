@@ -13,15 +13,23 @@ Slova napsaná ve špatném jazyce se teď opravují i v Chrome, Slacku a VS Cod
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-Ve verzi z webu teď oprava slova napsaného ve špatném jazyce funguje i v Chrome, Slacku, VS Code, Discordu a dalších aplikacích postavených na Chromiu, při psaní i přes zkratku pro přepsání, takže se i tam „ghbdtn“ změní na „привет“. Funkci vypněte nebo pikapik ukončete a tyto aplikace se vrátí do původního stavu.
+Ve verzi z webu se slova napsaná ve špatném jazyce teď opravují i v Chrome, Slacku, VS Code, Discordu a podobných aplikacích, takže se tam „ghbdtn“ také změní na „привет“. Když funkci vypnete nebo pikapik ukončíte, tyto aplikace se vrátí do původního stavu.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Tlačítka myši 4 a 5 teď fungují jako zpět a vpřed téměř v každé aplikaci a zase i v nastavení samotného pikapiku. pikapik za vás stiskne položku Zpět nebo Vpřed v nabídce či na panelu nástrojů aplikace, v jakémkoli jazyce, a aplikace, které tlačítka už samy chápou, si je obsluhují dál samy. Ve verzi z Mac App Store to platí pro okna pikapiku a aplikace od Applu.
+Boční tlačítka myši teď fungují jako zpět a vpřed téměř v každé aplikaci a zase i v nastavení samotného pikapiku: pikapik za vás stiskne tlačítko Zpět nebo Vpřed v dané aplikaci. Ve verzi z Mac App Store to funguje v pikapiku a v aplikacích od Applu.
 
-Když jsou otevřené dvě kopie pikapiku, například ta z webu a ta z App Store, mění na vašem Macu cokoli jen ta, kterou jste otevřeli naposledy, takže nastavení vždy ukazuje, co skutečně platí. Při ukončení se vše, co změnila, vrátí zpět. Novinkou je také, hlavně ve verzi z webu: prostřední klik třemi prsty na trackpadu, obrázky, které ukazují, co dělají Ukončit aplikaci a Zavřít okno, ⇧⌘. přímo v řádku Zobrazit skryté soubory, názvy skupin v postranním panelu a v přehrávači klávesy jako v QuickTimu, hlasitost kolečkem, rychlost a pokračování tam, kde jste skončili.
+Když jsou otevřené dvě kopie pikapiku, například ta z webu a ta z App Store, mění váš Mac jen ta, kterou jste otevřeli naposledy, takže nastavení vždy ukazuje, co skutečně platí. Při ukončení se vše, co změnila, vrátí zpět.
 
-**Vyzkoušejte:** Nastavení › Klávesnice
+**Další novinky**
+
+- Prostřední kliknutí na trackpadu: klepněte třemi prsty, ve verzi z webu.
+- Ukončit aplikaci a Zavřít okno ukazují na obrázku, co klávesy dělají.
+- ⇧⌘. je teď přímo v řádku Zobrazit skryté soubory.
+- Postranní panel nastavení má názvy skupin.
+- Přehrávač, ve verzi z webu: stejné klávesy jako v QuickTime Playeru, hlasitost kolečkem, rychlost a pokračování tam, kde jste skončili.
+
+**Vyzkoušejte:** Nastavení › Klávesnice, Nastavení › Myš
 
 **Opraveno**
 

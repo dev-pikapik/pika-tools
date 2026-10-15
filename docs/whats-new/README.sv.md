@@ -13,15 +13,23 @@ Ord du skrev på fel språk rättas nu även i Chrome, Slack och VS Code, och mu
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-I webbversionen fungerar rättning av ett ord skrivet på fel språk nu även i Chrome, Slack, VS Code, Discord och andra appar byggda på Chromium, medan du skriver och med genvägen för att skriva om, så ”ghbdtn” blir ”привет” där också. Stäng av funktionen eller avsluta pikapik, så sätts de apparna tillbaka som de var.
+I webbversionen rättas ord som skrivits på fel språk nu även i Chrome, Slack, VS Code, Discord och liknande appar, så ”ghbdtn” blir ”привет” där också. När du stänger av funktionen eller avslutar pikapik sätts de apparna tillbaka som de var.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Musknapparna 4 och 5 går nu bakåt och framåt i nästan alla appar, och igen i pikapiks egna inställningar. pikapik trycker åt dig på Bakåt eller Framåt i appens meny eller verktygsfält, på vilket språk som helst, och appar som redan förstår knapparna sköter dem själva. I Mac App Store-versionen gäller det pikapiks egna fönster och Apples appar.
+Musens sidoknappar går nu bakåt och framåt i nästan alla appar, och igen i pikapiks egna inställningar: pikapik trycker åt dig på appens egen knapp Bakåt eller Framåt. I Mac App Store-versionen fungerar det i pikapik och i Apples appar.
 
-Är två kopior av pikapik öppna, till exempel den från webben och den från App Store, ändrar bara den som öppnades sist något på din Mac, så inställningarna visar alltid det som verkligen gäller. När du avslutar sätts allt den ändrat tillbaka. Nytt är också, mest i webbversionen: mittenklick med tre fingrar på styrplattan, bilder som visar vad Avsluta app och Stäng fönster gör, ⇧⌘. direkt i raden Visa gömda filer, namn på grupperna i sidofältet och i spelaren QuickTime-tangenter, volym med hjulet, hastighet och att fortsätta där du slutade.
+Är två kopior av pikapik öppna, till exempel den från webben och den från App Store, ändrar bara den som öppnades sist något på din Mac, så inställningarna visar alltid det som verkligen gäller. När du avslutar sätts allt den ändrat tillbaka.
 
-**Prova:** Inställningar › Tangentbord
+**Även nytt**
+
+- Mittklick på styrplattan: tryck med tre fingrar, i webbversionen.
+- Avsluta app och Stäng fönster visar i en bild vad tangenterna gör.
+- ⇧⌘. finns nu direkt i raden Visa gömda filer.
+- Sidofältet i inställningarna har namn på grupperna.
+- Spelaren, i webbversionen: samma tangenter som i QuickTime Player, volym med hjulet, hastighet, och den fortsätter där du slutade.
+
+**Prova:** Inställningar › Tangentbord, Inställningar › Mus
 
 **Åtgärdat**
 
