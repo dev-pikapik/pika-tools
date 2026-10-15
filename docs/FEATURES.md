@@ -756,18 +756,19 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Side buttons go back and forward
 
-**Does:** Makes the mouse’s side buttons act as Back and Forward in browsers and Finder.
+**Does:** Makes the mouse’s side buttons act as Back and Forward in nearly every app: browsers, Finder, apps with a Back arrow in the toolbar or a Back item in a menu, and pikapik’s own Settings.
 
-**How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Mouse/SideButtonsTool.swift:211`); sends a back or forward swipe tagged (`Sources/pika-tools/Common/EventTag.swift`) and ignores tagged presses, so with two copies of pikapik the buttons are not swapped twice.
+**How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Mouse/SideButtonsTool.swift:88`) finds the app under the pointer (`Sources/pika-tools/Tools/Mouse/BackForward.swift:20`) and tries in order: (website) press the app’s own Back or Forward menu item, or the Back or Forward button in its toolbar, found by name in any language or by arrow icon (`BackForward.swift:96`); then a back or forward swipe in Apple apps, Firefox, Opera and ForkLift; then ⌘[ and ⌘] in a short list of Apple apps (`BackForward.swift:55`); apps that handle buttons 4 and 5 themselves, such as Chrome and the JetBrains apps, get the press unchanged. ⌘[ is never sent blindly: in code editors it moves the text. pikapik’s own windows are skipped by the tap; Settings handles the buttons itself (`Sources/pika-tools/Common/SettingsWindow.swift:392`). Synthetic events are tagged (`Sources/pika-tools/Common/EventTag.swift`) and tagged presses are ignored, so with two copies of pikapik the buttons are not swapped twice.
 
 **Options:**
-- Swap the side buttons — exchanges Back and Forward (`:221`).
+- Swap the side buttons — exchanges Back and Forward (`SideButtonsTool.swift:90`).
 
-**Edition:** Both.
+**Edition:** Both. In the App Store version the sandbox does not allow looking into other apps, so the menu and toolbar step is website only; there Apple apps and pikapik’s own windows work, and every other app keeps handling the buttons itself.
 
 **Test:**
 1. Open two pages in Safari, press the lower side button → Back; the upper → Forward.
-2. Turn on Swap the side buttons → the buttons swap roles. (two copies, both with the switch on) They are still swapped once.
+2. In an app that has a Back item in a menu but does not handle the buttons itself, press the lower side button → that menu item runs. In pikapik Settings, open two pages in the sidebar and press the lower side button → the previous page.
+3. Turn on Swap the side buttons → the buttons swap roles. (two copies, both with the switch on) They are still swapped once.
 
 ### Mouse button hides the current app
 
