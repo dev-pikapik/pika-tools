@@ -23,13 +23,13 @@ enum FolderAccess {
         UserDefaults.standard.set(saved, forKey: key)
     }
 
-    static func ask(_ folder: URL, in window: NSWindow, _ done: @escaping (Bool) -> Void) {
+    static func ask(_ folder: URL, in window: NSWindow, message: String = String(localized: "To play the next file, allow access to this folder."), _ done: @escaping (Bool) -> Void) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
         panel.canChooseFiles = false
         panel.directoryURL = folder
         panel.prompt = String(localized: "Allow")
-        panel.message = String(localized: "To play the next file, allow access to this folder.")
+        panel.message = message
         panel.beginSheetModal(for: window) { response in
             guard response == .OK, let chosen = panel.url, PlaylistFolders.covers(chosen, folder) else { return done(false) }
             remember(chosen)

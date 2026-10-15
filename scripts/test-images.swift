@@ -73,6 +73,11 @@ enum TestImages {
         precondition(Set(ImageFormats.extensions).isDisjoint(with: PlayerFormats.extensions))
         precondition(ImageFormats.types.allSatisfy { !$0.isDynamic } && ImageFormats.types.count >= 20)
         print("folders and mixed files are split into pictures in natural order and everything else: ok")
+        try FileManager.default.createDirectory(at: dir.appending(path: "folder.png"), withIntermediateDirectories: true)
+        let listed = try FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        precondition(ImageList.neighbours(in: listed).map(\.lastPathComponent) == ["2.png", "10.png", "a.JPG", "anim.apng", "logo.svg", "shot.dng"], "\(ImageList.neighbours(in: listed).map(\.lastPathComponent))")
+        try FileManager.default.removeItem(at: dir.appending(path: "folder.png"))
+        print("the pictures next to one opened file are listed in natural order, without folders: ok")
 
         var seen = Set<String>()
         for binding in ImageAction.bindings {

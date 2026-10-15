@@ -8,6 +8,8 @@ final class ImageCanvas: NSView {
 
     override var acceptsFirstResponder: Bool { true }
 
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
+
     override init(frame: NSRect) {
         super.init(frame: frame)
         wantsLayer = true
@@ -171,6 +173,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     private var detailTimer: Timer?
     private var loadingTimer: Timer?
     private var cursorHidden = false
+    private var folderChecked = false
     private(set) var urls: [URL] = []
     var onOpen: (([URL]) -> Void)?
     var onClose: ((ImageController) -> Void)?
@@ -277,6 +280,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
 
     func show(_ urls: [URL], at start: Int = 0) {
         self.urls = urls
+        folderChecked = false
         stopSlideshow()
         open(start)
     }
@@ -295,9 +299,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         invalidate()
         let (generation, url) = (generation, urls[newIndex])
         animation = nil
-        window?.title = url.lastPathComponent
-        window?.subtitle = urls.count > 1 ? ImageList.position(newIndex, of: urls.count) : ""
-        caption.stringValue = urls.count > 1 ? "\(url.lastPathComponent) — \(ImageList.position(newIndex, of: urls.count))" : url.lastPathComponent
+        labelWindow()
         window?.representedURL = url
         NSDocumentController.shared.noteNewRecentDocumentURL(url)
         controls.isHidden = false
@@ -313,6 +315,38 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
                 self.begin(probe, url, generation)
             }
         }
+    }
+
+    private func labelWindow() {
+        let name = urls[index].lastPathComponent
+        let position = urls.count > 1 ? ImageList.position(index, of: urls.count) : ""
+        window?.title = name
+        window?.subtitle = position
+        caption.stringValue = urls.count > 1 ? "\(name) — \(position)" : name
+    }
+
+    private var canExpand: Bool {
+        urls.count == 1 && !folderChecked
+    }
+
+    private func expandFolder(then proceed: @escaping () -> Void) {
+        guard let window, let url = urls.first else { return }
+        let folder = url.deletingLastPathComponent()
+        guard let files = FolderAccess.files(in: folder) else {
+            FolderAccess.ask(folder, in: window, message: String(localized: "To show the next picture, allow access to this folder.")) { [weak self] granted in
+                if granted { self?.expandFolder(then: proceed) }
+            }
+            return
+        }
+        folderChecked = true
+        let pictures = ImageList.neighbours(in: files)
+        if let here = pictures.firstIndex(where: { $0.standardizedFileURL == url.standardizedFileURL }) {
+            urls = pictures
+            index = here
+            labelWindow()
+        }
+        updateButtons()
+        proceed()
     }
 
     private func invalidate() {
@@ -516,13 +550,20 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     }
 
     private func go(_ direction: Int, wrap: Bool = false) {
+        if canExpand { return expandFolder { [weak self] in self?.go(direction, wrap: wrap) } }
         guard let next = ImageList.step(index, by: direction, count: urls.count, wrap: wrap) else { return }
         open(next)
         if slideshow != nil { startSlideshow() }
     }
 
     @objc private func toggleSlideshow() {
-        if slideshow != nil { stopSlideshow() } else if urls.count > 1 { startSlideshow() }
+        if slideshow != nil {
+            stopSlideshow()
+        } else if canExpand {
+            expandFolder { [weak self] in self?.toggleSlideshow() }
+        } else if urls.count > 1 {
+            startSlideshow()
+        }
     }
 
     private func startSlideshow() {
@@ -538,12 +579,12 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     }
 
     private func updateButtons() {
-        let many = urls.count > 1
+        let many = urls.count > 1 || canExpand
         previousButton.isHidden = !many
         nextButton.isHidden = !many
         slideshowButton.isHidden = !many
-        previousButton.isEnabled = ImageList.step(index, by: -1, count: urls.count, wrap: false) != nil
-        nextButton.isEnabled = ImageList.step(index, by: 1, count: urls.count, wrap: false) != nil
+        previousButton.isEnabled = canExpand || ImageList.step(index, by: -1, count: urls.count, wrap: false) != nil
+        nextButton.isEnabled = canExpand || ImageList.step(index, by: 1, count: urls.count, wrap: false) != nil
         for button in [rotateButton, zoomOutButton, zoomInButton, zoomButton] { button.isEnabled = probe != nil }
         let label = slideshow == nil ? String(localized: "Start Slideshow") : String(localized: "Stop Slideshow")
         slideshowButton.image = NSImage(systemSymbolName: slideshow == nil ? "play.square.stack" : "pause.fill", accessibilityDescription: label)
@@ -596,11 +637,11 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     func validateMenuItem(_ item: NSMenuItem) -> Bool {
         guard item.action == #selector(imageAction), let action = item.representedObject as? ImageAction else { return false }
         switch action {
-        case .previous: return ImageList.step(index, by: -1, count: urls.count, wrap: false) != nil
-        case .next: return ImageList.step(index, by: 1, count: urls.count, wrap: false) != nil
+        case .previous: return canExpand || ImageList.step(index, by: -1, count: urls.count, wrap: false) != nil
+        case .next: return canExpand || ImageList.step(index, by: 1, count: urls.count, wrap: false) != nil
         case .slideshow:
             item.title = slideshow == nil ? String(localized: "Start Slideshow") : String(localized: "Stop Slideshow")
-            return urls.count > 1
+            return urls.count > 1 || canExpand
         case .zoomIn, .zoomOut, .fit, .actualSize, .rotateLeft, .rotateRight: return probe != nil
         case .leaveFullScreen: return false
         }

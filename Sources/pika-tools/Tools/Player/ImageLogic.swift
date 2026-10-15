@@ -27,7 +27,11 @@ enum ImageList {
             if isFolder(url) { images += pictures(in: url) } else if ImageFormats.opens(url) { images.append(url) } else { rest.append(url) }
         }
         var seen = Set<URL>()
-        return (images.filter { seen.insert($0.standardizedFileURL).inserted }.sorted { $0.path.localizedStandardCompare($1.path) == .orderedAscending }, rest)
+        return (sorted(images.filter { seen.insert($0.standardizedFileURL).inserted }), rest)
+    }
+
+    static func neighbours(in files: [URL]) -> [URL] {
+        sorted(files.filter { ImageFormats.opens($0) && !isFolder($0) })
     }
 
     static func step(_ index: Int, by direction: Int, count: Int, wrap: Bool) -> Int? {
@@ -39,6 +43,10 @@ enum ImageList {
 
     static func position(_ index: Int, of count: Int) -> String {
         String(localized: "\(index + 1) of \(count)")
+    }
+
+    private static func sorted(_ urls: [URL]) -> [URL] {
+        urls.sorted { $0.path.localizedStandardCompare($1.path) == .orderedAscending }
     }
 
     private static func isFolder(_ url: URL) -> Bool {

@@ -1288,3 +1288,4 @@
 "%lld of %lld" = "%1$lld / %2$lld";
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "无法打开此图片。文件可能已损坏，或格式不受 macOS 支持。";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "照片, 图像, 图片, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, 默认应用, 打开方式, 双击, 预览";
+"To show the next picture, allow access to this folder." = "要显示下一张图片，请允许访问此文件夹。";

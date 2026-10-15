@@ -1288,3 +1288,4 @@
 "%lld of %lld" = "%lld de %lld";
 "Can’t open this image. It may be damaged or in a format macOS doesn’t support." = "Não foi possível abrir esta imagem. Ela pode estar danificada ou em um formato que o macOS não suporta.";
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "foto, imagem, figura, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, app padrão, abrir com, clique duplo, Pré-visualização";
+"To show the next picture, allow access to this folder." = "Para mostrar a próxima imagem, permita o acesso a esta pasta.";
