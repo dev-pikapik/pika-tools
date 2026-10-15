@@ -12,6 +12,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Game Mode: a game you already added, such as Minecraft, is no longer suggested again.
 - Settings: tab descriptions all end the same way, without a full stop, in all 23 languages.
 - New dots for per-app volume and Ports also show in the website version.
+- Minimize or hide with a click in the Dock: if you turned it on while it was set to minimize the windows, it no longer switches itself to hiding the app after the next restart.
 
 ## [1.50.1] - Unreleased
 
