@@ -11,6 +11,58 @@ struct AppVolumeOwner: Equatable, Sendable {
 struct AppVolumeRow: Equatable, Sendable {
     let owner: AppVolumeOwner
     let playing: Bool
+    var place: String?
+
+    var title: String { place.map { "\(owner.name) (\($0))" } ?? owner.name }
+}
+
+struct AppVolumeMemory: Equatable {
+    private(set) var levels: [String: Double] = [:]
+    private(set) var muted: Set<String> = []
+    private(set) var names: [String: String] = [:]
+
+    var keys: Set<String> { Set(names.keys).union(levels.keys).union(muted) }
+
+    init(_ defaults: UserDefaults = .standard) {
+        let key = AppVolumeMath.canonical
+        levels = Dictionary(
+            (defaults.dictionary(forKey: "app-volume-levels") ?? [:]).compactMap { id, value in
+                (value as? NSNumber).map { (key(id), min(max($0.doubleValue, 0), 1)) }
+            }.filter { $0.1 < 1 },
+            uniquingKeysWith: min
+        )
+        muted = Set((defaults.stringArray(forKey: "app-volume-muted") ?? []).map(key))
+        names = Dictionary(
+            ((defaults.dictionary(forKey: "app-volume-names") as? [String: String]) ?? [:]).map { (key($0), $1) },
+            uniquingKeysWith: { first, _ in first }
+        )
+    }
+
+    func level(_ key: String) -> Double { levels[key] ?? 1 }
+
+    mutating func remember(_ owner: AppVolumeOwner) { names[owner.key] = owner.name }
+
+    mutating func setLevel(_ slider: Double, for owner: AppVolumeOwner) {
+        remember(owner)
+        levels[owner.key] = AppVolumeMath.level(slider: slider)
+    }
+
+    mutating func toggleMute(_ owner: AppVolumeOwner) {
+        remember(owner)
+        if muted.contains(owner.key) { muted.remove(owner.key) } else { muted.insert(owner.key) }
+    }
+
+    mutating func forget(_ key: String) {
+        levels[key] = nil
+        muted.remove(key)
+        names[key] = nil
+    }
+
+    func save(to defaults: UserDefaults = .standard) {
+        defaults.set(levels, forKey: "app-volume-levels")
+        defaults.set(muted.sorted(), forKey: "app-volume-muted")
+        defaults.set(names, forKey: "app-volume-names")
+    }
 }
 
 final class AppVolumeGain: @unchecked Sendable {
@@ -248,6 +300,30 @@ enum AppVolumeMath {
         return (gain, peak)
     }
 
+    static func bundleID(atPath path: String) -> String? {
+        Bundle(path: path)?.bundleIdentifier
+    }
+
+    static func canonical(_ key: String) -> String {
+        key.hasPrefix("/") ? bundleID(atPath: key) ?? key : key
+    }
+
+    static func rows(live: [AppVolumeRow], remembered: [AppVolumeOwner]) -> [AppVolumeRow] {
+        let shown = Set(live.map(\.owner.key))
+        let all = live + remembered.filter { !shown.contains($0.key) }.map { AppVolumeRow(owner: $0, playing: false) }
+        let counts = Dictionary(all.map { ($0.owner.name, 1) }, uniquingKeysWith: +)
+        return all.map { row in
+            var row = row
+            if counts[row.owner.name, default: 0] > 1 {
+                row.place = row.owner.bundlePath.map { URL(fileURLWithPath: $0).deletingLastPathComponent().lastPathComponent } ?? row.owner.key
+            }
+            return row
+        }.sorted {
+            let order = $0.title.localizedStandardCompare($1.title)
+            return order == .orderedSame ? $0.owner.key < $1.owner.key : order == .orderedAscending
+        }
+    }
+
     static func outermostApp(_ path: String) -> String? {
         let parts = path.split(separator: "/")
         guard let end = parts.firstIndex(where: { $0.hasSuffix(".app") }) else { return nil }
@@ -260,7 +336,7 @@ enum AppVolumeMath {
             guard let app = outermostApp(path) else { return nil }
             if let running = runningApps.first(where: { $0.bundlePath == app }) { return owner(running) }
             let name = app.split(separator: "/").last.map { String($0.dropLast(4)) } ?? app
-            return AppVolumeOwner(key: app, name: name, bundlePath: app)
+            return AppVolumeOwner(key: bundleID(atPath: app) ?? app, name: name, bundlePath: app)
         }
         if let path = processPath, let found = inside(path) { return found }
         if let id = processBundleID,
