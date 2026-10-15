@@ -1230,3 +1230,6 @@
 "Add a Layout" = "Přidat rozložení";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Rozložení se nepodařilo přidat. Použijte místo toho Nastavení klávesnice.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock se přesune s ním. Vypnutím přepínače se monitory vrátí, jak byly";
+"Mac" = "Mac";
+"Enhancements" = "Vylepšení";
+"Info" = "Informace";

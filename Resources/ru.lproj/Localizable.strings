@@ -1230,3 +1230,6 @@
 "Add a Layout" = "Добавить раскладку";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Не удалось добавить раскладку. Воспользуйтесь настройками клавиатуры.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock переезжает вместе с ним. Если выключить переключатель, дисплеи вернутся как были";
+"Mac" = "Mac";
+"Enhancements" = "Улучшения";
+"Info" = "Информация";

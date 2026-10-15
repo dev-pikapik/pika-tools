@@ -1230,3 +1230,6 @@
 "Add a Layout" = "Lägg till layout";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Det gick inte att lägga till layouten. Använd Tangentbordsinställningar i stället.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock följer med. Stänger du av reglaget återgår skärmarna till hur de var";
+"Mac" = "Mac";
+"Enhancements" = "Förbättringar";
+"Info" = "Information";

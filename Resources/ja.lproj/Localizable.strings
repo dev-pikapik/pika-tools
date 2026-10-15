@@ -1230,3 +1230,6 @@
 "Add a Layout" = "レイアウトを追加";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "レイアウトを追加できませんでした。代わりにキーボード設定を使ってください。";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock も一緒に移ります。スイッチをオフにすると、ディスプレイの配置は元に戻ります";
+"Mac" = "Mac";
+"Enhancements" = "機能強化";
+"Info" = "情報";

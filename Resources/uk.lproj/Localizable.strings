@@ -1230,3 +1230,6 @@
 "Add a Layout" = "Додати розкладку";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Не вдалося додати розкладку. Скористайтеся параметрами клавіатури.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock переходить разом із ним. Якщо вимкнути перемикач, дисплеї повернуться як були";
+"Mac" = "Mac";
+"Enhancements" = "Покращення";
+"Info" = "Інформація";
