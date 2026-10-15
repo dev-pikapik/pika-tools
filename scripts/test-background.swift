@@ -135,6 +135,8 @@ enum BackgroundTests {
         plist("home/Library/LaunchAgents/com.apple.pika-test.plist", ["Label": "com.apple.pika-test", "Program": vendord])
         plist("home/Library/LaunchAgents/broken.plist", ["Label": "broken"])
         plist("root/Library/LaunchDaemons/com.vendor.daemon.plist", ["Label": "com.vendor.daemon", "Program": vendord, "KeepAlive": ["SuccessfulExit": false]])
+        plist("root/Library/LaunchDaemons/com.weird.plist", ["Label": "com weird", "Program": vendord])
+        plist("root/Library/LaunchDaemons/com.pikapik.tools.helper.plist", ["Label": "com.pikapik.tools.helper", "Program": vendord])
         plist("root/Library/LaunchAgents/com.vendor.shared.plist", ["Label": "com.vendor.shared", "Program": vendord, "Disabled": true])
 
         let roots = AppRoots(home: at("home"), root: at("root"), userCache: nil, userTemp: nil, caskrooms: [], pkgutil: { _ in nil }, isKnownApp: { _ in false })
@@ -148,11 +150,13 @@ enum BackgroundTests {
         file("home/Gone.app/Contents/MacOS/gone")
         let tasks = BackgroundTasks.collect(AppFootprint(roots: roots, installed: [foo], system: []), launchd: launchd, own: own,
                                             loginItems: [foo.url, own, launcher, at("home/.Trash/Old.app")], turnedOff: [at("home/Gone.app")],
+                                            turnedOffServices: ["com.openssh.sshd", "com.apple.smbd"],
                                             running: [(id: "com.foo.launcher", url: nil), (id: "com.foo.app", url: foo.url)],
                                             status: { ["com.needs.approval.plist": 2, "com.foo.daemon.plist": 1][$0.lastPathComponent] ?? 0 })
         let found = Dictionary(tasks.map { ($0.label.isEmpty ? $0.file.lastPathComponent : $0.label, $0) }, uniquingKeysWith: { first, _ in first })
         let expected: Set = ["com.foo.agent", "com.foo.daemon", "com.foo.launcher", "com.foo.sync", "com.gone.updater", "com.needs.approval",
-                             "com.pesotchi.pika-tools.test", "com.vendor.daemon", "com.vendor.shared", "com.foo.app", "com.pesotchi.pika-tools", "Old.app", "Gone.app"]
+                             "com.pesotchi.pika-tools.test", "com.vendor.daemon", "com.vendor.shared", "com.foo.app", "com.pesotchi.pika-tools", "Old.app", "Gone.app",
+                             "com weird", "com.pikapik.tools.helper", "com.openssh.sshd"]
         precondition(Set(found.keys) == expected && tasks.count == expected.count, "\(tasks.map(\.label).sorted())")
         let titles = tasks.map(\.title)
         precondition(titles == titles.sorted { $0.localizedStandardCompare($1) != .orderedDescending }, "\(titles)")
@@ -168,7 +172,11 @@ enum BackgroundTests {
         check("com.gone.updater") { $0.kind == .leftover && $0.title == "Gone" && $0.state == .off && $0.domain == gui && $0.timing == .schedule && $0.icon == $0.file }
         check("com.needs.approval") { $0.state == .offInSettings && $0.domain == gui && $0.kind == .background }
         check("com.pesotchi.pika-tools.test") { $0.isOwn && $0.title == "pikapik" && $0.domain.isEmpty && $0.icon == own }
-        check("com.vendor.daemon") { $0.scope == .wholeMac && $0.running && $0.timing == .keepsRunning && $0.domain.isEmpty && $0.state == .on && !$0.canToggle }
+        check("com.vendor.daemon") { $0.scope == .wholeMac && $0.running && $0.timing == .keepsRunning && $0.domain == "system" && $0.state == .on && $0.canToggle && !$0.opensLoginItems }
+        check("com weird") { $0.domain.isEmpty && !$0.canToggle && $0.opensLoginItems }
+        check("com.pikapik.tools.helper") { $0.isOwn && $0.domain.isEmpty && !$0.canToggle }
+        check("com.openssh.sshd") { $0.title == "Remote Login" && $0.state == .off && $0.domain == "system" && $0.canToggle && $0.scope == .wholeMac && $0.developer == "Apple"
+            && $0.file.path == "/System/Library/LaunchDaemons/ssh.plist" && !$0.opensLoginItems && !$0.running }
         check("com.vendor.shared") { $0.scope == .allUsers && $0.state == .off && $0.domain == gui && $0.canToggle && !$0.opensLoginItems }
         check("com.foo.app") { $0.kind == .login && $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.timing == nil && $0.version == "2.1" && $0.state == .on && $0.canToggle && !$0.opensLoginItems }
         check("com.pesotchi.pika-tools") { $0.kind == .login && $0.isOwn && $0.title == "pikapik" && $0.icon == own && $0.version == "1.50.1" && !$0.canToggle }
@@ -228,6 +236,19 @@ enum BackgroundTests {
         precondition(BackgroundTasks.turnOff(login("Other.app"), launchctl: launchctl, list: list, defaults: defaults))
         try! FileManager.default.removeItem(at: at("home/Other.app"))
         precondition(BackgroundTasks.turnedOffLogins(live: [], defaults: defaults).isEmpty)
+
+        var launchd = Launchd()
+        launchd.system.disabled = ["com.openssh.sshd": true, "com.apple.screensharing": true, "com.apple.smbd": true]
+        BackgroundTasks.rememberService("com.openssh.sshd", off: true, defaults: defaults)
+        BackgroundTasks.rememberService("com.apple.screensharing", off: true, defaults: defaults)
+        BackgroundTasks.rememberService("com.apple.smbd", off: true, defaults: defaults)
+        BackgroundTasks.rememberService("com.vendor.daemon", off: true, defaults: defaults)
+        precondition(BackgroundTasks.turnedOffServices(launchd: launchd, defaults: defaults) == ["com.openssh.sshd", "com.apple.screensharing"])
+        BackgroundTasks.rememberService("com.openssh.sshd", off: false, defaults: defaults)
+        precondition(BackgroundTasks.turnedOffServices(launchd: launchd, defaults: defaults) == ["com.apple.screensharing"])
+        launchd.system.disabled["com.apple.screensharing"] = false
+        precondition(BackgroundTasks.turnedOffServices(launchd: launchd, defaults: defaults).isEmpty)
+        precondition(defaults.stringArray(forKey: "background-turned-off-services") == [])
     }
 }
 

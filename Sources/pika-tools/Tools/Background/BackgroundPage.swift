@@ -14,8 +14,9 @@ actor BackgroundScanner {
         return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: [], running: running)
         #else
         let logins = BackgroundTasks.loginItems()
-        return BackgroundTasks.collect(footprint, launchd: .read(), own: own, loginItems: logins,
-                                       turnedOff: BackgroundTasks.turnedOffLogins(live: logins), running: running)
+        let launchd = Launchd.read()
+        return BackgroundTasks.collect(footprint, launchd: launchd, own: own, loginItems: logins, turnedOff: BackgroundTasks.turnedOffLogins(live: logins),
+                                       turnedOffServices: BackgroundTasks.turnedOffServices(launchd: launchd), running: running)
         #endif
     }
 
@@ -76,14 +77,26 @@ final class BackgroundModel {
     func toggle(_ task: BackgroundTask) {
         busy.insert(task.id)
         failed.remove(task.id)
-        Task {
-            if await scanner.toggle(task) {
-                if let index = tasks.firstIndex(where: { $0.id == task.id }) { tasks[index].state = task.state == .on ? .off : .on }
+        let finish = { (ok: Bool) in
+            if ok {
+                if let index = self.tasks.firstIndex(where: { $0.id == task.id }) { self.tasks[index].state = task.state == .on ? .off : .on }
             } else {
-                failed.insert(task.id)
+                self.failed.insert(task.id)
             }
-            busy.remove(task.id)
-            refresh()
+            self.busy.remove(task.id)
+            self.refresh()
+        }
+        if task.domain == "system" {
+            setService(task.label, on: task.state != .on, done: finish)
+        } else {
+            Task { finish(await scanner.toggle(task)) }
+        }
+    }
+
+    func setService(_ label: String, on: Bool, done: @escaping (Bool) -> Void) {
+        FanControl.shared.setService(label, on: on) { ok in
+            if ok { BackgroundTasks.rememberService(label, off: !on) }
+            done(ok)
         }
     }
     #endif
@@ -135,10 +148,17 @@ struct BackgroundPage: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PermissionBar(permissions: [.folders], text: "To see the tasks in your home folder, allow access to it.")
         }
+        #else
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            PermissionBar(permissions: model.tasks.contains { $0.domain == "system" } ? [.fans] : [], text: "To turn off tasks that run for the whole Mac, allow administrator access.")
+        }
         #endif
         .environment(\.inSettings, true)
         .onAppear {
             permissions.refresh()
+            #if !APPSTORE
+            FanControl.shared.probe()
+            #endif
             model.refresh(rescan: true)
         }
         .onChange(of: permissions.fileAccess) { model.refresh(rescan: true) }
@@ -146,6 +166,9 @@ struct BackgroundPage: View {
         .onReceive(NSWorkspace.shared.notificationCenter.publisher(for: NSWorkspace.didTerminateApplicationNotification)) { _ in model.refresh() }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
             permissions.refresh()
+            #if !APPSTORE
+            FanControl.shared.probe()
+            #endif
             model.refresh()
         }
     }
@@ -272,6 +295,7 @@ private struct TaskRow: View {
             #if !APPSTORE
             Button(task.state == .off ? "Turn Back On" : "Turn Off") { model.toggle(task) }
                 .disabled(model.busy.contains(task.id))
+                .needs(task.domain == "system" ? [.fans] : [])
             #endif
         } else if task.state == .on {
             Button("Turn Off…", action: BackgroundTasks.openLoginItems)

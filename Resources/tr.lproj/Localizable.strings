@@ -33,7 +33,7 @@
 "For some features" = "Bazı özellikler için";
 "Finder Extensions" = "Finder Eklentileri";
 "Folders" = "Klasörler";
-"Lets the app choose how fast your fans spin" = "Uygulamanın fanların hızını seçmesini sağlar";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Uygulamanın fan hızını değiştirmesini ve tüm Mac için hizmetleri kapatmasını sağlar";
 "Lets the app add items to the right-click menu in Finder" = "Uygulamanın Finder’daki sağ tık menüsüne öğe eklemesini sağlar";
 "Lets the app find permissions left by deleted apps" = "Uygulamanın silinen uygulamalardan kalan izinleri bulmasını sağlar";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS bunları yalnızca Sistem Ayarları’nda kapatmanıza izin verir. Düğme doğru listeyi açar; pikapik’i orada kapatırsınız.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Erişime İzin Ver";
 "Fans" = "Fanlar";
 "Fan speed" = "Fan hızı";
-"Fan control" = "Fan kontrolü";
+"Administrator access" = "Yönetici erişimi";
 "Fan %lld" = "Fan %lld";
 "See how fast your fans spin and choose their speed" = "Fanlarınızın ne kadar hızlı döndüğünü görün ve hızlarını seçin";
 "This Mac has no fans" = "Bu Mac’te fan yok";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Daha yavaş fanlar Mac’inizi daha çok ısıtabilir";
 "Auto · %lld rpm" = "Otomatik · %lld dev/dk";
 "Manual · %lld rpm" = "Elle · %lld dev/dk";
-"pikapik wants to allow changing the fan speed." = "pikapik fan hızının değiştirilmesine izin vermek istiyor.";
-"pikapik wants to remove fan control." = "pikapik fan kontrolünü kaldırmak istiyor.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik fan hızını değiştirmek ve hizmetleri kapatıp açmak istiyor.";
+"pikapik wants to remove administrator access." = "pikapik yönetici erişimini kaldırmak istiyor.";
 "Not allowed: no administrator password" = "İzin verilmedi: yönetici parolası yok";
 "Not removed: no administrator password" = "Kaldırılmadı: yönetici parolası yok";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Fan hızı değiştirilemedi. Fan kontrolüne yeniden izin vermeyi deneyin.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Fan hızı değiştirilemedi. Yönetici erişimine yeniden izin vermeyi deneyin.";
 "Fans went back to Auto to keep your Mac safe" = "Mac’inizi korumak için fanlar Otomatik’e döndü";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, dev/dk, soğutma, daha serin, sıcak, ısı, gürültü, sessiz, yüksek ses, sıcaklık, termal";
 "allow, helper, password, administrator, install, remove" = "izin ver, yardımcı, parola, yönetici, kur, kaldır";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Kapatılamadı. Tekrar dene ya da Sistem Ayarları’nı kullan.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Yeniden açılamadı. Tekrar dene ya da Sistem Ayarları’nı kullan.";
 "Needs administrator rights, so turn it off in System Settings" = "Yönetici hakları gerekiyor, bu yüzden Sistem Ayarları’ndan kapat";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Tüm Mac için çalışan görevleri kapatmak için yönetici erişimine izin verin.";
 "The app added it itself, so turn it off in System Settings" = "Uygulama bunu kendisi ekledi, bu yüzden Sistem Ayarları’ndan kapat";
 "Lets the app save new files next to yours and see your background tasks" = "Uygulamanın yeni dosyaları sizin dosyalarınızın yanına kaydetmesini ve arka plan görevlerinizi görmesini sağlar";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik’in dosyaları seninkilerin yanına kaydedebilmesi ve arka plan görevlerini görebilmesi için ana klasörünü bir kez seç.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Yalnızca bu Mac bağlanabilir.";
 "Other devices on your network can connect." = "Ağınızdaki diğer aygıtlar da bağlanabilir.";
 "To free port %@, turn off “%@” in System Settings." = "%1$@ portunu serbest bırakmak için Sistem Ayarları’nda “%2$@” seçeneğini kapatın.";
+"To free port %@, turn off “%@”." = "%1$@ portunu serbest bırakmak için “%2$@” seçeneğini kapatın.";
 "macOS needs this port, so it stays taken." = "macOS’in bu porta ihtiyacı var, bu yüzden port kullanımda kalıyor.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Program başka bir kullanıcıya ya da sisteme ait, bu yüzden pikapik ona dokunmuyor. Programı Etkinlik Monitörü’nden kapatabilirsiniz.";
 "Open Activity Monitor" = "Etkinlik Monitörü’nü Aç";
