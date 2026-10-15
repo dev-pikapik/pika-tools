@@ -617,10 +617,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes Home and End move to the start and end of the line in every app, like on Windows.
 
-**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:97`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :151). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app. App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
+**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:100`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :151). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app. App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
 
 **Options:**
-- Home and End work as usual in these apps — list of apps to leave alone: Add App… / Done, app shelf of open apps, Remove (`HomeEndTool.swift:224`).
+- Home and End work as usual in these apps — list of apps to leave alone: Add App… / Done, app shelf of open apps, Remove (`HomeEndTool.swift:227`).
 
 **Nuances:** The Home and End it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not handle them again.
 
@@ -636,10 +636,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fixes text typed in the wrong keyboard layout (“ghbdtn” becomes “привет”).
 
-**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:566`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
+**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:567`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
 
 **Options:**
-- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:576`). Website only.
+- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:577`). Website only.
 - Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:580`). Website only.
 - Words left as you typed them — list with a Clear button, shown only when not empty (`:587-590`). Website only.
 - Add a Layout — menu in the note shown when fewer than two layouts exist: the installed layouts for your preferred languages that you don’t have yet; picking one turns it on with `TISEnableInputSource`, no password (`LayoutFixTool.swift` `AddLayoutNotice`, `KeyboardLayouts.addable`). If none is left to offer, or adding fails, the Keyboard Settings… button opens System Settings. Website only; the App Store build shows only Keyboard Settings….
@@ -793,10 +793,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes the green window button fill the screen area (like Windows maximize) instead of entering full screen.
 
-**How it works:** AXUIElement hit-test on the zoom button, sets AXSize and AXPosition, with `AXEnhancedUserInterface` switched off around the move (`Sources/pika-tools/Tools/Windows/WindowZoomTool.swift:284`), needs Accessibility.
+**How it works:** AXUIElement hit-test on the zoom button, sets AXSize and AXPosition, with `AXEnhancedUserInterface` switched off around the move (`Sources/pika-tools/Tools/Windows/WindowZoomTool.swift:179`), needs Accessibility.
 
 **Options:**
-- Green button works as usual in these apps — app exclusion list (Add App… / Done, Remove) (`WindowZoomTool.swift:292`).
+- Green button works as usual in these apps — app exclusion list (Add App… / Done, Remove) (`WindowZoomTool.swift:298`).
 
 **Edition:** Website only (App Store: cut — needs to move other apps’ windows).
 
