@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Video yang tidak bisa dibuka QuickTime kini bisa diputar
+
+<sub>1.51.0 · 15 Oktober 2026</sub>
+
+Di versi situs web, MKV, WebM, AVI, WMV, FLV, dan video lain yang tidak bisa dibuka QuickTime kini diputar di pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klik kanan sebuah video dan pilih Buka dengan › pikapik Player, atau klik Buka video… di Pengaturan › Pemutar. Video diputar di jendelanya sendiri: Spasi memutar dan menjeda, ← dan → melompat 5 detik, ↑ dan ↓ mengubah volume, dan F beralih ke layar penuh.
+
+Pemutar adalah app kecil yang terpisah. Ia hanya melihat video yang Anda buka, tidak bisa terhubung ke internet, dan tidak meminta izin apa pun. App yang membuka video Anda secara default tetap sama. Subtitel belum didukung.
+
+**Coba:** Pengaturan › Pemutar
+
+---
+
 ## <a id="v1.50.3"></a>Menu sudut aktif dan layar utama kini berfungsi
 
 <sub>1.50.3 · 15 Oktober 2026</sub>

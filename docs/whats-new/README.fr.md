@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Les vidéos que QuickTime n’ouvre pas se lisent maintenant
+
+<sub>1.51.0 · 15 octobre 2026</sub>
+
+Dans la version du site, les vidéos MKV, WebM, AVI, WMV, FLV et d’autres que QuickTime n’ouvre pas se lisent maintenant dans pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Faites un clic droit sur une vidéo et choisissez Ouvrir avec › pikapik Player, ou cliquez sur Ouvrir une vidéo… dans Réglages › Lecteur. La vidéo se lit dans sa propre fenêtre : la barre d’espace lance la lecture et la met en pause, ← et → sautent de 5 secondes, ↑ et ↓ règlent le volume, et F passe en plein écran.
+
+Le lecteur est une petite app à part. Il ne voit que les vidéos que vous ouvrez, ne peut pas aller sur Internet et ne demande aucune autorisation. L’app qui ouvre vos vidéos par défaut reste la même. Les sous-titres ne sont pas encore pris en charge.
+
+**Pour essayer :** Réglages › Lecteur
+
+---
+
 ## <a id="v1.50.3"></a>Les menus des coins actifs et de l’écran principal fonctionnent enfin
 
 <sub>1.50.3 · 15 octobre 2026</sub>
