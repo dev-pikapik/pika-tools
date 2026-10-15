@@ -7,12 +7,12 @@ final class ConvertTool: Tool {
     var title: String { String(localized: "Convert in Finder") }
     let tab = SettingsTab.finder
     private let finder: FinderExtension
-    private var migrate: Bool
+    private static let migrateKey = "convert-from-compress"
 
     init() {
-        let fresh = UserDefaults.standard.object(forKey: "convert") == nil
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "convert") == nil, defaults.bool(forKey: "compress") { defaults.set(true, forKey: Self.migrateKey) }
         finder = FinderExtension(bundle: "Convert", key: "convert")
-        migrate = fresh && UserDefaults.standard.bool(forKey: "compress")
     }
 
     var isActive: Bool { finder.isActive }
@@ -34,10 +34,11 @@ final class ConvertTool: Tool {
     }
 
     func refresh() {
-        guard migrate, MainCopy.canAct else { return finder.refresh() }
-        migrate = false
+        guard MainCopy.canAct, UserDefaults.standard.bool(forKey: Self.migrateKey) else { return finder.refresh() }
         finder.isEnabled = true
+        UserDefaults.standard.removeObject(forKey: Self.migrateKey)
     }
+
     func load() { finder.load() }
 }
 
