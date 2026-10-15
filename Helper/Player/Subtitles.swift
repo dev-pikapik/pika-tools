@@ -37,22 +37,46 @@ struct SubtitleStream {
 
 final class SubtitleScanner {
     private let url: URL
-    private let start: Double
     private let onStreams: ([SubtitleStream]) -> Void
     private let onCues: (Int32, [SubtitleCue]) -> Void
     private let lock = NSLock()
+    private let wake = DispatchSemaphore(value: 0)
     private var stopped = false
+    private var planned: (from: Double, to: Double)
+    private var jump: Double?
+    private static let lead = 30.0
+    private static let window = 600.0
+    private static let margin = 60.0
 
     init(url: URL, start: Double, onStreams: @escaping ([SubtitleStream]) -> Void, onCues: @escaping (Int32, [SubtitleCue]) -> Void) {
         self.url = url
-        self.start = start
         self.onStreams = onStreams
         self.onCues = onCues
+        let from = max(0, start - Self.lead)
+        planned = (from, from + Self.lead + Self.window)
+        jump = from
         DispatchQueue.global(qos: .utility).async { self.run() }
     }
 
     func cancel() {
         lock.withLock { stopped = true }
+        wake.signal()
+    }
+
+    func cover(_ position: Double) {
+        let signal = lock.withLock { () -> Bool in
+            guard !stopped else { return false }
+            if position >= planned.from, position <= planned.to {
+                guard position > planned.to - Self.margin else { return false }
+                planned.to += Self.window
+            } else {
+                let from = max(0, position - Self.lead)
+                planned = (from, from + Self.lead + Self.window)
+                jump = from
+            }
+            return true
+        }
+        if signal { wake.signal() }
     }
 
     private var isStopped: Bool { lock.withLock { stopped } }
@@ -69,6 +93,7 @@ final class SubtitleScanner {
             let read = pread(descriptor, buffer, Int(count), offset)
             return read < 0 ? -EIO : read == 0 ? PikaErrorEOF : Int32(read)
         }
+        defer { withExtendedLifetime(reader) {} }
         av_log_set_level(AV_LOG_QUIET)
         let bufferSize: Int32 = 1 << 16
         func release(_ io: UnsafeMutablePointer<AVIOContext>) {
@@ -94,9 +119,14 @@ final class SubtitleScanner {
         let origin = context.pointee.start_time == PikaNoTimestamp ? 0 : Double(context.pointee.start_time) / Double(AV_TIME_BASE)
         var streams: [SubtitleStream] = []
         var active: [Int32: (format: SubtitleFormat, scale: Double)] = [:]
+        var clocks: [Int32: Double] = [:]
         for position in 0..<Int(context.pointee.nb_streams) {
             guard let stream = context.pointee.streams[position] else { continue }
             stream.pointee.discard = AVDISCARD_ALL
+            if clocks.isEmpty, stream.pointee.codecpar.pointee.codec_type == AVMEDIA_TYPE_VIDEO, stream.pointee.disposition & AV_DISPOSITION_ATTACHED_PIC == 0, stream.pointee.time_base.den > 0 {
+                stream.pointee.discard = AVDISCARD_NONKEY
+                clocks[stream.pointee.index] = Double(stream.pointee.time_base.num) / Double(stream.pointee.time_base.den)
+            }
             guard stream.pointee.codecpar.pointee.codec_type == AVMEDIA_TYPE_SUBTITLE else { continue }
             let format = SubtitleFormat(stream.pointee.codecpar.pointee.codec_id)
             streams.append(SubtitleStream(index: stream.pointee.index, format: format, language: streamTag(stream, "language"), title: streamTag(stream, "title")))
@@ -124,41 +154,57 @@ final class SubtitleScanner {
             var freed: UnsafeMutablePointer<AVPacket>? = packet
             av_packet_free(&freed)
         }
-        func read(from: Double, until limit: Double?) {
-            let target = Int64((from + origin) * Double(AV_TIME_BASE))
-            guard av_seek_frame(context, -1, target, AVSEEK_FLAG_BACKWARD) >= 0 || from == 0 else { return }
-            context.pointee.pb.pointee.error = 0
+        var reached = -Double.infinity
+        func read(until limit: Double) {
             var failures = 0
-            while !isStopped {
+            while !isStopped, lock.withLock({ jump == nil }) {
                 let result = av_read_frame(context, packet)
                 guard result >= 0 else {
                     failures += 1
-                    if result == PikaErrorEOF || context.pointee.pb.pointee.error < 0 || failures > 64 { return }
+                    if result == PikaErrorEOF || context.pointee.pb.pointee.error < 0 || failures > 64 {
+                        reached = .infinity
+                        lock.withLock { planned.to = .infinity }
+                        return
+                    }
                     continue
                 }
                 failures = 0
                 defer { av_packet_unref(packet) }
-                guard let (format, scale) = active[packet.pointee.stream_index].map({ ($0.format, $0.scale) }), packet.pointee.pts != PikaNoTimestamp, let data = packet.pointee.data else { continue }
+                let index = packet.pointee.stream_index
+                guard packet.pointee.pts != PikaNoTimestamp, let scale = active[index]?.scale ?? clocks[index] else { continue }
                 let begin = Double(packet.pointee.pts) * scale - origin
-                if let limit, begin > limit { return }
-                let length = packet.pointee.duration > 0 ? Double(packet.pointee.duration) * scale : 4
-                guard begin.isFinite, let text = format.text(Data(bytes: data, count: Int(packet.pointee.size))) else { continue }
-                let key = "\(packet.pointee.stream_index)|\(begin)|\(text)"
-                if seen.insert(key).inserted {
-                    cues[packet.pointee.stream_index, default: []].append(SubtitleCue(start: begin, end: begin + length, text: text))
-                    changed.insert(packet.pointee.stream_index)
+                guard begin.isFinite else { continue }
+                if let format = active[index]?.format, let data = packet.pointee.data, let text = format.text(Data(bytes: data, count: Int(packet.pointee.size))) {
+                    let length = packet.pointee.duration > 0 ? Double(packet.pointee.duration) * scale : 4
+                    let key = "\(index)|\(begin)|\(text)"
+                    if seen.insert(key).inserted {
+                        cues[index, default: []].append(SubtitleCue(start: begin, end: begin + length, text: text))
+                        changed.insert(index)
+                    }
                 }
+                reached = max(reached, begin)
                 if Date().timeIntervalSince(lastDelivery) > 0.5 { flush() }
+                if begin > limit { return }
             }
         }
-        let lead = 30.0
-        if start > 2 * lead {
-            read(from: start - lead, until: nil)
-            read(from: 0, until: start)
-        } else {
-            read(from: 0, until: nil)
+        while !isStopped {
+            let (target, limit) = lock.withLock { () -> (Double?, Double) in
+                defer { jump = nil }
+                return (jump, planned.to)
+            }
+            if let target {
+                if av_seek_frame(context, -1, Int64((target + origin) * Double(AV_TIME_BASE)), AVSEEK_FLAG_BACKWARD) < 0 { av_seek_frame(context, -1, Int64(origin * Double(AV_TIME_BASE)), AVSEEK_FLAG_BACKWARD) }
+                context.pointee.pb.pointee.error = 0
+                reached = -.infinity
+            }
+            if reached >= limit {
+                flush()
+                wake.wait()
+                continue
+            }
+            read(until: limit)
+            flush()
         }
-        flush()
     }
 }
 
@@ -374,6 +420,7 @@ final class Subtitles {
     }
 
     func refresh() {
+        scanner?.cover(position())
         var text: String?
         if let flash, flash.until > Date() {
             text = flash.text

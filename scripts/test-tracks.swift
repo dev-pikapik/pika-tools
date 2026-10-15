@@ -117,6 +117,18 @@ enum TestTracks {
         return found
     }
 
+    static func watch(_ url: URL, start: Double = 0) -> (Found, SubtitleScanner) {
+        let found = Found()
+        return (found, SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }))
+    }
+
+    static func starts(_ found: Found) -> [Double] { (found.cues.values.first ?? []).map(\.start).sorted() }
+
+    static func waitFor(_ seconds: Double = 10, _ done: () -> Bool) async {
+        let deadline = Date().addingTimeInterval(seconds)
+        while Date() < deadline, !done() { try? await Task.sleep(for: .milliseconds(50)) }
+    }
+
     static func main() async {
         setvbuf(stdout, nil, _IOLBF, 0)
         _ = NSApplication.shared
@@ -159,9 +171,27 @@ enum TestTracks {
         }
         found = await scan(plain, expecting: 1, for: 2)
         check(found.streams?.isEmpty == true && found.cues.isEmpty, "a file without subtitles finds none")
-        found = await scan(long, start: 90, expecting: 3)
-        let all = found.cues.values.first ?? []
-        check(all.count == 3 && all.map(\.start) == [10, 70, 100], "a long file read from the middle first still gives every cue once: \(all.map(\.start))")
+        let (middle, middleScanner) = watch(long, start: 90)
+        await waitFor { starts(middle) == [70, 100] }
+        check(starts(middle) == [70, 100], "reading starts half a minute before the position: \(starts(middle))")
+        middleScanner.cover(5)
+        await waitFor { starts(middle) == [10, 70, 100] }
+        check(starts(middle) == [10, 70, 100], "moving the position far away reads there, every cue once: \(starts(middle))")
+        middleScanner.cancel()
+
+        let far = write("1\n00:00:10,000 --> 00:00:12,000\nStart\n\n2\n00:11:40,000 --> 00:11:42,000\nAfter ten minutes\n\n3\n00:23:20,000 --> 00:23:22,000\nNear the end\n", "far.srt", in: folder)
+        let hour = make(ffmpeg, "hour.mkv", in: folder, ["-f", "lavfi", "-i", "testsrc=size=160x90:rate=5:duration=1500", "-f", "lavfi", "-i", "sine=frequency=440:duration=1500", "-i", far.path, "-map", "0:v", "-map", "1:a", "-map", "2", "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-c:s", "srt"])
+        let (ahead, aheadScanner) = watch(hour)
+        await waitFor { starts(ahead) == [10] }
+        try? await Task.sleep(for: .seconds(1.5))
+        check(starts(ahead) == [10], "a long film is read only ten minutes ahead, not to the end: \(starts(ahead))")
+        aheadScanner.cover(580)
+        await waitFor { starts(ahead) == [10, 700] }
+        check(starts(ahead) == [10, 700], "coming close to the end of the read part reads the next ten minutes: \(starts(ahead))")
+        aheadScanner.cover(1390)
+        await waitFor { starts(ahead) == [10, 700, 1400] }
+        check(starts(ahead) == [10, 700, 1400], "a jump to the end of the film reads there: \(starts(ahead))")
+        aheadScanner.cancel()
         check(SubtitleFormat(AV_CODEC_ID_HDMV_PGS_SUBTITLE) == nil && SubtitleFormat(AV_CODEC_ID_DVD_SUBTITLE) == nil && SubtitleFormat(AV_CODEC_ID_DVB_SUBTITLE) == nil, "picture subtitles (PGS, VobSub, DVB) are recognised as not supported")
 
         var damaged = 0
