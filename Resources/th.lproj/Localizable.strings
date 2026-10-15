@@ -1047,6 +1047,10 @@
 "Turn On…" = "เปิด…";
 "Turn Off…" = "ปิด…";
 "Opens Login Items in System Settings" = "เปิดรายการเข้าสู่ระบบในการตั้งค่าระบบ";
+"Couldn’t turn this off. Try again or use System Settings." = "ปิดไม่สำเร็จ ลองอีกครั้งหรือใช้การตั้งค่าระบบ";
+"Couldn’t turn this back on. Try again or use System Settings." = "เปิดกลับไม่สำเร็จ ลองอีกครั้งหรือใช้การตั้งค่าระบบ";
+"Needs administrator rights, so turn it off in System Settings" = "ต้องใช้สิทธิ์ผู้ดูแลระบบ จึงต้องปิดในการตั้งค่าระบบ";
+"The app added it itself, so turn it off in System Settings" = "แอปเพิ่มรายการนี้เอง จึงต้องปิดในการตั้งค่าระบบ";
 "Lets the app save new files next to yours and see your background tasks" = "ให้แอปบันทึกไฟล์ใหม่ไว้ข้างไฟล์ของคุณ และดูงานเบื้องหลังได้";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "เลือกโฟลเดอร์โฮมของคุณหนึ่งครั้ง เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณ และดูงานเบื้องหลังของคุณได้";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "รายการเข้าสู่ระบบ, เปิดเมื่อเข้าสู่ระบบ, เอเจนต์, บริการ, เดมอน, เริ่มต้น, เริ่มอัตโนมัติ, ตัวช่วย, กำลังทำงาน, เบื้องหลัง, ไฟล์ที่เหลือ, ปิด";

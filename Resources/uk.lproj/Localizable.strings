@@ -1047,6 +1047,10 @@
 "Turn On…" = "Увімкнути…";
 "Turn Off…" = "Вимкнути…";
 "Opens Login Items in System Settings" = "Відкриває «Елементи входу» в Системних параметрах";
+"Couldn’t turn this off. Try again or use System Settings." = "Не вдалося вимкнути. Спробуйте ще раз або скористайтеся Системними параметрами.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Не вдалося повернути. Спробуйте ще раз або скористайтеся Системними параметрами.";
+"Needs administrator rights, so turn it off in System Settings" = "Потрібні права адміністратора, тому вимкніть це в Системних параметрах";
+"The app added it itself, so turn it off in System Settings" = "Програма додала це сама, тому вимкніть це в Системних параметрах";
 "Lets the app save new files next to yours and see your background tasks" = "Щоб зберігати нові файли поруч із вашими й бачити фонові завдання";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Виберіть домашню папку один раз, щоб pikapik міг зберігати файли поруч із вашими й бачити ваші фонові завдання.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "елементи входу, відкривати під час входу, агенти, служби, демони, автозапуск, автозавантаження, помічники, працює, фон, фонові, залишки, вимкнути";

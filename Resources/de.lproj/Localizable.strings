@@ -1047,6 +1047,10 @@
 "Turn On…" = "Einschalten…";
 "Turn Off…" = "Ausschalten…";
 "Opens Login Items in System Settings" = "Öffnet Anmeldeobjekte in den Systemeinstellungen";
+"Couldn’t turn this off. Try again or use System Settings." = "Das Ausschalten hat nicht geklappt. Versuche es erneut oder nutze die Systemeinstellungen.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Das Wiedereinschalten hat nicht geklappt. Versuche es erneut oder nutze die Systemeinstellungen.";
+"Needs administrator rights, so turn it off in System Settings" = "Braucht Administratorrechte, daher in den Systemeinstellungen ausschalten";
+"The app added it itself, so turn it off in System Settings" = "Die App hat es selbst hinzugefügt, daher in den Systemeinstellungen ausschalten";
 "Lets the app save new files next to yours and see your background tasks" = "Damit die App neue Dateien neben deinen speichern und deine Hintergrundaufgaben sehen kann";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Wähle einmal deinen Home-Ordner, damit pikapik Dateien neben deinen speichern und deine Hintergrundaufgaben sehen kann.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "Anmeldeobjekte, beim Anmelden öffnen, Agenten, Dienste, Daemons, Start, Autostart, Helfer, läuft, Hintergrund, Reste, ausschalten";

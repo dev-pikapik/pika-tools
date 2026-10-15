@@ -1047,6 +1047,10 @@
 "Turn On…" = "Aç…";
 "Turn Off…" = "Kapat…";
 "Opens Login Items in System Settings" = "Sistem Ayarları’nda Giriş Öğeleri’ni açar";
+"Couldn’t turn this off. Try again or use System Settings." = "Kapatılamadı. Tekrar dene ya da Sistem Ayarları’nı kullan.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Yeniden açılamadı. Tekrar dene ya da Sistem Ayarları’nı kullan.";
+"Needs administrator rights, so turn it off in System Settings" = "Yönetici hakları gerekiyor, bu yüzden Sistem Ayarları’ndan kapat";
+"The app added it itself, so turn it off in System Settings" = "Uygulama bunu kendisi ekledi, bu yüzden Sistem Ayarları’ndan kapat";
 "Lets the app save new files next to yours and see your background tasks" = "Uygulamanın yeni dosyaları sizin dosyalarınızın yanına kaydetmesini ve arka plan görevlerinizi görmesini sağlar";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik’in dosyaları seninkilerin yanına kaydedebilmesi ve arka plan görevlerini görebilmesi için ana klasörünü bir kez seç.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "giriş öğeleri, girişte aç, aracılar, servisler, arka plan hizmetleri, başlangıç, otomatik başlatma, yardımcılar, çalışıyor, arka plan, artıklar, kapat";
