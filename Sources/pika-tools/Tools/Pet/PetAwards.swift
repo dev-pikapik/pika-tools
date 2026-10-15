@@ -221,7 +221,7 @@ enum PetAward: String, CaseIterable, Identifiable {
         case .charmer: String(localized: "Rest the pointer on the pet until it blushes, 10 times.")
         case .feelings: String(localized: "See all 9 of the pet’s feelings.")
         case .gentle: String(localized: "Pick the pet up and set it down gently 25 times.")
-        case .morning: String(localized: "Your pet says good morning to you on 7 different days.")
+        case .morning: String(localized: "Meet your pet in the morning on 7 different days.")
         case .dapper: String(localized: "Wear 5 things at once.")
         case .lark: String(localized: "Keep your pet company between 5 and 7 in the morning.")
         case .owl: String(localized: "Keep your pet company after midnight.")

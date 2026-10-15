@@ -839,7 +839,7 @@
 "Detective" = "Thám tử";
 "Professor" = "Giáo sư";
 "Londoner" = "Người London";
-"Rock Star" = "Ngôi sao nhạc rock";
+"Rock Star" = "Ngôi sao rock";
 "First Hello" = "Xin chào lần đầu";
 "Little Walk" = "Đi dạo chút";
 "Traveler" = "Lữ khách";
@@ -899,7 +899,7 @@
 "Rest the pointer on the pet until it blushes, 10 times." = "Đặt con trỏ lên thú cưng cho đến khi nó đỏ mặt, 10 lần.";
 "See all 9 of the pet’s feelings." = "Xem đủ 9 cảm xúc của thú cưng.";
 "Pick the pet up and set it down gently 25 times." = "Nhấc thú cưng lên rồi đặt xuống nhẹ nhàng 25 lần.";
-"Your pet says good morning to you on 7 different days." = "Thú cưng của bạn nói chào buổi sáng với bạn trong 7 ngày khác nhau.";
+"Meet your pet in the morning on 7 different days." = "Gặp thú cưng vào buổi sáng trong 7 ngày khác nhau.";
 "Wear 5 things at once." = "Mặc 5 món cùng lúc.";
 "Earn every other award." = "Giành mọi giải thưởng còn lại.";
 "I got a new award: “%@”! Click me." = "Mình vừa nhận giải thưởng mới: “%@”! Bấm vào mình nhé.";
