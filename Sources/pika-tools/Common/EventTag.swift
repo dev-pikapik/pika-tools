@@ -15,4 +15,9 @@ extension CGEvent {
         event.markPikapik()
         return event
     }
+
+    static func postPikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = [], _ proxy: CGEventTapProxy? = nil) {
+        guard let event = pikapikKey(key, down: down, flags: flags) else { return }
+        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
+    }
 }

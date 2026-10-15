@@ -74,8 +74,7 @@ enum BackForward {
     private static func press(_ flags: CGEventFlags, forward: Bool) {
         let key = forward ? kVK_ANSI_RightBracket : kVK_ANSI_LeftBracket
         for down in [true, false] {
-            guard let event = CGEvent.pikapikKey(key, down: down, flags: flags) else { return }
-            event.post(tap: .cgSessionEventTap)
+            CGEvent.postPikapikKey(key, down: down, flags: flags)
         }
     }
 

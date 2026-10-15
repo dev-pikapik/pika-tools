@@ -47,7 +47,7 @@ final class FinderKeys {
     private func stop() {
         if let held {
             self.held = nil
-            Self.send(held.target, down: false, nil)
+            CGEvent.postPikapikKey(held.target, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -67,7 +67,7 @@ final class FinderKeys {
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            Self.send(held.target, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, proxy)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -109,13 +109,8 @@ final class FinderKeys {
             }
         }
         held = (key, target.key)
-        Self.send(target.key, target.flags, down: true, proxy)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags, proxy)
         return true
-    }
-
-    private static func send(_ key: Int, _ flags: CGEventFlags = [], down: Bool, _ proxy: CGEventTapProxy?) {
-        guard let event = CGEvent.pikapikKey(key, down: down, flags: flags) else { return }
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 
     private func cancelCut() {
@@ -132,8 +127,8 @@ final class FinderKeys {
                 if NSPasteboard.general.types?.contains(.fileURL) == true {
                     cutCount = now
                 } else {
-                    Self.send(kVK_ANSI_X, .maskCommand, down: true, nil)
-                    Self.send(kVK_ANSI_X, .maskCommand, down: false, nil)
+                    CGEvent.postPikapikKey(kVK_ANSI_X, down: true, flags: .maskCommand)
+                    CGEvent.postPikapikKey(kVK_ANSI_X, down: false, flags: .maskCommand)
                 }
             } else if attempts > 1 {
                 watchCopy(since: count, attempts: attempts - 1)

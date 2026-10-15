@@ -120,7 +120,7 @@ final class HomeEndTool: Tool {
     private func stop() {
         if let held {
             self.held = nil
-            Self.send(held.target, down: false, nil)
+            CGEvent.postPikapikKey(held.target, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -139,7 +139,7 @@ final class HomeEndTool: Tool {
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            Self.send(held.target, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, proxy)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -151,13 +151,8 @@ final class HomeEndTool: Tool {
         guard case .typing = TextFocus(app.processIdentifier) else { return false }
         #endif
         held = (key, target.key)
-        Self.send(target.key, target.flags, down: true, proxy)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags, proxy)
         return true
-    }
-
-    private static func send(_ key: Int, _ flags: CGEventFlags = [], down: Bool, _ proxy: CGEventTapProxy?) {
-        guard let event = CGEvent.pikapikKey(key, down: down, flags: flags) else { return }
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 }
 

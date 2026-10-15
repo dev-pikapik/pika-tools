@@ -5,12 +5,9 @@ import SwiftUI
 private let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.google.android.studio"]
 
 private func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
-    let source = CGEventSource(stateID: .privateState)
     func post(_ key: Int, _ text: String?) {
         for down in [true, false] {
-            guard let event = CGEvent(keyboardEventSource: source, virtualKey: CGKeyCode(key), keyDown: down) else { continue }
-            event.flags = []
-            event.markPikapik()
+            guard let event = CGEvent.pikapikKey(key, down: down, flags: []) else { continue }
             if let text {
                 let units = Array(text.utf16)
                 event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
@@ -139,7 +136,7 @@ final class LayoutFixTool: Tool {
     private func stop() {
         if held != nil {
             held = nil
-            pressService(down: false, nil)
+            CGEvent.postPikapikKey(kVK_F19, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -283,7 +280,7 @@ private func layoutFixCallback(
         if type == .keyUp {
             if tool.held == code {
                 tool.held = nil
-                pressService(down: false, proxy)
+                CGEvent.postPikapikKey(kVK_F19, down: false, proxy)
                 return nil
             }
             break
@@ -299,7 +296,7 @@ private func layoutFixCallback(
             if tool.undo(proxy) { return nil }
             if tool.isEnabled {
                 tool.held = code
-                pressService(down: true, proxy)
+                CGEvent.postPikapikKey(kVK_F19, down: true, flags: [.maskControl, .maskAlternate, .maskShift, .maskCommand], proxy)
                 return nil
             }
             tool.holding = false
@@ -309,12 +306,6 @@ private func layoutFixCallback(
         break
     }
     return Unmanaged.passUnretained(event)
-}
-
-/// ⌃⌥⇧⌘F19, the NSKeyEquivalent of the Services command in Info.plist.
-private func pressService(down: Bool, _ proxy: CGEventTapProxy?) {
-    guard let key = CGEvent.pikapikKey(kVK_F19, down: down, flags: [.maskControl, .maskAlternate, .maskShift, .maskCommand]) else { return }
-    if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
 private struct LayoutFixServiceSettings: View {
