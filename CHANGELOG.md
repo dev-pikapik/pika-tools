@@ -16,6 +16,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Settings: tab descriptions all end the same way, without a full stop, in all 23 languages.
 - New dots for per-app volume and Ports also show in the website version.
 - Minimize or hide with a click in the Dock: if you turned it on while it was set to minimize the windows, it no longer switches itself to hiding the app after the next restart.
+- Settings sync: when you open pikapik, it now checks for settings changed on your other Mac, so a Mac that missed the change catches up at once.
 
 ## [1.50.1] - Unreleased
 
