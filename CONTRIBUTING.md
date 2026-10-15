@@ -15,7 +15,7 @@ cd pika-tools
 
 `install.sh` can also build from source: add `-- --source` after the install command from the README.
 
-The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks the download and the copy in `Vendor/` against pinned SHA-256 values and fetches it again when they differ), so the first build needs a network connection. The App Store build leaves it out.
+The direct build also bundles the official 7-Zip command line tool for archives. `build.sh` downloads it once into `Vendor/` (`scripts/fetch-7zip.sh` checks the download and the copy in `Vendor/` against pinned SHA-256 values and fetches it again when they differ), so the first build needs a network connection. The App Store build leaves it out. In the same way it builds LGPL FFmpeg and dav1d from source for the video player (`scripts/fetch-ffmpeg.sh`, needs `brew install meson ninja nasm pkg-config`).
 
 Local builds are signed ad-hoc, which is fine for your own Mac. macOS treats every ad-hoc build as a new app, so after a rebuild you may need to remove pikapik from Accessibility and Input Monitoring with the − button and add it again.
 
@@ -226,6 +226,12 @@ swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/
 swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swift scripts/test-layout.swift -o build/test-layout && build/test-layout
 ```
 
+The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It opens files as an alternate app only, so it never becomes the default for any type. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
@@ -271,3 +277,5 @@ swift scripts/make-icns.swift
 ## Third-party software
 
 The direct build includes the 7-Zip command line tool (`7zz`) from [www.7-zip.org](https://www.7-zip.org), licensed under the GNU LGPL 2.1 with the unRAR restriction. It runs as a separate program, its license is in the app as `Contents/Resources/7-Zip License.txt`, and its source code is attached to every release as `7-Zip-26.04-source.tar.xz`.
+
+The video player uses [FFmpeg](https://ffmpeg.org) under the GNU LGPL 2.1 or later and [dav1d](https://code.videolan.org/videolan/dav1d) under the BSD 2-Clause license, built as shared libraries in `Contents/Frameworks/` with only LGPL parts enabled. Both licenses are in the app as `Contents/Resources/FFmpeg License.txt`, the Player page opens them, and the exact sources are attached to every release.
