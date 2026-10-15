@@ -171,6 +171,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         SpeedTest.shared.cancel()
         #if !APPSTORE
         ToolRegistry.shared.tools.forEach { ($0 as? PointerTool)?.restore() }
+        TextFocus.unwatch()
         #endif
         GameModeTool.shared.leave()
         DockEdges.restore()

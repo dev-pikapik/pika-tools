@@ -479,6 +479,7 @@ final class LayoutFixTool: Tool {
     func refresh() {
         stop()
         if isEnabled { start() }
+        if !isActive { TextFocus.unwatch(self) }
     }
 
     private func start() {
@@ -499,7 +500,7 @@ final class LayoutFixTool: Tool {
         self.source = source
         isActive = true
         DispatchQueue.main.async { KeyboardLayouts.prepare() }
-        TextFocus.watch()
+        TextFocus.watch(self)
     }
 
     private func stop() {
