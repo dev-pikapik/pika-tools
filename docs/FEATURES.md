@@ -1179,7 +1179,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Plays videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, in their own window. The button opens one file and never changes which app opens your videos; the switch below does that.
 
-**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
+**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Sound tracks and subtitles are described below.
 
 **Options:**
 - Formats — the lists of formats on the same page, Video and Music; hover a format to see its file extensions (`PlayerPage.swift:23`, `PlayerPage.swift:24`).
@@ -1275,6 +1275,28 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. (Website) Press ⌥→ → the end; press ⌥← → the start. Press M → the sound is off and the panel shows it; press M again → it is back. Press ↑ while muted → the sound is back on.
 4. (Website) Scroll up with the mouse wheel over the video → the volume goes up; scroll sideways (or hold Shift and scroll) → the video skips. Touch the trackpad lightly → nothing changes.
 5. (Website) Open the Playback menu → every key above is shown next to its item, and each item does the same as its key.
+
+### Sound tracks and subtitles
+
+**Does:** A video with several sound tracks lets you pick one, and the picture can show subtitles, from inside the file or from a .srt, .vtt or .ass file. Switching the sound track keeps your place and the pause. The choice is remembered for that video and used the next time you open it.
+
+**How it works:** The **Audio** and **Subtitles** menus and the button with the speech bubble on the panel list the tracks by language and name, or **Track 2** when the file gives neither (`Helper/Player/TrackMenus.swift:31`, `Helper/Player/main.swift:149`). Choosing a sound track stops only the audio, opens the new track at the clock time and starts it again; the picture and the clock are not touched (`Helper/Player/Engine.swift:262`). Subtitles inside the file (SubRip, ASS/SSA, WebVTT, mov_text) are read by a second reader in the background, so the list fills in a moment after the video starts (`Helper/Player/Subtitles.swift:38`). Files with the video’s name next to it are found by themselves once the folder is allowed; a file can also be dropped on the window or added with **Subtitles › Add Subtitle File…**; UTF-8, UTF-16 and Windows Cyrillic text are understood (`Sources/pika-tools/Tools/Player/SubtitleParser.swift:165`). The text is white with a shadow, at the bottom in the middle, rises above the panel while it is visible, and its size follows the window height (`Helper/Player/Subtitles.swift:165`). With no choice made, the player picks a subtitle file next to the video, or else a track in the language of the Mac when it differs from the sound track’s language (`Helper/Player/Subtitles.swift:407`).
+
+**Keys:** V next subtitles (the last step is off), ⇧3 (#) next sound track, Z and X move subtitles 0.1 s earlier and later, ⇧F and ⇧G make them larger and smaller. The same items are in the Audio and Subtitles menus (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:108`).
+
+**Nuances:** ASS and SSA are shown as plain text, with no fonts, colors or positions. Picture subtitles (PGS, VobSub) are in the list but greyed out, with “(can’t be shown)”. A subtitle file that can’t be read shows a short note and nothing else changes. The delay is for the current session; the size and the track choice are remembered (the last 200 videos).
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open an MKV with two sound tracks → Audio lists both; choose the second while playing → the sound changes and the time keeps going without a jump; pause, choose the first → it stays paused.
+2. (Website) Open a video with text subtitles → Subtitles lists them; choose one → white text with a shadow appears at the bottom in the middle at the right moment; choose Off → it goes away.
+3. (Website) Put `Movie.srt` next to `Movie.mkv` and allow the folder → it is chosen by itself. Drop another .srt on the window → it is added and shown.
+4. (Website) Press V repeatedly → the subtitles change one by one, then off, and a short note names each. Press X three times → the note says the delay is 0.3 s and the text comes later.
+5. (Website) Press ⇧F → the text grows; resize the window → the text follows its height. Show the panel (move the mouse) → the text rises above it.
+6. (Website) Choose the second sound track, close, open the video again → the same track is chosen.
+7. (Website) A file that is not a subtitle renamed to .srt, dropped on the window → a note “Couldn’t read this subtitle file.” appears; nothing crashes.
+8. Without pressing anything: `scripts/test-subtitles.swift` checks the readers for SubRip, ASS, WebVTT, mov_text and the encodings, including broken and random input; `scripts/test-tracks.swift` plays the samples made with ffmpeg, switches the sound track and checks that the time does not jump, then checks the subtitles of each sample, the delay and the size. Both print passed.
 
 ### Speed
 

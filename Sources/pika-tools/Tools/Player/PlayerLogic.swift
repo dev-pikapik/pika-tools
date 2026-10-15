@@ -84,6 +84,7 @@ enum PlayerTags {
 enum PlayerAction: Equatable {
     case playPause, back, forward, skipBack, skipForward, longBack, longForward, frameBack, frameForward, start, end, startOver
     case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop, next, previous
+    case nextSubtitle, nextAudio, subtitleEarlier, subtitleLater, subtitleLarger, subtitleSmaller
 
     static let skip = 5.0
     static let longSkip = 10.0
@@ -104,6 +105,8 @@ enum PlayerAction: Equatable {
         (.fullScreen, "f", []), (.fullScreen, "f", .command), (.fullScreen, "f", [.command, .control]), (.leaveFullScreen, "\u{1B}", []),
         (.snapshot, "s", []), (.floatOnTop, "t", []),
         (.next, "n", []), (.next, ">", .shift), (.previous, "p", []), (.previous, "<", .shift),
+        (.nextSubtitle, "v", []), (.nextAudio, "#", .shift), (.subtitleEarlier, "z", []), (.subtitleLater, "x", []),
+        (.subtitleLarger, "f", .shift), (.subtitleSmaller, "g", .shift),
     ]
 
     init?(key: String, modifiers: NSEvent.ModifierFlags = []) {

@@ -6,7 +6,7 @@ APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert Archive Preview"
 MEDIA_EXTENSIONS="MediaReader MediaDecoder"
 PLAYER="$APP/Contents/Helpers/pikapik Player.app"
-PLAYER_SOURCES=(Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift)
+PLAYER_SOURCES=(Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,SubtitleParser}.swift)
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then

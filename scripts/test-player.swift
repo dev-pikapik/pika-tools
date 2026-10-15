@@ -34,6 +34,8 @@ enum TestPlayer {
             (up, [], .louder), (down, [], .quieter), ("m", [], .mute), ("f", [], .fullScreen), ("F", [], .fullScreen), ("f", .command, .fullScreen), ("f", [.command, .control], .fullScreen),
             ("\u{1B}", [], .leaveFullScreen), ("s", [], .snapshot), ("t", [], .floatOnTop),
             ("n", [], .next), ("N", [], .next), (">", .shift, .next), ("p", [], .previous), ("<", .shift, .previous), ("n", .command, nil), ("p", .option, nil),
+            ("v", [], .nextSubtitle), ("V", [], .nextSubtitle), ("#", .shift, .nextAudio), ("z", [], .subtitleEarlier), ("x", [], .subtitleLater),
+            ("F", .shift, .subtitleLarger), ("G", .shift, .subtitleSmaller), ("v", .command, nil), ("z", .shift, nil), ("g", [], nil),
             (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("a", [], nil), ("", [], nil),
         ]
         for (key, modifiers, action) in keys {
@@ -41,7 +43,7 @@ enum TestPlayer {
         }
         precondition(PlayerAction(key: left, modifiers: [.shift, .function, .numericPad]) == .skipBack, "arrow keys always carry the function flag")
         let bound = Set(PlayerAction.bindings.map(\.action))
-        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop] {
+        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop, .nextSubtitle, .nextAudio, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller] {
             precondition(bound.contains(action), "\(action) has no key")
         }
         precondition(Set(PlayerAction.bindings.map { "\($0.key)\($0.modifiers.rawValue)" }).count == PlayerAction.bindings.count, "a key is bound twice")

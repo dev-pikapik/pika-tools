@@ -5,6 +5,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var players: [PlayerController] = []
     private let displays = NSMenu()
     private let displaysItem = NSMenuItem()
+    private var audioMenu: NSMenu?
+    private var subtitleMenu: NSMenu?
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
@@ -22,6 +24,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func menuNeedsUpdate(_ menu: NSMenu) {
+        if menu === audioMenu || menu === subtitleMenu {
+            menu.items.filter { $0.tag == PlayerController.trackItemTag }.forEach(menu.removeItem)
+            let player = (NSApp.keyWindow ?? NSApp.mainWindow)?.windowController as? PlayerController
+            let items = menu === audioMenu ? player?.audioItems() : player?.subtitleItems()
+            for (index, item) in (items ?? []).enumerated() { menu.insertItem(item, at: index) }
+            return
+        }
         displaysItem.isHidden = NSScreen.screens.count < 2
         displays.removeAllItems()
         for screen in NSScreen.screens {
@@ -137,6 +146,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             command(String(localized: "Faster"), .faster),
             command(String(localized: "Normal Speed"), .normalSpeed),
         ])
+        audioMenu = submenu(String(localized: "Audio"), [
+            command(String(localized: "Next Audio Track"), .nextAudio),
+        ])
+        subtitleMenu = submenu(String(localized: "Subtitles"), [
+            .separator(),
+            command(String(localized: "Next Subtitle Track"), .nextSubtitle),
+            item(String(localized: "Add Subtitle File…"), #selector(PlayerController.addSubtitleFile(_:))),
+            .separator(),
+            command(String(localized: "Subtitles Earlier"), .subtitleEarlier),
+            command(String(localized: "Subtitles Later"), .subtitleLater),
+            command(String(localized: "Larger Subtitles"), .subtitleLarger),
+            command(String(localized: "Smaller Subtitles"), .subtitleSmaller),
+        ])
+        audioMenu?.delegate = self
+        subtitleMenu?.delegate = self
         displaysItem.title = String(localized: "Move to Display")
         displaysItem.submenu = displays
         let windowMenu = submenu(String(localized: "Window"), [

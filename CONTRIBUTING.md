@@ -284,7 +284,19 @@ swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Ex
 The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It needs the same ffmpeg:
 
 ```bash
-swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Thumbnails}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Subtitles,Thumbnails,TrackMenus}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,SubtitleParser}.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+```
+
+Subtitles have two tests. The reader (`Sources/pika-tools/Tools/Player/SubtitleParser.swift`, no FFmpeg needed) is checked on SubRip, WebVTT, ASS, mov_text and WebVTT boxes with a byte order mark, CRLF, UTF-16, Windows-1251, overlapping lines, empty lines, broken times, the delay, the line at a given time and random bytes:
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Player/SubtitleParser.swift scripts/test-subtitles.swift -o build/test-subtitles && build/test-subtitles
+```
+
+The scan of subtitle tracks inside a video, the audio switch and the subtitle logic (`Helper/Player/Subtitles.swift`) use videos that the test makes with ffmpeg (an MKV with two audio and two subtitle tracks, mov_text, ASS and WebVTT, a two-minute file, damaged copies). The audio switch is checked for a time that does not jump, a pause that stays, and 40 quick switches with seeks. It needs the bundled FFmpeg, so CI skips it:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,Subtitles}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,SubtitleParser}.swift scripts/test-tracks.swift -o build/test-tracks && build/test-tracks
 ```
 
 ### Adding a tool

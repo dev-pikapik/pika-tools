@@ -40,17 +40,27 @@ final class VideoView: NSView {
     }
 
     override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation {
-        Self.playable(sender) == nil ? [] : .copy
+        Self.playable(sender) == nil && Self.captions(sender).isEmpty ? [] : .copy
     }
 
     override func performDragOperation(_ sender: any NSDraggingInfo) -> Bool {
-        guard let url = Self.playable(sender) else { return false }
-        controller?.load(url)
+        let media = Self.playable(sender), captions = Self.captions(sender)
+        guard media != nil || !captions.isEmpty else { return false }
+        if let media { controller?.load(media) }
+        for url in captions { controller?.addSubtitle(url) }
         return true
     }
 
+    private static func files(_ sender: any NSDraggingInfo) -> [URL] {
+        (sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL]) ?? []
+    }
+
     private static func playable(_ sender: any NSDraggingInfo) -> URL? {
-        (sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL])?.first { PlayerFormats.plays($0) || FolderAccess.isFolder($0) }
+        files(sender).first { PlayerFormats.plays($0) || FolderAccess.isFolder($0) }
+    }
+
+    private static func captions(_ sender: any NSDraggingInfo) -> [URL] {
+        files(sender).filter { SubtitleFiles.extensions.contains($0.pathExtension.lowercased()) }
     }
 
     override func isAccessibilityElement() -> Bool { true }
@@ -109,13 +119,15 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let previousButton = NSButton()
     private let nextButton = NSButton()
     private let fullScreenButton = NSButton()
+    private let captionsButton = NSButton()
     private let speaker = NSImageView()
     private let speedLabel = NSTextField(labelWithString: "")
     private let elapsed = NSTextField(labelWithString: "0:00")
     private let remaining = NSTextField(labelWithString: "-0:00")
     private let scrubber = Scrubber(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
     private let volume = NSSlider(value: 1, minValue: 0, maxValue: 1, target: nil, action: nil)
-    private var engine: Engine?
+    private(set) var engine: Engine?
+    let subtitles = Subtitles()
     private var observer: Any?
     private var hideTimer: Timer?
     private var thumbnails: Thumbnails?
@@ -130,7 +142,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var speed: Float = 1
     private var muted = false
     private var wheel = PlayerWheel()
-    private var resumeKey: String?
+    private(set) var resumeKey: String?
     private var lastSaved = Date.distantPast
     var onClose: ((PlayerController) -> Void)?
 
@@ -178,6 +190,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         configure(previousButton, "backward.fill", String(localized: "Previous in Folder"), #selector(previous))
         configure(nextButton, "forward.fill", String(localized: "Next in Folder"), #selector(next))
         configure(fullScreenButton, "arrow.up.left.and.arrow.down.right", String(localized: "Full Screen"), #selector(fullScreen))
+        configure(captionsButton, "captions.bubble", String(localized: "Audio and Subtitles"), #selector(showTrackMenu))
         for label in [elapsed, remaining, speedLabel] {
             label.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
             label.textColor = .labelColor
@@ -200,7 +213,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         volume.setAccessibilityLabel(String(localized: "Volume"))
         volume.floatValue = UserDefaults.standard.object(forKey: Self.volumeKey) as? Float ?? 1
 
-        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, fullScreenButton])
+        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, captionsButton, fullScreenButton])
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
@@ -209,6 +222,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         video.addSubview(message)
         video.addSubview(controls)
         video.addSubview(preview)
+        subtitles.install(in: video, below: controls)
         preview.isHidden = true
         let wide = controls.widthAnchor.constraint(equalToConstant: 560)
         wide.priority = .defaultHigh
@@ -278,7 +292,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             if !engine.hasVideo { music.show(title: PlayerTags.title(tags.title, file: url), subtitle: PlayerTags.subtitle(artist: tags.artist, album: tags.album), cover: cover) }
             music.isHidden = engine.hasVideo
             track = Self.trackInfo(tags, cover: cover, file: url, hasVideo: engine.hasVideo, duration: engine.duration.seconds)
-            isLast = FolderAccess.files(in: url.deletingLastPathComponent()).map { PlaylistOrder.neighbour(of: url, kind: PlayerFormats.kind(of: url) ?? .video, among: $0, step: 1) == nil } ?? false
+            let siblings = FolderAccess.files(in: url.deletingLastPathComponent())
+            isLast = siblings.map { PlaylistOrder.neighbour(of: url, kind: PlayerFormats.kind(of: url) ?? .video, among: $0, step: 1) == nil } ?? false
             observer = engine.synchronizer.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 10), queue: .main) { [weak self] _ in self?.tick() }
             playing = true
             if engine.hasVideo, engine.duration.seconds > 0 {
@@ -287,7 +302,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
                 self.thumbnails = thumbnails
             }
             resumeKey = Self.resumeKey(url)
-            engine.seek(to: CMTime(seconds: resumePosition(engine.duration.seconds), preferredTimescale: 90000), rate: speed)
+            let resume = resumePosition(engine.duration.seconds)
+            if engine.hasVideo { restoreTracks(of: url, resume: resume, siblings: siblings) }
+            captionsButton.isHidden = !engine.hasVideo
+            engine.seek(to: CMTime(seconds: resume, preferredTimescale: 90000), rate: speed)
             controls.isHidden = false
             update()
             showControls()
@@ -335,6 +353,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         remember()
         thumbnails?.close()
         thumbnails = nil
+        subtitles.close()
         preview.isHidden = true
         resumeKey = nil
         if let observer { engine.synchronizer.removeTimeObserver(observer) }
@@ -451,6 +470,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         case .next: go(1, explicit: true)
         case .previous: previous(nil)
         case .floatOnTop: window?.level = window?.level == .floating ? .normal : .floating
+        case .nextSubtitle, .nextAudio, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller: return performTrack(action)
         case .back, .forward: break
         }
         return true
@@ -539,6 +559,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let target = PlayerTime.clamp(seconds, duration: engine.duration.seconds)
         if playing, let finished = engine.finished, engine.synchronizer.currentTime() >= finished { playing = false }
         engine.seek(to: CMTime(seconds: target, preferredTimescale: 90000), rate: rate)
+        subtitles.refresh()
         scrubber.doubleValue = target
         elapsed.stringValue = PlayerTime.text(target)
         remaining.stringValue = "-" + PlayerTime.text(engine.duration.seconds - target)
@@ -681,6 +702,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let fullScreen = window.styleMask.contains(.fullScreen)
         let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
+        subtitles.view.lift(visible.controls ? controls.frame.maxY + 10 : 0)
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
@@ -708,6 +730,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         case #selector(chooseSpeed):
             item.state = item.representedObject as? Float == speed ? .on : .off
             return true
+        case #selector(chooseAudio), #selector(chooseSubtitle), #selector(addSubtitleFile):
+            return validateTrack(item)
         case #selector(moveToScreen):
             item.state = item.representedObject as? NSScreen == window?.screen ? .on : .off
             return window?.styleMask.contains(.fullScreen) == false
@@ -721,7 +745,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             case .floatOnTop:
                 item.state = window?.level == .floating ? .on : .off
                 return true
-            case .snapshot: return engine?.hasVideo == true
+            case .snapshot, .nextSubtitle, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller: return engine?.hasVideo == true
+            case .nextAudio: return (engine?.audioTracks.count ?? 0) > 1
             case .next: return window?.representedURL != nil && !isLast
             case .previous: return window?.representedURL != nil
             default: break
