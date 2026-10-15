@@ -11,6 +11,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Settings: the groups in the sidebar now have names, like in System Settings: Mac, Enhancements, Apps and Info. General stays at the top without a name. The pages are the same and in the same order; the names only show what belongs together. Search still lists pages without group names.
 
 ### Fixed
+- Side buttons, mouse buttons 4 and 5: they now go back and forward in nearly every app, and again in pikapik’s own Settings, where they had stopped working in 1.9.0. Since then pikapik only acted in Apple apps, Firefox, Opera and ForkLift, so apps with a Back arrow in the toolbar or a Back item in a menu did nothing. In the website version pikapik now presses that Back or Forward menu item or toolbar button for you, in any language. Apps that already understand the buttons, such as Chrome and the JetBrains apps, still get them as they are. In the App Store version, which may not look into other apps, pikapik’s own windows and the Apple apps work, and every other app keeps handling the buttons itself. The Cmd+[ shortcut is not used blindly, because in code editors it moves the text.
 - Per-app volume: when you put an app’s slider back to 100%, the hand-back no longer ends with a tiny click and a few milliseconds of silence. The sound now fades out of pikapik’s path in a few milliseconds before the app plays on its own
 
 ### Fixed
