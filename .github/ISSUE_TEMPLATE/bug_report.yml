@@ -11,8 +11,9 @@ body:
         # features:start (filled from docs/FEATURES.md by scripts/feature-form.sh, do not edit by hand)
         - "General › Settings search"
         - "General › Sidebar and navigation"
+        - "General › New marks after an update"
         - "General › Open at Login"
-        - "General › Keep running after Quit"
+        - "General › Stay in the background after Quit"
         - "General › Appearance"
         - "General › Language"
         - "General › Settings file"
@@ -34,14 +35,16 @@ body:
         - "Temperature › Processor, Graphics, Memory, Storage, Battery and Wi-Fi"
         - "Speed Test › Check Speed"
         - "Ports › Port or program"
-        - "Ports › Your programs"
-        - "Ports › macOS and other users"
+        - "Ports › Doors picture"
+        - "Ports › Programs you started"
+        - "Ports › Not yours: leave these alone"
+        - "Ports › What the globe means"
         - "Ports › Free Up"
         - "Sound › App Volume"
         - "Keyboard › Switch language"
         - "Keyboard › Repeat a held key"
         - "Keyboard › Home and End go to the start and end of a line"
-        - "Keyboard › Fix words typed in the wrong layout"
+        - "Keyboard › Retype words you typed in the wrong language"
         - "Keyboard › Fix the selected text"
         - "Keyboard › Fix Wrong Keyboard Layout"
         - "Mouse › Turn off pointer acceleration"
@@ -164,6 +167,7 @@ body:
       default: 0
       options:
         - Latest version
+        - "1.50.0"
         - "1.49.0"
         - "1.48.0"
         - "1.47.0"

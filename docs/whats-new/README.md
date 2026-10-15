@@ -5,6 +5,47 @@
 
 ---
 
+## <a id="v1.50.0"></a>More of pikapik in the Mac App Store version
+
+<sub>1.50.0 · October 15, 2026</sub>
+
+Open archives, clear your desktop, use Home and End and more, now in the Mac App Store version too.
+
+**New in the Mac App Store version**
+
+- **Open and make archives in Finder.** Right-click an archive and choose Extract. To make one, right-click files and choose Create Archive…. Press Space on an archive to look inside. Only ZIP can have a password here.
+- **Clear your desktop.** Turn on Hide desktop icons, and pikapik covers the icons with your wallpaper. Clicks still reach the desktop, and no permission is needed.
+- **Home and End work again.** They go to the start and end of a line, everywhere except browsers, Finder, Music and TV.
+- **Fix wrong-layout text with a shortcut.** Select the text and press ⌃⇧Space. Turn on Fix the selected text in Settings › Keyboard, where you can also change the keys.
+- **Turn off the display in one click.** Turn off the display now makes it go dark at once while your Mac keeps working. Move the mouse to bring it back.
+- **Games stay undisturbed.** In Game Mode, Mac shortcuts like Spotlight pause while a game is in front, and the pointer stays away from the screen corners, so hot corners don’t go off.
+- **Battery numbers are back.** Battery shows Maximum Capacity again on macOS 27, and Temperature shows the battery’s temperature.
+- **See which apps can ask for a permission.** Other apps’ permissions, in Settings › Permissions, lists them with their icons.
+- **Know where to click.** When macOS doesn’t let pikapik change a setting, a short animation shows where to click in System Settings.
+
+**In both versions**
+
+- **Set a volume before the app starts.** An app you set stays in Settings › Sound with its slider, even while it is closed, and gets its level back when it plays sound again, also after a restart. Click Add App… or drag an app in from Finder to set it in advance, and the ✕ forgets an app and puts it back to full volume.
+- **See what an update added.** After an update, a small blue dot marks each Settings tab with something new, and a “New” tag marks the section. They go away once you’ve looked, and by themselves after 21 days.
+- **A calm first launch.** The version from the website no longer asks for permissions the first time you open it. It asks only when you turn on a tool that needs one.
+- **Smaller copies of videos.** Make a Smaller Copy now makes a video about half the size. Before, most videos were called “Already compact”.
+- **Two copies get along.** If you use the App Store and website versions together, they no longer undo each other. ⇧⌘Q and ⇧⌘W work in games again.
+- **Games return after sleep.** Game Mode turns on again by itself when your Mac wakes up.
+- **Ports tells the truth.** On macOS 27, a port used by macOS or another user is no longer called free.
+- **Reporting a problem is quicker.** Settings › About › Report a Problem opens the form with your version already chosen.
+- **Archives, smoother.** The progress bar moves while an archive unpacks, a wrong password is reported at once, and your Mac no longer falls asleep in the middle of unpacking or making one.
+- **A steadier menu bar panel.** Opening a row in the panel, such as the display options under Keep Awake, no longer makes a scrollbar flash. The arrow next to Keep Awake now says “Display settings”.
+- **Ports explains itself.** A line under the title says what a port is, and a small animation shows that only one program fits through a door. Your own programs and the ones to leave alone now have plain names.
+- **Settings says it plainly.** Each tab starts with a line about what you get there, the sidebar has gaps between its groups, and Keep Awake, Permissions and Battery say exactly what is going on. The “Permissions needed” button shows only when a tool you switched on is missing one.
+
+**Fixed in the Mac App Store version**
+
+- After ⌘X, ⌘V in Finder now moves your files, as on the website. Before, it only copied them.
+- New File in Finder, Smaller Copy in Finder and Convert in Finder each show their own state. Before, turning one on made all three look on.
+- The empty Ports page is gone. macOS doesn’t show this version which program holds a port, so Settings › Ports had nothing to show.
+
+---
+
 ## <a id="v1.49.0"></a>Brightness for every monitor
 
 <sub>1.49.0 · October 13, 2026</sub>

@@ -5,6 +5,47 @@
 
 ---
 
+## <a id="v1.50.0"></a>Další funkce pikapik ve verzi z Mac App Store
+
+<sub>1.50.0 · 15. října 2026</sub>
+
+Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci, teď i ve verzi z Mac App Store.
+
+**Novinky ve verzi z Mac App Store**
+
+- **Otevírejte a vytvářejte archivy ve Finderu.** Klikněte na archiv pravým tlačítkem a zvolte „Rozbalit“. Chcete-li archiv vytvořit, klikněte pravým tlačítkem na soubory a zvolte „Vytvořit archiv…“. Stisknutím mezerníku na archivu se do něj podíváte. Heslo tu může mít jen ZIP.
+- **Čistá plocha.** Zapněte „Skrýt ikony na ploše“ a pikapik zakryje ikony vaší tapetou. Kliknutí dál procházejí na plochu a nepotřebujete žádné oprávnění.
+- **Home a End zase fungují.** Přesouvají na začátek a na konec řádku všude kromě prohlížečů, Finderu, Hudby a TV.
+- **Opravte text psaný v nesprávném rozložení zkratkou.** Vyberte text a stiskněte ⌃⇧Mezerník. Zapněte „Opravit vybraný text“ v Nastavení › Klávesnice, kde můžete změnit i klávesy.
+- **Vypněte displej jedním kliknutím.** „Vypnout displej hned“ displej okamžitě zhasne, zatímco Mac dál pracuje. Pohybem myši ho vrátíte.
+- **Hry nikdo neruší.** V „Herním režimu“ se zkratky Macu, třeba Spotlight, pozastaví, dokud je hra v popředí. Ukazatel se drží dál od rohů obrazovky, takže se nespustí aktivní rohy.
+- **Údaje o baterii jsou zpět.** „Baterie“ v macOS 27 znovu zobrazuje údaj „Maximální kapacita“ a „Teplota“ zobrazuje teplotu baterie.
+- **Uvidíte, které aplikace mohou žádat o oprávnění.** „Oprávnění ostatních aplikací“ v Nastavení › Oprávnění je vypisuje i s ikonami.
+- **Víte, kam kliknout.** Když macOS nedovolí aplikaci pikapik změnit nastavení, krátká animace ukáže, kam v Nastavení systému kliknout.
+
+**V obou verzích**
+
+- **Nastav hlasitost dřív, než aplikace začne hrát.** Aplikace s nastavenou hlasitostí zůstane v Nastavení › Zvuk se svým posuvníkem, i když je zavřená, a dostane svou úroveň zpět, jakmile zase přehrává zvuk, i po restartu. Klikni na „Přidat aplikaci…“ nebo přetáhni aplikaci z Finderu a nastav ji předem, a ✕ ji zapomene a vrátí jí plnou hlasitost.
+- **Uvidíš, co aktualizace přidala.** Po aktualizaci malá modrá tečka označí každou kartu v Nastavení, kde je něco nového, a štítek „Nové“ označí sekci. Zmizí, jakmile se podíváš, a samy po 21 dnech.
+- **Klidné první spuštění.** Verze z webu se už při prvním otevření neptá na oprávnění. Zeptá se, až když zapneš nástroj, který je potřebuje.
+- **Menší kopie videí.** „Vytvořit menší kopii“ teď udělá z videa soubor zhruba poloviční velikosti. Dřív většina videí dostala odpověď „Už je malý“.
+- **Dvě kopie spolu vycházejí.** Pokud používáte verzi z App Store a verzi z webu společně, už se navzájem neruší. ⇧⌘Q a ⇧⌘W ve hrách zase fungují.
+- **Hry se vracejí po uspání.** „Herní režim“ se po probuzení Macu zapne znovu sám.
+- **„Porty“ říkají pravdu.** V macOS 27 se port, který používá macOS nebo jiný uživatel, už nepovažuje za volný.
+- **Nahlásit problém je rychlejší.** „Nahlásit problém“ v Nastavení › O aplikaci otevře formulář s už vybranou verzí.
+- **Archivy bez zadrhávání.** Ukazatel průběhu se hýbe, zatímco se archiv rozbaluje, špatné heslo se ohlásí hned a Mac už neusne uprostřed rozbalování nebo vytváření archivu.
+- **Klidnější panel v liště nabídek.** Když rozbalíš řádek v panelu, například volby displeje pod „Bez spánku“, už nebliká posuvník. Šipka vedle „Bez spánku“ teď říká „Nastavení displeje“.
+- **Porty se vysvětlují samy.** Řádek pod nadpisem říká, co je port, a malá animace ukazuje, že jedněmi dveřmi projde jen jeden program. Tvé vlastní programy a ty, které je lepší nechat na pokoji, mají teď srozumitelné názvy.
+- **Nastavení mluví srozumitelně.** Každá karta začíná řádkem o tom, co tam získáš, postranní panel má mezery mezi skupinami a „Bez spánku“, „Oprávnění“ a „Baterie“ říkají přesně, co se děje. Tlačítko „Je potřeba oprávnění“ se objeví, jen když zapnutému nástroji nějaké chybí.
+
+**Opraveno ve verzi z Mac App Store**
+
+- Po ⌘X teď ⌘V ve Finderu soubory přesouvá, stejně jako ve verzi z webu. Dřív je jen kopírovalo.
+- „Nový soubor ve Finderu“, „Menší kopie ve Finderu“ a „Převod ve Finderu“ teď každý ukazuje svůj vlastní stav. Dřív po zapnutí jednoho vypadaly zapnuté všechny tři.
+- Prázdná stránka „Porty“ zmizela. macOS této verzi neukáže, který program drží port, takže v Nastavení › Porty nebylo co zobrazit.
+
+---
+
 ## <a id="v1.49.0"></a>Jas pro každý monitor
 
 <sub>1.49.0 · 13. října 2026</sub>

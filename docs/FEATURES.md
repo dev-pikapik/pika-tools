@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no Archive and Preview extensions, no 7-Zip, no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Hide desktop icons, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, Turn off the display now, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Keep running after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Stay in the background after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -41,13 +41,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Switches between tabs, shows or hides the sidebar, moves back and forward through visited tabs.
 
-**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :417-422, detail routing :516-562). The sidebar has two sections: tools, then Permissions and About.
+**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :417-429, detail routing :516-562). The sidebar has five groups with a gap between them and no titles: General; the Mac (Battery to Ports); fixes (Sound to Animations); apps (Uninstaller to Pet); then Permissions and About.
 
 **Options:**
 - Sidebar — button that hides or shows the sidebar.
 - Back / Forward — buttons, keys `[` and `]`.
 
-**Nuances:** The Battery row appears only on Macs with a battery. The Sound row appears only on macOS 14.2 or later. The Pet row shows a badge with the number of new awards. Website sidebar: General, Battery, Keep Awake, Brightness, Fans, Temperature, Speed Test, Ports, Sound, Keyboard, Mouse, Windows, Dock, Finder, Animations, Uninstaller, Background Tasks, Games, Pet, then Permissions, About. App Store: the same without Fans, Ports, Dock and Uninstaller.
+**Nuances:** The Battery row appears only on Macs with a battery. The Sound row appears only on macOS 14.2 or later. The Pet row shows a badge with the number of new awards. Website sidebar: General | Battery, Keep Awake, Brightness, Fans, Temperature, Speed Test, Ports | Sound, Keyboard, Mouse, Windows, Dock, Finder, Animations | Uninstaller, Background Tasks, Games, Pet | Permissions, About. App Store: the same without Fans, Ports, Dock and Uninstaller.
 
 **Edition:** Both; App Store differs: Fans, Ports, Dock and Uninstaller tabs are hidden.
 
@@ -55,7 +55,25 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Click through every tab → each opens; the list matches the edition (count: Website 19 + 2, App Store 15 + 2, minus Battery on a desktop Mac, minus Sound before macOS 14.2).
 2. Press Sidebar → the sidebar hides; press again → it returns.
 3. Open General, then Mouse, then press Back (or `[`) → General; Forward (`]`) → Mouse.
-4. (App Store) Confirm there is no Fans, Ports, Dock or Uninstaller row and no “Keep running after Quit”, Updates, iCloud sync or “Turn off the display now” row anywhere.
+4. (App Store) Confirm there is no Fans, Ports, Dock or Uninstaller row and no “Stay in the background after Quit”, Updates or iCloud sync row anywhere.
+
+### New marks after an update
+
+**Does:** After an update, a small dot after a tab’s name in the sidebar shows that the tab got something new, and a “New” tag beside the title shows what. The dot goes when you open the tab, the tag when you leave it, and all of them go 21 days after the update. A fresh install shows none.
+
+**How it works:** `Common/NewMarks.swift` holds one table, `NewMarks.items` (version, tab, optional row, edition), and the launch logic. `App.swift` calls `begin` once per launch, before `launchedBefore` is set; it stores the highest version this copy has run (`new-marks-version`), the one before it (`new-marks-from`), the date of the change (`new-marks-since`) and what you have seen (`new-marks-seen`). An item is new when its version is above the previous one and not above the running one. A copy that has run before but stored no version counts as coming from 1.49.0. The dot is `NewDot` (`NewMarksView.swift`) in the sidebar rows (`SettingsWindow.swift`) and on the gear button of the menu bar panel (`MenuView.swift`) until Settings has been opened once; the tag is the Pet page’s `NewTag`, shown by `NewRowTag` in a tool’s section title (`ToolsSettings`), in `RowLabel(row:)` and in the Permissions section title. Nothing animates. A downgrade changes nothing and the update back to the same version starts no new round, so a seen mark never returns; two running instances merge what they saw before saving. Each copy keeps its own settings, so the App Store and Website copies each show their own marks.
+
+**Nuances:** Marks in 1.50.0, App Store: Keep Awake › Turn off the display now, Keyboard › Home and End and Fix words typed in the wrong layout, Finder › Archives in Finder and Hide desktop icons, Permissions › Other apps’ permissions. Website: none. A future release adds one line to the table.
+
+**Edition:** Both; the table says which marks each edition gets.
+
+**Test:** build with `CFBundleShortVersionString` set to 1.50.0 (bundle id: `com.pikapik.tools` App Store, `com.pesotchi.pika-tools.dev` for a local build).
+1. `defaults delete <bundle id>`, open the app → no dots anywhere (fresh install).
+2. Quit, `defaults write <bundle id> launchedBefore -bool true` and `defaults delete <bundle id> new-marks-version`, open the app (App Store) → dots after Keep Awake, Keyboard, Finder and Permissions, and a dot on the gear button in the menu bar panel. Open Settings → the gear dot goes, the tab dots stay.
+3. Click Keyboard → its dot goes; “New” tags stand beside Home and End and Fix words typed in the wrong layout. Click General, then Keyboard again → no tags.
+4. Open the other three tabs → all tab dots go. Quit and open again → nothing returns.
+5. Repeat step 2, then `defaults write <bundle id> new-marks-since -float $(( $(date +%s) - 22*86400 ))` and relaunch → no marks.
+6. (Website) Repeat step 2 → no marks; the Website has nothing new in 1.50.0.
 
 ### Open at Login
 
@@ -72,7 +90,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. If approval is pending, the row shows the Login Items hint, the Open button and the animated guide; press Open, approve it in System Settings and come back → hint, button and guide are gone. (With Reduce Motion on, the guide shows one still frame.)
 3. (Website) Turn it on, log out and in → pikapik starts and shows its menu bar icon.
 
-### Keep running after Quit
+### Stay in the background after Quit
 
 **Does:** Lets Quit close the windows while shortcuts and Keep Awake keep working in the background.
 
@@ -83,7 +101,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Website only (App Store: cut — an App Store app has to quit when asked).
 
 **Test:**
-1. (Website) Turn Keep running after Quit on, choose Quit in the menu → the menu bar icon disappears but a Keep Awake started earlier keeps the Mac awake (`pmset -g assertions`).
+1. (Website) Turn Stay in the background after Quit on, choose Quit in the menu → the menu bar icon disappears but a Keep Awake started earlier keeps the Mac awake (`pmset -g assertions`).
 2. Open pikapik again → the icon is back. Hold ⌥ and choose Quit Completely (or press ⌥⌘Q) → the process ends.
 3. (App Store) Press ⌘Q → the app really quits; there is no such switch.
 
@@ -160,7 +178,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - About › Restore Defaults… — Website only: turns “Check for updates automatically” back on (`SettingsWindow.swift:1153`).
 
-**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are. On About (Website) it only turns “Check for updates automatically” back on.
+**Nuances:** Keeps pet awards and the outfit. On the Finder tab it leaves Hide desktop icons and Show hidden files as they are; in the App Store version it turns the Hide desktop icons curtain off. On About (Website) it only turns “Check for updates automatically” back on.
 
 **Edition:** Both; App Store differs: the text of the alert and the About button (Website only).
 
@@ -251,7 +269,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Keep your Mac awake — Off / For a while / Indefinitely.
-- Duration — appears for “For a while”; shows “Until …” (`DurationPicker`).
+- Duration — appears for “For a while”; while Keep Awake is off it also shows “If turned on now, ends …” (`DurationPicker`, `KeepAwake.swift:353`).
 - Display — Always on / Turns off as usual: whether the screen also stays on while the Mac is kept awake (`KeepAwake.swift:390`); Always on adds `PreventUserIdleDisplaySleep` (`:231`).
 
 **Nuances:** The App Store build skips the caffeinate handoff.
@@ -261,7 +279,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. Choose For a while, set 5 minutes, then run `pmset -g assertions` → a PreventUserIdleSystemSleep assertion from pikapik is listed.
 2. Choose Off → the assertion is gone. Choose Indefinitely → assertion present; quit pikapik (App Store) → gone.
-3. (Website) Start a duration, quit with Keep running after Quit off → the Mac stays awake until the time ends.
+3. (Website) Start a duration, quit with Stay in the background after Quit off → the Mac stays awake until the time ends.
 4. Turn Keep Awake on with Display = Always on → `pmset -g assertions` also lists PreventUserIdleDisplaySleep.
 5. Choose Turns off as usual → only the system-sleep assertion remains.
 
@@ -269,13 +287,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Switches the screen off right away without sleeping the Mac.
 
-**How it works:** `/usr/bin/pmset displaysleepnow` (`KeepAwake.turnOffDisplay` :202; row `KeepAwake.swift:399-406`). Also in the menu bar panel under Keep Awake.
+**How it works:** Website: `/usr/bin/pmset displaysleepnow`. App Store: sets `IORequestIdle` to true on `IOService:/IOResources/IODisplayWrangler`, which the app sandbox allows (`KeepAwake.turnOffDisplay` :202; row `KeepAwake.swift:403-408`). Also in the menu bar panel under Keep Awake (`MenuView.swift:234`).
 
-**Edition:** Website only (App Store: cut — runs an outside program).
+**Nuances:** macOS 27’s own `pmset` no longer goes through `IORequestIdle`, so the App Store path has not yet been seen to darken an Apple Silicon display; check it on a TestFlight or App Store install.
+
+**Edition:** Both; App Store differs: IODisplayWrangler instead of `pmset`.
 
 **Test:**
-1. (Website) Press Turn Off → the display goes dark; moving the mouse wakes it; Keep Awake keeps running.
-2. (App Store) There is no such row, in Settings or in the menu.
+1. Press Turn Off in Settings, then Turn off the display now in the menu, once with Display = Always on and once with Turns off as usual → every display goes dark within a second with no prompt; moving the mouse wakes it; `pmset -g assertions` still lists pikapik’s assertion.
 
 ### Work with the lid closed
 
@@ -288,7 +307,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Nuances:** `hasLid` is false in the App Store build, so the row never shows there (`KeepAwake.swift:20,253`).
 
-**Edition:** Website only (App Store: cut — needs administrator rights).
+**Edition:** Website only (App Store: cut — needs administrator rights; the sandbox-reachable IOPMrootDomain clamshell switch has no App Store precedent and stays on if the app crashes).
 
 **Test:**
 1. (Website, MacBook) Turn it on → one administrator prompt; close the lid with an external display connected → the Mac keeps running; open the lid, turn it off → `pmset -g | grep SleepDisabled` shows 0.
@@ -396,7 +415,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** `ProcessInfo.thermalState` (`Sources/pika-tools/Common/TemperatureSettings.swift`, `Temperatures.swift`); `ThermalScene` picture. Website adds the processor degrees to the summary (`TemperatureSettings.swift:134`). App Store: the page also shows a Battery row on Macs with a battery (see Processor, Graphics, Memory, Storage, Battery and Wi-Fi).
 
-**Nuances:** The App Store sandbox refuses the SMC (`IOServiceOpen` on AppleSMC is not permitted), so the other part temperatures are not available there. A desktop Mac in the App Store build shows only the thermal state. Not yet live-checked in the installed App Store app. New in 1.49.1.
+**Nuances:** The App Store sandbox refuses the SMC (`IOServiceOpen` on AppleSMC is not permitted), so the other part temperatures are not available there. A desktop Mac in the App Store build shows only the thermal state. Not yet live-checked in the installed App Store app. New in 1.50.0.
 
 **Edition:** Both; App Store differs: thermal state plus the battery temperature only.
 
@@ -461,7 +480,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows which program holds a network port, or whether a port is free.
 
-**How it works:** Search field (`Sources/pika-tools/Tools/Ports/PortsPage.swift:17`) over `PortScanner` (libproc: `proc_listallpids`, `PROC_PIDLISTFDS`, `PROC_PIDFDSOCKETINFO`; `PortScanner.isFree` test-binds 127.0.0.1 for TCP and UDP). Messages “Port N is free” and “Port N is taken by macOS or another user”.
+**How it works:** Search field with the hint “Type a number, like 3000” (`Sources/pika-tools/Tools/Ports/PortsPage.swift:22`) over `PortScanner` (libproc: `proc_listallpids`, `PROC_PIDLISTFDS`, `PROC_PIDFDSOCKETINFO`; `PortScanner.isFree` test-binds 127.0.0.1 for TCP and UDP). Messages “Port N is free” and “Port N is taken by macOS or another user”.
 
 **Nuances:** On macOS 27 the kernel socket list is filtered for Team-signed code, so the Website build cannot list programs of root or other users (sshd, smbd, screen sharing). That is why a port held by them is reported as “taken by macOS or another user” and the System Settings hints for File Sharing, Screen Sharing and Remote Login may not appear. Local ad-hoc builds see everything, so test with the released app.
 
@@ -473,33 +492,56 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. Turn on Remote Login in System Settings › General › Sharing and type 22 → “Port 22 is taken by macOS or another user”, not “is free”. Turn Remote Login off again.
 4. (App Store) Settings has no Ports page, and searching Settings for “port” finds nothing about ports.
 
-### Your programs
+### Doors picture
 
-**Does:** Lists the programs of your user that hold ports, with expandable rows.
+**Does:** A small looping picture under the page title shows what a port is: numbered doors (3000, 5432, 8080) where only one program fits. A program takes door 3000, a second one is refused with a red cross, and takes the door when the first has left. The line under it says “Only one program fits at a door”.
 
-**How it works:** Section at `PortsPage.swift:54`; each row expands to addresses (links) and the Process ID. Context menu: Show in Finder. A hint “Change in System Settings” shows for AirPlay and sharing ports.
+**How it works:** `PortsArt` (`PortsPage.swift:112`) inside `IllustrationRow`. With Reduce Motion on, the picture stays on its first frame.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open Settings › Ports → three doors and two small program tiles loop without flicker; the second tile is refused once (red cross), then takes the door.
+2. Turn on Reduce Motion in System Settings › Accessibility › Display → the picture stays still.
+
+### Programs you started
+
+**Does:** Lists the programs of your user that hold ports, with expandable rows. A program without an app icon, such as a console tool, shows a grey terminal tile. Only programs that wait for connections (TCP) are listed.
+
+**How it works:** Section at `PortsPage.swift:56`; each row expands to addresses (links) and the Process ID. Context menu: Show in Finder. For AirPlay and sharing ports the row has a “How to Free It” button; its hint offers “Change in System Settings”.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
 1. (Website) With the Python server from above running, expand its row → address 127.0.0.1:47123 and the Process ID show; right-click › Show in Finder reveals Python.
 
-### macOS and other users
+### Not yours: leave these alone
 
 **Does:** Lists ports held by macOS or other users. Nothing here can be quit.
 
-**How it works:** Section at `PortsPage.swift:67`; rows have no Free Up button.
+**How it works:** Section at `PortsPage.swift:72`; rows have no Free Up button.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
-1. (Website, released app) Rows under macOS and other users never offer to quit anything.
+1. (Website, released app) Rows under Not yours: leave these alone never offer to quit anything.
+
+### What the globe means
+
+**Does:** A note under the lists explains the port chips: a chip with a globe means other devices on your network can connect, a chip without one means only this Mac can.
+
+**How it works:** `PortLegend` (`PortsPage.swift:328`), shown while at least one program is listed; the same two sentences are the tooltips of the chips.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) With the Python server from above running, the note under the list shows a chip with a globe and a chip without one, each with its sentence. Searching for a port that no program holds hides the note.
 
 ### Free Up
 
 **Does:** Quits the program that holds a port.
 
-**How it works:** Menu button on a program row (`PortsPage.swift:144`) → alert “Quit “Python”?” with Quit, Force Quit and Cancel; SIGTERM, then SIGKILL after about five seconds if the program ignores it (`PortsModel.swift:175`). An App Store-only page variant with an Open Activity Monitor button (`PortsPage.swift:142`) exists in code but is unreachable because the tab is hidden.
+**How it works:** Button on a program row (`PortsPage.swift:239`) → alert “Quit “Python”?” with Quit, Force Quit and Cancel; SIGTERM, then SIGKILL after about five seconds if the program ignores it (`PortsModel.swift:175`). An App Store-only page variant with an Open Activity Monitor button (`PortsPage.swift:226`) exists in code but is unreachable because the tab is hidden.
 
 **Edition:** Website only (App Store: hidden).
 
@@ -515,13 +557,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Gives every app that plays sound its own volume slider and mute button.
 
-**How it works:** `Sources/pika-tools/Tools/AppVolume/AppVolumeTool.swift:111`. A Core Audio process tap (`CATapDescription`, `AudioHardwareCreateProcessTap`) feeds a private tap-only aggregate device, played back through an output-only HAL unit on the app’s output device. Only apps whose slider is below 100% or that are muted get a tap. Sound is processed in memory, never recorded or saved. Needs the System Audio Recording permission. The microphone is never opened.
+**How it works:** `Sources/pika-tools/Tools/AppVolume/AppVolumeTool.swift:131`; levels, mutes and names are kept by `AppVolumeMemory` (`AppVolumeMath.swift:19`) under the bundle ID of the app. A Core Audio process tap (`CATapDescription`, `AudioHardwareCreateProcessTap`) feeds a private tap-only aggregate device, played back through an output-only HAL unit on the app’s output device. Only apps whose slider is below 100% or that are muted get a tap. Sound is processed in memory, never recorded or saved. Needs the System Audio Recording permission. The microphone is never opened.
 
 **Options:**
-- Slider and Mute — one row per playing app with its icon, a slider (`AppVolumeTool.swift:166`) and a Mute / Unmute button; it changes or silences one app without touching the others, the Mac’s volume or the output device. Gain = slider squared with 30 ms smoothing so there are no clicks. Level and mute are remembered by app and kept after relaunch. A row of an app that stopped dims and goes after about 30 seconds, unless the app is muted or below 100%, then it stays dimmed.
-- No apps are playing sound — what the list says when nothing plays and App Volume is on and allowed (`AppVolumeTool.swift:131`).
+- Slider and Mute — one row per app with its icon, a slider (`AppVolumeTool.swift:222`) and a Mute / Unmute button; it changes or silences one app without touching the others, the Mac’s volume or the output device. Gain = slider squared with 30 ms smoothing so there are no clicks. Level and mute are remembered by app and applied again when the app plays sound after a relaunch of the app or a restart of the Mac. The menu bar panel lists the apps that play sound now. Settings › Sound also keeps every remembered app, dimmed while it is closed; a closed app at 100% that was never added goes after about 30 seconds.
+- Add App… — below the list in Settings › Sound (`AppVolumeTool.swift:175`): a shelf of running and Dock apps to tick, and Other… for any app on the disk; an app can also be dragged onto the page from Finder. The app joins the list at 100%, so its level can be set before it ever plays. Done closes the shelf.
+- ✕ Forget This App — next to a remembered app in Settings (`AppVolumeTool.swift:239`): the level and the mute are dropped, the app is back at 100% and its row goes if the app is closed. Restore Defaults on the Sound page forgets all of them.
+- No apps are playing sound — what the list says when nothing plays, no app is remembered and App Volume is on and allowed (`AppVolumeTool.swift:164`).
 
-**Nuances:** Off by default. Hidden on macOS 14.0 and 14.1 (no Sound page and no App Volume row in the menu). Without the permission the row is half-grey and clicking it opens Permissions on the System Audio Recording row; nothing is asked while App Volume is off. The tap aggregate is private, so Audio MIDI Setup and System Settings › Sound show no extra device. Never test with a program you use: start a stub app that plays a quiet tone and keep another app playing sound.
+**Nuances:** Off by default. Two apps with the same name show their folder in brackets, “Player (Downloads)”. An app removed from disk keeps its saved name and a generic icon, and ✕ forgets it. The saved names sync with the other settings (`app-volume-names`). A copy of pikapik keeps its own list. Hidden on macOS 14.0 and 14.1 (no Sound page and no App Volume row in the menu). Without the permission the row is half-grey and clicking it opens Permissions on the System Audio Recording row; nothing is asked while App Volume is off. The tap aggregate is private, so Audio MIDI Setup and System Settings › Sound show no extra device. Never test with a program you use: start a stub app that plays a quiet tone and keep another app playing sound.
 
 **Edition:** Both.
 
@@ -532,8 +576,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. Start a stub app that plays a quiet tone and keep another app playing sound → both appear with their icon, a slider at 100% and a mute button.
 5. Drag the stub’s slider down → only the stub gets quieter, smoothly and without clicks, silent at the left end; the other app, the Mac’s volume and the output device do not change. Back at 100% the stub plays as before.
 6. Press the stub’s mute button → it falls silent at once, its slider greys out and the button shows a crossed speaker with the tip “Unmute”; press again → the sound returns at the old level. Relaunch pikapik → the level and the mute are kept.
-7. Quit the stub → its row dims and goes after about 30 seconds (stays dimmed if muted or below 100%).
-8. With App Volume on and allowed and nothing playing → “No apps are playing sound”.
+7. Quit the stub → in the menu bar panel its row dims and goes after about 30 seconds; in Settings › Sound it stays, dimmed, with its slider and ✕ (an added app at 100% too).
+8. Start the stub again → its row is bright again with the same level, and it is quieter or silent within a moment, without touching the slider. Restart the Mac → the same.
+9. Click Add App…, tick an app that is not running, then Done → it appears dimmed at 100%; drag its slider to 30%, start it → it plays at 30% from the first second. Drag an app from Finder onto the page → it is added too.
+10. Click ✕ next to the stub → its row goes (or turns into a normal playing row if it still plays) and it plays at full volume; relaunch pikapik → it does not come back.
+11. Put two copies of one stub in different folders and set both → the rows read “Name (folder)”. Move the stub to the Trash while it is set → its row stays with its name and a generic icon; ✕ removes it.
+12. Switch to German → the buttons and the row of a long app name stay in one line each, and the list does not jump when ✕ appears. Check light and dark.
+13. With App Volume on and allowed, nothing playing and no app remembered → “No apps are playing sound”.
 
 ## Keyboard
 
@@ -582,7 +631,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. (Website) With no text field focused, for example on the desktop, press Home → it does what macOS does by default.
 4. (App Store) Press Home and End in Safari and Music and in a Finder window → they behave as macOS does by default there. In another app, for example Notes → the caret jumps to the start and end of the line.
 
-### Fix words typed in the wrong layout
+### Retype words you typed in the wrong language
 
 **Does:** Fixes text typed in the wrong keyboard layout (“ghbdtn” becomes “привет”).
 
@@ -600,7 +649,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Both; App Store differs: only the selected text is fixed, through the Services item or the shortcut (see Fix the selected text); the options above are Website only.
 
 **Test:**
-1. Add two input sources (ABC and Russian). (Website) Turn on Fix words typed in the wrong layout and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
+1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
 2. Select a mistyped word and press ⌃⇧Space → it is fixed.
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
 4. With only one input source → Keyboard Settings… with its note shows.
@@ -615,7 +664,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - Fix the selected text — shortcut recorder, “Select the text, then press these keys”.
 
-**Nuances:** If you reassign the Services shortcut in System Settings the in-app shortcut stops working (it presses the original hidden key). The app in front needs a Services menu (every normal Cocoa app has one). Not live-checked in the real App Store build. New in 1.49.1.
+**Nuances:** If you reassign the Services shortcut in System Settings the in-app shortcut stops working (it presses the original hidden key). The app in front needs a Services menu (every normal Cocoa app has one). Not live-checked in the real App Store build. New in 1.50.0.
 
 **Edition:** App Store only.
 
@@ -764,7 +813,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Quit app — toggle with a shortcut recorder, default ⇧⌘Q (key `command-keys-quit-shortcut`).
 - Close window — toggle with a shortcut recorder, default ⇧⌘W (key `command-keys-close-shortcut`).
 
-**Nuances:** The Games tab footer lists these keys under “To leave a game, press …”; ⌥⌘Esc always works. With two copies of pikapik running (App Store and Website) quitting a game with these keys used to fail; fixed in 1.49.1.
+**Nuances:** The Games tab footer lists these keys under “To leave a game, press …”; ⌥⌘Esc always works. With two copies of pikapik running (App Store and Website) quitting a game with these keys used to fail; fixed in 1.50.0.
 
 **Edition:** Both.
 
@@ -832,7 +881,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ## Finder
 
-*Header “Fixes for Finder”. The Finder extension switches are New File in Finder, Smaller Copy in Finder, Convert in Finder and Archives in Finder; the right-click items they add are described in the same entries.*
+*Header “Create, convert and compress files right in Finder”. The Finder extension switches are New File in Finder, Smaller Copy in Finder, Convert in Finder and Archives in Finder; the right-click items they add are described in the same entries.*
 
 ### New File in Finder
 
@@ -840,7 +889,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Finder Sync extension `Extensions/NewFile/NewFileExtension.swift:13`, switch at `Sources/pika-tools/Tools/NewFile/NewFileTool.swift:20-25` through `FinderExtension.swift:257`. Website: `pluginkit -a`, `-e use`, `-e ignore`, `-m` (`FinderExtension.swift:60-66,103-120`). App Store: stores the wanted state in UserDefaults and opens `FIFinderSyncController.showExtensionManagementInterface()` so you turn the extension on in System Settings; the switch checks that this extension’s own process is running (PR #72). Needs the Finder Extensions permission item. Saving into a folder asks once for access to the home folder (App Store: `FolderAccess`, security-scoped bookmark).
 
-**Nuances:** Before 1.49.1 the App Store New File switch looked on while only another extension was enabled, so the menu item could be missing; now each switch shows its own extension’s state. Known gap (App Store): turning a Finder tool off in pikapik does not hide its menu item; disable the extension in System Settings. Not yet live-checked in the App Store branch.
+**Nuances:** Before 1.50.0 the App Store New File switch looked on while only another extension was enabled, so the menu item could be missing; now each switch shows its own extension’s state. Known gap (App Store): turning a Finder tool off in pikapik does not hide its menu item; disable the extension in System Settings. Not yet live-checked in the App Store branch.
 
 **Edition:** Both; App Store differs: the switch turns grey until you enable the extension in System Settings (Login Items & Extensions › Finder) and the first file asks for the home folder.
 
@@ -855,7 +904,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Extension `Extensions/Compress/CompressExtension.swift:17`, switch `Sources/pika-tools/Tools/Compress/CompressTool.swift:20-25`, engine `Sources/pika-tools/Tools/Windows/Compressor.swift`. Videos are exported with a file-length limit of half the source (about 47–52 percent, same frames, audio kept); photos are re-encoded. If the result would not be smaller than 95 percent the message “Already compact” shows and no copy is made. `FolderAccess.ensure` asks for folder access in the App Store build (`Extensions/Shared/Folders.swift`, `FolderAccess.swift:6`).
 
-**Nuances:** AVFoundation will not go below about 1.5 Mbit/s at 1080p30, so a very small video still reports “Already compact”. Before 1.49.1 most videos ended with “Already compact”.
+**Nuances:** AVFoundation will not go below about 1.5 Mbit/s at 1080p30, so a very small video still reports “Already compact”. Before 1.50.0 most videos ended with “Already compact”.
 
 **Edition:** Both; App Store differs: needs the extension enabled in System Settings and asks for folder access.
 
@@ -870,7 +919,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Extension `Extensions/Convert/ConvertExtension.swift:22`, formats in `ConvertFormats.swift`, switch `Sources/pika-tools/Tools/Convert/ConvertTool.swift:26-31`. Same enabling flow and folder access as Smaller Copy. For a PNG the targets are JPEG, HEIC, GIF, TIFF, PDF. There is no size check.
 
-**Nuances:** Like New File, it showed on while only another extension was enabled before 1.49.1; now it asks for permission until its own extension runs.
+**Nuances:** Like New File, it showed on while only another extension was enabled before 1.50.0; now it asks for permission until its own extension runs.
 
 **Edition:** Both; App Store differs: needs the extension enabled in System Settings and asks for folder access.
 
@@ -880,22 +929,22 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Archives in Finder
 
-**Does:** Adds Extract and Create Archive… to Finder, a preview of archives on Space, and the option to open ZIP and 7Z with pikapik.
+**Does:** Adds Extract and Create Archive… to Finder, a preview of archives on Space, and (Website) the option to open ZIP and 7Z with pikapik.
 
-**How it works:** Switch `Sources/pika-tools/Tools/Archive/ArchiveTool.swift:40-45`; one `archive` key turns both the Finder extension and the preview on or off (off runs `pluginkit -e ignore`). Bundled 7-Zip 26.04 `7zz` (LGPL; the license file and source ship with releases). Engine routing: `ditto` for zips with `__MACOSX`, `bsdtar` for legacy code-page zips, `7zz` for the rest.
+**How it works:** Switch `Sources/pika-tools/Tools/Archive/ArchiveTool.swift:40-45`; one `archive` key turns both the Finder extension and the preview on or off (off runs `pluginkit -e ignore`). Bundled 7-Zip 26.04 `7zz` (LGPL; the license file and source ship with releases). Website engine routing: `ditto` for zips with `__MACOSX`, `bsdtar` for legacy code-page zips, `7zz` for the rest. App Store: no `7zz`; `ditto`, `bsdtar`, `gzip` and `bzip2` from macOS do the work (`ArchiveProbe.swift`, `ArchiveCreate.swift`, `ArchiveExtract.swift` under `#if APPSTORE`), and the preview reads headers with the system libarchive.
 
 **Options:**
-- Open archives with this app — toggle labelled “ZIP · 7Z”; sets the default app for `public.zip-archive` and `org.7-zip.7-zip-archive` (`ArchiveTool.swift:48-51`). Changes the Mac’s default apps; do not flip it in tests you do not want to keep.
+- Open archives with this app — toggle labelled “ZIP · 7Z”; sets the default app for `public.zip-archive` and `org.7-zip.7-zip-archive` (`ArchiveTool.swift:48-51`). Changes the Mac’s default apps; do not flip it in tests you do not want to keep. Website only: the App Store row is not shown.
 
-**Nuances:** Never create RAR (license). Zips with legacy names and a password may come out garbled. Create Archive… is hidden when the selection spans several folders. Dev builds register the preview only after `pluginkit -a <appex>`.
+**Nuances:** Never create RAR (license). Zips with legacy names and a password may come out garbled. Create Archive… is hidden when the selection spans several folders. Dev builds register the preview only after `pluginkit -a <appex>`. App Store limits: a password only for ZIP (not 7Z); no splitting into parts, and multi-part archives (.001, .part1.rar, .z01 …) cannot be opened; single .xz, .lzma and .zst files cannot be opened (single .gz and .bz2 can); password-protected 7Z and RAR cannot be opened. The first use asks for access to the home folder (the same folder access New File and Smaller Copy use), and the Finder items need the extension turned on in System Settings › General › Login Items & Extensions (the animated guide in Permissions shows where). The App Store package carries the Archive and Preview extensions only when their provisioning profiles are set (`scripts/appstore.sh`); without them the Archives row is absent.
 
-**Edition:** Website only (App Store: cut — no extension, no 7-Zip, sandbox).
+**Edition:** Both; App Store differs: built-in macOS tools instead of 7-Zip, the limits above, no Open archives with this app, needs the extension enabled and asks for folder access.
 
 **Test:**
 1. (Website) Turn on Archives in Finder. In a new test folder right-click a folder of more than 20 MB › Create Archive…, choose 7Z, set a Password and Split into parts of 15 MB → numbered parts appear next to the folder; right-click the first part › Extract asks for the password and unpacks a copy of the folder.
 2. Select a ZIP and press Space → the files inside show.
 3. Turn the switch off → the menu items and the preview are gone.
-4. (App Store) There is no Archives row.
+4. (App Store) Turn on Archives in Finder and enable the extension in System Settings › General › Login Items & Extensions → right-click a folder › Create Archive… → a folder prompt the first time, then the dialog; ZIP can have a Password, with 7Z the Password switch is disabled, and there is no Split archive row. Right-click the archive › Extract → the files appear next to it. Select it and press Space → the files inside show. A password-protected 7Z or a .part1.rar › Extract → the message “… can’t be opened”. There is no Open archives with this app switch.
 
 ### Extract
 
@@ -903,10 +952,11 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Finder item in `Extensions/Archive/ArchiveExtension.swift:16`, bundled `7zz`, a progress window (`ArchiveQueue.swift`, `ArchiveRun.swift`). Asks for a password with Extract and Cancel when the archive is protected.
 
-**Edition:** Website only (App Store: cut — the extension is not built).
+**Edition:** Both; App Store differs: unpacks with the tools built into macOS, so password-protected 7Z and RAR, multi-part archives and single .xz, .lzma and .zst files are refused with a message; asks for folder access the first time.
 
 **Test:**
 1. (Website) Right-click an archive › Extract → a progress window, then the unpacked files next to it. With a password-protected archive → a password prompt (Extract / Cancel); a wrong password fails clearly, the right one works.
+2. (App Store) The same with a ZIP, a password-protected ZIP and a .tar.gz → they unpack. A password-protected 7Z or a .xz → the message “… can’t be opened”.
 
 ### Create Archive…
 
@@ -918,14 +968,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Name — archive name.
 - Format — ZIP, 7Z, TAR.GZ, TAR.XZ.
 - Password — toggle; typed twice, Create waits for a match; one eye button shows both.
-- Split archive — Don’t split, 15 MB (for email), 100 MB, 1 GB, 4 GB (for USB drives).
+- Split archive — Don’t split, 15 MB (for email), 100 MB, 1 GB, 4 GB (for USB drives). Website only.
 - Cancel / Create.
 
-**Edition:** Website only (App Store: cut).
+**Edition:** Both; App Store differs: built-in macOS tools, a password only for ZIP (not 7Z), no splitting; asks for folder access the first time.
 
 **Test:**
 1. (Website) Right-click a test folder › Create Archive… → the dialog shows Name, Format, Password, Split archive. Choose ZIP with no password → Create makes a .zip next to the folder.
 2. Turn on Password and type two different passwords → Create stays disabled until they match.
+3. (App Store) The dialog has no Split archive row; with 7Z the Password switch is disabled.
 
 ### Archive preview
 
@@ -935,10 +986,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Nuances:** Check with Space in Finder, not `qlmanage -p` (it crashes for extension previews). A preview of a RAR with encrypted headers is unverified.
 
-**Edition:** Website only (App Store: cut — the extension is not built).
+**Edition:** Both; App Store differs: needs the extension enabled in System Settings.
 
 **Test:**
-1. (Website) Select a ZIP and 7Z in Finder and press Space → a list of files and sizes. A password-protected one shows “Protected with a password”.
+1. Select a ZIP and 7Z in Finder and press Space → a list of files and sizes. A password-protected one shows “Protected with a password”.
 
 ### Enter opens files in Finder
 
@@ -957,7 +1008,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** Accessibility event tap (`FinderKeysTool.swift:419`). ⌘X becomes ⌘C so Finder copies the files; ⌘V in a Finder window becomes Finder’s own ⌥⌘V (Move Item Here) while cut files wait; the app only checks whether the clipboard holds files, never reads it. ⌘C cancels. When the copied thing is text (for example a name being edited) it sends ⌘X again. Shortcut text from `SystemShortcuts.finderCutText`.
 
-**Nuances:** The App Store build cannot tell rename mode (`FinderKeysTool.swift:147`, `isBrowsing` is always true), so with cut files waiting ⌘V in a name field sends ⌥⌘V; press ⌘C first to cancel. Before 1.49.1 the App Store build only copied. The keys it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not turn them again.
+**Nuances:** The App Store build cannot tell rename mode (`FinderKeysTool.swift:147`, `isBrowsing` is always true), so with cut files waiting ⌘V in a name field sends ⌥⌘V; press ⌘C first to cancel. Before 1.50.0 the App Store build only copied. The keys it sends are tagged (`Sources/pika-tools/Common/EventTag.swift`), so another copy of pikapik does not turn them again.
 
 **Edition:** Both; App Store differs: no text-focus check.
 
@@ -981,20 +1032,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Clears the desktop of files and folders before a call or a screen recording, and brings them back to the same places.
 
-**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:139`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: an animated guide (`SettingsGuide`: Show items › On Desktop turned off) above an Open button to System Settings › Desktop & Dock (`DesktopIconsLink`, `DesktopTools.swift:170`, guide at :182).
+**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:61`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: the sandbox can’t change that setting, so the switch puts a curtain over the icons: one borderless window per screen one level above the desktop icons (`CGWindowLevelForKey(.desktopIconWindow)+1`, ordered back so the pet stays on top), `ignoresMouseEvents` so clicks reach the desktop, showing the wallpaper from `NSWorkspace.desktopImageURL` decoded at screen size with the Fill/Fit/Stretch/Center option (`Sources/pika-tools/Tools/Windows/DesktopCurtain.swift`). A moving (Aerial) wallpaper reports `DefaultDesktop.heic`, so it gets the wallpaper’s fill color or the window background instead; no Screen Recording. Rebuilt on screen and Space changes, when another app becomes active (a new wallpaper) and on wake; gone when turned off or on quit. Below it in Settings: the animated guide (Show items › On Desktop turned off) and an Open button to System Settings › Desktop & Dock, subtitled Turn off “On Desktop” (`DesktopIconsSettings`, `DesktopTools.swift:181`, `SystemSettingsRow`).
 
-**Edition:** Both; App Store differs: guide and Open button to System Settings instead of the switch.
+**Edition:** Both; App Store differs: the switch covers the icons with the wallpaper instead of hiding them, and a guide with an Open button to System Settings sits below it.
 
 **Test:**
 1. (Website) Write down `defaults read com.apple.WindowManager StandardHideDesktopIcons`. Turn on Hide desktop icons → the icons leave the desktop without Finder restarting, the files stay in the Desktop folder, and System Settings › Desktop & Dock › Show items › On Desktop turns off. Turn it off → the icons come back to the same places.
 2. Change On Desktop in System Settings and open the menu → the switch follows. Repeat with Stage Manager on.
-3. (App Store) Settings › Finder › Hide desktop icons shows the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock. In the menu the same row closes the menu and opens the same page (no animation there).
+3. (App Store) Turn on Hide desktop icons with a picture wallpaper → the icons are covered by the same picture on every display, the pet stays on top; click, double-click and right-click where an icon was → the desktop gets them. Switch to a Space with another wallpaper, pick a new wallpaper, connect or remove a display → the curtain follows. Pick a moving wallpaper → a plain color covers the icons. Turn it off or quit pikapik → the icons are back and no window is left.
+4. (App Store) Below the switch in Settings: the animation (Show items › On Desktop off) and Open → System Settings opens on Desktop & Dock.
 
 ### Show hidden files
 
 **Does:** Shows the files and folders macOS hides, dimmed, in Finder and on the desktop.
 
-**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:157`, `HiddenFilesTool` :63-168). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:230-237`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
+**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:135`, `HiddenFilesTool` :72-141). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:206-212`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
 
 **Edition:** Both; App Store differs: a hint with the keys instead of the switch.
 
@@ -1261,7 +1313,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - More game settings — disclosure group (`GameModeTool.swift:729`) that opens the detailed game settings: System keyboard shortcuts, Other apps watching keys and Game safeguards (see their entries).
 
-**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once. The App Store build reads `AppleSymbolicHotKeys` through CFPreferences and swallows keys in the tap instead of private calls (`GameRules.swift:232`, `GameModeTool.swift:643`), and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:804`); Dock corners and hiding are untouched there. With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.49.1. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
+**Nuances:** While a game is in front the menu bar status shows Game Mode. After you quit the game or lock the screen the shortcuts work again at once; after the Mac wakes or you switch back to your user account Game Mode turns on again by itself (1.50.0). The sandbox hides `com.apple.symbolichotkeys`, so the App Store build reads the shortcuts with the public `CopySymbolicHotKeys`: on macOS 27 its records are matched to IDs by position, on other versions through Apple’s `DefaultShortcutsTable.xml`, which misses shortcuts you changed (`GameRules.swift:230`). It swallows ⌘ shortcuts in the tap instead of private calls (`GameRules.swift:284`, `GameModeTool.swift:668`); mouse-button shortcuts aren’t listed there, because its tap doesn’t see extra mouse buttons, and it shows only the rules whose shortcuts it can read (`GameModeTool.swift:829`); Dock corners and hiding are untouched there, and the pointer fence keeps 16 points away from the screen corners instead (1.50.0). With two copies of pikapik running, ⇧⌘Q and ⇧⌘W in a game used to do nothing; fixed in 1.50.0. Swipe and hot-corner pausing was only covered by unit tests, never by real gestures.
 
 **Edition:** Both; App Store differs: fewer rules (those it can read), no Dock or hot-corner calming.
 
@@ -1269,7 +1321,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Turn on Game Mode, press Add a Game… and add a stub game (or Chess), open it → ⌘Space and ⌘` are swallowed while playing; in the App Store build the rules list shows only shortcuts that exist on this Mac.
 2. Quit the game, or lock the screen mid-game → shortcuts work again at once; (App Store) Dock corners and hiding are untouched.
 3. With Protect quitting and closing on, in the game press ⇧⌘Q → the game quits; ⇧⌘W → its window closes. Press ⌥⌘Esc → Force Quit opens.
-4. (two copies installed) Quit one copy and repeat step 3 → it works; with both running it works too since 1.49.1.
+4. (two copies installed) Quit one copy and repeat step 3 → it works; with both running it works too since 1.50.0.
 5. Open Settings › Games › More game settings → the three parts show.
 
 ### Your games
@@ -1280,13 +1332,13 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Add a Game… — opens a shelf of open apps and Dock apps; you can also drag an app from Finder; Done closes it (`GameList.swift:13`).
-- Not a Game — dismisses a suggestion.
+- Ignore — a quiet button that dismisses a suggestion.
 - Add — accepts a suggestion.
 
 **Edition:** Both.
 
 **Test:**
-1. Open a stub app that looks like a game → a suggestion shows; Add puts it in Your games; Not a Game removes it from suggestions.
+1. Open a stub app that looks like a game → a suggestion shows; Add puts it in Your games; Ignore removes it from suggestions.
 2. Press Add a Game…, pick an open app, then press Done → it is in the list. Drag an app from Finder onto the list → added.
 
 ### Show FPS
@@ -1314,7 +1366,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Lists every macOS shortcut with a choice of what happens to it while you play.
 
-**How it works:** `SystemShortcutList.swift`, about 235 shortcuts from `SystemShortcutCatalog` read from this Mac (`AppleSymbolicHotKeys`, `NSUserKeyEquivalents`), each with a “While playing” picker.
+**How it works:** `SystemShortcutList.swift`, about 235 shortcuts from `SystemShortcutCatalog` read from this Mac (`AppleSymbolicHotKeys`, `NSUserKeyEquivalents`; in the App Store build `CopySymbolicHotKeys`, only ⌘ shortcuts), each with a “While playing” picker.
 
 **Options:**
 - While playing: Follow Game Mode rules — the safeguards decide.
@@ -1382,7 +1434,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; stub in the App Store build, `GameModeTool.swift:443`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
+**How it works:** Now: `GameRules.fence` pushes the pointer back when it crosses the edge; calms Dock and hot corners (`DockEdges`; a stub in the App Store build, where `GameRules.fenceCorners` keeps the pointer 16 points (x + y) from every corner pixel so a push can't reach it, `GameModeTool.swift:454`), and entering or leaving a game restarts the Dock once. After PR #71: `CursorLock` asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use; nothing moves the pointer any more; hot corners Game Mode keeps stay reachable; checked again every second and released when the game is left or pikapik quits.
 
 **Nuances:** The App Store version leaves the option out after the change because it relies on a private macOS call. Needs two displays to test.
 
@@ -1482,7 +1534,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows each permission, whether it is granted, and one button: Allow or Turn Off.
 
-**How it works:** `Sources/pika-tools/Common/Permissions.swift` (`PermissionsView` :404, `PermissionRow` :504, `PermissionBar` :385). The header reads “All set”, “pikapik needs two permissions” (Website) or “Permissions for some tools” (App Store). pikapik rechecks every 1.5 seconds. A tool that needs a missing permission is half-grey and does nothing; clicking it opens this tab on the row (Accessibility, Input Monitoring and Screen Recording also show the macOS prompt in the App Store build). A bar on each tool tab shows when its tools need a missing permission. While Accessibility (on macOS 27: Device Control and Data Access), Input Monitoring or Screen & System Audio Recording is shown and not granted, an animated guide at the top of the first section walks through System Settings: Privacy & Security, that list, then turn on pikapik (`Permissions.swift:65-71,435-437`, `Sources/pika-tools/Common/SettingsGuide.swift`; both editions).
+**How it works:** `Sources/pika-tools/Common/Permissions.swift` (`PermissionsView` :404, `PermissionRow` :504, `PermissionBar` :385). The header reads “All set” when everything is on, “Both permissions are on” when the two main ones are on but a tool still lacks another, and otherwise “pikapik needs two permissions” (Website) or “Permissions for some tools” (App Store). pikapik rechecks every 1.5 seconds. A tool that needs a missing permission is half-grey and does nothing; clicking it opens this tab on the row (Accessibility, Input Monitoring and Screen Recording also show the macOS prompt in the App Store build). A bar on each tool tab shows when its tools need a missing permission, and names that permission and what it is for. While Accessibility (on macOS 27: Device Control and Data Access), Input Monitoring or Screen & System Audio Recording is shown and not granted, an animated guide at the top of the first section walks through System Settings: Privacy & Security, that list, then turn on pikapik (`Permissions.swift:65-71,435-437`, `Sources/pika-tools/Common/SettingsGuide.swift`; both editions).
 
 **Options:**
 - Allow — asks, or opens System Settings with an arrow icon when the permission can only be granted there.
@@ -1491,19 +1543,19 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Edition:** Both; App Store differs: Turn Off opens System Settings.
 
 **Test:**
-1. Launch after `tccutil reset All <bundle id>` → no permission prompt at launch except what this tab asks; the menu bar icon appears.
+1. Launch after `tccutil reset All <bundle id>` → no system prompt at launch, in both editions; the first launch opens General Settings, later launches open no window, and the tools that need a permission are grey. The menu bar icon appears. Already-granted permissions stay on.
 2. Turn on any Keyboard, Mouse or Windows tool (for example Scroll by lines) → the Accessibility prompt, then Input Monitoring if needed. The status shows “Needs Access” until granted, then “Active”.
 3. Revoke a permission in System Settings while the app runs → status returns to “Needs Access” without a crash; granting again restores the tool without relaunch.
 4. Click a grey tool → this tab opens on the row to allow.
 5. (App Store) Turn Off on Accessibility and Input Monitoring → the right System Settings list opens. (Website) Turn Off → the restart alert.
 6. A missing permission shows the animated guide; it points at the right list and the pikapik switch, and goes away once every permission in it is granted.
-7. (App Store) Settings has no Fans, Animations (full page), Uninstaller, Key repeat, Pointer, Updates, iCloud sync, “Keep running after Quit” or “Turn off the display now” rows.
+7. (App Store) Settings has no Fans, Animations (full page), Uninstaller, Key repeat, Pointer, Updates, iCloud sync or “Stay in the background after Quit” rows.
 
 ### Accessibility
 
 **Does:** The permission for tools that read or change keys, clicks and windows.
 
-**How it works:** Row `case accessibility`; titled “Device Control and Data Access” on macOS 27 or later. Used by Brightness keys, the Mouse tools, Protect quitting and closing, Cut files in Finder, Fix words typed in the wrong layout, Game Mode and more.
+**How it works:** Row `case accessibility`; titled “Device Control and Data Access” on macOS 27 or later. Used by Brightness keys, the Mouse tools, Protect quitting and closing, Cut files in Finder, Retype words you typed in the wrong language, Game Mode and more.
 
 **Edition:** Both.
 
@@ -1622,7 +1674,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### pikapik
 
-**Does:** Header with the app icon and “Small fixes for the keyboard, mouse and sleep”.
+**Does:** Header with the app icon and “Small tools that make your Mac nicer to use”.
 
 **How it works:** `SettingsWindow.swift:1108` (`AboutView` :1078-1222).
 
@@ -1703,7 +1755,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Settings… — icon button at the bottom of the panel that opens Settings (⌘,; `MenuView.swift:198`).
-- Quit — icon button at the bottom of the panel that quits pikapik (⌘Q; `MenuView.swift:203`). Website: with Keep running after Quit on it only closes windows.
+- Quit — icon button at the bottom of the panel that quits pikapik (⌘Q; `MenuView.swift:203`). Website: with Stay in the background after Quit on it only closes windows.
 
 **Nuances:** Nothing is asked at launch; Settings opens on first launch, later from the menu.
 
@@ -1712,7 +1764,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. Launch → the icon appears; click it → the panel opens. Press Esc or click elsewhere → it closes.
 2. Click it or press ⌘, → Settings opens.
-3. Press Quit → (App Store) the app quits; (Website) per Keep running after Quit.
+3. Press Quit → (App Store) the app quits; (Website) per Stay in the background after Quit.
 
 ### Right-click menu of the icon
 
@@ -1733,12 +1785,12 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Options:**
 - Display — Always on / Turns off as usual (`MenuView.swift:222-228`).
-- Turn off the display now — button, Website only (`MenuView.swift:230`).
+- Turn off the display now — button (`MenuView.swift:234`).
 
-**Edition:** Both; App Store differs: no Turn off the display now.
+**Edition:** Both.
 
 **Test:**
-1. Turn it on, expand it, choose a Display option → `pmset -g assertions` follows. (Website) press Turn off the display now → the screen sleeps.
+1. Turn it on, expand it, choose a Display option → `pmset -g assertions` follows. Press Turn off the display now → the screen goes dark.
 
 ### Brightness
 
@@ -1808,14 +1860,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Permissions needed
 
-**Does:** A button that appears when something needs a permission and opens the Permissions tab.
+**Does:** A button that appears only while a tool you switched on lacks a permission, and opens the Permissions tab. With nothing switched on it stays hidden, so a new install shows no warning.
 
-**How it works:** `MenuView.swift:153-165`.
+**How it works:** `MenuView.swift:153-165`; the same condition (`ToolRegistry.needsPermission`) decides whether the right-click menu on the menu bar icon has a Permissions needed item (`StatusMenu.swift:101`).
 
 **Edition:** Both.
 
 **Test:**
-1. With a tool on and its permission missing → the button shows; click it → Settings opens on Permissions.
+1. With a tool on and its permission missing (switch it on, then turn pikapik off in System Settings › Privacy & Security) → the button shows in the panel and in the right-click menu; click it → Settings opens on Permissions.
+2. With every tool off, or every switched-on tool allowed → no button and no menu item, also in the App Store build.
 
 ### Restart Finder
 
@@ -1841,7 +1894,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### App menu commands
 
-**Does:** Settings… (⌘,) and Quit Completely (⌥⌘Q, shown while Keep running after Quit is on).
+**Does:** Settings… (⌘,) and Quit Completely (⌥⌘Q, shown while Stay in the background after Quit is on).
 
 **How it works:** `App.swift:35-50`; Help menu is empty; Quit Completely is Website only.
 

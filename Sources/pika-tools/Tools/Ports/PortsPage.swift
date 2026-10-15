@@ -10,11 +10,19 @@ struct PortsPage: View {
         let others = shown.filter { !model.isOurs($0) }
         let searching = !model.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         Form {
-            SettingsHeader(tab: .ports, text: String(localized: "Which programs have taken ports on this Mac"))
+            SettingsHeader(tab: .ports, text: String(localized: "Numbered doors that programs use to talk to the network"))
+            Section {
+                PortsArt()
+            } footer: {
+                Text("Only one program fits at a door")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
             Section {
                 HStack(spacing: 8) {
                     Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
-                    TextField(text: $model.query, prompt: Text("Port or program")) { Text("Port or program") }
+                    TextField(text: $model.query, prompt: Text("Type a number, like 3000")) { Text("Port or program") }
                         .textFieldStyle(.plain)
                         .labelsHidden()
                     if !model.query.isEmpty {
@@ -47,11 +55,11 @@ struct PortsPage: View {
             if model.loaded, !mine.isEmpty || !searching {
                 Section {
                     if mine.isEmpty {
-                        Text("None of your programs has taken a port").foregroundStyle(.secondary).frame(maxWidth: .infinity).padding(.vertical, 8)
+                        (others.isEmpty ? Text("Nothing is using a door right now. That is normal.") : Text("None of your programs has taken a port")).foregroundStyle(.secondary).frame(maxWidth: .infinity).padding(.vertical, 8)
                     }
                     ForEach(mine) { PortRow(program: $0, model: model) }
                 } header: {
-                    Text("Your programs")
+                    Text("Programs you started")
                 } footer: {
                     #if APPSTORE
                     Text("To free a port, quit the program that holds it: in the program itself or in Activity Monitor.")
@@ -64,8 +72,11 @@ struct PortsPage: View {
                 Section {
                     ForEach(others) { PortRow(program: $0, model: model) }
                 } header: {
-                    Text("macOS and other users")
+                    Text("Not yours: leave these alone")
                 }
+            }
+            if !shown.isEmpty {
+                Section { } footer: { PortLegend() }
             }
         }
         .formStyle(.grouped)
@@ -96,6 +107,77 @@ struct PortsPage: View {
     }
 }
 
+private struct PortsArt: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private enum Door { case free, taken, refused }
+
+    private static let durations = [1.6, 1.3, 1.1, 1.6, 0.8]
+    private static let numbers = [3000, 5432, 8080]
+    private static let columns: [CGFloat] = [-82, 0, 82]
+    private static let doors: [Door] = [.taken, .refused, .free, .taken, .free]
+    private static let first: [(x: CGFloat, y: CGFloat, opacity: Double)] = [(-82, -2, 1), (-82, -2, 1), (130, -2, 0), (130, -2, 0), (-82, -2, 0)]
+    private static let second: [(x: CGFloat, y: CGFloat, opacity: Double)] = [(-82, 42, 1), (-82, 26, 1), (-82, 26, 1), (-82, -2, 1), (-82, 42, 0)]
+
+    var body: some View {
+        IllustrationRow(loop: Self.durations) { tick in
+            let step = reduceMotion ? 0 : tick % Self.durations.count
+            Stage {
+                ForEach(0..<3, id: \.self) { index in
+                    door(Self.numbers[index], x: Self.columns[index], state: index == 0 ? Self.doors[step] : .free)
+                }
+                tile("cylinder.fill", Art.green).offset(x: Self.columns[1], y: -2)
+                tile("bolt.fill", Art.yellow)
+                    .offset(x: Self.first[step].x, y: Self.first[step].y)
+                    .opacity(Self.first[step].opacity)
+                tile("globe", .accentColor)
+                    .offset(x: Self.second[step].x, y: Self.second[step].y)
+                    .opacity(Self.second[step].opacity)
+                Image(systemName: "xmark.circle.fill")
+                    .font(.system(size: 16))
+                    .foregroundStyle(Art.red)
+                    .offset(x: Self.columns[0] + 26, y: -26)
+                    .opacity(step == 1 ? 1 : 0)
+            }
+            .animation(reduceMotion ? nil : .smooth(duration: 0.6), value: step)
+        }
+    }
+
+    private func door(_ number: Int, x: CGFloat, state: Door) -> some View {
+        let tint: Color = switch state {
+        case .free: .secondary
+        case .taken: Art.green
+        case .refused: Art.red
+        }
+        let shape = RoundedRectangle(cornerRadius: 10, style: .continuous)
+        return VStack(spacing: 6) {
+            Text(verbatim: String(number))
+                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .monospacedDigit()
+                .foregroundStyle(.secondary)
+            shape
+                .fill(tint.opacity(state == .free ? 0.08 : 0.2))
+                .overlay(shape.strokeBorder(tint.opacity(state == .free ? 0.35 : 0.9), lineWidth: 1.5))
+                .frame(width: 52, height: 50)
+        }
+        .offset(x: x, y: -12)
+    }
+
+    private func tile(_ symbol: String, _ color: Color) -> some View {
+        let shape = RoundedRectangle(cornerRadius: 8, style: .continuous)
+        return shape
+            .fill(LinearGradient(colors: [color, color.opacity(0.7)], startPoint: .top, endPoint: .bottom))
+            .overlay(shape.hairline(Color.white.opacity(0.25)))
+            .overlay {
+                Image(systemName: symbol)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.white)
+            }
+            .frame(width: 28, height: 28)
+            .shadow(color: .black.opacity(0.18), radius: 3, y: 2)
+    }
+}
+
 private struct PortRow: View {
     let program: PortProgram
     let model: PortsModel
@@ -107,7 +189,7 @@ private struct PortRow: View {
         VStack(alignment: .leading, spacing: 0) {
             AppRowLabel(icon: look.icon, name: look.name, byline: model.byline(program), minNameWidth: 100) {
                 PortChips(listeners: program.listeners)
-                control(look)
+                control(look).fixedSize()
                 Button(action: toggle) {
                     RowChevron().rotationEffect(.degrees(open ? 90 : 0))
                 }
@@ -157,7 +239,7 @@ private struct PortRow: View {
             Button("Free Up") { model.free(program) }
             #endif
         } else if !hints.isEmpty {
-            Button("Free Up") { tip = true }
+            Button("How to Free It") { tip = true }
                 .popover(isPresented: $tip) {
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(hints, id: \.port) { hint in
@@ -202,6 +284,25 @@ private struct PortRow: View {
     }
 }
 
+private struct PortChip: View {
+    let port: String
+    let global: Bool
+
+    var body: some View {
+        HStack(spacing: 3) {
+            Text(verbatim: port).monospacedDigit()
+            if global {
+                Image(systemName: "globe").font(.caption2)
+            }
+        }
+        .font(.callout)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 2)
+        .background(.quaternary, in: Capsule())
+        .help(global ? Text("Other devices on your network can connect.") : Text("Only this Mac can connect."))
+    }
+}
+
 private struct PortChips: View {
     let listeners: [PortListener]
 
@@ -210,20 +311,7 @@ private struct PortChips: View {
             ForEach([3, 2, 1].filter { $0 <= listeners.count }, id: \.self) { shown in
                 HStack(spacing: 4) {
                     ForEach(listeners.prefix(shown)) { listener in
-                        HStack(spacing: 3) {
-                            Text(verbatim: String(listener.port)).monospacedDigit()
-                            if listener.udp, !listener.tcp {
-                                Text(verbatim: "UDP").font(.caption2)
-                            }
-                            if !listener.onlyThisMac {
-                                Image(systemName: "globe").font(.caption2)
-                            }
-                        }
-                        .font(.callout)
-                        .padding(.horizontal, 7)
-                        .padding(.vertical, 2)
-                        .background(.quaternary, in: Capsule())
-                        .help(listener.onlyThisMac ? Text("Only this Mac can connect.") : Text("Other devices on your network can connect."))
+                        PortChip(port: String(listener.port), global: !listener.onlyThisMac)
                     }
                     if listeners.count > shown {
                         Text(verbatim: "+\(listeners.count - shown)").font(.callout).foregroundStyle(.secondary)
@@ -233,6 +321,24 @@ private struct PortChips: View {
             }
         }
         .layoutPriority(1)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+private struct PortLegend: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 8) {
+                PortChip(port: "3000", global: true)
+                Text("Other devices on your network can connect.")
+            }
+            HStack(spacing: 8) {
+                PortChip(port: "3000", global: false)
+                Text("Only this Mac can connect.")
+            }
+        }
+        .font(.callout)
+        .foregroundStyle(.secondary)
         .accessibilityElement(children: .combine)
     }
 }

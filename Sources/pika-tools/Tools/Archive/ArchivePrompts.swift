@@ -131,8 +131,13 @@ final class ArchiveCreateModel {
         format == .zip && usesPassword ? String(localized: "Some computers need an extra app to open it") : format.caption
     }
 
-    var passwordNote: String {
-        guard format.supportsPassword else { return String(localized: "TAR archives can’t have a password") }
+    var passwordNote: String? {
+        guard format.supportsPassword else {
+            #if APPSTORE
+            if format == .sevenZip { return String(localized: "Only ZIP can have a password") }
+            #endif
+            return String(localized: "TAR archives can’t have a password")
+        }
         return format == .zip ? String(localized: "File names stay visible") : String(localized: "File names are hidden too")
     }
 
@@ -311,6 +316,7 @@ struct ArchiveCreateView: View {
                 .padding(.bottom, 9)
                 .transition(.move(edge: .top).combined(with: .opacity))
             }
+            #if !APPSTORE
             Divider().padding(.leading, 46)
             ArchiveOptionRow(tint: .purple, symbol: "rectangle.split.3x1.fill", title: "Split archive") {
                 Picker("Split archive", selection: $model.split) {
@@ -320,6 +326,7 @@ struct ArchiveCreateView: View {
                 .labelsHidden()
                 .fixedSize()
             }
+            #endif
         }
         .background(shape.fill(.quaternary.opacity(0.5)))
         .overlay(shape.strokeBorder(Color(nsColor: .separatorColor).opacity(0.5), lineWidth: 0.5))

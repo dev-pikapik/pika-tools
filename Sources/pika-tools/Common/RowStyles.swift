@@ -4,15 +4,24 @@ import SwiftUI
 struct RowLabel: View {
     let title: Text
     var subtitle: Text?
+    var row: String?
 
-    init(_ title: Text, _ subtitle: Text? = nil) {
+    init(_ title: Text, _ subtitle: Text? = nil, row: String? = nil) {
         self.title = title
         self.subtitle = subtitle
+        self.row = row
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            title
+            if let row {
+                HStack(spacing: 6) {
+                    title
+                    NewRowTag(row: row)
+                }
+            } else {
+                title
+            }
             if let subtitle {
                 subtitle
                     .font(.subheadline)
@@ -155,7 +164,7 @@ extension View {
 }
 
 struct AppRowLabel<Trailing: View>: View {
-    let icon: NSImage
+    let icon: NSImage?
     let name: String
     var running = false
     let byline: String
@@ -164,10 +173,14 @@ struct AppRowLabel<Trailing: View>: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            Image(nsImage: icon)
-                .resizable()
-                .frame(width: 28, height: 28)
-                .accessibilityHidden(true)
+            if let icon {
+                Image(nsImage: icon)
+                    .resizable()
+                    .frame(width: 28, height: 28)
+                    .accessibilityHidden(true)
+            } else {
+                SectionIcon(symbol: "terminal", color: .gray, size: 28)
+            }
             VStack(alignment: .leading, spacing: 1) {
                 HStack(spacing: 6) {
                     Text(name)

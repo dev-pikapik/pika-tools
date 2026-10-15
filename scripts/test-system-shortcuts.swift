@@ -7,6 +7,43 @@ struct TestSystemShortcuts {
         SystemGameShortcut(id: id, name: "Example", section: "input_sources", sectionName: "Input Sources", rawName: "Example", key: key, character: 32, modifiers: modifiers, enabled: true)
     }
 
+    static func record(_ key: Int, _ carbon: Int, _ enabled: Bool) -> [String: Any] {
+        [kHISymbolicHotKeyCode as String: key, kHISymbolicHotKeyModifiers as String: carbon, kHISymbolicHotKeyEnabled as String: enabled]
+    }
+
+    static func hotKeyTable(_ records: [[String: Any]]) {
+        func same(_ entry: SymbolicHotKeys.Entry?, _ expected: SymbolicHotKeys.Entry) -> Bool {
+            entry.map { $0.enabled == expected.enabled && $0.character == expected.character && $0.key == expected.key && $0.modifiers == expected.modifiers } ?? false
+        }
+        let defaults: [Int32: SymbolicHotKeys.Default] = [10: (100, 2, 0x180000), 11: (0xFFFF, 123, 0x840000), 12: (32, 49, 0x100000)]
+        let fake = [record(2, 0x900, true), record(123, 0x21000, false), record(40, 0x100, true)]
+        let zipped = SymbolicHotKeys.table(native: fake, defaults: defaults, ids: [10, 11, 99])
+        precondition(zipped.count == 3 && same(zipped[10], (true, 100, 2, 0x180000)) && same(zipped[11], (false, 0xFFFF, 123, 0x840000)) && same(zipped[99], (true, 0xFFFF, 40, 0x100000)))
+        precondition(same(SymbolicHotKeys.table(native: [record(5, 0x900, true)], defaults: defaults, ids: [10])[10], (true, 0xFFFF, 5, 0x180000)))
+        for (carbon, flags) in [(0x100, 0x100000), (0x200, 0x20000), (0x800, 0x80000), (0x1000, 0x40000), (0x20000, 0x800000), (0x10000, 0)] as [(Int, UInt64)] {
+            precondition(SymbolicHotKeys.table(native: [record(0, carbon, true)], defaults: [:], ids: [1])[1]?.modifiers == flags)
+        }
+        let fallback = SymbolicHotKeys.table(native: fake + [record(2, 0x900, false)], defaults: defaults, ids: [1])
+        precondition(fallback.count == 2 && same(fallback[10], (true, 100, 2, 0x180000)) && same(fallback[11], (false, 0xFFFF, 123, 0x840000)) && fallback[12] == nil)
+        print("system shortcuts without the settings file, converter: ok")
+
+        let apple = SymbolicHotKeys.appleDefaults()
+        precondition(!apple.isEmpty)
+        let sandboxed = SymbolicHotKeys.table(native: records, defaults: apple, ids: [])
+        let agree = sandboxed.filter { id, entry in SymbolicHotKeys.value(id).map { $0.key == entry.key && $0.modifiers == entry.modifiers && SymbolicHotKeys.isEnabled(id) == entry.enabled } ?? false }
+        print("without IDs: \(sandboxed.count) of \(apple.count) Apple defaults are in the live list, \(agree.count) agree with the SkyLight reader")
+        guard records.count == SymbolicHotKeys.ids.count else {
+            return print("live check skipped: \(records.count) records, the ID list has \(SymbolicHotKeys.ids.count) (another macOS version)")
+        }
+        let rebuilt = SymbolicHotKeys.table(native: records, defaults: apple)
+        let differing = SymbolicHotKeys.ids.filter { id in
+            guard let entry = rebuilt[id], let value = SymbolicHotKeys.value(id) else { return true }
+            return entry.key != value.key || entry.modifiers != value.modifiers || entry.enabled != SymbolicHotKeys.isEnabled(id)
+        }
+        precondition(differing.isEmpty, "differs from the SkyLight reader: \(differing)")
+        print("live: all \(rebuilt.count) records match the SkyLight reader by position")
+    }
+
     static func main() {
         let all = Set(GameRule.allCases)
         let input = entry(60)
@@ -203,5 +240,6 @@ struct TestSystemShortcuts {
         precondition(SystemShortcutCatalog.selected(catalog, rules: all, values: [], appSwitcher: true).allSatisfy { !PointerShortcuts.isSynthetic($0) })
         print("live pointer rows:", live.map(\.name).joined(separator: ", "))
         print("live macOS catalogue:", records.count, "published records,", shown.count, "named actions,", catalog.count - shown.count, "hidden")
+        hotKeyTable(records)
     }
 }

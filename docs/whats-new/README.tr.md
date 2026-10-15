@@ -5,6 +5,47 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mac App Store sürümünde pikapik’ten daha fazlası
+
+<sub>1.50.0 · 15 Ekim 2026</sub>
+
+Arşivleri açın, masaüstünüzü temizleyin, Home ve End tuşlarını kullanın ve daha fazlası, artık Mac App Store sürümünde de.
+
+**Mac App Store sürümünde yeni**
+
+- **Finder’da arşivleri açın ve oluşturun.** Bir arşive sağ tıklayın ve “Arşivden Çıkar” komutunu seçin. Arşiv oluşturmak için dosyalara sağ tıklayıp “Arşiv Oluştur…” komutunu seçin. İçine bakmak için arşivin üzerinde Boşluk tuşuna basın. Bu sürümde yalnızca ZIP’e parola konabilir.
+- **Masaüstünüz tertemiz olsun.** “Masaüstü simgelerini gizle” seçeneğini açın, pikapik simgelerin üzerini duvar kâğıdınızla kaplasın. Tıklamalar yine masaüstüne ulaşır ve hiçbir izin gerekmez.
+- **Home ve End yeniden çalışıyor.** Satırın başına ve sonuna gider; tarayıcılar, Finder, Müzik ve TV dışında her yerde çalışır.
+- **Yanlış düzende yazılan metni kısayolla düzeltin.** Metni seçin ve ⌃⇧Boşluk tuşlarına basın. “Seçili metni düzelt” seçeneğini Ayarlar › Klavye’de açın; tuşları da orada değiştirebilirsiniz.
+- **Ekranı tek tıkla kapatın.** “Ekranı şimdi kapat” ekranı hemen karartır, Mac’iniz çalışmaya devam eder. Geri getirmek için fareyi oynatın.
+- **Oyunlar kesintiye uğramaz.** “Oyun Modu”nda, bir oyun öndeyken Spotlight gibi Mac kısayolları duraklar ve işaretçi ekran köşelerinden uzak durur; böylece etkin köşeler tetiklenmez.
+- **Pil değerleri geri geldi.** “Pil”, macOS 27’de yine “Maksimum Kapasite” değerini gösteriyor; “Sıcaklık” da pilin sıcaklığını gösteriyor.
+- **Hangi uygulamaların izin isteyebileceğini görün.** Ayarlar › İzinler’deki “Diğer uygulamaların izinleri” bunları simgeleriyle listeler.
+- **Nereye tıklayacağınızı bilin.** macOS, pikapik’in bir ayarı değiştirmesine izin vermediğinde kısa bir animasyon Sistem Ayarları’nda nereye tıklayacağınızı gösterir.
+
+**Her iki sürümde**
+
+- **Uygulama açılmadan sesini ayarlayın.** Ayarladığınız bir uygulama, kapalıyken bile kaydırıcısıyla Ayarlar › Ses’te kalır ve yeniden ses çaldığında, yeniden başlatmadan sonra da seviyesine kavuşur. “Uygulama Ekle…”ye tıklayın ya da Finder’dan bir uygulama sürükleyip önceden ayarlayın; ✕ uygulamayı unutur ve sesini tam seviyeye döndürür.
+- **Bir güncellemenin ne eklediğini görün.** Güncellemeden sonra küçük mavi bir nokta, yeni bir şey içeren her Ayarlar sekmesini, “Yeni” etiketi de bölümü işaretler. Siz baktığınızda, ya da 21 gün sonra kendiliğinden kaybolurlar.
+- **Sakin bir ilk açılış.** Web sitesindeki sürüm, ilk açıldığında artık izin istemez. Yalnızca izin gerektiren bir aracı açtığınızda sorar.
+- **Videolardan daha küçük kopyalar.** “Küçük Kopya Oluştur” artık bir videoyu yaklaşık yarı boyuta indiriyor. Önceden çoğu video “Zaten küçük” yanıtını alıyordu.
+- **İki kopya birbiriyle geçiniyor.** App Store ve web sitesi sürümlerini birlikte kullanırsanız artık birbirinin yaptığını bozmuyorlar. ⇧⌘Q ve ⇧⌘W oyunlarda yine çalışıyor.
+- **Oyunlar uykudan sonra geri dönüyor.** Mac’iniz uyandığında “Oyun Modu” kendiliğinden yeniden açılıyor.
+- **“Portlar” doğruyu söylüyor.** macOS 27’de macOS’in ya da başka bir kullanıcının kullandığı bir port artık boş diye gösterilmiyor.
+- **Sorun bildirmek daha hızlı.** Ayarlar › Hakkında’daki “Sorun Bildir”, formu sürümünüz önceden seçilmiş olarak açar.
+- **Daha akıcı arşivler.** Bir arşiv açılırken ilerleme çubuğu hareket eder, yanlış parola hemen bildirilir ve Mac’iniz arşivi açarken ya da oluştururken artık uykuya dalmaz.
+- **Daha sakin bir menü çubuğu paneli.** Panelde bir satırı, örneğin “Uyanık Tut” altındaki ekran seçeneklerini açınca artık bir kaydırma çubuğu belirip kaybolmaz. “Uyanık Tut” yanındaki ok artık “Ekran ayarları” diyor.
+- **Portlar kendini anlatıyor.** Başlığın altındaki bir satır portun ne olduğunu söyler, küçük bir animasyon da bir kapıdan yalnızca bir programın geçebildiğini gösterir. Kendi programlarınız ve dokunmamanız gerekenler artık anlaşılır adlar taşıyor.
+- **Ayarlar açık konuşuyor.** Her sekme orada ne bulacağınızı anlatan bir satırla başlar, kenar çubuğunda gruplar arasında boşluklar var, “Uyanık Tut”, “İzinler” ve “Pil” de tam olarak ne olduğunu söyler. “İzin gerekiyor” düğmesi yalnızca açtığınız bir araçta izin eksikse görünür.
+
+**Mac App Store sürümünde düzeltilenler**
+
+- Finder’da ⌘X’ten sonra ⌘V artık dosyalarınızı web sitesi sürümündeki gibi taşıyor. Önceden yalnızca kopyalıyordu.
+- “Finder’da Yeni Dosya”, “Finder’da Küçük Kopya” ve “Finder’da Dönüştürme” artık her biri kendi durumunu gösteriyor. Önceden birini açınca üçü de açık görünüyordu.
+- Boş “Portlar” sayfası kalktı. macOS bu sürüme bir portu hangi programın tuttuğunu göstermiyor; bu yüzden Ayarlar › Portlar’da gösterecek bir şey yoktu.
+
+---
+
 ## <a id="v1.49.0"></a>Her monitör için parlaklık
 
 <sub>1.49.0 · 13 Ekim 2026</sub>

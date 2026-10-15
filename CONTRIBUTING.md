@@ -45,6 +45,18 @@ scripts/                             build, package, release, icon, tests
 
 Game Mode reads the complete symbolic shortcut catalogue on the current Mac, including Command combinations and user assignments. Automatic pauses actions that would interrupt the game. A short deliberate input-source shortcut selects the language directly without the system menu, while held game keys have priority. Per-action choices and previews are in More game settings. Keyboard events retain their keys and modifier flags. The separate Ctrl-click rule removes Control only from left mouse events so macOS does not turn them into context menu clicks. The catalogue, coverage limits and validation are described in [Game input and shortcut catalogue](docs/game-input-catalog.md).
 
+Which apps count as games, which keys and clicks reach the game, and how the pointer is kept on the game's screen live in `GameRules`, which you can test without the app:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-game-mode.swift -o build/test-game-mode && build/test-game-mode
+```
+
+Which macOS shortcuts, gestures and hot corners Game Mode pauses for each rule is decided in `SystemShortcutCatalog` and `PointerShortcuts`:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-system-shortcuts.swift -o build/test-system-shortcuts && build/test-system-shortcuts
+```
+
 The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. During Game Mode, shortcuts with Control or without Command pass through as game input, even if they were assigned to quitting or closing elsewhere.
 
 Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pikapik becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
@@ -57,6 +69,12 @@ The FPS counter over a game (Settings > Games > Show FPS) is `Games/FrameRate.sw
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Games/FrameRate.swift scripts/test-frame-rate.swift -o build/test-frame-rate && build/test-frame-rate
+```
+
+The Mac App Store copy can't switch hot corners off, so the cursor fence of Game Mode (`GameRules.fenceCorners`) keeps the pointer 16 points from every corner instead, except corners you allow. There the screen lock is also tracked from the `com.apple.screenIsLocked` and `screenIsUnlocked` notifications (`GameModeTool.received`), and the game is left at once. The test compiles the App Store source set, so its exclusions repeat the list in `scripts/build.sh`.
+
+```bash
+swiftc -parse-as-library -D APPSTORE $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift ! -name Updater.swift ! -name 'LeftoverPermissions*.swift' ! -name SMC.swift ! -name FanHelperProtocol.swift ! -name FanControl.swift ! -name FanSettings.swift ! -name PointerTool.swift ! -name 'DockDisplay*' ! -path '*/Tools/Animations/*' ! -path '*/Tools/KeyRepeat/*' ! -path '*/Tools/Uninstaller/*') Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-game-appstore.swift -o build/test-game-appstore && build/test-game-appstore
 ```
 
 Quit on last window uses an `AXObserver` per regular app: it tracks standard windows and, half a second after one is destroyed, quits the app if it has no windows left, including minimized ones and ones on other desktops (checked with `CGWindowListCopyWindowInfo`). Finder, pikapik and the apps in the exceptions list are skipped.
@@ -93,7 +111,7 @@ In the App Store version the sandbox and macOS hide who was allowed, so Settings
 swiftc -parse-as-library Sources/pika-tools/Common/PrivacyAsks.swift scripts/test-privacy-asks.swift -o build/test-privacy-asks && build/test-privacy-asks
 ```
 
-App Volume (macOS 14.2 and later) changes one app’s volume without a driver. For every app whose slider is below 100% or that is muted, pikapik creates a Core Audio process tap (`CATapDescription`) that mutes the app’s own output, read through a private aggregate device that holds only the tap. A HAL output unit with its input off, set to the output the app plays to (the current output if it uses several), takes the sound from a ring buffer, multiplies it by the app’s gain and plays it there, so the microphone is never opened; an app at 100% gets no tap and is never touched. Helper processes, such as a browser’s audio service, are listed under the app that contains or started them; system daemons are left out. The gain follows the slider squared and moves through a 30 ms ramp so nothing clicks. macOS has no call that says whether System Audio Recording is allowed, so pikapik plays a tone too quiet to hear through a tap on itself and takes any sound that comes back as “allowed”; it asks again when a running tap delivers only silence. The gain, the ramp, the mixing, the ring buffer and the grouping live in `AppVolumeMath`, which you can test without the app:
+App Volume (macOS 14.2 and later) changes one app’s volume without a driver. For every app whose slider is below 100% or that is muted, pikapik creates a Core Audio process tap (`CATapDescription`) that mutes the app’s own output, read through a private aggregate device that holds only the tap. A HAL output unit with its input off, set to the output the app plays to (the current output if it uses several), takes the sound from a ring buffer, multiplies it by the app’s gain and plays it there, so the microphone is never opened; an app at 100% gets no tap and is never touched. Helper processes, such as a browser’s audio service, are listed under the app that contains or started them; system daemons are left out. The gain follows the slider squared and moves through a 30 ms ramp so nothing clicks. macOS has no call that says whether System Audio Recording is allowed, so pikapik plays a tone too quiet to hear through a tap on itself and takes any sound that comes back as “allowed”; it asks again when a running tap delivers only silence. The gain, the ramp, the mixing, the ring buffer, the grouping, the saved levels (`AppVolumeMemory`, kept under the app’s bundle ID) and the merge of running and remembered apps into the list live in `AppVolumeMath`, which you can test without the app:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/AppVolume/AppVolumeMath.swift scripts/test-app-volume.swift -o build/test-app-volume && build/test-app-volume
@@ -121,6 +139,12 @@ The app and the pet tell you about an update only when the latest release is new
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/Version.swift scripts/test-updater.swift -o build/test-updater && build/test-updater
+```
+
+After an update the app points at what is new: a dot after the tab’s name until the tab is opened, a New tag beside the row until the tab is left, nothing on a fresh install and nothing 21 days after the update. `NewMarks` holds the table of what is new and the version logic, and the test checks fresh installs, upgrades from 1.49.x, seen items that stay seen after a relaunch, a downgrade or a second running copy, expiry and that every tab in the table exists:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/Version.swift Sources/pika-tools/Common/NewMarks.swift scripts/test-new-marks.swift -o build/test-new-marks && build/test-new-marks
 ```
 
 Before Homebrew removes the app, it runs `pika-tools --uninstall`, which turns off launch at login and puts back the system settings the app changed, such as the Dock and key repeat. Homebrew runs the same step when it upgrades or reinstalls the app, so the app first looks for the `brew` command that started it and does nothing for `upgrade`, `reinstall` and `install`. The check lives in `Brew`:
@@ -207,6 +231,7 @@ swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swif
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
 2. Add one line to `ToolRegistry.tools` in `Tools/Tool.swift`.
 3. Describe it in [`docs/FEATURES.md`](docs/FEATURES.md) under its Settings tab: what it does, how it works, its limits, which edition has it and how to test it by hand. Then run `./scripts/feature-form.sh` so the bug and feature forms list it. CI and `release.sh` fail while the forms and the catalog disagree. A changed tool gets the same update.
+4. If users should notice it after the update, add one line to `NewMarks.items` in `Common/NewMarks.swift`: the version that ships it, the tab, the tool’s `id` as the row, and the edition. The tab gets a dot until it is opened and the row a New tag until the tab is left.
 
 ### Strings
 
