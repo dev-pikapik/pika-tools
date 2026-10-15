@@ -30,9 +30,15 @@ jobs:
   direct:
     name: Direct
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
+
+      - name: Restore FFmpeg
+        uses: actions/cache@v4
+        with:
+          path: Vendor/ffmpeg
+          key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
 
       - name: Build
         run: |
