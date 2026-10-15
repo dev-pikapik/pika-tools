@@ -581,7 +581,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         guard let window else { return }
         let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let overBar = window.mouseLocationOutsideOfEventStream.y > canvas.bounds.height - 28
+        let overBar = NSRect(x: 0, y: canvas.bounds.height - 28, width: canvas.bounds.width, height: 28).contains(canvas.convert(window.mouseLocationOutsideOfEventStream, from: nil))
         let visible = PlayerChrome.visibility(playing: true, overControls: window.isKeyWindow && (controls.bounds.contains(pointer) || overBar), fullScreen: fullScreen, idle: idle)
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
