@@ -356,6 +356,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         loading.stopAnimation(nil)
         set(image)
         canvas.setAccessibilityLabel(urls[index].lastPathComponent)
+        updateButtons()
         changed()
     }
 
@@ -368,6 +369,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         message.stringValue = String(localized: "Can’t open this image. It may be damaged or in a format macOS doesn’t support.")
         message.isHidden = false
         zoomButton.title = ""
+        updateButtons()
         canvas.window?.invalidateCursorRects(for: canvas)
     }
 
@@ -542,6 +544,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         slideshowButton.isHidden = !many
         previousButton.isEnabled = ImageList.step(index, by: -1, count: urls.count, wrap: false) != nil
         nextButton.isEnabled = ImageList.step(index, by: 1, count: urls.count, wrap: false) != nil
+        for button in [rotateButton, zoomOutButton, zoomInButton, zoomButton] { button.isEnabled = probe != nil }
         let label = slideshow == nil ? String(localized: "Start Slideshow") : String(localized: "Stop Slideshow")
         slideshowButton.image = NSImage(systemSymbolName: slideshow == nil ? "play.square.stack" : "pause.fill", accessibilityDescription: label)
         slideshowButton.setAccessibilityLabel(label)
