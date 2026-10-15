@@ -1,7 +1,7 @@
 pikapik - Mac Tools: information for App Review (Guideline 2.1)
 
 1. Screen recording
-Attached in App Review Information; it shows each main tool and permission prompt.
+Attached: a MacBook Pro with the latest macOS, from launch through the typical flow and each tool below.
 
 2. Purpose and audience
 pikapik is a free menu-bar app that fixes small everyday Mac annoyances, for Mac users who use a mouse, type in two languages, play games or want quick Finder actions. A small pet walks on the desktop.
@@ -14,21 +14,21 @@ No account or sample files are needed (any photo or video works). Settings opens
 - Keyboard, with two input sources such as ABC and Russian. Switch language: hold Option, tap Shift. Fix Wrong Keyboard Layout: select "ghbdtn" (for "привет"), then Services > Fix Wrong Keyboard Layout, or turn on its shortcut and press ⌃⇧Space; or turn on Fix words as you type, type ghbdtn, Space. Home and End: an event tap sees only those keys and posts ⌘←/⌘→ (CGEvent); nothing is kept.
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app.
 - Protect quitting and closing: ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
-- Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move. Archives: right-click an archive, Extract; right-click files, Create Archive…; Space previews. The extensions use only user-picked folders and built-in tar and ditto; jobs keep the Mac awake until done.
-- Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's read-only DefaultShortcutsTable.xml; an event tap keeps the pointer in the game's display, a few points from screen corners.
-No private API or new entitlement.
-Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, Fix Wrong Keyboard Layout and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never pastes into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key), a back or forward swipe and Backspace plus the fixed word as you type.
+- Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder, the only place they write. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move.
+- Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's DefaultShortcutsTable.xml; an event tap keeps the pointer in the game's display, off hot corners.
+No private API. Entitlements: sandbox, network client, user-selected files, bookmarks, audio input (App Volume's taps; no microphone).
+Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow; Show FPS: a line under it) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, Fix Wrong Keyboard Layout and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never pastes into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key), a back or forward swipe and Backspace plus the fixed word as you type.
 
 4. External services
 Only Speed Test: speed.cloudflare.com, when the user starts a check; no personal data. No accounts, analytics, ads, tracking, payment processors or AI services.
 
 5. Regions
-The same in every region; 23 languages.
+No regional differences; 23 languages.
 
 6. Regulated industry or third-party material
-Not applicable.
+None; no documents are needed.
 
-Other: free, no in-app purchases (the About tip section stays hidden); Open at Login is off by default; no data is collected (privacy manifest); Pet clothes unlock with awards, nothing is sold.
+Other: free, no in-app purchases; Open at Login is off by default; no data is collected (privacy manifest); Pet clothes unlock with awards, nothing is sold.
 
 — конец текста для App Store Connect —
 
@@ -64,7 +64,7 @@ Shown only on Macs with a battery. It reads the battery's condition, maximum cap
 In the App Store version Temperature shows the macOS thermal state (ProcessInfo.thermalState) and what it means for speed. On a Mac with a battery it also shows the battery temperature, read from the AppleSmartBattery entries in the I/O Registry, like the Battery page. It reads no other sensors.
 
 ### Speed Test
-Settings > Speed Test measures download and upload speed with https://speed.cloudflare.com through an ephemeral URLSession, so no cookies or cache are kept. The caption says "Takes about 15 seconds. The check uses speed.cloudflare.com." A check starts only from Check Speed, from Check on the Speed Test card in the menu-bar menu (hidden until the user adds it) or from a pikapik://speed-test link the user opens. Only the last result is kept, in the app's preferences on this Mac.
+Settings > Speed Test measures download and upload speed with https://speed.cloudflare.com through an ephemeral URLSession, so no cookies or cache are kept. The caption says "Takes about 15 seconds. The check uses speed.cloudflare.com." A check starts only from Check Speed, from Check on the Speed Test card in the menu-bar menu (hidden until the user adds it) or from a pikapik-store://speed-test link the user opens. Only the last result is kept, in the app's preferences on this Mac.
 
 ### App Volume
 Settings > Sound, macOS 14.2 and later (hidden on 14.0 and 14.1), off by default: a volume slider and a mute button for each app that plays sound. It needs System Audio Recording to change the volume of one app without touching the others. For an app whose slider is below 100% or that is muted, the app creates a private Core Audio process tap on that app only (AudioHardwareCreateProcessTap) and plays the same sound, scaled by the slider, to the output device the app was using; an app left at 100% gets no tap. The sound is processed on the fly in memory and is never recorded, stored, logged or sent anywhere. The entitlement com.apple.security.device.audio-input is there only so the sandboxed app can read other apps' sound through these system process taps. The microphone is never opened, and the app has no microphone usage description. The system prompt shows NSAudioCaptureUsageDescription: "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved."
@@ -101,6 +101,7 @@ Settings > Keyboard, off by default. When the user turns this on, the app uses a
 Settings > Games. It reads the user's system keyboard shortcuts with the public Carbon API CopySymbolicHotKeys and Apple's read-only DefaultShortcutsTable.xml in /System. It needs no new entitlement and calls no private API. It keeps the pointer inside the game's display through a Quartz event tap that the user enables in Accessibility. In the App Store version it doesn't touch Dock preferences; it keeps the pointer a few points away from the screen corners so that hot corners aren't triggered. After the Mac wakes from sleep or the user switches back to their account, Game Mode checks the front app again and turns itself back on.
 
 ### Archives in Finder
+Only in a package built with the Archive and Preview profiles; without them scripts/appstore.sh leaves both extensions out, Settings > Finder has no Archives row and the app opens no archives.
 Settings > Finder. The Archive and Quick Look extensions only read and write files in folders the user picked; they use macOS's built-in /usr/bin/tar and ditto inside the app sandbox and download or run no other code. Only ZIP can have a password; it is passed on stdin, never on the command line. While a job runs, the app holds one ProcessInfo activity (idle system sleep disabled; the display may still sleep) and lets it go when the queue is empty or a prompt waits.
 - To try it: right-click an archive in Finder and choose Extract; right-click files and choose Create Archive…; select an archive and press Space to look inside.
 
@@ -138,6 +139,7 @@ These features need to look inside other apps' windows, type into or control oth
 - Ports, the list of which program holds which port: the App Sandbox doesn't show it.
 - Turning background tasks off and on directly, from Background Tasks.
 - Keep the Dock on one display.
+- The media player and Middle click.
 - Temperature readings of the processor, graphics, memory, storage and Wi-Fi.
 - Keep Awake with the lid closed.
 - The pet finding the Dock icons through Accessibility.
