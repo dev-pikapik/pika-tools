@@ -1258,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "التحسينات";
 "Info" = "معلومات";
+"Another copy of pikapik is in charge" = "نسخة أخرى من pikapik هي المسؤولة الآن";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "لا تغيّر هذه النسخة أي شيء في جهاز Mac، وتتولى الأمر عند إغلاق النسخة الأخرى.";
+"Make This Copy the Main One" = "اجعل هذه النسخة هي الرئيسية";

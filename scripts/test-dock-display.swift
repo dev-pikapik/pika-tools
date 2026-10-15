@@ -26,8 +26,9 @@ struct TestDockDisplay {
         precondition(plan(false, nil) == (nil, nil, false))
         precondition(plan(false, false) == (false, nil, false))
         precondition(plan(false, true) == (true, nil, false))
-        precondition(plan(false, nil, owned: true, before: true) == (true, nil, false))
-        precondition(plan(false, true, owned: true, before: nil) == (nil, nil, false))
+        precondition(plan(false, nil, owned: true, before: true) == (nil, nil, false))
+        precondition(plan(false, true, owned: true, before: nil) == (true, nil, false))
+        precondition(plan(false, true, owned: true, before: false) == (true, nil, false))
         print("off: the key is left alone unless pikapik set it, and the Dock restarts only on a real change: ok")
 
         let side = ["a": CGPoint(x: 0, y: 0), "b": CGPoint(x: 1920, y: -120), "c": CGPoint(x: -1440, y: 60)]

@@ -4,7 +4,7 @@ import CoreGraphics
 enum DockDisplaySwitch {
     static func plan(on: Bool, current: Bool?, owned: Bool, before: Bool?) -> (value: Bool?, before: Bool?, restart: Bool) {
         let old = owned ? before : current
-        let value = on ? false : old
+        let value = on ? false : (owned && current != false ? current : old)
         return (value, on ? old : nil, (value ?? true) != (current ?? true))
     }
 }

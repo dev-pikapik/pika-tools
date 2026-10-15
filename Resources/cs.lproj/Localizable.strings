@@ -1258,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Vylepšení";
 "Info" = "Informace";
+"Another copy of pikapik is in charge" = "Řízení má teď jiná kopie pikapik";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Tato kopie na Macu nic nemění a převezme řízení, až se druhá kopie zavře.";
+"Make This Copy the Main One" = "Udělat z této kopie hlavní";

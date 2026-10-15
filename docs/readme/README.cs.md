@@ -445,6 +445,8 @@ Na každé stránce je dole tlačítko **Obnovit výchozí…**. Nejdřív se ze
 
 **Synchronizovat nastavení přes iCloud** udrží pikapik stejné na všech vašich Macích. Nastavení jsou ve složce pikapik na iCloud Drive a vyhrává poslední změna. Ve výchozím stavu je vypnuto a vyžaduje zapnutý iCloud Drive. Oprávnění se nesynchronizují: každý Mac si o ně řekne sám.
 
+**Jedna hlavní kopie.** Pokud jsou současně otevřené dvě kopie pikapik, například ta z webu a ta z App Storu, na Macu cokoli mění jen ta, kterou jste otevřeli naposledy. Druhá ukáže krátkou zprávu s tlačítkem **Udělat z této kopie hlavní** a převezme řízení, až se hlavní kopie zavře. Kopie, která přestane být hlavní, vrátí vše, co změnila.
+
 </details>
 
 <details>

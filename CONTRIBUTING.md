@@ -88,6 +88,12 @@ swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockDisplaySwitch.swif
 swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockHideMigration.swift scripts/test-dock-hide-migration.swift -o build/test-dock-hide-migration && build/test-dock-hide-migration
 ```
 
+Only one copy of pikapik acts on the Mac. Copies of the same family (the website and App Store builds) pick the one that started last as the main copy: it is the only one that runs event taps and writes settings, and any other copy stays passive and shows a single screen with a button to take over. When the main copy quits or loses the lead, it puts back what it changed, and the previous copy takes over. Features that change a system switch keep the original in an `OriginalValue` entry that is written once and is put back only while the switch still holds our value.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
+```
+
 Changing a hot corner from the Games page remembers the first action and puts it back on request, and a change to the same action writes nothing, so the Dock restarts only on a real change.
 
 ```bash

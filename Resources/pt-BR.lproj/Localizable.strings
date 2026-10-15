@@ -1258,3 +1258,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Melhorias";
 "Info" = "Informações";
+"Another copy of pikapik is in charge" = "Outra cópia do pikapik está no comando";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Esta cópia não altera nada no Mac e assume quando a outra cópia for fechada.";
+"Make This Copy the Main One" = "Tornar esta cópia a principal";

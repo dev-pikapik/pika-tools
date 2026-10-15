@@ -55,7 +55,7 @@ final class QuitOnCloseTool: Tool {
 
     func refresh() {
         stop()
-        guard isEnabled, AXIsProcessTrusted(), Permissions.shared.inputMonitoring else { return }
+        guard isEnabled, MainCopy.canAct, AXIsProcessTrusted(), Permissions.shared.inputMonitoring else { return }
         let center = NSWorkspace.shared.notificationCenter
         tokens = [
             center.addObserver(forName: NSWorkspace.didLaunchApplicationNotification, object: nil, queue: .main) { [weak self] note in

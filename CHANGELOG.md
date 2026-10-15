@@ -5,6 +5,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.51.1] - Unreleased
 
 ### Added
+- One main copy: when two copies of pikapik are open, such as the website one and the App Store one, only the one opened last changes anything on your Mac, so what Settings shows now matches what the Mac really has. The other copy puts back what it changed, hides its menu bar icon and shows a short note in Settings with a Make This Copy the Main One button, and it takes over when the main copy quits. Quitting or removing pikapik now also puts back Hide desktop icons, Show hidden files, hot corners, Animations and Repeat a held key, and the Animations page shows the real state of the Mac.
 - Player, website version: it now behaves like QuickTime Player. On pause, ← and → step one frame; while playing they jump 5 seconds (⇧← and ⇧→ always do), J and L jump 10, K plays and pauses, , and . step a frame, ⌥← and ⌥→ go to the start and the end, M mutes, ↑ and ↓ change the volume. Scroll up or down for volume and sideways (or hold Shift and scroll) to skip; a light touch does nothing. Every key has the same menu item.
 - Player, website version: a new Speed menu with 0.5×, 0.75×, 1×, 1.25×, 1.5× and 2×, with the pitch unchanged. ⌘← and ⌘→ (or [ and ]) change the speed, ⌫ goes back to 1×. The speed stays when you skip.
 - Player, website version: Save Frame… (S) saves the picture on the screen as a PNG named after the video and the time. The player can write a file only where you choose in the Save panel.

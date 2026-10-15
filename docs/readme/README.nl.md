@@ -445,6 +445,8 @@ Elke pagina heeft onderaan een knop **Herstel standaardinstellingen…**. Die vr
 
 **Instellingen synchroniseren met iCloud** houdt pikapik op al je Macs hetzelfde. De instellingen staan in de map pikapik in iCloud Drive, en de meest recente wijziging wint. Standaard uit, en iCloud Drive moet aanstaan. Toestemmingen worden niet gesynchroniseerd: elke Mac vraagt er zelf om.
 
+**Eén hoofdkopie.** Als twee kopieën van pikapik tegelijk openstaan, bijvoorbeeld die van de website en die uit de App Store, verandert alleen de laatst geopende iets op je Mac. De andere toont een korte melding met de knop **Maak deze kopie de hoofdkopie** en neemt het over zodra de hoofdkopie wordt afgesloten. Een kopie die niet langer de hoofdkopie is, zet terug wat ze had veranderd.
+
 </details>
 
 <details>

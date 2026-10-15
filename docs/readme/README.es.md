@@ -445,6 +445,8 @@ Cada página tiene abajo un botón **Restaurar valores por omisión…**. Primer
 
 **Sincronizar ajustes con iCloud** mantiene pikapik igual en todos tus Mac. Los ajustes viven en la carpeta pikapik de iCloud Drive y gana el cambio más reciente. Está desactivado por omisión y necesita iCloud Drive activado. Los permisos no se sincronizan: cada Mac los pide por su cuenta.
 
+**Una sola copia principal.** Si hay dos copias de pikapik abiertas a la vez, por ejemplo la del sitio web y la de la App Store, solo la que abriste en último lugar cambia algo en tu Mac. La otra muestra una nota breve con el botón **Convertir esta copia en la principal** y toma el relevo cuando la copia principal se cierra. Una copia que deja de ser la principal devuelve lo que había cambiado.
+
 </details>
 
 <details>

@@ -26,7 +26,8 @@ final class KeyRepeatTool: Tool {
     }
 
     func refresh() {
-        if isEnabled { Self.write(false as CFBoolean) }
+        guard isEnabled else { return }
+        MainCopy.canAct ? Self.enable() : Self.putBack()
     }
 
     static func uninstall() {
@@ -42,6 +43,13 @@ final class KeyRepeatTool: Tool {
             defaults.set((CFPreferencesCopyValue(key, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost) as? Bool).map { [$0] } ?? [], forKey: savedKey)
         }
         write(false as CFBoolean)
+    }
+
+    private static func putBack() {
+        guard let saved = UserDefaults.standard.array(forKey: savedKey) as? [Bool],
+              CFPreferencesCopyValue(key, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesAnyHost) as? Bool == false
+        else { return }
+        write(saved.first.map { $0 as CFBoolean })
     }
 
     private static func restore() {
