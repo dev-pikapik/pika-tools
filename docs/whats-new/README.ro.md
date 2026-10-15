@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Fișierele video pe care QuickTime nu le deschide se redau acum
+
+<sub>1.51.0 · 15 octombrie 2026</sub>
+
+În versiunea de pe site, fișierele video MKV, WebM, AVI, WMV, FLV și altele pe care QuickTime nu le deschide se redau acum în pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Fă clic dreapta pe un fișier video și alege Deschide cu › pikapik Player, sau apasă Deschide video… în Setări › Player. Videoclipul se redă într-o fereastră proprie: bara de spațiu redă și pune pe pauză, ← și → sar 5 secunde, ↑ și ↓ schimbă volumul, iar F trece pe ecran complet.
+
+Playerul este o aplicație mică, separată. Vede doar fișierele video pe care le deschizi, nu poate ieși pe internet și nu cere nicio permisiune. Aplicația care îți deschide fișierele video în mod implicit rămâne aceeași. Subtitrările nu sunt încă acceptate.
+
+**Încearcă:** Setări › Player
+
+---
+
 ## <a id="v1.50.3"></a>Meniurile colțurilor active și ale afișajului principal funcționează acum
 
 <sub>1.50.3 · 15 octombrie 2026</sub>

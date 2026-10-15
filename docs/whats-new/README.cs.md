@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Videa, která QuickTime neotevře, se teď přehrají
+
+<sub>1.51.0 · 15. října 2026</sub>
+
+Ve verzi z webu se MKV, WebM, AVI, WMV, FLV a další videa, která QuickTime neotevře, teď přehrají v pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klikněte pravým tlačítkem na video a vyberte Otevřít v aplikaci › pikapik Player, nebo klikněte na Otevřít video… v Nastavení › Přehrávač. Video se přehraje ve vlastním okně: mezerník spouští a pozastavuje, ← a → posunou o 5 sekund, ↑ a ↓ mění hlasitost a F přepne na celou obrazovku.
+
+Přehrávač je malá samostatná aplikace. Vidí jen videa, která otevřete, nemůže na internet a nežádá o žádná oprávnění. Aplikace, ve které se vaše videa standardně otevírají, zůstává stejná. Titulky zatím nejsou podporované.
+
+**Vyzkoušejte:** Nastavení › Přehrávač
+
+---
+
 ## <a id="v1.50.3"></a>Nabídky aktivních rohů a hlavního monitoru teď fungují
 
 <sub>1.50.3 · 15. října 2026</sub>
