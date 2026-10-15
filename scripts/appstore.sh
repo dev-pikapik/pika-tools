@@ -33,6 +33,7 @@ for EXT in Archive Preview; do
     else
         echo "$NAME is not set: leaving $EXT.appex out of the package." >&2
         rm -rf "$APP/Contents/PlugIns/$EXT.appex"
+        [ "$EXT" != Archive ] || /usr/libexec/PlistBuddy -c "Delete :CFBundleDocumentTypes" "$APP/Contents/Info.plist"
     fi
 done
 

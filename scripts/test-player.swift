@@ -110,6 +110,40 @@ enum TestPlayer {
         precondition(PlayerTime.snapshotName("Film.mkv", at: 83.9) == "Film 1.23.png" && PlayerTime.snapshotName("a.b.webm", at: 3725) == "a.b 1.02.05.png")
         print("a saved frame is named after the video and the time: ok")
 
+        let delay = PlayerChrome.hideDelay
+        let rule: [(Bool, Bool, Bool, Double, Bool, Bool)] = [
+            (true, false, false, 0, true, true), (true, false, false, delay - 0.1, true, true), (true, false, false, delay, false, true), (true, false, true, delay, false, false),
+            (false, false, false, 60, true, true), (false, false, true, 60, true, true), (true, true, true, 60, true, true), (true, false, true, .infinity, false, false),
+        ]
+        for (playing, over, full, idle, controls, cursor) in rule {
+            let seen = PlayerChrome.visibility(playing: playing, overControls: over, fullScreen: full, idle: idle)
+            precondition(seen == (controls, cursor), "playing \(playing), over \(over), full screen \(full), idle \(idle) → \(seen)")
+        }
+        precondition(delay == 2.5)
+        print("the panel stays on pause and under the pointer, hides after 2.5 s of playing, and takes the cursor with it only in full screen: ok")
+
+        let total = 600.0
+        precondition(PlayerThumbnail.bucket(0, duration: total) == 0 && PlayerThumbnail.bucket(total / 2, duration: total) == 50 && PlayerThumbnail.bucket(total, duration: total) == 99)
+        precondition(PlayerThumbnail.bucket(-3, duration: total) == 0 && PlayerThumbnail.bucket(9999, duration: total) == 99 && PlayerThumbnail.bucket(.nan, duration: total) == 0)
+        precondition(PlayerThumbnail.bucket(5, duration: 0) == 0 && PlayerThumbnail.bucket(5, duration: .nan) == 0)
+        precondition(PlayerThumbnail.time(of: 0, duration: total) == 3 && PlayerThumbnail.time(of: 99, duration: total) == 597)
+        precondition((0..<PlayerThumbnail.buckets).allSatisfy { PlayerThumbnail.bucket(PlayerThumbnail.time(of: $0, duration: total), duration: total) == $0 }, "a picture is taken inside its own slot")
+        print("the position maps to one of 100 slots, and each picture is taken in the middle of its slot: ok")
+
+        precondition(PlayerThumbnail.size(for: CGSize(width: 1920, height: 1080)) == CGSize(width: 160, height: 90))
+        precondition(PlayerThumbnail.size(for: CGSize(width: 640, height: 480)) == CGSize(width: 120, height: 90))
+        precondition(PlayerThumbnail.size(for: CGSize(width: 1080, height: 1920)) == CGSize(width: 50, height: 90))
+        precondition(PlayerThumbnail.size(for: CGSize(width: 3840, height: 100)) == CGSize(width: 160, height: 4))
+        precondition(PlayerThumbnail.size(for: .zero) == PlayerThumbnail.box)
+        print("a picture fits into 160 × 90 and keeps the shape of the video: ok")
+
+        let have: Set<Int> = [10, 40, 41]
+        precondition(PlayerThumbnail.nearest(to: 41, ready: have.contains) == 41 && PlayerThumbnail.nearest(to: 45, ready: have.contains) == 41)
+        precondition(PlayerThumbnail.nearest(to: 20, ready: have.contains) == 10 && PlayerThumbnail.nearest(to: 99, ready: have.contains) == 41 && PlayerThumbnail.nearest(to: 0, ready: have.contains) == 10)
+        precondition(PlayerThumbnail.nearest(to: 25, ready: have.contains) == 10, "a tie takes the earlier picture")
+        precondition(PlayerThumbnail.nearest(to: 5, ready: { _ in false }) == nil)
+        print("with no exact picture ready the nearest one is shown, or none: ok")
+
         let extensions = PlayerFormats.extensions
         precondition(Set(extensions).count == extensions.count, "an extension is listed twice")
         precondition(PlayerFormats.plays(URL(fileURLWithPath: "/a/Film.MKV")) && !PlayerFormats.plays(URL(fileURLWithPath: "/a/notes.txt")))

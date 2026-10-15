@@ -21,7 +21,7 @@ struct PlayerPage: View {
             }
             Section("Formats") {
                 VStack(spacing: 6) {
-                    Button(action: { Self.videos.set(!Self.videos.isOn) }) {
+                    Button(action: { if MainCopy.canAct { Self.videos.set(!Self.videos.isOn) } }) {
                         (Self.videos.isOn ? Text("Restore Previous Apps") : Text("Open All in pikapik")).frame(minWidth: 140)
                     }
                     .controlSize(.large)
@@ -40,7 +40,7 @@ struct PlayerPage: View {
                     ForEach(PlayerFormats.all, id: \.name) { format in
                         let types = PlayerFormats.types(of: format.extensions)
                         let isOn = Self.videos.isOn(types)
-                        Button(action: { Self.videos.set(!isOn, for: types) }) {
+                        Button(action: { if MainCopy.canAct { Self.videos.set(!isOn, for: types) } }) {
                             HStack(spacing: 5) {
                                 Text(verbatim: format.name)
                                     .font(.callout.weight(.medium))
