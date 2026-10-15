@@ -281,6 +281,12 @@ Pictures open in the same app: `Helper/Player/ImageDecoder.swift` reads them wit
 swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/ImageLogic.swift Helper/Player/ImageDecoder.swift scripts/test-images.swift -o build/test-images && build/test-images
 ```
 
+Remembered folders are cleaned by `FolderAccess.prune` (`Helper/Player/FolderAccess.swift`): at launch and on every new save it drops entries whose folder is deleted, in the Trash or no longer opens, and keeps those of an unplugged disk. The test saves bookmarks to temporary folders, deletes and trashes some, and checks that only the live entry is left (it writes only its own preferences domain and removes the trashed folder from the Trash again):
+
+```bash
+swiftc -parse-as-library Helper/Player/FolderAccess.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-folder-access.swift -o build/test-folder-access && build/test-folder-access
+```
+
 The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.swift`) makes the content run under a transparent, title-less bar, hides the three window buttons and a dark gradient under them together with the control panel, and is the one call any other player window makes. Its test opens a real window without showing it:
 
 ```bash

@@ -22,6 +22,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        FolderAccess.prune()
         DispatchQueue.main.async {
             if self.players.isEmpty && self.pictures.isEmpty { self.show(nil) }
         }
