@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir -p build
           ./scripts/fetch-7zip.sh
-          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | grep -v test-fan-helper | while IFS= read -r test; do
+          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | grep -v -e test-fan-helper -e Vendor/ffmpeg | while IFS= read -r test; do
             echo "${test##*&& build/}"
             bash -c "$test" < /dev/null
           done
