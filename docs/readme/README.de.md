@@ -266,6 +266,13 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <br>ghbdtn statt привет getippt? Drück die Leertaste, und schon ist es korrigiert.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Mittelklick auf dem Trackpad</b>
+<br>Tippe mit drei Fingern, um einen Link in einem neuen Tab zu öffnen – wie mit der mittleren Maustaste.
+</td>
+</tr></tbody>
 </table>
 
 ## Mehr erfahren
@@ -316,6 +323,8 @@ Manche Apps und Spiele zählen das Scrollen in genauen Pixeln: Stell dafür dies
 **Seitentasten für Zurück und Vorwärts.** Die Maustasten 4 und 5 gehen im Finder, in Safari und in anderen Apple-Apps sowie in vielen anderen Programmen zurück und vorwärts, genau wie eine Wischgeste auf dem Trackpad. Apps, die diese Tasten selbst verarbeiten, bekommen sie unverändert. Sind sie bei deiner Maus vertauscht, schalte **Seitentasten tauschen** ein. Standardmäßig aus.
 
 **Eine Maustaste blendet die aktuelle App aus.** Schalte unter Einstellungen › Maus **Maustaste blendet die aktuelle App aus** ein und drücke die Taste, die du dafür nutzen willst, etwa die mittlere Taste oder eine Seitentaste. Danach blendet ein Druck die App im Vordergrund aus, genau wie ⌘H: Die App läuft weiter, und ein Klick auf ihr Symbol im Dock holt sie zurück. Während du mit eingeschaltetem Spielmodus spielst, funktioniert die Taste im Spiel wie gewohnt. Standardmäßig aus.
+
+**Mittelklick auf dem Trackpad.** Tippe oder klicke mit drei Fingern, und das Trackpad wirkt wie die mittlere Maustaste: In den meisten Browsern öffnet das einen Link in einem neuen Tab oder schließt einen Tab. Statt drei kannst du auch vier Finger wählen. Zum Tippen muss **Klick durch Tippen** in Systemeinstellungen › Trackpad eingeschaltet sein. Ist dort für „Nachschlagen & Datenerkennung“ das Tippen mit drei Fingern eingestellt, können drei Finger nur klicken, und ist „Mit drei Fingern bewegen“ eingeschaltet, wähle vier Finger. Die Zeile **Finger** in den Einstellungen zeigt, was auf deinem Mac funktioniert. Die Maus bleibt, wie sie ist. Das braucht die Erlaubnisse **Bedienungshilfen** und **Eingabeüberwachung** und fehlt in der Version aus dem Mac App Store. Standardmäßig aus.
 
 **Beenden, wenn das letzte Fenster geschlossen wird.** Schließt du das letzte Fenster einer App, wird die App beendet. Der Finder bleibt offen, ebenso Apps mit Fenstern auf anderen Schreibtischen oder im Dock. Du kannst Apps festlegen, die so nie beendet werden sollen. Standardmäßig aus.
 
@@ -418,7 +427,7 @@ Zeigt, wie schnell dein Internet gerade ist. Klick auf **Geschwindigkeit prüfen
 - **Ports**: welches Programm welchen Port belegt, seine Adressen und Details sowie eine Taste, die den Port freimacht.
 - **Ton**: App-Lautstärke, ein Regler und eine Taste zum Stummschalten für jede App, die Ton abspielt.
 - **Tastatur**: Sprachwechsel, Tastenwiederholung, Home und End, Korrektur des falschen Layouts.
-- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten, eine Taste zum Ausblenden der aktuellen App.
+- **Maus**: Zeigerbeschleunigung und Zeigerbewegung, zeilenweises Scrollen, Scrollrichtung, Seitentasten, eine Taste zum Ausblenden der aktuellen App, Mittelklick auf dem Trackpad.
 - **Fenster**: Vergrößern mit dem grünen Knopf (mit einer Liste von Ausnahmen), Schutz für ⌘Q und ⌘W und Beenden nach dem letzten Fenster (ebenfalls mit einer Liste von Ausnahmen).
 - **Dock**: Mit einem Klick im Dock ablegen oder ausblenden und Dock auf einem Display halten.
 - **Finder**: neue Datei, kleinere Kopie, Umwandeln und Archive, Öffnen mit der Eingabetaste, Ausschneiden mit ⌘X, Löschen mit ⌫, Ausblenden der Schreibtischsymbole und Einblenden versteckter Dateien.

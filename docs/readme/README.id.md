@@ -266,6 +266,13 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <br>Mengetik ghbdtn alih-alih привет? Tekan Spasi dan langsung diperbaiki.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Klik tengah di trackpad</b>
+<br>Ketuk dengan tiga jari untuk membuka tautan di tab baru, seperti tombol tengah tetikus.
+</td>
+</tr></tbody>
 </table>
 
 ## Detail lainnya
@@ -316,6 +323,8 @@ Beberapa app dan game menghitung guliran dalam piksel yang tepat: untuk itu, uba
 **Tombol samping untuk kembali dan maju.** Tombol tetikus 4 dan 5 berfungsi untuk mundur dan maju di Finder, Safari, dan app Apple lainnya, juga di banyak app lain, sama seperti usapan di trackpad. App yang menangani tombol ini sendiri menerimanya apa adanya. Jika posisi keduanya terbalik di tetikus Anda, nyalakan **Tukar tombol samping**. Mati secara default.
 
 **Tombol tetikus menyembunyikan app saat ini.** Nyalakan **Sembunyikan app saat ini dengan tombol tetikus** di Pengaturan › Tetikus, lalu tekan tombol yang ingin Anda gunakan, misalnya tombol tengah atau tombol samping. Setelah itu, sekali tekan menyembunyikan app yang ada di depan, persis seperti ⌘H: app tetap berjalan, dan klik ikonnya di Dock akan memunculkannya kembali. Selama Anda bermain dengan Mode Game aktif, tombol itu bekerja di dalam game seperti biasa. Mati secara default.
+
+**Klik tengah di trackpad.** Ketuk atau klik dengan tiga jari, dan trackpad bekerja seperti tombol tengah tetikus: di sebagian besar browser, itu membuka tautan di tab baru atau menutup tab. Anda juga bisa memilih empat jari. Agar ketukan berfungsi, **Ketuk untuk mengeklik** harus menyala di Pengaturan Sistem › Trackpad. Jika “Cari tahu & pendeteksi data” di sana diatur ke ketuk dengan tiga jari, tiga jari hanya bisa mengeklik, dan jika “Seret Tiga Jari” menyala, pilih empat jari. Baris **Jari** di Pengaturan menunjukkan apa yang berfungsi di Mac Anda. Tetikus tidak berubah. Fitur ini memerlukan izin **Aksesibilitas** serta **Pemantauan Input**, dan tidak ada di versi Mac App Store. Mati secara default.
 
 **Keluar saat jendela terakhir ditutup.** Tutup jendela terakhir sebuah app, dan app akan keluar. Finder tetap terbuka, begitu juga app yang punya jendela di desktop lain atau di Dock. Anda bisa membuat daftar app yang tidak boleh keluar dengan cara ini. Mati secara default.
 
@@ -418,7 +427,7 @@ Buka pengaturan dari menu dengan **Pengaturan…** atau ⌘, atau buka lagi pika
 - **Port**: program mana yang memakai port mana, alamat dan detailnya, serta tombol untuk membebaskan port.
 - **Suara**: volume app, slider dan tombol bisu untuk setiap app yang memutar suara.
 - **Papan Ketik**: penggantian bahasa, pengulangan tombol, Home dan End, perbaikan tata letak yang salah.
-- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping, tombol yang menyembunyikan app saat ini.
+- **Tetikus**: akselerasi penunjuk dan kecepatan melacak, gulir per baris, arah gulir, tombol samping, tombol yang menyembunyikan app saat ini, klik tengah di trackpad.
 - **Jendela**: memperbesar jendela dengan tombol hijau (dengan daftar pengecualian), perlindungan ⌘Q dan ⌘W, serta keluar saat jendela terakhir ditutup (dengan daftar pengecualian).
 - **Dock**: meminimalkan atau menyembunyikan dengan klik di Dock dan mempertahankan Dock di satu layar.
 - **Finder**: file baru, salinan lebih kecil, konversi, dan arsip, buka dengan Return, potong dengan ⌘X, hapus dengan ⌫, sembunyikan ikon desktop, dan tampilkan file tersembunyi.

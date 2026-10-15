@@ -779,10 +779,8 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Edition:** Website only (App Store: cut — needs to read gestures).
 
-**Status:** Pending — PR #70: new switch Middle click on the trackpad with the Fingers row; not merged yet.
-
 **Test:**
-1. (once PR #70 is merged, Website) Turn it on; on a link in Safari tap with three fingers → opens in a new tab; on a tab tap with three fingers → closes it. Pick Four fingers and repeat.
+1. (Website) Turn it on; on a link in Safari tap with three fingers → opens in a new tab; on a tab tap with three fingers → closes it. Pick Four fingers and repeat.
 2. Open the Fingers row with three-finger drag on, with Look up on a three-finger tap on, and with Tap to click off → the row says what works.
 3. Scrolling, pinch, swipes between pages and Mission Control work as before.
 4. With Input Monitoring off → no system dialog by itself; the rows look half-grey and a click asks for the permission and opens Permissions.

@@ -266,6 +266,13 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <br>Typed ghbdtn instead of привет? Press Space and it’s fixed.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/middle-click-dark.png"><img src="docs/media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Middle click on the trackpad</b>
+<br>Tap with three fingers to open a link in a new tab, like the middle mouse button.
+</td>
+</tr></tbody>
 </table>
 
 ## Details
@@ -316,6 +323,8 @@ Some apps and games count scrolling in exact pixels: for them, switch the same s
 **Side buttons go back and forward.** Mouse buttons 4 and 5 go back and forward in Finder, Safari and other Apple apps and in many other apps, just like a swipe on the trackpad. Apps that handle these buttons themselves get them as they are. If your mouse has them the other way round, turn on **Swap the side buttons**. Off by default.
 
 **A mouse button hides the current app.** Turn on **Mouse button hides the current app** in Settings › Mouse and press the button you want to use, such as the middle button or a side button. One press then hides the app in front, just like ⌘H: the app keeps running, and a click on its icon in the Dock brings it back. While you play with Game Mode on, the button works in the game as usual. Off by default.
+
+**Middle click on the trackpad.** Tap or click with three fingers, and the trackpad works like the middle mouse button: in most browsers that opens a link in a new tab or closes a tab. You can choose four fingers instead. Tapping needs **Tap to click** in System Settings › Trackpad. If Look up there is set to a three-finger tap, three fingers can only click, and if three-finger drag is on, choose four fingers. The **Fingers** row in Settings says what works on your Mac. The mouse stays as it is. It needs **Accessibility** and **Input Monitoring** and is not in the Mac App Store version. Off by default.
 
 **Quit when the last window closes.** Close the last window of an app, and the app quits. Finder stays open, and so do apps with windows on other desktops or in the Dock. You can list apps that should never quit this way. Off by default.
 
@@ -418,7 +427,7 @@ Open Settings from the menu with **Settings…** or ⌘, or launch pikapik again
 - **Ports**: which program took which port, its addresses and details, and a button to free the port.
 - **Sound**: App Volume, a slider and a mute button for every app that plays sound.
 - **Keyboard**: language switch, key repeat, Home and End, fixing the wrong layout.
-- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app.
+- **Mouse**: pointer acceleration and tracking speed, scrolling by lines, scroll direction, side buttons, a button that hides the current app, middle click on the trackpad.
 - **Windows**: enlarge with the green button (with a list of exceptions), ⌘Q and ⌘W protection, quit on last window (with a list of exceptions).
 - **Dock**: minimize or hide with a click in the Dock and keep the Dock on one display.
 - **Finder**: new file, smaller copy, conversion and archives, Enter to open, ⌘X to cut, Delete to move to the Trash, hiding desktop icons and showing hidden files.
