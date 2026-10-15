@@ -59,15 +59,28 @@ jobs:
   tests:
     name: Tests
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
+
+      - name: Restore FFmpeg
+        id: ffmpeg
+        uses: actions/cache@v4
+        with:
+          path: Vendor/ffmpeg
+          key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
+
+      - name: Build FFmpeg
+        if: steps.ffmpeg.outputs.cache-hit != 'true'
+        run: |
+          brew install meson ninja nasm pkg-config
+          ./scripts/fetch-ffmpeg.sh
 
       - name: Run the tests from CONTRIBUTING.md
         run: |
           mkdir -p build
           ./scripts/fetch-7zip.sh
-          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | grep -v -e test-fan-helper -e Vendor/ffmpeg | while IFS= read -r test; do
+          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | grep -v -e test-fan-helper | while IFS= read -r test; do
             echo "${test##*&& build/}"
             bash -c "$test" < /dev/null
           done
