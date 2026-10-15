@@ -58,16 +58,33 @@ struct TestChromiumAXJournal {
             return .success
         }
         let gone = crashed.processIdentifier
+        let chrome: (pid_t) -> String? = { $0 == 100 || $0 == gone ? "com.google.Chrome" : nil }
         Switched.save([entry(100)], TextFocus.journalKey)
-        TextFocus.putBackAfterCrash(bundleID: { $0 == 100 ? "com.google.Chrome" : nil })
+        TextFocus.putBackAfterCrash(bundleID: chrome)
+        precondition(writes.isEmpty, "putBackAfterCrash must return before it writes")
         let owner = NSObject()
         TextFocus.watch(owner, front: nil)
         precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .success)
         precondition(writes == ["100 false [100]", "\(gone) true [\(gone)]"], "\(writes)")
-        print("the journal holds an app before its switch changes, and putting back finishes before a new switch: ok")
+        print("putting back runs off the main thread, the journal holds an app before its switch changes, and putting back finishes before a new switch: ok")
 
-        TextFocus.unwatch(owner)
-        precondition(Switched.load(TextFocus.journalKey).isEmpty && writes.count == 2)
-        print("switching off clears the journal: ok")
+        TextFocus.unwatch(owner, bundleID: chrome)
+        precondition(writes.count == 2, "unwatch must return before it writes")
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]", "\(gone) true [\(gone)]", "\(gone) false [\(gone)]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("switching off runs off the main thread and keeps each app in the journal until it is put back: ok")
+
+        var timeouts = 1
+        writes = []
+        TextFocus.write = { _, on, pid in
+            writes.append("\(pid) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            timeouts -= 1
+            return timeouts >= 0 ? .cannotComplete : .success
+        }
+        Switched.save([entry(100)], TextFocus.journalKey)
+        TextFocus.putBackAfterCrash(bundleID: chrome)
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]", "100 false [100]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("a put-back that times out is tried again, and the app stays in the journal until then: ok")
     }
 }

@@ -11,7 +11,8 @@ enum TextFocus {
     private static var woken: Set<pid_t> = []
     private static var enabled: [Switched] = [] { didSet { Switched.save(stale + enabled, journalKey) } }
     private static var stale: [Switched] = [] { didSet { Switched.save(stale + enabled, journalKey) } }
-    private static let puttingBack = DispatchGroup()
+    private static let running: (pid_t) -> String? = { NSRunningApplication(processIdentifier: $0)?.bundleIdentifier }
+    static let puttingBack = DispatchGroup()
     static let journalKey = "chromium-accessibility-original"
     static var write: (String, Bool, pid_t) -> AXError = { attribute, on, pid in
         let app = AXUIElementCreateApplication(pid)
@@ -38,15 +39,22 @@ enum TextFocus {
         }
     }
 
-    static func putBackAfterCrash(bundleID: (pid_t) -> String? = { NSRunningApplication(processIdentifier: $0)?.bundleIdentifier }) {
+    static func putBackAfterCrash(bundleID: (pid_t) -> String? = running) {
         lock.lock()
         stale = Switched.putBack(Switched.load(journalKey), bundleID: bundleID)
         let todo = stale
         lock.unlock()
+        writeBack(todo)
+    }
+
+    private static func writeBack(_ todo: [Switched]) {
         puttingBack.enter()
         DispatchQueue.global(qos: .utility).async {
             for entry in todo {
-                _ = write(entry.attribute, entry.before, entry.pid)
+                for _ in 0..<10 {
+                    if write(entry.attribute, entry.before, entry.pid) != .cannotComplete { break }
+                    Thread.sleep(forTimeInterval: 1)
+                }
                 lock.lock()
                 stale.removeAll { $0 == entry }
                 lock.unlock()
@@ -67,21 +75,18 @@ enum TextFocus {
         if let front { wake(front) }
     }
 
-    static func unwatch(_ owner: AnyObject? = nil) {
+    static func unwatch(_ owner: AnyObject? = nil, bundleID: (pid_t) -> String? = running) {
         lock.lock()
         if let owner { owners.remove(ObjectIdentifier(owner)) } else { owners.removeAll() }
         guard owners.isEmpty, let token = observer else { return lock.unlock() }
         observer = nil
-        let restore = enabled
         woken = []
+        let todo = Switched.putBack(enabled, bundleID: bundleID)
+        stale += todo
+        enabled = []
         lock.unlock()
         NSWorkspace.shared.notificationCenter.removeObserver(token)
-        for entry in restore where NSRunningApplication(processIdentifier: entry.pid)?.isTerminated == false {
-            _ = write(entry.attribute, entry.before, entry.pid)
-        }
-        lock.lock()
-        enabled.removeAll { restore.contains($0) }
-        lock.unlock()
+        writeBack(todo)
     }
 
     private static func wake(_ pid: pid_t) {
