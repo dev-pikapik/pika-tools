@@ -200,7 +200,7 @@ final class SettingsSync {
     }
 
     private func sync() {
-        guard isEnabled else { return }
+        guard isEnabled, MainCopy.canAct else { return }
         let remote = read()
         switch SettingsFile.merge(local: modified, remote: remote, device: device) {
         case .apply:

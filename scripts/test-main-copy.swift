@@ -12,7 +12,15 @@ struct TestMainCopy {
         MainCopyChoice.leader(me, among: MainCopyChoice.peers(of: me, in: running)).pid
     }
 
+    static let crashKey = "test-main-copy-crash", systemKey = "test-main-copy-system"
+
     static func main() {
+        if CommandLine.arguments.dropFirst().first == "crash" {
+            OriginalValue.save(OriginalValue.change(nil, current: false, to: true), crashKey)
+            UserDefaults.standard.set(true, forKey: systemKey)
+            _exit(0)
+        }
+
         let website = MainCopyChoice.websiteID, store = MainCopyChoice.appStoreID
         precondition(MainCopyChoice.family(website) == MainCopyChoice.family(store))
         precondition(MainCopyChoice.family("com.pikapik.e2e.tools.a") == MainCopyChoice.family("com.pikapik.e2e.tools.b"))
@@ -56,5 +64,23 @@ struct TestMainCopy {
         OriginalValue.save(nil, key)
         precondition(OriginalValue.load(key) == nil)
         print("the remembered original survives a restart and can be cleared: ok")
+
+        let defaults = UserDefaults.standard
+        defer { defaults.removeObject(forKey: crashKey); defaults.removeObject(forKey: systemKey) }
+        let crashed = Process()
+        crashed.executableURL = Bundle.main.executableURL
+        crashed.arguments = ["crash"]
+        try! crashed.run()
+        crashed.waitUntilExit()
+        CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication)
+        let current = defaults.bool(forKey: systemKey), saved = OriginalValue.load(crashKey)
+        precondition(current && saved == first)
+        precondition(OriginalValue.change(saved, current: current, to: true) == first)
+        let real = OriginalValue.putBack(saved, current: current)
+        precondition(real == false)
+        defaults.set(real, forKey: systemKey)
+        OriginalValue.save(nil, crashKey)
+        precondition(!defaults.bool(forKey: systemKey) && OriginalValue.load(crashKey) == nil)
+        print("after a crash the next launch keeps the real original and puts it back: ok")
     }
 }

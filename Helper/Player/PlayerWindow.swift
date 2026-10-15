@@ -8,6 +8,7 @@ final class VideoView: NSView {
     override var acceptsFirstResponder: Bool { true }
 
     override func keyDown(with event: NSEvent) {
+        controller?.showControls()
         guard let action = PlayerAction(key: event.charactersIgnoringModifiers ?? "", modifiers: event.modifierFlags), controller?.perform(action) == true else { return super.keyDown(with: event) }
     }
 
@@ -57,23 +58,63 @@ final class VideoView: NSView {
     override func accessibilityValue() -> Any? { controller?.state }
 }
 
+final class Scrubber: NSSlider {
+    var onHover: ((Double?) -> Void)?
+
+    override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        trackingAreas.forEach(removeTrackingArea)
+        addTrackingArea(NSTrackingArea(rect: .zero, options: [.mouseMoved, .mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self))
+    }
+
+    override func mouseMoved(with event: NSEvent) {
+        let knob = Double((cell as? NSSliderCell)?.knobThickness ?? 0), width = Double(bounds.width)
+        let x = Double(convert(event.locationInWindow, from: nil).x)
+        onHover?(max(0, min(1, (x - knob / 2) / max(width - knob, 1))))
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        onHover?(nil)
+    }
+}
+
 final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemValidation {
     static let volumeKey = "volume"
     private static let resumeStore = "resume"
     private let video = VideoView()
     private let message = NSTextField(labelWithString: String(localized: "Drop a video here"))
-    private let controls = NSVisualEffectView()
+    private let controls: NSView = {
+        if #available(macOS 26.0, *) {
+            let glass = NSGlassEffectView()
+            glass.style = .regular
+            glass.tintColor = NSColor.black.withAlphaComponent(0.5)
+            glass.cornerRadius = 12
+            return glass
+        }
+        let blur = NSVisualEffectView()
+        blur.material = .hudWindow
+        blur.blendingMode = .withinWindow
+        blur.state = .active
+        blur.wantsLayer = true
+        blur.layer?.cornerRadius = 12
+        blur.layer?.masksToBounds = true
+        return blur
+    }()
+    private let preview = ThumbnailPreview()
     private let playButton = NSButton()
     private let fullScreenButton = NSButton()
     private let speaker = NSImageView()
     private let speedLabel = NSTextField(labelWithString: "")
     private let elapsed = NSTextField(labelWithString: "0:00")
     private let remaining = NSTextField(labelWithString: "-0:00")
-    private let scrubber = NSSlider(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
+    private let scrubber = Scrubber(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
     private let volume = NSSlider(value: 1, minValue: 0, maxValue: 1, target: nil, action: nil)
     private var engine: Engine?
     private var observer: Any?
     private var hideTimer: Timer?
+    private var thumbnails: Thumbnails?
+    private var hovered: Double?
+    private var cursorHidden = false
     private var playing = false
     private var failed = false
     private var speed: Float = 1
@@ -119,18 +160,13 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         message.lineBreakMode = .byTruncatingTail
         message.setAccessibilityElement(false)
 
-        controls.material = .hudWindow
-        controls.blendingMode = .withinWindow
-        controls.state = .active
-        controls.wantsLayer = true
-        controls.layer?.cornerRadius = 12
-        controls.layer?.masksToBounds = true
+        controls.appearance = NSAppearance(named: .darkAqua)
 
         configure(playButton, "play.fill", String(localized: "Play"), #selector(playPause))
         configure(fullScreenButton, "arrow.up.left.and.arrow.down.right", String(localized: "Full Screen"), #selector(fullScreen))
         for label in [elapsed, remaining, speedLabel] {
             label.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
-            label.textColor = .secondaryLabelColor
+            label.textColor = .labelColor
             label.setAccessibilityElement(false)
         }
         scrubber.target = self
@@ -139,8 +175,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         scrubber.controlSize = .small
         scrubber.refusesFirstResponder = true
         scrubber.setAccessibilityLabel(String(localized: "Position"))
+        scrubber.onHover = { [weak self] in self?.hover($0) }
         speaker.image = NSImage(systemSymbolName: "speaker.wave.2.fill", accessibilityDescription: nil)
-        speaker.contentTintColor = .secondaryLabelColor
+        speaker.contentTintColor = .labelColor
         speedLabel.isHidden = true
         volume.target = self
         volume.action = #selector(changeVolume)
@@ -153,10 +190,11 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
-        controls.addSubview(row)
         for view in [message, controls, row] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
         video.addSubview(message)
         video.addSubview(controls)
+        video.addSubview(preview)
+        preview.isHidden = true
         let wide = controls.widthAnchor.constraint(equalToConstant: 560)
         wide.priority = .defaultHigh
         NSLayoutConstraint.activate([
@@ -168,12 +206,19 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             controls.heightAnchor.constraint(equalToConstant: 44),
             controls.widthAnchor.constraint(lessThanOrEqualTo: video.widthAnchor, constant: -32),
             wide,
-            row.leadingAnchor.constraint(equalTo: controls.leadingAnchor),
-            row.trailingAnchor.constraint(equalTo: controls.trailingAnchor),
-            row.centerYAnchor.constraint(equalTo: controls.centerYAnchor),
             volume.widthAnchor.constraint(equalToConstant: 70),
             scrubber.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
         ])
+        if #available(macOS 26.0, *), let glass = controls as? NSGlassEffectView {
+            glass.contentView = row
+        } else {
+            controls.addSubview(row)
+            NSLayoutConstraint.activate([
+                row.leadingAnchor.constraint(equalTo: controls.leadingAnchor),
+                row.trailingAnchor.constraint(equalTo: controls.trailingAnchor),
+                row.centerYAnchor.constraint(equalTo: controls.centerYAnchor),
+            ])
+        }
         controls.isHidden = true
     }
 
@@ -206,6 +251,11 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             fit(engine.size)
             observer = engine.synchronizer.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 10), queue: .main) { [weak self] _ in self?.tick() }
             playing = true
+            if engine.hasVideo, engine.duration.seconds > 0 {
+                let thumbnails = Thumbnails(url: url, size: engine.size, duration: engine.duration.seconds)
+                thumbnails.onReady = { [weak self] _ in self?.hover(self?.hovered) }
+                self.thumbnails = thumbnails
+            }
             resumeKey = Self.resumeKey(url)
             engine.seek(to: CMTime(seconds: resumePosition(engine.duration.seconds), preferredTimescale: 90000), rate: speed)
             controls.isHidden = false
@@ -223,6 +273,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private func stop() {
         guard let engine else { return }
         remember()
+        thumbnails?.close()
+        thumbnails = nil
+        preview.isHidden = true
         resumeKey = nil
         if let observer { engine.synchronizer.removeTimeObserver(observer) }
         observer = nil
@@ -320,6 +373,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     @objc func menuAction(_ sender: NSMenuItem) {
+        showControls()
         if let action = sender.representedObject as? PlayerAction { _ = perform(action) }
     }
 
@@ -476,6 +530,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     @objc private func scrub(_ sender: Any?) {
+        hover(nil)
         seek(scrubber.doubleValue)
         showControls()
     }
@@ -488,17 +543,41 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     func showControls() {
         guard engine != nil else { return }
-        controls.animator().alphaValue = 1
+        refreshControls(idle: 0)
         hideTimer?.invalidate()
-        hideTimer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { [weak self] _ in self?.hideControls() }
+        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
     }
 
     func hideControls() {
-        guard playing, let window else { return }
+        refreshControls(idle: .infinity)
+    }
+
+    private func refreshControls(idle: Double) {
+        guard let window else { return }
         let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
-        guard !controls.bounds.contains(pointer) || !window.isKeyWindow else { return }
-        controls.animator().alphaValue = 0
-        if window.styleMask.contains(.fullScreen) { NSCursor.setHiddenUntilMouseMoves(true) }
+        let fullScreen = window.styleMask.contains(.fullScreen)
+        let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle)
+        controls.animator().alphaValue = visible.controls ? 1 : 0
+        if !visible.controls { hover(nil) }
+        if visible.cursor == cursorHidden {
+            cursorHidden = !visible.cursor
+            NSCursor.setHiddenUntilMouseMoves(cursorHidden)
+        }
+    }
+
+    func hover(_ fraction: Double?) {
+        hovered = fraction
+        guard let engine, let fraction else {
+            preview.isHidden = true
+            return
+        }
+        let total = engine.duration.seconds, seconds = fraction * total
+        preview.show(time: PlayerTime.text(seconds), image: thumbnails?.image(for: PlayerThumbnail.bucket(seconds, duration: total)))
+        preview.setFrameSize(preview.fittingSize)
+        let point = video.convert(NSPoint(x: scrubber.bounds.minX + CGFloat(fraction) * scrubber.bounds.width, y: 0), from: scrubber)
+        preview.setFrameOrigin(NSPoint(x: max(8, min(video.bounds.width - preview.frame.width - 8, point.x - preview.frame.width / 2)), y: controls.frame.maxY + 8))
+        preview.isHidden = false
+        showControls()
     }
 
     func validateMenuItem(_ item: NSMenuItem) -> Bool {
@@ -531,6 +610,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     func windowWillClose(_ notification: Notification) {
         hideTimer?.invalidate()
         stop()
+        scrubber.onHover = nil
         onClose?(self)
     }
 }

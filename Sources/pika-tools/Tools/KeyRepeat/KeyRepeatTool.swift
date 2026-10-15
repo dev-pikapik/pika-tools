@@ -13,7 +13,7 @@ final class KeyRepeatTool: Tool {
         didSet {
             guard isEnabled != oldValue else { return }
             UserDefaults.standard.set(isEnabled, forKey: id)
-            isEnabled ? Self.enable() : Self.restore()
+            refresh()
         }
     }
 
@@ -26,12 +26,17 @@ final class KeyRepeatTool: Tool {
     }
 
     func refresh() {
-        guard isEnabled else { return }
-        MainCopy.canAct ? Self.enable() : Self.putBack()
+        if !isEnabled {
+            Self.restore()
+        } else if MainCopy.canAct {
+            Self.enable()
+        } else {
+            Self.putBack()
+        }
     }
 
     static func uninstall() {
-        if UserDefaults.standard.bool(forKey: "key-repeat") { restore() }
+        restore()
     }
 
     private static let savedKey = "key-repeat-saved"
@@ -53,9 +58,8 @@ final class KeyRepeatTool: Tool {
     }
 
     private static func restore() {
-        let saved = UserDefaults.standard.array(forKey: savedKey) as? [Bool]
+        putBack()
         UserDefaults.standard.removeObject(forKey: savedKey)
-        write(saved?.first.map { $0 as CFBoolean })
     }
 
     private static func write(_ value: CFPropertyList?) {
