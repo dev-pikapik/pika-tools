@@ -113,7 +113,7 @@ final class PointerTool: Tool {
     private func written(_ service: IOHIDServiceClient) -> [(String, NSNumber)] {
         let accelerationKey = Self.accelerationKey(service)
         return Self.property(service, Self.linearKey) != nil
-            ? [(Self.linearKey, 1), (accelerationKey, Self.fixed(speed))]
+            ? [(Self.linearKey, NSNumber(value: 1)), (accelerationKey, Self.fixed(speed))]
             : [(Self.resolutionKey, Self.fixed(min(max(400 / speed, 10), 1995))), (accelerationKey, Self.fixed(-1))]
     }
 
