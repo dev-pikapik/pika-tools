@@ -389,6 +389,11 @@ enum SettingsWindow {
             NSApp.setActivationPolicy(.accessory)
         }
         self.window = window
+        NSEvent.addLocalMonitorForEvents(matching: [.otherMouseDown, .otherMouseUp]) { event in
+            guard event.window === window, event.buttonNumber == 3 || event.buttonNumber == 4, !HideAppTool.isRecording else { return event }
+            if event.type == .otherMouseDown { event.buttonNumber == 3 ? model.goBack() : model.goForward() }
+            return nil
+        }
     }
 
     static func restart(opening argument: String = "--settings", resetting service: String? = nil) {
