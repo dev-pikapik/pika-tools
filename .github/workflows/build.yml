@@ -59,17 +59,43 @@ jobs:
   tests:
     name: Tests
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
 
-      # Every swiftc test line of CONTRIBUTING.md runs here, except test-fan-helper (needs the "pikapik Dev"
-      # signing identity) and test-thumbnails (needs the FFmpeg build in Vendor/ffmpeg, which only the Direct job makes).
+      - name: Restore FFmpeg
+        uses: actions/cache@v4
+        with:
+          path: Vendor/ffmpeg
+          key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
+
+      # test-thumbnails reads videos through the app's own FFmpeg build and makes its sample videos with Homebrew's ffmpeg
+      - name: Build FFmpeg and install the ffmpeg tool
+        run: |
+          brew install meson ninja nasm pkg-config
+          ./scripts/fetch-ffmpeg.sh
+          brew install ffmpeg
+
+      # test-fan-helper signs small programs with a certificate, as the app signs its helper; a throwaway one stands in for "pikapik Dev"
+      - name: Make a throwaway signing certificate
+        run: |
+          cd "$RUNNER_TEMP"
+          printf '[req]\ndistinguished_name = dn\nx509_extensions = ext\nprompt = no\n[dn]\nCN = pikapik CI\n[ext]\nbasicConstraints = critical, CA:false\nkeyUsage = critical, digitalSignature\nextendedKeyUsage = critical, codeSigning\n' > cert.cnf
+          /usr/bin/openssl req -x509 -newkey rsa:2048 -nodes -days 2 -config cert.cnf -keyout key.pem -out cert.pem
+          /usr/bin/openssl pkcs12 -export -inkey key.pem -in cert.pem -out ci.p12 -passout pass:ci
+          security create-keychain -p ci ci.keychain-db
+          security set-keychain-settings ci.keychain-db
+          security unlock-keychain -p ci ci.keychain-db
+          security import ci.p12 -k ci.keychain-db -P ci -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ci ci.keychain-db > /dev/null
+          security list-keychains -d user -s "$RUNNER_TEMP/ci.keychain-db" login.keychain-db
+          echo "SIGN_IDENTITY=pikapik CI" >> "$GITHUB_ENV"
+
       - name: Run the tests from CONTRIBUTING.md
         run: |
           mkdir -p build
           ./scripts/fetch-7zip.sh
-          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | grep -v -e test-fan-helper -e Vendor/ffmpeg | while IFS= read -r test; do
+          grep '^swiftc .*scripts/test-' CONTRIBUTING.md | while IFS= read -r test; do
             echo "${test##*&& build/}"
             bash -c "$test" < /dev/null
           done
