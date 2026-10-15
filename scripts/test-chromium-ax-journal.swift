@@ -86,5 +86,18 @@ struct TestChromiumAXJournal {
         TextFocus.puttingBack.wait()
         precondition(writes == ["100 false [100]", "100 false [100]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
         print("a put-back that times out is tried again, and the app stays in the journal until then: ok")
+
+        var alive = true
+        writes = []
+        TextFocus.write = { _, on, pid in
+            writes.append("\(pid) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            alive = false
+            return .cannotComplete
+        }
+        Switched.save([entry(100)], TextFocus.journalKey)
+        TextFocus.putBackAfterCrash(bundleID: { $0 == 100 && alive ? "com.google.Chrome" : nil })
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("a put-back stops trying once the app has quit: ok")
     }
 }

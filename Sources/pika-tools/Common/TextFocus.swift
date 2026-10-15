@@ -39,20 +39,20 @@ enum TextFocus {
         }
     }
 
-    static func putBackAfterCrash(bundleID: (pid_t) -> String? = running) {
+    static func putBackAfterCrash(bundleID: @escaping (pid_t) -> String? = running) {
         lock.lock()
         stale = Switched.putBack(Switched.load(journalKey), bundleID: bundleID)
         let todo = stale
         lock.unlock()
-        writeBack(todo)
+        writeBack(todo, bundleID)
     }
 
-    private static func writeBack(_ todo: [Switched]) {
+    private static func writeBack(_ todo: [Switched], _ bundleID: @escaping (pid_t) -> String?) {
         puttingBack.enter()
         DispatchQueue.global(qos: .utility).async {
             for entry in todo {
                 for _ in 0..<10 {
-                    if write(entry.attribute, entry.before, entry.pid) != .cannotComplete { break }
+                    guard bundleID(entry.pid) == entry.bundleID, write(entry.attribute, entry.before, entry.pid) == .cannotComplete else { break }
                     Thread.sleep(forTimeInterval: 1)
                 }
                 lock.lock()
@@ -75,7 +75,7 @@ enum TextFocus {
         if let front { wake(front) }
     }
 
-    static func unwatch(_ owner: AnyObject? = nil, bundleID: (pid_t) -> String? = running) {
+    static func unwatch(_ owner: AnyObject? = nil, bundleID: @escaping (pid_t) -> String? = running) {
         lock.lock()
         if let owner { owners.remove(ObjectIdentifier(owner)) } else { owners.removeAll() }
         guard owners.isEmpty, let token = observer else { return lock.unlock() }
@@ -86,7 +86,7 @@ enum TextFocus {
         enabled = []
         lock.unlock()
         NSWorkspace.shared.notificationCenter.removeObserver(token)
-        writeBack(todo)
+        writeBack(todo, bundleID)
     }
 
     private static func wake(_ pid: pid_t) {
