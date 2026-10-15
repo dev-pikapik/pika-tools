@@ -4,6 +4,7 @@ cd "$(dirname "$0")/.."
 
 APP="build/pikapik.app"
 EXTENSIONS="NewFile Compress Convert Archive Preview"
+MEDIA_EXTENSIONS="MediaReader MediaDecoder"
 MIN_OS="14.0"
 DEV_IDENTITY="pikapik Dev"
 if [ -z "${SIGN_IDENTITY:-}" ]; then
@@ -13,13 +14,24 @@ if [ -z "${SIGN_IDENTITY:-}" ]; then
 fi
 DEV=$([ "$SIGN_IDENTITY" = - ] || [ "$SIGN_IDENTITY" = "$DEV_IDENTITY" ] && echo 1 || true)
 
+if [ -n "${APPSTORE:-}" ]; then
+    MEDIA_EXTENSIONS=""
+elif [ -z "$DEV" ]; then
+    for EXT in $MEDIA_EXTENSIONS; do
+        NAME="$(echo "$EXT" | tr a-z A-Z)_PROFILE"
+        [ -f "${!NAME:-}" ] || { echo "$NAME is not set: leaving the media extensions out." >&2; MEDIA_EXTENSIONS=""; break; }
+    done
+fi
+
 APPSTORE_ID=com.pikapik.tools
 rm -rf build
 mkdir -p "$APP/Contents/MacOS" build/strings
 [ -n "${APPSTORE:-}" ] || mkdir -p "$APP/Contents/Library/LaunchServices"
 [ -n "${APPSTORE:-}" ] || ./scripts/fetch-7zip.sh
+[ -z "$MEDIA_EXTENSIONS" ] || ./scripts/fetch-ffmpeg.sh
 [ -n "${APPSTORE:-}" ] || /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" Sources/pika-tools/Info.plist)" build/fan-helper.plist >/dev/null
 for EXT in $EXTENSIONS; do mkdir -p "$APP/Contents/PlugIns/$EXT.appex/Contents/MacOS"; done
+for EXT in $MEDIA_EXTENSIONS; do mkdir -p "$APP/Contents/Extensions/$EXT.appex/Contents/MacOS"; done
 EMIT=(-Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend build/strings)
 
 SOURCES=()
@@ -77,6 +89,21 @@ for ARCH in arm64 x86_64; do
             Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} \
             -o "build/$EXT-$ARCH"
     done
+    for EXT in $MEDIA_EXTENSIONS; do
+        MEDIA_SOURCES=(Extensions/MediaReader/*.swift)
+        [ "$EXT" = MediaReader ] || MEDIA_SOURCES=(Extensions/MediaDecoder/*.swift Extensions/MediaReader/Codecs.swift)
+        swiftc -O -whole-module-optimization \
+            -module-name "$EXT" \
+            -target "$ARCH-apple-macos15.0" \
+            -application-extension \
+            -parse-as-library \
+            -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
+            -Xlinker -e -Xlinker _EXExtensionMain -framework ExtensionFoundation \
+            Vendor/ffmpeg/lib/*.dylib -Xlinker -dead_strip_dylibs \
+            -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks \
+            "${MEDIA_SOURCES[@]}" \
+            -o "build/$EXT-$ARCH"
+    done
 done
 
 [ -n "${APPSTORE:-}" ] || ./scripts/check-strings.sh build/strings
@@ -114,6 +141,17 @@ for EXT in $EXTENSIONS; do
         [ "$EXT" != Preview ] || cp "$LPROJ/Localizable.stringsdict" "$OUT/"
     done
 done
+for EXT in $MEDIA_EXTENSIONS; do
+    APPEX="$APP/Contents/Extensions/$EXT.appex"
+    lipo -create "build/$EXT-arm64" "build/$EXT-x86_64" -output "$APPEX/Contents/MacOS/$EXT"
+    rm "build/$EXT-arm64" "build/$EXT-x86_64"
+    cp "Extensions/$EXT/Info.plist" "$APPEX/Contents/Info.plist"
+    for KEY in CFBundleShortVersionString CFBundleVersion; do
+        /usr/libexec/PlistBuddy -c "Set :$KEY $(/usr/libexec/PlistBuddy -c "Print :$KEY" "$APP/Contents/Info.plist")" "$APPEX/Contents/Info.plist"
+    done
+    NAME="$(echo "$EXT" | tr a-z A-Z)_PROFILE"
+    [ ! -f "${!NAME:-}" ] || cp "${!NAME}" "$APPEX/Contents/embedded.provisionprofile"
+done
 
 RES="$APP/Contents/Resources"
 mkdir -p "$RES"
@@ -130,6 +168,11 @@ if [ -z "${APPSTORE:-}" ]; then
         grep -F "\"$FINDER_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSAppleEventsUsageDescription"/' >> "$RES/$(basename "$LPROJ")/InfoPlist.strings"
     done
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
+fi
+if [ -n "$MEDIA_EXTENSIONS" ]; then
+    mkdir -p "$APP/Contents/Frameworks"
+    cp Vendor/ffmpeg/lib/*.dylib "$APP/Contents/Frameworks/"
+    cp Vendor/ffmpeg/License.txt "$RES/FFmpeg License.txt"
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"
@@ -192,6 +235,11 @@ elif [ -n "$DEV" ]; then
         /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.dev.}" "$PLIST"
         [ "$EXT" = Preview ] || /usr/libexec/PlistBuddy -c "Set :PikaToolsURLScheme pika-tools-dev" "$PLIST"
     done
+    for EXT in $MEDIA_EXTENSIONS; do
+        PLIST="$APP/Contents/Extensions/$EXT.appex/Contents/Info.plist"
+        ID="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$PLIST")"
+        /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${ID/pika-tools./pika-tools.dev.}" -c "Set :EXAppExtensionAttributes:ClassImplementationID ${ID/pika-tools./pika-tools.dev.}" "$PLIST"
+    done
 fi
 APP_ENTITLEMENTS=()
 for EXT in $EXTENSIONS; do
@@ -199,6 +247,10 @@ for EXT in $EXTENSIONS; do
     [ -n "${APPSTORE:-}" ] && [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" "$EXT" "$APP/Contents/PlugIns/$EXT.appex")"
     sign --entitlements "$ENTITLEMENTS" "$APP/Contents/PlugIns/$EXT.appex"
 done
+if [ -n "$MEDIA_EXTENSIONS" ]; then
+    sign "$APP"/Contents/Frameworks/*.dylib
+    for EXT in $MEDIA_EXTENSIONS; do sign --entitlements "Extensions/$EXT/$EXT.entitlements" "$APP/Contents/Extensions/$EXT.appex"; done
+fi
 if [ -n "${APPSTORE:-}" ]; then
     ENTITLEMENTS=Resources/AppStore.entitlements
     [ -n "${TEAM_ID:-}" ] && ENTITLEMENTS="$(group_entitlements "$ENTITLEMENTS" app "$APP")"

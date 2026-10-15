@@ -37,6 +37,7 @@ jobs:
       - name: Build
         run: |
           xcodebuild -version
+          brew install meson ninja nasm pkg-config
           ./scripts/build.sh
 
   appstore:
