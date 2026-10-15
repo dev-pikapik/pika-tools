@@ -11,6 +11,76 @@ enum TestTracks {
         if !ok { failures += 1 }
     }
 
+    struct Picture {
+        var width = 800
+        var height = 450
+        var data: [UInt8]
+
+        func white() -> (count: Int, low: Int, high: Int, centre: Double) {
+            var count = 0, low = height, high = -1, sum = 0.0
+            for row in 0..<height {
+                for column in 0..<width {
+                    let at = (row * width + column) * 4
+                    if data[at] > 240, data[at + 1] > 240, data[at + 2] > 240 {
+                        count += 1
+                        low = min(low, height - 1 - row)
+                        high = max(high, height - 1 - row)
+                        sum += Double(column)
+                    }
+                }
+            }
+            return (count, low, high, count == 0 ? 0 : sum / Double(count))
+        }
+
+        func dark() -> Int { stride(from: 0, to: data.count, by: 4).filter { data[$0] < 200 }.count }
+    }
+
+    static func picture(of host: NSView, background: CGFloat) -> Picture {
+        host.window?.displayIfNeeded()
+        var picture = Picture(data: [UInt8](repeating: 0, count: 800 * 450 * 4))
+        picture.data.withUnsafeMutableBytes { raw in
+            let context = CGContext(data: raw.baseAddress, width: 800, height: 450, bitsPerComponent: 8, bytesPerRow: 800 * 4, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+            context.setFillColor(gray: background, alpha: 1)
+            context.fill(CGRect(x: 0, y: 0, width: 800, height: 450))
+            host.layer?.render(in: context)
+        }
+        return picture
+    }
+
+    static func drawing() {
+        let host = NSView(frame: NSRect(x: 0, y: 0, width: 800, height: 450))
+        host.wantsLayer = true
+        let window = NSWindow(contentRect: host.frame, styleMask: .borderless, backing: .buffered, defer: false)
+        window.contentView = host
+        let view = SubtitleView(frame: host.bounds)
+        host.addSubview(view)
+        host.layoutSubtreeIfNeeded()
+        check(picture(of: host, background: 0).white().count == 0, "nothing is drawn while no subtitle is shown")
+        view.show("Hello, subtitle line")
+        let plain = picture(of: host, background: 0).white()
+        check(plain.count > 200 && plain.high < 150 && abs(plain.centre - 400) < 40, "the text is white, at the bottom and in the middle")
+        host.appearance = NSAppearance(named: .darkAqua)
+        let dark = picture(of: host, background: 0).white()
+        host.appearance = NSAppearance(named: .aqua)
+        let light = picture(of: host, background: 0).white()
+        check(plain.count > 0 && dark.count == plain.count && light.count == plain.count, "the text looks the same in the dark and the light theme")
+        check(plain.count > 0 && picture(of: host, background: 1).dark() > 100, "on a white picture the shadow still draws the letters")
+        view.lift(200)
+        let raised = picture(of: host, background: 0).white()
+        check(raised.count > 0 && raised.low >= 190, "the text rises above the panel")
+        view.lift(0)
+        let normal = picture(of: host, background: 0).white()
+        view.scale = 2
+        let large = picture(of: host, background: 0).white()
+        check(normal.count > 0 && large.high - large.low > (normal.high - normal.low) * 3 / 2, "the larger size makes taller text")
+        view.scale = 1
+        view.show("Hello\nsecond line")
+        let two = picture(of: host, background: 0).white()
+        check(two.count > 0 && two.high - two.low > (normal.high - normal.low) * 3 / 2, "two lines take two lines of height")
+        view.show(nil)
+        check(picture(of: host, background: 0).white().count == 0, "the text goes away when the subtitle ends")
+    }
+
     static func ffmpeg() -> String? {
         ((ProcessInfo.processInfo.environment["FFMPEG"].map { [$0] } ?? []) + ["/opt/homebrew/bin/ffmpeg", "/usr/local/bin/ffmpeg"]).first { FileManager.default.isExecutableFile(atPath: $0) }
     }
@@ -253,6 +323,8 @@ enum TestTracks {
         await settle { refused }
         check(refused && subtitles.tracks.isEmpty, "a file that is not subtitles is refused and not listed")
         subtitles.close()
+
+        drawing()
 
         print(failures == 0 ? "all track checks passed" : "\(failures) track checks FAILED")
         exit(failures == 0 ? 0 : 1)
