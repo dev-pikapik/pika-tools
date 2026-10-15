@@ -161,7 +161,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Turn on iCloud Drive in System Settings — row with an Open button, Website only, when iCloud Drive is off.
 - Needs a permission. Click to allow it. — row with an Allow button, Website only, when access is missing (asks the iCloud Drive permission).
 
-**Nuances:** The switch appears only in a build signed with a provisioning profile that has the iCloud capability, so local builds usually do not show it. Pet awards and the outfit are never synced. Off by default.
+**Nuances:** The switch appears only in a build signed with a provisioning profile that has the iCloud capability, so local builds usually do not show it. Pet awards and the outfit are never synced. Off by default. The app reads the synced settings again every time you switch to it, so a change made on another Mac shows up without a restart.
 
 **Edition:** Both; App Store differs: it uses iCloud key-value storage and never shows the iCloud Drive rows.
 
@@ -852,7 +852,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - A click on the icon — Minimizes the windows / Hides the app (`DockHideTool.swift:388`).
 
-**Nuances:** The click it replays is tagged (`EventTag.swift`), so another copy of pikapik does not act on it twice.
+**Nuances:** The click it replays is tagged (`EventTag.swift`), so another copy of pikapik does not act on it twice. The choice in the picker is saved the first time it is missing (Hide if the switch was already on, Minimize otherwise), so what the picker shows is what the click does, after any restart or sync.
 
 **Edition:** Website only (App Store: cut — needs to look inside the Dock).
 
