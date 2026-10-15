@@ -8,12 +8,13 @@ struct PacketKey: Hashable {
 }
 
 final class Packet {
-    let pts: Int64
+    var pts: Int64
     let dts: Int64
     let duration: Int64
     let sync: Bool
     let samples: Int64
     var open = false
+    var guessed = false
     var data: Data?
     var stamp = 0
     unowned var run: Run
@@ -55,6 +56,11 @@ final class Track {
     fileprivate var known: [PacketKey: Packet] = [:]
     fileprivate var head: Packet?
     fileprivate var fresh = true
+    fileprivate var order: (pts: Int64, poc: Int32)?
+    fileprivate var guess: Packet?
+    private var pocStep: Int32 = 2
+    fileprivate var parser: UnsafeMutablePointer<AVCodecParserContext>?
+    private var parserContext: UnsafeMutablePointer<AVCodecContext>?
 
     fileprivate init(_ stream: UnsafeMutablePointer<AVStream>, format: TrackFormat, start: Int64, decodeOrderTimes: Bool) {
         let par = stream.pointee.codecpar.pointee
@@ -79,7 +85,18 @@ final class Track {
             size = .zero
         }
         delay = Int64(par.video_delay) * defaultDuration
-        reorders = !decodeOrderTimes && par.video_delay > 0
+        parser = decodeOrderTimes && par.codec_id == AV_CODEC_ID_H264 ? av_parser_init(Int32(AV_CODEC_ID_H264.rawValue)) : nil
+        if let parser {
+            parser.pointee.flags |= PARSER_FLAG_COMPLETE_FRAMES
+            parserContext = avcodec_alloc_context3(nil)
+            avcodec_parameters_to_context(parserContext, stream.pointee.codecpar)
+        }
+        reorders = !decodeOrderTimes && par.video_delay > 0 || parser != nil
+    }
+
+    deinit {
+        av_parser_close(parser)
+        avcodec_free_context(&parserContext)
     }
 
     func time(_ ticks: Int64) -> CMTime {
@@ -89,6 +106,48 @@ final class Track {
     func ticks(_ time: CMTime) -> Int64 {
         let scaled = CMTimeConvertScale(time, timescale: timeBase.den, method: .roundTowardNegativeInfinity).value
         return scaled >= 0 ? scaled / Int64(timeBase.num) : -((-scaled + Int64(timeBase.num) - 1) / Int64(timeBase.num))
+    }
+
+    fileprivate func pictureOrder(_ packet: AVPacket) -> Int32? {
+        guard let parser else { return nil }
+        var data: UnsafeMutablePointer<UInt8>?
+        var size: Int32 = 0
+        av_parser_parse2(parser, parserContext, &data, &size, packet.data, packet.size, PikaNoTimestamp, PikaNoTimestamp, packet.pos)
+        return size > 0 ? parser.pointee.output_picture_number : nil
+    }
+
+    fileprivate func present(_ added: Packet, _ poc: Int32, _ packet: AVPacket) {
+        let refresh = packet.flags & AV_PKT_FLAG_KEY != 0 && (Self.instantRefresh(packet) || order.map { poc <= $0.poc } ?? false)
+        if var order, !refresh {
+            if let guess, guess.index >= 0, poc < order.poc {
+                for earlier in guess.run.packets[guess.index...] where earlier !== added { earlier.pts += defaultDuration }
+                order.pts += defaultDuration
+            } else if poc > order.poc {
+                guess?.guessed = false
+                guess = nil
+            }
+            self.order = order
+        } else {
+            order = (added.dts, poc)
+            added.guessed = !refresh
+            guess = refresh ? nil : added
+        }
+        guard let order else { return }
+        if poc % 2 != 0, pocStep == 2 {
+            pocStep = 1
+            for earlier in runs.flatMap(\.packets) where earlier.pts > order.pts { earlier.pts = order.pts + (earlier.pts - order.pts) * 2 }
+        }
+        added.pts = order.pts + Int64((poc - order.poc) / pocStep) * defaultDuration
+    }
+
+    private static func instantRefresh(_ packet: AVPacket) -> Bool {
+        guard let data = packet.data, packet.size > 1 else { return false }
+        var zeros = 0
+        for i in 0..<Int(packet.size) - 1 {
+            if zeros >= 2, data[i] == 1, (1...5).contains(data[i + 1] & 0x1F) { return data[i + 1] & 0x1F == 5 }
+            zeros = data[i] == 0 ? zeros + 1 : 0
+        }
+        return false
     }
 
     fileprivate func payload(_ packet: AVPacket) -> Data {
@@ -405,12 +464,14 @@ final class Demuxer {
 
     private func seek(to time: Int64) throws {
         guard let context else { throw MediaError.internalFailure }
-        guard av_seek_frame(context, -1, time, AVSEEK_FLAG_BACKWARD | AVSEEK_FLAG_ANY) >= 0 || av_seek_frame(context, -1, time, AVSEEK_FLAG_ANY) >= 0 else { throw MediaError.parsingFailure }
+        let any = streams.contains { $0.parser != nil } ? 0 : AVSEEK_FLAG_ANY
+        guard av_seek_frame(context, -1, time, AVSEEK_FLAG_BACKWARD | any) >= 0 || av_seek_frame(context, -1, time, any) >= 0 else { throw MediaError.parsingFailure }
         context.pointee.pb.pointee.error = 0
         for stream in streams {
             stream.head = nil
             stream.fresh = false
             stream.format.audioDecoder?.flush()
+            stream.order = nil
         }
     }
 
@@ -445,7 +506,9 @@ final class Demuxer {
     private func route(_ packet: AVPacket) {
         guard let stream = byIndex[packet.stream_index] else { return }
         let key = PacketKey(position: packet.pos, pts: packet.pts, size: packet.size)
+        let poc = stream.pictureOrder(packet)
         if let known = stream.known[key] {
+            if let poc { (stream.order, stream.guess) = ((known.pts, poc), known.guessed ? known : nil) }
             if known.data == nil { hold(known, stream.payload(packet)) }
             if let head = stream.head, head.run !== known.run, head.index == head.run.packets.count - 1, known.index == 0 {
                 merge(known.run, into: head.run, stream)
@@ -470,6 +533,7 @@ final class Demuxer {
         }
         let added = Packet(pts: pts ?? dts, dts: dts, duration: stream.duration(packet, data), sync: packet.flags & AV_PKT_FLAG_KEY != 0,
                            samples: stream.bytesPerFrame > 0 ? Int64(data.count / stream.bytesPerFrame) : 1, run: run)
+        if let poc { stream.present(added, poc, packet) }
         if let previous, previous.sync, added.pts < previous.pts, !run.atStart || previous.index > 0 { previous.open = true }
         stream.known[key] = added
         stream.head = added
