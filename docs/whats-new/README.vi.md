@@ -5,6 +5,47 @@
 
 ---
 
+## <a id="v1.50.0"></a>pikapik có thêm nhiều thứ trong bản Mac App Store
+
+<sub>1.50.0 · 15 tháng 10 năm 2026</sub>
+
+Mở tệp lưu trữ, dọn màn hình nền, dùng Home và End và nhiều hơn nữa, giờ đã có cả trong bản Mac App Store.
+
+**Mới trong bản Mac App Store**
+
+- **Mở và tạo tệp lưu trữ trong Finder.** Nhấp chuột phải vào tệp lưu trữ và chọn “Giải nén”. Để tạo, hãy nhấp chuột phải vào các tệp và chọn “Tạo tệp lưu trữ…”. Nhấn phím cách trên tệp lưu trữ để xem bên trong. Ở bản này, chỉ ZIP mới có thể đặt mật khẩu.
+- **Màn hình nền gọn gàng.** Bật “Ẩn biểu tượng trên màn hình nền”, pikapik sẽ phủ hình nền của bạn lên các biểu tượng. Các cú nhấp vẫn đến được màn hình nền, và không cần quyền nào.
+- **Home và End hoạt động trở lại.** Hai phím đưa con trỏ về đầu và cuối dòng, ở mọi nơi trừ trình duyệt, Finder, Nhạc và TV.
+- **Sửa văn bản gõ sai bố cục bàn phím bằng phím tắt.** Chọn văn bản rồi nhấn ⌃⇧Dấu cách. Bật “Sửa văn bản đã chọn” trong Cài đặt › Bàn phím, nơi bạn cũng có thể đổi phím.
+- **Tắt màn hình chỉ với một cú nhấp.** “Tắt màn hình ngay” làm màn hình tối ngay lập tức trong khi Mac vẫn tiếp tục làm việc. Di chuyển chuột để bật lại.
+- **Chơi game không bị làm phiền.** Trong “Chế độ trò chơi”, các phím tắt của Mac như Spotlight tạm dừng khi một trò chơi ở phía trước. Con trỏ tránh xa các góc màn hình, nên các góc nóng không bị kích hoạt.
+- **Số liệu pin đã trở lại.** “Pin” lại hiển thị “Dung lượng tối đa” trên macOS 27, còn “Nhiệt độ” hiển thị nhiệt độ của pin.
+- **Biết ứng dụng nào có thể xin quyền.** “Quyền của các ứng dụng khác” trong Cài đặt › Quyền liệt kê chúng cùng biểu tượng.
+- **Biết phải nhấp vào đâu.** Khi macOS không cho pikapik đổi một cài đặt, một hoạt ảnh ngắn chỉ cho bạn nhấp vào đâu trong Cài đặt hệ thống.
+
+**Có trong cả hai bản**
+
+- **Chỉnh âm lượng trước khi ứng dụng chạy.** Ứng dụng bạn đã chỉnh vẫn nằm trong Cài đặt › Âm thanh với thanh trượt của nó, kể cả khi đang đóng, và lấy lại mức âm lượng khi nó phát tiếng trở lại, cả sau khi khởi động lại. Nhấp “Thêm ứng dụng…” hoặc kéo một ứng dụng từ Finder vào để chỉnh trước, còn ✕ sẽ quên ứng dụng đó và trả về âm lượng đầy đủ.
+- **Xem bản cập nhật đã thêm gì.** Sau khi cập nhật, một chấm xanh nhỏ đánh dấu mỗi thẻ trong Cài đặt có điều mới, và nhãn “Mới” đánh dấu phần đó. Chúng biến mất khi bạn đã xem, và tự tắt sau 21 ngày.
+- **Lần mở đầu tiên êm ái.** Bản tải từ trang web không còn xin quyền ngay lần mở đầu tiên. Nó chỉ hỏi khi bạn bật một công cụ cần quyền.
+- **Bản sao video nhỏ hơn.** “Tạo bản sao nhỏ hơn” giờ làm video nhỏ đi còn khoảng một nửa. Trước đây, hầu hết video đều nhận “Đã gọn sẵn”.
+- **Hai bản dùng chung êm ấm.** Nếu bạn dùng cùng lúc bản App Store và bản trên trang web, chúng không còn hoàn tác công việc của nhau. ⇧⌘Q và ⇧⌘W lại dùng được trong game.
+- **Trò chơi quay lại sau khi máy ngủ.** “Chế độ trò chơi” tự bật lại khi Mac thức dậy.
+- **“Cổng” nói đúng sự thật.** Trên macOS 27, cổng do macOS hoặc người dùng khác sử dụng không còn bị gọi là trống.
+- **Báo cáo sự cố nhanh hơn.** “Báo cáo sự cố” trong Cài đặt › Giới thiệu mở biểu mẫu với phiên bản của bạn đã được chọn sẵn.
+- **Kho lưu trữ mượt hơn.** Thanh tiến trình chạy trong lúc giải nén, mật khẩu sai được báo ngay, và Mac không còn ngủ giữa chừng khi đang giải nén hay tạo tệp lưu trữ.
+- **Bảng điều khiển trên thanh menu ổn định hơn.** Mở một hàng trong bảng, chẳng hạn các tùy chọn màn hình dưới “Giữ máy thức”, không còn làm thanh cuộn nháy lên nữa. Mũi tên cạnh “Giữ máy thức” giờ ghi “Cài đặt màn hình”.
+- **Cổng tự giải thích.** Một dòng dưới tiêu đề cho biết cổng là gì, và một hoạt ảnh nhỏ cho thấy mỗi cửa chỉ vừa một chương trình. Chương trình của bạn và những chương trình nên để yên giờ có tên rõ ràng.
+- **Cài đặt nói rõ ràng.** Mỗi thẻ mở đầu bằng một dòng nói bạn có gì ở đó, thanh bên có khoảng cách giữa các nhóm, và “Giữ máy thức”, “Quyền” và “Pin” nói chính xác điều đang diễn ra. Nút “Cần cấp quyền” chỉ hiện khi một công cụ bạn đã bật thiếu quyền.
+
+**Đã sửa trong bản Mac App Store**
+
+- Sau ⌘X, ⌘V trong Finder giờ di chuyển các tệp của bạn, giống như bản trên trang web. Trước đây nó chỉ sao chép.
+- “Tệp mới trong Finder”, “Bản sao nhỏ hơn trong Finder” và “Chuyển đổi trong Finder” giờ mỗi mục hiển thị trạng thái riêng. Trước đây, bật một mục thì cả ba đều trông như đang bật.
+- Trang “Cổng” trống đã biến mất. macOS không cho bản này biết chương trình nào đang giữ một cổng, nên Cài đặt › Cổng không có gì để hiển thị.
+
+---
+
 ## <a id="v1.49.0"></a>Độ sáng cho mọi màn hình
 
 <sub>1.49.0 · 13 tháng 10 năm 2026</sub>

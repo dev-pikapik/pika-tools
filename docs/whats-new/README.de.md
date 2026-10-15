@@ -5,6 +5,47 @@
 
 ---
 
+## <a id="v1.50.0"></a>Mehr pikapik in der Version aus dem Mac App Store
+
+<sub>1.50.0 · 15. Oktober 2026</sub>
+
+Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetzt auch in der Version aus dem Mac App Store.
+
+**Neu in der Version aus dem Mac App Store**
+
+- **Archive im Finder öffnen und erstellen.** Klicke mit der rechten Maustaste auf ein Archiv und wähle „Entpacken“. Zum Erstellen klickst du mit der rechten Maustaste auf Dateien und wählst „Archiv erstellen …“. Drücke die Leertaste auf einem Archiv, um hineinzuschauen. Nur ZIP kann hier ein Passwort haben.
+- **Ein aufgeräumter Schreibtisch.** Schalte „Schreibtischsymbole ausblenden“ ein, und pikapik deckt die Symbole mit deinem Hintergrundbild ab. Klicks kommen weiterhin auf dem Schreibtisch an, und du brauchst keine Berechtigung.
+- **Home und End funktionieren wieder.** Sie springen an Zeilenanfang und -ende, überall außer in Browsern, im Finder, in Musik und in TV.
+- **Falsch getippten Text per Tastenkombination korrigieren.** Wähle den Text aus und drücke ⌃⇧Leertaste. Schalte „Ausgewählten Text korrigieren“ unter Einstellungen › Tastatur ein, dort kannst du die Tasten auch ändern.
+- **Display mit einem Klick ausschalten.** „Display jetzt ausschalten“ macht das Display sofort dunkel, während dein Mac weiterarbeitet. Bewege die Maus, um es zurückzuholen.
+- **Spiele werden nicht gestört.** Im „Spielmodus“ pausieren Mac-Tastenkombinationen wie Spotlight, solange ein Spiel im Vordergrund ist. Der Zeiger bleibt von den Bildschirmecken fern, damit keine Aktive Ecke auslöst.
+- **Die Batteriewerte sind zurück.** „Batterie“ zeigt unter macOS 27 wieder die „Maximale Kapazität“, und „Temperatur“ zeigt die Temperatur der Batterie.
+- **Sehen, welche Apps nach einer Berechtigung fragen können.** „Berechtigungen anderer Apps“ unter Einstellungen › Berechtigungen listet sie mit ihren Symbolen auf.
+- **Wissen, wo du klicken musst.** Wenn macOS pikapik keine Einstellung ändern lässt, zeigt eine kurze Animation, wo du in den Systemeinstellungen klicken musst.
+
+**In beiden Versionen**
+
+- **Lautstärke einstellen, bevor die App startet.** Eine App, die du eingestellt hast, bleibt mit ihrem Regler in Einstellungen › Ton, auch wenn sie geschlossen ist, und bekommt ihre Lautstärke zurück, sobald sie wieder Ton abspielt, auch nach einem Neustart. Mit „App hinzufügen …“ oder per Ziehen aus dem Finder stellst du eine App im Voraus ein, und das ✕ entfernt sie wieder und stellt volle Lautstärke her.
+- **Sieh, was ein Update gebracht hat.** Nach einem Update markiert ein kleiner blauer Punkt jeden Tab in den Einstellungen, der etwas Neues hat, und ein „Neu“-Schild den Abschnitt. Beides verschwindet, sobald du hingeschaut hast, und von selbst nach 21 Tagen.
+- **Ein ruhiger erster Start.** Die Version von der Website fragt beim ersten Öffnen nicht mehr nach Berechtigungen. Sie fragt nur, wenn du ein Werkzeug einschaltest, das eine braucht.
+- **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.
+- **Zwei Kopien vertragen sich.** Wenn du die App-Store-Version und die Version von der Website zusammen nutzt, machen sie ihre Arbeit nicht mehr gegenseitig rückgängig. ⇧⌘Q und ⇧⌘W funktionieren in Spielen wieder.
+- **Spiele kehren nach dem Ruhezustand zurück.** Der „Spielmodus“ schaltet sich von selbst wieder ein, wenn dein Mac aufwacht.
+- **„Ports“ sagt die Wahrheit.** Unter macOS 27 wird ein Port, den macOS oder ein anderer Benutzer belegt, nicht mehr als frei bezeichnet.
+- **Ein Problem zu melden geht schneller.** „Problem melden“ unter Einstellungen › Über öffnet das Formular mit bereits gewählter Version.
+- **Archive ohne Wartezeit.** Der Fortschrittsbalken bewegt sich, während ein Archiv entpackt wird, ein falsches Passwort wird sofort gemeldet, und dein Mac schläft nicht mehr mitten im Entpacken oder Erstellen ein.
+- **Ein ruhigeres Menüleisten-Fenster.** Wenn du eine Zeile im Fenster der Menüleiste aufklappst, zum Beispiel die Anzeigeoptionen unter „Wach bleiben“, blitzt keine Bildlaufleiste mehr auf. Der Pfeil neben „Wach bleiben“ sagt jetzt „Anzeigeeinstellungen“.
+- **Ports erklärt sich selbst.** Eine Zeile unter dem Titel sagt, was ein Port ist, und eine kleine Animation zeigt, dass durch eine Tür nur ein Programm passt. Deine eigenen Programme und die, die du in Ruhe lassen solltest, haben jetzt verständliche Namen.
+- **Die Einstellungen sagen es klar.** Jeder Tab beginnt mit einer Zeile dazu, was du dort bekommst, die Seitenleiste hat Abstände zwischen ihren Gruppen, und „Wach bleiben“, „Berechtigungen“ und „Batterie“ sagen genau, was gerade los ist. Die Schaltfläche „Berechtigungen nötig“ erscheint nur, wenn einem eingeschalteten Werkzeug eine fehlt.
+
+**Behoben in der Version aus dem Mac App Store**
+
+- Nach ⌘X verschiebt ⌘V im Finder jetzt deine Dateien, wie in der Version von der Website. Vorher hat es sie nur kopiert.
+- „Neue Datei im Finder“, „Kleinere Kopie im Finder“ und „Umwandeln im Finder“ zeigen jeweils ihren eigenen Zustand. Vorher sahen nach dem Einschalten eines Schalters alle drei eingeschaltet aus.
+- Die leere Seite „Ports“ ist weg. macOS zeigt dieser Version nicht, welches Programm einen Port belegt, deshalb gab es unter Einstellungen › Ports nichts anzuzeigen.
+
+---
+
 ## <a id="v1.49.0"></a>Helligkeit für jeden Monitor
 
 <sub>1.49.0 · 13. Oktober 2026</sub>
