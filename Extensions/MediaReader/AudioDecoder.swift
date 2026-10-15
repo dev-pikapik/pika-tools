@@ -2,6 +2,7 @@ import AudioToolbox
 import Foundation
 
 final class AudioDecoder {
+    private static let formats: [AVSampleFormat] = [AV_SAMPLE_FMT_FLT, AV_SAMPLE_FMT_FLTP, AV_SAMPLE_FMT_S16, AV_SAMPLE_FMT_S16P, AV_SAMPLE_FMT_S32, AV_SAMPLE_FMT_S32P]
     let format: AudioStreamBasicDescription
     private var context: UnsafeMutablePointer<AVCodecContext>?
     private var frame = av_frame_alloc()
@@ -11,7 +12,7 @@ final class AudioDecoder {
         var parameters = parameters
         guard let codec = avcodec_find_decoder(parameters.codec_id), let context = avcodec_alloc_context3(codec) else { return nil }
         guard avcodec_parameters_to_context(context, &parameters) >= 0, avcodec_open2(context, codec, nil) >= 0,
-              [AV_SAMPLE_FMT_FLT, AV_SAMPLE_FMT_FLTP].contains(context.pointee.sample_fmt) else {
+              Self.formats.contains(context.pointee.sample_fmt) else {
             var failed: UnsafeMutablePointer<AVCodecContext>? = context
             avcodec_free_context(&failed)
             return nil
@@ -29,6 +30,14 @@ final class AudioDecoder {
         av_packet_free(&packet)
     }
 
+    private static func sample(_ plane: UnsafeRawPointer, _ index: Int, _ format: AVSampleFormat) -> Float {
+        switch format {
+        case AV_SAMPLE_FMT_S16, AV_SAMPLE_FMT_S16P: Float(plane.load(fromByteOffset: index * 2, as: Int16.self)) / 32768
+        case AV_SAMPLE_FMT_S32, AV_SAMPLE_FMT_S32P: Float(plane.load(fromByteOffset: index * 4, as: Int32.self)) / 2147483648
+        default: plane.load(fromByteOffset: index * 4, as: Float.self)
+        }
+    }
+
     func flush() {
         avcodec_flush_buffers(context)
     }
@@ -44,16 +53,12 @@ final class AudioDecoder {
             let channels = Int(frame.pointee.ch_layout.nb_channels)
             let count = Int(frame.pointee.nb_samples)
             var samples = [Float](repeating: 0, count: count * channels)
-            if frame.pointee.format == AV_SAMPLE_FMT_FLTP.rawValue {
-                for channel in 0..<channels {
-                    guard let plane = frame.pointee.extended_data[channel] else { continue }
-                    plane.withMemoryRebound(to: Float.self, capacity: count) { source in
-                        for i in 0..<count { samples[i * channels + channel] = source[i] }
-                    }
-                }
-            } else if let plane = frame.pointee.extended_data[0] {
-                plane.withMemoryRebound(to: Float.self, capacity: count * channels) { source in
-                    for i in 0..<count * channels { samples[i] = source[i] }
+            let layout = AVSampleFormat(rawValue: frame.pointee.format)
+            let planar = av_sample_fmt_is_planar(layout) != 0
+            for channel in 0..<(planar ? channels : 1) {
+                guard let plane = frame.pointee.extended_data[channel] else { continue }
+                for i in 0..<(planar ? count : count * channels) {
+                    samples[planar ? i * channels + channel : i] = Self.sample(plane, i, layout)
                 }
             }
             samples.withUnsafeBytes { out.append(contentsOf: $0) }

@@ -13,15 +13,23 @@ Wörter in der falschen Sprache werden jetzt auch in Chrome, Slack und VS Code k
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-In der Version von der Website funktioniert das Korrigieren eines in der falschen Sprache getippten Wortes jetzt auch in Chrome, Slack, VS Code, Discord und anderen Apps auf Chromium-Basis, beim Tippen und mit dem Kurzbefehl zum Neutippen. Aus „ghbdtn“ wird dort ebenfalls „привет“. Schalten Sie die Funktion aus oder beenden Sie pikapik, dann kehren diese Apps in ihren früheren Zustand zurück.
+In der Version von der Website werden in der falschen Sprache getippte Wörter jetzt auch in Chrome, Slack, VS Code, Discord und ähnlichen Apps korrigiert. Aus „ghbdtn“ wird dort also ebenfalls „привет“. Wenn Sie die Funktion ausschalten oder pikapik beenden, kehren diese Apps in ihren früheren Zustand zurück.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Die Maustasten 4 und 5 gehen jetzt in fast jeder App zurück und vor, und auch in den Einstellungen von pikapik selbst wieder. pikapik drückt für Sie den Eintrag „Zurück“ oder „Vor“ im Menü oder in der Symbolleiste der App, in jeder Sprache; Apps, die die Tasten schon verstehen, behandeln sie weiter selbst. In der Mac-App-Store-Version gilt das für die Fenster von pikapik und die Apps von Apple.
+Die Seitentasten Ihrer Maus gehen jetzt in fast jeder App zurück und vor, und auch in den Einstellungen von pikapik selbst wieder: pikapik drückt für Sie die Taste „Zurück“ oder „Vorwärts“ der jeweiligen App. In der Mac-App-Store-Version funktioniert das in pikapik und in Apple-Apps.
 
-Sind zwei Kopien von pikapik offen, etwa die von der Website und die aus dem App Store, ändert nur die zuletzt geöffnete etwas an Ihrem Mac, sodass die Einstellungen immer zeigen, was wirklich gilt. Beim Beenden wird alles Geänderte zurückgesetzt. Außerdem neu, vor allem in der Version von der Website: ein Mittelklick mit drei Fingern auf dem Trackpad, Bilder, die zeigen, was App beenden und Fenster schließen tun, ⇧⌘. direkt in der Zeile Versteckte Dateien einblenden, Namen für die Gruppen in der Seitenleiste und im Player die Tasten von QuickTime, Lautstärke per Mausrad, Tempo und Fortsetzen an der letzten Stelle.
+Sind zwei Kopien von pikapik offen, etwa die von der Website und die aus dem App Store, ändert nur die zuletzt geöffnete etwas an Ihrem Mac, sodass die Einstellungen immer zeigen, was wirklich gilt. Beim Beenden wird alles Geänderte zurückgesetzt.
 
-**Ausprobieren:** Einstellungen › Tastatur
+**Außerdem neu**
+
+- Mittelklick auf dem Trackpad: mit drei Fingern tippen, in der Version von der Website.
+- App beenden und Fenster schließen zeigen in einem Bild, was die Tasten tun.
+- ⇧⌘. steht jetzt direkt in der Zeile Versteckte Dateien einblenden.
+- Die Seitenleiste der Einstellungen hat jetzt Namen für die Gruppen.
+- Player, in der Version von der Website: dieselben Tasten wie im QuickTime Player, Lautstärke per Mausrad, Tempo, und er macht dort weiter, wo Sie aufgehört haben.
+
+**Ausprobieren:** Einstellungen › Tastatur, Einstellungen › Maus
 
 **Behoben**
 

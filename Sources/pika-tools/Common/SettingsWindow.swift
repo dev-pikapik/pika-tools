@@ -224,6 +224,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Show hidden files"), synonyms: "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period"),
             SettingsItem(tab: .player, title: String(localized: "Open Video…"), synonyms: "video, movie, film, watch, play, mkv, avi, wmv, webm, flv"),
             SettingsItem(tab: .player, title: String(localized: "Open All in pikapik"), synonyms: "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime"),
+            SettingsItem(tab: .player, title: String(localized: "Music"), synonyms: "music, song, audio, flac, mp3, ogg, opus, wma, default app, open with"),
             SettingsItem(tab: .player, title: String(localized: "Pictures"), synonyms: "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview"),
             SettingsItem(tab: .player, title: String(localized: "FFmpeg and dav1d Licenses"), synonyms: "open source, legal"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),

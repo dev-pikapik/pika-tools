@@ -3,29 +3,87 @@ import CryptoKit
 import Foundation
 import UniformTypeIdentifiers
 
+enum PlayerKind {
+    case music, video
+}
+
 enum PlayerFormats {
-    static let all: [(name: String, extensions: [String])] = [
+    static let video: [(name: String, extensions: [String])] = [
         ("MKV", ["mkv"]), ("WebM", ["webm"]), ("AVI", ["avi"]), ("WMV", ["wmv", "asf"]), ("FLV", ["flv"]), ("OGV", ["ogv"]),
         ("MPEG-TS", ["ts", "m2ts", "mts"]), ("MPEG", ["mpg", "mpeg"]), ("MXF", ["mxf"]), ("MP4", ["mp4", "m4v"]), ("MOV", ["mov"]),
     ]
 
-    static var extensions: [String] { all.flatMap(\.extensions) }
+    static let music: [(name: String, extensions: [String])] = [
+        ("MP3", ["mp3"]), ("AAC", ["aac"]), ("M4A", ["m4a"]), ("FLAC", ["flac"]), ("ALAC", ["alac"]), ("WAV", ["wav"]), ("AIFF", ["aiff", "aif"]),
+        ("CAF", ["caf"]), ("OGG", ["ogg", "oga"]), ("Opus", ["opus"]), ("WMA", ["wma"]), ("APE", ["ape"]), ("DSF", ["dsf"]),
+    ]
 
-    static var types: [UTType] { types(of: extensions) }
+    static var extensions: [String] { (video + music).flatMap(\.extensions) }
+
+    static var videoTypes: [UTType] { types(of: video.flatMap(\.extensions)) }
+
+    static var musicTypes: [UTType] { types(of: music.flatMap(\.extensions)) }
 
     static func types(of extensions: [String]) -> [UTType] {
         var seen = Set<UTType>()
         return extensions.compactMap { UTType(filenameExtension: $0) }.filter { !$0.isDynamic && seen.insert($0).inserted }
     }
 
+    static func kind(of url: URL) -> PlayerKind? {
+        let ext = url.pathExtension.lowercased()
+        return video.contains { $0.extensions.contains(ext) } ? .video : music.contains { $0.extensions.contains(ext) } ? .music : nil
+    }
+
     static func plays(_ url: URL) -> Bool {
-        extensions.contains(url.pathExtension.lowercased())
+        kind(of: url) != nil
+    }
+}
+
+enum PlaylistOrder {
+    static func sorted(_ files: [URL]) -> [URL] {
+        files.sorted {
+            let order = $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent)
+            return order == .orderedSame ? $0.path < $1.path : order == .orderedAscending
+        }
+    }
+
+    static func neighbour(of current: URL, kind: PlayerKind, among files: [URL], step: Int) -> URL? {
+        let here = current.standardizedFileURL
+        let list = sorted(files.filter { $0.standardizedFileURL == here || PlayerFormats.kind(of: $0) == kind })
+        guard let index = list.firstIndex(where: { $0.standardizedFileURL == here }), list.indices.contains(index + step) else { return nil }
+        return list[index + step]
+    }
+
+    static func first(among files: [URL]) -> URL? {
+        sorted(files.filter(PlayerFormats.plays)).first
+    }
+}
+
+enum PlaylistFolders {
+    static func covers(_ granted: URL, _ folder: URL) -> Bool {
+        let (allowed, wanted) = (granted.resolvingSymlinksInPath().pathComponents, folder.resolvingSymlinksInPath().pathComponents)
+        return wanted.count >= allowed.count && Array(wanted.prefix(allowed.count)) == allowed
+    }
+}
+
+enum PlayerTags {
+    static func title(_ tag: String?, file: URL) -> String {
+        clean(tag) ?? file.deletingPathExtension().lastPathComponent
+    }
+
+    static func subtitle(artist: String?, album: String?) -> String {
+        [artist, album].compactMap(clean).joined(separator: " — ")
+    }
+
+    static func clean(_ text: String?) -> String? {
+        guard let text = text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return nil }
+        return text
     }
 }
 
 enum PlayerAction: Equatable {
     case playPause, back, forward, skipBack, skipForward, longBack, longForward, frameBack, frameForward, start, end, startOver
-    case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop
+    case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop, next, previous
 
     static let skip = 5.0
     static let longSkip = 10.0
@@ -45,6 +103,7 @@ enum PlayerAction: Equatable {
         (.louder, up, []), (.quieter, down, []), (.mute, "m", []),
         (.fullScreen, "f", []), (.fullScreen, "f", .command), (.fullScreen, "f", [.command, .control]), (.leaveFullScreen, "\u{1B}", []),
         (.snapshot, "s", []), (.floatOnTop, "t", []),
+        (.next, "n", []), (.next, ">", .shift), (.previous, "p", []), (.previous, "<", .shift),
     ]
 
     init?(key: String, modifiers: NSEvent.ModifierFlags = []) {
@@ -142,8 +201,8 @@ enum PlayerTime {
 enum PlayerChrome {
     static let hideDelay = 2.5
 
-    static func visibility(playing: Bool, overControls: Bool, fullScreen: Bool, idle: Double) -> (controls: Bool, cursor: Bool) {
-        let controls = !playing || overControls || idle < hideDelay
+    static func visibility(playing: Bool, overControls: Bool, fullScreen: Bool, idle: Double, hides: Bool = true) -> (controls: Bool, cursor: Bool) {
+        let controls = !hides || !playing || overControls || idle < hideDelay
         return (controls, controls || !fullScreen)
     }
 }

@@ -154,6 +154,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         pictureOnly = zoomItems + main.items.suffix(1)
         _ = submenu(String(localized: "Playback"), [
             command(String(localized: "Play"), .playPause),
+            command(String(localized: "Next in Folder"), .next),
+            command(String(localized: "Previous in Folder"), .previous),
             .separator(),
             command(String(localized: "Back 5 Seconds"), .back),
             command(String(localized: "Forward 5 Seconds"), .forward),

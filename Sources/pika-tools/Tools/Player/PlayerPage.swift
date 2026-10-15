@@ -6,12 +6,13 @@ struct PlayerPage: View {
     static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
     private static let license = Bundle.main.url(forResource: "FFmpeg License", withExtension: "txt")
     private static let source = URL(string: "https://github.com/dev-pikapik/pika-tools/releases/latest")!
-    private static let videos = DefaultApps(types: PlayerFormats.types, target: helper, previousKey: "player-video-previous-apps")
+    private static let videos = DefaultApps(types: PlayerFormats.videoTypes, target: helper, previousKey: "player-video-previous-apps")
+    private static let songs = DefaultApps(types: PlayerFormats.musicTypes, target: helper, previousKey: "player-music-previous-apps", fallback: "com.apple.Music")
     private static let pictures = DefaultApps(types: ImageFormats.types, target: helper, previousKey: "player-image-previous-apps", fallback: ImageFormats.previewApp)
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .player, text: String(localized: "MKV, AVI, WMV and other videos in their own window"))
+            SettingsHeader(tab: .player, text: String(localized: "MKV, FLAC and other videos and songs in their own window"))
             Section {
                 Button(action: open) { Text("Open Video…").frame(minWidth: 140) }
                     .buttonStyle(.borderedProminent)
@@ -20,7 +21,8 @@ struct PlayerPage: View {
                     .frame(maxWidth: .infinity)
                     .settingAnchor(String(localized: "Open Video…"))
             }
-            Section("Formats") { formats(Self.videos, PlayerFormats.all, anchor: String(localized: "Open All in pikapik")) }
+            Section("Video") { formats(Self.videos, PlayerFormats.video, anchor: String(localized: "Open All in pikapik")) }
+            Section("Music") { formats(Self.songs, PlayerFormats.music, anchor: String(localized: "Music")) }
             Section("Pictures") { formats(Self.pictures, ImageFormats.all, anchor: String(localized: "Pictures")) }
             Section {
                 if let license = Self.license {
@@ -96,6 +98,7 @@ struct PlayerPage: View {
     private func open() {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = true
+        panel.canChooseDirectories = true
         panel.allowedContentTypes = PlayerFormats.extensions.compactMap { UTType(filenameExtension: $0) }
         guard panel.runModal() == .OK else { return }
         NSWorkspace.shared.open(panel.urls, withApplicationAt: Self.helper, configuration: NSWorkspace.OpenConfiguration())
