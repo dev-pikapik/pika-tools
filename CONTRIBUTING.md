@@ -323,6 +323,18 @@ The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own tes
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Thumbnails.swift Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-thumbnails.swift -o build/test-thumbnails && build/test-thumbnails
 ```
 
+Songs have a test too (`scripts/test-music.swift`). It makes a short song in MP3, AAC, M4A, ALAC, FLAC, WAV, AIFF, CAF, Ogg, Opus and WMA with ffmpeg, with a title, artist, album and cover, checks that each one plays, that the tags and the cover are read, and that about seventy cut, empty, random and damaged copies are refused or played without a crash. Same ffmpeg and same build as above:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-music.swift -o build/test-music && build/test-music
+```
+
+The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It needs the same ffmpeg:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Thumbnails}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.
