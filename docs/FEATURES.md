@@ -2,7 +2,7 @@
 
 This is the catalog of everything pikapik does, grouped like the Settings sidebar. It is the one place to walk through and test the whole app, and every `###` heading is one feature: `./scripts/feature-form.sh` lists them in the “Which feature?” dropdown of the bug and feature forms. When you add, change, rename or remove a feature, update its entry here and run that script (CI fails otherwise).
 
-**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Stay in the background after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
+**Editions.** “Website” is the build from the website, GitHub Releases and Homebrew (bundle `com.pesotchi.pika-tools`, Developer ID, not sandboxed). “App Store” is the Mac App Store build (`APPSTORE=1 ./scripts/build.sh`, code under `#if APPSTORE`, bundle `com.pikapik.tools`, sandboxed). The App Store build has no bundled 7-Zip (Archives in Finder uses the tools built into macOS and has limits), no fan helper, no updater and no Buy me a coffee link. Its Fans, Ports, Dock, Player and Uninstaller tabs are hidden. It cannot change system settings itself (pointer acceleration, Animations, Show hidden files, Background Tasks switches, Left by deleted apps), so there it shows a guide or an Open System Settings button. It has no Green button, Quit when the last window closes, Minimize or hide with a click in the Dock, Enter or Delete in Finder, Key repeat, Trash watcher, lid-closed Keep Awake, sensor temperatures (only the battery temperature), real monitor brightness (it only dims the picture), Fix words as you type and Stay in the background after Quit. It adds the Folders permission, the Say thanks tip section and a Services-based wrong-layout fix.
 
 ## Before you test
 
@@ -1151,6 +1151,41 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. The row shows the animation of the clicks. Press Open → System Settings opens on Accessibility › Motion (on a macOS without the Motion anchor: Display).
 2. With Reduce Motion on → the animation is one still frame with the click marked.
+
+## Player
+
+*Hidden in the App Store build.*
+
+### Open Video…
+
+**Does:** Plays videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, in their own window. It never changes which app opens your videos.
+
+**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:23`). You can also drop a video on the player window. Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, F and Esc enter and leave full screen (`PlayerLogic.swift:17`). Subtitles are not supported yet.
+
+**Options:**
+- Formats — the list of formats on the same page; hover a format to see its file extensions (`PlayerPage.swift:25`).
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Settings › Player › Open Video… and pick a short MKV file → a window opens and the video plays with sound.
+2. (Website) Press Space → it pauses and the position stops; press Space again → it plays. Press → → it jumps 5 seconds ahead; press ← → it jumps back. Press ↑ → the volume goes up; press ↓ → it goes down.
+3. (Website) Press F → full screen; press Esc → back to the window. Drag the position slider → the picture follows.
+4. (Website) Open the same file again from Settings › Player → the same window comes to the front, with no second window. Minimize the window and open the file again → it comes back.
+5. (Website) Right-click the file in Finder › Open With → pikapik Player is in the list and opens it. Right-click an MP4 › Open With → the app that opens it by default is unchanged.
+6. (Website) Open a text file renamed to .mkv → the window says it can’t play this file; nothing crashes.
+
+### FFmpeg and dav1d Licenses
+
+**Does:** Shows the licenses of the two open-source libraries the player uses, and links to their source code.
+
+**How it works:** The FFmpeg License row opens the bundled `FFmpeg License.txt` (`PlayerPage.swift:41`): FFmpeg under LGPL 2.1 or later, dav1d under BSD 2-Clause. Source Code opens the latest release on GitHub, where the source of both is attached (`PlayerPage.swift:43`).
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Settings › Player › FFmpeg and dav1d Licenses → a text file with both licenses opens.
+2. (Website) Source Code → the latest release page opens in the browser, with the FFmpeg and dav1d source archives in the list of files.
 
 ## Uninstaller
 
