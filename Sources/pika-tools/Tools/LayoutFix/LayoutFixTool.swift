@@ -783,6 +783,7 @@ private struct LayoutFixNotes: View {
                 RowLabel(Text("Words left as you typed them"), Text(verbatim: tool.ignored.joined(separator: ", ")))
             }
         }
+        #if APPSTORE
         if KeyboardLayouts.all.count < 2 {
             HStack(spacing: 12) {
                 Text("This works when you have two or more keyboard layouts")
@@ -791,8 +792,51 @@ private struct LayoutFixNotes: View {
             }
             .noticeBar()
         }
+        #else
+        AddLayoutNotice()
+        #endif
     }
 }
+
+#if !APPSTORE
+private struct AddLayoutNotice: View {
+    @State private var added = 0
+    @State private var failed = false
+
+    var body: some View {
+        if KeyboardLayouts.all.count < 2 {
+            let choices = KeyboardLayouts.addable()
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 12) {
+                    Text("This works when you have two or more keyboard layouts")
+                    Spacer(minLength: 0)
+                    if choices.isEmpty || failed {
+                        Button("Keyboard Settings…") { NSWorkspace.shared.open(Shortcut.keyboardSettings) }
+                    }
+                    if !choices.isEmpty {
+                        Menu("Add a Layout") {
+                            ForEach(choices, id: \.self) { source in
+                                Button(KeyboardLayouts.string(source, kTISPropertyLocalizedName) ?? "") {
+                                    failed = !KeyboardLayouts.enable(source)
+                                    added += 1
+                                }
+                            }
+                        }
+                        .fixedSize()
+                    }
+                }
+                if failed {
+                    Text("Couldn’t add the layout. Use Keyboard Settings instead.")
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                }
+            }
+            .noticeBar()
+            .id(added)
+        }
+    }
+}
+#endif
 
 struct LayoutFixArt: View {
     let on: Bool

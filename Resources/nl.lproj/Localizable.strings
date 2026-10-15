@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Maak een ander scherm het hoofdbeeldscherm om het te verplaatsen";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Het Dock springt niet meer naar een ander scherm als de aanwijzer de onderrand ervan bereikt, hoe snel je ook beweegt. Maak een ander scherm het hoofdbeeldscherm om het Dock te verplaatsen. Als je dit aan- of uitzet, start het Dock opnieuw.";
 "Main display" = "Hoofdbeeldscherm";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klik op het gewenste scherm en kies ‘Hoofdbeeldscherm’ bij ‘Gebruik als’";
 "primary, main screen, Displays settings" = "primair, hoofdscherm, instellingen Beeldschermen";
 "Hide apps with a click and keep the Dock on one display" = "Apps met één klik verbergen en het Dock op één scherm houden";
 "Dock, display, monitor, screen, jump, move" = "Dock, scherm, beeldscherm, monitor, springen, springt, verplaatsen";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "toetsenbord, F1, F2, helderheid omhoog, helderheid omlaag, toetsen, monitor, scherm";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dimmen, donkerder, softwarematig dimmen, monitor, beeldscherm, scherm";
 "Forget This App" = "Vergeet deze app";
+"Add a Layout" = "Indeling toevoegen";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "De indeling kon niet worden toegevoegd. Gebruik in plaats daarvan Instellingen toetsenbord.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Het Dock gaat mee. Zet je de schakelaar uit, dan staan de beeldschermen weer zoals ze waren";

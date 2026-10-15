@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Pentru a-l muta, setați alt ecran ca principal";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock-ul nu mai sare pe alt ecran când cursorul ajunge la marginea de jos a acestuia, oricât de repede l-ați mișca. Pentru a muta Dock-ul, setați alt ecran ca principal. Activarea sau dezactivarea acestei opțiuni repornește Dock-ul.";
 "Main display" = "Afișaj principal";
-"Click the display you want, then choose “Main display” in “Use as”" = "Faceți clic pe ecranul dorit, apoi alegeți „Afișaj principal” la „Utilizați ca”";
 "primary, main screen, Displays settings" = "primar, monitor principal, configurări Afișaje";
 "Hide apps with a click and keep the Dock on one display" = "Ascunde aplicații cu un clic și ține Dock-ul pe un singur ecran";
 "Dock, display, monitor, screen, jump, move" = "Dock, ecran, monitor, afișaj, sare, mută";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tastatură, F1, F2, mărește luminozitatea, micșorează luminozitatea, taste, monitor, afișaj";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, estompare, mai întunecat, estompare software, monitor, afișaj, ecran";
 "Forget This App" = "Uită această aplicație";
+"Add a Layout" = "Adaugă un aranjament";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Nu s-a putut adăuga aranjamentul. Folosește Configurări tastatură.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock-ul se mută odată cu el. Dacă oprești comutatorul, afișajele revin cum erau";

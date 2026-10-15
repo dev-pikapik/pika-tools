@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Untuk memindahkannya, jadikan layar lain sebagai layar utama";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock tidak lagi melompat ke layar lain saat penunjuk mencapai tepi bawahnya, secepat apa pun Anda menggerakkannya. Untuk memindahkan Dock, jadikan layar lain sebagai layar utama. Menyalakan atau mematikan opsi ini akan memulai ulang Dock.";
 "Main display" = "Layar utama";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klik layar yang Anda inginkan, lalu pilih “Layar utama” di “Gunakan sebagai”";
 "primary, main screen, Displays settings" = "primer, monitor utama, pengaturan Layar";
 "Hide apps with a click and keep the Dock on one display" = "Sembunyikan app dengan satu klik dan jaga Dock tetap di satu layar";
 "Dock, display, monitor, screen, jump, move" = "Dock, layar, monitor, tampilan, melompat, pindah";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "papan ketik, keyboard, F1, F2, naikkan kecerahan, turunkan kecerahan, tombol, monitor, layar";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, redup, lebih gelap, peredupan perangkat lunak, monitor, layar";
 "Forget This App" = "Lupakan app ini";
+"Add a Layout" = "Tambah Tata Letak";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Tidak dapat menambahkan tata letak. Gunakan Pengaturan Papan Ketik.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock ikut berpindah. Mematikan sakelar mengembalikan layar seperti semula";

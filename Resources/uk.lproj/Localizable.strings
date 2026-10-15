@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Щоб перенести, зробіть основним інший екран";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock більше не перескакує на інший екран, коли вказівник доходить до його нижнього краю, хоч як швидко він рухається. Щоб перенести Dock, зробіть основним інший екран. Під час увімкнення і вимкнення Dock перезапускається.";
 "Main display" = "Основний дисплей";
-"Click the display you want, then choose “Main display” in “Use as”" = "Клацніть потрібний екран і виберіть «Основний дисплей» у списку «Використання»";
 "primary, main screen, Displays settings" = "головний, основний екран, параметри Дисплеї";
 "Hide apps with a click and keep the Dock on one display" = "Ховайте програми одним клацанням і тримайте Dock на одному екрані";
 "Dock, display, monitor, screen, jump, move" = "Dock, Док, дисплей, монітор, екран, стрибає, переноситься";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "клавіатура, F1, F2, яскравіше, темніше, клавіші, монітор, дисплей";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "гамма, затемнення, темніше, програмне затемнення, монітор, дисплей, екран";
 "Forget This App" = "Забути цю програму";
+"Add a Layout" = "Додати розкладку";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Не вдалося додати розкладку. Скористайтеся параметрами клавіатури.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock переходить разом із ним. Якщо вимкнути перемикач, дисплеї повернуться як були";

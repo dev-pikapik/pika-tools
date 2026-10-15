@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Gör en annan skärm till huvudbildskärm för att flytta den";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock hoppar inte längre till en annan skärm när pekaren når dess nederkant, hur snabbt du än rör den. Gör en annan skärm till huvudbildskärm för att flytta Dock. Dock startas om när du slår på eller av det här.";
 "Main display" = "Huvudbildskärm";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klicka på skärmen du vill ha och välj ”Huvudbildskärm” vid ”Använd som”";
 "primary, main screen, Displays settings" = "primär, huvudskärm, inställningar för Skärmar";
 "Hide apps with a click and keep the Dock on one display" = "Dölj appar med ett klick och ha Dock på en skärm";
 "Dock, display, monitor, screen, jump, move" = "Dock, skärm, bildskärm, monitor, hoppar, flytta";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "tangentbord, F1, F2, öka ljusstyrka, minska ljusstyrka, tangenter, bildskärm, skärm";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, dämpa, mörkare, mjukvarudämpning, bildskärm, skärm";
 "Forget This App" = "Glöm den här appen";
+"Add a Layout" = "Lägg till layout";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Det gick inte att lägga till layouten. Använd Tangentbordsinställningar i stället.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock följer med. Stänger du av reglaget återgår skärmarna till hur de var";

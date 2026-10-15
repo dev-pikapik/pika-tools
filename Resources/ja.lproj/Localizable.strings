@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "移動するには、別のディスプレイを主ディスプレイにします";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "ポインタが別のディスプレイの下端に届いても、Dockはそちらへ移動しなくなります。どんなに速く動かしても同じです。Dockを移動するには、別のディスプレイを主ディスプレイにします。オン/オフを切り替えるとDockが再起動します。";
 "Main display" = "主ディスプレイ";
-"Click the display you want, then choose “Main display” in “Use as”" = "目的のディスプレイをクリックして、「使用形態」で「主ディスプレイ」を選択します";
 "primary, main screen, Displays settings" = "メイン, プライマリ, ディスプレイ設定";
 "Hide apps with a click and keep the Dock on one display" = "クリックでアプリを隠す、Dockを1つのディスプレイにとどめる";
 "Dock, display, monitor, screen, jump, move" = "Dock, ディスプレイ, モニタ, 画面, 移動, ジャンプ";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "キーボード, F1, F2, 明るくする, 暗くする, キー, モニタ, ディスプレイ";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "ガンマ, 暗くする, 暗く, ソフトウェア調光, モニタ, ディスプレイ, 画面";
 "Forget This App" = "このアプリを忘れる";
+"Add a Layout" = "レイアウトを追加";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "レイアウトを追加できませんでした。代わりにキーボード設定を使ってください。";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock も一緒に移ります。スイッチをオフにすると、ディスプレイの配置は元に戻ります";

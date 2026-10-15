@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Para movê-lo, torne outra tela a principal";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "O Dock não pula mais para outra tela quando o ponteiro chega à borda inferior dela, por mais rápido que você o mova. Para mover o Dock, torne outra tela a principal. Ativar ou desativar esta opção reinicia o Dock.";
 "Main display" = "Tela principal";
-"Click the display you want, then choose “Main display” in “Use as”" = "Clique na tela desejada e escolha “Tela principal” em “Usar como”";
 "primary, main screen, Displays settings" = "primária, monitor principal, ajustes de Telas";
 "Hide apps with a click and keep the Dock on one display" = "Ocultar apps com um clique e manter o Dock em uma só tela";
 "Dock, display, monitor, screen, jump, move" = "Dock, tela, monitor, pular, pula, mover";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "teclado, F1, F2, aumentar brilho, diminuir brilho, teclas, monitor, tela";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gama, escurecer, mais escuro, escurecimento por software, monitor, tela";
 "Forget This App" = "Esquecer este app";
+"Add a Layout" = "Adicionar layout";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Não foi possível adicionar o layout. Use os Ajustes de Teclado.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "O Dock vai junto. Ao desligar a chave, as telas voltam a ficar como estavam";

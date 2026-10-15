@@ -9,6 +9,7 @@ struct PointerTrigger: Equatable {
     var mouse = false
     var fingers = 0
     var corner: Int?
+    var action: Int?
     var symbol = "computermouse"
     var modifiers = ""
     var motions: Set<Int64> = []
@@ -148,7 +149,7 @@ enum PointerShortcuts {
             let key = "wvous-\(side)-corner"
             guard let code = ((journal[key] ?? read(dock, key)) as? NSNumber)?.intValue, let action = actions[code] else { continue }
             add(10 + Int32(index), names("desk", action.name), PointerTrigger(
-                kind: .corner, detail: names("desk", cornerNames[index]), corner: index, symbol: action.symbol,
+                kind: .corner, detail: names("desk", cornerNames[index]), corner: index, action: code, symbol: action.symbol,
                 modifiers: glyphs(number(dock, "wvous-\(side)-modifier") ?? 0), controller: .cursor
             ))
         }

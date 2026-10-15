@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Чтобы перенести, сделайте основным другой экран";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock больше не перескакивает на другой экран, когда указатель доходит до его нижнего края, как бы быстро он ни двигался. Чтобы перенести Dock, сделайте основным другой экран. При включении и выключении Dock перезапускается.";
 "Main display" = "Основной дисплей";
-"Click the display you want, then choose “Main display” in “Use as”" = "Нажмите на нужный экран и выберите «Основной дисплей» в списке «Использовать как»";
 "primary, main screen, Displays settings" = "главный, основной экран, настройки Дисплеи";
 "Hide apps with a click and keep the Dock on one display" = "Скрывайте программы одним щелчком и держите Dock на одном экране";
 "Dock, display, monitor, screen, jump, move" = "Dock, Док, дисплей, монитор, экран, прыгает, переносится";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "клавиатура, F1, F2, ярче, темнее, клавиши, монитор, дисплей";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "гамма, затемнение, темнее, программное затемнение, монитор, дисплей, экран";
 "Forget This App" = "Забыть это приложение";
+"Add a Layout" = "Добавить раскладку";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Не удалось добавить раскладку. Воспользуйтесь настройками клавиатуры.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock переезжает вместе с ним. Если выключить переключатель, дисплеи вернутся как были";

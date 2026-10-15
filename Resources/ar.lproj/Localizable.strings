@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "لنقله، اجعل شاشة أخرى هي الشاشة الرئيسية";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "لم يعد Dock ينتقل إلى شاشة أخرى عندما يصل المؤشر إلى حافتها السفلية، مهما كانت سرعة الحركة. لنقل Dock، اجعل شاشة أخرى هي الشاشة الرئيسية. تشغيل هذا الخيار أو إيقافه يعيد تشغيل Dock.";
 "Main display" = "شاشة العرض الرئيسية";
-"Click the display you want, then choose “Main display” in “Use as”" = "انقر على الشاشة التي تريدها، ثم اختر «شاشة العرض الرئيسية» في «استخدام كـ»";
 "primary, main screen, Displays settings" = "أساسية، الشاشة الرئيسية، إعدادات شاشات العرض";
 "Hide apps with a click and keep the Dock on one display" = "إخفاء التطبيقات بنقرة وإبقاء Dock على شاشة واحدة";
 "Dock, display, monitor, screen, jump, move" = "Dock، شاشة، شاشة عرض، قفز، نقل، تحريك";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "لوحة المفاتيح، F1، F2، رفع السطوع، خفض السطوع، مفاتيح، شاشة";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "غاما، تعتيم، أغمق، تعتيم برمجي، شاشة، عرض";
 "Forget This App" = "نسيان هذا التطبيق";
+"Add a Layout" = "إضافة تخطيط";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "تعذّرت إضافة التخطيط. استخدم إعدادات لوحة المفاتيح بدلًا من ذلك.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "ينتقل Dock معها. إيقاف المفتاح يعيد الشاشات كما كانت";

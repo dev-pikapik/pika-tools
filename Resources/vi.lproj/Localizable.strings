@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Để di chuyển, hãy đặt màn hình khác làm màn hình chính";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock không còn nhảy sang màn hình khác khi con trỏ chạm cạnh dưới của màn hình đó, dù bạn di chuyển nhanh đến đâu. Để di chuyển Dock, hãy đặt màn hình khác làm màn hình chính. Bật hoặc tắt tùy chọn này sẽ khởi động lại Dock.";
 "Main display" = "Màn hình chính";
-"Click the display you want, then choose “Main display” in “Use as”" = "Bấm vào màn hình bạn muốn, rồi chọn “Màn hình chính” trong “Dùng làm”";
 "primary, main screen, Displays settings" = "chủ, chính, cài đặt Màn hình";
 "Hide apps with a click and keep the Dock on one display" = "Ẩn ứng dụng chỉ với một lần bấm và giữ Dock trên một màn hình";
 "Dock, display, monitor, screen, jump, move" = "Dock, màn hình, màn hình phụ, nhảy, di chuyển";
@@ -1190,3 +1189,6 @@
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "bàn phím, F1, F2, tăng độ sáng, giảm độ sáng, phím, màn hình";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "gamma, làm tối, tối hơn, làm tối bằng phần mềm, màn hình";
 "Forget This App" = "Quên ứng dụng này";
+"Add a Layout" = "Thêm bố cục";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Không thể thêm bố cục. Hãy dùng Cài đặt bàn phím.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock chuyển theo. Tắt công tắc sẽ đưa các màn hình về như cũ";
