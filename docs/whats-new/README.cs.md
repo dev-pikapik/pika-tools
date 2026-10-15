@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik to zvládne sám, bez cesty do Nastavení systému
+
+<sub>1.50.2 · 15. října 2026</sub>
+
+Ve verzi z webu se vypnutí úlohy na pozadí, přidání rozložení klávesnice, změna aktivního rohu a výběr hlavního monitoru teď dělají přímo v pikapiku.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+V Nastavení › Úlohy na pozadí vypněte úlohu a její řádek se hned změní. Heslo není potřeba a vaše volba zůstane i po restartu. Znovu zapnout úlohu vrátí. Úlohy pro celý Mac a pomocníci, které aplikace přidala sama, stále otevřou Nastavení systému a řádek pod nimi říká proč.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Oprava textu napsaného v nesprávném rozložení funguje, když máte dvě nebo více rozložení klávesnice. Pokud máte jen jedno, poznámka v Nastavení › Klávesnice teď nabízí rozložení pro vaše jazyky. Vyberte jedno v Přidat rozložení a je hned připravené, bez hesla. Pokud žádné nesedí, Nastavení klávesnice… tam pořád je.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+V Nastavení › Hry vybere nabídka Změnit… na řádku aktivního rohu pro tento roh jinou akci. V Držet Dock na jednom displeji nabídka Hlavní monitor udělá z vybraného monitoru hlavní a Dock se přesune na něj. pikapik si pamatuje, jak to bylo: Vrátit zpět nebo vypnutí přepínače vrátí všechno přesně tak, jak to bylo.
+
+**Vyzkoušejte:** Nastavení › Úlohy na pozadí
+
+**Opraveno**
+
+- Minimalizovat nebo skrýt kliknutím v Docku: pokud jste to zapnuli, když klik minimalizoval okna, po restartu už se samo nepřepne na skrývání aplikace.
+- Při otevření pikapik teď zkontroluje nastavení změněná na vašem druhém Macu, takže Mac, který změnu zmeškal, ji hned dožene.
+- Bez spánku teď říká, že zůstává zapnuté, dokud ho nevypnete, a Herní režim už nenabízí hru, kterou jste přidali.
+
+---
+
 ## <a id="v1.50.0"></a>Další funkce pikapik ve verzi z Mac App Store
 
 <sub>1.50.0 · 15. října 2026</sub>

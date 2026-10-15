@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Para moverlo, haz que otra pantalla sea la principal";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "El Dock ya no salta a otra pantalla cuando el puntero llega a su borde inferior, por muy rápido que lo muevas. Para mover el Dock, haz que otra pantalla sea la principal. Al activar o desactivar esta opción, el Dock se reinicia.";
 "Main display" = "Pantalla principal";
-"Click the display you want, then choose “Main display” in “Use as”" = "Haz clic en la pantalla que quieras y elige «Pantalla principal» en «Usar como»";
 "primary, main screen, Displays settings" = "primaria, monitor principal, ajustes de Pantallas";
 "Hide apps with a click and keep the Dock on one display" = "Ocultar apps con un clic y mantener el Dock en una sola pantalla";
 "Dock, display, monitor, screen, jump, move" = "Dock, pantalla, monitor, saltar, salta, mover";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Encender…";
 "Turn Off…" = "Apagar…";
 "Opens Login Items in System Settings" = "Abre Ítems de inicio en Ajustes del Sistema";
+"Couldn’t turn this off. Try again or use System Settings." = "No se pudo apagar. Inténtalo de nuevo o usa Ajustes del Sistema.";
+"Couldn’t turn this back on. Try again or use System Settings." = "No se pudo volver a encender. Inténtalo de nuevo o usa Ajustes del Sistema.";
+"Needs administrator rights, so turn it off in System Settings" = "Requiere permisos de administrador, así que apágalo en Ajustes del Sistema";
+"The app added it itself, so turn it off in System Settings" = "La app lo añadió por sí misma, así que apágalo en Ajustes del Sistema";
 "Lets the app save new files next to yours and see your background tasks" = "Para guardar archivos nuevos junto a los tuyos y ver tus tareas en segundo plano";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Elige tu carpeta de inicio una vez para que pikapik pueda guardar archivos junto a los tuyos y ver tus tareas en segundo plano.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "ítems de inicio, abrir al iniciar sesión, agentes, servicios, daemons, arranque, inicio automático, ayudantes, en marcha, segundo plano, restos, apagar, desactivar";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Añadir distribución";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "No se pudo añadir la distribución. Usa los Ajustes del teclado.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "El Dock se va con ella. Al apagar el interruptor, las pantallas vuelven a como estaban";

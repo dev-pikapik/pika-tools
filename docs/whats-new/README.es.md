@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik lo hace solo, sin ir a Ajustes del Sistema
+
+<sub>1.50.2 · 15 de octubre de 2026</sub>
+
+En la versión de la web, apagar una tarea en segundo plano, añadir una distribución de teclado, cambiar una esquina activa y elegir la pantalla principal ahora se hace directamente en pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+En Ajustes › Tareas en segundo plano, apaga una tarea y su fila cambia al instante. No hace falta contraseña, y tu elección se conserva tras reiniciar. Volver a encender recupera la tarea. Las tareas de todo el Mac y los ayudantes que una app añadió por su cuenta siguen abriendo Ajustes del Sistema, y una línea bajo la fila explica por qué.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Corregir el texto escrito en la distribución equivocada funciona si tienes dos o más distribuciones de teclado. Si solo tienes una, la nota de Ajustes › Teclado ahora ofrece distribuciones para tus idiomas. Elige una en Añadir distribución y queda lista al momento, sin contraseña. Si ninguna encaja, Ajustes del teclado… sigue ahí.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+En Ajustes › Juegos, el menú Cambiar… de la fila de una esquina activa elige otra acción para esa esquina. En Mantener el Dock en una sola pantalla, el menú Pantalla principal convierte la pantalla elegida en la principal, con el Dock en ella. pikapik recuerda cómo estaba todo: Devolver a su sitio, o apagar el interruptor, lo deja exactamente igual.
+
+**Pruébalo:** Ajustes › Tareas en segundo plano
+
+**Corregido**
+
+- Minimizar u ocultar con un clic en el Dock: si lo activaste mientras el clic minimizaba las ventanas, ya no cambia solo a ocultar la app tras reiniciar.
+- Al abrir pikapik, ahora comprueba los ajustes cambiados en tu otro Mac, así que un Mac que se perdió el cambio se pone al día enseguida.
+- Mantener activo ahora dice que sigue activo hasta que lo apagues, y el Modo de juego ya no sugiere un juego que ya añadiste.
+
+---
+
 ## <a id="v1.50.0"></a>Más pikapik en la versión de la Mac App Store
 
 <sub>1.50.0 · 15 de octubre de 2026</sub>

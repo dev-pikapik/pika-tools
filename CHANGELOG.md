@@ -2,7 +2,13 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.50.2] - Unreleased
+## [1.50.2] - 2026-10-15
+
+### Changed
+- Background, website version: tasks now turn off right in pikapik, with no trip to System Settings. This works for agents from the shared Library folder (for all users) and for old login items; the row changes at once, no password is needed, and the choice stays after a restart. Turn Back On puts the task back. If it doesn’t work, the row says so in plain words. Tasks for the whole Mac and helpers an app added itself still open System Settings, and a line under the row now says why. The Mac App Store version is unchanged.
+- Keyboard layouts, website version: with only one layout, Fix Wrong Keyboard Layout now offers the layouts for your languages right in its note. Pick one under Add a Layout and it is ready at once, with no trip to System Settings and no password. If none fits, Keyboard Settings… is still there. The Mac App Store version is unchanged.
+- Hot corners, website version: in Settings › Games, the Change… menu on a hot-corner row picks another action for that corner right there, with no trip to System Settings. The Dock restarts once for each change, the first action is remembered, and Put Back returns it. The Mac App Store version is unchanged.
+- Keep the Dock on one display, website version: the Main display row now sits right under the switch as a menu. Pick a display there and it becomes the main one, with the Dock on it, with no trip to System Settings. Your first arrangement of displays is remembered, and turning the switch off puts the displays back exactly as they were. The Mac App Store version is unchanged.
 
 ### Fixed
 - Keep Awake: with “Always on” saved and Keep Awake off, the menu said it would end on a date. It now says it stays on until you turn it off.
@@ -12,6 +18,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Game Mode: a game you already added, such as Minecraft, is no longer suggested again.
 - Settings: tab descriptions all end the same way, without a full stop, in all 23 languages.
 - New dots for per-app volume and Ports also show in the website version.
+- Minimize or hide with a click in the Dock: if you turned it on while it was set to minimize the windows, it no longer switches itself to hiding the app after the next restart.
+- Settings sync: when you open pikapik, it now checks for settings changed on your other Mac, so a Mac that missed the change catches up at once.
 
 ## [1.50.1] - Unreleased
 
@@ -962,6 +970,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.50.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.2
 [1.50.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.0
 [1.49.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.49.0
 [1.48.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.48.0

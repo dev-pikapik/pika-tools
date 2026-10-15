@@ -24,6 +24,7 @@ enum BackgroundTests {
         timings()
         domains()
         collected()
+        switches()
         print("background: ok")
     }
 
@@ -144,13 +145,14 @@ enum BackgroundTests {
         launchd.gui.pids = ["com.foo.agent": 0, "com.foo.sync": 42]
         launchd.gui.disabled = ["com.gone.updater": true, "com.foo.sync": false]
         launchd.system.pids = ["com.vendor.daemon": 77]
+        file("home/Gone.app/Contents/MacOS/gone")
         let tasks = BackgroundTasks.collect(AppFootprint(roots: roots, installed: [foo], system: []), launchd: launchd, own: own,
-                                            loginItems: [foo.url, own, launcher, at("home/.Trash/Old.app")],
+                                            loginItems: [foo.url, own, launcher, at("home/.Trash/Old.app")], turnedOff: [at("home/Gone.app")],
                                             running: [(id: "com.foo.launcher", url: nil), (id: "com.foo.app", url: foo.url)],
                                             status: { ["com.needs.approval.plist": 2, "com.foo.daemon.plist": 1][$0.lastPathComponent] ?? 0 })
         let found = Dictionary(tasks.map { ($0.label.isEmpty ? $0.file.lastPathComponent : $0.label, $0) }, uniquingKeysWith: { first, _ in first })
         let expected: Set = ["com.foo.agent", "com.foo.daemon", "com.foo.launcher", "com.foo.sync", "com.gone.updater", "com.needs.approval",
-                             "com.pesotchi.pika-tools.test", "com.vendor.daemon", "com.vendor.shared", "com.foo.app", "com.pesotchi.pika-tools", "Old.app"]
+                             "com.pesotchi.pika-tools.test", "com.vendor.daemon", "com.vendor.shared", "com.foo.app", "com.pesotchi.pika-tools", "Old.app", "Gone.app"]
         precondition(Set(found.keys) == expected && tasks.count == expected.count, "\(tasks.map(\.label).sorted())")
         let titles = tasks.map(\.title)
         precondition(titles == titles.sorted { $0.localizedStandardCompare($1) != .orderedDescending }, "\(titles)")
@@ -159,17 +161,95 @@ enum BackgroundTests {
         func check(_ label: String, _ test: (BackgroundTask) -> Bool) {
             precondition(test(found[label]!), "\(label): \(found[label]!)")
         }
-        check("com.foo.agent") { $0.title == "Foo" && $0.developer == "Foo Inc." && $0.kind == .background && !$0.running && $0.state == .on && $0.domain.isEmpty && $0.timing == .onDemand && $0.icon == foo.url }
-        check("com.foo.daemon") { $0.scope == .wholeMac && $0.timing == .keepsRunning && !$0.running && $0.domain.isEmpty }
-        check("com.foo.launcher") { $0.file == launcher && $0.title == "Foo" && $0.running && $0.timing == .atLogin && $0.kind == .background }
+        check("com.foo.agent") { $0.title == "Foo" && $0.developer == "Foo Inc." && $0.kind == .background && !$0.running && $0.state == .on && $0.domain.isEmpty && !$0.canToggle && $0.timing == .onDemand && $0.icon == foo.url }
+        check("com.foo.daemon") { $0.scope == .wholeMac && $0.timing == .keepsRunning && !$0.running && $0.domain.isEmpty && !$0.canToggle && $0.opensLoginItems }
+        check("com.foo.launcher") { $0.file == launcher && $0.title == "Foo" && $0.running && $0.timing == .atLogin && $0.kind == .background && !$0.canToggle && $0.opensLoginItems }
         check("com.foo.sync") { $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.state == .on && $0.domain == gui && $0.scope == .mine && $0.timing == .atLogin }
         check("com.gone.updater") { $0.kind == .leftover && $0.title == "Gone" && $0.state == .off && $0.domain == gui && $0.timing == .schedule && $0.icon == $0.file }
         check("com.needs.approval") { $0.state == .offInSettings && $0.domain == gui && $0.kind == .background }
         check("com.pesotchi.pika-tools.test") { $0.isOwn && $0.title == "pikapik" && $0.domain.isEmpty && $0.icon == own }
-        check("com.vendor.daemon") { $0.scope == .wholeMac && $0.running && $0.timing == .keepsRunning && $0.domain.isEmpty && $0.state == .on }
-        check("com.vendor.shared") { $0.scope == .allUsers && $0.state == .off && $0.domain.isEmpty }
-        check("com.foo.app") { $0.kind == .login && $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.timing == nil && $0.version == "2.1" }
-        check("com.pesotchi.pika-tools") { $0.kind == .login && $0.isOwn && $0.title == "pikapik" && $0.icon == own && $0.version == "1.50.1" }
-        check("Old.app") { $0.kind == .leftover && $0.title == "Old" }
+        check("com.vendor.daemon") { $0.scope == .wholeMac && $0.running && $0.timing == .keepsRunning && $0.domain.isEmpty && $0.state == .on && !$0.canToggle }
+        check("com.vendor.shared") { $0.scope == .allUsers && $0.state == .off && $0.domain == gui && $0.canToggle && !$0.opensLoginItems }
+        check("com.foo.app") { $0.kind == .login && $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.timing == nil && $0.version == "2.1" && $0.state == .on && $0.canToggle && !$0.opensLoginItems }
+        check("com.pesotchi.pika-tools") { $0.kind == .login && $0.isOwn && $0.title == "pikapik" && $0.icon == own && $0.version == "1.50.1" && !$0.canToggle }
+        check("Old.app") { $0.kind == .leftover && $0.title == "Old" && $0.canToggle }
+        check("Gone.app") { $0.kind == .login && $0.title == "Gone" && $0.state == .off && $0.canToggle && !$0.running }
+    }
+
+    static func switches() {
+        let suite = "pikapik.test.background"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let list = FakeLoginItems(items: [at("home/Foo.app"), at("home/Other.app")])
+        var calls: [[String]] = []
+        var launchctlWorks = true
+        let launchctl: ([String]) -> String? = { calls.append($0); return launchctlWorks ? "" : nil }
+        func login(_ name: String) -> BackgroundTask {
+            var task = BackgroundTask(file: at("home/\(name)"), label: name, title: name, icon: at("home/\(name)"))
+            task.inLoginList = true
+            return task
+        }
+        var agent = BackgroundTask(file: at("root/Library/LaunchAgents/a.plist"), label: "a", title: "A", icon: at("root"))
+        agent.domain = "gui/501"
+
+        precondition(BackgroundTasks.turnOff(agent, launchctl: launchctl, list: list, defaults: defaults))
+        precondition(calls == [["disable", "gui/501/a"], ["bootout", "gui/501/a"]], "\(calls)")
+        calls = []
+        precondition(BackgroundTasks.turnOn(agent, launchctl: launchctl, list: list, defaults: defaults))
+        precondition(calls == [["enable", "gui/501/a"], ["bootstrap", "gui/501", at("root/Library/LaunchAgents/a.plist").path]], "\(calls)")
+        calls = []
+        launchctlWorks = false
+        precondition(!BackgroundTasks.turnOff(agent, launchctl: launchctl, list: list, defaults: defaults) && calls == [["disable", "gui/501/a"]], "\(calls)")
+        precondition(!BackgroundTasks.turnOn(agent, launchctl: launchctl, list: list, defaults: defaults))
+        agent.domain = ""
+        calls = []
+        precondition(!BackgroundTasks.turnOff(agent, launchctl: launchctl, list: list, defaults: defaults) && calls.isEmpty)
+
+        file("home/Foo.app/Contents/MacOS/foo")
+        file("home/Other.app/Contents/MacOS/other")
+        precondition(BackgroundTasks.turnOff(login("Foo.app"), launchctl: launchctl, list: list, defaults: defaults))
+        precondition(BackgroundTasks.turnOff(login("Other.app"), launchctl: launchctl, list: list, defaults: defaults))
+        precondition(list.items.isEmpty && calls.isEmpty)
+        let live = [at("home/Live.app")]
+        precondition(BackgroundTasks.turnedOffLogins(live: live, defaults: defaults).map(\.path) == [at("home/Foo.app").path, at("home/Other.app").path])
+
+        list.broken = true
+        precondition(!BackgroundTasks.turnOn(login("Other.app"), launchctl: launchctl, list: list, defaults: defaults))
+        precondition(BackgroundTasks.turnedOffLogins(live: live, defaults: defaults).count == 2)
+        list.broken = false
+        precondition(BackgroundTasks.turnOn(login("Other.app"), launchctl: launchctl, list: list, defaults: defaults))
+        precondition(list.items.map(\.path) == [at("home/Other.app").path], "\(list.items)")
+        precondition(BackgroundTasks.turnedOffLogins(live: live, defaults: defaults).map(\.path) == [at("home/Foo.app").path])
+
+        precondition(BackgroundTasks.turnedOffLogins(live: [at("home/Foo.app")], defaults: defaults).isEmpty)
+        precondition(BackgroundTasks.turnedOffLogins(live: [], defaults: defaults).isEmpty)
+
+        precondition(BackgroundTasks.turnOff(login("Other.app"), launchctl: launchctl, list: list, defaults: defaults))
+        try! FileManager.default.removeItem(at: at("home/Other.app"))
+        precondition(BackgroundTasks.turnedOffLogins(live: [], defaults: defaults).isEmpty)
+    }
+}
+
+private final class FakeLoginItems: LoginItemsList {
+    var items: [URL]
+    var broken = false
+
+    init(items: [URL]) {
+        self.items = items
+    }
+
+    func urls() -> [URL] { items }
+
+    func remove(_ url: URL) -> Bool {
+        guard !broken, items.contains(where: { $0.path == url.path }) else { return false }
+        items.removeAll { $0.path == url.path }
+        return true
+    }
+
+    func insert(_ url: URL) -> Bool {
+        guard !broken else { return false }
+        items.append(url)
+        return true
     }
 }

@@ -641,7 +641,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:576`). Website only.
 - Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:580`). Website only.
 - Words left as you typed them — list with a Clear button, shown only when not empty (`:587-590`). Website only.
-- Keyboard Settings… — button with a note, shown when fewer than two layouts exist (`:595-597`). Website only.
+- Add a Layout — menu in the note shown when fewer than two layouts exist: the installed layouts for your preferred languages that you don’t have yet; picking one turns it on with `TISEnableInputSource`, no password (`LayoutFixTool.swift` `AddLayoutNotice`, `KeyboardLayouts.addable`). If none is left to offer, or adding fails, the Keyboard Settings… button opens System Settings. Website only; the App Store build shows only Keyboard Settings….
 - Don’t fix text in these apps — app exclusion list (`:602`). Website only.
 
 **Nuances:** Needs at least two input sources. Website App Exclusions: Add App… / Done, app shelf, Remove. The retyped text and the keys it sends are tagged (`EventTag.swift`), so with two copies of pikapik one copy does not fix the text the other has just retyped.
@@ -652,7 +652,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
 2. Select a mistyped word and press ⌃⇧Space → it is fixed.
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
-4. With only one input source → Keyboard Settings… with its note shows.
+4. With only one input source (and a second language in System Settings › General › Language & Region) → the note shows Add a Layout; pick a layout → it turns on at once, the note goes away, no password asked. Remove it again in System Settings › Keyboard › Input Sources. With no other language → the note shows Keyboard Settings… instead.
 5. Add TextEdit to Don’t fix text in these apps → no fixing there.
 
 ### Fix the selected text
@@ -863,10 +863,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the Dock on its display, however fast you move the mouse to the bottom of the other one.
 
-**How it works:** Writes the hidden key `com.apple.dock allow-display-switching` = false and restarts the Dock once (`Sources/pika-tools/Tools/Windows/DockDisplayTool.swift:95`, `DockDisplaySwitch.swift`). No permission. The Dock reads it only at start. Turning off (and `--uninstall`) puts back the previous value.
+**How it works:** Writes the hidden key `com.apple.dock allow-display-switching` = false and restarts the Dock once (`Sources/pika-tools/Tools/Windows/DockDisplayTool.swift:96`, `DockDisplaySwitch.swift`). No permission. The Dock reads it only at start. Turning off (and `--uninstall`) puts back the previous value.
 
 **Options:**
-- Main display — row with an Open button to System Settings › Displays; make another display the main one to move the Dock on purpose (`DockDisplayTool.swift:103`).
+- Main display — menu under the switch (two or more displays, enabled only while the switch is on); pick a display and pikapik makes it the main one with `CGConfigureDisplayOrigin`, shifting every display by the same amount so the arrangement keeps its shape, and the Dock goes with it (`DockDisplayTool.swift:108`, `MainDisplayControl` at `:140`, `MainDisplay` in `DockDisplaySwitch.swift`). The first arrangement is remembered by display ID; turning the switch off, `--uninstall` or the next launch with the switch off puts it back.
 
 **Nuances:** Needs two displays and “Displays have separate Spaces” on (System Settings › Desktop & Dock).
 
@@ -877,7 +877,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. Quit and reopen pikapik → the Dock does not restart.
 3. Turn the switch off → the Dock restarts once, moves between displays again, and the command prints what it printed before (or says the key does not exist).
 4. Turn it on again and run `build/pikapik.app/Contents/MacOS/pika-tools --uninstall` → same result as turning it off.
-5. Press Open next to Main display → System Settings › Displays opens.
+5. Before it, run `Private/tools/vdisplay` (`vd hold 120`) for a second display and note both positions with `vd probe`. With the switch on, open Main display and pick the other display → no prompt, it moves to 0,0, the other display keeps its place next to it, and the Dock appears there. Pick the first display again → the arrangement is the original. Pick the other one, then turn the switch off → the arrangement is exactly the one in `vd probe` before the test.
 
 ## Finder
 
@@ -1250,14 +1250,15 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Open at Login
 
-**Does:** Lists the login items (apps that start when you log in).
+**Does:** Lists the login items (apps that start when you log in). The website version can take one out of the list and put it back.
 
-**How it works:** `LoginItemsList` (`Sources/pika-tools/Tools/Background/BackgroundTasks.swift:257,280`), group at `BackgroundPage.swift:119`.
+**How it works:** `LoginItemsList` and `SessionLoginItems` (`Sources/pika-tools/Tools/Background/BackgroundTasks.swift`), group at `BackgroundPage.swift`. Turn Off calls `LSSharedFileListItemRemove` and remembers the path in the `background-turned-off-logins` key, so the row stays, dimmed, with Turn Back On; Turn Back On calls `LSSharedFileListInsertItemURL` through `dlsym` (the `kLSSharedFileListItemLast` guard value cannot be passed from Swift) and forgets the path. A remembered path whose app is gone, or that is back in the list, is dropped. The old “hide at login” flag is not kept: macOS 27 neither reads nor writes it.
 
 **Edition:** Website only (App Store: the group is not shown).
 
 **Test:**
 1. (Website) Open Settings › Background Tasks → the Open at Login group lists your login items, including pikapik if Open at Login is on.
+2. (Website) Add a stub app such as PikaE2E-Login.app to Login Items, click Turn Off on its row → the row dims and says Turned off, and it is gone from System Settings › General › Login Items & Extensions. Click Turn Back On → it is in the list again.
 
 ### In the Background
 
@@ -1266,8 +1267,8 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **How it works:** Reads property lists in `/Library` and `~/Library`, `SMAppService.statusForLegacyPlist`, and runs `/bin/launchctl print` for the gui/<uid>, user/<uid> and system domains, read-only (`BackgroundPage.swift:121`, `BackgroundTasks.swift`). Each row shows the app, a green dot when running and the file path; clicking the path shows the file in Finder. Empty state: “Nothing runs in the background”.
 
 **Options:**
-- Turn Off / Turn Back On — button on each launch agent or daemon (Website): switches the task off and on again without deleting it, with `launchctl disable|enable` plus bootout and bootstrap (`BackgroundPage.swift:20,70,241-242`). Nothing on disk is deleted. App Store: view only, no button.
-- Turn Off… / Turn On… — button on login-item tasks, shown instead of the switch where pikapik cannot change a task (`BackgroundPage.swift:237-247`): it opens System Settings › Login Items so you can change the item yourself; nothing on disk changes. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
+- Turn Off / Turn Back On — button on each launch agent in `~/Library/LaunchAgents` or `/Library/LaunchAgents`, and on each old login item (Website): an agent is switched off and on again without deleting it, with `launchctl disable|enable` plus bootout and bootstrap; a login item is taken out of the list and put back (see Open at Login). The row shows the new state at once; if it fails, a red line under the row says so. Nothing on disk is deleted. Needs no password; it survives a restart. App Store: view only, no button.
+- Turn Off… / Turn On… — button on the tasks pikapik cannot change, shown instead of the switch: daemons (need administrator rights) and agents and helpers an app registered itself (macOS has no way to switch another app’s off). It opens System Settings › Login Items so you can change the item yourself; nothing on disk changes, and a line under the row says why. Website: Turn On… for an item that is off there; App Store: Turn Off… on running tasks, the only action there, with no line under the row. When any such task is listed, an animated guide at the top (`SettingsGuide.loginItems`, `BackgroundPage.swift:115-117`, `BackgroundTasks.swift:86`) shows where to click: Login Items & Extensions, then the pikapik switch; its labels come from your Mac, in its language.
 - Show in Finder — on every task in every group: clicking the file path, the Show in Finder context-menu item (`BackgroundPage.swift:201`) or the path’s help (`:195`) reveals the task’s file in Finder.
 
 **Edition:** Both; App Store differs: view only, shorter header text, home-folder tasks only after Folders access.
@@ -1275,10 +1276,11 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Test:**
 1. Open Settings › Background Tasks → a list with apps, green dots for running tasks and file paths; clicking a path shows the file in Finder.
 2. (Website) Make a test agent `~/Library/LaunchAgents/org.example.background-test.plist` that runs `/bin/sleep 3600` with RunAtLoad and load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/org.example.background-test.plist`. Open Settings › Background Tasks → it is listed with a green dot.
-3. Click Turn Off → the row dims, `launchctl print-disabled gui/$(id -u)` shows it as disabled, the sleep process is gone and the file is still there. Click Turn Back On → it runs again.
+3. Click Turn Off → the row dims at once, `launchctl print-disabled gui/$(id -u)` shows it as disabled, the sleep process is gone and the file is still there. Click Turn Back On → it runs again.
 4. Remove the test agent afterwards with `launchctl bootout gui/$(id -u)/org.example.background-test` and delete the file.
-5. (App Store) Click Turn Off… on any task → System Settings opens on Login Items; nothing on disk changes.
-6. Click Show in Finder on a task → Finder opens with the file selected.
+5. (Website) A daemon in `/Library/LaunchDaemons` has Turn Off… and the line “Needs administrator rights, so turn it off in System Settings”; click it → System Settings opens on Login Items; nothing on disk changes.
+6. (App Store) Click Turn Off… on any task → System Settings opens on Login Items; nothing on disk changes.
+7. Click Show in Finder on a task → Finder opens with the file selected.
 
 ### Left by deleted apps
 
@@ -1452,12 +1454,16 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **How it works:** DockSwipe events (`CGEventType` 30, field 110 = 23; field 123 motion, 132 phase) are dropped at the “began” phase (`PointerShortcuts.swift`, `GameRules.dropsSwipe`). Hot corners: `DockEdges` zeroes only the paused corners. The motion codes came from event logging, not from Apple documents.
 
+**Options:**
+- Change… on a hot-corner row — menu of the actions macOS offers for a corner; picking one writes `com.apple.dock wvous-<corner>-corner` and restarts the Dock once (`HotCorners.swift`, `HotCornerMenu` in `SystemShortcutList.swift`). The first value is remembered, and Put Back in the same menu writes it back. Off while a game is in front. Website only; other rows and the App Store build still show Change in System Settings.
+
 **Nuances:** Not covered: shake to locate the pointer, zoom with a modifier key and scrolling, clicking the wallpaper to show the desktop. Never verified by hand with real gestures. App Store: `PointerShortcuts.buttons` is empty (`PointerShortcuts.swift:42`) and hot-corner reading is Website only (`:145`).
 
 **Edition:** Both; App Store differs: no mouse buttons and no hot-corner reading.
 
 **Test:**
-1. (trackpad) In a stub game do a three-finger swipe up (Mission Control) and a four-finger swipe sideways → nothing happens with the rule on; set a row to Allow in games → that swipe works.
+1. (website) On a hot-corner row press Change… and pick another action → the Dock restarts once, the row shows the new action and `defaults read com.apple.dock wvous-<tl|tr|bl|br>-corner` prints its number; Put Back → the old action and number. Write the number down first and set it back when you are done.
+2. (trackpad) In a stub game do a three-finger swipe up (Mission Control) and a four-finger swipe sideways → nothing happens with the rule on; set a row to Allow in games → that swipe works.
 
 ## Pet
 

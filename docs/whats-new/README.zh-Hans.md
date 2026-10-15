@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik 自己搞定，不用再去“系统设置”
+
+<sub>1.50.2 · 2026年10月15日</sub>
+
+在网站版中，关闭后台任务、添加键盘布局、更改触发角和选择主显示器，现在都能直接在 pikapik 里完成。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+在“设置”›“后台任务”中关闭一项任务，它的那一行会立刻变化。不需要密码，你的选择在重启后也会保留。点“重新打开”就能让任务恢复。针对整台 Mac 的任务，以及应用自己添加的辅助程序，仍会打开“系统设置”，行下方的一句话会说明原因。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+纠正用错布局输入的文字，需要有两个或以上键盘布局才能用。如果只有一个，“设置”›“键盘”里的提示现在会推荐适合你语言的布局。在“添加布局”中选一个，马上就能用，不需要密码。如果都不合适，“键盘设置…”仍然在那里。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+在“设置”›“游戏”中，触发角那一行的“更改…”菜单可以为该角选择另一个操作。在“让程序坞固定在一台显示器上”中，“主显示器”菜单会把你选的显示器设为主显示器，程序坞也跟着过去。pikapik 会记住原来的样子：点“放回原处”，或者关掉开关，一切都会原样恢复。
+
+**试试看：** 设置 › 后台任务
+
+**修复**
+
+- 点按程序坞最小化或隐藏：如果你在点按会最小化窗口时打开了它，重启后它不会再自己变成隐藏应用。
+- 打开 pikapik 时，它现在会检查另一台 Mac 上改过的设置，错过更改的 Mac 会立刻跟上。
+- “保持唤醒”现在会说明它会一直开着，直到你关掉；“游戏模式”也不会再推荐你已经添加过的游戏。
+
+---
+
 ## <a id="v1.50.0"></a>Mac App Store 版本的 pikapik，功能更多了
 
 <sub>1.50.0 · 2026年10月15日</sub>

@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Aby go przenieść, ustaw inny ekran jako główny";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock nie przeskakuje już na inny ekran, gdy wskaźnik dotrze do jego dolnej krawędzi, niezależnie od tego, jak szybko go przesuwasz. Aby przenieść Dock, ustaw inny ekran jako główny. Włączenie lub wyłączenie tej opcji uruchamia Dock ponownie.";
 "Main display" = "Wyświetlacz główny";
-"Click the display you want, then choose “Main display” in “Use as”" = "Kliknij wybrany ekran, a następnie w menu „Używaj jako” wybierz „Wyświetlacz główny”";
 "primary, main screen, Displays settings" = "podstawowy, główny monitor, ustawienia Wyświetlacze";
 "Hide apps with a click and keep the Dock on one display" = "Ukrywaj aplikacje jednym kliknięciem i trzymaj Dock na jednym ekranie";
 "Dock, display, monitor, screen, jump, move" = "Dock, ekran, monitor, wyświetlacz, skacze, przeskakuje, przenieś";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Włącz…";
 "Turn Off…" = "Wyłącz…";
 "Opens Login Items in System Settings" = "Otwiera Rzeczy otwierane podczas logowania w Ustawieniach systemowych";
+"Couldn’t turn this off. Try again or use System Settings." = "Nie udało się tego wyłączyć. Spróbuj ponownie lub użyj Ustawień systemowych.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Nie udało się tego włączyć ponownie. Spróbuj ponownie lub użyj Ustawień systemowych.";
+"Needs administrator rights, so turn it off in System Settings" = "Wymaga uprawnień administratora, więc wyłącz to w Ustawieniach systemowych";
+"The app added it itself, so turn it off in System Settings" = "Aplikacja dodała to sama, więc wyłącz to w Ustawieniach systemowych";
 "Lets the app save new files next to yours and see your background tasks" = "Pozwala aplikacji zapisywać nowe pliki obok Twoich i widzieć zadania w tle";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Wybierz raz swój folder domowy, aby pikapik mógł zapisywać pliki obok Twoich i widzieć Twoje zadania w tle.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "rzeczy otwierane podczas logowania, otwórz po zalogowaniu, agenty, usługi, demony, uruchamianie, autostart, pomocnicy, działa, tło, pozostałości, wyłącz";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Dodaj układ";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Nie udało się dodać układu. Użyj zamiast tego Ustawień klawiatury.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock przenosi się razem z nim. Wyłączenie przełącznika przywraca poprzedni układ wyświetlaczy";

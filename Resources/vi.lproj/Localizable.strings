@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Để di chuyển, hãy đặt màn hình khác làm màn hình chính";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock không còn nhảy sang màn hình khác khi con trỏ chạm cạnh dưới của màn hình đó, dù bạn di chuyển nhanh đến đâu. Để di chuyển Dock, hãy đặt màn hình khác làm màn hình chính. Bật hoặc tắt tùy chọn này sẽ khởi động lại Dock.";
 "Main display" = "Màn hình chính";
-"Click the display you want, then choose “Main display” in “Use as”" = "Bấm vào màn hình bạn muốn, rồi chọn “Màn hình chính” trong “Dùng làm”";
 "primary, main screen, Displays settings" = "chủ, chính, cài đặt Màn hình";
 "Hide apps with a click and keep the Dock on one display" = "Ẩn ứng dụng chỉ với một lần bấm và giữ Dock trên một màn hình";
 "Dock, display, monitor, screen, jump, move" = "Dock, màn hình, màn hình phụ, nhảy, di chuyển";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Bật…";
 "Turn Off…" = "Tắt…";
 "Opens Login Items in System Settings" = "Mở Mục đăng nhập trong Cài đặt hệ thống";
+"Couldn’t turn this off. Try again or use System Settings." = "Không thể tắt mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Không thể bật lại mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
+"Needs administrator rights, so turn it off in System Settings" = "Cần quyền quản trị, nên hãy tắt trong Cài đặt hệ thống";
+"The app added it itself, so turn it off in System Settings" = "Ứng dụng tự thêm mục này, nên hãy tắt trong Cài đặt hệ thống";
 "Lets the app save new files next to yours and see your background tasks" = "Cho phép ứng dụng lưu tệp mới cạnh tệp của bạn và xem các tác vụ nền";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Hãy chọn thư mục chính của bạn một lần để pikapik có thể lưu tệp cạnh tệp của bạn và xem các tác vụ nền của bạn.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "mục đăng nhập, mở khi đăng nhập, tác nhân, dịch vụ, daemon, khởi động, tự khởi động, trình trợ giúp, đang chạy, chạy nền, nền, phần còn sót, tắt";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Thêm bố cục";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Không thể thêm bố cục. Hãy dùng Cài đặt bàn phím.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock chuyển theo. Tắt công tắc sẽ đưa các màn hình về như cũ";

@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "لنقله، اجعل شاشة أخرى هي الشاشة الرئيسية";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "لم يعد Dock ينتقل إلى شاشة أخرى عندما يصل المؤشر إلى حافتها السفلية، مهما كانت سرعة الحركة. لنقل Dock، اجعل شاشة أخرى هي الشاشة الرئيسية. تشغيل هذا الخيار أو إيقافه يعيد تشغيل Dock.";
 "Main display" = "شاشة العرض الرئيسية";
-"Click the display you want, then choose “Main display” in “Use as”" = "انقر على الشاشة التي تريدها، ثم اختر «شاشة العرض الرئيسية» في «استخدام كـ»";
 "primary, main screen, Displays settings" = "أساسية، الشاشة الرئيسية، إعدادات شاشات العرض";
 "Hide apps with a click and keep the Dock on one display" = "إخفاء التطبيقات بنقرة وإبقاء Dock على شاشة واحدة";
 "Dock, display, monitor, screen, jump, move" = "Dock، شاشة، شاشة عرض، قفز، نقل، تحريك";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "تشغيل…";
 "Turn Off…" = "إطفاء…";
 "Opens Login Items in System Settings" = "يفتح عناصر تسجيل الدخول في إعدادات النظام";
+"Couldn’t turn this off. Try again or use System Settings." = "تعذّر إطفاؤه. حاول مرة أخرى أو استخدم إعدادات النظام.";
+"Couldn’t turn this back on. Try again or use System Settings." = "تعذّرت إعادة تشغيله. حاول مرة أخرى أو استخدم إعدادات النظام.";
+"Needs administrator rights, so turn it off in System Settings" = "يحتاج إلى صلاحيات المسؤول، لذا أطفئه من إعدادات النظام";
+"The app added it itself, so turn it off in System Settings" = "أضافه التطبيق بنفسه، لذا أطفئه من إعدادات النظام";
 "Lets the app save new files next to yours and see your background tasks" = "يسمح للتطبيق بحفظ الملفات الجديدة بجانب ملفاتك ورؤية مهام الخلفية";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "اختر مجلد المنزل مرة واحدة ليتمكن pikapik من حفظ الملفات بجانب ملفاتك ورؤية مهام الخلفية.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "عناصر تسجيل الدخول، الفتح عند تسجيل الدخول، وكلاء، خدمات، برامج خفية، بدء التشغيل، تشغيل تلقائي، مساعدات، قيد التشغيل، الخلفية، بقايا، إطفاء";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "إضافة تخطيط";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "تعذّرت إضافة التخطيط. استخدم إعدادات لوحة المفاتيح بدلًا من ذلك.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "ينتقل Dock معها. إيقاف المفتاح يعيد الشاشات كما كانت";

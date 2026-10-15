@@ -45,11 +45,8 @@ final class DockHideTool: Tool {
 
     init() {
         let defaults = UserDefaults.standard
-        let on = defaults.bool(forKey: id)
-        if on && defaults.object(forKey: Self.actionKey) == nil {
-            defaults.set(Action.hide.rawValue, forKey: Self.actionKey)
-        }
-        isEnabled = on
+        DockHideMigration.run(defaults, switchKey: id, actionKey: Self.actionKey)
+        isEnabled = defaults.bool(forKey: id)
         action = Action(rawValue: defaults.string(forKey: Self.actionKey) ?? "") ?? .minimize
     }
 
@@ -61,6 +58,7 @@ final class DockHideTool: Tool {
     }
 
     func load() {
+        DockHideMigration.run(.standard, switchKey: id, actionKey: Self.actionKey)
         isEnabled = UserDefaults.standard.bool(forKey: id)
         action = Action(rawValue: UserDefaults.standard.string(forKey: Self.actionKey) ?? "") ?? .minimize
     }

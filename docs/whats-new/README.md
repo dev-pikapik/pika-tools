@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik does it itself, with no trip to System Settings
+
+<sub>1.50.2 · October 15, 2026</sub>
+
+In the website version, turning off a background task, adding a keyboard layout, changing a hot corner and choosing the main display now happen right in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+In Settings › Background Tasks, switch off a task and its row changes at once. No password is needed, and your choice stays after a restart. Turn Back On brings the task back. Tasks for the whole Mac and helpers an app added itself still open System Settings, and a line under the row says why.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Fixing text typed in the wrong layout works when you have two or more keyboard layouts. If you have only one, the note in Settings › Keyboard now offers layouts for your languages. Pick one under Add a Layout and it is ready at once, with no password. If none fits, Keyboard Settings… is still there.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Settings › Games, the Change… menu on a hot-corner row picks another action for that corner. Under Keep the Dock on one display, the Main display menu makes the display you pick the main one, with the Dock on it. pikapik remembers how things were: Put Back, or turning the switch off, returns them exactly.
+
+**Try it:** Settings › Background Tasks
+
+**Fixed**
+
+- Minimize or hide with a click in the Dock: if you turned it on while the click minimized windows, it no longer changes itself to hiding the app after a restart.
+- When you open pikapik, it now checks for settings changed on your other Mac, so a Mac that missed the change catches up at once.
+- Keep Awake now says it stays on until you turn it off, and Game Mode no longer suggests a game you already added.
+
+---
+
 ## <a id="v1.50.0"></a>More of pikapik in the Mac App Store version
 
 <sub>1.50.0 · October 15, 2026</sub>

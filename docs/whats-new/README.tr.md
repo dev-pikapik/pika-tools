@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik bunu kendisi yapıyor, Sistem Ayarları’na gitmenize gerek yok
+
+<sub>1.50.2 · 15 Ekim 2026</sub>
+
+Web sitesi sürümünde bir arka plan görevini kapatmak, klavye düzeni eklemek, bir köşenin eylemini değiştirmek ve ana ekranı seçmek artık doğrudan pikapik içinde oluyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Ayarlar › Arka Plan Görevleri’nde bir görevi kapatın, satırı hemen değişir. Parola gerekmez ve seçiminiz yeniden başlatmadan sonra da kalır. Yeniden Aç görevi geri getirir. Tüm Mac için olan görevler ve bir uygulamanın kendi eklediği yardımcılar yine Sistem Ayarları’nı açar, satırın altındaki bir cümle nedenini söyler.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Yanlış düzenle yazılan metni düzeltme, iki veya daha fazla klavye düzeniniz olduğunda çalışır. Yalnızca bir düzeniniz varsa, Ayarlar › Klavye’deki not artık dilleriniz için düzenler öneriyor. Düzen Ekle’den birini seçin, hemen hazır olur, parola gerekmez. Hiçbiri uymazsa Klavye Ayarları… hâlâ yerinde.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ayarlar › Oyunlar’da, bir etkin köşe satırındaki Değiştir… menüsü o köşe için başka bir eylem seçer. Dock’u tek ekranda tut altında Ana ekran menüsü seçtiğiniz ekranı ana ekran yapar ve Dock da oraya geçer. pikapik eski durumu hatırlar: Geri koy ya da anahtarı kapatmak her şeyi olduğu gibi geri getirir.
+
+**Deneyin:** Ayarlar › Arka Plan Görevleri
+
+**Düzeltilenler**
+
+- Dock’ta tıklayarak küçült veya gizle: tıklama pencereleri küçültürken açtıysanız, yeniden başlatınca artık kendiliğinden uygulamayı gizlemeye geçmiyor.
+- pikapik açıldığında artık diğer Mac’inizde değişen ayarları kontrol ediyor, değişikliği kaçıran Mac hemen yetişiyor.
+- Uyanık Tut artık siz kapatana kadar açık kaldığını söylüyor, Oyun Modu da zaten eklediğiniz bir oyunu yeniden önermiyor.
+
+---
+
 ## <a id="v1.50.0"></a>Mac App Store sürümünde pikapik’ten daha fazlası
 
 <sub>1.50.0 · 15 Ekim 2026</sub>

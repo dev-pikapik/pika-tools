@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>시스템 설정까지 갈 필요 없이 pikapik이 직접 합니다
+
+<sub>1.50.2 · 2026년 10월 15일</sub>
+
+웹사이트 버전에서는 백그라운드 작업 끄기, 키보드 레이아웃 추가, 핫 코너 바꾸기, 메인 디스플레이 고르기를 이제 pikapik 안에서 바로 할 수 있습니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+설정 › 백그라운드 작업에서 작업을 끄면 그 줄이 바로 바뀝니다. 암호는 필요 없고, 선택은 다시 시작한 뒤에도 남습니다. 다시 켜기를 누르면 작업이 돌아옵니다. Mac 전체용 작업과 앱이 스스로 추가한 도우미는 여전히 시스템 설정이 열리며, 줄 아래 한 줄이 이유를 알려 줍니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+잘못된 레이아웃으로 친 글자 고치기는 키보드 레이아웃이 두 개 이상일 때 작동합니다. 하나뿐이라면 설정 › 키보드의 안내에 이제 내 언어에 맞는 레이아웃이 나옵니다. 레이아웃 추가에서 하나를 고르면 바로 쓸 수 있고 암호는 필요 없습니다. 맞는 것이 없으면 키보드 설정…은 그대로 있습니다.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+설정 › 게임에서 핫 코너 줄의 변경… 메뉴로 그 코너의 동작을 다른 것으로 바꿀 수 있습니다. Dock을 한 디스플레이에 고정에서는 메인 디스플레이 메뉴가 고른 디스플레이를 메인으로 만들고 Dock도 그리로 옮겨 갑니다. pikapik은 원래 상태를 기억하며, 되돌리기를 누르거나 스위치를 끄면 그대로 돌아갑니다.
+
+**사용해 보기:** 설정 › 백그라운드 작업
+
+**수정 사항**
+
+- Dock 클릭으로 최소화하거나 가리기: 클릭이 창을 최소화하던 때 켜 두었다면, 다시 시작한 뒤에 저절로 앱 가리기로 바뀌지 않습니다.
+- pikapik을 열면 다른 Mac에서 바꾼 설정이 있는지 확인하므로, 변경을 놓친 Mac도 바로 따라잡습니다.
+- 잠자기 방지는 끄기 전까지 켜져 있다고 알려 주고, 게임 모드는 이미 추가한 게임을 더 이상 추천하지 않습니다.
+
+---
+
 ## <a id="v1.50.0"></a>Mac App Store 버전에서 pikapik을 더 많이 쓸 수 있어요
 
 <sub>1.50.0 · 2026년 10월 15일</sub>

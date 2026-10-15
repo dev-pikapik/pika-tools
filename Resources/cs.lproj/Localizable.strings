@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Chcete-li ho přesunout, nastavte jako hlavní jiný displej";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock už nepřeskakuje na jiný displej, když ukazatel dojede k jeho spodnímu okraji, ať s ním pohybujete jakkoli rychle. Chcete-li Dock přesunout, nastavte jako hlavní jiný displej. Zapnutím nebo vypnutím se Dock restartuje.";
 "Main display" = "Hlavní monitor";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klikněte na požadovaný displej a v nabídce „Používat jako“ vyberte „Hlavní monitor“";
 "primary, main screen, Displays settings" = "primární, hlavní obrazovka, nastavení Monitory";
 "Hide apps with a click and keep the Dock on one display" = "Skrývejte aplikace kliknutím a mějte Dock na jednom displeji";
 "Dock, display, monitor, screen, jump, move" = "Dock, displej, monitor, obrazovka, skáče, přeskakuje, přesunout";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Zapnout…";
 "Turn Off…" = "Vypnout…";
 "Opens Login Items in System Settings" = "Otevře Položky po přihlášení v Nastavení systému";
+"Couldn’t turn this off. Try again or use System Settings." = "Nepodařilo se to vypnout. Zkuste to znovu nebo použijte Nastavení systému.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Nepodařilo se to znovu zapnout. Zkuste to znovu nebo použijte Nastavení systému.";
+"Needs administrator rights, so turn it off in System Settings" = "Vyžaduje práva správce, proto to vypněte v Nastavení systému";
+"The app added it itself, so turn it off in System Settings" = "Aplikace to přidala sama, proto to vypněte v Nastavení systému";
 "Lets the app save new files next to yours and see your background tasks" = "Umožňuje aplikaci ukládat nové soubory vedle vašich a vidět úlohy na pozadí";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Vyberte jednou svou domovskou složku, aby pikapik mohl ukládat soubory vedle vašich a vidět vaše úlohy na pozadí.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "položky po přihlášení, otevřít po přihlášení, agenti, služby, démoni, spouštění, automatické spouštění, pomocníci, běží, pozadí, zbytky, vypnout";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Přidat rozložení";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Rozložení se nepodařilo přidat. Použijte místo toho Nastavení klávesnice.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock se přesune s ním. Vypnutím přepínače se monitory vrátí, jak byly";

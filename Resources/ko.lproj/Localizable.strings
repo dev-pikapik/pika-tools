@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "옮기려면 다른 디스플레이를 메인 디스플레이로 지정하세요";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "포인터가 다른 디스플레이의 아래쪽 가장자리에 닿아도, 아무리 빠르게 움직여도 Dock이 그쪽으로 옮겨 가지 않습니다. Dock을 옮기려면 다른 디스플레이를 메인 디스플레이로 지정하세요. 켜거나 끄면 Dock이 다시 시작됩니다.";
 "Main display" = "메인 디스플레이";
-"Click the display you want, then choose “Main display” in “Use as”" = "원하는 디스플레이를 클릭한 다음 ‘다음으로 사용’에서 ‘메인 디스플레이’를 선택하세요";
 "primary, main screen, Displays settings" = "기본, 주 모니터, 디스플레이 설정";
 "Hide apps with a click and keep the Dock on one display" = "클릭 한 번으로 앱 숨기기, Dock을 한 디스플레이에 유지";
 "Dock, display, monitor, screen, jump, move" = "Dock, 디스플레이, 모니터, 화면, 이동, 점프";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "켜기…";
 "Turn Off…" = "끄기…";
 "Opens Login Items in System Settings" = "시스템 설정에서 로그인 항목을 엽니다";
+"Couldn’t turn this off. Try again or use System Settings." = "끌 수 없었습니다. 다시 시도하거나 시스템 설정을 사용해 주세요.";
+"Couldn’t turn this back on. Try again or use System Settings." = "다시 켤 수 없었습니다. 다시 시도하거나 시스템 설정을 사용해 주세요.";
+"Needs administrator rights, so turn it off in System Settings" = "관리자 권한이 필요하므로 시스템 설정에서 꺼 주세요";
+"The app added it itself, so turn it off in System Settings" = "앱이 직접 추가한 항목이므로 시스템 설정에서 꺼 주세요";
 "Lets the app save new files next to yours and see your background tasks" = "새 파일을 내 파일 옆에 저장하고 백그라운드 작업을 보는 데 필요";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik이 내 파일 옆에 파일을 저장하고 백그라운드 작업을 볼 수 있도록 홈 폴더를 한 번만 선택해 주세요.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "로그인 항목, 로그인 시 열기, 에이전트, 서비스, 데몬, 시동, 자동 시작, 도우미, 실행 중, 백그라운드, 남은 파일, 끄기";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "레이아웃 추가";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "레이아웃을 추가할 수 없습니다. 대신 키보드 설정을 사용하세요.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock도 함께 이동합니다. 스위치를 끄면 디스플레이 배치가 원래대로 돌아갑니다";

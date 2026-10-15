@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Pentru a-l muta, setați alt ecran ca principal";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock-ul nu mai sare pe alt ecran când cursorul ajunge la marginea de jos a acestuia, oricât de repede l-ați mișca. Pentru a muta Dock-ul, setați alt ecran ca principal. Activarea sau dezactivarea acestei opțiuni repornește Dock-ul.";
 "Main display" = "Afișaj principal";
-"Click the display you want, then choose “Main display” in “Use as”" = "Faceți clic pe ecranul dorit, apoi alegeți „Afișaj principal” la „Utilizați ca”";
 "primary, main screen, Displays settings" = "primar, monitor principal, configurări Afișaje";
 "Hide apps with a click and keep the Dock on one display" = "Ascunde aplicații cu un clic și ține Dock-ul pe un singur ecran";
 "Dock, display, monitor, screen, jump, move" = "Dock, ecran, monitor, afișaj, sare, mută";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Pornește…";
 "Turn Off…" = "Oprește…";
 "Opens Login Items in System Settings" = "Deschide Articole de autentificare în Configurări sistem";
+"Couldn’t turn this off. Try again or use System Settings." = "Nu s-a putut opri. Încearcă din nou sau folosește Configurări sistem.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Nu s-a putut porni din nou. Încearcă din nou sau folosește Configurări sistem.";
+"Needs administrator rights, so turn it off in System Settings" = "Are nevoie de drepturi de administrator, așa că oprește-l din Configurări sistem";
+"The app added it itself, so turn it off in System Settings" = "Aplicația l-a adăugat singură, așa că oprește-l din Configurări sistem";
 "Lets the app save new files next to yours and see your background tasks" = "Permite aplicației să salveze fișiere noi lângă ale tale și să vadă sarcinile din fundal";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Alege o singură dată folderul tău principal, ca pikapik să poată salva fișiere lângă ale tale și să vadă sarcinile tale din fundal.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "articole de autentificare, deschide la autentificare, agenți, servicii, daemoni, pornire, pornire automată, ajutoare, rulează, fundal, resturi, oprește, dezactivează";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Adaugă un aranjament";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Nu s-a putut adăuga aranjamentul. Folosește Configurări tastatură.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock-ul se mută odată cu el. Dacă oprești comutatorul, afișajele revin cum erau";

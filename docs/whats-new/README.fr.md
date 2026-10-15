@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik le fait lui-même, sans passer par Réglages Système
+
+<sub>1.50.2 · 15 octobre 2026</sub>
+
+Dans la version du site, désactiver une tâche en arrière-plan, ajouter une disposition de clavier, changer un coin actif et choisir l’écran principal se font maintenant directement dans pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Tâches en arrière-plan, désactivez une tâche et sa ligne change aussitôt. Aucun mot de passe n’est demandé, et votre choix reste après un redémarrage. Rallumer remet la tâche en marche. Les tâches de tout le Mac et les assistants qu’une app a ajoutés elle-même ouvrent toujours Réglages Système, et une ligne sous la tâche explique pourquoi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+La correction du texte tapé dans la mauvaise disposition fonctionne quand vous avez au moins deux dispositions de clavier. Si vous n’en avez qu’une, la note de Réglages › Clavier propose maintenant des dispositions pour vos langues. Choisissez-en une sous Ajouter une disposition, et elle est prête aussitôt, sans mot de passe. Si aucune ne convient, Réglages Clavier… est toujours là.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Jeux, le menu Modifier… de la ligne d’un coin actif choisit une autre action pour ce coin. Sous Garder le Dock sur un seul écran, le menu Écran principal fait de l’écran choisi l’écran principal, avec le Dock dessus. pikapik se souvient de l’état d’avant : Remettre en place, ou éteindre l’interrupteur, rétablit tout à l’identique.
+
+**Pour essayer :** Réglages › Tâches en arrière-plan
+
+**Corrigé**
+
+- Réduire ou masquer d’un clic dans le Dock : si vous l’aviez activé quand le clic réduisait les fenêtres, il ne passe plus tout seul au masquage de l’app après un redémarrage.
+- À l’ouverture, pikapik vérifie maintenant les réglages modifiés sur votre autre Mac, si bien qu’un Mac qui a manqué le changement le rattrape aussitôt.
+- Rester éveillé dit maintenant qu’il reste actif jusqu’à ce que vous l’éteigniez, et le Mode Jeu ne propose plus un jeu que vous avez déjà ajouté.
+
+---
+
 ## <a id="v1.50.0"></a>Plus de pikapik dans la version du Mac App Store
 
 <sub>1.50.0 · 15 octobre 2026</sub>

@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Gör en annan skärm till huvudbildskärm för att flytta den";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Dock hoppar inte längre till en annan skärm när pekaren når dess nederkant, hur snabbt du än rör den. Gör en annan skärm till huvudbildskärm för att flytta Dock. Dock startas om när du slår på eller av det här.";
 "Main display" = "Huvudbildskärm";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klicka på skärmen du vill ha och välj ”Huvudbildskärm” vid ”Använd som”";
 "primary, main screen, Displays settings" = "primär, huvudskärm, inställningar för Skärmar";
 "Hide apps with a click and keep the Dock on one display" = "Dölj appar med ett klick och ha Dock på en skärm";
 "Dock, display, monitor, screen, jump, move" = "Dock, skärm, bildskärm, monitor, hoppar, flytta";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Slå på…";
 "Turn Off…" = "Stäng av…";
 "Opens Login Items in System Settings" = "Öppnar Startobjekt i Systeminställningar";
+"Couldn’t turn this off. Try again or use System Settings." = "Det gick inte att stänga av. Försök igen eller använd Systeminställningar.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Det gick inte att slå på igen. Försök igen eller använd Systeminställningar.";
+"Needs administrator rights, so turn it off in System Settings" = "Kräver administratörsbehörighet, så stäng av det i Systeminställningar";
+"The app added it itself, so turn it off in System Settings" = "Appen lade till det själv, så stäng av det i Systeminställningar";
 "Lets the app save new files next to yours and see your background tasks" = "Låter appen spara nya filer bredvid dina och se dina bakgrundsuppgifter";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Välj din hemmapp en gång så att pikapik kan spara filer bredvid dina och se dina bakgrundsuppgifter.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "startobjekt, öppna vid inloggning, agenter, tjänster, demoner, start, autostart, hjälpare, körs, bakgrund, rester, stäng av";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Lägg till layout";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Det gick inte att lägga till layouten. Använd Tangentbordsinställningar i stället.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock följer med. Stänger du av reglaget återgår skärmarna till hur de var";

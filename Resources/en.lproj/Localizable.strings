@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "To move it, make another display the main one";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock.";
 "Main display" = "Main display";
-"Click the display you want, then choose “Main display” in “Use as”" = "Click the display you want, then choose “Main display” in “Use as”";
 "primary, main screen, Displays settings" = "primary, main screen, Displays settings";
 "Hide apps with a click and keep the Dock on one display" = "Hide apps with a click and keep the Dock on one display";
 "Dock, display, monitor, screen, jump, move" = "Dock, display, monitor, screen, jump, move";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Turn On…";
 "Turn Off…" = "Turn Off…";
 "Opens Login Items in System Settings" = "Opens Login Items in System Settings";
+"Couldn’t turn this off. Try again or use System Settings." = "Couldn’t turn this off. Try again or use System Settings.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Couldn’t turn this back on. Try again or use System Settings.";
+"Needs administrator rights, so turn it off in System Settings" = "Needs administrator rights, so turn it off in System Settings";
+"The app added it itself, so turn it off in System Settings" = "The app added it itself, so turn it off in System Settings";
 "Lets the app save new files next to yours and see your background tasks" = "Lets the app save new files next to yours and see your background tasks";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choose your home folder once so pikapik can save files next to yours and see your background tasks.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Add a Layout";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "Couldn’t add the layout. Use Keyboard Settings instead.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "The Dock goes with it. Turning the switch off puts the displays back as they were";

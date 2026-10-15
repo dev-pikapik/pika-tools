@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik 自己搞定，不用再去「系統設定」
+
+<sub>1.50.2 · 2026年10月15日</sub>
+
+在網站版中，關閉背景工作、加入鍵盤配置、更改熱點和選擇主要顯示器，現在都能直接在 pikapik 裡完成。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+在「設定 › 背景工作」中關閉一項工作，它那一列會立刻改變。不需要密碼，你的選擇在重新啟動後也會保留。按「重新打開」就能讓工作恢復。針對整部 Mac 的工作，以及 App 自己加入的輔助程式，仍會開啟「系統設定」，列下方的一句話會說明原因。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+修正用錯配置輸入的文字，需要有兩個以上鍵盤配置才能用。如果只有一個，「設定 › 鍵盤」裡的提示現在會推薦適合你語言的配置。在「加入配置」中選一個，馬上就能用，不需要密碼。如果都不合適，「鍵盤設定…」仍然在那裡。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+在「設定 › 遊戲」中，熱點那一列的「更改…」選單可以為該角選擇另一個動作。在「讓 Dock 固定在一台顯示器上」中，「主要顯示器」選單會把你選的顯示器設為主要顯示器，Dock 也跟著過去。pikapik 會記住原來的樣子：按「放回原處」，或關掉開關，一切都會原樣恢復。
+
+**試試看：** 設定 › 背景工作
+
+**修正**
+
+- 在 Dock 中點按以縮到最小或隱藏：如果你在點按會縮小視窗時打開了它，重新啟動後它不會再自己變成隱藏 App。
+- 打開 pikapik 時，它現在會檢查另一部 Mac 上改過的設定，錯過更改的 Mac 會立刻跟上。
+- 「保持喚醒」現在會說明它會一直開著，直到你關掉；「遊戲模式」也不會再推薦你已經加入過的遊戲。
+
+---
+
 ## <a id="v1.50.0"></a>Mac App Store 版本的 pikapik，功能更多了
 
 <sub>1.50.0 · 2026年10月15日</sub>

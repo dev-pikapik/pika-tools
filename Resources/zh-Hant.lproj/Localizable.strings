@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "若要移動，請將另一台顯示器設為主要顯示器";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "指標移到另一台顯示器的底部邊緣時，無論移動多快，Dock 都不會再跳到那台顯示器上。若要移動 Dock，請將另一台顯示器設為主要顯示器。開啟或關閉此選項會重新啟動 Dock。";
 "Main display" = "主要顯示器";
-"Click the display you want, then choose “Main display” in “Use as”" = "按一下想要的顯示器，然後在「做為」中選擇「主要顯示器」";
 "primary, main screen, Displays settings" = "主螢幕, 主顯示器, 顯示器設定";
 "Hide apps with a click and keep the Dock on one display" = "一按即可隱藏 App，讓 Dock 只在一個顯示器上";
 "Dock, display, monitor, screen, jump, move" = "Dock, 顯示器, 螢幕, 跳動, 移動";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "打開…";
 "Turn Off…" = "關閉…";
 "Opens Login Items in System Settings" = "打開「系統設定」中的「登入項目」";
+"Couldn’t turn this off. Try again or use System Settings." = "無法關閉。請重試，或使用「系統設定」。";
+"Couldn’t turn this back on. Try again or use System Settings." = "無法重新打開。請重試，或使用「系統設定」。";
+"Needs administrator rights, so turn it off in System Settings" = "需要管理員權限，請在「系統設定」中關閉";
+"The app added it itself, so turn it off in System Settings" = "這是 App 自己加入的，請在「系統設定」中關閉";
 "Lets the app save new files next to yours and see your background tasks" = "讓 App 把新檔案儲存在你的檔案旁邊，並查看背景工作";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "請選擇一次你的個人檔案夾，這樣 pikapik 就能把檔案儲存在你的檔案旁邊，並查看你的背景工作。";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "登入項目, 登入時打開, 代理程式, 服務, 常駐程式, 啟動, 開機啟動, 自動啟動, 輔助程式, 正在執行, 背景, 殘留, 關閉";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "加入配置";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "無法加入配置。請改用鍵盤設定。";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock 會跟著移動。關閉開關後，顯示器會恢復原樣";

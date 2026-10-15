@@ -142,7 +142,6 @@
 "To move it, make another display the main one" = "Maak een ander scherm het hoofdbeeldscherm om het te verplaatsen";
 "The Dock no longer jumps to another display when the pointer hits its bottom edge, however fast you move. To move the Dock, make another display the main one. Turning this on or off restarts the Dock." = "Het Dock springt niet meer naar een ander scherm als de aanwijzer de onderrand ervan bereikt, hoe snel je ook beweegt. Maak een ander scherm het hoofdbeeldscherm om het Dock te verplaatsen. Als je dit aan- of uitzet, start het Dock opnieuw.";
 "Main display" = "Hoofdbeeldscherm";
-"Click the display you want, then choose “Main display” in “Use as”" = "Klik op het gewenste scherm en kies ‘Hoofdbeeldscherm’ bij ‘Gebruik als’";
 "primary, main screen, Displays settings" = "primair, hoofdscherm, instellingen Beeldschermen";
 "Hide apps with a click and keep the Dock on one display" = "Apps met één klik verbergen en het Dock op één scherm houden";
 "Dock, display, monitor, screen, jump, move" = "Dock, scherm, beeldscherm, monitor, springen, springt, verplaatsen";
@@ -1047,6 +1046,10 @@
 "Turn On…" = "Zet aan…";
 "Turn Off…" = "Zet uit…";
 "Opens Login Items in System Settings" = "Opent Inlogonderdelen in Systeeminstellingen";
+"Couldn’t turn this off. Try again or use System Settings." = "Uitzetten is niet gelukt. Probeer het opnieuw of gebruik Systeeminstellingen.";
+"Couldn’t turn this back on. Try again or use System Settings." = "Weer aanzetten is niet gelukt. Probeer het opnieuw of gebruik Systeeminstellingen.";
+"Needs administrator rights, so turn it off in System Settings" = "Hiervoor zijn beheerdersrechten nodig, dus zet het uit in Systeeminstellingen";
+"The app added it itself, so turn it off in System Settings" = "De app heeft dit zelf toegevoegd, dus zet het uit in Systeeminstellingen";
 "Lets the app save new files next to yours and see your background tasks" = "Laat de app nieuwe bestanden naast de jouwe bewaren en je achtergrondtaken zien";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Kies één keer je thuismap, zodat pikapik bestanden naast de jouwe kan bewaren en je achtergrondtaken kan zien.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "inlogonderdelen, open bij inloggen, agents, diensten, daemons, opstarten, automatisch starten, helpers, actief, achtergrond, restanten, uitzetten";
@@ -1222,3 +1225,6 @@
 "Window" = "Window";
 "Minimize" = "Minimize";
 "Zoom" = "Zoom";
+"Add a Layout" = "Indeling toevoegen";
+"Couldn’t add the layout. Use Keyboard Settings instead." = "De indeling kon niet worden toegevoegd. Gebruik in plaats daarvan Instellingen toetsenbord.";
+"The Dock goes with it. Turning the switch off puts the displays back as they were" = "Het Dock gaat mee. Zet je de schakelaar uit, dan staan de beeldschermen weer zoals ze waren";

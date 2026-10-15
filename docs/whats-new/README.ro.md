@@ -5,6 +5,34 @@
 
 ---
 
+## <a id="v1.50.2"></a>pikapik face singur, fără drum prin Configurări sistem
+
+<sub>1.50.2 · 15 octombrie 2026</sub>
+
+În versiunea de pe site, oprirea unei sarcini în fundal, adăugarea unui aranjament de tastatură, schimbarea unui colț activ și alegerea afișajului principal se fac acum direct în pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+În Setări › Sarcini în fundal, oprește o sarcină și rândul ei se schimbă pe loc. Nu ai nevoie de parolă, iar alegerea ta rămâne după repornire. Pornește din nou readuce sarcina. Sarcinile pentru tot Mac-ul și ajutoarele adăugate de o aplicație singură deschid în continuare Configurări sistem, iar o linie sub rând spune de ce.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Corectarea textului scris cu aranjamentul greșit funcționează când ai cel puțin două aranjamente de tastatură. Dacă ai doar unul, nota din Setări › Tastatură oferă acum aranjamente pentru limbile tale. Alege unul din Adaugă un aranjament și e gata pe loc, fără parolă. Dacă niciunul nu se potrivește, Configurări tastatură… rămâne acolo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+În Setări › Jocuri, meniul Modifică… de pe rândul unui colț activ alege altă acțiune pentru acel colț. Sub Ține Dock-ul pe un singur ecran, meniul Afișaj principal face din afișajul ales cel principal, cu Dock-ul pe el. pikapik ține minte cum era: Pune la loc sau oprirea comutatorului readuce totul exact ca înainte.
+
+**Încearcă:** Setări › Sarcini în fundal
+
+**Reparat**
+
+- Minimizează sau ascunde cu un clic în Dock: dacă l-ai pornit când clicul minimiza ferestrele, nu mai trece singur la ascunderea aplicației după repornire.
+- Când deschizi pikapik, acesta verifică acum setările schimbate pe celălalt Mac al tău, așa că un Mac care a ratat schimbarea o prinde imediat din urmă.
+- Menține activ spune acum că rămâne pornit până îl oprești, iar Modul Joc nu mai propune un joc pe care l-ai adăugat deja.
+
+---
+
 ## <a id="v1.50.0"></a>Mai mult pikapik în versiunea din Mac App Store
 
 <sub>1.50.0 · 15 octombrie 2026</sub>

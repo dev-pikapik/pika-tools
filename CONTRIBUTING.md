@@ -85,6 +85,13 @@ Keep the Dock on one display sets the Dock’s own `allow-display-switching` key
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockDisplaySwitch.swift scripts/test-dock-display.swift -o build/test-dock-display && build/test-dock-display
+swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockHideMigration.swift scripts/test-dock-hide-migration.swift -o build/test-dock-hide-migration && build/test-dock-hide-migration
+```
+
+Changing a hot corner from the Games page remembers the first action and puts it back on request, and a change to the same action writes nothing, so the Dock restarts only on a real change.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Games/HotCorners.swift scripts/test-hot-corners.swift -o build/test-hot-corners && build/test-hot-corners
 ```
 
 The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
@@ -163,6 +170,12 @@ iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pika
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-folder.swift -o build/test-settings-folder && build/test-settings-folder
+```
+
+The app also reads the file whenever it comes to the front, so a change that arrived while it sat in the background is picked up. This check writes newer settings from "another Mac" into the local build's folder and waits for them to be applied. It needs `./scripts/build.sh` first and switches between apps, so it refuses to run unless the keyboard and mouse have been idle for two minutes:
+
+```bash
+./scripts/check-settings-sync.sh
 ```
 
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. The App Store build uses it only to list background tasks. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
