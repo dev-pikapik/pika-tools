@@ -33,7 +33,7 @@
 "For some features" = "Pentru unele funcții";
 "Finder Extensions" = "Extensii Finder";
 "Folders" = "Foldere";
-"Lets the app choose how fast your fans spin" = "Permite aplicației să aleagă viteza ventilatoarelor";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Permite aplicației să schimbe viteza ventilatoarelor și să oprească servicii pentru tot Mac-ul";
 "Lets the app add items to the right-click menu in Finder" = "Permite aplicației să adauge opțiuni în meniul de clic dreapta din Finder";
 "Lets the app find permissions left by deleted apps" = "Permite aplicației să găsească permisiunile rămase de la aplicații șterse";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS îți permite să le oprești doar din Configurări sistem. Butonul deschide lista potrivită, unde oprești pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Permite accesul";
 "Fans" = "Ventilatoare";
 "Fan speed" = "Viteza ventilatoarelor";
-"Fan control" = "Controlul ventilatoarelor";
+"Administrator access" = "Acces de administrator";
 "Fan %lld" = "Ventilator %lld";
 "See how fast your fans spin and choose their speed" = "Vezi cât de repede se rotesc ventilatoarele și alege viteza lor";
 "This Mac has no fans" = "Acest Mac nu are ventilatoare";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Ventilatoarele mai lente pot încălzi mai tare Mac-ul";
 "Auto · %lld rpm" = "Auto · %lld rot/min";
 "Manual · %lld rpm" = "Manual · %lld rot/min";
-"pikapik wants to allow changing the fan speed." = "pikapik vrea să permită schimbarea vitezei ventilatoarelor.";
-"pikapik wants to remove fan control." = "pikapik vrea să elimine controlul ventilatoarelor.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik vrea să schimbe viteza ventilatoarelor și să oprească și să pornească servicii.";
+"pikapik wants to remove administrator access." = "pikapik vrea să elimine accesul de administrator.";
 "Not allowed: no administrator password" = "Nepermis: fără parola de administrator";
 "Not removed: no administrator password" = "Neeliminat: fără parola de administrator";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Viteza ventilatoarelor nu a putut fi schimbată. Încearcă să permiți din nou controlul ventilatoarelor.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Viteza ventilatoarelor nu a putut fi schimbată. Încearcă să permiți din nou accesul de administrator.";
 "Fans went back to Auto to keep your Mac safe" = "Ventilatoarele au revenit la Auto pentru a-ți proteja Mac-ul";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilator, rotații, rot/min, răcire, mai rece, cald, căldură, zgomot, liniște, tare, temperatură";
 "allow, helper, password, administrator, install, remove" = "permite, ajutor, parolă, administrator, instalează, elimină";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Nu s-a putut opri. Încearcă din nou sau folosește Configurări sistem.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Nu s-a putut porni din nou. Încearcă din nou sau folosește Configurări sistem.";
 "Needs administrator rights, so turn it off in System Settings" = "Are nevoie de drepturi de administrator, așa că oprește-l din Configurări sistem";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Pentru a opri sarcinile care rulează pentru tot Mac-ul, permite accesul de administrator.";
 "The app added it itself, so turn it off in System Settings" = "Aplicația l-a adăugat singură, așa că oprește-l din Configurări sistem";
 "Lets the app save new files next to yours and see your background tasks" = "Permite aplicației să salveze fișiere noi lângă ale tale și să vadă sarcinile din fundal";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Alege o singură dată folderul tău principal, ca pikapik să poată salva fișiere lângă ale tale și să vadă sarcinile tale din fundal.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Doar acest Mac se poate conecta.";
 "Other devices on your network can connect." = "Se pot conecta și alte dispozitive din rețeaua ta.";
 "To free port %@, turn off “%@” in System Settings." = "Pentru a elibera portul %1$@, dezactivează „%2$@” în Configurări sistem.";
+"To free port %@, turn off “%@”." = "Pentru a elibera portul %1$@, dezactivează „%2$@”.";
 "macOS needs this port, so it stays taken." = "macOS are nevoie de acest port, așa că rămâne ocupat.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Programul aparține altui utilizator sau sistemului, așa că pikapik nu se atinge de el. Îl poți închide din Monitor activitate.";
 "Open Activity Monitor" = "Deschide Monitor activitate";

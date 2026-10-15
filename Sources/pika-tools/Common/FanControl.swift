@@ -83,6 +83,19 @@ final class FanControl {
         helper()?.setAuto(fan: id) { _ in DispatchQueue.main.async { self.refresh() } }
     }
 
+    func setService(_ label: String, on: Bool, done: @escaping (Bool) -> Void) {
+        var finished = false
+        let finish = { (ok: Bool) in
+            DispatchQueue.main.async {
+                guard !finished else { return }
+                finished = true
+                done(ok)
+            }
+        }
+        guard ready, let helper = helper(onError: { finish(false) }) else { return finish(false) }
+        helper.setService(label: label, on: on, reply: finish)
+    }
+
     func handOff() {
         wanted.keys.forEach(setAuto)
         connection?.invalidate()
@@ -115,7 +128,7 @@ final class FanControl {
             "/bin/chmod 644 \(q(Self.plist))",
             "/bin/launchctl bootstrap system \(q(Self.plist))",
         ]
-        let prompt = String(localized: "pikapik wants to allow changing the fan speed.")
+        let prompt = String(localized: "pikapik wants to change the fan speed and turn services off and on.")
         DispatchQueue.global().async {
             let ok = KeepAwake.runAsAdmin(steps.joined(separator: " && "), prompt: prompt)
             DispatchQueue.main.async {
@@ -133,7 +146,7 @@ final class FanControl {
         connection?.invalidate()
         let q = Self.quoted
         let command = "/bin/launchctl bootout system/\(Self.label) >/dev/null 2>&1; /bin/rm -f \(q(Self.binary)) \(q(Self.binary + ".new")) \(q(Self.plist))"
-        let prompt = String(localized: "pikapik wants to remove fan control.")
+        let prompt = String(localized: "pikapik wants to remove administrator access.")
         DispatchQueue.global().async {
             let ok = KeepAwake.runAsAdmin(command, prompt: prompt)
             DispatchQueue.main.async {
@@ -149,7 +162,7 @@ final class FanControl {
     }
 
     private func fail() {
-        error = String(localized: "Couldn’t change the fan speed. Try allowing fan control again.")
+        error = String(localized: "Couldn’t change the fan speed. Try allowing administrator access again.")
     }
 
     private func refresh() {
@@ -171,14 +184,20 @@ final class FanControl {
         helper.version { version in
             DispatchQueue.main.async {
                 self.ready = version == FanHelperInfo.version
-                guard self.ready, !self.updated, !FileManager.default.contentsEqual(atPath: Self.binary, andPath: Self.bundled.path) else { return }
+                guard version >= FanHelperInfo.selfUpdating, !self.updated, !FileManager.default.contentsEqual(atPath: Self.binary, andPath: Self.bundled.path) else { return }
                 self.updated = true
-                helper.update(from: Self.bundled.path) { _ in }
+                helper.update(from: Self.bundled.path) { ok in
+                    guard ok, version != FanHelperInfo.version else { return }
+                    DispatchQueue.main.async {
+                        self.connection?.invalidate()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.probe() }
+                    }
+                }
             }
         }
     }
 
-    private func helper() -> FanHelperProtocol? {
+    private func helper(onError: (() -> Void)? = nil) -> FanHelperProtocol? {
         if connection == nil {
             guard let requirement = FanHelperInfo.requirement(identifier: Self.label) else { return nil }
             let new = NSXPCConnection(machServiceName: Self.label, options: .privileged)
@@ -190,6 +209,7 @@ final class FanControl {
         }
         return connection?.remoteObjectProxyWithErrorHandler { _ in
             DispatchQueue.main.async { self.ready = false }
+            onError?()
         } as? FanHelperProtocol
     }
 }

@@ -33,7 +33,7 @@
 "For some features" = "Cho một số tính năng";
 "Finder Extensions" = "Tiện ích mở rộng của Finder";
 "Folders" = "Thư mục";
-"Lets the app choose how fast your fans spin" = "Cho phép ứng dụng chọn tốc độ quay của quạt";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Cho phép ứng dụng đổi tốc độ quạt và tắt dịch vụ cho cả máy Mac";
 "Lets the app add items to the right-click menu in Finder" = "Cho phép ứng dụng thêm mục vào menu bấm chuột phải trong Finder";
 "Lets the app find permissions left by deleted apps" = "Cho phép ứng dụng tìm các quyền còn lại từ ứng dụng đã xóa";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS chỉ cho phép tắt các quyền này trong Cài đặt hệ thống. Nút này mở đúng danh sách, nơi bạn tắt pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Cho phép truy cập";
 "Fans" = "Quạt";
 "Fan speed" = "Tốc độ quạt";
-"Fan control" = "Điều khiển quạt";
+"Administrator access" = "Quyền quản trị";
 "Fan %lld" = "Quạt %lld";
 "See how fast your fans spin and choose their speed" = "Xem quạt quay nhanh cỡ nào và chọn tốc độ cho quạt";
 "This Mac has no fans" = "Máy Mac này không có quạt";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Quạt chậm hơn có thể làm Mac nóng hơn";
 "Auto · %lld rpm" = "Tự động · %lld vòng/phút";
 "Manual · %lld rpm" = "Thủ công · %lld vòng/phút";
-"pikapik wants to allow changing the fan speed." = "pikapik muốn cho phép thay đổi tốc độ quạt.";
-"pikapik wants to remove fan control." = "pikapik muốn gỡ điều khiển quạt.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik muốn đổi tốc độ quạt và tắt, bật dịch vụ.";
+"pikapik wants to remove administrator access." = "pikapik muốn gỡ quyền quản trị.";
 "Not allowed: no administrator password" = "Chưa được cho phép: không có mật khẩu quản trị viên";
 "Not removed: no administrator password" = "Chưa được gỡ: không có mật khẩu quản trị viên";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Không đổi được tốc độ quạt. Hãy thử cho phép điều khiển quạt lại.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Không đổi được tốc độ quạt. Hãy thử cho phép quyền quản trị lại.";
 "Fans went back to Auto to keep your Mac safe" = "Quạt đã trở về Tự động để giữ an toàn cho Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "quạt, vòng/phút, làm mát, mát hơn, nóng, nhiệt, ồn, yên tĩnh, to, nhiệt độ";
 "allow, helper, password, administrator, install, remove" = "cho phép, trợ giúp, mật khẩu, quản trị viên, cài đặt, gỡ";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Không thể tắt mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Không thể bật lại mục này. Hãy thử lại hoặc dùng Cài đặt hệ thống.";
 "Needs administrator rights, so turn it off in System Settings" = "Cần quyền quản trị, nên hãy tắt trong Cài đặt hệ thống";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Để tắt các tác vụ chạy cho cả máy Mac, hãy cho phép quyền quản trị.";
 "The app added it itself, so turn it off in System Settings" = "Ứng dụng tự thêm mục này, nên hãy tắt trong Cài đặt hệ thống";
 "Lets the app save new files next to yours and see your background tasks" = "Cho phép ứng dụng lưu tệp mới cạnh tệp của bạn và xem các tác vụ nền";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Hãy chọn thư mục chính của bạn một lần để pikapik có thể lưu tệp cạnh tệp của bạn và xem các tác vụ nền của bạn.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Chỉ máy Mac này có thể kết nối.";
 "Other devices on your network can connect." = "Các thiết bị khác trong mạng của bạn cũng có thể kết nối.";
 "To free port %@, turn off “%@” in System Settings." = "Để giải phóng cổng %1$@, hãy tắt “%2$@” trong Cài đặt hệ thống.";
+"To free port %@, turn off “%@”." = "Để giải phóng cổng %1$@, hãy tắt “%2$@”.";
 "macOS needs this port, so it stays taken." = "macOS cần cổng này nên cổng vẫn bị chiếm.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Chương trình này thuộc về người dùng khác hoặc hệ thống nên pikapik không động đến. Bạn có thể thoát chương trình trong Giám sát hoạt động.";
 "Open Activity Monitor" = "Mở Giám sát hoạt động";

@@ -33,7 +33,7 @@
 "For some features" = "For some features";
 "Finder Extensions" = "Finder Extensions";
 "Folders" = "Folders";
-"Lets the app choose how fast your fans spin" = "Lets the app choose how fast your fans spin";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Lets the app change the fan speed and turn off services for the whole Mac";
 "Lets the app add items to the right-click menu in Finder" = "Lets the app add items to the right-click menu in Finder";
 "Lets the app find permissions left by deleted apps" = "Lets the app find permissions left by deleted apps";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Allow Access";
 "Fans" = "Fans";
 "Fan speed" = "Fan speed";
-"Fan control" = "Fan control";
+"Administrator access" = "Administrator access";
 "Fan %lld" = "Fan %lld";
 "See how fast your fans spin and choose their speed" = "See how fast your fans spin and choose their speed";
 "This Mac has no fans" = "This Mac has no fans";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Slower fans can make your Mac hotter";
 "Auto · %lld rpm" = "Auto · %lld rpm";
 "Manual · %lld rpm" = "Manual · %lld rpm";
-"pikapik wants to allow changing the fan speed." = "pikapik wants to allow changing the fan speed.";
-"pikapik wants to remove fan control." = "pikapik wants to remove fan control.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik wants to change the fan speed and turn services off and on.";
+"pikapik wants to remove administrator access." = "pikapik wants to remove administrator access.";
 "Not allowed: no administrator password" = "Not allowed: no administrator password";
 "Not removed: no administrator password" = "Not removed: no administrator password";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Couldn’t change the fan speed. Try allowing fan control again.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Couldn’t change the fan speed. Try allowing administrator access again.";
 "Fans went back to Auto to keep your Mac safe" = "Fans went back to Auto to keep your Mac safe";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal";
 "allow, helper, password, administrator, install, remove" = "allow, helper, password, administrator, install, remove";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Couldn’t turn this off. Try again or use System Settings.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Couldn’t turn this back on. Try again or use System Settings.";
 "Needs administrator rights, so turn it off in System Settings" = "Needs administrator rights, so turn it off in System Settings";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "To turn off tasks that run for the whole Mac, allow administrator access.";
 "The app added it itself, so turn it off in System Settings" = "The app added it itself, so turn it off in System Settings";
 "Lets the app save new files next to yours and see your background tasks" = "Lets the app save new files next to yours and see your background tasks";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choose your home folder once so pikapik can save files next to yours and see your background tasks.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Only this Mac can connect.";
 "Other devices on your network can connect." = "Other devices on your network can connect.";
 "To free port %@, turn off “%@” in System Settings." = "To free port %1$@, turn off “%2$@” in System Settings.";
+"To free port %@, turn off “%@”." = "To free port %1$@, turn off “%2$@”.";
 "macOS needs this port, so it stays taken." = "macOS needs this port, so it stays taken.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor.";
 "Open Activity Monitor" = "Open Activity Monitor";

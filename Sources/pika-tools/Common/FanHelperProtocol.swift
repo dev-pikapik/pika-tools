@@ -7,10 +7,36 @@ import Security
     func setManual(fan: Int, rpm: Double, reply: @escaping (Bool) -> Void)
     func setAuto(fan: Int, reply: @escaping (Bool) -> Void)
     func update(from path: String, reply: @escaping (Bool) -> Void)
+    func setService(label: String, on: Bool, reply: @escaping (Bool) -> Void)
+}
+
+enum HelperServices {
+    static let folder = "/Library/LaunchDaemons"
+    static let sharing = [
+        "com.openssh.sshd": "/System/Library/LaunchDaemons/ssh.plist",
+        "com.apple.screensharing": "/System/Library/LaunchDaemons/com.apple.screensharing.plist",
+    ]
+    private static let reserved = ["com.apple.", "com.pesotchi.pika-tools", "com.pikapik.tools"]
+    private static let characters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-")
+
+    static func allows(_ label: String) -> Bool {
+        let lower = label.lowercased()
+        return (1...128).contains(label.utf8.count) && label.unicodeScalars.allSatisfy(characters.contains) && !reserved.contains(where: lower.hasPrefix)
+    }
+
+    static func plist(for label: String, in folder: String = folder) -> String? {
+        if let path = sharing[label] { return path }
+        guard allows(label), let names = try? FileManager.default.contentsOfDirectory(atPath: folder) else { return nil }
+        return names.sorted().filter { $0.hasSuffix(".plist") }.map { folder + "/" + $0 }.first { path in
+            (try? FileManager.default.attributesOfItem(atPath: path))?[.type] as? FileAttributeType == .typeRegular
+                && NSDictionary(contentsOfFile: path)?["Label"] as? String == label
+        }
+    }
 }
 
 enum FanHelperInfo {
-    static let version = 2
+    static let version = 3
+    static let selfUpdating = 2
     static let suffix = ".fans"
     static let appIdentifier = "com.pesotchi.pika-tools"
 

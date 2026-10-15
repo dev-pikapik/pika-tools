@@ -157,11 +157,13 @@ enum BackgroundTasks {
         return stat(path, &info) != 0 && errno == ENOENT
     }
 
-    static func collect(_ footprint: AppFootprint, launchd: Launchd, own: URL, loginItems: [URL], turnedOff: [URL] = [], running: [(id: String?, url: URL?)],
+    static func collect(_ footprint: AppFootprint, launchd: Launchd, own: URL, loginItems: [URL], turnedOff: [URL] = [], turnedOffServices: [String] = [],
+                        running: [(id: String?, url: URL?)],
                         status: (URL) -> Int = { SMAppService.statusForLegacyPlist(at: $0).rawValue }) -> [BackgroundTask] {
         let fm = FileManager.default
         let home = footprint.roots.home.appendingPathComponent("Library/LaunchAgents").path + "/"
         let shared = footprint.roots.atRoot("Library/LaunchAgents").path + "/"
+        let daemons = footprint.roots.atRoot("Library/LaunchDaemons").path + "/"
         let runningIDs = Set(running.compactMap(\.id))
         let runningPaths = Set(running.compactMap { $0.url?.standardizedFileURL.path })
         var labels = Set<String>(), paths = Set<String>()
@@ -193,6 +195,9 @@ enum BackgroundTasks {
                 task.state = .off
             }
             if !daemon, !mine, file.path.hasPrefix(home) || file.path.hasPrefix(shared) { task.domain = domain }
+            #if !APPSTORE
+            if daemon, !mine, file.path.hasPrefix(daemons), HelperServices.allows(label) { task.domain = domain }
+            #endif
             labels.insert(label.lowercased())
             paths.insert(file.standardizedFileURL.path)
             tasks.append(task)
@@ -256,6 +261,18 @@ enum BackgroundTasks {
             tasks.append(task)
         }
 
+        #if !APPSTORE
+        for label in turnedOffServices {
+            guard let path = HelperServices.sharing[label] else { continue }
+            var task = BackgroundTask(file: URL(fileURLWithPath: path), label: label, title: sharingTitle(label), icon: URL(fileURLWithPath: "/System/Applications/System Settings.app"))
+            task.developer = "Apple"
+            task.scope = .wholeMac
+            task.state = .off
+            task.domain = "system"
+            tasks.append(task)
+        }
+        #endif
+
         return tasks.sorted {
             let order = $0.title.localizedStandardCompare($1.title)
             return order == .orderedSame ? $0.label < $1.label : order == .orderedAscending
@@ -282,6 +299,26 @@ enum BackgroundTasks {
         var paths = (defaults.stringArray(forKey: turnedOffKey) ?? []).filter { $0 != path }
         if off { paths.append(path) }
         defaults.set(paths, forKey: turnedOffKey)
+    }
+
+    private static let turnedOffServicesKey = "background-turned-off-services"
+
+    static func sharingTitle(_ label: String) -> String {
+        label == "com.openssh.sshd" ? String(localized: "Remote Login") : String(localized: "Screen Sharing")
+    }
+
+    static func turnedOffServices(launchd: Launchd, defaults: UserDefaults = .standard) -> [String] {
+        let all = defaults.stringArray(forKey: turnedOffServicesKey) ?? []
+        let kept = all.filter { HelperServices.sharing[$0] != nil && launchd.system.disabled[$0] == true }
+        if kept.count != all.count { defaults.set(kept, forKey: turnedOffServicesKey) }
+        return kept
+    }
+
+    static func rememberService(_ label: String, off: Bool, defaults: UserDefaults = .standard) {
+        guard HelperServices.sharing[label] != nil else { return }
+        var labels = (defaults.stringArray(forKey: turnedOffServicesKey) ?? []).filter { $0 != label }
+        if off { labels.append(label) }
+        defaults.set(labels, forKey: turnedOffServicesKey)
     }
 
     private static func launchctl(_ arguments: [String]) -> String? { AppRoots.run("/bin/launchctl", arguments) }

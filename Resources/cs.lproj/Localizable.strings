@@ -33,7 +33,7 @@
 "For some features" = "Pro některé funkce";
 "Finder Extensions" = "Rozšíření Finderu";
 "Folders" = "Složky";
-"Lets the app choose how fast your fans spin" = "Umožňuje aplikaci nastavit rychlost otáčení ventilátorů";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Umožňuje aplikaci měnit rychlost ventilátorů a vypínat služby pro celý Mac";
 "Lets the app add items to the right-click menu in Finder" = "Umožňuje aplikaci přidat položky do nabídky pravého kliku ve Finderu";
 "Lets the app find permissions left by deleted apps" = "Umožňuje aplikaci najít oprávnění, která zbyla po smazaných aplikacích";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS umožňuje tato oprávnění vypnout jen v Nastavení systému. Tlačítko otevře správný seznam, kde pikapik vypnete.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Povolit přístup";
 "Fans" = "Ventilátory";
 "Fan speed" = "Rychlost ventilátorů";
-"Fan control" = "Ovládání ventilátorů";
+"Administrator access" = "Přístup správce";
 "Fan %lld" = "Ventilátor %lld";
 "See how fast your fans spin and choose their speed" = "Podívejte se, jak rychle se ventilátory točí, a vyberte jejich rychlost";
 "This Mac has no fans" = "Tento Mac nemá žádné ventilátory";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Pomalejší ventilátory mohou váš Mac víc zahřát";
 "Auto · %lld rpm" = "Auto · %lld ot/min";
 "Manual · %lld rpm" = "Ručně · %lld ot/min";
-"pikapik wants to allow changing the fan speed." = "pikapik chce povolit změnu rychlosti ventilátorů.";
-"pikapik wants to remove fan control." = "pikapik chce odebrat ovládání ventilátorů.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik chce měnit rychlost ventilátorů a vypínat a zapínat služby.";
+"pikapik wants to remove administrator access." = "pikapik chce odebrat přístup správce.";
 "Not allowed: no administrator password" = "Nepovoleno: chybí heslo správce";
 "Not removed: no administrator password" = "Neodebráno: chybí heslo správce";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Rychlost ventilátorů se nepodařilo změnit. Zkuste ovládání ventilátorů povolit znovu.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Rychlost ventilátorů se nepodařilo změnit. Zkuste přístup správce povolit znovu.";
 "Fans went back to Auto to keep your Mac safe" = "Ventilátory se vrátily na Auto, aby váš Mac zůstal v bezpečí";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilátor, otáčky, ot/min, chlazení, chladnější, horko, teplo, hluk, tichý, hlasitý, teplota";
 "allow, helper, password, administrator, install, remove" = "povolit, pomocník, heslo, správce, nainstalovat, odebrat";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Nepodařilo se to vypnout. Zkuste to znovu nebo použijte Nastavení systému.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Nepodařilo se to znovu zapnout. Zkuste to znovu nebo použijte Nastavení systému.";
 "Needs administrator rights, so turn it off in System Settings" = "Vyžaduje práva správce, proto to vypněte v Nastavení systému";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Chcete-li vypnout úlohy, které běží pro celý Mac, povolte přístup správce.";
 "The app added it itself, so turn it off in System Settings" = "Aplikace to přidala sama, proto to vypněte v Nastavení systému";
 "Lets the app save new files next to yours and see your background tasks" = "Umožňuje aplikaci ukládat nové soubory vedle vašich a vidět úlohy na pozadí";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Vyberte jednou svou domovskou složku, aby pikapik mohl ukládat soubory vedle vašich a vidět vaše úlohy na pozadí.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Připojit se může jen tento Mac.";
 "Other devices on your network can connect." = "Připojit se mohou i další zařízení ve vaší síti.";
 "To free port %@, turn off “%@” in System Settings." = "Chcete-li uvolnit port %1$@, vypněte „%2$@“ v Nastavení systému.";
+"To free port %@, turn off “%@”." = "Chcete-li uvolnit port %1$@, vypněte „%2$@“.";
 "macOS needs this port, so it stays taken." = "macOS tento port potřebuje, takže zůstane obsazený.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Program patří jinému uživateli nebo systému, takže na něj pikapik nesahá. Ukončit ho můžete v aplikaci Monitor aktivity.";
 "Open Activity Monitor" = "Otevřít Monitor aktivity";

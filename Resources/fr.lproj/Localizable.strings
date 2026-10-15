@@ -33,7 +33,7 @@
 "For some features" = "Pour certaines fonctions";
 "Finder Extensions" = "Extensions du Finder";
 "Folders" = "Dossiers";
-"Lets the app choose how fast your fans spin" = "Pour choisir la vitesse des ventilateurs";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Pour changer la vitesse des ventilateurs et éteindre des services pour tout le Mac";
 "Lets the app add items to the right-click menu in Finder" = "Pour ajouter des options au menu du clic droit dans le Finder";
 "Lets the app find permissions left by deleted apps" = "Pour retrouver les autorisations laissées par des apps supprimées";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS ne permet de les désactiver que dans Réglages Système. Le bouton ouvre la bonne liste, où vous désactivez pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Autoriser l’accès";
 "Fans" = "Ventilateurs";
 "Fan speed" = "Vitesse des ventilateurs";
-"Fan control" = "Contrôle des ventilateurs";
+"Administrator access" = "Accès administrateur";
 "Fan %lld" = "Ventilateur %lld";
 "See how fast your fans spin and choose their speed" = "Voyez la vitesse de vos ventilateurs et choisissez-la";
 "This Mac has no fans" = "Ce Mac n’a pas de ventilateur";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Des ventilateurs plus lents peuvent faire chauffer davantage votre Mac";
 "Auto · %lld rpm" = "Auto · %lld tr/min";
 "Manual · %lld rpm" = "Manuel · %lld tr/min";
-"pikapik wants to allow changing the fan speed." = "pikapik souhaite autoriser la modification de la vitesse des ventilateurs.";
-"pikapik wants to remove fan control." = "pikapik souhaite supprimer le contrôle des ventilateurs.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik souhaite changer la vitesse des ventilateurs et éteindre ou rallumer des services.";
+"pikapik wants to remove administrator access." = "pikapik souhaite supprimer l’accès administrateur.";
 "Not allowed: no administrator password" = "Non autorisé : pas de mot de passe administrateur";
 "Not removed: no administrator password" = "Non supprimé : pas de mot de passe administrateur";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Impossible de changer la vitesse des ventilateurs. Autorisez de nouveau le contrôle des ventilateurs.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Impossible de changer la vitesse des ventilateurs. Autorisez de nouveau l’accès administrateur.";
 "Fans went back to Auto to keep your Mac safe" = "Les ventilateurs sont repassés en Auto pour protéger votre Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilateur, tr/min, refroidissement, plus frais, chaud, chaleur, bruit, silencieux, fort, température, thermique";
 "allow, helper, password, administrator, install, remove" = "autoriser, assistant, mot de passe, administrateur, installer, supprimer";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Impossible de l’éteindre. Réessayez ou utilisez Réglages Système.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Impossible de le rallumer. Réessayez ou utilisez Réglages Système.";
 "Needs administrator rights, so turn it off in System Settings" = "Nécessite des droits d’administrateur, donc éteignez-le dans Réglages Système";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Pour éteindre les tâches qui s’exécutent pour tout le Mac, autorisez l’accès administrateur.";
 "The app added it itself, so turn it off in System Settings" = "L’app l’a ajouté elle-même, donc éteignez-le dans Réglages Système";
 "Lets the app save new files next to yours and see your background tasks" = "Pour enregistrer les nouveaux fichiers à côté des vôtres et voir vos tâches en arrière-plan";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Choisissez une fois votre dossier personnel pour que pikapik puisse enregistrer des fichiers à côté des vôtres et voir vos tâches en arrière-plan.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Seul ce Mac peut se connecter.";
 "Other devices on your network can connect." = "D’autres appareils de votre réseau peuvent aussi se connecter.";
 "To free port %@, turn off “%@” in System Settings." = "Pour libérer le port %1$@, désactivez « %2$@ » dans Réglages Système.";
+"To free port %@, turn off “%@”." = "Pour libérer le port %1$@, désactivez « %2$@ ».";
 "macOS needs this port, so it stays taken." = "macOS a besoin de ce port, il reste donc occupé.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Le programme appartient à un autre utilisateur ou au système, donc pikapik n’y touche pas. Vous pouvez le quitter dans Moniteur d’activité.";
 "Open Activity Monitor" = "Ouvrir Moniteur d’activité";

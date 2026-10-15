@@ -35,7 +35,7 @@ enum Permission: CaseIterable {
             ("", "waveform", String(localized: "System Audio Recording"), String(localized: "To change each app’s volume"))
         #if !APPSTORE
         case .fans:
-            ("", "fan", String(localized: "Fan control"), String(localized: "Lets the app choose how fast your fans spin"))
+            ("", "lock.shield", String(localized: "Administrator access"), String(localized: "Lets the app change the fan speed and turn off services for the whole Mac"))
         #endif
         case .finder:
             ("", "puzzlepiece.extension",
@@ -97,7 +97,6 @@ enum Permission: CaseIterable {
         case .systemAudio:
             if #available(macOS 14.2, *) { AppVolumeTool.shared.isEnabled || Permissions.shared.systemAudioRequested } else { false }
         #if !APPSTORE
-        case .fans: FanControl.shared.hasFans
         case .iCloud: SettingsSync.shared.isEnabled
         #endif
         case .finder: FinderExtension.all.contains { $0.isActive || $0.needsSettings }
@@ -504,7 +503,7 @@ struct PermissionsView: View {
             permissions.refresh()
             FinderExtension.all.forEach { $0.refresh() }
             #if !APPSTORE
-            if FanControl.shared.hasFans { FanControl.shared.probe() }
+            FanControl.shared.probe()
             #endif
             if !permissions.allGranted { permissions.startPolling() }
             if sync.state == .noAccess { sync.refresh() }
