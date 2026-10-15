@@ -9,7 +9,7 @@ import SwiftUI
 final class LayoutFixTool: Tool {
     let id = "layout-fix"
     let icon = "character.cursor.ibeam"
-    var title: String { String(localized: "Fix words typed in the wrong layout") }
+    var title: String { String(localized: "Retype words you typed in the wrong language") }
 
     static let standard = Shortcut(key: 49, modifiers: 0x60000)
     private static let shortcutKey = "layout-fix-shortcut"
@@ -203,7 +203,7 @@ private struct LayoutFixServiceSettings: View {
 final class LayoutFixTool: Tool {
     let id = "layout-fix"
     let icon = "character.cursor.ibeam"
-    var title: String { String(localized: "Fix words typed in the wrong layout") }
+    var title: String { String(localized: "Retype words you typed in the wrong language") }
 
     static let standard = Shortcut(key: 49, modifiers: 0x60000)
     static let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.google.android.studio"]

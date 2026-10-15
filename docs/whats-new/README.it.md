@@ -25,6 +25,7 @@ Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche 
 
 **In entrambe le versioni**
 
+- **Scopri cosa ha aggiunto un aggiornamento.** Dopo un aggiornamento, un puntino blu segna ogni scheda delle Impostazioni con qualcosa di nuovo e un’etichetta «Nuovo» segna la sezione. Spariscono quando hai guardato e da sole dopo 21 giorni.
 - **Un primo avvio tranquillo.** La versione dal sito non chiede più autorizzazioni alla prima apertura. Le chiede solo quando attivi uno strumento che ne ha bisogno.
 - **Copie più leggere dei video.** «Crea copia più leggera» ora riduce un video a circa la metà. Prima quasi tutti i video ricevevano «Già compatto».
 - **Due copie vanno d’accordo.** Se usi insieme la versione dell’App Store e quella del sito, non si annullano più a vicenda. ⇧⌘Q e ⇧⌘W funzionano di nuovo nei giochi.
@@ -33,6 +34,8 @@ Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche 
 - **Segnalare un problema è più semplice.** «Segnala un problema», in Impostazioni › Info, apre il modulo con la tua versione già scelta.
 - **Archivi più scorrevoli.** La barra di avanzamento si muove mentre un archivio viene estratto, una password sbagliata viene segnalata subito e il Mac non va più in stop nel bel mezzo di un’estrazione o di una creazione.
 - **Un pannello della barra dei menu più stabile.** Aprendo una riga del pannello, per esempio le opzioni dello schermo sotto «Resta sveglio», non compare più un lampo di barra di scorrimento. La freccia accanto a «Resta sveglio» ora dice «Impostazioni dello schermo».
+- **Porte si spiega da sola.** Una riga sotto il titolo dice cos’è una porta di rete, e una piccola animazione mostra che da una porta passa un solo programma. I tuoi programmi e quelli da lasciare in pace ora hanno nomi chiari.
+- **Le Impostazioni parlano chiaro.** Ogni scheda inizia con una riga su cosa trovi lì, la barra laterale ha spazi tra i suoi gruppi e «Resta sveglio», «Permessi» e «Batteria» dicono con precisione cosa succede. Il pulsante «Servono i permessi» compare solo se a uno strumento che hai attivato ne manca uno.
 
 **Corretto nella versione del Mac App Store**
 

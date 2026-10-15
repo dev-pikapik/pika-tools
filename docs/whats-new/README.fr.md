@@ -25,6 +25,7 @@ Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, d
 
 **Dans les deux versions**
 
+- **Voyez ce qu’une mise à jour a ajouté.** Après une mise à jour, un petit point bleu repère chaque onglet des Réglages qui contient du nouveau, et une étiquette « Nouveau » repère la section. Ils disparaissent dès que vous avez regardé, et d’eux-mêmes au bout de 21 jours.
 - **Un premier lancement tout en douceur.** La version du site ne demande plus d’autorisations à la première ouverture. Elle ne demande que lorsque vous activez un outil qui en a besoin.
 - **Des copies de vidéos plus légères.** « Créer une copie allégée » réduit désormais une vidéo à environ la moitié. Avant, la plupart des vidéos recevaient « Déjà compact ».
 - **Deux copies font bon ménage.** Si vous utilisez ensemble la version de l’App Store et celle du site, elles ne s’annulent plus l’une l’autre. ⇧⌘Q et ⇧⌘W fonctionnent de nouveau dans les jeux.
@@ -33,6 +34,8 @@ Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, d
 - **Signaler un problème est plus rapide.** « Signaler un problème », dans Réglages › À propos, ouvre le formulaire avec votre version déjà choisie.
 - **Des archives plus fluides.** La barre de progression avance pendant qu’une archive se décompresse, un mauvais mot de passe est signalé tout de suite, et votre Mac ne s’endort plus au milieu d’une décompression ou d’une création.
 - **Un panneau de la barre des menus plus stable.** Ouvrir une ligne du panneau, par exemple les options d’affichage sous « Rester éveillé », ne fait plus clignoter une barre de défilement. La flèche à côté de « Rester éveillé » indique maintenant « Réglages de l’écran ».
+- **Ports s’explique tout seul.** Une ligne sous le titre dit ce qu’est un port, et une petite animation montre qu’une porte ne laisse passer qu’un seul programme. Vos propres programmes et ceux qu’il vaut mieux laisser tranquilles ont maintenant des noms clairs.
+- **Les Réglages parlent clairement.** Chaque onglet commence par une ligne qui dit ce que vous y trouvez, la barre latérale a des espaces entre ses groupes, et « Rester éveillé », « Autorisations » et « Batterie » disent exactement ce qui se passe. Le bouton « Autorisations requises » n’apparaît que si un outil que vous avez activé en manque une.
 
 **Corrigé dans la version du Mac App Store**
 

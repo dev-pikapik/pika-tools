@@ -25,6 +25,7 @@ Deschide arhive, curăță desktopul, folosește Home și End și multe altele, 
 
 **În ambele versiuni**
 
+- **Vezi ce a adus o actualizare.** După o actualizare, un punct albastru mic marchează fiecare filă din Setări cu ceva nou, iar o etichetă „Nou” marchează secțiunea. Dispar când te-ai uitat și, de la sine, după 21 de zile.
 - **O primă pornire liniștită.** Versiunea de pe site nu mai cere permisiuni la prima deschidere. Întreabă doar când pornești un instrument care are nevoie de una.
 - **Copii mai mici ale videoclipurilor.** „Creează o copie mai mică” face acum un videoclip cam pe jumătate de mărime. Înainte, majoritatea videoclipurilor primeau „Deja compact”.
 - **Două copii se înțeleg.** Dacă folosești împreună versiunea din App Store și cea de pe site, nu se mai anulează una pe alta. ⇧⌘Q și ⇧⌘W funcționează din nou în jocuri.
@@ -33,6 +34,8 @@ Deschide arhive, curăță desktopul, folosește Home și End și multe altele, 
 - **Raportarea unei probleme e mai rapidă.** „Raportează o problemă”, în Setări › Despre, deschide formularul cu versiunea ta deja aleasă.
 - **Arhive fără sacadări.** Bara de progres se mișcă în timp ce o arhivă se dezarhivează, o parolă greșită este anunțată pe loc, iar Mac-ul nu mai adoarme în mijlocul dezarhivării sau al creării.
 - **Un panou mai stabil în bara de meniu.** Când deschizi un rând din panou, de exemplu opțiunile ecranului de sub „Menține activ”, bara de derulare nu mai clipește. Săgeata de lângă „Menține activ” spune acum „Setări ecran”.
+- **Porturi se explică singure.** Un rând sub titlu spune ce este un port, iar o animație mică arată că printr-o ușă încape un singur program. Programele tale și cele pe care e mai bine să le lași în pace au acum nume clare.
+- **Setările spun clar.** Fiecare filă începe cu un rând despre ce primești acolo, bara laterală are spații între grupuri, iar „Menține activ”, „Permisiuni” și „Baterie” spun exact ce se întâmplă. Butonul „Sunt necesare permisiuni” apare doar când unui instrument pornit de tine îi lipsește una.
 
 **Reparat în versiunea din Mac App Store**
 

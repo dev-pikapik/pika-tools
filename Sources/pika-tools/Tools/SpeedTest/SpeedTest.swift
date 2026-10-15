@@ -287,6 +287,9 @@ struct SpeedTestSettings: View {
         } else if let result = test.result {
             Text("Checked \(SpeedTest.checked(result.date))")
                 .foregroundStyle(.secondary)
+        } else {
+            Text("Press Check Speed to find out")
+                .foregroundStyle(.secondary)
         }
     }
 

@@ -25,6 +25,7 @@ Mở tệp lưu trữ, dọn màn hình nền, dùng Home và End và nhiều h�
 
 **Có trong cả hai bản**
 
+- **Xem bản cập nhật đã thêm gì.** Sau khi cập nhật, một chấm xanh nhỏ đánh dấu mỗi thẻ trong Cài đặt có điều mới, và nhãn “Mới” đánh dấu phần đó. Chúng biến mất khi bạn đã xem, và tự tắt sau 21 ngày.
 - **Lần mở đầu tiên êm ái.** Bản tải từ trang web không còn xin quyền ngay lần mở đầu tiên. Nó chỉ hỏi khi bạn bật một công cụ cần quyền.
 - **Bản sao video nhỏ hơn.** “Tạo bản sao nhỏ hơn” giờ làm video nhỏ đi còn khoảng một nửa. Trước đây, hầu hết video đều nhận “Đã gọn sẵn”.
 - **Hai bản dùng chung êm ấm.** Nếu bạn dùng cùng lúc bản App Store và bản trên trang web, chúng không còn hoàn tác công việc của nhau. ⇧⌘Q và ⇧⌘W lại dùng được trong game.
@@ -33,6 +34,8 @@ Mở tệp lưu trữ, dọn màn hình nền, dùng Home và End và nhiều h�
 - **Báo cáo sự cố nhanh hơn.** “Báo cáo sự cố” trong Cài đặt › Giới thiệu mở biểu mẫu với phiên bản của bạn đã được chọn sẵn.
 - **Kho lưu trữ mượt hơn.** Thanh tiến trình chạy trong lúc giải nén, mật khẩu sai được báo ngay, và Mac không còn ngủ giữa chừng khi đang giải nén hay tạo tệp lưu trữ.
 - **Bảng điều khiển trên thanh menu ổn định hơn.** Mở một hàng trong bảng, chẳng hạn các tùy chọn màn hình dưới “Giữ máy thức”, không còn làm thanh cuộn nháy lên nữa. Mũi tên cạnh “Giữ máy thức” giờ ghi “Cài đặt màn hình”.
+- **Cổng tự giải thích.** Một dòng dưới tiêu đề cho biết cổng là gì, và một hoạt ảnh nhỏ cho thấy mỗi cửa chỉ vừa một chương trình. Chương trình của bạn và những chương trình nên để yên giờ có tên rõ ràng.
+- **Cài đặt nói rõ ràng.** Mỗi thẻ mở đầu bằng một dòng nói bạn có gì ở đó, thanh bên có khoảng cách giữa các nhóm, và “Giữ máy thức”, “Quyền” và “Pin” nói chính xác điều đang diễn ra. Nút “Cần cấp quyền” chỉ hiện khi một công cụ bạn đã bật thiếu quyền.
 
 **Đã sửa trong bản Mac App Store**
 

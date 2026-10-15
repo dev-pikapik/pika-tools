@@ -25,6 +25,7 @@ Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci,
 
 **V obou verzích**
 
+- **Uvidíš, co aktualizace přidala.** Po aktualizaci malá modrá tečka označí každou kartu v Nastavení, kde je něco nového, a štítek „Nové“ označí sekci. Zmizí, jakmile se podíváš, a samy po 21 dnech.
 - **Klidné první spuštění.** Verze z webu se už při prvním otevření neptá na oprávnění. Zeptá se, až když zapneš nástroj, který je potřebuje.
 - **Menší kopie videí.** „Vytvořit menší kopii“ teď udělá z videa soubor zhruba poloviční velikosti. Dřív většina videí dostala odpověď „Už je malý“.
 - **Dvě kopie spolu vycházejí.** Pokud používáte verzi z App Store a verzi z webu společně, už se navzájem neruší. ⇧⌘Q a ⇧⌘W ve hrách zase fungují.
@@ -33,6 +34,8 @@ Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci,
 - **Nahlásit problém je rychlejší.** „Nahlásit problém“ v Nastavení › O aplikaci otevře formulář s už vybranou verzí.
 - **Archivy bez zadrhávání.** Ukazatel průběhu se hýbe, zatímco se archiv rozbaluje, špatné heslo se ohlásí hned a Mac už neusne uprostřed rozbalování nebo vytváření archivu.
 - **Klidnější panel v liště nabídek.** Když rozbalíš řádek v panelu, například volby displeje pod „Bez spánku“, už nebliká posuvník. Šipka vedle „Bez spánku“ teď říká „Nastavení displeje“.
+- **Porty se vysvětlují samy.** Řádek pod nadpisem říká, co je port, a malá animace ukazuje, že jedněmi dveřmi projde jen jeden program. Tvé vlastní programy a ty, které je lepší nechat na pokoji, mají teď srozumitelné názvy.
+- **Nastavení mluví srozumitelně.** Každá karta začíná řádkem o tom, co tam získáš, postranní panel má mezery mezi skupinami a „Bez spánku“, „Oprávnění“ a „Baterie“ říkají přesně, co se děje. Tlačítko „Je potřeba oprávnění“ se objeví, jen když zapnutému nástroji nějaké chybí.
 
 **Opraveno ve verzi z Mac App Store**
 

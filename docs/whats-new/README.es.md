@@ -25,6 +25,7 @@ Abre archivos comprimidos, despeja tu escritorio, usa Home y End y mucho más, a
 
 **En las dos versiones**
 
+- **Mira qué ha añadido una actualización.** Tras una actualización, un puntito azul marca cada pestaña de Ajustes que trae algo nuevo, y una etiqueta «Nuevo» marca la sección. Desaparecen cuando ya lo has visto, y solos a los 21 días.
 - **Un primer arranque tranquilo.** La versión de la web ya no pide permisos la primera vez que la abres. Solo los pide cuando activas una herramienta que los necesita.
 - **Copias de vídeos más ligeras.** «Crear copia más ligera» ahora deja un vídeo en más o menos la mitad. Antes, a la mayoría de los vídeos les decía «Ya es compacto».
 - **Dos copias se llevan bien.** Si usas a la vez la versión de la App Store y la de la web, ya no se deshacen el trabajo una a otra. ⇧⌘Q y ⇧⌘W vuelven a funcionar en los juegos.
@@ -33,6 +34,8 @@ Abre archivos comprimidos, despeja tu escritorio, usa Home y End y mucho más, a
 - **Informar de un problema es más rápido.** «Informar de un problema», en Ajustes › Acerca de, abre el formulario con tu versión ya elegida.
 - **Archivos comprimidos más fluidos.** La barra de progreso avanza mientras se descomprime un archivo, una contraseña incorrecta se avisa al instante, y el Mac ya no se duerme a mitad de descomprimir o de crear uno.
 - **Un panel de la barra de menús más estable.** Al abrir una fila del panel, como las opciones de pantalla bajo «Mantener activo», ya no parpadea una barra de desplazamiento. La flecha junto a «Mantener activo» ahora dice «Ajustes de pantalla».
+- **Puertos se explica solo.** Una línea bajo el título dice qué es un puerto, y una pequeña animación muestra que por una puerta solo cabe un programa. Tus propios programas y los que conviene dejar en paz ahora tienen nombres claros.
+- **Los Ajustes lo dicen claro.** Cada pestaña empieza con una línea sobre lo que encuentras en ella, la barra lateral tiene espacios entre sus grupos, y «Mantener activo», «Permisos» y «Batería» dicen exactamente lo que pasa. El botón «Faltan permisos» aparece solo si a una herramienta que has activado le falta uno.
 
 **Corregido en la versión de la Mac App Store**
 

@@ -18,7 +18,8 @@
 "All set" = "Усе готово";
 "pikapik needs two permissions" = "Дай pikapik два дозволи";
 "Both permissions are on and every tool is working." = "Доступи є, усі інструменти працюють.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Доступи є. Деяким інструментам потрібен ще доступ зі списку нижче.";
+"Some tools also need a permission from the list below." = "Деяким інструментам потрібен ще доступ зі списку нижче.";
+"Both permissions are on" = "Обидва доступи ввімкнено";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Без них macOS не пустить програму до кліків і клавіш. Відкрий Системні параметри › Приватність і безпека та увімкни pikapik у двох списках:";
 "Permissions for some tools" = "Дозволи для деяких інструментів";
 "Only some tools need these permissions. Everything else works without them." = "Ці дозволи потрібні лише деяким інструментам. Усе інше працює й без них.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Щоб знаходити дозволи, що залишилися від видалених програм";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS дозволяє вимкнути їх лише в Системних параметрах. Кнопка відкриє потрібний список, де ви вимкнете pikapik.";
 "Needs a permission. Click to allow it." = "Потрібен дозвіл. Натисніть, щоб дозволити.";
-"Grey tools need a permission. Click one to allow it." = "Сірі інструменти потребують дозволу. Натисніть на будь-який із них, щоб дозволити.";
 "Turn off %@?" = "Вимкнути %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik перезапуститься, а інструменти, яким це потрібно, стануть сірими, доки ви знову не дозволите.";
 "Open" = "Відкрити";
@@ -57,7 +57,7 @@
 "Updates" = "Оновлення";
 "Check for updates automatically" = "Перевіряти оновлення автоматично";
 "Check Now" = "Перевірити";
-"Small fixes for the keyboard, mouse and sleep" = "Дрібні покращення для клавіатури, миші та сну";
+"Small tools that make your Mac nicer to use" = "Маленькі інструменти, з якими Mac приємніше працювати";
 "What’s New" = "Що нового";
 "Report a Problem" = "Повідомити про проблему";
 "License (MIT)" = "Ліцензія (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Без обмежень";
 "Keep your Mac awake" = "Не давати Mac засинати";
 "Duration" = "Тривалість";
-"Until %@" = "До %@";
+"If turned on now, ends %@" = "Якщо ввімкнути зараз, закінчиться: %@";
 "Days" = "Дні";
 "Hours" = "Години";
 "Minutes" = "Хвилини";
@@ -143,7 +143,7 @@
 "Main display" = "Основний дисплей";
 "Click the display you want, then choose “Main display” in “Use as”" = "Клацніть потрібний екран і виберіть «Основний дисплей» у списку «Використання»";
 "primary, main screen, Displays settings" = "головний, основний екран, параметри Дисплеї";
-"Fixes for the Dock" = "Покращення для Dock";
+"Hide apps with a click and keep the Dock on one display" = "Ховайте програми одним клацанням і тримайте Dock на одному екрані";
 "Dock, display, monitor, screen, jump, move" = "Dock, Док, дисплей, монітор, екран, стрибає, переноситься";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Клацніть значок програми, у якій працюєте, — вона сховається. Ще клацання — повернеться.";
 "Click again to bring it back" = "Ще клацання — програма повернеться";
@@ -300,16 +300,16 @@
 "Same settings on all your Macs" = "Одні налаштування на всіх ваших Mac";
 "Slower" = "Повільніше";
 "Switch language" = "Зміна мови";
-"The dot is your Mac’s own speed" = "Крапка — швидкість вашого Mac";
+"The dot marks your Mac’s normal speed" = "Крапка — звичайна швидкість вашого Mac";
 "The dot marks the default" = "Крапка позначає типове значення";
 "Then paste to move them" = "Потім вставлення переміщує їх";
-"Your Mac stays awake until you quit pikapik" = "Mac не засне, доки ви не вийдете з pikapik";
+"Keep your Mac from falling asleep" = "Не дає Mac заснути";
 "macOS will ask for your administrator password." = "macOS запитає пароль адміністратора.";
 "Lines for apps, pixels for games" = "Рядки — для програм, пікселі — для ігор";
 "Add the Open URLs action in Shortcuts, with a link." = "Додайте в «Командах» дію «Відкрити URL-адреси» з посиланням.";
-"Fixes for Finder" = "Покращення для Finder";
-"Fixes for the keyboard" = "Покращення для клавіатури";
-"Fixes for the mouse" = "Покращення для миші";
+"Create, convert and compress files right in Finder" = "Створюйте, конвертуйте й стискайте файли просто у Finder";
+"Switch language, fix wrong layout, Home and End" = "Перемикання мови, виправлення хибної розкладки, Home і End";
+"Scrolling, side buttons and pointer speed" = "Прокручування, бічні кнопки та швидкість вказівника";
 "Fixes for windows and quitting apps" = "Покращення для вікон і виходу з програм";
 "Lets the Mac sleep before the battery runs out" = "Mac знову засне, поки батарея не сіла";
 "Home and End go to the start and end of a line" = "Home і End — до початку й кінця рядка";
@@ -338,7 +338,7 @@
 "Open your game, and it shows up here" = "Відкрийте гру — і вона з’явиться тут";
 "Here’s what’s in your Dock. Click your game to add it" = "Тут усе, що є в Dock. Натисніть на гру, щоб додати її";
 "You can also drag a game here from Finder" = "Гру можна перетягнути сюди й з Finder";
-"Not a Game" = "Не гра";
+"Ignore" = "Ігнорувати";
 "Looks like a game" = "Схоже на гру";
 "game, games, gaming, play, Steam, full screen" = "гра, ігри, ігровий, грати, геймінг, Steam, повний екран";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "миша, курсор, Dock, рядок меню, активні кути, краї, другий монітор";
@@ -354,6 +354,7 @@
 "Speed Test" = "Швидкість інтернету";
 "How fast your internet is right now" = "Наскільки швидкий у вас інтернет просто зараз";
 "Check Speed" = "Перевірити швидкість";
+"Press Check Speed to find out" = "Щоб дізнатися, натисніть «Перевірити швидкість»";
 "Check" = "Перевірити";
 "Getting ready…" = "Готуюся…";
 "Checking download…" = "Перевіряю завантаження…";
@@ -555,8 +556,8 @@
 "Psst, version %@ is out! Click me." = "Псс, вийшла версія %@! Натисніть на мене.";
 "Restart Finder once to bring back the right-click items" = "Перезапустіть Finder один раз, щоб повернути пункти правого кліку";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Тут те, що є в Dock і відкрите зараз. Натисніть на застосунок, щоб додати його, або перетягніть його сюди з Finder";
-"Keep running after Quit" = "Працювати у фоні після виходу";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "«Вийти» закриває вікна, а сполучення клавіш, «Не засинати» й улюбленець далі працюють. Щоб вийти повністю, утримуйте Option (⌥)";
+"Stay in the background after Quit" = "Працювати у фоні після виходу";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Сполучення клавіш і «Не засинати» продовжують працювати. Щоб вийти повністю, утримуйте Option (⌥)";
 "Quit Completely" = "Вийти повністю";
 "pikapik keeps working in the background" = "pikapik і далі працює у фоні";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Сполучення клавіш, «Не засинати» й улюбленець працюють як раніше. Щоб повернути значок у рядок меню, відкрийте pikapik ще раз. Щоб вийти повністю, утримуйте Option (⌥), коли вибираєте «Вийти».";
@@ -976,6 +977,8 @@
 "Running on battery" = "Працює від акумулятора";
 "Your Mac paused charging to protect the battery" = "Mac призупинив заряджання, щоб захистити акумулятор";
 "The power adapter can’t keep up, so the battery is helping" = "Адаптер не справляється, тож акумулятор допомагає";
+"This Mac has no battery" = "У цьому Mac немає акумулятора";
+"It runs on power from the wall, so there is nothing to show" = "Він працює від розетки, тож показувати нічого";
 "Battery Health" = "Справність акумулятора";
 "Condition" = "Стан";
 "Normal" = "Нормальний";
@@ -1048,8 +1051,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Виберіть домашню папку один раз, щоб pikapik міг зберігати файли поруч із вашими й бачити ваші фонові завдання.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "елементи входу, відкривати під час входу, агенти, служби, демони, автозапуск, автозавантаження, помічники, працює, фон, фонові, залишки, вимкнути";
 "Ports" = "Порти";
-"Which programs have taken ports on this Mac" = "Які програми зайняли порти на цьому Mac";
+"Numbered doors that programs use to talk to the network" = "Пронумеровані двері, через які програми спілкуються з мережею";
+"Only one program fits at a door" = "В одні двері проходить лише одна програма";
 "Port or program" = "Порт або програма";
+"Type a number, like 3000" = "Введіть номер, наприклад 3000";
 "Free a port" = "Звільнити порт";
 "Port %@ is free" = "Порт %@ вільний";
 "Port %@ is taken by macOS or another user" = "Порт %@ зайнятий macOS або іншим користувачем";
@@ -1058,9 +1063,11 @@
 "Clear" = "Очистити";
 "No programs found" = "Програми не знайдено";
 "None of your programs has taken a port" = "Ваші програми не зайняли жодного порту";
-"Your programs" = "Ваші програми";
-"macOS and other users" = "macOS та інші користувачі";
+"Nothing is using a door right now. That is normal." = "Зараз жодна програма не займає двері. Це нормально.";
+"Programs you started" = "Програми, які запустили ви";
+"Not yours: leave these alone" = "Не ваші: не чіпайте";
 "Free Up" = "Звільнити";
+"How to Free It" = "Як звільнити";
 "Part of macOS" = "Частина macOS";
 "System service" = "Системна служба";
 "Started by another user" = "Запущена іншим користувачем";
@@ -1088,7 +1095,7 @@
 "Screen Sharing" = "Спільний екран";
 "Remote Management" = "Віддалене керування";
 "AirPlay Receiver" = "Приймач AirPlay";
-"Fix words typed in the wrong layout" = "Виправляти слова, набрані не в тій розкладці";
+"Retype words you typed in the wrong language" = "Передруковувати слова, набрані не тією мовою";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Слово, набране не в тій розкладці, передруковується в потрібній, а розкладка перемикається.";
 "Fixed when you press Space" = "Виправляється, коли ви натискаєте Пробіл";
 "Press %@ to fix" = "Натисніть %@, щоб виправити";
@@ -1114,7 +1121,7 @@
 "App Volume" = "Гучність програм";
 "Works with any app that plays sound" = "Працює з будь-якою програмою, що відтворює звук";
 "Lower or mute any app without touching the others." = "Зменшуйте гучність або вимикайте звук будь-якої програми, не чіпаючи решту.";
-"Each app gets its own volume." = "Кожна програма має власну гучність.";
+"Each app gets its own volume" = "Кожна програма має власну гучність";
 "No apps are playing sound" = "Жодна програма зараз не відтворює звук";
 "Mute" = "Вимкнути звук";
 "Unmute" = "Увімкнути звук";

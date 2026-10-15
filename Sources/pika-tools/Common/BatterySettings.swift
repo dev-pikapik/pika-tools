@@ -35,6 +35,11 @@ struct BatterySettings: View {
                 health(state)
                 power(state)
                 tips
+            } else if !Battery.isPresent {
+                Section {
+                    RowLabel(Text("This Mac has no battery"), Text("It runs on power from the wall, so there is nothing to show"))
+                        .padding(.vertical, 4)
+                }
             }
         }
         .formStyle(.grouped)
@@ -56,7 +61,7 @@ struct BatterySettings: View {
                         Link("Get Service…", destination: Self.service)
                     }
                 } label: {
-                    Label { RowLabel(Text("Condition")) } icon: { Image(systemName: "heart") }
+                    Label { RowLabel(Text("Condition")) } icon: { Image(systemName: "heart").frame(width: 24) }
                 }
             }
             if let capacity = battery.health?.capacity {
@@ -66,7 +71,7 @@ struct BatterySettings: View {
                 } label: {
                     Label {
                         RowLabel(Text("Maximum Capacity"), Text("Compared with when it was new"))
-                    } icon: { Image(systemName: "battery.100percent") }
+                    } icon: { Image(systemName: "battery.100percent").frame(width: 24) }
                 }
             }
             if let cycles = state.cycles {
@@ -77,7 +82,7 @@ struct BatterySettings: View {
                 } label: {
                     Label {
                         RowLabel(Text("Cycle Count"), Text("Designed for \(Battery.ratedCycles.formatted()) cycles"))
-                    } icon: { Image(systemName: "arrow.triangle.2.circlepath") }
+                    } icon: { Image(systemName: "arrow.triangle.2.circlepath").frame(width: 24) }
                 }
             }
         } header: {
@@ -100,7 +105,7 @@ struct BatterySettings: View {
                     } label: {
                         Label {
                             RowLabel(Text("Power Adapter"), state.adapter.map { Text(verbatim: $0) })
-                        } icon: { Image(systemName: "powerplug") }
+                        } icon: { Image(systemName: "powerplug").frame(width: 24) }
                     }
                 }
                 if let watts = state.watts {
@@ -113,11 +118,11 @@ struct BatterySettings: View {
                         if state.phase == .charging {
                             Label {
                                 RowLabel(Text("Charging Power"), Text("Going into the battery right now"))
-                            } icon: { Image(systemName: "bolt") }
+                            } icon: { Image(systemName: "bolt").frame(width: 24) }
                         } else {
                             Label {
                                 RowLabel(Text("Power Use"), Text("What your Mac uses right now"))
-                            } icon: { Image(systemName: "gauge.with.dots.needle.50percent") }
+                            } icon: { Image(systemName: "gauge.with.dots.needle.50percent").frame(width: 24) }
                         }
                     }
                 }
@@ -133,14 +138,14 @@ struct BatterySettings: View {
             LabeledContent {
                 Button("Battery Settings…") { NSWorkspace.shared.open(Self.batterySettings) }
             } label: {
-                Label { Self.limit } icon: { Image(systemName: "battery.75percent") }
+                Label { Self.limit } icon: { Image(systemName: "battery.75percent").frame(width: 24) }
             }
             Label {
                 RowLabel(Text("Keep It Cool"), Text("Use your Mac where it’s between \(Self.celsius(10)) and \(Self.celsius(35))"))
-            } icon: { Image(systemName: "thermometer.medium") }
+            } icon: { Image(systemName: "thermometer.medium").frame(width: 24) }
             Label {
                 RowLabel(Text("Storing Your Mac"), Text("Charge it to about \(0.5.formatted(.percent)) and shut it down"))
-            } icon: { Image(systemName: "archivebox") }
+            } icon: { Image(systemName: "archivebox").frame(width: 24) }
         } header: {
             Text("Keep It Healthy")
                 .settingAnchor(String(localized: "Keep It Healthy"))

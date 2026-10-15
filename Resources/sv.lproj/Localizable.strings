@@ -18,7 +18,8 @@
 "All set" = "Allt klart";
 "pikapik needs two permissions" = "pikapik behöver två behörigheter";
 "Both permissions are on and every tool is working." = "Båda behörigheterna är på och alla verktyg fungerar.";
-"Both permissions are on. Some tools also need a permission from the list below." = "Båda behörigheterna är på. Vissa verktyg behöver också en behörighet från listan nedan.";
+"Some tools also need a permission from the list below." = "Vissa verktyg behöver också en behörighet från listan nedan.";
+"Both permissions are on" = "Båda behörigheterna är på";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Utan dem låter macOS inte appen se eller ändra klick och tangenttryckningar. Öppna Systeminställningar › Integritet och säkerhet och slå på pikapik i de här två listorna:";
 "Permissions for some tools" = "Behörigheter för vissa verktyg";
 "Only some tools need these permissions. Everything else works without them." = "Bara vissa verktyg behöver de här behörigheterna. Allt annat fungerar utan dem.";
@@ -37,7 +38,6 @@
 "Lets the app find permissions left by deleted apps" = "Låter appen hitta behörigheter som raderade appar lämnat kvar";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS låter dig stänga av dem bara i Systeminställningar. Knappen öppnar rätt lista, där du stänger av pikapik.";
 "Needs a permission. Click to allow it." = "Behöver en behörighet. Klicka för att tillåta den.";
-"Grey tools need a permission. Click one to allow it." = "Gråa verktyg behöver en behörighet. Klicka på ett för att tillåta den.";
 "Turn off %@?" = "Stänga av %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik startar om, och verktygen som behöver den blir gråa tills du tillåter den igen.";
 "Open" = "Öppna";
@@ -57,7 +57,7 @@
 "Updates" = "Uppdateringar";
 "Check for updates automatically" = "Sök efter uppdateringar automatiskt";
 "Check Now" = "Sök nu";
-"Small fixes for the keyboard, mouse and sleep" = "Små fixar för tangentbord, mus och vila";
+"Small tools that make your Mac nicer to use" = "Små verktyg som gör din Mac trevligare att använda";
 "What’s New" = "Nyheter";
 "Report a Problem" = "Rapportera ett problem";
 "License (MIT)" = "Licens (MIT)";
@@ -70,7 +70,7 @@
 "Indefinitely" = "Tills vidare";
 "Keep your Mac awake" = "Håll din Mac vaken";
 "Duration" = "Varaktighet";
-"Until %@" = "Till %@";
+"If turned on now, ends %@" = "Om den slås på nu slutar den: %@";
 "Days" = "Dagar";
 "Hours" = "Timmar";
 "Minutes" = "Minuter";
@@ -143,7 +143,7 @@
 "Main display" = "Huvudbildskärm";
 "Click the display you want, then choose “Main display” in “Use as”" = "Klicka på skärmen du vill ha och välj ”Huvudbildskärm” vid ”Använd som”";
 "primary, main screen, Displays settings" = "primär, huvudskärm, inställningar för Skärmar";
-"Fixes for the Dock" = "Fixar för Dock";
+"Hide apps with a click and keep the Dock on one display" = "Dölj appar med ett klick och ha Dock på en skärm";
 "Dock, display, monitor, screen, jump, move" = "Dock, skärm, bildskärm, monitor, hoppar, flytta";
 "Click the icon of the app you’re in to hide it. Click again to bring it back." = "Klicka på symbolen för appen du använder för att gömma den. Klicka igen för att ta tillbaka den.";
 "Click again to bring it back" = "Klicka igen för att ta tillbaka den";
@@ -300,16 +300,16 @@
 "Same settings on all your Macs" = "Samma inställningar på alla dina Mac-datorer";
 "Slower" = "Långsammare";
 "Switch language" = "Byt språk";
-"The dot is your Mac’s own speed" = "Pricken är din Macs egen hastighet";
+"The dot marks your Mac’s normal speed" = "Pricken visar din Macs normala hastighet";
 "The dot marks the default" = "Pricken visar standardvärdet";
 "Then paste to move them" = "Sedan flyttar Klistra in dem";
-"Your Mac stays awake until you quit pikapik" = "Datorn förblir vaken tills du avslutar pikapik";
+"Keep your Mac from falling asleep" = "Hindra att din Mac somnar";
 "macOS will ask for your administrator password." = "macOS frågar efter administratörslösenordet.";
 "Lines for apps, pixels for games" = "Rader för appar, pixlar för spel";
 "Add the Open URLs action in Shortcuts, with a link." = "Lägg till åtgärden Öppna webbadresser med en länk i Genvägar.";
-"Fixes for Finder" = "Fixar för Finder";
-"Fixes for the keyboard" = "Fixar för tangentbordet";
-"Fixes for the mouse" = "Fixar för musen";
+"Create, convert and compress files right in Finder" = "Skapa, konvertera och komprimera filer direkt i Finder";
+"Switch language, fix wrong layout, Home and End" = "Byt språk, rätta fel layout, Home och End";
+"Scrolling, side buttons and pointer speed" = "Rullning, sidoknappar och pekarhastighet";
 "Fixes for windows and quitting apps" = "Fixar för fönster och för att avsluta appar";
 "Lets the Mac sleep before the battery runs out" = "Låter Macen gå i vila igen innan batteriet tar slut";
 "Home and End go to the start and end of a line" = "Home och End till början och slutet av raden";
@@ -338,7 +338,7 @@
 "Open your game, and it shows up here" = "Öppna ditt spel så dyker det upp här";
 "Here’s what’s in your Dock. Click your game to add it" = "Här är allt som finns i ditt Dock. Klicka på ditt spel för att lägga till det";
 "You can also drag a game here from Finder" = "Du kan också dra hit ett spel från Finder";
-"Not a Game" = "Inte ett spel";
+"Ignore" = "Ignorera";
 "Looks like a game" = "Ser ut som ett spel";
 "game, games, gaming, play, Steam, full screen" = "spel, gaming, spela, Steam, helskärm";
 "mouse, cursor, Dock, menu bar, hot corners, edges, second display" = "mus, pekare, markör, Dock, menyrad, aktiva hörn, kanter, andra skärm";
@@ -354,6 +354,7 @@
 "Speed Test" = "Hastighetstest";
 "How fast your internet is right now" = "Hur snabbt ditt internet är just nu";
 "Check Speed" = "Testa hastigheten";
+"Press Check Speed to find out" = "Tryck på ”Testa hastigheten” för att ta reda på det";
 "Check" = "Testa";
 "Getting ready…" = "Förbereder…";
 "Checking download…" = "Testar nedladdning…";
@@ -555,8 +556,8 @@
 "Psst, version %@ is out! Click me." = "Psst, version %@ är här! Klicka på mig.";
 "Restart Finder once to bring back the right-click items" = "Starta om Finder en gång så kommer högerklicksvalen tillbaka";
 "Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder" = "Här är det som finns i ditt Dock och det som är öppet nu. Klicka på en app för att lägga till den, eller dra hit den från Finder";
-"Keep running after Quit" = "Fortsätt i bakgrunden efter Avsluta";
-"Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely" = "”Avsluta” stänger fönstren, men kortkommandon, ”Håll vaken” och husdjuret fortsätter att fungera. Håll ned Alternativ (⌥) för att avsluta helt";
+"Stay in the background after Quit" = "Fortsätt i bakgrunden efter Avsluta";
+"Shortcuts and Keep Awake keep working. Hold Option to quit completely" = "Kortkommandon och ”Håll vaken” fortsätter att fungera. Håll ned Alternativ (⌥) för att avsluta helt";
 "Quit Completely" = "Avsluta helt";
 "pikapik keeps working in the background" = "pikapik fortsätter i bakgrunden";
 "Shortcuts, Keep Awake and the pet stay on. Open pikapik again to bring back its menu bar icon. To quit completely, hold Option when you choose Quit." = "Kortkommandon, ”Håll vaken” och husdjuret är fortfarande på. Öppna pikapik igen för att få tillbaka symbolen i menyraden. Håll ned Alternativ (⌥) när du väljer ”Avsluta” för att avsluta helt.";
@@ -976,6 +977,8 @@
 "Running on battery" = "Går på batteri";
 "Your Mac paused charging to protect the battery" = "Din Mac har pausat laddningen för att skydda batteriet";
 "The power adapter can’t keep up, so the battery is helping" = "Strömadaptern hänger inte med, så batteriet hjälper till";
+"This Mac has no battery" = "Den här Macen har inget batteri";
+"It runs on power from the wall, so there is nothing to show" = "Den går på ström från vägguttaget, så det finns inget att visa";
 "Battery Health" = "Batterihälsa";
 "Condition" = "Skick";
 "Normal" = "Normal";
@@ -1048,8 +1051,10 @@
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Välj din hemmapp en gång så att pikapik kan spara filer bredvid dina och se dina bakgrundsuppgifter.";
 "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off" = "startobjekt, öppna vid inloggning, agenter, tjänster, demoner, start, autostart, hjälpare, körs, bakgrund, rester, stäng av";
 "Ports" = "Portar";
-"Which programs have taken ports on this Mac" = "Vilka program som upptar portar på den här Mac-datorn";
+"Numbered doors that programs use to talk to the network" = "Numrerade dörrar som program använder för att prata med nätverket";
+"Only one program fits at a door" = "Bara ett program ryms vid varje dörr";
 "Port or program" = "Port eller program";
+"Type a number, like 3000" = "Skriv ett nummer, till exempel 3000";
 "Free a port" = "Frigör en port";
 "Port %@ is free" = "Port %@ är ledig";
 "Port %@ is taken by macOS or another user" = "Port %@ används av macOS eller en annan användare";
@@ -1058,9 +1063,11 @@
 "Clear" = "Rensa";
 "No programs found" = "Inga program hittades";
 "None of your programs has taken a port" = "Inget av dina program upptar någon port";
-"Your programs" = "Dina program";
-"macOS and other users" = "macOS och andra användare";
+"Nothing is using a door right now. That is normal." = "Inget program använder någon dörr just nu. Det är normalt.";
+"Programs you started" = "Program som du startat";
+"Not yours: leave these alone" = "Inte dina: låt dem vara";
 "Free Up" = "Frigör";
+"How to Free It" = "Så frigör du den";
 "Part of macOS" = "Del av macOS";
 "System service" = "Systemtjänst";
 "Started by another user" = "Startat av en annan användare";
@@ -1088,7 +1095,7 @@
 "Screen Sharing" = "Skärmdelning";
 "Remote Management" = "Fjärrhanterare";
 "AirPlay Receiver" = "AirPlay-mottagare";
-"Fix words typed in the wrong layout" = "Rätta ord skrivna med fel layout";
+"Retype words you typed in the wrong language" = "Skriv om ord som skrivits på fel språk";
 "A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Ett ord som skrivits med fel layout skrivs om med rätt layout, och layouten byts.";
 "Fixed when you press Space" = "Rättas när du trycker på Mellanslag";
 "Press %@ to fix" = "Tryck på %@ för att rätta";
@@ -1114,7 +1121,7 @@
 "App Volume" = "Appvolym";
 "Works with any app that plays sound" = "Fungerar med alla appar som spelar upp ljud";
 "Lower or mute any app without touching the others." = "Sänk volymen eller stäng av ljudet för valfri app utan att påverka de andra.";
-"Each app gets its own volume." = "Varje app har sin egen volym.";
+"Each app gets its own volume" = "Varje app har sin egen volym";
 "No apps are playing sound" = "Inga appar spelar upp ljud";
 "Mute" = "Stäng av ljudet";
 "Unmute" = "Slå på ljudet";

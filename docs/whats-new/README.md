@@ -25,6 +25,7 @@ Open archives, clear your desktop, use Home and End and more, now in the Mac App
 
 **In both versions**
 
+- **See what an update added.** After an update, a small blue dot marks each Settings tab with something new, and a “New” tag marks the section. They go away once you’ve looked, and by themselves after 21 days.
 - **A calm first launch.** The version from the website no longer asks for permissions the first time you open it. It asks only when you turn on a tool that needs one.
 - **Smaller copies of videos.** Make a Smaller Copy now makes a video about half the size. Before, most videos were called “Already compact”.
 - **Two copies get along.** If you use the App Store and website versions together, they no longer undo each other. ⇧⌘Q and ⇧⌘W work in games again.
@@ -33,6 +34,8 @@ Open archives, clear your desktop, use Home and End and more, now in the Mac App
 - **Reporting a problem is quicker.** Settings › About › Report a Problem opens the form with your version already chosen.
 - **Archives, smoother.** The progress bar moves while an archive unpacks, a wrong password is reported at once, and your Mac no longer falls asleep in the middle of unpacking or making one.
 - **A steadier menu bar panel.** Opening a row in the panel, such as the display options under Keep Awake, no longer makes a scrollbar flash. The arrow next to Keep Awake now says “Display settings”.
+- **Ports explains itself.** A line under the title says what a port is, and a small animation shows that only one program fits through a door. Your own programs and the ones to leave alone now have plain names.
+- **Settings says it plainly.** Each tab starts with a line about what you get there, the sidebar has gaps between its groups, and Keep Awake, Permissions and Battery say exactly what is going on. The “Permissions needed” button shows only when a tool you switched on is missing one.
 
 **Fixed in the Mac App Store version**
 

@@ -102,6 +102,9 @@ Settings > Games. It reads the user's system keyboard shortcuts with the public 
 Settings > Finder. The Archive and Quick Look extensions only read and write files in folders the user picked; they use macOS's built-in /usr/bin/tar and ditto inside the app sandbox and download or run no other code. Only ZIP can have a password; it is passed on stdin, never on the command line. While a job runs, the app holds one ProcessInfo activity (idle system sleep disabled; the display may still sleep) and lets it go when the queue is empty or a prompt waits.
 - To try it: right-click an archive in Finder and choose Extract; right-click files and choose Create Archive…; select an archive and press Space to look inside.
 
+### New marks after an update
+Settings shows a small dot on a tab and a New tag on a row that the latest update added. The app keeps only which marks were seen and the update date in its own preferences, sends nothing, and the marks end by themselves 21 days after the update.
+
 ### Pet
 The pet needs no permission. It walks along the bottom of the screen; in the App Store version it doesn't look up where the Dock icons are. Settings > Pet shows "To make it jump when you press Space, allow Input Monitoring"; clicking it leads to the Permissions page. With that permission a listen-only event tap checks only whether Space was pressed.
 

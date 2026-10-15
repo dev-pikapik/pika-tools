@@ -25,6 +25,7 @@ Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetz
 
 **In beiden Versionen**
 
+- **Sieh, was ein Update gebracht hat.** Nach einem Update markiert ein kleiner blauer Punkt jeden Tab in den Einstellungen, der etwas Neues hat, und ein „Neu“-Schild den Abschnitt. Beides verschwindet, sobald du hingeschaut hast, und von selbst nach 21 Tagen.
 - **Ein ruhiger erster Start.** Die Version von der Website fragt beim ersten Öffnen nicht mehr nach Berechtigungen. Sie fragt nur, wenn du ein Werkzeug einschaltest, das eine braucht.
 - **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.
 - **Zwei Kopien vertragen sich.** Wenn du die App-Store-Version und die Version von der Website zusammen nutzt, machen sie ihre Arbeit nicht mehr gegenseitig rückgängig. ⇧⌘Q und ⇧⌘W funktionieren in Spielen wieder.
@@ -33,6 +34,8 @@ Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetz
 - **Ein Problem zu melden geht schneller.** „Problem melden“ unter Einstellungen › Über öffnet das Formular mit bereits gewählter Version.
 - **Archive ohne Wartezeit.** Der Fortschrittsbalken bewegt sich, während ein Archiv entpackt wird, ein falsches Passwort wird sofort gemeldet, und dein Mac schläft nicht mehr mitten im Entpacken oder Erstellen ein.
 - **Ein ruhigeres Menüleisten-Fenster.** Wenn du eine Zeile im Fenster der Menüleiste aufklappst, zum Beispiel die Anzeigeoptionen unter „Wach bleiben“, blitzt keine Bildlaufleiste mehr auf. Der Pfeil neben „Wach bleiben“ sagt jetzt „Anzeigeeinstellungen“.
+- **Ports erklärt sich selbst.** Eine Zeile unter dem Titel sagt, was ein Port ist, und eine kleine Animation zeigt, dass durch eine Tür nur ein Programm passt. Deine eigenen Programme und die, die du in Ruhe lassen solltest, haben jetzt verständliche Namen.
+- **Die Einstellungen sagen es klar.** Jeder Tab beginnt mit einer Zeile dazu, was du dort bekommst, die Seitenleiste hat Abstände zwischen ihren Gruppen, und „Wach bleiben“, „Berechtigungen“ und „Batterie“ sagen genau, was gerade los ist. Die Schaltfläche „Berechtigungen nötig“ erscheint nur, wenn einem eingeschalteten Werkzeug eine fehlt.
 
 **Behoben in der Version aus dem Mac App Store**
 

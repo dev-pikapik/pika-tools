@@ -98,7 +98,7 @@ import AppKit
         item(menu, String(localized: "Keep Awake"), #selector(toggleKeepAwake)).state = keepAwake.isOn ? .on : .off
         menu.addItem(.separator())
         item(menu, String(localized: "Settings…"), #selector(openSettings), key: ",")
-        if !Permissions.shared.allGranted {
+        if ToolRegistry.shared.needsPermission {
             item(menu, String(localized: "Permissions needed"), #selector(openPermissions))
         }
         #if !APPSTORE

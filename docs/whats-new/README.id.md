@@ -25,6 +25,7 @@ Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di ver
 
 **Di kedua versi**
 
+- **Lihat apa yang ditambahkan pembaruan.** Setelah pembaruan, titik biru kecil menandai setiap tab Pengaturan yang punya hal baru, dan label “Baru” menandai bagiannya. Keduanya hilang setelah Anda melihatnya, dan hilang sendiri setelah 21 hari.
 - **Peluncuran pertama yang tenang.** Versi dari situs web tidak lagi meminta izin saat pertama kali dibuka. Ia hanya bertanya saat Anda menyalakan alat yang membutuhkannya.
 - **Salinan video yang lebih kecil.** “Buat Salinan Lebih Kecil” kini membuat video sekitar separuh ukurannya. Sebelumnya, sebagian besar video mendapat “Sudah ringkas”.
 - **Dua salinan akur.** Jika Anda memakai versi App Store dan versi situs web bersamaan, keduanya tidak lagi saling membatalkan. ⇧⌘Q dan ⇧⌘W berfungsi lagi di game.
@@ -33,6 +34,8 @@ Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di ver
 - **Melaporkan masalah jadi lebih cepat.** “Laporkan Masalah” di Pengaturan › Tentang membuka formulir dengan versi Anda sudah terpilih.
 - **Arsip yang lebih mulus.** Bilah kemajuan bergerak saat arsip diekstrak, kata sandi yang salah langsung dilaporkan, dan Mac tidak lagi tertidur di tengah mengekstrak atau membuat arsip.
 - **Panel bilah menu yang lebih tenang.** Membuka satu baris di panel, misalnya opsi layar di bawah “Tetap Terjaga”, tidak lagi membuat bilah gulir berkedip. Panah di samping “Tetap Terjaga” kini bertuliskan “Pengaturan layar”.
+- **Port menjelaskan dirinya sendiri.** Satu baris di bawah judul menjelaskan apa itu port, dan animasi kecil menunjukkan bahwa satu pintu hanya muat satu program. Program Anda sendiri dan program yang sebaiknya dibiarkan kini punya nama yang jelas.
+- **Pengaturan bicara dengan jelas.** Setiap tab dimulai dengan satu baris tentang apa yang Anda dapat di sana, bilah samping punya jarak antar kelompok, dan “Tetap Terjaga”, “Izin” dan “Baterai” menyebutkan persis apa yang terjadi. Tombol “Perlu izin” hanya muncul saat alat yang Anda nyalakan kekurangan izin.
 
 **Diperbaiki di versi Mac App Store**
 

@@ -25,6 +25,7 @@ Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz takż
 
 **W obu wersjach**
 
+- **Zobacz, co dodała aktualizacja.** Po aktualizacji mała niebieska kropka oznacza każdą kartę Ustawień z nowością, a etykieta „Nowe” oznacza sekcję. Znikają, gdy już zerkniesz, a same po 21 dniach.
 - **Spokojne pierwsze uruchomienie.** Wersja ze strony nie prosi już o uprawnienia przy pierwszym otwarciu. Pyta tylko wtedy, gdy włączasz narzędzie, które ich potrzebuje.
 - **Mniejsze kopie filmów.** „Utwórz mniejszą kopię” robi teraz z filmu plik mniej więcej o połowę mniejszy. Wcześniej większość filmów dostawała odpowiedź „Już jest mały”.
 - **Dwie kopie nie przeszkadzają sobie.** Jeśli używasz razem wersji z App Store i wersji ze strony, nie cofają już nawzajem swojej pracy. ⇧⌘Q i ⇧⌘W znów działają w grach.
@@ -33,6 +34,8 @@ Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz takż
 - **Zgłoszenie problemu jest szybsze.** „Zgłoś problem” w Ustawienia › Informacje otwiera formularz z już wybraną wersją.
 - **Archiwa bez zacinania.** Pasek postępu rusza się podczas rozpakowywania archiwum, błędne hasło jest zgłaszane od razu, a Mac nie zasypia już w połowie rozpakowywania ani tworzenia archiwum.
 - **Spokojniejszy panel na pasku menu.** Rozwinięcie wiersza w panelu, na przykład opcji ekranu pod „Bez usypiania”, nie powoduje już mignięcia paska przewijania. Strzałka obok „Bez usypiania” podpowiada teraz „Ustawienia ekranu”.
+- **Porty tłumaczą się same.** Wiersz pod tytułem mówi, czym jest port, a mała animacja pokazuje, że przez jedne drzwi przechodzi tylko jeden program. Twoje programy i te, które lepiej zostawić w spokoju, mają teraz zrozumiałe nazwy.
+- **Ustawienia mówią jasno.** Każda karta zaczyna się wierszem o tym, co tam dostajesz, pasek boczny ma odstępy między grupami, a „Bez usypiania”, „Uprawnienia” i „Bateria” mówią dokładnie, co się dzieje. Przycisk „Potrzebne uprawnienia” pojawia się tylko wtedy, gdy włączonemu przez ciebie narzędziu brakuje uprawnienia.
 
 **Poprawione w wersji z Mac App Store**
 

@@ -25,6 +25,7 @@ Abra arquivos compactados, limpe a mesa, use Home e End e muito mais, agora tamb
 
 **Nas duas versões**
 
+- **Veja o que uma atualização trouxe.** Depois de uma atualização, um pontinho azul marca cada aba dos Ajustes que tem novidade, e uma etiqueta “Novo” marca a seção. Eles somem quando você olha e, sozinhos, depois de 21 dias.
 - **Uma primeira abertura tranquila.** A versão do site não pede mais permissões na primeira vez que você a abre. Ela só pergunta quando você ativa uma ferramenta que precisa de uma.
 - **Cópias menores de vídeos.** “Criar cópia menor” agora deixa um vídeo com cerca de metade do tamanho. Antes, a maioria dos vídeos recebia “Já está compacto”.
 - **Duas cópias se entendem.** Se você usa juntas a versão da App Store e a do site, elas não desfazem mais o trabalho uma da outra. ⇧⌘Q e ⇧⌘W voltam a funcionar nos jogos.
@@ -33,6 +34,8 @@ Abra arquivos compactados, limpe a mesa, use Home e End e muito mais, agora tamb
 - **Relatar um problema ficou mais rápido.** “Relatar um Problema”, em Ajustes › Sobre, abre o formulário com a sua versão já escolhida.
 - **Arquivos compactados mais fluidos.** A barra de progresso avança enquanto um arquivo é extraído, uma senha errada é avisada na hora e o Mac não entra mais em repouso no meio de uma extração ou criação.
 - **Um painel da barra de menus mais estável.** Abrir uma linha do painel, como as opções de tela em “Manter Ativo”, não faz mais uma barra de rolagem piscar. A seta ao lado de “Manter Ativo” agora diz “Ajustes da tela”.
+- **Portas se explica sozinha.** Uma linha sob o título diz o que é uma porta, e uma pequena animação mostra que por uma porta cabe só um programa. Seus próprios programas e os que é melhor deixar em paz agora têm nomes claros.
+- **Os Ajustes falam claro.** Cada aba começa com uma linha sobre o que você encontra ali, a barra lateral tem espaços entre os grupos, e “Manter Ativo”, “Permissões” e “Bateria” dizem exatamente o que está acontecendo. O botão “Permissões necessárias” aparece só quando uma ferramenta que você ligou está sem uma.
 
 **Corrigido na versão da Mac App Store**
 
