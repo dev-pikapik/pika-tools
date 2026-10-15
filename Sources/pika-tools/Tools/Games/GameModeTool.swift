@@ -43,7 +43,7 @@ final class GameModeTool: Tool {
     var games: [String] {
         didSet {
             UserDefaults.standard.set(games, forKey: Self.gamesKey)
-            suggestions.removeAll(where: games.contains)
+            suggestions.removeAll { GameRules.isAdded($0, in: games) }
             update()
         }
     }
@@ -216,8 +216,8 @@ final class GameModeTool: Tool {
             .filter { Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL)
                 || GameRules.minecraft($0.executableURL?.path ?? "") != nil }
             .map(Self.key)
-        var seen = Set(games + notGames + [""])
-        suggestions = (running + installed).filter { seen.insert($0).inserted }
+        var seen = Set(notGames + [""])
+        suggestions = (running + installed).filter { !GameRules.isAdded($0, in: games) && seen.insert($0).inserted }
     }
 
     fileprivate func update() {

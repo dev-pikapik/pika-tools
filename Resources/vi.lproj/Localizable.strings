@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Giữ ⌥ và nhấn ⇧: ngôn ngữ tiếp theo. Giữ ⇧ và nhấn ⌥: ngôn ngữ trước";
 "All set" = "Đã sẵn sàng";
 "pikapik needs two permissions" = "pikapik cần hai quyền";
-"Both permissions are on and every tool is working." = "Cả hai quyền đã được bật và mọi công cụ đều hoạt động.";
-"Some tools also need a permission from the list below." = "Một số công cụ còn cần thêm một quyền trong danh sách bên dưới.";
+"Both permissions are on and every tool is working" = "Cả hai quyền đã được bật và mọi công cụ đều hoạt động";
+"Some tools also need a permission from the list below" = "Một số công cụ còn cần thêm một quyền trong danh sách bên dưới";
 "Both permissions are on" = "Cả hai quyền đã được bật";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Nếu không có các quyền này, macOS sẽ không cho ứng dụng xem hoặc thay đổi thao tác bấm và phím. Hãy mở Cài đặt hệ thống › Quyền riêng tư & bảo mật và bật pikapik trong hai danh sách sau:";
 "Permissions for some tools" = "Quyền cho một số công cụ";
-"Only some tools need these permissions. Everything else works without them." = "Chỉ một số công cụ cần các quyền này. Mọi thứ khác vẫn hoạt động mà không cần chúng.";
+"Only some tools need these permissions, and the rest work without them" = "Chỉ một số công cụ cần các quyền này, còn lại vẫn hoạt động mà không cần chúng";
 "Accessibility" = "Trợ năng";
 "Input Monitoring" = "Giám sát đầu vào";
 "Lets the app see clicks and keys" = "Cho phép ứng dụng xem thao tác bấm và phím";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Giữ máy Mac luôn thức";
 "Duration" = "Thời lượng";
 "If turned on now, ends %@" = "Nếu bật bây giờ, sẽ kết thúc: %@";
+"If turned on now, stays on until you turn it off" = "Nếu bật bây giờ, sẽ luôn bật cho đến khi bạn tắt";
 "Days" = "Ngày";
 "Hours" = "Giờ";
 "Minutes" = "Phút";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Chưa bật: không có mật khẩu quản trị viên";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik muốn giữ máy Mac thức khi gập nắp.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik muốn cho máy Mac ngủ lại khi gập nắp.";
-"How pikapik starts and looks." = "Cách pikapik khởi động và hiển thị.";
+"How pikapik starts and looks" = "Cách pikapik khởi động và hiển thị";
 "Back" = "Quay lại";
 "Forward" = "Tiếp";
 "No Results" = "Không có kết quả";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Gỡ ứng dụng";
 "Remove an app" = "Gỡ một ứng dụng";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "gỡ cài đặt, gỡ ứng dụng, xóa ứng dụng, xóa, gỡ, ứng dụng, trình dọn dẹp, dọn dẹp, tệp còn sót, thùng rác, đặt lại, hoàn lại, khôi phục, hoàn tác, app";
-"Remove an app and its files. You can put it all back." = "Gỡ ứng dụng cùng các tệp của nó. Có thể hoàn lại tất cả.";
+"Remove an app and its files, and put them back if you change your mind" = "Gỡ ứng dụng cùng các tệp của nó, và hoàn lại nếu bạn đổi ý";
 "Search apps" = "Tìm ứng dụng";
 "Sort by" = "Sắp xếp theo";
 "Name" = "Tên";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Tác vụ trong thư mục chính của bạn";
 "To see the tasks in your home folder, allow access to it." = "Để xem các tác vụ trong thư mục chính của bạn, hãy cho phép truy cập thư mục đó.";
 "Nothing runs in the background" = "Không có gì chạy nền";
-"See everything that runs in the background and which app added it." = "Mọi thứ đang chạy nền và ứng dụng nào đã thêm chúng.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Mọi thứ đang chạy nền và ứng dụng nào đã thêm chúng. Tắt những gì bạn không cần và bật lại bất cứ lúc nào.";
+"See everything that runs in the background and which app added it" = "Mọi thứ đang chạy nền và ứng dụng nào đã thêm chúng";
 "Keeps running" = "Luôn chạy";
 "Runs on a schedule" = "Chạy theo lịch";
 "Starts when you log in" = "Khởi động khi bạn đăng nhập";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Âm lượng của %@";
 "System Audio Recording" = "Ghi âm thanh hệ thống";
 "To change each app’s volume" = "Để đổi âm lượng của từng ứng dụng";
+"To change each app’s volume, allow “%@”" = "Để đổi âm lượng của từng ứng dụng, hãy cho phép “%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik cho âm thanh của từng ứng dụng đi qua chính nó để đổi âm lượng. Không có gì được ghi lại hoặc lưu.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "bộ trộn, tắt tiếng ứng dụng, âm lượng từng ứng dụng, âm lượng, âm thanh, audio, nhỏ, to";
 "Device Control and Data Access" = "Điều khiển thiết bị và truy cập dữ liệu";
 "Lets the app change clicks and keys" = "Cho phép ứng dụng thay đổi thao tác bấm và phím";
 "privacy, security, access, accessibility, device control, data access" = "quyền riêng tư, bảo mật, truy cập, trợ năng, điều khiển thiết bị và truy cập dữ liệu";
-"Change animations in System Settings. Each button opens the right place." = "Hoạt ảnh được thay đổi trong Cài đặt hệ thống. Mỗi nút sẽ mở đúng chỗ.";
+"Each button takes you to an animation setting in System Settings" = "Mỗi nút đưa bạn đến một cài đặt hoạt ảnh trong Cài đặt hệ thống";
 "Choose “Scale Effect” for a quicker animation" = "Chọn “Hiệu ứng tỷ lệ” để hoạt ảnh nhanh hơn";
 "Turn off “Animate opening applications”" = "Tắt “Tạo hiệu ứng khi mở ứng dụng”";
 "Turn on “Automatically hide and show the Dock”" = "Bật “Tự động ẩn và hiển thị Dock”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "màn hình nền, biểu tượng, tệp, thư mục, dọn dẹp, ẩn, thuyết trình, chia sẻ màn hình, quay màn hình, ảnh chụp màn hình, Quản lý màn hình";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ẩn, vô hình, tệp chấm, tệp hệ thống, Thư viện, hiện tất cả tệp, Command Shift dấu chấm";
 "Brightness" = "Độ sáng";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Chỉnh độ sáng của những màn hình mà macOS không tự chỉnh được.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Chỉnh độ sáng của những màn hình mà macOS không tự chỉnh được";
 "Changes the monitor’s own brightness." = "Thay đổi độ sáng của chính màn hình.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Làm tối hình ảnh. Màn hình này không cho máy Mac thay đổi độ sáng của nó.";
 "Dims the picture." = "Làm tối hình ảnh.";

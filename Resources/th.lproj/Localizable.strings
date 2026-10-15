@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "กด ⌥ ค้างไว้แล้วแตะ ⇧: ภาษาถัดไป กด ⇧ ค้างไว้แล้วแตะ ⌥: ภาษาก่อนหน้า";
 "All set" = "พร้อมแล้ว";
 "pikapik needs two permissions" = "pikapik ต้องการการอนุญาตสองรายการ";
-"Both permissions are on and every tool is working." = "เปิดการอนุญาตทั้งสองแล้ว และเครื่องมือทุกตัวทำงานได้";
-"Some tools also need a permission from the list below." = "เครื่องมือบางตัวต้องใช้การอนุญาตจากรายการด้านล่างด้วย";
+"Both permissions are on and every tool is working" = "เปิดการอนุญาตทั้งสองแล้ว และเครื่องมือทุกตัวทำงานได้";
+"Some tools also need a permission from the list below" = "เครื่องมือบางตัวต้องใช้การอนุญาตจากรายการด้านล่างด้วย";
 "Both permissions are on" = "เปิดการอนุญาตทั้งสองแล้ว";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "หากไม่มีการอนุญาตเหล่านี้ macOS จะไม่ให้แอปดูหรือเปลี่ยนการคลิกและการกดปุ่ม เปิดการตั้งค่าระบบ › ความเป็นส่วนตัวและความปลอดภัย แล้วเปิด pikapik ในสองรายการนี้:";
 "Permissions for some tools" = "การอนุญาตสำหรับเครื่องมือบางตัว";
-"Only some tools need these permissions. Everything else works without them." = "มีเพียงเครื่องมือบางตัวที่ต้องใช้การอนุญาตเหล่านี้ ส่วนอื่นทั้งหมดใช้งานได้โดยไม่ต้องอนุญาต";
+"Only some tools need these permissions, and the rest work without them" = "มีเพียงเครื่องมือบางตัวที่ต้องใช้การอนุญาตเหล่านี้ ส่วนที่เหลือใช้งานได้โดยไม่ต้องอนุญาต";
 "Accessibility" = "การช่วยการเข้าถึง";
 "Input Monitoring" = "การตรวจสอบสัญญาณเข้า";
 "Lets the app see clicks and keys" = "ให้แอปดูการคลิกและการกดปุ่ม";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "ไม่ให้ Mac หลับ";
 "Duration" = "ระยะเวลา";
 "If turned on now, ends %@" = "ถ้าเปิดตอนนี้ จะสิ้นสุด: %@";
+"If turned on now, stays on until you turn it off" = "ถ้าเปิดตอนนี้ จะเปิดค้างไว้จนกว่าคุณจะปิด";
 "Days" = "วัน";
 "Hours" = "ชั่วโมง";
 "Minutes" = "นาที";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "ไม่ได้เปิด: ไม่มีรหัสผ่านผู้ดูแลระบบ";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik ต้องการไม่ให้ Mac ของคุณหลับขณะปิดฝาเครื่อง";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik ต้องการให้ Mac ของคุณพักเครื่องเมื่อปิดฝาได้อีกครั้ง";
-"How pikapik starts and looks." = "วิธีเริ่มทำงานและลักษณะของ pikapik";
+"How pikapik starts and looks" = "วิธีเริ่มทำงานและลักษณะของ pikapik";
 "Back" = "ย้อนกลับ";
 "Forward" = "ไปข้างหน้า";
 "No Results" = "ไม่มีผลลัพธ์";
@@ -693,7 +694,7 @@
 "Uninstaller" = "ลบแอป";
 "Remove an app" = "ลบแอป";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "ถอนการติดตั้ง, ลบแอป, ลบ, ลบออก, แอป, แอปพลิเคชัน, ตัวล้าง, ล้างข้อมูล, ไฟล์ที่เหลือ, ถังขยะ, รีเซ็ต, นำกลับที่เดิม, กู้คืน, เลิกทำ, เอาออก, ล้าง";
-"Remove an app and its files. You can put it all back." = "ลบแอปและไฟล์ของแอป เอากลับคืนได้ทั้งหมด";
+"Remove an app and its files, and put them back if you change your mind" = "ลบแอปและไฟล์ของแอป และเอากลับคืนได้หากเปลี่ยนใจ";
 "Search apps" = "ค้นหาแอป";
 "Sort by" = "เรียงตาม";
 "Name" = "ชื่อ";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "งานในโฟลเดอร์โฮมของคุณ";
 "To see the tasks in your home folder, allow access to it." = "หากต้องการดูงานในโฟลเดอร์โฮมของคุณ ให้อนุญาตการเข้าถึงโฟลเดอร์นั้น";
 "Nothing runs in the background" = "ไม่มีอะไรทำงานอยู่เบื้องหลัง";
-"See everything that runs in the background and which app added it." = "ดูทุกอย่างที่ทำงานอยู่เบื้องหลัง และแอปที่เพิ่มเข้ามา";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "ดูทุกอย่างที่ทำงานอยู่เบื้องหลัง และแอปที่เพิ่มเข้ามา ปิดสิ่งที่ไม่ต้องการ แล้วเปิดกลับได้ทุกเมื่อ";
+"See everything that runs in the background and which app added it" = "ดูทุกอย่างที่ทำงานอยู่เบื้องหลัง และแอปที่เพิ่มเข้ามา";
 "Keeps running" = "ทำงานตลอดเวลา";
 "Runs on a schedule" = "ทำงานตามกำหนดเวลา";
 "Starts when you log in" = "เริ่มเมื่อคุณเข้าสู่ระบบ";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "ระดับเสียงของ %@";
 "System Audio Recording" = "การบันทึกเสียงของระบบ";
 "To change each app’s volume" = "เพื่อเปลี่ยนระดับเสียงของแต่ละแอป";
+"To change each app’s volume, allow “%@”" = "เพื่อเปลี่ยนระดับเสียงของแต่ละแอป ให้อนุญาต “%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik ส่งเสียงของแต่ละแอปผ่านตัวเองเพื่อเปลี่ยนระดับเสียง ไม่มีการบันทึกหรือเก็บอะไรไว้";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "มิกเซอร์, ปิดเสียงแอป, ระดับเสียงต่อแอป, ระดับเสียง, เสียง, ออดิโอ, เบา, ดัง";
 "Device Control and Data Access" = "การควบคุมอุปกรณ์และการเข้าถึงข้อมูล";
 "Lets the app change clicks and keys" = "ให้แอปเปลี่ยนการคลิกและการกดปุ่ม";
 "privacy, security, access, accessibility, device control, data access" = "ความเป็นส่วนตัว, ความปลอดภัย, การเข้าถึง, การช่วยการเข้าถึง, การควบคุมอุปกรณ์และการเข้าถึงข้อมูล";
-"Change animations in System Settings. Each button opens the right place." = "เปลี่ยนภาพเคลื่อนไหวได้ในการตั้งค่าระบบ แต่ละปุ่มจะเปิดตำแหน่งที่ถูกต้อง";
+"Each button takes you to an animation setting in System Settings" = "แต่ละปุ่มจะพาคุณไปยังการตั้งค่าภาพเคลื่อนไหวในการตั้งค่าระบบ";
 "Choose “Scale Effect” for a quicker animation" = "เลือก “เอฟเฟ็กต์รูปแบบขนาด” เพื่อให้ภาพเคลื่อนไหวเร็วขึ้น";
 "Turn off “Animate opening applications”" = "ปิด “ทำให้แอปพลิเคชันที่เปิดใช้งานเคลื่อนไหว”";
 "Turn on “Automatically hide and show the Dock”" = "เปิด “ซ่อนและแสดง Dock โดยอัตโนมัติ”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "เดสก์ท็อป, ไอคอน, ไฟล์, โฟลเดอร์, จัดระเบียบ, ซ่อน, การนำเสนอ, แชร์หน้าจอ, บันทึกหน้าจอ, ภาพหน้าจอ, ตัวจัดการให้อยู่ตรงกลาง";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ซ่อนอยู่, มองไม่เห็น, ไฟล์จุด, ไฟล์ระบบ, คลัง, แสดงไฟล์ทั้งหมด, Command Shift จุด";
 "Brightness" = "ความสว่าง";
-"Change the brightness of monitors macOS can’t adjust on its own." = "ปรับความสว่างของจอภาพที่ macOS ปรับเองไม่ได้";
+"Change the brightness of monitors macOS can’t adjust on its own" = "ปรับความสว่างของจอภาพที่ macOS ปรับเองไม่ได้";
 "Changes the monitor’s own brightness." = "เปลี่ยนความสว่างของตัวจอภาพเอง";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "หรี่ภาพให้มืดลง จอภาพนี้ไม่ให้ Mac เปลี่ยนความสว่างของมัน";
 "Dims the picture." = "หรี่ภาพให้มืดลง";

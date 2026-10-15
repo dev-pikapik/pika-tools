@@ -65,6 +65,7 @@ struct BackgroundTask: Identifiable, Equatable {
     var title: String
     var icon: URL
     var developer = ""
+    var version = ""
     var timing: Timing?
     var scope = Scope.mine
     var kind = Kind.background
@@ -176,6 +177,7 @@ enum BackgroundTasks {
             if !mine {
                 task.icon = owner?.url ?? existing(enclosingApp(target)) ?? (target.hasPrefix("/") && !isMissing(target) ? URL(fileURLWithPath: target) : file)
                 task.developer = developer(owner: owner, label: label, target: target)
+                task.version = owner?.version ?? ""
             }
             task.isOwn = mine
             task.timing = timing(info, daemon: daemon)
@@ -222,6 +224,7 @@ enum BackgroundTasks {
                       launchd.gui.pids[id] != nil || runningIDs.contains(id) || launchd.gui.disabled[id] == false else { continue }
                 var task = BackgroundTask(file: helper, label: id, title: isOwn(id) ? "pikapik" : app.displayName, icon: app.url)
                 task.developer = app.organization
+                task.version = app.version
                 task.timing = .atLogin
                 task.running = (launchd.gui.pids[id] ?? 0) > 0 || runningIDs.contains(id)
                 task.isOwn = isOwn(id)
@@ -234,7 +237,8 @@ enum BackgroundTasks {
         for url in loginItems {
             let path = url.standardizedFileURL.path
             guard paths.insert(path).inserted else { continue }
-            let id = plist(url.appendingPathComponent("Contents/Info.plist"))["CFBundleIdentifier"] as? String ?? ""
+            let info = plist(url.appendingPathComponent("Contents/Info.plist"))
+            let id = info["CFBundleIdentifier"] as? String ?? ""
             let mine = isOwn(id)
             let name = url.pathExtension.lowercased() == "app" ? url.deletingPathExtension().lastPathComponent : url.lastPathComponent
             var task = BackgroundTask(file: url, label: id, title: mine ? "pikapik" : name, icon: mine ? own : url)
@@ -242,6 +246,7 @@ enum BackgroundTasks {
                 task.developer = footprint.installed.first { $0.url.standardizedFileURL.path == path }?.organization
                     ?? AppIdentity.signature(of: url)?.organization ?? ""
             }
+            task.version = info["CFBundleShortVersionString"] as? String ?? ""
             task.isOwn = mine
             task.kind = AppInventory.isInTrash(url) ? .leftover : .login
             task.running = runningPaths.contains(path)

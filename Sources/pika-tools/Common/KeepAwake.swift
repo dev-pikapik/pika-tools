@@ -351,7 +351,9 @@ struct KeepAwakeSettings: View {
     }
 
     private func until(_ now: Date) -> Text {
-        Text("If turned on now, ends \(KeepAwake.until(now.addingTimeInterval(TimeInterval(keepAwake.duration))))")
+        keepAwake.lastMode == .indefinitely
+            ? Text("If turned on now, stays on until you turn it off")
+            : Text("If turned on now, ends \(KeepAwake.until(now.addingTimeInterval(TimeInterval(keepAwake.duration))))")
     }
 
     var body: some View {

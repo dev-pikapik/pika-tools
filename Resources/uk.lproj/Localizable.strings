@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Тримайте ⌥ і натискайте ⇧ — наступна мова. Тримайте ⇧ і натискайте ⌥ — попередня";
 "All set" = "Усе готово";
 "pikapik needs two permissions" = "Дай pikapik два дозволи";
-"Both permissions are on and every tool is working." = "Доступи є, усі інструменти працюють.";
-"Some tools also need a permission from the list below." = "Деяким інструментам потрібен ще доступ зі списку нижче.";
+"Both permissions are on and every tool is working" = "Доступи є, усі інструменти працюють";
+"Some tools also need a permission from the list below" = "Деяким інструментам потрібен ще доступ зі списку нижче";
 "Both permissions are on" = "Обидва доступи ввімкнено";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Без них macOS не пустить програму до кліків і клавіш. Відкрий Системні параметри › Приватність і безпека та увімкни pikapik у двох списках:";
 "Permissions for some tools" = "Дозволи для деяких інструментів";
-"Only some tools need these permissions. Everything else works without them." = "Ці дозволи потрібні лише деяким інструментам. Усе інше працює й без них.";
+"Only some tools need these permissions, and the rest work without them" = "Ці дозволи потрібні лише деяким інструментам, а решта працює й без них";
 "Accessibility" = "Доступність";
 "Input Monitoring" = "Контроль вводу";
 "Lets the app see clicks and keys" = "Щоб бачити кліки й клавіші";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Не давати Mac засинати";
 "Duration" = "Тривалість";
 "If turned on now, ends %@" = "Якщо ввімкнути зараз, закінчиться: %@";
+"If turned on now, stays on until you turn it off" = "Якщо ввімкнути зараз, працюватиме, доки ви його не вимкнете";
 "Days" = "Дні";
 "Hours" = "Години";
 "Minutes" = "Хвилини";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Не ввімкнено: потрібен пароль адміністратора";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik хоче, щоб Mac не засинав із закритою кришкою.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik хоче повернути сон Mac при закритій кришці.";
-"How pikapik starts and looks." = "Як pikapik запускається й виглядає.";
+"How pikapik starts and looks" = "Як pikapik запускається й виглядає";
 "Back" = "Назад";
 "Forward" = "Вперед";
 "No Results" = "Немає результатів";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Видалення програм";
 "Remove an app" = "Видалити програму";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "видалити, видалити програму, видалити застосунок, видалення, програма, застосунок, очищення, залишки, смітник, скидання, повернути, відновити, скасувати, деінсталяція";
-"Remove an app and its files. You can put it all back." = "Видалення програми та її файлів. Усе можна повернути.";
+"Remove an app and its files, and put them back if you change your mind" = "Видалення програми та її файлів з можливістю повернути все, якщо передумаєте";
 "Search apps" = "Пошук програм";
 "Sort by" = "Сортування";
 "Name" = "Назва";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Завдання в домашній папці";
 "To see the tasks in your home folder, allow access to it." = "Щоб побачити завдання в домашній папці, дозвольте доступ до неї.";
 "Nothing runs in the background" = "У фоні нічого не працює";
-"See everything that runs in the background and which app added it." = "Усе, що працює у фоні, і яка програма це додала.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Усе, що працює у фоні, і яка програма це додала. Вимикайте зайве й повертайте, коли потрібно.";
+"See everything that runs in the background and which app added it" = "Усе, що працює у фоні, і яка програма це додала";
 "Keeps running" = "Працює постійно";
 "Runs on a schedule" = "Запускається за розкладом";
 "Starts when you log in" = "Запускається під час входу";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Гучність: %@";
 "System Audio Recording" = "Запис системного звуку";
 "To change each app’s volume" = "Щоб змінювати гучність кожної програми";
+"To change each app’s volume, allow “%@”" = "Щоб змінювати гучність кожної програми, дозвольте «%@»";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik пропускає звук кожної програми через себе, щоб змінити його гучність. Нічого не записується й не зберігається.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "мікшер, вимкнути звук програми, гучність програми, гучність, звук, аудіо, тихо, гучно";
 "Device Control and Data Access" = "Керування пристроями й доступ до даних";
 "Lets the app change clicks and keys" = "Щоб змінювати кліки й клавіші";
 "privacy, security, access, accessibility, device control, data access" = "конфіденційність, безпека, доступ, доступність, керування пристроями й доступ до даних";
-"Change animations in System Settings. Each button opens the right place." = "Анімації змінюються в Системних параметрах. Кожна кнопка відкриває потрібне місце.";
+"Each button takes you to an animation setting in System Settings" = "Кожна кнопка веде до налаштування анімації в Системних параметрах";
 "Choose “Scale Effect” for a quicker animation" = "Виберіть «пропорційне зменшення», щоб анімація була швидшою";
 "Turn off “Animate opening applications”" = "Вимкніть «Анімувати програми, що запускаються»";
 "Turn on “Automatically hide and show the Dock”" = "Увімкніть «Автоматично ховати та показувати Dock»";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "робочий стіл, значки, іконки, файли, папки, чистий, сховати, презентація, демонстрація екрана, запис, знімок екрана, Постановник";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "приховані, невидимі, файли з крапкою, системні файли, Бібліотека, показати всі файли, Command Shift крапка";
 "Brightness" = "Яскравість";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Змінюйте яскравість моніторів, якими macOS не керує сама.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Змінюйте яскравість моніторів, якими macOS не керує сама";
 "Changes the monitor’s own brightness." = "Змінює яскравість самого монітора.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Затемнює зображення: цей монітор не дає Mac змінювати свою яскравість.";
 "Dims the picture." = "Затемнює зображення.";

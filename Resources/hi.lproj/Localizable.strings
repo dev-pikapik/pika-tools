@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ दबाए रखें और ⇧ दबाएँ: अगली भाषा। ⇧ दबाए रखें और ⌥ दबाएँ: पिछली";
 "All set" = "सब तैयार है";
 "pikapik needs two permissions" = "pikapik को दो अनुमतियाँ चाहिए";
-"Both permissions are on and every tool is working." = "दोनों अनुमतियाँ चालू हैं और हर टूल काम कर रहा है।";
-"Some tools also need a permission from the list below." = "कुछ टूल को नीचे दी गई सूची से भी एक अनुमति चाहिए।";
+"Both permissions are on and every tool is working" = "दोनों अनुमतियाँ चालू हैं और हर टूल काम कर रहा है";
+"Some tools also need a permission from the list below" = "कुछ टूल को नीचे दी गई सूची से भी एक अनुमति चाहिए";
 "Both permissions are on" = "दोनों अनुमतियाँ चालू हैं";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "इनके बिना macOS ऐप को क्लिक और कुंजियाँ देखने या बदलने नहीं देगा। सिस्टम सेटिंग › गोपनीयता और सुरक्षा खोलें और इन दो सूचियों में pikapik चालू करें:";
 "Permissions for some tools" = "कुछ टूल के लिए अनुमतियाँ";
-"Only some tools need these permissions. Everything else works without them." = "ये अनुमतियाँ सिर्फ़ कुछ टूल को चाहिए। बाकी सब इनके बिना भी काम करता है।";
+"Only some tools need these permissions, and the rest work without them" = "ये अनुमतियाँ सिर्फ़ कुछ टूल को चाहिए, बाकी इनके बिना भी काम करते हैं";
 "Accessibility" = "ऐक्सेसिबिलिटी";
 "Input Monitoring" = "इनपुट मॉनिटरिंग";
 "Lets the app see clicks and keys" = "ऐप को क्लिक और कुंजियाँ देखने देता है";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "अपने Mac को जगाए रखें";
 "Duration" = "अवधि";
 "If turned on now, ends %@" = "अभी चालू करने पर यह खत्म होगा: %@";
+"If turned on now, stays on until you turn it off" = "अभी चालू करने पर यह तब तक चालू रहेगा जब तक आप इसे बंद नहीं करते";
 "Days" = "दिन";
 "Hours" = "घंटे";
 "Minutes" = "मिनट";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "चालू नहीं हुआ: व्यवस्थापक पासवर्ड नहीं दिया गया";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik ढक्कन बंद होने पर भी आपके Mac को जगाए रखना चाहता है।";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik ढक्कन बंद होने पर आपके Mac को फिर से स्लीप में जाने देना चाहता है।";
-"How pikapik starts and looks." = "pikapik कैसे शुरू होता है और कैसा दिखता है।";
+"How pikapik starts and looks" = "pikapik कैसे शुरू होता है और कैसा दिखता है";
 "Back" = "पीछे";
 "Forward" = "आगे";
 "No Results" = "कोई परिणाम नहीं";
@@ -693,7 +694,7 @@
 "Uninstaller" = "ऐप हटाएँ";
 "Remove an app" = "ऐप हटाएँ";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "अनइंस्टॉल, ऐप हटाएँ, ऐप डिलीट, हटाएँ, डिलीट, ऐप, एप्लिकेशन, क्लीनर, सफ़ाई, बची फ़ाइलें, ट्रैश, रीसेट, वापस रखें, रीस्टोर, पूर्ववत, मिटाएँ, बचा हुआ";
-"Remove an app and its files. You can put it all back." = "ऐप और उसकी फ़ाइलें हटाएँ। सब वापस रख सकते हैं।";
+"Remove an app and its files, and put them back if you change your mind" = "ऐप और उसकी फ़ाइलें हटाएँ, और मन बदलने पर वापस रख दें";
 "Search apps" = "ऐप खोजें";
 "Sort by" = "क्रमबद्ध करें";
 "Name" = "नाम";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "आपके होम फ़ोल्डर के टास्क";
 "To see the tasks in your home folder, allow access to it." = "अपने होम फ़ोल्डर के टास्क देखने के लिए उसकी एक्सेस की अनुमति दें।";
 "Nothing runs in the background" = "बैकग्राउंड में कुछ नहीं चल रहा";
-"See everything that runs in the background and which app added it." = "बैकग्राउंड में चलने वाली हर चीज़, और उसे किस ऐप ने जोड़ा।";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "बैकग्राउंड में चलने वाली हर चीज़, और उसे किस ऐप ने जोड़ा। जो ज़रूरी नहीं, उसे बंद करें और जब चाहें फिर से चालू करें।";
+"See everything that runs in the background and which app added it" = "बैकग्राउंड में चलने वाली हर चीज़, और उसे किस ऐप ने जोड़ा";
 "Keeps running" = "लगातार चलता है";
 "Runs on a schedule" = "तय समय पर चलता है";
 "Starts when you log in" = "लॉगइन पर शुरू होता है";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "%@ की आवाज़";
 "System Audio Recording" = "सिस्टम ऑडियो रिकॉर्डिंग";
 "To change each app’s volume" = "हर ऐप की आवाज़ बदलने के लिए";
+"To change each app’s volume, allow “%@”" = "हर ऐप की आवाज़ बदलने के लिए “%@” की अनुमति दें";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik हर ऐप की ध्वनि को अपने से होकर गुज़ारता है, ताकि उसकी आवाज़ बदल सके। कुछ भी रिकॉर्ड या सेव नहीं किया जाता।";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "मिक्सर, ऐप म्यूट, ऐप की आवाज़, आवाज़, ध्वनि, ऑडियो, धीमा, तेज़";
 "Device Control and Data Access" = "डिवाइस नियंत्रण और डेटा ऐक्सेस";
 "Lets the app change clicks and keys" = "ऐप को क्लिक और कुंजियाँ बदलने देता है";
 "privacy, security, access, accessibility, device control, data access" = "गोपनीयता, सुरक्षा, ऐक्सेस, अनुमति, ऐक्सेसिबिलिटी, डिवाइस नियंत्रण और डेटा ऐक्सेस";
-"Change animations in System Settings. Each button opens the right place." = "एनिमेशन सिस्टम सेटिंग्ज़ में बदले जाते हैं। हर बटन सही जगह खोलता है।";
+"Each button takes you to an animation setting in System Settings" = "हर बटन आपको सिस्टम सेटिंग्ज़ में एनिमेशन की एक सेटिंग तक ले जाता है";
 "Choose “Scale Effect” for a quicker animation" = "तेज़ एनिमेशन के लिए “स्केल प्रभाव” चुनें";
 "Turn off “Animate opening applications”" = "“ऐप्लिकेशन खोलते समय ऐनिमेट करें” बंद करें";
 "Turn on “Automatically hide and show the Dock”" = "“Dock को ऑटोमैटिकली छिपाएँ और दिखाएँ” चालू करें";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "डेस्कटॉप, आइकॉन, फ़ाइलें, फ़ोल्डर, साफ़, छिपाएँ, प्रेज़ेंटेशन, स्क्रीन शेयरिंग, रिकॉर्डिंग, स्क्रीनशॉट, स्टेज मैनेजर";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "छिपी, अदृश्य, डॉट फ़ाइलें, सिस्टम फ़ाइलें, लाइब्रेरी, सभी फ़ाइलें दिखाएँ, Command Shift पीरियड";
 "Brightness" = "चमक";
-"Change the brightness of monitors macOS can’t adjust on its own." = "उन मॉनिटरों की चमक बदलें जिन्हें macOS ख़ुद नहीं बदल पाता।";
+"Change the brightness of monitors macOS can’t adjust on its own" = "उन मॉनिटरों की चमक बदलें जिन्हें macOS ख़ुद नहीं बदल पाता";
 "Changes the monitor’s own brightness." = "मॉनिटर की अपनी चमक बदलता है।";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "तस्वीर को मंद करता है। यह मॉनिटर Mac को अपनी चमक बदलने नहीं देता।";
 "Dims the picture." = "तस्वीर को मंद करता है।";

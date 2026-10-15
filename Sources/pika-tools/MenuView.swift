@@ -89,10 +89,11 @@ struct MenuView: View {
                                             hint: keepAwake.statusText,
                                             isOn: $keepAwake.isOn
                                         )
-                                        Button { withAnimation(.snappy) { keepAwakeOpen.toggle() } } label: {
+                                        Button { keepAwakeOpen.toggle() } label: {
                                             Image(systemName: "chevron.right")
                                                 .font(.system(size: 11, weight: .semibold))
                                                 .rotationEffect(.degrees(keepAwakeOpen ? 90 : 0))
+                                                .animation(.snappy, value: keepAwakeOpen)
                                                 .frame(width: 28, height: 38)
                                                 .contentShape(Rectangle())
                                         }
@@ -102,7 +103,10 @@ struct MenuView: View {
                                         .accessibilityLabel(Text("Display settings"))
                                         .accessibilityValue(keepAwakeOpen ? Text("Expanded") : Text("Collapsed"))
                                     }
-                                    if keepAwakeOpen { keepAwakeOptions }
+                                    VStack(spacing: 0) {
+                                        if keepAwakeOpen { keepAwakeOptions.transition(.asymmetric(insertion: .opacity, removal: .identity)) }
+                                    }
+                                    .animation(.snappy, value: keepAwakeOpen)
                                 }
                             }
 

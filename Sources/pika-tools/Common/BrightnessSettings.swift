@@ -6,7 +6,7 @@ struct BrightnessSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .brightness, text: String(localized: "Change the brightness of monitors macOS can’t adjust on its own."))
+            SettingsHeader(tab: .brightness, text: String(localized: "Change the brightness of monitors macOS can’t adjust on its own"))
             if model.monitors.isEmpty {
                 Section {
                     Text("No monitor needs pikapik right now. macOS adjusts the built-in screen and Apple displays itself, with the brightness keys and in Control Center. Connect another monitor and it will appear here.")

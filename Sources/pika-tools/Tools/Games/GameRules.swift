@@ -44,6 +44,11 @@ enum GameRules {
         return games.contains(where: minecraftLaunchers.contains) && (minecraft(path) != nil || name?.hasPrefix("Minecraft") == true)
     }
 
+    static func isAdded(_ key: String, in games: [String]) -> Bool {
+        let isMinecraft = { (key: String) in minecraftLaunchers.contains(key) || minecraft(key) != nil }
+        return games.contains(key) || isMinecraft(key) && games.contains(where: isMinecraft)
+    }
+
     static func isRuntime(_ id: String?) -> Bool {
         guard let id = id?.lowercased() else { return true }
         return ["java", "python"].contains(where: id.contains)

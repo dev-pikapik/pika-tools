@@ -116,7 +116,7 @@ enum BackgroundTests {
 
     static func collected() {
         let app = "root/Applications/Foo.app/Contents/"
-        plist(app + "Info.plist", ["CFBundleIdentifier": "com.foo.app", "CFBundleExecutable": "Foo"])
+        plist(app + "Info.plist", ["CFBundleIdentifier": "com.foo.app", "CFBundleExecutable": "Foo", "CFBundleShortVersionString": "2.1"])
         file(app + "MacOS/Foo")
         file(app + "MacOS/foo-sync")
         plist(app + "Library/LaunchAgents/com.foo.agent.plist", ["Label": "com.foo.agent", "BundleProgram": "Contents/MacOS/Foo"])
@@ -124,7 +124,7 @@ enum BackgroundTests {
         plist(app + "Library/LaunchDaemons/com.foo.daemon.plist", ["Label": "com.foo.daemon", "BundleProgram": "Contents/MacOS/Foo", "KeepAlive": true])
         plist(app + "Library/LoginItems/Foo Launcher.app/Contents/Info.plist", ["CFBundleIdentifier": "com.foo.launcher"])
         plist(app + "Library/LoginItems/Foo Idle.app/Contents/Info.plist", ["CFBundleIdentifier": "com.foo.idle"])
-        plist("root/Applications/pikapik.app/Contents/Info.plist", ["CFBundleIdentifier": "com.pesotchi.pika-tools"])
+        plist("root/Applications/pikapik.app/Contents/Info.plist", ["CFBundleIdentifier": "com.pesotchi.pika-tools", "CFBundleShortVersionString": "1.50.1"])
         file("root/usr/local/libexec/vendord")
         let vendord = at("root/usr/local/libexec/vendord").path
         plist("home/Library/LaunchAgents/com.foo.sync.plist", ["Label": "com.foo.sync", "ProgramArguments": [at(app + "MacOS/foo-sync").path], "RunAtLoad": true])
@@ -168,8 +168,8 @@ enum BackgroundTests {
         check("com.pesotchi.pika-tools.test") { $0.isOwn && $0.title == "pikapik" && $0.domain.isEmpty && $0.icon == own }
         check("com.vendor.daemon") { $0.scope == .wholeMac && $0.running && $0.timing == .keepsRunning && $0.domain.isEmpty && $0.state == .on }
         check("com.vendor.shared") { $0.scope == .allUsers && $0.state == .off && $0.domain.isEmpty }
-        check("com.foo.app") { $0.kind == .login && $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.timing == nil }
-        check("com.pesotchi.pika-tools") { $0.kind == .login && $0.isOwn && $0.title == "pikapik" && $0.icon == own }
+        check("com.foo.app") { $0.kind == .login && $0.title == "Foo" && $0.developer == "Foo Inc." && $0.running && $0.timing == nil && $0.version == "2.1" }
+        check("com.pesotchi.pika-tools") { $0.kind == .login && $0.isOwn && $0.title == "pikapik" && $0.icon == own && $0.version == "1.50.1" }
         check("Old.app") { $0.kind == .leftover && $0.title == "Old" }
     }
 }

@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous";
 "All set" = "All set";
 "pikapik needs two permissions" = "pikapik needs two permissions";
-"Both permissions are on and every tool is working." = "Both permissions are on and every tool is working.";
-"Some tools also need a permission from the list below." = "Some tools also need a permission from the list below.";
+"Both permissions are on and every tool is working" = "Both permissions are on and every tool is working";
+"Some tools also need a permission from the list below" = "Some tools also need a permission from the list below";
 "Both permissions are on" = "Both permissions are on";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:";
 "Permissions for some tools" = "Permissions for some tools";
-"Only some tools need these permissions. Everything else works without them." = "Only some tools need these permissions. Everything else works without them.";
+"Only some tools need these permissions, and the rest work without them" = "Only some tools need these permissions, and the rest work without them";
 "Accessibility" = "Accessibility";
 "Input Monitoring" = "Input Monitoring";
 "Lets the app see clicks and keys" = "Lets the app see clicks and keys";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Keep your Mac awake";
 "Duration" = "Duration";
 "If turned on now, ends %@" = "If turned on now, ends %@";
+"If turned on now, stays on until you turn it off" = "If turned on now, stays on until you turn it off";
 "Days" = "Days";
 "Hours" = "Hours";
 "Minutes" = "Minutes";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Not turned on: no administrator password";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik wants to keep your Mac awake with the lid closed.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik wants to let your Mac sleep with the lid closed again.";
-"How pikapik starts and looks." = "How pikapik starts and looks.";
+"How pikapik starts and looks" = "How pikapik starts and looks";
 "Back" = "Back";
 "Forward" = "Forward";
 "No Results" = "No Results";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Uninstaller";
 "Remove an app" = "Remove an app";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo";
-"Remove an app and its files. You can put it all back." = "Remove an app and its files. You can put it all back.";
+"Remove an app and its files, and put them back if you change your mind" = "Remove an app and its files, and put them back if you change your mind";
 "Search apps" = "Search apps";
 "Sort by" = "Sort by";
 "Name" = "Name";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Tasks in your home folder";
 "To see the tasks in your home folder, allow access to it." = "To see the tasks in your home folder, allow access to it.";
 "Nothing runs in the background" = "Nothing runs in the background";
-"See everything that runs in the background and which app added it." = "See everything that runs in the background and which app added it.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime.";
+"See everything that runs in the background and which app added it" = "See everything that runs in the background and which app added it";
 "Keeps running" = "Keeps running";
 "Runs on a schedule" = "Runs on a schedule";
 "Starts when you log in" = "Starts when you log in";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volume of %@";
 "System Audio Recording" = "System Audio Recording";
 "To change each app’s volume" = "To change each app’s volume";
+"To change each app’s volume, allow “%@”" = "To change each app’s volume, allow “%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud";
 "Device Control and Data Access" = "Device Control and Data Access";
 "Lets the app change clicks and keys" = "Lets the app change clicks and keys";
 "privacy, security, access, accessibility, device control, data access" = "privacy, security, access, accessibility, device control and data access";
-"Change animations in System Settings. Each button opens the right place." = "Change animations in System Settings. Each button opens the right place.";
+"Each button takes you to an animation setting in System Settings" = "Each button takes you to an animation setting in System Settings";
 "Choose “Scale Effect” for a quicker animation" = "Choose “Scale Effect” for a quicker animation";
 "Turn off “Animate opening applications”" = "Turn off “Animate opening applications”";
 "Turn on “Automatically hide and show the Dock”" = "Turn on “Automatically hide and show the Dock”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period";
 "Brightness" = "Brightness";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Change the brightness of monitors macOS can’t adjust on its own.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Change the brightness of monitors macOS can’t adjust on its own";
 "Changes the monitor’s own brightness." = "Changes the monitor’s own brightness.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Dims the picture. This monitor doesn’t let the Mac change its brightness.";
 "Dims the picture." = "Dims the picture.";

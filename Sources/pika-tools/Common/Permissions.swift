@@ -76,6 +76,10 @@ enum Permission: CaseIterable {
     var title: String { info.title }
     var subtitle: String { info.subtitle }
 
+    var barText: String {
+        self == .systemAudio ? String(localized: "To change each app’s volume, allow “\(title)”") : "\(title): \(subtitle)"
+    }
+
     private var pane: String {
         switch self {
         case .accessibility: "Privacy_Accessibility"
@@ -395,7 +399,7 @@ struct PermissionBar: View {
                 if let text {
                     Text(text)
                 } else {
-                    Text(verbatim: missing.map { "\($0.title): \($0.subtitle)" }.joined(separator: "\n"))
+                    Text(verbatim: missing.map(\.barText).joined(separator: "\n"))
                 }
                 Spacer(minLength: 0)
                 Button("Allow") { Permissions.shared.ask(missing) }
@@ -416,8 +420,8 @@ struct PermissionsView: View {
         let others = Permission.allCases.filter { $0.isShown && $0 != .accessibility && $0 != .inputMonitoring }
         let othersGranted = others.allSatisfy(\.isGranted)
         let allSet = othersGranted
-            ? String(localized: "Both permissions are on and every tool is working.")
-            : String(localized: "Some tools also need a permission from the list below.")
+            ? String(localized: "Both permissions are on and every tool is working")
+            : String(localized: "Some tools also need a permission from the list below")
         let done = othersGranted ? String(localized: "All set") : String(localized: "Both permissions are on")
         Form {
             #if APPSTORE
@@ -426,7 +430,7 @@ struct PermissionsView: View {
                 title: permissions.allGranted ? done : String(localized: "Permissions for some tools"),
                 text: permissions.allGranted
                     ? allSet
-                    : String(localized: "Only some tools need these permissions. Everything else works without them.")
+                    : String(localized: "Only some tools need these permissions, and the rest work without them")
             )
             #else
             SettingsHeader(
