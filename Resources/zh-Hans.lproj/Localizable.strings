@@ -1184,3 +1184,4 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "显示器, 显示屏, 屏幕, 外接显示器, 调暗, 更暗, 更亮, 背光";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "键盘, F1, F2, 调高亮度, 调低亮度, 按键, 显示器, 显示屏";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "伽马, 调暗, 更暗, 软件调暗, 显示器, 显示屏, 屏幕";
+"Forget This App" = "忘记此应用";

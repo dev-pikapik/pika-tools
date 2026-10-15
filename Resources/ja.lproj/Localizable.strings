@@ -1184,3 +1184,4 @@
 "monitor, display, screen, external display, dim, dimmer, brighter, darker, DDC, backlight" = "モニタ, ディスプレイ, 画面, 外部ディスプレイ, 暗くする, 暗く, 明るく, バックライト";
 "keyboard, F1, F2, brightness up, brightness down, keys, monitor, display" = "キーボード, F1, F2, 明るくする, 暗くする, キー, モニタ, ディスプレイ";
 "gamma, dim, darker, software dimming, monitor, display, screen" = "ガンマ, 暗くする, 暗く, ソフトウェア調光, モニタ, ディスプレイ, 画面";
+"Forget This App" = "このアプリを忘れる";
