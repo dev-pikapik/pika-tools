@@ -11,6 +11,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Fixed
 - Per-app volume: when you put an app’s slider back to 100%, the hand-back no longer ends with a tiny click and a few milliseconds of silence. The sound now fades out of pikapik’s path in a few milliseconds before the app plays on its own
 
+### Fixed
+- Open With lists pikapik Player right after an update, before the player was opened once.
+
 ### Added
 - Mouse: Middle click on the trackpad, in Settings › Mouse. Tap or click with three fingers, and the trackpad works like the middle mouse button: in most browsers that opens a link in a new tab or closes a tab. You can choose four fingers instead. Tapping needs Tap to click in System Settings › Trackpad. If Look up there is set to a three-finger tap, three fingers can only click, and if three-finger drag is on, choose four fingers. The Fingers row under the switch says what works on your Mac. It needs Accessibility and Input Monitoring. To have it in the menu, click the pencil at the bottom of the menu and select it. Not in the Mac App Store version.
 

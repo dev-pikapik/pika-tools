@@ -3,7 +3,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct PlayerPage: View {
-    private static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
+    static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
     private static let license = Bundle.main.url(forResource: "FFmpeg License", withExtension: "txt")
     private static let source = URL(string: "https://github.com/dev-pikapik/pika-tools/releases/latest")!
 
