@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Les menus des coins actifs et de l’écran principal fonctionnent enfin
+
+<sub>1.50.3 · 15 octobre 2026</sub>
+
+Dans la version du site, le menu Modifier… de la ligne d’un coin actif et le menu Écran principal font maintenant ce qu’ils promettent.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Dans la version 1.50.2, chaque choix de ces deux menus apparaissait trois fois, et en choisir un ne changeait rien. Désormais chaque choix apparaît une seule fois, le choix actuel porte une coche, et votre sélection s’applique tout de suite. Les coins actifs sont dans Réglages › Jeux, et Écran principal sous Garder le Dock sur un seul écran. Remettre en place, ou éteindre l’interrupteur, rétablit toujours tout à l’identique.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik le fait lui-même, sans passer par Réglages Système
 
 <sub>1.50.2 · 15 octobre 2026</sub>

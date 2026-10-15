@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Los menús de esquinas activas y pantalla principal ya funcionan
+
+<sub>1.50.3 · 15 de octubre de 2026</sub>
+
+En la versión de la web, el menú Cambiar… de la fila de una esquina activa y el menú Pantalla principal ya hacen lo que prometen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+En la versión 1.50.2, cada opción de estos dos menús aparecía tres veces y elegir una no cambiaba nada. Ahora cada opción aparece una sola vez, la actual lleva una marca y tu elección se aplica al instante. Las esquinas activas están en Ajustes › Juegos y Pantalla principal, en Mantener el Dock en una sola pantalla. Devolver a su sitio, o apagar el interruptor, sigue dejándolo todo exactamente como estaba.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik lo hace solo, sin ir a Ajustes del Sistema
 
 <sub>1.50.2 · 15 de octubre de 2026</sub>

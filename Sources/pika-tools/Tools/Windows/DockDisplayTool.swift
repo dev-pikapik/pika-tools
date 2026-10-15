@@ -113,13 +113,10 @@ private struct MainDisplayRow: View {
         Group {
             if screens.count > 1 {
                 LabeledContent {
-                    Menu {
-                        ForEach(screens) { screen in
-                            Toggle(screen.name, isOn: Binding(get: { screen.origin == .zero }, set: { _ in change(to: screen) }))
-                        }
-                    } label: {
-                        Text(verbatim: screens.first { $0.origin == .zero }?.name ?? "")
-                    }
+                    Picker(selection: Binding(get: { screens.first { $0.origin == .zero }?.id }, set: { id in screens.first { $0.id == id }.map(change) })) {
+                        ForEach(screens) { Text(verbatim: $0.name).tag(Optional($0.id)) }
+                    } label: { Text("Main display") }
+                    .labelsHidden()
                     .fixedSize()
                     .disabled(!enabled)
                 } label: {

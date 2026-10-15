@@ -274,6 +274,7 @@ private struct HotCornerMenu: View {
         Menu("Change…") {
             ForEach(PointerShortcuts.actions.keys.sorted(), id: \.self) { code in
                 Toggle(name(code), isOn: Binding(get: { code == current }, set: { _ in change { HotCorners.choose(code, side: side) } }))
+                    .toggleStyle(.automatic)
             }
             if let original {
                 Divider()

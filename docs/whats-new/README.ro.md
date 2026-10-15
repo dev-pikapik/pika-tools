@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Meniurile colțurilor active și ale afișajului principal funcționează acum
+
+<sub>1.50.3 · 15 octombrie 2026</sub>
+
+În versiunea de pe site, meniul Modifică… de pe rândul unui colț activ și meniul Afișaj principal fac acum ce promit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+În versiunea 1.50.2, fiecare opțiune din aceste două meniuri apărea de trei ori, iar alegerea uneia nu schimba nimic. Acum fiecare opțiune apare o singură dată, cea curentă are o bifă, iar alegerea ta se aplică imediat. Colțurile active sunt în Setări › Jocuri, iar Afișaj principal sub Ține Dock-ul pe un singur ecran. Pune la loc sau oprirea comutatorului readuce în continuare totul exact ca înainte.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik face singur, fără drum prin Configurări sistem
 
 <sub>1.50.2 · 15 octombrie 2026</sub>

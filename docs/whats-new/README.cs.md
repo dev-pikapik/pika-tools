@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Nabídky aktivních rohů a hlavního monitoru teď fungují
+
+<sub>1.50.3 · 15. října 2026</sub>
+
+Ve verzi z webu nabídka Změnit… na řádku aktivního rohu a nabídka Hlavní monitor teď dělají to, co slibují.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ve verzi 1.50.2 se každá volba v těchto dvou nabídkách objevila třikrát a výběr žádné z nich nic nezměnil. Teď se každá volba objeví jednou, ta aktuální má zaškrtnutí a váš výběr se projeví hned. Aktivní rohy najdete v Nastavení › Hry a Hlavní monitor v Držet Dock na jednom displeji. Vrátit zpět nebo vypnutí přepínače stále vrátí všechno přesně tak, jak to bylo.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik to zvládne sám, bez cesty do Nastavení systému
 
 <sub>1.50.2 · 15. října 2026</sub>

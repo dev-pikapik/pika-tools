@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Menu góc nóng và màn hình chính giờ đã hoạt động
+
+<sub>1.50.3 · 15 tháng 10 năm 2026</sub>
+
+Ở phiên bản tải từ trang web, menu Thay đổi… ở dòng góc nóng và menu Màn hình chính giờ làm đúng như tên gọi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Ở phiên bản 1.50.2, mỗi lựa chọn trong hai menu này hiện ba lần và chọn cái nào cũng không thay đổi gì. Giờ mỗi lựa chọn chỉ hiện một lần, lựa chọn hiện tại có dấu tích và lựa chọn của bạn có tác dụng ngay. Góc nóng nằm trong Cài đặt › Trò chơi, còn Màn hình chính nằm dưới Giữ Dock trên một màn hình. Đặt lại chỗ cũ, hoặc tắt công tắc, vẫn đưa mọi thứ về đúng như trước.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik tự làm, không cần vào Cài đặt hệ thống
 
 <sub>1.50.2 · 15 tháng 10 năm 2026</sub>
