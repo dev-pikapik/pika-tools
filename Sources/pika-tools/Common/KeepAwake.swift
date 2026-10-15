@@ -194,7 +194,7 @@ final class KeepAwake {
         #if APPSTORE
         return
         #else
-        guard mode != .off, MainCopy.shared.role != .passive else { return }
+        guard mode != .off, MainCopy.canAct else { return }
         let bridge = Process()
         bridge.executableURL = URL(fileURLWithPath: "/usr/bin/caffeinate")
         let seconds = min(120, max(1, Int(endDate?.timeIntervalSinceNow ?? 120)))

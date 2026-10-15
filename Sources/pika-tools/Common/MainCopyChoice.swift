@@ -41,6 +41,15 @@ enum OriginalValue {
         return entry.before
     }
 
+    @discardableResult
+    static func set(_ key: String, current: Bool, to new: Bool, write: (Bool) -> Void) -> Entry? {
+        let entry = change(load(key), current: current, to: new)
+        if entry != nil { save(entry, key) }
+        write(new)
+        if entry == nil { save(nil, key) }
+        return entry
+    }
+
     static func load(_ key: String) -> Entry? {
         guard let saved = UserDefaults.standard.array(forKey: key) as? [Bool], saved.count == 2 else { return nil }
         return Entry(before: saved[0], ours: saved[1])

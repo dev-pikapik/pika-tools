@@ -31,6 +31,7 @@ final class AnimationsTool: Tool {
     private static let speedKey = "animations-speed"
     private static let ownKey = "animations-own"
     private static let autohideKey = "animations-autohide-original"
+    private static let wantedAutohideKey = "animations-autohide-wanted"
 
     private init() {
         owned = Self.saved()
@@ -86,8 +87,8 @@ final class AnimationsTool: Tool {
 
     func setAutohide(_ on: Bool) {
         guard MainCopy.canAct else { return }
-        OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.autohideKey), current: Self.readAutohide(), to: on), Self.autohideKey)
-        Self.writeAutohide(on)
+        let entry = OriginalValue.set(Self.autohideKey, current: Self.readAutohide(), to: on, write: Self.writeAutohide)
+        UserDefaults.standard.set(entry?.ours, forKey: Self.wantedAutohideKey)
         autohide = on
         restartDock()
     }
@@ -104,7 +105,11 @@ final class AnimationsTool: Tool {
 
     func refresh() {
         reload()
-        MainCopy.canAct ? apply(owned) : putBack()
+        guard MainCopy.canAct else { return putBack() }
+        apply(owned)
+        if let wanted = UserDefaults.standard.object(forKey: Self.wantedAutohideKey) as? Bool, wanted != autohide, OriginalValue.load(Self.autohideKey) == nil {
+            setAutohide(wanted)
+        }
     }
 
     private func putBack() {
@@ -131,8 +136,9 @@ final class AnimationsTool: Tool {
     }
 
     private static func putBackAutohide() -> Bool {
-        let value = OriginalValue.putBack(OriginalValue.load(autohideKey), current: readAutohide())
-        if let value { writeAutohide(value) }
+        let entry = OriginalValue.load(autohideKey)
+        let value = OriginalValue.putBack(entry, current: readAutohide())
+        if let value { writeAutohide(value) } else if entry != nil { UserDefaults.standard.removeObject(forKey: wantedAutohideKey) }
         OriginalValue.save(nil, autohideKey)
         return value != nil
     }

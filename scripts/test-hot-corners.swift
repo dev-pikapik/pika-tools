@@ -1,3 +1,5 @@
+import Foundation
+
 @main
 struct TestHotCorners {
     static func main() {
@@ -34,5 +36,19 @@ struct TestHotCorners {
         plan = HotCorners.putBack(current: 2, saved: during, ours: 11, side: "br")
         precondition(plan.write == nil && plan.saved == ["tl": 5])
         print("a crash in the middle of putting back keeps the journal until the write is done: ok")
+
+        ["hot-corners-before", "hot-corners-ours"].forEach(UserDefaults.standard.removeObject)
+        var written: Int?
+        HotCorners.apply("br", HotCorners.choose(11, current: 2, saved: HotCorners.before, side: "br")) { value in
+            precondition(HotCorners.before == ["br": 2] && HotCorners.ours == ["br": 11])
+            written = value
+        }
+        precondition(written == 11 && HotCorners.before == ["br": 2] && HotCorners.ours == ["br": 11])
+        HotCorners.apply("br", HotCorners.putBack(current: 11, saved: HotCorners.before, side: "br")) { value in
+            precondition(HotCorners.before == ["br": 2] && HotCorners.ours == ["br": 11])
+            written = value
+        }
+        precondition(written == 2 && HotCorners.before.isEmpty && HotCorners.ours.isEmpty)
+        print("the journal is saved before the corner is written and cleared only after it: ok")
     }
 }

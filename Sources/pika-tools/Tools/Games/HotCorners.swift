@@ -24,9 +24,9 @@ enum HotCorners {
         return (saved, original == current ? nil : original)
     }
 
-    static func choose(_ action: Int, side: String) { apply(side) { choose(action, current: $0, saved: before, side: side) } }
+    static func choose(_ action: Int, side: String) { apply(side, choose(action, current: current(side), saved: before, side: side)) { put($0, side: side) } }
 
-    static func putBack(side: String) { apply(side) { putBack(current: $0, saved: before, side: side) } }
+    static func putBack(side: String) { apply(side, putBack(current: current(side), saved: before, side: side)) { put($0, side: side) } }
 
     static func putBackAll() {
         CFPreferencesAppSynchronize(dock)
@@ -51,20 +51,23 @@ enum HotCorners {
         old.merging(new) { $1 }
     }
 
-    private static func apply(_ side: String, _ plan: (Int) -> (saved: [String: Int], write: Int?)) {
-        CFPreferencesAppSynchronize(dock)
-        let name = key(side) as CFString
-        let current = (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0
-        let result = plan(current)
+    static func apply(_ side: String, _ result: (saved: [String: Int], write: Int?), write: (Int) -> Void) {
         var written = ours
         written[side] = result.saved[side] == nil ? nil : (result.write ?? written[side])
         remember(kept(before, result.saved), kept(ours, written))
-        if let value = result.write {
-            CFPreferencesSetAppValue(name, value as CFNumber, dock)
-            CFPreferencesAppSynchronize(dock)
-            _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
-        }
+        if let value = result.write { write(value) }
         remember(result.saved, written)
+    }
+
+    private static func current(_ side: String) -> Int {
+        CFPreferencesAppSynchronize(dock)
+        return (CFPreferencesCopyAppValue(key(side) as CFString, dock) as? NSNumber)?.intValue ?? 0
+    }
+
+    private static func put(_ value: Int, side: String) {
+        CFPreferencesSetAppValue(key(side) as CFString, value as CFNumber, dock)
+        CFPreferencesAppSynchronize(dock)
+        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
     }
 
     private static func remember(_ saved: [String: Int], _ ours: [String: Int]) {

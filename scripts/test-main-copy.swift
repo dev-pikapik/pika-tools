@@ -65,6 +65,19 @@ struct TestMainCopy {
         precondition(OriginalValue.load(key) == nil)
         print("the remembered original survives a restart and can be cleared: ok")
 
+        var system = false
+        var entry = OriginalValue.set(key, current: system, to: true) { value in
+            precondition(OriginalValue.load(key) == first)
+            system = value
+        }
+        precondition(system && entry == first && OriginalValue.load(key) == first)
+        entry = OriginalValue.set(key, current: system, to: false) { value in
+            precondition(OriginalValue.load(key) == first)
+            system = value
+        }
+        precondition(!system && entry == nil && OriginalValue.load(key) == nil)
+        print("the original is saved before the switch is written and forgotten only after it is back: ok")
+
         let defaults = UserDefaults.standard
         defer { defaults.removeObject(forKey: crashKey); defaults.removeObject(forKey: systemKey) }
         let crashed = Process()

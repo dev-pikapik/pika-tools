@@ -7,11 +7,12 @@ final class ConvertTool: Tool {
     var title: String { String(localized: "Convert in Finder") }
     let tab = SettingsTab.finder
     private let finder: FinderExtension
+    private var migrate: Bool
 
     init() {
         let fresh = UserDefaults.standard.object(forKey: "convert") == nil
         finder = FinderExtension(bundle: "Convert", key: "convert")
-        if fresh, UserDefaults.standard.bool(forKey: "compress") { finder.isEnabled = true }
+        migrate = fresh && UserDefaults.standard.bool(forKey: "compress")
     }
 
     var isActive: Bool { finder.isActive }
@@ -32,7 +33,11 @@ final class ConvertTool: Tool {
         ) { AnyView(ConvertArt(on: $0)) })
     }
 
-    func refresh() { finder.refresh() }
+    func refresh() {
+        guard migrate, MainCopy.canAct else { return finder.refresh() }
+        migrate = false
+        finder.isEnabled = true
+    }
     func load() { finder.load() }
 }
 
