@@ -31,6 +31,13 @@ struct TestDockDisplay {
         precondition(plan(false, true, owned: true, before: false) == (true, nil, false))
         print("off: the key is left alone unless pikapik set it, and the Dock restarts only on a real change: ok")
 
+        let crashed = DockDisplaySwitch.plan(on: true, current: true, owned: false, before: nil)
+        let again = DockDisplaySwitch.plan(on: true, current: crashed.value, owned: true, before: crashed.before)
+        precondition(again.value == false && again.before == true && !again.restart)
+        let off = DockDisplaySwitch.plan(on: false, current: crashed.value, owned: true, before: again.before)
+        precondition(off.value == true && off.restart)
+        print("after a crash the next launch keeps the real value as the original and puts it back: ok")
+
         let side = ["a": CGPoint(x: 0, y: 0), "b": CGPoint(x: 1920, y: -120), "c": CGPoint(x: -1440, y: 60)]
         let moved = MainDisplay.moved(side, to: "b")
         precondition(moved == ["a": CGPoint(x: -1920, y: 120), "b": .zero, "c": CGPoint(x: -3360, y: 180)])

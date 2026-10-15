@@ -59,7 +59,7 @@ private struct ArchiveSettings: View {
         ) { AnyView(ArchiveArt(on: $0)) }
         #if !APPSTORE
         if inSettings {
-            Toggle(isOn: Binding(get: { defaultApp.isOn }, set: { defaultApp.set($0) })) {
+            Toggle(isOn: Binding(get: { defaultApp.isOn }, set: { if MainCopy.canAct { defaultApp.set($0) } })) {
                 RowLabel(Text("Open archives with this app"), Text(verbatim: "ZIP · 7Z"))
             }
             .settingAnchor(String(localized: "Open archives with this app"))

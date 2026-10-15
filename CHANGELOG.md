@@ -9,6 +9,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Player, website version: the control panel is now frosted glass, Liquid Glass on macOS 26 and later and a blurred panel on macOS 14 and 15, and its buttons and times stay readable on a bright picture. While a video plays, the panel hides after 2.5 seconds without mouse movement, and in full screen the pointer hides with it. Any key or a move of the mouse brings them back, and the panel stays on screen while the video is paused or the pointer is over it.
 - Player, website version: point at the time bar and a small picture of the video at that spot appears above it, with the time. The pictures are made in the background without interrupting the video and kept only while the window is open. For a sound-only file, or when a picture can’t be made, you see only the time.
 
+### Fixed
+- One main copy: if pikapik stopped unexpectedly while one of its settings was on, the next launch no longer takes pikapik’s value for yours. Animations, Hide the Dock automatically, hot corners, Repeat a held key, Keep the Dock on one display, Hide desktop icons and Show hidden files remember your own value before they change anything and put it back later. Hide the Dock automatically now also goes back as it was when pikapik quits. Only the main copy changes the brightness of external displays, the app that opens archives, Finder extensions and settings from your other Macs, and only the main copy checks for updates and offers them; a copy that is not the main one quits without turning off Keep Awake.
+
 ## [1.52.0] - 2026-10-15
 
 ### Added
