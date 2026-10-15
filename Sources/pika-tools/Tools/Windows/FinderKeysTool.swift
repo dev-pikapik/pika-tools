@@ -14,7 +14,7 @@ final class FinderKeys {
     @ObservationIgnored var deletes = false
     @ObservationIgnored private var cutCount: Int?
     @ObservationIgnored private var generation = 0
-    @ObservationIgnored private var held: (key: Int, target: Int, flags: CGEventFlags)?
+    @ObservationIgnored private var held: (key: Int, target: Int)?
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
@@ -47,7 +47,7 @@ final class FinderKeys {
     private func stop() {
         if let held {
             self.held = nil
-            Self.send(held.target, held.flags, down: false, nil)
+            Self.send(held.target, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -67,7 +67,7 @@ final class FinderKeys {
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            Self.send(held.target, held.flags, down: false, proxy)
+            Self.send(held.target, down: false, proxy)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -108,15 +108,13 @@ final class FinderKeys {
                 target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
             }
         }
-        held = (key, target.key, target.flags)
+        held = (key, target.key)
         Self.send(target.key, target.flags, down: true, proxy)
         return true
     }
 
-    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
-        guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
-        event.flags = flags
-        event.markPikapik()
+    private static func send(_ key: Int, _ flags: CGEventFlags = [], down: Bool, _ proxy: CGEventTapProxy?) {
+        guard let event = CGEvent.pikapikKey(key, down: down, flags: flags) else { return }
         if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 

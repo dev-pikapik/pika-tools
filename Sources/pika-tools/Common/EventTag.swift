@@ -8,4 +8,11 @@ extension CGEvent {
     var isPikapik: Bool { getIntegerValueField(.eventSourceUserData) == Self.pikapikTag }
 
     func markPikapik() { setIntegerValueField(.eventSourceUserData, value: Self.pikapikTag) }
+
+    static func pikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = []) -> CGEvent? {
+        guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return nil }
+        event.flags = down ? flags : CGEventSource.flagsState(.hidSystemState)
+        event.markPikapik()
+        return event
+    }
 }
