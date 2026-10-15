@@ -421,12 +421,12 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section(String("pikapik")) { rows([.general]) }
+                    Section { rows([.general]) }
                     Section("Mac") { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
                     Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
                     Section("Apps") { rows([.background, .games, .pet]) }
                     #else
-                    Section(String("pikapik")) { rows([.general]) }
+                    Section { rows([.general]) }
                     Section("Mac") { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
                     Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
                     Section("Apps") { rows([.player, .uninstaller, .background, .games, .pet]) }

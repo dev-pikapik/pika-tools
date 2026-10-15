@@ -5,7 +5,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.52.0] - Unreleased
 
 ### Changed
-- Settings: the groups in the sidebar now have names, like in System Settings: pikapik, Mac, Enhancements, Apps and Info. The pages are the same and in the same order; the names only show what belongs together. Search still lists pages without group names.
+- Settings: the groups in the sidebar now have names, like in System Settings: Mac, Enhancements, Apps and Info. General stays at the top without a name. The pages are the same and in the same order; the names only show what belongs together. Search still lists pages without group names.
 
 ## [1.51.0] - 2026-10-15
 
