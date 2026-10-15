@@ -57,7 +57,7 @@ final class MiddleClickTool: Tool {
 
     func refresh() {
         stop()
-        guard isEnabled, AXIsProcessTrusted(), Permissions.shared.inputMonitoring else { return }
+        guard isEnabled, MainCopy.canAct, AXIsProcessTrusted(), Permissions.shared.inputMonitoring else { return }
         start()
     }
 

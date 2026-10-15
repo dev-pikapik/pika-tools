@@ -445,6 +445,8 @@ Her sayfanın altında bir **Saptanmışlara Dön…** düğmesi vardır. Önce 
 
 **Ayarları iCloud ile eşzamanla** pikapik’i tüm Mac’lerinizde aynı tutar. Ayarlar iCloud Drive’daki pikapik klasöründe durur ve en son değişiklik geçerli olur. Varsayılan olarak kapalıdır ve iCloud Drive’ın açık olması gerekir. İzinler eşzamanlanmaz: her Mac kendi izinlerini kendisi ister.
 
+**Tek ana kopya.** pikapik’in iki kopyası aynı anda açıksa, örneğin web sitesinden indirilen ve App Store’dan gelen, Mac’inizde yalnızca en son açtığınız kopya bir şeyi değiştirir. Diğeri, **Bu kopyayı ana kopya yap** düğmesi olan kısa bir not gösterir ve ana kopya kapanınca devralır. Ana kopya olmaktan çıkan bir kopya değiştirdiği her şeyi geri koyar.
+
 </details>
 
 <details>

@@ -1262,3 +1262,6 @@
 "Mac" = "Mac";
 "Enhancements" = "增强功能";
 "Info" = "信息";
+"Another copy of pikapik is in charge" = "当前由另一个 pikapik 副本负责";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "此副本不会更改你的 Mac 设置，另一个副本退出后会自动接手。";
+"Make This Copy the Main One" = "将此副本设为主副本";

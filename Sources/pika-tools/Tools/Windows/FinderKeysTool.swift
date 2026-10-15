@@ -23,7 +23,7 @@ final class FinderKeys {
     func refresh() {
         stop()
         if !cuts { cancelCut() }
-        if opens || cuts || deletes, AXIsProcessTrusted() { start() }
+        if opens || cuts || deletes, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     private func start() {

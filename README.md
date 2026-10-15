@@ -445,6 +445,8 @@ Every page has a **Restore Defaults…** button at the bottom. It asks first, th
 
 **Sync settings with iCloud** keeps pikapik the same on all your Macs. The settings live in the pikapik folder in iCloud Drive, and the most recent change wins. It's off by default and needs iCloud Drive turned on. Permissions aren't synced: every Mac asks for them on its own.
 
+**One main copy.** If two copies of pikapik are open at once, such as the website one and the App Store one, only the one you opened last changes anything on your Mac. The other one shows a short note with a **Make This Copy the Main One** button and takes over when the main copy quits. A copy that stops being the main one puts back what it changed.
+
 </details>
 
 <details>

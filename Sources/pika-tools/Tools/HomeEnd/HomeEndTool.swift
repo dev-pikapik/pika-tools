@@ -75,7 +75,7 @@ final class HomeEndTool: Tool {
 
     func refresh() {
         stop()
-        if isEnabled, AXIsProcessTrusted() { start() }
+        if isEnabled, MainCopy.canAct, AXIsProcessTrusted() { start() }
     }
 
     static func target(_ key: Int, _ flags: CGEventFlags, app: String?, excluded: [String]) -> (key: Int, flags: CGEventFlags)? {

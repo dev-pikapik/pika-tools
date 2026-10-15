@@ -55,7 +55,7 @@ final class AnimationsTool: Tool {
     }
 
     func value(_ setting: AnimationSetting) -> Double {
-        owned[setting] ?? system[setting] ?? setting.macOS
+        system[setting] ?? setting.macOS
     }
 
     func baseline(_ setting: AnimationSetting) -> Double {
@@ -103,7 +103,16 @@ final class AnimationsTool: Tool {
 
     func refresh() {
         reload()
-        apply(owned)
+        MainCopy.canAct ? apply(owned) : putBack()
+    }
+
+    private func putBack() {
+        let ours = owned.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
+        let changes = AnimationSetting.changes(from: ours, to: [:], system: system, own: own)
+        guard !changes.isEmpty else { return }
+        changes.forEach { $0.0.write($0.1) }
+        reload()
+        if changes.contains(where: { $0.0.apply == .dock }) { Self.killall("Dock", wait: true) }
     }
 
     func load() {
@@ -288,6 +297,7 @@ struct AnimationsPage: View {
             tool.reload()
             offersAutohide = offersAutohide || !tool.autohide
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in tool.reload() }
     }
 }
 

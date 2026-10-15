@@ -72,7 +72,7 @@ final class PointerTool: Tool {
 
     func refresh() {
         isActive = isEnabled && client != nil
-        if isEnabled {
+        if isEnabled, MainCopy.canAct {
             apply()
             watchDevices()
         } else {

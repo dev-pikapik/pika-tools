@@ -53,6 +53,13 @@ import IOKit
         refresh()
     }
 
+    func release() {
+        generation += 1
+        guard !gamma.isEmpty else { return }
+        CGDisplayRestoreColorSyncSettings()
+        gamma = [:]
+    }
+
     func monitor(for id: CGDirectDisplayID) -> Monitor? {
         monitors.first { $0.id == id }
     }
@@ -110,7 +117,7 @@ import IOKit
     private static func levelKey(_ key: String) -> String { "brightness-level-\(key)" }
     private static func pictureKey(_ key: String) -> String { "brightness-picture-\(key)" }
 
-    private func refresh() {
+    func refresh() {
         generation += 1
         let current = generation
         #if !APPSTORE
@@ -124,7 +131,7 @@ import IOKit
     }
 
     private func connect(_ current: Int, rewrite: Bool) {
-        guard current == generation else { return }
+        guard current == generation, MainCopy.canAct else { return }
         scan()
         #if APPSTORE
         repaint(force: false)

@@ -351,7 +351,7 @@ enum SettingsWindow {
     static let model = Model()
     private(set) static var window: NSWindow?
 
-    static var preview: some View { SettingsView() }
+    static var preview: some View { SettingsRoot() }
 
     static let minSize = NSSize(width: 660, height: 460)
 
@@ -374,7 +374,7 @@ enum SettingsWindow {
     private static func create() {
         let width: CGFloat = 860
         let height = min(800, (NSScreen.main?.visibleFrame.height ?? 900) - 40)
-        let host = NSHostingController(rootView: SettingsView())
+        let host = NSHostingController(rootView: SettingsRoot())
         host.sceneBridgingOptions = [.toolbars, .title]
         let window = NSWindow(contentViewController: host)
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
@@ -417,6 +417,14 @@ enum SettingsWindow {
         try? helper.run()
         Background.quit()
         #endif
+    }
+}
+
+private struct SettingsRoot: View {
+    private let copy = MainCopy.shared
+
+    var body: some View {
+        if copy.role == .passive { PassiveCopyView() } else { SettingsView() }
     }
 }
 

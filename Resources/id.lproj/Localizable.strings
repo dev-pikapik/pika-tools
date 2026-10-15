@@ -1262,3 +1262,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Peningkatan";
 "Info" = "Info";
+"Another copy of pikapik is in charge" = "Salinan pikapik lain sedang bertugas";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "Salinan ini tidak mengubah apa pun di Mac dan mengambil alih saat salinan lainnya ditutup.";
+"Make This Copy the Main One" = "Jadikan salinan ini yang utama";

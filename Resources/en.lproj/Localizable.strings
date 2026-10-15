@@ -1262,3 +1262,6 @@
 "Mac" = "Mac";
 "Enhancements" = "Enhancements";
 "Info" = "Info";
+"Another copy of pikapik is in charge" = "Another copy of pikapik is in charge";
+"This copy changes nothing on your Mac and takes over when the other copy quits." = "This copy changes nothing on your Mac and takes over when the other copy quits.";
+"Make This Copy the Main One" = "Make This Copy the Main One";

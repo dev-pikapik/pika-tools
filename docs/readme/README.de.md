@@ -445,6 +445,8 @@ Jede Seite hat unten eine Taste **Standard wiederherstellen…**. Sie fragt zuer
 
 **Einstellungen mit iCloud synchronisieren** hält pikapik auf all deinen Macs gleich. Die Einstellungen liegen im Ordner pikapik in iCloud Drive, und die jüngste Änderung gewinnt. Standardmäßig aus, und iCloud Drive muss eingeschaltet sein. Berechtigungen werden nicht synchronisiert: Jeder Mac fragt selbst danach.
 
+**Eine Hauptkopie.** Sind zwei Kopien von pikapik gleichzeitig geöffnet, etwa die von der Website und die aus dem App Store, ändert nur die zuletzt geöffnete etwas an deinem Mac. Die andere zeigt einen kurzen Hinweis mit der Schaltfläche **Diese Kopie zur Hauptkopie machen** und übernimmt, sobald die Hauptkopie beendet wird. Eine Kopie, die nicht mehr die Hauptkopie ist, stellt alles wieder her, was sie geändert hat.
+
 </details>
 
 <details>

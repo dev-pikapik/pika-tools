@@ -32,7 +32,7 @@ final class TrashWatchTool: Tool {
     func refresh() {
         watcher?.stop()
         watcher = nil
-        if isEnabled, Permissions.shared.fileAccess {
+        if isEnabled, MainCopy.canAct, Permissions.shared.fileAccess {
             watcher = TrashWatcher { urls in MainActor.assumeIsolated { UninstallerModel.shared.offer(urls) } }
         }
         isActive = watcher != nil

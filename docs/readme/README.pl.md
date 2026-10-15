@@ -445,6 +445,8 @@ Na dole każdej strony jest przycisk **Przywróć domyślne…**. Najpierw pyta 
 
 **Synchronizuj ustawienia przez iCloud** sprawia, że pikapik jest taki sam na wszystkich twoich Macach. Ustawienia leżą w folderze pikapik w iCloud Drive, a wygrywa ostatnia zmiana. Domyślnie wyłączone i wymaga włączonego iCloud Drive. Uprawnienia nie są synchronizowane: każdy Mac prosi o nie osobno.
 
+**Jedna główna kopia.** Jeśli jednocześnie otwarte są dwie kopie pikapik, na przykład ze strony internetowej i z App Store, cokolwiek na Macu zmienia tylko ta, która została otwarta jako ostatnia. Druga pokazuje krótką informację z przyciskiem **Ustaw tę kopię jako główną** i przejmuje kontrolę, gdy główna kopia zostanie zamknięta. Kopia, która przestaje być główna, przywraca wszystko, co zmieniła.
+
 </details>
 
 <details>
