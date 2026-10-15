@@ -1,3 +1,5 @@
+import AppKit
+import CryptoKit
 import Foundation
 
 enum PlayerFormats {
@@ -14,22 +16,97 @@ enum PlayerFormats {
 }
 
 enum PlayerAction: Equatable {
-    case playPause, back, forward, louder, quieter, fullScreen, leaveFullScreen
+    case playPause, back, forward, skipBack, skipForward, longBack, longForward, frameBack, frameForward, start, end, startOver
+    case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop
 
     static let skip = 5.0
+    static let longSkip = 10.0
     static let volumeStep: Float = 0.1
 
-    init?(key: String) {
-        switch key {
-        case " ": self = .playPause
-        case "\u{F702}": self = .back
-        case "\u{F703}": self = .forward
-        case "\u{F700}": self = .louder
-        case "\u{F701}": self = .quieter
-        case "f", "F": self = .fullScreen
-        case "\u{1B}": self = .leaveFullScreen
-        default: return nil
+    private static let (left, right, up, down) = ("\u{F702}", "\u{F703}", "\u{F700}", "\u{F701}")
+
+    static let bindings: [(action: PlayerAction, key: String, modifiers: NSEvent.ModifierFlags)] = [
+        (.playPause, " ", []), (.playPause, "k", []),
+        (.back, left, []), (.forward, right, []),
+        (.skipBack, left, .shift), (.skipForward, right, .shift),
+        (.longBack, "j", []), (.longForward, "l", []),
+        (.frameBack, ",", []), (.frameForward, ".", []),
+        (.start, left, .option), (.end, right, .option),
+        (.slower, left, .command), (.faster, right, .command),
+        (.slower, "[", []), (.faster, "]", []), (.normalSpeed, "\u{7F}", []),
+        (.louder, up, []), (.quieter, down, []), (.mute, "m", []),
+        (.fullScreen, "f", []), (.fullScreen, "f", .command), (.fullScreen, "f", [.command, .control]), (.leaveFullScreen, "\u{1B}", []),
+        (.snapshot, "s", []), (.floatOnTop, "t", []),
+    ]
+
+    init?(key: String, modifiers: NSEvent.ModifierFlags = []) {
+        let held = modifiers.intersection([.command, .control, .option, .shift])
+        guard let found = Self.bindings.first(where: { $0.key == key.lowercased() && $0.modifiers == held }) else { return nil }
+        self = found.action
+    }
+
+    func resolved(playing: Bool) -> PlayerAction {
+        switch self {
+        case .back: playing ? .skipBack : .frameBack
+        case .forward: playing ? .skipForward : .frameForward
+        default: self
         }
+    }
+}
+
+enum PlayerSpeed {
+    static let all: [Float] = [0.5, 0.75, 1, 1.25, 1.5, 2]
+
+    static func stepped(_ speed: Float, _ direction: Int) -> Float {
+        direction > 0 ? all.first { $0 > speed + 0.001 } ?? all[all.count - 1] : all.last { $0 < speed - 0.001 } ?? all[0]
+    }
+}
+
+struct PlayerWheel {
+    static let deadZone = 8.0
+    static let notch = 20.0
+    static let pause = 0.4
+    static let volumePerPoint: Float = 0.005
+    static let secondsPerPoint = 0.25
+
+    private var pending = (x: 0.0, y: 0.0)
+    private var open = false
+    private var last = -Double.infinity
+
+    mutating func add(right: Double, up: Double, precise: Bool, began: Bool, at time: Double) -> (volume: Float, seconds: Double) {
+        if began || time - last > Self.pause { self = PlayerWheel() }
+        last = time
+        let scale = precise ? 1 : Self.notch
+        if abs(up) >= abs(right) { pending = (0, pending.y + up * scale) } else { pending = (pending.x + right * scale, 0) }
+        guard open || max(abs(pending.x), abs(pending.y)) >= Self.deadZone else { return (0, 0) }
+        open = true
+        defer { pending = (0, 0) }
+        return (Float(pending.y) * Self.volumePerPoint, pending.x * Self.secondsPerPoint)
+    }
+}
+
+enum PlayerResume {
+    static let limit = 200
+    static let watched = 60.0
+    static let remaining = 30.0
+
+    static func key(path: String, size: Int64, modified: Date) -> String {
+        SHA256.hash(data: Data("\(path)|\(size)|\(Int64(modified.timeIntervalSince1970))".utf8)).prefix(16).map { String(format: "%02x", $0) }.joined()
+    }
+
+    static func worthKeeping(_ position: Double, of duration: Double) -> Bool {
+        position > watched && duration - position > remaining
+    }
+
+    static func updated(_ saved: [String: [Double]], key: String, position: Double, duration: Double, at now: Double) -> [String: [Double]] {
+        var saved = saved
+        guard worthKeeping(position, of: duration) else {
+            saved[key] = nil
+            return saved
+        }
+        saved[key] = [position, now]
+        while saved.count > limit, let oldest = saved.min(by: { $0.value[1] < $1.value[1] })?.key { saved[oldest] = nil }
+        return saved
     }
 }
 
@@ -47,5 +124,9 @@ enum PlayerTime {
 
     static func volume(_ volume: Float, by step: Float) -> Float {
         max(0, min(1, ((volume + step) * 10).rounded() / 10))
+    }
+
+    static func snapshotName(_ file: String, at seconds: Double) -> String {
+        "\((file as NSString).deletingPathExtension) \(text(seconds).replacingOccurrences(of: ":", with: ".")).png"
     }
 }
