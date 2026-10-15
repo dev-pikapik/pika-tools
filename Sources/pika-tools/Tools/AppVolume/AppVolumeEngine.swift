@@ -427,8 +427,8 @@ final class AppVolumeEngine: @unchecked Sendable {
             guard let live = client.live else { continue }
             client.live = nil
             client.silentTicks = 0
+            live.gain.release()
             try? live.mute(false)
-            live.gain.target = 0
             queue.asyncAfter(deadline: .now() + 0.3) { live.destroy() }
             log.debug("chain released pid=\(client.pid)")
         }
