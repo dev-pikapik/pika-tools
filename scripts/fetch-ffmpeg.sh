@@ -45,9 +45,9 @@ if [ "$(cat "$OUT/stamp" 2>/dev/null)" != "$STAMP" ]; then
     fetch
     JOBS="$(sysctl -n hw.ncpu)"
     COMPONENTS=(
-        --enable-demuxer=matroska,avi,flv,ogg,asf,mpegts,mpegps,mxf
+        --enable-demuxer=matroska,avi,flv,ogg,asf,mpegts,mpegps,mxf,mpegvideo,m4v,h264,hevc,ac3,eac3,aac,mp3
         --enable-parser=aac,aac_latm,ac3,av1,flac,h263,h264,hevc,mpeg4video,mpegaudio,mpegvideo,opus,vc1,vorbis,vp3,vp8,vp9
-        --enable-decoder=vp8,vp9,libdav1d,mpeg4,msmpeg4v1,msmpeg4v2,msmpeg4v3,wmv1,wmv2,wmv3,vc1,theora,mpeg1video,mpeg2video,flv,h263,wmav1,wmav2
+        --enable-decoder=aac,vp8,vp9,libdav1d,mpeg4,msmpeg4v1,msmpeg4v2,msmpeg4v3,wmv1,wmv2,wmv3,vc1,theora,mpeg1video,mpeg2video,flv,h263,wmav1,wmav2
         --enable-bsf=aac_adtstoasc,extract_extradata,mpeg4_unpack_bframes
     )
     {
@@ -109,6 +109,7 @@ EOF
         lipo -create "$TMP/arm64/lib/$LIB.dylib" "$TMP/x86_64/lib/$LIB.dylib" -output "$OUT/lib/$LIB.dylib"
     done
     mv "$TMP/configure.txt" "$OUT/configure.txt"
+    { echo "$FFMPEG: GNU Lesser General Public License 2.1 or later"; echo; cat "$TMP/src-arm64/$FFMPEG/COPYING.LGPLv2.1"; echo; echo "$DAV1D: BSD 2-Clause License"; echo; cat "$TMP/src-arm64/$DAV1D/COPYING"; } > "$OUT/License.txt"
     echo "$STAMP" > "$OUT/stamp"
     echo "$FFMPEG and $DAV1D are in $OUT ($(du -ch "$OUT"/lib/*.dylib | tail -1 | cut -f1))"
 fi
