@@ -332,8 +332,9 @@ final class Subtitles {
         ])
     }
 
-    func open(_ file: URL, resume: Double, saved: String, audioLanguage: String?, neighbours: [URL]?) {
+    func open(_ file: URL, resume: Double, saved: String, delay: Double, audioLanguage: String?, neighbours: [URL]?) {
         close()
+        self.delay = delay
         generation += 1
         let current = generation
         self.saved = saved

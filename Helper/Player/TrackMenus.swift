@@ -18,14 +18,14 @@ extension PlayerController {
         let audio = engine.audioTracks.first { Self.id($0) == saved.first }
         if let audio { engine.selectAudio(audio) }
         subtitles.position = { [weak self] in self?.engine?.position.seconds ?? 0 }
-        subtitles.open(url, resume: resume, saved: saved.count > 1 ? saved[1] : "", audioLanguage: (audio ?? engine.audioTrack)?.language, neighbours: siblings)
+        subtitles.open(url, resume: resume, saved: saved.count > 1 ? saved[1] : "", delay: PlayerChoices.delay(saved), audioLanguage: (audio ?? engine.audioTrack)?.language, neighbours: siblings)
     }
 
     private func saveChoices() {
         guard let engine, let resumeKey else { return }
         let subtitle = subtitles.chosen ? subtitles.selected ?? Self.off : ""
         let saved = UserDefaults.standard.dictionary(forKey: Self.choiceStore) as? [String: [String]] ?? [:]
-        UserDefaults.standard.set(PlayerChoices.updated(saved, key: resumeKey, audio: engine.audioTrack.map(Self.id) ?? "", subtitle: subtitle, at: Date().timeIntervalSince1970), forKey: Self.choiceStore)
+        UserDefaults.standard.set(PlayerChoices.updated(saved, key: resumeKey, audio: engine.audioTrack.map(Self.id) ?? "", subtitle: subtitle, delay: subtitles.delay, at: Date().timeIntervalSince1970), forKey: Self.choiceStore)
     }
 
     func audioItems() -> [NSMenuItem] {
@@ -118,8 +118,9 @@ extension PlayerController {
             let name = subtitles.tracks.first { $0.id == subtitles.selected }?.title ?? String(localized: "Off")
             subtitles.announce(String(localized: "Subtitles: \(name)"))
             saveChoices()
-        case .subtitleEarlier: subtitles.shift(by: -0.1)
-        case .subtitleLater: subtitles.shift(by: 0.1)
+        case .subtitleEarlier, .subtitleLater:
+            subtitles.shift(by: action == .subtitleLater ? 0.1 : -0.1)
+            saveChoices()
         case .subtitleLarger: subtitles.resize(by: 0.1)
         case .subtitleSmaller: subtitles.resize(by: -0.1)
         default: return false

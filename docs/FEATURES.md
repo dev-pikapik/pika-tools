@@ -1284,7 +1284,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Keys:** V next subtitles (the last step is off), ⇧3 (#) next sound track, Z and X move subtitles 0.1 s earlier and later, ⇧F and ⇧G make them larger and smaller. The same items are in the Audio and Subtitles menus (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:108`).
 
-**Nuances:** ASS and SSA are shown as plain text, with no fonts, colors or positions. Picture subtitles (PGS, VobSub) are in the list but greyed out, with “(can’t be shown)”. A subtitle file that can’t be read shows a short note and nothing else changes. The delay is for the current session; the size and the track choice are remembered (the last 200 videos).
+**Nuances:** ASS and SSA are shown as plain text, with no fonts, colors or positions. Picture subtitles (PGS, VobSub) are in the list but greyed out, with “(can’t be shown)”. A subtitle file that can’t be read shows a short note and nothing else changes. The track choice and the delay are remembered for each of the last 200 videos; the size is the same for all.
 
 **Edition:** Website only (App Store: hidden).
 

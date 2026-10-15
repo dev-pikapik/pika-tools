@@ -352,9 +352,13 @@ enum PlayerTracks {
 enum PlayerChoices {
     static let limit = 200
 
-    static func updated(_ saved: [String: [String]], key: String, audio: String, subtitle: String, at now: Double) -> [String: [String]] {
+    static func delay(_ saved: [String]) -> Double {
+        saved.count > 3 ? Double(saved[2]).flatMap { $0.isFinite ? $0 : nil } ?? 0 : 0
+    }
+
+    static func updated(_ saved: [String: [String]], key: String, audio: String, subtitle: String, delay: Double, at now: Double) -> [String: [String]] {
         var saved = saved
-        saved[key] = [audio, subtitle, String(now)]
+        saved[key] = [audio, subtitle, String(delay), String(now)]
         while saved.count > limit, let oldest = saved.min(by: { (Double($0.value.last ?? "") ?? 0) < (Double($1.value.last ?? "") ?? 0) })?.key { saved[oldest] = nil }
         return saved
     }

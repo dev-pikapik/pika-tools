@@ -107,8 +107,10 @@ enum TestSubtitles {
         print("track names and the language of the system: ok")
 
         var saved: [String: [String]] = [:]
-        for index in 0..<(PlayerChoices.limit + 5) { saved = PlayerChoices.updated(saved, key: "k\(index)", audio: "a1", subtitle: "off", at: Double(index)) }
-        precondition(saved.count == PlayerChoices.limit && saved["k0"] == nil && saved["k204"] == ["a1", "off", "204.0"])
+        for index in 0..<(PlayerChoices.limit + 5) { saved = PlayerChoices.updated(saved, key: "k\(index)", audio: "a1", subtitle: "off", delay: -0.3, at: Double(index)) }
+        precondition(saved.count == PlayerChoices.limit && saved["k0"] == nil && saved["k204"] == ["a1", "off", "-0.3", "204.0"])
+        precondition(PlayerChoices.delay(saved["k204"] ?? []) == -0.3 && PlayerChoices.delay(["a1", "off", "99.0"]) == 0 && PlayerChoices.delay([]) == 0)
+        precondition(PlayerChoices.delay(["a1", "off", "nan", "9.0"]) == 0 && PlayerChoices.delay(["a1", "off", "text", "9.0"]) == 0)
         print("remembered track choices stay within the limit: ok")
 
         let video = URL(fileURLWithPath: "/m/Movie.mkv")

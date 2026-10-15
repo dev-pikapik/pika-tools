@@ -294,7 +294,7 @@ enum TestTracks {
             while !done(), Date() < limit { try? await Task.sleep(for: .milliseconds(50)) }
         }
 
-        subtitles.open(tracks, resume: 0, saved: "", audioLanguage: nil, neighbours: neighbours)
+        subtitles.open(tracks, resume: 0, saved: "", delay: 0, audioLanguage: nil, neighbours: neighbours)
         await settle { subtitles.tracks.count == 4 && subtitles.selected != nil }
         check(subtitles.tracks.map(\.id).sorted() == ["e3", "e4", "f:tracks.ru.srt", "f:tracks.srt"], "side files with the video's name are found, other names are not: \(subtitles.tracks.map(\.id))")
         check(subtitles.selected == "f:tracks.ru.srt" || subtitles.selected == "f:tracks.srt", "a side file is chosen by itself: \(subtitles.selected ?? "none")")
@@ -335,20 +335,24 @@ enum TestTracks {
         subtitles.close()
         check(subtitles.tracks.isEmpty && subtitles.view.shown == nil, "closing the video clears the subtitles")
 
-        subtitles.open(tracks, resume: 0, saved: "off", audioLanguage: nil, neighbours: neighbours)
+        subtitles.open(tracks, resume: 0, saved: "off", delay: 0, audioLanguage: nil, neighbours: neighbours)
         await settle { subtitles.tracks.count == 4 }
         try? await Task.sleep(for: .milliseconds(200))
         check(subtitles.selected == nil && !subtitles.chosen, "a remembered Off stays off")
         subtitles.close()
-        subtitles.open(tracks, resume: 0, saved: "e4", audioLanguage: nil, neighbours: nil)
+        subtitles.open(tracks, resume: 0, saved: "e4", delay: 0, audioLanguage: nil, neighbours: nil)
         await settle { subtitles.selected != nil }
         check(subtitles.selected == "e4", "a remembered track is chosen again: \(subtitles.selected ?? "none")")
         subtitles.close()
+        subtitles.open(tracks, resume: 0, saved: "e4", delay: 0.4, audioLanguage: nil, neighbours: nil)
+        check(subtitles.delay == 0.4, "a remembered delay is applied")
+        subtitles.close()
+        check(subtitles.delay == 0, "closing the video forgets the delay")
 
         let notSubtitles = folder.appendingPathComponent("junk.srt")
         try! Data((0..<5000).map { _ in UInt8.random(in: 0...255) }).write(to: notSubtitles)
         var refused = false
-        subtitles.open(plain, resume: 0, saved: "", audioLanguage: nil, neighbours: [])
+        subtitles.open(plain, resume: 0, saved: "", delay: 0, audioLanguage: nil, neighbours: [])
         subtitles.load(notSubtitles, select: true, failed: { refused = true })
         await settle { refused }
         check(refused && subtitles.tracks.isEmpty, "a file that is not subtitles is refused and not listed")
