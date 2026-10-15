@@ -35,7 +35,7 @@ struct PlayerPage: View {
     @ViewBuilder
     private func formats(_ apps: DefaultApps, _ list: [(name: String, extensions: [String])], anchor: String) -> some View {
         VStack(spacing: 6) {
-            Button(action: { apps.set(!apps.isOn) }) {
+            Button(action: { if MainCopy.canAct { apps.set(!apps.isOn) } }) {
                 (apps.isOn ? Text("Restore Previous Apps") : Text("Open All in pikapik")).frame(minWidth: 140)
             }
             .controlSize(.large)
@@ -54,7 +54,7 @@ struct PlayerPage: View {
             ForEach(list, id: \.name) { format in
                 let types = PlayerFormats.types(of: format.extensions)
                 let isOn = apps.isOn(types)
-                Button(action: { apps.set(!isOn, for: types) }) {
+                Button(action: { if MainCopy.canAct { apps.set(!isOn, for: types) } }) {
                     HStack(spacing: 5) {
                         Text(verbatim: format.name)
                             .font(.callout.weight(.medium))

@@ -21,5 +21,18 @@ struct TestHotCorners {
         plan = HotCorners.putBack(current: 9, saved: ["br": 2, "tl": 5], ours: 4, side: "br")
         precondition(plan.write == nil && plan.saved == ["tl": 5])
         print("a corner changed by hand keeps the user's action and only the journal entry goes: ok")
+
+        let crashed = HotCorners.choose(11, current: 2, saved: [:], side: "br")
+        let journal = HotCorners.kept([:], crashed.saved), ours = crashed.write
+        precondition(HotCorners.choose(11, current: 11, saved: journal, side: "br").saved == ["br": 2])
+        plan = HotCorners.putBack(current: 11, saved: journal, ours: ours, side: "br")
+        precondition(plan.write == 2 && plan.saved.isEmpty)
+        print("after a crash with our action on the corner the next launch puts the real one back: ok")
+
+        let during = HotCorners.kept(["br": 2, "tl": 5], ["tl": 5])
+        precondition(during == ["br": 2, "tl": 5])
+        plan = HotCorners.putBack(current: 2, saved: during, ours: 11, side: "br")
+        precondition(plan.write == nil && plan.saved == ["tl": 5])
+        print("a crash in the middle of putting back keeps the journal until the write is done: ok")
     }
 }

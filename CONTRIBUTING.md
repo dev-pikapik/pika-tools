@@ -275,7 +275,7 @@ Pictures open in the same app: `Helper/Player/ImageDecoder.swift` reads them wit
 swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/ImageLogic.swift Helper/Player/ImageDecoder.swift scripts/test-images.swift -o build/test-images && build/test-images
 ```
 
-The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg, so build it first with `./scripts/build.sh`:
+The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg, so CI skips it; build FFmpeg first with `./scripts/build.sh`:
 
 ```bash
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Thumbnails.swift Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-thumbnails.swift -o build/test-thumbnails && build/test-thumbnails

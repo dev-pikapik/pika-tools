@@ -33,7 +33,7 @@ final class PointerTool: Tool {
     var speed: Double {
         didSet {
             UserDefaults.standard.set(speed, forKey: Self.speedKey)
-            if isEnabled { apply() }
+            if isEnabled, MainCopy.canAct { apply() }
         }
     }
 
@@ -132,7 +132,7 @@ final class PointerTool: Tool {
             while case let service = IOIteratorNext(iterator), service != 0 { IOObjectRelease(service) }
             guard let refcon else { return }
             let tool = Unmanaged<PointerTool>.fromOpaque(refcon).takeUnretainedValue()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { if tool.isEnabled { tool.apply() } }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { if tool.isEnabled, MainCopy.canAct { tool.apply() } }
         }
         IOServiceAddMatchingNotification(port, kIOFirstMatchNotification, IOServiceMatching(kIOHIDDeviceKey), callback, Unmanaged.passUnretained(self).toOpaque(), &iterator)
         while case let service = IOIteratorNext(iterator), service != 0 { IOObjectRelease(service) }
