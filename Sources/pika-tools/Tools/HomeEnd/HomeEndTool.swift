@@ -109,6 +109,9 @@ final class HomeEndTool: Tool {
         self.tap = tap
         self.source = source
         isActive = true
+        #if !APPSTORE
+        TextFocus.watch()
+        #endif
     }
 
     private func stop() {

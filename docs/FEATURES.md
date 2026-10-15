@@ -617,7 +617,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes Home and End move to the start and end of the line in every app, like on Windows.
 
-**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:97`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :145). App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
+**How it works:** `.defaultTap` `CGEventTap` (`Sources/pika-tools/Tools/HomeEnd/HomeEndTool.swift:97`), needs Accessibility. Website: switches only when a text field has focus (`TextFocus`, :145). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app. App Store: the sandbox cannot see focus, so it switches in every app except browsers (Safari, Chrome, Firefox, Edge, Arc, Brave, Opera, Vivaldi, Zen, Orion, Chromium, DuckDuckGo, Yandex), Finder and Music (`storeExcluded`, :26). Terminals, virtual machines and remote desktop apps are skipped in both (`alwaysExcluded`, :18).
 
 **Options:**
 - Home and End work as usual in these apps — list of apps to leave alone: Add App… / Done, app shelf of open apps, Remove (`HomeEndTool.swift:224`).
@@ -636,7 +636,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fixes text typed in the wrong keyboard layout (“ghbdtn” becomes “привет”).
 
-**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:566`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
+**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:566`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
 
 **Options:**
 - Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:576`). Website only.
@@ -655,6 +655,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
 4. With only one input source (and a second language in System Settings › General › Language & Region) → the note shows Add a Layout; pick a layout → it turns on at once, the note goes away, no password asked. Remove it again in System Settings › Keyboard › Input Sources. With no other language → the note shows Keyboard Settings… instead.
 5. Add TextEdit to Don’t fix text in these apps → no fixing there.
+6. (Website) In an app built on Chromium, for example Slack or VS Code, switch to it, wait a second, type “ghbdtn ” in a text field → it becomes “привет ”.
 
 ### Fix the selected text
 

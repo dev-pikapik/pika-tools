@@ -499,6 +499,7 @@ final class LayoutFixTool: Tool {
         self.source = source
         isActive = true
         DispatchQueue.main.async { KeyboardLayouts.prepare() }
+        TextFocus.watch()
     }
 
     private func stop() {
