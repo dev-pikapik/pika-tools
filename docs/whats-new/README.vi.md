@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Sửa từ gõ sai và nút bên của chuột nay dùng được ở hầu hết mọi ứng dụng
+
+<sub>1.52.0 · 15 tháng 10 năm 2026</sub>
+
+Từ gõ sai ngôn ngữ nay cũng được sửa trong Chrome, Slack và VS Code, còn các nút bên của chuột quay lại và đi tiếp ở hầu hết mọi nơi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Ở phiên bản tải từ trang web, việc sửa từ gõ sai ngôn ngữ nay hoạt động cả trong Chrome, Slack, VS Code, Discord và các ứng dụng khác xây dựng trên Chromium, vừa gõ vừa sửa hoặc bằng phím tắt gõ lại, nên “ghbdtn” ở đó cũng thành “привет”. Tắt tính năng hoặc thoát pikapik, các ứng dụng đó sẽ được trả về như cũ.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Nút chuột 4 và 5 nay quay lại và đi tiếp ở hầu hết mọi ứng dụng, và lại dùng được trong Cài đặt của chính pikapik. pikapik bấm giúp mục Quay lại hoặc Tiếp theo trong menu hay thanh công cụ của ứng dụng, ở bất kỳ ngôn ngữ nào, còn các ứng dụng vốn đã hiểu hai nút này vẫn tự xử lý. Ở phiên bản Mac App Store, điều này áp dụng cho cửa sổ của pikapik và các ứng dụng của Apple.
+
+Khi hai bản pikapik cùng mở, ví dụ bản từ trang web và bản từ App Store, chỉ bản mở sau cùng thay đổi gì đó trên Mac, nên Cài đặt luôn cho thấy đúng điều đang xảy ra. Khi thoát, mọi thứ nó đã đổi đều được trả lại. Cũng mới, chủ yếu ở phiên bản từ trang web: nhấp giữa bằng ba ngón tay trên trackpad, hình minh họa việc Thoát ứng dụng và Đóng cửa sổ làm gì, ⇧⌘. ngay trong dòng Hiện tệp ẩn, tên cho các nhóm ở thanh bên, và trong trình phát có phím giống QuickTime, chỉnh âm lượng bằng con lăn, tốc độ và phát tiếp từ chỗ đã dừng.
+
+**Thử ngay:** Cài đặt › Bàn phím
+
+**Đã sửa**
+
+- Mở bằng hiện pikapik Player ngay sau khi cập nhật, kể cả khi trình phát chưa từng được mở.
+- Âm lượng ứng dụng: khi kéo thanh trượt của một ứng dụng về 100%, âm thanh không còn kết thúc bằng một tiếng tách nhỏ.
+- Trò chơi (bản từ trang web): cú di chuột nhanh không còn trượt sang màn hình khác, và con trỏ không còn nảy ngược lại.
+
+---
+
 ## <a id="v1.51.0"></a>Video mà QuickTime không mở được giờ đã phát được
 
 <sub>1.51.0 · 15 tháng 10 năm 2026</sub>

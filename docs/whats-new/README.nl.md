@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Woorden verbeteren en de zijknoppen van de muis werken nu in bijna elke app
+
+<sub>1.52.0 · 15 oktober 2026</sub>
+
+Woorden die je in de verkeerde taal typte, worden nu ook in Chrome, Slack en VS Code verbeterd, en de zijknoppen van de muis gaan bijna overal terug en vooruit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+In de versie van de website werkt het verbeteren van een woord dat je in de verkeerde taal typte nu ook in Chrome, Slack, VS Code, Discord en andere apps op basis van Chromium, tijdens het typen en met de sneltoets om opnieuw te typen, dus “ghbdtn” wordt daar ook “привет”. Zet de functie uit of stop pikapik, en die apps worden teruggezet zoals ze waren.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Muisknoppen 4 en 5 gaan nu in bijna elke app terug en vooruit, en weer in de instellingen van pikapik zelf. pikapik drukt voor je op het onderdeel Terug of Vooruit in het menu of de werkbalk van de app, in elke taal, en apps die de knoppen al begrijpen, handelen ze zelf af. In de Mac App Store-versie geldt dit voor de vensters van pikapik en de apps van Apple.
+
+Zijn er twee exemplaren van pikapik open, bijvoorbeeld dat van de website en dat uit de App Store, dan verandert alleen het laatst geopende iets op je Mac, zodat de instellingen altijd tonen wat er echt is. Bij het stoppen wordt alles wat het veranderde teruggezet. Ook nieuw, vooral in de versie van de website: een middelklik met drie vingers op de trackpad, plaatjes die laten zien wat Stop app en Sluit venster doen, ⇧⌘. direct in de rij Verborgen bestanden tonen, namen voor de groepen in de navigatiekolom en in de speler de toetsen van QuickTime, volume met het scrollwiel, snelheid en verdergaan waar je was gebleven.
+
+**Probeer het:** Instellingen › Toetsenbord
+
+**Opgelost**
+
+- Open met toont pikapik Player direct na een update, ook als de speler nog nooit is geopend.
+- App-volume: als je de schuifregelaar van een app terugzet op 100%, eindigt het geluid niet meer met een klein klikje.
+- Games (versie van de website): een snelle muisbeweging glijdt niet meer naar een ander scherm en de aanwijzer springt niet meer terug.
+
+---
+
 ## <a id="v1.51.0"></a>Video’s die QuickTime niet opent, spelen nu af
 
 <sub>1.51.0 · 15 oktober 2026</sub>

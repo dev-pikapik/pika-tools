@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Oprava slov a boční tlačítka myši teď fungují téměř v každé aplikaci
+
+<sub>1.52.0 · 15. října 2026</sub>
+
+Slova napsaná ve špatném jazyce se teď opravují i v Chrome, Slacku a VS Code a boční tlačítka myši fungují jako zpět a vpřed téměř všude.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Ve verzi z webu teď oprava slova napsaného ve špatném jazyce funguje i v Chrome, Slacku, VS Code, Discordu a dalších aplikacích postavených na Chromiu, při psaní i přes zkratku pro přepsání, takže se i tam „ghbdtn“ změní na „привет“. Funkci vypněte nebo pikapik ukončete a tyto aplikace se vrátí do původního stavu.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Tlačítka myši 4 a 5 teď fungují jako zpět a vpřed téměř v každé aplikaci a zase i v nastavení samotného pikapiku. pikapik za vás stiskne položku Zpět nebo Vpřed v nabídce či na panelu nástrojů aplikace, v jakémkoli jazyce, a aplikace, které tlačítka už samy chápou, si je obsluhují dál samy. Ve verzi z Mac App Store to platí pro okna pikapiku a aplikace od Applu.
+
+Když jsou otevřené dvě kopie pikapiku, například ta z webu a ta z App Store, mění na vašem Macu cokoli jen ta, kterou jste otevřeli naposledy, takže nastavení vždy ukazuje, co skutečně platí. Při ukončení se vše, co změnila, vrátí zpět. Novinkou je také, hlavně ve verzi z webu: prostřední klik třemi prsty na trackpadu, obrázky, které ukazují, co dělají Ukončit aplikaci a Zavřít okno, ⇧⌘. přímo v řádku Zobrazit skryté soubory, názvy skupin v postranním panelu a v přehrávači klávesy jako v QuickTimu, hlasitost kolečkem, rychlost a pokračování tam, kde jste skončili.
+
+**Vyzkoušejte:** Nastavení › Klávesnice
+
+**Opraveno**
+
+- Otevřít v aplikaci nabízí pikapik Player hned po aktualizaci, i když se přehrávač ještě nikdy neotevřel.
+- Hlasitost aplikací: když vrátíte posuvník aplikace na 100 %, zvuk už nekončí tichým cvaknutím.
+- Hry (verze z webu): rychlý pohyb myši už nesklouzne na jiný displej a ukazatel už neskáče zpět.
+
+---
+
 ## <a id="v1.51.0"></a>Videa, která QuickTime neotevře, se teď přehrají
 
 <sub>1.51.0 · 15. října 2026</sub>

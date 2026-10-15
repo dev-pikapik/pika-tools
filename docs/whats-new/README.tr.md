@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Sözcük düzeltme ve farenin yan düğmeleri artık hemen her uygulamada çalışıyor
+
+<sub>1.52.0 · 15 Ekim 2026</sub>
+
+Yanlış dilde yazdığınız sözcükler artık Chrome, Slack ve VS Code’da da düzeltiliyor, farenin yan düğmeleri de hemen her yerde geri ve ileri gidiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Web sitesi sürümünde, yanlış dilde yazılmış bir sözcüğü düzeltme artık Chrome, Slack, VS Code, Discord ve Chromium tabanlı diğer uygulamalarda da çalışıyor; hem yazarken hem de yeniden yazma kısayoluyla. “ghbdtn” orada da “привет” oluyor. Özelliği kapatın ya da pikapik’ten çıkın, bu uygulamalar eski hâllerine döner.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Fare düğmeleri 4 ve 5 artık hemen her uygulamada geri ve ileri gidiyor, pikapik’in kendi ayarlarında da yeniden çalışıyor. pikapik, uygulamanın menüsündeki ya da araç çubuğundaki Geri veya İleri öğesine sizin yerinize basıyor, hangi dilde olursa olsun; düğmeleri zaten anlayan uygulamalar onları kendileri işlemeye devam ediyor. Mac App Store sürümünde bu, pikapik’in kendi pencereleri ve Apple uygulamaları için geçerli.
+
+pikapik’in iki kopyası açıksa, örneğin web sitesindeki ve App Store’daki, Mac’inizde yalnızca en son açılan bir şeyi değiştirir; böylece Ayarlar her zaman gerçekte olanı gösterir. Çıktığınızda değiştirdiği her şey geri konur. Ayrıca yeni, çoğu web sitesi sürümünde: trackpad’de üç parmakla orta tıklama, Uygulamadan çık ile Pencereyi kapat’ın ne yaptığını gösteren resimler, Gizli dosyaları göster satırının içinde ⇧⌘., kenar çubuğundaki grupların adları ve oynatıcıda QuickTime tuşları, tekerlekle ses, hız ve kaldığınız yerden devam.
+
+**Deneyin:** Ayarlar › Klavye
+
+**Düzeltilenler**
+
+- Birlikte Aç, güncellemeden hemen sonra, oynatıcı hiç açılmamış olsa bile pikapik Player’ı listeliyor.
+- Uygulama Sesi: bir uygulamanın kaydırıcısını %100’e geri aldığınızda ses artık küçük bir tıklamayla bitmiyor.
+- Oyunlar (web sitesi sürümü): hızlı bir fare hareketi artık başka bir ekrana kaymıyor, işaretçi de geri sıçramıyor.
+
+---
+
 ## <a id="v1.51.0"></a>QuickTime’ın açamadığı videolar artık oynatılıyor
 
 <sub>1.51.0 · 15 Ekim 2026</sub>

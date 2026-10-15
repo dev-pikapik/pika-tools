@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Rättning av ord och musens sidoknappar fungerar nu i nästan alla appar
+
+<sub>1.52.0 · 15 oktober 2026</sub>
+
+Ord du skrev på fel språk rättas nu även i Chrome, Slack och VS Code, och musens sidoknappar går bakåt och framåt nästan överallt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+I webbversionen fungerar rättning av ett ord skrivet på fel språk nu även i Chrome, Slack, VS Code, Discord och andra appar byggda på Chromium, medan du skriver och med genvägen för att skriva om, så ”ghbdtn” blir ”привет” där också. Stäng av funktionen eller avsluta pikapik, så sätts de apparna tillbaka som de var.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Musknapparna 4 och 5 går nu bakåt och framåt i nästan alla appar, och igen i pikapiks egna inställningar. pikapik trycker åt dig på Bakåt eller Framåt i appens meny eller verktygsfält, på vilket språk som helst, och appar som redan förstår knapparna sköter dem själva. I Mac App Store-versionen gäller det pikapiks egna fönster och Apples appar.
+
+Är två kopior av pikapik öppna, till exempel den från webben och den från App Store, ändrar bara den som öppnades sist något på din Mac, så inställningarna visar alltid det som verkligen gäller. När du avslutar sätts allt den ändrat tillbaka. Nytt är också, mest i webbversionen: mittenklick med tre fingrar på styrplattan, bilder som visar vad Avsluta app och Stäng fönster gör, ⇧⌘. direkt i raden Visa gömda filer, namn på grupperna i sidofältet och i spelaren QuickTime-tangenter, volym med hjulet, hastighet och att fortsätta där du slutade.
+
+**Prova:** Inställningar › Tangentbord
+
+**Åtgärdat**
+
+- Öppna med visar pikapik Player direkt efter en uppdatering, även om spelaren aldrig har öppnats.
+- Appvolym: när du sätter en apps reglage tillbaka på 100 % slutar ljudet inte längre med ett litet klick.
+- Spel (webbversionen): en snabb musrörelse glider inte längre över till en annan skärm, och pekaren hoppar inte tillbaka.
+
+---
+
 ## <a id="v1.51.0"></a>Videor som QuickTime inte öppnar spelas nu upp
 
 <sub>1.51.0 · 15 oktober 2026</sub>

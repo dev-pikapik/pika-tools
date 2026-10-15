@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>La correzione delle parole e i tasti laterali del mouse ora funzionano in quasi ogni app
+
+<sub>1.52.0 · 15 ottobre 2026</sub>
+
+Le parole scritte nella lingua sbagliata ora vengono corrette anche in Chrome, Slack e VS Code, e i tasti laterali del mouse vanno indietro e avanti quasi ovunque.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Nella versione dal sito, correggere una parola scritta nella lingua sbagliata ora funziona in Chrome, Slack, VS Code, Discord e altre app basate su Chromium, mentre scrivi e con la scorciatoia per riscrivere, così anche lì “ghbdtn” diventa “привет”. Disattiva la funzione o chiudi pikapik e quelle app tornano come prima.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+I pulsanti 4 e 5 del mouse ora vanno indietro e avanti in quasi ogni app, e di nuovo nelle Impostazioni di pikapik stesso. pikapik preme per te la voce Indietro o Avanti nel menu o nella barra degli strumenti dell’app, in qualsiasi lingua, e le app che già capiscono i pulsanti continuano a gestirli da sole. Nella versione Mac App Store questo vale per le finestre di pikapik e le app Apple.
+
+Con due copie di pikapik aperte, per esempio quella del sito e quella dell’App Store, solo l’ultima aperta cambia qualcosa sul tuo Mac, così le Impostazioni mostrano sempre ciò che c’è davvero. Quando esci, tutto ciò che ha cambiato viene rimesso a posto. Altre novità, soprattutto nella versione dal sito: il clic centrale con tre dita sul trackpad, immagini che mostrano cosa fanno Esci dall’app e Chiudi finestra, ⇧⌘. dentro la riga Mostra i file nascosti, nomi per i gruppi della barra laterale e, nel lettore, i tasti di QuickTime, il volume con la rotella, la velocità e la ripresa da dove ti eri fermato.
+
+**Provalo:** Impostazioni › Tastiera
+
+**Corretto**
+
+- Apri con elenca pikapik Player subito dopo un aggiornamento, anche se il lettore non è mai stato aperto.
+- Volume delle app: quando riporti il cursore di un’app al 100%, il suono non finisce più con un piccolo clic.
+- Giochi (versione dal sito): un movimento rapido del mouse non scivola più su un altro schermo, e il puntatore non torna più indietro di scatto.
+
+---
+
 ## <a id="v1.51.0"></a>I video che QuickTime non apre ora si riproducono
 
 <sub>1.51.0 · 15 ottobre 2026</sub>

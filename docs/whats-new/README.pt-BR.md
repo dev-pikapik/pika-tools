@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>A correção de palavras e os botões laterais do mouse agora funcionam em quase todo app
+
+<sub>1.52.0 · 15 de outubro de 2026</sub>
+
+Palavras digitadas no idioma errado agora também são corrigidas no Chrome, Slack e VS Code, e os botões laterais do mouse voltam e avançam quase em todo lugar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Na versão do site, corrigir uma palavra digitada no idioma errado agora funciona no Chrome, Slack, VS Code, Discord e outros apps feitos com Chromium, tanto enquanto você digita quanto com o atalho de reescrita; assim, “ghbdtn” vira “привет” lá também. Desligue o recurso ou saia do pikapik e esses apps voltam ao que eram.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Os botões 4 e 5 do mouse agora voltam e avançam em quase todo app, e de novo nos Ajustes do próprio pikapik. O pikapik aperta por você o item Voltar ou Avançar do menu ou da barra de ferramentas do app, em qualquer idioma, e os apps que já entendem os botões continuam cuidando deles. Na versão da Mac App Store, isso vale para as janelas do pikapik e os apps da Apple.
+
+Com duas cópias do pikapik abertas, por exemplo a do site e a da App Store, só a aberta por último muda algo no seu Mac, então os Ajustes sempre mostram o que realmente está valendo. Ao sair, tudo o que ela mudou é devolvido. Também novo, em boa parte só na versão do site: clique do meio com três dedos no trackpad, imagens que mostram o que Encerrar app e Fechar janela fazem, ⇧⌘. direto na linha Mostrar arquivos ocultos, nomes para os grupos da barra lateral e, no player, teclas do QuickTime, volume pela rodinha, velocidade e retomada de onde parou.
+
+**Experimente:** Ajustes › Teclado
+
+**Corrigido**
+
+- Abrir Com lista o pikapik Player logo após uma atualização, mesmo antes de o player ser aberto uma vez.
+- Volume dos apps: ao voltar o controle de um app para 100%, o som não termina mais com um cliquinho.
+- Jogos (versão do site): um movimento rápido do mouse não escapa mais para outra tela, e o ponteiro não pula de volta.
+
+---
+
 ## <a id="v1.51.0"></a>Os vídeos que o QuickTime não abre agora tocam
 
 <sub>1.51.0 · 15 de outubro de 2026</sub>

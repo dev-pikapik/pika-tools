@@ -5,6 +5,32 @@
 
 ---
 
+## <a id="v1.52.0"></a>Retyping and side buttons now work in nearly every app
+
+<sub>1.52.0 · October 15, 2026</sub>
+
+Words typed in the wrong language are now fixed in Chrome, Slack and VS Code too, and the mouse side buttons go back and forward almost everywhere.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+In the website version, fixing a word typed in the wrong language now works in Chrome, Slack, VS Code, Discord and other apps built on Chromium, as you type and with the retype shortcut, so “ghbdtn” becomes “привет” there too. Turn the feature off or quit pikapik, and those apps are put back the way they were.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
+
+Mouse buttons 4 and 5 now go back and forward in nearly every app, and again in pikapik’s own Settings. pikapik presses the Back or Forward item in the app’s menu or toolbar for you, in any language, and apps that already understand the buttons keep handling them themselves. In the Mac App Store version this covers pikapik’s own windows and Apple apps.
+
+With two copies of pikapik open, say the website one and the App Store one, only the one opened last changes anything on your Mac, so Settings always shows what is really there. When you quit, everything it changed is put back. Also new, mostly in the website version: a three-finger middle click on the trackpad, pictures that show what Quit app and Close window do, ⇧⌘. right in the Show hidden files row, names for the groups in the sidebar, and in the player the QuickTime keys, volume with the scroll wheel, speed and resume where you stopped.
+
+**Try it:** Settings › Keyboard
+
+**Fixed**
+
+- Open With lists pikapik Player right after an update, even if the player was never opened.
+- App Volume: when you put an app’s slider back to 100%, the sound no longer ends with a tiny click.
+- Games (website version): a fast flick of the mouse no longer slips onto another display, and the pointer no longer jumps back.
+
+---
+
 ## <a id="v1.51.0"></a>Videos that QuickTime can’t open now play
 
 <sub>1.51.0 · October 15, 2026</sub>
