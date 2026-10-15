@@ -25,6 +25,7 @@ Buka arsip, bersihkan desktop, pakai Home dan End, dan lainnya, kini juga di ver
 
 **Di kedua versi**
 
+- **Atur volume sebelum app dibuka.** App yang sudah Anda atur tetap ada di Pengaturan › Suara dengan penggesernya, bahkan saat tertutup, dan levelnya kembali saat app memutar suara lagi, juga setelah mulai ulang. Klik “Tambah App…” atau seret app dari Finder untuk mengaturnya lebih dulu, dan ✕ melupakannya serta mengembalikannya ke volume penuh.
 - **Lihat apa yang ditambahkan pembaruan.** Setelah pembaruan, titik biru kecil menandai setiap tab Pengaturan yang punya hal baru, dan label “Baru” menandai bagiannya. Keduanya hilang setelah Anda melihatnya, dan hilang sendiri setelah 21 hari.
 - **Peluncuran pertama yang tenang.** Versi dari situs web tidak lagi meminta izin saat pertama kali dibuka. Ia hanya bertanya saat Anda menyalakan alat yang membutuhkannya.
 - **Salinan video yang lebih kecil.** “Buat Salinan Lebih Kecil” kini membuat video sekitar separuh ukurannya. Sebelumnya, sebagian besar video mendapat “Sudah ringkas”.

@@ -25,6 +25,7 @@ Archive öffnen, den Schreibtisch aufräumen, Home und End nutzen und mehr: jetz
 
 **In beiden Versionen**
 
+- **Lautstärke einstellen, bevor die App startet.** Eine App, die du eingestellt hast, bleibt mit ihrem Regler in Einstellungen › Ton, auch wenn sie geschlossen ist, und bekommt ihre Lautstärke zurück, sobald sie wieder Ton abspielt, auch nach einem Neustart. Mit „App hinzufügen …“ oder per Ziehen aus dem Finder stellst du eine App im Voraus ein, und das ✕ entfernt sie wieder und stellt volle Lautstärke her.
 - **Sieh, was ein Update gebracht hat.** Nach einem Update markiert ein kleiner blauer Punkt jeden Tab in den Einstellungen, der etwas Neues hat, und ein „Neu“-Schild den Abschnitt. Beides verschwindet, sobald du hingeschaut hast, und von selbst nach 21 Tagen.
 - **Ein ruhiger erster Start.** Die Version von der Website fragt beim ersten Öffnen nicht mehr nach Berechtigungen. Sie fragt nur, wenn du ein Werkzeug einschaltest, das eine braucht.
 - **Kleinere Kopien von Videos.** „Kleinere Kopie erstellen“ macht ein Video jetzt etwa halb so groß. Vorher hieß es bei den meisten Videos „Bereits kompakt“.

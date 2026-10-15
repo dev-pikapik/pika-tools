@@ -25,6 +25,7 @@ Deschide arhive, curăță desktopul, folosește Home și End și multe altele, 
 
 **În ambele versiuni**
 
+- **Setează volumul înainte să pornească aplicația.** O aplicație pe care ai setat-o rămâne în Setări › Sunet cu cursorul ei, chiar și când este închisă, și primește înapoi nivelul când redă din nou sunet, inclusiv după o repornire. Apasă „Adaugă aplicație…” sau trage o aplicație din Finder ca s-o setezi din timp, iar ✕ o uită și îi readuce volumul maxim.
 - **Vezi ce a adus o actualizare.** După o actualizare, un punct albastru mic marchează fiecare filă din Setări cu ceva nou, iar o etichetă „Nou” marchează secțiunea. Dispar când te-ai uitat și, de la sine, după 21 de zile.
 - **O primă pornire liniștită.** Versiunea de pe site nu mai cere permisiuni la prima deschidere. Întreabă doar când pornești un instrument care are nevoie de una.
 - **Copii mai mici ale videoclipurilor.** „Creează o copie mai mică” face acum un videoclip cam pe jumătate de mărime. Înainte, majoritatea videoclipurilor primeau „Deja compact”.

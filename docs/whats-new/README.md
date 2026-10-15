@@ -25,6 +25,7 @@ Open archives, clear your desktop, use Home and End and more, now in the Mac App
 
 **In both versions**
 
+- **Set a volume before the app starts.** An app you set stays in Settings › Sound with its slider, even while it is closed, and gets its level back when it plays sound again, also after a restart. Click Add App… or drag an app in from Finder to set it in advance, and the ✕ forgets an app and puts it back to full volume.
 - **See what an update added.** After an update, a small blue dot marks each Settings tab with something new, and a “New” tag marks the section. They go away once you’ve looked, and by themselves after 21 days.
 - **A calm first launch.** The version from the website no longer asks for permissions the first time you open it. It asks only when you turn on a tool that needs one.
 - **Smaller copies of videos.** Make a Smaller Copy now makes a video about half the size. Before, most videos were called “Already compact”.

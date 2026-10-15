@@ -25,6 +25,7 @@
 
 **I båda versionerna**
 
+- **Ställ in volymen innan appen startar.** En app du har ställt in stannar kvar i Inställningar › Ljud med sitt reglage, även när den är stängd, och får tillbaka sin nivå när den spelar ljud igen, också efter en omstart. Klicka på ”Lägg till app…” eller dra in en app från Finder för att ställa in den i förväg, och ✕ glömmer den och ger den full volym igen.
 - **Se vad en uppdatering lade till.** Efter en uppdatering markerar en liten blå prick varje flik i Inställningar med något nytt, och en etikett ”Ny” markerar avsnittet. De försvinner när du har tittat och av sig själva efter 21 dagar.
 - **En lugn första start.** Versionen från webbplatsen ber inte längre om behörigheter första gången du öppnar den. Den frågar bara när du slår på ett verktyg som behöver en.
 - **Mindre kopior av videor.** ”Skapa mindre kopia” gör nu en video ungefär hälften så stor. Tidigare fick de flesta videor beskedet ”Redan kompakt”.

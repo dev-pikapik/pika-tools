@@ -25,6 +25,7 @@ Otevírejte archivy, uklidte si plochu, používejte Home a End a další věci,
 
 **V obou verzích**
 
+- **Nastav hlasitost dřív, než aplikace začne hrát.** Aplikace s nastavenou hlasitostí zůstane v Nastavení › Zvuk se svým posuvníkem, i když je zavřená, a dostane svou úroveň zpět, jakmile zase přehrává zvuk, i po restartu. Klikni na „Přidat aplikaci…“ nebo přetáhni aplikaci z Finderu a nastav ji předem, a ✕ ji zapomene a vrátí jí plnou hlasitost.
 - **Uvidíš, co aktualizace přidala.** Po aktualizaci malá modrá tečka označí každou kartu v Nastavení, kde je něco nového, a štítek „Nové“ označí sekci. Zmizí, jakmile se podíváš, a samy po 21 dnech.
 - **Klidné první spuštění.** Verze z webu se už při prvním otevření neptá na oprávnění. Zeptá se, až když zapneš nástroj, který je potřebuje.
 - **Menší kopie videí.** „Vytvořit menší kopii“ teď udělá z videa soubor zhruba poloviční velikosti. Dřív většina videí dostala odpověď „Už je malý“.

@@ -25,6 +25,7 @@ Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, d
 
 **Dans les deux versions**
 
+- **Réglez le volume avant que l’app démarre.** Une app que vous avez réglée reste dans Réglages › Son avec son curseur, même fermée, et retrouve son niveau dès qu’elle rejoue du son, y compris après un redémarrage. Cliquez sur « Ajouter une app… » ou glissez une app depuis le Finder pour la régler à l’avance, et le ✕ l’oublie et lui rend le volume maximal.
 - **Voyez ce qu’une mise à jour a ajouté.** Après une mise à jour, un petit point bleu repère chaque onglet des Réglages qui contient du nouveau, et une étiquette « Nouveau » repère la section. Ils disparaissent dès que vous avez regardé, et d’eux-mêmes au bout de 21 jours.
 - **Un premier lancement tout en douceur.** La version du site ne demande plus d’autorisations à la première ouverture. Elle ne demande que lorsque vous activez un outil qui en a besoin.
 - **Des copies de vidéos plus légères.** « Créer une copie allégée » réduit désormais une vidéo à environ la moitié. Avant, la plupart des vidéos recevaient « Déjà compact ».

@@ -25,6 +25,7 @@ Open archieven, ruim je bureaublad op, gebruik Home en End en meer, nu ook in de
 
 **In beide versies**
 
+- **Stel het volume in voordat de app start.** Een app die je hebt ingesteld, blijft met zijn schuifregelaar in Instellingen › Geluid staan, ook als hij gesloten is, en krijgt zijn niveau terug zodra hij weer geluid maakt, ook na een herstart. Klik op “Voeg app toe…” of sleep een app uit de Finder om hem van tevoren in te stellen, en met het ✕ vergeet je hem en staat hij weer op vol volume.
 - **Zie wat een update heeft toegevoegd.** Na een update markeert een klein blauw puntje elk tabblad in Instellingen met iets nieuws, en een label “Nieuw” markeert het onderdeel. Ze verdwijnen zodra je gekeken hebt en vanzelf na 21 dagen.
 - **Een rustige eerste start.** De versie van de website vraagt bij het eerste openen niet meer om toestemmingen. Hij vraagt alleen iets als je een onderdeel aanzet dat het nodig heeft.
 - **Kleinere kopieën van video’s.** ‘Maak kleinere kopie’ maakt een video nu ongeveer half zo groot. Eerder kregen de meeste video’s ‘Al compact’ te zien.

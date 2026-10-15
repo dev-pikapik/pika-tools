@@ -25,6 +25,7 @@ Arşivleri açın, masaüstünüzü temizleyin, Home ve End tuşlarını kullan�
 
 **Her iki sürümde**
 
+- **Uygulama açılmadan sesini ayarlayın.** Ayarladığınız bir uygulama, kapalıyken bile kaydırıcısıyla Ayarlar › Ses’te kalır ve yeniden ses çaldığında, yeniden başlatmadan sonra da seviyesine kavuşur. “Uygulama Ekle…”ye tıklayın ya da Finder’dan bir uygulama sürükleyip önceden ayarlayın; ✕ uygulamayı unutur ve sesini tam seviyeye döndürür.
 - **Bir güncellemenin ne eklediğini görün.** Güncellemeden sonra küçük mavi bir nokta, yeni bir şey içeren her Ayarlar sekmesini, “Yeni” etiketi de bölümü işaretler. Siz baktığınızda, ya da 21 gün sonra kendiliğinden kaybolurlar.
 - **Sakin bir ilk açılış.** Web sitesindeki sürüm, ilk açıldığında artık izin istemez. Yalnızca izin gerektiren bir aracı açtığınızda sorar.
 - **Videolardan daha küçük kopyalar.** “Küçük Kopya Oluştur” artık bir videoyu yaklaşık yarı boyuta indiriyor. Önceden çoğu video “Zaten küçük” yanıtını alıyordu.

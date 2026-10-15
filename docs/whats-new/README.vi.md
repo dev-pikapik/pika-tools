@@ -25,6 +25,7 @@ Mở tệp lưu trữ, dọn màn hình nền, dùng Home và End và nhiều h�
 
 **Có trong cả hai bản**
 
+- **Chỉnh âm lượng trước khi ứng dụng chạy.** Ứng dụng bạn đã chỉnh vẫn nằm trong Cài đặt › Âm thanh với thanh trượt của nó, kể cả khi đang đóng, và lấy lại mức âm lượng khi nó phát tiếng trở lại, cả sau khi khởi động lại. Nhấp “Thêm ứng dụng…” hoặc kéo một ứng dụng từ Finder vào để chỉnh trước, còn ✕ sẽ quên ứng dụng đó và trả về âm lượng đầy đủ.
 - **Xem bản cập nhật đã thêm gì.** Sau khi cập nhật, một chấm xanh nhỏ đánh dấu mỗi thẻ trong Cài đặt có điều mới, và nhãn “Mới” đánh dấu phần đó. Chúng biến mất khi bạn đã xem, và tự tắt sau 21 ngày.
 - **Lần mở đầu tiên êm ái.** Bản tải từ trang web không còn xin quyền ngay lần mở đầu tiên. Nó chỉ hỏi khi bạn bật một công cụ cần quyền.
 - **Bản sao video nhỏ hơn.** “Tạo bản sao nhỏ hơn” giờ làm video nhỏ đi còn khoảng một nửa. Trước đây, hầu hết video đều nhận “Đã gọn sẵn”.

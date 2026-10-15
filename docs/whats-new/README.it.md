@@ -25,6 +25,7 @@ Apri gli archivi, libera la scrivania, usa Home ed End e molto altro, ora anche 
 
 **In entrambe le versioni**
 
+- **Imposta il volume prima che l’app parta.** Un’app che hai impostato resta in Impostazioni › Suono con il suo cursore, anche da chiusa, e riprende il suo livello quando torna a riprodurre audio, anche dopo un riavvio. Fai clic su «Aggiungi app…» o trascina un’app dal Finder per impostarla in anticipo, e la ✕ la dimentica e le restituisce il volume pieno.
 - **Scopri cosa ha aggiunto un aggiornamento.** Dopo un aggiornamento, un puntino blu segna ogni scheda delle Impostazioni con qualcosa di nuovo e un’etichetta «Nuovo» segna la sezione. Spariscono quando hai guardato e da sole dopo 21 giorni.
 - **Un primo avvio tranquillo.** La versione dal sito non chiede più autorizzazioni alla prima apertura. Le chiede solo quando attivi uno strumento che ne ha bisogno.
 - **Copie più leggere dei video.** «Crea copia più leggera» ora riduce un video a circa la metà. Prima quasi tutti i video ricevevano «Già compatto».

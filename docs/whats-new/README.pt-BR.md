@@ -25,6 +25,7 @@ Abra arquivos compactados, limpe a mesa, use Home e End e muito mais, agora tamb
 
 **Nas duas versões**
 
+- **Ajuste o volume antes de o app abrir.** Um app que você ajustou fica em Ajustes › Som com o seu controle, mesmo fechado, e recebe o nível de volta quando toca som de novo, também depois de reiniciar. Clique em “Adicionar app…” ou arraste um app do Finder para ajustá-lo antes, e o ✕ o esquece e devolve o volume total.
 - **Veja o que uma atualização trouxe.** Depois de uma atualização, um pontinho azul marca cada aba dos Ajustes que tem novidade, e uma etiqueta “Novo” marca a seção. Eles somem quando você olha e, sozinhos, depois de 21 dias.
 - **Uma primeira abertura tranquila.** A versão do site não pede mais permissões na primeira vez que você a abre. Ela só pergunta quando você ativa uma ferramenta que precisa de uma.
 - **Cópias menores de vídeos.** “Criar cópia menor” agora deixa um vídeo com cerca de metade do tamanho. Antes, a maioria dos vídeos recebia “Já está compacto”.

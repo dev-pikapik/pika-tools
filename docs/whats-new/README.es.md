@@ -25,6 +25,7 @@ Abre archivos comprimidos, despeja tu escritorio, usa Home y End y mucho más, a
 
 **En las dos versiones**
 
+- **Ajusta el volumen antes de que arranque la app.** Una app que has ajustado se queda en Ajustes › Sonido con su control deslizante, incluso cerrada, y recupera su nivel cuando vuelve a reproducir sonido, también tras reiniciar. Pulsa «Añadir app…» o arrastra una app desde el Finder para ajustarla de antemano, y la ✕ la olvida y le devuelve el volumen completo.
 - **Mira qué ha añadido una actualización.** Tras una actualización, un puntito azul marca cada pestaña de Ajustes que trae algo nuevo, y una etiqueta «Nuevo» marca la sección. Desaparecen cuando ya lo has visto, y solos a los 21 días.
 - **Un primer arranque tranquilo.** La versión de la web ya no pide permisos la primera vez que la abres. Solo los pide cuando activas una herramienta que los necesita.
 - **Copias de vídeos más ligeras.** «Crear copia más ligera» ahora deja un vídeo en más o menos la mitad. Antes, a la mayoría de los vídeos les decía «Ya es compacto».

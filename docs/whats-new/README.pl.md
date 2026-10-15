@@ -25,6 +25,7 @@ Otwieraj archiwa, porządkuj biurko, używaj Home i End i nie tylko, teraz takż
 
 **W obu wersjach**
 
+- **Ustaw głośność, zanim aplikacja się włączy.** Aplikacja z ustawioną głośnością zostaje w Ustawienia › Dźwięk ze swoim suwakiem, nawet gdy jest zamknięta, i odzyskuje swój poziom, gdy znów odtwarza dźwięk, także po ponownym uruchomieniu. Kliknij „Dodaj aplikację…” albo przeciągnij aplikację z Findera, żeby ustawić ją z wyprzedzeniem, a ✕ usuwa ją z listy i przywraca pełną głośność.
 - **Zobacz, co dodała aktualizacja.** Po aktualizacji mała niebieska kropka oznacza każdą kartę Ustawień z nowością, a etykieta „Nowe” oznacza sekcję. Znikają, gdy już zerkniesz, a same po 21 dniach.
 - **Spokojne pierwsze uruchomienie.** Wersja ze strony nie prosi już o uprawnienia przy pierwszym otwarciu. Pyta tylko wtedy, gdy włączasz narzędzie, które ich potrzebuje.
 - **Mniejsze kopie filmów.** „Utwórz mniejszą kopię” robi teraz z filmu plik mniej więcej o połowę mniejszy. Wcześniej większość filmów dostawała odpowiedź „Już jest mały”.
