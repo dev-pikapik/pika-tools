@@ -266,6 +266,13 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <br>Napsali jste ghbdtn místo привет? Stiskněte mezerník a slovo se opraví.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Prostřední kliknutí na trackpadu</b>
+<br>Klepněte třemi prsty a odkaz se otevře na nové kartě, jako prostředním tlačítkem myši.
+</td>
+</tr></tbody>
 </table>
 
 ## Podrobnosti
@@ -316,6 +323,8 @@ Některé aplikace a hry počítají posouvání v přesných pixelech: pro ně 
 **Boční tlačítka pro zpět a vpřed.** Tlačítka myši 4 a 5 fungují jako zpět a vpřed ve Finderu, v Safari a dalších aplikacích Apple i v mnoha dalších aplikacích, stejně jako přejetí po trackpadu. Aplikace, které tato tlačítka zpracovávají samy, je dostanou beze změny. Pokud je má vaše myš obráceně, zapněte **Prohodit boční tlačítka**. Ve výchozím stavu vypnuto.
 
 **Tlačítko myši skryje aktuální aplikaci.** Zapněte **Tlačítko myši skryje aktuální aplikaci** v Nastavení › Myš a stiskněte tlačítko, které chcete používat, třeba prostřední nebo boční. Potom jedno stisknutí skryje aplikaci v popředí, úplně stejně jako ⌘H: aplikace dál běží a kliknutím na její ikonu v Docku ji vrátíte zpět. Když hrajete a je zapnutý Herní režim, tlačítko ve hře funguje jako obvykle. Ve výchozím stavu vypnuto.
+
+**Prostřední kliknutí na trackpadu.** Klepněte nebo klikněte třemi prsty a trackpad zafunguje jako prostřední tlačítko myši: ve většině prohlížečů tím otevřete odkaz na nové kartě nebo zavřete kartu. Místo tří prstů si můžete zvolit čtyři. Aby klepnutí fungovalo, musí být v Nastavení systému › Trackpad zapnuté **Kliknutí klepnutím**. Pokud je tam u položky „Hledání a datové detektory“ zvolené klepnutí třemi prsty, tři prsty mohou jen klikat, a pokud je zapnuté „Tažení třemi prsty“, zvolte čtyři prsty. Řádek **Prsty** v Nastavení ukazuje, co na vašem Macu funguje. Myš zůstane, jak je. Potřebuje oprávnění **Zpřístupnění** i **Sledování vstupu** a ve verzi z Mac App Store není. Ve výchozím stavu vypnuto.
 
 **Ukončení po zavření posledního okna.** Zavřete poslední okno aplikace a aplikace se ukončí. Finder zůstane otevřený, stejně jako aplikace s okny na jiných plochách nebo v Docku. Můžete si sestavit seznam aplikací, které se tímto způsobem nikdy ukončit nemají. Ve výchozím stavu vypnuto.
 
@@ -418,7 +427,7 @@ Nastavení otevřete z nabídky položkou **Nastavení…** nebo zkratkou ⌘, p
 - **Porty**: který program zabral který port, jeho adresy a podrobnosti a tlačítko, které port uvolní.
 - **Zvuk**: hlasitost aplikací, posuvník a tlačítko ztlumení pro každou aplikaci, která přehrává zvuk.
 - **Klávesnice**: přepínání jazyka, opakování kláves, Home a End, oprava špatného rozložení.
-- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka, tlačítko pro skrytí aktuální aplikace.
+- **Myš**: zrychlení ukazatele a rychlost ukazatele, posouvání po řádcích, směr posouvání, boční tlačítka, tlačítko pro skrytí aktuální aplikace, prostřední kliknutí na trackpadu.
 - **Okna**: zvětšení okna zeleným tlačítkem (se seznamem výjimek), ochrana ⌘Q a ⌘W a ukončení po posledním okně (se seznamem výjimek).
 - **Dock**: minimalizace nebo skrytí kliknutím v Docku a držení Docku na jednom displeji.
 - **Finder**: nový soubor, menší kopie, převod a archivy, otevírání klávesou Enter, vyjmutí pomocí ⌘X, mazání klávesou ⌫, skrytí ikon na ploše a zobrazení skrytých souborů.

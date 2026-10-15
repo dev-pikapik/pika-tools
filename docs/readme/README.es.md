@@ -266,6 +266,13 @@ Tanto el comando anterior como Homebrew colocan la app en `/Applications`, la ab
 <br>¿Escribiste ghbdtn en vez de привет? Pulsa Espacio y se corrige.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Clic central en el trackpad</b>
+<br>Toca con tres dedos para abrir un enlace en una pestaña nueva, como con el botón central del ratón.
+</td>
+</tr></tbody>
 </table>
 
 ## Más detalles
@@ -316,6 +323,8 @@ Algunas apps y juegos cuentan el desplazamiento en píxeles exactos: para ellos,
 **Botones laterales para atrás y adelante.** Los botones 4 y 5 del ratón van atrás y adelante en el Finder, Safari y otras apps de Apple y en muchas otras apps, igual que deslizar el dedo en el trackpad. Las apps que gestionan estos botones por su cuenta los reciben tal cual. Si tu ratón los tiene al revés, activa **Intercambiar los botones laterales**. Desactivado por omisión.
 
 **Un botón del ratón oculta la app actual.** Activa **Ocultar la app actual con un botón del ratón** en Ajustes › Ratón y pulsa el botón que quieras usar, por ejemplo el botón central o uno lateral. A partir de ahí, una pulsación oculta la app en primer plano, igual que ⌘H: la app sigue en marcha, y un clic en su icono del Dock la trae de vuelta. Mientras juegas con el Modo de juego activado, el botón funciona en el juego como siempre. Desactivado por omisión.
+
+**Clic central en el trackpad.** Toca o haz clic con tres dedos y el trackpad funciona como el botón central del ratón: en la mayoría de los navegadores, así se abre un enlace en una pestaña nueva o se cierra una pestaña. También puedes elegir cuatro dedos. Para tocar hay que activar **Tocar para hacer clic** en Ajustes del Sistema › Trackpad. Si ahí «Detectores de datos y Consultar» está en tocar con tres dedos, con tres dedos solo se puede hacer clic, y si «Arrastrar con 3 dedos» está activado, elige cuatro dedos. La fila **Dedos** de Ajustes te dice qué funciona en tu Mac. El ratón se queda como está. Necesita los permisos **Accesibilidad** y **Monitorización de entrada**, y no está en la versión de la Mac App Store. Desactivado por omisión.
 
 **Salir al cerrar la última ventana.** Cierra la última ventana de una app y la app se cierra. El Finder sigue abierto, igual que las apps con ventanas en otros escritorios o en el Dock. Puedes hacer una lista de apps que nunca deben cerrarse así. Desactivado por omisión.
 
@@ -418,7 +427,7 @@ Abre los ajustes desde el menú con **Ajustes…** o ⌘, o vuelve a abrir pikap
 - **Puertos**: qué programa ocupa cada puerto, sus direcciones y detalles, y un botón para liberar el puerto.
 - **Sonido**: volumen de las apps, con un control deslizante y un botón de silencio para cada app que reproduce sonido.
 - **Teclado**: cambio de idioma, repetición de teclas, Home y End, corrección de la distribución equivocada.
-- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales, un botón que oculta la app actual.
+- **Ratón**: aceleración del puntero y velocidad del cursor, desplazamiento por líneas, dirección de desplazamiento, botones laterales, un botón que oculta la app actual, clic central en el trackpad.
 - **Ventanas**: ampliar con el botón verde (con una lista de excepciones), protección de ⌘Q y ⌘W, y salir al cerrar la última ventana (con una lista de excepciones).
 - **Dock**: minimizar u ocultar con un clic en el Dock y mantener el Dock en una sola pantalla.
 - **Finder**: archivo nuevo, copia más ligera, conversión y archivos comprimidos, abrir con Intro, cortar con ⌘X, borrar con ⌫, ocultar iconos del escritorio y mostrar archivos ocultos.

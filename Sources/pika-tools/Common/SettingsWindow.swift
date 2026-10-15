@@ -134,6 +134,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
             String(localized: "Columns in Finder"), String(localized: "Finder animations"),
             String(localized: "Dim the picture instead"),
+            String(localized: "Middle click on the trackpad"), String(localized: "Fingers"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
             + (ToolRegistry.shared.tools.contains { $0 is ArchiveTool } ? [] : [String(localized: "Archives in Finder")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
@@ -198,6 +199,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .mouse, title: String(localized: "Side buttons go back and forward"), synonyms: "buttons 4 and 5, browser, navigation, thumb buttons"),
             SettingsItem(tab: .mouse, title: String(localized: "Swap the side buttons"), synonyms: "reverse, back, forward"),
             SettingsItem(tab: .mouse, title: String(localized: "Mouse button hides the current app"), synonyms: "hide, ⌘H, cmd H, middle button, button 4, button 5, mouse button"),
+            SettingsItem(tab: .mouse, title: String(localized: "Middle click on the trackpad"), synonyms: "middle button, wheel click, three fingers, four fingers, tap, open link in new tab, close tab"),
+            SettingsItem(tab: .mouse, title: String(localized: "Fingers"), synonyms: "middle click, three, four, tap, click, trackpad"),
             SettingsItem(tab: .windows, title: String(localized: "Green button enlarges the window"), synonyms: "zoom, maximize, full screen, green button, option click"),
             SettingsItem(tab: .windows, title: String(localized: "Green button works as usual in these apps"), synonyms: "exceptions, exclude, list"),
             SettingsItem(tab: .windows, title: String(localized: "Protect quitting and closing"), synonyms: "quit, close, command, accidental, shortcut"),

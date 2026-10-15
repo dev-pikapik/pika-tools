@@ -94,7 +94,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NewMarks.shared.begin(version: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "", fresh: firstLaunch)
         defaults.set(true, forKey: "launchedBefore")
         ["double-space", "double-space-interval", "dock-display-anchor", "dock-display-return"].forEach(defaults.removeObject)
-        for id in ["app-volume", "archive", "brightness", "convert", "desktop-icons", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "hidden-files", "hide-app", "home-end", "layout-fix", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
+        for id in ["app-volume", "archive", "brightness", "convert", "desktop-icons", "dock-display", "fans", "finder-cut", "finder-delete", "finder-open", "game-mode", "hidden-files", "hide-app", "home-end", "layout-fix", "middle-click", "speed-test", "temperatures", "window-zoom"] where !defaults.bool(forKey: "quick-hidden-\(id)") {
             if let hidden = defaults.string(forKey: "quick-hidden"), id != "convert" || hidden.split(separator: ",").contains("compress") {
                 defaults.set(hidden + ",\(id)", forKey: "quick-hidden")
             }
@@ -125,6 +125,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         KeepAwake.shared.restoreLidSleepIfNeeded()
         #if !APPSTORE
         FanControl.shared.start()
+        if FileManager.default.fileExists(atPath: PlayerPage.helper.path) { LSRegisterURL(PlayerPage.helper as CFURL, false) }
         signals = [SIGTERM, SIGINT, SIGHUP].map { number in
             signal(number, SIG_IGN)
             let source = DispatchSource.makeSignalSource(signal: number, queue: .main)

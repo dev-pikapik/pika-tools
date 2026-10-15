@@ -276,6 +276,38 @@ enum TestGameMode {
         }
         print("cursor fence: ok")
 
+        func reaches(_ x: CGFloat, _ y: CGFloat, _ frame: CGRect, _ corners: Set<Int> = []) -> Bool {
+            GameRules.fenceRects(frame, corners: corners).contains { $0.contains(CGPoint(x: x + 0.5, y: y + 0.5)) }
+        }
+        precondition(reaches(700, 400, screen))
+        precondition(reaches(1, 1, screen))
+        precondition(reaches(700, 898, screen))
+        precondition(reaches(1438, 1, screen))
+        precondition(!reaches(0, 400, screen))
+        precondition(!reaches(700, 899, screen))
+        precondition(!reaches(1439, 0, screen))
+        precondition(!reaches(2000, 100, screen))
+        precondition(reaches(1441, -199, second))
+        precondition(!reaches(1440, -200, second))
+        precondition(!reaches(1000, 500, second))
+        precondition(reaches(1439, 899, screen, [3]))
+        precondition(!reaches(1439, 899, screen, [0, 1, 2]))
+        precondition(reaches(0, 0, screen, [0]))
+        precondition(reaches(1439, 896, screen, [3]))
+        precondition(!reaches(1439, 895, screen, [3]))
+        precondition(!reaches(1439, 700, screen, [3]))
+        for frame in [screen, second] {
+            let pixels = (0..<4).map { CGPoint(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 1, y: $0 < 2 ? frame.minY : frame.maxY - 1) }
+            for corner in 0..<4 {
+                precondition(GameRules.fenceRects(frame, corners: [corner]).allSatisfy { frame.contains($0) })
+                precondition(!reaches(pixels[corner].x, pixels[corner].y, frame))
+                for other in 0..<4 {
+                    precondition(reaches(pixels[other].x, pixels[other].y, frame, [corner]) == (other == corner))
+                }
+            }
+        }
+        print("cursor lock: ok")
+
         let calmed: [String: Any] = ["wvous-tl-corner": 2, "wvous-br-corner": 14, "autohide-delay": ""]
         var now: [String: Any] = ["wvous-tl-corner": 0, "wvous-br-corner": 4, "autohide-delay": 1000.0]
         precondition(Set(DockEdges.restorable(calmed) { now[$0] }.keys) == ["wvous-tl-corner", "autohide-delay"])

@@ -266,6 +266,13 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <br>Skrev du ghbdtn i stället för привет? Tryck på mellanslag så blir det rätt.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Mittklick på styrplattan</b>
+<br>Tryck med tre fingrar för att öppna en länk i en ny flik, som med mittknappen på en mus.
+</td>
+</tr></tbody>
 </table>
 
 ## Mer information
@@ -316,6 +323,8 @@ Vissa appar och spel räknar rullning i exakta pixlar: för dem byter du samma i
 **Sidoknapparna går bakåt och framåt.** Musknapp 4 och 5 går bakåt och framåt i Finder, Safari och andra Apple-appar och i många andra appar, som en svepning på styrplattan. Appar som själva hanterar de här knapparna får dem som de är. Sitter de åt andra hållet på din mus slår du på **Byt plats på sidoknapparna**. Av som standard.
 
 **En musknapp gömmer den aktuella appen.** Slå på **Göm den aktuella appen med en musknapp** i Inställningar › Mus och tryck på knappen du vill använda, till exempel mittknappen eller en sidoknapp. Sedan gömmer ett tryck appen i förgrunden, precis som ⌘H: appen fortsätter att köras, och ett klick på dess symbol i Dock tar tillbaka den. När du spelar med Spelläge på fungerar knappen som vanligt i spelet. Av som standard.
+
+**Mittklick på styrplattan.** Tryck eller klicka med tre fingrar, så fungerar styrplattan som mittknappen på en mus: i de flesta webbläsare öppnar det en länk i en ny flik eller stänger en flik. Du kan välja fyra fingrar i stället. För att trycka behöver du **Tryck för att klicka** i Systeminställningar › Styrplatta. Om ”Slå upp och dataavkännare” där är inställt på tryck med tre fingrar kan tre fingrar bara klicka, och om trefingersdragning är på väljer du fyra fingrar. Raden **Fingrar** i Inställningar visar vad som fungerar på din Mac. Musen förblir som den är. Det kräver behörigheterna **Hjälpmedel** och **Indataövervakning** och finns inte i versionen från Mac App Store. Av som standard.
 
 **Avsluta när det sista fönstret stängs.** Stäng det sista fönstret i en app så avslutas appen. Finder förblir öppen, liksom appar med fönster på andra skrivbord eller i Dock. Du kan lista appar som aldrig ska avslutas på det här sättet. Av som standard.
 
@@ -418,7 +427,7 @@ Visar hur snabbt ditt internet är just nu. Klicka på **Testa hastigheten** und
 - **Portar**: vilket program som har tagit vilken port, dess adresser och detaljer och en knapp som frigör porten.
 - **Ljud**: appvolym, ett reglage och en knapp för att stänga av ljudet för varje app som spelar upp ljud.
 - **Tangentbord**: byte av språk, tangentupprepning, Home och End, rättning av fel layout.
-- **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar, en knapp som gömmer den aktuella appen.
+- **Mus**: pekaracceleration och hastighet, rullning per rad, rullningsriktning, sidoknappar, en knapp som gömmer den aktuella appen, mittklick på styrplattan.
 - **Fönster**: förstora med gröna knappen (med en lista över undantag), skydd för ⌘Q och ⌘W, och avsluta vid sista fönstret (med en lista över undantag).
 - **Dock**: minimera eller göm med ett klick i Dock och håll Dock på en skärm.
 - **Finder**: ny fil, mindre kopia, konvertering och arkiv, öppna med Retur, klipp ut med ⌘X, radera med ⌫, göm skrivbordssymboler och visa gömda filer.

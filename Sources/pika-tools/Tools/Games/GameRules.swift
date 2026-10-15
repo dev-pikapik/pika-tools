@@ -145,6 +145,12 @@ enum GameRules {
         return fenced == point ? nil : fenced
     }
 
+    static func fenceRects(_ frame: CGRect, corners: Set<Int> = []) -> [CGRect] {
+        [frame.insetBy(dx: 1, dy: 1)] + corners.sorted().map {
+            CGRect(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 4, y: $0 < 2 ? frame.minY : frame.maxY - 4, width: 4, height: 4)
+        }
+    }
+
     static func commandKeys(quit: Bool, close: Bool, playing: Bool, blocksQuit: Bool, blocksClose: Bool) -> (keys: Set<Int64>, blocked: Set<Int64>) {
         let blocked = Set((quit || playing && blocksQuit ? [Int64(kVK_ANSI_Q)] : []) + (close || playing && blocksClose ? [Int64(kVK_ANSI_W)] : []))
         return (playing ? blocked.union([Int64(kVK_ANSI_Q), Int64(kVK_ANSI_W)]) : blocked, blocked)

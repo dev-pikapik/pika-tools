@@ -266,6 +266,13 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <br>Ai scris ghbdtn în loc de привет? Apasă Spațiu și cuvântul se corectează.
 </td>
 </tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/middle-click-dark.png"><img src="../media/middle-click-light.png" width="340" alt=""></picture>
+<br><b>Clic de mijloc pe trackpad</b>
+<br>Atinge cu trei degete ca să deschizi un link într-o filă nouă, ca și cu butonul din mijloc al mausului.
+</td>
+</tr></tbody>
 </table>
 
 ## Mai multe detalii
@@ -316,6 +323,8 @@ Unele aplicații și jocuri măsoară derularea în pixeli exacți: pentru ele, 
 **Butoanele laterale merg înapoi și înainte.** Butoanele 4 și 5 ale mausului merg înapoi și înainte în Finder, Safari și alte aplicații Apple, precum și în multe alte aplicații, la fel ca o glisare pe trackpad. Aplicațiile care tratează singure aceste butoane le primesc așa cum sunt. Dacă mausul tău le are invers, activează **Inversează butoanele laterale**. Dezactivat implicit.
 
 **Un buton al mausului ascunde aplicația curentă.** Activează **Un buton al mausului ascunde aplicația curentă** din Setări › Maus și apasă butonul pe care vrei să-l folosești, de exemplu butonul din mijloc sau un buton lateral. Apoi o singură apăsare ascunde aplicația din prim-plan, exact ca ⌘H: aplicația rulează în continuare, iar un clic pe pictograma ei din Dock o aduce înapoi. Cât timp joci cu Modul Joc pornit, butonul funcționează în joc ca de obicei. Dezactivat implicit.
+
+**Clic de mijloc pe trackpad.** Atinge sau fă clic cu trei degete, iar trackpadul funcționează ca butonul din mijloc al mausului: în majoritatea browserelor, așa deschizi un link într-o filă nouă sau închizi o filă. Poți alege și patru degete în loc de trei. Ca atingerea să funcționeze, activează **Atingere pentru clic** în Configurări sistem › Trackpad. Dacă acolo „Căutare referințe și detectoare de date” e setată pe atingerea cu trei degete, cu trei degete poți doar să faci clic, iar dacă tragerea cu trei degete e activată, alege patru degete. Rândul **Degete** din Configurări arată ce funcționează pe acest Mac. Mausul rămâne cum era. Are nevoie de permisiunile **Accesibilitate** și **Monitorizare intrare** și nu există în versiunea din Mac App Store. Dezactivat implicit.
 
 **Ieșire la închiderea ultimei ferestre.** Închide ultima fereastră a unei aplicații, iar aplicația se închide. Finder rămâne deschis, la fel ca aplicațiile cu ferestre pe alte spații de lucru sau în Dock. Poți face o listă de aplicații care nu trebuie să se închidă niciodată așa. Dezactivat implicit.
 
@@ -418,7 +427,7 @@ Deschide configurările din meniu cu **Configurări…** sau ⌘, ori pornește 
 - **Porturi**: ce program a ocupat fiecare port, adresele și detaliile lui și un buton care eliberează portul.
 - **Sunet**: volumul aplicațiilor, cu un cursor și un buton de oprire a sunetului pentru fiecare aplicație care redă sunet.
 - **Tastatură**: schimbarea limbii, repetarea tastelor, Home și End, corectarea aranjamentului greșit.
-- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale, un buton care ascunde aplicația curentă.
+- **Maus**: accelerarea cursorului și viteza de urmărire, derularea pe rânduri, direcția de derulare, butoanele laterale, un buton care ascunde aplicația curentă, clicul de mijloc pe trackpad.
 - **Ferestre**: mărire cu butonul verde (cu o listă de excepții), protecție pentru ⌘Q și ⌘W, și ieșire la ultima fereastră (cu o listă de excepții).
 - **Dock**: minimizare sau ascundere cu un clic în Dock și ținerea Dock-ului pe un singur ecran.
 - **Finder**: fișier nou, copie mai mică, conversie și arhive, deschidere cu Return, decupare cu ⌘X, ștergere cu ⌫, ascunderea pictogramelor de pe desktop și afișarea fișierelor ascunse.
