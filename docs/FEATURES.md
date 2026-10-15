@@ -1261,6 +1261,33 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Playback › Start Over → it starts at 0:00 and the next open starts there too.
 3. (Website) Watch a video to the last 30 seconds, close, open again → it starts from the beginning.
 
+### Glass panel that hides
+
+**Does:** The control panel is frosted glass that stays readable on a bright picture, and it gets out of the way while you watch.
+
+**How it works:** On macOS 26 and later the panel is a Liquid Glass view with a dark tint, on macOS 14 and 15 a blurred HUD view; both are dark, so the buttons keep their contrast on a white frame (`Helper/Player/PlayerWindow.swift:86`). One rule decides what is visible: the panel stays while the video is paused or the pointer is over it, and while playing it hides after 2.5 seconds without mouse movement; in full screen the pointer hides with it (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:134`, `PlayerWindow.swift:544`). Any key or a move of the mouse shows both again.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a video and keep the mouse still → after about 2.5 seconds the panel fades; move the mouse → it comes back.
+2. (Website) Pause → the panel stays however long you wait. Play and keep the pointer over the panel → it stays.
+3. (Website) Full screen, playing, mouse still → the panel and the pointer both hide; press any key → both return.
+4. (Website) Play a mostly white video → the buttons and times can still be read.
+
+### Preview over the time bar
+
+**Does:** Shows a small picture of the video, with its time, above the time bar where you point.
+
+**How it works:** A second reader opens the same file, jumps to the nearest key frame, decodes one picture (VideoToolbox for H.264 and HEVC, the bundled decoder for the rest) and shrinks it to about 160 × 90 (`Helper/Player/Thumbnails.swift:5`). The first hover starts filling 100 pictures, one for each hundredth of the video, in the background; a spot whose picture is not ready yet shows the nearest ready one (`Thumbnails.swift:79`, `PlayerLogic.swift:143`). The pictures are freed when the window closes or another video opens (`PlayerWindow.swift:568`). The time is shown above the picture; for a sound-only file or a picture that can’t be made, only the time is shown.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open a video of a few minutes and move the pointer along the time bar → a card with the time and a picture follows the pointer; the picture matches the scene at that spot.
+2. (Website) Open a music file → the card shows only the time.
+3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
+
 ### FFmpeg and dav1d Licenses
 
 **Does:** Shows the licenses of the two open-source libraries the player uses, and links to their source code.

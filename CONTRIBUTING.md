@@ -269,6 +269,12 @@ The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app 
 swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
 ```
 
+The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg, so build it first with `./scripts/build.sh`:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Thumbnails.swift Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-thumbnails.swift -o build/test-thumbnails && build/test-thumbnails
+```
+
 ### Adding a tool
 
 1. Create a file in `Sources/pika-tools/Tools/` with a class that conforms to `Tool`.

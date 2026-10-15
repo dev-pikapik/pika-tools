@@ -130,3 +130,39 @@ enum PlayerTime {
         "\((file as NSString).deletingPathExtension) \(text(seconds).replacingOccurrences(of: ":", with: ".")).png"
     }
 }
+
+enum PlayerChrome {
+    static let hideDelay = 2.5
+
+    static func visibility(playing: Bool, overControls: Bool, fullScreen: Bool, idle: Double) -> (controls: Bool, cursor: Bool) {
+        let controls = !playing || overControls || idle < hideDelay
+        return (controls, controls || !fullScreen)
+    }
+}
+
+enum PlayerThumbnail {
+    static let buckets = 100
+    static let box = CGSize(width: 160, height: 90)
+
+    static func bucket(_ seconds: Double, duration: Double) -> Int {
+        guard seconds.isFinite, duration.isFinite, duration > 0 else { return 0 }
+        return max(0, min(buckets - 1, Int(seconds / duration * Double(buckets))))
+    }
+
+    static func time(of bucket: Int, duration: Double) -> Double {
+        (Double(bucket) + 0.5) * duration / Double(buckets)
+    }
+
+    static func size(for video: CGSize) -> CGSize {
+        guard video.width > 0, video.height > 0 else { return box }
+        let scale = min(box.width / video.width, box.height / video.height)
+        return CGSize(width: max(2, (video.width * scale / 2).rounded() * 2), height: max(2, (video.height * scale / 2).rounded() * 2))
+    }
+
+    static func nearest(to bucket: Int, ready: (Int) -> Bool) -> Int? {
+        for distance in 0..<buckets {
+            for candidate in [bucket - distance, bucket + distance] where (0..<buckets).contains(candidate) && ready(candidate) { return candidate }
+        }
+        return nil
+    }
+}
