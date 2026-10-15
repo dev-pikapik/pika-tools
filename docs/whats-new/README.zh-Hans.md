@@ -13,13 +13,21 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-在网站版中，纠正用错语言输入的单词，现在在 Chrome、Slack、VS Code、Discord 等基于 Chromium 的 App 里也能用了，边打边改和用重打快捷键都行，“ghbdtn”在那里也会变成“привет”。关闭这个功能或退出 pikapik，这些 App 就会恢复原样。
+在网站版中，用错语言输入的单词，现在在 Chrome、Slack、VS Code、Discord 等类似的 App 里也会被纠正了，“ghbdtn”在那里同样会变成“привет”。关闭这个功能或退出 pikapik，这些 App 就会恢复原样。
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-鼠标按键 4 和 5 现在几乎在所有 App 里都能后退和前进，在 pikapik 自己的设置里也恢复了。pikapik 会替你点按 App 菜单或工具栏里的“后退”或“前进”，不限语言；本来就支持这两个键的 App 仍由它们自己处理。在 Mac App Store 版中，pikapik 自己的窗口和 Apple 的 App 可用。
+鼠标侧键现在几乎在所有 App 里都能后退和前进，在 pikapik 自己的设置里也恢复了：pikapik 会替你点按这个 App 自己的“返回”或“前进”按钮。在 Mac App Store 版中，pikapik 和 Apple 的 App 里可用。
 
-同时打开两个 pikapik，比如网站版和 App Store 版，只有最后打开的那个会改动你的 Mac，所以设置里显示的始终是真实情况。退出时，它改过的一切都会还原。另外还有新功能（主要在网站版）：触控板三指中键点按、显示“退出应用”和“关闭窗口”作用的图示、直接放在“显示隐藏文件”那一行里的 ⇧⌘.、侧边栏的分组名称，以及播放器里和 QuickTime 一样的按键、滚轮调音量、倍速和从上次位置继续播放。
+同时打开两个 pikapik，比如网站版和 App Store 版，只有最后打开的那个会改动你的 Mac，所以设置里显示的始终是真实情况。退出时，它改过的一切都会还原。
+
+**另外新增**
+
+- “触控板中键点按”：用三指轻点，在网站版中。
+- “退出应用”和“关闭窗口”用图示显示按键的作用。
+- ⇧⌘. 现在直接放在“显示隐藏文件”那一行里。
+- 设置的侧边栏有了分组名称。
+- 播放器，在网站版中：和 QuickTime 一样的按键、滚轮调音量、倍速，以及从上次停下的位置继续播放。
 
 **试试看：** 设置 › 键盘
 

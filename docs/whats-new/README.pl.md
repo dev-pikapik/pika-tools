@@ -13,13 +13,21 @@ Słowa wpisane w złym języku są teraz poprawiane także w Chrome, Slacku i VS
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-W wersji ze strony poprawianie słowa wpisanego w złym języku działa teraz także w Chrome, Slacku, VS Code, Discordzie i innych aplikacjach opartych na Chromium, podczas pisania i skrótem do przepisania, więc „ghbdtn” też tam zamienia się w „привет”. Wyłącz funkcję albo zamknij pikapik, a te aplikacje wrócą do poprzedniego stanu.
+W wersji ze strony słowa wpisane w złym języku są teraz poprawiane także w Chrome, Slacku, VS Code, Discordzie i podobnych aplikacjach, więc „ghbdtn” też tam zamienia się w „привет”. Wyłącz funkcję albo zamknij pikapik, a te aplikacje wrócą do poprzedniego stanu.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Przyciski myszy 4 i 5 cofają i przechodzą dalej w prawie każdej aplikacji i znów działają w ustawieniach samego pikapika. pikapik sam naciska pozycję Wstecz lub Dalej w menu albo na pasku narzędzi aplikacji, w dowolnym języku, a aplikacje, które już rozumieją te przyciski, obsługują je dalej same. W wersji z Mac App Store dotyczy to okien pikapika i aplikacji Apple.
+Boczne przyciski myszy cofają i przechodzą dalej w prawie każdej aplikacji i znów działają w ustawieniach samego pikapika: pikapik sam naciska przycisk Wstecz lub Dalej w tej aplikacji. W wersji z Mac App Store działa to w pikapiku i w aplikacjach Apple.
 
-Gdy otwarte są dwie kopie pikapika, na przykład ze strony i z App Store, cokolwiek na Macu zmienia tylko ta uruchomiona jako ostatnia, więc ustawienia zawsze pokazują, co naprawdę obowiązuje. Przy zamknięciu wszystko, co zmieniła, wraca na miejsce. Nowe są też, głównie w wersji ze strony: kliknięcie środkowym przyciskiem trzema palcami na gładziku, obrazki pokazujące, co robią Zakończ aplikację i Zamknij okno, ⇧⌘. w wierszu Pokaż ukryte pliki, nazwy grup na pasku bocznym, a w odtwarzaczu klawisze jak w QuickTime, głośność kółkiem, prędkość i wznawianie od miejsca zatrzymania.
+Gdy otwarte są dwie kopie pikapika, na przykład ze strony i z App Store, cokolwiek na Macu zmienia tylko ta uruchomiona jako ostatnia, więc ustawienia zawsze pokazują, co naprawdę obowiązuje. Przy zamknięciu wszystko, co zmieniła, wraca na miejsce.
+
+**Także nowe**
+
+- Środkowe kliknięcie na gładziku: dotknij trzema palcami, w wersji ze strony.
+- Zakończ aplikację i Zamknij okno pokazują na obrazku, co robią klawisze.
+- ⇧⌘. jest teraz bezpośrednio w wierszu Pokaż ukryte pliki.
+- Pasek boczny ustawień ma nazwy grup.
+- Odtwarzacz, w wersji ze strony: klawisze jak w QuickTime, głośność kółkiem, prędkość i wznawianie od miejsca zatrzymania.
 
 **Wypróbuj:** Ustawienia › Klawiatura
 

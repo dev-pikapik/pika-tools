@@ -13,13 +13,21 @@ Words typed in the wrong language are now fixed in Chrome, Slack and VS Code too
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-In the website version, fixing a word typed in the wrong language now works in Chrome, Slack, VS Code, Discord and other apps built on Chromium, as you type and with the retype shortcut, so “ghbdtn” becomes “привет” there too. Turn the feature off or quit pikapik, and those apps are put back the way they were.
+In the website version, words typed in the wrong language are now fixed in Chrome, Slack, VS Code, Discord and similar apps too, so “ghbdtn” becomes “привет” there as well. When you turn this off or quit pikapik, those apps go back to how they were.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Mouse buttons 4 and 5 now go back and forward in nearly every app, and again in pikapik’s own Settings. pikapik presses the Back or Forward item in the app’s menu or toolbar for you, in any language, and apps that already understand the buttons keep handling them themselves. In the Mac App Store version this covers pikapik’s own windows and Apple apps.
+The side buttons on your mouse now go back and forward in nearly every app, and again in pikapik’s own Settings: pikapik presses the app’s own Back or Forward button for you. In the Mac App Store version this works in pikapik and in Apple apps.
 
-With two copies of pikapik open, say the website one and the App Store one, only the one opened last changes anything on your Mac, so Settings always shows what is really there. When you quit, everything it changed is put back. Also new, mostly in the website version: a three-finger middle click on the trackpad, pictures that show what Quit app and Close window do, ⇧⌘. right in the Show hidden files row, names for the groups in the sidebar, and in the player the QuickTime keys, volume with the scroll wheel, speed and resume where you stopped.
+With two copies of pikapik open, say the website one and the App Store one, only the one opened last changes your Mac, so Settings always shows what is really there. When you quit, everything it changed is put back.
+
+**Also new**
+
+- Middle click on the trackpad: tap with three fingers, in the website version.
+- Quit app and Close window show in a picture what the keys do.
+- ⇧⌘. now sits right in the Show hidden files row.
+- The Settings sidebar has group names.
+- Player, in the website version: QuickTime keys, volume with the scroll wheel, speed, and it continues where you stopped.
 
 **Try it:** Settings › Keyboard
 

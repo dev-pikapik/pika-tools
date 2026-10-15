@@ -13,13 +13,21 @@ Kata yang salah bahasa kini diperbaiki juga di Chrome, Slack, dan VS Code, dan t
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-Di versi situs web, memperbaiki kata yang diketik dengan bahasa yang salah kini berfungsi di Chrome, Slack, VS Code, Discord, dan app lain berbasis Chromium, saat mengetik maupun lewat pintasan ketik ulang, sehingga “ghbdtn” di sana juga menjadi “привет”. Matikan fitur ini atau keluar dari pikapik, lalu app-app itu kembali seperti semula.
+Di versi situs web, kata yang diketik dengan bahasa yang salah kini diperbaiki juga di Chrome, Slack, VS Code, Discord, dan app serupa, sehingga “ghbdtn” di sana juga menjadi “привет”. Matikan fitur ini atau keluar dari pikapik, lalu app-app itu kembali seperti semula.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Tombol mouse 4 dan 5 kini berfungsi sebagai kembali dan maju di hampir semua app, dan berfungsi lagi di Pengaturan pikapik sendiri. pikapik menekan item Kembali atau Maju di menu atau bilah alat app, dalam bahasa apa pun, sementara app yang sudah memahami tombol itu tetap menanganinya sendiri. Di versi Mac App Store, ini berlaku untuk jendela pikapik dan app Apple.
+Tombol samping mouse kini berfungsi sebagai kembali dan maju di hampir semua app, dan berfungsi lagi di Pengaturan pikapik sendiri: pikapik menekan tombol Kembali atau Maju milik app itu. Di versi Mac App Store, ini berfungsi di pikapik dan di app Apple.
 
-Jika dua salinan pikapik terbuka, misalnya dari situs web dan dari App Store, hanya yang dibuka paling akhir yang mengubah sesuatu di Mac, jadi Pengaturan selalu menunjukkan keadaan yang sebenarnya. Saat keluar, semua yang diubahnya dikembalikan. Yang baru juga, sebagian besar di versi situs web: klik tengah tiga jari di trackpad, gambar yang menunjukkan apa yang dilakukan Keluar dari app dan Tutup jendela, ⇧⌘. langsung di baris Tampilkan file tersembunyi, nama untuk grup di bar samping, dan di pemutar tombol seperti QuickTime, volume dengan roda gulir, kecepatan, dan lanjut dari tempat terakhir.
+Jika dua salinan pikapik terbuka, misalnya dari situs web dan dari App Store, hanya yang dibuka paling akhir yang mengubah Mac, jadi Pengaturan selalu menunjukkan keadaan yang sebenarnya. Saat keluar, semua yang diubahnya dikembalikan.
+
+**Juga baru**
+
+- Klik tengah di trackpad: ketuk dengan tiga jari, di versi situs web.
+- Keluar dari app dan Tutup jendela menampilkan lewat gambar apa yang dilakukan tombol-tombol itu.
+- ⇧⌘. kini langsung ada di baris Tampilkan file tersembunyi.
+- Bar samping Pengaturan kini punya nama grup.
+- Pemutar, di versi situs web: tombol seperti QuickTime, volume dengan roda gulir, kecepatan, dan lanjut dari tempat terakhir berhenti.
 
 **Coba:** Pengaturan › Papan Ketik
 

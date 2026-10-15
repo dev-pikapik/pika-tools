@@ -13,13 +13,21 @@ Cuvintele scrise în limba greșită sunt acum corectate și în Chrome, Slack �
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
 
-În versiunea de pe site, corectarea unui cuvânt scris în limba greșită funcționează acum și în Chrome, Slack, VS Code, Discord și alte aplicații bazate pe Chromium, în timp ce scrii și cu scurtătura de rescriere, așa că „ghbdtn” devine acolo „привет”. Oprește funcția sau închide pikapik și acele aplicații revin cum erau.
+În versiunea de pe site, cuvintele scrise în limba greșită sunt acum corectate și în Chrome, Slack, VS Code, Discord și în aplicații asemănătoare, așa că „ghbdtn” devine acolo „привет”. Când oprești funcția sau închizi pikapik, acele aplicații revin cum erau.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 
-Butoanele 4 și 5 ale mouse-ului merg acum înapoi și înainte în aproape orice aplicație și din nou în setările pikapik însuși. pikapik apasă el pentru tine elementul Înapoi sau Înainte din meniul sau bara de instrumente a aplicației, în orice limbă, iar aplicațiile care înțeleg deja butoanele le gestionează în continuare singure. În versiunea din Mac App Store, asta se aplică ferestrelor pikapik și aplicațiilor Apple.
+Butoanele laterale ale mouse-ului merg acum înapoi și înainte în aproape orice aplicație și din nou în setările pikapik însuși: pikapik apasă pentru tine butonul Înapoi sau Înainte al aplicației. În versiunea din Mac App Store, asta funcționează în pikapik și în aplicațiile Apple.
 
-Dacă sunt deschise două copii ale pikapik, de exemplu cea de pe site și cea din App Store, doar cea deschisă ultima schimbă ceva pe Mac, așa că Setările arată mereu ce se întâmplă cu adevărat. La ieșire, tot ce a schimbat este pus la loc. Nou este și, mai ales în versiunea de pe site: clic de mijloc cu trei degete pe trackpad, imagini care arată ce fac Ieși din aplicație și Închide fereastra, ⇧⌘. chiar în rândul Afișează fișierele ascunse, nume pentru grupurile din bara laterală și, în player, tastele din QuickTime, volumul din rotiță, viteza și reluarea de unde ai rămas.
+Dacă sunt deschise două copii ale pikapik, de exemplu cea de pe site și cea din App Store, doar cea deschisă ultima schimbă ceva pe Mac, așa că Setările arată mereu ce se întâmplă cu adevărat. La ieșire, tot ce a schimbat este pus la loc.
+
+**Tot nou**
+
+- Clic de mijloc pe trackpad: atinge cu trei degete, în versiunea de pe site.
+- Ieși din aplicație și Închide fereastra arată într-o imagine ce fac tastele.
+- ⇧⌘. este acum chiar în rândul Afișează fișierele ascunse.
+- Bara laterală din Setări are nume pentru grupuri.
+- Playerul, în versiunea de pe site: tastele din QuickTime, volumul din rotiță, viteza și reluarea de unde ai rămas.
 
 **Încearcă:** Setări › Tastatură
 
