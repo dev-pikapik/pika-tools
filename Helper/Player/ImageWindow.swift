@@ -4,6 +4,7 @@ import os
 final class ImageCanvas: NSView {
     weak var controller: ImageController?
     let picture = CALayer()
+    private var grabbing = false
 
     override var acceptsFirstResponder: Bool { true }
 
@@ -48,7 +49,14 @@ final class ImageCanvas: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
-        if event.clickCount == 2 { controller?.toggleActual(at: anchor(of: event)) } else if controller?.canPan == true { NSCursor.closedHand.push() }
+        if event.clickCount == 2 {
+            controller?.toggleActual(at: anchor(of: event))
+        } else if controller?.canPan == true {
+            grabbing = true
+            NSCursor.closedHand.push()
+        } else {
+            window?.performDrag(with: event)
+        }
     }
 
     override func mouseDragged(with event: NSEvent) {
@@ -56,7 +64,10 @@ final class ImageCanvas: NSView {
     }
 
     override func mouseUp(with event: NSEvent) {
-        if controller?.canPan == true { NSCursor.pop() }
+        if grabbing {
+            grabbing = false
+            NSCursor.pop()
+        }
     }
 
     override func mouseMoved(with event: NSEvent) {
@@ -135,6 +146,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     private static let background = NSColor(white: 0.11, alpha: 1)
     private let canvas = ImageCanvas()
     private let message = NSTextField(labelWithString: "")
+    private let caption = NSTextField(labelWithString: "")
     private let loading = NSProgressIndicator()
     private let controls = ImagePanel.make()
     private let previousButton = NSButton()
@@ -171,7 +183,9 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     }
 
     init() {
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 480), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 480), styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView], backing: .buffered, defer: false)
+        window.titlebarAppearsTransparent = true
+        window.titleVisibility = .hidden
         window.collectionBehavior = .fullScreenPrimary
         window.minSize = NSSize(width: 400, height: 200)
         window.backgroundColor = Self.background
@@ -189,6 +203,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         canvas.wantsLayer = true
         canvas.layer?.backgroundColor = Self.background.cgColor
         window.contentView = canvas
+        window.makeFirstResponder(canvas)
 
         message.textColor = .white.withAlphaComponent(0.8)
         message.font = .systemFont(ofSize: 15, weight: .medium)
@@ -196,6 +211,11 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         message.lineBreakMode = .byTruncatingTail
         message.isHidden = true
         message.setAccessibilityElement(false)
+        caption.textColor = .white.withAlphaComponent(0.8)
+        caption.font = .systemFont(ofSize: 13, weight: .medium)
+        caption.alignment = .center
+        caption.lineBreakMode = .byTruncatingMiddle
+        caption.setAccessibilityElement(false)
         loading.style = .spinning
         loading.controlSize = .regular
         loading.isDisplayedWhenStopped = false
@@ -222,14 +242,18 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         row.spacing = 10
         row.distribution = .equalSpacing
         row.edgeInsets = NSEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        for view in [message, loading, controls, row] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
+        for view in [message, caption, loading, controls, row] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
         canvas.addSubview(message)
+        canvas.addSubview(caption)
         canvas.addSubview(loading)
         canvas.addSubview(controls)
         NSLayoutConstraint.activate([
             message.centerXAnchor.constraint(equalTo: canvas.centerXAnchor),
             message.centerYAnchor.constraint(equalTo: canvas.centerYAnchor),
             message.widthAnchor.constraint(lessThanOrEqualTo: canvas.widthAnchor, constant: -40),
+            caption.centerXAnchor.constraint(equalTo: canvas.centerXAnchor),
+            caption.topAnchor.constraint(equalTo: canvas.topAnchor, constant: 6),
+            caption.widthAnchor.constraint(lessThanOrEqualTo: canvas.widthAnchor, constant: -180),
             loading.centerXAnchor.constraint(equalTo: canvas.centerXAnchor),
             loading.centerYAnchor.constraint(equalTo: canvas.centerYAnchor),
             controls.centerXAnchor.constraint(equalTo: canvas.centerXAnchor),
@@ -275,6 +299,7 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         animation = nil
         window?.title = url.lastPathComponent
         window?.subtitle = urls.count > 1 ? ImageList.position(newIndex, of: urls.count) : ""
+        caption.stringValue = urls.count > 1 ? "\(url.lastPathComponent) — \(ImageList.position(newIndex, of: urls.count))" : url.lastPathComponent
         window?.representedURL = url
         NSDocumentController.shared.noteNewRecentDocumentURL(url)
         controls.isHidden = false
@@ -555,8 +580,12 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
         guard let window else { return }
         let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let visible = PlayerChrome.visibility(playing: true, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle)
-        controls.animator().alphaValue = visible.controls ? 1 : 0
+        let overBar = window.mouseLocationOutsideOfEventStream.y > canvas.bounds.height - 28
+        let visible = PlayerChrome.visibility(playing: true, overControls: window.isKeyWindow && (controls.bounds.contains(pointer) || overBar), fullScreen: fullScreen, idle: idle)
+        let alpha: CGFloat = visible.controls ? 1 : 0
+        controls.animator().alphaValue = alpha
+        caption.animator().alphaValue = alpha
+        window.standardWindowButton(.closeButton)?.superview?.animator().alphaValue = alpha
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
