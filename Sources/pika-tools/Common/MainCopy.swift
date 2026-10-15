@@ -23,10 +23,14 @@ final class MainCopy {
 
     private init() {}
 
-    var leaderCaption: String {
-        guard let leader, let app = NSRunningApplication(processIdentifier: leader.pid), let url = app.bundleURL else { return "" }
-        let version = Bundle(url: url)?.infoDictionary?["CFBundleShortVersionString"] as? String
-        return [version, url.path(percentEncoded: false)].compactMap { $0 }.joined(separator: " · ")
+    var leaderCaption: (title: String, path: String?) {
+        guard let leader, let app = NSRunningApplication(processIdentifier: leader.pid), let url = app.bundleURL else { return ("", nil) }
+        let version = Bundle(url: url)?.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        switch leader.bundleID {
+        case MainCopyChoice.appStoreID: return (String(localized: "Mac App Store version \(version)"), nil)
+        case MainCopyChoice.websiteID: return (String(localized: "Website version \(version)"), nil)
+        default: return (version, url.path)
+        }
     }
 
     func begin(activate: @escaping () -> Void, deactivate: @escaping (Bool) -> Void) {
@@ -60,11 +64,13 @@ final class MainCopy {
         deactivate(true)
     }
 
-    func makeMain() {
+    func makeMain(failed: @escaping () -> Void) {
         let configuration = NSWorkspace.OpenConfiguration()
         configuration.createsNewApplicationInstance = true
         configuration.arguments = ["--settings"]
-        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration)
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { _, error in
+            if error != nil { DispatchQueue.main.async(execute: failed) }
+        }
     }
 
     private func evaluate() {
@@ -127,17 +133,32 @@ final class MainCopy {
 
 struct PassiveCopyView: View {
     private let copy = MainCopy.shared
+    @State private var starting = false
 
     var body: some View {
+        let caption = copy.leaderCaption
         ContentUnavailableView {
             Label("Another copy of pikapik is in charge", systemImage: "rectangle.on.rectangle")
         } description: {
             Text("This copy changes nothing on your Mac and takes over when the other copy quits.")
-            Text(verbatim: copy.leaderCaption)
+            Text(verbatim: caption.title)
+            if let path = caption.path {
+                Text(verbatim: path)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+            }
         } actions: {
-            Button("Make This Copy the Main One") { copy.makeMain() }
-                .buttonStyle(.borderedProminent)
+            Button("Make This Copy the Main One") {
+                starting = true
+                copy.makeMain { starting = false }
+            }
+            .buttonStyle(.borderedProminent)
+            .disabled(starting)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationTitle(Text(verbatim: "pikapik"))
+        .onAppear { SettingsWindow.window?.title = "pikapik" }
     }
 }
