@@ -26,7 +26,6 @@ final class Updater {
     private init() {}
 
     func start() {
-        if checksAutomatically { Task { await check() } }
         timer = Timer.scheduledTimer(withTimeInterval: 6 * 3600, repeats: true) { _ in
             Task { @MainActor in
                 if Updater.shared.checksAutomatically { await Updater.shared.check() }
@@ -34,8 +33,16 @@ final class Updater {
         }
     }
 
+    func resume() {
+        if checksAutomatically { Task { await check() } }
+    }
+
+    func pause() {
+        if state != .installing { state = .idle }
+    }
+
     func check() async {
-        guard state != .installing else { return }
+        guard MainCopy.canAct, state != .installing else { return }
         let previous = state
         state = .checking
         do {
@@ -57,6 +64,7 @@ final class Updater {
                 state = .failed(String(localized: "Couldn’t check for updates"))
             }
         }
+        if !MainCopy.canAct { pause() }
     }
 
     func install() async {

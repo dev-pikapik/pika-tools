@@ -46,12 +46,18 @@ final class DockDisplayTool: Tool {
         CFPreferencesAppSynchronize(dock)
         let current = CFPreferencesCopyAppValue(key, dock) as? Bool
         let plan = DockDisplaySwitch.plan(on: on, current: current, owned: defaults.bool(forKey: ownedKey), before: defaults.object(forKey: beforeKey) as? Bool)
+        if on {
+            defaults.set(true, forKey: ownedKey)
+            defaults.set(plan.before, forKey: beforeKey)
+        }
         if plan.value != current {
             CFPreferencesSetAppValue(key, plan.value.map { $0 as CFBoolean }, dock)
             CFPreferencesAppSynchronize(dock)
         }
-        defaults.set(on, forKey: ownedKey)
-        defaults.set(plan.before, forKey: beforeKey)
+        if !on {
+            defaults.set(false, forKey: ownedKey)
+            defaults.removeObject(forKey: beforeKey)
+        }
         return plan.restart
     }
 }
