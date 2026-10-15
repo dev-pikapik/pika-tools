@@ -302,7 +302,7 @@ struct PetClothes {
             shine.addPath(poly([q(0.1, -0.95), q(0.5, -0.95), q(-0.5, 1.2), q(-0.9, 1.2)]))
             return [(ink, c(Dye.ink)), (shine, c(Dye.white, 0.4))]
         case .round:
-            let o = P(e.x + 0.1, e.y)
+            let o = P(e.x + 0.1, e.y - 0.1)
             var rim = ring(o, 2.1, 1.5)
             rim.addPath(ribbon(trace([P(o.x - 2.0, o.y - 0.4), P(-0.6, o.y - 0.5), P(-2.6, o.y - 0.2)]), { _ in 0.6 }))
             rim.addPath(ribbon(trace([P(o.x + 2.0, o.y - 0.5), P(o.x + 2.6, o.y - 0.75), P(edge - 0.2, o.y - 0.6)]), { _ in 0.6 }))
@@ -310,7 +310,7 @@ struct PetClothes {
             let glint = ribbon((0...6).map { k in let a = 3.5 + CGFloat(k) / 6 * 0.9; return P(o.x + 1.05 * cos(a), o.y + 1.05 * sin(a)) }, { _ in 0.4 })
             return [(oval(o.x, o.y, 1.5, 1.5), c(Dye.white, 0.2)), (rim, c(Dye.ink)), (glint, c(Dye.white, 0.8))]
         case .hearts:
-            let o = P(e.x + 0.2, e.y + 0.1)
+            let o = P(e.x + 0.2, e.y)
             var frame = heart(o, 2.6)
             frame.addPath(heart(o, 1.95, hole: true))
             frame.addPath(ribbon(trace([P(o.x - 2.4, o.y - 0.9), P(-0.6, o.y - 0.8), P(-2.6, o.y - 0.4)]), { _ in 0.6 }))
@@ -320,7 +320,7 @@ struct PetClothes {
         case .mask:
             let o = e
             func q(_ x: CGFloat, _ y: CGFloat) -> CGPoint { P(o.x + x, o.y + y) }
-            var mask = blob([q(-3.7, -1.7), q(-1.6, -1.8), q(0.4, -2.1), q(2.3, -1.9), P(edge + 0.35, o.y - 1.25), P(edge + 0.45, o.y + 0.25), P(edge - 0.35, o.y + 0.95), q(1.9, 1.6), q(0.2, 1.9), q(-1.5, 1.5), q(-2.8, 0.3)], sharp: [0])
+            var mask = blob([q(-3.7, -1.7), q(-1.6, -1.8), q(0.4, -2.1), q(2.3, -1.9), P(edge + 0.35, o.y - 1.25), P(edge + 0.45, o.y + 0.25), P(edge - 0.35, o.y + 0.95), q(1.9, 1.45), q(0.2, 1.75), q(-1.5, 1.4), q(-2.8, 0.3)], sharp: [0])
             mask.addPath(blob([q(-1.85, -0.15), q(-0.7, -1.45), q(0.8, -1.55), q(1.75, -0.4), q(1.3, 1.1), q(-0.3, 1.45)], sharp: [0], hole: true))
             let k = P(-edge + 0.1, o.y + 0.1)
             mask.addPath(ribbon(trace([q(-3.0, -0.75), P((k.x + o.x - 3.0) / 2, o.y - 0.3), k]), { _ in 0.75 }))
@@ -379,22 +379,22 @@ struct PetClothes {
             var shine = Path()
             for d in [-1.0, 1.0] as [CGFloat] {
                 let g = f * (d > 0 ? 1 : -0.8)
-                let line = trace([P(x, y + 0.3), P(x + 0.8 * d, y + 0.5), P(x + 1.5 * d, y + 0.4), P(x + 1.95 * d, y + 0.2 + 0.2 * g), P(x + 1.85 * d, y - 0.2 + 0.2 * g), P(x + 1.45 * d, y - 0.3 + 0.2 * g)], 4)
+                let line = trace([P(x, y + 0.3), P(x + 0.6 * d, y + 0.5), P(x + 1.15 * d, y + 0.4), P(x + 1.5 * d, y + 0.25 + 0.12 * g), P(x + 1.4 * d, y - 0.1 + 0.12 * g), P(x + 1.1 * d, y - 0.15 + 0.12 * g)], 4)
                 hair.addPath(ribbon(line, { 0.4 + 1.1 * pow(1 - $0, 1.3) }))
                 shine.addPath(ribbon(Array(line.prefix(9)), { 0.25 * (1 - $0) }).offsetBy(dx: 0, dy: -0.25))
             }
             return [(hair, c(Dye.chestnutDeep)), (shine, c(Dye.white, 0.3))]
         case .chevron:
             let g = 0.2 * f
-            let hair = blob([P(x - 2.0, y - 0.05), P(x - 1.0, y - 0.35), P(x, y - 0.4), P(x + 1.2, y - 0.35), P(x + 2.1, y + 0.05 + g), P(x + 1.7, y + 0.7 + g), P(x + 0.9, y + 0.85), P(x, y + 0.55), P(x - 0.9, y + 0.85), P(x - 1.7, y + 0.6 - g)], sharp: [3])
-            var streaks = ribbon(trace([P(x - 1.6, y - 0.05), P(x - 0.4, y - 0.2), P(x + 0.8, y - 0.2), P(x + 1.7, y)]), { _ in 0.22 })
-            streaks.addPath(ribbon(trace([P(x - 1.2, y + 0.3), P(x - 0.3, y + 0.15)]), { _ in 0.18 }))
+            let hair = blob([P(x - 1.5, y - 0.05), P(x - 0.75, y - 0.35), P(x, y - 0.4), P(x + 0.9, y - 0.35), P(x + 1.6, y + 0.05 + g), P(x + 1.3, y + 0.7 + g), P(x + 0.7, y + 0.85), P(x, y + 0.55), P(x - 0.7, y + 0.85), P(x - 1.3, y + 0.6 - g)], sharp: [3])
+            var streaks = ribbon(trace([P(x - 1.2, y - 0.05), P(x - 0.3, y - 0.2), P(x + 0.6, y - 0.2), P(x + 1.3, y)]), { _ in 0.22 })
+            streaks.addPath(ribbon(trace([P(x - 0.9, y + 0.3), P(x - 0.2, y + 0.15)]), { _ in 0.18 }))
             return [(hair, c(Dye.chestnutDeep)), (streaks, c(Dye.chestnut))]
         case .pencil:
             let y = y + 0.3
             var hair = Path()
             for d in [-1.0, 1.0] as [CGFloat] {
-                let line = trace([P(x, y), P(x + 0.7 * d, y), P(x + 1.4 * d, y + 0.05 + 0.2 * f * d), P(x + 2.0 * d, y + 0.1 + 0.2 * f * d)], 4)
+                let line = trace([P(x, y), P(x + 0.55 * d, y), P(x + 1.1 * d, y + 0.05 + 0.2 * f * d), P(x + 1.6 * d, y + 0.1 + 0.2 * f * d)], 4)
                 hair.addPath(ribbon(line, { 1.1 - 0.3 * $0 }))
             }
             return [(hair, c(Dye.chestnutDeep))]
