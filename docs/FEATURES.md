@@ -759,7 +759,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes the mouse’s side buttons act as Back and Forward in nearly every app: browsers, Finder, apps with a Back arrow in the toolbar or a Back item in a menu, and pikapik’s own Settings.
 
-**How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Mouse/SideButtonsTool.swift:88`) finds the app under the pointer (`Sources/pika-tools/Tools/Mouse/BackForward.swift:20`) and tries in order: (website) press the app’s own Back or Forward menu item, or the Back or Forward button in its toolbar, found by name in any language or by arrow icon (`BackForward.swift:96`); then a back or forward swipe in Apple apps, Firefox, Opera and ForkLift; then ⌘[ and ⌘] in a short list of Apple apps (`BackForward.swift:55`); apps that handle buttons 4 and 5 themselves, such as Chrome and the JetBrains apps, get the press unchanged. ⌘[ is never sent blindly: in code editors it moves the text. pikapik’s own windows are skipped by the tap; Settings handles the buttons itself (`Sources/pika-tools/Common/SettingsWindow.swift:392`). Synthetic events are tagged (`Sources/pika-tools/Common/EventTag.swift`) and tagged presses are ignored, so with two copies of pikapik the buttons are not swapped twice.
+**How it works:** Accessibility event tap (`Sources/pika-tools/Tools/Mouse/SideButtonsTool.swift:88`) finds the app under the pointer (`Sources/pika-tools/Tools/Mouse/BackForward.swift:20`) and tries in order: (website) press the app’s own Back or Forward menu item, or the Back or Forward button in its toolbar, found by name in any language or by arrow icon (`BackForward.swift:96`); menu items with a letter shortcut, such as Forward on ⇧⌘F in Mail, are skipped so a mail is not forwarded; then a back or forward swipe in Apple apps, Firefox, Opera and ForkLift; then ⌘[ and ⌘] in a short list of Apple apps (`BackForward.swift:55`); apps that handle buttons 4 and 5 themselves, such as Chrome and the JetBrains apps, get the press unchanged. ⌘[ is never sent blindly: in code editors it moves the text. pikapik’s own windows are skipped by the tap; Settings handles the buttons itself (`Sources/pika-tools/Common/SettingsWindow.swift:392`). Synthetic events are tagged (`Sources/pika-tools/Common/EventTag.swift`) and tagged presses are ignored, so with two copies of pikapik the buttons are not swapped twice.
 
 **Options:**
 - Swap the side buttons — exchanges Back and Forward (`SideButtonsTool.swift:90`).
@@ -1065,7 +1065,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows the files and folders macOS hides, dimmed, in Finder and on the desktop.
 
-**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:135`, `HiddenFilesTool` :72-141). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:206-212`) with the keys ⇧⌘. : “Press these keys in Finder, and again to hide them”.
+**How it works:** Website: writes `AppleShowAllFiles` in `com.apple.finder` and restarts Finder; Finder’s windows and tabs come back (`DesktopTools.swift:135`, `HiddenFilesTool` :72-141). Waits for copying (“Waiting for Finder to finish copying”) so a copy is never interrupted. App Store: no switch, only a hint (`HiddenFilesHint`, `DesktopTools.swift:206-212`) with the keys ⇧⌘. : “Press in Finder to show or hide”.
 
 **Edition:** Both; App Store differs: a hint with the keys instead of the switch.
 
@@ -1182,7 +1182,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
 
 **Options:**
-- Formats — the list of formats on the same page; hover a format to see its file extensions (`PlayerPage.swift:25`).
+- Formats — the lists of formats on the same page, Video and Music; hover a format to see its file extensions (`PlayerPage.swift:23`, `PlayerPage.swift:24`).
 
 **Edition:** Website only (App Store: hidden).
 
@@ -1198,7 +1198,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Each format on Settings › Player is a button that shows the app opening that format now. Click it and pikapik Player becomes that format’s app (one macOS question per type); click again and the app it had before comes back. **Open All in pikapik** does every format one after another and, when all of them are the player’s, becomes **Restore Previous Apps**.
 
-**How it works:** The buttons and Open All are on Settings › Player (`PlayerPage.swift:24`, `PlayerPage.swift:43`). A click calls `DefaultApps.set` (`Sources/pika-tools/Common/DefaultApps.swift:55`) for the types of that format (`PlayerFormats.types(of:)`, `PlayerLogic.swift:16`; the whole list is `PlayerFormats.types`, `PlayerLogic.swift:14`). Turning on remembers each type’s current app, then assigns `pikapik Player` (`Contents/Helpers/pikapik Player.app`) with the system call for default apps, one type at a time: the next type is asked only after the answer to the previous one (`DefaultApps.swift:79`). macOS asks about every type with the buttons “Use pikapik Player” and “Keep …”. No answer for 60 seconds, or a refusal, stops the run. Turning off sends each type back to its remembered app; if that app is gone, to the next app that can open it, never pikapik; types that were not remembered are left alone, and a type that stayed with the player keeps its remembered app for next time. What a button shows is read from the system (`urlForApplication(toOpen:)`) after every answer and whenever the window comes forward, so a “Keep …” or a change made in Finder shows correctly; buttons are disabled while questions are open. The archives switch uses the same class (`ArchiveTool.swift:11`).
+**How it works:** The buttons and Open All are on Settings › Player (`PlayerPage.swift:23`, `PlayerPage.swift:43`); the Music group has its own buttons and its own memory of previous apps (`PlayerPage.swift:10`). A click calls `DefaultApps.set` (`Sources/pika-tools/Common/DefaultApps.swift:55`) for the types of that format (`PlayerFormats.types(of:)`, `PlayerLogic.swift:16`; the whole list is `PlayerFormats.types`, `PlayerLogic.swift:14`). Turning on remembers each type’s current app, then assigns `pikapik Player` (`Contents/Helpers/pikapik Player.app`) with the system call for default apps, one type at a time: the next type is asked only after the answer to the previous one (`DefaultApps.swift:79`). macOS asks about every type with the buttons “Use pikapik Player” and “Keep …”. No answer for 60 seconds, or a refusal, stops the run. Turning off sends each type back to its remembered app; if that app is gone, to the next app that can open it, never pikapik; types that were not remembered are left alone, and a type that stayed with the player keeps its remembered app for next time. What a button shows is read from the system (`urlForApplication(toOpen:)`) after every answer and whenever the window comes forward, so a “Keep …” or a change made in Finder shows correctly; buttons are disabled while questions are open. The archives switch uses the same class (`ArchiveTool.swift:11`).
 
 **Nuances:** macOS asks again when turning off, with “Use …” for the old app and “Keep pikapik Player”. The system reports “Keep …” as a cancel error; that leaves the type as it is and the next types are still asked. A format with several types (WMV and ASF, MPEG-TS, MP4 and M4V) asks once for each type. A type that already opens in the player is not asked again. Apps are matched by their identifier, so a second copy of pikapik elsewhere on the Mac counts as the same player. Resetting or removing pikapik does not change default apps by itself, as with archives; press Restore Previous Apps first.
 
@@ -1211,6 +1211,53 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. (Website) Leave a question unanswered for 60 seconds → the run stops and the buttons work again.
 5. (Website) Search “double-click” in Settings → the row Open All in pikapik is found.
 6. (Website) The logic on a fake store: `scripts/test-player.swift` prints ok for remember, assign, restore, one format alone, Keep, a refused change and a system that never answers.
+
+### Songs
+
+**Does:** Plays songs in the same player window: MP3, AAC, M4A, ALAC, FLAC, WAV, AIFF, CAF, Ogg Vorbis, Opus, WMA, APE and DSD. A song shows its cover (or a note), title, artist and album; the title bar keeps the file name. Songs without tags show the file name.
+
+**How it works:** MP3, AAC, FLAC, ALAC, Opus and PCM go to the system sound renderer as they are; WMA, Vorbis, APE and DSD are decoded by FFmpeg first (`Extensions/MediaReader/AudioDecoder.swift`). Tags and the cover picture come from the file (`Extensions/MediaReader/Demuxer.swift:289`, `Helper/Player/Engine.swift:238`) and fill `Helper/Player/MusicView.swift:79`: the cover over a blurred copy of itself, or a note over the window material when there is no cover. The window sizes itself for a song (`Helper/Player/PlayerWindow.swift:362`). The same app appears under Open With for every song format (`Helper/Player/Info.plist`). Drop a song on the window or choose it with Settings › Player › Open Video…; a file that cannot be read shows the same “can’t play” message as a video.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Settings › Player › Open Video…, pick an MP3 with a cover → the window shows the cover, title, artist and album; the sound plays; Space pauses.
+2. (Website) Pick an MP3 without a cover → a note instead of the cover; pick a FLAC without tags → the file name is the title.
+3. (Website) Right-click a .flac or .m4a in Finder › Open With → pikapik Player is in the list.
+4. (Website) Open a text file renamed to .mp3 → the window says it can’t play this file; nothing crashes.
+5. (Website) `scripts/test-music.swift` makes songs in 14 formats with ffmpeg and prints ok for playing, tags and cover of each, then runs 70 damaged copies; run with `FFMPEG=/path/to/ffmpeg` if ffmpeg is not in Homebrew’s folder.
+
+### Next and previous song in a folder
+
+**Does:** Opening a folder (or a song) lets the player go through the songs next to it. N or ⇧> goes to the next song, P or ⇧< to the previous one (the same as in the Playback menu, “Next in Folder” and “Previous in Folder”, and the two buttons in the panel). When a song ends, the next one starts by itself; after the last one the player stops. Previous restarts the current song if it has played for more than 3 seconds. Songs go with songs and videos with videos; videos never move on by themselves.
+
+**How it works:** The order is the one Finder shows, with numbers compared as numbers, so “2” comes before “10” (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:42`, neighbour at `:50`). The window collects the playable files of the folder (`Helper/Player/PlayerWindow.swift:301`, `:507`) and moves on when a song ends (`PlayerWindow.swift:376`). The player is sandboxed, so for the folder of a song opened with a double-click it asks once: a sheet on the window, “To play the next file, allow access to this folder.”, with a standard Open panel (`Helper/Player/FolderAccess.swift:26`). The answer is kept as a bookmark in the player’s own storage, so the same folder is not asked again after the next launch (`FolderAccess.swift:18`, `:44`). Choosing a folder in Settings › Player › Open Video… or dropping a folder on the window already gives access, so nothing is asked. Without access the song plays alone, with no error.
+
+**Nuances:** A folder with no playable files says “There is nothing to play in this folder.” A file that cannot be opened is skipped when the player moves on by itself; with the N key it shows the “can’t play” message. After Cancel the player does not ask again when a song ends, but N asks again. An allowed folder also covers the folders inside it (`PlayerLogic.swift:62`).
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Make a folder with `01.mp3`, `02.flac` and `10.m4a`, a few seconds each. Settings › Player › Open Video…, choose the folder → the first song plays; wait → the second starts by itself, then the third (2 before 10); after the third it stops and does not start again.
+2. (Website) Press N → the next song; press P in the first 3 seconds → the previous song; press P after 3 seconds → the same song from the start. The Playback menu shows “Next in Folder” and “Previous in Folder” with N and P.
+3. (Website) Double-click `02.flac` in Finder → it plays; press N → a sheet asks to allow access to the folder; press Allow → the next song plays. Quit the player and open the same file again, press N → no question.
+4. (Website) Press Cancel on the sheet → the song keeps playing, and when it ends nothing starts and nothing is asked; press N → the sheet comes again.
+5. (Website) Open a folder with only text files → “There is nothing to play in this folder.”
+6. (Website) The logic: `scripts/test-player.swift` prints ok for the order and the neighbours, and the keys N, P, ⇧> and ⇧<.
+
+### Now Playing and media keys
+
+**Does:** While a song or video plays, macOS shows it in Control Center and on the lock screen: title, artist, album, cover, time. Play, Pause, Next, Previous and the position slider there control the player, and so do the keyboard media keys. When the window closes, the entry disappears.
+
+**How it works:** `Helper/Player/NowPlaying.swift:26` fills `MPNowPlayingInfoCenter` after a file opens and on every pause, play or jump (`PlayerWindow.swift:414`); the commands come from `MPRemoteCommandCenter` and call the same actions as the keys. A song without a title tag shows its file name. A video shows its title, or its file name, and its length, with no cover.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a tagged song → Control Center › Now Playing shows its title, artist and cover; the pause button there pauses the song.
+2. (Website) Drag the position there → the song jumps. Next → the next song of the folder.
+3. (Website) Close the window → the entry disappears.
+4. (Website) Without pressing anything: `scripts/test-folder.swift` opens a folder in a test window and reads `MPNowPlayingInfoCenter` after opening, pausing, moving on and closing; it prints ok for title, artist, album, cover, length, rate 1 and 0, and nothing left after closing.
 
 ### Keys, wheel and Playback menu
 

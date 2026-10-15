@@ -25,7 +25,7 @@ final class DesktopIconsTool: Tool {
     }
 
     var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
-    func refresh() { curtain.isOn = isEnabled }
+    func refresh() { curtain.isOn = isEnabled && MainCopy.canAct }
 }
 #else
 private func relaunch(_ bundleID: String) {
@@ -46,6 +46,7 @@ final class DesktopIconsTool: Tool {
     var isOn: Bool {
         get { hidden }
         set {
+            guard MainCopy.canAct else { return }
             OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
             Self.write(newValue)
             hidden = newValue
@@ -56,9 +57,8 @@ final class DesktopIconsTool: Tool {
     func refresh() { hidden = Self.read() }
 
     static func putBack() {
-        let entry = OriginalValue.load(journal)
+        if let value = OriginalValue.putBack(OriginalValue.load(journal), current: read()) { write(value) }
         OriginalValue.save(nil, journal)
-        if let value = OriginalValue.putBack(entry, current: read()) { write(value) }
     }
 
     private static func write(_ value: Bool) {
@@ -98,6 +98,7 @@ final class HiddenFilesTool: Tool {
     var isOn: Bool {
         get { shown }
         set {
+            guard MainCopy.canAct else { return }
             OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
             CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
             CFPreferencesAppSynchronize(Self.domain)
@@ -112,11 +113,10 @@ final class HiddenFilesTool: Tool {
     func refresh() { shown = Self.read() }
 
     static func putBack() {
-        let entry = OriginalValue.load(journal)
-        OriginalValue.save(nil, journal)
-        guard let value = OriginalValue.putBack(entry, current: read()) else { return }
+        guard let value = OriginalValue.putBack(OriginalValue.load(journal), current: read()) else { return OriginalValue.save(nil, journal) }
         CFPreferencesSetAppValue(key, value as CFBoolean, domain)
         CFPreferencesAppSynchronize(domain)
+        OriginalValue.save(nil, journal)
         guard let pid = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.processIdentifier,
               let before = activity(pid)
         else { return }
@@ -238,7 +238,7 @@ private struct DesktopIconsSettings: View {
 struct HiddenFilesHint: View {
     var body: some View {
         HiddenFilesArt()
-        KeyLabel(keys: ["⇧⌘."], title: Text("Show hidden files"), subtitle: Text("Press these keys in Finder, and again to hide them"))
+        KeyLabel(keys: ["⇧⌘."], title: Text("Show hidden files"), subtitle: Text("Press in Finder to show or hide"))
             .settingAnchor(String(localized: "Show hidden files"))
     }
 }

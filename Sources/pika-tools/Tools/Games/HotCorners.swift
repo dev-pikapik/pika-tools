@@ -40,11 +40,15 @@ enum HotCorners {
             CFPreferencesSetAppValue(name, value as CFNumber, dock)
             wrote = true
         }
-        UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: journalKey)
-        UserDefaults.standard.set(nil, forKey: oursKey)
-        guard wrote else { return }
-        CFPreferencesAppSynchronize(dock)
-        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        if wrote {
+            CFPreferencesAppSynchronize(dock)
+            _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        }
+        remember(saved, [:])
+    }
+
+    static func kept(_ old: [String: Int], _ new: [String: Int]) -> [String: Int] {
+        old.merging(new) { $1 }
     }
 
     private static func apply(_ side: String, _ plan: (Int) -> (saved: [String: Int], write: Int?)) {
@@ -52,14 +56,20 @@ enum HotCorners {
         let name = key(side) as CFString
         let current = (CFPreferencesCopyAppValue(name, dock) as? NSNumber)?.intValue ?? 0
         let result = plan(current)
-        UserDefaults.standard.set(result.saved.isEmpty ? nil : result.saved, forKey: journalKey)
         var written = ours
         written[side] = result.saved[side] == nil ? nil : (result.write ?? written[side])
-        UserDefaults.standard.set(written.isEmpty ? nil : written, forKey: oursKey)
-        guard let value = result.write else { return }
-        CFPreferencesSetAppValue(name, value as CFNumber, dock)
-        CFPreferencesAppSynchronize(dock)
-        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        remember(kept(before, result.saved), kept(ours, written))
+        if let value = result.write {
+            CFPreferencesSetAppValue(name, value as CFNumber, dock)
+            CFPreferencesAppSynchronize(dock)
+            _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        }
+        remember(result.saved, written)
+    }
+
+    private static func remember(_ saved: [String: Int], _ ours: [String: Int]) {
+        UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: journalKey)
+        UserDefaults.standard.set(ours.isEmpty ? nil : ours, forKey: oursKey)
     }
 }
 #endif

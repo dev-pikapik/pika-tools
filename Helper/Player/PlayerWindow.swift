@@ -1,5 +1,6 @@
 import AppKit
 import AVFoundation
+import MediaPlayer
 import UniformTypeIdentifiers
 
 final class VideoView: NSView {
@@ -39,22 +40,22 @@ final class VideoView: NSView {
     }
 
     override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation {
-        Self.video(sender) == nil ? [] : .copy
+        Self.playable(sender) == nil ? [] : .copy
     }
 
     override func performDragOperation(_ sender: any NSDraggingInfo) -> Bool {
-        guard let url = Self.video(sender) else { return false }
+        guard let url = Self.playable(sender) else { return false }
         controller?.load(url)
         return true
     }
 
-    private static func video(_ sender: any NSDraggingInfo) -> URL? {
-        (sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL])?.first(where: PlayerFormats.plays)
+    private static func playable(_ sender: any NSDraggingInfo) -> URL? {
+        (sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL])?.first { PlayerFormats.plays($0) || FolderAccess.isFolder($0) }
     }
 
     override func isAccessibilityElement() -> Bool { true }
     override func accessibilityRole() -> NSAccessibility.Role? { .group }
-    override func accessibilityLabel() -> String? { String(localized: "Video") }
+    override func accessibilityLabel() -> String? { controller?.isMusic == true ? String(localized: "Music") : String(localized: "Video") }
     override func accessibilityValue() -> Any? { controller?.state }
 }
 
@@ -81,8 +82,11 @@ final class Scrubber: NSSlider {
 final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemValidation {
     static let volumeKey = "volume"
     private static let resumeStore = "resume"
+    private static let minimum = NSSize(width: 480, height: 200)
+    private static let musicSize = NSSize(width: 560, height: 600)
     private let video = VideoView()
-    private let message = NSTextField(labelWithString: String(localized: "Drop a video here"))
+    private let music = MusicView()
+    private let message = NSTextField(labelWithString: String(localized: "Drop a video or a song here"))
     private let controls: NSView = {
         if #available(macOS 26.0, *) {
             let glass = NSGlassEffectView()
@@ -102,6 +106,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }()
     private let preview = ThumbnailPreview()
     private let playButton = NSButton()
+    private let previousButton = NSButton()
+    private let nextButton = NSButton()
     private let fullScreenButton = NSButton()
     private let pipButton = NSButton()
     private let speaker = NSImageView()
@@ -123,6 +129,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var cursorHidden = false
     private var playing = false
     private var failed = false
+    private var isLast = false
+    private var declined = Set<String>()
+    private var track: [String: Any] = [:]
+    private var published: (Bool, Float)?
     private var speed: Float = 1
     private var muted = false
     private var wheel = PlayerWheel()
@@ -131,6 +141,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     var onClose: ((PlayerController) -> Void)?
 
     var isEmpty: Bool { engine == nil }
+
+    var isMusic: Bool { engine.map { !$0.hasVideo } ?? false }
 
     var state: String {
         if failed { return message.stringValue }
@@ -142,7 +154,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     init() {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
         window.collectionBehavior = .fullScreenPrimary
-        window.minSize = NSSize(width: 400, height: 200)
+        window.minSize = Self.minimum
         window.backgroundColor = .black
         window.title = "pikapik Player"
         super.init(window: window)
@@ -169,6 +181,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         controls.appearance = NSAppearance(named: .darkAqua)
 
         configure(playButton, "play.fill", String(localized: "Play"), #selector(playPause))
+        configure(previousButton, "backward.fill", String(localized: "Previous in Folder"), #selector(previous))
+        configure(nextButton, "forward.fill", String(localized: "Next in Folder"), #selector(next))
         configure(fullScreenButton, "arrow.up.left.and.arrow.down.right", String(localized: "Full Screen"), #selector(fullScreen))
         configure(pipButton, "pip.enter", String(localized: "Picture in Picture"), #selector(togglePictureInPicture))
         pipButton.isHidden = true
@@ -196,18 +210,24 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         volume.setAccessibilityLabel(String(localized: "Volume"))
         volume.floatValue = UserDefaults.standard.object(forKey: Self.volumeKey) as? Float ?? 1
 
-        let row = NSStackView(views: [playButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, pipButton, fullScreenButton])
+        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, pipButton, fullScreenButton])
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
-        for view in [message, controls, row] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
+        for view in [music, message, controls, row] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
+        video.addSubview(music)
         video.addSubview(message)
         video.addSubview(controls)
         video.addSubview(preview)
         preview.isHidden = true
         let wide = controls.widthAnchor.constraint(equalToConstant: 560)
         wide.priority = .defaultHigh
+        music.isHidden = true
         NSLayoutConstraint.activate([
+            music.leadingAnchor.constraint(equalTo: video.leadingAnchor),
+            music.trailingAnchor.constraint(equalTo: video.trailingAnchor),
+            music.topAnchor.constraint(equalTo: video.topAnchor),
+            music.bottomAnchor.constraint(equalTo: video.bottomAnchor),
             message.centerXAnchor.constraint(equalTo: video.centerXAnchor),
             message.centerYAnchor.constraint(equalTo: video.centerYAnchor),
             message.widthAnchor.constraint(lessThanOrEqualTo: video.widthAnchor, constant: -40),
@@ -247,7 +267,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         button.widthAnchor.constraint(equalToConstant: 22).isActive = true
     }
 
-    func load(_ url: URL) {
+    func load(_ url: URL, advancing: Bool = false) {
+        guard !FolderAccess.isFolder(url) else { return openFolder(url) }
         stop()
         window?.title = url.lastPathComponent
         window?.representedURL = url
@@ -262,7 +283,16 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             engine.layer.frame = video.bounds
             engine.layer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
             video.layer?.insertSublayer(engine.layer, at: 0)
-            fit(engine.size)
+            let tags = engine.tags(), cover = tags.cover.flatMap(NSImage.init(data:))
+            if engine.hasVideo {
+                fit(engine.size)
+            } else {
+                fitMusic()
+            }
+            if !engine.hasVideo { music.show(title: PlayerTags.title(tags.title, file: url), subtitle: PlayerTags.subtitle(artist: tags.artist, album: tags.album), cover: cover) }
+            music.isHidden = engine.hasVideo
+            track = Self.trackInfo(tags, cover: cover, file: url, hasVideo: engine.hasVideo, duration: engine.duration.seconds)
+            isLast = FolderAccess.files(in: url.deletingLastPathComponent()).map { PlaylistOrder.neighbour(of: url, kind: PlayerFormats.kind(of: url) ?? .video, among: $0, step: 1) == nil } ?? false
             observer = engine.synchronizer.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 10), queue: .main) { [weak self] _ in self?.tick() }
             playing = true
             chapters = engine.chapters
@@ -279,12 +309,42 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             update()
             showControls()
         } catch {
-            failed = true
-            message.stringValue = String(localized: "Can’t play this file. It may be damaged or in a format the player doesn’t support.")
-            message.isHidden = false
-            controls.isHidden = true
+            fail(String(localized: "Can’t play this file. It may be damaged or in a format the player doesn’t support."))
+            if advancing { go(1, explicit: false, advancing: true) }
         }
         NSAccessibility.post(element: video, notification: .valueChanged)
+    }
+
+    private func openFolder(_ folder: URL) {
+        FolderAccess.remember(folder)
+        guard let first = FolderAccess.files(in: folder).flatMap(PlaylistOrder.first(among:)) else {
+            stop()
+            window?.title = folder.lastPathComponent
+            window?.representedURL = nil
+            fail(String(localized: "There is nothing to play in this folder."))
+            return
+        }
+        load(first)
+    }
+
+    private func fail(_ text: String) {
+        failed = true
+        message.stringValue = text
+        message.isHidden = false
+        music.isHidden = true
+        controls.isHidden = true
+    }
+
+    private static func trackInfo(_ tags: MediaTags, cover: NSImage?, file: URL, hasVideo: Bool, duration: Double) -> [String: Any] {
+        var info: [String: Any] = [
+            MPMediaItemPropertyTitle: PlayerTags.title(tags.title, file: file),
+            MPNowPlayingInfoPropertyMediaType: (hasVideo ? MPNowPlayingInfoMediaType.video : .audio).rawValue,
+            MPMediaItemPropertyPlaybackDuration: duration,
+        ]
+        if let artist = PlayerTags.clean(tags.artist) { info[MPMediaItemPropertyArtist] = artist }
+        if let album = PlayerTags.clean(tags.album) { info[MPMediaItemPropertyAlbumTitle] = album }
+        if let cover { info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: cover.size) { _ in cover } }
+        return info
     }
 
     private func stop() {
@@ -306,6 +366,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         engine.layer.removeFromSuperlayer()
         self.engine = nil
         playing = false
+        published = nil
+        track = [:]
+        NowPlaying.shared.clear(self)
     }
 
     private func fit(_ size: CGSize) {
@@ -315,23 +378,29 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
         let room = screen.visibleFrame.insetBy(dx: 40, dy: 40).size
         let scale = min(1, room.width / size.width, room.height / size.height)
-        let content = NSSize(width: max(400, (size.width * scale).rounded()), height: max(200, (size.height * scale).rounded()))
         window.contentAspectRatio = size
-        guard !window.styleMask.contains(.fullScreen) else { return }
+        place(NSSize(width: max(Self.minimum.width, (size.width * scale).rounded()), height: max(Self.minimum.height, (size.height * scale).rounded())))
+    }
+
+    private func fitMusic() {
+        window?.contentAspectRatio = .zero
+        if !music.isHidden { return }
+        place(Self.musicSize)
+    }
+
+    private func place(_ content: NSSize) {
+        guard let window, !window.styleMask.contains(.fullScreen) else { return }
         var frame = window.frameRect(forContentRect: NSRect(origin: .zero, size: content))
         frame.origin = NSPoint(x: window.frame.midX - frame.width / 2, y: window.frame.maxY - frame.height)
         window.setFrame(frame, display: true)
-        if !screen.visibleFrame.contains(window.frame) { window.center() }
+        if let screen = window.screen ?? NSScreen.main, !screen.visibleFrame.contains(window.frame) { window.center() }
     }
 
     private func tick() {
         guard let engine else { return }
         if engine.failed, !failed {
             stop()
-            failed = true
-            message.stringValue = String(localized: "Can’t play this file. It may be damaged or in a format the player doesn’t support.")
-            message.isHidden = false
-            controls.isHidden = true
+            fail(String(localized: "Can’t play this file. It may be damaged or in a format the player doesn’t support."))
             return
         }
         if engine.layer.sampleBufferRenderer.requiresFlushToResumeDecoding {
@@ -348,6 +417,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             playing = false
             engine.synchronizer.rate = 0
             showControls()
+            if !engine.hasVideo, !isLast { go(1, explicit: false, advancing: true) }
         }
         update()
     }
@@ -366,7 +436,19 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         speedLabel.isHidden = speed == 1
         speedLabel.stringValue = "\(speed.formatted())×"
         speedLabel.setAccessibilityLabel(String(localized: "Speed"))
+        nextButton.isEnabled = !isLast
         video.setAccessibilityValue(state)
+        if published?.0 != playing || published?.1 != speed { publishNowPlaying() }
+    }
+
+    private func publishNowPlaying() {
+        guard let engine else { return }
+        published = (playing, speed)
+        var info = track
+        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = PlayerTime.clamp(engine.position.seconds, duration: engine.duration.seconds)
+        info[MPNowPlayingInfoPropertyPlaybackRate] = Double(rate)
+        info[MPNowPlayingInfoPropertyDefaultPlaybackRate] = Double(speed)
+        NowPlaying.shared.publish(info, playing: playing, for: self)
     }
 
     private var rate: Float { playing ? speed : 0 }
@@ -396,6 +478,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             guard window?.styleMask.contains(.fullScreen) == true else { return false }
             fullScreen(nil)
         case .snapshot: saveFrame()
+        case .next: go(1, explicit: true)
+        case .previous: previous(nil)
         case .floatOnTop: window?.level = window?.level == .floating ? .normal : .floating
         case .nextChapter: jumpChapter(1)
         case .previousChapter: jumpChapter(-1)
@@ -442,6 +526,44 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         showControls()
     }
 
+    func setPlaying(_ value: Bool) {
+        if playing != value { playPause(nil) }
+    }
+
+    @objc private func next(_ sender: Any?) {
+        showControls()
+        go(1, explicit: true)
+    }
+
+    @objc private func previous(_ sender: Any?) {
+        showControls()
+        if let engine, engine.position.seconds > 3 {
+            seek(0)
+        } else {
+            go(-1, explicit: true)
+        }
+    }
+
+    private func go(_ step: Int, explicit: Bool, advancing: Bool = false) {
+        guard let url = window?.representedURL, let window else { return }
+        let folder = url.deletingLastPathComponent()
+        guard let files = FolderAccess.files(in: folder) else {
+            guard explicit || !declined.contains(folder.path) else { return }
+            declined.remove(folder.path)
+            FolderAccess.ask(folder, in: window) { [weak self] granted in
+                guard let self else { return }
+                if granted { self.go(step, explicit: explicit, advancing: advancing) } else { self.declined.insert(folder.path) }
+            }
+            return
+        }
+        if let neighbour = PlaylistOrder.neighbour(of: url, kind: PlayerFormats.kind(of: url) ?? .video, among: files, step: step) {
+            load(neighbour, advancing: advancing)
+        } else if step > 0 {
+            isLast = true
+            update()
+        }
+    }
+
     @objc private func fullScreen(_ sender: Any?) {
         window?.toggleFullScreen(sender)
     }
@@ -452,7 +574,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         showControls()
     }
 
-    private func seek(_ seconds: Double) {
+    func seek(_ seconds: Double) {
         guard let engine else { return }
         let target = PlayerTime.clamp(seconds, duration: engine.duration.seconds)
         if playing, let finished = engine.finished, engine.synchronizer.currentTime() >= finished { playing = false }
@@ -460,6 +582,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         scrubber.doubleValue = target
         elapsed.stringValue = PlayerTime.text(target)
         remaining.stringValue = "-" + PlayerTime.text(engine.duration.seconds - target)
+        publishNowPlaying()
     }
 
     private func step(_ direction: Int) {
@@ -662,7 +785,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         guard let window else { return }
         let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle)
+        let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
@@ -709,6 +832,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
                 item.state = window?.level == .floating ? .on : .off
                 return true
             case .snapshot: return engine?.hasVideo == true
+            case .next: return window?.representedURL != nil && !isLast
+            case .previous: return window?.representedURL != nil
             case .nextChapter, .previousChapter: return !chapters.isEmpty
             case .pictureInPicture:
                 item.title = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")

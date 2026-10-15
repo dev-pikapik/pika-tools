@@ -237,6 +237,8 @@ final class Engine {
         queue.async { [weak self] in self?.restartOnFrame() }
     }
 
+    func tags() -> MediaTags { demuxer.tags() }
+
     func frameImage() -> CGImage? {
         guard #available(macOS 14.4, *), let buffer = layer.sampleBufferRenderer.displayedPixelBuffer() else { return nil }
         var image: CGImage?

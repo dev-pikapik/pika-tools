@@ -33,15 +33,16 @@ enum TestPlayer {
             (left, .command, .slower), (right, .command, .faster), ("[", [], .slower), ("]", [], .faster), ("\u{7F}", [], .normalSpeed),
             (up, [], .louder), (down, [], .quieter), ("m", [], .mute), ("f", [], .fullScreen), ("F", [], .fullScreen), ("f", .command, .fullScreen), ("f", [.command, .control], .fullScreen),
             ("\u{1B}", [], .leaveFullScreen), ("s", [], .snapshot), ("t", [], .floatOnTop),
+            ("n", [], .next), ("N", [], .next), (">", .shift, .next), ("p", [], .previous), ("<", .shift, .previous), ("n", .command, nil), ("p", .option, nil),
             ("\u{F72D}", [], .nextChapter), ("\u{F72C}", [], .previousChapter), ("a", [], .loop), ("A", [], .loop), ("p", [.command, .option], .pictureInPicture),
-            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("z", [], nil), ("p", [], nil), ("p", .command, nil), ("", [], nil),
+            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("z", [], nil), ("p", .command, nil), ("", [], nil),
         ]
         for (key, modifiers, action) in keys {
             precondition(PlayerAction(key: key, modifiers: modifiers) == action, "key \(key.unicodeScalars.map { String($0.value, radix: 16) }) \(modifiers.rawValue)")
         }
         precondition(PlayerAction(key: left, modifiers: [.shift, .function, .numericPad]) == .skipBack, "arrow keys always carry the function flag")
         let bound = Set(PlayerAction.bindings.map(\.action))
-        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .floatOnTop] {
+        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop] {
             precondition(bound.contains(action), "\(action) has no key")
         }
         precondition(Set(PlayerAction.bindings.map { "\($0.key)\($0.modifiers.rawValue)" }).count == PlayerAction.bindings.count, "a key is bound twice")
@@ -121,6 +122,7 @@ enum TestPlayer {
             precondition(seen == (controls, cursor), "playing \(playing), over \(over), full screen \(full), idle \(idle) → \(seen)")
         }
         precondition(delay == 2.5)
+        precondition(PlayerChrome.visibility(playing: true, overControls: false, fullScreen: true, idle: .infinity, hides: false) == (true, true), "a song has no picture to hide the panel from")
         print("the panel stays on pause and under the pointer, hides after 2.5 s of playing, and takes the cursor with it only in full screen: ok")
 
         let total = 600.0
@@ -162,21 +164,61 @@ enum TestPlayer {
         }
         precondition(importedIDs.allSatisfy { documents.flatMap { $0["LSItemContentTypes"] as? [String] ?? [] }.contains($0) }, "an imported type the player does not open")
         let entitlements = NSDictionary(contentsOfFile: "Helper/Player/Player.entitlements")!
-        precondition(Set(entitlements.allKeys as! [String]) == ["com.apple.security.app-sandbox", "com.apple.security.files.user-selected.read-write"], "\(entitlements.allKeys)")
+        precondition(Set(entitlements.allKeys as! [String]) == ["com.apple.security.app-sandbox", "com.apple.security.files.bookmarks.app-scope", "com.apple.security.files.user-selected.read-write"], "\(entitlements.allKeys)")
         let types = documents.flatMap { $0["LSItemContentTypes"] as? [String] ?? [] }
         let claimed = documents.flatMap { $0["CFBundleTypeExtensions"] as? [String] ?? [] }
         let system = ["avi": "public.avi", "ts": "public.mpeg-2-transport-stream", "m2ts": "public.avchd-mpeg-2-transport-stream", "mts": "public.avchd-mpeg-2-transport-stream",
-                      "mpg": "public.mpeg", "mpeg": "public.mpeg", "mp4": "public.mpeg-4", "m4v": "com.apple.m4v-video", "mov": "com.apple.quicktime-movie"]
+                      "mpg": "public.mpeg", "mpeg": "public.mpeg", "mp4": "public.mpeg-4", "m4v": "com.apple.m4v-video", "mov": "com.apple.quicktime-movie",
+                      "mp3": "public.mp3", "aac": "public.aac-audio", "m4a": "com.apple.m4a-audio", "wav": "com.microsoft.waveform-audio", "aiff": "public.aiff-audio", "aif": "public.aiff-audio", "caf": "com.apple.coreaudio-format"]
         for ext in extensions {
             precondition(claimed.contains(ext) || system[ext].map(types.contains) == true, ".\(ext) is in the Settings list but the player does not open it")
         }
         precondition(plist["LSMinimumSystemVersion"] as? String == "14.0")
         print("every listed format opens in the player, which asks to be only an alternate app and may only write where you choose: ok")
 
-        let videoTypes = PlayerFormats.types
+        let videoTypes = PlayerFormats.videoTypes
         precondition(videoTypes.count >= 10 && Set(videoTypes).count == videoTypes.count, "the video types are missing or repeated: \(videoTypes.count)")
         precondition(videoTypes.contains(.mpeg4Movie) && videoTypes.contains(.quickTimeMovie) && videoTypes.contains(.avi), "the usual video types are not in the list")
+        let musicTypes = PlayerFormats.musicTypes
+        precondition(musicTypes.count >= 8 && Set(musicTypes).count == musicTypes.count && musicTypes.contains(.mp3) && musicTypes.contains(.wav) && Set(musicTypes).isDisjoint(with: videoTypes), "the music types are missing, repeated or shared with video")
+        checkPlaylist()
         await checkDefaultApps()
+    }
+
+    static func checkPlaylist() {
+        func url(_ path: String) -> URL { URL(fileURLWithPath: path) }
+        precondition(PlayerFormats.kind(of: url("/a/Song.FLAC")) == .music && PlayerFormats.kind(of: url("/a/Film.mkv")) == .video && PlayerFormats.kind(of: url("/a/notes.txt")) == nil && PlayerFormats.kind(of: url("/a/folder")) == nil)
+        precondition(["mp3", "aac", "m4a", "flac", "alac", "wav", "aiff", "aif", "caf", "ogg", "oga", "opus", "wma", "ape", "dsf"].allSatisfy { PlayerFormats.kind(of: url("/a/x.\($0)")) == .music }, "a music format is not recognised")
+        precondition(PlayerFormats.video.flatMap(\.extensions).allSatisfy { PlayerFormats.kind(of: url("/a/x.\($0)")) == .video }, "a video format is read as music")
+        print("a file is a song or a video by its extension, whatever the letter case: ok")
+
+        let folder = ["10 Ten.mp3", "2 Two.mp3", "02 Film.mkv", "cover.jpg", "1 One.flac", "Intro.mp3", "intro.MP3", "notes.txt"].map { url("/m/\($0)") }
+        let order = PlaylistOrder.sorted(folder).map(\.lastPathComponent)
+        precondition(order == ["1 One.flac", "02 Film.mkv", "2 Two.mp3", "10 Ten.mp3", "cover.jpg", "intro.MP3", "Intro.mp3", "notes.txt"], "\(order)")
+        precondition(PlaylistOrder.sorted(folder) == PlaylistOrder.sorted(folder.reversed()), "the order must not depend on how the folder was listed")
+        precondition(PlaylistOrder.first(among: folder) == url("/m/1 One.flac") && PlaylistOrder.first(among: [url("/m/a.txt")]) == nil && PlaylistOrder.first(among: []) == nil)
+        print("a folder plays in Finder order: 2 before 10, the same however it was listed: ok")
+
+        let two = url("/m/2 Two.mp3")
+        precondition(PlaylistOrder.neighbour(of: two, kind: .music, among: folder, step: 1) == url("/m/10 Ten.mp3"))
+        precondition(PlaylistOrder.neighbour(of: two, kind: .music, among: folder, step: -1) == url("/m/1 One.flac"), "a video between two songs must be skipped")
+        precondition(PlaylistOrder.neighbour(of: url("/m/Film.mkv"), kind: .video, among: folder + [url("/m/Film.mkv")], step: -1) == url("/m/02 Film.mkv"))
+        precondition(PlaylistOrder.neighbour(of: url("/m/Intro.mp3"), kind: .music, among: folder, step: 1) == nil, "the last file has no next one and must not wrap around")
+        precondition(PlaylistOrder.neighbour(of: url("/m/1 One.flac"), kind: .music, among: folder, step: -1) == nil)
+        precondition(PlaylistOrder.neighbour(of: url("/m/gone.mp3"), kind: .music, among: folder, step: 1) == nil && PlaylistOrder.neighbour(of: two, kind: .music, among: [], step: 1) == nil)
+        precondition(PlaylistOrder.neighbour(of: url("/m/10 Ten.mp3"), kind: .music, among: folder, step: 5) == nil)
+        let odd = url("/m/Odd.xyz")
+        precondition(PlaylistOrder.neighbour(of: odd, kind: .music, among: folder + [odd], step: -1) == url("/m/Intro.mp3"), "the open file stays in its own list even if its type is unknown")
+        print("next and previous skip the other kind, never wrap, and never crash on a missing file: ok")
+
+        precondition(PlaylistFolders.covers(url("/Users/a/Music"), url("/Users/a/Music")) && PlaylistFolders.covers(url("/Users/a/Music"), url("/Users/a/Music/Album")))
+        precondition(!PlaylistFolders.covers(url("/Users/a/Music"), url("/Users/a/Music2")) && !PlaylistFolders.covers(url("/Users/a/Music"), url("/Users/a")) && !PlaylistFolders.covers(url("/Users/a/Music"), url("/Users/b/Music")))
+        precondition(PlaylistFolders.covers(url("/"), url("/Users/a")), "the whole disk covers every folder")
+        print("an allowed folder covers itself and what is inside it, and nothing next to it: ok")
+
+        precondition(PlayerTags.title("Тест — 音楽 🎵", file: url("/m/a.mp3")) == "Тест — 音楽 🎵" && PlayerTags.title(nil, file: url("/m/My Song.flac")) == "My Song" && PlayerTags.title("  \n ", file: url("/m/a.b.mp3")) == "a.b")
+        precondition(PlayerTags.subtitle(artist: "Артист Ω", album: "Альбом №1") == "Артист Ω — Альбом №1" && PlayerTags.subtitle(artist: "A", album: nil) == "A" && PlayerTags.subtitle(artist: " ", album: "B") == "B" && PlayerTags.subtitle(artist: nil, album: "") == "")
+        print("a song shows its tags, or its file name when the title is empty, and skips empty artist and album: ok")
     }
 
     static func checkDefaultApps() async {
@@ -223,11 +265,14 @@ enum TestPlayer {
         precondition(system.handler(of: a) == old, "turning on twice must not forget the old app")
         print("a refused change stops quietly, and turning on again keeps the old apps: ok")
 
-        let plain = DefaultApps(types: [a, d], target: ours, previousKey: "plain", fallback: "test.Fallback", system: system, defaults: defaults)
+        let e = UTType.mpeg
+        let plain = DefaultApps(types: [a, d, e], target: ours, previousKey: "plain", fallback: "test.Fallback", system: system, defaults: defaults)
         await plain.set(true).value
+        system.candidates[d.identifier] = [ours, fallback]
         await plain.set(false).value
-        precondition(system.handler(of: a) == old && system.handler(of: d) == fallback, "a system app should take a type that had none")
-        print("a system fallback takes the types that had no other app: ok")
+        precondition(system.handler(of: a) == old && system.handler(of: d) == fallback, "a system app should take a type that had none and that it can open")
+        precondition(system.handler(of: e) == ours, "a system app that can’t open the type must not take it")
+        print("a system fallback takes only the types it can open and that had no other app: ok")
 
         system.candidates = [a.identifier: [old, ours], b.identifier: [next, ours], c.identifier: [next, ours]]
         let formats = DefaultApps(types: [a, b, c], target: ours, previousKey: "formats", system: system, defaults: defaults)

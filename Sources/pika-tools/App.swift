@@ -157,7 +157,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let background = Background.shared
         if background.quitting || Background.isOutsideQuit { return .terminateNow }
         guard Background.isOn, MainCopy.shared.role != .passive, !NSEvent.modifierFlags.contains(.option) else {
-            KeepAwake.shared.set(.off)
+            if MainCopy.shared.role != .passive { KeepAwake.shared.set(.off) }
             return .terminateNow
         }
         background.hide()
@@ -178,6 +178,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         Brightness.shared.refresh()
         KeepAwake.shared.resume()
         KeepAwake.shared.restoreLidSleepIfNeeded()
+        #if !APPSTORE
+        Updater.shared.resume()
+        #endif
     }
 
     @MainActor private func stopFeatures(quitting: Bool) {
@@ -187,6 +190,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if !quitting { KeepAwake.shared.suspend() }
         #if !APPSTORE
         FanControl.shared.handOff()
+        Updater.shared.pause()
         DesktopIconsTool.putBack()
         HiddenFilesTool.putBack()
         HotCorners.putBackAll()
