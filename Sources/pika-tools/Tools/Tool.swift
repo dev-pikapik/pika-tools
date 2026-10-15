@@ -142,6 +142,7 @@ final class ToolRegistry {
     }
 
     func refresh() {
+        guard MainCopy.shared.role != .waiting else { return }
         tools.forEach { $0.refresh() }
     }
 }

@@ -35,7 +35,8 @@ final class MainCopy {
         watching = NSWorkspace.shared.observe(\.runningApplications) { [self] _, _ in evaluate() }
         let distributed = DistributedNotificationCenter.default()
         distributed.addObserver(forName: Self.claim, object: nil, queue: .main) { [self] note in
-            guard let pid = Self.sender(note), peers().contains(where: { $0.pid == pid }) else { return }
+            guard let pid = Self.sender(note), let claimant = peers().first(where: { $0.pid == pid }),
+                  MainCopyChoice.leader(me, among: [claimant]) == claimant else { return }
             role == .main || role == .waiting ? release() : post(Self.released)
         }
         distributed.addObserver(forName: Self.released, object: nil, queue: .main) { [self] note in
