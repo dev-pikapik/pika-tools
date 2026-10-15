@@ -1340,6 +1340,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. (Website) Full screen, playing, mouse still → the panel and the pointer both hide; press any key → both return.
 4. (Website) Play a mostly white video → the buttons and times can still be read.
 
+### Window without a title bar
+
+**Does:** The player window has no grey title bar: the video fills the whole window, and the three round buttons sit on top of it, hidden together with the control panel.
+
+**How it works:** The window stays a normal titled window, so it keeps its rounded corners, shadow, ⌘W and the Window menu, but its content runs under a transparent, title-less bar (`Helper/Player/WindowChrome.swift:32`; the title is still set for the Window menu and VoiceOver). The three buttons are shown and hidden by the same rule as the panel (`PlayerWindow.swift:700`), with a thin dark gradient under them so they stay readable on a bright picture (`WindowChrome.swift:52`). A single click with a drag on the video moves the window (`PlayerWindow.swift:41`), except on the control panel; a double-click on the video still goes full screen (`PlayerWindow.swift:34`). A double-click on the thin strip at the very top does what System Settings says for a title bar: zoom, minimize or nothing (`WindowChrome.swift:46`). In full screen the Mac handles the menu bar and the buttons (`PlayerWindow.swift:752`). `scripts/test-player-window.swift` checks the window style and that the buttons and the gradient hide and show together.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open a video → no grey bar at the top: the picture reaches the top edge. Keep the mouse still while it plays → after about 2.5 seconds the three buttons and the panel fade out together; move the mouse → they come back with a dark shade under the buttons.
+2. (Website) Pause → the buttons stay however long you wait. Open a mostly white video → the buttons are still easy to see.
+3. (Website) Drag the video with the mouse → the window moves; drag the control panel’s edge → it doesn’t. Double-click the video → full screen; double-click again → back to the window. Double-click the thin strip at the very top → what System Settings › Desktop & Dock › “Double-click a window’s title bar to” says (Zoom, Minimize or nothing). ⌘W or the red button closes it.
+4. (Website) Do it in the light and in the dark appearance → both look the same, only the buttons’ own colours differ.
+5. (Website) `scripts/test-player-window.swift` prints ok three times.
+
 ### Preview over the time bar
 
 **Does:** Shows a small picture of the video, with its time, above the time bar where you point.

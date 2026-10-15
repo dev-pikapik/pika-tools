@@ -76,6 +76,9 @@ jobs:
           brew install meson ninja nasm pkg-config
           ./scripts/fetch-ffmpeg.sh
 
+      - name: Install the ffmpeg command for the video tests
+        run: brew install ffmpeg
+
       - name: Run the tests from CONTRIBUTING.md
         run: |
           mkdir -p build

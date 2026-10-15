@@ -275,7 +275,13 @@ The Picture in Picture window (`Helper/Player/PictureInPicture.swift`) has a che
 swiftc -parse-as-library Helper/Player/PictureInPicture.swift scripts/test-pip.swift -o build/test-pip && build/test-pip
 ```
 
-The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, that the chapters of an MKV and an MP4 are read with their titles and times, and that closing the window frees everything. It needs the bundled FFmpeg, so CI skips it; build FFmpeg first with `./scripts/build.sh`:
+The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.swift`) makes the content run under a transparent, title-less bar, hides the three window buttons and a dark gradient under them together with the control panel, and is the one call any other player window makes. Its test opens a real window without showing it:
+
+```bash
+swiftc -parse-as-library Helper/Player/WindowChrome.swift scripts/test-player-window.swift -o build/test-player-window && build/test-player-window
+```
+
+The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, that the chapters of an MKV and an MP4 are read with their titles and times, and that closing the window frees everything. It needs the bundled FFmpeg, so build FFmpeg first with `./scripts/build.sh` (CI builds it and installs the ffmpeg command with Homebrew):
 
 ```bash
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Thumbnails.swift Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-thumbnails.swift -o build/test-thumbnails && build/test-thumbnails

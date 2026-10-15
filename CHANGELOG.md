@@ -23,6 +23,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Side buttons: the mouse Forward button no longer presses a menu item called Forward that has a letter shortcut, such as forwarding an email in Outlook or Mail. It also no longer goes back twice when an app is busy and answers late.
 - Second copy of pikapik: Make This Copy the Main One now works once per press, so a fast double click can’t open two new copies. The note names the main copy as the website or Mac App Store version instead of a file path, and the window title is pikapik instead of the last page you looked at.
 
+### Changed
+- Player, website version: the window no longer has the usual grey title bar. The video fills the whole window, and the three round buttons sit on top of it. They show and hide together with the control panel: they fade out after 2.5 seconds without mouse movement while a video plays, stay while it is paused, and a thin dark shade under them keeps them readable on a bright picture. Drag the window by any spot of the video; a double-click on the video still goes full screen, a double-click on the thin strip at the very top does what System Settings says for window title bars, and in full screen the Mac handles the menu bar and the buttons as before.
+
 ## [1.52.0] - 2026-10-15
 
 ### Added
