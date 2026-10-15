@@ -7,7 +7,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Added
 - Mouse: Middle click on the trackpad, in Settings › Mouse. Tap or click with three fingers, and the trackpad works like the middle mouse button: in most browsers that opens a link in a new tab or closes a tab. You can choose four fingers instead. Tapping needs Tap to click in System Settings › Trackpad. If Look up there is set to a three-finger tap, three fingers can only click, and if three-finger drag is on, choose four fingers. The Fingers row under the switch says what works on your Mac. It needs Accessibility and Input Monitoring. To have it in the menu, click the pencil at the bottom of the menu and select it. Not in the Mac App Store version.
 
-## [1.51.0] - Unreleased
+## [1.51.0] - 2026-10-15
 
 ### Added
 - Player, website version: a new page, Settings › Player, for videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV. Click Open Video…, or right-click a video and choose Open With › pikapik Player, and it plays in its own window: Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, F goes full screen, and a video that is already open comes to the front instead of opening twice. The player is a small separate app with no network access that asks for no permissions, and it doesn’t change which app opens your videos. It uses FFmpeg and dav1d; their licenses and source code are linked on the same page. Subtitles aren’t supported yet. The Mac App Store version doesn’t have it.
@@ -985,6 +985,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.51.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.51.0
 [1.50.3]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.3
 [1.50.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.2
 [1.50.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.0

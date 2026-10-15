@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Filmy, których QuickTime nie otwiera, teraz się odtwarzają
+
+<sub>1.51.0 · 15 października 2026</sub>
+
+W wersji ze strony pliki wideo MKV, WebM, AVI, WMV, FLV i inne, których QuickTime nie otwiera, odtwarzają się teraz w pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Kliknij prawym przyciskiem plik wideo i wybierz Otwórz w programie › pikapik Player albo kliknij Otwórz wideo… w Ustawienia › Odtwarzacz. Film odtwarza się we własnym oknie: spacja włącza i wstrzymuje odtwarzanie, ← i → przewijają o 5 sekund, ↑ i ↓ zmieniają głośność, a F włącza pełny ekran.
+
+Odtwarzacz to mała, osobna aplikacja. Widzi tylko pliki wideo, które otworzysz, nie może łączyć się z internetem i nie prosi o żadne uprawnienia. Aplikacja, która domyślnie otwiera Twoje filmy, pozostaje ta sama. Napisy nie są jeszcze obsługiwane.
+
+**Wypróbuj:** Ustawienia › Odtwarzacz
+
+---
+
 ## <a id="v1.50.3"></a>Menu aktywnych narożników i wyświetlacza głównego znów działają
 
 <sub>1.50.3 · 15 października 2026</sub>

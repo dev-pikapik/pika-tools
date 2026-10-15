@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>QuickTime’ın açamadığı videolar artık oynatılıyor
+
+<sub>1.51.0 · 15 Ekim 2026</sub>
+
+Web sitesi sürümünde, QuickTime’ın açamadığı MKV, WebM, AVI, WMV, FLV ve diğer videolar artık pikapik Player’da oynatılıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Bir videoya sağ tıklayıp Birlikte Aç › pikapik Player’ı seçin ya da Ayarlar › Oynatıcı’da Video Aç… düğmesini tıklayın. Video kendi penceresinde oynatılır: Boşluk çubuğu oynatır ve duraklatır, ← ve → 5 saniye atlar, ↑ ve ↓ sesi değiştirir, F tam ekrana geçer.
+
+Oynatıcı küçük, ayrı bir uygulamadır. Yalnızca açtığınız videoları görür, internete bağlanamaz ve hiçbir izin istemez. Videolarınızı varsayılan olarak açan uygulama değişmez. Altyazılar henüz desteklenmiyor.
+
+**Deneyin:** Ayarlar › Oynatıcı
+
+---
+
 ## <a id="v1.50.3"></a>Etkin köşe ve ana ekran menüleri artık çalışıyor
 
 <sub>1.50.3 · 15 Ekim 2026</sub>

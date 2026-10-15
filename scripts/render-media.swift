@@ -52,6 +52,7 @@ enum RenderMedia {
         ("background", BackgroundCard.length, AnyView(BackgroundCard())),
         ("app-volume", 4.8, AnyView(AppVolumeArt(on: true))),
         ("brightness", 7.4, AnyView(BrightnessArt(on: true))),
+        ("player", PlayerCard.length, AnyView(PlayerCard())),
         ("whats-new/1.23.2/game-shortcuts", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(KeyCaps(keys: ["⌘Q"])), 64), (AnyView(KeyCaps(keys: ["⌘W"])), 52), (AnyView(KeyCaps(keys: ["⌘Tab", "⌘`"])), 40)]))),
         ("whats-new/1.25.0/game-pictures", 4.2, AnyView(SwitchRowsArt(rows: [(AnyView(GameRuleFrame(rule: .commandQ, story: .still(on: false), height: 32)), 64), (AnyView(GameRuleFrame(rule: .spotlight, story: .still(on: false), height: 32)), 52), (AnyView(GameRuleFrame(rule: .missionControl, story: .still(on: false), height: 32)), 72)], height: 36))),
         ("whats-new/1.26.1/game-previews", 6.2, AnyView(IllustrationRow { HStack(spacing: 14) { GameRuleArt(rule: .spotlight, keys: ["⌘Space"], height: 96); GameRuleArt(rule: .showDesktop, keys: ["F11"], height: 96) } })),
@@ -1531,5 +1532,125 @@ private struct AppVolumeMixerScene: View {
         }
         .font(.system(size: 12))
         .frame(width: 20, height: 20)
+    }
+}
+
+private struct PlayerCard: View {
+    static let length = 9.0
+
+    var body: some View {
+        IllustrationRow {
+            ArtTimeline { time in
+                PlayerScene(t: time.map { GameStory.mod($0, Self.length) } ?? 1.2)
+            }
+        }
+    }
+}
+
+private struct PlayerScene: View {
+    let t: Double
+
+    private struct Clip {
+        let format: String
+        let file: String
+        let sky: [Color]
+        let sun: Color
+        let hills: [Color]
+    }
+
+    private static let clips = [
+        Clip(format: "MKV", file: "VID_0412.mkv", sky: [Color(red: 0.36, green: 0.64, blue: 0.97), Color(red: 0.74, green: 0.88, blue: 1)], sun: Art.yellow, hills: [Color(red: 0.33, green: 0.70, blue: 0.36), Color(red: 0.20, green: 0.56, blue: 0.27)]),
+        Clip(format: "WebM", file: "VID_0519.webm", sky: [Color(red: 0.42, green: 0.27, blue: 0.62), Color(red: 1, green: 0.58, blue: 0.36)], sun: Color(red: 1, green: 0.42, blue: 0.24), hills: [Color(red: 0.35, green: 0.20, blue: 0.40), Color(red: 0.22, green: 0.12, blue: 0.28)]),
+        Clip(format: "AVI", file: "VID_0623.avi", sky: [Color(red: 0.05, green: 0.08, blue: 0.22), Color(red: 0.16, green: 0.21, blue: 0.43)], sun: Color(white: 0.95), hills: [Color(red: 0.10, green: 0.24, blue: 0.30), Color(red: 0.06, green: 0.16, blue: 0.21)]),
+        Clip(format: "WMV", file: "VID_0730.wmv", sky: [Color(red: 0.20, green: 0.62, blue: 0.70), Color(red: 0.62, green: 0.88, blue: 0.86)], sun: Color(red: 1, green: 0.98, blue: 0.85), hills: [Color(red: 0.12, green: 0.42, blue: 0.40), Color(red: 0.06, green: 0.30, blue: 0.30)]),
+        Clip(format: "FLV", file: "VID_0811.flv", sky: [Color(red: 0.98, green: 0.70, blue: 0.40), Color(red: 1, green: 0.88, blue: 0.62)], sun: Color(red: 1, green: 0.96, blue: 0.75), hills: [Color(red: 0.90, green: 0.66, blue: 0.38), Color(red: 0.80, green: 0.54, blue: 0.28)]),
+    ]
+    private static let clip = PlayerCard.length / Double(clips.count)
+    private static let screen = CGSize(width: 196, height: 92)
+
+    var body: some View {
+        let index = min(Int(t / Self.clip), Self.clips.count - 1)
+        let previous = (index + Self.clips.count - 1) % Self.clips.count
+        let local = t - Double(index) * Self.clip
+        let fade = GameStory.ramp(local, 0, 0.3)
+        let progress = local / Self.clip
+        let window = RoundedRectangle(cornerRadius: 9, style: .continuous)
+        Stage {
+            VStack(spacing: 0) {
+                titleBar(Self.clips[fade < 0.5 ? previous : index].file)
+                ZStack(alignment: .bottom) {
+                    video(previous, progress: 1)
+                    video(index, progress: progress).opacity(fade)
+                    controls(progress: progress)
+                }
+                .frame(width: Self.screen.width, height: Self.screen.height)
+                .clipped()
+            }
+            .background(Color(nsColor: .windowBackgroundColor))
+            .clipShape(window)
+            .overlay(window.hairline(Color.primary.opacity(0.15)))
+            .shadow(color: .black.opacity(0.18), radius: 5, y: 2)
+            .position(x: 108, y: 64)
+            VStack(spacing: 5) {
+                ForEach(Self.clips.indices, id: \.self) { i in
+                    format(Self.clips[i].format, on: i == index ? fade : i == previous ? 1 - fade : 0)
+                }
+            }
+            .position(x: 256, y: 64)
+        }
+    }
+
+    private func titleBar(_ title: String) -> some View {
+        ZStack {
+            HStack(spacing: 5) {
+                ForEach([Art.red, Art.yellow, Art.green], id: \.self) { Circle().fill($0).frame(width: 7, height: 7) }
+                Spacer()
+            }
+            .padding(.leading, 8)
+            Text(verbatim: title)
+                .font(.system(size: 9, weight: .semibold))
+                .foregroundStyle(.secondary)
+        }
+        .frame(width: Self.screen.width, height: 20)
+    }
+
+    private func video(_ index: Int, progress: Double) -> some View {
+        let clip = Self.clips[index]
+        return ZStack {
+            LinearGradient(colors: clip.sky, startPoint: .top, endPoint: .bottom)
+            Circle().fill(clip.sun)
+                .frame(width: 18, height: 18)
+                .shadow(color: clip.sun.opacity(0.6), radius: 6)
+                .position(x: 44 + 40 * progress, y: 30 - 6 * progress)
+            Ellipse().fill(clip.hills[0]).frame(width: 170, height: 64).position(x: 56, y: 84)
+            Ellipse().fill(clip.hills[1]).frame(width: 220, height: 60).position(x: 160, y: 92)
+        }
+        .frame(width: Self.screen.width, height: Self.screen.height)
+    }
+
+    private func controls(progress: Double) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: "pause.fill")
+            Capsule().fill(.white.opacity(0.3))
+                .frame(width: 116, height: 3)
+                .overlay(alignment: .leading) { Capsule().fill(.white).frame(width: 116 * progress, height: 3) }
+            Image(systemName: "speaker.wave.2.fill")
+        }
+        .font(.system(size: 7))
+        .foregroundStyle(.white)
+        .frame(width: 168, height: 16)
+        .background(Color.black.opacity(0.45), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+        .padding(.bottom, 6)
+    }
+
+    private func format(_ name: String, on: Double) -> some View {
+        ZStack {
+            Capsule().fill(Color.primary.opacity(0.07))
+            Capsule().fill(Color.accentColor).opacity(on)
+            Text(verbatim: name).foregroundStyle(.secondary).opacity(1 - on)
+            Text(verbatim: name).foregroundStyle(.white).opacity(on)
+        }
+        .font(.system(size: 10, weight: .semibold))
+        .frame(width: 58, height: 18)
     }
 }
