@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Ține ⌥ și apasă ⇧: limba următoare. Ține ⇧ și apasă ⌥: cea anterioară";
 "All set" = "Totul e gata";
 "pikapik needs two permissions" = "pikapik are nevoie de două permisiuni";
-"Both permissions are on and every tool is working." = "Ambele permisiuni sunt activate și toate instrumentele funcționează.";
-"Some tools also need a permission from the list below." = "Unele instrumente au nevoie și de o permisiune din lista de mai jos.";
+"Both permissions are on and every tool is working" = "Ambele permisiuni sunt activate și toate instrumentele funcționează";
+"Some tools also need a permission from the list below" = "Unele instrumente au nevoie și de o permisiune din lista de mai jos";
 "Both permissions are on" = "Ambele permisiuni sunt activate";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Fără ele, macOS nu permite aplicației să vadă sau să modifice clicurile și tastele. Deschide Configurări sistem › Confidențialitate și securitate și activează pikapik în aceste două liste:";
 "Permissions for some tools" = "Permisiuni pentru unele instrumente";
-"Only some tools need these permissions. Everything else works without them." = "Doar unele instrumente au nevoie de aceste permisiuni. Restul funcționează și fără ele.";
+"Only some tools need these permissions, and the rest work without them" = "Doar unele instrumente au nevoie de aceste permisiuni, iar restul funcționează și fără ele";
 "Accessibility" = "Accesibilitate";
 "Input Monitoring" = "Monitorizare intrare";
 "Lets the app see clicks and keys" = "Permite aplicației să vadă clicurile și tastele";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Menține Mac-ul activ";
 "Duration" = "Durată";
 "If turned on now, ends %@" = "Dacă îl pornești acum, se termină: %@";
+"If turned on now, stays on until you turn it off" = "Dacă îl pornești acum, rămâne pornit până îl oprești";
 "Days" = "Zile";
 "Hours" = "Ore";
 "Minutes" = "Minute";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Neactivat: fără parola de administrator";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik vrea să mențină Mac-ul activ cu capacul închis.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik vrea să permită din nou Mac-ului să intre în repaus cu capacul închis.";
-"How pikapik starts and looks." = "Cum pornește și cum arată pikapik.";
+"How pikapik starts and looks" = "Cum pornește și cum arată pikapik";
 "Back" = "Înapoi";
 "Forward" = "Înainte";
 "No Results" = "Niciun rezultat";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Eliminare aplicații";
 "Remove an app" = "Elimină o aplicație";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "dezinstalează, elimină aplicația, șterge aplicația, șterge, elimină, aplicație, program, curățare, resturi, coș, resetare, pune la loc, restaurează, anulează, resetează";
-"Remove an app and its files. You can put it all back." = "Elimină o aplicație și fișierele ei. Poți pune totul la loc.";
+"Remove an app and its files, and put them back if you change your mind" = "Elimină o aplicație și fișierele ei, apoi pune-le la loc dacă te răzgândești";
 "Search apps" = "Caută aplicații";
 "Sort by" = "Sortează după";
 "Name" = "Nume";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Sarcini din folderul tău principal";
 "To see the tasks in your home folder, allow access to it." = "Ca să vezi sarcinile din folderul tău principal, permite accesul la el.";
 "Nothing runs in the background" = "Nimic nu rulează în fundal";
-"See everything that runs in the background and which app added it." = "Tot ce rulează în fundal și ce aplicație l-a adăugat.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Tot ce rulează în fundal și ce aplicație l-a adăugat. Oprește ce nu-ți trebuie și pornește-l din nou oricând.";
+"See everything that runs in the background and which app added it" = "Tot ce rulează în fundal și ce aplicație l-a adăugat";
 "Keeps running" = "Rulează mereu";
 "Runs on a schedule" = "Rulează după un program";
 "Starts when you log in" = "Pornește la autentificare";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volumul pentru %@";
 "System Audio Recording" = "Înregistrarea audio a sistemului";
 "To change each app’s volume" = "Pentru a schimba volumul fiecărei aplicații";
+"To change each app’s volume, allow “%@”" = "Pentru a schimba volumul fiecărei aplicații, permite „%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik trece sunetul fiecărei aplicații prin el însuși pentru a-i schimba volumul. Nimic nu este înregistrat sau salvat.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, oprește sunetul aplicației, volum pe aplicație, volum, sunet, audio, încet, tare";
 "Device Control and Data Access" = "Control al dispozitivului și acces la date";
 "Lets the app change clicks and keys" = "Permite aplicației să modifice clicurile și tastele";
 "privacy, security, access, accessibility, device control, data access" = "confidențialitate, securitate, acces, accesibilitate, control al dispozitivului și acces la date";
-"Change animations in System Settings. Each button opens the right place." = "Animațiile se schimbă în Configurări sistem. Fiecare buton deschide locul potrivit.";
+"Each button takes you to an animation setting in System Settings" = "Fiecare buton te duce la o setare de animații din Configurări sistem";
 "Choose “Scale Effect” for a quicker animation" = "Alegeți „Efect de redimensionare” pentru o animație mai rapidă";
 "Turn off “Animate opening applications”" = "Dezactivați „Animare aplicații la deschidere”";
 "Turn on “Automatically hide and show the Dock”" = "Activați „Ascundere și afișare automată Dock”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, pictograme, fișiere, foldere, curățare, ascundere, prezentare, partajarea ecranului, înregistrare, captură de ecran, Manager de scenă";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ascunse, invizibile, fișiere cu punct, fișiere de sistem, Bibliotecă, afișează toate fișierele, Command Shift punct";
 "Brightness" = "Luminozitate";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Schimbă luminozitatea monitoarelor pe care macOS nu le poate regla singur.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Schimbă luminozitatea monitoarelor pe care macOS nu le poate regla singur";
 "Changes the monitor’s own brightness." = "Schimbă luminozitatea monitorului însuși.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Întunecă imaginea. Acest monitor nu lasă Mac-ul să-i schimbe luminozitatea.";
 "Dims the picture." = "Întunecă imaginea.";

@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "按住 ⌥ 再按 ⇧：下一個語言。按住 ⇧ 再按 ⌥：上一個語言";
 "All set" = "一切就緒";
 "pikapik needs two permissions" = "pikapik 需要兩項權限";
-"Both permissions are on and every tool is working." = "兩項權限皆已開啟，所有工具都正常運作。";
-"Some tools also need a permission from the list below." = "部分工具還需要下方列表中的權限。";
+"Both permissions are on and every tool is working" = "兩項權限皆已開啟，所有工具都正常運作";
+"Some tools also need a permission from the list below" = "部分工具還需要下方列表中的權限";
 "Both permissions are on" = "兩項權限皆已開啟";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "沒有這些權限，macOS 不會讓 App 讀取或更改點按和按鍵。請打開「系統設定」›「隱私權與安全性」，在下列兩個列表中開啟 pikapik：";
 "Permissions for some tools" = "部分工具所需的權限";
-"Only some tools need these permissions. Everything else works without them." = "只有部分工具需要這些權限，其他功能不授權也能正常使用。";
+"Only some tools need these permissions, and the rest work without them" = "只有部分工具需要這些權限，其他功能不授權也能正常使用";
 "Accessibility" = "輔助使用";
 "Input Monitoring" = "輸入監控";
 "Lets the app see clicks and keys" = "讓 App 讀取點按和按鍵";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "讓 Mac 保持喚醒";
 "Duration" = "持續時間";
 "If turned on now, ends %@" = "現在開啟的話，結束時間：%@";
+"If turned on now, stays on until you turn it off" = "現在開啟的話，會一直開著，直到你關閉";
 "Days" = "天";
 "Hours" = "小時";
 "Minutes" = "分鐘";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "未開啟：沒有輸入管理者密碼";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik 想要在蓋上螢幕時讓 Mac 保持喚醒。";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik 想要恢復蓋上螢幕時讓 Mac 進入睡眠。";
-"How pikapik starts and looks." = "pikapik 的啟動方式和外觀。";
+"How pikapik starts and looks" = "pikapik 的啟動方式和外觀";
 "Back" = "返回";
 "Forward" = "前進";
 "No Results" = "沒有結果";
@@ -693,7 +694,7 @@
 "Uninstaller" = "解除安裝 App";
 "Remove an app" = "移除 App";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "解除安裝, 移除 App, 刪除 App, 刪除, 移除, App, 應用程式, 清理, 殘留, 垃圾桶, 重置, 放回, 還原, 復原";
-"Remove an app and its files. You can put it all back." = "移除 App 及其檔案。一切都能放回。";
+"Remove an app and its files, and put them back if you change your mind" = "移除 App 及其檔案，改變主意時可以全部放回";
 "Search apps" = "搜尋 App";
 "Sort by" = "排序方式";
 "Name" = "名稱";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "個人檔案夾中的工作";
 "To see the tasks in your home folder, allow access to it." = "若要查看個人檔案夾中的工作，請允許取用個人檔案夾。";
 "Nothing runs in the background" = "背景沒有執行任何項目";
-"See everything that runs in the background and which app added it." = "查看在背景執行的所有項目，以及是哪個 App 加入的。";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "查看在背景執行的所有項目，以及是哪個 App 加入的。關閉不需要的，隨時都能重新打開。";
+"See everything that runs in the background and which app added it" = "查看在背景執行的所有項目，以及是哪個 App 加入的";
 "Keeps running" = "持續執行";
 "Runs on a schedule" = "依排程執行";
 "Starts when you log in" = "登入時啟動";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "%@ 的音量";
 "System Audio Recording" = "系統音訊錄製";
 "To change each app’s volume" = "用於調整每個 App 的音量";
+"To change each app’s volume, allow “%@”" = "要調整每個 App 的音量，請允許「%@」";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik 會讓每個 App 的聲音先經過自己，以便調整音量。不會錄製或儲存任何內容。";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "混音器, App 靜音, 單一 App 音量, 音量, 聲音, 音訊, 安靜, 大聲";
 "Device Control and Data Access" = "裝置控制和資料取用";
 "Lets the app change clicks and keys" = "讓 App 更改點按和按鍵";
 "privacy, security, access, accessibility, device control, data access" = "隱私權, 安全性, 存取權, 輔助使用, 裝置控制和資料取用";
-"Change animations in System Settings. Each button opens the right place." = "動畫在「系統設定」中更改。每個按鈕都會打開對應的位置。";
+"Each button takes you to an animation setting in System Settings" = "每個按鈕都會帶你前往「系統設定」中的一項動畫設定";
 "Choose “Scale Effect” for a quicker animation" = "選擇「縮放效果」，動畫會更快";
 "Turn off “Animate opening applications”" = "關閉「使用動畫效果來打開應用程式」";
 "Turn on “Automatically hide and show the Dock”" = "開啟「自動隱藏和顯示Dock」";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "桌面, 圖像, 檔案, 檔案夾, 整理, 隱藏, 簡報, 螢幕共享, 錄影, 截圖, 幕前調度";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隱藏, 不可見, 點檔案, 系統檔案, 資源庫, 顯示所有檔案, Command Shift 句號";
 "Brightness" = "亮度";
-"Change the brightness of monitors macOS can’t adjust on its own." = "調整 macOS 無法自行調整的顯示器亮度。";
+"Change the brightness of monitors macOS can’t adjust on its own" = "調整 macOS 無法自行調整的顯示器亮度";
 "Changes the monitor’s own brightness." = "調整顯示器本身的亮度。";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "調暗畫面。這台顯示器不允許 Mac 更改它的亮度。";
 "Dims the picture." = "調暗畫面。";

@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Houd ⌥ ingedrukt en tik op ⇧: volgende taal. Houd ⇧ ingedrukt en tik op ⌥: vorige";
 "All set" = "Alles klaar";
 "pikapik needs two permissions" = "pikapik heeft twee toestemmingen nodig";
-"Both permissions are on and every tool is working." = "Beide toestemmingen staan aan en alle functies werken.";
-"Some tools also need a permission from the list below." = "Sommige functies hebben ook een toestemming uit de lijst hieronder nodig.";
+"Both permissions are on and every tool is working" = "Beide toestemmingen staan aan en alle functies werken";
+"Some tools also need a permission from the list below" = "Sommige functies hebben ook een toestemming uit de lijst hieronder nodig";
 "Both permissions are on" = "Beide toestemmingen staan aan";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Zonder deze toestemmingen laat macOS de app geen klikken en toetsen zien of wijzigen. Open Systeeminstellingen › Privacy en beveiliging en zet pikapik aan in deze twee lijsten:";
 "Permissions for some tools" = "Toestemmingen voor sommige functies";
-"Only some tools need these permissions. Everything else works without them." = "Alleen sommige functies hebben deze toestemmingen nodig. Al het andere werkt ook zonder.";
+"Only some tools need these permissions, and the rest work without them" = "Alleen sommige functies hebben deze toestemmingen nodig, de rest werkt ook zonder";
 "Accessibility" = "Toegankelijkheid";
 "Input Monitoring" = "Invoer vastleggen";
 "Lets the app see clicks and keys" = "Laat de app klikken en toetsen zien";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Houd je Mac wakker";
 "Duration" = "Duur";
 "If turned on now, ends %@" = "Nu aangezet, eindigt het: %@";
+"If turned on now, stays on until you turn it off" = "Nu aangezet, blijft het aan tot je het uitzet";
 "Days" = "Dagen";
 "Hours" = "Uren";
 "Minutes" = "Minuten";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Niet aangezet: geen beheerderswachtwoord";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik wil je Mac wakker houden met het deksel dicht.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik wil je Mac weer laten sluimeren met het deksel dicht.";
-"How pikapik starts and looks." = "Hoe pikapik start en eruitziet.";
+"How pikapik starts and looks" = "Hoe pikapik start en eruitziet";
 "Back" = "Terug";
 "Forward" = "Vooruit";
 "No Results" = "Geen resultaten";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Apps verwijderen";
 "Remove an app" = "App verwijderen";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "verwijderen, app verwijderen, app wissen, wissen, app, applicatie, opruimer, opruimen, resten, prullenmand, resetten, terugzetten, herstellen, ongedaan maken, deïnstalleren, programma, restjes";
-"Remove an app and its files. You can put it all back." = "Verwijder een app met alle bestanden. Alles kan terug.";
+"Remove an app and its files, and put them back if you change your mind" = "Verwijder een app met alle bestanden en zet ze terug als je je bedenkt";
 "Search apps" = "Zoek apps";
 "Sort by" = "Sorteer op";
 "Name" = "Naam";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Taken in je thuismap";
 "To see the tasks in your home folder, allow access to it." = "Geef toegang tot je thuismap om de taken erin te zien.";
 "Nothing runs in the background" = "Er draait niets op de achtergrond";
-"See everything that runs in the background and which app added it." = "Alles wat op de achtergrond draait, en welke app het heeft toegevoegd.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Alles wat op de achtergrond draait, en welke app het heeft toegevoegd. Zet uit wat je niet nodig hebt en zet het altijd weer aan.";
+"See everything that runs in the background and which app added it" = "Alles wat op de achtergrond draait, en welke app het heeft toegevoegd";
 "Keeps running" = "Draait altijd";
 "Runs on a schedule" = "Draait volgens schema";
 "Starts when you log in" = "Start bij inloggen";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volume van %@";
 "System Audio Recording" = "Opname van systeemaudio";
 "To change each app’s volume" = "Om het volume van elke app te wijzigen";
+"To change each app’s volume, allow “%@”" = "Om het volume van elke app te wijzigen, sta “%@” toe";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik leidt het geluid van elke app door zichzelf heen om het volume te wijzigen. Er wordt niets opgenomen of bewaard.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, app dempen, volume per app, volume, geluid, audio, zacht, luid";
 "Device Control and Data Access" = "Apparaatbeheer en gegevenstoegang";
 "Lets the app change clicks and keys" = "Laat de app klikken en toetsen wijzigen";
 "privacy, security, access, accessibility, device control, data access" = "privacy, beveiliging, toegang, toegankelijkheid, apparaatbeheer en gegevenstoegang";
-"Change animations in System Settings. Each button opens the right place." = "Animaties wijzig je in Systeeminstellingen. Elke knop opent de juiste plek.";
+"Each button takes you to an animation setting in System Settings" = "Elke knop brengt je naar een animatie-instelling in Systeeminstellingen";
 "Choose “Scale Effect” for a quicker animation" = "Kies ‘Glijdende schaal’ voor een snellere animatie";
 "Turn off “Animate opening applications”" = "Zet ‘Bewegend symbool bij openen apps’ uit";
 "Turn on “Automatically hide and show the Dock”" = "Zet ‘Toon/verberg het Dock automatisch’ aan";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "bureaublad, symbolen, bestanden, mappen, opruimen, verbergen, presentatie, scherm delen, opname, schermafbeelding, Stage Manager";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "verborgen, onzichtbaar, puntbestanden, systeembestanden, Bibliotheek, alle bestanden tonen, Command Shift punt";
 "Brightness" = "Helderheid";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Wijzig de helderheid van monitors die macOS niet zelf kan regelen.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Wijzig de helderheid van monitors die macOS niet zelf kan regelen";
 "Changes the monitor’s own brightness." = "Wijzigt de helderheid van de monitor zelf.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Dimt het beeld. Deze monitor laat de Mac zijn helderheid niet wijzigen.";
 "Dims the picture." = "Dimt het beeld.";

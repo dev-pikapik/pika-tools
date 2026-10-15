@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ basılıyken ⇧ tuşuna basın: sonraki dil. ⇧ basılıyken ⌥ tuşuna basın: önceki dil";
 "All set" = "Her şey hazır";
 "pikapik needs two permissions" = "pikapik’in iki izne ihtiyacı var";
-"Both permissions are on and every tool is working." = "İki izin de açık ve tüm araçlar çalışıyor.";
-"Some tools also need a permission from the list below." = "Bazı araçlar aşağıdaki listeden bir izne de ihtiyaç duyar.";
+"Both permissions are on and every tool is working" = "İki izin de açık ve tüm araçlar çalışıyor";
+"Some tools also need a permission from the list below" = "Bazı araçlar aşağıdaki listeden bir izne de ihtiyaç duyar";
 "Both permissions are on" = "İki izin de açık";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Bunlar olmadan macOS, uygulamanın tıklamaları ve tuşları görmesine veya değiştirmesine izin vermez. Sistem Ayarları › Gizlilik ve Güvenlik’i açın ve bu iki listede pikapik’i etkinleştirin:";
 "Permissions for some tools" = "Bazı araçlar için izinler";
-"Only some tools need these permissions. Everything else works without them." = "Bu izinlere yalnızca bazı araçlar ihtiyaç duyar. Geri kalan her şey izinsiz de çalışır.";
+"Only some tools need these permissions, and the rest work without them" = "Bu izinlere yalnızca bazı araçlar ihtiyaç duyar, geri kalanı izinsiz de çalışır";
 "Accessibility" = "Erişilebilirlik";
 "Input Monitoring" = "Giriş İzleme";
 "Lets the app see clicks and keys" = "Uygulamanın tıklamaları ve tuşları görmesini sağlar";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Mac’i uyanık tut";
 "Duration" = "Süre";
 "If turned on now, ends %@" = "Şimdi açılırsa şu zaman biter: %@";
+"If turned on now, stays on until you turn it off" = "Şimdi açılırsa siz kapatana kadar açık kalır";
 "Days" = "Gün";
 "Hours" = "Saat";
 "Minutes" = "Dakika";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Açılmadı: yönetici parolası girilmedi";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik, kapak kapalıyken Mac’inizi uyanık tutmak istiyor.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik, kapak kapalıyken Mac’inizin yeniden uyumasına izin vermek istiyor.";
-"How pikapik starts and looks." = "pikapik’in nasıl başlayacağı ve nasıl görüneceği.";
+"How pikapik starts and looks" = "pikapik’in nasıl başlayacağı ve nasıl görüneceği";
 "Back" = "Geri";
 "Forward" = "İleri";
 "No Results" = "Sonuç Yok";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Uygulamaları Kaldır";
 "Remove an app" = "Uygulama kaldır";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "kaldır, uygulama kaldır, uygulama sil, sil, uygulama, program, temizleyici, temizlik, kalıntılar, çöp sepeti, sıfırla, geri koy, geri yükle, geri al, kaldırma, artıklar, çöp";
-"Remove an app and its files. You can put it all back." = "Uygulamayı dosyalarıyla kaldırın. Hepsi geri konabilir.";
+"Remove an app and its files, and put them back if you change your mind" = "Uygulamayı dosyalarıyla kaldırın, fikrinizi değiştirirseniz geri koyun";
 "Search apps" = "Uygulama ara";
 "Sort by" = "Sıralama ölçütü";
 "Name" = "Ad";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Ana klasörünüzdeki görevler";
 "To see the tasks in your home folder, allow access to it." = "Ana klasörünüzdeki görevleri görmek için ona erişim izni verin.";
 "Nothing runs in the background" = "Arka planda hiçbir şey çalışmıyor";
-"See everything that runs in the background and which app added it." = "Arka planda çalışan her şey ve onu hangi uygulamanın eklediği.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Arka planda çalışan her şey ve onu hangi uygulamanın eklediği. İhtiyacınız olmayanı kapatın, istediğiniz zaman yeniden açın.";
+"See everything that runs in the background and which app added it" = "Arka planda çalışan her şey ve onu hangi uygulamanın eklediği";
 "Keeps running" = "Sürekli çalışır";
 "Runs on a schedule" = "Zamanlamayla çalışır";
 "Starts when you log in" = "Girişte başlar";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "%@ ses düzeyi";
 "System Audio Recording" = "Sistem Sesi Kaydı";
 "To change each app’s volume" = "Her uygulamanın ses düzeyini değiştirmek için";
+"To change each app’s volume, allow “%@”" = "Her uygulamanın ses düzeyini değiştirmek için “%@” iznini verin";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik, ses düzeyini değiştirmek için her uygulamanın sesini kendi içinden geçirir. Hiçbir şey kaydedilmez veya saklanmaz.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mikser, uygulamayı sessize al, uygulama başına ses, ses düzeyi, ses, ses kaydı, kısık, yüksek";
 "Device Control and Data Access" = "Aygıt Denetimi ve Veri Erişimi";
 "Lets the app change clicks and keys" = "Uygulamanın tıklamaları ve tuşları değiştirmesini sağlar";
 "privacy, security, access, accessibility, device control, data access" = "gizlilik, güvenlik, erişim, erişilebilirlik, aygıt denetimi ve veri erişimi";
-"Change animations in System Settings. Each button opens the right place." = "Animasyonlar Sistem Ayarları’nda değiştirilir. Her düğme doğru yeri açar.";
+"Each button takes you to an animation setting in System Settings" = "Her düğme sizi Sistem Ayarları’ndaki bir animasyon ayarına götürür";
 "Choose “Scale Effect” for a quicker animation" = "Daha hızlı bir animasyon için “Ölçekleme Efektiyle” seçeneğini seçin";
 "Turn off “Animate opening applications”" = "“Uygulamaların açılışını canlandırmayla göster” seçeneğini kapatın";
 "Turn on “Automatically hide and show the Dock”" = "“Dock’u otomatik olarak gizle ve göster” seçeneğini açın";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "masaüstü, simgeler, dosyalar, klasörler, temizle, gizle, sunum, ekran paylaşımı, kayıt, ekran görüntüsü, Sahne Yöneticisi";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "gizli, görünmez, noktalı dosyalar, sistem dosyaları, Kitaplık, tüm dosyaları göster, Command Shift nokta";
 "Brightness" = "Parlaklık";
-"Change the brightness of monitors macOS can’t adjust on its own." = "macOS’in kendi ayarlayamadığı monitörlerin parlaklığını değiştirin.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "macOS’in kendi ayarlayamadığı monitörlerin parlaklığını değiştirin";
 "Changes the monitor’s own brightness." = "Monitörün kendi parlaklığını değiştirir.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Görüntüyü karartır. Bu monitör, Mac’in parlaklığını değiştirmesine izin vermiyor.";
 "Dims the picture." = "Görüntüyü karartır.";

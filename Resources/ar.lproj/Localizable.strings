@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "اضغط مع الاستمرار على ⌥ واضغط ⇧: اللغة التالية. اضغط مع الاستمرار على ⇧ واضغط ⌥: السابقة";
 "All set" = "كل شيء جاهز";
 "pikapik needs two permissions" = "يحتاج pikapik إلى إذنين";
-"Both permissions are on and every tool is working." = "الإذنان مفعّلان وكل الأدوات تعمل.";
-"Some tools also need a permission from the list below." = "تحتاج بعض الأدوات أيضًا إلى إذن من القائمة أدناه.";
+"Both permissions are on and every tool is working" = "الإذنان مفعّلان وكل الأدوات تعمل";
+"Some tools also need a permission from the list below" = "تحتاج بعض الأدوات أيضًا إلى إذن من القائمة أدناه";
 "Both permissions are on" = "الإذنان مفعّلان";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "بدونهما، لن يسمح macOS للتطبيق برؤية النقرات والمفاتيح أو تغييرها. افتح إعدادات النظام › الخصوصية والأمن وشغّل pikapik في هاتين القائمتين:";
 "Permissions for some tools" = "أذونات لبعض الأدوات";
-"Only some tools need these permissions. Everything else works without them." = "تحتاج بعض الأدوات فقط إلى هذه الأذونات. أما كل شيء آخر فيعمل من دونها.";
+"Only some tools need these permissions, and the rest work without them" = "تحتاج بعض الأدوات فقط إلى هذه الأذونات، وبقية الأدوات تعمل من دونها";
 "Accessibility" = "تسهيلات الاستخدام";
 "Input Monitoring" = "مراقبة الإدخال";
 "Lets the app see clicks and keys" = "يسمح للتطبيق برؤية النقرات والمفاتيح";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "إبقاء جهاز Mac مستيقظًا";
 "Duration" = "المدة";
 "If turned on now, ends %@" = "لو شغّلته الآن، ينتهي: %@";
+"If turned on now, stays on until you turn it off" = "لو شغّلته الآن، يبقى يعمل حتى توقفه";
 "Days" = "أيام";
 "Hours" = "ساعات";
 "Minutes" = "دقائق";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "لم يتم التشغيل: لم تُدخل كلمة سر المسؤول";
 "pikapik wants to keep your Mac awake with the lid closed." = "يريد pikapik إبقاء جهاز Mac مستيقظًا والغطاء مغلق.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "يريد pikapik السماح لجهاز Mac بالسكون مجددًا عند إغلاق الغطاء.";
-"How pikapik starts and looks." = "كيف يبدأ pikapik وكيف يبدو.";
+"How pikapik starts and looks" = "كيف يبدأ pikapik وكيف يبدو";
 "Back" = "رجوع";
 "Forward" = "تقدم";
 "No Results" = "لا توجد نتائج";
@@ -693,7 +694,7 @@
 "Uninstaller" = "إزالة التطبيقات";
 "Remove an app" = "إزالة تطبيق";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "إزالة التثبيت, إزالة تطبيق, حذف تطبيق, حذف, إزالة, تطبيق, برنامج, منظف, تنظيف, بقايا, سلة المهملات, إعادة ضبط, إرجاع, استعادة, تراجع, إلغاء تثبيت";
-"Remove an app and its files. You can put it all back." = "أزل تطبيقًا مع ملفاته، ويمكنك إرجاع كل شيء.";
+"Remove an app and its files, and put them back if you change your mind" = "أزل تطبيقًا مع ملفاته، وأعدها إذا غيّرت رأيك";
 "Search apps" = "بحث في التطبيقات";
 "Sort by" = "ترتيب حسب";
 "Name" = "الاسم";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "المهام في مجلد المنزل";
 "To see the tasks in your home folder, allow access to it." = "للاطلاع على المهام في مجلد المنزل، اسمح بالوصول إليه.";
 "Nothing runs in the background" = "لا شيء يعمل في الخلفية";
-"See everything that runs in the background and which app added it." = "كل ما يعمل في الخلفية، والتطبيق الذي أضافه.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "كل ما يعمل في الخلفية، والتطبيق الذي أضافه. أطفئ ما لا تحتاجه وأعد تشغيله متى شئت.";
+"See everything that runs in the background and which app added it" = "كل ما يعمل في الخلفية، والتطبيق الذي أضافه";
 "Keeps running" = "يعمل باستمرار";
 "Runs on a schedule" = "يعمل حسب جدول";
 "Starts when you log in" = "يبدأ عند تسجيل الدخول";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "مستوى صوت %@";
 "System Audio Recording" = "تسجيل صوت النظام";
 "To change each app’s volume" = "لتغيير مستوى صوت كل تطبيق";
+"To change each app’s volume, allow “%@”" = "لتغيير مستوى صوت كل تطبيق، اسمح بـ «%@»";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "يمرّر pikapik صوت كل تطبيق عبر نفسه لتغيير مستوى صوته. لا يتم تسجيل أي شيء ولا حفظه.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "خلاط, كتم تطبيق, مستوى صوت كل تطبيق, مستوى الصوت, الصوت, الصوتيات, هادئ, عالٍ";
 "Device Control and Data Access" = "التحكم في الأجهزة والوصول إلى البيانات";
 "Lets the app change clicks and keys" = "يسمح للتطبيق بتغيير النقرات والمفاتيح";
 "privacy, security, access, accessibility, device control, data access" = "خصوصية، أمن، أمان، وصول، إذن, تسهيلات الاستخدام, التحكم في الأجهزة والوصول إلى البيانات";
-"Change animations in System Settings. Each button opens the right place." = "تُغيَّر الرسوم المتحركة في إعدادات النظام. كل زر يفتح المكان المناسب.";
+"Each button takes you to an animation setting in System Settings" = "كل زر ينقلك إلى أحد إعدادات الرسوم المتحركة في إعدادات النظام";
 "Choose “Scale Effect” for a quicker animation" = "اختر «تأثير التحجيم» لحركة أسرع";
 "Turn off “Animate opening applications”" = "أوقف «تحريك التطبيقات التي يتم فتحها»";
 "Turn on “Automatically hide and show the Dock”" = "شغّل «إخفاء وإظهار شريط الأيقونات تلقائيًا»";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "سطح المكتب, أيقونات, ملفات, مجلدات, تنظيف, إخفاء, عرض تقديمي, مشاركة الشاشة, تسجيل, لقطة شاشة, منظم الواجهة";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "مخفية, غير مرئية, ملفات النقطة, ملفات النظام, المكتبة, إظهار كل الملفات, Command Shift نقطة";
 "Brightness" = "السطوع";
-"Change the brightness of monitors macOS can’t adjust on its own." = "غيّر سطوع الشاشات التي لا يستطيع macOS ضبطها بنفسه.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "غيّر سطوع الشاشات التي لا يستطيع macOS ضبطها بنفسه";
 "Changes the monitor’s own brightness." = "يغيّر سطوع الشاشة نفسها.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "يعتّم الصورة. هذه الشاشة لا تسمح لجهاز Mac بتغيير سطوعها.";
 "Dims the picture." = "يعتّم الصورة.";

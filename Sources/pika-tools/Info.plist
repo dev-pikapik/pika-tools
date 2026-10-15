@@ -121,7 +121,6 @@
 	<key>NSServices</key>
 	<array>
 		<dict>
-			<!-- ⌃⌥⇧⌘F19: the App Store version presses these keys for the shortcut set in Settings -->
 			<key>NSKeyEquivalent</key>
 			<dict>
 				<key>default</key>

@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Tahan ⌥ dan ketuk ⇧: bahasa berikutnya. Tahan ⇧ dan ketuk ⌥: sebelumnya";
 "All set" = "Semua siap";
 "pikapik needs two permissions" = "pikapik memerlukan dua izin";
-"Both permissions are on and every tool is working." = "Kedua izin sudah aktif dan semua alat berfungsi.";
-"Some tools also need a permission from the list below." = "Beberapa alat juga memerlukan izin dari daftar di bawah.";
+"Both permissions are on and every tool is working" = "Kedua izin sudah aktif dan semua alat berfungsi";
+"Some tools also need a permission from the list below" = "Beberapa alat juga memerlukan izin dari daftar di bawah";
 "Both permissions are on" = "Kedua izin sudah aktif";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Tanpa izin ini, macOS tidak mengizinkan app melihat atau mengubah klik dan tombol. Buka Pengaturan Sistem › Privasi & Keamanan, lalu nyalakan pikapik di dua daftar ini:";
 "Permissions for some tools" = "Izin untuk beberapa alat";
-"Only some tools need these permissions. Everything else works without them." = "Hanya beberapa alat yang memerlukan izin ini. Semua yang lain tetap berfungsi tanpa izin ini.";
+"Only some tools need these permissions, and the rest work without them" = "Hanya beberapa alat yang memerlukan izin ini, sisanya tetap berfungsi tanpa izin ini";
 "Accessibility" = "Aksesibilitas";
 "Input Monitoring" = "Pengawasan Input";
 "Lets the app see clicks and keys" = "Memungkinkan app melihat klik dan tombol";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Jaga Mac tetap terjaga";
 "Duration" = "Durasi";
 "If turned on now, ends %@" = "Jika diaktifkan sekarang, berakhir: %@";
+"If turned on now, stays on until you turn it off" = "Jika diaktifkan sekarang, tetap aktif sampai Anda mematikannya";
 "Days" = "Hari";
 "Hours" = "Jam";
 "Minutes" = "Menit";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Tidak dinyalakan: tanpa kata sandi administrator";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik ingin menjaga Mac Anda tetap terjaga saat penutup ditutup.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik ingin membiarkan Mac Anda tidur lagi saat penutup ditutup.";
-"How pikapik starts and looks." = "Cara pikapik dimulai dan tampilannya.";
+"How pikapik starts and looks" = "Cara pikapik dimulai dan tampilannya";
 "Back" = "Kembali";
 "Forward" = "Maju";
 "No Results" = "Tidak Ada Hasil";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Hapus App";
 "Remove an app" = "Hapus app";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "copot, hapus app, hapus aplikasi, hapus, buang, app, aplikasi, pembersih, bersihkan, sisa, tong sampah, atur ulang, kembalikan, pulihkan, urungkan";
-"Remove an app and its files. You can put it all back." = "Hapus app beserta filenya. Semua bisa dikembalikan.";
+"Remove an app and its files, and put them back if you change your mind" = "Hapus app beserta filenya, lalu kembalikan jika Anda berubah pikiran";
 "Search apps" = "Cari app";
 "Sort by" = "Urutkan menurut";
 "Name" = "Nama";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Tugas di folder utama Anda";
 "To see the tasks in your home folder, allow access to it." = "Untuk melihat tugas di folder utama Anda, izinkan akses ke folder tersebut.";
 "Nothing runs in the background" = "Tidak ada yang berjalan di latar belakang";
-"See everything that runs in the background and which app added it." = "Semua yang berjalan di latar belakang, dan app mana yang menambahkannya.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Semua yang berjalan di latar belakang, dan app mana yang menambahkannya. Matikan yang tidak Anda perlukan dan nyalakan lagi kapan saja.";
+"See everything that runs in the background and which app added it" = "Semua yang berjalan di latar belakang, dan app mana yang menambahkannya";
 "Keeps running" = "Selalu berjalan";
 "Runs on a schedule" = "Berjalan sesuai jadwal";
 "Starts when you log in" = "Mulai saat Anda login";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volume %@";
 "System Audio Recording" = "Perekaman Audio Sistem";
 "To change each app’s volume" = "Untuk mengubah volume tiap app";
+"To change each app’s volume, allow “%@”" = "Untuk mengubah volume tiap app, izinkan “%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik meneruskan suara tiap app melalui dirinya sendiri untuk mengubah volumenya. Tidak ada yang direkam atau disimpan.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, bisukan app, volume per app, volume, suara, audio, pelan, keras";
 "Device Control and Data Access" = "Kontrol Perangkat dan Akses Data";
 "Lets the app change clicks and keys" = "Memungkinkan app mengubah klik dan tombol";
 "privacy, security, access, accessibility, device control, data access" = "privasi, keamanan, akses, aksesibilitas, kontrol perangkat dan akses data";
-"Change animations in System Settings. Each button opens the right place." = "Animasi diubah di Pengaturan Sistem. Setiap tombol membuka tempat yang tepat.";
+"Each button takes you to an animation setting in System Settings" = "Setiap tombol membawa Anda ke satu pengaturan animasi di Pengaturan Sistem";
 "Choose “Scale Effect” for a quicker animation" = "Pilih “Efek Skala” agar animasinya lebih cepat";
 "Turn off “Animate opening applications”" = "Matikan “Animasikan saat membuka aplikasi”";
 "Turn on “Automatically hide and show the Dock”" = "Nyalakan “Sembunyikan dan tampilkan Dock secara otomatis”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "desktop, ikon, file, folder, rapikan, sembunyikan, presentasi, berbagi layar, rekaman, jepretan layar, Pengelola Sorotan";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "tersembunyi, tak terlihat, file titik, file sistem, Perpustakaan, tampilkan semua file, Command Shift titik";
 "Brightness" = "Kecerahan";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Ubah kecerahan monitor yang tidak bisa diatur macOS sendiri.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Ubah kecerahan monitor yang tidak bisa diatur macOS sendiri";
 "Changes the monitor’s own brightness." = "Mengubah kecerahan monitor itu sendiri.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Meredupkan gambar. Monitor ini tidak mengizinkan Mac mengubah kecerahannya.";
 "Dims the picture." = "Meredupkan gambar.";

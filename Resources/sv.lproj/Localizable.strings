@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Håll ned ⌥ och tryck på ⇧: nästa språk. Håll ned ⇧ och tryck på ⌥: föregående";
 "All set" = "Allt klart";
 "pikapik needs two permissions" = "pikapik behöver två behörigheter";
-"Both permissions are on and every tool is working." = "Båda behörigheterna är på och alla verktyg fungerar.";
-"Some tools also need a permission from the list below." = "Vissa verktyg behöver också en behörighet från listan nedan.";
+"Both permissions are on and every tool is working" = "Båda behörigheterna är på och alla verktyg fungerar";
+"Some tools also need a permission from the list below" = "Vissa verktyg behöver också en behörighet från listan nedan";
 "Both permissions are on" = "Båda behörigheterna är på";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Utan dem låter macOS inte appen se eller ändra klick och tangenttryckningar. Öppna Systeminställningar › Integritet och säkerhet och slå på pikapik i de här två listorna:";
 "Permissions for some tools" = "Behörigheter för vissa verktyg";
-"Only some tools need these permissions. Everything else works without them." = "Bara vissa verktyg behöver de här behörigheterna. Allt annat fungerar utan dem.";
+"Only some tools need these permissions, and the rest work without them" = "Bara vissa verktyg behöver de här behörigheterna, och resten fungerar utan dem";
 "Accessibility" = "Hjälpmedel";
 "Input Monitoring" = "Övervakning av inmatning";
 "Lets the app see clicks and keys" = "Låter appen se klick och tangenttryckningar";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Håll din Mac vaken";
 "Duration" = "Varaktighet";
 "If turned on now, ends %@" = "Om den slås på nu slutar den: %@";
+"If turned on now, stays on until you turn it off" = "Om den slås på nu förblir den på tills du slår av den";
 "Days" = "Dagar";
 "Hours" = "Timmar";
 "Minutes" = "Minuter";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Inte påslaget: inget administratörslösenord";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik vill hålla din Mac vaken med locket stängt.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik vill låta din Mac gå i vila med locket stängt igen.";
-"How pikapik starts and looks." = "Hur pikapik startar och ser ut.";
+"How pikapik starts and looks" = "Hur pikapik startar och ser ut";
 "Back" = "Bakåt";
 "Forward" = "Framåt";
 "No Results" = "Inga resultat";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Ta bort appar";
 "Remove an app" = "Ta bort en app";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "avinstallera, ta bort app, radera app, radera, ta bort, app, applikation, rensare, städa, rester, papperskorg, återställ, lägg tillbaka, ångra, program";
-"Remove an app and its files. You can put it all back." = "Ta bort en app med filer. Allt kan läggas tillbaka.";
+"Remove an app and its files, and put them back if you change your mind" = "Ta bort en app med filer och lägg tillbaka allt om du ångrar dig";
 "Search apps" = "Sök appar";
 "Sort by" = "Sortera efter";
 "Name" = "Namn";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Uppgifter i din hemmapp";
 "To see the tasks in your home folder, allow access to it." = "Ge åtkomst till din hemmapp för att se uppgifterna i den.";
 "Nothing runs in the background" = "Inget körs i bakgrunden";
-"See everything that runs in the background and which app added it." = "Allt som körs i bakgrunden och vilken app som lade till det.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Allt som körs i bakgrunden och vilken app som lade till det. Stäng av det du inte behöver och slå på det igen när du vill.";
+"See everything that runs in the background and which app added it" = "Allt som körs i bakgrunden och vilken app som lade till det";
 "Keeps running" = "Körs hela tiden";
 "Runs on a schedule" = "Körs enligt schema";
 "Starts when you log in" = "Startar när du loggar in";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volym för %@";
 "System Audio Recording" = "Inspelning av systemljud";
 "To change each app’s volume" = "För att ändra volymen för varje app";
+"To change each app’s volume, allow “%@”" = "För att ändra volymen för varje app, tillåt ”%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik leder varje apps ljud genom sig själv för att ändra volymen. Ingenting spelas in eller sparas.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, ljud av för app, volym per app, volym, ljud, audio, tyst, högt";
 "Device Control and Data Access" = "Enhetskontroll och dataåtkomst";
 "Lets the app change clicks and keys" = "Låter appen ändra klick och tangenttryckningar";
 "privacy, security, access, accessibility, device control, data access" = "integritet, säkerhet, åtkomst, hjälpmedel, enhetskontroll och dataåtkomst";
-"Change animations in System Settings. Each button opens the right place." = "Animationer ändrar du i Systeminställningar. Varje knapp öppnar rätt ställe.";
+"Each button takes you to an animation setting in System Settings" = "Varje knapp tar dig till en animationsinställning i Systeminställningar";
 "Choose “Scale Effect” for a quicker animation" = "Välj ”Skalningseffekt” för en snabbare animering";
 "Turn off “Animate opening applications”" = "Stäng av ”Animera appar som startar”";
 "Turn on “Automatically hide and show the Dock”" = "Slå på ”Göm och visa Dock automatiskt”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "skrivbord, symboler, filer, mappar, städa, gömma, presentation, skärmdelning, inspelning, skärmbild, Blickfång";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "gömda, osynliga, punktfiler, systemfiler, Bibliotek, visa alla filer, Kommando Skift punkt";
 "Brightness" = "Ljusstyrka";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Ändra ljusstyrkan på bildskärmar som macOS inte kan justera själv.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Ändra ljusstyrkan på bildskärmar som macOS inte kan justera själv";
 "Changes the monitor’s own brightness." = "Ändrar bildskärmens egen ljusstyrka.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Dämpar bilden. Den här bildskärmen låter inte Macen ändra dess ljusstyrka.";
 "Dims the picture." = "Dämpar bilden.";

@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥를 누른 채 ⇧를 누르면 다음 언어, ⇧를 누른 채 ⌥를 누르면 이전 언어";
 "All set" = "모두 준비됨";
 "pikapik needs two permissions" = "pikapik에 두 가지 권한이 필요합니다";
-"Both permissions are on and every tool is working." = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다.";
-"Some tools also need a permission from the list below." = "일부 도구는 아래 목록의 권한도 필요합니다.";
+"Both permissions are on and every tool is working" = "두 권한이 모두 켜져 있으며 모든 도구가 작동합니다";
+"Some tools also need a permission from the list below" = "일부 도구는 아래 목록의 권한도 필요합니다";
 "Both permissions are on" = "두 권한이 모두 켜져 있습니다";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "권한이 없으면 macOS가 앱이 클릭과 키 입력을 확인하거나 변경하지 못하게 합니다. 시스템 설정 › 개인정보 보호 및 보안을 열고 다음 두 목록에서 pikapik을 켜세요:";
 "Permissions for some tools" = "일부 도구에 필요한 권한";
-"Only some tools need these permissions. Everything else works without them." = "이 권한은 일부 도구에만 필요합니다. 나머지는 모두 권한 없이도 작동합니다.";
+"Only some tools need these permissions, and the rest work without them" = "이 권한은 일부 도구에만 필요하며, 나머지는 권한 없이도 작동합니다";
 "Accessibility" = "손쉬운 사용";
 "Input Monitoring" = "입력 모니터링";
 "Lets the app see clicks and keys" = "클릭과 키 입력을 확인하는 데 필요";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Mac 잠자기 방지";
 "Duration" = "지속 시간";
 "If turned on now, ends %@" = "지금 켜면 종료: %@";
+"If turned on now, stays on until you turn it off" = "지금 켜면 끌 때까지 켜져 있습니다";
 "Days" = "일";
 "Hours" = "시간";
 "Minutes" = "분";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "켜지지 않음: 관리자 암호가 필요합니다";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik이 덮개를 닫아도 Mac이 잠자기에 들어가지 않도록 하려고 합니다.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik이 덮개를 닫을 때 다시 잠자기에 들어가도록 되돌리려고 합니다.";
-"How pikapik starts and looks." = "pikapik의 시작과 모양.";
+"How pikapik starts and looks" = "pikapik의 시작과 모양";
 "Back" = "뒤로";
 "Forward" = "앞으로";
 "No Results" = "결과 없음";
@@ -693,7 +694,7 @@
 "Uninstaller" = "앱 제거";
 "Remove an app" = "앱 제거";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "삭제, 앱 제거, 앱 삭제, 제거, 앱, 애플리케이션, 클리너, 정리, 남은 파일, 휴지통, 재설정, 되돌리기, 복원, 실행 취소, 언인스톨, 잔여 파일, 초기화";
-"Remove an app and its files. You can put it all back." = "앱과 앱의 파일을 제거합니다. 모두 되돌릴 수 있습니다.";
+"Remove an app and its files, and put them back if you change your mind" = "앱과 앱의 파일을 제거하고, 마음이 바뀌면 되돌릴 수 있습니다";
 "Search apps" = "앱 검색";
 "Sort by" = "정렬 기준";
 "Name" = "이름";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "홈 폴더의 작업";
 "To see the tasks in your home folder, allow access to it." = "홈 폴더의 작업을 보려면 홈 폴더에 대한 접근을 허용하세요.";
 "Nothing runs in the background" = "백그라운드에서 실행 중인 항목 없음";
-"See everything that runs in the background and which app added it." = "백그라운드에서 실행되는 모든 항목과 그 항목을 추가한 앱을 확인하세요.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "백그라운드에서 실행되는 모든 항목과 그 항목을 추가한 앱을 확인하세요. 필요 없는 항목은 끄고 언제든지 다시 켤 수 있습니다.";
+"See everything that runs in the background and which app added it" = "백그라운드에서 실행되는 모든 항목과 그 항목을 추가한 앱을 확인하세요";
 "Keeps running" = "계속 실행됨";
 "Runs on a schedule" = "일정에 따라 실행됨";
 "Starts when you log in" = "로그인할 때 시작됨";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "%@ 음량";
 "System Audio Recording" = "시스템 오디오 녹음";
 "To change each app’s volume" = "앱별 음량을 바꾸기 위해";
+"To change each app’s volume, allow “%@”" = "앱별 음량을 바꾸려면 “%@”을(를) 허용하세요";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapik은 음량을 바꾸기 위해 각 앱의 소리를 자신을 거쳐 보냅니다. 아무것도 녹음되거나 저장되지 않습니다.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "믹서, 앱 음소거, 앱별 음량, 음량, 소리, 오디오, 조용히, 크게";
 "Device Control and Data Access" = "기기 제어 및 데이터 접근";
 "Lets the app change clicks and keys" = "클릭과 키 입력을 변경하는 데 필요";
 "privacy, security, access, accessibility, device control, data access" = "개인정보 보호, 보안, 접근, 손쉬운 사용, 기기 제어 및 데이터 접근";
-"Change animations in System Settings. Each button opens the right place." = "애니메이션은 시스템 설정에서 변경합니다. 각 버튼을 누르면 해당 위치가 열립니다.";
+"Each button takes you to an animation setting in System Settings" = "각 버튼을 누르면 시스템 설정의 애니메이션 설정으로 이동합니다";
 "Choose “Scale Effect” for a quicker animation" = "더 빠른 애니메이션을 원하면 ‘크기 효과’를 선택하세요";
 "Turn off “Animate opening applications”" = "‘응용 프로그램 열 때 아이콘 움직이기’를 끄세요";
 "Turn on “Automatically hide and show the Dock”" = "‘자동으로 Dock 가리기와 보기’를 켜세요";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "데스크탑, 아이콘, 파일, 폴더, 정리, 숨기기, 프레젠테이션, 화면 공유, 녹화, 스크린샷, 스테이지 매니저";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "숨김, 보이지 않는, 점 파일, 시스템 파일, 라이브러리, 모든 파일 보기, Command Shift 마침표";
 "Brightness" = "밝기";
-"Change the brightness of monitors macOS can’t adjust on its own." = "macOS가 스스로 조절하지 못하는 모니터의 밝기를 바꿉니다.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "macOS가 스스로 조절하지 못하는 모니터의 밝기를 바꿉니다";
 "Changes the monitor’s own brightness." = "모니터 자체의 밝기를 바꿉니다.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "화면을 어둡게 합니다. 이 모니터는 Mac이 밝기를 바꾸도록 허용하지 않습니다.";
 "Dims the picture." = "화면을 어둡게 합니다.";

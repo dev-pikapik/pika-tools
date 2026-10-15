@@ -86,8 +86,8 @@ struct BackgroundPage: View {
 
     var body: some View {
         Form {
+            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it"))
             #if APPSTORE
-            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it."))
             if !permissions.fileAccess {
                 Section {
                     Text("Tasks in your home folder")
@@ -95,8 +95,6 @@ struct BackgroundPage: View {
                         .needs([.folders])
                 }
             }
-            #else
-            SettingsHeader(tab: .background, text: String(localized: "See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime."))
             #endif
             if !model.loaded {
                 Section {
@@ -148,7 +146,9 @@ struct BackgroundPage: View {
         let tasks = model.tasks.filter { $0.kind == kind }
         if !tasks.isEmpty {
             Section(title) {
-                ForEach(tasks) { TaskRow(task: $0) }
+                ForEach(tasks) { task in
+                    TaskRow(task: task, showsVersion: Set(tasks.filter { $0.title == task.title }.map(\.version)).count > 1)
+                }
             }
         }
     }
@@ -156,6 +156,7 @@ struct BackgroundPage: View {
 
 private struct TaskRow: View {
     let task: BackgroundTask
+    let showsVersion: Bool
     private let model = BackgroundModel.shared
 
     var body: some View {
@@ -218,7 +219,8 @@ private struct TaskRow: View {
         case .allUsers: String(localized: "For all users")
         case .wholeMac: String(localized: "For the whole Mac")
         }
-        return [state, scope, task.developer].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · ")
+        let version: String? = showsVersion && !task.version.isEmpty ? String(localized: "Version \(task.version)") : nil
+        return [version, state, scope, task.developer].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · ")
     }
 
     private static func text(_ timing: BackgroundTask.Timing) -> String {

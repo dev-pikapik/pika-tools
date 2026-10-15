@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "Segure ⌥ e toque em ⇧: próximo idioma. Segure ⇧ e toque em ⌥: anterior";
 "All set" = "Tudo pronto";
 "pikapik needs two permissions" = "O pikapik precisa de duas permissões";
-"Both permissions are on and every tool is working." = "As duas permissões estão ativas e todas as ferramentas funcionam.";
-"Some tools also need a permission from the list below." = "Algumas ferramentas também precisam de uma permissão da lista abaixo.";
+"Both permissions are on and every tool is working" = "As duas permissões estão ativas e todas as ferramentas funcionam";
+"Some tools also need a permission from the list below" = "Algumas ferramentas também precisam de uma permissão da lista abaixo";
 "Both permissions are on" = "As duas permissões estão ativas";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "Sem elas, o macOS não deixa o app ver nem alterar cliques e teclas. Abra Ajustes do Sistema › Privacidade e Segurança e ative o pikapik nestas duas listas:";
 "Permissions for some tools" = "Permissões para algumas ferramentas";
-"Only some tools need these permissions. Everything else works without them." = "Só algumas ferramentas precisam dessas permissões. Todo o resto funciona sem elas.";
+"Only some tools need these permissions, and the rest work without them" = "Só algumas ferramentas precisam dessas permissões, e o resto funciona sem elas";
 "Accessibility" = "Acessibilidade";
 "Input Monitoring" = "Monitoração de Entrada";
 "Lets the app see clicks and keys" = "Para ver cliques e teclas";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Manter o Mac ativo";
 "Duration" = "Duração";
 "If turned on now, ends %@" = "Se ativado agora, termina: %@";
+"If turned on now, stays on until you turn it off" = "Se ativado agora, fica ativado até você desativar";
 "Days" = "Dias";
 "Hours" = "Horas";
 "Minutes" = "Minutos";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "Não ativado: falta a senha de administrador";
 "pikapik wants to keep your Mac awake with the lid closed." = "O pikapik quer manter o Mac ativo com a tampa fechada.";
 "pikapik wants to let your Mac sleep with the lid closed again." = "O pikapik quer que o Mac volte a dormir com a tampa fechada.";
-"How pikapik starts and looks." = "Como o pikapik abre e aparece.";
+"How pikapik starts and looks" = "Como o pikapik abre e aparece";
 "Back" = "Voltar";
 "Forward" = "Avançar";
 "No Results" = "Nenhum resultado";
@@ -693,7 +694,7 @@
 "Uninstaller" = "Remover apps";
 "Remove an app" = "Remover um app";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "desinstalar, remover app, apagar app, apagar, remover, app, aplicativo, limpeza, limpar, sobras, lixo, redefinir, devolver, restaurar, desfazer, excluir, restos";
-"Remove an app and its files. You can put it all back." = "Remova um app e seus arquivos. Dá para devolver tudo.";
+"Remove an app and its files, and put them back if you change your mind" = "Remova um app e seus arquivos e devolva tudo se mudar de ideia";
 "Search apps" = "Buscar apps";
 "Sort by" = "Ordenar por";
 "Name" = "Nome";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "Tarefas na sua pasta pessoal";
 "To see the tasks in your home folder, allow access to it." = "Para ver as tarefas da sua pasta pessoal, permita o acesso a ela.";
 "Nothing runs in the background" = "Nada roda em segundo plano";
-"See everything that runs in the background and which app added it." = "Tudo o que roda em segundo plano e qual app adicionou.";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "Tudo o que roda em segundo plano e qual app adicionou. Desligue o que você não precisa e religue quando quiser.";
+"See everything that runs in the background and which app added it" = "Tudo o que roda em segundo plano e qual app adicionou";
 "Keeps running" = "Sempre rodando";
 "Runs on a schedule" = "Roda em horários definidos";
 "Starts when you log in" = "Começa ao iniciar sessão";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "Volume de %@";
 "System Audio Recording" = "Gravação do áudio do sistema";
 "To change each app’s volume" = "Para alterar o volume de cada app";
+"To change each app’s volume, allow “%@”" = "Para alterar o volume de cada app, permita “%@”";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "O pikapik faz o som de cada app passar por ele para alterar o volume. Nada é gravado nem salvo.";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "mixer, silenciar app, volume por app, volume, som, áudio, baixo, alto";
 "Device Control and Data Access" = "Controle do Dispositivo e Acesso a Dados";
 "Lets the app change clicks and keys" = "Para alterar cliques e teclas";
 "privacy, security, access, accessibility, device control, data access" = "privacidade, segurança, acesso, acessibilidade, controle do dispositivo e acesso a dados";
-"Change animations in System Settings. Each button opens the right place." = "As animações são alteradas nos Ajustes do Sistema. Cada botão abre o lugar certo.";
+"Each button takes you to an animation setting in System Settings" = "Cada botão leva você a um ajuste de animação nos Ajustes do Sistema";
 "Choose “Scale Effect” for a quicker animation" = "Escolha “Efeito Escala” para uma animação mais rápida";
 "Turn off “Animate opening applications”" = "Desative “Animar abertura de aplicativos”";
 "Turn on “Automatically hide and show the Dock”" = "Ative “Ocultar e exibir o Dock automaticamente”";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "mesa, ícones, arquivos, pastas, limpar, ocultar, apresentação, compartilhamento de tela, gravação, captura de tela, Organizador Visual";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "ocultos, invisíveis, arquivos com ponto, arquivos do sistema, Biblioteca, mostrar todos os arquivos, Command Shift ponto";
 "Brightness" = "Brilho";
-"Change the brightness of monitors macOS can’t adjust on its own." = "Mude o brilho dos monitores que o macOS não consegue ajustar sozinho.";
+"Change the brightness of monitors macOS can’t adjust on its own" = "Mude o brilho dos monitores que o macOS não consegue ajustar sozinho";
 "Changes the monitor’s own brightness." = "Muda o brilho do próprio monitor.";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "Escurece a imagem. Este monitor não deixa o Mac mudar o brilho dele.";
 "Dims the picture." = "Escurece a imagem.";

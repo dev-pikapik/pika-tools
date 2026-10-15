@@ -24,6 +24,8 @@ final class NewMarks {
         NewItem(version: "1.50.0", tab: "finder", row: "archive", build: .appStore),
         NewItem(version: "1.50.0", tab: "finder", row: "desktop-icons", build: .appStore),
         NewItem(version: "1.50.0", tab: "permissions", row: "apps-can-ask", build: .appStore),
+        NewItem(version: "1.50.0", tab: "sound", row: "app-volume"),
+        NewItem(version: "1.50.0", tab: "ports", build: .direct),
     ]
 
     static let lifetime: TimeInterval = 21 * 24 * 3600

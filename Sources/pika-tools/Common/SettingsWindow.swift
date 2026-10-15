@@ -787,7 +787,7 @@ private struct GeneralSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks."))
+            SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks"))
             Section {
                 if loginItem.needsApproval { SettingsGuide.loginItems }
                 Toggle(isOn: $loginItem.isOn) {
@@ -1054,7 +1054,7 @@ private struct AnimationLinksPage: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .animations, text: String(localized: "Change animations in System Settings. Each button opens the right place."))
+            SettingsHeader(tab: .animations, text: String(localized: "Each button takes you to an animation setting in System Settings"))
             Section {
                 SystemSettingsRow(
                     title: String(localized: "Minimize effect"),

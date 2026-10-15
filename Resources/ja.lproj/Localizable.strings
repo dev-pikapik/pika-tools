@@ -17,12 +17,12 @@
 "Hold ⌥ and tap ⇧: next language. Hold ⇧ and tap ⌥: previous" = "⌥ を押したまま ⇧ を押すと次の言語、⇧ を押したまま ⌥ を押すと前の言語";
 "All set" = "準備完了";
 "pikapik needs two permissions" = "pikapik には 2 つのアクセス権が必要です";
-"Both permissions are on and every tool is working." = "両方のアクセス権があり、すべてのツールが動作しています。";
-"Some tools also need a permission from the list below." = "一部のツールには、下のリストのアクセス権も必要です。";
+"Both permissions are on and every tool is working" = "両方のアクセス権があり、すべてのツールが動作しています";
+"Some tools also need a permission from the list below" = "一部のツールには、下のリストのアクセス権も必要です";
 "Both permissions are on" = "両方のアクセス権があります";
 "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:" = "これがないと、macOS はアプリにクリックやキー入力の確認・変更を許可しません。「システム設定」›「プライバシーとセキュリティ」を開き、次の 2 つのリストで pikapik をオンにしてください：";
 "Permissions for some tools" = "一部のツールで使うアクセス権";
-"Only some tools need these permissions. Everything else works without them." = "これらのアクセス権が必要なのは一部のツールだけです。ほかの機能はアクセス権がなくても使えます。";
+"Only some tools need these permissions, and the rest work without them" = "これらのアクセス権が必要なのは一部のツールだけで、ほかの機能はアクセス権がなくても使えます";
 "Accessibility" = "アクセシビリティ";
 "Input Monitoring" = "入力監視";
 "Lets the app see clicks and keys" = "クリックやキー入力を確認するため";
@@ -71,6 +71,7 @@
 "Keep your Mac awake" = "Mac をスリープさせない";
 "Duration" = "時間";
 "If turned on now, ends %@" = "いまオンにすると、%@に終了します";
+"If turned on now, stays on until you turn it off" = "いまオンにすると、オフにするまでオンのままです";
 "Days" = "日";
 "Hours" = "時間";
 "Minutes" = "分";
@@ -91,7 +92,7 @@
 "Not turned on: no administrator password" = "オンになっていません：管理者パスワードが必要です";
 "pikapik wants to keep your Mac awake with the lid closed." = "pikapik が蓋を閉じても Mac をスリープさせないようにしようとしています。";
 "pikapik wants to let your Mac sleep with the lid closed again." = "pikapik が蓋を閉じたときのスリープを元に戻そうとしています。";
-"How pikapik starts and looks." = "pikapik の起動と外観。";
+"How pikapik starts and looks" = "pikapik の起動と外観";
 "Back" = "戻る";
 "Forward" = "進む";
 "No Results" = "結果なし";
@@ -693,7 +694,7 @@
 "Uninstaller" = "アプリの削除";
 "Remove an app" = "アプリを削除";
 "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo" = "アンインストール, アプリを削除, アプリを消す, 削除, 消去, アプリ, アプリケーション, クリーナー, 掃除, 残りファイル, ゴミ箱, リセット, 元に戻す, 復元, 取り消し";
-"Remove an app and its files. You can put it all back." = "アプリとそのファイルを削除します。すべて元に戻せます。";
+"Remove an app and its files, and put them back if you change your mind" = "アプリとそのファイルを削除し、気が変わったら元に戻せます";
 "Search apps" = "アプリを検索";
 "Sort by" = "並べ替え";
 "Name" = "名前";
@@ -1031,8 +1032,7 @@
 "Tasks in your home folder" = "ホームフォルダ内のタスク";
 "To see the tasks in your home folder, allow access to it." = "ホームフォルダ内のタスクを表示するには、ホームフォルダへのアクセスを許可してください。";
 "Nothing runs in the background" = "バックグラウンドで動いているものはありません";
-"See everything that runs in the background and which app added it." = "バックグラウンドで動いているすべてのものと、それを追加したアプリを確認できます。";
-"See everything that runs in the background and which app added it. Turn off what you don’t need and turn it back on anytime." = "バックグラウンドで動いているすべてのものと、それを追加したアプリを確認できます。不要なものはオフにして、いつでもオンに戻せます。";
+"See everything that runs in the background and which app added it" = "バックグラウンドで動いているすべてのものと、それを追加したアプリを確認できます";
 "Keeps running" = "常に動作";
 "Runs on a schedule" = "スケジュールで実行";
 "Starts when you log in" = "ログイン時に起動";
@@ -1128,12 +1128,13 @@
 "Volume of %@" = "%@の音量";
 "System Audio Recording" = "システムオーディオの録音";
 "To change each app’s volume" = "アプリごとの音量を変えるため";
+"To change each app’s volume, allow “%@”" = "アプリごとの音量を変えるには、「%@」を許可してください";
 "pikapik passes each app’s sound through itself to change its volume. Nothing is recorded or saved." = "pikapikは、音量を変えるために各アプリの音をいったん通します。録音も保存もされません。";
 "mixer, mute app, per-app volume, volume, sound, audio, quiet, loud" = "ミキサー, アプリをミュート, アプリごとの音量, 音量, サウンド, オーディオ, 静か, 大きい";
 "Device Control and Data Access" = "デバイスの制御とデータへのアクセス";
 "Lets the app change clicks and keys" = "クリックやキー入力を変更するため";
 "privacy, security, access, accessibility, device control, data access" = "プライバシー, セキュリティ, アクセス, アクセシビリティ, デバイスの制御とデータへのアクセス";
-"Change animations in System Settings. Each button opens the right place." = "アニメーションはシステム設定で変更します。各ボタンで該当する場所が開きます。";
+"Each button takes you to an animation setting in System Settings" = "各ボタンで、システム設定にあるアニメーションの設定が開きます";
 "Choose “Scale Effect” for a quicker animation" = "「スケールエフェクト」を選ぶとアニメーションが速くなります";
 "Turn off “Animate opening applications”" = "「起動中のアプリケーションをアニメーションで表示」をオフにします";
 "Turn on “Automatically hide and show the Dock”" = "「Dockを自動的に表示/非表示」をオンにします";
@@ -1170,7 +1171,7 @@
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "デスクトップ, アイコン, ファイル, フォルダ, 片付け, 隠す, プレゼンテーション, 画面共有, 録画, スクリーンショット, ステージマネージャ";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "隠し, 非表示, ドットファイル, システムファイル, ライブラリ, すべてのファイルを表示, Command Shift ピリオド";
 "Brightness" = "明るさ";
-"Change the brightness of monitors macOS can’t adjust on its own." = "macOS が自分で調節できないモニタの明るさを変更します。";
+"Change the brightness of monitors macOS can’t adjust on its own" = "macOS が自分で調節できないモニタの明るさを変更します";
 "Changes the monitor’s own brightness." = "モニタ本体の明るさを変更します。";
 "Dims the picture. This monitor doesn’t let the Mac change its brightness." = "画面を暗くします。このモニタは Mac からの明るさの変更を受け付けません。";
 "Dims the picture." = "画面を暗くします。";
