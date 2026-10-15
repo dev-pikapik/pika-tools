@@ -287,6 +287,12 @@ The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.
 swiftc -parse-as-library Helper/Player/WindowChrome.swift scripts/test-player-window.swift -o build/test-player-window && build/test-player-window
 ```
 
+The chapter marks on the time bar (`Helper/Player/TimeMarks.swift`) are drawn offscreen on dark glass and must stay visible there:
+
+```bash
+swiftc -parse-as-library Helper/Player/TimeMarks.swift scripts/test-time-marks.swift -o build/test-time-marks && build/test-time-marks
+```
+
 The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, that the chapters of an MKV and an MP4 are read with their titles and times, and that closing the window frees everything. It needs the bundled FFmpeg, so build FFmpeg first with `./scripts/build.sh` (CI builds it and installs the ffmpeg command with Homebrew):
 
 ```bash
@@ -302,7 +308,7 @@ swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Ex
 The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It needs the same ffmpeg:
 
 ```bash
-swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Thumbnails}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PictureInPicture,PlayerWindow,Thumbnails,TimeMarks,WindowChrome}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,PlayerMarks,PlayerOutput}.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
 ```
 
 ### Adding a tool

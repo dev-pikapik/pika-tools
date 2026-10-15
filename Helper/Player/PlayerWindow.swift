@@ -633,7 +633,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     private func refreshPictureInPicture() {
-        pipButton.isHidden = pip?.isPossible != true
+        pipButton.isHidden = pip == nil
+        pipButton.isEnabled = pip?.isPossible == true
         let label = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")
         pipButton.image = NSImage(systemSymbolName: pip?.isActive == true ? "pip.exit" : "pip.enter", accessibilityDescription: label)
         pipButton.setAccessibilityLabel(label)

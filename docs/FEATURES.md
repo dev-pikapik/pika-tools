@@ -1372,14 +1372,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows the video in a small floating window above your other windows, with play, pause and skip buttons, while you work in other apps.
 
-**How it works:** The player gives the video layer to `AVPictureInPictureController` (`Helper/Player/PictureInPicture.swift:3`). While the small window is open macOS asks the player for the length of the video and whether it is paused, and tells it when you press play, pause or skip; the player answers from its own state (`PictureInPicture.swift:60`). The button on the control panel, **Window › Picture in Picture** and ⌘⌥P start and stop it (`Helper/Player/PlayerWindow.swift:508`). While it runs the player window is hidden, and it comes back when the small window is closed or restored (`PlayerWindow.swift:496`). The button is shown, and the menu item turned on, only while macOS says this video can be shown that way (`PlayerWindow.swift:489`).
+**How it works:** The player gives the video layer to `AVPictureInPictureController` (`Helper/Player/PictureInPicture.swift:3`). While the small window is open macOS asks the player for the length of the video and whether it is paused, and tells it when you press play, pause or skip; the player answers from its own state (`PictureInPicture.swift:76`). The button on the control panel, **Window › Picture in Picture** and ⌘⌥P start and stop it (`Helper/Player/PlayerWindow.swift:656`). While it runs the player window is hidden, and it comes back when the small window is closed or restored, and when the video is closed or another file is opened (`PlayerWindow.swift:649`). A video has the button from the start, dimmed, so the time bar does not move when macOS says the video can be shown that way; only then the button and the menu item turn on (`PlayerWindow.swift:635`).
 
 **Nuances:** In full screen the player window stays where it is. A file with no picture, such as music, has no button.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
-1. (Website) Open a video and play it → a button with two small windows appears at the right of the control panel; for a music file it is missing.
+1. (Website) Open a video and play it → a button with two small windows is at the right of the control panel, dimmed for a moment at the start; the time bar does not move when it turns on; for a music file the button is missing.
 2. (Website) Click the button, or press ⌘⌥P → the video moves to a small floating window and keeps playing; the player window is hidden.
 3. (Website) In the small window press pause, then skip → the video pauses and jumps; close the small window or click its restore button → the player window is back at the same time.
 4. (Website) Open **Window** → the item **Picture in Picture** is there, with ⌘⌥P next to it; it is dimmed when no video is open.
@@ -1388,14 +1388,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Shows the chapters of a video on the time bar and in a **Chapters** menu, names the chapter under the preview, and lets you jump from chapter to chapter.
 
-**How it works:** The reader lists the file’s chapters with their titles and moves them onto the same clock as the picture (`Extensions/MediaReader/Demuxer.swift:287`). The window turns them into marks on the time bar (`Helper/Player/TimeMarks.swift:3`, `PlayerWindow.swift:527`) and into the **Chapters** menu, where the chapter you are in has a check mark (`Helper/Player/main.swift:26`). Page Down goes to the start of the next chapter and stays put in the last one; Page Up goes to the start of the chapter you are in, or to the one before it when you are within 3 seconds of its start (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:3`, `PlayerWindow.swift:512`). The chapter name is shown under the small picture when you point at the time bar (`Helper/Player/Thumbnails.swift:157`). A chapter without a title is called “Chapter” and its number.
+**How it works:** The reader lists the file’s chapters with their titles and moves them onto the same clock as the picture (`Extensions/MediaReader/Demuxer.swift:294`). The window turns them into marks on the time bar (`Helper/Player/TimeMarks.swift:3`, `PlayerWindow.swift:675`) and into the **Chapters** menu, where the chapter you are in has a check mark (`Helper/Player/main.swift:62`). Page Down goes to the start of the next chapter and stays put in the last one; Page Up goes to the start of the chapter you are in, or to the one before it when you are within 3 seconds of its start (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:3`, `PlayerWindow.swift:660`). The chapter name is shown under the small picture when you point at the time bar (`Helper/Player/Thumbnails.swift:157`). A chapter without a title is called “Chapter” and its number.
 
 **Nuances:** A video without chapters has no marks, and the menu says “No Chapters”. Marks at the very start or end of the bar are not drawn.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
-1. (Website) Open an MKV or MP4 with chapters → thin dark marks sit on the time bar at the chapter starts, and the **Chapters** menu lists every chapter with the current one checked.
+1. (Website) Open an MKV or MP4 with chapters → thin light marks with a dark edge sit on the time bar at the chapter starts, and the **Chapters** menu lists every chapter with the current one checked.
 2. (Website) Press Page Down → the time jumps to the start of the next chapter; press it in the last chapter → nothing changes.
 3. (Website) Press Page Up in the middle of a chapter → it goes back to the start of that chapter; press Page Up again at once → the chapter before.
 4. (Website) Point at the time bar → the card shows the picture, the time and the chapter name under the picture; a long name is cut with “…”.
@@ -1406,7 +1406,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Repeats a part of the video again and again, from a spot you mark to another.
 
-**How it works:** The A key is pressed three times: the first press marks the start (A) at the current time, the second marks the end (B), the third clears both (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:34`, `Helper/Player/PlayerWindow.swift:520`). Two yellow marks and a yellow strip between them show the part on the time bar. Every tick of the player checks the time, and when it reaches B the video seeks back to A and goes on playing at the same speed (`PlayerWindow.swift:341`, `PlayerMarks.swift:46`). The Playback menu item changes its name between **Set Loop Start**, **Set Loop End** and **Clear Loop**.
+**How it works:** The A key is pressed three times: the first press marks the start (A) at the current time, the second marks the end (B), the third clears both (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:34`, `Helper/Player/PlayerWindow.swift:668`). Two yellow marks and a yellow strip between them show the part on the time bar. Every tick of the player checks the time, and when it reaches B the video seeks back to A and goes on playing at the same speed (`PlayerWindow.swift:432`, `PlayerMarks.swift:46`). The Playback menu item changes its name between **Set Loop Start**, **Set Loop End** and **Clear Loop**.
 
 **Nuances:** If the second mark comes before the first, they swap places. A second mark less than half a second from the first is ignored. Opening another video clears the loop.
 
@@ -1423,7 +1423,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Sends the sound of the player, and only of the player, to another speaker, headphones or other sound output, without changing the output of your Mac.
 
-**How it works:** The list is the Mac’s sound outputs that are not hidden (`Sources/pika-tools/Tools/Player/PlayerOutput.swift:8`), read each time the Playback menu opens (`Helper/Player/main.swift:44`). Choosing one gives its identifier to the sound renderer of every open player (`Helper/Player/PlayerWindow.swift:147`, `Helper/Player/Engine.swift:143`); videos opened later use it too. **System Output** gives the player back to whatever the Mac uses, and follows it when you change it in System Settings. When the chosen output is unplugged or switched off, the player goes back to the system output by itself (`Helper/Player/main.swift:31`, `PlayerOutput.swift:33`). The choice is not kept after the player quits.
+**How it works:** The list is the Mac’s sound outputs that are not hidden (`Sources/pika-tools/Tools/Player/PlayerOutput.swift:8`), read each time the Playback menu opens (`Helper/Player/main.swift:44`). Choosing one gives its identifier to the sound renderer of every open player (`Helper/Player/PlayerWindow.swift:158`, `Helper/Player/Engine.swift:143`); videos opened later use it too. **System Output** gives the player back to whatever the Mac uses, and follows it when you change it in System Settings. When the chosen output is unplugged or switched off, the player goes back to the system output by itself (`Helper/Player/main.swift:31`, `PlayerOutput.swift:33`). The choice is not kept after the player quits.
 
 **Nuances:** The item is hidden while the Mac has only one sound output. AirPlay for video is not offered: the system AirPlay button works only with Apple’s own player, which cannot play MKV, WebM and the other formats this player is for. The sound of a video can still go to an AirPlay speaker when the Mac itself uses it as its output.
 
