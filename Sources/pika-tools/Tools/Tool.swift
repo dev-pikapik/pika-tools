@@ -127,6 +127,10 @@ final class ToolRegistry {
         return tools.contains(where: \.isActive) ? .active : .needsAccess
     }
 
+    var needsPermission: Bool {
+        tools.contains { $0.isEnabled && $0.needs.contains { !$0.isGranted } }
+    }
+
     private init() {
         let center = NSWorkspace.shared.notificationCenter
         for name in [NSWorkspace.didWakeNotification, NSWorkspace.sessionDidBecomeActiveNotification] {

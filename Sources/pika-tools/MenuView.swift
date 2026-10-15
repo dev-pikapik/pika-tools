@@ -30,6 +30,10 @@ struct MenuView: View {
 
     private var showsBrightness: Bool { isShown("brightness") && !Brightness.shared.monitors.isEmpty }
 
+    private var hasNew: Bool {
+        !NewMarks.shared.settingsOpened && NewMarks.shared.unseenTabs.contains { SettingsTab(rawValue: $0)?.isAvailable == true }
+    }
+
     private var visibleTabs: [SettingsTab] {
         [.sound, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
@@ -94,8 +98,9 @@ struct MenuView: View {
                                         }
                                         .buttonStyle(.plain)
                                         .foregroundStyle(.secondary)
-                                        .help(Text("Display"))
-                                        .accessibilityLabel(Text("Display"))
+                                        .help(Text("Display settings"))
+                                        .accessibilityLabel(Text("Display settings"))
+                                        .accessibilityValue(keepAwakeOpen ? Text("Expanded") : Text("Collapsed"))
                                     }
                                     if keepAwakeOpen { keepAwakeOptions }
                                 }
@@ -150,7 +155,7 @@ struct MenuView: View {
                         .glassCard()
                     }
 
-                    if !permissions.allGranted {
+                    if registry.needsPermission {
                         Button {
                             SettingsWindow.show(.permissions)
                         } label: {
@@ -187,6 +192,9 @@ struct MenuView: View {
             .frame(height: min(contentHeight, maxRowsHeight))
             .scrollClipDisabled(contentHeight <= maxRowsHeight)
             .scrollBounceBehavior(.basedOnSize)
+            // While a row grows or shrinks the rows and the frame are a moment out of step; .hidden would still show
+            // a permanent scroller, so only a real overflow gets one.
+            .scrollIndicators(contentHeight > maxRowsHeight ? .automatic : .never)
 
             HStack(spacing: 8) {
                 if customizing {
@@ -197,6 +205,7 @@ struct MenuView: View {
                     Button { SettingsWindow.show() } label: { Label("Settings…", systemImage: "gearshape") }
                         .keyboardShortcut(",")
                         .help("Settings…")
+                        .overlay(alignment: .topTrailing) { if hasNew { NewDot().padding(1) } }
                     Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
                         .help("Customize…")
                     Spacer(minLength: 8)
