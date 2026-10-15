@@ -21,6 +21,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func show(_ url: URL?) {
+        if let url, let open = players.first(where: { $0.window?.representedURL?.standardizedFileURL == url.standardizedFileURL }) {
+            open.window?.deminiaturize(nil)
+            open.showWindow(nil)
+            return
+        }
         let player = players.first(where: \.isEmpty) ?? {
             let player = PlayerController()
             player.onClose = { [weak self] closed in self?.players.removeAll { $0 === closed } }
