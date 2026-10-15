@@ -77,6 +77,8 @@ body:
         - "Animations › Minimize effect"
         - "Animations › Bouncing icons"
         - "Animations › Even calmer: Reduce Motion in Accessibility"
+        - "Player › Open Video…"
+        - "Player › FFmpeg and dav1d Licenses"
         - "Uninstaller › Offer to clean up when an app goes to the Trash"
         - "Uninstaller › Installed apps"
         - "Uninstaller › Move to Trash"
