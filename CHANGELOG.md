@@ -12,6 +12,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Per-app volume: when you put an app’s slider back to 100%, the hand-back no longer ends with a tiny click and a few milliseconds of silence. The sound now fades out of pikapik’s path in a few milliseconds before the app plays on its own
 
 ### Fixed
+- Open With lists pikapik Player right after an update, before the player was opened once.
 - Games: The pointer stays in the game now holds the pointer with macOS itself, in the website version. A fast flick no longer slips onto another display, and the pointer no longer jumps back from it: it simply stops at the edge of the game’s display, and hot corners you allowed in games stay in reach. In the website version pikapik no longer moves the pointer anywhere. The Mac App Store version is unchanged: it can’t use that part of macOS, so it still moves the pointer back and keeps it away from hot corners.
 
 ## [1.51.0] - 2026-10-15
