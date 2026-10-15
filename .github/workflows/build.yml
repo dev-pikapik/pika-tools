@@ -83,12 +83,14 @@ jobs:
           printf '[req]\ndistinguished_name = dn\nx509_extensions = ext\nprompt = no\n[dn]\nCN = pikapik CI\n[ext]\nbasicConstraints = critical, CA:false\nkeyUsage = critical, digitalSignature\nextendedKeyUsage = critical, codeSigning\n' > cert.cnf
           /usr/bin/openssl req -x509 -newkey rsa:2048 -nodes -days 2 -config cert.cnf -keyout key.pem -out cert.pem
           /usr/bin/openssl pkcs12 -export -inkey key.pem -in cert.pem -out ci.p12 -passout pass:ci
-          security create-keychain -p ci ci.keychain-db
-          security set-keychain-settings ci.keychain-db
-          security unlock-keychain -p ci ci.keychain-db
-          security import ci.p12 -k ci.keychain-db -P ci -T /usr/bin/codesign
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ci ci.keychain-db > /dev/null
-          security list-keychains -d user -s "$RUNNER_TEMP/ci.keychain-db" login.keychain-db
+          keychain="$RUNNER_TEMP/ci.keychain-db"
+          security create-keychain -p ci "$keychain"
+          security set-keychain-settings "$keychain"
+          security unlock-keychain -p ci "$keychain"
+          security import ci.p12 -k "$keychain" -P ci -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ci "$keychain" > /dev/null
+          security list-keychains -d user -s "$keychain" login.keychain-db
+          security find-identity -p codesigning "$keychain"
           echo "SIGN_IDENTITY=pikapik CI" >> "$GITHUB_ENV"
 
       - name: Run the tests from CONTRIBUTING.md
