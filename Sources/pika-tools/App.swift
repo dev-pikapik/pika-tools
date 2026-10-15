@@ -125,6 +125,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         KeepAwake.shared.restoreLidSleepIfNeeded()
         #if !APPSTORE
         FanControl.shared.start()
+        if FileManager.default.fileExists(atPath: PlayerPage.helper.path) { LSRegisterURL(PlayerPage.helper as CFURL, false) }
         signals = [SIGTERM, SIGINT, SIGHUP].map { number in
             signal(number, SIG_IGN)
             let source = DispatchSource.makeSignalSource(signal: number, queue: .main)
