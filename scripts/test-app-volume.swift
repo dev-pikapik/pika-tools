@@ -189,6 +189,13 @@ enum TestAppVolume {
         for _ in 0..<40 { run(ones, out, ramp) }
         precondition(ramp.current == 0.25 && at(out, 0, 1439, 1) == 0.25)
 
+        let hand = AppVolumeGain(target: 1, sampleRate: 48000)
+        hand.release()
+        run(ones, out, hand)
+        precondition(hand.target == 0 && at(out, 0, 0, 0) > 0.99)
+        precondition((1..<1440).allSatisfy { at(out, 0, $0, 0) <= at(out, 0, $0 - 1, 0) && at(out, 0, $0 - 1, 0) - at(out, 0, $0, 0) < 0.0075 })
+        precondition(at(out, 0, 1439, 0) < 1e-4 && hand.current < 1e-4, "\(hand.current)")
+
         let ring = AppVolumeRing(capacity: 1024, ceiling: 512, margin: 64)
         put(ring, from: 0, count: 100)
         precondition(take(ring, 100).isEmpty)
