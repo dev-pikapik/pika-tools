@@ -2,7 +2,7 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.50.0] - Unreleased
+## [1.50.0] - 2026-10-15
 
 ### Added
 - Mac App Store version, Archives in Finder: right-click an archive and choose Extract, or right-click files and folders and choose Create Archive… (ZIP, 7Z, TAR.GZ or TAR.XZ), and press Space on an archive to see the files inside, as in the version from the website. It works with the tools built into macOS instead of the bundled 7-Zip, so it has limits: only ZIP can have a password, an archive can’t be split into parts, split sets (.001, .part1.rar, .z01) and single .xz, .lzma and .zst files can’t be opened, password-protected 7Z and RAR can’t be opened, and there is no Open archives with this app switch. The first time, it asks for access to your home folder, the same as New File and Smaller Copy, and the Finder items need the extension turned on in System Settings › General › Login Items & Extensions. The progress bar now moves while an archive is unpacking and a wrong password is reported at once instead of after a pause (the version from the website gets this too), the switched-off password option for 7Z says why, and the “can’t be opened” message lists what this version can’t open. The hint in Settings now says which formats can have a password, and the Mac no longer falls asleep in the middle of unpacking or creating an archive (the version from the website gets this too).
@@ -946,6 +946,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.50.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.0
 [1.49.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.49.0
 [1.48.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.48.0
 [1.47.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.47.0
