@@ -11,6 +11,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ### Fixed
 - Per-app volume: when you put an app’s slider back to 100%, the hand-back no longer ends with a tiny click and a few milliseconds of silence. The sound now fades out of pikapik’s path in a few milliseconds before the app plays on its own
 
+### Fixed
+- Open With lists pikapik Player right after an update, before the player was opened once.
+
 ## [1.51.0] - 2026-10-15
 
 ### Added
