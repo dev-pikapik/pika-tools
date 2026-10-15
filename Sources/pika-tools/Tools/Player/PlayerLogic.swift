@@ -15,7 +15,7 @@ enum PlayerFormats {
 
     static func types(of extensions: [String]) -> [UTType] {
         var seen = Set<UTType>()
-        return extensions.compactMap { UTType(filenameExtension: $0) }.filter { seen.insert($0).inserted }
+        return extensions.compactMap { UTType(filenameExtension: $0) }.filter { !$0.isDynamic && seen.insert($0).inserted }
     }
 
     static func plays(_ url: URL) -> Bool {

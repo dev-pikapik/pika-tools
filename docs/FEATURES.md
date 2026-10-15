@@ -14,7 +14,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - **Test only on dummy apps.** Whenever a step says “stub app”, use a throwaway app whose name starts with `PikaE2E` (an empty app bundle with its own bundle id such as `org.example.pikae2e.test`, or a tiny app that plays a quiet tone). Never select, quit, uninstall, remove permissions of or change one of your real programs. Create test files only in a new test folder.
 - **Write down system state before you change it:** `defaults read com.apple.dock`, `defaults read com.apple.WindowManager StandardHideDesktopIcons`, `defaults read com.apple.finder AppleShowAllFiles`. Put them back after the test.
 - **Hardware some steps need:** a second display (Dock, Game Mode pointer, Show FPS), an external monitor not made by Apple (Brightness), a Mac with a battery (Battery) and one with fans (Fans), a trackpad and a mouse with side buttons and a wheel (Mouse), two input sources such as ABC and Russian (Keyboard), macOS 14.2 or later (Sound), a game or Chess (Games), Wi-Fi you can switch off (Speed Test).
-- **Do not flip these casually:** Open archives with this app (changes the Mac’s default app for ZIP and 7Z), Open All in pikapik and the format buttons (change it for 14 video types), Fan speed Manual, Keep the Dock on one display (restarts the Dock).
+- **Do not flip these casually:** Open archives with this app (changes the Mac’s default app for ZIP and 7Z), Open All in pikapik and the format buttons (change it for 14 video types and, in the Pictures group, for the picture types), Fan speed Manual, Keep the Dock on one display (restarts the Dock).
 - **Run synthetic-input tools yourself:** all clicks and keys in the steps are meant to be done by you at the Mac with the test app in front.
 
 ## General
@@ -1211,6 +1211,32 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. (Website) Leave a question unanswered for 60 seconds → the run stops and the buttons work again.
 5. (Website) Search “double-click” in Settings → the row Open All in pikapik is found.
 6. (Website) The logic on a fake store: `scripts/test-player.swift` prints ok for remember, assign, restore, one format alone, Keep, a refused change and a system that never answers.
+
+### Pictures
+
+**Does:** Opens pictures in almost any format in their own dark window, like Preview: JPEG, PNG, HEIC, AVIF, WebP, JPEG XL, camera RAW (DNG, CR2, CR3, NEF, ARW, RAF, ORF, RW2), PSD, TIFF, GIF, APNG, SVG, ICO, ICNS, BMP, TGA, EXR, HDR and JPEG 2000. The picture fits the window; pinch or ⌘+ and ⌘− zoom, ⌘0 fits it again, ⌘9 or a double click shows 100 %, dragging moves a zoomed picture, ⌘R and ⌘L turn it, ← and → show the next and previous picture, Space or ⇧⌘F starts a slideshow (3 seconds each, Esc or the same key stops it), F and ⌃⌘F enter full screen. GIF, APNG and WebP move. The title shows the file name and “3 of 12”; the glass panel at the bottom has the same buttons and hides like the video panel. A new **Pictures** group on Settings › Player gives each format to the player or back, and **Open All in pikapik** / **Restore Previous Apps** does all of them.
+
+**How it works:** `pikapik Player` sends pictures to `ImageController` (`Helper/Player/ImageWindow.swift:134`) and everything else to the video window (`Helper/Player/main.swift:50`); files and folders are sorted into pictures and the rest by `ImageList.split` (`Sources/pika-tools/Tools/Player/ImageLogic.swift:24`). Pictures are read with ImageIO and SVG with `NSImage` (`Helper/Player/ImageDecoder.swift:16`). The EXIF turn is applied while decoding. A picture is first decoded to the size of the screen; the full size, up to 16384 pixels, is decoded about 0.15 seconds after you zoom in beyond that (`ImageWindow.swift:410`, sizes in `ImageDetail.pixels`, `ImageLogic.swift:82`), and an SVG is drawn again sharp at the size shown. Older requests are dropped when you move on, so nothing piles up. Moving pictures are drawn by ImageIO’s animation call; closing the window or hiding it stops the animation. The keys are one table (`ImageAction.bindings`, `ImageLogic.swift:58`) shared by the window and the menu. The Pictures group uses the same `DefaultApps` class as the videos with its own saved list (`PlayerPage.swift:10`); if no app was remembered for a type, turning it off gives it to Preview (`com.apple.Preview`). `Info.plist` lists the picture types as Alternate, so pikapik Player appears in Open With without taking over a type.
+
+**Options:**
+- The format buttons and Open All in the Pictures group (`PlayerPage.swift:24`).
+- The Go menu: Previous Image, Next Image, Start Slideshow. View menu: Zoom In, Zoom Out, Actual Size, Fit to Window.
+
+**Nuances:** A damaged or unsupported picture shows “Can’t open this image” in the window and the arrows still work. Opening one picture from Finder shows only that picture; select several pictures or a folder to page through them (paging through the folder of a single file needs access to the folder and comes with the music work). EXR files written by some tools use a float format that macOS can’t read and show the message. Camera RAW depends on the macOS RAW decoder; a new camera model may not open until macOS knows it. Resetting or removing pikapik does not change default apps by itself; press Restore Previous Apps first.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Settings › Player › Pictures group is below Formats. Double-click a PNG after giving it to the player (use a test file type or a copy) → a dark window with the file name in the title; the picture fits the window.
+2. (Website) Open a large JPEG, press ⌘+ three times → the picture gets sharper and the percent in the panel grows; ⌘0 → it fits again; ⌘9 → 100 %; a double click → back to fit.
+3. (Website) Open three pictures together (select them in Finder › Open With) → the title says “1 of 3”; press → → “2 of 3”; press ← → “1 of 3”; ⌘R → the picture turns; close the window and open it again → it is not turned.
+4. (Website) Press Space → the slideshow runs and the pictures change every 3 seconds; press Esc or Space → it stops. Press F → full screen; press Esc → back.
+5. (Website) Open an animated GIF → it moves; close the window and watch Activity Monitor › pikapik Player → CPU is 0 % after a few seconds.
+6. (Website) Open a text file renamed to .jpg and an empty .png → the window says it can’t open this image; nothing crashes or hangs.
+7. (Website) Open a photo taken with an iPhone held upright → it is shown upright. Open an SVG → it stays sharp when zoomed to 1600 %.
+8. (Website, with stub apps only) Give the type of a test picture to the player with a format button, then give it back → it returns to the app it had; Restore Previous Apps puts Preview back for a type that had none remembered.
+9. (Website) Search “photo” in Settings → the Pictures group is found.
+10. (Website) The logic: `scripts/test-images.swift` prints ok for fit, zoom, paging, folders, keys, sizes, formats, animation, SVG and damaged files.
 
 ### Keys, wheel and Playback menu
 

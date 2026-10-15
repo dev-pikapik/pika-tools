@@ -269,6 +269,12 @@ The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app 
 swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
 ```
 
+Pictures open in the same app: `Helper/Player/ImageDecoder.swift` reads them with ImageIO (SVG with `NSImage`), `Helper/Player/ImageWindow.swift` is the window, and everything that needs no window (formats, paging, keys, zoom, decoded sizes) lives in `Sources/pika-tools/Tools/Player/ImageLogic.swift`. Their test writes small pictures in a dozen formats, cuts them, and checks zoom, folders, keys and damaged files:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/ImageLogic.swift Helper/Player/ImageDecoder.swift scripts/test-images.swift -o build/test-images && build/test-images
+```
+
 The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg, so build it first with `./scripts/build.sh`:
 
 ```bash

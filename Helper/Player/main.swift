@@ -3,17 +3,27 @@ import UniformTypeIdentifiers
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var players: [PlayerController] = []
+    private var pictures: [ImageController] = []
+    private var videoOnly: [NSMenuItem] = []
+    private var pictureOnly: [NSMenuItem] = []
     private let displays = NSMenu()
     private let displaysItem = NSMenuItem()
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
         NSApp.mainMenu = makeMenu()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyWindowChanged), name: NSWindow.didBecomeKeyNotification, object: nil)
+    }
+
+    @objc private func keyWindowChanged(_ notification: Notification) {
+        let picture = (notification.object as? NSWindow)?.windowController is ImageController
+        videoOnly.forEach { $0.isHidden = picture }
+        pictureOnly.forEach { $0.isHidden = !picture }
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         DispatchQueue.main.async {
-            if self.players.isEmpty { self.show(nil) }
+            if self.players.isEmpty && self.pictures.isEmpty { self.show(nil) }
         }
     }
 
@@ -34,7 +44,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
 
     func application(_ application: NSApplication, open urls: [URL]) {
-        for url in urls { show(url) }
+        open(urls)
+    }
+
+    private func open(_ urls: [URL]) {
+        let (images, rest) = ImageList.split(urls)
+        if !images.isEmpty { showPictures(images) }
+        for url in rest { show(url) }
+    }
+
+    private func showPictures(_ urls: [URL]) {
+        if urls.count == 1, pictures.contains(where: { $0.focus(urls[0]) }) { return }
+        let viewer = ImageController()
+        viewer.onOpen = { [weak self] urls in self?.open(urls) }
+        viewer.onClose = { [weak self] closed in self?.pictures.removeAll { $0 === closed } }
+        pictures.append(viewer)
+        viewer.show(urls)
+        viewer.showWindow(nil)
     }
 
     private func show(_ url: URL?) {
@@ -56,9 +82,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     @objc func openDocument(_ sender: Any?) {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = true
-        panel.allowedContentTypes = PlayerFormats.extensions.compactMap { UTType(filenameExtension: $0) }
+        panel.canChooseDirectories = true
+        panel.allowedContentTypes = PlayerFormats.extensions.compactMap { UTType(filenameExtension: $0) } + ImageFormats.types + [.folder]
         guard panel.runModal() == .OK else { return }
-        for url in panel.urls { show(url) }
+        open(panel.urls)
     }
 
     private func makeMenu() -> NSMenu {
@@ -83,6 +110,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             entry.representedObject = action
             return entry
         }
+        func picture(_ title: String, _ action: ImageAction) -> NSMenuItem {
+            let binding = ImageAction.bindings.first { $0.action == action }
+            let entry = item(title, #selector(ImageController.imageAction(_:)), binding?.key ?? "", binding?.modifiers ?? [])
+            entry.representedObject = action
+            return entry
+        }
         let others = item(String(localized: "Hide Others"), #selector(NSApplication.hideOtherApplications), "h", [.command, .option])
         _ = submenu(name, [
             item(String(localized: "About \(name)"), #selector(NSApplication.orderFrontStandardAboutPanel(_:))),
@@ -99,9 +132,26 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             .separator(),
             item(String(localized: "Close"), #selector(NSWindow.performClose), "w"),
         ])
+        let zoomItems = [
+            .separator(),
+            picture(String(localized: "Zoom In"), .zoomIn),
+            picture(String(localized: "Zoom Out"), .zoomOut),
+            picture(String(localized: "Actual Size"), .actualSize),
+            picture(String(localized: "Fit to Window"), .fit),
+            .separator(),
+            picture(String(localized: "Rotate Left"), .rotateLeft),
+            picture(String(localized: "Rotate Right"), .rotateRight),
+        ]
         _ = submenu(String(localized: "View"), [
             command(String(localized: "Enter Full Screen"), .fullScreen, #selector(NSWindow.toggleFullScreen)),
+        ] + zoomItems)
+        _ = submenu(String(localized: "Go"), [
+            picture(String(localized: "Previous Image"), .previous),
+            picture(String(localized: "Next Image"), .next),
+            .separator(),
+            picture(String(localized: "Start Slideshow"), .slideshow),
         ])
+        pictureOnly = zoomItems + main.items.suffix(1)
         _ = submenu(String(localized: "Playback"), [
             command(String(localized: "Play"), .playPause),
             .separator(),
@@ -123,6 +173,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             command(String(localized: "Volume Down"), .quieter),
             command(String(localized: "Mute"), .mute),
         ])
+        videoOnly = Array(main.items.suffix(1))
         let speeds = PlayerSpeed.all.map { speed in
             let entry = item("\(speed.formatted())×", #selector(PlayerController.chooseSpeed(_:)))
             entry.representedObject = speed
@@ -134,6 +185,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             command(String(localized: "Faster"), .faster),
             command(String(localized: "Normal Speed"), .normalSpeed),
         ])
+        videoOnly += main.items.suffix(1)
+        pictureOnly.forEach { $0.isHidden = true }
         displaysItem.title = String(localized: "Move to Display")
         displaysItem.submenu = displays
         let windowMenu = submenu(String(localized: "Window"), [

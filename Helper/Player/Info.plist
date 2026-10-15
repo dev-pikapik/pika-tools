@@ -51,6 +51,43 @@
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Image</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.jpeg</string>
+				<string>public.png</string>
+				<string>public.heic</string>
+				<string>public.heif</string>
+				<string>public.avif</string>
+				<string>org.webmproject.webp</string>
+				<string>public.jpeg-xl</string>
+				<string>com.adobe.raw-image</string>
+				<string>com.canon.cr2-raw-image</string>
+				<string>com.canon.cr3-raw-image</string>
+				<string>com.nikon.raw-image</string>
+				<string>com.sony.arw-raw-image</string>
+				<string>com.fuji.raw-image</string>
+				<string>com.olympus.raw-image</string>
+				<string>com.panasonic.rw2-raw-image</string>
+				<string>com.adobe.photoshop-image</string>
+				<string>public.tiff</string>
+				<string>com.compuserve.gif</string>
+				<string>public.svg-image</string>
+				<string>com.microsoft.ico</string>
+				<string>com.apple.icns</string>
+				<string>com.microsoft.bmp</string>
+				<string>com.truevision.tga-image</string>
+				<string>com.ilm.openexr-image</string>
+				<string>public.radiance</string>
+				<string>public.jpeg-2000</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>pikapik Player</string>
