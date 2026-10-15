@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Die Menüs für aktive Ecken und Hauptbildschirm funktionieren wieder
+
+<sub>1.50.3 · 15. Oktober 2026</sub>
+
+In der Version von der Website tun das Menü Ändern … in der Zeile einer aktiven Ecke und das Menü Hauptbildschirm jetzt, was sie versprechen.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Version 1.50.2 stand jede Auswahl in diesen beiden Menüs dreimal da, und ein Klick änderte nichts. Jetzt steht jede Auswahl einmal da, die aktuelle trägt ein Häkchen, und Ihre Wahl wirkt sofort. Aktive Ecken finden Sie unter Einstellungen › Spiele, Hauptbildschirm unter Dock auf einem Display halten. Zurücklegen oder das Ausschalten des Schalters stellt weiterhin alles genau wieder her.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik macht es selbst, ohne Umweg über die Systemeinstellungen
 
 <sub>1.50.2 · 15. Oktober 2026</sub>

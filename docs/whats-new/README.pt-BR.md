@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Os menus de cantos ativos e de tela principal agora funcionam
+
+<sub>1.50.3 · 15 de outubro de 2026</sub>
+
+Na versão do site, o menu Alterar… na linha de um canto ativo e o menu Tela principal agora fazem o que prometem.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Na versão 1.50.2, cada opção desses dois menus aparecia três vezes e escolher uma não mudava nada. Agora cada opção aparece uma só vez, a atual tem uma marca e a sua escolha vale na hora. Os cantos ativos ficam em Ajustes › Jogos, e a Tela principal em Manter o Dock em uma só tela. Devolver, ou desligar a chave, continua deixando tudo exatamente como estava.
+
+---
+
 ## <a id="v1.50.2"></a>O pikapik faz sozinho, sem ir aos Ajustes do Sistema
 
 <sub>1.50.2 · 15 de outubro de 2026</sub>

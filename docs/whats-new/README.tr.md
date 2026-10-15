@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Etkin köşe ve ana ekran menüleri artık çalışıyor
+
+<sub>1.50.3 · 15 Ekim 2026</sub>
+
+Web sitesi sürümünde, bir etkin köşe satırındaki Değiştir… menüsü ve Ana ekran menüsü artık söylediğini yapıyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+1.50.2 sürümünde bu iki menüdeki her seçenek üç kez görünüyordu ve birini seçmek hiçbir şeyi değiştirmiyordu. Şimdi her seçenek bir kez görünüyor, geçerli olanın yanında onay işareti var ve seçiminiz hemen uygulanıyor. Etkin köşeler Ayarlar › Oyunlar’da, Ana ekran ise Dock’u tek ekranda tut altında. Geri koy ya da anahtarı kapatmak her şeyi hâlâ olduğu gibi geri getiriyor.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik bunu kendisi yapıyor, Sistem Ayarları’na gitmenize gerek yok
 
 <sub>1.50.2 · 15 Ekim 2026</sub>

@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>De menu’s voor actieve hoeken en hoofdbeeldscherm werken nu
+
+<sub>1.50.3 · 15 oktober 2026</sub>
+
+In de versie van de website doen het menu Wijzig… in de rij van een actieve hoek en het menu Hoofdbeeldscherm nu wat ze beloven.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In versie 1.50.2 stond elke keuze in deze twee menu’s drie keer in de lijst en veranderde kiezen niets. Nu staat elke keuze één keer in de lijst, de huidige heeft een vinkje en je keuze werkt meteen. Actieve hoeken staan in Instellingen › Games en Hoofdbeeldscherm onder Houd het Dock op één scherm. Zet terug, of de schakelaar uitzetten, brengt alles nog steeds precies terug zoals het was.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik doet het zelf, zonder naar Systeeminstellingen te gaan
 
 <sub>1.50.2 · 15 oktober 2026</sub>

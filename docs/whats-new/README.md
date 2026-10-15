@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>The hot-corner and Main display menus work now
+
+<sub>1.50.3 · October 15, 2026</sub>
+
+In the website version, the Change… menu on a hot-corner row and the Main display menu now do what they say.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Version 1.50.2 listed every choice in these two menus three times, and picking one changed nothing. Now each choice appears once, the current one has a check mark, and your pick takes effect right away. Hot corners are in Settings › Games, and Main display is under Keep the Dock on one display. Put Back, or turning the switch off, still returns everything exactly as it was.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik does it itself, with no trip to System Settings
 
 <sub>1.50.2 · October 15, 2026</sub>

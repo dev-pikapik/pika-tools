@@ -94,6 +94,12 @@ Changing a hot corner from the Games page remembers the first action and puts it
 swiftc -parse-as-library Sources/pika-tools/Tools/Games/HotCorners.swift scripts/test-hot-corners.swift -o build/test-hot-corners && build/test-hot-corners
 ```
 
+A `Toggle` inside a `Menu` needs `.toggleStyle(.automatic)`: the switch style that Settings pages apply makes each item draw three rows that do nothing when chosen. The test reads every Swift file in `Sources` and fails on a `Toggle` in a `Menu` without it.
+
+```bash
+swiftc -parse-as-library scripts/test-menu-items.swift -o build/test-menu-items && build/test-menu-items
+```
+
 The language switch uses a listen-only `CGEventTap`, so it never changes or delays events. It watches `flagsChanged` for Option and Shift, and any `keyDown` or mouse click in between cancels the gesture, as does Cmd, Ctrl or Fn. When both keys are released, the order they were pressed in picks the next or previous input source, which is then selected with `TISSelectInputSource`. Only keyboard layouts and input methods take part, not the emoji or character palettes. The decision is made in `InputSwitchGesture`, which you can test without the app:
 
 ```bash

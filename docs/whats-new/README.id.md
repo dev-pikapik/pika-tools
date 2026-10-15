@@ -5,6 +5,18 @@
 
 ---
 
+## <a id="v1.50.3"></a>Menu sudut aktif dan layar utama kini berfungsi
+
+<sub>1.50.3 · 15 Oktober 2026</sub>
+
+Di versi situs web, menu Ubah… pada baris sudut aktif dan menu Layar utama kini melakukan apa yang dijanjikan.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Di versi 1.50.2, setiap pilihan di kedua menu ini muncul tiga kali dan memilih salah satunya tidak mengubah apa pun. Sekarang setiap pilihan muncul sekali, pilihan saat ini diberi tanda centang, dan pilihan Anda langsung berlaku. Sudut aktif ada di Pengaturan › Game, dan Layar utama ada di bawah Pertahankan Dock di satu layar. Kembalikan, atau mematikan sakelar, tetap mengembalikan semuanya persis seperti semula.
+
+---
+
 ## <a id="v1.50.2"></a>pikapik mengerjakannya sendiri, tanpa pergi ke Pengaturan Sistem
 
 <sub>1.50.2 · 15 Oktober 2026</sub>
