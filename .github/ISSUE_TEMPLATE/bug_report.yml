@@ -3,6 +3,152 @@ description: Something doesn't work as expected
 labels: [bug]
 body:
   - type: dropdown
+    id: feature
+    attributes:
+      label: Which feature?
+      description: Grouped like the tabs in Settings. Not sure? Pick “Other / not sure” at the end.
+      options:
+        # features:start (filled from docs/FEATURES.md by scripts/feature-form.sh, do not edit by hand)
+        - "General › Settings search"
+        - "General › Sidebar and navigation"
+        - "General › New marks after an update"
+        - "General › Open at Login"
+        - "General › Stay in the background after Quit"
+        - "General › Appearance"
+        - "General › Language"
+        - "General › Settings file"
+        - "General › Sync settings with iCloud"
+        - "General › Restore Defaults…"
+        - "Battery › Battery"
+        - "Battery › Battery Health"
+        - "Battery › Power Adapter"
+        - "Battery › Charging Power"
+        - "Keep Awake › Keep your Mac awake"
+        - "Keep Awake › Turn off the display now"
+        - "Keep Awake › Work with the lid closed"
+        - "Keep Awake › Buttons in Control Center and widgets"
+        - "Brightness › Brightness"
+        - "Brightness › Dim the picture instead"
+        - "Brightness › Brightness keys"
+        - "Fans › Fan speed"
+        - "Temperature › Temperature"
+        - "Temperature › Processor, Graphics, Memory, Storage, Battery and Wi-Fi"
+        - "Speed Test › Check Speed"
+        - "Ports › Port or program"
+        - "Ports › Doors picture"
+        - "Ports › Programs you started"
+        - "Ports › Not yours: leave these alone"
+        - "Ports › What the globe means"
+        - "Ports › Free Up"
+        - "Sound › App Volume"
+        - "Keyboard › Switch language"
+        - "Keyboard › Repeat a held key"
+        - "Keyboard › Home and End go to the start and end of a line"
+        - "Keyboard › Retype words you typed in the wrong language"
+        - "Keyboard › Fix the selected text"
+        - "Keyboard › Fix Wrong Keyboard Layout"
+        - "Mouse › Turn off pointer acceleration"
+        - "Mouse › Scroll by lines"
+        - "Mouse › Scroll direction for trackpad and mouse"
+        - "Mouse › Side buttons go back and forward"
+        - "Mouse › Mouse button hides the current app"
+        - "Mouse › Middle click on the trackpad"
+        - "Windows › Green button enlarges the window"
+        - "Windows › Protect quitting and closing"
+        - "Windows › Quit when the last window closes"
+        - "Dock › Minimize or hide with a click in the Dock"
+        - "Dock › Keep the Dock on one display"
+        - "Finder › New File in Finder"
+        - "Finder › Smaller Copy in Finder"
+        - "Finder › Convert in Finder"
+        - "Finder › Archives in Finder"
+        - "Finder › Extract"
+        - "Finder › Create Archive…"
+        - "Finder › Archive preview"
+        - "Finder › Enter opens files in Finder"
+        - "Finder › Cut files in Finder"
+        - "Finder › Delete removes files in Finder"
+        - "Finder › Hide desktop icons"
+        - "Finder › Show hidden files"
+        - "Finder › Restart Finder"
+        - "Animations › Animation speed"
+        - "Animations › Hide the Dock automatically"
+        - "Animations › Fine-tuning"
+        - "Animations › Minimize effect"
+        - "Animations › Bouncing icons"
+        - "Animations › Even calmer: Reduce Motion in Accessibility"
+        - "Player › Open Video…"
+        - "Player › FFmpeg and dav1d Licenses"
+        - "Uninstaller › Offer to clean up when an app goes to the Trash"
+        - "Uninstaller › Installed apps"
+        - "Uninstaller › Move to Trash"
+        - "Uninstaller › Reset App"
+        - "Uninstaller › In the Trash"
+        - "Uninstaller › Recently removed"
+        - "Uninstaller › Leftovers of removed apps"
+        - "Background Tasks › Open at Login"
+        - "Background Tasks › In the Background"
+        - "Background Tasks › Left by deleted apps"
+        - "Background Tasks › Tasks in your home folder"
+        - "Games › Game Mode"
+        - "Games › Your games"
+        - "Games › Show FPS"
+        - "Games › System keyboard shortcuts"
+        - "Games › Other apps watching keys"
+        - "Games › Game safeguards"
+        - "Games › The pointer stays in the game"
+        - "Games › Gestures don’t leave the game"
+        - "Pet › Pet on the desktop"
+        - "Pet › Wardrobe"
+        - "Pet › Looks"
+        - "Pet › Awards"
+        - "Permissions › Permission rows (Allow and Turn Off)"
+        - "Permissions › Accessibility"
+        - "Permissions › Input Monitoring"
+        - "Permissions › Screen Recording"
+        - "Permissions › System Audio Recording"
+        - "Permissions › Fan control"
+        - "Permissions › Finder Extensions"
+        - "Permissions › Folders"
+        - "Permissions › iCloud Drive"
+        - "Permissions › Full Disk Access"
+        - "Permissions › Left by deleted apps"
+        - "About › pikapik"
+        - "About › Check for updates automatically"
+        - "About › Say thanks"
+        - "About › Report a Problem"
+        - "About › Buy me a coffee"
+        - "Menu bar › Menu bar icon"
+        - "Menu bar › Right-click menu of the icon"
+        - "Menu bar › Keep Awake"
+        - "Menu bar › Brightness"
+        - "Menu bar › Speed Test"
+        - "Menu bar › Fans"
+        - "Menu bar › Temperature"
+        - "Menu bar › Tool rows"
+        - "Menu bar › App Volume"
+        - "Menu bar › Permissions needed"
+        - "Menu bar › Restart Finder"
+        - "Menu bar › Customize…"
+        - "Menu bar › App menu commands"
+        - "Install and uninstall › One-line install"
+        - "Install and uninstall › Homebrew"
+        - "Install and uninstall › Uninstall"
+        # features:end
+        - Other / not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Where did you get pikapik?
+      description: The Mac App Store, or a download from the website, GitHub or Homebrew.
+      options:
+        - Mac App Store
+        - Website / GitHub / Homebrew
+    validations:
+      required: true
+  - type: dropdown
     id: macos
     attributes:
       label: macOS version
@@ -23,6 +169,9 @@ body:
       default: 0
       options:
         - Latest version
+        - "1.50.3"
+        - "1.50.2"
+        - "1.50.0"
         - "1.49.0"
         - "1.48.0"
         - "1.47.0"

@@ -26,7 +26,6 @@ struct TemperatureSettings: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 6)
             }
-            #if !APPSTORE
             if !model.readings.isEmpty {
                 Section {
                     ForEach(ThermalPart.allCases.filter { model.readings[$0] != nil }) { part in
@@ -38,7 +37,6 @@ struct TemperatureSettings: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            #endif
         }
         .formStyle(.grouped)
         .settingsPage()
@@ -46,7 +44,6 @@ struct TemperatureSettings: View {
     }
 }
 
-#if !APPSTORE
 private func degrees(_ celsius: Double) -> String {
     Measurement(value: celsius, unit: UnitTemperature.celsius)
         .formatted(.measurement(width: .narrow, usage: .weather, numberFormatStyle: .number.precision(.fractionLength(0))))
@@ -76,7 +73,6 @@ private struct PartRow: View {
         .accessibilityValue(Text(verbatim: "\(degrees(celsius)), \(Temperatures.verdict(level))"))
     }
 }
-#endif
 
 struct ThermalScene: View {
     let level: Int

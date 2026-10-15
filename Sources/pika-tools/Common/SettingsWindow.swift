@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, battery, keepAwake, brightness, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, uninstaller, background, games, pet, permissions, about
+    case general, battery, keepAwake, brightness, fans, temperatures, speedTest, ports, sound, keyboard, mouse, windows, dock, finder, animations, player, uninstaller, background, games, pet, permissions, about
 
     var id: Self { self }
 
@@ -23,6 +23,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: String(localized: "Dock")
         case .finder: String(localized: "Finder")
         case .animations: String(localized: "Animations")
+        case .player: String(localized: "Player")
         case .uninstaller: String(localized: "Uninstaller")
         case .background: String(localized: "Background Tasks")
         case .games: String(localized: "Games")
@@ -49,6 +50,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .dock: "dock.rectangle"
         case .finder: "folder.fill"
         case .animations: "hare.fill"
+        case .player: "play.rectangle.fill"
         case .uninstaller: "xmark.bin.fill"
         case .background: "gearshape.2.fill"
         case .games: "gamecontroller.fill"
@@ -68,12 +70,12 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         case .animations, .sound: .pink
         case .uninstaller: .brown
         case .background: .mint
-        case .keepAwake: .orange
+        case .keepAwake, .player: .orange
         case .brightness: .yellow
         case .fans: .teal
         case .pet, .temperatures: .red
         case .speedTest, .battery: .green
-        case .ports: .mint
+        case .ports: .blue
         }
     }
 
@@ -81,7 +83,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
         if self == .battery { return Battery.isPresent }
         if self == .sound, #unavailable(macOS 14.2) { return false }
         #if APPSTORE
-        return ![.fans, .uninstaller, .dock].contains(self)
+        return ![.fans, .uninstaller, .dock, .ports, .player].contains(self)
         #else
         return true
         #endif
@@ -119,15 +121,14 @@ struct SettingsItem: Identifiable {
     static var all: [SettingsItem] {
         #if APPSTORE
         let hidden = [
-            String(localized: "Keep running after Quit"), String(localized: "Repeat a held key"),
+            String(localized: "Stay in the background after Quit"), String(localized: "Repeat a held key"),
             String(localized: "Tracking speed"), String(localized: "iCloud Drive"),
             String(localized: "Check for updates automatically"), String(localized: "Buy me a coffee"),
-            String(localized: "Turn off the display now"), String(localized: "Fan control"), String(localized: "Full Disk Access"),
-            String(localized: "Archives in Finder"), String(localized: "Open archives with this app"),
-            String(localized: "Home and End go to the start and end of a line"), String(localized: "Home and End work as usual in these apps"),
+            String(localized: "Fan control"), String(localized: "Full Disk Access"),
+            String(localized: "Open archives with this app"),
             String(localized: "Green button enlarges the window"), String(localized: "Green button works as usual in these apps"),
             String(localized: "Quit when the last window closes"), String(localized: "Never quit these apps"), String(localized: "Minimize or hide with a click in the Dock"), String(localized: "A click on the icon"),
-            String(localized: "Fix words as you type"), String(localized: "Fix the last word or selected text"), String(localized: "Don’t fix text in these apps"),
+            String(localized: "Fix the last word or selected text"),
             String(localized: "Enter opens files in Finder"), String(localized: "Delete removes files in Finder"),
             String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
@@ -135,12 +136,14 @@ struct SettingsItem: Identifiable {
             String(localized: "Dim the picture instead"),
             String(localized: "Middle click on the trackpad"), String(localized: "Fingers"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
+            + (ToolRegistry.shared.tools.contains { $0 is ArchiveTool } ? [] : [String(localized: "Archives in Finder")])
         return allItems.filter { $0.tab.isAvailable && !hidden.contains($0.title) } + [
             SettingsItem(tab: .animations, title: String(localized: "Hide the Dock automatically"), synonyms: "autohide, hide Dock, delay, wait"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Fix the selected text"), synonyms: "shortcut, undo, convert, selection, layout"),
             SettingsItem(tab: .permissions, title: String(localized: "Folders"), synonyms: "privacy, security, access, files, save, home"),
             SettingsItem(tab: .about, title: String(localized: "Say thanks"), synonyms: "support, donate, donation, tip, sponsor, thanks"),
         ] + Permissions.privacyLists.map {
-            SettingsItem(tab: .permissions, title: $0.title, target: $0.pane, detail: String(localized: "Left by deleted apps"))
+            SettingsItem(tab: .permissions, title: $0.title, target: $0.pane, detail: String(localized: "Other apps’ permissions"))
         }
         #else
         return allItems.filter { $0.tab.isAvailable }
@@ -150,7 +153,7 @@ struct SettingsItem: Identifiable {
     private static var allItems: [SettingsItem] {
         [
             SettingsItem(tab: .general, title: String(localized: "Open at Login"), synonyms: "launch, startup, autostart, login items"),
-            SettingsItem(tab: .general, title: String(localized: "Keep running after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
+            SettingsItem(tab: .general, title: String(localized: "Stay in the background after Quit"), synonyms: "background, quit, close, exit, hide, menu bar icon, option"),
             SettingsItem(tab: .general, title: String(localized: "Appearance"), synonyms: "theme, dark mode, light mode, colors"),
             SettingsItem(tab: .general, title: String(localized: "Language"), synonyms: "localization, translation"),
             SettingsItem(tab: .general, title: String(localized: "Settings file"), synonyms: "backup, export, import, restore, JSON"),
@@ -181,7 +184,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .keyboard, title: String(localized: "Repeat a held key"), synonyms: "key repeat, hold, accent menu, games, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End go to the start and end of a line"), synonyms: "home, end, line, cursor, beginning, select, text, typing"),
             SettingsItem(tab: .keyboard, title: String(localized: "Home and End work as usual in these apps"), synonyms: "exceptions, exclude, list, terminal, virtual machine, remote desktop"),
-            SettingsItem(tab: .keyboard, title: String(localized: "Fix words typed in the wrong layout"), synonyms: "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services"),
+            SettingsItem(tab: .keyboard, title: String(localized: "Retype words you typed in the wrong language"), synonyms: "wrong layout, keyboard layout, language, switch, convert, typo, gibberish, Services"),
             SettingsItem(tab: .keyboard, title: String(localized: "Fix words as you type"), synonyms: "automatic, auto, Space, Return, layout"),
             SettingsItem(tab: .keyboard, title: String(localized: "Fix the last word or selected text"), synonyms: "shortcut, undo, convert, selection, layout"),
             SettingsItem(tab: .keyboard, title: String(localized: "Don’t fix text in these apps"), synonyms: "exceptions, exclude, list, layout"),
@@ -219,6 +222,8 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .finder, title: String(localized: "Delete removes files in Finder"), synonyms: "delete, backspace, trash, remove, files, folders, keyboard"),
             SettingsItem(tab: .finder, title: String(localized: "Hide desktop icons"), synonyms: "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager"),
             SettingsItem(tab: .finder, title: String(localized: "Show hidden files"), synonyms: "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period"),
+            SettingsItem(tab: .player, title: String(localized: "Open Video…"), synonyms: "video, movie, film, watch, play, mkv, avi, wmv, webm, flv"),
+            SettingsItem(tab: .player, title: String(localized: "FFmpeg and dav1d Licenses"), synonyms: "open source, legal"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),
             SettingsItem(tab: .background, title: String(localized: "What runs in the background"), synonyms: "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off"),
@@ -383,6 +388,7 @@ enum SettingsWindow {
         let saved = window.contentRect(forFrameRect: window.frame).size
         window.setContentSize(NSSize(width: max(saved.width, minSize.width), height: max(saved.height, minSize.height)))
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { _ in
+            NewMarks.shared.leave((model.selection ?? .general).rawValue)
             NSApp.setActivationPolicy(.accessory)
         }
         self.window = window
@@ -418,9 +424,15 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .finder, .animations, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
+                    Section { rows([.background, .games, .pet]) }
                     #else
-                    Section { rows([.general, .battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports, .sound, .keyboard, .mouse, .windows, .dock, .finder, .animations, .uninstaller, .background, .games, .pet]) }
+                    Section { rows([.general]) }
+                    Section { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
+                    Section { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
+                    Section { rows([.player, .uninstaller, .background, .games, .pet]) }
                     #endif
                     Section { rows([.permissions, .about]) }
                 } else {
@@ -455,7 +467,9 @@ private struct SettingsView: View {
         }
         .searchable(text: $model.search, placement: .sidebar)
         .frame(minWidth: SettingsWindow.minSize.width, minHeight: SettingsWindow.minSize.height)
-        .onChange(of: tab, initial: true) {
+        .onChange(of: tab, initial: true) { old, tab in
+            if old != tab { NewMarks.shared.leave(old.rawValue) }
+            NewMarks.shared.open(tab.rawValue)
             SettingsWindow.window?.title = tab.title
             PetProgress.shared.mark("page:\(tab.rawValue)")
             if tab == .pet { PetProgress.shared.add(.visits) }
@@ -472,7 +486,12 @@ private struct SettingsView: View {
 
     private func rows(_ tabs: [SettingsTab]) -> some View {
         ForEach(tabs.filter(\.isAvailable)) { tab in
-            Label { Text(tab.title) } icon: { tab.icon() }
+            Label {
+                HStack(spacing: 6) {
+                    Text(tab.title)
+                    if NewMarks.shared.isNew(tab: tab.rawValue) { NewDot() }
+                }
+            } icon: { tab.icon() }
                 .tag(tab)
                 .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
         }
@@ -531,22 +550,28 @@ private struct SettingsView: View {
         case .temperatures: TemperatureSettings()
         case .speedTest: SpeedTestSettings()
         case .ports: PortsPage()
-        case .sound: ToolsSettings(tab: .sound, text: String(localized: "Each app gets its own volume."))
-        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Fixes for the keyboard"))
-        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Fixes for the mouse"))
+        case .sound: ToolsSettings(tab: .sound, text: String(localized: "Each app gets its own volume"))
+        case .keyboard: ToolsSettings(tab: .keyboard, text: String(localized: "Switch language, fix wrong layout, Home and End"))
+        case .mouse: ToolsSettings(tab: .mouse, text: String(localized: "Scrolling, side buttons and pointer speed"))
         case .windows:
             ToolsSettings(
                 tab: .windows,
                 text: String(localized: "Fixes for windows and quitting apps"),
                 headings: ["window-zoom": "Size", "quit-on-close": "Closing and Quitting"]
             )
-        case .dock: ToolsSettings(tab: .dock, text: String(localized: "Fixes for the Dock"))
-        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Fixes for Finder"))
+        case .dock: ToolsSettings(tab: .dock, text: String(localized: "Hide apps with a click and keep the Dock on one display"))
+        case .finder: ToolsSettings(tab: .finder, text: String(localized: "Create, convert and compress files right in Finder"))
         case .animations:
             #if APPSTORE
             AnimationLinksPage()
             #else
             AnimationsPage()
+            #endif
+        case .player:
+            #if APPSTORE
+            EmptyView()
+            #else
+            PlayerPage()
             #endif
         case .uninstaller:
             #if APPSTORE
@@ -775,19 +800,26 @@ private struct GeneralSettings: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks."))
+            SettingsHeader(tab: .general, text: String(localized: "How pikapik starts and looks"))
             Section {
+                if loginItem.needsApproval { SettingsGuide.loginItems }
                 Toggle(isOn: $loginItem.isOn) {
-                    RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
-                         ? String(localized: "Allow it in System Settings › General › Login Items")
-                         : String(localized: "Starts on its own when you log in")))
+                    HStack {
+                        RowLabel(Text("Open at Login"), Text(loginItem.needsApproval
+                             ? String(localized: "Allow it in System Settings › General › Login Items")
+                             : String(localized: "Starts on its own when you log in")))
+                        if loginItem.needsApproval {
+                            Spacer()
+                            Button("Open", systemImage: "arrow.up.forward.app") { BackgroundTasks.openLoginItems() }
+                        }
+                    }
                 }
                 .settingAnchor(String(localized: "Open at Login"))
                 #if !APPSTORE
                 Toggle(isOn: $keepRunning) {
-                    RowLabel(Text("Keep running after Quit"), Text("Quit closes the windows, but shortcuts, Keep Awake and the pet keep working. Hold Option to quit completely"))
+                    RowLabel(Text("Stay in the background after Quit"), Text("Shortcuts and Keep Awake keep working. Hold Option to quit completely"))
                 }
-                .settingAnchor(String(localized: "Keep running after Quit"))
+                .settingAnchor(String(localized: "Stay in the background after Quit"))
                 #endif
                 LabeledContent("Appearance") {
                     AppearancePicker(selection: Binding(get: { appearance }, set: { appearance = $0; $0.apply() }))
@@ -977,20 +1009,15 @@ private struct ToolsSettings: View {
                     SystemSettingsRow(
                         title: String(localized: "Turn off pointer acceleration"),
                         subtitle: Text("Same distance as your hand, at any speed"),
-                        url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!
+                        url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!,
+                        guide: SettingsGuide(pane: .mouse, steps: [.button("Advanced…"), .toggle("Pointer acceleration", on: false)])
                     )
-                } footer: {
-                    Text("In System Settings, click “Advanced…” and turn off “Pointer acceleration”. If the pointer then feels slow, move the “Tracking speed” slider.")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             #endif
             ForEach(tools, id: \.id) { tool in
-                if let heading = headings[tool.id] {
-                    Section(heading) { tool.settingsView.needs(tool.needs) }
+                if headings[tool.id] != nil || NewMarks.shared.isNew(row: tool.id) {
+                    Section { tool.settingsView.needs(tool.needs) } header: { NewTitle(title: headings[tool.id], row: tool.id) }
                 } else {
                     Section { tool.settingsView.needs(tool.needs) }
                 }
@@ -1019,10 +1046,12 @@ private struct ToolsSettings: View {
 
 struct SystemSettingsRow: View {
     let title: String
-    let subtitle: Text
+    var subtitle: Text?
     let url: URL
+    var guide: SettingsGuide?
 
     var body: some View {
+        if let guide { guide }
         LabeledContent {
             Button("Open", systemImage: "arrow.up.forward.app") { NSWorkspace.shared.open(url) }
         } label: {
@@ -1035,20 +1064,36 @@ struct SystemSettingsRow: View {
 #if APPSTORE
 private struct AnimationLinksPage: View {
     private static let desktop = URL(string: "x-apple.systempreferences:com.apple.Desktop-Settings.extension")!
-    private static let motion = URL(string: "x-apple.systempreferences:com.apple.preference.universalaccess?Seeing_Display")!
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .animations, text: String(localized: "Change animations in System Settings. Each button opens the right place."))
+            SettingsHeader(tab: .animations, text: String(localized: "Each button takes you to an animation setting in System Settings"))
             Section {
-                SystemSettingsRow(title: String(localized: "Minimize effect"), subtitle: Text("Choose “Scale Effect” for a quicker animation"), url: Self.desktop)
-                SystemSettingsRow(title: String(localized: "Bouncing icons"), subtitle: Text("Turn off “Animate opening applications”"), url: Self.desktop)
-                SystemSettingsRow(title: String(localized: "Hide the Dock automatically"), subtitle: Text("Turn on “Automatically hide and show the Dock”"), url: Self.desktop)
+                SystemSettingsRow(
+                    title: String(localized: "Minimize effect"),
+                    subtitle: Text("Choose “Scale Effect” for a quicker animation"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.popup(nil, from: "Genie Effect", to: "Scale Effect")])
+                )
             }
             Section {
-                Button(String(localized: "Even calmer: Reduce Motion in Accessibility")) { NSWorkspace.shared.open(Self.motion) }
-                    .buttonStyle(.link)
-                    .settingAnchor(String(localized: "Even calmer: Reduce Motion in Accessibility"))
+                SystemSettingsRow(
+                    title: String(localized: "Bouncing icons"),
+                    subtitle: Text("Turn off “Animate opening applications”"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.toggle("Animate opening applications", on: false)])
+                )
+            }
+            Section {
+                SystemSettingsRow(
+                    title: String(localized: "Hide the Dock automatically"),
+                    subtitle: Text("Turn on “Automatically hide and show the Dock”"),
+                    url: Self.desktop,
+                    guide: SettingsGuide(pane: .desktop, steps: [.toggle("Automatically hide and show the Dock", on: true)])
+                )
+            }
+            Section {
+                SystemSettingsRow(title: String(localized: "Even calmer: Reduce Motion in Accessibility"), url: SettingsGuide.reduceMotionLink, guide: .reduceMotion)
             }
         }
         .formStyle(.grouped)
@@ -1061,8 +1106,10 @@ private struct AboutView: View {
     private static let github = Bundle.main.url(forResource: "github", withExtension: "svg").flatMap { NSImage(contentsOf: $0) }
     #if APPSTORE
     private static let source = "https://github.com/dev-pikapik/pika-tools/tree/main/Sources/pika-tools"
+    private static let edition = "Mac%20App%20Store"
     #else
     private static let source = "https://github.com/dev-pikapik/pika-tools"
+    private static let edition = "Website%20%2F%20GitHub%20%2F%20Homebrew"
     #endif
 
     private static var whatsNew: String {
@@ -1085,7 +1132,7 @@ private struct AboutView: View {
 
     var body: some View {
         Form {
-            SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small fixes for the keyboard, mouse and sleep"), appIcon: icon)
+            SettingsHeader(tab: .about, title: "pikapik", text: String(localized: "Small tools that make your Mac nicer to use"), appIcon: icon)
 
             #if APPSTORE
             Section { LabeledContent { EmptyView() } label: { RowLabel(Text("Version \(version)")) } }
@@ -1117,7 +1164,7 @@ private struct AboutView: View {
             Section {
                 link("GitHub", Self.source, symbol: "chevron.left.forwardslash.chevron.right", color: .gray, template: Self.github)
                 link(String(localized: "What’s New"), Self.whatsNew, symbol: "newspaper.fill", color: .blue)
-                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new/choose", symbol: "ladybug.fill", color: .red)
+                link(String(localized: "Report a Problem"), "https://github.com/dev-pikapik/pika-tools/issues/new?template=bug_report.yml&edition=\(Self.edition)&version=\(version)", symbol: "ladybug.fill", color: .red)
                 link(String(localized: "License (MIT)"), "https://github.com/dev-pikapik/pika-tools/blob/main/LICENSE", symbol: "doc.text.fill", color: .green)
             } footer: {
                 VStack(spacing: 4) {

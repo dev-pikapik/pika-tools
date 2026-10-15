@@ -30,6 +30,10 @@ struct MenuView: View {
 
     private var showsBrightness: Bool { isShown("brightness") && !Brightness.shared.monitors.isEmpty }
 
+    private var hasNew: Bool {
+        !NewMarks.shared.settingsOpened && NewMarks.shared.unseenTabs.contains { SettingsTab(rawValue: $0)?.isAvailable == true }
+    }
+
     private var visibleTabs: [SettingsTab] {
         [.sound, .keyboard, .mouse, .windows, .dock, .finder, .games, .pet].filter { tab in registry.tools.contains { $0.tab == tab && isShown($0.id) } }
     }
@@ -62,14 +66,6 @@ struct MenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            #if APPSTORE
-            if FinderKeys.shared.canMove && !customizing {
-                Button { FinderKeys.shared.moveHere() } label: {
-                    Label("Move Items Here", systemImage: "scissors").frame(maxWidth: .infinity)
-                }
-                .glassProminentButtons()
-            }
-            #endif
             if customizing {
                 Text("Choose what this menu shows")
                     .font(.caption)
@@ -93,19 +89,24 @@ struct MenuView: View {
                                             hint: keepAwake.statusText,
                                             isOn: $keepAwake.isOn
                                         )
-                                        Button { withAnimation(.snappy) { keepAwakeOpen.toggle() } } label: {
+                                        Button { keepAwakeOpen.toggle() } label: {
                                             Image(systemName: "chevron.right")
                                                 .font(.system(size: 11, weight: .semibold))
                                                 .rotationEffect(.degrees(keepAwakeOpen ? 90 : 0))
+                                                .animation(.snappy, value: keepAwakeOpen)
                                                 .frame(width: 28, height: 38)
                                                 .contentShape(Rectangle())
                                         }
                                         .buttonStyle(.plain)
                                         .foregroundStyle(.secondary)
-                                        .help(Text("Display"))
-                                        .accessibilityLabel(Text("Display"))
+                                        .help(Text("Display settings"))
+                                        .accessibilityLabel(Text("Display settings"))
+                                        .accessibilityValue(keepAwakeOpen ? Text("Expanded") : Text("Collapsed"))
                                     }
-                                    if keepAwakeOpen { keepAwakeOptions }
+                                    VStack(spacing: 0) {
+                                        if keepAwakeOpen { keepAwakeOptions.transition(.asymmetric(insertion: .opacity, removal: .identity)) }
+                                    }
+                                    .animation(.snappy, value: keepAwakeOpen)
                                 }
                             }
 
@@ -158,7 +159,7 @@ struct MenuView: View {
                         .glassCard()
                     }
 
-                    if !permissions.allGranted {
+                    if registry.needsPermission {
                         Button {
                             SettingsWindow.show(.permissions)
                         } label: {
@@ -195,6 +196,9 @@ struct MenuView: View {
             .frame(height: min(contentHeight, maxRowsHeight))
             .scrollClipDisabled(contentHeight <= maxRowsHeight)
             .scrollBounceBehavior(.basedOnSize)
+            // While a row grows or shrinks the rows and the frame are a moment out of step; .hidden would still show
+            // a permanent scroller, so only a real overflow gets one.
+            .scrollIndicators(contentHeight > maxRowsHeight ? .automatic : .never)
 
             HStack(spacing: 8) {
                 if customizing {
@@ -205,6 +209,7 @@ struct MenuView: View {
                     Button { SettingsWindow.show() } label: { Label("Settings…", systemImage: "gearshape") }
                         .keyboardShortcut(",")
                         .help("Settings…")
+                        .overlay(alignment: .topTrailing) { if hasNew { NewDot().padding(1) } }
                     Button { customizing = true } label: { Label("Customize…", systemImage: "pencil") }
                         .help("Customize…")
                     Spacer(minLength: 8)
@@ -225,12 +230,6 @@ struct MenuView: View {
         .padding(.bottom, 12)
         .frame(width: 330)
         .onAppear { permissions.refresh() }
-        #if APPSTORE
-        .onReceive(NotificationCenter.default.publisher(for: NSWindow.didChangeOcclusionStateNotification)) { note in
-            guard let window = note.object as? NSWindow, NSStringFromClass(type(of: window)).contains("MenuBarExtraWindow"), window.occlusionState.contains(.visible) else { return }
-            FinderKeys.shared.checkCut()
-        }
-        #endif
     }
 
     private var keepAwakeOptions: some View {
@@ -241,7 +240,6 @@ struct MenuView: View {
             }
             .pickerStyle(.radioGroup)
             .labelsHidden()
-            #if !APPSTORE
             Button {
                 NSApp.keyWindow?.close()
                 KeepAwake.turnOffDisplay()
@@ -254,7 +252,6 @@ struct MenuView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            #endif
         }
         .padding(.leading, 46)
         .padding(.trailing, 8)

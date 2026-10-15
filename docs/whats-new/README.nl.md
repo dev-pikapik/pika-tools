@@ -5,6 +5,87 @@
 
 ---
 
+## <a id="v1.50.3"></a>De menu’s voor actieve hoeken en hoofdbeeldscherm werken nu
+
+<sub>1.50.3 · 15 oktober 2026</sub>
+
+In de versie van de website doen het menu Wijzig… in de rij van een actieve hoek en het menu Hoofdbeeldscherm nu wat ze beloven.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In versie 1.50.2 stond elke keuze in deze twee menu’s drie keer in de lijst en veranderde kiezen niets. Nu staat elke keuze één keer in de lijst, de huidige heeft een vinkje en je keuze werkt meteen. Actieve hoeken staan in Instellingen › Games en Hoofdbeeldscherm onder Houd het Dock op één scherm. Zet terug, of de schakelaar uitzetten, brengt alles nog steeds precies terug zoals het was.
+
+---
+
+## <a id="v1.50.2"></a>pikapik doet het zelf, zonder naar Systeeminstellingen te gaan
+
+<sub>1.50.2 · 15 oktober 2026</sub>
+
+In de versie van de website gebeuren een achtergrondtaak uitzetten, een toetsenbordindeling toevoegen, een actieve hoek veranderen en het hoofdbeeldscherm kiezen nu rechtstreeks in pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Zet in Instellingen › Achtergrondtaken een taak uit en de rij verandert meteen. Een wachtwoord is niet nodig en je keuze blijft na een herstart staan. Zet weer aan brengt de taak terug. Taken voor de hele Mac en hulpjes die een app zelf heeft toegevoegd openen nog steeds Systeeminstellingen, en een regel onder de rij zegt waarom.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Tekst corrigeren die in de verkeerde indeling is getypt werkt als je twee of meer toetsenbordindelingen hebt. Heb je er maar één, dan biedt de melding in Instellingen › Toetsenbord nu indelingen voor je talen aan. Kies er een onder Indeling toevoegen en hij is direct klaar, zonder wachtwoord. Past er geen, dan is Instellingen toetsenbord… er nog steeds.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+In Instellingen › Games kiest het menu Wijzig… in de rij van een actieve hoek een andere actie voor die hoek. Onder Houd het Dock op één scherm maakt het menu Hoofdbeeldscherm het gekozen scherm tot het hoofdscherm, met het Dock erop. pikapik onthoudt hoe het was: Zet terug, of de schakelaar uitzetten, brengt alles precies terug.
+
+**Probeer het:** Instellingen › Achtergrondtaken
+
+**Opgelost**
+
+- Minimaliseer of verberg met een klik in het Dock: als je dit aanzette terwijl de klik vensters minimaliseerde, schakelt het na een herstart niet meer vanzelf over op de app verbergen.
+- Als je pikapik opent, controleert het nu of instellingen op je andere Mac zijn gewijzigd, zodat een Mac die de wijziging miste meteen bijkomt.
+- Wakker houden zegt nu dat het aan blijft tot je het uitzet, en de Gamemodus stelt geen game meer voor die je al hebt toegevoegd.
+
+---
+
+## <a id="v1.50.0"></a>Meer pikapik in de Mac App Store-versie
+
+<sub>1.50.0 · 15 oktober 2026</sub>
+
+Open archieven, ruim je bureaublad op, gebruik Home en End en meer, nu ook in de Mac App Store-versie.
+
+**Nieuw in de Mac App Store-versie**
+
+- **Open en maak archieven in de Finder.** Klik met de rechtermuisknop op een archief en kies ‘Uitpakken’. Om er een te maken, klik je met de rechtermuisknop op bestanden en kies je ‘Maak archief…’. Druk op de spatiebalk bij een archief om erin te kijken. Alleen zip kan hier een wachtwoord hebben.
+- **Een opgeruimd bureaublad.** Zet ‘Bureaubladsymbolen verbergen’ aan, en pikapik bedekt de symbolen met je achtergrond. Klikken komen nog steeds op het bureaublad aan en je hebt geen toestemming nodig.
+- **Home en End werken weer.** Ze gaan naar het begin en het einde van een regel, overal behalve in browsers, de Finder, Muziek en TV.
+- **Corrigeer tekst die in de verkeerde indeling is getypt met een sneltoets.** Selecteer de tekst en druk op ⌃⇧Spatie. Zet ‘Corrigeer de geselecteerde tekst’ aan in Instellingen › Toetsenbord, waar je ook de toetsen kunt wijzigen.
+- **Zet het scherm met één klik uit.** ‘Zet het scherm nu uit’ maakt het scherm meteen donker, terwijl je Mac blijft werken. Beweeg de muis om het terug te halen.
+- **Games blijven ongestoord.** In ‘Gamemodus’ pauzeren Mac-sneltoetsen zoals Spotlight zolang een game vooraan staat. De aanwijzer blijft uit de buurt van de schermhoeken, zodat actieve hoeken niet afgaan.
+- **De batterijcijfers zijn terug.** ‘Batterij’ toont op macOS 27 weer ‘Maximumcapaciteit’, en ‘Temperatuur’ toont de temperatuur van de batterij.
+- **Zie welke apps om toestemming kunnen vragen.** ‘Toestemmingen van andere apps’ in Instellingen › Toestemmingen toont ze met hun symbolen.
+- **Weet waar je moet klikken.** Als macOS niet toestaat dat pikapik een instelling wijzigt, laat een korte animatie zien waar je in Systeeminstellingen moet klikken.
+
+**In beide versies**
+
+- **Stel het volume in voordat de app start.** Een app die je hebt ingesteld, blijft met zijn schuifregelaar in Instellingen › Geluid staan, ook als hij gesloten is, en krijgt zijn niveau terug zodra hij weer geluid maakt, ook na een herstart. Klik op “Voeg app toe…” of sleep een app uit de Finder om hem van tevoren in te stellen, en met het ✕ vergeet je hem en staat hij weer op vol volume.
+- **Zie wat een update heeft toegevoegd.** Na een update markeert een klein blauw puntje elk tabblad in Instellingen met iets nieuws, en een label “Nieuw” markeert het onderdeel. Ze verdwijnen zodra je gekeken hebt en vanzelf na 21 dagen.
+- **Een rustige eerste start.** De versie van de website vraagt bij het eerste openen niet meer om toestemmingen. Hij vraagt alleen iets als je een onderdeel aanzet dat het nodig heeft.
+- **Kleinere kopieën van video’s.** ‘Maak kleinere kopie’ maakt een video nu ongeveer half zo groot. Eerder kregen de meeste video’s ‘Al compact’ te zien.
+- **Twee exemplaren, geen gedoe.** Gebruik je de App Store-versie en de versie van de website samen, dan maken ze elkaars werk niet meer ongedaan. ⇧⌘Q en ⇧⌘W werken weer in games.
+- **Games komen terug na de sluimerstand.** ‘Gamemodus’ gaat vanzelf weer aan als je Mac wakker wordt.
+- **‘Poorten’ vertelt de waarheid.** Op macOS 27 wordt een poort die macOS of een andere gebruiker gebruikt niet meer vrij genoemd.
+- **Een probleem melden gaat sneller.** ‘Meld een probleem’ in Instellingen › Over opent het formulier met je versie al gekozen.
+- **Archieven zonder haperen.** De voortgangsbalk beweegt terwijl een archief wordt uitgepakt, een fout wachtwoord wordt meteen gemeld en je Mac valt niet meer in slaap midden in het uitpakken of maken.
+- **Een rustiger paneel in de menubalk.** Als je een rij in het paneel openklapt, zoals de schermopties onder “Wakker houden”, flitst er geen schuifbalk meer op. De pijl naast “Wakker houden” zegt nu “Scherminstellingen”.
+- **Poorten legt zichzelf uit.** Een regel onder de titel zegt wat een poort is, en een kleine animatie laat zien dat er door één deur maar één programma past. Je eigen programma’s en die je beter met rust laat, hebben nu duidelijke namen.
+- **Instellingen zeggen het duidelijk.** Elk tabblad begint met een regel over wat je daar krijgt, de zijbalk heeft ruimte tussen de groepen, en “Wakker houden”, “Toestemmingen” en “Batterij” zeggen precies wat er aan de hand is. De knop “Toestemmingen nodig” verschijnt alleen als een onderdeel dat je aanzette er een mist.
+
+**Opgelost in de Mac App Store-versie**
+
+- Na ⌘X verplaatst ⌘V in de Finder je bestanden nu, net als in de versie van de website. Eerder kopieerde het ze alleen.
+- ‘Nieuw bestand in de Finder’, ‘Kleinere kopie in de Finder’ en ‘Omzetten in de Finder’ tonen elk hun eigen status. Eerder leken alle drie aan te staan zodra je er één aanzette.
+- De lege pagina ‘Poorten’ is weg. macOS laat deze versie niet zien welk programma een poort bezet houdt, dus Instellingen › Poorten had niets te tonen.
+
+---
+
 ## <a id="v1.49.0"></a>Helderheid voor elke monitor
 
 <sub>1.49.0 · 13 oktober 2026</sub>

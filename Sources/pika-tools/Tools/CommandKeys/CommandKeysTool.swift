@@ -154,6 +154,7 @@ private func commandKeysCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp:
+        guard !event.isPikapik else { break }
         let flags = event.flags
         let code = event.getIntegerValueField(.keyboardEventKeycode)
         if type == .keyUp, let held = tool.held, held.key == code {
@@ -183,6 +184,7 @@ private func commandKeysCallback(
 private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy?) {
     guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
     key.flags = .maskCommand
+    key.markPikapik()
     if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 

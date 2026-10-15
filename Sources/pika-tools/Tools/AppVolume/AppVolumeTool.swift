@@ -12,9 +12,11 @@ final class AppVolumeTool: Tool {
     var tab: SettingsTab { .sound }
     var needs: [Permission] { [.systemAudio] }
     var isActive: Bool { isEnabled && Permissions.shared.systemAudio }
-    var isDefault: Bool { !isEnabled && levels.isEmpty && muted.isEmpty }
-    private(set) var levels: [String: Double]
-    private(set) var muted: Set<String>
+    var isDefault: Bool { !isEnabled && memory.keys.isEmpty }
+    private(set) var memory: AppVolumeMemory
+    private(set) var remembered: [AppVolumeOwner] = []
+    var levels: [String: Double] { memory.levels }
+    var muted: Set<String> { memory.muted }
 
     var isEnabled: Bool {
         didSet {
@@ -25,26 +27,43 @@ final class AppVolumeTool: Tool {
 
     private init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
-        levels = Self.storedLevels()
-        muted = Self.storedMuted()
+        memory = AppVolumeMemory()
+        remembered = Self.owners(memory)
     }
 
     var settingsView: AnyView {
         AnyView(AppVolumeSettings(tool: self))
     }
 
-    func level(_ key: String) -> Double { levels[key] ?? 1 }
+    func level(_ key: String) -> Double { memory.level(key) }
 
-    func setLevel(_ level: Double, for key: String) {
-        levels[key] = AppVolumeMath.level(slider: level)
-        persist()
-        refresh()
+    func setLevel(_ level: Double, for owner: AppVolumeOwner) {
+        memory.setLevel(level, for: owner)
+        commit()
     }
 
-    func toggleMute(_ key: String) {
-        if muted.contains(key) { muted.remove(key) } else { muted.insert(key) }
-        persist()
-        refresh()
+    func toggleMute(_ owner: AppVolumeOwner) {
+        memory.toggleMute(owner)
+        commit()
+    }
+
+    func forget(_ key: String) {
+        memory.forget(key)
+        commit()
+    }
+
+    func toggle(_ key: String) {
+        if memory.keys.contains(key) {
+            forget(key)
+        } else if let url = Self.url(for: key) {
+            add(url)
+        }
+    }
+
+    func add(_ url: URL) {
+        guard AppShelf.isApp(url) else { return }
+        memory.remember(AppVolumeOwner(key: Bundle(url: url)?.bundleIdentifier ?? url.path, name: Self.name(of: url), bundlePath: url.path))
+        commit()
     }
 
     func setEnabled(_ on: Bool) {
@@ -62,31 +81,38 @@ final class AppVolumeTool: Tool {
     }
 
     func reset() {
-        levels = [:]
-        muted = []
-        persist()
+        memory.keys.forEach { memory.forget($0) }
+        commit()
         isEnabled = false
     }
 
     func load() {
-        levels = Self.storedLevels()
-        muted = Self.storedMuted()
+        memory = AppVolumeMemory()
+        remembered = Self.owners(memory)
         isEnabled = UserDefaults.standard.bool(forKey: id)
     }
 
-    private func persist() {
-        UserDefaults.standard.set(levels, forKey: "app-volume-levels")
-        UserDefaults.standard.set(muted.sorted(), forKey: "app-volume-muted")
+    private func commit() {
+        memory.save()
+        if memory.keys != Set(remembered.map(\.key)) { remembered = Self.owners(memory) }
+        refresh()
     }
 
-    private static func storedLevels() -> [String: Double] {
-        (UserDefaults.standard.dictionary(forKey: "app-volume-levels") ?? [:])
-            .compactMapValues { ($0 as? NSNumber).map { min(max($0.doubleValue, 0), 1) } }
-            .filter { $0.value < 1 }
+    private static func owners(_ memory: AppVolumeMemory) -> [AppVolumeOwner] {
+        memory.keys.map { key in
+            let url = url(for: key)
+            return AppVolumeOwner(key: key, name: memory.names[key] ?? url.map(name) ?? key, bundlePath: url?.path)
+        }
     }
 
-    private static func storedMuted() -> Set<String> {
-        Set(UserDefaults.standard.stringArray(forKey: "app-volume-muted") ?? [])
+    private static func url(for key: String) -> URL? {
+        if key.hasPrefix("/") { return FileManager.default.fileExists(atPath: key) ? URL(fileURLWithPath: key) : nil }
+        return NSWorkspace.shared.urlForApplication(withBundleIdentifier: key)
+    }
+
+    private static func name(of url: URL) -> String {
+        let name = FileManager.default.displayName(atPath: url.path)
+        return name.hasSuffix(".app") ? String(name.dropLast(4)) : name
     }
 }
 
@@ -123,26 +149,55 @@ private struct AppVolumeSettings: View {
 private struct AppVolumeList: View {
     let tool: AppVolumeTool
     @Environment(\.inSettings) private var inSettings
+    @State private var adding = false
 
     var body: some View {
-        let rows = AppVolumeModel.shared.rows
+        let rows = inSettings ? AppVolumeMath.rows(live: AppVolumeModel.shared.rows, remembered: tool.remembered) : AppVolumeModel.shared.rows
         VStack(spacing: inSettings ? 8 : 2) {
-            if rows.isEmpty {
-                Text("No apps are playing sound")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 5)
-                    .transition(.opacity)
-            }
             ForEach(rows, id: \.owner.key) { row in
                 AppVolumeRowView(tool: tool, row: row)
                     .transition(.opacity)
+            }
+            if rows.isEmpty || inSettings {
+                HStack {
+                    if rows.isEmpty {
+                        Text("No apps are playing sound")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .padding(.vertical, 5)
+                            .transition(.opacity)
+                    }
+                    if inSettings {
+                        Spacer(minLength: 8)
+                        if adding {
+                            Button("Done") { adding = false }
+                        } else {
+                            Button("Add App…", systemImage: "plus") { adding = true }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            if inSettings && adding {
+                AppShelf(
+                    hint: Text("Here’s what’s in your Dock and open now. Click an app to add it, or drag one here from Finder"),
+                    added: tool.remembered.map(\.key),
+                    suggest: Self.suggestions,
+                    toggle: tool.toggle,
+                    other: { AppExclusions.choose().forEach(tool.add) }
+                )
             }
         }
         .padding(.leading, inSettings ? 0 : 46)
         .padding(.trailing, inSettings ? 0 : 8)
         .animation(.snappy, value: rows)
+        .appDropZone(tool.title, isEnabled: inSettings, add: tool.add)
+    }
+
+    private static func suggestions() -> [String] {
+        var seen = Set<String>()
+        return (AppShelf.dock().compactMap { Bundle(url: $0)?.bundleIdentifier } + AppShelf.running.compactMap(\.bundleIdentifier))
+            .filter { !BackgroundTasks.isOwn($0) && seen.insert($0).inserted }
     }
 }
 
@@ -150,6 +205,7 @@ private struct AppVolumeList: View {
 private struct AppVolumeRowView: View {
     let tool: AppVolumeTool
     let row: AppVolumeRow
+    @Environment(\.inSettings) private var inSettings
 
     var body: some View {
         let key = row.owner.key
@@ -157,18 +213,18 @@ private struct AppVolumeRowView: View {
         HStack(spacing: 8) {
             HStack(spacing: 8) {
                 AppVolumeIcon(path: row.owner.bundlePath)
-                Text(verbatim: row.owner.name)
+                Text(verbatim: row.title)
                     .lineLimit(1)
                     .truncationMode(.tail)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .opacity(row.playing ? 1 : 0.55)
-            Slider(value: Binding(get: { tool.level(key) }, set: { tool.setLevel($0, for: key) }), in: 0...1)
+            Slider(value: Binding(get: { tool.level(key) }, set: { tool.setLevel($0, for: row.owner) }), in: 0...1)
                 .controlSize(.small)
-                .frame(width: 96)
+                .frame(width: inSettings ? 140 : 96)
                 .disabled(muted)
-                .accessibilityLabel(Text("Volume of \(row.owner.name)"))
-            Button { tool.toggleMute(key) } label: {
+                .accessibilityLabel(Text("Volume of \(row.title)"))
+            Button { tool.toggleMute(row.owner) } label: {
                 Image(systemName: muted ? "speaker.slash.fill" : "speaker.wave.2.fill")
                     .foregroundStyle(muted ? Color.accentColor : Color.secondary)
                     .frame(width: 20, height: 20)
@@ -177,6 +233,21 @@ private struct AppVolumeRowView: View {
             .buttonStyle(.plain)
             .help(muted ? Text("Unmute") : Text("Mute"))
             .accessibilityLabel(muted ? Text("Unmute") : Text("Mute"))
+            if inSettings {
+                let kept = tool.memory.keys.contains(key)
+                Button { tool.forget(key) } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.secondary)
+                        .frame(width: 20, height: 20)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .help("Forget This App")
+                .accessibilityLabel(Text("Forget This App"))
+                .opacity(kept ? 1 : 0)
+                .disabled(!kept)
+                .accessibilityHidden(!kept)
+            }
         }
     }
 }

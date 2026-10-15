@@ -43,7 +43,7 @@ final class GameModeTool: Tool {
     var games: [String] {
         didSet {
             UserDefaults.standard.set(games, forKey: Self.gamesKey)
-            suggestions.removeAll(where: games.contains)
+            suggestions.removeAll { GameRules.isAdded($0, in: games) }
             update()
         }
     }
@@ -117,7 +117,10 @@ final class GameModeTool: Tool {
         needsRecording = defaults.bool(forKey: Self.frameRateRecordingKey)
 
         let center = NSWorkspace.shared.notificationCenter
-        for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
+        for name in [
+            NSWorkspace.didActivateApplicationNotification, NSWorkspace.didTerminateApplicationNotification,
+            NSWorkspace.didWakeNotification, NSWorkspace.sessionDidBecomeActiveNotification,
+        ] {
             center.addObserver(forName: name, object: nil, queue: .main) { _ in GameModeTool.shared.update() }
         }
         for name in [NSWorkspace.willSleepNotification, NSWorkspace.sessionDidResignActiveNotification] {
@@ -213,8 +216,8 @@ final class GameModeTool: Tool {
             .filter { Self.looksLikeGame($0.bundleIdentifier, $0.bundleURL ?? $0.executableURL)
                 || GameRules.minecraft($0.executableURL?.path ?? "") != nil }
             .map(Self.key)
-        var seen = Set(games + notGames + [""])
-        suggestions = (running + installed).filter { seen.insert($0).inserted }
+        var seen = Set(notGames + [""])
+        suggestions = (running + installed).filter { !GameRules.isAdded($0, in: games) && seen.insert($0).inserted }
     }
 
     fileprivate func update() {
@@ -295,7 +298,7 @@ final class GameModeTool: Tool {
         DispatchQueue.main.async { GameHint.show() }
     }
 
-    fileprivate func received(_ name: String) {
+    func received(_ name: String) {
         #if APPSTORE
         Self.locked = name == "com.apple.screenIsLocked"
         #endif
@@ -440,7 +443,29 @@ final class GameModeTool: Tool {
     }
 }
 
+extension GameRules {
+    #if APPSTORE
+    // The App Store copy can't switch hot corners off, so the fence keeps the pointer this far (x + y) from every corner pixel.
+    static let cornerGap: CGFloat = 16
+    #else
+    static let cornerGap: CGFloat = 0
+    #endif
+
+    static func fenceCorners(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
+        var fenced = fence(point, in: frame, corners: corners) ?? point
+        for corner in 0..<4 where !corners.contains(corner) {
+            let sx: CGFloat = corner % 2 == 0 ? 1 : -1, sy: CGFloat = corner < 2 ? 1 : -1
+            let gap = (fenced.x - (sx > 0 ? frame.minX : frame.maxX - 1)) * sx + (fenced.y - (sy > 0 ? frame.minY : frame.maxY - 1)) * sy
+            guard gap < cornerGap else { continue }
+            fenced.x += (cornerGap - gap) / 2 * sx
+            fenced.y += (cornerGap - gap) / 2 * sy
+        }
+        return fenced == point ? nil : fenced
+    }
+}
+
 #if APPSTORE
+// Dock preferences are out of reach in the sandbox; GameRules.fenceCorners keeps hot corners quiet instead.
 enum DockEdges {
     static var journal: [String: Any] { [:] }
     static func calm(corners: Set<Int>, hidesDock: Bool) {}
@@ -627,7 +652,8 @@ private func gameModeCallback(
         guard tool.isPlaying else { break }
         if type == .keyDown, event.getIntegerValueField(.keyboardEventAutorepeat) == 0 {
             let combo = GameRules.combo(key: Int64(key), flags: flags.rawValue)
-            if let binding = tool.languageBindings[combo], !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+            if let binding = tool.languageBindings[combo], !event.isPikapik, !binding.automatic || tool.inputIntent.allows(Int64(key), flags: flags, at: event.timestamp) {
+                event.markPikapik()
                 let pid = tool.game?.processIdentifier
                 DispatchQueue.main.async {
                     guard tool.game?.processIdentifier == pid, NSWorkspace.shared.frontmostApplication?.processIdentifier == pid, tool.languageBindings[combo] != nil else { return }
@@ -664,7 +690,7 @@ private func cursorFenceCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
     case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
-        if let frame = fence.frame, let point = GameRules.fence(event.location, in: frame, corners: fence.corners) {
+        if let frame = fence.frame, let point = GameRules.fenceCorners(event.location, in: frame, corners: fence.corners) {
             event.location = point
             CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
             CGWarpMouseCursorPosition(point)
@@ -705,7 +731,9 @@ struct GameModePage: View {
                     ForEach(tool.suggestions, id: \.self) { key in
                         LabeledContent {
                             HStack {
-                                Button("Not a Game") { tool.dismiss(key) }
+                                Button("Ignore") { tool.dismiss(key) }
+                                    .buttonStyle(.borderless)
+                                    .foregroundStyle(.secondary)
                                 Button("Add") { tool.confirm(key) }
                             }
                             .fixedSize()

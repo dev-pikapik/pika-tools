@@ -10,11 +10,11 @@ MISSING=$(grep -LF "id=\"v$VERSION\"" docs/whats-new/README*.md || true)
 grep -qxF "## [$VERSION] - Unreleased" CHANGELOG.md || { echo "Add “## [$VERSION] - Unreleased” to CHANGELOG.md first." >&2; exit 1; }
 FORM=".github/ISSUE_TEMPLATE/bug_report.yml"
 grep -qxF "        - Latest version" "$FORM" || { echo "“- Latest version” is missing in $FORM." >&2; exit 1; }
+./scripts/feature-form.sh --check
 
 PLIST="Sources/pika-tools/Info.plist"
 BUILD=$(( $(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST") + 1 ))
-/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD" "$PLIST"
+sed -i '' -e "/<key>CFBundleShortVersionString<\/key>/{n;s|<string>.*</string>|<string>$VERSION</string>|;}" -e "/<key>CFBundleVersion<\/key>/{n;s|<string>.*</string>|<string>$BUILD</string>|;}" "$PLIST"
 
 sed -i '' "s/^## \[${VERSION//./\\.}\] - Unreleased$/## [$VERSION] - $(date +%F)/" CHANGELOG.md
 REF="[$VERSION]: https://github.com/dev-pikapik/pika-tools/releases/tag/v$VERSION"

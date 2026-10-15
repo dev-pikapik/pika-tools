@@ -5,6 +5,87 @@
 
 ---
 
+## <a id="v1.50.3"></a>Les menus des coins actifs et de l’écran principal fonctionnent enfin
+
+<sub>1.50.3 · 15 octobre 2026</sub>
+
+Dans la version du site, le menu Modifier… de la ligne d’un coin actif et le menu Écran principal font maintenant ce qu’ils promettent.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Dans la version 1.50.2, chaque choix de ces deux menus apparaissait trois fois, et en choisir un ne changeait rien. Désormais chaque choix apparaît une seule fois, le choix actuel porte une coche, et votre sélection s’applique tout de suite. Les coins actifs sont dans Réglages › Jeux, et Écran principal sous Garder le Dock sur un seul écran. Remettre en place, ou éteindre l’interrupteur, rétablit toujours tout à l’identique.
+
+---
+
+## <a id="v1.50.2"></a>pikapik le fait lui-même, sans passer par Réglages Système
+
+<sub>1.50.2 · 15 octobre 2026</sub>
+
+Dans la version du site, désactiver une tâche en arrière-plan, ajouter une disposition de clavier, changer un coin actif et choisir l’écran principal se font maintenant directement dans pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Tâches en arrière-plan, désactivez une tâche et sa ligne change aussitôt. Aucun mot de passe n’est demandé, et votre choix reste après un redémarrage. Rallumer remet la tâche en marche. Les tâches de tout le Mac et les assistants qu’une app a ajoutés elle-même ouvrent toujours Réglages Système, et une ligne sous la tâche explique pourquoi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+La correction du texte tapé dans la mauvaise disposition fonctionne quand vous avez au moins deux dispositions de clavier. Si vous n’en avez qu’une, la note de Réglages › Clavier propose maintenant des dispositions pour vos langues. Choisissez-en une sous Ajouter une disposition, et elle est prête aussitôt, sans mot de passe. Si aucune ne convient, Réglages Clavier… est toujours là.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+Dans Réglages › Jeux, le menu Modifier… de la ligne d’un coin actif choisit une autre action pour ce coin. Sous Garder le Dock sur un seul écran, le menu Écran principal fait de l’écran choisi l’écran principal, avec le Dock dessus. pikapik se souvient de l’état d’avant : Remettre en place, ou éteindre l’interrupteur, rétablit tout à l’identique.
+
+**Pour essayer :** Réglages › Tâches en arrière-plan
+
+**Corrigé**
+
+- Réduire ou masquer d’un clic dans le Dock : si vous l’aviez activé quand le clic réduisait les fenêtres, il ne passe plus tout seul au masquage de l’app après un redémarrage.
+- À l’ouverture, pikapik vérifie maintenant les réglages modifiés sur votre autre Mac, si bien qu’un Mac qui a manqué le changement le rattrape aussitôt.
+- Rester éveillé dit maintenant qu’il reste actif jusqu’à ce que vous l’éteigniez, et le Mode Jeu ne propose plus un jeu que vous avez déjà ajouté.
+
+---
+
+## <a id="v1.50.0"></a>Plus de pikapik dans la version du Mac App Store
+
+<sub>1.50.0 · 15 octobre 2026</sub>
+
+Ouvrez des archives, dégagez votre bureau, utilisez Home et End et bien plus, désormais aussi dans la version du Mac App Store.
+
+**Nouveau dans la version du Mac App Store**
+
+- **Ouvrez et créez des archives dans le Finder.** Faites un clic droit sur une archive et choisissez « Extraire ». Pour en créer une, faites un clic droit sur des fichiers et choisissez « Créer une archive… ». Appuyez sur Espace sur une archive pour voir ce qu’elle contient. Ici, seul le ZIP peut avoir un mot de passe.
+- **Un bureau dégagé.** Activez « Masquer les icônes du bureau », et pikapik recouvre les icônes avec votre fond d’écran. Les clics atteignent toujours le bureau, et aucune autorisation n’est nécessaire.
+- **Home et End refonctionnent.** Elles vont au début et à la fin de la ligne, partout sauf dans les navigateurs, le Finder, Musique et TV.
+- **Corrigez un texte tapé avec la mauvaise disposition grâce à un raccourci.** Sélectionnez le texte et appuyez sur ⌃⇧Espace. Activez « Corriger le texte sélectionné » dans Réglages › Clavier, où vous pouvez aussi changer les touches.
+- **Éteignez l’écran en un clic.** « Éteindre l’écran maintenant » assombrit l’écran aussitôt, pendant que votre Mac continue de travailler. Bougez la souris pour le rallumer.
+- **Vos jeux ne sont pas dérangés.** Dans « Mode Jeu », les raccourcis du Mac comme Spotlight sont suspendus tant qu’un jeu est au premier plan. Le pointeur reste à l’écart des coins de l’écran, pour que les coins actifs ne se déclenchent pas.
+- **Les chiffres de la batterie sont de retour.** « Batterie » affiche de nouveau « Capacité maximum » sous macOS 27, et « Température » affiche la température de la batterie.
+- **Voyez quelles apps peuvent demander une autorisation.** « Autorisations des autres apps », dans Réglages › Autorisations, les liste avec leurs icônes.
+- **Sachez où cliquer.** Quand macOS ne laisse pas pikapik modifier un réglage, une courte animation montre où cliquer dans Réglages Système.
+
+**Dans les deux versions**
+
+- **Réglez le volume avant que l’app démarre.** Une app que vous avez réglée reste dans Réglages › Son avec son curseur, même fermée, et retrouve son niveau dès qu’elle rejoue du son, y compris après un redémarrage. Cliquez sur « Ajouter une app… » ou glissez une app depuis le Finder pour la régler à l’avance, et le ✕ l’oublie et lui rend le volume maximal.
+- **Voyez ce qu’une mise à jour a ajouté.** Après une mise à jour, un petit point bleu repère chaque onglet des Réglages qui contient du nouveau, et une étiquette « Nouveau » repère la section. Ils disparaissent dès que vous avez regardé, et d’eux-mêmes au bout de 21 jours.
+- **Un premier lancement tout en douceur.** La version du site ne demande plus d’autorisations à la première ouverture. Elle ne demande que lorsque vous activez un outil qui en a besoin.
+- **Des copies de vidéos plus légères.** « Créer une copie allégée » réduit désormais une vidéo à environ la moitié. Avant, la plupart des vidéos recevaient « Déjà compact ».
+- **Deux copies font bon ménage.** Si vous utilisez ensemble la version de l’App Store et celle du site, elles ne s’annulent plus l’une l’autre. ⇧⌘Q et ⇧⌘W fonctionnent de nouveau dans les jeux.
+- **Les jeux reprennent après la veille.** Le « Mode Jeu » se réactive tout seul quand votre Mac se réveille.
+- **« Ports » dit la vérité.** Sous macOS 27, un port utilisé par macOS ou par un autre utilisateur n’est plus déclaré libre.
+- **Signaler un problème est plus rapide.** « Signaler un problème », dans Réglages › À propos, ouvre le formulaire avec votre version déjà choisie.
+- **Des archives plus fluides.** La barre de progression avance pendant qu’une archive se décompresse, un mauvais mot de passe est signalé tout de suite, et votre Mac ne s’endort plus au milieu d’une décompression ou d’une création.
+- **Un panneau de la barre des menus plus stable.** Ouvrir une ligne du panneau, par exemple les options d’affichage sous « Rester éveillé », ne fait plus clignoter une barre de défilement. La flèche à côté de « Rester éveillé » indique maintenant « Réglages de l’écran ».
+- **Ports s’explique tout seul.** Une ligne sous le titre dit ce qu’est un port, et une petite animation montre qu’une porte ne laisse passer qu’un seul programme. Vos propres programmes et ceux qu’il vaut mieux laisser tranquilles ont maintenant des noms clairs.
+- **Les Réglages parlent clairement.** Chaque onglet commence par une ligne qui dit ce que vous y trouvez, la barre latérale a des espaces entre ses groupes, et « Rester éveillé », « Autorisations » et « Batterie » disent exactement ce qui se passe. Le bouton « Autorisations requises » n’apparaît que si un outil que vous avez activé en manque une.
+
+**Corrigé dans la version du Mac App Store**
+
+- Après ⌘X, ⌘V dans le Finder déplace désormais vos fichiers, comme dans la version du site. Avant, il ne faisait que les copier.
+- « Nouveau fichier dans le Finder », « Copie allégée dans le Finder » et « Conversion dans le Finder » indiquent chacun leur propre état. Avant, activer l’un faisait paraître les trois activés.
+- La page « Ports » vide a disparu. macOS ne montre pas à cette version quel programme occupe un port, donc Réglages › Ports n’avait rien à afficher.
+
+---
+
 ## <a id="v1.49.0"></a>Une luminosité réglable pour chaque écran
 
 <sub>1.49.0 · 13 octobre 2026</sub>

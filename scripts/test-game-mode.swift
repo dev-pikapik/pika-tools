@@ -85,6 +85,11 @@ enum TestGameMode {
         precondition(GameRules.isGame(id: nil, name: "Wine Game", path: "", in: ["Wine Game"]))
         precondition(!GameRules.isGame(id: "com.a.game", name: "Game", path: java, in: ["com.b.game"]))
         print("minecraft: ok")
+        let launcher = "com.mojang.minecraftlauncher", cursePath = "/Users/me/Documents/curseforge/minecraft/Install/runtime/"
+        precondition(GameRules.isAdded(launcher, in: [launcher]) && GameRules.isAdded(launcher, in: [cursePath]) && GameRules.isAdded(cursePath, in: [launcher]))
+        precondition(GameRules.isAdded(cursePath, in: ["com.a.game", launcher]) && GameRules.isAdded("com.a.game", in: ["com.a.game"]))
+        precondition(!GameRules.isAdded(launcher, in: ["com.a.game"]) && !GameRules.isAdded("com.b.game", in: [cursePath, launcher]) && !GameRules.isAdded(launcher, in: []))
+        print("added: ok")
 
         let prism = "/Users/me/Library/Application Support/PrismLauncher/java/java-runtime-delta/bin/java"
         let system = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin/java"

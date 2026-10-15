@@ -107,6 +107,7 @@ final class MiddleClickTool: Tool {
 
     /// A press with the chosen number of fingers turns into the middle button, down, drag and up.
     fileprivate func pressed(_ event: CGEvent, _ type: CGEventType) {
+        guard !event.isPikapik else { return }
         switch type {
         case .leftMouseDown, .rightMouseDown:
             gesture.press()
@@ -129,6 +130,7 @@ final class MiddleClickTool: Tool {
         for type in [CGEventType.otherMouseDown, .otherMouseUp] {
             let event = CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: location, mouseButton: .center)
             event?.setIntegerValueField(.mouseEventClickState, value: 1)
+            event?.markPikapik()
             event?.post(tap: .cghidEventTap)
         }
     }

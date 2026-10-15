@@ -2,10 +2,86 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.50.0] - Unreleased
+## [1.52.0] - Unreleased
 
 ### Added
 - Mouse: Middle click on the trackpad, in Settings › Mouse. Tap or click with three fingers, and the trackpad works like the middle mouse button: in most browsers that opens a link in a new tab or closes a tab. You can choose four fingers instead. Tapping needs Tap to click in System Settings › Trackpad. If Look up there is set to a three-finger tap, three fingers can only click, and if three-finger drag is on, choose four fingers. The Fingers row under the switch says what works on your Mac. It needs Accessibility and Input Monitoring. To have it in the menu, click the pencil at the bottom of the menu and select it. Not in the Mac App Store version.
+
+## [1.51.0] - Unreleased
+
+### Added
+- Player, website version: a new page, Settings › Player, for videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV. Click Open Video…, or right-click a video and choose Open With › pikapik Player, and it plays in its own window: Space plays and pauses, ← and → jump 5 seconds, ↑ and ↓ change the volume, F goes full screen, and a video that is already open comes to the front instead of opening twice. The player is a small separate app with no network access that asks for no permissions, and it doesn’t change which app opens your videos. It uses FFmpeg and dav1d; their licenses and source code are linked on the same page. Subtitles aren’t supported yet. The Mac App Store version doesn’t have it.
+
+## [1.50.3] - 2026-10-15
+
+### Fixed
+- Hot corners and Keep the Dock on one display, website version: the Change… menu on a hot-corner row and the Main display menu from 1.50.2 listed every choice three times, and picking one did nothing. Now each choice appears once, the current one has a check mark, and your pick takes effect at once. Put Back and turning the switch off still return everything as it was. The Mac App Store version is unchanged.
+
+## [1.50.2] - 2026-10-15
+
+### Changed
+- Background, website version: tasks now turn off right in pikapik, with no trip to System Settings. This works for agents from the shared Library folder (for all users) and for old login items; the row changes at once, no password is needed, and the choice stays after a restart. Turn Back On puts the task back. If it doesn’t work, the row says so in plain words. Tasks for the whole Mac and helpers an app added itself still open System Settings, and a line under the row now says why. The Mac App Store version is unchanged.
+- Keyboard layouts, website version: with only one layout, Fix Wrong Keyboard Layout now offers the layouts for your languages right in its note. Pick one under Add a Layout and it is ready at once, with no trip to System Settings and no password. If none fits, Keyboard Settings… is still there. The Mac App Store version is unchanged.
+- Hot corners, website version: in Settings › Games, the Change… menu on a hot-corner row picks another action for that corner right there, with no trip to System Settings. The Dock restarts once for each change, the first action is remembered, and Put Back returns it. The Mac App Store version is unchanged.
+- Keep the Dock on one display, website version: the Main display row now sits right under the switch as a menu. Pick a display there and it becomes the main one, with the Dock on it, with no trip to System Settings. Your first arrangement of displays is remembered, and turning the switch off puts the displays back exactly as they were. The Mac App Store version is unchanged.
+
+### Fixed
+- Keep Awake: with “Always on” saved and Keep Awake off, the menu said it would end on a date. It now says it stays on until you turn it off.
+- Menu bar: when the Keep Awake options close, the rows no longer slide under the bottom buttons.
+- Sound: the missing-permission note is now one clear sentence.
+- Background: when two items have the same name, such as two copies of pikapik, each row shows its version.
+- Game Mode: a game you already added, such as Minecraft, is no longer suggested again.
+- Settings: tab descriptions all end the same way, without a full stop, in all 23 languages.
+- New dots for per-app volume and Ports also show in the website version.
+- Minimize or hide with a click in the Dock: if you turned it on while it was set to minimize the windows, it no longer switches itself to hiding the app after the next restart.
+- Settings sync: when you open pikapik, it now checks for settings changed on your other Mac, so a Mac that missed the change catches up at once.
+
+## [1.50.1] - Unreleased
+
+### Added
+- Mac App Store version, wrong keyboard layout: **Fix words as you type** is here too. Turn it on in Settings › Keyboard, and a word typed in the wrong layout, such as “ghbdtn”, becomes “привет” when you press Space or Return, and the layout switches. Press ⌃⇧Space right after a fix to undo it; that word is then left as you typed it. It needs Accessibility, which Settings › Permissions asks for, and it stays off in password fields, in apps you exclude and while a game is playing.
+
+## [1.50.0] - 2026-10-15
+
+### Added
+- Mac App Store version, Archives in Finder: right-click an archive and choose Extract, or right-click files and folders and choose Create Archive… (ZIP, 7Z, TAR.GZ or TAR.XZ), and press Space on an archive to see the files inside, as in the version from the website. It works with the tools built into macOS instead of the bundled 7-Zip, so it has limits: only ZIP can have a password, an archive can’t be split into parts, split sets (.001, .part1.rar, .z01) and single .xz, .lzma and .zst files can’t be opened, password-protected 7Z and RAR can’t be opened, and there is no Open archives with this app switch. The first time, it asks for access to your home folder, the same as New File and Smaller Copy, and the Finder items need the extension turned on in System Settings › General › Login Items & Extensions. The progress bar now moves while an archive is unpacking and a wrong password is reported at once instead of after a pause (the version from the website gets this too), the switched-off password option for 7Z says why, and the “can’t be opened” message lists what this version can’t open. The hint in Settings now says which formats can have a password, and the Mac no longer falls asleep in the middle of unpacking or creating an archive (the version from the website gets this too).
+- Mac App Store version, Keep Awake: **Turn off the display now** is here too, in the menu and in Settings › Keep Awake. The display goes dark at once while the Mac keeps working; move the mouse or press a key to bring it back.
+- Mac App Store version: where macOS doesn’t let the app change a setting itself, a short animation now shows where to click in System Settings: Animations, Hide desktop icons, pointer acceleration, Permissions and Open at Login. The labels in the animation are taken from your Mac, in its language. Reduce Motion in both versions also gets the animation, and when Reduce Motion is on you see one still frame with the click marked.
+- The animation that shows where to click in System Settings now also covers keyboard shortcuts you change in System Settings › Keyboard and turning on the Finder extensions in Login Items & Extensions. The Reduce Motion button now opens the Motion page itself, not Display.
+- Mac App Store version, wrong keyboard layout: select the text and press ⌃⇧Space to fix it, no need to open the Services menu. Turn the shortcut on in Settings › Keyboard, where you can also change it. It needs Accessibility, which Settings › Permissions asks for; the Services menu still works without it.
+- Mac App Store version, Permissions: Settings › Permissions now shows which installed apps can ask for Camera, Microphone, Automation, Files and Folders and Bluetooth, each with its icon. Who is allowed is still shown only in System Settings, because macOS hides it from this version.
+- Settings › About › Report a Problem now opens the bug form with the edition and version of pikapik already chosen. The bug and feature forms also ask which feature the report is about and where you got pikapik: Mac App Store, Website, GitHub or Homebrew.
+- Mac App Store version, Home and End: the keys go to the start and end of a line again. They work everywhere except browsers, Finder, Music and TV, because this version can’t see which field has focus.
+- Mac App Store version, Hide desktop icons: it is now a real switch, in Settings › Finder and in the menu bar panel, and it needs no permission. pikapik covers the icons with your wallpaper on every display, or with a plain color if your wallpaper moves, and clicks still reach the desktop. The files stay in the Desktop folder in Finder. Below the switch, the animation and the Open button still lead to Desktop & Dock in System Settings, as a second way.
+- After an update, Settings shows what is new: a small dot after the name of a tab that got something new, and a New tag beside the feature itself. The dot goes when you open the tab, the tag when you leave it, and everything goes by itself 21 days after the update. A fresh install shows none. The gear button in the menu bar panel gets the same dot until you open Settings once. A mark you have seen never comes back, not after a relaunch, a downgrade or a second copy of the app.
+- App Volume: an app you set now stays in Settings › Sound with its slider, dimmed while it is closed, so you can set its volume before it starts. Its level and mute are applied again when it plays sound after you reopen pikapik or restart the Mac. Click Add App… or drag an app in from Finder to add one, and click the ✕ next to an app to forget it and return it to full volume. Apps with the same name show their folder. Before, a closed app was not in the list after pikapik was reopened, so its volume could only be set while it played sound.
+
+### Changed
+- Ports now explains itself: a line under the title says what a port is, a small animation shows that only one program fits at a door, the search box says “Type a number, like 3000”, and a note under the list says that the globe means other devices on your network can connect. The sections are called “Programs you started” and “Not yours: leave these alone”. Programs without an icon, such as console tools, get a plain terminal tile. Only programs that wait for connections are listed, so programs that merely send or receive UDP no longer appear. Its tile in the sidebar is blue.
+- The top of Sound, Keyboard, Mouse, Dock, Finder and About now says what you get there, for example “Scrolling, side buttons and pointer speed” instead of “Fixes for the mouse”.
+- “Keep running after Quit” is now “Stay in the background after Quit”, with the line “Shortcuts and Keep Awake keep working. Hold Option to quit completely” under it.
+- Keyboard: the wrong-layout row is called “Retype words you typed in the wrong language”. Mouse: the hint under the speed graph says “The dot marks your Mac’s normal speed”. Games: “Not a Game” is now a quiet “Ignore” button. Speed Test: before the first test the page says “Press Check Speed to find out”.
+- The sidebar in Settings now has gaps between its groups: General, then the Mac (Battery to Ports), then fixes (Sound to Animations), then apps (Uninstaller to Pet), then Permissions and About. The order of the tabs is the same as before.
+
+### Fixed
+- Mac App Store version, Finder: after ⌘X, ⌘V now moves the files, as in the version from the website. Before, ⌘V pasted a copy and the files stayed where they were, so cutting worked like copying. The Move Items Here button in the pikapik menu is gone, ⌘V does its job.
+- Mac App Store version, Finder: the New File, Smaller Copy and Convert switches now each show whether their own item is turned on in System Settings. Before, turning on one of them made all three look on, so New File could stay missing from the right-click menu with its switch on, and Settings › Permissions didn’t ask to turn it on.
+- Ports: on macOS 27 the page could call a port free while a part of macOS or another user held it, because macOS no longer shows their programs to apps. Now pikapik checks the port itself and says it’s taken by macOS or another user.
+- Mac App Store version: Settings › Ports is gone. There macOS doesn’t let an app see which program holds a port, so the page stayed empty.
+- Games: with two copies of pikapik open at once, for example the Mac App Store version and the version from the website, ⇧⌘Q and ⇧⌘W in a game did nothing. One copy turned them into ⌘Q and ⌘W, and the other copy stopped those as an accidental quit, so the game neither quit nor closed its window. Now the copies let each other’s ⌘Q and ⌘W through.
+- With two copies of pikapik open at once, a setting turned on in both no longer undoes itself. Before, both copies did the same job one after the other: Swap the side buttons swapped them twice, so they stayed as they were; the scroll direction flipped twice; and the language switch and the language keys in games switched twice, back to the language you started from when you have two. Wrong keyboard layout could also fix the text the other copy had just retyped. Now one copy does the job and the other lets it through.
+- Mac App Store version, Temperature: on a Mac with a battery, the page now shows the battery’s temperature in degrees, with a bar that turns green, yellow or orange, under the overall word. Before, the page showed only that word and a tip and no numbers, so it looked empty. A Mac without a battery still shows the overall level.
+- Mac App Store version, Battery: on macOS 27 the page shows the battery’s Maximum Capacity again. macOS 27 moved that number to another place, so the page showed only the cycle count. The number may differ by 1% from System Settings, which smooths it over weeks.
+- Mac App Store version, Game Mode: the list of Mac shortcuts that use ⌘, such as Spotlight on ⌘Space, was empty, so nothing was paused in a game. pikapik now reads them again and pauses them while a game is in front, as the version from the website does. Shortcuts without ⌘ and mouse shortcuts are still left out of the list here.
+- Games: in the Mac App Store version, Game Mode now keeps the pointer a few points away from the screen corners while you play, so hot corners don’t go off. That version can’t switch hot corners off, so before, a brush against a corner could still set one off. Game Mode also turns back on by itself after the Mac wakes up or you switch back to your user account. Before, it came back only after you switched to another app.
+- Make a Smaller Copy now makes videos about half the size. Before, almost every video got “Already compact” and no copy was made, because the copy came out bigger than the original. A video that is already very small still gets “Already compact”. Photos were not affected.
+- Battery: the icons in the list now line up in one column. If the page is opened on a Mac without a battery, it says “This Mac has no battery” instead of staying empty.
+- Keep Awake: the top of the page said “Your Mac stays awake until you quit pikapik” even when Keep Awake was off, and the time row said “Until …” as if it were running. The top now says what Keep Awake is for, and the row says “If turned on now, ends …”.
+- Permissions: the top of the page said “All set” while some tools still lacked a permission. It now says “Both permissions are on” until every tool has what it needs. The bar over the grey tools now names the missing permission and what it is for, instead of “Grey tools need a permission”.
+- Ports: in German and other long languages the Free Up button was cut off in a narrow window. It now keeps its full width, and the button that shows how to free a port is called “How to Free It”, so the two no longer look alike.
+- The Permissions needed button in the menu bar panel and the right-click menu now appears only while a tool you switched on lacks a permission. Before, it showed whenever Accessibility or Input Monitoring was off, even if you had switched nothing on, and also in the Mac App Store version, where Settings says only some tools need these permissions.
+- First launch no longer asks for permissions before you switch anything on. Before, the version from the website showed the Accessibility and Input Monitoring prompts at once and opened Permissions. Now it opens General Settings the first time and asks only when you click a grey tool that needs one. Permissions you already gave stay on.
+- Menu bar panel: opening or closing a row, such as the display options under Keep Awake, no longer makes a scrollbar flash for a moment. The scrollbar now shows only when the rows really don’t fit on your screen. The arrow next to Keep Awake now says what it opens, Display settings, and VoiceOver tells whether it is open.
 
 ## [1.49.0] - 2026-10-13
 
@@ -909,6 +985,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.50.3]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.3
+[1.50.2]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.2
+[1.50.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.0
 [1.49.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.49.0
 [1.48.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.48.0
 [1.47.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.47.0

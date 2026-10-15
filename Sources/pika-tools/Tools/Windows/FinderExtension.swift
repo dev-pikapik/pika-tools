@@ -19,11 +19,20 @@ final class FinderExtension {
         self.preview = preview
         id = (Bundle.main.bundleIdentifier ?? "com.pesotchi.pika-tools") + "." + key
         refresh()
-        #if !APPSTORE
+        #if APPSTORE
+        _ = Self.launches
+        #else
         if preview, !isActive { Self.pluginkit("-e", "ignore", "-i", Self.previewID) }
         #endif
         Self.all.append(self)
     }
+
+    #if APPSTORE
+    // Finder starts an extension when it is switched on in System Settings and stops it when it is switched off.
+    private static let launches = NSWorkspace.shared.observe(\.runningApplications) { _, _ in
+        DispatchQueue.main.async { all.forEach { $0.refresh() } }
+    }
+    #endif
 
     static func allow() {
         #if !APPSTORE
@@ -64,7 +73,8 @@ final class FinderExtension {
     func refresh() {
         #if APPSTORE
         let wanted = UserDefaults.standard.bool(forKey: key)
-        isActive = wanted && FIFinderSyncController.isExtensionEnabled
+        // FIFinderSyncController.isExtensionEnabled is true when any of the app's Finder extensions is on, so ask whether Finder runs this one.
+        isActive = wanted && !NSRunningApplication.runningApplications(withBundleIdentifier: id).isEmpty
         needsSettings = wanted && !isActive
         #else
         isActive = Self.pluginkit("-m", "-i", id).hasPrefix("+")

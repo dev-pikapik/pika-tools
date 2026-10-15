@@ -5,6 +5,87 @@
 
 ---
 
+## <a id="v1.50.3"></a>Menyerna för aktiva hörn och huvudbildskärm fungerar nu
+
+<sub>1.50.3 · 15 oktober 2026</sub>
+
+I webbversionen gör menyn Ändra… på raden för ett aktivt hörn och menyn Huvudbildskärm nu det de lovar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+I version 1.50.2 stod varje val i de här två menyerna tre gånger och att välja ett ändrade ingenting. Nu står varje val en gång, det nuvarande har en bock och ditt val gäller direkt. Aktiva hörn finns i Inställningar › Spel och Huvudbildskärm under Håll Dock på en skärm. Lägg tillbaka, eller att stänga av reglaget, ställer fortfarande tillbaka allt precis som det var.
+
+---
+
+## <a id="v1.50.2"></a>pikapik gör det själv, utan en tur till Systeminställningar
+
+<sub>1.50.2 · 15 oktober 2026</sub>
+
+I versionen från webbplatsen sker nu det här direkt i pikapik: stänga av en bakgrundsuppgift, lägga till en tangentbordslayout, ändra ett aktivt hörn och välja huvudbildskärm.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+Stäng av en uppgift i Inställningar › Bakgrundsuppgifter, så ändras raden direkt. Inget lösenord behövs, och ditt val finns kvar efter en omstart. Slå på igen tar tillbaka uppgiften. Uppgifter för hela datorn och hjälpprogram som en app lagt till själv öppnar fortfarande Systeminställningar, och en rad under förklarar varför.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Att rätta text som skrivits i fel layout fungerar när du har två eller fler tangentbordslayouter. Har du bara en erbjuder anteckningen i Inställningar › Tangentbord nu layouter för dina språk. Välj en under Lägg till layout, så är den klar direkt, utan lösenord. Passar ingen finns Tangentbordsinställningar… kvar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+I Inställningar › Spel väljer menyn Ändra… på raden för ett aktivt hörn en annan åtgärd för det hörnet. Under Håll Dock på en skärm gör menyn Huvudbildskärm den skärm du väljer till huvudbildskärm, med Dock på. pikapik kommer ihåg hur det var: Lägg tillbaka, eller att stänga av reglaget, ställer allt tillbaka exakt som förut.
+
+**Prova:** Inställningar › Bakgrundsuppgifter
+
+**Åtgärdat**
+
+- Minimera eller göm med ett klick i Dock: om du slog på det medan klicket minimerade fönster växlar det inte längre av sig självt till att gömma appen efter en omstart.
+- När du öppnar pikapik kontrollerar det nu om inställningar ändrats på din andra dator, så en dator som missade ändringen hämtar in den direkt.
+- Håll vaken säger nu att det förblir på tills du stänger av det, och Spelläge föreslår inte längre ett spel du redan lagt till.
+
+---
+
+## <a id="v1.50.0"></a>Mer pikapik i Mac App Store-versionen
+
+<sub>1.50.0 · 15 oktober 2026</sub>
+
+Öppna arkiv, städa skrivbordet, använd Home och End och mer, nu också i Mac App Store-versionen.
+
+**Nytt i Mac App Store-versionen**
+
+- **Öppna och skapa arkiv i Finder.** Högerklicka på ett arkiv och välj ”Packa upp”. Om du vill skapa ett arkiv högerklickar du på filer och väljer ”Skapa arkiv…”. Tryck på mellanslag på ett arkiv för att titta in i det. Här kan bara ZIP få lösenord.
+- **Ett skrivbord utan stök.** Slå på ”Göm skrivbordssymboler” så täcker pikapik symbolerna med din bakgrundsbild. Klick når fortfarande skrivbordet, och du behöver ingen behörighet.
+- **Home och End fungerar igen.** De går till början och slutet av raden, överallt utom i webbläsare, Finder, Musik och TV.
+- **Rätta text som skrivits med fel tangentbordslayout med en genväg.** Markera texten och tryck på ⌃⇧Mellanslag. Slå på ”Rätta markerad text” i Inställningar › Tangentbord, där du också kan ändra tangenterna.
+- **Stäng av skärmen med ett klick.** ”Stäng av skärmen nu” gör skärmen mörk direkt medan din Mac fortsätter arbeta. Flytta musen för att få tillbaka den.
+- **Spel får vara ifred.** I ”Spelläge” pausas Mac-genvägar som Spotlight medan ett spel ligger överst. Pekaren håller sig borta från skärmhörnen, så aktiva hörn utlöses inte.
+- **Batterisiffrorna är tillbaka.** ”Batteri” visar ”Maximal kapacitet” igen på macOS 27, och ”Temperatur” visar batteriets temperatur.
+- **Se vilka appar som kan be om en behörighet.** ”Andra appars behörigheter” i Inställningar › Behörigheter listar dem med deras symboler.
+- **Du vet var du ska klicka.** När macOS inte låter pikapik ändra en inställning visar en kort animation var du ska klicka i Systeminställningar.
+
+**I båda versionerna**
+
+- **Ställ in volymen innan appen startar.** En app du har ställt in stannar kvar i Inställningar › Ljud med sitt reglage, även när den är stängd, och får tillbaka sin nivå när den spelar ljud igen, också efter en omstart. Klicka på ”Lägg till app…” eller dra in en app från Finder för att ställa in den i förväg, och ✕ glömmer den och ger den full volym igen.
+- **Se vad en uppdatering lade till.** Efter en uppdatering markerar en liten blå prick varje flik i Inställningar med något nytt, och en etikett ”Ny” markerar avsnittet. De försvinner när du har tittat och av sig själva efter 21 dagar.
+- **En lugn första start.** Versionen från webbplatsen ber inte längre om behörigheter första gången du öppnar den. Den frågar bara när du slår på ett verktyg som behöver en.
+- **Mindre kopior av videor.** ”Skapa mindre kopia” gör nu en video ungefär hälften så stor. Tidigare fick de flesta videor beskedet ”Redan kompakt”.
+- **Två kopior kommer överens.** Om du använder App Store-versionen och webbplatsversionen tillsammans ångrar de inte längre varandras arbete. ⇧⌘Q och ⇧⌘W fungerar i spel igen.
+- **Spelläget finns kvar efter viloläget.** ”Spelläge” slås på igen av sig självt när din Mac vaknar.
+- **”Portar” talar sanning.** På macOS 27 kallas en port som används av macOS eller en annan användare inte längre ledig.
+- **Det går snabbare att rapportera ett problem.** ”Rapportera ett problem” i Inställningar › Om öppnar formuläret med din version redan vald.
+- **Arkiv utan ryck.** Förloppsfältet rör sig medan ett arkiv packas upp, ett fel lösenord meddelas direkt, och din Mac somnar inte längre mitt i uppackningen eller skapandet.
+- **En stadigare panel i menyraden.** När du fäller ut en rad i panelen, till exempel skärmalternativen under ”Håll vaken”, blinkar inte längre något rullningsfält till. Pilen bredvid ”Håll vaken” säger nu ”Skärminställningar”.
+- **Portar förklarar sig själv.** En rad under rubriken säger vad en port är, och en liten animation visar att bara ett program ryms genom en dörr. Dina egna program och de du bör låta vara har nu tydliga namn.
+- **Inställningar säger det tydligt.** Varje flik börjar med en rad om vad du får där, sidofältet har luft mellan grupperna, och ”Håll vaken”, ”Behörigheter” och ”Batteri” säger exakt vad som pågår. Knappen ”Behörigheter behövs” visas bara när ett verktyg du slagit på saknar en.
+
+**Åtgärdat i Mac App Store-versionen**
+
+- Efter ⌘X flyttar ⌘V nu dina filer i Finder, precis som i webbplatsversionen. Tidigare kopierade det dem bara.
+- ”Ny fil i Finder”, ”Mindre kopia i Finder” och ”Konvertering i Finder” visar var och en sitt eget läge. Tidigare såg alla tre ut att vara på så fort du slog på en.
+- Den tomma sidan ”Portar” är borta. macOS visar inte för den här versionen vilket program som använder en port, så Inställningar › Portar hade inget att visa.
+
+---
+
 ## <a id="v1.49.0"></a>Ljusstyrka för varje bildskärm
 
 <sub>1.49.0 · 13 oktober 2026</sub>

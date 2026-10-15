@@ -65,6 +65,9 @@ enum TestLayout {
         setbuf(stdout, nil)
         let suggests = !(NSSpellChecker.shared.completions(forPartialWordRange: NSRange(location: 0, length: 1), in: "я", language: "ru", inSpellDocumentWithTag: 0) ?? []).isEmpty
         if !suggests { print("layout: macOS gives no word suggestions here, skipping the cases that need them") }
+        precondition(KeyboardLayouts.wanted(["ru-MD", "en-MD", "ru-RU", "zh-Hans-CN"], covered: ["en"]) == ["ru", "zh"])
+        precondition(KeyboardLayouts.wanted(["en-US"], covered: ["en"]).isEmpty)
+        print("layout: the layouts to offer are the preferred languages nobody covers yet, once each: ok")
         KeyboardLayouts.extraLanguages = ["en"]
         guard let us = layout("US"), let ru = layout("Russian"), let uk = layout("Ukrainian"), let de = layout("German"), let fr = layout("French"), let el = layout("Greek") else { fatalError("missing layouts") }
 

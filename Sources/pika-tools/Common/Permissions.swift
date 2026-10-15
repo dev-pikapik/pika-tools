@@ -54,15 +54,31 @@ enum Permission: CaseIterable {
         }
     }
 
-    static var accessibilityTitle: String {
+    private static var hasDeviceControl: Bool {
         ProcessInfo.processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 27, minorVersion: 0, patchVersion: 0))
-            ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    static var accessibilityTitle: String {
+        hasDeviceControl ? String(localized: "Device Control and Data Access") : String(localized: "Accessibility")
+    }
+
+    var guidePage: String? {
+        switch self {
+        case .accessibility: Self.hasDeviceControl ? "Device Control and Data Access" : "Accessibility"
+        case .inputMonitoring: "Input Monitoring"
+        case .screenRecording, .systemAudio: "Screen & System Audio Recording"
+        default: nil
+        }
     }
 
     var icon: String { info.icon }
     var symbol: String { info.symbol }
     var title: String { info.title }
     var subtitle: String { info.subtitle }
+
+    var barText: String {
+        self == .systemAudio ? String(localized: "To change each app’s volume, allow “\(title)”") : "\(title): \(subtitle)"
+    }
 
     private var pane: String {
         switch self {
@@ -244,7 +260,7 @@ final class Permissions {
         #endif
     }
 
-    func request(_ wanted: [Permission] = [.accessibility, .inputMonitoring]) {
+    func request(_ wanted: [Permission]) {
         let ax = !accessibility && wanted.contains(.accessibility)
         let input = !inputMonitoring && wanted.contains(.inputMonitoring)
         #if !APPSTORE
@@ -372,7 +388,7 @@ extension View {
 
 struct PermissionBar: View {
     let permissions: [Permission]
-    var text: LocalizedStringKey = "Grey tools need a permission. Click one to allow it."
+    var text: LocalizedStringKey?
 
     var body: some View {
         let missing = Permission.allCases.filter { permissions.contains($0) && !$0.isGranted }
@@ -380,7 +396,11 @@ struct PermissionBar: View {
             HStack(spacing: 12) {
                 Image(systemName: "lock")
                     .accessibilityHidden(true)
-                Text(text)
+                if let text {
+                    Text(text)
+                } else {
+                    Text(verbatim: missing.map(\.barText).joined(separator: "\n"))
+                }
                 Spacer(minLength: 0)
                 Button("Allow") { Permissions.shared.ask(missing) }
             }
@@ -392,31 +412,39 @@ struct PermissionBar: View {
 struct PermissionsView: View {
     private let permissions = Permissions.shared
     private let sync = SettingsSync.shared
+    #if APPSTORE
+    @State private var asks = PrivacyAsksModel()
+    #endif
 
     var body: some View {
         let others = Permission.allCases.filter { $0.isShown && $0 != .accessibility && $0 != .inputMonitoring }
-        let allSet = others.allSatisfy(\.isGranted)
-            ? String(localized: "Both permissions are on and every tool is working.")
-            : String(localized: "Both permissions are on. Some tools also need a permission from the list below.")
+        let othersGranted = others.allSatisfy(\.isGranted)
+        let allSet = othersGranted
+            ? String(localized: "Both permissions are on and every tool is working")
+            : String(localized: "Some tools also need a permission from the list below")
+        let done = othersGranted ? String(localized: "All set") : String(localized: "Both permissions are on")
         Form {
             #if APPSTORE
             SettingsHeader(
                 tab: .permissions,
-                title: permissions.allGranted ? String(localized: "All set") : String(localized: "Permissions for some tools"),
+                title: permissions.allGranted ? done : String(localized: "Permissions for some tools"),
                 text: permissions.allGranted
                     ? allSet
-                    : String(localized: "Only some tools need these permissions. Everything else works without them.")
+                    : String(localized: "Only some tools need these permissions, and the rest work without them")
             )
             #else
             SettingsHeader(
                 tab: .permissions,
-                title: permissions.allGranted ? String(localized: "All set") : String(localized: "pikapik needs two permissions"),
+                title: permissions.allGranted ? done : String(localized: "pikapik needs two permissions"),
                 text: permissions.allGranted
                     ? allSet
                     : String(localized: "Without them, macOS won’t let the app see or change clicks and keys. Open System Settings › Privacy & Security and turn on pikapik in these two lists:")
             )
             #endif
             Section {
+                if let page = Permission.allCases.first(where: { $0.guidePage != nil && $0.isShown && !$0.isGranted })?.guidePage {
+                    SettingsGuide(pane: .privacy, steps: [.page(page), .app(on: true)])
+                }
                 PermissionRow(permission: .accessibility)
                 PermissionRow(permission: .inputMonitoring)
             } footer: {
@@ -437,6 +465,7 @@ struct PermissionsView: View {
             }
             Section("For some features") {
                 ForEach(others, id: \.self) { permission in
+                    if permission == .finder, !permission.isGranted { SettingsGuide.finderExtensions }
                     PermissionRow(permission: permission)
                     if let error = permission.error {
                         Label(error, systemImage: "exclamationmark.triangle.fill")
@@ -448,26 +477,21 @@ struct PermissionsView: View {
             #if APPSTORE
             Section {
                 ForEach(Permissions.privacyLists, id: \.pane) { list in
-                    LabeledContent {
-                        Button("Open", systemImage: "arrow.up.forward.app") { permissions.openSettings(list.pane) }
-                    } label: {
-                        HStack(spacing: 10) {
-                            PermissionIcon(type: list.icon, symbol: list.symbol)
-                            Text(list.title)
-                        }
-                    }
-                    .settingAnchor(list.pane)
+                    PrivacyListRow(title: list.title, icon: list.icon, symbol: list.symbol, pane: list.pane, apps: asks.apps)
+                        .settingAnchor(list.pane)
                 }
             } header: {
-                Text("Left by deleted apps")
+                NewTitle(title: "Other apps’ permissions", row: "apps-can-ask")
             } footer: {
-                Text("When you delete an app, macOS keeps the permissions you gave it. Open a list, select the deleted app and press −. If there’s no − button, turn its switch off.")
+                Text("Deleted apps keep their permissions: select one in the list and press − or turn it off.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .settingAnchor(String(localized: "Left by deleted apps"))
+            .onAppear { asks.refresh() }
+            .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in asks.refresh() }
             #else
             LeftoverPermissionsSection()
             #endif
@@ -553,7 +577,7 @@ private struct PermissionButton: View {
     }
 }
 
-private struct PermissionIcon: View {
+struct PermissionIcon: View {
     let type: String
     let symbol: String
 

@@ -68,9 +68,7 @@ final class ToolRegistry {
         #if !APPSTORE
         list.append(KeyRepeatTool())
         #endif
-        #if !APPSTORE
         list.append(HomeEndTool())
-        #endif
         list.append(LayoutFixTool())
         #if !APPSTORE
         list.append(PointerTool())
@@ -92,9 +90,14 @@ final class ToolRegistry {
         list.append(NewFileTool())
         list.append(CompressTool())
         list.append(ConvertTool())
-        #if !APPSTORE
+        #if APPSTORE
+        if Bundle.main.builtInPlugInsURL.map({ FileManager.default.fileExists(atPath: $0.appending(path: "Archive.appex").path) }) == true {
+            list.append(ArchiveTool())
+        }
+        #else
         list.append(ArchiveTool())
         #endif
+        // Without Accessibility the App Store build can't tell renaming from browsing: a click or a menu can start a rename.
         #if !APPSTORE
         list.append(FinderOpenTool())
         #endif
@@ -123,6 +126,10 @@ final class ToolRegistry {
         if GameModeTool.shared.isPlaying { return .playing }
         guard tools.contains(where: \.isEnabled) else { return .off }
         return tools.contains(where: \.isActive) ? .active : .needsAccess
+    }
+
+    var needsPermission: Bool {
+        tools.contains { $0.isEnabled && $0.needs.contains { !$0.isGranted } }
     }
 
     private init() {

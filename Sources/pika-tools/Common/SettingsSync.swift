@@ -146,7 +146,7 @@ final class SettingsSync {
             let sync = SettingsSync.shared
             switch sync.state {
             case .noDrive, .noAccess, .failed: sync.refresh()
-            default: break
+            default: sync.sync()
             }
         }
         #if APPSTORE

@@ -5,6 +5,87 @@
 
 ---
 
+## <a id="v1.50.3"></a>Meniurile colțurilor active și ale afișajului principal funcționează acum
+
+<sub>1.50.3 · 15 octombrie 2026</sub>
+
+În versiunea de pe site, meniul Modifică… de pe rândul unui colț activ și meniul Afișaj principal fac acum ce promit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+În versiunea 1.50.2, fiecare opțiune din aceste două meniuri apărea de trei ori, iar alegerea uneia nu schimba nimic. Acum fiecare opțiune apare o singură dată, cea curentă are o bifă, iar alegerea ta se aplică imediat. Colțurile active sunt în Setări › Jocuri, iar Afișaj principal sub Ține Dock-ul pe un singur ecran. Pune la loc sau oprirea comutatorului readuce în continuare totul exact ca înainte.
+
+---
+
+## <a id="v1.50.2"></a>pikapik face singur, fără drum prin Configurări sistem
+
+<sub>1.50.2 · 15 octombrie 2026</sub>
+
+În versiunea de pe site, oprirea unei sarcini în fundal, adăugarea unui aranjament de tastatură, schimbarea unui colț activ și alegerea afișajului principal se fac acum direct în pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/background-dark.png"><img src="../media/background-light.png" width="340" alt=""></picture>
+
+În Setări › Sarcini în fundal, oprește o sarcină și rândul ei se schimbă pe loc. Nu ai nevoie de parolă, iar alegerea ta rămâne după repornire. Pornește din nou readuce sarcina. Sarcinile pentru tot Mac-ul și ajutoarele adăugate de o aplicație singură deschid în continuare Configurări sistem, iar o linie sub rând spune de ce.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/layout-fix-dark.png"><img src="../media/layout-fix-light.png" width="340" alt=""></picture>
+
+Corectarea textului scris cu aranjamentul greșit funcționează când ai cel puțin două aranjamente de tastatură. Dacă ai doar unul, nota din Setări › Tastatură oferă acum aranjamente pentru limbile tale. Alege unul din Adaugă un aranjament și e gata pe loc, fără parolă. Dacă niciunul nu se potrivește, Configurări tastatură… rămâne acolo.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/dock-display-dark.png"><img src="../media/dock-display-light.png" width="340" alt=""></picture>
+
+În Setări › Jocuri, meniul Modifică… de pe rândul unui colț activ alege altă acțiune pentru acel colț. Sub Ține Dock-ul pe un singur ecran, meniul Afișaj principal face din afișajul ales cel principal, cu Dock-ul pe el. pikapik ține minte cum era: Pune la loc sau oprirea comutatorului readuce totul exact ca înainte.
+
+**Încearcă:** Setări › Sarcini în fundal
+
+**Reparat**
+
+- Minimizează sau ascunde cu un clic în Dock: dacă l-ai pornit când clicul minimiza ferestrele, nu mai trece singur la ascunderea aplicației după repornire.
+- Când deschizi pikapik, acesta verifică acum setările schimbate pe celălalt Mac al tău, așa că un Mac care a ratat schimbarea o prinde imediat din urmă.
+- Menține activ spune acum că rămâne pornit până îl oprești, iar Modul Joc nu mai propune un joc pe care l-ai adăugat deja.
+
+---
+
+## <a id="v1.50.0"></a>Mai mult pikapik în versiunea din Mac App Store
+
+<sub>1.50.0 · 15 octombrie 2026</sub>
+
+Deschide arhive, curăță desktopul, folosește Home și End și multe altele, acum și în versiunea din Mac App Store.
+
+**Nou în versiunea din Mac App Store**
+
+- **Deschide și creează arhive în Finder.** Dă clic dreapta pe o arhivă și alege „Extrage”. Ca să creezi una, dă clic dreapta pe fișiere și alege „Creează arhivă…”. Apasă Spațiu pe o arhivă ca să vezi ce conține. Aici, doar ZIP poate avea parolă.
+- **Un desktop curat.** Pornește „Ascunde pictogramele de pe desktop”, iar pikapik acoperă pictogramele cu fundalul tău. Clicurile ajung în continuare pe desktop și nu e nevoie de nicio permisiune.
+- **Home și End funcționează din nou.** Merg la începutul și la sfârșitul rândului, peste tot, în afară de browsere, Finder, Muzică și TV.
+- **Corectează cu o scurtătură textul scris cu aranjamentul greșit.** Selectează textul și apasă ⌃⇧Spațiu. Pornește „Corectează textul selectat” în Setări › Tastatură, unde poți schimba și tastele.
+- **Stinge ecranul dintr-un clic.** „Stinge ecranul acum” întunecă ecranul imediat, în timp ce Mac-ul tău continuă să lucreze. Mișcă mausul ca să-l readuci.
+- **Jocurile nu sunt deranjate.** În „Modul Joc”, scurtăturile Mac-ului, ca Spotlight, sunt puse pe pauză cât timp un joc e în prim-plan. Cursorul rămâne departe de colțurile ecranului, așa că colțurile active nu se declanșează.
+- **Cifrele bateriei au revenit.** „Baterie” arată din nou „Capacitate maximă” pe macOS 27, iar „Temperatură” arată temperatura bateriei.
+- **Vezi ce aplicații pot cere o permisiune.** „Permisiunile altor aplicații”, în Setări › Permisiuni, le arată cu pictogramele lor.
+- **Știi unde să dai clic.** Când macOS nu lasă pikapik să schimbe o setare, o animație scurtă arată unde să dai clic în Configurări sistem.
+
+**În ambele versiuni**
+
+- **Setează volumul înainte să pornească aplicația.** O aplicație pe care ai setat-o rămâne în Setări › Sunet cu cursorul ei, chiar și când este închisă, și primește înapoi nivelul când redă din nou sunet, inclusiv după o repornire. Apasă „Adaugă aplicație…” sau trage o aplicație din Finder ca s-o setezi din timp, iar ✕ o uită și îi readuce volumul maxim.
+- **Vezi ce a adus o actualizare.** După o actualizare, un punct albastru mic marchează fiecare filă din Setări cu ceva nou, iar o etichetă „Nou” marchează secțiunea. Dispar când te-ai uitat și, de la sine, după 21 de zile.
+- **O primă pornire liniștită.** Versiunea de pe site nu mai cere permisiuni la prima deschidere. Întreabă doar când pornești un instrument care are nevoie de una.
+- **Copii mai mici ale videoclipurilor.** „Creează o copie mai mică” face acum un videoclip cam pe jumătate de mărime. Înainte, majoritatea videoclipurilor primeau „Deja compact”.
+- **Două copii se înțeleg.** Dacă folosești împreună versiunea din App Store și cea de pe site, nu se mai anulează una pe alta. ⇧⌘Q și ⇧⌘W funcționează din nou în jocuri.
+- **Jocurile revin după repaus.** „Modul Joc” se pornește iar singur când Mac-ul se trezește.
+- **„Porturi” spune adevărul.** Pe macOS 27, un port folosit de macOS sau de alt utilizator nu mai e numit liber.
+- **Raportarea unei probleme e mai rapidă.** „Raportează o problemă”, în Setări › Despre, deschide formularul cu versiunea ta deja aleasă.
+- **Arhive fără sacadări.** Bara de progres se mișcă în timp ce o arhivă se dezarhivează, o parolă greșită este anunțată pe loc, iar Mac-ul nu mai adoarme în mijlocul dezarhivării sau al creării.
+- **Un panou mai stabil în bara de meniu.** Când deschizi un rând din panou, de exemplu opțiunile ecranului de sub „Menține activ”, bara de derulare nu mai clipește. Săgeata de lângă „Menține activ” spune acum „Setări ecran”.
+- **Porturi se explică singure.** Un rând sub titlu spune ce este un port, iar o animație mică arată că printr-o ușă încape un singur program. Programele tale și cele pe care e mai bine să le lași în pace au acum nume clare.
+- **Setările spun clar.** Fiecare filă începe cu un rând despre ce primești acolo, bara laterală are spații între grupuri, iar „Menține activ”, „Permisiuni” și „Baterie” spun exact ce se întâmplă. Butonul „Sunt necesare permisiuni” apare doar când unui instrument pornit de tine îi lipsește una.
+
+**Reparat în versiunea din Mac App Store**
+
+- După ⌘X, ⌘V în Finder mută acum fișierele, ca în versiunea de pe site. Înainte, doar le copia.
+- „Fișier nou în Finder”, „Copie mai mică în Finder” și „Conversie în Finder” arată fiecare propria stare. Înainte, după ce porneai unul, păreau pornite toate trei.
+- Pagina „Porturi” goală a dispărut. macOS nu arată acestei versiuni ce program ține un port, așa că în Setări › Porturi nu era nimic de arătat.
+
+---
+
 ## <a id="v1.49.0"></a>Luminozitate pentru fiecare monitor
 
 <sub>1.49.0 · 13 octombrie 2026</sub>

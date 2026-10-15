@@ -26,7 +26,7 @@ struct SettingsFile {
         "animations-speed", "animations-dock-delay", "animations-dock-speed", "animations-minimize", "animations-bounce",
         "animations-window-open", "animations-resize", "animations-quick-look", "animations-finder-columns", "animations-finder",
         "pet", "pet-talks", "pet-rhythm", "pet-ball", "uninstaller-trash-watch",
-        "app-volume", "app-volume-levels", "app-volume-muted",
+        "app-volume", "app-volume-levels", "app-volume-muted", "app-volume-names",
     ] + GameRule.allCases.map(\.key))
 
     var settings: [String: Any]
@@ -67,7 +67,7 @@ struct SettingsFile {
 
     static func isValid(_ value: Any) -> Bool {
         if value is String || value is NSNumber { return true }
-        if let table = value as? [String: Any] { return table.values.allSatisfy { $0 is NSNumber } }
+        if let table = value as? [String: Any] { return table.values.allSatisfy { $0 is NSNumber || $0 is String } }
         guard let list = value as? [Any] else { return false }
         return list.allSatisfy { $0 is String }
     }
