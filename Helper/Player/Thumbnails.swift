@@ -94,7 +94,7 @@ final class Thumbnails {
 
     init(url: URL, size: CGSize, duration: Double) {
         self.url = url
-        self.size = PlayerThumbnail.size(for: size)
+        self.size = PlayerThumbnail.size(for: size).applying(CGAffineTransform(scaleX: 2, y: 2))
         self.duration = duration
         cache.countLimit = PlayerThumbnail.buckets
     }
@@ -187,7 +187,7 @@ final class ThumbnailPreview: NSView {
         label.stringValue = time
         picture.isHidden = image == nil
         guard let image else { return }
-        picture.image = NSImage(cgImage: image, size: NSSize(width: image.width, height: image.height))
+        picture.image = NSImage(cgImage: image, size: NSSize(width: image.width / 2, height: image.height / 2))
     }
 
     override func hitTest(_ point: NSPoint) -> NSView? { nil }

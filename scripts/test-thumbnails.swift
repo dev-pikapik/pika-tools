@@ -90,7 +90,7 @@ enum TestThumbnails {
         ]
         for (name, url) in clips {
             let middle = thumbnail(url, size: CGSize(width: 320, height: 180), duration: 10, at: 0.5)
-            check(middle.map { $0.width == 160 && $0.height == 90 } ?? false, "\(name): the 50 % picture is 160 × 90")
+            check(middle.map { $0.width == 320 && $0.height == 180 } ?? false, "\(name): the 50 % picture is 320 × 180, sharp on a Retina screen")
             let data = middle.map(pixels) ?? []
             check(Set(stride(from: 0, to: data.count, by: 4).map { Int(data[$0]) << 16 | Int(data[$0 + 1]) << 8 | Int(data[$0 + 2]) }).count > 50, "\(name): the picture is not empty")
             let start = thumbnail(url, size: CGSize(width: 320, height: 180), duration: 10, at: 0)
@@ -103,7 +103,7 @@ enum TestThumbnails {
 
         let tall = make(ffmpeg, "tall.mp4", in: folder, ["-f", "lavfi", "-i", "testsrc2=size=180x320:rate=25:duration=4", "-c:v", "libx264", "-pix_fmt", "yuv420p"])
         let shape = thumbnail(tall, size: CGSize(width: 180, height: 320), duration: 4, at: 0.5)
-        check(shape.map { $0.width == 50 && $0.height == 90 } ?? false, "a tall video keeps its shape: \(shape.map { "\($0.width) × \($0.height)" } ?? "none")")
+        check(shape.map { $0.width == 100 && $0.height == 180 } ?? false, "a tall video keeps its shape: \(shape.map { "\($0.width) × \($0.height)" } ?? "none")")
 
         let (count, released) = fillAll(clips[0].1)
         check(count == PlayerThumbnail.buckets, "one hover fills all \(PlayerThumbnail.buckets) pictures in the background (\(count))")
