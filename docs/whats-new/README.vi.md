@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Video mà QuickTime không mở được giờ đã phát được
+
+<sub>1.51.0 · 15 tháng 10 năm 2026</sub>
+
+Ở phiên bản tải từ trang web, MKV, WebM, AVI, WMV, FLV và các video khác mà QuickTime không mở được giờ phát được trong pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Bấm chuột phải vào một video và chọn Mở bằng › pikapik Player, hoặc bấm Mở video… trong Cài đặt › Trình phát. Video phát trong cửa sổ riêng: phím cách phát và tạm dừng, ← và → tua 5 giây, ↑ và ↓ đổi âm lượng, F bật toàn màn hình.
+
+Trình phát là một ứng dụng nhỏ, riêng biệt. Nó chỉ thấy những video bạn mở, không thể vào internet và không xin quyền nào. Ứng dụng mặc định mở video của bạn vẫn giữ nguyên. Phụ đề chưa được hỗ trợ.
+
+**Thử ngay:** Cài đặt › Trình phát
+
+---
+
 ## <a id="v1.50.3"></a>Menu góc nóng và màn hình chính giờ đã hoạt động
 
 <sub>1.50.3 · 15 tháng 10 năm 2026</sub>
