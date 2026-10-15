@@ -126,7 +126,8 @@
 "Quit app" = "Avsluta app";
 "Close window" = "Stäng fönster";
 "Only with all three keys" = "Bara med alla tre tangenterna";
-"Works as usual" = "Som vanligt";
+"Turn on to avoid quitting by accident" = "Slå på för att inte avsluta av misstag";
+"Turn on to avoid closing by accident" = "Slå på för att inte stänga fönstret av misstag";
 "quit, close, command, accidental, shortcut" = "avsluta, stänga, kommando, command, av misstag, kortkommando";
 "Quit when the last window closes" = "Avsluta när sista fönstret stängs";
 "Closing an app’s last window quits the app. Finder stays open." = "Om du stänger en apps sista fönster avslutas appen. Finder förblir öppen.";
@@ -170,8 +171,8 @@
 "Tracking speed" = "Pekarhastighet";
 "Side buttons go back and forward" = "Sidoknapparna går bakåt och framåt";
 "Swap the side buttons" = "Byt plats på sidoknapparna";
-"Button 4 goes back, button 5 goes forward" = "Knapp 4 går bakåt, knapp 5 går framåt";
-"Button 4 goes forward, button 5 goes back" = "Knapp 4 går framåt, knapp 5 går bakåt";
+"Rear button goes back, front button goes forward" = "Bakre knappen går bakåt, främre knappen går framåt";
+"Rear button goes forward, front button goes back" = "Bakre knappen går framåt, främre knappen går bakåt";
 "linear, mouse acceleration, sensitivity" = "linjär, musacceleration, känslighet";
 "pointer speed, sensitivity, fast, slow" = "pekarhastighet, känslighet, snabb, långsam";
 "buttons 4 and 5, browser, navigation, thumb buttons" = "knapp 4 och 5, webbläsare, navigering, tumknappar";
@@ -229,7 +230,7 @@
 "This file can’t be imported" = "Den här filen kan inte importeras";
 "It isn’t a pikapik settings file, or it’s damaged." = "Det är inte en inställningsfil för pikapik, eller så är den skadad.";
 "Lets the app keep your settings in iCloud Drive to sync them" = "Låter appen spara dina inställningar i iCloud Drive för att synkronisera dem";
-"Mouse buttons 4 and 5 go back and forward, like a trackpad swipe." = "Musknapp 4 och 5 går bakåt och framåt, som ett svep på styrplattan.";
+"The two side buttons of the mouse go back and forward, like a trackpad swipe." = "De två sidoknapparna på musen går bakåt och framåt, som ett svep på styrplattan.";
 "Like a trackpad swipe" = "Som ett svep på styrplattan";
 "Repeat a held key" = "Upprepa en nedhållen tangent";
 "Holding a key repeats it instead of opening the accent menu. Restart open apps to apply." = "En nedhållen tangent upprepas i stället för att öppna accentmenyn. Starta om öppna appar för att det ska gälla.";
@@ -1134,7 +1135,7 @@
 "Remote Management" = "Fjärrhanterare";
 "AirPlay Receiver" = "AirPlay-mottagare";
 "Retype words you typed in the wrong language" = "Skriv om ord som skrivits på fel språk";
-"A word typed in the wrong layout is retyped in the right one, and the layout switches." = "Ett ord som skrivits med fel layout skrivs om med rätt layout, och layouten byts.";
+"And the keyboard switches to the right language" = "Och tangentbordet byter till rätt språk";
 "Fixed when you press Space" = "Rättas när du trycker på Mellanslag";
 "Press %@ to fix" = "Tryck på %@ för att rätta";
 "Press %@ right after a fix to undo it. That word won’t be fixed again." = "Tryck på %@ direkt efter en rättning för att ångra den. Det ordet rättas inte igen.";
@@ -1204,7 +1205,7 @@
 "Hidden files and folders, like Library, appear dimmed in Finder and on the desktop, the same as pressing ⇧⌘. in Finder. To apply the change, Finder restarts for a moment and reopens its windows and tabs. If Finder is copying or moving files, it waits until they are done." = "Gömda filer och mappar, som Bibliotek, visas nedtonade i Finder och på skrivbordet, precis som när du trycker på ⇧⌘. i Finder. För att ändringen ska gälla startar Finder om snabbt och öppnar sina fönster och flikar igen. Om Finder kopierar eller flyttar filer startar den om först när den är klar.";
 "Turn off “On Desktop”" = "Stäng av ”På skrivbordet”";
 "Or hide them in System Settings" = "Eller göm dem i Systeminställningar";
-"Press these keys in Finder, and again to hide them" = "Tryck på de här tangenterna i Finder, och igen för att gömma dem";
+"Press in Finder to show or hide" = "Tryck i Finder för att visa eller dölja";
 "desktop, icons, files, folders, clean, hide, presentation, screen sharing, recording, screenshot, Stage Manager" = "skrivbord, symboler, filer, mappar, städa, gömma, presentation, skärmdelning, inspelning, skärmbild, Blickfång";
 "hidden, invisible, dot files, system files, Library, show all files, Command Shift Period" = "gömda, osynliga, punktfiler, systemfiler, Bibliotek, visa alla filer, Kommando Skift punkt";
 "Brightness" = "Ljusstyrka";
@@ -1297,4 +1298,6 @@
 "Info" = "Information";
 "Another copy of pikapik is in charge" = "En annan kopia av pikapik styr just nu";
 "This copy changes nothing on your Mac and takes over when the other copy quits." = "Den här kopian ändrar ingenting på din Mac och tar över när den andra kopian avslutas.";
+"Mac App Store version %@" = "Version från Mac App Store %@";
+"Website version %@" = "Version från webbplatsen %@";
 "Make This Copy the Main One" = "Gör den här kopian till huvudkopia";

@@ -225,7 +225,7 @@ private struct CommandKeysSettings: View {
                         others: [(String(localized: "Already used for “\(other.title)”"), other.keys)]
                     )
                 } else {
-                    KeyLabel(keys: ["⌘" + letter], title: Text(title), subtitle: Text("Works as usual"))
+                    KeyLabel(keys: ["⌘" + letter], title: Text(title), subtitle: standard == .quit ? Text("Turn on to avoid quitting by accident") : Text("Turn on to avoid closing by accident"))
                 }
             }
             .settingAnchor(title)
