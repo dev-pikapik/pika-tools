@@ -63,6 +63,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Every swiftc test line of CONTRIBUTING.md runs here, except test-fan-helper (needs the "pikapik Dev"
+      # signing identity) and test-thumbnails (needs the FFmpeg build in Vendor/ffmpeg, which only the Direct job makes).
       - name: Run the tests from CONTRIBUTING.md
         run: |
           mkdir -p build

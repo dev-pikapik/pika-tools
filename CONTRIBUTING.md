@@ -112,10 +112,22 @@ The language switch uses a listen-only `CGEventTap`, so it never changes or dela
 swiftc -parse-as-library Sources/pika-tools/Tools/InputSwitch/InputSwitchGesture.swift scripts/test-input-switch.swift -o build/test-input-switch && build/test-input-switch
 ```
 
+In a game the language switch needs a short, deliberate Option and Shift: a game key still held, or modifiers held longer than 0.45 seconds, leave the game the keys. `GameInputIntent` decides this:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Games/GameInputIntent.swift scripts/test-game-language.swift -o build/test-game-language && build/test-game-language
+```
+
 Middle click on the trackpad uses two `CGEventTap`s. A listen-only one reads the fingers from gesture events with `NSEvent.allTouches()`, leaving out resting thumbs, and `MiddleClickGesture` decides when a quick tap with the chosen number of fingers ends; pikapik then posts a middle button click at the pointer. The other one turns a left or right press made while that many fingers are down into the middle button: down, drag and up. Both read the trackpad settings each time, so a three-finger tap stays with Look up and a three-finger press with three-finger drag. The tap decision can be tested without the app:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Mouse/MiddleClickGesture.swift scripts/test-middle-click.swift -o build/test-middle-click && build/test-middle-click
+```
+
+`WheelStep` turns each mouse wheel notch into a fixed number of lines or pixels and leaves trackpad scrolling alone, and `ScrollDirection` sets the direction for the mouse and the trackpad separately. The same test checks how `SettingsFile` merges settings from another Mac:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-scroll.swift -o build/test-scroll && build/test-scroll
 ```
 
 Animations writes hidden macOS preferences with `CFPreferencesSetAppValue`: the Dock keys go to `com.apple.dock`, the Finder key to `com.apple.finder` and the rest to the global domain. pikapik remembers which keys it wrote, so Restore Defaults and `--uninstall` delete exactly those; a value set in Terminal is shown as it is and stays until you move its slider. A change to a Dock key restarts the Dock once, 0.6 seconds after the last change, and Finder restarts only from its button. The slider math and what gets written live in `AnimationSetting`, which you can test without the app:
@@ -184,6 +196,18 @@ The helper that runs as root sets the fan speed and, in the website version, tur
 swiftc -parse-as-library Sources/pika-tools/Common/FanHelperProtocol.swift scripts/test-fan-helper.swift -o build/test-fan-helper && codesign -f -s "${SIGN_IDENTITY:-pikapik Dev}" build/test-fan-helper && build/test-fan-helper
 ```
 
+The fan speeds and temperatures come from the SMC. `SMCCodec` turns its bytes into numbers and back and keeps a requested fan speed between the fan's minimum and maximum:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SMC.swift scripts/test-fans.swift -o build/test-fans && build/test-fans
+```
+
+`ThermalSensors` picks which SMC sensors stand for the processor, graphics, memory, storage, battery and Wi-Fi on each chip family, from M1 to M5, and on Intel:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/Temperatures.swift scripts/test-temps.swift -o build/test-temps && build/test-temps
+```
+
 The same helper switches launch daemons off and on with `launchctl disable` and `bootout`, or `enable` and `bootstrap`, for `system/<label>`. It takes only a label and finds the file itself, so the app never hands it a path. A label must use letters, digits, dots, hyphens and underscores, must not start with `com.apple.` or be pikapik’s own, and must be the `Label` of a regular file (not a link) directly inside `/Library/LaunchDaemons`. The only exceptions are Remote Login (`com.openssh.sshd`) and Screen Sharing (`com.apple.screensharing`), which have fixed files in `/System/Library/LaunchDaemons`. File Sharing (`com.apple.smbd`) is left out: macOS 27 has no launchd on/off entry for it (the other two have one), so System Settings stays the way to change it. Change the allow-list only together with this test:
 
 ```bash
@@ -194,6 +218,12 @@ iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pika
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-folder.swift -o build/test-settings-folder && build/test-settings-folder
+```
+
+The search field in Settings matches words in any order, ignores accents and understands shortcuts typed as words, so Ctrl+Space finds ⌃Space. The rules live in `SettingsSearch`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift scripts/test-settings-search.swift -o build/test-settings-search && build/test-settings-search
 ```
 
 The app also reads the file whenever it comes to the front, so a change that arrived while it sat in the background is picked up. This check writes newer settings from "another Mac" into the local build's folder and waits for them to be applied. It needs `./scripts/build.sh` first and switches between apps, so it refuses to run unless the keyboard and mouse have been idle for two minutes:
@@ -212,6 +242,12 @@ swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Sources/pika-tools/Tools/Uninstaller/AppRemover.swift scripts/test-app-remover.swift -o build/test-app-remover && build/test-app-remover
+```
+
+`AppShelf` reads apps dragged onto a page from the pasteboard and ignores other files and folders. Game Mode also accepts a bare program and a process row dragged from Activity Monitor:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-app-drop.swift -o build/test-app-drop && build/test-app-drop
 ```
 
 The Uninstaller page keeps its choices in `UninstallerLogic`: how the app list is sorted, what is ticked and what is not, the total on the **Move to Trash** button, how apps in the Trash and leftovers of removed apps are shown, and the wording of sizes and dates. The test gives it made-up apps and files, so nothing real is read or touched:
@@ -238,6 +274,12 @@ The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR
 swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive
 ```
 
+The archive windows are an `ArchivePanel`: the red button, a VoiceOver press and closing twice all answer the question only once:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-archive-panel.swift -o build/test-archive-panel && build/test-archive-panel
+```
+
 `Battery.swift` turns the readings from IOKit into a `BatteryState` and a `BatteryHealth`, and `BatterySettings.swift` shows them on the read-only Battery page. The battery condition comes from `system_profiler` in the direct version and straight from IOKit in the App Store version, which starts no other program. The test feeds them made-up readings, so it runs on a Mac without a battery; the second line checks the App Store version:
 
 ```bash
@@ -249,6 +291,12 @@ The **Ports** page learns which programs listen on which ports from the same ker
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Ports/PortScanner.swift scripts/test-ports.swift -o build/test-ports && codesign -s - -f -i com.pesotchi.pika-tools.test-ports build/test-ports && build/test-ports
+```
+
+The **Speed Test** page runs `networkQuality`. `SpeedResult` reads its JSON and the live progress lines and works out how long a big download would take:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/SpeedTest/SpeedResult.swift scripts/test-speed-test.swift -o build/test-speed-test && build/test-speed-test
 ```
 
 The **Brightness** page changes the brightness of monitors macOS can’t adjust on its own: it asks the monitor itself through its cable or, if the monitor doesn’t listen, dims the picture. `BrightnessMath.swift` holds the parts that need no monitor: the messages that set and read the brightness with their checksums, reading the monitor’s answer even when HDMI repeats a byte or two, the maker, model and serial number from the monitor’s EDID, how dark the picture gets and the steps of the brightness keys. The test feeds it made-up bytes and never talks to a monitor:
