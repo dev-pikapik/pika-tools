@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>I video che QuickTime non apre ora si riproducono
+
+<sub>1.51.0 · 15 ottobre 2026</sub>
+
+Nella versione dal sito, i video MKV, WebM, AVI, WMV, FLV e altri che QuickTime non apre ora si riproducono in pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Fai clic destro su un video e scegli Apri con › pikapik Player, oppure fai clic su Apri video… in Impostazioni › Lettore. Il video si riproduce in una finestra tutta sua: la barra spaziatrice avvia e mette in pausa, ← e → saltano di 5 secondi, ↑ e ↓ cambiano il volume e F passa a schermo intero.
+
+Il lettore è una piccola app a parte. Vede solo i video che apri, non può andare su internet e non chiede nessun permesso. L’app che apre i tuoi video di solito resta la stessa. I sottotitoli non sono ancora supportati.
+
+**Provalo:** Impostazioni › Lettore
+
+---
+
 ## <a id="v1.50.3"></a>I menu degli angoli attivi e dello schermo principale ora funzionano
 
 <sub>1.50.3 · 15 ottobre 2026</sub>

@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Videor som QuickTime inte öppnar spelas nu upp
+
+<sub>1.51.0 · 15 oktober 2026</sub>
+
+I webbversionen spelas MKV, WebM, AVI, WMV, FLV och andra videor som QuickTime inte öppnar nu upp i pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Högerklicka på en video och välj Öppna med › pikapik Player, eller klicka på Öppna video… i Inställningar › Spelare. Videon spelas upp i ett eget fönster: mellanslag spelar upp och pausar, ← och → hoppar 5 sekunder, ↑ och ↓ ändrar volymen och F växlar till helskärm.
+
+Spelaren är en liten, separat app. Den ser bara videorna du öppnar, kan inte gå ut på internet och ber inte om några behörigheter. Appen som öppnar dina videor som standard förblir densamma. Undertexter stöds inte ännu.
+
+**Prova:** Inställningar › Spelare
+
+---
+
 ## <a id="v1.50.3"></a>Menyerna för aktiva hörn och huvudbildskärm fungerar nu
 
 <sub>1.50.3 · 15 oktober 2026</sub>

@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center">Small fixes for the keyboard, mouse, windows and Finder, right in your Mac’s menu bar.</p>
+<p align="center"><b>Your Mac, doing what you mean.</b><br>Small fixes for the keyboard, mouse, windows and Finder, right in your Mac’s menu bar.</p>
 <p align="center"><sub><b>English</b> · <a href="docs/readme/README.ru.md">Русский</a> · <a href="docs/readme/README.uk.md">Українська</a> · <a href="docs/readme/README.de.md">Deutsch</a> · <a href="docs/readme/README.fr.md">Français</a> · <a href="docs/readme/README.es.md">Español</a> · <a href="docs/readme/README.it.md">Italiano</a> · <a href="docs/readme/README.pt-BR.md">Português (Brasil)</a> · <a href="docs/readme/README.ja.md">日本語</a> · <a href="docs/readme/README.zh-Hans.md">简体中文</a> · <a href="docs/readme/README.ko.md">한국어</a> · <a href="docs/readme/README.ro.md">Română</a> · <a href="docs/readme/README.pl.md">Polski</a> · <a href="docs/readme/README.tr.md">Türkçe</a> · <a href="docs/readme/README.nl.md">Nederlands</a> · <a href="docs/readme/README.sv.md">Svenska</a> · <a href="docs/readme/README.cs.md">Čeština</a> · <a href="docs/readme/README.zh-Hant.md">繁體中文</a> · <a href="docs/readme/README.ar.md">العربية</a> · <a href="docs/readme/README.hi.md">हिन्दी</a> · <a href="docs/readme/README.id.md">Bahasa Indonesia</a> · <a href="docs/readme/README.vi.md">Tiếng Việt</a> · <a href="docs/readme/README.th.md">ไทย</a></sub></p>
 
 <p align="center">

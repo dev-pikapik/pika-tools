@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>Video’s die QuickTime niet opent, spelen nu af
+
+<sub>1.51.0 · 15 oktober 2026</sub>
+
+In de versie van de website spelen MKV, WebM, AVI, WMV, FLV en andere video’s die QuickTime niet opent nu af in pikapik Player.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Klik met rechts op een video en kies Open met › pikapik Player, of klik op Open video… in Instellingen › Speler. De video speelt af in een eigen venster: de spatiebalk start en pauzeert, ← en → springen 5 seconden, ↑ en ↓ veranderen het volume en F zet hem schermvullend.
+
+De speler is een kleine, losse app. Hij ziet alleen de video’s die je opent, kan niet op internet en vraagt geen toestemmingen. De app die je video’s standaard opent, blijft dezelfde. Ondertitels worden nog niet ondersteund.
+
+**Probeer het:** Instellingen › Speler
+
+---
+
 ## <a id="v1.50.3"></a>De menu’s voor actieve hoeken en hoofdbeeldscherm werken nu
 
 <sub>1.50.3 · 15 oktober 2026</sub>

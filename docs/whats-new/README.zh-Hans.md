@@ -5,6 +5,22 @@
 
 ---
 
+## <a id="v1.51.0"></a>QuickTime 打不开的视频，现在能播放了
+
+<sub>1.51.0 · 2026年10月15日</sub>
+
+在网站版中，QuickTime 打不开的 MKV、WebM、AVI、WMV、FLV 等视频，现在可以用 pikapik Player 播放了。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+右键点按视频，选择“打开方式”›“pikapik Player”，或者在“设置”›“播放器”中点按“打开视频…”。视频会在独立窗口中播放：空格键播放和暂停，← 和 → 跳转 5 秒，↑ 和 ↓ 调节音量，F 进入全屏。
+
+播放器是一个独立的小应用。它只能看到你打开的视频，无法联网，也不需要任何权限。默认打开视频的应用保持不变。暂不支持字幕。
+
+**试试看：** 设置 › 播放器
+
+---
+
 ## <a id="v1.50.3"></a>触发角和主显示器的菜单现在能用了
 
 <sub>1.50.3 · 2026年10月15日</sub>
