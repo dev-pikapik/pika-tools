@@ -27,9 +27,9 @@ Com duas cópias do pikapik abertas, por exemplo a do site e a da App Store, só
 - Encerrar app e Fechar janela mostram em uma imagem o que as teclas fazem.
 - ⇧⌘. agora fica direto na linha Mostrar arquivos ocultos.
 - A barra lateral dos Ajustes tem nomes para os grupos.
-- Player, na versão do site: teclas do QuickTime, volume com a rodinha, velocidade e retomada de onde você parou.
+- Player, na versão do site: as mesmas teclas do QuickTime Player, volume com a rodinha, velocidade e retomada de onde você parou.
 
-**Experimente:** Ajustes › Teclado
+**Experimente:** Ajustes › Teclado, Ajustes › Mouse
 
 **Corrigido**
 

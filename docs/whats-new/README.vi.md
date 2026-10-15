@@ -27,9 +27,9 @@ Khi hai bản pikapik cùng mở, ví dụ bản từ trang web và bản từ A
 - Thoát ứng dụng và Đóng cửa sổ cho thấy bằng hình ảnh các phím làm gì.
 - ⇧⌘. nay nằm ngay trong dòng Hiện tệp ẩn.
 - Thanh bên của Cài đặt có tên cho các nhóm.
-- Trình phát, ở phiên bản từ trang web: phím giống QuickTime, chỉnh âm lượng bằng con lăn, tốc độ và phát tiếp từ chỗ đã dừng.
+- Trình phát, ở phiên bản từ trang web: phím giống như QuickTime Player, chỉnh âm lượng bằng con lăn, tốc độ và phát tiếp từ chỗ đã dừng.
 
-**Thử ngay:** Cài đặt › Bàn phím
+**Thử ngay:** Cài đặt › Bàn phím, Cài đặt › Chuột
 
 **Đã sửa**
 

@@ -27,9 +27,9 @@ Sind zwei Kopien von pikapik offen, etwa die von der Website und die aus dem App
 - App beenden und Fenster schließen zeigen in einem Bild, was die Tasten tun.
 - ⇧⌘. steht jetzt direkt in der Zeile Versteckte Dateien einblenden.
 - Die Seitenleiste der Einstellungen hat jetzt Namen für die Gruppen.
-- Player, in der Version von der Website: Tasten wie in QuickTime, Lautstärke per Mausrad, Tempo, und er macht dort weiter, wo Sie aufgehört haben.
+- Player, in der Version von der Website: dieselben Tasten wie im QuickTime Player, Lautstärke per Mausrad, Tempo, und er macht dort weiter, wo Sie aufgehört haben.
 
-**Ausprobieren:** Einstellungen › Tastatur
+**Ausprobieren:** Einstellungen › Tastatur, Einstellungen › Maus
 
 **Behoben**
 

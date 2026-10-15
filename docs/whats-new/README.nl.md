@@ -27,9 +27,9 @@ Zijn er twee exemplaren van pikapik open, bijvoorbeeld dat van de website en dat
 - Stop app en Sluit venster laten in een plaatje zien wat de toetsen doen.
 - ⇧⌘. staat nu direct in de rij Verborgen bestanden tonen.
 - De navigatiekolom van de instellingen heeft namen voor de groepen.
-- Speler, in de versie van de website: toetsen van QuickTime, volume met het scrollwiel, snelheid, en hij gaat verder waar je was gebleven.
+- Speler, in de versie van de website: dezelfde toetsen als in QuickTime Player, volume met het scrollwiel, snelheid, en hij gaat verder waar je was gebleven.
 
-**Probeer het:** Instellingen › Toetsenbord
+**Probeer het:** Instellingen › Toetsenbord, Instellingen › Muis
 
 **Opgelost**
 

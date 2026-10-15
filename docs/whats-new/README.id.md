@@ -27,9 +27,9 @@ Jika dua salinan pikapik terbuka, misalnya dari situs web dan dari App Store, ha
 - Keluar dari app dan Tutup jendela menampilkan lewat gambar apa yang dilakukan tombol-tombol itu.
 - ⇧⌘. kini langsung ada di baris Tampilkan file tersembunyi.
 - Bar samping Pengaturan kini punya nama grup.
-- Pemutar, di versi situs web: tombol seperti QuickTime, volume dengan roda gulir, kecepatan, dan lanjut dari tempat terakhir berhenti.
+- Pemutar, di versi situs web: tombol yang sama seperti di QuickTime Player, volume dengan roda gulir, kecepatan, dan lanjut dari tempat terakhir berhenti.
 
-**Coba:** Pengaturan › Papan Ketik
+**Coba:** Pengaturan › Papan Ketik, Pengaturan › Tetikus
 
 **Diperbaiki**
 

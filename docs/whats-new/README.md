@@ -27,9 +27,9 @@ With two copies of pikapik open, say the website one and the App Store one, only
 - Quit app and Close window show in a picture what the keys do.
 - ⇧⌘. now sits right in the Show hidden files row.
 - The Settings sidebar has group names.
-- Player, in the website version: QuickTime keys, volume with the scroll wheel, speed, and it continues where you stopped.
+- Player, in the website version: the same keys as QuickTime Player, volume with the scroll wheel, speed, and it continues where you stopped.
 
-**Try it:** Settings › Keyboard
+**Try it:** Settings › Keyboard, Settings › Mouse
 
 **Fixed**
 

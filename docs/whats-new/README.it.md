@@ -27,9 +27,9 @@ Con due copie di pikapik aperte, per esempio quella del sito e quella dell’App
 - Esci dall’app e Chiudi finestra mostrano in un’immagine cosa fanno i tasti.
 - ⇧⌘. ora si trova direttamente nella riga Mostra i file nascosti.
 - La barra laterale delle Impostazioni ha i nomi dei gruppi.
-- Lettore, nella versione dal sito: tasti di QuickTime, volume con la rotella, velocità e ripresa da dove ti eri fermato.
+- Lettore, nella versione dal sito: gli stessi tasti di QuickTime Player, volume con la rotella, velocità e ripresa da dove ti eri fermato.
 
-**Provalo:** Impostazioni › Tastiera
+**Provalo:** Impostazioni › Tastiera, Impostazioni › Mouse
 
 **Corretto**
 

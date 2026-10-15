@@ -27,9 +27,9 @@ pikapik’in iki kopyası açıksa, örneğin web sitesindeki ve App Store’dak
 - Uygulamadan çık ve Pencereyi kapat, tuşların ne yaptığını resimle gösterir.
 - ⇧⌘. artık doğrudan Gizli dosyaları göster satırında.
 - Ayarlar kenar çubuğunda grup adları var.
-- Oynatıcı, web sitesi sürümünde: QuickTime tuşları, tekerlekle ses, hız ve kaldığınız yerden devam.
+- Oynatıcı, web sitesi sürümünde: QuickTime Player ile aynı tuşlar, tekerlekle ses, hız ve kaldığınız yerden devam.
 
-**Deneyin:** Ayarlar › Klavye
+**Deneyin:** Ayarlar › Klavye, Ayarlar › Fare
 
 **Düzeltilenler**
 

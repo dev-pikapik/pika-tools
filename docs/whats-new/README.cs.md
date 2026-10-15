@@ -27,9 +27,9 @@ Když jsou otevřené dvě kopie pikapiku, například ta z webu a ta z App Stor
 - Ukončit aplikaci a Zavřít okno ukazují na obrázku, co klávesy dělají.
 - ⇧⌘. je teď přímo v řádku Zobrazit skryté soubory.
 - Postranní panel nastavení má názvy skupin.
-- Přehrávač, ve verzi z webu: klávesy jako v QuickTimu, hlasitost kolečkem, rychlost a pokračování tam, kde jste skončili.
+- Přehrávač, ve verzi z webu: stejné klávesy jako v QuickTime Playeru, hlasitost kolečkem, rychlost a pokračování tam, kde jste skončili.
 
-**Vyzkoušejte:** Nastavení › Klávesnice
+**Vyzkoušejte:** Nastavení › Klávesnice, Nastavení › Myš
 
 **Opraveno**
 

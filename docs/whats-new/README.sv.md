@@ -27,9 +27,9 @@ Musens sidoknappar går nu bakåt och framåt i nästan alla appar, och igen i p
 - Avsluta app och Stäng fönster visar i en bild vad tangenterna gör.
 - ⇧⌘. finns nu direkt i raden Visa gömda filer.
 - Sidofältet i inställningarna har namn på grupperna.
-- Spelaren, i webbversionen: QuickTime-tangenter, volym med hjulet, hastighet, och den fortsätter där du slutade.
+- Spelaren, i webbversionen: samma tangenter som i QuickTime Player, volym med hjulet, hastighet, och den fortsätter där du slutade.
 
-**Prova:** Inställningar › Tangentbord
+**Prova:** Inställningar › Tangentbord, Inställningar › Mus
 
 **Åtgärdat**
 

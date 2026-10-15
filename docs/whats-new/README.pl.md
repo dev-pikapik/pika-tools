@@ -27,9 +27,9 @@ Gdy otwarte są dwie kopie pikapika, na przykład ze strony i z App Store, cokol
 - Zakończ aplikację i Zamknij okno pokazują na obrazku, co robią klawisze.
 - ⇧⌘. jest teraz bezpośrednio w wierszu Pokaż ukryte pliki.
 - Pasek boczny ustawień ma nazwy grup.
-- Odtwarzacz, w wersji ze strony: klawisze jak w QuickTime, głośność kółkiem, prędkość i wznawianie od miejsca zatrzymania.
+- Odtwarzacz, w wersji ze strony: te same klawisze co w QuickTime Player, głośność kółkiem, prędkość i wznawianie od miejsca zatrzymania.
 
-**Wypróbuj:** Ustawienia › Klawiatura
+**Wypróbuj:** Ustawienia › Klawiatura, Ustawienia › Mysz
 
 **Poprawki**
 

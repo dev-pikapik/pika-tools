@@ -238,7 +238,7 @@ private struct DesktopIconsSettings: View {
 struct HiddenFilesHint: View {
     var body: some View {
         HiddenFilesArt()
-        KeyLabel(keys: ["⇧⌘."], title: Text("Show hidden files"), subtitle: Text("Press these keys in Finder, and again to hide them"))
+        KeyLabel(keys: ["⇧⌘."], title: Text("Show hidden files"), subtitle: Text("Press in Finder to show or hide"))
             .settingAnchor(String(localized: "Show hidden files"))
     }
 }

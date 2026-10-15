@@ -27,9 +27,9 @@ Dacă sunt deschise două copii ale pikapik, de exemplu cea de pe site și cea d
 - Ieși din aplicație și Închide fereastra arată într-o imagine ce fac tastele.
 - ⇧⌘. este acum chiar în rândul Afișează fișierele ascunse.
 - Bara laterală din Setări are nume pentru grupuri.
-- Playerul, în versiunea de pe site: tastele din QuickTime, volumul din rotiță, viteza și reluarea de unde ai rămas.
+- Playerul, în versiunea de pe site: aceleași taste ca în QuickTime Player, volumul din rotiță, viteza și reluarea de unde ai rămas.
 
-**Încearcă:** Setări › Tastatură
+**Încearcă:** Setări › Tastatură, Setări › Maus
 
 **Reparat**
 

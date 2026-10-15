@@ -27,9 +27,9 @@ Quand deux copies de pikapik sont ouvertes, par exemple celle du site et celle d
 - Quitter l’app et Fermer la fenêtre montrent en image ce que font les touches.
 - ⇧⌘. se trouve maintenant directement dans la ligne Afficher les fichiers masqués.
 - La barre latérale des réglages a des noms de groupes.
-- Lecteur, dans la version du site : les touches de QuickTime, le volume à la molette, la vitesse, et il reprend là où vous vous étiez arrêté.
+- Lecteur, dans la version du site : les mêmes touches que dans QuickTime Player, le volume à la molette, la vitesse, et il reprend là où vous vous étiez arrêté.
 
-**Pour essayer :** Réglages › Clavier
+**Pour essayer :** Réglages › Clavier, Réglages › Souris
 
 **Corrigé**
 

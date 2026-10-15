@@ -27,9 +27,9 @@ Si hay dos copias de pikapik abiertas, por ejemplo la de la web y la de la App S
 - Salir de la app y Cerrar ventana muestran en una imagen lo que hacen las teclas.
 - ⇧⌘. ahora está justo en la fila Mostrar archivos ocultos.
 - La barra lateral de los Ajustes tiene nombres de grupos.
-- Reproductor, en la versión de la web: teclas de QuickTime, volumen con la rueda del ratón, velocidad, y sigue donde lo dejaste.
+- Reproductor, en la versión de la web: las mismas teclas que en QuickTime Player, volumen con la rueda del ratón, velocidad, y sigue donde lo dejaste.
 
-**Pruébalo:** Ajustes › Teclado
+**Pruébalo:** Ajustes › Teclado, Ajustes › Ratón
 
 **Corregido**
 
