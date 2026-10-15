@@ -33,7 +33,7 @@
 "For some features" = "用於部分功能";
 "Finder Extensions" = "Finder 擴充功能";
 "Folders" = "檔案夾";
-"Lets the app choose how fast your fans spin" = "讓 App 選擇風扇轉速";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "用於更改風扇轉速，以及為整台 Mac 關閉服務";
 "Lets the app add items to the right-click menu in Finder" = "讓 App 在 Finder 的右鍵選單中加入項目";
 "Lets the app find permissions left by deleted apps" = "讓 App 找出已刪除 App 留下的權限";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS 只允許你在「系統設定」中關閉這些權限。按鈕會打開對應的列表，在那裡關閉 pikapik 即可。";
@@ -648,7 +648,7 @@
 "Allow Access" = "允許存取";
 "Fans" = "風扇";
 "Fan speed" = "風扇轉速";
-"Fan control" = "風扇控制";
+"Administrator access" = "管理員權限";
 "Fan %lld" = "風扇 %lld";
 "See how fast your fans spin and choose their speed" = "查看風扇轉得有多快，並選擇它的轉速";
 "This Mac has no fans" = "這台 Mac 沒有風扇";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "風扇變慢可能會讓 Mac 更熱";
 "Auto · %lld rpm" = "自動 · %lld 轉/分";
 "Manual · %lld rpm" = "手動 · %lld 轉/分";
-"pikapik wants to allow changing the fan speed." = "pikapik 想要允許更改風扇轉速。";
-"pikapik wants to remove fan control." = "pikapik 想要移除風扇控制。";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik 想要更改風扇轉速，並關閉和開啟服務。";
+"pikapik wants to remove administrator access." = "pikapik 想要移除管理員權限。";
 "Not allowed: no administrator password" = "未允許：沒有管理員密碼";
 "Not removed: no administrator password" = "未移除：沒有管理員密碼";
-"Couldn’t change the fan speed. Try allowing fan control again." = "無法更改風扇轉速。請再次允許控制風扇。";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "無法更改風扇轉速。請再次允許管理員權限。";
 "Fans went back to Auto to keep your Mac safe" = "為了保護你的 Mac，風扇已恢復為自動";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "風扇, 轉速, rpm, 散熱, 降溫, 熱, 發燙, 噪音, 安靜, 吵, 溫度";
 "allow, helper, password, administrator, install, remove" = "允許, 輔助, 密碼, 管理員, 安裝, 移除";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "無法關閉。請重試，或使用「系統設定」。";
 "Couldn’t turn this back on. Try again or use System Settings." = "無法重新打開。請重試，或使用「系統設定」。";
 "Needs administrator rights, so turn it off in System Settings" = "需要管理員權限，請在「系統設定」中關閉";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "若要關閉為整台 Mac 執行的工作，請允許管理員權限。";
 "The app added it itself, so turn it off in System Settings" = "這是 App 自己加入的，請在「系統設定」中關閉";
 "Lets the app save new files next to yours and see your background tasks" = "讓 App 把新檔案儲存在你的檔案旁邊，並查看背景工作";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "請選擇一次你的個人檔案夾，這樣 pikapik 就能把檔案儲存在你的檔案旁邊，並查看你的背景工作。";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "只有此 Mac 可以連線。";
 "Other devices on your network can connect." = "同一網路上的其他裝置也可以連線。";
 "To free port %@, turn off “%@” in System Settings." = "若要釋放連接埠 %1$@，請在「系統設定」中關閉「%2$@」。";
+"To free port %@, turn off “%@”." = "若要釋放連接埠 %1$@，請關閉「%2$@」。";
 "macOS needs this port, so it stays taken." = "macOS 需要這個連接埠，所以它會持續被佔用。";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "這個程式屬於其他使用者或系統，所以 pikapik 不會動它。你可以在「活動監視器」中結束它。";
 "Open Activity Monitor" = "打開「活動監視器」";

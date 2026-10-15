@@ -33,7 +33,7 @@
 "For some features" = "Voor sommige functies";
 "Finder Extensions" = "Finder-extensies";
 "Folders" = "Mappen";
-"Lets the app choose how fast your fans spin" = "Laat de app kiezen hoe snel de ventilatoren draaien";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Laat de app de ventilatorsnelheid wijzigen en diensten voor de hele Mac uitzetten";
 "Lets the app add items to the right-click menu in Finder" = "Laat de app opties toevoegen aan het rechtsklikmenu in de Finder";
 "Lets the app find permissions left by deleted apps" = "Laat de app toestemmingen vinden die verwijderde apps hebben achtergelaten";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS laat je deze alleen uitzetten in Systeeminstellingen. De knop opent de juiste lijst, waar je pikapik uitzet.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Toegang toestaan";
 "Fans" = "Ventilatoren";
 "Fan speed" = "Ventilatorsnelheid";
-"Fan control" = "Ventilatorbeheer";
+"Administrator access" = "Beheerderstoegang";
 "Fan %lld" = "Ventilator %lld";
 "See how fast your fans spin and choose their speed" = "Zie hoe snel je ventilatoren draaien en kies hun snelheid";
 "This Mac has no fans" = "Deze Mac heeft geen ventilatoren";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Tragere ventilatoren kunnen je Mac warmer maken";
 "Auto · %lld rpm" = "Auto · %lld tpm";
 "Manual · %lld rpm" = "Handmatig · %lld tpm";
-"pikapik wants to allow changing the fan speed." = "pikapik wil het wijzigen van de ventilatorsnelheid toestaan.";
-"pikapik wants to remove fan control." = "pikapik wil het ventilatorbeheer verwijderen.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik wil de ventilatorsnelheid wijzigen en diensten uit- en aanzetten.";
+"pikapik wants to remove administrator access." = "pikapik wil de beheerderstoegang verwijderen.";
 "Not allowed: no administrator password" = "Niet toegestaan: geen beheerderswachtwoord";
 "Not removed: no administrator password" = "Niet verwijderd: geen beheerderswachtwoord";
-"Couldn’t change the fan speed. Try allowing fan control again." = "De ventilatorsnelheid kon niet worden gewijzigd. Sta het ventilatorbeheer opnieuw toe.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "De ventilatorsnelheid kon niet worden gewijzigd. Sta de beheerderstoegang opnieuw toe.";
 "Fans went back to Auto to keep your Mac safe" = "De ventilatoren zijn teruggegaan naar Auto om je Mac te beschermen";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ventilator, tpm, koeling, koeler, heet, warmte, geluid, stil, luid, temperatuur, thermisch";
 "allow, helper, password, administrator, install, remove" = "toestaan, hulpprogramma, wachtwoord, beheerder, installeren, verwijderen";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Uitzetten is niet gelukt. Probeer het opnieuw of gebruik Systeeminstellingen.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Weer aanzetten is niet gelukt. Probeer het opnieuw of gebruik Systeeminstellingen.";
 "Needs administrator rights, so turn it off in System Settings" = "Hiervoor zijn beheerdersrechten nodig, dus zet het uit in Systeeminstellingen";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Sta beheerderstoegang toe om taken uit te zetten die voor de hele Mac draaien.";
 "The app added it itself, so turn it off in System Settings" = "De app heeft dit zelf toegevoegd, dus zet het uit in Systeeminstellingen";
 "Lets the app save new files next to yours and see your background tasks" = "Laat de app nieuwe bestanden naast de jouwe bewaren en je achtergrondtaken zien";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Kies één keer je thuismap, zodat pikapik bestanden naast de jouwe kan bewaren en je achtergrondtaken kan zien.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Alleen deze Mac kan verbinding maken.";
 "Other devices on your network can connect." = "Ook andere apparaten in je netwerk kunnen verbinding maken.";
 "To free port %@, turn off “%@” in System Settings." = "Om poort %1$@ vrij te maken, zet je ‘%2$@’ uit in Systeeminstellingen.";
+"To free port %@, turn off “%@”." = "Om poort %1$@ vrij te maken, zet je ‘%2$@’ uit.";
 "macOS needs this port, so it stays taken." = "macOS heeft deze poort nodig, dus hij blijft bezet.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Het programma is van een andere gebruiker of van het systeem, dus pikapik laat het met rust. Je kunt het stoppen in Activiteitenweergave.";
 "Open Activity Monitor" = "Open Activiteitenweergave";

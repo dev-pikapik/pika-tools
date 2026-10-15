@@ -33,7 +33,7 @@
 "For some features" = "สำหรับบางฟีเจอร์";
 "Finder Extensions" = "ส่วนขยาย Finder";
 "Folders" = "โฟลเดอร์";
-"Lets the app choose how fast your fans spin" = "ให้แอปเลือกความเร็วในการหมุนของพัดลม";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "ให้แอปเปลี่ยนความเร็วพัดลมและปิดบริการสำหรับทั้งเครื่อง Mac";
 "Lets the app add items to the right-click menu in Finder" = "ให้แอปเพิ่มรายการในเมนูคลิกขวาใน Finder";
 "Lets the app find permissions left by deleted apps" = "ให้แอปค้นหาการอนุญาตที่เหลือจากแอปที่ลบไปแล้ว";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS ให้ปิดสิ่งเหล่านี้ได้เฉพาะในการตั้งค่าระบบ ปุ่มนี้จะเปิดรายการที่ถูกต้อง แล้วคุณปิด pikapik ได้ที่นั่น";
@@ -648,7 +648,7 @@
 "Allow Access" = "อนุญาตการเข้าถึง";
 "Fans" = "พัดลม";
 "Fan speed" = "ความเร็วพัดลม";
-"Fan control" = "การควบคุมพัดลม";
+"Administrator access" = "การเข้าถึงของผู้ดูแลระบบ";
 "Fan %lld" = "พัดลม %lld";
 "See how fast your fans spin and choose their speed" = "ดูว่าพัดลมหมุนเร็วแค่ไหน และเลือกความเร็วได้";
 "This Mac has no fans" = "Mac เครื่องนี้ไม่มีพัดลม";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "พัดลมที่ช้าลงอาจทำให้ Mac ร้อนขึ้น";
 "Auto · %lld rpm" = "อัตโนมัติ · %lld รอบ/นาที";
 "Manual · %lld rpm" = "กำหนดเอง · %lld รอบ/นาที";
-"pikapik wants to allow changing the fan speed." = "pikapik ต้องการอนุญาตให้เปลี่ยนความเร็วพัดลม";
-"pikapik wants to remove fan control." = "pikapik ต้องการลบการควบคุมพัดลม";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik ต้องการเปลี่ยนความเร็วพัดลมและปิดหรือเปิดบริการ";
+"pikapik wants to remove administrator access." = "pikapik ต้องการลบการเข้าถึงของผู้ดูแลระบบ";
 "Not allowed: no administrator password" = "ไม่ได้อนุญาต: ไม่มีรหัสผ่านผู้ดูแลระบบ";
 "Not removed: no administrator password" = "ไม่ได้ลบ: ไม่มีรหัสผ่านผู้ดูแลระบบ";
-"Couldn’t change the fan speed. Try allowing fan control again." = "เปลี่ยนความเร็วพัดลมไม่ได้ ลองอนุญาตให้ควบคุมพัดลมอีกครั้ง";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "เปลี่ยนความเร็วพัดลมไม่ได้ ลองอนุญาตการเข้าถึงของผู้ดูแลระบบอีกครั้ง";
 "Fans went back to Auto to keep your Mac safe" = "พัดลมกลับเป็นอัตโนมัติเพื่อความปลอดภัยของ Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "พัดลม, รอบ, ระบายความร้อน, เย็น, ร้อน, ความร้อน, เสียงดัง, เงียบ, อุณหภูมิ";
 "allow, helper, password, administrator, install, remove" = "อนุญาต, ตัวช่วย, รหัสผ่าน, ผู้ดูแลระบบ, ติดตั้ง, ลบ";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "ปิดไม่สำเร็จ ลองอีกครั้งหรือใช้การตั้งค่าระบบ";
 "Couldn’t turn this back on. Try again or use System Settings." = "เปิดกลับไม่สำเร็จ ลองอีกครั้งหรือใช้การตั้งค่าระบบ";
 "Needs administrator rights, so turn it off in System Settings" = "ต้องใช้สิทธิ์ผู้ดูแลระบบ จึงต้องปิดในการตั้งค่าระบบ";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "หากต้องการปิดงานที่ทำงานสำหรับทั้งเครื่อง Mac ให้อนุญาตการเข้าถึงของผู้ดูแลระบบ";
 "The app added it itself, so turn it off in System Settings" = "แอปเพิ่มรายการนี้เอง จึงต้องปิดในการตั้งค่าระบบ";
 "Lets the app save new files next to yours and see your background tasks" = "ให้แอปบันทึกไฟล์ใหม่ไว้ข้างไฟล์ของคุณ และดูงานเบื้องหลังได้";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "เลือกโฟลเดอร์โฮมของคุณหนึ่งครั้ง เพื่อให้ pikapik บันทึกไฟล์ไว้ข้างไฟล์ของคุณ และดูงานเบื้องหลังของคุณได้";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "เชื่อมต่อได้เฉพาะ Mac เครื่องนี้";
 "Other devices on your network can connect." = "อุปกรณ์อื่นในเครือข่ายของคุณก็เชื่อมต่อได้";
 "To free port %@, turn off “%@” in System Settings." = "หากต้องการทำให้พอร์ต %1$@ ว่าง ให้ปิด “%2$@” ในการตั้งค่าระบบ";
+"To free port %@, turn off “%@”." = "หากต้องการทำให้พอร์ต %1$@ ว่าง ให้ปิด “%2$@”";
 "macOS needs this port, so it stays taken." = "macOS ต้องใช้พอร์ตนี้ พอร์ตจึงยังไม่ว่าง";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "โปรแกรมนี้เป็นของผู้ใช้อื่นหรือของระบบ pikapik จึงไม่แตะต้อง คุณออกจากโปรแกรมนี้ได้ในตัวตรวจสอบกิจกรรม";
 "Open Activity Monitor" = "เปิดตัวตรวจสอบกิจกรรม";

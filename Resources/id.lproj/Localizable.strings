@@ -33,7 +33,7 @@
 "For some features" = "Untuk beberapa fitur";
 "Finder Extensions" = "Ekstensi Finder";
 "Folders" = "Folder";
-"Lets the app choose how fast your fans spin" = "Memungkinkan app memilih kecepatan putaran kipas";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "Memungkinkan app mengubah kecepatan kipas dan mematikan layanan untuk seluruh Mac";
 "Lets the app add items to the right-click menu in Finder" = "Memungkinkan app menambah item ke menu klik kanan di Finder";
 "Lets the app find permissions left by deleted apps" = "Memungkinkan app menemukan izin yang tertinggal dari app yang dihapus";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS hanya mengizinkan Anda mematikannya di Pengaturan Sistem. Tombol ini membuka daftar yang tepat, tempat Anda mematikan pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "Izinkan Akses";
 "Fans" = "Kipas";
 "Fan speed" = "Kecepatan kipas";
-"Fan control" = "Kontrol kipas";
+"Administrator access" = "Akses administrator";
 "Fan %lld" = "Kipas %lld";
 "See how fast your fans spin and choose their speed" = "Lihat seberapa cepat kipas berputar dan pilih kecepatannya";
 "This Mac has no fans" = "Mac ini tidak punya kipas";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "Kipas yang lebih lambat bisa membuat Mac lebih panas";
 "Auto · %lld rpm" = "Otomatis · %lld rpm";
 "Manual · %lld rpm" = "Manual · %lld rpm";
-"pikapik wants to allow changing the fan speed." = "pikapik ingin mengizinkan perubahan kecepatan kipas.";
-"pikapik wants to remove fan control." = "pikapik ingin menghapus kontrol kipas.";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik ingin mengubah kecepatan kipas serta mematikan dan menyalakan layanan.";
+"pikapik wants to remove administrator access." = "pikapik ingin menghapus akses administrator.";
 "Not allowed: no administrator password" = "Tidak diizinkan: tanpa kata sandi administrator";
 "Not removed: no administrator password" = "Tidak dihapus: tanpa kata sandi administrator";
-"Couldn’t change the fan speed. Try allowing fan control again." = "Kecepatan kipas tidak bisa diubah. Coba izinkan kontrol kipas lagi.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "Kecepatan kipas tidak bisa diubah. Coba izinkan akses administrator lagi.";
 "Fans went back to Auto to keep your Mac safe" = "Kipas kembali ke Otomatis untuk menjaga Mac Anda tetap aman";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "kipas, rpm, pendingin, lebih sejuk, panas, suhu, bising, senyap, keras, temperatur, termal";
 "allow, helper, password, administrator, install, remove" = "izinkan, pembantu, kata sandi, administrator, pasang, hapus";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "Tidak dapat mematikannya. Coba lagi atau gunakan Pengaturan Sistem.";
 "Couldn’t turn this back on. Try again or use System Settings." = "Tidak dapat menyalakannya lagi. Coba lagi atau gunakan Pengaturan Sistem.";
 "Needs administrator rights, so turn it off in System Settings" = "Perlu hak administrator, jadi matikan di Pengaturan Sistem";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Untuk mematikan tugas yang berjalan untuk seluruh Mac, izinkan akses administrator.";
 "The app added it itself, so turn it off in System Settings" = "App menambahkannya sendiri, jadi matikan di Pengaturan Sistem";
 "Lets the app save new files next to yours and see your background tasks" = "Memungkinkan app menyimpan file baru di samping file Anda dan melihat tugas latar belakang";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "Pilih folder utama Anda sekali saja agar pikapik dapat menyimpan file di samping file Anda dan melihat tugas latar belakang Anda.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "Hanya Mac ini yang bisa terhubung.";
 "Other devices on your network can connect." = "Perangkat lain di jaringan Anda juga bisa terhubung.";
 "To free port %@, turn off “%@” in System Settings." = "Untuk membebaskan port %1$@, matikan “%2$@” di Pengaturan Sistem.";
+"To free port %@, turn off “%@”." = "Untuk membebaskan port %1$@, matikan “%2$@”.";
 "macOS needs this port, so it stays taken." = "macOS memerlukan port ini, jadi port ini tetap terpakai.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "Program ini milik pengguna lain atau sistem, jadi pikapik tidak menyentuhnya. Anda bisa menutupnya di Monitor Aktivitas.";
 "Open Activity Monitor" = "Buka Monitor Aktivitas";

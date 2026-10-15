@@ -33,7 +33,7 @@
 "For some features" = "一部の機能用";
 "Finder Extensions" = "Finder機能拡張";
 "Folders" = "フォルダ";
-"Lets the app choose how fast your fans spin" = "ファンの回転数を選ぶため";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "ファンの回転数を変更し、Mac 全体のサービスをオフにするため";
 "Lets the app add items to the right-click menu in Finder" = "Finderの右クリックメニューに項目を追加するため";
 "Lets the app find permissions left by deleted apps" = "削除したアプリが残した許可を見つけるため";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "これらをオフにできるのは「システム設定」だけです。ボタンを押すと該当のリストが開くので、そこで pikapik をオフにしてください。";
@@ -648,7 +648,7 @@
 "Allow Access" = "アクセスを許可";
 "Fans" = "ファン";
 "Fan speed" = "ファンの回転数";
-"Fan control" = "ファンコントロール";
+"Administrator access" = "管理者アクセス";
 "Fan %lld" = "ファン %lld";
 "See how fast your fans spin and choose their speed" = "ファンの回転の速さを確認し、速さを選べます";
 "This Mac has no fans" = "この Mac にはファンがありません";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "ファンを遅くすると Mac が熱くなることがあります";
 "Auto · %lld rpm" = "自動 · %lld rpm";
 "Manual · %lld rpm" = "手動 · %lld rpm";
-"pikapik wants to allow changing the fan speed." = "pikapik がファンの回転数の変更を許可しようとしています。";
-"pikapik wants to remove fan control." = "pikapik がファンコントロールを取り除こうとしています。";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik がファンの回転数の変更とサービスのオン/オフを行おうとしています。";
+"pikapik wants to remove administrator access." = "pikapik が管理者アクセスを取り除こうとしています。";
 "Not allowed: no administrator password" = "許可されませんでした：管理者パスワードがありません";
 "Not removed: no administrator password" = "取り除かれませんでした：管理者パスワードがありません";
-"Couldn’t change the fan speed. Try allowing fan control again." = "ファンの回転数を変更できませんでした。もう一度ファンコントロールを許可してください。";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "ファンの回転数を変更できませんでした。もう一度管理者アクセスを許可してください。";
 "Fans went back to Auto to keep your Mac safe" = "Mac を守るため、ファンは自動に戻りました";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "ファン, 回転数, rpm, 冷却, 冷やす, 熱い, 熱, 騒音, 静か, うるさい, 温度";
 "allow, helper, password, administrator, install, remove" = "許可, ヘルパー, パスワード, 管理者, インストール, 削除";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "オフにできませんでした。もう一度試すか、システム設定を使ってください。";
 "Couldn’t turn this back on. Try again or use System Settings." = "オンに戻せませんでした。もう一度試すか、システム設定を使ってください。";
 "Needs administrator rights, so turn it off in System Settings" = "管理者権限が必要なため、システム設定でオフにしてください";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "Mac 全体で動作するタスクをオフにするには、管理者アクセスを許可してください。";
 "The app added it itself, so turn it off in System Settings" = "アプリ自身が追加したため、システム設定でオフにしてください";
 "Lets the app save new files next to yours and see your background tasks" = "新しいファイルをあなたのファイルの隣に保存し、バックグラウンドタスクを表示するため";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "pikapik がファイルをあなたのファイルの隣に保存し、バックグラウンドタスクを表示できるよう、ホームフォルダを一度選んでください。";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "このMacだけが接続できます。";
 "Other devices on your network can connect." = "同じネットワーク上のほかのデバイスも接続できます。";
 "To free port %@, turn off “%@” in System Settings." = "ポート%1$@を空けるには、システム設定で「%2$@」をオフにしてください。";
+"To free port %@, turn off “%@”." = "ポート%1$@を空けるには、「%2$@」をオフにしてください。";
 "macOS needs this port, so it stays taken." = "macOSがこのポートを必要としているため、使用中のままになります。";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "このプログラムはほかのユーザまたはシステムのものなので、pikapikは操作しません。アクティビティモニタで終了できます。";
 "Open Activity Monitor" = "アクティビティモニタを開く";

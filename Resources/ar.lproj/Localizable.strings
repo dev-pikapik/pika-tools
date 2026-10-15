@@ -33,7 +33,7 @@
 "For some features" = "لبعض الميزات";
 "Finder Extensions" = "إضافات Finder";
 "Folders" = "المجلدات";
-"Lets the app choose how fast your fans spin" = "يسمح للتطبيق باختيار سرعة دوران المراوح";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "يسمح للتطبيق بتغيير سرعة المراوح وإيقاف الخدمات لجهاز Mac بالكامل";
 "Lets the app add items to the right-click menu in Finder" = "يسمح للتطبيق بإضافة عناصر إلى قائمة النقر بزر الماوس الأيمن في Finder";
 "Lets the app find permissions left by deleted apps" = "يسمح للتطبيق بالعثور على الأذونات التي تركتها التطبيقات المحذوفة";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "يتيح لك macOS إيقاف هذه الأذونات من إعدادات النظام فقط. يفتح الزر القائمة الصحيحة، وهناك توقف تشغيل pikapik.";
@@ -648,7 +648,7 @@
 "Allow Access" = "السماح بالوصول";
 "Fans" = "المراوح";
 "Fan speed" = "سرعة المراوح";
-"Fan control" = "التحكم بالمراوح";
+"Administrator access" = "صلاحيات المسؤول";
 "Fan %lld" = "المروحة %lld";
 "See how fast your fans spin and choose their speed" = "شاهد مدى سرعة دوران المراوح واختر سرعتها";
 "This Mac has no fans" = "هذا الـ Mac ليس فيه مراوح";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "المراوح الأبطأ قد تجعل Mac أسخن";
 "Auto · %lld rpm" = "تلقائي · %lld د/د";
 "Manual · %lld rpm" = "يدوي · %lld د/د";
-"pikapik wants to allow changing the fan speed." = "يريد pikapik السماح بتغيير سرعة المراوح.";
-"pikapik wants to remove fan control." = "يريد pikapik إزالة التحكم بالمراوح.";
+"pikapik wants to change the fan speed and turn services off and on." = "يريد pikapik تغيير سرعة المراوح وإيقاف الخدمات وتشغيلها.";
+"pikapik wants to remove administrator access." = "يريد pikapik إزالة صلاحيات المسؤول.";
 "Not allowed: no administrator password" = "لم يتم السماح: لا توجد كلمة سر للمسؤول";
 "Not removed: no administrator password" = "لم تتم الإزالة: لا توجد كلمة سر للمسؤول";
-"Couldn’t change the fan speed. Try allowing fan control again." = "تعذّر تغيير سرعة المراوح. جرّب السماح بالتحكم بالمراوح مرة أخرى.";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "تعذّر تغيير سرعة المراوح. جرّب السماح بصلاحيات المسؤول مرة أخرى.";
 "Fans went back to Auto to keep your Mac safe" = "عادت المراوح إلى الوضع التلقائي لحماية جهاز Mac";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "مروحة, دورات, تبريد, أبرد, حار, حرارة, ضجيج, هادئ, عالٍ, درجة الحرارة";
 "allow, helper, password, administrator, install, remove" = "سماح, مساعد, كلمة سر, مسؤول, تثبيت, إزالة";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "تعذّر إطفاؤه. حاول مرة أخرى أو استخدم إعدادات النظام.";
 "Couldn’t turn this back on. Try again or use System Settings." = "تعذّرت إعادة تشغيله. حاول مرة أخرى أو استخدم إعدادات النظام.";
 "Needs administrator rights, so turn it off in System Settings" = "يحتاج إلى صلاحيات المسؤول، لذا أطفئه من إعدادات النظام";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "لإيقاف المهام التي تعمل على جهاز Mac بالكامل، اسمح بصلاحيات المسؤول.";
 "The app added it itself, so turn it off in System Settings" = "أضافه التطبيق بنفسه، لذا أطفئه من إعدادات النظام";
 "Lets the app save new files next to yours and see your background tasks" = "يسمح للتطبيق بحفظ الملفات الجديدة بجانب ملفاتك ورؤية مهام الخلفية";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "اختر مجلد المنزل مرة واحدة ليتمكن pikapik من حفظ الملفات بجانب ملفاتك ورؤية مهام الخلفية.";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "لا يمكن الاتصال إلا من هذا الـ Mac.";
 "Other devices on your network can connect." = "يمكن للأجهزة الأخرى على شبكتك الاتصال أيضًا.";
 "To free port %@, turn off “%@” in System Settings." = "لتحرير المنفذ %1$@، أوقف «%2$@» في إعدادات النظام.";
+"To free port %@, turn off “%@”." = "لتحرير المنفذ %1$@، أوقف «%2$@».";
 "macOS needs this port, so it stays taken." = "يحتاج macOS إلى هذا المنفذ، لذا سيبقى محجوزًا.";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "هذا البرنامج يخص مستخدمًا آخر أو النظام، لذا لا يلمسه pikapik. يمكنك إنهاؤه من مراقب النشاط.";
 "Open Activity Monitor" = "فتح مراقب النشاط";

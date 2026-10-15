@@ -33,7 +33,7 @@
 "For some features" = "कुछ सुविधाओं के लिए";
 "Finder Extensions" = "Finder एक्सटेंशन";
 "Folders" = "फ़ोल्डर";
-"Lets the app choose how fast your fans spin" = "ऐप को पंखों की गति चुनने देता है";
+"Lets the app change the fan speed and turn off services for the whole Mac" = "ऐप को पंखों की गति बदलने और पूरे Mac के लिए सेवाएँ बंद करने देता है";
 "Lets the app add items to the right-click menu in Finder" = "ऐप को Finder के राइट-क्लिक मेनू में विकल्प जोड़ने देता है";
 "Lets the app find permissions left by deleted apps" = "ऐप को डिलीट किए गए ऐप्स की बची हुई अनुमतियाँ ढूँढने देता है";
 "macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS इन्हें केवल सिस्टम सेटिंग में बंद करने देता है। बटन सही सूची खोलता है, जहाँ आप pikapik को बंद करते हैं।";
@@ -648,7 +648,7 @@
 "Allow Access" = "पहुँच की अनुमति दें";
 "Fans" = "पंखे";
 "Fan speed" = "पंखे की गति";
-"Fan control" = "पंखा नियंत्रण";
+"Administrator access" = "एडमिन एक्सेस";
 "Fan %lld" = "पंखा %lld";
 "See how fast your fans spin and choose their speed" = "देखें कि आपके पंखे कितनी तेज़ घूम रहे हैं और उनकी गति चुनें";
 "This Mac has no fans" = "इस Mac में पंखे नहीं हैं";
@@ -659,11 +659,11 @@
 "Slower fans can make your Mac hotter" = "धीमे पंखे आपके Mac को ज़्यादा गर्म कर सकते हैं";
 "Auto · %lld rpm" = "ऑटो · %lld आरपीएम";
 "Manual · %lld rpm" = "मैनुअल · %lld आरपीएम";
-"pikapik wants to allow changing the fan speed." = "pikapik पंखे की गति बदलने की अनुमति देना चाहता है।";
-"pikapik wants to remove fan control." = "pikapik पंखा नियंत्रण हटाना चाहता है।";
+"pikapik wants to change the fan speed and turn services off and on." = "pikapik पंखे की गति बदलना और सेवाएँ बंद और चालू करना चाहता है।";
+"pikapik wants to remove administrator access." = "pikapik एडमिन एक्सेस हटाना चाहता है।";
 "Not allowed: no administrator password" = "अनुमति नहीं मिली: एडमिनिस्ट्रेटर पासवर्ड नहीं है";
 "Not removed: no administrator password" = "हटाया नहीं गया: एडमिनिस्ट्रेटर पासवर्ड नहीं है";
-"Couldn’t change the fan speed. Try allowing fan control again." = "पंखे की गति नहीं बदली जा सकी। पंखा नियंत्रण की अनुमति फिर से दें।";
+"Couldn’t change the fan speed. Try allowing administrator access again." = "पंखे की गति नहीं बदली जा सकी। एडमिन एक्सेस की अनुमति फिर से दें।";
 "Fans went back to Auto to keep your Mac safe" = "आपके Mac को सुरक्षित रखने के लिए पंखे ऑटो पर लौट आए";
 "fan, rpm, cooling, cooler, hot, heat, noise, quiet, loud, temperature, thermal" = "पंखा, आरपीएम, ठंडा, कूलिंग, गर्म, गर्मी, शोर, शांत, तेज़, तापमान";
 "allow, helper, password, administrator, install, remove" = "अनुमति, सहायक, पासवर्ड, एडमिनिस्ट्रेटर, इंस्टॉल, हटाएँ";
@@ -1049,6 +1049,7 @@
 "Couldn’t turn this off. Try again or use System Settings." = "इसे बंद नहीं किया जा सका। फिर से कोशिश करें या सिस्टम सेटिंग का उपयोग करें।";
 "Couldn’t turn this back on. Try again or use System Settings." = "इसे फिर से चालू नहीं किया जा सका। फिर से कोशिश करें या सिस्टम सेटिंग का उपयोग करें।";
 "Needs administrator rights, so turn it off in System Settings" = "इसके लिए एडमिन अधिकार चाहिए, इसलिए इसे सिस्टम सेटिंग में बंद करें";
+"To turn off tasks that run for the whole Mac, allow administrator access." = "पूरे Mac के लिए चलने वाले कामों को बंद करने के लिए एडमिन एक्सेस की अनुमति दें।";
 "The app added it itself, so turn it off in System Settings" = "ऐप ने इसे खुद जोड़ा है, इसलिए इसे सिस्टम सेटिंग में बंद करें";
 "Lets the app save new files next to yours and see your background tasks" = "ऐप को नई फ़ाइलें आपकी फ़ाइलों के बगल में सहेजने और बैकग्राउंड टास्क देखने देता है";
 "Choose your home folder once so pikapik can save files next to yours and see your background tasks." = "अपना होम फ़ोल्डर एक बार चुनें, ताकि pikapik आपकी फ़ाइलों के बगल में फ़ाइलें सहेज सके और आपके बैकग्राउंड टास्क देख सके।";
@@ -1084,6 +1085,7 @@
 "Only this Mac can connect." = "सिर्फ़ यही Mac कनेक्ट हो सकता है।";
 "Other devices on your network can connect." = "आपके नेटवर्क के दूसरे डिवाइस भी कनेक्ट हो सकते हैं।";
 "To free port %@, turn off “%@” in System Settings." = "पोर्ट %1$@ खाली करने के लिए सिस्टम सेटिंग्ज़ में “%2$@” बंद करें।";
+"To free port %@, turn off “%@”." = "पोर्ट %1$@ खाली करने के लिए “%2$@” बंद करें।";
 "macOS needs this port, so it stays taken." = "macOS को इस पोर्ट की ज़रूरत है, इसलिए यह इस्तेमाल में ही रहेगा।";
 "It belongs to another user or to the system, so pikapik doesn’t touch it. You can quit it in Activity Monitor." = "यह प्रोग्राम किसी दूसरे उपयोगकर्ता या सिस्टम का है, इसलिए pikapik इसे नहीं छूता। आप इसे ऐक्टिविटी मॉनिटर में बंद कर सकते हैं।";
 "Open Activity Monitor" = "ऐक्टिविटी मॉनिटर खोलें";
