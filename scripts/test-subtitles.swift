@@ -110,5 +110,13 @@ enum TestSubtitles {
         for index in 0..<(PlayerChoices.limit + 5) { saved = PlayerChoices.updated(saved, key: "k\(index)", audio: "a1", subtitle: "off", at: Double(index)) }
         precondition(saved.count == PlayerChoices.limit && saved["k0"] == nil && saved["k204"] == ["a1", "off", "204.0"])
         print("remembered track choices stay within the limit: ok")
+
+        let video = URL(fileURLWithPath: "/m/Movie.mkv")
+        let beside = ["Movie.srt", "movie.RU.vtt", "Movie.en.ass", "Movie2.srt", "Other.srt", "Movie.txt", "Movie.mkv"].map { URL(fileURLWithPath: "/m/" + $0) }
+        precondition(SubtitleFiles.matching(video: video, among: beside).map(\.lastPathComponent) == ["Movie.en.ass", "movie.RU.vtt", "Movie.srt"])
+        precondition(SubtitleFiles.matching(video: video, among: []).isEmpty)
+        precondition(SubtitleStyle.clampedScale(0.1) == 0.5 && SubtitleStyle.clampedScale(9) == 3 && SubtitleStyle.clampedScale(1.04) == 1)
+        precondition(SubtitleStyle.fontSize(forHeight: 1000, scale: 1) == 45 && SubtitleStyle.fontSize(forHeight: 100, scale: 0.5) == 12)
+        print("subtitle files next to the video and the text size: ok")
     }
 }
