@@ -1228,3 +1228,6 @@
 "Add a Layout" = "Düzen Ekle";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Düzen eklenemedi. Bunun yerine Klavye Ayarları’nı kullanın.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock da onunla taşınır. Anahtarı kapatmak ekranları eski düzenine döndürür";
+"Mac" = "Mac";
+"Enhancements" = "İyileştirmeler";
+"Info" = "Bilgi";

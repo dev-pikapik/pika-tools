@@ -1228,3 +1228,6 @@
 "Add a Layout" = "Ajouter une disposition";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "Impossible d’ajouter la disposition. Utilisez plutôt les Réglages Clavier.";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Le Dock la suit. En désactivant l’interrupteur, les écrans reprennent leur place d’origine";
+"Mac" = "Mac";
+"Enhancements" = "Améliorations";
+"Info" = "Informations";

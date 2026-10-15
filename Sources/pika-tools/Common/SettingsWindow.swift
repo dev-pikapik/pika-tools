@@ -421,17 +421,17 @@ private struct SettingsView: View {
             List(selection: $model.selection) {
                 if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     #if APPSTORE
-                    Section { rows([.general]) }
-                    Section { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
-                    Section { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
-                    Section { rows([.background, .games, .pet]) }
+                    Section(String("pikapik")) { rows([.general]) }
+                    Section("Mac") { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
+                    Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
+                    Section("Apps") { rows([.background, .games, .pet]) }
                     #else
-                    Section { rows([.general]) }
-                    Section { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
-                    Section { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
-                    Section { rows([.player, .uninstaller, .background, .games, .pet]) }
+                    Section(String("pikapik")) { rows([.general]) }
+                    Section("Mac") { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
+                    Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
+                    Section("Apps") { rows([.player, .uninstaller, .background, .games, .pet]) }
                     #endif
-                    Section { rows([.permissions, .about]) }
+                    Section("Info") { rows([.permissions, .about]) }
                 } else {
                     results
                 }

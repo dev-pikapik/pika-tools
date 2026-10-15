@@ -1228,3 +1228,6 @@
 "Add a Layout" = "加入配置";
 "Couldn’t add the layout. Use Keyboard Settings instead." = "無法加入配置。請改用鍵盤設定。";
 "The Dock goes with it. Turning the switch off puts the displays back as they were" = "Dock 會跟著移動。關閉開關後，顯示器會恢復原樣";
+"Mac" = "Mac";
+"Enhancements" = "增強功能";
+"Info" = "資訊";

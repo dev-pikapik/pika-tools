@@ -41,7 +41,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Switches between tabs, shows or hides the sidebar, moves back and forward through visited tabs.
 
-**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :417-429, detail routing :516-562). The sidebar has five groups with a gap between them and no titles: General; the Mac (Battery to Ports); fixes (Sound to Animations); apps (Uninstaller to Pet); then Permissions and About.
+**How it works:** `SettingsWindow.swift` (`SettingsTab` enum :4-32, availability :80-88, sidebar rows :421-436, detail routing :516-562). The sidebar has five groups with a title each: pikapik (General); Mac (Battery to Ports); Enhancements (Sound to Animations); Apps (Player to Pet); Info (Permissions and About). The titles are hidden while searching.
 
 **Options:**
 - Sidebar — button that hides or shows the sidebar.
