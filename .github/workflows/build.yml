@@ -27,8 +27,31 @@ jobs:
       - name: Issue forms list every feature in docs/FEATURES.md
         run: ./scripts/feature-form.sh --check
 
+  # Direct and Tests both need FFmpeg; building it here once keeps them from building it twice side by side when the cache is empty
+  ffmpeg:
+    name: FFmpeg
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Look for FFmpeg in the cache
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: Vendor/ffmpeg
+          key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
+          lookup-only: true
+
+      - name: Build FFmpeg
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          brew install meson ninja nasm pkg-config
+          ./scripts/fetch-ffmpeg.sh
+
   direct:
     name: Direct
+    needs: ffmpeg
     runs-on: macos-26
     timeout-minutes: 45
     steps:
@@ -58,23 +81,23 @@ jobs:
 
   tests:
     name: Tests
+    needs: ffmpeg
     runs-on: macos-26
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
 
+      # the player tests read videos through the app's own FFmpeg build
       - name: Restore FFmpeg
         uses: actions/cache@v4
         with:
           path: Vendor/ffmpeg
           key: ffmpeg-${{ hashFiles('scripts/fetch-ffmpeg.sh') }}
+          fail-on-cache-miss: true
 
-      # test-thumbnails reads videos through the app's own FFmpeg build and makes its sample videos with Homebrew's ffmpeg
-      - name: Build FFmpeg and install the ffmpeg tool
-        run: |
-          brew install meson ninja nasm pkg-config
-          ./scripts/fetch-ffmpeg.sh
-          brew install ffmpeg
+      # test-thumbnails makes its sample videos with Homebrew's ffmpeg
+      - name: Install the ffmpeg tool
+        run: brew install ffmpeg
 
       # test-fan-helper signs small programs with a certificate, as the app signs its helper; a throwaway one stands in for "pikapik Dev"
       - name: Make a throwaway signing certificate
