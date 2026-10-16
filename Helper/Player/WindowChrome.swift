@@ -79,6 +79,10 @@ final class WindowChrome {
         windowNumberAt(NSEvent.mouseLocation) == window.windowNumber
     }
 
+    static func opened(over window: NSWindow) -> Bool {
+        NSApp.windows.contains { $0.isVisible && ($0.parent === window || $0.sheetParent === window || $0.level == .popUpMenu) }
+    }
+
     static func voiceOver(arguments: [String] = CommandLine.arguments, bundleID: String? = Bundle.main.bundleIdentifier, system: Bool = NSWorkspace.shared.isVoiceOverEnabled) -> Bool {
         system || (bundleID == "com.pesotchi.pika-tools.dev.player" && arguments.contains("-PikaForceVoiceOver"))
     }

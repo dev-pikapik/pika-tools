@@ -687,11 +687,16 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
         refreshControls(idle: 0)
         hideTimer?.invalidate()
-        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
+        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.hideIdle(PlayerChrome.hideDelay) }
     }
 
     func hideControls() {
-        refreshControls(idle: .infinity)
+        hideIdle(.infinity)
+    }
+
+    private func hideIdle(_ idle: Double) {
+        guard let window else { return }
+        if WindowChrome.opened(over: window) { showControls() } else { refreshControls(idle: idle) }
     }
 
     private func refreshControls(idle: Double) {
