@@ -80,7 +80,12 @@ final class WindowChrome {
     }
 
     static func opened(over window: NSWindow) -> Bool {
-        NSApp.windows.contains { $0.isVisible && ($0.parent === window || $0.sheetParent === window || $0.level == .popUpMenu) }
+        let buttons = window.standardWindowButton(.closeButton)?.window
+        return NSApp.windows.contains { $0 !== buttons && $0.isVisible && ($0.parent === window || $0.sheetParent === window || $0.level == .popUpMenu) }
+    }
+
+    static func overControls(_ window: NSWindow, at point: NSPoint, panel: NSView, windowNumberAt: (NSPoint) -> Int = { NSWindow.windowNumber(at: $0, belowWindowWithWindowNumber: 0) }) -> Bool {
+        opened(over: window) || pointerOver(window, windowNumberAt: windowNumberAt) && (panel.bounds.contains(panel.convert(point, from: nil)) || overButtons(point, in: window))
     }
 
     static func voiceOver(arguments: [String] = CommandLine.arguments, bundleID: String? = Bundle.main.bundleIdentifier, system: Bool = NSWorkspace.shared.isVoiceOverEnabled) -> Bool {

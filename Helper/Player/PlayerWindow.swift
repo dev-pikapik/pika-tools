@@ -686,27 +686,27 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             return
         }
         refreshControls(idle: 0)
+        armHideTimer()
+    }
+
+    private func armHideTimer() {
         hideTimer?.invalidate()
-        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.hideIdle(PlayerChrome.hideDelay) }
+        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
     }
 
     func hideControls() {
-        hideIdle(.infinity)
-    }
-
-    private func hideIdle(_ idle: Double) {
-        guard let window else { return }
-        if WindowChrome.opened(over: window) { showControls() } else { refreshControls(idle: idle) }
+        refreshControls(idle: .infinity)
     }
 
     private func refreshControls(idle: Double) {
         guard let window else { return }
         let location = window.mouseLocationOutsideOfEventStream
-        let overControls = WindowChrome.pointerOver(window) && (controls.bounds.contains(controls.convert(location, from: nil)) || WindowChrome.overButtons(location, in: window))
+        let overControls = WindowChrome.overControls(window, at: location, panel: controls)
         let fullScreen = window.styleMask.contains(.fullScreen)
         let visible = PlayerChrome.visibility(playing: playing, overControls: overControls, fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
         chrome?.setVisible(visible.controls, video: engine?.hasVideo == true)
+        if overControls, playing, idle >= PlayerChrome.hideDelay { armHideTimer() }
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
