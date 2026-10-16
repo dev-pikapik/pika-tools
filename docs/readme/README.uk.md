@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Захист ⌘Q і ⌘W</b>
+<br>Нічого не закриється випадково. Коли треба, додайте ⇧.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Ігровий режим</b>
+<br>Поки ви граєте, ніщо не вискочить поверх гри й не закриє її.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Улюбленець на робочому столі</b>
+<br>Маленький друг гуляє за вікнами внизу екрана. Візьміть його й підкиньте або натисніть пробіл — він підстрибне. Добирайте йому вбрання в гардеробі й отримуйте нагороди, поки граєте разом. Він бадьориться, поки ви друкуєте, і дрімає, коли ви відходите.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Не засинати</b>
 <br>Mac не засне, скільки потрібно, навіть із закритою кришкою.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Вентилятори</b>
 <br>Дивіться, як швидко крутяться вентилятори, і обирайте їхню швидкість.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Акумулятор</b>
 <br>Дивіться стан акумулятора, його ємність і кількість циклів, скільки енергії в нього надходить і як зробити, щоб він служив довше.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Захист ⌘Q і ⌘W</b>
-<br>Нічого не закриється випадково. Коли треба, додайте ⇧.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Ігровий режим</b>
-<br>Поки ви граєте, ніщо не вискочить поверх гри й не закриє її.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Швидкість інтернету</b>
 <br>Наскільки швидкий у вас інтернет і на що його вистачить.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Бічні кнопки миші</b>
 <br>Кнопки 4 і 5 гортають назад і вперед, як свайп.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Сховати кнопкою миші</b>
 <br>Одне натискання ховає активну програму, як ⌘H. Вона й далі працює.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Прокрутка рядками</b>
 <br>Кожен клік коліщатка прокручує однаково, хоч як швидко крутите.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Напрям прокрутки</b>
 <br>Один напрям для трекпада, інший для миші.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Без прискорення курсора</b>
 <br>Курсор проходить рівно стільки, скільки ваша рука.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Повтор клавіші</b>
 <br>Утримуйте клавішу — літера повторюється, без меню з акцентами.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home і End</b>
 <br>Перехід на початок чи кінець рядка, поки ви друкуєте.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Анімації</b>
 <br>Dock, вікна і Швидкий перегляд стануть швидшими — аж до миттєвих.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Дозволи видалених програм</b>
 <br>Приберіть дозволи, які macOS зберігає для вже видалених програм.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Улюбленець на робочому столі</b>
-<br>Маленький друг гуляє за вікнами внизу екрана. Візьміть його й підкиньте або натисніть пробіл — він підстрибне. Добирайте йому вбрання в гардеробі й отримуйте нагороди, поки граєте разом. Він бадьориться, поки ви друкуєте, і дрімає, коли ви відходите.
 </td>
 </tr></tbody>
 <tbody><tr>
