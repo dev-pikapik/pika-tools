@@ -49,6 +49,7 @@ final class DesktopCurtain {
         window.backgroundColor = options[.fillColor] as? NSColor ?? .windowBackgroundColor
         // Moving (Aerial) wallpapers all report the default picture, so they get the plain color.
         // The real frame would need Screen Recording.
+        _ = FolderAccess.reopen()
         if let url = workspace.desktopImageURL(for: screen), url.lastPathComponent != "DefaultDesktop.heic",
            let picture = picture(url, covering: CGSize(width: screen.frame.width * screen.backingScaleFactor, height: screen.frame.height * screen.backingScaleFactor)) {
             let view = NSView()
