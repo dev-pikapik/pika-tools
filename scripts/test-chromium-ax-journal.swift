@@ -62,6 +62,7 @@ struct TestChromiumAXJournal {
         Switched.save([entry(100)], TextFocus.journalKey)
         TextFocus.putBackAfterCrash(bundleID: chrome)
         precondition(writes.isEmpty, "putBackAfterCrash must return before it writes")
+        TextFocus.isOn = { _ in false }
         let owner = NSObject()
         TextFocus.watch(owner, front: nil)
         precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .success)
@@ -73,6 +74,18 @@ struct TestChromiumAXJournal {
         TextFocus.puttingBack.wait()
         precondition(writes == ["100 false [100]", "\(gone) true [\(gone)]", "\(gone) false [\(gone)]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
         print("switching off runs off the main thread and keeps each app in the journal until it is put back: ok")
+
+        writes = []
+        TextFocus.isOn = { $0 == gone }
+        TextFocus.watch(owner, front: nil)
+        precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .success)
+        precondition(TextFocus.enable("AXEnhancedUserInterface", gone, "com.google.Chrome") == .success)
+        precondition(writes.isEmpty && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        TextFocus.unwatch(owner, bundleID: chrome)
+        TextFocus.puttingBack.wait()
+        precondition(writes.isEmpty && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        TextFocus.isOn = { _ in false }
+        print("an app that was already on is not switched, not remembered and not switched off: ok")
 
         var timeouts = 1
         writes = []
