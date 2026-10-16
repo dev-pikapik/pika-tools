@@ -162,6 +162,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        Background.shared.quitting = true
         KeepAwake.shared.handOff()
         SpeedTest.shared.cancel()
         #if !APPSTORE
