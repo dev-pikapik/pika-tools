@@ -109,7 +109,7 @@ final class MainCopy {
         timeout?.cancel()
         awaited = []
         leader = nil
-        guard role != .main, !Background.shared.quitting else { return }
+        guard role != .main, MainCopyChoice.becomesMain(me, among: peers(), quitting: Background.shared.quitting) else { return }
         role = .main
         activate()
         deferred.run()

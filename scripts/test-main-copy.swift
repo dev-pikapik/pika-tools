@@ -453,6 +453,31 @@ struct TestMainCopy {
         }
         print("both copies get the quit at the same moment, in any order: the animations come back and the Dock restarts once: ok")
 
+        let me = copy(10, website, at: 10), main = copy(20, store, at: 20)
+        precondition(!MainCopyChoice.becomesMain(me, among: [main], quitting: false), "a passive copy stays passive while the main copy runs")
+        precondition(MainCopyChoice.becomesMain(me, among: [], quitting: false), "a passive copy becomes main when the main copy leaves")
+        precondition(!MainCopyChoice.becomesMain(me, among: [], quitting: true), "a passive copy that is quitting stays passive when the main copy leaves")
+
+        let race = Mac(system: original)
+        let passive = race.party("A", "\(tools).a", 10, wantsA), leaving = race.party("B", "\(tools).b", 20, wantsB)
+        race.become(leaving)
+        race.elapse()
+        race.kills = []
+        race.willQuit(leaving)
+        race.whileWaiting = {
+            race.retire(leaving)
+            race.running.removeAll { $0 === leaving }
+            if MainCopyChoice.becomesMain(passive.running, among: race.running.filter { $0 !== passive }.map(\.running), quitting: true) { race.become(passive) }
+        }
+        race.willQuit(passive)
+        race.retire(passive)
+        race.running = []
+        race.elapse()
+        precondition(race.system == original && !race.autohide, "quit while waiting for the Dock: the originals are back")
+        precondition(race.journalEmpty && race.queue.isEmpty, "quit while waiting for the Dock: the journal and the Dock restart are clear")
+        precondition(race.kills.count == 1 && race.kills[0].wait, "quit while waiting for the Dock: the Dock restarts exactly once: \(race.kills)")
+        print("a passive copy that is quitting stays passive when the main copy leaves while it waits for the Dock: one Dock restart: ok")
+
         let window = Mac(system: original)
         let incumbent = window.party("A", "\(tools).a", 10, wantsA)
         window.become(incumbent)
@@ -630,6 +655,7 @@ struct TestMainCopy {
         var running: [Party] = []
         var strangers: [RunningCopy] = []
         var leader: Party?
+        var whileWaiting: (() -> Void)?
 
         init(system: [AnimationSetting: Double]) {
             self.system = system
@@ -660,7 +686,13 @@ struct TestMainCopy {
                 readAutohide: { self.autohide },
                 writeAutohide: { self.writeAutohide($0, by: party) },
                 later: { self.queue.append($0) },
-                kill: { self.kills.append(Kill(by: name, app: $0, flagSet: self.flag, wait: $1)) }
+                kill: {
+                    self.kills.append(Kill(by: name, app: $0, flagSet: self.flag, wait: $1))
+                    if $1, let waiting = self.whileWaiting {
+                        self.whileWaiting = nil
+                        waiting()
+                    }
+                }
             )
             party.engine = AnimationsEngine(party.host)
             wants.forEach { party.engine.set($0.key, $0.value) }

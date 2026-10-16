@@ -40,6 +40,10 @@ enum MainCopyChoice {
         (peers + [me]).max { ($0.launched, $0.pid) < ($1.launched, $1.pid) } ?? me
     }
 
+    static func becomesMain(_ me: RunningCopy, among peers: [RunningCopy], quitting: Bool) -> Bool {
+        !quitting && leader(me, among: peers) == me
+    }
+
     static func takesOver(_ peers: [RunningCopy], poweringOff: Bool) -> Bool {
         !poweringOff && peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
     }
