@@ -580,8 +580,7 @@ final class PetStage: NSObject {
             if idle >= dull, !(5..<23).contains(Calendar.current.component(.hour, from: Date())) || Battery.read().map({ $0.phase == .onBattery && $0.charge <= 10 }) == true { feel(.sleepy, now) }
         }
         if feelings.owed != nil {
-            let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
-            let free = PetTool.shared.talks && !typing && !Self.microphoneInUse && !behindDock
+            let free = PetTool.shared.talks && !behindDock && CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) >= 5 && !Self.microphoneInUse
             if let phrase = feelings.speak(now, &physics, free: free) { present(phrase) }
         }
     }

@@ -85,17 +85,31 @@ enum TestPetCues {
         precondition(morning.said == ["morning"] && morning.progress.count(.mornings) == 1, "the morning phrase came twice")
         print("the morning phrase waits for the yawn, then is said once: ok")
 
+        var seventh = Rig()
+        for _ in 1...6 { seventh.progress.add(.mornings) }
+        seventh.cues.hello = true
+        seventh.doze()
+        seventh.rouse()
+        while seventh.said.isEmpty, seventh.now < 120 { seventh.tick() }
+        let spoke = seventh.now
+        while seventh.now < spoke + 3.3 {
+            seventh.tick()
+            precondition(seventh.pet.state == .sit, "the Good Morning award made the pet jump up in the middle of the greeting: \(seventh.pet.state)")
+        }
+        precondition(seventh.said == ["morning"] && seventh.progress.news.contains(.morning) && seventh.progress.seen.contains("mood:excited"), "on the seventh morning the greeting, the award or the joy was lost: \(seventh.said)")
+        print("the award the greeting earns does not cut the greeting short: ok")
+
         var busy = Rig()
         busy.cues.hello = true
         busy.free = false
         busy.doze()
         busy.rouse()
-        busy.run(PetMood.sleepy.length + 3)
+        busy.run(PetMood.sleepy.length + 60)
         precondition(busy.said.isEmpty && busy.cues.owed != nil && busy.progress.count(.mornings) == 1, "a phrase held back by typing was dropped early")
         busy.free = true
         busy.run(0.5)
         precondition(busy.said == ["morning"] && busy.cues.owed == nil, "the held-back phrase was not said when the pet was free")
-        print("a phrase held back by typing or the microphone is said when they stop: ok")
+        print("the morning phrase held back for a minute by typing, the microphone or the Dock is said when they stop: ok")
 
         var quiet = Rig()
         quiet.cues.hello = true
@@ -103,7 +117,7 @@ enum TestPetCues {
         quiet.doze()
         quiet.rouse()
         quiet.run(30)
-        precondition(quiet.said.isEmpty && quiet.cues.owed == nil, "a pet that may not talk said something: \(quiet.said)")
+        precondition(quiet.said.isEmpty, "a pet that may not talk said something: \(quiet.said)")
         precondition(quiet.progress.count(.mornings) == 1 && quiet.progress.seen.contains("mood:happy") && quiet.progress.count(.smiles) == 1, "with talks off the morning or the smile was not counted")
         var late = Rig()
         late.date = Rig.afternoon

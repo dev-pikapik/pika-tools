@@ -28,7 +28,7 @@ struct PetCues {
         case .bored, .sleepy: physics.sit(mood.length)
         case .excited:
             progress?.add(.smiles)
-            if physics.grounded, !physics.calm { physics.jump() }
+            if physics.grounded, !physics.calm, physics.state != .sit { physics.jump() }
         default: break
         }
         return true
@@ -62,7 +62,7 @@ struct PetCues {
         if hello, physics.state == .walk {
             hello = false
             feel(.happy, now, &physics)
-            if (5..<12).contains(Calendar.current.component(.hour, from: date)), progress?.greet(date) == true { owed = (PetPhrases.morning, now + 8) }
+            if (5..<12).contains(Calendar.current.component(.hour, from: date)), progress?.greet(date) == true, let noon = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: date) { owed = (PetPhrases.morning, now + noon.timeIntervalSince(date)) }
         }
     }
 
